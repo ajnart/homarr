@@ -51,7 +51,7 @@ export function Footer({ links }: FooterCenteredProps) {
   return (
     <Group
       sx={{
-        position: 'absolute',
+        position: 'fixed',
         bottom: 0,
         right: 15,
       }}

@@ -4,9 +4,6 @@ import { Footer } from './Footer';
 
 const useStyles = createStyles((theme) => ({
   main: {
-    [theme.fn.smallerThan('md')]: {
-      maxWidth: '90vw',
-    },
     [theme.fn.largerThan('md')]: {
       width: 1200,
     },
