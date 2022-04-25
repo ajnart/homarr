@@ -35,8 +35,7 @@ export default function AddItemShelfItem(props: any) {
   });
   return (
     <>
-      <Modal size={'xl'} opened={opened} onClose={() => setOpened(false)} title="Add a service">
-        <Paper radius="md" p="xl" withBorder {...props}>
+      <Modal size={'xl'} radius="lg" opened={props.opened || opened} onClose={() => setOpened(false)} title="Add a service">
           <Center>
             <Image
               height={120}
@@ -96,7 +95,6 @@ export default function AddItemShelfItem(props: any) {
               <Button type="submit">Add service</Button>
             </Group>
           </form>
-        </Paper>
       </Modal>
       <Grid.Col span={4} lg={2} sm={3}>
         <AspectRatio ratio={4 / 3}>
