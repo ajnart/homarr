@@ -1,17 +1,14 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import AppShelf from '../components/AppShelf/AppShelf';
-import { Center } from '@mantine/core';
-import SaveConfigComponent from '../components/Config/SaveConfig';
+import { Center, Group } from '@mantine/core';
 import LoadConfigComponent from '../components/Config/LoadConfig';
-import { useEffect, useState } from 'react';
-import { serviceItem } from '../components/AppShelf/AppShelf.d';
+import SearchBar from '../components/SearchBar/SearchBar';
 
 export default function HomePage() {
   return (
     <>
+      <SearchBar />
       <AppShelf />
-      <LoadConfigComponent  />
+      <LoadConfigComponent />
     </>
   );
 }
