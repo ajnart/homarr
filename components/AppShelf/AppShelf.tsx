@@ -4,6 +4,9 @@ import { Grid, Group, Text, Image, Anchor, Box, AspectRatio, createStyles } from
 import { serviceItem } from './AppShelf.d';
 import AppShelfMenu from './AppShelfMenu';
 import AddItemShelfItem from './AddAppShelfItem';
+import { showNotification } from '@mantine/notifications';
+import { AlertCircle, Cross, X } from 'tabler-icons-react';
+import { useServices } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   main: {
@@ -18,27 +21,17 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const AppShelf = () => {
-  const [services, setServices] = useState<serviceItem[]>([]);
+const AppShelf = (props: any) => {
+  const { services, addService, removeService, setServicesState } = useServices();
   const { classes } = useStyles();
   const [hovering, setHovering] = useState('none');
 
   useEffect(() => {
-    const localServices: serviceItem[] = JSON.parse(localStorage.getItem('services') || '[]');
+    const localServices = localStorage.getItem('services');
     if (localServices) {
-      setServices(localServices);
+      setServicesState(JSON.parse(localServices));
     }
   }, []);
-
-  function addItem(item: serviceItem) {
-    setServices([...services, item]);
-    localStorage.setItem('services', JSON.stringify([...services, item]));
-  }
-
-  function removeItem(name: string) {
-    setServices(services.filter((s) => s.name !== name));
-    localStorage.setItem('services', JSON.stringify(services.filter((s) => s.name !== name)));
-  }
 
   return (
     <Grid m={'xl'} gutter={'xl'}>
@@ -55,7 +48,7 @@ const AppShelf = () => {
             <AspectRatio ratio={4 / 3}>
               <Box className={classes.main}>
                 <motion.div animate={{ opacity: hovering == service.name ? 1 : 0 }}>
-                  <AppShelfMenu removeitem={removeItem} name={service.name} />
+                  <AppShelfMenu removeitem={removeService} name={service.name} />
                 </motion.div>
                 <Group direction="column" position="center">
                   <Anchor href={service.url} target="_blank">
@@ -70,7 +63,7 @@ const AppShelf = () => {
           </motion.div>
         </Grid.Col>
       ))}
-      <AddItemShelfItem additem={addItem} />
+      <AddItemShelfItem additem={addService} />
     </Grid>
   );
 };
