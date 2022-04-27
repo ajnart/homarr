@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import Layout from '../components/layout/Layout';
+import { ServicesProvider } from '../tools/state';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -27,10 +28,12 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-          <NotificationsProvider position='top-right'>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
+          <NotificationsProvider position="top-right">
+            <ServicesProvider>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </ServicesProvider>
           </NotificationsProvider>
         </MantineProvider>
       </ColorSchemeProvider>
