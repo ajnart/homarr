@@ -1,4 +1,4 @@
-import { ActionIcon, Group, Modal, Switch, Title, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Group, Modal, Switch, Title, Text, Tooltip, TextInput } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { motion } from 'framer-motion';
 import { CSSProperties, useEffect, useState } from 'react';
@@ -8,6 +8,7 @@ import SaveConfigComponent from '../Config/SaveConfig';
 
 function SettingsMenu(props: any) {
   const [config, setConfig] = useState<Config>({
+    searchUrl: 'https://www.google.com/search?q=',
     searchBar: true,
   });
 
@@ -18,24 +19,42 @@ function SettingsMenu(props: any) {
     }
   }, []);
   return (
-    <Group direction="column">
-      <Switch
-        onChange={(e) => {
+    <Group direction="column" grow>
+      
+      <TextInput label='Search bar querry url' defaultValue={config.searchUrl} onChange={
+        (e) => {
           setConfig({
             ...config,
-            searchBar: e.target.checked,
+            searchUrl: e.target.value
           });
           localStorage.setItem(
             'settings',
             JSON.stringify({
               ...config,
-              searchBar: e.target.checked,
+              searchUrl: e.target.value,
             })
           );
-        }}
-        checked={config.searchBar}
-        label="Enable search bar"
-      />
+        }
+      } />
+      <Group direction="column" >
+        <Switch
+          onChange={(e) => {
+            setConfig({
+              ...config,
+              searchBar: e.target.checked,
+            });
+            localStorage.setItem(
+              'settings',
+              JSON.stringify({
+                ...config,
+                searchBar: e.target.checked,
+              })
+            );
+          }}
+          checked={config.searchBar}
+          label="Enable search bar"
+        />
+      </Group>
       <SaveConfigComponent />
       <Text
         style={{
@@ -56,7 +75,7 @@ export function SettingsMenuButton(props: any) {
   return (
     <>
       <Modal
-        size={'xl'}
+        size={'md'}
         title={<Title order={3}>Settings</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}

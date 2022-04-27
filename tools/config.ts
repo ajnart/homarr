@@ -12,5 +12,6 @@ export function loadConfig(path: string): Config | null {
 }
 
 export interface Config {
+  searchUrl: string;
 	searchBar: boolean,
 }

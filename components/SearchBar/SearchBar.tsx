@@ -1,4 +1,5 @@
 import { Input, TextInput, Text, ActionIcon, useMantineTheme } from '@mantine/core';
+import { useForm } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { useState, useEffect } from 'react';
 import { Search, ArrowRight, ArrowLeft } from 'tabler-icons-react';
@@ -8,6 +9,13 @@ export default function SearchBar(props: any) {
   const theme = useMantineTheme();
   const [config, setConfig] = useState<Config>({
     searchBar: true,
+    searchUrl : 'https://www.google.com/search?q=',
+  });
+  const querryUrl = config.searchUrl || 'https://www.google.com/search?q=';
+  const form = useForm({
+    initialValues: {
+      querry: '',
+    },
   });
 
   useEffect(() => {
@@ -21,21 +29,22 @@ export default function SearchBar(props: any) {
       setConfig(config);
     }
   }, []);
+
+  if (!config.searchBar) {
+    return null;
+  }
+
   return (
-    <TextInput
-      icon={<Search size={18} />}
-      radius="xl"
-      size="md"
-      placeholder="Search the web"
-      onChange={(e) => {
-        showNotification({
-          autoClose: 1000,
-          title: <Text>Searching for {e.target.value}</Text>,
-          message: undefined,
-        });
-      }}
-      rightSectionWidth={42}
-      {...props}
-    />
+    <form onSubmit={form.onSubmit((values) => window.open(`${querryUrl}${values.querry}`))}>
+      <TextInput
+        icon={<Search size={18} />}
+        radius="xl"
+        size="md"
+        placeholder="Search the web"
+        rightSectionWidth={42}
+        {...props}
+        {...form.getInputProps('querry')}
+      />
+    </form>
   );
 }
