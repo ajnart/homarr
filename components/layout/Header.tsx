@@ -12,6 +12,8 @@ import { useBooleanToggle } from '@mantine/hooks';
 import { NextLink } from '@mantine/next';
 import { Logo } from './Logo';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import SaveConfigComponent from '../Config/SaveConfig';
+import { SettingsMenuButton } from '../Settings/SettingsMenu';
 
 const HEADER_HEIGHT = 60;
 
@@ -125,6 +127,7 @@ export function Header({ links }: HeaderResponsiveProps) {
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
+        <SettingsMenuButton/>
 
         <Burger
           opened={opened}
