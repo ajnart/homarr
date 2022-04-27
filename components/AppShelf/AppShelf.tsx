@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Grid, Group, Text, Image, Anchor, Box, AspectRatio, createStyles } from '@mantine/core';
+import {
+  Grid,
+  Group,
+  Text,
+  Image,
+  Anchor,
+  Box,
+  AspectRatio,
+  createStyles,
+  Center,
+} from '@mantine/core';
 import { serviceItem } from './AppShelf.d';
 import AppShelfMenu from './AppShelfMenu';
 import AddItemShelfItem from './AddAppShelfItem';
