@@ -5,7 +5,6 @@ import { NotificationsProvider } from '@mantine/notifications';
 export const parameters = { layout: 'fullscreen' };
 
 function ThemeWrapper(props: { children: React.ReactNode }) {
-  const a = 2;
   return (
     <ColorSchemeProvider colorScheme="light" toggleColorScheme={() => {}}>
       <MantineProvider

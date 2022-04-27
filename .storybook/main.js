@@ -1,13 +1,20 @@
 module.exports = {
-  stories: ['../**/*.story.mdx', '../**/*.story.@(js|jsx|ts|tsx)'],
+  stories: ['../**/*.story.mdx', '../**/*.story.*'],
   addons: [
     'storybook-dark-mode',
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
     {
       name: 'storybook-addon-turbo-build',
       options: { optimizationLevel: 2 },
     },
   ],
+  typescript: {
+    check: false,
+    reactDocgen: false,
+  },
   framework: '@storybook/react',
+  features: { emotionAlias: false },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
