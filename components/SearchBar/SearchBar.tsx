@@ -1,11 +1,28 @@
-import { Input, TextInput, Text, ActionIcon, useMantineTheme, Center } from '@mantine/core';
+import {
+  Input,
+  TextInput,
+  Text,
+  ActionIcon,
+  useMantineTheme,
+  Center,
+  Popover,
+} from '@mantine/core';
 import { useForm } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { useState, useEffect } from 'react';
-import { Search, ArrowRight, ArrowLeft, BrandYoutube, Download } from 'tabler-icons-react';
+import {
+  Search,
+  ArrowRight,
+  ArrowLeft,
+  BrandYoutube,
+  Download,
+  InfoCircle,
+  FileX,
+} from 'tabler-icons-react';
 import { Config, loadConfig } from '../../tools/config';
 
 export default function SearchBar(props: any) {
+  const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
   const theme = useMantineTheme();
   const [config, setConfig] = useState<Config>({
@@ -20,7 +37,6 @@ export default function SearchBar(props: any) {
       querry: '',
     },
   });
-
   useEffect(() => {
     const config = loadConfig('settings');
     if (config) {
@@ -66,17 +82,37 @@ export default function SearchBar(props: any) {
         }
       })}
     >
-      <TextInput
-        variant="filled"
-        color="blue"
-        icon={<Search size={18} />}
-        radius="md"
-        rightSection={icon}
-        size="md"
-        placeholder="Search the web"
-        {...props}
-        {...form.getInputProps('querry')}
-      />
+      <Popover
+        opened={opened}
+        style={{
+          width: '100%',
+        }}
+        position="bottom"
+        placement="start"
+        withArrow
+        trapFocus={false}
+        transition="pop-top-left"
+        onFocusCapture={() => setOpened(true)}
+        onBlurCapture={() => setOpened(false)}
+        target={
+          <TextInput
+            variant="filled"
+            color="blue"
+            icon={<Search size={18} />}
+            radius="md"
+            rightSection={icon}
+            size="md"
+            placeholder="Search the web"
+            {...props}
+            {...form.getInputProps('querry')}
+          />
+        }
+      >
+        <Text>
+          tip: You can prefix your querry with <b>!yt</b> or <b>!t</b> to research on youtube or for
+          a torrent
+        </Text>
+      </Popover>
     </form>
   );
 }
