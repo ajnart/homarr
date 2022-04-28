@@ -2,10 +2,11 @@ import { Input, TextInput, Text, ActionIcon, useMantineTheme, Center } from '@ma
 import { useForm } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { useState, useEffect } from 'react';
-import { Search, ArrowRight, ArrowLeft } from 'tabler-icons-react';
+import { Search, ArrowRight, ArrowLeft, BrandYoutube, Download } from 'tabler-icons-react';
 import { Config, loadConfig } from '../../tools/config';
 
 export default function SearchBar(props: any) {
+  const [icon, setIcon] = useState(<Search />);
   const theme = useMantineTheme();
   const [config, setConfig] = useState<Config>({
     searchBar: true,
@@ -37,10 +38,40 @@ export default function SearchBar(props: any) {
   }
 
   return (
-    <form onSubmit={form.onSubmit((values) => window.open(`${querryUrl}${values.querry}`))}>
+    <form
+      onChange={() => {
+        // If querry contains !yt or !t add "Searching on YouTube" or "Searching torrent"
+        const querry = form.values.querry.trim();
+        const isYoutube = querry.startsWith('!yt');
+        const isTorrent = querry.startsWith('!t');
+        if (isYoutube) {
+          setIcon(<BrandYoutube />);
+        } else if (isTorrent) {
+          setIcon(<Download />);
+        } else {
+          setIcon(<Search />);
+        }
+      }}
+      onSubmit={form.onSubmit((values) => {
+        // Find if querry is prefixed by !yt or !t
+        const querry = values.querry.trim();
+        const isYoutube = querry.startsWith('!yt');
+        const isTorrent = querry.startsWith('!t');
+        if (isYoutube) {
+          window.open(`https://www.youtube.com/results?search_query=${querry.substring(3)}`);
+        } else if (isTorrent) {
+          window.open(`https://thepiratebay.org/search.php?q=${querry.substring(3)}`);
+        } else {
+          window.open(`${querryUrl}${values.querry}`);
+        }
+      })}
+    >
       <TextInput
+        variant="filled"
+        color="blue"
         icon={<Search size={18} />}
-        radius="xl"
+        radius="md"
+        rightSection={icon}
         size="md"
         placeholder="Search the web"
         {...props}
