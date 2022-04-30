@@ -1,4 +1,4 @@
-import { SettingsMenuButton } from "./SettingsMenu";
+import { SettingsMenuButton } from './SettingsMenu';
 
 export default {
   title: ' menu',
