@@ -4,8 +4,9 @@ module.exports = {
     'plugin:@next/next/recommended',
     'plugin:jest/recommended',
     'plugin:storybook/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
   ],
-  plugins: ['testing-library', 'jest'],
+  plugins: ['testing-library', 'jest', 'react-hooks', 'react'],
   overrides: [
     {
       files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
