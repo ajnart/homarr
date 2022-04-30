@@ -11,12 +11,13 @@ import {
   createStyles,
   Center,
 } from '@mantine/core';
+import { showNotification } from '@mantine/notifications';
+import { AlertCircle, Cross, X } from 'tabler-icons-react';
 import { serviceItem } from './AppShelf.d';
 import AppShelfMenu from './AppShelfMenu';
 import AddItemShelfItem from './AddAppShelfItem';
-import { showNotification } from '@mantine/notifications';
-import { AlertCircle, Cross, X } from 'tabler-icons-react';
 import { useServices } from '../../tools/state';
+import { pingQbittorrent } from '../../tools/api';
 
 const useStyles = createStyles((theme) => ({
   main: {
@@ -42,9 +43,14 @@ const AppShelf = (props: any) => {
       setServicesState(JSON.parse(localServices));
     }
   }, []);
+  services.forEach((service) => {
+    if (service.type === 'qBittorrent') {
+      pingQbittorrent(service);
+    }
+  });
 
   return (
-    <Grid m={'xl'} gutter={'xl'}>
+    <Grid m="xl" gutter="xl">
       {services.map((service, i) => (
         <Grid.Col lg={2} sm={3} key={i}>
           <motion.div
