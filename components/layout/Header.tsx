@@ -127,7 +127,7 @@ export function Header({ links }: HeaderResponsiveProps) {
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
-        <SettingsMenuButton/>
+        <SettingsMenuButton />
 
         <Burger
           opened={opened}

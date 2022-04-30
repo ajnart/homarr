@@ -17,7 +17,7 @@ export function ColorSchemeToggle() {
       <Box
         onClick={() => toggleColorScheme()}
         sx={(theme) => ({
-          cursor: "pointer",
+          cursor: 'pointer',
           color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
         })}
       >

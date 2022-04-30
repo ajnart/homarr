@@ -35,7 +35,7 @@ export default function AddItemShelfItem(props: any) {
   });
   return (
     <>
-      <Modal size={'xl'} radius="lg" opened={props.opened || opened} onClose={() => setOpened(false)} title="Add a service">
+      <Modal size="xl" radius="lg" opened={props.opened || opened} onClose={() => setOpened(false)} title="Add a service">
           <Center>
             <Image
               height={120}
@@ -49,6 +49,7 @@ export default function AddItemShelfItem(props: any) {
             onSubmit={form.onSubmit(() => {
               addItem(form.values);
               setOpened(false);
+              form.reset();
             })}
           >
             <Group direction="column" grow>
@@ -81,7 +82,7 @@ export default function AddItemShelfItem(props: any) {
               />
               <Select
                 label="Select the type of service (used for API calls)"
-                defaultValue={'Other'}
+                defaultValue="Other"
                 placeholder="Pick one"
                 value={form.values.type}
                 required

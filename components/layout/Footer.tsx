@@ -60,8 +60,8 @@ export function Footer({ links }: FooterCenteredProps) {
       mb={15}
     >
       <Group className={classes.links}>{items}</Group>
-      <Group spacing={'xs'} position="right" noWrap>
-        <ActionIcon<'a'> component="a" href={`https://github.com/ajnart/myhomepage`} size="lg">
+      <Group spacing="xs" position="right" noWrap>
+        <ActionIcon<'a'> component="a" href="https://github.com/ajnart/myhomepage" size="lg">
           <BrandGithub size={18} />
         </ActionIcon>
       </Group>

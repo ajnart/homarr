@@ -11,7 +11,7 @@ export default function SaveConfigComponent(props: any) {
     }
   }
   return (
-      <Button leftIcon={<Download/>} variant='outline' onClick={onClick}>
+      <Button leftIcon={<Download />} variant="outline" onClick={onClick}>
         Download your config
       </Button>
   );
