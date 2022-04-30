@@ -35,67 +35,73 @@ export default function AddItemShelfItem(props: any) {
   });
   return (
     <>
-      <Modal size="xl" radius="lg" opened={props.opened || opened} onClose={() => setOpened(false)} title="Add a service">
-          <Center>
-            <Image
-              height={120}
-              width={120}
-              src={form.values.icon}
-              alt="Placeholder"
-              withPlaceholder
+      <Modal
+        size="xl"
+        radius="lg"
+        opened={props.opened || opened}
+        onClose={() => setOpened(false)}
+        title="Add a service"
+      >
+        <Center>
+          <Image
+            height={120}
+            width={120}
+            src={form.values.icon}
+            alt="Placeholder"
+            withPlaceholder
+          />
+        </Center>
+        <form
+          onSubmit={form.onSubmit(() => {
+            addItem(form.values);
+            setOpened(false);
+            form.reset();
+          })}
+        >
+          <Group direction="column" grow>
+            <TextInput
+              required
+              label="Service name"
+              placeholder="Plex"
+              value={form.values.name}
+              onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
+              error={form.errors.name && 'Invalid name'}
             />
-          </Center>
-          <form
-            onSubmit={form.onSubmit(() => {
-              addItem(form.values);
-              setOpened(false);
-              form.reset();
-            })}
-          >
-            <Group direction="column" grow>
-              <TextInput
-                required
-                label="Service name"
-                placeholder="Plex"
-                value={form.values.name}
-                onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
-                error={form.errors.name && 'Invalid name'}
-              />
 
-              <TextInput
-                required
-                label="Icon url"
-                placeholder="https://i.gifer.com/ANPC.gif"
-                value={form.values.icon}
-                onChange={(event) => {
-                  form.setFieldValue('icon', event.currentTarget.value);
-                }}
-                error={form.errors.icon && 'Icon url is invalid'}
-              />
-              <TextInput
-                required
-                label="Service url"
-                placeholder="http://localhost:8989"
-                value={form.values.url}
-                onChange={(event) => form.setFieldValue('url', event.currentTarget.value)}
-                error={form.errors.icon && 'Icon url is invalid'}
-              />
-              <Select
-                label="Select the type of service (used for API calls)"
-                defaultValue="Other"
-                placeholder="Pick one"
-                value={form.values.type}
-                required
-                searchable
-                onChange={(value) => form.setFieldValue('type', value ?? 'Other')}
-                data={ServiceTypes}
-              />
-            </Group>
+            <TextInput
+              required
+              label="Icon url"
+              placeholder="https://i.gifer.com/ANPC.gif"
+              value={form.values.icon}
+              onChange={(event) => {
+                form.setFieldValue('icon', event.currentTarget.value);
+              }}
+              error={form.errors.icon && 'Icon url is invalid'}
+            />
+            <TextInput
+              required
+              label="Service url"
+              placeholder="http://localhost:8989"
+              value={form.values.url}
+              onChange={(event) => form.setFieldValue('url', event.currentTarget.value)}
+              error={form.errors.icon && 'Icon url is invalid'}
+            />
+            <Select
+              label="Select the type of service (used for API calls)"
+              defaultValue="Other"
+              placeholder="Pick one"
+              value={form.values.type}
+              required
+              searchable
+              onChange={(value) => form.setFieldValue('type', value ?? 'Other')}
+              data={ServiceTypes}
+            />
+          </Group>
 
-            <Group grow position="center" mt="xl">
-              <Button type="submit">Add service</Button>
-            </Group>
-          </form>
+          <Group grow position="center" mt="xl">
+            <Button type="submit">Add service</Button>
+          </Group>
+        </form>
       </Modal>
       <Grid.Col span={4} lg={2} sm={3}>
         <AspectRatio ratio={4 / 3}>

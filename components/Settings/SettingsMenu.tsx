@@ -20,12 +20,10 @@ function SettingsMenu(props: any) {
   }, []);
   return (
     <Group direction="column" grow>
-
       <TextInput
         label="Search bar querry url"
         defaultValue={config.searchUrl}
-        onChange={
-        (e) => {
+        onChange={(e) => {
           setConfig({
             ...config,
             searchUrl: e.target.value,
@@ -37,8 +35,7 @@ function SettingsMenu(props: any) {
               searchUrl: e.target.value,
             })
           );
-        }
-      }
+        }}
       />
       <Group direction="column">
         <Switch

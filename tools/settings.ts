@@ -13,5 +13,5 @@ export function loadSettings(path: string): Settings | null {
 
 export interface Settings {
   searchUrl: string;
-	searchBar: boolean,
+  searchBar: boolean;
 }

@@ -4,6 +4,4 @@ export default {
   title: 'Item Shelf',
 };
 
-export const Default = (args: any) => (
-    <AppShelf {...args} />
-);
+export const Default = (args: any) => <AppShelf {...args} />;
