@@ -2,30 +2,33 @@ import { ActionIcon, Group, Modal, Switch, Title, Text, Tooltip, TextInput } fro
 import { showNotification } from '@mantine/notifications';
 import { motion } from 'framer-motion';
 import { CSSProperties, useEffect, useState } from 'react';
-import { Mail, Settings, X } from 'tabler-icons-react';
-import { Config, loadConfig } from '../../tools/config';
+import { Mail, Settings as SettingsIcon, X } from 'tabler-icons-react';
+import { Settings, loadSettings } from '../../tools/settings';
 import SaveConfigComponent from '../Config/SaveConfig';
 
 function SettingsMenu(props: any) {
-  const [config, setConfig] = useState<Config>({
+  const [config, setConfig] = useState<Settings>({
     searchUrl: 'https://www.google.com/search?q=',
     searchBar: true,
   });
 
   useEffect(() => {
-    const config = loadConfig('settings');
+    const config = loadSettings('settings');
     if (config) {
       setConfig(config);
     }
   }, []);
   return (
     <Group direction="column" grow>
-      
-      <TextInput label='Search bar querry url' defaultValue={config.searchUrl} onChange={
+
+      <TextInput
+        label="Search bar querry url"
+        defaultValue={config.searchUrl}
+        onChange={
         (e) => {
           setConfig({
             ...config,
-            searchUrl: e.target.value
+            searchUrl: e.target.value,
           });
           localStorage.setItem(
             'settings',
@@ -35,8 +38,9 @@ function SettingsMenu(props: any) {
             })
           );
         }
-      } />
-      <Group direction="column" >
+      }
+      />
+      <Group direction="column">
         <Switch
           onChange={(e) => {
             setConfig({
@@ -75,7 +79,7 @@ export function SettingsMenuButton(props: any) {
   return (
     <>
       <Modal
-        size={'md'}
+        size="md"
         title={<Title order={3}>Settings</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
@@ -85,13 +89,13 @@ export function SettingsMenuButton(props: any) {
       <ActionIcon
         variant="default"
         radius="xl"
-        size={'xl'}
-        color={'blue'}
+        size="xl"
+        color="blue"
         style={props.style}
         onClick={() => setOpened(true)}
       >
         <Tooltip label="Settings">
-          <Settings />
+          <SettingsIcon />
         </Tooltip>
       </ActionIcon>
     </>
