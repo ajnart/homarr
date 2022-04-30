@@ -19,13 +19,13 @@ import {
   InfoCircle,
   FileX,
 } from 'tabler-icons-react';
-import { Config, loadConfig } from '../../tools/config';
+import { Settings, loadSettings } from '../../tools/settings';
 
 export default function SearchBar(props: any) {
   const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
   const theme = useMantineTheme();
-  const [config, setConfig] = useState<Config>({
+  const [config, setConfig] = useState<Settings>({
     searchBar: true,
     searchUrl: 'https://www.google.com/search?q=',
   });
@@ -38,7 +38,7 @@ export default function SearchBar(props: any) {
     },
   });
   useEffect(() => {
-    const config = loadConfig('settings');
+    const config = loadSettings('settings');
     if (config) {
       showNotification({
         autoClose: 1000,
