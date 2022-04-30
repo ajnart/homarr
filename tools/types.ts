@@ -1,4 +1,4 @@
-import { serviceItem } from "../components/AppShelf/AppShelf.d";
+import { serviceItem } from '../components/AppShelf/AppShelf.d';
 
 export interface Config {
   services: serviceItem[];

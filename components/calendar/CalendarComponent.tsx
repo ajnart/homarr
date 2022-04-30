@@ -1,16 +1,14 @@
 import { Group, Indicator, Popover, Box, Container, Text, Avatar } from '@mantine/core';
 import { useState } from 'react';
 import { Calendar } from '@mantine/dates';
+import dayjs from 'dayjs';
 import MediaDisplay from './MediaDisplay';
 import { medias } from './mediaExample';
-import dayjs from 'dayjs';
 import { useServices } from '../../tools/state';
 
-function GetCalendars(props: any)
-{
+function GetCalendars(props: any) {
   // Load context
   const { services, addService, removeService, setServicesState } = useServices();
-
 }
 
 export default function CalendarComponent(props: any) {
@@ -26,9 +24,7 @@ export default function CalendarComponent(props: any) {
       onChange={(day) => {
         setValue(day);
       }}
-      renderDay={(renderdate) => {
-        return <DayComponent renderdate={renderdate} parsedDates={parsedDates} />;
-      }}
+      renderDay={(renderdate) => <DayComponent renderdate={renderdate} parsedDates={parsedDates} />}
     />
   );
 }
