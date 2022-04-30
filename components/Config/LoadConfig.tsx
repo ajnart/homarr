@@ -2,9 +2,9 @@ import { Group, Text, useMantineTheme, MantineTheme, Notification } from '@manti
 import { Upload, Photo, X, Icon as TablerIcon, Check } from 'tabler-icons-react';
 import { Dropzone, DropzoneStatus, FullScreenDropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
-import { serviceItem } from '../AppShelf/AppShelf.d';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
+import { serviceItem } from '../AppShelf/AppShelf.d';
 import { useServices } from '../../tools/state';
 
 function getIconColor(status: DropzoneStatus, theme: MantineTheme) {
