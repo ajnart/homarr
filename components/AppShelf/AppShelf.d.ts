@@ -3,11 +3,13 @@ export const ServiceTypes = [
   'Sonarr',
   'Radarr',
   'Lidarr',
+  'qBittorrent',
   'Plex',
   'Emby',
-]
+];
 
 export interface serviceItem {
+  [x: string]: any;
   name: string;
   type: ServiceTypes;
   url: string;
