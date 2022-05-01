@@ -4,8 +4,8 @@ import { Dropzone, DropzoneStatus, FullScreenDropzone, IMAGE_MIME_TYPE } from '@
 import { showNotification } from '@mantine/notifications';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
-import { serviceItem } from '../AppShelf/AppShelf.d';
 import { useServices } from '../../tools/state';
+import { serviceItem } from '../../tools/types';
 
 function getIconColor(status: DropzoneStatus, theme: MantineTheme) {
   return status.accepted
