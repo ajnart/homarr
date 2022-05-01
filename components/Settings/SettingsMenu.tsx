@@ -3,7 +3,8 @@ import { showNotification } from '@mantine/notifications';
 import { motion } from 'framer-motion';
 import { CSSProperties, useEffect, useState } from 'react';
 import { Mail, Settings as SettingsIcon, X } from 'tabler-icons-react';
-import { Settings, loadSettings } from '../../tools/settings';
+import { loadSettings } from '../../tools/settings';
+import { Settings } from '../../tools/types';
 import SaveConfigComponent from '../Config/SaveConfig';
 
 function SettingsMenu(props: any) {

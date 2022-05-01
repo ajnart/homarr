@@ -1,6 +1,6 @@
 // src/context/state.js
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { serviceItem } from '../components/AppShelf/AppShelf.d';
+import { serviceItem } from './types';
 
 type servicesContextType = {
   services: serviceItem[];

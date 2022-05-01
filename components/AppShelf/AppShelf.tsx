@@ -13,7 +13,6 @@ import {
 } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { AlertCircle, Cross, X } from 'tabler-icons-react';
-import { serviceItem } from './AppShelf.d';
 import AppShelfMenu from './AppShelfMenu';
 import AddItemShelfItem from './AddAppShelfItem';
 import { useServices } from '../../tools/state';

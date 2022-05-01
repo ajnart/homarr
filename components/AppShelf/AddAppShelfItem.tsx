@@ -17,7 +17,7 @@ import { useForm } from '@mantine/hooks';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
-import { ServiceTypes } from './AppShelf.d';
+import { ServiceTypes } from '../../tools/types';
 
 export default function AddItemShelfItem(props: any) {
   const { additem: addItem } = props;

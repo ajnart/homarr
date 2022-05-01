@@ -19,7 +19,8 @@ import {
   InfoCircle,
   FileX,
 } from 'tabler-icons-react';
-import { Settings, loadSettings } from '../../tools/settings';
+import { loadSettings } from '../../tools/settings';
+import { Settings } from '../../tools/types';
 
 export default function SearchBar(props: any) {
   const [opened, setOpened] = useState(false);
