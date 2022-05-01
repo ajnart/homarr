@@ -1,3 +1,5 @@
+import { Settings } from './types';
+
 export function loadSettings(path: string): Settings | null {
   const item = localStorage.getItem(path);
   if (!item) {
@@ -9,9 +11,4 @@ export function loadSettings(path: string): Settings | null {
   } catch (e) {
     return null;
   }
-}
-
-export interface Settings {
-  searchUrl: string;
-  searchBar: boolean;
 }

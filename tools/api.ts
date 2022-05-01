@@ -1,4 +1,4 @@
-import { serviceItem } from '../components/AppShelf/AppShelf.d';
+import { serviceItem } from './types';
 
 export function pingQbittorrent(service: serviceItem): any {
   console.log('Getting service.cookie for service: ', service);
