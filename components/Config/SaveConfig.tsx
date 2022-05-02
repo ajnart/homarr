@@ -2,12 +2,14 @@ import { Anchor, Button, ThemeIcon, Tooltip } from '@mantine/core';
 import fileDownload from 'js-file-download';
 import { Dropzone, DropzoneStatus, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { Download } from 'tabler-icons-react';
+import { useConfig } from '../../tools/state';
 
 export default function SaveConfigComponent(props: any) {
+
+  const { config } = useConfig();
   function onClick(e: any) {
-    const services = localStorage.getItem('services');
-    if (services) {
-      fileDownload(JSON.stringify(JSON.parse(services), null, '\t'), 'services.json');
+    if (config) {
+      fileDownload(JSON.stringify(config, null, '\t'), 'services.json');
     }
   }
   return (

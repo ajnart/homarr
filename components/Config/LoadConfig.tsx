@@ -4,8 +4,8 @@ import { Dropzone, DropzoneStatus, FullScreenDropzone, IMAGE_MIME_TYPE } from '@
 import { showNotification } from '@mantine/notifications';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
-import { useServices } from '../../tools/state';
-import { serviceItem } from '../../tools/types';
+import { useConfig } from '../../tools/state';
+import { Config, serviceItem } from '../../tools/types';
 
 function getIconColor(status: DropzoneStatus, theme: MantineTheme) {
   return status.accepted
@@ -48,7 +48,7 @@ export const dropzoneChildren = (status: DropzoneStatus, theme: MantineTheme) =>
 );
 
 export default function LoadConfigComponent(props: any) {
-  const { services, addService, removeService, setServicesState } = useServices();
+  const { saveConfig, setConfig } = useConfig();
   const theme = useMantineTheme();
   const router = useRouter();
   const openRef = useRef<() => void>();
@@ -58,7 +58,7 @@ export default function LoadConfigComponent(props: any) {
       onDrop={(files) => {
         files[0].text().then((e) => {
           try {
-            JSON.parse(e) as serviceItem[];
+            JSON.parse(e) as Config;
           } catch (e) {
             showNotification({
               autoClose: 5000,
@@ -77,7 +77,7 @@ export default function LoadConfigComponent(props: any) {
             icon: <Check />,
             message: undefined,
           });
-          setServicesState(JSON.parse(e));
+          setConfig(JSON.parse(e));
         });
       }}
       accept={['application/json']}

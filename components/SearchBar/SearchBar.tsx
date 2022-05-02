@@ -19,38 +19,22 @@ import {
   InfoCircle,
   FileX,
 } from 'tabler-icons-react';
-import { loadSettings } from '../../tools/settings';
+import { useConfig } from '../../tools/state';
 import { Settings } from '../../tools/types';
 
 export default function SearchBar(props: any) {
+  const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
-  const theme = useMantineTheme();
-  const [config, setConfig] = useState<Settings>({
-    searchBar: true,
-    searchUrl: 'https://www.google.com/search?q=',
-  });
-
-  const querryUrl = config.searchUrl || 'https://www.google.com/search?q=';
+  const querryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
 
   const form = useForm({
     initialValues: {
       querry: '',
     },
   });
-  useEffect(() => {
-    const config = loadSettings('settings');
-    if (config) {
-      showNotification({
-        autoClose: 1000,
-        title: <Text>Config loaded</Text>,
-        message: undefined,
-      });
-      setConfig(config);
-    }
-  }, []);
 
-  if (!config.searchBar) {
+  if (config.settings.searchBar == false) {
     return null;
   }
 

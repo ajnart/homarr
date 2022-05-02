@@ -3,57 +3,39 @@ import { showNotification } from '@mantine/notifications';
 import { motion } from 'framer-motion';
 import { CSSProperties, useEffect, useState } from 'react';
 import { Mail, Settings as SettingsIcon, X } from 'tabler-icons-react';
-import { loadSettings } from '../../tools/settings';
-import { Settings } from '../../tools/types';
+import { useConfig } from '../../tools/state';
 import SaveConfigComponent from '../Config/SaveConfig';
 
 function SettingsMenu(props: any) {
-  const [config, setConfig] = useState<Settings>({
-    searchUrl: 'https://www.google.com/search?q=',
-    searchBar: true,
-  });
+  const { config, setConfig } = useConfig();
 
-  useEffect(() => {
-    const config = loadSettings('settings');
-    if (config) {
-      setConfig(config);
-    }
-  }, []);
   return (
     <Group direction="column" grow>
       <TextInput
         label="Search bar querry url"
-        defaultValue={config.searchUrl}
-        onChange={(e) => {
+        defaultValue={config.settings.searchUrl}
+        onChange={(e) =>
           setConfig({
             ...config,
-            searchUrl: e.target.value,
-          });
-          localStorage.setItem(
-            'settings',
-            JSON.stringify({
-              ...config,
+            settings: {
+              ...config.settings,
               searchUrl: e.target.value,
-            })
-          );
-        }}
+            },
+          })
+        }
       />
       <Group direction="column">
         <Switch
-          onChange={(e) => {
+          onChange={(e) =>
             setConfig({
               ...config,
-              searchBar: e.target.checked,
-            });
-            localStorage.setItem(
-              'settings',
-              JSON.stringify({
-                ...config,
-                searchBar: e.target.checked,
-              })
-            );
-          }}
-          checked={config.searchBar}
+              settings: {
+                ...config.settings,
+                searchBar: e.currentTarget.checked,
+              },
+            })
+          }
+          checked={config.settings.searchBar}
           label="Enable search bar"
         />
       </Group>

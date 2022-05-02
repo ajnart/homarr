@@ -4,14 +4,14 @@ import { Calendar } from '@mantine/dates';
 import dayjs from 'dayjs';
 import MediaDisplay from './MediaDisplay';
 import { medias } from './mediaExample';
-import { useServices } from '../../tools/state';
+import { useConfig } from '../../tools/state';
 
 async function GetCalendars(endDate: Date) {
   // Load context
-  const { services, addService, removeService, setServicesState } = useServices();
+  const { config, addService, removeService, setConfig } = useConfig();
   // Load services that have the type to "Sonarr" or "Radarr"
-  const sonarrServices = services.filter((service) => service.type === 'Sonarr');
-  const radarrServices = services.filter((service) => service.type === 'Radarr');
+  const sonarrServices = config.services.filter((service) => service.type === 'Sonarr');
+  const radarrServices = config.services.filter((service) => service.type === 'Radarr');
   // Merge the two arrays
   const allServices = [...sonarrServices, ...radarrServices];
   // Load the calendars for each service
