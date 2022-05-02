@@ -103,30 +103,34 @@ export default function AddItemShelfItem(props: any) {
           </Group>
         </form>
       </Modal>
-      <Grid.Col span={4} lg={2} sm={3}>
-        <AspectRatio ratio={4 / 3}>
-          <Box
-            sx={{
+      <AspectRatio
+        style={{
+          minHeight: 120,
+          minWidth: 120,
+        }}
+        ratio={4 / 3}
+      >
+        <Box
+          sx={{
+            backgroundColor:
+              theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+            textAlign: 'center',
+            padding: theme.spacing.xl,
+            borderRadius: theme.radius.md,
+            '&:hover': {
               backgroundColor:
-                theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-              textAlign: 'center',
-              padding: theme.spacing.xl,
-              borderRadius: theme.radius.md,
-              '&:hover': {
-                backgroundColor:
-                  theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-              },
-            }}
-          >
-            <Group direction="column" position="center">
-              <motion.div whileHover={{ scale: 1.2 }}>
-                <Apps style={{ cursor: 'pointer' }} onClick={() => setOpened(true)} size={60} />
-              </motion.div>
-              <Text>Add Service</Text>
-            </Group>
-          </Box>
-        </AspectRatio>
-      </Grid.Col>
+                theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+            },
+          }}
+        >
+          <Group direction="column" position="center">
+            <motion.div whileHover={{ scale: 1.2 }}>
+              <Apps style={{ cursor: 'pointer' }} onClick={() => setOpened(true)} size={60} />
+            </motion.div>
+            <Text>Add Service</Text>
+          </Group>
+        </Box>
+      </AspectRatio>
     </>
   );
 }

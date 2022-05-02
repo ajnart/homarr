@@ -10,6 +10,9 @@ import {
   AspectRatio,
   createStyles,
   Center,
+  Container,
+  SimpleGrid,
+  Space,
 } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { AlertCircle, Cross, X } from 'tabler-icons-react';
@@ -24,7 +27,9 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
     textAlign: 'center',
     padding: theme.spacing.xl,
-    borderRadius: theme.radius.md,
+    borderRadius: theme.radius.sm,
+    width: 200,
+    height: 180,
 
     '&:hover': {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
@@ -53,39 +58,42 @@ const AppShelf = (props: any) => {
   }
 
   return (
-    <Grid m="xl" gutter="xl">
-      {config.services
-        ? config.services.map((service, i) => (
-            <Grid.Col lg={2} sm={3} key={i}>
-              <motion.div
-                onHoverStart={(e) => {
-                  setHovering(service.name);
-                }}
-                onHoverEnd={(e) => {
-                  setHovering('none');
-                }}
-              >
-                <AspectRatio ratio={4 / 3}>
-                  <Box className={classes.main}>
-                    <motion.div animate={{ opacity: hovering == service.name ? 1 : 0 }}>
-                      <AppShelfMenu removeitem={removeService} name={service.name} />
-                    </motion.div>
-                    <Group direction="column" position="center">
-                      <Anchor href={service.url} target="_blank">
-                        <motion.div whileHover={{ scale: 1.2 }}>
-                          <Image style={{ maxWidth: 60 }} src={service.icon} alt={service.name} />
-                        </motion.div>
-                      </Anchor>
-                      <Text>{service.name}</Text>
-                    </Group>
-                  </Box>
-                </AspectRatio>
+    <SimpleGrid m="xl" cols={4} spacing="xl">
+      {config.services.map((service, i) => (
+        <motion.div
+          onHoverStart={(e) => {
+            setHovering(service.name);
+          }}
+          onHoverEnd={(e) => {
+            setHovering('none');
+          }}
+        >
+          <Box className={classes.main}>
+            <Group position="center">
+              <Space />
+              <Text>{service.name}</Text>
+              <motion.div animate={{ opacity: hovering == service.name ? 1 : 0 }}>
+                <AppShelfMenu removeitem={removeService} name={service.name} />
               </motion.div>
-            </Grid.Col>
-          ))
-        : null}
-      <AddItemShelfItem additem={addService} />
-    </Grid>
+            </Group>
+            <Group direction="column" position="center">
+              <Anchor href={service.url} target="_blank">
+                <motion.div whileHover={{ scale: 1.2 }}>
+                  <Image
+                    style={{
+                      maxWidth: 100,
+                    }}
+                    fit="cover"
+                    src={service.icon}
+                    alt={service.name}
+                  />
+                </motion.div>
+              </Anchor>
+            </Group>
+          </Box>
+        </motion.div>
+      ))}
+    </SimpleGrid>
   );
 };
 

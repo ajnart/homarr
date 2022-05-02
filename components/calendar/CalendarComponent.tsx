@@ -1,4 +1,4 @@
-import { Group, Indicator, Popover, Box, Container, Text, Avatar } from '@mantine/core';
+import { Group, Indicator, Popover, Box, Container, Text, Avatar, ActionIcon } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import dayjs from 'dayjs';
@@ -27,7 +27,6 @@ export default function CalendarComponent(props: any) {
   const [opened, setOpened] = useState(false);
   // const [medias, setMedias] = useState();
   const dates = medias.map((media) => media.inCinemas);
-  const [value, setValue] = useState(null);
   const parsedDates = dates.map((date) => dayjs(date));
   console.log(parsedDates);
 
@@ -64,10 +63,7 @@ export default function CalendarComponent(props: any) {
 
   return (
     <Calendar
-      value={value}
-      onChange={(day: any) => {
-        setValue(day);
-      }}
+      onChange={(day: any) => {}}
       renderDay={(renderdate) => <DayComponent renderdate={renderdate} parsedDates={parsedDates} />}
     />
   );
@@ -82,13 +78,13 @@ function DayComponent(props: any) {
 
   if (match > -1) {
     return (
-      <Avatar
+      <ActionIcon
         onClick={() => {
           setOpened(true);
           console.log();
         }}
-        radius="xl"
         color="teal"
+        variant="light"
       >
         <Popover
           position="right"
@@ -98,7 +94,7 @@ function DayComponent(props: any) {
           target={day}
           children={<MediaDisplay media={medias[match]} />}
         />
-      </Avatar>
+      </ActionIcon>
     );
   }
   return <div>{day}</div>;
