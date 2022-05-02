@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export interface Settings {
   searchUrl: string;
   searchBar: boolean;
@@ -11,10 +9,23 @@ export interface Config {
   settings: Settings;
 }
 
-export const ServiceTypeList = [ 
-  'Other', 'Sonarr', 'Radarr', 'Lidarr', 'qBittorrent', 'Plex', 'Emby'
-]
-export type ServiceType =  'Other' | 'Sonarr' | 'Radarr' | 'Lidarr' | 'qBittorrent' | 'Plex' | 'Emby';
+export const ServiceTypeList = [
+  'Other',
+  'Sonarr',
+  'Radarr',
+  'Lidarr',
+  'qBittorrent',
+  'Plex',
+  'Emby',
+];
+export type ServiceType =
+  | 'Other'
+  | 'Sonarr'
+  | 'Radarr'
+  | 'Lidarr'
+  | 'qBittorrent'
+  | 'Plex'
+  | 'Emby';
 
 export interface serviceItem {
   [x: string]: any;

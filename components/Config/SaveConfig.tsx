@@ -5,7 +5,6 @@ import { Download } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 
 export default function SaveConfigComponent(props: any) {
-
   const { config } = useConfig();
   function onClick(e: any) {
     if (config) {
