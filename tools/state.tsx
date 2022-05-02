@@ -1,25 +1,33 @@
 // src/context/state.js
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { serviceItem } from './types';
+import { Config, serviceItem } from './types';
 
-type servicesContextType = {
-  services: serviceItem[];
-  setServicesState: (services: serviceItem[]) => void;
+type configContextType = {
+  config: Config;
+  setConfig: (newconfig: Config) => void;
   addService: (service: serviceItem) => void;
   removeService: (name: string) => void;
+  saveConfig: (newconfig: Config) => void;
 };
 
-const servicesContext = createContext<servicesContextType>({
-  services: [],
-  setServicesState: () => {},
+const configContext = createContext<configContextType>({
+  config: {
+    services: [],
+    settings: {
+      searchBar: true,
+      searchUrl: 'https://www.google.com/search?q=',
+    },
+  },
+  setConfig: () => {},
   addService: () => {},
   removeService: () => {},
+  saveConfig: () => {},
 });
 
-export function useServices() {
-  const context = useContext(servicesContext);
+export function useConfig() {
+  const context = useContext(configContext);
   if (context === undefined) {
-    throw new Error('useServices must be used within a ServicesProvider');
+    throw new Error('useConfig must be used within a ConfigProvider');
   }
   return context;
 }
@@ -28,40 +36,65 @@ type Props = {
   children: ReactNode;
 };
 
-export function ServicesProvider({ children }: Props) {
-  const [services, setServices] = useState<serviceItem[]>([
-    {
-      type: 'Other',
-      name: 'example',
-      icon: 'https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif',
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+export function ConfigProvider({ children }: Props) {
+  const [config, setConfigInternal] = useState<Config>({
+    services: [
+      {
+        type: 'Other',
+        name: 'example',
+        icon: 'https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      },
+    ],
+    settings: {
+      searchBar: true,
+      searchUrl: 'https://www.google.com/search?q=',
     },
-  ]);
+  });
 
-  function setServicesState(services: serviceItem[]) {
-    setServices(services);
-    localStorage.setItem('services', JSON.stringify(services));
+  function setConfig(newConfig: Config) {
+    setConfigInternal(newConfig);
+    saveConfig(newConfig);
   }
 
   function addService(item: serviceItem) {
-    setServices([...services, item]);
-    localStorage.setItem('services', JSON.stringify([...services, item]));
+    setConfigInternal({
+      ...config,
+      services: [...config.services, item],
+    });
+    saveConfig({
+      ...config,
+      services: [...config.services, item],
+    });
   }
 
   function removeService(name: string) {
-    setServices(services.filter((s) => s.name !== name));
-    localStorage.setItem('services', JSON.stringify(services.filter((s) => s.name !== name)));
+    // Remove the service with name in config item
+    setConfigInternal({
+      ...config,
+      services: config.services.filter((service) => service.name !== name),
+    });
+    saveConfig({
+      ...config,
+      services: config.services.filter((service) => service.name !== name),
+    });
+  }
+
+  function saveConfig(newconfig: Config) {
+    if (!newconfig) return;
+    localStorage.setItem('config', JSON.stringify(newconfig));
   }
 
   const value = {
-    services,
-    setServicesState,
+    config,
+    setConfig,
     addService,
     removeService,
+    saveConfig,
   };
   return (
     <>
-      <servicesContext.Provider value={value}>{children}</servicesContext.Provider>
+      <configContext.Provider value={value}>{children}</configContext.Provider>
     </>
   );
 }
