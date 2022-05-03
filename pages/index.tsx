@@ -10,7 +10,6 @@ export default function HomePage() {
       <SearchBar />
       <Group align={'start'} position="apart" noWrap>
         <AppShelf />
-        <CalendarComponent />
       </Group>
       <LoadConfigComponent />
     </>
