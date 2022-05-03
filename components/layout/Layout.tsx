@@ -1,6 +1,7 @@
-import { AppShell, Center, createStyles } from '@mantine/core';
+import { AppShell, Aside, Center, createStyles } from '@mantine/core';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import CalendarComponent from '../calendar/CalendarComponent';
 
 const useStyles = createStyles((theme) => ({
   main: {
@@ -13,10 +14,27 @@ const useStyles = createStyles((theme) => ({
 export default function Layout({ children, style }: any) {
   const { classes, cx } = useStyles();
   return (
-    <AppShell header={<Header links={[]} />} footer={<Footer links={[]} />}>
+    <AppShell
+      
+      aside={
+        <Aside
+        height={'auto'}
+        width={{
+          xs: 'auto',
+          md: 'auto',
+          lg: 'auto',
+          xl: 'auto',
+        }}
+        >
+          <CalendarComponent />
+        </Aside>
+      }
+      header={<Header links={[]} />}
+      footer={<Footer links={[]} />}
+    >
       <Center>
         <main
-          className={cx(classes.main)}
+          // className={cx(classes.main)}
           style={{
             ...style,
           }}

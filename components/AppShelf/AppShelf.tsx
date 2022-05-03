@@ -93,6 +93,7 @@ const AppShelf = (props: any) => {
           </Box>
         </motion.div>
       ))}
+      <AddItemShelfItem/>
     </SimpleGrid>
   );
 };

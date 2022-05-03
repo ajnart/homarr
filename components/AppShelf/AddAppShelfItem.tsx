@@ -17,10 +17,11 @@ import { useForm } from '@mantine/hooks';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
+import { useConfig } from '../../tools/state';
 import { ServiceType, ServiceTypeList } from '../../tools/types';
 
 export default function AddItemShelfItem(props: any) {
-  const { additem: addItem } = props;
+  const { config, addService } = useConfig();
   const [opened, setOpened] = useState(false);
   const theme = useMantineTheme();
   const form = useForm({
@@ -53,7 +54,7 @@ export default function AddItemShelfItem(props: any) {
         </Center>
         <form
           onSubmit={form.onSubmit(() => {
-            addItem(form.values);
+            addService(form.values);
             setOpened(false);
             form.reset();
           })}

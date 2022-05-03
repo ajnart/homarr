@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <>
       <SearchBar />
-      <Group align={"start"} position="apart" noWrap>
+      <Group align={'start'} position="apart" noWrap>
         <AppShelf />
         <CalendarComponent />
       </Group>

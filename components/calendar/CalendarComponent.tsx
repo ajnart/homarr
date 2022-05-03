@@ -1,4 +1,14 @@
-import { Group, Indicator, Popover, Box, Container, Text, Avatar, ActionIcon } from '@mantine/core';
+import {
+  Group,
+  Indicator,
+  Popover,
+  Box,
+  Container,
+  Text,
+  Avatar,
+  ActionIcon,
+  Center,
+} from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import dayjs from 'dayjs';
@@ -20,7 +30,6 @@ async function GetCalendars(endDate: Date) {
       fetch(`${service.url}/api/v3/calendar?end=${endDate}?apikey=${service.apiKey}`)
     )
   );
-  console.log(Calendars);
 }
 
 export default function CalendarComponent(props: any) {
@@ -28,7 +37,6 @@ export default function CalendarComponent(props: any) {
   // const [medias, setMedias] = useState();
   const dates = medias.map((media) => media.inCinemas);
   const parsedDates = dates.map((date) => dayjs(date));
-  console.log(parsedDates);
 
   // useEffect(() => {
   //   const { services } = props;
@@ -78,23 +86,25 @@ function DayComponent(props: any) {
 
   if (match > -1) {
     return (
-      <ActionIcon
+      <Box
         onClick={() => {
           setOpened(true);
-          console.log();
         }}
-        color="teal"
-        variant="light"
+        style={{ height: '100%', width: '100%' }}
       >
-        <Popover
-          position="right"
-          width={700}
-          onClose={() => setOpened(false)}
-          opened={opened}
-          target={day}
-          children={<MediaDisplay media={medias[match]} />}
-        />
-      </ActionIcon>
+        <Center>
+          <Indicator size={10} color="red">
+            <Popover
+              position="left"
+              width={700}
+              onClose={() => setOpened(false)}
+              opened={opened}
+              target={day}
+              children={<MediaDisplay media={medias[match]} />}
+            />
+          </Indicator>
+        </Center>
+      </Box>
     );
   }
   return <div>{day}</div>;
