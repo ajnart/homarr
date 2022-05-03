@@ -81,7 +81,7 @@ const AppShelf = (props: any) => {
                 <motion.div whileHover={{ scale: 1.2 }}>
                   <Image
                     style={{
-                      maxWidth: 100,
+                      maxWidth: 80,
                     }}
                     fit="cover"
                     src={service.icon}
