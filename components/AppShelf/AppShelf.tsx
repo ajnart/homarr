@@ -4,11 +4,12 @@ import {
   Text,
   AspectRatio,
   createStyles,
-  Center,
   SimpleGrid,
   Card,
   useMantineTheme,
   Image,
+  Group,
+  Space,
 } from '@mantine/core';
 import AppShelfMenu from './AppShelfMenu';
 import AddItemShelfItem from './AddAppShelfItem';
@@ -60,6 +61,7 @@ export function AppShelfItem(props: any) {
   const [hovering, setHovering] = useState(false);
   return (
     <motion.div
+      key={service.name}
       onHoverStart={(e) => {
         setHovering(true);
       }}
@@ -74,19 +76,35 @@ export function AppShelfItem(props: any) {
         }}
         radius="md"
       >
-        <motion.div
-          animate={{
-            opacity: hovering ? 1 : 0,
-          }}
-        >
-          <AppShelfMenu name={service.name} removeitem={removeService} />
-        </motion.div>
         <Card.Section>
-          <Center>
-            <Text mt="sm" weight={500}>
+          <Group position="apart" mx="lg">
+            <Space />
+            <Text
+              // TODO: #1 Remove this hack to get the text to be centered.
+              ml={15}
+              style={{
+                alignSelf: 'center',
+                alignContent: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                justifyItems: 'center',
+              }}
+              mt="sm"
+              weight={500}
+            >
               {service.name}
             </Text>
-          </Center>
+            <motion.div
+              style={{
+                alignSelf: 'flex-end',
+              }}
+              animate={{
+                opacity: hovering ? 1 : 0,
+              }}
+            >
+              <AppShelfMenu name={service.name} removeitem={removeService} />
+            </motion.div>
+          </Group>
         </Card.Section>
         <Card.Section>
           <AspectRatio ratio={5 / 3} m="xl">

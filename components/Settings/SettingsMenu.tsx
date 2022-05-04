@@ -46,7 +46,7 @@ function SettingsMenu(props: any) {
           color: '#a0aec0',
         }}
       >
-        tip: You can upload your config file by dragging and dropping it into the page
+        tip: You can upload your config file by dragging and dropping it onto the page
       </Text>
     </Group>
   );

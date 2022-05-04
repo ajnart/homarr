@@ -5,17 +5,12 @@ import { Check, Edit, Trash } from 'tabler-icons-react';
 export default function AppShelfMenu(props: any) {
   const { name, removeitem: removeItem } = props;
   return (
-    <Menu
-      style={{
-        position: 'absolute',
-        top: 10,
-        right: 10,
-      }}
-    >
+    <Menu position="right">
       <Menu.Label>Settings</Menu.Label>
       <Menu.Item
         color="primary"
         icon={<Edit size={14} />}
+        // TODO: #2 Add the ability to edit the service.
         onClick={() => {
           showNotification({
             color: 'red',
