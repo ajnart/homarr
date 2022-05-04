@@ -145,9 +145,11 @@ export function Header({ links }: HeaderResponsiveProps) {
           onClose={() => toggleOpened()}
           position="right"
         >
-          <Center>
-            <CalendarComponent />
-          </Center>
+          {opened ?? (
+            <Center>
+              <CalendarComponent />
+            </Center>
+          )}
         </Drawer>
       </Container>
     </Head>

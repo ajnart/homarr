@@ -1,102 +1,93 @@
 import { Indicator, Popover, Box, Center } from '@mantine/core';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
-import dayjs from 'dayjs';
 import MediaDisplay from './MediaDisplay';
-import { medias } from './mediaExample';
 import { useConfig } from '../../tools/state';
-
-async function GetCalendars(endDate: Date) {
-  // Load context
-  const { config, addService, removeService, setConfig } = useConfig();
-  // Load services that have the type to "Sonarr" or "Radarr"
-  const sonarrServices = config.services.filter((service) => service.type === 'Sonarr');
-  const radarrServices = config.services.filter((service) => service.type === 'Radarr');
-  // Merge the two arrays
-  const allServices = [...sonarrServices, ...radarrServices];
-  // Load the calendars for each service
-  const Calendars = await Promise.all(
-    allServices.map((service) =>
-      fetch(`${service.url}/api/v3/calendar?end=${endDate}?apikey=${service.apiKey}`)
-    )
-  );
-}
+import { serviceItem } from '../../tools/types';
 
 export default function CalendarComponent(props: any) {
+  const { config } = useConfig();
   const [opened, setOpened] = useState(false);
-  // const [medias, setMedias] = useState();
-  const dates = medias.map((media) => media.inCinemas);
-  const parsedDates = dates.map((date) => dayjs(date));
+  const [medias, setMedias] = useState([] as any);
+  if (medias === undefined) {
+    return <div>ok</div>;
+  }
+  useEffect(() => {
+    // Filter only sonarr and radarr services
+    const filtered = config.services.filter(
+      (service) => service.type === 'Sonarr' || service.type === 'Radarr'
+    );
 
-  // useEffect(() => {
-  //   const { services } = props;
-  //   // Get the url and API key for each service
-  //   const serviceUrls = services.map((service: serviceItem) => {
-  //     return {
-  //       url: service.url,
-  //       apiKey: service.apiKey,
-  //     };
-  //   });
-  //   // Get the medias from each service
-  //   const promises = serviceUrls.map((service: serviceItem) => {
-  //     return fetch(`${service.url}/api/v3/calendar`, {
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'X-Api-Key': service.apiKey,
-  //       },
-  //     });
-  //   });
-  //   // Wait for all the promises to resolve
-  //   Promise.all(promises).then((responses) => {
-  //     // Get the medias from each service
-  //     const medias = responses.map((response) => {
-  //       return response.json();
-  //     });
-  //     // Set the medias
-  //     setMedias(medias);
-  //   }
-  //   );
-  // }, []);
+    // Get the url and API key for each service
+    const serviceUrls = filtered.map((service: serviceItem) => ({
+      url: service.url,
+      apiKey: service.apiKey,
+    }));
+
+    // Get the medias from each service
+    // With no cors
+    // const promises = serviceUrls.map((service) =>
+    //   fetch('/api/getCalendar', {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //       apiKey: service.apiKey,
+    //       remoteUrl: service.url,
+    //     }),
+    //   }).then((response) => console.log(response.json()))
+    // );
+    fetch('http://server:8989/api/calendar?apikey=ea736455118146fea297e6c7465205ce').then(
+      (response) => {
+        response.json().then((data) => setMedias(data));
+      }
+    );
+  }, [config.services]);
+
+  if (medias === undefined) {
+    return <div>ok</div>;
+  }
 
   return (
     <Calendar
       onChange={(day: any) => {}}
-      renderDay={(renderdate) => <DayComponent renderdate={renderdate} parsedDates={parsedDates} />}
+      renderDay={(renderdate) => <DayComponent renderdate={renderdate} medias={medias} />}
     />
   );
 }
 
 function DayComponent(props: any) {
-  const { renderdate, parsedDates }: { renderdate: Date; parsedDates: dayjs.Dayjs[] } = props;
+  const { renderdate, medias }: { renderdate: Date; medias: [] } = props;
   const [opened, setOpened] = useState(false);
 
   const day = renderdate.getDate();
-  const match = parsedDates.findIndex((date) => date.isSame(dayjs(renderdate), 'day'));
-
-  if (match > -1) {
-    return (
-      <Box
-        onClick={() => {
-          setOpened(true);
-        }}
-        style={{ height: '100%', width: '100%' }}
-      >
-        <Center>
-          <Indicator size={10} color="red">
-            <Popover
-              position="left"
-              width={700}
-              onClose={() => setOpened(false)}
-              opened={opened}
-              target={day}
-            >
-              <MediaDisplay media={medias[match]} />
-            </Popover>
-          </Indicator>
-        </Center>
-      </Box>
-    );
+  // Itterate over the medias and filter the ones that are on the same day
+  const filtered = medias.filter((media: any) => {
+    const date = new Date(media.airDate);
+    return date.getDate() === day;
+  });
+  if (filtered.length === 0) {
+    return <div>{day}</div>;
   }
-  return <div>{day}</div>;
+
+  return (
+    <Box
+      onClick={() => {
+        setOpened(true);
+      }}
+      style={{ height: '100%', width: '100%' }}
+    >
+      <Center>
+        <Indicator size={10} color="red">
+          <Popover
+            position="left"
+            width={700}
+            onClose={() => setOpened(false)}
+            opened={opened}
+            target={day}
+          >
+            <MediaDisplay media={filtered[0]} />
+          </Popover>
+        </Indicator>
+      </Center>
+    </Box>
+  );
 }

@@ -20,6 +20,7 @@ import { serviceItem } from '../../tools/types';
 const useStyles = createStyles((theme) => ({
   main: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+    //TODO: #3 Fix this temporary fix and make the width and height dynamic / responsive
     width: 200,
     height: 180,
   },

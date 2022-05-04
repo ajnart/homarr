@@ -15,8 +15,8 @@ export default function MediaDisplay(props: any) {
   return (
     <Group noWrap align="self-start">
       <Image
-        src={media.images[0].url}
-        alt={media.title}
+        src={media.series.images[0].url}
+        alt={media.series.title}
         style={{
           maxWidth: 300,
         }}
@@ -28,12 +28,12 @@ export default function MediaDisplay(props: any) {
         })}
       >
         <Group direction="column">
-          <Title order={3}>{media.title}</Title>
+          <Title order={3}>{media.series.title}</Title>
           <Text>{media.overview}</Text>
         </Group>
         {/*Add the genres at the bottom of the poster*/}
         <Group>
-          {media.genres.map((genre: string, i: number) => (
+          {media.series.genres.map((genre: string, i: number) => (
             <Badge key={i}>{genre}</Badge>
           ))}
         </Group>
