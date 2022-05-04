@@ -1,30 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  Grid,
-  Group,
   Text,
-  Anchor,
-  Box,
   AspectRatio,
   createStyles,
   Center,
-  Container,
   SimpleGrid,
-  Space,
   Card,
   useMantineTheme,
   Image,
-  Badge,
 } from '@mantine/core';
-import { showNotification } from '@mantine/notifications';
-import { AlertCircle, Cross, X } from 'tabler-icons-react';
 import AppShelfMenu from './AppShelfMenu';
 import AddItemShelfItem from './AddAppShelfItem';
 import { useConfig } from '../../tools/state';
 import { pingQbittorrent } from '../../tools/api';
-import { Config, serviceItem } from '../../tools/types';
-import { SettingsMenuButton } from '../Settings/SettingsMenu';
+import { serviceItem } from '../../tools/types';
 
 const useStyles = createStyles((theme) => ({
   main: {
@@ -82,7 +72,7 @@ export function AppShelfItem(props: any) {
         style={{
           boxShadow: hovering ? '0px 0px 3px rgba(0, 0, 0, 0.5)' : '0px 0px 1px rgba(0, 0, 0, 0.5)',
         }}
-        radius={'md'}
+        radius="md"
       >
         <motion.div
           animate={{
@@ -93,7 +83,7 @@ export function AppShelfItem(props: any) {
         </motion.div>
         <Card.Section>
           <Center>
-            <Text mt={'sm'} weight={500}>
+            <Text mt="sm" weight={500}>
               {service.name}
             </Text>
           </Center>

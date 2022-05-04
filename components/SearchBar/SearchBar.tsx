@@ -1,27 +1,8 @@
-import {
-  Input,
-  TextInput,
-  Text,
-  ActionIcon,
-  useMantineTheme,
-  Center,
-  Popover,
-  Box,
-} from '@mantine/core';
+import { TextInput, Text, Popover, Box } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
-import { showNotification } from '@mantine/notifications';
-import { useState, useEffect } from 'react';
-import {
-  Search,
-  ArrowRight,
-  ArrowLeft,
-  BrandYoutube,
-  Download,
-  InfoCircle,
-  FileX,
-} from 'tabler-icons-react';
+import { useState } from 'react';
+import { Search, BrandYoutube, Download } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
-import { Settings } from '../../tools/types';
 
 export default function SearchBar(props: any) {
   const { config, setConfig } = useConfig();
@@ -35,7 +16,7 @@ export default function SearchBar(props: any) {
     },
   });
 
-  if (config.settings.searchBar == false) {
+  if (config.settings.searchBar === false) {
     return null;
   }
 

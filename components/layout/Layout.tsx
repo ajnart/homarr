@@ -17,7 +17,7 @@ export default function Layout({ children, style }: any) {
     <AppShell
       aside={
         <Aside
-          height={'auto'}
+          height="auto"
           hiddenBreakpoint="md"
           hidden
           width={{

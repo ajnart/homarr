@@ -1,6 +1,5 @@
-import { Anchor, Button, ThemeIcon, Tooltip } from '@mantine/core';
+import { Button } from '@mantine/core';
 import fileDownload from 'js-file-download';
-import { Dropzone, DropzoneStatus, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { Download } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 

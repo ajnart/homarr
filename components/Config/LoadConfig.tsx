@@ -1,11 +1,11 @@
-import { Group, Text, useMantineTheme, MantineTheme, Notification } from '@mantine/core';
+import { Group, Text, useMantineTheme, MantineTheme } from '@mantine/core';
 import { Upload, Photo, X, Icon as TablerIcon, Check } from 'tabler-icons-react';
-import { Dropzone, DropzoneStatus, FullScreenDropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone';
+import { DropzoneStatus, FullScreenDropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import { useConfig } from '../../tools/state';
-import { Config, serviceItem } from '../../tools/types';
+import { Config } from '../../tools/types';
 
 function getIconColor(status: DropzoneStatus, theme: MantineTheme) {
   return status.accepted

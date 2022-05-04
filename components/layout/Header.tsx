@@ -5,9 +5,6 @@ import {
   Container,
   Group,
   Burger,
-  Paper,
-  Transition,
-  Aside,
   Drawer,
   Center,
 } from '@mantine/core';
@@ -15,7 +12,6 @@ import { useBooleanToggle } from '@mantine/hooks';
 import { NextLink } from '@mantine/next';
 import { Logo } from './Logo';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
-import SaveConfigComponent from '../Config/SaveConfig';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import CalendarComponent from '../calendar/CalendarComponent';
 

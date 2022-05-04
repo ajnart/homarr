@@ -1,4 +1,4 @@
-import { ActionIcon, Box, useMantineColorScheme } from '@mantine/core';
+import { Box, useMantineColorScheme } from '@mantine/core';
 import { Sun, MoonStars } from 'tabler-icons-react';
 import { motion } from 'framer-motion';
 

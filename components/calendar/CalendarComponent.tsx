@@ -1,15 +1,5 @@
-import {
-  Group,
-  Indicator,
-  Popover,
-  Box,
-  Container,
-  Text,
-  Avatar,
-  ActionIcon,
-  Center,
-} from '@mantine/core';
-import { useEffect, useState } from 'react';
+import { Indicator, Popover, Box, Center } from '@mantine/core';
+import { useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import dayjs from 'dayjs';
 import MediaDisplay from './MediaDisplay';
@@ -100,8 +90,9 @@ function DayComponent(props: any) {
               onClose={() => setOpened(false)}
               opened={opened}
               target={day}
-              children={<MediaDisplay media={medias[match]} />}
-            />
+            >
+              <MediaDisplay media={medias[match]} />
+            </Popover>
           </Indicator>
         </Center>
       </Box>

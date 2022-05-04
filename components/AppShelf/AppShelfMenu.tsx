@@ -5,11 +5,13 @@ import { Check, Edit, Trash } from 'tabler-icons-react';
 export default function AppShelfMenu(props: any) {
   const { name, removeitem: removeItem } = props;
   return (
-    <Menu style={{
-      position: 'absolute',
-      top: 10,
-      right: 10,
-    }}>
+    <Menu
+      style={{
+        position: 'absolute',
+        top: 10,
+        right: 10,
+      }}
+    >
       <Menu.Label>Settings</Menu.Label>
       <Menu.Item
         color="primary"

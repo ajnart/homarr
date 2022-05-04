@@ -1,7 +1,6 @@
 import React from 'react';
 import { createStyles, Anchor, Text, Group, ActionIcon } from '@mantine/core';
-import { BrandGithub, Phone, BrandGmail } from 'tabler-icons-react';
-import { posix } from 'path';
+import { BrandGithub } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme) => ({
   footer: {

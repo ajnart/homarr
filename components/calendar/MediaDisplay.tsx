@@ -1,4 +1,4 @@
-import { Stack, Paper, Image, Group, Title, Badge, Text } from '@mantine/core';
+import { Stack, Image, Group, Title, Badge, Text } from '@mantine/core';
 
 export interface IMedia {
   id: string;

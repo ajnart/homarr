@@ -1,7 +1,6 @@
 import {
   useMantineTheme,
   Modal,
-  Paper,
   Center,
   Group,
   TextInput,
@@ -9,9 +8,7 @@ import {
   Button,
   Select,
   AspectRatio,
-  Box,
   Text,
-  Grid,
   Card,
 } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
@@ -19,10 +16,10 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
-import { ServiceType, ServiceTypeList } from '../../tools/types';
+import { ServiceTypeList } from '../../tools/types';
 
 export default function AddItemShelfItem(props: any) {
-  const { config, addService } = useConfig();
+  const { addService } = useConfig();
   const [opened, setOpened] = useState(false);
   const theme = useMantineTheme();
   const form = useForm({
@@ -123,7 +120,6 @@ export default function AddItemShelfItem(props: any) {
       >
         <Card
           style={{
-
             backgroundColor:
               theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
             width: 200,
