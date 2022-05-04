@@ -12,6 +12,7 @@ import {
   Box,
   Text,
   Grid,
+  Card,
 } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
 import { motion } from 'framer-motion';
@@ -30,9 +31,8 @@ export default function AddItemShelfItem(props: any) {
       name: '',
       icon: '',
       url: '',
+      apiKey: undefined as unknown as string,
     },
-
-    validationRules: {},
   });
   return (
     <>
@@ -85,7 +85,7 @@ export default function AddItemShelfItem(props: any) {
               placeholder="http://localhost:8989"
               value={form.values.url}
               onChange={(event) => form.setFieldValue('url', event.currentTarget.value)}
-              error={form.errors.icon && 'Icon url is invalid'}
+              error={form.errors.url && 'Service url is invalid'}
             />
             <Select
               label="Select the type of service (used for API calls)"
@@ -97,6 +97,16 @@ export default function AddItemShelfItem(props: any) {
               onChange={(value) => form.setFieldValue('type', value ?? 'Other')}
               data={ServiceTypeList}
             />
+            {(form.values.type === 'Sonarr' || form.values.type === 'Radarr') && (
+              <TextInput
+                required
+                label="API key"
+                placeholder="Your API key"
+                value={form.values.apiKey}
+                onChange={(event) => form.setFieldValue('apiKey', event.currentTarget.value)}
+                error={form.errors.apiKey && 'Invalid API key'}
+              />
+            )}
           </Group>
 
           <Group grow position="center" mt="xl">
@@ -111,18 +121,15 @@ export default function AddItemShelfItem(props: any) {
         }}
         ratio={4 / 3}
       >
-        <Box
-          sx={{
+        <Card
+          style={{
+
             backgroundColor:
-              theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-            textAlign: 'center',
-            padding: theme.spacing.xl,
-            borderRadius: theme.radius.md,
-            '&:hover': {
-              backgroundColor:
-                theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-            },
+              theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+            width: 200,
+            height: 180,
           }}
+          radius="md"
         >
           <Group direction="column" position="center">
             <motion.div whileHover={{ scale: 1.2 }}>
@@ -130,7 +137,7 @@ export default function AddItemShelfItem(props: any) {
             </motion.div>
             <Text>Add Service</Text>
           </Group>
-        </Box>
+        </Card>
       </AspectRatio>
     </>
   );

@@ -4,7 +4,6 @@ import {
   Grid,
   Group,
   Text,
-  Image,
   Anchor,
   Box,
   AspectRatio,
@@ -13,6 +12,10 @@ import {
   Container,
   SimpleGrid,
   Space,
+  Card,
+  useMantineTheme,
+  Image,
+  Badge,
 } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { AlertCircle, Cross, X } from 'tabler-icons-react';
@@ -20,27 +23,19 @@ import AppShelfMenu from './AppShelfMenu';
 import AddItemShelfItem from './AddAppShelfItem';
 import { useConfig } from '../../tools/state';
 import { pingQbittorrent } from '../../tools/api';
-import { Config } from '../../tools/types';
+import { Config, serviceItem } from '../../tools/types';
+import { SettingsMenuButton } from '../Settings/SettingsMenu';
 
 const useStyles = createStyles((theme) => ({
   main: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-    textAlign: 'center',
-    padding: theme.spacing.xl,
-    borderRadius: theme.radius.sm,
     width: 200,
     height: 180,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
-    },
   },
 }));
 
 const AppShelf = (props: any) => {
   const { config, addService, removeService, setConfig } = useConfig();
-  const { classes } = useStyles();
-  const [hovering, setHovering] = useState('none');
 
   /* A hook that is used to load the config from local storage. */
   useEffect(() => {
@@ -60,42 +55,73 @@ const AppShelf = (props: any) => {
   return (
     <SimpleGrid m="xl" cols={4} spacing="xl">
       {config.services.map((service, i) => (
-        <motion.div
-          onHoverStart={(e) => {
-            setHovering(service.name);
-          }}
-          onHoverEnd={(e) => {
-            setHovering('none');
-          }}
-        >
-          <Box className={classes.main}>
-            <Group position="center">
-              <Space />
-              <Text>{service.name}</Text>
-              <motion.div animate={{ opacity: hovering == service.name ? 1 : 0 }}>
-                <AppShelfMenu removeitem={removeService} name={service.name} />
-              </motion.div>
-            </Group>
-            <Group direction="column" position="center">
-              <Anchor href={service.url} target="_blank">
-                <motion.div whileHover={{ scale: 1.2 }}>
-                  <Image
-                    style={{
-                      maxWidth: 80,
-                    }}
-                    fit="cover"
-                    src={service.icon}
-                    alt={service.name}
-                  />
-                </motion.div>
-              </Anchor>
-            </Group>
-          </Box>
-        </motion.div>
+        <AppShelfItem service={service} />
       ))}
-      <AddItemShelfItem/>
+      <AddItemShelfItem />
     </SimpleGrid>
   );
 };
+
+export function AppShelfItem(props: any) {
+  const { service }: { service: serviceItem } = props;
+  const theme = useMantineTheme();
+  const { removeService } = useConfig();
+  const { classes } = useStyles();
+  const [hovering, setHovering] = useState(false);
+  return (
+    <motion.div
+      onHoverStart={(e) => {
+        setHovering(true);
+      }}
+      onHoverEnd={(e) => {
+        setHovering(false);
+      }}
+    >
+      <Card
+        className={classes.main}
+        style={{
+          boxShadow: hovering ? '0px 0px 3px rgba(0, 0, 0, 0.5)' : '0px 0px 1px rgba(0, 0, 0, 0.5)',
+        }}
+        radius={'md'}
+      >
+        <motion.div
+          animate={{
+            opacity: hovering ? 1 : 0,
+          }}
+        >
+          <AppShelfMenu name={service.name} removeitem={removeService} />
+        </motion.div>
+        <Card.Section>
+          <Center>
+            <Text mt={'sm'} weight={500}>
+              {service.name}
+            </Text>
+          </Center>
+        </Card.Section>
+        <Card.Section>
+          <AspectRatio ratio={5 / 3} m="xl">
+            <motion.i
+              whileHover={{
+                cursor: 'pointer',
+                scale: 1.1,
+              }}
+            >
+              <Image
+                onClick={() => {
+                  window.open(service.url);
+                }}
+                style={{
+                  maxWidth: '50%',
+                  marginBottom: 10,
+                }}
+                src={service.icon}
+              />
+            </motion.i>
+          </AspectRatio>
+        </Card.Section>
+      </Card>
+    </motion.div>
+  );
+}
 
 export default AppShelf;

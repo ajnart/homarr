@@ -15,16 +15,14 @@ export default function Layout({ children, style }: any) {
   const { classes, cx } = useStyles();
   return (
     <AppShell
-      
       aside={
         <Aside
-        height={'auto'}
-        width={{
-          xs: 'auto',
-          md: 'auto',
-          lg: 'auto',
-          xl: 'auto',
-        }}
+          height={'auto'}
+          hiddenBreakpoint="md"
+          hidden
+          width={{
+            base: 'auto',
+          }}
         >
           <CalendarComponent />
         </Aside>

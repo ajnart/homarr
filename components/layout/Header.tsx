@@ -7,6 +7,9 @@ import {
   Burger,
   Paper,
   Transition,
+  Aside,
+  Drawer,
+  Center,
 } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import { NextLink } from '@mantine/next';
@@ -14,6 +17,7 @@ import { Logo } from './Logo';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import SaveConfigComponent from '../Config/SaveConfig';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
+import CalendarComponent from '../calendar/CalendarComponent';
 
 const HEADER_HEIGHT = 60;
 
@@ -34,7 +38,7 @@ const useStyles = createStyles((theme) => ({
     borderTopWidth: 0,
     overflow: 'hidden',
 
-    [theme.fn.largerThan('sm')]: {
+    [theme.fn.largerThan('md')]: {
       display: 'none',
     },
   },
@@ -47,13 +51,13 @@ const useStyles = createStyles((theme) => ({
   },
 
   links: {
-    [theme.fn.smallerThan('sm')]: {
+    [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
   },
 
   burger: {
-    [theme.fn.largerThan('sm')]: {
+    [theme.fn.largerThan('md')]: {
       display: 'none',
     },
   },
@@ -127,22 +131,28 @@ export function Header({ links }: HeaderResponsiveProps) {
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
-        <SettingsMenuButton />
+        <Group>
+          <SettingsMenuButton />
 
-        <Burger
+          <Burger
+            opened={opened}
+            onClick={() => toggleOpened()}
+            className={classes.burger}
+            size="sm"
+          />
+        </Group>
+
+        <Drawer
           opened={opened}
-          onClick={() => toggleOpened()}
-          className={classes.burger}
-          size="sm"
-        />
-
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={{ zIndex: 99 }}>
-              {items}
-            </Paper>
-          )}
-        </Transition>
+          overlayOpacity={0.55}
+          overlayBlur={3}
+          onClose={() => toggleOpened()}
+          position="right"
+        >
+          <Center>
+            <CalendarComponent />
+          </Center>
+        </Drawer>
       </Container>
     </Head>
   );
