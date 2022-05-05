@@ -1,4 +1,4 @@
-import MediaDisplay from './MediaDisplay';
+import { RadarrMediaDisplay } from './MediaDisplay';
 
 export default {
   title: 'Media display component',
@@ -64,4 +64,4 @@ export default {
   },
 };
 
-export const Default = (args: any) => <MediaDisplay {...args} />;
+export const Default = (args: any) => <RadarrMediaDisplay {...args} />;
