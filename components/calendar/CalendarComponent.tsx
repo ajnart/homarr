@@ -88,6 +88,7 @@ function DayComponent(props: any) {
       style={{ height: '100%', width: '100%' }}
     >
       <Center>
+        {/* TODO: #6 Make the color of the indicator dependant on the type of medias avilable */}
         <Indicator size={10} color="red">
           <Popover
             position="left"
@@ -98,7 +99,7 @@ function DayComponent(props: any) {
           >
             <ScrollArea style={{ height: 400 }}>
               {sonarrFiltered.length > 0 && <SonarrMediaDisplay media={sonarrFiltered[0]} />}
-              <Divider my="xl" />
+              <Divider variant="dashed" my="xl" />
               {radarrFiltered.length > 0 && <RadarrMediaDisplay media={radarrFiltered[0]} />}
             </ScrollArea>
           </Popover>
