@@ -1,47 +1,63 @@
-import { Menu, Text } from '@mantine/core';
+import { Menu, Modal, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
+import { useState } from 'react';
 import { Check, Edit, Trash } from 'tabler-icons-react';
+import { AddAppShelfItemForm } from './AddAppShelfItem';
 
 export default function AppShelfMenu(props: any) {
-  const { name, removeitem: removeItem } = props;
+  const { service, removeitem: removeItem } = props;
+  const [opened, setOpened] = useState(false);
   return (
-    <Menu position="right">
-      <Menu.Label>Settings</Menu.Label>
-      <Menu.Item
-        color="primary"
-        icon={<Edit size={14} />}
-        // TODO: #2 Add the ability to edit the service.
-        onClick={() => {
-          showNotification({
-            color: 'red',
-            title: <Text>Feature not yet implemented</Text>,
-            message: `${name} could not be edited`,
-          });
-        }}
+    <>
+      <Modal
+        size="xl"
+        radius="lg"
+        opened={props.opened || opened}
+        onClose={() => setOpened(false)}
+        title="Modify a service"
       >
-        Rename
-      </Menu.Item>
-      <Menu.Label>Danger zone</Menu.Label>
-      <Menu.Item
-        color="red"
-        onClick={(e: any) => {
-          removeItem(name);
-          showNotification({
-            autoClose: 5000,
-            title: (
-              <Text>
-                Service <b>{name}</b> removed successfully
-              </Text>
-            ),
-            color: 'green',
-            icon: <Check />,
-            message: undefined,
-          });
-        }}
-        icon={<Trash size={14} />}
-      >
-        Delete
-      </Menu.Item>
-    </Menu>
+        <AddAppShelfItemForm
+          setOpened={setOpened}
+          name={service.name}
+          type={service.type}
+          url={service.url}
+          icon={service.icon}
+          apiKey={service.apiKey}
+          message="Save service"
+        />
+      </Modal>
+      <Menu position="right">
+        <Menu.Label>Settings</Menu.Label>
+        <Menu.Item
+          color="primary"
+          icon={<Edit size={14} />}
+          // TODO: #2 Add the ability to edit the service.
+          onClick={() => setOpened(true)}
+        >
+          Edit
+        </Menu.Item>
+        <Menu.Label>Danger zone</Menu.Label>
+        <Menu.Item
+          color="red"
+          onClick={(e: any) => {
+            removeItem(service.name);
+            showNotification({
+              autoClose: 5000,
+              title: (
+                <Text>
+                  Service <b>{service.name}</b> removed successfully
+                </Text>
+              ),
+              color: 'green',
+              icon: <Check />,
+              message: undefined,
+            });
+          }}
+          icon={<Trash size={14} />}
+        >
+          Delete
+        </Menu.Item>
+      </Menu>
+    </>
   );
 }

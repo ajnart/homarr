@@ -103,7 +103,7 @@ export function AppShelfItem(props: any) {
                 opacity: hovering ? 1 : 0,
               }}
             >
-              <AppShelfMenu name={service.name} removeitem={removeService} />
+              <AppShelfMenu service={service} removeitem={removeService} />
             </motion.div>
           </Group>
         </Card.Section>
