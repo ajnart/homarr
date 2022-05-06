@@ -32,7 +32,7 @@ export default function Layout({ children, style }: any) {
     >
       <Center>
         <main
-          // className={cx(classes.main)}
+          className={cx(classes.main)}
           style={{
             ...style,
           }}
