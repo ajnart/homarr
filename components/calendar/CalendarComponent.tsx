@@ -77,8 +77,6 @@ function DayComponent(props: any) {
   if (sonarrFiltered.length === 0 && radarrFiltered.length === 0) {
     return <div>{day}</div>;
   }
-  // TODO: #5 Add the ability to display multiple medias on the same day by looping over the filtered medias for each service type
-  // And adding a divider between the medias
 
   return (
     <Box
