@@ -89,7 +89,13 @@ function DayComponent(props: any) {
         {/* TODO: #6 Make the color of the indicator dependant on the type of medias avilable */}
         <>
           {radarrFiltered.length > 0 && (
-            <Indicator size={8} offset={10} position="bottom-center" color="yellow" children={null} />
+            <Indicator
+              size={8}
+              offset={10}
+              position="bottom-center"
+              color="yellow"
+              children={null}
+            />
           )}
           {sonarrFiltered.length > 0 && (
             <Indicator size={8} offset={-12} position="top-end" color="blue" children={null} />
@@ -99,11 +105,14 @@ function DayComponent(props: any) {
             width={700}
             onClose={() => setOpened(false)}
             opened={opened}
-            target={day}
+            // TODO: Fix this !! WTF ?
+            target={`‏ ${day}`}
           >
             <ScrollArea style={{ height: 400 }}>
               {sonarrFiltered.length > 0 && <SonarrMediaDisplay media={sonarrFiltered[0]} />}
-              {(radarrFiltered.length > 0 && sonarrFiltered.length > 0) && <Divider variant="dashed" my="xl" />}
+              {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
+                <Divider variant="dashed" my="xl" />
+              )}
               {radarrFiltered.length > 0 && <RadarrMediaDisplay media={radarrFiltered[0]} />}
             </ScrollArea>
           </Popover>

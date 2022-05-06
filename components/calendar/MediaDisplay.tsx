@@ -17,14 +17,7 @@ export function RadarrMediaDisplay(props: any) {
   // Return a movie poster containting the title and the description
   return (
     <Group noWrap align="self-start">
-      <Image
-        fit="cover"
-        src={poster.url}
-        alt={media.title}
-        style={{
-          maxWidth: 300,
-        }}
-      />
+      <Image fit="cover" src={poster.url} alt={media.title} width={300} height={400} />
       <Stack
         justify="space-between"
         sx={(theme) => ({
@@ -60,13 +53,7 @@ export function SonarrMediaDisplay(props: any) {
   // Return a movie poster containting the title and the description
   return (
     <Group noWrap align="self-start">
-      <Image
-        src={poster.url}
-        fit="cover"
-        width={300}
-        height={400}
-        alt={media.series.title}
-      />
+      <Image src={poster.url} fit="cover" width={300} height={400} alt={media.series.title} />
       <Stack
         justify="space-between"
         sx={(theme) => ({
