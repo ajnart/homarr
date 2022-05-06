@@ -13,14 +13,14 @@ export interface IMedia {
 export function RadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   // Find a poster CoverType
-  const poster = media.series.images.find((image: any) => image.coverType === 'poster');
+  const poster = media.images.find((image: any) => image.coverType === 'poster');
   // Return a movie poster containting the title and the description
   return (
     <Group noWrap align="self-start">
       <Image
         fit="cover"
         src={poster.url}
-        alt={media.series.title}
+        alt={media.title}
         style={{
           maxWidth: 300,
         }}
@@ -33,26 +33,18 @@ export function RadarrMediaDisplay(props: any) {
       >
         <Group direction="column">
           <Group>
-            <Title order={3}>{media.series.title}</Title>
-            <Anchor href={`https://www.imdb.com/title/${media.series.imdbId}`} target="_blank">
+            <Title order={3}>{media.title}</Title>
+            <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
               <ActionIcon>
                 <Link />
               </ActionIcon>
             </Anchor>
           </Group>
-          <Text
-            style={{
-              textAlign: 'center',
-              color: '#a0aec0',
-            }}
-          >
-            Season {media.seasonNumber} episode {media.episodeNumber}
-          </Text>
-          <Text>{media.series.overview}</Text>
+          <Text>{media.overview}</Text>
         </Group>
         {/*Add the genres at the bottom of the poster*/}
         <Group>
-          {media.series.genres.map((genre: string, i: number) => (
+          {media.genres.map((genre: string, i: number) => (
             <Badge key={i}>{genre}</Badge>
           ))}
         </Group>
@@ -69,12 +61,11 @@ export function SonarrMediaDisplay(props: any) {
   return (
     <Group noWrap align="self-start">
       <Image
-        fit="cover"
         src={poster.url}
+        fit="cover"
+        width={300}
+        height={400}
         alt={media.series.title}
-        style={{
-          maxWidth: 300,
-        }}
       />
       <Stack
         justify="space-between"
