@@ -1,4 +1,14 @@
-import { ActionIcon, Group, Modal, Switch, Title, Text, Tooltip, TextInput } from '@mantine/core';
+import {
+  ActionIcon,
+  Group,
+  Modal,
+  Switch,
+  Title,
+  Text,
+  Tooltip,
+  TextInput,
+  SegmentedControl,
+} from '@mantine/core';
 import { useState } from 'react';
 import { Settings as SettingsIcon } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
@@ -6,22 +16,35 @@ import SaveConfigComponent from '../Config/SaveConfig';
 
 function SettingsMenu(props: any) {
   const { config, setConfig } = useConfig();
-
+  const matches = [
+    { label: 'Google', value: 'https://google.com/search?q=' },
+    { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=' },
+    { label: 'Bing', value: 'https://bing.com/search?q=' },
+  ];
   return (
     <Group direction="column" grow>
-      <TextInput
-        label="Search bar querry url"
-        defaultValue={config.settings.searchUrl}
-        onChange={(e) =>
-          setConfig({
-            ...config,
-            settings: {
-              ...config.settings,
-              searchUrl: e.target.value,
-            },
-          })
-        }
-      />
+      <Group>
+        <SegmentedControl
+          title="Search engine"
+          defaultValue={
+            // Match config.settings.searchUrl with a key in the matches array
+            matches.find((match) => match.value === config.settings.searchUrl)?.value || 'Google'
+          }
+          onChange={
+            // Set config.settings.searchUrl to the value of the selected item
+            (e) =>
+              setConfig({
+                ...config,
+                settings: {
+                  ...config.settings,
+                  searchUrl: e,
+                },
+              })
+          }
+          data={matches}
+        />
+        <Text>Search engine</Text>
+      </Group>
       <Group direction="column">
         <Switch
           onChange={(e) =>
