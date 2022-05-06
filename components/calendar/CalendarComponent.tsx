@@ -1,5 +1,5 @@
 /* eslint-disable react/no-children-prop */
-import { Indicator, Popover, Box, Center, ScrollArea, Divider } from '@mantine/core';
+import { Indicator, Popover, Box, ScrollArea, Divider } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
@@ -83,41 +83,25 @@ function DayComponent(props: any) {
       onClick={() => {
         setOpened(true);
       }}
-      style={{ height: '100%', width: '100%' }}
     >
-      <Center>
-        {/* TODO: #6 Make the color of the indicator dependant on the type of medias avilable */}
-        <>
-          {radarrFiltered.length > 0 && (
-            <Indicator
-              size={8}
-              offset={10}
-              position="bottom-center"
-              color="yellow"
-              children={null}
-            />
+      {radarrFiltered.length > 0 && <Indicator size={7} color="yellow" children={null} />}
+      {sonarrFiltered.length > 0 && <Indicator size={7} offset={8} color="blue" children={null} />}
+      <Popover
+        position="left"
+        width={700}
+        onClose={() => setOpened(false)}
+        opened={opened}
+        // TODO: Fix this !! WTF ?
+        target={`‏ ${day}`}
+      >
+        <ScrollArea style={{ height: 400 }}>
+          {sonarrFiltered.length > 0 && <SonarrMediaDisplay media={sonarrFiltered[0]} />}
+          {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
+            <Divider variant="dashed" my="xl" />
           )}
-          {sonarrFiltered.length > 0 && (
-            <Indicator size={8} offset={-12} position="top-end" color="blue" children={null} />
-          )}
-          <Popover
-            position="left"
-            width={700}
-            onClose={() => setOpened(false)}
-            opened={opened}
-            // TODO: Fix this !! WTF ?
-            target={`‏ ${day}`}
-          >
-            <ScrollArea style={{ height: 400 }}>
-              {sonarrFiltered.length > 0 && <SonarrMediaDisplay media={sonarrFiltered[0]} />}
-              {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
-                <Divider variant="dashed" my="xl" />
-              )}
-              {radarrFiltered.length > 0 && <RadarrMediaDisplay media={radarrFiltered[0]} />}
-            </ScrollArea>
-          </Popover>
-        </>
-      </Center>
+          {radarrFiltered.length > 0 && <RadarrMediaDisplay media={radarrFiltered[0]} />}
+        </ScrollArea>
+      </Popover>
     </Box>
   );
 }

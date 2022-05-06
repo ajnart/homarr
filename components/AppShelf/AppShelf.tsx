@@ -45,7 +45,7 @@ const AppShelf = (props: any) => {
   }
 
   return (
-    <SimpleGrid m="xl" cols={4} spacing="xl">
+    <SimpleGrid m="xl" cols={5} spacing="xl">
       {config.services.map((service, i) => (
         <AppShelfItem key={service.name} service={service} />
       ))}
