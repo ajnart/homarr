@@ -1,5 +1,5 @@
 /* eslint-disable react/no-children-prop */
-import { Indicator, Popover, Box, ScrollArea, Divider } from '@mantine/core';
+import { Popover, Box, ScrollArea, Divider, Indicator } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
@@ -21,18 +21,18 @@ export default function CalendarComponent(props: any) {
     const sonarrService = filtered.filter((service) => service.type === 'Sonarr').at(0);
     const radarrService = filtered.filter((service) => service.type === 'Radarr').at(0);
     const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
-    if (sonarrService) {
+    if (sonarrService && sonarrService.apiKey) {
       fetch(
         `${sonarrService?.url}api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`
       ).then((response) => {
-        response.json().then((data) => setSonarrMedias(data));
+        response.ok && response.json().then((data) => setSonarrMedias(data));
       });
     }
-    if (radarrService) {
+    if (radarrService && radarrService.apiKey) {
       fetch(
         `${radarrService?.url}api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`
       ).then((response) => {
-        response.json().then((data) => setRadarrMedias(data));
+        response.ok && response.json().then((data) => setRadarrMedias(data));
       });
     }
   }, [config.services]);
