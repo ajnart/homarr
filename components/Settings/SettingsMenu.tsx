@@ -6,7 +6,6 @@ import {
   Title,
   Text,
   Tooltip,
-  TextInput,
   SegmentedControl,
 } from '@mantine/core';
 import { useState } from 'react';
