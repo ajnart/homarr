@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import { Indicator, Popover, Box, Center, ScrollArea, Divider } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
@@ -29,7 +30,7 @@ export default function CalendarComponent(props: any) {
     }
     if (radarrService) {
       fetch(
-        `${radarrService?.url}api/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`
+        `${radarrService?.url}api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`
       ).then((response) => {
         response.json().then((data) => setRadarrMedias(data));
       });
@@ -39,7 +40,6 @@ export default function CalendarComponent(props: any) {
   if (sonarrMedias === undefined && radarrMedias === undefined) {
     return <Calendar />;
   }
-
   return (
     <Calendar
       onChange={(day: any) => {}}
@@ -70,7 +70,7 @@ function DayComponent(props: any) {
     return date.getDate() === day && date.getMonth() === renderdate.getMonth();
   });
   const radarrFiltered = radarrmedias.filter((media: any) => {
-    const date = new Date(media.airDate);
+    const date = new Date(media.inCinemas);
     // Return true if the date is renerdate without counting hours and minutes
     return date.getDate() === day && date.getMonth() === renderdate.getMonth();
   });
@@ -89,7 +89,13 @@ function DayComponent(props: any) {
     >
       <Center>
         {/* TODO: #6 Make the color of the indicator dependant on the type of medias avilable */}
-        <Indicator size={10} color="red">
+        <>
+          {radarrFiltered.length > 0 && (
+            <Indicator size={8} offset={10} position="bottom-center" color="yellow" children={null} />
+          )}
+          {sonarrFiltered.length > 0 && (
+            <Indicator size={8} offset={-12} position="top-end" color="blue" children={null} />
+          )}
           <Popover
             position="left"
             width={700}
@@ -99,11 +105,11 @@ function DayComponent(props: any) {
           >
             <ScrollArea style={{ height: 400 }}>
               {sonarrFiltered.length > 0 && <SonarrMediaDisplay media={sonarrFiltered[0]} />}
-              <Divider variant="dashed" my="xl" />
+              {(radarrFiltered.length > 0 && sonarrFiltered.length > 0) && <Divider variant="dashed" my="xl" />}
               {radarrFiltered.length > 0 && <RadarrMediaDisplay media={radarrFiltered[0]} />}
             </ScrollArea>
           </Popover>
-        </Indicator>
+        </>
       </Center>
     </Box>
   );
