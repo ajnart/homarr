@@ -1,5 +1,5 @@
 # MyHomePage, a home page for your home server
-
+Join the discord ! : https://discord.gg/C2WTXkzkwK
 ## What is MyHomePage ?
 
 HomePage is a web page for your home server, it provides a user friendly interface to access docker containers or other services.
