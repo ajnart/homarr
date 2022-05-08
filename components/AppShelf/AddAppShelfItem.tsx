@@ -12,6 +12,7 @@ import {
   Card,
 } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
+import { UseForm } from '@mantine/hooks/lib/use-form/use-form';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
@@ -61,6 +62,33 @@ export default function AddItemShelfItem(props: any) {
   );
 }
 
+function MatchIcon(
+  name: string,
+  form: UseForm<{
+    type: any;
+    name: any;
+    icon: any;
+    url: any;
+    apiKey: any;
+  }>
+) {
+  // TODO: In order to avoid all the requests, we could fetch
+  // https://data.jsdelivr.com/v1/package/gh/IceWhaleTech/AppIcon@main
+  // and then iterate over the files -> files -> name and then remove the extension (.png)
+  // Compare it to the input and then fetch the icon
+  fetch(`https://cdn.jsdelivr.net/gh/IceWhaleTech/AppIcon@main/all/${name.toLowerCase()}.png`)
+    .then((res) => {
+      if (res.status === 200) {
+        form.setFieldValue('icon', res.url);
+      }
+    })
+    .catch((e) => {
+      // Do nothing
+    });
+
+  return false;
+}
+
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
   const { addService, config, setConfig } = useConfig();
@@ -107,7 +135,13 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             label="Service name"
             placeholder="Plex"
             value={form.values.name}
-            onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
+            onChange={(event) => {
+              form.setFieldValue('name', event.currentTarget.value);
+              const match = MatchIcon(event.currentTarget.value, form);
+              if (match) {
+                form.setFieldValue('icon', match);
+              }
+            }}
             error={form.errors.name && 'Invalid name'}
           />
 
