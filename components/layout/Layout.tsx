@@ -1,7 +1,7 @@
 import { AppShell, Aside, Center, createStyles } from '@mantine/core';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import CalendarComponent from '../calendar/CalendarComponent';
+import CalendarComponent from '../modules/calendar/CalendarModule';
 
 const useStyles = createStyles((theme) => ({
   main: {

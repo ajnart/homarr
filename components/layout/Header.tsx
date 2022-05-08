@@ -13,7 +13,7 @@ import { NextLink } from '@mantine/next';
 import { Logo } from './Logo';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
-import CalendarComponent from '../calendar/CalendarComponent';
+import CalendarComponent from '../modules/calendar/CalendarModule';
 
 const HEADER_HEIGHT = 60;
 

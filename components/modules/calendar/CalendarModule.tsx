@@ -3,11 +3,19 @@ import { Popover, Box, ScrollArea, Divider, Indicator } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
-import { useConfig } from '../../tools/state';
+import { useConfig } from '../../../tools/state';
+import { CalendarIcon } from '@modulz/radix-icons';
+import { MHPModule } from '../modules';
+
+export const CalendarModule: MHPModule = {
+  title: 'Calendar',
+  description: 'A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.',
+  icon: CalendarIcon,
+  component: CalendarComponent,
+};
 
 export default function CalendarComponent(props: any) {
   const { config } = useConfig();
-  const [opened, setOpened] = useState(false);
   const [sonarrMedias, setSonarrMedias] = useState([] as any);
   const [radarrMedias, setRadarrMedias] = useState([] as any);
 
