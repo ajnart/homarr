@@ -8,8 +8,8 @@ HomePage is a web page for your home server, it provides a user friendly interfa
 ### Docker installation
 Required : Docker
 #### Standard docker install
-To install the MyHomePage docker image simply execute ``docker pull ajnart/mhp``  
-To run the docker file ``docker run --name my-home-page -p 7575:80 -d ajnart/mhp``  
+To install the MyHomePage docker image simply execute ``docker pull ghcr.io/ajnart/mhp``  
+To run the docker file ``docker run --name my-home-page -p 7575:80 -d ghcr.io/ajnart/mhp``  
 
 *Note: Currently the port used is 80 (Nginx default port) It will change to be 7575 by default*  
 #### Docker compose
