@@ -11,7 +11,6 @@ import {
 import { useBooleanToggle } from '@mantine/hooks';
 import { NextLink } from '@mantine/next';
 import { Logo } from './Logo';
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import CalendarComponent from '../modules/calendar/CalendarModule';
 
@@ -119,7 +118,6 @@ export function Header({ links }: HeaderResponsiveProps) {
     <Head height={HEADER_HEIGHT} mb={10} className={classes.root}>
       <Container className={classes.header}>
         <Group>
-          <ColorSchemeToggle />
           <NextLink style={{ textDecoration: 'none' }} href="/">
             <Logo style={{ fontSize: 22 }} />
           </NextLink>
