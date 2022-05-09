@@ -6,6 +6,7 @@ import { CalendarIcon } from '@modulz/radix-icons';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
 import { useConfig } from '../../../tools/state';
 import { MHPModule } from '../modules';
+import React from 'react';
 
 export const CalendarModule: MHPModule = {
   title: 'Calendar',
@@ -93,8 +94,12 @@ function DayComponent(props: any) {
         setOpened(true);
       }}
     >
-      {radarrFiltered.length > 0 && <Indicator size={7} color="yellow" children={null} />}
-      {sonarrFiltered.length > 0 && <Indicator size={7} offset={8} color="blue" children={null} />}
+      {radarrFiltered.length > 0 && (
+        <Indicator size={7} color="yellow" children={null} />
+      )}
+      {sonarrFiltered.length > 0 && (
+        <Indicator size={7} offset={8} color="blue" children={null} />
+      )}
       <Popover
         position="left"
         width={700}
@@ -104,11 +109,25 @@ function DayComponent(props: any) {
         target={`‏ ${day}`}
       >
         <ScrollArea style={{ height: 400 }}>
-          {sonarrFiltered.length > 0 && <SonarrMediaDisplay media={sonarrFiltered[0]} />}
+          {sonarrFiltered.map((media: any, index: number) => {
+            return (
+              <React.Fragment key={index}>
+                <SonarrMediaDisplay media={media} />
+                {index < sonarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+              </React.Fragment>
+            );
+          })}
           {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
             <Divider variant="dashed" my="xl" />
           )}
-          {radarrFiltered.length > 0 && <RadarrMediaDisplay media={radarrFiltered[0]} />}
+          {radarrFiltered.map((media: any, index: number) => {
+            return (
+              <React.Fragment key={index}>
+                <RadarrMediaDisplay media={media} />
+                {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+              </React.Fragment>
+            );
+          })}
         </ScrollArea>
       </Popover>
     </Box>

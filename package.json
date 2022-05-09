@@ -1,7 +1,12 @@
 {
-  "name": "mantine-next-template",
-  "version": "1.0.0",
-  "private": true,
+  "name": "homarr",
+  "version": "0.0.1",
+  "private": "false",
+  "description": "Customizable browser's home page to interact with your homeserver's Docker containers (i.e. Sonarr/Radarr)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajnart/myhomepage"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

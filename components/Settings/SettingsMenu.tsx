@@ -8,13 +8,16 @@ import {
   Tooltip,
   SegmentedControl,
 } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 import { useState } from 'react';
 import { Settings as SettingsIcon } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
+import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import SaveConfigComponent from '../Config/SaveConfig';
 
 function SettingsMenu(props: any) {
   const { config, setConfig } = useConfig();
+  const colorScheme = useColorScheme();
   const matches = [
     { label: 'Google', value: 'https://google.com/search?q=' },
     { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=' },
@@ -46,6 +49,7 @@ function SettingsMenu(props: any) {
       </Group>
       <Group direction="column">
         <Switch
+          size="md"
           onChange={(e) =>
             setConfig({
               ...config,
@@ -59,6 +63,7 @@ function SettingsMenu(props: any) {
           label="Enable search bar"
         />
       </Group>
+      <ColorSchemeSwitch />
       <SaveConfigComponent />
       <Text
         style={{
