@@ -19,7 +19,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./out/
+          key: ${{ github.sha }}
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
 
