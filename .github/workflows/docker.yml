@@ -11,8 +11,22 @@ env:
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - run: yarn install --frozen-lockfile
+      - run: yarn export
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./out/
+          key: ${{ github.sha }}
+
   push:
     runs-on: ubuntu-latest
+    needs: [build]
     permissions:
       packages: write
       contents: read
@@ -25,12 +39,11 @@ jobs:
           path: ./out/
           key: ${{ github.sha }}
       - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+        run: docker build . --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
 
       - name: Log in to registry
-        # This is where you will update the PAT to GITHUB_TOKEN
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
 
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
       - name: Push image
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
