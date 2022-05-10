@@ -1,5 +1,6 @@
 # MyHomePage, a home page for your home server
-Join the discord ! : https://discord.gg/C2WTXkzkwK
+### Do not hesitate to star ⭐ this repo if you like the project ! ![](https://img.shields.io/github/stars/ajnart/myhomepage?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
+### Join the discord ! : https://discord.gg/C2WTXkzkwK 
 ## What is MyHomePage ?
 
 HomePage is a web page for your home server, it provides a user friendly interface to access docker containers or other services.
