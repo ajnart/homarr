@@ -3,6 +3,8 @@ import { Popover, Box, ScrollArea, Divider, Indicator } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { CalendarIcon } from '@modulz/radix-icons';
+import { showNotification } from '@mantine/notifications';
+import { Check } from 'tabler-icons-react';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
@@ -34,14 +36,36 @@ export default function CalendarComponent(props: any) {
       fetch(
         `${sonarrService?.url}api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`
       ).then((response) => {
-        response.ok && response.json().then((data) => setSonarrMedias(data));
+        response.ok &&
+          response.json().then((data) => {
+            setSonarrMedias(data);
+            showNotification({
+              title: 'Sonarr',
+              icon: <Check />,
+              color: 'green',
+              autoClose: 1500,
+              radius: 'md',
+              message: `Loaded ${data.length} releases`,
+            });
+          });
       });
     }
     if (radarrService && radarrService.apiKey) {
       fetch(
         `${radarrService?.url}api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`
       ).then((response) => {
-        response.ok && response.json().then((data) => setRadarrMedias(data));
+        response.ok &&
+          response.json().then((data) => {
+            setRadarrMedias(data);
+            showNotification({
+              title: 'Radarr',
+              icon: <Check />,
+              color: 'green',
+              autoClose: 1500,
+              radius: 'md',
+              message: `Loaded ${data.length} releases`,
+            });
+          });
       });
     }
   }, [config.services]);
