@@ -1,4 +1,4 @@
-import DateComponent from "./DateModule";
+import DateComponent from './DateModule';
 
 export default {
   title: 'Date module',

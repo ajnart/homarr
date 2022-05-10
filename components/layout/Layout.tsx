@@ -1,8 +1,6 @@
 import { AppShell, Center, createStyles } from '@mantine/core';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import CalendarComponent from '../modules/calendar/CalendarModule';
-import DateComponent from '../modules/date/DateModule';
 import Aside from './Aside';
 import Navbar from './Navbar';
 

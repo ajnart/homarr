@@ -1,6 +1,5 @@
-import { Aside as MantineAside, Space } from '@mantine/core';
-import CalendarComponent, { CalendarModule } from '../modules/calendar/CalendarModule';
-import DateComponent from '../modules/date/DateModule';
+import { Aside as MantineAside } from '@mantine/core';
+import { CalendarModule } from '../modules/calendar/CalendarModule';
 import ModuleWrapper from '../modules/moduleWrapper';
 
 export default function Aside() {
@@ -13,7 +12,7 @@ export default function Aside() {
         base: 'auto',
       }}
     >
-			<ModuleWrapper module={CalendarModule} />
+      <ModuleWrapper module={CalendarModule} />
     </MantineAside>
   );
 }

@@ -1,4 +1,4 @@
-import { Box, Card, Group, Text, Title } from '@mantine/core';
+import { Group, Text, Title } from '@mantine/core';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { Clock } from 'tabler-icons-react';
@@ -25,7 +25,7 @@ export default function DateComponent(props: any) {
   }, []);
 
   return (
-    <Group p={'sm'} direction="column">
+    <Group p="sm" direction="column">
       <Title>
         {hours < 10 ? `0${hours}` : hours}:{minutes < 10 ? `0${minutes}` : minutes}
       </Title>
