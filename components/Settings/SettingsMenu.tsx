@@ -14,6 +14,7 @@ import { Settings as SettingsIcon } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import SaveConfigComponent from '../Config/SaveConfig';
+import ModuleEnabler from './ModuleEnabler';
 
 function SettingsMenu(props: any) {
   const { config, setConfig } = useConfig();
@@ -63,6 +64,7 @@ function SettingsMenu(props: any) {
           label="Enable search bar"
         />
       </Group>
+      <ModuleEnabler />
       <ColorSchemeSwitch />
       <SaveConfigComponent />
       <Text
