@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import {
   Text,
   AspectRatio,
-  createStyles,
   SimpleGrid,
   Card,
   useMantineTheme,
@@ -11,31 +10,12 @@ import {
   Group,
   Space,
 } from '@mantine/core';
-import AppShelfMenu from './AppShelfMenu';
-import AddItemShelfItem from './AddAppShelfItem';
 import { useConfig } from '../../tools/state';
 import { pingQbittorrent } from '../../tools/api';
 import { serviceItem } from '../../tools/types';
-
-export function AppShelfItemWrapper(props: any) {
-  const { children, hovering } = props;
-  const theme = useMantineTheme();
-  return (
-    <Card
-      style={{
-        boxShadow: hovering ? '0px 0px 3px rgba(0, 0, 0, 0.5)' : '0px 0px 1px rgba(0, 0, 0, 0.5)',
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
-
-        //TODO: #3 Fix this temporary fix and make the width and height dynamic / responsive
-        width: 200,
-        height: 180,
-      }}
-      radius="md"
-    >
-      {children}
-    </Card>
-  );
-}
+import AddItemShelfItem from './AddAppShelfItem';
+import { AppShelfItemWrapper } from './AppShelfItemWrapper';
+import AppShelfMenu from './AppShelfMenu';
 
 const AppShelf = (props: any) => {
   const { config, addService, removeService, setConfig } = useConfig();

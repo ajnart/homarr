@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
-import { AppShelfItemWrapper } from './AppShelf';
+import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 
 export default function AddItemShelfItem(props: any) {
   const { addService } = useConfig();
