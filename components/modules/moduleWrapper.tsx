@@ -7,9 +7,11 @@ export default function ModuleWrapper(props: any) {
   const { config } = useConfig();
   const enabledModules = config.settings.enabledModules ?? [];
   // Remove 'Module' from enabled modules titles
-  const enabledModulesTitles = enabledModules.map((module) => module.replace('Module', ''));
-  const isShown = enabledModulesTitles.includes(module.title);
+  const isShown = enabledModules.includes(module.title);
   const theme = useMantineTheme();
+  if (!isShown) {
+    return null;
+  }
   return (
     <Card
       hidden={!isShown}

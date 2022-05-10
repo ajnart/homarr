@@ -4,26 +4,24 @@ import { useConfig } from '../../tools/state';
 
 export default function ModuleEnabler(props: any) {
   const { config, setConfig } = useConfig();
-  // Loop over each module with their title
-  const modules = Object.keys(Modules);
-  // Match the enabled modules with the modules array
-  let enabledModules = config.settings.enabledModules ?? [];
-  enabledModules = modules.filter((module) => enabledModules.includes(module));
+  const modules = Object.values(Modules).map((module) => module);
+  const enabledModules = config.settings.enabledModules ?? [];
+  modules.filter((module) => enabledModules.includes(module.title));
   return (
     <Group direction="column">
-      {modules.map((module: string) => (
+      {modules.map((module) => (
         <Switch
-          key={module}
+          key={module.title}
           size="md"
-          checked={enabledModules.includes(module)}
-          label={`Enable ${module.replace('Module', '')} module`}
+          checked={enabledModules.includes(module.title)}
+          label={`Enable ${module.title} module`}
           onChange={(e) => {
             if (e.currentTarget.checked) {
               setConfig({
                 ...config,
                 settings: {
                   ...config.settings,
-                  enabledModules: [...enabledModules, module],
+                  enabledModules: [...enabledModules, module.title],
                 },
               });
             } else {
@@ -31,7 +29,7 @@ export default function ModuleEnabler(props: any) {
                 ...config,
                 settings: {
                   ...config.settings,
-                  enabledModules: enabledModules.filter((m) => m !== module),
+                  enabledModules: enabledModules.filter((m) => m !== module.title),
                 },
               });
             }
