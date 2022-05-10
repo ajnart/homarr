@@ -1,14 +1,14 @@
 /* eslint-disable react/no-children-prop */
-import { Popover, Box, ScrollArea, Divider, Indicator } from '@mantine/core';
+import { Popover, Box, ScrollArea, Divider, Indicator, Card } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { CalendarIcon } from '@modulz/radix-icons';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
 import { useConfig } from '../../../tools/state';
-import { MHPModule } from '../modules';
+import { IModule } from '../modules';
 import React from 'react';
 
-export const CalendarModule: MHPModule = {
+export const CalendarModule: IModule = {
   title: 'Calendar',
   description:
     'A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.',
@@ -94,12 +94,8 @@ function DayComponent(props: any) {
         setOpened(true);
       }}
     >
-      {radarrFiltered.length > 0 && (
-        <Indicator size={7} color="yellow" children={null} />
-      )}
-      {sonarrFiltered.length > 0 && (
-        <Indicator size={7} offset={8} color="blue" children={null} />
-      )}
+      {radarrFiltered.length > 0 && <Indicator size={7} color="yellow" children={null} />}
+      {sonarrFiltered.length > 0 && <Indicator size={7} offset={8} color="blue" children={null} />}
       <Popover
         position="left"
         width={700}
