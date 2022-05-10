@@ -17,7 +17,7 @@ Here's a docker compose example on how to integrate MHP into your container stac
 ```docker
 services:
   mhp:
-    image: ajnart/mhp
+    image: ghcr.io/ajnart/mhp
     ports:
       - '7575:80'
     restart: always
