@@ -1,6 +1,6 @@
 {
   "name": "homarr",
-  "version": "0.0.1",
+  "version": "0.1.3",
   "private": "false",
   "description": "Customizable browser's home page to interact with your homeserver's Docker containers (i.e. Sonarr/Radarr)",
   "repository": {
@@ -21,7 +21,8 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "start-storybook -p 7001",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "ci": "yarn test && yarn lint --fix && yarn typecheck && yarn prettier:write"
   },
   "dependencies": {
     "@mantine/core": "^4.2.1",
