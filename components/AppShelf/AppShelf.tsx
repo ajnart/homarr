@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import {
   Text,
   AspectRatio,
-  createStyles,
   SimpleGrid,
   Card,
   useMantineTheme,
@@ -11,20 +10,12 @@ import {
   Group,
   Space,
 } from '@mantine/core';
-import AppShelfMenu from './AppShelfMenu';
-import AddItemShelfItem from './AddAppShelfItem';
 import { useConfig } from '../../tools/state';
 import { pingQbittorrent } from '../../tools/api';
 import { serviceItem } from '../../tools/types';
-
-const useStyles = createStyles((theme) => ({
-  main: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-    //TODO: #3 Fix this temporary fix and make the width and height dynamic / responsive
-    width: 200,
-    height: 180,
-  },
-}));
+import AddItemShelfItem from './AddAppShelfItem';
+import { AppShelfItemWrapper } from './AppShelfItemWrapper';
+import AppShelfMenu from './AppShelfMenu';
 
 const AppShelf = (props: any) => {
   const { config, addService, removeService, setConfig } = useConfig();
@@ -58,7 +49,6 @@ export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
   const theme = useMantineTheme();
   const { removeService } = useConfig();
-  const { classes } = useStyles();
   const [hovering, setHovering] = useState(false);
   return (
     <motion.div
@@ -70,13 +60,7 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <Card
-        className={classes.main}
-        style={{
-          boxShadow: hovering ? '0px 0px 3px rgba(0, 0, 0, 0.5)' : '0px 0px 1px rgba(0, 0, 0, 0.5)',
-        }}
-        radius="md"
-      >
+      <AppShelfItemWrapper hovering={hovering}>
         <Card.Section>
           <Group position="apart" mx="lg">
             <Space />
@@ -128,7 +112,7 @@ export function AppShelfItem(props: any) {
             </motion.i>
           </AspectRatio>
         </Card.Section>
-      </Card>
+      </AppShelfItemWrapper>
     </motion.div>
   );
 }

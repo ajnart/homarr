@@ -18,6 +18,7 @@ import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
+import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 
 export default function AddItemShelfItem(props: any) {
   const { addService } = useConfig();
@@ -34,30 +35,39 @@ export default function AddItemShelfItem(props: any) {
       >
         <AddAppShelfItemForm setOpened={setOpened} />
       </Modal>
-      <AspectRatio
-        style={{
-          minHeight: 120,
-          minWidth: 120,
-        }}
-        ratio={4 / 3}
-      >
-        <Card
-          style={{
-            backgroundColor:
-              theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-            width: 200,
-            height: 180,
-          }}
-          radius="md"
-        >
-          <Group direction="column" position="center">
-            <motion.div whileHover={{ scale: 1.2 }}>
-              <Apps style={{ cursor: 'pointer' }} onClick={() => setOpened(true)} size={60} />
-            </motion.div>
-            <Text>Add Service</Text>
+      <AppShelfItemWrapper>
+        <Card.Section>
+          <Group position="center" mx="lg">
+            <Text
+              // TODO: #1 Remove this hack to get the text to be centered.
+              ml={15}
+              style={{
+                alignSelf: 'center',
+                alignContent: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                justifyItems: 'center',
+              }}
+              mt="sm"
+              weight={500}
+            >
+              Add a service
+            </Text>
           </Group>
-        </Card>
-      </AspectRatio>
+        </Card.Section>
+        <Card.Section>
+          <AspectRatio ratio={5 / 3} m="xl">
+            <motion.i
+              whileHover={{
+                cursor: 'pointer',
+                scale: 1.1,
+              }}
+            >
+              <Apps style={{ cursor: 'pointer' }} onClick={() => setOpened(true)} size={60} />
+            </motion.i>
+          </AspectRatio>
+        </Card.Section>
+      </AppShelfItemWrapper>
     </>
   );
 }

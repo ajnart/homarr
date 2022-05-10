@@ -1,14 +1,13 @@
 /* eslint-disable react/no-children-prop */
 import { Popover, Box, ScrollArea, Divider, Indicator } from '@mantine/core';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { CalendarIcon } from '@modulz/radix-icons';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
 import { useConfig } from '../../../tools/state';
-import { MHPModule } from '../modules';
-import React from 'react';
+import { IModule } from '../modules';
 
-export const CalendarModule: MHPModule = {
+export const CalendarModule: IModule = {
   title: 'Calendar',
   description:
     'A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.',
@@ -94,12 +93,8 @@ function DayComponent(props: any) {
         setOpened(true);
       }}
     >
-      {radarrFiltered.length > 0 && (
-        <Indicator size={7} color="yellow" children={null} />
-      )}
-      {sonarrFiltered.length > 0 && (
-        <Indicator size={7} offset={8} color="blue" children={null} />
-      )}
+      {radarrFiltered.length > 0 && <Indicator size={7} color="yellow" children={null} />}
+      {sonarrFiltered.length > 0 && <Indicator size={7} offset={8} color="blue" children={null} />}
       <Popover
         position="left"
         width={700}
@@ -109,25 +104,21 @@ function DayComponent(props: any) {
         target={`‏ ${day}`}
       >
         <ScrollArea style={{ height: 400 }}>
-          {sonarrFiltered.map((media: any, index: number) => {
-            return (
-              <React.Fragment key={index}>
-                <SonarrMediaDisplay media={media} />
-                {index < sonarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-              </React.Fragment>
-            );
-          })}
+          {sonarrFiltered.map((media: any, index: number) => (
+            <React.Fragment key={index}>
+              <SonarrMediaDisplay media={media} />
+              {index < sonarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+            </React.Fragment>
+          ))}
           {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
             <Divider variant="dashed" my="xl" />
           )}
-          {radarrFiltered.map((media: any, index: number) => {
-            return (
-              <React.Fragment key={index}>
-                <RadarrMediaDisplay media={media} />
-                {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-              </React.Fragment>
-            );
-          })}
+          {radarrFiltered.map((media: any, index: number) => (
+            <React.Fragment key={index}>
+              <RadarrMediaDisplay media={media} />
+              {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+            </React.Fragment>
+          ))}
         </ScrollArea>
       </Popover>
     </Box>
