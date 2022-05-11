@@ -1,33 +1,71 @@
-# MyHomePage, a home page for your home server
-### Do not hesitate to star ⭐ this repo if you like the project ! ![](https://img.shields.io/github/stars/ajnart/myhomepage?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
-### Join the discord ! : https://discord.gg/C2WTXkzkwK 
-## What is MyHomePage ?
+<p align = "center">
+  <h3 align = "center"> Homarr <h3>
 
-HomePage is a web page for your home server, it provides a user friendly interface to access docker containers or other services.
+  <p align = "center">
+    A homepage for <i>your</i> server.
+  <br/>
+  <a href = "https://github.com/ajnart/homarr/deployments/activity_log?environment=Production" > <strong> Demo ↗️ </strong> </a> • <a href = "#install" > <strong> Install ➡️ </strong> </a>
+</p>
+</p>
 
-## Install
-### Docker installation
-Required : Docker
-#### Standard docker install
-To install the MyHomePage docker image simply execute ``docker pull ghcr.io/ajnart/mhp``  
-To run the docker file ``docker run --name my-home-page -p 7575:80 -d ghcr.io/ajnart/mhp``  
+# 📃 Table of Contents
+- [📃 Table of Contents](#-table-of-contents)
+- [🚀 Getting Started](#-getting-started)
+  - [ℹ️ About](#ℹ️-about)
+  - [⚡ Installation](#-installation)
+    - [Deploying from Docker Image 🐳](#deploying-from-docker-image-)
+    - [Building from Source 🛠️](#building-from-source-️)
 
-*Note: Currently the port used is 80 (Nginx default port) It will change to be 7575 by default*  
-#### Docker compose
-Here's a docker compose example on how to integrate MHP into your container stack
-```docker
+<!-- Getting Started -->
+# 🚀 Getting Started
+
+## ℹ️ About
+
+Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.
+
+## ⚡ Installation
+
+### Deploying from Docker Image 🐳
+> Supported architectures: x86-64, ARM, ARM64
+
+_Requirements_:
+- [Docker](https://docs.docker.com/get-docker/)
+
+**Standard Docker Install**
+```sh
+docker run --name homarr -p 7575:80 -d ghcr.io/ajnart/mhp
+```
+
+**Docker Compose**
+```yml
+---
+version: '3'
+#--------------------------------------------------------------------------------------------#
+#                               Homarr -  A homepage for your server.                        #
+#--------------------------------------------------------------------------------------------#
 services:
   mhp:
+    container_name: homarr
     image: ghcr.io/ajnart/mhp
+    restart: unless-stopped
     ports:
       - '7575:80'
-    restart: always
 ```
-### Local installation
-Required: Node (LTS)
-#### Install using node
-To install MyHomePage locally:
-- Clone the source code or download it.
-- Execute ``npm install`` or ``yarn install`` *(prefered)* to install the dependencies
-- Execute ``yarn export`` to build the source code into the final HTML pages in the ``./out`` folder
-- Run a web server to serve the content of the ``./out`` folder. Example: ``python -m http.server 7575 --directory out``
+
+### Building from Source 🛠️
+
+_Requirements_:
+- [Git](https://git-scm.com/downloads)
+- [NodeJS](https://nodejs.org/en/) _(Latest or LTS)_
+- [Yarn](https://yarnpkg.com/)
+- Some web server
+
+**Installing**
+
+- Clone the GitHub repo: `git clone https://github.com/ajnart/homarr.git` & `cd myhomepage`
+- Install all dependencies: `yarn install`
+- Build the source: `yarn export`
+- Start a web server (Any web server will work):
+  - _Examples:_
+    - NodeJS serve: `npm i -g serve` or `yarn global add serve` & `serve ./out`
+    - python http.server: `python -m http.server 7474 --directory out`
