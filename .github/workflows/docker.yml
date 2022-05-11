@@ -55,7 +55,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: false
-          tags: $IMAGE_NAME
+          tags: mhp
 
 
       - name: Push image
