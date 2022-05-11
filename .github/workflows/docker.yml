@@ -47,7 +47,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build image
-        run: docker buildx build --platform linux/arm/v7,linux/amd64,linux/arm64 . --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}" --push
+        run: docker buildx build --platform linux/arm/v7,linux/amd64,linux/arm64 . --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}" --load
 
       - name: Log in to registry
 
