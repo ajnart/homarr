@@ -10,9 +10,9 @@ import {
   AspectRatio,
   Text,
   Card,
+  LoadingOverlay,
 } from '@mantine/core';
-import { useForm } from '@mantine/hooks';
-import { UseForm } from '@mantine/hooks/lib/use-form/use-form';
+import { useForm } from '@mantine/form';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
@@ -72,16 +72,7 @@ export default function AddItemShelfItem(props: any) {
   );
 }
 
-function MatchIcon(
-  name: string,
-  form: UseForm<{
-    type: any;
-    name: any;
-    icon: any;
-    url: any;
-    apiKey: any;
-  }>
-) {
+function MatchIcon(name: string, form: any) {
   // TODO: In order to avoid all the requests, we could fetch
   // https://data.jsdelivr.com/v1/package/gh/IceWhaleTech/AppIcon@main
   // and then iterate over the files -> files -> name and then remove the extension (.png)
@@ -102,6 +93,8 @@ function MatchIcon(
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
   const { addService, config, setConfig } = useConfig();
+  const [isLoading, setLoading] = useState(false);
+
   const form = useForm({
     initialValues: {
       type: props.type ?? 'Other',
@@ -109,6 +102,23 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       icon: props.icon ?? '',
       url: props.url ?? '',
       apiKey: props.apiKey ?? (undefined as unknown as string),
+    },
+    validate: {
+      apiKey: (value: string) => null,
+      // Validate icon with a regex
+      icon: (value: string) => {
+        if (!value.match(/^https?:\/\/.+\.(png|jpg|jpeg|gif)$/)) {
+          return 'Please enter a valid icon URL';
+        }
+        return null;
+      },
+      // Validate url with a regex http/https
+      url: (value: string) => {
+        if (!value.match(/^https?:\/\/.+\/$/)) {
+          return 'Please enter a valid URL (that ends with a /)';
+        }
+        return null;
+      },
     },
   });
 
@@ -152,44 +162,40 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 form.setFieldValue('icon', match);
               }
             }}
-            error={form.errors.name && 'Invalid name'}
+            error={form.errors.name && 'Invalid icon url'}
           />
 
           <TextInput
             required
             label="Icon url"
             placeholder="https://i.gifer.com/ANPC.gif"
-            value={form.values.icon}
-            onChange={(event) => {
-              form.setFieldValue('icon', event.currentTarget.value);
-            }}
-            error={form.errors.icon && 'Icon url is invalid'}
+            {...form.getInputProps('icon')}
           />
           <TextInput
             required
             label="Service url"
             placeholder="http://localhost:8989"
-            value={form.values.url}
-            onChange={(event) => form.setFieldValue('url', event.currentTarget.value)}
-            error={form.errors.url && 'Service url is invalid'}
+            {...form.getInputProps('url')}
           />
           <Select
             label="Select the type of service (used for API calls)"
             defaultValue="Other"
             placeholder="Pick one"
-            value={form.values.type}
             required
             searchable
-            onChange={(value) => form.setFieldValue('type', value ?? 'Other')}
             data={ServiceTypeList}
+            {...form.getInputProps('type')}
           />
+          <LoadingOverlay visible={isLoading} />
           {(form.values.type === 'Sonarr' || form.values.type === 'Radarr') && (
             <TextInput
               required
               label="API key"
               placeholder="Your API key"
               value={form.values.apiKey}
-              onChange={(event) => form.setFieldValue('apiKey', event.currentTarget.value)}
+              onChange={(event) => {
+                form.setFieldValue('apiKey', event.currentTarget.value);
+              }}
               error={form.errors.apiKey && 'Invalid API key'}
             />
           )}
