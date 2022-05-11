@@ -77,5 +77,5 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}, latest
           labels: ${{ steps.meta.outputs.labels }}
