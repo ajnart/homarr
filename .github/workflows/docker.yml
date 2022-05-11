@@ -4,8 +4,7 @@ on:
   push:
     tags:
       - v*
-
-workflow_dispatch:
+  workflow_dispatch:
 
 env:
   IMAGE_NAME: mhp
