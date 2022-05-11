@@ -16,6 +16,7 @@ const configContext = createContext<configContextType>({
     settings: {
       searchBar: true,
       searchUrl: 'https://www.google.com/search?q=',
+      enabledModules: [],
     },
   },
   setConfig: () => {},
@@ -49,6 +50,7 @@ export function ConfigProvider({ children }: Props) {
     settings: {
       searchBar: true,
       searchUrl: 'https://www.google.com/search?q=',
+      enabledModules: [],
     },
   });
 

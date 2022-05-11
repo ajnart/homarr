@@ -1,6 +1,7 @@
 export interface Settings {
   searchUrl: string;
   searchBar: boolean;
+  enabledModules: string[];
   [key: string]: any;
 }
 

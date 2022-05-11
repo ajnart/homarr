@@ -11,7 +11,6 @@ import {
   Space,
 } from '@mantine/core';
 import { useConfig } from '../../tools/state';
-import { pingQbittorrent } from '../../tools/api';
 import { serviceItem } from '../../tools/types';
 import AddItemShelfItem from './AddAppShelfItem';
 import { AppShelfItemWrapper } from './AppShelfItemWrapper';
@@ -27,13 +26,6 @@ const AppShelf = (props: any) => {
       setConfig(JSON.parse(localConfig));
     }
   }, []);
-  if (config.services && config.services.length === 0) {
-    config.services.forEach((service) => {
-      if (service.type === 'qBittorrent') {
-        pingQbittorrent(service);
-      }
-    });
-  }
 
   return (
     <SimpleGrid m="xl" cols={5} spacing="xl">

@@ -33,7 +33,7 @@ export default function DateComponent(props: any) {
         {
           // Use dayjs to format the date
           // https://day.js.org/en/getting-started/installation/
-          dayjs(date).format('dddd, MMMM D YYYY')
+          dayjs(date).format('dddd, MMMM D')
         }
       </Text>
     </Group>
