@@ -4,8 +4,12 @@ on:
   push:
     tags:
       - v*
-
-workflow_dispatch:
+  workflow_dispatch:
+    inputs:
+      - IMAGE_NAME:
+          description: The name of the image to build and publish
+          required: false
+          default: mhp
 
 env:
   IMAGE_NAME: mhp
