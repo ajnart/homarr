@@ -1,35 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  Text,
-  AspectRatio,
-  SimpleGrid,
-  Card,
-  useMantineTheme,
-  Image,
-  Group,
-  Space,
-} from '@mantine/core';
+import { Text, AspectRatio, SimpleGrid, Card, Image, Group, Space } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AddItemShelfItem from './AddAppShelfItem';
 import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 import AppShelfMenu from './AppShelfMenu';
 
-const AppShelf = (props: any) => {
-  const { config, addService, removeService, setConfig } = useConfig();
-
-  /* A hook that is used to load the config from local storage. */
-  useEffect(() => {
-    const localConfig = localStorage.getItem('config');
-    if (localConfig) {
-      setConfig(JSON.parse(localConfig));
-    }
-  }, []);
+const AppShelf = () => {
+  const { config } = useConfig();
 
   return (
     <SimpleGrid m="xl" cols={5} spacing="xl">
-      {config.services.map((service, i) => (
+      {config.services.map((service) => (
         <AppShelfItem key={service.name} service={service} />
       ))}
       <AddItemShelfItem />
@@ -39,16 +22,14 @@ const AppShelf = (props: any) => {
 
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
-  const theme = useMantineTheme();
-  const { removeService } = useConfig();
   const [hovering, setHovering] = useState(false);
   return (
     <motion.div
       key={service.name}
-      onHoverStart={(e) => {
+      onHoverStart={() => {
         setHovering(true);
       }}
-      onHoverEnd={(e) => {
+      onHoverEnd={() => {
         setHovering(false);
       }}
     >
@@ -79,7 +60,7 @@ export function AppShelfItem(props: any) {
                 opacity: hovering ? 1 : 0,
               }}
             >
-              <AppShelfMenu service={service} removeitem={removeService} />
+              <AppShelfMenu service={service} />
             </motion.div>
           </Group>
         </Card.Section>

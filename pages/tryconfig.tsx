@@ -2,20 +2,40 @@ import { getCookie, setCookies } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next/types';
 import fs from 'fs';
 import path from 'path';
-import { Button, JsonInput, Space } from '@mantine/core';
+import { Button, JsonInput, Select, Space } from '@mantine/core';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { showNotification } from '@mantine/notifications';
 import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
 
-export async function getServerSideProps({ req, res }: GetServerSidePropsContext) {
+export async function getServerSideProps({
+  req,
+  res,
+}: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
   let cookie = getCookie('config-name', { req, res });
   if (!cookie) {
     setCookies('config-name', 'default', { req, res, maxAge: 60 * 60 * 24 * 30 });
     cookie = 'default';
   }
-  const config = fs.readFileSync(path.join('data/configs', `${cookie}.json`), 'utf8');
+  // Check if the config file exists
+  const configPath = path.join(process.cwd(), 'data/configs', `${cookie}.json`);
+  if (!fs.existsSync(configPath)) {
+    return {
+      props: {
+        config: {
+          name: cookie.toString(),
+          services: [],
+          settings: {
+            enabledModules: [],
+            searchBar: true,
+            searchUrl: 'https://www.google.com/search?q=',
+          },
+        },
+      },
+    };
+  }
+
+  const config = fs.readFileSync(configPath, 'utf8');
+  // Print loaded config
   return {
     props: {
       config: JSON.parse(config),
@@ -25,9 +45,13 @@ export async function getServerSideProps({ req, res }: GetServerSidePropsContext
 
 export default function TryConfig(props: any) {
   const { config: initialConfig }: { config: Config } = props;
-  const { config, loadConfig, setConfig } = useConfig();
+  const { config, loadConfig, setConfig, getConfigs } = useConfig();
   const [value, setValue] = useState(JSON.stringify(config, null, 2));
-
+  const [configList, setConfigList] = useState([] as string[]);
+  useEffect(() => {
+    setValue(JSON.stringify(initialConfig, null, 2));
+    setConfig(initialConfig);
+  }, [initialConfig]);
   useEffect(() => {
     setValue(JSON.stringify(config, null, 2));
     // setConfig(initialConfig);
@@ -42,11 +66,35 @@ export default function TryConfig(props: any) {
       <p>
         The <code>config</code> API is a way to store configuration data in a JSON file.
       </p>
+      <p>
+        Cookie loaded was <code>{initialConfig.name}</code>
+      </p>
       <JsonInput autosize onChange={setValue} value={value} />
       <Space my="xl" />
-      <Button onClick={() => loadConfig('cringe')}>Load config cringe</Button>
-      <Button onClick={() => loadConfig('default')}>Load config default</Button>
-      <Button onClick={() => setConfig(JSON.parse(value))}>Save config</Button>
+      <Button onClick={() => getConfigs().then((configs) => setConfigList(configs))}>
+        Get configs
+      </Button>
+      <Space my="xl" />
+      <Select
+        label="Config loader"
+        onChange={(e) => {
+          loadConfig(e ?? 'default');
+        }}
+        data={
+          // If config list is empty, return the current config
+          configList.length === 0 ? [config.name] : configList
+        }
+      />
+      <Space my="xl" />
+      <Button mx="md" onClick={() => setConfig(JSON.parse(value))}>
+        Save config
+      </Button>
+      <Button
+        mx="md"
+        onClick={() => setCookies('config-name', 'cringe', { maxAge: 60 * 60 * 24 * 30 })}
+      >
+        Set cookie to config = cringe
+      </Button>
     </div>
   );
 }

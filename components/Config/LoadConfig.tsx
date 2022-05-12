@@ -48,7 +48,7 @@ export const dropzoneChildren = (status: DropzoneStatus, theme: MantineTheme) =>
 );
 
 export default function LoadConfigComponent(props: any) {
-  const { saveConfig, setConfig } = useConfig();
+  const { setConfig } = useConfig();
   const theme = useMantineTheme();
   const router = useRouter();
   const openRef = useRef<() => void>();

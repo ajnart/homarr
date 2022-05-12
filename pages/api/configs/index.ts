@@ -6,7 +6,7 @@ function Get(req: NextApiRequest, res: NextApiResponse) {
   const files = fs.readdirSync('data/configs');
   // Strip the .json extension from the file name
   const configs = files.map((file) => file.replace('.json', ''));
-  // Return the list of files
+
   return res.status(200).json(configs);
 }
 

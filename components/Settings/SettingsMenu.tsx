@@ -28,7 +28,6 @@ function SettingsMenu(props: any) {
     { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=' },
     { label: 'Bing', value: 'https://bing.com/search?q=' },
   ];
-
   return (
     <Group direction="column" grow>
       <Alert
