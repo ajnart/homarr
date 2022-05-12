@@ -16,6 +16,7 @@ import { AlertCircle, Settings as SettingsIcon } from 'tabler-icons-react';
 import { CURRENT_VERSION, REPO_URL } from '../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
+import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
 
@@ -78,6 +79,7 @@ function SettingsMenu(props: any) {
       </Group>
       <ModuleEnabler />
       <ColorSchemeSwitch />
+      <ConfigChanger />
       <SaveConfigComponent />
       <Text
         style={{
