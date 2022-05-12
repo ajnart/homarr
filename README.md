@@ -75,3 +75,6 @@ _Requirements_:
     - python http.server: `python -m http.server 7474 --directory out`
 
 # 💖 Contributing
+You can contribute by [Submitting Bugs](https://github.com/ajnart/homarr/issues/new), [Requesting Features](https://github.com/ajnart/homarr/issues/new), or [Making a pull request](https://github.com/ajnart/homarr/compare)!
+
+All contributions are highly appreciated.
