@@ -36,7 +36,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           withGlobalStyles
           withNormalizeCSS
         >
-          <NotificationsProvider position="top-right">
+          <NotificationsProvider limit={2} position="top-right">
             <ConfigProvider>
               <Layout>
                 <Component {...pageProps} />
