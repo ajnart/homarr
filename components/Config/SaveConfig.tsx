@@ -7,7 +7,7 @@ export default function SaveConfigComponent(props: any) {
   const { config } = useConfig();
   function onClick(e: any) {
     if (config) {
-      fileDownload(JSON.stringify(config, null, '\t'), 'config.json');
+      fileDownload(JSON.stringify(config, null, '\t'), `${config.name}.json`);
     }
   }
   return (
