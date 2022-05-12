@@ -79,7 +79,7 @@ _Requirements_:
 **[⤴️ Back to Top](#-table-of-contents)**
 
 # 💖 Contributing
-You can contribute by [Submitting Bugs](https://github.com/ajnart/homarr/issues/new), [Requesting Features](https://github.com/ajnart/homarr/issues/new), or [Making a pull request](https://github.com/ajnart/homarr/compare)!
+You can contribute by [Starting a discussion](https://github.com/ajnart/homarr/discussions), [Submitting Bugs](https://github.com/ajnart/homarr/issues/new), [Requesting Features](https://github.com/ajnart/homarr/issues/new), or [Making a pull request](https://github.com/ajnart/homarr/compare)!
 
 All contributions are highly appreciated.
     
