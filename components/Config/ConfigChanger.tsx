@@ -1,4 +1,4 @@
-import { Loader, Select } from '@mantine/core';
+import { Center, Loader, Select, Tooltip } from '@mantine/core';
 import { setCookies } from 'cookies-next';
 import { useEffect, useState } from 'react';
 import { useConfig } from '../../tools/state';
@@ -12,7 +12,13 @@ export default function ConfigChanger() {
   }, [config]);
   // If configlist is empty, return a loading indicator
   if (configList.length === 0) {
-    return <Loader />;
+    return (
+      <Center>
+        <Tooltip label={"Loading your configs. This doesn't load in vercel."}>
+          <Loader />
+        </Tooltip>
+      </Center>
+    );
   }
   return (
     <Select
