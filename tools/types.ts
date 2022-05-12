@@ -6,6 +6,7 @@ export interface Settings {
 }
 
 export interface Config {
+  name: string;
   services: serviceItem[];
   settings: Settings;
 }
