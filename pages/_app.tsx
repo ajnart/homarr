@@ -22,7 +22,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   return (
     <>
       <Head>
-        <title>MyHomePage - Your new browser homepage!</title>
+        <title>Homarr -  A homepage for your server!</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>

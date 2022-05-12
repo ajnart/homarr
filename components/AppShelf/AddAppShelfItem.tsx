@@ -73,11 +73,7 @@ export default function AddItemShelfItem(props: any) {
 }
 
 function MatchIcon(name: string, form: any) {
-  // TODO: In order to avoid all the requests, we could fetch
-  // https://data.jsdelivr.com/v1/package/gh/IceWhaleTech/AppIcon@main
-  // and then iterate over the files -> files -> name and then remove the extension (.png)
-  // Compare it to the input and then fetch the icon
-  fetch(`https://cdn.jsdelivr.net/gh/IceWhaleTech/AppIcon@main/all/${name.toLowerCase()}.png`)
+  fetch(`https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name.replace(/\s+/g, '-').toLowerCase()}.png`)
     .then((res) => {
       if (res.status === 200) {
         form.setFieldValue('icon', res.url);
@@ -89,7 +85,7 @@ function MatchIcon(name: string, form: any) {
 
   return false;
 }
-
+  
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
   const { addService, config, setConfig } = useConfig();
