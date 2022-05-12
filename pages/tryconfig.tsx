@@ -79,6 +79,7 @@ export default function TryConfig(props: any) {
         label="Config loader"
         onChange={(e) => {
           loadConfig(e ?? 'default');
+          setCookies('config-name', e ?? 'default', { maxAge: 60 * 60 * 24 * 30 });
         }}
         data={
           // If config list is empty, return the current config
