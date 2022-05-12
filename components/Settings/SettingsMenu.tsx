@@ -7,10 +7,13 @@ import {
   Text,
   Tooltip,
   SegmentedControl,
+  Indicator,
+  Alert,
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
-import { useState } from 'react';
-import { Settings as SettingsIcon } from 'tabler-icons-react';
+import { useEffect, useState } from 'react';
+import { AlertCircle, Settings as SettingsIcon } from 'tabler-icons-react';
+import { CURRENT_VERSION, REPO_URL } from '../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import SaveConfigComponent from '../Config/SaveConfig';
@@ -19,13 +22,23 @@ import ModuleEnabler from './ModuleEnabler';
 function SettingsMenu(props: any) {
   const { config, setConfig } = useConfig();
   const colorScheme = useColorScheme();
+  const { current, latest } = props;
   const matches = [
     { label: 'Google', value: 'https://google.com/search?q=' },
     { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=' },
     { label: 'Bing', value: 'https://bing.com/search?q=' },
   ];
+
   return (
     <Group direction="column" grow>
+      <Alert
+        icon={<AlertCircle size={16} />}
+        title="Update available"
+        radius="lg"
+        hidden={current === latest}
+      >
+        Version {latest} is available. Current : {current}
+      </Alert>
       <Group>
         <SegmentedControl
           title="Search engine"
@@ -82,7 +95,20 @@ function SettingsMenu(props: any) {
 }
 
 export function SettingsMenuButton(props: any) {
+  const [update, setUpdate] = useState(false);
   const [opened, setOpened] = useState(false);
+  const [latestVersion, setLatestVersion] = useState(CURRENT_VERSION);
+  useEffect(() => {
+    // Fetch Data here when component first mounted
+    fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
+      res.json().then((data) => {
+        setLatestVersion(data.tag_name);
+        if (data.tag_name !== CURRENT_VERSION) {
+          setUpdate(true);
+        }
+      });
+    });
+  }, []);
   return (
     <>
       <Modal
@@ -91,7 +117,7 @@ export function SettingsMenuButton(props: any) {
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
-        <SettingsMenu />
+        <SettingsMenu current={CURRENT_VERSION} latest={latestVersion} />
       </Modal>
       <ActionIcon
         variant="default"
@@ -102,7 +128,14 @@ export function SettingsMenuButton(props: any) {
         onClick={() => setOpened(true)}
       >
         <Tooltip label="Settings">
-          <SettingsIcon />
+          <Indicator
+            size={12}
+            disabled={CURRENT_VERSION === latestVersion}
+            offset={-3}
+            position="top-end"
+          >
+            <SettingsIcon />
+          </Indicator>
         </Tooltip>
       </ActionIcon>
     </>

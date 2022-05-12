@@ -9,7 +9,7 @@ export function Logo({ style }: any) {
       variant="gradient"
       gradient={{ from: 'red', to: 'orange', deg: 145 }}
     >
-      MyHomePage
+      Homarr
     </Text>
   );
 }

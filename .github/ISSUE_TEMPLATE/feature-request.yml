@@ -1,0 +1,25 @@
+name: ✨ Feature Request
+description: Request a feature to help improve Homarr!
+title: '[✨ Feature] <title>'
+labels: ['✨ Feature']
+assignees:
+  - ajnart
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Describe the feature you would like to see
+      placeholder: An outline of the feature you would like to see implemented, include as much detail as possible!
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is the development of this feature?
+      options:
+        - Low (Nice-to-have)
+        - Medium (Would be very useful)
+        - High (App breaking feature)
+    validations:
+      required: true
