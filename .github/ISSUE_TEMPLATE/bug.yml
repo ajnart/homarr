@@ -1,0 +1,52 @@
+name: 🐛 Bug Report
+description: Report something that's broken, or not working like intented!
+title: '[🐛 Bug] <title>'
+labels: ['🐛 Bug']
+assignees:
+  - ajnart
+body:
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: How have you deployed Homarr?
+      options:
+        - Docker
+        - NodeJS
+        - Cloud Service (Static)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of Homarr are you running?
+      placeholder: 0.1.0
+    validations:
+      required: false
+  - type: textarea
+    id: repro
+    attributes:
+      label: Describe the problem
+      description: Please describe the problem exactly, how to reproduce it, actual results, and expected results.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Additional info
+      description: Logs? Screenshots? More info?
+    validations:
+      required: false
+  - type: checkboxes
+    id: idiot-check
+    attributes:
+      label: Please tick the boxes
+      description: Before submitting, please ensure that
+      options:
+        - label: You've read the [docs](https://github.com/ajnart/homarr#readme)
+          required: true
+        - label: You've checked for [duplicate issues](https://github.com/ajnart/homarr/issues)
+          required: true
+        - label: You've tried to debug yourself
+          required: true

@@ -82,11 +82,7 @@ function MatchIcon(
     apiKey: any;
   }>
 ) {
-  // TODO: In order to avoid all the requests, we could fetch
-  // https://data.jsdelivr.com/v1/package/gh/IceWhaleTech/AppIcon@main
-  // and then iterate over the files -> files -> name and then remove the extension (.png)
-  // Compare it to the input and then fetch the icon
-  fetch(`https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name.toLowerCase()}.png`)
+  fetch(`https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name.replace(/\s+/g, '-').toLowerCase()}.png`)
     .then((res) => {
       if (res.status === 200) {
         form.setFieldValue('icon', res.url);
