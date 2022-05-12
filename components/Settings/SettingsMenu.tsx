@@ -42,9 +42,9 @@ function SettingsMenu(props: any) {
       <Group>
         <SegmentedControl
           title="Search engine"
-          defaultValue={
+          value={
             // Match config.settings.searchUrl with a key in the matches array
-            matches.find((match) => match.value === config.settings.searchUrl)?.value || 'Google'
+            matches.find((match) => match.value === config.settings.searchUrl)?.value ?? 'Google'
           }
           onChange={
             // Set config.settings.searchUrl to the value of the selected item
