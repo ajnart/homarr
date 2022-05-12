@@ -1,0 +1,16 @@
+{
+  "name": "cringe",
+  "services": [
+    {
+      "type": "Other",
+      "name": "sonarr",
+      "icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/sonarr.png",
+      "url": "http://sonarr.tv/"
+    }
+  ],
+  "settings": {
+    "enabledModules": [],
+    "searchBar": true,
+    "searchUrl": "https://www.google.com/search?q="
+  }
+}

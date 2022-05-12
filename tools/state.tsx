@@ -9,6 +9,7 @@ type configContextType = {
   config: Config;
   setConfig: (newconfig: Config) => void;
   loadConfig: (name: string) => void;
+  getConfigs: () => Promise<string[]>;
 };
 
 const configContext = createContext<configContextType>({
@@ -23,6 +24,7 @@ const configContext = createContext<configContextType>({
   },
   setConfig: () => {},
   loadConfig: async (name: string) => {},
+  getConfigs: async () => [],
 });
 
 export function useConfig() {
@@ -40,14 +42,7 @@ type Props = {
 export function ConfigProvider({ children }: Props) {
   const [config, setConfigInternal] = useState<Config>({
     name: 'default',
-    services: [
-      {
-        type: 'Other',
-        name: 'example',
-        icon: 'https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      },
-    ],
+    services: [],
     settings: {
       searchBar: true,
       searchUrl: 'https://www.google.com/search?q=',
@@ -58,7 +53,6 @@ export function ConfigProvider({ children }: Props) {
   async function loadConfig(configName: string) {
     try {
       const response = await axios.get(`/api/configs/${configName}`);
-      console.log('response', response);
       setConfigInternal(response.data);
       showNotification({
         title: 'Config',
@@ -85,10 +79,16 @@ export function ConfigProvider({ children }: Props) {
     setConfigInternal(newconfig);
   }
 
+  async function getConfigs(): Promise<string[]> {
+    const response = await axios.get('/api/configs');
+    return response.data;
+  }
+
   const value = {
     config,
     setConfig,
     loadConfig,
+    getConfigs,
   };
   return <configContext.Provider value={value}>{children}</configContext.Provider>;
 }
