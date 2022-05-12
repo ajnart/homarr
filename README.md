@@ -39,7 +39,7 @@ _Requirements_:
 
 **Standard Docker Install**
 ```sh
-docker run --name homarr -p 7575:80 -d ghcr.io/ajnart/mhp
+docker run --name homarr -p 7575:80 -d ghcr.io/ajnart/homarr
 ```
 
 **Docker Compose**
@@ -50,9 +50,9 @@ version: '3'
 #                               Homarr -  A homepage for your server.                        #
 #--------------------------------------------------------------------------------------------#
 services:
-  mhp:
+  homarr:
     container_name: homarr
-    image: ghcr.io/ajnart/mhp
+    image: ghcr.io/ajnart/homarr
     restart: unless-stopped
     ports:
       - '7575:80'

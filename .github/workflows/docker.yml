@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: mhp
+  IMAGE_NAME: homarr
 
 jobs:
   # Push image to GitHub Packages.
@@ -69,8 +69,8 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ajnart/mhp
-            ghcr.io/ajnart/mhp
+            ajnart/homarr
+            ghcr.io/ajnart/homarr
           # generate Docker tags based on the following events/attributes
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}

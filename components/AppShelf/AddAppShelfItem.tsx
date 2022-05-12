@@ -73,7 +73,11 @@ export default function AddItemShelfItem(props: any) {
 }
 
 function MatchIcon(name: string, form: any) {
-  fetch(`https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name.replace(/\s+/g, '-').toLowerCase()}.png`)
+  fetch(
+    `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
+      .replace(/\s+/g, '-')
+      .toLowerCase()}.png`
+  )
     .then((res) => {
       if (res.status === 200) {
         form.setFieldValue('icon', res.url);
@@ -85,7 +89,7 @@ function MatchIcon(name: string, form: any) {
 
   return false;
 }
-  
+
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
   const { addService, config, setConfig } = useConfig();
