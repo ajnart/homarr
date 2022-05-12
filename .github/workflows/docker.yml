@@ -7,12 +7,56 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: mhp
+  IMAGE_NAME: homarr
 
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Yarn cache
+        uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+      - name: Nextjs cache
+        uses: actions/cache@v2
+        with:
+        # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - name: Cache build output
+        uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: |
+             ./next.config.js
+             ./pages/
+             ./public/
+             ./.next/static/
+             ./.next/standalone/
+             ./packages.jsan
+          key: ${{ github.sha }}
+
   docker:
+    needs: [build]
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -20,14 +64,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: |
+             ./next.config.js
+             ./pages/
+             ./public/
+             ./.next/static/
+             ./.next/standalone/
+             ./packages.jsan
+          key: ${{ github.sha }}
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
         with:
           # list of Docker images to use as base name for tags
-          images: |
-            ajnart/mhp
-            ghcr.io/ajnart/mhp
+          images: ghcr.io/${{ github.repository }}
           # generate Docker tags based on the following events/attributes
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
@@ -36,12 +89,6 @@ jobs:
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      - name: Login to DockerHub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Login to GHCR
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
