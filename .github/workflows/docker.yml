@@ -73,13 +73,8 @@ jobs:
             ghcr.io/ajnart/mhp
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=pep440,pattern={{version}}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -104,7 +99,5 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
-            type=pep440,pattern={{version}}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
