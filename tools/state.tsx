@@ -1,17 +1,19 @@
 // src/context/state.js
+import { showNotification } from '@mantine/notifications';
+import axios from 'axios';
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { Config, serviceItem } from './types';
+import { Check, X } from 'tabler-icons-react';
+import { Config } from './types';
 
 type configContextType = {
   config: Config;
   setConfig: (newconfig: Config) => void;
-  addService: (service: serviceItem) => void;
-  removeService: (name: string) => void;
-  saveConfig: (newconfig: Config) => void;
+  loadConfig: (name: string) => void;
 };
 
 const configContext = createContext<configContextType>({
   config: {
+    name: 'default',
     services: [],
     settings: {
       searchBar: true,
@@ -20,9 +22,7 @@ const configContext = createContext<configContextType>({
     },
   },
   setConfig: () => {},
-  addService: () => {},
-  removeService: () => {},
-  saveConfig: () => {},
+  loadConfig: async (name: string) => {},
 });
 
 export function useConfig() {
@@ -39,6 +39,7 @@ type Props = {
 
 export function ConfigProvider({ children }: Props) {
   const [config, setConfigInternal] = useState<Config>({
+    name: 'default',
     services: [
       {
         type: 'Other',
@@ -54,49 +55,40 @@ export function ConfigProvider({ children }: Props) {
     },
   });
 
-  function setConfig(newConfig: Config) {
-    setConfigInternal(newConfig);
-    saveConfig(newConfig);
+  async function loadConfig(configName: string) {
+    try {
+      const response = await axios.get(`/api/configs/${configName}`);
+      console.log('response', response);
+      setConfigInternal(response.data);
+      showNotification({
+        title: 'Config',
+        icon: <Check />,
+        color: 'green',
+        autoClose: 1500,
+        radius: 'md',
+        message: `Loaded config : ${configName}`,
+      });
+    } catch (error) {
+      showNotification({
+        title: 'Config',
+        icon: <X />,
+        color: 'red',
+        autoClose: 1500,
+        radius: 'md',
+        message: `Error loading config : ${configName}`,
+      });
+    }
   }
 
-  function addService(item: serviceItem) {
-    setConfigInternal({
-      ...config,
-      services: [...config.services, item],
-    });
-    saveConfig({
-      ...config,
-      services: [...config.services, item],
-    });
-  }
-
-  function removeService(name: string) {
-    // Remove the service with name in config item
-    setConfigInternal({
-      ...config,
-      services: config.services.filter((service) => service.name !== name),
-    });
-    saveConfig({
-      ...config,
-      services: config.services.filter((service) => service.name !== name),
-    });
-  }
-
-  function saveConfig(newconfig: Config) {
-    if (!newconfig) return;
-    localStorage.setItem('config', JSON.stringify(newconfig));
+  function setConfig(newconfig: Config) {
+    axios.put(`/api/configs/${newconfig.name}`, newconfig);
+    setConfigInternal(newconfig);
   }
 
   const value = {
     config,
     setConfig,
-    addService,
-    removeService,
-    saveConfig,
+    loadConfig,
   };
-  return (
-    <>
-      <configContext.Provider value={value}>{children}</configContext.Provider>
-    </>
-  );
+  return <configContext.Provider value={value}>{children}</configContext.Provider>;
 }
