@@ -37,6 +37,7 @@
     "@mantine/rte": "^4.2.4",
     "@mantine/spotlight": "^4.2.4",
     "@modulz/radix-icons": "^4.0.0",
+    "axios": "^0.27.2",
     "cookies-next": "^2.0.4",
     "dayjs": "^1.11.2",
     "framer-motion": "^6.3.1",

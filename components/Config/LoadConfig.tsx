@@ -4,6 +4,7 @@ import { DropzoneStatus, FullScreenDropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
+import { setCookies } from 'cookies-next';
 import { useConfig } from '../../tools/state';
 import { Config } from '../../tools/types';
 
@@ -48,7 +49,7 @@ export const dropzoneChildren = (status: DropzoneStatus, theme: MantineTheme) =>
 );
 
 export default function LoadConfigComponent(props: any) {
-  const { saveConfig, setConfig } = useConfig();
+  const { setConfig } = useConfig();
   const theme = useMantineTheme();
   const router = useRouter();
   const openRef = useRef<() => void>();
@@ -69,15 +70,21 @@ export default function LoadConfigComponent(props: any) {
             });
             return;
           }
+          const newConfig: Config = JSON.parse(e);
           showNotification({
             autoClose: 5000,
             radius: 'md',
-            title: <Text>Config loaded successfully</Text>,
+            title: (
+              <Text>
+                Config <b>{newConfig.name}</b> loaded successfully
+              </Text>
+            ),
             color: 'green',
             icon: <Check />,
             message: undefined,
           });
-          setConfig(JSON.parse(e));
+          setCookies('config-name', newConfig.name, { maxAge: 60 * 60 * 24 * 30 });
+          setConfig(newConfig);
         });
       }}
       accept={['application/json']}
