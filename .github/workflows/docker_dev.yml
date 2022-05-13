@@ -10,6 +10,8 @@ on:
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ dev ]
+  # to manuelly run build
+  workflow_dispatch:
 
 env:
   # Use docker.io for Docker Hub if empty
