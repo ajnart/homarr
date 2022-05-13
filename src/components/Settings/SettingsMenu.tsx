@@ -13,7 +13,7 @@ import {
 import { useColorScheme } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 import { AlertCircle, Settings as SettingsIcon } from 'tabler-icons-react';
-import { CURRENT_VERSION, REPO_URL } from '../../data/constants';
+import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
