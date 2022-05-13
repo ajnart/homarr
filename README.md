@@ -39,7 +39,7 @@ _Requirements_:
 
 **Standard Docker Install**
 ```sh
-docker run --name homarr -p 7575:80 -d ghcr.io/ajnart/homarr
+docker run --name homarr -p 7575:7575 -d ghcr.io/ajnart/homarr
 ```
 
 **Docker Compose**
@@ -55,7 +55,7 @@ services:
     image: ghcr.io/ajnart/homarr
     restart: unless-stopped
     ports:
-      - '7575:80'
+      - '7575:7575'
 ```
 
 ### Building from Source 🛠️
