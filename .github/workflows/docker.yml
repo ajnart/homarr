@@ -64,7 +64,7 @@ jobs:
           key: ${{ github.sha }}
 
   docker_image_build_and_push:
-    needs: [build]
+    needs: [yarn_install_and_build]
     runs-on: ubuntu-latest
     permissions:
       packages: write
