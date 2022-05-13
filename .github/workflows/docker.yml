@@ -60,7 +60,7 @@ jobs:
              ./public/
              ./.next/static/
              ./.next/standalone/
-             ./packages.jsan
+             ./packages.json
           key: ${{ github.sha }}
 
   docker:
@@ -81,7 +81,7 @@ jobs:
              ./public/
              ./.next/static/
              ./.next/standalone/
-             ./packages.jsan
+             ./packages.json
           key: ${{ github.sha }}
       - name: Docker meta
         id: meta
