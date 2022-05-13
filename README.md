@@ -1,5 +1,6 @@
 <p align = "center">
   <h3 align = "center"> Homarr <h3>
+  <img src = "/preview.png" />
 
   <p align = "center">
     A homepage for <i>your</i> server.
@@ -76,7 +77,7 @@ _Requirements_:
 - *Note: If you want to update the code in real time, launch with ``yarn dev``*
 
 # 💖 Contributing
-You can contribute by [Starting a discussion](https://github.com/ajnart/homarr/discussions), [Submitting Bugs](https://github.com/ajnart/homarr/issues/new), [Requesting Features](https://github.com/ajnart/homarr/issues/new), or [Making a pull request](https://github.com/ajnart/homarr/compare)!
+**Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
 All contributions are highly appreciated.
     

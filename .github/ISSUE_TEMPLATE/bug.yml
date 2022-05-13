@@ -2,8 +2,6 @@ name: 🐛 Bug Report
 description: Report something that's broken, or not working like intented!
 title: '<title>'
 labels: ['🐛 Bug']
-assignees:
-  - ajnart
 body:
   - type: dropdown
     id: environment
