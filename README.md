@@ -1,5 +1,6 @@
 <p align = "center">
   <h3 align = "center"> Homarr <h3>
+  <img src = "/preview.png" />
 
   <p align = "center">
     A homepage for <i>your</i> server.
