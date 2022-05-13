@@ -2,10 +2,12 @@ import { Menu, Modal, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { useState } from 'react';
 import { Check, Edit, Trash } from 'tabler-icons-react';
+import { useConfig } from '../../tools/state';
 import { AddAppShelfItemForm } from './AddAppShelfItem';
 
 export default function AppShelfMenu(props: any) {
-  const { service, removeitem: removeItem } = props;
+  const { service } = props;
+  const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
   return (
     <>
@@ -40,7 +42,10 @@ export default function AppShelfMenu(props: any) {
         <Menu.Item
           color="red"
           onClick={(e: any) => {
-            removeItem(service.name);
+            setConfig({
+              ...config,
+              services: config.services.filter((s) => s.name !== service.name),
+            });
             showNotification({
               autoClose: 5000,
               title: (
