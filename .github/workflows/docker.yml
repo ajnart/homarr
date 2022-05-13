@@ -1,4 +1,5 @@
-name: Build and publish Docker image
+name: Builds
+# Workflow to build and publish docker image
 
 on:
   push:
@@ -7,12 +8,16 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: homarr
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   build:
+    # Will run yarn install && yarn build
     runs-on: ubuntu-latest
     steps:
       - name: Setup
@@ -20,9 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Get yarn cache directory path
+      # to help speed up build times
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Yarn cache
+      # to help speed up build times
         uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
@@ -43,6 +50,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - name: Cache build output
+      # to copy needed files to docker build job
         uses: actions/cache@v2
         id: restore-build
         with:
@@ -80,7 +88,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           # list of Docker images to use as base name for tags
-          images: ghcr.io/${{ github.repository }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # generate Docker tags based on the following events/attributes
           tags: |
             type=raw,value=latest
