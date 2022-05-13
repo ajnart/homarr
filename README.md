@@ -36,7 +36,6 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 
 ## 🐛 Known Issues
 
--  Used search engine not properly selected https://github.com/ajnart/homarr/issues/35 
 -  Application cards not responsive https://github.com/ajnart/homarr/issues/47
 -  Icon alignment out for specific icons https://github.com/ajnart/homarr/issues/82
 
