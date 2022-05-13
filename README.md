@@ -1,7 +1,8 @@
-<p align = "center">
-  <h3 align = "center"> Homarr <h3>
-  <img src = "/preview.png" />
 
+<h3 align="center"> Homarr <h3>
+  <p align="center">
+<img align="end" width=500 src="https://user-images.githubusercontent.com/49837342/168315259-b778c816-10fe-44db-bd25-3eea6f31b233.png" />
+  </p>
   <p align = "center">
     A homepage for <i>your</i> server.
   <br/>
@@ -12,7 +13,7 @@
   <br />
     <a href = "https://discord.gg/aCsmEV5RgA" > <img src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield" > </a>
 </p>
-</p>
+
 
 # 📃 Table of Contents
 - [📃 Table of Contents](#-table-of-contents)
