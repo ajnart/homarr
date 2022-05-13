@@ -1,5 +1,5 @@
 {
-  "name": "default",
+  "name": "config_new",
   "services": [
     {
       "type": "Other",
@@ -10,7 +10,7 @@
   ],
   "settings": {
     "searchBar": true,
-    "searchUrl": "https://bing.com/search?q=",
+    "searchUrl": "https://google.com/search?q=",
     "enabledModules": []
   }
 }
