@@ -83,7 +83,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=latest
             type=pep440,pattern={{version}}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
