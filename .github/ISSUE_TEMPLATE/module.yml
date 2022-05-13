@@ -1,0 +1,24 @@
+name: 🏗️ Module request
+description: Request for a module to be added / an integration with you favourite service !
+title: '[🏗️ Module] <title>'
+labels: ['🏗️ Module']
+body:
+  - type: textarea
+    id: name
+    attributes:
+      label: Name the integration
+      description: Please describe the name of the Module/Integration you want to see and info that could help us with adding it. For example screenshots/mockups for inspiration. API links or already existing JavaScript/TypeScript integration of the API
+    validations:
+      required: true
+  - type: checkboxes
+    id: idiot-check
+    attributes:
+      label: Please tick the boxes
+      description: Before submitting, please ensure that
+      options:
+        - label: You've read the [docs](https://github.com/ajnart/homarr#readme)
+          required: true
+        - label: You've checked for [duplicate issues](https://github.com/ajnart/homarr/issues)
+          required: true
+        - label: You're not just putting an idea out there and actually give usefull information about how to implement your module idea
+          required: true
