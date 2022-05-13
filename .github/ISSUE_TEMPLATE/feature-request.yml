@@ -1,9 +1,6 @@
 name: ✨ Feature Request
 description: Request a feature to help improve Homarr!
 title: '<title>'
-labels: ['✨ Feature']
-assignees:
-  - ajnart
 body:
   - type: textarea
     id: feature
