@@ -1,7 +1,6 @@
 name: 🏗️ Module request
 description: Request for a module to be added / an integration with you favourite service !
 title: '<title>'
-labels: ['🏗️ Module']
 body:
   - type: textarea
     id: name
