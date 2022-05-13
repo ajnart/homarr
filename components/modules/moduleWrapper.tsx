@@ -20,7 +20,7 @@ export default function ModuleWrapper(props: any) {
       shadow="sm"
       style={{
         // Make background color of the card depend on the theme
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : 'white',
       }}
     >
       <module.component />

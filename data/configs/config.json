@@ -1,0 +1,12 @@
+{
+  "name": "config",
+  "services": [],
+  "settings": {
+    "searchBar": true,
+    "searchUrl": "https://duckduckgo.com/?q=",
+    "enabledModules": [
+      "Date",
+      "Calendar"
+    ]
+  }
+}

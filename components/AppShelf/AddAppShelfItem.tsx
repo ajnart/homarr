@@ -1,5 +1,4 @@
 import {
-  useMantineTheme,
   Modal,
   Center,
   Group,
@@ -21,9 +20,7 @@ import { ServiceTypeList } from '../../tools/types';
 import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 
 export default function AddItemShelfItem(props: any) {
-  const { addService } = useConfig();
   const [opened, setOpened] = useState(false);
-  const theme = useMantineTheme();
   return (
     <>
       <Modal
@@ -83,7 +80,7 @@ function MatchIcon(name: string, form: any) {
         form.setFieldValue('icon', res.url);
       }
     })
-    .catch((e) => {
+    .catch(() => {
       // Do nothing
     });
 
@@ -92,7 +89,7 @@ function MatchIcon(name: string, form: any) {
 
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
-  const { addService, config, setConfig } = useConfig();
+  const { config, setConfig } = useConfig();
   const [isLoading, setLoading] = useState(false);
 
   const form = useForm({
@@ -104,7 +101,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       apiKey: props.apiKey ?? (undefined as unknown as string),
     },
     validate: {
-      apiKey: (value: string) => null,
+      apiKey: () => null,
       // Validate icon with a regex
       icon: (value: string) => {
         if (!value.match(/^https?:\/\/.+\.(png|jpg|jpeg|gif)$/)) {
@@ -143,7 +140,10 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               }),
             });
           } else {
-            addService(form.values);
+            setConfig({
+              ...config,
+              services: [...config.services, form.values],
+            });
           }
           setOpened(false);
           form.reset();

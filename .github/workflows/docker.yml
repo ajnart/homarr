@@ -41,12 +41,18 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - run: yarn install --frozen-lockfile
-      - run: yarn export
+      - run: yarn build
       - name: Cache build output
         uses: actions/cache@v2
         id: restore-build
         with:
-          path: ./out/
+          path: |
+             ./next.config.js
+             ./pages/
+             ./public/
+             ./.next/static/
+             ./.next/standalone/
+             ./packages.jsan
           key: ${{ github.sha }}
 
   docker:
@@ -61,30 +67,28 @@ jobs:
       - uses: actions/cache@v2
         id: restore-build
         with:
-          path: ./out/
+          path: |
+             ./next.config.js
+             ./pages/
+             ./public/
+             ./.next/static/
+             ./.next/standalone/
+             ./packages.jsan
           key: ${{ github.sha }}
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
         with:
           # list of Docker images to use as base name for tags
-          images: |
-            ajnart/homarr
-            ghcr.io/ajnart/homarr
+          images: ghcr.io/${{ github.repository }}
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=latest
             type=pep440,pattern={{version}}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      - name: Login to DockerHub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Login to GHCR
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
