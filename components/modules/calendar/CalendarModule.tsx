@@ -121,6 +121,9 @@ function DayComponent(props: any) {
       {sonarrFiltered.length > 0 && <Indicator size={7} offset={8} color="blue" children={null} />}
       <Popover
         position="left"
+        radius="lg"
+        shadow="xl"
+        transition="pop"
         width={700}
         onClose={() => setOpened(false)}
         opened={opened}

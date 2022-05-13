@@ -1,0 +1,16 @@
+{
+  "name": "config_new",
+  "services": [
+    {
+      "type": "Other",
+      "name": "example",
+      "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    }
+  ],
+  "settings": {
+    "searchBar": true,
+    "searchUrl": "https://google.com/search?q=",
+    "enabledModules": []
+  }
+}
