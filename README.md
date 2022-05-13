@@ -74,7 +74,7 @@ _Requirements_:
 - Install all dependencies: `yarn install`
 - Build the source: `yarn build`
 - Start the NextJS web server: ``yarn start``
-- 📝Note: If you want to update the code in real time, launch with ``yarn dev``
+- *Note: If you want to update the code in real time, launch with ``yarn dev``*
 
 # 💖 Contributing
 You can contribute by [Starting a discussion](https://github.com/ajnart/homarr/discussions), [Submitting Bugs](https://github.com/ajnart/homarr/issues/new), [Requesting Features](https://github.com/ajnart/homarr/issues/new), or [Making a pull request](https://github.com/ajnart/homarr/compare)!
