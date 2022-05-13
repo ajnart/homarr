@@ -8,7 +8,8 @@ body:
   - type: textarea
     id: feature
     attributes:
-      label: Describe the feature you would like to see
+      label: Description 
+      description: Describe the feature you would like to see. Tell us how you imagine it and try to provide as much usefull information as possible. **PLEASE** use images or drawings or anything to image your thoughts. Also please do not say "Like X and Y do" as we sometimes don't know what X and Y are.
       placeholder: An outline of the feature you would like to see implemented, include as much detail as possible!
     validations:
       required: true
