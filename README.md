@@ -43,7 +43,7 @@ _Requirements_:
 
 **Standard Docker Install**
 ```sh
-docker run --name homarr -p 7575:7575 -d ghcr.io/ajnart/homarr
+docker run --name homarr -p 7575:7575 -v /data/docker/homarr:/app/data/configs -d ghcr.io/ajnart/homarr:latest
 ```
 
 **Docker Compose**
@@ -56,11 +56,15 @@ version: '3'
 services:
   homarr:
     container_name: homarr
-    image: ghcr.io/ajnart/homarr
+    image: ghcr.io/ajnart/homarr:latest
     restart: unless-stopped
+    volumes:
+      - /data/docker/homarr:/app/data/configs
     ports:
       - '7575:7575'
 ```
+
+***Getting EACCESS errors in the logs? Try running `sudo chmod 775 /directory-you-mounted-to`!***
 
 ### Building from Source 🛠️
 
