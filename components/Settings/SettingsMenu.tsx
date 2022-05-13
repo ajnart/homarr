@@ -16,6 +16,7 @@ import { AlertCircle, Settings as SettingsIcon } from 'tabler-icons-react';
 import { CURRENT_VERSION, REPO_URL } from '../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
+import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
 
@@ -28,7 +29,6 @@ function SettingsMenu(props: any) {
     { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=' },
     { label: 'Bing', value: 'https://bing.com/search?q=' },
   ];
-
   return (
     <Group direction="column" grow>
       <Alert
@@ -42,9 +42,9 @@ function SettingsMenu(props: any) {
       <Group>
         <SegmentedControl
           title="Search engine"
-          defaultValue={
+          value={
             // Match config.settings.searchUrl with a key in the matches array
-            matches.find((match) => match.value === config.settings.searchUrl)?.value || 'Google'
+            matches.find((match) => match.value === config.settings.searchUrl)?.value ?? 'Google'
           }
           onChange={
             // Set config.settings.searchUrl to the value of the selected item
@@ -79,6 +79,7 @@ function SettingsMenu(props: any) {
       </Group>
       <ModuleEnabler />
       <ColorSchemeSwitch />
+      <ConfigChanger />
       <SaveConfigComponent />
       <Text
         style={{
