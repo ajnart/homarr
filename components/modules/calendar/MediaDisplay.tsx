@@ -15,7 +15,14 @@ function MediaDisplay(props: { media: IMedia }) {
   const { media }: { media: IMedia } = props;
   return (
     <Group noWrap align="self-start" mr={15}>
-      <Image fit="cover" src={media.poster} alt={media.title} width={300} height={400} />
+      <Image
+        radius="md"
+        fit="cover"
+        src={media.poster}
+        alt={media.title}
+        width={300}
+        height={400}
+      />
       <Stack
         justify="space-between"
         sx={(theme) => ({

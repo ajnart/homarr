@@ -48,7 +48,7 @@ export default function SearchBar(props: any) {
           if (isYoutube) {
             window.open(`https://www.youtube.com/results?search_query=${querry.substring(3)}`);
           } else if (isTorrent) {
-            window.open(`https://thepiratebay.org/search.php?q=${querry.substring(3)}`);
+            window.open(`https://bitsearch.to/search?q=${querry.substring(3)}`);
           } else {
             window.open(`${querryUrl}${values.querry}`);
           }
