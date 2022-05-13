@@ -1,4 +1,4 @@
-name: Builds
+name: Docker Build
 # Workflow to build and publish docker image
 
 on:
@@ -16,7 +16,7 @@ env:
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  build:
+  yarn_install_and_build:
     # Will run yarn install && yarn build
     runs-on: ubuntu-latest
     steps:
@@ -63,7 +63,7 @@ jobs:
              ./packages.json
           key: ${{ github.sha }}
 
-  docker:
+  docker_image_build_and_push:
     needs: [build]
     runs-on: ubuntu-latest
     permissions:
