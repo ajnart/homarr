@@ -10,7 +10,7 @@ on:
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ dev ]
-  # to manuelly run build
+  # to manually run build
   workflow_dispatch:
 
 env:
@@ -93,7 +93,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # generate Docker tags based on the following events/attributes
           tags: |
-            tpye=raw,value=dev
+            tpye=raw,value=dev,priority=1
             type=sha
             type=edge,branch=dev
       - name: Set up QEMU
