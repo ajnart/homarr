@@ -19,6 +19,7 @@
 - [📃 Table of Contents](#-table-of-contents)
 - [🚀 Getting Started](#-getting-started)
   - [ℹ️ About](#ℹ️-about)
+  - [🐛 Known Issues](#-known-issues)
   - [⚡ Installation](#-installation)
     - [Deploying from Docker Image 🐳](#deploying-from-docker-image-)
     - [Building from Source 🛠️](#building-from-source-️)
@@ -32,6 +33,12 @@
 Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.
     
 **[⤴️ Back to Top](#-table-of-contents)**
+
+## 🐛 Known Issues
+
+-  Used search engine not properly selected https://github.com/ajnart/homarr/issues/35 
+-  Application cards not responsive https://github.com/ajnart/homarr/issues/47
+-  Icon alignment out for specific icons https://github.com/ajnart/homarr/issues/82
 
 ## ⚡ Installation
 
