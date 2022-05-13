@@ -1,5 +1,5 @@
 
-<h3 align="center"> Homarr <h3>
+<h3 align="center">Homarr</h3>
   <p align="center">
 <img align="end" width=500 src="https://user-images.githubusercontent.com/49837342/168315259-b778c816-10fe-44db-bd25-3eea6f31b233.png" />
   </p>
