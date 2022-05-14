@@ -1,4 +1,4 @@
-name: Docker Build
+name: Master docker CI
 # Workflow to build and publish docker image
 
 on:
