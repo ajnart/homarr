@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Text, AspectRatio, SimpleGrid, Card, Center, Image, useMantineTheme } from '@mantine/core';
+import { Text, AspectRatio, SimpleGrid, Card, Image, useMantineTheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
-import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 import AppShelfMenu from './AppShelfMenu';
 
 const AppShelf = () => {
@@ -14,7 +13,7 @@ const AppShelf = () => {
       cols={5}
       spacing="xl"
       breakpoints={[
-        { maxWidth: 'xl', cols: 4, spacing: 'lg' },
+        { maxWidth: 1400, cols: 4, spacing: 'lg' },
         { maxWidth: 800, cols: 3, spacing: 'md' },
         { maxWidth: 400, cols: 3, spacing: 'sm' },
         { maxWidth: 400, cols: 2, spacing: 'sm' },
@@ -50,9 +49,9 @@ export function AppShelfItem(props: any) {
         radius="md"
       >
         <Card.Section>
-            <Text mt="sm" align="center" lineClamp={1} weight={500}>
-              {service.name}
-            </Text>
+          <Text mt="sm" align="center" lineClamp={1} weight={500}>
+            {service.name}
+          </Text>
           <motion.div
             style={{
               position: 'absolute',
@@ -68,7 +67,14 @@ export function AppShelfItem(props: any) {
           </motion.div>
         </Card.Section>
         <Card.Section>
-          <AspectRatio ratio={5 / 3} m="xl">
+          <AspectRatio
+            ratio={3 / 5}
+            m="xl"
+            style={{
+              width: 150,
+              height: 90,
+            }}
+          >
             <motion.i
               whileHover={{
                 cursor: 'pointer',
@@ -76,6 +82,10 @@ export function AppShelfItem(props: any) {
               }}
             >
               <Image
+                style={{
+                  maxWidth: 80,
+                }}
+                fit="contain"
                 onClick={() => {
                   window.open(service.url);
                 }}
