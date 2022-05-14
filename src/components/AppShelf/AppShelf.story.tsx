@@ -1,3 +1,4 @@
+import { SimpleGrid } from '@mantine/core';
 import AppShelf, { AppShelfItem } from './AppShelf';
 
 export default {
@@ -16,3 +17,10 @@ export default {
 
 export const Default = (args: any) => <AppShelf {...args} />;
 export const One = (args: any) => <AppShelfItem {...args} />;
+export const Ten = (args: any) => (
+  <SimpleGrid>
+    {Array.from(Array(10)).map((_, i) => (
+      <AppShelfItem {...args} key={i} />
+    ))}
+  </SimpleGrid>
+);
