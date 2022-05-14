@@ -1,17 +1,18 @@
-name: Docker Dev Build
+name: Development CI
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
 on:
   push:
-    branches: [ dev ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
+    tags:
+      - v*
   pull_request:
-    branches: [ dev ]
-  # to manually run build
   workflow_dispatch:
+    inputs:
+      tags:
+        requierd: true
+        description: 'Tags to deploy to'
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -93,9 +94,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # generate Docker tags based on the following events/attributes
           tags: |
-            tpye=raw,value=dev,priority=1
-            type=sha
-            type=edge,branch=dev
+            type=ref,event=pr
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
