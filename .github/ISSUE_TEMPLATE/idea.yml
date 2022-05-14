@@ -1,0 +1,23 @@
+name: 🤔 Idea
+description: Tell us your idea! We may implement it.
+title: '<title>'
+labels: ['🤔 Idea']
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Description 
+      description: Tell us your idea! Please add as much details as possible.
+      placeholder: Maybe move ... to ...! Maybe add the version of Homarr somewhere...! Etc.
+    validations:
+      required: true
+  - type: checkboxes
+    id: idiot-check
+    attributes:
+      label: Please tick the boxes
+      description: Before submitting, please ensure that
+      options:
+        - label: You've read the [docs](https://github.com/ajnart/homarr#readme)
+          required: true
+        - label: You've checked for [duplicate issues](https://github.com/ajnart/homarr/issues)
+          required: true
