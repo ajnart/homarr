@@ -22,6 +22,7 @@ export default function SearchBar(props: any) {
 
   return (
     <Box
+      mb={"xl"}
       style={{
         width: '100%',
       }}
