@@ -1,4 +1,13 @@
 <h3 align="center">Homarr</h3>
+<br/>
+<p align="center">
+  <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
+      <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status"></a>
+    <a href="https://github.com/ajnart/homarr/releases/latest">
+      <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/ajnart/homarr"></a>
+  <a href="https://github.com/ajnart/homarr/pkgs/container/homarr">
+    <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/ajnart/homarr?label=Downloads%20"></a>
+  </p>
   <p align="center">
   <a href="">
 <img align="end" width=600 src="https://user-images.githubusercontent.com/49837342/168315259-b778c816-10fe-44db-bd25-3eea6f31b233.png" />
@@ -14,13 +23,6 @@
   <br />
     <a href = "https://discord.gg/aCsmEV5RgA" > <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield" > </a>
   <br/>  
-  <br/>
-  <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
-      <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status">
-    </a>
-  <a href="https://github.com/ajnart/homarr/actions/workflows/docker_dev.yml">
-      <img title="Docker Dev CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker_dev.yml/badge.svg" alt="Dev CI Status">
-    </a>
     <br/>
 </p>
 
