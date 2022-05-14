@@ -72,7 +72,7 @@ export function Footer({ links }: FooterCenteredProps) {
         }}
       >
         Made with ❤️ by @
-        <Anchor href="https://github.com/ajnart" style={{ color: 'inherit', fontStyle: 'inherit' }}>
+        <Anchor href="https://github.com/ajnart" style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}>
           ajnart
         </Anchor>
       </Text>

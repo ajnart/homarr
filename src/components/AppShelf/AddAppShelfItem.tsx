@@ -10,6 +10,8 @@ import {
   Text,
   Card,
   LoadingOverlay,
+  ActionIcon,
+  Tooltip,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { motion } from 'framer-motion';
@@ -18,6 +20,35 @@ import { Apps } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
 import { AppShelfItemWrapper } from './AppShelfItemWrapper';
+
+export function AddItemShelfButton(props: any) {
+  const [opened, setOpened] = useState(false);
+  return (
+    <>
+      <Modal
+        size="xl"
+        radius="md"
+        opened={props.opened || opened}
+        onClose={() => setOpened(false)}
+        title="Add a service"
+      >
+        <AddAppShelfItemForm setOpened={setOpened} />
+      </Modal>
+      <ActionIcon
+        variant="default"
+        radius="md"
+        size="xl"
+        color="blue"
+        style={props.style}
+        onClick={() => setOpened(true)}
+      >
+        <Tooltip label="Add a service">
+          <Apps />
+        </Tooltip>
+      </ActionIcon>
+    </>
+  );
+}
 
 export default function AddItemShelfItem(props: any) {
   const [opened, setOpened] = useState(false);
