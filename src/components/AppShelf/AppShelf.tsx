@@ -10,10 +10,12 @@ const AppShelf = () => {
 
   return (
     <SimpleGrid
-      cols={5}
+      cols={7}
       spacing="xl"
       breakpoints={[
-        { maxWidth: 1400, cols: 4, spacing: 'lg' },
+        { maxWidth: 2400, cols: 6, spacing: 'xl' },
+        { maxWidth: 1800, cols: 5, spacing: 'xl' },
+        { maxWidth: 1500, cols: 4, spacing: 'lg' },
         { maxWidth: 800, cols: 3, spacing: 'md' },
         { maxWidth: 400, cols: 3, spacing: 'sm' },
         { maxWidth: 400, cols: 2, spacing: 'sm' },
