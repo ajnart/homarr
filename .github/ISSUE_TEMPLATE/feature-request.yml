@@ -7,7 +7,7 @@ body:
     id: feature
     attributes:
       label: Description 
-      description: Describe the feature you would like to see. Tell us how you imagine it and try to provide as much usefull information as possible. **PLEASE** use images or drawings or anything to image your thoughts. Also please do not say "Like X and Y do" as we sometimes don't know what X and Y are.
+      description: Describe the feature you would like to see. Tell us how you imagine it and try to provide as much useful information as possible. **PLEASE**: Use images/screenshots, include details about X & Y when requesting changes like X & Y service does, make your description atleast 300 characters. Having an unclear issue with too little detail will result in your issue being marked as invalid and closed.
       placeholder: An outline of the feature you would like to see implemented, include as much detail as possible!
     validations:
       required: true
