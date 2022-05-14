@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 const useStyles = createStyles((theme) => ({
   main: {
     [theme.fn.largerThan('md')]: {
-      maxWidth: 1200,
+      maxWidth: 1500,
     },
   },
 }));

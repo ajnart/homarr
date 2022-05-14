@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <MantineNavbar
       height="100%"
-      hiddenBreakpoint="md"
+      hiddenBreakpoint="lg"
       hidden
       width={{
         base: 'auto',
