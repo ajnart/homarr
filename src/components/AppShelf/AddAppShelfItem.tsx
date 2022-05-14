@@ -25,7 +25,7 @@ export default function AddItemShelfItem(props: any) {
     <>
       <Modal
         size="xl"
-        radius="lg"
+        radius="md"
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
         title="Add a service"

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Text, AspectRatio, SimpleGrid, Card, Image, Group, Space } from '@mantine/core';
+import { Text, AspectRatio, SimpleGrid, Card, Center, Image, useMantineTheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
-import AddItemShelfItem from './AddAppShelfItem';
 import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 import AppShelfMenu from './AppShelfMenu';
 
@@ -11,11 +10,19 @@ const AppShelf = () => {
   const { config } = useConfig();
 
   return (
-    <SimpleGrid m="xl" cols={5} spacing="xl">
+    <SimpleGrid
+      cols={5}
+      spacing="xl"
+      breakpoints={[
+        { maxWidth: 'xl', cols: 4, spacing: 'lg' },
+        { maxWidth: 800, cols: 3, spacing: 'md' },
+        { maxWidth: 400, cols: 3, spacing: 'sm' },
+        { maxWidth: 400, cols: 2, spacing: 'sm' },
+      ]}
+    >
       {config.services.map((service) => (
         <AppShelfItem key={service.name} service={service} />
       ))}
-      <AddItemShelfItem />
     </SimpleGrid>
   );
 };
@@ -23,6 +30,7 @@ const AppShelf = () => {
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
   const [hovering, setHovering] = useState(false);
+  const theme = useMantineTheme();
   return (
     <motion.div
       key={service.name}
@@ -33,36 +41,31 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <AppShelfItemWrapper hovering={hovering}>
+      <Card
+        style={{
+          boxShadow: hovering ? '0px 0px 3px rgba(0, 0, 0, 0.5)' : '0px 0px 1px rgba(0, 0, 0, 0.5)',
+          backgroundColor:
+            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+        }}
+        radius="md"
+      >
         <Card.Section>
-          <Group position="apart" mx="lg">
-            <Space />
-            <Text
-              // TODO: #1 Remove this hack to get the text to be centered.
-              ml={15}
-              style={{
-                alignSelf: 'center',
-                alignContent: 'center',
-                alignItems: 'center',
-                justifyContent: 'center',
-                justifyItems: 'center',
-              }}
-              mt="sm"
-              weight={500}
-            >
+            <Text mt="sm" align="center" lineClamp={1} weight={500}>
               {service.name}
             </Text>
-            <motion.div
-              style={{
-                alignSelf: 'flex-end',
-              }}
-              animate={{
-                opacity: hovering ? 1 : 0,
-              }}
-            >
-              <AppShelfMenu service={service} />
-            </motion.div>
-          </Group>
+          <motion.div
+            style={{
+              position: 'absolute',
+              top: 5,
+              right: 5,
+              alignSelf: 'flex-end',
+            }}
+            animate={{
+              opacity: hovering ? 1 : 0,
+            }}
+          >
+            <AppShelfMenu service={service} />
+          </motion.div>
         </Card.Section>
         <Card.Section>
           <AspectRatio ratio={5 / 3} m="xl">
@@ -76,16 +79,12 @@ export function AppShelfItem(props: any) {
                 onClick={() => {
                   window.open(service.url);
                 }}
-                style={{
-                  maxWidth: '50%',
-                  marginBottom: 10,
-                }}
                 src={service.icon}
               />
             </motion.i>
           </AspectRatio>
         </Card.Section>
-      </AppShelfItemWrapper>
+      </Card>
     </motion.div>
   );
 }
