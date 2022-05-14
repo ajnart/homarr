@@ -122,7 +122,7 @@ export function SettingsMenuButton(props: any) {
       </Modal>
       <ActionIcon
         variant="default"
-        radius="xl"
+        radius="md"
         size="xl"
         color="blue"
         style={props.style}
