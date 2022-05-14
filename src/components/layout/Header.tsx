@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
-import {
-  createStyles,
-  Header as Head,
-  Container,
-  Group,
-  Burger,
-  Drawer,
-  Center,
-} from '@mantine/core';
+import React from 'react';
+import { createStyles, Header as Head, Group, Drawer, Center } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import { NextLink } from '@mantine/next';
 import { Logo } from './Logo';
-import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import CalendarComponent from '../modules/calendar/CalendarModule';
+import { SettingsMenuButton } from '../Settings/SettingsMenu';
+import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
 
 const HEADER_HEIGHT = 60;
 
@@ -40,8 +33,6 @@ const useStyles = createStyles((theme) => ({
 
   header: {
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     height: '100%',
   },
 
@@ -94,62 +85,33 @@ interface HeaderResponsiveProps {
 
 export function Header({ links }: HeaderResponsiveProps) {
   const [opened, toggleOpened] = useBooleanToggle(false);
-  const [active, setActive] = useState('/');
   const { classes, cx } = useStyles();
 
-  const items = (
-    <>
-      {links.map((link) => (
-        <NextLink
-          key={link.label}
-          href={link.link}
-          className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-          onClick={(event) => {
-            setActive(link.link);
-            toggleOpened(false);
-          }}
-        >
-          {link.label}
-        </NextLink>
-      ))}
-    </>
-  );
   return (
-    <Head height={HEADER_HEIGHT} mb={10} className={classes.root}>
-      <Container className={classes.header}>
-        <Group>
-          <NextLink style={{ textDecoration: 'none' }} href="/">
-            <Logo style={{ fontSize: 22 }} />
-          </NextLink>
-        </Group>
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
+    <Head height={HEADER_HEIGHT}>
+      <Group direction="row" align="center" position="apart" className={classes.header} mx="xl">
+        <NextLink style={{ textDecoration: 'none' }} href="/">
+          <Logo style={{ fontSize: 22 }} />
+        </NextLink>
         <Group>
           <SettingsMenuButton />
-
-          <Burger
-            opened={opened}
-            onClick={() => toggleOpened()}
-            className={classes.burger}
-            size="sm"
-          />
+          <AddItemShelfButton />
         </Group>
+      </Group>
 
-        <Drawer
-          opened={opened}
-          overlayOpacity={0.55}
-          overlayBlur={3}
-          onClose={() => toggleOpened()}
-          position="right"
-        >
-          {opened ?? (
-            <Center>
-              <CalendarComponent />
-            </Center>
-          )}
-        </Drawer>
-      </Container>
+      <Drawer
+        opened={opened}
+        overlayOpacity={0.55}
+        overlayBlur={3}
+        onClose={() => toggleOpened()}
+        position="right"
+      >
+        {opened ?? (
+          <Center>
+            <CalendarComponent />
+          </Center>
+        )}
+      </Drawer>
     </Head>
   );
 }
