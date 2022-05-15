@@ -14,7 +14,7 @@ export default function Navbar() {
         base: 'auto',
       }}
     >
-      <Group mt="sm" direction="column">
+      <Group mt="sm" direction="column" align="center">
         <ModuleWrapper module={DateModule} />
       </Group>
     </MantineNavbar>

@@ -6,9 +6,6 @@ import Navbar from './Navbar';
 
 const useStyles = createStyles((theme) => ({
   main: {
-    [theme.fn.largerThan('md')]: {
-      maxWidth: 1500,
-    },
   },
 }));
 
@@ -21,7 +18,6 @@ export default function Layout({ children, style }: any) {
       header={<Header links={[]} />}
       footer={<Footer links={[]} />}
     >
-      <Center>
         <main
           className={cx(classes.main)}
           style={{
@@ -30,7 +26,6 @@ export default function Layout({ children, style }: any) {
         >
           {children}
         </main>
-      </Center>
     </AppShell>
   );
 }
