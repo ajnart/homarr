@@ -5,9 +5,11 @@ import ModuleWrapper from '../modules/moduleWrapper';
 export default function Aside() {
   return (
     <MantineAside
-      height="100%"
       hiddenBreakpoint="md"
       hidden
+      style={{
+        border: 'none',
+      }}
       width={{
         base: 'auto',
       }}
