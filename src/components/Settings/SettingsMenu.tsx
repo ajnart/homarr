@@ -9,6 +9,7 @@ import {
   SegmentedControl,
   Indicator,
   Alert,
+  TextInput,
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
@@ -24,11 +25,19 @@ function SettingsMenu(props: any) {
   const { config, setConfig } = useConfig();
   const colorScheme = useColorScheme();
   const { current, latest } = props;
+
   const matches = [
     { label: 'Google', value: 'https://google.com/search?q=' },
     { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=' },
     { label: 'Bing', value: 'https://bing.com/search?q=' },
+    { label: 'Custom', value: 'Custom' },
   ];
+
+  const [customSearchUrl, setCustomSearchUrl] = useState(config.settings.searchUrl);
+  const [searchUrl, setSearchUrl] = useState(
+    matches.find((match) => match.value === config.settings.searchUrl)?.value ?? 'Custom'
+  );
+
   return (
     <Group direction="column" grow>
       <Alert
@@ -39,27 +48,47 @@ function SettingsMenu(props: any) {
       >
         Version {latest} is available. Current : {current}
       </Alert>
-      <Group>
+      <Group grow direction="column" spacing={0}>
+        <Text>Search engine</Text>
         <SegmentedControl
+          fullWidth
           title="Search engine"
           value={
             // Match config.settings.searchUrl with a key in the matches array
-            matches.find((match) => match.value === config.settings.searchUrl)?.value ?? 'Google'
+            searchUrl
           }
           onChange={
             // Set config.settings.searchUrl to the value of the selected item
-            (e) =>
+            (e) => {
+              setSearchUrl(e);
               setConfig({
                 ...config,
                 settings: {
                   ...config.settings,
                   searchUrl: e,
                 },
-              })
+              });
+            }
           }
           data={matches}
         />
-        <Text>Search engine</Text>
+        {searchUrl === 'Custom' && (
+          <TextInput
+            label="Querry URL"
+            placeholder="Custom querry url"
+            value={customSearchUrl}
+            onChange={(event) => {
+              setCustomSearchUrl(event.currentTarget.value);
+              setConfig({
+                ...config,
+                settings: {
+                  ...config.settings,
+                  searchUrl: event.currentTarget.value,
+                },
+              });
+            }}
+          />
+        )}
       </Group>
       <Group direction="column">
         <Switch
