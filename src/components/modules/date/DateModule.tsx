@@ -25,7 +25,7 @@ export default function DateComponent(props: any) {
   }, []);
 
   return (
-    <Group p="sm" direction="column">
+    <Group direction="column">
       <Title>
         {hours < 10 ? `0${hours}` : hours}:{minutes < 10 ? `0${minutes}` : minutes}
       </Title>
