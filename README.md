@@ -16,7 +16,7 @@
   <p align = "center">
     A homepage for <i>your</i> server.
   <br/>
-  <a href = "https://github.com/ajnart/homarr/deployments/activity_log?environment=Production" > <strong> Demo ↗️ </strong> </a> • <a href = "#-installation" > <strong> Install ➡️ </strong> </a>
+  <a href = "https://homarr.netlify.app/" > <strong> Demo ↗️ </strong> </a> • <a href = "#-installation" > <strong> Install ➡️ </strong> </a>
   <br />
   <br />
     <i>Join the discord!</i>
