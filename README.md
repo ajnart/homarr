@@ -45,11 +45,6 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
     
 **[⤴️ Back to Top](#-table-of-contents)**
 
-## 🐛 Known Issues
-
--  Application cards not responsive https://github.com/ajnart/homarr/issues/47
--  Icon alignment out for specific icons https://github.com/ajnart/homarr/issues/82
-
 ## ⚡ Installation
 
 ### Deploying from Docker Image 🐳
