@@ -2,9 +2,8 @@
 import { Popover, Box, ScrollArea, Divider, Indicator } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
-import { CalendarIcon } from '@modulz/radix-icons';
 import { showNotification } from '@mantine/notifications';
-import { Check } from 'tabler-icons-react';
+import { Calendar as CalendarIcon, Check } from 'tabler-icons-react';
 import { RadarrMediaDisplay, SonarrMediaDisplay } from './MediaDisplay';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';

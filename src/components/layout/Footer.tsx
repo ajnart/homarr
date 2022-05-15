@@ -1,5 +1,12 @@
 import React from 'react';
-import { createStyles, Anchor, Text, Group, ActionIcon } from '@mantine/core';
+import {
+  createStyles,
+  Anchor,
+  Text,
+  Group,
+  ActionIcon,
+  Footer as FooterComponent,
+} from '@mantine/core';
 import { BrandGithub } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme) => ({
@@ -48,34 +55,39 @@ export function Footer({ links }: FooterCenteredProps) {
   ));
 
   return (
-    <Group
-      sx={{
-        position: 'fixed',
-        bottom: 0,
-        right: 15,
-      }}
-      direction="row"
-      align="center"
-      mb={15}
-    >
-      <Group className={classes.links}>{items}</Group>
-      <Group spacing="xs" position="right" noWrap>
-        <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
-          <BrandGithub size={18} />
-        </ActionIcon>
-      </Group>
-      <Text
-        style={{
-          fontSize: '0.75rem',
-          textAlign: 'center',
-          color: '#a0aec0',
+    <FooterComponent height="auto" style={{ border: 'none' }}>
+      <Group
+        sx={{
+          position: 'fixed',
+          bottom: 0,
+          right: 15,
         }}
+        direction="row"
+        align="center"
+        mb={15}
       >
-        Made with ❤️ by @
-        <Anchor href="https://github.com/ajnart" style={{ color: 'inherit', fontStyle: 'inherit' }}>
-          ajnart
-        </Anchor>
-      </Text>
-    </Group>
+        <Group className={classes.links}>{items}</Group>
+        <Group spacing="xs" position="right" noWrap>
+          <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
+            <BrandGithub size={18} />
+          </ActionIcon>
+        </Group>
+        <Text
+          style={{
+            fontSize: '0.90rem',
+            textAlign: 'center',
+            color: '#a0aec0',
+          }}
+        >
+          Made with ❤️ by @
+          <Anchor
+            href="https://github.com/ajnart"
+            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+          >
+            ajnart
+          </Anchor>
+        </Text>
+      </Group>
+    </FooterComponent>
   );
 }

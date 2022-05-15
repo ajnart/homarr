@@ -10,7 +10,7 @@
   ],
   "settings": {
     "searchBar": true,
-    "searchUrl": "https://google.com/search?q=",
+    "searchUrl": "https://duckduckgo.com/?q=",
     "enabledModules": []
   }
 }

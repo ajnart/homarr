@@ -1,12 +1,17 @@
-name: Master docker CI
-# Workflow to build and publish docker image
-
+name: Development CI
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
 on:
   push:
-    branches: [master]
-    tags:
-      - v*
+    branches: [dev]
+  pull_request:
   workflow_dispatch:
+    inputs:
+      tags:
+        requierd: true
+        description: 'Tags to deploy to'
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -18,7 +23,6 @@ jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   yarn_install_and_build:
-    # Will run yarn install && yarn build
     runs-on: ubuntu-latest
     steps:
       - name: Setup
@@ -26,11 +30,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Get yarn cache directory path
-      # to help speed up build times
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Yarn cache
-      # to help speed up build times
         uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
@@ -51,7 +53,6 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - name: Cache build output
-      # to copy needed files to docker build job
         uses: actions/cache@v2
         id: restore-build
         with:
@@ -92,8 +93,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value=latest
-            type=pep440,pattern={{version}}
+            type=ref,event=pr
+            tpye=raw,value=dev,priority=1
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -110,6 +111,6 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           context: .
-          push: ${{ github.event_name != 'pull_request' }}
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

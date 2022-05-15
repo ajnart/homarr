@@ -22,6 +22,7 @@ export default function SearchBar(props: any) {
 
   return (
     <Box
+      mb={"xl"}
       style={{
         width: '100%',
       }}
@@ -80,8 +81,7 @@ export default function SearchBar(props: any) {
           }
         >
           <Text>
-            tip: You can prefix your querry with <b>!yt</b> or <b>!t</b> to research on youtube or
-            for a torrent
+            tip: Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube or for a Torrent respectively.
           </Text>
         </Popover>
       </form>
