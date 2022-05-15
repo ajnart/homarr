@@ -5,9 +5,11 @@ import ModuleWrapper from '../modules/moduleWrapper';
 export default function Navbar() {
   return (
     <MantineNavbar
-      height="100%"
       hiddenBreakpoint="lg"
       hidden
+      style={{
+        border: 'none',
+      }}
       width={{
         base: 'auto',
       }}
