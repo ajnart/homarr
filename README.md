@@ -1,5 +1,5 @@
 <h3 align="center">Homarr</h3>
-<br/>
+<br>
 <p align="center">
   <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
       <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status"></a>
@@ -30,11 +30,17 @@
 - [📃 Table of Contents](#-table-of-contents)
 - [🚀 Getting Started](#-getting-started)
   - [ℹ️ About](#ℹ️-about)
-  - [🐛 Known Issues](#-known-issues)
   - [⚡ Installation](#-installation)
-    - [Deploying from Docker Image 🐳](#deploying-from-docker-image-)
-    - [Building from Source 🛠️](#building-from-source-️)
+    - [🐳 Deploying from Docker Image](#-deploying-from-docker-image)
+    - [🛠️ Building from Source](#%EF%B8%8F-building-from-source)
+  - [🔧 Configuration](#-configuration)
+    - [🧩 Integrations](#--integrations)
+    - [🧑‍🤝‍🧑 Multiple Configs](#-multiple-configs)
+    - [🐻 Icons](#-icons)
+    - [📊 Modules](#-modules)
+    - [🔍 Search Bar](#-search-bar)
 - [💖 Contributing](#-contributing)
+
 
 <!-- Getting Started -->
 # 🚀 Getting Started
@@ -47,7 +53,7 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 
 ## ⚡ Installation
 
-### Deploying from Docker Image 🐳
+### 🐳 Deploying from Docker Image
 > Supported architectures: x86-64, ARM, ARM64
 
 _Requirements_:
@@ -78,7 +84,7 @@ services:
 
 ***Getting EACCESS errors in the logs? Try running `sudo chmod 775 /directory-you-mounted-to`!***
 
-### Building from Source 🛠️
+### 🛠️ Building from Source
 
 _Requirements_:
 - [Git](https://git-scm.com/downloads)
@@ -92,6 +98,78 @@ _Requirements_:
 - Build the source: `yarn build`
 - Start the NextJS web server: ``yarn start``
 - *Note: If you want to update the code in real time, launch with ``yarn dev``*
+
+## 🔧 Configuration
+
+### 🧩  Integrations
+
+Homarr natively integrates with your services. Here is a list of all supported services.
+
+**Emby**
+*Emby does not need an API key.*
+
+**Lidarr**
+*Emby does not need an API key.*
+
+**Plex**
+*Emby does not need an API key.*
+
+**Radarr**
+*Radarr needs an API key.*%3Cbr%3E
+Make a new API key in `Advanced > Security > Create new API key`
+
+**qBittorent**
+*Radarr needs an API key.*
+
+**[⤴️ Back to Top](#-table-of-contents)**
+
+### 🧑‍🤝‍🧑 Multiple Configs
+
+Homarr allows the usage of multiple configs. You can add a new config in two ways.
+
+**Drag-and-Drop**
+1. Download your config from the Homarr settings.
+2. Change the name of the `.json` file and the name in the `.json` file to any name you want *(just make sure it's different)*.
+3. Drag-and-Drop the file into the Homarr tab in your browser.
+4. Change the config in settings.
+
+**Using a filebrowser**
+1. Locate your mounted `default.json` file.
+2. Duplicate your `default.json` file.
+3. Change the name of the `.json` file and the name in the `.json` file to any name you want *(just make sure it's different)*.
+4. Refresh the Homarr tab in your browser.
+5. Change the config in settings.
+
+**[⤴️ Back to Top](#-table-of-contents)**
+
+### 🐻 Icons
+
+The icons used in Homarr are automatically requested from the [dashboard-icons](https://github.com/walkxhub/dashboard-icons) repo.
+
+Icons are requested in the following way: <br>
+`Grab name > Replace ' ' with '-' > .toLower() > https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/{name}.png`
+
+**[⤴️ Back to Top](#-table-of-contents)**
+
+### 📊 Modules
+
+Modules are blocks shown on the sides of the Homarr dashboard that display information. They can be enabled in settings.
+
+**Clock Module**
+The clock module will display your current time and date.
+
+**Calendar Module**
+The Calendar module uses [integrations](#--integrations-1) to display new content.
+
+**[⤴️ Back to Top](#-table-of-contents)**
+
+### 🔍 Search Bar
+
+The Search Bar will open any Search Query after the Query URL you've specified in settings.
+
+*(Eg. `https://www.google.com/search?q=*Your Query will be inserted here*`)*
+
+**[⤴️ Back to Top](#-table-of-contents)**
 
 # 💖 Contributing
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
