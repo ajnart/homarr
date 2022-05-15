@@ -53,12 +53,12 @@ export default function HomePage(props: any) {
     setConfig(initialConfig);
   }, [initialConfig]);
   return (
-    <>
-      <SearchBar />
+    <> 
+      <SearchBar style={{ width: '100%'}} />
       <Group align="start" position="apart" noWrap>
         <AppShelf />
       </Group>
-      <LoadConfigComponent />
+        <LoadConfigComponent />
     </>
   );
 }
