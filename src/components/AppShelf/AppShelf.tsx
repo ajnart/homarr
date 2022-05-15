@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Text, AspectRatio, SimpleGrid, Card, Image, useMantineTheme } from '@mantine/core';
+import { Text, AspectRatio, Card, Image, useMantineTheme, Center, Grid } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AppShelfMenu from './AppShelfMenu';
@@ -9,22 +9,13 @@ const AppShelf = () => {
   const { config } = useConfig();
 
   return (
-    <SimpleGrid
-      cols={7}
-      spacing="xl"
-      breakpoints={[
-        { maxWidth: 2400, cols: 6, spacing: 'xl' },
-        { maxWidth: 1800, cols: 5, spacing: 'xl' },
-        { maxWidth: 1500, cols: 4, spacing: 'lg' },
-        { maxWidth: 800, cols: 3, spacing: 'md' },
-        { maxWidth: 400, cols: 3, spacing: 'sm' },
-        { maxWidth: 400, cols: 2, spacing: 'sm' },
-      ]}
-    >
+    <Grid gutter="xl" align="center">
       {config.services.map((service) => (
-        <AppShelfItem key={service.name} service={service} />
+        <Grid.Col span={6} xs={4} sm={3} md={2}>
+          <AppShelfItem key={service.name} service={service} />
+        </Grid.Col>
       ))}
-    </SimpleGrid>
+    </Grid>
   );
 };
 
@@ -68,34 +59,35 @@ export function AppShelfItem(props: any) {
             <AppShelfMenu service={service} />
           </motion.div>
         </Card.Section>
-        <Card.Section>
-          <AspectRatio
-            ratio={3 / 5}
-            m="xl"
-            style={{
-              width: 150,
-              height: 90,
-            }}
-          >
-            <motion.i
-              whileHover={{
-                cursor: 'pointer',
-                scale: 1.1,
+        <Center>
+          <Card.Section>
+            <AspectRatio
+              ratio={3 / 5}
+              m="xl"
+              style={{
+                width: 150,
+                height: 90,
               }}
             >
-              <Image
-                style={{
-                  maxWidth: 80,
+              <motion.i
+                whileHover={{
+                  cursor: 'pointer',
+                  scale: 1.1,
                 }}
-                fit="contain"
-                onClick={() => {
-                  window.open(service.url);
-                }}
-                src={service.icon}
-              />
-            </motion.i>
-          </AspectRatio>
-        </Card.Section>
+              >
+                <Image
+                  width={80}
+                  height={80}
+                  src={service.icon}
+                  fit="contain"
+                  onClick={() => {
+                    window.open(service.url);
+                  }}
+                />
+              </motion.i>
+            </AspectRatio>
+          </Card.Section>
+        </Center>
       </Card>
     </motion.div>
   );
