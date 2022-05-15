@@ -6,7 +6,21 @@ name: Development CI
 on:
   push:
     branches: [dev]
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/pull_request_template.md'
+      - 'CONDE_OF_CUNDUCT.md'
+      - 'CONTRIBUTING.md'
+      - 'LICENSE'
+      - 'README.md'
   pull_request:
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/pull_request_template.md'
+      - 'CONDE_OF_CUNDUCT.md'
+      - 'CONTRIBUTING.md'
+      - 'LICENSE'
+      - 'README.md'
   workflow_dispatch:
     inputs:
       tags:

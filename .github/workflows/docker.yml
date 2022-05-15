@@ -4,8 +4,16 @@ name: Master docker CI
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/pull_request_template.md'
+      - 'CONDE_OF_CUNDUCT.md'
+      - 'CONTRIBUTING.md'
+      - 'LICENSE'
+      - 'README.md'
     tags:
       - v*
+    
   workflow_dispatch:
 
 env:
