@@ -46,7 +46,7 @@ function SettingsMenu(props: any) {
         radius="lg"
         hidden={current === latest}
       >
-        Version {latest} is available. Current : {current}
+        Version {latest} is available. Current: {current}
       </Alert>
       <Group grow direction="column" spacing={0}>
         <Text>Search engine</Text>
