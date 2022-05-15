@@ -1,2 +1,2 @@
 export const REPO_URL = 'ajnart/homarr';
-export const CURRENT_VERSION = 'v0.2.0';
+export const CURRENT_VERSION = 'v0.3.0';
