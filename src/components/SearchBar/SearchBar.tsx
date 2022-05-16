@@ -73,6 +73,7 @@ export default function SearchBar(props: any) {
         target={
           <Group direction="row">
             <TextInput
+              width={'100%'}
               variant="filled"
               icon={icon}
               ref={textInput}
