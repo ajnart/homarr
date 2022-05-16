@@ -33,7 +33,7 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <Card withBorder radius="lg" shadow="xl">
+      <Card withBorder radius="lg" shadow="md">
         <Card.Section>
           <Text mt="sm" align="center" lineClamp={1} weight={550}>
             {service.name}
