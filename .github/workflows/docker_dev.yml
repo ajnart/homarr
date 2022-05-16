@@ -7,7 +7,7 @@ on:
   push:
     branches: [dev]
     paths-ignore:
-      - '.github/**'
+# temp      - '.github/**'
       - '**.md'
   pull_request_target:
     paths-ignore:
