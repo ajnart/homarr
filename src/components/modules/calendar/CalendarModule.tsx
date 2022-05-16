@@ -1,5 +1,5 @@
 /* eslint-disable react/no-children-prop */
-import { Popover, Box, ScrollArea, Divider, Indicator } from '@mantine/core';
+import { Popover, Box, ScrollArea, Divider, Indicator, useMantineTheme } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { showNotification } from '@mantine/notifications';
@@ -93,6 +93,7 @@ function DayComponent(props: any) {
     radarrmedias,
   }: { renderdate: Date; sonarrmedias: []; radarrmedias: [] } = props;
   const [opened, setOpened] = useState(false);
+  const theme = useMantineTheme();
 
   const day = renderdate.getDate();
   // Itterate over the medias and filter the ones that are on the same day
@@ -126,8 +127,7 @@ function DayComponent(props: any) {
         width={700}
         onClose={() => setOpened(false)}
         opened={opened}
-        // TODO: Fix this !! WTF ?
-        target={`‏ ${day}`}
+        target={day}
       >
         <ScrollArea style={{ height: 400 }}>
           {sonarrFiltered.map((media: any, index: number) => (
