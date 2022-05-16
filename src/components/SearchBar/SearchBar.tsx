@@ -8,11 +8,11 @@ export default function SearchBar(props: any) {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
-  const querryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
+  const queryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
 
   const form = useForm({
     initialValues: {
-      querry: '',
+      query: '',
     },
   });
 
@@ -29,10 +29,10 @@ export default function SearchBar(props: any) {
     >
       <form
         onChange={() => {
-          // If querry contains !yt or !t add "Searching on YouTube" or "Searching torrent"
-          const querry = form.values.querry.trim();
-          const isYoutube = querry.startsWith('!yt');
-          const isTorrent = querry.startsWith('!t');
+          // If query contains !yt or !t add "Searching on YouTube" or "Searching torrent"
+          const query = form.values.query.trim();
+          const isYoutube = query.startsWith('!yt');
+          const isTorrent = query.startsWith('!t');
           if (isYoutube) {
             setIcon(<BrandYoutube size={22} />);
           } else if (isTorrent) {
@@ -42,16 +42,16 @@ export default function SearchBar(props: any) {
           }
         }}
         onSubmit={form.onSubmit((values) => {
-          // Find if querry is prefixed by !yt or !t
-          const querry = values.querry.trim();
-          const isYoutube = querry.startsWith('!yt');
-          const isTorrent = querry.startsWith('!t');
+          // Find if query is prefixed by !yt or !t
+          const query = values.query.trim();
+          const isYoutube = query.startsWith('!yt');
+          const isTorrent = query.startsWith('!t');
           if (isYoutube) {
-            window.open(`https://www.youtube.com/results?search_query=${querry.substring(3)}`);
+            window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
           } else if (isTorrent) {
-            window.open(`https://bitsearch.to/search?q=${querry.substring(3)}`);
+            window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
           } else {
-            window.open(`${querryUrl}${values.querry}`);
+            window.open(`${queryUrl}${values.query}`);
           }
         })}
       >
@@ -76,7 +76,7 @@ export default function SearchBar(props: any) {
               size="md"
               placeholder="Search the web"
               {...props}
-              {...form.getInputProps('querry')}
+              {...form.getInputProps('query')}
             />
           }
         >
