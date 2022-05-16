@@ -112,17 +112,17 @@ Homarr natively integrates with your services. Here is a list of all supported s
 *The Lidarr integration is still in development.*
 
 **Sonarr**
-*Sonarr needs an API key.*%3Cbr%3E
-Make a new API key in `Advanced > Security > Create new API key`
-**Current integration:** Upcomming medias are displayed in the **Calendar** module
+*Sonarr needs an API key.*<br>
+Make a new API key in `Advanced > Security > Create new API key`<br>
+**Current integration:** Upcoming media is displayed in the **Calendar** module.
 
 **Plex**
 *The Plex integration is still in development.*
 
 **Radarr**
-*Radarr needs an API key.*%3Cbr%3E
-Make a new API key in `Advanced > Security > Create new API key`
-**Current integration:** Upcomming medias are displayed in the **Calendar** module
+*Radarr needs an API key.*<br>
+Make a new API key in `Advanced > Security > Create new API key`<br>
+**Current integration:** Upcoming media is displayed in the **Calendar** module.
 
 **qBittorent**
 *The qBittorent integration is still in development.*
