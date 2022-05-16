@@ -12,6 +12,7 @@ import {
   LoadingOverlay,
   ActionIcon,
   Tooltip,
+  Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { motion } from 'framer-motion';
@@ -28,9 +29,9 @@ export function AddItemShelfButton(props: any) {
       <Modal
         size="xl"
         radius="md"
+        title={<Title order={3}>Add service</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
-        title="Add a service"
       >
         <AddAppShelfItemForm setOpened={setOpened} />
       </Modal>

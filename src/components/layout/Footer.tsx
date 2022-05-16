@@ -54,24 +54,12 @@ export function Footer({ links }: FooterCenteredProps) {
     </Anchor>
   ));
 
-  return (
-    <FooterComponent height="auto" style={{ border: 'none' }}>
-      <Group
-        sx={{
-          position: 'fixed',
-          bottom: 0,
-          right: 15,
-        }}
-        direction="row"
-        align="center"
-        mb={15}
-      >
-        <Group className={classes.links}>{items}</Group>
-        <Group spacing="xs" position="right" noWrap>
-          <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
-            <BrandGithub size={18} />
-          </ActionIcon>
-        </Group>
+  return ( 
+    <FooterComponent p={5} height="auto" style={{ border: 'none', position: 'fixed', bottom: 0, right: 0 }}>
+      <Group position="right" mr="xs" mb="xs">
+        <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
+          <BrandGithub size={18} />
+        </ActionIcon>
         <Text
           style={{
             fontSize: '0.90rem',

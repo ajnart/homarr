@@ -1,4 +1,3 @@
-import { Group } from '@mantine/core';
 import { getCookie, setCookies } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 import path from 'path';
@@ -6,7 +5,6 @@ import fs from 'fs';
 import { useEffect } from 'react';
 import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
-import SearchBar from '../components/SearchBar/SearchBar';
 import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
 
@@ -54,10 +52,7 @@ export default function HomePage(props: any) {
   }, [initialConfig]);
   return (
     <>
-      <SearchBar />
-      <Group align="start" position="apart" noWrap>
-        <AppShelf />
-      </Group>
+      <AppShelf />
       <LoadConfigComponent />
     </>
   );

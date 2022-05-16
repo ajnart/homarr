@@ -6,7 +6,13 @@ name: Development CI
 on:
   push:
     branches: [dev]
+    paths-ignore:
+      - '.github/**'
+      - '**.md'
   pull_request:
+    paths-ignore:
+      - '.github/**'
+      - '**.md'
   workflow_dispatch:
     inputs:
       tags:
@@ -25,13 +31,17 @@ jobs:
   yarn_install_and_build:
     runs-on: ubuntu-latest
     steps:
+
       - name: Setup
         uses: actions/setup-node@v3
+
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
+
       - name: Yarn cache
         uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
@@ -39,6 +49,7 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-yarn-
+
       - name: Nextjs cache
         uses: actions/cache@v2
         with:
@@ -50,8 +61,10 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
       - run: yarn install --frozen-lockfile
       - run: yarn build
+
       - name: Cache build output
         uses: actions/cache@v2
         id: restore-build
@@ -72,8 +85,10 @@ jobs:
       packages: write
       contents: read
     steps:
+
       - name: Checkout
         uses: actions/checkout@v2
+
       - uses: actions/cache@v2
         id: restore-build
         with:
@@ -85,6 +100,7 @@ jobs:
              ./.next/standalone/
              ./packages.json
           key: ${{ github.sha }}
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
@@ -95,11 +111,15 @@ jobs:
           tags: |
             type=ref,event=pr
             tpye=raw,value=dev,priority=1
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
       - name: Login to GHCR
+        if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
@@ -111,6 +131,6 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           context: .
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
