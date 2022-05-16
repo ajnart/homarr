@@ -11,7 +11,7 @@ const AppShelf = (props: any) => {
   return (
     <Grid gutter="xl" align="center">
       {config.services.map((service) => (
-        <Grid.Col span={6} xs={4} sm={3} md={2}>
+        <Grid.Col span={6} xl={2} xs={4} sm={3} md={3}>
           <AppShelfItem key={service.name} service={service} />
         </Grid.Col>
       ))}
@@ -33,16 +33,9 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <Card
-        style={{
-          boxShadow: hovering ? '0px 0px 3px rgba(0, 0, 0, 0.5)' : '0px 0px 1px rgba(0, 0, 0, 0.5)',
-          backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
-        }}
-        radius="md"
-      >
+      <Card withBorder radius="lg" shadow="xl">
         <Card.Section>
-          <Text mt="sm" align="center" lineClamp={1} weight={500}>
+          <Text mt="sm" align="center" lineClamp={1} weight={550}>
             {service.name}
           </Text>
           <motion.div
