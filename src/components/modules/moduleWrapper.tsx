@@ -13,16 +13,7 @@ export default function ModuleWrapper(props: any) {
     return null;
   }
   return (
-    <Card
-      hidden={!isShown}
-      mx="sm"
-      radius="lg"
-      shadow="sm"
-      style={{
-        // Make background color of the card depend on the theme
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : 'white',
-      }}
-    >
+    <Card hidden={!isShown} mx="sm" withBorder radius="lg" shadow="sm">
       <module.component />
     </Card>
   );

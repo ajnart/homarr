@@ -9,9 +9,7 @@
     <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/ajnart/homarr?label=Downloads%20"></a>
   </p>
   <p align="center">
-  <a href="">
 <img align="end" width=600 src="https://user-images.githubusercontent.com/49837342/168315259-b778c816-10fe-44db-bd25-3eea6f31b233.png" />
-  <a/>
   </p>
   <p align = "center">
     A homepage for <i>your</i> server.

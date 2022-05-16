@@ -1,12 +1,26 @@
 {
   "name": "config",
-  "services": [],
+  "services": [
+    {
+      "type": "Other",
+      "name": "YouTube",
+      "icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/youtube.png",
+      "url": "https://youtube.com/"
+    },
+    {
+      "type": "Other",
+      "name": "YouTube ",
+      "icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/youtube.png",
+      "url": "https://youtube.com/"
+    }
+  ],
   "settings": {
     "searchBar": true,
-    "searchUrl": "https://duckduckgo.com/?q=",
+    "searchUrl": "Custom",
     "enabledModules": [
       "Date",
-      "Calendar"
+      "Calendar",
+      "Weather"
     ]
   }
 }

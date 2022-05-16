@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, Switch, Group, useMantineColorScheme } from '@mantine/core';
+import { createStyles, Switch, Group, useMantineColorScheme, Kbd } from '@mantine/core';
 import { Sun, MoonStars } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme) => ({
@@ -40,6 +40,9 @@ export function ColorSchemeSwitch() {
         <Switch checked={colorScheme === 'dark'} onChange={() => toggleColorScheme()} size="md" />
       </div>
       Switch to {colorScheme === 'dark' ? 'light' : 'dark'} mode
+      <Group spacing={2}>
+        <Kbd>Ctrl</Kbd>+<Kbd>J</Kbd>
+      </Group>
     </Group>
   );
 }
