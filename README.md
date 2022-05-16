@@ -30,6 +30,7 @@
 - [📃 Table of Contents](#-table-of-contents)
 - [🚀 Getting Started](#-getting-started)
   - [ℹ️ About](#ℹ️-about)
+  - [💥 Known Issues](#-known-issues)
   - [⚡ Installation](#-installation)
     - [🐳 Deploying from Docker Image](#-deploying-from-docker-image)
     - [🛠️ Building from Source](#%EF%B8%8F-building-from-source)
@@ -55,6 +56,8 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 - Posters on the Calendar get blocked by adblockers. (IMDb posters)
 - Editing a service creates a duplicate (#97)
 - Used search engine not properly selected (#35)
+
+**[⤴️ Back to Top](#-table-of-contents)**
 
 ## ⚡ Installation
 
