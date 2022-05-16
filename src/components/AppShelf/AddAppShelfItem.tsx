@@ -27,7 +27,7 @@ export function AddItemShelfButton(props: any) {
   return (
     <>
       <Modal
-        size="md"
+        size="xl"
         radius="md"
         title={<Title order={3}>Add service</Title>}
         opened={props.opened || opened}
