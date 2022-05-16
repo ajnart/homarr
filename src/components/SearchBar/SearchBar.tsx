@@ -1,6 +1,6 @@
 import { TextInput, Kbd, createStyles, useMantineTheme, Text, Popover } from '@mantine/core';
 import { useForm, useHotkeys } from '@mantine/hooks';
-import { MutableRefObject, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Search, BrandYoutube, Download } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 
@@ -20,7 +20,7 @@ export default function SearchBar(props: any) {
   const [icon, setIcon] = useState(<Search />);
   const queryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
   const textInput = useRef<HTMLInputElement>();
-  useHotkeys([['ctrl+K', () => textInput.current.focus()]]);
+  useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
 
   const { classes, cx } = useStyles();
   const theme = useMantineTheme();
