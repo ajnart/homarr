@@ -36,7 +36,6 @@ env:
   e1: ${{ github.event_name }}
   e2: ${{ github.base_ref }}-${{github.head_ref }}
   e3: " ${{github}} "
-  e4: ${{github}}
 
 jobs:
   # Push image to GitHub Packages.
