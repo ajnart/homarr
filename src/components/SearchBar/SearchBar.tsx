@@ -1,8 +1,18 @@
-import { TextInput, Text, Popover, Kbd, Group } from '@mantine/core';
+import { TextInput, Kbd, createStyles, useMantineTheme, Text, Popover } from '@mantine/core';
 import { useForm, useHotkeys } from '@mantine/hooks';
 import { useRef, useState } from 'react';
 import { Search, BrandYoutube, Download } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
+
+const useStyles = createStyles((theme) => ({
+  hide: {
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none',
+    },
+    display: 'flex',
+    alignItems: 'center',
+  },
+}));
 
 export default function SearchBar(props: any) {
   const { config, setConfig } = useConfig();
@@ -12,8 +22,10 @@ export default function SearchBar(props: any) {
   const textInput: any = useRef(null);
   useHotkeys([['ctrl+K', () => textInput.current.focus()]]);
 
+  const { classes, cx } = useStyles();
+  const theme = useMantineTheme();
   const rightSection = (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div className={classes.hide}>
       <Kbd>Ctrl</Kbd>
       <span style={{ margin: '0 5px' }}>+</span>
       <Kbd>K</Kbd>
@@ -71,22 +83,19 @@ export default function SearchBar(props: any) {
         onFocusCapture={() => setOpened(true)}
         onBlurCapture={() => setOpened(false)}
         target={
-          <Group direction="row">
-            <TextInput
-              width={'100%'}
-              variant="filled"
-              icon={icon}
-              ref={textInput}
-              rightSectionWidth={90}
-              rightSection={rightSection}
-              radius="md"
-              size="md"
-              styles={{ rightSection: { pointerEvents: 'none' } }}
-              placeholder="Search the web..."
-              {...props}
-              {...form.getInputProps('query')}
-            />
-          </Group>
+          <TextInput
+            variant="filled"
+            icon={icon}
+            ref={textInput}
+            rightSectionWidth={90}
+            rightSection={rightSection}
+            radius="md"
+            size="md"
+            styles={{ rightSection: { pointerEvents: 'none' } }}
+            placeholder="Search the web..."
+            {...props}
+            {...form.getInputProps('query')}
+          />
         }
       >
         <Text>
