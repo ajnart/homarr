@@ -11,7 +11,7 @@ on:
       - '**.md'
   pull_request_target:
     paths-ignore:
-      - '.github/**'
+# temp remove to test workflow      - '.github/**'
       - '**.md'
   workflow_dispatch:
     inputs:
