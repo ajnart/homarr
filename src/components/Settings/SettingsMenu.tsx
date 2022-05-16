@@ -74,8 +74,8 @@ function SettingsMenu(props: any) {
         />
         {searchUrl === 'Custom' && (
           <TextInput
-            label="Querry URL"
-            placeholder="Custom querry url"
+            label="Query URL"
+            placeholder="Custom query url"
             value={customSearchUrl}
             onChange={(event) => {
               setCustomSearchUrl(event.currentTarget.value);
@@ -142,7 +142,8 @@ export function SettingsMenuButton(props: any) {
   return (
     <>
       <Modal
-        size="md"
+        size="xl"
+        radius="md"
         title={<Title order={3}>Settings</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
