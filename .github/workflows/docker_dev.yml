@@ -9,7 +9,7 @@ on:
     paths-ignore:
       - '.github/**'
       - '**.md'
-  pull_request:
+  pull_request_target:
     paths-ignore:
       - '.github/**'
       - '**.md'
