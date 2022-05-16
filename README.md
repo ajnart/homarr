@@ -106,20 +106,23 @@ _Requirements_:
 Homarr natively integrates with your services. Here is a list of all supported services.
 
 **Emby**
-*Emby does not need an API key.*
+*The Emby integration is still in development.*
 
 **Lidarr**
-*Emby does not need an API key.*
+*The Lidarr integration is still in development.*
+
+**Sonarr**
+*The Sonarr integration is still in development.*
 
 **Plex**
-*Emby does not need an API key.*
+*The Plex integration is still in development.*
 
 **Radarr**
 *Radarr needs an API key.*%3Cbr%3E
 Make a new API key in `Advanced > Security > Create new API key`
 
 **qBittorent**
-*Radarr needs an API key.*
+*The qBittorent integration is still in development.*
 
 **[⤴️ Back to Top](#-table-of-contents)**
 
