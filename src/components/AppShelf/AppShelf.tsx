@@ -37,7 +37,7 @@ export function AppShelfItem(props: any) {
         style={{
           boxShadow: hovering ? '0px 0px 3px rgba(0, 0, 0, 0.5)' : '0px 0px 1px rgba(0, 0, 0, 0.5)',
           backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+            theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
         }}
         radius="md"
       >
