@@ -6,6 +6,7 @@ import fs from 'fs';
 import { useEffect } from 'react';
 import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
+import SearchBar from '../components/SearchBar/SearchBar';
 import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
 
@@ -53,9 +54,7 @@ export default function HomePage(props: any) {
   }, [initialConfig]);
   return (
     <>
-      <Group align="start" position="apart" noWrap>
-        <AppShelf />
-      </Group>
+      <AppShelf />
       <LoadConfigComponent />
     </>
   );

@@ -5,7 +5,7 @@ import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AppShelfMenu from './AppShelfMenu';
 
-const AppShelf = () => {
+const AppShelf = (props: any) => {
   const { config } = useConfig();
 
   return (
