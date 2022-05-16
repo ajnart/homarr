@@ -11,12 +11,8 @@ on:
       - '**.md'
   pull_request:
     paths-ignore:
-      - '.github/ISSUE_TEMPLATE/**'
-      - '.github/pull_request_template.md'
-      - 'CODE_OF_CONDUCT.md'
-      - 'CONTRIBUTING.md'
-      - 'LICENSE'
-      - 'README.md'
+      - '.github/**'
+      - '**.md'
   workflow_dispatch:
     inputs:
       tags:
