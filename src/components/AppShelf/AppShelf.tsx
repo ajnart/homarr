@@ -1,13 +1,32 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Text, AspectRatio, Card, Image, useMantineTheme, Center, Grid } from '@mantine/core';
+import {
+  Text,
+  AspectRatio,
+  Card,
+  Image,
+  useMantineTheme,
+  Center,
+  Grid,
+  createStyles,
+} from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AppShelfMenu from './AppShelfMenu';
 
+const useStyles = createStyles((theme) => ({
+  item: {
+    transition: 'box-shadow 150ms ease, transform 100ms ease',
+
+    '&:hover': {
+      boxShadow: `${theme.shadows.md} !important`,
+      transform: 'scale(1.05)',
+    },
+  },
+}));
+
 const AppShelf = (props: any) => {
   const { config } = useConfig();
-
   return (
     <Grid gutter="xl" align="center">
       {config.services.map((service) => (
@@ -22,7 +41,7 @@ const AppShelf = (props: any) => {
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
   const [hovering, setHovering] = useState(false);
-  const theme = useMantineTheme();
+  const { classes, theme } = useStyles();
   return (
     <motion.div
       key={service.name}
@@ -33,7 +52,7 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <Card withBorder radius="lg" shadow="md">
+      <Card withBorder radius="lg" shadow="md" className={classes.item}>
         <Card.Section>
           <Text mt="sm" align="center" lineClamp={1} weight={550}>
             {service.name}
