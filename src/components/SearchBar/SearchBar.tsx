@@ -1,6 +1,6 @@
 import { TextInput, Kbd, createStyles, useMantineTheme, Text, Popover } from '@mantine/core';
 import { useForm, useHotkeys } from '@mantine/hooks';
-import { useRef, useState } from 'react';
+import { MutableRefObject, useRef, useState } from 'react';
 import { Search, BrandYoutube, Download } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 
@@ -19,7 +19,7 @@ export default function SearchBar(props: any) {
   const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
   const queryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
-  const textInput: any = useRef(null);
+  const textInput = useRef<HTMLInputElement>();
   useHotkeys([['ctrl+K', () => textInput.current.focus()]]);
 
   const { classes, cx } = useStyles();
@@ -58,17 +58,18 @@ export default function SearchBar(props: any) {
         }
       }}
       onSubmit={form.onSubmit((values) => {
-        // Find if query is prefixed by !yt or !t
         const query = values.query.trim();
         const isYoutube = query.startsWith('!yt');
         const isTorrent = query.startsWith('!t');
-        if (isYoutube) {
-          window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
-        } else if (isTorrent) {
-          window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
-        } else {
-          window.open(`${queryUrl}${values.query}`);
-        }
+        setTimeout(() => {
+          if (isYoutube) {
+            window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
+          } else if (isTorrent) {
+            window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
+          } else {
+            window.open(`${queryUrl}${values.query}`);
+          }
+        }, 20);
       })}
     >
       <Popover
