@@ -1,11 +1,14 @@
 import React from 'react';
-import { createStyles, Header as Head, Group, Drawer, Center } from '@mantine/core';
-import { useBooleanToggle } from '@mantine/hooks';
+import {
+  createStyles,
+  Header as Head,
+  Group,
+} from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { Logo } from './Logo';
-import CalendarComponent from '../modules/calendar/CalendarModule';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
+import SearchBar from '../SearchBar/SearchBar';
 
 const HEADER_HEIGHT = 60;
 
@@ -83,8 +86,7 @@ interface HeaderResponsiveProps {
   links: { link: string; label: string }[];
 }
 
-export function Header({ links }: HeaderResponsiveProps) {
-  const [opened, toggleOpened] = useBooleanToggle(false);
+export function Header(props: any) {
   const { classes, cx } = useStyles();
 
   return (
@@ -94,24 +96,11 @@ export function Header({ links }: HeaderResponsiveProps) {
           <Logo style={{ fontSize: 22 }} />
         </NextLink>
         <Group>
+          <SearchBar />
           <SettingsMenuButton />
           <AddItemShelfButton />
         </Group>
       </Group>
-
-      <Drawer
-        opened={opened}
-        overlayOpacity={0.55}
-        overlayBlur={3}
-        onClose={() => toggleOpened()}
-        position="right"
-      >
-        {opened ?? (
-          <Center>
-            <CalendarComponent />
-          </Center>
-        )}
-      </Drawer>
     </Head>
   );
 }
