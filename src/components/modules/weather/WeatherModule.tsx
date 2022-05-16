@@ -1,7 +1,9 @@
-import { Center, Group, Text, Title, Tooltip } from '@mantine/core';
+import { Group, Space, Title, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {
+  ArrowDownRight,
+  ArrowUpRight,
   Cloud,
   CloudFog,
   CloudRain,
@@ -139,13 +141,17 @@ export default function WeatherComponent(props: any) {
   if (!weather.current_weather) {
     return null;
   }
-
   return (
     <Group position="left" direction="column">
       <Title>{weather.current_weather.temperature}°C</Title>
-      <Group>
+      <Group spacing={0}>
         <WeatherIcon code={weather.current_weather.weathercode} />
-        {weather.daily.temperature_2m_max[0]}°C / {weather.daily.temperature_2m_min[0]}°C
+        <Space mx="sm" />
+        <span>{weather.daily.temperature_2m_max[0]}°C</span>
+        <ArrowUpRight size={16} style={{ right: 15 }} />
+        <Space mx="sm" />
+        <span>{weather.daily.temperature_2m_min[0]}°C</span>
+        <ArrowDownRight size={16} />
       </Group>
     </Group>
   );
