@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  createStyles,
-  Header as Head,
-  Group,
-} from '@mantine/core';
+import { createStyles, Header as Head, Group } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { Logo } from './Logo';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
@@ -40,7 +36,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   links: {
-    [theme.fn.smallerThan('md')]: {
+    [theme.fn.smallerThan('xs')]: {
       display: 'none',
     },
   },
@@ -92,9 +88,7 @@ export function Header(props: any) {
   return (
     <Head height={HEADER_HEIGHT}>
       <Group direction="row" align="center" position="apart" className={classes.header} mx="xl">
-        <NextLink style={{ textDecoration: 'none' }} href="/">
-          <Logo style={{ fontSize: 22 }} />
-        </NextLink>
+        <Logo style={{ fontSize: 22 }} />
         <Group>
           <SearchBar />
           <SettingsMenuButton />
