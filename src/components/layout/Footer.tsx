@@ -8,6 +8,7 @@ import {
   Footer as FooterComponent,
 } from '@mantine/core';
 import { BrandGithub } from 'tabler-icons-react';
+import { CURRENT_VERSION } from '../../../data/constants';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -54,12 +55,27 @@ export function Footer({ links }: FooterCenteredProps) {
     </Anchor>
   ));
 
-  return ( 
-    <FooterComponent p={5} height="auto" style={{ border: 'none', position: 'fixed', bottom: 0, right: 0 }}>
+  return (
+    <FooterComponent
+      p={5}
+      height="auto"
+      style={{ border: 'none', position: 'fixed', bottom: 0, right: 0 }}
+    >
       <Group position="right" mr="xs" mb="xs">
-        <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
-          <BrandGithub size={18} />
-        </ActionIcon>
+        <Group spacing={0}>
+          <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
+            <BrandGithub size={18} />
+          </ActionIcon>
+          <Text
+            style={{
+              position: 'relative',
+              fontSize: '0.90rem',
+              color: 'gray',
+            }}
+          >
+            {CURRENT_VERSION}
+          </Text>
+        </Group>
         <Text
           style={{
             fontSize: '0.90rem',
