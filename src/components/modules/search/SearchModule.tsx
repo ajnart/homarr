@@ -69,6 +69,7 @@ export default function SearchBar(props: any) {
         const query = values.query.trim();
         const isYoutube = query.startsWith('!yt');
         const isTorrent = query.startsWith('!t');
+        form.setValues({ query: '' });
         setTimeout(() => {
           if (isYoutube) {
             window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
