@@ -1,4 +1,4 @@
-import SearchBar from './SearchBar';
+import SearchBar from './SearchModule';
 
 export default {
   title: 'Search bar',

@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  Text,
-  AspectRatio,
-  Card,
-  Image,
-  useMantineTheme,
-  Center,
-  Grid,
-  createStyles,
-} from '@mantine/core';
+import { Text, AspectRatio, Card, Image, Center, Grid, createStyles } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AppShelfMenu from './AppShelfMenu';

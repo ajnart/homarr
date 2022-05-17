@@ -90,22 +90,6 @@ function SettingsMenu(props: any) {
           />
         )}
       </Group>
-      <Group direction="column">
-        <Switch
-          size="md"
-          onChange={(e) =>
-            setConfig({
-              ...config,
-              settings: {
-                ...config.settings,
-                searchBar: e.currentTarget.checked,
-              },
-            })
-          }
-          checked={config.settings.searchBar}
-          label="Enable search bar"
-        />
-      </Group>
       <ModuleEnabler />
       <ColorSchemeSwitch />
       <ConfigChanger />
