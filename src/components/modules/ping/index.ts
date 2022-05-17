@@ -1,0 +1,1 @@
+export { PingModule } from './PingModule';
