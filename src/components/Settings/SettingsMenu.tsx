@@ -2,7 +2,6 @@ import {
   ActionIcon,
   Group,
   Modal,
-  Switch,
   Title,
   Text,
   Tooltip,

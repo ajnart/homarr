@@ -154,7 +154,14 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
   return (
     <>
       <Center>
-        <Image height={120} width={120} fit="contain" src={form.values.icon} alt="Placeholder" withPlaceholder />
+        <Image
+          height={120}
+          width={120}
+          fit="contain"
+          src={form.values.icon}
+          alt="Placeholder"
+          withPlaceholder
+        />
       </Center>
       <form
         onSubmit={form.onSubmit(() => {

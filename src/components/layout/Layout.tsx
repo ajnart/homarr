@@ -10,11 +10,7 @@ const useStyles = createStyles((theme) => ({
 export default function Layout({ children, style }: any) {
   const { classes, cx } = useStyles();
   return (
-    <AppShell
-      aside={<Aside />}
-      header={<Header />}
-      footer={<Footer links={[]} />}
-    >
+    <AppShell aside={<Aside />} header={<Header />} footer={<Footer links={[]} />}>
       <main
         className={cx(classes.main)}
         style={{
