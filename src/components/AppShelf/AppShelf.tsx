@@ -4,6 +4,7 @@ import { Text, AspectRatio, Card, Image, Center, Grid, createStyles } from '@man
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AppShelfMenu from './AppShelfMenu';
+import PingComponent from '../modules/ping/PingModule';
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -89,6 +90,7 @@ export function AppShelfItem(props: any) {
                 />
               </motion.i>
             </AspectRatio>
+            <PingComponent url={service.url} />
           </Card.Section>
         </Center>
       </Card>
