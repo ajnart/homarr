@@ -6,6 +6,15 @@ export interface IModule {
   title: string;
   description: string;
   icon: React.ReactNode;
-  component: (args: any) => JSX.Element | null;
-  props?: any;
+  component: React.ComponentType;
+  options?: Option;
+}
+
+interface Option {
+  [x: string]: OptionValues;
+}
+
+interface OptionValues {
+  name: string;
+  value: boolean;
 }
