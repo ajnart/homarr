@@ -13,6 +13,7 @@ import {
   Snowflake,
   Sun,
 } from 'tabler-icons-react';
+import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 import { WeatherResponse } from './WeatherInterface';
 
@@ -21,6 +22,12 @@ export const WeatherModule: IModule = {
   description: 'Look up the current weather in your location',
   icon: Sun,
   component: WeatherComponent,
+  options: {
+    freedomunit: {
+      name: 'Display in Fahrenheit',
+      value: false,
+    },
+  },
 };
 
 // 0 Clear sky
@@ -122,7 +129,13 @@ export function WeatherIcon(props: any) {
 export default function WeatherComponent(props: any) {
   // Get location from browser
   const [location, setLocation] = useState({ lat: 0, lng: 0 });
+  const { config } = useConfig();
   const [weather, setWeather] = useState({} as WeatherResponse);
+  const isFahrenheit: boolean =
+    config.settings[`${WeatherModule.title}.freedomunit`] === undefined
+      ? false
+      : config.settings[`${WeatherModule.title}.freedomunit`];
+
   if ('geolocation' in navigator && location.lat === 0 && location.lng === 0) {
     navigator.geolocation.getCurrentPosition((position) => {
       setLocation({ lat: position.coords.latitude, lng: position.coords.longitude });
@@ -141,9 +154,12 @@ export default function WeatherComponent(props: any) {
   if (!weather.current_weather) {
     return null;
   }
+  function usePerferedUnit(value: number): string {
+    return isFahrenheit ? `${(value * (9 / 5)).toFixed(1)}°F` : `${value.toFixed(1)}°C`;
+  }
   return (
     <Group position="left" direction="column">
-      <Title>{weather.current_weather.temperature}°C</Title>
+      <Title>{usePerferedUnit(weather.current_weather.temperature)}</Title>
       <Group spacing={0}>
         <WeatherIcon code={weather.current_weather.weathercode} />
         <Space mx="sm" />
