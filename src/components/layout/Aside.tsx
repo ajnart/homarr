@@ -1,7 +1,6 @@
 import { Aside as MantineAside, Group } from '@mantine/core';
-import { DateModule } from '../modules';
-import { CalendarModule } from '../modules/calendar/CalendarModule';
-import ModuleWrapper from '../modules/moduleWrapper';
+import { WeatherModule, DateModule, CalendarModule } from '../modules';
+import { ModuleWrapper } from '../modules/moduleWrapper';
 
 export default function Aside(props: any) {
   return (
@@ -18,6 +17,7 @@ export default function Aside(props: any) {
       <Group mt="sm" grow direction="column">
         <ModuleWrapper module={CalendarModule} />
         <ModuleWrapper module={DateModule} />
+        <ModuleWrapper module={WeatherModule} />
       </Group>
     </MantineAside>
   );
