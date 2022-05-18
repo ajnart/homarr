@@ -39,6 +39,7 @@
     - [📊 Modules](#-modules)
     - [🔍 Search Bar](#-search-bar)
 - [💖 Contributing](#-contributing)
+    - [🍏 Request Icons](#-request-icons)
 
 
 <!-- Getting Started -->
@@ -190,5 +191,11 @@ The Search Bar will open any Search Query after the Query URL you've specified i
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
 All contributions are highly appreciated.
+
+**[⤴️ Back to Top](#-table-of-contents)**
+
+## 🍏 Request Icons
+
+The icons used in Homarr are automatically requested from the [dashboard-icons](https://github.com/walkxhub/dashboard-icons) repo. You can make a icon request by creating an [issue](https://github.com/walkxhub/dashboard-icons/issues/new/choose).
     
 **[⤴️ Back to Top](#-table-of-contents)**
