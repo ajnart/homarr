@@ -7,5 +7,14 @@ export interface IModule {
   description: string;
   icon: React.ReactNode;
   component: React.ComponentType;
-  props?: any;
+  options?: Option;
+}
+
+interface Option {
+  [x: string]: OptionValues;
+}
+
+interface OptionValues {
+  name: string;
+  value: boolean;
 }

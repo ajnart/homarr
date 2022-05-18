@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles, Header as Head, Group, Box } from '@mantine/core';
 import { Logo } from './Logo';
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from '../modules/search/SearchModule';
 import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 

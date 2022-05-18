@@ -1,4 +1,4 @@
-import { Menu, Modal, Text } from '@mantine/core';
+import { Menu, Modal, Text, useMantineTheme } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { useState } from 'react';
 import { Check, Edit, Trash } from 'tabler-icons-react';
@@ -8,12 +8,13 @@ import { AddAppShelfItemForm } from './AddAppShelfItem';
 export default function AppShelfMenu(props: any) {
   const { service } = props;
   const { config, setConfig } = useConfig();
+  const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   return (
     <>
       <Modal
         size="xl"
-        radius="lg"
+        radius="md"
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
         title="Modify a service"
@@ -28,7 +29,16 @@ export default function AppShelfMenu(props: any) {
           message="Save service"
         />
       </Modal>
-      <Menu position="right">
+      <Menu
+        position="right"
+        radius="md"
+        styles={{
+          body: {
+            backgroundColor:
+              theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+          },
+        }}
+      >
         <Menu.Label>Settings</Menu.Label>
         <Menu.Item
           color="primary"

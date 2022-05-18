@@ -2,19 +2,15 @@ import {
   ActionIcon,
   Group,
   Modal,
-  Switch,
   Title,
   Text,
   Tooltip,
   SegmentedControl,
-  Indicator,
-  Alert,
   TextInput,
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
-import { useEffect, useState } from 'react';
-import { AlertCircle, Settings as SettingsIcon } from 'tabler-icons-react';
-import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
+import { useState } from 'react';
+import { Settings as SettingsIcon } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
@@ -40,14 +36,6 @@ function SettingsMenu(props: any) {
 
   return (
     <Group direction="column" grow>
-      <Alert
-        icon={<AlertCircle size={16} />}
-        title="Update available"
-        radius="lg"
-        hidden={current === latest}
-      >
-        Version {latest} is available. Current: {current}
-      </Alert>
       <Group grow direction="column" spacing={0}>
         <Text>Search engine</Text>
         <SegmentedControl
@@ -90,22 +78,6 @@ function SettingsMenu(props: any) {
           />
         )}
       </Group>
-      <Group direction="column">
-        <Switch
-          size="md"
-          onChange={(e) =>
-            setConfig({
-              ...config,
-              settings: {
-                ...config.settings,
-                searchBar: e.currentTarget.checked,
-              },
-            })
-          }
-          checked={config.settings.searchBar}
-          label="Enable search bar"
-        />
-      </Group>
       <ModuleEnabler />
       <ColorSchemeSwitch />
       <ConfigChanger />
@@ -125,20 +97,7 @@ function SettingsMenu(props: any) {
 }
 
 export function SettingsMenuButton(props: any) {
-  const [update, setUpdate] = useState(false);
   const [opened, setOpened] = useState(false);
-  const [latestVersion, setLatestVersion] = useState(CURRENT_VERSION);
-  useEffect(() => {
-    // Fetch Data here when component first mounted
-    fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
-      res.json().then((data) => {
-        setLatestVersion(data.tag_name);
-        if (data.tag_name !== CURRENT_VERSION) {
-          setUpdate(true);
-        }
-      });
-    });
-  }, []);
   return (
     <>
       <Modal
@@ -148,7 +107,7 @@ export function SettingsMenuButton(props: any) {
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
-        <SettingsMenu current={CURRENT_VERSION} latest={latestVersion} />
+        <SettingsMenu />
       </Modal>
       <ActionIcon
         variant="default"
@@ -159,14 +118,7 @@ export function SettingsMenuButton(props: any) {
         onClick={() => setOpened(true)}
       >
         <Tooltip label="Settings">
-          <Indicator
-            size={12}
-            disabled={CURRENT_VERSION === latestVersion}
-            offset={-3}
-            position="top-end"
-          >
-            <SettingsIcon />
-          </Indicator>
+          <SettingsIcon />
         </Tooltip>
       </ActionIcon>
     </>
