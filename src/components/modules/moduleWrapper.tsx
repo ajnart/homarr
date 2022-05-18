@@ -2,7 +2,7 @@ import { Card, Menu, Switch, useMantineTheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { IModule } from './modules';
 
-export default function ModuleWrapper(props: any) {
+export function ModuleWrapper(props: any) {
   const { module }: { module: IModule } = props;
   const { config, setConfig } = useConfig();
   const enabledModules = config.settings.enabledModules ?? [];

@@ -1,6 +1,6 @@
 import { Group, Navbar as MantineNavbar } from '@mantine/core';
-import { DateModule } from '../modules/date/DateModule';
-import ModuleWrapper from '../modules/moduleWrapper';
+import { WeatherModule, DateModule } from '../modules';
+import { ModuleWrapper } from '../modules/moduleWrapper';
 
 export default function Navbar() {
   return (
@@ -16,6 +16,8 @@ export default function Navbar() {
     >
       <Group mt="sm" direction="column" align="center">
         <ModuleWrapper module={DateModule} />
+        <ModuleWrapper module={WeatherModule} />
+        <ModuleWrapper module={WeatherModule} />
       </Group>
     </MantineNavbar>
   );

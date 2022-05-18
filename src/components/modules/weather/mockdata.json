@@ -1,0 +1,58 @@
+{
+	"current_weather": {
+		"winddirection": 121,
+		"windspeed": 12.7,
+		"time": "2022-05-15T14:00",
+		"weathercode": 3,
+		"temperature": 28.7
+	},
+	"utc_offset_seconds": 3600,
+	"latitude": 48.86,
+	"elevation": 46.1875,
+	"longitude": 2.3599997,
+	"generationtime_ms": 0.36406517028808594,
+	"daily_units": {
+		"temperature_2m_max": "°C",
+		"temperature_2m_min": "°C",
+		"time": "iso8601",
+		"weathercode": "wmo code"
+	},
+	"daily": {
+		"temperature_2m_max": [
+			29.1,
+			25.4,
+			28.2,
+			29.7,
+			24.6,
+			27.1,
+			22.9
+		],
+		"time": [
+			"2022-05-15",
+			"2022-05-16",
+			"2022-05-17",
+			"2022-05-18",
+			"2022-05-19",
+			"2022-05-20",
+			"2022-05-21"
+		],
+		"temperature_2m_min": [
+			14.3,
+			16.9,
+			17.2,
+			17.7,
+			19.2,
+			19.1,
+			14
+		],
+		"weathercode": [
+			95,
+			3,
+			3,
+			3,
+			3,
+			80,
+			3
+		]
+	}
+}
