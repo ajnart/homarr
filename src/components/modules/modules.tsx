@@ -6,6 +6,6 @@ export interface IModule {
   title: string;
   description: string;
   icon: React.ReactNode;
-  component: React.ReactNode;
+  component: (args: any) => JSX.Element | null;
   props?: any;
 }
