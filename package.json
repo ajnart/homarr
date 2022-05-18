@@ -1,12 +1,12 @@
 {
-  "name": "homarr",
-  "version": "0.3.1",
-  "private": "false",
-  "description": "Homarr - A homepage for your server.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ajnart/homarr"
-  },
+	"name": "homarr",
+	"version": "0.3.2",
+	"private": "false",
+	"description": "Homarr - A homepage for your server.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ajnart/homarr"
+	},
   "scripts": {
     "dev": "next dev",
     "build": "next build",
