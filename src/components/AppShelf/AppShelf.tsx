@@ -52,8 +52,8 @@ export function AppShelfItem(props: any) {
           <motion.div
             style={{
               position: 'absolute',
-              top: 5,
-              right: 5,
+              top: 15,
+              right: 15,
               alignSelf: 'flex-end',
             }}
             animate={{
