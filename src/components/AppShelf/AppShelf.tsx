@@ -36,6 +36,11 @@ export function AppShelfItem(props: any) {
   const { classes, theme } = useStyles();
   return (
     <motion.div
+      animate={{
+        scale: [0.9, 1.06, 1],
+        rotate: [0, 5, 0],
+      }}
+      transition={{ duration: 0.6, ease: 'easeInOut' }}
       key={service.name}
       onHoverStart={() => {
         setHovering(true);
