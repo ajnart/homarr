@@ -40,7 +40,7 @@ export function AppShelfItem(props: any) {
         scale: [0.9, 1.06, 1],
         rotate: [0, 5, 0],
       }}
-      transition={{ duration: 0.6, ease: 'easeInOut' }}
+      transition={{ duration: 0.6, type: 'spring', damping: 10, mass: 0.75, stiffness: 100 }}
       key={service.name}
       onHoverStart={() => {
         setHovering(true);
