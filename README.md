@@ -39,6 +39,7 @@
     - [📊 Modules](#-modules)
     - [🔍 Search Bar](#-search-bar)
 - [💖 Contributing](#-contributing)
+    - [🍏 Request Icons](#-request-icons)
 
 
 <!-- Getting Started -->
@@ -168,10 +169,13 @@ Icons are requested in the following way: <br>
 Modules are blocks shown on the sides of the Homarr dashboard that display information. They can be enabled in settings.
 
 **Clock Module**
-The clock module will display your current time and date.
+The Clock Module will display your current time and date.
 
 **Calendar Module**
-The Calendar module uses [integrations](#--integrations-1) to display new content.
+The Calendar Module uses [integrations](#--integrations-1) to display new content.
+
+**Weather Module**
+The Weather Module uses your devices location to display the current, highest, and lowest temperature.
 
 **[⤴️ Back to Top](#-table-of-contents)**
 
@@ -187,5 +191,11 @@ The Search Bar will open any Search Query after the Query URL you've specified i
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
 All contributions are highly appreciated.
+
+**[⤴️ Back to Top](#-table-of-contents)**
+
+## 🍏 Request Icons
+
+The icons used in Homarr are automatically requested from the [dashboard-icons](https://github.com/walkxhub/dashboard-icons) repo. You can make a icon request by creating an [issue](https://github.com/walkxhub/dashboard-icons/issues/new/choose).
     
 **[⤴️ Back to Top](#-table-of-contents)**

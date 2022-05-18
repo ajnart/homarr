@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Text, AspectRatio, Card, Image, useMantineTheme, Center, Grid } from '@mantine/core';
+import { Text, AspectRatio, Card, Image, Center, Grid, createStyles } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AppShelfMenu from './AppShelfMenu';
+import PingComponent from '../modules/ping/PingModule';
+
+const useStyles = createStyles((theme) => ({
+  item: {
+    transition: 'box-shadow 150ms ease, transform 100ms ease',
+
+    '&:hover': {
+      boxShadow: `${theme.shadows.md} !important`,
+      transform: 'scale(1.05)',
+    },
+  },
+}));
 
 const AppShelf = (props: any) => {
   const { config } = useConfig();
-
   return (
     <Grid gutter="xl" align="center">
       {config.services.map((service) => (
-        <Grid.Col span={6} xl={2} xs={4} sm={3} md={3}>
+        <Grid.Col key={service.name} span={6} xl={2} xs={4} sm={3} md={3}>
           <AppShelfItem key={service.name} service={service} />
         </Grid.Col>
       ))}
@@ -22,9 +33,14 @@ const AppShelf = (props: any) => {
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
   const [hovering, setHovering] = useState(false);
-  const theme = useMantineTheme();
+  const { classes, theme } = useStyles();
   return (
     <motion.div
+      animate={{
+        scale: [0.9, 1.06, 1],
+        rotate: [0, 5, 0],
+      }}
+      transition={{ duration: 0.6, type: 'spring', damping: 10, mass: 0.75, stiffness: 100 }}
       key={service.name}
       onHoverStart={() => {
         setHovering(true);
@@ -33,7 +49,7 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <Card withBorder radius="lg" shadow="md">
+      <Card withBorder radius="lg" shadow="md" className={classes.item}>
         <Card.Section>
           <Text mt="sm" align="center" lineClamp={1} weight={550}>
             {service.name}
@@ -41,8 +57,8 @@ export function AppShelfItem(props: any) {
           <motion.div
             style={{
               position: 'absolute',
-              top: 5,
-              right: 5,
+              top: 15,
+              right: 15,
               alignSelf: 'flex-end',
             }}
             animate={{
@@ -79,6 +95,7 @@ export function AppShelfItem(props: any) {
                 />
               </motion.i>
             </AspectRatio>
+            <PingComponent url={service.url} />
           </Card.Section>
         </Center>
       </Card>

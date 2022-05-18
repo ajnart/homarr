@@ -1,8 +1,9 @@
-import { TextInput, Kbd, createStyles, useMantineTheme, Text, Popover } from '@mantine/core';
+import { TextInput, Kbd, createStyles, Text, Popover } from '@mantine/core';
 import { useForm, useHotkeys } from '@mantine/hooks';
 import { useRef, useState } from 'react';
 import { Search, BrandYoutube, Download } from 'tabler-icons-react';
-import { useConfig } from '../../tools/state';
+import { useConfig } from '../../../tools/state';
+import { IModule } from '../modules';
 
 const useStyles = createStyles((theme) => ({
   hide: {
@@ -14,16 +15,22 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+export const SearchModule: IModule = {
+  title: 'Search Bar',
+  description: 'Show the current time and date in a card',
+  icon: Search,
+  component: SearchBar,
+};
+
 export default function SearchBar(props: any) {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
   const queryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
-  const textInput: any = useRef(null);
-  useHotkeys([['ctrl+K', () => textInput.current.focus()]]);
+  const textInput = useRef<HTMLInputElement>();
+  useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
 
   const { classes, cx } = useStyles();
-  const theme = useMantineTheme();
   const rightSection = (
     <div className={classes.hide}>
       <Kbd>Ctrl</Kbd>
@@ -38,7 +45,8 @@ export default function SearchBar(props: any) {
     },
   });
 
-  if (config.settings.searchBar === false) {
+  // If enabled modules doesn't contain the module, return null
+  if (!config.settings.enabledModules.includes(SearchModule.title)) {
     return null;
   }
 
@@ -58,17 +66,19 @@ export default function SearchBar(props: any) {
         }
       }}
       onSubmit={form.onSubmit((values) => {
-        // Find if query is prefixed by !yt or !t
         const query = values.query.trim();
         const isYoutube = query.startsWith('!yt');
         const isTorrent = query.startsWith('!t');
-        if (isYoutube) {
-          window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
-        } else if (isTorrent) {
-          window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
-        } else {
-          window.open(`${queryUrl}${values.query}`);
-        }
+        form.setValues({ query: '' });
+        setTimeout(() => {
+          if (isYoutube) {
+            window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
+          } else if (isTorrent) {
+            window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
+          } else {
+            window.open(`${queryUrl}${values.query}`);
+          }
+        }, 20);
       })}
     >
       <Popover
