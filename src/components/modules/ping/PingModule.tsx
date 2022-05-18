@@ -1,5 +1,6 @@
 import { Indicator, Tooltip } from '@mantine/core';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Plug } from 'tabler-icons-react';
 import { useConfig } from '../../../tools/state';
@@ -40,12 +41,19 @@ export default function PingComponent(props: any) {
       style={{ position: 'absolute', bottom: 20, right: 20 }}
       label={isOnline === 'loading' ? 'Loading...' : isOnline === 'online' ? 'Online' : 'Offline'}
     >
-      <Indicator
-        size={13}
-        color={isOnline === 'online' ? 'green' : isOnline === 'down' ? 'red' : 'yellow'}
+      <motion.div
+        animate={{
+          scale: isOnline === 'online' ? [1, 0.8, 1] : 1,
+        }}
+        transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
       >
-        {null}
-      </Indicator>
+        <Indicator
+          size={13}
+          color={isOnline === 'online' ? 'green' : isOnline === 'down' ? 'red' : 'yellow'}
+        >
+          {null}
+        </Indicator>
+      </motion.div>
     </Tooltip>
   );
 }
