@@ -22,8 +22,8 @@ const AppShelf = (props: any) => {
   return (
     <Grid gutter="xl" align="center">
       {config.services.map((service) => (
-        <Grid.Col key={service.name} span={6} xl={2} xs={4} sm={3} md={3}>
-          <AppShelfItem key={service.name} service={service} />
+        <Grid.Col key={service.id} span={6} xl={2} xs={4} sm={3} md={3}>
+          <AppShelfItem key={service.id} service={service} />
         </Grid.Col>
       ))}
     </Grid>
