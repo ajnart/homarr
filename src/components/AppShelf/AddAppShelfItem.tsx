@@ -15,6 +15,7 @@ import {
   Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { time } from 'console';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
@@ -126,6 +127,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const form = useForm({
     initialValues: {
+      id: props.id ?? Date.now(),
       type: props.type ?? 'Other',
       name: props.name ?? '',
       icon: props.icon ?? '',
@@ -166,11 +168,13 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       <form
         onSubmit={form.onSubmit(() => {
           // If service already exists, update it.
-          if (config.services && config.services.find((s) => s.name === form.values.name)) {
+          if (config.services && config.services.find((s) => s.id === form.values.id)) {
+            console.log('found service with the same id (modify)');
             setConfig({
               ...config,
+              // replace the found item by matching ID
               services: config.services.map((s) => {
-                if (s.name === form.values.name) {
+                if (s.id === form.values.id) {
                   return {
                     ...form.values,
                   };
