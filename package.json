@@ -11,7 +11,7 @@
     "dev": "next dev",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
-    "start": "next start --port 7575",
+    "start": "next start",
     "typecheck": "tsc --noEmit",
     "export": "next build && next export",
     "lint": "next lint",
