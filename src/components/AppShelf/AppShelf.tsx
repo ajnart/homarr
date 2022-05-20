@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Text, AspectRatio, Card, Image, Center, Grid, createStyles } from '@mantine/core';
+import { Text, AspectRatio, Card, Image, Center, Grid, createStyles, Anchor } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import AppShelfMenu from './AppShelfMenu';
@@ -51,9 +51,15 @@ export function AppShelfItem(props: any) {
     >
       <Card withBorder radius="lg" shadow="md" className={classes.item}>
         <Card.Section>
-          <Text mt="sm" align="center" lineClamp={1} weight={550}>
-            {service.name}
-          </Text>
+          <Anchor
+            target="_blank"
+            href={service.url}
+            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+          >
+            <Text mt="sm" align="center" lineClamp={1} weight={550}>
+              {service.name}
+            </Text>
+          </Anchor>
           <motion.div
             style={{
               position: 'absolute',
