@@ -32,8 +32,9 @@ export default function CalendarComponent(props: any) {
     const radarrService = filtered.filter((service) => service.type === 'Radarr').at(0);
     const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
     if (sonarrService && sonarrService.apiKey) {
+      const baseUrl = new URL(sonarrService.url).origin;
       fetch(
-        `${sonarrService?.url}api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`
+        `${baseUrl}api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`
       ).then((response) => {
         response.ok &&
           response.json().then((data) => {
@@ -50,22 +51,23 @@ export default function CalendarComponent(props: any) {
       });
     }
     if (radarrService && radarrService.apiKey) {
-      fetch(
-        `${radarrService?.url}api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`
-      ).then((response) => {
-        response.ok &&
-          response.json().then((data) => {
-            setRadarrMedias(data);
-            showNotification({
-              title: 'Radarr',
-              icon: <Check />,
-              color: 'green',
-              autoClose: 1500,
-              radius: 'md',
-              message: `Loaded ${data.length} releases`,
+      const baseUrl = new URL(radarrService.url).origin;
+      fetch(`${baseUrl}api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`).then(
+        (response) => {
+          response.ok &&
+            response.json().then((data) => {
+              setRadarrMedias(data);
+              showNotification({
+                title: 'Radarr',
+                icon: <Check />,
+                color: 'green',
+                autoClose: 1500,
+                radius: 'md',
+                message: `Loaded ${data.length} releases`,
+              });
             });
-          });
-      });
+        }
+      );
     }
   }, [config.services]);
 
