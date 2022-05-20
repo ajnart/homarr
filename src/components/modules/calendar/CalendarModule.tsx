@@ -34,7 +34,7 @@ export default function CalendarComponent(props: any) {
     if (sonarrService && sonarrService.apiKey) {
       const baseUrl = new URL(sonarrService.url).origin;
       fetch(
-        `${baseUrl}api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`
+        `${baseUrl}/api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`
       ).then((response) => {
         response.ok &&
           response.json().then((data) => {
@@ -52,7 +52,7 @@ export default function CalendarComponent(props: any) {
     }
     if (radarrService && radarrService.apiKey) {
       const baseUrl = new URL(radarrService.url).origin;
-      fetch(`${baseUrl}api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`).then(
+      fetch(`${baseUrl}/api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`).then(
         (response) => {
           response.ok &&
             response.json().then((data) => {
