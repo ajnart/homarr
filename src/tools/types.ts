@@ -29,7 +29,7 @@ export type ServiceType =
   | 'Emby';
 
 export interface serviceItem {
-  id: number;
+  id: string;
   name: string;
   type: string;
   url: string;

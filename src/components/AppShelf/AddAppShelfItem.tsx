@@ -122,7 +122,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const form = useForm({
     initialValues: {
-      id: props.id ?? Date.now(),
+      id: props.id ?? crypto.randomUUID(),
       type: props.type ?? 'Other',
       name: props.name ?? '',
       icon: props.icon ?? '/favicon.svg',
