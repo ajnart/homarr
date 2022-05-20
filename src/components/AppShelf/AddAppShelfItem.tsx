@@ -15,7 +15,6 @@ import {
   Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { time } from 'console';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
@@ -107,15 +106,11 @@ function MatchIcon(name: string, form: any) {
     `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
       .toLowerCase()}.png`
-  )
-    .then((res) => {
-      if (res.status === 200) {
-        form.setFieldValue('icon', res.url);
-      }
-    })
-    .catch(() => {
-      // Do nothing
-    });
+  ).then((res) => {
+    if (res.ok) {
+      form.setFieldValue('icon', res.url);
+    }
+  });
 
   return false;
 }
@@ -130,7 +125,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       id: props.id ?? Date.now(),
       type: props.type ?? 'Other',
       name: props.name ?? '',
-      icon: props.icon ?? '',
+      icon: props.icon ?? '/favicon.svg',
       url: props.url ?? '',
       apiKey: props.apiKey ?? (undefined as unknown as string),
     },
@@ -138,15 +133,18 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       apiKey: () => null,
       // Validate icon with a regex
       icon: (value: string) => {
-        if (!value.match(/^https?:\/\/.+\.(png|jpg|jpeg|gif)$/)) {
+        // Regex to match everything that ends with and icon extension
+        if (!value.match(/\.(png|jpg|jpeg|gif|svg)$/)) {
           return 'Please enter a valid icon URL';
         }
         return null;
       },
       // Validate url with a regex http/https
       url: (value: string) => {
-        if (!value.match(/^https?:\/\/.+\/$/)) {
-          return 'Please enter a valid URL (that ends with a /)';
+        try {
+          const _isValid = new URL(value);
+        } catch (e) {
+          return 'Please enter a valid URL';
         }
         return null;
       },
@@ -169,7 +167,6 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
         onSubmit={form.onSubmit(() => {
           // If service already exists, update it.
           if (config.services && config.services.find((s) => s.id === form.values.id)) {
-            console.log('found service with the same id (modify)');
             setConfig({
               ...config,
               // replace the found item by matching ID
@@ -217,7 +214,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           <TextInput
             required
             label="Service url"
-            placeholder="http://localhost:8989"
+            placeholder="http://localhost:7575"
             {...form.getInputProps('url')}
           />
           <Select
