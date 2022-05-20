@@ -34,4 +34,5 @@ export interface serviceItem {
   type: string;
   url: string;
   icon: string;
+  apiKey?: string;
 }
