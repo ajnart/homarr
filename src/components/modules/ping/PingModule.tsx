@@ -19,8 +19,9 @@ export default function PingComponent(props: any) {
 
   const { url }: { url: string } = props;
   const [isOnline, setOnline] = useState<State>('loading');
+  const exists = config.modules?.[PingModule.title]?.enabled ?? false;
   useEffect(() => {
-    if (!config.settings.enabledModules.includes('Ping Services')) {
+    if (!exists) {
       return;
     }
     axios
@@ -32,7 +33,7 @@ export default function PingComponent(props: any) {
         setOnline('down');
       });
   }, []);
-  if (!config.settings.enabledModules.includes('Ping Services')) {
+  if (!exists) {
     return null;
   }
   return (
