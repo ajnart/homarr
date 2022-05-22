@@ -46,7 +46,10 @@ export default function SearchBar(props: any) {
   });
 
   // If enabled modules doesn't contain the module, return null
-  if (!config.settings.enabledModules.includes(SearchModule.title)) {
+  // If module in enabled
+
+  const exists = config.modules?.[SearchModule.title]?.enabled ?? false;
+  if (!exists) {
     return null;
   }
 

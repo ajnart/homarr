@@ -14,7 +14,7 @@ interface Option {
   [x: string]: OptionValues;
 }
 
-interface OptionValues {
+export interface OptionValues {
   name: string;
   value: boolean;
 }

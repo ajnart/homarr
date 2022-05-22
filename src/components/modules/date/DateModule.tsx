@@ -21,12 +21,7 @@ export const DateModule: IModule = {
 export default function DateComponent(props: any) {
   const [date, setDate] = useState(new Date());
   const { config } = useConfig();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const isFullTime =
-    config.settings[`${DateModule.title}.full`] === undefined
-      ? true
-      : config.settings[`${DateModule.title}.full`];
+  const isFullTime = config?.modules?.[DateModule.title]?.options?.full?.value ?? false;
   const formatString = isFullTime ? 'HH:mm' : 'h:mm A';
   // Change date on minute change
   // Note: Using 10 000ms instead of 1000ms to chill a little :)
