@@ -27,7 +27,7 @@ export default function DateComponent(props: any) {
     config.settings[`${DateModule.title}.full`] === undefined
       ? true
       : config.settings[`${DateModule.title}.full`];
-  const formatString = isFullTime ? 'HH:mm' : 'h:mm a';
+  const formatString = isFullTime ? 'HH:mm' : 'h:mm A';
   // Change date on minute change
   // Note: Using 10 000ms instead of 1000ms to chill a little :)
   useEffect(() => {
