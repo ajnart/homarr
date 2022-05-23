@@ -9,7 +9,8 @@
     <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/ajnart/homarr?label=Downloads%20"></a>
   </p>
   <p align="center">
-<img align="end" width=600 src="https://user-images.githubusercontent.com/49837342/168315259-b778c816-10fe-44db-bd25-3eea6f31b233.png" />
+<img align="end" width=600 src="https://user-images.githubusercontent.com/71191962/169860380-856634fb-4f41-47cb-ba54-6a9e7b3b9c81.gif" />
+
   </p>
   <p align = "center">
     A homepage for <i>your</i> server.
@@ -32,6 +33,8 @@
   - [⚡ Installation](#-installation)
     - [🐳 Deploying from Docker Image](#-deploying-from-docker-image)
     - [🛠️ Building from Source](#%EF%B8%8F-building-from-source)
+  - [📖 Guides](#-guides)
+    - [🔁 Drag and Drop (Rearrange)](#-drag-and-drop-rearrange)   
   - [🔧 Configuration](#-configuration)
     - [🧩 Integrations](#--integrations)
     - [🧑‍🤝‍🧑 Multiple Configs](#-multiple-configs)
@@ -105,6 +108,11 @@ _Requirements_:
 - Build the source: `yarn build`
 - Start the NextJS web server: ``yarn start``
 - *Note: If you want to update the code in real time, launch with ``yarn dev``*
+
+## 📖 Guides
+
+### 🔁 Drag and Drop (Rearrange)
+You can rearrange items by Drag and Dropping them to any position. To Drag an Drop, click and hold an icon for 250ms and then drag it to the desired position.
 
 ## 🔧 Configuration
 
