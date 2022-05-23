@@ -18,10 +18,10 @@ import { useForm } from '@mantine/form';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
+import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
 import { AppShelfItemWrapper } from './AppShelfItemWrapper';
-import { v4 as uuidv4 } from 'uuid';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
