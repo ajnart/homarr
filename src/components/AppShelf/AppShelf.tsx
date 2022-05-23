@@ -1,112 +1,79 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Text, AspectRatio, Card, Image, Center, Grid, createStyles, Anchor } from '@mantine/core';
+import { Grid } from '@mantine/core';
+import {
+  closestCenter,
+  DndContext,
+  DragOverlay,
+  MouseSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import { useConfig } from '../../tools/state';
-import { serviceItem } from '../../tools/types';
-import AppShelfMenu from './AppShelfMenu';
-import PingComponent from '../modules/ping/PingModule';
 
-const useStyles = createStyles((theme) => ({
-  item: {
-    transition: 'box-shadow 150ms ease, transform 100ms ease',
-
-    '&:hover': {
-      boxShadow: `${theme.shadows.md} !important`,
-      transform: 'scale(1.05)',
-    },
-  },
-}));
+import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 
 const AppShelf = (props: any) => {
-  const { config } = useConfig();
+  const [activeId, setActiveId] = useState(null);
+  const { config, setConfig } = useConfig();
+  const sensors = useSensors(
+    useSensor(MouseSensor, {
+      // Require the mouse to move by 10 pixels before activating
+      activationConstraint: {
+        delay: 250,
+        tolerance: 5,
+      },
+    })
+  );
+
+  function handleDragStart(event: any) {
+    const { active } = event;
+
+    setActiveId(active.id);
+  }
+
+  function handleDragEnd(event: any) {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      const newConfig = { ...config };
+      const activeIndex = newConfig.services.findIndex((e) => e.id === active.id);
+      const overIndex = newConfig.services.findIndex((e) => e.id === over.id);
+      newConfig.services = arrayMove(newConfig.services, activeIndex, overIndex);
+      setConfig(newConfig);
+    }
+
+    setActiveId(null);
+  }
+
   return (
-    <Grid gutter="xl" align="center">
-      {config.services.map((service) => (
-        <Grid.Col key={service.id} span={6} xl={2} xs={4} sm={3} md={3}>
-          <AppShelfItem key={service.id} service={service} />
-        </Grid.Col>
-      ))}
-    </Grid>
+    <DndContext
+      sensors={sensors}
+      collisionDetection={closestCenter}
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+    >
+      <SortableContext items={config.services}>
+        <Grid gutter="xl" align="center">
+          {config.services.map((service) => (
+            <Grid.Col key={service.id} span={6} xl={2} xs={4} sm={3} md={3}>
+              <SortableAppShelfItem service={service} key={service.id} id={service.id} />
+            </Grid.Col>
+          ))}
+        </Grid>
+      </SortableContext>
+      <DragOverlay
+        style={{
+          // Add a shadow to the drag overlay
+          boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+        }}
+      >
+        {activeId ? (
+          <AppShelfItem service={config.services.find((e) => e.id === activeId)} id={activeId} />
+        ) : null}
+      </DragOverlay>
+    </DndContext>
   );
 };
-
-export function AppShelfItem(props: any) {
-  const { service }: { service: serviceItem } = props;
-  const [hovering, setHovering] = useState(false);
-  const { classes, theme } = useStyles();
-  return (
-    <motion.div
-      animate={{
-        scale: [0.9, 1.06, 1],
-        rotate: [0, 5, 0],
-      }}
-      transition={{ duration: 0.6, type: 'spring', damping: 10, mass: 0.75, stiffness: 100 }}
-      key={service.name}
-      onHoverStart={() => {
-        setHovering(true);
-      }}
-      onHoverEnd={() => {
-        setHovering(false);
-      }}
-    >
-      <Card withBorder radius="lg" shadow="md" className={classes.item}>
-        <Card.Section>
-          <Anchor
-            target="_blank"
-            href={service.url}
-            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
-          >
-            <Text mt="sm" align="center" lineClamp={1} weight={550}>
-              {service.name}
-            </Text>
-          </Anchor>
-          <motion.div
-            style={{
-              position: 'absolute',
-              top: 15,
-              right: 15,
-              alignSelf: 'flex-end',
-            }}
-            animate={{
-              opacity: hovering ? 1 : 0,
-            }}
-          >
-            <AppShelfMenu service={service} />
-          </motion.div>
-        </Card.Section>
-        <Center>
-          <Card.Section>
-            <AspectRatio
-              ratio={3 / 5}
-              m="xl"
-              style={{
-                width: 150,
-                height: 90,
-              }}
-            >
-              <motion.i
-                whileHover={{
-                  cursor: 'pointer',
-                  scale: 1.1,
-                }}
-              >
-                <Image
-                  width={80}
-                  height={80}
-                  src={service.icon}
-                  fit="contain"
-                  onClick={() => {
-                    window.open(service.url);
-                  }}
-                />
-              </motion.i>
-            </AspectRatio>
-            <PingComponent url={service.url} />
-          </Card.Section>
-        </Center>
-      </Card>
-    </motion.div>
-  );
-}
 
 export default AppShelf;

@@ -6,22 +6,17 @@ import {
   Image,
   Button,
   Select,
-  AspectRatio,
-  Text,
-  Card,
   LoadingOverlay,
   ActionIcon,
   Tooltip,
   Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
-import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -48,56 +43,6 @@ export function AddItemShelfButton(props: any) {
           <Apps />
         </Tooltip>
       </ActionIcon>
-    </>
-  );
-}
-
-export default function AddItemShelfItem(props: any) {
-  const [opened, setOpened] = useState(false);
-  return (
-    <>
-      <Modal
-        size="xl"
-        radius="md"
-        opened={props.opened || opened}
-        onClose={() => setOpened(false)}
-        title="Add a service"
-      >
-        <AddAppShelfItemForm setOpened={setOpened} />
-      </Modal>
-      <AppShelfItemWrapper>
-        <Card.Section>
-          <Group position="center" mx="lg">
-            <Text
-              // TODO: #1 Remove this hack to get the text to be centered.
-              ml={15}
-              style={{
-                alignSelf: 'center',
-                alignContent: 'center',
-                alignItems: 'center',
-                justifyContent: 'center',
-                justifyItems: 'center',
-              }}
-              mt="sm"
-              weight={500}
-            >
-              Add a service
-            </Text>
-          </Group>
-        </Card.Section>
-        <Card.Section>
-          <AspectRatio ratio={5 / 3} m="xl">
-            <motion.i
-              whileHover={{
-                cursor: 'pointer',
-                scale: 1.1,
-              }}
-            >
-              <Apps style={{ cursor: 'pointer' }} onClick={() => setOpened(true)} size={60} />
-            </motion.i>
-          </AspectRatio>
-        </Card.Section>
-      </AppShelfItemWrapper>
     </>
   );
 }
