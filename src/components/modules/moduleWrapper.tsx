@@ -5,9 +5,9 @@ import { IModule } from './modules';
 export function ModuleWrapper(props: any) {
   const { module }: { module: IModule } = props;
   const { config, setConfig } = useConfig();
-  const enabledModules = config.settings.enabledModules ?? [];
+  const enabledModules = config.modules ?? {};
   // Remove 'Module' from enabled modules titles
-  const isShown = enabledModules.includes(module.title);
+  const isShown = enabledModules[module.title]?.enabled ?? false;
   const theme = useMantineTheme();
   const items: JSX.Element[] = [];
   if (module.options) {
@@ -18,25 +18,31 @@ export function ModuleWrapper(props: any) {
     // Loop over all the types with a for each loop
     types.forEach((type, index) => {
       const optionName = `${module.title}.${keys[index]}`;
+      const moduleInConfig = config.modules?.[module.title];
       // TODO: Add support for other types
       if (type === 'boolean') {
         items.push(
           <Switch
             defaultChecked={
               // Set default checked to the value of the option if it exists
-              config.settings[optionName] ??
-              (module.options && module.options[keys[index]].value) ??
-              false
+              moduleInConfig?.options?.[keys[index]]?.value ?? false
             }
-            defaultValue={config.settings[optionName] ?? false}
             key={keys[index]}
             onClick={(e) => {
               setConfig({
                 ...config,
-                settings: {
-                  ...config.settings,
-                  enabledModules: [...config.settings.enabledModules],
-                  [optionName]: e.currentTarget.checked,
+                modules: {
+                  ...config.modules,
+                  [module.title]: {
+                    ...config.modules[module.title],
+                    options: {
+                      ...config.modules[module.title].options,
+                      [keys[index]]: {
+                        ...config.modules[module.title].options?.[keys[index]],
+                        value: e.currentTarget.checked,
+                      },
+                    },
+                  },
                 },
               });
             }}
@@ -46,7 +52,6 @@ export function ModuleWrapper(props: any) {
       }
     });
   }
-  // Sussy baka
   if (!isShown) {
     return null;
   }

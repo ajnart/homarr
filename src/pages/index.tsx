@@ -27,10 +27,9 @@ export async function getServerSideProps({
           name: cookie.toString(),
           services: [],
           settings: {
-            enabledModules: [],
-            searchBar: true,
             searchUrl: 'https://www.google.com/search?q=',
           },
+          modules: {},
         },
       },
     };
