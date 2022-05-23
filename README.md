@@ -56,8 +56,6 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 
 ## 💥 Known Issues
 - Posters on the Calendar get blocked by adblockers. (IMDb posters)
-- Editing a service creates a duplicate (#97)
-- Used search engine not properly selected (#35)
 
 **[⤴️ Back to Top](#-table-of-contents)**
 
