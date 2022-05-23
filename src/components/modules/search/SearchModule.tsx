@@ -26,7 +26,7 @@ export default function SearchBar(props: any) {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
-  const queryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
+  const queryUrl = config.settings.searchUrl ?? 'https://www.google.com/search?q=';
   const textInput = useRef<HTMLInputElement>();
   useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
 
@@ -46,7 +46,10 @@ export default function SearchBar(props: any) {
   });
 
   // If enabled modules doesn't contain the module, return null
-  if (!config.settings.enabledModules.includes(SearchModule.title)) {
+  // If module in enabled
+
+  const exists = config.modules?.[SearchModule.title]?.enabled ?? false;
+  if (!exists) {
     return null;
   }
 

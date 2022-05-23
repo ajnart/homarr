@@ -1,4 +1,5 @@
 import { Group, Image, Text } from '@mantine/core';
+import { NextLink } from '@mantine/next';
 import * as React from 'react';
 
 export function Logo({ style }: any) {
@@ -11,14 +12,22 @@ export function Logo({ style }: any) {
           position: 'relative',
         }}
       />
-      <Text
-        sx={style}
-        weight="bold"
-        variant="gradient"
-        gradient={{ from: 'red', to: 'orange', deg: 145 }}
+      <NextLink
+        style={{
+          textDecoration: 'none',
+          position: 'relative',
+        }}
+        href="/"
       >
-        Homarr
-      </Text>
+        <Text
+          sx={style}
+          weight="bold"
+          variant="gradient"
+          gradient={{ from: 'red', to: 'orange', deg: 145 }}
+        >
+          Homarr
+        </Text>
+      </NextLink>
     </Group>
   );
 }
