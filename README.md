@@ -1,6 +1,9 @@
 <h3 align="center">Homarr</h3>
 <br>
 <p align="center">
+  <i>Don't forget to star the repo if you enjoy the Homarr project!</i>
+  <br>
+   <img src="https://img.shields.io/github/stars/ajnart/homarr?label=%E2%AD%90%20Stars&style=flat-square?branch=master&kill_cache=1%22">
   <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
       <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status"></a>
     <a href="https://github.com/ajnart/homarr/releases/latest">
@@ -22,7 +25,7 @@
   <br />
     <a href = "https://discord.gg/aCsmEV5RgA" > <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield" > </a>
   <br/>  
-    <br/>
+  <br/>
 </p>
 
 # 📃 Table of Contents
