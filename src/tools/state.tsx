@@ -17,10 +17,9 @@ const configContext = createContext<configContextType>({
     name: 'default',
     services: [],
     settings: {
-      searchBar: true,
-      searchUrl: 'https://www.google.com/search?q=',
-      enabledModules: [],
+      searchUrl: 'https://google.com/search?q=',
     },
+    modules: {},
   },
   setConfig: () => {},
   loadConfig: async (name: string) => {},
@@ -44,10 +43,9 @@ export function ConfigProvider({ children }: Props) {
     name: 'default',
     services: [],
     settings: {
-      searchBar: true,
       searchUrl: 'https://www.google.com/search?q=',
-      enabledModules: [],
     },
+    modules: {},
   });
 
   async function loadConfig(configName: string) {

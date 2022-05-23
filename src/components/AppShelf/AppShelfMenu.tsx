@@ -22,6 +22,7 @@ export default function AppShelfMenu(props: any) {
         <AddAppShelfItemForm
           setOpened={setOpened}
           name={service.name}
+          id={service.id}
           type={service.type}
           url={service.url}
           icon={service.icon}
@@ -54,7 +55,7 @@ export default function AppShelfMenu(props: any) {
           onClick={(e: any) => {
             setConfig({
               ...config,
-              services: config.services.filter((s) => s.name !== service.name),
+              services: config.services.filter((s) => s.id !== service.id),
             });
             showNotification({
               autoClose: 5000,

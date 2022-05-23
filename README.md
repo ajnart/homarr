@@ -1,6 +1,9 @@
 <h3 align="center">Homarr</h3>
 <br>
 <p align="center">
+  <i>Don't forget to star the repo if you enjoy the Homarr project!</i>
+  <br>
+   <img src="https://img.shields.io/github/stars/ajnart/homarr?label=%E2%AD%90%20Stars&style=flat-square?branch=master&kill_cache=1%22">
   <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
       <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status"></a>
     <a href="https://github.com/ajnart/homarr/releases/latest">
@@ -9,7 +12,8 @@
     <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/ajnart/homarr?label=Downloads%20"></a>
   </p>
   <p align="center">
-<img align="end" width=600 src="https://user-images.githubusercontent.com/49837342/168315259-b778c816-10fe-44db-bd25-3eea6f31b233.png" />
+<img align="end" width=600 src="https://user-images.githubusercontent.com/71191962/169860380-856634fb-4f41-47cb-ba54-6a9e7b3b9c81.gif" />
+
   </p>
   <p align = "center">
     A homepage for <i>your</i> server.
@@ -21,7 +25,7 @@
   <br />
     <a href = "https://discord.gg/aCsmEV5RgA" > <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield" > </a>
   <br/>  
-    <br/>
+  <br/>
 </p>
 
 # 📃 Table of Contents
@@ -32,6 +36,8 @@
   - [⚡ Installation](#-installation)
     - [🐳 Deploying from Docker Image](#-deploying-from-docker-image)
     - [🛠️ Building from Source](#%EF%B8%8F-building-from-source)
+  - [📖 Guides](#-guides)
+    - [🔁 Drag and Drop (Rearrange)](#-drag-and-drop-rearrange)   
   - [🔧 Configuration](#-configuration)
     - [🧩 Integrations](#--integrations)
     - [🧑‍🤝‍🧑 Multiple Configs](#-multiple-configs)
@@ -53,8 +59,6 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 
 ## 💥 Known Issues
 - Posters on the Calendar get blocked by adblockers. (IMDb posters)
-- Editing a service creates a duplicate (#97)
-- Used search engine not properly selected (#35)
 
 **[⤴️ Back to Top](#-table-of-contents)**
 
@@ -105,6 +109,11 @@ _Requirements_:
 - Build the source: `yarn build`
 - Start the NextJS web server: ``yarn start``
 - *Note: If you want to update the code in real time, launch with ``yarn dev``*
+
+## 📖 Guides
+
+### 🔁 Drag and Drop (Rearrange)
+You can rearrange items by Drag and Dropping them to any position. To Drag an Drop, click and hold an icon for 250ms and then drag it to the desired position.
 
 ## 🔧 Configuration
 

@@ -2,15 +2,14 @@
   "name": "default",
   "services": [
     {
-      "type": "Other",
       "name": "example",
+      "id": "09c45847-8afc-4c1a-9697-f03192de948a",
+      "type": "Other",
       "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
   ],
   "settings": {
-    "searchBar": true,
-    "searchUrl": "https://bing.com/search?q=",
-    "enabledModules": []
+    "searchUrl": "https://bing.com/search?q="
   }
 }

@@ -78,10 +78,9 @@ export default function NothingFoundBackground() {
       <div className={classes.inner}>
         <Illustration className={classes.image} />
         <div className={classes.content}>
-          <Title className={classes.title}>Nothing to see here</Title>
+          <Title className={classes.title}>Config not found</Title>
           <Text color="dimmed" size="lg" align="center" className={classes.description}>
-            Page you are trying to open does not exist. You may have mistyped the address, or the
-            page has been moved to another URL. If you think this is an error contact support.
+            The config you are trying to access does not exist. Please check the URL and try again.
           </Text>
           <Group position="center">
             <NextLink href="/">
