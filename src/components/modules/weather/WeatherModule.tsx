@@ -132,9 +132,7 @@ export default function WeatherComponent(props: any) {
   const { config } = useConfig();
   const [weather, setWeather] = useState({} as WeatherResponse);
   const isFahrenheit: boolean =
-    config.settings[`${WeatherModule.title}.freedomunit`] === undefined
-      ? false
-      : config.settings[`${WeatherModule.title}.freedomunit`];
+    config?.modules?.[WeatherModule.title]?.options?.freedomunit?.value ?? false;
 
   if ('geolocation' in navigator && location.lat === 0 && location.lng === 0) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -163,10 +161,10 @@ export default function WeatherComponent(props: any) {
       <Group spacing={0}>
         <WeatherIcon code={weather.current_weather.weathercode} />
         <Space mx="sm" />
-        <span>{weather.daily.temperature_2m_max[0]}°C</span>
+        <span>{usePerferedUnit(weather.daily.temperature_2m_max[0])}</span>
         <ArrowUpRight size={16} style={{ right: 15 }} />
         <Space mx="sm" />
-        <span>{weather.daily.temperature_2m_min[0]}°C</span>
+        <span>{usePerferedUnit(weather.daily.temperature_2m_min[0])}</span>
         <ArrowDownRight size={16} />
       </Group>
     </Group>
