@@ -13,7 +13,6 @@ import { Grid } from '@mantine/core';
 import { SortableItem } from '../components/dnd/StorableItem';
 import { AppShelfItem } from '../components/AppShelf/AppShelf';
 import { useConfig } from '../tools/state';
-import { Config } from '../tools/types';
 
 export default function App() {
   const [activeId, setActiveId] = useState(null);
@@ -49,13 +48,13 @@ export default function App() {
     </DndContext>
   );
 
-  function handleDragStart(event) {
+  function handleDragStart(event: any) {
     const { active } = event;
 
     setActiveId(active.id);
   }
 
-  function handleDragEnd(event) {
+  function handleDragEnd(event: any) {
     const { active, over } = event;
 
     if (active.id !== over.id) {
