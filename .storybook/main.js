@@ -1,14 +1,9 @@
 module.exports = {
   stories: ['../src/components/**/*.story.mdx', '../src/components/**/*.story.*'],
   addons: [
-    'storybook-dark-mode',
     '@storybook/addon-links',
     'storybook-addon-mock/register',
     '@storybook/addon-essentials',
-    {
-      name: 'storybook-addon-turbo-build',
-      options: { optimizationLevel: 2 },
-    },
   ],
   typescript: {
     check: false,
