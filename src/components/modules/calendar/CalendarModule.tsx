@@ -33,22 +33,22 @@ export default function CalendarComponent(props: any) {
     const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
     if (sonarrService && sonarrService.apiKey) {
       const baseUrl = new URL(sonarrService.url).origin;
-      fetch(
-        `${baseUrl}/api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`
-      ).then((response) => {
-        response.ok &&
-          response.json().then((data) => {
-            setSonarrMedias(data);
-            showNotification({
-              title: 'Sonarr',
-              icon: <Check />,
-              color: 'green',
-              autoClose: 1500,
-              radius: 'md',
-              message: `Loaded ${data.length} releases`,
+      fetch(`${baseUrl}/api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`).then(
+        (response) => {
+          response.ok &&
+            response.json().then((data) => {
+              setSonarrMedias(data);
+              showNotification({
+                title: 'Sonarr',
+                icon: <Check />,
+                color: 'green',
+                autoClose: 1500,
+                radius: 'md',
+                message: `Loaded ${data.length} releases`,
+              });
             });
-          });
-      });
+        }
+      );
     }
     if (radarrService && radarrService.apiKey) {
       const baseUrl = new URL(radarrService.url).origin;
