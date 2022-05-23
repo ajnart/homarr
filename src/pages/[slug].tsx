@@ -20,12 +20,12 @@ export async function getServerSideProps(
     return {
       props: {
         config: {
-          name: '',
+          name: 'Default config',
           services: [],
           settings: {
-            enabledModules: [],
             searchUrl: 'https://www.google.com/search?q=',
           },
+          modules: {},
         },
       },
     };
