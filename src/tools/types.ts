@@ -1,32 +1,43 @@
+import { OptionValues } from '../components/modules/modules';
+
 export interface Settings {
   searchUrl: string;
-  enabledModules: string[];
-  [key: string]: any;
 }
 
 export interface Config {
   name: string;
   services: serviceItem[];
   settings: Settings;
+  modules: {
+    [key: string]: ConfigModule;
+  };
+}
+
+interface ConfigModule {
+  title: string;
+  enabled: boolean;
+  options: {
+    [key: string]: OptionValues;
+  };
 }
 
 export const ServiceTypeList = [
   'Other',
-  'Sonarr',
-  'Radarr',
-  'Lidarr',
-  'qBittorrent',
-  'Plex',
   'Emby',
+  'Lidarr',
+  'Plex',
+  'Radarr',
+  'Sonarr',
+  'qBittorrent',
 ];
 export type ServiceType =
   | 'Other'
-  | 'Sonarr'
-  | 'Radarr'
+  | 'Emby'
   | 'Lidarr'
-  | 'qBittorrent'
   | 'Plex'
-  | 'Emby';
+  | 'Radarr'
+  | 'Sonarr'
+  | 'qBittorrent';
 
 export interface serviceItem {
   id: string;
