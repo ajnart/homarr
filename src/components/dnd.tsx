@@ -66,7 +66,7 @@ export function DndList({ data }: DndListProps) {
   return (
     <DragDropContext
       onDragEnd={({ destination, source }) =>
-        handlers.reorder({ from: source.index, to: destination.index })
+        handlers.reorder({ from: source.index, to: (destination && destination.index) ?? -1 })
       }
     >
       <Droppable droppableId="dnd-list" direction="vertical">
