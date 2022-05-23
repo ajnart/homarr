@@ -30,7 +30,7 @@ function MediaDisplay(props: { media: IMedia }) {
         })}
       >
         <Group direction="column">
-          <Group>
+          <Group noWrap>
             <Title order={3}>{media.title}</Title>
             <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
               <ActionIcon>
@@ -48,7 +48,9 @@ function MediaDisplay(props: { media: IMedia }) {
               Season {media.seasonNumber} episode {media.episodeNumber}
             </Text>
           )}
-          <Text align="justify">{media.overview}</Text>
+          <Text lineClamp={12} align="justify">
+            {media.overview}
+          </Text>
         </Group>
         {/*Add the genres at the bottom of the poster*/}
         <Group>
