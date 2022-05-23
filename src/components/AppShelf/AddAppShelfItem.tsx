@@ -21,6 +21,7 @@ import { Apps } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
 import { AppShelfItemWrapper } from './AppShelfItemWrapper';
+import { v4 as uuidv4 } from 'uuid';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -122,7 +123,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const form = useForm({
     initialValues: {
-      id: props.id ?? crypto.randomUUID(),
+      id: props.id ?? uuidv4(),
       type: props.type ?? 'Other',
       name: props.name ?? '',
       icon: props.icon ?? '/favicon.svg',
