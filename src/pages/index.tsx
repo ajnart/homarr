@@ -7,6 +7,7 @@ import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
 import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
+import { migrateToIdConfig } from '../tools/migrate';
 
 export async function getServerSideProps({
   req,
@@ -26,10 +27,9 @@ export async function getServerSideProps({
           name: cookie.toString(),
           services: [],
           settings: {
-            enabledModules: [],
-            searchBar: true,
             searchUrl: 'https://www.google.com/search?q=',
           },
+          modules: {},
         },
       },
     };
@@ -48,7 +48,8 @@ export default function HomePage(props: any) {
   const { config: initialConfig }: { config: Config } = props;
   const { config, loadConfig, setConfig, getConfigs } = useConfig();
   useEffect(() => {
-    setConfig(initialConfig);
+    const migratedConfig = migrateToIdConfig(initialConfig);
+    setConfig(migratedConfig);
   }, [initialConfig]);
   return (
     <>

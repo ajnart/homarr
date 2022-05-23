@@ -1,5 +1,6 @@
 import { SimpleGrid } from '@mantine/core';
-import AppShelf, { AppShelfItem } from './AppShelf';
+import AppShelf from './AppShelf';
+import { AppShelfItem } from './AppShelfItem';
 
 export default {
   title: 'Item Shelf',

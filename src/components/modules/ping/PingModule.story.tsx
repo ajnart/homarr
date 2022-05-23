@@ -6,6 +6,7 @@ export default {
 };
 
 const service: serviceItem = {
+  id: '1',
   type: 'Other',
   name: 'YouTube',
   icon: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/youtube.png',
