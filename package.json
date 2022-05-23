@@ -25,6 +25,8 @@
 		"ci": "yarn test && yarn lint --fix && yarn typecheck && yarn prettier:write"
 	},
 	"dependencies": {
+    "@dnd-kit/core": "^6.0.1",
+    "@dnd-kit/sortable": "^7.0.0",
 		"@mantine/core": "^4.2.6",
 		"@mantine/dates": "^4.2.6",
 		"@mantine/dropzone": "^4.2.6",
