@@ -6,21 +6,17 @@ import {
   Image,
   Button,
   Select,
-  AspectRatio,
-  Text,
-  Card,
   LoadingOverlay,
   ActionIcon,
   Tooltip,
   Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Apps } from 'tabler-icons-react';
+import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
-import { AppShelfItemWrapper } from './AppShelfItemWrapper';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -51,70 +47,16 @@ export function AddItemShelfButton(props: any) {
   );
 }
 
-export default function AddItemShelfItem(props: any) {
-  const [opened, setOpened] = useState(false);
-  return (
-    <>
-      <Modal
-        size="xl"
-        radius="md"
-        opened={props.opened || opened}
-        onClose={() => setOpened(false)}
-        title="Add a service"
-      >
-        <AddAppShelfItemForm setOpened={setOpened} />
-      </Modal>
-      <AppShelfItemWrapper>
-        <Card.Section>
-          <Group position="center" mx="lg">
-            <Text
-              // TODO: #1 Remove this hack to get the text to be centered.
-              ml={15}
-              style={{
-                alignSelf: 'center',
-                alignContent: 'center',
-                alignItems: 'center',
-                justifyContent: 'center',
-                justifyItems: 'center',
-              }}
-              mt="sm"
-              weight={500}
-            >
-              Add a service
-            </Text>
-          </Group>
-        </Card.Section>
-        <Card.Section>
-          <AspectRatio ratio={5 / 3} m="xl">
-            <motion.i
-              whileHover={{
-                cursor: 'pointer',
-                scale: 1.1,
-              }}
-            >
-              <Apps style={{ cursor: 'pointer' }} onClick={() => setOpened(true)} size={60} />
-            </motion.i>
-          </AspectRatio>
-        </Card.Section>
-      </AppShelfItemWrapper>
-    </>
-  );
-}
-
 function MatchIcon(name: string, form: any) {
   fetch(
     `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
       .toLowerCase()}.png`
-  )
-    .then((res) => {
-      if (res.status === 200) {
-        form.setFieldValue('icon', res.url);
-      }
-    })
-    .catch(() => {
-      // Do nothing
-    });
+  ).then((res) => {
+    if (res.ok) {
+      form.setFieldValue('icon', res.url);
+    }
+  });
 
   return false;
 }
@@ -126,9 +68,10 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const form = useForm({
     initialValues: {
+      id: props.id ?? uuidv4(),
       type: props.type ?? 'Other',
       name: props.name ?? '',
-      icon: props.icon ?? '',
+      icon: props.icon ?? '/favicon.svg',
       url: props.url ?? '',
       apiKey: props.apiKey ?? (undefined as unknown as string),
     },
@@ -136,15 +79,18 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       apiKey: () => null,
       // Validate icon with a regex
       icon: (value: string) => {
-        if (!value.match(/^https?:\/\/.+\.(png|jpg|jpeg|gif)$/)) {
+        // Regex to match everything that ends with and icon extension
+        if (!value.match(/\.(png|jpg|jpeg|gif|svg)$/)) {
           return 'Please enter a valid icon URL';
         }
         return null;
       },
       // Validate url with a regex http/https
       url: (value: string) => {
-        if (!value.match(/^https?:\/\/.+\/$/)) {
-          return 'Please enter a valid URL (that ends with a /)';
+        try {
+          const _isValid = new URL(value);
+        } catch (e) {
+          return 'Please enter a valid URL';
         }
         return null;
       },
@@ -166,11 +112,12 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       <form
         onSubmit={form.onSubmit(() => {
           // If service already exists, update it.
-          if (config.services && config.services.find((s) => s.name === form.values.name)) {
+          if (config.services && config.services.find((s) => s.id === form.values.id)) {
             setConfig({
               ...config,
+              // replace the found item by matching ID
               services: config.services.map((s) => {
-                if (s.name === form.values.name) {
+                if (s.id === form.values.id) {
                   return {
                     ...form.values,
                   };
@@ -213,7 +160,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           <TextInput
             required
             label="Service url"
-            placeholder="http://localhost:8989"
+            placeholder="http://localhost:7575"
             {...form.getInputProps('url')}
           />
           <Select

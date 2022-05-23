@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { setCookies } from 'cookies-next';
 import { useConfig } from '../../tools/state';
 import { Config } from '../../tools/types';
+import { migrateToIdConfig } from '../../tools/migrate';
 
 function getIconColor(status: DropzoneStatus, theme: MantineTheme) {
   return status.accepted
@@ -84,7 +85,8 @@ export default function LoadConfigComponent(props: any) {
             message: undefined,
           });
           setCookies('config-name', newConfig.name, { maxAge: 60 * 60 * 24 * 30 });
-          setConfig(newConfig);
+          const migratedConfig = migrateToIdConfig(newConfig);
+          setConfig(migratedConfig);
         });
       }}
       accept={['application/json']}
