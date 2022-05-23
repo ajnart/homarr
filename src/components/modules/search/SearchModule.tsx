@@ -26,7 +26,7 @@ export default function SearchBar(props: any) {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
   const [icon, setIcon] = useState(<Search />);
-  const queryUrl = config.settings.searchUrl || 'https://www.google.com/search?q=';
+  const queryUrl = config.settings.searchUrl ?? 'https://www.google.com/search?q=';
   const textInput = useRef<HTMLInputElement>();
   useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
 
