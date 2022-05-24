@@ -8,7 +8,7 @@ import {
   TextInput,
   Drawer,
 } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
+import { useColorScheme, useHotkeys } from '@mantine/hooks';
 import { useState } from 'react';
 import { Settings as SettingsIcon } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
@@ -97,6 +97,8 @@ function SettingsMenu(props: any) {
 }
 
 export function SettingsMenuButton(props: any) {
+  useHotkeys([['ctrl+L', () => setOpened(!opened)]]);
+
   const [opened, setOpened] = useState(false);
   return (
     <>
