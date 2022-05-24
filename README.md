@@ -21,7 +21,7 @@
 <i>Join the discord! — Don't forget to star the repo if you are enjoying the project!</i>
 </p>
 <p align="center">
-<b><a href="https://homarr.netlify.app/"><strong> Demo ↗️ </strong></a> • <a href="#-installation"><strong> Install ➡️ </strong></a> • <a href="https://github.com/ajnart/homarr/wiki"><strong> Read the Wiki 📄 </strong></a>
+<a href="https://homarr.netlify.app/"><strong> Demo ↗️ </strong></a> • <a href="#-installation"><strong> Install ➡️ </strong></a> • <a href="https://github.com/ajnart/homarr/wiki"><strong> Read the Wiki 📄 </strong></a>
 </p>
 
 ---
