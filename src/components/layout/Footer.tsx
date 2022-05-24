@@ -81,9 +81,6 @@ export function Footer({ links }: FooterCenteredProps) {
         background: 'none',
         border: 'none',
         clear: 'both',
-        position: 'fixed',
-        bottom: '0',
-        left: '0',
       }}
     >
       <Group position="apart" direction="row" style={{ alignItems: 'end' }} mr="xs" mb="xs">
