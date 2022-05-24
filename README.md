@@ -1,69 +1,97 @@
-<h3 align="center">Homarr</h3>
-<br>
-<p align="center">
-  <i>Don't forget to star the repo if you enjoy the Homarr project!</i>
-  <br>
-   <img src="https://img.shields.io/github/stars/ajnart/homarr?label=%E2%AD%90%20Stars&style=flat-square?branch=master&kill_cache=1%22">
-  <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
-      <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status"></a>
-    <a href="https://github.com/ajnart/homarr/releases/latest">
-      <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/ajnart/homarr"></a>
-  <a href="https://github.com/ajnart/homarr/pkgs/container/homarr">
-    <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/ajnart/homarr?label=Downloads%20"></a>
-  </p>
-  <p align="center">
-<img align="end" width=600 src="https://user-images.githubusercontent.com/71191962/169860380-856634fb-4f41-47cb-ba54-6a9e7b3b9c81.gif" />
 
-  </p>
-  <p align = "center">
-    A homepage for <i>your</i> server.
-  <br/>
-  <a href = "https://homarr.netlify.app/" > <strong> Demo ↗️ </strong> </a> • <a href = "#-installation" > <strong> Install ➡️ </strong> </a>
-  <br />
-  <br />
-    <i>Join the discord!</i>
-  <br />
-    <a href = "https://discord.gg/aCsmEV5RgA" > <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield" > </a>
-  <br/>  
-  <br/>
+<!-- Project Title -->
+<h1 align="center">Homarr</h1>
+
+<!-- Badges -->
+<p align="center">
+<img src="https://img.shields.io/github/stars/ajnart/homarr?label=%E2%AD%90%20Stars&style=flat-square?branch=master&kill_cache=1%22">
+<a href="https://github.com/ajnart/homarr/releases/latest">
+  <img alt="Latest Release (Semver)" src="https://img.shields.io/github/v/release/ajnart/homarr?label=%F0%9F%9A%80%20Release">
+</a>
+<a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
+  <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status">
+</a>
+<a href="https://discord.gg/aCsmEV5RgA">
+  <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield">
+</a>
 </p>
 
-# 📃 Table of Contents
-- [📃 Table of Contents](#-table-of-contents)
-- [🚀 Getting Started](#-getting-started)
-  - [ℹ️ About](#ℹ️-about)
-  - [💥 Known Issues](#-known-issues)
-  - [⚡ Installation](#-installation)
-    - [🐳 Deploying from Docker Image](#-deploying-from-docker-image)
-    - [🛠️ Building from Source](#%EF%B8%8F-building-from-source)
-  - [📖 Guides](#-guides)
-    - [🔁 Drag and Drop (Rearrange)](#-drag-and-drop-rearrange)   
-  - [🔧 Configuration](#-configuration)
-    - [🧩 Integrations](#--integrations)
-    - [🧑‍🤝‍🧑 Multiple Configs](#-multiple-configs)
-    - [🐻 Icons](#-icons)
-    - [📊 Modules](#-modules)
-    - [🔍 Search Bar](#-search-bar)
-- [💖 Contributing](#-contributing)
-    - [🍏 Request Icons](#-request-icons)
+<!-- Links -->
+<p align="center">
+<i>Join the discord! — Don't forget to star the repo if you are enjoying the project!</i>
+</p>
+<p align="center">
+<b><a href="https://homarr.netlify.app/"><strong> Demo ↗️ </strong></a> • <a href="#-installation"><strong> Install ➡️ </strong></a> • <a href="https://github.com/ajnart/homarr/wiki"><strong> Read the Wiki 📄 </strong></a>
+</p>
 
+---
 
-<!-- Getting Started -->
-# 🚀 Getting Started
-
-## ℹ️ About
+<!-- Homarr Description -->
+<img align="right" width=250 src="public/imgs/logo-color.svg" />
 
 Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.
-    
-**[⤴️ Back to Top](#-table-of-contents)**
+
+It integrates with the services you use to display information on the homepage (E.g. Show upcoming Sonarr/Radarr releases).
+
+For a full list of integrations look at: [wiki/integrations](#).
+
+If you have any questions about Homarr or want to share information with us, please go to one of the following places:
+
+- [Github Discussions](https://github.com/ajnart/homarr/discussions)
+- [Discord Server](https://discord.gg/aCsmEV5RgA)
+
+*Before you file an [issue](https://github.com/ajnart/homarr/issues/new/choose), make sure you have the read [known issues](#-known-issues) section.*
+
+**For more information, [read the wiki!](https://github.com/ajnart/homarr/wiki)**
+
+<details>
+  <summary><b>Table of Contents</b></summary>
+  <p>
+
+- [✨ Features](#-features)
+- [👀 Preview](#-preview)
+- [💥 Known Issues](#-known-issues)
+- [🚀 Installation](#-installation)
+  - [🐳 Deploying from Docker Image](#-deploying-from-docker-image)
+  - [🛠️ Building from Source](#️-building-from-source)
+- [💖 Contributing](#-contributing)
+- [📜 License](#-license)
+
+  </p>
+</details>
+
+---
+
+## ✨ Features
+- Integrates with services you use.
+- Search the web direcetly from your homepage.
+- Real-time status indicator for every service.
+- Automatically finds icons while you type the name of a serivce.
+- Widgets that can display all types of information.
+- Easy deployment with Docker.
+- Very light-weight and fast.
+- Free and Open-Source.
+- And more...
+
+**[⤴️ Back to Top](#homarr)**
+
+---
+
+## 👀 Preview
+<img alt="Homarr Preview" align="center" width="100%" src="https://user-images.githubusercontent.com/71191962/169860380-856634fb-4f41-47cb-ba54-6a9e7b3b9c81.gif" />
+
+**[⤴️ Back to Top](#homarr)**
+
+---
 
 ## 💥 Known Issues
 - Posters on the Calendar get blocked by adblockers. (IMDb posters)
 
-**[⤴️ Back to Top](#-table-of-contents)**
+**[⤴️ Back to Top](#homarr)**
 
-## ⚡ Installation
+---
 
+## 🚀 Installation
 ### 🐳 Deploying from Docker Image
 > Supported architectures: x86-64, ARM, ARM64
 
@@ -72,16 +100,16 @@ _Requirements_:
 
 **Standard Docker Install**
 ```sh
-docker run --name homarr -p 7575:7575 -v /data/docker/homarr:/app/data/configs -d ghcr.io/ajnart/homarr:latest
+docker run --name homarr --restart unless-stopped -p 7575:7575 -v /data/docker/homarr:/app/data/configs -d ghcr.io/ajnart/homarr:latest
 ```
 
 **Docker Compose**
 ```yml
 ---
 version: '3'
-#--------------------------------------------------------------------------------------------#
-#                               Homarr -  A homepage for your server.                        #
-#--------------------------------------------------------------------------------------------#
+#---------------------------------------------------------------------#
+#                Homarr -  A homepage for your server.                #
+#---------------------------------------------------------------------#
 services:
   homarr:
     container_name: homarr
@@ -93,7 +121,13 @@ services:
       - '7575:7575'
 ```
 
-***Getting EACCESS errors in the logs? Try running `sudo chmod 775 /directory-you-mounted-to`!***
+```sh
+docker compose up -d
+```
+
+*Getting EACCESS errors in the logs? Try running `sudo chmod 777 /directory-you-mounted-to`!*
+
+**[⤴️ Back to Top](#homarr)**
 
 ### 🛠️ Building from Source
 
@@ -110,101 +144,54 @@ _Requirements_:
 - Start the NextJS web server: ``yarn start``
 - *Note: If you want to update the code in real time, launch with ``yarn dev``*
 
-## 📖 Guides
+**[⤴️ Back to Top](#homarr)**
 
-### 🔁 Drag and Drop (Rearrange)
-You can rearrange items by Drag and Dropping them to any position. To Drag an Drop, click and hold an icon for 250ms and then drag it to the desired position.
+---
 
-## 🔧 Configuration
-
-### 🧩  Integrations
-
-Homarr natively integrates with your services. Here is a list of all supported services.
-
-**Emby**
-*The Emby integration is still in development.*
-
-**Lidarr**
-*The Lidarr integration is still in development.*
-
-**Sonarr**
-*Sonarr needs an API key.*<br>
-Make a new API key in `Advanced > Security > Create new API key`<br>
-**Current integration:** Upcoming media is displayed in the **Calendar** module.
-
-**Plex**
-*The Plex integration is still in development.*
-
-**Radarr**
-*Radarr needs an API key.*<br>
-Make a new API key in `Advanced > Security > Create new API key`<br>
-**Current integration:** Upcoming media is displayed in the **Calendar** module.
-
-**qBittorent**
-*The qBittorent integration is still in development.*
-
-**[⤴️ Back to Top](#-table-of-contents)**
-
-### 🧑‍🤝‍🧑 Multiple Configs
-
-Homarr allows the usage of multiple configs. You can add a new config in two ways.
-
-**Drag-and-Drop**
-1. Download your config from the Homarr settings.
-2. Change the name of the `.json` file and the name in the `.json` file to any name you want *(just make sure it's different)*.
-3. Drag-and-Drop the file into the Homarr tab in your browser.
-4. Change the config in settings.
-
-**Using a filebrowser**
-1. Locate your mounted `default.json` file.
-2. Duplicate your `default.json` file.
-3. Change the name of the `.json` file and the name in the `.json` file to any name you want *(just make sure it's different)*.
-4. Refresh the Homarr tab in your browser.
-5. Change the config in settings.
-
-**[⤴️ Back to Top](#-table-of-contents)**
-
-### 🐻 Icons
-
-The icons used in Homarr are automatically requested from the [dashboard-icons](https://github.com/walkxhub/dashboard-icons) repo.
-
-Icons are requested in the following way: <br>
-`Grab name > Replace ' ' with '-' > .toLower() > https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/{name}.png`
-
-**[⤴️ Back to Top](#-table-of-contents)**
-
-### 📊 Modules
-
-Modules are blocks shown on the sides of the Homarr dashboard that display information. They can be enabled in settings.
-
-**Clock Module**
-The Clock Module will display your current time and date.
-
-**Calendar Module**
-The Calendar Module uses [integrations](#--integrations-1) to display new content.
-
-**Weather Module**
-The Weather Module uses your devices location to display the current, highest, and lowest temperature.
-
-**[⤴️ Back to Top](#-table-of-contents)**
-
-### 🔍 Search Bar
-
-The Search Bar will open any Search Query after the Query URL you've specified in settings.
-
-*(Eg. `https://www.google.com/search?q=*Your Query will be inserted here*`)*
-
-**[⤴️ Back to Top](#-table-of-contents)**
-
-# 💖 Contributing
+## 💖 Contributing
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
 All contributions are highly appreciated.
 
-**[⤴️ Back to Top](#-table-of-contents)**
+**[⤴️ Back to Top](#homarr)**
 
-## 🍏 Request Icons
+---
 
-The icons used in Homarr are automatically requested from the [dashboard-icons](https://github.com/walkxhub/dashboard-icons) repo. You can make a icon request by creating an [issue](https://github.com/walkxhub/dashboard-icons/issues/new/choose).
-    
-**[⤴️ Back to Top](#-table-of-contents)**
+
+## 📜 License
+Homarr is Licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License)
+
+```txt
+Copyright © 2022 Thomas "ajnart" Camlong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+**[⤴️ Back to Top](#homarr)**
+
+---
+
+<p align="center">
+  <i>Thank you for visiting! <b>For more information <a href="https://github.com/ajnart/homarr/wiki">read the wiki!</a></b></i>
+  <br/>
+  <br/>
+  <a href="https://trackgit.com">
+    <img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/l3khzc3a3pexzw5w5whl" alt="trackgit-views" />
+  </a>
+</p>
