@@ -16,5 +16,5 @@ interface Option {
 
 export interface OptionValues {
   name: string;
-  value: boolean;
+  value: boolean | string;
 }

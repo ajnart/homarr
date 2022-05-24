@@ -1,4 +1,4 @@
-import { Card, Menu, Switch, useMantineTheme } from '@mantine/core';
+import { Button, Card, Group, Menu, Switch, TextInput, useMantineTheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { IModule } from './modules';
 
@@ -19,13 +19,51 @@ export function ModuleWrapper(props: any) {
     types.forEach((type, index) => {
       const optionName = `${module.title}.${keys[index]}`;
       const moduleInConfig = config.modules?.[module.title];
+      if (type === 'string') {
+        items.push(
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setConfig({
+                ...config,
+                modules: {
+                  ...config.modules,
+                  [module.title]: {
+                    ...config.modules[module.title],
+                    options: {
+                      ...config.modules[module.title].options,
+                      [keys[index]]: {
+                        ...config.modules[module.title].options[keys[index]],
+                        value: (e.target as any)[0].value,
+                      },
+                    },
+                  },
+                },
+              });
+            }}
+          >
+            <Group noWrap align="end" position="center" mt={0}>
+              <TextInput
+                key={optionName}
+                id={optionName}
+                name={optionName}
+                label={values[index].name}
+                defaultValue={(moduleInConfig?.options?.[keys[index]]?.value as string) ?? ''}
+                onChange={(e) => {}}
+              />
+
+              <Button type="submit">Save</Button>
+            </Group>
+          </form>
+        );
+      }
       // TODO: Add support for other types
       if (type === 'boolean') {
         items.push(
           <Switch
             defaultChecked={
               // Set default checked to the value of the option if it exists
-              moduleInConfig?.options?.[keys[index]]?.value ?? false
+              (moduleInConfig?.options?.[keys[index]]?.value as boolean) ?? false
             }
             key={keys[index]}
             onClick={(e) => {
@@ -59,7 +97,7 @@ export function ModuleWrapper(props: any) {
     <Card hidden={!isShown} mx="sm" withBorder radius="lg" shadow="sm">
       {module.options && (
         <Menu
-          size="md"
+          size="lg"
           shadow="xl"
           closeOnItemClick={false}
           radius="md"
