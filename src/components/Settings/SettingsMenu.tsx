@@ -1,12 +1,12 @@
 import {
   ActionIcon,
   Group,
-  Modal,
   Title,
   Text,
   Tooltip,
   SegmentedControl,
   TextInput,
+  Drawer,
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
 import { useState } from 'react';
@@ -100,15 +100,16 @@ export function SettingsMenuButton(props: any) {
   const [opened, setOpened] = useState(false);
   return (
     <>
-      <Modal
-        size="xl"
-        radius="md"
+      <Drawer
+        size="auto"
+        padding="xl"
+        position="right"
         title={<Title order={3}>Settings</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
         <SettingsMenu />
-      </Modal>
+      </Drawer>
       <ActionIcon
         variant="default"
         radius="md"
