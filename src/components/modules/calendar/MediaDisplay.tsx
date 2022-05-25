@@ -3,9 +3,10 @@ import { Link } from 'tabler-icons-react';
 
 export interface IMedia {
   overview: string;
-  imdbId: any;
+  imdbId?: any;
+  artist?: string;
   title: string;
-  poster: string;
+  poster?: string;
   genres: string[];
   seasonNumber?: number;
   episodeNumber?: number;
@@ -15,14 +16,17 @@ function MediaDisplay(props: { media: IMedia }) {
   const { media }: { media: IMedia } = props;
   return (
     <Group noWrap align="self-start" mr={15}>
-      <Image
-        radius="md"
-        fit="cover"
-        src={media.poster}
-        alt={media.title}
-        width={300}
-        height={400}
-      />
+      {media.poster && (
+        <Image
+          radius="md"
+          fit="cover"
+          src={media.poster}
+          alt={media.title}
+          width={300}
+          height={400}
+        />
+      )}
+
       <Stack
         justify="space-between"
         sx={(theme) => ({
@@ -32,12 +36,28 @@ function MediaDisplay(props: { media: IMedia }) {
         <Group direction="column">
           <Group noWrap>
             <Title order={3}>{media.title}</Title>
-            <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
-              <ActionIcon>
-                <Link />
-              </ActionIcon>
-            </Anchor>
+            {media.imdbId && (
+              <Anchor
+                href={`https://www.imdb.com/title/${media.imdbId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ActionIcon>
+                  <Link />
+                </ActionIcon>
+              </Anchor>
+            )}
           </Group>
+          {media.artist && (
+            <Text
+              style={{
+                textAlign: 'center',
+                color: '#a0aec0',
+              }}
+            >
+              New album from {media.artist}
+            </Text>
+          )}
           {media.episodeNumber && media.seasonNumber && (
             <Text
               style={{
@@ -60,6 +80,42 @@ function MediaDisplay(props: { media: IMedia }) {
         </Group>
       </Stack>
     </Group>
+  );
+}
+
+export function ReadarrMediaDisplay(props: any) {
+  const { media }: { media: any } = props;
+  // Find a poster CoverType
+  const poster = media.author.images.find((image: any) => image.coverType === 'poster');
+  // Return a movie poster containting the title and the description
+  return (
+    <MediaDisplay
+      media={{
+        title: media.title,
+        poster: poster ? poster.url : undefined,
+        artist: media.author.authorName,
+        overview: media.overview,
+        genres: media.genres,
+      }}
+    />
+  );
+}
+
+export function LidarrMediaDisplay(props: any) {
+  const { media }: { media: any } = props;
+  // Find a poster CoverType
+  const poster = media.artist.images.find((image: any) => image.coverType === 'poster');
+  // Return a movie poster containting the title and the description
+  return (
+    <MediaDisplay
+      media={{
+        title: media.title,
+        poster: poster ? poster.url : undefined,
+        artist: media.artist.artistName,
+        overview: media.overview,
+        genres: media.genres,
+      }}
+    />
   );
 }
 

@@ -27,6 +27,7 @@ export const ServiceTypeList = [
   'Lidarr',
   'Plex',
   'Radarr',
+  'Readarr',
   'Sonarr',
   'qBittorrent',
 ];
@@ -36,6 +37,7 @@ export type ServiceType =
   | 'Lidarr'
   | 'Plex'
   | 'Radarr'
+  | 'Readarr'
   | 'Sonarr'
   | 'qBittorrent';
 

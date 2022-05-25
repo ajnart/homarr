@@ -173,7 +173,10 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             {...form.getInputProps('type')}
           />
           <LoadingOverlay visible={isLoading} />
-          {(form.values.type === 'Sonarr' || form.values.type === 'Radarr') && (
+          {(form.values.type === 'Sonarr' ||
+            form.values.type === 'Radarr' ||
+            form.values.type === 'Lidarr' ||
+            form.values.type === 'Readarr') && (
             <TextInput
               required
               label="API key"
