@@ -9,7 +9,7 @@ export default function ConfigChanger() {
   useEffect(() => {
     getConfigs().then((configs) => setConfigList(configs));
     // setConfig(initialConfig);
-  }, [config.name]);
+  }, [config]);
   // If configlist is empty, return a loading indicator
   if (configList.length === 0) {
     return (
