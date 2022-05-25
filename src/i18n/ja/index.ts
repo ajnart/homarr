@@ -1,1 +1,2 @@
-export { CalendarModule } from './CalendarModule';
+export { default as AppShelf } from './AppShelf';
+export * from './AppShelfItem';
