@@ -51,6 +51,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'PUT') {
     return Put(req, res);
   }
+  if (req.method === 'DELETE') {
+    return Delete(req, res);
+  }
   if (req.method === 'GET') {
     return Get(req, res);
   }
@@ -59,3 +62,28 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     message: 'Method not allowed',
   });
 };
+
+function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
+  // Get the slug of the request
+  const { slug } = req.query as { slug: string };
+  if (!slug) {
+    return res.status(400).json({
+      message: 'Wrong request',
+    });
+  }
+  // Loop over all the files in the /data/configs directory
+  const files = fs.readdirSync('data/configs');
+  // Strip the .json extension from the file name
+  const configs = files.map((file) => file.replace('.json', ''));
+  // If the target is not in the list of files, return an error
+  if (!configs.includes(slug)) {
+    return res.status(404).json({
+      message: 'Target not found',
+    });
+  }
+  // Delete the file
+  fs.unlinkSync(path.join('data/configs', `${slug}.json`));
+  return res.status(200).json({
+    message: 'Configuration deleted with success',
+  });
+}
