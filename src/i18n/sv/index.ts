@@ -1,1 +1,1 @@
-export { CalendarModule } from './CalendarModule';
+export { PingModule } from './PingModule';
