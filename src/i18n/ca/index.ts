@@ -1,1 +1,1 @@
-export { DateModule } from './DateModule';
+export { PingModule } from './PingModule';
