@@ -1,1 +1,1 @@
-export { CalendarModule } from './CalendarModule';
+export { DateModule } from './DateModule';
