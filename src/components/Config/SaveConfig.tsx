@@ -1,18 +1,96 @@
-import { Button } from '@mantine/core';
+import { Button, Group, Modal, TextInput } from '@mantine/core';
+import { useForm } from '@mantine/form';
+import { showNotification } from '@mantine/notifications';
+import axios from 'axios';
 import fileDownload from 'js-file-download';
-import { Download } from 'tabler-icons-react';
+import { useState } from 'react';
+import { Check, Download, Plus, Trash, X } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
 
 export default function SaveConfigComponent(props: any) {
-  const { config } = useConfig();
+  const [opened, setOpened] = useState(false);
+  const { config, setConfig } = useConfig();
+  const form = useForm({
+    initialValues: {
+      configName: config.name,
+    },
+  });
   function onClick(e: any) {
     if (config) {
       fileDownload(JSON.stringify(config, null, '\t'), `${config.name}.json`);
     }
   }
   return (
-    <Button leftIcon={<Download />} variant="outline" onClick={onClick}>
-      Download your config
-    </Button>
+    <Group>
+      <Modal
+        radius="md"
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Choose the name of your new config"
+      >
+        <form
+          onSubmit={form.onSubmit((values) => {
+            setConfig({ ...config, name: values.configName });
+            setOpened(false);
+            showNotification({
+              title: 'Config saved',
+              icon: <Check />,
+              color: 'green',
+              autoClose: 1500,
+              radius: 'md',
+              message: `Config saved as ${values.configName}`,
+            });
+          })}
+        >
+          <TextInput
+            required
+            defaultValue={config.name}
+            label="Config name"
+            placeholder="Your new config name"
+            {...form.getInputProps('configName')}
+          />
+          <Group position="right" mt="md">
+            <Button type="submit">Confirm</Button>
+          </Group>
+        </form>
+      </Modal>
+      <Button leftIcon={<Download />} variant="outline" onClick={onClick}>
+        Download your config
+      </Button>
+      <Button
+        leftIcon={<Trash />}
+        variant="outline"
+        onClick={() => {
+          axios
+            .delete(`/api/configs/${config.name}`)
+            .then(() => {
+              showNotification({
+                title: 'Config deleted',
+                icon: <Check />,
+                color: 'green',
+                autoClose: 1500,
+                radius: 'md',
+                message: 'Config deleted',
+              });
+            })
+            .catch(() => {
+              showNotification({
+                title: 'Config delete failed',
+                icon: <X />,
+                color: 'red',
+                autoClose: 1500,
+                radius: 'md',
+                message: 'Config delete failed',
+              });
+            });
+          setConfig({ ...config, name: 'default' });
+        }}
+      >
+        Delete current config
+      </Button>
+      <Button leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
+        Save a copy of your config
+      </Button>
+    </Group>
   );
 }

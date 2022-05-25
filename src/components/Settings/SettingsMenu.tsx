@@ -1,14 +1,14 @@
 import {
   ActionIcon,
   Group,
-  Modal,
   Title,
   Text,
   Tooltip,
   SegmentedControl,
   TextInput,
+  Drawer,
 } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
+import { useColorScheme, useHotkeys } from '@mantine/hooks';
 import { useState } from 'react';
 import { Settings as SettingsIcon } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
@@ -97,18 +97,21 @@ function SettingsMenu(props: any) {
 }
 
 export function SettingsMenuButton(props: any) {
+  useHotkeys([['ctrl+L', () => setOpened(!opened)]]);
+
   const [opened, setOpened] = useState(false);
   return (
     <>
-      <Modal
-        size="xl"
-        radius="md"
+      <Drawer
+        size="auto"
+        padding="xl"
+        position="right"
         title={<Title order={3}>Settings</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
         <SettingsMenu />
-      </Modal>
+      </Drawer>
       <ActionIcon
         variant="default"
         radius="md"

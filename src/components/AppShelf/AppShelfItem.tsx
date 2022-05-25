@@ -1,12 +1,4 @@
-import {
-  Text,
-  Card,
-  Anchor,
-  AspectRatio,
-  Image,
-  Center,
-  createStyles,
-} from '@mantine/core';
+import { Text, Card, Anchor, AspectRatio, Image, Center, createStyles } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';

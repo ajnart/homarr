@@ -27,6 +27,10 @@ export const WeatherModule: IModule = {
       name: 'Display in Fahrenheit',
       value: false,
     },
+    location: {
+      name: 'Current location',
+      value: '',
+    },
   },
 };
 
@@ -128,27 +132,30 @@ export function WeatherIcon(props: any) {
 
 export default function WeatherComponent(props: any) {
   // Get location from browser
-  const [location, setLocation] = useState({ lat: 0, lng: 0 });
   const { config } = useConfig();
   const [weather, setWeather] = useState({} as WeatherResponse);
+  const cityInput: string =
+    (config?.modules?.[WeatherModule.title]?.options?.location?.value as string) ?? '';
   const isFahrenheit: boolean =
-    config?.modules?.[WeatherModule.title]?.options?.freedomunit?.value ?? false;
-
-  if ('geolocation' in navigator && location.lat === 0 && location.lng === 0) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setLocation({ lat: position.coords.latitude, lng: position.coords.longitude });
-    });
-  }
+    (config?.modules?.[WeatherModule.title]?.options?.freedomunit?.value as boolean) ?? false;
 
   useEffect(() => {
     axios
-      .get(
-        `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lng}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe%2FLondon`
-      )
-      .then((res) => {
-        setWeather(res.data);
+      .get(`https://geocoding-api.open-meteo.com/v1/search?name=${cityInput}`)
+      .then((response) => {
+        // Check if results exists
+        const { latitude, longitude } = response.data.results
+          ? response.data.results[0]
+          : { latitude: 0, longitude: 0 };
+        axios
+          .get(
+            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe%2FLondon`
+          )
+          .then((res) => {
+            setWeather(res.data);
+          });
       });
-  }, []);
+  }, [cityInput]);
   if (!weather.current_weather) {
     return null;
   }
