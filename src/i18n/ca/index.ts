@@ -1,2 +1,1 @@
-export { default as AppShelf } from './AppShelf';
-export * from './AppShelfItem';
+export { DateModule } from './DateModule';
