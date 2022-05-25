@@ -156,8 +156,8 @@ function DayComponent(props: any) {
   const day = renderdate.getDate();
 
   const readarrFiltered = readarrmedias.filter((media: any) => {
-    const mediaDate = new Date(media.releaseDate);
-    return mediaDate.getDate() === day;
+    const date = new Date(media.releaseDate);
+    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
   });
 
   const lidarrFiltered = lidarrmedias.filter((media: any) => {
