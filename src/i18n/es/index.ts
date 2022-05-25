@@ -1,1 +1,1 @@
-export { DateModule } from './DateModule';
+export { SearchModule } from './SearchModule';
