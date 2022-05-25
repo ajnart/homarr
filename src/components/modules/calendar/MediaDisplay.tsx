@@ -32,19 +32,20 @@ function MediaDisplay(props: { media: IMedia }) {
             height={400}
           />
         )}
-        <Group direction="row">
-          <Title order={3}>{media.title}</Title>
-          {media.imdbId && (
-            <Anchor
-              href={`https://www.imdb.com/title/${media.imdbId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ActionIcon>
-                <Link />
-              </ActionIcon>
-            </Anchor>
-          )}
+        <Group direction="column">
+          <Group style={{ minWidth: 400 }}>
+            <Title order={3}>{media.title}</Title>
+            {media.imdbId && (
+              <Anchor
+                href={`https://www.imdb.com/title/${media.imdbId}`}
+                target="_blank"
+              >
+                <ActionIcon>
+                  <Link />
+                </ActionIcon>
+              </Anchor>
+            )}
+          </Group>
           {media.artist && (
             <Text
               style={{
