@@ -51,7 +51,7 @@ export function ConfigProvider({ children }: Props) {
   async function loadConfig(configName: string) {
     try {
       const response = await axios.get(`/api/configs/${configName}`);
-      setConfigInternal(response.data);
+      setConfigInternal(JSON.parse(response.data));
       showNotification({
         title: 'Config',
         icon: <Check />,

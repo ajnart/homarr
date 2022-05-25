@@ -94,7 +94,6 @@ export function ReadarrMediaDisplay(props: any) {
   }
   const baseUrl = new URL(readarr.url).origin;
   // Remove '/' from the end of the lidarr url
-  console.log(poster);
   const fullLink = `${baseUrl}${poster.url}`;
   // Return a movie poster containting the title and the description
   return (
