@@ -8,6 +8,8 @@ import LoadConfigComponent from '../components/Config/LoadConfig';
 import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
 import { migrateToIdConfig } from '../tools/migrate';
+import { ModuleWrapper } from '../components/modules/moduleWrapper';
+import { DownloadsModule } from '../components/modules';
 
 export async function getServerSideProps({
   req,
@@ -55,6 +57,7 @@ export default function HomePage(props: any) {
     <>
       <AppShelf />
       <LoadConfigComponent />
+      <ModuleWrapper mt="xl" module={DownloadsModule} />
     </>
   );
 }
