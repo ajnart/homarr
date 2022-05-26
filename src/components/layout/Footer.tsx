@@ -11,6 +11,8 @@ import {
 } from '@mantine/core';
 import { AlertCircle, BrandGithub } from 'tabler-icons-react';
 import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
+import { ModuleWrapper } from '../modules/moduleWrapper';
+import { DownloadsModule } from '../modules';
 
 const useStyles = createStyles((theme) => ({
   footer: {

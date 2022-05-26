@@ -5,6 +5,7 @@ import { ModuleWrapper } from '../modules/moduleWrapper';
 export default function Aside(props: any) {
   return (
     <MantineAside
+      pr="md"
       hiddenBreakpoint="md"
       hidden
       style={{
