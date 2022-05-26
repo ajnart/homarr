@@ -101,7 +101,7 @@ export default function DownloadComponent() {
             radius="lg"
             color={torrent.progress === 1 ? 'green' : 'blue'}
             value={torrent.progress * 100}
-            size="xl"
+            size="lg"
           />
         </td>
       </tr>
