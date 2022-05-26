@@ -1,4 +1,4 @@
-import { Loader, Table, Text, Tooltip, Title, Group, Progress } from '@mantine/core';
+import { Loader, Table, Text, Tooltip, Title, Group, Progress, Center } from '@mantine/core';
 import { Download } from 'tabler-icons-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import { useConfig } from '../../../tools/state';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 
 export const DownloadsModule: IModule = {
-  title: 'Download speeds',
+  title: 'Torrent',
   description: 'Show the current download speed of supported services',
   icon: Download,
   component: DownloadComponent,
@@ -41,7 +41,7 @@ export default function DownloadComponent() {
         });
       }, 3000);
     }
-  }, []);
+  }, [config.modules]);
 
   if (!qBittorrentService) {
     return (
@@ -56,7 +56,11 @@ export default function DownloadComponent() {
   }
 
   if (torrents.length === 0) {
-    return <Loader />;
+    return (
+      <Center>
+        <Loader />
+      </Center>
+    );
   }
 
   const ths = (
@@ -110,7 +114,7 @@ export default function DownloadComponent() {
 
   return (
     <Group noWrap direction="column">
-      <Title order={4}>Your downloads</Title>
+      <Title order={4}>Your torrents</Title>
       <Table highlightOnHover>
         <thead>{ths}</thead>
         <tbody>{rows}</tbody>
