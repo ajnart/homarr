@@ -1138,6 +1138,18 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
+"@ctrl/deluge@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ctrl/deluge/-/deluge-4.0.0.tgz#5df6a0622dfdef80dec09fe80394eb9056c31c96"
+  integrity sha512-LgIAHvVfbwP/RtOcmj7mW+MIVL8AfzZLWbrv95a+YRV5osMKgu1NAJT2zyu2AwQ8CWrT/DRJmpm7OzR+Z3yd+A==
+  dependencies:
+    "@ctrl/magnet-link" "^3.1.0"
+    "@ctrl/shared-torrent" "^4.1.0"
+    "@ctrl/url-join" "^2.0.0"
+    formdata-node "^4.3.2"
+    got "^12.0.1"
+    tough-cookie "^4.0.0"
+
 "@ctrl/magnet-link@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@ctrl/magnet-link/-/magnet-link-3.1.0.tgz#c2bbd66226846d8abb50b228d2c8c8b321231559"
