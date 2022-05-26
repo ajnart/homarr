@@ -48,4 +48,6 @@ export interface serviceItem {
   url: string;
   icon: string;
   apiKey?: string;
+  password?: string;
+  username?: string;
 }
