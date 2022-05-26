@@ -99,8 +99,14 @@ _Requirements_:
 - [Docker](https://docs.docker.com/get-docker/)
 
 **Standard Docker Install**
-```sh
-docker run --name homarr --restart unless-stopped -p 7575:7575 -v /data/docker/homarr:/app/data/configs -d ghcr.io/ajnart/homarr:latest
+```bash
+docker run  \
+  --name homarr \
+  --restart unless-stopped \
+  -p 7575:7575 \
+  -v ./homarr/configs:/app/data/configs \
+  -v ./homarr/icons:/app/public/icons \
+  -d ghcr.io/ajnart/homarr:latest
 ```
 
 **Docker Compose**
@@ -116,7 +122,8 @@ services:
     image: ghcr.io/ajnart/homarr:latest
     restart: unless-stopped
     volumes:
-      - /data/docker/homarr:/app/data/configs
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
     ports:
       - '7575:7575'
 ```
