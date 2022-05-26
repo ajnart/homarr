@@ -32,7 +32,7 @@ export default function DateComponent(props: any) {
   }, []);
 
   return (
-    <Group p="sm" direction="column">
+    <Group p="sm" spacing="xs" direction="column">
       <Title>{dayjs(date).format(formatString)}</Title>
       <Text size="xl">{dayjs(date).format('dddd, MMMM D')}</Text>
     </Group>
