@@ -7,10 +7,12 @@ import {
   SegmentedControl,
   TextInput,
   Drawer,
+  Anchor,
 } from '@mantine/core';
 import { useColorScheme, useHotkeys } from '@mantine/hooks';
 import { useState } from 'react';
-import { Settings as SettingsIcon } from 'tabler-icons-react';
+import { BrandGithub, Settings as SettingsIcon } from 'tabler-icons-react';
+import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
@@ -92,6 +94,37 @@ function SettingsMenu(props: any) {
       >
         tip: You can upload your config file by dragging and dropping it onto the page
       </Text>
+      <Group position="center" direction="row" mr="xs">
+        <Group spacing={0}>
+          <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
+            <BrandGithub size={18} />
+          </ActionIcon>
+          <Text
+            style={{
+              position: 'relative',
+              fontSize: '0.90rem',
+              color: 'gray',
+            }}
+          >
+            {CURRENT_VERSION}
+          </Text>
+        </Group>
+        <Text
+          style={{
+            fontSize: '0.90rem',
+            textAlign: 'center',
+            color: '#a0aec0',
+          }}
+        >
+          Made with ❤️ by @
+          <Anchor
+            href="https://github.com/ajnart"
+            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+          >
+            ajnart
+          </Anchor>
+        </Text>
+      </Group>
     </Group>
   );
 }
