@@ -3,10 +3,11 @@ import { showNotification } from '@mantine/notifications';
 import { useState } from 'react';
 import { Check, Edit, Trash } from 'tabler-icons-react';
 import { useConfig } from '../../tools/state';
+import { serviceItem } from '../../tools/types';
 import { AddAppShelfItemForm } from './AddAppShelfItem';
 
 export default function AppShelfMenu(props: any) {
-  const { service } = props;
+  const { service }: { service: serviceItem } = props;
   const { config, setConfig } = useConfig();
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
@@ -27,7 +28,7 @@ export default function AppShelfMenu(props: any) {
           url={service.url}
           icon={service.icon}
           apiKey={service.apiKey}
-          login={service.login}
+          username={service.username}
           password={service.password}
           message="Save service"
         />
