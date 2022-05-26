@@ -25,37 +25,45 @@ export default function DownloadComponent() {
   const qBittorrentService = config.services
     .filter((service) => service.type === 'qBittorrent')
     .at(0);
+  const delugeService = config.services.filter((service) => service.type === 'Deluge').at(0);
   const hideComplete: boolean =
     (config?.modules?.[DownloadsModule.title]?.options?.hidecomplete?.value as boolean) ?? false;
 
-  const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
+  const [delugeTorrents, setDelugeTorrents] = useState<NormalizedTorrent[]>([]);
+  const [qBittorrentTorrents, setqBittorrentTorrents] = useState<NormalizedTorrent[]>([]);
 
   useEffect(() => {
     if (qBittorrentService) {
-      axios.post('/api/modules/downloads', { ...qBittorrentService }).then((res) => {
-        setTorrents(res.data.torrents);
-      });
       setInterval(() => {
-        axios.post('/api/modules/downloads', { ...qBittorrentService }).then((res) => {
-          setTorrents(res.data.torrents);
+        axios
+          .post('/api/modules/downloads?dlclient=qbit', { ...qBittorrentService })
+          .then((res) => {
+            setqBittorrentTorrents(res.data.torrents);
+          });
+      }, 3000);
+    }
+    if (delugeService) {
+      setInterval(() => {
+        axios.post('/api/modules/downloads?dlclient=deluge', { ...delugeService }).then((res) => {
+          setDelugeTorrents(res.data.torrents);
         });
       }, 3000);
     }
   }, [config.modules]);
 
-  if (!qBittorrentService) {
+  if (!qBittorrentService && !delugeService) {
     return (
       <Group direction="column">
-        <Title>Critical: No qBittorrent instance found in services.</Title>
+        <Title>Critical: No qBittorrent/Deluge instance found in services.</Title>
         <Group>
-          <Title order={3}>Add a qBittorrent service to view current downloads</Title>
+          <Title order={3}>Add a qBittorrent/Deluge service to view current downloads</Title>
           <AddItemShelfButton />
         </Group>
       </Group>
     );
   }
 
-  if (torrents.length === 0) {
+  if (qBittorrentTorrents.length === 0 && delugeTorrents.length === 0) {
     return (
       <Center>
         <Loader />
@@ -71,6 +79,10 @@ export default function DownloadComponent() {
       <th>Progress</th>
     </tr>
   );
+  // Loop over qBittorrent torrents merging with deluge torrents
+  const torrents: NormalizedTorrent[] = [];
+  delugeTorrents.forEach((torrent) => torrents.push(torrent));
+  qBittorrentTorrents.forEach((torrent) => torrents.push(torrent));
 
   const rows = torrents.map((torrent) => {
     if (torrent.progress === 1 && hideComplete) {
