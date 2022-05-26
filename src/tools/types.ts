@@ -24,6 +24,7 @@ interface ConfigModule {
 export const ServiceTypeList = [
   'Other',
   'Emby',
+  'Deluge',
   'Lidarr',
   'Plex',
   'Radarr',
@@ -34,6 +35,7 @@ export const ServiceTypeList = [
 export type ServiceType =
   | 'Other'
   | 'Emby'
+  | 'Deluge'
   | 'Lidarr'
   | 'Plex'
   | 'Radarr'
@@ -48,4 +50,6 @@ export interface serviceItem {
   url: string;
   icon: string;
   apiKey?: string;
+  password?: string;
+  username?: string;
 }

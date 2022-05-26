@@ -163,7 +163,7 @@ export default function WeatherComponent(props: any) {
     return isFahrenheit ? `${(value * (9 / 5)).toFixed(1)}°F` : `${value.toFixed(1)}°C`;
   }
   return (
-    <Group position="left" direction="column">
+    <Group p="sm" spacing="xs" direction="column">
       <Title>{usePerferedUnit(weather.current_weather.temperature)}</Title>
       <Group spacing={0}>
         <WeatherIcon code={weather.current_weather.weathercode} />

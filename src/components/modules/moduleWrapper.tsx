@@ -2,13 +2,9 @@ import { Button, Card, Group, Menu, Switch, TextInput, useMantineTheme } from '@
 import { useConfig } from '../../tools/state';
 import { IModule } from './modules';
 
-export function ModuleWrapper(props: any) {
-  const { module }: { module: IModule } = props;
+function getItems(module: IModule) {
   const { config, setConfig } = useConfig();
   const enabledModules = config.modules ?? {};
-  // Remove 'Module' from enabled modules titles
-  const isShown = enabledModules[module.title]?.enabled ?? false;
-  const theme = useMantineTheme();
   const items: JSX.Element[] = [];
   if (module.options) {
     const keys = Object.keys(module.options);
@@ -33,7 +29,7 @@ export function ModuleWrapper(props: any) {
                     options: {
                       ...config.modules[module.title].options,
                       [keys[index]]: {
-                        ...config.modules[module.title].options[keys[index]],
+                        ...config.modules[module.title].options?.[keys[index]],
                         value: (e.target as any)[0].value,
                       },
                     },
@@ -90,11 +86,23 @@ export function ModuleWrapper(props: any) {
       }
     });
   }
+  return items;
+}
+
+export function ModuleWrapper(props: any) {
+  const { module }: { module: IModule } = props;
+  const { config, setConfig } = useConfig();
+  const enabledModules = config.modules ?? {};
+  // Remove 'Module' from enabled modules titles
+  const isShown = enabledModules[module.title]?.enabled ?? false;
+  const theme = useMantineTheme();
+  const items: JSX.Element[] = getItems(module);
+
   if (!isShown) {
     return null;
   }
   return (
-    <Card hidden={!isShown} mx="sm" withBorder radius="lg" shadow="sm">
+    <Card {...props} hidden={!isShown} withBorder radius="lg" shadow="sm">
       {module.options && (
         <Menu
           size="lg"
