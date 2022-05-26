@@ -33,7 +33,7 @@ export function ModuleWrapper(props: any) {
                     options: {
                       ...config.modules[module.title].options,
                       [keys[index]]: {
-                        ...config.modules[module.title].options[keys[index]],
+                        ...config.modules[module.title].options?.[keys[index]],
                         value: (e.target as any)[0].value,
                       },
                     },
