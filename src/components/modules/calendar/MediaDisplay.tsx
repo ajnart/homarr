@@ -36,10 +36,7 @@ function MediaDisplay(props: { media: IMedia }) {
           <Group style={{ minWidth: 400 }}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
-              <Anchor
-                href={`https://www.imdb.com/title/${media.imdbId}`}
-                target="_blank"
-              >
+              <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
                 <ActionIcon>
                   <Link />
                 </ActionIcon>

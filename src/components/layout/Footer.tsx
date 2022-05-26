@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { createStyles, Anchor, Footer as FooterComponent, useMantineTheme } from '@mantine/core';
+import React, { useEffect } from 'react';
+import { createStyles, Footer as FooterComponent } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
 
