@@ -74,6 +74,8 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       icon: props.icon ?? '/favicon.svg',
       url: props.url ?? '',
       apiKey: props.apiKey ?? (undefined as unknown as string),
+      username: props.username ?? (undefined as unknown as string),
+      password: props.password ?? (undefined as unknown as string),
     },
     validate: {
       apiKey: () => null,
@@ -187,6 +189,30 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               }}
               error={form.errors.apiKey && 'Invalid API key'}
             />
+          )}
+          {form.values.type === 'qBittorrent' && (
+            <>
+              <TextInput
+                required
+                label="Username"
+                placeholder="admin"
+                value={form.values.username}
+                onChange={(event) => {
+                  form.setFieldValue('username', event.currentTarget.value);
+                }}
+                error={form.errors.username && 'Invalid username'}
+              />
+              <TextInput
+                required
+                label="Password"
+                placeholder="adminadmin"
+                value={form.values.password}
+                onChange={(event) => {
+                  form.setFieldValue('password', event.currentTarget.value);
+                }}
+                error={form.errors.password && 'Invalid password'}
+              />
+            </>
           )}
         </Group>
 
