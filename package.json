@@ -25,6 +25,7 @@
 		"ci": "yarn test && yarn lint --fix && yarn typecheck && yarn prettier:write"
 	},
 	"dependencies": {
+		"@ctrl/deluge": "^4.0.0",
 		"@ctrl/qbittorrent": "^4.0.0",
 		"@dnd-kit/core": "^6.0.1",
 		"@dnd-kit/sortable": "^7.0.0",
