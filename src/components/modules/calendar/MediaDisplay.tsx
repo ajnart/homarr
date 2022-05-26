@@ -11,13 +11,15 @@ export interface IMedia {
   poster?: string;
   genres: string[];
   seasonNumber?: number;
+  plexUrl?: string;
   episodeNumber?: number;
 }
-
-function MediaDisplay(props: { media: IMedia }) {
+export function MediaDisplay(
+  props: GroupProps & React.RefAttributes<HTMLDivElement> & { media: IMedia }
+) {
   const { media }: { media: IMedia } = props;
   return (
-    <Group position="apart">
+    <Group {...props} position="apart">
       <Text>
         {media.poster && (
           <Image
@@ -33,8 +35,17 @@ function MediaDisplay(props: { media: IMedia }) {
           />
         )}
         <Group direction="column">
-          <Group style={{ minWidth: 400 }}>
+          <Group style={{ minWidth: 400 }} align="end">
             <Title order={3}>{media.title}</Title>
+            {media.plexUrl && (
+              <Tooltip label="Open in Plex">
+                <Anchor href={media.plexUrl} target="_blank">
+                  <ActionIcon>
+                    <PlayerPlay />
+                  </ActionIcon>
+                </Anchor>
+              </Tooltip>
+            )}
             {media.imdbId && (
               <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
                 <ActionIcon>
@@ -53,14 +64,14 @@ function MediaDisplay(props: { media: IMedia }) {
               New release from {media.artist}
             </Text>
           )}
-          {media.episodeNumber && media.seasonNumber && (
+          {(media.episodeNumber || media.seasonNumber) && (
             <Text
               style={{
                 textAlign: 'center',
                 color: '#a0aec0',
               }}
             >
-              Season {media.seasonNumber} episode {media.episodeNumber}
+              Season {media.seasonNumber} {media.episodeNumber && `episode ${media.episodeNumber}`}
             </Text>
           )}
         </Group>

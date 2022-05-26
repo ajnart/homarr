@@ -1,0 +1,72 @@
+{
+	"id": 86831,
+	"firstAirDate": "2019-03-15",
+	"genreIds": [
+		16,
+		10765
+	],
+	"mediaType": "tv",
+	"name": "Love, Death & Robots",
+	"originCountry": [
+		"US"
+	],
+	"originalLanguage": "en",
+	"originalName": "Love, Death & Robots",
+	"overview": "Terrifying creatures, wicked surprises and dark comedy converge in this NSFW anthology of animated stories presented by Tim Miller and David Fincher.",
+	"popularity": 623.833,
+	"voteAverage": 8.2,
+	"voteCount": 1720,
+	"backdropPath": "/78NtUwwo3lhH7QGh4vG3U1qK1mc.jpg",
+	"posterPath": "/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg",
+	"mediaInfo": {
+		"downloadStatus": [],
+		"downloadStatus4k": [],
+		"id": 79,
+		"mediaType": "tv",
+		"tmdbId": 86831,
+		"tvdbId": 357888,
+		"imdbId": null,
+		"status": 4,
+		"status4k": 1,
+		"createdAt": "2022-02-05T04:30:01.000Z",
+		"updatedAt": "2022-02-05T09:25:22.000Z",
+		"lastSeasonChange": "2022-02-05T04:30:01.000Z",
+		"mediaAddedAt": "2022-02-04T01:16:35.000Z",
+		"serviceId": 0,
+		"serviceId4k": null,
+		"externalServiceId": 7,
+		"externalServiceId4k": null,
+		"externalServiceSlug": "love-death-and-robots",
+		"externalServiceSlug4k": null,
+		"ratingKey": "182",
+		"ratingKey4k": null,
+		"seasons": [
+			{
+				"id": 11,
+				"seasonNumber": 1,
+				"status": 1,
+				"status4k": 1,
+				"createdAt": "2022-02-05T04:30:01.000Z",
+				"updatedAt": "2022-02-05T04:30:01.000Z"
+			},
+			{
+				"id": 24,
+				"seasonNumber": 2,
+				"status": 5,
+				"status4k": 1,
+				"createdAt": "2022-02-05T04:30:01.000Z",
+				"updatedAt": "2022-02-05T04:30:01.000Z"
+			},
+			{
+				"id": 85,
+				"seasonNumber": 3,
+				"status": 3,
+				"status4k": 1,
+				"createdAt": "2022-04-26T04:30:02.000Z",
+				"updatedAt": "2022-04-26T04:30:02.000Z"
+			}
+		],
+		"plexUrl": "https://app.plex.tv/desktop#!/server/5b88b3c20d2d092c0ee848f9044f3f3bee033d91/details?key=%2Flibrary%2Fmetadata%2F182",
+		"serviceUrl": "http://server:8989/series/love-death-and-robots"
+	}
+}
