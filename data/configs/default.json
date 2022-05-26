@@ -10,6 +10,14 @@
     }
   ],
   "settings": {
-    "searchUrl": "https://bing.com/search?q="
+    "searchUrl": "https://google.com/search?q="
+  },
+  "modules": {
+    "Search Bar": {
+      "enabled": true
+    },
+    "Date": {
+      "enabled": false
+    }
   }
 }
