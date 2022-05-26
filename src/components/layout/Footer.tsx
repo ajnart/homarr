@@ -6,13 +6,11 @@ import {
   Group,
   ActionIcon,
   Footer as FooterComponent,
-  Alert,
   useMantineTheme,
 } from '@mantine/core';
-import { AlertCircle, BrandGithub } from 'tabler-icons-react';
+import { BrandGithub } from 'tabler-icons-react';
+import { showNotification } from '@mantine/notifications';
 import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
-import { ModuleWrapper } from '../modules/moduleWrapper';
-import { DownloadsModule } from '../modules';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -61,7 +59,7 @@ export function Footer({ links }: FooterCenteredProps) {
     </Anchor>
   ));
 
-  const [latestVersion, setLatestVersion] = useState(CURRENT_VERSION);
+  const [latestVersion, setLatestVersion] = useState('0');
   const [isOpen, setOpen] = useState(true);
   useEffect(() => {
     // Fetch Data here when component first mounted
@@ -74,71 +72,56 @@ export function Footer({ links }: FooterCenteredProps) {
       });
     });
   }, []);
+  if (update) {
+    showNotification({
+      color: 'yellow',
+      autoClose: false,
+      title: 'New version available',
+      message: `Version ${latestVersion} is available, update now! 😡`,
+    });
+  }
 
   return (
     <FooterComponent
       p={5}
       height="auto"
       style={{
+        position: 'relative',
         background: 'none',
         border: 'none',
         clear: 'both',
       }}
     >
-      <Group position="apart" direction="row" style={{ alignItems: 'end' }} mr="xs" mb="xs">
-        <Group position="left">
-          <Alert
-            // onClick open latest release page
-            onClose={() => setOpen(false)}
-            icon={<AlertCircle size={16} />}
-            title={`Updated version: ${latestVersion} is available. Current version: ${CURRENT_VERSION}`}
-            withCloseButton
-            radius="lg"
-            hidden={CURRENT_VERSION === latestVersion || !isOpen}
-            variant="outline"
-            styles={{
-              root: {
-                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
-              },
-
-              closeButton: {
-                marginLeft: '5px',
-              },
-            }}
-            children={undefined}
-          />
-        </Group>
-        <Group position="right">
-          <Group spacing={0}>
-            <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
-              <BrandGithub size={18} />
-            </ActionIcon>
-            <Text
-              style={{
-                position: 'relative',
-                fontSize: '0.90rem',
-                color: 'gray',
-              }}
-            >
-              {CURRENT_VERSION}
-            </Text>
-          </Group>
+      <Group position="right" direction="row" align="center" mr="xs">
+        <Group spacing={0}>
+          <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
+            <BrandGithub size={18} />
+          </ActionIcon>
           <Text
             style={{
+              position: 'relative',
               fontSize: '0.90rem',
-              textAlign: 'center',
-              color: '#a0aec0',
+              color: 'gray',
             }}
           >
-            Made with ❤️ by @
-            <Anchor
-              href="https://github.com/ajnart"
-              style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
-            >
-              ajnart
-            </Anchor>
+            {CURRENT_VERSION}
           </Text>
         </Group>
+        <Text
+          style={{
+            fontSize: '0.90rem',
+            textAlign: 'center',
+            color: '#a0aec0',
+          }}
+        >
+          Made with ❤️ by @
+          <Anchor
+            href="https://github.com/ajnart"
+            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+          >
+            ajnart
+          </Anchor>
+        </Text>
       </Group>
     </FooterComponent>
   );
