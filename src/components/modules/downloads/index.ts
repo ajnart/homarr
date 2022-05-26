@@ -1,0 +1,1 @@
+export { DownloadsModule } from './DownloadsModule';
