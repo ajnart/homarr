@@ -44,7 +44,6 @@ export default function SaveConfigComponent(props: any) {
         >
           <TextInput
             required
-            defaultValue={config.name}
             label="Config name"
             placeholder="Your new config name"
             {...form.getInputProps('configName')}
