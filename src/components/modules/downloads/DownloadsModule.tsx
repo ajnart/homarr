@@ -81,7 +81,9 @@ export default function DownloadComponent() {
   );
   // Loop over qBittorrent torrents merging with deluge torrents
   const torrents: NormalizedTorrent[] = [];
-  delugeTorrents.forEach((torrent) => torrents.push(torrent));
+  delugeTorrents.forEach((delugeTorrent) =>
+    torrents.push({ ...delugeTorrent, progress: delugeTorrent.progress / 100 })
+  );
   qBittorrentTorrents.forEach((torrent) => torrents.push(torrent));
 
   const rows = torrents.map((torrent) => {
