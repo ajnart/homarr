@@ -10,6 +10,8 @@ import {
   ActionIcon,
   Tooltip,
   Title,
+  Anchor,
+  Text,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
@@ -59,6 +61,31 @@ function MatchIcon(name: string, form: any) {
   });
 
   return false;
+}
+
+function MatchService(name: string, form: any) {
+  const service = ServiceTypeList.find((s) => s === name);
+  if (service) {
+    form.setFieldValue('type', service);
+  }
+}
+
+function MatchPort(name: string, form: any) {
+  const portmap = [
+    { name: 'qBittorrent', value: '8080' },
+    { name: 'Sonarr', value: '8989' },
+    { name: 'Radarr', value: '7878' },
+    { name: 'Lidarr', value: '8686' },
+    { name: 'Readarr', value: '8686' },
+    { name: 'Deluge', value: '8112' },
+    { name: 'Transmission', value: '9091' },
+  ];
+  // Match name with portmap key
+  const port = portmap.find((p) => p.name === name);
+  console.log('port', port);
+  if (port) {
+    form.setFieldValue('url', `http://localhost:${port.value}`);
+  }
 }
 
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
@@ -145,10 +172,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             value={form.values.name}
             onChange={(event) => {
               form.setFieldValue('name', event.currentTarget.value);
-              const match = MatchIcon(event.currentTarget.value, form);
-              if (match) {
-                form.setFieldValue('icon', match);
-              }
+              MatchIcon(event.currentTarget.value, form);
+              MatchService(event.currentTarget.value, form);
+              MatchPort(event.currentTarget.value, form);
             }}
             error={form.errors.name && 'Invalid icon url'}
           />
@@ -166,7 +192,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             {...form.getInputProps('url')}
           />
           <Select
-            label="Select the type of service (used for API calls)"
+            label="Service type"
             defaultValue="Other"
             placeholder="Pick one"
             required
@@ -179,16 +205,36 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             form.values.type === 'Radarr' ||
             form.values.type === 'Lidarr' ||
             form.values.type === 'Readarr') && (
-            <TextInput
-              required
-              label="API key"
-              placeholder="Your API key"
-              value={form.values.apiKey}
-              onChange={(event) => {
-                form.setFieldValue('apiKey', event.currentTarget.value);
-              }}
-              error={form.errors.apiKey && 'Invalid API key'}
-            />
+            <>
+              <TextInput
+                required
+                label="API key"
+                placeholder="Your API key"
+                value={form.values.apiKey}
+                onChange={(event) => {
+                  form.setFieldValue('apiKey', event.currentTarget.value);
+                }}
+                error={form.errors.apiKey && 'Invalid API key'}
+              />
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  fontSize: '0.75rem',
+                  textAlign: 'center',
+                  color: '#a0aec0',
+                }}
+              >
+                tip: Get your API key{' '}
+                <Anchor
+                  target="_blank"
+                  weight="bold"
+                  style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
+                  href={`${form.values.url}/settings/general`}
+                >
+                  here
+                </Anchor>
+              </Text>
+            </>
           )}
           {form.values.type === 'qBittorrent' && (
             <>
