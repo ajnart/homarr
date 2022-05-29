@@ -14,9 +14,10 @@ import {
   Text,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IconApps as Apps } from '@tabler/icons';
 import { v4 as uuidv4 } from 'uuid';
+import { useDebouncedValue } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
 
@@ -134,6 +135,14 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
     },
   });
 
+  const [debounced, cancel] = useDebouncedValue(form.values.name, 250);
+  useEffect(() => {
+    if (form.values.name !== debounced) return;
+    MatchIcon(form.values.name, form);
+    MatchService(form.values.name, form);
+    MatchPort(form.values.name, form);
+  }, [debounced]);
+
   // Try to set const hostname to new URL(form.values.url).hostname)
   // If it fails, set it to the form.values.url
   let hostname = form.values.url;
@@ -186,14 +195,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             required
             label="Service name"
             placeholder="Plex"
-            value={form.values.name}
-            onChange={(event) => {
-              form.setFieldValue('name', event.currentTarget.value);
-              MatchIcon(event.currentTarget.value, form);
-              MatchService(event.currentTarget.value, form);
-              MatchPort(event.currentTarget.value, form);
-            }}
-            error={form.errors.name && 'Invalid icon url'}
+            {...form.getInputProps('name')}
           />
 
           <TextInput
