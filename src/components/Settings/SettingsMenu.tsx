@@ -11,7 +11,7 @@ import {
 } from '@mantine/core';
 import { useColorScheme, useHotkeys } from '@mantine/hooks';
 import { useState } from 'react';
-import { BrandGithub, Settings as SettingsIcon } from 'tabler-icons-react';
+import { IconBrandGithub as BrandGithub, IconSettings } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
@@ -154,7 +154,7 @@ export function SettingsMenuButton(props: any) {
         onClick={() => setOpened(true)}
       >
         <Tooltip label="Settings">
-          <SettingsIcon />
+          <IconSettings />
         </Tooltip>
       </ActionIcon>
     </>

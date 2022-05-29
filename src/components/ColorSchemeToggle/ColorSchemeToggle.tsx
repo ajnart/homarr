@@ -1,5 +1,5 @@
 import { Box, useMantineColorScheme } from '@mantine/core';
-import { Sun, MoonStars } from 'tabler-icons-react';
+import { IconSun as Sun, IconMoonStars as MoonStars } from '@tabler/icons';
 import { motion } from 'framer-motion';
 
 export function ColorSchemeToggle() {

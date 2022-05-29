@@ -15,7 +15,7 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
-import { Apps } from 'tabler-icons-react';
+import { IconApps as Apps } from '@tabler/icons';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';

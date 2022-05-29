@@ -1,5 +1,11 @@
 import { Group, Text, useMantineTheme, MantineTheme } from '@mantine/core';
-import { Upload, Photo, X, Icon as TablerIcon, Check } from 'tabler-icons-react';
+import {
+  IconUpload as Upload,
+  IconPhoto as Photo,
+  IconX as X,
+  IconCheck as Check,
+  TablerIcon,
+} from '@tabler/icons';
 import { DropzoneStatus, FullScreenDropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
 import { useRef } from 'react';
