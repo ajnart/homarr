@@ -44,66 +44,67 @@ export default function CalendarComponent(props: any) {
     const lidarrService = filtered.filter((service) => service.type === 'Lidarr').at(0);
     const readarrService = filtered.filter((service) => service.type === 'Readarr').at(0);
     const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
+    const lastMonth = new Date(new Date().setMonth(new Date().getMonth() - 2)).toISOString();
     if (sonarrService && sonarrService.apiKey) {
       const baseUrl = new URL(sonarrService.url).origin;
-      fetch(`${baseUrl}/api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}`).then(
-        (response) => {
-          response.ok &&
-            response.json().then((data) => {
-              setSonarrMedias(data);
-              showNotification({
-                title: 'Sonarr',
-                icon: <Check />,
-                color: 'green',
-                autoClose: 1500,
-                radius: 'md',
-                message: `Loaded ${data.length} releases`,
-              });
+      fetch(
+        `${baseUrl}/api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
+      ).then((response) => {
+        response.ok &&
+          response.json().then((data) => {
+            setSonarrMedias(data);
+            showNotification({
+              title: 'Sonarr',
+              icon: <Check />,
+              color: 'green',
+              autoClose: 1500,
+              radius: 'md',
+              message: `Loaded ${data.length} releases`,
             });
-        }
-      );
+          });
+      });
     }
     if (radarrService && radarrService.apiKey) {
       const baseUrl = new URL(radarrService.url).origin;
-      fetch(`${baseUrl}/api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}`).then(
-        (response) => {
-          response.ok &&
-            response.json().then((data) => {
-              setRadarrMedias(data);
-              showNotification({
-                title: 'Radarr',
-                icon: <Check />,
-                color: 'green',
-                autoClose: 1500,
-                radius: 'md',
-                message: `Loaded ${data.length} releases`,
-              });
+      fetch(
+        `${baseUrl}/api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
+      ).then((response) => {
+        response.ok &&
+          response.json().then((data) => {
+            setRadarrMedias(data);
+            showNotification({
+              title: 'Radarr',
+              icon: <Check />,
+              color: 'green',
+              autoClose: 1500,
+              radius: 'md',
+              message: `Loaded ${data.length} releases`,
             });
-        }
-      );
+          });
+      });
     }
     if (lidarrService && lidarrService.apiKey) {
       const baseUrl = new URL(lidarrService.url).origin;
-      fetch(`${baseUrl}/api/v1/calendar?apikey=${lidarrService?.apiKey}&end=${nextMonth}`).then(
-        (response) => {
-          response.ok &&
-            response.json().then((data) => {
-              setLidarrMedias(data);
-              showNotification({
-                title: 'Lidarr',
-                icon: <Check />,
-                color: 'green',
-                autoClose: 1500,
-                radius: 'md',
-                message: `Loaded ${data.length} releases`,
-              });
+      fetch(
+        `${baseUrl}/api/v1/calendar?apikey=${lidarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
+      ).then((response) => {
+        response.ok &&
+          response.json().then((data) => {
+            setLidarrMedias(data);
+            showNotification({
+              title: 'Lidarr',
+              icon: <Check />,
+              color: 'green',
+              autoClose: 1500,
+              radius: 'md',
+              message: `Loaded ${data.length} releases`,
             });
-        }
-      );
+          });
+      });
     }
     if (readarrService && readarrService.apiKey) {
       const baseUrl = new URL(readarrService.url).origin;
-      fetch(`${baseUrl}/api/v1/calendar?apikey=${readarrService?.apiKey}&end=${nextMonth}`).then(
+      fetch(`${baseUrl}/api/v1/calendar?apikey=${readarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`).then(
         (response) => {
           response.ok &&
             response.json().then((data) => {
