@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid } from '@mantine/core';
+import { Grid, Group, Title } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -45,35 +45,81 @@ const AppShelf = (props: any) => {
 
     setActiveId(null);
   }
+  // Extract all the categories from the services in config
+  const categoryList = config.services.reduce((acc, cur) => {
+    if (cur.category && !acc.includes(cur.category)) {
+      acc.push(cur.category);
+    }
+    return acc;
+  }, [] as string[]);
 
-  return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-    >
-      <SortableContext items={config.services}>
-        <Grid gutter="xl" align="center">
-          {config.services.map((service) => (
-            <Grid.Col key={service.id} span={6} xl={2} xs={4} sm={3} md={3}>
-              <SortableAppShelfItem service={service} key={service.id} id={service.id} />
-            </Grid.Col>
-          ))}
-        </Grid>
-      </SortableContext>
-      <DragOverlay
-        style={{
-          // Add a shadow to the drag overlay
-          boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
-        }}
+  const item = (filter?: string) => {
+    // If filter is not set, return all the services without a category or a null category
+    let filtered = config.services;
+    if (!filter) {
+      filtered = config.services.filter((e) => !e.category || e.category === null);
+    }
+    if (filter) {
+      filtered = config.services.filter((e) => e.category === filter);
+    }
+
+    return (
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
       >
-        {activeId ? (
-          <AppShelfItem service={config.services.find((e) => e.id === activeId)} id={activeId} />
+        <SortableContext items={config.services}>
+          <Grid gutter="xl" align="center">
+            {filtered.map((service) => (
+              <Grid.Col key={service.id} span={6} xl={2} xs={4} sm={3} md={3}>
+                <SortableAppShelfItem service={service} key={service.id} id={service.id} />
+              </Grid.Col>
+            ))}
+          </Grid>
+        </SortableContext>
+        <DragOverlay
+          style={{
+            // Add a shadow to the drag overlay
+            boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+          }}
+        >
+          {activeId ? (
+            <AppShelfItem service={config.services.find((e) => e.id === activeId)} id={activeId} />
+          ) : null}
+        </DragOverlay>
+      </DndContext>
+    );
+  };
+
+  if (categoryList.length > 0) {
+    const noCategory = config.services.filter(
+      (e) => e.category === undefined || e.category === null
+    );
+
+    return (
+      // Return one item for each category
+      <Group grow direction="column">
+        {categoryList.map((category) => (
+          <>
+            <Title order={3} key={category}>
+              {category}
+            </Title>
+            {item(category)}
+          </>
+        ))}
+        {/* Return the item for all services without category */}
+        {noCategory && noCategory.length > 0 ? (
+          <>
+            <Title order={3}>Other</Title>
+            {item()}
+          </>
         ) : null}
-      </DragOverlay>
-    </DndContext>
-  );
+      </Group>
+    );
+  }
+  return item();
 };
 
 export default AppShelf;

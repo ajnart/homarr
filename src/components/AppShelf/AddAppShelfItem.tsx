@@ -82,7 +82,6 @@ function MatchPort(name: string, form: any) {
   ];
   // Match name with portmap key
   const port = portmap.find((p) => p.name === name);
-  console.log('port', port);
   if (port) {
     form.setFieldValue('url', `http://localhost:${port.value}`);
   }
@@ -93,10 +92,19 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
   const { config, setConfig } = useConfig();
   const [isLoading, setLoading] = useState(false);
 
+  // Extract all the categories from the services in config
+  const categoryList = config.services.reduce((acc, cur) => {
+    if (cur.category && !acc.includes(cur.category)) {
+      acc.push(cur.category);
+    }
+    return acc;
+  }, [] as string[]);
+
   const form = useForm({
     initialValues: {
       id: props.id ?? uuidv4(),
       type: props.type ?? 'Other',
+      category: props.category ?? undefined,
       name: props.name ?? '',
       icon: props.icon ?? '/favicon.svg',
       url: props.url ?? '',
@@ -125,6 +133,15 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       },
     },
   });
+
+  // Try to set const hostname to new URL(form.values.url).hostname)
+  // If it fails, set it to the form.values.url
+  let hostname = form.values.url;
+  try {
+    hostname = new URL(form.values.url).origin;
+  } catch (e) {
+    // Do nothing
+  }
 
   return (
     <>
@@ -200,6 +217,21 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             data={ServiceTypeList}
             {...form.getInputProps('type')}
           />
+          <Select
+            label="Category"
+            data={categoryList}
+            placeholder="Select a category or create a new one"
+            nothingFound="Nothing found"
+            searchable
+            clearable
+            creatable
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+            getCreateLabel={(query) => `+ Create "${query}"`}
+            onCreate={(query) => {}}
+            {...form.getInputProps('category')}
+          />
           <LoadingOverlay visible={isLoading} />
           {(form.values.type === 'Sonarr' ||
             form.values.type === 'Radarr' ||
@@ -229,7 +261,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                   target="_blank"
                   weight="bold"
                   style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
-                  href={`${form.values.url}/settings/general`}
+                  href={`${hostname}/settings/general`}
                 >
                   here
                 </Anchor>
