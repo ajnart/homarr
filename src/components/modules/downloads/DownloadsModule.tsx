@@ -1,4 +1,4 @@
-import { Loader, Table, Text, Tooltip, Title, Group, Progress, Center } from '@mantine/core';
+import { Table, Text, Tooltip, Title, Group, Progress, Skeleton } from '@mantine/core';
 import { Download } from 'tabler-icons-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -65,9 +65,13 @@ export default function DownloadComponent() {
 
   if (qBittorrentTorrents.length === 0 && delugeTorrents.length === 0) {
     return (
-      <Center>
-        <Loader />
-      </Center>
+      <>
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+      </>
     );
   }
 
@@ -85,10 +89,9 @@ export default function DownloadComponent() {
     torrents.push({ ...delugeTorrent, progress: delugeTorrent.progress / 100 })
   );
   qBittorrentTorrents.forEach((torrent) => torrents.push(torrent));
-
   const rows = torrents.map((torrent) => {
     if (torrent.progress === 1 && hideComplete) {
-      return null;
+      return [];
     }
     const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
     const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
@@ -125,7 +128,6 @@ export default function DownloadComponent() {
       </tr>
     );
   });
-
   return (
     <Group noWrap direction="column">
       <Title order={4}>Your torrents</Title>
