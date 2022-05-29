@@ -247,6 +247,11 @@ function DayComponent(props: any) {
         radius="lg"
         shadow="xl"
         transition="pop"
+        styles={{
+          body: {
+            boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.1), 0 14px 11px rgba(0, 0, 0, 0.1)',
+          },
+        }}
         width={700}
         onClose={() => setOpened(false)}
         opened={opened}

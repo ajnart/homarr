@@ -36,10 +36,11 @@ export default function AppShelfMenu(props: any) {
       <Menu
         position="right"
         radius="md"
+        shadow="xl"
         styles={{
           body: {
-            backgroundColor:
-              theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+            // Add shadow and elevation to the body
+            boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.1), 0 14px 11px rgba(0, 0, 0, 0.1)',
           },
         }}
       >
