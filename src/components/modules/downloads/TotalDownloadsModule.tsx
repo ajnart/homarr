@@ -116,7 +116,6 @@ export default function TotalDownloadsComponent() {
   const theme = useMantineTheme();
   // Load the last 10 values from the history
   const history = torrentHistory.slice(-10);
-  console.log(history);
   const chartDataUp = history.map((load, i) => ({
     x: load.x,
     y: load.up,

@@ -104,22 +104,22 @@ export default function CalendarComponent(props: any) {
     }
     if (readarrService && readarrService.apiKey) {
       const baseUrl = new URL(readarrService.url).origin;
-      fetch(`${baseUrl}/api/v1/calendar?apikey=${readarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`).then(
-        (response) => {
-          response.ok &&
-            response.json().then((data) => {
-              setReadarrMedias(data);
-              showNotification({
-                title: 'Readarr',
-                icon: <Check />,
-                color: 'green',
-                autoClose: 1500,
-                radius: 'md',
-                message: `Loaded ${data.length} releases`,
-              });
+      fetch(
+        `${baseUrl}/api/v1/calendar?apikey=${readarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
+      ).then((response) => {
+        response.ok &&
+          response.json().then((data) => {
+            setReadarrMedias(data);
+            showNotification({
+              title: 'Readarr',
+              icon: <Check />,
+              color: 'green',
+              autoClose: 1500,
+              radius: 'md',
+              message: `Loaded ${data.length} releases`,
             });
-        }
-      );
+          });
+      });
     }
   }, [config.services]);
 
