@@ -38,7 +38,6 @@ export default function HomePage(props: any) {
     <>
       <AppShelf />
       <LoadConfigComponent />
-      <ModuleWrapper mt="xl" module={DownloadsModule} />
     </>
   );
 }
