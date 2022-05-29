@@ -2,17 +2,17 @@ import { Group, Space, Title, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Cloud,
-  CloudFog,
-  CloudRain,
-  CloudSnow,
-  CloudStorm,
-  QuestionMark,
-  Snowflake,
-  Sun,
-} from 'tabler-icons-react';
+  IconArrowDownRight as ArrowDownRight,
+  IconArrowUpRight as ArrowUpRight,
+  IconCloud as Cloud,
+  IconCloudFog as CloudFog,
+  IconCloudRain as CloudRain,
+  IconCloudSnow as CloudSnow,
+  IconCloudStorm as CloudStorm,
+  IconQuestionMark as QuestionMark,
+  IconSnowflake as Snowflake,
+  IconSun as Sun,
+} from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 import { WeatherResponse } from './WeatherInterface';

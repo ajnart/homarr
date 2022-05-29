@@ -1,7 +1,11 @@
 import { TextInput, Kbd, createStyles, Text, Popover } from '@mantine/core';
 import { useForm, useHotkeys } from '@mantine/hooks';
 import { useRef, useState } from 'react';
-import { Search, BrandYoutube, Download } from 'tabler-icons-react';
+import {
+  IconSearch as Search,
+  IconBrandYoutube as BrandYoutube,
+  IconDownload as Download,
+} from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 
