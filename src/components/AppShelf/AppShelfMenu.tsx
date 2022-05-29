@@ -24,6 +24,7 @@ export default function AppShelfMenu(props: any) {
           setOpened={setOpened}
           name={service.name}
           id={service.id}
+          category={service.category}
           type={service.type}
           url={service.url}
           icon={service.icon}
@@ -47,7 +48,7 @@ export default function AppShelfMenu(props: any) {
         <Menu.Label>Settings</Menu.Label>
         <Menu.Item
           color="primary"
-          icon={<Edit size={14} />}
+          icon={<Edit />}
           // TODO: #2 Add the ability to edit the service.
           onClick={() => setOpened(true)}
         >
@@ -73,7 +74,7 @@ export default function AppShelfMenu(props: any) {
               message: undefined,
             });
           }}
-          icon={<Trash size={14} />}
+          icon={<Trash />}
         >
           Delete
         </Menu.Item>
