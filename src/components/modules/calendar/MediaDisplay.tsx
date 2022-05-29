@@ -1,5 +1,5 @@
-import { Image, Group, Title, Badge, Text, ActionIcon, Anchor, ScrollArea } from '@mantine/core';
-import { IconLink as Link } from '@tabler/icons';
+import { Image, Group, Title, Badge, Text, ActionIcon, Anchor, ScrollArea, Tooltip, GroupProps } from '@mantine/core';
+import { IconLink, IconPlayerPlay } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { serviceItem } from '../../../tools/types';
 
@@ -41,7 +41,7 @@ export function MediaDisplay(
               <Tooltip label="Open in Plex">
                 <Anchor href={media.plexUrl} target="_blank">
                   <ActionIcon>
-                    <PlayerPlay />
+                    <IconPlayerPlay />
                   </ActionIcon>
                 </Anchor>
               </Tooltip>
@@ -49,7 +49,7 @@ export function MediaDisplay(
             {media.imdbId && (
               <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
                 <ActionIcon>
-                  <Link />
+                  <IconLink />
                 </ActionIcon>
               </Anchor>
             )}
