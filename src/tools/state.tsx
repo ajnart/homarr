@@ -2,7 +2,7 @@
 import { showNotification } from '@mantine/notifications';
 import axios from 'axios';
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { Check, X } from 'tabler-icons-react';
+import { IconCheck as Check, IconX as X } from '@tabler/icons';
 import { Config } from './types';
 
 type configContextType = {

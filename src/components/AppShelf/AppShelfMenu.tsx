@@ -1,7 +1,7 @@
 import { Menu, Modal, Text, useMantineTheme } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { useState } from 'react';
-import { Check, Edit, Trash } from 'tabler-icons-react';
+import { IconCheck as Check, IconEdit as Edit, IconTrash as Trash } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import { AddAppShelfItemForm } from './AddAppShelfItem';

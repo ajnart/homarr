@@ -1,7 +1,7 @@
 import { Group, Text, Title } from '@mantine/core';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
-import { Clock } from 'tabler-icons-react';
+import { IconClock as Clock } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 

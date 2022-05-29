@@ -1,5 +1,5 @@
 import { Text, Title, Group, useMantineTheme, Box, Card, ColorSwatch } from '@mantine/core';
-import { Download } from 'tabler-icons-react';
+import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
