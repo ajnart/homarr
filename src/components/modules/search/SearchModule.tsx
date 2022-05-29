@@ -1,11 +1,18 @@
-import { TextInput, Kbd, createStyles, Text, Popover } from '@mantine/core';
-import { useForm, useHotkeys } from '@mantine/hooks';
-import { useRef, useState } from 'react';
+import {
+  Kbd,
+  createStyles,
+  Text,
+  Popover,
+  TextInput,
+} from '@mantine/core';
+import { useDebouncedValue, useForm, useHotkeys } from '@mantine/hooks';
+import { useEffect, useRef, useState } from 'react';
 import {
   IconSearch as Search,
   IconBrandYoutube as BrandYoutube,
   IconDownload as Download,
 } from '@tabler/icons';
+import axios from 'axios';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 
@@ -29,11 +36,35 @@ export const SearchModule: IModule = {
 export default function SearchBar(props: any) {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
+  const [results, setOpenedResults] = useState(false);
   const [icon, setIcon] = useState(<Search />);
   const queryUrl = config.settings.searchUrl ?? 'https://www.google.com/search?q=';
   const textInput = useRef<HTMLInputElement>();
-  useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
+  // Find a service with the type of 'Overseerr'
+  const service = config.services.find((s) => s.type === 'Overseerr');
 
+  const form = useForm({
+    initialValues: {
+      query: '',
+    },
+  });
+
+  const [debounced, cancel] = useDebouncedValue(form.values.query, 250);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    if (form.values.query !== debounced || form.values.query === '') return;
+    setOpened(false);
+    setOpenedResults(true);
+    if (service) {
+      const serviceUrl = new URL(service.url);
+      axios
+        .post(`/api/modules/overseerr?query=${form.values.query}`, {
+          service,
+        })
+        .then((res) => setData(res.data.results ?? []));
+    }
+  }, [debounced]);
+  useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
   const { classes, cx } = useStyles();
   const rightSection = (
     <div className={classes.hide}>
@@ -43,12 +74,6 @@ export default function SearchBar(props: any) {
     </div>
   );
 
-  const form = useForm({
-    initialValues: {
-      query: '',
-    },
-  });
-
   // If enabled modules doesn't contain the module, return null
   // If module in enabled
 
@@ -57,6 +82,7 @@ export default function SearchBar(props: any) {
     return null;
   }
 
+  // Data with label as item.name
   return (
     <form
       onChange={() => {
@@ -89,30 +115,40 @@ export default function SearchBar(props: any) {
       })}
     >
       <Popover
-        opened={opened}
-        position="bottom"
-        placement="start"
-        width={260}
-        withArrow
-        radius="md"
-        trapFocus={false}
-        transition="pop-bottom-right"
-        onFocusCapture={() => setOpened(true)}
-        onBlurCapture={() => setOpened(false)}
+        opened={results}
         target={
-          <TextInput
-            variant="filled"
-            icon={icon}
-            ref={textInput}
-            rightSectionWidth={90}
-            rightSection={rightSection}
+          <Popover
+            opened={opened}
+            position="bottom"
+            placement="start"
+            width={260}
+            withArrow
             radius="md"
-            size="md"
-            styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder="Search the web..."
-            {...props}
-            {...form.getInputProps('query')}
-          />
+            trapFocus={false}
+            transition="pop-bottom-right"
+            onFocusCapture={() => setOpened(true)}
+            onBlurCapture={() => setOpened(false)}
+            target={
+              <TextInput
+                variant="filled"
+                icon={icon}
+                ref={textInput}
+                rightSectionWidth={90}
+                rightSection={rightSection}
+                radius="md"
+                size="md"
+                styles={{ rightSection: { pointerEvents: 'none' } }}
+                placeholder="Search the web..."
+                {...props}
+                {...form.getInputProps('query')}
+              />
+            }
+          >
+            <Text>
+              tip: Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on
+              YouTube or for a Torrent respectively.
+            </Text>
+          </Popover>
         }
       >
         <Text>
