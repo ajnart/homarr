@@ -3,7 +3,7 @@ import { Box, Divider, Indicator, Popover, ScrollArea, useMantineTheme } from '@
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { showNotification } from '@mantine/notifications';
-import { Calendar as CalendarIcon, Check } from 'tabler-icons-react';
+import { IconCalendar as CalendarIcon, IconCheck as Check } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 import {

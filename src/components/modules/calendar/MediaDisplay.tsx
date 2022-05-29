@@ -1,5 +1,5 @@
 import { Image, Group, Title, Badge, Text, ActionIcon, Anchor, ScrollArea } from '@mantine/core';
-import { Link } from 'tabler-icons-react';
+import { IconLink as Link } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { serviceItem } from '../../../tools/types';
 

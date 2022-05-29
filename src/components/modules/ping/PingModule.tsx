@@ -2,7 +2,7 @@ import { Indicator, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Plug } from 'tabler-icons-react';
+import { IconPlug as Plug } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 
