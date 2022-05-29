@@ -41,7 +41,7 @@ export default function AppShelfMenu(props: any) {
         styles={{
           body: {
             // Add shadow and elevation to the body
-            boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.1), 0 14px 11px rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.05)',
           },
         }}
       >
