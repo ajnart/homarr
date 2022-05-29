@@ -12,6 +12,8 @@ import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
+import { ModuleWrapper } from '../modules/moduleWrapper';
+import { DownloadsModule } from '../modules';
 
 const AppShelf = (props: any) => {
   const [activeId, setActiveId] = useState(null);
@@ -116,10 +118,16 @@ const AppShelf = (props: any) => {
             {item()}
           </>
         ) : null}
+        <ModuleWrapper mt="xl" module={DownloadsModule} />
       </Group>
     );
   }
-  return item();
+  return (
+    <Group grow direction="column">
+      {item()}
+      <ModuleWrapper mt="xl" module={DownloadsModule} />
+    </Group>
+  );
 };
 
 export default AppShelf;
