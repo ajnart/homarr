@@ -47,7 +47,7 @@ function MediaDisplay(props: { media: IMedia }) {
             <Text
               style={{
                 textAlign: 'center',
-                color: '#a0aec0',
+                color: 'gray',
               }}
             >
               New release from {media.artist}
@@ -57,7 +57,7 @@ function MediaDisplay(props: { media: IMedia }) {
             <Text
               style={{
                 textAlign: 'center',
-                color: '#a0aec0',
+                color: 'gray',
               }}
             >
               Season {media.seasonNumber} episode {media.episodeNumber}

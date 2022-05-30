@@ -89,7 +89,7 @@ function SettingsMenu(props: any) {
           alignSelf: 'center',
           fontSize: '0.75rem',
           textAlign: 'center',
-          color: '#a0aec0',
+          color: 'gray',
         }}
       >
         tip: You can upload your config file by dragging and dropping it onto the page
@@ -113,7 +113,7 @@ function SettingsMenu(props: any) {
           style={{
             fontSize: '0.90rem',
             textAlign: 'center',
-            color: '#a0aec0',
+            color: 'gray',
           }}
         >
           Made with ❤️ by @
