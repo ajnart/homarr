@@ -253,7 +253,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                   alignSelf: 'center',
                   fontSize: '0.75rem',
                   textAlign: 'center',
-                  color: '#a0aec0',
+                  color: 'gray',
                 }}
               >
                 tip: Get your API key{' '}
