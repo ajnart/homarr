@@ -33,7 +33,7 @@ function MediaDisplay(props: { media: IMedia }) {
           />
         )}
         <Group direction="column">
-          <Group style={{ minWidth: 400 }}>
+          <Group noWrap mr="sm" style={{ minWidth: 400 }}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
               <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
@@ -118,7 +118,7 @@ export function LidarrMediaDisplay(props: any) {
   }
   const baseUrl = new URL(lidarr.url).origin;
   // Remove '/' from the end of the lidarr url
-  const fullLink = `${baseUrl}${poster.url}`;
+  const fullLink = poster ? `${baseUrl}${poster.url}` : undefined;
   // Return a movie poster containting the title and the description
   return (
     <MediaDisplay
