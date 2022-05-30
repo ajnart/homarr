@@ -1,4 +1,13 @@
-import { Table, Text, Tooltip, Title, Group, Progress, Skeleton } from '@mantine/core';
+import {
+  Table,
+  Text,
+  Tooltip,
+  Title,
+  Group,
+  Progress,
+  Skeleton,
+  ScrollArea,
+} from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -129,12 +138,14 @@ export default function DownloadComponent() {
     );
   });
   return (
-    <Group noWrap direction="column">
+    <Group noWrap grow direction="column">
       <Title order={4}>Your torrents</Title>
-      <Table highlightOnHover>
-        <thead>{ths}</thead>
-        <tbody>{rows}</tbody>
-      </Table>
+      <ScrollArea sx={{ height: 300 }}>
+        <Table highlightOnHover>
+          <thead>{ths}</thead>
+          <tbody>{rows}</tbody>
+        </Table>
+      </ScrollArea>
     </Group>
   );
 }
