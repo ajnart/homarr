@@ -9444,6 +9444,7 @@ __metadata:
     react: ^17.0.1
     react-dom: ^17.0.1
     require-from-string: ^2.0.2
+    systeminformation: ^5.11.16
     typescript: 4.6.4
     uuid: ^8.3.2
   languageName: unknown
@@ -15066,6 +15067,16 @@ __metadata:
   version: 2.0.15
   resolution: "synchronous-promise@npm:2.0.15"
   checksum: 6079a6acd37d02eb76f250dc7ce09009151744901b320a8cfbba056b015c3d7cbf4e7467458f2d27c6393634f68521b241ea9e35fd9640f8fb59342740550472
+  languageName: node
+  linkType: hard
+
+"systeminformation@npm:^5.11.16":
+  version: 5.11.16
+  resolution: "systeminformation@npm:5.11.16"
+  bin:
+    systeminformation: lib/cli.js
+  checksum: 4e4fb4c9c86c658c7e07a7661ac85a102bfb0a134f76cc5c5e7daf7ba13f9b43895d4ce4d80e55275a3395d254d20a84c53f036f1baececf5b94028ec93242c4
+  conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
 

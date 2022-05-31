@@ -11,7 +11,7 @@ import {
   RadarrMediaDisplay,
   LidarrMediaDisplay,
   ReadarrMediaDisplay,
-} from './MediaDisplay';
+} from '../common';
 import { serviceItem } from '../../../tools/types';
 
 export const CalendarModule: IModule = {
