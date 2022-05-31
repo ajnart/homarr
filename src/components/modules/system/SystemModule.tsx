@@ -40,23 +40,22 @@ export default function SystemInfo(args: any) {
     }, 1000);
   }, [args]);
 
-    // Update data every time data changes
+  // Update data every time data changes
   const [cpuLoadHistory, cpuLoadHistoryHandlers] =
     useListState<si.Systeminformation.CurrentLoadData>([]);
 
-    // useEffect(() => {
-      
-    // }, [data]);
+  // useEffect(() => {
+
+  // }, [data]);
 
   const theme = useMantineTheme();
   const currentLoad = data?.load?.currentLoad ?? 0;
-    
 
   return (
     <Center>
       <Group p="sm" direction="column" align="center">
         <Title order={3}>Current CPU load</Title>
-        <ResponsiveLine
+        {/* <ResponsiveLine
           isInteractive
           enableSlices="x"
           sliceTooltip={({ slice }) => {
@@ -108,7 +107,7 @@ export default function SystemInfo(args: any) {
             // Green
             theme.colors.green[5],
           ]}
-        />
+        /> */}
         <RingProgress
           size={120}
           label={<Center>{`${(currentLoad * 100).toFixed(2)}%`}</Center>}
