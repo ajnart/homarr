@@ -14,7 +14,7 @@ export interface IMedia {
   episodeNumber?: number;
 }
 
-function MediaDisplay(props: { media: IMedia }) {
+export function MediaDisplay(props: { media: IMedia }) {
   const { media }: { media: IMedia } = props;
   return (
     <Group position="apart">
