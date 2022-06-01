@@ -8,7 +8,7 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import { Cpu } from 'tabler-icons-react';
+import { IconCpu } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import si from 'systeminformation';
@@ -19,7 +19,7 @@ import { useListState } from '@mantine/hooks';
 export const SystemModule: IModule = {
   title: 'System info',
   description: 'Show the current CPU usage and memory usage',
-  icon: Cpu,
+  icon: IconCpu,
   component: SystemInfo,
 };
 
