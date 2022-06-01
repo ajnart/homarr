@@ -1,9 +1,9 @@
 /* eslint-disable react/no-children-prop */
-import { Box, Divider, Indicator, Popover, ScrollArea, useMantineTheme } from '@mantine/core';
+import { Box, Divider, Indicator, Popover, ScrollArea } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
-import { showNotification } from '@mantine/notifications';
-import { IconCalendar as CalendarIcon, IconCheck as Check } from '@tabler/icons';
+import { IconCalendar as CalendarIcon } from '@tabler/icons';
+import axios from 'axios';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 import {
@@ -12,6 +12,7 @@ import {
   LidarrMediaDisplay,
   ReadarrMediaDisplay,
 } from './MediaDisplay';
+import { serviceItem } from '../../../tools/types';
 
 export const CalendarModule: IModule = {
   title: 'Calendar',
@@ -27,105 +28,32 @@ export default function CalendarComponent(props: any) {
   const [lidarrMedias, setLidarrMedias] = useState([] as any);
   const [radarrMedias, setRadarrMedias] = useState([] as any);
   const [readarrMedias, setReadarrMedias] = useState([] as any);
+  const sonarrService = config.services.filter((service) => service.type === 'Sonarr').at(0);
+  const radarrService = config.services.filter((service) => service.type === 'Radarr').at(0);
+  const lidarrService = config.services.filter((service) => service.type === 'Lidarr').at(0);
+  const readarrService = config.services.filter((service) => service.type === 'Readarr').at(0);
+
+  function getMedias(service: serviceItem | undefined, type: string) {
+    if (!service || !service.apiKey) {
+      return Promise.resolve({ data: [] });
+    }
+    return axios.get(`/api/modules/calendar?type=${type}`, {
+      data: {
+        body: service,
+      },
+    });
+  }
 
   useEffect(() => {
     // Filter only sonarr and radarr services
-    const filtered = config.services.filter(
-      (service) =>
-        service.type === 'Sonarr' ||
-        service.type === 'Radarr' ||
-        service.type === 'Lidarr' ||
-        service.type === 'Readarr'
-    );
 
     // Get the url and apiKey for all Sonarr and Radarr services
-    const sonarrService = filtered.filter((service) => service.type === 'Sonarr').at(0);
-    const radarrService = filtered.filter((service) => service.type === 'Radarr').at(0);
-    const lidarrService = filtered.filter((service) => service.type === 'Lidarr').at(0);
-    const readarrService = filtered.filter((service) => service.type === 'Readarr').at(0);
-    const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
-    const lastMonth = new Date(new Date().setMonth(new Date().getMonth() - 2)).toISOString();
-    if (sonarrService && sonarrService.apiKey) {
-      const baseUrl = new URL(sonarrService.url).origin;
-      fetch(
-        `${baseUrl}/api/calendar?apikey=${sonarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
-      ).then((response) => {
-        response.ok &&
-          response.json().then((data) => {
-            setSonarrMedias(data);
-            showNotification({
-              title: 'Sonarr',
-              icon: <Check />,
-              color: 'green',
-              autoClose: 1500,
-              radius: 'md',
-              message: `Loaded ${data.length} releases`,
-            });
-          });
-      });
-    }
-    if (radarrService && radarrService.apiKey) {
-      const baseUrl = new URL(radarrService.url).origin;
-      fetch(
-        `${baseUrl}/api/v3/calendar?apikey=${radarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
-      ).then((response) => {
-        response.ok &&
-          response.json().then((data) => {
-            setRadarrMedias(data);
-            showNotification({
-              title: 'Radarr',
-              icon: <Check />,
-              color: 'green',
-              autoClose: 1500,
-              radius: 'md',
-              message: `Loaded ${data.length} releases`,
-            });
-          });
-      });
-    }
-    if (lidarrService && lidarrService.apiKey) {
-      const baseUrl = new URL(lidarrService.url).origin;
-      fetch(
-        `${baseUrl}/api/v1/calendar?apikey=${lidarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
-      ).then((response) => {
-        response.ok &&
-          response.json().then((data) => {
-            setLidarrMedias(data);
-            showNotification({
-              title: 'Lidarr',
-              icon: <Check />,
-              color: 'green',
-              autoClose: 1500,
-              radius: 'md',
-              message: `Loaded ${data.length} releases`,
-            });
-          });
-      });
-    }
-    if (readarrService && readarrService.apiKey) {
-      const baseUrl = new URL(readarrService.url).origin;
-      fetch(
-        `${baseUrl}/api/v1/calendar?apikey=${readarrService?.apiKey}&end=${nextMonth}&start=${lastMonth}`
-      ).then((response) => {
-        response.ok &&
-          response.json().then((data) => {
-            setReadarrMedias(data);
-            showNotification({
-              title: 'Readarr',
-              icon: <Check />,
-              color: 'green',
-              autoClose: 1500,
-              radius: 'md',
-              message: `Loaded ${data.length} releases`,
-            });
-          });
-      });
-    }
+    getMedias(sonarrService, 'sonarr').then((res) => setSonarrMedias(res.data));
+    getMedias(radarrService, 'radarr').then((res) => setRadarrMedias(res.data));
+    getMedias(lidarrService, 'lidarr').then((res) => setLidarrMedias(res.data));
+    getMedias(readarrService, 'readarr').then((res) => setReadarrMedias(res.data));
   }, [config.services]);
 
-  if (sonarrMedias === undefined && radarrMedias === undefined) {
-    return <Calendar />;
-  }
   return (
     <Calendar
       onChange={(day: any) => {}}
@@ -152,7 +80,6 @@ function DayComponent(props: any) {
   }: { renderdate: Date; sonarrmedias: []; radarrmedias: []; lidarrmedias: []; readarrmedias: [] } =
     props;
   const [opened, setOpened] = useState(false);
-  const theme = useMantineTheme();
 
   const day = renderdate.getDate();
 
