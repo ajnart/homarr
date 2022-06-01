@@ -2,7 +2,7 @@ import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { serviceItem } from '../../../tools/types';
 
-async function Get(req: NextApiRequest, res: NextApiResponse) {
+async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Parse req.body as a ServiceItem
   const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
   const lastMonth = new Date(new Date().setMonth(new Date().getMonth() - 2)).toISOString();
@@ -45,6 +45,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   }
   // Get the origin URL
   const { origin } = new URL(service.url);
+  const pined = `${origin}${url?.url}?apiKey=${service.apiKey}&end=${nextMonth}&start=${lastMonth}`;
   const data = await axios.get(
     `${origin}${url?.url}?apiKey=${service.apiKey}&end=${nextMonth}&start=${lastMonth}`
   );
@@ -56,8 +57,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Filter out if the reuqest is a POST or a GET
-  if (req.method === 'GET') {
-    return Get(req, res);
+  if (req.method === 'POST') {
+    return Post(req, res);
   }
   return res.status(405).json({
     statusCode: 405,
