@@ -37,11 +37,7 @@ export default function CalendarComponent(props: any) {
     if (!service || !service.apiKey) {
       return Promise.resolve({ data: [] });
     }
-    return axios.get(`/api/modules/calendar?type=${type}`, {
-      data: {
-        body: service,
-      },
-    });
+    return axios.post(`/api/modules/calendar?type=${type}`, { ...service });
   }
 
   useEffect(() => {
