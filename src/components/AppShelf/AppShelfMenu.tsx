@@ -66,7 +66,7 @@ export default function AppShelfMenu(props: any) {
               autoClose: 5000,
               title: (
                 <Text>
-                  Service <b>{service.name}</b> removed successfully
+                  Service <b>{service.name}</b> removed successfully!
                 </Text>
               ),
               color: 'green',
