@@ -2,11 +2,11 @@
   "name": "default",
   "services": [
     {
-      "id": "1ed0e82b-c432-4371-8e1e-876b76d4ce20",
-      "type": "Plex",
-      "name": "Plex",
-      "icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/plex.png",
-      "url": "https://plex.com"
+      "name": "example",
+      "id": "09c45847-8afc-4c1a-9697-f03192de948a",
+      "type": "Other",
+      "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
   ],
   "settings": {
@@ -17,22 +17,7 @@
       "enabled": true
     },
     "Date": {
-      "enabled": true
-    },
-    "Download Speed": {
-      "enabled": true
-    },
-    "Torrent": {
-      "enabled": true
-    },
-    "Ping Services": {
-      "enabled": true
-    },
-    "Calendar": {
-      "enabled": true
-    },
-    "Weather (beta)": {
-      "enabled": true
+      "enabled": false
     }
   }
 }
