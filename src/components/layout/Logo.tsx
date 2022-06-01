@@ -13,11 +13,11 @@ export function Logo({ style }: any) {
         }}
       />
       <NextLink
+        href="/"
         style={{
           textDecoration: 'none',
           position: 'relative',
         }}
-        href="/"
       >
         <Text
           sx={style}

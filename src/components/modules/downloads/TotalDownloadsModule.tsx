@@ -43,7 +43,7 @@ function humanFileSize(initialBytes: number, si = true, dp = 1) {
 }
 
 export const TotalDownloadsModule: IModule = {
-  title: 'Download speed',
+  title: 'Download Speed',
   description: 'Show the current download speed of supported services',
   icon: Download,
   component: TotalDownloadsComponent,
@@ -104,9 +104,9 @@ export default function TotalDownloadsComponent() {
   if (!qBittorrentService && !delugeService) {
     return (
       <Group direction="column">
-        <Title order={3}>Critical: No qBittorrent/Deluge instance found in services.</Title>
+        <Title order={4}>No supported download clients found!</Title>
         <Group noWrap>
-          <Title order={5}>Add a qBittorrent/Deluge service to view current downloads</Title>
+          <Text>Add a download service to view your current downloads...</Text>
           <AddItemShelfButton />
         </Group>
       </Group>

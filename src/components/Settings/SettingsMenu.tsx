@@ -92,7 +92,7 @@ function SettingsMenu(props: any) {
           color: 'gray',
         }}
       >
-        tip: You can upload your config file by dragging and dropping it onto the page
+        Tip: You can upload your config file by dragging and dropping it onto the page!
       </Text>
       <Group position="center" direction="row" mr="xs">
         <Group spacing={0}>
