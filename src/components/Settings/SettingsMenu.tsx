@@ -11,7 +11,7 @@ import {
 } from '@mantine/core';
 import { useColorScheme, useHotkeys } from '@mantine/hooks';
 import { useState } from 'react';
-import { BrandGithub, Settings as SettingsIcon } from 'tabler-icons-react';
+import { IconBrandGithub as BrandGithub, IconSettings } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
@@ -89,10 +89,10 @@ function SettingsMenu(props: any) {
           alignSelf: 'center',
           fontSize: '0.75rem',
           textAlign: 'center',
-          color: '#a0aec0',
+          color: 'gray',
         }}
       >
-        tip: You can upload your config file by dragging and dropping it onto the page
+        Tip: You can upload your config file by dragging and dropping it onto the page!
       </Text>
       <Group position="center" direction="row" mr="xs">
         <Group spacing={0}>
@@ -113,7 +113,7 @@ function SettingsMenu(props: any) {
           style={{
             fontSize: '0.90rem',
             textAlign: 'center',
-            color: '#a0aec0',
+            color: 'gray',
           }}
         >
           Made with ❤️ by @
@@ -154,7 +154,7 @@ export function SettingsMenuButton(props: any) {
         onClick={() => setOpened(true)}
       >
         <Tooltip label="Settings">
-          <SettingsIcon />
+          <IconSettings />
         </Tooltip>
       </ActionIcon>
     </>

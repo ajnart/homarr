@@ -1,5 +1,5 @@
-import { Loader, Table, Text, Tooltip, Title, Group, Progress, Center } from '@mantine/core';
-import { Download } from 'tabler-icons-react';
+import { Table, Text, Tooltip, Title, Group, Progress, Skeleton, ScrollArea } from '@mantine/core';
+import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
@@ -54,9 +54,9 @@ export default function DownloadComponent() {
   if (!qBittorrentService && !delugeService) {
     return (
       <Group direction="column">
-        <Title>Critical: No qBittorrent/Deluge instance found in services.</Title>
+        <Title order={3}>No supported download clients found!</Title>
         <Group>
-          <Title order={3}>Add a qBittorrent/Deluge service to view current downloads</Title>
+          <Text>Add a download service to view your current downloads...</Text>
           <AddItemShelfButton />
         </Group>
       </Group>
@@ -65,9 +65,13 @@ export default function DownloadComponent() {
 
   if (qBittorrentTorrents.length === 0 && delugeTorrents.length === 0) {
     return (
-      <Center>
-        <Loader />
-      </Center>
+      <>
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+      </>
     );
   }
 
@@ -81,12 +85,13 @@ export default function DownloadComponent() {
   );
   // Loop over qBittorrent torrents merging with deluge torrents
   const torrents: NormalizedTorrent[] = [];
-  delugeTorrents.forEach((torrent) => torrents.push(torrent));
+  delugeTorrents.forEach((delugeTorrent) =>
+    torrents.push({ ...delugeTorrent, progress: delugeTorrent.progress / 100 })
+  );
   qBittorrentTorrents.forEach((torrent) => torrents.push(torrent));
-
   const rows = torrents.map((torrent) => {
     if (torrent.progress === 1 && hideComplete) {
-      return null;
+      return [];
     }
     const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
     const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
@@ -123,14 +128,15 @@ export default function DownloadComponent() {
       </tr>
     );
   });
-
   return (
-    <Group noWrap direction="column">
+    <Group noWrap grow direction="column">
       <Title order={4}>Your torrents</Title>
-      <Table highlightOnHover>
-        <thead>{ths}</thead>
-        <tbody>{rows}</tbody>
-      </Table>
+      <ScrollArea sx={{ height: 300 }}>
+        <Table highlightOnHover>
+          <thead>{ths}</thead>
+          <tbody>{rows}</tbody>
+        </Table>
+      </ScrollArea>
     </Group>
   );
 }

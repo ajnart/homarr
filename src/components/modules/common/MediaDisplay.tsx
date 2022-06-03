@@ -1,5 +1,5 @@
 import { Image, Group, Title, Badge, Text, ActionIcon, Anchor, ScrollArea } from '@mantine/core';
-import { Link } from 'tabler-icons-react';
+import { IconLink as Link } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { serviceItem } from '../../../tools/types';
 
@@ -14,7 +14,7 @@ export interface IMedia {
   episodeNumber?: number;
 }
 
-function MediaDisplay(props: { media: IMedia }) {
+export function MediaDisplay(props: { media: IMedia }) {
   const { media }: { media: IMedia } = props;
   return (
     <Group position="apart">
@@ -33,7 +33,7 @@ function MediaDisplay(props: { media: IMedia }) {
           />
         )}
         <Group direction="column">
-          <Group style={{ minWidth: 400 }}>
+          <Group noWrap mr="sm" style={{ minWidth: 400 }}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
               <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
@@ -47,7 +47,7 @@ function MediaDisplay(props: { media: IMedia }) {
             <Text
               style={{
                 textAlign: 'center',
-                color: '#a0aec0',
+                color: 'gray',
               }}
             >
               New release from {media.artist}
@@ -57,7 +57,7 @@ function MediaDisplay(props: { media: IMedia }) {
             <Text
               style={{
                 textAlign: 'center',
-                color: '#a0aec0',
+                color: 'gray',
               }}
             >
               Season {media.seasonNumber} episode {media.episodeNumber}
@@ -118,7 +118,7 @@ export function LidarrMediaDisplay(props: any) {
   }
   const baseUrl = new URL(lidarr.url).origin;
   // Remove '/' from the end of the lidarr url
-  const fullLink = `${baseUrl}${poster.url}`;
+  const fullLink = poster ? `${baseUrl}${poster.url}` : undefined;
   // Return a movie poster containting the title and the description
   return (
     <MediaDisplay

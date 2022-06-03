@@ -4,7 +4,13 @@ import { showNotification } from '@mantine/notifications';
 import axios from 'axios';
 import fileDownload from 'js-file-download';
 import { useState } from 'react';
-import { Check, Download, Plus, Trash, X } from 'tabler-icons-react';
+import {
+  IconCheck as Check,
+  IconDownload as Download,
+  IconPlus as Plus,
+  IconTrash as Trash,
+  IconX as X,
+} from '@tabler/icons';
 import { useConfig } from '../../tools/state';
 
 export default function SaveConfigComponent(props: any) {
@@ -54,7 +60,7 @@ export default function SaveConfigComponent(props: any) {
         </form>
       </Modal>
       <Button leftIcon={<Download />} variant="outline" onClick={onClick}>
-        Download your config
+        Download config
       </Button>
       <Button
         leftIcon={<Trash />}
@@ -85,10 +91,10 @@ export default function SaveConfigComponent(props: any) {
           setConfig({ ...config, name: 'default' });
         }}
       >
-        Delete current config
+        Delete config
       </Button>
       <Button leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
-        Save a copy of your config
+        Save a copy
       </Button>
     </Group>
   );

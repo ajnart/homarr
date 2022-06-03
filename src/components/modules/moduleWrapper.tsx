@@ -117,8 +117,8 @@ export function ModuleWrapper(props: any) {
               right: 15,
             },
             body: {
-              backgroundColor:
-                theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+              // Add shadow and elevation to the body
+              boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.05)',
             },
           }}
         >

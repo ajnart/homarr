@@ -1,7 +1,11 @@
 import { TextInput, Kbd, createStyles, Text, Popover } from '@mantine/core';
 import { useForm, useHotkeys } from '@mantine/hooks';
 import { useRef, useState } from 'react';
-import { Search, BrandYoutube, Download } from 'tabler-icons-react';
+import {
+  IconSearch as Search,
+  IconBrandYoutube as BrandYoutube,
+  IconDownload as Download,
+} from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 
@@ -112,7 +116,7 @@ export default function SearchBar(props: any) {
         }
       >
         <Text>
-          tip: Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube
+          Tip: Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube
           or for a Torrent respectively.
         </Text>
       </Popover>
