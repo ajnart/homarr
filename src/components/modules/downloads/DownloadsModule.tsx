@@ -1,13 +1,4 @@
-import {
-  Table,
-  Text,
-  Tooltip,
-  Title,
-  Group,
-  Progress,
-  Skeleton,
-  ScrollArea,
-} from '@mantine/core';
+import { Table, Text, Tooltip, Title, Group, Progress, Skeleton, ScrollArea } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -63,9 +54,9 @@ export default function DownloadComponent() {
   if (!qBittorrentService && !delugeService) {
     return (
       <Group direction="column">
-        <Title>Critical: No qBittorrent/Deluge instance found in services.</Title>
+        <Title order={3}>No supported download clients found!</Title>
         <Group>
-          <Title order={3}>Add a qBittorrent/Deluge service to view current downloads</Title>
+          <Text>Add a download service to view your current downloads...</Text>
           <AddItemShelfButton />
         </Group>
       </Group>

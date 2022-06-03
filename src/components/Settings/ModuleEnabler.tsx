@@ -12,7 +12,7 @@ export default function ModuleEnabler(props: any) {
           key={module.title}
           size="md"
           checked={config.modules?.[module.title]?.enabled ?? false}
-          label={`Enable ${module.title} module`}
+          label={`Enable ${module.title}`}
           onChange={(e) => {
             setConfig({
               ...config,

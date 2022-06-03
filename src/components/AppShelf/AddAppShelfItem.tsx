@@ -256,14 +256,14 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                   color: 'gray',
                 }}
               >
-                tip: Get your API key{' '}
+                Tip: Get your API key{' '}
                 <Anchor
                   target="_blank"
                   weight="bold"
                   style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
                   href={`${hostname}/settings/general`}
                 >
-                  here
+                  here.
                 </Anchor>
               </Text>
             </>
