@@ -1,13 +1,4 @@
-import {
-  Table,
-  Text,
-  Tooltip,
-  Title,
-  Group,
-  Progress,
-  Skeleton,
-  ScrollArea,
-} from '@mantine/core';
+import { Table, Text, Tooltip, Title, Group, Progress, Skeleton, ScrollArea } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
