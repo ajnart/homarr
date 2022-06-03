@@ -10,10 +10,12 @@ import {
   ActionIcon,
   Tooltip,
   Title,
+  Anchor,
+  Text,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
-import { Apps } from 'tabler-icons-react';
+import { IconApps as Apps } from '@tabler/icons';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
@@ -61,15 +63,48 @@ function MatchIcon(name: string, form: any) {
   return false;
 }
 
+function MatchService(name: string, form: any) {
+  const service = ServiceTypeList.find((s) => s === name);
+  if (service) {
+    form.setFieldValue('type', service);
+  }
+}
+
+function MatchPort(name: string, form: any) {
+  const portmap = [
+    { name: 'qBittorrent', value: '8080' },
+    { name: 'Sonarr', value: '8989' },
+    { name: 'Radarr', value: '7878' },
+    { name: 'Lidarr', value: '8686' },
+    { name: 'Readarr', value: '8686' },
+    { name: 'Deluge', value: '8112' },
+    { name: 'Transmission', value: '9091' },
+  ];
+  // Match name with portmap key
+  const port = portmap.find((p) => p.name === name);
+  if (port) {
+    form.setFieldValue('url', `http://localhost:${port.value}`);
+  }
+}
+
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
   const { config, setConfig } = useConfig();
   const [isLoading, setLoading] = useState(false);
 
+  // Extract all the categories from the services in config
+  const categoryList = config.services.reduce((acc, cur) => {
+    if (cur.category && !acc.includes(cur.category)) {
+      acc.push(cur.category);
+    }
+    return acc;
+  }, [] as string[]);
+
   const form = useForm({
     initialValues: {
       id: props.id ?? uuidv4(),
       type: props.type ?? 'Other',
+      category: props.category ?? undefined,
       name: props.name ?? '',
       icon: props.icon ?? '/favicon.svg',
       url: props.url ?? '',
@@ -98,6 +133,15 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       },
     },
   });
+
+  // Try to set const hostname to new URL(form.values.url).hostname)
+  // If it fails, set it to the form.values.url
+  let hostname = form.values.url;
+  try {
+    hostname = new URL(form.values.url).origin;
+  } catch (e) {
+    // Do nothing
+  }
 
   return (
     <>
@@ -145,10 +189,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             value={form.values.name}
             onChange={(event) => {
               form.setFieldValue('name', event.currentTarget.value);
-              const match = MatchIcon(event.currentTarget.value, form);
-              if (match) {
-                form.setFieldValue('icon', match);
-              }
+              MatchIcon(event.currentTarget.value, form);
+              MatchService(event.currentTarget.value, form);
+              MatchPort(event.currentTarget.value, form);
             }}
             error={form.errors.name && 'Invalid icon url'}
           />
@@ -166,7 +209,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             {...form.getInputProps('url')}
           />
           <Select
-            label="Select the type of service (used for API calls)"
+            label="Service type"
             defaultValue="Other"
             placeholder="Pick one"
             required
@@ -174,21 +217,56 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             data={ServiceTypeList}
             {...form.getInputProps('type')}
           />
+          <Select
+            label="Category"
+            data={categoryList}
+            placeholder="Select a category or create a new one"
+            nothingFound="Nothing found"
+            searchable
+            clearable
+            creatable
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+            getCreateLabel={(query) => `+ Create "${query}"`}
+            onCreate={(query) => {}}
+            {...form.getInputProps('category')}
+          />
           <LoadingOverlay visible={isLoading} />
           {(form.values.type === 'Sonarr' ||
             form.values.type === 'Radarr' ||
             form.values.type === 'Lidarr' ||
             form.values.type === 'Readarr') && (
-            <TextInput
-              required
-              label="API key"
-              placeholder="Your API key"
-              value={form.values.apiKey}
-              onChange={(event) => {
-                form.setFieldValue('apiKey', event.currentTarget.value);
-              }}
-              error={form.errors.apiKey && 'Invalid API key'}
-            />
+            <>
+              <TextInput
+                required
+                label="API key"
+                placeholder="Your API key"
+                value={form.values.apiKey}
+                onChange={(event) => {
+                  form.setFieldValue('apiKey', event.currentTarget.value);
+                }}
+                error={form.errors.apiKey && 'Invalid API key'}
+              />
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  fontSize: '0.75rem',
+                  textAlign: 'center',
+                  color: 'gray',
+                }}
+              >
+                Tip: Get your API key{' '}
+                <Anchor
+                  target="_blank"
+                  weight="bold"
+                  style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
+                  href={`${hostname}/settings/general`}
+                >
+                  here.
+                </Anchor>
+              </Text>
+            </>
           )}
           {form.values.type === 'qBittorrent' && (
             <>

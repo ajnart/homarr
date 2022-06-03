@@ -91,11 +91,11 @@ export function AppShelfItem(props: any) {
             >
               <motion.i
                 whileHover={{
-                  cursor: 'pointer',
                   scale: 1.1,
                 }}
               >
                 <Image
+                  styles={{ root: { cursor: 'pointer' } }}
                   width={80}
                   height={80}
                   src={service.icon}

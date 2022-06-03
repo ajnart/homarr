@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { createStyles, Footer as FooterComponent } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
+import { IconAlertCircle as AlertCircle } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -38,12 +39,21 @@ export function Footer({ links }: FooterCenteredProps) {
     // Fetch Data here when component first mounted
     fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
       res.json().then((data) => {
-        if (data.tag_name !== CURRENT_VERSION) {
+        if (data.tag_name > CURRENT_VERSION) {
           showNotification({
             color: 'yellow',
             autoClose: false,
             title: 'New version available',
-            message: `Version ${data.tag_name} is available, update now! 😡`,
+            icon: <AlertCircle />,
+            message: `Version ${data.tag_name} is available, update now!`,
+          });
+        } else if (data.tag_name < CURRENT_VERSION) {
+          showNotification({
+            color: 'orange',
+            autoClose: 5000,
+            title: 'You are using a development version',
+            icon: <AlertCircle />,
+            message: 'This version of Homarr is still in development! Bugs are expected 🐛',
           });
         }
       });
