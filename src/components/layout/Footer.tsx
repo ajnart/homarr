@@ -39,7 +39,7 @@ export function Footer({ links }: FooterCenteredProps) {
     // Fetch Data here when component first mounted
     fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
       res.json().then((data) => {
-        if (data.tag_name >= CURRENT_VERSION) {
+        if (data.tag_name > CURRENT_VERSION) {
           showNotification({
             color: 'yellow',
             autoClose: false,
@@ -47,13 +47,12 @@ export function Footer({ links }: FooterCenteredProps) {
             icon: <AlertCircle />,
             message: `Version ${data.tag_name} is available, update now!`,
           });
-        } else if (data.tag_name <= CURRENT_VERSION) {
+        } else if (data.tag_name < CURRENT_VERSION) {
           showNotification({
             color: 'orange',
             autoClose: 5000,
             title: 'You are using a development version',
             icon: <AlertCircle />,
-            loading: true,
             message: 'This version of Homarr is still in development! Bugs are expected 🐛',
           });
         }
