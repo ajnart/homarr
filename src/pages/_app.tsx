@@ -9,6 +9,7 @@ import { useHotkeys } from '@mantine/hooks';
 import Layout from '../components/layout/Layout';
 import { ConfigProvider } from '../tools/state';
 import { theme } from '../tools/theme';
+import { styles } from '../tools/styles';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -34,6 +35,9 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           theme={{
             ...theme,
             colorScheme,
+          }}
+          styles={{
+            ...styles,
           }}
           withGlobalStyles
           withNormalizeCSS

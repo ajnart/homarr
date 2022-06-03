@@ -60,7 +60,7 @@ export default function SaveConfigComponent(props: any) {
         </form>
       </Modal>
       <Button leftIcon={<Download />} variant="outline" onClick={onClick}>
-        Download your config
+        Download config
       </Button>
       <Button
         leftIcon={<Trash />}
@@ -91,10 +91,10 @@ export default function SaveConfigComponent(props: any) {
           setConfig({ ...config, name: 'default' });
         }}
       >
-        Delete current config
+        Delete config
       </Button>
       <Button leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
-        Save a copy of your config
+        Save a copy
       </Button>
     </Group>
   );
