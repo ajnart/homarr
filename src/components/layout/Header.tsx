@@ -22,7 +22,6 @@ import {
   TotalDownloadsModule,
   WeatherModule,
   DateModule,
-  SystemModule,
 } from '../modules';
 
 const HEADER_HEIGHT = 60;
@@ -91,7 +90,6 @@ export function Header(props: any) {
                       <ModuleWrapper module={TotalDownloadsModule} />
                       <ModuleWrapper module={WeatherModule} />
                       <ModuleWrapper module={DateModule} />
-                      <ModuleWrapper module={SystemModule} />
                     </Group>
                   </ScrollArea>
                 </div>
