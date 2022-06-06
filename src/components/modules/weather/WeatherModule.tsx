@@ -160,7 +160,7 @@ export default function WeatherComponent(props: any) {
     return null;
   }
   function usePerferedUnit(value: number): string {
-    return isFahrenheit ? `${(value * (9 / 5)).toFixed(1)}°F` : `${value.toFixed(1)}°C`;
+    return isFahrenheit ? `${(value * (9 / 5) + 32).toFixed(1)}°F` : `${value.toFixed(1)}°C`;
   }
   return (
     <Group p="sm" spacing="xs" direction="column">
