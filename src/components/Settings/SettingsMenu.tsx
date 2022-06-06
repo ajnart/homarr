@@ -8,6 +8,7 @@ import {
   TextInput,
   Drawer,
   Anchor,
+  Tabs
 } from '@mantine/core';
 import { useColorScheme, useHotkeys } from '@mantine/hooks';
 import { useState } from 'react';
@@ -18,6 +19,7 @@ import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
+import AdvancedSettings from './AdvancedSettings';
 
 function SettingsMenu(props: any) {
   const { config, setConfig } = useConfig();
@@ -37,95 +39,102 @@ function SettingsMenu(props: any) {
   );
 
   return (
-    <Group direction="column" grow>
-      <Group grow direction="column" spacing={0}>
-        <Text>Search engine</Text>
-        <SegmentedControl
-          fullWidth
-          title="Search engine"
-          value={
-            // Match config.settings.searchUrl with a key in the matches array
-            searchUrl
-          }
-          onChange={
-            // Set config.settings.searchUrl to the value of the selected item
-            (e) => {
-              setSearchUrl(e);
-              setConfig({
-                ...config,
-                settings: {
-                  ...config.settings,
-                  searchUrl: e,
-                },
-              });
-            }
-          }
-          data={matches}
-        />
-        {searchUrl === 'Custom' && (
-          <TextInput
-            label="Query URL"
-            placeholder="Custom query url"
-            value={customSearchUrl}
-            onChange={(event) => {
-              setCustomSearchUrl(event.currentTarget.value);
-              setConfig({
-                ...config,
-                settings: {
-                  ...config.settings,
-                  searchUrl: event.currentTarget.value,
-                },
-              });
-            }}
-          />
-        )}
-      </Group>
-      <ModuleEnabler />
-      <ColorSchemeSwitch />
-      <ConfigChanger />
-      <SaveConfigComponent />
-      <Text
-        style={{
-          alignSelf: 'center',
-          fontSize: '0.75rem',
-          textAlign: 'center',
-          color: 'gray',
-        }}
-      >
-        Tip: You can upload your config file by dragging and dropping it onto the page!
-      </Text>
-      <Group position="center" direction="row" mr="xs">
-        <Group spacing={0}>
-          <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
-            <BrandGithub size={18} />
-          </ActionIcon>
+    <Tabs>
+      <Tabs.Tab label="Settings">
+        <Group direction="column" grow>
+          <Group grow direction="column" spacing={0}>
+            <Text>Search engine</Text>
+            <SegmentedControl
+              fullWidth
+              title="Search engine"
+              value={
+                // Match config.settings.searchUrl with a key in the matches array
+                searchUrl
+              }
+              onChange={
+                // Set config.settings.searchUrl to the value of the selected item
+                (e) => {
+                  setSearchUrl(e);
+                  setConfig({
+                    ...config,
+                    settings: {
+                      ...config.settings,
+                      searchUrl: e,
+                    },
+                  });
+                }
+              }
+              data={matches}
+            />
+            {searchUrl === 'Custom' && (
+              <TextInput
+                label="Query URL"
+                placeholder="Custom query url"
+                value={customSearchUrl}
+                onChange={(event) => {
+                  setCustomSearchUrl(event.currentTarget.value);
+                  setConfig({
+                    ...config,
+                    settings: {
+                      ...config.settings,
+                      searchUrl: event.currentTarget.value,
+                    },
+                  });
+                }}
+              />
+            )}
+          </Group>
+          <ModuleEnabler />
+          <ColorSchemeSwitch />
+          <ConfigChanger />
+          <SaveConfigComponent />
           <Text
             style={{
-              position: 'relative',
-              fontSize: '0.90rem',
+              alignSelf: 'center',
+              fontSize: '0.75rem',
+              textAlign: 'center',
               color: 'gray',
             }}
           >
-            {CURRENT_VERSION}
+            Tip: You can upload your config file by dragging and dropping it onto the page!
           </Text>
+          <Group position="center" direction="row" mr="xs">
+            <Group spacing={0}>
+              <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
+                <BrandGithub size={18} />
+              </ActionIcon>
+              <Text
+                style={{
+                  position: 'relative',
+                  fontSize: '0.90rem',
+                  color: 'gray',
+                }}
+              >
+                {CURRENT_VERSION}
+              </Text>
+            </Group>
+            <Text
+              style={{
+                fontSize: '0.90rem',
+                textAlign: 'center',
+                color: 'gray',
+              }}
+            >
+              Made with ❤️ by @
+              <Anchor
+                href="https://github.com/ajnart"
+                style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+              >
+                ajnart
+              </Anchor>
+            </Text>
+          </Group>
         </Group>
-        <Text
-          style={{
-            fontSize: '0.90rem',
-            textAlign: 'center',
-            color: 'gray',
-          }}
-        >
-          Made with ❤️ by @
-          <Anchor
-            href="https://github.com/ajnart"
-            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
-          >
-            ajnart
-          </Anchor>
-        </Text>
-      </Group>
-    </Group>
+      </Tabs.Tab>
+      <Tabs.Tab label="Advanced">
+        <AdvancedSettings />
+      </Tabs.Tab>
+    </Tabs>
   );
 }
 
