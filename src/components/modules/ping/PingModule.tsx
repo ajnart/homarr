@@ -32,7 +32,7 @@ export default function PingComponent(props: any) {
       .catch(() => {
         setOnline('down');
       });
-  }, []);
+  }, [config.modules?.[PingModule.title]?.enabled]);
   if (!exists) {
     return null;
   }
