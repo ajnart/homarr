@@ -7,6 +7,7 @@ import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
 import { migrateToIdConfig } from '../tools/migrate';
 import { getConfig } from '../tools/getConfig';
+import Layout from '../components/layout/Layout';
 
 export async function getServerSideProps({
   req,
@@ -33,9 +34,9 @@ export default function HomePage(props: any) {
     setConfig(migratedConfig);
   }, [initialConfig]);
   return (
-    <>
+    <Layout>
       <AppShelf />
       <LoadConfigComponent />
-    </>
+    </Layout>
   );
 }

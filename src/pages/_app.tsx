@@ -44,9 +44,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         >
           <NotificationsProvider limit={4} position="bottom-left">
             <ConfigProvider>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
+              <Component {...pageProps} />
             </ConfigProvider>
           </NotificationsProvider>
         </MantineProvider>
