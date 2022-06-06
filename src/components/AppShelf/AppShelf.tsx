@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, Grid, Group } from '@mantine/core';
+import { Accordion, createStyles, Grid, Group } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -18,7 +18,20 @@ import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 import { ModuleWrapper } from '../modules/moduleWrapper';
 import { DownloadsModule } from '../modules';
 
+const useStyles = createStyles((theme, _) => ({
+  item: {
+    border: '1px solid transparent',
+    borderRadius: theme.radius.lg,
+    marginTop: theme.spacing.md,
+  },
+
+  itemOpened: {
+    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
+  },
+}));
+
 const AppShelf = (props: any) => {
+  const { classes, cx } = useStyles(props);
   const [toggledCategories, settoggledCategories] = useLocalStorage({
     key: 'app-shelf-toggled',
     // This is a bit of a hack to get the 5 first categories to be toggled on by default
@@ -122,6 +135,7 @@ const AppShelf = (props: any) => {
       // Return one item for each category
       <Group grow direction="column">
         <Accordion
+          classNames={classes}
           order={2}
           iconPosition="right"
           multiple
