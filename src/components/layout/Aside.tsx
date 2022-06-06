@@ -1,12 +1,6 @@
 import { Aside as MantineAside, createStyles, Group } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import {
-  WeatherModule,
-  DateModule,
-  CalendarModule,
-  TotalDownloadsModule,
-  SystemModule,
-} from '../modules';
+import { WeatherModule, DateModule, CalendarModule, TotalDownloadsModule } from '../modules';
 import { ModuleWrapper } from '../modules/moduleWrapper';
 
 const useStyles = createStyles((theme) => ({
@@ -45,7 +39,6 @@ export default function Aside(props: any) {
           <ModuleWrapper module={TotalDownloadsModule} />
           <ModuleWrapper module={WeatherModule} />
           <ModuleWrapper module={DateModule} />
-          <ModuleWrapper module={SystemModule} />
         </Group>
       )}
     </MantineAside>
