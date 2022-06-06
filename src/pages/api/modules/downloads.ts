@@ -17,14 +17,14 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   switch (dlclient) {
     case 'qbit':
       client = new QBittorrent({
-        baseUrl: new URL(url).origin,
+        baseUrl: new URL(url).href,
         username,
         password,
       });
       break;
     case 'deluge':
       client = new Deluge({
-        baseUrl: new URL(url).origin,
+        baseUrl: new URL(url).href,
         password,
       });
       break;
