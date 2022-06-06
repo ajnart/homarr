@@ -53,7 +53,7 @@ export function MediaDisplay(props: { media: IMedia }) {
             alt={media.title}
           />
         )}
-        <Group direction="column">
+        <Group direction="column" style={{ minWidth: 450 }}>
           <Group noWrap mr="sm" className={classes.overview}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
@@ -86,7 +86,7 @@ export function MediaDisplay(props: { media: IMedia }) {
           )}
         </Group>
         <Group direction="column" position="apart">
-          <ScrollArea style={{ maxHeight: 250, maxWidth: 700 }}>{media.overview}</ScrollArea>
+          <ScrollArea style={{ height: 250, maxWidth: 700 }}>{media.overview}</ScrollArea>
           <Group align="center" position="center" spacing="xs">
             {media.genres.map((genre: string, i: number) => (
               <Badge size="sm" key={i}>
