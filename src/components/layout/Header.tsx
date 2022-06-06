@@ -43,7 +43,6 @@ export function Header(props: any) {
   const [opened, toggleOpened] = useBooleanToggle(false);
   const { classes, cx } = useStyles();
   const [hidden, toggleHidden] = useBooleanToggle(true);
-  const drawerModule = CalendarModule;
 
   return (
     <Head height="auto">
@@ -86,7 +85,7 @@ export function Header(props: any) {
                 <div style={styles}>
                   <ScrollArea style={{ height: '90vh' }}>
                     <Group my="sm" grow direction="column" style={{ width: 300 }}>
-                      <ModuleWrapper module={drawerModule} />
+                      <ModuleWrapper module={CalendarModule} />
                       <ModuleWrapper module={TotalDownloadsModule} />
                       <ModuleWrapper module={WeatherModule} />
                       <ModuleWrapper module={DateModule} />
