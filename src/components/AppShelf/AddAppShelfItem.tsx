@@ -112,6 +112,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       apiKey: props.apiKey ?? (undefined as unknown as string),
       username: props.username ?? (undefined as unknown as string),
       password: props.password ?? (undefined as unknown as string),
+      openedUrl: props.openedUrl ?? (undefined as unknown as string),
     },
     validate: {
       apiKey: () => null,
@@ -209,6 +210,11 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             label="Service url"
             placeholder="http://localhost:7575"
             {...form.getInputProps('url')}
+          />
+          <TextInput
+            label="Opened url"
+            placeholder="http://sonarr.remote.com"
+            {...form.getInputProps('openedUrl')}
           />
           <Select
             label="Service type"
