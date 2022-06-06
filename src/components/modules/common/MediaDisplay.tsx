@@ -9,6 +9,7 @@ import {
   ScrollArea,
   createStyles,
 } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { IconLink as Link } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { serviceItem } from '../../../tools/types';
@@ -25,14 +26,6 @@ export interface IMedia {
 }
 
 const useStyles = createStyles((theme) => ({
-  poster: {
-    [theme.fn.smallerThan('sm')]: {
-      maxWidth: '20%',
-    },
-    [theme.fn.largerThan('sm')]: {
-      maxWidth: 300,
-    },
-  },
   overview: {
     [theme.fn.largerThan('sm')]: {
       width: 400,
@@ -43,12 +36,14 @@ const useStyles = createStyles((theme) => ({
 export function MediaDisplay(props: { media: IMedia }) {
   const { media }: { media: IMedia } = props;
   const { classes, cx } = useStyles();
+  const phone = useMediaQuery('(min-width: 800px)');
   return (
     <Group position="apart">
       <Text>
         {media.poster && (
           <Image
-            className={classes.poster}
+            width={phone ? 250 : 100}
+            height={phone ? 400 : 160}
             style={{
               float: 'right',
             }}
