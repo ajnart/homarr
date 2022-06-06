@@ -294,20 +294,21 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               />
             </>
           )}
-          {form.values.type === 'Deluge' && (
-            <>
-              <TextInput
-                required
-                label="Password"
-                placeholder="deluge"
-                value={form.values.password}
-                onChange={(event) => {
-                  form.setFieldValue('password', event.currentTarget.value);
-                }}
-                error={form.errors.password && 'Invalid password'}
-              />
-            </>
-          )}
+          {form.values.type === 'Deluge' ||
+            (form.values.type === 'Transmission' && (
+              <>
+                <TextInput
+                  required
+                  label="Password"
+                  placeholder="password"
+                  value={form.values.password}
+                  onChange={(event) => {
+                    form.setFieldValue('password', event.currentTarget.value);
+                  }}
+                  error={form.errors.password && 'Invalid password'}
+                />
+              </>
+            ))}
         </Group>
 
         <Group grow position="center" mt="xl">

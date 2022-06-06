@@ -31,6 +31,7 @@ export const ServiceTypeList = [
   'Readarr',
   'Sonarr',
   'qBittorrent',
+  'Transmission',
 ];
 export type ServiceType =
   | 'Other'
@@ -41,7 +42,8 @@ export type ServiceType =
   | 'Radarr'
   | 'Readarr'
   | 'Sonarr'
-  | 'qBittorrent';
+  | 'qBittorrent'
+  | 'Transmission';
 
 export interface serviceItem {
   id: string;
