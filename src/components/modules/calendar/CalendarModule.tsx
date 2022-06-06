@@ -167,7 +167,7 @@ function DayComponent(props: any) {
         />
       )}
       <Popover
-        position="left"
+        position="bottom"
         radius="lg"
         shadow="xl"
         transition="pop"
@@ -176,7 +176,7 @@ function DayComponent(props: any) {
             boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.1), 0 14px 11px rgba(0, 0, 0, 0.1)',
           },
         }}
-        width={700}
+        width="auto"
         onClose={() => setOpened(false)}
         opened={opened}
         target={day}
@@ -197,12 +197,18 @@ function DayComponent(props: any) {
               {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
             </React.Fragment>
           ))}
+          {sonarrFiltered.length > 0 && lidarrFiltered.length > 0 && (
+            <Divider variant="dashed" my="xl" />
+          )}
           {lidarrFiltered.map((media: any, index: number) => (
             <React.Fragment key={index}>
               <LidarrMediaDisplay media={media} />
               {index < lidarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
             </React.Fragment>
           ))}
+          {lidarrFiltered.length > 0 && readarrFiltered.length > 0 && (
+            <Divider variant="dashed" my="xl" />
+          )}
           {readarrFiltered.map((media: any, index: number) => (
             <React.Fragment key={index}>
               <ReadarrMediaDisplay media={media} />

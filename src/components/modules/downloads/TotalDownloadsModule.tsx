@@ -9,6 +9,7 @@ import { useListState } from '@mantine/hooks';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
+import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
 
 /**
  * Format bytes as human-readable text.
@@ -74,9 +75,9 @@ export default function TotalDownloadsComponent() {
 
   const totalDownloadSpeed = torrents.reduce((acc, torrent) => acc + torrent.downloadSpeed, 0);
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
-
+  const setSafeInterval = useSetSafeInterval();
   useEffect(() => {
-    const interval = setInterval(() => {
+    setSafeInterval(() => {
       // Get the current download speed of qBittorrent.
       if (qBittorrentService) {
         axios

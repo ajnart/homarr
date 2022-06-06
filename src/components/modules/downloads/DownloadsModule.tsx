@@ -6,6 +6,7 @@ import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { IModule } from '../modules';
 import { useConfig } from '../../../tools/state';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
+import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
 
 export const DownloadsModule: IModule = {
   title: 'Torrent',
@@ -31,10 +32,10 @@ export default function DownloadComponent() {
 
   const [delugeTorrents, setDelugeTorrents] = useState<NormalizedTorrent[]>([]);
   const [qBittorrentTorrents, setqBittorrentTorrents] = useState<NormalizedTorrent[]>([]);
-
+  const setSafeInterval = useSetSafeInterval();
   useEffect(() => {
     if (qBittorrentService) {
-      setInterval(() => {
+      setSafeInterval(() => {
         axios
           .post('/api/modules/downloads?dlclient=qbit', { ...qBittorrentService })
           .then((res) => {
@@ -43,7 +44,7 @@ export default function DownloadComponent() {
       }, 3000);
     }
     if (delugeService) {
-      setInterval(() => {
+      setSafeInterval(() => {
         axios.post('/api/modules/downloads?dlclient=deluge', { ...delugeService }).then((res) => {
           setDelugeTorrents(res.data.torrents);
         });

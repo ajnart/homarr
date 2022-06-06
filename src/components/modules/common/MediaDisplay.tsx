@@ -1,4 +1,14 @@
-import { Image, Group, Title, Badge, Text, ActionIcon, Anchor, ScrollArea } from '@mantine/core';
+import {
+  Image,
+  Group,
+  Title,
+  Badge,
+  Text,
+  ActionIcon,
+  Anchor,
+  ScrollArea,
+  createStyles,
+} from '@mantine/core';
 import { IconLink as Link } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { serviceItem } from '../../../tools/types';
@@ -14,13 +24,31 @@ export interface IMedia {
   episodeNumber?: number;
 }
 
+const useStyles = createStyles((theme) => ({
+  poster: {
+    [theme.fn.smallerThan('sm')]: {
+      maxWidth: '20%',
+    },
+    [theme.fn.largerThan('sm')]: {
+      maxWidth: 300,
+    },
+  },
+  overview: {
+    [theme.fn.largerThan('sm')]: {
+      width: 400,
+    },
+  },
+}));
+
 export function MediaDisplay(props: { media: IMedia }) {
   const { media }: { media: IMedia } = props;
+  const { classes, cx } = useStyles();
   return (
     <Group position="apart">
       <Text>
         {media.poster && (
           <Image
+            className={classes.poster}
             style={{
               float: 'right',
             }}
@@ -28,12 +56,10 @@ export function MediaDisplay(props: { media: IMedia }) {
             fit="cover"
             src={media.poster}
             alt={media.title}
-            width={250}
-            height={400}
           />
         )}
         <Group direction="column">
-          <Group noWrap mr="sm" style={{ minWidth: 400 }}>
+          <Group noWrap mr="sm" className={classes.overview}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
               <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
@@ -65,7 +91,7 @@ export function MediaDisplay(props: { media: IMedia }) {
           )}
         </Group>
         <Group direction="column" position="apart">
-          <ScrollArea style={{ height: 250 }}>{media.overview}</ScrollArea>
+          <ScrollArea style={{ maxHeight: 250, maxWidth: 700 }}>{media.overview}</ScrollArea>
           <Group align="center" position="center" spacing="xs">
             {media.genres.map((genre: string, i: number) => (
               <Badge size="sm" key={i}>
