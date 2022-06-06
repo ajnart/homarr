@@ -104,7 +104,8 @@ export function AppShelfItem(props: any) {
                   src={service.icon}
                   fit="contain"
                   onClick={() => {
-                    window.open(service.url);
+                    if (service.openedUrl) window.open(service.openedUrl, '_blank');
+                    else window.open(service.url);
                   }}
                 />
               </motion.i>
