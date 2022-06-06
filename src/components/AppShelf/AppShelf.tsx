@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Group, Title } from '@mantine/core';
+import { Accordion, Grid, Group } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -11,6 +11,7 @@ import {
   useSensors,
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { useLocalStorage } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
@@ -18,6 +19,10 @@ import { ModuleWrapper } from '../modules/moduleWrapper';
 import { DownloadsModule } from '../modules';
 
 const AppShelf = (props: any) => {
+  const [toggledCategories, settoggledCategories] = useLocalStorage({
+    key: 'app-shelf-toggled',
+    defaultValue: {},
+  });
   const [activeId, setActiveId] = useState(null);
   const { config, setConfig } = useConfig();
   const sensors = useSensors(
@@ -110,26 +115,26 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
-
+    // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // Return one item for each category
       <Group grow direction="column">
-        {categoryList.map((category) => (
-          <>
-            <Title order={3} key={category}>
-              {category}
-            </Title>
-            {item(category)}
-          </>
-        ))}
-        {/* Return the item for all services without category */}
-        {noCategory && noCategory.length > 0 ? (
-          <>
-            <Title order={3}>Other</Title>
-            {item()}
-          </>
-        ) : null}
-        <ModuleWrapper mt="xl" module={DownloadsModule} />
+        <Accordion
+          order={2}
+          iconPosition="right"
+          multiple
+          initialState={toggledCategories}
+          onChange={(idx) => settoggledCategories(idx)}
+        >
+          {categoryList.map((category) => (
+            <Accordion.Item label={category}>{item(category)}</Accordion.Item>
+          ))}
+          {/* Return the item for all services without category */}
+          {noCategory && noCategory.length > 0 ? (
+            <Accordion.Item label="Other">{item()}</Accordion.Item>
+          ) : null}
+          <ModuleWrapper mt="xl" module={DownloadsModule} />
+        </Accordion>
       </Group>
     );
   }
