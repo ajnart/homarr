@@ -41,29 +41,47 @@ export default function CalendarComponent(props: any) {
   }
 
   useEffect(() => {
-    // Filter only sonarr and radarr services
-
-    // Get the url and apiKey for all Sonarr and Radarr services
-    sonarrServices.map((service) =>
-      getMedias(service, 'sonarr').then((res) => {
-        setSonarrMedias([...sonarrMedias, ...res.data]);
-      })
-    );
-    radarrServices.map((service) =>
-      getMedias(service, 'radarr').then((res) => {
-        setRadarrMedias([...radarrMedias, ...res.data]);
-      })
-    );
-    lidarrServices.map((service) =>
-      getMedias(service, 'lidarr').then((res) => {
-        setLidarrMedias([...lidarrMedias, ...res.data]);
-      })
-    );
-    readarrServices.map((service) =>
-      getMedias(service, 'readarr').then((res) => {
-        setReadarrMedias([...readarrMedias, ...res.data]);
-      })
-    );
+    // Create each Sonarr service and get the medias
+    const currentSonarrMedias: any[] = [...sonarrMedias];
+    Promise.all(
+      sonarrServices.map((service) =>
+        getMedias(service, 'sonarr').then((res) => {
+          currentSonarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setSonarrMedias(currentSonarrMedias);
+    });
+    const currentRadarrMedias: any[] = [...radarrMedias];
+    Promise.all(
+      radarrServices.map((service) =>
+        getMedias(service, 'radarr').then((res) => {
+          currentRadarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setRadarrMedias(currentRadarrMedias);
+    });
+    const currentLidarrMedias: any[] = [...lidarrMedias];
+    Promise.all(
+      lidarrServices.map((service) =>
+        getMedias(service, 'lidarr').then((res) => {
+          currentLidarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setLidarrMedias(currentLidarrMedias);
+    });
+    const currentReadarrMedias: any[] = [...readarrMedias];
+    Promise.all(
+      readarrServices.map((service) =>
+        getMedias(service, 'readarr').then((res) => {
+          currentReadarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setReadarrMedias(currentReadarrMedias);
+    });
   }, [config.services]);
 
   return (
