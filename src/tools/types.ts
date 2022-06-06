@@ -53,4 +53,5 @@ export interface serviceItem {
   apiKey?: string;
   password?: string;
   username?: string;
+  openedUrl?: string;
 }

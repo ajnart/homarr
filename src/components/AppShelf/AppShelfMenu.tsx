@@ -31,6 +31,7 @@ export default function AppShelfMenu(props: any) {
           apiKey={service.apiKey}
           username={service.username}
           password={service.password}
+          openedUrl={service.openedUrl}
           message="Save service"
         />
       </Modal>
