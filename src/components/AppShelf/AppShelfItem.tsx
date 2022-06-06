@@ -15,6 +15,9 @@ const useStyles = createStyles((theme) => ({
       boxShadow: `${theme.shadows.md} !important`,
       transform: 'scale(1.05)',
     },
+    [theme.fn.smallerThan('sm')]: {
+      WebkitUserSelect: 'none',
+    },
   },
 }));
 
@@ -38,7 +41,7 @@ export function SortableAppShelfItem(props: any) {
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
   const [hovering, setHovering] = useState(false);
-  const { classes, theme } = useStyles();
+  const { classes } = useStyles();
   return (
     <motion.div
       animate={{
