@@ -140,8 +140,8 @@ const AppShelf = (props: any) => {
           {noCategory && noCategory.length > 0 ? (
             <Accordion.Item label="Other">{item()}</Accordion.Item>
           ) : null}
-          <ModuleWrapper mt="xl" module={DownloadsModule} />
         </Accordion>
+        <ModuleWrapper mt="xl" module={DownloadsModule} />
       </Group>
     );
   }
