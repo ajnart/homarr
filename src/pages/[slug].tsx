@@ -6,6 +6,7 @@ import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
 import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
+import Layout from '../components/layout/Layout';
 
 export async function getServerSideProps(
   context: GetServerSidePropsContext
@@ -46,9 +47,9 @@ export default function HomePage(props: any) {
     setConfig(initialConfig);
   }, [initialConfig]);
   return (
-    <>
+    <Layout>
       <AppShelf />
       <LoadConfigComponent />
-    </>
+    </Layout>
   );
 }
