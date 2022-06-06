@@ -21,10 +21,12 @@ import { DownloadsModule } from '../modules';
 const AppShelf = (props: any) => {
   const [toggledCategories, settoggledCategories] = useLocalStorage({
     key: 'app-shelf-toggled',
-    defaultValue: {},
+    // This is a bit of a hack to get the 5 first categories to be toggled on by default
+    defaultValue: { 0: true, 1: true, 2: true, 3: true, 4: true } as Record<string, boolean>,
   });
   const [activeId, setActiveId] = useState(null);
   const { config, setConfig } = useConfig();
+
   const sensors = useSensors(
     useSensor(TouchSensor, {
       activationConstraint: {
@@ -123,10 +125,15 @@ const AppShelf = (props: any) => {
           order={2}
           iconPosition="right"
           multiple
+          styles={{
+            item: {
+              borderRadius: '20px',
+            },
+          }}
           initialState={toggledCategories}
           onChange={(idx) => settoggledCategories(idx)}
         >
-          {categoryList.map((category) => (
+          {categoryList.map((category, idx) => (
             <Accordion.Item label={category}>{item(category)}</Accordion.Item>
           ))}
           {/* Return the item for all services without category */}
