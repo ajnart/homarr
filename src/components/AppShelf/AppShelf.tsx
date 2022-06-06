@@ -134,11 +134,15 @@ const AppShelf = (props: any) => {
           onChange={(idx) => settoggledCategories(idx)}
         >
           {categoryList.map((category, idx) => (
-            <Accordion.Item label={category}>{item(category)}</Accordion.Item>
+            <Accordion.Item key={category} label={category}>
+              {item(category)}
+            </Accordion.Item>
           ))}
           {/* Return the item for all services without category */}
           {noCategory && noCategory.length > 0 ? (
-            <Accordion.Item label="Other">{item()}</Accordion.Item>
+            <Accordion.Item key="Other" label="Other">
+              {item()}
+            </Accordion.Item>
           ) : null}
         </Accordion>
         <ModuleWrapper mt="xl" module={DownloadsModule} />

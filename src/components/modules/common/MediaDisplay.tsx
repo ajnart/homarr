@@ -86,9 +86,9 @@ export function MediaDisplay(props: { media: IMedia }) {
           )}
         </Group>
         <Group direction="column" position="apart">
-          <ScrollArea style={{ height: 250, maxWidth: 700 }}>{media.overview}</ScrollArea>
+          <ScrollArea style={{ height: 280, maxWidth: 700 }}>{media.overview}</ScrollArea>
           <Group align="center" position="center" spacing="xs">
-            {media.genres.map((genre: string, i: number) => (
+            {media.genres.slice(-5).map((genre: string, i: number) => (
               <Badge size="sm" key={i}>
                 {genre}
               </Badge>
