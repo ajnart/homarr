@@ -27,6 +27,7 @@
 		"@ctrl/deluge": "^4.0.0",
 		"@ctrl/qbittorrent": "^4.0.0",
 		"@ctrl/shared-torrent": "^4.1.0",
+		"@ctrl/transmission": "^4.1.1",
 		"@dnd-kit/core": "^6.0.1",
 		"@dnd-kit/sortable": "^7.0.0",
 		"@dnd-kit/utilities": "^3.2.0",

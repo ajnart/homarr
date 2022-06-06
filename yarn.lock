@@ -1630,12 +1630,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ctrl/shared-torrent@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@ctrl/shared-torrent@npm:4.1.1"
+  dependencies:
+    got: ^12.1.0
+  checksum: 1273c9088a920eed5afca945b11e83a6b64d4268ad0b09e916e7e2214ea8092b998ab16525885f8f24af2c75893e3fd7d4542e7e9d6dfe4688da57e47c31b165
+  languageName: node
+  linkType: hard
+
 "@ctrl/torrent-file@npm:^2.0.1":
   version: 2.0.1
   resolution: "@ctrl/torrent-file@npm:2.0.1"
   dependencies:
     crypto-hash: ^2.0.1
   checksum: e0eae303678ec87b9d2d16123f052bb53305e76b571e80d9bb8d2b741d230385c54ad6c53f6995f7c24303de46c826dfcddce5e5a1d29fdc9d923073c73a1aca
+  languageName: node
+  linkType: hard
+
+"@ctrl/transmission@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@ctrl/transmission@npm:4.1.1"
+  dependencies:
+    "@ctrl/magnet-link": ^3.1.0
+    "@ctrl/shared-torrent": ^4.1.1
+    "@ctrl/url-join": ^2.0.0
+    got: ^12.1.0
+  checksum: 218ed4c00f70c46c90cd2a5e90f8390beee06a2cf7d76c2445ad2bcfb89ad1e6ea9cf237a7b3aa990fdf81fc9b9d4aa9900fa21e041457e8bb177dbd0b319b0a
   languageName: node
   linkType: hard
 
@@ -9081,7 +9102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"got@npm:^12.0.1, got@npm:^12.0.4":
+"got@npm:^12.0.1, got@npm:^12.0.4, got@npm:^12.1.0":
   version: 12.1.0
   resolution: "got@npm:12.1.0"
   dependencies:
@@ -9398,6 +9419,7 @@ __metadata:
     "@ctrl/deluge": ^4.0.0
     "@ctrl/qbittorrent": ^4.0.0
     "@ctrl/shared-torrent": ^4.1.0
+    "@ctrl/transmission": ^4.1.1
     "@dnd-kit/core": ^6.0.1
     "@dnd-kit/sortable": ^7.0.0
     "@dnd-kit/utilities": ^3.2.0

@@ -57,42 +57,28 @@ interface torrentHistory {
 }
 
 export default function TotalDownloadsComponent() {
+  const setSafeInterval = useSetSafeInterval();
   const { config } = useConfig();
-  const qBittorrentService = config.services
-    .filter((service) => service.type === 'qBittorrent')
-    .at(0);
-  const delugeService = config.services.filter((service) => service.type === 'Deluge').at(0);
+  const downloadServices =
+    config.services.filter(
+      (service) =>
+        service.type === 'qBittorrent' ||
+        service.type === 'Transmission' ||
+        service.type === 'Deluge'
+    ) ?? [];
 
-  const [delugeTorrents, setDelugeTorrents] = useState<NormalizedTorrent[]>([]);
   const [torrentHistory, torrentHistoryHandlers] = useListState<torrentHistory>([]);
-  const [qBittorrentTorrents, setqBittorrentTorrents] = useState<NormalizedTorrent[]>([]);
-
-  const torrents: NormalizedTorrent[] = [];
-  delugeTorrents.forEach((delugeTorrent) =>
-    torrents.push({ ...delugeTorrent, progress: delugeTorrent.progress / 100 })
-  );
-  qBittorrentTorrents.forEach((torrent) => torrents.push(torrent));
+  const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
 
   const totalDownloadSpeed = torrents.reduce((acc, torrent) => acc + torrent.downloadSpeed, 0);
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
-  const setSafeInterval = useSetSafeInterval();
   useEffect(() => {
     setSafeInterval(() => {
-      // Get the current download speed of qBittorrent.
-      if (qBittorrentService) {
-        axios
-          .post('/api/modules/downloads?dlclient=qbit', { ...qBittorrentService })
-          .then((res) => {
-            setqBittorrentTorrents(res.data.torrents);
-          });
-        if (delugeService) {
-          axios.post('/api/modules/downloads?dlclient=deluge', { ...delugeService }).then((res) => {
-            setDelugeTorrents(res.data.torrents);
-          });
-        }
-      }
+      axios.post('/api/modules/downloads', { config }).then((response) => {
+        setTorrents(response.data);
+      });
     }, 1000);
-  }, [config.modules]);
+  }, []);
 
   useEffect(() => {
     torrentHistoryHandlers.append({
@@ -102,7 +88,7 @@ export default function TotalDownloadsComponent() {
     });
   }, [totalDownloadSpeed, totalUploadSpeed]);
 
-  if (!qBittorrentService && !delugeService) {
+  if (downloadServices.length === 0) {
     return (
       <Group direction="column">
         <Title order={4}>No supported download clients found!</Title>
