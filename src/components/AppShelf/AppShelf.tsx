@@ -4,11 +4,13 @@ import {
   closestCenter,
   DndContext,
   DragOverlay,
+  KeyboardSensor,
   MouseSensor,
+  TouchSensor,
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
-import { arrayMove, SortableContext } from '@dnd-kit/sortable';
+import { arrayMove, SortableContext, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
@@ -19,6 +21,15 @@ const AppShelf = (props: any) => {
   const [activeId, setActiveId] = useState(null);
   const { config, setConfig } = useConfig();
   const sensors = useSensors(
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250,
+        tolerance: 5,
+      },
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    }),
     useSensor(MouseSensor, {
       // Require the mouse to move by 10 pixels before activating
       activationConstraint: {
