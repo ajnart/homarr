@@ -3,7 +3,7 @@ import { useForm } from '@mantine/form';
 import { useConfig } from '../../tools/state';
 
 export default function TitleChanger() {
-  const { config, loadConfig, setConfig, getConfigs } = useConfig();
+  const { config, setConfig } = useConfig();
 
   const form = useForm({
     initialValues: {
@@ -26,13 +26,19 @@ export default function TitleChanger() {
   };
 
   return (
-    <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
-      <TextInput label="Page title" placeholder="'Homarr 🦞" {...form.getInputProps('title')} />
-      <TextInput label="Logo" placeholder="/img/logo.png" {...form.getInputProps('logo')} />
-      <TextInput label="Favicon" placeholder="/favicon.svg" {...form.getInputProps('favicon')} />
-      <Group grow position="center" mt="xl">
-        <Button type="submit">Save</Button>
-      </Group>
-    </form>
+    <Group direction="column" grow>
+      <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
+        <Group grow direction="column">
+          <TextInput label="Page title" placeholder="'Homarr 🦞" {...form.getInputProps('title')} />
+          <TextInput label="Logo" placeholder="/img/logo.png" {...form.getInputProps('logo')} />
+          <TextInput
+            label="Favicon"
+            placeholder="/favicon.svg"
+            {...form.getInputProps('favicon')}
+          />
+          <Button type="submit">Save</Button>
+        </Group>
+      </form>
+    </Group>
   );
 }
