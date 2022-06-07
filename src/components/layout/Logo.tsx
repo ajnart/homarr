@@ -27,8 +27,8 @@ export function Logo({ style }: any) {
           weight="bold"
           variant="gradient"
           gradient={{
-            from: config.settings.primary_color || 'red',
-            to: config.settings.secondary_color || 'orange',
+            from: config.settings.primaryColor || 'red',
+            to: config.settings.secondaryColor || 'orange',
             deg: 145,
           }}
         >

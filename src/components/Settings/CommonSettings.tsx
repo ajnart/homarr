@@ -35,8 +35,8 @@ export default function CommonSettings(args: any) {
   const theme = useMantineTheme();
   const colors = Object.keys(theme.colors).map((color) => theme.colors[color][6]);
 
-  const [primaryColor, setPrimaryColor] = useState(config.settings.primary_color);
-  const [secondaryColor, setSecondaryColor] = useState(config.settings.secondary_color);
+  const [primaryColor, setPrimaryColor] = useState(config.settings.primaryColor);
+  const [secondaryColor, setSecondaryColor] = useState(config.settings.secondaryColor);
 
   // const convertColorHexToNames = (hex: string) => {
   //   // Have to add some exceptions here because it's not converting cleanly

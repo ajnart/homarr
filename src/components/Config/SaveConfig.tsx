@@ -63,7 +63,7 @@ export default function SaveConfigComponent(props: any) {
         size="xs"
         leftIcon={<Download />}
         variant="outline"
-        color={config.settings.primary_color || 'red'}
+        color={config.settings.primaryColor || 'red'}
         onClick={onClick}
       >
         Download config
@@ -72,7 +72,7 @@ export default function SaveConfigComponent(props: any) {
         size="xs"
         leftIcon={<Trash />}
         variant="outline"
-        color={config.settings.primary_color || 'red'}
+        color={config.settings.primaryColor || 'red'}
         onClick={() => {
           axios
             .delete(`/api/configs/${config.name}`)
@@ -105,7 +105,7 @@ export default function SaveConfigComponent(props: any) {
         size="xs"
         leftIcon={<Plus />}
         variant="outline"
-        color={config.settings.primary_color || 'red'}
+        color={config.settings.primaryColor || 'red'}
         onClick={() => setOpened(true)}
       >
         Save a copy
