@@ -9,5 +9,6 @@ COPY /.next/standalone ./
 COPY /.next/static ./.next/static
 EXPOSE 7575
 ENV PORT 7575
+RUN apk add tzdata
 VOLUME /app/data/configs
 CMD ["node", "server.js"]
