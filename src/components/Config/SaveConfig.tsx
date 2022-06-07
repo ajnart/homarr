@@ -27,7 +27,7 @@ export default function SaveConfigComponent(props: any) {
     }
   }
   return (
-    <Group>
+    <Group spacing="xs">
       <Modal
         radius="md"
         opened={opened}
@@ -59,10 +59,11 @@ export default function SaveConfigComponent(props: any) {
           </Group>
         </form>
       </Modal>
-      <Button leftIcon={<Download />} variant="outline" onClick={onClick}>
+      <Button size="xs" leftIcon={<Download />} variant="outline" onClick={onClick}>
         Download config
       </Button>
       <Button
+        size="xs"
         leftIcon={<Trash />}
         variant="outline"
         onClick={() => {
@@ -93,7 +94,7 @@ export default function SaveConfigComponent(props: any) {
       >
         Delete config
       </Button>
-      <Button leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
+      <Button size="xs" leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
         Save a copy
       </Button>
     </Group>

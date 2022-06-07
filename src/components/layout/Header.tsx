@@ -17,12 +17,7 @@ import SearchBar from '../modules/search/SearchModule';
 import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import { ModuleWrapper } from '../modules/moduleWrapper';
-import {
-  CalendarModule,
-  TotalDownloadsModule,
-  WeatherModule,
-  DateModule,
-} from '../modules';
+import { CalendarModule, TotalDownloadsModule, WeatherModule, DateModule } from '../modules';
 
 const HEADER_HEIGHT = 60;
 
