@@ -10,7 +10,7 @@ export function Logo({ style }: any) {
     <Group spacing="xs">
       <Image
         width={50}
-        src={config.logo ?? "/imgs/logo.png"}
+        src={config.settings.logo || '/imgs/logo.png'}
         style={{
           position: 'relative',
         }}
@@ -28,8 +28,7 @@ export function Logo({ style }: any) {
           variant="gradient"
           gradient={{ from: 'red', to: 'orange', deg: 145 }}
         >
-          {/* Added the .replace to remove emojis because they get screwed up by the gradient */}
-          {config.title.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '') ?? "Homarr"}
+          {config.settings.title || 'Homarr'}
         </Text>
       </NextLink>
     </Group>

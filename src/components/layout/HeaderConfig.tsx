@@ -7,8 +7,8 @@ export function HeaderConfig(props: any) {
 
   return (
     <Head>
-      <title>{config.title ?? "Homarr 🦞"}</title>
-      <link rel="shortcut icon" href={config.favicon ?? "/favicon.svg"} />
+      <title>{config.settings.title || 'Homarr 🦞'}</title>
+      <link rel="shortcut icon" href={config.settings.favicon || '/favicon.svg'} />
     </Head>
   );
 }

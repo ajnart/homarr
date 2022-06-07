@@ -15,17 +15,17 @@ type configContextType = {
 const configContext = createContext<configContextType>({
   config: {
     name: 'default',
-    title: 'Homarr 🦞',
-    logo: '/imgs/logo.png',
-    favicon: '/favicon.svg',
     services: [],
     settings: {
       searchUrl: 'https://google.com/search?q=',
+      title: '',
+      logo: '',
+      favicon: '',
     },
     modules: {},
   },
-  setConfig: () => { },
-  loadConfig: async (name: string) => { },
+  setConfig: () => {},
+  loadConfig: async (name: string) => {},
   getConfigs: async () => [],
 });
 
@@ -44,12 +44,12 @@ type Props = {
 export function ConfigProvider({ children }: Props) {
   const [config, setConfigInternal] = useState<Config>({
     name: 'default',
-    title: 'Homarr 🦞',
-    logo: '/imgs/logo.png',
-    favicon: '/favicon.svg',
     services: [],
     settings: {
       searchUrl: 'https://www.google.com/search?q=',
+      title: '',
+      logo: '',
+      favicon: '',
     },
     modules: {},
   });
