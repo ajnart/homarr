@@ -73,12 +73,13 @@ export default function TotalDownloadsComponent() {
   const totalDownloadSpeed = torrents.reduce((acc, torrent) => acc + torrent.downloadSpeed, 0);
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
   useEffect(() => {
+    if (downloadServices.length === 0) return;
     setSafeInterval(() => {
       axios.post('/api/modules/downloads', { config }).then((response) => {
         setTorrents(response.data);
       });
     }, 1000);
-  }, []);
+  }, [config.services]);
 
   useEffect(() => {
     torrentHistoryHandlers.append({
