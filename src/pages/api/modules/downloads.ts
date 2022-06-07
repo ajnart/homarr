@@ -24,34 +24,34 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   }
   if (qBittorrentService) {
     torrents.push(
-      ...((
+      ...(
         await new QBittorrent({
           baseUrl: qBittorrentService.url,
           username: qBittorrentService.username,
           password: qBittorrentService.password,
         }).getAllData()
-      ).torrents)
+      ).torrents
     );
   }
   if (delugeService) {
     torrents.push(
-      ...((
+      ...(
         await new Deluge({
           baseUrl: delugeService.url,
           password: delugeService.password,
         }).getAllData()
-      ).torrents)
+      ).torrents
     );
   }
   if (transmissionService) {
     torrents.push(
-      ...((
+      ...(
         await new Transmission({
           baseUrl: transmissionService.url,
           username: transmissionService.username,
           password: transmissionService.password,
         }).getAllData()
-      ).torrents)
+      ).torrents
     );
   }
   res.status(200).json(torrents);
