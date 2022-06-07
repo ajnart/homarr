@@ -1,4 +1,15 @@
-import { Table, Text, Tooltip, Title, Group, Progress, Skeleton, ScrollArea } from '@mantine/core';
+import {
+  Table,
+  Text,
+  Tooltip,
+  Title,
+  Group,
+  Progress,
+  Skeleton,
+  ScrollArea,
+  Center,
+  Image,
+} from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -34,14 +45,18 @@ export default function DownloadComponent() {
     (config?.modules?.[DownloadsModule.title]?.options?.hidecomplete?.value as boolean) ?? false;
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    setIsLoading(true);
+    if (downloadServices.length === 0) return;
     setSafeInterval(() => {
       // Send one request with each download service inside
       axios.post('/api/modules/downloads', { config }).then((response) => {
         setTorrents(response.data);
+        setIsLoading(false);
       });
     }, 1000);
-  }, [config.modules]);
+  }, [config.services]);
 
   if (downloadServices.length === 0) {
     return (
@@ -55,7 +70,7 @@ export default function DownloadComponent() {
     );
   }
 
-  if (torrents.length === 0) {
+  if (isLoading) {
     return (
       <>
         <Skeleton height={40} mt={10} />
@@ -115,14 +130,24 @@ export default function DownloadComponent() {
       </tr>
     );
   });
+
+  const easteregg = (
+    <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Image fit="cover" height={300} src="https://danjohnvelasco.github.io/images/empty.png" />
+    </Center>
+  );
   return (
     <Group noWrap grow direction="column">
       <Title order={4}>Your torrents</Title>
       <ScrollArea sx={{ height: 300 }}>
-        <Table highlightOnHover>
-          <thead>{ths}</thead>
-          <tbody>{rows}</tbody>
-        </Table>
+        {rows.length > 0 ? (
+          <Table highlightOnHover>
+            <thead>{ths}</thead>
+            <tbody>{rows}</tbody>
+          </Table>
+        ) : (
+          easteregg
+        )}
       </ScrollArea>
     </Group>
   );
