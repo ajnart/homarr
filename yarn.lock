@@ -1583,17 +1583,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ctrl/deluge@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@ctrl/deluge@npm:4.0.0"
+"@ctrl/deluge@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@ctrl/deluge@npm:4.1.0"
   dependencies:
-    "@ctrl/magnet-link": ^3.1.0
-    "@ctrl/shared-torrent": ^4.1.0
+    "@ctrl/magnet-link": ^3.1.1
+    "@ctrl/shared-torrent": ^4.1.1
     "@ctrl/url-join": ^2.0.0
     formdata-node: ^4.3.2
-    got: ^12.0.1
+    got: ^12.1.0
     tough-cookie: ^4.0.0
-  checksum: d4b828fb580a3e4c589169044b78e74d2d1c6ea3ff24f24c9aba59a5fc88320c494eebe814aa0f048e772d698ddd5979f8cd92d4144b0550227bc502342c82ed
+  checksum: a17f974e1b98a9086e1036604a86d3e14b5cf9c8d0fd997357dd4522dc296f0ef92e2697231f97f7211c0224e35256af966f722b6b316a363533328908cd8d5e
   languageName: node
   linkType: hard
 
@@ -1603,6 +1603,15 @@ __metadata:
   dependencies:
     "@ctrl/ts-base32": ^2.1.1
   checksum: 143b681215d2b5d13691acd4fd546159b31fc49270c287d40e56c2303a55378ba80ab5372fd7688e1256b68908a8dc62bef0ea26897168f440b169efe1d09dcf
+  languageName: node
+  linkType: hard
+
+"@ctrl/magnet-link@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@ctrl/magnet-link@npm:3.1.1"
+  dependencies:
+    "@ctrl/ts-base32": ^2.1.1
+  checksum: 82533b50e2a60b2cfbad19879b0b16dbdbf2cfb633cda519d9cac7ab4039d52f98bc10185a5f6ffd29cfe415d709b8748ebe7cf763e522e0c4dcee8dde6506fe
   languageName: node
   linkType: hard
 
@@ -9416,7 +9425,7 @@ __metadata:
   resolution: "homarr@workspace:."
   dependencies:
     "@babel/core": ^7.17.8
-    "@ctrl/deluge": ^4.0.0
+    "@ctrl/deluge": ^4.1.0
     "@ctrl/qbittorrent": ^4.0.0
     "@ctrl/shared-torrent": ^4.1.0
     "@ctrl/transmission": ^4.1.1
