@@ -1,49 +1,38 @@
 import { TextInput, Group, Button } from '@mantine/core';
-import { useState } from 'react';
+import { useForm } from '@mantine/form';
 import { useConfig } from '../../tools/state';
 
 export default function TitleChanger() {
   const { config, loadConfig, setConfig, getConfigs } = useConfig();
-  const [customTitle, setCustomTitle] = useState(config.title);
-  const [customLogo, setCustomLogo] = useState(config.logo);
-  const [customFavicon, setCustomFavicon] = useState(config.favicon);
 
-  const saveChanges = () => {
+  const form = useForm({
+    initialValues: {
+      title: config.settings.title,
+      logo: config.settings.logo,
+      favicon: config.settings.favicon,
+    },
+  });
+
+  const saveChanges = (values: { title: string; logo: string; favicon: string }) => {
     setConfig({
       ...config,
-      title: customTitle || "Homarr 🦞",
-      logo: customLogo || "/imgs/logo.png",
-      favicon: customFavicon || "/favicon.svg",
+      settings: {
+        ...config.settings,
+        title: values.title,
+        logo: values.logo,
+        favicon: values.favicon,
+      },
     });
-  }
+  };
 
   return (
-    <Group grow direction="column">
-      <TextInput
-        label="Page title"
-        defaultValue={config.title}
-        value={customTitle}
-        onChange={(event) => setCustomTitle(event.currentTarget.value)}
-      />
-      <TextInput
-        label="Logo"
-        defaultValue={config.logo}
-        value={customLogo}
-        onChange={(event) => setCustomLogo(event.currentTarget.value)}
-      />
-      <TextInput
-        label="Favicon"
-        defaultValue={config.favicon}
-        value={customFavicon}
-        onChange={(event) => setCustomFavicon(event.currentTarget.value)}
-      />
-      <Button
-        variant="gradient"
-        gradient={{ from: 'red', to: 'orange' }}
-        onClick={() => saveChanges()}
-      >
-        Save
-      </Button>
-    </Group>
+    <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
+      <TextInput label="Page title" placeholder="'Homarr 🦞" {...form.getInputProps('title')} />
+      <TextInput label="Logo" placeholder="/img/logo.png" {...form.getInputProps('logo')} />
+      <TextInput label="Favicon" placeholder="/favicon.svg" {...form.getInputProps('favicon')} />
+      <Group grow position="center" mt="xl">
+        <Button type="submit">Save</Button>
+      </Group>
+    </form>
   );
 }
