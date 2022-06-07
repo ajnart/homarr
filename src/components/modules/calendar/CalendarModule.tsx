@@ -111,27 +111,27 @@ function DayComponent(props: any) {
     props;
   const [opened, setOpened] = useState(false);
 
-  const day = renderdate.getDate();
+  const day = renderdate.toDateString();
 
   const readarrFiltered = readarrmedias.filter((media: any) => {
     const date = new Date(media.releaseDate);
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    return date.toDateString() === day;
   });
 
   const lidarrFiltered = lidarrmedias.filter((media: any) => {
     const date = new Date(media.releaseDate);
     // Return true if the date is renerdate without counting hours and minutes
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    return date.toDateString() === day;
   });
   const sonarrFiltered = sonarrmedias.filter((media: any) => {
     const date = new Date(media.airDate);
     // Return true if the date is renerdate without counting hours and minutes
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    return date.toDateString() === day;
   });
   const radarrFiltered = radarrmedias.filter((media: any) => {
     const date = new Date(media.inCinemas);
     // Return true if the date is renerdate without counting hours and minutes
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    return date.toDateString() === day;
   });
   if (
     sonarrFiltered.length === 0 &&
