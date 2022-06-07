@@ -2,6 +2,9 @@ import { OptionValues } from '../components/modules/modules';
 
 export interface Settings {
   searchUrl: string;
+  title?: string;
+  logo?: string;
+  favicon?: string;
 }
 
 export interface Config {
