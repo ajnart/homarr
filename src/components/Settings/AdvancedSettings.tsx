@@ -10,10 +10,16 @@ export default function TitleChanger() {
       title: config.settings.title,
       logo: config.settings.logo,
       favicon: config.settings.favicon,
+      background: config.settings.background,
     },
   });
 
-  const saveChanges = (values: { title?: string; logo?: string; favicon?: string }) => {
+  const saveChanges = (values: {
+    title?: string;
+    logo?: string;
+    favicon?: string;
+    background?: string;
+  }) => {
     setConfig({
       ...config,
       settings: {
@@ -21,6 +27,7 @@ export default function TitleChanger() {
         title: values.title,
         logo: values.logo,
         favicon: values.favicon,
+        background: values.background,
       },
     });
   };
@@ -36,6 +43,7 @@ export default function TitleChanger() {
             placeholder="/favicon.svg"
             {...form.getInputProps('favicon')}
           />
+          <TextInput label="Background" placeholder="" {...form.getInputProps('background')} />
           <Button type="submit" color={config.settings.primary_color || 'red'}>
             Save
           </Button>

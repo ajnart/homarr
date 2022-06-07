@@ -28,6 +28,7 @@ export default function Aside(props: any) {
       className={cx(classes.hide)}
       style={{
         border: 'none',
+        background: 'none',
       }}
       width={{
         base: 'auto',

@@ -3,6 +3,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import Aside from './Aside';
 import { HeaderConfig } from './HeaderConfig';
+import { Background } from './Background';
 
 const useStyles = createStyles((theme) => ({
   main: {},
@@ -13,6 +14,7 @@ export default function Layout({ children, style }: any) {
   return (
     <AppShell aside={<Aside />} header={<Header />} footer={<Footer links={[]} />}>
       <HeaderConfig />
+      <Background />
       <main
         className={cx(classes.main)}
         style={{
