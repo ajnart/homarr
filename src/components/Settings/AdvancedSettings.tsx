@@ -29,7 +29,7 @@ export default function TitleChanger() {
     <Group direction="column" grow>
       <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
         <Group grow direction="column">
-          <TextInput label="Page title" placeholder="'Homarr 🦞" {...form.getInputProps('title')} />
+          <TextInput label="Page title" placeholder="Homarr 🦞" {...form.getInputProps('title')} />
           <TextInput label="Logo" placeholder="/img/logo.png" {...form.getInputProps('logo')} />
           <TextInput
             label="Favicon"
