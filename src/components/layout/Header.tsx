@@ -41,7 +41,7 @@ export function Header(props: any) {
 
   return (
     <Head height="auto">
-      <Group m="xs" position="apart">
+      <Group p="xs" position="apart">
         <Box className={classes.hide}>
           <Logo style={{ fontSize: 22 }} />
         </Box>

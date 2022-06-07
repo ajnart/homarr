@@ -5,7 +5,6 @@ import {
   SegmentedControl,
   TextInput,
   Anchor,
-  ColorPicker,
   useMantineTheme,
 } from '@mantine/core';
 import { useState } from 'react';

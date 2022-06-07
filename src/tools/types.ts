@@ -7,6 +7,7 @@ export interface Settings {
   favicon?: string;
   primary_color?: string;
   secondary_color?: string;
+  background?: string;
 }
 
 export interface Config {
