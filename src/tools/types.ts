@@ -6,6 +6,9 @@ export interface Settings {
 
 export interface Config {
   name: string;
+  title: string;
+  logo: string;
+  favicon: string;
   services: serviceItem[];
   settings: Settings;
   modules: {
