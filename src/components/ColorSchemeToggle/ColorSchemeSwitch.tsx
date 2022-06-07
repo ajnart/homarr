@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStyles, Switch, Group, useMantineColorScheme, Kbd } from '@mantine/core';
 import { IconSun as Sun, IconMoonStars as MoonStars } from '@tabler/icons';
+import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -29,6 +30,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function ColorSchemeSwitch() {
+  const { config } = useConfig();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const { classes, cx } = useStyles();
 
@@ -37,7 +39,12 @@ export function ColorSchemeSwitch() {
       <div className={classes.root}>
         <Sun className={cx(classes.icon, classes.iconLight)} size={18} />
         <MoonStars className={cx(classes.icon, classes.iconDark)} size={18} />
-        <Switch checked={colorScheme === 'dark'} onChange={() => toggleColorScheme()} size="md" />
+        <Switch
+          color={config.settings.primary_color || 'red'}
+          checked={colorScheme === 'dark'}
+          onChange={() => toggleColorScheme()}
+          size="md"
+        />
       </div>
       Switch to {colorScheme === 'dark' ? 'light' : 'dark'} mode
       <Group spacing={2}>
