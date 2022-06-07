@@ -26,7 +26,7 @@ export default function ConfigChanger() {
       label="Config loader"
       onChange={(e) => {
         loadConfig(e ?? 'default');
-        setCookies('config-name', e ?? 'default', { maxAge: 60 * 60 * 24 * 30 });
+        setCookies('config-name', e ?? 'default', { maxAge: 60 * 60 * 24 * 30, sameSite: 'strict' });
       }}
       data={
         // If config list is empty, return the current config
