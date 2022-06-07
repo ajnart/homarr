@@ -14,10 +14,3 @@
 
 ### Screenshot _(if applicable)_
 > If you've introduced any significant UI changes, please include a screenshot.
-
-### Code Quality Checklist _(Please complete)_
-- [ ] All changes are backwards compatible
-- [ ] There are no (new) build warnings or errors
-- [ ] _(If a new config option is added)_ Attribute is outlined in the schema and documented
-- [ ] _(If a new dependency is added)_ Package is essential, and has been checked out for security or performance
-- [ ] Bumps version, if new feature added

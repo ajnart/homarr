@@ -19,7 +19,6 @@ import { ModuleWrapper } from '../modules/moduleWrapper';
 import { DownloadsModule } from '../modules';
 
 const useStyles = createStyles((theme, _params) => ({
-
   item: {
     borderBottom: 0,
     overflow: 'hidden',
@@ -31,7 +30,6 @@ const useStyles = createStyles((theme, _params) => ({
   itemOpened: {
     borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
   },
-
 }));
 
 const AppShelf = (props: any) => {

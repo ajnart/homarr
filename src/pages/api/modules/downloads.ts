@@ -34,15 +34,13 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     );
   }
   if (delugeService) {
-    const delugeTorrents = (
-      await new Deluge({
-        baseUrl: delugeService.url,
-        username: delugeService.username,
-        password: delugeService.password,
-      }).getAllData()
-    ).torrents;
-    delugeTorrents.forEach((delugeTorrent) =>
-      torrents.push({ ...delugeTorrent, progress: delugeTorrent.progress / 100 })
+    torrents.push(
+      ...(
+        await new Deluge({
+          baseUrl: delugeService.url,
+          password: delugeService.password,
+        }).getAllData()
+      ).torrents
     );
   }
   if (transmissionService) {
