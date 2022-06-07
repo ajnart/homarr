@@ -13,7 +13,7 @@ export default function TitleChanger() {
     },
   });
 
-  const saveChanges = (values: { title: string; logo: string; favicon: string }) => {
+  const saveChanges = (values: { title?: string; logo?: string; favicon?: string }) => {
     setConfig({
       ...config,
       settings: {
