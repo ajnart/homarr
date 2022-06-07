@@ -145,7 +145,7 @@ export function SettingsMenuButton(props: any) {
   return (
     <>
       <Drawer
-        size="auto"
+        size="xl"
         padding="xl"
         position="right"
         title={<Title order={3}>Settings</Title>}

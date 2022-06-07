@@ -18,9 +18,6 @@ const configContext = createContext<configContextType>({
     services: [],
     settings: {
       searchUrl: 'https://google.com/search?q=',
-      title: '',
-      logo: '',
-      favicon: '',
     },
     modules: {},
   },
@@ -47,9 +44,6 @@ export function ConfigProvider({ children }: Props) {
     services: [],
     settings: {
       searchUrl: 'https://www.google.com/search?q=',
-      title: '',
-      logo: '',
-      favicon: '',
     },
     modules: {},
   });

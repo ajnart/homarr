@@ -10,9 +10,6 @@ export function getConfig(name: string) {
         configName: name,
         config: {
           name: name.toString(),
-          title: 'Homarr 🦞',
-          logo: '/imgs/logo.png',
-          favicon: '/favicon.svg',
           services: [],
           settings: {
             searchUrl: 'https://www.google.com/search?q=',
