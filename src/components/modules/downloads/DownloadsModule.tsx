@@ -91,45 +91,44 @@ export default function DownloadComponent() {
     </tr>
   );
   // Loop over qBittorrent torrents merging with deluge torrents
-  const rows = torrents.map((torrent) => {
-    if (torrent.progress === 1 && hideComplete) {
-      return [];
-    }
-    const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
-    const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
-    return (
-      <tr key={torrent.id}>
-        <td>
-          <Tooltip position="top" label={torrent.name}>
-            <Text
-              style={{
-                maxWidth: '30vw',
-              }}
-              size="xs"
-              lineClamp={1}
-            >
-              {torrent.name}
-            </Text>
-          </Tooltip>
-        </td>
-        <td>
-          <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
-        </td>
-        <td>
-          <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
-        </td>
-        <td>
-          <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
-          <Progress
-            radius="lg"
-            color={torrent.progress === 1 ? 'green' : 'blue'}
-            value={torrent.progress * 100}
-            size="lg"
-          />
-        </td>
-      </tr>
-    );
-  });
+  const rows = torrents
+    .filter((torrent) => !(torrent.progress === 1 && hideComplete))
+    .map((torrent) => {
+      const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
+      const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
+      return (
+        <tr key={torrent.id}>
+          <td>
+            <Tooltip position="top" label={torrent.name}>
+              <Text
+                style={{
+                  maxWidth: '30vw',
+                }}
+                size="xs"
+                lineClamp={1}
+              >
+                {torrent.name}
+              </Text>
+            </Tooltip>
+          </td>
+          <td>
+            <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
+          </td>
+          <td>
+            <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
+          </td>
+          <td>
+            <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
+            <Progress
+              radius="lg"
+              color={torrent.progress === 1 ? 'green' : 'blue'}
+              value={torrent.progress * 100}
+              size="lg"
+            />
+          </td>
+        </tr>
+      );
+    });
 
   const easteregg = (
     <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
