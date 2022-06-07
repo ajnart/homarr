@@ -40,7 +40,7 @@ export function ColorSchemeSwitch() {
         <Sun className={cx(classes.icon, classes.iconLight)} size={18} />
         <MoonStars className={cx(classes.icon, classes.iconDark)} size={18} />
         <Switch
-          color={config.settings.primary_color || 'red'}
+          color={config.settings.primaryColor || 'red'}
           checked={colorScheme === 'dark'}
           onChange={() => toggleColorScheme()}
           size="md"

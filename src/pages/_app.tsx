@@ -34,7 +34,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <MantineProvider
           theme={{
             ...theme,
-            primaryColor: config.settings.primary_color || 'red',
+            primaryColor: config.settings.primaryColor || 'red',
             colorScheme,
           }}
           styles={{

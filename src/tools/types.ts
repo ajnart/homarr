@@ -5,8 +5,8 @@ export interface Settings {
   title?: string;
   logo?: string;
   favicon?: string;
-  primary_color?: string;
-  secondary_color?: string;
+  primaryColor?: string;
+  secondaryColor?: string;
   background?: string;
 }
 

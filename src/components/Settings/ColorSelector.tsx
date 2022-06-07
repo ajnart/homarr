@@ -17,8 +17,8 @@ export function ColorSelector({ type }: ColorControlProps) {
 
   const configColor =
     type === 'primary'
-      ? config.settings.primary_color || 'red'
-      : config.settings.secondary_color || 'orange';
+      ? config.settings.primaryColor || 'red'
+      : config.settings.secondaryColor || 'orange';
 
   const setConfigColor = (color: string) => {
     if (type === 'primary') {
@@ -26,7 +26,7 @@ export function ColorSelector({ type }: ColorControlProps) {
         ...config,
         settings: {
           ...config.settings,
-          primary_color: color,
+          primaryColor: color,
         },
       });
     } else {
@@ -34,7 +34,7 @@ export function ColorSelector({ type }: ColorControlProps) {
         ...config,
         settings: {
           ...config.settings,
-          secondary_color: color,
+          secondaryColor: color,
         },
       });
     }
