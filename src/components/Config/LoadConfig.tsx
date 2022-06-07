@@ -90,7 +90,10 @@ export default function LoadConfigComponent(props: any) {
             icon: <Check />,
             message: undefined,
           });
-          setCookies('config-name', newConfig.name, { maxAge: 60 * 60 * 24 * 30 });
+          setCookies('config-name', newConfig.name, {
+            maxAge: 60 * 60 * 24 * 30,
+            sameSite: 'strict',
+          });
           const migratedConfig = migrateToIdConfig(newConfig);
           setConfig(migratedConfig);
         });

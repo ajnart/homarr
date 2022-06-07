@@ -43,7 +43,7 @@ export default function AuthenticationTitle() {
           onSubmit={form.onSubmit((values) => {
             setCookies('password', values.password, {
               maxAge: 60 * 60 * 24 * 30,
-              sameSite: 'strict',
+              sameSite: 'lax',
             });
             showNotification({
               id: 'load-data',
