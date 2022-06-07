@@ -13,6 +13,7 @@ export default function ModuleEnabler(props: any) {
           size="md"
           checked={config.modules?.[module.title]?.enabled ?? false}
           label={`Enable ${module.title}`}
+          color={config.settings.primary_color || 'red'}
           onChange={(e) => {
             setConfig({
               ...config,

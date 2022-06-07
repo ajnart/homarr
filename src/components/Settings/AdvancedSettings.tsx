@@ -36,7 +36,9 @@ export default function TitleChanger() {
             placeholder="/favicon.svg"
             {...form.getInputProps('favicon')}
           />
-          <Button type="submit">Save</Button>
+          <Button type="submit" color={config.settings.primary_color || 'red'}>
+            Save
+          </Button>
         </Group>
       </form>
     </Group>

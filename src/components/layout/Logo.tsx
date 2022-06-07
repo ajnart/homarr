@@ -26,7 +26,11 @@ export function Logo({ style }: any) {
           sx={style}
           weight="bold"
           variant="gradient"
-          gradient={{ from: 'red', to: 'orange', deg: 145 }}
+          gradient={{
+            from: config.settings.primary_color || 'red',
+            to: config.settings.secondary_color || 'orange',
+            deg: 145,
+          }}
         >
           {config.settings.title || 'Homarr'}
         </Text>

@@ -6,12 +6,13 @@ import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
-import { ConfigProvider } from '../tools/state';
+import { ConfigProvider, useConfig } from '../tools/state';
 import { theme } from '../tools/theme';
 import { styles } from '../tools/styles';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
+  const { config } = useConfig();
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
   const toggleColorScheme = (value?: ColorScheme) => {
@@ -33,6 +34,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <MantineProvider
           theme={{
             ...theme,
+            primaryColor: config.settings.primary_color || 'red',
             colorScheme,
           }}
           styles={{
