@@ -124,8 +124,7 @@ function DayComponent(props: any) {
     return date.toDateString() === day;
   });
   const sonarrFiltered = sonarrmedias.filter((media: any) => {
-    const date = new Date(media.airDate);
-    // Return true if the date is renerdate without counting hours and minutes
+    const date = new Date(media.airDateUtc);
     return date.toDateString() === day;
   });
   const radarrFiltered = radarrmedias.filter((media: any) => {
