@@ -43,11 +43,7 @@ export default function TitleChanger() {
             placeholder="/favicon.svg"
             {...form.getInputProps('favicon')}
           />
-          <TextInput
-            label="Background"
-            placeholder="/background.png"
-            {...form.getInputProps('background')}
-          />
+          <TextInput label="Background" placeholder="" {...form.getInputProps('background')} />
           <Button type="submit">Save</Button>
         </Group>
       </form>
