@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ColorSwatch, Group, Popover, Text, useMantineTheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
+import { useColorTheme } from '../../tools/color';
 
 interface ColorControlProps {
   type: string;
@@ -9,19 +10,20 @@ interface ColorControlProps {
 export function ColorSelector({ type }: ColorControlProps) {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
+
+  const { primaryColor, secondaryColor, setPrimaryColor, setSecondaryColor } = useColorTheme();
+
   const theme = useMantineTheme();
   const colors = Object.keys(theme.colors).map((color) => ({
     swatch: theme.colors[color][6],
     color,
   }));
 
-  const configColor =
-    type === 'primary'
-      ? config.settings.primaryColor || 'red'
-      : config.settings.secondaryColor || 'orange';
+  const configColor = type === 'primary' ? primaryColor : secondaryColor;
 
   const setConfigColor = (color: string) => {
     if (type === 'primary') {
+      setPrimaryColor(color);
       setConfig({
         ...config,
         settings: {
@@ -30,6 +32,7 @@ export function ColorSelector({ type }: ColorControlProps) {
         },
       });
     } else {
+      setSecondaryColor(color);
       setConfig({
         ...config,
         settings: {
@@ -62,7 +65,7 @@ export function ColorSelector({ type }: ColorControlProps) {
           <ColorSwatch
             component="button"
             type="button"
-            color={theme.colors[configColor || 'red'][6]}
+            color={theme.colors[configColor][6]}
             onClick={() => setOpened((o) => !o)}
             size={22}
             style={{ display: 'block', cursor: 'pointer' }}
