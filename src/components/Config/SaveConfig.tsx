@@ -59,20 +59,13 @@ export default function SaveConfigComponent(props: any) {
           </Group>
         </form>
       </Modal>
-      <Button
-        size="xs"
-        leftIcon={<Download />}
-        variant="outline"
-        color={config.settings.primaryColor || 'red'}
-        onClick={onClick}
-      >
+      <Button size="xs" leftIcon={<Download />} variant="outline" onClick={onClick}>
         Download config
       </Button>
       <Button
         size="xs"
         leftIcon={<Trash />}
         variant="outline"
-        color={config.settings.primaryColor || 'red'}
         onClick={() => {
           axios
             .delete(`/api/configs/${config.name}`)
@@ -101,13 +94,7 @@ export default function SaveConfigComponent(props: any) {
       >
         Delete config
       </Button>
-      <Button
-        size="xs"
-        leftIcon={<Plus />}
-        variant="outline"
-        color={config.settings.primaryColor || 'red'}
-        onClick={() => setOpened(true)}
-      >
+      <Button size="xs" leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
         Save a copy
       </Button>
     </Group>

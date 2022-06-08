@@ -44,9 +44,7 @@ export default function TitleChanger() {
             {...form.getInputProps('favicon')}
           />
           <TextInput label="Background" placeholder="" {...form.getInputProps('background')} />
-          <Button type="submit" color={config.settings.primaryColor || 'red'}>
-            Save
-          </Button>
+          <Button type="submit">Save</Button>
         </Group>
       </form>
     </Group>
