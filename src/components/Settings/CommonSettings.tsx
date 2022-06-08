@@ -9,6 +9,7 @@ import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
 import { ColorSelector } from './ColorSelector';
 import { ShadeSelector } from './ShadeSelector';
+import { OpacitySelector } from './OpacitySelector';
 
 export default function CommonSettings(args: any) {
   const { config, setConfig } = useConfig();
@@ -74,6 +75,7 @@ export default function CommonSettings(args: any) {
       <ColorSelector type="primary" />
       <ColorSelector type="secondary" />
       <ShadeSelector />
+      <OpacitySelector />
       <ConfigChanger />
       <SaveConfigComponent />
       <Text

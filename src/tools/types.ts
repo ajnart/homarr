@@ -1,5 +1,5 @@
-import { OptionValues } from '../components/modules/modules';
 import { MantineTheme } from '@mantine/core';
+import { OptionValues } from '../components/modules/modules';
 
 export interface Settings {
   searchUrl: string;
@@ -10,6 +10,7 @@ export interface Settings {
   secondaryColor?: MantineTheme['primaryColor'];
   primaryShade?: MantineTheme['primaryShade'];
   background?: string;
+  appOpacity?: number;
 }
 
 export interface Config {
