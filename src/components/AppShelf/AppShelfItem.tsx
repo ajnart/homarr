@@ -6,6 +6,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { serviceItem } from '../../tools/types';
 import PingComponent from '../modules/ping/PingModule';
 import AppShelfMenu from './AppShelfMenu';
+import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -25,8 +26,10 @@ export function SortableAppShelfItem(props: any) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
     id: props.id,
   });
+  const { config } = useConfig();
 
   const style = {
+    opacity: `${config.settings.appOpacity || 100}%`,
     transform: CSS.Transform.toString(transform),
     transition,
   };
