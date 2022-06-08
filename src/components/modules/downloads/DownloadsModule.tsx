@@ -136,8 +136,7 @@ export default function DownloadComponent() {
     </Center>
   );
   return (
-    <Group noWrap grow direction="column">
-      <Title order={4}>Your torrents</Title>
+    <Group noWrap grow direction="column" mt="xl">
       <ScrollArea sx={{ height: 300 }}>
         {rows.length > 0 ? (
           <Table highlightOnHover>

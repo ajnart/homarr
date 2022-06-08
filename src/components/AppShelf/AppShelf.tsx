@@ -15,8 +15,9 @@ import { useLocalStorage } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
-import { ModuleWrapper } from '../modules/moduleWrapper';
+import { ModuleMenu, ModuleWrapper } from '../modules/moduleWrapper';
 import { DownloadsModule } from '../modules';
+import DownloadComponent from '../modules/downloads/DownloadsModule';
 
 const useStyles = createStyles((theme, _params) => ({
   item: {
@@ -137,6 +138,7 @@ const AppShelf = (props: any) => {
       // Return one item for each category
       <Group grow direction="column">
         <Accordion
+          disableIconRotation
           classNames={classes}
           order={2}
           iconPosition="right"
@@ -160,8 +162,11 @@ const AppShelf = (props: any) => {
               {item()}
             </Accordion.Item>
           ) : null}
+          <Accordion.Item key="Downloads" label="Your downloads">
+            <ModuleMenu module={DownloadsModule} />
+            <DownloadComponent />
+          </Accordion.Item>
         </Accordion>
-        <ModuleWrapper mt="xl" module={DownloadsModule} />
       </Group>
     );
   }
