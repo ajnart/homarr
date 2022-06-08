@@ -1,12 +1,14 @@
 import { OptionValues } from '../components/modules/modules';
+import { MantineTheme } from '@mantine/core';
 
 export interface Settings {
   searchUrl: string;
   title?: string;
   logo?: string;
   favicon?: string;
-  primaryColor?: string;
-  secondaryColor?: string;
+  primaryColor?: MantineTheme['primaryColor'];
+  secondaryColor?: MantineTheme['primaryColor'];
+  primaryShade?: MantineTheme['primaryShade'];
   background?: string;
 }
 

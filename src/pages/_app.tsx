@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AppProps } from 'next/app';
 import { getCookie, setCookies } from 'cookies-next';
 import Head from 'next/head';
-import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
+import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
 import { ConfigProvider } from '../tools/state';
@@ -15,13 +15,16 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
-  const [primaryColor, setPrimaryColor] = useState<string>('red');
-  const [secondaryColor, setSecondaryColor] = useState<string>('orange');
+  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
+  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
+  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(6);
   const colorTheme = {
     primaryColor,
     secondaryColor,
     setPrimaryColor,
     setSecondaryColor,
+    primaryShade,
+    setPrimaryShade,
   };
 
   const toggleColorScheme = (value?: ColorScheme) => {
@@ -45,6 +48,7 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
             theme={{
               ...theme,
               primaryColor,
+              primaryShade,
               colorScheme,
             }}
             styles={{

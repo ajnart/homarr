@@ -1,12 +1,4 @@
-import {
-  ActionIcon,
-  Group,
-  Text,
-  SegmentedControl,
-  TextInput,
-  Anchor,
-  useMantineTheme,
-} from '@mantine/core';
+import { ActionIcon, Group, Text, SegmentedControl, TextInput, Anchor } from '@mantine/core';
 import { useState } from 'react';
 import { IconBrandGithub as BrandGithub } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
@@ -16,6 +8,7 @@ import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
 import { ColorSelector } from './ColorSelector';
+import { ShadeSelector } from './ShadeSelector';
 
 export default function CommonSettings(args: any) {
   const { config, setConfig } = useConfig();
@@ -31,24 +24,6 @@ export default function CommonSettings(args: any) {
   const [searchUrl, setSearchUrl] = useState(
     matches.find((match) => match.value === config.settings.searchUrl)?.value ?? 'Custom'
   );
-
-  const theme = useMantineTheme();
-  const colors = Object.keys(theme.colors).map((color) => theme.colors[color][6]);
-
-  const [primaryColor, setPrimaryColor] = useState(config.settings.primaryColor);
-  const [secondaryColor, setSecondaryColor] = useState(config.settings.secondaryColor);
-
-  // const convertColorHexToNames = (hex: string) => {
-  //   // Have to add some exceptions here because it's not converting cleanly
-  //   let colorName = Object.keys(theme.colors).find((key) => theme.colors[key].includes(hex));
-  //   if (!colorName) {
-  //     if (hex === '#228ae6') colorName = 'blue';
-  //     else if (hex === '#15abbf') colorName = 'cyan';
-  //     else if (hex === '#3fbf57') colorName = 'green';
-  //     else if (hex === '#fc7d14') colorName = 'orange';
-  //   }
-  //   return colorName;
-  // };
 
   return (
     <Group direction="column" grow>
@@ -98,6 +73,7 @@ export default function CommonSettings(args: any) {
       <ColorSchemeSwitch />
       <ColorSelector type="primary" />
       <ColorSelector type="secondary" />
+      <ShadeSelector />
       <ConfigChanger />
       <SaveConfigComponent />
       <Text

@@ -1,5 +1,3 @@
 import { MantineProviderProps } from '@mantine/core';
 
-export const theme: MantineProviderProps['theme'] = {
-  primaryShade: 6,
-};
+export const theme: MantineProviderProps['theme'] = {};
