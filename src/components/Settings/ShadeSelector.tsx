@@ -91,7 +91,7 @@ export function ShadeSelector() {
           <Group spacing="xs">{secondarySwatches}</Group>
         </Group>
       </Popover>
-      <Text>Primary shade</Text>
+      <Text>Shade</Text>
     </Group>
   );
 }
