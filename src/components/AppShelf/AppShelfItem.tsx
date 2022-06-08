@@ -1,4 +1,13 @@
-import { Text, Card, Anchor, AspectRatio, Image, Center, createStyles } from '@mantine/core';
+import {
+  Text,
+  Card,
+  Anchor,
+  AspectRatio,
+  Image,
+  Center,
+  createStyles,
+  useMantineColorScheme,
+} from '@mantine/core';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
@@ -26,10 +35,8 @@ export function SortableAppShelfItem(props: any) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
     id: props.id,
   });
-  const { config } = useConfig();
 
   const style = {
-    opacity: `${config.settings.appOpacity || 100}%`,
     transform: CSS.Transform.toString(transform),
     transition,
   };
@@ -44,6 +51,8 @@ export function SortableAppShelfItem(props: any) {
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
   const [hovering, setHovering] = useState(false);
+  const { config } = useConfig();
+  const { colorScheme } = useMantineColorScheme();
   const { classes } = useStyles();
   return (
     <motion.div
@@ -60,7 +69,18 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <Card withBorder radius="lg" shadow="md" className={classes.item}>
+      <Card
+        withBorder
+        radius="lg"
+        shadow="md"
+        className={classes.item}
+        style={{
+          background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+          borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+        }}
+      >
         <Card.Section>
           <Anchor
             target="_blank"
