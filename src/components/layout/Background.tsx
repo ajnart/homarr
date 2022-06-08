@@ -8,8 +8,9 @@ export function Background() {
     <Global
       styles={{
         body: {
+          minHeight: '100vh',
           backgroundImage: `url('${config.settings.background}')` || '',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         },
