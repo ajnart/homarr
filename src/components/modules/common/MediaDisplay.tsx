@@ -53,7 +53,7 @@ export function MediaDisplay(props: { media: IMedia }) {
             alt={media.title}
           />
         )}
-        <Group direction="column" style={{ minWidth: 450 }}>
+        <Group direction="column" style={{ minWidth: phone ? 450 : '65vw' }}>
           <Group noWrap mr="sm" className={classes.overview}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
