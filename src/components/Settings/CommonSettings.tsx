@@ -1,11 +1,4 @@
-import {
-  ActionIcon,
-  Group,
-  Text,
-  SegmentedControl,
-  TextInput,
-  Anchor,
-} from '@mantine/core';
+import { ActionIcon, Group, Text, SegmentedControl, TextInput, Anchor } from '@mantine/core';
 import { useState } from 'react';
 import { IconBrandGithub as BrandGithub } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
