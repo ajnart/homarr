@@ -105,7 +105,7 @@ docker run  \
   --restart unless-stopped \
   -p 7575:7575 \
   -v ./homarr/configs:/app/data/configs \
-  -v ./homarr/icons:/app/public/icons \
+  -v ./homarr/public:/app/public \
   -d ghcr.io/ajnart/homarr:latest
 ```
 
@@ -123,7 +123,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./homarr/configs:/app/data/configs
-      - ./homarr/icons:/app/public/icons
+      - ./homarr/public:/app/public
     ports:
       - '7575:7575'
 ```
