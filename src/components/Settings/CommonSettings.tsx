@@ -7,9 +7,6 @@ import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
-import { ColorSelector } from './ColorSelector';
-import { ShadeSelector } from './ShadeSelector';
-import { OpacitySelector } from './OpacitySelector';
 
 export default function CommonSettings(args: any) {
   const { config, setConfig } = useConfig();
@@ -70,12 +67,9 @@ export default function CommonSettings(args: any) {
           />
         )}
       </Group>
-      <ModuleEnabler />
+
       <ColorSchemeSwitch />
-      <ColorSelector type="primary" />
-      <ColorSelector type="secondary" />
-      <ShadeSelector />
-      <OpacitySelector />
+      <ModuleEnabler />
       <ConfigChanger />
       <SaveConfigComponent />
       <Text
