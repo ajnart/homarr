@@ -1,3 +1,4 @@
+import { MantineTheme } from '@mantine/core';
 import { OptionValues } from '../components/modules/modules';
 
 export interface Settings {
@@ -5,6 +6,11 @@ export interface Settings {
   title?: string;
   logo?: string;
   favicon?: string;
+  primaryColor?: MantineTheme['primaryColor'];
+  secondaryColor?: MantineTheme['primaryColor'];
+  primaryShade?: MantineTheme['primaryShade'];
+  background?: string;
+  appOpacity?: number;
 }
 
 export interface Config {

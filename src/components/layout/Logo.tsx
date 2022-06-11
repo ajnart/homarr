@@ -1,10 +1,12 @@
 import { Group, Image, Text } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import * as React from 'react';
+import { useColorTheme } from '../../tools/color';
 import { useConfig } from '../../tools/state';
 
 export function Logo({ style }: any) {
   const { config } = useConfig();
+  const { primaryColor, secondaryColor } = useColorTheme();
 
   return (
     <Group spacing="xs">
@@ -26,7 +28,11 @@ export function Logo({ style }: any) {
           sx={style}
           weight="bold"
           variant="gradient"
-          gradient={{ from: 'red', to: 'orange', deg: 145 }}
+          gradient={{
+            from: primaryColor,
+            to: secondaryColor,
+            deg: 145,
+          }}
         >
           {config.settings.title || 'Homarr'}
         </Text>

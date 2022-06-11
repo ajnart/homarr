@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, createStyles, Grid, Group } from '@mantine/core';
+import { Accordion, createStyles, Grid, Group, Paper, useMantineColorScheme } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -42,6 +42,7 @@ const AppShelf = (props: any) => {
   });
   const [activeId, setActiveId] = useState(null);
   const { config, setConfig } = useConfig();
+  const { colorScheme } = useMantineColorScheme();
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -164,7 +165,16 @@ const AppShelf = (props: any) => {
           ) : null}
           <Accordion.Item key="Downloads" label="Your downloads">
             <ModuleMenu module={DownloadsModule} />
-            <DownloadComponent />
+            <Paper
+              style={{
+                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+                ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+                ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+            >
+              <DownloadComponent />
+            </Paper>
           </Accordion.Item>
         </Accordion>
       </Group>
