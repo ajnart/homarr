@@ -11,7 +11,7 @@ function SettingsMenu(props: any) {
       <Tabs.Tab data-autofocus label="Common">
         <CommonSettings />
       </Tabs.Tab>
-      <Tabs.Tab label="Advanced">
+      <Tabs.Tab label="Customisations">
         <AdvancedSettings />
       </Tabs.Tab>
     </Tabs>
