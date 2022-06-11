@@ -100,7 +100,7 @@ export default function CalendarComponent(props: any) {
       dayStyle={(date) =>
         date.getDay() === today.getDay() && date.getDate() === today.getDate()
           ? { backgroundColor: '#2C2E33' }
-          : null
+          : {}
       }
       dayClassName={(date, modifiers) =>
         cx({ [classes.weekend]: modifiers.weekend })
