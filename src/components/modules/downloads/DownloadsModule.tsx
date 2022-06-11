@@ -53,7 +53,6 @@ export default function DownloadComponent() {
       // Send one request with each download service inside
       axios.post('/api/modules/downloads', { config }).then((response) => {
         setTorrents(response.data);
-        console.log(response.data);
         setIsLoading(false);
       });
     }, 5000);
