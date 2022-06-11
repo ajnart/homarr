@@ -53,6 +53,7 @@ export default function DownloadComponent() {
       // Send one request with each download service inside
       axios.post('/api/modules/downloads', { config }).then((response) => {
         setTorrents(response.data);
+        console.log(response.data);
         setIsLoading(false);
       });
     }, 5000);
@@ -85,8 +86,10 @@ export default function DownloadComponent() {
   const ths = (
     <tr>
       <th>Name</th>
+      <th>Size</th>
       <th>Download</th>
       <th>Upload</th>
+      <th>ETA</th>
       <th>Progress</th>
     </tr>
   );
@@ -96,6 +99,30 @@ export default function DownloadComponent() {
     .map((torrent) => {
       const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
       const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
+      const size = torrent.totalSelected / (1024 * 1024);
+      // Convert Seconds to readable format.
+      function calculateETA(givenSeconds: number) {
+        if (givenSeconds > 86399) { // No
+          return ">1d"
+        }
+        const time = new Date(givenSeconds * 1000).toISOString();
+        const hours = parseInt(time.substring(11,13));
+        const minutes = parseInt(time.substring(14,16));
+        const seconds = parseInt(time.substring(17,19));
+        var str = "";
+        // If tree go brr
+        if (hours > 0) {
+          str = `${hours}h `;
+        }
+        if (minutes > 0) {
+          str = `${str}${minutes}m `
+        }
+        if (seconds > 0) {
+           str = `${str}${seconds}s`; 
+        }
+        return str.trim();
+      }
+
       return (
         <tr key={torrent.id}>
           <td>
@@ -112,16 +139,22 @@ export default function DownloadComponent() {
             </Tooltip>
           </td>
           <td>
+            <Text size="xs">{size > 0 ? (size > 999 ? `${(size / 1024).toFixed(1)} GB` : `${size.toFixed(1)} MB`) : '-' }</Text>
+          </td>
+          <td>
             <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
           </td>
           <td>
             <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
           </td>
           <td>
+            <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
+          </td>
+          <td>
             <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
             <Progress
               radius="lg"
-              color={torrent.progress === 1 ? 'green' : 'blue'}
+              color={torrent.state === "paused" ? 'yellow' : (torrent.progress === 1 ? 'green' : 'blue')}
               value={torrent.progress * 100}
               size="lg"
             />
