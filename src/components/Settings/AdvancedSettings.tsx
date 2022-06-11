@@ -1,6 +1,9 @@
 import { TextInput, Group, Button } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useConfig } from '../../tools/state';
+import { ColorSelector } from './ColorSelector';
+import { OpacitySelector } from './OpacitySelector';
+import { ShadeSelector } from './ShadeSelector';
 
 export default function TitleChanger() {
   const { config, setConfig } = useConfig();
@@ -51,6 +54,10 @@ export default function TitleChanger() {
           <Button type="submit">Save</Button>
         </Group>
       </form>
+      <ColorSelector type="primary" />
+      <ColorSelector type="secondary" />
+      <ShadeSelector />
+      <OpacitySelector />
     </Group>
   );
 }
