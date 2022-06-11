@@ -1,4 +1,4 @@
-import { Button, Card, Group, Menu, Switch, TextInput } from '@mantine/core';
+import { Button, Card, Group, Menu, Switch, TextInput, useMantineColorScheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { IModule } from './modules';
 
@@ -91,6 +91,7 @@ function getItems(module: IModule) {
 
 export function ModuleWrapper(props: any) {
   const { module }: { module: IModule } = props;
+  const { colorScheme } = useMantineColorScheme();
   const { config, setConfig } = useConfig();
   const enabledModules = config.modules ?? {};
   // Remove 'Module' from enabled modules titles
@@ -99,8 +100,21 @@ export function ModuleWrapper(props: any) {
   if (!isShown) {
     return null;
   }
+
   return (
-    <Card {...props} hidden={!isShown} withBorder radius="lg" shadow="sm">
+    <Card
+      {...props}
+      hidden={!isShown}
+      withBorder
+      radius="lg"
+      shadow="sm"
+      style={{
+        background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+        borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+      }}
+    >
       <ModuleMenu
         module={module}
         styles={{

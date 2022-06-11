@@ -34,14 +34,16 @@ export default function Aside(props: any) {
         base: 'auto',
       }}
     >
-      {matches && (
-        <Group my="sm" grow direction="column" style={{ width: 300 }}>
-          <ModuleWrapper module={CalendarModule} />
-          <ModuleWrapper module={TotalDownloadsModule} />
-          <ModuleWrapper module={WeatherModule} />
-          <ModuleWrapper module={DateModule} />
-        </Group>
-      )}
+      <>
+        {matches && (
+          <Group my="sm" grow direction="column" style={{ width: 300 }}>
+            <ModuleWrapper module={CalendarModule} />
+            <ModuleWrapper module={TotalDownloadsModule} />
+            <ModuleWrapper module={WeatherModule} />
+            <ModuleWrapper module={DateModule} />
+          </Group>
+        )}
+      </>
     </MantineAside>
   );
 }
