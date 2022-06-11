@@ -18,7 +18,7 @@ import { IModule } from '../modules';
 import { WeatherResponse } from './WeatherInterface';
 
 export const WeatherModule: IModule = {
-  title: 'Weather (beta)',
+  title: 'Weather',
   description: 'Look up the current weather in your location',
   icon: Sun,
   component: WeatherComponent,
