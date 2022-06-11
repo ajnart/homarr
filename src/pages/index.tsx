@@ -7,6 +7,7 @@ import { Config } from '../tools/types';
 import { useConfig } from '../tools/state';
 import { migrateToIdConfig } from '../tools/migrate';
 import { getConfig } from '../tools/getConfig';
+import { useColorTheme } from '../tools/color';
 import Layout from '../components/layout/Layout';
 
 export async function getServerSideProps({
@@ -29,8 +30,11 @@ export async function getServerSideProps({
 export default function HomePage(props: any) {
   const { config: initialConfig }: { config: Config } = props;
   const { setConfig } = useConfig();
+  const { setPrimaryColor, setSecondaryColor } = useColorTheme();
   useEffect(() => {
     const migratedConfig = migrateToIdConfig(initialConfig);
+    setPrimaryColor(migratedConfig.settings.primaryColor || 'red');
+    setSecondaryColor(migratedConfig.settings.secondaryColor || 'orange');
     setConfig(migratedConfig);
   }, [initialConfig]);
   return (

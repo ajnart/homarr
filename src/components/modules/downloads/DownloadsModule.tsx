@@ -55,7 +55,7 @@ export default function DownloadComponent() {
         setTorrents(response.data);
         setIsLoading(false);
       });
-    }, 1000);
+    }, 5000);
   }, [config.services]);
 
   if (downloadServices.length === 0) {

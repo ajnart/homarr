@@ -67,8 +67,9 @@ export default function CommonSettings(args: any) {
           />
         )}
       </Group>
-      <ModuleEnabler />
+
       <ColorSchemeSwitch />
+      <ModuleEnabler />
       <ConfigChanger />
       <SaveConfigComponent />
       <Text
