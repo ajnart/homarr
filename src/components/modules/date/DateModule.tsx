@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { IconClock as Clock } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
+import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
 
 export const DateModule: IModule = {
   title: 'Date',
@@ -20,13 +21,14 @@ export const DateModule: IModule = {
 
 export default function DateComponent(props: any) {
   const [date, setDate] = useState(new Date());
+  const setSafeInterval = useSetSafeInterval();
   const { config } = useConfig();
   const isFullTime = config?.modules?.[DateModule.title]?.options?.full?.value ?? false;
   const formatString = isFullTime ? 'HH:mm' : 'h:mm A';
   // Change date on minute change
   // Note: Using 10 000ms instead of 1000ms to chill a little :)
   useEffect(() => {
-    setInterval(() => {
+    setSafeInterval(() => {
       setDate(new Date());
     }, 1000 * 60);
   }, []);

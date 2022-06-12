@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { createStyles, Footer as FooterComponent } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
 import { IconAlertCircle as AlertCircle } from '@tabler/icons';
+import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
 
 const useStyles = createStyles((theme) => ({
   footer: {

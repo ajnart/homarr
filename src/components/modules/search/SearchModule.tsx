@@ -1,11 +1,12 @@
-import { TextInput, Kbd, createStyles, Text, Popover } from '@mantine/core';
-import { useForm, useHotkeys } from '@mantine/hooks';
-import { useRef, useState } from 'react';
+import { Kbd, createStyles, Text, Popover, Autocomplete } from '@mantine/core';
+import { useDebouncedValue, useForm, useHotkeys } from '@mantine/hooks';
+import { useEffect, useRef, useState } from 'react';
 import {
   IconSearch as Search,
   IconBrandYoutube as BrandYoutube,
   IconDownload as Download,
 } from '@tabler/icons';
+import axios from 'axios';
 import { useConfig } from '../../../tools/state';
 import { IModule } from '../modules';
 
@@ -32,8 +33,22 @@ export default function SearchBar(props: any) {
   const [icon, setIcon] = useState(<Search />);
   const queryUrl = config.settings.searchUrl ?? 'https://www.google.com/search?q=';
   const textInput = useRef<HTMLInputElement>();
-  useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
+  // Find a service with the type of 'Overseerr'
+  const form = useForm({
+    initialValues: {
+      query: '',
+    },
+  });
 
+  const [debounced, cancel] = useDebouncedValue(form.values.query, 250);
+  const [results, setResults] = useState<any[]>([]);
+  useEffect(() => {
+    if (form.values.query !== debounced || form.values.query === '') return;
+    axios
+      .get(`/api/modules/search?q=${form.values.query}`)
+      .then((res) => setResults(res.data ?? []));
+  }, [debounced]);
+  useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
   const { classes, cx } = useStyles();
   const rightSection = (
     <div className={classes.hide}>
@@ -43,12 +58,6 @@ export default function SearchBar(props: any) {
     </div>
   );
 
-  const form = useForm({
-    initialValues: {
-      query: '',
-    },
-  });
-
   // If enabled modules doesn't contain the module, return null
   // If module in enabled
 
@@ -57,6 +66,10 @@ export default function SearchBar(props: any) {
     return null;
   }
 
+  const autocompleteData = results.map((result) => ({
+    label: result.phrase,
+    value: result.phrase,
+  }));
   return (
     <form
       onChange={() => {
@@ -100,8 +113,9 @@ export default function SearchBar(props: any) {
         onFocusCapture={() => setOpened(true)}
         onBlurCapture={() => setOpened(false)}
         target={
-          <TextInput
+          <Autocomplete
             variant="filled"
+            data={autocompleteData}
             icon={icon}
             ref={textInput}
             rightSectionWidth={90}

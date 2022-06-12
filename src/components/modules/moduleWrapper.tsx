@@ -1,4 +1,4 @@
-import { Button, Card, Group, Menu, Switch, TextInput, useMantineTheme } from '@mantine/core';
+import { Button, Card, Group, Menu, Switch, TextInput, useMantineColorScheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { IModule } from './modules';
 
@@ -91,18 +91,50 @@ function getItems(module: IModule) {
 
 export function ModuleWrapper(props: any) {
   const { module }: { module: IModule } = props;
+  const { colorScheme } = useMantineColorScheme();
   const { config, setConfig } = useConfig();
   const enabledModules = config.modules ?? {};
   // Remove 'Module' from enabled modules titles
   const isShown = enabledModules[module.title]?.enabled ?? false;
-  const theme = useMantineTheme();
-  const items: JSX.Element[] = getItems(module);
 
   if (!isShown) {
     return null;
   }
+
   return (
-    <Card {...props} hidden={!isShown} withBorder radius="lg" shadow="sm">
+    <Card
+      {...props}
+      hidden={!isShown}
+      withBorder
+      radius="lg"
+      shadow="sm"
+      style={{
+        background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+        borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+      }}
+    >
+      <ModuleMenu
+        module={module}
+        styles={{
+          root: {
+            position: 'absolute',
+            top: 15,
+            right: 15,
+          },
+        }}
+      />
+      <module.component />
+    </Card>
+  );
+}
+
+export function ModuleMenu(props: any) {
+  const { module, styles } = props;
+  const items: JSX.Element[] = getItems(module);
+  return (
+    <>
       {module.options && (
         <Menu
           size="lg"
@@ -112,9 +144,7 @@ export function ModuleWrapper(props: any) {
           position="left"
           styles={{
             root: {
-              position: 'absolute',
-              top: 15,
-              right: 15,
+              ...props?.styles?.root,
             },
             body: {
               // Add shadow and elevation to the body
@@ -128,7 +158,6 @@ export function ModuleWrapper(props: any) {
           ))}
         </Menu>
       )}
-      <module.component />
-    </Card>
+    </>
   );
 }
