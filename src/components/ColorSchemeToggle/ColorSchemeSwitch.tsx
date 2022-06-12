@@ -30,7 +30,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function ColorSchemeSwitch() {
-  const { config } = useConfig();
+  const { config, setConfig } = useConfig();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const { classes, cx } = useStyles();
 
