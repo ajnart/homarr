@@ -36,7 +36,7 @@ export function WidgetsPositionSwitch() {
   const toggleWidgetPosition = () => {
     const position = widgetPosition === 'right' ? 'left' : 'right';
     setWidgetPosition(position);
-     setConfig({
+    setConfig({
       ...config,
       settings: {
         ...config.settings,
@@ -48,7 +48,11 @@ export function WidgetsPositionSwitch() {
   return (
     <Group>
       <div className={classes.root}>
-        <Switch checked={widgetPosition === 'left'} onChange={() => toggleWidgetPosition()} size="md" />
+        <Switch
+          checked={widgetPosition === 'left'}
+          onChange={() => toggleWidgetPosition()}
+          size="md"
+        />
       </div>
       Position widgets on left
     </Group>
