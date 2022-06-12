@@ -303,7 +303,6 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           {(form.values.type === 'Deluge' || form.values.type === 'Transmission') && (
             <>
               <TextInput
-                required
                 label="Password"
                 placeholder="password"
                 value={form.values.password}
