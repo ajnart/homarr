@@ -87,10 +87,10 @@ export default function DownloadComponent() {
   const ths = (
     <tr>
       <th>Name</th>
-      {width > 576 ? <th>Size</th> : ``}
-      <th>Down</th>
-      <th>Up</th>
-      {width > 576 ? <th>ETA</th> : ``}
+      <th>Size</th>
+      {width > 576 ?  <th>Down</th> : ``}
+      {width > 576 ?  <th>Up</th> : ``}
+      <th>ETA</th>
       <th>Progress</th>
     </tr>
   );
@@ -139,22 +139,23 @@ export default function DownloadComponent() {
               </Text>
             </Tooltip>
           </td>
-          {width > 576 ? 
           <td>
           <Text size="xs">{size > 0 ? (size > 999 ? `${(size / 1024).toFixed(1)} GB` : `${size.toFixed(1)} MB`) : '-' }</Text>
-          </td> :
-          ``}
+          </td>
+          {width > 576 ? 
           <td>
             <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
           </td>
-          <td>
-            <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
-          </td>
+           :
+           ``}
           {width > 576 ? 
           <td>
-            <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
+            <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
           </td> :
           ``}
+          <td>
+            <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
+          </td>
           <td>
             <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
             <Progress
