@@ -1,11 +1,11 @@
 import {
-  Text,
-  Card,
   Anchor,
   AspectRatio,
-  Image,
+  Card,
   Center,
   createStyles,
+  Image,
+  Text,
   useMantineColorScheme,
 } from '@mantine/core';
 import { motion } from 'framer-motion';
@@ -13,9 +13,10 @@ import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { serviceItem } from '../../tools/types';
-import PingComponent from '../modules/ping/PingModule';
-import AppShelfMenu from './AppShelfMenu';
 import { useConfig } from '../../tools/state';
+import AppShelfMenu from './AppShelfMenu';
+import PingComponent from '../modules/ping/PingModule';
+import ModuleApiResponse from '../ModulesApiResponses/ModuleApiResponse';
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -81,61 +82,67 @@ export function AppShelfItem(props: any) {
           ${(config.settings.appOpacity || 100) / 100}`,
         }}
       >
-        <Card.Section>
-          <Anchor
-            target="_blank"
-            href={service.url}
-            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
-          >
-            <Text mt="sm" align="center" lineClamp={1} weight={550}>
+        <Anchor
+          target="_blank"
+          href={service.url}
+          style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+        >
+            <Text align="center" lineClamp={1} weight={550}>
               {service.name}
             </Text>
-          </Anchor>
-          <motion.div
-            style={{
+        </Anchor>
+        <motion.div
+          style={{
               position: 'absolute',
               top: 15,
               right: 15,
               alignSelf: 'flex-end',
             }}
-            animate={{
+          animate={{
               opacity: hovering ? 1 : 0,
             }}
-          >
+        >
             <AppShelfMenu service={service} />
-          </motion.div>
-        </Card.Section>
+        </motion.div>
+        <Card.Section>
+        <Anchor
+          target="_blank"
+          href={service.url}
+        >
         <Center>
-          <Card.Section>
-            <AspectRatio
-              ratio={3 / 5}
-              m="xl"
-              style={{
-                width: 150,
-                height: 90,
+          <AspectRatio
+            ratio={3 / 5}
+            m="xl"
+            style={{
+              width: 150,
+              height: 90,
+            }}
+          >
+            <motion.i
+              whileHover={{
+                scale: 1.1,
               }}
             >
-              <motion.i
-                whileHover={{
-                  scale: 1.1,
+              <Image
+                styles={{ root: { cursor: 'pointer' } }}
+                width={80}
+                height={80}
+                src={service.icon}
+                fit="contain"
+                onClick={() => {
+                  if (service.openedUrl) window.open(service.openedUrl, '_blank');
+                  else window.open(service.url);
                 }}
-              >
-                <Image
-                  styles={{ root: { cursor: 'pointer' } }}
-                  width={80}
-                  height={80}
-                  src={service.icon}
-                  fit="contain"
-                  onClick={() => {
-                    if (service.openedUrl) window.open(service.openedUrl, '_blank');
-                    else window.open(service.url);
-                  }}
-                />
-              </motion.i>
-            </AspectRatio>
-            <PingComponent url={service.url} />
-          </Card.Section>
+              />
+            </motion.i>
+          </AspectRatio>
         </Center>
+        </Anchor>
+        </Card.Section>
+        <motion.div>
+          {service.type && <ModuleApiResponse service={service} />}
+          <PingComponent url={service.url} />
+        </motion.div>
       </Card>
     </motion.div>
   );

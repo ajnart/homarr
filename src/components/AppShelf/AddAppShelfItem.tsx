@@ -80,6 +80,7 @@ function MatchPort(name: string, form: any) {
     { name: 'Readarr', value: '8686' },
     { name: 'Deluge', value: '8112' },
     { name: 'Transmission', value: '9091' },
+    { name: 'Uptime Kuma', value: '3001' },
   ];
   // Match name with portmap key
   const port = portmap.find((p) => p.name === name);
