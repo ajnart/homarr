@@ -65,7 +65,7 @@ function MatchIcon(name: string, form: any) {
 }
 
 function MatchService(name: string, form: any) {
-  const service = ServiceTypeList.find((s) => s === name);
+  const service = ServiceTypeList.find((s) => s.toLowerCase() === name.toLowerCase());
   if (service) {
     form.setFieldValue('type', service);
   }
@@ -73,16 +73,16 @@ function MatchService(name: string, form: any) {
 
 function MatchPort(name: string, form: any) {
   const portmap = [
-    { name: 'qBittorrent', value: '8080' },
-    { name: 'Sonarr', value: '8989' },
-    { name: 'Radarr', value: '7878' },
-    { name: 'Lidarr', value: '8686' },
-    { name: 'Readarr', value: '8686' },
-    { name: 'Deluge', value: '8112' },
-    { name: 'Transmission', value: '9091' },
+    { name: 'qbittorrent', value: '8080' },
+    { name: 'sonarr', value: '8989' },
+    { name: 'radarr', value: '7878' },
+    { name: 'lidarr', value: '8686' },
+    { name: 'readarr', value: '8686' },
+    { name: 'deluge', value: '8112' },
+    { name: 'transmission', value: '9091' },
   ];
   // Match name with portmap key
-  const port = portmap.find((p) => p.name === name);
+  const port = portmap.find((p) => p.name === name.toLowerCase());
   if (port) {
     form.setFieldValue('url', `http://localhost:${port.value}`);
   }
