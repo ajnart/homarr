@@ -14,11 +14,11 @@ import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
+import { useViewportSize } from '@mantine/hooks';
 import { IModule } from '../modules';
 import { useConfig } from '../../../tools/state';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
-import { useViewportSize } from '@mantine/hooks';
 import { humanFileSize } from '../../../tools/humanFileSize';
 
 export const DownloadsModule: IModule = {
@@ -84,17 +84,33 @@ export default function DownloadComponent() {
       </>
     );
   }
-
+  const DEVICE_WIDTH = 576;
   const ths = (
     <tr>
       <th>Name</th>
       <th>Size</th>
-      {width > 576 ?  <th>Down</th> : ``}
-      {width > 576 ?  <th>Up</th> : ``}
+      {width > 576 ? <th>Down</th> : ''}
+      {width > 576 ? <th>Up</th> : ''}
       <th>ETA</th>
       <th>Progress</th>
     </tr>
   );
+  // Convert Seconds to readable format.
+  function calculateETA(givenSeconds: number) {
+    // If its superior than one day return > 1 day
+    if (givenSeconds > 86400) {
+      return '> 1 day';
+    }
+    // Transform the givenSeconds into a readable format. e.g. 1h 2m 3s
+    const hours = Math.floor(givenSeconds / 3600);
+    const minutes = Math.floor((givenSeconds % 3600) / 60);
+    const seconds = Math.floor(givenSeconds % 60);
+    // Only show hours if it's greater than 0.
+    const hoursString = hours > 0 ? `${hours}h ` : '';
+    const minutesString = minutes > 0 ? `${minutes}m ` : '';
+    const secondsString = seconds > 0 ? `${seconds}s` : '';
+    return `${hoursString}${minutesString}${secondsString}`;
+  }
   // Loop over qBittorrent torrents merging with deluge torrents
   const rows = torrents
     .filter((torrent) => !(torrent.progress === 1 && hideComplete))
@@ -102,29 +118,6 @@ export default function DownloadComponent() {
       const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
       const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
       const size = torrent.totalSelected;
-      // Convert Seconds to readable format.
-      function calculateETA(givenSeconds: number) {
-        if (givenSeconds > 86399) { // No
-          return ">1d"
-        }
-        const time = new Date(givenSeconds * 1000).toISOString();
-        const hours = parseInt(time.substring(11,13));
-        const minutes = parseInt(time.substring(14,16));
-        const seconds = parseInt(time.substring(17,19));
-        var str = "";
-        // If tree go brr
-        if (hours > 0) {
-          str = `${hours}h `;
-        }
-        if (minutes > 0) {
-          str = `${str}${minutes}m `
-        }
-        if (seconds > 0) {
-           str = `${str}${seconds}s`; 
-        }
-        return str.trim();
-      }
-
       return (
         <tr key={torrent.id}>
           <td>
@@ -141,19 +134,22 @@ export default function DownloadComponent() {
             </Tooltip>
           </td>
           <td>
-          <Text size="xs">{humanFileSize(size)}</Text>
+            <Text size="xs">{humanFileSize(size)}</Text>
           </td>
-          {width > 576 ? 
-          <td>
-            <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
-          </td>
-           :
-           ``}
-          {width > 576 ? 
-          <td>
-            <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
-          </td> :
-          ``}
+          {width > 576 ? (
+            <td>
+              <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
+            </td>
+          ) : (
+            ''
+          )}
+          {width > 576 ? (
+            <td>
+              <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
+            </td>
+          ) : (
+            ''
+          )}
           <td>
             <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
           </td>
@@ -161,7 +157,9 @@ export default function DownloadComponent() {
             <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
             <Progress
               radius="lg"
-              color={torrent.state === "paused" ? 'yellow' : (torrent.progress === 1 ? 'green' : 'blue')}
+              color={
+                torrent.state === 'paused' ? 'yellow' : torrent.progress === 1 ? 'green' : 'blue'
+              }
               value={torrent.progress * 100}
               size="lg"
             />

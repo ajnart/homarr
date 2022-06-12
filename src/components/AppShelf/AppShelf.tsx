@@ -164,8 +164,9 @@ const AppShelf = (props: any) => {
             </Accordion.Item>
           ) : null}
           <Accordion.Item key="Downloads" label="Your downloads">
-            <ModuleMenu module={DownloadsModule} />
             <Paper
+              p="lg"
+              radius="lg"
               style={{
                 background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
                 ${(config.settings.appOpacity || 100) / 100}`,
@@ -173,6 +174,7 @@ const AppShelf = (props: any) => {
                 ${(config.settings.appOpacity || 100) / 100}`,
               }}
             >
+              <ModuleMenu module={DownloadsModule} />
               <DownloadComponent />
             </Paper>
           </Accordion.Item>
