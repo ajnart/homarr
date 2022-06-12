@@ -49,6 +49,7 @@ export default function PingComponent(props: any) {
         transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
       >
         <Indicator
+          label={config.settings.colorBlind === true ? (isOnline === 'online' ? 'O' : isOnline === 'down' ? 'X' : '?') : ''}
           size={13}
           color={isOnline === 'online' ? 'green' : isOnline === 'down' ? 'red' : 'yellow'}
         >
