@@ -1,7 +1,5 @@
-import { Aside as MantineAside, createStyles, Group } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
-import { WeatherModule, DateModule, CalendarModule, TotalDownloadsModule } from '../modules';
-import { ModuleWrapper } from '../modules/moduleWrapper';
+import { Aside as MantineAside, createStyles } from '@mantine/core';
+import Widgets from './Widgets';
 
 const useStyles = createStyles((theme) => ({
   hide: {
@@ -18,8 +16,6 @@ const useStyles = createStyles((theme) => ({
 
 export default function Aside(props: any) {
   const { classes, cx } = useStyles();
-  const matches = useMediaQuery('(min-width: 800px)');
-
   return (
     <MantineAside
       pr="md"
@@ -34,16 +30,7 @@ export default function Aside(props: any) {
         base: 'auto',
       }}
     >
-      <>
-        {matches && (
-          <Group my="sm" grow direction="column" style={{ width: 300 }}>
-            <ModuleWrapper module={CalendarModule} />
-            <ModuleWrapper module={TotalDownloadsModule} />
-            <ModuleWrapper module={WeatherModule} />
-            <ModuleWrapper module={DateModule} />
-          </Group>
-        )}
-      </>
+      <Widgets />
     </MantineAside>
   );
 }
