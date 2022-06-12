@@ -201,19 +201,19 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
           <TextInput
             required
-            label="Icon url"
-            placeholder="https://i.gifer.com/ANPC.gif"
+            label="Icon URL"
+            placeholder="/favicon.svg"
             {...form.getInputProps('icon')}
           />
           <TextInput
             required
-            label="Service url"
+            label="Service URL"
             placeholder="http://localhost:7575"
             {...form.getInputProps('url')}
           />
           <TextInput
-            label="Opened url"
-            placeholder="http://sonarr.remote.com"
+            label="New tab URL"
+            placeholder="http://sonarr.example.com"
             {...form.getInputProps('openedUrl')}
           />
           <Select
