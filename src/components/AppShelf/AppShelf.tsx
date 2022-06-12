@@ -4,13 +4,12 @@ import {
   closestCenter,
   DndContext,
   DragOverlay,
-  KeyboardSensor,
   MouseSensor,
   TouchSensor,
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
-import { arrayMove, SortableContext, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import { useLocalStorage } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 
@@ -45,15 +44,7 @@ const AppShelf = (props: any) => {
   const { colorScheme } = useMantineColorScheme();
 
   const sensors = useSensors(
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 250,
-        tolerance: 5,
-      },
-    }),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    }),
+    useSensor(TouchSensor, {}),
     useSensor(MouseSensor, {
       // Require the mouse to move by 10 pixels before activating
       activationConstraint: {
@@ -164,8 +155,9 @@ const AppShelf = (props: any) => {
             </Accordion.Item>
           ) : null}
           <Accordion.Item key="Downloads" label="Your downloads">
-            <ModuleMenu module={DownloadsModule} />
             <Paper
+              p="lg"
+              radius="lg"
               style={{
                 background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
                 ${(config.settings.appOpacity || 100) / 100}`,
@@ -173,6 +165,7 @@ const AppShelf = (props: any) => {
                 ${(config.settings.appOpacity || 100) / 100}`,
               }}
             >
+              <ModuleMenu module={DownloadsModule} />
               <DownloadComponent />
             </Paper>
           </Accordion.Item>

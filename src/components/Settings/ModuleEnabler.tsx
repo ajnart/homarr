@@ -8,7 +8,7 @@ export default function ModuleEnabler(props: any) {
   return (
     <Group direction="column">
       <Title order={4}>Module enabler</Title>
-      <SimpleGrid cols={3} spacing="xl">
+      <SimpleGrid cols={2} spacing="md">
         {modules.map((module) => (
           <Checkbox
             key={module.title}
