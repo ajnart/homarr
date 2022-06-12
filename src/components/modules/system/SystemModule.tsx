@@ -1,16 +1,11 @@
-import {
-  Center,
-  Group,
-  RingProgress,
-  Title,
-  useMantineTheme,
-} from '@mantine/core';
+import { Center, Group, RingProgress, Title, useMantineTheme } from '@mantine/core';
 import { IconCpu } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import si from 'systeminformation';
 import { useListState } from '@mantine/hooks';
 import { IModule } from '../modules';
+import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
 
 export const SystemModule: IModule = {
   title: 'System info',
@@ -28,13 +23,13 @@ interface ApiResponse {
 
 export default function SystemInfo(args: any) {
   const [data, setData] = useState<ApiResponse>();
-
+  const setSafeInterval = useSetSafeInterval();
   // Refresh data every second
   useEffect(() => {
-    setInterval(() => {
+    setSafeInterval(() => {
       axios.get('/api/modules/systeminfo').then((res) => setData(res.data));
     }, 1000);
-  }, [args]);
+  }, []);
 
   // Update data every time data changes
   const [cpuLoadHistory, cpuLoadHistoryHandlers] =

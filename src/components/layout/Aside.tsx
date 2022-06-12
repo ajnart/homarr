@@ -1,33 +1,36 @@
-import { Aside as MantineAside, Group } from '@mantine/core';
-import {
-  WeatherModule,
-  DateModule,
-  CalendarModule,
-  TotalDownloadsModule,
-  SystemModule,
-} from '../modules';
-import { ModuleWrapper } from '../modules/moduleWrapper';
+import { Aside as MantineAside, createStyles } from '@mantine/core';
+import Widgets from './Widgets';
+
+const useStyles = createStyles((theme) => ({
+  hide: {
+    [theme.fn.smallerThan('xs')]: {
+      display: 'none',
+    },
+  },
+  burger: {
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
+    },
+  },
+}));
 
 export default function Aside(props: any) {
+  const { classes, cx } = useStyles();
   return (
     <MantineAside
       pr="md"
-      hiddenBreakpoint="md"
+      hiddenBreakpoint="sm"
       hidden
+      className={cx(classes.hide)}
       style={{
         border: 'none',
+        background: 'none',
       }}
       width={{
         base: 'auto',
       }}
     >
-      <Group my="sm" grow direction="column" style={{ width: 300 }}>
-        <ModuleWrapper module={CalendarModule} />
-        <ModuleWrapper module={TotalDownloadsModule} />
-        <ModuleWrapper module={WeatherModule} />
-        <ModuleWrapper module={DateModule} />
-        <ModuleWrapper module={SystemModule} />
-      </Group>
+      <Widgets />
     </MantineAside>
   );
 }

@@ -1,42 +1,60 @@
 import { Deluge } from '@ctrl/deluge';
 import { QBittorrent } from '@ctrl/qbittorrent';
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
+import { Transmission } from '@ctrl/transmission';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { Config } from '../../../tools/types';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Get the type of service from the request url
-  const { dlclient } = req.query;
-  const { body } = req;
-  // Get login, password and url from the body
-  const { username, password, url } = body;
-  if (!dlclient || (!username && !password) || !url) {
-    return res.status(400).json({
-      error: 'Wrong request',
+  const torrents: NormalizedTorrent[] = [];
+  const { config }: { config: Config } = req.body;
+  const qBittorrentService = config.services
+    .filter((service) => service.type === 'qBittorrent')
+    .at(0);
+  const delugeService = config.services.filter((service) => service.type === 'Deluge').at(0);
+  const transmissionService = config.services
+    .filter((service) => service.type === 'Transmission')
+    .at(0);
+  if (!qBittorrentService && !delugeService && !transmissionService) {
+    return res.status(500).json({
+      statusCode: 500,
+      message: 'Missing service',
     });
   }
-  let client: Deluge | QBittorrent;
-  switch (dlclient) {
-    case 'qbit':
-      client = new QBittorrent({
-        baseUrl: new URL(url).origin,
-        username,
-        password,
-      });
-      break;
-    case 'deluge':
-      client = new Deluge({
-        baseUrl: new URL(url).origin,
-        password,
-      });
-      break;
-    default:
-      return res.status(400).json({
-        error: 'Wrong request',
-      });
+  if (qBittorrentService) {
+    torrents.push(
+      ...(
+        await new QBittorrent({
+          baseUrl: qBittorrentService.url,
+          username: qBittorrentService.username,
+          password: qBittorrentService.password,
+        }).getAllData()
+      ).torrents
+    );
   }
-  const data = await client.getAllData();
-  res.status(200).json({
-    torrents: data.torrents,
-  });
+  if (delugeService) {
+    torrents.push(
+      ...(
+        await new Deluge({
+          baseUrl: delugeService.url,
+          password: delugeService.password,
+        }).getAllData()
+      ).torrents
+    );
+  }
+  if (transmissionService) {
+    torrents.push(
+      ...(
+        await new Transmission({
+          baseUrl: transmissionService.url,
+          username: transmissionService.username,
+          password: transmissionService.password,
+        }).getAllData()
+      ).torrents
+    );
+  }
+  res.status(200).json(torrents);
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
