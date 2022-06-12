@@ -1,5 +1,13 @@
 /* eslint-disable react/no-children-prop */
-import { Box, Divider, Indicator, Popover, ScrollArea, createStyles, useMantineTheme } from '@mantine/core';
+import {
+  Box,
+  Divider,
+  Indicator,
+  Popover,
+  ScrollArea,
+  createStyles,
+  useMantineTheme,
+} from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
@@ -28,7 +36,7 @@ export default function CalendarComponent(props: any) {
   const theme = useMantineTheme();
   const { secondaryColor } = useColorTheme();
   const useStyles = createStyles((theme) => ({
-      weekend: {
+    weekend: {
       color: `${secondaryColor} !important`,
     },
   }));
@@ -101,12 +109,13 @@ export default function CalendarComponent(props: any) {
       onChange={(day: any) => {}}
       dayStyle={(date) =>
         date.getDay() === today.getDay() && date.getDate() === today.getDate()
-          ? { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0] }
+          ? {
+              backgroundColor:
+                theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+            }
           : {}
       }
-      dayClassName={(date, modifiers) =>
-        cx({ [classes.weekend]: modifiers.weekend })
-      }
+      dayClassName={(date, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
       renderDay={(renderdate) => (
         <DayComponent
           renderdate={renderdate}
