@@ -11,6 +11,7 @@ export interface Settings {
   primaryShade?: MantineTheme['primaryShade'];
   background?: string;
   appOpacity?: number;
+  colorBlind?: boolean;
 }
 
 export interface Config {
