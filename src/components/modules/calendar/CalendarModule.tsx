@@ -1,5 +1,13 @@
 /* eslint-disable react/no-children-prop */
-import { Box, Divider, Indicator, Popover, ScrollArea } from '@mantine/core';
+import {
+  Box,
+  Divider,
+  Indicator,
+  Popover,
+  ScrollArea,
+  createStyles,
+  useMantineTheme,
+} from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
@@ -13,6 +21,7 @@ import {
   ReadarrMediaDisplay,
 } from '../common';
 import { serviceItem } from '../../../tools/types';
+import { useColorTheme } from '../../../tools/color';
 
 export const CalendarModule: IModule = {
   title: 'Calendar',
@@ -24,14 +33,25 @@ export const CalendarModule: IModule = {
 
 export default function CalendarComponent(props: any) {
   const { config } = useConfig();
+  const theme = useMantineTheme();
+  const { secondaryColor } = useColorTheme();
+  const useStyles = createStyles((theme) => ({
+    weekend: {
+      color: `${secondaryColor} !important`,
+    },
+  }));
+
   const [sonarrMedias, setSonarrMedias] = useState([] as any);
   const [lidarrMedias, setLidarrMedias] = useState([] as any);
   const [radarrMedias, setRadarrMedias] = useState([] as any);
   const [readarrMedias, setReadarrMedias] = useState([] as any);
-  const sonarrService = config.services.filter((service) => service.type === 'Sonarr').at(0);
-  const radarrService = config.services.filter((service) => service.type === 'Radarr').at(0);
-  const lidarrService = config.services.filter((service) => service.type === 'Lidarr').at(0);
-  const readarrService = config.services.filter((service) => service.type === 'Readarr').at(0);
+  const sonarrServices = config.services.filter((service) => service.type === 'Sonarr');
+  const radarrServices = config.services.filter((service) => service.type === 'Radarr');
+  const lidarrServices = config.services.filter((service) => service.type === 'Lidarr');
+  const readarrServices = config.services.filter((service) => service.type === 'Readarr');
+  const today = new Date();
+
+  const { classes, cx } = useStyles();
 
   function getMedias(service: serviceItem | undefined, type: string) {
     if (!service || !service.apiKey) {
@@ -41,18 +61,61 @@ export default function CalendarComponent(props: any) {
   }
 
   useEffect(() => {
-    // Filter only sonarr and radarr services
-
-    // Get the url and apiKey for all Sonarr and Radarr services
-    getMedias(sonarrService, 'sonarr').then((res) => setSonarrMedias(res.data));
-    getMedias(radarrService, 'radarr').then((res) => setRadarrMedias(res.data));
-    getMedias(lidarrService, 'lidarr').then((res) => setLidarrMedias(res.data));
-    getMedias(readarrService, 'readarr').then((res) => setReadarrMedias(res.data));
+    // Create each Sonarr service and get the medias
+    const currentSonarrMedias: any[] = [...sonarrMedias];
+    Promise.all(
+      sonarrServices.map((service) =>
+        getMedias(service, 'sonarr').then((res) => {
+          currentSonarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setSonarrMedias(currentSonarrMedias);
+    });
+    const currentRadarrMedias: any[] = [...radarrMedias];
+    Promise.all(
+      radarrServices.map((service) =>
+        getMedias(service, 'radarr').then((res) => {
+          currentRadarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setRadarrMedias(currentRadarrMedias);
+    });
+    const currentLidarrMedias: any[] = [...lidarrMedias];
+    Promise.all(
+      lidarrServices.map((service) =>
+        getMedias(service, 'lidarr').then((res) => {
+          currentLidarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setLidarrMedias(currentLidarrMedias);
+    });
+    const currentReadarrMedias: any[] = [...readarrMedias];
+    Promise.all(
+      readarrServices.map((service) =>
+        getMedias(service, 'readarr').then((res) => {
+          currentReadarrMedias.push(...res.data);
+        })
+      )
+    ).then(() => {
+      setReadarrMedias(currentReadarrMedias);
+    });
   }, [config.services]);
 
   return (
     <Calendar
       onChange={(day: any) => {}}
+      dayStyle={(date) =>
+        date.getDay() === today.getDay() && date.getDate() === today.getDate()
+          ? {
+              backgroundColor:
+                theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+            }
+          : {}
+      }
+      dayClassName={(date, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
       renderDay={(renderdate) => (
         <DayComponent
           renderdate={renderdate}
@@ -81,23 +144,20 @@ function DayComponent(props: any) {
 
   const readarrFiltered = readarrmedias.filter((media: any) => {
     const date = new Date(media.releaseDate);
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    return date.toDateString() === renderdate.toDateString();
   });
 
   const lidarrFiltered = lidarrmedias.filter((media: any) => {
     const date = new Date(media.releaseDate);
-    // Return true if the date is renerdate without counting hours and minutes
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    return date.toDateString() === renderdate.toDateString();
   });
   const sonarrFiltered = sonarrmedias.filter((media: any) => {
-    const date = new Date(media.airDate);
-    // Return true if the date is renerdate without counting hours and minutes
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    const date = new Date(media.airDateUtc);
+    return date.toDateString() === renderdate.toDateString();
   });
   const radarrFiltered = radarrmedias.filter((media: any) => {
     const date = new Date(media.inCinemas);
-    // Return true if the date is renerdate without counting hours and minutes
-    return date.getDate() === day && date.getMonth() === renderdate.getMonth();
+    return date.toDateString() === renderdate.toDateString();
   });
   if (
     sonarrFiltered.length === 0 &&
@@ -167,7 +227,7 @@ function DayComponent(props: any) {
         />
       )}
       <Popover
-        position="left"
+        position="bottom"
         radius="lg"
         shadow="xl"
         transition="pop"
@@ -176,7 +236,7 @@ function DayComponent(props: any) {
             boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.1), 0 14px 11px rgba(0, 0, 0, 0.1)',
           },
         }}
-        width={700}
+        width="auto"
         onClose={() => setOpened(false)}
         opened={opened}
         target={day}
@@ -197,12 +257,18 @@ function DayComponent(props: any) {
               {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
             </React.Fragment>
           ))}
+          {sonarrFiltered.length > 0 && lidarrFiltered.length > 0 && (
+            <Divider variant="dashed" my="xl" />
+          )}
           {lidarrFiltered.map((media: any, index: number) => (
             <React.Fragment key={index}>
               <LidarrMediaDisplay media={media} />
               {index < lidarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
             </React.Fragment>
           ))}
+          {lidarrFiltered.length > 0 && readarrFiltered.length > 0 && (
+            <Divider variant="dashed" my="xl" />
+          )}
           {readarrFiltered.map((media: any, index: number) => (
             <React.Fragment key={index}>
               <ReadarrMediaDisplay media={media} />

@@ -1,4 +1,15 @@
-import { Image, Group, Title, Badge, Text, ActionIcon, Anchor, ScrollArea } from '@mantine/core';
+import {
+  Image,
+  Group,
+  Title,
+  Badge,
+  Text,
+  ActionIcon,
+  Anchor,
+  ScrollArea,
+  createStyles,
+} from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { IconLink as Link } from '@tabler/icons';
 import { useConfig } from '../../../tools/state';
 import { serviceItem } from '../../../tools/types';
@@ -14,13 +25,25 @@ export interface IMedia {
   episodeNumber?: number;
 }
 
+const useStyles = createStyles((theme) => ({
+  overview: {
+    [theme.fn.largerThan('sm')]: {
+      width: 400,
+    },
+  },
+}));
+
 export function MediaDisplay(props: { media: IMedia }) {
   const { media }: { media: IMedia } = props;
+  const { classes, cx } = useStyles();
+  const phone = useMediaQuery('(min-width: 800px)');
   return (
     <Group position="apart">
       <Text>
         {media.poster && (
           <Image
+            width={phone ? 250 : 100}
+            height={phone ? 400 : 160}
             style={{
               float: 'right',
             }}
@@ -28,12 +51,10 @@ export function MediaDisplay(props: { media: IMedia }) {
             fit="cover"
             src={media.poster}
             alt={media.title}
-            width={250}
-            height={400}
           />
         )}
-        <Group direction="column">
-          <Group noWrap mr="sm" style={{ minWidth: 400 }}>
+        <Group direction="column" style={{ minWidth: phone ? 450 : '65vw' }}>
+          <Group noWrap mr="sm" className={classes.overview}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
               <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
@@ -65,9 +86,9 @@ export function MediaDisplay(props: { media: IMedia }) {
           )}
         </Group>
         <Group direction="column" position="apart">
-          <ScrollArea style={{ height: 250 }}>{media.overview}</ScrollArea>
+          <ScrollArea style={{ height: 280, maxWidth: 700 }}>{media.overview}</ScrollArea>
           <Group align="center" position="center" spacing="xs">
-            {media.genres.map((genre: string, i: number) => (
+            {media.genres.slice(-5).map((genre: string, i: number) => (
               <Badge size="sm" key={i}>
                 {genre}
               </Badge>

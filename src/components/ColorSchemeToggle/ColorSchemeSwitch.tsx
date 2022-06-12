@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStyles, Switch, Group, useMantineColorScheme, Kbd } from '@mantine/core';
 import { IconSun as Sun, IconMoonStars as MoonStars } from '@tabler/icons';
+import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -29,6 +30,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function ColorSchemeSwitch() {
+  const { config } = useConfig();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const { classes, cx } = useStyles();
 

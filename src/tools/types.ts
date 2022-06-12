@@ -1,7 +1,17 @@
+import { MantineTheme } from '@mantine/core';
 import { OptionValues } from '../components/modules/modules';
 
 export interface Settings {
   searchUrl: string;
+  title?: string;
+  logo?: string;
+  favicon?: string;
+  primaryColor?: MantineTheme['primaryColor'];
+  secondaryColor?: MantineTheme['primaryColor'];
+  primaryShade?: MantineTheme['primaryShade'];
+  background?: string;
+  appOpacity?: number;
+  widgetPosition?: string;
 }
 
 export interface Config {
@@ -31,6 +41,7 @@ export const ServiceTypeList = [
   'Readarr',
   'Sonarr',
   'qBittorrent',
+  'Transmission',
 ];
 export type ServiceType =
   | 'Other'
@@ -41,7 +52,8 @@ export type ServiceType =
   | 'Radarr'
   | 'Readarr'
   | 'Sonarr'
-  | 'qBittorrent';
+  | 'qBittorrent'
+  | 'Transmission';
 
 export interface serviceItem {
   id: string;
@@ -53,4 +65,5 @@ export interface serviceItem {
   apiKey?: string;
   password?: string;
   username?: string;
+  openedUrl?: string;
 }

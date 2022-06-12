@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       tags:
-        requierd: true
+        required: true
         description: 'Tags to deploy to'
 
 env:

@@ -1,24 +1,50 @@
 import React, { useState } from 'react';
-import { Grid, Group, Title } from '@mantine/core';
+import { Accordion, createStyles, Grid, Group, Paper, useMantineColorScheme } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
   DragOverlay,
   MouseSensor,
+  TouchSensor,
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext } from '@dnd-kit/sortable';
+import { useLocalStorage } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
-import { ModuleWrapper } from '../modules/moduleWrapper';
+import { ModuleMenu, ModuleWrapper } from '../modules/moduleWrapper';
 import { DownloadsModule } from '../modules';
+import DownloadComponent from '../modules/downloads/DownloadsModule';
+
+const useStyles = createStyles((theme, _params) => ({
+  item: {
+    borderBottom: 0,
+    overflow: 'hidden',
+    border: '1px solid transparent',
+    borderRadius: theme.radius.lg,
+    marginTop: theme.spacing.md,
+  },
+
+  itemOpened: {
+    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
+  },
+}));
 
 const AppShelf = (props: any) => {
+  const { classes, cx } = useStyles(props);
+  const [toggledCategories, settoggledCategories] = useLocalStorage({
+    key: 'app-shelf-toggled',
+    // This is a bit of a hack to get the 5 first categories to be toggled on by default
+    defaultValue: { 0: true, 1: true, 2: true, 3: true, 4: true } as Record<string, boolean>,
+  });
   const [activeId, setActiveId] = useState(null);
   const { config, setConfig } = useConfig();
+  const { colorScheme } = useMantineColorScheme();
+
   const sensors = useSensors(
+    useSensor(TouchSensor, {}),
     useSensor(MouseSensor, {
       // Require the mouse to move by 10 pixels before activating
       activationConstraint: {
@@ -99,26 +125,51 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
-
+    // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // Return one item for each category
       <Group grow direction="column">
-        {categoryList.map((category) => (
-          <>
-            <Title order={3} key={category}>
-              {category}
-            </Title>
-            {item(category)}
-          </>
-        ))}
-        {/* Return the item for all services without category */}
-        {noCategory && noCategory.length > 0 ? (
-          <>
-            <Title order={3}>Other</Title>
-            {item()}
-          </>
-        ) : null}
-        <ModuleWrapper mt="xl" module={DownloadsModule} />
+        <Accordion
+          disableIconRotation
+          classNames={classes}
+          order={2}
+          iconPosition="right"
+          multiple
+          styles={{
+            item: {
+              borderRadius: '20px',
+            },
+          }}
+          initialState={toggledCategories}
+          onChange={(idx) => settoggledCategories(idx)}
+        >
+          {categoryList.map((category, idx) => (
+            <Accordion.Item key={category} label={category}>
+              {item(category)}
+            </Accordion.Item>
+          ))}
+          {/* Return the item for all services without category */}
+          {noCategory && noCategory.length > 0 ? (
+            <Accordion.Item key="Other" label="Other">
+              {item()}
+            </Accordion.Item>
+          ) : null}
+          <Accordion.Item key="Downloads" label="Your downloads">
+            <Paper
+              p="lg"
+              radius="lg"
+              style={{
+                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+                ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+                ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+            >
+              <ModuleMenu module={DownloadsModule} />
+              <DownloadComponent />
+            </Paper>
+          </Accordion.Item>
+        </Accordion>
       </Group>
     );
   }

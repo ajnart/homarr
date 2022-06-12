@@ -8,39 +8,9 @@ import { Datum, ResponsiveLine } from '@nivo/line';
 import { useListState } from '@mantine/hooks';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 import { useConfig } from '../../../tools/state';
+import { humanFileSize } from '../../../tools/humanFileSize';
 import { IModule } from '../modules';
-
-/**
- * Format bytes as human-readable text.
- *
- * @param bytes Number of bytes.
- * @param si True to use metric (SI) units, aka powers of 1000. False to use
- *           binary (IEC), aka powers of 1024.
- * @param dp Number of decimal places to display.
- *
- * @return Formatted string.
- */
-function humanFileSize(initialBytes: number, si = true, dp = 1) {
-  const thresh = si ? 1000 : 1024;
-  let bytes = initialBytes;
-
-  if (Math.abs(bytes) < thresh) {
-    return `${bytes} B`;
-  }
-
-  const units = si
-    ? ['kb', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-    : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
-  let u = -1;
-  const r = 10 ** dp;
-
-  do {
-    bytes /= thresh;
-    u += 1;
-  } while (Math.round(Math.abs(bytes) * r) / r >= thresh && u < units.length - 1);
-
-  return `${bytes.toFixed(dp)} ${units[u]}`;
-}
+import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
 
 export const TotalDownloadsModule: IModule = {
   title: 'Download Speed',
@@ -56,42 +26,29 @@ interface torrentHistory {
 }
 
 export default function TotalDownloadsComponent() {
+  const setSafeInterval = useSetSafeInterval();
   const { config } = useConfig();
-  const qBittorrentService = config.services
-    .filter((service) => service.type === 'qBittorrent')
-    .at(0);
-  const delugeService = config.services.filter((service) => service.type === 'Deluge').at(0);
+  const downloadServices =
+    config.services.filter(
+      (service) =>
+        service.type === 'qBittorrent' ||
+        service.type === 'Transmission' ||
+        service.type === 'Deluge'
+    ) ?? [];
 
-  const [delugeTorrents, setDelugeTorrents] = useState<NormalizedTorrent[]>([]);
   const [torrentHistory, torrentHistoryHandlers] = useListState<torrentHistory>([]);
-  const [qBittorrentTorrents, setqBittorrentTorrents] = useState<NormalizedTorrent[]>([]);
-
-  const torrents: NormalizedTorrent[] = [];
-  delugeTorrents.forEach((delugeTorrent) =>
-    torrents.push({ ...delugeTorrent, progress: delugeTorrent.progress / 100 })
-  );
-  qBittorrentTorrents.forEach((torrent) => torrents.push(torrent));
+  const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
 
   const totalDownloadSpeed = torrents.reduce((acc, torrent) => acc + torrent.downloadSpeed, 0);
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Get the current download speed of qBittorrent.
-      if (qBittorrentService) {
-        axios
-          .post('/api/modules/downloads?dlclient=qbit', { ...qBittorrentService })
-          .then((res) => {
-            setqBittorrentTorrents(res.data.torrents);
-          });
-        if (delugeService) {
-          axios.post('/api/modules/downloads?dlclient=deluge', { ...delugeService }).then((res) => {
-            setDelugeTorrents(res.data.torrents);
-          });
-        }
-      }
+    if (downloadServices.length === 0) return;
+    setSafeInterval(() => {
+      axios.post('/api/modules/downloads', { config }).then((response) => {
+        setTorrents(response.data);
+      });
     }, 1000);
-  }, [config.modules]);
+  }, [config.services]);
 
   useEffect(() => {
     torrentHistoryHandlers.append({
@@ -101,7 +58,7 @@ export default function TotalDownloadsComponent() {
     });
   }, [totalDownloadSpeed, totalUploadSpeed]);
 
-  if (!qBittorrentService && !delugeService) {
+  if (downloadServices.length === 0) {
     return (
       <Group direction="column">
         <Title order={4}>No supported download clients found!</Title>
