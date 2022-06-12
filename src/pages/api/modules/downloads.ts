@@ -34,22 +34,24 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     );
   }
   if (delugeService) {
+    const delugePass = 'password' in delugeService ? delugeService.password : '';
     torrents.push(
       ...(
         await new Deluge({
           baseUrl: delugeService.url,
-          password: delugeService.password,
+          password: delugePass,
         }).getAllData()
       ).torrents
     );
   }
   if (transmissionService) {
+    const transmissionPass = 'password' in transmissionService ? transmissionService.password : '';
     torrents.push(
       ...(
         await new Transmission({
           baseUrl: transmissionService.url,
           username: transmissionService.username,
-          password: transmissionService.password,
+          password: transmissionPass,
         }).getAllData()
       ).torrents
     );
