@@ -18,6 +18,7 @@ import { IModule } from '../modules';
 import { useConfig } from '../../../tools/state';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
+import { useViewportSize } from '@mantine/hooks';
 
 export const DownloadsModule: IModule = {
   title: 'Torrent',
@@ -34,6 +35,7 @@ export const DownloadsModule: IModule = {
 
 export default function DownloadComponent() {
   const { config } = useConfig();
+  const { height, width } = useViewportSize();
   const downloadServices =
     config.services.filter(
       (service) =>
@@ -85,10 +87,10 @@ export default function DownloadComponent() {
   const ths = (
     <tr>
       <th>Name</th>
-      <th>Size</th>
-      <th>Download</th>
-      <th>Upload</th>
-      <th>ETA</th>
+      {width > 576 ? <th>Size</th> : ``}
+      <th>Down</th>
+      <th>Up</th>
+      {width > 576 ? <th>ETA</th> : ``}
       <th>Progress</th>
     </tr>
   );
@@ -137,18 +139,22 @@ export default function DownloadComponent() {
               </Text>
             </Tooltip>
           </td>
+          {width > 576 ? 
           <td>
-            <Text size="xs">{size > 0 ? (size > 999 ? `${(size / 1024).toFixed(1)} GB` : `${size.toFixed(1)} MB`) : '-' }</Text>
-          </td>
+          <Text size="xs">{size > 0 ? (size > 999 ? `${(size / 1024).toFixed(1)} GB` : `${size.toFixed(1)} MB`) : '-' }</Text>
+          </td> :
+          ``}
           <td>
             <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
           </td>
           <td>
             <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
           </td>
+          {width > 576 ? 
           <td>
             <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
-          </td>
+          </td> :
+          ``}
           <td>
             <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
             <Progress
