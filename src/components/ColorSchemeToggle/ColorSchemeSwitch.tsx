@@ -35,6 +35,7 @@ export function ColorSchemeSwitch() {
   const { classes, cx } = useStyles();
 
   return (
+    <>
     <Group>
       <div className={classes.root}>
         <Sun className={cx(classes.icon, classes.iconLight)} size={18} />
@@ -46,5 +47,17 @@ export function ColorSchemeSwitch() {
         <Kbd>Ctrl</Kbd>+<Kbd>J</Kbd>
       </Group>
     </Group>
+    
+    <Group>
+      <Switch size='md' checked={config.settings.colorBlind === true} onChange={(event) => setConfig({
+        ...config,
+        settings: {
+          ...config.settings,
+          colorBlind: event.currentTarget.checked,
+        },
+      })}/>
+      {config.settings.colorBlind === true ? 'Disable' : 'Enable'} color blind mode
+    </Group>
+    </>
   );
 }
