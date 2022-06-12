@@ -1,24 +1,37 @@
-import { Group, Navbar as MantineNavbar } from '@mantine/core';
-import { WeatherModule, DateModule } from '../modules';
-import { ModuleWrapper } from '../modules/moduleWrapper';
+import { createStyles, Navbar as MantineNavbar } from '@mantine/core';
+import Widgets from './Widgets';
+
+const useStyles = createStyles((theme) => ({
+  hide: {
+    [theme.fn.smallerThan('xs')]: {
+      display: 'none',
+    },
+  },
+  burger: {
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
+    },
+  },
+}));
 
 export default function Navbar() {
+  const { classes, cx } = useStyles();
+
   return (
     <MantineNavbar
-      hiddenBreakpoint="lg"
+      pl="md"
+      hiddenBreakpoint="sm"
       hidden
+      className={cx(classes.hide)}
       style={{
         border: 'none',
+        background: 'none',
       }}
       width={{
         base: 'auto',
       }}
     >
-      <Group mt="sm" direction="column" align="center">
-        <ModuleWrapper module={DateModule} />
-        <ModuleWrapper module={WeatherModule} />
-        <ModuleWrapper module={WeatherModule} />
-      </Group>
+      <Widgets />
     </MantineNavbar>
   );
 }

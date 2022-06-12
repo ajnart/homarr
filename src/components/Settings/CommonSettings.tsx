@@ -4,6 +4,7 @@ import { IconBrandGithub as BrandGithub } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
+import { WidgetsPositionSwitch } from '../WidgetsPositionSwitch/WidgetsPositionSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
@@ -67,8 +68,8 @@ export default function CommonSettings(args: any) {
           />
         )}
       </Group>
-
       <ColorSchemeSwitch />
+      <WidgetsPositionSwitch />
       <ModuleEnabler />
       <ConfigChanger />
       <SaveConfigComponent />
