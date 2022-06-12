@@ -19,6 +19,7 @@ import { useConfig } from '../../../tools/state';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
 import { useViewportSize } from '@mantine/hooks';
+import { humanFileSize } from '../../../tools/humanFileSize';
 
 export const DownloadsModule: IModule = {
   title: 'Torrent',
@@ -100,7 +101,7 @@ export default function DownloadComponent() {
     .map((torrent) => {
       const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
       const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
-      const size = torrent.totalSelected / (1024 * 1024);
+      const size = torrent.totalSelected;
       // Convert Seconds to readable format.
       function calculateETA(givenSeconds: number) {
         if (givenSeconds > 86399) { // No
@@ -140,7 +141,7 @@ export default function DownloadComponent() {
             </Tooltip>
           </td>
           <td>
-          <Text size="xs">{size > 0 ? (size > 999 ? `${(size / 1024).toFixed(1)} GB` : `${size.toFixed(1)} MB`) : '-' }</Text>
+          <Text size="xs">{humanFileSize(size)}</Text>
           </td>
           {width > 576 ? 
           <td>
