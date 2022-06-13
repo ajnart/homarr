@@ -112,6 +112,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       apiKey: props.apiKey ?? (undefined as unknown as string),
       username: props.username ?? (undefined as unknown as string),
       password: props.password ?? (undefined as unknown as string),
+      port: props.port ?? (undefined as unknown as string),
       openedUrl: props.openedUrl ?? (undefined as unknown as string),
     },
     validate: {
@@ -300,7 +301,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               />
             </>
           )}
-          {(form.values.type === 'Deluge' || form.values.type === 'Transmission') && (
+          {form.values.type === 'Deluge' && (
             <>
               <TextInput
                 required
@@ -313,6 +314,40 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 error={form.errors.password && 'Invalid password'}
               />
             </>
+          )}
+          {form.values.type === 'Transmission' && (
+            <>
+              <TextInput
+                required
+                label="Username"
+                placeholder="admin"
+                value={form.values.username}
+                onChange={(event) => {
+                    form.setFieldValue('username', event.currentTarget.value);
+                }}
+                error={form.errors.username && 'Invalid username'}
+              />
+              <TextInput                
+                required
+                label="Password"
+                placeholder="password"
+                value={form.values.password}
+                onChange={(event) => {
+                  form.setFieldValue('password', event.currentTarget.value);
+                }}
+                error={form.errors.password && 'Invalid password'}
+              />
+              <TextInput                
+                required
+                label="Port"
+                placeholder="9091"
+                value={form.values.port}
+                onChange={(event) => {
+                  form.setFieldValue('port', event.currentTarget.value);
+                }}
+                error={form.errors.port && 'Invalid Port'}
+              />
+            </>          
           )}
         </Group>
 
