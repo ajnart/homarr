@@ -317,7 +317,6 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           {form.values.type === 'Transmission' && (
             <>
               <TextInput
-                required
                 label="Username"
                 placeholder="admin"
                 value={form.values.username}
@@ -326,8 +325,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 }}
                 error={form.errors.username && 'Invalid username'}
               />
-              <TextInput                
-                required
+              <TextInput
                 label="Password"
                 placeholder="password"
                 value={form.values.password}
