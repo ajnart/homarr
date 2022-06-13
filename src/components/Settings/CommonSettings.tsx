@@ -5,6 +5,7 @@ import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import { WidgetsPositionSwitch } from '../WidgetsPositionSwitch/WidgetsPositionSwitch';
+import { LogoToggleSwitch } from '../LogoToggleSwitch/LogoToggleSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
@@ -70,6 +71,7 @@ export default function CommonSettings(args: any) {
       </Group>
       <ColorSchemeSwitch />
       <WidgetsPositionSwitch />
+      <LogoToggleSwitch />
       <ModuleEnabler />
       <ConfigChanger />
       <SaveConfigComponent />

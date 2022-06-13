@@ -15,6 +15,7 @@ export function Logo({ style }: any) {
         src={config.settings.logo || '/imgs/logo.png'}
         style={{
           position: 'relative',
+          visibility: config.settings.logoVisibility || 'visible'
         }}
       />
       <NextLink

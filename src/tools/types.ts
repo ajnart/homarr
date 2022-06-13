@@ -12,6 +12,7 @@ export interface Settings {
   background?: string;
   appOpacity?: number;
   widgetPosition?: string;
+  logoVisibility?: string;
 }
 
 export interface Config {
