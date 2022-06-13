@@ -44,15 +44,11 @@ const AppShelf = (props: any) => {
   const { colorScheme } = useMantineColorScheme();
 
   const sensors = useSensors(
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 500,
-        tolerance: 5,
-      },
-    }),
+    useSensor(TouchSensor, {}),
     useSensor(MouseSensor, {
+      // Require the mouse to move by 10 pixels before activating
       activationConstraint: {
-        delay: 500,
+        delay: 250,
         tolerance: 5,
       },
     })

@@ -198,4 +198,7 @@ SOFTWARE.
   <i>Thank you for visiting! <b>For more information <a href="https://github.com/ajnart/homarr/wiki">read the wiki!</a></b></i>
   <br/>
   <br/>
+  <a href="https://trackgit.com">
+    <img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/l3khzc3a3pexzw5w5whl" alt="trackgit-views" />
+  </a>
 </p>

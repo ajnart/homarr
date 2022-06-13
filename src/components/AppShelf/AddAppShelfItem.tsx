@@ -303,17 +303,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           {(form.values.type === 'Deluge' || form.values.type === 'Transmission') && (
             <>
               <TextInput
-                label="Username"
-                placeholder="admin"
-                value={form.values.username}
-                onChange={(event) => {
-                  form.setFieldValue('username', event.currentTarget.value);
-                }}
-                error={form.errors.username && 'Invalid username'}
-              />
-              <TextInput
+                required
                 label="Password"
-                placeholder="adminadmin"
+                placeholder="password"
                 value={form.values.password}
                 onChange={(event) => {
                   form.setFieldValue('password', event.currentTarget.value);
