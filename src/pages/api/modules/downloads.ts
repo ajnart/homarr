@@ -47,7 +47,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     torrents.push(
       ...(
         await new Transmission({
-          baseUrl: transmissionService.url + ":" + transmissionService.port,
+          baseUrl: transmissionService.url,
           username: transmissionService.username,
           password: transmissionService.password,
         }).getAllData()
