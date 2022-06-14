@@ -29,6 +29,12 @@ export const CalendarModule: IModule = {
     'A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.',
   icon: CalendarIcon,
   component: CalendarComponent,
+  options: {
+    sundaystart: {
+      name: 'Start the week on Sunday',
+      value: false,
+    },
+  },
 };
 
 export default function CalendarComponent(props: any) {
@@ -104,8 +110,11 @@ export default function CalendarComponent(props: any) {
     });
   }, [config.services]);
 
+  const weekStartsAtSunday =
+    (config?.modules?.[CalendarModule.title]?.options?.sundaystart?.value as boolean) ?? false;
   return (
     <Calendar
+      firstDayOfWeek={weekStartsAtSunday ? 'sunday' : 'monday'}
       onChange={(day: any) => {}}
       dayStyle={(date) =>
         date.getDay() === today.getDay() && date.getDate() === today.getDate()
@@ -115,6 +124,13 @@ export default function CalendarComponent(props: any) {
             }
           : {}
       }
+      styles={{
+        calendarHeader: {
+          marginRight: 15,
+          marginLeft: 15,
+        },
+      }}
+      allowLevelChange={false}
       dayClassName={(date, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
       renderDay={(renderdate) => (
         <DayComponent

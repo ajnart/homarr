@@ -120,8 +120,8 @@ export function ModuleWrapper(props: any) {
         styles={{
           root: {
             position: 'absolute',
-            top: 15,
-            right: 15,
+            top: 12,
+            right: 12,
           },
         }}
       />
