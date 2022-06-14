@@ -6,12 +6,12 @@ export function AppCardWidthSelector() {
   const { config, setConfig } = useConfig();
 
   const MARKS = [
-    { value: 1, label: '1' },
-    { value: 2, label: '2' },
-    { value: 3, label: '3' },
-    { value: 4, label: '4' },
-    { value: 6, label: '6' },
-    { value: 12, label: '12' },
+    { value: 0.8 },
+    { value: 1 },
+    { value: 1.2 },
+    { value: 1.4 },
+    { value: 1.6 },
+    { value: 2 },
   ];
 
   const setappCardWidth = (appCardWidth: number) => {
@@ -28,10 +28,11 @@ export function AppCardWidthSelector() {
     <Group direction="column" spacing="xs" grow>
       <Text>App Width</Text>
       <Slider
-        defaultValue={config.settings.appCardWidth || 6}
-        step={1}
-        min={1}
-        max={12}
+        label={null}
+        defaultValue={config.settings.appCardWidth}
+        step={0.2}
+        min={0.8}
+        max={2}
         marks={MARKS}
         styles={{ markLabel: { fontSize: 'xx-small' } }}
         onChange={(value) => setappCardWidth(value)}
