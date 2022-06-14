@@ -276,7 +276,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               </Text>
             </>
           )}
-          {form.values.type === 'qBittorrent' && (
+          {(form.values.type === 'Deluge' ||
+            form.values.type === 'Transmission' ||
+            form.values.type === 'qBittorrent') && (
             <>
               <TextInput
                 required
@@ -289,21 +291,6 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 error={form.errors.username && 'Invalid username'}
               />
               <TextInput
-                required
-                label="Password"
-                placeholder="adminadmin"
-                value={form.values.password}
-                onChange={(event) => {
-                  form.setFieldValue('password', event.currentTarget.value);
-                }}
-                error={form.errors.password && 'Invalid password'}
-              />
-            </>
-          )}
-          {(form.values.type === 'Deluge' || form.values.type === 'Transmission') && (
-            <>
-              <TextInput
-                required
                 label="Password"
                 placeholder="password"
                 value={form.values.password}
