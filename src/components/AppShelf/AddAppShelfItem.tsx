@@ -20,6 +20,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList } from '../../tools/types';
+import { MultiSelect } from '@mantine/core';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -101,6 +102,27 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
     return acc;
   }, [] as string[]);
 
+  const statusCodes = [
+    {value: '200', label: '200 - OK', group:'Sucessful responses'}, 
+    {value: '204', label: '204 - No Content', group:'Sucessful responses'},
+    {value: '301', label: '301 - Moved Permanently', group:'Redirection responses'},
+    {value: '302', label: '302 - Found / Moved Temporarily', group:'Redirection responses'},
+    {value: '304', label: '304 - Not Modified', group:'Redirection responses'},
+    {value: '307', label: '307 - Temporary Redirect', group:'Redirection responses'},
+    {value: '308', label: '308 - Permanent Redirect', group:'Redirection responses'},
+    {value: '400', label: '400 - Bad Request', group:'Client error responses'},
+    {value: '401', label: '401 - Unauthorized', group:'Client error responses'},
+    {value: '403', label: '403 - Forbidden', group:'Client error responses'},
+    {value: '404', label: '404 - Not Found', group:'Client error responses'},
+    {value: '408', label: '408 - Request Timeout', group:'Client error responses'},
+    {value: '410', label: '410 - Gone', group:'Client error responses'},
+    {value: '429', label: '429 - Too Many Requests', group:'Client error responses'},
+    {value: '500', label: '500 - Internal Server Error', group:'Server error responses'},
+    {value: '502', label: '502 - Bad Gateway', group:'Server error responses'},
+    {value: '503', label: '503 - Service Unavailable', group:'Server error responses'},
+    {value: '504', label: '504 - Gateway Timeout Error', group:'Server error responses'},
+    ];
+
   const form = useForm({
     initialValues: {
       id: props.id ?? uuidv4(),
@@ -113,6 +135,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       username: props.username ?? (undefined as unknown as string),
       password: props.password ?? (undefined as unknown as string),
       openedUrl: props.openedUrl ?? (undefined as unknown as string),
+      status: props.status ?? ['200'],
     },
     validate: {
       apiKey: () => null,
@@ -133,6 +156,12 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
         }
         return null;
       },
+      status: (value: string[]) => {
+        if (!value.length) {
+          return 'Please select a status code';
+        }
+        return null;
+      }
     },
   });
 
@@ -239,6 +268,17 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             getCreateLabel={(query) => `+ Create "${query}"`}
             onCreate={(query) => {}}
             {...form.getInputProps('category')}
+          />
+          <MultiSelect
+          required 
+          label="HTTP Status Codes"
+          data={statusCodes}
+          placeholder="Select valid status codes"
+          clearButtonLabel="Clear selection"
+          nothingFound="Nothing found"
+          clearable
+          searchable
+          {...form.getInputProps('status')}
           />
           <LoadingOverlay visible={isLoading} />
           {(form.values.type === 'Sonarr' ||

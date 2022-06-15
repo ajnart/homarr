@@ -66,4 +66,5 @@ export interface serviceItem {
   password?: string;
   username?: string;
   openedUrl?: string;
+  status: string[];
 }

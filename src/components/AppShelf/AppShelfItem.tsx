@@ -133,7 +133,7 @@ export function AppShelfItem(props: any) {
                 />
               </motion.i>
             </AspectRatio>
-            <PingComponent url={service.url} />
+            <PingComponent url={service.url} status={service.status} />
           </Card.Section>
         </Center>
       </Card>
