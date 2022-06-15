@@ -25,7 +25,7 @@ export default function PingComponent(props: any) {
     const { status }: {status: string[]} = props;
     //Default Status
     let acceptableStatus = ['200'];
-    if (status.length) {
+    if (status !== undefined && status.length) {
       acceptableStatus = status;
     }
     // Checks if reported status is in acceptable status array
