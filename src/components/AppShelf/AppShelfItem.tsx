@@ -84,7 +84,7 @@ export function AppShelfItem(props: any) {
         <Card.Section>
           <Anchor
             target="_blank"
-            href={service.url}
+            href={service.openedUrl ? service.openedUrl : service.url}
             style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
           >
             <Text mt="sm" align="center" lineClamp={1} weight={550}>
