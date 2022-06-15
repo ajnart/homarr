@@ -281,7 +281,6 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             form.values.type === 'qBittorrent') && (
             <>
               <TextInput
-                required
                 label="Username"
                 placeholder="admin"
                 value={form.values.username}
