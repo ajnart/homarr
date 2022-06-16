@@ -83,7 +83,7 @@ export function AppShelfItem(props: any) {
       >
         <Card.Section>
           <Anchor
-            target="_blank"
+            target={service.target !== undefined ? service.target : '_blank'}
             href={service.openedUrl ? service.openedUrl : service.url}
             style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
           >
@@ -127,13 +127,18 @@ export function AppShelfItem(props: any) {
                   src={service.icon}
                   fit="contain"
                   onClick={() => {
-                    if (service.openedUrl) window.open(service.openedUrl, '_blank');
-                    else window.open(service.url);
+                    if (service.target === undefined || service.target === '_blank') {
+                      if (service.openedUrl) window.open(service.openedUrl, '_blank');
+                      else window.open(service.url);
+                    } else {
+                      if (service.openedUrl) window.location.href = service.openedUrl;
+                      else window.location.href = service.url;
+                    }
                   }}
                 />
               </motion.i>
             </AspectRatio>
-            <PingComponent url={service.url} />
+            <PingComponent url={service.url} status={service.status} />
           </Card.Section>
         </Center>
       </Card>
