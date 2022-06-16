@@ -178,6 +178,12 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       </Center>
       <form
         onSubmit={form.onSubmit(() => {
+          if (JSON.stringify(form.values.status) === JSON.stringify(['200'])) {
+            form.values.status = undefined;
+          }
+          if (form.values.target === '_blank') {
+            form.values.target = undefined;
+          }
           // If service already exists, update it.
           if (config.services && config.services.find((s) => s.id === form.values.id)) {
             setConfig({
@@ -202,7 +208,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           form.reset();
         })}
       >
-        <Tabs position="apart">
+        <Tabs position="center">
         <Tabs.Tab label="Options">
           <ScrollArea style={{height:'42vh'}} scrollbarSize={4}>
           <Group direction="column" grow>
@@ -213,70 +219,77 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               {...form.getInputProps('name')}
             />
 
-              <TextInput
-                required
-                label="Icon URL"
-                placeholder="/favicon.svg"
-                {...form.getInputProps('icon')}
-              />
-              <TextInput
-                required
-                label="Service URL"
-                placeholder="http://localhost:7575"
-                {...form.getInputProps('url')}
-              />
-              <TextInput
-                label="New tab URL"
-                placeholder="http://sonarr.example.com"
-                {...form.getInputProps('openedUrl')}
-              />
-              <Select
-                label="Service type"
-                defaultValue="Other"
-                placeholder="Pick one"
-                required
-                searchable
-                data={ServiceTypeList}
-                {...form.getInputProps('type')}
-              />
-              <Select
-                label="Category"
-                data={categoryList}
-                placeholder="Select a category or create a new one"
-                nothingFound="Nothing found"
-                searchable
-                clearable
-                creatable
-                onClick={(e) => {
-                  e.preventDefault();
-                }}
-                getCreateLabel={(query) => `+ Create "${query}"`}
-                onCreate={(query) => {}}
-                {...form.getInputProps('category')}
-              />
-              <LoadingOverlay visible={isLoading} />
-              {(form.values.type === 'Sonarr' ||
-                form.values.type === 'Radarr' ||
-                form.values.type === 'Lidarr' ||
-                form.values.type === 'Readarr') && (
-                <>
-                  <TextInput
-                    required
-                    label="API key"
-                    placeholder="Your API key"
-                    value={form.values.apiKey}
-                    onChange={(event) => {
-                      form.setFieldValue('apiKey', event.currentTarget.value);
-                    }}
-                    error={form.errors.apiKey && 'Invalid API key'}
-                  />
-                  <Text
-                    style={{
-                      alignSelf: 'center',
-                      fontSize: '0.75rem',
-                      textAlign: 'center',
-                      color: 'gray',
-                    }}
+            <TextInput
+              required
+              label="Icon URL"
+              placeholder="/favicon.svg"
+              {...form.getInputProps('icon')}
+            />
+            <TextInput
+              required
+              label="Service URL"
+              placeholder="http://localhost:7575"
+              {...form.getInputProps('url')}
+            />
+            <TextInput
+              label="On Click URL"
+              placeholder="http://sonarr.example.com"
+              {...form.getInputProps('openedUrl')}
+            />
+            <Select
+              label="Service type"
+              defaultValue="Other"
+              placeholder="Pick one"
+              required
+              searchable
+              data={ServiceTypeList}
+              {...form.getInputProps('type')}
+            />
+            <Select
+              label="Category"
+              data={categoryList}
+              placeholder="Select a category or create a new one"
+              nothingFound="Nothing found"
+              searchable
+              clearable
+              creatable
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+              getCreateLabel={(query) => `+ Create "${query}"`}
+              onCreate={(query) => {}}
+              {...form.getInputProps('category')}
+            />
+            <LoadingOverlay visible={isLoading} />
+            {(form.values.type === 'Sonarr' ||
+              form.values.type === 'Radarr' ||
+              form.values.type === 'Lidarr' ||
+              form.values.type === 'Readarr') && (
+              <>
+                <TextInput
+                  required
+                  label="API key"
+                  placeholder="Your API key"
+                  value={form.values.apiKey}
+                  onChange={(event) => {
+                    form.setFieldValue('apiKey', event.currentTarget.value);
+                  }}
+                  error={form.errors.apiKey && 'Invalid API key'}
+                />
+                <Text
+                  style={{
+                    alignSelf: 'center',
+                    fontSize: '0.75rem',
+                    textAlign: 'center',
+                    color: 'gray',
+                  }}
+                >
+                  Tip: Get your API key{' '}
+                  <Anchor
+                    target="_blank"
+                    weight="bold"
+                    style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
+                    href={`${hostname}/settings/general`}
                   >
                     here.
                   </Anchor>
@@ -332,12 +345,12 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             placeholder="Select valid status codes"
             clearButtonLabel="Clear selection"
             nothingFound="Nothing found"
+            defaultValue={['200']}
             clearable
             searchable
             {...form.getInputProps('status')}
             />
             <Select
-              required
               label="Open Tab in: "
               data={targets}
               defaultValue="_blank"
