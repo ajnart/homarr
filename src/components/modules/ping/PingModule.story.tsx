@@ -12,6 +12,7 @@ const service: serviceItem = {
   icon: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/youtube.png',
   url: 'https://youtube.com/',
   status: ['200'],
+  target: "_blank",
 };
 
 export const Default = (args: any) => <PingComponent service={service} />;
