@@ -14,6 +14,7 @@ import {
   Text,
   Tabs,
   MultiSelect,
+  ScrollArea,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useEffect, useState } from 'react';
@@ -202,14 +203,15 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
         })}
       >
         <Tabs position="apart">
-          <Tabs.Tab label="Options">
-            <Group direction="column" grow>
-              <TextInput
-                required
-                label="Service name"
-                placeholder="Plex"
-                {...form.getInputProps('name')}
-              />
+        <Tabs.Tab label="Options">
+          <ScrollArea style={{height:'42vh'}} scrollbarSize={4}>
+          <Group direction="column" grow>
+            <TextInput
+              required
+              label="Service name"
+              placeholder="Plex"
+              {...form.getInputProps('name')}
+            />
 
               <TextInput
                 required
@@ -276,79 +278,63 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                       color: 'gray',
                     }}
                   >
-                    Tip: Get your API key{' '}
-                    <Anchor
-                      target="_blank"
-                      weight="bold"
-                      style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
-                      href={`${hostname}/settings/general`}
-                    >
-                      here.
-                    </Anchor>
-                  </Text>
-                </>
-              )}
-              {form.values.type === 'qBittorrent' && (
-                <>
-                  <TextInput
-                    required
-                    label="Username"
-                    placeholder="admin"
-                    value={form.values.username}
-                    onChange={(event) => {
-                      form.setFieldValue('username', event.currentTarget.value);
-                    }}
-                    error={form.errors.username && 'Invalid username'}
-                  />
-                  <TextInput
-                    required
-                    label="Password"
-                    placeholder="adminadmin"
-                    value={form.values.password}
-                    onChange={(event) => {
-                      form.setFieldValue('password', event.currentTarget.value);
-                    }}
-                    error={form.errors.password && 'Invalid password'}
-                  />
-                </>
-              )}
-              {(form.values.type === 'Deluge' ||
-                form.values.type === 'Transmission' ||
-                form.values.type === 'qBittorrent') && (
-                <>
-                  <TextInput
-                    label="Username"
-                    placeholder="admin"
-                    value={form.values.username}
-                    onChange={(event) => {
-                      form.setFieldValue('username', event.currentTarget.value);
-                    }}
-                    error={form.errors.username && 'Invalid username'}
-                  />
-                  <TextInput
-                    label="Password"
-                    placeholder="password"
-                    value={form.values.password}
-                    onChange={(event) => {
-                      form.setFieldValue('password', event.currentTarget.value);
-                    }}
-                    error={form.errors.password && 'Invalid password'}
-                  />
-                </>
-              )}
-            </Group>
-          </Tabs.Tab>
-          <Tabs.Tab label="Advanced Options">
-            <MultiSelect
-              required
-              label="HTTP Status Codes"
-              data={statusCodes}
-              placeholder="Select valid status codes"
-              clearButtonLabel="Clear selection"
-              nothingFound="Nothing found"
-              clearable
-              searchable
-              {...form.getInputProps('status')}
+                    here.
+                  </Anchor>
+                </Text>
+              </>
+            )}
+            {form.values.type === 'qBittorrent' && (
+              <>
+                <TextInput
+                  required
+                  label="Username"
+                  placeholder="admin"
+                  value={form.values.username}
+                  onChange={(event) => {
+                    form.setFieldValue('username', event.currentTarget.value);
+                  }}
+                  error={form.errors.username && 'Invalid username'}
+                />
+                <TextInput
+                  required
+                  label="Password"
+                  placeholder="adminadmin"
+                  value={form.values.password}
+                  onChange={(event) => {
+                    form.setFieldValue('password', event.currentTarget.value);
+                  }}
+                  error={form.errors.password && 'Invalid password'}
+                />
+              </>
+            )}
+            {(form.values.type === 'Deluge' || form.values.type === 'Transmission') && (
+              <>
+                <TextInput
+                  label="Password"
+                  placeholder="password"
+                  value={form.values.password}
+                  onChange={(event) => {
+                    form.setFieldValue('password', event.currentTarget.value);
+                  }}
+                  error={form.errors.password && 'Invalid password'}
+                />
+              </>
+            )}
+          </Group>
+          </ScrollArea>
+        </Tabs.Tab>
+        <Tabs.Tab label="Advanced Options">
+          <Group direction="column" grow>
+          <MultiSelect
+            required 
+            label="HTTP Status Codes"
+            data={statusCodes}
+            placeholder="Select valid status codes"
+            clearButtonLabel="Clear selection"
+            nothingFound="Nothing found"
+            clearable
+            searchable
+            {...form.getInputProps('status')}
             />
             <Select
               required
