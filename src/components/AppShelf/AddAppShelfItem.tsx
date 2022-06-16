@@ -22,7 +22,7 @@ import { IconApps as Apps } from '@tabler/icons';
 import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
-import { ServiceTypeList, statusCodes, targets } from '../../tools/types';
+import { ServiceTypeList, StatusCodes, Targets } from '../../tools/types';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -341,7 +341,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           <MultiSelect
             required 
             label="HTTP Status Codes"
-            data={statusCodes}
+            data={StatusCodes}
             placeholder="Select valid status codes"
             clearButtonLabel="Clear selection"
             nothingFound="Nothing found"
@@ -352,7 +352,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
             />
             <Select
               label="Open Tab in: "
-              data={targets}
+              data={Targets}
               defaultValue="_blank"
               placeholder="Pick one"
               {...form.getInputProps('target')}

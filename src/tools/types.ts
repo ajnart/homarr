@@ -31,7 +31,7 @@ interface ConfigModule {
   };
 }
 
-export const statusCodes = [
+export const StatusCodes = [
   {value: '200', label: '200 - OK', group:'Sucessful responses'}, 
   {value: '204', label: '204 - No Content', group:'Sucessful responses'},
   {value: '301', label: '301 - Moved Permanently', group:'Redirection responses'},
@@ -52,7 +52,7 @@ export const statusCodes = [
   {value: '054', label: '504 - Gateway Timeout Error', group:'Server error responses'},
   ];
 
-export const targets = [
+export const Targets = [
   {value: '_blank', label: 'New Tab'},
   {value: '_top', label: 'Same Window'}
 ]
