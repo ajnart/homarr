@@ -68,7 +68,7 @@ export default function CalendarComponent(props: any) {
 
   useEffect(() => {
     // Create each Sonarr service and get the medias
-    const currentSonarrMedias: any[] = [...sonarrMedias];
+    const currentSonarrMedias: any[] = [];
     Promise.all(
       sonarrServices.map((service) =>
         getMedias(service, 'sonarr').then((res) => {
@@ -78,7 +78,7 @@ export default function CalendarComponent(props: any) {
     ).then(() => {
       setSonarrMedias(currentSonarrMedias);
     });
-    const currentRadarrMedias: any[] = [...radarrMedias];
+    const currentRadarrMedias: any[] = [];
     Promise.all(
       radarrServices.map((service) =>
         getMedias(service, 'radarr').then((res) => {
@@ -88,7 +88,7 @@ export default function CalendarComponent(props: any) {
     ).then(() => {
       setRadarrMedias(currentRadarrMedias);
     });
-    const currentLidarrMedias: any[] = [...lidarrMedias];
+    const currentLidarrMedias: any[] = [];
     Promise.all(
       lidarrServices.map((service) =>
         getMedias(service, 'lidarr').then((res) => {
@@ -98,7 +98,7 @@ export default function CalendarComponent(props: any) {
     ).then(() => {
       setLidarrMedias(currentLidarrMedias);
     });
-    const currentReadarrMedias: any[] = [...readarrMedias];
+    const currentReadarrMedias: any[] = [];
     Promise.all(
       readarrServices.map((service) =>
         getMedias(service, 'readarr').then((res) => {
