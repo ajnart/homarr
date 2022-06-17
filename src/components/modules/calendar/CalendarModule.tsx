@@ -73,6 +73,8 @@ export default function CalendarComponent(props: any) {
       sonarrServices.map((service) =>
         getMedias(service, 'sonarr').then((res) => {
           currentSonarrMedias.push(...res.data);
+        }).catch(() => {
+          currentSonarrMedias.push([]);
         })
       )
     ).then(() => {
@@ -83,6 +85,8 @@ export default function CalendarComponent(props: any) {
       radarrServices.map((service) =>
         getMedias(service, 'radarr').then((res) => {
           currentRadarrMedias.push(...res.data);
+        }).catch(() => {
+          currentRadarrMedias.push([]);
         })
       )
     ).then(() => {
@@ -93,6 +97,8 @@ export default function CalendarComponent(props: any) {
       lidarrServices.map((service) =>
         getMedias(service, 'lidarr').then((res) => {
           currentLidarrMedias.push(...res.data);
+        }).catch(() => {
+          currentLidarrMedias.push([]);
         })
       )
     ).then(() => {
@@ -103,6 +109,8 @@ export default function CalendarComponent(props: any) {
       readarrServices.map((service) =>
         getMedias(service, 'readarr').then((res) => {
           currentReadarrMedias.push(...res.data);
+        }).catch(() => {
+          currentReadarrMedias.push([]);
         })
       )
     ).then(() => {
