@@ -92,6 +92,6 @@ export interface serviceItem {
   password?: string;
   username?: string;
   openedUrl?: string;
-  status: string[];
-  target: string;
+  newTab?: boolean;
+  status?: string[];
 }

@@ -22,18 +22,7 @@ export default function AppShelfMenu(props: any) {
       >
         <AddAppShelfItemForm
           setOpened={setOpened}
-          name={service.name}
-          id={service.id}
-          category={service.category}
-          type={service.type}
-          url={service.url}
-          icon={service.icon}
-          apiKey={service.apiKey}
-          username={service.username}
-          password={service.password}
-          openedUrl={service.openedUrl}
-          status={service.status}
-          target={service.target}
+          {...service}
           message="Save service"
         />
       </Modal>
