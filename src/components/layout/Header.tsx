@@ -18,6 +18,7 @@ import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import { ModuleWrapper } from '../modules/moduleWrapper';
 import { CalendarModule, TotalDownloadsModule, WeatherModule, DateModule } from '../modules';
+import DockerDrawer from '../Docker/DockerDrawer';
 
 const HEADER_HEIGHT = 60;
 
@@ -47,6 +48,7 @@ export function Header(props: any) {
         </Box>
         <Group noWrap>
           <SearchBar />
+          <DockerDrawer />
           <SettingsMenuButton />
           <AddItemShelfButton />
           <ActionIcon className={classes.burger} variant="default" radius="md" size="xl">
