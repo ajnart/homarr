@@ -38,7 +38,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       ...(
         await new Deluge({
           baseUrl: delugeService.url,
-          password: delugeService.password,
+          password: 'password' in delugeService ? delugeService.password : '',
         }).getAllData()
       ).torrents
     );
@@ -49,7 +49,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
         await new Transmission({
           baseUrl: transmissionService.url,
           username: transmissionService.username,
-          password: transmissionService.password,
+          password: 'password' in transmissionService ? transmissionService.password : '',
         }).getAllData()
       ).torrents
     );
