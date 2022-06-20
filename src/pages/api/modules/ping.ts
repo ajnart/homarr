@@ -10,7 +10,11 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       res.status(response.status).json(response.statusText);
     })
     .catch((error) => {
-      res.status(error.response.status).json(error.response.statusText);
+      if (error.response) {
+        res.status(error.response.status).json(error.response.statusText);
+      } else {
+        res.status(500).json('Server Error');
+      }
     });
   // // Make a request to the URL
   // const response = await axios.get(url);
