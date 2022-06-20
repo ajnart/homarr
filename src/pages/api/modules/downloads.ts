@@ -9,50 +9,56 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Get the type of service from the request url
   const torrents: NormalizedTorrent[] = [];
   const { config }: { config: Config } = req.body;
-  const qBittorrentService = config.services
-    .filter((service) => service.type === 'qBittorrent')
-    .at(0);
-  const delugeService = config.services.filter((service) => service.type === 'Deluge').at(0);
-  const transmissionService = config.services
-    .filter((service) => service.type === 'Transmission')
-    .at(0);
-  if (!qBittorrentService && !delugeService && !transmissionService) {
+  const qBittorrentServices = config.services
+    .filter((service) => service.type === 'qBittorrent');
+
+  const delugeServices = config.services.filter((service) => service.type === 'Deluge');
+  const transmissionServices = config.services
+    .filter((service) => service.type === 'Transmission');
+
+  if (!qBittorrentServices && !delugeServices && !transmissionServices) {
     return res.status(500).json({
       statusCode: 500,
-      message: 'Missing service',
+      message: 'Missing services',
     });
   }
-  if (qBittorrentService) {
-    torrents.push(
-      ...(
-        await new QBittorrent({
-          baseUrl: qBittorrentService.url,
-          username: qBittorrentService.username,
-          password: qBittorrentService.password,
-        }).getAllData()
-      ).torrents
-    );
+  if (qBittorrentServices) {
+    for (const service of qBittorrentServices) {
+      torrents.push(
+        ...(
+          await new QBittorrent({
+            baseUrl: service.url,
+            username: service.username,
+            password: service.password,
+          }).getAllData()
+        ).torrents
+      );
+    }
   }
-  if (delugeService) {
-    torrents.push(
-      ...(
-        await new Deluge({
-          baseUrl: delugeService.url,
-          password: 'password' in delugeService ? delugeService.password : '',
-        }).getAllData()
-      ).torrents
-    );
+  if (delugeServices) {
+      for (const service of delugeServices) {
+        torrents.push(
+          ...(
+            await new Deluge({
+              baseUrl: service.url,
+              password: 'password' in service ? service.password : '',
+            }).getAllData()
+          ).torrents
+        )
+      }
   }
-  if (transmissionService) {
-    torrents.push(
-      ...(
-        await new Transmission({
-          baseUrl: transmissionService.url,
-          username: transmissionService.username,
-          password: 'password' in transmissionService ? transmissionService.password : '',
-        }).getAllData()
-      ).torrents
-    );
+  if (transmissionServices) {
+    for (const service of transmissionServices) {
+      torrents.push(
+        ...(
+          await new Transmission({
+            baseUrl: service.url,
+            username: service.username,
+            password: 'password' in service ? service.password : '',
+          }).getAllData()
+        ).torrents
+      );
+    }
   }
   res.status(200).json(torrents);
 }
