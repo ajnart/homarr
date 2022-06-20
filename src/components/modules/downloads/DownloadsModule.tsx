@@ -158,7 +158,7 @@ export default function DownloadComponent() {
             <Progress
               radius="lg"
               color={
-                torrent.state === 'paused' ? 'yellow' : torrent.progress === 1 ? 'green' : 'blue'
+                torrent.progress === 1 ? 'green' : torrent.state === 'paused' ? 'yellow' : 'blue'
               }
               value={torrent.progress * 100}
               size="lg"

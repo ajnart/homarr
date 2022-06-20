@@ -29,6 +29,12 @@ export const CalendarModule: IModule = {
     'A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.',
   icon: CalendarIcon,
   component: CalendarComponent,
+  options: {
+    sundaystart: {
+      name: 'Start the week on Sunday',
+      value: false,
+    },
+  },
 };
 
 export default function CalendarComponent(props: any) {
@@ -62,41 +68,49 @@ export default function CalendarComponent(props: any) {
 
   useEffect(() => {
     // Create each Sonarr service and get the medias
-    const currentSonarrMedias: any[] = [...sonarrMedias];
+    const currentSonarrMedias: any[] = [];
     Promise.all(
       sonarrServices.map((service) =>
         getMedias(service, 'sonarr').then((res) => {
           currentSonarrMedias.push(...res.data);
+        }).catch(() => {
+          currentSonarrMedias.push([]);
         })
       )
     ).then(() => {
       setSonarrMedias(currentSonarrMedias);
     });
-    const currentRadarrMedias: any[] = [...radarrMedias];
+    const currentRadarrMedias: any[] = [];
     Promise.all(
       radarrServices.map((service) =>
         getMedias(service, 'radarr').then((res) => {
           currentRadarrMedias.push(...res.data);
+        }).catch(() => {
+          currentRadarrMedias.push([]);
         })
       )
     ).then(() => {
       setRadarrMedias(currentRadarrMedias);
     });
-    const currentLidarrMedias: any[] = [...lidarrMedias];
+    const currentLidarrMedias: any[] = [];
     Promise.all(
       lidarrServices.map((service) =>
         getMedias(service, 'lidarr').then((res) => {
           currentLidarrMedias.push(...res.data);
+        }).catch(() => {
+          currentLidarrMedias.push([]);
         })
       )
     ).then(() => {
       setLidarrMedias(currentLidarrMedias);
     });
-    const currentReadarrMedias: any[] = [...readarrMedias];
+    const currentReadarrMedias: any[] = [];
     Promise.all(
       readarrServices.map((service) =>
         getMedias(service, 'readarr').then((res) => {
           currentReadarrMedias.push(...res.data);
+        }).catch(() => {
+          currentReadarrMedias.push([]);
         })
       )
     ).then(() => {
@@ -104,8 +118,11 @@ export default function CalendarComponent(props: any) {
     });
   }, [config.services]);
 
+  const weekStartsAtSunday =
+    (config?.modules?.[CalendarModule.title]?.options?.sundaystart?.value as boolean) ?? false;
   return (
     <Calendar
+      firstDayOfWeek={weekStartsAtSunday ? 'sunday' : 'monday'}
       onChange={(day: any) => {}}
       dayStyle={(date) =>
         date.getDay() === today.getDay() && date.getDate() === today.getDate()
@@ -115,6 +132,13 @@ export default function CalendarComponent(props: any) {
             }
           : {}
       }
+      styles={{
+        calendarHeader: {
+          marginRight: 15,
+          marginLeft: 15,
+        },
+      }}
+      allowLevelChange={false}
       dayClassName={(date, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
       renderDay={(renderdate) => (
         <DayComponent
