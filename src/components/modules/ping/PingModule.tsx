@@ -1,5 +1,5 @@
 import { Indicator, Tooltip } from '@mantine/core';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { IconPlug as Plug } from '@tabler/icons';
@@ -19,18 +19,37 @@ export default function PingComponent(props: any) {
 
   const { url }: { url: string } = props;
   const [isOnline, setOnline] = useState<State>('loading');
+  const [response, setResponse] = useState(500);
   const exists = config.modules?.[PingModule.title]?.enabled ?? false;
+
+  function statusCheck(response: AxiosResponse) {
+    const { status }: {status: string[]} = props;
+    //Default Status
+    let acceptableStatus = ['200'];
+    if (status !== undefined && status.length) {
+      acceptableStatus = status;
+    }
+    // Checks if reported status is in acceptable status array
+    if (acceptableStatus.indexOf((response.status).toString()) >= 0) {
+      setOnline('online');
+      setResponse(response.status);
+    } else {
+      setOnline('down');
+      setResponse(response.status)
+    }
+  }
+
   useEffect(() => {
     if (!exists) {
       return;
     }
     axios
       .get('/api/modules/ping', { params: { url } })
-      .then(() => {
-        setOnline('online');
+      .then((response) => {
+        statusCheck(response);
       })
-      .catch(() => {
-        setOnline('down');
+      .catch((error) => {
+        statusCheck(error.response);
       });
   }, [config.modules?.[PingModule.title]?.enabled]);
   if (!exists) {
@@ -40,7 +59,7 @@ export default function PingComponent(props: any) {
     <Tooltip
       radius="lg"
       style={{ position: 'absolute', bottom: 20, right: 20 }}
-      label={isOnline === 'loading' ? 'Loading...' : isOnline === 'online' ? 'Online' : 'Offline'}
+      label={isOnline === 'loading' ? 'Loading...' : isOnline === 'online' ? `Online - ${response}` : `Offline - ${response}`}
     >
       <motion.div
         animate={{
