@@ -3,6 +3,7 @@ import { useForm } from '@mantine/form';
 import { useConfig } from '../../tools/state';
 import { ColorSelector } from './ColorSelector';
 import { OpacitySelector } from './OpacitySelector';
+import { AppCardWidthSelector } from './AppCardWidthSelector';
 import { ShadeSelector } from './ShadeSelector';
 
 export default function TitleChanger() {
@@ -58,6 +59,7 @@ export default function TitleChanger() {
       <ColorSelector type="secondary" />
       <ShadeSelector />
       <OpacitySelector />
+      <AppCardWidthSelector />
     </Group>
   );
 }

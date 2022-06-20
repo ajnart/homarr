@@ -12,6 +12,7 @@ export interface Settings {
   background?: string;
   appOpacity?: number;
   widgetPosition?: string;
+  appCardWidth?: number;
 }
 
 export interface Config {

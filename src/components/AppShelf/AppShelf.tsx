@@ -106,7 +106,14 @@ const AppShelf = (props: any) => {
         <SortableContext items={config.services}>
           <Grid gutter="xl" align="center">
             {filtered.map((service) => (
-              <Grid.Col key={service.id} span={6} xl={2} xs={4} sm={3} md={3}>
+              <Grid.Col
+                key={service.id}
+                span={6}
+                xl={config.settings.appCardWidth || 2}
+                xs={4}
+                sm={3}
+                md={3}
+              >
                 <SortableAppShelfItem service={service} key={service.id} id={service.id} />
               </Grid.Col>
             ))}
