@@ -12,6 +12,10 @@ import {
   Title,
   Anchor,
   Text,
+  Tabs,
+  MultiSelect,
+  ScrollArea,
+  Switch,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useEffect, useState } from 'react';
@@ -19,7 +23,7 @@ import { IconApps as Apps } from '@tabler/icons';
 import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
-import { ServiceTypeList } from '../../tools/types';
+import { ServiceTypeList, StatusCodes } from '../../tools/types';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -113,6 +117,8 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       username: props.username ?? (undefined as unknown as string),
       password: props.password ?? (undefined as unknown as string),
       openedUrl: props.openedUrl ?? (undefined as unknown as string),
+      status: props.status ?? ['200'],
+      newTab: props.newTab ?? true,
     },
     validate: {
       apiKey: () => null,
@@ -130,6 +136,12 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           const _isValid = new URL(value);
         } catch (e) {
           return 'Please enter a valid URL';
+        }
+        return null;
+      },
+      status: (value: string[]) => {
+        if (!value.length) {
+          return 'Please select a status code';
         }
         return null;
       },
@@ -167,6 +179,12 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       </Center>
       <form
         onSubmit={form.onSubmit(() => {
+          if (JSON.stringify(form.values.status) === JSON.stringify(['200'])) {
+            form.values.status = undefined;
+          }
+          if (form.values.newTab === true) {
+            form.values.newTab = undefined;
+          }
           // If service already exists, update it.
           if (config.services && config.services.find((s) => s.id === form.values.id)) {
             setConfig({
@@ -191,117 +209,167 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           form.reset();
         })}
       >
-        <Group direction="column" grow>
-          <TextInput
-            required
-            label="Service name"
-            placeholder="Plex"
-            {...form.getInputProps('name')}
-          />
+        <Tabs grow>
+          <Tabs.Tab label="Options">
+            <ScrollArea style={{ height: 500 }} scrollbarSize={4}>
+              <Group direction="column" grow>
+                <TextInput
+                  required
+                  label="Service name"
+                  placeholder="Plex"
+                  {...form.getInputProps('name')}
+                />
 
-          <TextInput
-            required
-            label="Icon URL"
-            placeholder="/favicon.svg"
-            {...form.getInputProps('icon')}
-          />
-          <TextInput
-            required
-            label="Service URL"
-            placeholder="http://localhost:7575"
-            {...form.getInputProps('url')}
-          />
-          <TextInput
-            label="New tab URL"
-            placeholder="http://sonarr.example.com"
-            {...form.getInputProps('openedUrl')}
-          />
-          <Select
-            label="Service type"
-            defaultValue="Other"
-            placeholder="Pick one"
-            required
-            searchable
-            data={ServiceTypeList}
-            {...form.getInputProps('type')}
-          />
-          <Select
-            label="Category"
-            data={categoryList}
-            placeholder="Select a category or create a new one"
-            nothingFound="Nothing found"
-            searchable
-            clearable
-            creatable
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-            getCreateLabel={(query) => `+ Create "${query}"`}
-            onCreate={(query) => {}}
-            {...form.getInputProps('category')}
-          />
-          <LoadingOverlay visible={isLoading} />
-          {(form.values.type === 'Sonarr' ||
-            form.values.type === 'Radarr' ||
-            form.values.type === 'Lidarr' ||
-            form.values.type === 'Readarr') && (
-            <>
-              <TextInput
+                <TextInput
+                  required
+                  label="Icon URL"
+                  placeholder="/favicon.svg"
+                  {...form.getInputProps('icon')}
+                />
+                <TextInput
+                  required
+                  label="Service URL"
+                  placeholder="http://localhost:7575"
+                  {...form.getInputProps('url')}
+                />
+                <TextInput
+                  label="On Click URL"
+                  placeholder="http://sonarr.example.com"
+                  {...form.getInputProps('openedUrl')}
+                />
+                <Select
+                  label="Service type"
+                  defaultValue="Other"
+                  placeholder="Pick one"
+                  required
+                  searchable
+                  data={ServiceTypeList}
+                  {...form.getInputProps('type')}
+                />
+                <Select
+                  label="Category"
+                  data={categoryList}
+                  placeholder="Select a category or create a new one"
+                  nothingFound="Nothing found"
+                  searchable
+                  clearable
+                  creatable
+                  onClick={(e) => {
+                    e.preventDefault();
+                  }}
+                  getCreateLabel={(query) => `+ Create "${query}"`}
+                  onCreate={(query) => {}}
+                  {...form.getInputProps('category')}
+                />
+                <LoadingOverlay visible={isLoading} />
+                {(form.values.type === 'Sonarr' ||
+                  form.values.type === 'Radarr' ||
+                  form.values.type === 'Lidarr' ||
+                  form.values.type === 'Readarr') && (
+                  <>
+                    <TextInput
+                      required
+                      label="API key"
+                      placeholder="Your API key"
+                      value={form.values.apiKey}
+                      onChange={(event) => {
+                        form.setFieldValue('apiKey', event.currentTarget.value);
+                      }}
+                      error={form.errors.apiKey && 'Invalid API key'}
+                    />
+                    <Text
+                      style={{
+                        alignSelf: 'center',
+                        fontSize: '0.75rem',
+                        textAlign: 'center',
+                        color: 'gray',
+                      }}
+                    >
+                      Tip: Get your API key{' '}
+                      <Anchor
+                        target="_blank"
+                        weight="bold"
+                        style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
+                        href={`${hostname}/settings/general`}
+                      >
+                        here.
+                      </Anchor>
+                    </Text>
+                  </>
+                )}
+                {form.values.type === 'qBittorrent' && (
+                  <>
+                    <TextInput
+                      required
+                      label="Username"
+                      placeholder="admin"
+                      value={form.values.username}
+                      onChange={(event) => {
+                        form.setFieldValue('username', event.currentTarget.value);
+                      }}
+                      error={form.errors.username && 'Invalid username'}
+                    />
+                    <TextInput
+                      required
+                      label="Password"
+                      placeholder="adminadmin"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
+                {(form.values.type === 'Deluge' ||
+                  form.values.type === 'Transmission' ||
+                  form.values.type === 'qBittorrent') && (
+                  <>
+                    <TextInput
+                      label="Username"
+                      placeholder="admin"
+                      value={form.values.username}
+                      onChange={(event) => {
+                        form.setFieldValue('username', event.currentTarget.value);
+                      }}
+                      error={form.errors.username && 'Invalid username'}
+                    />
+                    <TextInput
+                      label="Password"
+                      placeholder="password"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
+              </Group>
+            </ScrollArea>
+          </Tabs.Tab>
+          <Tabs.Tab label="Advanced Options">
+            <Group direction="column" grow>
+              <MultiSelect
                 required
-                label="API key"
-                placeholder="Your API key"
-                value={form.values.apiKey}
-                onChange={(event) => {
-                  form.setFieldValue('apiKey', event.currentTarget.value);
-                }}
-                error={form.errors.apiKey && 'Invalid API key'}
+                label="HTTP Status Codes"
+                data={StatusCodes}
+                placeholder="Select valid status codes"
+                clearButtonLabel="Clear selection"
+                nothingFound="Nothing found"
+                defaultValue={['200']}
+                clearable
+                searchable
+                {...form.getInputProps('status')}
               />
-              <Text
-                style={{
-                  alignSelf: 'center',
-                  fontSize: '0.75rem',
-                  textAlign: 'center',
-                  color: 'gray',
-                }}
-              >
-                Tip: Get your API key{' '}
-                <Anchor
-                  target="_blank"
-                  weight="bold"
-                  style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
-                  href={`${hostname}/settings/general`}
-                >
-                  here.
-                </Anchor>
-              </Text>
-            </>
-          )}
-          {(form.values.type === 'Deluge' ||
-            form.values.type === 'Transmission' ||
-            form.values.type === 'qBittorrent') && (
-            <>
-              <TextInput
-                label="Username"
-                placeholder="admin"
-                value={form.values.username}
-                onChange={(event) => {
-                  form.setFieldValue('username', event.currentTarget.value);
-                }}
-                error={form.errors.username && 'Invalid username'}
+              <Switch
+                label="Open service in new tab"
+                defaultChecked={form.values.newTab}
+                {...form.getInputProps('newTab')}
               />
-              <TextInput
-                label="Password"
-                placeholder="password"
-                value={form.values.password}
-                onChange={(event) => {
-                  form.setFieldValue('password', event.currentTarget.value);
-                }}
-                error={form.errors.password && 'Invalid password'}
-              />
-            </>
-          )}
-        </Group>
-
+            </Group>
+          </Tabs.Tab>
+        </Tabs>
         <Group grow position="center" mt="xl">
           <Button type="submit">{props.message ?? 'Add service'}</Button>
         </Group>
