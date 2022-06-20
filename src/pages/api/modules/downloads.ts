@@ -53,7 +53,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
         ...(
           await new Transmission({
             baseUrl: service.url,
-            username: service.username,
+            username: 'username' in service ? service.username : '',
             password: 'password' in service ? service.password : '',
           }).getAllData()
         ).torrents
