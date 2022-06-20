@@ -44,7 +44,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     });
   }
   // Get the origin URL
-  const { origin } = new URL(service.url);
+  const { href: origin } = new URL(service.url);
   const pined = `${origin}${url?.url}?apiKey=${service.apiKey}&end=${nextMonth}&start=${lastMonth}`;
   const data = await axios.get(
     `${origin}${url?.url}?apiKey=${service.apiKey}&end=${nextMonth}&start=${lastMonth}`
