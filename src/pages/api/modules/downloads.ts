@@ -28,7 +28,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
         password: service.password,
       })
         .getAllData()
-        .then((e) => e.torrents.map((torrent) => torrents.push(torrent)))
+        .then((e) => torrents.push(...e.torrents))
     )
   );
   await Promise.all(
@@ -38,7 +38,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
         password: 'password' in service ? service.password : '',
       })
         .getAllData()
-        .then((e) => e.torrents.map((torrent) => torrents.push(torrent)))
+        .then((e) => torrents.push(...e.torrents))
     )
   );
   // Map transmissionServices
@@ -50,7 +50,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
         password: 'password' in service ? service.password : '',
       })
         .getAllData()
-        .then((e) => e.torrents.map((torrent) => torrents.push(torrent)))
+        .then((e) => torrents.push(...e.torrents))
     )
   );
   res.status(200).json(torrents);
