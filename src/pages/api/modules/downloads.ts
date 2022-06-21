@@ -35,7 +35,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     delugeServices.map((service) =>
       new Deluge({
         baseUrl: service.url,
-        password: service.password,
+        password: 'password' in service ? service.password : '',
       })
         .getAllData()
         .then((e) => e.torrents.map((torrent) => torrents.push(torrent)))
@@ -46,8 +46,8 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     transmissionServices.map((service) =>
       new Transmission({
         baseUrl: service.url,
-        username: service.username,
-        password: service.password,
+        username: 'username' in service ? service.username : '',
+        password: 'password' in service ? service.password : '',
       })
         .getAllData()
         .then((e) => e.torrents.map((torrent) => torrents.push(torrent)))
