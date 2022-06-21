@@ -3,18 +3,17 @@ import { QBittorrent } from '@ctrl/qbittorrent';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { Transmission } from '@ctrl/transmission';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { useConfig } from '../../../tools/state';
 import { Config } from '../../../tools/types';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Get the type of service from the request url
-  const torrents: NormalizedTorrent[] = [];
-  const { config }: { config: Config } = req.body;
-  const qBittorrentServices = config.services
-    .filter((service) => service.type === 'qBittorrent');
-
+  const { config }: { config: Config } = useConfig();
+  const qBittorrentServices = config.services.filter((service) => service.type === 'qBittorrent');
   const delugeServices = config.services.filter((service) => service.type === 'Deluge');
-  const transmissionServices = config.services
-    .filter((service) => service.type === 'Transmission');
+  const transmissionServices = config.services.filter((service) => service.type === 'Transmission');
+
+  const torrents: NormalizedTorrent[] = [];
 
   if (!qBittorrentServices && !delugeServices && !transmissionServices) {
     return res.status(500).json({
@@ -23,7 +22,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     });
   }
   if (qBittorrentServices) {
-    for (const service of qBittorrentServices) {
+    qBittorrentServices.map(async (service) =>
       torrents.push(
         ...(
           await new QBittorrent({
@@ -32,23 +31,24 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
             password: service.password,
           }).getAllData()
         ).torrents
-      );
-    }
+      )
+    );
   }
   if (delugeServices) {
-      for (const service of delugeServices) {
-        torrents.push(
-          ...(
-            await new Deluge({
-              baseUrl: service.url,
-              password: 'password' in service ? service.password : '',
-            }).getAllData()
-          ).torrents
-        )
-      }
+    delugeServices.map(async (service) =>
+      torrents.push(
+        ...(
+          await new Deluge({
+            baseUrl: service.url,
+            password: 'password' in service ? service.password : '',
+          }).getAllData()
+        ).torrents
+      )
+    );
   }
   if (transmissionServices) {
-    for (const service of transmissionServices) {
+    // Map transmissionServices
+    transmissionServices.map(async (service) => {
       torrents.push(
         ...(
           await new Transmission({
@@ -58,7 +58,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
           }).getAllData()
         ).torrents
       );
-    }
+    });
   }
   res.status(200).json(torrents);
 }
