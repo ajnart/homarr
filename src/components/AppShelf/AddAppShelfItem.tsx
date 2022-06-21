@@ -298,64 +298,64 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                   </>
                 )}
                 {form.values.type === 'qBittorrent' && (
-              <>
-                <TextInput
-                  required
-                  label="Username"
-                  placeholder="admin"
-                  value={form.values.username}
-                  onChange={(event) => {
-                    form.setFieldValue('username', event.currentTarget.value);
-                  }}
-                  error={form.errors.username && 'Invalid username'}
-                />
-                <TextInput
-                  required
-                  label="Password"
-                  placeholder="adminadmin"
-                  value={form.values.password}
-                  onChange={(event) => {
-                    form.setFieldValue('password', event.currentTarget.value);
-                  }}
-                  error={form.errors.password && 'Invalid password'}
-                />
-              </>
-            )}
-            {form.values.type === 'Deluge' && (
-              <>
-                <TextInput
-                  label="Password"
-                  placeholder="password"
-                  value={form.values.password}
-                  onChange={(event) => {
-                    form.setFieldValue('password', event.currentTarget.value);
-                  }}
-                  error={form.errors.password && 'Invalid password'}
-                />
-              </>
-            )}
-            {form.values.type === 'Transmission' && (
-              <>
-              <TextInput
-                label="Username"
-                placeholder="admin"
-                value={form.values.username}
-                onChange={(event) => {
-                  form.setFieldValue('username', event.currentTarget.value);
-                }}
-                error={form.errors.username && 'Invalid username'}
-              />
-              <TextInput
-                label="Password"
-                placeholder="adminadmin"
-                value={form.values.password}
-                onChange={(event) => {
-                  form.setFieldValue('password', event.currentTarget.value);
-                }}
-                error={form.errors.password && 'Invalid password'}
-              />
-            </>
-            )}
+                  <>
+                    <TextInput
+                      required
+                      label="Username"
+                      placeholder="admin"
+                      value={form.values.username}
+                      onChange={(event) => {
+                        form.setFieldValue('username', event.currentTarget.value);
+                      }}
+                      error={form.errors.username && 'Invalid username'}
+                    />
+                    <TextInput
+                      required
+                      label="Password"
+                      placeholder="adminadmin"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
+                {form.values.type === 'Deluge' && (
+                  <>
+                    <TextInput
+                      label="Password"
+                      placeholder="password"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
+                {form.values.type === 'Transmission' && (
+                  <>
+                    <TextInput
+                      label="Username"
+                      placeholder="admin"
+                      value={form.values.username}
+                      onChange={(event) => {
+                        form.setFieldValue('username', event.currentTarget.value);
+                      }}
+                      error={form.errors.username && 'Invalid username'}
+                    />
+                    <TextInput
+                      label="Password"
+                      placeholder="adminadmin"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
               </Group>
             </ScrollArea>
           </Tabs.Tab>
