@@ -123,13 +123,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
     validate: {
       apiKey: () => null,
       // Validate icon with a regex
-      icon: (value: string) => {
-        // Regex to match everything that ends with and icon extension
-        if (!value.match(/\.(png|jpg|jpeg|gif|svg)$/)) {
-          return 'Please enter a valid icon URL';
-        }
-        return null;
-      },
+      icon: (value: string) =>
+        // Disable matching to allow any values
+        null,
       // Validate url with a regex http/https
       url: (value: string) => {
         try {
@@ -298,64 +294,64 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                   </>
                 )}
                 {form.values.type === 'qBittorrent' && (
-              <>
-                <TextInput
-                  required
-                  label="Username"
-                  placeholder="admin"
-                  value={form.values.username}
-                  onChange={(event) => {
-                    form.setFieldValue('username', event.currentTarget.value);
-                  }}
-                  error={form.errors.username && 'Invalid username'}
-                />
-                <TextInput
-                  required
-                  label="Password"
-                  placeholder="adminadmin"
-                  value={form.values.password}
-                  onChange={(event) => {
-                    form.setFieldValue('password', event.currentTarget.value);
-                  }}
-                  error={form.errors.password && 'Invalid password'}
-                />
-              </>
-            )}
-            {form.values.type === 'Deluge' && (
-              <>
-                <TextInput
-                  label="Password"
-                  placeholder="password"
-                  value={form.values.password}
-                  onChange={(event) => {
-                    form.setFieldValue('password', event.currentTarget.value);
-                  }}
-                  error={form.errors.password && 'Invalid password'}
-                />
-              </>
-            )}
-            {form.values.type === 'Transmission' && (
-              <>
-              <TextInput
-                label="Username"
-                placeholder="admin"
-                value={form.values.username}
-                onChange={(event) => {
-                  form.setFieldValue('username', event.currentTarget.value);
-                }}
-                error={form.errors.username && 'Invalid username'}
-              />
-              <TextInput
-                label="Password"
-                placeholder="adminadmin"
-                value={form.values.password}
-                onChange={(event) => {
-                  form.setFieldValue('password', event.currentTarget.value);
-                }}
-                error={form.errors.password && 'Invalid password'}
-              />
-            </>
-            )}
+                  <>
+                    <TextInput
+                      required
+                      label="Username"
+                      placeholder="admin"
+                      value={form.values.username}
+                      onChange={(event) => {
+                        form.setFieldValue('username', event.currentTarget.value);
+                      }}
+                      error={form.errors.username && 'Invalid username'}
+                    />
+                    <TextInput
+                      required
+                      label="Password"
+                      placeholder="adminadmin"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
+                {form.values.type === 'Deluge' && (
+                  <>
+                    <TextInput
+                      label="Password"
+                      placeholder="password"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
+                {form.values.type === 'Transmission' && (
+                  <>
+                    <TextInput
+                      label="Username"
+                      placeholder="admin"
+                      value={form.values.username}
+                      onChange={(event) => {
+                        form.setFieldValue('username', event.currentTarget.value);
+                      }}
+                      error={form.errors.username && 'Invalid username'}
+                    />
+                    <TextInput
+                      label="Password"
+                      placeholder="adminadmin"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
               </Group>
             </ScrollArea>
           </Tabs.Tab>
