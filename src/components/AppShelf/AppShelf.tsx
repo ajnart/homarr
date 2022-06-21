@@ -20,15 +20,30 @@ import DownloadComponent from '../modules/downloads/DownloadsModule';
 
 const useStyles = createStyles((theme, _params) => ({
   item: {
-    borderBottom: 0,
     overflow: 'hidden',
-    border: '1px solid transparent',
-    borderRadius: theme.radius.lg,
+    borderLeft: '3px solid transparent',
+    borderRight: '3px solid transparent',
+    borderBottom: '3px solid transparent',
+    borderRadius: '20px',
+    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
     marginTop: theme.spacing.md,
   },
 
-  itemOpened: {
-    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
+  control: {
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+    borderRadius: theme.spacing.md,
+
+    '&:hover': {
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+    },
+  },
+
+  content: {
+    margin: theme.spacing.md,
+  },
+
+  label: {
+    overflow: 'visible',
   },
 }));
 
@@ -147,11 +162,6 @@ const AppShelf = (props: any) => {
           order={2}
           iconPosition="right"
           multiple
-          styles={{
-            item: {
-              borderRadius: '20px',
-            },
-          }}
           initialState={toggledCategories}
           onChange={(idx) => settoggledCategories(idx)}
         >
