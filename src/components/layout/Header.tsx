@@ -78,7 +78,7 @@ export function Header(props: any) {
             >
               {(styles) => (
                 <div style={styles}>
-                  <ScrollArea style={{ height: '90vh' }}>
+                  <ScrollArea offsetScrollbars style={{ height: '90vh' }}>
                     <Group my="sm" grow direction="column" style={{ width: 300 }}>
                       <ModuleWrapper module={CalendarModule} />
                       <ModuleWrapper module={TotalDownloadsModule} />
