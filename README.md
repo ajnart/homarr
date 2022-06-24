@@ -33,7 +33,7 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 
 It integrates with the services you use to display information on the homepage (E.g. Show upcoming Sonarr/Radarr releases).
 
-For a full list of integrations look at: [wiki/integrations](#).
+For a full list of integrations look at: [wiki/integrations](https://github.com/ajnart/homarr/wiki/Integrations)
 
 If you have any questions about Homarr or want to share information with us, please go to one of the following places:
 
