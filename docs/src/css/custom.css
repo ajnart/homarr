@@ -1,0 +1,47 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #fa5252;
+  --ifm-color-primary-dark: #f93232;
+  --ifm-color-primary-darker: #f92222;
+  --ifm-color-primary-darkest: #d20606;
+  --ifm-color-primary-light: #fb7272;
+  --ifm-color-primary-lighter: #fb8282;
+  --ifm-color-primary-lightest: #fdc3c3;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --aa-primary-color-rgb: #fa5252 !important;
+  --aa-muted-color-rgb: #fa5252 !important;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #fa5252;
+  --ifm-color-primary-dark: #f93232;
+  --ifm-color-primary-darker: #f92222;
+  --ifm-color-primary-darkest: #d20606;
+  --ifm-color-primary-light: #fb7272;
+  --ifm-color-primary-lighter: #fb8282;
+  --ifm-color-primary-lightest: #fdc3c3;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 996px) {
+  .dsla-search-wrapper {
+    width: 250px;
+  }
+}
+
+.me-shield {
+ margin-right: 0.3rem;
+}
+
+.navbar__logo {
+  margin-right: 1rem;
+}

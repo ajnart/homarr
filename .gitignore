@@ -47,3 +47,4 @@ data/configs
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+docs/.yarn/*
