@@ -1,0 +1,42 @@
+{
+  "unversionedId": "modules/making-own-module",
+  "id": "modules/making-own-module",
+  "title": "Making your own Modules",
+  "description": "A guide on how to make your own Homarr Module",
+  "source": "@site/docs/modules/making-own-module.md",
+  "sourceDirName": "modules",
+  "slug": "/modules/making-own-module",
+  "permalink": "/docs/modules/making-own-module",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/making-own-module.md",
+  "tags": [
+    {
+      "label": "Modules",
+      "permalink": "/docs/tags/modules"
+    },
+    {
+      "label": "Development",
+      "permalink": "/docs/tags/development"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Making your own Modules",
+    "sidebar_position": 3,
+    "description": "A guide on how to make your own Homarr Module",
+    "tags": [
+      "Modules",
+      "Development"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "🚀 Torrent Module",
+    "permalink": "/docs/modules/built-in-modules/module-torrent"
+  },
+  "next": {
+    "title": "Overview of Customizations",
+    "permalink": "/docs/customizations/"
+  }
+}

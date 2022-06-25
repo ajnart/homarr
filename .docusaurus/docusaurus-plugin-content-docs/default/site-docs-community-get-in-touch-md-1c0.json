@@ -1,0 +1,47 @@
+{
+  "unversionedId": "community/get-in-touch",
+  "id": "community/get-in-touch",
+  "title": "Get In Touch with Us",
+  "description": "Still have a question? Click here!",
+  "source": "@site/docs/community/get-in-touch.md",
+  "sourceDirName": "community",
+  "slug": "/community/get-in-touch",
+  "permalink": "/docs/community/get-in-touch",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/get-in-touch.md",
+  "tags": [
+    {
+      "label": "Support",
+      "permalink": "/docs/tags/support"
+    },
+    {
+      "label": "Help",
+      "permalink": "/docs/tags/help"
+    },
+    {
+      "label": "Discord",
+      "permalink": "/docs/tags/discord"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Getting in Touch",
+    "sidebar_position": 2,
+    "description": "Still have a question? Click here!",
+    "tags": [
+      "Support",
+      "Help",
+      "Discord"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "FAQ",
+    "permalink": "/docs/community/frequently-asked-questions"
+  },
+  "next": {
+    "title": "Donate",
+    "permalink": "/docs/community/donate"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "unversionedId": "customizations/custom-background",
+  "id": "customizations/custom-background",
+  "title": "Custom Background",
+  "description": "To add a custom Homarr background, open the settings at the top right and click on the Tab \"Customization\".",
+  "source": "@site/docs/customizations/custom-background.md",
+  "sourceDirName": "customizations",
+  "slug": "/customizations/custom-background",
+  "permalink": "/docs/customizations/custom-background",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/customizations/custom-background.md",
+  "tags": [
+    {
+      "label": "Customization",
+      "permalink": "/docs/tags/customization"
+    },
+    {
+      "label": "Design",
+      "permalink": "/docs/tags/design"
+    },
+    {
+      "label": "Background",
+      "permalink": "/docs/tags/background"
+    },
+    {
+      "label": "Custom",
+      "permalink": "/docs/tags/custom"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "tags": [
+      "Customization",
+      "Design",
+      "Background",
+      "Custom"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Custom Colors",
+    "permalink": "/docs/customizations/custom-colors"
+  },
+  "next": {
+    "title": "Customize your Search Engine",
+    "permalink": "/docs/customizations/custom-search-engine"
+  }
+}

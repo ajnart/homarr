@@ -1,0 +1,26 @@
+{
+  "label": "Support",
+  "permalink": "/docs/tags/support",
+  "allTagsPath": "/docs/tags",
+  "count": 3,
+  "items": [
+    {
+      "id": "community/donate",
+      "title": "Donations",
+      "description": "Help us maintain Homarr",
+      "permalink": "/docs/community/donate"
+    },
+    {
+      "id": "community/frequently-asked-questions",
+      "title": "Frequently Asked Questions",
+      "description": "Can I install Homarr on a Raspberry Pi?",
+      "permalink": "/docs/community/frequently-asked-questions"
+    },
+    {
+      "id": "community/get-in-touch",
+      "title": "Get In Touch with Us",
+      "description": "Still have a question? Click here!",
+      "permalink": "/docs/community/get-in-touch"
+    }
+  ]
+}

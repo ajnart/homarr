@@ -1,0 +1,38 @@
+{
+  "label": "Modules",
+  "permalink": "/docs/tags/modules",
+  "allTagsPath": "/docs/tags",
+  "count": 5,
+  "items": [
+    {
+      "id": "modules/built-in-modules/module-weather",
+      "title": "☔ Weather Module",
+      "description": "The Weather Module uses your location to display the current, highest and lowest temperature. The Module uses open-meteo.com to retrieve weather data.",
+      "permalink": "/docs/modules/built-in-modules/module-weather"
+    },
+    {
+      "id": "modules/built-in-modules/module-calendar",
+      "title": "📆 Calendar Module",
+      "description": "Explanation of the Calendar Module",
+      "permalink": "/docs/modules/built-in-modules/module-calendar"
+    },
+    {
+      "id": "modules/built-in-modules/module-clock",
+      "title": "🕓 Clock Module",
+      "description": "Explanation of the Clock Module",
+      "permalink": "/docs/modules/built-in-modules/module-clock"
+    },
+    {
+      "id": "modules/making-own-module",
+      "title": "Making your own Modules",
+      "description": "A guide on how to make your own Homarr Module",
+      "permalink": "/docs/modules/making-own-module"
+    },
+    {
+      "id": "modules/index",
+      "title": "Overview of Modules",
+      "description": "Overview of Homarr Modules",
+      "permalink": "/docs/modules/"
+    }
+  ]
+}

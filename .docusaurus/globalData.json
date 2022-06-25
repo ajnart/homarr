@@ -1,0 +1,168 @@
+{
+  "@cmfcmf/docusaurus-search-local": {
+    "default": {
+      "titleBoost": 5,
+      "contentBoost": 1,
+      "tagsBoost": 3,
+      "parentCategoriesBoost": 2,
+      "indexDocSidebarParentCategories": 0,
+      "maxSearchResults": 8
+    }
+  },
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "about",
+          "docs": [
+            {
+              "id": "about",
+              "path": "/docs/about",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "advanced-features/custom-icons",
+              "path": "/docs/advanced-features/custom-icons",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "advanced-features/environment-variables",
+              "path": "/docs/advanced-features/environment-variables",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "advanced-features/integrations",
+              "path": "/docs/advanced-features/integrations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "advanced-features/key-shortcuts",
+              "path": "/docs/advanced-features/key-shortcuts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "advanced-features/multiple-configurations",
+              "path": "/docs/advanced-features/multiple-configurations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "community/donate",
+              "path": "/docs/community/donate",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "community/frequently-asked-questions",
+              "path": "/docs/community/frequently-asked-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "community/get-in-touch",
+              "path": "/docs/community/get-in-touch",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "community/license",
+              "path": "/docs/community/license",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "customizations/custom-background",
+              "path": "/docs/customizations/custom-background",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "customizations/custom-colors",
+              "path": "/docs/customizations/custom-colors",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "customizations/custom-search-engine",
+              "path": "/docs/customizations/custom-search-engine",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "customizations/custom-title",
+              "path": "/docs/customizations/custom-title",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "customizations/dark-mode",
+              "path": "/docs/customizations/dark-mode",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "customizations/index",
+              "path": "/docs/customizations/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/built-in-modules/index",
+              "path": "/docs/modules/built-in-modules/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/built-in-modules/module-calendar",
+              "path": "/docs/modules/built-in-modules/module-calendar",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/built-in-modules/module-clock",
+              "path": "/docs/modules/built-in-modules/module-clock",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/built-in-modules/module-search",
+              "path": "/docs/modules/built-in-modules/module-search",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/built-in-modules/module-torrent",
+              "path": "/docs/modules/built-in-modules/module-torrent",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/built-in-modules/module-weather",
+              "path": "/docs/modules/built-in-modules/module-weather",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/index",
+              "path": "/docs/modules/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/making-own-module",
+              "path": "/docs/modules/making-own-module",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quick-start/index",
+              "path": "/docs/quick-start/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quick-start/manage-services",
+              "path": "/docs/quick-start/manage-services",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/about",
+                "label": "about"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

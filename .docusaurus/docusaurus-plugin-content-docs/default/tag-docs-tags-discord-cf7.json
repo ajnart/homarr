@@ -1,0 +1,14 @@
+{
+  "label": "Discord",
+  "permalink": "/docs/tags/discord",
+  "allTagsPath": "/docs/tags",
+  "count": 1,
+  "items": [
+    {
+      "id": "community/get-in-touch",
+      "title": "Get In Touch with Us",
+      "description": "Still have a question? Click here!",
+      "permalink": "/docs/community/get-in-touch"
+    }
+  ]
+}

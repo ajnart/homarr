@@ -1,0 +1,14 @@
+{
+  "label": "Service Management",
+  "permalink": "/docs/tags/service-management",
+  "allTagsPath": "/docs/tags",
+  "count": 1,
+  "items": [
+    {
+      "id": "quick-start/manage-services",
+      "title": "Manage your Services",
+      "description": "A guide on how to manage your services and make basic customizations to them",
+      "permalink": "/docs/quick-start/manage-services"
+    }
+  ]
+}

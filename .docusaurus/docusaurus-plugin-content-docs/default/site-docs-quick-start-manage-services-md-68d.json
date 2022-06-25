@@ -1,0 +1,47 @@
+{
+  "unversionedId": "quick-start/manage-services",
+  "id": "quick-start/manage-services",
+  "title": "Manage your Services",
+  "description": "A guide on how to manage your services and make basic customizations to them",
+  "source": "@site/docs/quick-start/manage-services.md",
+  "sourceDirName": "quick-start",
+  "slug": "/quick-start/manage-services",
+  "permalink": "/docs/quick-start/manage-services",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/quick-start/manage-services.md",
+  "tags": [
+    {
+      "label": "Service Management",
+      "permalink": "/docs/tags/service-management"
+    },
+    {
+      "label": "Basics",
+      "permalink": "/docs/tags/basics"
+    },
+    {
+      "label": "Getting started",
+      "permalink": "/docs/tags/getting-started"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_label": "Manage Services",
+    "sidebar_position": 2,
+    "description": "A guide on how to manage your services and make basic customizations to them",
+    "tags": [
+      "Service Management",
+      "Basics",
+      "Getting started"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/docs/quick-start/"
+  },
+  "next": {
+    "title": "Overview of Modules",
+    "permalink": "/docs/modules/"
+  }
+}
