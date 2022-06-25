@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "scripts": {
     "docusaurus": "docusaurus",
+    "dev": "docusaurus start",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx,js,jsx,md}\"",
+    "prettier:write": "prettier --write \"**/*.{ts,tsx,js,jsx,md}\"",
+    "lint": "eslint .",
     "start": "docusaurus start",
+    "typecheck": "tsc --noEmit",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -23,7 +28,15 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.21"
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
+    "@tsconfig/docusaurus": "^1.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   },
   "browserslist": {
     "production": [

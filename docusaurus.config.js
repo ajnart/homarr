@@ -31,7 +31,7 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -49,13 +49,13 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       navbar: {
         title: 'Homarr',
         logo: {
@@ -64,12 +64,14 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "about",
-            label: "Documentation"
+            type: 'doc',
+            docId: 'about',
+            label: 'Documentation',
           },
           {
-            to: '/blog', label: 'Blog', position: 'left'
+            to: '/blog',
+            label: 'Blog',
+            position: 'left',
           },
           {
             href: 'https://github.com/ajnart/homarr',
@@ -90,8 +92,8 @@ const config = {
               },
               {
                 label: 'Modules',
-                to: '/docs/modules/'
-              }
+                to: '/docs/modules/',
+              },
             ],
           },
           {
@@ -132,10 +134,8 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },
-    }),
-    plugins: [
-      require.resolve("@cmfcmf/docusaurus-search-local")
-    ]
+    },
+  plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
 };
 
 module.exports = config;
