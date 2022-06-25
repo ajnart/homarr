@@ -1,6 +1,6 @@
 import { ActionIcon, Group, Text, SegmentedControl, TextInput, Anchor } from '@mantine/core';
 import { useState } from 'react';
-import { IconBrandGithub as BrandGithub } from '@tabler/icons';
+import { IconBrandGithub as BrandGithub, IconBrandDiscord as BrandDiscord } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
@@ -28,6 +28,15 @@ export default function CommonSettings(args: any) {
     <Group direction="column" grow>
       <Group grow direction="column" spacing={0}>
         <Text>Search engine</Text>
+        <Text
+          style={{
+            fontSize: '0.75rem',
+            color: 'gray',
+            marginBottom: '0.5rem',
+          }}
+        >
+          Tip: %s can be used as a placeholder for the query.
+        </Text>
         <SegmentedControl
           fullWidth
           title="Search engine"
@@ -53,7 +62,7 @@ export default function CommonSettings(args: any) {
         {searchUrl === 'Custom' && (
           <TextInput
             label="Query URL"
-            placeholder="Custom query url"
+            placeholder="Custom query URL"
             value={customSearchUrl}
             onChange={(event) => {
               setCustomSearchUrl(event.currentTarget.value);
@@ -98,21 +107,26 @@ export default function CommonSettings(args: any) {
             {CURRENT_VERSION}
           </Text>
         </Group>
-        <Text
-          style={{
-            fontSize: '0.90rem',
-            textAlign: 'center',
-            color: 'gray',
-          }}
-        >
-          Made with ❤️ by @
-          <Anchor
-            href="https://github.com/ajnart"
-            style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+        <Group spacing={1}>
+          <Text
+            style={{
+              fontSize: '0.90rem',
+              textAlign: 'center',
+              color: 'gray',
+            }}
           >
-            ajnart
-          </Anchor>
-        </Text>
+            Made with ❤️ by @
+            <Anchor
+              href="https://github.com/ajnart"
+              style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
+            >
+              ajnart
+            </Anchor>
+          </Text>
+          <ActionIcon<'a'> component="a" href="https://discord.gg/aCsmEV5RgA" size="lg">
+            <BrandDiscord size={18} />
+          </ActionIcon>
+        </Group>
       </Group>
     </Group>
   );
