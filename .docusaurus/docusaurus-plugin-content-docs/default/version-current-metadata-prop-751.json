@@ -1,0 +1,355 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "tutorialSidebar": [
+      {
+        "type": "link",
+        "label": "About Homarr",
+        "href": "/docs/about",
+        "docId": "about"
+      },
+      {
+        "type": "category",
+        "label": "Quick Start",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Manage Services",
+            "href": "/docs/quick-start/manage-services",
+            "docId": "quick-start/manage-services"
+          }
+        ],
+        "href": "/docs/quick-start/"
+      },
+      {
+        "type": "category",
+        "label": "Modules",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "category",
+            "label": "Built-In Modules",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "📆 Calendar Module",
+                "href": "/docs/modules/built-in-modules/module-calendar",
+                "docId": "modules/built-in-modules/module-calendar"
+              },
+              {
+                "type": "link",
+                "label": "☔ Weather Module",
+                "href": "/docs/modules/built-in-modules/module-weather",
+                "docId": "modules/built-in-modules/module-weather"
+              },
+              {
+                "type": "link",
+                "label": "🕓 Clock Module",
+                "href": "/docs/modules/built-in-modules/module-clock",
+                "docId": "modules/built-in-modules/module-clock"
+              },
+              {
+                "type": "link",
+                "label": "🔍 Search Module",
+                "href": "/docs/modules/built-in-modules/module-search",
+                "docId": "modules/built-in-modules/module-search"
+              },
+              {
+                "type": "link",
+                "label": "🚀 Torrent Module",
+                "href": "/docs/modules/built-in-modules/module-torrent",
+                "docId": "modules/built-in-modules/module-torrent"
+              }
+            ],
+            "href": "/docs/modules/built-in-modules/"
+          },
+          {
+            "type": "link",
+            "label": "Making your own Modules",
+            "href": "/docs/modules/making-own-module",
+            "docId": "modules/making-own-module"
+          }
+        ],
+        "href": "/docs/modules/"
+      },
+      {
+        "type": "category",
+        "label": "Customizations",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Custom Colors",
+            "href": "/docs/customizations/custom-colors",
+            "docId": "customizations/custom-colors"
+          },
+          {
+            "type": "link",
+            "label": "Custom Background",
+            "href": "/docs/customizations/custom-background",
+            "docId": "customizations/custom-background"
+          },
+          {
+            "type": "link",
+            "label": "Customize your Search Engine",
+            "href": "/docs/customizations/custom-search-engine",
+            "docId": "customizations/custom-search-engine"
+          },
+          {
+            "type": "link",
+            "label": "Customize Page Title",
+            "href": "/docs/customizations/custom-title",
+            "docId": "customizations/custom-title"
+          },
+          {
+            "type": "link",
+            "label": "Dark Mode",
+            "href": "/docs/customizations/dark-mode",
+            "docId": "customizations/dark-mode"
+          }
+        ],
+        "href": "/docs/customizations/"
+      },
+      {
+        "type": "category",
+        "label": "Advanced Features",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Custom Icons for Services",
+            "href": "/docs/advanced-features/custom-icons",
+            "docId": "advanced-features/custom-icons"
+          },
+          {
+            "type": "link",
+            "label": "Environment Variables",
+            "href": "/docs/advanced-features/environment-variables",
+            "docId": "advanced-features/environment-variables"
+          },
+          {
+            "type": "link",
+            "label": "Integrations",
+            "href": "/docs/advanced-features/integrations",
+            "docId": "advanced-features/integrations"
+          },
+          {
+            "type": "link",
+            "label": "Key Shortcuts",
+            "href": "/docs/advanced-features/key-shortcuts",
+            "docId": "advanced-features/key-shortcuts"
+          },
+          {
+            "type": "link",
+            "label": "Multiple Configurations",
+            "href": "/docs/advanced-features/multiple-configurations",
+            "docId": "advanced-features/multiple-configurations"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Community",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "FAQ",
+            "href": "/docs/community/frequently-asked-questions",
+            "docId": "community/frequently-asked-questions"
+          },
+          {
+            "type": "link",
+            "label": "Getting in Touch",
+            "href": "/docs/community/get-in-touch",
+            "docId": "community/get-in-touch"
+          },
+          {
+            "type": "link",
+            "label": "Donate",
+            "href": "/docs/community/donate",
+            "docId": "community/donate"
+          },
+          {
+            "type": "link",
+            "label": "License",
+            "href": "/docs/community/license",
+            "docId": "community/license"
+          }
+        ]
+      }
+    ]
+  },
+  "docs": {
+    "about": {
+      "id": "about",
+      "title": "About Homarr",
+      "description": "Homarr",
+      "sidebar": "tutorialSidebar"
+    },
+    "advanced-features/custom-icons": {
+      "id": "advanced-features/custom-icons",
+      "title": "Custom Icons for Services",
+      "description": "How are icons requested?",
+      "sidebar": "tutorialSidebar"
+    },
+    "advanced-features/environment-variables": {
+      "id": "advanced-features/environment-variables",
+      "title": "Environment Variables",
+      "description": "Homarr supports multiple environment variables. These can be set as either Linux env or Docker env. (Env is used to abbreviate environment variables.)",
+      "sidebar": "tutorialSidebar"
+    },
+    "advanced-features/integrations": {
+      "id": "advanced-features/integrations",
+      "title": "Integrations",
+      "description": "Homarr natively integrates with your services. Here is a list of all supported services.",
+      "sidebar": "tutorialSidebar"
+    },
+    "advanced-features/key-shortcuts": {
+      "id": "advanced-features/key-shortcuts",
+      "title": "Key Shortcuts",
+      "description": "Homarr offers you key shortcuts for better productivity.",
+      "sidebar": "tutorialSidebar"
+    },
+    "advanced-features/multiple-configurations": {
+      "id": "advanced-features/multiple-configurations",
+      "title": "Multiple Configurations",
+      "description": "Homarr allows the usage of multiple configs.",
+      "sidebar": "tutorialSidebar"
+    },
+    "community/donate": {
+      "id": "community/donate",
+      "title": "Donations",
+      "description": "Help us maintain Homarr",
+      "sidebar": "tutorialSidebar"
+    },
+    "community/frequently-asked-questions": {
+      "id": "community/frequently-asked-questions",
+      "title": "Frequently Asked Questions",
+      "description": "Can I install Homarr on a Raspberry Pi?",
+      "sidebar": "tutorialSidebar"
+    },
+    "community/get-in-touch": {
+      "id": "community/get-in-touch",
+      "title": "Get In Touch with Us",
+      "description": "Still have a question? Click here!",
+      "sidebar": "tutorialSidebar"
+    },
+    "community/license": {
+      "id": "community/license",
+      "title": "License",
+      "description": "Homarr is licensed under MIT.",
+      "sidebar": "tutorialSidebar"
+    },
+    "customizations/custom-background": {
+      "id": "customizations/custom-background",
+      "title": "Custom Background",
+      "description": "To add a custom Homarr background, open the settings at the top right and click on the Tab \"Customization\".",
+      "sidebar": "tutorialSidebar"
+    },
+    "customizations/custom-colors": {
+      "id": "customizations/custom-colors",
+      "title": "Custom Colors",
+      "description": "Homarr lets you customize the colors to adapt to your preferences.",
+      "sidebar": "tutorialSidebar"
+    },
+    "customizations/custom-search-engine": {
+      "id": "customizations/custom-search-engine",
+      "title": "Customize your Search Engine",
+      "description": "Select a Search Engine",
+      "sidebar": "tutorialSidebar"
+    },
+    "customizations/custom-title": {
+      "id": "customizations/custom-title",
+      "title": "Customize Page Title",
+      "description": "You can change the page title to whatever you like.",
+      "sidebar": "tutorialSidebar"
+    },
+    "customizations/dark-mode": {
+      "id": "customizations/dark-mode",
+      "title": "Dark Mode",
+      "description": "Homarr has a Dark Mode built-in, which is much more comforting to your eyes.",
+      "sidebar": "tutorialSidebar"
+    },
+    "customizations/index": {
+      "id": "customizations/index",
+      "title": "Overview of Customizations",
+      "description": "Overview of Homarr customizations",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/built-in-modules/index": {
+      "id": "modules/built-in-modules/index",
+      "title": "Built-In Modules for Homarr",
+      "description": "Homarr offers a collection of different Modules, which help you expand and personalize your experience.",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/built-in-modules/module-calendar": {
+      "id": "modules/built-in-modules/module-calendar",
+      "title": "📆 Calendar Module",
+      "description": "Explanation of the Calendar Module",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/built-in-modules/module-clock": {
+      "id": "modules/built-in-modules/module-clock",
+      "title": "🕓 Clock Module",
+      "description": "Explanation of the Clock Module",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/built-in-modules/module-search": {
+      "id": "modules/built-in-modules/module-search",
+      "title": "🔍 Search Module",
+      "description": "The Search module will add a search bar on the top right of your page. It can also be opened using the key shortcuts.",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/built-in-modules/module-torrent": {
+      "id": "modules/built-in-modules/module-torrent",
+      "title": "🚀 Torrent Module",
+      "description": "The torrent module uses integrations to display a list of torrents with their name, download and upload speed and progress. It supports displaying the progress from many download clients concurrently.",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/built-in-modules/module-weather": {
+      "id": "modules/built-in-modules/module-weather",
+      "title": "☔ Weather Module",
+      "description": "The Weather Module uses your location to display the current, highest and lowest temperature. The Module uses open-meteo.com to retrieve weather data.",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/index": {
+      "id": "modules/index",
+      "title": "Overview of Modules",
+      "description": "Overview of Homarr Modules",
+      "sidebar": "tutorialSidebar"
+    },
+    "modules/making-own-module": {
+      "id": "modules/making-own-module",
+      "title": "Making your own Modules",
+      "description": "A guide on how to make your own Homarr Module",
+      "sidebar": "tutorialSidebar"
+    },
+    "quick-start/index": {
+      "id": "quick-start/index",
+      "title": "Homarr Quick Start",
+      "description": "Short and fast introduction on how you can install Homarr on your device.",
+      "sidebar": "tutorialSidebar"
+    },
+    "quick-start/manage-services": {
+      "id": "quick-start/manage-services",
+      "title": "Manage your Services",
+      "description": "A guide on how to manage your services and make basic customizations to them",
+      "sidebar": "tutorialSidebar"
+    }
+  }
+}

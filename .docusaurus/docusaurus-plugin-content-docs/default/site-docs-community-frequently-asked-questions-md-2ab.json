@@ -1,0 +1,51 @@
+{
+  "unversionedId": "community/frequently-asked-questions",
+  "id": "community/frequently-asked-questions",
+  "title": "Frequently Asked Questions",
+  "description": "Can I install Homarr on a Raspberry Pi?",
+  "source": "@site/docs/community/frequently-asked-questions.md",
+  "sourceDirName": "community",
+  "slug": "/community/frequently-asked-questions",
+  "permalink": "/docs/community/frequently-asked-questions",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/frequently-asked-questions.md",
+  "tags": [
+    {
+      "label": "Support",
+      "permalink": "/docs/tags/support"
+    },
+    {
+      "label": "Help",
+      "permalink": "/docs/tags/help"
+    },
+    {
+      "label": "FAQ",
+      "permalink": "/docs/tags/faq"
+    },
+    {
+      "label": "Frequently Asked Questions",
+      "permalink": "/docs/tags/frequently-asked-questions"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_label": "FAQ",
+    "sidebar_position": 1,
+    "tags": [
+      "Support",
+      "Help",
+      "FAQ",
+      "Frequently Asked Questions"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Multiple Configurations",
+    "permalink": "/docs/advanced-features/multiple-configurations"
+  },
+  "next": {
+    "title": "Getting in Touch",
+    "permalink": "/docs/community/get-in-touch"
+  }
+}

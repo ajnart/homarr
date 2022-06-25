@@ -1,0 +1,52 @@
+{
+  "unversionedId": "community/donate",
+  "id": "community/donate",
+  "title": "Donations",
+  "description": "Help us maintain Homarr",
+  "source": "@site/docs/community/donate.md",
+  "sourceDirName": "community",
+  "slug": "/community/donate",
+  "permalink": "/docs/community/donate",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/donate.md",
+  "tags": [
+    {
+      "label": "Support",
+      "permalink": "/docs/tags/support"
+    },
+    {
+      "label": "Maintenance",
+      "permalink": "/docs/tags/maintenance"
+    },
+    {
+      "label": "Donate",
+      "permalink": "/docs/tags/donate"
+    },
+    {
+      "label": "Help",
+      "permalink": "/docs/tags/help"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Donate",
+    "sidebar_position": 3,
+    "description": "Help us maintain Homarr",
+    "tags": [
+      "Support",
+      "Maintenance",
+      "Donate",
+      "Help"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Getting in Touch",
+    "permalink": "/docs/community/get-in-touch"
+  },
+  "next": {
+    "title": "License",
+    "permalink": "/docs/community/license"
+  }
+}

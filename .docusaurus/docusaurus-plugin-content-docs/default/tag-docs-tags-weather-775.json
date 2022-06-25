@@ -1,0 +1,14 @@
+{
+  "label": "Weather",
+  "permalink": "/docs/tags/weather",
+  "allTagsPath": "/docs/tags",
+  "count": 1,
+  "items": [
+    {
+      "id": "modules/built-in-modules/module-weather",
+      "title": "☔ Weather Module",
+      "description": "The Weather Module uses your location to display the current, highest and lowest temperature. The Module uses open-meteo.com to retrieve weather data.",
+      "permalink": "/docs/modules/built-in-modules/module-weather"
+    }
+  ]
+}

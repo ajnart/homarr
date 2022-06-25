@@ -1,0 +1,23 @@
+{
+  "unversionedId": "community/license",
+  "id": "community/license",
+  "title": "License",
+  "description": "Homarr is licensed under MIT.",
+  "source": "@site/docs/community/license.md",
+  "sourceDirName": "community",
+  "slug": "/community/license",
+  "permalink": "/docs/community/license",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/license.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Donate",
+    "permalink": "/docs/community/donate"
+  }
+}

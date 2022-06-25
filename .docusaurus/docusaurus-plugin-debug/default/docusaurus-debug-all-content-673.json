@@ -1,0 +1,1307 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "className": "docs-version-current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
+          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
+          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/ajna/Documents/GitHub/homarr/sidebars.js",
+          "contentPath": "/Users/ajna/Documents/GitHub/homarr/docs",
+          "contentPathLocalized": "/Users/ajna/Documents/GitHub/homarr/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "unversionedId": "about",
+              "id": "about",
+              "title": "About Homarr",
+              "description": "Homarr",
+              "source": "@site/docs/about.md",
+              "sourceDirName": ".",
+              "slug": "/about",
+              "permalink": "/docs/about",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/about.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "About Homarr",
+                "sidebar_position": 1,
+                "hide_title": true
+              },
+              "sidebar": "tutorialSidebar",
+              "next": {
+                "title": "Installation",
+                "permalink": "/docs/quick-start/"
+              }
+            },
+            {
+              "unversionedId": "advanced-features/custom-icons",
+              "id": "advanced-features/custom-icons",
+              "title": "Custom Icons for Services",
+              "description": "How are icons requested?",
+              "source": "@site/docs/advanced-features/custom-icons.md",
+              "sourceDirName": "advanced-features",
+              "slug": "/advanced-features/custom-icons",
+              "permalink": "/docs/advanced-features/custom-icons",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/advanced-features/custom-icons.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Dark Mode",
+                "permalink": "/docs/customizations/dark-mode"
+              },
+              "next": {
+                "title": "Environment Variables",
+                "permalink": "/docs/advanced-features/environment-variables"
+              }
+            },
+            {
+              "unversionedId": "advanced-features/environment-variables",
+              "id": "advanced-features/environment-variables",
+              "title": "Environment Variables",
+              "description": "Homarr supports multiple environment variables. These can be set as either Linux env or Docker env. (Env is used to abbreviate environment variables.)",
+              "source": "@site/docs/advanced-features/environment-variables.md",
+              "sourceDirName": "advanced-features",
+              "slug": "/advanced-features/environment-variables",
+              "permalink": "/docs/advanced-features/environment-variables",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/advanced-features/environment-variables.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Custom Icons for Services",
+                "permalink": "/docs/advanced-features/custom-icons"
+              },
+              "next": {
+                "title": "Integrations",
+                "permalink": "/docs/advanced-features/integrations"
+              }
+            },
+            {
+              "unversionedId": "advanced-features/integrations",
+              "id": "advanced-features/integrations",
+              "title": "Integrations",
+              "description": "Homarr natively integrates with your services. Here is a list of all supported services.",
+              "source": "@site/docs/advanced-features/integrations.md",
+              "sourceDirName": "advanced-features",
+              "slug": "/advanced-features/integrations",
+              "permalink": "/docs/advanced-features/integrations",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/advanced-features/integrations.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Environment Variables",
+                "permalink": "/docs/advanced-features/environment-variables"
+              },
+              "next": {
+                "title": "Key Shortcuts",
+                "permalink": "/docs/advanced-features/key-shortcuts"
+              }
+            },
+            {
+              "unversionedId": "advanced-features/key-shortcuts",
+              "id": "advanced-features/key-shortcuts",
+              "title": "Key Shortcuts",
+              "description": "Homarr offers you key shortcuts for better productivity.",
+              "source": "@site/docs/advanced-features/key-shortcuts.md",
+              "sourceDirName": "advanced-features",
+              "slug": "/advanced-features/key-shortcuts",
+              "permalink": "/docs/advanced-features/key-shortcuts",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/advanced-features/key-shortcuts.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Integrations",
+                "permalink": "/docs/advanced-features/integrations"
+              },
+              "next": {
+                "title": "Multiple Configurations",
+                "permalink": "/docs/advanced-features/multiple-configurations"
+              }
+            },
+            {
+              "unversionedId": "advanced-features/multiple-configurations",
+              "id": "advanced-features/multiple-configurations",
+              "title": "Multiple Configurations",
+              "description": "Homarr allows the usage of multiple configs.",
+              "source": "@site/docs/advanced-features/multiple-configurations.md",
+              "sourceDirName": "advanced-features",
+              "slug": "/advanced-features/multiple-configurations",
+              "permalink": "/docs/advanced-features/multiple-configurations",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/advanced-features/multiple-configurations.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Key Shortcuts",
+                "permalink": "/docs/advanced-features/key-shortcuts"
+              },
+              "next": {
+                "title": "FAQ",
+                "permalink": "/docs/community/frequently-asked-questions"
+              }
+            },
+            {
+              "unversionedId": "community/donate",
+              "id": "community/donate",
+              "title": "Donations",
+              "description": "Help us maintain Homarr",
+              "source": "@site/docs/community/donate.md",
+              "sourceDirName": "community",
+              "slug": "/community/donate",
+              "permalink": "/docs/community/donate",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/donate.md",
+              "tags": [
+                {
+                  "label": "Support",
+                  "permalink": "/docs/tags/support"
+                },
+                {
+                  "label": "Maintenance",
+                  "permalink": "/docs/tags/maintenance"
+                },
+                {
+                  "label": "Donate",
+                  "permalink": "/docs/tags/donate"
+                },
+                {
+                  "label": "Help",
+                  "permalink": "/docs/tags/help"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_label": "Donate",
+                "sidebar_position": 3,
+                "description": "Help us maintain Homarr",
+                "tags": [
+                  "Support",
+                  "Maintenance",
+                  "Donate",
+                  "Help"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Getting in Touch",
+                "permalink": "/docs/community/get-in-touch"
+              },
+              "next": {
+                "title": "License",
+                "permalink": "/docs/community/license"
+              }
+            },
+            {
+              "unversionedId": "community/frequently-asked-questions",
+              "id": "community/frequently-asked-questions",
+              "title": "Frequently Asked Questions",
+              "description": "Can I install Homarr on a Raspberry Pi?",
+              "source": "@site/docs/community/frequently-asked-questions.md",
+              "sourceDirName": "community",
+              "slug": "/community/frequently-asked-questions",
+              "permalink": "/docs/community/frequently-asked-questions",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/frequently-asked-questions.md",
+              "tags": [
+                {
+                  "label": "Support",
+                  "permalink": "/docs/tags/support"
+                },
+                {
+                  "label": "Help",
+                  "permalink": "/docs/tags/help"
+                },
+                {
+                  "label": "FAQ",
+                  "permalink": "/docs/tags/faq"
+                },
+                {
+                  "label": "Frequently Asked Questions",
+                  "permalink": "/docs/tags/frequently-asked-questions"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_label": "FAQ",
+                "sidebar_position": 1,
+                "tags": [
+                  "Support",
+                  "Help",
+                  "FAQ",
+                  "Frequently Asked Questions"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Multiple Configurations",
+                "permalink": "/docs/advanced-features/multiple-configurations"
+              },
+              "next": {
+                "title": "Getting in Touch",
+                "permalink": "/docs/community/get-in-touch"
+              }
+            },
+            {
+              "unversionedId": "community/get-in-touch",
+              "id": "community/get-in-touch",
+              "title": "Get In Touch with Us",
+              "description": "Still have a question? Click here!",
+              "source": "@site/docs/community/get-in-touch.md",
+              "sourceDirName": "community",
+              "slug": "/community/get-in-touch",
+              "permalink": "/docs/community/get-in-touch",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/get-in-touch.md",
+              "tags": [
+                {
+                  "label": "Support",
+                  "permalink": "/docs/tags/support"
+                },
+                {
+                  "label": "Help",
+                  "permalink": "/docs/tags/help"
+                },
+                {
+                  "label": "Discord",
+                  "permalink": "/docs/tags/discord"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_label": "Getting in Touch",
+                "sidebar_position": 2,
+                "description": "Still have a question? Click here!",
+                "tags": [
+                  "Support",
+                  "Help",
+                  "Discord"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "FAQ",
+                "permalink": "/docs/community/frequently-asked-questions"
+              },
+              "next": {
+                "title": "Donate",
+                "permalink": "/docs/community/donate"
+              }
+            },
+            {
+              "unversionedId": "community/license",
+              "id": "community/license",
+              "title": "License",
+              "description": "Homarr is licensed under MIT.",
+              "source": "@site/docs/community/license.md",
+              "sourceDirName": "community",
+              "slug": "/community/license",
+              "permalink": "/docs/community/license",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/license.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 6,
+              "frontMatter": {
+                "sidebar_position": 6
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Donate",
+                "permalink": "/docs/community/donate"
+              }
+            },
+            {
+              "unversionedId": "customizations/custom-background",
+              "id": "customizations/custom-background",
+              "title": "Custom Background",
+              "description": "To add a custom Homarr background, open the settings at the top right and click on the Tab \"Customization\".",
+              "source": "@site/docs/customizations/custom-background.md",
+              "sourceDirName": "customizations",
+              "slug": "/customizations/custom-background",
+              "permalink": "/docs/customizations/custom-background",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/customizations/custom-background.md",
+              "tags": [
+                {
+                  "label": "Customization",
+                  "permalink": "/docs/tags/customization"
+                },
+                {
+                  "label": "Design",
+                  "permalink": "/docs/tags/design"
+                },
+                {
+                  "label": "Background",
+                  "permalink": "/docs/tags/background"
+                },
+                {
+                  "label": "Custom",
+                  "permalink": "/docs/tags/custom"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3,
+                "tags": [
+                  "Customization",
+                  "Design",
+                  "Background",
+                  "Custom"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Custom Colors",
+                "permalink": "/docs/customizations/custom-colors"
+              },
+              "next": {
+                "title": "Customize your Search Engine",
+                "permalink": "/docs/customizations/custom-search-engine"
+              }
+            },
+            {
+              "unversionedId": "customizations/custom-colors",
+              "id": "customizations/custom-colors",
+              "title": "Custom Colors",
+              "description": "Homarr lets you customize the colors to adapt to your preferences.",
+              "source": "@site/docs/customizations/custom-colors.md",
+              "sourceDirName": "customizations",
+              "slug": "/customizations/custom-colors",
+              "permalink": "/docs/customizations/custom-colors",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/customizations/custom-colors.md",
+              "tags": [
+                {
+                  "label": "Customization",
+                  "permalink": "/docs/tags/customization"
+                },
+                {
+                  "label": "Design",
+                  "permalink": "/docs/tags/design"
+                },
+                {
+                  "label": "Colors",
+                  "permalink": "/docs/tags/colors"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2,
+                "tags": [
+                  "Customization",
+                  "Design",
+                  "Colors"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Overview of Customizations",
+                "permalink": "/docs/customizations/"
+              },
+              "next": {
+                "title": "Custom Background",
+                "permalink": "/docs/customizations/custom-background"
+              }
+            },
+            {
+              "unversionedId": "customizations/custom-search-engine",
+              "id": "customizations/custom-search-engine",
+              "title": "Customize your Search Engine",
+              "description": "Select a Search Engine",
+              "source": "@site/docs/customizations/custom-search-engine.md",
+              "sourceDirName": "customizations",
+              "slug": "/customizations/custom-search-engine",
+              "permalink": "/docs/customizations/custom-search-engine",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/customizations/custom-search-engine.md",
+              "tags": [
+                {
+                  "label": "Customization",
+                  "permalink": "/docs/tags/customization"
+                },
+                {
+                  "label": "Design",
+                  "permalink": "/docs/tags/design"
+                },
+                {
+                  "label": "Background",
+                  "permalink": "/docs/tags/background"
+                },
+                {
+                  "label": "Custom",
+                  "permalink": "/docs/tags/custom"
+                }
+              ],
+              "version": "current",
+              "frontMatter": {
+                "tags": [
+                  "Customization",
+                  "Design",
+                  "Background",
+                  "Custom"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Custom Background",
+                "permalink": "/docs/customizations/custom-background"
+              },
+              "next": {
+                "title": "Customize Page Title",
+                "permalink": "/docs/customizations/custom-title"
+              }
+            },
+            {
+              "unversionedId": "customizations/custom-title",
+              "id": "customizations/custom-title",
+              "title": "Customize Page Title",
+              "description": "You can change the page title to whatever you like.",
+              "source": "@site/docs/customizations/custom-title.md",
+              "sourceDirName": "customizations",
+              "slug": "/customizations/custom-title",
+              "permalink": "/docs/customizations/custom-title",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/customizations/custom-title.md",
+              "tags": [
+                {
+                  "label": "Customization",
+                  "permalink": "/docs/tags/customization"
+                },
+                {
+                  "label": "Design",
+                  "permalink": "/docs/tags/design"
+                },
+                {
+                  "label": "Title",
+                  "permalink": "/docs/tags/title"
+                },
+                {
+                  "label": "Custom",
+                  "permalink": "/docs/tags/custom"
+                }
+              ],
+              "version": "current",
+              "frontMatter": {
+                "tags": [
+                  "Customization",
+                  "Design",
+                  "Title",
+                  "Custom"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Customize your Search Engine",
+                "permalink": "/docs/customizations/custom-search-engine"
+              },
+              "next": {
+                "title": "Dark Mode",
+                "permalink": "/docs/customizations/dark-mode"
+              }
+            },
+            {
+              "unversionedId": "customizations/dark-mode",
+              "id": "customizations/dark-mode",
+              "title": "Dark Mode",
+              "description": "Homarr has a Dark Mode built-in, which is much more comforting to your eyes.",
+              "source": "@site/docs/customizations/dark-mode.md",
+              "sourceDirName": "customizations",
+              "slug": "/customizations/dark-mode",
+              "permalink": "/docs/customizations/dark-mode",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/customizations/dark-mode.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Customize Page Title",
+                "permalink": "/docs/customizations/custom-title"
+              },
+              "next": {
+                "title": "Custom Icons for Services",
+                "permalink": "/docs/advanced-features/custom-icons"
+              }
+            },
+            {
+              "unversionedId": "customizations/index",
+              "id": "customizations/index",
+              "title": "Overview of Customizations",
+              "description": "Overview of Homarr customizations",
+              "source": "@site/docs/customizations/index.md",
+              "sourceDirName": "customizations",
+              "slug": "/customizations/",
+              "permalink": "/docs/customizations/",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/customizations/index.md",
+              "tags": [
+                {
+                  "label": "Customization",
+                  "permalink": "/docs/tags/customization"
+                },
+                {
+                  "label": "Design",
+                  "permalink": "/docs/tags/design"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_label": "Overview of Customizations",
+                "sidebar_position": 1,
+                "description": "Overview of Homarr customizations",
+                "tags": [
+                  "Customization",
+                  "Design"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Making your own Modules",
+                "permalink": "/docs/modules/making-own-module"
+              },
+              "next": {
+                "title": "Custom Colors",
+                "permalink": "/docs/customizations/custom-colors"
+              }
+            },
+            {
+              "unversionedId": "modules/built-in-modules/index",
+              "id": "modules/built-in-modules/index",
+              "title": "Built-In Modules for Homarr",
+              "description": "Homarr offers a collection of different Modules, which help you expand and personalize your experience.",
+              "source": "@site/docs/modules/built-in-modules/index.md",
+              "sourceDirName": "modules/built-in-modules",
+              "slug": "/modules/built-in-modules/",
+              "permalink": "/docs/modules/built-in-modules/",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/built-in-modules/index.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Overview of Modules",
+                "permalink": "/docs/modules/"
+              },
+              "next": {
+                "title": "📆 Calendar Module",
+                "permalink": "/docs/modules/built-in-modules/module-calendar"
+              }
+            },
+            {
+              "unversionedId": "modules/built-in-modules/module-calendar",
+              "id": "modules/built-in-modules/module-calendar",
+              "title": "📆 Calendar Module",
+              "description": "Explanation of the Calendar Module",
+              "source": "@site/docs/modules/built-in-modules/module-calendar.md",
+              "sourceDirName": "modules/built-in-modules",
+              "slug": "/modules/built-in-modules/module-calendar",
+              "permalink": "/docs/modules/built-in-modules/module-calendar",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/built-in-modules/module-calendar.md",
+              "tags": [
+                {
+                  "label": "Modules",
+                  "permalink": "/docs/tags/modules"
+                },
+                {
+                  "label": "Time",
+                  "permalink": "/docs/tags/time"
+                },
+                {
+                  "label": "Date",
+                  "permalink": "/docs/tags/date"
+                },
+                {
+                  "label": "Calendar",
+                  "permalink": "/docs/tags/calendar"
+                },
+                {
+                  "label": "Integration",
+                  "permalink": "/docs/tags/integration"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "description": "Explanation of the Calendar Module",
+                "tags": [
+                  "Modules",
+                  "Time",
+                  "Date",
+                  "Calendar",
+                  "Integration"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Built-In Modules for Homarr",
+                "permalink": "/docs/modules/built-in-modules/"
+              },
+              "next": {
+                "title": "☔ Weather Module",
+                "permalink": "/docs/modules/built-in-modules/module-weather"
+              }
+            },
+            {
+              "unversionedId": "modules/built-in-modules/module-clock",
+              "id": "modules/built-in-modules/module-clock",
+              "title": "🕓 Clock Module",
+              "description": "Explanation of the Clock Module",
+              "source": "@site/docs/modules/built-in-modules/module-clock.md",
+              "sourceDirName": "modules/built-in-modules",
+              "slug": "/modules/built-in-modules/module-clock",
+              "permalink": "/docs/modules/built-in-modules/module-clock",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/built-in-modules/module-clock.md",
+              "tags": [
+                {
+                  "label": "Modules",
+                  "permalink": "/docs/tags/modules"
+                },
+                {
+                  "label": "Time",
+                  "permalink": "/docs/tags/time"
+                },
+                {
+                  "label": "Localization",
+                  "permalink": "/docs/tags/localization"
+                }
+              ],
+              "version": "current",
+              "frontMatter": {
+                "description": "Explanation of the Clock Module",
+                "tags": [
+                  "Modules",
+                  "Time",
+                  "Localization"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "☔ Weather Module",
+                "permalink": "/docs/modules/built-in-modules/module-weather"
+              },
+              "next": {
+                "title": "🔍 Search Module",
+                "permalink": "/docs/modules/built-in-modules/module-search"
+              }
+            },
+            {
+              "unversionedId": "modules/built-in-modules/module-search",
+              "id": "modules/built-in-modules/module-search",
+              "title": "🔍 Search Module",
+              "description": "The Search module will add a search bar on the top right of your page. It can also be opened using the key shortcuts.",
+              "source": "@site/docs/modules/built-in-modules/module-search.md",
+              "sourceDirName": "modules/built-in-modules",
+              "slug": "/modules/built-in-modules/module-search",
+              "permalink": "/docs/modules/built-in-modules/module-search",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/built-in-modules/module-search.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "🕓 Clock Module",
+                "permalink": "/docs/modules/built-in-modules/module-clock"
+              },
+              "next": {
+                "title": "🚀 Torrent Module",
+                "permalink": "/docs/modules/built-in-modules/module-torrent"
+              }
+            },
+            {
+              "unversionedId": "modules/built-in-modules/module-torrent",
+              "id": "modules/built-in-modules/module-torrent",
+              "title": "🚀 Torrent Module",
+              "description": "The torrent module uses integrations to display a list of torrents with their name, download and upload speed and progress. It supports displaying the progress from many download clients concurrently.",
+              "source": "@site/docs/modules/built-in-modules/module-torrent.md",
+              "sourceDirName": "modules/built-in-modules",
+              "slug": "/modules/built-in-modules/module-torrent",
+              "permalink": "/docs/modules/built-in-modules/module-torrent",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/built-in-modules/module-torrent.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "🔍 Search Module",
+                "permalink": "/docs/modules/built-in-modules/module-search"
+              },
+              "next": {
+                "title": "Making your own Modules",
+                "permalink": "/docs/modules/making-own-module"
+              }
+            },
+            {
+              "unversionedId": "modules/built-in-modules/module-weather",
+              "id": "modules/built-in-modules/module-weather",
+              "title": "☔ Weather Module",
+              "description": "The Weather Module uses your location to display the current, highest and lowest temperature. The Module uses open-meteo.com to retrieve weather data.",
+              "source": "@site/docs/modules/built-in-modules/module-weather.md",
+              "sourceDirName": "modules/built-in-modules",
+              "slug": "/modules/built-in-modules/module-weather",
+              "permalink": "/docs/modules/built-in-modules/module-weather",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/built-in-modules/module-weather.md",
+              "tags": [
+                {
+                  "label": "Modules",
+                  "permalink": "/docs/tags/modules"
+                },
+                {
+                  "label": "Weather",
+                  "permalink": "/docs/tags/weather"
+                },
+                {
+                  "label": "Geolocation",
+                  "permalink": "/docs/tags/geolocation"
+                },
+                {
+                  "label": "Forecast",
+                  "permalink": "/docs/tags/forecast"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "tags": [
+                  "Modules",
+                  "Weather",
+                  "Geolocation",
+                  "Forecast"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "📆 Calendar Module",
+                "permalink": "/docs/modules/built-in-modules/module-calendar"
+              },
+              "next": {
+                "title": "🕓 Clock Module",
+                "permalink": "/docs/modules/built-in-modules/module-clock"
+              }
+            },
+            {
+              "unversionedId": "modules/index",
+              "id": "modules/index",
+              "title": "Overview of Modules",
+              "description": "Overview of Homarr Modules",
+              "source": "@site/docs/modules/index.md",
+              "sourceDirName": "modules",
+              "slug": "/modules/",
+              "permalink": "/docs/modules/",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/index.md",
+              "tags": [
+                {
+                  "label": "Modules",
+                  "permalink": "/docs/tags/modules"
+                },
+                {
+                  "label": "Design",
+                  "permalink": "/docs/tags/design"
+                }
+              ],
+              "version": "current",
+              "frontMatter": {
+                "description": "Overview of Homarr Modules",
+                "tags": [
+                  "Modules",
+                  "Design"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Manage Services",
+                "permalink": "/docs/quick-start/manage-services"
+              },
+              "next": {
+                "title": "Built-In Modules for Homarr",
+                "permalink": "/docs/modules/built-in-modules/"
+              }
+            },
+            {
+              "unversionedId": "modules/making-own-module",
+              "id": "modules/making-own-module",
+              "title": "Making your own Modules",
+              "description": "A guide on how to make your own Homarr Module",
+              "source": "@site/docs/modules/making-own-module.md",
+              "sourceDirName": "modules",
+              "slug": "/modules/making-own-module",
+              "permalink": "/docs/modules/making-own-module",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/making-own-module.md",
+              "tags": [
+                {
+                  "label": "Modules",
+                  "permalink": "/docs/tags/modules"
+                },
+                {
+                  "label": "Development",
+                  "permalink": "/docs/tags/development"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_label": "Making your own Modules",
+                "sidebar_position": 3,
+                "description": "A guide on how to make your own Homarr Module",
+                "tags": [
+                  "Modules",
+                  "Development"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "🚀 Torrent Module",
+                "permalink": "/docs/modules/built-in-modules/module-torrent"
+              },
+              "next": {
+                "title": "Overview of Customizations",
+                "permalink": "/docs/customizations/"
+              }
+            },
+            {
+              "unversionedId": "quick-start/index",
+              "id": "quick-start/index",
+              "title": "Homarr Quick Start",
+              "description": "Short and fast introduction on how you can install Homarr on your device.",
+              "source": "@site/docs/quick-start/index.md",
+              "sourceDirName": "quick-start",
+              "slug": "/quick-start/",
+              "permalink": "/docs/quick-start/",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/quick-start/index.md",
+              "tags": [
+                {
+                  "label": "Installation",
+                  "permalink": "/docs/tags/installation"
+                },
+                {
+                  "label": "Getting started",
+                  "permalink": "/docs/tags/getting-started"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_label": "Installation",
+                "sidebar_position": 1,
+                "title": "Homarr Quick Start",
+                "description": "Short and fast introduction on how you can install Homarr on your device.",
+                "tags": [
+                  "Installation",
+                  "Getting started"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "About Homarr",
+                "permalink": "/docs/about"
+              },
+              "next": {
+                "title": "Manage Services",
+                "permalink": "/docs/quick-start/manage-services"
+              }
+            },
+            {
+              "unversionedId": "quick-start/manage-services",
+              "id": "quick-start/manage-services",
+              "title": "Manage your Services",
+              "description": "A guide on how to manage your services and make basic customizations to them",
+              "source": "@site/docs/quick-start/manage-services.md",
+              "sourceDirName": "quick-start",
+              "slug": "/quick-start/manage-services",
+              "permalink": "/docs/quick-start/manage-services",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/quick-start/manage-services.md",
+              "tags": [
+                {
+                  "label": "Service Management",
+                  "permalink": "/docs/tags/service-management"
+                },
+                {
+                  "label": "Basics",
+                  "permalink": "/docs/tags/basics"
+                },
+                {
+                  "label": "Getting started",
+                  "permalink": "/docs/tags/getting-started"
+                }
+              ],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_label": "Manage Services",
+                "sidebar_position": 2,
+                "description": "A guide on how to manage your services and make basic customizations to them",
+                "tags": [
+                  "Service Management",
+                  "Basics",
+                  "Getting started"
+                ]
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Installation",
+                "permalink": "/docs/quick-start/"
+              },
+              "next": {
+                "title": "Overview of Modules",
+                "permalink": "/docs/modules/"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "tutorialSidebar": [
+              {
+                "type": "doc",
+                "id": "about"
+              },
+              {
+                "type": "category",
+                "label": "Quick Start",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "quick-start/manage-services",
+                    "label": "Manage Services"
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "quick-start/index"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Modules",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "Built-In Modules",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "modules/built-in-modules/module-calendar"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "modules/built-in-modules/module-weather"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "modules/built-in-modules/module-clock"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "modules/built-in-modules/module-search"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "modules/built-in-modules/module-torrent"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "modules/built-in-modules/index"
+                    }
+                  },
+                  {
+                    "type": "doc",
+                    "id": "modules/making-own-module",
+                    "label": "Making your own Modules"
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "modules/index"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Customizations",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "customizations/custom-colors"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "customizations/custom-background"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "customizations/custom-search-engine"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "customizations/custom-title"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "customizations/dark-mode"
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "customizations/index"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Advanced Features",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "advanced-features/custom-icons"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "advanced-features/environment-variables"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "advanced-features/integrations"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "advanced-features/key-shortcuts"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "advanced-features/multiple-configurations"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Community",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "community/frequently-asked-questions",
+                    "label": "FAQ"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/get-in-touch",
+                    "label": "Getting in Touch"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/donate",
+                    "label": "Donate"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "community/license"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "Recent posts",
+      "blogPosts": [
+        {
+          "id": "documentation-migration",
+          "metadata": {
+            "permalink": "/blog/documentation-migration",
+            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2022-06-22-documentation.md",
+            "source": "@site/blog/2022-06-22-documentation.md",
+            "title": "Migration of Documentation",
+            "description": "We are happy to announce that the documentation of Homarr has been migrated to Docusaurus - An opensource documentation tool.",
+            "date": "2022-06-22T00:00:00.000Z",
+            "formattedDate": "June 22, 2022",
+            "tags": [
+              {
+                "label": "documentation",
+                "permalink": "/blog/tags/documentation"
+              },
+              {
+                "label": "migration",
+                "permalink": "/blog/tags/migration"
+              }
+            ],
+            "readingTime": 1.01,
+            "truncated": false,
+            "authors": [
+              {
+                "name": "Ajnart",
+                "title": "Owner",
+                "url": "https://github.com/ajnart",
+                "image_url": "https://avatars.githubusercontent.com/u/49837342?v=4",
+                "imageURL": "https://avatars.githubusercontent.com/u/49837342?v=4"
+              },
+              {
+                "name": "Manicraft1001",
+                "title": "Contributor",
+                "url": "https://github.com/manuel-rw",
+                "image_url": "https://avatars.githubusercontent.com/u/30572287?v=4",
+                "imageURL": "https://avatars.githubusercontent.com/u/30572287?v=4"
+              }
+            ],
+            "frontMatter": {
+              "slug": "documentation-migration",
+              "title": "Migration of Documentation",
+              "authors": [
+                {
+                  "name": "Ajnart",
+                  "title": "Owner",
+                  "url": "https://github.com/ajnart",
+                  "image_url": "https://avatars.githubusercontent.com/u/49837342?v=4",
+                  "imageURL": "https://avatars.githubusercontent.com/u/49837342?v=4"
+                },
+                {
+                  "name": "Manicraft1001",
+                  "title": "Contributor",
+                  "url": "https://github.com/manuel-rw",
+                  "image_url": "https://avatars.githubusercontent.com/u/30572287?v=4",
+                  "imageURL": "https://avatars.githubusercontent.com/u/30572287?v=4"
+                }
+              ],
+              "tags": [
+                "documentation",
+                "migration"
+              ]
+            }
+          },
+          "content": "We are happy to announce that the documentation of Homarr has been migrated to Docusaurus - An opensource documentation tool.\nThe documentation has been re-written partly and includes now many animations, guides and additional crucial information.\n\nWe are still figuring things out and highly depend on your feedback.\n\n## Why we migrated\n\nThe default Github Wiki feature is decent - but very confusing to read.\nOur possibilites for searching the documentation in the Wiki are highly limited.\nAdditionally, Users are unable to contribute to the documentation if they have not sufficient permissions.\n\nWe could not review any chanegs made to the documentation. This is why we migrated to Docusaurus.\n\n## How you can contribute\n\nThe documentation will soon be merged into the master branch of Homarr.\nYou'll find a ``doc/`` directory in the root of Homarr.\nWe'll obviously not include this in our Docker images.\nIn the future, everyone may modify the documentation by creating a pull request.\nAfter we've reviewed your changes, we'll merge your PR and this documentation will automatically update.\n\n## TL;DR\n\nThe documentation on GitHub Wiki will soon disappear. It will be replaced with this Docusaurus-powered website. You'll find much more information here with higher detail and searchability."
+        }
+      ],
+      "blogListPaginated": [
+        {
+          "items": [
+            "documentation-migration"
+          ],
+          "metadata": {
+            "permalink": "/blog",
+            "page": 1,
+            "postsPerPage": 10,
+            "totalPages": 1,
+            "totalCount": 1,
+            "blogDescription": "Blog",
+            "blogTitle": "Blog"
+          }
+        }
+      ],
+      "blogTags": {
+        "/blog/tags/documentation": {
+          "label": "documentation",
+          "items": [
+            "documentation-migration"
+          ],
+          "permalink": "/blog/tags/documentation",
+          "pages": [
+            {
+              "items": [
+                "documentation-migration"
+              ],
+              "metadata": {
+                "permalink": "/blog/tags/documentation",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/blog/tags/migration": {
+          "label": "migration",
+          "items": [
+            "documentation-migration"
+          ],
+          "permalink": "/blog/tags/migration",
+          "pages": [
+            {
+              "items": [
+                "documentation-migration"
+              ],
+              "metadata": {
+                "permalink": "/blog/tags/migration",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        }
+      },
+      "blogTagsListPath": "/blog/tags"
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.js"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "@cmfcmf/docusaurus-search-local": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

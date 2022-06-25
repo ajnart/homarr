@@ -1,0 +1,20 @@
+{
+  "label": "Time",
+  "permalink": "/docs/tags/time",
+  "allTagsPath": "/docs/tags",
+  "count": 2,
+  "items": [
+    {
+      "id": "modules/built-in-modules/module-calendar",
+      "title": "📆 Calendar Module",
+      "description": "Explanation of the Calendar Module",
+      "permalink": "/docs/modules/built-in-modules/module-calendar"
+    },
+    {
+      "id": "modules/built-in-modules/module-clock",
+      "title": "🕓 Clock Module",
+      "description": "Explanation of the Clock Module",
+      "permalink": "/docs/modules/built-in-modules/module-clock"
+    }
+  ]
+}

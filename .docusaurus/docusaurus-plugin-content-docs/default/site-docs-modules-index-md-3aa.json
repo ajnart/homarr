@@ -1,0 +1,39 @@
+{
+  "unversionedId": "modules/index",
+  "id": "modules/index",
+  "title": "Overview of Modules",
+  "description": "Overview of Homarr Modules",
+  "source": "@site/docs/modules/index.md",
+  "sourceDirName": "modules",
+  "slug": "/modules/",
+  "permalink": "/docs/modules/",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/index.md",
+  "tags": [
+    {
+      "label": "Modules",
+      "permalink": "/docs/tags/modules"
+    },
+    {
+      "label": "Design",
+      "permalink": "/docs/tags/design"
+    }
+  ],
+  "version": "current",
+  "frontMatter": {
+    "description": "Overview of Homarr Modules",
+    "tags": [
+      "Modules",
+      "Design"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manage Services",
+    "permalink": "/docs/quick-start/manage-services"
+  },
+  "next": {
+    "title": "Built-In Modules for Homarr",
+    "permalink": "/docs/modules/built-in-modules/"
+  }
+}

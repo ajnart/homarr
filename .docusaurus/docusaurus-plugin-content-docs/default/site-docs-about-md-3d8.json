@@ -1,0 +1,25 @@
+{
+  "unversionedId": "about",
+  "id": "about",
+  "title": "About Homarr",
+  "description": "Homarr",
+  "source": "@site/docs/about.md",
+  "sourceDirName": ".",
+  "slug": "/about",
+  "permalink": "/docs/about",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/about.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "About Homarr",
+    "sidebar_position": 1,
+    "hide_title": true
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Installation",
+    "permalink": "/docs/quick-start/"
+  }
+}

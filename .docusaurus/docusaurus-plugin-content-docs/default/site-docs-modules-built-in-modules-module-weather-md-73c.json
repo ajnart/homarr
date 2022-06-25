@@ -1,0 +1,50 @@
+{
+  "unversionedId": "modules/built-in-modules/module-weather",
+  "id": "modules/built-in-modules/module-weather",
+  "title": "☔ Weather Module",
+  "description": "The Weather Module uses your location to display the current, highest and lowest temperature. The Module uses open-meteo.com to retrieve weather data.",
+  "source": "@site/docs/modules/built-in-modules/module-weather.md",
+  "sourceDirName": "modules/built-in-modules",
+  "slug": "/modules/built-in-modules/module-weather",
+  "permalink": "/docs/modules/built-in-modules/module-weather",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/built-in-modules/module-weather.md",
+  "tags": [
+    {
+      "label": "Modules",
+      "permalink": "/docs/tags/modules"
+    },
+    {
+      "label": "Weather",
+      "permalink": "/docs/tags/weather"
+    },
+    {
+      "label": "Geolocation",
+      "permalink": "/docs/tags/geolocation"
+    },
+    {
+      "label": "Forecast",
+      "permalink": "/docs/tags/forecast"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "tags": [
+      "Modules",
+      "Weather",
+      "Geolocation",
+      "Forecast"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "📆 Calendar Module",
+    "permalink": "/docs/modules/built-in-modules/module-calendar"
+  },
+  "next": {
+    "title": "🕓 Clock Module",
+    "permalink": "/docs/modules/built-in-modules/module-clock"
+  }
+}

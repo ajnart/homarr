@@ -1,0 +1,26 @@
+{
+  "label": "Custom",
+  "permalink": "/docs/tags/custom",
+  "allTagsPath": "/docs/tags",
+  "count": 3,
+  "items": [
+    {
+      "id": "customizations/custom-background",
+      "title": "Custom Background",
+      "description": "To add a custom Homarr background, open the settings at the top right and click on the Tab \"Customization\".",
+      "permalink": "/docs/customizations/custom-background"
+    },
+    {
+      "id": "customizations/custom-title",
+      "title": "Customize Page Title",
+      "description": "You can change the page title to whatever you like.",
+      "permalink": "/docs/customizations/custom-title"
+    },
+    {
+      "id": "customizations/custom-search-engine",
+      "title": "Customize your Search Engine",
+      "description": "Select a Search Engine",
+      "permalink": "/docs/customizations/custom-search-engine"
+    }
+  ]
+}

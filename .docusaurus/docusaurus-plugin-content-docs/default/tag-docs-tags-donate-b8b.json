@@ -1,0 +1,14 @@
+{
+  "label": "Donate",
+  "permalink": "/docs/tags/donate",
+  "allTagsPath": "/docs/tags",
+  "count": 1,
+  "items": [
+    {
+      "id": "community/donate",
+      "title": "Donations",
+      "description": "Help us maintain Homarr",
+      "permalink": "/docs/community/donate"
+    }
+  ]
+}
