@@ -28,6 +28,15 @@ export default function CommonSettings(args: any) {
     <Group direction="column" grow>
       <Group grow direction="column" spacing={0}>
         <Text>Search engine</Text>
+        <Text
+          style={{
+            fontSize: '0.75rem',
+            color: 'gray',
+            marginBottom: '0.5rem',
+          }}
+        >
+          Tip: %s can be used as a placeholder for the query.
+        </Text>
         <SegmentedControl
           fullWidth
           title="Search engine"
@@ -53,7 +62,7 @@ export default function CommonSettings(args: any) {
         {searchUrl === 'Custom' && (
           <TextInput
             label="Query URL"
-            placeholder="Custom query url"
+            placeholder="Custom query URL"
             value={customSearchUrl}
             onChange={(event) => {
               setCustomSearchUrl(event.currentTarget.value);
