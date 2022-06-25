@@ -96,7 +96,13 @@ export default function SearchBar(props: any) {
           } else if (isTorrent) {
             window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
           } else {
-            window.open(`${queryUrl}${values.query}`);
+            window.open(
+              `${
+                queryUrl.includes('%s')
+                  ? queryUrl.replace('%s', values.query)
+                  : queryUrl + values.query
+              }`
+            );
           }
         }, 20);
       })}
@@ -114,6 +120,7 @@ export default function SearchBar(props: any) {
         onBlurCapture={() => setOpened(false)}
         target={
           <Autocomplete
+            autoFocus
             variant="filled"
             data={autocompleteData}
             icon={icon}
