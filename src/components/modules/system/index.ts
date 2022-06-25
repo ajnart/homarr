@@ -1,1 +1,0 @@
-export { SystemModule } from './SystemModule';
