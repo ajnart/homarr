@@ -59,7 +59,7 @@ export default function DownloadComponent() {
         setIsLoading(false);
       });
     }, 5000);
-  }, [config.services]);
+  }, []);
 
   if (downloadServices.length === 0) {
     return (
