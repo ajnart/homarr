@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Homarr Documentation',
   tagline: 'Simple and lightweight homepage for your server',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://homarr.ajnart.fr',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -36,15 +36,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/ajnart/homarr/tree/docs/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/ajnart/homarr/tree/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -88,7 +86,7 @@ const config = {
             items: [
               {
                 label: 'Installation',
-                to: '/docs/quick-start/index',
+                to: '/docs/quick-start/',
               },
               {
                 label: 'Modules',

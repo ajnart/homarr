@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "docusaurus": "docusaurus",
     "dev": "docusaurus start",
