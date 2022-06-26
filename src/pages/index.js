@@ -15,11 +15,11 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <img src="/img/favicon.png" height={200} />
-        <h1 className="hero__title">Homarr</h1>
+        <h1 className="hero__title">Homarr 🦞</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', margin: -5 }}>
           <div className={styles.buttons}>
-            <Link className="button button--secondary button--lg" to="/docs/quick-start/index">
+            <Link className="button button--secondary button--lg" to="/docs/quick-start">
               Get Started with Homarr 🚀
             </Link>
           </div>
