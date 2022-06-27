@@ -1,7 +1,21 @@
 import {
-  ActionIcon, Anchor, Button, Center,
-  Group, Image, LoadingOverlay, Modal, MultiSelect,
-  ScrollArea, Select, Switch, Tabs, Text, TextInput, Title, Tooltip
+  ActionIcon,
+  Anchor,
+  Button,
+  Center,
+  Group,
+  Image,
+  LoadingOverlay,
+  Modal,
+  MultiSelect,
+  ScrollArea,
+  Select,
+  Switch,
+  Tabs,
+  Text,
+  TextInput,
+  Title,
+  Tooltip,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
@@ -42,10 +56,13 @@ export function AddItemShelfButton(props: any) {
 }
 
 function MatchIcon(name: string, form: any) {
+  console.log(name, name.replace(/^dash\.$/, 'dashdot'));
+
   fetch(
     `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
-      .toLowerCase()}.png`
+      .toLowerCase()
+      .replace(/^dash\.$/, 'dashdot')}.png`
   ).then((res) => {
     if (res.ok) {
       form.setFieldValue('icon', res.url);
