@@ -4,6 +4,7 @@ import {
   IconCheck,
   IconPlayerPlay,
   IconPlayerStop,
+  IconRefresh,
   IconRotateClockwise,
   IconX,
 } from '@tabler/icons';
@@ -12,10 +13,10 @@ import Dockerode from 'dockerode';
 
 function sendNotification(action: string, containerId: string, containerName: string) {
   showNotification({
-    id: 'load-data',
+    id: containerId,
     loading: true,
     title: `${action}ing container ${containerName}`,
-    message: 'Your password is being checked...',
+    message: undefined,
     autoClose: false,
     disallowClose: true,
   });
@@ -23,19 +24,19 @@ function sendNotification(action: string, containerId: string, containerName: st
     setTimeout(() => {
       if (res.data.success === true) {
         updateNotification({
-          id: 'load-data',
-          title: 'Container restarted',
-          message: 'Your container was successfully restarted',
+          id: containerId,
+          title: `Container ${containerName} ${action}ed`,
+          message: `Your container was successfully ${action}ed`,
           icon: <IconCheck />,
           autoClose: 2000,
         });
       }
       if (res.data.success === false) {
         updateNotification({
-          id: 'load-data',
+          id: containerId,
           color: 'red',
-          title: 'There was an error restarting your container.',
-          message: 'Your container has encountered issues while restarting.',
+          title: 'There was an error with your container.',
+          message: undefined,
           icon: <IconX />,
           autoClose: 2000,
         });
@@ -44,38 +45,57 @@ function sendNotification(action: string, containerId: string, containerName: st
   });
 }
 
-function restart(container: Dockerode.ContainerInfo) {
-  sendNotification('restart', container.Id, container.Names[0]);
-}
-function stop(container: Dockerode.ContainerInfo) {
-  console.log('stoping container', container.Id);
-}
-function start(container: Dockerode.ContainerInfo) {
-  console.log('starting container', container.Id);
-}
-
 export interface ContainerActionBarProps {
   selected: Dockerode.ContainerInfo[];
+  reload: () => void;
 }
 
-export default function ContainerActionBar(props: ContainerActionBarProps) {
-  const { selected } = props;
+export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   return (
     <Group>
       <Button
         leftIcon={<IconRotateClockwise />}
-        onClick={() => selected.map((container) => restart(container))}
-        variant="filled"
+        onClick={() =>
+          Promise.all(
+            selected.map((container) =>
+              sendNotification('restart', container.Id, container.Names[0])
+            )
+          ).then(() => reload())
+        }
+        variant="light"
         color="orange"
         radius="md"
       >
         Restart
       </Button>
-      <Button leftIcon={<IconPlayerStop />} variant="filled" color="red" radius="md">
+      <Button
+        leftIcon={<IconPlayerStop />}
+        onClick={() =>
+          Promise.all(
+            selected.map((container) => sendNotification('stop', container.Id, container.Names[0]))
+          ).then(() => reload())
+        }
+        variant="light"
+        color="red"
+        radius="md"
+      >
         Stop
       </Button>
-      <Button leftIcon={<IconPlayerPlay />} variant="filled" color="green" radius="md">
+      <Button
+        leftIcon={<IconPlayerPlay />}
+        onClick={() =>
+          Promise.all(
+            selected.map((container) => sendNotification('start', container.Id, container.Names[0]))
+          ).then(() => reload())
+        }
+        variant="light"
+        color="green"
+        radius="md"
+      >
         Start
+      </Button>
+      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light">
+        Refresh data
       </Button>
     </Group>
   );

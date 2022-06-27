@@ -33,6 +33,12 @@ export default function DockerDrawer(props: any) {
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const { classes, cx } = useStyles();
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
+  function reload() {
+    axios.get('/api/docker/containers').then((res) => {
+      setContainers(res.data);
+    });
+  }
+
   const toggleRow = (container: Docker.ContainerInfo) =>
     setSelection((current) =>
       current.includes(container) ? current.filter((c) => c !== container) : [...current, container]
@@ -43,9 +49,7 @@ export default function DockerDrawer(props: any) {
     );
 
   useEffect(() => {
-    axios.get('/api/docker/containers').then((res) => {
-      setContainers(res.data);
-    });
+    reload();
   }, []);
   const rows = containers.map((element) => {
     const selected = selection.includes(element);
@@ -62,15 +66,15 @@ export default function DockerDrawer(props: any) {
         <td>{element.Image}</td>
         <td>
           <Group>
-            {element.Ports.slice(-3).map((port) => (
-              <Badge variant="outline">
-                {port.PrivatePort}:{port.PublicPort}
-              </Badge>
-            ))}
+            {element.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
+              .slice(-3)
+              .map((port) => (
+                <Badge variant="outline">
+                  {port.PrivatePort}:{port.PublicPort}
+                </Badge>
+              ))}
             {element.Ports.length > 3 && (
-              <Badge variant="filled">
-                {element.Ports.length - 3} more
-              </Badge>
+              <Badge variant="filled">{element.Ports.length - 3} more</Badge>
             )}
           </Group>
         </td>
@@ -85,7 +89,7 @@ export default function DockerDrawer(props: any) {
     <>
       <Drawer opened={opened} onClose={() => setOpened(false)} padding="xl" size="full">
         <ScrollArea>
-          <ContainerActionBar selected={selection} />
+          <ContainerActionBar selected={selection} reload={reload} />
           <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
             <caption>your docker containers</caption>
             <thead>
