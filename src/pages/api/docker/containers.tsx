@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import Docker from 'dockerode';
@@ -6,12 +5,11 @@ import Docker from 'dockerode';
 const docker = new Docker();
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
-  const con: Docker.Container = docker.getContainer('hello');
   docker.listContainers({ all: true }, (err, containers) => {
     if (err) {
       res.status(500).json({ error: err });
     }
-    res.status(200).json(containers);
+    return res.status(200).json(containers);
   });
 }
 
