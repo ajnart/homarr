@@ -70,8 +70,19 @@ export const ServiceTypeList = [
   'Sonarr',
   'qBittorrent',
   'Transmission',
-] as const;
-export type ServiceType = typeof ServiceTypeList[number];
+];
+export type ServiceType =
+  | 'Other'
+  | 'Emby'
+  | 'Dash.'
+  | 'Deluge'
+  | 'Lidarr'
+  | 'Plex'
+  | 'Radarr'
+  | 'Readarr'
+  | 'Sonarr'
+  | 'qBittorrent'
+  | 'Transmission';
 
 export interface serviceItem {
   id: string;
