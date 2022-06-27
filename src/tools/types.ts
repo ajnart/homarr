@@ -61,6 +61,7 @@ export const Targets = [
 export const ServiceTypeList = [
   'Other',
   'Emby',
+  'Dash.',
   'Deluge',
   'Lidarr',
   'Plex',
@@ -69,18 +70,8 @@ export const ServiceTypeList = [
   'Sonarr',
   'qBittorrent',
   'Transmission',
-];
-export type ServiceType =
-  | 'Other'
-  | 'Emby'
-  | 'Deluge'
-  | 'Lidarr'
-  | 'Plex'
-  | 'Radarr'
-  | 'Readarr'
-  | 'Sonarr'
-  | 'qBittorrent'
-  | 'Transmission';
+] as const;
+export type ServiceType = typeof ServiceTypeList[number];
 
 export interface serviceItem {
   id: string;
