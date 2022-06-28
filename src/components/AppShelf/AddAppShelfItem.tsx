@@ -24,6 +24,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList, StatusCodes } from '../../tools/types';
+import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -273,15 +274,8 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                       }}
                       error={form.errors.apiKey && 'Invalid API key'}
                     />
-                    <Text
-                      style={{
-                        alignSelf: 'center',
-                        fontSize: '0.75rem',
-                        textAlign: 'center',
-                        color: 'gray',
-                      }}
-                    >
-                      Tip: Get your API key{' '}
+                    <Tip>
+                      Get your API key{' '}
                       <Anchor
                         target="_blank"
                         weight="bold"
@@ -290,7 +284,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                       >
                         here.
                       </Anchor>
-                    </Text>
+                    </Tip>
                   </>
                 )}
                 {form.values.type === 'qBittorrent' && (

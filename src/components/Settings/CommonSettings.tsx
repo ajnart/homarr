@@ -6,6 +6,7 @@ import { WidgetsPositionSwitch } from '../WidgetsPositionSwitch/WidgetsPositionS
 import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
+import Tip from '../layout/Tip';
 
 export default function CommonSettings(args: any) {
   const { config, setConfig } = useConfig();
@@ -26,17 +27,13 @@ export default function CommonSettings(args: any) {
     <Group direction="column" grow mb="lg">
       <Group grow direction="column" spacing={0}>
         <Text>Search engine</Text>
-        <Text
-          style={{
-            fontSize: '0.75rem',
-            color: 'gray',
-            marginBottom: '0.5rem',
-          }}
-        >
-          Tip: %s can be used as a placeholder for the query.
-        </Text>
+        <Tip>
+          Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube or
+          for a Torrent respectively.
+        </Tip>
         <SegmentedControl
           fullWidth
+          mb="sm"
           title="Search engine"
           value={
             // Match config.settings.searchUrl with a key in the matches array
@@ -58,21 +55,24 @@ export default function CommonSettings(args: any) {
           data={matches}
         />
         {searchUrl === 'Custom' && (
-          <TextInput
-            label="Query URL"
-            placeholder="Custom query URL"
-            value={customSearchUrl}
-            onChange={(event) => {
-              setCustomSearchUrl(event.currentTarget.value);
-              setConfig({
-                ...config,
-                settings: {
-                  ...config.settings,
-                  searchUrl: event.currentTarget.value,
-                },
-              });
-            }}
-          />
+          <>
+            <Tip>%s can be used as a placeholder for the query.</Tip>
+            <TextInput
+              label="Query URL"
+              placeholder="Custom query URL"
+              value={customSearchUrl}
+              onChange={(event) => {
+                setCustomSearchUrl(event.currentTarget.value);
+                setConfig({
+                  ...config,
+                  settings: {
+                    ...config.settings,
+                    searchUrl: event.currentTarget.value,
+                  },
+                });
+              }}
+            />
+          </>
         )}
       </Group>
       <ColorSchemeSwitch />
@@ -80,16 +80,7 @@ export default function CommonSettings(args: any) {
       <ModuleEnabler />
       <ConfigChanger />
       <SaveConfigComponent />
-      <Text
-        style={{
-          alignSelf: 'center',
-          fontSize: '0.75rem',
-          textAlign: 'center',
-          color: 'gray',
-        }}
-      >
-        Tip: You can upload your config file by dragging and dropping it onto the page!
-      </Text>
+      <Tip>Upload your config file by dragging and dropping it onto the page!</Tip>
     </Group>
   );
 }
