@@ -1,7 +1,5 @@
-import { ActionIcon, Group, Text, SegmentedControl, TextInput, Anchor } from '@mantine/core';
+import { Group, Text, SegmentedControl, TextInput } from '@mantine/core';
 import { useState } from 'react';
-import { IconBrandGithub as BrandGithub, IconBrandDiscord as BrandDiscord } from '@tabler/icons';
-import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import { WidgetsPositionSwitch } from '../WidgetsPositionSwitch/WidgetsPositionSwitch';
@@ -25,7 +23,7 @@ export default function CommonSettings(args: any) {
   );
 
   return (
-    <Group direction="column" grow>
+    <Group direction="column" grow mb="lg">
       <Group grow direction="column" spacing={0}>
         <Text>Search engine</Text>
         <Text
@@ -92,42 +90,6 @@ export default function CommonSettings(args: any) {
       >
         Tip: You can upload your config file by dragging and dropping it onto the page!
       </Text>
-      <Group position="center" direction="row" mr="xs">
-        <Group spacing={0}>
-          <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
-            <BrandGithub size={18} />
-          </ActionIcon>
-          <Text
-            style={{
-              position: 'relative',
-              fontSize: '0.90rem',
-              color: 'gray',
-            }}
-          >
-            {CURRENT_VERSION}
-          </Text>
-        </Group>
-        <Group spacing={1}>
-          <Text
-            style={{
-              fontSize: '0.90rem',
-              textAlign: 'center',
-              color: 'gray',
-            }}
-          >
-            Made with ❤️ by @
-            <Anchor
-              href="https://github.com/ajnart"
-              style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
-            >
-              ajnart
-            </Anchor>
-          </Text>
-          <ActionIcon<'a'> component="a" href="https://discord.gg/aCsmEV5RgA" size="lg">
-            <BrandDiscord size={18} />
-          </ActionIcon>
-        </Group>
-      </Group>
     </Group>
   );
 }
