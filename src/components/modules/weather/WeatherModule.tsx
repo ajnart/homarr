@@ -29,7 +29,7 @@ export const WeatherModule: IModule = {
     },
     location: {
       name: 'Current location',
-      value: '',
+      value: 'Paris',
     },
   },
 };
@@ -135,7 +135,7 @@ export default function WeatherComponent(props: any) {
   const { config } = useConfig();
   const [weather, setWeather] = useState({} as WeatherResponse);
   const cityInput: string =
-    (config?.modules?.[WeatherModule.title]?.options?.location?.value as string) ?? '';
+    (config?.modules?.[WeatherModule.title]?.options?.location?.value as string) ?? 'Paris';
   const isFahrenheit: boolean =
     (config?.modules?.[WeatherModule.title]?.options?.freedomunit?.value as boolean) ?? false;
 
