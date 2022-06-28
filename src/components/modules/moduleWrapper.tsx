@@ -28,8 +28,11 @@ function getItems(module: IModule) {
           <MultiSelect
             label={module.options?.[keys[index]].name}
             data={module.options?.[keys[index]].options ?? []}
-            defaultValue={(moduleInConfig?.options?.[keys[index]]?.value as string[]) ?? []}
-            clearable
+            defaultValue={
+              (moduleInConfig?.options?.[keys[index]]?.value as string[]) ??
+              (values[index].value as string[]) ??
+              []
+            }
             searchable
             onChange={(value) => {
               setConfig({
@@ -81,7 +84,11 @@ function getItems(module: IModule) {
                 id={optionName}
                 name={optionName}
                 label={values[index].name}
-                defaultValue={(moduleInConfig?.options?.[keys[index]]?.value as string) ?? ''}
+                defaultValue={
+                  (moduleInConfig?.options?.[keys[index]]?.value as string) ??
+                  (values[index].value as string) ??
+                  ''
+                }
                 onChange={(e) => {}}
               />
 
@@ -96,7 +103,9 @@ function getItems(module: IModule) {
           <Switch
             defaultChecked={
               // Set default checked to the value of the option if it exists
-              (moduleInConfig?.options?.[keys[index]]?.value as boolean) ?? false
+              (moduleInConfig?.options?.[keys[index]]?.value as boolean) ??
+              (values[index].value as boolean) ??
+              false
             }
             key={keys[index]}
             onClick={(e) => {
