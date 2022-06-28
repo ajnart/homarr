@@ -25,25 +25,10 @@ export const DashdotModule = asModule({
       name: 'Use Compact View',
       value: false,
     },
-    showCpu: {
-      name: 'Show CPU Graph',
-      value: true,
-    },
-    showStorage: {
-      name: 'Show Storage Graph',
-      value: true,
-    },
-    showRam: {
-      name: 'Show RAM Graph',
-      value: true,
-    },
-    showNetwork: {
-      name: 'Show Network Graphs',
-      value: true,
-    },
-    showGpu: {
-      name: 'Show GPU Graph',
-      value: false,
+    graphs: {
+      name: 'Graphs',
+      value: ['CPU', 'RAM', 'Storage', 'Network'],
+      options: ['CPU', 'RAM', 'Storage', 'Network', 'GPU'],
     },
   },
 });
@@ -135,11 +120,12 @@ export function DashdotComponent() {
   const isCompact = dashConfig?.useCompactView?.value ?? false;
   const dashdotService = config.services.filter((service) => service.type === 'Dash.')[0];
 
-  const cpuEnabled = dashConfig?.showCpu?.value ?? true;
-  const storageEnabled = dashConfig?.showStorage?.value ?? true;
-  const ramEnabled = dashConfig?.showRam?.value ?? true;
-  const networkEnabled = dashConfig?.showNetwork?.value ?? true;
-  const gpuEnabled = dashConfig?.showGpu?.value ?? false;
+  const enabledGraphs = dashConfig?.graphs?.value ?? ['CPU', 'RAM', 'Storage', 'Network'];
+  const cpuEnabled = enabledGraphs.includes('CPU');
+  const storageEnabled = enabledGraphs.includes('Storage');
+  const ramEnabled = enabledGraphs.includes('RAM');
+  const networkEnabled = enabledGraphs.includes('Network');
+  const gpuEnabled = enabledGraphs.includes('GPU');
 
   const info = useJson(dashdotService, '/info');
   const storageLoad = useJson(dashdotService, '/load/storage');
