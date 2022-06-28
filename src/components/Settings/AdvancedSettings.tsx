@@ -37,7 +37,7 @@ export default function TitleChanger() {
   };
 
   return (
-    <Group direction="column" grow>
+    <Group direction="column" grow mb="lg">
       <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
         <Group grow direction="column">
           <TextInput label="Page title" placeholder="Homarr 🦞" {...form.getInputProps('title')} />
