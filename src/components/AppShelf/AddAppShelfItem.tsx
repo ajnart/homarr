@@ -56,8 +56,6 @@ export function AddItemShelfButton(props: any) {
 }
 
 function MatchIcon(name: string, form: any) {
-  console.log(name, name.replace(/^dash\.$/, 'dashdot'));
-
   fetch(
     `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
