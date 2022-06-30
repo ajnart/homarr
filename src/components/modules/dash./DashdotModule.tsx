@@ -57,7 +57,7 @@ const useStyles = createStyles((theme, _params) => ({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    rowGap: 15,
+    rowGap: 10,
     columnGap: 10,
   },
   iframe: {
@@ -214,7 +214,7 @@ export function DashdotComponent() {
               'dark'
                 ? theme.colors.dark[7]
                 : theme.colors.gray[0]
-              ).substring(1)}${isCompact ? '&gap=1' : `&gap=5&innerRadius=${theme.radius.md}`}${
+              ).substring(1)}${isCompact ? '&gap=10' : '&gap=5'}&innerRadius=${theme.radius.lg}${
                 graph.params
                   ? `&${Object.entries(graph.params)
                       .map(([key, value]) => `${key}=${value.toString()}`)
