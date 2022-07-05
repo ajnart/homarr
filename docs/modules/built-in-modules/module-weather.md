@@ -21,9 +21,17 @@ Please read our documentation on [how to enable a module](./../index.md#activati
 | Configuration         | Description | Values | Default Value |
 | --------------------- | ----------- | ------ | ------------- |
 | Display in Fahrenheit | Displays the temperature in °F. | yes / no | no |
-| Current Location | City name for the weather data retrival | - | - |
+| Current Location | Location name. Can be pretty much anything and should be as percise as possible. | - | - |
 
 ![configuration of the weather module](./img/module-weather-configuration.png)
+
+<details>
+  <summary>I am having issues / false data with the weather. What can I do?</summary>
+  <div>
+    <div>If your location does not have a unique name or the displayed data is wrong, take these steps to fix it:
+    <ul><li>Go to <a href="https://open-meteo.com/en/docs/geocoding-api">open-meteo</a> api documentation and enter your location</li><li>Adjust your search query until the first result is the correct location</li><li>Copy the search query and paste it into the <code>Current location</code> field in the configuration.</li></ul><br/>We suggest you to check whether the displayed data is equal to the data of your local weather station.</div>
+  </div>
+</details>
 
 :::tip
 
