@@ -1,4 +1,4 @@
-# 🚀 Torrent Module
+# 🎞️ Torrent Module
 
 The torrent module uses integrations to display a list of torrents with their name, download and upload speed and progress. It supports displaying the progress from many download clients concurrently.
 
