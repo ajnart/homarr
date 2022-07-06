@@ -9,8 +9,6 @@ module.exports = withBundleAnalyzer({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    outputStandalone: true,
-  },
+  output: 'standalone',
   basePath: env.BASE_URL,
 });
