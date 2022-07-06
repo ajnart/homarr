@@ -2,20 +2,25 @@ import { Button, Group } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
+  IconLicense,
   IconPlayerPlay,
   IconPlayerStop,
+  IconPlus,
   IconRefresh,
   IconRotateClockwise,
+  IconTrash,
   IconX,
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
+import addToHomarr from '../../tools/addToHomarr';
+import { useConfig } from '../../tools/state';
 
-function sendNotification(action: string, containerId: string, containerName: string) {
+function sendDockerCommand(action: string, containerId: string, containerName: string) {
   showNotification({
     id: containerId,
     loading: true,
-    title: `${action}ing container ${containerName}`,
+    title: `${action}ing container ${containerName.substring(1)}`,
     message: undefined,
     autoClose: false,
     disallowClose: true,
@@ -51,6 +56,7 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
+  const { config, setConfig } = useConfig();
   return (
     <Group>
       <Button
@@ -58,7 +64,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendNotification('restart', container.Id, container.Names[0])
+              sendDockerCommand('restart', container.Id, container.Names[0].substring(1))
             )
           ).then(() => reload())
         }
@@ -72,7 +78,17 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         leftIcon={<IconPlayerStop />}
         onClick={() =>
           Promise.all(
-            selected.map((container) => sendNotification('stop', container.Id, container.Names[0]))
+            selected.map((container) => {
+              if (container.State === 'stopped' || container.State === 'created' || container.State === 'exited') {
+                return showNotification({
+                  id: container.Id,
+                  title: `Failed to stop ${container.Names[0].substring(1)}`,
+                  message: "You can't stop a stopped container",
+                  autoClose: 1000,
+                });
+              }
+              return sendDockerCommand('stop', container.Id, container.Names[0].substring(1));
+            })
           ).then(() => reload())
         }
         variant="light"
@@ -85,7 +101,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         leftIcon={<IconPlayerPlay />}
         onClick={() =>
           Promise.all(
-            selected.map((container) => sendNotification('start', container.Id, container.Names[0]))
+            selected.map((container) =>
+              sendDockerCommand('start', container.Id, container.Names[0].substring(1))
+            )
           ).then(() => reload())
         }
         variant="light"
@@ -94,8 +112,44 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       >
         Start
       </Button>
-      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light">
+      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" radius="md">
         Refresh data
+      </Button>
+      <Button
+        leftIcon={<IconPlus />}
+        color="indigo"
+        variant="light"
+        radius="md"
+        onClick={() =>
+          Promise.all(selected.map((container) => addToHomarr(container, config, setConfig))).then(
+            () => reload()
+          )
+        }
+      >
+        Add to Homarr
+      </Button>
+      <Button
+        leftIcon={<IconTrash />}
+        color="red"
+        variant="light"
+        radius="md"
+        onClick={() =>
+          Promise.all(
+            selected.map((container) => {
+              if (container.State === 'running') {
+                return showNotification({
+                  id: container.Id,
+                  title: `Failed to delete ${container.Names[0].substring(1)}`,
+                  message: "You can't delete a running container",
+                  autoClose: 1000,
+                });
+              }
+              return sendDockerCommand('remove', container.Id, container.Names[0].substring(1));
+            })
+          ).then(() => reload())
+        }
+      >
+        Remove
       </Button>
     </Group>
   );

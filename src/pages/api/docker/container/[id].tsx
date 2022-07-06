@@ -8,7 +8,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query as { id: string };
   const { action } = req.query;
   // Get the action on the request (start, stop, restart)
-  if (action !== 'start' && action !== 'stop' && action !== 'restart') {
+  if (action !== 'start' && action !== 'stop' && action !== 'restart' && action !== 'remove') {
     return res.status(400).json({
       statusCode: 400,
       message: 'Invalid action',
@@ -29,39 +29,25 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       });
     }
   });
-
-  switch (action) {
-    case 'start':
-      container.start((err, data) => {
-        if (err) {
-          res.status(500).json({
-            message: err,
-          });
-        }
-      });
-      break;
-    case 'stop':
-      container.stop((err, data) => {
-        if (err) {
-          res.status(500).json({
-            message: err,
-          });
-        }
-      });
-      break;
-    case 'restart':
-      container.restart((err, data) => {
-        if (err) {
-          res.status(500).json({
-            message: err,
-          });
-        }
-      });
-      break;
-    default:
-      res.status(400).json({
-        message: 'Invalid action',
-      });
+  try {
+    switch (action) {
+      case 'remove':
+        await container.remove();
+        break;
+      case 'start':
+        container.start();
+        break;
+      case 'stop':
+        container.stop();
+        break;
+      case 'restart':
+        container.restart();
+        break;
+    }
+  } catch (err) {
+    res.status(500).json({
+      message: err,
+    });
   }
   return res.status(200).json({
     success: true,

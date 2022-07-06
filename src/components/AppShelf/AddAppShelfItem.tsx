@@ -92,6 +92,8 @@ function MatchPort(name: string, form: any) {
   }
 }
 
+const DEFAULT_ICON = '/favicon.svg';
+
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
   const { config, setConfig } = useConfig();
@@ -111,7 +113,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       type: props.type ?? 'Other',
       category: props.category ?? undefined,
       name: props.name ?? '',
-      icon: props.icon ?? '/favicon.svg',
+      icon: props.icon ?? DEFAULT_ICON,
       url: props.url ?? '',
       apiKey: props.apiKey ?? (undefined as unknown as string),
       username: props.username ?? (undefined as unknown as string),
@@ -146,7 +148,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const [debounced, cancel] = useDebouncedValue(form.values.name, 250);
   useEffect(() => {
-    if (form.values.name !== debounced || props.name || props.type) return;
+    if (form.values.name !== debounced || form.values.icon !== DEFAULT_ICON) return;
     MatchIcon(form.values.name, form);
     MatchService(form.values.name, form);
     MatchPort(form.values.name, form);
@@ -219,7 +221,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 <TextInput
                   required
                   label="Icon URL"
-                  placeholder="/favicon.svg"
+                  placeholder={DEFAULT_ICON}
                   {...form.getInputProps('icon')}
                 />
                 <TextInput
