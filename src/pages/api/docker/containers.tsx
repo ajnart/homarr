@@ -5,12 +5,8 @@ import Docker from 'dockerode';
 const docker = new Docker();
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
-  docker.listContainers({ all: true }, (err, containers) => {
-    if (err) {
-      res.status(500).json({ error: err });
-    }
-    return res.status(200).json(containers);
-  });
+  const containers = await docker.listContainers({ all: true });
+  return res.status(200).json(containers);
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
