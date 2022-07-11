@@ -82,7 +82,7 @@ function MatchPort(name: string, form: any) {
     { name: 'sonarr', value: '8989' },
     { name: 'radarr', value: '7878' },
     { name: 'lidarr', value: '8686' },
-    { name: 'readarr', value: '8686' },
+    { name: 'readarr', value: '8787' },
     { name: 'deluge', value: '8112' },
     { name: 'transmission', value: '9091' },
   ];
