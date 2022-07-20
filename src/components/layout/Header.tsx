@@ -1,23 +1,23 @@
-import React from 'react';
 import {
-  createStyles,
-  Header as Head,
-  Group,
+  ActionIcon,
   Box,
   Burger,
+  createStyles,
   Drawer,
-  Title,
+  Group,
+  Header as Head,
   ScrollArea,
-  ActionIcon,
+  Title,
   Transition,
 } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
-import { Logo } from './Logo';
-import SearchBar from '../modules/search/SearchModule';
 import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
-import { SettingsMenuButton } from '../Settings/SettingsMenu';
+import { CalendarModule, DateModule, TotalDownloadsModule, WeatherModule } from '../modules';
+import { DashdotModule } from '../modules/dash.';
 import { ModuleWrapper } from '../modules/moduleWrapper';
-import { CalendarModule, TotalDownloadsModule, WeatherModule, DateModule } from '../modules';
+import SearchBar from '../modules/search/SearchModule';
+import { SettingsMenuButton } from '../Settings/SettingsMenu';
+import { Logo } from './Logo';
 
 const HEADER_HEIGHT = 60;
 
@@ -84,6 +84,7 @@ export function Header(props: any) {
                       <ModuleWrapper module={TotalDownloadsModule} />
                       <ModuleWrapper module={WeatherModule} />
                       <ModuleWrapper module={DateModule} />
+                      <ModuleWrapper module={DashdotModule} />
                     </Group>
                   </ScrollArea>
                 </div>

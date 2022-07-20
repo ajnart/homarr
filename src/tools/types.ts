@@ -61,6 +61,7 @@ export const Targets = [
 export const ServiceTypeList = [
   'Other',
   'Emby',
+  'Dash.',
   'Deluge',
   'Lidarr',
   'Plex',
@@ -73,6 +74,7 @@ export const ServiceTypeList = [
 export type ServiceType =
   | 'Other'
   | 'Emby'
+  | 'Dash.'
   | 'Deluge'
   | 'Lidarr'
   | 'Plex'
