@@ -12,10 +12,14 @@ import {
 } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
-import { CalendarModule, DateModule, TotalDownloadsModule, WeatherModule } from '../modules';
-import { DashdotModule } from '../modules/dash.';
+import {
+  CalendarModule,
+  DateModule,
+  TotalDownloadsModule,
+  WeatherModule,
+  DashdotModule,
+} from '../modules';
 import { ModuleWrapper } from '../modules/moduleWrapper';
-import { CalendarModule, TotalDownloadsModule, WeatherModule, DateModule } from '../modules';
 import DockerDrawer from '../Docker/DockerDrawer';
 import SearchBar from '../modules/search/SearchModule';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
