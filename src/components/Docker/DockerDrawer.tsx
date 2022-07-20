@@ -26,7 +26,8 @@ export default function DockerDrawer(props: any) {
   useEffect(() => {
     reload();
   }, []);
-
+  // Check if the user has at least one container
+  if (containers.length < 1) return null;
   return (
     <>
       <Drawer opened={opened} onClose={() => setOpened(false)} padding="xl" size="full">
