@@ -1,7 +1,7 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-  const ok = req.cookies.password === process.env.PASSWORD;
+  const ok = req.cookies.get('password') === process.env.PASSWORD;
   const url = req.nextUrl.clone();
   if (
     !ok &&
