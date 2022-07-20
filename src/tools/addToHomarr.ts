@@ -1,6 +1,5 @@
-import { showNotification } from '@mantine/notifications';
 import Dockerode from 'dockerode';
-import { Config, MatchingImages, ServiceType, ServiceTypeList } from './types';
+import { Config, MatchingImages, ServiceType } from './types';
 
 async function MatchIcon(name: string) {
   const res = await fetch(

@@ -1,4 +1,4 @@
-import { Button, Group, Modal, Text, Title } from '@mantine/core';
+import { Button, Group, Modal, Title } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
@@ -13,7 +13,7 @@ import {
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
-import addToHomarr, { tryMatchService } from '../../tools/addToHomarr';
+import { tryMatchService } from '../../tools/addToHomarr';
 import { useConfig } from '../../tools/state';
 import { AddAppShelfItemForm } from '../AppShelf/AddAppShelfItem';
 

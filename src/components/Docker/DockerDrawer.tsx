@@ -1,4 +1,4 @@
-import { ActionIcon, Drawer, Group, LoadingOverlay, ScrollArea } from '@mantine/core';
+import { ActionIcon, Drawer, Group, LoadingOverlay } from '@mantine/core';
 import { IconBrandDocker } from '@tabler/icons';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
