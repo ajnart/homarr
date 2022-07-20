@@ -1,4 +1,4 @@
-import { Kbd, createStyles, Text, Popover, Autocomplete } from '@mantine/core';
+import { Kbd, createStyles, Text, Popover, Autocomplete, Tooltip } from '@mantine/core';
 import { useDebouncedValue, useForm, useHotkeys } from '@mantine/hooks';
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -107,40 +107,21 @@ export default function SearchBar(props: any) {
         }, 20);
       })}
     >
-      <Popover
-        opened={opened}
-        position="bottom"
-        placement="start"
-        width={260}
-        withArrow
+      <Autocomplete
+        autoFocus
+        variant="filled"
+        data={autocompleteData}
+        icon={icon}
+        ref={textInput}
+        rightSectionWidth={90}
+        rightSection={rightSection}
         radius="md"
-        trapFocus={false}
-        transition="pop-bottom-right"
-        onFocusCapture={() => setOpened(true)}
-        onBlurCapture={() => setOpened(false)}
-        target={
-          <Autocomplete
-            autoFocus
-            variant="filled"
-            data={autocompleteData}
-            icon={icon}
-            ref={textInput}
-            rightSectionWidth={90}
-            rightSection={rightSection}
-            radius="md"
-            size="md"
-            styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder="Search the web..."
-            {...props}
-            {...form.getInputProps('query')}
-          />
-        }
-      >
-        <Text>
-          Tip: Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube
-          or for a Torrent respectively.
-        </Text>
-      </Popover>
+        size="md"
+        styles={{ rightSection: { pointerEvents: 'none' } }}
+        placeholder="Search the web..."
+        {...props}
+        {...form.getInputProps('query')}
+      />
     </form>
   );
 }

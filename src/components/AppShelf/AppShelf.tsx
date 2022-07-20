@@ -152,6 +152,7 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
+    const downloadEnabled = config.modules?.[DownloadsModule.title]?.enabled ?? false;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // Return one item for each category
@@ -176,6 +177,7 @@ const AppShelf = (props: any) => {
               {item()}
             </Accordion.Item>
           ) : null}
+          {downloadEnabled ? (
           <Accordion.Item key="Downloads" label="Your downloads">
             <Paper
               p="lg"
@@ -191,6 +193,7 @@ const AppShelf = (props: any) => {
               <DownloadComponent />
             </Paper>
           </Accordion.Item>
+          ) : null}
         </Accordion>
       </Group>
     );
