@@ -61,6 +61,7 @@ export const Targets = [
 export const ServiceTypeList = [
   'Other',
   'Emby',
+  'Dash.',
   'Deluge',
   'Lidarr',
   'Plex',
@@ -73,6 +74,7 @@ export const ServiceTypeList = [
 export type ServiceType =
   | 'Other'
   | 'Emby'
+  | 'Dash.'
   | 'Deluge'
   | 'Lidarr'
   | 'Plex'
@@ -81,6 +83,12 @@ export type ServiceType =
   | 'Sonarr'
   | 'qBittorrent'
   | 'Transmission';
+
+export const MatchingImages: { image: string; type: ServiceType }[] = [
+  { image: 'lscr.io/linuxserver/radarr', type: 'Radarr' },
+  { image: 'lscr.io/linuxserver/sonarr', type: 'Sonarr' },
+  { image: 'lscr.io/linuxserver/qbittorrent', type: 'qBittorrent' },
+];
 
 export interface serviceItem {
   id: string;

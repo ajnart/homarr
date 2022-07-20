@@ -1,29 +1,30 @@
 import {
-  Modal,
+  ActionIcon,
+  Anchor,
+  Button,
   Center,
   Group,
-  TextInput,
   Image,
-  Button,
-  Select,
   LoadingOverlay,
-  ActionIcon,
-  Tooltip,
-  Title,
-  Anchor,
-  Text,
-  Tabs,
+  Modal,
   MultiSelect,
   ScrollArea,
+  Select,
   Switch,
+  Tabs,
+  Text,
+  TextInput,
+  Title,
+  Tooltip,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useEffect, useState } from 'react';
-import { IconApps as Apps } from '@tabler/icons';
-import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
+import { IconApps as Apps } from '@tabler/icons';
+import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
 import { ServiceTypeList, StatusCodes } from '../../tools/types';
+import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -58,7 +59,8 @@ function MatchIcon(name: string, form: any) {
   fetch(
     `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
-      .toLowerCase()}.png`
+      .toLowerCase()
+      .replace(/^dash\.$/, 'dashdot')}.png`
   ).then((res) => {
     if (res.ok) {
       form.setFieldValue('icon', res.url);
@@ -81,9 +83,10 @@ function MatchPort(name: string, form: any) {
     { name: 'sonarr', value: '8989' },
     { name: 'radarr', value: '7878' },
     { name: 'lidarr', value: '8686' },
-    { name: 'readarr', value: '8686' },
+    { name: 'readarr', value: '8787' },
     { name: 'deluge', value: '8112' },
     { name: 'transmission', value: '9091' },
+    { name: 'dash.', value: '3001' },
   ];
   // Match name with portmap key
   const port = portmap.find((p) => p.name === name.toLowerCase());
@@ -91,6 +94,8 @@ function MatchPort(name: string, form: any) {
     form.setFieldValue('url', `http://localhost:${port.value}`);
   }
 }
+
+const DEFAULT_ICON = '/favicon.svg';
 
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
@@ -111,7 +116,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       type: props.type ?? 'Other',
       category: props.category ?? undefined,
       name: props.name ?? '',
-      icon: props.icon ?? '/favicon.svg',
+      icon: props.icon ?? DEFAULT_ICON,
       url: props.url ?? '',
       apiKey: props.apiKey ?? (undefined as unknown as string),
       username: props.username ?? (undefined as unknown as string),
@@ -146,7 +151,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const [debounced, cancel] = useDebouncedValue(form.values.name, 250);
   useEffect(() => {
-    if (form.values.name !== debounced || props.name || props.type) return;
+    if (form.values.name !== debounced || form.values.icon !== DEFAULT_ICON) return;
     MatchIcon(form.values.name, form);
     MatchService(form.values.name, form);
     MatchPort(form.values.name, form);
@@ -219,7 +224,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 <TextInput
                   required
                   label="Icon URL"
-                  placeholder="/favicon.svg"
+                  placeholder={DEFAULT_ICON}
                   {...form.getInputProps('icon')}
                 />
                 <TextInput
@@ -273,15 +278,8 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                       }}
                       error={form.errors.apiKey && 'Invalid API key'}
                     />
-                    <Text
-                      style={{
-                        alignSelf: 'center',
-                        fontSize: '0.75rem',
-                        textAlign: 'center',
-                        color: 'gray',
-                      }}
-                    >
-                      Tip: Get your API key{' '}
+                    <Tip>
+                      Get your API key{' '}
                       <Anchor
                         target="_blank"
                         weight="bold"
@@ -290,7 +288,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                       >
                         here.
                       </Anchor>
-                    </Text>
+                    </Tip>
                   </>
                 )}
                 {form.values.type === 'qBittorrent' && (
