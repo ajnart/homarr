@@ -186,14 +186,15 @@ export function DashdotComponent() {
                 </p>
               </div>
             )}
-
-            <div className={classes.tableRow}>
-              <p className={classes.tableLabel}>Network:</p>
-              <p className={classes.tableValue}>
-                {bpsPrettyPrint(info?.network?.speedUp)} Up{'\n'}
-                {bpsPrettyPrint(info?.network?.speedDown)} Down
-              </p>
-            </div>
+            {networkEnabled && (
+              <div className={classes.tableRow}>
+                <p className={classes.tableLabel}>Network:</p>
+                <p className={classes.tableValue}>
+                  {bpsPrettyPrint(info?.network?.speedUp)} Up{'\n'}
+                  {bpsPrettyPrint(info?.network?.speedDown)} Down
+                </p>
+              </div>
+            )}
           </div>
 
           {graphs.map((graph) => (
