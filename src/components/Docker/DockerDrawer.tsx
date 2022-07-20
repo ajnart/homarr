@@ -32,7 +32,7 @@ export default function DockerDrawer(props: any) {
       <Drawer opened={opened} onClose={() => setOpened(false)} padding="xl" size="full">
         <ContainerActionBar selected={selection} reload={reload} />
         <div style={{ position: 'relative' }}>
-          <LoadingOverlay visible={visible} />
+          <LoadingOverlay transitionDuration={500} visible={visible} />
           <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
         </div>
       </Drawer>

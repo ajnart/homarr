@@ -1,8 +1,8 @@
-import { Button, Group } from '@mantine/core';
+import { Button, Group, Modal, Text, Title } from '@mantine/core';
+import { useBooleanToggle } from '@mantine/hooks';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
-  IconLicense,
   IconPlayerPlay,
   IconPlayerStop,
   IconPlus,
@@ -13,8 +13,9 @@ import {
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
-import addToHomarr from '../../tools/addToHomarr';
+import addToHomarr, { tryMatchService } from '../../tools/addToHomarr';
 import { useConfig } from '../../tools/state';
+import { AddAppShelfItemForm } from '../AppShelf/AddAppShelfItem';
 
 function sendDockerCommand(action: string, containerId: string, containerName: string) {
   showNotification({
@@ -57,8 +58,22 @@ export interface ContainerActionBarProps {
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   const { config, setConfig } = useConfig();
+  const [opened, setOpened] = useBooleanToggle(false);
   return (
     <Group>
+      <Modal
+        size="xl"
+        radius="md"
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Add service"
+      >
+        <AddAppShelfItemForm
+          setOpened={setOpened}
+          {...tryMatchService(selected.at(0))}
+          message="Add service to homarr"
+        />
+      </Modal>
       <Button
         leftIcon={<IconRotateClockwise />}
         onClick={() =>
@@ -79,7 +94,11 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) => {
-              if (container.State === 'stopped' || container.State === 'created' || container.State === 'exited') {
+              if (
+                container.State === 'stopped' ||
+                container.State === 'created' ||
+                container.State === 'exited'
+              ) {
                 return showNotification({
                   id: container.Id,
                   title: `Failed to stop ${container.Names[0].substring(1)}`,
@@ -120,11 +139,18 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         color="indigo"
         variant="light"
         radius="md"
-        onClick={() =>
-          Promise.all(selected.map((container) => addToHomarr(container, config, setConfig))).then(
-            () => reload()
-          )
-        }
+        onClick={() => {
+          if (selected.length !== 1) {
+            showNotification({
+              autoClose: 5000,
+              title: <Title order={4}>Please only add one service at a time!</Title>,
+              color: 'red',
+              message: undefined,
+            });
+          } else {
+            setOpened(true);
+          }
+        }}
       >
         Add to Homarr
       </Button>

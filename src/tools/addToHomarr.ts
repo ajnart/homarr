@@ -1,5 +1,6 @@
+import { showNotification } from '@mantine/notifications';
 import Dockerode from 'dockerode';
-import { Config } from './types';
+import { Config, MatchingImages, ServiceType, ServiceTypeList } from './types';
 
 async function MatchIcon(name: string) {
   const res = await fetch(
@@ -10,10 +11,28 @@ async function MatchIcon(name: string) {
   return res.ok ? res.url : '/favicon.svg';
 }
 
-function tryMatchType(imageName: string) {
-  // Search for a match with the Image name from the MATCH_TYPES array
-  console.log(`Trying to match type for: ${imageName}`);
+function tryMatchType(imageName: string): ServiceType {
+  // Try to find imageName inside MatchingImages
+
+  const match = MatchingImages.find(({ image }) => imageName.includes(image));
+  if (match) {
+    return match.type;
+  }
   return 'Other';
+}
+
+export function tryMatchService(container: Dockerode.ContainerInfo | undefined) {
+  if (container === undefined) return {};
+  const name = container.Names[0].substring(1);
+  return {
+    name,
+    id: container.Id,
+    type: tryMatchType(container.Image),
+    url: `${container.Ports.at(0)?.IP}:${container.Ports.at(0)?.PublicPort}`,
+    icon: `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
+      .replace(/\s+/g, '-')
+      .toLowerCase()}.png`,
+  };
 }
 
 export default async function addToHomarr(
@@ -29,7 +48,7 @@ export default async function addToHomarr(
         name: container.Names[0].substring(1),
         id: container.Id,
         type: tryMatchType(container.Image),
-        url: `${container.Ports.at(0)?.IP}:${container.Ports.at(0)?.PublicPort}`,
+        url: `localhost:${container.Ports.at(0)?.PublicPort}`,
         icon: await MatchIcon(container.Names[0].substring(1)),
       },
     ],
