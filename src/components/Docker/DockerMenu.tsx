@@ -1,10 +1,8 @@
-import { Center, createStyles, Menu, Text, useMantineTheme } from '@mantine/core';
+import { Menu, Text, useMantineTheme } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
   IconCodePlus,
-  IconDownload,
-  IconFileText,
   IconPlayerPlay,
   IconPlayerStop,
   IconRotateClockwise,
