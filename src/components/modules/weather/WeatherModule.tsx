@@ -157,7 +157,7 @@ export default function WeatherComponent(props: any) {
       });
   }, [cityInput]);
   if (!weather.current_weather) {
-        return (
+    return (
       <>
         <Skeleton height={40} width={100} mb="xl" />
         <Group noWrap direction="row">

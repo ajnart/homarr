@@ -19,8 +19,8 @@ import {
   WeatherModule,
   DashdotModule,
 } from '../modules';
+import DockerMenuButton from '../modules/docker/DockerModule';
 import { ModuleWrapper } from '../modules/moduleWrapper';
-import DockerDrawer from '../Docker/DockerDrawer';
 import SearchBar from '../modules/search/SearchModule';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import { Logo } from './Logo';
@@ -53,7 +53,7 @@ export function Header(props: any) {
         </Box>
         <Group noWrap>
           <SearchBar />
-          <DockerDrawer />
+          <DockerMenuButton />
           <SettingsMenuButton />
           <AddItemShelfButton />
           <ActionIcon className={classes.burger} variant="default" radius="md" size="xl">

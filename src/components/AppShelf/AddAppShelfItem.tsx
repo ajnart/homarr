@@ -12,7 +12,6 @@ import {
   Select,
   Switch,
   Tabs,
-  Text,
   TextInput,
   Title,
   Tooltip,

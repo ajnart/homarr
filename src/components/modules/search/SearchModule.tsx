@@ -1,4 +1,4 @@
-import { Kbd, createStyles, Text, Popover, Autocomplete, Tooltip } from '@mantine/core';
+import { Kbd, createStyles, Autocomplete } from '@mantine/core';
 import { useDebouncedValue, useForm, useHotkeys } from '@mantine/hooks';
 import { useEffect, useRef, useState } from 'react';
 import {
