@@ -60,34 +60,41 @@ export const Targets = [
 
 export const ServiceTypeList = [
   'Other',
-  'Emby',
   'Dash.',
   'Deluge',
+  'Emby',
   'Lidarr',
   'Plex',
+  'qBittorrent',
   'Radarr',
   'Readarr',
   'Sonarr',
-  'qBittorrent',
   'Transmission',
 ];
 export type ServiceType =
   | 'Other'
-  | 'Emby'
   | 'Dash.'
   | 'Deluge'
+  | 'Emby'
   | 'Lidarr'
   | 'Plex'
   | 'Radarr'
   | 'Readarr'
-  | 'Sonarr'
   | 'qBittorrent'
+  | 'Sonarr'
   | 'Transmission';
 
 export const MatchingImages: { image: string; type: ServiceType }[] = [
-  { image: 'lscr.io/linuxserver/radarr', type: 'Radarr' },
-  { image: 'lscr.io/linuxserver/sonarr', type: 'Sonarr' },
+  { image: 'mauricenino/dashdot', type: 'Dash.' },
+  { image: 'lscr.io/linuxserver/deluge', type: 'Deluge' },
+  { image: 'lscr.io/linuxserver/emby', type: 'Emby' },
+  { image: 'lscr.io/linuxserver/lidarr', type: 'Lidarr' },
+  { image: 'lscr.io/linuxserver/plex', type: 'Plex' },
   { image: 'lscr.io/linuxserver/qbittorrent', type: 'qBittorrent' },
+  { image: 'lscr.io/linuxserver/radarr', type: 'Radarr' },
+  { image: 'lscr.io/linuxserver/readarr', type: 'Readarr' },
+  { image: 'lscr.io/linuxserver/sonarr', type: 'Sonarr' },
+  { image: 'lscr.io/linuxserver/transmission', type: 'Transmission' },  
 ];
 
 export interface serviceItem {
