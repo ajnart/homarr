@@ -78,9 +78,9 @@ export type ServiceType =
   | 'Emby'
   | 'Lidarr'
   | 'Plex'
+  | 'qBittorrent'
   | 'Radarr'
   | 'Readarr'
-  | 'qBittorrent'
   | 'Sonarr'
   | 'Transmission';
 
