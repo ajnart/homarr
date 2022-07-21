@@ -91,16 +91,27 @@ export const MatchingImages: { image: string; type: ServiceType }[] = [
   { image: 'plexinc/pms-docker', type: 'Plex' },
   //Hotio images
   { image: 'hotio/lidarr', type: 'Lidarr' },
-  { image: 'hotio/radarr', type: 'Radarr' },
-  { image: 'hotio/readarr', type: 'Readarr' },
-  { image: 'hotio/sonarr', type: 'Sonarr' },   
   { image: 'ghcr.io/hotio/lidarr', type: 'Lidarr' },
-  { image: 'ghcr.io/hotio/radarr', type: 'Radarr' },
-  { image: 'ghcr.io/hotio/readarr', type: 'Readarr' },
-  { image: 'ghcr.io/hotio/sonarr', type: 'Sonarr' }, 
   { image: 'cr.hotio.dev/hotio/lidarr', type: 'Lidarr' },
+  
+  { image: 'hotio/plex', type: 'Plex' },
+  { image: 'ghcr.io/hotio/plex', type: 'Plex' },
+  { image: 'cr.hotio.dev/hotio/plex', type: 'Plex' },
+  
+  { image: 'hotio/qbittorrent', type: 'qBittorrent' },
+  { image: 'ghcr.io/hotio/qbittorrent', type: 'qBittorrent' },
+  { image: 'cr.hotio.dev/hotio/qbittorrent', type: 'qBittorrent' },
+
+  { image: 'hotio/radarr', type: 'Radarr' },
+  { image: 'ghcr.io/hotio/radarr', type: 'Radarr' },
   { image: 'cr.hotio.dev/hotio/radarr', type: 'Radarr' },
+
+  { image: 'hotio/readarr', type: 'Readarr' },
+  { image: 'ghcr.io/hotio/readarr', type: 'Readarr' },
   { image: 'cr.hotio.dev/hotio/readarr', type: 'Readarr' },
+
+  { image: 'hotio/sonarr', type: 'Sonarr' },
+  { image: 'ghcr.io/hotio/sonarr', type: 'Sonarr' }, 
   { image: 'cr.hotio.dev/hotio/sonarr', type: 'Sonarr' }, 
   //LinuxServer images
   { image: 'lscr.io/linuxserver/deluge', type: 'Deluge' },
