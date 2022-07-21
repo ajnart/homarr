@@ -181,7 +181,7 @@ export function DashdotComponent() {
               <div className={classes.tableRow}>
                 <p className={classes.tableLabel}>Storage:</p>
                 <p className={classes.tableValue}>
-                  {(totalUsed / (totalSize || 1)).toFixed(1)}%{'\n'}
+                  {(100 * totalUsed / (totalSize || 1)).toFixed(1)}%{'\n'}
                   {bytePrettyPrint(totalUsed)} / {bytePrettyPrint(totalSize)}
                 </p>
               </div>
