@@ -1,0 +1,21 @@
+# 🐳 Docker Module
+
+The Docker modules allows you to interact with Docker containers running on your system direclty from within Homarr itself.
+
+You can **restart**, **stop**, **start**, **refresh** and **remove** containers as well as **add** them to the Homarr dashboard.
+
+![Docker Core Features](https://user-images.githubusercontent.com/190136/180496007-8456e486-a864-4510-b91f-fabf74df020c.png)
+
+Additonally, if you have a lot of containers you can search them by **container** or **image** name.
+
+![Contailer and Image Search](https://user-images.githubusercontent.com/190136/180496391-12a9a1c6-a54b-4d22-98ea-a5eb3a93fce4.png)
+
+
+## Before you begin
+In order for Homarr to be able to interact with your Docker instance you must tell Homarr the path to your Docker socket.  You do this by adding the following to the Docker command when you first run Homarr:
+
+`-v /var/run/docker.sock:/var/run/docker.sock
+`
+
+## Activate the Module
+Please read our documentation on [how to enable a module](./../index.md#activating-a-module).
