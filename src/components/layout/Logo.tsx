@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useColorTheme } from '../../tools/color';
 import { useConfig } from '../../tools/state';
 
-export function Logo({ style }: any) {
+export function Logo({ style, withoutText }: any) {
   const { config } = useConfig();
   const { primaryColor, secondaryColor } = useColorTheme();
 
@@ -17,26 +17,28 @@ export function Logo({ style }: any) {
           position: 'relative',
         }}
       />
-      <NextLink
-        href="/"
-        style={{
-          textDecoration: 'none',
-          position: 'relative',
-        }}
-      >
-        <Text
-          sx={style}
-          weight="bold"
-          variant="gradient"
-          gradient={{
-            from: primaryColor,
-            to: secondaryColor,
-            deg: 145,
+      {withoutText ? null : (
+        <NextLink
+          href="/"
+          style={{
+            textDecoration: 'none',
+            position: 'relative',
           }}
         >
-          {config.settings.title || 'Homarr'}
-        </Text>
-      </NextLink>
+          <Text
+            sx={style}
+            weight="bold"
+            variant="gradient"
+            gradient={{
+              from: primaryColor,
+              to: secondaryColor,
+              deg: 145,
+            }}
+          >
+            {config.settings.title || 'Homarr'}
+          </Text>
+        </NextLink>
+      )}
     </Group>
   );
 }

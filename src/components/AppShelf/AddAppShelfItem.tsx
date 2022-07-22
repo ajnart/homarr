@@ -12,7 +12,6 @@ import {
   Select,
   Switch,
   Tabs,
-  Text,
   TextInput,
   Title,
   Tooltip,
@@ -23,7 +22,7 @@ import { IconApps as Apps } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
-import { ServiceTypeList, StatusCodes } from '../../tools/types';
+import { tryMatchPort, ServiceTypeList, StatusCodes } from '../../tools/types';
 import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
@@ -55,7 +54,8 @@ export function AddItemShelfButton(props: any) {
   );
 }
 
-function MatchIcon(name: string, form: any) {
+function MatchIcon(name: string | undefined, form: any) {
+  if (name === undefined || name === '') return null;
   fetch(
     `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
@@ -74,24 +74,6 @@ function MatchService(name: string, form: any) {
   const service = ServiceTypeList.find((s) => s.toLowerCase() === name.toLowerCase());
   if (service) {
     form.setFieldValue('type', service);
-  }
-}
-
-function MatchPort(name: string, form: any) {
-  const portmap = [
-    { name: 'qbittorrent', value: '8080' },
-    { name: 'sonarr', value: '8989' },
-    { name: 'radarr', value: '7878' },
-    { name: 'lidarr', value: '8686' },
-    { name: 'readarr', value: '8787' },
-    { name: 'deluge', value: '8112' },
-    { name: 'transmission', value: '9091' },
-    { name: 'dash.', value: '3001' },
-  ];
-  // Match name with portmap key
-  const port = portmap.find((p) => p.name === name.toLowerCase());
-  if (port) {
-    form.setFieldValue('url', `http://localhost:${port.value}`);
   }
 }
 
@@ -154,7 +136,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
     if (form.values.name !== debounced || form.values.icon !== DEFAULT_ICON) return;
     MatchIcon(form.values.name, form);
     MatchService(form.values.name, form);
-    MatchPort(form.values.name, form);
+    tryMatchPort(form.values.name, form);
   }, [debounced]);
 
   // Try to set const hostname to new URL(form.values.url).hostname)

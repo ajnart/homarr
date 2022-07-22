@@ -9,46 +9,49 @@ import {
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
-  IconX,
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
-import { tryMatchService } from '../../tools/addToHomarr';
-import { useConfig } from '../../tools/state';
-import { AddAppShelfItemForm } from '../AppShelf/AddAppShelfItem';
+import { tryMatchService } from '../../../tools/addToHomarr';
+import { AddAppShelfItemForm } from '../../AppShelf/AddAppShelfItem';
 
-function sendDockerCommand(action: string, containerId: string, containerName: string) {
+function sendDockerCommand(
+  action: string,
+  containerId: string,
+  containerName: string,
+  reload: () => void
+) {
   showNotification({
     id: containerId,
     loading: true,
-    title: `${action}ing container ${containerName.substring(1)}`,
+    title: `${action}ing container ${containerName}`,
     message: undefined,
     autoClose: false,
     disallowClose: true,
   });
-  axios.get(`/api/docker/container/${containerId}?action=${action}`).then((res) => {
-    setTimeout(() => {
-      if (res.data.success === true) {
-        updateNotification({
-          id: containerId,
-          title: `Container ${containerName} ${action}ed`,
-          message: `Your container was successfully ${action}ed`,
-          icon: <IconCheck />,
-          autoClose: 2000,
-        });
-      }
-      if (res.data.success === false) {
-        updateNotification({
-          id: containerId,
-          color: 'red',
-          title: 'There was an error with your container.',
-          message: undefined,
-          icon: <IconX />,
-          autoClose: 2000,
-        });
-      }
-    }, 500);
-  });
+  axios
+    .get(`/api/docker/container/${containerId}?action=${action}`)
+    .then((res) => {
+      updateNotification({
+        id: containerId,
+        title: `Container ${containerName} ${action}ed`,
+        message: `Your container was successfully ${action}ed`,
+        icon: <IconCheck />,
+        autoClose: 2000,
+      });
+    })
+    .catch((err) => {
+      updateNotification({
+        id: containerId,
+        color: 'red',
+        title: 'There was an error',
+        message: err.response.data.reason,
+        autoClose: 2000,
+      });
+    })
+    .finally(() => {
+      reload();
+    });
 }
 
 export interface ContainerActionBarProps {
@@ -57,7 +60,6 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
-  const { config, setConfig } = useConfig();
   const [opened, setOpened] = useBooleanToggle(false);
   return (
     <Group>
@@ -79,9 +81,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('restart', container.Id, container.Names[0].substring(1))
+              sendDockerCommand('restart', container.Id, container.Names[0].substring(1), reload)
             )
-          ).then(() => reload())
+          )
         }
         variant="light"
         color="orange"
@@ -93,22 +95,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         leftIcon={<IconPlayerStop />}
         onClick={() =>
           Promise.all(
-            selected.map((container) => {
-              if (
-                container.State === 'stopped' ||
-                container.State === 'created' ||
-                container.State === 'exited'
-              ) {
-                return showNotification({
-                  id: container.Id,
-                  title: `Failed to stop ${container.Names[0].substring(1)}`,
-                  message: "You can't stop a stopped container",
-                  autoClose: 1000,
-                });
-              }
-              return sendDockerCommand('stop', container.Id, container.Names[0].substring(1));
-            })
-          ).then(() => reload())
+            selected.map((container) =>
+              sendDockerCommand('stop', container.Id, container.Names[0].substring(1), reload)
+            )
+          )
         }
         variant="light"
         color="red"
@@ -121,9 +111,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('start', container.Id, container.Names[0].substring(1))
+              sendDockerCommand('start', container.Id, container.Names[0].substring(1), reload)
             )
-          ).then(() => reload())
+          )
         }
         variant="light"
         color="green"
@@ -143,7 +133,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
           if (selected.length !== 1) {
             showNotification({
               autoClose: 5000,
-              title: <Title order={4}>Please only add one service at a time!</Title>,
+              title: <Title order={5}>Please only add one service at a time!</Title>,
               color: 'red',
               message: undefined,
             });
@@ -161,18 +151,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         radius="md"
         onClick={() =>
           Promise.all(
-            selected.map((container) => {
-              if (container.State === 'running') {
-                return showNotification({
-                  id: container.Id,
-                  title: `Failed to delete ${container.Names[0].substring(1)}`,
-                  message: "You can't delete a running container",
-                  autoClose: 1000,
-                });
-              }
-              return sendDockerCommand('remove', container.Id, container.Names[0].substring(1));
-            })
-          ).then(() => reload())
+            selected.map((container) =>
+              sendDockerCommand('remove', container.Id, container.Names[0].substring(1), reload)
+            )
+          )
         }
       >
         Remove

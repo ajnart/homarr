@@ -21,37 +21,31 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   }
   // Get the container with the ID
   const container = docker.getContainer(id);
-  // Get the container info
-  container.inspect((err, data) => {
-    if (err) {
-      res.status(500).json({
-        message: err,
-      });
-    }
-  });
-  try {
+  const startAction = async () => {
     switch (action) {
       case 'remove':
-        await container.remove();
-        break;
+        return container.remove();
       case 'start':
-        container.start();
-        break;
+        return container.start();
       case 'stop':
-        container.stop();
-        break;
+        return container.stop();
       case 'restart':
-        container.restart();
-        break;
+        return container.restart();
+      default:
+        return Promise;
     }
-  } catch (err) {
-    res.status(500).json({
-      message: err,
+  };
+  try {
+    await startAction();
+    return res.status(200).json({
+      statusCode: 200,
+      message: `Container ${id} ${action}ed`,
     });
+  } catch (err) {
+    return res.status(500).json(
+      err,
+    );
   }
-  return res.status(200).json({
-    success: true,
-  });
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
