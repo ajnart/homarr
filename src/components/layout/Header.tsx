@@ -1,26 +1,8 @@
-import {
-  ActionIcon,
-  Box,
-  Burger,
-  createStyles,
-  Drawer,
-  Group,
-  Header as Head,
-  ScrollArea,
-  Title,
-  Transition,
-} from '@mantine/core';
+import { Box, createStyles, Group, Header as Head } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
-import {
-  CalendarModule,
-  DateModule,
-  TotalDownloadsModule,
-  WeatherModule,
-  DashdotModule,
-} from '../modules';
+
 import DockerMenuButton from '../modules/docker/DockerModule';
-import { ModuleWrapper } from '../modules/moduleWrapper';
 import SearchBar from '../modules/search/SearchModule';
 import { SettingsMenuButton } from '../Settings/SettingsMenu';
 import { Logo } from './Logo';

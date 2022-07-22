@@ -6,7 +6,6 @@ import Navbar from './Navbar';
 import { HeaderConfig } from './HeaderConfig';
 import { Background } from './Background';
 import { useConfig } from '../../tools/state';
-import { useMediaQuery } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
   main: {},

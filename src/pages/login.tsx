@@ -16,7 +16,7 @@ export default function AuthenticationTitle() {
   });
   return (
     <Container
-      size={'lg'}
+      size="lg"
       style={{
         height: '100vh',
         display: 'flex',
@@ -43,7 +43,14 @@ export default function AuthenticationTitle() {
         </Anchor>
       </Text>
 
-      <Paper withBorder shadow="md" p={30} mt={30} radius="md" style={{ width: '100%', maxWidth: 420 }}>
+      <Paper
+        withBorder
+        shadow="md"
+        p={30}
+        mt={30}
+        radius="md"
+        style={{ width: '100%', maxWidth: 420 }}
+      >
         <form
           onSubmit={form.onSubmit((values) => {
             setCookies('password', values.password, {
