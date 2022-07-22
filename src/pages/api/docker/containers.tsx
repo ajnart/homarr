@@ -2,11 +2,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import Docker from 'dockerode';
 
-const docker = new Docker();
-
 async function Get(req: NextApiRequest, res: NextApiResponse) {
-  const containers = await docker.listContainers({ all: true });
-  return res.status(200).json(containers);
+  try {
+    const docker = new Docker();
+    const containers = await docker.listContainers({ all: true });
+    res.status(200).json(containers);
+  } catch (err) {
+    res.status(500).json({ err });
+  }
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {

@@ -178,21 +178,21 @@ const AppShelf = (props: any) => {
             </Accordion.Item>
           ) : null}
           {downloadEnabled ? (
-          <Accordion.Item key="Downloads" label="Your downloads">
-            <Paper
-              p="lg"
-              radius="lg"
-              style={{
-                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+            <Accordion.Item key="Downloads" label="Your downloads">
+              <Paper
+                p="lg"
+                radius="lg"
+                style={{
+                  background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
                 ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+                  borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
                 ${(config.settings.appOpacity || 100) / 100}`,
-              }}
-            >
-              <ModuleMenu module={DownloadsModule} />
-              <DownloadComponent />
-            </Paper>
-          </Accordion.Item>
+                }}
+              >
+                <ModuleMenu module={DownloadsModule} />
+                <DownloadComponent />
+              </Paper>
+            </Accordion.Item>
           ) : null}
         </Accordion>
       </Group>
