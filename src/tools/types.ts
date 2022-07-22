@@ -60,34 +60,72 @@ export const Targets = [
 
 export const ServiceTypeList = [
   'Other',
-  'Emby',
   'Dash.',
   'Deluge',
+  'Emby',
   'Lidarr',
   'Plex',
+  'qBittorrent',
   'Radarr',
   'Readarr',
   'Sonarr',
-  'qBittorrent',
   'Transmission',
 ];
 export type ServiceType =
   | 'Other'
-  | 'Emby'
   | 'Dash.'
   | 'Deluge'
+  | 'Emby'
   | 'Lidarr'
   | 'Plex'
+  | 'qBittorrent'
   | 'Radarr'
   | 'Readarr'
   | 'Sonarr'
-  | 'qBittorrent'
   | 'Transmission';
 
 export const MatchingImages: { image: string; type: ServiceType }[] = [
-  { image: 'lscr.io/linuxserver/radarr', type: 'Radarr' },
-  { image: 'lscr.io/linuxserver/sonarr', type: 'Sonarr' },
+  //Official images
+  { image: 'mauricenino/dashdot', type: 'Dash.' },
+  { image: 'emby/embyserver', type: 'Emby' },
+  { image: 'plexinc/pms-docker', type: 'Plex' },
+  //Hotio images
+  { image: 'hotio/lidarr', type: 'Lidarr' },
+  { image: 'ghcr.io/hotio/lidarr', type: 'Lidarr' },
+  { image: 'cr.hotio.dev/hotio/lidarr', type: 'Lidarr' },
+  
+  { image: 'hotio/plex', type: 'Plex' },
+  { image: 'ghcr.io/hotio/plex', type: 'Plex' },
+  { image: 'cr.hotio.dev/hotio/plex', type: 'Plex' },
+  
+  { image: 'hotio/qbittorrent', type: 'qBittorrent' },
+  { image: 'ghcr.io/hotio/qbittorrent', type: 'qBittorrent' },
+  { image: 'cr.hotio.dev/hotio/qbittorrent', type: 'qBittorrent' },
+
+  { image: 'hotio/radarr', type: 'Radarr' },
+  { image: 'ghcr.io/hotio/radarr', type: 'Radarr' },
+  { image: 'cr.hotio.dev/hotio/radarr', type: 'Radarr' },
+
+  { image: 'hotio/readarr', type: 'Readarr' },
+  { image: 'ghcr.io/hotio/readarr', type: 'Readarr' },
+  { image: 'cr.hotio.dev/hotio/readarr', type: 'Readarr' },
+
+  { image: 'hotio/sonarr', type: 'Sonarr' },
+  { image: 'ghcr.io/hotio/sonarr', type: 'Sonarr' }, 
+  { image: 'cr.hotio.dev/hotio/sonarr', type: 'Sonarr' }, 
+  //LinuxServer images
+  { image: 'lscr.io/linuxserver/deluge', type: 'Deluge' },
+  { image: 'lscr.io/linuxserver/emby', type: 'Emby' },
+  { image: 'lscr.io/linuxserver/lidarr', type: 'Lidarr' },
+  { image: 'lscr.io/linuxserver/plex', type: 'Plex' },
   { image: 'lscr.io/linuxserver/qbittorrent', type: 'qBittorrent' },
+  { image: 'lscr.io/linuxserver/radarr', type: 'Radarr' },
+  { image: 'lscr.io/linuxserver/readarr', type: 'Readarr' },
+  { image: 'lscr.io/linuxserver/sonarr', type: 'Sonarr' },
+  { image: 'lscr.io/linuxserver/transmission', type: 'Transmission' }, 
+  //High usage
+  { image: 'markusmcnugen/qbittorrentvpn', type: 'qBittorrent' },
+  { image: 'haugene/transmission-openvpn', type: 'Transmission' }, 
 ];
 
 export interface serviceItem {
