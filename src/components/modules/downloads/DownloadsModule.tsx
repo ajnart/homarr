@@ -53,7 +53,7 @@ export default function DownloadComponent() {
   useEffect(() => {
     setIsLoading(true);
     if (downloadServices.length === 0) return;
-    const interval = setSafeInterval(() => {
+    const interval = setInterval(() => {
       // Send one request with each download service inside
       axios
         .post('/api/modules/downloads')
@@ -66,14 +66,16 @@ export default function DownloadComponent() {
           // eslint-disable-next-line no-console
           console.error('Error while fetching torrents', error.response.data);
           setIsLoading(false);
-          clearInterval(interval);
           showNotification({
             title: 'Error fetching torrents',
-            autoClose: false,
+            autoClose: 1000,
+            disallowClose: true,
+            id: 'fail-torrent-downloads-module',
             color: 'red',
             message:
               'Please check your config for any potential errors, check the console for more info',
           });
+          clearInterval(interval);
         });
     }, 5000);
   }, []);
