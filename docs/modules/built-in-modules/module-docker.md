@@ -1,6 +1,6 @@
 # 🐳 Docker Module
 
-The Docker modules allows you to interact with Docker containers running on your system direclty from within Homarr itself.
+The Docker modules allows you to interact with Docker containers running on your system direclty from within Homarr.
 
 You can **restart**, **stop**, **start**, **refresh** and **remove** containers as well as **add** them to the Homarr dashboard.
 
