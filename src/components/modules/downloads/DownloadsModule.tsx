@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useViewportSize } from '@mantine/hooks';
+import { showNotification } from '@mantine/notifications';
 import { IModule } from '../modules';
 import { useConfig } from '../../../tools/state';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
@@ -52,12 +53,28 @@ export default function DownloadComponent() {
   useEffect(() => {
     setIsLoading(true);
     if (downloadServices.length === 0) return;
-    setSafeInterval(() => {
+    const interval = setSafeInterval(() => {
       // Send one request with each download service inside
-      axios.post('/api/modules/downloads', { config }).then((response) => {
-        setTorrents(response.data);
-        setIsLoading(false);
-      });
+      axios
+        .post('/api/modules/downloads')
+        .then((response) => {
+          setTorrents(response.data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setTorrents([]);
+          // eslint-disable-next-line no-console
+          console.error('Error while fetching torrents', error.response.data);
+          setIsLoading(false);
+          clearInterval(interval);
+          showNotification({
+            title: 'Error fetching torrents',
+            autoClose: false,
+            color: 'red',
+            message:
+              'Please check your config for any potential errors, check the console for more info',
+          });
+        });
     }, 5000);
   }, []);
 
