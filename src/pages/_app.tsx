@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 import { useState } from 'react';
 import { AppProps } from 'next/app';
-import { getCookie, setCookies } from 'cookies-next';
+import { getCookie, setCookie } from 'cookies-next';
 import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
@@ -30,7 +30,7 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
     setColorScheme(nextColorScheme);
-    setCookies('color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
+    setCookie('color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
   };
   useHotkeys([['mod+J', () => toggleColorScheme()]]);
 

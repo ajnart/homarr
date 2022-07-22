@@ -1,4 +1,4 @@
-import { getCookie, setCookies } from 'cookies-next';
+import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 import { useEffect } from 'react';
 import AppShelf from '../components/AppShelf/AppShelf';
@@ -16,7 +16,7 @@ export async function getServerSideProps({
 }: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
   let cookie = getCookie('config-name', { req, res });
   if (!cookie) {
-    setCookies('config-name', 'default', {
+    setCookie('config-name', 'default', {
       req,
       res,
       maxAge: 60 * 60 * 24 * 30,

@@ -10,7 +10,7 @@ import { DropzoneStatus, FullScreenDropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
-import { setCookies } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 import { useConfig } from '../../tools/state';
 import { Config } from '../../tools/types';
 import { migrateToIdConfig } from '../../tools/migrate';
@@ -90,7 +90,7 @@ export default function LoadConfigComponent(props: any) {
             icon: <Check />,
             message: undefined,
           });
-          setCookies('config-name', newConfig.name, {
+          setCookie('config-name', newConfig.name, {
             maxAge: 60 * 60 * 24 * 30,
             sameSite: 'strict',
           });

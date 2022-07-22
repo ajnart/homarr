@@ -1,6 +1,6 @@
 import React from 'react';
 import { PasswordInput, Anchor, Paper, Title, Text, Container, Group, Button } from '@mantine/core';
-import { setCookies } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 import { useForm } from '@mantine/hooks';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';
@@ -53,7 +53,7 @@ export default function AuthenticationTitle() {
       >
         <form
           onSubmit={form.onSubmit((values) => {
-            setCookies('password', values.password, {
+            setCookie('password', values.password, {
               maxAge: 60 * 60 * 24 * 30,
               sameSite: 'lax',
             });
