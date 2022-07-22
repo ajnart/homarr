@@ -22,12 +22,16 @@ export default function DockerMenuButton(props: any) {
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const [visible, setVisible] = useState(false);
   const { config } = useConfig();
+  const moduleEnabled = config.modules?.[DockerModule.title]?.enabled ?? false;
 
   useEffect(() => {
     reload();
-  }, []);
+  }, [config.modules]);
 
   function reload() {
+    if (!moduleEnabled) {
+      return;
+    }
     setVisible(true);
     setTimeout(() => {
       axios

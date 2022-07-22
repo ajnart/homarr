@@ -30,6 +30,9 @@ jobs:
   # See also https://docs.docker.com/docker-hub/builds/
   yarn_install_and_build:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
     steps:
 
       - name: Setup
@@ -40,66 +43,31 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Yarn cache
-        uses: actions/cache@v3
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      
+      - uses: actions/cache@v3
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-      - name: Nextjs cache
+      - name: Restore NextJS cache
         uses: actions/cache@v2
         with:
-        # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
-            ~/.npm
             ${{ github.workspace }}/.next/cache
           # Generate a new cache whenever packages or source files change.
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - run: yarn install --immutable
+
       - run: yarn build
-
-      - name: Cache build output
-        uses: actions/cache@v2
-        id: restore-build
-        with:
-          path: |
-             ./next.config.js
-             ./pages/
-             ./public/
-             ./.next/static/
-             ./.next/standalone/
-             ./packages.json
-          key: ${{ github.sha }}
-
-  docker_image_build_and_push:
-    needs: [yarn_install_and_build]
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: actions/cache@v2
-        id: restore-build
-        with:
-          path: |
-             ./next.config.js
-             ./pages/
-             ./public/
-             ./.next/static/
-             ./.next/standalone/
-             ./packages.json
-          key: ${{ github.sha }}
 
       - name: Docker meta
         id: meta
@@ -134,3 +102,5 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
