@@ -1,5 +1,7 @@
-import { Table, Checkbox, Group, Badge, createStyles } from '@mantine/core';
+import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
+import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
+import { useState } from 'react';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
@@ -20,7 +22,22 @@ export default function DockerTable({
   containers: Dockerode.ContainerInfo[];
   selection: Dockerode.ContainerInfo[];
 }) {
+  const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
   const { classes, cx } = useStyles();
+  const [search, setSearch] = useState('');
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.currentTarget;
+    setSearch(value);
+    setContainers(filterContainers(containers, value));
+  };
+
+  function filterContainers(data: Dockerode.ContainerInfo[], search: string) {
+    const query = search.toLowerCase().trim();
+    return data.filter((item) =>
+      item.Names.some((name) => name.toLowerCase().includes(query) || item.Image.includes(query))
+    );
+  }
 
   const toggleRow = (container: Dockerode.ContainerInfo) =>
     setSelection((current: Dockerode.ContainerInfo[]) =>
@@ -28,10 +45,10 @@ export default function DockerTable({
     );
   const toggleAll = () =>
     setSelection((current: any) =>
-      current.length === containers.length ? [] : containers.map((c) => c)
+      current.length === usedContainers.length ? [] : usedContainers.map((c) => c)
     );
 
-  const rows = containers.map((element) => {
+  const rows = usedContainers.map((element) => {
     const selected = selection.includes(element);
     return (
       <tr key={element.Id} className={cx({ [classes.rowSelected]: selected })}>
@@ -47,6 +64,11 @@ export default function DockerTable({
         <td>
           <Group>
             {element.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
+              // Remove duplicates with filter function
+              .filter(
+                (port, index, self) =>
+                  index === self.findIndex((t) => t.PrivatePort === port.PrivatePort)
+              )
               .slice(-3)
               .map((port) => (
                 <Badge key={port.PrivatePort} variant="outline">
@@ -74,26 +96,26 @@ export default function DockerTable({
         value={search}
         onChange={handleSearchChange}
       />
-    <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
-      <caption>your docker containers</caption>
-      <thead>
-        <tr>
-          <th style={{ width: 40 }}>
-            <Checkbox
-              onChange={toggleAll}
-              checked={selection.length === containers.length}
-              indeterminate={selection.length > 0 && selection.length !== containers.length}
-              transitionDuration={0}
-            />
-          </th>
-          <th>Name</th>
-          <th>Image</th>
-          <th>Ports</th>
-          <th>State</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </Table>
+      <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
+        <caption>your docker containers</caption>
+        <thead>
+          <tr>
+            <th style={{ width: 40 }}>
+              <Checkbox
+                onChange={toggleAll}
+                checked={selection.length === usedContainers.length}
+                indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
+                transitionDuration={0}
+              />
+            </th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Ports</th>
+            <th>State</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </Table>
     </ScrollArea>
   );
 }
