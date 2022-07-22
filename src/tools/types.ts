@@ -85,7 +85,6 @@ export type ServiceType =
   | 'Transmission';
 
 export function tryMatchPort(name: string, form?: any) {
-  console.log('tryMatchPort', name);
   // Match name with portmap key
   const port = portmap.find((p) => p.name === name.toLowerCase());
   if (form && port) {
