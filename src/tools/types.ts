@@ -84,35 +84,59 @@ export type ServiceType =
   | 'Sonarr'
   | 'Transmission';
 
-export const MatchingImages: { image: string; type: ServiceType }[] = [
+export function tryMatchPort(name: string, form?: any) {
+  console.log('tryMatchPort', name);
+  // Match name with portmap key
+  const port = portmap.find((p) => p.name === name.toLowerCase());
+  if (form && port) {
+    form.setFieldValue('url', `http://localhost:${port.value}`);
+  }
+  return port;
+}
+
+export const portmap = [
+  { name: 'qbittorrent', value: '8080' },
+  { name: 'sonarr', value: '8989' },
+  { name: 'radarr', value: '7878' },
+  { name: 'lidarr', value: '8686' },
+  { name: 'readarr', value: '8787' },
+  { name: 'deluge', value: '8112' },
+  { name: 'transmission', value: '9091' },
+  { name: 'dash.', value: '3001' },
+];
+
+export const MatchingImages: {
+  image: string;
+  type: ServiceType;
+}[] = [
   //Official images
   { image: 'mauricenino/dashdot', type: 'Dash.' },
   { image: 'emby/embyserver', type: 'Emby' },
   { image: 'plexinc/pms-docker', type: 'Plex' },
-  //Hotio images
+  //Lidarr images
   { image: 'hotio/lidarr', type: 'Lidarr' },
   { image: 'ghcr.io/hotio/lidarr', type: 'Lidarr' },
   { image: 'cr.hotio.dev/hotio/lidarr', type: 'Lidarr' },
-  
+  // Plex
   { image: 'hotio/plex', type: 'Plex' },
   { image: 'ghcr.io/hotio/plex', type: 'Plex' },
   { image: 'cr.hotio.dev/hotio/plex', type: 'Plex' },
-  
+  // qbittorrent
   { image: 'hotio/qbittorrent', type: 'qBittorrent' },
   { image: 'ghcr.io/hotio/qbittorrent', type: 'qBittorrent' },
   { image: 'cr.hotio.dev/hotio/qbittorrent', type: 'qBittorrent' },
-
+  // Radarr
   { image: 'hotio/radarr', type: 'Radarr' },
   { image: 'ghcr.io/hotio/radarr', type: 'Radarr' },
   { image: 'cr.hotio.dev/hotio/radarr', type: 'Radarr' },
-
+  // Readarr
   { image: 'hotio/readarr', type: 'Readarr' },
   { image: 'ghcr.io/hotio/readarr', type: 'Readarr' },
   { image: 'cr.hotio.dev/hotio/readarr', type: 'Readarr' },
-
+  // Sonarr
   { image: 'hotio/sonarr', type: 'Sonarr' },
-  { image: 'ghcr.io/hotio/sonarr', type: 'Sonarr' }, 
-  { image: 'cr.hotio.dev/hotio/sonarr', type: 'Sonarr' }, 
+  { image: 'ghcr.io/hotio/sonarr', type: 'Sonarr' },
+  { image: 'cr.hotio.dev/hotio/sonarr', type: 'Sonarr' },
   //LinuxServer images
   { image: 'lscr.io/linuxserver/deluge', type: 'Deluge' },
   { image: 'lscr.io/linuxserver/emby', type: 'Emby' },
@@ -122,10 +146,20 @@ export const MatchingImages: { image: string; type: ServiceType }[] = [
   { image: 'lscr.io/linuxserver/radarr', type: 'Radarr' },
   { image: 'lscr.io/linuxserver/readarr', type: 'Readarr' },
   { image: 'lscr.io/linuxserver/sonarr', type: 'Sonarr' },
-  { image: 'lscr.io/linuxserver/transmission', type: 'Transmission' }, 
+  { image: 'lscr.io/linuxserver/transmission', type: 'Transmission' },
+  // LinuxServer but on Docker Hub
+  { image: 'linuxserver/deluge', type: 'Deluge' },
+  { image: 'linuxserver/emby', type: 'Emby' },
+  { image: 'linuxserver/lidarr', type: 'Lidarr' },
+  { image: 'linuxserver/plex', type: 'Plex' },
+  { image: 'linuxserver/qbittorrent', type: 'qBittorrent' },
+  { image: 'linuxserver/radarr', type: 'Radarr' },
+  { image: 'linuxserver/readarr', type: 'Readarr' },
+  { image: 'linuxserver/sonarr', type: 'Sonarr' },
+  { image: 'linuxserver/transmission', type: 'Transmission' },
   //High usage
   { image: 'markusmcnugen/qbittorrentvpn', type: 'qBittorrent' },
-  { image: 'haugene/transmission-openvpn', type: 'Transmission' }, 
+  { image: 'haugene/transmission-openvpn', type: 'Transmission' },
 ];
 
 export interface serviceItem {
