@@ -43,8 +43,8 @@ export default function TotalDownloadsComponent() {
   const totalDownloadSpeed = torrents.reduce((acc, torrent) => acc + torrent.downloadSpeed, 0);
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
   useEffect(() => {
-    if (downloadServices.length === 0) return;
     const interval = setSafeInterval(() => {
+      // Send one request with each download service inside
       axios
         .post('/api/modules/downloads')
         .then((response) => {
@@ -54,14 +54,16 @@ export default function TotalDownloadsComponent() {
           setTorrents([]);
           // eslint-disable-next-line no-console
           console.error('Error while fetching torrents', error.response.data);
-          clearInterval(interval);
           showNotification({
-            title: 'Error fetching torrents',
-            autoClose: false,
+            title: 'Torrent speed module failed to fetch torrents',
+            autoClose: 1000,
+            disallowClose: true,
+            id: 'fail-torrent-speed-module',
             color: 'red',
             message:
-              'Please check your config for any potential errors, check the console for more info',
+              'Error fetching torrents, please check your config for any potential errors, check the console for more info',
           });
+          clearInterval(interval);
         });
     }, 1000);
   }, [config.services]);
