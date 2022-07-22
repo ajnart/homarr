@@ -66,6 +66,14 @@ export default function DockerTable({
   });
 
   return (
+    <ScrollArea style={{ height: '80vh' }}>
+      <TextInput
+        placeholder="Search by container or image name"
+        mt="md"
+        icon={<IconSearch size={14} />}
+        value={search}
+        onChange={handleSearchChange}
+      />
     <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
       <caption>your docker containers</caption>
       <thead>
@@ -86,5 +94,6 @@ export default function DockerTable({
       </thead>
       <tbody>{rows}</tbody>
     </Table>
+    </ScrollArea>
   );
 }
