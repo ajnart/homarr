@@ -1,5 +1,5 @@
 import Dockerode from 'dockerode';
-import { Config, MatchingImages, ServiceType } from './types';
+import { Config, MatchingImages, ServiceType, tryMatchPort } from './types';
 
 async function MatchIcon(name: string) {
   const res = await fetch(
@@ -23,11 +23,13 @@ function tryMatchType(imageName: string): ServiceType {
 export function tryMatchService(container: Dockerode.ContainerInfo | undefined) {
   if (container === undefined) return {};
   const name = container.Names[0].substring(1);
+  const type = tryMatchType(container.Image);
+  const port = tryMatchPort(type.toLowerCase());
   return {
     name,
     id: container.Id,
     type: tryMatchType(container.Image),
-    url: `${container.Ports.at(0)?.IP}:${container.Ports.at(0)?.PublicPort}`,
+    url: `localhost${port ? `:${port.value}` : ''}`,
     icon: `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
       .toLowerCase()}.png`,
