@@ -56,48 +56,6 @@ export function Header(props: any) {
           <DockerMenuButton />
           <SettingsMenuButton />
           <AddItemShelfButton />
-          <ActionIcon className={classes.burger} variant="default" radius="md" size="xl">
-            <Burger
-              opened={!hidden}
-              onClick={(_) => {
-                toggleHidden();
-                toggleOpened();
-              }}
-            />
-          </ActionIcon>
-          <Drawer
-            size="auto"
-            padding="xl"
-            position="right"
-            hidden={hidden}
-            title={<Title order={3}>Modules</Title>}
-            opened
-            onClose={() => {
-              toggleHidden();
-            }}
-          >
-            <Transition
-              mounted={opened}
-              transition="pop-top-right"
-              duration={300}
-              timingFunction="ease"
-              onExit={() => toggleOpened()}
-            >
-              {(styles) => (
-                <div style={styles}>
-                  <ScrollArea offsetScrollbars style={{ height: '90vh' }}>
-                    <Group my="sm" grow direction="column" style={{ width: 300 }}>
-                      <ModuleWrapper module={CalendarModule} />
-                      <ModuleWrapper module={TotalDownloadsModule} />
-                      <ModuleWrapper module={WeatherModule} />
-                      <ModuleWrapper module={DateModule} />
-                      <ModuleWrapper module={DashdotModule} />
-                    </Group>
-                  </ScrollArea>
-                </div>
-              )}
-            </Transition>
-          </Drawer>
         </Group>
       </Group>
     </Head>

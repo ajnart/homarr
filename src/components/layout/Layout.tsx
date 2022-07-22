@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import { HeaderConfig } from './HeaderConfig';
 import { Background } from './Background';
 import { useConfig } from '../../tools/state';
+import { useMediaQuery } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
   main: {},
@@ -19,8 +20,8 @@ export default function Layout({ children, style }: any) {
   return (
     <AppShell
       header={<Header />}
-      navbar={widgetPosition ? <Navbar /> : <></>}
-      aside={widgetPosition ? <></> : <Aside />}
+      navbar={widgetPosition ? <Navbar /> : undefined}
+      aside={widgetPosition ? undefined : <Aside />}
       footer={<Footer links={[]} />}
     >
       <HeaderConfig />
