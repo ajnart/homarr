@@ -1,9 +1,24 @@
 import axios from 'axios';
+import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { serviceItem } from '../../../tools/types';
+import { getConfig } from '../../../tools/getConfig';
+import { Config } from '../../../tools/types';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Parse req.body as a ServiceItem
+  const serviceId = req.body;
+  const configName = getCookie('config-name', { req });
+  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
+  // Find service with serviceId in config
+  const service = config.services.find((service) => service.id === serviceId);
+  if (!service) {
+    return res.status(500).json({
+      statusCode: 500,
+      message: 'Missing service',
+    });
+  }
+  const { type } = req.query;
+
   const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
   const lastMonth = new Date(new Date().setMonth(new Date().getMonth() - 2)).toISOString();
   const TypeToUrl: { service: string; url: string }[] = [
@@ -24,8 +39,6 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       url: '/api/v1/calendar',
     },
   ];
-  const service: serviceItem = req.body;
-  const { type } = req.query;
   if (!type) {
     return res.status(400).json({
       message: 'Missing required parameter in url: type',
