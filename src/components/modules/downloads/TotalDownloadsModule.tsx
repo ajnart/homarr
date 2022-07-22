@@ -6,6 +6,7 @@ import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { linearGradientDef } from '@nivo/core';
 import { Datum, ResponsiveLine } from '@nivo/line';
 import { useListState } from '@mantine/hooks';
+import { showNotification } from '@mantine/notifications';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 import { useConfig } from '../../../tools/state';
 import { humanFileSize } from '../../../tools/humanFileSize';
@@ -43,10 +44,25 @@ export default function TotalDownloadsComponent() {
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
   useEffect(() => {
     if (downloadServices.length === 0) return;
-    setSafeInterval(() => {
-      axios.post('/api/modules/downloads', { config }).then((response) => {
-        setTorrents(response.data);
-      });
+    const interval = setSafeInterval(() => {
+      axios
+        .post('/api/modules/downloads')
+        .then((response) => {
+          setTorrents(response.data);
+        })
+        .catch((error) => {
+          setTorrents([]);
+          // eslint-disable-next-line no-console
+          console.error('Error while fetching torrents', error.response.data);
+          clearInterval(interval);
+          showNotification({
+            title: 'Error fetching torrents',
+            autoClose: false,
+            color: 'red',
+            message:
+              'Please check your config for any potential errors, check the console for more info',
+          });
+        });
     }, 1000);
   }, [config.services]);
 

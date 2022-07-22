@@ -14,7 +14,11 @@ export function getConfig(name: string) {
           settings: {
             searchUrl: 'https://www.google.com/search?q=',
           },
-          modules: {},
+          modules: {
+            'Search Bar': {
+              enabled: true,
+            },
+          },
         },
       },
     };
