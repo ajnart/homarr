@@ -6,18 +6,18 @@ import { Config } from '../../../tools/types';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Parse req.body as a ServiceItem
-  const serviceId = req.body;
+  const { id } = req.body;
+  const { type } = req.query;
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
   // Find service with serviceId in config
-  const service = config.services.find((service) => service.id === serviceId);
+  const service = config.services.find((service) => service.id === id);
   if (!service) {
     return res.status(500).json({
       statusCode: 500,
       message: 'Missing service',
     });
   }
-  const { type } = req.query;
 
   const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toISOString();
   const lastMonth = new Date(new Date().setMonth(new Date().getMonth() - 2)).toISOString();
@@ -62,10 +62,10 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     origin = origin.slice(0, -1);
   }
   const pined = `${origin}${url?.url}?apiKey=${service.apiKey}&end=${nextMonth}&start=${lastMonth}`;
-  const data = await axios.get(
-    `${origin}${url?.url}?apiKey=${service.apiKey}&end=${nextMonth}&start=${lastMonth}`
-  );
-  return res.status(200).json(data.data);
+  return axios
+    .get(`${origin}${url?.url}?apiKey=${service.apiKey}&end=${nextMonth}&start=${lastMonth}`)
+    .then((response) => res.status(200).json(response.data))
+    .catch((e) => res.status(500).json(e));
   // // Make a request to the URL
   // const response = await axios.get(url);
   // // Return the response
