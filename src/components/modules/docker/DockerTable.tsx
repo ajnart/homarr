@@ -1,7 +1,7 @@
 import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
@@ -25,6 +25,10 @@ export default function DockerTable({
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    setContainers(containers);
+  }, [containers]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
