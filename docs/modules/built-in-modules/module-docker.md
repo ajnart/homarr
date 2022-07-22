@@ -17,5 +17,5 @@ In order for Homarr to be able to interact with your Docker instance you must te
 `-v /var/run/docker.sock:/var/run/docker.sock
 `
 
-## Activate the Module
+## Activating the Module
 Please read our documentation on [how to enable a module](./../index.md#activating-a-module).
