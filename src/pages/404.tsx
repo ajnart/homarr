@@ -58,7 +58,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function Illustration(props: React.ComponentPropsWithoutRef<'svg'>) {
+function Illustration(props: React.ComponentPropsWithoutRef<'svg'>) {
   const theme = useMantineTheme();
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 145" {...props}>
@@ -70,7 +70,7 @@ export function Illustration(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-export default function NothingFoundBackground() {
+export default function Custom404() {
   const { classes } = useStyles();
 
   return (
