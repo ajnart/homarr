@@ -1,15 +1,15 @@
-import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-export function middleware(req: NextRequest, ev: NextFetchEvent) {
-  const ok = req.cookies.get('password') === process.env.PASSWORD;
-  const url = req.nextUrl.clone();
+// eslint-disable-next-line consistent-return
+export function middleware(request: NextRequest) {
+  const cookie = request.cookies.get('password');
+  const isPasswordCorrect = cookie === process.env.PASSWORD;
   if (
-    !ok &&
-    url.pathname !== '/login' &&
-    process.env.PASSWORD &&
-    url.pathname !== '/api/configs/tryPassword'
+    !isPasswordCorrect &&
+    request.nextUrl.pathname !== '/login' &&
+    request.nextUrl.pathname !== '/api/configs/trylogin'
   ) {
-    url.pathname = '/login';
+    return NextResponse.rewrite(new URL('/login', request.url));
   }
-  return NextResponse.rewrite(url);
 }
