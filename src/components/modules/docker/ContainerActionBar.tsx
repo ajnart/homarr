@@ -26,8 +26,9 @@ function sendDockerCommand(action: string, containerId: string, containerName: s
     autoClose: false,
     disallowClose: true,
   });
-  axios.get(`/api/docker/container/${containerId}?action=${action}`).then((res) => {
-    setTimeout(() => {
+  axios
+    .get(`/api/docker/container/${containerId}?action=${action}`)
+    .then((res) => {
       if (res.data.success === true) {
         updateNotification({
           id: containerId,
@@ -37,18 +38,16 @@ function sendDockerCommand(action: string, containerId: string, containerName: s
           autoClose: 2000,
         });
       }
-      if (res.data.success === false) {
-        updateNotification({
-          id: containerId,
-          color: 'red',
-          title: 'There was an error with your container.',
-          message: undefined,
-          icon: <IconX />,
-          autoClose: 2000,
-        });
-      }
-    }, 500);
-  });
+    })
+    .catch((err) => {
+      updateNotification({
+        id: containerId,
+        color: 'red',
+        title: 'There was an error',
+        message: err.response.data.reason,
+        autoClose: 2000,
+      });
+    });
 }
 
 export interface ContainerActionBarProps {
@@ -81,7 +80,17 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
             selected.map((container) =>
               sendDockerCommand('restart', container.Id, container.Names[0].substring(1))
             )
-          ).then(() => reload())
+          )
+            .catch((err) => {
+              showNotification({
+                color: 'red',
+                title: 'There was an error with your container.',
+                message: err.message,
+                icon: <IconX />,
+                autoClose: 2000,
+              });
+            })
+            .then(() => reload())
         }
         variant="light"
         color="orange"
@@ -93,21 +102,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         leftIcon={<IconPlayerStop />}
         onClick={() =>
           Promise.all(
-            selected.map((container) => {
-              if (
-                container.State === 'stopped' ||
-                container.State === 'created' ||
-                container.State === 'exited'
-              ) {
-                return showNotification({
-                  id: container.Id,
-                  title: `Failed to stop ${container.Names[0].substring(1)}`,
-                  message: "You can't stop a stopped container",
-                  autoClose: 1000,
-                });
-              }
-              return sendDockerCommand('stop', container.Id, container.Names[0].substring(1));
-            })
+            selected.map((container) =>
+              sendDockerCommand('stop', container.Id, container.Names[0].substring(1))
+            )
           ).then(() => reload())
         }
         variant="light"
