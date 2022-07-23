@@ -1,4 +1,4 @@
-import { Group, Space, Title, Tooltip } from '@mantine/core';
+import { Group, Space, Title, Tooltip, Skeleton } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {
@@ -29,7 +29,7 @@ export const WeatherModule: IModule = {
     },
     location: {
       name: 'Current location',
-      value: '',
+      value: 'Paris',
     },
   },
 };
@@ -135,7 +135,7 @@ export default function WeatherComponent(props: any) {
   const { config } = useConfig();
   const [weather, setWeather] = useState({} as WeatherResponse);
   const cityInput: string =
-    (config?.modules?.[WeatherModule.title]?.options?.location?.value as string) ?? '';
+    (config?.modules?.[WeatherModule.title]?.options?.location?.value as string) ?? 'Paris';
   const isFahrenheit: boolean =
     (config?.modules?.[WeatherModule.title]?.options?.freedomunit?.value as boolean) ?? false;
 
@@ -157,7 +157,18 @@ export default function WeatherComponent(props: any) {
       });
   }, [cityInput]);
   if (!weather.current_weather) {
-    return null;
+    return (
+      <>
+        <Skeleton height={40} width={100} mb="xl" />
+        <Group noWrap direction="row">
+          <Skeleton height={50} circle />
+          <Group>
+            <Skeleton height={25} width={70} mr="lg" />
+            <Skeleton height={25} width={70} />
+          </Group>
+        </Group>
+      </>
+    );
   }
   function usePerferedUnit(value: number): string {
     return isFahrenheit ? `${(value * (9 / 5) + 32).toFixed(1)}°F` : `${value.toFixed(1)}°C`;

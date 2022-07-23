@@ -63,7 +63,7 @@ export default function CalendarComponent(props: any) {
     if (!service || !service.apiKey) {
       return Promise.resolve({ data: [] });
     }
-    return axios.post(`/api/modules/calendar?type=${type}`, { ...service });
+    return axios.post(`/api/modules/calendar?type=${type}`, { id: service.id });
   }
 
   useEffect(() => {
@@ -71,11 +71,13 @@ export default function CalendarComponent(props: any) {
     const currentSonarrMedias: any[] = [];
     Promise.all(
       sonarrServices.map((service) =>
-        getMedias(service, 'sonarr').then((res) => {
-          currentSonarrMedias.push(...res.data);
-        }).catch(() => {
-          currentSonarrMedias.push([]);
-        })
+        getMedias(service, 'sonarr')
+          .then((res) => {
+            currentSonarrMedias.push(...res.data);
+          })
+          .catch(() => {
+            currentSonarrMedias.push([]);
+          })
       )
     ).then(() => {
       setSonarrMedias(currentSonarrMedias);
@@ -83,11 +85,13 @@ export default function CalendarComponent(props: any) {
     const currentRadarrMedias: any[] = [];
     Promise.all(
       radarrServices.map((service) =>
-        getMedias(service, 'radarr').then((res) => {
-          currentRadarrMedias.push(...res.data);
-        }).catch(() => {
-          currentRadarrMedias.push([]);
-        })
+        getMedias(service, 'radarr')
+          .then((res) => {
+            currentRadarrMedias.push(...res.data);
+          })
+          .catch(() => {
+            currentRadarrMedias.push([]);
+          })
       )
     ).then(() => {
       setRadarrMedias(currentRadarrMedias);
@@ -95,11 +99,13 @@ export default function CalendarComponent(props: any) {
     const currentLidarrMedias: any[] = [];
     Promise.all(
       lidarrServices.map((service) =>
-        getMedias(service, 'lidarr').then((res) => {
-          currentLidarrMedias.push(...res.data);
-        }).catch(() => {
-          currentLidarrMedias.push([]);
-        })
+        getMedias(service, 'lidarr')
+          .then((res) => {
+            currentLidarrMedias.push(...res.data);
+          })
+          .catch(() => {
+            currentLidarrMedias.push([]);
+          })
       )
     ).then(() => {
       setLidarrMedias(currentLidarrMedias);
@@ -107,11 +113,13 @@ export default function CalendarComponent(props: any) {
     const currentReadarrMedias: any[] = [];
     Promise.all(
       readarrServices.map((service) =>
-        getMedias(service, 'readarr').then((res) => {
-          currentReadarrMedias.push(...res.data);
-        }).catch(() => {
-          currentReadarrMedias.push([]);
-        })
+        getMedias(service, 'readarr')
+          .then((res) => {
+            currentReadarrMedias.push(...res.data);
+          })
+          .catch(() => {
+            currentReadarrMedias.push([]);
+          })
       )
     ).then(() => {
       setReadarrMedias(currentReadarrMedias);

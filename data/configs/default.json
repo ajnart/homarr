@@ -18,6 +18,9 @@
     },
     "Date": {
       "enabled": false
+    },
+    "Docker": {
+      "enabled": true
     }
   }
 }

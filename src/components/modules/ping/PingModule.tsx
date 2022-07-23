@@ -23,19 +23,19 @@ export default function PingComponent(props: any) {
   const exists = config.modules?.[PingModule.title]?.enabled ?? false;
 
   function statusCheck(response: AxiosResponse) {
-    const { status }: {status: string[]} = props;
+    const { status }: { status: string[] } = props;
     //Default Status
     let acceptableStatus = ['200'];
     if (status !== undefined && status.length) {
       acceptableStatus = status;
     }
     // Checks if reported status is in acceptable status array
-    if (acceptableStatus.indexOf((response.status).toString()) >= 0) {
+    if (acceptableStatus.indexOf(response.status.toString()) >= 0) {
       setOnline('online');
       setResponse(response.status);
     } else {
       setOnline('down');
-      setResponse(response.status)
+      setResponse(response.status);
     }
   }
 
@@ -59,7 +59,13 @@ export default function PingComponent(props: any) {
     <Tooltip
       radius="lg"
       style={{ position: 'absolute', bottom: 20, right: 20 }}
-      label={isOnline === 'loading' ? 'Loading...' : isOnline === 'online' ? `Online - ${response}` : `Offline - ${response}`}
+      label={
+        isOnline === 'loading'
+          ? 'Loading...'
+          : isOnline === 'online'
+          ? `Online - ${response}`
+          : `Offline - ${response}`
+      }
     >
       <motion.div
         animate={{

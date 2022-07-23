@@ -1,10 +1,18 @@
-import { Button, Card, Group, Menu, Switch, TextInput, useMantineColorScheme } from '@mantine/core';
+import {
+  Button,
+  Card,
+  Group,
+  Menu,
+  MultiSelect,
+  Switch,
+  TextInput,
+  useMantineColorScheme,
+} from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { IModule } from './modules';
 
 function getItems(module: IModule) {
   const { config, setConfig } = useConfig();
-  const enabledModules = config.modules ?? {};
   const items: JSX.Element[] = [];
   if (module.options) {
     const keys = Object.keys(module.options);
@@ -15,6 +23,38 @@ function getItems(module: IModule) {
     types.forEach((type, index) => {
       const optionName = `${module.title}.${keys[index]}`;
       const moduleInConfig = config.modules?.[module.title];
+      if (type === 'object') {
+        items.push(
+          <MultiSelect
+            label={module.options?.[keys[index]].name}
+            data={module.options?.[keys[index]].options ?? []}
+            defaultValue={
+              (moduleInConfig?.options?.[keys[index]]?.value as string[]) ??
+              (values[index].value as string[]) ??
+              []
+            }
+            searchable
+            onChange={(value) => {
+              setConfig({
+                ...config,
+                modules: {
+                  ...config.modules,
+                  [module.title]: {
+                    ...moduleInConfig,
+                    options: {
+                      ...moduleInConfig?.options,
+                      [keys[index]]: {
+                        ...moduleInConfig?.options?.[keys[index]],
+                        value,
+                      },
+                    },
+                  },
+                },
+              });
+            }}
+          />
+        );
+      }
       if (type === 'string') {
         items.push(
           <form
@@ -44,7 +84,11 @@ function getItems(module: IModule) {
                 id={optionName}
                 name={optionName}
                 label={values[index].name}
-                defaultValue={(moduleInConfig?.options?.[keys[index]]?.value as string) ?? ''}
+                defaultValue={
+                  (moduleInConfig?.options?.[keys[index]]?.value as string) ??
+                  (values[index].value as string) ??
+                  ''
+                }
                 onChange={(e) => {}}
               />
 
@@ -59,7 +103,9 @@ function getItems(module: IModule) {
           <Switch
             defaultChecked={
               // Set default checked to the value of the option if it exists
-              (moduleInConfig?.options?.[keys[index]]?.value as boolean) ?? false
+              (moduleInConfig?.options?.[keys[index]]?.value as boolean) ??
+              (values[index].value as boolean) ??
+              false
             }
             key={keys[index]}
             onClick={(e) => {

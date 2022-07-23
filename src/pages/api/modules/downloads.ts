@@ -2,59 +2,65 @@ import { Deluge } from '@ctrl/deluge';
 import { QBittorrent } from '@ctrl/qbittorrent';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { Transmission } from '@ctrl/transmission';
+import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { getConfig } from '../../../tools/getConfig';
 import { Config } from '../../../tools/types';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Get the type of service from the request url
+  const configName = getCookie('config-name', { req });
+  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
+  const qBittorrentServices = config.services.filter((service) => service.type === 'qBittorrent');
+  const delugeServices = config.services.filter((service) => service.type === 'Deluge');
+  const transmissionServices = config.services.filter((service) => service.type === 'Transmission');
+
   const torrents: NormalizedTorrent[] = [];
-  const { config }: { config: Config } = req.body;
-  const qBittorrentService = config.services
-    .filter((service) => service.type === 'qBittorrent')
-    .at(0);
-  const delugeService = config.services.filter((service) => service.type === 'Deluge').at(0);
-  const transmissionService = config.services
-    .filter((service) => service.type === 'Transmission')
-    .at(0);
-  if (!qBittorrentService && !delugeService && !transmissionService) {
+
+  if (!qBittorrentServices && !delugeServices && !transmissionServices) {
     return res.status(500).json({
       statusCode: 500,
-      message: 'Missing service',
+      message: 'Missing services',
     });
   }
-  if (qBittorrentService) {
-    torrents.push(
-      ...(
-        await new QBittorrent({
-          baseUrl: qBittorrentService.url,
-          username: qBittorrentService.username,
-          password: qBittorrentService.password,
-        }).getAllData()
-      ).torrents
+  try {
+    await Promise.all(
+      qBittorrentServices.map((service) =>
+        new QBittorrent({
+          baseUrl: service.url,
+          username: service.username,
+          password: service.password,
+        })
+          .getAllData()
+          .then((e) => torrents.push(...e.torrents))
+      )
     );
-  }
-  if (delugeService) {
-    torrents.push(
-      ...(
-        await new Deluge({
-          baseUrl: delugeService.url,
-          password: 'password' in delugeService ? delugeService.password : '',
-        }).getAllData()
-      ).torrents
+    await Promise.all(
+      delugeServices.map((service) =>
+        new Deluge({
+          baseUrl: service.url,
+          password: 'password' in service ? service.password : '',
+        })
+          .getAllData()
+          .then((e) => torrents.push(...e.torrents))
+      )
     );
-  }
-  if (transmissionService) {
-    torrents.push(
-      ...(
-        await new Transmission({
-          baseUrl: transmissionService.url,
-          username: transmissionService.username,
-          password: 'password' in transmissionService ? transmissionService.password : '',
-        }).getAllData()
-      ).torrents
+    // Map transmissionServices
+    await Promise.all(
+      transmissionServices.map((service) =>
+        new Transmission({
+          baseUrl: service.url,
+          username: 'username' in service ? service.username : '',
+          password: 'password' in service ? service.password : '',
+        })
+          .getAllData()
+          .then((e) => torrents.push(...e.torrents))
+      )
     );
+  } catch (e: any) {
+    return res.status(401).json(e);
   }
-  res.status(200).json(torrents);
+  return res.status(200).json(torrents);
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
