@@ -11,8 +11,8 @@ import {
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconLink as Link } from '@tabler/icons';
-import { useConfig } from '../../../tools/state';
-import { serviceItem } from '../../../tools/types';
+import { useConfig } from '../../tools/state';
+import { serviceItem } from '../../tools/types';
 
 export interface IMedia {
   overview: string;

@@ -12,8 +12,8 @@ import {
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
-import { tryMatchService } from '../../../tools/addToHomarr';
-import { AddAppShelfItemForm } from '../../AppShelf/AddAppShelfItem';
+import { tryMatchService } from '../../tools/addToHomarr';
+import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
 
 function sendDockerCommand(
   action: string,

@@ -5,10 +5,11 @@ import { useForm } from '@mantine/hooks';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';
 import { IconCheck, IconX } from '@tabler/icons';
-import { Logo } from '../components/layout/Logo';
+import { useRouter } from 'next/router';
 
 // TODO: Add links to the wiki articles about the login process.
 export default function AuthenticationTitle() {
+  const router = useRouter();
   const form = useForm({
     initialValues: {
       password: '',
@@ -33,7 +34,6 @@ export default function AuthenticationTitle() {
         >
           Welcome back!
         </Title>
-        <Logo withoutText />
       </Group>
 
       <Text color="dimmed" size="sm" align="center" mt={5}>
@@ -72,16 +72,14 @@ export default function AuthenticationTitle() {
               .then((res) => {
                 setTimeout(() => {
                   if (res.data.success === true) {
+                    router.push('/');
                     updateNotification({
                       id: 'load-data',
                       color: 'teal',
-                      title: 'Password correct',
+                      title: 'Password correct, redirecting you...',
                       message: undefined,
                       icon: <IconCheck />,
-                      autoClose: 300,
-                      onClose: () => {
-                        window.location.reload();
-                      },
+                      autoClose: 1000,
                     });
                   }
                   if (res.data.success === false) {

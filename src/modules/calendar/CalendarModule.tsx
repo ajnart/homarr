@@ -12,16 +12,16 @@ import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
 import axios from 'axios';
-import { useConfig } from '../../../tools/state';
-import { IModule } from '../modules';
+import { useConfig } from '../../tools/state';
+import { IModule } from '../ModuleTypes';
 import {
   SonarrMediaDisplay,
   RadarrMediaDisplay,
   LidarrMediaDisplay,
   ReadarrMediaDisplay,
 } from '../common';
-import { serviceItem } from '../../../tools/types';
-import { useColorTheme } from '../../../tools/color';
+import { serviceItem } from '../../tools/types';
+import { useColorTheme } from '../../tools/color';
 
 export const CalendarModule: IModule = {
   title: 'Calendar',

@@ -7,8 +7,8 @@ import {
   IconDownload as Download,
 } from '@tabler/icons';
 import axios from 'axios';
-import { useConfig } from '../../../tools/state';
-import { IModule } from '../modules';
+import { useConfig } from '../../tools/state';
+import { IModule } from '../ModuleTypes';
 
 const useStyles = createStyles((theme) => ({
   hide: {

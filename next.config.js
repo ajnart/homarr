@@ -6,5 +6,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: false,
+  experimental: {
+    outputStandalone: true,
+  },
   output: 'standalone',
 });

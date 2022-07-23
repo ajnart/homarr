@@ -42,9 +42,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       message: `Container ${id} ${action}ed`,
     });
   } catch (err) {
-    return res.status(500).json(
-      err,
-    );
+    return res.status(500).json(err);
   }
 }
 

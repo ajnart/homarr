@@ -2,9 +2,9 @@ import { Group, Text, Title } from '@mantine/core';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { IconClock as Clock } from '@tabler/icons';
-import { useConfig } from '../../../tools/state';
-import { IModule } from '../modules';
-import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
+import { useConfig } from '../../tools/state';
+import { IModule } from '../ModuleTypes';
+import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const DateModule: IModule = {
   title: 'Date',

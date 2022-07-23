@@ -2,9 +2,9 @@ import { createStyles, useMantineColorScheme, useMantineTheme } from '@mantine/c
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useConfig } from '../../../tools/state';
-import { serviceItem } from '../../../tools/types';
-import { IModule } from '../modules';
+import { useConfig } from '../../tools/state';
+import { serviceItem } from '../../tools/types';
+import { IModule } from '../ModuleTypes';
 
 const asModule = <T extends IModule>(t: T) => t;
 export const DashdotModule = asModule({

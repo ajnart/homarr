@@ -7,11 +7,11 @@ import { linearGradientDef } from '@nivo/core';
 import { Datum, ResponsiveLine } from '@nivo/line';
 import { useListState } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
-import { useConfig } from '../../../tools/state';
-import { humanFileSize } from '../../../tools/humanFileSize';
-import { IModule } from '../modules';
-import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
+import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
+import { useConfig } from '../../tools/state';
+import { humanFileSize } from '../../tools/humanFileSize';
+import { IModule } from '../ModuleTypes';
+import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const TotalDownloadsModule: IModule = {
   title: 'Download Speed',
