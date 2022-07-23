@@ -1,29 +1,29 @@
 import {
-  Modal,
+  ActionIcon,
+  Anchor,
+  Button,
   Center,
   Group,
-  TextInput,
   Image,
-  Button,
-  Select,
   LoadingOverlay,
-  ActionIcon,
-  Tooltip,
-  Title,
-  Anchor,
-  Text,
-  Tabs,
+  Modal,
   MultiSelect,
   ScrollArea,
+  Select,
   Switch,
+  Tabs,
+  TextInput,
+  Title,
+  Tooltip,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useEffect, useState } from 'react';
-import { IconApps as Apps } from '@tabler/icons';
-import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
+import { IconApps as Apps } from '@tabler/icons';
+import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
-import { ServiceTypeList, StatusCodes } from '../../tools/types';
+import { tryMatchPort, ServiceTypeList, StatusCodes } from '../../tools/types';
+import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -54,11 +54,13 @@ export function AddItemShelfButton(props: any) {
   );
 }
 
-function MatchIcon(name: string, form: any) {
+function MatchIcon(name: string | undefined, form: any) {
+  if (name === undefined || name === '') return null;
   fetch(
     `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
-      .toLowerCase()}.png`
+      .toLowerCase()
+      .replace(/^dash\.$/, 'dashdot')}.png`
   ).then((res) => {
     if (res.ok) {
       form.setFieldValue('icon', res.url);
@@ -75,22 +77,7 @@ function MatchService(name: string, form: any) {
   }
 }
 
-function MatchPort(name: string, form: any) {
-  const portmap = [
-    { name: 'qbittorrent', value: '8080' },
-    { name: 'sonarr', value: '8989' },
-    { name: 'radarr', value: '7878' },
-    { name: 'lidarr', value: '8686' },
-    { name: 'readarr', value: '8686' },
-    { name: 'deluge', value: '8112' },
-    { name: 'transmission', value: '9091' },
-  ];
-  // Match name with portmap key
-  const port = portmap.find((p) => p.name === name.toLowerCase());
-  if (port) {
-    form.setFieldValue('url', `http://localhost:${port.value}`);
-  }
-}
+const DEFAULT_ICON = '/favicon.svg';
 
 export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
   const { setOpened } = props;
@@ -111,7 +98,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       type: props.type ?? 'Other',
       category: props.category ?? undefined,
       name: props.name ?? '',
-      icon: props.icon ?? '/favicon.svg',
+      icon: props.icon ?? DEFAULT_ICON,
       url: props.url ?? '',
       apiKey: props.apiKey ?? (undefined as unknown as string),
       username: props.username ?? (undefined as unknown as string),
@@ -123,13 +110,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
     validate: {
       apiKey: () => null,
       // Validate icon with a regex
-      icon: (value: string) => {
-        // Regex to match everything that ends with and icon extension
-        if (!value.match(/\.(png|jpg|jpeg|gif|svg)$/)) {
-          return 'Please enter a valid icon URL';
-        }
-        return null;
-      },
+      icon: (value: string) =>
+        // Disable matching to allow any values
+        null,
       // Validate url with a regex http/https
       url: (value: string) => {
         try {
@@ -150,10 +133,10 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const [debounced, cancel] = useDebouncedValue(form.values.name, 250);
   useEffect(() => {
-    if (form.values.name !== debounced || props.name || props.type) return;
+    if (form.values.name !== debounced || form.values.icon !== DEFAULT_ICON) return;
     MatchIcon(form.values.name, form);
     MatchService(form.values.name, form);
-    MatchPort(form.values.name, form);
+    tryMatchPort(form.values.name, form);
   }, [debounced]);
 
   // Try to set const hostname to new URL(form.values.url).hostname)
@@ -223,7 +206,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 <TextInput
                   required
                   label="Icon URL"
-                  placeholder="/favicon.svg"
+                  placeholder={DEFAULT_ICON}
                   {...form.getInputProps('icon')}
                 />
                 <TextInput
@@ -277,15 +260,8 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                       }}
                       error={form.errors.apiKey && 'Invalid API key'}
                     />
-                    <Text
-                      style={{
-                        alignSelf: 'center',
-                        fontSize: '0.75rem',
-                        textAlign: 'center',
-                        color: 'gray',
-                      }}
-                    >
-                      Tip: Get your API key{' '}
+                    <Tip>
+                      Get your API key{' '}
                       <Anchor
                         target="_blank"
                         weight="bold"
@@ -294,7 +270,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                       >
                         here.
                       </Anchor>
-                    </Text>
+                    </Tip>
                   </>
                 )}
                 {form.values.type === 'qBittorrent' && (
@@ -321,9 +297,20 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     />
                   </>
                 )}
-                {(form.values.type === 'Deluge' ||
-                  form.values.type === 'Transmission' ||
-                  form.values.type === 'qBittorrent') && (
+                {form.values.type === 'Deluge' && (
+                  <>
+                    <TextInput
+                      label="Password"
+                      placeholder="password"
+                      value={form.values.password}
+                      onChange={(event) => {
+                        form.setFieldValue('password', event.currentTarget.value);
+                      }}
+                      error={form.errors.password && 'Invalid password'}
+                    />
+                  </>
+                )}
+                {form.values.type === 'Transmission' && (
                   <>
                     <TextInput
                       label="Username"
@@ -336,7 +323,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     />
                     <TextInput
                       label="Password"
-                      placeholder="password"
+                      placeholder="adminadmin"
                       value={form.values.password}
                       onChange={(event) => {
                         form.setFieldValue('password', event.currentTarget.value);

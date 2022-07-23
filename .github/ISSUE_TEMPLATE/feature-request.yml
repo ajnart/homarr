@@ -22,13 +22,3 @@ body:
         - High (App breaking feature)
     validations:
       required: true
-  - type: checkboxes
-    id: idiot-check
-    attributes:
-      label: Please tick the boxes
-      description: Before submitting, please ensure that
-      options:
-        - label: You've read the [docs](https://github.com/ajnart/homarr#readme)
-          required: true
-        - label: You've checked for [duplicate issues](https://github.com/ajnart/homarr/issues)
-          required: true

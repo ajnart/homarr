@@ -20,15 +20,30 @@ import DownloadComponent from '../modules/downloads/DownloadsModule';
 
 const useStyles = createStyles((theme, _params) => ({
   item: {
-    borderBottom: 0,
     overflow: 'hidden',
-    border: '1px solid transparent',
-    borderRadius: theme.radius.lg,
+    borderLeft: '3px solid transparent',
+    borderRight: '3px solid transparent',
+    borderBottom: '3px solid transparent',
+    borderRadius: '20px',
+    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
     marginTop: theme.spacing.md,
   },
 
-  itemOpened: {
-    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
+  control: {
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+    borderRadius: theme.spacing.md,
+
+    '&:hover': {
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+    },
+  },
+
+  content: {
+    margin: theme.spacing.md,
+  },
+
+  label: {
+    overflow: 'visible',
   },
 }));
 
@@ -137,6 +152,7 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
+    const downloadEnabled = config.modules?.[DownloadsModule.title]?.enabled ?? false;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // Return one item for each category
@@ -147,11 +163,6 @@ const AppShelf = (props: any) => {
           order={2}
           iconPosition="right"
           multiple
-          styles={{
-            item: {
-              borderRadius: '20px',
-            },
-          }}
           initialState={toggledCategories}
           onChange={(idx) => settoggledCategories(idx)}
         >
@@ -166,21 +177,23 @@ const AppShelf = (props: any) => {
               {item()}
             </Accordion.Item>
           ) : null}
-          <Accordion.Item key="Downloads" label="Your downloads">
-            <Paper
-              p="lg"
-              radius="lg"
-              style={{
-                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+          {downloadEnabled ? (
+            <Accordion.Item key="Downloads" label="Your downloads">
+              <Paper
+                p="lg"
+                radius="lg"
+                style={{
+                  background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
                 ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+                  borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
                 ${(config.settings.appOpacity || 100) / 100}`,
-              }}
-            >
-              <ModuleMenu module={DownloadsModule} />
-              <DownloadComponent />
-            </Paper>
-          </Accordion.Item>
+                }}
+              >
+                <ModuleMenu module={DownloadsModule} />
+                <DownloadComponent />
+              </Paper>
+            </Accordion.Item>
+          ) : null}
         </Accordion>
       </Group>
     );
