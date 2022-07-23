@@ -1,5 +1,5 @@
 import { MantineTheme } from '@mantine/core';
-import { OptionValues } from '../components/modules/modules';
+import { OptionValues } from '../modules/ModuleTypes';
 
 export interface Settings {
   searchUrl: string;

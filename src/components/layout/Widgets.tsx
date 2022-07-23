@@ -1,7 +1,7 @@
 import { Group } from '@mantine/core';
-import { CalendarModule, DateModule, TotalDownloadsModule, WeatherModule } from '../modules';
-import { DashdotModule } from '../modules/dashdot';
-import { ModuleWrapper } from '../modules/moduleWrapper';
+import { CalendarModule, DateModule, TotalDownloadsModule, WeatherModule } from '../../modules';
+import { DashdotModule } from '../../modules/dashdot';
+import { ModuleWrapper } from '../../modules/moduleWrapper';
 
 export default function Widgets(props: any) {
   return (

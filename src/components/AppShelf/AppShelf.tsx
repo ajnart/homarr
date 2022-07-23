@@ -14,9 +14,9 @@ import { useLocalStorage } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
-import { ModuleMenu, ModuleWrapper } from '../modules/moduleWrapper';
-import { DownloadsModule } from '../modules';
-import DownloadComponent from '../modules/downloads/DownloadsModule';
+import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
+import { DownloadsModule } from '../../modules';
+import DownloadComponent from '../../modules/downloads/DownloadsModule';
 
 const useStyles = createStyles((theme, _params) => ({
   item: {

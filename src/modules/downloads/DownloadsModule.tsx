@@ -16,11 +16,11 @@ import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useViewportSize } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { IModule } from '../modules';
-import { useConfig } from '../../../tools/state';
-import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
-import { useSetSafeInterval } from '../../../tools/hooks/useSetSafeInterval';
-import { humanFileSize } from '../../../tools/humanFileSize';
+import { IModule } from '../ModuleTypes';
+import { useConfig } from '../../tools/state';
+import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
+import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
+import { humanFileSize } from '../../tools/humanFileSize';
 
 export const DownloadsModule: IModule = {
   title: 'Torrent',

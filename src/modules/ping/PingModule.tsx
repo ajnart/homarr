@@ -3,8 +3,8 @@ import axios, { AxiosResponse } from 'axios';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { IconPlug as Plug } from '@tabler/icons';
-import { useConfig } from '../../../tools/state';
-import { IModule } from '../modules';
+import { useConfig } from '../../tools/state';
+import { IModule } from '../ModuleTypes';
 
 export const PingModule: IModule = {
   title: 'Ping Services',

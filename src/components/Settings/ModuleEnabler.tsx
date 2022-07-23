@@ -1,5 +1,5 @@
 import { Checkbox, Group, SimpleGrid, Title } from '@mantine/core';
-import * as Modules from '../modules';
+import * as Modules from '../../modules';
 import { useConfig } from '../../tools/state';
 
 export default function ModuleEnabler(props: any) {

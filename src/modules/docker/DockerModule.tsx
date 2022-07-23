@@ -6,8 +6,8 @@ import { IconBrandDocker, IconX } from '@tabler/icons';
 import { showNotification } from '@mantine/notifications';
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
-import { useConfig } from '../../../tools/state';
-import { IModule } from '../modules';
+import { useConfig } from '../../tools/state';
+import { IModule } from '../ModuleTypes';
 
 export const DockerModule: IModule = {
   title: 'Docker',

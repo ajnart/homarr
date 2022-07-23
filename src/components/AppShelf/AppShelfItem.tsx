@@ -13,7 +13,7 @@ import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { serviceItem } from '../../tools/types';
-import PingComponent from '../modules/ping/PingModule';
+import PingComponent from '../../modules/ping/PingModule';
 import AppShelfMenu from './AppShelfMenu';
 import { useConfig } from '../../tools/state';
 

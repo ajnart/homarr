@@ -13,8 +13,8 @@ import {
   IconSnowflake as Snowflake,
   IconSun as Sun,
 } from '@tabler/icons';
-import { useConfig } from '../../../tools/state';
-import { IModule } from '../modules';
+import { useConfig } from '../../tools/state';
+import { IModule } from '../ModuleTypes';
 import { WeatherResponse } from './WeatherInterface';
 
 export const WeatherModule: IModule = {

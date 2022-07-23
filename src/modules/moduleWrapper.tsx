@@ -8,8 +8,8 @@ import {
   TextInput,
   useMantineColorScheme,
 } from '@mantine/core';
-import { useConfig } from '../../tools/state';
-import { IModule } from './modules';
+import { useConfig } from '../tools/state';
+import { IModule } from './ModuleTypes';
 
 function getItems(module: IModule) {
   const { config, setConfig } = useConfig();
