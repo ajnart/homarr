@@ -1,5 +1,5 @@
 export * from './calendar';
-export * from './dash.';
+export * from './dashdot';
 export * from './date';
 export * from './downloads';
 export * from './ping';
