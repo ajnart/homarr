@@ -20,19 +20,7 @@ export default function AppShelfMenu(props: any) {
         onClose={() => setOpened(false)}
         title="Modify a service"
       >
-        <AddAppShelfItemForm
-          setOpened={setOpened}
-          name={service.name}
-          id={service.id}
-          category={service.category}
-          type={service.type}
-          url={service.url}
-          icon={service.icon}
-          apiKey={service.apiKey}
-          username={service.username}
-          password={service.password}
-          message="Save service"
-        />
+        <AddAppShelfItemForm setOpened={setOpened} {...service} message="Save service" />
       </Modal>
       <Menu
         position="right"
@@ -66,7 +54,7 @@ export default function AppShelfMenu(props: any) {
               autoClose: 5000,
               title: (
                 <Text>
-                  Service <b>{service.name}</b> removed successfully
+                  Service <b>{service.name}</b> removed successfully!
                 </Text>
               ),
               color: 'green',
