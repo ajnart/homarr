@@ -1,15 +1,19 @@
 import axios from 'axios';
+import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { serviceItem } from '../../../tools/types';
+import { getConfig } from '../../../tools/getConfig';
+import { Config } from '../../../tools/types';
 
-async function Post(req: NextApiRequest, res: NextApiResponse) {
-  const { service }: { service: serviceItem } = req.body;
-  const { query } = req.query;
+async function Get(req: NextApiRequest, res: NextApiResponse) {
+  const configName = getCookie('config-name', { req });
+  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
+  const { query, id } = req.query;
+  const service = config.services.find((service) => service.id === id);
   // If query is an empty string, return an empty array
-  if (query === '') {
+  if (query === '' || query === undefined) {
     return res.status(200).json([]);
   }
-  if (!service || !query || !service.apiKey) {
+  if (!service || !query || service === undefined || !service.apiKey) {
     return res.status(400).json({
       error: 'Wrong request',
     });
@@ -24,15 +28,13 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     })
     .then((res) => res.data);
   // Get login, password and url from the body
-  res.status(200).json(
-    data,
-  );
+  res.status(200).json(data);
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Filter out if the reuqest is a POST or a GET
-  if (req.method === 'POST') {
-    return Post(req, res);
+  if (req.method === 'GET') {
+    return Get(req, res);
   }
   return res.status(405).json({
     statusCode: 405,
