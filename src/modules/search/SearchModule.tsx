@@ -93,9 +93,9 @@ export default function SearchBar(props: any) {
         form.setValues({ query: '' });
         setTimeout(() => {
           if (isYoutube) {
-            window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
+            window.open(`https://www.youtube.com/results?search_query=${query.substring(4)}`);
           } else if (isTorrent) {
-            window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
+            window.open(`https://bitsearch.to/search?q=${query.substring(4)}`);
           } else {
             window.open(
               `${
