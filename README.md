@@ -21,7 +21,7 @@
 <i>Join the discord! — Don't forget to star the repo if you are enjoying the project!</i>
 </p>
 <p align="center">
-<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="#-installation"><strong> Install ➡️ </strong></a> • <a href="https://github.com/ajnart/homarr/wiki"><strong> Read the Wiki 📄 </strong></a>
+<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.vercel.app/docs/quick-start/"><strong> Install ➡️ </strong></a> • <a href="https://homarr.vercel.app/docs/about"><strong> Read the Docs 📄 </strong></a>
 </p>
 
 ---
@@ -33,7 +33,7 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 
 It integrates with the services you use to display information on the homepage (E.g. Show upcoming Sonarr/Radarr releases).
 
-For a full list of integrations look at: [wiki/integrations](https://github.com/ajnart/homarr/wiki/Integrations)
+For a full list of integrations, [head over to our documentation](https://homarr.vercel.app/docs/advanced-features/integrations).
 
 If you have any questions about Homarr or want to share information with us, please go to one of the following places:
 
@@ -42,7 +42,7 @@ If you have any questions about Homarr or want to share information with us, ple
 
 *Before you file an [issue](https://github.com/ajnart/homarr/issues/new/choose), make sure you have the read [known issues](#-known-issues) section.*
 
-**For more information, [read the wiki!](https://github.com/ajnart/homarr/wiki)**
+**For more information, [read the documentation!](https://homarr.vercel.app/docs/about)**
 
 <details>
   <summary><b>Table of Contents</b></summary>
@@ -195,7 +195,7 @@ SOFTWARE.
 ---
 
 <p align="center">
-  <i>Thank you for visiting! <b>For more information <a href="https://github.com/ajnart/homarr/wiki">read the wiki!</a></b></i>
+  <i>Thank you for visiting! <b>For more information <a href="https://homarr.vercel.app/docs/about">read the documentation!</a></b></i>
   <br/>
   <br/>
 </p>
