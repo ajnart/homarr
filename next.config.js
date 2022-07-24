@@ -6,11 +6,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   experimental: {
     outputStandalone: true,
   },
-  basePath: env.BASE_URL,
+  output: 'standalone',
 });

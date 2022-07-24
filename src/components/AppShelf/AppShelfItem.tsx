@@ -1,11 +1,21 @@
-import { Text, Card, Anchor, AspectRatio, Image, Center, createStyles } from '@mantine/core';
+import {
+  Text,
+  Card,
+  Anchor,
+  AspectRatio,
+  Image,
+  Center,
+  createStyles,
+  useMantineColorScheme,
+} from '@mantine/core';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { serviceItem } from '../../tools/types';
-import PingComponent from '../modules/ping/PingModule';
+import PingComponent from '../../modules/ping/PingModule';
 import AppShelfMenu from './AppShelfMenu';
+import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -14,6 +24,9 @@ const useStyles = createStyles((theme) => ({
     '&:hover': {
       boxShadow: `${theme.shadows.md} !important`,
       transform: 'scale(1.05)',
+    },
+    [theme.fn.smallerThan('sm')]: {
+      WebkitUserSelect: 'none',
     },
   },
 }));
@@ -38,7 +51,9 @@ export function SortableAppShelfItem(props: any) {
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
   const [hovering, setHovering] = useState(false);
-  const { classes, theme } = useStyles();
+  const { config } = useConfig();
+  const { colorScheme } = useMantineColorScheme();
+  const { classes } = useStyles();
   return (
     <motion.div
       animate={{
@@ -54,11 +69,22 @@ export function AppShelfItem(props: any) {
         setHovering(false);
       }}
     >
-      <Card withBorder radius="lg" shadow="md" className={classes.item}>
+      <Card
+        withBorder
+        radius="lg"
+        shadow="md"
+        className={classes.item}
+        style={{
+          background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+          borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+          ${(config.settings.appOpacity || 100) / 100}`,
+        }}
+      >
         <Card.Section>
           <Anchor
-            target="_blank"
-            href={service.url}
+            target={service.newTab === false ? '_top' : '_blank'}
+            href={service.openedUrl ? service.openedUrl : service.url}
             style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
           >
             <Text mt="sm" align="center" lineClamp={1} weight={550}>
@@ -91,22 +117,24 @@ export function AppShelfItem(props: any) {
             >
               <motion.i
                 whileHover={{
-                  cursor: 'pointer',
                   scale: 1.1,
                 }}
               >
                 <Image
+                  styles={{ root: { cursor: 'pointer' } }}
                   width={80}
                   height={80}
                   src={service.icon}
                   fit="contain"
                   onClick={() => {
-                    window.open(service.url);
+                    if (service.openedUrl) {
+                      window.open(service.openedUrl, service.newTab === false ? '_top' : '_blank');
+                    } else window.open(service.url, service.newTab === false ? '_top' : '_blank');
                   }}
                 />
               </motion.i>
             </AspectRatio>
-            <PingComponent url={service.url} />
+            <PingComponent url={service.url} status={service.status} />
           </Card.Section>
         </Center>
       </Card>
