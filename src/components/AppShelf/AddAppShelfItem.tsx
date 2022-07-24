@@ -17,7 +17,6 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useDebouncedValue } from '@mantine/hooks';
 import { IconApps as Apps } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -249,6 +248,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 {(form.values.type === 'Sonarr' ||
                   form.values.type === 'Radarr' ||
                   form.values.type === 'Lidarr' ||
+                  form.values.type === 'Overseerr' ||
                   form.values.type === 'Readarr') && (
                   <>
                     <TextInput
