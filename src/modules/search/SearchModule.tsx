@@ -41,6 +41,7 @@ export default function SearchBar(props: any) {
   const queryUrl = config.settings.searchUrl ?? 'https://www.google.com/search?q=';
 
   const [OverseerrResults, setOverseerrResults] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
   const [icon, setIcon] = useState(<Search />);
   const [results, setResults] = useState<any[]>([]);
   const [opened, setOpened] = useState(false);
@@ -82,7 +83,9 @@ export default function SearchBar(props: any) {
         )
         .then((res) => {
           setOverseerrResults(res.data.results ?? []);
+          setLoading(false);
         });
+      setLoading(true);
     } else {
       setOverseerrResults([]);
       axios
@@ -142,10 +145,9 @@ export default function SearchBar(props: any) {
       })}
     >
       <Popover
-        opened={opened}
+        opened={OverseerrResults.length > 0 && opened}
         position="bottom"
         placement="start"
-        withArrow
         radius="md"
         trapFocus={false}
         transition="pop-bottom-right"

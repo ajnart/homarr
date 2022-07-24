@@ -9,9 +9,10 @@ import {
   ScrollArea,
   createStyles,
   Tooltip,
+  Button,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { IconLink, IconPlayerPlay } from '@tabler/icons';
+import { IconLink } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 
@@ -20,6 +21,7 @@ export interface IMedia {
   imdbId?: any;
   artist?: string;
   title: string;
+  voteAverage?: string;
   poster?: string;
   genres: string[];
   seasonNumber?: number;
@@ -55,50 +57,48 @@ export function MediaDisplay(props: { media: IMedia }) {
             alt={media.title}
           />
         )}
-        <Group direction="column" style={{ minWidth: phone ? 450 : '65vw' }}>
-          <Group noWrap mr="sm" className={classes.overview}>
+        <Group
+          style={{ minWidth: phone ? 450 : '65vw' }}
+          noWrap
+          mr="sm"
+          my="sm"
+          position="apart"
+          className={classes.overview}
+        >
+          <Group direction="column" spacing={0}>
             <Title order={3}>{media.title}</Title>
-            {media.plexUrl && (
-              <Tooltip label="Open in Plex">
-                <Anchor href={media.plexUrl} target="_blank">
-                  <ActionIcon>
-                    <IconPlayerPlay />
-                  </ActionIcon>
-                </Anchor>
-              </Tooltip>
-            )}
-            {media.plexUrl && (
-              <Badge color="green" size="lg">
-                Available on Plex
-              </Badge>
-            )}
-            {media.imdbId && (
-              <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
-                <ActionIcon>
-                  <IconLink />
-                </ActionIcon>
-              </Anchor>
+            {media.artist && <Text color="gray">New release from {media.artist}</Text>}
+            {(media.episodeNumber || media.seasonNumber) && (
+              <Text color="gray">
+                Season {media.seasonNumber}{' '}
+                {media.episodeNumber && `episode ${media.episodeNumber}`}
+              </Text>
             )}
           </Group>
-          {media.artist && (
-            <Text
-              style={{
-                textAlign: 'center',
-                color: 'gray',
-              }}
+          {media.voteAverage && (
+            <Button
+              radius="md"
+              variant="light"
+              color={media.plexUrl ? 'green' : 'cyan'}
+              size="md"
+              onClick={
+                media.plexUrl
+                  ? () => window.open(media.plexUrl)
+                  : () => {
+                      // TODO: implement overseerr media requests
+                      throw new Error('Need to implement media reqests');
+                    }
+              }
             >
-              New release from {media.artist}
-            </Text>
+              {media.plexUrl ? 'Available on Plex' : 'Request'}
+            </Button>
           )}
-          {(media.episodeNumber || media.seasonNumber) && (
-            <Text
-              style={{
-                textAlign: 'center',
-                color: 'gray',
-              }}
-            >
-              Season {media.seasonNumber} {media.episodeNumber && `episode ${media.episodeNumber}`}
-            </Text>
+          {media.imdbId && (
+            <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
+              <ActionIcon>
+                <IconLink />
+              </ActionIcon>
+            </Anchor>
           )}
         </Group>
         <Group direction="column" position="apart">
