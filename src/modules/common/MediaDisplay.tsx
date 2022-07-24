@@ -60,7 +60,7 @@ export function MediaDisplay(props: { media: IMedia }) {
         <Group
           style={{ minWidth: phone ? 450 : '65vw' }}
           noWrap
-          mr="sm"
+          mr="md"
           my="sm"
           position="apart"
           className={classes.overview}
