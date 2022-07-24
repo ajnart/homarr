@@ -5,7 +5,6 @@ name: Development CI
 # documentation.
 on:
   push:
-    branches: [dev]
     paths-ignore:
       - '.github/**'
       - '**.md'
@@ -13,17 +12,6 @@ on:
     paths-ignore:
       - '.github/**'
       - '**.md'
-  workflow_dispatch:
-    inputs:
-      tags:
-        required: true
-        description: 'Tags to deploy to'
-
-env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   # Push image to GitHub Packages.
@@ -31,7 +19,6 @@ jobs:
   yarn_install_and_build:
     runs-on: ubuntu-latest
     steps:
-
       - name: Setup
         uses: actions/setup-node@v3
 
@@ -50,87 +37,5 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-yarn-
 
-      - name: Nextjs cache
-        uses: actions/cache@v2
-        with:
-        # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-
       - run: yarn install --immutable
       - run: yarn build
-
-      - name: Cache build output
-        uses: actions/cache@v2
-        id: restore-build
-        with:
-          path: |
-             ./next.config.js
-             ./pages/
-             ./public/
-             ./.next/static/
-             ./.next/standalone/
-             ./packages.json
-          key: ${{ github.sha }}
-
-  docker_image_build_and_push:
-    needs: [yarn_install_and_build]
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: actions/cache@v2
-        id: restore-build
-        with:
-          path: |
-             ./next.config.js
-             ./pages/
-             ./public/
-             ./.next/static/
-             ./.next/standalone/
-             ./packages.json
-          key: ${{ github.sha }}
-
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          # list of Docker images to use as base name for tags
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          # generate Docker tags based on the following events/attributes
-          tags: |
-            type=ref,event=pr
-            tpye=raw,value=dev,priority=1
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Login to GHCR
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
-          context: .
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
