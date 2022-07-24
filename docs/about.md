@@ -53,6 +53,7 @@ If you have any questions about Homarr or want to share information with us, ple
 ---
 
 ## ✨ Features
+
 - Integrates with services you use.
 - Search the web direcetly from your homepage.
 - Real-time status indicator for every service.
