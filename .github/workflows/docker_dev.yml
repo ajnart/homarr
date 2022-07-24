@@ -70,6 +70,7 @@ jobs:
       - run: yarn build
 
       - name: Docker meta
+        if: github.event_name != 'pull_request'
         id: meta
         uses: docker/metadata-action@v4
         with:
@@ -95,6 +96,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
+        if: github.event_name != 'pull_request'
         uses: docker/build-push-action@v3
         with:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
