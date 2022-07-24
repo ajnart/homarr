@@ -12,6 +12,7 @@ export default function OverseerrMediaDisplay(props: any) {
         seasonNumber: media.mediaInfo?.seasons.length,
         plexUrl: media.mediaInfo?.plexUrl,
         imdbId: media.mediaInfo?.imdbId,
+        ...media,
       }}
     />
   );
