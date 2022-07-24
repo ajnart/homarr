@@ -15,9 +15,9 @@ on:
       - '**.md'
   workflow_dispatch:
     inputs:
-      tags:
+      tag:
         required: true
-        description: 'Tags to deploy to'
+        description: 'Tag to deploy to'
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -79,7 +79,8 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=ref,event=pr
-            tpye=raw,value=dev,priority=1
+            type=raw,value=${{ github.event.inputs.tag }}, prefix=test-${{ github.event.inputs.tag }},enable=${{ github.event.inputs.tag }}
+            tpye=raw,value=dev,priority=1,enable=!${{ github.event.inputs.tags }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
