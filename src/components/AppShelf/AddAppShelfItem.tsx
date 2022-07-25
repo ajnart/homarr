@@ -38,7 +38,7 @@ export function AddItemShelfButton(props: any) {
       >
         <AddAppShelfItemForm setOpened={setOpened} />
       </Modal>
-      <Tooltip label="Add a service">
+      <Tooltip withinPortal label="Add a service">
         <ActionIcon
           variant="default"
           radius="md"

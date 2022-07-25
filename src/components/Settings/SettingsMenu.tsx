@@ -44,18 +44,18 @@ export function SettingsMenuButton(props: any) {
         <SettingsMenu />
         <Credits />
       </Drawer>
-      <ActionIcon
-        variant="default"
-        radius="md"
-        size="xl"
-        color="blue"
-        style={props.style}
-        onClick={() => setOpened(true)}
-      >
-        <Tooltip label="Settings">
+      <Tooltip label="Settings">
+        <ActionIcon
+          variant="default"
+          radius="md"
+          size="xl"
+          color="blue"
+          style={props.style}
+          onClick={() => setOpened(true)}
+        >
           <IconSettings />
-        </Tooltip>
-      </ActionIcon>
+        </ActionIcon>
+      </Tooltip>
     </>
   );
 }

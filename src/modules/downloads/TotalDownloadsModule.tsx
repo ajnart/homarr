@@ -43,6 +43,7 @@ export default function TotalDownloadsComponent() {
   const totalDownloadSpeed = torrents.reduce((acc, torrent) => acc + torrent.downloadSpeed, 0);
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
   useEffect(() => {
+    if (downloadServices.length === 0) return;
     const interval = setSafeInterval(() => {
       // Send one request with each download service inside
       axios
@@ -78,13 +79,17 @@ export default function TotalDownloadsComponent() {
 
   if (downloadServices.length === 0) {
     return (
-      <Stack>
+      <Group>
         <Title order={4}>No supported download clients found!</Title>
-        <Group noWrap>
-          <Text>Add a download service to view your current downloads...</Text>
-          <AddItemShelfButton />
-        </Group>
-      </Stack>
+        <div>
+          <AddItemShelfButton
+            style={{
+              float: 'inline-end',
+            }}
+          />
+          Add a download service to view your current downloads
+        </div>
+      </Group>
     );
   }
 
