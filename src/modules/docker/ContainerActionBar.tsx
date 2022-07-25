@@ -1,5 +1,4 @@
 import { Button, Group, Modal, Title } from '@mantine/core';
-import { useBooleanToggle } from '@mantine/hooks';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
@@ -14,6 +13,7 @@ import axios from 'axios';
 import Dockerode from 'dockerode';
 import { tryMatchService } from '../../tools/addToHomarr';
 import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
+import { useState } from 'react';
 
 function sendDockerCommand(
   action: string,
@@ -60,7 +60,7 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
-  const [opened, setOpened] = useBooleanToggle(false);
+  const [opened, setOpened] = useState<boolean>(false);
   return (
     <Group>
       <Modal

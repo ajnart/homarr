@@ -6,11 +6,11 @@ import {
   IconCheck as Check,
   TablerIcon,
 } from '@tabler/icons';
-import { DropzoneStatus, FullScreenDropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import { setCookie } from 'cookies-next';
+import { Dropzone } from '@mantine/dropzone';
 import { useConfig } from '../../tools/state';
 import { Config } from '../../tools/types';
 import { migrateToIdConfig } from '../../tools/migrate';
@@ -62,7 +62,7 @@ export default function LoadConfigComponent(props: any) {
   const openRef = useRef<() => void>();
 
   return (
-    <FullScreenDropzone
+    <Dropzone.FullScreen
       onDrop={(files) => {
         files[0].text().then((e) => {
           try {
@@ -100,7 +100,7 @@ export default function LoadConfigComponent(props: any) {
       }}
       accept={['application/json']}
     >
-      {(status) => dropzoneChildren(status, theme)}
-    </FullScreenDropzone>
+      {(status: any) => dropzoneChildren(status, theme)}
+    </Dropzone.FullScreen>
   );
 }

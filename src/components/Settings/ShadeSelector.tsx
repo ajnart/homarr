@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { ColorSwatch, Group, Popover, Text, useMantineTheme, MantineTheme } from '@mantine/core';
+import {
+  ColorSwatch,
+  Group,
+  Popover,
+  Text,
+  useMantineTheme,
+  MantineTheme,
+  Stack,
+  Grid,
+} from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { useColorTheme } from '../../tools/color';
 
@@ -31,36 +40,44 @@ export function ShadeSelector() {
   };
 
   const primarySwatches = primaryShades.map(({ swatch, shade }) => (
-    <ColorSwatch
-      component="button"
-      type="button"
-      onClick={() => setConfigShade(shade)}
-      key={Number(shade)}
-      color={swatch}
-      size={22}
-      style={{ color: theme.white, cursor: 'pointer' }}
-    />
+    <Grid.Col span={1}>
+      <ColorSwatch
+        component="button"
+        type="button"
+        onClick={() => setConfigShade(shade)}
+        key={Number(shade)}
+        color={swatch}
+        size={22}
+        style={{ cursor: 'pointer' }}
+      />
+    </Grid.Col>
   ));
 
   const secondarySwatches = secondaryShades.map(({ swatch, shade }) => (
-    <ColorSwatch
-      component="button"
-      type="button"
-      onClick={() => setConfigShade(shade)}
-      key={Number(shade)}
-      color={swatch}
-      size={22}
-      style={{ color: theme.white, cursor: 'pointer' }}
-    />
+    <Grid.Col span={1}>
+      <ColorSwatch
+        component="button"
+        type="button"
+        onClick={() => setConfigShade(shade)}
+        key={Number(shade)}
+        color={swatch}
+        size={22}
+        style={{ cursor: 'pointer' }}
+      />
+    </Grid.Col>
   ));
 
   return (
-    <Group direction="row" spacing={3}>
+    <Group>
       <Popover
+        width={350}
+        withinPortal
         opened={opened}
         onClose={() => setOpened(false)}
-        transitionDuration={0}
-        target={
+        position="left"
+        withArrow
+      >
+        <Popover.Target>
           <ColorSwatch
             component="button"
             type="button"
@@ -69,27 +86,15 @@ export function ShadeSelector() {
             size={22}
             style={{ display: 'block', cursor: 'pointer' }}
           />
-        }
-        styles={{
-          root: {
-            marginRight: theme.spacing.xs,
-          },
-          body: {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-          },
-          arrow: {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-          },
-        }}
-        position="bottom"
-        placement="end"
-        withArrow
-        arrowSize={3}
-      >
-        <Group direction="column" spacing="xs">
-          <Group spacing="xs">{primarySwatches}</Group>
-          <Group spacing="xs">{secondarySwatches}</Group>
-        </Group>
+        </Popover.Target>
+        <Popover.Dropdown>
+          <Stack spacing="xs">
+            <Grid gutter="lg" columns={10}>
+              {primarySwatches}
+              {secondarySwatches}
+            </Grid>
+          </Stack>
+        </Popover.Dropdown>
       </Popover>
       <Text>Shade</Text>
     </Group>

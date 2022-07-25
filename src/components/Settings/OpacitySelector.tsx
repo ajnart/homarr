@@ -1,5 +1,5 @@
 import React from 'react';
-import { Group, Text, Slider } from '@mantine/core';
+import { Group, Text, Slider, Stack } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 
 export function OpacitySelector() {
@@ -29,7 +29,7 @@ export function OpacitySelector() {
   };
 
   return (
-    <Group direction="column" spacing="xs" grow>
+    <Stack spacing="xs">
       <Text>App Opacity</Text>
       <Slider
         defaultValue={config.settings.appOpacity || 100}
@@ -39,6 +39,6 @@ export function OpacitySelector() {
         styles={{ markLabel: { fontSize: 'xx-small' } }}
         onChange={(value) => setConfigOpacity(value)}
       />
-    </Group>
+    </Stack>
   );
 }

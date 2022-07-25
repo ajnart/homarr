@@ -20,7 +20,6 @@ export default function DockerMenuButton(props: any) {
   const [opened, setOpened] = useState(false);
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
-  const [visible, setVisible] = useState(false);
   const { config } = useConfig();
   const moduleEnabled = config.modules?.[DockerModule.title]?.enabled ?? false;
 
@@ -32,14 +31,12 @@ export default function DockerMenuButton(props: any) {
     if (!moduleEnabled) {
       return;
     }
-    setVisible(true);
     setTimeout(() => {
       axios
         .get('/api/docker/containers')
         .then((res) => {
           setContainers(res.data);
           setSelection([]);
-          setVisible(false);
         })
         .catch(() =>
           // Send an Error notification
@@ -61,12 +58,14 @@ export default function DockerMenuButton(props: any) {
   if (containers.length < 1) return null;
   return (
     <>
-      <Drawer opened={opened} onClose={() => setOpened(false)} padding="xl" size="full">
-        <ContainerActionBar selected={selection} reload={reload} />
-        <div style={{ position: 'relative' }}>
-          <LoadingOverlay transitionDuration={500} visible={visible} />
-          <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
-        </div>
+      <Drawer
+        opened={opened}
+        onClose={() => setOpened(false)}
+        padding="xl"
+        size="full"
+        title={<ContainerActionBar selected={selection} reload={reload} />}
+      >
+        <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
       </Drawer>
       <Group position="center">
         <ActionIcon

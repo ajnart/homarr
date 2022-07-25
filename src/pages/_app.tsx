@@ -8,7 +8,6 @@ import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
 import { ConfigProvider } from '../tools/state';
 import { theme } from '../tools/theme';
-import { styles } from '../tools/styles';
 import { ColorTheme } from '../tools/color';
 
 export default function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
@@ -48,9 +47,6 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
               primaryColor,
               primaryShade,
               colorScheme,
-            }}
-            styles={{
-              ...styles,
             }}
             withGlobalStyles
             withNormalizeCSS

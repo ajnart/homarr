@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, createStyles, Grid, Group, Paper, useMantineColorScheme } from '@mantine/core';
+import { Accordion, createStyles, Grid, Group, Paper, Stack, useMantineColorScheme } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -156,7 +156,7 @@ const AppShelf = (props: any) => {
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // Return one item for each category
-      <Group grow direction="column">
+      <Stack>
         <Accordion
           disableIconRotation
           classNames={classes}
@@ -195,14 +195,14 @@ const AppShelf = (props: any) => {
             </Accordion.Item>
           ) : null}
         </Accordion>
-      </Group>
+      </Stack>
     );
   }
   return (
-    <Group grow direction="column">
+    <Stack>
       {item()}
       <ModuleWrapper mt="xl" module={DownloadsModule} />
-    </Group>
+    </Stack>
   );
 };
 

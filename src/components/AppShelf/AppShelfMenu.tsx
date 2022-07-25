@@ -1,7 +1,7 @@
-import { Menu, Modal, Text, useMantineTheme } from '@mantine/core';
+import { ActionIcon, Menu, Modal, Text, useMantineTheme } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { useState } from 'react';
-import { IconCheck as Check, IconEdit as Edit, IconTrash as Trash } from '@tabler/icons';
+import { IconCheck as Check, IconEdit as Edit, IconMenu, IconTrash as Trash } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import { AddAppShelfItemForm } from './AddAppShelfItem';
@@ -23,49 +23,60 @@ export default function AppShelfMenu(props: any) {
         <AddAppShelfItemForm setOpened={setOpened} {...service} message="Save service" />
       </Modal>
       <Menu
-        position="right"
-        radius="md"
+        withinPortal
+        width={150}
         shadow="xl"
+        withArrow
+        closeOnItemClick={false}
+        radius="md"
+        position="right"
         styles={{
-          body: {
+          dropdown: {
             // Add shadow and elevation to the body
             boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.05)',
           },
         }}
       >
-        <Menu.Label>Settings</Menu.Label>
-        <Menu.Item
-          color="primary"
-          icon={<Edit />}
-          // TODO: #2 Add the ability to edit the service.
-          onClick={() => setOpened(true)}
-        >
-          Edit
-        </Menu.Item>
-        <Menu.Label>Danger zone</Menu.Label>
-        <Menu.Item
-          color="red"
-          onClick={(e: any) => {
-            setConfig({
-              ...config,
-              services: config.services.filter((s) => s.id !== service.id),
-            });
-            showNotification({
-              autoClose: 5000,
-              title: (
-                <Text>
-                  Service <b>{service.name}</b> removed successfully!
-                </Text>
-              ),
-              color: 'green',
-              icon: <Check />,
-              message: undefined,
-            });
-          }}
-          icon={<Trash />}
-        >
-          Delete
-        </Menu.Item>
+        <Menu.Target>
+          <ActionIcon style={{}}>
+            <IconMenu />
+          </ActionIcon>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Label>Settings</Menu.Label>
+          <Menu.Item
+            color="primary"
+            icon={<Edit />}
+            // TODO: #2 Add the ability to edit the service.
+            onClick={() => setOpened(true)}
+          >
+            Edit
+          </Menu.Item>
+          <Menu.Label>Danger zone</Menu.Label>
+          <Menu.Item
+            color="red"
+            onClick={(e: any) => {
+              setConfig({
+                ...config,
+                services: config.services.filter((s) => s.id !== service.id),
+              });
+              showNotification({
+                autoClose: 5000,
+                title: (
+                  <Text>
+                    Service <b>{service.name}</b> removed successfully!
+                  </Text>
+                ),
+                color: 'green',
+                icon: <Check />,
+                message: undefined,
+              });
+            }}
+            icon={<Trash />}
+          >
+            Delete
+          </Menu.Item>
+        </Menu.Dropdown>
       </Menu>
     </>
   );
