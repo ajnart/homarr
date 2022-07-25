@@ -1,5 +1,4 @@
 import { Box, createStyles, Group, Header as Head } from '@mantine/core';
-import { useBooleanToggle } from '@mantine/hooks';
 import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
 
 import DockerMenuButton from '../../modules/docker/DockerModule';
@@ -23,9 +22,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function Header(props: any) {
-  const [opened, toggleOpened] = useBooleanToggle(false);
   const { classes, cx } = useStyles();
-  const [hidden, toggleHidden] = useBooleanToggle(true);
 
   return (
     <Head height="auto">

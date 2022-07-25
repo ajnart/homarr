@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ColorSwatch, Group, Popover, Text, useMantineTheme } from '@mantine/core';
+import { ColorSwatch, Grid, Group, Popover, Text, useMantineTheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { useColorTheme } from '../../tools/color';
 
@@ -44,51 +44,44 @@ export function ColorSelector({ type }: ColorControlProps) {
   };
 
   const swatches = colors.map(({ color, swatch }) => (
-    <ColorSwatch
-      component="button"
-      type="button"
-      onClick={() => setConfigColor(color)}
-      key={color}
-      color={swatch}
-      size={22}
-      style={{ color: theme.white, cursor: 'pointer' }}
-    />
+    <Grid.Col span={2}>
+      <ColorSwatch
+        component="button"
+        type="button"
+        onClick={() => setConfigColor(color)}
+        key={color}
+        color={swatch}
+        size={22}
+        style={{ cursor: 'pointer' }}
+      />
+    </Grid.Col>
   ));
 
   return (
-    <Group direction="row" spacing={3}>
+    <Group>
       <Popover
+        width={250}
+        withinPortal
         opened={opened}
         onClose={() => setOpened(false)}
-        transitionDuration={0}
-        target={
+        position="left"
+        withArrow
+      >
+        <Popover.Target>
           <ColorSwatch
             component="button"
             type="button"
             color={theme.colors[configColor][6]}
             onClick={() => setOpened((o) => !o)}
             size={22}
-            style={{ display: 'block', cursor: 'pointer' }}
+            style={{ cursor: 'pointer' }}
           />
-        }
-        styles={{
-          root: {
-            marginRight: theme.spacing.xs,
-          },
-          body: {
-            width: 152,
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-          },
-          arrow: {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-          },
-        }}
-        position="bottom"
-        placement="end"
-        withArrow
-        arrowSize={3}
-      >
-        <Group spacing="xs">{swatches}</Group>
+        </Popover.Target>
+        <Popover.Dropdown>
+          <Grid gutter="lg" columns={14}>
+            {swatches}
+          </Grid>
+        </Popover.Dropdown>
       </Popover>
       <Text>{type[0].toUpperCase() + type.slice(1)} color</Text>
     </Group>

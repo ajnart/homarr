@@ -1,4 +1,4 @@
-import { Group, Text, SegmentedControl, TextInput } from '@mantine/core';
+import { Group, Text, SegmentedControl, TextInput, Stack } from '@mantine/core';
 import { useState } from 'react';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
@@ -24,8 +24,8 @@ export default function CommonSettings(args: any) {
   );
 
   return (
-    <Group direction="column" grow mb="lg">
-      <Group grow direction="column" spacing={0}>
+    <Stack mb="lg">
+      <Stack spacing={0}>
         <Text>Search engine</Text>
         <Tip>
           Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube or
@@ -74,13 +74,13 @@ export default function CommonSettings(args: any) {
             />
           </>
         )}
-      </Group>
+      </Stack>
       <ColorSchemeSwitch />
       <WidgetsPositionSwitch />
       <ModuleEnabler />
       <ConfigChanger />
       <SaveConfigComponent />
       <Tip>Upload your config file by dragging and dropping it onto the page!</Tip>
-    </Group>
+    </Stack>
   );
 }
