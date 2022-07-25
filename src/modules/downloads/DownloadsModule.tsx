@@ -83,10 +83,10 @@ export default function DownloadComponent() {
 
   if (downloadServices.length === 0) {
     return (
-      <Group direction="column">
+      <Group>
         <Title order={3}>No supported download clients found!</Title>
         <Group>
-          <Text>Add a download service to view your current downloads...</Text>
+          <Text>Add a download service to view your current downloads</Text>
           <AddItemShelfButton />
         </Group>
       </Group>

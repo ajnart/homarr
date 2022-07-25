@@ -1,4 +1,4 @@
-import { ActionIcon, Drawer, Group, LoadingOverlay, Text } from '@mantine/core';
+import { ActionIcon, Drawer, Group, LoadingOverlay, Text, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Docker from 'dockerode';
@@ -67,7 +67,7 @@ export default function DockerMenuButton(props: any) {
       >
         <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
       </Drawer>
-      <Group position="center">
+      <Tooltip label="Docker">
         <ActionIcon
           variant="default"
           radius="md"
@@ -77,7 +77,7 @@ export default function DockerMenuButton(props: any) {
         >
           <IconBrandDocker />
         </ActionIcon>
-      </Group>
+      </Tooltip>
     </>
   );
 }
