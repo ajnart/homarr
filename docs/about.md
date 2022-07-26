@@ -68,8 +68,3 @@ If you have any questions about Homarr or want to share information with us, ple
 
 ## 👀 Preview
 <img alt="Homarr Preview" align="center" width="100%" src="https://user-images.githubusercontent.com/71191962/169860380-856634fb-4f41-47cb-ba54-6a9e7b3b9c81.gif" />
-
-
-## ✨ Stars
-
-[![Star History Chart](https://api.star-history.com/svg?repos=ajnart/homarr&type=Timeline)](https://star-history.com/#ajnart/homarr&Timeline)
