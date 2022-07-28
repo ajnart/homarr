@@ -72,6 +72,11 @@ const config = {
             position: 'left',
           },
           {
+            href: 'https://homarr.ajnart.fr/',
+            label: 'Demo',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/ajnart/homarr',
             label: 'GitHub',
             position: 'right',
