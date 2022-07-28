@@ -12,6 +12,7 @@ on:
     paths-ignore:
       - '.github/**'
       - '**.md'
+  workflow_dispatch:
 
 jobs:
   # Push image to GitHub Packages.
