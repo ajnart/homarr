@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Donate'
-sidebar_position: 3
+sidebar_position: 4
 description: Help us maintain Homarr
 tags:
   - Support
