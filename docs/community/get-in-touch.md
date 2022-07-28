@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Getting in Touch'
-sidebar_position: 2
+sidebar_position: 3
 description: Still have a question? Click here!
 tags:
   - Support
