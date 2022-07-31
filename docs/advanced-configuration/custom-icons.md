@@ -1,3 +1,16 @@
+---
+tags:
+  - Docker
+  - Container
+  - Container Engine
+  - Icons
+  - Path
+  - Custom
+  - Customization
+  - Custom icons
+  - Services
+---
+
 # Custom Icons for Services
 
 ## How are icons requested?
@@ -13,13 +26,19 @@ Icons are requested in the following way:
 ![firefox_vCMTN5meLp](https://user-images.githubusercontent.com/71191962/170118033-a72ea587-4df0-43dd-8b7e-e0e7bae45dc6.gif)
 
 ## Adding your own icon(s)
-1. Mount the `/app/public/icons` folder of your docker container.
+### 1. Mounting the icon folder
+Mount the `/app/public/icons` folder of your docker container.
 
 ![image](https://user-images.githubusercontent.com/71191962/170479022-2f4176c8-9efc-496c-b419-2fc116cc3082.png)
 
-2. Add any icon(s) to the folder.
+### 2. Adding custom icons
+Add any icon(s) to the folder. If you're using unRAID, connect using SMB or (S-)FTP.
 
-3. Access the icon(s) using `/icons/name.png` or `/icons/name.svg`.
+### 3. Restart your docker container
+Currently, a restart of the Homarr container is required to being able to load icons from the frontend. Simply restart it after adding your desired icons to the folder.
+
+### 4. Use your icons for services
+Access the icon(s) using `/icons/name.png` or `/icons/name.svg`.
 
 ![image](https://user-images.githubusercontent.com/71191962/170479159-5df02aa0-683a-44f2-bdcf-4f58585655dd.png)
 

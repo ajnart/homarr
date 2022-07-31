@@ -1,4 +1,4 @@
-# Key Shortcuts
+# Keyboard Shortcuts
 
 Homarr offers you key shortcuts for better productivity.
 

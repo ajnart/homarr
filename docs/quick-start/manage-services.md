@@ -25,7 +25,7 @@ However, you may change the icon to your preferences.
 ![screen recording of entering the details in the creation modal](img/homarr-add-service.gif)
 
 :::info
-Icons are automatically requested from [dashboard-icons](https://github.com/walkxhub/dashboard-icons). You can learn more about this [here](../advanced-features/custom-icons.md).
+Icons are automatically requested from [dashboard-icons](https://github.com/walkxhub/dashboard-icons). You can learn more about this [here](../advanced-configuration/custom-icons.md).
 :::
 
 ## Re-ordering services
