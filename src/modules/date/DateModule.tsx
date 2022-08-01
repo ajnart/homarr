@@ -1,4 +1,4 @@
-import { Group, Stack, Text, Title } from '@mantine/core';
+import { Group, Text, Title } from '@mantine/core';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { IconClock as Clock } from '@tabler/icons';
@@ -36,7 +36,7 @@ export default function DateComponent(props: any) {
   return (
     <Group p="sm" spacing="xs">
       <Title>{dayjs(date).format(formatString)}</Title>
-      <Text size="xl">{dayjs(date).format('dddd, MMMM D')}</Text>
+      <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>
     </Group>
   );
 }

@@ -1,10 +1,7 @@
-import { Group, Text, useMantineTheme, MantineTheme } from '@mantine/core';
+import { Group, Text, useMantineTheme } from '@mantine/core';
 import {
-  IconUpload as Upload,
-  IconPhoto as Photo,
   IconX as X,
   IconCheck as Check,
-  TablerIcon,
   IconX,
   IconPhoto,
   IconUpload,
