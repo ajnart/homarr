@@ -1,4 +1,4 @@
-import { Group, Text, SegmentedControl, TextInput, Stack } from '@mantine/core';
+import { Text, SegmentedControl, TextInput, Stack } from '@mantine/core';
 import { useState } from 'react';
 import { useConfig } from '../../tools/state';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';

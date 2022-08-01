@@ -1,5 +1,5 @@
 import React from 'react';
-import { Group, Text, Slider, Stack } from '@mantine/core';
+import { Text, Slider, Stack } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 
 export function AppCardWidthSelector() {

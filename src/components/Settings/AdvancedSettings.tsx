@@ -1,4 +1,4 @@
-import { TextInput, Group, Button, Stack } from '@mantine/core';
+import { TextInput, Button, Stack } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useConfig } from '../../tools/state';
 import { ColorSelector } from './ColorSelector';
