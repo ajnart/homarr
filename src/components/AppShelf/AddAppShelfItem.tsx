@@ -8,7 +8,7 @@ import {
   LoadingOverlay,
   Modal,
   MultiSelect,
-  ScrollArea,
+  PasswordInput,
   Select,
   Switch,
   Tabs,
@@ -194,146 +194,144 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       >
         <Tabs grow>
           <Tabs.Tab label="Options">
-            <ScrollArea style={{ height: 500 }} scrollbarSize={4}>
-              <Group direction="column" grow>
-                <TextInput
-                  required
-                  label="Service name"
-                  placeholder="Plex"
-                  {...form.getInputProps('name')}
-                />
+            <Group direction="column" grow>
+              <TextInput
+                required
+                label="Service name"
+                placeholder="Plex"
+                {...form.getInputProps('name')}
+              />
 
-                <TextInput
-                  required
-                  label="Icon URL"
-                  placeholder={DEFAULT_ICON}
-                  {...form.getInputProps('icon')}
-                />
-                <TextInput
-                  required
-                  label="Service URL"
-                  placeholder="http://localhost:7575"
-                  {...form.getInputProps('url')}
-                />
-                <TextInput
-                  label="On Click URL"
-                  placeholder="http://sonarr.example.com"
-                  {...form.getInputProps('openedUrl')}
-                />
-                <Select
-                  label="Service type"
-                  defaultValue="Other"
-                  placeholder="Pick one"
-                  required
-                  searchable
-                  data={ServiceTypeList}
-                  {...form.getInputProps('type')}
-                />
-                <Select
-                  label="Category"
-                  data={categoryList}
-                  placeholder="Select a category or create a new one"
-                  nothingFound="Nothing found"
-                  searchable
-                  clearable
-                  creatable
-                  onClick={(e) => {
-                    e.preventDefault();
-                  }}
-                  getCreateLabel={(query) => `+ Create "${query}"`}
-                  onCreate={(query) => {}}
-                  {...form.getInputProps('category')}
-                />
-                <LoadingOverlay visible={isLoading} />
-                {(form.values.type === 'Sonarr' ||
-                  form.values.type === 'Radarr' ||
-                  form.values.type === 'Lidarr' ||
-                  form.values.type === 'Readarr') && (
-                  <>
-                    <TextInput
-                      required
-                      label="API key"
-                      placeholder="Your API key"
-                      value={form.values.apiKey}
-                      onChange={(event) => {
-                        form.setFieldValue('apiKey', event.currentTarget.value);
-                      }}
-                      error={form.errors.apiKey && 'Invalid API key'}
-                    />
-                    <Tip>
-                      Get your API key{' '}
-                      <Anchor
-                        target="_blank"
-                        weight="bold"
-                        style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
-                        href={`${hostname}/settings/general`}
-                      >
-                        here.
-                      </Anchor>
-                    </Tip>
-                  </>
-                )}
-                {form.values.type === 'qBittorrent' && (
-                  <>
-                    <TextInput
-                      required
-                      label="Username"
-                      placeholder="admin"
-                      value={form.values.username}
-                      onChange={(event) => {
-                        form.setFieldValue('username', event.currentTarget.value);
-                      }}
-                      error={form.errors.username && 'Invalid username'}
-                    />
-                    <TextInput
-                      required
-                      label="Password"
-                      placeholder="adminadmin"
-                      value={form.values.password}
-                      onChange={(event) => {
-                        form.setFieldValue('password', event.currentTarget.value);
-                      }}
-                      error={form.errors.password && 'Invalid password'}
-                    />
-                  </>
-                )}
-                {form.values.type === 'Deluge' && (
-                  <>
-                    <TextInput
-                      label="Password"
-                      placeholder="password"
-                      value={form.values.password}
-                      onChange={(event) => {
-                        form.setFieldValue('password', event.currentTarget.value);
-                      }}
-                      error={form.errors.password && 'Invalid password'}
-                    />
-                  </>
-                )}
-                {form.values.type === 'Transmission' && (
-                  <>
-                    <TextInput
-                      label="Username"
-                      placeholder="admin"
-                      value={form.values.username}
-                      onChange={(event) => {
-                        form.setFieldValue('username', event.currentTarget.value);
-                      }}
-                      error={form.errors.username && 'Invalid username'}
-                    />
-                    <TextInput
-                      label="Password"
-                      placeholder="adminadmin"
-                      value={form.values.password}
-                      onChange={(event) => {
-                        form.setFieldValue('password', event.currentTarget.value);
-                      }}
-                      error={form.errors.password && 'Invalid password'}
-                    />
-                  </>
-                )}
-              </Group>
-            </ScrollArea>
+              <TextInput
+                required
+                label="Icon URL"
+                placeholder={DEFAULT_ICON}
+                {...form.getInputProps('icon')}
+              />
+              <TextInput
+                required
+                label="Service URL"
+                placeholder="http://localhost:7575"
+                {...form.getInputProps('url')}
+              />
+              <TextInput
+                label="On Click URL"
+                placeholder="http://sonarr.example.com"
+                {...form.getInputProps('openedUrl')}
+              />
+              <Select
+                label="Service type"
+                defaultValue="Other"
+                placeholder="Pick one"
+                required
+                searchable
+                data={ServiceTypeList}
+                {...form.getInputProps('type')}
+              />
+              <Select
+                label="Category"
+                data={categoryList}
+                placeholder="Select a category or create a new one"
+                nothingFound="Nothing found"
+                searchable
+                clearable
+                creatable
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+                getCreateLabel={(query) => `+ Create "${query}"`}
+                onCreate={(query) => {}}
+                {...form.getInputProps('category')}
+              />
+              <LoadingOverlay visible={isLoading} />
+              {(form.values.type === 'Sonarr' ||
+                form.values.type === 'Radarr' ||
+                form.values.type === 'Lidarr' ||
+                form.values.type === 'Readarr') && (
+                <>
+                  <TextInput
+                    required
+                    label="API key"
+                    placeholder="Your API key"
+                    value={form.values.apiKey}
+                    onChange={(event) => {
+                      form.setFieldValue('apiKey', event.currentTarget.value);
+                    }}
+                    error={form.errors.apiKey && 'Invalid API key'}
+                  />
+                  <Tip>
+                    Get your API key{' '}
+                    <Anchor
+                      target="_blank"
+                      weight="bold"
+                      style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
+                      href={`${hostname}/settings/general`}
+                    >
+                      here.
+                    </Anchor>
+                  </Tip>
+                </>
+              )}
+              {form.values.type === 'qBittorrent' && (
+                <>
+                  <TextInput
+                    required
+                    label="Username"
+                    placeholder="admin"
+                    value={form.values.username}
+                    onChange={(event) => {
+                      form.setFieldValue('username', event.currentTarget.value);
+                    }}
+                    error={form.errors.username && 'Invalid username'}
+                  />
+                  <PasswordInput
+                    required
+                    label="Password"
+                    placeholder="adminadmin"
+                    value={form.values.password}
+                    onChange={(event) => {
+                      form.setFieldValue('password', event.currentTarget.value);
+                    }}
+                    error={form.errors.password && 'Invalid password'}
+                  />
+                </>
+              )}
+              {form.values.type === 'Deluge' && (
+                <>
+                  <PasswordInput
+                    label="Password"
+                    placeholder="password"
+                    value={form.values.password}
+                    onChange={(event) => {
+                      form.setFieldValue('password', event.currentTarget.value);
+                    }}
+                    error={form.errors.password && 'Invalid password'}
+                  />
+                </>
+              )}
+              {form.values.type === 'Transmission' && (
+                <>
+                  <TextInput
+                    label="Username"
+                    placeholder="admin"
+                    value={form.values.username}
+                    onChange={(event) => {
+                      form.setFieldValue('username', event.currentTarget.value);
+                    }}
+                    error={form.errors.username && 'Invalid username'}
+                  />
+                  <PasswordInput
+                    label="Password"
+                    placeholder="adminadmin"
+                    value={form.values.password}
+                    onChange={(event) => {
+                      form.setFieldValue('password', event.currentTarget.value);
+                    }}
+                    error={form.errors.password && 'Invalid password'}
+                  />
+                </>
+              )}
+            </Group>
           </Tabs.Tab>
           <Tabs.Tab label="Advanced Options">
             <Group direction="column" grow>
