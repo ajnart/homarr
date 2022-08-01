@@ -27,7 +27,6 @@ export default function AppShelfMenu(props: any) {
         width={150}
         shadow="xl"
         withArrow
-        closeOnItemClick={false}
         radius="md"
         position="right"
         styles={{
