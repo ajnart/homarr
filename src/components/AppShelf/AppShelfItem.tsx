@@ -3,7 +3,6 @@ import {
   Card,
   Anchor,
   AspectRatio,
-  Image,
   Center,
   createStyles,
   useMantineColorScheme,
@@ -12,6 +11,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import Image from 'next/image';
 import { serviceItem } from '../../tools/types';
 import PingComponent from '../../modules/ping/PingModule';
 import AppShelfMenu from './AppShelfMenu';
@@ -121,11 +121,13 @@ export function AppShelfItem(props: any) {
                 }}
               >
                 <Image
-                  styles={{ root: { cursor: 'pointer' } }}
+                  style={{
+                    cursor: 'pointer',
+                  }}
                   width={80}
                   height={80}
-                  src={service.icon}
-                  fit="contain"
+                  src={`/api/imageproxy?url=${service.icon}`}
+                  objectFit="contain"
                   onClick={() => {
                     if (service.openedUrl) {
                       window.open(service.openedUrl, service.newTab === false ? '_top' : '_blank');
