@@ -181,9 +181,6 @@ export function ModuleWrapper(props: any) {
 export function ModuleMenu(props: any) {
   const { module, styles, hovered } = props;
   const items: JSX.Element[] = getItems(module);
-  if (!hovered) {
-    return null;
-  }
   return (
     <>
       {module.options && (
@@ -210,7 +207,7 @@ export function ModuleMenu(props: any) {
                 right: 12,
               }}
             >
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: hovered ? 1 : 0 }}>
                 <ActionIcon>
                   <IconAdjustments />
                 </ActionIcon>
