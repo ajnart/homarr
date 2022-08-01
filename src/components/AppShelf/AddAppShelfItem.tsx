@@ -85,25 +85,26 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
   const [isLoading, setLoading] = useState(false);
 
   // Extract all the categories from the services in config
-  const categoryList = config.services.reduce((acc, cur) => {
+  const InitialCategories = config.services.reduce((acc, cur) => {
     if (cur.category && !acc.includes(cur.category)) {
       acc.push(cur.category);
     }
     return acc;
   }, [] as string[]);
+  const [categories, setCategories] = useState<string[]>(InitialCategories);
 
   const form = useForm({
     initialValues: {
       id: props.id ?? uuidv4(),
       type: props.type ?? 'Other',
-      category: props.category ?? undefined,
+      category: props.category ?? null,
       name: props.name ?? '',
       icon: props.icon ?? DEFAULT_ICON,
       url: props.url ?? '',
-      apiKey: props.apiKey ?? (undefined as unknown as string),
-      username: props.username ?? (undefined as unknown as string),
-      password: props.password ?? (undefined as unknown as string),
-      openedUrl: props.openedUrl ?? (undefined as unknown as string),
+      apiKey: props.apiKey ?? undefined,
+      username: props.username ?? undefined,
+      password: props.password ?? undefined,
+      openedUrl: props.openedUrl ?? undefined,
       status: props.status ?? ['200'],
       newTab: props.newTab ?? true,
     },
@@ -162,21 +163,21 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       </Center>
       <form
         onSubmit={form.onSubmit(() => {
-          if (JSON.stringify(form.values.status) === JSON.stringify(['200'])) {
-            form.values.status = undefined;
-          }
-          if (form.values.newTab === true) {
-            form.values.newTab = undefined;
+          const newForm = { ...form.values };
+          if (newForm.newTab === true) newForm.newTab = undefined;
+          if (newForm.category === null) newForm.category = undefined;
+          if (newForm.status.length === 1 && newForm.status[0] === '200') {
+            delete newForm.status;
           }
           // If service already exists, update it.
-          if (config.services && config.services.find((s) => s.id === form.values.id)) {
+          if (config.services && config.services.find((s) => s.id === newForm.id)) {
             setConfig({
               ...config,
               // replace the found item by matching ID
               services: config.services.map((s) => {
-                if (s.id === form.values.id) {
+                if (s.id === newForm.id) {
                   return {
-                    ...form.values,
+                    ...newForm,
                   };
                 }
                 return s;
@@ -185,7 +186,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
           } else {
             setConfig({
               ...config,
-              services: [...config.services, form.values],
+              services: [...config.services, newForm],
             });
           }
           setOpened(false);
@@ -205,7 +206,6 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 placeholder="Plex"
                 {...form.getInputProps('name')}
               />
-
               <TextInput
                 required
                 label="Icon URL"
@@ -234,17 +234,18 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               />
               <Select
                 label="Category"
-                data={categoryList}
+                data={categories}
                 placeholder="Select a category or create a new one"
                 nothingFound="Nothing found"
                 searchable
                 clearable
                 creatable
-                onClick={(e) => {
-                  e.preventDefault();
+                onCreate={(query) => {
+                  const item = { value: query, label: query };
+                  setCategories([...InitialCategories, query]);
+                  return item;
                 }}
                 getCreateLabel={(query) => `+ Create "${query}"`}
-                onCreate={(query) => {}}
                 {...form.getInputProps('category')}
               />
               <LoadingOverlay visible={isLoading} />
