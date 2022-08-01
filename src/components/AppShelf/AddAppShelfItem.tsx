@@ -8,6 +8,7 @@ import {
   LoadingOverlay,
   Modal,
   MultiSelect,
+  PasswordInput,
   Select,
   Stack,
   Switch,
@@ -289,7 +290,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     }}
                     error={form.errors.username && 'Invalid username'}
                   />
-                  <TextInput
+                  <PasswordInput
                     required
                     label="Password"
                     placeholder="adminadmin"
@@ -303,7 +304,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               )}
               {form.values.type === 'Deluge' && (
                 <>
-                  <TextInput
+                  <PasswordInput
                     label="Password"
                     placeholder="password"
                     value={form.values.password}
@@ -325,7 +326,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     }}
                     error={form.errors.username && 'Invalid username'}
                   />
-                  <TextInput
+                  <PasswordInput
                     label="Password"
                     placeholder="adminadmin"
                     value={form.values.password}
