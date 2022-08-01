@@ -1,11 +1,5 @@
 import { Group, Text, useMantineTheme } from '@mantine/core';
-import {
-  IconX as X,
-  IconCheck as Check,
-  IconX,
-  IconPhoto,
-  IconUpload,
-} from '@tabler/icons';
+import { IconX as X, IconCheck as Check, IconX, IconPhoto, IconUpload } from '@tabler/icons';
 import { showNotification } from '@mantine/notifications';
 import { setCookie } from 'cookies-next';
 import { Dropzone } from '@mantine/dropzone';

@@ -1,4 +1,4 @@
-import { Group, Stack } from '@mantine/core';
+import { Stack } from '@mantine/core';
 import { CalendarModule, DateModule, TotalDownloadsModule, WeatherModule } from '../../modules';
 import { DashdotModule } from '../../modules/dashdot';
 import { ModuleWrapper } from '../../modules/moduleWrapper';
