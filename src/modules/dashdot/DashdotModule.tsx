@@ -13,6 +13,10 @@ export const DashdotModule = asModule({
   icon: CalendarIcon,
   component: DashdotComponent,
   options: {
+    url: {
+      name: 'Dash. URL',
+      value: '',
+    },
     cpuMultiView: {
       name: 'CPU Multi-Core View',
       value: false,
@@ -88,12 +92,12 @@ const bytePrettyPrint = (byte: number): string =>
     ? `${(byte / 1024).toFixed(1)} KiB`
     : `${byte.toFixed(1)} B`;
 
-const useJson = (service: serviceItem | undefined, url: string) => {
+const useJson = (targetUrl: string, url: string) => {
   const [data, setData] = useState<any | undefined>();
 
   const doRequest = async () => {
     try {
-      const resp = await axios.get(url, { baseURL: service?.url });
+      const resp = await axios.get(`/api/modules/dashdot?url=${url}&base=${targetUrl}`);
 
       setData(resp.data);
       // eslint-disable-next-line no-empty
@@ -101,10 +105,10 @@ const useJson = (service: serviceItem | undefined, url: string) => {
   };
 
   useEffect(() => {
-    if (service?.url) {
+    if (targetUrl) {
       doRequest();
     }
-  }, [service?.url]);
+  }, [targetUrl]);
 
   return data;
 };
@@ -118,8 +122,10 @@ export function DashdotComponent() {
   const dashConfig = config.modules?.[DashdotModule.title]
     .options as typeof DashdotModule['options'];
   const isCompact = dashConfig?.useCompactView?.value ?? false;
-  const dashdotService = config.services.filter((service) => service.type === 'Dash.')[0];
-
+  const dashdotService: serviceItem | undefined = config.services.filter(
+    (service) => service.type === 'Dash.'
+  )[0];
+  const dashdotUrl = dashdotService?.url ?? dashConfig?.url?.value ?? '';
   const enabledGraphs = dashConfig?.graphs?.value ?? ['CPU', 'RAM', 'Storage', 'Network'];
   const cpuEnabled = enabledGraphs.includes('CPU');
   const storageEnabled = enabledGraphs.includes('Storage');
@@ -127,8 +133,8 @@ export function DashdotComponent() {
   const networkEnabled = enabledGraphs.includes('Network');
   const gpuEnabled = enabledGraphs.includes('GPU');
 
-  const info = useJson(dashdotService, '/info');
-  const storageLoad = useJson(dashdotService, '/load/storage');
+  const info = useJson(dashdotUrl, '/info');
+  const storageLoad = useJson(dashdotUrl, '/load/storage');
 
   const totalUsed =
     (storageLoad?.layout as any[])?.reduce((acc, curr) => (curr.load ?? 0) + acc, 0) ?? 0;
@@ -166,13 +172,23 @@ export function DashdotComponent() {
     },
   ].filter((g) => g.enabled);
 
+  if (dashdotUrl === '') {
+    return (
+      <div>
+        <h2 className={classes.heading}>Dash.</h2>
+        <p>
+          No dash. service found. Please add one to your Homarr dashboard or set a dashdot URL in
+          the module options
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h2 className={classes.heading}>Dash.</h2>
 
-      {!dashdotService ? (
-        <p>No dash. service found. Please add one to your Homarr dashboard.</p>
-      ) : !info ? (
+      {!info ? (
         <p>Cannot acquire information from dash. - are you running the latest version?</p>
       ) : (
         <div className={classes.graphsContainer}>
@@ -209,9 +225,7 @@ export function DashdotComponent() {
               }
               key={graph.name}
               title={graph.name}
-              src={`${
-                dashdotService.url
-              }?singleGraphMode=true&graph=${graph.name.toLowerCase()}&theme=${colorScheme}&surface=${(colorScheme ===
+              src={`${dashdotUrl}?singleGraphMode=true&graph=${graph.name.toLowerCase()}&theme=${colorScheme}&surface=${(colorScheme ===
               'dark'
                 ? theme.colors.dark[7]
                 : theme.colors.gray[0]
