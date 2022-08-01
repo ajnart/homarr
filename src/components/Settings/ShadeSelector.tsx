@@ -40,12 +40,11 @@ export function ShadeSelector() {
   };
 
   const primarySwatches = primaryShades.map(({ swatch, shade }) => (
-    <Grid.Col span={1}>
+    <Grid.Col span={1} key={Number(shade)}>
       <ColorSwatch
         component="button"
         type="button"
         onClick={() => setConfigShade(shade)}
-        key={Number(shade)}
         color={swatch}
         size={22}
         style={{ cursor: 'pointer' }}
@@ -54,12 +53,11 @@ export function ShadeSelector() {
   ));
 
   const secondarySwatches = secondaryShades.map(({ swatch, shade }) => (
-    <Grid.Col span={1}>
+    <Grid.Col span={1} key={Number(shade)}>
       <ColorSwatch
         component="button"
         type="button"
         onClick={() => setConfigShade(shade)}
-        key={Number(shade)}
         color={swatch}
         size={22}
         style={{ cursor: 'pointer' }}
