@@ -1,7 +1,5 @@
-FROM node:16-alpine
+FROM ghcr.io/linuxserver/baseimage-alpine:3.16
 WORKDIR /app
-
-RUN apk add tzdata
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
