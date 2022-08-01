@@ -44,12 +44,11 @@ export function ColorSelector({ type }: ColorControlProps) {
   };
 
   const swatches = colors.map(({ color, swatch }) => (
-    <Grid.Col span={2}>
+    <Grid.Col span={2} key={color}>
       <ColorSwatch
         component="button"
         type="button"
         onClick={() => setConfigColor(color)}
-        key={color}
         color={swatch}
         size={22}
         style={{ cursor: 'pointer' }}
