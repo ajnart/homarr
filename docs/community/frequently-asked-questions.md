@@ -1,5 +1,4 @@
 ---
-sidebar_label: 'FAQ'
 sidebar_position: 1
 tags:
   - Support
@@ -17,7 +16,7 @@ Yes, Homarr is compatible for the architecture of the Raspberry Pi. Have a look 
 You can report issues, suggestions or ideas for improvements <a href="https://github.com/ajnart/homarr/issues/new/choose">here</a>.
 
 ### Can I use my own custom icons for services?
-Yes, check out our guide on <a href="/docs/advanced-features/custom-icons">how to add your custom icons</a>.
+Yes, check out our guide on <a href="/docs/advanced-configuration/custom-icons">how to add your custom icons</a>.
 
 ### I think i found a bug. What can I do?
 If you think, that you found a bug, please create an issue <a href="https://github.com/ajnart/homarr/issues/new/choose">here</a>.
@@ -26,7 +25,7 @@ If you think, that you found a bug, please create an issue <a href="https://gith
 This is a common known issue of Homarr. Please refer to our [guide on how to solve it](./../community/known-issues.md#🚨-adblocker-will-break-and-block-the-posters-of-tv-shows). If you're still having trouble, please contact us on [our Discord](./get-in-touch.md#discord) or [open a new issue on GitHub](https://github.com/ajnart/homarr/issues/new/choose).
 
 ### Why can't I use my custom icons?
-This is a common knonw issue with the Docker version of Homarr. Please refer to our [guide on how to solve it](./../community/known-issues.md#🚨-docker-container-requires-a-restart-after-making-modifications-to-the-icons). If you're still having trouble, please contact us on [our Discord](./get-in-touch.md#discord) or [open a new issue on GitHub](https://github.com/ajnart/homarr/issues/new/choose).
+This is a common known issue with the Docker version of Homarr. Please refer to our [guide on how to solve it](./../community/known-issues.md#🚨-docker-container-requires-a-restart-after-making-modifications-to-the-icons). If you're still having trouble, please contact us on [our Discord](./get-in-touch.md#discord) or [open a new issue on GitHub](https://github.com/ajnart/homarr/issues/new/choose).
 
 ### Can I get in touch with you?
 Yes, go <a href="/docs/community/get-in-touch">here</a> to get with us in touch.

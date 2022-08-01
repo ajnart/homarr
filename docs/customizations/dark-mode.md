@@ -1,7 +1,7 @@
 # Dark Mode
 
 Homarr has a Dark Mode built-in, which is much more comforting to your eyes.
-You can active the dark mode in your settings or via the [keyboard shortcuts](./../advanced-features/key-shortcuts.md).
+You can active the dark mode in your settings or via the [keyboard shortcuts](./../advanced-configuration/keyboard-shortcuts.md).
 
 ## Toggle Dark Mode in the Settings
 
@@ -9,7 +9,7 @@ To activate the darkmode over your settings, click on the cog icon at the top ri
 
 :::tip
 
-Use the [keyboard shortcut](./../advanced-features/key-shortcuts.md) for faster toggeling.
+Use the [keyboard shortcut](./../advanced-configuration/keyboard-shortcuts.md) for faster toggeling.
 
 :::
 
