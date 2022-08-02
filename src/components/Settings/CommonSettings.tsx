@@ -24,8 +24,8 @@ export default function CommonSettings(args: any) {
   );
 
   return (
-    <Stack mb="lg">
-      <Stack spacing={0}>
+    <Stack mb="md" mr="sm">
+      <Stack spacing={0} mt="xs">
         <Text>Search engine</Text>
         <Tip>
           Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube or
