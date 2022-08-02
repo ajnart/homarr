@@ -1,11 +1,11 @@
 import React from 'react';
 import { PasswordInput, Anchor, Paper, Title, Text, Container, Group, Button } from '@mantine/core';
 import { setCookie } from 'cookies-next';
-import { useForm } from '@mantine/hooks';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';
 import { IconCheck, IconX } from '@tabler/icons';
 import { useRouter } from 'next/router';
+import { useForm } from '@mantine/form';
 
 // TODO: Add links to the wiki articles about the login process.
 export default function AuthenticationTitle() {
