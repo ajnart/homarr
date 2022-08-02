@@ -1,4 +1,4 @@
-import { Group, ActionIcon, Anchor, Text, Stack } from '@mantine/core';
+import { Group, ActionIcon, Anchor, Text } from '@mantine/core';
 import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
 

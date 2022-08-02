@@ -1,4 +1,4 @@
-import { Checkbox, Group, SimpleGrid, Stack, Title } from '@mantine/core';
+import { Checkbox, SimpleGrid, Stack, Title } from '@mantine/core';
 import * as Modules from '../../modules';
 import { useConfig } from '../../tools/state';
 
@@ -12,7 +12,7 @@ export default function ModuleEnabler(props: any) {
         {modules.map((module) => (
           <Checkbox
             key={module.title}
-            size="sm"
+            size="lg"
             checked={config.modules?.[module.title]?.enabled ?? false}
             label={`${module.title}`}
             onChange={(e) => {
