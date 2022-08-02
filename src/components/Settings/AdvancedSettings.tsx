@@ -37,7 +37,7 @@ export default function TitleChanger() {
   };
 
   return (
-    <Stack mb="lg">
+    <Stack mb="md" mr="sm" mt="xs">
       <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
         <Stack>
           <TextInput label="Page title" placeholder="Homarr 🦞" {...form.getInputProps('title')} />

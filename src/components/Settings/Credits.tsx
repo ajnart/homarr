@@ -1,10 +1,10 @@
-import { Group, ActionIcon, Anchor, Text } from '@mantine/core';
+import { Group, ActionIcon, Anchor, Text, Stack } from '@mantine/core';
 import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons';
 import { CURRENT_VERSION } from '../../../data/constants';
 
 export default function Credits(props: any) {
   return (
-    <Group position="center" direction="row" mr="xs">
+    <Group position="center" mt="xs">
       <Group spacing={0}>
         <ActionIcon<'a'> component="a" href="https://github.com/ajnart/homarr" size="lg">
           <IconBrandGithub size={18} />
