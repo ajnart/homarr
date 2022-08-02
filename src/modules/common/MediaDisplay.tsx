@@ -8,6 +8,7 @@ import {
   Anchor,
   ScrollArea,
   createStyles,
+  Stack,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconLink as Link } from '@tabler/icons';
@@ -53,7 +54,7 @@ export function MediaDisplay(props: { media: IMedia }) {
             alt={media.title}
           />
         )}
-        <Group direction="column" style={{ minWidth: phone ? 450 : '65vw' }}>
+        <Stack style={{ minWidth: phone ? 450 : '65vw' }}>
           <Group noWrap mr="sm" className={classes.overview}>
             <Title order={3}>{media.title}</Title>
             {media.imdbId && (
@@ -84,8 +85,8 @@ export function MediaDisplay(props: { media: IMedia }) {
               Season {media.seasonNumber} episode {media.episodeNumber}
             </Text>
           )}
-        </Group>
-        <Group direction="column" position="apart">
+        </Stack>
+        <Stack>
           <ScrollArea style={{ height: 280, maxWidth: 700 }}>{media.overview}</ScrollArea>
           <Group align="center" position="center" spacing="xs">
             {media.genres.slice(-5).map((genre: string, i: number) => (
@@ -94,7 +95,7 @@ export function MediaDisplay(props: { media: IMedia }) {
               </Badge>
             ))}
           </Group>
-        </Group>
+        </Stack>
       </Text>
     </Group>
   );
