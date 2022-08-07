@@ -169,7 +169,7 @@ export const MatchingImages: {
 export interface serviceItem {
   id: string;
   name: string;
-  type: string;
+  type: ServiceType;
   url: string;
   icon: string;
   category?: string;
