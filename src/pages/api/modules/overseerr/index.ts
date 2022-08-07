@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getConfig } from '../../../tools/getConfig';
-import { Config } from '../../../tools/types';
+import { getConfig } from '../../../../tools/getConfig';
+import { Config } from '../../../../tools/types';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const { query, id } = req.query;
-  const service = config.services.find((service) => service.id === id);
+  const { query } = req.query;
+  const service = config.services.find((service) => service.type === 'Overseerr');
   // If query is an empty string, return an empty array
   if (query === '' || query === undefined) {
     return res.status(200).json([]);
