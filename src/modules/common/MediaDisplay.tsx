@@ -9,6 +9,7 @@ import {
   ScrollArea,
   createStyles,
   Stack,
+  Button,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconLink } from '@tabler/icons';
