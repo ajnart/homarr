@@ -27,6 +27,7 @@ export interface IMedia {
   seasonNumber?: number;
   plexUrl?: string;
   episodeNumber?: number;
+  [key: string]: any;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -86,7 +87,7 @@ export function MediaDisplay(props: { media: IMedia }) {
                   ? () => window.open(media.plexUrl)
                   : () => {
                       // TODO: implement overseerr media requests
-                      throw new Error('Need to implement media reqests');
+                      console.log(media);
                     }
               }
             >
