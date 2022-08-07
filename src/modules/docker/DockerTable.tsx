@@ -101,7 +101,6 @@ export default function DockerTable({
         onChange={handleSearchChange}
       />
       <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
-        <caption>your docker containers</caption>
         <thead>
           <tr>
             <th style={{ width: 40 }}>

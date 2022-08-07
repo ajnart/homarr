@@ -1,5 +1,5 @@
 import React from 'react';
-import { Group, Text, Slider } from '@mantine/core';
+import { Text, Slider, Stack } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 
 export function AppCardWidthSelector() {
@@ -16,7 +16,7 @@ export function AppCardWidthSelector() {
   };
 
   return (
-    <Group direction="column" spacing="xs" grow>
+    <Stack spacing="xs">
       <Text>App Width</Text>
       <Slider
         label={null}
@@ -27,6 +27,6 @@ export function AppCardWidthSelector() {
         styles={{ markLabel: { fontSize: 'xx-small' } }}
         onChange={(value) => setappCardWidth(value)}
       />
-    </Group>
+    </Stack>
   );
 }

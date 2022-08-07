@@ -86,7 +86,10 @@ export type ServiceType =
   | 'Overseerr'
   | 'Transmission';
 
-export function tryMatchPort(name: string, form?: any) {
+export function tryMatchPort(name: string | undefined, form?: any) {
+  if (!name) {
+    return undefined;
+  }
   // Match name with portmap key
   const port = portmap.find((p) => p.name === name.toLowerCase());
   if (form && port) {
