@@ -1102,6 +1102,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/modals@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "@mantine/modals@npm:5.0.3"
+  dependencies:
+    "@mantine/utils": 5.0.3
+  peerDependencies:
+    "@mantine/core": 5.0.3
+    "@mantine/hooks": 5.0.3
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 4d38f867405a91421c7d84716cceeb34a766c476aa0159034342e1ee681aa990cd16863e55930a889b6149fdae1b43ba00703783d7d5d91a271db40c9d3c5ec9
+  languageName: node
+  linkType: hard
+
 "@mantine/next@npm:^4.2.12":
   version: 4.2.12
   resolution: "@mantine/next@npm:4.2.12"
@@ -1176,6 +1190,15 @@ __metadata:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
   checksum: 8e99c7109e61ca1e3119cec39cac22a7b137964f61822e95c85c6c4e028852b42ace16ad82c94bcd1f3ba52106ae5e3c9b47bd33100eaa99a9e885fec1b1e58e
+  languageName: node
+  linkType: hard
+
+"@mantine/utils@npm:5.0.3":
+  version: 5.0.3
+  resolution: "@mantine/utils@npm:5.0.3"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: febde84bcb4369dad4f4476fbd864220608855a30921816ea7033689cc6c921212de2042ae5fc0bd446273874198c3775142c46dae6465f4173fa411798aff75
   languageName: node
   linkType: hard
 
@@ -2910,6 +2933,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"consola@npm:^2.15.3":
+  version: 2.15.3
+  resolution: "consola@npm:2.15.3"
+  checksum: 8ef7a09b703ec67ac5c389a372a33b6dc97eda6c9876443a60d76a3076eea0259e7f67a4e54fd5a52f97df73690822d090cf8b7e102b5761348afef7c6d03e28
+  languageName: node
+  linkType: hard
+
 "console-control-strings@npm:^1.1.0":
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
@@ -4474,6 +4504,7 @@ __metadata:
     "@mantine/dropzone": ^4.2.12
     "@mantine/form": ^4.2.12
     "@mantine/hooks": ^4.2.12
+    "@mantine/modals": ^5.0.3
     "@mantine/next": ^4.2.12
     "@mantine/notifications": ^4.2.12
     "@mantine/prism": ^4.2.12
@@ -4489,6 +4520,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.30.7
     "@typescript-eslint/parser": ^5.30.7
     axios: ^0.27.2
+    consola: ^2.15.3
     cookies-next: ^2.1.1
     dayjs: ^1.11.4
     dockerode: ^3.3.2
