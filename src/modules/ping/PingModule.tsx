@@ -56,22 +56,23 @@ export default function PingComponent(props: any) {
     return null;
   }
   return (
-    <Tooltip
-      radius="lg"
+    <motion.div
       style={{ position: 'absolute', bottom: 20, right: 20 }}
-      label={
-        isOnline === 'loading'
-          ? 'Loading...'
-          : isOnline === 'online'
-          ? `Online - ${response}`
-          : `Offline - ${response}`
-      }
+      animate={{
+        scale: isOnline === 'online' ? [1, 0.8, 1] : 1,
+      }}
+      transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
     >
-      <motion.div
-        animate={{
-          scale: isOnline === 'online' ? [1, 0.8, 1] : 1,
-        }}
-        transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
+      <Tooltip
+        withinPortal
+        radius="lg"
+        label={
+          isOnline === 'loading'
+            ? 'Loading...'
+            : isOnline === 'online'
+            ? `Online - ${response}`
+            : `Offline - ${response}`
+        }
       >
         <Indicator
           size={13}
@@ -79,7 +80,7 @@ export default function PingComponent(props: any) {
         >
           {null}
         </Indicator>
-      </motion.div>
-    </Tooltip>
+      </Tooltip>
+    </motion.div>
   );
 }

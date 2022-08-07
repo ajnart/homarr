@@ -8,8 +8,7 @@ import {
   Anchor,
   ScrollArea,
   createStyles,
-  Tooltip,
-  Button,
+  Stack,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconLink } from '@tabler/icons';
@@ -58,15 +57,8 @@ export function MediaDisplay(props: { media: IMedia }) {
             alt={media.title}
           />
         )}
-        <Group
-          style={{ minWidth: phone ? 450 : '65vw' }}
-          noWrap
-          mr="md"
-          my="sm"
-          position="apart"
-          className={classes.overview}
-        >
-          <Group direction="column" spacing={0}>
+        <Stack style={{ minWidth: phone ? 450 : '65vw' }}>
+          <Group noWrap mr="sm" className={classes.overview}>
             <Title order={3}>{media.title}</Title>
             {media.artist && <Text color="gray">New release from {media.artist}</Text>}
             {(media.episodeNumber || media.seasonNumber) && (
@@ -101,8 +93,8 @@ export function MediaDisplay(props: { media: IMedia }) {
               </ActionIcon>
             </Anchor>
           )}
-        </Group>
-        <Group direction="column" position="apart">
+        </Stack>
+        <Stack>
           <ScrollArea style={{ height: 280, maxWidth: 700 }}>{media.overview}</ScrollArea>
           <Group align="center" position="center" spacing="xs">
             {media.genres.slice(-5).map((genre: string, i: number) => (
@@ -111,7 +103,7 @@ export function MediaDisplay(props: { media: IMedia }) {
               </Badge>
             ))}
           </Group>
-        </Group>
+        </Stack>
       </Text>
     </Group>
   );

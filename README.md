@@ -64,9 +64,9 @@ If you have any questions about Homarr or want to share information with us, ple
 
 ## ✨ Features
 - Integrates with services you use.
-- Search the web direcetly from your homepage.
+- Search the web directly from your homepage.
 - Real-time status indicator for every service.
-- Automatically finds icons while you type the name of a serivce.
+- Automatically finds icons while you type the name of a service.
 - Widgets that can display all types of information.
 - Easy deployment with Docker.
 - Very light-weight and fast.

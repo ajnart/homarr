@@ -260,54 +260,59 @@ function DayComponent(props: any) {
       )}
       <Popover
         position="bottom"
+        withinPortal
         radius="lg"
         shadow="xl"
         transition="pop"
         styles={{
-          body: {
+          dropdown: {
             boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.1), 0 14px 11px rgba(0, 0, 0, 0.1)',
           },
         }}
         width="auto"
         onClose={() => setOpened(false)}
         opened={opened}
-        target={day}
       >
-        <ScrollArea style={{ height: 400 }}>
-          {sonarrFiltered.map((media: any, index: number) => (
-            <React.Fragment key={index}>
-              <SonarrMediaDisplay media={media} />
-              {index < sonarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-            </React.Fragment>
-          ))}
-          {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
-            <Divider variant="dashed" my="xl" />
-          )}
-          {radarrFiltered.map((media: any, index: number) => (
-            <React.Fragment key={index}>
-              <RadarrMediaDisplay media={media} />
-              {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-            </React.Fragment>
-          ))}
-          {sonarrFiltered.length > 0 && lidarrFiltered.length > 0 && (
-            <Divider variant="dashed" my="xl" />
-          )}
-          {lidarrFiltered.map((media: any, index: number) => (
-            <React.Fragment key={index}>
-              <LidarrMediaDisplay media={media} />
-              {index < lidarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-            </React.Fragment>
-          ))}
-          {lidarrFiltered.length > 0 && readarrFiltered.length > 0 && (
-            <Divider variant="dashed" my="xl" />
-          )}
-          {readarrFiltered.map((media: any, index: number) => (
-            <React.Fragment key={index}>
-              <ReadarrMediaDisplay media={media} />
-              {index < readarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-            </React.Fragment>
-          ))}
-        </ScrollArea>
+        <Popover.Target>
+          <div>{day}</div>
+        </Popover.Target>
+        <Popover.Dropdown>
+          <ScrollArea style={{ height: 400 }}>
+            {sonarrFiltered.map((media: any, index: number) => (
+              <React.Fragment key={index}>
+                <SonarrMediaDisplay media={media} />
+                {index < sonarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+              </React.Fragment>
+            ))}
+            {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
+              <Divider variant="dashed" my="xl" />
+            )}
+            {radarrFiltered.map((media: any, index: number) => (
+              <React.Fragment key={index}>
+                <RadarrMediaDisplay media={media} />
+                {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+              </React.Fragment>
+            ))}
+            {sonarrFiltered.length > 0 && lidarrFiltered.length > 0 && (
+              <Divider variant="dashed" my="xl" />
+            )}
+            {lidarrFiltered.map((media: any, index: number) => (
+              <React.Fragment key={index}>
+                <LidarrMediaDisplay media={media} />
+                {index < lidarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+              </React.Fragment>
+            ))}
+            {lidarrFiltered.length > 0 && readarrFiltered.length > 0 && (
+              <Divider variant="dashed" my="xl" />
+            )}
+            {readarrFiltered.map((media: any, index: number) => (
+              <React.Fragment key={index}>
+                <ReadarrMediaDisplay media={media} />
+                {index < readarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
+              </React.Fragment>
+            ))}
+          </ScrollArea>
+        </Popover.Dropdown>
       </Popover>
     </Box>
   );

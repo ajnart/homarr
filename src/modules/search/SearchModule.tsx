@@ -1,6 +1,7 @@
-import { Kbd, createStyles, Autocomplete, ScrollArea, Popover, Divider } from '@mantine/core';
-import { useDebouncedValue, useForm, useHotkeys } from '@mantine/hooks';
-import React, { useEffect, useRef, useState } from 'react';
+import { Kbd, createStyles, Autocomplete } from '@mantine/core';
+import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
+import { useForm } from '@mantine/form';
+import { useEffect, useRef, useState } from 'react';
 import {
   IconSearch as Search,
   IconBrandYoutube as BrandYoutube,

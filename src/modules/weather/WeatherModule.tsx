@@ -1,4 +1,4 @@
-import { Group, Space, Title, Tooltip, Skeleton } from '@mantine/core';
+import { Group, Space, Title, Tooltip, Skeleton, Stack, Box } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {
@@ -124,8 +124,10 @@ export function WeatherIcon(props: any) {
     }
   }
   return (
-    <Tooltip label={data.name}>
-      <data.icon size={50} />
+    <Tooltip withinPortal withArrow label={data.name}>
+      <Box>
+        <data.icon size={50} />
+      </Box>
     </Tooltip>
   );
 }
@@ -160,7 +162,7 @@ export default function WeatherComponent(props: any) {
     return (
       <>
         <Skeleton height={40} width={100} mb="xl" />
-        <Group noWrap direction="row">
+        <Group noWrap>
           <Skeleton height={50} circle />
           <Group>
             <Skeleton height={25} width={70} mr="lg" />
@@ -174,7 +176,7 @@ export default function WeatherComponent(props: any) {
     return isFahrenheit ? `${(value * (9 / 5) + 32).toFixed(1)}°F` : `${value.toFixed(1)}°C`;
   }
   return (
-    <Group p="sm" spacing="xs" direction="column">
+    <Stack p="sm" spacing="xs">
       <Title>{usePerferedUnit(weather.current_weather.temperature)}</Title>
       <Group spacing={0}>
         <WeatherIcon code={weather.current_weather.weathercode} />
@@ -185,6 +187,6 @@ export default function WeatherComponent(props: any) {
         <span>{usePerferedUnit(weather.daily.temperature_2m_min[0])}</span>
         <ArrowDownRight size={16} />
       </Group>
-    </Group>
+    </Stack>
   );
 }

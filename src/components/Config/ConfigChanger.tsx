@@ -5,25 +5,27 @@ import { useConfig } from '../../tools/state';
 
 export default function ConfigChanger() {
   const { config, loadConfig, setConfig, getConfigs } = useConfig();
-  const [configList, setConfigList] = useState([] as string[]);
+  const [configList, setConfigList] = useState<string[]>([]);
+  const [value, setValue] = useState(config.name);
   useEffect(() => {
     getConfigs().then((configs) => setConfigList(configs));
-    // setConfig(initialConfig);
   }, [config]);
   // If configlist is empty, return a loading indicator
   if (configList.length === 0) {
     return (
-      <Center>
-        <Tooltip label={"Loading your configs. This doesn't load in vercel."}>
+      <Tooltip label={"Loading your configs. This doesn't load in vercel."}>
+        <Center>
           <Loader />
-        </Tooltip>
-      </Center>
+        </Center>
+      </Tooltip>
     );
   }
+  // return <Select data={[{ value: '1', label: '1' },]} onChange={(e) => console.log(e)} value="1" />;
   return (
     <Select
-      defaultValue={config.name}
       label="Config loader"
+      value={value}
+      defaultValue={config.name}
       onChange={(e) => {
         loadConfig(e ?? 'default');
         setCookie('config-name', e ?? 'default', {
