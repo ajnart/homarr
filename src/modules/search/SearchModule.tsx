@@ -76,11 +76,7 @@ export default function SearchBar(props: any) {
     }
     if (form.values.query.startsWith('!os')) {
       axios
-        .get(
-          `/api/modules/overseerr?query=${form.values.query.replace('!os ', '')}&id=${
-            OverseerrService?.id
-          }`
-        )
+        .get(`/api/modules/overseerr?query=${form.values.query.replace('!os ', '')}`)
         .then((res) => {
           setOverseerrResults(res.data.results ?? []);
           setLoading(false);
