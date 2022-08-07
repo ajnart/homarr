@@ -1,7 +1,7 @@
-import { Kbd, createStyles, Autocomplete } from '@mantine/core';
+import { Kbd, createStyles, Autocomplete, Popover, ScrollArea, Divider } from '@mantine/core';
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { useForm } from '@mantine/form';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   IconSearch as Search,
   IconBrandYoutube as BrandYoutube,
@@ -144,14 +144,16 @@ export default function SearchBar(props: any) {
       <Popover
         opened={OverseerrResults.length > 0 && opened}
         position="bottom"
-        placement="start"
+        withArrow
+        withinPortal
+        shadow="md"
         radius="md"
-        trapFocus={false}
+        trapFocus
         transition="pop-bottom-right"
-        onFocusCapture={() => setOpened(true)}
-        onBlurCapture={() => setOpened(false)}
-        target={
+      >
+        <Popover.Target>
           <Autocomplete
+            onFocusCapture={() => setOpened(true)}
             autoFocus
             variant="filled"
             data={autocompleteData}
@@ -172,16 +174,18 @@ export default function SearchBar(props: any) {
             {...props}
             {...form.getInputProps('query')}
           />
-        }
-      >
-        <ScrollArea style={{ height: 400 }} offsetScrollbars>
-          {OverseerrResults.slice(0, 5).map((result, index) => (
-            <React.Fragment key={index}>
-              <OverseerrMediaDisplay key={result.id} media={result} />
-              {index < OverseerrResults.length - 1 && <Divider variant="dashed" my="xl" />}
-            </React.Fragment>
-          ))}
-        </ScrollArea>
+        </Popover.Target>
+
+        <Popover.Dropdown onBlurCapture={() => setOpened(false)}>
+          <ScrollArea style={{ height: 400 }} offsetScrollbars>
+            {OverseerrResults.slice(0, 5).map((result, index) => (
+              <React.Fragment key={index}>
+                <OverseerrMediaDisplay key={result.id} media={result} />
+                {index < OverseerrResults.length - 1 && <Divider variant="dashed" my="xl" />}
+              </React.Fragment>
+            ))}
+          </ScrollArea>
+        </Popover.Dropdown>
       </Popover>
     </form>
   );
