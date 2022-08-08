@@ -1,4 +1,4 @@
-import { Text, Title, Group, useMantineTheme, Box, Card, ColorSwatch } from '@mantine/core';
+import { Text, Title, Group, useMantineTheme, Box, Card, ColorSwatch, Stack } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -43,6 +43,7 @@ export default function TotalDownloadsComponent() {
   const totalDownloadSpeed = torrents.reduce((acc, torrent) => acc + torrent.downloadSpeed, 0);
   const totalUploadSpeed = torrents.reduce((acc, torrent) => acc + torrent.uploadSpeed, 0);
   useEffect(() => {
+    if (downloadServices.length === 0) return;
     const interval = setSafeInterval(() => {
       // Send one request with each download service inside
       axios
@@ -78,12 +79,16 @@ export default function TotalDownloadsComponent() {
 
   if (downloadServices.length === 0) {
     return (
-      <Group direction="column">
+      <Group>
         <Title order={4}>No supported download clients found!</Title>
-        <Group noWrap>
-          <Text>Add a download service to view your current downloads...</Text>
-          <AddItemShelfButton />
-        </Group>
+        <div>
+          <AddItemShelfButton
+            style={{
+              float: 'inline-end',
+            }}
+          />
+          Add a download service to view your current downloads
+        </div>
       </Group>
     );
   }
@@ -101,9 +106,9 @@ export default function TotalDownloadsComponent() {
   })) as Datum[];
 
   return (
-    <Group noWrap direction="column" grow>
+    <Stack>
       <Title order={4}>Current download speed</Title>
-      <Group direction="column">
+      <Stack>
         <Group>
           <ColorSwatch size={12} color={theme.colors.green[5]} />
           <Text>Download: {humanFileSize(totalDownloadSpeed)}/s</Text>
@@ -112,7 +117,7 @@ export default function TotalDownloadsComponent() {
           <ColorSwatch size={12} color={theme.colors.blue[5]} />
           <Text>Upload: {humanFileSize(totalUploadSpeed)}/s</Text>
         </Group>
-      </Group>
+      </Stack>
       <Box
         style={{
           height: 200,
@@ -133,7 +138,7 @@ export default function TotalDownloadsComponent() {
               <Card p="sm" radius="md" withBorder>
                 <Text size="md">{roundedSeconds} seconds ago</Text>
                 <Card.Section p="sm">
-                  <Group direction="column">
+                  <Stack>
                     <Group>
                       <ColorSwatch size={10} color={theme.colors.green[5]} />
                       <Text size="md">Download: {humanFileSize(Download)}</Text>
@@ -142,7 +147,7 @@ export default function TotalDownloadsComponent() {
                       <ColorSwatch size={10} color={theme.colors.blue[5]} />
                       <Text size="md">Upload: {humanFileSize(Upload)}</Text>
                     </Group>
-                  </Group>
+                  </Stack>
                 </Card.Section>
               </Card>
             );
@@ -181,6 +186,6 @@ export default function TotalDownloadsComponent() {
           ]}
         />
       </Box>
-    </Group>
+    </Stack>
   );
 }

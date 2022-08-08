@@ -1,4 +1,4 @@
-import { TextInput, Group, Button } from '@mantine/core';
+import { TextInput, Button, Stack } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useConfig } from '../../tools/state';
 import { ColorSelector } from './ColorSelector';
@@ -37,9 +37,9 @@ export default function TitleChanger() {
   };
 
   return (
-    <Group direction="column" grow mb="lg">
+    <Stack mb="md" mr="sm" mt="xs">
       <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
-        <Group grow direction="column">
+        <Stack>
           <TextInput label="Page title" placeholder="Homarr 🦞" {...form.getInputProps('title')} />
           <TextInput label="Logo" placeholder="/img/logo.png" {...form.getInputProps('logo')} />
           <TextInput
@@ -53,13 +53,13 @@ export default function TitleChanger() {
             {...form.getInputProps('background')}
           />
           <Button type="submit">Save</Button>
-        </Group>
+        </Stack>
       </form>
       <ColorSelector type="primary" />
       <ColorSelector type="secondary" />
       <ShadeSelector />
       <OpacitySelector />
       <AppCardWidthSelector />
-    </Group>
+    </Stack>
   );
 }

@@ -9,6 +9,7 @@ import {
   ScrollArea,
   Center,
   Image,
+  Stack,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
@@ -82,10 +83,10 @@ export default function DownloadComponent() {
 
   if (downloadServices.length === 0) {
     return (
-      <Group direction="column">
+      <Group>
         <Title order={3}>No supported download clients found!</Title>
         <Group>
-          <Text>Add a download service to view your current downloads...</Text>
+          <Text>Add a download service to view your current downloads</Text>
           <AddItemShelfButton />
         </Group>
       </Group>
@@ -187,13 +188,8 @@ export default function DownloadComponent() {
       );
     });
 
-  const easteregg = (
-    <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Image fit="cover" height={300} src="https://danjohnvelasco.github.io/images/empty.png" />
-    </Center>
-  );
   return (
-    <Group noWrap grow direction="column" mt="xl">
+    <Stack mt="xl">
       <ScrollArea sx={{ height: 300 }}>
         {rows.length > 0 ? (
           <Table highlightOnHover>
@@ -201,9 +197,15 @@ export default function DownloadComponent() {
             <tbody>{rows}</tbody>
           </Table>
         ) : (
-          easteregg
+          <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Image
+              fit="cover"
+              height={300}
+              src="https://danjohnvelasco.github.io/images/empty.png"
+            />
+          </Center>
         )}
       </ScrollArea>
-    </Group>
+    </Stack>
   );
 }
