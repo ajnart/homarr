@@ -13,7 +13,7 @@ import { showNotification } from '@mantine/notifications';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 import { OverseerrModule } from '../overseerr';
-import OverseerrMediaDisplay from '../overseerr/OverseerrMediaDisplay';
+import { OverseerrMediaDisplay } from '../common';
 
 const useStyles = createStyles((theme) => ({
   hide: {
@@ -148,8 +148,9 @@ export default function SearchBar(props: any) {
         withinPortal
         shadow="md"
         radius="md"
+        zIndex={100}
         trapFocus
-        transition="pop-bottom-right"
+        transition="pop-top-right"
       >
         <Popover.Target>
           <Autocomplete
@@ -176,8 +177,8 @@ export default function SearchBar(props: any) {
           />
         </Popover.Target>
 
-        <Popover.Dropdown onBlurCapture={() => setOpened(false)}>
-          <ScrollArea style={{ height: 400 }} offsetScrollbars>
+        <Popover.Dropdown onMouseLeave={() => setOpened(false)}>
+          <ScrollArea style={{ height: 400, width: 400 }} offsetScrollbars>
             {OverseerrResults.slice(0, 5).map((result, index) => (
               <React.Fragment key={index}>
                 <OverseerrMediaDisplay key={result.id} media={result} />
