@@ -237,7 +237,6 @@ export function DashdotComponent() {
                   : ''
               }`}
               frameBorder="0"
-              allowTransparency
             />
           ))}
         </div>
