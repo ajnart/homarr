@@ -1,0 +1,70 @@
+{
+	"title": "The Tunnel to Summer, the Exit of Goodbyes",
+	"originalTitle": "夏へのトンネル、さよならの出口",
+	"originalLanguage": {
+		"id": 8,
+		"name": "Japanese"
+	},
+	"alternateTitles": [
+		{
+			"sourceType": "tmdb",
+			"movieId": 1,
+			"title": "Natsu e no Tunnel, Sayonara no Deguchi",
+			"sourceId": 0,
+			"votes": 0,
+			"voteCount": 0,
+			"language": {
+				"id": 1,
+				"name": "English"
+			},
+			"id": 1
+		}
+	],
+	"secondaryYearSourceId": 0,
+	"sortTitle": "tunnel to summer exit goodbyes",
+	"sizeOnDisk": 0,
+	"status": "announced",
+	"overview": "Tono Kaoru heard a rumor: The laws of space and time mean nothing to the Urashima Tunnel. If you find it, walk through and you'll find your heart's desire on the other side...in exchange for years of your own life. On the night Kaoru just so happens to find himself standing in front of a tunnel that looks suspiciously like the one the rumor describes, he finds himself thinking of Karen, the sister he lost in an accident five years ago. To Kaoru's surprise, he's been followed by the new transfer student Anzu Hanaki, who promises to help him experiment with the mysterious tunnel--but what does she want from Kaoru in exchange? And what will he have left to give, after the tunnel's done with him?",
+	"inCinemas": "2022-09-09T00:00:00Z",
+	"images": [
+		{
+			"coverType": "poster",
+			"url": "https://image.tmdb.org/t/p/original/3x5gc6dHsfNqZryipu159IALEPH.jpg"
+		},
+		{
+			"coverType": "fanart",
+			"url": "https://image.tmdb.org/t/p/original/zO3QSYs858SqiapafD7iJp17KVD.jpg"
+		}
+	],
+	"website": "https://natsuton.com/",
+	"year": 2022,
+	"hasFile": false,
+	"youTubeTrailerId": "",
+	"studio": "Pony Canyon",
+	"path": "/data/Library/Movies/The Tunnel to Summer, the Exit of Goodbyes (2022)",
+	"qualityProfileId": 4,
+	"monitored": true,
+	"minimumAvailability": "announced",
+	"isAvailable": true,
+	"folderName": "/data/Library/Movies/The Tunnel to Summer, the Exit of Goodbyes (2022)",
+	"runtime": 0,
+	"cleanTitle": "thetunneltosummerexitgoodbyes",
+	"imdbId": "tt17382524",
+	"tmdbId": 916192,
+	"titleSlug": "916192",
+	"genres": [
+		"Animation",
+		"Drama",
+		"Mystery"
+	],
+	"tags": [],
+	"added": "2022-07-05T07:50:42Z",
+	"ratings": {
+		"tmdb": {
+			"votes": 0,
+			"value": 0,
+			"type": "user"
+		}
+	},
+	"id": 1
+}
