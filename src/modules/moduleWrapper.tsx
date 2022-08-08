@@ -1,4 +1,6 @@
 import {
+  ActionIcon,
+  Box,
   Button,
   Card,
   Group,
@@ -8,6 +10,9 @@ import {
   TextInput,
   useMantineColorScheme,
 } from '@mantine/core';
+import { useHover } from '@mantine/hooks';
+import { IconAdjustments } from '@tabler/icons';
+import { motion } from 'framer-motion';
 import { useConfig } from '../tools/state';
 import { IModule } from './ModuleTypes';
 
@@ -142,6 +147,8 @@ export function ModuleWrapper(props: any) {
   const enabledModules = config.modules ?? {};
   // Remove 'Module' from enabled modules titles
   const isShown = enabledModules[module.title]?.enabled ?? false;
+  //TODO: fix the hover problem
+  const { hovered, ref } = useHover();
 
   if (!isShown) {
     return null;
@@ -150,6 +157,8 @@ export function ModuleWrapper(props: any) {
   return (
     <Card
       {...props}
+      key={module.title}
+      ref={ref}
       hidden={!isShown}
       withBorder
       radius="lg"
@@ -161,47 +170,56 @@ export function ModuleWrapper(props: any) {
           ${(config.settings.appOpacity || 100) / 100}`,
       }}
     >
-      <ModuleMenu
-        module={module}
-        styles={{
-          root: {
-            position: 'absolute',
-            top: 12,
-            right: 12,
-          },
-        }}
-      />
-      <module.component />
+      <Group position="apart">
+        <ModuleMenu module={module} hovered={hovered} />
+        <module.component />
+      </Group>
     </Card>
   );
 }
 
 export function ModuleMenu(props: any) {
-  const { module, styles } = props;
+  const { module, styles, hovered } = props;
   const items: JSX.Element[] = getItems(module);
   return (
     <>
       {module.options && (
         <Menu
-          size="lg"
+          withinPortal
+          width="lg"
           shadow="xl"
+          withArrow
           closeOnItemClick={false}
           radius="md"
           position="left"
           styles={{
-            root: {
-              ...props?.styles?.root,
-            },
-            body: {
+            dropdown: {
               // Add shadow and elevation to the body
               boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.05)',
             },
           }}
         >
-          <Menu.Label>Settings</Menu.Label>
-          {items.map((item) => (
-            <Menu.Item key={item.key}>{item}</Menu.Item>
-          ))}
+          <Menu.Target>
+            <Box
+              style={{
+                position: 'absolute',
+                top: 12,
+                right: 12,
+              }}
+            >
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: hovered ? 1 : 0 }}>
+                <ActionIcon>
+                  <IconAdjustments />
+                </ActionIcon>
+              </motion.div>
+            </Box>
+          </Menu.Target>
+          <Menu.Dropdown>
+            <Menu.Label>Settings</Menu.Label>
+            {items.map((item) => (
+              <Menu.Item key={item.key}>{item}</Menu.Item>
+            ))}
+          </Menu.Dropdown>
         </Menu>
       )}
     </>

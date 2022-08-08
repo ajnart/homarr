@@ -34,9 +34,9 @@ export default function DateComponent(props: any) {
   }, []);
 
   return (
-    <Group p="sm" spacing="xs" direction="column">
+    <Group p="sm" spacing="xs">
       <Title>{dayjs(date).format(formatString)}</Title>
-      <Text size="xl">{dayjs(date).format('dddd, MMMM D')}</Text>
+      <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>
     </Group>
   );
 }
