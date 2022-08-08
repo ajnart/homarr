@@ -1,6 +1,6 @@
 import { IconEyeglass } from '@tabler/icons';
+import { OverseerrMediaDisplay } from '../common';
 import { IModule } from '../ModuleTypes';
-import OverseerrMediaDisplay from './OverseerrMediaDisplay';
 
 export const OverseerrModule: IModule = {
   title: 'Overseerr',
