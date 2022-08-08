@@ -12,8 +12,7 @@ export default function ModuleEnabler(props: any) {
         {modules.map((module) => (
           <Checkbox
             key={module.title}
-            size="lg"
-            style={{ cursor: 'pointer' }}
+            size="md"
             checked={config.modules?.[module.title]?.enabled ?? false}
             label={`${module.title}`}
             onChange={(e) => {

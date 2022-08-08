@@ -45,6 +45,20 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
           <MantineProvider
             theme={{
               ...theme,
+              components: {
+                Checkbox: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
+                  },
+                },
+                Switch: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
+                  },
+                },
+              },
               primaryColor,
               primaryShade,
               colorScheme,
