@@ -12,6 +12,7 @@ import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
 import axios from 'axios';
+import { useDisclosure } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 import {
@@ -170,7 +171,7 @@ function DayComponent(props: any) {
     readarrmedias,
   }: { renderdate: Date; sonarrmedias: []; radarrmedias: []; lidarrmedias: []; readarrmedias: [] } =
     props;
-  const [opened, setOpened] = useState(false);
+  const [opened, { close, open }] = useDisclosure(false);
 
   const day = renderdate.getDate();
 
@@ -191,129 +192,129 @@ function DayComponent(props: any) {
     const date = new Date(media.inCinemas);
     return date.toDateString() === renderdate.toDateString();
   });
-  if (
-    sonarrFiltered.length === 0 &&
-    radarrFiltered.length === 0 &&
-    lidarrFiltered.length === 0 &&
-    readarrFiltered.length === 0
-  ) {
+  const totalFiltered = [
+    ...readarrFiltered,
+    ...lidarrFiltered,
+    ...sonarrFiltered,
+    ...radarrFiltered,
+  ];
+  if (totalFiltered.length === 0) {
     return <div>{day}</div>;
   }
 
   return (
-    <Box
-      onClick={() => {
-        setOpened(true);
-      }}
+    <Popover
+      position="bottom"
+      withArrow
+      withinPortal
+      radius="lg"
+      shadow="sm"
+      transition="pop"
+      onClose={close}
+      opened={opened}
     >
-      {readarrFiltered.length > 0 && (
-        <Indicator
-          size={10}
-          withBorder
-          style={{
-            position: 'absolute',
-            bottom: 8,
-            left: 8,
-          }}
-          color="red"
-          children={null}
-        />
-      )}
-      {radarrFiltered.length > 0 && (
-        <Indicator
-          size={10}
-          withBorder
-          style={{
-            position: 'absolute',
-            top: 8,
-            left: 8,
-          }}
-          color="yellow"
-          children={null}
-        />
-      )}
-      {sonarrFiltered.length > 0 && (
-        <Indicator
-          size={10}
-          withBorder
-          style={{
-            position: 'absolute',
-            top: 8,
-            right: 8,
-          }}
-          color="blue"
-          children={null}
-        />
-      )}
-      {lidarrFiltered.length > 0 && (
-        <Indicator
-          size={10}
-          withBorder
-          style={{
-            position: 'absolute',
-            bottom: 8,
-            right: 8,
-          }}
-          color="green"
-          children={undefined}
-        />
-      )}
-      <Popover
-        position="bottom"
-        withinPortal
-        radius="lg"
-        shadow="xl"
-        transition="pop"
-        styles={{
-          dropdown: {
-            boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.1), 0 14px 11px rgba(0, 0, 0, 0.1)',
-          },
-        }}
-        width="auto"
-        onClose={() => setOpened(false)}
-        opened={opened}
-      >
-        <Popover.Target>
+      <Popover.Target>
+        <Box onClick={open}>
+          {readarrFiltered.length > 0 && (
+            <Indicator
+              size={10}
+              withBorder
+              style={{
+                position: 'absolute',
+                bottom: 8,
+                left: 8,
+              }}
+              color="red"
+              children={null}
+            />
+          )}
+          {radarrFiltered.length > 0 && (
+            <Indicator
+              size={10}
+              withBorder
+              style={{
+                position: 'absolute',
+                top: 8,
+                left: 8,
+              }}
+              color="yellow"
+              children={null}
+            />
+          )}
+          {sonarrFiltered.length > 0 && (
+            <Indicator
+              size={10}
+              withBorder
+              style={{
+                position: 'absolute',
+                top: 8,
+                right: 8,
+              }}
+              color="blue"
+              children={null}
+            />
+          )}
+          {lidarrFiltered.length > 0 && (
+            <Indicator
+              size={10}
+              withBorder
+              style={{
+                position: 'absolute',
+                bottom: 8,
+                right: 8,
+              }}
+              color="green"
+              children={undefined}
+            />
+          )}
           <div>{day}</div>
-        </Popover.Target>
-        <Popover.Dropdown>
-          <ScrollArea style={{ height: 400 }}>
-            {sonarrFiltered.map((media: any, index: number) => (
-              <React.Fragment key={index}>
-                <SonarrMediaDisplay media={media} />
-                {index < sonarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-              </React.Fragment>
-            ))}
-            {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
-              <Divider variant="dashed" my="xl" />
-            )}
-            {radarrFiltered.map((media: any, index: number) => (
-              <React.Fragment key={index}>
-                <RadarrMediaDisplay media={media} />
-                {index < radarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-              </React.Fragment>
-            ))}
-            {sonarrFiltered.length > 0 && lidarrFiltered.length > 0 && (
-              <Divider variant="dashed" my="xl" />
-            )}
-            {lidarrFiltered.map((media: any, index: number) => (
-              <React.Fragment key={index}>
-                <LidarrMediaDisplay media={media} />
-                {index < lidarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-              </React.Fragment>
-            ))}
-            {lidarrFiltered.length > 0 && readarrFiltered.length > 0 && (
-              <Divider variant="dashed" my="xl" />
-            )}
-            {readarrFiltered.map((media: any, index: number) => (
-              <React.Fragment key={index}>
-                <ReadarrMediaDisplay media={media} />
-                {index < readarrFiltered.length - 1 && <Divider variant="dashed" my="xl" />}
-              </React.Fragment>
-            ))}
-          </ScrollArea>
-        </Popover.Dropdown>
-      </Popover>
-    </Box>
+        </Box>
+      </Popover.Target>
+      <Popover.Dropdown>
+        <ScrollArea
+          offsetScrollbars
+          scrollbarSize={5}
+          style={{
+            height:
+              totalFiltered.slice(0, 2).length > 1 ? totalFiltered.slice(0, 2).length * 150 : 200,
+            width: 400,
+          }}
+        >
+          {sonarrFiltered.map((media: any, index: number) => (
+            <React.Fragment key={index}>
+              <SonarrMediaDisplay media={media} />
+              {index < sonarrFiltered.length - 1 && <Divider variant="dashed" size="sm" my="xl" />}
+            </React.Fragment>
+          ))}
+          {radarrFiltered.length > 0 && sonarrFiltered.length > 0 && (
+            <Divider variant="dashed" size="sm" my="xl" />
+          )}
+          {radarrFiltered.map((media: any, index: number) => (
+            <React.Fragment key={index}>
+              <RadarrMediaDisplay media={media} />
+              {index < radarrFiltered.length - 1 && <Divider variant="dashed" size="sm" my="xl" />}
+            </React.Fragment>
+          ))}
+          {sonarrFiltered.length > 0 && lidarrFiltered.length > 0 && (
+            <Divider variant="dashed" size="sm" my="xl" />
+          )}
+          {lidarrFiltered.map((media: any, index: number) => (
+            <React.Fragment key={index}>
+              <LidarrMediaDisplay media={media} />
+              {index < lidarrFiltered.length - 1 && <Divider variant="dashed" size="sm" my="xl" />}
+            </React.Fragment>
+          ))}
+          {lidarrFiltered.length > 0 && readarrFiltered.length > 0 && (
+            <Divider variant="dashed" size="sm" my="xl" />
+          )}
+          {readarrFiltered.map((media: any, index: number) => (
+            <React.Fragment key={index}>
+              <ReadarrMediaDisplay media={media} />
+              {index < readarrFiltered.length - 1 && <Divider variant="dashed" size="sm" my="xl" />}
+            </React.Fragment>
+          ))}
+        </ScrollArea>
+      </Popover.Dropdown>
+    </Popover>
   );
 }
