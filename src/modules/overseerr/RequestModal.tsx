@@ -1,20 +1,9 @@
-import {
-  Alert,
-  Button,
-  Checkbox,
-  createStyles,
-  Group,
-  LoadingOverlay,
-  Modal,
-  Stack,
-  Table,
-} from '@mantine/core';
-import { openConfirmModal } from '@mantine/modals';
+import { Alert, Button, Checkbox, createStyles, Group, Modal, Stack, Table } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons';
 import axios from 'axios';
 import Consola from 'consola';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
 import { MediaType, Result } from './SearchResult.d';
