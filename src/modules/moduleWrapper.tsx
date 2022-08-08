@@ -13,6 +13,7 @@ import {
 import { useHover } from '@mantine/hooks';
 import { IconAdjustments } from '@tabler/icons';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { useConfig } from '../tools/state';
 import { IModule } from './ModuleTypes';
 
@@ -148,7 +149,7 @@ export function ModuleWrapper(props: any) {
   // Remove 'Module' from enabled modules titles
   const isShown = enabledModules[module.title]?.enabled ?? false;
   //TODO: fix the hover problem
-  const { hovered, ref } = useHover();
+  const [hovering, setHovering] = useState(false);
 
   if (!isShown) {
     return null;
@@ -158,7 +159,6 @@ export function ModuleWrapper(props: any) {
     <Card
       {...props}
       key={module.title}
-      ref={ref}
       hidden={!isShown}
       withBorder
       radius="lg"
@@ -170,10 +170,17 @@ export function ModuleWrapper(props: any) {
           ${(config.settings.appOpacity || 100) / 100}`,
       }}
     >
-      <Group position="apart">
-        <ModuleMenu module={module} hovered={hovered} />
+      <motion.div
+        onHoverStart={() => {
+          setHovering(true);
+        }}
+        onHoverEnd={() => {
+          setHovering(false);
+        }}
+      >
+        <ModuleMenu module={module} hovered={hovering} />
         <module.component />
-      </Group>
+      </motion.div>
     </Card>
   );
 }
@@ -185,6 +192,7 @@ export function ModuleMenu(props: any) {
     <>
       {module.options && (
         <Menu
+          key={module.title}
           withinPortal
           width="lg"
           shadow="xl"
@@ -192,27 +200,23 @@ export function ModuleMenu(props: any) {
           closeOnItemClick={false}
           radius="md"
           position="left"
-          styles={{
-            dropdown: {
-              // Add shadow and elevation to the body
-              boxShadow: '0 0 14px 14px rgba(0, 0, 0, 0.05)',
-            },
-          }}
         >
           <Menu.Target>
-            <Box
+            <motion.div
               style={{
                 position: 'absolute',
-                top: 12,
-                right: 12,
+                top: 15,
+                right: 15,
+                alignSelf: 'flex-end',
+              }}
+              animate={{
+                opacity: hovered === true ? 1 : 0,
               }}
             >
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: hovered ? 1 : 0 }}>
-                <ActionIcon>
-                  <IconAdjustments />
-                </ActionIcon>
-              </motion.div>
-            </Box>
+              <ActionIcon>
+                <IconAdjustments />
+              </ActionIcon>
+            </motion.div>
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Label>Settings</Menu.Label>
