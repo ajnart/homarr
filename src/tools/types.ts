@@ -70,6 +70,7 @@ export const ServiceTypeList = [
   'Readarr',
   'Sonarr',
   'Transmission',
+  'Overseerr',
 ];
 export type ServiceType =
   | 'Other'
@@ -82,6 +83,7 @@ export type ServiceType =
   | 'Radarr'
   | 'Readarr'
   | 'Sonarr'
+  | 'Overseerr'
   | 'Transmission';
 
 export function tryMatchPort(name: string | undefined, form?: any) {
@@ -104,6 +106,9 @@ export const portmap = [
   { name: 'readarr', value: '8787' },
   { name: 'deluge', value: '8112' },
   { name: 'transmission', value: '9091' },
+  { name: 'plex', value: '32400' },
+  { name: 'emby', value: '8096' },
+  { name: 'overseerr', value: '5055' },
   { name: 'dash.', value: '3001' },
 ];
 
@@ -167,7 +172,7 @@ export const MatchingImages: {
 export interface serviceItem {
   id: string;
   name: string;
-  type: string;
+  type: ServiceType;
   url: string;
   icon: string;
   category?: string;

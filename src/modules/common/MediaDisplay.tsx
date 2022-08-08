@@ -1,103 +1,45 @@
-import {
-  Image,
-  Group,
-  Title,
-  Badge,
-  Text,
-  ActionIcon,
-  Anchor,
-  ScrollArea,
-  createStyles,
-  Stack,
-} from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
-import { IconLink as Link } from '@tabler/icons';
+import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons';
+import { useState } from 'react';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
+import { RequestModal } from '../overseerr/RequestModal';
+import { Result } from '../overseerr/SearchResult';
 
 export interface IMedia {
   overview: string;
   imdbId?: any;
   artist?: string;
-  title: string;
+  title?: string;
+  type: 'movie' | 'tvshow' | 'book' | 'music' | 'overseer';
+  episodetitle?: string;
+  voteAverage?: string;
   poster?: string;
   genres: string[];
   seasonNumber?: number;
+  plexUrl?: string;
   episodeNumber?: number;
+  [key: string]: any;
 }
 
-const useStyles = createStyles((theme) => ({
-  overview: {
-    [theme.fn.largerThan('sm')]: {
-      width: 400,
-    },
-  },
-}));
-
-export function MediaDisplay(props: { media: IMedia }) {
-  const { media }: { media: IMedia } = props;
-  const { classes, cx } = useStyles();
-  const phone = useMediaQuery('(min-width: 800px)');
+export function OverseerrMediaDisplay(props: any) {
+  const { media }: { media: Result } = props;
   return (
-    <Group position="apart">
-      <Text>
-        {media.poster && (
-          <Image
-            width={phone ? 250 : 100}
-            height={phone ? 400 : 160}
-            style={{
-              float: 'right',
-            }}
-            radius="md"
-            fit="cover"
-            src={media.poster}
-            alt={media.title}
-          />
-        )}
-        <Stack style={{ minWidth: phone ? 450 : '65vw' }}>
-          <Group noWrap mr="sm" className={classes.overview}>
-            <Title order={3}>{media.title}</Title>
-            {media.imdbId && (
-              <Anchor href={`https://www.imdb.com/title/${media.imdbId}`} target="_blank">
-                <ActionIcon>
-                  <Link />
-                </ActionIcon>
-              </Anchor>
-            )}
-          </Group>
-          {media.artist && (
-            <Text
-              style={{
-                textAlign: 'center',
-                color: 'gray',
-              }}
-            >
-              New release from {media.artist}
-            </Text>
-          )}
-          {media.episodeNumber && media.seasonNumber && (
-            <Text
-              style={{
-                textAlign: 'center',
-                color: 'gray',
-              }}
-            >
-              Season {media.seasonNumber} episode {media.episodeNumber}
-            </Text>
-          )}
-        </Stack>
-        <Stack>
-          <ScrollArea style={{ height: 280, maxWidth: 700 }}>{media.overview}</ScrollArea>
-          <Group align="center" position="center" spacing="xs">
-            {media.genres.slice(-5).map((genre: string, i: number) => (
-              <Badge size="sm" key={i}>
-                {genre}
-              </Badge>
-            ))}
-          </Group>
-        </Stack>
-      </Text>
-    </Group>
+    <MediaDisplay
+      media={{
+        ...media,
+        genres: [],
+        overview: media.overview ?? '',
+        title: media.title ?? media.name ?? media.originalName ?? undefined,
+        poster: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${media.posterPath}`,
+        seasonNumber: media.mediaInfo?.seasons.length ?? undefined,
+        episodetitle: media.title ?? undefined,
+        plexUrl: media.mediaInfo?.plexUrl ?? undefined,
+        voteAverage: media.voteAverage?.toString() ?? undefined,
+        overseerrResult: media,
+        type: 'overseer',
+      }}
+    />
   );
 }
 
@@ -118,11 +60,14 @@ export function ReadarrMediaDisplay(props: any) {
   return (
     <MediaDisplay
       media={{
+        ...media,
         title: media.title,
         poster: fullLink,
-        artist: media.author.authorName,
-        overview: media.overview,
-        genres: media.genres,
+        artist: media.authorTitle,
+        overview: `new book release by ${media.authorTitle}`,
+        genres: media.genres ?? [],
+        voteAverage: media.ratings.value.toString() ?? undefined,
+        type: 'book',
       }}
     />
   );
@@ -145,6 +90,7 @@ export function LidarrMediaDisplay(props: any) {
   return (
     <MediaDisplay
       media={{
+        type: 'music',
         title: media.title,
         poster: fullLink,
         artist: media.artist.artistName,
@@ -158,16 +104,17 @@ export function LidarrMediaDisplay(props: any) {
 export function RadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   // Find a poster CoverType
-  const poster = media.images.find((image: any) => image.coverType === 'poster');
-  // Return a movie poster containting the title and the description
   return (
     <MediaDisplay
       media={{
-        imdbId: media.imdbId,
-        title: media.title,
-        overview: media.overview,
-        poster: poster.url,
-        genres: media.genres,
+        ...media,
+        title: media.title ?? media.originalTitle,
+        overview: media.overview ?? '',
+        genres: media.genres ?? [],
+        poster: media.images.find((image: any) => image.coverType === 'poster')?.url ?? undefined,
+        voteAverage: media.ratings.tmdb.value.toString() ?? undefined,
+        imdbId: media.imdbId ?? undefined,
+        type: 'movie',
       }}
     />
   );
@@ -181,14 +128,106 @@ export function SonarrMediaDisplay(props: any) {
   return (
     <MediaDisplay
       media={{
-        imdbId: media.series.imdbId,
-        title: media.series.title,
-        overview: media.series.overview,
-        poster: poster.url,
-        genres: media.series.genres,
-        seasonNumber: media.seasonNumber,
-        episodeNumber: media.episodeNumber,
+        ...media,
+        genres: media.series.genres ?? [],
+        overview: media.overview ?? media.series.overview ?? '',
+        title: media.series.title ?? undefined,
+        poster: poster ? poster.url : undefined,
+        episodeNumber: media.episodeNumber ?? undefined,
+        seasonNumber: media.seasonNumber ?? undefined,
+        episodetitle: media.title ?? undefined,
+        imdbId: media.series.imdbId ?? undefined,
+        voteAverage: media.series.ratings.value.toString() ?? undefined,
+        type: 'tvshow',
       }}
     />
+  );
+}
+
+export function MediaDisplay({ media }: { media: IMedia }) {
+  const [opened, setOpened] = useState(false);
+  return (
+    <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 200 }}>
+      <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
+      <Stack justify="space-around">
+        <Stack spacing="sm">
+          <Text lineClamp={2}>
+            <Title order={5}>{media.title}</Title>
+          </Text>
+          <Group spacing="xs">
+            {media.type === 'tvshow' && (
+              <Badge variant="dot" size="xs" radius="md" color="blue">
+                s{media.seasonNumber}e{media.episodeNumber} - {media.episodetitle}
+              </Badge>
+            )}
+            {media.type === 'music' && (
+              <Badge variant="dot" size="xs" radius="md" color="green">
+                {media.artist}
+              </Badge>
+            )}
+            {media.type === 'movie' && (
+              <Badge variant="dot" size="xs" radius="md" color="orange">
+                Radarr
+              </Badge>
+            )}
+            {media.type === 'book' && (
+              <Badge variant="dot" size="xs" radius="md" color="red">
+                Readarr
+              </Badge>
+            )}
+            {media.genres.slice(0, 2).map((genre) => (
+              <Badge size="xs" radius="md" key={genre}>
+                {genre}
+              </Badge>
+            ))}
+          </Group>
+          <Text color="dimmed" size="xs" lineClamp={4}>
+            {media.overview}
+          </Text>
+        </Stack>
+        <Group grow>
+          {media.plexUrl && (
+            <Button
+              component="a"
+              target="_blank"
+              variant="outline"
+              href={media.plexUrl}
+              size="sm"
+              rightIcon={<IconPlayerPlay size={15} />}
+            >
+              Play
+            </Button>
+          )}
+          {media.imdbId && (
+            <Button
+              component="a"
+              target="_blank"
+              href={`https://www.imdb.com/title/${media.imdbId}`}
+              variant="outline"
+              size="sm"
+              rightIcon={<IconExternalLink size={15} />}
+            >
+              IMDb
+            </Button>
+          )}
+          {media.type === 'overseer' && (
+            <>
+              <RequestModal
+                base={media.overseerrResult as Result}
+                opened={opened}
+                setOpened={setOpened}
+              />
+              <Button
+                onClick={() => setOpened(true)}
+                size="sm"
+                rightIcon={<IconDownload size={15} />}
+              >
+                Request
+              </Button>
+            </>
+          )}
+        </Group>
+      </Stack>
+    </Group>
   );
 }

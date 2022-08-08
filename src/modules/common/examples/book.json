@@ -1,0 +1,57 @@
+{
+	"title": "Mika in Real Life",
+	"authorTitle": "jean, emiko Mika in Real Life",
+	"seriesTitle": "",
+	"disambiguation": "",
+	"authorId": 1,
+	"foreignBookId": "93584169",
+	"titleSlug": "93584169",
+	"monitored": true,
+	"anyEditionOk": false,
+	"ratings": {
+		"votes": 149,
+		"value": 4.15,
+		"popularity": 618.35
+	},
+	"releaseDate": "2022-08-09T00:00:00Z",
+	"pageCount": 384,
+	"genres": [
+		"fiction",
+		"romance",
+		"contemporary",
+		"adult",
+		"adult-fiction",
+		"chick-lit",
+		"womens-fiction",
+		"asian-literature",
+		"family",
+		"lgbt"
+	],
+	"images": [
+		{
+			"url": "/MediaCover/Books/1/cover.jpg?lastWrite=637899714580000000",
+			"coverType": "cover",
+			"extension": ".jpg"
+		}
+	],
+	"links": [
+		{
+			"url": "https://www.goodreads.com/work/editions/93584169",
+			"name": "Goodreads Editions"
+		},
+		{
+			"url": "https://www.goodreads.com/book/show/59430548-mika-in-real-life",
+			"name": "Goodreads Book"
+		}
+	],
+	"statistics": {
+		"bookFileCount": 0,
+		"bookCount": 0,
+		"totalBookCount": 1,
+		"sizeOnDisk": 0,
+		"percentOfBooks": 0
+	},
+	"added": "2022-08-07T20:48:09Z",
+	"grabbed": false,
+	"id": 1
+}

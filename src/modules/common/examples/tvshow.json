@@ -1,0 +1,110 @@
+{
+	"seriesId": 37,
+	"episodeFileId": 7387,
+	"seasonNumber": 1,
+	"episodeNumber": 4,
+	"title": "Part IV",
+	"airDate": "2022-06-08",
+	"airDateUtc": "2022-06-08T07:00:00Z",
+	"overview": "Obi-Wan Kenobi plots a daring mission into enemy territory.",
+	"episodeFile": {
+		"seriesId": 37,
+		"seasonNumber": 1,
+		"relativePath": "Season 1/Obi-Wan.Kenobi.S01E04.1080p.WEB.h264-KOGi[rartv].mkv",
+		"path": "/tv/Obi-Wan Kenobi/Season 1/Obi-Wan.Kenobi.S01E04.1080p.WEB.h264-KOGi[rartv].mkv",
+		"size": 1893191174,
+		"dateAdded": "2022-06-08T07:32:27.158296Z",
+		"sceneName": "Obi-Wan.Kenobi.S01E04.1080p.WEB.h264-KOGi[rartv]",
+		"quality": {
+			"quality": {
+				"id": 3,
+				"name": "WEBDL-1080p",
+				"source": "web",
+				"resolution": 1080
+			},
+			"revision": {
+				"version": 1,
+				"real": 0,
+				"isRepack": false
+			}
+		},
+		"language": {
+			"id": 1,
+			"name": "English"
+		},
+		"mediaInfo": {
+			"audioChannels": 5.1,
+			"audioCodec": "EAC3 Atmos",
+			"videoCodec": "h264"
+		},
+		"originalFilePath": "Obi-Wan.Kenobi.S01E04.1080p.WEB.h264-KOGi[rarbg]/Obi-Wan.Kenobi.S01E04.1080p.WEB.h264-KOGi.mkv",
+		"qualityCutoffNotMet": false,
+		"id": 7387
+	},
+	"hasFile": true,
+	"monitored": true,
+	"unverifiedSceneNumbering": false,
+	"series": {
+		"title": "Obi-Wan Kenobi",
+		"sortTitle": "obiwan kenobi",
+		"seasonCount": 1,
+		"status": "ended",
+		"overview": "During the reign of the Empire, Obi-Wan Kenobi embarks on a crucial mission.",
+		"network": "Disney+",
+		"airTime": "03:00",
+		"images": [
+			{
+				"coverType": "banner",
+				"url": "https://artworks.thetvdb.com/banners/v4/series/393199/banners/6290d38b8c283.jpg"
+			},
+			{
+				"coverType": "poster",
+				"url": "https://artworks.thetvdb.com/banners/v4/series/393199/posters/629668351aca3.jpg"
+			},
+			{
+				"coverType": "fanart",
+				"url": "https://artworks.thetvdb.com/banners/v4/series/393199/backgrounds/62912a0fe623d.jpg"
+			}
+		],
+		"seasons": [
+			{
+				"seasonNumber": 1,
+				"monitored": true
+			}
+		],
+		"year": 2022,
+		"path": "/tv/Obi-Wan Kenobi",
+		"profileId": 1,
+		"languageProfileId": 1,
+		"seasonFolder": true,
+		"monitored": true,
+		"useSceneNumbering": false,
+		"runtime": 39,
+		"tvdbId": 393199,
+		"tvRageId": 0,
+		"tvMazeId": 52260,
+		"firstAired": "2022-05-27T00:00:00Z",
+		"lastInfoSync": "2022-07-22T03:36:34.392414Z",
+		"seriesType": "standard",
+		"cleanTitle": "obiwankenobi",
+		"imdbId": "tt8466564",
+		"titleSlug": "obi-wan-kenobi",
+		"certification": "TV-14",
+		"genres": [
+			"Action",
+			"Adventure",
+			"Fantasy",
+			"Mini-Series",
+			"Science Fiction"
+		],
+		"tags": [],
+		"added": "2022-05-03T20:22:10.47688Z",
+		"ratings": {
+			"votes": 0,
+			"value": 0
+		},
+		"qualityProfileId": 1,
+		"id": 37
+	},
+	"id": 1407
+}

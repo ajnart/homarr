@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.16
+FROM node:16-alpine
 WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
