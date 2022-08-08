@@ -8,7 +8,6 @@ import {
   Skeleton,
   ScrollArea,
   Center,
-  Image,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';

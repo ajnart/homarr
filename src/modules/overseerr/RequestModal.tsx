@@ -82,8 +82,11 @@ export function MovieRequestModal({
           This request will be automatically approved
         </Alert>
         <Group>
-          <Button onClick={() => setOpened(false)}>Cancel</Button>
+          <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
+            Cancel
+          </Button>
           <Button
+            variant="outline"
             onClick={() => {
               askForMedia(MediaType.Movie, result.id, result.title, []);
             }}
@@ -137,7 +140,18 @@ export function TvRequestModal({
   const { secondaryColor } = useColorTheme();
 
   return (
-    <Modal onClose={() => setOpened(false)} radius="lg" size="lg" opened={opened}>
+    <Modal
+      onClose={() => setOpened(false)}
+      radius="lg"
+      size="lg"
+      opened={opened}
+      title={
+        <Group>
+          <IconDownload />
+          Ask for {result.name ?? result.originalName ?? 'a TV show'}
+        </Group>
+      }
+    >
       <Stack>
         <Alert
           icon={<IconAlertCircle size={16} />}
@@ -167,8 +181,11 @@ export function TvRequestModal({
           <tbody>{rows}</tbody>
         </Table>
         <Group>
-          <Button onClick={() => setOpened(false)}>Cancel</Button>
+          <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
+            Cancel
+          </Button>
           <Button
+            variant="outline"
             disabled={selection.length === 0}
             onClick={() => {
               askForMedia(
