@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
+import { ModalsProvider } from '@mantine/modals';
 import { ConfigProvider } from '../tools/state';
 import { theme } from '../tools/theme';
 import { ColorTheme } from '../tools/color';
@@ -44,6 +45,20 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
           <MantineProvider
             theme={{
               ...theme,
+              components: {
+                Checkbox: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
+                  },
+                },
+                Switch: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
+                  },
+                },
+              },
               primaryColor,
               primaryShade,
               colorScheme,
@@ -52,9 +67,11 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
             withNormalizeCSS
           >
             <NotificationsProvider limit={4} position="bottom-left">
-              <ConfigProvider>
-                <Component {...pageProps} />
-              </ConfigProvider>
+              <ModalsProvider>
+                <ConfigProvider>
+                  <Component {...pageProps} />
+                </ConfigProvider>
+              </ModalsProvider>
             </NotificationsProvider>
           </MantineProvider>
         </ColorTheme.Provider>
