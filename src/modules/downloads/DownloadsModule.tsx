@@ -196,7 +196,7 @@ export default function DownloadComponent() {
         </Table>
       ) : (
         <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Image fit="cover" height={300} src="https://danjohnvelasco.github.io/images/empty.png" />
+          <Title order={3}>No torrents found</Title>
         </Center>
       )}
     </ScrollArea>
