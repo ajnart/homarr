@@ -1,8 +1,19 @@
-import { Alert, Checkbox, createStyles, Group, LoadingOverlay, Stack, Table } from '@mantine/core';
+import {
+  Alert,
+  Button,
+  Checkbox,
+  createStyles,
+  Group,
+  LoadingOverlay,
+  Modal,
+  Stack,
+  Table,
+} from '@mantine/core';
 import { openConfirmModal } from '@mantine/modals';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons';
 import axios from 'axios';
+import Consola from 'consola';
 import { useEffect, useState } from 'react';
 import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
@@ -11,6 +22,8 @@ import { TvShowResult, TvShowResultSeason } from './TvShow.d';
 
 interface RequestModalProps {
   base: Result;
+  opened: boolean;
+  setOpened: (opened: boolean) => void;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -22,43 +35,53 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function RequestModal({ base }: RequestModalProps) {
+export function RequestModal({ base, opened, setOpened }: RequestModalProps) {
   const [result, setResult] = useState<MovieResult | TvShowResult>();
-
-  useEffect(() => {
-    // Use the overseerr API get the media info.
+  const { secondaryColor } = useColorTheme();
+  function getResults(base: Result) {
     axios.get(`/api/modules/overseerr/${base.id}?type=${base.mediaType}`).then((res) => {
       setResult(res.data);
     });
-  }, [base]);
-
-  const { secondaryColor } = useColorTheme();
-  if (!result) {
-    return <LoadingOverlay color={secondaryColor} visible />;
+  }
+  if (opened && !result) {
+    getResults(base);
+  }
+  if (!result || !opened) {
+    return null;
   }
   return base.mediaType === 'movie' ? (
-    <MovieRequestModal result={result as MovieResult} />
+    <MovieRequestModal result={result as MovieResult} opened={opened} setOpened={setOpened} />
   ) : (
-    <TvRequestModal result={result as TvShowResult} />
+    <TvRequestModal result={result as TvShowResult} opened={opened} setOpened={setOpened} />
   );
 }
 
-function MovieRequestModal({ result }: { result: MovieResult }) {
+export function MovieRequestModal({
+  result,
+  opened,
+  setOpened,
+}: {
+  result: MovieResult;
+  opened: boolean;
+  setOpened: (opened: boolean) => void;
+}) {
   const { secondaryColor } = useColorTheme();
-  openConfirmModal({
-    title: (
-      <Group>
-        <IconDownload />
-        Ask for {result.title}
-      </Group>
-    ),
-    radius: 'lg',
-    labels: { confirm: 'Request', cancel: 'Cancel' },
-    onConfirm: () => {
-      askForMedia(MediaType.Movie, result.id, result.title);
-    },
-    size: 'lg',
-    children: (
+  return (
+    <Modal
+      onClose={() => setOpened(false)}
+      radius="lg"
+      size="lg"
+      trapFocus
+      zIndex={150}
+      withinPortal
+      opened={opened}
+      title={
+        <Group>
+          <IconDownload />
+          Ask for {result.title}
+        </Group>
+      }
+    >
       <Stack>
         <Alert
           icon={<IconAlertCircle size={16} />}
@@ -69,13 +92,30 @@ function MovieRequestModal({ result }: { result: MovieResult }) {
         >
           This request will be automatically approved
         </Alert>
+        <Group>
+          <Button onClick={() => setOpened(false)}>Cancel</Button>
+          <Button
+            onClick={() => {
+              askForMedia(MediaType.Movie, result.id, result.title, []);
+            }}
+          >
+            Request
+          </Button>
+        </Group>
       </Stack>
-    ),
-  });
-  return null;
+    </Modal>
+  );
 }
 
-function TvRequestModal({ result }: { result: TvShowResult }) {
+export function TvRequestModal({
+  result,
+  opened,
+  setOpened,
+}: {
+  result: TvShowResult;
+  opened: boolean;
+  setOpened: (opened: boolean) => void;
+}) {
   const [selection, setSelection] = useState<TvShowResultSeason[]>(result.seasons);
   const { classes, cx } = useStyles();
 
@@ -107,28 +147,8 @@ function TvRequestModal({ result }: { result: TvShowResult }) {
   });
   const { secondaryColor } = useColorTheme();
 
-  openConfirmModal({
-    title: (
-      <Group>
-        <IconDownload />
-        Ask for {result.name}
-      </Group>
-    ),
-    radius: 'lg',
-    labels: { confirm: 'Request', cancel: 'Cancel' },
-    confirmProps: {
-      disabled: selection.length === 0,
-    },
-    onConfirm: () => {
-      askForMedia(
-        MediaType.Tv,
-        result.id,
-        result.name,
-        selection.map((s) => s.seasonNumber)
-      );
-    },
-    size: 'lg',
-    children: (
+  return (
+    <Modal onClose={() => setOpened(false)} radius="lg" size="lg" opened={opened}>
       <Stack>
         <Alert
           icon={<IconAlertCircle size={16} />}
@@ -157,13 +177,29 @@ function TvRequestModal({ result }: { result: TvShowResult }) {
           </thead>
           <tbody>{rows}</tbody>
         </Table>
+        <Group>
+          <Button onClick={() => setOpened(false)}>Cancel</Button>
+          <Button
+            disabled={selection.length === 0}
+            onClick={() => {
+              askForMedia(
+                MediaType.Tv,
+                result.id,
+                result.name,
+                selection.map((s) => s.seasonNumber)
+              );
+            }}
+          >
+            Request
+          </Button>
+        </Group>
       </Stack>
-    ),
-  });
-  return null;
+    </Modal>
+  );
 }
 
 function askForMedia(type: MediaType, id: number, name: string, seasons?: number[]) {
+  Consola.info(`Requesting ${type} ${id} ${name}`);
   showNotification({
     title: 'Request',
     id: id.toString(),
