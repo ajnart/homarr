@@ -9,7 +9,6 @@ import {
   ScrollArea,
   Center,
   Image,
-  Stack,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';

@@ -1,6 +1,5 @@
 import {
   ActionIcon,
-  Box,
   Button,
   Card,
   Group,
@@ -10,7 +9,6 @@ import {
   TextInput,
   useMantineColorScheme,
 } from '@mantine/core';
-import { useHover } from '@mantine/hooks';
 import { IconAdjustments } from '@tabler/icons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
