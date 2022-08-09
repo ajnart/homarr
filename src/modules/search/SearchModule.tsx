@@ -1,5 +1,5 @@
 import { Kbd, createStyles, Autocomplete, Popover, ScrollArea, Divider } from '@mantine/core';
-import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
+import { useClickOutside, useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { useForm } from '@mantine/form';
 import React, { useEffect, useRef, useState } from 'react';
 import {
@@ -38,7 +38,9 @@ export default function SearchBar(props: any) {
   const { config } = useConfig();
   const isModuleEnabled = config.modules?.[SearchModule.title]?.enabled ?? false;
   const isOverseerrEnabled = config.modules?.[OverseerrModule.title]?.enabled ?? false;
-  const OverseerrService = config.services.find((service) => service.type === 'Overseerr' || service.type === 'Jellyseerr');
+  const OverseerrService = config.services.find(
+    (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
+  );
   const queryUrl = config.settings.searchUrl ?? 'https://www.google.com/search?q=';
 
   const [OverseerrResults, setOverseerrResults] = useState<any[]>([]);
@@ -46,6 +48,7 @@ export default function SearchBar(props: any) {
   const [icon, setIcon] = useState(<Search />);
   const [results, setResults] = useState<any[]>([]);
   const [opened, setOpened] = useState(false);
+  const ref = useClickOutside(() => setOpened(false));
 
   const textInput = useRef<HTMLInputElement>();
   useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
@@ -61,7 +64,8 @@ export default function SearchBar(props: any) {
     if (OverseerrService === undefined && isOverseerrEnabled) {
       showNotification({
         title: 'Overseerr integration',
-        message: 'Module enabled but no service is configured with the type "Overseerr" / "Jellyseerr"',
+        message:
+          'Module enabled but no service is configured with the type "Overseerr" / "Jellyseerr"',
         color: 'red',
       });
     }
@@ -177,15 +181,17 @@ export default function SearchBar(props: any) {
           />
         </Popover.Target>
 
-        <Popover.Dropdown onMouseLeave={() => setOpened(false)}>
-          <ScrollArea style={{ height: 400, width: 400 }} offsetScrollbars>
-            {OverseerrResults.slice(0, 5).map((result, index) => (
-              <React.Fragment key={index}>
-                <OverseerrMediaDisplay key={result.id} media={result} />
-                {index < OverseerrResults.length - 1 && <Divider variant="dashed" my="xl" />}
-              </React.Fragment>
-            ))}
-          </ScrollArea>
+        <Popover.Dropdown>
+          <div ref={ref}>
+            <ScrollArea style={{ height: 400, width: 400 }} offsetScrollbars>
+              {OverseerrResults.slice(0, 5).map((result, index) => (
+                <React.Fragment key={index}>
+                  <OverseerrMediaDisplay key={result.id} media={result} />
+                  {index < OverseerrResults.length - 1 && <Divider variant="dashed" my="xl" />}
+                </React.Fragment>
+              ))}
+            </ScrollArea>
+          </div>
         </Popover.Dropdown>
       </Popover>
     </form>
