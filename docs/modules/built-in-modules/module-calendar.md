@@ -14,7 +14,7 @@ The calendar Module will use the Integrations to display upcoming content.
 It can display upcoming conent from all supported media integrations.
 
 The Supported integrations for the calendar module currently, are:
-[Sonarr](./../../advanced-features/integrations.md#sonarr), [Radarr](./../../advanced-features/integrations.md#radarr-integration), [Lidarr](./../../advanced-features/integrations.md#lidarr) and [Readarr](./../../advanced-features/integrations.md#readarr)
+[Sonarr](./../../advanced-configuration/integrations.md#sonarr), [Radarr](./../../advanced-configuration/integrations.md#radarr-integration), [Lidarr](./../../advanced-configuration/integrations.md#lidarr) and [Readarr](./../../advanced-configuration/integrations.md#readarr)
 
 You must select the coresponding service type when adding your instances of the supported integrations, so Homarr can communicate with them accordingly:
 
