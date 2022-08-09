@@ -5,10 +5,12 @@ import { IconCheck as Check, IconEdit as Edit, IconMenu, IconTrash as Trash } fr
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
 import { AddAppShelfItemForm } from './AddAppShelfItem';
+import { useColorTheme } from '../../tools/color';
 
 export default function AppShelfMenu(props: any) {
   const { service }: { service: serviceItem } = props;
   const { config, setConfig } = useConfig();
+  const { secondaryColor } = useColorTheme();
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   return (
