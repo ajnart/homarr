@@ -186,12 +186,12 @@ export function MediaDisplay({ media }: { media: IMedia }) {
           </Text>
         </Stack>
         <Group grow>
-          {media.plexUrl && (
+          {(media.plexUrl || media.mediaUrl) && (
             <Button
               component="a"
               target="_blank"
               variant="outline"
-              href={media.plexUrl}
+              href={media.plexUrl ?? media.mediaUrl}
               size="sm"
               rightIcon={<IconPlayerPlay size={15} />}
             >
