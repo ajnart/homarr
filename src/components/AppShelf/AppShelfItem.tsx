@@ -120,20 +120,20 @@ export function AppShelfItem(props: any) {
                   scale: 1.1,
                 }}
               >
-                <Image
-                  style={{
-                    cursor: 'pointer',
-                  }}
-                  width={80}
-                  height={80}
-                  src={`/api/imageproxy?url=${service.icon}`}
-                  objectFit="contain"
-                  onClick={() => {
-                    if (service.openedUrl) {
-                      window.open(service.openedUrl, service.newTab === false ? '_top' : '_blank');
-                    } else window.open(service.url, service.newTab === false ? '_top' : '_blank');
-                  }}
-                />
+                <Anchor
+                  href={service.openedUrl ?? service.url}
+                  target={service.newTab === false ? '_top' : '_blank'}
+                >
+                  <Image
+                    style={{
+                      cursor: 'pointer',
+                    }}
+                    width={80}
+                    height={80}
+                    src={`/api/imageproxy?url=${service.icon}`}
+                    objectFit="contain"
+                  />
+                </Anchor>
               </motion.i>
             </AspectRatio>
             <PingComponent url={service.url} status={service.status} />
