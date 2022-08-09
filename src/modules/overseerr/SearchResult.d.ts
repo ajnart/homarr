@@ -53,6 +53,7 @@ export interface MediaInfo {
   seasons: any[];
   plexUrl: string;
   serviceUrl: string;
+  mediaUrl?: string;
 }
 
 export enum MediaType {

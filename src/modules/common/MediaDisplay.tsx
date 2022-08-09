@@ -34,7 +34,7 @@ export function OverseerrMediaDisplay(props: any) {
         poster: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${media.posterPath}`,
         seasonNumber: media.mediaInfo?.seasons.length ?? undefined,
         episodetitle: media.title ?? undefined,
-        plexUrl: media.mediaInfo?.plexUrl ?? undefined,
+        plexUrl: media.mediaInfo?.plexUrl ?? media.mediaInfo?.mediaUrl ?? undefined,
         voteAverage: media.voteAverage?.toString() ?? undefined,
         overseerrResult: media,
         type: 'overseer',
@@ -186,12 +186,12 @@ export function MediaDisplay({ media }: { media: IMedia }) {
           </Text>
         </Stack>
         <Group grow>
-          {(media.plexUrl || media.mediaUrl) && (
+          {media.plexUrl && (
             <Button
               component="a"
               target="_blank"
               variant="outline"
-              href={media.plexUrl ?? media.mediaUrl}
+              href={media.plexUrl}
               size="sm"
               rightIcon={<IconPlayerPlay size={15} />}
             >
