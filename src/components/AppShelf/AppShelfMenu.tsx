@@ -43,12 +43,7 @@ export default function AppShelfMenu(props: any) {
         </Menu.Target>
         <Menu.Dropdown>
           <Menu.Label>Settings</Menu.Label>
-          <Menu.Item
-            color="primary"
-            icon={<Edit />}
-            // TODO: #2 Add the ability to edit the service.
-            onClick={() => setOpened(true)}
-          >
+          <Menu.Item color={secondaryColor} icon={<Edit />} onClick={() => setOpened(true)}>
             Edit
           </Menu.Item>
           <Menu.Label>Danger zone</Menu.Label>
