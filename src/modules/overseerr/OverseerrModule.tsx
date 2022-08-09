@@ -4,7 +4,7 @@ import { IModule } from '../ModuleTypes';
 
 export const OverseerrModule: IModule = {
   title: 'Overseerr',
-  description: 'Allows you to search and add media from Overseerr',
+  description: 'Allows you to search and add media from Overseerr/Jellyseerr',
   icon: IconEyeglass,
   component: OverseerrMediaDisplay,
 };

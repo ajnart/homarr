@@ -254,6 +254,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 form.values.type === 'Radarr' ||
                 form.values.type === 'Lidarr' ||
                 form.values.type === 'Overseerr' ||
+                form.values.type === 'Jellyseerr' ||
                 form.values.type === 'Readarr') && (
                 <>
                   <TextInput

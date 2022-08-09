@@ -71,6 +71,7 @@ export const ServiceTypeList = [
   'Sonarr',
   'Transmission',
   'Overseerr',
+  'Jellyseerr',
 ];
 export type ServiceType =
   | 'Other'
@@ -84,6 +85,7 @@ export type ServiceType =
   | 'Readarr'
   | 'Sonarr'
   | 'Overseerr'
+  | 'Jellyseerr'
   | 'Transmission';
 
 export function tryMatchPort(name: string | undefined, form?: any) {

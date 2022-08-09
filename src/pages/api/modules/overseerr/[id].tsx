@@ -11,7 +11,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const { id, type } = req.query as { id: string; type: string };
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const service = config.services.find((service) => service.type === 'Overseerr');
+  const service = config.services.find((service) => service.type === 'Overseerr' || service.type === 'Jellyseerr');
   if (!id) {
     return res.status(400).json({ error: 'No id provided' });
   }
@@ -70,7 +70,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   const { seasons, type } = req.body as { seasons?: number[]; type: MediaType };
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const service = config.services.find((service) => service.type === 'Overseerr');
+  const service = config.services.find((service) => service.type === 'Overseerr' || service.type === 'Jellyseerr');
   if (!id) {
     return res.status(400).json({ error: 'No id provided' });
   }
