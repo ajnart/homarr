@@ -44,7 +44,7 @@ export default function TitleChanger() {
           <TextInput label="Logo" placeholder="/img/logo.png" {...form.getInputProps('logo')} />
           <TextInput
             label="Favicon"
-            placeholder="/favicon.svg"
+            placeholder="/favicon.png"
             {...form.getInputProps('favicon')}
           />
           <TextInput

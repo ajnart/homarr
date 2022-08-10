@@ -7,7 +7,7 @@ async function MatchIcon(name: string) {
       .replace(/\s+/g, '-')
       .toLowerCase()}.png`
   );
-  return res.ok ? res.url : '/favicon.svg';
+  return res.ok ? res.url : '/favicon.png';
 }
 
 function tryMatchType(imageName: string): ServiceType {
