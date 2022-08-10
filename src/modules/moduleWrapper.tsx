@@ -82,7 +82,7 @@ function getItems(module: IModule) {
               });
             }}
           >
-            <Group noWrap align="end" position="center" mt={0}>
+            <Group noWrap align="end">
               <TextInput
                 key={optionName}
                 id={optionName}
