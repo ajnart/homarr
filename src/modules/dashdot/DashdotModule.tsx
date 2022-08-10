@@ -13,10 +13,6 @@ export const DashdotModule = asModule({
   icon: CalendarIcon,
   component: DashdotComponent,
   options: {
-    url: {
-      name: 'Dash. URL',
-      value: '',
-    },
     cpuMultiView: {
       name: 'CPU Multi-Core View',
       value: false,
@@ -33,6 +29,10 @@ export const DashdotModule = asModule({
       name: 'Graphs',
       value: ['CPU', 'RAM', 'Storage', 'Network'],
       options: ['CPU', 'RAM', 'Storage', 'Network', 'GPU'],
+    },
+    url: {
+      name: 'Dash. URL',
+      value: '',
     },
   },
 });
