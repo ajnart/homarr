@@ -211,26 +211,28 @@ export function MediaDisplay({ media }: { media: IMedia }) {
             </Button>
           )}
           {media.imdbId && (
-            <ActionIcon
+            <Button
               component="a"
               target="_blank"
               href={`https://www.imdb.com/title/${media.imdbId}`}
               variant="outline"
-              size="lg"
+              size="sm"
+              rightIcon={<IconExternalLink size={15} />}
             >
-              <IconExternalLink />
-            </ActionIcon>
+              IMDb
+            </Button>
           )}
           {media.overseerrId && (
-            <ActionIcon
+            <Button
               component="a"
               target="_blank"
               href={media.overseerrId}
               variant="outline"
-              size="lg"
+              size="sm"
+              rightIcon={<IconExternalLink size={15} />}
             >
-              <IconExternalLink />
-            </ActionIcon>
+              TMDb
+            </Button>
           )}
           {media.type === 'overseer' && !media.overseerrResult?.mediaInfo?.mediaAddedAt && (
             <>
