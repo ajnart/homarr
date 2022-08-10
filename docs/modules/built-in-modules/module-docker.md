@@ -1,3 +1,11 @@
+---
+tags:
+  - Modules
+  - Docker
+  - Management
+  - Container
+---
+
 # 🐳 Docker Module
 
 The Docker modules allows you to interact with Docker containers running on your system direclty within Homarr.

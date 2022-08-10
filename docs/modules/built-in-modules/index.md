@@ -13,3 +13,4 @@ Homarr offers a collection of different Modules, which help you expand and perso
 | [Search Bar](./module-search.md)      | The Search bar will open any search query in your favourite search engine or help you search a torrent or youtube video |
 | [Docker](./module-docker.md)          | The Docker module allows you to easily interact with your containers and integrate them into Homarr |
 | [Dash.](./module-dashdot.md)      | The Dash. Module will integrate the graphs of your existing instance of Dash. |
+| [Overseerr](./module-overseerr.md)      | The Overseerr module will enable you to request series and movies from your Homarr instance |
