@@ -216,7 +216,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               target="_blank"
               href={`https://www.imdb.com/title/${media.imdbId}`}
               variant="outline"
-              size="sm"
+              size="lg"
             >
               <IconExternalLink />
             </ActionIcon>
