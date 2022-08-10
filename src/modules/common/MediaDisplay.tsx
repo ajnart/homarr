@@ -197,7 +197,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
             {media.overview}
           </Text>
         </Stack>
-        <Group grow noWrap>
+        <Group noWrap>
           {media.plexUrl && (
             <Button
               component="a"
