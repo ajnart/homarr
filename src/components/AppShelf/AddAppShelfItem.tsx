@@ -135,7 +135,13 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
 
   const [debounced, cancel] = useDebouncedValue(form.values.name, 250);
   useEffect(() => {
-    if (form.values.name !== debounced || form.values.icon !== DEFAULT_ICON || form.values.type !== 'Other') return;
+    if (
+      form.values.name !== debounced ||
+      form.values.icon !== DEFAULT_ICON ||
+      form.values.type !== 'Other'
+    ) {
+      return;
+    }
     MatchIcon(form.values.name, form);
     MatchService(form.values.name, form);
     tryMatchPort(form.values.name, form);

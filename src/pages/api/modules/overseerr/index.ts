@@ -8,7 +8,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
   const { query } = req.query;
-  const service = config.services.find((service) => service.type === 'Overseerr' || service.type === 'Jellyseerr');
+  const service = config.services.find(
+    (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
+  );
   // If query is an empty string, return an empty array
   if (query === '' || query === undefined) {
     return res.status(200).json([]);
