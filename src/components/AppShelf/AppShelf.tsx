@@ -135,7 +135,7 @@ const AppShelf = (props: any) => {
           multiple
           value={toggledCategories}
           onChange={(state) => {
-            setToggledCategories(state);
+            setToggledCategories([...state]);
           }}
         >
           {categoryList.map((category, idx) => (
