@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, createStyles, Grid, Group, Paper, useMantineColorScheme } from '@mantine/core';
+import { Accordion, Grid, Paper, Stack, useMantineColorScheme } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -14,48 +14,26 @@ import { useLocalStorage } from '@mantine/hooks';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
-import { ModuleMenu, ModuleWrapper } from '../modules/moduleWrapper';
-import { DownloadsModule } from '../modules';
-import DownloadComponent from '../modules/downloads/DownloadsModule';
-
-const useStyles = createStyles((theme, _params) => ({
-  item: {
-    overflow: 'hidden',
-    borderLeft: '3px solid transparent',
-    borderRight: '3px solid transparent',
-    borderBottom: '3px solid transparent',
-    borderRadius: '20px',
-    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-    marginTop: theme.spacing.md,
-  },
-
-  control: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-    borderRadius: theme.spacing.md,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-    },
-  },
-
-  content: {
-    margin: theme.spacing.md,
-  },
-
-  label: {
-    overflow: 'visible',
-  },
-}));
+import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
+import { DownloadsModule } from '../../modules';
+import DownloadComponent from '../../modules/downloads/DownloadsModule';
 
 const AppShelf = (props: any) => {
-  const { classes, cx } = useStyles(props);
-  const [toggledCategories, settoggledCategories] = useLocalStorage({
+  const { config, setConfig } = useConfig();
+  // Extract all the categories from the services in config
+  const categoryList = config.services.reduce((acc, cur) => {
+    if (cur.category && !acc.includes(cur.category)) {
+      acc.push(cur.category);
+    }
+    return acc;
+  }, [] as string[]);
+
+  const [toggledCategories, setToggledCategories] = useLocalStorage({
     key: 'app-shelf-toggled',
-    // This is a bit of a hack to get the 5 first categories to be toggled on by default
-    defaultValue: { 0: true, 1: true, 2: true, 3: true, 4: true } as Record<string, boolean>,
+    // This is a bit of a hack to toggle the categories on the first load, return a string[] of the categories
+    defaultValue: categoryList,
   });
   const [activeId, setActiveId] = useState(null);
-  const { config, setConfig } = useConfig();
   const { colorScheme } = useMantineColorScheme();
 
   const sensors = useSensors(
@@ -93,15 +71,8 @@ const AppShelf = (props: any) => {
 
     setActiveId(null);
   }
-  // Extract all the categories from the services in config
-  const categoryList = config.services.reduce((acc, cur) => {
-    if (cur.category && !acc.includes(cur.category)) {
-      acc.push(cur.category);
-    }
-    return acc;
-  }, [] as string[]);
 
-  const item = (filter?: string) => {
+  const getItems = (filter?: string) => {
     // If filter is not set, return all the services without a category or a null category
     let filtered = config.services;
     if (!filter) {
@@ -155,54 +126,62 @@ const AppShelf = (props: any) => {
     const downloadEnabled = config.modules?.[DownloadsModule.title]?.enabled ?? false;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
-      // Return one item for each category
-      <Group grow direction="column">
+      // TODO: Style accordion so that the bar is transparent to the user settings
+      <Stack>
         <Accordion
-          disableIconRotation
-          classNames={classes}
+          variant="separated"
+          radius="lg"
           order={2}
-          iconPosition="right"
           multiple
-          initialState={toggledCategories}
-          onChange={(idx) => settoggledCategories(idx)}
+          value={toggledCategories}
+          onChange={(state) => {
+            setToggledCategories([...state]);
+          }}
         >
           {categoryList.map((category, idx) => (
-            <Accordion.Item key={category} label={category}>
-              {item(category)}
+            <Accordion.Item key={category} value={idx.toString()}>
+              <Accordion.Control>{category}</Accordion.Control>
+              <Accordion.Panel>{getItems(category)}</Accordion.Panel>
             </Accordion.Item>
           ))}
           {/* Return the item for all services without category */}
           {noCategory && noCategory.length > 0 ? (
-            <Accordion.Item key="Other" label="Other">
-              {item()}
+            <Accordion.Item key="Other" value="Other">
+              <Accordion.Control>Other</Accordion.Control>
+              <Accordion.Panel>{getItems()}</Accordion.Panel>
             </Accordion.Item>
           ) : null}
           {downloadEnabled ? (
-            <Accordion.Item key="Downloads" label="Your downloads">
-              <Paper
-                p="lg"
-                radius="lg"
-                style={{
-                  background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+            <Accordion.Item key="Downloads" value="Your downloads">
+              <Accordion.Control>Your downloads</Accordion.Control>
+              <Accordion.Panel>
+                <Paper
+                  p="lg"
+                  radius="lg"
+                  style={{
+                    background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
                 ${(config.settings.appOpacity || 100) / 100}`,
-                  borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+                    borderColor: `rgba(${
+                      colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'
+                    } \
                 ${(config.settings.appOpacity || 100) / 100}`,
-                }}
-              >
-                <ModuleMenu module={DownloadsModule} />
-                <DownloadComponent />
-              </Paper>
+                  }}
+                >
+                  <ModuleMenu module={DownloadsModule} />
+                  <DownloadComponent />
+                </Paper>
+              </Accordion.Panel>
             </Accordion.Item>
           ) : null}
         </Accordion>
-      </Group>
+      </Stack>
     );
   }
   return (
-    <Group grow direction="column">
-      {item()}
+    <Stack>
+      {getItems()}
       <ModuleWrapper mt="xl" module={DownloadsModule} />
-    </Group>
+    </Stack>
   );
 };
 

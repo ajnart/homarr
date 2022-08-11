@@ -1,0 +1,832 @@
+{
+	"title": "Celebrate",
+	"disambiguation": "",
+	"overview": "",
+	"artistId": 9,
+	"foreignAlbumId": "bfedab35-92b7-449b-adf0-875439ec9a85",
+	"monitored": true,
+	"anyReleaseOk": true,
+	"profileId": 1,
+	"duration": 1818062,
+	"albumType": "Album",
+	"secondaryTypes": [],
+	"mediumCount": 1,
+	"ratings": {
+			"votes": 1,
+			"value": 10
+	},
+	"releaseDate": "2022-07-27T00:00:00Z",
+	"releases": [
+			{
+					"id": 202,
+					"albumId": 32,
+					"foreignReleaseId": "22bd49a1-f858-427d-94ee-1788b54fb508",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "ONCE JAPAN限定盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 203,
+					"albumId": 32,
+					"foreignReleaseId": "52c73f5f-4f91-451b-96d1-3ac3ef9371ee",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "初回限定盤B",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 204,
+					"albumId": 32,
+					"foreignReleaseId": "5745040b-a5fa-4dae-ad31-0bce9d501e23",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "JEONGYEON盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 205,
+					"albumId": 32,
+					"foreignReleaseId": "006f9135-454b-4182-a057-47d1b002a282",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "NAYEON盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 206,
+					"albumId": 32,
+					"foreignReleaseId": "eeacd54b-a2bd-48f8-8d7c-3ab55b68f17c",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 81,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "NAYEON盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 2,
+									"mediumName": "JEONGYEON盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 3,
+									"mediumName": "MOMO盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 4,
+									"mediumName": "SANA盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 5,
+									"mediumName": "JIHYO盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 6,
+									"mediumName": "MINA盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 7,
+									"mediumName": "DAHYUN盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 8,
+									"mediumName": "CHAEYOUNG盤",
+									"mediumFormat": "CD"
+							},
+							{
+									"mediumNumber": 9,
+									"mediumName": "TZUYU盤",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 9,
+					"disambiguation": "5th Anniversary Collection BOX",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan",
+							"Warner Music Japan",
+							"Warner Music Japan",
+							"Warner Music Japan",
+							"Warner Music Japan",
+							"Warner Music Japan",
+							"Warner Music Japan",
+							"Warner Music Japan",
+							"Warner Music Japan"
+					],
+					"format": "9xCD",
+					"monitored": false
+			},
+			{
+					"id": 207,
+					"albumId": 32,
+					"foreignReleaseId": "8ddd43f0-859e-4cff-be7c-daf6806cc035",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "JIHYO盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 208,
+					"albumId": 32,
+					"foreignReleaseId": "ad8e0553-97de-499b-8010-85bd02c62859",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "TZUYU盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 209,
+					"albumId": 32,
+					"foreignReleaseId": "276bf831-8cae-49a0-bc50-479869d401ac",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "MOMO盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 210,
+					"albumId": 32,
+					"foreignReleaseId": "3d201058-deb0-4159-a82f-d9076a608036",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "MINA盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 211,
+					"albumId": 32,
+					"foreignReleaseId": "e1fbf96d-f83e-478c-be7d-f0f6dd5305d1",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "DAHYUN盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 212,
+					"albumId": 32,
+					"foreignReleaseId": "769a7006-763b-4cd8-8d1f-d389d52ec002",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "CHAEYOUNG盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 213,
+					"albumId": 32,
+					"foreignReleaseId": "42e74581-0ef3-4db9-8a20-ba8a3daa1cf0",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "初回限定盤A",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan",
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 214,
+					"albumId": 32,
+					"foreignReleaseId": "81bdf07f-61ad-4436-bfae-63cd1d9e700c",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "通常盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 215,
+					"albumId": 32,
+					"foreignReleaseId": "273b3ba1-88e8-4653-a542-c8b0489c1772",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 0,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "CD"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "SANA盤",
+					"country": [
+							"Japan"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "CD",
+					"monitored": false
+			},
+			{
+					"id": 216,
+					"albumId": 32,
+					"foreignReleaseId": "2442df5f-4090-452c-be7f-5885dffee8e2",
+					"title": "Celebrate",
+					"status": "Official",
+					"duration": 1818062,
+					"trackCount": 9,
+					"media": [
+							{
+									"mediumNumber": 1,
+									"mediumName": "",
+									"mediumFormat": "Digital Media"
+							}
+					],
+					"mediumCount": 1,
+					"disambiguation": "",
+					"country": [
+							"Algeria",
+							"Angola",
+							"Anguilla",
+							"Antigua and Barbuda",
+							"Argentina",
+							"Armenia",
+							"Australia",
+							"Austria",
+							"Azerbaijan",
+							"Bahamas",
+							"Bahrain",
+							"Barbados",
+							"Belgium",
+							"Belize",
+							"Benin",
+							"Bermuda",
+							"Bhutan",
+							"Bolivia",
+							"Bosnia and Herzegovina",
+							"Botswana",
+							"Brazil",
+							"Brunei",
+							"Bulgaria",
+							"Burkina Faso",
+							"Cambodia",
+							"Cameroon",
+							"Canada",
+							"Cape Verde",
+							"Cayman Islands",
+							"Chad",
+							"Chile",
+							"China",
+							"Colombia",
+							"Congo",
+							"Costa Rica",
+							"Côte d'Ivoire",
+							"Croatia",
+							"Cyprus",
+							"Czech Republic",
+							"Denmark",
+							"Dominica",
+							"Dominican Republic",
+							"Ecuador",
+							"Egypt",
+							"El Salvador",
+							"Estonia",
+							"Fiji",
+							"Finland",
+							"France",
+							"Gabon",
+							"Gambia",
+							"Georgia",
+							"Germany",
+							"Ghana",
+							"Greece",
+							"Grenada",
+							"Guatemala",
+							"Guinea-Bissau",
+							"Guyana",
+							"Honduras",
+							"Hong Kong",
+							"Hungary",
+							"Iceland",
+							"India",
+							"Indonesia",
+							"Iraq",
+							"Ireland",
+							"Israel",
+							"Italy",
+							"Jamaica",
+							"Japan",
+							"Jordan",
+							"Kazakhstan",
+							"Kenya",
+							"Kuwait",
+							"Kyrgyzstan",
+							"Laos",
+							"Latvia",
+							"Lebanon",
+							"Liberia",
+							"Libya",
+							"Lithuania",
+							"Luxembourg",
+							"Macao",
+							"North Macedonia",
+							"Madagascar",
+							"Malawi",
+							"Malaysia",
+							"Maldives",
+							"Mali",
+							"Malta",
+							"Mauritania",
+							"Mauritius",
+							"Mexico",
+							"Federated States of Micronesia",
+							"Moldova",
+							"Mongolia",
+							"Montserrat",
+							"Morocco",
+							"Mozambique",
+							"Myanmar",
+							"Namibia",
+							"Nepal",
+							"Netherlands",
+							"New Zealand",
+							"Nicaragua",
+							"Niger",
+							"Nigeria",
+							"Norway",
+							"Oman",
+							"Panama",
+							"Papua New Guinea",
+							"Paraguay",
+							"Peru",
+							"Philippines",
+							"Poland",
+							"Portugal",
+							"Qatar",
+							"Romania",
+							"Rwanda",
+							"Saint Kitts and Nevis",
+							"Saint Lucia",
+							"Saint Vincent and The Grenadines",
+							"Saudi Arabia",
+							"Senegal",
+							"Seychelles",
+							"Sierra Leone",
+							"Singapore",
+							"Slovakia",
+							"Slovenia",
+							"Solomon Islands",
+							"South Africa",
+							"Spain",
+							"Sri Lanka",
+							"Suriname",
+							"Eswatini",
+							"Sweden",
+							"Switzerland",
+							"Taiwan",
+							"Tajikistan",
+							"Tanzania",
+							"Thailand",
+							"Tonga",
+							"Trinidad and Tobago",
+							"Tunisia",
+							"Turkey",
+							"Turkmenistan",
+							"Turks and Caicos Islands",
+							"Uganda",
+							"Ukraine",
+							"United Arab Emirates",
+							"United Kingdom",
+							"United States",
+							"Uruguay",
+							"Uzbekistan",
+							"Vanuatu",
+							"Venezuela",
+							"Vietnam",
+							"British Virgin Islands",
+							"Yemen",
+							"Democratic Republic of the Congo",
+							"Zambia",
+							"Zimbabwe",
+							"Montenegro",
+							"Serbia",
+							"Kosovo"
+					],
+					"label": [
+							"Warner Music Japan"
+					],
+					"format": "Digital Media",
+					"monitored": true
+			}
+	],
+	"genres": [],
+	"media": [
+			{
+					"mediumNumber": 1,
+					"mediumName": "",
+					"mediumFormat": "Digital Media"
+			}
+	],
+	"artist": {
+			"artistMetadataId": 14,
+			"status": "continuing",
+			"ended": false,
+			"artistName": "TWICE",
+			"foreignArtistId": "8da127cc-c432-418f-b356-ef36210d82ac",
+			"tadbId": 0,
+			"discogsId": 0,
+			"overview": "Twice (Korean: 트와이스; RR: Teuwaiseu; Japanese: トゥワイス, Hepburn: To~uwaisu; commonly stylized in all caps as TWICE) is a South Korean girl group formed by JYP Entertainment. The group is composed of nine members: Nayeon, Jeongyeon, Momo, Sana, Jihyo, Mina, Dahyun, Chaeyoung, and Tzuyu. Twice was formed under the television program Sixteen (2015) and debuted on October 20, 2015, with the extended play (EP) The Story Begins.\nTwice rose to domestic fame in 2016 with their single \"Cheer Up\", which charted at number one on the Gaon Digital Chart, became the best-performing single of the year, and won \"Song of the Year\" at the Melon Music Awards and Mnet Asian Music Awards. Their next single, \"TT\", from their third EP Twicecoaster: Lane 1, topped the Gaon charts for four consecutive weeks. The EP was the highest selling Korean girl group album of 2016. Within 19 months after debut, Twice had already sold over 1.2 million units of their four EPs and special album. As of December 2020, the group has sold over 10 million albums cumulatively in South Korea and Japan, becoming the highest-selling K-Pop girl group of all time.The group debuted in Japan on June 28, 2017, under Warner Music Japan, with the release of a compilation album titled #Twice. The album charted at number 2 on the Oricon Albums Chart with the highest first-week album sales by a K-pop artist in Japan in two years. It was followed by the release of Twice's first original Japanese maxi single titled \"One More Time\" in October. Twice became the first Korean girl group to earn a platinum certification from the Recording Industry Association of Japan (RIAJ) for both an album and CD single in the same year. Twice ranked third in the Top Artist category of Billboard Japan's 2017 Year-end Rankings, and in 2019, they became the first Korean girl group to embark on a Japanese dome tour.\nTwice is the first female Korean act to simultaneously top both Billboard's World Albums and World Digital Song Sales charts with the release of their first studio album Twicetagram and its lead single \"Likey\" in 2017. With the release of their single \"Feel Special\" in 2019, Twice became the third female Korean act to chart into the Canadian Hot 100. After signing with Republic Records for American promotions as part of a partnership with JYP Entertainment, the group has charted into the US Billboard 200 with More & More and Eyes Wide Open in 2020 and Taste of Love and Formula of Love: O+T=<3 in 2021. Their first official English-language single, \"The Feels\", became their first song to enter the US Billboard Hot 100 and the UK Singles Chart, peaking at the 83rd and 80th positions of the charts, respectively. They have been dubbed the next \"Nation's Girl Group\", and their point choreography—including for \"Cheer Up\" (2016), \"TT\" (2016), \"Signal\" (2017), and \"What Is Love?\" (2018)—became dance crazes and viral memes imitated by many celebrities.",
+			"artistType": "Group",
+			"disambiguation": "South Korean girl group",
+			"links": [
+					{
+							"url": "https://www.generasia.com/wiki/Twice",
+							"name": "generasia"
+					},
+					{
+							"url": "http://twice.jype.com/",
+							"name": "jype"
+					},
+					{
+							"url": "https://twitter.com/JYPETWICE",
+							"name": "twitter"
+					},
+					{
+							"url": "https://www.facebook.com/JYPETWICE",
+							"name": "facebook"
+					},
+					{
+							"url": "https://www.instagram.com/twicetagram/",
+							"name": "instagram"
+					},
+					{
+							"url": "https://www.wikidata.org/wiki/Q20645861",
+							"name": "wikidata"
+					},
+					{
+							"url": "http://fans.jype.com/twice",
+							"name": "jype"
+					},
+					{
+							"url": "https://commons.wikimedia.org/wiki/File:Twice_performing_at_SAC_2016_02_(cropped).jpg",
+							"name": "wikimedia"
+					},
+					{
+							"url": "https://www.discogs.com/artist/4786543",
+							"name": "discogs"
+					},
+					{
+							"url": "https://www.last.fm/music/%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4",
+							"name": "last"
+					},
+					{
+							"url": "https://www.last.fm/music/TWICE",
+							"name": "last"
+					},
+					{
+							"url": "https://commons.wikimedia.org/wiki/File:160507_Twice_guerrilla_concert.jpg",
+							"name": "wikimedia"
+					},
+					{
+							"url": "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
+							"name": "spotify"
+					},
+					{
+							"url": "http://www.twicejapan.com/",
+							"name": "twicejapan"
+					},
+					{
+							"url": "https://www.instagram.com/jypetwice_japan/",
+							"name": "instagram"
+					},
+					{
+							"url": "https://twitter.com/JYPETWICE_JAPAN",
+							"name": "twitter"
+					},
+					{
+							"url": "https://itunes.apple.com/jp/artist/id1203816887",
+							"name": "apple"
+					},
+					{
+							"url": "https://commons.wikimedia.org/wiki/File:(TV10)_%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC%C2%B7%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4%C2%B7%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC,_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_%EA%B0%81%EC%96%91%EA%B0%81%EC%83%89_%ED%8C%A8%EC%85%98_%EC%97%B4%EC%A0%84_(2017_%EA%B3%A8%EB%93%A0%EB%94%94%EC%8A%A4%ED%81%AC_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB)_2m19s.jpg",
+							"name": "wikimedia"
+					},
+					{
+							"url": "https://itunes.apple.com/us/artist/id1203816887",
+							"name": "apple"
+					},
+					{
+							"url": "http://viaf.org/viaf/178150468353504172529",
+							"name": "viaf"
+					},
+					{
+							"url": "https://www.deezer.com/artist/161553",
+							"name": "deezer"
+					},
+					{
+							"url": "https://imvdb.com/n/twice",
+							"name": "imvdb"
+					},
+					{
+							"url": "https://listen.tidal.com/artist/3577941",
+							"name": "tidal"
+					},
+					{
+							"url": "https://www.youtube.com/TWICE",
+							"name": "youtube"
+					},
+					{
+							"url": "https://www.youtube.com/twicejapan_official",
+							"name": "youtube"
+					},
+					{
+							"url": "https://music.apple.com/mx/artist/1203816887",
+							"name": "apple"
+					},
+					{
+							"url": "https://www.imdb.com/name/nm9652049/",
+							"name": "imdb"
+					},
+					{
+							"url": "https://www.tiktok.com/@twice_tiktok_officialjp",
+							"name": "tiktok"
+					},
+					{
+							"url": "https://music.youtube.com/channel/UCAq0pFGa2w9SjxOq0ZxKVIw",
+							"name": "youtube"
+					}
+			],
+			"images": [
+					{
+							"url": "http://assets.fanart.tv/fanart/music/8da127cc-c432-418f-b356-ef36210d82ac/musicbanner/twice-58fb678fb1219.jpg",
+							"coverType": "banner",
+							"extension": ".jpg"
+					},
+					{
+							"url": "http://assets.fanart.tv/fanart/music/8da127cc-c432-418f-b356-ef36210d82ac/artistbackground/twice-619421e3c57cc.jpg",
+							"coverType": "fanart",
+							"extension": ".jpg"
+					},
+					{
+							"url": "http://assets.fanart.tv/fanart/music/8da127cc-c432-418f-b356-ef36210d82ac/hdmusiclogo/twice-58d833d0a608a.png",
+							"coverType": "logo",
+							"extension": ".png"
+					},
+					{
+							"url": "http://assets.fanart.tv/fanart/music/8da127cc-c432-418f-b356-ef36210d82ac/artistthumb/twice-58fb69c0c2b00.jpg",
+							"coverType": "poster",
+							"extension": ".jpg"
+					}
+			],
+			"path": "/data/Library/Music/TWICE",
+			"qualityProfileId": 1,
+			"metadataProfileId": 1,
+			"monitored": true,
+			"monitorNewItems": "all",
+			"genres": [
+					"Dance",
+					"Electronica",
+					"K-Pop",
+					"Pop",
+					"R&B"
+			],
+			"cleanName": "twice",
+			"sortName": "twice",
+			"tags": [],
+			"added": "2022-07-30T19:32:06Z",
+			"ratings": {
+					"votes": 4,
+					"value": 9.5
+			},
+			"statistics": {
+					"albumCount": 0,
+					"trackFileCount": 0,
+					"trackCount": 0,
+					"totalTrackCount": 0,
+					"sizeOnDisk": 0,
+					"percentOfTracks": 0
+			},
+			"id": 9
+	},
+	"images": [
+			{
+					"url": "/MediaCover/Albums/32/cover.jpg?lastWrite=637927379160000000",
+					"coverType": "cover",
+					"extension": ".jpg",
+					"remoteUrl": "https://imagecache.lidarr.audio/v1/caa/22bd49a1-f858-427d-94ee-1788b54fb508/32961181216-1200.jpg"
+			}
+	],
+	"links": [],
+	"statistics": {
+			"trackFileCount": 9,
+			"trackCount": 9,
+			"totalTrackCount": 9,
+			"sizeOnDisk": 74968875,
+			"percentOfTracks": 100
+	},
+	"grabbed": false,
+	"id": 32
+}

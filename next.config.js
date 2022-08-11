@@ -5,6 +5,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
+  images: {
+    domains: ['cdn.jsdelivr.net'],
+  },
   reactStrictMode: false,
+  experimental: {
+    outputStandalone: true,
+  },
   output: 'standalone',
 });

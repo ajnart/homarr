@@ -8,17 +8,21 @@ import Credits from './Credits';
 
 function SettingsMenu(props: any) {
   return (
-    <Tabs grow>
-      <Tabs.Tab data-autofocus label="Common">
+    <Tabs defaultValue="Common">
+      <Tabs.List grow>
+        <Tabs.Tab value="Common">Common</Tabs.Tab>
+        <Tabs.Tab value="Customizations">Customizations</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel data-autofocus value="Common">
         <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
           <CommonSettings />
         </ScrollArea>
-      </Tabs.Tab>
-      <Tabs.Tab label="Customizations">
+      </Tabs.Panel>
+      <Tabs.Panel value="Customizations">
         <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
           <AdvancedSettings />
         </ScrollArea>
-      </Tabs.Tab>
+      </Tabs.Panel>
     </Tabs>
   );
 }
@@ -40,18 +44,18 @@ export function SettingsMenuButton(props: any) {
         <SettingsMenu />
         <Credits />
       </Drawer>
-      <ActionIcon
-        variant="default"
-        radius="md"
-        size="xl"
-        color="blue"
-        style={props.style}
-        onClick={() => setOpened(true)}
-      >
-        <Tooltip label="Settings">
+      <Tooltip label="Settings">
+        <ActionIcon
+          variant="default"
+          radius="md"
+          size="xl"
+          color="blue"
+          style={props.style}
+          onClick={() => setOpened(true)}
+        >
           <IconSettings />
-        </Tooltip>
-      </ActionIcon>
+        </ActionIcon>
+      </Tooltip>
     </>
   );
 }
