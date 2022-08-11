@@ -15,9 +15,9 @@ on:
       - '**.md'
   workflow_dispatch:
     inputs:
-      tags:
+      tag:
         required: true
-        description: 'Tags to deploy to'
+        description: 'Tag to deploy to'
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -70,6 +70,7 @@ jobs:
       - run: yarn build
 
       - name: Docker meta
+        if: github.event_name != 'pull_request'
         id: meta
         uses: docker/metadata-action@v4
         with:
@@ -78,7 +79,8 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=ref,event=pr
-            tpye=raw,value=dev,priority=1
+            type=raw,value=${{ github.event.inputs.tag }}, prefix=test-,enable=${{ github.event.inputs.tag != '' }}
+            tpye=raw,value=dev,priority=1,enable=${{ github.event.inputs.tag == '' }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -95,6 +97,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
+        if: github.event_name != 'pull_request'
         uses: docker/build-push-action@v3
         with:
           platforms: linux/amd64,linux/arm64,linux/arm/v7

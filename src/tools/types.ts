@@ -1,5 +1,5 @@
 import { MantineTheme } from '@mantine/core';
-import { OptionValues } from '../components/modules/modules';
+import { OptionValues } from '../modules/ModuleTypes';
 
 export interface Settings {
   searchUrl: string;
@@ -70,6 +70,8 @@ export const ServiceTypeList = [
   'Readarr',
   'Sonarr',
   'Transmission',
+  'Overseerr',
+  'Jellyseerr',
 ];
 export type ServiceType =
   | 'Other'
@@ -82,9 +84,14 @@ export type ServiceType =
   | 'Radarr'
   | 'Readarr'
   | 'Sonarr'
+  | 'Overseerr'
+  | 'Jellyseerr'
   | 'Transmission';
 
-export function tryMatchPort(name: string, form?: any) {
+export function tryMatchPort(name: string | undefined, form?: any) {
+  if (!name) {
+    return undefined;
+  }
   // Match name with portmap key
   const port = portmap.find((p) => p.name === name.toLowerCase());
   if (form && port) {
@@ -101,6 +108,9 @@ export const portmap = [
   { name: 'readarr', value: '8787' },
   { name: 'deluge', value: '8112' },
   { name: 'transmission', value: '9091' },
+  { name: 'plex', value: '32400' },
+  { name: 'emby', value: '8096' },
+  { name: 'overseerr', value: '5055' },
   { name: 'dash.', value: '3001' },
 ];
 
@@ -164,7 +174,7 @@ export const MatchingImages: {
 export interface serviceItem {
   id: string;
   name: string;
-  type: string;
+  type: ServiceType;
   url: string;
   icon: string;
   category?: string;

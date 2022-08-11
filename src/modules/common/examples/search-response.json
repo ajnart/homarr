@@ -1,0 +1,490 @@
+{
+	"page": 1,
+	"totalPages": 43,
+	"totalResults": 847,
+	"results": [
+		{
+			"id": 66732,
+			"firstAirDate": "2016-07-15",
+			"genreIds": [
+				18,
+				10765,
+				9648
+			],
+			"mediaType": "tv",
+			"name": "Stranger Things",
+			"originCountry": [
+				"US"
+			],
+			"originalLanguage": "en",
+			"originalName": "Stranger Things",
+			"overview": "Quand un jeune garçon disparaît, une petite ville découvre une affaire mystérieuse, des expériences secrètes, des forces surnaturelles terrifiantes... et une fillette.",
+			"popularity": 1750.831,
+			"voteAverage": 8.6,
+			"voteCount": 12763,
+			"backdropPath": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+			"posterPath": "/r2w5UNf2mO2Mdl4q6HopuBms6XM.jpg",
+			"mediaInfo": {
+				"downloadStatus": [],
+				"downloadStatus4k": [],
+				"id": 202,
+				"mediaType": "tv",
+				"tmdbId": 66732,
+				"tvdbId": 305288,
+				"imdbId": null,
+				"status": 4,
+				"status4k": 1,
+				"createdAt": "2022-08-01T08:55:00.000Z",
+				"updatedAt": "2022-08-02T02:30:09.000Z",
+				"lastSeasonChange": "2022-08-01T08:55:00.000Z",
+				"mediaAddedAt": "2022-08-01T08:49:00.000Z",
+				"serviceId": 0,
+				"serviceId4k": null,
+				"externalServiceId": 42,
+				"externalServiceId4k": null,
+				"externalServiceSlug": "stranger-things",
+				"externalServiceSlug4k": null,
+				"ratingKey": "2012",
+				"ratingKey4k": null,
+				"seasons": [
+					{
+						"id": 166,
+						"seasonNumber": 1,
+						"status": 3,
+						"status4k": 1,
+						"createdAt": "2022-08-01T08:55:00.000Z",
+						"updatedAt": "2022-08-02T02:30:09.000Z"
+					},
+					{
+						"id": 167,
+						"seasonNumber": 2,
+						"status": 3,
+						"status4k": 1,
+						"createdAt": "2022-08-01T08:55:00.000Z",
+						"updatedAt": "2022-08-02T02:30:09.000Z"
+					},
+					{
+						"id": 168,
+						"seasonNumber": 3,
+						"status": 3,
+						"status4k": 1,
+						"createdAt": "2022-08-01T08:55:00.000Z",
+						"updatedAt": "2022-08-02T02:30:09.000Z"
+					},
+					{
+						"id": 169,
+						"seasonNumber": 4,
+						"status": 5,
+						"status4k": 1,
+						"createdAt": "2022-08-01T08:55:00.000Z",
+						"updatedAt": "2022-08-01T08:55:00.000Z"
+					}
+				],
+				"plexUrl": "https://app.plex.tv/desktop#!/server/719240db84d0795f30baa1c7283588fea536bb21/details?key=%2Flibrary%2Fmetadata%2F2012",
+				"serviceUrl": "http://sonarr:8989/series/stranger-things"
+			}
+		},
+		{
+			"id": 74851,
+			"firstAirDate": "2017-10-27",
+			"genreIds": [
+				10767
+			],
+			"mediaType": "tv",
+			"name": "Beyond Stranger Things",
+			"originCountry": [
+				"US"
+			],
+			"originalLanguage": "en",
+			"originalName": "Beyond Stranger Things",
+			"overview": "Les secrets de l'univers de \"Stranger Things 2\" sont révélés tandis que comédiens et artistes invités évoquent les derniers épisodes avec Jim Rash. Attention, spoilers !",
+			"popularity": 72.277,
+			"voteAverage": 7.5,
+			"voteCount": 74,
+			"backdropPath": "/qevaCqIekzc7Bp5f2kGAi92kO39.jpg",
+			"posterPath": "/rHCFO8RJ3Hg6a8KjWAsvAsa38hp.jpg"
+		},
+		{
+			"id": 182026,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				18
+			],
+			"originalLanguage": "en",
+			"originalTitle": "Stranger Things",
+			"overview": "",
+			"popularity": 76.465,
+			"releaseDate": "2013-04-05",
+			"title": "Stranger Things",
+			"video": false,
+			"voteAverage": 8.6,
+			"voteCount": 51,
+			"backdropPath": null,
+			"posterPath": "/4TKdguyacjYrC1Hnbi3PjSP8r3M.jpg"
+		},
+		{
+			"id": 1865,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				12,
+				28,
+				14
+			],
+			"originalLanguage": "en",
+			"originalTitle": "Pirates of the Caribbean: On Stranger Tides",
+			"overview": "Dans cette histoire pleine d’action, où vérité, trahison, jeunesse éternelle et mort forment un cocktail explosif, le capitaine Jack Sparrow retrouve une femme qu’il a connu autrefois. Leurs liens sont‐ils faits d’amour ou, cette femme n’est‐elle qu’une aventurière sans scrupules qui cherche à l’utiliser pour découvrir la légendaire Fontaine de Jouvence ? Lorsqu’elle l’oblige à embarquer à bord du Queen Anne’s Revenge, le bateau du terrible pirate Barbe‐Noire, Jack ne sait plus ce qu’il doit craindre le plus : Le redoutable maître du bateau ou cette femme surgit de son passé…",
+			"popularity": 251.27,
+			"releaseDate": "2011-05-14",
+			"title": "Pirates des Caraïbes : La Fontaine de jouvence",
+			"video": false,
+			"voteAverage": 6.5,
+			"voteCount": 12180,
+			"backdropPath": "/uzIGtyS6bbnJzGsPL93WCF1FWm8.jpg",
+			"posterPath": "/5JjjjGg24IGRXIQtaZkPU59acjV.jpg"
+		},
+		{
+			"id": 96608,
+			"firstAirDate": "2020-01-30",
+			"genreIds": [
+				9648,
+				80
+			],
+			"mediaType": "tv",
+			"name": "Intimidation",
+			"originCountry": [
+				"GB"
+			],
+			"originalLanguage": "en",
+			"originalName": "The Stranger",
+			"overview": "Adam Price mène une vie idyllique : il a un bon travail, deux fils merveilleux et son mariage semble sans faille. Mais son bonheur va soudainement voler en éclats lorsque « The Stranger » dévoile un secret choquant au sujet de sa femme.",
+			"popularity": 15.11,
+			"voteAverage": 7.4,
+			"voteCount": 283,
+			"backdropPath": "/97pA0UjBqqgcZFbREQL3U1BQDgX.jpg",
+			"posterPath": "/y9mX3A3O4SxffDIAlK8Li8AL8BD.jpg"
+		},
+		{
+			"id": 7183,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				53
+			],
+			"originalLanguage": "en",
+			"originalTitle": "Perfect Stranger",
+			"overview": "Rowena est une journaliste d'investigation. Lorsqu'elle découvre que Harrison Hill, le très puissant publicitaire, est peut-être lié au meurtre de son amie, elle décide de mener son enquête. Pour se faire et l'approcher, elle va endosser deux identités, celle de Katherine, une intérimaire employée de sa société et Veronica, une jeune femme avec laquelle Hill flirte sur internet.",
+			"popularity": 20.863,
+			"releaseDate": "2007-04-11",
+			"title": "Dangereuse séduction",
+			"video": false,
+			"voteAverage": 5.8,
+			"voteCount": 756,
+			"backdropPath": "/sG7flxRI3ujV5t2scYpbmREVQbv.jpg",
+			"posterPath": "/jpQoXiLjTN8uqU9Ym9TMaz2D9aS.jpg"
+		},
+		{
+			"id": 99282,
+			"firstAirDate": "2020-04-13",
+			"genreIds": [
+				18,
+				9648,
+				80
+			],
+			"mediaType": "tv",
+			"name": "The Stranger",
+			"originCountry": [
+				"US"
+			],
+			"originalLanguage": "en",
+			"originalName": "The Stranger",
+			"overview": "Un jeune conducteur sans scrupule prend un mystérieux passager d'Hollywood Hills. Sur 12 heures, les deux hommes naviguent dans les bas-fonds sordides de Los Angeles...",
+			"popularity": 7.158,
+			"voteAverage": 7.5,
+			"voteCount": 25,
+			"backdropPath": "/g8n6jB5Mkn6FUGQ5MbqEMIHrZba.jpg",
+			"posterPath": "/4KrCPwB6yNBR8Chg5quigrrUFCD.jpg"
+		},
+		{
+			"id": 10053,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				27,
+				9648
+			],
+			"originalLanguage": "en",
+			"originalTitle": "When a Stranger Calls",
+			"overview": "Alors qu'elle garde des enfants, une étudiante est terrorisée par un homme qui la harcèle au téléphone en lui demandant si elle a bien vérifié que tout était normal avec les petits dont elle a la charge. Les policiers qu'elle a appelés finissent par localiser les appels et l'informent que ceux-ci proviennent de la maison où elle se trouve...",
+			"popularity": 18.475,
+			"releaseDate": "2006-02-03",
+			"title": "Terreur sur la Ligne",
+			"video": false,
+			"voteAverage": 5.7,
+			"voteCount": 873,
+			"backdropPath": "/lF3ojoSmCZgrh9nyy2lOxoWL7KD.jpg",
+			"posterPath": "/xva4IuEfaT6c8tZLpNK2LKCtNGf.jpg"
+		},
+		{
+			"id": 291151,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				53,
+				27,
+				9648
+			],
+			"originalLanguage": "en",
+			"originalTitle": "The Stranger",
+			"overview": "Un homme mystérieux à la recherche de sa femme arrive dans une petite ville du Canada,  sa présence va quelque peu bouleverser l'apparente tranquillité qui y règne.",
+			"popularity": 7.932,
+			"releaseDate": "2014-06-12",
+			"title": "The Stranger",
+			"video": false,
+			"voteAverage": 4.7,
+			"voteCount": 77,
+			"backdropPath": "/plTx6iHNbLxNXKL4swZxl4RVT2w.jpg",
+			"posterPath": "/8YjSy1vG4yuuatgdAU1NbitA52F.jpg"
+		},
+		{
+			"id": 1262,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				35,
+				18,
+				14,
+				10749
+			],
+			"originalLanguage": "en",
+			"originalTitle": "Stranger Than Fiction",
+			"overview": "Un beau matin, Harold Crick, un obscur fonctionnaire du fisc, entend soudain une voix de femme qui se met à commenter tout ce qu'il vit, y compris ses pensées les plus intimes. Pour Harold, c'est un cauchemar qui dérègle sa vie parfaitement agencée, mais cela devient encore plus grave lorsque la voix annonce qu'il va bientôt mourir...Harold découvre que cette voix est celle d'une romancière, Karen Eiffel, qui s'efforce désespérément d'écrire la fin de ce qui pourrait être son meilleur livre. Il ne lui reste plus qu'à trouver comment tuer son personnage principal : Harold ! Elle ignore que celui-ci existe, qu'il entend ses mots et connaît le sort qu'elle lui réserve...Pour s'en sortir vivant, Harold doit changer son destin. Sa seule chance est de devenir un personnage de comédie, puisque ceux-ci ne sont jamais tués...",
+			"popularity": 12.475,
+			"releaseDate": "2006-09-09",
+			"title": "L'Incroyable Destin de Harold Crick",
+			"video": false,
+			"voteAverage": 7.3,
+			"voteCount": 1875,
+			"backdropPath": "/d9eONXYtCmQnPWw61w9pNMGlSzK.jpg",
+			"posterPath": "/hZpCDBXmKqDBBonBKGAcZ95Qmvi.jpg"
+		},
+		{
+			"id": 87692,
+			"firstAirDate": "2019-04-06",
+			"genreIds": [
+				16,
+				35,
+				10765
+			],
+			"mediaType": "tv",
+			"name": "Chou Kadou Girl",
+			"originCountry": [
+				"JP"
+			],
+			"originalLanguage": "ja",
+			"originalName": "超可動ガール⅙ AMAZING STRANGER",
+			"overview": "Haruto est un otaku qui ne s'intéresse pas aux (vraies) filles en 3D ! Un jour, sa dernière acquisition, une figurine de son héroïne préférée Nona, se met à bouger toute seule. Ainsi commence la drôle de vie conjugale entre un otaku et un robot...",
+			"popularity": 11.422,
+			"voteAverage": 6.4,
+			"voteCount": 5,
+			"backdropPath": "/yl4Ltag61cTv0XtwbwMpvzxt7ov.jpg",
+			"posterPath": "/pPxakEs1TP6JhclPceGxHBoE8Ey.jpg"
+		},
+		{
+			"id": 455108,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				9648,
+				18,
+				27,
+				36
+			],
+			"originalLanguage": "en",
+			"originalTitle": "The Little Stranger",
+			"overview": "Fils d’une modeste domestique, le docteur Faraday s’est construit une existence tranquille et respectable en devenant médecin de campagne. En 1947, lors d’un été particulièrement long et chaud, il est appelé au chevet d’une patiente à Hundreds Hall, où sa mère fut employée autrefois. Le domaine, qui appartient depuis plus de deux siècles à la famille Ayres, est aujourd’hui en piteux état, et ses habitants – la mère, son fils et sa fille – sont hantés par quelque chose de bien plus effrayant encore que le déclin de leurs finances. Faraday ne s’imagine pas à quel point le destin de cette famille et le sien sont liés, ni ce que cela a de terrifiant…",
+			"popularity": 12.538,
+			"releaseDate": "2018-08-30",
+			"title": "The Little Stranger",
+			"video": false,
+			"voteAverage": 5.7,
+			"voteCount": 216,
+			"backdropPath": "/eyrUZ6jvg1Qy3jUz5YH8U4UkFLP.jpg",
+			"posterPath": "/qm1KJU9coK2voDIFD6AUvSgVG56.jpg"
+		},
+		{
+			"id": 38166,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				28,
+				18,
+				53,
+				9648
+			],
+			"originalLanguage": "en",
+			"originalTitle": "The Stranger",
+			"overview": "Un agent du F.B.I poursuit le témoin matériel d'une enquête classée secret défense.",
+			"popularity": 6.555,
+			"releaseDate": "2010-06-01",
+			"title": "The Stranger",
+			"video": false,
+			"voteAverage": 4.9,
+			"voteCount": 57,
+			"backdropPath": "/kjFC8S6y9wKiRXRpOPwQQu6e9cJ.jpg",
+			"posterPath": "/fXg4MXYruDKrssFmfzKlf2TINJb.jpg"
+		},
+		{
+			"id": 20246,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				80,
+				18,
+				9648,
+				53
+			],
+			"originalLanguage": "en",
+			"originalTitle": "The Stranger",
+			"overview": "L'inspecteur Wilson, de la commission contre les crimes de guerre, décide de relâcher un ancien chef de camp d'extermination nazi, dans l'espoir qu'il le conduira jusqu'à son supérieur, Franz Kindler. L'Allemand, qui circule sous un nom d'emprunt, se rend dans la petite ville de Harper. L'inspecteur le suit. Se sachant surveillé, l'ex-détenu attire le policier dans le gymnase de l'école. Là, il l'assomme et se précipite dans la maison voisine, qui n'est autre que celle de Franz Kindler, aujourd'hui professeur dans ce collège, pour le prévenir de l'arrivée de la police…",
+			"popularity": 7.449,
+			"releaseDate": "1946-07-02",
+			"title": "Le Criminel",
+			"video": false,
+			"voteAverage": 7.3,
+			"voteCount": 449,
+			"backdropPath": "/eewSm2QKPMueCM3ix5r3aE5eIur.jpg",
+			"posterPath": "/ee3F8CvNMSJZvYiwW2DKSvU9rQj.jpg"
+		},
+		{
+			"id": 469,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				35,
+				18
+			],
+			"originalLanguage": "en",
+			"originalTitle": "Stranger Than Paradise",
+			"overview": "Eva, 16 ans, quitte la Hongrie et retrouve son cousin Willie, installé depuis 10 ans aux États-Unis. Inadaptés à cette terre de désillusions, ils partent de Miami découvrir le paradis de la Floride, royaume du jeu et dernier espoir d'un exil douloureux.",
+			"popularity": 9.713,
+			"releaseDate": "1984-10-01",
+			"title": "Stranger Than Paradise",
+			"video": false,
+			"voteAverage": 7.2,
+			"voteCount": 394,
+			"backdropPath": "/tAEV7htL9Yi0hMHtxlv2VAm9Rbe.jpg",
+			"posterPath": "/fxlMexOi2D64ugS07Sv2hJZYM3R.jpg"
+		},
+		{
+			"id": 45964,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				27,
+				53,
+				18,
+				80,
+				9648
+			],
+			"originalLanguage": "en",
+			"originalTitle": "When a Stranger Calls",
+			"overview": "Au cours d’une nuit où elle garde les enfants d’un couple marié, une baby-sitter se fait harceler au téléphone par un inconnu qui lui pose systématiquement la même question : « êtes-vous allée voir les enfants ? ». De plus en plus inquiète à mesure que les appels se succèdent, la jeune femme décide de contacter la police.",
+			"popularity": 9.731,
+			"releaseDate": "1979-10-26",
+			"title": "Terreur sur la ligne",
+			"video": false,
+			"voteAverage": 6.2,
+			"voteCount": 178,
+			"backdropPath": "/3dK12SaczU7Tf8btq7K2F5HQg6F.jpg",
+			"posterPath": "/x4d8XUXbWLjiro51iQ2qiFhT6t4.jpg"
+		},
+		{
+			"id": 105024,
+			"firstAirDate": "2020-06-24",
+			"genreIds": [
+				35,
+				18
+			],
+			"mediaType": "tv",
+			"name": "Hello, Stranger",
+			"originCountry": [
+				"PH"
+			],
+			"originalLanguage": "tl",
+			"originalName": "Hello, Stranger",
+			"overview": "",
+			"popularity": 3.554,
+			"voteAverage": 7.3,
+			"voteCount": 3,
+			"backdropPath": "/8uXYX9F92gc0RlVlTEYVrze83fo.jpg",
+			"posterPath": "/uu8yWT64FP0W39whxIcs2aMv1Wb.jpg"
+		},
+		{
+			"id": 618352,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				16,
+				28,
+				27,
+				14
+			],
+			"originalLanguage": "en",
+			"originalTitle": "DC Showcase: The Phantom Stranger",
+			"overview": "L'histoire se situe dans les années 1970, quand une jeune femme du nom de Jess et ses amis se rendent à une soirée dans un vieux manoir qui appartient à un certain Seth, les choses tournent au vinaigre, le Phantom Stranger arrivera pour leur porter secours.",
+			"popularity": 8.072,
+			"releaseDate": "2020-02-25",
+			"title": "DC Showcase: The Phantom Stranger",
+			"video": false,
+			"voteAverage": 7.5,
+			"voteCount": 49,
+			"backdropPath": "/vQkGZ0u9E8PgBbjg8vo61KHxQDc.jpg",
+			"posterPath": "/tqcL1YEiGUKsW1Ofka59m4MIKr1.jpg"
+		},
+		{
+			"id": 413852,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				18,
+				9648,
+				53,
+				878
+			],
+			"originalLanguage": "en",
+			"originalTitle": "Welcome the Stranger",
+			"overview": "Alice arrive inopinément chez son frère, Ethan, en espérant se réconcilier avec lui. D'étranges visions et le retour de la petite amie d'Ethan perturbent son projet...",
+			"popularity": 5.994,
+			"releaseDate": "2018-03-20",
+			"title": "Welcome the Stranger",
+			"video": false,
+			"voteAverage": 5,
+			"voteCount": 33,
+			"backdropPath": "/51aiE8fEXchmbLIyX7Smm3zJavV.jpg",
+			"posterPath": "/fZch4FhfexA18gUUQjHXKnLmkjh.jpg"
+		},
+		{
+			"id": 41670,
+			"mediaType": "movie",
+			"adult": false,
+			"genreIds": [
+				18,
+				10749,
+				80
+			],
+			"originalLanguage": "en",
+			"originalTitle": "A Stranger Among Us",
+			"overview": "Chargée d'enquêter sur un meurtre au sein de la communauté hassidique de la ville de New-York, la détective Emily Eden parvient à se faire accepter au sein de cette secte si hermétique.",
+			"popularity": 7.016,
+			"releaseDate": "1992-07-17",
+			"title": "Une étrangère parmi nous",
+			"video": false,
+			"voteAverage": 5.7,
+			"voteCount": 71,
+			"backdropPath": "/hL0hkMFGWgOvC0P4le6gzRzwa62.jpg",
+			"posterPath": "/rvk00cSV6cGWQQIppEPYLnDebQ1.jpg"
+		}
+	]
+}

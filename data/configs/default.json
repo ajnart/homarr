@@ -15,12 +15,6 @@
   "modules": {
     "Search Bar": {
       "enabled": true
-    },
-    "Date": {
-      "enabled": false
-    },
-    "Docker": {
-      "enabled": true
     }
   }
 }

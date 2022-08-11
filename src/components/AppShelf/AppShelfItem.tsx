@@ -3,7 +3,6 @@ import {
   Card,
   Anchor,
   AspectRatio,
-  Image,
   Center,
   createStyles,
   useMantineColorScheme,
@@ -12,8 +11,9 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import Image from 'next/image';
 import { serviceItem } from '../../tools/types';
-import PingComponent from '../modules/ping/PingModule';
+import PingComponent from '../../modules/ping/PingModule';
 import AppShelfMenu from './AppShelfMenu';
 import { useConfig } from '../../tools/state';
 
@@ -120,18 +120,20 @@ export function AppShelfItem(props: any) {
                   scale: 1.1,
                 }}
               >
-                <Image
-                  styles={{ root: { cursor: 'pointer' } }}
-                  width={80}
-                  height={80}
-                  src={service.icon}
-                  fit="contain"
-                  onClick={() => {
-                    if (service.openedUrl) {
-                      window.open(service.openedUrl, service.newTab === false ? '_top' : '_blank');
-                    } else window.open(service.url, service.newTab === false ? '_top' : '_blank');
-                  }}
-                />
+                <Anchor
+                  href={service.openedUrl ?? service.url}
+                  target={service.newTab === false ? '_top' : '_blank'}
+                >
+                  <Image
+                    style={{
+                      cursor: 'pointer',
+                    }}
+                    width={80}
+                    height={80}
+                    src={service.icon}
+                    objectFit="contain"
+                  />
+                </Anchor>
               </motion.i>
             </AspectRatio>
             <PingComponent url={service.url} status={service.status} />

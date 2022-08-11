@@ -1,14 +1,14 @@
-import { Checkbox, Group, SimpleGrid, Title } from '@mantine/core';
-import * as Modules from '../modules';
+import { Checkbox, SimpleGrid, Stack, Title } from '@mantine/core';
+import * as Modules from '../../modules';
 import { useConfig } from '../../tools/state';
 
 export default function ModuleEnabler(props: any) {
   const { config, setConfig } = useConfig();
   const modules = Object.values(Modules).map((module) => module);
   return (
-    <Group direction="column">
+    <Stack>
       <Title order={4}>Module enabler</Title>
-      <SimpleGrid cols={2} spacing="md">
+      <SimpleGrid cols={3} spacing="xs">
         {modules.map((module) => (
           <Checkbox
             key={module.title}
@@ -30,6 +30,6 @@ export default function ModuleEnabler(props: any) {
           />
         ))}
       </SimpleGrid>
-    </Group>
+    </Stack>
   );
 }

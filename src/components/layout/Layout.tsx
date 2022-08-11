@@ -18,6 +18,7 @@ export default function Layout({ children, style }: any) {
 
   return (
     <AppShell
+      fixed={false}
       header={<Header />}
       navbar={widgetPosition ? <Navbar /> : undefined}
       aside={widgetPosition ? undefined : <Aside />}
