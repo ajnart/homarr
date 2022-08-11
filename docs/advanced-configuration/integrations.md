@@ -51,3 +51,8 @@ Make a new API key in `Settings > General > Security > API Key`.
 The [qBittorent](https://www.qbittorrent.org/) displays your active torrents in a list, showing: Name, Downloads/Upload speed, and Progress.
 
 ![image](https://user-images.githubusercontent.com/71191962/170561494-4b60f719-908e-48be-bfa8-f5d50f492565.png)
+
+### Overseerr and Jellyseer Integration
+The [Overseerr](https://overseerr.dev/) and [Jellyseerr](https://github.com/bignuto/jellyseer) integration enable you to request media directly from Homarr.
+
+Please [read our documentation](./../modules/built-in-modules/module-overseerr.md#initial-setup) on how to set up the integration.
