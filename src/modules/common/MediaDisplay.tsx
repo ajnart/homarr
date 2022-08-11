@@ -1,4 +1,4 @@
-import { ActionIcon, Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons';
 import { useState } from 'react';
 import { useColorTheme } from '../../tools/color';
@@ -63,9 +63,11 @@ export function ReadarrMediaDisplay(props: any) {
   if (!readarr) {
     return null;
   }
-  const baseUrl = new URL(readarr.url).origin;
+  const baseUrl = readarr.openedUrl
+    ? new URL(readarr.openedUrl).origin
+    : new URL(readarr.url).origin;
   // Remove '/' from the end of the lidarr url
-  const fullLink = `${baseUrl}${poster.url}`;
+  const fullLink = poster ? `${baseUrl}${poster.url}` : undefined;
   // Return a movie poster containting the title and the description
   return (
     <MediaDisplay
@@ -93,7 +95,7 @@ export function LidarrMediaDisplay(props: any) {
   if (!lidarr) {
     return null;
   }
-  const baseUrl = new URL(lidarr.url).origin;
+  const baseUrl = lidarr.openedUrl ? new URL(lidarr.openedUrl).origin : new URL(lidarr.url).origin;
   // Remove '/' from the end of the lidarr url
   const fullLink = poster ? `${baseUrl}${poster.url}` : undefined;
   // Return a movie poster containting the title and the description
