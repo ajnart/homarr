@@ -1,4 +1,4 @@
-import { createStyles, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import { createStyles, Stack, Title, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -214,30 +214,35 @@ export function DashdotComponent() {
           </div>
 
           {graphs.map((graph) => (
-            <iframe
-              className={classes.iframe}
-              style={
-                isCompact
-                  ? {
-                      width: graph.spanTwo ? '100%' : 'calc(50% - 5px)',
-                    }
-                  : undefined
-              }
-              key={graph.name}
-              title={graph.name}
-              src={`${dashdotUrl}?singleGraphMode=true&graph=${graph.name.toLowerCase()}&theme=${colorScheme}&surface=${(colorScheme ===
-              'dark'
-                ? theme.colors.dark[7]
-                : theme.colors.gray[0]
-              ).substring(1)}${isCompact ? '&gap=10' : '&gap=5'}&innerRadius=${theme.radius.lg}${
-                graph.params
-                  ? `&${Object.entries(graph.params)
-                      .map(([key, value]) => `${key}=${value.toString()}`)
-                      .join('&')}`
-                  : ''
-              }`}
-              frameBorder="0"
-            />
+            <Stack>
+              <Title style={{ position: 'absolute', right: 0 }} order={4} mt={10} mr={25}>
+                {graph.name}
+              </Title>
+              <iframe
+                className={classes.iframe}
+                style={
+                  isCompact
+                    ? {
+                        width: graph.spanTwo ? '100%' : 'calc(50% - 5px)',
+                      }
+                    : undefined
+                }
+                key={graph.name}
+                title={graph.name}
+                src={`${dashdotUrl}?singleGraphMode=true&graph=${graph.name.toLowerCase()}&theme=${colorScheme}&surface=${(colorScheme ===
+                'dark'
+                  ? theme.colors.dark[7]
+                  : theme.colors.gray[0]
+                ).substring(1)}${isCompact ? '&gap=10' : '&gap=5'}&innerRadius=${theme.radius.lg}${
+                  graph.params
+                    ? `&${Object.entries(graph.params)
+                        .map(([key, value]) => `${key}=${value.toString()}`)
+                        .join('&')}`
+                    : ''
+                }`}
+                frameBorder="0"
+              />
+            </Stack>
           ))}
         </div>
       )}
