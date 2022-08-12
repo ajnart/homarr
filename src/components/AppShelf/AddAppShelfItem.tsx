@@ -172,6 +172,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
         onSubmit={form.onSubmit(() => {
           const newForm = { ...form.values };
           if (newForm.newTab === true) newForm.newTab = undefined;
+          if (newForm.openedUrl === '') newForm.openedUrl = undefined;
           if (newForm.category === null) newForm.category = undefined;
           if (newForm.status.length === 1 && newForm.status[0] === '200') {
             delete newForm.status;
