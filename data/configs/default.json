@@ -1,20 +1,144 @@
 {
-  "name": "default",
-  "services": [
-    {
-      "name": "example",
-      "id": "09c45847-8afc-4c1a-9697-f03192de948a",
-      "type": "Other",
-      "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
-      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    }
-  ],
-  "settings": {
-    "searchUrl": "https://google.com/search?q="
-  },
-  "modules": {
-    "Search Bar": {
-      "enabled": true
-    }
-  }
+	"name": "default",
+	"services": [
+		{
+			"id": "3c5709f4-9d97-4e84-b781-f82e01fca64d",
+			"type": "Other",
+			"category": "Services",
+			"name": "phpmyadmin",
+			"icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/phpmyadmin.png",
+			"url": "https://prod-phpmyadmin.herokuapp.com/",
+			"openedUrl": "https://prod-phpmyadmin.herokuapp.com/"
+		},
+		{
+			"id": "fc4aae16-91f8-44f0-9852-a6df760568bc",
+			"type": "Other",
+			"category": "Services",
+			"name": "Iventory",
+			"icon": "https://snipeitapp.com/img/icons/apple-touch-icon.png",
+			"url": "https://prod-snipeit.herokuapp.com/",
+			"openedUrl": "https://prod-snipeit.herokuapp.com/"
+		},
+		{
+			"id": "12e02814-e506-4197-9a65-1a8d53c528d4",
+			"type": "Other",
+			"category": "Services",
+			"name": "Blog",
+			"icon": "https://tlnk.fr/images/tlnk_logo.svg",
+			"url": "https://tlnk.fr/blog",
+			"openedUrl": "https://tlnk.fr/blog"
+		},
+		{
+			"id": "5e44dcaf-30c1-4bee-9825-3e0235d8d6ca",
+			"type": "Other",
+			"category": "Cloud",
+			"name": "Azure",
+			"icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/azure.png",
+			"url": "https://portal.azure.com/?bundlingKind=DefaultPartitioner&configHash=rvDdY3lwe5D9&env=portal&helppanenewdesign=true&l=en.en-us&pageVersion=10.66.0.143171.220628-0056",
+			"openedUrl": "https://portal.azure.com/?bundlingKind=DefaultPartitioner&configHash=rvDdY3lwe5D9&env=portal&helppanenewdesign=true&l=en.en-us&pageVersion=10.66.0.143171.220628-0056"
+		},
+		{
+			"id": "5caac918-5024-4a39-9f2d-1e21a5afd4db",
+			"type": "Other",
+			"category": "Cloud",
+			"name": "Gitlab",
+			"icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/gitlab.png",
+			"url": "https://gitlab.com/users/sign_in",
+			"openedUrl": "https://gitlab.com/users/sign_in"
+		},
+		{
+			"id": "fdd81b80-81d7-493c-92ec-94cc89494f53",
+			"type": "Other",
+			"category": "Cloud",
+			"name": "Scaleway",
+			"icon": "https://deskpro.scaleway.com/file.php/5235844MWSDBGSXXJPPDRX0/Scaleway-Logo-Vertical-Purple-RGB-1.png",
+			"url": "https://console.scaleway.com/organization",
+			"openedUrl": "https://console.scaleway.com/organization"
+		},
+		{
+			"id": "50dbe3e0-920e-4125-8299-e72615838f69",
+			"type": "Other",
+			"category": "Cloud",
+			"name": "Vercel",
+			"icon": "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/57x57.png",
+			"url": "https://vercel.com/dashboard",
+			"openedUrl": "https://vercel.com/dashboard"
+		},
+		{
+			"id": "5893f6bc-db4b-4091-a0e5-3adee50c87af",
+			"type": "Other",
+			"category": "Cloud",
+			"name": "AWS",
+			"icon": "https://a0.awsstatic.com/libra-css/images/site/touch-icon-iphone-114-smile.png",
+			"url": "https://aws.amazon.com/console/",
+			"openedUrl": "https://aws.amazon.com/console/"
+		},
+		{
+			"id": "f63abfc5-acb8-467c-a2ac-d869bfb753ec",
+			"type": "Other",
+			"category": "Cloud",
+			"name": "OVH",
+			"icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/ovh.png",
+			"url": "https://www.ovh.com/auth/?action=disconnect&onsuccess=https%3A%2F%2Fwww.ovh.com%2Fmanager%2F",
+			"openedUrl": "https://www.ovh.com/auth/?action=disconnect&onsuccess=https%3A%2F%2Fwww.ovh.com%2Fmanager%2F"
+		},
+		{
+			"id": "34fd8c00-d9a9-4b62-adbc-38fce2e8f8f9",
+			"type": "Other",
+			"category": "Cloud",
+			"name": "Heroku",
+			"icon": "https://www.herokucdn.com/favicon.ico",
+			"url": "https://id.heroku.com/login",
+			"openedUrl": "https://id.heroku.com/login"
+		},
+		{
+			"id": "dd7827a6-49e4-4066-8b53-160116a1d9e6",
+			"type": "Other",
+			"category": "Services",
+			"name": "Home Assistant",
+			"icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/home-assistant.png",
+			"url": "https://ha.tlnk.fr",
+			"openedUrl": "https://ha.tlnk.fr"
+		}
+	],
+	"settings": {
+		"searchUrl": "https://duckduckgo.com/?q=",
+		"widgetPosition": "left",
+		"primaryColor": "blue",
+		"secondaryColor": "indigo",
+		"primaryShade": 5,
+		"title": "Console",
+		"logo": "https://tlnk.fr/images/tlnk_logo.svg",
+		"favicon": "https://tlnk.fr/images/tlnk_logo.svg"
+	},
+	"modules": {
+		"Search Bar": {
+			"enabled": true
+		},
+		"Date": {
+			"enabled": true,
+			"options": {
+				"full": {
+					"value": true
+				}
+			}
+		},
+		"Calendar": {
+			"enabled": false
+		},
+		"Ping Services": {
+			"enabled": true
+		},
+		"Download Speed": {
+			"enabled": false
+		},
+		"Weather": {
+			"enabled": false,
+			"options": {
+				"location": {
+					"value": "barcelona"
+				}
+			}
+		}
+	}
 }
