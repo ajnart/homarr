@@ -38,6 +38,12 @@ Currently, the calendar module supports Readarr, Radarr, Sonarr and Lidarr.
 
 ![screenshot of the calendar with multiple indicators](./img/module-calendar-indicators.png)
 
+:::info
+
+Homarr will only load the previous, current and next month from your integrations. This means, releases in 2+ / 2- months will not be loaded and visible in the calendar.
+
+:::
+
 ### Load data from your existing services
 
 Homarr loads the calendar data from your existing services on your dashboard.
