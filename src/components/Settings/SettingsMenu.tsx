@@ -2,6 +2,8 @@ import { ActionIcon, Title, Tooltip, Drawer, Tabs, ScrollArea } from '@mantine/c
 import { useHotkeys } from '@mantine/hooks';
 import { useState } from 'react';
 import { IconSettings } from '@tabler/icons';
+import { t } from 'i18next';
+
 import AdvancedSettings from './AdvancedSettings';
 import CommonSettings from './CommonSettings';
 import Credits from './Credits';
@@ -10,8 +12,8 @@ function SettingsMenu(props: any) {
   return (
     <Tabs defaultValue="Common">
       <Tabs.List grow>
-        <Tabs.Tab value="Common">Common</Tabs.Tab>
-        <Tabs.Tab value="Customizations">Customizations</Tabs.Tab>
+        <Tabs.Tab value="Common">{t('settings.tabs.common.title')}</Tabs.Tab>
+        <Tabs.Tab value="Customizations">{t('settings.tabs.customizations.title')}</Tabs.Tab>
       </Tabs.List>
       <Tabs.Panel data-autofocus value="Common">
         <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
@@ -37,14 +39,14 @@ export function SettingsMenuButton(props: any) {
         size="xl"
         padding="lg"
         position="right"
-        title={<Title order={5}>Settings</Title>}
+        title={<Title order={5}>{t('settings.title')}</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
         <SettingsMenu />
         <Credits />
       </Drawer>
-      <Tooltip label="Settings">
+      <Tooltip label={t('settings.tooltip')}>
         <ActionIcon
           variant="default"
           radius="md"

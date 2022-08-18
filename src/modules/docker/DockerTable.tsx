@@ -1,5 +1,7 @@
 import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
+import { t } from 'i18next';
+
 import Dockerode from 'dockerode';
 import { useEffect, useState } from 'react';
 import ContainerState from './ContainerState';
@@ -80,7 +82,9 @@ export default function DockerTable({
                 </Badge>
               ))}
             {element.Ports.length > 3 && (
-              <Badge variant="filled">{element.Ports.length - 3} more</Badge>
+              <Badge variant="filled">
+                {t('modules.docker.table.body.portCollapse', { ports: element.Ports.length - 3 })}
+              </Badge>
             )}
           </Group>
         </td>
@@ -94,7 +98,7 @@ export default function DockerTable({
   return (
     <ScrollArea style={{ height: '80vh' }}>
       <TextInput
-        placeholder="Search by container or image name"
+        placeholder={t('modules.docker.search.placeholder')}
         mt="md"
         icon={<IconSearch size={14} />}
         value={search}
@@ -111,10 +115,10 @@ export default function DockerTable({
                 transitionDuration={0}
               />
             </th>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Ports</th>
-            <th>State</th>
+            <th>{t('modules.docker.table.header.name')}</th>
+            <th>{t('modules.docker.table.header.image')}</th>
+            <th>{t('modules.docker.table.header.ports')}</th>
+            <th>{t('modules.docker.table.header.state')}</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>

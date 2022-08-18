@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createStyles, Switch, Group } from '@mantine/core';
 import { useConfig } from '../../tools/state';
+import { t } from 'i18next';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -54,7 +55,7 @@ export function WidgetsPositionSwitch() {
           size="md"
         />
       </div>
-      Position widgets on left
+      {t('settings.tabs.common.settings.widgetsPositionSwitch.label')}
     </Group>
   );
 }

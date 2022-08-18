@@ -1,5 +1,7 @@
 import { Group, ActionIcon, Anchor, Text } from '@mantine/core';
 import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons';
+import { t } from 'i18next';
+
 import { CURRENT_VERSION } from '../../../data/constants';
 
 export default function Credits(props: any) {
@@ -27,7 +29,7 @@ export default function Credits(props: any) {
             color: 'gray',
           }}
         >
-          Made with ❤️ by @
+          {t('settings.credits.madeWithLove')}
           <Anchor
             href="https://github.com/ajnart"
             style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}

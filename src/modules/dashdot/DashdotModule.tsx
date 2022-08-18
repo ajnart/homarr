@@ -1,6 +1,7 @@
 import { createStyles, Stack, Title, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
 import axios from 'axios';
+import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
@@ -143,30 +144,30 @@ export function DashdotComponent() {
 
   const graphs = [
     {
-      name: 'CPU',
+      name: t('modules.dashDot.card.graphs.cpu.title'),
       enabled: cpuEnabled,
       params: {
         multiView: dashConfig?.cpuMultiView?.value ?? false,
       },
     },
     {
-      name: 'Storage',
+      name: t('modules.dashDot.card.graphs.cpu.title'),
       enabled: storageEnabled && !isCompact,
       params: {
         multiView: dashConfig?.storageMultiView?.value ?? false,
       },
     },
     {
-      name: 'RAM',
+      name: t('modules.dashDot.card.graphs.memory.title'),
       enabled: ramEnabled,
     },
     {
-      name: 'Network',
+      name: t('modules.dashDot.card.graphs.network.title'),
       enabled: networkEnabled,
       spanTwo: true,
     },
     {
-      name: 'GPU',
+      name: t('modules.dashDot.card.graphs.gpu.title'),
       enabled: gpuEnabled,
       spanTwo: true,
     },
@@ -175,27 +176,26 @@ export function DashdotComponent() {
   if (dashdotUrl === '') {
     return (
       <div>
-        <h2 className={classes.heading}>Dash.</h2>
-        <p>
-          No dash. service found. Please add one to your Homarr dashboard or set a dashdot URL in
-          the module options
-        </p>
+        <h2 className={classes.heading}>{t('modules.dashDot.card.title')}</h2>
+        <p>{t('modules.dashDot.card.errors.noService')}</p>
       </div>
     );
   }
 
   return (
     <div>
-      <h2 className={classes.heading}>Dash.</h2>
+      <h2 className={classes.heading}>{t('modules.dashDot.card.title')}</h2>
 
       {!info ? (
-        <p>Cannot acquire information from dash. - are you running the latest version?</p>
+        <p>{t('modules.dashDot.card.errors.noInformation')}</p>
       ) : (
         <div className={classes.graphsContainer}>
           <div className={classes.table}>
             {storageEnabled && isCompact && (
               <div className={classes.tableRow}>
-                <p className={classes.tableLabel}>Storage:</p>
+                <p className={classes.tableLabel}>
+                  {t('modules.dashDot.card.graphs.storage.label')}
+                </p>
                 <p className={classes.tableValue}>
                   {((100 * totalUsed) / (totalSize || 1)).toFixed(1)}%{'\n'}
                   {bytePrettyPrint(totalUsed)} / {bytePrettyPrint(totalSize)}
@@ -204,10 +204,15 @@ export function DashdotComponent() {
             )}
             {networkEnabled && (
               <div className={classes.tableRow}>
-                <p className={classes.tableLabel}>Network:</p>
+                <p className={classes.tableLabel}>
+                  {t('modules.dashDot.card.graphs.network.label')}
+                </p>
                 <p className={classes.tableValue}>
-                  {bpsPrettyPrint(info?.network?.speedUp)} Up{'\n'}
-                  {bpsPrettyPrint(info?.network?.speedDown)} Down
+                  {bpsPrettyPrint(info?.network?.speedUp)}{' '}
+                  {t('modules.dashDot.card.graphs.network.metrics.upload')}
+                  {'\n'}
+                  {bpsPrettyPrint(info?.network?.speedDown)}
+                  {t('modules.dashDot.card.graphs.network.metrics.download')}
                 </p>
               </div>
             )}

@@ -8,6 +8,8 @@ import {
   IconDownload as Download,
   IconMovie,
 } from '@tabler/icons';
+import { t } from 'i18next';
+
 import axios from 'axios';
 import { showNotification } from '@mantine/notifications';
 import { useConfig } from '../../tools/state';
@@ -175,7 +177,7 @@ export default function SearchBar(props: any) {
             radius="md"
             size="md"
             styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder="Search the web..."
+            placeholder={t('layout.header.search.input.placeholder')}
             {...props}
             {...form.getInputProps('query')}
           />

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { IconPlug as Plug } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
+import { t } from 'i18next';
 
 export const PingModule: IModule = {
   title: 'Ping Services',
@@ -68,10 +69,10 @@ export default function PingComponent(props: any) {
         radius="lg"
         label={
           isOnline === 'loading'
-            ? 'Loading...'
+            ? t('modules.ping.states.loading')
             : isOnline === 'online'
-            ? `Online - ${response}`
-            : `Offline - ${response}`
+            ? t('modules.ping.states.online', { response })
+            : t('modules.ping.states.offline', { response })
         }
       >
         <Indicator

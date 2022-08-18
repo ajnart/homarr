@@ -3,12 +3,13 @@ import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons';
 import axios from 'axios';
 import Consola from 'consola';
+import { t } from 'i18next';
+
 import { useState } from 'react';
 import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
 import { MediaType, Result } from './SearchResult.d';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';
-
 interface RequestModalProps {
   base: Result;
   opened: boolean;
@@ -67,23 +68,23 @@ export function MovieRequestModal({
       title={
         <Group>
           <IconDownload />
-          Ask for {result.title}
+          {t('modules.overseerr.popup.item.buttons.askFor', { title: result.title })}
         </Group>
       }
     >
       <Stack>
         <Alert
           icon={<IconAlertCircle size={16} />}
-          title="Using API key"
+          title={t('modules.overseerr.popup.item.alerts.automaticApproval.title')}
           color={secondaryColor}
           radius="md"
           variant="filled"
         >
-          This request will be automatically approved
+          {t('modules.overseerr.popup.item.alerts.automaticApproval.text')}
         </Alert>
         <Group>
           <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
-            Cancel
+            {t('modules.overseerr.popup.item.buttons.cancel')}
           </Button>
           <Button
             variant="outline"
@@ -91,7 +92,7 @@ export function MovieRequestModal({
               askForMedia(MediaType.Movie, result.id, result.title, []);
             }}
           >
-            Request
+            {t('modules.overseerr.popup.item.buttons.request')}
           </Button>
         </Group>
       </Stack>
@@ -148,22 +149,24 @@ export function TvRequestModal({
       title={
         <Group>
           <IconDownload />
-          Ask for {result.name ?? result.originalName ?? 'a TV show'}
+          {t('modules.overseerr.popup.item.buttons.askFor', {
+            title: result.name ?? result.originalName ?? 'a TV show',
+          })}
         </Group>
       }
     >
       <Stack>
         <Alert
           icon={<IconAlertCircle size={16} />}
-          title="Using API key"
+          title={t('modules.overseerr.popup.item.alerts.automaticApproval.title')}
           color={secondaryColor}
           radius="md"
           variant="filled"
         >
-          This request will be automatically approved
+          {t('modules.overseerr.popup.item.alerts.automaticApproval.text')}
         </Alert>
         <Table captionSide="bottom" highlightOnHover>
-          <caption>Tick the seasons that you want to be downloaded</caption>
+          <caption>{t('modules.overseerr.popup.seasonSelector.caption')}</caption>
           <thead>
             <tr>
               <th>
@@ -174,15 +177,15 @@ export function TvRequestModal({
                   transitionDuration={0}
                 />
               </th>
-              <th>Season</th>
-              <th>Number of episodes</th>
+              <th>{t('modules.overseerr.popup.seasonSelector.table.header.season')}</th>
+              <th>{t('modules.overseerr.popup.seasonSelector.table.header.numberOfEpisodes')}</th>
             </tr>
           </thead>
           <tbody>{rows}</tbody>
         </Table>
         <Group>
           <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
-            Cancel
+            {t('modules.overseerr.popup.item.buttons.cancel')}
           </Button>
           <Button
             variant="outline"
@@ -196,7 +199,7 @@ export function TvRequestModal({
               );
             }}
           >
-            Request
+            {t('modules.overseerr.popup.item.buttons.request')}
           </Button>
         </Group>
       </Stack>

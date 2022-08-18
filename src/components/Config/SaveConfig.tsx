@@ -12,6 +12,7 @@ import {
   IconX as X,
 } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
+import { t } from 'i18next';
 
 export default function SaveConfigComponent(props: any) {
   const [opened, setOpened] = useState(false);
@@ -32,7 +33,7 @@ export default function SaveConfigComponent(props: any) {
         radius="md"
         opened={opened}
         onClose={() => setOpened(false)}
-        title="Choose the name of your new config"
+        title={t('settings.tabs.common.settings.configChanger.modal.title')}
       >
         <form
           onSubmit={form.onSubmit((values) => {
@@ -50,17 +51,21 @@ export default function SaveConfigComponent(props: any) {
         >
           <TextInput
             required
-            label="Config name"
-            placeholder="Your new config name"
+            label={t('settings.tabs.common.settings.configChanger.modal.form.configName.label')}
+            placeholder={t(
+              'settings.tabs.common.settings.configChanger.modal.form.configName.placeholder'
+            )}
             {...form.getInputProps('configName')}
           />
           <Group position="right" mt="md">
-            <Button type="submit">Confirm</Button>
+            <Button type="submit">
+              {t('settings.tabs.common.settings.configChanger.modal.form.buttons.submit')}
+            </Button>
           </Group>
         </form>
       </Modal>
       <Button size="xs" leftIcon={<Download />} variant="outline" onClick={onClick}>
-        Download config
+        {t('settings.tabs.common.settings.configChanger.buttons.download')}
       </Button>
       <Button
         size="xs"
@@ -71,31 +76,39 @@ export default function SaveConfigComponent(props: any) {
             .delete(`/api/configs/${config.name}`)
             .then(() => {
               showNotification({
-                title: 'Config deleted',
+                title: t(
+                  'settings.tabs.common.settings.configChanger.buttons.delete.deleted.title'
+                ),
                 icon: <Check />,
                 color: 'green',
                 autoClose: 1500,
                 radius: 'md',
-                message: 'Config deleted',
+                message: t(
+                  'settings.tabs.common.settings.configChanger.buttons.delete.deleted.message'
+                ),
               });
             })
             .catch(() => {
               showNotification({
-                title: 'Config delete failed',
+                title: t(
+                  'settings.tabs.common.settings.configChanger.buttons.delete.deleteFailed.title'
+                ),
                 icon: <X />,
                 color: 'red',
                 autoClose: 1500,
                 radius: 'md',
-                message: 'Config delete failed',
+                message: t(
+                  'settings.tabs.common.settings.configChanger.buttons.delete.deleteFailed.message'
+                ),
               });
             });
           setConfig({ ...config, name: 'default' });
         }}
       >
-        Delete config
+        {t('settings.tabs.common.settings.configChanger.buttons.delete.text')}
       </Button>
       <Button size="xs" leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
-        Save a copy
+        {t('settings.tabs.common.settings.configChanger.buttons.saveCopy')}
       </Button>
     </Group>
   );

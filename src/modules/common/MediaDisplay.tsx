@@ -1,5 +1,6 @@
 import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons';
+import { t } from 'i18next';
 import { useState } from 'react';
 import { useColorTheme } from '../../tools/color';
 import { useConfig } from '../../tools/state';
@@ -209,7 +210,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               size="sm"
               rightIcon={<IconPlayerPlay size={15} />}
             >
-              Play
+              {t('modules.common.mediaCard.buttons.play')}
             </Button>
           )}
           {media.imdbId && (
@@ -249,7 +250,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
                 size="sm"
                 rightIcon={<IconDownload size={15} />}
               >
-                Request
+                {t('modules.common.mediaCard.buttons.request')}
               </Button>
             </>
           )}

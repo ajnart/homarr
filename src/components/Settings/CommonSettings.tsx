@@ -7,6 +7,8 @@ import ConfigChanger from '../Config/ConfigChanger';
 import SaveConfigComponent from '../Config/SaveConfig';
 import ModuleEnabler from './ModuleEnabler';
 import Tip from '../layout/Tip';
+import { t } from 'i18next';
+import LanguageSwitch from './LanguageSwitch';
 
 export default function CommonSettings(args: any) {
   const { config, setConfig } = useConfig();
@@ -26,15 +28,12 @@ export default function CommonSettings(args: any) {
   return (
     <Stack mb="md" mr="sm">
       <Stack spacing={0} mt="xs">
-        <Text>Search engine</Text>
-        <Tip>
-          Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube or
-          for a Torrent respectively.
-        </Tip>
+        <Text>{t('settings.tabs.common.settings.searchEngine.title')}</Text>
+        <Tip>{t('settings.tabs.common.settings.searchEngine.tips.generalTip')}</Tip>
         <SegmentedControl
           fullWidth
           mb="sm"
-          title="Search engine"
+          title={t('settings.tabs.common.settings.searchEngine.title')}
           value={
             // Match config.settings.searchUrl with a key in the matches array
             searchUrl
@@ -56,10 +55,10 @@ export default function CommonSettings(args: any) {
         />
         {searchUrl === 'Custom' && (
           <>
-            <Tip>%s can be used as a placeholder for the query.</Tip>
+            <Tip>{t('settings.tabs.common.settings.searchEngine.tips.placeholderTip')}</Tip>
             <TextInput
-              label="Query URL"
-              placeholder="Custom query URL"
+              label={t('settings.tabs.common.settings.searchEngine.customEngine.label')}
+              placeholder={t('settings.tabs.common.settings.searchEngine.customEngine.placeholder')}
               value={customSearchUrl}
               onChange={(event) => {
                 setCustomSearchUrl(event.currentTarget.value);
@@ -78,9 +77,10 @@ export default function CommonSettings(args: any) {
       <ColorSchemeSwitch />
       <WidgetsPositionSwitch />
       <ModuleEnabler />
+      <LanguageSwitch />
       <ConfigChanger />
       <SaveConfigComponent />
-      <Tip>Upload your config file by dragging and dropping it onto the page!</Tip>
+      <Tip>{t('settings.tabs.common.settings.configTip')}</Tip>
     </Stack>
   );
 }
