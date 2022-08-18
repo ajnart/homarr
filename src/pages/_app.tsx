@@ -10,6 +10,9 @@ import { ModalsProvider } from '@mantine/modals';
 import { ConfigProvider } from '../tools/state';
 import { theme } from '../tools/theme';
 import { ColorTheme } from '../tools/color';
+import { I18nextProvider } from 'react-i18next';
+import { loadI18n } from '../translations/i18n';
+import { TranslationProvider } from '../providers/translation.provider';
 
 export default function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -69,7 +72,9 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
             <NotificationsProvider limit={4} position="bottom-left">
               <ModalsProvider>
                 <ConfigProvider>
-                  <Component {...pageProps} />
+                  <TranslationProvider>
+                    <Component {...pageProps} />
+                  </TranslationProvider>
                 </ConfigProvider>
               </ModalsProvider>
             </NotificationsProvider>

@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Docker from 'dockerode';
 import { IconBrandDocker, IconX } from '@tabler/icons';
 import { showNotification } from '@mantine/notifications';
+import { t } from 'i18next';
+
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
 import { useConfig } from '../../tools/state';
@@ -42,10 +44,10 @@ export default function DockerMenuButton(props: any) {
           // Send an Error notification
           showNotification({
             autoClose: 1500,
-            title: <Text>Docker integration failed</Text>,
+            title: <Text>{t('layout.header.docker.errors.integrationFailed.title')}</Text>,
             color: 'red',
             icon: <IconX />,
-            message: 'Did you forget to mount the docker socket ?',
+            message: t('layout.header.docker.errors.integrationFailed.message'),
           })
         );
     }, 300);
@@ -67,7 +69,7 @@ export default function DockerMenuButton(props: any) {
       >
         <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
       </Drawer>
-      <Tooltip label="Docker">
+      <Tooltip label={t('layout.header.docker.actionIcon.tooltip')}>
         <ActionIcon
           variant="default"
           radius="md"

@@ -1,5 +1,6 @@
 import { Center, Loader, Select, Tooltip } from '@mantine/core';
 import { setCookie } from 'cookies-next';
+import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { useConfig } from '../../tools/state';
 
@@ -23,7 +24,7 @@ export default function ConfigChanger() {
   // return <Select data={[{ value: '1', label: '1' },]} onChange={(e) => console.log(e)} value="1" />;
   return (
     <Select
-      label="Config loader"
+      label={t('settings.tabs.common.settings.configChanger.configSelect.label')}
       value={value}
       defaultValue={config.name}
       onChange={(e) => {

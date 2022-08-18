@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ColorSwatch, Grid, Group, Popover, Text, useMantineTheme } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { useColorTheme } from '../../tools/color';
+import { t } from 'i18next';
 
 interface ColorControlProps {
   type: string;
@@ -82,7 +83,11 @@ export function ColorSelector({ type }: ColorControlProps) {
           </Grid>
         </Popover.Dropdown>
       </Popover>
-      <Text>{type[0].toUpperCase() + type.slice(1)} color</Text>
+      <Text>
+        {t('settings.tabs.customizations.settings.colorSelector.suffix', {
+          color: type[0].toUpperCase() + type.slice(1),
+        })}
+      </Text>
     </Group>
   );
 }

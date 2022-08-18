@@ -11,6 +11,7 @@ import {
 } from '@mantine/core';
 import { useConfig } from '../../tools/state';
 import { useColorTheme } from '../../tools/color';
+import { t } from 'i18next';
 
 export function ShadeSelector() {
   const { config, setConfig } = useConfig();
@@ -94,7 +95,7 @@ export function ShadeSelector() {
           </Stack>
         </Popover.Dropdown>
       </Popover>
-      <Text>Shade</Text>
+      <Text>{t('settings.tabs.customizations.settings.shadeSelector.label')}</Text>
     </Group>
   );
 }
