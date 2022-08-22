@@ -13,10 +13,10 @@ import {
   IconSnowflake as Snowflake,
   IconSun as Sun,
 } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 import { WeatherResponse } from './WeatherInterface';
-import { t } from 'i18next';
 
 export const WeatherModule: IModule = {
   title: 'Weather',
@@ -49,85 +49,87 @@ export const WeatherModule: IModule = {
 // 95 *Thunderstorm: Slight or moderate
 // 96, 99 *Thunderstorm with slight and heavy hail
 export function WeatherIcon(props: any) {
+  const { t } = useTranslation('modules/weather-module');
+
   const { code } = props;
   let data: { icon: any; name: string };
   switch (code) {
     case 0: {
-      data = { icon: Sun, name: t('modules.weather.card.weatherDescriptions.clear') };
+      data = { icon: Sun, name: t('card.weatherDescriptions.clear') };
       break;
     }
     case 1:
     case 2:
     case 3: {
-      data = { icon: Cloud, name: t('modules.weather.card.weatherDescriptions.mainlyClear') };
+      data = { icon: Cloud, name: t('card.weatherDescriptions.mainlyClear') };
       break;
     }
     case 45:
     case 48: {
-      data = { icon: CloudFog, name: t('modules.weather.card.weatherDescriptions.fog') };
+      data = { icon: CloudFog, name: t('card.weatherDescriptions.fog') };
       break;
     }
     case 51:
     case 53:
     case 55: {
-      data = { icon: Cloud, name: t('modules.weather.card.weatherDescriptions.drizzle') };
+      data = { icon: Cloud, name: t('card.weatherDescriptions.drizzle') };
       break;
     }
     case 56:
     case 57: {
       data = {
         icon: Snowflake,
-        name: t('modules.weather.card.weatherDescriptions.freezingDrizzle'),
+        name: t('card.weatherDescriptions.freezingDrizzle'),
       };
       break;
     }
     case 61:
     case 63:
     case 65: {
-      data = { icon: CloudRain, name: t('modules.weather.card.weatherDescriptions.rain') };
+      data = { icon: CloudRain, name: t('card.weatherDescriptions.rain') };
       break;
     }
     case 66:
     case 67: {
-      data = { icon: CloudRain, name: t('modules.weather.card.weatherDescriptions.freezingRain') };
+      data = { icon: CloudRain, name: t('card.weatherDescriptions.freezingRain') };
       break;
     }
     case 71:
     case 73:
     case 75: {
-      data = { icon: CloudSnow, name: t('modules.weather.card.weatherDescriptions.snowFall') };
+      data = { icon: CloudSnow, name: t('card.weatherDescriptions.snowFall') };
       break;
     }
     case 77: {
-      data = { icon: CloudSnow, name: t('modules.weather.card.weatherDescriptions.snowGrains') };
+      data = { icon: CloudSnow, name: t('card.weatherDescriptions.snowGrains') };
       break;
     }
     case 80:
     case 81:
     case 82: {
-      data = { icon: CloudRain, name: t('modules.weather.card.weatherDescriptions.rainShowers') };
+      data = { icon: CloudRain, name: t('card.weatherDescriptions.rainShowers') };
 
       break;
     }
     case 85:
     case 86: {
-      data = { icon: CloudSnow, name: t('modules.weather.card.weatherDescriptions.snowShowers') };
+      data = { icon: CloudSnow, name: t('card.weatherDescriptions.snowShowers') };
       break;
     }
     case 95: {
-      data = { icon: CloudStorm, name: t('modules.weather.card.weatherDescriptions.thunderstorm') };
+      data = { icon: CloudStorm, name: t('card.weatherDescriptions.thunderstorm') };
       break;
     }
     case 96:
     case 99: {
       data = {
         icon: CloudStorm,
-        name: t('modules.weather.card.weatherDescriptions.thunderstormWithHail'),
+        name: t('card.weatherDescriptions.thunderstormWithHail'),
       };
       break;
     }
     default: {
-      data = { icon: QuestionMark, name: t('modules.weather.card.weatherDescriptions.unknown') };
+      data = { icon: QuestionMark, name: t('card.weatherDescriptions.unknown') };
     }
   }
   return (

@@ -1,14 +1,15 @@
 import { TextInput, Button, Stack } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { ColorSelector } from './ColorSelector';
 import { OpacitySelector } from './OpacitySelector';
 import { AppCardWidthSelector } from './AppCardWidthSelector';
 import { ShadeSelector } from './ShadeSelector';
-import { t } from 'i18next';
 
 export default function TitleChanger() {
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation('settings/customization/page-appearance');
 
   const form = useForm({
     initialValues: {
@@ -42,26 +43,26 @@ export default function TitleChanger() {
       <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
         <Stack>
           <TextInput
-            label={t('settings.tabs.customizations.settings.pageTitle.label')}
-            placeholder={t('settings.tabs.customizations.settings.pageTitle.placeholder')}
+            label={t('pageTitle.label')}
+            placeholder={t('pageTitle.placeholder')}
             {...form.getInputProps('title')}
           />
           <TextInput
-            label={t('settings.tabs.customizations.settings.logo.label')}
-            placeholder={t('settings.tabs.customizations.settings.logo.placeholder')}
+            label={t('logo.label')}
+            placeholder={t('logo.placeholder')}
             {...form.getInputProps('logo')}
           />
           <TextInput
-            label={t('settings.tabs.customizations.settings.favicon.label')}
-            placeholder={t('settings.tabs.customizations.settings.favicon.placeholder')}
+            label={t('favicon.label')}
+            placeholder={t('favicon.placeholder')}
             {...form.getInputProps('favicon')}
           />
           <TextInput
-            label={t('settings.tabs.customizations.settings.background.label')}
-            placeholder={t('settings.tabs.customizations.settings.background.placeholder')}
+            label={t('background.label')}
+            placeholder={t('background.placeholder')}
             {...form.getInputProps('background')}
           />
-          <Button type="submit">{t('settings.tabs.customizations.settings.buttons.submit')}</Button>
+          <Button type="submit">{t('buttons.submit')}</Button>
         </Stack>
       </form>
       <ColorSelector type="primary" />

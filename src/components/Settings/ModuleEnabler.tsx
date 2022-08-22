@@ -1,14 +1,15 @@
 import { Checkbox, SimpleGrid, Stack, Title } from '@mantine/core';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 import * as Modules from '../../modules';
 import { useConfig } from '../../tools/state';
 
 export default function ModuleEnabler(props: any) {
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation('settings/general/module-enabler');
   const modules = Object.values(Modules).map((module) => module);
   return (
     <Stack>
-      <Title order={4}>{t('settings.tabs.common.settings.moduleEnabler.title')}</Title>
+      <Title order={4}>{t('title')}</Title>
       <SimpleGrid cols={3} spacing="xs">
         {modules.map((module) => (
           <Checkbox

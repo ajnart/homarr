@@ -1,0 +1,17 @@
+{
+  "card": {
+    "table": {
+      "header": {
+        "name": "Name",
+        "size": "Size",
+        "download": "Down",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progress"
+      },
+      "body": {
+        "nothingFound": "No torrents found"
+      }
+    }
+  }
+}

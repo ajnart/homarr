@@ -2,7 +2,7 @@ import React from 'react';
 import { createStyles, Switch, Group, useMantineColorScheme, Kbd } from '@mantine/core';
 import { IconSun as Sun, IconMoonStars as MoonStars } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -34,6 +34,7 @@ export function ColorSchemeSwitch() {
   const { config } = useConfig();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const { classes, cx } = useStyles();
+  const { t } = useTranslation('settings/general/theme-selector');
 
   return (
     <Group>
@@ -42,8 +43,8 @@ export function ColorSchemeSwitch() {
         <MoonStars className={cx(classes.icon, classes.iconDark)} size={18} />
         <Switch checked={colorScheme === 'dark'} onChange={() => toggleColorScheme()} size="md" />
       </div>
-      {t('settings.tabs.common.settings.colorScheme.label', {
-        scheme: colorScheme === 'dark' ? 'light' : 'dark',
+      {t('label', {
+        theme: colorScheme === 'dark' ? 'light' : 'dark',
       })}
       <Group spacing={2}>
         <Kbd>Ctrl</Kbd>+<Kbd>J</Kbd>

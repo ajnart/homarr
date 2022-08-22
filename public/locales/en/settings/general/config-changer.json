@@ -1,0 +1,35 @@
+{
+  "configSelect": {
+    "label": "Config loader"
+  },
+  "modal": {
+    "title": "Choose the name of your new config",
+    "form": {
+      "configName": {
+        "label": "Config name",
+        "placeholder": "Your new config name"
+      },
+      "buttons:": {
+        "submit": "Confirm"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Download config",
+    "delete": {
+      "text": "Delete config",
+      "notifications": {
+        "deleted": {
+          "title": "Config deleted",
+          "message": "Config deleted"
+        },
+        "deleteFailed": {
+          "title": "Config delete failed",
+          "message": "Config delete failed"
+        }
+      }
+    },
+    "saveCopy": "Save a copy"
+  },
+  "configTip": "Upload your config file by dragging and dropping it onto the page!"
+}

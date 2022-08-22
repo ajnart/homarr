@@ -1,10 +1,10 @@
-import { ActionIcon, Drawer, Group, LoadingOverlay, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Docker from 'dockerode';
 import { IconBrandDocker, IconX } from '@tabler/icons';
 import { showNotification } from '@mantine/notifications';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
@@ -25,6 +25,8 @@ export default function DockerMenuButton(props: any) {
   const { config } = useConfig();
   const moduleEnabled = config.modules?.[DockerModule.title]?.enabled ?? false;
 
+  const { t } = useTranslation('modules/docker-module');
+
   useEffect(() => {
     reload();
   }, [config.modules]);
@@ -44,10 +46,10 @@ export default function DockerMenuButton(props: any) {
           // Send an Error notification
           showNotification({
             autoClose: 1500,
-            title: <Text>{t('layout.header.docker.errors.integrationFailed.title')}</Text>,
+            title: <Text>{t('errors.integrationFailed.title')}</Text>,
             color: 'red',
             icon: <IconX />,
-            message: t('layout.header.docker.errors.integrationFailed.message'),
+            message: t('errors.integrationFailed.message'),
           })
         );
     }, 300);
@@ -69,7 +71,7 @@ export default function DockerMenuButton(props: any) {
       >
         <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
       </Drawer>
-      <Tooltip label={t('layout.header.docker.actionIcon.tooltip')}>
+      <Tooltip label={t('actionIcon.tooltip')}>
         <ActionIcon
           variant="default"
           radius="md"

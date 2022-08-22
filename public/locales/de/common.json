@@ -1,37 +1,37 @@
 {
   "settings": {
-    "title": "Settings",
-    "tooltip": "Settings",
+    "title": "Einstellungen",
+    "tooltip": "Einstellungen",
     "tabs": {
       "common": {
-        "title": "Common",
+        "title": "Allgemein",
         "settings": {
           "searchEngine": {
-            "title": "Search engine",
+            "title": "Suchmaschine",
             "tips": {
-"generalTip": "Use the prefixes !yt and !t in front of your query to search on YouTube or for a Torrent respectively.",
-            "placeholderTip": "%s can be used as a placeholder for the query."
+              "generalTip": "Benutze die Prefixe !yt und !t vor deiner Suchanfrage um auf Youtube oder nach einem Torrent zu suchen.",
+              "placeholderTip": "%s can be used as a placeholder for the query."
             },
             "customEngine": {
-              "label": "Query URL",
-              "placeholder": "Custom query URL"
+              "label": "Suchadresse",
+              "placeholder": "Benutzerdefinierte Adresse"
             }
           },
           "colorScheme": {
-            "label": "Switch to {{scheme}} mode"
+            "label": "Wechseln zu {{scheme}} Modus"
           },
           "widgetsPositionSwitch": {
-            "label": "Position widgets on left"
+            "label": "Positionieren von Widgets auf linker Seite"
           },
           "moduleEnabler": {
-            "title": "Module enabler"
+            "title": "Modul Enabler"
           },
           "language": {
-            "title": "Language"
+            "title": "Sprache"
           },
           "configChanger": {
             "configSelect": {
-              "label": "Config loader"
+              "label": "Konfigurations Lader"
             },
             "modal": {
               "title": "Choose the name of your new config",
@@ -46,9 +46,9 @@
               }
             },
             "buttons": {
-              "download": "Download config",
+              "download": "Konfiguration herunterladen",
               "delete": {
-                "text": "Delete config",
+                "text": "Konfiguration löschen",
                 "notifications": {
                   "deleted": {
                     "title": "Config deleted",
@@ -60,14 +60,14 @@
                   }
                 }
               },
-              "saveCopy": "Save a copy"
+              "saveCopy": "Kopie speichern"
             }
           },
-          "configTip": "Upload your config file by dragging and dropping it onto the page!"
+          "configTip": "Lade deine Konfiguration hoch, indem du sie per drag-and-drop auf die Seite ziehst."
         }
       },
       "customizations": {
-        "title": "Customizations",
+        "title": "Anpassungen",
         "settings": {
           "opacitySelector": {
             "label": "App Opacity"
@@ -101,21 +101,21 @@
       }
     },
     "credits": {
-      "madeWithLove": "Made with ❤️ by @"
+      "madeWithLove": "Gemacht mit ❤️ von @"
     }
   },
   "layout": {
     "header": {
       "search": {
         "input": {
-          "placeholder": "Search the web..."
+          "placeholder": "Das Internet durchsuchen..."
         }
       },
       "docker": {
         "errors": {
           "integrationFailed": {
-            "title": "Docker integration failed",
-            "message": "Did you forget to mount the docker socket ?"
+            "title": "Docker Integration ist gescheitert",
+            "message": "Hast du vergessen, den Docker Socket zu verbinden?"
           }
         },
         "actionIcon": {
@@ -124,22 +124,22 @@
       },
       "addService": {
         "actionIcon": {
-          "tooltip": "Add a service"
+          "tooltip": "Einen Service hinzufügen"
         },
         "modal": {
-          "title": "Add service",
+          "title": "Service hinzufügen",
           "form": {
             "validation": {
-              "invalidUrl": "Please enter a valid URL",
-              "noStatusCodeSelected": "Please select a status code"
+              "invalidUrl": "Bitte gebe eine gültige Addresse ein",
+              "noStatusCodeSelected": "Bitte wähle einen gültigen Status Code aus"
             }
           },
           "tabs": {
             "options": {
-              "title": "Options",
+              "title": "Optionen",
               "form": {
                 "serviceName": {
-                  "label": "Service name",
+                  "label": "Service Namen",
                   "placeholder": "Plex"
                 },
                 "iconUrl": {
@@ -149,59 +149,59 @@
                   "label": "Service URL"
                 },
                 "onClickUrl": {
-                  "label": "On Click URL"
+                  "label": "URL beim Klicken"
                 },
                 "serviceType": {
-                  "label": "Service type",
-                  "defaultValue": "Other",
-                  "placeholder": "Pick one"
+                  "label": "Service Typ",
+                  "defaultValue": "Andere",
+                  "placeholder": "Wähle einen aus..."
                 },
                 "category": {
-                  "label": "Category",
-                  "placeholder": "Select a category or create a new one",
-                  "nothingFound": "Nothing found",
-                  "createLabel": "+ Create {{query}}"
+                  "label": "Kategorie",
+                  "placeholder": "Wähle eine Kategorie oder erstelle eine neue...",
+                  "nothingFound": "Keine Übereinstimmungen gefunden",
+                  "createLabel": "+ Erstellen {{query}}"
                 },
                 "integrations": {
                   "apiKey": {
-                    "label": "API key",
-                    "placeholder": "Your API key",
+                    "label": "API Schlüssel",
+                    "placeholder": "Dein API Schlüssel",
                     "validation": {
-                      "noKey": "Invalid Key"
+                      "noKey": "Invalider Schlüssel"
                     },
                     "tip": {
-                      "text": "Get your API key",
-                      "link": "here."
+                      "text": "Hole deinen API Schlüssel",
+                      "link": "hier."
                     }
                   },
                   "qBittorrent": {
                     "username": {
-                      "label": "Username",
+                      "label": "Benutzername",
                       "placeholder": "admin",
                       "validation": {
-                        "invalidUsername": "Invalid username"
+                        "invalidUsername": "Invalider Benutzername"
                       }
                     },
                     "password": {
-                      "label": "Password",
+                      "label": "Passwort",
                       "placeholder": "adminadmin",
                       "validation": {
-                        "invalidPassword": "Invalid password"
+                        "invalidPassword": "Invalides Passwort"
                       }
                     }
                   },
                   "deluge": {
                     "password": {
-                      "label": "Password",
+                      "label": "Passwort",
                       "placeholder": "password",
                       "validation": {
-                        "invalidPassword": "Invalid password"
+                        "invalidPassword": "Invalides PassworT"
                       }
                     }
                   },
                   "transmission": {
                     "username": {
-                      "label": "Username",
+                      "label": "Benutzername",
                       "placeholder": "admin",
                       "validation": {
                         "invalidUsername": "Invalid username"

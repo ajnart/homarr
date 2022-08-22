@@ -1,7 +1,7 @@
 import { createStyles, Stack, Title, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
 import axios from 'axios';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
@@ -142,32 +142,34 @@ export function DashdotComponent() {
   const totalSize =
     (info?.storage?.layout as any[])?.reduce((acc, curr) => (curr.size ?? 0) + acc, 0) ?? 0;
 
+  const { t } = useTranslation('modules/dashdot-module');
+
   const graphs = [
     {
-      name: t('modules.dashDot.card.graphs.cpu.title'),
+      name: t('card.graphs.cpu.title'),
       enabled: cpuEnabled,
       params: {
         multiView: dashConfig?.cpuMultiView?.value ?? false,
       },
     },
     {
-      name: t('modules.dashDot.card.graphs.cpu.title'),
+      name: t('card.graphs.cpu.title'),
       enabled: storageEnabled && !isCompact,
       params: {
         multiView: dashConfig?.storageMultiView?.value ?? false,
       },
     },
     {
-      name: t('modules.dashDot.card.graphs.memory.title'),
+      name: t('card.graphs.memory.title'),
       enabled: ramEnabled,
     },
     {
-      name: t('modules.dashDot.card.graphs.network.title'),
+      name: t('card.graphs.network.title'),
       enabled: networkEnabled,
       spanTwo: true,
     },
     {
-      name: t('modules.dashDot.card.graphs.gpu.title'),
+      name: t('card.graphs.gpu.title'),
       enabled: gpuEnabled,
       spanTwo: true,
     },
@@ -176,26 +178,24 @@ export function DashdotComponent() {
   if (dashdotUrl === '') {
     return (
       <div>
-        <h2 className={classes.heading}>{t('modules.dashDot.card.title')}</h2>
-        <p>{t('modules.dashDot.card.errors.noService')}</p>
+        <h2 className={classes.heading}>{t('card.title')}</h2>
+        <p>{t('card.errors.noService')}</p>
       </div>
     );
   }
 
   return (
     <div>
-      <h2 className={classes.heading}>{t('modules.dashDot.card.title')}</h2>
+      <h2 className={classes.heading}>{t('card.title')}</h2>
 
       {!info ? (
-        <p>{t('modules.dashDot.card.errors.noInformation')}</p>
+        <p>{t('card.errors.noInformation')}</p>
       ) : (
         <div className={classes.graphsContainer}>
           <div className={classes.table}>
             {storageEnabled && isCompact && (
               <div className={classes.tableRow}>
-                <p className={classes.tableLabel}>
-                  {t('modules.dashDot.card.graphs.storage.label')}
-                </p>
+                <p className={classes.tableLabel}>{t('card.graphs.storage.label')}</p>
                 <p className={classes.tableValue}>
                   {((100 * totalUsed) / (totalSize || 1)).toFixed(1)}%{'\n'}
                   {bytePrettyPrint(totalUsed)} / {bytePrettyPrint(totalSize)}
@@ -204,15 +204,12 @@ export function DashdotComponent() {
             )}
             {networkEnabled && (
               <div className={classes.tableRow}>
-                <p className={classes.tableLabel}>
-                  {t('modules.dashDot.card.graphs.network.label')}
-                </p>
+                <p className={classes.tableLabel}>{t('card.graphs.network.label')}</p>
                 <p className={classes.tableValue}>
-                  {bpsPrettyPrint(info?.network?.speedUp)}{' '}
-                  {t('modules.dashDot.card.graphs.network.metrics.upload')}
+                  {bpsPrettyPrint(info?.network?.speedUp)} {t('card.graphs.network.metrics.upload')}
                   {'\n'}
                   {bpsPrettyPrint(info?.network?.speedDown)}
-                  {t('modules.dashDot.card.graphs.network.metrics.download')}
+                  {t('card.graphs.network.metrics.download')}
                 </p>
               </div>
             )}

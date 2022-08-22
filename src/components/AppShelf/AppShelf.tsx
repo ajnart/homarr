@@ -11,6 +11,7 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import { useLocalStorage } from '@mantine/hooks';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
@@ -35,6 +36,8 @@ const AppShelf = (props: any) => {
   });
   const [activeId, setActiveId] = useState(null);
   const { colorScheme } = useMantineColorScheme();
+
+  const { t } = useTranslation('layout/app-shelf');
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -147,13 +150,13 @@ const AppShelf = (props: any) => {
           {/* Return the item for all services without category */}
           {noCategory && noCategory.length > 0 ? (
             <Accordion.Item key="Other" value="Other">
-              <Accordion.Control>Other</Accordion.Control>
+              <Accordion.Control>{t('accordions.others.text')}</Accordion.Control>
               <Accordion.Panel>{getItems()}</Accordion.Panel>
             </Accordion.Item>
           ) : null}
           {downloadEnabled ? (
             <Accordion.Item key="Downloads" value="Your downloads">
-              <Accordion.Control>Your downloads</Accordion.Control>
+              <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
                 <Paper
                   p="lg"

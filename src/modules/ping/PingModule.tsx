@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { IconPlug as Plug } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 
 export const PingModule: IModule = {
   title: 'Ping Services',
@@ -22,6 +22,8 @@ export default function PingComponent(props: any) {
   const [isOnline, setOnline] = useState<State>('loading');
   const [response, setResponse] = useState(500);
   const exists = config.modules?.[PingModule.title]?.enabled ?? false;
+
+  const { t } = useTranslation('modules/ping-module');
 
   function statusCheck(response: AxiosResponse) {
     const { status }: { status: string[] } = props;
@@ -69,10 +71,10 @@ export default function PingComponent(props: any) {
         radius="lg"
         label={
           isOnline === 'loading'
-            ? t('modules.ping.states.loading')
+            ? t('states.loading')
             : isOnline === 'online'
-            ? t('modules.ping.states.online', { response })
-            : t('modules.ping.states.offline', { response })
+            ? t('states.online', { response })
+            : t('states.offline', { response })
         }
       >
         <Indicator

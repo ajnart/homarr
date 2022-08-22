@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createStyles, Switch, Group } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
-import { t } from 'i18next';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -34,6 +34,7 @@ export function WidgetsPositionSwitch() {
   const { classes, cx } = useStyles();
   const defaultPosition = config?.settings?.widgetPosition || 'right';
   const [widgetPosition, setWidgetPosition] = useState(defaultPosition);
+  const { t } = useTranslation('settings/general/widget-positions');
   const toggleWidgetPosition = () => {
     const position = widgetPosition === 'right' ? 'left' : 'right';
     setWidgetPosition(position);
@@ -55,7 +56,7 @@ export function WidgetsPositionSwitch() {
           size="md"
         />
       </div>
-      {t('settings.tabs.common.settings.widgetsPositionSwitch.label')}
+      {t('label')}
     </Group>
   );
 }

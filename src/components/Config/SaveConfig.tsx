@@ -4,6 +4,7 @@ import { showNotification } from '@mantine/notifications';
 import axios from 'axios';
 import fileDownload from 'js-file-download';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import {
   IconCheck as Check,
   IconDownload as Download,
@@ -12,11 +13,11 @@ import {
   IconX as X,
 } from '@tabler/icons';
 import { useConfig } from '../../tools/state';
-import { t } from 'i18next';
 
 export default function SaveConfigComponent(props: any) {
   const [opened, setOpened] = useState(false);
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation('settings/general/config-changer');
   const form = useForm({
     initialValues: {
       configName: config.name,
@@ -29,12 +30,7 @@ export default function SaveConfigComponent(props: any) {
   }
   return (
     <Group spacing="xs">
-      <Modal
-        radius="md"
-        opened={opened}
-        onClose={() => setOpened(false)}
-        title={t('settings.tabs.common.settings.configChanger.modal.title')}
-      >
+      <Modal radius="md" opened={opened} onClose={() => setOpened(false)} title={t('modal.title')}>
         <form
           onSubmit={form.onSubmit((values) => {
             setConfig({ ...config, name: values.configName });
@@ -51,21 +47,17 @@ export default function SaveConfigComponent(props: any) {
         >
           <TextInput
             required
-            label={t('settings.tabs.common.settings.configChanger.modal.form.configName.label')}
-            placeholder={t(
-              'settings.tabs.common.settings.configChanger.modal.form.configName.placeholder'
-            )}
+            label={t('modal.form.configName.label')}
+            placeholder={t('modal.form.configName.placeholder')}
             {...form.getInputProps('configName')}
           />
           <Group position="right" mt="md">
-            <Button type="submit">
-              {t('settings.tabs.common.settings.configChanger.modal.form.buttons.submit')}
-            </Button>
+            <Button type="submit">{t('modal.form.buttons.submit')}</Button>
           </Group>
         </form>
       </Modal>
       <Button size="xs" leftIcon={<Download />} variant="outline" onClick={onClick}>
-        {t('settings.tabs.common.settings.configChanger.buttons.download')}
+        {t('buttons.download')}
       </Button>
       <Button
         size="xs"
@@ -76,39 +68,31 @@ export default function SaveConfigComponent(props: any) {
             .delete(`/api/configs/${config.name}`)
             .then(() => {
               showNotification({
-                title: t(
-                  'settings.tabs.common.settings.configChanger.buttons.delete.deleted.title'
-                ),
+                title: t('buttons.delete.deleted.title'),
                 icon: <Check />,
                 color: 'green',
                 autoClose: 1500,
                 radius: 'md',
-                message: t(
-                  'settings.tabs.common.settings.configChanger.buttons.delete.deleted.message'
-                ),
+                message: t('buttons.delete.deleted.message'),
               });
             })
             .catch(() => {
               showNotification({
-                title: t(
-                  'settings.tabs.common.settings.configChanger.buttons.delete.deleteFailed.title'
-                ),
+                title: t('buttons.delete.deleteFailed.title'),
                 icon: <X />,
                 color: 'red',
                 autoClose: 1500,
                 radius: 'md',
-                message: t(
-                  'settings.tabs.common.settings.configChanger.buttons.delete.deleteFailed.message'
-                ),
+                message: t('buttons.delete.deleteFailed.message'),
               });
             });
           setConfig({ ...config, name: 'default' });
         }}
       >
-        {t('settings.tabs.common.settings.configChanger.buttons.delete.text')}
+        {t('buttons.delete.text')}
       </Button>
       <Button size="xs" leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
-        {t('settings.tabs.common.settings.configChanger.buttons.saveCopy')}
+        {t('buttons.saveCopy')}
       </Button>
     </Group>
   );
