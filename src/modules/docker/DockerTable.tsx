@@ -99,7 +99,6 @@ export default function DockerTable({
         icon={<IconSearch size={14} />}
         value={search}
         onChange={handleSearchChange}
-        disabled={usedContainers.length === 0}
       />
       <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
         <thead>
@@ -107,10 +106,9 @@ export default function DockerTable({
             <th style={{ width: 40 }}>
               <Checkbox
                 onChange={toggleAll}
-                checked={selection.length === usedContainers.length && usedContainers.length > 0}
+                checked={selection.length === usedContainers.length}
                 indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
                 transitionDuration={0}
-                disabled={usedContainers.length === 0}
               />
             </th>
             <th>Name</th>

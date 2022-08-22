@@ -11,9 +11,9 @@ import {
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
-import { useState } from 'react';
 import { tryMatchService } from '../../tools/addToHomarr';
 import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
+import { useState } from 'react';
 
 function sendDockerCommand(
   action: string,
@@ -30,7 +30,7 @@ function sendDockerCommand(
     disallowClose: true,
   });
   axios
-    .get(`localhost:2375/containers/${containerId}/${action}`)
+    .get(`/api/docker/container/${containerId}?action=${action}`)
     .then((res) => {
       updateNotification({
         id: containerId,
@@ -88,7 +88,6 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="orange"
         radius="md"
-        disabled={selected.length === 0}
       >
         Restart
       </Button>
@@ -104,7 +103,6 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="red"
         radius="md"
-        disabled={selected.length === 0}
       >
         Stop
       </Button>
@@ -120,11 +118,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="green"
         radius="md"
-        disabled={selected.length === 0}
       >
         Start
       </Button>
-      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" color="violet" radius="md">
+      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" radius="md">
         Refresh data
       </Button>
       <Button
@@ -144,7 +141,6 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
             setOpened(true);
           }
         }}
-        disabled={selected.length === 0}
       >
         Add to Homarr
       </Button>
@@ -160,7 +156,6 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
             )
           )
         }
-        disabled={selected.length === 0}
       >
         Remove
       </Button>

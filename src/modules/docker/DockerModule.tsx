@@ -1,4 +1,4 @@
-import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Drawer, Group, LoadingOverlay, Text, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Docker from 'dockerode';
@@ -14,12 +14,6 @@ export const DockerModule: IModule = {
   description: 'Allows you to easily manage your torrents',
   icon: IconBrandDocker,
   component: DockerMenuButton,
-  options: {
-    endpoint: {
-      name: 'Docker Api endpoint entry',
-      value: '',
-    },
-  },
 };
 
 export default function DockerMenuButton(props: any) {
@@ -27,7 +21,6 @@ export default function DockerMenuButton(props: any) {
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const { config } = useConfig();
-  const dockerApi = (config?.modules?.[DockerModule.title]?.options?.endpoint?.value as string) ?? ''; // http://192.168.1.56:2376
   const moduleEnabled = config.modules?.[DockerModule.title]?.enabled ?? false;
 
   useEffect(() => {
@@ -40,7 +33,7 @@ export default function DockerMenuButton(props: any) {
     }
     setTimeout(() => {
       axios
-        .get(`${dockerApi}/v1.41/containers/json`)
+        .get('/api/docker/containers')
         .then((res) => {
           setContainers(res.data);
           setSelection([]);
@@ -61,7 +54,8 @@ export default function DockerMenuButton(props: any) {
   if (!exists) {
     return null;
   }
-  //  Always allow user to see DockerTable component through ActionIcon in order to set Docker's settings
+  // Check if the user has at least one container
+  if (containers.length < 1) return null;
   return (
     <>
       <Drawer
