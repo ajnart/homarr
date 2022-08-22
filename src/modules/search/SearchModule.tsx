@@ -8,8 +8,7 @@ import {
   IconDownload as Download,
   IconMovie,
 } from '@tabler/icons';
-import { t } from 'i18next';
-
+import { useTranslation } from 'next-i18next';
 import axios from 'axios';
 import { showNotification } from '@mantine/notifications';
 import { useConfig } from '../../tools/state';
@@ -61,6 +60,7 @@ export default function SearchBar(props: any) {
     },
   });
   const [debounced, cancel] = useDebouncedValue(form.values.query, 250);
+  const { t } = useTranslation('modules/search-module');
 
   useEffect(() => {
     if (OverseerrService === undefined && isOverseerrEnabled) {
@@ -177,7 +177,7 @@ export default function SearchBar(props: any) {
             radius="md"
             size="md"
             styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder={t('layout.header.search.input.placeholder')}
+            placeholder={t('input.placeholder')}
             {...props}
             {...form.getInputProps('query')}
           />

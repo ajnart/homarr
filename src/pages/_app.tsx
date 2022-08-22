@@ -4,17 +4,16 @@ import { AppProps } from 'next/app';
 import { getCookie, setCookie } from 'cookies-next';
 import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from '@mantine/core';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
+import { appWithTranslation } from 'next-i18next';
 import { ConfigProvider } from '../tools/state';
 import { theme } from '../tools/theme';
 import { ColorTheme } from '../tools/color';
-import { I18nextProvider } from 'react-i18next';
-import { loadI18n } from '../translations/i18n';
-import { TranslationProvider } from '../providers/translation.provider';
 
-export default function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
+function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
@@ -72,9 +71,7 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
             <NotificationsProvider limit={4} position="bottom-left">
               <ModalsProvider>
                 <ConfigProvider>
-                  <TranslationProvider>
-                    <Component {...pageProps} />
-                  </TranslationProvider>
+                  <Component {...pageProps} />
                 </ConfigProvider>
               </ModalsProvider>
             </NotificationsProvider>
@@ -88,3 +85,5 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie('color-scheme', ctx) || 'light',
 });
+
+export default appWithTranslation(App);

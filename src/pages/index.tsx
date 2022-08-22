@@ -1,6 +1,8 @@
 import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 import { useEffect } from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
 import { Config } from '../tools/types';
@@ -13,6 +15,7 @@ import Layout from '../components/layout/Layout';
 export async function getServerSideProps({
   req,
   res,
+  locale,
 }: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
   let cookie = getCookie('config-name', { req, res });
   if (!cookie) {
@@ -24,7 +27,31 @@ export async function getServerSideProps({
     });
     cookie = 'default';
   }
-  return getConfig(cookie as string);
+
+  const translations = await serverSideTranslations(locale as string, [
+    'common',
+    'layout/app-shelf',
+    'layout/add-service-app-shelf',
+    'settings/common',
+    'settings/general/theme-selector',
+    'settings/general/config-changer',
+    'settings/general/internationalization',
+    'settings/general/module-enabler',
+    'settings/general/search-engine',
+    'settings/general/widget-positions',
+    'settings/customization/color-selector',
+    'settings/customization/page-appearance',
+    'settings/customization/shade-selector',
+    'modules/search-module',
+    'modules/downloads-module',
+    'modules/weather-module',
+    'modules/ping-module',
+    'modules/docker-module',
+    'modules/dashdot-module',
+    'modules/overseerr-module',
+    'modules/common-media-cards-module',
+  ]);
+  return getConfig(cookie as string, translations);
 }
 
 export default function HomePage(props: any) {

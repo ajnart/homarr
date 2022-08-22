@@ -23,16 +23,16 @@ import {
 } from '../common';
 import { serviceItem } from '../../tools/types';
 import { useColorTheme } from '../../tools/color';
-import { t } from 'i18next';
 
 export const CalendarModule: IModule = {
-  title: t('modules.calendar.title'),
-  description: t('modules.calendar.description'),
+  title: 'Calendar',
+  description:
+    'A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.',
   icon: CalendarIcon,
   component: CalendarComponent,
   options: {
     sundaystart: {
-      name: t('modules.calendar.options.sundayStart'),
+      name: 'Start the week on Sunday',
       value: false,
     },
   },

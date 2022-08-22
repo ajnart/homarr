@@ -1,6 +1,6 @@
 import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useColorTheme } from '../../tools/color';
 import { useConfig } from '../../tools/state';
@@ -160,6 +160,7 @@ export function SonarrMediaDisplay(props: any) {
 export function MediaDisplay({ media }: { media: IMedia }) {
   const [opened, setOpened] = useState(false);
   const { secondaryColor } = useColorTheme();
+  const { t } = useTranslation('modules/common-media-cards-module');
 
   return (
     <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 200 }}>
@@ -210,7 +211,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               size="sm"
               rightIcon={<IconPlayerPlay size={15} />}
             >
-              {t('modules.common.mediaCard.buttons.play')}
+              {t('buttons.play')}
             </Button>
           )}
           {media.imdbId && (
@@ -250,7 +251,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
                 size="sm"
                 rightIcon={<IconDownload size={15} />}
               >
-                {t('modules.common.mediaCard.buttons.request')}
+                {t('buttons.request')}
               </Button>
             </>
           )}

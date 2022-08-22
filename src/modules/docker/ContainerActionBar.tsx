@@ -11,9 +11,10 @@ import {
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
+import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { tryMatchService } from '../../tools/addToHomarr';
 import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
-import { useState } from 'react';
 
 function sendDockerCommand(
   action: string,
@@ -21,6 +22,8 @@ function sendDockerCommand(
   containerName: string,
   reload: () => void
 ) {
+  const { t } = useTranslation('modules/docker-module');
+
   showNotification({
     id: containerId,
     loading: true,
@@ -34,8 +37,8 @@ function sendDockerCommand(
     .then((res) => {
       updateNotification({
         id: containerId,
-        title: `Container ${containerName} ${action}ed`,
-        message: `Your container was successfully ${action}ed`,
+        title: t('messages.successfullyExecuted.message', { containerName, action }),
+        message: t('messages.successfullyExecuted.message', { action }),
         icon: <IconCheck />,
         autoClose: 2000,
       });
@@ -44,7 +47,7 @@ function sendDockerCommand(
       updateNotification({
         id: containerId,
         color: 'red',
-        title: 'There was an error',
+        title: t('errors.unknownError.title'),
         message: err.response.data.reason,
         autoClose: 2000,
       });
@@ -61,6 +64,8 @@ export interface ContainerActionBarProps {
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   const [opened, setOpened] = useState<boolean>(false);
+  const { t } = useTranslation('modules/docker-module');
+
   return (
     <Group>
       <Modal
@@ -68,12 +73,12 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         radius="md"
         opened={opened}
         onClose={() => setOpened(false)}
-        title="Add service"
+        title={t('actionBar.addService.title')}
       >
         <AddAppShelfItemForm
           setOpened={setOpened}
           {...tryMatchService(selected.at(0))}
-          message="Add service to homarr"
+          message={t('actionBar.addService.message')}
         />
       </Modal>
       <Button
@@ -89,7 +94,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         color="orange"
         radius="md"
       >
-        Restart
+        {t('actionBar.restart.title')}
       </Button>
       <Button
         leftIcon={<IconPlayerStop />}
@@ -104,7 +109,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         color="red"
         radius="md"
       >
-        Stop
+        {t('actionBar.stop.title')}
       </Button>
       <Button
         leftIcon={<IconPlayerPlay />}
@@ -119,10 +124,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         color="green"
         radius="md"
       >
-        Start
+        {t('actionBar.start.title')}
       </Button>
       <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" radius="md">
-        Refresh data
+        {t('actionBar.refreshData.title')}
       </Button>
       <Button
         leftIcon={<IconPlus />}
@@ -133,7 +138,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
           if (selected.length !== 1) {
             showNotification({
               autoClose: 5000,
-              title: <Title order={5}>Please only add one service at a time!</Title>,
+              title: <Title order={5}>{t('errors.oneServiceAtATime')}</Title>,
               color: 'red',
               message: undefined,
             });
@@ -142,7 +147,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
           }
         }}
       >
-        Add to Homarr
+        {t('actionBar.addToHomarr.title')}
       </Button>
       <Button
         leftIcon={<IconTrash />}
@@ -157,7 +162,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
           )
         }
       >
-        Remove
+        {t('actionBar.remove.title')}
       </Button>
     </Group>
   );

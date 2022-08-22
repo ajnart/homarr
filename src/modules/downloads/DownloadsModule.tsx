@@ -20,7 +20,7 @@ import { useConfig } from '../../tools/state';
 import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 
 export const DownloadsModule: IModule = {
   title: 'Torrent',
@@ -50,6 +50,9 @@ export default function DownloadComponent() {
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
+
+  const { t } = useTranslation('modules/downloads-module');
+
   useEffect(() => {
     setIsLoading(true);
     if (downloadServices.length === 0) return;
@@ -106,12 +109,12 @@ export default function DownloadComponent() {
   const DEVICE_WIDTH = 576;
   const ths = (
     <tr>
-      <th>{t('modules.downloads.card.table.header.name')}</th>
-      <th>{t('modules.downloads.card.table.header.size')}</th>
-      {width > 576 ? <th>{t('modules.downloads.card.table.header.download')}</th> : ''}
-      {width > 576 ? <th>{t('modules.downloads.card.table.header.upload')}</th> : ''}
-      <th>{t('modules.downloads.card.table.header.estimatedTimeOfArrival')}</th>
-      <th>{t('modules.downloads.card.table.header.progress')}</th>
+      <th>{t('card.table.header.name')}</th>
+      <th>{t('card.table.header.size')}</th>
+      {width > 576 ? <th>{t('card.table.header.download')}</th> : ''}
+      {width > 576 ? <th>{t('card.table.header.upload')}</th> : ''}
+      <th>{t('card.table.header.estimatedTimeOfArrival')}</th>
+      <th>{t('card.table.header.progress')}</th>
     </tr>
   );
   // Convert Seconds to readable format.
@@ -196,7 +199,7 @@ export default function DownloadComponent() {
         </Table>
       ) : (
         <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Title order={3}>{t('modules.downloads.card.table.body.nothingFound')}</Title>
+          <Title order={3}>{t('card.table.body.nothingFound')}</Title>
         </Center>
       )}
     </ScrollArea>

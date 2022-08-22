@@ -22,25 +22,26 @@ import { IconApps } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { tryMatchPort, ServiceTypeList, StatusCodes } from '../../tools/types';
 import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
   const [opened, setOpened] = useState(false);
+  const { t } = useTranslation('layout/add-service-app-shelf');
   return (
     <>
       <Modal
         size="xl"
         radius="md"
-        title={<Title order={3}>{t('layout.header.addService.modal.title')}</Title>}
+        title={<Title order={3}>{t('modal.title')}</Title>}
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
         <AddAppShelfItemForm setOpened={setOpened} />
       </Modal>
-      <Tooltip withinPortal label={t('layout.header.addService.actionIcon.tooltip')}>
+      <Tooltip withinPortal label={t('actionIcon.tooltip')}>
         <ActionIcon
           variant="default"
           radius="md"
@@ -85,6 +86,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
   const { setOpened } = props;
   const { config, setConfig } = useConfig();
   const [isLoading, setLoading] = useState(false);
+  const { t } = useTranslation('layout/add-service-app-shelf');
 
   // Extract all the categories from the services in config
   const InitialCategories = config.services.reduce((acc, cur) => {
@@ -121,13 +123,13 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
         try {
           const _isValid = new URL(value);
         } catch (e) {
-          return t('layout.header.addService.modal.form.validation.invalidUrl');
+          return t('modal.form.validation.invalidUrl');
         }
         return null;
       },
       status: (value: string[]) => {
         if (!value.length) {
-          return t('layout.header.addService.modal.form.validation.noStatusCodeSelected');
+          return t('modal.form.validation.noStatusCodeSelected');
         }
         return null;
       },
@@ -204,62 +206,48 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
       >
         <Tabs defaultValue="Options">
           <Tabs.List grow>
-            <Tabs.Tab value="Options">
-              {t('layout.header.addService.modal.tabs.options.title')}
-            </Tabs.Tab>
-            <Tabs.Tab value="Advanced Options">
-              {t('layout.header.addService.modal.tabs.advancedOptions.title')}
-            </Tabs.Tab>
+            <Tabs.Tab value="Options">{t('modal.tabs.options.title')}</Tabs.Tab>
+            <Tabs.Tab value="Advanced Options">{t('modal.tabs.advancedOptions.title')}</Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel value="Options">
             <Stack>
               <TextInput
                 required
-                label={t('layout.header.addService.modal.tabs.options.form.serviceName.label')}
-                placeholder={t(
-                  'layout.header.addService.modal.tabs.options.form.serviceName.placeholder'
-                )}
+                label={t('modal.tabs.options.form.serviceName.label')}
+                placeholder={t('modal.tabs.options.form.serviceName.placeholder')}
                 {...form.getInputProps('name')}
               />
               <TextInput
                 required
-                label={t('layout.header.addService.modal.tabs.options.form.iconUrl.label')}
+                label={t('modal.tabs.options.form.iconUrl.label')}
                 placeholder={DEFAULT_ICON}
                 {...form.getInputProps('icon')}
               />
               <TextInput
                 required
-                label={t('layout.header.addService.modal.tabs.options.form.serviceUrl.label')}
+                label={t('modal.tabs.options.form.serviceUrl.label')}
                 placeholder="http://localhost:7575"
                 {...form.getInputProps('url')}
               />
               <TextInput
-                label={t('layout.header.addService.modal.tabs.options.form.onClickUrl.label')}
+                label={t('modal.tabs.options.form.onClickUrl.label')}
                 placeholder="http://sonarr.example.com"
                 {...form.getInputProps('openedUrl')}
               />
               <Select
-                label={t('layout.header.addService.modal.tabs.options.form.serviceType.label')}
-                defaultValue={t(
-                  'layout.header.addService.modal.tabs.options.form.serviceType.defaultValue'
-                )}
-                placeholder={t(
-                  'layout.header.addService.modal.tabs.options.form.serviceType.placeholder'
-                )}
+                label={t('modal.tabs.options.form.serviceType.label')}
+                defaultValue={t('modal.tabs.options.form.serviceType.defaultValue')}
+                placeholder={t('modal.tabs.options.form.serviceType.placeholder')}
                 required
                 searchable
                 data={ServiceTypeList}
                 {...form.getInputProps('type')}
               />
               <Select
-                label={t('layout.header.addService.modal.tabs.options.form.category.label')}
+                label={t('modal.tabs.options.form.category.label')}
                 data={categories}
-                placeholder={t(
-                  'layout.header.addService.modal.tabs.options.form.category.placeholder'
-                )}
-                nothingFound={t(
-                  'layout.header.addService.modal.tabs.options.form.category.nothingFound'
-                )}
+                placeholder={t('modal.tabs.options.form.category.placeholder')}
+                nothingFound={t('modal.tabs.options.form.category.nothingFound')}
                 searchable
                 clearable
                 creatable
@@ -269,7 +257,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                   return item;
                 }}
                 getCreateLabel={(query) =>
-                  t('layout.header.addService.modal.tabs.options.form.category.createLabel', {
+                  t('modal.tabs.options.form.category.createLabel', {
                     query,
                   })
                 }
@@ -285,36 +273,26 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 <>
                   <TextInput
                     required
-                    label={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.apiKey.label'
-                    )}
-                    placeholder={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.apiKey.placeholder'
-                    )}
+                    label={t('modal.tabs.options.form.integrations.apiKey.label')}
+                    placeholder={t('modal.tabs.options.form.integrations.apiKey.placeholder')}
                     value={form.values.apiKey}
                     onChange={(event) => {
                       form.setFieldValue('apiKey', event.currentTarget.value);
                     }}
                     error={
                       form.errors.apiKey &&
-                      t(
-                        'layout.header.addService.modal.tabs.options.form.integrations.apiKey.validation.noKey'
-                      )
+                      t('modal.tabs.options.form.integrations.apiKey.validation.noKey')
                     }
                   />
                   <Tip>
-                    {t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.apiKey.tip.text'
-                    )}{' '}
+                    {t('modal.tabs.options.form.integrations.apiKey.tip.text')}{' '}
                     <Anchor
                       target="_blank"
                       weight="bold"
                       style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
                       href={`${hostname}/settings/general`}
                     >
-                      {t(
-                        'layout.header.addService.modal.tabs.options.form.integrations.apiKey.tip.link'
-                      )}
+                      {t('modal.tabs.options.form.integrations.apiKey.tip.link')}
                     </Anchor>
                   </Tip>
                 </>
@@ -323,11 +301,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                 <>
                   <TextInput
                     required
-                    label={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.qBittorrent.username.label'
-                    )}
+                    label={t('modal.tabs.options.form.integrations.qBittorrent.username.label')}
                     placeholder={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.qBittorrent.username.placeholder'
+                      'modal.tabs.options.form.integrations.qBittorrent.username.placeholder'
                     )}
                     value={form.values.username}
                     onChange={(event) => {
@@ -336,17 +312,15 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     error={
                       form.errors.username &&
                       t(
-                        'layout.header.addService.modal.tabs.options.form.integrations.qBittorrent.username.validation.invalidUsername'
+                        'modal.tabs.options.form.integrations.qBittorrent.username.validation.invalidUsername'
                       )
                     }
                   />
                   <PasswordInput
                     required
-                    label={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.qBittorrent.password.label'
-                    )}
+                    label={t('modal.tabs.options.form.integrations.qBittorrent.password.label')}
                     placeholder={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.qBittorrent.password.placeholder'
+                      'modal.tabs.options.form.integrations.qBittorrent.password.placeholder'
                     )}
                     value={form.values.password}
                     onChange={(event) => {
@@ -355,7 +329,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     error={
                       form.errors.password &&
                       t(
-                        'layout.header.addService.modal.tabs.options.form.integrations.qBittorrent.password.validation.invalidPassword'
+                        'modal.tabs.options.form.integrations.qBittorrent.password.validation.invalidPassword'
                       )
                     }
                   />
@@ -364,11 +338,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               {form.values.type === 'Deluge' && (
                 <>
                   <PasswordInput
-                    label={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.deluge.password.label'
-                    )}
+                    label={t('modal.tabs.options.form.integrations.deluge.password.label')}
                     placeholder={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.deluge.password.placeholder'
+                      'modal.tabs.options.form.integrations.deluge.password.placeholder'
                     )}
                     value={form.values.password}
                     onChange={(event) => {
@@ -377,7 +349,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     error={
                       form.errors.password &&
                       t(
-                        'layout.header.addService.modal.tabs.options.form.integrations.deluge.password.validation.invalidPassword'
+                        'modal.tabs.options.form.integrations.deluge.password.validation.invalidPassword'
                       )
                     }
                   />
@@ -386,11 +358,9 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               {form.values.type === 'Transmission' && (
                 <>
                   <TextInput
-                    label={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.transmission.username.label'
-                    )}
+                    label={t('modal.tabs.options.form.integrations.transmission.username.label')}
                     placeholder={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.transmission.username.placeholder'
+                      'modal.tabs.options.form.integrations.transmission.username.placeholder'
                     )}
                     value={form.values.username}
                     onChange={(event) => {
@@ -399,16 +369,14 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     error={
                       form.errors.username &&
                       t(
-                        'layout.header.addService.modal.tabs.options.form.integrations.transmission.username.validation.invalidUsername'
+                        'modal.tabs.options.form.integrations.transmission.username.validation.invalidUsername'
                       )
                     }
                   />
                   <PasswordInput
-                    label={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.transmission.password.label'
-                    )}
+                    label={t('modal.tabs.options.form.integrations.transmission.password.label')}
                     placeholder={t(
-                      'layout.header.addService.modal.tabs.options.form.integrations.transmission.password.placeholder'
+                      'modal.tabs.options.form.integrations.transmission.password.placeholder'
                     )}
                     value={form.values.password}
                     onChange={(event) => {
@@ -417,7 +385,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
                     error={
                       form.errors.password &&
                       t(
-                        'layout.header.addService.modal.tabs.options.form.integrations.transmission.password.validation.invalidPassword'
+                        'modal.tabs.options.form.integrations.transmission.password.validation.invalidPassword'
                       )
                     }
                   />
@@ -425,32 +393,24 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               )}
             </Stack>
           </Tabs.Panel>
-          <Tabs.Panel value={t('layout.header.addService.modal.tabs.advancedOptions.title')}>
+          <Tabs.Panel value={t('modal.tabs.advancedOptions.title')}>
             <Stack>
               <MultiSelect
                 required
-                label={t(
-                  'layout.header.addService.modal.tabs.advancedOptions.form.httpStatusCodes.label'
-                )}
+                label={t('modal.tabs.advancedOptions.form.httpStatusCodes.label')}
                 data={StatusCodes}
-                placeholder={t(
-                  'layout.header.addService.modal.tabs.advancedOptions.form.httpStatusCodes.placeholder'
-                )}
+                placeholder={t('modal.tabs.advancedOptions.form.httpStatusCodes.placeholder')}
                 clearButtonLabel={t(
-                  'layout.header.addService.modal.tabs.advancedOptions.form.httpStatusCodes.clearButtonLabel'
+                  'modal.tabs.advancedOptions.form.httpStatusCodes.clearButtonLabel'
                 )}
-                nothingFound={t(
-                  'layout.header.addService.modal.tabs.advancedOptions.form.httpStatusCodes.nothingFound'
-                )}
+                nothingFound={t('modal.tabs.advancedOptions.form.httpStatusCodes.nothingFound')}
                 defaultValue={['200']}
                 clearable
                 searchable
                 {...form.getInputProps('status')}
               />
               <Switch
-                label={t(
-                  'layout.header.addService.modal.tabs.advancedOptions.form.openServiceInNewTab.label'
-                )}
+                label={t('modal.tabs.advancedOptions.form.openServiceInNewTab.label')}
                 defaultChecked={form.values.newTab}
                 {...form.getInputProps('newTab')}
               />
@@ -459,8 +419,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
         </Tabs>
         <Group grow position="center" mt="xl">
           <Button type="submit">
-            {props.message ??
-              t('layout.header.addService.modal.tabs.advancedOptions.form.buttons.submit.content')}
+            {props.message ?? t('modal.tabs.advancedOptions.form.buttons.submit.content')}
           </Button>
         </Group>
       </form>

@@ -1,0 +1,11 @@
+{
+  "title": "Settings",
+  "tooltip": "Settings",
+  "tabs": {
+    "common": "Common",
+    "customizations": "Customizations"
+  },
+  "credits": {
+    "madeWithLove": "Made with ❤️ by @"
+  }
+}
