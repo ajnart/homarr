@@ -1,34 +1,19 @@
 {
   "name": "default",
-  "services": [],
+  "services": [
+    {
+      "name": "example",
+      "id": "09c45847-8afc-4c1a-9697-f03192de948a",
+      "type": "Other",
+      "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    }
+  ],
   "settings": {
-    "searchUrl": "https://google.com/search?q=",
-    "appCardWidth": 0.8
+    "searchUrl": "https://google.com/search?q="
   },
   "modules": {
     "Search Bar": {
-      "enabled": true
-    },
-    "Docker": {
-      "enabled": true,
-      "options": {
-        "endpoint": {
-          "value": "http://192.168.1.56:2376"
-        }
-      }
-    },
-    "Weather": {
-      "enabled": true,
-      "options": {
-        "location": {
-          "value": "Perros-Guirec"
-        }
-      }
-    },
-    "Download Speed": {
-      "enabled": false
-    },
-    "Ping Services": {
       "enabled": true
     }
   }
