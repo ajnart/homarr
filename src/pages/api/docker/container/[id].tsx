@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import Docker from 'dockerode';
+import DockerSingleton from '../DockerSingleton';
 
-const docker = new Docker();
+const docker = DockerSingleton.getInstance();
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   // Get the slug of the request
