@@ -42,7 +42,9 @@ export default function DockerMenuButton(props: any) {
           setContainers(res.data);
           setSelection([]);
         })
-        .catch(() =>
+        .catch(() => {
+          // Remove containers from the list
+          setContainers([]);
           // Send an Error notification
           showNotification({
             autoClose: 1500,
