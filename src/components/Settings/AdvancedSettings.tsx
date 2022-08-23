@@ -1,4 +1,4 @@
-import { TextInput, Button, Stack } from '@mantine/core';
+import { TextInput, Button, Stack, Textarea } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
@@ -25,6 +25,7 @@ export default function TitleChanger() {
     logo?: string;
     favicon?: string;
     background?: string;
+    customCSS?: string;
   }) => {
     setConfig({
       ...config,
@@ -34,6 +35,7 @@ export default function TitleChanger() {
         logo: values.logo,
         favicon: values.favicon,
         background: values.background,
+        customCSS: values.customCSS,
       },
     });
   };
@@ -61,6 +63,12 @@ export default function TitleChanger() {
             label={t('background.label')}
             placeholder={t('background.placeholder')}
             {...form.getInputProps('background')}
+          />
+          <Textarea
+            minRows={5}
+            label="Custom CSS"
+            placeholder="Your CSS will be executed last"
+            {...form.getInputProps('customCSS')}
           />
           <Button type="submit">{t('buttons.submit')}</Button>
         </Stack>
