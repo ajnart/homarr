@@ -1,19 +1,15 @@
-import { Button, Group, Modal, Title } from '@mantine/core';
+import { Button, Group, Modal } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
   IconPlayerPlay,
   IconPlayerStop,
-  IconPlus,
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
-import { tryMatchService } from '../../tools/addToHomarr';
-import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
-import { useState } from 'react';
 
 function sendDockerCommand(
   action: string,
@@ -60,22 +56,8 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
-  const [opened, setOpened] = useState<boolean>(false);
   return (
     <Group>
-      <Modal
-        size="xl"
-        radius="md"
-        opened={opened}
-        onClose={() => setOpened(false)}
-        title="Add service"
-      >
-        <AddAppShelfItemForm
-          setOpened={setOpened}
-          {...tryMatchService(selected.at(0))}
-          message="Add service to homarr"
-        />
-      </Modal>
       <Button
         leftIcon={<IconRotateClockwise />}
         onClick={() =>
@@ -88,6 +70,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="orange"
         radius="md"
+        disabled={selected.length === 0}
       >
         Restart
       </Button>
@@ -103,6 +86,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="red"
         radius="md"
+        disabled={selected.length === 0}
       >
         Stop
       </Button>
@@ -118,31 +102,12 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="green"
         radius="md"
+        disabled={selected.length === 0}
       >
         Start
       </Button>
-      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" radius="md">
+      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" color="violet" radius="md">
         Refresh data
-      </Button>
-      <Button
-        leftIcon={<IconPlus />}
-        color="indigo"
-        variant="light"
-        radius="md"
-        onClick={() => {
-          if (selected.length !== 1) {
-            showNotification({
-              autoClose: 5000,
-              title: <Title order={5}>Please only add one service at a time!</Title>,
-              color: 'red',
-              message: undefined,
-            });
-          } else {
-            setOpened(true);
-          }
-        }}
-      >
-        Add to Homarr
       </Button>
       <Button
         leftIcon={<IconTrash />}
@@ -156,6 +121,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
             )
           )
         }
+        disabled={selected.length === 0}
       >
         Remove
       </Button>
