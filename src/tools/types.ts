@@ -10,6 +10,7 @@ export interface Settings {
   secondaryColor?: MantineTheme['primaryColor'];
   primaryShade?: MantineTheme['primaryShade'];
   background?: string;
+  customCSS?: string,
   appOpacity?: number;
   widgetPosition?: string;
   appCardWidth?: number;
