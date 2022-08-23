@@ -4,16 +4,13 @@ export default class DockerSingleton extends Docker {
   private static dockerInstance: DockerSingleton;
 
   private constructor() {
-    super({
-      host: '192.168.1.56',
-      port: 2376,
-    });
+    super();
   }
 
   public static getInstance(): DockerSingleton {
-    if (!this.dockerInstance) {
-      this.dockerInstance = new this();
+    if (!DockerSingleton.dockerInstance) {
+      DockerSingleton.dockerInstance = new DockerSingleton();
     }
-    return this.dockerInstance;
+    return DockerSingleton.dockerInstance;
   }
 }
