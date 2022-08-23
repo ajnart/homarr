@@ -1,4 +1,4 @@
-import { ActionIcon, Drawer, Group, LoadingOverlay, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Docker from 'dockerode';
@@ -38,7 +38,9 @@ export default function DockerMenuButton(props: any) {
           setContainers(res.data);
           setSelection([]);
         })
-        .catch(() =>
+        .catch(() => {
+          // Remove containers from the list
+          setContainers([]);
           // Send an Error notification
           showNotification({
             autoClose: 1500,
@@ -46,8 +48,8 @@ export default function DockerMenuButton(props: any) {
             color: 'red',
             icon: <IconX />,
             message: 'Did you forget to mount the docker socket ?',
-          })
-        );
+          });
+        });
     }, 300);
   }
   const exists = config.modules?.[DockerModule.title]?.enabled ?? false;
