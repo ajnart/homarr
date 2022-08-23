@@ -4,6 +4,8 @@ import { useTranslation } from 'next-i18next';
 
 import Dockerode from 'dockerode';
 import { useEffect, useState } from 'react';
+import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
+import { tryMatchService } from '../../tools/addToHomarr';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
@@ -25,6 +27,7 @@ export default function DockerTable({
   selection: Dockerode.ContainerInfo[];
 }) {
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
+  const [rowSelected, setRowSelected] = useState<Dockerode.ContainerInfo>();
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
 
@@ -93,18 +96,49 @@ export default function DockerTable({
         <td>
           <ContainerState state={element.State} />
         </td>
+        <td>
+          <Group>
+            <Tooltip label="Add to Homarr">
+              <ActionIcon
+                color="indigo"
+                variant="light"
+                radius="md"
+                onClick={() => {
+                  setRowSelected(element);
+                  setOpened(true);
+                }}
+              >
+                <IconPlus />
+              </ActionIcon>
+            </Tooltip>
+          </Group>
+        </td>
       </tr>
     );
   });
 
   return (
     <ScrollArea style={{ height: '80vh' }}>
+      <Modal
+        size="xl"
+        radius="md"
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Add service"
+      >
+        <AddAppShelfItemForm
+          setOpened={setOpened}
+          {...tryMatchService(rowSelected)}
+          message="Add service to homarr"
+        />
+      </Modal>
       <TextInput
         placeholder={t('search.placeholder')}
         mt="md"
         icon={<IconSearch size={14} />}
         value={search}
         onChange={handleSearchChange}
+        disabled={usedContainers.length === 0}
       />
       <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
         <thead>
@@ -112,9 +146,10 @@ export default function DockerTable({
             <th style={{ width: 40 }}>
               <Checkbox
                 onChange={toggleAll}
-                checked={selection.length === usedContainers.length}
+                checked={selection.length === usedContainers.length && selection.length > 0}
                 indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
                 transitionDuration={0}
+                disabled={usedContainers.length === 0}
               />
             </th>
             <th>{t('table.header.name')}</th>

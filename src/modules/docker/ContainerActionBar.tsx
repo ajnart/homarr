@@ -1,10 +1,9 @@
-import { Button, Group, Modal, Title } from '@mantine/core';
+import { Button, Group, Modal } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
   IconPlayerPlay,
   IconPlayerStop,
-  IconPlus,
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
@@ -93,6 +92,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="orange"
         radius="md"
+        disabled={selected.length === 0}
       >
         {t('actionBar.restart.title')}
       </Button>
@@ -108,6 +108,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="red"
         radius="md"
+        disabled={selected.length === 0}
       >
         {t('actionBar.stop.title')}
       </Button>
@@ -123,6 +124,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="green"
         radius="md"
+        disabled={selected.length === 0}
       >
         {t('actionBar.start.title')}
       </Button>
@@ -161,6 +163,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
             )
           )
         }
+        disabled={selected.length === 0}
       >
         {t('actionBar.remove.title')}
       </Button>
