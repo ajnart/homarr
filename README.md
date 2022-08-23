@@ -111,7 +111,6 @@ docker run  \
 
 **Docker Compose**
 ```yml
----
 version: '3'
 #---------------------------------------------------------------------#
 #                Homarr -  A homepage for your server.                #
