@@ -17,6 +17,7 @@ export default function TitleChanger() {
       logo: config.settings.logo,
       favicon: config.settings.favicon,
       background: config.settings.background,
+      customCSS: config.settings.customCSS,
     },
   });
 
