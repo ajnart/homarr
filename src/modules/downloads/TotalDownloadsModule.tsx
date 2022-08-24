@@ -15,8 +15,7 @@ import { IModule } from '../ModuleTypes';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const TotalDownloadsModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Download Speed',
   icon: Download,
   component: TotalDownloadsComponent,
   translationNamespace: 'modules/total-downloads-module',

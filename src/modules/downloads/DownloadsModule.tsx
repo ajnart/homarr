@@ -23,8 +23,7 @@ import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
 
 export const DownloadsModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Torrent',
   icon: Download,
   component: DownloadComponent,
   options: {

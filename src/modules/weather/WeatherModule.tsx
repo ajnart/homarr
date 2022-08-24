@@ -19,8 +19,7 @@ import { IModule } from '../ModuleTypes';
 import { WeatherResponse } from './WeatherInterface';
 
 export const WeatherModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Weather',
   icon: Sun,
   component: WeatherComponent,
   options: {
