@@ -3,10 +3,11 @@ import { OverseerrMediaDisplay } from '../common';
 import { IModule } from '../ModuleTypes';
 
 export const OverseerrModule: IModule = {
-  title: 'Overseerr',
-  description: 'Allows you to search and add media from Overseerr/Jellyseerr',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: IconEyeglass,
   component: OverseerrMediaDisplay,
+  translationNamespace: 'modules/overseerr-module',
 };
 
 export interface OverseerSearchProps {

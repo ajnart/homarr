@@ -1,4 +1,16 @@
 {
+  "descriptor": {
+    "name": "Weather",
+    "description": "Look up the current weather in your location",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Display in Fahrenheit"
+      },
+      "location": {
+        "label": "Weather location"
+      }
+    }
+  },
   "card": {
         "weatherDescriptions": {
           "clear": "Clear",

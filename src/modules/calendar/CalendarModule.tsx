@@ -25,17 +25,17 @@ import { serviceItem } from '../../tools/types';
 import { useColorTheme } from '../../tools/color';
 
 export const CalendarModule: IModule = {
-  title: 'Calendar',
-  description:
-    'A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: CalendarIcon,
   component: CalendarComponent,
   options: {
     sundaystart: {
-      name: 'Start the week on Sunday',
+      name: 'descriptor.settings.sundayStart.label',
       value: false,
     },
   },
+  translationNamespace: 'modules/calendar-module',
 };
 
 export default function CalendarComponent(props: any) {

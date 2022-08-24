@@ -11,6 +11,7 @@ export interface IModule {
   icon: TablerIcon;
   component: React.ComponentType;
   options?: Option;
+  translationNamespace: string;
 }
 
 interface Option {

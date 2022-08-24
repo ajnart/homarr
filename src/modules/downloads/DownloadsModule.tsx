@@ -15,24 +15,25 @@ import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useViewportSize } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
+import { useTranslation } from 'next-i18next';
 import { IModule } from '../ModuleTypes';
 import { useConfig } from '../../tools/state';
 import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
-import { useTranslation } from 'next-i18next';
 
 export const DownloadsModule: IModule = {
-  title: 'Torrent',
-  description: 'Show the current download speed of supported services',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: Download,
   component: DownloadComponent,
   options: {
     hidecomplete: {
-      name: 'Hide completed torrents',
+      name: 'descriptor.settings.hideComplete',
       value: false,
     },
   },
+  translationNamespace: 'modules/downloads-module',
 };
 
 export default function DownloadComponent() {

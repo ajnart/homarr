@@ -27,10 +27,11 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export const SearchModule: IModule = {
-  title: 'Search Bar',
-  description: 'Search bar to search the web, youtube, torrents or overseerr',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: Search,
   component: SearchBar,
+  translationNamespace: 'modules/search-module',
 };
 
 export default function SearchBar(props: any) {

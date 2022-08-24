@@ -19,20 +19,21 @@ import { IModule } from '../ModuleTypes';
 import { WeatherResponse } from './WeatherInterface';
 
 export const WeatherModule: IModule = {
-  title: 'Weather',
-  description: 'Look up the current weather in your location',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: Sun,
   component: WeatherComponent,
   options: {
     freedomunit: {
-      name: 'Display in Fahrenheit',
+      name: 'descriptor.settings.displayInFahrenheit.label',
       value: false,
     },
     location: {
-      name: 'Current location',
+      name: 'descriptor.settings.location.label',
       value: 'Paris',
     },
   },
+  translationNamespace: 'modules/weather-module',
 };
 
 // 0 Clear sky

@@ -7,16 +7,17 @@ import { IModule } from '../ModuleTypes';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const DateModule: IModule = {
-  title: 'Date',
-  description: 'Show the current time and date in a card',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: Clock,
   component: DateComponent,
   options: {
     full: {
-      name: 'Display full time (24-hour)',
+      name: 'descriptor.settings.display24HourFormat.label',
       value: true,
     },
   },
+  translationNamespace: 'modules/date-module',
 };
 
 export default function DateComponent(props: any) {
