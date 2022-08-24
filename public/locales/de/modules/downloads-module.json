@@ -13,6 +13,14 @@
         "nothingFound": "Keine Torrents gefunden"
       }
     },
+    "lineChart": {
+      "title": "Derzeitige Download Geschwindigkeit",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} Sekunden zuvor",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
+    },
     "errors": {
       "noDownloadClients": {
         "title": "Keine unterstützten Download Clients gefunden",

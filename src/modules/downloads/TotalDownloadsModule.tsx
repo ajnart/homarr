@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { linearGradientDef } from '@nivo/core';
+import { useTranslation } from 'next-i18next';
 import { Datum, ResponsiveLine } from '@nivo/line';
 import { useListState } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
@@ -12,7 +13,6 @@ import { useConfig } from '../../tools/state';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { IModule } from '../ModuleTypes';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
-import { useTranslation } from 'next-i18next';
 
 export const TotalDownloadsModule: IModule = {
   title: 'Download Speed',
@@ -109,15 +109,19 @@ export default function TotalDownloadsComponent() {
 
   return (
     <Stack>
-      <Title order={4}>Current download speed</Title>
+      <Title order={4}>{t('card.lineChart.title')}</Title>
       <Stack>
         <Group>
           <ColorSwatch size={12} color={theme.colors.green[5]} />
-          <Text>Download: {humanFileSize(totalDownloadSpeed)}/s</Text>
+          <Text>
+            {t('card.lineChart.totalDownload', { download: humanFileSize(totalDownloadSpeed) })}
+          </Text>
         </Group>
         <Group>
           <ColorSwatch size={12} color={theme.colors.blue[5]} />
-          <Text>Upload: {humanFileSize(totalUploadSpeed)}/s</Text>
+          <Text>
+            {t('card.lineChart.totalUpload', { upload: humanFileSize(totalUploadSpeed) })}
+          </Text>
         </Group>
       </Stack>
       <Box
@@ -138,16 +142,20 @@ export default function TotalDownloadsComponent() {
             const roundedSeconds = Math.round(seconds);
             return (
               <Card p="sm" radius="md" withBorder>
-                <Text size="md">{roundedSeconds} seconds ago</Text>
+                <Text size="md">{t('card.lineChart.timeSpan', { seconds: roundedSeconds })}</Text>
                 <Card.Section p="sm">
                   <Stack>
                     <Group>
                       <ColorSwatch size={10} color={theme.colors.green[5]} />
-                      <Text size="md">Download: {humanFileSize(Download)}</Text>
+                      <Text size="md">
+                        {t('card.lineChart.download', { download: humanFileSize(Download) })}
+                      </Text>
                     </Group>
                     <Group>
                       <ColorSwatch size={10} color={theme.colors.blue[5]} />
-                      <Text size="md">Upload: {humanFileSize(Upload)}</Text>
+                      <Text size="md">
+                        {t('card.lineChart.upload', { upload: humanFileSize(Upload) })}
+                      </Text>
                     </Group>
                   </Stack>
                 </Card.Section>
