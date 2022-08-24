@@ -5,6 +5,9 @@
     "common": "Common",
     "customizations": "Customizations"
   },
+  "tips": {
+    "configTip": "Upload your config file by dragging and dropping it onto the page!"
+  },
   "credits": {
     "madeWithLove": "Made with ❤️ by @"
   }

@@ -12,6 +12,7 @@ import { useConfig } from '../../tools/state';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { IModule } from '../ModuleTypes';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
+import { useTranslation } from 'next-i18next';
 
 export const TotalDownloadsModule: IModule = {
   title: 'Download Speed',
@@ -36,6 +37,7 @@ export default function TotalDownloadsComponent() {
         service.type === 'Transmission' ||
         service.type === 'Deluge'
     ) ?? [];
+  const { t } = useTranslation('modules/downloads-module');
 
   const [torrentHistory, torrentHistoryHandlers] = useListState<torrentHistory>([]);
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
@@ -80,14 +82,14 @@ export default function TotalDownloadsComponent() {
   if (downloadServices.length === 0) {
     return (
       <Group>
-        <Title order={4}>No supported download clients found!</Title>
+        <Title order={4}>{t('card.errors.noDownloadClients.title')}</Title>
         <div>
           <AddItemShelfButton
             style={{
               float: 'inline-end',
             }}
           />
-          Add a download service to view your current downloads
+          {t('card.errors.noDownloadClients.text')}
         </div>
       </Group>
     );

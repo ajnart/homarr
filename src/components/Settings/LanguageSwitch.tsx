@@ -4,29 +4,35 @@ import { IconLanguage } from '@tabler/icons';
 
 import { forwardRef, useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import { getLanguageByCode, Language } from '../../languages/language';
 
 export default function LanguageSwitch() {
   const { t, i18n } = useTranslation('settings/general/internationalization');
-  /*const { language, languages, changeLanguage } = i18n;
+  const { changeLanguage } = i18n;
 
-  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(language);
+  const { locale, locales } = useRouter();
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(locale);
 
-  const data = languages.map((language) => ({
-    image: `https://countryflagsapi.com/png/${language.split('-').pop()}`,
-    label: 'JA',
-    value: language,
-  }));*/
+  const data = locales
+    ? locales.map((localeItem) => ({
+        value: localeItem,
+        label: getLanguageByCode(localeItem).originalName,
+        image: `imgs/flags/${localeItem}.png`,
+        language: getLanguageByCode(localeItem),
+      }))
+    : [];
 
   const onChangeSelect = (value: string) => {
-    //setSelectedLanguage(value);
+    setSelectedLanguage(value);
 
-    const languageName = 'JA IS HALZ SCHEISSE NE';
+    const newLanguage = getLanguageByCode(value);
 
-    /*changeLanguage(value)
+    changeLanguage(value)
       .then(() => {
         showNotification({
           title: 'Language changed',
-          message: `You changed the language to '${languageName}'`,
+          message: `You changed the language to '${newLanguage.originalName}'`,
           color: 'green',
           autoClose: 5000,
         });
@@ -34,31 +40,45 @@ export default function LanguageSwitch() {
       .catch((err) => {
         showNotification({
           title: 'Failed to change language',
-          message: `Failed to change to '${languageName}', Error:'${err}`,
+          message: `Failed to change to '${newLanguage.originalName}', Error:'${err}`,
           color: 'red',
           autoClose: 5000,
         });
-      });*/
+      });
   };
 
   return (
     <Stack>
       <Select
-        icon={<IconLanguage size={18} />}
+        icon={
+          <Image
+            width={30}
+            height={18}
+            src={`/imgs/flags/${selectedLanguage}.png`}
+            alt="country flag"
+            styles={{
+              root: {
+                borderRadius: 1.5,
+                overflow: 'hidden',
+              },
+            }}
+          />
+        }
         label={t('label')}
-        data={[
-          {
-            value: 'uwu',
-            label: 'asdf',
-          },
-        ]}
+        data={data}
         itemComponent={SelectItem}
         nothingFound="Nothing found"
         onChange={onChangeSelect}
-        /*
         value={selectedLanguage}
-        defaultValue={language}
-        */
+        defaultValue={locale}
+        styles={{
+          icon: {
+            width: 42,
+          },
+          input: {
+            paddingLeft: '45px !important',
+          },
+        }}
       />
     </Stack>
   );
@@ -66,17 +86,19 @@ export default function LanguageSwitch() {
 
 interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
   image: string;
-  label: string;
+  language: Language;
 }
 
 const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
-  ({ image, label, ...others }: ItemProps, ref) => (
+  ({ language, image, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
         <Image src={image} width={30} height={20} radius="xs" />
 
         <div>
-          <Text size="sm">{label}</Text>
+          <Text size="sm">
+            {language.originalName} ({language.translatedName})
+          </Text>
         </div>
       </Group>
     </div>
