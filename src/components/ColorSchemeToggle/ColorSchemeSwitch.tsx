@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStyles, Switch, Group, useMantineColorScheme, Kbd } from '@mantine/core';
 import { IconSun as Sun, IconMoonStars as MoonStars } from '@tabler/icons';
-import { useConfig } from '../../tools/state';
 import { useTranslation } from 'next-i18next';
+import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   root: {

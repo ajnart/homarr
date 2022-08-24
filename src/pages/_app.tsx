@@ -4,7 +4,6 @@ import { AppProps } from 'next/app';
 import { getCookie, setCookie } from 'cookies-next';
 import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from '@mantine/core';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
