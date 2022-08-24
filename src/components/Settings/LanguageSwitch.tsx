@@ -1,6 +1,5 @@
 import { Group, Image, Select, Stack, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { IconLanguage } from '@tabler/icons';
 
 import { forwardRef, useState } from 'react';
 import { useTranslation } from 'next-i18next';
@@ -12,7 +11,7 @@ export default function LanguageSwitch() {
   const { changeLanguage } = i18n;
 
   const { locale, locales } = useRouter();
-  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(locale);
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null | undefined>(locale);
 
   const data = locales
     ? locales.map((localeItem) => ({
