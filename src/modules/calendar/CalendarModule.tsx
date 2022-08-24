@@ -25,8 +25,7 @@ import { serviceItem } from '../../tools/types';
 import { useColorTheme } from '../../tools/color';
 
 export const CalendarModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Calendar',
   icon: CalendarIcon,
   component: CalendarComponent,
   options: {

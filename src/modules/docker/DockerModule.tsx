@@ -12,8 +12,7 @@ import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 
 export const DockerModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Docker',
   icon: IconBrandDocker,
   component: DockerMenuButton,
   translationNamespace: 'modules/docker-module',

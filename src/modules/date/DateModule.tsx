@@ -7,8 +7,7 @@ import { IModule } from '../ModuleTypes';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const DateModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Date',
   icon: Clock,
   component: DateComponent,
   options: {

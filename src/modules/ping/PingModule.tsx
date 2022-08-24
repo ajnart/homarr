@@ -8,8 +8,7 @@ import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 
 export const PingModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Ping Services',
   icon: Plug,
   component: PingComponent,
   translationNamespace: 'modules/ping-module',

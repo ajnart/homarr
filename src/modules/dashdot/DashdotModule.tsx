@@ -9,8 +9,7 @@ import { IModule } from '../ModuleTypes';
 
 const asModule = <T extends IModule>(t: T) => t;
 export const DashdotModule = asModule({
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Dash.',
   icon: CalendarIcon,
   component: DashdotComponent,
   options: {

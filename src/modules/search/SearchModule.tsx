@@ -27,8 +27,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export const SearchModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Search',
   icon: Search,
   component: SearchBar,
   translationNamespace: 'modules/search-module',

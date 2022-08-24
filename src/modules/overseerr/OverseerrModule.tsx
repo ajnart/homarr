@@ -3,8 +3,7 @@ import { OverseerrMediaDisplay } from '../common';
 import { IModule } from '../ModuleTypes';
 
 export const OverseerrModule: IModule = {
-  title: 'descriptor.name',
-  description: 'descriptor.description',
+  title: 'Overseerr',
   icon: IconEyeglass,
   component: OverseerrMediaDisplay,
   translationNamespace: 'modules/overseerr-module',
