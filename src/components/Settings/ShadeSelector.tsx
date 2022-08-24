@@ -16,7 +16,7 @@ import { useColorTheme } from '../../tools/color';
 export function ShadeSelector() {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
-  const { t } = useTranslation('settings/general/shade-selector');
+  const { t } = useTranslation('settings/customization/shade-selector');
 
   const { primaryColor, secondaryColor, primaryShade, setPrimaryShade } = useColorTheme();
 

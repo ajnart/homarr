@@ -5,7 +5,7 @@ import { useConfig } from '../../tools/state';
 
 export function OpacitySelector() {
   const { config, setConfig } = useConfig();
-  const { t } = useTranslation('settings/customization/shade-selector');
+  const { t } = useTranslation('settings/customization/opacity-selector');
 
   const MARKS = [
     { value: 10, label: '10' },

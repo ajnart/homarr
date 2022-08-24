@@ -44,6 +44,7 @@ export async function getServerSideProps({
     'settings/customization/page-appearance',
     'settings/customization/shade-selector',
     'settings/customization/app-width',
+    'settings/customization/opacity-selector',
     'modules/search-module',
     'modules/downloads-module',
     'modules/weather-module',

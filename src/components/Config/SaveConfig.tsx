@@ -36,12 +36,12 @@ export default function SaveConfigComponent(props: any) {
             setConfig({ ...config, name: values.configName });
             setOpened(false);
             showNotification({
-              title: 'Config saved',
+              title: t('modal.events.configSaved.title'),
               icon: <Check />,
               color: 'green',
               autoClose: 1500,
               radius: 'md',
-              message: `Config saved as ${values.configName}`,
+              message: t('modal.events.configSaved.message', { configName: values.configName }),
             });
           })}
         >
@@ -52,7 +52,7 @@ export default function SaveConfigComponent(props: any) {
             {...form.getInputProps('configName')}
           />
           <Group position="right" mt="md">
-            <Button type="submit">{t('modal.form.buttons.submit')}</Button>
+            <Button type="submit">{t('modal.form.submitButton')}</Button>
           </Group>
         </form>
       </Modal>
@@ -68,22 +68,22 @@ export default function SaveConfigComponent(props: any) {
             .delete(`/api/configs/${config.name}`)
             .then(() => {
               showNotification({
-                title: t('buttons.delete.deleted.title'),
+                title: t('buttons.delete.notifications.deleted.title'),
                 icon: <Check />,
                 color: 'green',
                 autoClose: 1500,
                 radius: 'md',
-                message: t('buttons.delete.deleted.message'),
+                message: t('buttons.delete.notifications.deleted.message'),
               });
             })
             .catch(() => {
               showNotification({
-                title: t('buttons.delete.deleteFailed.title'),
+                title: t('buttons.delete.notifications.deleteFailed.title'),
                 icon: <X />,
                 color: 'red',
                 autoClose: 1500,
                 radius: 'md',
-                message: t('buttons.delete.deleteFailed.message'),
+                message: t('buttons.delete.notifications.deleteFailed.message'),
               });
             });
           setConfig({ ...config, name: 'default' });
