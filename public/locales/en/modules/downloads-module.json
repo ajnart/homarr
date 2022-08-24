@@ -12,6 +12,12 @@
       "body": {
         "nothingFound": "No torrents found"
       }
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "No supported download clients found!",
+        "text": "Add a download service to view your current downloads"
+      }
     }
   }
 }

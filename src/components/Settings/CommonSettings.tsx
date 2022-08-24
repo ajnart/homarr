@@ -12,10 +12,7 @@ import LanguageSwitch from './LanguageSwitch';
 
 export default function CommonSettings(args: any) {
   const { config, setConfig } = useConfig();
-  const { t } = useTranslation([
-    'settings/general/search-engine',
-    'settings/general/config-changer',
-  ]);
+  const { t } = useTranslation(['settings/general/search-engine', 'settings/common']);
 
   const matches = [
     { label: 'Google', value: 'https://google.com/search?q=' },
@@ -84,7 +81,7 @@ export default function CommonSettings(args: any) {
       <LanguageSwitch />
       <ConfigChanger />
       <SaveConfigComponent />
-      <Tip>{t('configTip')}</Tip>
+      <Tip>{t('settings/common:tips.configTip')}</Tip>
     </Stack>
   );
 }

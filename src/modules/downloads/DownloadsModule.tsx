@@ -86,9 +86,9 @@ export default function DownloadComponent() {
   if (downloadServices.length === 0) {
     return (
       <Group>
-        <Title order={3}>No supported download clients found!</Title>
+        <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
         <Group>
-          <Text>Add a download service to view your current downloads</Text>
+          <Text>{t('card.errors.noDownloadClients.text')}</Text>
           <AddItemShelfButton />
         </Group>
       </Group>
