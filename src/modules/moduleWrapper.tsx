@@ -11,12 +11,15 @@ import {
 } from '@mantine/core';
 import { IconAdjustments } from '@tabler/icons';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useConfig } from '../tools/state';
 import { IModule } from './ModuleTypes';
 
 function getItems(module: IModule) {
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation(module.translationNamespace);
+
   const items: JSX.Element[] = [];
   if (module.options) {
     const keys = Object.keys(module.options);
@@ -130,7 +133,7 @@ function getItems(module: IModule) {
                 },
               });
             }}
-            label={values[index].name}
+            label={t(values[index].name)}
           />
         );
       }
@@ -148,6 +151,7 @@ export function ModuleWrapper(props: any) {
   const isShown = enabledModules[module.title]?.enabled ?? false;
   //TODO: fix the hover problem
   const [hovering, setHovering] = useState(false);
+  const { t } = useTranslation('modules');
 
   if (!isShown) {
     return null;
@@ -186,6 +190,7 @@ export function ModuleWrapper(props: any) {
 export function ModuleMenu(props: any) {
   const { module, styles, hovered } = props;
   const items: JSX.Element[] = getItems(module);
+  const { t } = useTranslation('modules/common');
   return (
     <>
       {module.options && (
@@ -217,7 +222,7 @@ export function ModuleMenu(props: any) {
             </motion.div>
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Label>Settings</Menu.Label>
+            <Menu.Label>{t('settings.label')}</Menu.Label>
             {items.map((item) => (
               <Menu.Item key={item.key}>{item}</Menu.Item>
             ))}

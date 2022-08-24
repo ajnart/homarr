@@ -9,33 +9,40 @@ import { IModule } from '../ModuleTypes';
 
 const asModule = <T extends IModule>(t: T) => t;
 export const DashdotModule = asModule({
-  title: 'Dash.',
-  description: 'A module for displaying the graphs of your running Dash. instance.',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: CalendarIcon,
   component: DashdotComponent,
   options: {
     cpuMultiView: {
-      name: 'CPU Multi-Core View',
+      name: 'descriptor.settings.cpuMultiView.label',
       value: false,
     },
     storageMultiView: {
-      name: 'Storage Multi-Drive View',
+      name: 'descriptor.settings.storageMultiView.label',
       value: false,
     },
     useCompactView: {
-      name: 'Use Compact View',
+      name: 'descriptor.settings.useCompactView.label',
       value: false,
     },
     graphs: {
-      name: 'Graphs',
+      name: 'descriptor.settings.graphs.label',
       value: ['CPU', 'RAM', 'Storage', 'Network'],
-      options: ['CPU', 'RAM', 'Storage', 'Network', 'GPU'],
+      options: [
+        'descriptor.settings.graphs.options.cpu',
+        'descriptor.settings.graphs.options.ram',
+        'descriptor.settings.graphs.options.storage',
+        'descriptor.settings.graphs.options.network',
+        'descriptor.settings.graphs.options.GPU',
+      ],
     },
     url: {
-      name: 'Dash. URL',
+      name: 'descriptor.settings.url.label',
       value: '',
     },
   },
+  translationNamespace: 'modules/dashdot-module',
 });
 
 const useStyles = createStyles((theme, _params) => ({

@@ -11,26 +11,31 @@ export default function ModuleEnabler(props: any) {
     <Stack>
       <Title order={4}>{t('title')}</Title>
       <SimpleGrid cols={3} spacing="xs">
-        {modules.map((module) => (
-          <Checkbox
-            key={module.title}
-            size="md"
-            checked={config.modules?.[module.title]?.enabled ?? false}
-            label={`${module.title}`}
-            onChange={(e) => {
-              setConfig({
-                ...config,
-                modules: {
-                  ...config.modules,
-                  [module.title]: {
-                    ...config.modules?.[module.title],
-                    enabled: e.currentTarget.checked,
+        {modules.map((module) => {
+          const { t: translationModules } = useTranslation(module.translationNamespace);
+          return (
+            <Checkbox
+              key={module.title}
+              size="md"
+              checked={config.modules?.[module.title]?.enabled ?? false}
+              label={translationModules(module.title, {
+                defaultValue: 'UNKNOWN MODULE NAME',
+              })}
+              onChange={(e) => {
+                setConfig({
+                  ...config,
+                  modules: {
+                    ...config.modules,
+                    [module.title]: {
+                      ...config.modules?.[module.title],
+                      enabled: e.currentTarget.checked,
+                    },
                   },
-                },
-              });
-            }}
-          />
-        ))}
+                });
+              }}
+            />
+          );
+        })}
       </SimpleGrid>
     </Stack>
   );

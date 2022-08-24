@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Kalender",
+    "description": "Ein Kalender Modul welches bevorstehende Shows anzeigt. Es interagiert mit der API von Sonarr, Radarr, Readarr und Lidarr.",
+    "settings": {
+      "sundayStart": {
+        "label": "Wochenstart am Sonntag"
+      }
+    }
+  }
+}

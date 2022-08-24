@@ -15,10 +15,11 @@ import { IModule } from '../ModuleTypes';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const TotalDownloadsModule: IModule = {
-  title: 'Download Speed',
-  description: 'Show the current download speed of supported services',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: Download,
   component: TotalDownloadsComponent,
+  translationNamespace: 'modules/total-downloads-module',
 };
 
 interface torrentHistory {

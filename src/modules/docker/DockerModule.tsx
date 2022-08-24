@@ -12,10 +12,11 @@ import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 
 export const DockerModule: IModule = {
-  title: 'Docker',
-  description: 'Allows you to easily manage your torrents',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: IconBrandDocker,
   component: DockerMenuButton,
+  translationNamespace: 'modules/docker-module',
 };
 
 export default function DockerMenuButton(props: any) {

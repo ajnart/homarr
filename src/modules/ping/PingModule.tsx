@@ -3,15 +3,16 @@ import axios, { AxiosResponse } from 'axios';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { IconPlug as Plug } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
-import { useTranslation } from 'next-i18next';
 
 export const PingModule: IModule = {
-  title: 'Ping Services',
-  description: 'Pings your services and shows their status as an indicator',
+  title: 'descriptor.name',
+  description: 'descriptor.description',
   icon: Plug,
   component: PingComponent,
+  translationNamespace: 'modules/ping-module',
 };
 
 export default function PingComponent(props: any) {
