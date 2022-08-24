@@ -1,4 +1,4 @@
-import { ActionIcon, Menu, Modal, Text, useMantineTheme } from '@mantine/core';
+import { ActionIcon, Menu, Modal, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { useState } from 'react';
 import { IconCheck as Check, IconEdit as Edit, IconMenu, IconTrash as Trash } from '@tabler/icons';
