@@ -1,55 +1,55 @@
 {
   "configSelect": {
-    "label": "Config loader"
+    "label": ""
   },
   "modal": {
-    "title": "Choose the name of your new config",
+    "title": "",
     "form": {
       "configName": {
-        "label": "Config name",
-        "placeholder": "Your new config name"
+        "label": "",
+        "placeholder": ""
       },
-      "submitButton": "Confirm"
+      "submitButton": ""
     },
     "events": {
       "configSaved": {
-        "title": "Config saved",
-        "message": "Config saved as {{configName}}"
+        "title": "",
+        "message": ""
       }
     }
   },
   "buttons": {
-    "download": "Download config",
+    "download": "",
     "delete": {
-      "text": "Delete config",
+      "text": "",
       "notifications": {
         "deleted": {
-          "title": "Config deleted",
-          "message": "Config deleted"
+          "title": "",
+          "message": ""
         },
         "deleteFailed": {
-          "title": "Config delete failed",
-          "message": "Config delete failed"
+          "title": "",
+          "message": ""
         }
       }
     },
-    "saveCopy": "Save a copy"
+    "saveCopy": ""
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "Unable to load config",
-        "message": "Could not load your config. Invalid JSON format."
+        "title": "",
+        "message": ""
       },
       "loadedSuccessfully": {
-        "title": "Config {{configName}} loaded successfully"
+        "title": ""
       }
     },
     "accept": {
-      "text": "Drag files here to upload a config. Support for JSON only."
+      "text": ""
     },
     "reject": {
-      "text": "This file format is not supported. Please only upload JSON."
+      "text": ""
     }
   }
 }
