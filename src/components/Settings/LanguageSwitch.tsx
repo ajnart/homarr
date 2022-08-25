@@ -13,8 +13,8 @@ export default function LanguageSwitch() {
   const { changeLanguage } = i18n;
   const configLocale = getCookie('config-locale');
   const { locale, locales } = useRouter();
-  const [selectedLanguage, setSelectedLanguage] = useState<string | undefined>(
-    (configLocale as string) ?? locale
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(
+    (configLocale as string) ?? locale ?? 'en'
   );
 
   const data = locales
@@ -57,7 +57,7 @@ export default function LanguageSwitch() {
   return (
     <Stack>
       <Select
-        icon={<Text>{getUnicodeFlagIcon(selectedLanguage as string)}</Text>}
+        icon={<Text>{getUnicodeFlagIcon(getLanguageByCode(selectedLanguage).shortName)}</Text>}
         label={t('label')}
         data={data}
         itemComponent={SelectItem}
@@ -87,7 +87,7 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   ({ language, image, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
-        <Text>{getUnicodeFlagIcon(language.originalName as string)}</Text>
+        <Text>{getUnicodeFlagIcon(language.shortName)}</Text>
 
         <div>
           <Text size="sm">
