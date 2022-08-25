@@ -1,28 +1,28 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Allows you to search and add media from Overseerr/Jellyseerr"
+    "description": "Permet de rechercher et d'ajouter des médias depuis Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "Ask for {{title}}",
-        "cancel": "Cancel",
-        "request": "Request"
+        "askFor": "Demandez le site {{title}}",
+        "cancel": "Annuler",
+        "request": "Demande"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "Using API key",
-          "text": "This request will be automatically approved"
+          "title": "Utilisation de la clé API",
+          "text": "Cette demande sera automatiquement approuvée"
         }
       }
     },
     "seasonSelector": {
-      "caption": "Tick the seasons that you want to be downloaded",
+      "caption": "Cochez les saisons que vous souhaitez télécharger",
       "table": {
         "header": {
-          "season": "Season",
-          "numberOfEpisodes": "Number of episodes"
+          "season": "Saison",
+          "numberOfEpisodes": "Nombre d'épisodes"
         }
       }
     }
