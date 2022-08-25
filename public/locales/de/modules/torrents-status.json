@@ -1,30 +1,39 @@
 {
+  "descriptor": {
+    "name": "Torrent",
+    "description": "Show the current download speed of supported services",
+    "settings": {
+      "hideComplete": {
+        "label": "Hide completed torrents"
+      }
+    }
+  },
   "card": {
     "table": {
       "header": {
         "name": "Name",
-        "size": "Grösse",
-        "download": "Eingehend",
-        "upload": "Ausgehend",
-        "estimatedTimeOfArrival": "Vorraussichtlicher Abschluss",
-        "progress": "Fortschritt"
+        "size": "Size",
+        "download": "Down",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progress"
       },
       "body": {
-        "nothingFound": "Keine Torrents gefunden"
+        "nothingFound": "No torrents found"
       }
     },
     "lineChart": {
-      "title": "Derzeitige Download Geschwindigkeit",
+      "title": "Current download speed",
       "download": "Download: {{download}}",
       "upload": "Upload: {{upload}}",
-      "timeSpan": "{{seconds}} Sekunden zuvor",
+      "timeSpan": "{{seconds}} seconds ago",
       "totalDownload": "Download: {{download}}/s",
       "totalUpload": "Upload: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Keine unterstützten Download Clients gefunden",
-        "text": "Füge einen Download Service hinzu, um deine derzeitigen Downloads zu sehen"
+        "title": "No supported download clients found!",
+        "text": "Add a download service to view your current downloads"
       }
     }
   }
