@@ -1,55 +1,55 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "Nalagalnik konfiguracije"
   },
   "modal": {
-    "title": "",
+    "title": "Izberite ime vaše nove konfiguracije",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "Ime konfiguracije",
+        "placeholder": "Vaše novo ime konfiguracije"
       },
-      "submitButton": ""
+      "submitButton": "Potrdi"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "Konfiguracija je shranjena",
+        "message": "Konfiguracija shranjena kot {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Prenos konfiguracije",
     "delete": {
-      "text": "",
+      "text": "Brisanje konfiguracije",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguracija izbrisana",
+          "message": "Konfiguracija izbrisana"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Brisanje konfiguracije ni uspelo",
+          "message": "Brisanje konfiguracije ni uspelo"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Shrani kopijo"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Ni mogoče naložiti konfiguracije",
+        "message": "Ni bilo mogoče naložiti vaše konfiguracije. Nepravilna oblika JSON."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Konfiguracija {{configName}} je uspešno naložena"
       }
     },
     "accept": {
-      "text": ""
+      "text": "Če želite naložiti konfiguracijo, povlecite datoteke sem. Podpora samo za JSON."
     },
     "reject": {
-      "text": ""
+      "text": "Ta oblika datoteke ni podprta. Prenesite samo JSON."
     }
   }
 }
