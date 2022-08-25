@@ -3,8 +3,9 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { getConfig } from '../../../tools/getConfig';
-import { Config, DownloadItem } from '../../../tools/types';
+import { UsenetHistoryItem } from '../../../../modules';
+import { getConfig } from '../../../../tools/getConfig';
+import { Config } from '../../../../tools/types';
 
 dayjs.extend(duration);
 
@@ -14,35 +15,26 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
     const nzbServices = config.services.filter((service) => service.type === 'Sabnzbd');
 
-    const downloads: DownloadItem[] = [];
+    const history: UsenetHistoryItem[] = [];
 
     await Promise.all(
       nzbServices.map(async (service) => {
         if (!service.apiKey) {
           throw new Error(`API Key for service "${service.name}" is missing`);
         }
-        const queue = await new Client(service.url, service.apiKey).queue();
+        const queue = await new Client(service.url, service.apiKey).history();
 
         queue.slots.forEach((slot) => {
-          const [hours, minutes, seconds] = slot.timeleft.split(':');
-          const eta = dayjs.duration({
-            hour: parseInt(hours, 10),
-            minutes: parseInt(minutes, 10),
-            seconds: parseInt(seconds, 10),
-          } as any);
-          downloads.push({
+          history.push({
             id: slot.nzo_id,
-            eta: eta.asSeconds(),
-            name: slot.filename,
-            progress: parseFloat(slot.percentage),
-            size: parseFloat(slot.mb),
-            state: slot.status.toLowerCase() as any,
+            name: slot.name,
+            size: slot.bytes * 1000,
           });
         });
       })
     );
 
-    return res.status(200).json(downloads);
+    return res.status(200).json(history);
   } catch (err) {
     return res.status(401).json(err);
   }

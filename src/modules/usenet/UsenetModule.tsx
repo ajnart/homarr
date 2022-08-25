@@ -1,4 +1,14 @@
-import { Center, Progress, ScrollArea, Skeleton, Table, Text, Title, Tooltip } from '@mantine/core';
+import {
+  Center,
+  Progress,
+  ScrollArea,
+  Skeleton,
+  Table,
+  Tabs,
+  Text,
+  Title,
+  Tooltip,
+} from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { IconDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
 import axios from 'axios';
@@ -11,7 +21,7 @@ import { IModule } from '../ModuleTypes';
 
 dayjs.extend(duration);
 
-export const NzbComponent: FunctionComponent = () => {
+export const UsenetComponent: FunctionComponent = () => {
   const [nzbs, setNzbs] = useState<DownloadItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +30,7 @@ export const NzbComponent: FunctionComponent = () => {
 
     const getData = async () => {
       try {
-        const response = await axios.get('/api/modules/nzbs');
+        const response = await axios.get('/api/modules/usenet');
         setNzbs(response.data);
       } catch (error) {
         setNzbs([]);
@@ -38,7 +48,7 @@ export const NzbComponent: FunctionComponent = () => {
       }
     };
 
-    const interval = setInterval(getData, 10000);
+    const interval = setInterval(getData, 5000);
     getData();
 
     () => {
@@ -112,26 +122,34 @@ export const NzbComponent: FunctionComponent = () => {
   }
 
   return (
-    <ScrollArea sx={{ maxHeight: 300, width: '100%' }}>
-      {rows.length > 0 ? (
-        <Table highlightOnHover>
-          <thead>{ths}</thead>
-          <tbody>{rows}</tbody>
-        </Table>
-      ) : (
-        <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Title order={3}>Queue is empty</Title>
-        </Center>
-      )}
-    </ScrollArea>
+    <Tabs defaultValue="queue">
+      <Tabs.List>
+        <Tabs.Tab value="queue">Queue</Tabs.Tab>
+        <Tabs.Tab value="history">History</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="queue">
+        <ScrollArea sx={{ maxHeight: 300, width: '100%' }}>
+          {rows.length > 0 ? (
+            <Table highlightOnHover>
+              <thead>{ths}</thead>
+              <tbody>{rows}</tbody>
+            </Table>
+          ) : (
+            <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Title order={3}>Queue is empty</Title>
+            </Center>
+          )}
+        </ScrollArea>
+      </Tabs.Panel>
+    </Tabs>
   );
 };
 
-export const NzbModule: IModule = {
+export const UsenetModule: IModule = {
   id: 'usenet',
   title: 'Usenet',
   icon: IconDownload,
-  component: NzbComponent,
+  component: UsenetComponent,
 };
 
-export default NzbComponent;
+export default UsenetComponent;
