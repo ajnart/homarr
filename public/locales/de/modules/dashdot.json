@@ -1,32 +1,60 @@
 {
-  "card": {
-        "title": "Dash.",
-        "errors": {
-          "noService": "Kein Dash. Service gefunden. Bitte füge einen zu deinem Homarr Dashboard hinzu oder setze eine Dash. URL in den Modul-Optionen.",
-          "noInformation": "Informationen konnten  nicht von Dash. geladen werden. Betriebst du die neuste Version?"
-        },
-        "graphs": {
-          "storage": {
-            "title": "Speicher",
-            "label": "Speicher:"
-          },
-          "network": {
-            "title": "Netzwerk",
-            "label": "Netzwerk:",
-            "metrics": {
-              "download": "Eingehend",
-              "upload": "Ausgehend"
-            }
-          },
-          "cpu": {
-            "title": "CPU"
-          },
-          "memory": {
-            "title": "RAM"
-          },
-          "gpu": {
-            "title": "GPU"
-          }
+  "descriptor": {
+    "name": "Dash.",
+    "description": "A module for displaying the graphs of your running Dash. instance.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "CPU Multi-Core View"
+      },
+      "storageMultiView": {
+        "label": "Storage Multi-Drive View"
+      },
+      "useCompactView": {
+        "label": "Use Compact View"
+      },
+      "graphs": {
+        "label": "Graphs",
+        "options": {
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "Storage",
+          "network": "Network",
+          "gpu": "GPU"
         }
+      },
+      "url": {
+        "label": "Dash. URL"
       }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Kein Dash. Service gefunden. Bitte füge einen zu deinem Homarr Dashboard hinzu oder setze eine Dash. URL in den Modul-Optionen.",
+      "noInformation": "Informationen konnten  nicht von Dash. geladen werden. Betriebst du die neuste Version?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Speicher",
+        "label": "Speicher:"
+      },
+      "network": {
+        "title": "Netzwerk",
+        "label": "Netzwerk:",
+        "metrics": {
+          "download": "Eingehend",
+          "upload": "Ausgehend"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
 }
