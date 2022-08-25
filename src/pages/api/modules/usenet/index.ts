@@ -36,7 +36,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
             eta: eta.asSeconds(),
             name: slot.filename,
             progress: parseFloat(slot.percentage),
-            size: parseFloat(slot.mb),
+            size: parseFloat(slot.mb) * 1000 * 1000,
             state: slot.status.toLowerCase() as any,
           });
         });

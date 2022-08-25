@@ -3,6 +3,8 @@ import { GetServerSidePropsContext } from 'next';
 import { useEffect } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
 import { Config } from '../tools/types';
@@ -62,6 +64,8 @@ export async function getServerSideProps({
   return getConfig(configName as string, translations);
 }
 
+const queryClient = new QueryClient();
+
 export default function HomePage(props: any) {
   const { config: initialConfig }: { config: Config } = props;
   const { setConfig } = useConfig();
@@ -73,9 +77,11 @@ export default function HomePage(props: any) {
     setConfig(migratedConfig);
   }, [initialConfig]);
   return (
-    <Layout>
-      <AppShelf />
-      <LoadConfigComponent />
-    </Layout>
+    <QueryClientProvider client={queryClient}>
+      <Layout>
+        <AppShelf />
+        <LoadConfigComponent />
+      </Layout>
+    </QueryClientProvider>
   );
 }
