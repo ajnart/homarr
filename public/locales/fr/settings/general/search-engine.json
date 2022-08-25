@@ -1,11 +1,11 @@
 {
-  "title": "Search engine",
+  "title": "Moteur de recherche",
   "tips": {
-    "generalTip": "Use the prefixes !yt and !t in front of your query to search on YouTube or for a Torrent respectively.",
-    "placeholderTip": "%s can be used as a placeholder for the query."
+    "generalTip": "Utilisez les préfixes !yt et !t devant votre requête pour rechercher respectivement sur YouTube ou pour un Torrent.",
+    "placeholderTip": "%s peut être utilisé en tant que placeholder pour la requête."
   },
   "customEngine": {
-    "label": "Query URL",
-    "placeholder": "Custom query URL"
+    "label": "URL de la requête",
+    "placeholder": "URL de requête personnalisée"
   }
 }
