@@ -6,23 +6,23 @@
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "Ask for {{title}}",
-        "cancel": "Cancel",
-        "request": "Request"
+        "askFor": "Fragen für {{title}}",
+        "cancel": "Abbrechen",
+        "request": "Anfragen"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "Using API key",
-          "text": "This request will be automatically approved"
+          "title": "Einen API Schlüssel benutzen",
+          "text": "Diese Anfrage wird automatisch genehmigt"
         }
       }
     },
     "seasonSelector": {
-      "caption": "Tick the seasons that you want to be downloaded",
+      "caption": "Kreuze die Staffeln an, die heruntergeladen werden sollen.",
       "table": {
         "header": {
-          "season": "Season",
-          "numberOfEpisodes": "Number of episodes"
+          "season": "Staffel",
+          "numberOfEpisodes": "Anzahl von Episoden"
         }
       }
     }
