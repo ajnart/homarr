@@ -23,7 +23,7 @@
         }
       },
       "url": {
-        "label": "Dash. URL"
+        "label": "URL Dash"
       }
     }
   },
@@ -31,7 +31,7 @@
     "title": "Dash.",
     "errors": {
       "noService": "Aucun service dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir une URL dashdot dans les options du module.",
-      "noInformation": "Impossible d'acquérir des informations à partir du tableau de bord. - Utilisez-vous la dernière version ?"
+      "noInformation": "Impossible d'acquérir des informations de dashdot - Utilisez-vous la dernière version ?"
     },
     "graphs": {
       "storage": {
