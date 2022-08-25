@@ -1,118 +1,118 @@
 {
-        "actionIcon": {
-          "tooltip": "Einen Service hinzufügen"
-        },
-        "modal": {
-          "title": "Service hinzufügen",
-          "form": {
+    "actionIcon": {
+        "tooltip": "Add a service"
+    },
+    "modal": {
+        "title": "Add service",
+        "form": {
             "validation": {
-              "invalidUrl": "Please enter a valid URL",
-              "noStatusCodeSelected": "Please select a status code"
+                "invalidUrl": "Please enter a valid URL",
+                "noStatusCodeSelected": "Please select a status code"
             }
-          },
-          "tabs": {
+        },
+        "tabs": {
             "options": {
-              "title": "Optionen",
-              "form": {
-                "serviceName": {
-                  "label": "Service Namen",
-                  "placeholder": "Plex"
-                },
-                "iconUrl": {
-                  "label": "Icon URL"
-                },
-                "serviceUrl": {
-                  "label": "Service URL"
-                },
-                "onClickUrl": {
-                  "label": "URL bei einem Klick"
-                },
-                "serviceType": {
-                  "label": "Service Typ",
-                  "defaultValue": "Andere",
-                  "placeholder": "Wähle einen Typ aus"
-                },
-                "category": {
-                  "label": "Kategorie",
-                  "placeholder": "Whle eine Kategorie oder erstelle eine neue",
-                  "nothingFound": "Nichts gefunden",
-                  "createLabel": "+ Erstelle {{query}}"
-                },
-                "integrations": {
-                  "apiKey": {
-                    "label": "API Schlüssel",
-                    "placeholder": "Dein API Schlüssel",
-                    "validation": {
-                      "noKey": "Invalider Schlüssel"
+                "title": "Options",
+                "form": {
+                    "serviceName": {
+                        "label": "Service name",
+                        "placeholder": "Plex"
                     },
-                    "tip": {
-                      "text": "Erhalte deinen API Schlüssel",
-                      "link": "hier."
-                    }
-                  },
-                  "qBittorrent": {
-                    "username": {
-                      "label": "Benutzernamen",
-                      "placeholder": "admin",
-                      "validation": {
-                        "invalidUsername": "Invalider Benutzername"
-                      }
+                    "iconUrl": {
+                        "label": "Icon URL"
                     },
-                    "password": {
-                      "label": "Passwort",
-                      "placeholder": "adminadmin",
-                      "validation": {
-                        "invalidPassword": "Invalides Passwort"
-                      }
-                    }
-                  },
-                  "deluge": {
-                    "password": {
-                      "label": "Passwort",
-                      "placeholder": "password",
-                      "validation": {
-                        "invalidPassword": "Invalides Passwort"
-                      }
-                    }
-                  },
-                  "transmission": {
-                    "username": {
-                      "label": "Benutzername",
-                      "placeholder": "admin",
-                      "validation": {
-                        "invalidUsername": "Invalider Benutzername"
-                      }
+                    "serviceUrl": {
+                        "label": "Service URL"
                     },
-                    "password": {
-                      "label": "Passwort",
-                      "placeholder": "adminadmin",
-                      "validation": {
-                        "invalidPassword": "Invalides Passwort"
-                      }
+                    "onClickUrl": {
+                        "label": "On Click URL"
+                    },
+                    "serviceType": {
+                        "label": "Service type",
+                        "defaultValue": "Other",
+                        "placeholder": "Pick one"
+                    },
+                    "category": {
+                        "label": "Category",
+                        "placeholder": "Select a category or create a new one",
+                        "nothingFound": "Nothing found",
+                        "createLabel": "+ Create {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API key",
+                            "placeholder": "Your API key",
+                            "validation": {
+                                "noKey": "Invalid Key"
+                            },
+                            "tip": {
+                                "text": "Get your API key",
+                                "link": "here."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Username",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Invalid username"
+                                }
+                            },
+                            "password": {
+                                "label": "Password",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Invalid password"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Password",
+                                "placeholder": "password",
+                                "validation": {
+                                    "invalidPassword": "Invalid password"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Username",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Invalid username"
+                                }
+                            },
+                            "password": {
+                                "label": "Password",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Invalid password"
+                                }
+                            }
+                        }
                     }
-                  }
                 }
-              }
             },
             "advancedOptions": {
-              "title": "Weitere Optionen",
-              "form": {
-                "httpStatusCodes": {
-                  "label": "HTTP Status Nummern",
-                  "placeholder": "Wähle eine valide Status Nummer",
-                  "clearButtonLabel": "Auswahl löschen",
-                  "nothingFound": "Nichts gefunden"
-                },
-                "openServiceInNewTab": {
-                  "label": "Serivce in einem neuen Tab öffnen"
-                },
-                "buttons": {
-                  "submit": {
-                    "content": "Service hinzufügen"
-                  }
+                "title": "Advanced options",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "HTTP Status Codes",
+                        "placeholder": "Select valid status codes",
+                        "clearButtonLabel": "Clear selection",
+                        "nothingFound": "Nothing found"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Open service in new tab"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Add service"
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
+    }
+}
