@@ -33,7 +33,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "Aucun client de téléchargement supporté n'a été trouvé !",
-        "text": "Ajouter un service de téléchargement pour afficher vos téléchargements actuels"
+        "text": "Ajouter un service de téléchargement pour afficher vos téléchargements en cours"
       }
     }
   }
