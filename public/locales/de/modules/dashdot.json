@@ -1,34 +1,34 @@
 {
   "descriptor": {
-    "name": "Dash.",
-    "description": "A module for displaying the graphs of your running Dash. instance.",
+    "name": "",
+    "description": "",
     "settings": {
       "cpuMultiView": {
-        "label": "CPU Multi-Core View"
+        "label": ""
       },
       "storageMultiView": {
-        "label": "Storage Multi-Drive View"
+        "label": ""
       },
       "useCompactView": {
-        "label": "Use Compact View"
+        "label": ""
       },
       "graphs": {
-        "label": "Graphs",
+        "label": "",
         "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Storage",
-          "network": "Network",
-          "gpu": "GPU"
+          "cpu": "",
+          "ram": "",
+          "storage": "",
+          "network": "",
+          "gpu": ""
         }
       },
       "url": {
-        "label": "Dash. URL"
+        "label": ""
       }
     }
   },
   "card": {
-    "title": "Dash.",
+    "title": "",
     "errors": {
       "noService": "Kein Dash. Service gefunden. Bitte füge einen zu deinem Homarr Dashboard hinzu oder setze eine Dash. URL in den Modul-Optionen.",
       "noInformation": "Informationen konnten  nicht von Dash. geladen werden. Betriebst du die neuste Version?"
@@ -47,13 +47,13 @@
         }
       },
       "cpu": {
-        "title": "CPU"
+        "title": ""
       },
       "memory": {
-        "title": "RAM"
+        "title": ""
       },
       "gpu": {
-        "title": "GPU"
+        "title": ""
       }
     }
   }
