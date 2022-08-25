@@ -13,27 +13,27 @@
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "Konfiguracja zapisana",
+        "message": "Konfiguracja zapisana jako {{configName}}"
       }
     }
   },
   "buttons": {
     "download": "",
     "delete": {
-      "text": "",
+      "text": "Usuń konfigurację",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguracja usunięta",
+          "message": "Konfiguracja usunięta"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Nie udało się usunąć konfiguracji",
+          "message": "Nie udało się usunąć konfiguracji"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Zapisz kopię"
   },
   "dropzone": {
     "notifications": {
