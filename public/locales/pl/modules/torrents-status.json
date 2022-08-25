@@ -4,7 +4,7 @@
     "description": "",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Ukryj ukończone torrenty"
       }
     }
   },
@@ -12,10 +12,10 @@
     "table": {
       "header": {
         "name": "",
-        "size": "",
+        "size": "Rozmiar",
         "download": "",
         "upload": "",
-        "estimatedTimeOfArrival": "",
+        "estimatedTimeOfArrival": "ETA",
         "progress": ""
       },
       "body": {
@@ -26,7 +26,7 @@
       "title": "",
       "download": "",
       "upload": "",
-      "timeSpan": "",
+      "timeSpan": "{{seconds}} sekund temu",
       "totalDownload": "",
       "totalUpload": ""
     },
