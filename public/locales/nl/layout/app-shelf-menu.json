@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "Modify a service",
+    "title": "Wijzig een service",
     "buttons": {
-      "save": "Save service"
+      "save": "Service opslaan"
     }
   },
   "menu": {
     "labels": {
-      "settings": "Settings",
-      "dangerZone": "Danger zone"
+      "settings": "Instellingen",
+      "dangerZone": "Gevarenzone"
     },
     "actions": {
-      "edit": "Edit",
-      "delete": "Delete"
+      "edit": "Wijzig",
+      "delete": "Verwijder"
     }
   }
 }
