@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Omogoča iskanje in dodajanje medijev iz storitev Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
+        "askFor": "Vprašajte za {{title}}",
         "cancel": "Prekliči",
         "request": "Prošnja"
       },
