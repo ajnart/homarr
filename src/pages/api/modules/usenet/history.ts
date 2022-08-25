@@ -28,7 +28,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           history.push({
             id: slot.nzo_id,
             name: slot.name,
-            size: slot.bytes * 1000,
+            size: slot.bytes,
+            time: slot.download_time,
           });
         });
       })
