@@ -1,18 +1,18 @@
 {
     "actionIcon": {
-        "tooltip": "Voeg service toe"
+        "tooltip": "Voeg een service toe"
     },
     "modal": {
-        "title": "Voeg service toe",
+        "title": "Service toevoegen",
         "form": {
             "validation": {
                 "invalidUrl": "Voer een geldige URL in",
-                "noStatusCodeSelected": "Kies een statuscode"
+                "noStatusCodeSelected": "Selecteer een statuscode"
             }
         },
         "tabs": {
             "options": {
-                "title": "Opties",
+                "title": "Instellingen",
                 "form": {
                     "serviceName": {
                         "label": "Servicenaam",
@@ -46,7 +46,7 @@
                                 "noKey": "Ongeldige sleutel"
                             },
                             "tip": {
-                                "text": "Verkrijg je API sleutel",
+                                "text": "Verkrijg jouw API sleutel",
                                 "link": "hier."
                             }
                         },
@@ -60,7 +60,7 @@
                             },
                             "password": {
                                 "label": "Wachtwoord",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
                                     "invalidPassword": "Ongeldig wachtwoord"
                                 }
@@ -85,7 +85,7 @@
                             },
                             "password": {
                                 "label": "Wachtwoord",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
                                     "invalidPassword": "Ongeldig wachtwoord"
                                 }
@@ -99,7 +99,7 @@
                 "form": {
                     "httpStatusCodes": {
                         "label": "HTTP-statuscodes",
-                        "placeholder": "Selecteer geldige statuscode",
+                        "placeholder": "Selecteer geldige statuscodes",
                         "clearButtonLabel": "Selectie wissen",
                         "nothingFound": "Geen resultaten"
                     },
@@ -108,7 +108,7 @@
                     },
                     "buttons": {
                         "submit": {
-                            "content": "Voeg service toe"
+                            "content": "Service toevoegen"
                         }
                     }
                 }
