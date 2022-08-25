@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Prikaži trenutno hitrost prenosa podprtih storitev",
     "settings": {
       "hideComplete": {
         "label": "Skrijte dokončane torrente"
@@ -11,10 +11,10 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Ime",
         "size": "Velikost",
-        "download": "",
-        "upload": "",
+        "download": "Dol",
+        "upload": "Gor",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Napredek"
       },
@@ -32,8 +32,8 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Ni bilo najdenih podprtih odjemalcev za prenos!",
+        "text": "Dodajte storitev prenosa za ogled trenutnih prenosov"
       }
     }
   }
