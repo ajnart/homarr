@@ -43,7 +43,7 @@
                             "label": "Klucz API",
                             "placeholder": "Twój klucz API",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Nieprawidłowy klucz"
                             },
                             "tip": {
                                 "text": "",
@@ -53,7 +53,7 @@
                         "qBittorrent": {
                             "username": {
                                 "label": "Nazwa użytkownika",
-                                "placeholder": "",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Nieprawidłowa nazwa użytkownika"
                                 }
@@ -69,7 +69,7 @@
                         "deluge": {
                             "password": {
                                 "label": "Hasło",
-                                "placeholder": "",
+                                "placeholder": "password",
                                 "validation": {
                                     "invalidPassword": "Nieprawidłowe hasło"
                                 }
@@ -78,7 +78,7 @@
                         "transmission": {
                             "username": {
                                 "label": "Nazwa użytkownika",
-                                "placeholder": "",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Nieprawidłowa nazwa użytkownika"
                                 }
