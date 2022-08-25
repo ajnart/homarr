@@ -2,13 +2,13 @@
   "title": "Nastavitve",
   "tooltip": "Nastavitve",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Skupno",
+    "customizations": "Prilagoditve"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Konfiguracijsko datoteko naložite tako, da jo povlečete in spustite na stran!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Narejeno s ❤️ od @"
   }
 }
