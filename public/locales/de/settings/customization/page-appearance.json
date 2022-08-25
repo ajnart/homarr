@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "label": "Seiten Titel",
+    "label": "Page Title",
     "placeholder": "Homarr 🦞"
   },
   "logo": {
@@ -12,10 +12,10 @@
     "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "Hintergrund",
+    "label": "Background",
     "placeholder": "/img/background.png"
   },
   "buttons": {
-    "submit": "Absenden"
+    "submit": "Submit"
   }
 }
