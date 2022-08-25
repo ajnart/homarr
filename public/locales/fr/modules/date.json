@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "Date",
-    "description": "Afficher l'heure et la date actuelles dans une carte",
+    "description": "Affiches l'heure et la date actuelles dans un module",
     "settings": {
       "display24HourFormat": {
-        "label": "Affichage de l'heure complète (24 heures)"
+        "label": "Affichage 24 h"
       }
     }
   }
