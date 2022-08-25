@@ -1,5 +1,4 @@
-import { Checkbox, Popover, SimpleGrid, Stack, Text, Title } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { Checkbox, HoverCard, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import * as Modules from '../../modules';
 import { IModule } from '../../modules/ModuleTypes';
@@ -11,9 +10,9 @@ export default function ModuleEnabler(props: any) {
   return (
     <Stack>
       <Title order={4}>{t('title')}</Title>
-      <SimpleGrid cols={3} spacing="xs">
+      <SimpleGrid cols={3} spacing="sm">
         {modules.map((module) => (
-          <ModuleToggle module={module} />
+          <ModuleToggle key={module.id} module={module} />
         ))}
       </SimpleGrid>
     </Stack>
@@ -22,39 +21,36 @@ export default function ModuleEnabler(props: any) {
 
 const ModuleToggle = ({ module }: { module: IModule }) => {
   const { config, setConfig } = useConfig();
-  const { t: translationModules } = useTranslation(module.translationNamespace);
-  const [opened, { close, open }] = useDisclosure(false);
+  const { t } = useTranslation(`modules/${module.id}`);
 
   return (
-    <Popover opened={opened} withArrow withinPortal width={200}>
-      <Popover.Target>
-        <div onMouseEnter={open} onMouseLeave={close}>
-          <Checkbox
-            key={module.title}
-            size="md"
-            checked={config.modules?.[module.title]?.enabled ?? false}
-            label={translationModules('descriptor.name', {
-              defaultValue: 'Unknown',
-            })}
-            onChange={(e) => {
-              setConfig({
-                ...config,
-                modules: {
-                  ...config.modules,
-                  [module.title]: {
-                    ...config.modules?.[module.title],
-                    enabled: e.currentTarget.checked,
-                  },
+    <HoverCard withArrow withinPortal width={200} shadow="md" openDelay={200}>
+      <HoverCard.Target>
+        <Checkbox
+          key={module.id}
+          size="md"
+          checked={config.modules?.[module.id]?.enabled ?? false}
+          label={t('descriptor.name', {
+            defaultValue: 'Unknown',
+          })}
+          onChange={(e) => {
+            setConfig({
+              ...config,
+              modules: {
+                ...config.modules,
+                [module.id]: {
+                  ...config.modules?.[module.id],
+                  enabled: e.currentTarget.checked,
                 },
-              });
-            }}
-          />
-        </div>
-      </Popover.Target>
-      <Popover.Dropdown>
-        <Text weight="bold">{translationModules('descriptor.name')}</Text>
-        <Text>{translationModules('descriptor.description')}</Text>
-      </Popover.Dropdown>
-    </Popover>
+              },
+            });
+          }}
+        />
+      </HoverCard.Target>
+      <HoverCard.Dropdown>
+        <Title order={4}>{t('descriptor.name')}</Title>
+        <Text size="sm">{t('descriptor.description')}</Text>
+      </HoverCard.Dropdown>
+    </HoverCard>
   );
 };

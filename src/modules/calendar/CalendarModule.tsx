@@ -34,7 +34,7 @@ export const CalendarModule: IModule = {
       value: false,
     },
   },
-  translationNamespace: 'modules/calendar-module',
+  id: 'calendar',
 };
 
 export default function CalendarComponent(props: any) {
@@ -127,7 +127,7 @@ export default function CalendarComponent(props: any) {
   }, [config.services]);
 
   const weekStartsAtSunday =
-    (config?.modules?.[CalendarModule.title]?.options?.sundaystart?.value as boolean) ?? false;
+    (config?.modules?.[CalendarModule.id]?.options?.sundaystart?.value as boolean) ?? false;
   return (
     <Calendar
       firstDayOfWeek={weekStartsAtSunday ? 'sunday' : 'monday'}

@@ -160,7 +160,7 @@ export function SonarrMediaDisplay(props: any) {
 export function MediaDisplay({ media }: { media: IMedia }) {
   const [opened, setOpened] = useState(false);
   const { secondaryColor } = useColorTheme();
-  const { t } = useTranslation('modules/common-media-cards-module');
+  const { t } = useTranslation('modules/common-media-cards');
 
   return (
     <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 200 }}>

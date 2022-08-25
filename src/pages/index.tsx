@@ -17,18 +17,19 @@ export async function getServerSideProps({
   res,
   locale,
 }: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
-  let cookie = getCookie('config-name', { req, res });
-  if (!cookie) {
+  let configName = getCookie('config-name', { req, res });
+  const configLocale = getCookie('config-locale', { req, res });
+  if (!configName) {
     setCookie('config-name', 'default', {
       req,
       res,
       maxAge: 60 * 60 * 24 * 30,
       sameSite: 'strict',
     });
-    cookie = 'default';
+    configName = 'default';
   }
 
-  const translations = await serverSideTranslations(locale as string, [
+  const translations = await serverSideTranslations((configLocale ?? locale) as string, [
     'common',
     'layout/app-shelf',
     'layout/add-service-app-shelf',
@@ -46,19 +47,19 @@ export async function getServerSideProps({
     'settings/customization/app-width',
     'settings/customization/opacity-selector',
     'modules/common',
-    'modules/date-module',
-    'modules/calendar-module',
-    'modules/total-downloads-module',
-    'modules/search-module',
-    'modules/downloads-module',
-    'modules/weather-module',
-    'modules/ping-module',
-    'modules/docker-module',
-    'modules/dashdot-module',
-    'modules/overseerr-module',
-    'modules/common-media-cards-module',
+    'modules/date',
+    'modules/calendar',
+    'modules/dlspeed',
+    'modules/search',
+    'modules/torrents-status',
+    'modules/weather',
+    'modules/ping',
+    'modules/docker',
+    'modules/dashdot',
+    'modules/overseerr',
+    'modules/common-media-cards',
   ]);
-  return getConfig(cookie as string, translations);
+  return getConfig(configName as string, translations);
 }
 
 export default function HomePage(props: any) {

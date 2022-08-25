@@ -30,15 +30,15 @@ export const SearchModule: IModule = {
   title: 'Search',
   icon: Search,
   component: SearchBar,
-  translationNamespace: 'modules/search-module',
+  id: 'search',
 };
 
 export default function SearchBar(props: any) {
   const { classes, cx } = useStyles();
   // Config
   const { config } = useConfig();
-  const isModuleEnabled = config.modules?.[SearchModule.title]?.enabled ?? false;
-  const isOverseerrEnabled = config.modules?.[OverseerrModule.title]?.enabled ?? false;
+  const isModuleEnabled = config.modules?.[SearchModule.id]?.enabled ?? false;
+  const isOverseerrEnabled = config.modules?.[OverseerrModule.id]?.enabled ?? false;
   const OverseerrService = config.services.find(
     (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
   );
@@ -60,7 +60,7 @@ export default function SearchBar(props: any) {
     },
   });
   const [debounced, cancel] = useDebouncedValue(form.values.query, 250);
-  const { t } = useTranslation('modules/search-module');
+  const { t } = useTranslation('modules/search');
 
   useEffect(() => {
     if (OverseerrService === undefined && isOverseerrEnabled) {

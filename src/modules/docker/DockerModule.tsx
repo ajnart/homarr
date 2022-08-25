@@ -15,7 +15,7 @@ export const DockerModule: IModule = {
   title: 'Docker',
   icon: IconBrandDocker,
   component: DockerMenuButton,
-  translationNamespace: 'modules/docker-module',
+  id: 'docker',
 };
 
 export default function DockerMenuButton(props: any) {
@@ -23,9 +23,9 @@ export default function DockerMenuButton(props: any) {
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const { config } = useConfig();
-  const moduleEnabled = config.modules?.[DockerModule.title]?.enabled ?? false;
+  const moduleEnabled = config.modules?.[DockerModule.id]?.enabled ?? false;
 
-  const { t } = useTranslation('modules/docker-module');
+  const { t } = useTranslation('modules/docker');
 
   useEffect(() => {
     reload();
@@ -54,7 +54,7 @@ export default function DockerMenuButton(props: any) {
         );
     }, 300);
   }
-  const exists = config.modules?.[DockerModule.title]?.enabled ?? false;
+  const exists = config.modules?.[DockerModule.id]?.enabled ?? false;
   if (!exists) {
     return null;
   }

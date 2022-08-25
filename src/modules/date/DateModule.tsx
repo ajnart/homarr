@@ -16,14 +16,14 @@ export const DateModule: IModule = {
       value: true,
     },
   },
-  translationNamespace: 'modules/date-module',
+  id: 'date',
 };
 
 export default function DateComponent(props: any) {
   const [date, setDate] = useState(new Date());
   const setSafeInterval = useSetSafeInterval();
   const { config } = useConfig();
-  const isFullTime = config?.modules?.[DateModule.title]?.options?.full?.value ?? true;
+  const isFullTime = config?.modules?.[DateModule.id]?.options?.full?.value ?? true;
   const formatString = isFullTime ? 'HH:mm' : 'h:mm A';
   // Change date on minute change
   // Note: Using 10 000ms instead of 1000ms to chill a little :)

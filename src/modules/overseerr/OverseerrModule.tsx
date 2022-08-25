@@ -6,7 +6,7 @@ export const OverseerrModule: IModule = {
   title: 'Overseerr',
   icon: IconEyeglass,
   component: OverseerrMediaDisplay,
-  translationNamespace: 'modules/overseerr-module',
+  id: 'overseerr',
 };
 
 export interface OverseerSearchProps {

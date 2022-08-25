@@ -4,14 +4,17 @@ import { showNotification } from '@mantine/notifications';
 import { forwardRef, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import { getCookie, setCookie } from 'cookies-next';
 import { getLanguageByCode, Language } from '../../languages/language';
 
 export default function LanguageSwitch() {
   const { t, i18n } = useTranslation('settings/general/internationalization');
   const { changeLanguage } = i18n;
-
+  const configLocale = getCookie('config-locale');
   const { locale, locales } = useRouter();
-  const [selectedLanguage, setSelectedLanguage] = useState<string | null | undefined>(locale);
+  const [selectedLanguage, setSelectedLanguage] = useState<string | undefined>(
+    (configLocale as string) ?? locale
+  );
 
   const data = locales
     ? locales.map((localeItem) => ({
@@ -26,9 +29,13 @@ export default function LanguageSwitch() {
     setSelectedLanguage(value);
 
     const newLanguage = getLanguageByCode(value);
-
     changeLanguage(value)
       .then(() => {
+        setCookie('config-locale', value, {
+          maxAge: 60 * 60 * 24 * 30,
+          sameSite: 'strict',
+        });
+
         showNotification({
           title: 'Language changed',
           message: `You changed the language to '${newLanguage.originalName}'`,

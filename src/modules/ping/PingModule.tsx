@@ -11,7 +11,7 @@ export const PingModule: IModule = {
   title: 'Ping Services',
   icon: Plug,
   component: PingComponent,
-  translationNamespace: 'modules/ping-module',
+  id: 'ping',
 };
 
 export default function PingComponent(props: any) {
@@ -21,9 +21,9 @@ export default function PingComponent(props: any) {
   const { url }: { url: string } = props;
   const [isOnline, setOnline] = useState<State>('loading');
   const [response, setResponse] = useState(500);
-  const exists = config.modules?.[PingModule.title]?.enabled ?? false;
+  const exists = config.modules?.[PingModule.id]?.enabled ?? false;
 
-  const { t } = useTranslation('modules/ping-module');
+  const { t } = useTranslation('modules/ping');
 
   function statusCheck(response: AxiosResponse) {
     const { status }: { status: string[] } = props;
@@ -54,7 +54,7 @@ export default function PingComponent(props: any) {
       .catch((error) => {
         statusCheck(error.response);
       });
-  }, [config.modules?.[PingModule.title]?.enabled]);
+  }, [config.modules?.[PingModule.id]?.enabled]);
   if (!exists) {
     return null;
   }
