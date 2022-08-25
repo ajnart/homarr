@@ -18,7 +18,7 @@ import { IModule } from './ModuleTypes';
 
 function getItems(module: IModule) {
   const { config, setConfig } = useConfig();
-  const { t } = useTranslation(module.translationNamespace);
+  const { t } = useTranslation([module.id, 'common']);
 
   const items: JSX.Element[] = [];
   if (module.options) {
@@ -28,8 +28,8 @@ function getItems(module: IModule) {
     const types = values.map((v) => typeof v.value);
     // Loop over all the types with a for each loop
     types.forEach((type, index) => {
-      const optionName = `${module.title}.${keys[index]}`;
-      const moduleInConfig = config.modules?.[module.title];
+      const optionName = `${module.id}.${keys[index]}`;
+      const moduleInConfig = config.modules?.[module.id];
       if (type === 'object') {
         items.push(
           <MultiSelect
@@ -46,7 +46,7 @@ function getItems(module: IModule) {
                 ...config,
                 modules: {
                   ...config.modules,
-                  [module.title]: {
+                  [module.id]: {
                     ...moduleInConfig,
                     options: {
                       ...moduleInConfig?.options,
@@ -71,12 +71,12 @@ function getItems(module: IModule) {
                 ...config,
                 modules: {
                   ...config.modules,
-                  [module.title]: {
-                    ...config.modules[module.title],
+                  [module.id]: {
+                    ...config.modules[module.id],
                     options: {
-                      ...config.modules[module.title].options,
+                      ...config.modules[module.id].options,
                       [keys[index]]: {
-                        ...config.modules[module.title].options?.[keys[index]],
+                        ...config.modules[module.id].options?.[keys[index]],
                         value: (e.target as any)[0].value,
                       },
                     },
@@ -99,7 +99,7 @@ function getItems(module: IModule) {
                 onChange={(e) => {}}
               />
 
-              <Button type="submit">Save</Button>
+              <Button type="submit">{t('actions.save')}</Button>
             </Group>
           </form>
         );
@@ -120,12 +120,12 @@ function getItems(module: IModule) {
                 ...config,
                 modules: {
                   ...config.modules,
-                  [module.title]: {
-                    ...config.modules[module.title],
+                  [module.id]: {
+                    ...config.modules[module.id],
                     options: {
-                      ...config.modules[module.title].options,
+                      ...config.modules[module.id].options,
                       [keys[index]]: {
-                        ...config.modules[module.title].options?.[keys[index]],
+                        ...config.modules[module.id].options?.[keys[index]],
                         value: e.currentTarget.checked,
                       },
                     },
@@ -148,7 +148,7 @@ export function ModuleWrapper(props: any) {
   const { config, setConfig } = useConfig();
   const enabledModules = config.modules ?? {};
   // Remove 'Module' from enabled modules titles
-  const isShown = enabledModules[module.title]?.enabled ?? false;
+  const isShown = enabledModules[module.id]?.enabled ?? false;
   //TODO: fix the hover problem
   const [hovering, setHovering] = useState(false);
   const { t } = useTranslation('modules');
@@ -160,7 +160,7 @@ export function ModuleWrapper(props: any) {
   return (
     <Card
       {...props}
-      key={module.title}
+      key={module.id}
       hidden={!isShown}
       withBorder
       radius="lg"
@@ -195,7 +195,7 @@ export function ModuleMenu(props: any) {
     <>
       {module.options && (
         <Menu
-          key={module.title}
+          key={module.id}
           withinPortal
           width="lg"
           shadow="xl"

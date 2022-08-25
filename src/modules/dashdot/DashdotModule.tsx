@@ -41,7 +41,7 @@ export const DashdotModule = asModule({
       value: '',
     },
   },
-  translationNamespace: 'modules/dashdot-module',
+  id: 'dashdot',
 });
 
 const useStyles = createStyles((theme, _params) => ({
@@ -126,7 +126,7 @@ export function DashdotComponent() {
   const { classes } = useStyles();
   const { colorScheme } = useMantineColorScheme();
 
-  const dashConfig = config.modules?.[DashdotModule.title]
+  const dashConfig = config.modules?.[DashdotModule.id]
     .options as typeof DashdotModule['options'];
   const isCompact = dashConfig?.useCompactView?.value ?? false;
   const dashdotService: serviceItem | undefined = config.services.filter(
@@ -148,7 +148,7 @@ export function DashdotComponent() {
   const totalSize =
     (info?.storage?.layout as any[])?.reduce((acc, curr) => (curr.size ?? 0) + acc, 0) ?? 0;
 
-  const { t } = useTranslation('modules/dashdot-module');
+  const { t } = useTranslation('modules/dashdot');
 
   const graphs = [
     {

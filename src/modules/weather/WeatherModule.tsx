@@ -32,7 +32,7 @@ export const WeatherModule: IModule = {
       value: 'Paris',
     },
   },
-  translationNamespace: 'modules/weather-module',
+  id: 'weather',
 };
 
 // 0 Clear sky
@@ -49,7 +49,7 @@ export const WeatherModule: IModule = {
 // 95 *Thunderstorm: Slight or moderate
 // 96, 99 *Thunderstorm with slight and heavy hail
 export function WeatherIcon(props: any) {
-  const { t } = useTranslation('modules/weather-module');
+  const { t } = useTranslation('modules/weather');
 
   const { code } = props;
   let data: { icon: any; name: string };
@@ -146,9 +146,9 @@ export default function WeatherComponent(props: any) {
   const { config } = useConfig();
   const [weather, setWeather] = useState({} as WeatherResponse);
   const cityInput: string =
-    (config?.modules?.[WeatherModule.title]?.options?.location?.value as string) ?? 'Paris';
+    (config?.modules?.[WeatherModule.id]?.options?.location?.value as string) ?? 'Paris';
   const isFahrenheit: boolean =
-    (config?.modules?.[WeatherModule.title]?.options?.freedomunit?.value as boolean) ?? false;
+    (config?.modules?.[WeatherModule.id]?.options?.freedomunit?.value as boolean) ?? false;
 
   useEffect(() => {
     axios

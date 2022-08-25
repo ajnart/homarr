@@ -10,6 +10,7 @@ import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
 import { MediaType, Result } from './SearchResult.d';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';
+
 interface RequestModalProps {
   base: Result;
   opened: boolean;
@@ -57,7 +58,7 @@ export function MovieRequestModal({
   setOpened: (opened: boolean) => void;
 }) {
   const { secondaryColor } = useColorTheme();
-  const { t } = useTranslation('modules/overseerr-module');
+  const { t } = useTranslation('modules/overseerr');
 
   return (
     <Modal
@@ -114,7 +115,7 @@ export function TvRequestModal({
 }) {
   const [selection, setSelection] = useState<TvShowResultSeason[]>(result.seasons);
   const { classes, cx } = useStyles();
-  const { t } = useTranslation('modules/overseerr-module');
+  const { t } = useTranslation('modules/overseerr');
 
   const toggleRow = (container: TvShowResultSeason) =>
     setSelection((current: TvShowResultSeason[]) =>

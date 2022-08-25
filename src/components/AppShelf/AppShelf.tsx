@@ -126,7 +126,7 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
-    const downloadEnabled = config.modules?.[DownloadsModule.title]?.enabled ?? false;
+    const downloadEnabled = config.modules?.[DownloadsModule.id]?.enabled ?? false;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // TODO: Style accordion so that the bar is transparent to the user settings

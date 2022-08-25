@@ -18,7 +18,7 @@ export const TotalDownloadsModule: IModule = {
   title: 'Download Speed',
   icon: Download,
   component: TotalDownloadsComponent,
-  translationNamespace: 'modules/total-downloads-module',
+  id: 'dlspeed',
 };
 
 interface torrentHistory {
@@ -37,7 +37,7 @@ export default function TotalDownloadsComponent() {
         service.type === 'Transmission' ||
         service.type === 'Deluge'
     ) ?? [];
-  const { t } = useTranslation('modules/downloads-module');
+    const { t } = useTranslation(`modules/${TotalDownloadsModule.id}`);
 
   const [torrentHistory, torrentHistoryHandlers] = useListState<torrentHistory>([]);
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);

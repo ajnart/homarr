@@ -8,6 +8,7 @@ import {
   Skeleton,
   ScrollArea,
   Center,
+  Stack,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
@@ -32,7 +33,7 @@ export const DownloadsModule: IModule = {
       value: false,
     },
   },
-  translationNamespace: 'modules/downloads-module',
+  id: 'torrents-status',
 };
 
 export default function DownloadComponent() {
@@ -46,12 +47,12 @@ export default function DownloadComponent() {
         service.type === 'Deluge'
     ) ?? [];
   const hideComplete: boolean =
-    (config?.modules?.[DownloadsModule.title]?.options?.hidecomplete?.value as boolean) ?? false;
+    (config?.modules?.[DownloadsModule.id]?.options?.hidecomplete?.value as boolean) ?? false;
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
 
-  const { t } = useTranslation('modules/downloads-module');
+  const { t } = useTranslation(`modules/${DownloadsModule.id}`);
 
   useEffect(() => {
     setIsLoading(true);
@@ -85,13 +86,13 @@ export default function DownloadComponent() {
 
   if (downloadServices.length === 0) {
     return (
-      <Group>
+      <Stack>
         <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
         <Group>
           <Text>{t('card.errors.noDownloadClients.text')}</Text>
           <AddItemShelfButton />
         </Group>
-      </Group>
+      </Stack>
     );
   }
 

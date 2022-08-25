@@ -28,7 +28,7 @@ export default function DockerTable({
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
 
-  const { t } = useTranslation('modules/docker-module');
+  const { t } = useTranslation('modules/docker');
 
   useEffect(() => {
     setContainers(containers);

@@ -9,7 +9,7 @@ export interface ContainerStateProps {
 export default function ContainerState(props: ContainerStateProps) {
   const { state } = props;
 
-  const { t } = useTranslation('modules/docker-module');
+  const { t } = useTranslation('modules/docker');
 
   const options: {
     size: MantineSize;

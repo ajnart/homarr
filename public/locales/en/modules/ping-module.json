@@ -1,7 +1,0 @@
-{
-  "states": {
-        "online": "Online {{response}}",
-        "offline": "Offline {{response}}",
-        "loading": "Loading..."
-      }
-}

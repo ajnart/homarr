@@ -22,7 +22,7 @@ function sendDockerCommand(
   containerName: string,
   reload: () => void
 ) {
-  const { t } = useTranslation('modules/docker-module');
+  const { t } = useTranslation('modules/docker');
 
   showNotification({
     id: containerId,
@@ -64,7 +64,7 @@ export interface ContainerActionBarProps {
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   const [opened, setOpened] = useState<boolean>(false);
-  const { t } = useTranslation('modules/docker-module');
+  const { t } = useTranslation('modules/docker');
 
   return (
     <Group>
