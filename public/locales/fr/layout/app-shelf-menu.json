@@ -8,7 +8,7 @@
   "menu": {
     "labels": {
       "settings": "Paramètres",
-      "dangerZone": "Zone de danger"
+      "dangerZone": "Attention"
     },
     "actions": {
       "edit": "Modifier",
