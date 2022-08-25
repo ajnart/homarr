@@ -34,8 +34,7 @@ export default function TotalDownloadsComponent() {
       (service) =>
         service.type === 'qBittorrent' ||
         service.type === 'Transmission' ||
-        service.type === 'Deluge' ||
-        'Sabnzbd'
+        service.type === 'Deluge'
     ) ?? [];
 
   const [torrentHistory, torrentHistoryHandlers] = useListState<torrentHistory>([]);

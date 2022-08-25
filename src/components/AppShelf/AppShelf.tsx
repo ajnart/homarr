@@ -16,7 +16,7 @@ import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
-import { NzbModule, TorrentsModule } from '../../modules';
+import { UsenetModule, TorrentsModule } from '../../modules';
 import TorrentsComponent from '../../modules/torrents/TorrentsModule';
 
 const AppShelf = (props: any) => {
@@ -184,7 +184,7 @@ const AppShelf = (props: any) => {
     <Stack>
       {getItems()}
       <ModuleWrapper mt="xl" module={TorrentsModule} />
-      <ModuleWrapper mt="xl" module={NzbModule} />
+      <ModuleWrapper mt="xl" module={UsenetModule} />
     </Stack>
   );
 };

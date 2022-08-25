@@ -191,12 +191,3 @@ export interface serviceItem {
   ping?: boolean;
   status?: string[];
 }
-
-export interface DownloadItem {
-  name: string;
-  progress: number;
-  size: number;
-  id: string;
-  state: 'paused' | 'downloading' | 'queued';
-  eta: number;
-}
