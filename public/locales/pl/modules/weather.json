@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Pogoda",
+    "description": "Sprawdź aktualną pogodę w swojej lokalizacji",
     "settings": {
       "displayInFahrenheit": {
         "label": ""
@@ -15,12 +15,12 @@
     "weatherDescriptions": {
       "clear": "",
       "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
+      "fog": "Mgła",
+      "drizzle": "Mżawka",
       "freezingDrizzle": "",
-      "rain": "",
+      "rain": "Deszcz",
       "freezingRain": "",
-      "snowFall": "",
+      "snowFall": "Opady śniegu",
       "snowGrains": "",
       "rainShowers": "",
       "snowShowers": "",
