@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "Config loader"
+  },
+  "modal": {
+    "title": "Choose the name of your new config",
+    "form": {
+      "configName": {
+        "label": "Config name",
+        "placeholder": "Your new config name"
+      },
+      "submitButton": "Confirm"
+    },
+    "events": {
+      "configSaved": {
+        "title": "Config saved",
+        "message": "Config saved as {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Download config",
+    "delete": {
+      "text": "Delete config",
+      "notifications": {
+        "deleted": {
+          "title": "Config deleted",
+          "message": "Config deleted"
+        },
+        "deleteFailed": {
+          "title": "Config delete failed",
+          "message": "Config delete failed"
+        }
+      }
+    },
+    "saveCopy": "Save a copy"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Unable to load config",
+        "message": "Could not load your config. Invalid JSON format."
+      },
+      "loadedSuccessfully": {
+        "title": "Config {{configName}} loaded successfully"
+      }
+    },
+    "accept": {
+      "text": "Drag files here to upload a config. Support for JSON only."
+    },
+    "reject": {
+      "text": "This file format is not supported. Please only upload JSON."
+    }
+  }
+}

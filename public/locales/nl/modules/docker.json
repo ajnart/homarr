@@ -1,0 +1,69 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Allows you to easily manage your torrents"
+  },
+  "search": {
+    "placeholder": "Search by container or image name"
+  },
+  "table": {
+    "header": {
+      "name": "Name",
+      "image": "Image",
+      "ports": "Ports",
+      "state": "State"
+    },
+    "body": {
+      "portCollapse": "{{ports}} more"
+    },
+    "states": {
+      "running": "Running",
+      "created": "Created",
+      "stopped": "Stopped",
+      "unknown": "Unknown"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Add service",
+      "message": "Add service to Homarr"
+    },
+    "restart": {
+      "title": "Restart"
+    },
+    "stop": {
+      "title": "Stop"
+    },
+    "start": {
+      "title": "Start"
+    },
+    "refreshData": "Refresh data",
+    "addToHomarr": {
+      "title": "Add to Homarr"
+    },
+    "remove": {
+      "title": "Remove"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "Container {{containerName}} {{action}}ed",
+      "message": "Your container was successfully {{action}}ed"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker integration failed",
+      "message": "Did you forget to mount the docker socket ?"
+    },
+    "unknownError": {
+      "title": "There was an error"
+    },
+    "oneServiceAtATime": {
+      "title": "Please only add one service at a time!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}
