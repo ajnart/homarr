@@ -1,66 +1,66 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Allows you to easily manage your torrents"
+    "description": "Vous permet de gérer facilement vos torrents"
   },
   "search": {
-    "placeholder": "Search by container or image name"
+    "placeholder": "Recherche par nom de conteneur ou d'image"
   },
   "table": {
     "header": {
-      "name": "Name",
+      "name": "Nom",
       "image": "Image",
       "ports": "Ports",
-      "state": "State"
+      "state": "État"
     },
     "body": {
-      "portCollapse": "{{ports}} more"
+      "portCollapse": "{{ports}} plus"
     },
     "states": {
       "running": "Running",
-      "created": "Created",
-      "stopped": "Stopped",
-      "unknown": "Unknown"
+      "created": "Créé",
+      "stopped": "Arrêté",
+      "unknown": "Inconnu"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "Add service",
-      "message": "Add service to Homarr"
+      "title": "Ajouter un service",
+      "message": "Ajouter un service à Homarr"
     },
     "restart": {
-      "title": "Restart"
+      "title": "Redémarrer"
     },
     "stop": {
       "title": "Stop"
     },
     "start": {
-      "title": "Start"
+      "title": "Début"
     },
-    "refreshData": "Refresh data",
+    "refreshData": "Rafraîchir les données",
     "addToHomarr": {
-      "title": "Add to Homarr"
+      "title": "Ajouter à Homarr"
     },
     "remove": {
-      "title": "Remove"
+      "title": "Retirer"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "Container {{containerName}} {{action}}ed",
-      "message": "Your container was successfully {{action}}ed"
+      "title": "Conteneur {{containerName}} {{action}}ed",
+      "message": "Votre conteneur a été envoyé avec succès à {{action}}"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "Docker integration failed",
-      "message": "Did you forget to mount the docker socket ?"
+      "title": "L'intégration de Docker a échoué",
+      "message": "Avez-vous oublié de monter le docker socket ?"
     },
     "unknownError": {
-      "title": "There was an error"
+      "title": "Il y a eu une erreur"
     },
     "oneServiceAtATime": {
-      "title": "Please only add one service at a time!"
+      "title": "Veuillez n'ajouter qu'un seul service à la fois !"
     }
   },
   "actionIcon": {
