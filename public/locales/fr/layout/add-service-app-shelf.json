@@ -1,13 +1,13 @@
 {
     "actionIcon": {
-        "tooltip": "Add a service"
+        "tooltip": "Ajouter un service"
     },
     "modal": {
-        "title": "Add service",
+        "title": "Ajouter un service",
         "form": {
             "validation": {
-                "invalidUrl": "Please enter a valid URL",
-                "noStatusCodeSelected": "Please select a status code"
+                "invalidUrl": "Veuillez entrer une URL valide",
+                "noStatusCodeSelected": "Veuillez sélectionner un code d'état"
             }
         },
         "tabs": {
@@ -15,79 +15,79 @@
                 "title": "Options",
                 "form": {
                     "serviceName": {
-                        "label": "Service name",
+                        "label": "Nom du service",
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": "Icon URL"
+                        "label": "URL de l'icône"
                     },
                     "serviceUrl": {
-                        "label": "Service URL"
+                        "label": "URL du service"
                     },
                     "onClickUrl": {
-                        "label": "On Click URL"
+                        "label": "URL en cas de clic"
                     },
                     "serviceType": {
-                        "label": "Service type",
-                        "defaultValue": "Other",
-                        "placeholder": "Pick one"
+                        "label": "Type de service",
+                        "defaultValue": "Autre",
+                        "placeholder": "Choisissez-en un"
                     },
                     "category": {
-                        "label": "Category",
-                        "placeholder": "Select a category or create a new one",
-                        "nothingFound": "Nothing found",
-                        "createLabel": "+ Create {{query}}"
+                        "label": "Catégorie",
+                        "placeholder": "Sélectionnez une catégorie ou créez-en une nouvelle",
+                        "nothingFound": "Rien trouvé",
+                        "createLabel": "+ Créer {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "API key",
-                            "placeholder": "Your API key",
+                            "label": "Clé API",
+                            "placeholder": "Votre clé API",
                             "validation": {
-                                "noKey": "Invalid Key"
+                                "noKey": "Clé non valide"
                             },
                             "tip": {
-                                "text": "Get your API key",
-                                "link": "here."
+                                "text": "Obtenez votre clé API",
+                                "link": "ici."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "Username",
+                                "label": "Nom d'utilisateur",
                                 "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": "Invalid username"
+                                    "invalidUsername": "Nom d'utilisateur non valide"
                                 }
                             },
                             "password": {
-                                "label": "Password",
+                                "label": "Mot de passe",
                                 "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": "Invalid password"
+                                    "invalidPassword": "Mot de passe invalide"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "Password",
-                                "placeholder": "password",
+                                "label": "Mot de passe",
+                                "placeholder": "mot de passe",
                                 "validation": {
-                                    "invalidPassword": "Invalid password"
+                                    "invalidPassword": "Mot de passe invalide"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "Username",
+                                "label": "Nom d'utilisateur :",
                                 "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": "Invalid username"
+                                    "invalidUsername": "Nom d'utilisateur non valide"
                                 }
                             },
                             "password": {
-                                "label": "Password",
+                                "label": "Mot de passe",
                                 "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": "Invalid password"
+                                    "invalidPassword": "Mot de passe invalide"
                                 }
                             }
                         }
@@ -95,20 +95,20 @@
                 }
             },
             "advancedOptions": {
-                "title": "Advanced options",
+                "title": "Options avancées",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "HTTP Status Codes",
-                        "placeholder": "Select valid status codes",
-                        "clearButtonLabel": "Clear selection",
-                        "nothingFound": "Nothing found"
+                        "label": "Codes d'état HTTP",
+                        "placeholder": "Sélectionnez les codes d'état valides",
+                        "clearButtonLabel": "Effacer la sélection",
+                        "nothingFound": "Rien trouvé"
                     },
                     "openServiceInNewTab": {
-                        "label": "Open service in new tab"
+                        "label": "Ouvrir le service dans un nouvel onglet"
                     },
                     "buttons": {
                         "submit": {
-                            "content": "Add service"
+                            "content": "Ajouter un service"
                         }
                     }
                 }
