@@ -15,7 +15,7 @@
         "size": "Grösse",
         "download": "Eingehend",
         "upload": "Ausgehend",
-        "estimatedTimeOfArrival": "Vorraussichtlicher Abschluss",
+        "estimatedTimeOfArrival": "Voraussichtlicher Abschluss",
         "progress": "Fortschritt"
       },
       "body": {
@@ -32,7 +32,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Keine unterstützten Download Clients gefunden",
+        "title": "Keine unterstützten Download-Clients gefunden!",
         "text": "Füge einen Download Service hinzu, um deine derzeitigen Downloads zu sehen"
       }
     }
