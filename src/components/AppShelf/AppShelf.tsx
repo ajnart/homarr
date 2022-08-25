@@ -16,8 +16,8 @@ import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
-import { DownloadsModule } from '../../modules';
-import DownloadComponent from '../../modules/downloads/DownloadsModule';
+import { NzbModule, TorrentsModule } from '../../modules';
+import TorrentsComponent from '../../modules/torrents/TorrentsModule';
 
 const AppShelf = (props: any) => {
   const { config, setConfig } = useConfig();
@@ -150,7 +150,7 @@ const AppShelf = (props: any) => {
           {/* Return the item for all services without category */}
           {noCategory && noCategory.length > 0 ? (
             <Accordion.Item key="Other" value="Other">
-              <Accordion.Control>{t('accordions.others.text')}</Accordion.Control>
+              <Accordion.Control>Other</Accordion.Control>
               <Accordion.Panel>{getItems()}</Accordion.Panel>
             </Accordion.Item>
           ) : null}
@@ -170,8 +170,8 @@ const AppShelf = (props: any) => {
                 ${(config.settings.appOpacity || 100) / 100}`,
                   }}
                 >
-                  <ModuleMenu module={DownloadsModule} />
-                  <DownloadComponent />
+                  <ModuleMenu module={TorrentsModule} />
+                  <TorrentsComponent />
                 </Paper>
               </Accordion.Panel>
             </Accordion.Item>
@@ -183,7 +183,8 @@ const AppShelf = (props: any) => {
   return (
     <Stack>
       {getItems()}
-      <ModuleWrapper mt="xl" module={DownloadsModule} />
+      <ModuleWrapper mt="xl" module={TorrentsModule} />
+      <ModuleWrapper mt="xl" module={NzbModule} />
     </Stack>
   );
 };

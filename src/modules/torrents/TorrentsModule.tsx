@@ -8,35 +8,33 @@ import {
   Skeleton,
   ScrollArea,
   Center,
-  Stack,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useViewportSize } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { useTranslation } from 'next-i18next';
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { IModule } from '../ModuleTypes';
 import { useConfig } from '../../tools/state';
 import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
 
-export const DownloadsModule: IModule = {
+export const TorrentsModule: IModule = {
+  id: 'torrent',
   title: 'Torrent',
   icon: Download,
-  component: DownloadComponent,
+  component: TorrentsComponent,
   options: {
     hidecomplete: {
-      name: 'descriptor.settings.hideComplete',
+      name: 'Hide completed torrents',
       value: false,
     },
   },
-  id: 'torrents-status',
 };
 
-export default function DownloadComponent() {
+export default function TorrentsComponent() {
   const { config } = useConfig();
   const { height, width } = useViewportSize();
   const downloadServices =
@@ -44,23 +42,22 @@ export default function DownloadComponent() {
       (service) =>
         service.type === 'qBittorrent' ||
         service.type === 'Transmission' ||
-        service.type === 'Deluge'
+        service.type === 'Deluge' ||
+        service.type === 'Sabnzbd'
     ) ?? [];
+
   const hideComplete: boolean =
-    (config?.modules?.[DownloadsModule.id]?.options?.hidecomplete?.value as boolean) ?? false;
+    (config?.modules?.[TorrentsModule.title]?.options?.hidecomplete?.value as boolean) ?? false;
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
-
-  const { t } = useTranslation(`modules/${DownloadsModule.id}`);
-
   useEffect(() => {
     setIsLoading(true);
     if (downloadServices.length === 0) return;
     const interval = setInterval(() => {
       // Send one request with each download service inside
       axios
-        .post('/api/modules/downloads')
+        .post('/api/modules/torrents')
         .then((response) => {
           setTorrents(response.data);
           setIsLoading(false);
@@ -86,13 +83,13 @@ export default function DownloadComponent() {
 
   if (downloadServices.length === 0) {
     return (
-      <Stack>
-        <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
+      <Group>
+        <Title order={3}>No supported download clients found!</Title>
         <Group>
-          <Text>{t('card.errors.noDownloadClients.text')}</Text>
+          <Text>Add a download service to view your current downloads</Text>
           <AddItemShelfButton />
         </Group>
-      </Stack>
+      </Group>
     );
   }
 
@@ -110,12 +107,12 @@ export default function DownloadComponent() {
   const DEVICE_WIDTH = 576;
   const ths = (
     <tr>
-      <th>{t('card.table.header.name')}</th>
-      <th>{t('card.table.header.size')}</th>
-      {width > 576 ? <th>{t('card.table.header.download')}</th> : ''}
-      {width > 576 ? <th>{t('card.table.header.upload')}</th> : ''}
-      <th>{t('card.table.header.estimatedTimeOfArrival')}</th>
-      <th>{t('card.table.header.progress')}</th>
+      <th>Name</th>
+      <th>Size</th>
+      {width > 576 ? <th>Down</th> : ''}
+      {width > 576 ? <th>Up</th> : ''}
+      <th>ETA</th>
+      <th>Progress</th>
     </tr>
   );
   // Convert Seconds to readable format.
@@ -200,7 +197,7 @@ export default function DownloadComponent() {
         </Table>
       ) : (
         <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Title order={3}>{t('card.table.body.nothingFound')}</Title>
+          <Title order={3}>No torrents found</Title>
         </Center>
       )}
     </ScrollArea>
