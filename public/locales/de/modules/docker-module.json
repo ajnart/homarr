@@ -1,0 +1,65 @@
+{
+  "search": {
+    "placeholder": "Suche nach Conainer oder Image Namen"
+  },
+  "table": {
+    "header": {
+      "name": "Name",
+      "image": "Image",
+      "ports": "Ports",
+      "state": "Status"
+    },
+    "body": {
+      "portCollapse": "{{ports}} weitere"
+    },
+    "states": {
+      "running": "Läuft",
+      "created": "Erstellt",
+      "stopped": "Gestopped",
+      "unknown": "Unbekannt"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Service hinzufügen",
+      "message": "Service zu Homarr hinzufügen"
+    },
+    "restart": {
+      "title": "Neustarten"
+    },
+    "stop": {
+      "title": "Stoppen"
+    },
+    "start": {
+      "title": "Starten"
+    },
+    "refreshData": "Daten aktualisieren",
+    "addToHomarr": {
+      "title": "Zu Homarr hinzufügen"
+    },
+    "remove": {
+      "title": "Entfernen"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "Container {{containerName}} {{action}}ed",
+      "message": "Your container was successfully {{action}}ed"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker Integration schlug fehl",
+      "message": "Hast du vergessen, den Docker Socket zu verbinden?"
+    },
+    "unknownError": {
+      "title": "Es ist ein Fehler aufgetreten"
+    },
+    "oneServiceAtATime": {
+      "title": "Bitte füge nur einen Service zur Zeit hinzu."
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "card": {
+    "table": {
+      "header": {
+        "name": "Name",
+        "size": "Grösse",
+        "download": "Eingehend",
+        "upload": "Ausgehend",
+        "estimatedTimeOfArrival": "Vorraussichtlicher Abschluss",
+        "progress": "Fortschritt"
+      },
+      "body": {
+        "nothingFound": "Keine Torrents gefunden"
+      }
+    },
+    "lineChart": {
+      "title": "Derzeitige Download Geschwindigkeit",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} Sekunden zuvor",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Keine unterstützten Download Clients gefunden",
+        "text": "Füge einen Download Service hinzu, um deine derzeitigen Downloads zu sehen"
+      }
+    }
+  }
+}

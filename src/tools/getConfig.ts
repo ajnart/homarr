@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-export function getConfig(name: string) {
+export function getConfig(name: string, props: any = undefined) {
   // Check if the config file exists
   const configPath = path.join(process.cwd(), 'data/configs', `${name}.json`);
   if (!fs.existsSync(configPath)) {
@@ -30,6 +30,7 @@ export function getConfig(name: string) {
     props: {
       configName: name,
       config: JSON.parse(config),
+      ...props,
     },
   };
 }

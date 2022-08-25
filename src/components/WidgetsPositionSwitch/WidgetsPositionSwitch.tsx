@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createStyles, Switch, Group } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
@@ -33,6 +34,7 @@ export function WidgetsPositionSwitch() {
   const { classes, cx } = useStyles();
   const defaultPosition = config?.settings?.widgetPosition || 'right';
   const [widgetPosition, setWidgetPosition] = useState(defaultPosition);
+  const { t } = useTranslation('settings/general/widget-positions');
   const toggleWidgetPosition = () => {
     const position = widgetPosition === 'right' ? 'left' : 'right';
     setWidgetPosition(position);
@@ -54,7 +56,7 @@ export function WidgetsPositionSwitch() {
           size="md"
         />
       </div>
-      Position widgets on left
+      {t('label')}
     </Group>
   );
 }

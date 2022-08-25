@@ -13,25 +13,26 @@ import {
   IconSnowflake as Snowflake,
   IconSun as Sun,
 } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 import { WeatherResponse } from './WeatherInterface';
 
 export const WeatherModule: IModule = {
   title: 'Weather',
-  description: 'Look up the current weather in your location',
   icon: Sun,
   component: WeatherComponent,
   options: {
     freedomunit: {
-      name: 'Display in Fahrenheit',
+      name: 'descriptor.settings.displayInFahrenheit.label',
       value: false,
     },
     location: {
-      name: 'Current location',
+      name: 'descriptor.settings.location.label',
       value: 'Paris',
     },
   },
+  id: 'weather',
 };
 
 // 0 Clear sky
@@ -48,79 +49,87 @@ export const WeatherModule: IModule = {
 // 95 *Thunderstorm: Slight or moderate
 // 96, 99 *Thunderstorm with slight and heavy hail
 export function WeatherIcon(props: any) {
+  const { t } = useTranslation('modules/weather');
+
   const { code } = props;
   let data: { icon: any; name: string };
   switch (code) {
     case 0: {
-      data = { icon: Sun, name: 'Clear' };
+      data = { icon: Sun, name: t('card.weatherDescriptions.clear') };
       break;
     }
     case 1:
     case 2:
     case 3: {
-      data = { icon: Cloud, name: 'Mainly clear' };
+      data = { icon: Cloud, name: t('card.weatherDescriptions.mainlyClear') };
       break;
     }
     case 45:
     case 48: {
-      data = { icon: CloudFog, name: 'Fog' };
+      data = { icon: CloudFog, name: t('card.weatherDescriptions.fog') };
       break;
     }
     case 51:
     case 53:
     case 55: {
-      data = { icon: Cloud, name: 'Drizzle' };
+      data = { icon: Cloud, name: t('card.weatherDescriptions.drizzle') };
       break;
     }
     case 56:
     case 57: {
-      data = { icon: Snowflake, name: 'Freezing drizzle' };
+      data = {
+        icon: Snowflake,
+        name: t('card.weatherDescriptions.freezingDrizzle'),
+      };
       break;
     }
     case 61:
     case 63:
     case 65: {
-      data = { icon: CloudRain, name: 'Rain' };
+      data = { icon: CloudRain, name: t('card.weatherDescriptions.rain') };
       break;
     }
     case 66:
     case 67: {
-      data = { icon: CloudRain, name: 'Freezing rain' };
+      data = { icon: CloudRain, name: t('card.weatherDescriptions.freezingRain') };
       break;
     }
     case 71:
     case 73:
     case 75: {
-      data = { icon: CloudSnow, name: 'Snow fall' };
+      data = { icon: CloudSnow, name: t('card.weatherDescriptions.snowFall') };
       break;
     }
     case 77: {
-      data = { icon: CloudSnow, name: 'Snow grains' };
+      data = { icon: CloudSnow, name: t('card.weatherDescriptions.snowGrains') };
       break;
     }
     case 80:
     case 81:
     case 82: {
-      data = { icon: CloudRain, name: 'Rain showers' };
+      data = { icon: CloudRain, name: t('card.weatherDescriptions.rainShowers') };
 
       break;
     }
     case 85:
     case 86: {
-      data = { icon: CloudSnow, name: 'Snow showers' };
+      data = { icon: CloudSnow, name: t('card.weatherDescriptions.snowShowers') };
       break;
     }
     case 95: {
-      data = { icon: CloudStorm, name: 'Thunderstorm' };
+      data = { icon: CloudStorm, name: t('card.weatherDescriptions.thunderstorm') };
       break;
     }
     case 96:
     case 99: {
-      data = { icon: CloudStorm, name: 'Thunderstorm with hail' };
+      data = {
+        icon: CloudStorm,
+        name: t('card.weatherDescriptions.thunderstormWithHail'),
+      };
       break;
     }
     default: {
-      data = { icon: QuestionMark, name: 'Unknown' };
+      data = { icon: QuestionMark, name: t('card.weatherDescriptions.unknown') };
     }
   }
   return (
@@ -137,9 +146,9 @@ export default function WeatherComponent(props: any) {
   const { config } = useConfig();
   const [weather, setWeather] = useState({} as WeatherResponse);
   const cityInput: string =
-    (config?.modules?.[WeatherModule.title]?.options?.location?.value as string) ?? 'Paris';
+    (config?.modules?.[WeatherModule.id]?.options?.location?.value as string) ?? 'Paris';
   const isFahrenheit: boolean =
-    (config?.modules?.[WeatherModule.title]?.options?.freedomunit?.value as boolean) ?? false;
+    (config?.modules?.[WeatherModule.id]?.options?.freedomunit?.value as boolean) ?? false;
 
   useEffect(() => {
     axios
