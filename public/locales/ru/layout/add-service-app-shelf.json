@@ -1,49 +1,49 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Добавить сервис"
     },
     "modal": {
-        "title": "",
+        "title": "Добавить сервис",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "Пожалуйста, введите корректный адрес",
+                "noStatusCodeSelected": "Пожалуйста, выберите код состояния"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Опции",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Название сервиса",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "URL-адрес иконки"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "Адрес сервиса"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "URL-адрес при нажатии"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
+                        "label": "Тип сервиса",
+                        "defaultValue": "Другое",
                         "placeholder": ""
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "Категория",
+                        "placeholder": "Выберите категорию или создайте новую",
+                        "nothingFound": "Ничего не найдено",
+                        "createLabel": "+ Добавить {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "API-ключ",
+                            "placeholder": "Ваш API-ключ",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Неверный ключ"
                             },
                             "tip": {
                                 "text": "",
@@ -52,42 +52,42 @@
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
+                                "label": "Имя пользователя",
                                 "placeholder": "",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Неверное имя пользователя"
                                 }
                             },
                             "password": {
-                                "label": "",
+                                "label": "Пароль",
                                 "placeholder": "",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Неверный пароль"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
+                                "label": "Пароль",
                                 "placeholder": "",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Неверный пароль"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
+                                "label": "Имя пользователя",
                                 "placeholder": "",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Неверное имя пользователя"
                                 }
                             },
                             "password": {
-                                "label": "",
+                                "label": "Пароль",
                                 "placeholder": "",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Неверный пароль"
                                 }
                             }
                         }
@@ -95,20 +95,20 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Дополнительные опции",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "",
+                        "label": "Коды состояния HTTP",
                         "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "clearButtonLabel": "Очистить выбранное",
+                        "nothingFound": "Ничего не найдено"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "Открывать сервис в новой вкладке"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "Добавить сервис"
                         }
                     }
                 }
