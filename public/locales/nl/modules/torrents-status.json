@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "Toon de huidige downloadsnelheid van ondersteunde diensten",
     "settings": {
       "hideComplete": {
         "label": ""
@@ -11,10 +11,10 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Naam",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "Down",
+        "upload": "Up",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
