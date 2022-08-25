@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Staat je toe om media van Overseerr/Jellyseerr te zoeken en toe te voegen"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
+        "askFor": "Vraag om {{title}}",
         "cancel": "",
         "request": "Aanvraag"
       },
