@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "Ping Services",
-    "description": "Pings your services and shows their status as an indicator"
+    "name": "Ping",
+    "description": "Allows you to check if the service is up or returns a specific HTTP status code."
   },
   "states": {
-        "online": "Online {{response}}",
-        "offline": "Offline {{response}}",
-        "loading": "Laden..."
-      }
+    "online": "Online {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Loading..."
+  }
 }
