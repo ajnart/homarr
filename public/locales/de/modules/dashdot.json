@@ -30,20 +30,20 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "No dash. service found. Please add one to your Homarr dashboard or set a dashdot URL in the module options",
-      "noInformation": "Cannot acquire information from dash. - are you running the latest version?"
+      "noService": "Kein Dash. Service gefunden. Bitte füge einen zu deinem Homarr Dashboard hinzu oder setze eine Dash. URL in den Modul-Optionen.",
+      "noInformation": "Informationen konnten  nicht von Dash. geladen werden. Betriebst du die neuste Version?"
     },
     "graphs": {
       "storage": {
-        "title": "Storage",
-        "label": "Storage:"
+        "title": "Speicher",
+        "label": "Speicher:"
       },
       "network": {
-        "title": "Network",
-        "label": "Network:",
+        "title": "Netzwerk",
+        "label": "Netzwerk:",
         "metrics": {
-          "download": "Down",
-          "upload": "Up"
+          "download": "Eingehend",
+          "upload": "Ausgehend"
         }
       },
       "cpu": {
