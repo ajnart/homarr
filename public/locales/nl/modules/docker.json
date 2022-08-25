@@ -1,69 +1,69 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Maakt het mogelijk om gemakkelijk je torrents te beheren"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Zoek op container of afbeeldingsnaam"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Naam",
+      "image": "Afbeelding",
+      "ports": "Poorten",
+      "state": "Status"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} meer"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Draait",
+      "created": "Aangemaakt",
+      "stopped": "Gestopt",
+      "unknown": "Onbekend"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "Voeg service toe",
-      "message": ""
+      "title": "Service toevoegen",
+      "message": "Service toevoegen aan Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Herstart"
     },
     "stop": {
-      "title": ""
+      "title": "Stop"
     },
     "start": {
-      "title": ""
+      "title": "Start"
     },
-    "refreshData": "",
+    "refreshData": "Gegevens vernieuwen",
     "addToHomarr": {
-      "title": ""
+      "title": "Toevoegen aan Homarr"
     },
     "remove": {
-      "title": ""
+      "title": "Verwijder"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "Container {{containerName}} {{action}}ed",
+      "message": "Uw container was succesvol {{action}}ed"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker integratie mislukt",
+      "message": "Bent u vergeten de doktersocket te koppelen?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Er is een fout opgetreden"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Voeg alstublieft slechts één dienst per keer toe!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
