@@ -72,6 +72,7 @@ export const ServiceTypeList = [
   'Transmission',
   'Overseerr',
   'Jellyseerr',
+  'Sabnzbd',
 ];
 export type ServiceType =
   | 'Other'
@@ -86,7 +87,8 @@ export type ServiceType =
   | 'Sonarr'
   | 'Overseerr'
   | 'Jellyseerr'
-  | 'Transmission';
+  | 'Transmission'
+  | 'Sabnzbd';
 
 export function tryMatchPort(name: string | undefined, form?: any) {
   if (!name) {
@@ -112,6 +114,7 @@ export const portmap = [
   { name: 'emby', value: '8096' },
   { name: 'overseerr', value: '5055' },
   { name: 'dash.', value: '3001' },
+  { name: 'sabnzbd', value: '8080' },
 ];
 
 export const MatchingImages: {
@@ -184,4 +187,13 @@ export interface serviceItem {
   openedUrl?: string;
   newTab?: boolean;
   status?: string[];
+}
+
+export interface DownloadItem {
+  name: string;
+  progress: number;
+  size: number;
+  id: string;
+  state: 'paused' | 'downloading' | 'queued';
+  eta: number;
 }

@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { linearGradientDef } from '@nivo/core';
-import { useTranslation } from 'next-i18next';
 import { Datum, ResponsiveLine } from '@nivo/line';
 import { useListState } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
@@ -15,10 +14,10 @@ import { IModule } from '../ModuleTypes';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const TotalDownloadsModule: IModule = {
+  id: 'totalDownload',
   title: 'Download Speed',
   icon: Download,
   component: TotalDownloadsComponent,
-  id: 'dlspeed',
 };
 
 interface torrentHistory {
@@ -35,9 +34,9 @@ export default function TotalDownloadsComponent() {
       (service) =>
         service.type === 'qBittorrent' ||
         service.type === 'Transmission' ||
-        service.type === 'Deluge'
+        service.type === 'Deluge' ||
+        'Sabnzbd'
     ) ?? [];
-    const { t } = useTranslation(`modules/${TotalDownloadsModule.id}`);
 
   const [torrentHistory, torrentHistoryHandlers] = useListState<torrentHistory>([]);
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
@@ -71,30 +70,6 @@ export default function TotalDownloadsComponent() {
     }, 1000);
   }, [config.services]);
 
-  useEffect(() => {
-    torrentHistoryHandlers.append({
-      x: Date.now(),
-      down: totalDownloadSpeed,
-      up: totalUploadSpeed,
-    });
-  }, [totalDownloadSpeed, totalUploadSpeed]);
-
-  if (downloadServices.length === 0) {
-    return (
-      <Group>
-        <Title order={4}>{t('card.errors.noDownloadClients.title')}</Title>
-        <div>
-          <AddItemShelfButton
-            style={{
-              float: 'inline-end',
-            }}
-          />
-          {t('card.errors.noDownloadClients.text')}
-        </div>
-      </Group>
-    );
-  }
-
   const theme = useMantineTheme();
   // Load the last 10 values from the history
   const history = torrentHistory.slice(-10);
@@ -107,21 +82,41 @@ export default function TotalDownloadsComponent() {
     y: load.down,
   })) as Datum[];
 
+  useEffect(() => {
+    torrentHistoryHandlers.append({
+      x: Date.now(),
+      down: totalDownloadSpeed,
+      up: totalUploadSpeed,
+    });
+  }, [totalDownloadSpeed, totalUploadSpeed]);
+
+  if (downloadServices.length === 0) {
+    return (
+      <Group>
+        <Title order={4}>No supported download clients found!</Title>
+        <div>
+          <AddItemShelfButton
+            style={{
+              float: 'inline-end',
+            }}
+          />
+          Add a download service to view your current downloads
+        </div>
+      </Group>
+    );
+  }
+
   return (
     <Stack>
-      <Title order={4}>{t('card.lineChart.title')}</Title>
+      <Title order={4}>Current download speed</Title>
       <Stack>
         <Group>
           <ColorSwatch size={12} color={theme.colors.green[5]} />
-          <Text>
-            {t('card.lineChart.totalDownload', { download: humanFileSize(totalDownloadSpeed) })}
-          </Text>
+          <Text>Download: {humanFileSize(totalDownloadSpeed)}/s</Text>
         </Group>
         <Group>
           <ColorSwatch size={12} color={theme.colors.blue[5]} />
-          <Text>
-            {t('card.lineChart.totalUpload', { upload: humanFileSize(totalUploadSpeed) })}
-          </Text>
+          <Text>Upload: {humanFileSize(totalUploadSpeed)}/s</Text>
         </Group>
       </Stack>
       <Box
@@ -142,20 +137,16 @@ export default function TotalDownloadsComponent() {
             const roundedSeconds = Math.round(seconds);
             return (
               <Card p="sm" radius="md" withBorder>
-                <Text size="md">{t('card.lineChart.timeSpan', { seconds: roundedSeconds })}</Text>
+                <Text size="md">{roundedSeconds} seconds ago</Text>
                 <Card.Section p="sm">
                   <Stack>
                     <Group>
                       <ColorSwatch size={10} color={theme.colors.green[5]} />
-                      <Text size="md">
-                        {t('card.lineChart.download', { download: humanFileSize(Download) })}
-                      </Text>
+                      <Text size="md">Download: {humanFileSize(Download)}</Text>
                     </Group>
                     <Group>
                       <ColorSwatch size={10} color={theme.colors.blue[5]} />
-                      <Text size="md">
-                        {t('card.lineChart.upload', { upload: humanFileSize(Upload) })}
-                      </Text>
+                      <Text size="md">Upload: {humanFileSize(Upload)}</Text>
                     </Group>
                   </Stack>
                 </Card.Section>
