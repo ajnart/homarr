@@ -47,7 +47,7 @@
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "Conteneur {{containerName}} {{action}}ed",
+      "title": "Conteneur {{containerName}} {{action}}",
       "message": "Votre conteneur a été envoyé avec succès à {{action}}"
     }
   },
