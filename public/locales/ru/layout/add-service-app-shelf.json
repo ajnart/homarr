@@ -12,10 +12,10 @@
         },
         "tabs": {
             "options": {
-                "title": "Опции",
+                "title": "Настройки",
                 "form": {
                     "serviceName": {
-                        "label": "Название сервиса",
+                        "label": "Имя сервиса",
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
@@ -30,7 +30,7 @@
                     "serviceType": {
                         "label": "Тип сервиса",
                         "defaultValue": "Другое",
-                        "placeholder": ""
+                        "placeholder": "Выберите один"
                     },
                     "category": {
                         "label": "Категория",
@@ -46,21 +46,21 @@
                                 "noKey": "Неверный ключ"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "Получите API-ключ",
+                                "link": "здесь."
                             }
                         },
                         "qBittorrent": {
                             "username": {
                                 "label": "Имя пользователя",
-                                "placeholder": "",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Неверное имя пользователя"
                                 }
                             },
                             "password": {
                                 "label": "Пароль",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
                                     "invalidPassword": "Неверный пароль"
                                 }
@@ -69,7 +69,7 @@
                         "deluge": {
                             "password": {
                                 "label": "Пароль",
-                                "placeholder": "",
+                                "placeholder": "Введите пароль",
                                 "validation": {
                                     "invalidPassword": "Неверный пароль"
                                 }
@@ -78,14 +78,14 @@
                         "transmission": {
                             "username": {
                                 "label": "Имя пользователя",
-                                "placeholder": "",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Неверное имя пользователя"
                                 }
                             },
                             "password": {
                                 "label": "Пароль",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
                                     "invalidPassword": "Неверный пароль"
                                 }
@@ -95,11 +95,11 @@
                 }
             },
             "advancedOptions": {
-                "title": "Дополнительные опции",
+                "title": "Дополнительные настройки",
                 "form": {
                     "httpStatusCodes": {
                         "label": "Коды состояния HTTP",
-                        "placeholder": "",
+                        "placeholder": "Выберите подходящие коды состояния",
                         "clearButtonLabel": "Очистить выбранное",
                         "nothingFound": "Ничего не найдено"
                     },
