@@ -1,4 +1,5 @@
 import { Badge, BadgeVariant, MantineSize } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import Dockerode from 'dockerode';
 
 export interface ContainerStateProps {
@@ -7,6 +8,9 @@ export interface ContainerStateProps {
 
 export default function ContainerState(props: ContainerStateProps) {
   const { state } = props;
+
+  const { t } = useTranslation('modules/docker');
+
   const options: {
     size: MantineSize;
     radius: MantineSize;
@@ -20,28 +24,28 @@ export default function ContainerState(props: ContainerStateProps) {
     case 'running': {
       return (
         <Badge color="green" {...options}>
-          Running
+          {t('table.states.running')}
         </Badge>
       );
     }
     case 'created': {
       return (
         <Badge color="cyan" {...options}>
-          Created
+          {t('table.states.created')}
         </Badge>
       );
     }
     case 'exited': {
       return (
         <Badge color="red" {...options}>
-          Stopped
+          {t('table.states.stopped')}
         </Badge>
       );
     }
     default: {
       return (
         <Badge color="purple" {...options}>
-          Unknown
+          {t('table.states.unknown')}
         </Badge>
       );
     }

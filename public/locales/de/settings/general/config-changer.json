@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "Konfigurations Lader"
+  },
+  "modal": {
+    "title": "Wähle einen Namen für deine neue Konfiguration",
+    "form": {
+      "configName": {
+        "label": "Konfigurations Name",
+        "placeholder": "Dein neuer Konfigurtionsname"
+      },
+      "submitButton": "Bestätigen"
+    },
+    "events": {
+      "configSaved": {
+        "title": "Konfiguration gespeichert",
+        "message": "Konfiguration gespeichert als {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Konfiguration herunterladen",
+    "delete": {
+      "text": "Konfiguration löschen",
+      "notifications": {
+        "deleted": {
+          "title": "Konfiguration gelöscht",
+          "message": "Konfiguration wurde gelöscht"
+        },
+        "deleteFailed": {
+          "title": "Config delete failed",
+          "message": "Config delete failed"
+        }
+      }
+    },
+    "saveCopy": "Eine Kopie speichern"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Konfiguration konnte nicht geladen werden",
+        "message": "Konfiguration konnte nicht geladen werden. Invalides JSON"
+      },
+      "loadedSuccessfully": {
+        "title": "Konfiguration {{configName}} wurde erfolgreich geladen"
+      }
+    },
+    "accept": {
+      "text": "Ziehe Konfigurationen hier um sie hochzuladen. Es werden nur JSON Dateien unterstützt."
+    },
+    "reject": {
+      "text": "Dieses Dateiformat wird nicht unterstützt. Bitte lade nur JSON hoch."
+    }
+  }
+}

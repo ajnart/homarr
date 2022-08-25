@@ -8,6 +8,7 @@ import {
   IconDownload as Download,
   IconMovie,
 } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import axios from 'axios';
 import { showNotification } from '@mantine/notifications';
 import { useConfig } from '../../tools/state';
@@ -26,18 +27,18 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export const SearchModule: IModule = {
-  title: 'Search Bar',
-  description: 'Search bar to search the web, youtube, torrents or overseerr',
+  title: 'Search',
   icon: Search,
   component: SearchBar,
+  id: 'search',
 };
 
 export default function SearchBar(props: any) {
   const { classes, cx } = useStyles();
   // Config
   const { config } = useConfig();
-  const isModuleEnabled = config.modules?.[SearchModule.title]?.enabled ?? false;
-  const isOverseerrEnabled = config.modules?.[OverseerrModule.title]?.enabled ?? false;
+  const isModuleEnabled = config.modules?.[SearchModule.id]?.enabled ?? false;
+  const isOverseerrEnabled = config.modules?.[OverseerrModule.id]?.enabled ?? false;
   const OverseerrService = config.services.find(
     (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
   );
@@ -59,6 +60,7 @@ export default function SearchBar(props: any) {
     },
   });
   const [debounced, cancel] = useDebouncedValue(form.values.query, 250);
+  const { t } = useTranslation('modules/search');
 
   useEffect(() => {
     if (OverseerrService === undefined && isOverseerrEnabled) {
@@ -175,7 +177,7 @@ export default function SearchBar(props: any) {
             radius="md"
             size="md"
             styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder="Search the web..."
+            placeholder={t('input.placeholder')}
             {...props}
             {...form.getInputProps('query')}
           />

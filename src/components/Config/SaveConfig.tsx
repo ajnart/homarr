@@ -4,6 +4,7 @@ import { showNotification } from '@mantine/notifications';
 import axios from 'axios';
 import fileDownload from 'js-file-download';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import {
   IconCheck as Check,
   IconDownload as Download,
@@ -16,6 +17,7 @@ import { useConfig } from '../../tools/state';
 export default function SaveConfigComponent(props: any) {
   const [opened, setOpened] = useState(false);
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation('settings/general/config-changer');
   const form = useForm({
     initialValues: {
       configName: config.name,
@@ -28,39 +30,34 @@ export default function SaveConfigComponent(props: any) {
   }
   return (
     <Group spacing="xs">
-      <Modal
-        radius="md"
-        opened={opened}
-        onClose={() => setOpened(false)}
-        title="Choose the name of your new config"
-      >
+      <Modal radius="md" opened={opened} onClose={() => setOpened(false)} title={t('modal.title')}>
         <form
           onSubmit={form.onSubmit((values) => {
             setConfig({ ...config, name: values.configName });
             setOpened(false);
             showNotification({
-              title: 'Config saved',
+              title: t('modal.events.configSaved.title'),
               icon: <Check />,
               color: 'green',
               autoClose: 1500,
               radius: 'md',
-              message: `Config saved as ${values.configName}`,
+              message: t('modal.events.configSaved.message', { configName: values.configName }),
             });
           })}
         >
           <TextInput
             required
-            label="Config name"
-            placeholder="Your new config name"
+            label={t('modal.form.configName.label')}
+            placeholder={t('modal.form.configName.placeholder')}
             {...form.getInputProps('configName')}
           />
           <Group position="right" mt="md">
-            <Button type="submit">Confirm</Button>
+            <Button type="submit">{t('modal.form.submitButton')}</Button>
           </Group>
         </form>
       </Modal>
       <Button size="xs" leftIcon={<Download />} variant="outline" onClick={onClick}>
-        Download config
+        {t('buttons.download')}
       </Button>
       <Button
         size="xs"
@@ -71,31 +68,31 @@ export default function SaveConfigComponent(props: any) {
             .delete(`/api/configs/${config.name}`)
             .then(() => {
               showNotification({
-                title: 'Config deleted',
+                title: t('buttons.delete.notifications.deleted.title'),
                 icon: <Check />,
                 color: 'green',
                 autoClose: 1500,
                 radius: 'md',
-                message: 'Config deleted',
+                message: t('buttons.delete.notifications.deleted.message'),
               });
             })
             .catch(() => {
               showNotification({
-                title: 'Config delete failed',
+                title: t('buttons.delete.notifications.deleteFailed.title'),
                 icon: <X />,
                 color: 'red',
                 autoClose: 1500,
                 radius: 'md',
-                message: 'Config delete failed',
+                message: t('buttons.delete.notifications.deleteFailed.message'),
               });
             });
           setConfig({ ...config, name: 'default' });
         }}
       >
-        Delete config
+        {t('buttons.delete.text')}
       </Button>
       <Button size="xs" leftIcon={<Plus />} variant="outline" onClick={() => setOpened(true)}>
-        Save a copy
+        {t('buttons.saveCopy')}
       </Button>
     </Group>
   );

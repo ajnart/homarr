@@ -3,6 +3,7 @@ import { IconX as X, IconCheck as Check, IconX, IconPhoto, IconUpload } from '@t
 import { showNotification } from '@mantine/notifications';
 import { setCookie } from 'cookies-next';
 import { Dropzone } from '@mantine/dropzone';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { Config } from '../../tools/types';
 import { migrateToIdConfig } from '../../tools/migrate';
@@ -10,6 +11,7 @@ import { migrateToIdConfig } from '../../tools/migrate';
 export default function LoadConfigComponent(props: any) {
   const { setConfig } = useConfig();
   const theme = useMantineTheme();
+  const { t } = useTranslation('settings/general/config-changer');
 
   return (
     <Dropzone.FullScreen
@@ -20,10 +22,10 @@ export default function LoadConfigComponent(props: any) {
           } catch (e) {
             showNotification({
               autoClose: 5000,
-              title: <Text>Error</Text>,
+              title: <Text>{t('dropzone.notifications.invalidConfig.title')}</Text>,
               color: 'red',
               icon: <X />,
-              message: 'could not load your config. Invalid JSON format.',
+              message: t('dropzone.notifications.invalidConfig.message'),
             });
             return;
           }
@@ -33,7 +35,9 @@ export default function LoadConfigComponent(props: any) {
             radius: 'md',
             title: (
               <Text>
-                Config <b>{newConfig.name}</b> loaded successfully
+                {t('dropzone.notifications.loadedSuccessfully.title', {
+                  configName: newConfig.name,
+                })}
               </Text>
             ),
             color: 'green',
@@ -58,7 +62,7 @@ export default function LoadConfigComponent(props: any) {
               stroke={1.5}
               color={theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 4 : 6]}
             />
-            Drag files here to upload a config. Support for JSON only.
+            {t('dropzone.accept.text')}
           </Text>
         </Dropzone.Accept>
         <Dropzone.Reject>
@@ -68,7 +72,7 @@ export default function LoadConfigComponent(props: any) {
               stroke={1.5}
               color={theme.colors.red[theme.colorScheme === 'dark' ? 4 : 6]}
             />
-            This file format is not supported. Please only upload JSON.
+            {t('dropzone.reject.text')}
           </Text>
         </Dropzone.Reject>
         <Dropzone.Idle>
