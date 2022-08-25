@@ -10,50 +10,50 @@
         "label": "Opslag Multi-Drive weergave"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Compacte weergave gebruiken"
       },
       "graphs": {
-        "label": "",
+        "label": "Grafieken",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "Opslagruimte",
+          "network": "Netwerk",
+          "gpu": "GPU"
         }
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "Geen dash. service gevonden. Voeg er een toe aan uw Homarr dashboard of zet een dashdot URL in de module opties",
+      "noInformation": "Kan geen informatie verkrijgen van dash. - gebruikt u de laatste versie?"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Opslagruimte",
+        "label": "Opslagruimte:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Netwerk",
+        "label": "Netwerk:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
