@@ -1,21 +1,21 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Paginatitel",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Logo",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "Achtergrond",
+    "placeholder": "/img/background.png"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Indienen"
   }
 }
