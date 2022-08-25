@@ -1,19 +1,19 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Tytuł strony",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Logo",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
     "label": "",
-    "placeholder": ""
+    "placeholder": "/favicon.png"
   },
   "background": {
     "label": "",
-    "placeholder": ""
+    "placeholder": "/img/background.png"
   },
   "buttons": {
     "submit": ""
