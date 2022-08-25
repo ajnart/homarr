@@ -1,21 +1,21 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Naslov strani",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Logotip",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "Ozadje",
+    "placeholder": "/img/background.png"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Pošlji"
   }
 }
