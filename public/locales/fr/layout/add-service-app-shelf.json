@@ -25,7 +25,7 @@
                         "label": "URL du service"
                     },
                     "onClickUrl": {
-                        "label": "URL en cas de clic"
+                        "label": "URL ouvert en cas de clic"
                     },
                     "serviceType": {
                         "label": "Type de service",
@@ -55,7 +55,7 @@
                                 "label": "Nom d'utilisateur",
                                 "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": "Nom d'utilisateur non valide"
+                                    "invalidUsername": "Nom d'utilisateur invalide"
                                 }
                             },
                             "password": {
