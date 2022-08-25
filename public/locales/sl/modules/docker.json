@@ -1,69 +1,69 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Omogoča enostavno upravljanje torrentov"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Iskanje po zabojniku ali imenu njegove slike"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Ime",
+      "image": "Slika",
+      "ports": "Vrata",
+      "state": "Stanje"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} več"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Se izvaja",
+      "created": "Ustvarjeno",
+      "stopped": "Zaustavljeno",
+      "unknown": "Neznano"
     }
   },
   "actionBar": {
     "addService": {
       "title": "Dodaj storitev",
-      "message": ""
+      "message": "Dodajanje storitev v Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Ponovno zaženi"
     },
     "stop": {
-      "title": ""
+      "title": "Ustavi"
     },
     "start": {
-      "title": ""
+      "title": "Zaženi"
     },
-    "refreshData": "",
+    "refreshData": "Osveži podatke",
     "addToHomarr": {
-      "title": ""
+      "title": "Dodaj v Homarr"
     },
     "remove": {
-      "title": ""
+      "title": "Odstrani"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "Zabojnik {{containerName}} {{action}}",
+      "message": "Vaš zabojnik je bil uspešno {{action}}"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Integracija Dockerja ni uspela",
+      "message": "Ste pozabili namestiti Docker vtičnico?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Prišlo je do napake"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Naenkrat dodajte samo eno storitev!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
