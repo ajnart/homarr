@@ -6,8 +6,8 @@
         "title": "Service hinzufügen",
         "form": {
             "validation": {
-                "invalidUrl": "Please enter a valid URL",
-                "noStatusCodeSelected": "Please select a status code"
+                "invalidUrl": "",
+                "noStatusCodeSelected": ""
             }
         },
         "tabs": {
@@ -16,13 +16,13 @@
                 "form": {
                     "serviceName": {
                         "label": "Service Namen",
-                        "placeholder": "Plex"
+                        "placeholder": ""
                     },
                     "iconUrl": {
-                        "label": "Icon URL"
+                        "label": ""
                     },
                     "serviceUrl": {
-                        "label": "Service URL"
+                        "label": ""
                     },
                     "onClickUrl": {
                         "label": "URL bei einem Klick"
@@ -53,14 +53,14 @@
                         "qBittorrent": {
                             "username": {
                                 "label": "Benutzernamen",
-                                "placeholder": "admin",
+                                "placeholder": "",
                                 "validation": {
                                     "invalidUsername": "Invalider Benutzername"
                                 }
                             },
                             "password": {
                                 "label": "Passwort",
-                                "placeholder": "adminadmin",
+                                "placeholder": "",
                                 "validation": {
                                     "invalidPassword": "Invalides Passwort"
                                 }
@@ -69,7 +69,7 @@
                         "deluge": {
                             "password": {
                                 "label": "Passwort",
-                                "placeholder": "password",
+                                "placeholder": "",
                                 "validation": {
                                     "invalidPassword": "Invalides Passwort"
                                 }
@@ -78,14 +78,14 @@
                         "transmission": {
                             "username": {
                                 "label": "Benutzername",
-                                "placeholder": "admin",
+                                "placeholder": "",
                                 "validation": {
                                     "invalidUsername": "Invalider Benutzername"
                                 }
                             },
                             "password": {
                                 "label": "Passwort",
-                                "placeholder": "adminadmin",
+                                "placeholder": "",
                                 "validation": {
                                     "invalidPassword": "Invalides Passwort"
                                 }
