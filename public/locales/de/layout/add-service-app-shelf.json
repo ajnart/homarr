@@ -34,7 +34,7 @@
                     },
                     "category": {
                         "label": "Kategorie",
-                        "placeholder": "Whle eine Kategorie oder erstelle eine neue",
+                        "placeholder": "Wähle eine Kategorie oder erstelle eine neue",
                         "nothingFound": "Nichts gefunden",
                         "createLabel": "+ Erstelle {{query}}"
                     },
@@ -104,7 +104,7 @@
                         "nothingFound": "Nichts gefunden"
                     },
                     "openServiceInNewTab": {
-                        "label": "Serivce in einem neuen Tab öffnen"
+                        "label": "Service in einem neuen Tab öffnen"
                     },
                     "buttons": {
                         "submit": {
