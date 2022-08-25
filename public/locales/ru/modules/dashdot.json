@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Модуль для отображения графиков из Dash.",
     "settings": {
       "cpuMultiView": {
         "label": ""
@@ -28,7 +28,7 @@
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
       "noService": "",
       "noInformation": ""
@@ -36,11 +36,11 @@
     "graphs": {
       "storage": {
         "title": "",
-        "label": ""
+        "label": "Хранилище:"
       },
       "network": {
         "title": "",
-        "label": "",
+        "label": "Сеть:",
         "metrics": {
           "download": "",
           "upload": ""
