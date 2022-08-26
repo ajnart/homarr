@@ -1,21 +1,37 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { UsenetHistoryItem, UsenetQueueItem } from '../../modules';
+import { UsenetQueueRequestParams, UsenetQueueResponse } from '../../pages/api/modules/usenet';
+import {
+  UsenetHistoryRequestParams,
+  UsenetHistoryResponse,
+} from '../../pages/api/modules/usenet/history';
 
-export const useGetUsenetDownloads = () =>
+export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
   useQuery(
-    ['usenetDownloads'],
-    async () => (await axios.get<UsenetQueueItem[]>('/api/modules/usenet')).data,
+    ['usenetDownloads', ...Object.values(params)],
+    async () =>
+      (
+        await axios.get<UsenetQueueResponse>('/api/modules/usenet', {
+          params,
+        })
+      ).data,
     {
       refetchInterval: 1000,
+      keepPreviousData: true,
     }
   );
 
-export const useGetUsenetHistory = () =>
+export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) =>
   useQuery(
-    ['usenetHistory'],
-    async () => (await axios.get<UsenetHistoryItem[]>('/api/modules/usenet/history')).data,
+    ['usenetHistory', ...Object.values(params)],
+    async () =>
+      (
+        await axios.get<UsenetHistoryResponse>('/api/modules/usenet/history', {
+          params,
+        })
+      ).data,
     {
       refetchInterval: 1000,
+      keepPreviousData: true,
     }
   );
