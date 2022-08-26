@@ -1,6 +1,7 @@
 import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput, Modal, ActionIcon, Tooltip } from '@mantine/core';
 import { IconPlus, IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
 import { tryMatchService } from '../../tools/addToHomarr';
@@ -29,6 +30,8 @@ export default function DockerTable({
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
   const [opened, setOpened] = useState<boolean>(false);
+
+  const { t } = useTranslation('modules/docker');
 
   useEffect(() => {
     setContainers(containers);
@@ -86,7 +89,9 @@ export default function DockerTable({
                 </Badge>
               ))}
             {element.Ports.length > 3 && (
-              <Badge variant="filled">{element.Ports.length - 3} more</Badge>
+              <Badge variant="filled">
+                {t('table.body.portCollapse', { ports: element.Ports.length - 3 })}
+              </Badge>
             )}
           </Group>
         </td>
@@ -95,7 +100,7 @@ export default function DockerTable({
         </td>
         <td>
           <Group>
-            <Tooltip label="Add to Homarr">
+            <Tooltip label={t('table.body.action.addToHomarr')}>
               <ActionIcon
                 color="indigo"
                 variant="light"
@@ -121,16 +126,16 @@ export default function DockerTable({
         radius="md"
         opened={opened}
         onClose={() => setOpened(false)}
-        title="Add service"
+        title={t('actionBar.addService.title')}
       >
         <AddAppShelfItemForm
           setOpened={setOpened}
           {...tryMatchService(rowSelected)}
-          message="Add service to homarr"
+          message={t('actionBar.addService.message')}
         />
       </Modal>
       <TextInput
-        placeholder="Search by container or image name"
+        placeholder={t('search.placeholder')}
         mt="md"
         icon={<IconSearch size={14} />}
         value={search}
@@ -149,11 +154,11 @@ export default function DockerTable({
                 disabled={usedContainers.length === 0}
               />
             </th>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Ports</th>
-            <th>State</th>
-            <th>Action</th>
+            <th>{t('table.header.name')}</th>
+            <th>{t('table.header.image')}</th>
+            <th>{t('table.header.ports')}</th>
+            <th>{t('table.header.state')}</th>
+            <th>{t('table.header.action')}</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>

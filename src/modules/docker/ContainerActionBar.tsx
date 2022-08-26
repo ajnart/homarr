@@ -10,6 +10,10 @@ import {
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
+import { useTranslation } from 'next-i18next';
+import { TFunction } from 'react-i18next';
+
+let t: TFunction<'modules/docker', undefined>;
 
 function sendDockerCommand(
   action: string,
@@ -30,8 +34,8 @@ function sendDockerCommand(
     .then((res) => {
       updateNotification({
         id: containerId,
-        title: `Container ${containerName} ${action}ed`,
-        message: `Your container was successfully ${action}ed`,
+        title: t('messages.successfullyExecuted.message', { containerName, action }),
+        message: t('messages.successfullyExecuted.message', { action }),
         icon: <IconCheck />,
         autoClose: 2000,
       });
@@ -40,7 +44,7 @@ function sendDockerCommand(
       updateNotification({
         id: containerId,
         color: 'red',
-        title: 'There was an error',
+        title: t('errors.unknownError.title'),
         message: err.response.data.reason,
         autoClose: 2000,
       });
@@ -56,6 +60,8 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
+  t = useTranslation('modules/docker').t;
+
   return (
     <Group>
       <Button
@@ -72,7 +78,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         radius="md"
         disabled={selected.length === 0}
       >
-        Restart
+        {t('actionBar.restart.title')}
       </Button>
       <Button
         leftIcon={<IconPlayerStop />}
@@ -88,7 +94,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         radius="md"
         disabled={selected.length === 0}
       >
-        Stop
+        {t('actionBar.stop.title')}
       </Button>
       <Button
         leftIcon={<IconPlayerPlay />}
@@ -104,10 +110,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         radius="md"
         disabled={selected.length === 0}
       >
-        Start
+        {t('actionBar.start.title')}
       </Button>
       <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" color="violet" radius="md">
-        Refresh data
+        {t('actionBar.refreshData.title')}
       </Button>
       <Button
         leftIcon={<IconTrash />}
@@ -123,7 +129,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         }
         disabled={selected.length === 0}
       >
-        Remove
+        {t('actionBar.remove.title')}
       </Button>
     </Group>
   );

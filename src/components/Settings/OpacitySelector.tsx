@@ -1,9 +1,11 @@
 import React from 'react';
 import { Text, Slider, Stack } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 
 export function OpacitySelector() {
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation('settings/customization/opacity-selector');
 
   const MARKS = [
     { value: 10, label: '10' },
@@ -30,7 +32,7 @@ export function OpacitySelector() {
 
   return (
     <Stack spacing="xs">
-      <Text>App Opacity</Text>
+      <Text>{t('label')}</Text>
       <Slider
         defaultValue={config.settings.appOpacity || 100}
         step={10}
