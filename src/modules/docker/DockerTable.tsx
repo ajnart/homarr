@@ -1,4 +1,4 @@
-import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput, Button, Modal, ActionIcon, Tooltip } from '@mantine/core';
+import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput, Modal, ActionIcon, Tooltip } from '@mantine/core';
 import { IconPlus, IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
 import { useEffect, useState } from 'react';
