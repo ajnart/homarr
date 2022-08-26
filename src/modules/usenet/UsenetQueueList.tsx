@@ -1,5 +1,8 @@
 import {
+  Alert,
   Center,
+  Code,
+  Group,
   Progress,
   Skeleton,
   Table,
@@ -8,7 +11,8 @@ import {
   Tooltip,
   useMantineTheme,
 } from '@mantine/core';
-import { IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
+import { IconAlertCircle, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
+import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { FunctionComponent, useState } from 'react';
@@ -26,7 +30,7 @@ const PAGE_SIZE = 10;
 export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ serviceId }) => {
   const theme = useMantineTheme();
   const [page, setPage] = useState(1);
-  const { data, isLoading } = useGetUsenetDownloads({
+  const { data, isLoading, isError, error } = useGetUsenetDownloads({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
     serviceId,
@@ -39,6 +43,19 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ servi
         <Skeleton height={40} mt={10} />
         <Skeleton height={40} mt={10} />
       </>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Group position="center">
+        <Alert icon={<IconAlertCircle size={16} />} my="lg" title="Error!" color="red" radius="md">
+          Some error has occured while fetching data:
+          <Code mt="sm" block>
+            {(error as AxiosError)?.response?.data as string}
+          </Code>
+        </Alert>
+      </Group>
     );
   }
 

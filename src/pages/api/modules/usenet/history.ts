@@ -36,6 +36,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     if (!service.apiKey) {
       throw new Error(`API Key for service "${service.name}" is missing`);
     }
+
     const history = await new Client(service.url, service.apiKey).history(offset, limit);
 
     const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
@@ -51,7 +52,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json(response);
   } catch (err) {
-    return res.status(401).json(err);
+    return res.status(500).send((err as any).message);
   }
 }
 

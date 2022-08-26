@@ -18,6 +18,7 @@ export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
     {
       refetchInterval: 1000,
       keepPreviousData: true,
+      retry: 2,
     }
   );
 
@@ -33,5 +34,6 @@ export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) =>
     {
       refetchInterval: 1000,
       keepPreviousData: true,
+      retry: 2,
     }
   );

@@ -1,4 +1,17 @@
-import { Center, Pagination, Skeleton, Table, Text, Title, Tooltip } from '@mantine/core';
+import {
+  Alert,
+  Center,
+  Code,
+  Group,
+  Pagination,
+  Skeleton,
+  Table,
+  Text,
+  Title,
+  Tooltip,
+} from '@mantine/core';
+import { IconAlertCircle } from '@tabler/icons';
+import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { FunctionComponent, useState } from 'react';
@@ -16,7 +29,7 @@ const PAGE_SIZE = 10;
 export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ serviceId }) => {
   const [page, setPage] = useState(1);
 
-  const { data, isLoading } = useGetUsenetHistory({
+  const { data, isLoading, isError, error } = useGetUsenetHistory({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
     serviceId,
@@ -33,10 +46,23 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
     );
   }
 
+  if (isError) {
+    return (
+      <Group position="center">
+        <Alert icon={<IconAlertCircle size={16} />} my="lg" title="Error!" color="red" radius="md">
+          Some error has occured while fetching data:
+          <Code mt="sm" block>
+            {(error as AxiosError)?.response?.data as string}
+          </Code>
+        </Alert>
+      </Group>
+    );
+  }
+
   if (!data || data.items.length <= 0) {
     return (
       <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Title order={3}>Queue is empty</Title>
+        <Title order={3}>History is empty</Title>
       </Center>
     );
   }
