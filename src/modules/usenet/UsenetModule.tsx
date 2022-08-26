@@ -1,38 +1,42 @@
-import { Skeleton, Tabs, useMantineTheme } from '@mantine/core';
+import { Group, Select, Tabs } from '@mantine/core';
 import { IconDownload } from '@tabler/icons';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 
 import { IModule } from '../ModuleTypes';
-import { useGetUsenetDownloads, useGetUsenetHistory } from '../../tools/hooks/api';
 import { UsenetQueueList } from './UsenetQueueList';
 import { UsenetHistoryList } from './UsenetHistoryList';
+import { useGetServiceByType } from '../../tools/hooks/useGetServiceByType';
 
 export const UsenetComponent: FunctionComponent = () => {
-  const theme = useMantineTheme();
-  const { isLoading, data: nzbs = [] } = useGetUsenetDownloads();
-  const { data: history = [] } = useGetUsenetHistory();
+  const downloadServices = useGetServiceByType('Sabnzbd');
 
-  if (isLoading) {
-    return (
-      <>
-        <Skeleton height={40} mt={10} />
-        <Skeleton height={40} mt={10} />
-        <Skeleton height={40} mt={10} />
-      </>
-    );
+  const [selectedServiceId, setSelectedService] = useState<string | null>(downloadServices[0]?.id);
+
+  if (!selectedServiceId) {
+    return null;
   }
 
   return (
-    <Tabs defaultValue="queue">
-      <Tabs.List>
-        <Tabs.Tab value="queue">Queue</Tabs.Tab>
-        <Tabs.Tab value="history">History</Tabs.Tab>
-      </Tabs.List>
+    <Tabs keepMounted={false} defaultValue="queue">
+      <Group mb="md">
+        <Tabs.List style={{ flex: 1 }}>
+          <Tabs.Tab value="queue">Queue</Tabs.Tab>
+          <Tabs.Tab value="history">History</Tabs.Tab>
+        </Tabs.List>
+        {downloadServices.length > 1 && (
+          <Select
+            value={selectedServiceId}
+            onChange={setSelectedService}
+            ml="xs"
+            data={downloadServices.map((service) => ({ value: service.id, label: service.name }))}
+          />
+        )}
+      </Group>
       <Tabs.Panel value="queue">
-        <UsenetQueueList items={nzbs} />
+        <UsenetQueueList serviceId={selectedServiceId} />
       </Tabs.Panel>
       <Tabs.Panel value="history">
-        <UsenetHistoryList items={history} />
+        <UsenetHistoryList serviceId={selectedServiceId} />
       </Tabs.Panel>
     </Tabs>
   );

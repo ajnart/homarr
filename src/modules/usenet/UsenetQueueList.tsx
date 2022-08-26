@@ -1,20 +1,48 @@
-import { Center, Progress, Table, Text, Title, Tooltip, useMantineTheme } from '@mantine/core';
+import {
+  Center,
+  Progress,
+  Skeleton,
+  Table,
+  Text,
+  Title,
+  Tooltip,
+  useMantineTheme,
+} from '@mantine/core';
 import { IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
+import { useGetUsenetDownloads } from '../../tools/hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
-import { UsenetQueueItem } from './types';
 
 dayjs.extend(duration);
+
 interface UsenetQueueListProps {
-  items: UsenetQueueItem[];
+  serviceId: string;
 }
 
-export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ items }) => {
-  const theme = useMantineTheme();
+const PAGE_SIZE = 10;
 
-  if (items.length <= 0) {
+export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ serviceId }) => {
+  const theme = useMantineTheme();
+  const [page, setPage] = useState(1);
+  const { data, isLoading } = useGetUsenetDownloads({
+    limit: PAGE_SIZE,
+    offset: (page - 1) * PAGE_SIZE,
+    serviceId,
+  });
+
+  if (isLoading) {
+    return (
+      <>
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+        <Skeleton height={40} mt={10} />
+      </>
+    );
+  }
+
+  if (!data || data.items.length <= 0) {
     return (
       <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Title order={3}>Queue is empty</Title>
@@ -34,7 +62,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ items
         </tr>
       </thead>
       <tbody>
-        {items.map((nzb) => (
+        {data.items.map((nzb) => (
           <tr key={nzb.id}>
             <td>
               {nzb.state === 'paused' ? (

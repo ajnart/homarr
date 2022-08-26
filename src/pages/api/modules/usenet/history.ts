@@ -5,37 +5,51 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
 import { UsenetHistoryItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
+import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
 
 dayjs.extend(duration);
+
+export interface UsenetHistoryRequestParams {
+  serviceId: string;
+  offset: number;
+  limit: number;
+}
+
+export interface UsenetHistoryResponse {
+  items: UsenetHistoryItem[];
+  total: number;
+}
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   try {
     const configName = getCookie('config-name', { req });
     const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-    const nzbServices = config.services.filter((service) => service.type === 'Sabnzbd');
+    const { limit, offset, serviceId } = req.query as any as UsenetHistoryRequestParams;
 
-    const history: UsenetHistoryItem[] = [];
+    const service = getServiceById(config, serviceId);
 
-    await Promise.all(
-      nzbServices.map(async (service) => {
-        if (!service.apiKey) {
-          throw new Error(`API Key for service "${service.name}" is missing`);
-        }
-        const queue = await new Client(service.url, service.apiKey).history();
+    if (!service) {
+      throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
+    }
 
-        queue.slots.forEach((slot) => {
-          history.push({
-            id: slot.nzo_id,
-            name: slot.name,
-            size: slot.bytes,
-            time: slot.download_time,
-          });
-        });
-      })
-    );
+    if (!service.apiKey) {
+      throw new Error(`API Key for service "${service.name}" is missing`);
+    }
+    const history = await new Client(service.url, service.apiKey).history(offset, limit);
 
-    return res.status(200).json(history);
+    const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
+      id: slot.nzo_id,
+      name: slot.name,
+      size: slot.bytes,
+      time: slot.download_time,
+    }));
+    const response: UsenetHistoryResponse = {
+      items,
+      total: history.noofslots,
+    };
+
+    return res.status(200).json(response);
   } catch (err) {
     return res.status(401).json(err);
   }
