@@ -1,5 +1,6 @@
 import { TextInput, Button, Stack } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { ColorSelector } from './ColorSelector';
 import { OpacitySelector } from './OpacitySelector';
@@ -8,6 +9,7 @@ import { ShadeSelector } from './ShadeSelector';
 
 export default function TitleChanger() {
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation('settings/customization/page-appearance');
 
   const form = useForm({
     initialValues: {
@@ -40,19 +42,27 @@ export default function TitleChanger() {
     <Stack mb="md" mr="sm" mt="xs">
       <form onSubmit={form.onSubmit((values) => saveChanges(values))}>
         <Stack>
-          <TextInput label="Page title" placeholder="Homarr 🦞" {...form.getInputProps('title')} />
-          <TextInput label="Logo" placeholder="/img/logo.png" {...form.getInputProps('logo')} />
           <TextInput
-            label="Favicon"
-            placeholder="/favicon.png"
+            label={t('pageTitle.label')}
+            placeholder={t('pageTitle.placeholder')}
+            {...form.getInputProps('title')}
+          />
+          <TextInput
+            label={t('logo.label')}
+            placeholder={t('logo.placeholder')}
+            {...form.getInputProps('logo')}
+          />
+          <TextInput
+            label={t('favicon.label')}
+            placeholder={t('favicon.placeholder')}
             {...form.getInputProps('favicon')}
           />
           <TextInput
-            label="Background"
-            placeholder="/img/background.png"
+            label={t('background.label')}
+            placeholder={t('background.placeholder')}
             {...form.getInputProps('background')}
           />
-          <Button type="submit">Save</Button>
+          <Button type="submit">{t('buttons.submit')}</Button>
         </Stack>
       </form>
       <ColorSelector type="primary" />

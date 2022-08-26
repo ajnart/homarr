@@ -9,12 +9,14 @@ import {
   Stack,
   Grid,
 } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { useColorTheme } from '../../tools/color';
 
 export function ShadeSelector() {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
+  const { t } = useTranslation('settings/customization/shade-selector');
 
   const { primaryColor, secondaryColor, primaryShade, setPrimaryShade } = useColorTheme();
 
@@ -94,7 +96,7 @@ export function ShadeSelector() {
           </Stack>
         </Popover.Dropdown>
       </Popover>
-      <Text>Shade</Text>
+      <Text>{t('label')}</Text>
     </Group>
   );
 }

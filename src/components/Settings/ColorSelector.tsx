@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ColorSwatch, Grid, Group, Popover, Text, useMantineTheme } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { useColorTheme } from '../../tools/color';
 
@@ -10,8 +11,8 @@ interface ColorControlProps {
 export function ColorSelector({ type }: ColorControlProps) {
   const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
-
   const { primaryColor, secondaryColor, setPrimaryColor, setSecondaryColor } = useColorTheme();
+  const { t } = useTranslation('settings/customization/color-selector');
 
   const theme = useMantineTheme();
   const colors = Object.keys(theme.colors).map((color) => ({
@@ -82,7 +83,11 @@ export function ColorSelector({ type }: ColorControlProps) {
           </Grid>
         </Popover.Dropdown>
       </Popover>
-      <Text>{type[0].toUpperCase() + type.slice(1)} color</Text>
+      <Text>
+        {t('suffix', {
+          color: type[0].toUpperCase() + type.slice(1),
+        })}
+      </Text>
     </Group>
   );
 }

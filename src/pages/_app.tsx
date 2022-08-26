@@ -7,11 +7,12 @@ import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from 
 import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
+import { appWithTranslation } from 'next-i18next';
 import { ConfigProvider } from '../tools/state';
 import { theme } from '../tools/theme';
 import { ColorTheme } from '../tools/color';
 
-export default function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
+function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
@@ -83,3 +84,5 @@ export default function App(this: any, props: AppProps & { colorScheme: ColorSch
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie('color-scheme', ctx) || 'light',
 });
+
+export default appWithTranslation(App);

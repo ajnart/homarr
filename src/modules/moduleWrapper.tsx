@@ -11,12 +11,15 @@ import {
 } from '@mantine/core';
 import { IconAdjustments } from '@tabler/icons';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useConfig } from '../tools/state';
 import { IModule } from './ModuleTypes';
 
 function getItems(module: IModule) {
   const { config, setConfig } = useConfig();
+  const { t } = useTranslation([module.id, 'common']);
+
   const items: JSX.Element[] = [];
   if (module.options) {
     const keys = Object.keys(module.options);
@@ -25,8 +28,8 @@ function getItems(module: IModule) {
     const types = values.map((v) => typeof v.value);
     // Loop over all the types with a for each loop
     types.forEach((type, index) => {
-      const optionName = `${module.title}.${keys[index]}`;
-      const moduleInConfig = config.modules?.[module.title];
+      const optionName = `${module.id}.${keys[index]}`;
+      const moduleInConfig = config.modules?.[module.id];
       if (type === 'object') {
         items.push(
           <MultiSelect
@@ -43,7 +46,7 @@ function getItems(module: IModule) {
                 ...config,
                 modules: {
                   ...config.modules,
-                  [module.title]: {
+                  [module.id]: {
                     ...moduleInConfig,
                     options: {
                       ...moduleInConfig?.options,
@@ -68,12 +71,12 @@ function getItems(module: IModule) {
                 ...config,
                 modules: {
                   ...config.modules,
-                  [module.title]: {
-                    ...config.modules[module.title],
+                  [module.id]: {
+                    ...config.modules[module.id],
                     options: {
-                      ...config.modules[module.title].options,
+                      ...config.modules[module.id].options,
                       [keys[index]]: {
-                        ...config.modules[module.title].options?.[keys[index]],
+                        ...config.modules[module.id].options?.[keys[index]],
                         value: (e.target as any)[0].value,
                       },
                     },
@@ -96,7 +99,7 @@ function getItems(module: IModule) {
                 onChange={(e) => {}}
               />
 
-              <Button type="submit">Save</Button>
+              <Button type="submit">{t('actions.save')}</Button>
             </Group>
           </form>
         );
@@ -117,12 +120,12 @@ function getItems(module: IModule) {
                 ...config,
                 modules: {
                   ...config.modules,
-                  [module.title]: {
-                    ...config.modules[module.title],
+                  [module.id]: {
+                    ...config.modules[module.id],
                     options: {
-                      ...config.modules[module.title].options,
+                      ...config.modules[module.id].options,
                       [keys[index]]: {
-                        ...config.modules[module.title].options?.[keys[index]],
+                        ...config.modules[module.id].options?.[keys[index]],
                         value: e.currentTarget.checked,
                       },
                     },
@@ -130,7 +133,7 @@ function getItems(module: IModule) {
                 },
               });
             }}
-            label={values[index].name}
+            label={t(values[index].name)}
           />
         );
       }
@@ -145,9 +148,10 @@ export function ModuleWrapper(props: any) {
   const { config, setConfig } = useConfig();
   const enabledModules = config.modules ?? {};
   // Remove 'Module' from enabled modules titles
-  const isShown = enabledModules[module.title]?.enabled ?? false;
+  const isShown = enabledModules[module.id]?.enabled ?? false;
   //TODO: fix the hover problem
   const [hovering, setHovering] = useState(false);
+  const { t } = useTranslation('modules');
 
   if (!isShown) {
     return null;
@@ -156,7 +160,7 @@ export function ModuleWrapper(props: any) {
   return (
     <Card
       {...props}
-      key={module.title}
+      key={module.id}
       hidden={!isShown}
       withBorder
       radius="lg"
@@ -186,11 +190,12 @@ export function ModuleWrapper(props: any) {
 export function ModuleMenu(props: any) {
   const { module, styles, hovered } = props;
   const items: JSX.Element[] = getItems(module);
+  const { t } = useTranslation('modules/common');
   return (
     <>
       {module.options && (
         <Menu
-          key={module.title}
+          key={module.id}
           withinPortal
           width="lg"
           shadow="xl"
@@ -217,7 +222,7 @@ export function ModuleMenu(props: any) {
             </motion.div>
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Label>Settings</Menu.Label>
+            <Menu.Label>{t('settings.label')}</Menu.Label>
             {items.map((item) => (
               <Menu.Item key={item.key}>{item}</Menu.Item>
             ))}
