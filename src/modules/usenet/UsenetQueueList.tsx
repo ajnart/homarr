@@ -1,6 +1,6 @@
 import {
+  ActionIcon,
   Alert,
-  Button,
   Center,
   Code,
   Group,
@@ -90,13 +90,17 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ servi
             <tr key={nzb.id}>
               <td>
                 {nzb.state === 'paused' ? (
-                  <Button disabled color="gray" variant="subtle" radius="lg" size="xs" compact>
-                    <IconPlayerPlay size="16" />
-                  </Button>
+                  <Tooltip label="NOT IMPLEMENTED">
+                    <ActionIcon color="gray" variant="subtle" radius="xl" size="sm">
+                      <IconPlayerPlay size="16" />
+                    </ActionIcon>
+                  </Tooltip>
                 ) : (
-                  <Button disabled variant="subtle" radius="lg" size="xs" compact>
-                    <IconPlayerPause size="16" />
-                  </Button>
+                  <Tooltip label="NOT IMPLEMENTED">
+                    <ActionIcon color="primary" variant="subtle" radius="xl" size="sm">
+                      <IconPlayerPause size="16" />
+                    </ActionIcon>
+                  </Tooltip>
                 )}
               </td>
               <td>
