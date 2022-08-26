@@ -8,6 +8,7 @@ import {
   Skeleton,
   ScrollArea,
   Center,
+  Stack,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
@@ -15,6 +16,7 @@ import axios from 'axios';
 import { useViewportSize } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
+import { useTranslation } from 'next-i18next';
 import { IModule } from '../ModuleTypes';
 import { useConfig } from '../../tools/state';
 import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
@@ -22,13 +24,13 @@ import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
 
 export const TorrentsModule: IModule = {
-  id: 'torrent',
+  id: 'torrents-status',
   title: 'Torrent',
   icon: Download,
   component: TorrentsComponent,
   options: {
     hidecomplete: {
-      name: 'Hide completed torrents',
+      name: 'descriptor.settings.hideComplete',
       value: false,
     },
   },
@@ -46,10 +48,13 @@ export default function TorrentsComponent() {
     ) ?? [];
 
   const hideComplete: boolean =
-    (config?.modules?.[TorrentsModule.title]?.options?.hidecomplete?.value as boolean) ?? false;
+    (config?.modules?.[TorrentsModule.id]?.options?.hidecomplete?.value as boolean) ?? false;
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
+
+  const { t } = useTranslation(`modules/${TorrentsModule.id}`);
+
   useEffect(() => {
     setIsLoading(true);
     if (downloadServices.length === 0) return;
@@ -82,13 +87,13 @@ export default function TorrentsComponent() {
 
   if (downloadServices.length === 0) {
     return (
-      <Group>
-        <Title order={3}>No supported download clients found!</Title>
+      <Stack>
+        <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
         <Group>
-          <Text>Add a download service to view your current downloads</Text>
+          <Text>{t('card.errors.noDownloadClients.text')}</Text>
           <AddItemShelfButton />
         </Group>
-      </Group>
+      </Stack>
     );
   }
 
@@ -106,12 +111,12 @@ export default function TorrentsComponent() {
   const DEVICE_WIDTH = 576;
   const ths = (
     <tr>
-      <th>Name</th>
-      <th>Size</th>
-      {width > 576 ? <th>Down</th> : ''}
-      {width > 576 ? <th>Up</th> : ''}
-      <th>ETA</th>
-      <th>Progress</th>
+      <th>{t('card.table.header.name')}</th>
+      <th>{t('card.table.header.size')}</th>
+      {width > 576 ? <th>{t('card.table.header.download')}</th> : ''}
+      {width > 576 ? <th>{t('card.table.header.upload')}</th> : ''}
+      <th>{t('card.table.header.estimatedTimeOfArrival')}</th>
+      <th>{t('card.table.header.progress')}</th>
     </tr>
   );
   // Convert Seconds to readable format.
@@ -196,7 +201,7 @@ export default function TorrentsComponent() {
         </Table>
       ) : (
         <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Title order={3}>No torrents found</Title>
+          <Title order={3}>{t('card.table.body.nothingFound')}</Title>
         </Center>
       )}
     </ScrollArea>
