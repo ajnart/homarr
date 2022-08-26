@@ -14,6 +14,7 @@ import { IconAlertCircle } from '@tabler/icons';
 import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
 import { useGetUsenetHistory } from '../../tools/hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
@@ -28,6 +29,7 @@ const PAGE_SIZE = 10;
 
 export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ serviceId }) => {
   const [page, setPage] = useState(1);
+  const { t } = useTranslation('modules/usenet');
 
   const { data, isLoading, isError, error } = useGetUsenetHistory({
     limit: PAGE_SIZE,
@@ -50,7 +52,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
     return (
       <Group position="center">
         <Alert icon={<IconAlertCircle size={16} />} my="lg" title="Error!" color="red" radius="md">
-          Some error has occured while fetching data:
+          {t('history.error')}
           <Code mt="sm" block>
             {(error as AxiosError)?.response?.data as string}
           </Code>
@@ -62,13 +64,13 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
   if (!data || data.items.length <= 0) {
     return (
       <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Title order={3}>History is empty</Title>
+        <Title order={3}>{t('history.empty')}</Title>
       </Center>
     );
   }
 
   return (
-    <div>
+    <>
       <Table highlightOnHover style={{ tableLayout: 'fixed' }}>
         <colgroup>
           <col span={1} />
@@ -77,9 +79,9 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
         </colgroup>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Size</th>
-            <th>Download Duration</th>
+            <th>{t('history.header.name')}</th>
+            <th>{t('history.header.size')}</th>
+            <th>{t('history.header.duration')}</th>
           </tr>
         </thead>
         <tbody>
@@ -113,14 +115,16 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
           ))}
         </tbody>
       </Table>
-      <Pagination
-        size="sm"
-        position="center"
-        mt="md"
-        total={totalPages}
-        page={page}
-        onChange={setPage}
-      />
-    </div>
+      {totalPages > 1 && (
+        <Pagination
+          size="sm"
+          position="center"
+          mt="md"
+          total={totalPages}
+          page={page}
+          onChange={setPage}
+        />
+      )}
+    </>
   );
 };

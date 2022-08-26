@@ -9,22 +9,15 @@ import { Config } from '../../../../tools/types';
 
 dayjs.extend(duration);
 
-export interface UsenetInfoRequestParams {
+export interface UsenetPauseRequestParams {
   serviceId: string;
 }
 
-export interface UsenetInfoResponse {
-  paused: boolean;
-  sizeLeft: number;
-  speed: number;
-  eta: number;
-}
-
-async function Get(req: NextApiRequest, res: NextApiResponse) {
+async function Post(req: NextApiRequest, res: NextApiResponse) {
   try {
     const configName = getCookie('config-name', { req });
     const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-    const { serviceId } = req.query as any as UsenetInfoRequestParams;
+    const { serviceId } = req.query as any as UsenetPauseRequestParams;
 
     const service = getServiceById(config, serviceId);
 
@@ -36,23 +29,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       throw new Error(`API Key for service "${service.name}" is missing`);
     }
 
-    const queue = await new Client(service.url, service.apiKey).queue(0, -1);
+    const result = await new Client(service.url, service.apiKey).queuePause();
 
-    const [hours, minutes, seconds] = queue.timeleft.split(':');
-    const eta = dayjs.duration({
-      hour: parseInt(hours, 10),
-      minutes: parseInt(minutes, 10),
-      seconds: parseInt(seconds, 10),
-    } as any);
-
-    const response: UsenetInfoResponse = {
-      paused: queue.paused,
-      sizeLeft: parseFloat(queue.mbleft) * 1024 * 1024,
-      speed: parseFloat(queue.kbpersec) * 1000,
-      eta: eta.asSeconds(),
-    };
-
-    return res.status(200).json(response);
+    return res.status(200).json(result);
   } catch (err) {
     return res.status(500).send((err as any).message);
   }
@@ -60,8 +39,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Filter out if the reuqest is a POST or a GET
-  if (req.method === 'GET') {
-    return Get(req, res);
+  if (req.method === 'POST') {
+    return Post(req, res);
   }
   return res.status(405).json({
     statusCode: 405,
