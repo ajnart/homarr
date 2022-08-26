@@ -18,6 +18,7 @@ import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
 import { useGetUsenetHistory } from '../../tools/hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
+import { parseDuration } from '../../tools/parseDuration';
 
 dayjs.extend(duration);
 
@@ -29,7 +30,7 @@ const PAGE_SIZE = 10;
 
 export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ serviceId }) => {
   const [page, setPage] = useState(1);
-  const { t } = useTranslation('modules/usenet');
+  const { t } = useTranslation(['modules/usenet', 'common']);
 
   const { data, isLoading, isError, error } = useGetUsenetHistory({
     limit: PAGE_SIZE,
@@ -51,8 +52,14 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
   if (isError) {
     return (
       <Group position="center">
-        <Alert icon={<IconAlertCircle size={16} />} my="lg" title="Error!" color="red" radius="md">
-          {t('history.error')}
+        <Alert
+          icon={<IconAlertCircle size={16} />}
+          my="lg"
+          title={t('modules/usenet:history.error.title')}
+          color="red"
+          radius="md"
+        >
+          {t('modules/usenet:history.error.message')}
           <Code mt="sm" block>
             {(error as AxiosError)?.response?.data as string}
           </Code>
@@ -64,7 +71,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
   if (!data || data.items.length <= 0) {
     return (
       <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Title order={3}>{t('history.empty')}</Title>
+        <Title order={3}>{t('modules/usenet:history.empty')}</Title>
       </Center>
     );
   }
@@ -79,9 +86,9 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
         </colgroup>
         <thead>
           <tr>
-            <th>{t('history.header.name')}</th>
-            <th>{t('history.header.size')}</th>
-            <th>{t('history.header.duration')}</th>
+            <th>{t('modules/usenet:history.header.name')}</th>
+            <th>{t('modules/usenet:history.header.size')}</th>
+            <th>{t('modules/usenet:history.header.duration')}</th>
           </tr>
         </thead>
         <tbody>
@@ -105,11 +112,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
                 <Text size="xs">{humanFileSize(history.size)}</Text>
               </td>
               <td>
-                <Text size="xs">
-                  {dayjs
-                    .duration(history.time, 's')
-                    .format(history.time < 60 ? 's [seconds]' : 'm [minutes] s [seconds] ')}
-                </Text>
+                <Text size="xs">{parseDuration(history.time, t)}</Text>
               </td>
             </tr>
           ))}

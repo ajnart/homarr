@@ -55,8 +55,14 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ servi
   if (isError) {
     return (
       <Group position="center">
-        <Alert icon={<IconAlertCircle size={16} />} my="lg" title="Error!" color="red" radius="md">
-          {t('queue.error')}
+        <Alert
+          icon={<IconAlertCircle size={16} />}
+          my="lg"
+          title={t('queue.error.title')}
+          color="red"
+          radius="md"
+        >
+          {t('queue.error.message')}
           <Code mt="sm" block>
             {(error as AxiosError)?.response?.data as string}
           </Code>
