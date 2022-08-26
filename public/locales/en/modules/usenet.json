@@ -27,7 +27,10 @@
       "progress": "Progress"
     },
     "empty": "Queue is empty.",
-    "error": "Some error has occured while fetching data:",
+    "error": {
+      "title": "Error!",
+      "message": "Some error has occured while fetching data:"
+    },
     "paused": "Paused"
   },
   "history": {
@@ -37,7 +40,10 @@
       "duration": "Download Duration"
     },
     "empty": "Queue is empty.",
-    "error": "Some error has occured while fetching data:",
+    "error": {
+      "title": "Error!",
+      "message": "Some error has occured while fetching data:"
+    },
     "paused": "Paused"
   }
 }
