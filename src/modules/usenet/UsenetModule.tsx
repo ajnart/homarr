@@ -1,6 +1,6 @@
-import { Badge, Button, Group, Select, Tabs } from '@mantine/core';
+import { Badge, Button, Group, Select, Stack, Tabs, Text, Title } from '@mantine/core';
 import { IconDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
 import dayjs from 'dayjs';
@@ -11,17 +11,38 @@ import { UsenetHistoryList } from './UsenetHistoryList';
 import { useGetServiceByType } from '../../tools/hooks/useGetServiceByType';
 import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
+import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 
 dayjs.extend(duration);
 
 export const UsenetComponent: FunctionComponent = () => {
   const downloadServices = useGetServiceByType('Sabnzbd');
+
   const { t } = useTranslation('modules/usenet');
 
   const [selectedServiceId, setSelectedService] = useState<string | null>(downloadServices[0]?.id);
   const { data } = useGetUsenetInfo({ serviceId: selectedServiceId! });
+
+  useEffect(() => {
+    if (!selectedServiceId && downloadServices.length) {
+      setSelectedService(downloadServices[0].id);
+    }
+  }, [downloadServices, selectedServiceId]);
+
   const { mutate: pause } = usePauseUsenetQueue({ serviceId: selectedServiceId! });
   const { mutate: resume } = useResumeUsenetQueue({ serviceId: selectedServiceId! });
+
+  if (downloadServices.length === 0) {
+    return (
+      <Stack>
+        <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
+        <Group>
+          <Text>{t('card.errors.noDownloadClients.text')}</Text>
+          <AddItemShelfButton />
+        </Group>
+      </Stack>
+    );
+  }
 
   if (!selectedServiceId) {
     return null;

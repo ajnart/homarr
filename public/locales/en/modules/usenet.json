@@ -3,6 +3,14 @@
     "name": "Usenet",
     "description": "Show the queue and history of supported services"
   },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "No supported download clients found!",
+        "text": "Add a download service to view your current downloads"
+      }
+    }
+  },
   "tabs": {
     "queue": "Queue",
     "history": "History"

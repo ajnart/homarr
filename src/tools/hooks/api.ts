@@ -14,6 +14,8 @@ import { UsenetPauseRequestParams } from '../../pages/api/modules/usenet/pause';
 import { queryClient } from '../queryClient';
 import { UsenetResumeRequestParams } from '../../pages/api/modules/usenet/resume';
 
+const POLLING_INTERVAL = 2000;
+
 export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
   useQuery(
     ['usenetInfo', params.serviceId],
@@ -24,9 +26,10 @@ export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
         })
       ).data,
     {
-      refetchInterval: 1000,
+      refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
+      enabled: !!params.serviceId,
     }
   );
 
@@ -40,7 +43,7 @@ export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
         })
       ).data,
     {
-      refetchInterval: 1000,
+      refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
     }
@@ -56,7 +59,7 @@ export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) =>
         })
       ).data,
     {
-      refetchInterval: 1000,
+      refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
     }

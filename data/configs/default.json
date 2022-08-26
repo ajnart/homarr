@@ -9,7 +9,9 @@
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
   ],
-  "settings": {},
+  "settings": {
+    "searchUrl": "https://google.com/search?q="
+  },
   "modules": {
     "Search Bar": {
       "enabled": true
