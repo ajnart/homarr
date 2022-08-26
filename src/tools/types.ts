@@ -183,5 +183,6 @@ export interface serviceItem {
   username?: string;
   openedUrl?: string;
   newTab?: boolean;
+  ping?: boolean;
   status?: string[];
 }

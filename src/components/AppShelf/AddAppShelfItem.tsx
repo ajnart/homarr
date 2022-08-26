@@ -10,6 +10,7 @@ import {
   MultiSelect,
   PasswordInput,
   Select,
+  Space,
   Stack,
   Switch,
   Tabs,
@@ -18,11 +19,11 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { useDebouncedValue } from '@mantine/hooks';
 import { IconApps } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { useDebouncedValue } from '@mantine/hooks';
-import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { tryMatchPort, ServiceTypeList, StatusCodes, Config } from '../../tools/types';
 import Tip from '../layout/Tip';
@@ -118,6 +119,7 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
       username: props.username ?? undefined,
       password: props.password ?? undefined,
       openedUrl: props.openedUrl ?? undefined,
+      ping: props.ping ?? true,
       status: props.status ?? ['200'],
       newTab: props.newTab ?? true,
     },
@@ -186,7 +188,11 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
           if (newForm.newTab === true) newForm.newTab = undefined;
           if (newForm.openedUrl === '') newForm.openedUrl = undefined;
           if (newForm.category === null) newForm.category = undefined;
-          if (newForm.status.length === 1 && newForm.status[0] === '200') {
+          if (newForm.ping === true) newForm.ping = undefined;
+          if (
+            (newForm.status.length === 1 && newForm.status[0] === '200') ||
+            newForm.ping === false
+          ) {
             delete newForm.status;
           }
           // If service already exists, update it.
@@ -220,6 +226,7 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
             <Tabs.Tab value="Advanced Options">{t('modal.tabs.advancedOptions.title')}</Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel value="Options">
+            <Space h="sm" />
             <Stack>
               <TextInput
                 required
@@ -405,20 +412,27 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
           </Tabs.Panel>
           <Tabs.Panel value="Advanced Options">
             <Stack>
-              <MultiSelect
-                required
-                label={t('modal.tabs.advancedOptions.form.httpStatusCodes.label')}
-                data={StatusCodes}
-                placeholder={t('modal.tabs.advancedOptions.form.httpStatusCodes.placeholder')}
-                clearButtonLabel={t(
-                  'modal.tabs.advancedOptions.form.httpStatusCodes.clearButtonLabel'
-                )}
-                nothingFound={t('modal.tabs.advancedOptions.form.httpStatusCodes.nothingFound')}
-                defaultValue={['200']}
-                clearable
-                searchable
-                {...form.getInputProps('status')}
+              <Switch
+                label={t('modal.tabs.advancedOptions.form.ping.label')}
+                defaultChecked={form.values.ping}
+                {...form.getInputProps('ping')}
               />
+              {form.values.ping && (
+                <MultiSelect
+                  required
+                  label={t('modal.tabs.advancedOptions.form.httpStatusCodes.label')}
+                  data={StatusCodes}
+                  placeholder={t('modal.tabs.advancedOptions.form.httpStatusCodes.placeholder')}
+                  clearButtonLabel={t(
+                    'modal.tabs.advancedOptions.form.httpStatusCodes.clearButtonLabel'
+                  )}
+                  nothingFound={t('modal.tabs.advancedOptions.form.httpStatusCodes.nothingFound')}
+                  defaultValue={['200']}
+                  clearable
+                  searchable
+                  {...form.getInputProps('status')}
+                />
+              )}
               <Switch
                 label={t('modal.tabs.advancedOptions.form.openServiceInNewTab.label')}
                 defaultChecked={form.values.newTab}
