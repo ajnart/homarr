@@ -42,8 +42,7 @@ export default function TorrentsComponent() {
       (service) =>
         service.type === 'qBittorrent' ||
         service.type === 'Transmission' ||
-        service.type === 'Deluge' ||
-        service.type === 'Sabnzbd'
+        service.type === 'Deluge'
     ) ?? [];
 
   const hideComplete: boolean =
