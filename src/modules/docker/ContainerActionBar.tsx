@@ -1,4 +1,4 @@
-import { Button, Group, Modal } from '@mantine/core';
+import { Button, Group } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
