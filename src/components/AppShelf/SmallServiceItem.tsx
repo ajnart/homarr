@@ -1,4 +1,4 @@
-import { Anchor, Avatar, Group, Text } from '@mantine/core';
+import { Avatar, Group, Text } from '@mantine/core';
 
 interface smallServiceItem {
   label: string;
