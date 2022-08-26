@@ -1,16 +1,27 @@
-import { Group, Select, Tabs } from '@mantine/core';
-import { IconDownload } from '@tabler/icons';
+import { Badge, Button, Group, Select, Tabs } from '@mantine/core';
+import { IconDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
 import { FunctionComponent, useState } from 'react';
 
+import { useTranslation } from 'next-i18next';
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
 import { IModule } from '../ModuleTypes';
 import { UsenetQueueList } from './UsenetQueueList';
 import { UsenetHistoryList } from './UsenetHistoryList';
 import { useGetServiceByType } from '../../tools/hooks/useGetServiceByType';
+import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
+import { humanFileSize } from '../../tools/humanFileSize';
+
+dayjs.extend(duration);
 
 export const UsenetComponent: FunctionComponent = () => {
   const downloadServices = useGetServiceByType('Sabnzbd');
+  const { t } = useTranslation('modules/usenet');
 
   const [selectedServiceId, setSelectedService] = useState<string | null>(downloadServices[0]?.id);
+  const { data } = useGetUsenetInfo({ serviceId: selectedServiceId! });
+  const { mutate: pause } = usePauseUsenetQueue({ serviceId: selectedServiceId! });
+  const { mutate: resume } = useResumeUsenetQueue({ serviceId: selectedServiceId! });
 
   if (!selectedServiceId) {
     return null;
@@ -20,8 +31,26 @@ export const UsenetComponent: FunctionComponent = () => {
     <Tabs keepMounted={false} defaultValue="queue">
       <Group mb="md">
         <Tabs.List style={{ flex: 1 }}>
-          <Tabs.Tab value="queue">Queue</Tabs.Tab>
-          <Tabs.Tab value="history">History</Tabs.Tab>
+          <Tabs.Tab value="queue">{t('tabs.queue')}</Tabs.Tab>
+          <Tabs.Tab value="history">{t('tabs.history')}</Tabs.Tab>
+          {data && (
+            <Group position="right" ml="auto" mb="lg">
+              <Badge>{humanFileSize(data?.speed)}/s</Badge>
+              <Badge>
+                {t('info.sizeLeft')}: {humanFileSize(data?.sizeLeft)}
+              </Badge>
+              {data.paused ? (
+                <Button uppercase onClick={() => resume()} radius="xl" size="xs">
+                  <IconPlayerPlay size={16} style={{ marginRight: 5 }} /> {t('info.paused')}
+                </Button>
+              ) : (
+                <Button uppercase onClick={() => pause()} radius="xl" size="xs">
+                  <IconPlayerPause size={16} style={{ marginRight: 5 }} />{' '}
+                  {dayjs.duration(data.eta, 's').format('HH:mm:ss')}
+                </Button>
+              )}
+            </Group>
+          )}
         </Tabs.List>
         {downloadServices.length > 1 && (
           <Select

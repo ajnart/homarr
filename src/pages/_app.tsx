@@ -8,9 +8,11 @@ import { NotificationsProvider } from '@mantine/notifications';
 import { useHotkeys } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
 import { appWithTranslation } from 'next-i18next';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { ConfigProvider } from '../tools/state';
 import { theme } from '../tools/theme';
 import { ColorTheme } from '../tools/color';
+import { queryClient } from '../tools/queryClient';
 
 function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -40,43 +42,44 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
       <Head>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
-
-      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <ColorTheme.Provider value={colorTheme}>
-          <MantineProvider
-            theme={{
-              ...theme,
-              components: {
-                Checkbox: {
-                  styles: {
-                    input: { cursor: 'pointer' },
-                    label: { cursor: 'pointer' },
+      <QueryClientProvider client={queryClient}>
+        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+          <ColorTheme.Provider value={colorTheme}>
+            <MantineProvider
+              theme={{
+                ...theme,
+                components: {
+                  Checkbox: {
+                    styles: {
+                      input: { cursor: 'pointer' },
+                      label: { cursor: 'pointer' },
+                    },
+                  },
+                  Switch: {
+                    styles: {
+                      input: { cursor: 'pointer' },
+                      label: { cursor: 'pointer' },
+                    },
                   },
                 },
-                Switch: {
-                  styles: {
-                    input: { cursor: 'pointer' },
-                    label: { cursor: 'pointer' },
-                  },
-                },
-              },
-              primaryColor,
-              primaryShade,
-              colorScheme,
-            }}
-            withGlobalStyles
-            withNormalizeCSS
-          >
-            <NotificationsProvider limit={4} position="bottom-left">
-              <ModalsProvider>
-                <ConfigProvider>
-                  <Component {...pageProps} />
-                </ConfigProvider>
-              </ModalsProvider>
-            </NotificationsProvider>
-          </MantineProvider>
-        </ColorTheme.Provider>
-      </ColorSchemeProvider>
+                primaryColor,
+                primaryShade,
+                colorScheme,
+              }}
+              withGlobalStyles
+              withNormalizeCSS
+            >
+              <NotificationsProvider limit={4} position="bottom-left">
+                <ModalsProvider>
+                  <ConfigProvider>
+                    <Component {...pageProps} />
+                  </ConfigProvider>
+                </ModalsProvider>
+              </NotificationsProvider>
+            </MantineProvider>
+          </ColorTheme.Provider>
+        </ColorSchemeProvider>
+      </QueryClientProvider>
     </>
   );
 }

@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Show the queue and history of supported services"
+  },
+  "tabs": {
+    "queue": "Queue",
+    "history": "History"
+  },
+  "info": {
+    "sizeLeft": "Size left",
+    "paused": "Paused"
+  },
+  "queue": {
+    "header": {
+      "name": "Name",
+      "size": "Size",
+      "eta": "ETA",
+      "progress": "Progress"
+    },
+    "empty": "Queue is empty.",
+    "error": "Some error has occured while fetching data:",
+    "paused": "Paused"
+  },
+  "history": {
+    "header": {
+      "name": "Name",
+      "size": "Size",
+      "duration": "Download Duration"
+    },
+    "empty": "Queue is empty.",
+    "error": "Some error has occured while fetching data:",
+    "paused": "Paused"
+  }
+}

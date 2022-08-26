@@ -3,28 +3,29 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
+import { UsenetQueueItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
 
 dayjs.extend(duration);
 
-export interface UsenetInfoRequestParams {
+export interface UsenetQueueRequestParams {
   serviceId: string;
+  offset: number;
+  limit: number;
 }
 
-export interface UsenetInfoResponse {
-  paused: boolean;
-  sizeLeft: number;
-  speed: number;
-  eta: number;
+export interface UsenetQueueResponse {
+  items: UsenetQueueItem[];
+  total: number;
 }
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   try {
     const configName = getCookie('config-name', { req });
     const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-    const { serviceId } = req.query as any as UsenetInfoRequestParams;
+    const { limit, offset, serviceId } = req.query as any as UsenetQueueRequestParams;
 
     const service = getServiceById(config, serviceId);
 
@@ -35,21 +36,29 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     if (!service.apiKey) {
       throw new Error(`API Key for service "${service.name}" is missing`);
     }
+    const queue = await new Client(service.url, service.apiKey).queue(offset, limit);
 
-    const queue = await new Client(service.url, service.apiKey).queue(0, -1);
+    const items: UsenetQueueItem[] = queue.slots.map((slot) => {
+      const [hours, minutes, seconds] = slot.timeleft.split(':');
+      const eta = dayjs.duration({
+        hour: parseInt(hours, 10),
+        minutes: parseInt(minutes, 10),
+        seconds: parseInt(seconds, 10),
+      } as any);
 
-    const [hours, minutes, seconds] = queue.timeleft.split(':');
-    const eta = dayjs.duration({
-      hour: parseInt(hours, 10),
-      minutes: parseInt(minutes, 10),
-      seconds: parseInt(seconds, 10),
-    } as any);
+      return {
+        id: slot.nzo_id,
+        eta: eta.asSeconds(),
+        name: slot.filename,
+        progress: parseFloat(slot.percentage),
+        size: parseFloat(slot.mb) * 1000 * 1000,
+        state: slot.status.toLowerCase() as any,
+      };
+    });
 
-    const response: UsenetInfoResponse = {
-      paused: queue.paused,
-      sizeLeft: parseFloat(queue.mbleft) * 1024 * 1024,
-      speed: parseFloat(queue.kbpersec) * 1000,
-      eta: eta.asSeconds(),
+    const response: UsenetQueueResponse = {
+      items,
+      total: queue.noofslots,
     };
 
     return res.status(200).json(response);
