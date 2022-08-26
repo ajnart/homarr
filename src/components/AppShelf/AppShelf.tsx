@@ -126,7 +126,7 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
-    const downloadEnabled = config.modules?.[DownloadsModule.id]?.enabled ?? false;
+    const downloadEnabled = config.modules?.[TorrentsModule.id]?.enabled ?? false;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // TODO: Style accordion so that the bar is transparent to the user settings
@@ -150,7 +150,7 @@ const AppShelf = (props: any) => {
           {/* Return the item for all services without category */}
           {noCategory && noCategory.length > 0 ? (
             <Accordion.Item key="Other" value="Other">
-              <Accordion.Control>Other</Accordion.Control>
+              <Accordion.Control>{t('accordions.others.text')}</Accordion.Control>
               <Accordion.Panel>{getItems()}</Accordion.Panel>
             </Accordion.Item>
           ) : null}
