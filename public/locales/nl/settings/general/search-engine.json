@@ -1,0 +1,11 @@
+{
+  "title": "Zoekmachine",
+  "tips": {
+    "generalTip": "Gebruik de voorvoegsels !yt en !t voor uw zoekopdracht om te zoeken op YouTube of naar een Torrent respectievelijk.",
+    "placeholderTip": "%s kan worden gebruikt als plaatshouder voor de query."
+  },
+  "customEngine": {
+    "label": "Query URL",
+    "placeholder": "Eigen query URL"
+  }
+}
