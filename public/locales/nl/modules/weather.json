@@ -1,32 +1,32 @@
 {
   "descriptor": {
-    "name": "Weather",
-    "description": "Look up the current weather in your location",
+    "name": "Weer",
+    "description": "Zoek het actuele weer op uw locatie",
     "settings": {
       "displayInFahrenheit": {
-        "label": "Display in Fahrenheit"
+        "label": "Toon in Fahrenheit"
       },
       "location": {
-        "label": "Weather location"
+        "label": "Weerslocatie"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "Clear",
-      "mainlyClear": "Mainly clear",
-      "fog": "Fog",
-      "drizzle": "Drizzle",
-      "freezingDrizzle": "Freezing drizzle",
-      "rain": "Rain",
-      "freezingRain": "Freezing rain",
-      "snowFall": "Snow fall",
-      "snowGrains": "Snow grains",
-      "rainShowers": "Rain showers",
-      "snowShowers": "Snow showers",
-      "thunderstorm": "Thunderstorm",
-      "thunderstormWithHail": "Thunderstorm with hail",
-      "unknown": "Unknown"
+      "clear": "Helder",
+      "mainlyClear": "Overwegend helder",
+      "fog": "Mist",
+      "drizzle": "Motregen",
+      "freezingDrizzle": "IJzel",
+      "rain": "Regen",
+      "freezingRain": "Natte sneeuw",
+      "snowFall": "Sneeuwval",
+      "snowGrains": "Sneeuw",
+      "rainShowers": "Regenbuien",
+      "snowShowers": "Sneeuwbuien",
+      "thunderstorm": "Onweersbui",
+      "thunderstormWithHail": "Onweer met hagel",
+      "unknown": "Onbekend"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "pageTitle": {
-    "label": "Page Title",
+    "label": "Paginatitel",
     "placeholder": "Homarr 🦞"
   },
   "logo": {
@@ -12,10 +12,10 @@
     "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "Background",
+    "label": "Achtergrond",
     "placeholder": "/img/background.png"
   },
   "buttons": {
-    "submit": "Submit"
+    "submit": "Indienen"
   }
 }

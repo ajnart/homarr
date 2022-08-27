@@ -1,0 +1,60 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Moduł do wyświetlania wykresów z uruchomionej instancji Dash.",
+    "settings": {
+      "cpuMultiView": {
+        "label": ""
+      },
+      "storageMultiView": {
+        "label": ""
+      },
+      "useCompactView": {
+        "label": ""
+      },
+      "graphs": {
+        "label": "",
+        "options": {
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "",
+          "network": "",
+          "gpu": "GPU"
+        }
+      },
+      "url": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "",
+      "noInformation": ""
+    },
+    "graphs": {
+      "storage": {
+        "title": "",
+        "label": ""
+      },
+      "network": {
+        "title": "",
+        "label": "",
+        "metrics": {
+          "download": "",
+          "upload": ""
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

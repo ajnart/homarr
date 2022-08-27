@@ -1,14 +1,14 @@
 {
-  "title": "Settings",
-  "tooltip": "Settings",
+  "title": "Настройки",
+  "tooltip": "Настройки",
   "tabs": {
-    "common": "Common",
-    "customizations": "Customizations"
+    "common": "",
+    "customizations": ""
   },
   "tips": {
-    "configTip": "Upload your config file by dragging and dropping it onto the page!"
+    "configTip": ""
   },
   "credits": {
-    "madeWithLove": "Made with ❤️ by @"
+    "madeWithLove": ""
   }
 }

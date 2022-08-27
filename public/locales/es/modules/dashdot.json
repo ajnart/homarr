@@ -1,59 +1,59 @@
 {
   "descriptor": {
-    "name": "Dash.",
-    "description": "A module for displaying the graphs of your running Dash. instance.",
+    "name": "",
+    "description": "",
     "settings": {
       "cpuMultiView": {
-        "label": "CPU Multi-Core View"
+        "label": ""
       },
       "storageMultiView": {
-        "label": "Storage Multi-Drive View"
+        "label": ""
       },
       "useCompactView": {
-        "label": "Use Compact View"
+        "label": ""
       },
       "graphs": {
-        "label": "Graphs",
+        "label": "",
         "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Storage",
-          "network": "Network",
-          "gpu": "GPU"
+          "cpu": "Procesador",
+          "ram": "Memoria RAM",
+          "storage": "Almacenaje",
+          "network": "Red",
+          "gpu": "Procesador Gráfico"
         }
       },
       "url": {
-        "label": "Dash. URL"
+        "label": ""
       }
     }
   },
   "card": {
-    "title": "Dash.",
+    "title": "",
     "errors": {
-      "noService": "No dash. service found. Please add one to your Homarr dashboard or set a dashdot URL in the module options",
-      "noInformation": "Cannot acquire information from dash. - are you running the latest version?"
+      "noService": "",
+      "noInformation": ""
     },
     "graphs": {
       "storage": {
-        "title": "Storage",
-        "label": "Storage:"
+        "title": "Almacenaje",
+        "label": "Almacenaje:"
       },
       "network": {
-        "title": "Network",
-        "label": "Network:",
+        "title": "Red",
+        "label": "Red:",
         "metrics": {
-          "download": "Down",
-          "upload": "Up"
+          "download": "",
+          "upload": ""
         }
       },
       "cpu": {
-        "title": "CPU"
+        "title": "Procesador"
       },
       "memory": {
-        "title": "RAM"
+        "title": "Memoria RAM"
       },
       "gpu": {
-        "title": "GPU"
+        "title": "Procesador Gráfico"
       }
     }
   }

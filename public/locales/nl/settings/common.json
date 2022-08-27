@@ -1,14 +1,14 @@
 {
-  "title": "Settings",
-  "tooltip": "Settings",
+  "title": "Instellingen",
+  "tooltip": "Instellingen",
   "tabs": {
-    "common": "Common",
-    "customizations": "Customizations"
+    "common": "Algemeen",
+    "customizations": "Aanpassingen"
   },
   "tips": {
-    "configTip": "Upload your config file by dragging and dropping it onto the page!"
+    "configTip": "Upload uw configuratiebestand door het op de pagina te slepen!"
   },
   "credits": {
-    "madeWithLove": "Made with ❤️ by @"
+    "madeWithLove": "Gemaakt met ❤️ door @"
   }
 }
