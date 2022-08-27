@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Ermöglicht das Suchen und Hinzufügen von Medien via Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
