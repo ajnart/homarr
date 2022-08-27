@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Staat je toe om media van Overseerr/Jellyseerr te zoeken en toe te voegen"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Vraag om {{title}}",
+        "cancel": "",
+        "request": "Aanvraag"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "",
+          "text": ""
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "",
+      "table": {
+        "header": {
+          "season": "",
+          "numberOfEpisodes": ""
+        }
+      }
+    }
+  }
+}
