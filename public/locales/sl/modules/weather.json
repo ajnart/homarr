@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Vreme",
+    "description": "Iskanje trenutnega vremena na vaši lokaciji",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Prikaz v Fahrenheitu"
+      },
+      "location": {
+        "label": "Lokacija vremena"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Počisti",
+      "mainlyClear": "Večinoma jasno",
+      "fog": "Megla",
+      "drizzle": "Pršec",
+      "freezingDrizzle": "Leden pršec",
+      "rain": "Dež",
+      "freezingRain": "Ledeni dež",
+      "snowFall": "Padec snega",
+      "snowGrains": "Snežna zrna",
+      "rainShowers": "Deževni nalivi",
+      "snowShowers": "Snežne plohe",
+      "thunderstorm": "Nevihta",
+      "thunderstormWithHail": "Nevihta s točo",
+      "unknown": "Neznano"
+    }
+  }
+}
