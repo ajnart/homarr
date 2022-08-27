@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Suchleiste",
+    "description": "Suchleiste zum Durchsuchen des Webs, Youtube, Torrents oder Overseerr"
   },
   "input": {
     "placeholder": "Das Internet durchsuchen..."
