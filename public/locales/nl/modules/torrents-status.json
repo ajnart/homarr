@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "Toon de huidige downloadsnelheid van ondersteunde diensten",
+    "settings": {
+      "hideComplete": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Naam",
+        "size": "",
+        "download": "Down",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "",
+        "progress": ""
+      },
+      "body": {
+        "nothingFound": ""
+      }
+    },
+    "lineChart": {
+      "title": "",
+      "download": "",
+      "upload": "",
+      "timeSpan": "",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}
