@@ -3,7 +3,7 @@ module.exports = {
   debug: process.env.NODE_ENV === 'development',
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'es', 'fr', 'it', 'ja', 'nl', 'ru', 'sv', 'zh'],
+    locales: ['en', 'de', 'en', 'es', 'fr', 'it', 'ja', 'nl', 'pl', 'ru', 'sl', 'sv', 'zh'],
     localeDetection: true,
   },
   reloadOnPrerender: process.env.NODE_ENV === 'development',
