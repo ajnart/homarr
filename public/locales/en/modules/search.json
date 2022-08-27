@@ -4,6 +4,6 @@
     "description": "Search bar to search the web, youtube, torrents or overseerr"
   },
   "input": {
-    "placeholder": "Search the web..."
-  }
+          "placeholder": "Search the web..."
+        }
 }

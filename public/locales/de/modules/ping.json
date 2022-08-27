@@ -4,8 +4,8 @@
     "description": "Pings your services and shows their status as an indicator"
   },
   "states": {
-    "online": "Online {{response}}",
-    "offline": "Offline {{response}}",
-    "loading": "Laden..."
-  }
+        "online": "Online {{response}}",
+        "offline": "Offline {{response}}",
+        "loading": "Laden..."
+      }
 }

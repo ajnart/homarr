@@ -28,33 +28,33 @@
     }
   },
   "card": {
-    "title": "Dash.",
-    "errors": {
-      "noService": "No dash. service found. Please add one to your Homarr dashboard or set a dashdot URL in the module options",
-      "noInformation": "Cannot acquire information from dash. - are you running the latest version?"
-    },
-    "graphs": {
-      "storage": {
-        "title": "Storage",
-        "label": "Storage:"
-      },
-      "network": {
-        "title": "Network",
-        "label": "Network:",
-        "metrics": {
-          "download": "Down",
-          "upload": "Up"
+        "title": "Dash.",
+        "errors": {
+          "noService": "No dash. service found. Please add one to your Homarr dashboard or set a dashdot URL in the module options",
+          "noInformation": "Cannot acquire information from dash. - are you running the latest version?"
+        },
+        "graphs": {
+          "storage": {
+            "title": "Storage",
+            "label": "Storage:"
+          },
+          "network": {
+            "title": "Network",
+            "label": "Network:",
+            "metrics": {
+              "download": "Down",
+              "upload": "Up"
+            }
+          },
+          "cpu": {
+            "title": "CPU"
+          },
+          "memory": {
+            "title": "RAM"
+          },
+          "gpu": {
+            "title": "GPU"
+          }
         }
-      },
-      "cpu": {
-        "title": "CPU"
-      },
-      "memory": {
-        "title": "RAM"
-      },
-      "gpu": {
-        "title": "GPU"
       }
-    }
-  }
 }
