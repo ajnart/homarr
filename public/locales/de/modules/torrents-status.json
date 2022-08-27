@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Zeige die aktuellen Downloadgeschwindigkeiten von unterstützten Services",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Abgeschlossene Torrents ausblenden"
       }
     }
   },
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Name",
         "size": "Grösse",
         "download": "Eingehend",
         "upload": "Ausgehend",
@@ -24,11 +24,11 @@
     },
     "lineChart": {
       "title": "Derzeitige Download Geschwindigkeit",
-      "download": "",
-      "upload": "",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} Sekunden zuvor",
-      "totalDownload": "",
-      "totalUpload": ""
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
