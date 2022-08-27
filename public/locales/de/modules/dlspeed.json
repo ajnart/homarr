@@ -1,0 +1,6 @@
+{
+  "descriptor": {
+    "name": "Download Geschwindigkeit",
+    "description": "Zeige die aktuellen Downloadgeschwindigkeiten von unterstützten Services"
+  }
+}
