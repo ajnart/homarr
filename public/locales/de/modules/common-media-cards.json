@@ -1,6 +1,6 @@
 {
   "buttons": {
-    "play": "Abspielen",
-    "request": "Anfragen"
-  }
+          "play": "Abspielen",
+          "request": "Anfragen"
+        }
 }
