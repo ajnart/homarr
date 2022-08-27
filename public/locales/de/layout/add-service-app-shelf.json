@@ -6,8 +6,8 @@
         "title": "Service hinzufügen",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "Bitte gieb eine gültige URL an",
+                "noStatusCodeSelected": "Wähle bitte einen Status Code"
             }
         },
         "tabs": {
@@ -15,14 +15,14 @@
                 "title": "Optionen",
                 "form": {
                     "serviceName": {
-                        "label": "Service Namen",
-                        "placeholder": ""
+                        "label": "Service Name",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "Icon URL"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "Service URL"
                     },
                     "onClickUrl": {
                         "label": "URL bei einem Klick"
@@ -52,24 +52,24 @@
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "Benutzernamen",
-                                "placeholder": "",
+                                "label": "Benutzername",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Invalider Benutzername"
                                 }
                             },
                             "password": {
                                 "label": "Passwort",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": "Invalides Passwort"
+                                    "invalidPassword": "Ungültiges Passwort"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
                                 "label": "Passwort",
-                                "placeholder": "",
+                                "placeholder": "passwort",
                                 "validation": {
                                     "invalidPassword": "Invalides Passwort"
                                 }
@@ -78,14 +78,14 @@
                         "transmission": {
                             "username": {
                                 "label": "Benutzername",
-                                "placeholder": "",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Invalider Benutzername"
                                 }
                             },
                             "password": {
                                 "label": "Passwort",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
                                     "invalidPassword": "Invalides Passwort"
                                 }
