@@ -1,118 +1,118 @@
 {
-        "actionIcon": {
-          "tooltip": "Add a service"
-        },
-        "modal": {
-          "title": "Add service",
-          "form": {
+    "actionIcon": {
+        "tooltip": ""
+    },
+    "modal": {
+        "title": "",
+        "form": {
             "validation": {
-              "invalidUrl": "Please enter a valid URL",
-              "noStatusCodeSelected": "Please select a status code"
+                "invalidUrl": "",
+                "noStatusCodeSelected": ""
             }
-          },
-          "tabs": {
+        },
+        "tabs": {
             "options": {
-              "title": "Options",
-              "form": {
-                "serviceName": {
-                  "label": "Service name",
-                  "placeholder": "Plex"
-                },
-                "iconUrl": {
-                  "label": "Icon URL"
-                },
-                "serviceUrl": {
-                  "label": "Service URL"
-                },
-                "onClickUrl": {
-                  "label": "On Click URL"
-                },
-                "serviceType": {
-                  "label": "Service type",
-                  "defaultValue": "Other",
-                  "placeholder": "Pick one"
-                },
-                "category": {
-                  "label": "Category",
-                  "placeholder": "Select a category or create a new one",
-                  "nothingFound": "Nothing found",
-                  "createLabel": "+ Create {{query}}"
-                },
-                "integrations": {
-                  "apiKey": {
-                    "label": "API key",
-                    "placeholder": "Your API key",
-                    "validation": {
-                      "noKey": "Invalid Key"
+                "title": "",
+                "form": {
+                    "serviceName": {
+                        "label": "",
+                        "placeholder": ""
                     },
-                    "tip": {
-                      "text": "Get your API key",
-                      "link": "here."
-                    }
-                  },
-                  "qBittorrent": {
-                    "username": {
-                      "label": "Username",
-                      "placeholder": "admin",
-                      "validation": {
-                        "invalidUsername": "Invalid username"
-                      }
+                    "iconUrl": {
+                        "label": ""
                     },
-                    "password": {
-                      "label": "Password",
-                      "placeholder": "adminadmin",
-                      "validation": {
-                        "invalidPassword": "Invalid password"
-                      }
-                    }
-                  },
-                  "deluge": {
-                    "password": {
-                      "label": "Password",
-                      "placeholder": "password",
-                      "validation": {
-                        "invalidPassword": "Invalid password"
-                      }
-                    }
-                  },
-                  "transmission": {
-                    "username": {
-                      "label": "Username",
-                      "placeholder": "admin",
-                      "validation": {
-                        "invalidUsername": "Invalid username"
-                      }
+                    "serviceUrl": {
+                        "label": ""
                     },
-                    "password": {
-                      "label": "Password",
-                      "placeholder": "adminadmin",
-                      "validation": {
-                        "invalidPassword": "Invalid password"
-                      }
+                    "onClickUrl": {
+                        "label": ""
+                    },
+                    "serviceType": {
+                        "label": "",
+                        "defaultValue": "",
+                        "placeholder": ""
+                    },
+                    "category": {
+                        "label": "",
+                        "placeholder": "",
+                        "nothingFound": "",
+                        "createLabel": ""
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "",
+                            "placeholder": "",
+                            "validation": {
+                                "noKey": ""
+                            },
+                            "tip": {
+                                "text": "",
+                                "link": ""
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidUsername": ""
+                                }
+                            },
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidUsername": ""
+                                }
+                            },
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        }
                     }
-                  }
                 }
-              }
             },
             "advancedOptions": {
-              "title": "Advanced options",
-              "form": {
-                "httpStatusCodes": {
-                  "label": "HTTP Status Codes",
-                  "placeholder": "Select valid status codes",
-                  "clearButtonLabel": "Clear selection",
-                  "nothingFound": "Nothing found"
-                },
-                "openServiceInNewTab": {
-                  "label": "Open service in new tab"
-                },
-                "buttons": {
-                  "submit": {
-                    "content": "Add service"
-                  }
+                "title": "",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "",
+                        "placeholder": "",
+                        "clearButtonLabel": "",
+                        "nothingFound": ""
+                    },
+                    "openServiceInNewTab": {
+                        "label": ""
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": ""
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
+    }
+}
