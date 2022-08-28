@@ -6,7 +6,7 @@
         "title": "Service hinzufügen",
         "form": {
             "validation": {
-                "invalidUrl": "Bitte gieb eine gültige URL an",
+                "invalidUrl": "Bitte gebe eine gültige URL an",
                 "noStatusCodeSelected": "Wähle bitte einen Status Code"
             }
         },
