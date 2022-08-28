@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Add a service"
     },
     "modal": {
-        "title": "",
+        "title": "Add service",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "Please enter a valid URL",
+                "noStatusCodeSelected": "Please select a status code"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Options",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Service name",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "Icon URL"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "Service URL"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "On Click URL"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "Service type",
+                        "defaultValue": "Other",
+                        "placeholder": "Pick one"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "Category",
+                        "placeholder": "Select a category or create a new one",
+                        "nothingFound": "Nothing found",
+                        "createLabel": "+ Create {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "API key",
+                            "placeholder": "Your API key",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Invalid Key"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "Get your API key",
+                                "link": "here."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Username",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Invalid username"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Password",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Invalid password"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Password",
+                                "placeholder": "password",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Invalid password"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Username",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Invalid username"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Password",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Invalid password"
                                 }
                             }
                         }
@@ -95,20 +95,20 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Advanced options",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "HTTP Status Codes",
+                        "placeholder": "Select valid status codes",
+                        "clearButtonLabel": "Clear selection",
+                        "nothingFound": "Nothing found"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "Open service in new tab"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "Add service"
                         }
                     }
                 }
