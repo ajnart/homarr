@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Barre de recherche",
+    "description": "Barre de recherche pour rechercher sur le web, youtube, les torrents ou overseerr"
+  },
+  "input": {
+    "placeholder": "Cherchez sur le web..."
+  }
+}

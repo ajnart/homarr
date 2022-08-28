@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Fecha",
+    "description": "",
+    "settings": {
+      "display24HourFormat": {
+        "label": ""
+      }
+    }
+  }
+}

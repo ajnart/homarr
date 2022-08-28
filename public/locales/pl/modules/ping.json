@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": ""
+  },
+  "states": {
+    "online": "",
+    "offline": "",
+    "loading": ""
+  }
+}

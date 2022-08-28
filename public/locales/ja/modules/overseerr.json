@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "",
+        "cancel": "",
+        "request": ""
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "",
+          "text": ""
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "",
+      "table": {
+        "header": {
+          "season": "",
+          "numberOfEpisodes": ""
+        }
+      }
+    }
+  }
+}
