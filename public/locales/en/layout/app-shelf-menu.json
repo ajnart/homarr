@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "",
+    "title": "Modify a service",
     "buttons": {
-      "save": ""
+      "save": "Save service"
     }
   },
   "menu": {
     "labels": {
-      "settings": "",
-      "dangerZone": ""
+      "settings": "Settings",
+      "dangerZone": "Danger zone"
     },
     "actions": {
-      "edit": "",
-      "delete": ""
+      "edit": "Edit",
+      "delete": "Delete"
     }
   }
 }
