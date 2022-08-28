@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "title": "",
+    "buttons": {
+      "save": ""
+    }
+  },
+  "menu": {
+    "labels": {
+      "settings": "",
+      "dangerZone": ""
+    },
+    "actions": {
+      "edit": "",
+      "delete": ""
+    }
+  }
+}
