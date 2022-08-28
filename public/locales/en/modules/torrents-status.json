@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Show the current download speed of supported services",
     "settings": {
       "hideComplete": {
         "label": "Hide completed torrents"
@@ -11,7 +11,7 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Name",
         "size": "Size",
         "download": "Down",
         "upload": "Up",
