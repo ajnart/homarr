@@ -1,11 +1,11 @@
 {
-  "title": "",
+  "title": "Search engine",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Use the prefixes !yt and !t in front of your query to search on YouTube or for a Torrent respectively.",
+    "placeholderTip": "%s can be used as a placeholder for the query."
   },
   "customEngine": {
-    "label": "",
-    "placeholder": ""
+    "label": "Query URL",
+    "placeholder": "Custom query URL"
   }
 }
