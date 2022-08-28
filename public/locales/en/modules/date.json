@@ -4,7 +4,7 @@
     "description": "Show the current time and date in a card",
     "settings": {
       "display24HourFormat": {
-        "label": ""
+        "label": "Display full time (24-hour)"
       }
     }
   }
