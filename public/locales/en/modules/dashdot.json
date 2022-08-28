@@ -1,59 +1,59 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "A module for displaying the graphs of your running Dash. instance.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "CPU Multi-Core View"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Storage Multi-Drive View"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Use Compact View"
       },
       "graphs": {
-        "label": "",
+        "label": "Graphs",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "Storage",
+          "network": "Network",
+          "gpu": "GPU"
         }
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "No Dash. service found. Please add one to your Homarr dashboard or set a Dash. URL in the module options",
+      "noInformation": "Cannot acquire information from dash. - are you running the latest version?"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Storage",
+        "label": "Storage:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Network",
+        "label": "Network:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
