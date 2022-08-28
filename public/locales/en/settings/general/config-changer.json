@@ -3,10 +3,10 @@
     "label": ""
   },
   "modal": {
-    "title": "",
+    "title": "Choose the name of your new config",
     "form": {
       "configName": {
-        "label": "",
+        "label": "Config name",
         "placeholder": ""
       },
       "submitButton": ""
