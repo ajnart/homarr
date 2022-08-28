@@ -12,7 +12,7 @@ export default function LanguageSwitch() {
   const { t, i18n } = useTranslation('settings/general/internationalization');
   const { changeLanguage } = i18n;
   const configLocale = getCookie('config-locale');
-  const { locale, locales } = useRouter();
+  const { locale, locales, push } = useRouter();
   const [selectedLanguage, setSelectedLanguage] = useState<string>(
     (configLocale as string) ?? locale ?? 'en'
   );
@@ -36,6 +36,8 @@ export default function LanguageSwitch() {
           maxAge: 60 * 60 * 24 * 30,
           sameSite: 'strict',
         });
+
+        push('/', '/', { locale: value });
 
         showNotification({
           title: 'Language changed',
@@ -65,6 +67,14 @@ export default function LanguageSwitch() {
         onChange={onChangeSelect}
         value={selectedLanguage}
         defaultValue={locale}
+        searchable
+        filter={(value, item) => {
+          const selectItems = item as unknown as { value: string, language: Language };
+          return (
+            selectItems.language.originalName.trim().includes(value.trim()) ||
+            selectItems.language.translatedName.trim().includes(value.trim())
+          );
+        }}
         styles={{
           icon: {
             width: 42,

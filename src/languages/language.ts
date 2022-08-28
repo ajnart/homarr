@@ -64,4 +64,4 @@ const languages: Language[] = [
 ];
 
 export const getLanguageByCode = (code: string | null) =>
-  languages.find((language) => language.shortName === code) ?? languages[-1];
+  languages.find((language) => language.shortName === code) ?? languages[languages.length - 1];
