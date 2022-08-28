@@ -1,0 +1,6 @@
+{
+  "descriptor": {
+    "name": "Vitesse de téléchargement",
+    "description": "Afficher la vitesse de téléchargement actuelle des services pris en charge"
+  }
+}

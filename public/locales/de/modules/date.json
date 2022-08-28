@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Datum",
+    "description": "Die aktuelle Zeit und das aktuelle Datum in der Card anzeigen",
+    "settings": {
+      "display24HourFormat": {
+        "label": "24-Stunden Format"
+      }
+    }
+  }
+}

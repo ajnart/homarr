@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": ""
+      },
+      "location": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "",
+      "mainlyClear": "",
+      "fog": "",
+      "drizzle": "",
+      "freezingDrizzle": "",
+      "rain": "",
+      "freezingRain": "",
+      "snowFall": "",
+      "snowGrains": "",
+      "rainShowers": "",
+      "snowShowers": "",
+      "thunderstorm": "",
+      "thunderstormWithHail": "",
+      "unknown": ""
+    }
+  }
+}

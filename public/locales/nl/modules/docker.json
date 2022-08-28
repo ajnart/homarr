@@ -1,0 +1,69 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Maakt het mogelijk om gemakkelijk je torrents te beheren"
+  },
+  "search": {
+    "placeholder": "Zoek op container of afbeeldingsnaam"
+  },
+  "table": {
+    "header": {
+      "name": "Naam",
+      "image": "Afbeelding",
+      "ports": "Poorten",
+      "state": "Status"
+    },
+    "body": {
+      "portCollapse": "{{ports}} meer"
+    },
+    "states": {
+      "running": "Draait",
+      "created": "Aangemaakt",
+      "stopped": "Gestopt",
+      "unknown": "Onbekend"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Service toevoegen",
+      "message": "Service toevoegen aan Homarr"
+    },
+    "restart": {
+      "title": "Herstart"
+    },
+    "stop": {
+      "title": "Stop"
+    },
+    "start": {
+      "title": "Start"
+    },
+    "refreshData": "Gegevens vernieuwen",
+    "addToHomarr": {
+      "title": "Toevoegen aan Homarr"
+    },
+    "remove": {
+      "title": "Verwijder"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "Container {{containerName}} {{action}}ed",
+      "message": "Uw container was succesvol {{action}}ed"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker integratie mislukt",
+      "message": "Bent u vergeten de doktersocket te koppelen?"
+    },
+    "unknownError": {
+      "title": "Er is een fout opgetreden"
+    },
+    "oneServiceAtATime": {
+      "title": "Voeg alstublieft slechts één dienst per keer toe!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

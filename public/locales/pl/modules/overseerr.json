@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": ""
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Poproś o {{title}}",
+        "cancel": "Anuluj",
+        "request": ""
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "",
+          "text": ""
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "",
+      "table": {
+        "header": {
+          "season": "Sezon",
+          "numberOfEpisodes": "Liczba odcinków"
+        }
+      }
+    }
+  }
+}

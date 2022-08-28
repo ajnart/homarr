@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Konfigurations Lader"
+    "label": "Konfigurationslader"
   },
   "modal": {
     "title": "Wähle einen Namen für deine neue Konfiguration",
@@ -28,8 +28,8 @@
           "message": "Konfiguration wurde gelöscht"
         },
         "deleteFailed": {
-          "title": "Config delete failed",
-          "message": "Config delete failed"
+          "title": "Löschung der Konfiguration fehlgeschlagen",
+          "message": "Löschung der Konfiguration fehlgeschlagen"
         }
       }
     },

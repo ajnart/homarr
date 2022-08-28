@@ -1,0 +1,21 @@
+{
+  "pageTitle": {
+    "label": "",
+    "placeholder": ""
+  },
+  "logo": {
+    "label": "",
+    "placeholder": ""
+  },
+  "favicon": {
+    "label": "",
+    "placeholder": ""
+  },
+  "background": {
+    "label": "",
+    "placeholder": ""
+  },
+  "buttons": {
+    "submit": ""
+  }
+}

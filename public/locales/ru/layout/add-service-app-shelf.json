@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "Добавить сервис"
+    },
+    "modal": {
+        "title": "Добавить сервис",
+        "form": {
+            "validation": {
+                "invalidUrl": "Пожалуйста, введите корректный адрес",
+                "noStatusCodeSelected": "Пожалуйста, выберите код состояния"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Настройки",
+                "form": {
+                    "serviceName": {
+                        "label": "Имя сервиса",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "URL-адрес иконки"
+                    },
+                    "serviceUrl": {
+                        "label": "Адрес сервиса"
+                    },
+                    "onClickUrl": {
+                        "label": "URL-адрес при нажатии"
+                    },
+                    "serviceType": {
+                        "label": "Тип сервиса",
+                        "defaultValue": "Другое",
+                        "placeholder": "Выберите один"
+                    },
+                    "category": {
+                        "label": "Категория",
+                        "placeholder": "Выберите категорию или создайте новую",
+                        "nothingFound": "Ничего не найдено",
+                        "createLabel": "+ Добавить {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API-ключ",
+                            "placeholder": "Ваш API-ключ",
+                            "validation": {
+                                "noKey": "Неверный ключ"
+                            },
+                            "tip": {
+                                "text": "Получите API-ключ",
+                                "link": "здесь."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Имя пользователя",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Неверное имя пользователя"
+                                }
+                            },
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Неверный пароль"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "Введите пароль",
+                                "validation": {
+                                    "invalidPassword": "Неверный пароль"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Имя пользователя",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Неверное имя пользователя"
+                                }
+                            },
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Неверный пароль"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "Дополнительные настройки",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "Коды состояния HTTP",
+                        "placeholder": "Выберите подходящие коды состояния",
+                        "clearButtonLabel": "Очистить выбранное",
+                        "nothingFound": "Ничего не найдено"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Открывать сервис в новой вкладке"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Добавить сервис"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

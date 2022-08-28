@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Kalendarz",
+    "description": "",
+    "settings": {
+      "sundayStart": {
+        "label": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "cpuMultiView": {
+        "label": ""
+      },
+      "storageMultiView": {
+        "label": ""
+      },
+      "useCompactView": {
+        "label": ""
+      },
+      "graphs": {
+        "label": "",
+        "options": {
+          "cpu": "Procesador",
+          "ram": "Memoria RAM",
+          "storage": "Almacenaje",
+          "network": "Red",
+          "gpu": "Procesador Gráfico"
+        }
+      },
+      "url": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "title": "",
+    "errors": {
+      "noService": "",
+      "noInformation": ""
+    },
+    "graphs": {
+      "storage": {
+        "title": "Almacenaje",
+        "label": "Almacenaje:"
+      },
+      "network": {
+        "title": "Red",
+        "label": "Red:",
+        "metrics": {
+          "download": "",
+          "upload": ""
+        }
+      },
+      "cpu": {
+        "title": "Procesador"
+      },
+      "memory": {
+        "title": "Memoria RAM"
+      },
+      "gpu": {
+        "title": "Procesador Gráfico"
+      }
+    }
+  }
+}

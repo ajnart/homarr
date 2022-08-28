@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "hideComplete": {
+        "label": "Ukryj ukończone torrenty"
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "",
+        "size": "Rozmiar",
+        "download": "",
+        "upload": "",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": ""
+      },
+      "body": {
+        "nothingFound": ""
+      }
+    },
+    "lineChart": {
+      "title": "",
+      "download": "",
+      "upload": "",
+      "timeSpan": "{{seconds}} sekund temu",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}

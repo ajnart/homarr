@@ -1,0 +1,69 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "search": {
+    "placeholder": ""
+  },
+  "table": {
+    "header": {
+      "name": "",
+      "image": "",
+      "ports": "",
+      "state": ""
+    },
+    "body": {
+      "portCollapse": ""
+    },
+    "states": {
+      "running": "",
+      "created": "",
+      "stopped": "",
+      "unknown": ""
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "",
+      "message": ""
+    },
+    "restart": {
+      "title": ""
+    },
+    "stop": {
+      "title": ""
+    },
+    "start": {
+      "title": ""
+    },
+    "refreshData": "",
+    "addToHomarr": {
+      "title": ""
+    },
+    "remove": {
+      "title": ""
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "",
+      "message": ""
+    },
+    "unknownError": {
+      "title": ""
+    },
+    "oneServiceAtATime": {
+      "title": ""
+    }
+  },
+  "actionIcon": {
+    "tooltip": ""
+  }
+}

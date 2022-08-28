@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "title": "",
+    "buttons": {
+      "save": "Zapisz usługę"
+    }
+  },
+  "menu": {
+    "labels": {
+      "settings": "",
+      "dangerZone": "Strefa zagrożenia"
+    },
+    "actions": {
+      "edit": "",
+      "delete": "Usuń"
+    }
+  }
+}

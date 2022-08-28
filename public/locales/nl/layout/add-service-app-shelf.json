@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "Voeg een service toe"
+    },
+    "modal": {
+        "title": "Service toevoegen",
+        "form": {
+            "validation": {
+                "invalidUrl": "Voer een geldige URL in",
+                "noStatusCodeSelected": "Selecteer een statuscode"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Instellingen",
+                "form": {
+                    "serviceName": {
+                        "label": "Servicenaam",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "Icoon URL"
+                    },
+                    "serviceUrl": {
+                        "label": "Service URL"
+                    },
+                    "onClickUrl": {
+                        "label": "Klik URL"
+                    },
+                    "serviceType": {
+                        "label": "Servicetype",
+                        "defaultValue": "Andere",
+                        "placeholder": "Kies één"
+                    },
+                    "category": {
+                        "label": "Categorie",
+                        "placeholder": "Selecteer een categorie of maak een nieuwe aan",
+                        "nothingFound": "Geen resultaten",
+                        "createLabel": "+ Creëer {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API sleutel",
+                            "placeholder": "Jouw API sleutel",
+                            "validation": {
+                                "noKey": "Ongeldige sleutel"
+                            },
+                            "tip": {
+                                "text": "Verkrijg jouw API sleutel",
+                                "link": "hier."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Gebruikersnaam",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Ongeldige gebruikersnaam"
+                                }
+                            },
+                            "password": {
+                                "label": "Wachtwoord",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Ongeldig wachtwoord"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Wachtwoord",
+                                "placeholder": "wachtwoord",
+                                "validation": {
+                                    "invalidPassword": "Ongeldig wachtwoord"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Gebruikersnaam",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Ongeldige gebruikersnaam"
+                                }
+                            },
+                            "password": {
+                                "label": "Wachtwoord",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Ongeldig wachtwoord"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "Geavanceerde opties",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "HTTP-statuscodes",
+                        "placeholder": "Selecteer geldige statuscodes",
+                        "clearButtonLabel": "Selectie wissen",
+                        "nothingFound": "Geen resultaten"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Service in nieuw tabblad openen"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Service toevoegen"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

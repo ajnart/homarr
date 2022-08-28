@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Datum",
+    "description": "Toon de huidige tijd en datum in een kaart",
+    "settings": {
+      "display24HourFormat": {
+        "label": "Volledige tijd weergeven (24-uur)"
+      }
+    }
+  }
+}

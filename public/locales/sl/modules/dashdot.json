@@ -1,0 +1,60 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Modul za prikazovanje grafov iz vašega delujočega programa Dash.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "Pogled večjedrnih procesorjev"
+      },
+      "storageMultiView": {
+        "label": "Pogled naprav za shranjevanje"
+      },
+      "useCompactView": {
+        "label": "Uporaba kompaktnega pogleda"
+      },
+      "graphs": {
+        "label": "Grafi",
+        "options": {
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "Shramba",
+          "network": "Omrežje",
+          "gpu": "GPU"
+        }
+      },
+      "url": {
+        "label": "Dash. URL"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Dash. storitev ni bila najdena. Prosimo, dodajte jo na nadzorno ploščo Homarr ali nastavite naslov URL dashdot v možnostih modula",
+      "noInformation": "Ne morem pridobiti informacij iz Dash. - ali uporabljate najnovejšo različico?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Shramba",
+        "label": "Shramba:"
+      },
+      "network": {
+        "title": "Omrežje",
+        "label": "Omrežje:",
+        "metrics": {
+          "download": "Dol",
+          "upload": "Gor"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}
