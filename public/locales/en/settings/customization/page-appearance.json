@@ -13,9 +13,9 @@
   },
   "background": {
     "label": "Background",
-    "placeholder": ""
+    "placeholder": "/img/background.png"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Submit"
   }
 }
