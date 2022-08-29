@@ -1,31 +1,31 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Weer",
+    "description": "Zoek het actuele weer op uw locatie",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Toon in Fahrenheit"
       },
       "location": {
-        "label": ""
+        "label": "Weerslocatie"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "clear": "Helder",
+      "mainlyClear": "Overwegend helder",
+      "fog": "Mist",
+      "drizzle": "Motregen",
+      "freezingDrizzle": "IJzel",
+      "rain": "Regen",
+      "freezingRain": "Natte sneeuw",
+      "snowFall": "Sneeuwval",
+      "snowGrains": "Sneeuw",
+      "rainShowers": "Regenbuien",
+      "snowShowers": "Sneeuwbuien",
+      "thunderstorm": "Onweersbui",
+      "thunderstormWithHail": "Onweer met hagel",
       "unknown": "Onbekend"
     }
   }
