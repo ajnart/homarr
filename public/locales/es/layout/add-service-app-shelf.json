@@ -1,9 +1,9 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Añadir un servicio"
     },
     "modal": {
-        "title": "",
+        "title": "Añadir servicio",
         "form": {
             "validation": {
                 "invalidUrl": "",
@@ -12,29 +12,29 @@
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Opciones",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Nombre del servicio",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "URL del icono"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "URL del servicio"
                     },
                     "onClickUrl": {
                         "label": ""
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "Tipo de servicio",
+                        "defaultValue": "Otro",
+                        "placeholder": "Elige uno"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
+                        "label": "Categoría",
+                        "placeholder": "Seleccione una categoría o cree una nueva",
                         "nothingFound": "",
                         "createLabel": ""
                     },
@@ -47,7 +47,7 @@
                             },
                             "tip": {
                                 "text": "",
-                                "link": ""
+                                "link": "aquí."
                             }
                         },
                         "qBittorrent": {
@@ -108,7 +108,7 @@
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "Añadir servicio"
                         }
                     }
                 }
