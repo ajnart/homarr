@@ -11,8 +11,8 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
-        "size": "",
+        "name": "Nombre",
+        "size": "Tamaño",
         "download": "",
         "upload": "",
         "estimatedTimeOfArrival": "",
