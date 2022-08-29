@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Docker",
     "description": ""
   },
   "search": {
@@ -8,41 +8,41 @@
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Nombre",
+      "image": "Imágen",
+      "ports": "Puertos",
+      "state": "Estado"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} más"
     },
     "states": {
       "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "created": "Creado",
+      "stopped": "Detenido",
+      "unknown": "Desconocido"
     }
   },
   "actionBar": {
     "addService": {
       "title": "Añadir servicio",
-      "message": ""
+      "message": "Añadir servicio a Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Reiniciar"
     },
     "stop": {
-      "title": ""
+      "title": "Detener"
     },
     "start": {
-      "title": ""
+      "title": "Comenzar"
     },
-    "refreshData": "",
+    "refreshData": "Actualizar datos",
     "addToHomarr": {
-      "title": ""
+      "title": "Añadir a Homarr"
     },
     "remove": {
-      "title": ""
+      "title": "Eliminar"
     }
   },
   "messages": {
@@ -64,6 +64,6 @@
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
