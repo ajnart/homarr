@@ -1,13 +1,13 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Clima",
     "description": "",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Mostrar en Fahrenheit"
       },
       "location": {
-        "label": ""
+        "label": "Ubicación del clima"
       }
     }
   },
@@ -15,18 +15,18 @@
     "weatherDescriptions": {
       "clear": "",
       "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
+      "fog": "Niebla",
+      "drizzle": "Llovizna",
+      "freezingDrizzle": "Llovizna helada",
+      "rain": "Lluvia",
+      "freezingRain": "Lluvia helada",
+      "snowFall": "Caída de nieve",
+      "snowGrains": "Granos de nieve",
       "rainShowers": "",
       "snowShowers": "",
       "thunderstorm": "",
       "thunderstormWithHail": "",
-      "unknown": ""
+      "unknown": "Desconocido"
     }
   }
 }
