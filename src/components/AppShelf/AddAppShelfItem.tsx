@@ -62,7 +62,7 @@ export function AddItemShelfButton(props: any) {
 function MatchIcon(name: string | undefined, form: any) {
   if (name === undefined || name === '') return null;
   fetch(
-    `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
+    `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
       .toLowerCase()
       .replace(/^dash\.$/, 'dashdot')}.png`
