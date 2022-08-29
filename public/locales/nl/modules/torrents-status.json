@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Torrent",
     "description": "Toon de huidige downloadsnelheid van ondersteunde diensten",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Verberg voltooide torrents"
       }
     }
   },
@@ -12,28 +12,28 @@
     "table": {
       "header": {
         "name": "Naam",
-        "size": "",
+        "size": "Grootte",
         "download": "Down",
         "upload": "Up",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Voortgang"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Geen torrents gevonden"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Huidige downloadsnelheid",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} seconden geleden",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Geen ondersteunde download clients gevonden!",
+        "text": "Voeg een downloadservice toe om uw huidige downloads weer te geven"
       }
     }
   }
