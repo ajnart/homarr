@@ -7,12 +7,12 @@
   },
   "menu": {
     "labels": {
-      "settings": "",
+      "settings": "Ajustes",
       "dangerZone": ""
     },
     "actions": {
-      "edit": "",
-      "delete": ""
+      "edit": "Editar",
+      "delete": "Eliminar"
     }
   }
 }
