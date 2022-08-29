@@ -15,11 +15,11 @@
       "graphs": {
         "label": "",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "Procesador",
+          "ram": "Memoria RAM",
+          "storage": "Almacenaje",
+          "network": "Red",
+          "gpu": "Procesador Gráfico"
         }
       },
       "url": {
@@ -35,25 +35,25 @@
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Almacenaje",
+        "label": "Almacenaje:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Red",
+        "label": "Red:",
         "metrics": {
           "download": "",
           "upload": ""
         }
       },
       "cpu": {
-        "title": ""
+        "title": "Procesador"
       },
       "memory": {
-        "title": ""
+        "title": "Memoria RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "Procesador Gráfico"
       }
     }
   }
