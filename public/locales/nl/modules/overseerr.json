@@ -7,22 +7,22 @@
     "item": {
       "buttons": {
         "askFor": "Vraag om {{title}}",
-        "cancel": "",
+        "cancel": "Annuleer",
         "request": "Aanvraag"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "API-sleutel wordt gebruikt",
+          "text": "Dit verzoek zal automatisch worden goedgekeurd"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Selecteer de seizoenen die u wilt downloaden",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "Seizoen",
+          "numberOfEpisodes": "Aantal afleveringen"
         }
       }
     }
