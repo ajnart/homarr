@@ -2,13 +2,13 @@
   "title": "Ajustes",
   "tooltip": "Ajustes",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Común",
+    "customizations": "Personalizaciones"
   },
   "tips": {
     "configTip": ""
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Hecho con ❤️ por @"
   }
 }
