@@ -95,10 +95,10 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Options avancées",
                 "form": {
                     "ping": {
-                        "label": ""
+                        "label": "Service Ping"
                     },
                     "httpStatusCodes": {
                         "label": "Codes d'état HTTP",
