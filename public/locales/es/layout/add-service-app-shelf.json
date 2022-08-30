@@ -36,14 +36,14 @@
                         "label": "Categoría",
                         "placeholder": "Seleccione una categoría o cree una nueva",
                         "nothingFound": "No se ha encontrado ningún resultado",
-                        "createLabel": ""
+                        "createLabel": "+ Crear {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
+                            "label": "Clave API",
                             "placeholder": "Tu clave de la API",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Clave inválida"
                             },
                             "tip": {
                                 "text": "Obtén tu clave de API",
@@ -53,14 +53,14 @@
                         "qBittorrent": {
                             "username": {
                                 "label": "Usuario",
-                                "placeholder": "",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Nombre de usuario inválido"
                                 }
                             },
                             "password": {
                                 "label": "Contraseña",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
                                     "invalidPassword": "Contraseña Incorrecta"
                                 }
@@ -78,14 +78,14 @@
                         "transmission": {
                             "username": {
                                 "label": "Usuario",
-                                "placeholder": "",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Nombre de usuario inválido"
                                 }
                             },
                             "password": {
                                 "label": "Contraseña",
-                                "placeholder": "",
+                                "placeholder": "adminadmin",
                                 "validation": {
                                     "invalidPassword": "Contraseña Incorrecta"
                                 }
