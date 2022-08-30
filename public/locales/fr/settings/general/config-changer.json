@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "Chargeur de configuration"
+  },
+  "modal": {
+    "title": "Choisissez le nom de votre nouvelle configuration",
+    "form": {
+      "configName": {
+        "label": "Nom de la configuration",
+        "placeholder": "Le nom de votre nouvelle configuration"
+      },
+      "submitButton": "Confirmer"
+    },
+    "events": {
+      "configSaved": {
+        "title": "Configuration sauvegardée",
+        "message": "Configuration enregistrée sous {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Télécharger la configuration",
+    "delete": {
+      "text": "Supprimer la configuration",
+      "notifications": {
+        "deleted": {
+          "title": "Config supprimée",
+          "message": "Config supprimée"
+        },
+        "deleteFailed": {
+          "title": "La suppression de la configuration a échoué",
+          "message": "La suppression de la configuration a échoué"
+        }
+      }
+    },
+    "saveCopy": "Sauvegarder une copie"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Impossible de charger la configuration",
+        "message": "Impossible de charger votre configuration. Format JSON non valide."
+      },
+      "loadedSuccessfully": {
+        "title": "Config {{configName}} chargé avec succès"
+      }
+    },
+    "accept": {
+      "text": "Faites glisser les fichiers ici pour télécharger une configuration. Support pour JSON uniquement."
+    },
+    "reject": {
+      "text": "Ce format de fichier n'est pas pris en charge. Veuillez télécharger uniquement JSON."
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": ""
+  },
+  "modal": {
+    "title": "",
+    "form": {
+      "configName": {
+        "label": "",
+        "placeholder": ""
+      },
+      "submitButton": ""
+    },
+    "events": {
+      "configSaved": {
+        "title": "Konfiguracja zapisana",
+        "message": "Konfiguracja zapisana jako {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "",
+    "delete": {
+      "text": "Usuń konfigurację",
+      "notifications": {
+        "deleted": {
+          "title": "Konfiguracja usunięta",
+          "message": "Konfiguracja usunięta"
+        },
+        "deleteFailed": {
+          "title": "Nie udało się usunąć konfiguracji",
+          "message": "Nie udało się usunąć konfiguracji"
+        }
+      }
+    },
+    "saveCopy": "Zapisz kopię"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "",
+        "message": ""
+      },
+      "loadedSuccessfully": {
+        "title": ""
+      }
+    },
+    "accept": {
+      "text": ""
+    },
+    "reject": {
+      "text": ""
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "Afficher la vitesse de téléchargement actuelle des services pris en charge",
+    "settings": {
+      "hideComplete": {
+        "label": "Cacher les torrents terminés"
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Nom",
+        "size": "Taille",
+        "download": "Duvet",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progrès"
+      },
+      "body": {
+        "nothingFound": "Aucun torrent trouvé"
+      }
+    },
+    "lineChart": {
+      "title": "Vitesse de téléchargement actuelle",
+      "download": "Télécharger : {{download}}",
+      "upload": "Télécharger : {{upload}}",
+      "timeSpan": "{{seconds}} il y a quelques secondes",
+      "totalDownload": "Télécharger : {{download}}/s",
+      "totalUpload": "Upload : {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Aucun client de téléchargement supporté n'a été trouvé !",
+        "text": "Ajouter un service de téléchargement pour afficher vos téléchargements en cours"
+      }
+    }
+  }
+}
