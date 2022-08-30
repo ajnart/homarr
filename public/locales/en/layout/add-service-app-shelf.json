@@ -95,8 +95,11 @@
                 }
             },
             "advancedOptions": {
-                "title": "Advanced options",
+                "title": "",
                 "form": {
+                    "ping": {
+                        "label": ""
+                    },
                     "httpStatusCodes": {
                         "label": "HTTP Status Codes",
                         "placeholder": "Select valid status codes",
