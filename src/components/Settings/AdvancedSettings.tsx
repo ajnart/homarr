@@ -67,8 +67,8 @@ export default function TitleChanger() {
           />
           <Textarea
             minRows={5}
-            label="Custom CSS"
-            placeholder="Your CSS will be executed last"
+            label={t('customCSS.label')}
+            placeholder={t('customCSS.placeholder')}
             {...form.getInputProps('customCSS')}
           />
           <Button type="submit">{t('buttons.submit')}</Button>
