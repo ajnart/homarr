@@ -1,24 +1,24 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": ""
+    "description": "Te permite buscar y añadir medios desde Overseerr y Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
+        "askFor": "Solicitar {{title}}",
         "cancel": "Cancelar",
         "request": "Solicitar"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "Usando la clave API",
+          "text": "Esta petición se aprobará automáticamente"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Marca las temporadas que quieres que se descarguen",
       "table": {
         "header": {
           "season": "Temporada",
