@@ -1,0 +1,69 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Omogoča enostavno upravljanje torrentov"
+  },
+  "search": {
+    "placeholder": "Iskanje po zabojniku ali imenu njegove slike"
+  },
+  "table": {
+    "header": {
+      "name": "Ime",
+      "image": "Slika",
+      "ports": "Vrata",
+      "state": "Stanje"
+    },
+    "body": {
+      "portCollapse": "{{ports}} več"
+    },
+    "states": {
+      "running": "Se izvaja",
+      "created": "Ustvarjeno",
+      "stopped": "Zaustavljeno",
+      "unknown": "Neznano"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Dodaj storitev",
+      "message": "Dodajanje storitev v Homarr"
+    },
+    "restart": {
+      "title": "Ponovno zaženi"
+    },
+    "stop": {
+      "title": "Ustavi"
+    },
+    "start": {
+      "title": "Zaženi"
+    },
+    "refreshData": "Osveži podatke",
+    "addToHomarr": {
+      "title": "Dodaj v Homarr"
+    },
+    "remove": {
+      "title": "Odstrani"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "Zabojnik {{containerName}} {{action}}",
+      "message": "Vaš zabojnik je bil uspešno {{action}}"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Integracija Dockerja ni uspela",
+      "message": "Ste pozabili namestiti Docker vtičnico?"
+    },
+    "unknownError": {
+      "title": "Prišlo je do napake"
+    },
+    "oneServiceAtATime": {
+      "title": "Naenkrat dodajte samo eno storitev!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

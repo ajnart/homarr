@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Iskalna vrstica",
+    "description": "Iskalna vrstica za iskanje po spletu, youtubu, torentih ali storitvi overseerr"
+  },
+  "input": {
+    "placeholder": "Preišči splet..."
+  }
+}
