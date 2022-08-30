@@ -1,21 +1,21 @@
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import {
-  Text,
-  Card,
   Anchor,
   AspectRatio,
+  Card,
   Center,
   createStyles,
-  useMantineColorScheme,
   Image,
+  Text,
+  useMantineColorScheme,
 } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { useSortable } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
-import { serviceItem } from '../../tools/types';
 import PingComponent from '../../modules/ping/PingModule';
-import AppShelfMenu from './AppShelfMenu';
 import { useConfig } from '../../tools/state';
+import { serviceItem } from '../../tools/types';
+import AppShelfMenu from './AppShelfMenu';
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -134,7 +134,7 @@ export function AppShelfItem(props: any) {
                 </Anchor>
               </motion.i>
             </AspectRatio>
-            <PingComponent url={service.url} status={service.status} />
+            {service.ping !== false && <PingComponent url={service.url} status={service.status} />}
           </Card.Section>
         </Center>
       </Card>
