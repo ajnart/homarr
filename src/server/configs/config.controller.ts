@@ -4,7 +4,7 @@ import { Response } from 'express';
 import { ConfigService } from './config.service';
 
 @Controller({
-  path: '/modules/configs',
+  path: '/configs',
 })
 export class ConfigController {
   constructor(private configService: ConfigService) {}

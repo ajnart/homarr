@@ -12,7 +12,11 @@ export class GetConfigPipe implements PipeTransform {
   constructor(private configService: ConfigService) {}
 
   async transform(value: string, metadata: ArgumentMetadata) {
-    return this.configService.getConfig(value);
+    try {
+      return await this.configService.getConfig(value);
+    } catch (err) {
+      throw new Error(`No config found with ${value}`);
+    }
   }
 }
 
