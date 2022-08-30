@@ -1,0 +1,121 @@
+{
+    "actionIcon": {
+        "tooltip": "Adicionar serviço"
+    },
+    "modal": {
+        "title": "Adicionar serviço",
+        "form": {
+            "validation": {
+                "invalidUrl": "Por favor, insira uma URL válida",
+                "noStatusCodeSelected": "Por favor, selecione um código de estado"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Opções",
+                "form": {
+                    "serviceName": {
+                        "label": "Nome do serviço",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": ""
+                    },
+                    "serviceUrl": {
+                        "label": ""
+                    },
+                    "onClickUrl": {
+                        "label": ""
+                    },
+                    "serviceType": {
+                        "label": "",
+                        "defaultValue": "",
+                        "placeholder": ""
+                    },
+                    "category": {
+                        "label": "",
+                        "placeholder": "",
+                        "nothingFound": "",
+                        "createLabel": ""
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "",
+                            "placeholder": "",
+                            "validation": {
+                                "noKey": ""
+                            },
+                            "tip": {
+                                "text": "",
+                                "link": ""
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidUsername": ""
+                                }
+                            },
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidUsername": ""
+                                }
+                            },
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "",
+                "form": {
+                    "ping": {
+                        "label": ""
+                    },
+                    "httpStatusCodes": {
+                        "label": "",
+                        "placeholder": "",
+                        "clearButtonLabel": "",
+                        "nothingFound": ""
+                    },
+                    "openServiceInNewTab": {
+                        "label": ""
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Adicionar serviço"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
