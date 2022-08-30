@@ -8,14 +8,14 @@
     "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
     "label": "Fondo",
-    "placeholder": ""
+    "placeholder": "/img/background.png"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Enviar"
   }
 }
