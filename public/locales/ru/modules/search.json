@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Поиск",
-    "description": "Панель для поиска в интернете, по youtube, торрентам или overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Искать в интернете..."
