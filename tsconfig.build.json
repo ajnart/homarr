@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"],
+  "include": ["src/server"],
+
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+  }
+}
