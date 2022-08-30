@@ -19,21 +19,21 @@
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "URL do ícone"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "URL do serviço"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "Ao clicar na URL"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "Tipo de serviço",
+                        "defaultValue": "Outros",
+                        "placeholder": "Escolha um"
                     },
                     "category": {
-                        "label": "",
+                        "label": "Categoria",
                         "placeholder": "",
                         "nothingFound": "",
                         "createLabel": ""
