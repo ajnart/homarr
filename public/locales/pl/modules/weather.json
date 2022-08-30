@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Pogoda",
+    "description": "Sprawdź aktualną pogodę w swojej lokalizacji",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": ""
+      },
+      "location": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "",
+      "mainlyClear": "",
+      "fog": "Mgła",
+      "drizzle": "Mżawka",
+      "freezingDrizzle": "",
+      "rain": "Deszcz",
+      "freezingRain": "",
+      "snowFall": "Opady śniegu",
+      "snowGrains": "",
+      "rainShowers": "",
+      "snowShowers": "",
+      "thunderstorm": "",
+      "thunderstormWithHail": "",
+      "unknown": ""
+    }
+  }
+}

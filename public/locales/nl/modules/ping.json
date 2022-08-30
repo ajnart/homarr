@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Hiermee kunt u controleren of de service up is of een specifieke HTTP-statuscode retourneert."
+  },
+  "states": {
+    "online": "Online {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Laden..."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Permet de rechercher et d'ajouter des médias depuis Overseerr/Jellyseerr"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Demandez {{title}}",
+        "cancel": "Annuler",
+        "request": "Demande"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Utilisation de la clé API",
+          "text": "Cette demande sera automatiquement approuvée"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Cochez les saisons que vous souhaitez télécharger",
+      "table": {
+        "header": {
+          "season": "Saison",
+          "numberOfEpisodes": "Nombre d'épisodes"
+        }
+      }
+    }
+  }
+}
