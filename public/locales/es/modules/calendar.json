@@ -4,7 +4,7 @@
     "description": "",
     "settings": {
       "sundayStart": {
-        "label": ""
+        "label": "Marcar Domingo como primer día de la semana"
       }
     }
   }
