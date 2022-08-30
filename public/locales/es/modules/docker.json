@@ -57,10 +57,10 @@
       "message": ""
     },
     "unknownError": {
-      "title": ""
+      "title": "Se ha producido un error"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Por favor, añade un servicio cada vez!"
     }
   },
   "actionIcon": {
