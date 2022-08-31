@@ -30,7 +30,7 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "No Dash. service found. Please add one to your Homarr dashboard or set a Dash. URL in the module options",
+      "noService": "",
       "noInformation": "Cannot acquire information from dash. - are you running the latest version?"
     },
     "graphs": {
