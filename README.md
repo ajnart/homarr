@@ -11,6 +11,9 @@
 <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
   <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status">
 </a>
+<a href=https://crowdin.com/project/homarr>
+<img title="Translations" src="https://badges.crowdin.net/homarr/localized.svg" />
+</a>
 <a href="https://discord.gg/aCsmEV5RgA">
   <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield">
 </a>
