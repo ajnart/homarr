@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Torrent",
     "description": "",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Dölj slutförda torrents"
       }
     }
   },
@@ -12,28 +12,28 @@
     "table": {
       "header": {
         "name": "",
-        "size": "",
+        "size": "Storlek",
         "download": "",
         "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "Beräknad sluttid",
+        "progress": "Förlopp"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Inga torrents hittades"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Aktuell nedladdningshastighet",
+      "download": "Nedladdning: {{download}}",
+      "upload": "Uppladdning: {{upload}}",
+      "timeSpan": "{{seconds}} sekunder sedan",
+      "totalDownload": "Nedladdning: {{download}}/s",
+      "totalUpload": "Uppladdning: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Inga nedladdningsklienter som stöds hittades!",
+        "text": "Lägg till en nedladdningstjänst för att visa dina aktuella nedladdningar"
       }
     }
   }
