@@ -18,6 +18,7 @@ import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
 import { UsenetModule, TorrentsModule } from '../../modules';
 import TorrentsComponent from '../../modules/torrents/TorrentsModule';
+import UsenetComponent from '../../modules/usenet/UsenetModule';
 
 const AppShelf = (props: any) => {
   const { config, setConfig } = useConfig();
@@ -126,7 +127,11 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
-    const downloadEnabled = config.modules?.[TorrentsModule.id]?.enabled ?? false;
+
+    const usenetEnabled = config.modules?.[TorrentsModule.id]?.enabled ?? false;
+    const torrentEnabled = config.modules?.[UsenetModule.id]?.enabled ?? false;
+
+    const downloadEnabled = usenetEnabled || torrentEnabled;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // TODO: Style accordion so that the bar is transparent to the user settings
@@ -170,8 +175,18 @@ const AppShelf = (props: any) => {
                 ${(config.settings.appOpacity || 100) / 100}`,
                   }}
                 >
-                  <ModuleMenu module={TorrentsModule} />
-                  <TorrentsComponent />
+                  {torrentEnabled && (
+                    <>
+                      <ModuleMenu module={TorrentsModule} />
+                      <TorrentsComponent />
+                    </>
+                  )}
+                  {usenetEnabled && (
+                    <>
+                      <ModuleMenu module={UsenetModule} />
+                      <UsenetComponent />
+                    </>
+                  )}
                 </Paper>
               </Accordion.Panel>
             </Accordion.Item>
