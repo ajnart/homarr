@@ -36,7 +36,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     if (!service.apiKey) {
       throw new Error(`API Key for service "${service.name}" is missing`);
     }
-    const queue = await new Client(service.url, service.apiKey).queue(offset, limit);
+
+    const { origin } = new URL(service.url);
+    const queue = await new Client(origin, service.apiKey).queue(offset, limit);
 
     const items: UsenetQueueItem[] = queue.slots.map((slot) => {
       const [hours, minutes, seconds] = slot.timeleft.split(':');
