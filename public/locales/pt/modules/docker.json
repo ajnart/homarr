@@ -39,7 +39,7 @@
     },
     "refreshData": "Recarregar dados",
     "addToHomarr": {
-      "title": ""
+      "title": "Adicionar ao Homarr"
     },
     "remove": {
       "title": "Excluir"
@@ -53,11 +53,11 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Integração com Docker falhou",
+      "message": "Você esqueceu de montar o Docker socket?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Ocorreu um erro"
     },
     "oneServiceAtATime": {
       "title": ""
