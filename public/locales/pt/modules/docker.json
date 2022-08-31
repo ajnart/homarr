@@ -8,19 +8,19 @@
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Nome",
+      "image": "Imagem",
+      "ports": "Portas",
+      "state": "Estado"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "mais {{ports}}"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Em execução",
+      "created": "Criado",
+      "stopped": "Parado",
+      "unknown": "Desconhecido"
     }
   },
   "actionBar": {
@@ -29,20 +29,20 @@
       "message": ""
     },
     "restart": {
-      "title": ""
+      "title": "Reiniciar"
     },
     "stop": {
-      "title": ""
+      "title": "Parar"
     },
     "start": {
-      "title": ""
+      "title": "Iniciar"
     },
-    "refreshData": "",
+    "refreshData": "Recarregar dados",
     "addToHomarr": {
       "title": ""
     },
     "remove": {
-      "title": ""
+      "title": "Excluir"
     }
   },
   "messages": {
