@@ -1,0 +1,24 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Config {
+  name: String!
+  services: [Service!]!
+}
+
+type Service {
+  name: String!
+  id: String!
+  type: String!
+  icon: String!
+  url: String!
+}
+
+type Query {
+  config(configName: String!): Config!
+}
+
+type Mutation {
+  updateConfig(configName: String!, body: String!): Config!
+}

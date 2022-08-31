@@ -15,6 +15,15 @@
   "modules": {
     "Search Bar": {
       "enabled": true
+    },
+    "calendar": {
+      "enabled": true
+    },
+    "torrents-status": {
+      "enabled": true
+    },
+    "dlspeed": {
+      "enabled": true
     }
   }
 }

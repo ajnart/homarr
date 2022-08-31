@@ -19,6 +19,7 @@
     "sourceMap": true,
     "incremental": true,
     "skipLibCheck": true,
+    "strictPropertyInitialization": false,
     "lib": [
       "dom",
       "dom.iterable",
