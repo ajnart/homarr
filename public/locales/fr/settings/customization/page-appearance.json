@@ -15,6 +15,10 @@
     "label": "Contexte",
     "placeholder": "/img/background.png"
   },
+  "customCSS": {
+    "label": "",
+    "placeholder": ""
+  },
   "buttons": {
     "submit": "Soumettre"
   }
