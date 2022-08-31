@@ -12,14 +12,14 @@
     "table": {
       "header": {
         "name": "Nome",
-        "size": "",
+        "size": "Tamanho",
         "download": "",
         "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "TED",
+        "progress": "Progresso"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Nenhum torrent encontrado"
       }
     },
     "lineChart": {
