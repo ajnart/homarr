@@ -11,6 +11,7 @@ import {
 import axios from 'axios';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
+import { useState } from 'react';
 import { TFunction } from 'react-i18next';
 
 let t: TFunction<'modules/docker', undefined>;
@@ -61,9 +62,25 @@ export interface ContainerActionBarProps {
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   t = useTranslation('modules/docker').t;
-
+  const [isLoading, setisLoading] = useState(false);
   return (
     <Group>
+      <Button
+        leftIcon={<IconRefresh />}
+        onClick={() => {
+          setisLoading(true);
+          setTimeout(() => {
+            reload();
+            setisLoading(false);
+          }, 750);
+        }}
+        variant="light"
+        color="violet"
+        loading={isLoading}
+        radius="md"
+      >
+        {t('actionBar.refreshData.title')}
+      </Button>
       <Button
         leftIcon={<IconRotateClockwise />}
         onClick={() =>
@@ -111,9 +128,6 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         disabled={selected.length === 0}
       >
         {t('actionBar.start.title')}
-      </Button>
-      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" color="violet" radius="md">
-        {t('actionBar.refreshData.title')}
       </Button>
       <Button
         leftIcon={<IconTrash />}
