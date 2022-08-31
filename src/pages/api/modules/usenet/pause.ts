@@ -29,7 +29,9 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       throw new Error(`API Key for service "${service.name}" is missing`);
     }
 
-    const result = await new Client(service.url, service.apiKey).queuePause();
+    const { origin } = new URL(service.url);
+
+    const result = await new Client(origin, service.apiKey).queuePause();
 
     return res.status(200).json(result);
   } catch (err) {

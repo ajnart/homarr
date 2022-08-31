@@ -36,8 +36,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     if (!service.apiKey) {
       throw new Error(`API Key for service "${service.name}" is missing`);
     }
+    const { origin } = new URL(service.url);
 
-    const history = await new Client(service.url, service.apiKey).history(offset, limit);
+    const history = await new Client(origin, service.apiKey).history(offset, limit);
 
     const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
       id: slot.nzo_id,
