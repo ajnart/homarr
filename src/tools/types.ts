@@ -44,6 +44,7 @@ export const StatusCodes = [
   { value: '401', label: '401 - Unauthorized', group: 'Client error responses' },
   { value: '403', label: '403 - Forbidden', group: 'Client error responses' },
   { value: '404', label: '404 - Not Found', group: 'Client error responses' },
+  { value: '405', label: '405 - Method Not Allowed', group: 'Client error responses' },
   { value: '408', label: '408 - Request Timeout', group: 'Client error responses' },
   { value: '410', label: '410 - Gone', group: 'Client error responses' },
   { value: '429', label: '429 - Too Many Requests', group: 'Client error responses' },
