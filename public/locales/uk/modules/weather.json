@@ -1,31 +1,31 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Погода",
+    "description": "Шукати поточну погоду у вашому місцеперебуванні",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Використовувати Фаренгейт"
       },
       "location": {
-        "label": ""
+        "label": "Погодна локація"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "clear": "Ясно",
+      "mainlyClear": "Здебільшого ясно",
+      "fog": "Туман",
+      "drizzle": "Дрібний дощ",
+      "freezingDrizzle": "Дрібний дощ, можливе утворення ожеледиці",
+      "rain": "Дощ",
+      "freezingRain": "Крижаний дощ",
+      "snowFall": "Снігопад",
+      "snowGrains": "Сніжинки",
+      "rainShowers": "Злива",
+      "snowShowers": "Заметіль",
+      "thunderstorm": "Гроза",
+      "thunderstormWithHail": "Гроза з градом",
       "unknown": "Невідомо"
     }
   }
