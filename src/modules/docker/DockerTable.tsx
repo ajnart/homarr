@@ -1,4 +1,14 @@
-import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput, Modal, ActionIcon, Tooltip } from '@mantine/core';
+import {
+  Table,
+  Checkbox,
+  Group,
+  Badge,
+  createStyles,
+  ScrollArea,
+  TextInput,
+  Modal,
+  ActionIcon,
+} from '@mantine/core';
 import { IconPlus, IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
@@ -71,9 +81,7 @@ export default function DockerTable({
           />
         </td>
         <td>{element.Names[0].replace('/', '')}</td>
-        <td>
-          {element.Image}
-        </td>
+        <td>{element.Image}</td>
         <td>
           <Group>
             {element.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
@@ -99,21 +107,17 @@ export default function DockerTable({
           <ContainerState state={element.State} />
         </td>
         <td>
-          <Group>
-            <Tooltip label={t('table.body.action.addToHomarr')}>
-              <ActionIcon
-                color="indigo"
-                variant="light"
-                radius="md"
-                onClick={() => {
-                  setRowSelected(element);
-                  setOpened(true);
-                }}
-              >
-                <IconPlus />
-              </ActionIcon>
-            </Tooltip>
-          </Group>
+          <ActionIcon
+            color="indigo"
+            variant="light"
+            radius="md"
+            onClick={() => {
+              setRowSelected(element);
+              setOpened(true);
+            }}
+          >
+            <IconPlus />
+          </ActionIcon>
         </td>
       </tr>
     );
@@ -158,7 +162,7 @@ export default function DockerTable({
             <th>{t('table.header.image')}</th>
             <th>{t('table.header.ports')}</th>
             <th>{t('table.header.state')}</th>
-            <th>{t('table.header.action')}</th>
+            <th>{t('table.header.addToHomarr')}</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>
