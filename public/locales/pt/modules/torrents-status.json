@@ -11,7 +11,7 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Nome",
         "size": "",
         "download": "",
         "upload": "",
