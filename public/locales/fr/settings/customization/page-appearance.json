@@ -16,8 +16,8 @@
     "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "CSS personnalisé",
+    "placeholder": "Le CSS personnalisé sera exécuté en dernier"
   },
   "buttons": {
     "submit": "Soumettre"
