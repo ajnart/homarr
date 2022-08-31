@@ -57,7 +57,7 @@
       "message": "Avez-vous oublié de monter le docker socket ?"
     },
     "unknownError": {
-      "title": "Il y a eu une erreur"
+      "title": "Une erreur s’est produite"
     },
     "oneServiceAtATime": {
       "title": "Veuillez n'ajouter qu'un seul service à la fois !"
