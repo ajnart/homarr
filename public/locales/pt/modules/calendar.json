@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Calendário",
+    "description": "",
+    "settings": {
+      "sundayStart": {
+        "label": ""
+      }
+    }
+  }
+}
