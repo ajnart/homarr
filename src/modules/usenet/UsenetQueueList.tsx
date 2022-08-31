@@ -137,7 +137,9 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ servi
                 )}
               </td>
               <td style={{ display: 'flex', alignItems: 'center' }}>
-                <Text mr="sm">{nzb.progress.toFixed(1)}%</Text>
+                <Text mr="sm" style={{ whiteSpace: 'nowrap' }}>
+                  {nzb.progress.toFixed(1)}%
+                </Text>
                 <Progress
                   radius="lg"
                   color={nzb.eta > 0 ? theme.primaryColor : 'lightgrey'}

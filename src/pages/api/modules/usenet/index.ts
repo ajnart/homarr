@@ -36,7 +36,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       throw new Error(`API Key for service "${service.name}" is missing`);
     }
 
-    const queue = await new Client(service.url, service.apiKey).queue(0, -1);
+    const { origin } = new URL(service.url);
+
+    const queue = await new Client(origin, service.apiKey).queue(0, -1);
 
     const [hours, minutes, seconds] = queue.timeleft.split(':');
     const eta = dayjs.duration({
