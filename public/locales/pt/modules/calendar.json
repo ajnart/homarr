@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "Calendário",
-    "description": "",
+    "description": "Um módulo de calendário para exibir os próximos lançamentos. Interage com o Sonarr e o Radarr API.",
     "settings": {
       "sundayStart": {
-        "label": ""
+        "label": "Comece a semana no Domingo"
       }
     }
   }
