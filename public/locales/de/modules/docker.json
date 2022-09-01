@@ -53,14 +53,14 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "Docker Integration schlug fehl",
+      "title": "Docker-Integration fehlgeschlagen",
       "message": "Hast du vergessen, den Docker Socket zu verbinden?"
     },
     "unknownError": {
       "title": "Es ist ein Fehler aufgetreten"
     },
     "oneServiceAtATime": {
-      "title": "Bitte füge nur einen Service zur Zeit hinzu."
+      "title": "Bitte nur einen Service gleichzeitig hinzufügen!"
     }
   },
   "actionIcon": {
