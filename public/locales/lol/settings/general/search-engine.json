@@ -1,11 +1,11 @@
 {
-  "title": "",
+  "title": "Search engien",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Ues teh prefixes !yt an !t in frunt ov ur quewee 2 search on yootoob or 4 Torrent respectively.",
+    "placeholderTip": "%s can bees usd as placeholdah 4 teh quewee."
   },
   "customEngine": {
-    "label": "",
-    "placeholder": ""
+    "label": "Quewee URL",
+    "placeholder": "Custom quewee URL"
   }
 }
