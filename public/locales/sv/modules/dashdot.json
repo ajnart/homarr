@@ -1,59 +1,59 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "En modul för att visa graferna från din Dash. instans.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "Flerkärnig CPU vy"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Visning av flera lagrings enheter"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Använd kompakt vy"
       },
       "graphs": {
-        "label": "",
+        "label": "Grafer",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "Lagring",
+          "network": "Nätverk",
+          "gpu": "GPU"
         }
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "Ingen Dash-tjänst hittades. Lägg till en i din Homarr-instrumentpanel eller ange en Dash. URL i modulalternativen.",
+      "noInformation": "Kan inte få information från dash. - Kör du den senaste versionen?"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Lagring",
+        "label": "Lagring:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Nätverk",
+        "label": "Nätverk:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Ned",
+          "upload": "Upp"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
