@@ -1,25 +1,25 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Paeg Titel",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Logooo",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "Bakground",
+    "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "Custom CSS",
+    "placeholder": "Custom CSS will bees executed last"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Submit"
   }
 }
