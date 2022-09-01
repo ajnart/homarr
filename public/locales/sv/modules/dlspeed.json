@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Nedladdningshastighet ",
+    "description": "Visa den aktuella nedladdningshastigheten för tjänster som stöds"
   }
 }
