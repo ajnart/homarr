@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Visa den aktuella nedladdningshastigheten för tjänster som stöds",
     "settings": {
       "hideComplete": {
         "label": "Dölj slutförda torrents"
@@ -11,10 +11,10 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Namn",
         "size": "Storlek",
-        "download": "",
-        "upload": "",
+        "download": "Ned",
+        "upload": "Upp",
         "estimatedTimeOfArrival": "Beräknad sluttid",
         "progress": "Förlopp"
       },
