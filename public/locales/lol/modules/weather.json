@@ -13,19 +13,19 @@
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "clear": "Cweaw",
+      "mainlyClear": "Manely cweaw",
+      "fog": "Fog",
+      "drizzle": "Drizzel",
+      "freezingDrizzle": "Freezing drizzel",
+      "rain": "Wain",
+      "freezingRain": "Freezing wain",
+      "snowFall": "Snow fallz",
+      "snowGrains": "Snow granes",
+      "rainShowers": "Raen showaz",
+      "snowShowers": "Snow showaz",
+      "thunderstorm": "Thundahstorm",
+      "thunderstormWithHail": "Thundahstorm wif hail",
       "unknown": ""
     }
   }
