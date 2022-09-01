@@ -1,59 +1,59 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Moduel 4 displaying teh graphs ov ur runnin Dash. instanz.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "CPU Multi-Coer View"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Storagzzz Multi-Driveh View"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Ues Compact View"
       },
       "graphs": {
-        "label": "",
+        "label": "Graphz",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "Storagzzz",
+          "network": "Netwerk",
+          "gpu": "GPU"
         }
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "No Dash. survis findz. plz add wan 2 ur Homarr dashboard or set Dash. URL in teh moduel opshuns",
+      "noInformation": "Cannot acquier informashun frum dash. - r u runnin teh latest vershun?"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Storagzzz",
+        "label": "Storagzzz:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Netwerk",
+        "label": "Netwerk:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
