@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "Latência",
-    "description": "Permite verificar se o serviço está ativo ou retorna um código de estado HTTP específico."
+    "name": "",
+    "description": ""
   },
   "states": {
-    "online": "Online {{response}}",
+    "online": "",
     "offline": "",
     "loading": ""
   }
