@@ -6,7 +6,7 @@
         "title": "Service hinzufügen",
         "form": {
             "validation": {
-                "invalidUrl": "Bitte gebe eine gültige URL an",
+                "invalidUrl": "Bitte geben Sie eine gültige URL ein",
                 "noStatusCodeSelected": "Wähle bitte einen Status Code"
             }
         },
@@ -102,7 +102,7 @@
                     },
                     "httpStatusCodes": {
                         "label": "HTTP Status Nummern",
-                        "placeholder": "Wähle eine valide Status Nummer",
+                        "placeholder": "Gültige Statuscodes auswählen",
                         "clearButtonLabel": "Auswahl löschen",
                         "nothingFound": "Nichts gefunden"
                     },
