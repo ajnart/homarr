@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "Data",
-    "description": "Mostrar a hora e a data atuais em um card",
+    "name": "",
+    "description": "",
     "settings": {
       "display24HourFormat": {
-        "label": "Mostrar tempo (24 horas)"
+        "label": ""
       }
     }
   }
