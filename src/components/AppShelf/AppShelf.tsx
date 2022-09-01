@@ -18,7 +18,7 @@ import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
 import { UsenetModule, TorrentsModule } from '../../modules';
 import TorrentsComponent from '../../modules/torrents/TorrentsModule';
-import UsenetComponent from '../../modules/usenet/UsenetModule';
+import { UsenetComponent } from '../../modules/usenet/UsenetModule';
 
 const AppShelf = (props: any) => {
   const { config, setConfig } = useConfig();
