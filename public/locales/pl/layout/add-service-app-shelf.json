@@ -6,7 +6,7 @@
         "title": "Dodaj usługę",
         "form": {
             "validation": {
-                "invalidUrl": "",
+                "invalidUrl": "Wprowadź prawidłowy adres URL",
                 "noStatusCodeSelected": ""
             }
         },
@@ -19,10 +19,10 @@
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "Adres URL ikony"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "Adres URL usługi"
                     },
                     "onClickUrl": {
                         "label": ""
