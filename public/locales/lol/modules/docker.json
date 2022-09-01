@@ -1,31 +1,31 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Dockah",
+    "description": "Allowz u 2 easily manaeg ur torrents"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Search by contaneah or imaeg naym"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Naym",
+      "image": "Imaeg",
+      "ports": "Portz",
+      "state": "Staet"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} moar"
     },
     "states": {
-      "running": "",
-      "created": "",
+      "running": "Runnin",
+      "created": "Creatd",
       "stopped": "",
       "unknown": ""
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
+      "title": "Add survis",
       "message": ""
     },
     "restart": {
@@ -64,6 +64,6 @@
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Dockah"
   }
 }
