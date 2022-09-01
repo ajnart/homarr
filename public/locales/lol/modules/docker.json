@@ -19,48 +19,48 @@
     "states": {
       "running": "Runnin",
       "created": "Creatd",
-      "stopped": "",
-      "unknown": ""
+      "stopped": "Stopped",
+      "unknown": "Unknown"
     }
   },
   "actionBar": {
     "addService": {
       "title": "Add survis",
-      "message": ""
+      "message": "Add survis 2 Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Restart"
     },
     "stop": {
-      "title": ""
+      "title": "Stawp"
     },
     "start": {
-      "title": ""
+      "title": "Start"
     },
-    "refreshData": "",
+    "refreshData": "Refresh daata",
     "addToHomarr": {
-      "title": ""
+      "title": "Add 2 Homarr"
     },
     "remove": {
-      "title": ""
+      "title": "Remoev"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "Contaneah {{containerName}} {{action}}ed",
+      "message": "Ur contaneah wuz successfully {{action}}ed"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Dockah integrashn faild",
+      "message": "Did u forget 2 mount teh dockah socket ?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Thar wuz an error"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Plz only add wan survis at tiem!"
     }
   },
   "actionIcon": {
