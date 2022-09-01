@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Accordion, Grid, Paper, Stack, useMantineColorScheme } from '@mantine/core';
+import {
+  Accordion,
+  Divider,
+  Grid,
+  Paper,
+  Stack,
+  Title,
+  useMantineColorScheme,
+} from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -128,8 +136,8 @@ const AppShelf = (props: any) => {
       (e) => e.category === undefined || e.category === null
     );
 
-    const usenetEnabled = config.modules?.[TorrentsModule.id]?.enabled ?? false;
-    const torrentEnabled = config.modules?.[UsenetModule.id]?.enabled ?? false;
+    const torrentEnabled = config.modules?.[TorrentsModule.id]?.enabled ?? false;
+    const usenetEnabled = config.modules?.[UsenetModule.id]?.enabled ?? false;
 
     const downloadEnabled = usenetEnabled || torrentEnabled;
     // Create an item with 0: true, 1: true, 2: true... For each category
@@ -164,7 +172,6 @@ const AppShelf = (props: any) => {
               <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
                 <Paper
-                  p="lg"
                   radius="lg"
                   style={{
                     background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
@@ -177,12 +184,17 @@ const AppShelf = (props: any) => {
                 >
                   {torrentEnabled && (
                     <>
+                      <Title size="h2">Torrents</Title>
                       <ModuleMenu module={TorrentsModule} />
                       <TorrentsComponent />
                     </>
                   )}
                   {usenetEnabled && (
                     <>
+                      {torrentEnabled && <Divider my="sm" />}
+                      <Title size="h2" mt={0}>
+                        Usenet
+                      </Title>
                       <ModuleMenu module={UsenetModule} />
                       <UsenetComponent />
                     </>
