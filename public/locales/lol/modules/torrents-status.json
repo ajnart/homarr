@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "Show teh current download sped ov supportd servicez",
     "settings": {
       "hideComplete": {
         "label": ""
@@ -11,10 +11,10 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Naym",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "Down",
+        "upload": "Up",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
