@@ -29,13 +29,13 @@
                     },
                     "serviceType": {
                         "label": "Rodzaj usługi",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "defaultValue": "Inna",
+                        "placeholder": "Wybierz jedną"
                     },
                     "category": {
                         "label": "Kategoria",
                         "placeholder": "Wybierz kategorię lub utwórz nową",
-                        "nothingFound": "",
+                        "nothingFound": "Nic nie znaleziono",
                         "createLabel": "+ Utwórz {{query}}"
                     },
                     "integrations": {
@@ -46,7 +46,7 @@
                                 "noKey": "Nieprawidłowy klucz"
                             },
                             "tip": {
-                                "text": "",
+                                "text": "Zdobądź swój klucz API",
                                 "link": ""
                             }
                         },
@@ -98,13 +98,13 @@
                 "title": "",
                 "form": {
                     "ping": {
-                        "label": ""
+                        "label": "Usługa ping"
                     },
                     "httpStatusCodes": {
                         "label": "",
                         "placeholder": "",
                         "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "nothingFound": "Nic nie znaleziono"
                     },
                     "openServiceInNewTab": {
                         "label": "Otwórz usługę w nowej karcie"
