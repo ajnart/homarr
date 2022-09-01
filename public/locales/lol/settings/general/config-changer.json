@@ -1,25 +1,25 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "Config loadah"
   },
   "modal": {
-    "title": "",
+    "title": "Chooz teh naym ov ur nu config",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "Config naym",
+        "placeholder": "Ur nu config naym"
       },
-      "submitButton": ""
+      "submitButton": "Confirm"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "Config saved",
+        "message": "Config saved as {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Download config",
     "delete": {
       "text": "",
       "notifications": {
