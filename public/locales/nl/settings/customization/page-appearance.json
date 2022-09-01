@@ -16,8 +16,8 @@
     "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "Eigen CSS",
+    "placeholder": "Eigen CSS wordt als laatste uitgevoerd"
   },
   "buttons": {
     "submit": "Indienen"
