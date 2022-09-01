@@ -1,13 +1,13 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Weafr",
+    "description": "Look up teh current weafr in ur locashun",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Display in Fahrenheit"
       },
       "location": {
-        "label": ""
+        "label": "Weafr locashun"
       }
     }
   },
@@ -26,7 +26,7 @@
       "snowShowers": "Snow showaz",
       "thunderstorm": "Thundahstorm",
       "thunderstormWithHail": "Thundahstorm wif hail",
-      "unknown": ""
+      "unknown": "Unknown"
     }
   }
 }
