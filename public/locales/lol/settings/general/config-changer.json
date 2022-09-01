@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": ""
+  },
+  "modal": {
+    "title": "",
+    "form": {
+      "configName": {
+        "label": "",
+        "placeholder": ""
+      },
+      "submitButton": ""
+    },
+    "events": {
+      "configSaved": {
+        "title": "",
+        "message": ""
+      }
+    }
+  },
+  "buttons": {
+    "download": "",
+    "delete": {
+      "text": "",
+      "notifications": {
+        "deleted": {
+          "title": "",
+          "message": ""
+        },
+        "deleteFailed": {
+          "title": "",
+          "message": ""
+        }
+      }
+    },
+    "saveCopy": ""
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "",
+        "message": ""
+      },
+      "loadedSuccessfully": {
+        "title": ""
+      }
+    },
+    "accept": {
+      "text": ""
+    },
+    "reject": {
+      "text": ""
+    }
+  }
+}
