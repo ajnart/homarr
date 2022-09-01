@@ -21,35 +21,35 @@
   "buttons": {
     "download": "Download config",
     "delete": {
-      "text": "",
+      "text": "Deleet config",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Config deleted",
+          "message": "Config deleted"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Config deleet faild",
+          "message": "Config deleet faild"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Saev copy"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Unabel 2 load config",
+        "message": "Cud not load ur config. Srsly Invalid JSON format."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Config {{configName}} loadd successfully"
       }
     },
     "accept": {
-      "text": ""
+      "text": "Drag filez hah 2 upload config. Support 4 JSON only."
     },
     "reject": {
-      "text": ""
+      "text": "Dis fiel format iz not supportd. Srsly plz only upload JSON."
     }
   }
 }
