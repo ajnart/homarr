@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Search Bar",
+    "description": "Search bar 2 search teh web, yootoob, Torrents or Overseerr"
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "Search teh web..."
   }
 }
