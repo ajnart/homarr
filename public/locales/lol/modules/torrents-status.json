@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Torrent",
     "description": "Show teh current download sped ov supportd servicez",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Hied completd torrentz"
       }
     }
   },
@@ -12,28 +12,28 @@
     "table": {
       "header": {
         "name": "Naym",
-        "size": "",
+        "size": "Bigness",
         "download": "Down",
         "upload": "Up",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progres"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "No torrents findz"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Current download sped",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} secondz aog",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "No supportd download clientz findz!",
+        "text": "Add download survis 2 view ur current downloadz"
       }
     }
   }
