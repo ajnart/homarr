@@ -7,10 +7,10 @@
         "label": "CPU Multi-Core View"
       },
       "storageMultiView": {
-        "label": "Speicher Multi-Laufwerk View"
+        "label": "Speicher Multi-Drive View"
       },
       "useCompactView": {
-        "label": "Kompakte Ansicht nutzen"
+        "label": "Kompaktmodus verwenden"
       },
       "graphs": {
         "label": "Graphen",
@@ -31,7 +31,7 @@
     "title": "Dash.",
     "errors": {
       "noService": "",
-      "noInformation": "Informationen konnten  nicht von Dash. geladen werden. Betriebst du die neuste Version?"
+      "noInformation": "Es können keine Informationen vom Dash. abgerufen werden. - Verwenden Sie die neueste Version?"
     },
     "graphs": {
       "storage": {
@@ -42,8 +42,8 @@
         "title": "Netzwerk",
         "label": "Netzwerk:",
         "metrics": {
-          "download": "Eingehend",
-          "upload": "Ausgehend"
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {
