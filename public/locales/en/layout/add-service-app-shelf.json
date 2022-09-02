@@ -95,11 +95,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "Advanced Options",
+                "title": "",
                 "form": {
-                    "ping": {
-                        "label": "Ping Service"
-                    },
                     "httpStatusCodes": {
                         "label": "HTTP Status Codes",
                         "placeholder": "Select valid status codes",
