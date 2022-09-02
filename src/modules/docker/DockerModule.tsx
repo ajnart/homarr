@@ -42,7 +42,9 @@ export default function DockerMenuButton(props: any) {
           setContainers(res.data);
           setSelection([]);
         })
-        .catch(() =>
+        .catch(() => {
+          // Remove containers from the list
+          setContainers([]);
           // Send an Error notification
           showNotification({
             autoClose: 1500,
@@ -50,8 +52,8 @@ export default function DockerMenuButton(props: any) {
             color: 'red',
             icon: <IconX />,
             message: t('errors.integrationFailed.message'),
-          })
-        );
+          });
+        });
     }, 300);
   }
   const exists = config.modules?.[DockerModule.id]?.enabled ?? false;
