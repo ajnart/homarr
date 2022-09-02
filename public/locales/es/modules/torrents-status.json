@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Mostrar la velocidad de descarga actual de los servicios compatibles",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Ocultar torrents completados"
       }
     }
   },
@@ -13,27 +13,27 @@
       "header": {
         "name": "Nombre",
         "size": "Tamaño",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "download": "Descarga",
+        "upload": "Subida",
+        "estimatedTimeOfArrival": "Tiempo restante",
+        "progress": "Completado %"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "No se han encontrado torrents"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Velocidad de descarga actual",
+      "download": "Velocidad de Descarga: {{download}}",
+      "upload": "Velocidad de subida: {{upload}}",
+      "timeSpan": "Hace {{seconds}} segundos",
+      "totalDownload": "Velocidad de Descarga: {{download}}/s",
+      "totalUpload": "Velocidad de Subida: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "¡No se han encontrado clientes de descarga compatibles!",
+        "text": "Añade un servicio de descarga para ver tus descargas actuales"
       }
     }
   }
