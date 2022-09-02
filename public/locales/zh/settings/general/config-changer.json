@@ -1,55 +1,55 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "配置加载器"
   },
   "modal": {
-    "title": "",
+    "title": "选择你的新配置的名称",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "配置名称",
+        "placeholder": "你的新配置名称"
       },
-      "submitButton": ""
+      "submitButton": "确认"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "保存的配置",
+        "message": "配置保存为 {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "下载配置",
     "delete": {
-      "text": "",
+      "text": "删除配置",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "配置删除",
+          "message": "配置删除"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "配置删除失败",
+          "message": "配置删除失败"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "保存一份副本"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "无法加载配置",
+        "message": "无法加载您的配置。无效的JSON格式。"
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "配置 {{configName}} ，成功加载。"
       }
     },
     "accept": {
-      "text": ""
+      "text": "在这里拖动文件来上传配置。只支持JSON。"
     },
     "reject": {
-      "text": ""
+      "text": "不支持这种文件格式。请只上传JSON。"
     }
   }
 }
