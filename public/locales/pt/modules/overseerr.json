@@ -7,22 +7,22 @@
     "item": {
       "buttons": {
         "askFor": "",
-        "cancel": "Cancelar",
-        "request": "Solicitar"
+        "cancel": "",
+        "request": ""
       },
       "alerts": {
         "automaticApproval": {
-          "title": "Usando chave da API",
-          "text": "Este pedido será aprovado automaticamente"
+          "title": "",
+          "text": ""
         }
       }
     },
     "seasonSelector": {
-      "caption": "Marque as temporadas que você deseja que sejam baixadas",
+      "caption": "",
       "table": {
         "header": {
-          "season": "Temporada",
-          "numberOfEpisodes": "Número de episódios"
+          "season": "",
+          "numberOfEpisodes": ""
         }
       }
     }
