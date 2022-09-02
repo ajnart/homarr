@@ -50,10 +50,34 @@ export const languages: Language[] = [
     emoji: '🇯🇵',
   },
   {
+    shortName: 'ko',
+    originalName: '한국어',
+    translatedName: 'Korean',
+    emoji: '🇰🇷',
+  },
+  {
+    shortName: 'lol',
+    originalName: 'LOLCAT',
+    translatedName: 'LOLCAT',
+    emoji: '🐱',
+  },
+  {
     shortName: 'nl',
     originalName: 'Nederlands',
     translatedName: 'Dutch',
     emoji: '🇳🇱',
+  },
+  {
+    shortName: 'pl',
+    originalName: 'Polski',
+    translatedName: 'Polish',
+    emoji: '🇵🇱',
+  },
+  {
+    shortName: 'pt',
+    originalName: 'Português',
+    translatedName: 'Portuguese',
+    emoji: '🇵🇹',
   },
   {
     shortName: 'ru',
@@ -62,10 +86,23 @@ export const languages: Language[] = [
     emoji: '🇷🇺',
   },
   {
+    shortName: 'sl',
+    originalName: 'Slovenščina',
+    translatedName: 'Slovenian',
+    emoji: '🇸🇮',
+  },
+
+  {
     shortName: 'sv',
     originalName: 'Svenska',
     translatedName: 'Swedish',
     emoji: '🇸🇪',
+  },
+  {
+    shortName: 'uk',
+    originalName: 'Українська',
+    translatedName: 'Ukrainian',
+    emoji: '🇺🇦',
   },
   {
     shortName: 'zh',
