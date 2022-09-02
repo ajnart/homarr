@@ -1,71 +1,71 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "ドッカー",
+    "description": "トレントを簡単に管理することができます。"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "コンテナ名、画像名で検索"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "名称",
+      "image": "画像",
+      "ports": "港湾",
+      "state": "状態"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} も"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "ランニング",
+      "created": "作成",
+      "stopped": "停止中",
+      "unknown": "不明"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "サービス追加",
+      "message": "ホーマーにサービスを追加する"
     },
     "restart": {
-      "title": ""
+      "title": "再スタート"
     },
     "stop": {
-      "title": ""
+      "title": "停止"
     },
     "start": {
-      "title": ""
+      "title": "スタート"
     },
     "refreshData": {
       "title": ""
     },
     "remove": {
-      "title": ""
+      "title": "削除"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "ホーマーに追加"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "コンテナ {{containerName}} {{action}}ed",
+      "message": "あなたのコンテナは正常に {{action}}ed。"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Dockerとの連携に失敗",
+      "message": "ドッカーソケットをマウントするのを忘れていませんか？"
     },
     "unknownError": {
-      "title": ""
+      "title": "エラーが発生しました"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "一度に1つのサービスのみを追加してください"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "ドッカー"
   }
 }
