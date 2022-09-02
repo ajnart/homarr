@@ -39,7 +39,7 @@ export function AddItemShelfButton(props: any) {
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
-        <AddAppShelfItemForm setOpened={setOpened} />
+        <AddAppShelfItemForm close={setOpened} />
       </Modal>
       <Tooltip withinPortal label={t('actionIcon.tooltip')}>
         <ActionIcon
@@ -82,8 +82,8 @@ function MatchService(name: string, form: any) {
 
 const DEFAULT_ICON = '/favicon.png';
 
-export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } & any) {
-  const { setOpened } = props;
+export function AddAppShelfItemForm(props: { close: () => void } & any) {
+  const { close } = props;
   const { config, setConfig } = useConfig();
   const [isLoading, setLoading] = useState(false);
   const { t } = useTranslation('layout/add-service-app-shelf');
@@ -200,7 +200,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               services: [...config.services, newForm],
             });
           }
-          setOpened(false);
+          close(false);
           form.reset();
         })}
       >
@@ -393,7 +393,7 @@ export function AddAppShelfItemForm(props: { setOpened: (b: boolean) => void } &
               )}
             </Stack>
           </Tabs.Panel>
-          <Tabs.Panel value={t('modal.tabs.advancedOptions.title')}>
+          <Tabs.Panel value="Advanced Options">
             <Stack>
               <MultiSelect
                 required
