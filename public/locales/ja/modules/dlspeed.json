@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "ダウンロード速度",
+    "description": "対応サービスの現在のダウンロード速度を表示する"
   }
 }
