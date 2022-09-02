@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Allowz u 2 check if teh survis iz up or returns specific HTTP status coed."
+  },
+  "states": {
+    "online": "Onlien {{response}}",
+    "offline": "Offlien {{response}}",
+    "loading": "Loadin..."
+  }
+}
