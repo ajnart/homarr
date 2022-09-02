@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Lägg till tjänst"
     },
     "modal": {
-        "title": "",
+        "title": "Lägg till tjänst",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "Ange en giltig URL",
+                "noStatusCodeSelected": "Välj en statuskod"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Inställningar",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Tjänstens namn",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "URL till ikon"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "URL för tjänst"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "URL vid klick"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "Typ av tjänst",
+                        "defaultValue": "Övrigt",
+                        "placeholder": "Välj en"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "Kategori",
+                        "placeholder": "Välj en kategori eller skapa en ny",
+                        "nothingFound": "Ingenting hittades",
+                        "createLabel": "+ Skapa {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "API-nyckel",
+                            "placeholder": "Din API-nyckel",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Ogiltig nyckel"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "Hämta din API-nyckel",
+                                "link": "här."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Användarnamn",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Ogiltigt användarnamn"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Lösenord",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Ogiltigt lösenord"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Lösenord",
+                                "placeholder": "lösenord",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Ogiltigt lösenord"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Användarnamn",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Ogiltigt användarnamn"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Lösenord",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Ogiltigt lösenord"
                                 }
                             }
                         }
@@ -95,20 +95,23 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Avancerade Inställningar",
                 "form": {
+                    "ping": {
+                        "label": "Ping tjänst"
+                    },
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "HTTP-statuskoder",
+                        "placeholder": "Välj giltiga statuskoder",
+                        "clearButtonLabel": "Rensa markering",
+                        "nothingFound": "Ingenting hittades"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "Öppna tjänsten i ny flik"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "Lägg till tjänst"
                         }
                     }
                 }
