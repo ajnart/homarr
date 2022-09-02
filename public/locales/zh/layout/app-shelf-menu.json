@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "",
+    "title": "修改一个服务",
     "buttons": {
-      "save": ""
+      "save": "保存服务"
     }
   },
   "menu": {
     "labels": {
-      "settings": "",
-      "dangerZone": ""
+      "settings": "设置",
+      "dangerZone": "危险区"
     },
     "actions": {
-      "edit": "",
-      "delete": ""
+      "edit": "编辑",
+      "delete": "删除"
     }
   }
 }

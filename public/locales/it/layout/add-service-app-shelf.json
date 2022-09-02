@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Aggiungere un servizio"
     },
     "modal": {
-        "title": "",
+        "title": "Aggiungi servizio",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "Inserire un URL valido",
+                "noStatusCodeSelected": "Selezionare un codice di stato"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Opzioni",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Nome del servizio",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "Icona URL"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "URL del servizio"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "URL al clic"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "Tipo di servizio",
+                        "defaultValue": "Altro",
+                        "placeholder": "Sceglietene uno"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "Categoria",
+                        "placeholder": "Selezionare una categoria o crearne una nuova",
+                        "nothingFound": "Non è stato trovato nulla",
+                        "createLabel": "+ Creare {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "Chiave API",
+                            "placeholder": "La vostra chiave API",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Chiave non valida"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "Ottenere la chiave API",
+                                "link": "qui."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Nome utente",
+                                "placeholder": "amministratore",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Nome utente non valido"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Password",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Password non valida"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Password",
+                                "placeholder": "password",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Password non valida"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Nome utente",
+                                "placeholder": "amministratore",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Nome utente non valido"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Password",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Password non valida"
                                 }
                             }
                         }
@@ -95,23 +95,23 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Opzioni avanzate",
                 "form": {
                     "ping": {
-                        "label": ""
+                        "label": "Servizio Ping"
                     },
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "Codici di stato HTTP",
+                        "placeholder": "Selezionare i codici di stato validi",
+                        "clearButtonLabel": "Cancella la selezione",
+                        "nothingFound": "Non è stato trovato nulla"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "Aprire il servizio in una nuova scheda"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "Aggiungi servizio"
                         }
                     }
                 }

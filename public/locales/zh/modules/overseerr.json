@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "监督员r",
+    "description": "允许你从Overseerr/Jellyseerr搜索和添加媒体"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
-        "cancel": "",
-        "request": ""
+        "askFor": "请登录 {{title}}",
+        "cancel": "取消",
+        "request": "要求"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "使用API密钥",
+          "text": "这一请求将被自动批准"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "勾选你想要下载的季节",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "季节",
+          "numberOfEpisodes": "节目的数量"
         }
       }
     }

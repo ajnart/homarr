@@ -1,11 +1,11 @@
 {
-  "title": "",
+  "title": "Motore di ricerca",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Utilizzate i prefissi !yt e !t davanti alla vostra domanda per cercare rispettivamente su YouTube o su un Torrent.",
+    "placeholderTip": "%s può essere usato come segnaposto per la query."
   },
   "customEngine": {
-    "label": "",
-    "placeholder": ""
+    "label": "URL di interrogazione",
+    "placeholder": "URL di query personalizzato"
   }
 }

@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "Ładowanie konfiguracji"
   },
   "modal": {
     "title": "Wybierz nazwę nowej konfiguracji",
@@ -9,7 +9,7 @@
         "label": "Nazwa konfiguracji",
         "placeholder": "Twoja nowa nazwa konfiguracji"
       },
-      "submitButton": ""
+      "submitButton": "Potwierdź"
     },
     "events": {
       "configSaved": {

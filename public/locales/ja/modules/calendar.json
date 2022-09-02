@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "カレンダー",
+    "description": "今後のリリースを表示するためのカレンダーモジュールです。SonarrとRadarrのAPIと連動しています。",
     "settings": {
       "sundayStart": {
-        "label": ""
+        "label": "週の始まりは日曜日"
       }
     }
   }
