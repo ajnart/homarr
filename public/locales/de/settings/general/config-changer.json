@@ -3,11 +3,11 @@
     "label": "Konfigurationslader"
   },
   "modal": {
-    "title": "Wähle einen Namen für deine neue Konfiguration",
+    "title": "Wählen Sie den Namen für Ihre neue Konfiguration",
     "form": {
       "configName": {
-        "label": "Konfigurations Name",
-        "placeholder": "Dein neuer Konfigurtionsname"
+        "label": "Konfigurationsname",
+        "placeholder": "Ihr neuer Konfigurationsname"
       },
       "submitButton": "Bestätigen"
     },
@@ -25,7 +25,7 @@
       "notifications": {
         "deleted": {
           "title": "Konfiguration gelöscht",
-          "message": "Konfiguration wurde gelöscht"
+          "message": "Konfiguration gelöscht"
         },
         "deleteFailed": {
           "title": "Löschung der Konfiguration fehlgeschlagen",
@@ -39,14 +39,14 @@
     "notifications": {
       "invalidConfig": {
         "title": "Konfiguration konnte nicht geladen werden",
-        "message": "Konfiguration konnte nicht geladen werden. Invalides JSON"
+        "message": "Die Konfiguration konnte nicht geladen werden. Ungültiges JSON-Format."
       },
       "loadedSuccessfully": {
-        "title": "Konfiguration {{configName}} wurde erfolgreich geladen"
+        "title": "Konfiguration {{configName}} erfolgreich geladen"
       }
     },
     "accept": {
-      "text": "Ziehe Konfigurationen hier um sie hochzuladen. Es werden nur JSON Dateien unterstützt."
+      "text": "Ziehen Sie Dateien hierher, um eine Konfiguration hochzuladen. Unterstützung nur für JSON."
     },
     "reject": {
       "text": "Dieses Dateiformat wird nicht unterstützt. Bitte lade nur JSON hoch."
