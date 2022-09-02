@@ -3195,13 +3195,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"country-flag-icons@npm:^1.5.5":
-  version: 1.5.5
-  resolution: "country-flag-icons@npm:1.5.5"
-  checksum: 367f38330a7f0f94836c7859575e1ae75655a04e2104ba060de75827d82bd84413fd7752c9166efa93123eb0d1dd1db1658ef22683511dcfa1c16f2caffe892d
-  languageName: node
-  linkType: hard
-
 "cpu-features@npm:~0.0.4":
   version: 0.0.4
   resolution: "cpu-features@npm:0.0.4"
@@ -4820,7 +4813,6 @@ __metadata:
     axios: ^0.27.2
     consola: ^2.15.3
     cookies-next: ^2.1.1
-    country-flag-icons: ^1.5.5
     dayjs: ^1.11.5
     dockerode: ^3.3.2
     embla-carousel-react: ^7.0.0

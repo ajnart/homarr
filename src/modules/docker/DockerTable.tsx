@@ -6,14 +6,11 @@ import {
   createStyles,
   ScrollArea,
   TextInput,
-  Modal,
 } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
-import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
-import { tryMatchService } from '../../tools/addToHomarr';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
