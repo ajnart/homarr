@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "title": "Modify survis",
+    "buttons": {
+      "save": "Saev survis"
+    }
+  },
+  "menu": {
+    "labels": {
+      "settings": "Settingz",
+      "dangerZone": "Dangr zoen"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Deleet"
+    }
+  }
+}
