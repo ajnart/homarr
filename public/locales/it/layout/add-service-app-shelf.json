@@ -95,11 +95,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "Opzioni avanzate",
+                "title": "",
                 "form": {
-                    "ping": {
-                        "label": "Servizio Ping"
-                    },
                     "httpStatusCodes": {
                         "label": "Codici di stato HTTP",
                         "placeholder": "Selezionare i codici di stato validi",
