@@ -7,7 +7,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "",
-        "text": "Adicione um serviço de download para ver seus downloads atuais"
+        "text": ""
       }
     }
   },
@@ -21,10 +21,10 @@
   },
   "queue": {
     "header": {
-      "name": "Nome",
-      "size": "Tamanho",
-      "eta": "TED",
-      "progress": "Progresso"
+      "name": "",
+      "size": "",
+      "eta": "",
+      "progress": ""
     },
     "empty": "",
     "error": {
@@ -35,8 +35,8 @@
   },
   "history": {
     "header": {
-      "name": "Nome",
-      "size": "Tamanho",
+      "name": "",
+      "size": "",
       "duration": ""
     },
     "empty": "",
