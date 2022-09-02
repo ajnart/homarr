@@ -53,7 +53,7 @@ export default function DockerMenuButton(props: any) {
             icon: <IconX />,
             message: t('errors.integrationFailed.message'),
           });
-      });
+        });
     }, 300);
   }
   const exists = config.modules?.[DockerModule.id]?.enabled ?? false;
