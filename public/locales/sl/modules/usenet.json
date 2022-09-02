@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Ni bilo najdenih podprtih odjemalcev za prenos!",
+        "text": "Dodajte storitev prenosa za ogled trenutnih prenosov"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "",
+    "history": ""
+  },
+  "info": {
+    "sizeLeft": "",
+    "paused": ""
+  },
+  "queue": {
+    "header": {
+      "name": "Ime",
+      "size": "Velikost",
+      "eta": "ETA",
+      "progress": "Napredek"
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  },
+  "history": {
+    "header": {
+      "name": "Ime",
+      "size": "Velikost",
+      "duration": ""
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  }
+}
