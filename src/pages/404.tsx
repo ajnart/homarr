@@ -98,7 +98,7 @@ export default function Custom404() {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['404'])),
+      ...(await serverSideTranslations(locale, ['common'])),
       // Will be passed to the page component as props
     },
   };

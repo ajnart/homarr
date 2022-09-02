@@ -6,6 +6,7 @@ import axios from 'axios';
 import { IconCheck, IconX } from '@tabler/icons';
 import { useRouter } from 'next/router';
 import { useForm } from '@mantine/form';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // TODO: Add links to the wiki articles about the login process.
 export default function AuthenticationTitle() {
@@ -112,4 +113,13 @@ export default function AuthenticationTitle() {
       </Paper>
     </Container>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      // Will be passed to the page component as props
+    },
+  };
 }
