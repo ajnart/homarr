@@ -1,0 +1,25 @@
+{
+  "pageTitle": {
+    "label": "Paeg Titel",
+    "placeholder": "Homarr 🦞"
+  },
+  "logo": {
+    "label": "Logooo",
+    "placeholder": "/img/logo.png"
+  },
+  "favicon": {
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
+  },
+  "background": {
+    "label": "Bakground",
+    "placeholder": "/img/background.png"
+  },
+  "customCSS": {
+    "label": "Custom CSS",
+    "placeholder": "Custom CSS will bees executed last"
+  },
+  "buttons": {
+    "submit": "Submit"
+  }
+}

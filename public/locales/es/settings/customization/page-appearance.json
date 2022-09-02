@@ -8,14 +8,18 @@
     "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
     "label": "Fondo",
-    "placeholder": ""
+    "placeholder": "/img/background.png"
+  },
+  "customCSS": {
+    "label": "CSS Personalizado",
+    "placeholder": "El CSS personalizado se ejecutará en último lugar"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Enviar"
   }
 }

@@ -6,6 +6,6 @@
   },
   "customEngine": {
     "label": "Suchanfrage URL",
-    "placeholder": "Benutzerdefinierte Adresse"
+    "placeholder": "Benutzerdefinierte Abfrage-URL"
   }
 }

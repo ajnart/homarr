@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "Config loadah"
+  },
+  "modal": {
+    "title": "Chooz teh naym ov ur nu config",
+    "form": {
+      "configName": {
+        "label": "Config naym",
+        "placeholder": "Ur nu config naym"
+      },
+      "submitButton": "Confirm"
+    },
+    "events": {
+      "configSaved": {
+        "title": "Config saved",
+        "message": "Config saved as {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Download config",
+    "delete": {
+      "text": "Deleet config",
+      "notifications": {
+        "deleted": {
+          "title": "Config deleted",
+          "message": "Config deleted"
+        },
+        "deleteFailed": {
+          "title": "Config deleet faild",
+          "message": "Config deleet faild"
+        }
+      }
+    },
+    "saveCopy": "Saev copy"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Unabel 2 load config",
+        "message": "Cud not load ur config. Srsly Invalid JSON format."
+      },
+      "loadedSuccessfully": {
+        "title": "Config {{configName}} loadd successfully"
+      }
+    },
+    "accept": {
+      "text": "Drag filez hah 2 upload config. Support 4 JSON only."
+    },
+    "reject": {
+      "text": "Dis fiel format iz not supportd. Srsly plz only upload JSON."
+    }
+  }
+}

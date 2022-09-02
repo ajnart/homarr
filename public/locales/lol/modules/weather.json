@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Weafr",
+    "description": "Look up teh current weafr in ur locashun",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Display in Fahrenheit"
+      },
+      "location": {
+        "label": "Weafr locashun"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Cweaw",
+      "mainlyClear": "Manely cweaw",
+      "fog": "Fog",
+      "drizzle": "Drizzel",
+      "freezingDrizzle": "Freezing drizzel",
+      "rain": "Wain",
+      "freezingRain": "Freezing wain",
+      "snowFall": "Snow fallz",
+      "snowGrains": "Snow granes",
+      "rainShowers": "Raen showaz",
+      "snowShowers": "Snow showaz",
+      "thunderstorm": "Thundahstorm",
+      "thunderstormWithHail": "Thundahstorm wif hail",
+      "unknown": "Unknown"
+    }
+  }
+}

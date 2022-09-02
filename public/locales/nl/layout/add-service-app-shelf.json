@@ -95,8 +95,11 @@
                 }
             },
             "advancedOptions": {
-                "title": "Geavanceerde opties",
+                "title": "Geavanceerde instellingen",
                 "form": {
+                    "ping": {
+                        "label": "Ping service"
+                    },
                     "httpStatusCodes": {
                         "label": "HTTP-statuscodes",
                         "placeholder": "Selecteer geldige statuscodes",

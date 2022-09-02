@@ -8,12 +8,16 @@
     "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
+    "label": "Ikona",
     "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
+    "label": "Tło",
     "placeholder": "/img/background.png"
+  },
+  "customCSS": {
+    "label": "Niestandardowy CSS",
+    "placeholder": "Niestandardowy CSS zostanie wykonany jako ostatni"
   },
   "buttons": {
     "submit": ""

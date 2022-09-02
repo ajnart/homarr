@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Data",
+    "description": "Pokaż bieżącą datę i godzinę w karcie",
     "settings": {
       "display24HourFormat": {
-        "label": ""
+        "label": "Wyświetlaj pełną godzinę (24 godziny)"
       }
     }
   }

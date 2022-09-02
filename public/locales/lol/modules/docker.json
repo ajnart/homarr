@@ -1,0 +1,71 @@
+{
+  "descriptor": {
+    "name": "Dockah",
+    "description": "Allowz u 2 easily manaeg ur torrents"
+  },
+  "search": {
+    "placeholder": "Search by contaneah or imaeg naym"
+  },
+  "table": {
+    "header": {
+      "name": "Naym",
+      "image": "Imaeg",
+      "ports": "Portz",
+      "state": "Staet"
+    },
+    "body": {
+      "portCollapse": "{{ports}} moar"
+    },
+    "states": {
+      "running": "Runnin",
+      "created": "Creatd",
+      "stopped": "Stopped",
+      "unknown": "Unknown"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Add survis",
+      "message": "Add survis 2 Homarr"
+    },
+    "restart": {
+      "title": "Restart"
+    },
+    "stop": {
+      "title": "Stawp"
+    },
+    "start": {
+      "title": "Start"
+    },
+    "refreshData": {
+      "title": ""
+    },
+    "remove": {
+      "title": "Remoev"
+    },
+    "addToHomarr": {
+      "title": "Add 2 Homarr"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "Contaneah {{containerName}} {{action}}ed",
+      "message": "Ur contaneah wuz successfully {{action}}ed"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Dockah integrashn faild",
+      "message": "Did u forget 2 mount teh dockah socket ?"
+    },
+    "unknownError": {
+      "title": "Thar wuz an error"
+    },
+    "oneServiceAtATime": {
+      "title": "Plz only add wan survis at tiem!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Dockah"
+  }
+}

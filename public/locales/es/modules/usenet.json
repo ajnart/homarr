@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Mostrar la cola y el Historial de los servicios compatibles"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "¡No se han encontrado clientes de descarga compatibles!",
+        "text": "Añade un servicio de descarga para ver tus descargas actuales"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Cola",
+    "history": "Historial"
+  },
+  "info": {
+    "sizeLeft": "Tamaño restante",
+    "paused": "Pausado"
+  },
+  "queue": {
+    "header": {
+      "name": "Nombre",
+      "size": "Tamaño",
+      "eta": "Tiempo restante",
+      "progress": "Completado %"
+    },
+    "empty": "La cola está vacía.",
+    "error": {
+      "title": "¡Error!",
+      "message": "Se ha producido un error mientras se obtenían los datos:"
+    },
+    "paused": "Pausado"
+  },
+  "history": {
+    "header": {
+      "name": "Nombre",
+      "size": "Tamaño",
+      "duration": "Duración de la descarga"
+    },
+    "empty": "La cola está vacía.",
+    "error": {
+      "title": "¡Error!",
+      "message": "Se ha producido un error mientras se obtenían los datos:"
+    },
+    "paused": "Pausado"
+  }
+}

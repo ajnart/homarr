@@ -6,8 +6,8 @@
         "title": "Añadir servicio",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "Por favor, introduzca una URL válida",
+                "noStatusCodeSelected": "Por favor, seleccione un código de estado"
             }
         },
         "tabs": {
@@ -25,7 +25,7 @@
                         "label": "URL del servicio"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "URL Directa"
                     },
                     "serviceType": {
                         "label": "Tipo de servicio",
@@ -34,60 +34,60 @@
                     },
                     "category": {
                         "label": "Categoría",
-                        "placeholder": "Seleccione una categoría o cree una nueva",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "placeholder": "Selecciona una categoría o cree una nueva",
+                        "nothingFound": "No se ha encontrado ningún resultado",
+                        "createLabel": "+ Crear {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "Clave API",
+                            "placeholder": "Tu clave de la API",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Clave inválida"
                             },
                             "tip": {
-                                "text": "",
+                                "text": "Obtén tu clave de API",
                                 "link": "aquí."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Usuario",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Nombre de usuario incorrecto"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Contraseña",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Contraseña Incorrecta"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Contraseña",
+                                "placeholder": "contraseña",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Contraseña Incorrecta"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Usuario",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Nombre de usuario incorrecto"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Contraseña",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Contraseña Incorrecta"
                                 }
                             }
                         }
@@ -95,16 +95,19 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Opciones Avanzadas",
                 "form": {
+                    "ping": {
+                        "label": "Servicio de Latencia"
+                    },
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "Códigos de estado HTTP",
+                        "placeholder": "Seleccionar códigos de estado válidos",
+                        "clearButtonLabel": "Borrar selección",
+                        "nothingFound": "No se ha encontrado ningún resultado"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "Abrir el servicio en una nueva pestaña"
                     },
                     "buttons": {
                         "submit": {

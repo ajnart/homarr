@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Te permite gestionar facilmente tus torrents"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Buscar por nombre de contendor o nombre de la imagen"
   },
   "table": {
     "header": {
@@ -17,7 +17,7 @@
       "portCollapse": "{{ports}} más"
     },
     "states": {
-      "running": "",
+      "running": "En ejecución",
       "created": "Creado",
       "stopped": "Detenido",
       "unknown": "Desconocido"
@@ -37,30 +37,32 @@
     "start": {
       "title": "Comenzar"
     },
-    "refreshData": "Actualizar datos",
-    "addToHomarr": {
-      "title": "Añadir a Homarr"
+    "refreshData": {
+      "title": "Actualizar datos"
     },
     "remove": {
       "title": "Eliminar"
+    },
+    "addToHomarr": {
+      "title": "Añadir a Homarr"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "Contenedor {{containerName}} {{action}} do",
+      "message": "Su contenedor ha sido {{action}} con éxito"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Error en la integración con Docker",
+      "message": "¿Has olvidado montar el socket de docker?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Se ha producido un error"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Por favor, añade un servicio cada vez!"
     }
   },
   "actionIcon": {
