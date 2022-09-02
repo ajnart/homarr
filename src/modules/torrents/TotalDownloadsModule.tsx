@@ -49,7 +49,7 @@ export default function TotalDownloadsComponent() {
     const interval = setSafeInterval(() => {
       // Send one request with each download service inside
       axios
-        .post('/api/modules/downloads')
+        .post('/api/modules/torrents')
         .then((response) => {
           setTorrents(response.data);
         })
