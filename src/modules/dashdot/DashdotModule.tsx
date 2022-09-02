@@ -29,11 +29,11 @@ export const DashdotModule = asModule({
       name: 'descriptor.settings.graphs.label',
       value: ['CPU', 'RAM', 'Storage', 'Network'],
       options: [
-        'descriptor.settings.graphs.options.cpu',
-        'descriptor.settings.graphs.options.ram',
-        'descriptor.settings.graphs.options.storage',
-        'descriptor.settings.graphs.options.network',
-        'descriptor.settings.graphs.options.GPU',
+        'CPU',
+        'RAM',
+        'Storage',
+        'Network',
+        'GPU',
       ],
     },
     url: {
