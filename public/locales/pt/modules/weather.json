@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Mostrar em Fahrenheit"
+      },
+      "location": {
+        "label": "Localização do tempo"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Limpar",
+      "mainlyClear": "",
+      "fog": "Névoa",
+      "drizzle": "",
+      "freezingDrizzle": "",
+      "rain": "Chuva",
+      "freezingRain": "",
+      "snowFall": "",
+      "snowGrains": "",
+      "rainShowers": "",
+      "snowShowers": "",
+      "thunderstorm": "",
+      "thunderstormWithHail": "",
+      "unknown": "Desconhecido"
+    }
+  }
+}
