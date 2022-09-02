@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "",
+    "title": "サービスの変更",
     "buttons": {
-      "save": ""
+      "save": "セーブサービス"
     }
   },
   "menu": {
     "labels": {
-      "settings": "",
-      "dangerZone": ""
+      "settings": "設定",
+      "dangerZone": "デンジャーゾーン"
     },
     "actions": {
-      "edit": "",
-      "delete": ""
+      "edit": "編集",
+      "delete": "削除"
     }
   }
 }
