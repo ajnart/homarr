@@ -18,7 +18,6 @@ module.exports = {
       'sl',
       'sv',
       'uk',
-      'zh ',
     ],
     fallbackLng: 'en',
     localeDetection: true,
