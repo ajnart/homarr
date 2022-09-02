@@ -1,8 +1,8 @@
 {
   "actions": {
-    "save": ""
+    "save": "Risparmiare"
   },
-  "tip": "",
+  "tip": "Suggerimento: ",
   "time": {
     "seconds": "",
     "minutes": "",
