@@ -13,14 +13,7 @@
         "label": "Use Compact View"
       },
       "graphs": {
-        "label": "Graphs",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Storage",
-          "network": "Network",
-          "gpu": "GPU"
-        }
+        "label": "Graphs"
       },
       "url": {
         "label": "Dash. URL"
