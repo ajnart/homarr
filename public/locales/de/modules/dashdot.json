@@ -1,24 +1,24 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "A module for displaying the graphs of your running Dash. instance.",
+    "description": "Ein Modul, welches die Graphen aus einer laufenden Dash. Instanz anzeigt.",
     "settings": {
       "cpuMultiView": {
         "label": "CPU Multi-Core View"
       },
       "storageMultiView": {
-        "label": "Storage Multi-Drive View"
+        "label": "Speicher Multi-Laufwerk View"
       },
       "useCompactView": {
-        "label": "Use Compact View"
+        "label": "Kompakte Ansicht nutzen"
       },
       "graphs": {
-        "label": "Graphs",
+        "label": "Graphen",
         "options": {
           "cpu": "CPU",
           "ram": "RAM",
-          "storage": "Storage",
-          "network": "Network",
+          "storage": "Speicher",
+          "network": "Netzwerk",
           "gpu": "GPU"
         }
       },

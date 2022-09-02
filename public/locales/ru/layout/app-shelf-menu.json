@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "Modify a service",
+    "title": "Редактировать сервис",
     "buttons": {
-      "save": "Save service"
+      "save": "Сохранить"
     }
   },
   "menu": {
     "labels": {
-      "settings": "Settings",
-      "dangerZone": "Danger zone"
+      "settings": "Настройки",
+      "dangerZone": "Опасная зона"
     },
     "actions": {
-      "edit": "Edit",
-      "delete": "Delete"
+      "edit": "Изменить",
+      "delete": "Удалить"
     }
   }
 }

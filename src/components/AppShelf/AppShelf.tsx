@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Accordion, Grid, Paper, Stack, useMantineColorScheme } from '@mantine/core';
+import {
+  Accordion,
+  Divider,
+  Grid,
+  Paper,
+  Stack,
+  Title,
+  useMantineColorScheme,
+} from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -16,8 +24,9 @@ import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
-import { DownloadsModule } from '../../modules';
-import DownloadComponent from '../../modules/downloads/DownloadsModule';
+import { UsenetModule, TorrentsModule } from '../../modules';
+import TorrentsComponent from '../../modules/torrents/TorrentsModule';
+import { UsenetComponent } from '../../modules/usenet/UsenetModule';
 
 const AppShelf = (props: any) => {
   const { config, setConfig } = useConfig();
@@ -126,7 +135,11 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
-    const downloadEnabled = config.modules?.[DownloadsModule.id]?.enabled ?? false;
+
+    const torrentEnabled = config.modules?.[TorrentsModule.id]?.enabled ?? false;
+    const usenetEnabled = config.modules?.[UsenetModule.id]?.enabled ?? false;
+
+    const downloadEnabled = usenetEnabled || torrentEnabled;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // TODO: Style accordion so that the bar is transparent to the user settings
@@ -159,7 +172,6 @@ const AppShelf = (props: any) => {
               <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
                 <Paper
-                  p="lg"
                   radius="lg"
                   style={{
                     background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
@@ -170,8 +182,23 @@ const AppShelf = (props: any) => {
                 ${(config.settings.appOpacity || 100) / 100}`,
                   }}
                 >
-                  <ModuleMenu module={DownloadsModule} />
-                  <DownloadComponent />
+                  {torrentEnabled && (
+                    <>
+                      <Title size="h2">Torrents</Title>
+                      <ModuleMenu module={TorrentsModule} />
+                      <TorrentsComponent />
+                    </>
+                  )}
+                  {usenetEnabled && (
+                    <>
+                      {torrentEnabled && <Divider my="sm" />}
+                      <Title size="h2" mt={0}>
+                        Usenet
+                      </Title>
+                      <ModuleMenu module={UsenetModule} />
+                      <UsenetComponent />
+                    </>
+                  )}
                 </Paper>
               </Accordion.Panel>
             </Accordion.Item>
@@ -183,7 +210,8 @@ const AppShelf = (props: any) => {
   return (
     <Stack>
       {getItems()}
-      <ModuleWrapper mt="xl" module={DownloadsModule} />
+      <ModuleWrapper mt="xl" module={TorrentsModule} />
+      <ModuleWrapper mt="xl" module={UsenetModule} />
     </Stack>
   );
 };

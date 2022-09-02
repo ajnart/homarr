@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Download Speed",
-    "description": "Show the current download speed of supported services"
+    "name": "Downloadsnelheid",
+    "description": "Toon de huidige downloadsnelheid van ondersteunde diensten"
   }
 }

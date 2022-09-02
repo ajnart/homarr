@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "title": "Spreminjanje storitve",
+    "buttons": {
+      "save": "Shrani storitev"
+    }
+  },
+  "menu": {
+    "labels": {
+      "settings": "Nastavitve",
+      "dangerZone": "Nevarno območje"
+    },
+    "actions": {
+      "edit": "Uredi",
+      "delete": "Izbriši"
+    }
+  }
+}

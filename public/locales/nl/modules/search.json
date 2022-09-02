@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Search Bar",
-    "description": "Search bar to search the web, youtube, torrents or overseerr"
+    "name": "Zoekbalk",
+    "description": "Zoekbalk om te zoeken op het web, youtube, torrents of overseerr"
   },
   "input": {
-    "placeholder": "Search the web..."
+    "placeholder": "Doorzoek het web..."
   }
 }

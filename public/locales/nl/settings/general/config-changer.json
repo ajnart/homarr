@@ -1,55 +1,55 @@
 {
   "configSelect": {
-    "label": "Config loader"
+    "label": "Configuratie lader"
   },
   "modal": {
-    "title": "Choose the name of your new config",
+    "title": "Kies de naam van uw nieuwe configuratie",
     "form": {
       "configName": {
-        "label": "Config name",
-        "placeholder": "Your new config name"
+        "label": "Configuratie naam",
+        "placeholder": "Uw nieuwe configuratienaam"
       },
-      "submitButton": "Confirm"
+      "submitButton": "Bevestig"
     },
     "events": {
       "configSaved": {
-        "title": "Config saved",
-        "message": "Config saved as {{configName}}"
+        "title": "Configuratie opgeslagen",
+        "message": "Configuratie opgeslagen als {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "Download config",
+    "download": "Download configuratie",
     "delete": {
-      "text": "Delete config",
+      "text": "Verwijder configuratie",
       "notifications": {
         "deleted": {
-          "title": "Config deleted",
-          "message": "Config deleted"
+          "title": "Configuratie verwijderd",
+          "message": "Configuratie verwijderd"
         },
         "deleteFailed": {
-          "title": "Config delete failed",
-          "message": "Config delete failed"
+          "title": "Configuratie verwijderen mislukt",
+          "message": "Configuratie verwijderen mislukt"
         }
       }
     },
-    "saveCopy": "Save a copy"
+    "saveCopy": "Sla op als een kopie"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "Unable to load config",
-        "message": "Could not load your config. Invalid JSON format."
+        "title": "Kan configuratie niet laden",
+        "message": "Kon uw configuratie niet laden. Ongeldig JSON formaat."
       },
       "loadedSuccessfully": {
-        "title": "Config {{configName}} loaded successfully"
+        "title": "Configuratie {{configName}} succesvol geladen"
       }
     },
     "accept": {
-      "text": "Drag files here to upload a config. Support for JSON only."
+      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON."
     },
     "reject": {
-      "text": "This file format is not supported. Please only upload JSON."
+      "text": "Dit bestandsformaat wordt niet ondersteund. Upload a.u.b. alleen JSON."
     }
   }
 }

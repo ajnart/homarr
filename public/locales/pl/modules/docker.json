@@ -1,0 +1,69 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "search": {
+    "placeholder": ""
+  },
+  "table": {
+    "header": {
+      "name": "",
+      "image": "Obraz",
+      "ports": "Porty",
+      "state": "Status"
+    },
+    "body": {
+      "portCollapse": ""
+    },
+    "states": {
+      "running": "Uruchomione",
+      "created": "",
+      "stopped": "Zatrzymane",
+      "unknown": ""
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Dodaj usługę",
+      "message": "Dodaj usługę do Homarra"
+    },
+    "restart": {
+      "title": ""
+    },
+    "stop": {
+      "title": "Zatrzymać"
+    },
+    "start": {
+      "title": "Uruchom"
+    },
+    "refreshData": "",
+    "addToHomarr": {
+      "title": ""
+    },
+    "remove": {
+      "title": "Usuń"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "",
+      "message": ""
+    },
+    "unknownError": {
+      "title": "Wystąpił błąd"
+    },
+    "oneServiceAtATime": {
+      "title": ""
+    }
+  },
+  "actionIcon": {
+    "tooltip": ""
+  }
+}
