@@ -1,8 +1,8 @@
 {
   "actions": {
-    "save": "Salvar"
+    "save": ""
   },
-  "tip": "Dica: ",
+  "tip": "",
   "time": {
     "seconds": "",
     "minutes": "",
