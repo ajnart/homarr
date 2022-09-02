@@ -155,20 +155,47 @@ const AppShelf = (props: any) => {
           }}
         >
           {categoryList.map((category, idx) => (
-            <Accordion.Item key={category} value={idx.toString()}>
+            <Accordion.Item
+              style={{
+                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+              key={category}
+              value={idx.toString()}
+            >
               <Accordion.Control>{category}</Accordion.Control>
               <Accordion.Panel>{getItems(category)}</Accordion.Panel>
             </Accordion.Item>
           ))}
           {/* Return the item for all services without category */}
           {noCategory && noCategory.length > 0 ? (
-            <Accordion.Item key="Other" value="Other">
+            <Accordion.Item
+              style={{
+                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+              key="Other"
+              value="Other"
+            >
               <Accordion.Control>{t('accordions.others.text')}</Accordion.Control>
               <Accordion.Panel>{getItems()}</Accordion.Panel>
             </Accordion.Item>
           ) : null}
           {downloadEnabled ? (
-            <Accordion.Item key="Downloads" value="Your downloads">
+            <Accordion.Item
+              style={{
+                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+              key="Downloads"
+              value="Your downloads"
+            >
               <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
                 <Paper
