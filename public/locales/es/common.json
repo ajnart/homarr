@@ -2,5 +2,10 @@
   "actions": {
     "save": "Guardar"
   },
-  "tip": "Consejo: "
+  "tip": "Consejo: ",
+  "time": {
+    "seconds": "segundos",
+    "minutes": "minutos",
+    "hours": "horas"
+  }
 }
