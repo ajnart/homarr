@@ -2,5 +2,10 @@
   "actions": {
     "save": "Shrani"
   },
-  "tip": "Nasvet: "
+  "tip": "Nasvet: ",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  }
 }
