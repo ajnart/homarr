@@ -11,15 +11,15 @@
   "card": {
     "table": {
       "header": {
-        "name": "Nome",
-        "size": "Tamanho",
+        "name": "",
+        "size": "",
         "download": "",
         "upload": "",
-        "estimatedTimeOfArrival": "TED",
-        "progress": "Progresso"
+        "estimatedTimeOfArrival": "",
+        "progress": ""
       },
       "body": {
-        "nothingFound": "Nenhum torrent encontrado"
+        "nothingFound": ""
       }
     },
     "lineChart": {
@@ -33,7 +33,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "",
-        "text": "Adicione um serviço de download para ver seus downloads atuais"
+        "text": ""
       }
     }
   }
