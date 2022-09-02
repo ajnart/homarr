@@ -7,10 +7,10 @@
         "label": "CPU Multi-Core View"
       },
       "storageMultiView": {
-        "label": "Speicher Multi-Laufwerk View"
+        "label": "Speicher Multi-Drive View"
       },
       "useCompactView": {
-        "label": "Kompakte Ansicht nutzen"
+        "label": "Kompaktmodus verwenden"
       },
       "graphs": {
         "label": "Graphen",
@@ -30,8 +30,8 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "Kein Dash. Service gefunden. Bitte füge einen zu deinem Homarr Dashboard hinzu oder setze eine Dash. URL in den Modul-Optionen.",
-      "noInformation": "Informationen konnten  nicht von Dash. geladen werden. Betriebst du die neuste Version?"
+      "noService": "",
+      "noInformation": "Es können keine Informationen vom Dash. abgerufen werden. - Verwenden Sie die neueste Version?"
     },
     "graphs": {
       "storage": {
@@ -42,8 +42,8 @@
         "title": "Netzwerk",
         "label": "Netzwerk:",
         "metrics": {
-          "download": "Eingehend",
-          "upload": "Ausgehend"
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {
