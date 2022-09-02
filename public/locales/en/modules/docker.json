@@ -37,12 +37,14 @@
     "start": {
       "title": "Start"
     },
-    "refreshData": "Refresh data",
-    "addToHomarr": {
-      "title": "Add to Homarr"
+    "refreshData": {
+      "title": "Refresh data"
     },
     "remove": {
       "title": "Remove"
+    },
+    "addToHomarr": {
+      "title": "Add to Homarr"
     }
   },
   "messages": {

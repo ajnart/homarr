@@ -1,9 +1,19 @@
-import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
+import {
+  Table,
+  Checkbox,
+  Group,
+  Badge,
+  createStyles,
+  ScrollArea,
+  TextInput,
+  Modal,
+} from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
-import { useTranslation } from 'next-i18next';
-
 import Dockerode from 'dockerode';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
+import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
+import { tryMatchService } from '../../tools/addToHomarr';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
@@ -105,6 +115,7 @@ export default function DockerTable({
         icon={<IconSearch size={14} />}
         value={search}
         onChange={handleSearchChange}
+        disabled={usedContainers.length === 0}
       />
       <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
         <thead>
@@ -112,9 +123,10 @@ export default function DockerTable({
             <th style={{ width: 40 }}>
               <Checkbox
                 onChange={toggleAll}
-                checked={selection.length === usedContainers.length}
+                checked={selection.length === usedContainers.length && selection.length > 0}
                 indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
                 transitionDuration={0}
+                disabled={usedContainers.length === 0}
               />
             </th>
             <th>{t('table.header.name')}</th>
