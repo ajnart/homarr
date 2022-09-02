@@ -95,8 +95,11 @@
                 }
             },
             "advancedOptions": {
-                "title": "Дополнительные настройки",
+                "title": "",
                 "form": {
+                    "ping": {
+                        "label": ""
+                    },
                     "httpStatusCodes": {
                         "label": "Коды состояния HTTP",
                         "placeholder": "Выберите подходящие коды состояния",
