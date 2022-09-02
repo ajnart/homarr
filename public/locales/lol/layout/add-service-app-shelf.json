@@ -1,0 +1,121 @@
+{
+    "actionIcon": {
+        "tooltip": "Add a survis"
+    },
+    "modal": {
+        "title": "Add survis",
+        "form": {
+            "validation": {
+                "invalidUrl": "Plz entr valid URL",
+                "noStatusCodeSelected": "Plz select status coed"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Opshuns",
+                "form": {
+                    "serviceName": {
+                        "label": "Survis naym",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "Icon URL"
+                    },
+                    "serviceUrl": {
+                        "label": "Survis URL"
+                    },
+                    "onClickUrl": {
+                        "label": "On Click URL"
+                    },
+                    "serviceType": {
+                        "label": "Survis tyep",
+                        "defaultValue": "Otha",
+                        "placeholder": "Pick wan"
+                    },
+                    "category": {
+                        "label": "Categowee",
+                        "placeholder": "Select categowee or creaet nu wan",
+                        "nothingFound": "Nofin findz",
+                        "createLabel": "+ Makz {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API key",
+                            "placeholder": "Ur API key",
+                            "validation": {
+                                "noKey": "Invalid Key"
+                            },
+                            "tip": {
+                                "text": "Git ur API key",
+                                "link": "here."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Usernaem",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Invalid usernaem"
+                                }
+                            },
+                            "password": {
+                                "label": "Password",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Invalid password"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Password",
+                                "placeholder": "password",
+                                "validation": {
+                                    "invalidPassword": "Invalid password"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Usernaem",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Invalid usernaem"
+                                }
+                            },
+                            "password": {
+                                "label": "Password",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Invalid password"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "Advancd Opshuns",
+                "form": {
+                    "ping": {
+                        "label": "Ping Survis"
+                    },
+                    "httpStatusCodes": {
+                        "label": "HTTP Status Codes",
+                        "placeholder": "Select valid status coeds",
+                        "clearButtonLabel": "Clear selecshun",
+                        "nothingFound": "Nofin findz"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Open survis in nu tab"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Add survis"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
