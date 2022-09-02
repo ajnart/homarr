@@ -1,14 +1,14 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Impostazioni",
+  "tooltip": "Impostazioni",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Comune",
+    "customizations": "Personalizzazioni"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Caricate il vostro file di configurazione trascinandolo sulla pagina!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Realizzato con ❤️ da @"
   }
 }

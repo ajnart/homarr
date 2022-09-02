@@ -6,8 +6,8 @@
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nessun client di download supportato trovato!",
+        "text": "Aggiungere un servizio di download per visualizzare i download correnti"
       }
     }
   },
@@ -21,10 +21,10 @@
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "Nome",
+      "size": "Dimensione",
+      "eta": "ETA",
+      "progress": "Progressi"
     },
     "empty": "",
     "error": {
@@ -35,8 +35,8 @@
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
+      "name": "Nome",
+      "size": "Dimensione",
       "duration": ""
     },
     "empty": "",

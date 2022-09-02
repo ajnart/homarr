@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "平",
+    "description": "允许你检查服务是否启动或返回一个特定的HTTP状态代码。"
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "在线 {{response}}",
+    "offline": "离线 {{response}}",
+    "loading": "正在加载..."
   }
 }

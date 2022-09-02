@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Umożliwia łatwe zarządzanie torrentami"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Szukaj według kontenera nazwy lub obrazu"
   },
   "table": {
     "header": {

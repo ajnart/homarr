@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "增加一项服务"
     },
     "modal": {
-        "title": "",
+        "title": "添加服务",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "请输入一个有效的URL",
+                "noStatusCodeSelected": "请选择一个状态代码"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "选项",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "服务名称",
+                        "placeholder": "丛书"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "图标URL"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "服务网址"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "点击URL时"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "服务类型",
+                        "defaultValue": "其他",
+                        "placeholder": "挑选一个"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "类别",
+                        "placeholder": "选择一个类别或创建一个新类别",
+                        "nothingFound": "没有发现",
+                        "createLabel": "+ 创建 {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "API密钥",
+                            "placeholder": "你的API密钥",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "无效钥匙"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "获取你的API密钥",
+                                "link": "这里。"
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "帐号",
+                                "placeholder": "管理员",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "无效的用户名"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "密码",
+                                "placeholder": "管理员",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "无效密码"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "密码",
+                                "placeholder": "密码",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "无效密码"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "帐号",
+                                "placeholder": "管理员",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "无效的用户名"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "密码",
+                                "placeholder": "管理员",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "无效密码"
                                 }
                             }
                         }
@@ -95,23 +95,23 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "高级选项",
                 "form": {
                     "ping": {
-                        "label": ""
+                        "label": "平移服务"
                     },
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "HTTP状态代码",
+                        "placeholder": "选择有效的状态代码",
+                        "clearButtonLabel": "清除选择",
+                        "nothingFound": "没有发现"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "在新标签中打开服务"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "添加服务"
                         }
                     }
                 }

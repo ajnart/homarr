@@ -1,59 +1,59 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "ダッシュ",
+    "description": "実行中のDash.インスタンスのグラフを表示するためのモジュールです。",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "CPUマルチコアビュー"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "ストレージマルチドライブビュー"
       },
       "useCompactView": {
-        "label": ""
+        "label": "コンパクトビューを使用する"
       },
       "graphs": {
-        "label": "",
+        "label": "グラフ",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "CPU",
+          "ram": "ラム",
+          "storage": "ストレージ",
+          "network": "ネットワーク",
+          "gpu": "GPU"
         }
       },
       "url": {
-        "label": ""
+        "label": "ダッシュURL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "ダッシュ",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "Dash.サービスが見当たりません。HOMARダッシュボードに追加するか、モジュールオプションでDash.サービスを設定してください。のURLをモジュールオプションで設定してください。",
+      "noInformation": "dashから情報を取得できません。- は最新版ですか？"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "ストレージ",
+        "label": "ストレージです。"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "ネットワーク",
+        "label": "ネットワーク",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "ダウン",
+          "upload": "上"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "ラム"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }

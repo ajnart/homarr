@@ -1,25 +1,25 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "页面标题",
+    "placeholder": "霍马尔 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "徽标",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "徽标（Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "背景介绍",
+    "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "自定义CSS",
+    "placeholder": "自定义CSS将被最后执行"
   },
   "buttons": {
-    "submit": ""
+    "submit": "提交"
   }
 }

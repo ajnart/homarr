@@ -1,8 +1,8 @@
 {
   "actions": {
-    "save": ""
+    "save": "保存"
   },
-  "tip": "",
+  "tip": "ヒント ",
   "time": {
     "seconds": "",
     "minutes": "",

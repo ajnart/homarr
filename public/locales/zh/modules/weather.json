@@ -1,32 +1,32 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "天气",
+    "description": "查询你所在地区的当前天气",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "显示单位：华氏"
       },
       "location": {
-        "label": ""
+        "label": "天气位置"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
-      "unknown": ""
+      "clear": "清楚",
+      "mainlyClear": "主要是清楚",
+      "fog": "雾",
+      "drizzle": "细雨",
+      "freezingDrizzle": "冰冷的细雨",
+      "rain": "雨",
+      "freezingRain": "冻雨",
+      "snowFall": "降雪",
+      "snowGrains": "雪粒",
+      "rainShowers": "阵雨",
+      "snowShowers": "阵雪",
+      "thunderstorm": "雷雨天气",
+      "thunderstormWithHail": "雷暴与冰雹",
+      "unknown": "不详"
     }
   }
 }

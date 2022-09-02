@@ -1,14 +1,14 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "设置",
+  "tooltip": "设置",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "普通",
+    "customizations": "定制化"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "将你的配置文件拖放到页面上，就可以上传了!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "用❤️制作的@"
   }
 }

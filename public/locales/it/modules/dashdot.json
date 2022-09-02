@@ -1,59 +1,59 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Un modulo per visualizzare i grafici dell'istanza di Dash in esecuzione.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "Vista CPU Multi-Core"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Visualizzazione dell'unità multipla di archiviazione"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Utilizzare la vista compatta"
       },
       "graphs": {
-        "label": "",
+        "label": "Grafici",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "CPU",
+          "ram": "RAM",
+          "storage": "Immagazzinamento",
+          "network": "Rete",
+          "gpu": "GPU"
         }
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "Nessun servizio Dash. trovato. Aggiungerne uno alla dashboard di Homarr o impostare un Dash. nelle opzioni del modulo",
+      "noInformation": "Impossibile acquisire informazioni da dash. - state eseguendo l'ultima versione?"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Immagazzinamento",
+        "label": "Stoccaggio:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Rete",
+        "label": "Rete:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "In basso",
+          "upload": "Su"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
