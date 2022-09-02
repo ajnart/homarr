@@ -1,59 +1,59 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "潇洒。",
+    "description": "用于显示运行中的Dash.instance的图表的模块。",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "CPU多核视图"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "存储多驱动器视图"
       },
       "useCompactView": {
-        "label": ""
+        "label": "使用紧凑型视图"
       },
       "graphs": {
-        "label": "",
+        "label": "图表",
         "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
+          "cpu": "CPU",
+          "ram": "内存",
+          "storage": "储存",
+          "network": "网络",
+          "gpu": "GPU"
         }
       },
       "url": {
-        "label": ""
+        "label": "潇洒。网址"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "潇洒。",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "没有找到Dash.服务。请在你的Homarr仪表板上添加一个，或者在模块选项中设置一个Dash.URL。URL在模块选项中",
+      "noInformation": "无法从仪表盘获取信息。- 你运行的是最新版本吗？"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "储存",
+        "label": "储存。"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "网络",
+        "label": "网络。",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "下降",
+          "upload": "上"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "内存"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }

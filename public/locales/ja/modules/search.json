@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "検索バー",
+    "description": "ウェブ、Youtube、Torrent、Overseerrを検索するための検索バー"
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "ウェブで検索..."
   }
 }

@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sovrintendenti",
+    "description": "Permette di cercare e aggiungere media da Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
-        "cancel": "",
-        "request": ""
+        "askFor": "Chiedete di {{title}}",
+        "cancel": "Annullamento",
+        "request": "Richiesta"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "Utilizzo della chiave API",
+          "text": "Questa richiesta verrà approvata automaticamente"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Spuntare le stagioni che si desidera scaricare.",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "Stagione",
+          "numberOfEpisodes": "Numero di episodi"
         }
       }
     }

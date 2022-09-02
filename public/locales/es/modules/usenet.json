@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Usenet",
-    "description": "Mostrar la cola y el Historial de los servicios compatibles"
+    "name": "",
+    "description": ""
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "Cola",
-    "history": "Historial"
+    "queue": "",
+    "history": ""
   },
   "info": {
-    "sizeLeft": "Tamaño restante",
-    "paused": "Pausado"
+    "sizeLeft": "",
+    "paused": ""
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "Tiempo restante",
       "progress": "Completado %"
     },
-    "empty": "La cola está vacía.",
+    "empty": "",
     "error": {
-      "title": "¡Error!",
-      "message": "Se ha producido un error mientras se obtenían los datos:"
+      "title": "",
+      "message": ""
     },
-    "paused": "Pausado"
+    "paused": ""
   },
   "history": {
     "header": {
       "name": "Nombre",
       "size": "Tamaño",
-      "duration": "Duración de la descarga"
+      "duration": ""
     },
-    "empty": "La cola está vacía.",
+    "empty": "",
     "error": {
-      "title": "¡Error!",
-      "message": "Se ha producido un error mientras se obtenían los datos:"
+      "title": "",
+      "message": ""
     },
-    "paused": "Pausado"
+    "paused": ""
   }
 }

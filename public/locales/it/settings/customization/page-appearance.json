@@ -1,25 +1,25 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Titolo della pagina",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Logo",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "Sfondo",
+    "placeholder": "/img/sfondo.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "CSS personalizzato",
+    "placeholder": "I CSS personalizzati saranno eseguiti per ultimi"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Invia"
   }
 }

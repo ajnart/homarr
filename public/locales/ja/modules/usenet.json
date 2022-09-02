@@ -6,8 +6,8 @@
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "対応するダウンロードクライアントが見つかりません",
+        "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
       }
     }
   },
@@ -21,10 +21,10 @@
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "名称",
+      "size": "サイズ",
+      "eta": "ETA",
+      "progress": "進捗状況"
     },
     "empty": "",
     "error": {
@@ -35,8 +35,8 @@
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
+      "name": "名称",
+      "size": "サイズ",
       "duration": ""
     },
     "empty": "",

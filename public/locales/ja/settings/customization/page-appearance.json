@@ -1,25 +1,25 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "ページタイトル",
+    "placeholder": "ホーマー"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "ロゴマーク",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "ファビコン",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "背景",
+    "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "カスタムCSS",
+    "placeholder": "カスタムCSSは最後に実行されます"
   },
   "buttons": {
-    "submit": ""
+    "submit": "提出"
   }
 }

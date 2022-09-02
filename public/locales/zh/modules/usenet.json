@@ -6,8 +6,8 @@
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "没有找到支持的下载客户端!",
+        "text": "添加下载服务，查看你当前的下载量"
       }
     }
   },
@@ -21,10 +21,10 @@
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "命名",
+      "size": "尺寸",
+      "eta": "ETA",
+      "progress": "进展"
     },
     "empty": "",
     "error": {
@@ -35,8 +35,8 @@
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
+      "name": "命名",
+      "size": "尺寸",
       "duration": ""
     },
     "empty": "",

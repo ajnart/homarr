@@ -25,7 +25,7 @@
                         "label": "Adres URL usługi"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "Adres URL kliknięcia"
                     },
                     "serviceType": {
                         "label": "Rodzaj usługi",
@@ -103,7 +103,7 @@
                     "httpStatusCodes": {
                         "label": "",
                         "placeholder": "",
-                        "clearButtonLabel": "",
+                        "clearButtonLabel": "Wyczyść wybór",
                         "nothingFound": "Nic nie znaleziono"
                     },
                     "openServiceInNewTab": {

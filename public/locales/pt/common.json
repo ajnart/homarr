@@ -4,8 +4,8 @@
   },
   "tip": "Dica: ",
   "time": {
-    "seconds": "segundos",
-    "minutes": "minutos",
-    "hours": "horas"
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
   }
 }

@@ -4,16 +4,16 @@
     "description": "Sprawdź aktualną pogodę w swojej lokalizacji",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Wyświetlaj w Fahrenheitach"
       },
       "location": {
-        "label": ""
+        "label": "Lokalizacja pogody"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
+      "clear": "Bezchmurnie",
       "mainlyClear": "",
       "fog": "Mgła",
       "drizzle": "Mżawka",
@@ -24,8 +24,8 @@
       "snowGrains": "",
       "rainShowers": "",
       "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "thunderstorm": "Burza",
+      "thunderstormWithHail": "Burza z gradem",
       "unknown": "Nieznany"
     }
   }
