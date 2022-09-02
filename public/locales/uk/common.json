@@ -2,5 +2,10 @@
   "actions": {
     "save": "Зберегти"
   },
-  "tip": "Підказка: "
+  "tip": "Підказка: ",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  }
 }
