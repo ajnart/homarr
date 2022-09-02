@@ -37,7 +37,7 @@ export default function TotalDownloadsComponent() {
         service.type === 'Transmission' ||
         service.type === 'Deluge'
     ) ?? [];
-    const { t } = useTranslation(`modules/${TotalDownloadsModule.id}`);
+  const { t } = useTranslation(`modules/${TotalDownloadsModule.id}`);
 
   const [torrentHistory, torrentHistoryHandlers] = useListState<torrentHistory>([]);
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);

@@ -1,2 +1,2 @@
-export { DownloadsModule } from './DownloadsModule';
+export { TorrentsModule } from './TorrentsModule';
 export { TotalDownloadsModule } from './TotalDownloadsModule';

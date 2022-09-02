@@ -1,0 +1,11 @@
+{
+  "title": "Silnik wyszukiwania",
+  "tips": {
+    "generalTip": "",
+    "placeholderTip": ""
+  },
+  "customEngine": {
+    "label": "",
+    "placeholder": ""
+  }
+}

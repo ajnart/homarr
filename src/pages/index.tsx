@@ -50,6 +50,7 @@ export async function getServerSideProps({
     'modules/date',
     'modules/calendar',
     'modules/dlspeed',
+    'modules/usenet',
     'modules/search',
     'modules/torrents-status',
     'modules/weather',

@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Show the current download speed of supported services",
+    "description": "Zeige die aktuellen Downloadgeschwindigkeiten von unterstützten Services",
     "settings": {
       "hideComplete": {
-        "label": "Hide completed torrents"
+        "label": "Abgeschlossene Torrents ausblenden"
       }
     }
   },
@@ -15,7 +15,7 @@
         "size": "Grösse",
         "download": "Eingehend",
         "upload": "Ausgehend",
-        "estimatedTimeOfArrival": "Vorraussichtlicher Abschluss",
+        "estimatedTimeOfArrival": "Voraussichtlicher Abschluss",
         "progress": "Fortschritt"
       },
       "body": {
@@ -32,7 +32,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Keine unterstützten Download Clients gefunden",
+        "title": "Keine unterstützten Download-Clients gefunden!",
         "text": "Füge einen Download Service hinzu, um deine derzeitigen Downloads zu sehen"
       }
     }

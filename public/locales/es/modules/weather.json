@@ -1,32 +1,32 @@
 {
   "descriptor": {
-    "name": "Weather",
-    "description": "Look up the current weather in your location",
+    "name": "Clima",
+    "description": "",
     "settings": {
       "displayInFahrenheit": {
-        "label": "Display in Fahrenheit"
+        "label": "Mostrar en Fahrenheit"
       },
       "location": {
-        "label": "Weather location"
+        "label": "Ubicación del clima"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "Clear",
-      "mainlyClear": "Mainly clear",
-      "fog": "Fog",
-      "drizzle": "Drizzle",
-      "freezingDrizzle": "Freezing drizzle",
-      "rain": "Rain",
-      "freezingRain": "Freezing rain",
-      "snowFall": "Snow fall",
-      "snowGrains": "Snow grains",
-      "rainShowers": "Rain showers",
-      "snowShowers": "Snow showers",
-      "thunderstorm": "Thunderstorm",
-      "thunderstormWithHail": "Thunderstorm with hail",
-      "unknown": "Unknown"
+      "clear": "",
+      "mainlyClear": "",
+      "fog": "Niebla",
+      "drizzle": "Llovizna",
+      "freezingDrizzle": "Llovizna helada",
+      "rain": "Lluvia",
+      "freezingRain": "Lluvia helada",
+      "snowFall": "Caída de nieve",
+      "snowGrains": "Granos de nieve",
+      "rainShowers": "",
+      "snowShowers": "",
+      "thunderstorm": "",
+      "thunderstormWithHail": "",
+      "unknown": "Desconocido"
     }
   }
 }
