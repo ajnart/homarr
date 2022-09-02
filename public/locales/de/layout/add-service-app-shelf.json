@@ -71,7 +71,7 @@
                                 "label": "Passwort",
                                 "placeholder": "passwort",
                                 "validation": {
-                                    "invalidPassword": "Invalides Passwort"
+                                    "invalidPassword": "Ungültiges Passwort"
                                 }
                             }
                         },
@@ -80,14 +80,14 @@
                                 "label": "Benutzername",
                                 "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": "Invalider Benutzername"
+                                    "invalidUsername": "Ungültiger Nutzername"
                                 }
                             },
                             "password": {
                                 "label": "Passwort",
                                 "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": "Invalides Passwort"
+                                    "invalidPassword": "Ungültiges Passwort"
                                 }
                             }
                         }
