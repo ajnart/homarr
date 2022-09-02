@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Pokaż bieżącą prędkość pobierania obsługiwanych usług",
     "settings": {
       "hideComplete": {
         "label": "Ukryj ukończone torrenty"
@@ -11,19 +11,19 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Nazwa",
         "size": "Rozmiar",
-        "download": "",
-        "upload": "",
+        "download": "Pobieranie",
+        "upload": "Udostępnianie",
         "estimatedTimeOfArrival": "ETA",
-        "progress": ""
+        "progress": "Postęp"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Nie znaleziono torrentów"
       }
     },
     "lineChart": {
-      "title": "",
+      "title": "Aktualna prędkość pobierania",
       "download": "",
       "upload": "",
       "timeSpan": "{{seconds}} sekund temu",
