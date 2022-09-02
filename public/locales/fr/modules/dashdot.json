@@ -31,7 +31,7 @@
     "title": "Dash.",
     "errors": {
       "noService": "Aucun service Dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir l'URL du service Dash. dans les options du module",
-      "noInformation": "Impossible d'acquérir des informations de dashdot - Utilisez-vous la dernière version ?"
+      "noInformation": "Impossible d'acquérir des informations de Dash. - Utilisez-vous la dernière version ?"
     },
     "graphs": {
       "storage": {
