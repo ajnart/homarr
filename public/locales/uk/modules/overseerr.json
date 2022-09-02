@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Дозволяє вам шукати і додавати медіа з Overseerr/Jellyseerr"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Попросити {{title}}",
+        "cancel": "Скасувати",
+        "request": "Запит"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Використовуючи API ключ",
+          "text": "Цей запит буде автоматично підтверджено"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Позначте сезони, які ви хочете завантажити",
+      "table": {
+        "header": {
+          "season": "Сезон",
+          "numberOfEpisodes": "Кількість серій"
+        }
+      }
+    }
+  }
+}
