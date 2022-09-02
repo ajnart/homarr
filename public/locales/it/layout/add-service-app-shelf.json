@@ -97,6 +97,9 @@
             "advancedOptions": {
                 "title": "",
                 "form": {
+                    "ping": {
+                        "label": ""
+                    },
                     "httpStatusCodes": {
                         "label": "",
                         "placeholder": "",
