@@ -1,12 +1,11 @@
 import { Group, Select, Stack, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import getUnicodeFlagIcon from 'country-flag-icons/unicode';
 
 import { forwardRef, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { getCookie, setCookie } from 'cookies-next';
-import { getLanguageByCode, Language } from '../../languages/language';
+import { getLanguageByCode, Language } from '../../tools/language';
 
 export default function LanguageSwitch() {
   const { t, i18n } = useTranslation('settings/general/internationalization');
@@ -21,7 +20,7 @@ export default function LanguageSwitch() {
     ? locales.map((localeItem) => ({
         value: localeItem,
         label: getLanguageByCode(localeItem).originalName,
-        icon: getUnicodeFlagIcon(localeItem),
+        icon: getLanguageByCode(localeItem).emoji,
         language: getLanguageByCode(localeItem),
       }))
     : [];
@@ -59,7 +58,7 @@ export default function LanguageSwitch() {
   return (
     <Stack>
       <Select
-        icon={<Text>{getUnicodeFlagIcon(getLanguageByCode(selectedLanguage).shortName)}</Text>}
+        icon={<Text>{getLanguageByCode(selectedLanguage).emoji}</Text>}
         label={t('label')}
         data={data}
         itemComponent={SelectItem}
@@ -69,7 +68,7 @@ export default function LanguageSwitch() {
         defaultValue={locale}
         searchable
         filter={(value, item) => {
-          const selectItems = item as unknown as { value: string, language: Language };
+          const selectItems = item as unknown as { value: string; language: Language };
           return (
             selectItems.language.originalName.trim().includes(value.trim()) ||
             selectItems.language.translatedName.trim().includes(value.trim())
@@ -97,7 +96,7 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   ({ language, image, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
-        <Text>{getUnicodeFlagIcon(language.shortName)}</Text>
+        <Text>{language.emoji}</Text>
 
         <div>
           <Text size="sm">

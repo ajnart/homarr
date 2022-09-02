@@ -4,8 +4,6 @@ import { useTranslation } from 'next-i18next';
 
 import Dockerode from 'dockerode';
 import { useEffect, useState } from 'react';
-import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
-import { tryMatchService } from '../../tools/addToHomarr';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({

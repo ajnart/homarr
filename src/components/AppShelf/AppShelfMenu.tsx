@@ -23,7 +23,13 @@ export default function AppShelfMenu(props: any) {
         onClose={() => setOpened(false)}
         title={t('modal.title')}
       >
-        <AddAppShelfItemForm setOpened={setOpened} {...service} message={t('modal.buttons.save')} />
+        <AddAppShelfItemForm
+          config={config}
+          setConfig={setConfig}
+          setOpened={setOpened}
+          {...service}
+          message={t('modal.buttons.save')}
+        />
       </Modal>
       <Menu
         withinPortal
