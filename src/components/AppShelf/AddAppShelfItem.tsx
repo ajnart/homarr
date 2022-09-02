@@ -210,7 +210,6 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
               }),
             });
           } else {
-            console.log(newForm);
             setConfig({
               ...config,
               services: [...config.services, newForm],
