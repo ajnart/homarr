@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "サービスを追加する"
     },
     "modal": {
-        "title": "",
+        "title": "サービス追加",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "有効なURLを入力してください",
+                "noStatusCodeSelected": "ステータスコードを選択してください"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "オプション",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "サービス名",
+                        "placeholder": "プレックス"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "アイコンURL"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "サービスURL"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "クリック時URL"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "サービス形態",
+                        "defaultValue": "その他",
+                        "placeholder": "選んでください"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "カテゴリー",
+                        "placeholder": "カテゴリーを選択する、または新規に作成する",
+                        "nothingFound": "何も見つかりません",
+                        "createLabel": "+ Create {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "APIキー",
+                            "placeholder": "お客様のAPIキー",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "無効なキー"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "APIキーの取得",
+                                "link": "をご覧ください。"
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "ユーザー名",
+                                "placeholder": "アドミン",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "ユーザー名が無効です"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "パスワード",
+                                "placeholder": "アドミニストレーター",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "パスワードが無効です"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "パスワード",
+                                "placeholder": "暗証番号",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "パスワードが無効です"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "ユーザー名",
+                                "placeholder": "アドミン",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "ユーザー名が無効です"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "パスワード",
+                                "placeholder": "アドミニストレーター",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "パスワードが無効です"
                                 }
                             }
                         }
@@ -95,23 +95,23 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "詳細オプション",
                 "form": {
                     "ping": {
-                        "label": ""
+                        "label": "Pingサービス"
                     },
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "HTTPステータスコード",
+                        "placeholder": "有効なステータスコードを選択する",
+                        "clearButtonLabel": "クリア選択",
+                        "nothingFound": "何も見つかりません"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "新しいタブでサービスを開く"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "サービス追加"
                         }
                     }
                 }
