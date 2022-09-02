@@ -30,7 +30,7 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "Dash. storitev ni bila najdena. Prosimo, dodajte jo na nadzorno ploščo Homarr ali nastavite naslov URL dashdot v možnostih modula",
+      "noService": "",
       "noInformation": "Ne morem pridobiti informacij iz Dash. - ali uporabljate najnovejšo različico?"
     },
     "graphs": {
