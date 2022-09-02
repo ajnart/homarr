@@ -12,9 +12,9 @@
     "table": {
       "header": {
         "name": "Name",
-        "size": "Grösse",
-        "download": "Eingehend",
-        "upload": "Ausgehend",
+        "size": "Größe",
+        "download": "Down",
+        "upload": "Up",
         "estimatedTimeOfArrival": "Voraussichtlicher Abschluss",
         "progress": "Fortschritt"
       },
@@ -23,7 +23,7 @@
       }
     },
     "lineChart": {
-      "title": "Derzeitige Download Geschwindigkeit",
+      "title": "Aktuelle Downloadgeschwindigkeit",
       "download": "Download: {{download}}",
       "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} Sekunden zuvor",
@@ -33,7 +33,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "Keine unterstützten Download-Clients gefunden!",
-        "text": "Füge einen Download Service hinzu, um deine derzeitigen Downloads zu sehen"
+        "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
       }
     }
   }
