@@ -13,14 +13,7 @@
         "label": "Kompaktmodus verwenden"
       },
       "graphs": {
-        "label": "Graphen",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Speicher",
-          "network": "Netzwerk",
-          "gpu": "GPU"
-        }
+        "label": "Graphen"
       },
       "url": {
         "label": "Dash. URL"
