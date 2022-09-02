@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Allows you to see your Sabnzbd queue and history, pause and resume downloads"
   },
   "card": {
     "errors": {
