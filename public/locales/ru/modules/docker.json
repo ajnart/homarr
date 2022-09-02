@@ -37,11 +37,13 @@
     "start": {
       "title": ""
     },
-    "refreshData": "",
-    "addToHomarr": {
+    "refreshData": {
       "title": ""
     },
     "remove": {
+      "title": ""
+    },
+    "addToHomarr": {
       "title": ""
     }
   },
