@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": "Adicione um serviço de download para ver seus downloads atuais"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "",
+    "history": ""
+  },
+  "info": {
+    "sizeLeft": "",
+    "paused": ""
+  },
+  "queue": {
+    "header": {
+      "name": "Nome",
+      "size": "Tamanho",
+      "eta": "TED",
+      "progress": "Progresso"
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  },
+  "history": {
+    "header": {
+      "name": "Nome",
+      "size": "Tamanho",
+      "duration": ""
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  }
+}
