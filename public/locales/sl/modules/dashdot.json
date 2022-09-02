@@ -13,14 +13,7 @@
         "label": "Uporaba kompaktnega pogleda"
       },
       "graphs": {
-        "label": "Grafi",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Shramba",
-          "network": "Omrežje",
-          "gpu": "GPU"
-        }
+        "label": "Grafi"
       },
       "url": {
         "label": "Dash. URL"
