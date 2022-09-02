@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Панель пошуку",
+    "description": "Панель для пошуку в Інтернеті, Youtube, Torrents або Overseerr"
+  },
+  "input": {
+    "placeholder": "Пошук в Інтернеті..."
+  }
+}
