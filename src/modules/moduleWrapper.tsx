@@ -18,8 +18,7 @@ import { IModule } from './ModuleTypes';
 
 function getItems(module: IModule) {
   const { config, setConfig } = useConfig();
-  const { t } = useTranslation([module.id, 'common']);
-
+  const { t } = useTranslation([`modules/${module.id}`, 'common']);
   const items: JSX.Element[] = [];
   if (module.options) {
     const keys = Object.keys(module.options);
@@ -33,7 +32,7 @@ function getItems(module: IModule) {
       if (type === 'object') {
         items.push(
           <MultiSelect
-            label={module.options?.[keys[index]].name}
+            label={t(`${module.options?.[keys[index]].name}`)}
             data={module.options?.[keys[index]].options ?? []}
             defaultValue={
               (moduleInConfig?.options?.[keys[index]]?.value as string[]) ??
@@ -90,7 +89,7 @@ function getItems(module: IModule) {
                 key={optionName}
                 id={optionName}
                 name={optionName}
-                label={values[index].name}
+                label={t(`${values[index].name}`)}
                 defaultValue={
                   (moduleInConfig?.options?.[keys[index]]?.value as string) ??
                   (values[index].value as string) ??
@@ -99,7 +98,7 @@ function getItems(module: IModule) {
                 onChange={(e) => {}}
               />
 
-              <Button type="submit">{t('actions.save')}</Button>
+              <Button type="submit">{t('actions.save', { ns: 'common' })}</Button>
             </Group>
           </form>
         );
@@ -221,7 +220,7 @@ export function ModuleMenu(props: any) {
               </ActionIcon>
             </motion.div>
           </Menu.Target>
-          <Menu.Dropdown>
+          <Menu.Dropdown style={{ maxWidth: 300 }}>
             <Menu.Label>{t('settings.label')}</Menu.Label>
             {items.map((item) => (
               <Menu.Item key={item.key}>{item}</Menu.Item>
