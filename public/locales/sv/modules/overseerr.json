@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Låter dig söka och lägga till media från Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
-        "cancel": "",
-        "request": ""
+        "askFor": "Be om {{title}}",
+        "cancel": "Avbryt",
+        "request": "Förfrågan"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "Användning av API-nyckel",
+          "text": "Denna begäran kommer att godkännas automatiskt"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Bocka i de säsonger som du vill ladda ner",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "Säsong",
+          "numberOfEpisodes": "Antal avsnitt"
         }
       }
     }
