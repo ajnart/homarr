@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Daet",
+    "description": "Show teh current tiem an daet in card",
+    "settings": {
+      "display24HourFormat": {
+        "label": "Display fol tiem (24-hour)"
+      }
+    }
+  }
+}
