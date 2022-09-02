@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "Торент",
+    "description": "Показувати поточну швидкість завантаження для сервісів, які підтримуються",
+    "settings": {
+      "hideComplete": {
+        "label": "Приховувати завершені"
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Ім’я",
+        "size": "Розмір",
+        "download": "Завантаження",
+        "upload": "Віддача",
+        "estimatedTimeOfArrival": "Залишилося",
+        "progress": "Прогрес"
+      },
+      "body": {
+        "nothingFound": "Не знайдено торентів"
+      }
+    },
+    "lineChart": {
+      "title": "Швидкість завантаження",
+      "download": "Завантаження: {{download}}",
+      "upload": "Віддача: {{upload}}",
+      "timeSpan": "{{seconds}} секунд тому",
+      "totalDownload": "Завантаження: {{download}}/сек",
+      "totalUpload": "Віддача: {{upload}}/сек"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Не знайдено клієнтів для завантаження що підтримуються!",
+        "text": "Додайте сервіс завантаження, щоб переглянути поточні завантаження"
+      }
+    }
+  }
+}
