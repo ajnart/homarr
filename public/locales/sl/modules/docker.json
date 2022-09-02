@@ -37,12 +37,14 @@
     "start": {
       "title": "Zaženi"
     },
-    "refreshData": "Osveži podatke",
-    "addToHomarr": {
-      "title": "Dodaj v Homarr"
+    "refreshData": {
+      "title": ""
     },
     "remove": {
       "title": "Odstrani"
+    },
+    "addToHomarr": {
+      "title": "Dodaj v Homarr"
     }
   },
   "messages": {
