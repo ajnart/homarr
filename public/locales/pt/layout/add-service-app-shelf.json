@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Adicionar serviço"
     },
     "modal": {
-        "title": "",
+        "title": "Adicionar serviço",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "Por favor, insira uma URL válida",
+                "noStatusCodeSelected": "Por favor, selecione um código de estado"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Opções",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Nome do serviço",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "URL do ícone"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "URL do serviço"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "Ao clicar na URL"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "Tipo de serviço",
+                        "defaultValue": "Outros",
+                        "placeholder": "Escolha um"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "Categoria",
+                        "placeholder": "Selecione uma categoria ou crie uma nova",
+                        "nothingFound": "Nenhum resultado encontrado",
+                        "createLabel": "+ Criar {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "Chave da API",
+                            "placeholder": "Sua chave da API",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Chave inválida"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "Obter sua chave da API",
+                                "link": "aqui."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Usuário",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Usuário inválido"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Senha",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Senha inválida"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Senha",
+                                "placeholder": "senha",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Senha inválida"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Usuário",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Usuário inválido"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Senha",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Senha inválida"
                                 }
                             }
                         }
@@ -95,23 +95,23 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Opções avançadas",
                 "form": {
                     "ping": {
-                        "label": ""
+                        "label": "Serviço de latência"
                     },
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "Códigos de estado HTTP",
+                        "placeholder": "Selecione um código de estado válido",
+                        "clearButtonLabel": "Limpar seleção",
+                        "nothingFound": "Nenhum resultado encontrado"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "Abrir links em uma nova aba"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "Adicionar serviço"
                         }
                     }
                 }
