@@ -13,14 +13,7 @@
         "label": "Använd kompakt vy"
       },
       "graphs": {
-        "label": "Grafer",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Lagring",
-          "network": "Nätverk",
-          "gpu": "GPU"
-        }
+        "label": "Grafer"
       },
       "url": {
         "label": "Dash. URL"
