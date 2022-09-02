@@ -1,25 +1,25 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Erlaubt dir, deine Torrents einfach zu verwalten"
+    "description": "Ermöglicht Ihnen die einfache Verwaltung Ihrer Torrents"
   },
   "search": {
-    "placeholder": "Suche nach Conainer oder Image Namen"
+    "placeholder": "Suche nach Container- oder Image namen"
   },
   "table": {
     "header": {
       "name": "Name",
-      "image": "Bild",
+      "image": "Image",
       "ports": "Ports",
-      "state": "Status"
+      "state": "Staat"
     },
     "body": {
       "portCollapse": "{{ports}} weitere"
     },
     "states": {
-      "running": "Läuft",
+      "running": "Aktiv",
       "created": "Erstellt",
-      "stopped": "Gestopped",
+      "stopped": "Gestoppt",
       "unknown": "Unbekannt"
     }
   },
@@ -32,17 +32,19 @@
       "title": "Neustarten"
     },
     "stop": {
-      "title": "Stoppen"
+      "title": "Stopp"
     },
     "start": {
       "title": "Starten"
     },
-    "refreshData": "Daten aktualisieren",
-    "addToHomarr": {
-      "title": "Zu Homarr hinzufügen"
+    "refreshData": {
+      "title": ""
     },
     "remove": {
       "title": "Entfernen"
+    },
+    "addToHomarr": {
+      "title": "Zu Homarr hinzufügen"
     }
   },
   "messages": {
@@ -53,14 +55,14 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "Docker Integration schlug fehl",
+      "title": "Docker-Integration fehlgeschlagen",
       "message": "Hast du vergessen, den Docker Socket zu verbinden?"
     },
     "unknownError": {
       "title": "Es ist ein Fehler aufgetreten"
     },
     "oneServiceAtATime": {
-      "title": "Bitte füge nur einen Service zur Zeit hinzu."
+      "title": "Bitte nur einen Service gleichzeitig hinzufügen!"
     }
   },
   "actionIcon": {
