@@ -2,5 +2,34 @@
   "descriptor": {
     "name": "Velocidad de Descarga",
     "description": "Mostrar la velocidad de descarga actual de los servicios compatibles"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Nombre",
+        "size": "Tamaño",
+        "download": "Descarga",
+        "upload": "Subida",
+        "estimatedTimeOfArrival": "Tiempo restante",
+        "progress": "Completado %"
+      },
+      "body": {
+        "nothingFound": "No se han encontrado torrents"
+      }
+    },
+    "lineChart": {
+      "title": "Velocidad de descarga actual",
+      "download": "Velocidad de Descarga: {{download}}",
+      "upload": "Velocidad de subida: {{upload}}",
+      "timeSpan": "Hace {{seconds}} segundos",
+      "totalDownload": "Velocidad de Descarga: {{download}}/s",
+      "totalUpload": "Velocidad de Subida: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "¡No se han encontrado clientes de descarga compatibles!",
+        "text": "Añade un servicio de descarga para ver tus descargas actuales"
+      }
+    }
   }
 }
