@@ -411,6 +411,7 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
             </Stack>
           </Tabs.Panel>
           <Tabs.Panel value="Advanced Options">
+            <Space h="sm" />
             <Stack>
               <Switch
                 label={t('modal.tabs.advancedOptions.form.ping.label')}
