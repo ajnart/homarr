@@ -1,9 +1,12 @@
-import { Button, Group } from '@mantine/core';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { Button, Group, TextInput, Title } from '@mantine/core';
+import { closeAllModals, closeModal, openModal } from '@mantine/modals';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
   IconPlayerPlay,
   IconPlayerStop,
+  IconPlus,
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
@@ -166,6 +169,33 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         disabled={selected.length === 0}
       >
         {t('actionBar.remove.title')}
+      </Button>
+      <Button
+        leftIcon={<IconPlus />}
+        color="indigo"
+        variant="light"
+        radius="md"
+        disabled={selected.length === 0 || selected.length > 1}
+        onClick={() => {
+          openModal({
+            size: 'xl',
+            modalId: selected.at(0)!.Id,
+            radius: 'md',
+            title: t('actionBar.addService.title'),
+            zIndex: 500,
+            children: (
+              <AddAppShelfItemForm
+                setConfig={setConfig}
+                config={config}
+                setOpened={() => closeModal(selected.at(0)!.Id)}
+                message={t('actionBar.addService.message')}
+                {...tryMatchService(selected.at(0)!)}
+              />
+            ),
+          });
+        }}
+      >
+        {t('actionBar.addToHomarr.title')}
       </Button>
     </Group>
   );

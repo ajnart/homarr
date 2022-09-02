@@ -24,10 +24,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
-import { tryMatchPort, ServiceTypeList, StatusCodes } from '../../tools/types';
+import { tryMatchPort, ServiceTypeList, StatusCodes, Config } from '../../tools/types';
 import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
+  const { config, setConfig } = useConfig();
   const [opened, setOpened] = useState(false);
   const { t } = useTranslation('layout/add-service-app-shelf');
   return (
@@ -39,7 +40,7 @@ export function AddItemShelfButton(props: any) {
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
-        <AddAppShelfItemForm close={setOpened} />
+        <AddAppShelfItemForm config={config} setConfig={setConfig} setOpened={setOpened} />
       </Modal>
       <Tooltip withinPortal label={t('actionIcon.tooltip')}>
         <ActionIcon
@@ -82,9 +83,17 @@ function MatchService(name: string, form: any) {
 
 const DEFAULT_ICON = '/favicon.png';
 
-export function AddAppShelfItemForm(props: { close: () => void } & any) {
-  const { close } = props;
-  const { config, setConfig } = useConfig();
+interface AddAppShelfItemFormProps {
+  setOpened: (b: boolean) => void;
+  config: Config;
+  setConfig: (config: Config) => void;
+  // Any other props you want to pass to the form
+  [key: string]: any;
+}
+
+export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
+  const { setOpened, config, setConfig } = props;
+  // Only get config and setConfig from useCOnfig if they are not present in props
   const [isLoading, setLoading] = useState(false);
   const { t } = useTranslation('layout/add-service-app-shelf');
 
@@ -195,12 +204,13 @@ export function AddAppShelfItemForm(props: { close: () => void } & any) {
               }),
             });
           } else {
+            console.log(newForm);
             setConfig({
               ...config,
               services: [...config.services, newForm],
             });
           }
-          close(false);
+          setOpened(false);
           form.reset();
         })}
       >

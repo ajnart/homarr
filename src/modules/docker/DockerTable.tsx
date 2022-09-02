@@ -27,7 +27,6 @@ export default function DockerTable({
   selection: Dockerode.ContainerInfo[];
 }) {
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
-  const [rowSelected, setRowSelected] = useState<Dockerode.ContainerInfo>();
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
 
