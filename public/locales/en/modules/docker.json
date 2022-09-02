@@ -1,69 +1,69 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Allows you to easily manage your torrents"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Search by container or image name"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Name",
+      "image": "Image",
+      "ports": "Ports",
+      "state": "State"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} more"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Running",
+      "created": "Created",
+      "stopped": "Stopped",
+      "unknown": "Unknown"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Add service",
+      "message": "Add service to Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Restart"
     },
     "stop": {
-      "title": ""
+      "title": "Stop"
     },
     "start": {
-      "title": ""
+      "title": "Start"
     },
-    "refreshData": "",
+    "refreshData": "Refresh data",
     "addToHomarr": {
-      "title": ""
+      "title": "Add to Homarr"
     },
     "remove": {
-      "title": ""
+      "title": "Remove"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "Container {{containerName}} {{action}}ed",
+      "message": "Your container was successfully {{action}}ed"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker integration failed",
+      "message": "Did you forget to mount the docker socket ?"
     },
     "unknownError": {
-      "title": ""
+      "title": "There was an error"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Please only add one service at a time!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
