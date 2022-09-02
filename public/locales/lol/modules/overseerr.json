@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Allowz u 2 search an add media frum Overseerr/Jellyseerr"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Ask 4 {{title}}",
+        "cancel": "Cancel",
+        "request": "Request"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Usin API key",
+          "text": "Dis request will bees automatically approvd"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Tick teh seasons dat u wantz 2 bees downloaded",
+      "table": {
+        "header": {
+          "season": "Season",
+          "numberOfEpisodes": "Numbr ov episodes"
+        }
+      }
+    }
+  }
+}

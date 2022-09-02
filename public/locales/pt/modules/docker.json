@@ -1,0 +1,71 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "search": {
+    "placeholder": ""
+  },
+  "table": {
+    "header": {
+      "name": "Nome",
+      "image": "Imagem",
+      "ports": "Portas",
+      "state": "Estado"
+    },
+    "body": {
+      "portCollapse": "mais {{ports}}"
+    },
+    "states": {
+      "running": "Em execução",
+      "created": "Criado",
+      "stopped": "Parado",
+      "unknown": "Desconhecido"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Adicionar serviço",
+      "message": ""
+    },
+    "restart": {
+      "title": "Reiniciar"
+    },
+    "stop": {
+      "title": "Parar"
+    },
+    "start": {
+      "title": "Iniciar"
+    },
+    "refreshData": {
+      "title": ""
+    },
+    "remove": {
+      "title": "Excluir"
+    },
+    "addToHomarr": {
+      "title": "Adicionar ao Homarr"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Integração com Docker falhou",
+      "message": "Você esqueceu de montar o Docker socket?"
+    },
+    "unknownError": {
+      "title": "Ocorreu um erro"
+    },
+    "oneServiceAtATime": {
+      "title": ""
+    }
+  },
+  "actionIcon": {
+    "tooltip": ""
+  }
+}

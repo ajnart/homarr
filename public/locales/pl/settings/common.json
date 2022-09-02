@@ -1,6 +1,6 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Ustawienia",
+  "tooltip": "Ustawienia",
   "tabs": {
     "common": "",
     "customizations": ""
@@ -9,6 +9,6 @@
     "configTip": ""
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Stworzone z ❤️ przez @"
   }
 }

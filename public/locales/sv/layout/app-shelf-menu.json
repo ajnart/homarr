@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "",
+    "title": "Ändra en tjänst",
     "buttons": {
-      "save": ""
+      "save": "Spara tjänst"
     }
   },
   "menu": {
     "labels": {
-      "settings": "",
-      "dangerZone": ""
+      "settings": "Inställningar",
+      "dangerZone": "Farozon"
     },
     "actions": {
-      "edit": "",
-      "delete": ""
+      "edit": "Redigera",
+      "delete": "Radera"
     }
   }
 }

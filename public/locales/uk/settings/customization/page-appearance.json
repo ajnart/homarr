@@ -1,0 +1,25 @@
+{
+  "pageTitle": {
+    "label": "Заголовок сторінки",
+    "placeholder": "Homarr 🦞"
+  },
+  "logo": {
+    "label": "Логотип",
+    "placeholder": "/img/logo.png"
+  },
+  "favicon": {
+    "label": "Іконка",
+    "placeholder": "/favicon.png"
+  },
+  "background": {
+    "label": "Фон",
+    "placeholder": "/img/background.png"
+  },
+  "customCSS": {
+    "label": "Власний CSS",
+    "placeholder": "Власний CSS буде оброблятися в останню чергу"
+  },
+  "buttons": {
+    "submit": "Надіслати"
+  }
+}
