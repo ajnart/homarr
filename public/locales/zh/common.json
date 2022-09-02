@@ -1,8 +1,8 @@
 {
   "actions": {
-    "save": ""
+    "save": "拯救"
   },
-  "tip": "",
+  "tip": "提示。 ",
   "time": {
     "seconds": "",
     "minutes": "",
