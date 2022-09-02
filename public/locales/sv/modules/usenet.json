@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Inga nedladdningsklienter som stöds hittades!",
+        "text": "Lägg till en nedladdningstjänst för att visa dina aktuella nedladdningar"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "",
+    "history": ""
+  },
+  "info": {
+    "sizeLeft": "",
+    "paused": ""
+  },
+  "queue": {
+    "header": {
+      "name": "Namn",
+      "size": "Storlek",
+      "eta": "Beräknad sluttid",
+      "progress": "Förlopp"
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  },
+  "history": {
+    "header": {
+      "name": "Namn",
+      "size": "Storlek",
+      "duration": ""
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  }
+}
