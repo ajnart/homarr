@@ -8,43 +8,43 @@
   },
   "table": {
     "header": {
-      "name": "Nome",
-      "image": "Imagem",
-      "ports": "Portas",
-      "state": "Estado"
+      "name": "",
+      "image": "",
+      "ports": "",
+      "state": ""
     },
     "body": {
-      "portCollapse": "mais {{ports}}"
+      "portCollapse": ""
     },
     "states": {
-      "running": "Em execução",
-      "created": "Criado",
-      "stopped": "Parado",
-      "unknown": "Desconhecido"
+      "running": "",
+      "created": "",
+      "stopped": "",
+      "unknown": ""
     }
   },
   "actionBar": {
     "addService": {
-      "title": "Adicionar serviço",
+      "title": "",
       "message": ""
     },
     "restart": {
-      "title": "Reiniciar"
+      "title": ""
     },
     "stop": {
-      "title": "Parar"
+      "title": ""
     },
     "start": {
-      "title": "Iniciar"
+      "title": ""
     },
     "refreshData": {
       "title": ""
     },
     "remove": {
-      "title": "Excluir"
+      "title": ""
     },
     "addToHomarr": {
-      "title": "Adicionar ao Homarr"
+      "title": ""
     }
   },
   "messages": {
@@ -55,11 +55,11 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "Integração com Docker falhou",
-      "message": "Você esqueceu de montar o Docker socket?"
+      "title": "",
+      "message": ""
     },
     "unknownError": {
-      "title": "Ocorreu um erro"
+      "title": ""
     },
     "oneServiceAtATime": {
       "title": ""
