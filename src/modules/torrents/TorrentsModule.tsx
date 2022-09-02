@@ -13,9 +13,9 @@ import {
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useViewportSize } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useTranslation } from 'next-i18next';
 import { IModule } from '../ModuleTypes';
 import { useConfig } from '../../tools/state';
@@ -23,20 +23,20 @@ import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
 
-export const DownloadsModule: IModule = {
+export const TorrentsModule: IModule = {
+  id: 'torrents-status',
   title: 'Torrent',
   icon: Download,
-  component: DownloadComponent,
+  component: TorrentsComponent,
   options: {
     hidecomplete: {
       name: 'descriptor.settings.hideComplete',
       value: false,
     },
   },
-  id: 'torrents-status',
 };
 
-export default function DownloadComponent() {
+export default function TorrentsComponent() {
   const { config } = useConfig();
   const { height, width } = useViewportSize();
   const downloadServices =
@@ -46,13 +46,14 @@ export default function DownloadComponent() {
         service.type === 'Transmission' ||
         service.type === 'Deluge'
     ) ?? [];
+
   const hideComplete: boolean =
-    (config?.modules?.[DownloadsModule.id]?.options?.hidecomplete?.value as boolean) ?? false;
+    (config?.modules?.[TorrentsModule.id]?.options?.hidecomplete?.value as boolean) ?? false;
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
 
-  const { t } = useTranslation(`modules/${DownloadsModule.id}`);
+  const { t } = useTranslation(`modules/${TorrentsModule.id}`);
 
   useEffect(() => {
     setIsLoading(true);
@@ -60,7 +61,7 @@ export default function DownloadComponent() {
     const interval = setInterval(() => {
       // Send one request with each download service inside
       axios
-        .post('/api/modules/downloads')
+        .post('/api/modules/torrents')
         .then((response) => {
           setTorrents(response.data);
           setIsLoading(false);

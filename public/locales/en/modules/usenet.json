@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Show the queue and history of supported services"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "No supported download clients found!",
+        "text": "Add a download service to view your current downloads"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Queue",
+    "history": "History"
+  },
+  "info": {
+    "sizeLeft": "Size left",
+    "paused": "Paused"
+  },
+  "queue": {
+    "header": {
+      "name": "Name",
+      "size": "Size",
+      "eta": "ETA",
+      "progress": "Progress"
+    },
+    "empty": "Queue is empty.",
+    "error": {
+      "title": "Error!",
+      "message": "Some error has occured while fetching data:"
+    },
+    "paused": "Paused"
+  },
+  "history": {
+    "header": {
+      "name": "Name",
+      "size": "Size",
+      "duration": "Download Duration"
+    },
+    "empty": "Queue is empty.",
+    "error": {
+      "title": "Error!",
+      "message": "Some error has occured while fetching data:"
+    },
+    "paused": "Paused"
+  }
+}
