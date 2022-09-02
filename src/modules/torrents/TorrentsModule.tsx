@@ -29,8 +29,8 @@ export const TorrentsModule: IModule = {
   icon: Download,
   component: TorrentsComponent,
   options: {
-    hidecomplete: {
-      name: 'descriptor.settings.hideComplete',
+    hideComplete: {
+      name: 'descriptor.settings.hideComplete.label',
       value: false,
     },
   },
@@ -48,7 +48,7 @@ export default function TorrentsComponent() {
     ) ?? [];
 
   const hideComplete: boolean =
-    (config?.modules?.[TorrentsModule.id]?.options?.hidecomplete?.value as boolean) ?? false;
+    (config?.modules?.[TorrentsModule.id]?.options?.hideComplete?.value as boolean) ?? false;
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
