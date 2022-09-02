@@ -7,9 +7,8 @@ import {
   ScrollArea,
   TextInput,
   Modal,
-  ActionIcon,
 } from '@mantine/core';
-import { IconPlus, IconSearch } from '@tabler/icons';
+import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
@@ -36,10 +35,8 @@ export default function DockerTable({
   selection: Dockerode.ContainerInfo[];
 }) {
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
-  const [rowSelected, setRowSelected] = useState<Dockerode.ContainerInfo>();
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
-  const [opened, setOpened] = useState<boolean>(false);
 
   const { t } = useTranslation('modules/docker');
 
@@ -106,38 +103,12 @@ export default function DockerTable({
         <td>
           <ContainerState state={element.State} />
         </td>
-        <td>
-          <ActionIcon
-            color="indigo"
-            variant="light"
-            radius="md"
-            onClick={() => {
-              setRowSelected(element);
-              setOpened(true);
-            }}
-          >
-            <IconPlus />
-          </ActionIcon>
-        </td>
       </tr>
     );
   });
 
   return (
     <ScrollArea style={{ height: '80vh' }}>
-      <Modal
-        size="xl"
-        radius="md"
-        opened={opened}
-        onClose={() => setOpened(false)}
-        title={t('actionBar.addService.title')}
-      >
-        <AddAppShelfItemForm
-          setOpened={setOpened}
-          {...tryMatchService(rowSelected)}
-          message={t('actionBar.addService.message')}
-        />
-      </Modal>
       <TextInput
         placeholder={t('search.placeholder')}
         mt="md"
@@ -162,7 +133,6 @@ export default function DockerTable({
             <th>{t('table.header.image')}</th>
             <th>{t('table.header.ports')}</th>
             <th>{t('table.header.state')}</th>
-            <th>{t('table.header.addToHomarr')}</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>

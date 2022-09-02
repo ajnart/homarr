@@ -11,8 +11,7 @@
       "name": "Name",
       "image": "Image",
       "ports": "Ports",
-      "state": "State",
-      "addToHomarr": "Add to homarr"
+      "state": "State"
     },
     "body": {
       "portCollapse": "{{ports}} more"
@@ -43,6 +42,9 @@
     },
     "remove": {
       "title": "Remove"
+    },
+    "addToHomarr": {
+      "title": "Add to Homarr"
     }
   },
   "messages": {
