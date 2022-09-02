@@ -1,11 +1,11 @@
 {
-  "title": "",
+  "title": "Sökmotor",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Använd prefixen !yt och !t framför din sökning för att söka på YouTube eller efter en Torrent.",
+    "placeholderTip": "%s kan användas som platshållare för förfrågningen."
   },
   "customEngine": {
-    "label": "",
-    "placeholder": ""
+    "label": "URL för förfrågan",
+    "placeholder": "Anpassad sök-URL"
   }
 }

@@ -16,8 +16,8 @@
     "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "Benutzerdefiniertes CSS",
-    "placeholder": "Benutzerdefiniertes CSS wird als letztes ausgeführt"
+    "label": "",
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Absenden"

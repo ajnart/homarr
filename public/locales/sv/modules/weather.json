@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Väder",
+    "description": "Se det aktuella vädret på din plats",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Visa i Fahrenheit"
       },
       "location": {
         "label": ""
@@ -26,7 +26,7 @@
       "snowShowers": "",
       "thunderstorm": "",
       "thunderstormWithHail": "",
-      "unknown": ""
+      "unknown": "Okänd"
     }
   }
 }

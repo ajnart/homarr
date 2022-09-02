@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Velocidad de Descarga",
+    "description": "Mostrar la velocidad de descarga actual de los servicios compatibles"
   }
 }

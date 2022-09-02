@@ -12,17 +12,17 @@
       },
       "alerts": {
         "automaticApproval": {
-          "title": "Einen API Schlüssel benutzen",
+          "title": "API-Schlüssel wird verwendet",
           "text": "Diese Anfrage wird automatisch genehmigt"
         }
       }
     },
     "seasonSelector": {
-      "caption": "Kreuze die Staffeln an, die heruntergeladen werden sollen.",
+      "caption": "Kreuze die Staffeln an, die heruntergeladen werden sollen",
       "table": {
         "header": {
           "season": "Staffel",
-          "numberOfEpisodes": "Anzahl von Episoden"
+          "numberOfEpisodes": "Anzahl der Episoden"
         }
       }
     }

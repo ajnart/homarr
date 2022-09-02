@@ -37,12 +37,14 @@
     "start": {
       "title": "Début"
     },
-    "refreshData": "Rafraîchir les données",
-    "addToHomarr": {
-      "title": "Ajouter à Homarr"
+    "refreshData": {
+      "title": ""
     },
     "remove": {
       "title": "Retirer"
+    },
+    "addToHomarr": {
+      "title": "Ajouter à Homarr"
     }
   },
   "messages": {
@@ -57,7 +59,7 @@
       "message": "Avez-vous oublié de monter le docker socket ?"
     },
     "unknownError": {
-      "title": "Il y a eu une erreur"
+      "title": "Une erreur s’est produite"
     },
     "oneServiceAtATime": {
       "title": "Veuillez n'ajouter qu'un seul service à la fois !"

@@ -3,11 +3,11 @@
     "label": ""
   },
   "modal": {
-    "title": "",
+    "title": "Wybierz nazwę nowej konfiguracji",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "Nazwa konfiguracji",
+        "placeholder": "Twoja nowa nazwa konfiguracji"
       },
       "submitButton": ""
     },
@@ -19,7 +19,7 @@
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Pobierz konfigurację",
     "delete": {
       "text": "Usuń konfigurację",
       "notifications": {
@@ -38,18 +38,18 @@
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Nie udało się załadować konfiguracji",
+        "message": "Nie udało się załadować konfiguracji. Nieprawidłowy format JSON."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Konfiguracja {{configName}} została pomyślnie załadowana"
       }
     },
     "accept": {
-      "text": ""
+      "text": "Przeciągnij pliki tutaj, aby przesłać konfigurację. Wsparcie tylko dla plików JSON."
     },
     "reject": {
-      "text": ""
+      "text": "Ten format pliku nie jest obsługiwany. Przesyłaj tylko pliki JSON."
     }
   }
 }

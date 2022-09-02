@@ -37,12 +37,14 @@
     "start": {
       "title": "Start"
     },
-    "refreshData": "Gegevens vernieuwen",
-    "addToHomarr": {
-      "title": "Toevoegen aan Homarr"
+    "refreshData": {
+      "title": ""
     },
     "remove": {
       "title": "Verwijder"
+    },
+    "addToHomarr": {
+      "title": "Toevoegen aan Homarr"
     }
   },
   "messages": {

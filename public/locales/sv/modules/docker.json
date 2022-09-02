@@ -1,69 +1,71 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Låter dig enkelt hantera dina torrents"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Sök efter container eller imagenamn"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Namn",
+      "image": "Image",
+      "ports": "Portar",
+      "state": "Läge"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} mer"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Körs",
+      "created": "Skapad",
+      "stopped": "Stoppad",
+      "unknown": "Okänd"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Lägg till tjänst",
+      "message": "Lägg till tjänst till Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Starta om"
     },
     "stop": {
-      "title": ""
+      "title": "Stoppa"
     },
     "start": {
-      "title": ""
+      "title": "Starta"
     },
-    "refreshData": "",
-    "addToHomarr": {
+    "refreshData": {
       "title": ""
     },
     "remove": {
-      "title": ""
+      "title": "Ta bort"
+    },
+    "addToHomarr": {
+      "title": "Lägg till i Homarr"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "Container {{containerName}} {{action}}",
+      "message": "Din behållare lyckades {{action}}"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Dockerintegration misslyckades",
+      "message": "Glömde du att montera docker socket?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Ett fel inträffade"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Lägg bara till en tjänst åt gången!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }

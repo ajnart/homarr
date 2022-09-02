@@ -6,7 +6,7 @@
         "title": "Dodaj usługę",
         "form": {
             "validation": {
-                "invalidUrl": "",
+                "invalidUrl": "Wprowadź prawidłowy adres URL",
                 "noStatusCodeSelected": ""
             }
         },
@@ -19,23 +19,23 @@
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "Adres URL ikony"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "Adres URL usługi"
                     },
                     "onClickUrl": {
                         "label": ""
                     },
                     "serviceType": {
                         "label": "Rodzaj usługi",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "defaultValue": "Inna",
+                        "placeholder": "Wybierz jedną"
                     },
                     "category": {
                         "label": "Kategoria",
                         "placeholder": "Wybierz kategorię lub utwórz nową",
-                        "nothingFound": "",
+                        "nothingFound": "Nic nie znaleziono",
                         "createLabel": "+ Utwórz {{query}}"
                     },
                     "integrations": {
@@ -46,7 +46,7 @@
                                 "noKey": "Nieprawidłowy klucz"
                             },
                             "tip": {
-                                "text": "",
+                                "text": "Zdobądź swój klucz API",
                                 "link": ""
                             }
                         },
@@ -97,11 +97,14 @@
             "advancedOptions": {
                 "title": "",
                 "form": {
+                    "ping": {
+                        "label": "Usługa ping"
+                    },
                     "httpStatusCodes": {
                         "label": "",
                         "placeholder": "",
                         "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "nothingFound": "Nic nie znaleziono"
                     },
                     "openServiceInNewTab": {
                         "label": "Otwórz usługę w nowej karcie"

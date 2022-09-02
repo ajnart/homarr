@@ -1,6 +1,11 @@
 {
   "actions": {
-    "save": ""
+    "save": "Spara"
   },
-  "tip": ""
+  "tip": "Tips: ",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  }
 }

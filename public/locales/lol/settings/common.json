@@ -1,0 +1,14 @@
+{
+  "title": "Settingz",
+  "tooltip": "Settingz",
+  "tabs": {
+    "common": "Common",
+    "customizations": "Customahzations"
+  },
+  "tips": {
+    "configTip": "Upload ur config fiel by dragging an dropping it onto teh paeg!"
+  },
+  "credits": {
+    "madeWithLove": "Maded wif ❤️ by @"
+  }
+}

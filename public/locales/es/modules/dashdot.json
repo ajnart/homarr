@@ -1,19 +1,19 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Un módulo para mostrar los gráficos de la instancia de Dash. en ejecución.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "Vista CPU MultiNúcleo"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Vista de las Unidades de Almacenamiento"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Usar la vista Compacta"
       },
       "graphs": {
-        "label": "",
+        "label": "Gráficos",
         "options": {
           "cpu": "Procesador",
           "ram": "Memoria RAM",
@@ -23,15 +23,15 @@
         }
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "No se ha encontrado el servicio Dash. Por favor, añade uno al Panel de Control de Homarr o indica una URL de Dash. en las opciones del módulo",
+      "noInformation": "No se puede obtener información de Dash. - ¿estás utilizando la última versión?"
     },
     "graphs": {
       "storage": {
@@ -42,8 +42,8 @@
         "title": "Red",
         "label": "Red:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Descarga",
+          "upload": "Subida"
         }
       },
       "cpu": {

@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Дата",
+    "description": "Показати поточний час і дату в картці",
+    "settings": {
+      "display24HourFormat": {
+        "label": "Показувати повний час (24 години)"
+      }
+    }
+  }
+}

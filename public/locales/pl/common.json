@@ -2,5 +2,10 @@
   "actions": {
     "save": "Zapisz"
   },
-  "tip": ""
+  "tip": "",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  }
 }
