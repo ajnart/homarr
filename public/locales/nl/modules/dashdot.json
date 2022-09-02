@@ -13,14 +13,7 @@
         "label": "Compacte weergave gebruiken"
       },
       "graphs": {
-        "label": "Grafieken",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Opslagruimte",
-          "network": "Netwerk",
-          "gpu": "GPU"
-        }
+        "label": "Grafieken"
       },
       "url": {
         "label": "Dash. URL"
