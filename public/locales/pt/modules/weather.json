@@ -4,21 +4,21 @@
     "description": "",
     "settings": {
       "displayInFahrenheit": {
-        "label": "Mostrar em Fahrenheit"
+        "label": ""
       },
       "location": {
-        "label": "Localização do tempo"
+        "label": ""
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "Limpar",
+      "clear": "",
       "mainlyClear": "",
-      "fog": "Névoa",
+      "fog": "",
       "drizzle": "",
       "freezingDrizzle": "",
-      "rain": "Chuva",
+      "rain": "",
       "freezingRain": "",
       "snowFall": "",
       "snowGrains": "",
@@ -26,7 +26,7 @@
       "snowShowers": "",
       "thunderstorm": "",
       "thunderstormWithHail": "",
-      "unknown": "Desconhecido"
+      "unknown": ""
     }
   }
 }
