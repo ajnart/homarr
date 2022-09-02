@@ -13,14 +13,7 @@
         "label": "Ues Compact View"
       },
       "graphs": {
-        "label": "Graphz",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Storagzzz",
-          "network": "Netwerk",
-          "gpu": "GPU"
-        }
+        "label": "Graphz"
       },
       "url": {
         "label": "Dash. URL"
