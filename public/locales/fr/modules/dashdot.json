@@ -23,14 +23,14 @@
         }
       },
       "url": {
-        "label": "URL Dash"
+        "label": "URL Dash."
       }
     }
   },
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "Aucun service dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir une URL dashdot dans les options du module.",
+      "noService": "Aucun service Dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir l'URL du service Dash. dans les options du module",
       "noInformation": "Impossible d'acquérir des informations de dashdot - Utilisez-vous la dernière version ?"
     },
     "graphs": {
