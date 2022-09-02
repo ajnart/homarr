@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Docker",
     "description": ""
   },
   "search": {
@@ -8,19 +8,19 @@
   },
   "table": {
     "header": {
-      "name": "",
+      "name": "Nazwa",
       "image": "Obraz",
       "ports": "Porty",
       "state": "Status"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} więcej"
     },
     "states": {
       "running": "Uruchomione",
-      "created": "",
+      "created": "Utworzony",
       "stopped": "Zatrzymane",
-      "unknown": ""
+      "unknown": "Nieznany"
     }
   },
   "actionBar": {
@@ -29,7 +29,7 @@
       "message": "Dodaj usługę do Homarra"
     },
     "restart": {
-      "title": ""
+      "title": "Uruchom ponownie"
     },
     "stop": {
       "title": "Zatrzymać"
@@ -37,12 +37,14 @@
     "start": {
       "title": "Uruchom"
     },
-    "refreshData": "",
-    "addToHomarr": {
+    "refreshData": {
       "title": ""
     },
     "remove": {
       "title": "Usuń"
+    },
+    "addToHomarr": {
+      "title": "Dodaj do Homarra"
     }
   },
   "messages": {
@@ -54,7 +56,7 @@
   "errors": {
     "integrationFailed": {
       "title": "",
-      "message": ""
+      "message": "Czy zapomniałeś nie zamontować docker socket?"
     },
     "unknownError": {
       "title": "Wystąpił błąd"
@@ -64,6 +66,6 @@
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
