@@ -157,9 +157,9 @@ const AppShelf = (props: any) => {
           {categoryList.map((category, idx) => (
             <Accordion.Item
               style={{
-                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
+                background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
               ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
+                borderColor: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'} \
               ${(config.settings.appOpacity || 100) / 100}`,
               }}
               key={category}
@@ -173,10 +173,10 @@ const AppShelf = (props: any) => {
           {noCategory && noCategory.length > 0 ? (
             <Accordion.Item
               style={{
-                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
-              ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
-              ${(config.settings.appOpacity || 100) / 100}`,
+                background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
               }}
               key="Other"
               value="Other"
@@ -188,10 +188,10 @@ const AppShelf = (props: any) => {
           {downloadEnabled ? (
             <Accordion.Item
               style={{
-                background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
-              ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
-              ${(config.settings.appOpacity || 100) / 100}`,
+                background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
               }}
               key="Downloads"
               value="Your downloads"
@@ -201,12 +201,12 @@ const AppShelf = (props: any) => {
                 <Paper
                   radius="lg"
                   style={{
-                    background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
-                ${(config.settings.appOpacity || 100) / 100}`,
+                    background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
+                  ${(config.settings.appOpacity || 100) / 100}`,
                     borderColor: `rgba(${
-                      colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'
+                      colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'
                     } \
-                ${(config.settings.appOpacity || 100) / 100}`,
+                  ${(config.settings.appOpacity || 100) / 100}`,
                   }}
                 >
                   {torrentEnabled && (
