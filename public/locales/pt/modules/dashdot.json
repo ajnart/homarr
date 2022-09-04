@@ -13,14 +13,7 @@
         "label": "Usar visualização compacta"
       },
       "graphs": {
-        "label": "Gráficos",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Armazenamento",
-          "network": "Rede",
-          "gpu": "GPU"
-        }
+        "label": "Gráficos"
       },
       "url": {
         "label": "URL do Dash."

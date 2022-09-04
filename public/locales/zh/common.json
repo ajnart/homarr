@@ -4,8 +4,8 @@
   },
   "tip": "提示。 ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "秒",
+    "minutes": "分钟",
+    "hours": "小时"
   }
 }

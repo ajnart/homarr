@@ -38,7 +38,7 @@
       "title": "Starten"
     },
     "refreshData": {
-      "title": ""
+      "title": "Daten aktualisieren"
     },
     "remove": {
       "title": "Entfernen"
@@ -49,8 +49,8 @@
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "Container {{containerName}} {{action}}ed",
+      "message": "Ihr Container wurde erfolgreich {{action}}."
     }
   },
   "errors": {

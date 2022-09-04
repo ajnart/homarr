@@ -2,5 +2,34 @@
   "descriptor": {
     "name": "Velocidade de Transferência",
     "description": ""
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Nome",
+        "size": "Tamanho",
+        "download": "",
+        "upload": "",
+        "estimatedTimeOfArrival": "TED",
+        "progress": "Progresso"
+      },
+      "body": {
+        "nothingFound": "Nenhum torrent encontrado"
+      }
+    },
+    "lineChart": {
+      "title": "",
+      "download": "",
+      "upload": "",
+      "timeSpan": "",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": "Adicione um serviço de download para ver seus downloads atuais"
+      }
+    }
   }
 }
