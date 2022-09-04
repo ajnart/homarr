@@ -97,9 +97,6 @@
             "advancedOptions": {
                 "title": "高级选项",
                 "form": {
-                    "ping": {
-                        "label": "平移服务"
-                    },
                     "httpStatusCodes": {
                         "label": "HTTP状态代码",
                         "placeholder": "选择有效的状态代码",

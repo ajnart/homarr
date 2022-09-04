@@ -13,14 +13,7 @@
         "label": "Użyj trybu kompaktowego"
       },
       "graphs": {
-        "label": "Wykresy",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "",
-          "network": "Sieć",
-          "gpu": "GPU"
-        }
+        "label": "Wykresy"
       },
       "url": {
         "label": "Adres URL usługi Dash."

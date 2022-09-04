@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Ermöglicht es Ihnen, Ihre Sabnzbd-Warteschlange und den Verlauf zu sehen, Downloads anzuhalten und fortzusetzen"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Warteschlange",
+    "history": "Geschichte"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Größe links",
+    "paused": "Pausiert"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "Voraussichtlicher Abschluss",
       "progress": "Fortschritt"
     },
-    "empty": "",
+    "empty": "Leere",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Fehler",
+      "message": "Es ist ein Fehler aufgetreten"
     },
-    "paused": ""
+    "paused": "Pausiert"
   },
   "history": {
     "header": {
       "name": "Name",
       "size": "Größe",
-      "duration": ""
+      "duration": "Dauer"
     },
-    "empty": "",
+    "empty": "Leere",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Fehler",
+      "message": "Fehler beim Laden der Historie"
     },
-    "paused": ""
+    "paused": "Pausiert"
   }
 }

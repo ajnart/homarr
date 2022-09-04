@@ -13,7 +13,7 @@
   },
   "tabs": {
     "queue": "",
-    "history": ""
+    "history": "Historia"
   },
   "info": {
     "sizeLeft": "",
@@ -28,8 +28,8 @@
     },
     "empty": "",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Błąd",
+      "message": "Coś poszło nie tak"
     },
     "paused": ""
   },
@@ -41,8 +41,8 @@
     },
     "empty": "",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Błąd",
+      "message": "Wystąpił błąd podczas ładowania historii"
     },
     "paused": ""
   }

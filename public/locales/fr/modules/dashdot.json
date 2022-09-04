@@ -13,14 +13,7 @@
         "label": "Utiliser la vue compacte"
       },
       "graphs": {
-        "label": "Graphiques",
-        "options": {
-          "cpu": "CPU",
-          "ram": "RAM",
-          "storage": "Stockage",
-          "network": "Réseau",
-          "gpu": "GPU"
-        }
+        "label": "Graphiques"
       },
       "url": {
         "label": "URL Dash."

@@ -13,14 +13,7 @@
         "label": "コンパクトビューを使用する"
       },
       "graphs": {
-        "label": "グラフ",
-        "options": {
-          "cpu": "CPU",
-          "ram": "ラム",
-          "storage": "ストレージ",
-          "network": "ネットワーク",
-          "gpu": "GPU"
-        }
+        "label": "グラフ"
       },
       "url": {
         "label": "ダッシュURL"

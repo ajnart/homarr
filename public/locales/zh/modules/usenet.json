@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "允许您查看您的Sabnzbd队列和历史，暂停和恢复下载"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "排队",
+    "history": "历史"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "左侧尺寸",
+    "paused": "暂停使用"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "ETA",
       "progress": "进展"
     },
-    "empty": "",
+    "empty": "空的",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "误差",
+      "message": "发生了一个错误"
     },
-    "paused": ""
+    "paused": "暂停使用"
   },
   "history": {
     "header": {
       "name": "命名",
       "size": "尺寸",
-      "duration": ""
+      "duration": "时间"
     },
-    "empty": "",
+    "empty": "空的",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "误差",
+      "message": "错误加载历史记录"
     },
-    "paused": ""
+    "paused": "暂停使用"
   }
 }

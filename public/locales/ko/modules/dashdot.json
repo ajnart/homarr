@@ -13,14 +13,7 @@
         "label": ""
       },
       "graphs": {
-        "label": "",
-        "options": {
-          "cpu": "",
-          "ram": "",
-          "storage": "",
-          "network": "",
-          "gpu": ""
-        }
+        "label": ""
       },
       "url": {
         "label": ""

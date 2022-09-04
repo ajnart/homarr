@@ -95,11 +95,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "Avancerade Inställningar",
+                "title": "",
                 "form": {
-                    "ping": {
-                        "label": "Ping tjänst"
-                    },
                     "httpStatusCodes": {
                         "label": "HTTP-statuskoder",
                         "placeholder": "Välj giltiga statuskoder",

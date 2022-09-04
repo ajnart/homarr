@@ -95,11 +95,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "Advancd Opshuns",
+                "title": "",
                 "form": {
-                    "ping": {
-                        "label": "Ping Survis"
-                    },
                     "httpStatusCodes": {
                         "label": "HTTP Status Codes",
                         "placeholder": "Select valid status coeds",
