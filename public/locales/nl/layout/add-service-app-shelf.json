@@ -95,7 +95,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Geavanceerde opties",
                 "form": {
                     "httpStatusCodes": {
                         "label": "HTTP-statuscodes",
