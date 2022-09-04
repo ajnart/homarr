@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "ピング",
+    "description": "サービスが稼働しているか、特定のHTTPステータスコードを返しているかどうかを確認できるようにします。"
+  },
+  "states": {
+    "online": "オンライン {{response}}",
+    "offline": "オフライン {{response}}",
+    "loading": "読み込み中..."
+  }
+}

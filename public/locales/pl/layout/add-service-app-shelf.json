@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "Dodaj usługę"
+    },
+    "modal": {
+        "title": "Dodaj usługę",
+        "form": {
+            "validation": {
+                "invalidUrl": "Wprowadź prawidłowy adres URL",
+                "noStatusCodeSelected": ""
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "",
+                "form": {
+                    "serviceName": {
+                        "label": "Nazwa usługi",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "Adres URL ikony"
+                    },
+                    "serviceUrl": {
+                        "label": "Adres URL usługi"
+                    },
+                    "onClickUrl": {
+                        "label": "Adres URL kliknięcia"
+                    },
+                    "serviceType": {
+                        "label": "Rodzaj usługi",
+                        "defaultValue": "Inna",
+                        "placeholder": "Wybierz jedną"
+                    },
+                    "category": {
+                        "label": "Kategoria",
+                        "placeholder": "Wybierz kategorię lub utwórz nową",
+                        "nothingFound": "Nic nie znaleziono",
+                        "createLabel": "+ Utwórz {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "Klucz API",
+                            "placeholder": "Twój klucz API",
+                            "validation": {
+                                "noKey": "Nieprawidłowy klucz"
+                            },
+                            "tip": {
+                                "text": "Zdobądź swój klucz API",
+                                "link": ""
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Nazwa użytkownika",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Nieprawidłowa nazwa użytkownika"
+                                }
+                            },
+                            "password": {
+                                "label": "Hasło",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Nieprawidłowe hasło"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Hasło",
+                                "placeholder": "password",
+                                "validation": {
+                                    "invalidPassword": "Nieprawidłowe hasło"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Nazwa użytkownika",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Nieprawidłowa nazwa użytkownika"
+                                }
+                            },
+                            "password": {
+                                "label": "Hasło",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Nieprawidłowe hasło"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "",
+                        "placeholder": "",
+                        "clearButtonLabel": "Wyczyść wybór",
+                        "nothingFound": "Nic nie znaleziono"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Otwórz usługę w nowej karcie"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Dodaj usługę"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

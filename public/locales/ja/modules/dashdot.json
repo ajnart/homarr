@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "ダッシュ",
+    "description": "実行中のDash.インスタンスのグラフを表示するためのモジュールです。",
+    "settings": {
+      "cpuMultiView": {
+        "label": "CPUマルチコアビュー"
+      },
+      "storageMultiView": {
+        "label": "ストレージマルチドライブビュー"
+      },
+      "useCompactView": {
+        "label": "コンパクトビューを使用する"
+      },
+      "graphs": {
+        "label": "グラフ"
+      },
+      "url": {
+        "label": "ダッシュURL"
+      }
+    }
+  },
+  "card": {
+    "title": "ダッシュ",
+    "errors": {
+      "noService": "Dash.サービスが見当たりません。HOMARダッシュボードに追加するか、モジュールオプションでDash.サービスを設定してください。のURLをモジュールオプションで設定してください。",
+      "noInformation": "dashから情報を取得できません。- は最新版ですか？"
+    },
+    "graphs": {
+      "storage": {
+        "title": "ストレージ",
+        "label": "ストレージです。"
+      },
+      "network": {
+        "title": "ネットワーク",
+        "label": "ネットワーク",
+        "metrics": {
+          "download": "ダウン",
+          "upload": "上"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "ラム"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

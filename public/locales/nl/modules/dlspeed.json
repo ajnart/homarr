@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Downloadsnelheid",
+    "description": "Toon de huidige downloadsnelheid van ondersteunde diensten"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Naam",
+        "size": "Grootte",
+        "download": "Down",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Voortgang"
+      },
+      "body": {
+        "nothingFound": "Geen torrents gevonden"
+      }
+    },
+    "lineChart": {
+      "title": "Huidige downloadsnelheid",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} seconden geleden",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Geen ondersteunde download clients gevonden!",
+        "text": "Voeg een downloadservice toe om uw huidige downloads weer te geven"
+      }
+    }
+  }
+}

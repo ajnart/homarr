@@ -1,0 +1,71 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Umożliwia łatwe zarządzanie torrentami"
+  },
+  "search": {
+    "placeholder": "Szukaj według kontenera nazwy lub obrazu"
+  },
+  "table": {
+    "header": {
+      "name": "Nazwa",
+      "image": "Obraz",
+      "ports": "Porty",
+      "state": "Status"
+    },
+    "body": {
+      "portCollapse": "{{ports}} więcej"
+    },
+    "states": {
+      "running": "Uruchomione",
+      "created": "Utworzony",
+      "stopped": "Zatrzymane",
+      "unknown": "Nieznany"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Dodaj usługę",
+      "message": "Dodaj usługę do Homarra"
+    },
+    "restart": {
+      "title": "Uruchom ponownie"
+    },
+    "stop": {
+      "title": "Zatrzymać"
+    },
+    "start": {
+      "title": "Uruchom"
+    },
+    "refreshData": {
+      "title": ""
+    },
+    "remove": {
+      "title": "Usuń"
+    },
+    "addToHomarr": {
+      "title": "Dodaj do Homarra"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "",
+      "message": "Czy zapomniałeś nie zamontować docker socket?"
+    },
+    "unknownError": {
+      "title": "Wystąpił błąd"
+    },
+    "oneServiceAtATime": {
+      "title": ""
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

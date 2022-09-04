@@ -1,9 +1,11 @@
-import { ActionIcon, Drawer, Group, LoadingOverlay, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Docker from 'dockerode';
 import { IconBrandDocker, IconX } from '@tabler/icons';
 import { showNotification } from '@mantine/notifications';
+import { useTranslation } from 'next-i18next';
+
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
 import { useConfig } from '../../tools/state';
@@ -11,9 +13,9 @@ import { IModule } from '../ModuleTypes';
 
 export const DockerModule: IModule = {
   title: 'Docker',
-  description: 'Allows you to easily manage your torrents',
   icon: IconBrandDocker,
   component: DockerMenuButton,
+  id: 'docker',
 };
 
 export default function DockerMenuButton(props: any) {
@@ -21,7 +23,9 @@ export default function DockerMenuButton(props: any) {
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const { config } = useConfig();
-  const moduleEnabled = config.modules?.[DockerModule.title]?.enabled ?? false;
+  const moduleEnabled = config.modules?.[DockerModule.id]?.enabled ?? false;
+
+  const { t } = useTranslation('modules/docker');
 
   useEffect(() => {
     reload();
@@ -38,19 +42,21 @@ export default function DockerMenuButton(props: any) {
           setContainers(res.data);
           setSelection([]);
         })
-        .catch(() =>
+        .catch(() => {
+          // Remove containers from the list
+          setContainers([]);
           // Send an Error notification
           showNotification({
             autoClose: 1500,
-            title: <Text>Docker integration failed</Text>,
+            title: <Text>{t('errors.integrationFailed.title')}</Text>,
             color: 'red',
             icon: <IconX />,
-            message: 'Did you forget to mount the docker socket ?',
-          })
-        );
+            message: t('errors.integrationFailed.message'),
+          });
+        });
     }, 300);
   }
-  const exists = config.modules?.[DockerModule.title]?.enabled ?? false;
+  const exists = config.modules?.[DockerModule.id]?.enabled ?? false;
   if (!exists) {
     return null;
   }
@@ -67,7 +73,7 @@ export default function DockerMenuButton(props: any) {
       >
         <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
       </Drawer>
-      <Tooltip label="Docker">
+      <Tooltip label={t('actionIcon.tooltip')}>
         <ActionIcon
           variant="default"
           radius="md"

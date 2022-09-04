@@ -1,0 +1,14 @@
+{
+  "title": "Inställningar",
+  "tooltip": "Inställningar",
+  "tabs": {
+    "common": "",
+    "customizations": ""
+  },
+  "tips": {
+    "configTip": ""
+  },
+  "credits": {
+    "madeWithLove": ""
+  }
+}

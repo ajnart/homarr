@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "サービスを追加する"
+    },
+    "modal": {
+        "title": "サービス追加",
+        "form": {
+            "validation": {
+                "invalidUrl": "有効なURLを入力してください",
+                "noStatusCodeSelected": "ステータスコードを選択してください"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "オプション",
+                "form": {
+                    "serviceName": {
+                        "label": "サービス名",
+                        "placeholder": "プレックス"
+                    },
+                    "iconUrl": {
+                        "label": "アイコンURL"
+                    },
+                    "serviceUrl": {
+                        "label": "サービスURL"
+                    },
+                    "onClickUrl": {
+                        "label": "クリック時URL"
+                    },
+                    "serviceType": {
+                        "label": "サービス形態",
+                        "defaultValue": "その他",
+                        "placeholder": "選んでください"
+                    },
+                    "category": {
+                        "label": "カテゴリー",
+                        "placeholder": "カテゴリーを選択する、または新規に作成する",
+                        "nothingFound": "何も見つかりません",
+                        "createLabel": "+ Create {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "APIキー",
+                            "placeholder": "お客様のAPIキー",
+                            "validation": {
+                                "noKey": "無効なキー"
+                            },
+                            "tip": {
+                                "text": "APIキーの取得",
+                                "link": "をご覧ください。"
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "ユーザー名",
+                                "placeholder": "アドミン",
+                                "validation": {
+                                    "invalidUsername": "ユーザー名が無効です"
+                                }
+                            },
+                            "password": {
+                                "label": "パスワード",
+                                "placeholder": "アドミニストレーター",
+                                "validation": {
+                                    "invalidPassword": "パスワードが無効です"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "パスワード",
+                                "placeholder": "暗証番号",
+                                "validation": {
+                                    "invalidPassword": "パスワードが無効です"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "ユーザー名",
+                                "placeholder": "アドミン",
+                                "validation": {
+                                    "invalidUsername": "ユーザー名が無効です"
+                                }
+                            },
+                            "password": {
+                                "label": "パスワード",
+                                "placeholder": "アドミニストレーター",
+                                "validation": {
+                                    "invalidPassword": "パスワードが無効です"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "高度なオプション",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "HTTPステータスコード",
+                        "placeholder": "有効なステータスコードを選択する",
+                        "clearButtonLabel": "クリア選択",
+                        "nothingFound": "何も見つかりません"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "新しいタブでサービスを開く"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "サービス追加"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

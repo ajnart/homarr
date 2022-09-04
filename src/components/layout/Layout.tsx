@@ -34,6 +34,9 @@ export default function Layout({ children, style }: any) {
       >
         {children}
       </main>
+      <style>
+        {cx(config.settings.customCSS)}
+      </style>
     </AppShell>
   );
 }

@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "Dodaj storitev"
+    },
+    "modal": {
+        "title": "Dodaj storitev",
+        "form": {
+            "validation": {
+                "invalidUrl": "Prosim vnesite veljaven spletni naslov",
+                "noStatusCodeSelected": "Izberite kodo statusa"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Možnosti",
+                "form": {
+                    "serviceName": {
+                        "label": "Naziv storitve",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "URL ikone"
+                    },
+                    "serviceUrl": {
+                        "label": "URL storitve"
+                    },
+                    "onClickUrl": {
+                        "label": "URL ob kliku"
+                    },
+                    "serviceType": {
+                        "label": "Vrsta storitve",
+                        "defaultValue": "Drugo",
+                        "placeholder": "Izberite eno"
+                    },
+                    "category": {
+                        "label": "Kategorija",
+                        "placeholder": "Izberite kategorijo ali ustvarite novo",
+                        "nothingFound": "Brez rezultatov iskanja",
+                        "createLabel": "+ Ustvarite {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API ključ",
+                            "placeholder": "Vaš ključ API",
+                            "validation": {
+                                "noKey": "Neveljaven ključ"
+                            },
+                            "tip": {
+                                "text": "Pridobite svoj API ključ",
+                                "link": "tukaj."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Uporabniško ime",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Neveljavno uporabniško ime"
+                                }
+                            },
+                            "password": {
+                                "label": "Geslo",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Neveljavno geslo"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Geslo",
+                                "placeholder": "geslo",
+                                "validation": {
+                                    "invalidPassword": "Neveljavno geslo"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Uporabniško ime",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Neveljavno uporabniško ime"
+                                }
+                            },
+                            "password": {
+                                "label": "Geslo",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Neveljavno geslo"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "HTTP statusne kode",
+                        "placeholder": "Izberite veljavne kode statusa",
+                        "clearButtonLabel": "Počisti izbiro",
+                        "nothingFound": "Brez rezultatov iskanja"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Odprite storitev v novem zavihku"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Dodaj storitev"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

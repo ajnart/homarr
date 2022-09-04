@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "Caricatore di configurazione"
+  },
+  "modal": {
+    "title": "Scegliere il nome della nuova configurazione",
+    "form": {
+      "configName": {
+        "label": "Nome della configurazione",
+        "placeholder": "Il nome della nuova configurazione"
+      },
+      "submitButton": "Confermare"
+    },
+    "events": {
+      "configSaved": {
+        "title": "Configurazione salvata",
+        "message": "Configurazione salvata come {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Scarica la configurazione",
+    "delete": {
+      "text": "Cancellare la configurazione",
+      "notifications": {
+        "deleted": {
+          "title": "Configurazione cancellata",
+          "message": "Configurazione cancellata"
+        },
+        "deleteFailed": {
+          "title": "Cancellazione configurazione fallita",
+          "message": "Cancellazione configurazione fallita"
+        }
+      }
+    },
+    "saveCopy": "Salvare una copia"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Impossibile caricare la configurazione",
+        "message": "Impossibile caricare la configurazione. Formato JSON non valido."
+      },
+      "loadedSuccessfully": {
+        "title": "La configurazione {{configName}} è stata caricata con successo"
+      }
+    },
+    "accept": {
+      "text": "Trascinare i file qui per caricare una configurazione. Supporto solo per JSON."
+    },
+    "reject": {
+      "text": "Questo formato di file non è supportato. Caricare solo JSON."
+    }
+  }
+}

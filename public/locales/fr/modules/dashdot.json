@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Un module pour afficher les graphiques de votre instance Dash. en cours.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "Vue du CPU multi-cœur"
+      },
+      "storageMultiView": {
+        "label": "Vue du stockage multidisque"
+      },
+      "useCompactView": {
+        "label": "Utiliser la vue compacte"
+      },
+      "graphs": {
+        "label": "Graphiques"
+      },
+      "url": {
+        "label": "URL Dash."
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Aucun service Dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir l'URL du service Dash. dans les options du module",
+      "noInformation": "Impossible d'acquérir des informations de Dash. - Utilisez-vous la dernière version ?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Stockage",
+        "label": "Stockage :"
+      },
+      "network": {
+        "title": "Réseau",
+        "label": "Réseau :",
+        "metrics": {
+          "download": "Duvet",
+          "upload": "Up"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

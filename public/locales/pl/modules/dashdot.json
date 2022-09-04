@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Moduł do wyświetlania wykresów z uruchomionej instancji Dash.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "Widok wielordzeniowy procesora"
+      },
+      "storageMultiView": {
+        "label": ""
+      },
+      "useCompactView": {
+        "label": "Użyj trybu kompaktowego"
+      },
+      "graphs": {
+        "label": "Wykresy"
+      },
+      "url": {
+        "label": "Adres URL usługi Dash."
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Nie znaleziono usługi Dash. Proszę dodać ją do pulpitu Homarra lub ustawić adres URL usługi Dash. w opcjach modułu",
+      "noInformation": ""
+    },
+    "graphs": {
+      "storage": {
+        "title": "",
+        "label": ""
+      },
+      "network": {
+        "title": "Sieć",
+        "label": "Sieć:",
+        "metrics": {
+          "download": "Pobieranie",
+          "upload": "Udostępnianie"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

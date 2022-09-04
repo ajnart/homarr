@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Kalender",
+    "description": "En kalendermodul för att visa kommande releaser. Den interagerar med Sonarr- och Radarr-API:erna.",
+    "settings": {
+      "sundayStart": {
+        "label": "Börja veckan på söndag"
+      }
+    }
+  }
+}

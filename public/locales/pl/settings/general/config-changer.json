@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "Ładowanie konfiguracji"
+  },
+  "modal": {
+    "title": "Wybierz nazwę nowej konfiguracji",
+    "form": {
+      "configName": {
+        "label": "Nazwa konfiguracji",
+        "placeholder": "Twoja nowa nazwa konfiguracji"
+      },
+      "submitButton": "Potwierdź"
+    },
+    "events": {
+      "configSaved": {
+        "title": "Konfiguracja zapisana",
+        "message": "Konfiguracja zapisana jako {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Pobierz konfigurację",
+    "delete": {
+      "text": "Usuń konfigurację",
+      "notifications": {
+        "deleted": {
+          "title": "Konfiguracja usunięta",
+          "message": "Konfiguracja usunięta"
+        },
+        "deleteFailed": {
+          "title": "Nie udało się usunąć konfiguracji",
+          "message": "Nie udało się usunąć konfiguracji"
+        }
+      }
+    },
+    "saveCopy": "Zapisz kopię"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Nie udało się załadować konfiguracji",
+        "message": "Nie udało się załadować konfiguracji. Nieprawidłowy format JSON."
+      },
+      "loadedSuccessfully": {
+        "title": "Konfiguracja {{configName}} została pomyślnie załadowana"
+      }
+    },
+    "accept": {
+      "text": "Przeciągnij pliki tutaj, aby przesłać konfigurację. Wsparcie tylko dla plików JSON."
+    },
+    "reject": {
+      "text": "Ten format pliku nie jest obsługiwany. Przesyłaj tylko pliki JSON."
+    }
+  }
+}

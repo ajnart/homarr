@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Prędkość pobierania",
+    "description": "Pokaż bieżącą prędkość pobierania obsługiwanych usług"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Nazwa",
+        "size": "Rozmiar",
+        "download": "Pobieranie",
+        "upload": "Udostępnianie",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Postęp"
+      },
+      "body": {
+        "nothingFound": "Nie znaleziono torrentów"
+      }
+    },
+    "lineChart": {
+      "title": "Aktualna prędkość pobierania",
+      "download": "",
+      "upload": "",
+      "timeSpan": "{{seconds}} sekund temu",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}

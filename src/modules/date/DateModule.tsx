@@ -8,22 +8,22 @@ import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 
 export const DateModule: IModule = {
   title: 'Date',
-  description: 'Show the current time and date in a card',
   icon: Clock,
   component: DateComponent,
   options: {
     full: {
-      name: 'Display full time (24-hour)',
+      name: 'descriptor.settings.display24HourFormat.label',
       value: true,
     },
   },
+  id: 'date',
 };
 
 export default function DateComponent(props: any) {
   const [date, setDate] = useState(new Date());
   const setSafeInterval = useSetSafeInterval();
   const { config } = useConfig();
-  const isFullTime = config?.modules?.[DateModule.title]?.options?.full?.value ?? true;
+  const isFullTime = config?.modules?.[DateModule.id]?.options?.full?.value ?? true;
   const formatString = isFullTime ? 'HH:mm' : 'h:mm A';
   // Change date on minute change
   // Note: Using 10 000ms instead of 1000ms to chill a little :)

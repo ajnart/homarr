@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "",
+        "size": "",
+        "download": "",
+        "upload": "",
+        "estimatedTimeOfArrival": "",
+        "progress": ""
+      },
+      "body": {
+        "nothingFound": ""
+      }
+    },
+    "lineChart": {
+      "title": "",
+      "download": "",
+      "upload": "",
+      "timeSpan": "",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}

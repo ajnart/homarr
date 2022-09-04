@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Sabnzbd",
+    "description": "Allows you to see your Sabnzbd queue and history, pause and resume downloads"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "No supported download clients found!",
+        "text": "Add a download service to view your current downloads"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Queue",
+    "history": "History"
+  },
+  "info": {
+    "sizeLeft": "Size left",
+    "paused": "Paused"
+  },
+  "queue": {
+    "header": {
+      "name": "Name",
+      "size": "Size",
+      "eta": "ETA",
+      "progress": "Progress"
+    },
+    "empty": "Empty",
+    "error": {
+      "title": "Error",
+      "message": "An error has occurred"
+    },
+    "paused": "Paused"
+  },
+  "history": {
+    "header": {
+      "name": "Name",
+      "size": "Size",
+      "duration": "Duration"
+    },
+    "empty": "Empty",
+    "error": {
+      "title": "Error",
+      "message": "Error loading history"
+    },
+    "paused": "Paused"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Météo",
+    "description": "Consultez la météo actuelle dans votre région",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Affichage en Fahrenheit"
+      },
+      "location": {
+        "label": "Lieu de la météo"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Clair",
+      "mainlyClear": "Principalement clair",
+      "fog": "Brouillard",
+      "drizzle": "Bruine",
+      "freezingDrizzle": "Bruine glacée",
+      "rain": "Pluie",
+      "freezingRain": "Pluie verglaçante",
+      "snowFall": "Chute de neige",
+      "snowGrains": "Neige en grains",
+      "rainShowers": "Averses de pluie",
+      "snowShowers": "Averses de neige",
+      "thunderstorm": "Orage",
+      "thunderstormWithHail": "Orage avec grêle",
+      "unknown": "Inconnu"
+    }
+  }
+}

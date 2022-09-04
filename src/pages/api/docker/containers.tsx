@@ -1,10 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-import Docker from 'dockerode';
+import DockerSingleton from './DockerSingleton';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const docker = new Docker();
+    const docker = DockerSingleton.getInstance();
     const containers = await docker.listContainers({ all: true });
     res.status(200).json(containers);
   } catch (err) {

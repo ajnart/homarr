@@ -1,0 +1,71 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Ermöglicht Ihnen die einfache Verwaltung Ihrer Torrents"
+  },
+  "search": {
+    "placeholder": "Suche nach Container- oder Image namen"
+  },
+  "table": {
+    "header": {
+      "name": "Name",
+      "image": "Image",
+      "ports": "Ports",
+      "state": "Staat"
+    },
+    "body": {
+      "portCollapse": "{{ports}} weitere"
+    },
+    "states": {
+      "running": "Aktiv",
+      "created": "Erstellt",
+      "stopped": "Gestoppt",
+      "unknown": "Unbekannt"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Service hinzufügen",
+      "message": "Service zu Homarr hinzufügen"
+    },
+    "restart": {
+      "title": "Neustarten"
+    },
+    "stop": {
+      "title": "Stopp"
+    },
+    "start": {
+      "title": "Starten"
+    },
+    "refreshData": {
+      "title": "Daten aktualisieren"
+    },
+    "remove": {
+      "title": "Entfernen"
+    },
+    "addToHomarr": {
+      "title": "Zu Homarr hinzufügen"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "Container {{containerName}} {{action}}ed",
+      "message": "Ihr Container wurde erfolgreich {{action}}."
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker-Integration fehlgeschlagen",
+      "message": "Hast du vergessen, den Docker Socket zu verbinden?"
+    },
+    "unknownError": {
+      "title": "Es ist ein Fehler aufgetreten"
+    },
+    "oneServiceAtATime": {
+      "title": "Bitte nur einen Service gleichzeitig hinzufügen!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

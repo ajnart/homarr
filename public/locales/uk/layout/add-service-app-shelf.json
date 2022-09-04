@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "Додати сервіс"
+    },
+    "modal": {
+        "title": "Додати сервіс",
+        "form": {
+            "validation": {
+                "invalidUrl": "Будь ласка, введіть дійсну URL-адресу",
+                "noStatusCodeSelected": "Оберіть статус-код"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Параметри",
+                "form": {
+                    "serviceName": {
+                        "label": "Назва сервісу",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "URL іконки"
+                    },
+                    "serviceUrl": {
+                        "label": "URL сервісу"
+                    },
+                    "onClickUrl": {
+                        "label": "URL при натисканні"
+                    },
+                    "serviceType": {
+                        "label": "Тип сервісу",
+                        "defaultValue": "Інше",
+                        "placeholder": "Виберіть"
+                    },
+                    "category": {
+                        "label": "Категорія",
+                        "placeholder": "Оберіть категорію або створіть нову",
+                        "nothingFound": "Нічого не знайдено",
+                        "createLabel": "+ Створити {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API ключ",
+                            "placeholder": "Ваш API ключ",
+                            "validation": {
+                                "noKey": "Невірний ключ"
+                            },
+                            "tip": {
+                                "text": "Отримати свій ключ API",
+                                "link": "тут."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Логін",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Невірний логін"
+                                }
+                            },
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Невірний пароль"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "пароль",
+                                "validation": {
+                                    "invalidPassword": "Невірний пароль"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Логін",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Невірний логін"
+                                }
+                            },
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Невірний пароль"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "Додаткові параметри",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "Коди статусу HTTP",
+                        "placeholder": "Виберіть правильні коди статусу",
+                        "clearButtonLabel": "Очистити вибране",
+                        "nothingFound": "Нічого не знайдено"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Відкрити сервіс у новій вкладці"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Додати сервіс"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

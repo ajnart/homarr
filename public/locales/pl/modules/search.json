@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Pasek wyszukiwania",
+    "description": ""
+  },
+  "input": {
+    "placeholder": "Szukaj w internecie..."
+  }
+}

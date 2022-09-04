@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "save": "Zapisz"
+  },
+  "tip": "Wskazówka: ",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  }
+}

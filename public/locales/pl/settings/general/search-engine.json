@@ -1,0 +1,11 @@
+{
+  "title": "Silnik wyszukiwania",
+  "tips": {
+    "generalTip": "",
+    "placeholderTip": "%s może być użyte jako symbol zastępczy dla zapytania."
+  },
+  "customEngine": {
+    "label": "Adres URL zapytania",
+    "placeholder": "Własny adres URL zapytania"
+  }
+}

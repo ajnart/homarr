@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Date",
+    "description": "Affiches l'heure et la date actuelles dans un module",
+    "settings": {
+      "display24HourFormat": {
+        "label": "Affichage 24 h"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Sabnzbd",
+    "description": "Permette di vedere la coda e la cronologia di Sabnzbd, di mettere in pausa e di riprendere i download."
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nessun client di download supportato trovato!",
+        "text": "Aggiungere un servizio di download per visualizzare i download correnti"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Coda",
+    "history": "La storia"
+  },
+  "info": {
+    "sizeLeft": "Dimensione sinistra",
+    "paused": "In pausa"
+  },
+  "queue": {
+    "header": {
+      "name": "Nome",
+      "size": "Dimensione",
+      "eta": "ETA",
+      "progress": "Progressi"
+    },
+    "empty": "Vuoto",
+    "error": {
+      "title": "Errore",
+      "message": "Si è verificato un errore"
+    },
+    "paused": "In pausa"
+  },
+  "history": {
+    "header": {
+      "name": "Nome",
+      "size": "Dimensione",
+      "duration": "Durata"
+    },
+    "empty": "Vuoto",
+    "error": {
+      "title": "Errore",
+      "message": "Errore nel caricamento della cronologia"
+    },
+    "paused": "In pausa"
+  }
+}

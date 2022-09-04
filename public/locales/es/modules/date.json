@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Fecha",
+    "description": "Mostrar la fecha y hora actuales en una tarjeta",
+    "settings": {
+      "display24HourFormat": {
+        "label": "Mostrar hora completa (24 horas)"
+      }
+    }
+  }
+}

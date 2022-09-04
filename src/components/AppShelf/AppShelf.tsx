@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Accordion, Grid, Paper, Stack, useMantineColorScheme } from '@mantine/core';
+import {
+  Accordion,
+  Divider,
+  Grid,
+  Paper,
+  Stack,
+  Title,
+  useMantineColorScheme,
+} from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -11,12 +19,14 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import { useLocalStorage } from '@mantine/hooks';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 
 import { SortableAppShelfItem, AppShelfItem } from './AppShelfItem';
 import { ModuleMenu, ModuleWrapper } from '../../modules/moduleWrapper';
-import { DownloadsModule } from '../../modules';
-import DownloadComponent from '../../modules/downloads/DownloadsModule';
+import { UsenetModule, TorrentsModule } from '../../modules';
+import TorrentsComponent from '../../modules/torrents/TorrentsModule';
+import { UsenetComponent } from '../../modules/usenet/UsenetModule';
 
 const AppShelf = (props: any) => {
   const { config, setConfig } = useConfig();
@@ -35,6 +45,8 @@ const AppShelf = (props: any) => {
   });
   const [activeId, setActiveId] = useState(null);
   const { colorScheme } = useMantineColorScheme();
+
+  const { t } = useTranslation('layout/app-shelf');
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -123,7 +135,11 @@ const AppShelf = (props: any) => {
     const noCategory = config.services.filter(
       (e) => e.category === undefined || e.category === null
     );
-    const downloadEnabled = config.modules?.[DownloadsModule.title]?.enabled ?? false;
+
+    const torrentEnabled = config.modules?.[TorrentsModule.id]?.enabled ?? false;
+    const usenetEnabled = config.modules?.[UsenetModule.id]?.enabled ?? false;
+
+    const downloadEnabled = usenetEnabled || torrentEnabled;
     // Create an item with 0: true, 1: true, 2: true... For each category
     return (
       // TODO: Style accordion so that the bar is transparent to the user settings
@@ -139,36 +155,65 @@ const AppShelf = (props: any) => {
           }}
         >
           {categoryList.map((category, idx) => (
-            <Accordion.Item key={category} value={idx.toString()}>
+            <Accordion.Item
+              style={{
+                background: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '233, 236, 239,'} \
+              ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+              key={category}
+              value={idx.toString()}
+            >
               <Accordion.Control>{category}</Accordion.Control>
               <Accordion.Panel>{getItems(category)}</Accordion.Panel>
             </Accordion.Item>
           ))}
           {/* Return the item for all services without category */}
           {noCategory && noCategory.length > 0 ? (
-            <Accordion.Item key="Other" value="Other">
-              <Accordion.Control>Other</Accordion.Control>
+            <Accordion.Item
+              style={{
+                background: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '233, 236, 239,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+              key="Other"
+              value="Other"
+            >
+              <Accordion.Control>{t('accordions.others.text')}</Accordion.Control>
               <Accordion.Panel>{getItems()}</Accordion.Panel>
             </Accordion.Item>
           ) : null}
           {downloadEnabled ? (
-            <Accordion.Item key="Downloads" value="Your downloads">
-              <Accordion.Control>Your downloads</Accordion.Control>
+            <Accordion.Item
+              style={{
+                color: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
+                ${(config.settings.appOpacity || 100) / 100}`,
+                background: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
+                borderColor: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '233, 236, 239,'} \
+            ${(config.settings.appOpacity || 100) / 100}`,
+              }}
+              key="Downloads"
+              value="Your downloads"
+            >
+              <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
-                <Paper
-                  p="lg"
-                  radius="lg"
-                  style={{
-                    background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
-                ${(config.settings.appOpacity || 100) / 100}`,
-                    borderColor: `rgba(${
-                      colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'
-                    } \
-                ${(config.settings.appOpacity || 100) / 100}`,
-                  }}
-                >
-                  <ModuleMenu module={DownloadsModule} />
-                  <DownloadComponent />
+                <Paper radius="lg">
+                  {torrentEnabled && (
+                    <>
+                      <ModuleMenu module={TorrentsModule} />
+                      <TorrentsComponent />
+                    </>
+                  )}
+                  {usenetEnabled && (
+                    <>
+                      {torrentEnabled && <Divider my="sm" />}
+                      <ModuleMenu module={UsenetModule} />
+                      <UsenetComponent />
+                    </>
+                  )}
                 </Paper>
               </Accordion.Panel>
             </Accordion.Item>
@@ -180,7 +225,8 @@ const AppShelf = (props: any) => {
   return (
     <Stack>
       {getItems()}
-      <ModuleWrapper mt="xl" module={DownloadsModule} />
+      <ModuleWrapper mt="xl" module={TorrentsModule} />
+      <ModuleWrapper mt="xl" module={UsenetModule} />
     </Stack>
   );
 };

@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Staat je toe om media van Overseerr/Jellyseerr te zoeken en toe te voegen"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Vraag om {{title}}",
+        "cancel": "Annuleer",
+        "request": "Aanvraag"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "API-sleutel wordt gebruikt",
+          "text": "Dit verzoek zal automatisch worden goedgekeurd"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Selecteer de seizoenen die u wilt downloaden",
+      "table": {
+        "header": {
+          "season": "Seizoen",
+          "numberOfEpisodes": "Aantal afleveringen"
+        }
+      }
+    }
+  }
+}

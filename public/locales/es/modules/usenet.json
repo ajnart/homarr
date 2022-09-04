@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "¡No se han encontrado clientes de descarga compatibles!",
+        "text": "Añade un servicio de descarga para ver tus descargas actuales"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "",
+    "history": ""
+  },
+  "info": {
+    "sizeLeft": "",
+    "paused": ""
+  },
+  "queue": {
+    "header": {
+      "name": "Nombre",
+      "size": "Tamaño",
+      "eta": "Tiempo restante",
+      "progress": "Completado %"
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  },
+  "history": {
+    "header": {
+      "name": "Nombre",
+      "size": "Tamaño",
+      "duration": ""
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  }
+}

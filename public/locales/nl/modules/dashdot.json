@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Een module voor het weergeven van de grafieken van uw Dash. instance.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "CPU Multi-Core Weergave"
+      },
+      "storageMultiView": {
+        "label": "Opslag Multi-Drive weergave"
+      },
+      "useCompactView": {
+        "label": "Compacte weergave gebruiken"
+      },
+      "graphs": {
+        "label": "Grafieken"
+      },
+      "url": {
+        "label": "Dash. URL"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Geen Dash. service gevonden. Voeg er een toe aan uw Homarr dashboard of stel een Dashdot URL in in de opties van de module",
+      "noInformation": "Kan geen informatie verkrijgen van dash. - gebruikt u de laatste versie?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Opslagruimte",
+        "label": "Opslagruimte:"
+      },
+      "network": {
+        "title": "Netwerk",
+        "label": "Netwerk:",
+        "metrics": {
+          "download": "Down",
+          "upload": "Up"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

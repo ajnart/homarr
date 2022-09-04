@@ -1,0 +1,14 @@
+{
+  "title": "Einstellungen",
+  "tooltip": "Einstellungen",
+  "tabs": {
+    "common": "Allgemein",
+    "customizations": "Anpassungen"
+  },
+  "tips": {
+    "configTip": "Laden Sie Ihre Konfigurationsdatei durch Ziehen und Ablegen auf die Seite!"
+  },
+  "credits": {
+    "madeWithLove": "Gemacht mit ❤️ von @"
+  }
+}

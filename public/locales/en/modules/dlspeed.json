@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Download Speed",
+    "description": "Show the current download speed of supported services"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Name",
+        "size": "Size",
+        "download": "Down",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progress"
+      },
+      "body": {
+        "nothingFound": "No torrents found"
+      }
+    },
+    "lineChart": {
+      "title": "Current download speed",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} seconds ago",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "No supported download clients found!",
+        "text": "Add a download service to view your current downloads"
+      }
+    }
+  }
+}

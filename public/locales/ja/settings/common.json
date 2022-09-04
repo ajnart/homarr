@@ -1,0 +1,14 @@
+{
+  "title": "設定",
+  "tooltip": "設定",
+  "tabs": {
+    "common": "共通",
+    "customizations": "カスタマイズ"
+  },
+  "tips": {
+    "configTip": "設定ファイルをドラッグ＆ドロップでアップロードしよう"
+  },
+  "credits": {
+    "madeWithLove": "で作った❤️ by @さん"
+  }
+}

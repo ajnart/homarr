@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "日期",
+    "description": "在卡片中显示当前时间和日期",
+    "settings": {
+      "display24HourFormat": {
+        "label": "显示全时（24小时）"
+      }
+    }
+  }
+}

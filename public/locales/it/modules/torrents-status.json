@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "Torrente",
+    "description": "Mostra la velocità di download attuale dei servizi supportati",
+    "settings": {
+      "hideComplete": {
+        "label": "Nascondere i torrent completati"
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Nome",
+        "size": "Dimensione",
+        "download": "In basso",
+        "upload": "Su",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progressi"
+      },
+      "body": {
+        "nothingFound": "Nessun torrent trovato"
+      }
+    },
+    "lineChart": {
+      "title": "Velocità di download attuale",
+      "download": "Scaricamento: {{download}}",
+      "upload": "Caricare: {{upload}}",
+      "timeSpan": "{{seconds}} secondi fa",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Caricare: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nessun client di download supportato trovato!",
+        "text": "Aggiungere un servizio di download per visualizzare i download correnti"
+      }
+    }
+  }
+}

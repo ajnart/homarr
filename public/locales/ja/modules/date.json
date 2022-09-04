@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "日付",
+    "description": "カードに現在時刻と日付を表示する",
+    "settings": {
+      "display24HourFormat": {
+        "label": "フルタイム（24時間）表示"
+      }
+    }
+  }
+}

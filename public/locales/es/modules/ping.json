@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Latencia",
+    "description": "Te permite comprobar si el servicio está operativo o si devuelve un código HTTP en específico."
+  },
+  "states": {
+    "online": "En línea {{response}}",
+    "offline": "Desconectado {{response}}",
+    "loading": "Cargando..."
+  }
+}

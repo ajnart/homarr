@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Sabnzbd",
+    "description": "Ermöglicht es Ihnen, Ihre Sabnzbd-Warteschlange und den Verlauf zu sehen, Downloads anzuhalten und fortzusetzen"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Keine unterstützten Download-Clients gefunden!",
+        "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Warteschlange",
+    "history": "Geschichte"
+  },
+  "info": {
+    "sizeLeft": "Größe links",
+    "paused": "Pausiert"
+  },
+  "queue": {
+    "header": {
+      "name": "Name",
+      "size": "Größe",
+      "eta": "Voraussichtlicher Abschluss",
+      "progress": "Fortschritt"
+    },
+    "empty": "Leere",
+    "error": {
+      "title": "Fehler",
+      "message": "Es ist ein Fehler aufgetreten"
+    },
+    "paused": "Pausiert"
+  },
+  "history": {
+    "header": {
+      "name": "Name",
+      "size": "Größe",
+      "duration": "Dauer"
+    },
+    "empty": "Leere",
+    "error": {
+      "title": "Fehler",
+      "message": "Fehler beim Laden der Historie"
+    },
+    "paused": "Pausiert"
+  }
+}

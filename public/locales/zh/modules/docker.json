@@ -1,0 +1,71 @@
+{
+  "descriptor": {
+    "name": "码头",
+    "description": "允许你轻松地管理你的torrent文件"
+  },
+  "search": {
+    "placeholder": "按容器或图像名称搜索"
+  },
+  "table": {
+    "header": {
+      "name": "命名",
+      "image": "图片",
+      "ports": "码头",
+      "state": "国家"
+    },
+    "body": {
+      "portCollapse": "{{ports}} 更多"
+    },
+    "states": {
+      "running": "跑步",
+      "created": "创建",
+      "stopped": "已停止",
+      "unknown": "不详"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "添加服务",
+      "message": "为Homarr添加服务"
+    },
+    "restart": {
+      "title": "重新启动"
+    },
+    "stop": {
+      "title": "停止"
+    },
+    "start": {
+      "title": "开始"
+    },
+    "refreshData": {
+      "title": "刷新数据"
+    },
+    "remove": {
+      "title": "移除"
+    },
+    "addToHomarr": {
+      "title": "添加到Homarr"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "容器 {{containerName}} {{action}}ed",
+      "message": "您的容器已成功 {{action}}。"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker整合失败",
+      "message": "你忘了安装docker socket吗？"
+    },
+    "unknownError": {
+      "title": "出现了一个错误"
+    },
+    "oneServiceAtATime": {
+      "title": "请一次只添加一项服务!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "码头"
+  }
+}

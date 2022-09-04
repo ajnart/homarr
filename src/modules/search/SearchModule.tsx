@@ -1,19 +1,21 @@
 import { Kbd, createStyles, Autocomplete, Popover, ScrollArea, Divider } from '@mantine/core';
 import { useClickOutside, useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { useForm } from '@mantine/form';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import {
   IconSearch as Search,
   IconBrandYoutube as BrandYoutube,
   IconDownload as Download,
   IconMovie,
 } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import axios from 'axios';
 import { showNotification } from '@mantine/notifications';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 import { OverseerrModule } from '../overseerr';
 import { OverseerrMediaDisplay } from '../common';
+import SmallServiceItem from '../../components/AppShelf/SmallServiceItem';
 
 const useStyles = createStyles((theme) => ({
   hide: {
@@ -26,18 +28,18 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export const SearchModule: IModule = {
-  title: 'Search Bar',
-  description: 'Search bar to search the web, youtube, torrents or overseerr',
+  title: 'Search',
   icon: Search,
   component: SearchBar,
+  id: 'search',
 };
 
 export default function SearchBar(props: any) {
   const { classes, cx } = useStyles();
   // Config
   const { config } = useConfig();
-  const isModuleEnabled = config.modules?.[SearchModule.title]?.enabled ?? false;
-  const isOverseerrEnabled = config.modules?.[OverseerrModule.title]?.enabled ?? false;
+  const isModuleEnabled = config.modules?.[SearchModule.id]?.enabled ?? false;
+  const isOverseerrEnabled = config.modules?.[OverseerrModule.id]?.enabled ?? false;
   const OverseerrService = config.services.find(
     (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
   );
@@ -59,6 +61,7 @@ export default function SearchBar(props: any) {
     },
   });
   const [debounced, cancel] = useDebouncedValue(form.values.query, 250);
+  const { t } = useTranslation('modules/search');
 
   useEffect(() => {
     if (OverseerrService === undefined && isOverseerrEnabled) {
@@ -98,11 +101,36 @@ export default function SearchBar(props: any) {
   if (!isModuleEnabled) {
     return null;
   }
-
-  const autocompleteData = results.map((result) => ({
+  // Match all the services that contain the query in their name if the query is not empty
+  const matchingServices = config.services.filter((service) => {
+    if (form.values.query === '' || form.values.query === undefined) {
+      return false;
+    }
+    return service.name.toLowerCase().includes(form.values.query.toLowerCase());
+  });
+  const autocompleteData = matchingServices.map((service) => ({
+    label: service.name,
+    value: service.name,
+    icon: service.icon,
+    url: service.openedUrl ?? service.url,
+  }));
+  // Append the matching results to the autocomplete data
+  const autoCompleteResults = results.map((result) => ({
     label: result.phrase,
     value: result.phrase,
+    icon: result.icon,
+    url: result.url,
   }));
+  autocompleteData.push(...autoCompleteResults);
+
+  const AutoCompleteItem = forwardRef<HTMLDivElement, any>(
+    ({ label, value, icon, url, ...others }: any, ref) => (
+      <div ref={ref} {...others}>
+        <SmallServiceItem service={{ label, value, icon, url }} />
+      </div>
+    )
+  );
+
   return (
     <form
       onChange={() => {
@@ -161,6 +189,15 @@ export default function SearchBar(props: any) {
             onFocusCapture={() => setOpened(true)}
             autoFocus
             variant="filled"
+            itemComponent={AutoCompleteItem}
+            onItemSubmit={(item) => {
+              setOpened(false);
+              if (item.url) {
+                results.splice(0, autocompleteData.length);
+                form.reset();
+                window.open(item.url);
+              }
+            }}
             data={autocompleteData}
             icon={icon}
             ref={textInput}
@@ -175,7 +212,7 @@ export default function SearchBar(props: any) {
             radius="md"
             size="md"
             styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder="Search the web..."
+            placeholder={t('input.placeholder')}
             {...props}
             {...form.getInputProps('query')}
           />

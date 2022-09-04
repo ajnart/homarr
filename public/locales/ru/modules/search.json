@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Поиск",
+    "description": ""
+  },
+  "input": {
+    "placeholder": "Искать в интернете..."
+  }
+}
