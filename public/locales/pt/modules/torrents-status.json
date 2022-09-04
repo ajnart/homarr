@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "Mostrar a velocidade atual de download dos serviços suportados",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Ocultar torrents completos"
       }
     }
   },
