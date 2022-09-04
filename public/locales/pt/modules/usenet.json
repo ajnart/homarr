@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Fila",
+    "history": "Histórico"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Tamanho restante",
+    "paused": "Pausado"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "TED",
       "progress": "Progresso"
     },
-    "empty": "",
+    "empty": "Vazio",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Erro",
+      "message": "Ocorreu um erro"
     },
-    "paused": ""
+    "paused": "Pausado"
   },
   "history": {
     "header": {
       "name": "Nome",
       "size": "Tamanho",
-      "duration": ""
+      "duration": "Duração"
     },
-    "empty": "",
+    "empty": "Vazio",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Erro",
+      "message": "Erro ao carregar histórico"
     },
-    "paused": ""
+    "paused": "Pausado"
   }
 }
