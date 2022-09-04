@@ -7,7 +7,7 @@
         "label": "Vista CPU Multinúcleo"
       },
       "storageMultiView": {
-        "label": "Vista de las Unidades de Almacenamiento"
+        "label": "Vista Almacenamiento Multidisco"
       },
       "useCompactView": {
         "label": "Usar vista Compacta"
@@ -23,13 +23,13 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "No se ha encontrado el servicio Dash. Por favor, añade uno al Panel de Control de Homarr o indica una URL de Dash. en las opciones del módulo",
+      "noService": "Servicio Dash. no encontrado. Por favor, añade uno al tablero de Homarr o indica una URL de Dash. en las opciones del módulo",
       "noInformation": "No se puede obtener información de Dash. - ¿estás utilizando la última versión?"
     },
     "graphs": {
       "storage": {
-        "title": "Almacenaje",
-        "label": "Almacenaje:"
+        "title": "Almacenamiento",
+        "label": "Almacenamiento:"
       },
       "network": {
         "title": "Red",
@@ -40,13 +40,13 @@
         }
       },
       "cpu": {
-        "title": "Procesador"
+        "title": "CPU"
       },
       "memory": {
-        "title": "Memoria RAM"
+        "title": "RAM"
       },
       "gpu": {
-        "title": "Procesador Gráfico"
+        "title": "GPU"
       }
     }
   }
