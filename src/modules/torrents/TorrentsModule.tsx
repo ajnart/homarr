@@ -193,9 +193,9 @@ export default function TorrentsComponent() {
     });
 
   return (
-    <ScrollArea mt="xl" sx={{ height: 300, width: '100%' }}>
+    <ScrollArea sx={{ height: 300, width: '100%' }}>
       {rows.length > 0 ? (
-        <Table highlightOnHover>
+        <Table highlightOnHover p="sm">
           <thead>{ths}</thead>
           <tbody>{rows}</tbody>
         </Table>
