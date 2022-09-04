@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Barra de pesquisa",
     "description": ""
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "Pesquisar na Internet..."
   }
 }
