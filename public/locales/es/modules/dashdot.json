@@ -4,13 +4,13 @@
     "description": "Un módulo para mostrar los gráficos de la instancia de Dash. en ejecución.",
     "settings": {
       "cpuMultiView": {
-        "label": "Vista CPU MultiNúcleo"
+        "label": "Vista CPU Multinúcleo"
       },
       "storageMultiView": {
         "label": "Vista de las Unidades de Almacenamiento"
       },
       "useCompactView": {
-        "label": "Usar la vista Compacta"
+        "label": "Usar vista Compacta"
       },
       "graphs": {
         "label": "Gráficos"
