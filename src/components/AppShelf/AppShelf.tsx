@@ -157,9 +157,9 @@ const AppShelf = (props: any) => {
           {categoryList.map((category, idx) => (
             <Accordion.Item
               style={{
-                background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
+                background: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
               ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'} \
+                borderColor: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '233, 236, 239,'} \
               ${(config.settings.appOpacity || 100) / 100}`,
               }}
               key={category}
@@ -173,9 +173,9 @@ const AppShelf = (props: any) => {
           {noCategory && noCategory.length > 0 ? (
             <Accordion.Item
               style={{
-                background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
+                background: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
             ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'} \
+                borderColor: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '233, 236, 239,'} \
             ${(config.settings.appOpacity || 100) / 100}`,
               }}
               key="Other"
@@ -188,9 +188,11 @@ const AppShelf = (props: any) => {
           {downloadEnabled ? (
             <Accordion.Item
               style={{
-                background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
+                color: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
+                ${(config.settings.appOpacity || 100) / 100}`,
+                background: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '255, 255, 255,'} \
             ${(config.settings.appOpacity || 100) / 100}`,
-                borderColor: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'} \
+                borderColor: `rgba(${colorScheme === 'dark' ? '32, 33, 35,' : '233, 236, 239,'} \
             ${(config.settings.appOpacity || 100) / 100}`,
               }}
               key="Downloads"
@@ -198,20 +200,9 @@ const AppShelf = (props: any) => {
             >
               <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
-                <Paper
-                  radius="lg"
-                  style={{
-                    background: `rgba(${colorScheme === 'dark' ? '26, 27, 30,' : '255, 255, 255,'} \
-                  ${(config.settings.appOpacity || 100) / 100}`,
-                    borderColor: `rgba(${
-                      colorScheme === 'dark' ? '26, 27, 30,' : '233, 236, 239,'
-                    } \
-                  ${(config.settings.appOpacity || 100) / 100}`,
-                  }}
-                >
+                <Paper radius="lg">
                   {torrentEnabled && (
                     <>
-                      <Title size="h2">Torrents</Title>
                       <ModuleMenu module={TorrentsModule} />
                       <TorrentsComponent />
                     </>
@@ -219,9 +210,6 @@ const AppShelf = (props: any) => {
                   {usenetEnabled && (
                     <>
                       {torrentEnabled && <Divider my="sm" />}
-                      <Title size="h2" mt={0}>
-                        Usenet
-                      </Title>
                       <ModuleMenu module={UsenetModule} />
                       <UsenetComponent />
                     </>
