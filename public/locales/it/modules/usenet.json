@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Permette di vedere la coda e la cronologia di Sabnzbd, di mettere in pausa e di riprendere i download."
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Coda",
+    "history": "La storia"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Dimensione sinistra",
+    "paused": "In pausa"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "ETA",
       "progress": "Progressi"
     },
-    "empty": "",
+    "empty": "Vuoto",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Errore",
+      "message": "Si è verificato un errore"
     },
-    "paused": ""
+    "paused": "In pausa"
   },
   "history": {
     "header": {
       "name": "Nome",
       "size": "Dimensione",
-      "duration": ""
+      "duration": "Durata"
     },
-    "empty": "",
+    "empty": "Vuoto",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Errore",
+      "message": "Errore nel caricamento della cronologia"
     },
-    "paused": ""
+    "paused": "In pausa"
   }
 }
