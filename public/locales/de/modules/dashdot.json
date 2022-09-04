@@ -23,7 +23,7 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "",
+      "noService": "Kein Dash. Dienst gefunden. Bitte fügen Sie einen zu Ihrem Homarr Dashboard hinzu oder setzen Sie eine Dash. URL in den Moduloptionen",
       "noInformation": "Es können keine Informationen vom Dash. abgerufen werden. - Verwenden Sie die neueste Version?"
     },
     "graphs": {
