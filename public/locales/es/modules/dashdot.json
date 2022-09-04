@@ -13,14 +13,7 @@
         "label": "Usar la vista Compacta"
       },
       "graphs": {
-        "label": "Gráficos",
-        "options": {
-          "cpu": "Procesador",
-          "ram": "Memoria RAM",
-          "storage": "Almacenaje",
-          "network": "Red",
-          "gpu": "Procesador Gráfico"
-        }
+        "label": "Gráficos"
       },
       "url": {
         "label": "Dash. URL"

@@ -4,8 +4,8 @@
   },
   "tip": "Підказка: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "секунд",
+    "minutes": "хвилин",
+    "hours": "годин"
   }
 }

@@ -95,11 +95,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "Opciones Avanzadas",
+                "title": "",
                 "form": {
-                    "ping": {
-                        "label": "Servicio de Latencia"
-                    },
                     "httpStatusCodes": {
                         "label": "Códigos de estado HTTP",
                         "placeholder": "Seleccionar códigos de estado válidos",

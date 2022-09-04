@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Permet de voir votre file d'attente et votre historique Sabnzbd, de mettre en pause et de reprendre les téléchargements"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "File d'attente",
+    "history": "Historique"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Taille restante",
+    "paused": "En pause"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "ETA",
       "progress": "Progrès"
     },
-    "empty": "",
+    "empty": "Vide",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Erreur",
+      "message": "Une erreur est survenue"
     },
-    "paused": ""
+    "paused": "En pause"
   },
   "history": {
     "header": {
       "name": "Nom",
       "size": "Taille",
-      "duration": ""
+      "duration": "Durée"
     },
-    "empty": "",
+    "empty": "Vide",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Erreur",
+      "message": "Erreur récupération de l'historique"
     },
-    "paused": ""
+    "paused": "En pause"
   }
 }

@@ -95,11 +95,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "詳細オプション",
+                "title": "高度なオプション",
                 "form": {
-                    "ping": {
-                        "label": "Pingサービス"
-                    },
                     "httpStatusCodes": {
                         "label": "HTTPステータスコード",
                         "placeholder": "有効なステータスコードを選択する",

@@ -95,11 +95,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "Розширені параметри",
+                "title": "Додаткові параметри",
                 "form": {
-                    "ping": {
-                        "label": "Пінг служби"
-                    },
                     "httpStatusCodes": {
                         "label": "Коди статусу HTTP",
                         "placeholder": "Виберіть правильні коди статусу",

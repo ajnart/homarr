@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Sabnzbdのキューと履歴の確認、ダウンロードの一時停止と再開が可能です。"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "キュー",
+    "history": "沿革"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "左サイズ",
+    "paused": "ポーズ"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "ETA",
       "progress": "進捗状況"
     },
-    "empty": "",
+    "empty": "エンプティ",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "エラー",
+      "message": "エラーが発生しました"
     },
-    "paused": ""
+    "paused": "ポーズ"
   },
   "history": {
     "header": {
       "name": "名称",
       "size": "サイズ",
-      "duration": ""
+      "duration": "期間"
     },
-    "empty": "",
+    "empty": "エンプティ",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "エラー",
+      "message": "履歴の読み込みエラー"
     },
-    "paused": ""
+    "paused": "ポーズ"
   }
 }

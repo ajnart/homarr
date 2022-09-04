@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Дозволяє вам бачити вашу чергу в Sabnzbd і історію, призупинення і відновлення завантажень"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Черга",
+    "history": "Історія"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Залишився розмір",
+    "paused": "Призупинено"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "Залишилося",
       "progress": "Прогрес"
     },
-    "empty": "",
+    "empty": "Пусто",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Помилка",
+      "message": "Сталася помилка"
     },
-    "paused": ""
+    "paused": "Призупинено"
   },
   "history": {
     "header": {
       "name": "Ім’я",
       "size": "Розмір",
-      "duration": ""
+      "duration": "Тривалість"
     },
-    "empty": "",
+    "empty": "Пусто",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Помилка",
+      "message": "Помилка завантаження історії"
     },
-    "paused": ""
+    "paused": "Призупинено"
   }
 }

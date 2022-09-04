@@ -13,14 +13,7 @@
         "label": "使用紧凑型视图"
       },
       "graphs": {
-        "label": "图表",
-        "options": {
-          "cpu": "CPU",
-          "ram": "内存",
-          "storage": "储存",
-          "network": "网络",
-          "gpu": "GPU"
-        }
+        "label": "图表"
       },
       "url": {
         "label": "潇洒。网址"

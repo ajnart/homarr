@@ -97,9 +97,6 @@
             "advancedOptions": {
                 "title": "",
                 "form": {
-                    "ping": {
-                        "label": ""
-                    },
                     "httpStatusCodes": {
                         "label": "HTTP statusne kode",
                         "placeholder": "Izberite veljavne kode statusa",
