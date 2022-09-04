@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Sabnzbd",
+    "description": "Permet de voir votre file d'attente et votre historique Sabnzbd, de mettre en pause et de reprendre les téléchargements"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Aucun client de téléchargement supporté n'a été trouvé !",
+        "text": "Ajouter un service de téléchargement pour afficher vos téléchargements en cours"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "File d'attente",
+    "history": "Historique"
+  },
+  "info": {
+    "sizeLeft": "Taille restante",
+    "paused": "En pause"
+  },
+  "queue": {
+    "header": {
+      "name": "Nom",
+      "size": "Taille",
+      "eta": "ETA",
+      "progress": "Progrès"
+    },
+    "empty": "Vide",
+    "error": {
+      "title": "Erreur",
+      "message": "Une erreur est survenue"
+    },
+    "paused": "En pause"
+  },
+  "history": {
+    "header": {
+      "name": "Nom",
+      "size": "Taille",
+      "duration": "Durée"
+    },
+    "empty": "Vide",
+    "error": {
+      "title": "Erreur",
+      "message": "Erreur récupération de l'historique"
+    },
+    "paused": "En pause"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Sökfält",
+    "description": "Sökfältet för att söka på webben, Youtube, Torrents eller Overseerr"
+  },
+  "input": {
+    "placeholder": "Sök på webben..."
+  }
+}

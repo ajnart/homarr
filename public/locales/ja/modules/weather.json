@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "天気",
+    "description": "現在地の天気を調べる",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "表示単位：華氏"
+      },
+      "location": {
+        "label": "天候の場所"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "クリア",
+      "mainlyClear": "主なクリア事項",
+      "fog": "フォグ",
+      "drizzle": "小雨",
+      "freezingDrizzle": "凍てつく霧雨",
+      "rain": "雨",
+      "freezingRain": "凍てつく雨",
+      "snowFall": "降雪",
+      "snowGrains": "雪の粒",
+      "rainShowers": "にわか雨",
+      "snowShowers": "スノーシャワー",
+      "thunderstorm": "サンダーストーム",
+      "thunderstormWithHail": "雹を伴う雷雨",
+      "unknown": "不明"
+    }
+  }
+}

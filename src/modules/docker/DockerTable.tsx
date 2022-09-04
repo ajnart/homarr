@@ -1,6 +1,15 @@
-import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
+import {
+  Table,
+  Checkbox,
+  Group,
+  Badge,
+  createStyles,
+  ScrollArea,
+  TextInput,
+} from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import ContainerState from './ContainerState';
 
@@ -25,6 +34,8 @@ export default function DockerTable({
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
+
+  const { t } = useTranslation('modules/docker');
 
   useEffect(() => {
     setContainers(containers);
@@ -80,7 +91,9 @@ export default function DockerTable({
                 </Badge>
               ))}
             {element.Ports.length > 3 && (
-              <Badge variant="filled">{element.Ports.length - 3} more</Badge>
+              <Badge variant="filled">
+                {t('table.body.portCollapse', { ports: element.Ports.length - 3 })}
+              </Badge>
             )}
           </Group>
         </td>
@@ -94,11 +107,12 @@ export default function DockerTable({
   return (
     <ScrollArea style={{ height: '80vh' }}>
       <TextInput
-        placeholder="Search by container or image name"
+        placeholder={t('search.placeholder')}
         mt="md"
         icon={<IconSearch size={14} />}
         value={search}
         onChange={handleSearchChange}
+        disabled={usedContainers.length === 0}
       />
       <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
         <thead>
@@ -106,15 +120,16 @@ export default function DockerTable({
             <th style={{ width: 40 }}>
               <Checkbox
                 onChange={toggleAll}
-                checked={selection.length === usedContainers.length}
+                checked={selection.length === usedContainers.length && selection.length > 0}
                 indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
                 transitionDuration={0}
+                disabled={usedContainers.length === 0}
               />
             </th>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Ports</th>
-            <th>State</th>
+            <th>{t('table.header.name')}</th>
+            <th>{t('table.header.image')}</th>
+            <th>{t('table.header.ports')}</th>
+            <th>{t('table.header.state')}</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>

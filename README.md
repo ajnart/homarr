@@ -11,6 +11,9 @@
 <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
   <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status">
 </a>
+<a href=https://crowdin.com/project/homarr>
+<img title="Translations" src="https://badges.crowdin.net/homarr/localized.svg" />
+</a>
 <a href="https://discord.gg/aCsmEV5RgA">
   <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield">
 </a>
@@ -27,13 +30,13 @@
 ---
 
 <!-- Homarr Description -->
-<img align="right" width=250 src="public/imgs/logo-color.svg" />
+<img align="right" width=150 src="public/imgs/logo-color.svg" />
 
 Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.
 
 It integrates with the services you use to display information on the homepage (E.g. Show upcoming Sonarr/Radarr releases).
 
-For a full list of integrations, [head over to our documentation](https://homarr.vercel.app/docs/advanced-features/integrations).
+For a full list of integrations, [head over to our documentation](https://homarr.vercel.app/docs/advanced-configuration/integrations).
 
 If you have any questions about Homarr or want to share information with us, please go to one of the following places:
 
@@ -111,7 +114,6 @@ docker run  \
 
 **Docker Compose**
 ```yml
----
 version: '3'
 #---------------------------------------------------------------------#
 #                Homarr -  A homepage for your server.                #

@@ -3,14 +3,15 @@ import axios, { AxiosResponse } from 'axios';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { IconPlug as Plug } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
 
 export const PingModule: IModule = {
   title: 'Ping Services',
-  description: 'Pings your services and shows their status as an indicator',
   icon: Plug,
   component: PingComponent,
+  id: 'ping',
 };
 
 export default function PingComponent(props: any) {
@@ -20,7 +21,9 @@ export default function PingComponent(props: any) {
   const { url }: { url: string } = props;
   const [isOnline, setOnline] = useState<State>('loading');
   const [response, setResponse] = useState(500);
-  const exists = config.modules?.[PingModule.title]?.enabled ?? false;
+  const exists = config.modules?.[PingModule.id]?.enabled ?? false;
+
+  const { t } = useTranslation('modules/ping');
 
   function statusCheck(response: AxiosResponse) {
     const { status }: { status: string[] } = props;
@@ -51,7 +54,7 @@ export default function PingComponent(props: any) {
       .catch((error) => {
         statusCheck(error.response);
       });
-  }, [config.modules?.[PingModule.title]?.enabled]);
+  }, [config.modules?.[PingModule.id]?.enabled]);
   if (!exists) {
     return null;
   }
@@ -68,10 +71,10 @@ export default function PingComponent(props: any) {
         radius="lg"
         label={
           isOnline === 'loading'
-            ? 'Loading...'
+            ? t('states.loading')
             : isOnline === 'online'
-            ? `Online - ${response}`
-            : `Offline - ${response}`
+            ? t('states.online', { response })
+            : t('states.offline', { response })
         }
       >
         <Indicator

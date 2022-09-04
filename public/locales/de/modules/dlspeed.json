@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Download Geschwindigkeit",
+    "description": "Zeige die aktuellen Downloadgeschwindigkeiten von unterstützten Services"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Name",
+        "size": "Größe",
+        "download": "Down",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "Voraussichtlicher Abschluss",
+        "progress": "Fortschritt"
+      },
+      "body": {
+        "nothingFound": "Keine Torrents gefunden"
+      }
+    },
+    "lineChart": {
+      "title": "Aktuelle Downloadgeschwindigkeit",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} Sekunden zuvor",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Keine unterstützten Download-Clients gefunden!",
+        "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
+      }
+    }
+  }
+}

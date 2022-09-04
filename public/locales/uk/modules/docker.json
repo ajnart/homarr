@@ -1,0 +1,71 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Дозволяє легко керувати торентами"
+  },
+  "search": {
+    "placeholder": "Пошук по назві контейнера або образу"
+  },
+  "table": {
+    "header": {
+      "name": "Ім’я",
+      "image": "Образ",
+      "ports": "Порти",
+      "state": "Стан"
+    },
+    "body": {
+      "portCollapse": "{{ports}} більше"
+    },
+    "states": {
+      "running": "Запущено",
+      "created": "Створено",
+      "stopped": "Зупинено",
+      "unknown": "Невідомо"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Додати сервіс",
+      "message": "Додати сервіс до Homarr"
+    },
+    "restart": {
+      "title": "Перезапустити"
+    },
+    "stop": {
+      "title": "Зупинити"
+    },
+    "start": {
+      "title": "Пуск"
+    },
+    "refreshData": {
+      "title": "Оновити дані"
+    },
+    "remove": {
+      "title": "Видалити"
+    },
+    "addToHomarr": {
+      "title": "Додати до Homarr"
+    }
+  },
+  "messages": {
+    "successfullyExecuted": {
+      "title": "Контейнер {{containerName}} виконав дію {{action}}",
+      "message": "Ваш контейнер успішно виконав - {{action}}"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Помилка інтеграції з Docker",
+      "message": "Ви забули під'єднати docker сокет?"
+    },
+    "unknownError": {
+      "title": "Виникла помилка"
+    },
+    "oneServiceAtATime": {
+      "title": "Будь ласка, лише один сервіс за один раз!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

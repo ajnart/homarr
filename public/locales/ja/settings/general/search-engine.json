@@ -1,0 +1,11 @@
+{
+  "title": "検索エンジン",
+  "tips": {
+    "generalTip": "YouTube を検索する場合は「!yt」、Torrent を検索する場合は「!t」という接頭辞を付けてください。",
+    "placeholderTip": "%s は、クエリのプレースホルダとして使用することができます。"
+  },
+  "customEngine": {
+    "label": "クエリURL",
+    "placeholder": "カスタムクエリURL"
+  }
+}

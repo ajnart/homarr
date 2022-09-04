@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Sabnzbd",
+    "description": "Sabnzbdのキューと履歴の確認、ダウンロードの一時停止と再開が可能です。"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "対応するダウンロードクライアントが見つかりません",
+        "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "キュー",
+    "history": "沿革"
+  },
+  "info": {
+    "sizeLeft": "左サイズ",
+    "paused": "ポーズ"
+  },
+  "queue": {
+    "header": {
+      "name": "名称",
+      "size": "サイズ",
+      "eta": "ETA",
+      "progress": "進捗状況"
+    },
+    "empty": "エンプティ",
+    "error": {
+      "title": "エラー",
+      "message": "エラーが発生しました"
+    },
+    "paused": "ポーズ"
+  },
+  "history": {
+    "header": {
+      "name": "名称",
+      "size": "サイズ",
+      "duration": "期間"
+    },
+    "empty": "エンプティ",
+    "error": {
+      "title": "エラー",
+      "message": "履歴の読み込みエラー"
+    },
+    "paused": "ポーズ"
+  }
+}

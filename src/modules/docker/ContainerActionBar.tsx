@@ -1,4 +1,6 @@
-import { Button, Group, Modal, Title } from '@mantine/core';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { Button, Group, TextInput, Title } from '@mantine/core';
+import { closeAllModals, closeModal, openModal } from '@mantine/modals';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
@@ -11,9 +13,14 @@ import {
 } from '@tabler/icons';
 import axios from 'axios';
 import Dockerode from 'dockerode';
-import { tryMatchService } from '../../tools/addToHomarr';
-import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import { TFunction } from 'react-i18next';
+import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
+import { tryMatchService } from '../../tools/addToHomarr';
+import { useConfig } from '../../tools/state';
+
+let t: TFunction<'modules/docker', undefined>;
 
 function sendDockerCommand(
   action: string,
@@ -34,8 +41,8 @@ function sendDockerCommand(
     .then((res) => {
       updateNotification({
         id: containerId,
-        title: `Container ${containerName} ${action}ed`,
-        message: `Your container was successfully ${action}ed`,
+        title: t('messages.successfullyExecuted.message', { containerName, action }),
+        message: t('messages.successfullyExecuted.message', { action }),
         icon: <IconCheck />,
         autoClose: 2000,
       });
@@ -44,7 +51,7 @@ function sendDockerCommand(
       updateNotification({
         id: containerId,
         color: 'red',
-        title: 'There was an error',
+        title: t('errors.unknownError.title'),
         message: err.response.data.reason,
         autoClose: 2000,
       });
@@ -60,22 +67,28 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
-  const [opened, setOpened] = useState<boolean>(false);
+  t = useTranslation('modules/docker').t;
+  const [isLoading, setisLoading] = useState(false);
+  const { config, setConfig } = useConfig();
+
   return (
     <Group>
-      <Modal
-        size="xl"
+      <Button
+        leftIcon={<IconRefresh />}
+        onClick={() => {
+          setisLoading(true);
+          setTimeout(() => {
+            reload();
+            setisLoading(false);
+          }, 750);
+        }}
+        variant="light"
+        color="violet"
+        loading={isLoading}
         radius="md"
-        opened={opened}
-        onClose={() => setOpened(false)}
-        title="Add service"
       >
-        <AddAppShelfItemForm
-          setOpened={setOpened}
-          {...tryMatchService(selected.at(0))}
-          message="Add service to homarr"
-        />
-      </Modal>
+        {t('actionBar.refreshData.title')}
+      </Button>
       <Button
         leftIcon={<IconRotateClockwise />}
         onClick={() =>
@@ -88,8 +101,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="orange"
         radius="md"
+        disabled={selected.length === 0}
       >
-        Restart
+        {t('actionBar.restart.title')}
       </Button>
       <Button
         leftIcon={<IconPlayerStop />}
@@ -103,8 +117,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="red"
         radius="md"
+        disabled={selected.length === 0}
       >
-        Stop
+        {t('actionBar.stop.title')}
       </Button>
       <Button
         leftIcon={<IconPlayerPlay />}
@@ -118,31 +133,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         color="green"
         radius="md"
+        disabled={selected.length === 0}
       >
-        Start
-      </Button>
-      <Button leftIcon={<IconRefresh />} onClick={() => reload()} variant="light" radius="md">
-        Refresh data
-      </Button>
-      <Button
-        leftIcon={<IconPlus />}
-        color="indigo"
-        variant="light"
-        radius="md"
-        onClick={() => {
-          if (selected.length !== 1) {
-            showNotification({
-              autoClose: 5000,
-              title: <Title order={5}>Please only add one service at a time!</Title>,
-              color: 'red',
-              message: undefined,
-            });
-          } else {
-            setOpened(true);
-          }
-        }}
-      >
-        Add to Homarr
+        {t('actionBar.start.title')}
       </Button>
       <Button
         leftIcon={<IconTrash />}
@@ -156,8 +149,36 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
             )
           )
         }
+        disabled={selected.length === 0}
       >
-        Remove
+        {t('actionBar.remove.title')}
+      </Button>
+      <Button
+        leftIcon={<IconPlus />}
+        color="indigo"
+        variant="light"
+        radius="md"
+        disabled={selected.length === 0 || selected.length > 1}
+        onClick={() => {
+          openModal({
+            size: 'xl',
+            modalId: selected.at(0)!.Id,
+            radius: 'md',
+            title: t('actionBar.addService.title'),
+            zIndex: 500,
+            children: (
+              <AddAppShelfItemForm
+                setConfig={setConfig}
+                config={config}
+                setOpened={() => closeModal(selected.at(0)!.Id)}
+                message={t('actionBar.addService.message')}
+                {...tryMatchService(selected.at(0)!)}
+              />
+            ),
+          });
+        }}
+      >
+        {t('actionBar.addToHomarr.title')}
       </Button>
     </Group>
   );

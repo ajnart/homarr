@@ -10,6 +10,8 @@ import {
 } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 const useStyles = createStyles((theme) => ({
   root: {
     paddingTop: 80,
@@ -91,4 +93,13 @@ export default function Custom404() {
       </div>
     </Container>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      // Will be passed to the page component as props
+    },
+  };
 }

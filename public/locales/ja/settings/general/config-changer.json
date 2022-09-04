@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "コンフィグローダ"
+  },
+  "modal": {
+    "title": "新しいコンフィグの名前を選択します。",
+    "form": {
+      "configName": {
+        "label": "コンフィグ名",
+        "placeholder": "新しいコンフィグ名"
+      },
+      "submitButton": "確認"
+    },
+    "events": {
+      "configSaved": {
+        "title": "コンフィグ保存",
+        "message": "{{configName}}として保存されたコンフィグ"
+      }
+    }
+  },
+  "buttons": {
+    "download": "ダウンロードコンフィグ",
+    "delete": {
+      "text": "コンフィグの削除",
+      "notifications": {
+        "deleted": {
+          "title": "コンフィグ削除",
+          "message": "コンフィグ削除"
+        },
+        "deleteFailed": {
+          "title": "コンフィグ削除の失敗",
+          "message": "コンフィグ削除の失敗"
+        }
+      }
+    },
+    "saveCopy": "コピーを保存する"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "コンフィグを読み込めない",
+        "message": "コンフィグを読み込めませんでした。無効なJSON形式です。"
+      },
+      "loadedSuccessfully": {
+        "title": "Config {{configName}} 読み込み成功"
+      }
+    },
+    "accept": {
+      "text": "ここにファイルをドラッグしてコンフィグをアップロードしてください。JSONのみ対応。"
+    },
+    "reject": {
+      "text": "このファイル形式はサポートされていません。JSONのみアップロードしてください。"
+    }
+  }
+}

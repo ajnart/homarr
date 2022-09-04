@@ -1,6 +1,7 @@
 import { createStyles, Stack, Title, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { IconCalendar as CalendarIcon } from '@tabler/icons';
 import axios from 'axios';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
@@ -9,32 +10,38 @@ import { IModule } from '../ModuleTypes';
 const asModule = <T extends IModule>(t: T) => t;
 export const DashdotModule = asModule({
   title: 'Dash.',
-  description: 'A module for displaying the graphs of your running Dash. instance.',
   icon: CalendarIcon,
   component: DashdotComponent,
   options: {
     cpuMultiView: {
-      name: 'CPU Multi-Core View',
+      name: 'descriptor.settings.cpuMultiView.label',
       value: false,
     },
     storageMultiView: {
-      name: 'Storage Multi-Drive View',
+      name: 'descriptor.settings.storageMultiView.label',
       value: false,
     },
     useCompactView: {
-      name: 'Use Compact View',
+      name: 'descriptor.settings.useCompactView.label',
       value: false,
     },
     graphs: {
-      name: 'Graphs',
+      name: 'descriptor.settings.graphs.label',
       value: ['CPU', 'RAM', 'Storage', 'Network'],
-      options: ['CPU', 'RAM', 'Storage', 'Network', 'GPU'],
+      options: [
+        'CPU',
+        'RAM',
+        'Storage',
+        'Network',
+        'GPU',
+      ],
     },
     url: {
-      name: 'Dash. URL',
+      name: 'descriptor.settings.url.label',
       value: '',
     },
   },
+  id: 'dashdot',
 });
 
 const useStyles = createStyles((theme, _params) => ({
@@ -119,7 +126,7 @@ export function DashdotComponent() {
   const { classes } = useStyles();
   const { colorScheme } = useMantineColorScheme();
 
-  const dashConfig = config.modules?.[DashdotModule.title]
+  const dashConfig = config.modules?.[DashdotModule.id]
     .options as typeof DashdotModule['options'];
   const isCompact = dashConfig?.useCompactView?.value ?? false;
   const dashdotService: serviceItem | undefined = config.services.filter(
@@ -141,32 +148,34 @@ export function DashdotComponent() {
   const totalSize =
     (info?.storage?.layout as any[])?.reduce((acc, curr) => (curr.size ?? 0) + acc, 0) ?? 0;
 
+  const { t } = useTranslation('modules/dashdot');
+
   const graphs = [
     {
-      name: 'CPU',
+      name: t('card.graphs.cpu.title'),
       enabled: cpuEnabled,
       params: {
         multiView: dashConfig?.cpuMultiView?.value ?? false,
       },
     },
     {
-      name: 'Storage',
+      name: t('card.graphs.cpu.title'),
       enabled: storageEnabled && !isCompact,
       params: {
         multiView: dashConfig?.storageMultiView?.value ?? false,
       },
     },
     {
-      name: 'RAM',
+      name: t('card.graphs.memory.title'),
       enabled: ramEnabled,
     },
     {
-      name: 'Network',
+      name: t('card.graphs.network.title'),
       enabled: networkEnabled,
       spanTwo: true,
     },
     {
-      name: 'GPU',
+      name: t('card.graphs.gpu.title'),
       enabled: gpuEnabled,
       spanTwo: true,
     },
@@ -175,27 +184,24 @@ export function DashdotComponent() {
   if (dashdotUrl === '') {
     return (
       <div>
-        <h2 className={classes.heading}>Dash.</h2>
-        <p>
-          No dash. service found. Please add one to your Homarr dashboard or set a dashdot URL in
-          the module options
-        </p>
+        <h2 className={classes.heading}>{t('card.title')}</h2>
+        <p>{t('card.errors.noService')}</p>
       </div>
     );
   }
 
   return (
     <div>
-      <h2 className={classes.heading}>Dash.</h2>
+      <h2 className={classes.heading}>{t('card.title')}</h2>
 
       {!info ? (
-        <p>Cannot acquire information from dash. - are you running the latest version?</p>
+        <p>{t('card.errors.noInformation')}</p>
       ) : (
         <div className={classes.graphsContainer}>
           <div className={classes.table}>
             {storageEnabled && isCompact && (
               <div className={classes.tableRow}>
-                <p className={classes.tableLabel}>Storage:</p>
+                <p className={classes.tableLabel}>{t('card.graphs.storage.label')}</p>
                 <p className={classes.tableValue}>
                   {((100 * totalUsed) / (totalSize || 1)).toFixed(1)}%{'\n'}
                   {bytePrettyPrint(totalUsed)} / {bytePrettyPrint(totalSize)}
@@ -204,10 +210,12 @@ export function DashdotComponent() {
             )}
             {networkEnabled && (
               <div className={classes.tableRow}>
-                <p className={classes.tableLabel}>Network:</p>
+                <p className={classes.tableLabel}>{t('card.graphs.network.label')}</p>
                 <p className={classes.tableValue}>
-                  {bpsPrettyPrint(info?.network?.speedUp)} Up{'\n'}
-                  {bpsPrettyPrint(info?.network?.speedDown)} Down
+                  {bpsPrettyPrint(info?.network?.speedUp)} {t('card.graphs.network.metrics.upload')}
+                  {'\n'}
+                  {bpsPrettyPrint(info?.network?.speedDown)}
+                  {t('card.graphs.network.metrics.download')}
                 </p>
               </div>
             )}

@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Il tempo",
+    "description": "Consultare il meteo attuale della propria località",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Visualizzazione in Fahrenheit"
+      },
+      "location": {
+        "label": "Posizione meteo"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Libero",
+      "mainlyClear": "Principalmente chiaro",
+      "fog": "Nebbia",
+      "drizzle": "Pioggerella",
+      "freezingDrizzle": "Pioggia gelata",
+      "rain": "Pioggia",
+      "freezingRain": "Pioggia gelata",
+      "snowFall": "Caduta della neve",
+      "snowGrains": "Granelli di neve",
+      "rainShowers": "Piogge a catinelle",
+      "snowShowers": "Piogge di neve",
+      "thunderstorm": "Temporale",
+      "thunderstormWithHail": "Temporale con grandine",
+      "unknown": "Sconosciuto"
+    }
+  }
+}

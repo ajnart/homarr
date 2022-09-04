@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "save": "保存"
+  },
+  "tip": "ヒント ",
+  "time": {
+    "seconds": "替わり",
+    "minutes": "議事録",
+    "hours": "時間"
+  }
+}

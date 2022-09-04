@@ -3,6 +3,8 @@ import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons';
 import axios from 'axios';
 import Consola from 'consola';
+import { useTranslation } from 'next-i18next';
+
 import { useState } from 'react';
 import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
@@ -27,6 +29,7 @@ const useStyles = createStyles((theme) => ({
 export function RequestModal({ base, opened, setOpened }: RequestModalProps) {
   const [result, setResult] = useState<MovieResult | TvShowResult>();
   const { secondaryColor } = useColorTheme();
+
   function getResults(base: Result) {
     axios.get(`/api/modules/overseerr/${base.id}?type=${base.mediaType}`).then((res) => {
       setResult(res.data);
@@ -55,6 +58,8 @@ export function MovieRequestModal({
   setOpened: (opened: boolean) => void;
 }) {
   const { secondaryColor } = useColorTheme();
+  const { t } = useTranslation('modules/overseerr');
+
   return (
     <Modal
       onClose={() => setOpened(false)}
@@ -67,23 +72,23 @@ export function MovieRequestModal({
       title={
         <Group>
           <IconDownload />
-          Ask for {result.title}
+          {t('popup.item.buttons.askFor', { title: result.title })}
         </Group>
       }
     >
       <Stack>
         <Alert
           icon={<IconAlertCircle size={16} />}
-          title="Using API key"
+          title={t('popup.item.alerts.automaticApproval.title')}
           color={secondaryColor}
           radius="md"
           variant="filled"
         >
-          This request will be automatically approved
+          {t('popup.item.alerts.automaticApproval.text')}
         </Alert>
         <Group>
           <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
-            Cancel
+            {t('popup.item.buttons.cancel')}
           </Button>
           <Button
             variant="outline"
@@ -91,7 +96,7 @@ export function MovieRequestModal({
               askForMedia(MediaType.Movie, result.id, result.title, []);
             }}
           >
-            Request
+            {t('popup.item.buttons.request')}
           </Button>
         </Group>
       </Stack>
@@ -110,6 +115,7 @@ export function TvRequestModal({
 }) {
   const [selection, setSelection] = useState<TvShowResultSeason[]>(result.seasons);
   const { classes, cx } = useStyles();
+  const { t } = useTranslation('modules/overseerr');
 
   const toggleRow = (container: TvShowResultSeason) =>
     setSelection((current: TvShowResultSeason[]) =>
@@ -148,22 +154,24 @@ export function TvRequestModal({
       title={
         <Group>
           <IconDownload />
-          Ask for {result.name ?? result.originalName ?? 'a TV show'}
+          {t('popup.item.buttons.askFor', {
+            title: result.name ?? result.originalName ?? 'a TV show',
+          })}
         </Group>
       }
     >
       <Stack>
         <Alert
           icon={<IconAlertCircle size={16} />}
-          title="Using API key"
+          title={t('popup.item.alerts.automaticApproval.title')}
           color={secondaryColor}
           radius="md"
           variant="filled"
         >
-          This request will be automatically approved
+          {t('popup.item.alerts.automaticApproval.text')}
         </Alert>
         <Table captionSide="bottom" highlightOnHover>
-          <caption>Tick the seasons that you want to be downloaded</caption>
+          <caption>{t('popup.seasonSelector.caption')}</caption>
           <thead>
             <tr>
               <th>
@@ -174,15 +182,15 @@ export function TvRequestModal({
                   transitionDuration={0}
                 />
               </th>
-              <th>Season</th>
-              <th>Number of episodes</th>
+              <th>{t('popup.seasonSelector.table.header.season')}</th>
+              <th>{t('popup.seasonSelector.table.header.numberOfEpisodes')}</th>
             </tr>
           </thead>
           <tbody>{rows}</tbody>
         </Table>
         <Group>
           <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
-            Cancel
+            {t('popup.item.buttons.cancel')}
           </Button>
           <Button
             variant="outline"
@@ -196,7 +204,7 @@ export function TvRequestModal({
               );
             }}
           >
-            Request
+            {t('popup.item.buttons.request')}
           </Button>
         </Group>
       </Stack>

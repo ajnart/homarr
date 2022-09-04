@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "No supportd download clientz findz!",
+        "text": "Add download survis 2 view ur current downloadz"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "",
+    "history": ""
+  },
+  "info": {
+    "sizeLeft": "",
+    "paused": ""
+  },
+  "queue": {
+    "header": {
+      "name": "Naym",
+      "size": "Bigness",
+      "eta": "ETA",
+      "progress": "Progres"
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  },
+  "history": {
+    "header": {
+      "name": "Naym",
+      "size": "Bigness",
+      "duration": ""
+    },
+    "empty": "",
+    "error": {
+      "title": "",
+      "message": ""
+    },
+    "paused": ""
+  }
+}

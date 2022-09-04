@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "奔流",
+    "description": "対応サービスの現在のダウンロード速度を表示する",
+    "settings": {
+      "hideComplete": {
+        "label": "完了したトレントを隠す"
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "名称",
+        "size": "サイズ",
+        "download": "ダウン",
+        "upload": "上",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "進捗状況"
+      },
+      "body": {
+        "nothingFound": "トレントが見つかりません"
+      }
+    },
+    "lineChart": {
+      "title": "現在のダウンロード速度",
+      "download": "ダウンロードする {{download}}",
+      "upload": "アップロードしてください。 {{upload}}",
+      "timeSpan": "{{seconds}} 秒前",
+      "totalDownload": "ダウンロードする {{download}}/s",
+      "totalUpload": "アップロードしてください。 {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "対応するダウンロードクライアントが見つかりません",
+        "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
+      }
+    }
+  }
+}

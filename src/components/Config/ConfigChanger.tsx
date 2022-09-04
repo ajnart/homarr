@@ -1,5 +1,6 @@
 import { Center, Loader, Select, Tooltip } from '@mantine/core';
 import { setCookie } from 'cookies-next';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { useConfig } from '../../tools/state';
 
@@ -7,6 +8,8 @@ export default function ConfigChanger() {
   const { config, loadConfig, setConfig, getConfigs } = useConfig();
   const [configList, setConfigList] = useState<string[]>([]);
   const [value, setValue] = useState(config.name);
+  const { t } = useTranslation('settings/general/config-changer');
+
   useEffect(() => {
     getConfigs().then((configs) => setConfigList(configs));
   }, [config]);
@@ -23,7 +26,7 @@ export default function ConfigChanger() {
   // return <Select data={[{ value: '1', label: '1' },]} onChange={(e) => console.log(e)} value="1" />;
   return (
     <Select
-      label="Config loader"
+      label={t('configSelect.label')}
       value={value}
       defaultValue={config.name}
       onChange={(e) => {

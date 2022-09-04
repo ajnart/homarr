@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Модуль для відображення графіків від вашого Dash. сервісу.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "Процесор по ядрах"
+      },
+      "storageMultiView": {
+        "label": "Сховище по дисках"
+      },
+      "useCompactView": {
+        "label": "Компактний вигляд"
+      },
+      "graphs": {
+        "label": "Графіки"
+      },
+      "url": {
+        "label": "Dash. URL"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Dash. сервіс не знайдено. Будь ласка, додайте його до головної панелі чи встановіть Dash. URL в налаштуваннях модулю",
+      "noInformation": "Не вдалося отримати інформацію з Dash. - чи ви використовуєте останню версію?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Диск",
+        "label": "Диск:"
+      },
+      "network": {
+        "title": "Мережа",
+        "label": "Мережа:",
+        "metrics": {
+          "download": "Завантаження",
+          "upload": "Віддача"
+        }
+      },
+      "cpu": {
+        "title": "Процесор"
+      },
+      "memory": {
+        "title": "Оперативна пам'ять"
+      },
+      "gpu": {
+        "title": "Графічний процесор"
+      }
+    }
+  }
+}

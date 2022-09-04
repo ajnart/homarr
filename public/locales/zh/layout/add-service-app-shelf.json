@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "增加一项服务"
+    },
+    "modal": {
+        "title": "添加服务",
+        "form": {
+            "validation": {
+                "invalidUrl": "请输入一个有效的URL",
+                "noStatusCodeSelected": "请选择一个状态代码"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "选项",
+                "form": {
+                    "serviceName": {
+                        "label": "服务名称",
+                        "placeholder": "丛书"
+                    },
+                    "iconUrl": {
+                        "label": "图标URL"
+                    },
+                    "serviceUrl": {
+                        "label": "服务网址"
+                    },
+                    "onClickUrl": {
+                        "label": "点击URL时"
+                    },
+                    "serviceType": {
+                        "label": "服务类型",
+                        "defaultValue": "其他",
+                        "placeholder": "挑选一个"
+                    },
+                    "category": {
+                        "label": "类别",
+                        "placeholder": "选择一个类别或创建一个新类别",
+                        "nothingFound": "没有发现",
+                        "createLabel": "+ 创建 {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API密钥",
+                            "placeholder": "你的API密钥",
+                            "validation": {
+                                "noKey": "无效钥匙"
+                            },
+                            "tip": {
+                                "text": "获取你的API密钥",
+                                "link": "这里。"
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "帐号",
+                                "placeholder": "管理员",
+                                "validation": {
+                                    "invalidUsername": "无效的用户名"
+                                }
+                            },
+                            "password": {
+                                "label": "密码",
+                                "placeholder": "管理员",
+                                "validation": {
+                                    "invalidPassword": "无效密码"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "密码",
+                                "placeholder": "密码",
+                                "validation": {
+                                    "invalidPassword": "无效密码"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "帐号",
+                                "placeholder": "管理员",
+                                "validation": {
+                                    "invalidUsername": "无效的用户名"
+                                }
+                            },
+                            "password": {
+                                "label": "密码",
+                                "placeholder": "管理员",
+                                "validation": {
+                                    "invalidPassword": "无效密码"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "高级选项",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "HTTP状态代码",
+                        "placeholder": "选择有效的状态代码",
+                        "clearButtonLabel": "清除选择",
+                        "nothingFound": "没有发现"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "在新标签中打开服务"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "添加服务"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

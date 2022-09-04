@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "cpuMultiView": {
+        "label": ""
+      },
+      "storageMultiView": {
+        "label": ""
+      },
+      "useCompactView": {
+        "label": ""
+      },
+      "graphs": {
+        "label": ""
+      },
+      "url": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "title": "",
+    "errors": {
+      "noService": "",
+      "noInformation": ""
+    },
+    "graphs": {
+      "storage": {
+        "title": "",
+        "label": ""
+      },
+      "network": {
+        "title": "",
+        "label": "",
+        "metrics": {
+          "download": "",
+          "upload": ""
+        }
+      },
+      "cpu": {
+        "title": ""
+      },
+      "memory": {
+        "title": ""
+      },
+      "gpu": {
+        "title": ""
+      }
+    }
+  }
+}

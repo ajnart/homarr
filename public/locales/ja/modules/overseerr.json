@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "オーバーホール",
+    "description": "Overseerr/Jellyseerrからメディアを検索して追加できるようにする。"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "{{title}}をお願いします。",
+        "cancel": "キャンセル",
+        "request": "リクエスト"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "APIキーの使用",
+          "text": "このリクエストは自動的に承認されます"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "ダウンロードしたい季節にチェックを入れる",
+      "table": {
+        "header": {
+          "season": "シーズン",
+          "numberOfEpisodes": "エピソード数"
+        }
+      }
+    }
+  }
+}

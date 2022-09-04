@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Sabnzbd",
+    "description": "允许您查看您的Sabnzbd队列和历史，暂停和恢复下载"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "没有找到支持的下载客户端!",
+        "text": "添加下载服务，查看你当前的下载量"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "排队",
+    "history": "历史"
+  },
+  "info": {
+    "sizeLeft": "左侧尺寸",
+    "paused": "暂停使用"
+  },
+  "queue": {
+    "header": {
+      "name": "命名",
+      "size": "尺寸",
+      "eta": "ETA",
+      "progress": "进展"
+    },
+    "empty": "空的",
+    "error": {
+      "title": "误差",
+      "message": "发生了一个错误"
+    },
+    "paused": "暂停使用"
+  },
+  "history": {
+    "header": {
+      "name": "命名",
+      "size": "尺寸",
+      "duration": "时间"
+    },
+    "empty": "空的",
+    "error": {
+      "title": "误差",
+      "message": "错误加载历史记录"
+    },
+    "paused": "暂停使用"
+  }
+}

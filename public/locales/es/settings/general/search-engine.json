@@ -1,0 +1,11 @@
+{
+  "title": "Motor de búsqueda",
+  "tips": {
+    "generalTip": "Usa los prefijos !yt y !t delante de tu consulta para buscar en YouTube o un torrent respectivamente.",
+    "placeholderTip": "%s puede utilizarse como modelo para la petición."
+  },
+  "customEngine": {
+    "label": "URL de la Petición",
+    "placeholder": "URL de petición personalizada"
+  }
+}

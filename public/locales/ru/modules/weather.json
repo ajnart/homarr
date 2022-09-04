@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Погода",
+    "description": "Узнайте текущую погоду в вашем регионе",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Отображение в градусах Фаренгейта"
+      },
+      "location": {
+        "label": "Местоположение"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Ясно",
+      "mainlyClear": "В основном ясно",
+      "fog": "Туман",
+      "drizzle": "Мелкий дождь",
+      "freezingDrizzle": "Изморозь",
+      "rain": "Дождь",
+      "freezingRain": "Ледяной дождь",
+      "snowFall": "Снегопад",
+      "snowGrains": "",
+      "rainShowers": "Ливневый дождь",
+      "snowShowers": "Пурга",
+      "thunderstorm": "Гроза",
+      "thunderstormWithHail": "Гроза с градом",
+      "unknown": ""
+    }
+  }
+}

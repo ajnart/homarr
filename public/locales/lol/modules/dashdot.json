@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Moduel 4 displaying teh graphs ov ur runnin Dash. instanz.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "CPU Multi-Coer View"
+      },
+      "storageMultiView": {
+        "label": "Storagzzz Multi-Driveh View"
+      },
+      "useCompactView": {
+        "label": "Ues Compact View"
+      },
+      "graphs": {
+        "label": "Graphz"
+      },
+      "url": {
+        "label": "Dash. URL"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "No Dash. survis findz. plz add wan 2 ur Homarr dashboard or set Dash. URL in teh moduel opshuns",
+      "noInformation": "Cannot acquier informashun frum dash. - r u runnin teh latest vershun?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Storagzzz",
+        "label": "Storagzzz:"
+      },
+      "network": {
+        "title": "Netwerk",
+        "label": "Netwerk:",
+        "metrics": {
+          "download": "Down",
+          "upload": "Up"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

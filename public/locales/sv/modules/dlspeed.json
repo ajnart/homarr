@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Nedladdningshastighet ",
+    "description": "Visa den aktuella nedladdningshastigheten för tjänster som stöds"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Namn",
+        "size": "Storlek",
+        "download": "Ned",
+        "upload": "Upp",
+        "estimatedTimeOfArrival": "Beräknad sluttid",
+        "progress": "Förlopp"
+      },
+      "body": {
+        "nothingFound": "Inga torrents hittades"
+      }
+    },
+    "lineChart": {
+      "title": "Aktuell nedladdningshastighet",
+      "download": "Nedladdning: {{download}}",
+      "upload": "Uppladdning: {{upload}}",
+      "timeSpan": "{{seconds}} sekunder sedan",
+      "totalDownload": "Nedladdning: {{download}}/s",
+      "totalUpload": "Uppladdning: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Inga nedladdningsklienter som stöds hittades!",
+        "text": "Lägg till en nedladdningstjänst för att visa dina aktuella nedladdningar"
+      }
+    }
+  }
+}

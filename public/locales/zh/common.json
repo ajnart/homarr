@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "save": "拯救"
+  },
+  "tip": "提示。 ",
+  "time": {
+    "seconds": "秒",
+    "minutes": "分钟",
+    "hours": "小时"
+  }
+}

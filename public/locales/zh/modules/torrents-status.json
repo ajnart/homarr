@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "酷刑",
+    "description": "显示支持的服务的当前下载速度",
+    "settings": {
+      "hideComplete": {
+        "label": "隐藏已完成的torrent"
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "命名",
+        "size": "尺寸",
+        "download": "下降",
+        "upload": "上",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "进展"
+      },
+      "body": {
+        "nothingFound": "没有找到山洪资源"
+      }
+    },
+    "lineChart": {
+      "title": "当前的下载速度",
+      "download": "下载。 {{download}}",
+      "upload": "上传。 {{upload}}",
+      "timeSpan": "{{seconds}} 秒前",
+      "totalDownload": "下载。 {{download}}/s",
+      "totalUpload": "上传。 {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "没有找到支持的下载客户端!",
+        "text": "添加下载服务，查看你当前的下载量"
+      }
+    }
+  }
+}

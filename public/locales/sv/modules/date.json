@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Datum",
+    "description": "Visa aktuell tid och datum på ett kort",
+    "settings": {
+      "display24HourFormat": {
+        "label": "Visa heltid (24-timmars)"
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@ import { Config, MatchingImages, ServiceType, tryMatchPort } from './types';
 
 async function MatchIcon(name: string) {
   const res = await fetch(
-    `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
+    `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
       .toLowerCase()}.png`
   );
@@ -24,13 +24,13 @@ export function tryMatchService(container: Dockerode.ContainerInfo | undefined) 
   if (container === undefined) return {};
   const name = container.Names[0].substring(1);
   const type = tryMatchType(container.Image);
-  const port = tryMatchPort(type.toLowerCase());
+  const port = tryMatchPort(type.toLowerCase())?.value ?? container.Ports[0]?.PublicPort;
   return {
     name,
     id: container.Id,
     type: tryMatchType(container.Image),
-    url: `localhost${port ? `:${port.value}` : ''}`,
-    icon: `https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/${name
+    url: `localhost${port ? `:${port}` : ''}`,
+    icon: `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
       .toLowerCase()}.png`,
   };

@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Weather",
+    "description": "Look up the current weather in your location",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Display in Fahrenheit"
+      },
+      "location": {
+        "label": "Weather location"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Clear",
+      "mainlyClear": "Mainly clear",
+      "fog": "Fog",
+      "drizzle": "Drizzle",
+      "freezingDrizzle": "Freezing drizzle",
+      "rain": "Rain",
+      "freezingRain": "Freezing rain",
+      "snowFall": "Snow fall",
+      "snowGrains": "Snow grains",
+      "rainShowers": "Rain showers",
+      "snowShowers": "Snow showers",
+      "thunderstorm": "Thunderstorm",
+      "thunderstormWithHail": "Thunderstorm with hail",
+      "unknown": "Unknown"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Data",
+    "description": "Mostra l'ora e la data corrente in una scheda",
+    "settings": {
+      "display24HourFormat": {
+        "label": "Visualizzazione a tempo pieno (24 ore)"
+      }
+    }
+  }
+}

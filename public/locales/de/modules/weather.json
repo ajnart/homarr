@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Wetter",
+    "description": "Aktuelles Wetter an deinem Standort anzeigen",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "In Fahrenheit anzeigen"
+      },
+      "location": {
+        "label": "Wetterstandort"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Klar",
+      "mainlyClear": "Überwiegend klar",
+      "fog": "Nebel",
+      "drizzle": "Niesel",
+      "freezingDrizzle": "Eisiger Nieselregen",
+      "rain": "Regen",
+      "freezingRain": "Eisiger Regen",
+      "snowFall": "Schneefall",
+      "snowGrains": "Schneekörner",
+      "rainShowers": "Regenschauer",
+      "snowShowers": "Schneeschauer",
+      "thunderstorm": "Gewitter",
+      "thunderstormWithHail": "Gewitter mit Hagel",
+      "unknown": "Unbekannt"
+    }
+  }
+}

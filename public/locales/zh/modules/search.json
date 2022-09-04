@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "搜索栏",
+    "description": "搜索栏可搜索网页、Youtube、Torrents或Overseerr"
+  },
+  "input": {
+    "placeholder": "在网上搜索..."
+  }
+}

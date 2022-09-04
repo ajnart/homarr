@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "Adicionar serviço"
+    },
+    "modal": {
+        "title": "Adicionar serviço",
+        "form": {
+            "validation": {
+                "invalidUrl": "Por favor, insira uma URL válida",
+                "noStatusCodeSelected": "Por favor, selecione um código de estado"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Opções",
+                "form": {
+                    "serviceName": {
+                        "label": "Nome do serviço",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "URL do ícone"
+                    },
+                    "serviceUrl": {
+                        "label": "URL do serviço"
+                    },
+                    "onClickUrl": {
+                        "label": "Ao clicar na URL"
+                    },
+                    "serviceType": {
+                        "label": "Tipo de serviço",
+                        "defaultValue": "Outros",
+                        "placeholder": "Escolha um"
+                    },
+                    "category": {
+                        "label": "Categoria",
+                        "placeholder": "Selecione uma categoria ou crie uma nova",
+                        "nothingFound": "Nenhum resultado encontrado",
+                        "createLabel": "+ Criar {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "Chave da API",
+                            "placeholder": "Sua chave da API",
+                            "validation": {
+                                "noKey": "Chave inválida"
+                            },
+                            "tip": {
+                                "text": "Obter sua chave da API",
+                                "link": "aqui."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Usuário",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Usuário inválido"
+                                }
+                            },
+                            "password": {
+                                "label": "Senha",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Senha inválida"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Senha",
+                                "placeholder": "senha",
+                                "validation": {
+                                    "invalidPassword": "Senha inválida"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Usuário",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Usuário inválido"
+                                }
+                            },
+                            "password": {
+                                "label": "Senha",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Senha inválida"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "Códigos de estado HTTP",
+                        "placeholder": "Selecione um código de estado válido",
+                        "clearButtonLabel": "Limpar seleção",
+                        "nothingFound": "Nenhum resultado encontrado"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Abrir links em uma nova aba"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Adicionar serviço"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "pageTitle": {
+    "label": "ページタイトル",
+    "placeholder": "ホーマー"
+  },
+  "logo": {
+    "label": "ロゴマーク",
+    "placeholder": "/img/logo.png"
+  },
+  "favicon": {
+    "label": "ファビコン",
+    "placeholder": "/favicon.png"
+  },
+  "background": {
+    "label": "背景",
+    "placeholder": "/img/background.png"
+  },
+  "customCSS": {
+    "label": "カスタムCSS",
+    "placeholder": "カスタムCSSは最後に実行されます"
+  },
+  "buttons": {
+    "submit": "提出"
+  }
+}
