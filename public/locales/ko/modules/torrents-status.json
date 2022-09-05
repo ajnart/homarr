@@ -1,39 +1,39 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "토렌트",
+    "description": "지원하는 서비스의 현재 다운로드 속도를 표시합니다",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "완료된 토렌트 숨기기"
       }
     }
   },
   "card": {
     "table": {
       "header": {
-        "name": "",
-        "size": "",
+        "name": "이름",
+        "size": "크기",
         "download": "다운",
         "upload": "업",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "남은 시간",
+        "progress": "진행률"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "토렌트 없음"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "현재 다운로드 속도",
+      "download": "다운로드: {{download}}",
+      "upload": "업로드: {{upload}}",
+      "timeSpan": "{{seconds}} 초 전",
+      "totalDownload": "다운로드: {{download}}/s",
+      "totalUpload": "업로드: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "지원되는 다운로드 클라이언트를 찾을 수 없습니다!",
+        "text": "현재 다운로드를 보려면 다운로드 서비스를 추가하세요"
       }
     }
   }
