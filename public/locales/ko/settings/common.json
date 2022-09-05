@@ -2,8 +2,8 @@
   "title": "",
   "tooltip": "",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "일반",
+    "customizations": "커스터마이징"
   },
   "tips": {
     "configTip": ""
