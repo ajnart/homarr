@@ -13,8 +13,8 @@
       "header": {
         "name": "",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "다운",
+        "upload": "업",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
