@@ -25,7 +25,7 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
+      "title": "서비스 추가",
       "message": ""
     },
     "restart": {
