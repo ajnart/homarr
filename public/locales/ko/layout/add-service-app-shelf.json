@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "서비스 추가"
     },
     "modal": {
-        "title": "",
+        "title": "서비스 추가",
         "form": {
             "validation": {
-                "invalidUrl": "",
-                "noStatusCodeSelected": ""
+                "invalidUrl": "유효한 URL을 입력해 주세요",
+                "noStatusCodeSelected": "상태 코드를 선택해 주세요"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "옵션",
                 "form": {
                     "serviceName": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "서비스 이름",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "아이콘 URL"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "서비스 URL"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "클릭 시 URL"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "서비스 유형",
+                        "defaultValue": "기타",
+                        "placeholder": "선택해 주세요"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "카테고리",
+                        "placeholder": "카테고리를 선택하거나 새 카테고리를 생성합니다",
+                        "nothingFound": "찾을 수 없음",
+                        "createLabel": "+ 만들기 {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "API 키",
+                            "placeholder": "당신의 API 키",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "잘못된 키"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "API 키",
+                                "link": "가져오기."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "사용자명",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "잘못된 사용자명"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "비밀번호",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "잘못된 비밀번호"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "비밀번호",
+                                "placeholder": "비밀번호",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "잘못된 비밀번호"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "사용자명",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "잘못된 사용자명"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "비밀번호",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "잘못된 비밀번호"
                                 }
                             }
                         }
@@ -95,20 +95,20 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "고급 옵션",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "HTTP 상태 코드",
+                        "placeholder": "유효한 상태 코드를 선택해 주세요",
+                        "clearButtonLabel": "모두 선택 취소",
+                        "nothingFound": "찾을 수 없음"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "새 탭에서 서비스 열기"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "서비스 추가"
                         }
                     }
                 }
