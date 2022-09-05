@@ -8,7 +8,7 @@
       "buttons": {
         "askFor": "",
         "cancel": "",
-        "request": ""
+        "request": "요청"
       },
       "alerts": {
         "automaticApproval": {
