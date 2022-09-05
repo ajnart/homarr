@@ -1,32 +1,32 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "날씨",
+    "description": "현재 위치의 날씨 보기",
     "settings": {
       "displayInFahrenheit": {
-        "label": ""
+        "label": "화씨로 표시"
       },
       "location": {
-        "label": ""
+        "label": "날씨 위치"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
-      "unknown": ""
+      "clear": "맑음",
+      "mainlyClear": "대체로 맑음",
+      "fog": "안개",
+      "drizzle": "이슬비",
+      "freezingDrizzle": "어는 이슬비",
+      "rain": "비",
+      "freezingRain": "어는 비",
+      "snowFall": "눈",
+      "snowGrains": "쌀알눈",
+      "rainShowers": "소나기",
+      "snowShowers": "소낙눈",
+      "thunderstorm": "뇌우",
+      "thunderstormWithHail": "우박을 동반한 뇌우",
+      "unknown": "알 수 없음"
     }
   }
 }
