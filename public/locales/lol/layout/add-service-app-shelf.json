@@ -95,7 +95,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Advancd opshuns",
                 "form": {
                     "httpStatusCodes": {
                         "label": "HTTP Status Codes",
