@@ -14,7 +14,7 @@
     "events": {
       "configSaved": {
         "title": "설정 저장됨",
-        "message": "{{configName}}로 설정 저장됨"
+        "message": "{{configName}} 로 설정 저장됨"
       }
     }
   },
@@ -39,17 +39,17 @@
     "notifications": {
       "invalidConfig": {
         "title": "설정을 불러올 수 없습니다",
-        "message": "구성을 로드할 수 없습니다. 잘못된 JSON 형식입니다."
+        "message": "설정을 로드할 수 없습니다. 잘못된 JSON 형식입니다."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "성공적으로 {{configName}} 설정을 불러왔습니다"
       }
     },
     "accept": {
-      "text": ""
+      "text": "구성을 업로드하려면 여기로 파일을 드래그하세요. JSON 형식만 지원합니다."
     },
     "reject": {
-      "text": ""
+      "text": "이 파일 형식은 지원되지 않습니다. JSON 형식만 업로드하세요."
     }
   }
 }
