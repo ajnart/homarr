@@ -52,10 +52,10 @@
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "사용자명",
+                                "label": "사용자 이름",
                                 "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": "잘못된 사용자명"
+                                    "invalidUsername": "잘못된 사용자 이름"
                                 }
                             },
                             "password": {
@@ -77,10 +77,10 @@
                         },
                         "transmission": {
                             "username": {
-                                "label": "사용자명",
+                                "label": "사용자 이름",
                                 "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": "잘못된 사용자명"
+                                    "invalidUsername": "잘못된 사용자 이름"
                                 }
                             },
                             "password": {
