@@ -32,7 +32,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Nie znaleziono obsługiwanych klientów pobierania!",
         "text": ""
       }
     }
