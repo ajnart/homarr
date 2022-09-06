@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Barra de pesquisa",
-    "description": ""
+    "description": "Barra de pesquisa para pesquisar na ‘internet’, YouTube, torrents ou Overseerr"
   },
   "input": {
     "placeholder": "Pesquisar na Internet..."
