@@ -29,7 +29,7 @@
     "graphs": {
       "storage": {
         "title": "",
-        "label": ""
+        "label": "Pamięć:"
       },
       "network": {
         "title": "Sieć",
