@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "Permite que você pesquise e adicione conteudo do Overseerr/Jellyseerr"
+    "name": "Overseerr",
+    "description": "Permite que você pesquise e adicione conteúdo do Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
