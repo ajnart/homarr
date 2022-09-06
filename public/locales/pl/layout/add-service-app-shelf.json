@@ -12,7 +12,7 @@
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Opcje",
                 "form": {
                     "serviceName": {
                         "label": "Nazwa usługi",
@@ -95,7 +95,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Opcje zaawansowane",
                 "form": {
                     "httpStatusCodes": {
                         "label": "",
