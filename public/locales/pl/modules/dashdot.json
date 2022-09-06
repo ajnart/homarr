@@ -7,7 +7,7 @@
         "label": "Widok wielordzeniowy procesora"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Widok wielu dysków"
       },
       "useCompactView": {
         "label": "Użyj trybu kompaktowego"
@@ -24,7 +24,7 @@
     "title": "Dash.",
     "errors": {
       "noService": "Nie znaleziono usługi Dash. Proszę dodać ją do pulpitu Homarra lub ustawić adres URL usługi Dash. w opcjach modułu",
-      "noInformation": ""
+      "noInformation": "Nie można uzyskać informacji z dash. - używasz najnowszej wersji?"
     },
     "graphs": {
       "storage": {
