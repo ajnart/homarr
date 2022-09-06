@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Docker",
     "description": "Permite que você gerencie facilmente seus torrents"
   },
   "search": {
@@ -66,6 +66,6 @@
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
