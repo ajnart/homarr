@@ -55,14 +55,14 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
+      "title": "Integracja Dockera nie powiodła się",
       "message": "Czy zapomniałeś nie zamontować docker socket?"
     },
     "unknownError": {
       "title": "Wystąpił błąd"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Nie dodawaj wielu usług naraz!"
     }
   },
   "actionIcon": {
