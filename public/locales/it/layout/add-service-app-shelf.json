@@ -41,7 +41,7 @@
                     "integrations": {
                         "apiKey": {
                             "label": "Chiave API",
-                            "placeholder": "La vostra chiave API",
+                            "placeholder": "La tua chiave API",
                             "validation": {
                                 "noKey": "Chiave non valida"
                             },
@@ -53,7 +53,7 @@
                         "qBittorrent": {
                             "username": {
                                 "label": "Nome utente",
-                                "placeholder": "amministratore",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Nome utente non valido"
                                 }
@@ -78,7 +78,7 @@
                         "transmission": {
                             "username": {
                                 "label": "Nome utente",
-                                "placeholder": "amministratore",
+                                "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Nome utente non valido"
                                 }
