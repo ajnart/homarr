@@ -28,8 +28,8 @@
     },
     "graphs": {
       "storage": {
-        "title": "Immagazzinamento",
-        "label": "Stoccaggio:"
+        "title": "Spazio di archiviazione",
+        "label": "Spazio di archiviazione:"
       },
       "network": {
         "title": "Rete",
