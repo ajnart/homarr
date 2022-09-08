@@ -25,12 +25,12 @@
                         "label": "URL del servizio"
                     },
                     "onClickUrl": {
-                        "label": "URL al clic"
+                        "label": "URL di destinatione"
                     },
                     "serviceType": {
                         "label": "Tipo di servizio",
                         "defaultValue": "Altro",
-                        "placeholder": "Sceglietene uno"
+                        "placeholder": "Scegli Uno"
                     },
                     "category": {
                         "label": "Categoria",
