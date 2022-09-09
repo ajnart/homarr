@@ -28,13 +28,7 @@ export const DashdotModule = asModule({
     graphs: {
       name: 'descriptor.settings.graphs.label',
       value: ['CPU', 'RAM', 'Storage', 'Network'],
-      options: [
-        'CPU',
-        'RAM',
-        'Storage',
-        'Network',
-        'GPU',
-      ],
+      options: ['CPU', 'RAM', 'Storage', 'Network', 'GPU'],
     },
     url: {
       name: 'descriptor.settings.url.label',
@@ -126,8 +120,7 @@ export function DashdotComponent() {
   const { classes } = useStyles();
   const { colorScheme } = useMantineColorScheme();
 
-  const dashConfig = config.modules?.[DashdotModule.id]
-    .options as typeof DashdotModule['options'];
+  const dashConfig = config.modules?.[DashdotModule.id].options as typeof DashdotModule['options'];
   const isCompact = dashConfig?.useCompactView?.value ?? false;
   const dashdotService: serviceItem | undefined = config.services.filter(
     (service) => service.type === 'Dash.'
@@ -159,7 +152,7 @@ export function DashdotComponent() {
       },
     },
     {
-      name: t('card.graphs.cpu.title'),
+      name: t('card.graphs.storage.title'),
       enabled: storageEnabled && !isCompact,
       params: {
         multiView: dashConfig?.storageMultiView?.value ?? false,
@@ -222,19 +215,21 @@ export function DashdotComponent() {
           </div>
 
           {graphs.map((graph) => (
-            <Stack>
+            <Stack
+              style={
+                isCompact
+                  ? {
+                      width: graph.spanTwo ? '100%' : 'calc(50% - 5px)',
+                      position: 'relative',
+                    }
+                  : undefined
+              }
+            >
               <Title style={{ position: 'absolute', right: 0 }} order={4} mt={10} mr={25}>
                 {graph.name}
               </Title>
               <iframe
                 className={classes.iframe}
-                style={
-                  isCompact
-                    ? {
-                        width: graph.spanTwo ? '100%' : 'calc(50% - 5px)',
-                      }
-                    : undefined
-                }
                 key={graph.name}
                 title={graph.name}
                 src={`${dashdotUrl}?singleGraphMode=true&graph=${graph.name.toLowerCase()}&theme=${colorScheme}&surface=${(colorScheme ===
