@@ -24,7 +24,7 @@
 <i>Join the discord! — Don't forget to star the repo if you are enjoying the project!</i>
 </p>
 <p align="center">
-<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.vercel.app/docs/quick-start/"><strong> Install ➡️ </strong></a> • <a href="https://homarr.vercel.app/docs/about"><strong> Read the Docs 📄 </strong></a>
+<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.vercel.app/docs/introduction/installation"><strong> Install ➡️ </strong></a> • <a href="https://homarr.vercel.app/docs/about"><strong> Read the Docs 📄 </strong></a>
 </p>
 
 ---
