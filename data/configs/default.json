@@ -7,6 +7,15 @@
       "type": "Other",
       "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+      "id": "ee3452a0-a624-423f-8387-3dd45d629e7f",
+      "type": "Sabnzbd",
+      "category": "Media",
+      "name": "Sab",
+      "icon": "/favicon.png",
+      "url": "https://sabnzbd.jannesv.be/",
+      "apiKey": "2982e4afbc6d42d6bb5863751a354d20"
     }
   ],
   "settings": {
@@ -16,11 +25,14 @@
     "Search Bar": {
       "enabled": true
     },
-    "calendar": {
+    "usenet": {
+      "enabled": true
+    },
+    "search": {
       "enabled": true
     },
     "torrents-status": {
-      "enabled": true
+      "enabled": false
     },
     "dlspeed": {
       "enabled": true

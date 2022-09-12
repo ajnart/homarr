@@ -27,6 +27,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
+    'max-classes-per-file': 'off',
   },
 };

@@ -13,12 +13,16 @@ export class Config {
 export class Service {
   @Field()
   name: string;
+
   @Field()
   id: string;
+
   @Field()
   type: string;
+
   @Field()
   icon: string;
+
   @Field()
   url: string;
 }
