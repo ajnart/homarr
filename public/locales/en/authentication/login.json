@@ -1,0 +1,27 @@
+{
+  "title": "Welcome back!",
+  "text": "Please enter the Password",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "Password",
+        "placeholder": "Your password"
+      }
+    },
+    "buttons": {
+      "submit": "Sign in"
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "Checking your password",
+      "message": "Your password is being checked..."
+    },
+    "correct": {
+      "title": "Password correct, redirecting you..."
+    },
+    "wrong": {
+      "title": "Password is wrong, please try again."
+    }
+  }
+}
