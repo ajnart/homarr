@@ -136,14 +136,17 @@ export default function CalendarComponent(props: any) {
         date.getDay() === today.getDay() && date.getDate() === today.getDate()
           ? {
               backgroundColor:
-                theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+              theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+              margin: 1,
             }
-          : {}
+          : {
+            margin: 1,
+          }
       }
       styles={{
         calendarHeader: {
-          marginRight: 15,
-          marginLeft: 15,
+          marginRight: 40,
+          marginLeft: 40,
         },
       }}
       allowLevelChange={false}
