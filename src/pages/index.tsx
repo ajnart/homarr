@@ -11,6 +11,7 @@ import { migrateToIdConfig } from '../tools/migrate';
 import { getConfig } from '../tools/getConfig';
 import { useColorTheme } from '../tools/color';
 import Layout from '../components/layout/Layout';
+import { dashboardNamespaces } from '../tools/translation-namespaces';
 
 export async function getServerSideProps({
   req,
@@ -29,37 +30,10 @@ export async function getServerSideProps({
     configName = 'default';
   }
 
-  const translations = await serverSideTranslations((configLocale ?? locale) as string, [
-    'common',
-    'layout/app-shelf',
-    'layout/add-service-app-shelf',
-    'layout/app-shelf-menu',
-    'settings/common',
-    'settings/general/theme-selector',
-    'settings/general/config-changer',
-    'settings/general/internationalization',
-    'settings/general/module-enabler',
-    'settings/general/search-engine',
-    'settings/general/widget-positions',
-    'settings/customization/color-selector',
-    'settings/customization/page-appearance',
-    'settings/customization/shade-selector',
-    'settings/customization/app-width',
-    'settings/customization/opacity-selector',
-    'modules/common',
-    'modules/date',
-    'modules/calendar',
-    'modules/dlspeed',
-    'modules/usenet',
-    'modules/search',
-    'modules/torrents-status',
-    'modules/weather',
-    'modules/ping',
-    'modules/docker',
-    'modules/dashdot',
-    'modules/overseerr',
-    'modules/common-media-cards',
-  ]);
+  const translations = await serverSideTranslations(
+    (configLocale ?? locale) as string,
+    dashboardNamespaces
+  );
   return getConfig(configName as string, translations);
 }
 
