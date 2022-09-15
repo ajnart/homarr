@@ -28,46 +28,37 @@ env:
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  yarn_install_and_build:
+  npm_install_and_build:
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
     steps:
-
-      - name: Setup
-        uses: actions/setup-node@v3
-
-      - name: Checkout
+      - name: Check out code
         uses: actions/checkout@v3
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      
-      - uses: actions/cache@v3
-        id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          fetch-depth: 2
 
-      - name: Restore NextJS cache
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Turbo Cache
+        id: turbo-cache
         uses: actions/cache@v2
         with:
-          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
-          path: |
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
+          path: .turbo
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+            turbo-${{ github.job }}-${{ github.ref_name }}-
 
-      - run: yarn install --immutable
+      - name: Install dependencies
+        run: npm install
 
-      - run: yarn build
+      - name: Build
+        run: npm run build -- --cache-dir .turbo
 
       - name: Docker meta
         if: github.event_name != 'pull_request'

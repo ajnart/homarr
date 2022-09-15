@@ -1,0 +1,22 @@
+overwrite: true
+schema: "../../apps/api/src/schema.gql"
+documents: "**/*.gql"
+generates:
+  ./index.tsx:
+    config:
+      scalars:
+        DateTime: Date
+    plugins:
+      - add:
+          content:
+           - '/* eslint-disable */'
+           - '/* AUTOMATICALLY GENERATED FILE. DO NOT MODIFY. */'
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    config:
+      scalars:
+        Date: Date
+    plugins:
+      - "introspection"

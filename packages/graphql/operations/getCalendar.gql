@@ -1,0 +1,26 @@
+query getCalendar($startDate: DateTime!, $endDate: DateTime!) {
+  calendar(startDate: $startDate, endDate: $endDate) {
+    ... on TvCalendarItem {
+      seriesTitle
+      episodeTitle
+      airDate
+      seasonNumber
+      episodeNumber
+      tvDbId
+      imdbId
+      poster
+      genres
+      overview
+    }
+    ... on MovieCalendarItem {
+      movieTitle
+      inCinemasDate
+      digitalDate
+      imdbId
+      poster
+      genres
+      overview
+      voteAverage
+    }
+  }
+}

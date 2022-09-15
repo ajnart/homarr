@@ -143,15 +143,15 @@ docker compose up -d
 _Requirements_:
 - [Git](https://git-scm.com/downloads)
 - [NodeJS](https://nodejs.org/en/) _(Latest or LTS)_
-- [Yarn](https://yarnpkg.com/)
 
 **Installing**
 
 - Clone the GitHub repo: `git clone https://github.com/ajnart/homarr.git` & `cd homarr`
-- Install all dependencies: `yarn install`
-- Build the source: `yarn build`
-- Start the NextJS web server: ``yarn start``
-- *Note: If you want to update the code in real time, launch with ``yarn dev``*
+- Install all dependencies: `npm install`
+- Build the source: `npm run build`
+- Start the NextJS web server: ``npm run start``
+- *Note: If you want to update the code in real time, launch with ``npm run dev``*
+
 
 **[⤴️ Back to Top](#homarr)**
 

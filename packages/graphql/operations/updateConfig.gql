@@ -1,0 +1,5 @@
+mutation updateConfig($configName: String!, $body: String!) {
+  updateConfig(configName: $configName, body: $body) {
+    name
+  }
+}

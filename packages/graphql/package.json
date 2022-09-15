@@ -1,0 +1,23 @@
+{
+  "name": "@homarr/graphql",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "scripts": {
+    "generate-types": "graphql-codegen --config codegen.yml"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.32.0",
+    "react": "^18.2.0",
+    "typescript": "^4.5.2",
+    "@graphql-codegen/add": "^3.2.1",
+    "@graphql-codegen/cli": "2.12.0",
+    "@graphql-codegen/introspection": "2.2.1",
+    "@graphql-codegen/typescript": "2.7.3",
+    "@graphql-codegen/typescript-operations": "2.5.3",
+    "@graphql-codegen/typescript-react-apollo": "3.3.3"
+  }
+}

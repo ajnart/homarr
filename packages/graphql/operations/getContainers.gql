@@ -1,0 +1,12 @@
+query getContainers {
+  containers {
+    id
+    name
+    image
+    ports {
+      private
+      public
+    }
+    status
+  }
+}

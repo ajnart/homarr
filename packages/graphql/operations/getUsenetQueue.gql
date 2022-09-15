@@ -1,0 +1,13 @@
+query getUsenetQueue($serviceId: String!, $limit: Int!, $offset: Int!) {
+  usenetQueue(serviceId: $serviceId, limit: $limit, offset: $offset) {
+    items {
+      name
+      size
+      id
+      progress
+      state
+      eta
+    }
+    total
+  }
+}

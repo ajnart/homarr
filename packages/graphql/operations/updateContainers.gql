@@ -1,0 +1,12 @@
+mutation updateContainers($ids: [String!]!, $action: DockerAction!) {
+  updateContainers(ids: $ids, action: $action) {
+    id
+    name
+    image
+    ports {
+      private
+      public
+    }
+    status
+  }
+}

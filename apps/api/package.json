@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nest start --watch",
+    "lint": "eslint .",
+    "build": "nest build",
+    "prebuild": "npx rimraf dist"
+  },
+  "dependencies": {
+    "@nestjs/apollo": "^10.1.0",
+    "@nestjs/cli": "^9.1.1",
+    "@nestjs/common": "^9.0.11",
+    "@nestjs/core": "^9.0.11",
+    "@nestjs/graphql": "^10.1.1",
+    "@nestjs/platform-express": "^9.0.11",
+    "apollo-server-express": "^3.10.2",
+    "cookie-parser": "^1.4.6",
+    "dockerode": "^3.3.4",
+    "graphql": "^16.6.0",
+    "sabnzbd-api": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/dockerode": "^3.3.9",
+    "@types/node": "^17.0.12",
+    "eslint": "7.32.0",
+    "typescript": "^4.8.3"
+  }
+}

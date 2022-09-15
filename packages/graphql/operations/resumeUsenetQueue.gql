@@ -1,0 +1,8 @@
+mutation resumeUsenetQueue($serviceId: String!) {
+  resumeUsenetQueue(serviceId: $serviceId) {
+    paused
+    sizeLeft
+    speed
+    eta
+  }
+}

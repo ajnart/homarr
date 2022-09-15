@@ -1,0 +1,17 @@
+{
+  "name": "@homarr/common",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.32.0",
+    "react": "^18.2.0",
+    "typescript": "^4.5.2"
+  }
+}

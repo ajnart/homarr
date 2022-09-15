@@ -1,0 +1,8 @@
+mutation pauseUsenetQueue($serviceId: String!) {
+  pauseUsenetQueue(serviceId: $serviceId) {
+    paused
+    sizeLeft
+    speed
+    eta
+  }
+}
