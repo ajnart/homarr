@@ -10,15 +10,108 @@ type Config {
 type Service {
   name: String!
   id: String!
-  type: String!
+  type: ServiceType!
   icon: String!
   url: String!
+  apiKey: String!
+}
+
+enum ServiceType {
+  Other
+  DashDot
+  Deluge
+  Emby
+  Lidarr
+  Plex
+  qBittorrent
+  Radarr
+  Readarr
+  Sonarr
+  Overseerr
+  Jellyseerr
+  Transmission
+  Sabnzbd
+}
+
+type DockerContainer {
+  id: String!
+  name: String!
+  image: String!
+  status: String!
+  ports: [DockerPort!]!
+}
+
+type DockerPort {
+  private: Float!
+  public: Float!
+}
+
+type UsenetHistory {
+  items: [UsenetHistoryItem!]!
+  total: Float!
+}
+
+type UsenetQueue {
+  items: [UsenetQueueItem!]!
+  total: Float!
+}
+
+type UsenetQueueItem {
+  name: String!
+  progress: Float!
+  size: Float!
+  id: String!
+  state: String!
+  eta: Float!
+}
+
+type UsenetHistoryItem {
+  name: String!
+  size: Float!
+  id: String!
+  time: Float!
 }
 
 type Query {
   config(configName: String!): Config!
+  containers: [DockerContainer!]!
+  calendar(startDate: DateTime!, endDate: DateTime!): [CalendarItem!]!
+  usenetHistory(serviceId: String!, limit: Float!, offset: Float!): UsenetHistory!
+  usenetQueue(serviceId: String!, limit: Float!, offset: Float!): UsenetQueue!
+}
+
+union CalendarItem = MovieCalendarItem | TvCalendarItem
+
+type MovieCalendarItem {
+  movieTitle: String!
+  inCinemasDate: DateTime!
+  digitalDate: DateTime!
+  imdbId: String!
+  poster: String!
+  genres: [String!]!
+  overview: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type TvCalendarItem {
+  seriesTitle: String!
+  episodeTitle: String!
+  overview: String!
+  airDate: DateTime!
+  seasonNumber: Float!
+  episodeNumber: Float!
+  tvDbId: String!
+  imdbId: String!
+  poster: String!
+  genres: [String!]!
 }
 
 type Mutation {
   updateConfig(configName: String!, body: String!): Config!
+  pauseQueue(serviceId: String!): Boolean!
+  resumeQueue(serviceId: String!): Boolean!
 }

@@ -1,3 +1,5 @@
+import { ServiceType } from './config.model';
+
 export interface Config {
   name: string;
   services: Service[];
@@ -12,7 +14,7 @@ export interface Module {
 export interface Service {
   name: string;
   id: string;
-  type: string;
+  type: ServiceType;
   icon: string;
   url: string;
 }

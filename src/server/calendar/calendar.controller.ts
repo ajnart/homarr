@@ -1,14 +1,16 @@
 import { Controller, Get } from '@nestjs/common';
-import { Config } from '../configs/config.types';
 import { RadarrService } from '../radarr/radar.service';
-import { CurrentConfig } from '../utils/currentConfig.decorator';
+import { SonarrService } from '../sonarr/sonarr.service';
 
 @Controller('/modules/calendar')
 export class CalendarController {
-  constructor(private radarrService: RadarrService) {}
+  constructor(private radarrService: RadarrService, private sonarrService: SonarrService) {}
 
   @Get()
-  public async calendar(@CurrentConfig() currentConfig: Config) {
-    return this.radarrService.getCalendar(currentConfig.services[0].url);
+  public async calendar() {
+    return [
+      // ...(await this.radarrService.getCalendar()),
+      ...(await this.sonarrService.getCalendar()),
+    ];
   }
 }

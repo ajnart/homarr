@@ -9,6 +9,9 @@ import { ConfigModule } from './configs/config.module';
 import { DockerModule } from './docker/docker.module';
 import { RadarrModule } from './radarr/radarr.module';
 import { SearchModule } from './search/search.module';
+import { SonarrModule } from './sonarr/sonarr.module';
+import { SabnzbdModule } from './sabnzbd/sabnzbd.module';
+import { UsenetModule } from './usenet/usenet.module';
 
 @Module({
   imports: [
@@ -16,7 +19,10 @@ import { SearchModule } from './search/search.module';
     DockerModule,
     SearchModule,
     RadarrModule,
+    SonarrModule,
     CalendarModule,
+    SabnzbdModule,
+    UsenetModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),

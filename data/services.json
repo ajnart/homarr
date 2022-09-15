@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ee3452a0-a624-423f-8387-3dd45d629e7f",
+    "type": "Sabnzbd",
+    "category": "Media",
+    "name": "Sab",
+    "icon": "/favicon.png",
+    "url": "https://sabnzbd.jannesv.be",
+    "apiKey": "2982e4afbc6d42d6bb5863751a354d20"
+  },
+  {
+    "id": "36e4ab1984633bc9161f7647a79b277b9823de88d8fee1e8aa0b7f1edf69a33c",
+    "type": "Radarr",
+    "name": "radarr",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/radarr.png",
+    "url": "https://radarr.jannesv.be",
+    "apiKey": "be3caacb9e7b4479a19a41d7e42373e4"
+  },
+  {
+    "id": "1fe8f1a80fa872f30d60df50629eeb805797fe708eab3a8b570718193645f868",
+    "type": "Sonarr",
+    "name": "sonarr",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/sonarr.png",
+    "url": "https://sonarr.jannesv.be",
+    "apiKey": "2980375be93d470ead2ee8f2895ee563",
+    "openedUrl": "https://sonarr.jannesv.be"
+  }
+]
