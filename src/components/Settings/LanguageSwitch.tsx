@@ -11,7 +11,7 @@ export default function LanguageSwitch() {
   const { t, i18n } = useTranslation('settings/general/internationalization');
   const { changeLanguage } = i18n;
   const configLocale = getCookie('config-locale');
-  const { locale, locales, push } = useRouter();
+  const { locale, locales, pathname, query, asPath, push } = useRouter();
   const [selectedLanguage, setSelectedLanguage] = useState<string>(
     (configLocale as string) ?? locale ?? 'en'
   );
@@ -36,7 +36,14 @@ export default function LanguageSwitch() {
           sameSite: 'strict',
         });
 
-        push('/', '/', { locale: value });
+        push(
+          {
+            pathname,
+            query,
+          },
+          asPath,
+          { locale: value }
+        );
 
         showNotification({
           title: 'Language changed',
