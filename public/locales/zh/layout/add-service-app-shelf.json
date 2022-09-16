@@ -1,9 +1,9 @@
 {
     "actionIcon": {
-        "tooltip": "增加一项服务"
+        "tooltip": "添加一个应用"
     },
     "modal": {
-        "title": "添加服务",
+        "title": "添加应用",
         "form": {
             "validation": {
                 "invalidUrl": "请输入一个有效的URL",
@@ -15,35 +15,35 @@
                 "title": "选项",
                 "form": {
                     "serviceName": {
-                        "label": "服务名称",
-                        "placeholder": "丛书"
+                        "label": "应用名称",
+                        "placeholder": "Plex"
                     },
                     "iconUrl": {
                         "label": "图标URL"
                     },
                     "serviceUrl": {
-                        "label": "服务网址"
+                        "label": "应用URL"
                     },
                     "onClickUrl": {
                         "label": "点击URL时"
                     },
                     "serviceType": {
-                        "label": "服务类型",
+                        "label": "应用类型",
                         "defaultValue": "其他",
                         "placeholder": "挑选一个"
                     },
                     "category": {
-                        "label": "类别",
+                        "label": "类型",
                         "placeholder": "选择一个类别或创建一个新类别",
-                        "nothingFound": "没有发现",
+                        "nothingFound": "没有找到",
                         "createLabel": "+ 创建 {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "API密钥",
+                            "label": "API key",
                             "placeholder": "你的API密钥",
                             "validation": {
-                                "noKey": "无效钥匙"
+                                "noKey": "无效key"
                             },
                             "tip": {
                                 "text": "获取你的API密钥",
@@ -52,7 +52,7 @@
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "帐号",
+                                "label": "用户名",
                                 "placeholder": "管理员",
                                 "validation": {
                                     "invalidUsername": "无效的用户名"
@@ -77,7 +77,7 @@
                         },
                         "transmission": {
                             "username": {
-                                "label": "帐号",
+                                "label": "用户名",
                                 "placeholder": "管理员",
                                 "validation": {
                                     "invalidUsername": "无效的用户名"
@@ -100,15 +100,15 @@
                     "httpStatusCodes": {
                         "label": "HTTP状态代码",
                         "placeholder": "选择有效的状态代码",
-                        "clearButtonLabel": "清除选择",
-                        "nothingFound": "没有发现"
+                        "clearButtonLabel": "清除选择项",
+                        "nothingFound": "没有找到"
                     },
                     "openServiceInNewTab": {
-                        "label": "在新标签中打开服务"
+                        "label": "在新标签中打开应用"
                     },
                     "buttons": {
                         "submit": {
-                            "content": "添加服务"
+                            "content": "添加应用"
                         }
                     }
                 }
