@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "¡Bienvenido/a otra vez!",
+  "text": "Por favor, introduce la Contraseña",
   "form": {
     "fields": {
       "password": {
         "label": "Contraseña",
-        "placeholder": ""
+        "placeholder": "Tu contraseña"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Iniciar sesión"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Comprobando tu contraseña",
+      "message": "Tu contraseña está siendo comprobada..."
     },
     "correct": {
-      "title": ""
+      "title": "Contraseña correcta, redireccionándote..."
     },
     "wrong": {
-      "title": ""
+      "title": "Contraseña incorrecta, por favor, intenta otra vez."
     }
   }
 }
