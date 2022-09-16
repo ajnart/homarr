@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Sabnzbd의 대기열 및 기록을 확인하고 다운로드를 일시 중지 및 재개할 수 있습니다"
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "지원되는 다운로드 클라이언트를 찾을 수 없습니다!",
+        "text": "현재 다운로드를 보려면 다운로드 서비스를 추가하세요"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "대기열",
+    "history": "기록"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "남은 크기",
+    "paused": "일시 중지됨"
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "이름",
+      "size": "크기",
+      "eta": "남은 시간",
+      "progress": "진행률"
     },
-    "empty": "",
+    "empty": "비어 있음",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "오류",
+      "message": "오류가 발생했습니다"
     },
-    "paused": ""
+    "paused": "일시 중지됨"
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
-      "duration": ""
+      "name": "이름",
+      "size": "크기",
+      "duration": "기간"
     },
-    "empty": "",
+    "empty": "비어 있음",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "오류",
+      "message": "기록 로딩 중 오류 발생"
     },
-    "paused": ""
+    "paused": "일시 중지됨"
   }
 }
