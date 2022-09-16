@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Il tempo",
-    "description": "Consultare il meteo attuale della propria località",
+    "name": "Meteo",
+    "description": "Consulta il meteo attuale della propria località",
     "settings": {
       "displayInFahrenheit": {
         "label": "Visualizzazione in Fahrenheit"
@@ -13,8 +13,8 @@
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "Libero",
-      "mainlyClear": "Principalmente chiaro",
+      "clear": "Cancella",
+      "mainlyClear": "Sereno",
       "fog": "Nebbia",
       "drizzle": "Pioggerella",
       "freezingDrizzle": "Pioggia gelata",
