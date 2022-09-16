@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Låter dig se din Sabnzbd kö och historik, pausa och återuppta nedladdningar"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Kö",
+    "history": "Historik"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Utrymme kvar",
+    "paused": "Pausad"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "Beräknad sluttid",
       "progress": "Förlopp"
     },
-    "empty": "",
+    "empty": "Tom",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Fel",
+      "message": "Ett fel har inträffat"
     },
-    "paused": ""
+    "paused": "Pausad"
   },
   "history": {
     "header": {
       "name": "Namn",
       "size": "Storlek",
-      "duration": ""
+      "duration": "Varaktighet"
     },
-    "empty": "",
+    "empty": "Tom",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Fel",
+      "message": "Fel vid inläsning av historik"
     },
-    "paused": ""
+    "paused": "Pausad"
   }
 }
