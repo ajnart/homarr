@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "",
+    "title": "서비스 수정",
     "buttons": {
-      "save": ""
+      "save": "서비스 저장"
     }
   },
   "menu": {
     "labels": {
-      "settings": "",
-      "dangerZone": ""
+      "settings": "설정",
+      "dangerZone": "위험한 설정"
     },
     "actions": {
-      "edit": "",
-      "delete": ""
+      "edit": "수정",
+      "delete": "삭제"
     }
   }
 }
