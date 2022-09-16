@@ -5,12 +5,16 @@ import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';
 import { IconCheck, IconX } from '@tabler/icons';
 import { useRouter } from 'next/router';
+import { Trans, useTranslation } from 'next-i18next';
 import { useForm } from '@mantine/form';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { loginNamespaces } from '../tools/translation-namespaces';
 
 // TODO: Add links to the wiki articles about the login process.
 export default function AuthenticationTitle() {
   const router = useRouter();
+  const { t } = useTranslation('authentication/login');
+
   const form = useForm({
     initialValues: {
       password: '',
@@ -33,15 +37,12 @@ export default function AuthenticationTitle() {
           align="center"
           sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
         >
-          Welcome back!
+          {t('title')}
         </Title>
       </Group>
 
       <Text color="dimmed" size="sm" align="center" mt={5}>
-        Please enter the{' '}
-        <Anchor<'a'> href="#" size="sm" onClick={(event) => event.preventDefault()}>
-          password
-        </Anchor>
+        {t('text')}
       </Text>
 
       <Paper
@@ -61,8 +62,8 @@ export default function AuthenticationTitle() {
             showNotification({
               id: 'load-data',
               loading: true,
-              title: 'Checking your password',
-              message: 'Your password is being checked...',
+              title: t('notifications.checking.title'),
+              message: t('notifications.checking.message'),
               autoClose: false,
               disallowClose: true,
             });
@@ -77,7 +78,7 @@ export default function AuthenticationTitle() {
                     updateNotification({
                       id: 'load-data',
                       color: 'teal',
-                      title: 'Password correct, redirecting you...',
+                      title: t('notifications.correct.title'),
                       message: undefined,
                       icon: <IconCheck />,
                       autoClose: 1000,
@@ -87,7 +88,7 @@ export default function AuthenticationTitle() {
                     updateNotification({
                       id: 'load-data',
                       color: 'red',
-                      title: 'Password is wrong, please try again.',
+                      title: t('notifications.wrong.title'),
                       message: undefined,
                       icon: <IconX />,
                       autoClose: 2000,
@@ -99,15 +100,15 @@ export default function AuthenticationTitle() {
         >
           <PasswordInput
             id="password"
-            label="Password"
-            placeholder="Your password"
+            label={t('form.fields.password.label')}
+            placeholder={t('form.fields.password.placeholder')}
             required
             autoFocus
             mt="md"
             {...form.getInputProps('password')}
           />
           <Button fullWidth type="submit" mt="xl">
-            Sign in
+            {t('form.buttons.submit')}
           </Button>
         </form>
       </Paper>
@@ -115,10 +116,10 @@ export default function AuthenticationTitle() {
   );
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getServerSideProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, loginNamespaces)),
       // Will be passed to the page component as props
     },
   };
