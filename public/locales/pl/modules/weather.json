@@ -14,7 +14,7 @@
   "card": {
     "weatherDescriptions": {
       "clear": "Bezchmurnie",
-      "mainlyClear": "",
+      "mainlyClear": "Częściowe zachmurzenie",
       "fog": "Mgła",
       "drizzle": "Mżawka",
       "freezingDrizzle": "",
@@ -23,7 +23,7 @@
       "snowFall": "Opady śniegu",
       "snowGrains": "",
       "rainShowers": "",
-      "snowShowers": "",
+      "snowShowers": "Przelotne opady śniegu",
       "thunderstorm": "Burza",
       "thunderstormWithHail": "Burza z gradem",
       "unknown": "Nieznany"

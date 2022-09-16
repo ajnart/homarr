@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Scarica la velocità",
+    "name": "Velocità Di Download",
     "description": "Mostra la velocità di download attuale dei servizi supportati"
   },
   "card": {
@@ -11,7 +11,7 @@
         "download": "In basso",
         "upload": "Su",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Progressi"
+        "progress": "Avanzamento"
       },
       "body": {
         "nothingFound": "Nessun torrent trovato"
@@ -19,11 +19,11 @@
     },
     "lineChart": {
       "title": "Velocità di download attuale",
-      "download": "Scaricamento: {{download}}",
-      "upload": "Caricare: {{upload}}",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} secondi fa",
       "totalDownload": "Download: {{download}}/s",
-      "totalUpload": "Caricare: {{upload}}/s"
+      "totalUpload": "Upload: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {

@@ -4,7 +4,7 @@
     "placeholder": ""
   },
   "logo": {
-    "label": "",
+    "label": "Logo",
     "placeholder": ""
   },
   "favicon": {
@@ -20,6 +20,6 @@
     "placeholder": "O CSS personalizado será executado por último"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Enviar"
   }
 }

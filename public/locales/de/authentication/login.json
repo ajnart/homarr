@@ -1,0 +1,27 @@
+{
+  "title": "Willkommen zurück!",
+  "text": "Bitte geben Sie das Passwort ein",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "Passwort",
+        "placeholder": "Ihr Passwort"
+      }
+    },
+    "buttons": {
+      "submit": "Anmelden"
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "Ihr Passwort wird überprüft",
+      "message": "Ihr Passwort wird geprüft..."
+    },
+    "correct": {
+      "title": "Passwort korrekt, sie werden weitergeleitet..."
+    },
+    "wrong": {
+      "title": "Das Passwort ist falsch, bitte versuchen Sie es erneut."
+    }
+  }
+}

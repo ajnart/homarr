@@ -10,7 +10,7 @@
         "label": "Visualizzazione dell'unità multipla di archiviazione"
       },
       "useCompactView": {
-        "label": "Utilizzare la vista compatta"
+        "label": "Visualizzazione compatta"
       },
       "graphs": {
         "label": "Grafici"
@@ -28,8 +28,8 @@
     },
     "graphs": {
       "storage": {
-        "title": "Immagazzinamento",
-        "label": "Stoccaggio:"
+        "title": "Spazio di archiviazione",
+        "label": "Spazio di archiviazione:"
       },
       "network": {
         "title": "Rete",

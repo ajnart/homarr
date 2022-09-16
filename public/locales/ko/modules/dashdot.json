@@ -1,52 +1,52 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "실행 중인 Dash. 인스턴스의 그래프를 표시하는 모듈입니다.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "CPU 멀티 코어 보기"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "저장소 멀티 드라이브 보기"
       },
       "useCompactView": {
-        "label": ""
+        "label": "컴팩트 뷰 사용"
       },
       "graphs": {
-        "label": ""
+        "label": "그래프"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "Dash. 서비스를 찾을 수 없습니다. Homarr 대시보드에 추가하거나 모듈 옵션에서 Dash. URL을 설정해 주세요.",
+      "noInformation": "Dash. 에서 정보를 얻을 수 없습니다. 최신 버전을 사용 중인가요?"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "저장소",
+        "label": "저장소:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "네트워크",
+        "label": "네트워크:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "다운",
+          "upload": "업"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Omogoča ogled čakalne vrste in zgodovine v Sabnzbd ter prekinitev in nadaljevanje prenosov"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Čakalna vrsta",
+    "history": "Zgodovina"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Preostala velikost",
+    "paused": "Začasno ustavljeno"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "ETA",
       "progress": "Napredek"
     },
-    "empty": "",
+    "empty": "Prazno",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Napaka",
+      "message": "Prišlo je do napake"
     },
-    "paused": ""
+    "paused": "Začasno ustavljeno"
   },
   "history": {
     "header": {
       "name": "Ime",
       "size": "Velikost",
-      "duration": ""
+      "duration": "Trajanje"
     },
-    "empty": "",
+    "empty": "Prazno",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Napaka",
+      "message": "Napaka pri nalaganju zgodovine"
     },
-    "paused": ""
+    "paused": "Začasno ustavljeno"
   }
 }

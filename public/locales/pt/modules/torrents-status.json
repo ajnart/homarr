@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Mostrar a velocidade atual de download dos serviços suportados",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "Ocultar torrents completos"
       }
     }
   },
@@ -26,13 +26,13 @@
       "title": "",
       "download": "",
       "upload": "",
-      "timeSpan": "",
+      "timeSpan": "{{seconds}} atrás",
       "totalDownload": "",
       "totalUpload": ""
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Nenhum cliente de download suportado encontrado!",
         "text": "Adicione um serviço de download para ver seus downloads atuais"
       }
     }

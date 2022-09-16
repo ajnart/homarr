@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Pasek wyszukiwania",
-    "description": ""
+    "description": "Pasek wyszukiwania pozwala przeszukiwać strony internetowe, YouTube, Torrenty i Overseerr"
   },
   "input": {
     "placeholder": "Szukaj w internecie..."

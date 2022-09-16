@@ -4,12 +4,12 @@
     "description": "Te permite gestionar facilmente tus torrents"
   },
   "search": {
-    "placeholder": "Buscar por nombre de contendor o nombre de la imagen"
+    "placeholder": "Buscar por nombre de contenedor o nombre de imagen"
   },
   "table": {
     "header": {
       "name": "Nombre",
-      "image": "Imágen",
+      "image": "Imagen",
       "ports": "Puertos",
       "state": "Estado"
     },
@@ -35,10 +35,10 @@
       "title": "Detener"
     },
     "start": {
-      "title": "Comenzar"
+      "title": "Iniciar"
     },
     "refreshData": {
-      "title": ""
+      "title": "Refrescar datos"
     },
     "remove": {
       "title": "Eliminar"
@@ -62,7 +62,7 @@
       "title": "Se ha producido un error"
     },
     "oneServiceAtATime": {
-      "title": "Por favor, añade un servicio cada vez!"
+      "title": "Por favor, ¡añade un servicio a la vez!"
     }
   },
   "actionIcon": {

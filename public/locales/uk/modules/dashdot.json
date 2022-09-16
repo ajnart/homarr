@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Модуль для відображення графіків від вашого Dash. сервісу.",
+    "description": "Модуль для зображення графіків від вашого Dash. сервісу.",
     "settings": {
       "cpuMultiView": {
         "label": "Процесор по ядрах"
