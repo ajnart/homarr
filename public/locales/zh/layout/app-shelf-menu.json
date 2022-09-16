@@ -1,14 +1,14 @@
 {
   "modal": {
-    "title": "修改一个服务",
+    "title": "修改这个应用",
     "buttons": {
-      "save": "保存服务"
+      "save": "保存应用"
     }
   },
   "menu": {
     "labels": {
       "settings": "设置",
-      "dangerZone": "危险区"
+      "dangerZone": "危险操作"
     },
     "actions": {
       "edit": "编辑",
