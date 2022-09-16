@@ -2,13 +2,13 @@
   "title": "Inställningar",
   "tooltip": "Inställningar",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Allmänt",
+    "customizations": "Anpassningar"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Ladda upp din konfigurationsfil genom att dra och släppa den på sidan!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Gjort med ❤️ av @"
   }
 }
