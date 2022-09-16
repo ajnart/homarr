@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Sabnzbd",
     "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Nie znaleziono obsługiwanych klientów pobierania!",
         "text": ""
       }
     }
