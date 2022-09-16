@@ -35,24 +35,24 @@
                     "category": {
                         "label": "Categoría",
                         "placeholder": "Selecciona una categoría o cree una nueva",
-                        "nothingFound": "No se ha encontrado ningún resultado",
+                        "nothingFound": "No se ha encontrado nada",
                         "createLabel": "+ Crear {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
                             "label": "Clave API",
-                            "placeholder": "Tu clave de la API",
+                            "placeholder": "Tu clave API",
                             "validation": {
                                 "noKey": "Clave inválida"
                             },
                             "tip": {
-                                "text": "Obtén tu clave de API",
+                                "text": "Obtén tu clave API",
                                 "link": "aquí."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "Usuario",
+                                "label": "Nombre de usuario",
                                 "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Nombre de usuario incorrecto"
@@ -77,7 +77,7 @@
                         },
                         "transmission": {
                             "username": {
-                                "label": "Usuario",
+                                "label": "Nombre de usuario",
                                 "placeholder": "admin",
                                 "validation": {
                                     "invalidUsername": "Nombre de usuario incorrecto"
@@ -95,13 +95,13 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Opciones avanzadas",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "Códigos de estado HTTP",
+                        "label": "Códigos de Estado HTTP",
                         "placeholder": "Seleccionar códigos de estado válidos",
                         "clearButtonLabel": "Borrar selección",
-                        "nothingFound": "No se ha encontrado ningún resultado"
+                        "nothingFound": "No se ha encontrado nada"
                     },
                     "openServiceInNewTab": {
                         "label": "Abrir el servicio en una nueva pestaña"

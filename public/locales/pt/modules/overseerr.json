@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Permite que você pesquise e adicione conteúdo do Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
+        "askFor": "Solicitar {{title}}",
         "cancel": "Cancelar",
         "request": "Solicitar"
       },

@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "Sovrintendenti",
+    "name": "Overseerr",
     "description": "Permette di cercare e aggiungere media da Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "Chiedete di {{title}}",
-        "cancel": "Annullamento",
-        "request": "Richiesta"
+        "askFor": "Richiedi {{title}}",
+        "cancel": "Annulla",
+        "request": "Richiedi"
       },
       "alerts": {
         "automaticApproval": {

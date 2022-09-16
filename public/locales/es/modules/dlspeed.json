@@ -22,8 +22,8 @@
       "download": "Velocidad de Descarga: {{download}}",
       "upload": "Velocidad de subida: {{upload}}",
       "timeSpan": "Hace {{seconds}} segundos",
-      "totalDownload": "Velocidad de Descarga: {{download}}/s",
-      "totalUpload": "Velocidad de Subida: {{upload}}/s"
+      "totalDownload": "Descarga: {{download}}/s",
+      "totalUpload": "Subida: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {

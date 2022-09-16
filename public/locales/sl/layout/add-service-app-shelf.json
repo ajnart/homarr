@@ -95,7 +95,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Napredne nastavitve",
                 "form": {
                     "httpStatusCodes": {
                         "label": "HTTP statusne kode",

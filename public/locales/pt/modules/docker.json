@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Permite que você gerencie facilmente seus torrents"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Procurar por conainer ou imagem"
   },
   "table": {
     "header": {
@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "Adicionar serviço",
-      "message": ""
+      "message": "Adicionar serviço ao Homarr"
     },
     "restart": {
       "title": "Reiniciar"
@@ -38,7 +38,7 @@
       "title": "Iniciar"
     },
     "refreshData": {
-      "title": ""
+      "title": "Atualizar dados"
     },
     "remove": {
       "title": "Excluir"
@@ -62,10 +62,10 @@
       "title": "Ocorreu um erro"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Por favor, acrescente apenas um serviço de cada vez!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }

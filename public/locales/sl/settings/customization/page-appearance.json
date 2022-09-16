@@ -16,8 +16,8 @@
     "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "Po meri CSS",
+    "placeholder": "CSS po meri se izvede kot zadnji"
   },
   "buttons": {
     "submit": "Pošlji"

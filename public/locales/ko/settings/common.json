@@ -1,14 +1,14 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "설정",
+  "tooltip": "설정",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "일반",
+    "customizations": "커스터마이징"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "설정 파일을 드래그 앤 드롭으로 업로드해 보세요!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Made with ❤️ by @"
   }
 }

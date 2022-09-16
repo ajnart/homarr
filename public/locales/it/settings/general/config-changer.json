@@ -9,7 +9,7 @@
         "label": "Nome della configurazione",
         "placeholder": "Il nome della nuova configurazione"
       },
-      "submitButton": "Confermare"
+      "submitButton": "Conferma"
     },
     "events": {
       "configSaved": {

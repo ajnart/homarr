@@ -8,7 +8,7 @@
       "buttons": {
         "askFor": "请登录 {{title}}",
         "cancel": "取消",
-        "request": "要求"
+        "request": "请求"
       },
       "alerts": {
         "automaticApproval": {
