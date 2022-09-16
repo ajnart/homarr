@@ -5,7 +5,7 @@ import { ModuleWrapper } from '../../modules/moduleWrapper';
 
 export default function Widgets(props: any) {
   return (
-    <Stack my="sm" style={{ width: 300 }}>
+    <Stack my={16} style={{ width: 300 }}>
       <ModuleWrapper module={CalendarModule} />
       <ModuleWrapper module={TotalDownloadsModule} />
       <ModuleWrapper module={WeatherModule} />
