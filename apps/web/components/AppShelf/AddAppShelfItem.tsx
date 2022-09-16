@@ -159,7 +159,7 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
     MatchIcon(form.values.name, form);
     MatchService(form.values.name, form);
     tryMatchPort(form.values.name, form);
-  }, [debounced]);
+  }, [debounced, form]);
 
   // Try to set const hostname to new URL(form.values.url).hostname)
   // If it fails, set it to the form.values.url

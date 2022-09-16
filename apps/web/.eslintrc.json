@@ -1,7 +1,17 @@
 {
   "root": true,
-  "extends": "../../.eslintrc.js",
+  "extends": [
+    "../../.eslintrc.js",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "react-hooks"],
   "parserOptions": {
     "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/display-name": "off"
   }
 }

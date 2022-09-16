@@ -2,7 +2,7 @@ import { DockerContainer } from '@homarr/graphql';
 import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useMemo, Dispatch, SetStateAction, useState } from 'react';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
@@ -33,12 +33,12 @@ export default function DockerTable({
     setSearch(value);
   };
 
-  function filterContainers(data: DockerContainer[], search: string) {
+  const filteredContainers = useMemo(() => {
     const query = search.toLowerCase().trim();
-    return data.filter(
+    return containers.filter(
       (item) => item.name.toLowerCase().includes(query) || item.image.includes(query)
     );
-  }
+  }, [containers, search]);
 
   const toggleRow = (containerId: string) =>
     setSelection((currentIds: string[]) =>
@@ -51,7 +51,7 @@ export default function DockerTable({
       current.length === containers.length ? [] : containers.map((c) => c.id)
     );
 
-  const rows = containers.map((element) => {
+  const rows = filteredContainers.map((element) => {
     const selected = selection.includes(element.id);
     return (
       <tr key={element.id} className={cx({ [classes.rowSelected]: selected })}>

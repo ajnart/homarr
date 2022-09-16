@@ -33,7 +33,9 @@ export class DockerService {
 
     try {
       await startAction();
-    } catch (err) {}
+    } catch (err) {
+      console.error('Error updating container', err);
+    }
 
     const containers = await this.dockerClient.listContainers({
       filters: {

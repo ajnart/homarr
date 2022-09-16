@@ -6,13 +6,14 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
   ],
-  plugins: ['testing-library', 'jest', 'react-hooks', 'react', 'unused-imports'],
+  plugins: ['testing-library', 'react-hooks', 'react', 'unused-imports'],
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
       extends: ['plugin:testing-library/react'],
     },
   ],
+  ignorePatterns: ['**/dist'],
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -29,5 +30,6 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@next/next/no-html-link-for-pages': 'off',
+    'no-console': 'off',
   },
 };

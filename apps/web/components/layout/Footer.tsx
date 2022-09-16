@@ -68,6 +68,7 @@ export function Footer({ links }: FooterCenteredProps) {
         border: 'none',
         clear: 'both',
       }}
+      // eslint-disable-next-line react/no-children-prop
       children={undefined}
     />
   );

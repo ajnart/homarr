@@ -73,7 +73,7 @@ export default function HomePage(props: any) {
     setPrimaryColor(migratedConfig.settings.primaryColor || 'red');
     setSecondaryColor(migratedConfig.settings.secondaryColor || 'orange');
     setConfig(migratedConfig);
-  }, [initialConfig]);
+  }, [initialConfig, setConfig, setPrimaryColor, setSecondaryColor]);
   return (
     <Layout>
       <AppShelf />
