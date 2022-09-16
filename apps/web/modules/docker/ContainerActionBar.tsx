@@ -134,7 +134,6 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
             zIndex: 500,
             children: (
               <AddAppShelfItemForm
-                setConfig={setConfig}
                 config={config}
                 setOpened={() => closeModal(selected[0])}
                 message={t('actionBar.addService.message')}

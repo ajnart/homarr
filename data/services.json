@@ -17,12 +17,11 @@
     "apiKey": "be3caacb9e7b4479a19a41d7e42373e4"
   },
   {
-    "id": "1fe8f1a80fa872f30d60df50629eeb805797fe708eab3a8b570718193645f868",
+    "name": "Sonarr",
     "type": "Sonarr",
-    "name": "sonarr",
     "icon": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/sonarr.png",
     "url": "https://sonarr.jannesv.be",
     "apiKey": "2980375be93d470ead2ee8f2895ee563",
-    "openedUrl": "https://sonarr.jannesv.be"
+    "id": "1fe8f1a80fa872f30d60df50629eeb805797fe708eab3a8b570718193645f868"
   }
 ]

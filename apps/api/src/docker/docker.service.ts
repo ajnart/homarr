@@ -12,7 +12,7 @@ export class DockerService {
     return (await this.dockerClient.listContainers({ all: true })).map(this.mapContainerInfo);
   }
 
-  async updateContainer(id: string, action: DockerAction): Promise<DockerContainer> {
+  async updateContainer(id: string, action: DockerAction): Promise<DockerContainer | null> {
     const container = this.dockerClient.getContainer(id);
     const startAction = async () => {
       switch (action) {
@@ -37,13 +37,18 @@ export class DockerService {
       console.error('Error updating container', err);
     }
 
-    const containers = await this.dockerClient.listContainers({
+    const [updatedContainer] = await this.dockerClient.listContainers({
       filters: {
         id: [id],
         status: ['created', 'restarting', 'running', 'removing', 'paused', 'exited', 'dead'],
       },
     });
-    return this.mapContainerInfo(containers[0]);
+
+    if (!updatedContainer) {
+      return null;
+    }
+
+    return this.mapContainerInfo(updatedContainer);
   }
 
   private mapContainerInfo(container: Docker.ContainerInfo): DockerContainer {

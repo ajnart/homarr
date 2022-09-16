@@ -1,4 +1,10 @@
-import { useGetConfigQuery, useUpdateConfigMutation } from '@homarr/graphql';
+import {
+  GetConfigDocument,
+  GetConfigQuery,
+  GetConfigQueryVariables,
+  useGetConfigQuery,
+  useUpdateConfigMutation,
+} from '@homarr/graphql';
 import { Checkbox, HoverCard, SimpleGrid, Stack, Text, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import * as Modules from '../../modules';
@@ -23,7 +29,22 @@ const ModuleToggle = ({ module }: { module: IModule }) => {
   const { t } = useTranslation(`modules/${module.id}`);
 
   const { data } = useGetConfigQuery({ variables: { configName: 'default' } });
-  const [updateConfig, { loading }] = useUpdateConfigMutation();
+  const [updateConfig, { loading }] = useUpdateConfigMutation({
+    update(cache, { data }) {
+      if (data) {
+        cache.writeQuery<GetConfigQuery, GetConfigQueryVariables>({
+          data: {
+            config: data.updateConfig,
+          },
+          query: GetConfigDocument,
+          variables: { configName: 'default' },
+        });
+      }
+    },
+    optimisticResponse({ body }) {
+      return { updateConfig: JSON.parse(body) };
+    },
+  });
 
   const modules = data?.config.modules || {};
 

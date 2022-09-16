@@ -1,7 +1,6 @@
 // src/context/state.js
 import { showNotification } from '@mantine/notifications';
-import axios from 'axios';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { IconCheck as Check, IconX as X } from '@tabler/icons';
 import { useGetConfigLazyQuery } from '@homarr/graphql';
 import { Config } from './types';
@@ -51,6 +50,10 @@ export function ConfigProvider({ children }: Props) {
     modules: {},
   });
 
+  useEffect(() => {
+    loadConfig('default');
+  }, []);
+
   async function loadConfig(configName: string) {
     try {
       const response = await getConfigsQuery({ variables: { configName } });
@@ -81,13 +84,15 @@ export function ConfigProvider({ children }: Props) {
   }
 
   function setConfig(newconfig: Config) {
-    axios.put(`/api/configs/${newconfig.name}`, newconfig);
-    setConfigInternal(newconfig);
+    // axios.put(`/api/configs/${newconfig.name}`, newconfig);
+    // setConfigInternal(newconfig);
   }
 
   async function getConfigs(): Promise<string[]> {
-    const response = await axios.get('/api/configs');
-    return response.data;
+    // const response = await axios.get('/api/configs');
+    // return response.data;
+
+    return ['default'];
   }
 
   const value = {

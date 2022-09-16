@@ -111,7 +111,7 @@ export default function DockerTable({
                 checked={selection.length === containers.length && selection.length > 0}
                 indeterminate={selection.length > 0 && selection.length !== containers.length}
                 transitionDuration={0}
-                disabled={containers.length === 0}
+                disabled={filteredContainers.length === 0}
               />
             </th>
             <th>{t('table.header.name')}</th>

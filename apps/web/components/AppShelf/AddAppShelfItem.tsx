@@ -1,3 +1,4 @@
+import { Service } from '@homarr/graphql';
 import {
   ActionIcon,
   Anchor,
@@ -29,7 +30,7 @@ import { tryMatchPort, ServiceTypeList, StatusCodes, Config } from '../../lib/ty
 import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
-  const { config, setConfig } = useConfig();
+  const { config } = useConfig();
   const [opened, setOpened] = useState(false);
   const { t } = useTranslation('layout/add-service-app-shelf');
   return (
@@ -41,7 +42,7 @@ export function AddItemShelfButton(props: any) {
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
-        <AddAppShelfItemForm config={config} setConfig={setConfig} setOpened={setOpened} />
+        <AddAppShelfItemForm config={config} setOpened={setOpened} />
       </Modal>
       <Tooltip withinPortal label={t('actionIcon.tooltip')}>
         <ActionIcon
@@ -87,13 +88,11 @@ const DEFAULT_ICON = '/favicon.png';
 interface AddAppShelfItemFormProps {
   setOpened: (b: boolean) => void;
   config: Config;
-  setConfig: (config: Config) => void;
-  // Any other props you want to pass to the form
-  [key: string]: any;
+  message?: string;
+  service?: Service;
 }
 
-export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
-  const { setOpened, config, setConfig } = props;
+export function AddAppShelfItemForm({ config, setOpened, service }: AddAppShelfItemFormProps) {
   // Only get config and setConfig from useCOnfig if they are not present in props
   const [isLoading, setLoading] = useState(false);
   const { t } = useTranslation('layout/add-service-app-shelf');
@@ -105,23 +104,24 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
     }
     return acc;
   }, [] as string[]);
+
   const [categories, setCategories] = useState<string[]>(InitialCategories);
 
   const form = useForm({
     initialValues: {
-      id: props.id ?? uuidv4(),
-      type: props.type ?? 'Other',
-      category: props.category ?? null,
-      name: props.name ?? '',
-      icon: props.icon ?? DEFAULT_ICON,
-      url: props.url ?? '',
-      apiKey: props.apiKey ?? undefined,
-      username: props.username ?? undefined,
-      password: props.password ?? undefined,
-      openedUrl: props.openedUrl ?? undefined,
-      ping: props.ping ?? true,
-      status: props.status ?? ['200'],
-      newTab: props.newTab ?? true,
+      id: service?.id ?? uuidv4(),
+      type: service?.type ?? 'Other',
+      category: service?.category ?? null,
+      name: service?.name ?? '',
+      icon: service?.icon ?? DEFAULT_ICON,
+      url: service?.url ?? '',
+      apiKey: service?.apiKey ?? undefined,
+      username: service?.username ?? undefined,
+      password: service?.password ?? undefined,
+      openedUrl: service?.openedUrl ?? undefined,
+      ping: service?.ping ?? true,
+      status: service?.status ?? ['200'],
+      newTab: service?.newTab ?? true,
     },
     validate: {
       apiKey: () => null,
@@ -196,25 +196,7 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
             delete newForm.status;
           }
           // If service already exists, update it.
-          if (config.services && config.services.find((s) => s.id === newForm.id)) {
-            setConfig({
-              ...config,
-              // replace the found item by matching ID
-              services: config.services.map((s) => {
-                if (s.id === newForm.id) {
-                  return {
-                    ...newForm,
-                  };
-                }
-                return s;
-              }),
-            });
-          } else {
-            setConfig({
-              ...config,
-              services: [...config.services, newForm],
-            });
-          }
+
           setOpened(false);
           form.reset();
         })}

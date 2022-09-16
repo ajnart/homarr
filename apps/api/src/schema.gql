@@ -173,9 +173,20 @@ type TvCalendarItem {
 
 type Mutation {
   updateConfig(configName: String!, body: String!): Config!
+  updateService(id: String!, service: ServiceInput!): Service!
+  createService(service: ServiceInput!): Service!
+  deleteService(ids: [String!]!): Boolean!
   updateContainers(ids: [String!]!, action: DockerAction!): [DockerContainer!]!
   pauseUsenetQueue(serviceId: String!): UsenetInfo!
   resumeUsenetQueue(serviceId: String!): UsenetInfo!
+}
+
+input ServiceInput {
+  name: String!
+  type: ServiceType!
+  icon: String!
+  url: String!
+  apiKey: String
 }
 
 enum DockerAction {

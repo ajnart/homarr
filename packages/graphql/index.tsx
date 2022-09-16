@@ -337,7 +337,7 @@ export type UpdateConfigMutationVariables = Exact<{
 }>;
 
 
-export type UpdateConfigMutation = { __typename?: 'Mutation', updateConfig: { __typename?: 'Config', name: string } };
+export type UpdateConfigMutation = { __typename?: 'Mutation', updateConfig: { __typename?: 'Config', name: string, settings: { __typename?: 'Settings', searchUrl: string, title?: string | null, logo?: string | null, favicon?: string | null, primaryColor?: string | null, secondaryColor?: string | null, primaryShade?: string | null, background?: string | null, customCSS?: string | null, appOpacity?: number | null, widgetPosition?: string | null, appCardWidth?: number | null }, services: Array<{ __typename?: 'Service', name: string, id: string, type: ServiceType, icon: string, url: string }>, modules: { __typename?: 'Modules', usenet?: { __typename?: 'UsenetConfig', title?: string | null, enabled: boolean } | null, docker?: { __typename?: 'DockerConfig', title?: string | null, enabled: boolean } | null, calendar?: { __typename?: 'CalendarConfig', title?: string | null, enabled: boolean } | null } } };
 
 export type UpdateContainersMutationVariables = Exact<{
   ids: Array<Scalars['String']> | Scalars['String'];
@@ -752,6 +752,41 @@ export const UpdateConfigDocument = gql`
     mutation updateConfig($configName: String!, $body: String!) {
   updateConfig(configName: $configName, body: $body) {
     name
+    settings {
+      searchUrl
+      title
+      logo
+      favicon
+      primaryColor
+      secondaryColor
+      primaryShade
+      background
+      customCSS
+      appOpacity
+      widgetPosition
+      appCardWidth
+    }
+    services {
+      name
+      id
+      type
+      icon
+      url
+    }
+    modules {
+      usenet {
+        title
+        enabled
+      }
+      docker {
+        title
+        enabled
+      }
+      calendar {
+        title
+        enabled
+      }
+    }
   }
 }
     `;

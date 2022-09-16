@@ -1,8 +1,6 @@
 {
-  "__typename": "Config",
   "name": "default",
   "settings": {
-    "__typename": "Settings",
     "searchUrl": "https://google.com/search?q=",
     "title": null,
     "logo": null,
@@ -16,39 +14,20 @@
     "widgetPosition": null,
     "appCardWidth": null
   },
-  "services": [
-    {
-      "__typename": "Service",
-      "name": "example",
-      "id": "09c45847-8afc-4c1a-9697-f03192de948a",
-      "type": "Other",
-      "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
-      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    },
-    {
-      "__typename": "Service",
-      "name": "Sab",
-      "id": "ee3452a0-a624-423f-8387-3dd45d629e7f",
-      "type": "Sabnzbd",
-      "icon": "/favicon.png",
-      "url": "https://sabnzbd.jannesv.be/"
-    }
-  ],
   "modules": {
-    "__typename": "Modules",
     "usenet": {
-      "__typename": "UsenetConfig",
       "title": null,
       "enabled": true
     },
     "docker": {
-      "__typename": "DockerConfig",
       "title": null,
       "enabled": true
     },
     "calendar": {
-      "__typename": "CalendarConfig",
       "title": null,
+      "enabled": true
+    },
+    "overseerr": {
       "enabled": true
     }
   }

@@ -2,13 +2,11 @@ import { useGetConfigListQuery } from '@homarr/graphql';
 import { Center, Loader, Select, Tooltip } from '@mantine/core';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
 import { useConfig } from '../../lib/state';
 
 export default function ConfigChanger() {
   const { config, loadConfig, setConfig, getConfigs } = useConfig();
 
-  const [value, setValue] = useState(config.name);
   const { t } = useTranslation('settings/general/config-changer');
 
   const { data, loading } = useGetConfigListQuery();
@@ -23,11 +21,10 @@ export default function ConfigChanger() {
       </Tooltip>
     );
   }
-  // return <Select data={[{ value: '1', label: '1' },]} onChange={(e) => console.log(e)} value="1" />;
+
   return (
     <Select
       label={t('configSelect.label')}
-      value={value}
       defaultValue={config.name}
       onChange={(e) => {
         loadConfig(e ?? 'default');
