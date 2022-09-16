@@ -7,25 +7,25 @@
         "label": "Visa i Fahrenheit"
       },
       "location": {
-        "label": ""
+        "label": "Plats för väder"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "clear": "Klart",
+      "mainlyClear": "Främst klart",
+      "fog": "Dimma",
+      "drizzle": "Duggregn",
+      "freezingDrizzle": "Underkylt duggregn",
+      "rain": "Regn",
+      "freezingRain": "Underkylt regn",
+      "snowFall": "Snöfall",
+      "snowGrains": "Snökorn",
+      "rainShowers": "Regnskurar",
+      "snowShowers": "Snöblandat regn",
+      "thunderstorm": "Åska",
+      "thunderstormWithHail": "Åskväder med hagel",
       "unknown": "Okänd"
     }
   }
