@@ -24,7 +24,7 @@
 <i>Join the discord! — Don't forget to star the repo if you are enjoying the project!</i>
 </p>
 <p align="center">
-<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.vercel.app/docs/quick-start/"><strong> Install ➡️ </strong></a> • <a href="https://homarr.vercel.app/docs/about"><strong> Read the Docs 📄 </strong></a>
+<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.vercel.app/docs/introduction/installation"><strong> Install ➡️ </strong></a> • <a href="https://homarr.vercel.app/docs/about"><strong> Read the Docs 📄 </strong></a>
 </p>
 
 ---
@@ -43,7 +43,7 @@ If you have any questions about Homarr or want to share information with us, ple
 - [Github Discussions](https://github.com/ajnart/homarr/discussions)
 - [Discord Server](https://discord.gg/aCsmEV5RgA)
 
-*Before you file an [issue](https://github.com/ajnart/homarr/issues/new/choose), make sure you have the read [known issues](#-known-issues) section.*
+*Before you file an [issue](https://github.com/ajnart/homarr/issues/new/choose), make sure you have read the [known issues](#-known-issues) section.*
 
 **For more information, [read the documentation!](https://homarr.vercel.app/docs/about)**
 
