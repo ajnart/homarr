@@ -46,10 +46,10 @@ export default function DockerTable({
         ? currentIds.filter((c) => c !== containerId)
         : [...currentIds, containerId]
     );
-  // const toggleAll = () =>
-  //   setSelection((current: any) =>
-  //     current.length === usedContainers.length ? [] : usedContainers.map((c) => c.id)
-  //   );
+  const toggleAll = () =>
+    setSelection((current: any) =>
+      current.length === containers.length ? [] : containers.map((c) => c.id)
+    );
 
   const rows = containers.map((element) => {
     const selected = selection.includes(element.id);
@@ -100,13 +100,19 @@ export default function DockerTable({
         icon={<IconSearch size={14} />}
         value={search}
         onChange={handleSearchChange}
-        // disabled={usedContainers.length === 0}
+        disabled={containers.length === 0}
       />
       <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
         <thead>
           <tr>
             <th style={{ width: 40 }}>
-              <Checkbox />
+              <Checkbox
+                onChange={toggleAll}
+                checked={selection.length === containers.length && selection.length > 0}
+                indeterminate={selection.length > 0 && selection.length !== containers.length}
+                transitionDuration={0}
+                disabled={containers.length === 0}
+              />
             </th>
             <th>{t('table.header.name')}</th>
             <th>{t('table.header.image')}</th>
