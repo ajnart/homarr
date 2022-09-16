@@ -10,16 +10,16 @@
     "header": {
       "name": "Nome",
       "image": "Immagine",
-      "ports": "Porti",
+      "ports": "Porte",
       "state": "Stato"
     },
     "body": {
       "portCollapse": "{{ports}} di più"
     },
     "states": {
-      "running": "In corsa",
+      "running": "In esecuzione",
       "created": "Creato",
-      "stopped": "Interrotto",
+      "stopped": "Arrestato",
       "unknown": "Sconosciuto"
     }
   },
@@ -29,19 +29,19 @@
       "message": "Aggiungi servizio a Homarr"
     },
     "restart": {
-      "title": "Riavvio"
+      "title": "Riavvia"
     },
     "stop": {
-      "title": "Stop"
+      "title": "Arresta"
     },
     "start": {
-      "title": "Inizio"
+      "title": "Avvia"
     },
     "refreshData": {
       "title": "Aggiornare i dati"
     },
     "remove": {
-      "title": "Rimuovere"
+      "title": "Rimuovi"
     },
     "addToHomarr": {
       "title": "Aggiungi a Homarr"
