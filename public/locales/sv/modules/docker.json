@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Låter dig enkelt hantera dina torrents"
+    "description": "Låter dig enkelt hantera dina docker images"
   },
   "search": {
     "placeholder": "Sök efter container eller imagenamn"
@@ -38,7 +38,7 @@
       "title": "Starta"
     },
     "refreshData": {
-      "title": ""
+      "title": "Uppdatera data"
     },
     "remove": {
       "title": "Ta bort"

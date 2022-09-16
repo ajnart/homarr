@@ -5,7 +5,7 @@
   },
   "states": {
     "online": "Online {{response}}",
-    "offline": "",
-    "loading": ""
+    "offline": "{{response}} off-line",
+    "loading": "Carregando..."
   }
 }

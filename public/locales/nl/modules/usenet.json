@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Sabnzbd",
-    "description": "Hiermee kunt u uw Sabnzbd wachtrij en geschiedenis zien, downloads pauzeren en hervatten"
+    "description": "Hiermee kunt u uw Sabnzbd wachtrij en geschiedenis weergeven, downloads pauzeren en hervatten"
   },
   "card": {
     "errors": {
@@ -16,8 +16,8 @@
     "history": "Geschiedenis"
   },
   "info": {
-    "sizeLeft": "Maat links",
-    "paused": "Pauzeer"
+    "sizeLeft": "Grootte resterend",
+    "paused": "Gepauzeerd"
   },
   "queue": {
     "header": {
@@ -29,9 +29,9 @@
     "empty": "Leeg",
     "error": {
       "title": "Fout",
-      "message": "Er is een fout opgetreden."
+      "message": "Er is een fout opgetreden"
     },
-    "paused": "Pauzeer"
+    "paused": "Gepauzeerd"
   },
   "history": {
     "header": {
@@ -44,6 +44,6 @@
       "title": "Fout",
       "message": "Fout bij laden geschiedenis"
     },
-    "paused": "Pauzeer"
+    "paused": "Gepauzeerd"
   }
 }

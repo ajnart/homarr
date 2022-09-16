@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Ładowanie konfiguracji"
+    "label": "Wybór konfiguracji"
   },
   "modal": {
     "title": "Wybierz nazwę nowej konfiguracji",

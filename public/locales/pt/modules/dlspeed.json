@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Velocidade de Transferência",
-    "description": ""
+    "description": "Mostrar a velocidade atual de download dos serviços suportados"
   },
   "card": {
     "table": {
@@ -21,13 +21,13 @@
       "title": "",
       "download": "",
       "upload": "",
-      "timeSpan": "",
+      "timeSpan": "{{seconds}} atrás",
       "totalDownload": "",
       "totalUpload": ""
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Nenhum cliente de download suportado encontrado!",
         "text": "Adicione um serviço de download para ver seus downloads atuais"
       }
     }

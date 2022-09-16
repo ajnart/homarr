@@ -4,8 +4,8 @@
   },
   "tip": "Nasvet: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "sekund",
+    "minutes": "minut",
+    "hours": "ur"
   }
 }
