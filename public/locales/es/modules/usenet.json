@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Te permite ver tu cola e historial de Sabnzbd, pausar y resumir descargas"
   },
   "card": {
     "errors": {
@@ -12,12 +12,12 @@
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Cola",
+    "history": "Historial"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Tamaño restante",
+    "paused": "Pausado"
   },
   "queue": {
     "header": {
@@ -26,24 +26,24 @@
       "eta": "Tiempo restante",
       "progress": "Completado %"
     },
-    "empty": "",
+    "empty": "Vacío",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Error",
+      "message": "Ha ocurrido un error"
     },
-    "paused": ""
+    "paused": "Pausado"
   },
   "history": {
     "header": {
       "name": "Nombre",
       "size": "Tamaño",
-      "duration": ""
+      "duration": "Duración"
     },
-    "empty": "",
+    "empty": "Vacío",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Error",
+      "message": "Error al cargar historial"
     },
-    "paused": ""
+    "paused": "Pausado"
   }
 }
