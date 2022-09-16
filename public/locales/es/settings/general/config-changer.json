@@ -39,17 +39,17 @@
     "notifications": {
       "invalidConfig": {
         "title": "No es posible cargar la configuración",
-        "message": "No se ha podido cargar la configuración. Formato .JSON no válido."
+        "message": "No se ha podido cargar tu configuración. Formato JSON no válido."
       },
       "loadedSuccessfully": {
         "title": "Configuración {{configName}} cargada correctamente"
       }
     },
     "accept": {
-      "text": "Arrastra un archivo aqui para subir una configuración. Sólo se admiten archivos .JSON."
+      "text": "Arrastra un archivo aqui para subir una configuración. Sólo se admiten archivos JSON."
     },
     "reject": {
-      "text": "Este formato de archivo no es compatible. Por favor, sube solo archivos .JSON."
+      "text": "Este formato de archivo no es compatible. Por favor, sube solo archivos JSON."
     }
   }
 }
