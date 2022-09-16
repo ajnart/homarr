@@ -29,6 +29,7 @@ jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   npm_install_and_build:
+    name: Build & Lint
     runs-on: ubuntu-latest
     permissions:
       packages: write
