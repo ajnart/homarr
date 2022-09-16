@@ -1,71 +1,71 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "토렌트를 쉽게 관리할 수 있습니다"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "컨테이너 또는 이미지 이름으로 검색"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "이름",
+      "image": "이미지",
+      "ports": "포트",
+      "state": "상태"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} 더"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "실행 중",
+      "created": "생성됨",
+      "stopped": "중지됨",
+      "unknown": "알 수 없음"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "서비스 추가",
+      "message": "Homarr에 서비스 추가"
     },
     "restart": {
-      "title": ""
+      "title": "재시작"
     },
     "stop": {
-      "title": ""
+      "title": "중지"
     },
     "start": {
-      "title": ""
+      "title": "시작"
     },
     "refreshData": {
-      "title": ""
+      "title": "데이터 새로고침"
     },
     "remove": {
-      "title": ""
+      "title": "제거"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Homarr에 추가"
     }
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "",
-      "message": ""
+      "title": "컨테이너 {{containerName}} {{action}}됨",
+      "message": "컨테이너가 성공적으로 {{action}}됨"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker 통합 실패",
+      "message": "도커 소켓 마운트를 잊지 않으셨나요?"
     },
     "unknownError": {
-      "title": ""
+      "title": "오류가 발생했습니다"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "한 번에 하나의 서비스만 추가해 주세요!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
