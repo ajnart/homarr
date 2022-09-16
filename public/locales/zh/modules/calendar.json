@@ -4,7 +4,7 @@
     "description": "一个用于显示即将发布的日历模块。它与Sonarr和Radarr API进行交互。",
     "settings": {
       "sundayStart": {
-        "label": "在周日开始一周的工作"
+        "label": "使用周日作为一周的开始"
       }
     }
   }
