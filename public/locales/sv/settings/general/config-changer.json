@@ -1,52 +1,52 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "Konfigurationsladdare"
   },
   "modal": {
-    "title": "",
+    "title": "Välj namn på din nya konfigurering",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "Konfigurationsnamn",
+        "placeholder": "Ditt nya konfigurationsnamn"
       },
-      "submitButton": ""
+      "submitButton": "Bekräfta"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "Konfigurationen sparad",
+        "message": "Konfigurationen sparad som {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Ladda ner konfiguration",
     "delete": {
-      "text": "",
+      "text": "Ta bort konfigurationen",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurationen raderad",
+          "message": "Konfigurationen raderad"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Radering av konfigurationen misslyckades",
+          "message": "Radering av konfigurationen misslyckades"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Spara en kopia"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Kan inte läsa in konfigurationen",
+        "message": "Kunde inte ladda din konfiguration. Ogiltigt JSON-format."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Konfigurationen {{configName}} laddades"
       }
     },
     "accept": {
-      "text": ""
+      "text": "Dra filer hit för att ladda upp en konfiguration. Endast stöd för JSON."
     },
     "reject": {
       "text": "Det här filformatet stöds inte. Ladda endast upp JSON."

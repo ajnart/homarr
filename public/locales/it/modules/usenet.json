@@ -13,10 +13,10 @@
   },
   "tabs": {
     "queue": "Coda",
-    "history": "La storia"
+    "history": "Storia"
   },
   "info": {
-    "sizeLeft": "Dimensione sinistra",
+    "sizeLeft": "Dimensione rimanente",
     "paused": "In pausa"
   },
   "queue": {
@@ -24,7 +24,7 @@
       "name": "Nome",
       "size": "Dimensione",
       "eta": "ETA",
-      "progress": "Progressi"
+      "progress": "Avanzamento"
     },
     "empty": "Vuoto",
     "error": {

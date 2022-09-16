@@ -1,0 +1,27 @@
+{
+  "title": "",
+  "text": "",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "Wachtwoord",
+        "placeholder": ""
+      }
+    },
+    "buttons": {
+      "submit": ""
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "",
+      "message": ""
+    },
+    "correct": {
+      "title": ""
+    },
+    "wrong": {
+      "title": ""
+    }
+  }
+}

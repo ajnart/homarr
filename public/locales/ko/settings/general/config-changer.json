@@ -1,55 +1,55 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "설정 불러오기"
   },
   "modal": {
-    "title": "",
+    "title": "새로운 설정의 이름을 입력하세요",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "설정 이름",
+        "placeholder": "새로운 설정 이름"
       },
-      "submitButton": ""
+      "submitButton": "확인"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "설정 저장됨",
+        "message": "{{configName}} 로 설정 저장됨"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "설정 다운로드",
     "delete": {
-      "text": "",
+      "text": "설정 삭제",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "설정 삭제됨",
+          "message": "설정 삭제됨"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "설정 삭제 실패",
+          "message": "설정 삭제 실패"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "복사본 저장"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "설정을 불러올 수 없습니다",
+        "message": "설정을 로드할 수 없습니다. 잘못된 JSON 형식입니다."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "성공적으로 {{configName}} 설정을 불러왔습니다"
       }
     },
     "accept": {
-      "text": ""
+      "text": "구성을 업로드하려면 여기로 파일을 드래그하세요. JSON 형식만 지원합니다."
     },
     "reject": {
-      "text": ""
+      "text": "이 파일 형식은 지원되지 않습니다. JSON 형식만 업로드하세요."
     }
   }
 }

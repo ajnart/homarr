@@ -13,7 +13,7 @@
       "alerts": {
         "automaticApproval": {
           "title": "",
-          "text": ""
+          "text": "Ten wniosek zostanie automatycznie zaakceptowany"
         }
       }
     },

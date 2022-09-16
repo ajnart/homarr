@@ -4,8 +4,8 @@
   },
   "tip": "Consejo: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "segundos",
+    "minutes": "minutos",
+    "hours": "horas"
   }
 }

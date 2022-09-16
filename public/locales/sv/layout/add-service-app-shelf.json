@@ -95,7 +95,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Avancerade inställningar",
                 "form": {
                     "httpStatusCodes": {
                         "label": "HTTP-statuskoder",

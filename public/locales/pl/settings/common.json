@@ -2,13 +2,13 @@
   "title": "Ustawienia",
   "tooltip": "Ustawienia",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Ogólne",
+    "customizations": "Personalizacja"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Prześlij swój plik konfiguracyjny, przeciągając go i upuszczając na stronę!"
   },
   "credits": {
-    "madeWithLove": "Stworzone z ❤️ przez @"
+    "madeWithLove": "Wykonane z ❤️ przez @"
   }
 }

@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": ""
+    "description": "Pozwala sprawdzić, czy usługa jest aktywna lub zwraca określony kod statusu HTTP."
   },
   "states": {
-    "online": "",
-    "offline": "",
+    "online": "Dostępny {{response}}",
+    "offline": "Niedostępny {{response}}",
     "loading": "Ładowanie..."
   }
 }

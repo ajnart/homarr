@@ -25,7 +25,7 @@
   },
   "actionBar": {
     "addService": {
-      "title": "添加服务",
+      "title": "添加应用",
       "message": "为Homarr添加服务"
     },
     "restart": {

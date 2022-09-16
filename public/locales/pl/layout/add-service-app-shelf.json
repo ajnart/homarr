@@ -12,7 +12,7 @@
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Opcje",
                 "form": {
                     "serviceName": {
                         "label": "Nazwa usługi",
@@ -47,7 +47,7 @@
                             },
                             "tip": {
                                 "text": "Zdobądź swój klucz API",
-                                "link": ""
+                                "link": "tutaj."
                             }
                         },
                         "qBittorrent": {
@@ -69,7 +69,7 @@
                         "deluge": {
                             "password": {
                                 "label": "Hasło",
-                                "placeholder": "password",
+                                "placeholder": "hasło",
                                 "validation": {
                                     "invalidPassword": "Nieprawidłowe hasło"
                                 }
@@ -95,11 +95,11 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Opcje zaawansowane",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
+                        "label": "Kod statusu HTTP",
+                        "placeholder": "Wybierz prawidłowe kody statusu",
                         "clearButtonLabel": "Wyczyść wybór",
                         "nothingFound": "Nic nie znaleziono"
                     },
