@@ -145,30 +145,30 @@ export function DashdotComponent() {
 
   const graphs = [
     {
-      name: t('card.graphs.cpu.title'),
+      name: 'cpu',
       enabled: cpuEnabled,
       params: {
         multiView: dashConfig?.cpuMultiView?.value ?? false,
       },
     },
     {
-      name: t('card.graphs.storage.title'),
+      name: 'storage',
       enabled: storageEnabled && !isCompact,
       params: {
         multiView: dashConfig?.storageMultiView?.value ?? false,
       },
     },
     {
-      name: t('card.graphs.memory.title'),
+      name: 'ram',
       enabled: ramEnabled,
     },
     {
-      name: t('card.graphs.network.title'),
+      name: 'network',
       enabled: networkEnabled,
       spanTwo: true,
     },
     {
-      name: t('card.graphs.gpu.title'),
+      name: 'gpu',
       enabled: gpuEnabled,
       spanTwo: true,
     },
