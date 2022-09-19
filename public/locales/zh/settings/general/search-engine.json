@@ -1,11 +1,11 @@
 {
   "title": "搜索引擎",
   "tips": {
-    "generalTip": "在你的查询前使用前缀 !yt和 !t，分别在YouTube上搜索或搜索Torrent。",
+    "generalTip": "在查询前使用前缀 !yt和 !t，可以在YouTube或Torrent中搜索。",
     "placeholderTip": "%s 可以作为查询的占位符。"
   },
   "customEngine": {
     "label": "查询网址",
-    "placeholder": "自定义查询URL"
+    "placeholder": "自定义查询网址"
   }
 }
