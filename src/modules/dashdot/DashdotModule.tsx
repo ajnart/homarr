@@ -145,6 +145,7 @@ export function DashdotComponent() {
 
   const graphs = [
     {
+      id: 'cpu',
       name: t('card.graphs.cpu.title'),
       enabled: cpuEnabled,
       params: {
@@ -152,6 +153,7 @@ export function DashdotComponent() {
       },
     },
     {
+      id: 'storage',
       name: t('card.graphs.storage.title'),
       enabled: storageEnabled && !isCompact,
       params: {
@@ -159,15 +161,18 @@ export function DashdotComponent() {
       },
     },
     {
+      id: 'ram',
       name: t('card.graphs.memory.title'),
       enabled: ramEnabled,
     },
     {
+      id: 'network',
       name: t('card.graphs.network.title'),
       enabled: networkEnabled,
       spanTwo: true,
     },
     {
+      id: 'gpu',
       name: t('card.graphs.gpu.title'),
       enabled: gpuEnabled,
       spanTwo: true,
@@ -232,7 +237,7 @@ export function DashdotComponent() {
                 className={classes.iframe}
                 key={graph.name}
                 title={graph.name}
-                src={`${dashdotUrl}?singleGraphMode=true&graph=${graph.name.toLowerCase()}&theme=${colorScheme}&surface=${(colorScheme ===
+                src={`${dashdotUrl}?singleGraphMode=true&graph=${graph.id.toLowerCase()}&theme=${colorScheme}&surface=${(colorScheme ===
                 'dark'
                   ? theme.colors.dark[7]
                   : theme.colors.gray[0]
