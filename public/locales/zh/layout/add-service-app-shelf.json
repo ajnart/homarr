@@ -34,16 +34,16 @@
                     },
                     "category": {
                         "label": "类型",
-                        "placeholder": "选择一个类别或创建一个新类别",
+                        "placeholder": "选择或创建一个新类别",
                         "nothingFound": "没有找到",
                         "createLabel": "+ 创建 {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "API key",
+                            "label": "API密钥",
                             "placeholder": "你的API密钥",
                             "validation": {
-                                "noKey": "无效key"
+                                "noKey": "无效秘钥"
                             },
                             "tip": {
                                 "text": "获取你的API密钥",
