@@ -2,13 +2,13 @@
   "title": "设置",
   "tooltip": "设置",
   "tabs": {
-    "common": "普通",
-    "customizations": "定制化"
+    "common": "常规",
+    "customizations": "个性化"
   },
   "tips": {
     "configTip": "将你的配置文件拖放到页面上，就可以上传了!"
   },
   "credits": {
-    "madeWithLove": "用❤️制作的@"
+    "madeWithLove": "用❤️创造，出品于"
   }
 }
