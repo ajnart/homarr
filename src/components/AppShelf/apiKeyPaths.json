@@ -5,5 +5,5 @@
   "Radarr": "settings/general",
   "Readarr": "settings/general",
   "Lidarr": "settings/general",
-  "Sabnzbd": "sabnzbd/config"
+  "Sabnzbd": "sabnzbd/config/general"
 }
