@@ -26,6 +26,7 @@ import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
 import { tryMatchPort, ServiceTypeList, StatusCodes, Config } from '../../tools/types';
+import apiKeyPaths from './apiKeyPaths.json';
 import Tip from '../layout/Tip';
 
 export function AddItemShelfButton(props: any) {
@@ -307,7 +308,7 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
                       target="_blank"
                       weight="bold"
                       style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
-                      href={`${hostname}/settings/general`}
+                      href={`${hostname}/${apiKeyPaths[form.values.type as keyof typeof apiKeyPaths]}`}
                     >
                       {t('modal.tabs.options.form.integrations.apiKey.tip.link')}
                     </Anchor>
