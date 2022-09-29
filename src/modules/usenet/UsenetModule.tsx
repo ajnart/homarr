@@ -5,6 +5,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+import { useElementSize } from '@mantine/hooks';
 import { IModule } from '../ModuleTypes';
 import { UsenetQueueList } from './UsenetQueueList';
 import { UsenetHistoryList } from './UsenetHistoryList';
@@ -48,30 +49,39 @@ export const UsenetComponent: FunctionComponent = () => {
     return null;
   }
 
+  const { ref, width, height } = useElementSize();
+
   return (
     <Tabs keepMounted={false} defaultValue="queue">
-      <Group mb="md">
-        <Tabs.List style={{ flex: 1 }}>
-          <Tabs.Tab value="queue">{t('tabs.queue')}</Tabs.Tab>
-          <Tabs.Tab value="history">{t('tabs.history')}</Tabs.Tab>
-          {data && (
-            <Group position="right" ml="auto" mb="lg">
-              <Badge>{humanFileSize(data?.speed)}/s</Badge>
-              <Badge>
-                {t('info.sizeLeft')}: {humanFileSize(data?.sizeLeft)}
-              </Badge>
-              {data.paused ? (
-                <Button uppercase onClick={() => resume()} radius="xl" size="xs">
-                  <IconPlayerPlay size={16} style={{ marginRight: 5 }} /> {t('info.paused')}
-                </Button>
-              ) : (
-                <Button uppercase onClick={() => pause()} radius="xl" size="xs">
-                  <IconPlayerPause size={16} style={{ marginRight: 5 }} />{' '}
-                  {dayjs.duration(data.eta, 's').format('HH:mm:ss')}
-                </Button>
-              )}
-            </Group>
-          )}
+        <Tabs.List ref={ref} mb="md" style={{ flex: 1 }}>
+            <Tabs.Tab value="queue">{t('tabs.queue')}</Tabs.Tab>
+            <Tabs.Tab value="history">{t('tabs.history')}</Tabs.Tab>
+            {data && (
+              <Group position="right" ml="auto">
+                {
+                  // Only show if the width is > 400px
+                  width > 400 && (
+                    <>
+                      <Badge>{humanFileSize(data?.speed)}/s</Badge>
+                      <Badge>
+                        {t('info.sizeLeft')}: {humanFileSize(data?.sizeLeft)}
+                      </Badge>
+                    </>
+                  )
+                }
+
+                {data.paused ? (
+                  <Button uppercase onClick={() => resume()} radius="xl" size="xs">
+                    <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
+                  </Button>
+                ) : (
+                  <Button uppercase onClick={() => pause()} radius="xl" size="xs">
+                    <IconPlayerPause size={12} style={{ marginRight: 5 }} />{' '}
+                    {dayjs.duration(data.eta, 's').format('HH:mm')}
+                  </Button>
+                )}
+              </Group>
+            )}
         </Tabs.List>
         {downloadServices.length > 1 && (
           <Select
@@ -81,7 +91,6 @@ export const UsenetComponent: FunctionComponent = () => {
             data={downloadServices.map((service) => ({ value: service.id, label: service.name }))}
           />
         )}
-      </Group>
       <Tabs.Panel value="queue">
         <UsenetQueueList serviceId={selectedServiceId} />
       </Tabs.Panel>
