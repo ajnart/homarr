@@ -109,6 +109,7 @@ docker run  \
   -p 7575:7575 \
   -v ./homarr/configs:/app/data/configs \
   -v ./homarr/icons:/app/public/icons \
+  -v /var/run/docker.sock:/var/run/docker.sock \
   -d ghcr.io/ajnart/homarr:latest
 ```
 
