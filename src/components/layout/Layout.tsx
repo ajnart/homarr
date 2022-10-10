@@ -1,14 +1,22 @@
 import { AppShell, createStyles } from '@mantine/core';
-import { Header } from './Header';
+import { Header } from './header/Header';
 import { Footer } from './Footer';
 import Aside from './Aside';
 import Navbar from './Navbar';
-import { HeaderConfig } from './HeaderConfig';
+import { HeaderConfig } from './header/HeaderConfig';
 import { Background } from './Background';
 import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   main: {},
+  appShell: {
+    // eslint-disable-next-line no-useless-computed-key
+    ['@media screen and (display-mode: standalone)']: {
+      '&': {
+        paddingTop: '88px !important',
+      },
+    },
+  },
 }));
 
 export default function Layout({ children, style }: any) {
