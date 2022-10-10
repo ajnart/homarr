@@ -34,8 +34,8 @@
                     },
                     "category": {
                         "label": "Categoría",
-                        "placeholder": "Selecciona una categoría o cree una nueva",
-                        "nothingFound": "No se ha encontrado nada",
+                        "placeholder": "Seleccione una categoría o cree una nueva",
+                        "nothingFound": "No se ha encontrado ningún resultado",
                         "createLabel": "+ Crear {{query}}"
                     },
                     "integrations": {
@@ -101,7 +101,7 @@
                         "label": "Códigos de Estado HTTP",
                         "placeholder": "Seleccionar códigos de estado válidos",
                         "clearButtonLabel": "Borrar selección",
-                        "nothingFound": "No se ha encontrado nada"
+                        "nothingFound": "No se ha encontrado ningún resultado"
                     },
                     "openServiceInNewTab": {
                         "label": "Abrir el servicio en una nueva pestaña"

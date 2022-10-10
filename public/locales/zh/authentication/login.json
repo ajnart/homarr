@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "欢迎回来！",
+  "text": "请输入密码",
   "form": {
     "fields": {
       "password": {
         "label": "密码",
-        "placeholder": ""
+        "placeholder": "你的密码"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "登录"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "检查你的密码",
+      "message": "正在检查你的密码..."
     },
     "correct": {
-      "title": ""
+      "title": "密码正确，正在重定向..."
     },
     "wrong": {
-      "title": ""
+      "title": "密码错误，请重试。"
     }
   }
 }

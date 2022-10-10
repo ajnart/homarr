@@ -1,0 +1,9 @@
+{
+  "Jellyseerr": "settings",
+  "Overseerr": "settings",
+  "Sonarr": "settings/general",
+  "Radarr": "settings/general",
+  "Readarr": "settings/general",
+  "Lidarr": "settings/general",
+  "Sabnzbd": "sabnzbd/config/general"
+}
