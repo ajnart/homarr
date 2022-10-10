@@ -12,7 +12,7 @@ export function Logo({ style, withoutText }: any) {
     <Group spacing="xs">
       <Image
         width={50}
-        src={config.settings.logo || '/imgs/logo.png'}
+        src={config.settings.logo || '/imgs/logo/logo.png'}
         style={{
           position: 'relative',
         }}
