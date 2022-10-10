@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "监督员r",
+    "name": "Overseerr",
     "description": "允许你从Overseerr/Jellyseerr搜索和添加媒体"
   },
   "popup": {
@@ -18,11 +18,11 @@
       }
     },
     "seasonSelector": {
-      "caption": "勾选你想要下载的季节",
+      "caption": "勾选你想要下载的季数",
       "table": {
         "header": {
-          "season": "季节",
-          "numberOfEpisodes": "节目的数量"
+          "season": "季数",
+          "numberOfEpisodes": "剧集数"
         }
       }
     }

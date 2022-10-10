@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "码头",
+    "name": "Docker",
     "description": "允许你轻松地管理你的torrent文件"
   },
   "search": {
@@ -8,25 +8,25 @@
   },
   "table": {
     "header": {
-      "name": "命名",
-      "image": "图片",
-      "ports": "码头",
-      "state": "国家"
+      "name": "名称",
+      "image": "镜像",
+      "ports": "端口",
+      "state": "状态"
     },
     "body": {
       "portCollapse": "{{ports}} 更多"
     },
     "states": {
-      "running": "跑步",
-      "created": "创建",
+      "running": "运行中",
+      "created": "已创建",
       "stopped": "已停止",
-      "unknown": "不详"
+      "unknown": "未知"
     }
   },
   "actionBar": {
     "addService": {
       "title": "添加应用",
-      "message": "为Homarr添加服务"
+      "message": "添加服务到 Homarr"
     },
     "restart": {
       "title": "重新启动"
@@ -49,8 +49,8 @@
   },
   "messages": {
     "successfullyExecuted": {
-      "title": "容器 {{containerName}} {{action}}ed",
-      "message": "您的容器已成功 {{action}}。"
+      "title": "容器 {{containerName}} {{action}}已完成",
+      "message": "你的容器已成功 {{action}}。"
     }
   },
   "errors": {
@@ -66,6 +66,6 @@
     }
   },
   "actionIcon": {
-    "tooltip": "码头"
+    "tooltip": "Docker"
   }
 }
