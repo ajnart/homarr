@@ -1,18 +1,18 @@
 {
   "pageTitle": {
     "label": "页面标题",
-    "placeholder": "霍马尔 🦞"
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
     "label": "徽标",
     "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "徽标（Favicon",
+    "label": "网站图标",
     "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "背景介绍",
+    "label": "背景",
     "placeholder": "/img/background.png"
   },
   "customCSS": {

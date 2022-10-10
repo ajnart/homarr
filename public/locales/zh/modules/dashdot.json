@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "潇洒。",
-    "description": "用于显示运行中的Dash.instance的图表的模块。",
+    "name": "Dash.",
+    "description": "一个显示运行中的仪表板实例的图表模块。",
     "settings": {
       "cpuMultiView": {
         "label": "CPU多核视图"
@@ -16,27 +16,27 @@
         "label": "图表"
       },
       "url": {
-        "label": "Dash. URL"
+        "label": "Dash. 网址"
       }
     }
   },
   "card": {
-    "title": "潇洒。",
+    "title": "Dash.",
     "errors": {
-      "noService": "没有找到Dash.服务。请在你的Homarr仪表板上添加一个，或者在模块选项中设置一个Dash.URL。URL在模块选项中",
-      "noInformation": "无法从仪表盘获取信息。- 你运行的是最新版本吗？"
+      "noService": "没有找到Dash.服务。请在你的Homarr仪表板上添加，或者设置一个仪表板网址。网址在应用选项中添加",
+      "noInformation": "无法从仪表板获取信息。- 你运行的是最新版本吗？"
     },
     "graphs": {
       "storage": {
-        "title": "储存",
-        "label": "储存。"
+        "title": "存储",
+        "label": "存储："
       },
       "network": {
         "title": "网络",
-        "label": "网络。",
+        "label": "网络：",
         "metrics": {
-          "download": "下降",
-          "upload": "上"
+          "download": "下移",
+          "upload": "上移"
         }
       },
       "cpu": {
