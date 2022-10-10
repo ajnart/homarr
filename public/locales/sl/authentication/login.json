@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "Dobrodošli nazaj!",
+  "text": "Prosimo vnesite geslo",
   "form": {
     "fields": {
       "password": {
         "label": "Geslo",
-        "placeholder": ""
+        "placeholder": "Vaše geslo"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Prijava"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Preverjanje gesla",
+      "message": "Preverjamo vaše geslo..."
     },
     "correct": {
-      "title": ""
+      "title": "Geslo je pravilno, preusmerjam..."
     },
     "wrong": {
-      "title": ""
+      "title": "Geslo je napačno, poskusite znova."
     }
   }
 }

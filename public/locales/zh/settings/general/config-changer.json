@@ -13,7 +13,7 @@
     },
     "events": {
       "configSaved": {
-        "title": "保存的配置",
+        "title": "配置已保存",
         "message": "配置保存为 {{configName}}"
       }
     }
@@ -24,8 +24,8 @@
       "text": "删除配置",
       "notifications": {
         "deleted": {
-          "title": "配置删除",
-          "message": "配置删除"
+          "title": "配置已删除",
+          "message": "配置已删除"
         },
         "deleteFailed": {
           "title": "配置删除失败",
@@ -42,7 +42,7 @@
         "message": "无法加载您的配置。无效的JSON格式。"
       },
       "loadedSuccessfully": {
-        "title": "配置 {{configName}} ，成功加载。"
+        "title": "配置 {{configName}} 已成功加载。"
       }
     },
     "accept": {

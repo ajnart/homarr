@@ -35,8 +35,8 @@
         "title": "Réseau",
         "label": "Réseau :",
         "metrics": {
-          "download": "Duvet",
-          "upload": "Up"
+          "download": "Descendant",
+          "upload": "Montant"
         }
       },
       "cpu": {
