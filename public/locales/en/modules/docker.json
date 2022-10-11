@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Allows you to easily manage your torrents"
+    "description": "Allows you to easily manage your docker containers"
   },
   "search": {
     "placeholder": "Search by container or image name"
