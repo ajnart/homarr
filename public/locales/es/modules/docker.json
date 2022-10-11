@@ -47,10 +47,22 @@
       "title": "Añadir a Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "Contenedor {{containerName}} {{action}} do",
-      "message": "Su contenedor ha sido {{action}} con éxito"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "Detenido"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {
