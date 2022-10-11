@@ -47,10 +47,22 @@
       "title": "Dodaj do Homarra"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "",
-      "message": ""
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "Zatrzymane"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {
