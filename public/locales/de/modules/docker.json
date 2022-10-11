@@ -49,20 +49,20 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Startet",
+      "end": "Gestartet"
     },
     "stop": {
-      "start": "",
+      "start": "Hält an",
       "end": "Gestoppt"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Startet neu",
+      "end": "Neu gestartet"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Wird entfernt",
+      "end": "Entfernt"
     }
   },
   "errors": {
