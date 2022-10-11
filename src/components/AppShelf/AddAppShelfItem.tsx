@@ -318,7 +318,6 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
               {form.values.type === 'qBittorrent' && (
                 <>
                   <TextInput
-                    required
                     label={t('modal.tabs.options.form.integrations.qBittorrent.username.label')}
                     placeholder={t(
                       'modal.tabs.options.form.integrations.qBittorrent.username.placeholder'
@@ -335,7 +334,6 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
                     }
                   />
                   <PasswordInput
-                    required
                     label={t('modal.tabs.options.form.integrations.qBittorrent.password.label')}
                     placeholder={t(
                       'modal.tabs.options.form.integrations.qBittorrent.password.placeholder'
