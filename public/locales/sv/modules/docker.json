@@ -49,20 +49,20 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Startar",
+      "end": "Startad"
     },
     "stop": {
-      "start": "",
+      "start": "Stoppar",
       "end": "Stoppad"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Startar om",
+      "end": "Omstartad"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Tar bort",
+      "end": "Borttagen"
     }
   },
   "errors": {
