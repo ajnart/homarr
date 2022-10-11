@@ -31,7 +31,7 @@ function sendDockerCommand(
   showNotification({
     id: containerId,
     loading: true,
-    title: `${action}ing container ${containerName}`,
+    title: `${t(`actions.${action}.start`)} ${containerName}`,
     message: undefined,
     autoClose: false,
     disallowClose: true,
@@ -41,8 +41,8 @@ function sendDockerCommand(
     .then((res) => {
       updateNotification({
         id: containerId,
-        title: t('messages.successfullyExecuted.message', { containerName, action }),
-        message: t('messages.successfullyExecuted.message', { action }),
+        title: containerName,
+        message: `${t(`actions.${action}.end`)} ${containerName}`,
         icon: <IconCheck />,
         autoClose: 2000,
       });
