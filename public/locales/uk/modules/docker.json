@@ -47,10 +47,22 @@
       "title": "Додати до Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "Контейнер {{containerName}} виконав дію {{action}}",
-      "message": "Ваш контейнер успішно виконав - {{action}}"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "Зупинено"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {
