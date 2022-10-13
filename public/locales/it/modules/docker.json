@@ -49,20 +49,20 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Avvio",
+      "end": "Avviato"
     },
     "stop": {
-      "start": "",
+      "start": "Arresto",
       "end": "Arrestato"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Riavvio",
+      "end": "Riavviato"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Rimozione",
+      "end": "Rimosso"
     }
   },
   "errors": {
