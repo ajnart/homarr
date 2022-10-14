@@ -35,8 +35,8 @@
         "title": "네트워크",
         "label": "네트워크:",
         "metrics": {
-          "download": "다운",
-          "upload": "업"
+          "download": "다운로드",
+          "upload": "업로드"
         }
       },
       "cpu": {
