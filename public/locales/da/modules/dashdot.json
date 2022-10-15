@@ -1,52 +1,52 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Et modul til visning af graferne for din kørende Dash. instans.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "CPU Multikerne Visning"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Multidrevet Lagervisning"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Brug kompakt tilstand"
       },
       "graphs": {
-        "label": ""
+        "label": "Grafer"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "Ingen Dash. service fundet. Tilføj venligst en til dit Homarr-dashboard eller indstil en Dash. URL i modulindstillingerne",
+      "noInformation": "Kan ikke hente information fra dash. - kører du den nyeste version?"
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Lager",
+        "label": "Lager:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Netværk",
+        "label": "Netværk:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Download",
+          "upload": "Upload"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
