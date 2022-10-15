@@ -5,6 +5,7 @@ import {
   Grid,
   Paper,
   Stack,
+  Text,
   Title,
   useMantineColorScheme,
 } from '@mantine/core';
@@ -200,17 +201,18 @@ const AppShelf = (props: any) => {
             >
               <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
-                <Paper radius="lg">
-                  {torrentEnabled && (
+                <Paper radius="lg" style={{ position: 'relative' }}>
+                      {torrentEnabled && (
                     <>
-                      <ModuleMenu module={TorrentsModule} />
+                      <Text>{t('accordions.downloads.torrents')}</Text>
+                      <ModuleMenu module={TorrentsModule} hovered />
                       <TorrentsComponent />
                     </>
                   )}
                   {usenetEnabled && (
                     <>
-                      {torrentEnabled && <Divider my="sm" />}
-                      <ModuleMenu module={UsenetModule} />
+                      <Text mt="md">{t('accordions.downloads.usenet')}</Text>
+                      <ModuleMenu module={UsenetModule} hovered />
                       <UsenetComponent />
                     </>
                   )}
