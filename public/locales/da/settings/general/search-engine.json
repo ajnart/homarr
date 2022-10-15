@@ -1,11 +1,11 @@
 {
-  "title": "",
+  "title": "Søgemaskine",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Brug præfikserne !yt og !t foran din forespørgsel for at søge på YouTube eller efter en Torrent.",
+    "placeholderTip": "%s kan bruges som en pladsholder for forespørgslen."
   },
   "customEngine": {
-    "label": "",
-    "placeholder": ""
+    "label": "Forespørgsels URL",
+    "placeholder": "Brugerdefineret forespørgsels URL"
   }
 }
