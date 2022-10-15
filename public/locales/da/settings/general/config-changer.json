@@ -1,39 +1,39 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "Konfigurations indlæser"
   },
   "modal": {
-    "title": "",
+    "title": "Vælg navnet på din nye konfiguration",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "Konfigurations navn",
+        "placeholder": "Dit nye konfigurationsnavn"
       },
-      "submitButton": ""
+      "submitButton": "Bekræft"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "Konfigurationen gemt",
+        "message": "Konfigurationen gemt som {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Hent konfiguration",
     "delete": {
-      "text": "",
+      "text": "Slet konfiguration",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguration slettet",
+          "message": "Konfiguration slettet"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Sletning af konfiguration mislykkedes",
+          "message": "Sletning af konfiguration mislykkedes"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Gem en kopi"
   },
   "dropzone": {
     "notifications": {
