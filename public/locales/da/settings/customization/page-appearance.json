@@ -1,25 +1,25 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Sidetitel",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Logo",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "Baggrund",
+    "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "Tilpasset CSS",
+    "placeholder": "Brugerdefineret CSS vil blive udført sidst"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Indsend"
   }
 }
