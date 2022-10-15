@@ -19,7 +19,7 @@
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": "Ikon URL"
+                        "label": "Ikon-URL"
                     },
                     "serviceUrl": {
                         "label": "Tjeneste-URL"
@@ -46,7 +46,7 @@
                                 "noKey": "Ugyldig nøgle"
                             },
                             "tip": {
-                                "text": "Hent din API-nøgle",
+                                "text": "Hent din API nøgle",
                                 "link": "her."
                             }
                         },
