@@ -6,7 +6,7 @@
     "title": "Vælg navnet på din nye konfiguration",
     "form": {
       "configName": {
-        "label": "Konfigurations navn",
+        "label": "Konfigurationens navn",
         "placeholder": "Dit nye konfigurationsnavn"
       },
       "submitButton": "Bekræft"
@@ -38,18 +38,18 @@
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Kan ikke indlæse konfigurationen",
+        "message": "Kunne ikke indlæse din konfiguration. Ugyldigt JSON-format."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Konfigurationen {{configName}} blev indlæst"
       }
     },
     "accept": {
-      "text": ""
+      "text": "Træk filer hertil for at uploade en konfiguration. Kun understøttelse af JSON."
     },
     "reject": {
-      "text": ""
+      "text": "Dette filformat understøttes ikke. Upload venligst kun JSON."
     }
   }
 }
