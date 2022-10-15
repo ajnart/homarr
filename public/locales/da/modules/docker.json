@@ -62,19 +62,19 @@
     },
     "remove": {
       "start": "Fjerner",
-      "end": ""
+      "end": "Fjernet"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker integration mislykkedes",
+      "message": "Har du glemt at montere docker socket ?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Der opstod en fejl"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Du må kun tilføje én tjeneste ad gangen!"
     }
   },
   "actionIcon": {
