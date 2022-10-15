@@ -23,10 +23,10 @@
       "snowFall": "",
       "snowGrains": "",
       "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
-      "unknown": ""
+      "snowShowers": "Snebyger",
+      "thunderstorm": "Tordenvejr",
+      "thunderstormWithHail": "Tordenvejr med hagl",
+      "unknown": "Ukendt"
     }
   }
 }
