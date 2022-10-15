@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Tillader dig at se din Sabnzbd kø og historie, pause og genoptage downloads"
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Ingen understøttede downloadklienter fundet!",
+        "text": "Tilføj en downloadtjeneste for at se dine aktuelle downloads"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Kø",
+    "history": "Historik"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Størrelse tilbage",
+    "paused": "På pause"
   },
   "queue": {
     "header": {
       "name": "Navn",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "size": "Størrelse",
+      "eta": "ETA",
+      "progress": "Fremskridt"
     },
-    "empty": "",
+    "empty": "Tom",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Fejl",
+      "message": "Der er opstået en fejl"
     },
-    "paused": ""
+    "paused": "På pause"
   },
   "history": {
     "header": {
       "name": "Navn",
-      "size": "",
-      "duration": ""
+      "size": "Størrelse",
+      "duration": "Varighed"
     },
-    "empty": "",
+    "empty": "Intet indhold",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Fejl",
+      "message": "Fejl ved indlæsning af historik"
     },
-    "paused": ""
+    "paused": "På pause"
   }
 }
