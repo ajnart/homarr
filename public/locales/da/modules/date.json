@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dato",
+    "description": "Vis det aktuelle klokkeslæt og den aktuelle dato på et kort",
     "settings": {
       "display24HourFormat": {
-        "label": ""
+        "label": "Vis fuld tid (24-timer)"
       }
     }
   }
