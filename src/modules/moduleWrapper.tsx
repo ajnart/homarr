@@ -186,8 +186,13 @@ export function ModuleWrapper(props: any) {
   );
 }
 
-export function ModuleMenu(props: any) {
-  const { module, styles, hovered } = props;
+interface ModuleMenuProps {
+  hovered: boolean;
+  module: IModule;
+}
+
+export function ModuleMenu(props: ModuleMenuProps) {
+  const { module, hovered } = props;
   const items: JSX.Element[] = getItems(module);
   const { t } = useTranslation('modules/common');
   return (
@@ -207,12 +212,13 @@ export function ModuleMenu(props: any) {
             <motion.div
               style={{
                 position: 'absolute',
-                top: 15,
-                right: 15,
+                top: module.padding?.top ?? 15,
+                right: module.padding?.right ?? 15,
                 alignSelf: 'flex-end',
+                zIndex: 10,
               }}
               animate={{
-                opacity: hovered === true ? 1 : 0,
+                opacity: hovered ? 1 : 0,
               }}
             >
               <ActionIcon>
