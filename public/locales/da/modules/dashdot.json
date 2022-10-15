@@ -35,8 +35,8 @@
         "title": "Netværk",
         "label": "Netværk:",
         "metrics": {
-          "download": "Download",
-          "upload": "Upload"
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {
