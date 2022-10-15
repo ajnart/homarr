@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "Vis den aktuelle downloadhastighed for understøttede tjenester",
     "settings": {
       "hideComplete": {
         "label": ""
@@ -11,10 +11,10 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Navn",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "Download",
+        "upload": "Upload",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
