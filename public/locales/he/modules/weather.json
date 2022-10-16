@@ -20,12 +20,12 @@
       "freezingDrizzle": "טפטוף מקפיא",
       "rain": "גשום",
       "freezingRain": "גשם מקפיא",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "snowFall": "שלג יורד",
+      "snowGrains": "פתיתי שלג",
+      "rainShowers": "ממטרי גשם",
+      "snowShowers": "ממטרי שלג",
+      "thunderstorm": "סופת רעמים",
+      "thunderstormWithHail": "סופת רעמים עם ברד",
       "unknown": "לא ידוע"
     }
   }
