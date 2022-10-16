@@ -7,6 +7,7 @@ import {
   ScrollArea,
   createStyles,
   useMantineTheme,
+  Space,
 } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { Calendar } from '@mantine/dates';
@@ -278,10 +279,11 @@ function DayComponent(props: any) {
           scrollbarSize={5}
           style={{
             height:
-              totalFiltered.slice(0, 2).length > 1 ? totalFiltered.slice(0, 2).length * 150 : 200,
+              totalFiltered.slice(0, 2).length > 1 ? totalFiltered.slice(0, 2).length * 150 : 220,
             width: 400,
           }}
         >
+          <Space mt={5} />
           {sonarrFiltered.map((media: any, index: number) => (
             <React.Fragment key={index}>
               <SonarrMediaDisplay media={media} />
