@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "מאפשר חיפוש והוספת מידה מ- Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
-        "cancel": "",
+        "askFor": "בקש מ",
+        "cancel": "בטל",
         "request": "בקשה"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "שימוש במפתח API",
+          "text": "הבקשה תאושר באופן אוטומטי"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "סמן את העונות שברצונך להוריד",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "עונה",
+          "numberOfEpisodes": "מספר פרקים"
         }
       }
     }
