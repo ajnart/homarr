@@ -1,7 +1,9 @@
 {
   "accordions": {
     "downloads": {
-      "text": "Pobrane pliki"
+      "text": "Pobrane pliki",
+      "torrents": "",
+      "usenet": ""
     },
     "others": {
       "text": "Pozostałe"
