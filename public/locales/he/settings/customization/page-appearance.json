@@ -1,25 +1,25 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "כותרת העמוד",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "סמל",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "אייקון לצד שם העמוד",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "רקע",
+    "placeholder": "/img/background.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "CSS מותאם אישית",
+    "placeholder": "css מותאם אישית יבוצע אחרון"
   },
   "buttons": {
-    "submit": ""
+    "submit": "שמירה"
   }
 }
