@@ -1,39 +1,39 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "טורנט",
     "description": "מציג את מהירות ההורדה הנוכחית של שירות נתמך",
     "settings": {
       "hideComplete": {
-        "label": ""
+        "label": "הסתר טורנטים שהושלמו"
       }
     }
   },
   "card": {
     "table": {
       "header": {
-        "name": "",
-        "size": "",
+        "name": "שם",
+        "size": "גודל",
         "download": "הורדה",
         "upload": "העלאה",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "זמן סיום משוער",
+        "progress": "התקדמות"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "לא נמצא טורנט"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "מהירות הורדה נוכחית",
+      "download": "הורדה ממתינה",
+      "upload": "העלאה ממתינה",
+      "timeSpan": "לפני שניות",
+      "totalDownload": "הורדה ממתינה",
+      "totalUpload": "העלאה ממתינה"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "לא נמצאו לקוחות הורדה נתמכים!",
+        "text": "הוסף שירות הורדה כדי להציג את ההורדות הנוכחיות שלך"
       }
     }
   }
