@@ -1,7 +1,9 @@
 {
   "accordions": {
     "downloads": {
-      "text": "다운로드 수"
+      "text": "다운로드 수",
+      "torrents": "",
+      "usenet": ""
     },
     "others": {
       "text": "기타"
