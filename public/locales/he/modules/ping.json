@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "זמן תגובה",
+    "description": "מאפשר בדיקה אם השירות פעיל או מחזיר קוד ספציפי של HTTP"
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "מקון",
+    "offline": "לא מקון",
+    "loading": "טוען..."
   }
 }
