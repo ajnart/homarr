@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "מציג את מהירות ההורדה הנוכחית של שירות נתמך",
+    "settings": {
+      "hideComplete": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "",
+        "size": "",
+        "download": "הורדה",
+        "upload": "העלאה",
+        "estimatedTimeOfArrival": "",
+        "progress": ""
+      },
+      "body": {
+        "nothingFound": ""
+      }
+    },
+    "lineChart": {
+      "title": "",
+      "download": "",
+      "upload": "",
+      "timeSpan": "",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}
