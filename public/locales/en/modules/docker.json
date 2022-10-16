@@ -49,20 +49,20 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Starting",
+      "end": "Started"
     },
     "stop": {
-      "start": "",
+      "start": "Stopping",
       "end": "Stopped"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Restarting",
+      "end": "Restarted"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Removing",
+      "end": "Removed"
     }
   },
   "errors": {
