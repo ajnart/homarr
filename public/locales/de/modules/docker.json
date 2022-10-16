@@ -49,15 +49,15 @@
   },
   "actions": {
     "start": {
-      "start": "Starte",
+      "start": "Startet",
       "end": "Gestartet"
     },
     "stop": {
-      "start": "Halte an",
+      "start": "Haltet an",
       "end": "Gestoppt"
     },
     "restart": {
-      "start": "Starte neu",
+      "start": "Startet neu",
       "end": "Neu gestartet"
     },
     "remove": {
