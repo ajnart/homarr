@@ -2,13 +2,13 @@
   "title": "הגדרות",
   "tooltip": "הגדרות",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "כללי",
+    "customizations": "התאמה אישית"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "העלה את קובץ ההגדרות שלך על-ידי גרירה ושחרור שלו לדף!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "נעשה ב- ❤️ ע״י @"
   }
 }
