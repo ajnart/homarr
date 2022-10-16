@@ -2,8 +2,8 @@
   "accordions": {
     "downloads": {
       "text": "Dine downloads",
-      "torrents": "",
-      "usenet": ""
+      "torrents": "Dine Torrent downloads",
+      "usenet": "Dine Usenet downloads"
     },
     "others": {
       "text": "Andre"
