@@ -3,6 +3,7 @@ import { OptionValues } from '../modules/ModuleTypes';
 
 export interface Settings {
   searchUrl: string;
+  searchNewTab?: boolean;
   title?: string;
   logo?: string;
   favicon?: string;
