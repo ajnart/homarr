@@ -1,7 +1,9 @@
 {
   "accordions": {
     "downloads": {
-      "text": "Dina nedladdningar"
+      "text": "Dina nedladdningar",
+      "torrents": "",
+      "usenet": ""
     },
     "others": {
       "text": "Övriga"
