@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "מאפשר ניהול בקלות של טורנטים"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "חיפוש לפי container או שם קובץ תמונה"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "שם",
+      "image": "תמונה",
+      "ports": "יציאות",
+      "state": "מצב"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "יציאות"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "פועל",
+      "created": "נוצר",
+      "stopped": "עצר",
+      "unknown": "לא ידוע"
     }
   },
   "actionBar": {
     "addService": {
       "title": "הוספת שירות",
-      "message": ""
+      "message": "הוסף שירות ל- Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "אתחל"
     },
     "stop": {
-      "title": ""
+      "title": "עצר"
     },
     "start": {
-      "title": ""
+      "title": "התחל"
     },
     "refreshData": {
-      "title": ""
+      "title": "רענן נתונים"
     },
     "remove": {
-      "title": ""
+      "title": "הסר"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "הוסף ל- Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "מתחיל",
+      "end": "החל"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "עוצר",
+      "end": "עצר"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "מפעיל מחדש",
+      "end": "אתחל"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "מסיר",
+      "end": "הוסר"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "שילוב docker נכשל",
+      "message": "האם שכחת לטעון את ה- Docker?"
     },
     "unknownError": {
-      "title": ""
+      "title": "אירעה שגיאה"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "אנא הוסף שירות אחד בלבד בכל פעם!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
