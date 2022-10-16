@@ -1,11 +1,11 @@
 {
   "actions": {
-    "save": ""
+    "save": "שמור"
   },
-  "tip": "",
+  "tip": "טיפ:",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "שניות",
+    "minutes": "דקות",
+    "hours": "שעות"
   }
 }
