@@ -20,6 +20,6 @@
     "placeholder": "El CSS personalizado se ejecutará en último lugar"
   },
   "buttons": {
-    "submit": "Enviar"
+    "submit": "Aplicar"
   }
 }
