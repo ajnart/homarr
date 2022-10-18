@@ -1,23 +1,23 @@
 {
   "descriptor": {
     "name": "Sabnzbd",
-    "description": ""
+    "description": "Pozwala zobaczyć kolejkę i historię Sabnzbd, wstrzymywać i wznawiać pobieranie"
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Nie znaleziono obsługiwanych klientów pobierania!",
-        "text": ""
+        "text": "Dodaj usługę pobierania, aby wyświetlić aktualnie pobierane pliki"
       }
     }
   },
   "tabs": {
-    "queue": "",
+    "queue": "Kolejka",
     "history": "Historia"
   },
   "info": {
     "sizeLeft": "",
-    "paused": ""
+    "paused": "Zatrzymane"
   },
   "queue": {
     "header": {
@@ -31,7 +31,7 @@
       "title": "Błąd",
       "message": "Coś poszło nie tak"
     },
-    "paused": ""
+    "paused": "Zatrzymane"
   },
   "history": {
     "header": {
@@ -44,6 +44,6 @@
       "title": "Błąd",
       "message": "Wystąpił błąd podczas ładowania historii"
     },
-    "paused": ""
+    "paused": "Zatrzymane"
   }
 }
