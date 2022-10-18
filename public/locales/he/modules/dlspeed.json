@@ -19,16 +19,16 @@
     },
     "lineChart": {
       "title": "מהירות הורדה נוכחית",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "download": "הורדה ממתינה",
+      "upload": "העלאה ממתינה",
+      "timeSpan": "לפני שניות",
+      "totalDownload": "הורדה ממתינה",
+      "totalUpload": "העלאה ממתינה"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "לא נמצאו לקוחות הורדה נתמכים!",
+        "text": "הוסף שירות הורדה כדי להציג את ההורדות הנוכחיות שלך"
       }
     }
   }
