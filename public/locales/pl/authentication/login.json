@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "Witaj ponownie!",
+  "text": "Wprowadź hasło",
   "form": {
     "fields": {
       "password": {
         "label": "Hasło",
-        "placeholder": ""
+        "placeholder": "Twoje hasło"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Zaloguj się"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Sprawdzanie hasła",
+      "message": "Twoje hasło jest sprawdzane..."
     },
     "correct": {
-      "title": ""
+      "title": "Hasło poprawne, przekierowywanie..."
     },
     "wrong": {
-      "title": ""
+      "title": "To hasło jest nieprawidłowe. Spróbuj ponownie."
     }
   }
 }
