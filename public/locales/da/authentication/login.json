@@ -1,6 +1,6 @@
 {
   "title": "Velkommen tilbage!",
-  "text": "Angiv venligst adgangskode",
+  "text": "Angiv venligst adgangskoden",
   "form": {
     "fields": {
       "password": {
