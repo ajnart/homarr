@@ -28,7 +28,7 @@
     },
     "graphs": {
       "storage": {
-        "title": "",
+        "title": "Pamięć",
         "label": "Pamięć:"
       },
       "network": {
