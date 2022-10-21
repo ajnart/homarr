@@ -1,0 +1,12 @@
+{
+  "accordions": {
+    "downloads": {
+      "text": "Dine downloads",
+      "torrents": "Dine Torrent downloads",
+      "usenet": "Dine Usenet downloads"
+    },
+    "others": {
+      "text": "Andre"
+    }
+  }
+}

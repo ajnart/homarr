@@ -47,10 +47,22 @@
       "title": "Adicionar ao Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "",
-      "message": ""
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "Parado"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {

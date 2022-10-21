@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "title": "שינוי שירות",
+    "buttons": {
+      "save": "שמור שירות"
+    }
+  },
+  "menu": {
+    "labels": {
+      "settings": "הגדרות",
+      "dangerZone": "אזור מסוכן"
+    },
+    "actions": {
+      "edit": "עריכה",
+      "delete": "מחיקה"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "מודול להצגת הגרפים משירות Dash.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "תצוגת מעבד מרובת ליבות"
+      },
+      "storageMultiView": {
+        "label": "תצוגת אחסון מרובת כוננים"
+      },
+      "useCompactView": {
+        "label": "השתמש בתצוגה קומפקטית"
+      },
+      "graphs": {
+        "label": "גרפים"
+      },
+      "url": {
+        "label": "כתובת אתר Dash."
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "לא נמצא שירות Dash. בבקשה הוסף ל- Homarr או הגדר כתובת באפשרויות המודול ",
+      "noInformation": "אין מידע מ- Dash. האם אתה משתמש בגירסה העדכנית"
+    },
+    "graphs": {
+      "storage": {
+        "title": "אחסון",
+        "label": "אחסון:"
+      },
+      "network": {
+        "title": "רשת",
+        "label": "רשת:",
+        "metrics": {
+          "download": "הורדה",
+          "upload": "העלאה"
+        }
+      },
+      "cpu": {
+        "title": "מעבד"
+      },
+      "memory": {
+        "title": "זיכרון פנימי"
+      },
+      "gpu": {
+        "title": "מעבד גרפי"
+      }
+    }
+  }
+}

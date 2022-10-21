@@ -7,16 +7,16 @@
         "label": "CPU 멀티 코어 보기"
       },
       "storageMultiView": {
-        "label": "저장소 멀티 드라이브 보기"
+        "label": "저장소 모든 드라이브 보기"
       },
       "useCompactView": {
-        "label": "컴팩트 뷰 사용"
+        "label": "작은 모듈 사용"
       },
       "graphs": {
         "label": "그래프"
       },
       "url": {
-        "label": "Dash. URL"
+        "label": "Dash. 주소"
       }
     }
   },
@@ -35,8 +35,8 @@
         "title": "네트워크",
         "label": "네트워크:",
         "metrics": {
-          "download": "다운",
-          "upload": "업"
+          "download": "다운로드",
+          "upload": "업로드"
         }
       },
       "cpu": {

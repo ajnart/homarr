@@ -1,0 +1,12 @@
+{
+  "accordions": {
+    "downloads": {
+      "text": "הורדות",
+      "torrents": "הורדות הטורנטים",
+      "usenet": "שימוש בהורדות רשת"
+    },
+    "others": {
+      "text": "אחרים"
+    }
+  }
+}

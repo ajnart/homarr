@@ -47,10 +47,22 @@
       "title": "Lägg till i Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "Container {{containerName}} {{action}}",
-      "message": "Din behållare lyckades {{action}}"
+  "actions": {
+    "start": {
+      "start": "Startar",
+      "end": "Startad"
+    },
+    "stop": {
+      "start": "Stoppar",
+      "end": "Stoppad"
+    },
+    "restart": {
+      "start": "Startar om",
+      "end": "Omstartad"
+    },
+    "remove": {
+      "start": "Tar bort",
+      "end": "Borttagen"
     }
   },
   "errors": {

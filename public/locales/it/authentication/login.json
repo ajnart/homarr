@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "Bentornato!",
+  "text": "Inserisci la password",
   "form": {
     "fields": {
       "password": {
         "label": "Password",
-        "placeholder": ""
+        "placeholder": "La tua password"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Accedi"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Verifica della password",
+      "message": "La tua password è in fase di controllo..."
     },
     "correct": {
-      "title": ""
+      "title": "Password corretta, reindirizzamento..."
     },
     "wrong": {
-      "title": ""
+      "title": "Password errata. Per favore, prova di nuovo."
     }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Søgebjælke",
+    "description": "Søgebjælke til at søge på nettet, Youtube, Torrents eller Overseerr"
+  },
+  "input": {
+    "placeholder": "Søg på nettet..."
+  }
+}

@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "הוסף שירות"
+    },
+    "modal": {
+        "title": "הוספת שירות",
+        "form": {
+            "validation": {
+                "invalidUrl": "אנא הזן כתובת אינטרנט חוקית",
+                "noStatusCodeSelected": "אנא בחר קוד מצב"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "אפשרויות",
+                "form": {
+                    "serviceName": {
+                        "label": "שם שירות",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "כתובת אתר של הצלמית"
+                    },
+                    "serviceUrl": {
+                        "label": "כתובת אתר של השירות"
+                    },
+                    "onClickUrl": {
+                        "label": "בלחיצה על כתובת האתר"
+                    },
+                    "serviceType": {
+                        "label": "סוג שירות",
+                        "defaultValue": "אחר",
+                        "placeholder": "בחר אחד"
+                    },
+                    "category": {
+                        "label": "קטגוריה",
+                        "placeholder": "בחר קטגוריה קיימת או צור חדשה",
+                        "nothingFound": "לא נמצא דבר",
+                        "createLabel": "יצירת שאילתה"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "מפתח API",
+                            "placeholder": "מפתח ה- API שלך",
+                            "validation": {
+                                "noKey": "מפתח לא חוקי"
+                            },
+                            "tip": {
+                                "text": "קבל את מפתח ה- API שלך",
+                                "link": "כאן"
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "שם משתמש",
+                                "placeholder": "מנהל מערכת",
+                                "validation": {
+                                    "invalidUsername": "שם משתמש לא חוקי"
+                                }
+                            },
+                            "password": {
+                                "label": "סיסמה",
+                                "placeholder": "מנהל מערכת",
+                                "validation": {
+                                    "invalidPassword": "סיסמה שגויה"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "סיסמה",
+                                "placeholder": "סיסמה",
+                                "validation": {
+                                    "invalidPassword": "סיסמה שגויה"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "שם משתמש",
+                                "placeholder": "מנהל מערכת",
+                                "validation": {
+                                    "invalidUsername": "שם משתמש לא חוקי"
+                                }
+                            },
+                            "password": {
+                                "label": "סיסמה",
+                                "placeholder": "מנהל מערכת",
+                                "validation": {
+                                    "invalidPassword": "סיסמה שגויה"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "אפשרויות מתקדמות",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "סטטוס קוד HTTP",
+                        "placeholder": "בחר קודי מצב חוקיים",
+                        "clearButtonLabel": "נקה בחירה",
+                        "nothingFound": "לא נמצא דבר"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "פתיחת שירות בכרטיסיה חדשה"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "הוספת שירות"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

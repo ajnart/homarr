@@ -19,16 +19,16 @@
     },
     "lineChart": {
       "title": "Aktualna prędkość pobierania",
-      "download": "",
-      "upload": "",
+      "download": "Pobranie: {{download}}",
+      "upload": "Udostępnianie: {{upload}}",
       "timeSpan": "{{seconds}} sekund temu",
-      "totalDownload": "",
-      "totalUpload": ""
+      "totalDownload": "Pobieranie: {{download}}/s",
+      "totalUpload": "Udostępnianie: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
         "title": "Nie znaleziono obsługiwanych klientów pobierania!",
-        "text": ""
+        "text": "Dodaj usługę pobierania, aby wyświetlić aktualnie pobierane pliki"
       }
     }
   }

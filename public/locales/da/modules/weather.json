@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Vejr",
+    "description": "Se det aktuelle vejr på din placering",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Vis i Fahrenheit"
+      },
+      "location": {
+        "label": "Vejr lokation"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Skyfrit",
+      "mainlyClear": "Hovedsageligt skyfrit",
+      "fog": "Tåge",
+      "drizzle": "Støvregn",
+      "freezingDrizzle": "Støvregn med isslag",
+      "rain": "Regn",
+      "freezingRain": "Isslag",
+      "snowFall": "Snefald",
+      "snowGrains": "Mildt snefald",
+      "rainShowers": "Regnbyger",
+      "snowShowers": "Snebyger",
+      "thunderstorm": "Tordenvejr",
+      "thunderstormWithHail": "Tordenvejr med hagl",
+      "unknown": "Ukendt"
+    }
+  }
+}

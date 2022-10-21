@@ -47,10 +47,22 @@
       "title": ""
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "",
-      "message": ""
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": ""
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {

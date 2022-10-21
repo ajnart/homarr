@@ -47,10 +47,22 @@
       "title": "添加到Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "容器 {{containerName}} {{action}}已完成",
-      "message": "你的容器已成功 {{action}}。"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "已停止"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {
