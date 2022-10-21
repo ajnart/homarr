@@ -7,5 +7,8 @@
   "customEngine": {
     "label": "查询网址",
     "placeholder": "自定义查询网址"
+  },
+  "searchNewTab": {
+    "label": ""
   }
 }
