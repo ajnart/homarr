@@ -7,5 +7,8 @@
   "customEngine": {
     "label": "URL-адреса запиту",
     "placeholder": "Власна URL-адреса запиту"
+  },
+  "searchNewTab": {
+    "label": ""
   }
 }
