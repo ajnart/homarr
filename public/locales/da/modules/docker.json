@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Tillader dig nemt at administrere dine docker containere"
   },
   "search": {
     "placeholder": "Søg efter container- eller imagenavn"
