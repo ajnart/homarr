@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Ermöglicht dir die einfache Verwaltung deiner Docker-Container"
   },
   "search": {
     "placeholder": "Suche nach Container- oder Image namen"
