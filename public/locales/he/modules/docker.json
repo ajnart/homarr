@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "מאפשר ניהול בקלות של טורנטים"
+    "description": ""
   },
   "search": {
     "placeholder": "חיפוש לפי container או שם קובץ תמונה"
