@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ドッカー",
-    "description": "トレントを簡単に管理することができます。"
+    "description": ""
   },
   "search": {
     "placeholder": "コンテナ名、画像名で検索"
