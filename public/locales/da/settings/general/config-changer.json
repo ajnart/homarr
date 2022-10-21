@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "Konfigurations indlæser"
+  },
+  "modal": {
+    "title": "Vælg navnet på din nye konfiguration",
+    "form": {
+      "configName": {
+        "label": "Konfigurationens navn",
+        "placeholder": "Dit nye konfigurationsnavn"
+      },
+      "submitButton": "Bekræft"
+    },
+    "events": {
+      "configSaved": {
+        "title": "Konfigurationen gemt",
+        "message": "Konfigurationen gemt som {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Hent konfiguration",
+    "delete": {
+      "text": "Slet konfiguration",
+      "notifications": {
+        "deleted": {
+          "title": "Konfiguration slettet",
+          "message": "Konfiguration slettet"
+        },
+        "deleteFailed": {
+          "title": "Sletning af konfiguration mislykkedes",
+          "message": "Sletning af konfiguration mislykkedes"
+        }
+      }
+    },
+    "saveCopy": "Gem en kopi"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Kan ikke indlæse konfigurationen",
+        "message": "Kunne ikke indlæse din konfiguration. Ugyldigt JSON-format."
+      },
+      "loadedSuccessfully": {
+        "title": "Konfigurationen {{configName}} blev indlæst"
+      }
+    },
+    "accept": {
+      "text": "Træk filer hertil for at uploade en konfiguration. Kun understøttelse af JSON."
+    },
+    "reject": {
+      "text": "Dette filformat understøttes ikke. Upload venligst kun JSON."
+    }
+  }
+}

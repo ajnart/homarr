@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "תאריך",
+    "description": "הצגת השעה והתאריך הנוכחיים",
+    "settings": {
+      "display24HourFormat": {
+        "label": "הצגת זמן בפורמט 24 שעות"
+      }
+    }
+  }
+}

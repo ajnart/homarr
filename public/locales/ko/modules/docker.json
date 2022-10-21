@@ -47,10 +47,22 @@
       "title": "Homarr에 추가"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "컨테이너 {{containerName}} {{action}}됨",
-      "message": "컨테이너가 성공적으로 {{action}}됨"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "중지됨"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {

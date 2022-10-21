@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": "Tilføj en tjeneste"
+    },
+    "modal": {
+        "title": "Tilføj tjeneste",
+        "form": {
+            "validation": {
+                "invalidUrl": "Angiv venligst en gyldig URL-adresse",
+                "noStatusCodeSelected": "Vælg venligst en statuskode"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Indstillinger",
+                "form": {
+                    "serviceName": {
+                        "label": "Tjenestenavn",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "Ikon-URL"
+                    },
+                    "serviceUrl": {
+                        "label": "Tjeneste-URL"
+                    },
+                    "onClickUrl": {
+                        "label": "Ved klik på URL"
+                    },
+                    "serviceType": {
+                        "label": "Tjenestetype",
+                        "defaultValue": "Andet",
+                        "placeholder": "Vælg en"
+                    },
+                    "category": {
+                        "label": "Kategori",
+                        "placeholder": "Vælg en eksisterende kategori eller opret en ny",
+                        "nothingFound": "Intet fundet",
+                        "createLabel": "+ Opret {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "API nøgle",
+                            "placeholder": "Din API nøgle",
+                            "validation": {
+                                "noKey": "Ugyldig nøgle"
+                            },
+                            "tip": {
+                                "text": "Hent din API nøgle",
+                                "link": "her."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Brugernavn",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Ugyldigt brugernavn"
+                                }
+                            },
+                            "password": {
+                                "label": "Adgangskode",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Ugyldig adgangskode"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Adgangskode",
+                                "placeholder": "adgangskode",
+                                "validation": {
+                                    "invalidPassword": "Ugyldig adgangskode"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Brugernavn",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Ugyldigt brugernavn"
+                                }
+                            },
+                            "password": {
+                                "label": "Adgangskode",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Ugyldig adgangskode"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "Avancerede indstillinger",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "HTTP status kode",
+                        "placeholder": "Vælg gyldige statuskoder",
+                        "clearButtonLabel": "Ryd valgte",
+                        "nothingFound": "Intet fundet"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Åbn tjeneste i ny fane"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Tilføj tjeneste"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

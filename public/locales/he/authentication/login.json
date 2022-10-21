@@ -1,0 +1,27 @@
+{
+  "title": "ברוך הבא!",
+  "text": "אנא הזן את הסיסמה",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "סיסמה",
+        "placeholder": "הסיסמה שלך"
+      }
+    },
+    "buttons": {
+      "submit": "כניסה למערכת"
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "סיסמה בבדיקה",
+      "message": "הסיסמה בבדיקה..."
+    },
+    "correct": {
+      "title": "הסיסמה נכונה לניתוב מחדש..."
+    },
+    "wrong": {
+      "title": "הסיסמה שגויה אנא נסה שוב."
+    }
+  }
+}

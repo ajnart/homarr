@@ -47,10 +47,22 @@
       "title": "Toevoegen aan Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "Container {{containerName}} {{action}}ed",
-      "message": "Uw container was succesvol {{action}}ed"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "Gestopt"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {

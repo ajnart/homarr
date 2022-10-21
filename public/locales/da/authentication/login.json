@@ -1,0 +1,27 @@
+{
+  "title": "Velkommen tilbage!",
+  "text": "Angiv venligst adgangskoden",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "Adgangskode",
+        "placeholder": "Din adgangskode"
+      }
+    },
+    "buttons": {
+      "submit": "Log ind"
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "Tjekker din adgangskode",
+      "message": "Din adgangskode er ved at blive tjekket..."
+    },
+    "correct": {
+      "title": "Adgangskode korrekt, omdirigerer dig..."
+    },
+    "wrong": {
+      "title": "Adgangskoden er forkert, prøv venligst igen."
+    }
+  }
+}

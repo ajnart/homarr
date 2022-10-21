@@ -1,7 +1,9 @@
 {
   "accordions": {
     "downloads": {
-      "text": "Vaši prenosi"
+      "text": "Vaši prenosi",
+      "torrents": "Vaši prenosi torrentov",
+      "usenet": "Vaši prenosi iz omrežja Usenet"
     },
     "others": {
       "text": "Drugo"

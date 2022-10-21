@@ -47,10 +47,22 @@
       "title": "Dodaj do Homarra"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "",
-      "message": ""
+  "actions": {
+    "start": {
+      "start": "Uruchamianie",
+      "end": "Uruchomiony"
+    },
+    "stop": {
+      "start": "Zatrzymywanie",
+      "end": "Zatrzymane"
+    },
+    "restart": {
+      "start": "Restartowanie",
+      "end": "Uruchomiony ponownie"
+    },
+    "remove": {
+      "start": "Usuwanie",
+      "end": "Usunięto"
     }
   },
   "errors": {

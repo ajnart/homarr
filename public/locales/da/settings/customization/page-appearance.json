@@ -1,0 +1,25 @@
+{
+  "pageTitle": {
+    "label": "Sidetitel",
+    "placeholder": "Homarr 🦞"
+  },
+  "logo": {
+    "label": "Logo",
+    "placeholder": "/img/logo.png"
+  },
+  "favicon": {
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
+  },
+  "background": {
+    "label": "Baggrund",
+    "placeholder": "/img/background.png"
+  },
+  "customCSS": {
+    "label": "Tilpasset CSS",
+    "placeholder": "Brugerdefineret CSS vil blive eksekveret som det sidste"
+  },
+  "buttons": {
+    "submit": "Indsend"
+  }
+}
