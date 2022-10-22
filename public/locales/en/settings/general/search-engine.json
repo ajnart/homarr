@@ -9,6 +9,6 @@
     "placeholder": "Custom query URL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Open search results in new tab"
   }
 }
