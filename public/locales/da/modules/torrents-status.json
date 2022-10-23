@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "Vis den aktuelle downloadhastighed for understøttede tjenester",
+    "settings": {
+      "hideComplete": {
+        "label": "Skjul fuldførte torrents"
+      }
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Navn",
+        "size": "Størrelse",
+        "download": "Down",
+        "upload": "Up",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Fremskridt"
+      },
+      "body": {
+        "nothingFound": "Ingen torrents fundet"
+      }
+    },
+    "lineChart": {
+      "title": "Nuværende downloadhastighed",
+      "download": "Download: {{download}}",
+      "upload": "Upload: {{upload}}",
+      "timeSpan": "{{seconds}} sekunder siden",
+      "totalDownload": "Download: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Ingen understøttede downloadklienter fundet!",
+        "text": "Tilføj en downloadtjeneste for at se dine aktuelle downloads"
+      }
+    }
+  }
+}

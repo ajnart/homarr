@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "סרגל חיפוש",
+    "description": "סרגל לחיפוש ברשת, יוטיוב, טורנטים או Overseerr"
+  },
+  "input": {
+    "placeholder": "חפש באינטרנט..."
+  }
+}

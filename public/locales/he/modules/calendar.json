@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "לוח שנה",
+    "description": "מודול לוח שנה להצגת עדכונים. מקושר ל- Sonarr ו- Radarr API.",
+    "settings": {
+      "sundayStart": {
+        "label": "להתחיל את השבוע ביום ראשון"
+      }
+    }
+  }
+}

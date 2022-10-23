@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ドッカー",
-    "description": "トレントを簡単に管理することができます。"
+    "description": ""
   },
   "search": {
     "placeholder": "コンテナ名、画像名で検索"
@@ -47,10 +47,22 @@
       "title": "ホーマーに追加"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "コンテナ {{containerName}} {{action}}ed",
-      "message": "あなたのコンテナは正常に {{action}}ed。"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "停止中"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {

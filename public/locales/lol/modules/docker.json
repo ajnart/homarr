@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dockah",
-    "description": "Allowz u 2 easily manaeg ur torrents"
+    "description": ""
   },
   "search": {
     "placeholder": "Search by contaneah or imaeg naym"
@@ -47,10 +47,22 @@
       "title": "Add 2 Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "Contaneah {{containerName}} {{action}}ed",
-      "message": "Ur contaneah wuz successfully {{action}}ed"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "Stopped"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {

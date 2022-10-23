@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "title": "Ændr en tjeneste",
+    "buttons": {
+      "save": "Gem tjeneste"
+    }
+  },
+  "menu": {
+    "labels": {
+      "settings": "Indstillinger",
+      "dangerZone": "Farezone"
+    },
+    "actions": {
+      "edit": "Rediger",
+      "delete": "Slet"
+    }
+  }
+}

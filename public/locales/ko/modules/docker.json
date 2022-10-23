@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "토렌트를 쉽게 관리할 수 있습니다"
+    "description": ""
   },
   "search": {
     "placeholder": "컨테이너 또는 이미지 이름으로 검색"
@@ -47,10 +47,22 @@
       "title": "Homarr에 추가"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "컨테이너 {{containerName}} {{action}}됨",
-      "message": "컨테이너가 성공적으로 {{action}}됨"
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": "중지됨"
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
     }
   },
   "errors": {

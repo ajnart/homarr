@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Sabnzbd",
+    "description": "מאפשר צפייה בהיסטוריה ותור ההורדות, עצירה וחידוש הורדות"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "לא נמצאו לקוחות הורדה נתמכים!",
+        "text": "הוסף שירות הורדה כדי להציג את ההורדות הנוכחיות שלך"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "תור",
+    "history": "היסטוריה"
+  },
+  "info": {
+    "sizeLeft": "נותר",
+    "paused": "מושהה"
+  },
+  "queue": {
+    "header": {
+      "name": "שם",
+      "size": "גודל",
+      "eta": "זמן סיום משוער",
+      "progress": "התקדמות"
+    },
+    "empty": "ריק",
+    "error": {
+      "title": "שגיאה",
+      "message": "אירעה שגיאה"
+    },
+    "paused": "מושהה"
+  },
+  "history": {
+    "header": {
+      "name": "שם",
+      "size": "גודל",
+      "duration": "משך זמן"
+    },
+    "empty": "ריק",
+    "error": {
+      "title": "שגיאה",
+      "message": "שגיאה בטעינת היסטוריה"
+    },
+    "paused": "מושהה"
+  }
+}
