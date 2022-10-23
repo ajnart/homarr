@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "Docker",
-    "description": "מאפשר ניהול בקלות של טורנטים"
+    "name": "דוקר",
+    "description": "מאפשר ניהול בקלות את הקונטיינרים בדוקר"
   },
   "search": {
-    "placeholder": "חיפוש לפי container או שם קובץ תמונה"
+    "placeholder": "חיפוש לפי קונטיינר או שם קובץ תמונה"
   },
   "table": {
     "header": {
