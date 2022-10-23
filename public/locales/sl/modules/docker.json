@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Omogoča enostavno upravljanje torrentov"
+    "description": ""
   },
   "search": {
     "placeholder": "Iskanje po zabojniku ali imenu njegove slike"
@@ -47,10 +47,22 @@
       "title": "Dodaj v Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "Zabojnik {{containerName}} {{action}}",
-      "message": "Vaš zabojnik je bil uspešno {{action}}"
+  "actions": {
+    "start": {
+      "start": "Začenjam",
+      "end": "Začeto"
+    },
+    "stop": {
+      "start": "Ustavljam",
+      "end": "Zaustavljeno"
+    },
+    "restart": {
+      "start": "Ponovno zaganjam",
+      "end": "Ponovno zagnano"
+    },
+    "remove": {
+      "start": "Odstranjujem",
+      "end": "Odstranjeno"
     }
   },
   "errors": {

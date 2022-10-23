@@ -7,5 +7,8 @@
   "customEngine": {
     "label": "쿼리 URL",
     "placeholder": "커스텀 쿼리 URL"
+  },
+  "searchNewTab": {
+    "label": ""
   }
 }

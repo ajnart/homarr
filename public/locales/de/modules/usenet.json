@@ -13,7 +13,7 @@
   },
   "tabs": {
     "queue": "Warteschlange",
-    "history": "Geschichte"
+    "history": "Verlauf"
   },
   "info": {
     "sizeLeft": "Größe links",
@@ -26,7 +26,7 @@
       "eta": "Voraussichtlicher Abschluss",
       "progress": "Fortschritt"
     },
-    "empty": "Leere",
+    "empty": "Leer",
     "error": {
       "title": "Fehler",
       "message": "Es ist ein Fehler aufgetreten"
@@ -39,10 +39,10 @@
       "size": "Größe",
       "duration": "Dauer"
     },
-    "empty": "Leere",
+    "empty": "Leer",
     "error": {
       "title": "Fehler",
-      "message": "Fehler beim Laden der Historie"
+      "message": "Fehler beim Laden des Verlaufs"
     },
     "paused": "Pausiert"
   }

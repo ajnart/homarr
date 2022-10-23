@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Et modul til visning af graferne for din kørende Dash. instans.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "CPU Multikerne Visning"
+      },
+      "storageMultiView": {
+        "label": "Multidrevet Lagervisning"
+      },
+      "useCompactView": {
+        "label": "Brug kompakt tilstand"
+      },
+      "graphs": {
+        "label": "Grafer"
+      },
+      "url": {
+        "label": "Dash. URL"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Ingen Dash. service fundet. Tilføj venligst en til dit Homarr-dashboard eller indstil en Dash. URL i modulindstillingerne",
+      "noInformation": "Kan ikke hente information fra dash. - kører du den nyeste version?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Lager",
+        "label": "Lager:"
+      },
+      "network": {
+        "title": "Netværk",
+        "label": "Netværk:",
+        "metrics": {
+          "download": "Down",
+          "upload": "Up"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

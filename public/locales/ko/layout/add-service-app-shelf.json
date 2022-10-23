@@ -95,7 +95,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "고급 옵션",
+                "title": "고급 설정",
                 "form": {
                     "httpStatusCodes": {
                         "label": "HTTP 상태 코드",

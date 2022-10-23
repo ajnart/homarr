@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Tillader dig nemt at administrere dine docker containere"
+  },
+  "search": {
+    "placeholder": "Søg efter container- eller imagenavn"
+  },
+  "table": {
+    "header": {
+      "name": "Navn",
+      "image": "Image",
+      "ports": "Porte",
+      "state": "Tilstand"
+    },
+    "body": {
+      "portCollapse": "{{ports}} flere"
+    },
+    "states": {
+      "running": "Kører",
+      "created": "Oprettet",
+      "stopped": "Stoppet",
+      "unknown": "Ukendt"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Tilføj tjeneste",
+      "message": "Tilføj tjeneste til Homarr"
+    },
+    "restart": {
+      "title": "Genstart"
+    },
+    "stop": {
+      "title": "Stop"
+    },
+    "start": {
+      "title": "Start"
+    },
+    "refreshData": {
+      "title": "Opdater data"
+    },
+    "remove": {
+      "title": "Fjern"
+    },
+    "addToHomarr": {
+      "title": "Tilføj til Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Starter",
+      "end": "Startet"
+    },
+    "stop": {
+      "start": "Stopper",
+      "end": "Stoppet"
+    },
+    "restart": {
+      "start": "Genstarter",
+      "end": "Genstartet"
+    },
+    "remove": {
+      "start": "Fjerner",
+      "end": "Fjernet"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker integration mislykkedes",
+      "message": "Har du glemt at montere docker socket ?"
+    },
+    "unknownError": {
+      "title": "Der opstod en fejl"
+    },
+    "oneServiceAtATime": {
+      "title": "Du må kun tilføje én tjeneste ad gangen!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

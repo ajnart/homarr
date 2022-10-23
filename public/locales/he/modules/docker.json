@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "דוקר",
+    "description": "מאפשר ניהול בקלות את הקונטיינרים בדוקר"
+  },
+  "search": {
+    "placeholder": "חיפוש לפי קונטיינר או שם קובץ תמונה"
+  },
+  "table": {
+    "header": {
+      "name": "שם",
+      "image": "תמונה",
+      "ports": "יציאות",
+      "state": "מצב"
+    },
+    "body": {
+      "portCollapse": "יציאות"
+    },
+    "states": {
+      "running": "פועל",
+      "created": "נוצר",
+      "stopped": "עצר",
+      "unknown": "לא ידוע"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "הוספת שירות",
+      "message": "הוסף שירות ל- Homarr"
+    },
+    "restart": {
+      "title": "אתחל"
+    },
+    "stop": {
+      "title": "עצר"
+    },
+    "start": {
+      "title": "התחל"
+    },
+    "refreshData": {
+      "title": "רענן נתונים"
+    },
+    "remove": {
+      "title": "הסר"
+    },
+    "addToHomarr": {
+      "title": "הוסף ל- Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "מתחיל",
+      "end": "החל"
+    },
+    "stop": {
+      "start": "עוצר",
+      "end": "עצר"
+    },
+    "restart": {
+      "start": "מפעיל מחדש",
+      "end": "אתחל"
+    },
+    "remove": {
+      "start": "מסיר",
+      "end": "הוסר"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "שילוב docker נכשל",
+      "message": "האם שכחת לטעון את ה- Docker?"
+    },
+    "unknownError": {
+      "title": "אירעה שגיאה"
+    },
+    "oneServiceAtATime": {
+      "title": "אנא הוסף שירות אחד בלבד בכל פעם!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

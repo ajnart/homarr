@@ -11,6 +11,15 @@ export interface IModule {
   icon: TablerIcon;
   component: React.ComponentType;
   options?: Option;
+  padding?: PaddingOptions = {
+    right: 15,
+    top: 15,
+  },
+}
+
+interface PaddingOptions {
+  top: number;
+  right: number;
 }
 
 interface Option {

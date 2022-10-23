@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "מזג אוויר",
+    "description": "חפש את מזג האוויר הנוכחי במיקום שלך",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "להציג בפרנהייט"
+      },
+      "location": {
+        "label": "מיקום מזג האוויר"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "בהיר",
+      "mainlyClear": "בהיר בעיקר",
+      "fog": "ערפל",
+      "drizzle": "טפטוף",
+      "freezingDrizzle": "טפטוף מקפיא",
+      "rain": "גשום",
+      "freezingRain": "גשם מקפיא",
+      "snowFall": "שלג יורד",
+      "snowGrains": "פתיתי שלג",
+      "rainShowers": "ממטרי גשם",
+      "snowShowers": "ממטרי שלג",
+      "thunderstorm": "סופת רעמים",
+      "thunderstormWithHail": "סופת רעמים עם ברד",
+      "unknown": "לא ידוע"
+    }
+  }
+}

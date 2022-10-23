@@ -2,6 +2,7 @@ import { Text, SegmentedControl, TextInput, Stack } from '@mantine/core';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
+import { SearchNewTabSwitch } from '../SearchNewTabSwitch/SearchNewTabSwitch';
 import { ColorSchemeSwitch } from '../ColorSchemeToggle/ColorSchemeSwitch';
 import { WidgetsPositionSwitch } from '../WidgetsPositionSwitch/WidgetsPositionSwitch';
 import ConfigChanger from '../Config/ConfigChanger';
@@ -75,6 +76,7 @@ export default function CommonSettings(args: any) {
           </>
         )}
       </Stack>
+      <SearchNewTabSwitch />
       <ColorSchemeSwitch />
       <WidgetsPositionSwitch />
       <ModuleEnabler />

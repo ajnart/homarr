@@ -1,13 +1,11 @@
 import { Box, createStyles, Group, Header as Head, useMantineColorScheme } from '@mantine/core';
-import { AddItemShelfButton } from '../AppShelf/AddAppShelfItem';
+import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 
-import DockerMenuButton from '../../modules/docker/DockerModule';
-import SearchBar from '../../modules/search/SearchModule';
-import { SettingsMenuButton } from '../Settings/SettingsMenu';
-import { Logo } from './Logo';
-import { useConfig } from '../../tools/state';
-
-const HEADER_HEIGHT = 60;
+import DockerMenuButton from '../../../modules/docker/DockerModule';
+import SearchBar from '../../../modules/search/SearchModule';
+import { SettingsMenuButton } from '../../Settings/SettingsMenu';
+import { Logo } from '../Logo';
+import { useConfig } from '../../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   hide: {
@@ -23,7 +21,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function Header(props: any) {
-  const { classes, cx } = useStyles();
+  const { classes } = useStyles();
   const { config } = useConfig();
   const { colorScheme } = useMantineColorScheme();
 

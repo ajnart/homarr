@@ -34,6 +34,10 @@ export const TorrentsModule: IModule = {
       value: false,
     },
   },
+  padding: {
+    right: 0,
+    top: -10,
+  },
 };
 
 export default function TorrentsComponent() {

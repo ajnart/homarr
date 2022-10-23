@@ -1,0 +1,55 @@
+{
+  "configSelect": {
+    "label": "טעינת קובץ הגדרות"
+  },
+  "modal": {
+    "title": "בחירת שם קובץ הגדרות חדש",
+    "form": {
+      "configName": {
+        "label": "שם קובץ הגדרות",
+        "placeholder": "שם קובץ הגדרות חדש"
+      },
+      "submitButton": "אישור"
+    },
+    "events": {
+      "configSaved": {
+        "title": "קובץ הגדרות נשמר",
+        "message": "קובץ הגדרות נשמר בשם  {{configName}}"
+      }
+    }
+  },
+  "buttons": {
+    "download": "הורדת קובץ הגדרות",
+    "delete": {
+      "text": "מחיקת קובץ הגדרות",
+      "notifications": {
+        "deleted": {
+          "title": "קובץ הגדרות נמחק",
+          "message": "קובץ הגדרות נמחק"
+        },
+        "deleteFailed": {
+          "title": "נכשל במחיקת קובץ הגדרות",
+          "message": "נכשל במחיקת קובץ הגדרות"
+        }
+      }
+    },
+    "saveCopy": "שמור עותק"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "טעינת קובץ הגדרות נכשלה",
+        "message": "אין אפשרות לטעון קובץ הגדרות, קובץ JSON שגוי"
+      },
+      "loadedSuccessfully": {
+        "title": "קובץ הגדרות  {{configName}} נטען בהצלחה"
+      }
+    },
+    "accept": {
+      "text": "גרור קובץ לכאן כדי להעלות את קובץ ההגדרות, תמיכה ב- JSON בלבד"
+    },
+    "reject": {
+      "text": "תבנית קובץ זו אינה נתמכת, ניתן להעלות קובץ JSON בלבד"
+    }
+  }
+}

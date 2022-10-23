@@ -1,0 +1,14 @@
+{
+  "title": "Indstillinger",
+  "tooltip": "Indstillinger",
+  "tabs": {
+    "common": "Generelle",
+    "customizations": "Tilpasninger"
+  },
+  "tips": {
+    "configTip": "Upload din konfigurationsfil ved at trække og slippe den på siden!"
+  },
+  "credits": {
+    "madeWithLove": "Lavet med ❤️ af @"
+  }
+}

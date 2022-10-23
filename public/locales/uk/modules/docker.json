@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Дозволяє легко керувати торентами"
+    "description": ""
   },
   "search": {
     "placeholder": "Пошук по назві контейнера або образу"
@@ -47,10 +47,22 @@
       "title": "Додати до Homarr"
     }
   },
-  "messages": {
-    "successfullyExecuted": {
-      "title": "Контейнер {{containerName}} виконав дію {{action}}",
-      "message": "Ваш контейнер успішно виконав - {{action}}"
+  "actions": {
+    "start": {
+      "start": "Запускається",
+      "end": "Запущено"
+    },
+    "stop": {
+      "start": "Зупинення",
+      "end": "Зупинено"
+    },
+    "restart": {
+      "start": "Перезапуск",
+      "end": "Перезапущений"
+    },
+    "remove": {
+      "start": "Видалення",
+      "end": "Видалено"
     }
   },
   "errors": {

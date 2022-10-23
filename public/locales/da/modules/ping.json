@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Giver dig mulighed for at kontrollere, om tjenesten er oppe eller returnerer en bestemt HTTP-statuskode."
+  },
+  "states": {
+    "online": "Online {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Indlæser..."
+  }
+}

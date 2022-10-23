@@ -7,5 +7,8 @@
   "customEngine": {
     "label": "Adres URL zapytania",
     "placeholder": "Własny adres URL zapytania"
+  },
+  "searchNewTab": {
+    "label": ""
   }
 }
