@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "토렌트를 쉽게 관리할 수 있습니다"
+    "description": ""
   },
   "search": {
     "placeholder": "컨테이너 또는 이미지 이름으로 검색"

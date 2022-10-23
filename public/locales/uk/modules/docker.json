@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Дозволяє легко керувати торентами"
+    "description": ""
   },
   "search": {
     "placeholder": "Пошук по назві контейнера або образу"

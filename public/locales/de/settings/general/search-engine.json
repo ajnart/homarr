@@ -7,5 +7,8 @@
   "customEngine": {
     "label": "Suchanfrage URL",
     "placeholder": "Benutzerdefinierte Abfrage-URL"
+  },
+  "searchNewTab": {
+    "label": "Öffne Suchergebnisse in einem neuen Tab"
   }
 }

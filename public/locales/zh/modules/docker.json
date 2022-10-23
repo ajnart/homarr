@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "允许你轻松地管理你的torrent文件"
+    "description": ""
   },
   "search": {
     "placeholder": "按容器或图像名称搜索"
