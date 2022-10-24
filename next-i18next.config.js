@@ -4,6 +4,8 @@ module.exports = {
     defaultLocale: 'en',
     locales: [
       'en',
+      'da',
+      'he',
       'de',
       'es',
       'fr',

@@ -25,6 +25,20 @@ export const languages: Language[] = [
     translatedName: 'English',
     emoji: '🇬🇧',
   },
+  // Danish
+  {
+    shortName: 'da',
+    originalName: 'Dansk',
+    translatedName: 'Danish',
+    emoji: '🇩🇰',
+  },
+  // Hebrew
+  {
+    shortName: 'he',
+    originalName: 'עברית',
+    translatedName: 'Hebrew',
+    emoji: '🇮🇱',
+  },
   {
     shortName: 'es',
     originalName: 'Español',
