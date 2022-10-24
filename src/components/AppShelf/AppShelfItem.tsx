@@ -50,7 +50,7 @@ export function SortableAppShelfItem(props: any) {
 
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
-  const displayServiceUrl = service.url.replace('$host', window.location.hostname);
+  const parsedServiceUrl = service.url.replace('$host', window.location.hostname);
   const [hovering, setHovering] = useState(false);
   const { config } = useConfig();
   const { colorScheme } = useMantineColorScheme();
@@ -85,7 +85,7 @@ export function AppShelfItem(props: any) {
         <Card.Section>
           <Anchor
             target={service.newTab === false ? '_top' : '_blank'}
-            href={service.openedUrl ? service.openedUrl : displayServiceUrl}
+            href={service.openedUrl ? service.openedUrl : parsedServiceUrl}
             style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
           >
             <Text mt="sm" align="center" lineClamp={1} weight={550}>
@@ -122,7 +122,7 @@ export function AppShelfItem(props: any) {
                 }}
               >
                 <Anchor
-                  href={service.openedUrl ?? displayServiceUrl}
+                  href={service.openedUrl ?? parsedServiceUrl}
                   target={service.newTab === false ? '_top' : '_blank'}
                 >
                   <Image
@@ -135,7 +135,10 @@ export function AppShelfItem(props: any) {
                 </Anchor>
               </motion.i>
             </AspectRatio>
-            {service.ping !== false && <PingComponent url={service.url} status={service.status} />}
+            {
+              service.ping !== false &&
+                <PingComponent url={parsedServiceUrl} status={service.status} />
+            }
           </Card.Section>
         </Center>
       </Card>
