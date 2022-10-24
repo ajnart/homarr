@@ -50,7 +50,7 @@ export function SortableAppShelfItem(props: any) {
 
 export function AppShelfItem(props: any) {
   const { service }: { service: serviceItem } = props;
-  const displayServiceUrl = service.url.replace("${host}", location.hostname)
+  const displayServiceUrl = service.url.replace('$host', window.location.hostname);
   const [hovering, setHovering] = useState(false);
   const { config } = useConfig();
   const { colorScheme } = useMantineColorScheme();
