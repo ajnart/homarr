@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sabnzbd",
+    "description": "Позволяет просматривать очередь и историю загрузки Sabnzbd, приостанавливать и возобновлять загрузку."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Не найдено ни одного поддерживаемого клиента загрузки!",
+        "text": "Добавьте службу загрузки для просмотра текущих загрузок"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Очередь",
+    "history": "История"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Размер слева",
+    "paused": "Приостановлено"
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "Имя",
+      "size": "Размер",
+      "eta": "РАСЧЕТНОЕ ВРЕМЯ ПРИБЫТИЯ",
+      "progress": "Прогресс"
     },
-    "empty": "",
+    "empty": "Пустой",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Ошибка",
+      "message": "Произошла ошибка"
     },
-    "paused": ""
+    "paused": "Приостановлено"
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
-      "duration": ""
+      "name": "Имя",
+      "size": "Размер",
+      "duration": "Продолжительность"
     },
-    "empty": "",
+    "empty": "Пустой",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Ошибка",
+      "message": "Ошибка загрузки истории"
     },
-    "paused": ""
+    "paused": "Приостановлено"
   }
 }
