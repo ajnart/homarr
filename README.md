@@ -30,7 +30,7 @@
 ---
 
 <!-- Homarr Description -->
-<img align="right" width=150 src="public/imgs/logo-color.svg" />
+<img align="right" width=150 src="public/imgs/logo/logo-color.svg" />
 
 Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.
 
