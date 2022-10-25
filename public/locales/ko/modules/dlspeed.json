@@ -8,8 +8,8 @@
       "header": {
         "name": "이름",
         "size": "크기",
-        "download": "다운",
-        "upload": "업",
+        "download": "다운로드",
+        "upload": "업로드",
         "estimatedTimeOfArrival": "남은 시간",
         "progress": "진행률"
       },
