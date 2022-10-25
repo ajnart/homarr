@@ -1,34 +1,34 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Скорость загрузки",
+    "description": "Показать текущую скорость загрузки поддерживаемых сервисов"
   },
   "card": {
     "table": {
       "header": {
-        "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "name": "Имя",
+        "size": "Размер",
+        "download": "Вниз",
+        "upload": "Вверх",
+        "estimatedTimeOfArrival": "РАСЧЕТНОЕ ВРЕМЯ ПРИБЫТИЯ",
+        "progress": "Прогресс"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Торренты не найдены"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Текущая скорость загрузки",
+      "download": "Скачать: {{download}}",
+      "upload": "Загрузка: {{upload}}",
+      "timeSpan": "{{seconds}} несколько секунд назад",
+      "totalDownload": "Скачать: {{download}}/s",
+      "totalUpload": "Загрузка: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Не найдено ни одного поддерживаемого клиента загрузки!",
+        "text": "Добавьте службу загрузки для просмотра текущих загрузок"
       }
     }
   }
