@@ -4,49 +4,49 @@
     "description": "Модуль для отображения графиков из Dash.",
     "settings": {
       "cpuMultiView": {
-        "label": ""
+        "label": "Многоядерный процессор Вид"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Вид многодискового хранилища"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Используйте компактный вид"
       },
       "graphs": {
-        "label": ""
+        "label": "Графики"
       },
       "url": {
-        "label": ""
+        "label": "Тире. URL"
       }
     }
   },
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": ""
+      "noService": "Не найдено ни одной службы Dash. Пожалуйста, добавьте его в приборную панель Homarr или задайте Dash. URL в опциях модуля",
+      "noInformation": "Не удается получить информацию из тире. - Вы используете последнюю версию?"
     },
     "graphs": {
       "storage": {
-        "title": "",
+        "title": "Хранение",
         "label": "Хранилище:"
       },
       "network": {
-        "title": "",
+        "title": "Сеть",
         "label": "Сеть:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Вниз",
+          "upload": "Вверх"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "ПРОЦЕССОР"
       },
       "memory": {
-        "title": ""
+        "title": "ОПЕРАТИВНАЯ ПАМЯТЬ"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
