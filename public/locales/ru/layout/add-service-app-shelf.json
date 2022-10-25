@@ -95,7 +95,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Дополнительные параметры",
                 "form": {
                     "httpStatusCodes": {
                         "label": "Коды состояния HTTP",
