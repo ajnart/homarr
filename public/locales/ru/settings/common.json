@@ -2,13 +2,13 @@
   "title": "Настройки",
   "tooltip": "Настройки",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Общий",
+    "customizations": "Персонализации"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Загрузите файл конфигурации, перетащив его на страницу!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Сделано с ❤️ по @."
   }
 }
