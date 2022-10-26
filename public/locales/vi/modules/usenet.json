@@ -22,9 +22,9 @@
   "queue": {
     "header": {
       "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "size": "Kích cỡ",
+      "eta": "Thời gian dự kiến",
+      "progress": "Tiến độ"
     },
     "empty": "",
     "error": {
@@ -36,7 +36,7 @@
   "history": {
     "header": {
       "name": "",
-      "size": "",
+      "size": "Kích cỡ",
       "duration": ""
     },
     "empty": "",
