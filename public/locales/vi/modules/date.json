@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Ngày giờ",
+    "description": "Hiển thị ngày và giờ trong một thẻ",
     "settings": {
       "display24HourFormat": {
-        "label": ""
+        "label": "Dùng thời gian 24 giờ"
       }
     }
   }
