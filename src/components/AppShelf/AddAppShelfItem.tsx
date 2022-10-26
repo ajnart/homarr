@@ -287,7 +287,8 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
                 form.values.type === 'Overseerr' ||
                 form.values.type === 'Jellyseerr' ||
                 form.values.type === 'Readarr' ||
-                form.values.type === 'Sabnzbd') && (
+                form.values.type === 'Sabnzbd' ||
+                form.values.type === 'NZBGet') && (
                 <>
                   <TextInput
                     required

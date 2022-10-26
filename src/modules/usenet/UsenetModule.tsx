@@ -16,7 +16,7 @@ import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 dayjs.extend(duration);
 
 export const UsenetComponent: FunctionComponent = () => {
-  const downloadServices = useGetServiceByType('Sabnzbd');
+  const downloadServices = useGetServiceByType('Sabnzbd', 'NZBGet');
 
   const { t } = useTranslation('modules/usenet');
 
