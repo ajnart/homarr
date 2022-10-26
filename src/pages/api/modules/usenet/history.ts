@@ -7,6 +7,8 @@ import { UsenetHistoryItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
+import { NzbgetHistoryItem } from './nzbget/types';
+import { NzbgetClient } from './nzbget/nzbget-client';
 
 dayjs.extend(duration);
 
@@ -33,23 +35,72 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
     }
 
-    if (!service.apiKey) {
-      throw new Error(`API Key for service "${service.name}" is missing`);
+    let response: UsenetHistoryResponse;
+    switch (service.type) {
+      case 'NZBGet': {
+        const url = new URL(service.url);
+        const options = {
+          host: url.hostname,
+          port: url.port,
+          login: service.username,
+          hash: service.password,
+        };
+
+        const nzbGet = NzbgetClient(options);
+
+        const nzbgetHistory:NzbgetHistoryItem[] = await new Promise((resolve, reject) => {
+          nzbGet.history(false, (err: any, result: NzbgetHistoryItem[]) => {
+            if (!err) {
+              resolve(result);
+            } else {
+              reject(err);
+            }
+          });
+        });
+
+        if (!nzbgetHistory) {
+          throw new Error('Error while getting NZBGet history');
+        }
+
+        const nzbgetItems: UsenetHistoryItem[] = nzbgetHistory.map((item: any) => ({
+          id: item.ID,
+          name: item.Name,
+          // Multiple MB to get bytes
+          size: item.DownloadedSizeMB * 1000000,
+          time: item.DownloadTimeSec,
+        }));
+
+        response = {
+          items: nzbgetItems,
+          total: nzbgetItems.length,
+        };
+        break;
+      }
+      case 'Sabnzbd': {
+        const { origin } = new URL(service.url);
+
+        if (!service.apiKey) {
+          throw new Error(`API Key for service "${service.name}" is missing`);
+        }
+
+        const history = await new Client(origin, service.apiKey).history(offset, limit);
+
+        const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
+          id: slot.nzo_id,
+          name: slot.name,
+          size: slot.bytes,
+          time: slot.download_time,
+        }));
+
+        response = {
+          items,
+          total: history.noofslots,
+        };
+        break;
+      }
+      default:
+        throw new Error(`Service type "${service.type}" unrecognized.`);
     }
-    const { origin } = new URL(service.url);
-
-    const history = await new Client(origin, service.apiKey).history(offset, limit);
-
-    const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
-      id: slot.nzo_id,
-      name: slot.name,
-      size: slot.bytes,
-      time: slot.download_time,
-    }));
-    const response: UsenetHistoryResponse = {
-      items,
-      total: history.noofslots,
-    };
 
     return res.status(200).json(response);
   } catch (err) {
