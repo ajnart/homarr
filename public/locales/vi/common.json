@@ -1,11 +1,11 @@
 {
   "actions": {
-    "save": ""
+    "save": "Lưu"
   },
-  "tip": "",
+  "tip": "Mẹo: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "giây",
+    "minutes": "phút",
+    "hours": "giờ"
   }
 }
