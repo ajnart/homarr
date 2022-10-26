@@ -7,21 +7,21 @@
     "table": {
       "header": {
         "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "size": "Kích cỡ",
+        "download": "Tải xuống",
+        "upload": "Tải lên",
+        "estimatedTimeOfArrival": "Thời gian dự kiến",
+        "progress": "Tiến độ"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Không tìm thấy torrent nào"
       }
     },
     "lineChart": {
-      "title": "",
+      "title": "Tốc độ tải hiện tại",
       "download": "",
       "upload": "",
-      "timeSpan": "",
+      "timeSpan": "{{seconds}} giây trước",
       "totalDownload": "",
       "totalUpload": ""
     },
