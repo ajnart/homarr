@@ -8,7 +8,6 @@ import { UsenetHistoryItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
-import { resourceLimits } from 'worker_threads';
 
 dayjs.extend(duration);
 
@@ -37,16 +36,16 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
     let response: UsenetHistoryResponse;
     switch (service.type) {
-      case 'NZBGet':
+      case 'NZBGet': {
         const url = new URL(service.url);
-        var options = {
+        const options = {
           host: url.hostname,
           port: url.port,
           login: service.username,
-          hash: service.password
-        }
-        
-        var nzbGet = new NZBGet(options);
+          hash: service.password,
+        };
+
+        const nzbGet = new NZBGet(options);
 
         const nzbgetHistory:[] = await new Promise((resolve, reject) => {
           nzbGet.history(false, (err: any, result: any) => {
@@ -56,34 +55,36 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
               reject(err);
             }
           });
-        })
+        });
 
         if (!nzbgetHistory) {
           // TODO: Change to better error message
-          throw new Error(`Error while getting NZBGet history`);
+          throw new Error('Error while getting NZBGet history');
         }
 
         const nzbgetItems: UsenetHistoryItem[] = nzbgetHistory.map((item: any) => ({
           id: item.ID,
           name: item.Name,
-          size: item.FileSizeMB,
-          time: item.HistoryTime
+          // Multiple MB to get bytes
+          size: item.DownloadedSizeMB * 1000000,
+          time: item.DownloadTimeSec,
         }));
 
         response = {
           items: nzbgetItems,
           total: nzbgetItems.length,
         };
-        break
-      case 'Sabnzbd':
+        break;
+      }
+      case 'Sabnzbd': {
         const { origin } = new URL(service.url);
 
         if (!service.apiKey) {
           throw new Error(`API Key for service "${service.name}" is missing`);
         }
-    
+
         const history = await new Client(origin, service.apiKey).history(offset, limit);
-    
+
         const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
           id: slot.nzo_id,
           name: slot.name,
@@ -96,6 +97,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           total: history.noofslots,
         };
         break;
+      }
       default:
         // TODO: Change to better error message
         throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);

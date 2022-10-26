@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Allowz u 2 c ur Sabnzbd queue an histowee, paues an resuem downloadz"
+    "name": "Usenet",
+    "description": "Allowz u 2 c ur usenet (Sabnzbd & NZBGet) queue an histowee, paues an resuem downloadz"
   },
   "card": {
     "errors": {
