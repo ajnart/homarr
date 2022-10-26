@@ -1,14 +1,14 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Cài đặt",
+  "tooltip": "Cài đặt",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Chung",
+    "customizations": "Cá nhân hoá"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Tải tệp cấu hình của bạn lên chỉ bằng cách kéo và thả tệp vào trong trang!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Được tạo bằng ❤️ bởi @"
   }
 }
