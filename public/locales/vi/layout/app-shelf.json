@@ -1,0 +1,12 @@
+{
+  "accordions": {
+    "downloads": {
+      "text": "Tải xuống của bạn",
+      "torrents": "Tải xuống torrent của bạn",
+      "usenet": "Tải xuống Usenet của bạn"
+    },
+    "others": {
+      "text": "Khác"
+    }
+  }
+}
