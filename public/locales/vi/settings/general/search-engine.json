@@ -1,5 +1,5 @@
 {
-  "title": "",
+  "title": "Công cụ tìm kiếm",
   "tips": {
     "generalTip": "",
     "placeholderTip": ""
@@ -9,6 +9,6 @@
     "placeholder": ""
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Mở kết quả tìm kiếm trong tab mới"
   }
 }
