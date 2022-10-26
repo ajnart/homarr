@@ -1,0 +1,118 @@
+{
+    "actionIcon": {
+        "tooltip": ""
+    },
+    "modal": {
+        "title": "",
+        "form": {
+            "validation": {
+                "invalidUrl": "Vui lòng nhập một URL hợp lệ",
+                "noStatusCodeSelected": ""
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "",
+                "form": {
+                    "serviceName": {
+                        "label": "",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": ""
+                    },
+                    "serviceUrl": {
+                        "label": ""
+                    },
+                    "onClickUrl": {
+                        "label": ""
+                    },
+                    "serviceType": {
+                        "label": "",
+                        "defaultValue": "",
+                        "placeholder": ""
+                    },
+                    "category": {
+                        "label": "",
+                        "placeholder": "",
+                        "nothingFound": "",
+                        "createLabel": ""
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "",
+                            "placeholder": "",
+                            "validation": {
+                                "noKey": ""
+                            },
+                            "tip": {
+                                "text": "",
+                                "link": ""
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidUsername": ""
+                                }
+                            },
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidUsername": ""
+                                }
+                            },
+                            "password": {
+                                "label": "",
+                                "placeholder": "",
+                                "validation": {
+                                    "invalidPassword": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "",
+                        "placeholder": "",
+                        "clearButtonLabel": "",
+                        "nothingFound": ""
+                    },
+                    "openServiceInNewTab": {
+                        "label": ""
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": ""
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
