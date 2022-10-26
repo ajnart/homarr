@@ -38,12 +38,12 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     let response: UsenetHistoryResponse;
     switch (service.type) {
       case 'NZBGet':
-        // TODO: Clean up how url, username, password is provided
+        const url = new URL(service.url);
         var options = {
-          host: '192.168.1.61',
-          port: 6789,
-          login: 'jonjon1123',
-          hash: 'aRsBPQfVxN3u@@5'
+          host: url.hostname,
+          port: url.port,
+          login: service.username,
+          hash: service.password
         }
         
         var nzbGet = new NZBGet(options);
