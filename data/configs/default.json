@@ -7,14 +7,6 @@
       "type": "Other",
       "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    },
-    {
-      "id": "4251aa53-c981-475f-8aec-95c22104756d",
-      "type": "NZBGet",
-      "name": "NZBGet",
-      "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nzbget.png",
-      "url": "192.168.1.61",
-      "apiKey": "Tset"
     }
   ],
   "settings": {

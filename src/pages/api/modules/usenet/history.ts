@@ -58,7 +58,6 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         });
 
         if (!nzbgetHistory) {
-          // TODO: Change to better error message
           throw new Error('Error while getting NZBGet history');
         }
 
@@ -99,8 +98,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       default:
-        // TODO: Change to better error message
-        throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
+        throw new Error(`Service type "${service.type}" unrecognized.`);
     }
 
     return res.status(200).json(response);
