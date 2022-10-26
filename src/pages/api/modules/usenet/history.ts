@@ -3,10 +3,12 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
+import NZBGet from 'nzbget-api';
 import { UsenetHistoryItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
+import { resourceLimits } from 'worker_threads';
 
 dayjs.extend(duration);
 
@@ -33,23 +35,71 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
     }
 
-    if (!service.apiKey) {
-      throw new Error(`API Key for service "${service.name}" is missing`);
+    let response: UsenetHistoryResponse;
+    switch (service.type) {
+      case 'NZBGet':
+        // TODO: Clean up how url, username, password is provided
+        var options = {
+          host: '192.168.1.61',
+          port: 6789,
+          login: 'jonjon1123',
+          hash: 'aRsBPQfVxN3u@@5'
+        }
+        
+        var nzbGet = new NZBGet(options);
+
+        const nzbgetHistory:[] = await new Promise((resolve, reject) => {
+          nzbGet.history(false, (err: any, result: any) => {
+            if (!err) {
+              resolve(result);
+            } else {
+              reject(err);
+            }
+          });
+        })
+
+        if (!nzbgetHistory) {
+          // TODO: Change to better error message
+          throw new Error(`Error while getting NZBGet history`);
+        }
+
+        const nzbgetItems: UsenetHistoryItem[] = nzbgetHistory.map((item: any) => ({
+          id: item.ID,
+          name: item.Name,
+          size: item.FileSizeMB,
+          time: item.HistoryTime
+        }));
+
+        response = {
+          items: nzbgetItems,
+          total: nzbgetItems.length,
+        };
+        break
+      case 'Sabnzbd':
+        const { origin } = new URL(service.url);
+
+        if (!service.apiKey) {
+          throw new Error(`API Key for service "${service.name}" is missing`);
+        }
+    
+        const history = await new Client(origin, service.apiKey).history(offset, limit);
+    
+        const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
+          id: slot.nzo_id,
+          name: slot.name,
+          size: slot.bytes,
+          time: slot.download_time,
+        }));
+
+        response = {
+          items,
+          total: history.noofslots,
+        };
+        break;
+      default:
+        // TODO: Change to better error message
+        throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
     }
-    const { origin } = new URL(service.url);
-
-    const history = await new Client(origin, service.apiKey).history(offset, limit);
-
-    const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
-      id: slot.nzo_id,
-      name: slot.name,
-      size: slot.bytes,
-      time: slot.download_time,
-    }));
-    const response: UsenetHistoryResponse = {
-      items,
-      total: history.noofslots,
-    };
 
     return res.status(200).json(response);
   } catch (err) {
