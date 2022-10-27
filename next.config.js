@@ -11,9 +11,6 @@ module.exports = withBundleAnalyzer({
     domains: ['cdn.jsdelivr.net'],
   },
   reactStrictMode: false,
-  experimental: {
-    outputStandalone: true,
-  },
   output: 'standalone',
   i18n,
 });
