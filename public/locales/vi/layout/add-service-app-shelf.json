@@ -1,93 +1,93 @@
 {
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Thêm một dịch vụ"
     },
     "modal": {
-        "title": "",
+        "title": "Thêm dịch vụ",
         "form": {
             "validation": {
                 "invalidUrl": "Vui lòng nhập một URL hợp lệ",
-                "noStatusCodeSelected": ""
+                "noStatusCodeSelected": "Vui lòng chọn một mã trạng thái"
             }
         },
         "tabs": {
             "options": {
-                "title": "",
+                "title": "Tùy chọn",
                 "form": {
                     "serviceName": {
-                        "label": "",
+                        "label": "Tên dịch vụ",
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": ""
+                        "label": "ULR biểu tượng"
                     },
                     "serviceUrl": {
-                        "label": ""
+                        "label": "URL dịch vụ"
                     },
                     "onClickUrl": {
-                        "label": ""
+                        "label": "URL khi nhấp chuột"
                     },
                     "serviceType": {
-                        "label": "",
-                        "defaultValue": "",
-                        "placeholder": ""
+                        "label": "Loại dịch vụ",
+                        "defaultValue": "Khác",
+                        "placeholder": "Chọn một"
                     },
                     "category": {
-                        "label": "",
-                        "placeholder": "",
-                        "nothingFound": "",
-                        "createLabel": ""
+                        "label": "Phân loại",
+                        "placeholder": "Chọn một phân loại hoặc tạo mới",
+                        "nothingFound": "Không tìm thấy",
+                        "createLabel": "+ Tạo {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
-                            "label": "",
-                            "placeholder": "",
+                            "label": "Khoá API",
+                            "placeholder": "Khóa API của bạn",
                             "validation": {
-                                "noKey": ""
+                                "noKey": "Khóa không hợp lệ"
                             },
                             "tip": {
-                                "text": "",
-                                "link": ""
+                                "text": "Nhận khóa API",
+                                "link": "ở đây."
                             }
                         },
                         "qBittorrent": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Tên người dùng",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Tên người dùng không hợp lệ"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Mật khẩu",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
                                 }
                             }
                         },
                         "deluge": {
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Mật khẩu",
+                                "placeholder": "mật_khẩu",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
                                 }
                             }
                         },
                         "transmission": {
                             "username": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Tên người dùng",
+                                "placeholder": "admin",
                                 "validation": {
-                                    "invalidUsername": ""
+                                    "invalidUsername": "Tên người dùng không hợp lệ"
                                 }
                             },
                             "password": {
-                                "label": "",
-                                "placeholder": "",
+                                "label": "Mật khẩu",
+                                "placeholder": "adminadmin",
                                 "validation": {
-                                    "invalidPassword": ""
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
                                 }
                             }
                         }
@@ -95,20 +95,20 @@
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Tùy chọn nâng cao",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "",
-                        "placeholder": "",
-                        "clearButtonLabel": "",
-                        "nothingFound": ""
+                        "label": "Mã trạng thái HTTP",
+                        "placeholder": "Chọn một mã trạng thái hợp lệ",
+                        "clearButtonLabel": "Xóa lựa chọn",
+                        "nothingFound": "Không tìm thấy"
                     },
                     "openServiceInNewTab": {
-                        "label": ""
+                        "label": "Mở trong tab mới"
                     },
                     "buttons": {
                         "submit": {
-                            "content": ""
+                            "content": "Thêm dịch vụ"
                         }
                     }
                 }
