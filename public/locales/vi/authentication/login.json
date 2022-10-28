@@ -4,7 +4,7 @@
   "form": {
     "fields": {
       "password": {
-        "label": "",
+        "label": "Mật khẩu",
         "placeholder": "Mật khẩu của bạn"
       }
     },
