@@ -8,11 +8,11 @@
   "menu": {
     "labels": {
       "settings": "Cài đặt",
-      "dangerZone": ""
+      "dangerZone": "Khu vực nguy hiểm"
     },
     "actions": {
-      "edit": "",
-      "delete": ""
+      "edit": "Sửa",
+      "delete": "Xóa"
     }
   }
 }
