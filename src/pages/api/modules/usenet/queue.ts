@@ -48,7 +48,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
         const nzbGet = new NZBGet(options);
 
-        const nzbgetHistory:[] = await new Promise((resolve, reject) => {
+        const nzbgetQueue:[] = await new Promise((resolve, reject) => {
           nzbGet.listGroups((err: any, result: any) => {
             if (!err) {
               resolve(result);
@@ -58,17 +58,32 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           });
         });
 
-        if (!nzbgetHistory) {
-          throw new Error('Error while getting NZBGet history');
+        if (!nzbgetQueue) {
+          throw new Error('Error while getting NZBGet queue');
         }
 
-        const nzbgetItems: UsenetQueueItem[] = nzbgetHistory.map((item: any) => ({
+        const nzbgetStatus:any = await new Promise((resolve, reject) => {
+          nzbGet.status((err: any, result: any) => {
+            if (!err) {
+              resolve(result);
+            } else {
+              reject(err);
+            }
+          });
+        });
+
+        if (!nzbgetStatus) {
+          throw new Error('Error while getting NZBGet status');
+        }
+
+        const nzbgetItems: UsenetQueueItem[] = nzbgetQueue.map((item: any) => ({
           id: item.NZBID,
           name: item.NZBName,
-          progress: 50,
-          eta: 3,
+          // TODO: Figure this out
+          progress: (item.DownloadedSizeMB / item.RemainingSizeMB) * 100,
+          eta: (item.RemainingSizeMB * 1000000) / nzbgetStatus.DownloadRate,
           // Multiple MB to get bytes
-          size: item.RemainingSizeMB * 1000000,
+          size: item.FileSizeMB * 1000 * 1000,
           state: getNzbgetState(item.Status),
         }));
 
