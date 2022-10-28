@@ -1,13 +1,13 @@
 {
   "modal": {
-    "title": "",
+    "title": "Chỉnh sửa dịch vụ",
     "buttons": {
-      "save": ""
+      "save": "Lưu dịch vụ"
     }
   },
   "menu": {
     "labels": {
-      "settings": "",
+      "settings": "Cài đặt",
       "dangerZone": ""
     },
     "actions": {
