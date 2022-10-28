@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Cho phép bạn dễ dàng quản lý các khoang chứa docker"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Tìm kiếm bằng tên khoang chứa hoặc tên hình ảnh"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Tên",
+      "image": "Hình ảnh",
+      "ports": "Cổng",
+      "state": "Trạng thái"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "còn {{ports}}"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Đang chạy",
+      "created": "Đã tạo",
+      "stopped": "Đã dừng",
+      "unknown": "Không rõ"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Thêm dịch vụ",
+      "message": "Thêm dịch vụ vào Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Khởi động lại"
     },
     "stop": {
-      "title": ""
+      "title": "Dừng"
     },
     "start": {
-      "title": ""
+      "title": "Bắt đầu"
     },
     "refreshData": {
-      "title": ""
+      "title": "Làm mới dữ liệu"
     },
     "remove": {
-      "title": ""
+      "title": "Xóa"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Thêm vào Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Đang bắt đầu",
+      "end": "Đã bắt đầu"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Đang dừng",
+      "end": "Đã dừng"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Đang khởi động lại",
+      "end": "Đã khởi động lại"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Đang xoá",
+      "end": "Đã xoá"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Tích hợp Docker thất bại",
+      "message": "Có phải bạn quên gắn ổ cắm docker không?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Có lỗi xảy ra"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Vui lòng chỉ thêm từng dịch vụ một!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
