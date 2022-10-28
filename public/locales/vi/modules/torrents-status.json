@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Hiển thị tốc độ tải xuống hiện tại của các dịch vụ được hỗ trợ",
     "settings": {
       "hideComplete": {
         "label": "Ẩn torrent đã hoàn thành"
@@ -11,7 +11,7 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "Tên",
         "size": "Kích cỡ",
         "download": "Tải xuống",
         "upload": "Tải lên",
@@ -23,17 +23,17 @@
       }
     },
     "lineChart": {
-      "title": "Tốc độ tải hiện tại",
-      "download": "",
-      "upload": "",
+      "title": "Tốc độ tải xuống hiện tại",
+      "download": "Tải xuống: {{download}}",
+      "upload": "Tải lên: {{upload}}",
       "timeSpan": "{{seconds}} giây trước",
-      "totalDownload": "",
-      "totalUpload": ""
+      "totalDownload": "Tải xuống: {{download}}/giây",
+      "totalUpload": "Tải lên: {{upload}}/giây"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Không tìm thấy ứng dụng tải xuống được hỗ trợ nào!",
+        "text": "Hãy thêm dịch vụ tải xuống để xem các bản tải xuống của bạn"
       }
     }
   }
