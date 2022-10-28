@@ -1,55 +1,55 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "Trình nạp cấu hình"
   },
   "modal": {
-    "title": "",
+    "title": "Chọn tên cho cấu hình mới của bạn",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "Tên cấu hình",
+        "placeholder": "Tên cấu hình mới của bạn"
       },
-      "submitButton": ""
+      "submitButton": "Xác nhận"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "Đã lưu cấu hình",
+        "message": "Đã lưu cấu hình thành {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Tải cấu hình xuống",
     "delete": {
-      "text": "",
+      "text": "Xóa cấu hình",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Đã xoá cấu hình",
+          "message": "Đã xoá cấu hình"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Xoá cấu hình thất bại",
+          "message": "Xoá cấu hình thất bại"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Lưu một bản sao"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Không thể nạp cấu hình",
+        "message": "Không thể nạp cấu hình của bạn. Định dạng JSON không hợp lệ."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Cấu hình {{configName}} được nạp thành công"
       }
     },
     "accept": {
-      "text": ""
+      "text": "Kéo thả tệp vào đây để tải cấu hình lên. Chỉ hỗ trợ JSON."
     },
     "reject": {
-      "text": ""
+      "text": "Định dạng tệp này không được hỗ trợ. Vui lòng chỉ tải lên JSON."
     }
   }
 }
