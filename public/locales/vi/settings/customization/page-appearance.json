@@ -1,25 +1,25 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Tiêu đề trang",
+    "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Logo",
+    "placeholder": "/img/logo.png"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Favicon",
+    "placeholder": "/favicon.png"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "Hình nền",
+    "placeholder": "/img/hình-nền.png"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "CSS tuỳ chỉnh",
+    "placeholder": "CSS tùy chỉnh sẽ được áp dụng sau cùng"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Gửi"
   }
 }
