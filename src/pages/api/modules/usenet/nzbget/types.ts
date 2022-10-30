@@ -45,3 +45,84 @@ export interface NzbgetHistoryItem {
   Parameters: [];
   ServerStats: [];
 }
+
+export interface NzbgetQueueItem {
+  NZBID: number;
+  NZBFilename: string;
+  NZBName: string;
+  Kind: 'NZB' | 'URL';
+  URL: string;
+  DestDir: string;
+  FinalDir: string;
+  Category: string;
+  FileSizeLo: number;
+  FileSizeHi: number;
+  FileSizeMB: number;
+  RemainingSizeLo: number;
+  RemainingSizeHi: number;
+  RemainingSizeMB: number;
+  PausedSizeLo: number;
+  PausedSizeHi: number;
+  PausedSizeMB: number;
+  FileCount: number;
+  RemainingFileCount: number;
+  RemainingParCount: number;
+  MinPostTime: number;
+  MaxPostTime: number;
+  MaxPriority: number;
+  ActiveDownloads: number;
+  Status: 'QUEUED' | 'PAUSED' | 'DOWNLOADING' | 'FETCHING' | 'PP_QUEUED' | 'LOADING_PARS' | 'VERIFYING_SOURCES' | 'REPAIRING' | 'VERIFYING_REPAIRED' | 'RENAMING' | 'UNPACKING' | 'MOVING' | 'EXECUTING_SCRIPT' | 'PP_FINISHED';
+  TotalArticles: number;
+  SuccessArticles: number;
+  FailedArticles: number;
+  Health: number;
+  CriticalHealth: number;
+  DownloadedSizeLo: number;
+  DownloadedSizeHi: number;
+  DownloadedSizeMB: number;
+  DownloadTimeSec: number;
+  MessageCount: number;
+  DupeKey: string;
+  DupeScore: number;
+  DupeMode: string;
+  Parameters: [];
+  ServerStats: [];
+  PostInfoText: string;
+  PostStageProgress: number;
+  PostTotalTimeSec: number;
+  PostStageTimeSec: number;
+}
+
+export interface NzbgetStatus {
+  RemainingSizeLo: number;
+  RemainingSizeHi: number;
+  RemainingSizeMB: number;
+  ForcedSizeLo: number;
+  ForcedSizeHi: number;
+  ForcedSizeMB: number;
+  DownloadedSizeLo: number;
+  DownloadedSizeHi: number;
+  DownloadedSizeMB: number;
+  ArticleCacheLo: number;
+  ArticleCacheHi: number;
+  ArticleCacheMB: number;
+  DownloadRate: number;
+  AverageDownloadRate: number;
+  DownloadLimit: number;
+  ThreadCount: number;
+  PostJobCount: number;
+  UrlCount: number;
+  UpTimeSec: number;
+  DownloadTimeSec: number;
+  ServerStandBy: boolean;
+  DownloadPaused: boolean;
+  PostPaused: boolean;
+  ScanPaused: boolean;
+  ServerTime: number;
+  ResumeTime: number;
+  FeedActive: boolean;
+  FreeDiskSpaceLo: number;
+  FreeDiskSpaceHi: number;
+  FreeDiskSpaceMB: number;
+  NewsServers: [];
+}

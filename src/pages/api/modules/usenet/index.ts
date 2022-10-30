@@ -7,6 +7,7 @@ import NZBGet from 'nzbget-api';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
+import { NzbgetStatus } from './nzbget/types';
 
 dayjs.extend(duration);
 
@@ -46,8 +47,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
         const nzbGet = new NZBGet(options);
 
-        const nzbgetStatus:any = await new Promise((resolve, reject) => {
-          nzbGet.status((err: any, result: any) => {
+        const nzbgetStatus:NzbgetStatus = await new Promise((resolve, reject) => {
+          nzbGet.status((err: any, result: NzbgetStatus) => {
             if (!err) {
               resolve(result);
             } else {

@@ -8,6 +8,7 @@ import { UsenetQueueItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
+import { NzbgetQueueItem, NzbgetStatus } from './nzbget/types';
 
 dayjs.extend(duration);
 
@@ -47,8 +48,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
         const nzbGet = new NZBGet(options);
 
-        const nzbgetQueue:[] = await new Promise((resolve, reject) => {
-          nzbGet.listGroups((err: any, result: any) => {
+        const nzbgetQueue:NzbgetQueueItem[] = await new Promise((resolve, reject) => {
+          nzbGet.listGroups((err: any, result: NzbgetQueueItem[]) => {
             if (!err) {
               resolve(result);
             } else {
@@ -61,8 +62,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           throw new Error('Error while getting NZBGet queue');
         }
 
-        const nzbgetStatus:any = await new Promise((resolve, reject) => {
-          nzbGet.status((err: any, result: any) => {
+        const nzbgetStatus:NzbgetStatus = await new Promise((resolve, reject) => {
+          nzbGet.status((err: any, result: NzbgetStatus) => {
             if (!err) {
               resolve(result);
             } else {
@@ -75,9 +76,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           throw new Error('Error while getting NZBGet status');
         }
 
-        // TODO: Add type for item here
-        const nzbgetItems: UsenetQueueItem[] = nzbgetQueue.map((item: any) => ({
-          id: item.NZBID,
+        const nzbgetItems: UsenetQueueItem[] = nzbgetQueue.map((item: NzbgetQueueItem) => ({
+          id: item.NZBID.toString(),
           name: item.NZBName,
           progress: (item.DownloadedSizeMB / item.FileSizeMB) * 100,
           eta: (item.RemainingSizeMB * 1000000) / nzbgetStatus.DownloadRate,
