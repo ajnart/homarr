@@ -36,7 +36,6 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     let response: UsenetInfoResponse;
     switch (service.type) {
       case 'NZBGet': {
-        // TODO: Create common function that sets up the NZBGET client
         const url = new URL(service.url);
         const options = {
           host: url.hostname,

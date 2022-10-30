@@ -37,7 +37,6 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     let response: UsenetQueueResponse;
     switch (service.type) {
       case 'NZBGet': {
-        // TODO: Create common function that sets up the NZBGET client
         const url = new URL(service.url);
         const options = {
           host: url.hostname,
@@ -79,8 +78,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const nzbgetItems: UsenetQueueItem[] = nzbgetQueue.map((item: any) => ({
           id: item.NZBID,
           name: item.NZBName,
-          // TODO: Figure this out
-          progress: (item.DownloadedSizeMB / item.RemainingSizeMB) * 100,
+          progress: (item.DownloadedSizeMB / item.FileSizeMB) * 100,
           eta: (item.RemainingSizeMB * 1000000) / nzbgetStatus.DownloadRate,
           // Multiple MB to get bytes
           size: item.FileSizeMB * 1000 * 1000,

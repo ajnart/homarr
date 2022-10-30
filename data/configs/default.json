@@ -10,27 +10,11 @@
     }
   ],
   "settings": {
-    "searchUrl": "https://google.com/search?q=",
-    "widgetPosition": "right"
+    "searchUrl": "https://google.com/search?q="
   },
   "modules": {
     "Search Bar": {
       "enabled": true
-    },
-    "usenet": {
-      "enabled": true
-    },
-    "overseerr": {
-      "enabled": false
-    },
-    "search": {
-      "enabled": false
-    },
-    "torrents-status": {
-      "enabled": false
-    },
-    "calendar": {
-      "enabled": false
     }
   }
 }
