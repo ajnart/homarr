@@ -23,5 +23,25 @@ export interface NzbgetHistoryItem {
   DownloadedSizeHi: number;
   DownloadedSizeMB: number;
   DownloadTimeSec: number;
-  // TODO: Finish adding the rest of the properties
+  PostTotalTimeSec: number;
+  ParTimeSec: number;
+  RepairTimeSec: number
+  UnpackTimeSec: number;
+  MessageCount:number;
+  DupeKey: string;
+  DupeScore: number;
+  DupeMode: 'SCORE' | 'ALL' | 'FORCE';
+  Status: string;
+  ParStatus: 'NONE' | 'FAILURE' | 'REPAIR_POSSIBLE' | 'SUCCESS' | 'MANUAL';
+  ExParStatus: 'RECIPIENT' | 'DONOR';
+  UnpackStatus: 'NONE' | 'FAILURE' | 'SPACE' | 'PASSWORD' | 'SUCCESS';
+  UrlStatus: 'NONE' | 'SUCCESS' | 'FAILURE' | 'SCAN_SKIPPED' | 'SCAN_FAILURE';
+  ScriptStatus: 'NONE' | 'FAILURE' | 'SUCCESS';
+  ScriptStatuses: [];
+  MoveStatus: 'NONE' | 'SUCCESS' | 'FAILURE';
+  DeleteStatus: 'NONE' | 'MANUAL' | 'HEALTH' | 'DUPE' | 'BAD' | 'SCAN' | 'COPY';
+  MarkStatus: 'NONE' | 'GOOD' | 'BAD';
+  ExtraParBlocks: number;
+  Parameters: [];
+  ServerStats: [];
 }
