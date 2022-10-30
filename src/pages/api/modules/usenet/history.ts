@@ -61,8 +61,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           throw new Error('Error while getting NZBGet history');
         }
 
-        const nzbgetItems: UsenetHistoryItem[] = nzbgetHistory.map((item: any) => ({
-          id: item.ID,
+        const nzbgetItems: UsenetHistoryItem[] = nzbgetHistory.map((item: NzbgetHistoryItem) => ({
+          id: item.NZBID.toString(),
           name: item.Name,
           // Multiple MB to get bytes
           size: item.DownloadedSizeMB * 1000000,
