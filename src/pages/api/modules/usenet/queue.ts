@@ -75,6 +75,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           throw new Error('Error while getting NZBGet status');
         }
 
+        // TODO: Add type for item here
         const nzbgetItems: UsenetQueueItem[] = nzbgetQueue.map((item: any) => ({
           id: item.NZBID,
           name: item.NZBName,

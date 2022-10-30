@@ -8,6 +8,7 @@ import { UsenetHistoryItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
+import { NzbgetHistoryItem } from './nzbget/types';
 
 dayjs.extend(duration);
 
