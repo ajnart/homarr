@@ -9,7 +9,7 @@
   },
   "favicon": {
     "label": "파비콘",
-    "placeholder": "/favicon.png"
+    "placeholder": "/imgs/favicon/favicon.png"
   },
   "background": {
     "label": "배경",

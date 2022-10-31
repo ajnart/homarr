@@ -83,7 +83,7 @@ function MatchService(name: string, form: any) {
   }
 }
 
-const DEFAULT_ICON = '/favicon.png';
+const DEFAULT_ICON = '/imgs/favicon/favicon.png';
 
 interface AddAppShelfItemFormProps {
   setOpened: (b: boolean) => void;
