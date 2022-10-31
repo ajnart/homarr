@@ -9,7 +9,7 @@
   },
   "favicon": {
     "label": "网站图标",
-    "placeholder": "/favicon.png"
+    "placeholder": ""
   },
   "background": {
     "label": "背景",
