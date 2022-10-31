@@ -9,7 +9,7 @@
   },
   "favicon": {
     "label": "Іконка",
-    "placeholder": "/favicon.png"
+    "placeholder": "/imgs/favicon/favicon.png"
   },
   "background": {
     "label": "Фон",
