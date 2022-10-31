@@ -9,7 +9,7 @@
   },
   "favicon": {
     "label": "ファビコン",
-    "placeholder": "/favicon.png"
+    "placeholder": ""
   },
   "background": {
     "label": "背景",
