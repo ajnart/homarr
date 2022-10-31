@@ -9,7 +9,7 @@
   },
   "favicon": {
     "label": "Фавикон",
-    "placeholder": "/favicon.png"
+    "placeholder": ""
   },
   "background": {
     "label": "Справочная информация",
