@@ -9,7 +9,7 @@
   },
   "favicon": {
     "label": "Favicon",
-    "placeholder": ""
+    "placeholder": "/imgs/favicon/favicon.png"
   },
   "background": {
     "label": "Bakgrund",
