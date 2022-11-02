@@ -19,6 +19,7 @@ module.exports = {
       'ru',
       'sl',
       'sv',
+      'vi',
       'uk',
       'zh',
     ],
