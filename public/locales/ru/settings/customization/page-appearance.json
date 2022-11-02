@@ -4,16 +4,13 @@
     "placeholder": "Хомарр 🦞"
   },
   "logo": {
-    "label": "Логотип",
-    "placeholder": "/img/logo.png"
+    "label": "Логотип"
   },
   "favicon": {
-    "label": "Фавикон",
-    "placeholder": ""
+    "label": "Фавикон"
   },
   "background": {
-    "label": "Справочная информация",
-    "placeholder": "/img/background.png"
+    "label": "Справочная информация"
   },
   "customCSS": {
     "label": "Пользовательский CSS",
