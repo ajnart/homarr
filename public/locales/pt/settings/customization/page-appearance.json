@@ -4,16 +4,13 @@
     "placeholder": ""
   },
   "logo": {
-    "label": "Logo",
-    "placeholder": ""
+    "label": "Logo"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "customCSS": {
     "label": "CSS Personalizado",
