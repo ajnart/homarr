@@ -3,11 +3,11 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import NZBGet from 'nzbget-api';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
 import { NzbgetStatus } from './nzbget/types';
+import { NzbgetClient } from './nzbget/nzbget-client';
 
 dayjs.extend(duration);
 
@@ -45,7 +45,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           hash: service.password,
         };
 
-        const nzbGet = new NZBGet(options);
+        const nzbGet = NzbgetClient(options);
 
         const nzbgetStatus:NzbgetStatus = await new Promise((resolve, reject) => {
           nzbGet.status((err: any, result: NzbgetStatus) => {

@@ -3,12 +3,12 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import NZBGet from 'nzbget-api';
 import { UsenetHistoryItem } from '../../../../modules';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
 import { NzbgetHistoryItem } from './nzbget/types';
+import { NzbgetClient } from './nzbget/nzbget-client';
 
 dayjs.extend(duration);
 
@@ -46,7 +46,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           hash: service.password,
         };
 
-        const nzbGet = new NZBGet(options);
+        const nzbGet = NzbgetClient(options);
 
         const nzbgetHistory:NzbgetHistoryItem[] = await new Promise((resolve, reject) => {
           nzbGet.history(false, (err: any, result: NzbgetHistoryItem[]) => {

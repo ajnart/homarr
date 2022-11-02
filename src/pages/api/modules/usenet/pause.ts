@@ -2,11 +2,11 @@ import { getCookie } from 'cookies-next';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
-import NZBGet from 'nzbget-api';
 import { Client } from 'sabnzbd-api';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
+import { NzbgetClient } from './nzbget/nzbget-client';
 
 dayjs.extend(duration);
 
@@ -37,7 +37,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
           hash: service.password,
         };
 
-        const nzbGet = new NZBGet(options);
+        const nzbGet = NzbgetClient(options);
 
         result = await new Promise((resolve, reject) => {
           nzbGet.pauseDownload(false, (err: any, result: any) => {

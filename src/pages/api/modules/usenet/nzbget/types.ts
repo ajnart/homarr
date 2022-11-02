@@ -126,3 +126,10 @@ export interface NzbgetStatus {
   FreeDiskSpaceMB: number;
   NewsServers: [];
 }
+
+export interface NzbgetClientOptions {
+  host: string,
+  port: string,
+  login: string | undefined,
+  hash: string | undefined,
+}
