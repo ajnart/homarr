@@ -5,15 +5,12 @@
   },
   "logo": {
     "label": "Logo",
-    "placeholder": "/img/logo.png"
   },
   "favicon": {
     "label": "Favicon",
-    "placeholder": "/imgs/favicon/favicon.png"
   },
   "background": {
     "label": "Background",
-    "placeholder": "/img/background.png"
   },
   "customCSS": {
     "label": "Custom CSS",
