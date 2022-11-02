@@ -4,16 +4,13 @@
     "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "Logo",
-    "placeholder": "/img/logo.png"
+    "label": "Logo"
   },
   "favicon": {
-    "label": "Favicon",
-    "placeholder": ""
+    "label": "Favicon"
   },
   "background": {
-    "label": "Hình nền",
-    "placeholder": "/img/hình-nền.png"
+    "label": "Hình nền"
   },
   "customCSS": {
     "label": "CSS tuỳ chỉnh",
