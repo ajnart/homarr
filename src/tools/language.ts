@@ -118,6 +118,13 @@ export const languages: Language[] = [
     translatedName: 'Ukrainian',
     emoji: '🇺🇦',
   },
+  // Vietnamese
+  {
+    shortName: 'vi',
+    originalName: 'Tiếng Việt',
+    translatedName: 'Vietnamese',
+    emoji: '🇻🇳',
+  },
   {
     shortName: 'zh',
     originalName: '中文',
