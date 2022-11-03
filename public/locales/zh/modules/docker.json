@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "轻松管理你的docker容器"
   },
   "search": {
     "placeholder": "按容器或图像名称搜索"
@@ -49,20 +49,20 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "正在启动...",
+      "end": "已启动"
     },
     "stop": {
-      "start": "",
+      "start": "正在停止",
       "end": "已停止"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "正在重启",
+      "end": "已重启"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "删除中",
+      "end": "已删除"
     }
   },
   "errors": {
