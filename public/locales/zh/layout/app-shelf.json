@@ -2,8 +2,8 @@
   "accordions": {
     "downloads": {
       "text": "您的下载",
-      "torrents": "",
-      "usenet": ""
+      "torrents": "你的Torrent下载",
+      "usenet": "你的Usenet下载"
     },
     "others": {
       "text": "其他"
