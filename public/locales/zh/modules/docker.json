@@ -4,7 +4,7 @@
     "description": "轻松管理你的docker容器"
   },
   "search": {
-    "placeholder": "按容器或图像名称搜索"
+    "placeholder": "按容器或镜像名称搜索"
   },
   "table": {
     "header": {
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker整合失败",
-      "message": "你忘了安装docker socket吗？"
+      "message": "你忘了挂载docker socket吗？"
     },
     "unknownError": {
       "title": "出现了一个错误"
