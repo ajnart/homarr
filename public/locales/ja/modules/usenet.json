@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Sabnzbdのキューと履歴の確認、ダウンロードの一時停止と再開が可能です。"
+    "name": "ユースネット",
+    "description": "Usenet (Sabnzbd または NZBGet) のキューと履歴を表示し、ダウンロードを一時停止および再開できます。"
   },
   "card": {
     "errors": {

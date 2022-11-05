@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Sabnzbd의 대기열 및 기록을 확인하고 다운로드를 일시 중지 및 재개할 수 있습니다"
+    "name": "ユースネット",
+    "description": "유즈넷(Sabnzbd 또는 NZBGet) 대기열 및 기록을 보고 다운로드를 일시 중지 및 재개할 수 있습니다."
   },
   "card": {
     "errors": {
