@@ -1,0 +1,20 @@
+{
+  "name": "default",
+  "services": [
+    {
+      "name": "example",
+      "id": "09c45847-8afc-4c1a-9697-f03192de948a",
+      "type": "Other",
+      "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    }
+  ],
+  "settings": {
+    "searchUrl": "https://google.com/search?q="
+  },
+  "modules": {
+    "Search Bar": {
+      "enabled": true
+    }
+  }
+}
