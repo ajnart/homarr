@@ -67,7 +67,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           paused: nzbgetStatus.DownloadPaused,
           sizeLeft: bytesRemaining,
           speed: nzbgetStatus.DownloadRate,
-          eta: eta,
+          eta,
         };
         break;
       }
@@ -75,18 +75,18 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         if (!service.apiKey) {
           throw new Error(`API Key for service "${service.name}" is missing`);
         }
-    
+
         const { origin } = new URL(service.url);
-    
+
         const queue = await new Client(origin, service.apiKey).queue(0, -1);
-    
+
         const [hours, minutes, seconds] = queue.timeleft.split(':');
         const eta = dayjs.duration({
           hour: parseInt(hours, 10),
           minutes: parseInt(minutes, 10),
           seconds: parseInt(seconds, 10),
         } as any);
-    
+
         response = {
           paused: queue.paused,
           sizeLeft: parseFloat(queue.mbleft) * 1024 * 1024,

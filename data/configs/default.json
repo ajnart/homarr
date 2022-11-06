@@ -7,14 +7,40 @@
       "type": "Other",
       "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+      "id": "b8221afa-6064-43a5-8eed-c78e7af94e27",
+      "type": "NZBGet",
+      "name": "NZBGet",
+      "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nzbget.png",
+      "url": "http://192.168.1.61:6789",
+      "username": "jonjon1123",
+      "password": "aRsBPQfVxN3u@@5",
+      "openedUrl": "https://nzbget.terry.network"
     }
   ],
   "settings": {
-    "searchUrl": "https://google.com/search?q="
+    "searchUrl": "https://google.com/search?q=",
+    "widgetPosition": "right"
   },
   "modules": {
     "Search Bar": {
       "enabled": true
+    },
+    "usenet": {
+      "enabled": true
+    },
+    "overseerr": {
+      "enabled": false
+    },
+    "search": {
+      "enabled": false
+    },
+    "torrents-status": {
+      "enabled": false
+    },
+    "calendar": {
+      "enabled": false
     }
   }
 }

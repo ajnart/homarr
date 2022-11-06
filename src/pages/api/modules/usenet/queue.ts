@@ -81,7 +81,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           name: item.NZBName,
           progress: (item.DownloadedSizeMB / item.FileSizeMB) * 100,
           eta: (item.RemainingSizeMB * 1000000) / nzbgetStatus.DownloadRate,
-          // Multiple MB to get bytes
+          // Convert from MB to bytes
           size: item.FileSizeMB * 1000 * 1000,
           state: getNzbgetState(item.Status),
         }));
