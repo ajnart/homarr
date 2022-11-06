@@ -1,12 +1,7 @@
 {
   "descriptor": {
-<<<<<<< HEAD
-    "name": "",
-    "description": ""
-=======
     "name": "Usenet",
     "description": "Hiermee kunt u uw usenet (Sabnzbd of NZBGet) wachtrij en geschiedenis bekijken, downloads pauzeren en hervatten."
->>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

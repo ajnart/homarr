@@ -1,12 +1,7 @@
 {
   "descriptor": {
-<<<<<<< HEAD
-    "name": "",
-    "description": ""
-=======
     "name": "Usenet",
     "description": "Omogoča ogled vaše čakalne vrste in zgodovine usenet (Sabnzbd ali NZBGet), zaustavitev in nadaljevanje prenosov."
->>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

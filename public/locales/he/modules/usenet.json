@@ -1,12 +1,7 @@
 {
   "descriptor": {
-<<<<<<< HEAD
-    "name": "קבוצת דיון",
-    "description": "מאפשר צפייה בהיסטוריה, תור ההורדות, עצירה וחידוש הורדות בקבוצות הדיון (Sabnzbd או NZBGet)"
-=======
     "name": "Sabnzbd",
     "description": "מאמאפשר לך לראות את התור וההיסטוריה של usenet (Sabnzbd או NZBGet), להשהות ולחדש הורדות"
->>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

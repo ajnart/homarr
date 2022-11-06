@@ -1,12 +1,7 @@
 {
   "descriptor": {
-<<<<<<< HEAD
-    "name": "",
-    "description": ""
-=======
     "name": "用户网",
     "description": "允许您查看您的用户网（Sabnzbd 或 NZBGet）队列和历史记录，暂停和恢复下载。"
->>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

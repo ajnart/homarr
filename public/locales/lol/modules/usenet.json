@@ -1,12 +1,7 @@
 {
   "descriptor": {
-<<<<<<< HEAD
-    "name": "",
-    "description": ""
-=======
     "name": "Usenet",
     "description": "Allowz u 2 c ur usenet (Sabnzbd & NZBGet) queue an histowee, paues an resuem downloadz"
->>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {
