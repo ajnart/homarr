@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Hiermee kunt u uw Sabnzbd wachtrij en geschiedenis weergeven, downloads pauzeren en hervatten"
+    "name": "Usenet",
+    "description": "Hiermee kunt u uw usenet (Sabnzbd of NZBGet) wachtrij en geschiedenis bekijken, downloads pauzeren en hervatten."
   },
   "card": {
     "errors": {

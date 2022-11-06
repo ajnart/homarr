@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Omogoča ogled čakalne vrste in zgodovine v Sabnzbd ter prekinitev in nadaljevanje prenosov"
+    "name": "Usenet",
+    "description": "Omogoča ogled vaše čakalne vrste in zgodovine usenet (Sabnzbd ali NZBGet), zaustavitev in nadaljevanje prenosov."
   },
   "card": {
     "errors": {
