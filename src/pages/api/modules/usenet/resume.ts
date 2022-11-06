@@ -6,6 +6,7 @@ import { Client } from 'sabnzbd-api';
 import { getConfig } from '../../../../tools/getConfig';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
+import { NzbgetClient } from './nzbget/nzbget-client';
 
 dayjs.extend(duration);
 
@@ -26,13 +27,43 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
     }
 
-    if (!service.apiKey) {
-      throw new Error(`API Key for service "${service.name}" is missing`);
+    let result;
+    switch (service.type) {
+      case 'NZBGet': {
+        const url = new URL(service.url);
+        const options = {
+          host: url.hostname,
+          port: url.port,
+          login: service.username,
+          hash: service.password,
+        };
+
+        const nzbGet = NzbgetClient(options);
+
+        result = await new Promise((resolve, reject) => {
+          nzbGet.resumeDownload(false, (err: any, result: any) => {
+            if (!err) {
+              resolve(result);
+            } else {
+              reject(err);
+            }
+          });
+        });
+        break;
+      }
+      case 'Sabnzbd': {
+        if (!service.apiKey) {
+          throw new Error(`API Key for service "${service.name}" is missing`);
+        }
+
+        const { origin } = new URL(service.url);
+
+        result = await new Client(origin, service.apiKey).queueResume();
+        break;
+      }
+      default:
+        throw new Error(`Service type "${service.type}" unrecognized.`);
     }
-
-    const { origin } = new URL(service.url);
-
-    const result = await new Client(origin, service.apiKey).queueResume();
 
     return res.status(200).json(result);
   } catch (err) {

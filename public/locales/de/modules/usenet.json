@@ -1,7 +1,12 @@
 {
   "descriptor": {
+<<<<<<< HEAD
     "name": "",
     "description": ""
+=======
+    "name": "Usenet",
+    "description": "Ermöglicht es Ihnen, Ihre Usenet-Warteschlange (Sabnzbd oder NZBGet) und den Verlauf anzuzeigen, Downloads anzuhalten und fortzusetzen"
+>>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

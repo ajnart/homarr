@@ -1,7 +1,11 @@
 {
   "descriptor": {
     "name": "Usenet",
+<<<<<<< HEAD
     "description": "Låter dig se din usenet (Sabnzbd eller NZBGet) kö och historik, pausa och återuppta nedladdningar"
+=======
+    "description": "Låter dig se din usenet (Sabnzbd eller NZBGet) kö och historik, pausa och återuppta nedladdningar."
+>>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

@@ -1,7 +1,11 @@
 {
   "descriptor": {
     "name": "Usenet",
+<<<<<<< HEAD
     "description": "Permette di vedere la coda e la cronologia di usenet (Sabnzbd o NZBGet), di mettere in pausa e riprendere i download"
+=======
+    "description": "Ti consente di vedere la coda e la cronologia di usenet (Sabnzbd o NZBGet), mettere in pausa e riprendere i download."
+>>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

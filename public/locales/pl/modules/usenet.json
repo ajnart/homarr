@@ -1,7 +1,12 @@
 {
   "descriptor": {
+<<<<<<< HEAD
     "name": "",
     "description": ""
+=======
+    "name": "Usenet",
+    "description": "Pozwala zobaczyć kolejkę i historię usenetu (Sabnzbd lub NZBGet), wstrzymywać i wznawiać pobieranie."
+>>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

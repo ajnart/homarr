@@ -1,7 +1,11 @@
 {
   "descriptor": {
     "name": "Usenet",
+<<<<<<< HEAD
     "description": "Te permite ver la cola e historial de tu usenet (Sabnzbd or NZBGet), pausar y reanudar descargas"
+=======
+    "description": "Le permite ver la cola y el historial de usenet (Sabnzbd o NZBGet), pausar y reanudar las descargas"
+>>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

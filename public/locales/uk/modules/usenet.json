@@ -1,7 +1,12 @@
 {
   "descriptor": {
+<<<<<<< HEAD
     "name": "Usenet",
     "description": "Дозволяє вам бачити вашу чергу та історію в usenet (Sabnzbd або NZBGet), керувати завантаженнями"
+=======
+    "name": "Sabnzbd",
+    "description": "Дозволяє переглядати чергу та історію usenet (Sabnzbd або NZBGet), призупиняти та відновлювати завантаження."
+>>>>>>> 92c0920 (✨ Add NZBGet download client)
   },
   "card": {
     "errors": {

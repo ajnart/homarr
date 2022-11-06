@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Юнет",
+    "description": "Позволяет просматривать очередь и историю Usenet (Sabnzbd или NZBGet), приостанавливать и возобновлять загрузки."
   },
   "card": {
     "errors": {
