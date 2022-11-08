@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Permite que você veja sua fila e histórico de usenet (Sabnzbd ou NZBGet), pausar e retomar downloads."
   },
   "card": {
     "errors": {

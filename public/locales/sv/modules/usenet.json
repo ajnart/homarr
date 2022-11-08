@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Låter dig se din Sabnzbd kö och historik, pausa och återuppta nedladdningar"
+    "name": "Usenet",
+    "description": "Låter dig se din usenet (Sabnzbd eller NZBGet) kö och historik, pausa och återuppta nedladdningar."
   },
   "card": {
     "errors": {
