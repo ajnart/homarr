@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Tillader dig at se din usenet (Sabnzbd eller NZBGet) kø og historie, pause og genoptage downloads"
   },
   "card": {
     "errors": {
