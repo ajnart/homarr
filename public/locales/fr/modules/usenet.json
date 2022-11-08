@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Permet de voir votre file d'attente et votre historique Sabnzbd, de mettre en pause et de reprendre les téléchargements"
+    "name": "",
+    "description": ""
   },
   "card": {
     "errors": {
