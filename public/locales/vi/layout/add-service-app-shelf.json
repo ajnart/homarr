@@ -90,6 +90,22 @@
                                     "invalidPassword": "Mật khẩu không hợp lệ"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Tên người dùng",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Tên người dùng không hợp lệ"
+                                }
+                            },
+                            "password": {
+                                "label": "Mật khẩu",
+                                "placeholder": "mật_khẩu",
+                                "validation": {
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
+                                }
+                            }
                         }
                     }
                 }
