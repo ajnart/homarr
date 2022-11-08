@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Позволяет просматривать очередь и историю загрузки Sabnzbd, приостанавливать и возобновлять загрузку."
+    "name": "",
+    "description": ""
   },
   "card": {
     "errors": {
