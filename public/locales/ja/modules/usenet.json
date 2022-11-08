@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Sabnzbdのキューと履歴の確認、ダウンロードの一時停止と再開が可能です。"
+    "name": "",
+    "description": ""
   },
   "card": {
     "errors": {
