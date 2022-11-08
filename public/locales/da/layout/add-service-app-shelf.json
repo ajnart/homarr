@@ -90,6 +90,22 @@
                                     "invalidPassword": "Ugyldig adgangskode"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Brugernavn",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Ugyldigt brugernavn"
+                                }
+                            },
+                            "password": {
+                                "label": "Adgangskode",
+                                "placeholder": "adgangskode",
+                                "validation": {
+                                    "invalidPassword": "Ugyldig adgangskode"
+                                }
+                            }
                         }
                     }
                 }
