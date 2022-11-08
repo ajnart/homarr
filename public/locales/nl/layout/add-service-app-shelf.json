@@ -90,6 +90,22 @@
                                     "invalidPassword": "Ongeldig wachtwoord"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Gebruikersnaam",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Ongeldige gebruikersnaam"
+                                }
+                            },
+                            "password": {
+                                "label": "Wachtwoord",
+                                "placeholder": "wachtwoord",
+                                "validation": {
+                                    "invalidPassword": "Ongeldig wachtwoord"
+                                }
+                            }
                         }
                     }
                 }
