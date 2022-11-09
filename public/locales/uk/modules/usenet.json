@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Дозволяє вам бачити вашу чергу та історію в usenet (Sabnzbd або NZBGet), керувати завантаженнями"
   },
   "card": {
     "errors": {
