@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "קבוצת דיון",
-    "description": ""
+    "description": "מאפשר צפייה בהיסטוריה, תור ההורדות, עצירה וחידוש הורדות בקבוצות הדיון (Sabnzbd או NZBGet)"
   },
   "card": {
     "errors": {
