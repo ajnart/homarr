@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Accordion,
-  Divider,
-  Grid,
-  Paper,
-  Stack,
-  Text,
-  Title,
-  useMantineColorScheme,
-} from '@mantine/core';
+import { Accordion, Grid, Paper, Stack, Text, useMantineColorScheme } from '@mantine/core';
 import {
   closestCenter,
   DndContext,
@@ -202,7 +193,7 @@ const AppShelf = (props: any) => {
               <Accordion.Control>{t('accordions.downloads.text')}</Accordion.Control>
               <Accordion.Panel>
                 <Paper radius="lg" style={{ position: 'relative' }}>
-                      {torrentEnabled && (
+                  {torrentEnabled && (
                     <>
                       <Text>{t('accordions.downloads.torrents')}</Text>
                       <ModuleMenu module={TorrentsModule} hovered />

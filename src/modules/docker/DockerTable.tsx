@@ -1,12 +1,4 @@
-import {
-  Table,
-  Checkbox,
-  Group,
-  Badge,
-  createStyles,
-  ScrollArea,
-  TextInput,
-} from '@mantine/core';
+import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';

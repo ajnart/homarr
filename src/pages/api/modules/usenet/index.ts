@@ -47,7 +47,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
         const nzbGet = NzbgetClient(options);
 
-        const nzbgetStatus:NzbgetStatus = await new Promise((resolve, reject) => {
+        const nzbgetStatus: NzbgetStatus = await new Promise((resolve, reject) => {
           nzbGet.status((err: any, result: NzbgetStatus) => {
             if (!err) {
               resolve(result);

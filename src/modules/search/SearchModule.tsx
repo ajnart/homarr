@@ -158,16 +158,24 @@ export default function SearchBar(props: any) {
           form.setValues({ query: '' });
           switch (query.substring(0, 3)) {
             case '!yt':
-              window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`, open_in);
+              window.open(
+                `https://www.youtube.com/results?search_query=${query.substring(3)}`,
+                open_in
+              );
               break;
             case '!t ':
-              window.open(`https://www.torrentdownloads.me/search/?search=${query.substring(3)}`, open_in);
+              window.open(
+                `https://www.torrentdownloads.me/search/?search=${query.substring(3)}`,
+                open_in
+              );
               break;
             case '!os':
               break;
             default:
               window.open(
-                `${queryUrl.includes('%s') ? queryUrl.replace('%s', query) : `${queryUrl}${query}`}`,
+                `${
+                  queryUrl.includes('%s') ? queryUrl.replace('%s', query) : `${queryUrl}${query}`
+                }`,
                 open_in
               );
               break;

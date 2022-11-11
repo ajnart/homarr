@@ -48,7 +48,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
         const nzbGet = NzbgetClient(options);
 
-        const nzbgetQueue:NzbgetQueueItem[] = await new Promise((resolve, reject) => {
+        const nzbgetQueue: NzbgetQueueItem[] = await new Promise((resolve, reject) => {
           nzbGet.listGroups((err: any, result: NzbgetQueueItem[]) => {
             if (!err) {
               resolve(result);
@@ -62,7 +62,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           throw new Error('Error while getting NZBGet queue');
         }
 
-        const nzbgetStatus:NzbgetStatus = await new Promise((resolve, reject) => {
+        const nzbgetStatus: NzbgetStatus = await new Promise((resolve, reject) => {
           nzbGet.status((err: any, result: NzbgetStatus) => {
             if (!err) {
               resolve(result);
@@ -139,7 +139,7 @@ function getNzbgetState(status: string) {
     case 'QUEUED':
       return 'queued';
     case 'PAUSED ':
-        return 'paused';
+      return 'paused';
     default:
       return 'downloading';
   }
