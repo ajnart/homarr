@@ -98,7 +98,7 @@ const useJson = (targetUrl: string, url: string) => {
 
   const doRequest = async () => {
     try {
-      const resp = await axios.get('/api/modules/dashdot',{ params: { url, base: targetUrl } });
+      const resp = await axios.get('/api/modules/dashdot', { params: { url, base: targetUrl } });
 
       setData(resp.data);
       // eslint-disable-next-line no-empty

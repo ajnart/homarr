@@ -48,7 +48,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
         const nzbGet = NzbgetClient(options);
 
-        const nzbgetHistory:NzbgetHistoryItem[] = await new Promise((resolve, reject) => {
+        const nzbgetHistory: NzbgetHistoryItem[] = await new Promise((resolve, reject) => {
           nzbGet.history(false, (err: any, result: NzbgetHistoryItem[]) => {
             if (!err) {
               resolve(result);

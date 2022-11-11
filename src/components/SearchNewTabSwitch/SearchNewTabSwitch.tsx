@@ -49,11 +49,7 @@ export function SearchNewTabSwitch() {
   return (
     <Group>
       <div className={classes.root}>
-        <Switch
-          checked={openInNewTab}
-          onChange={() => toggleOpenInNewTab()}
-          size="md"
-        />
+        <Switch checked={openInNewTab} onChange={() => toggleOpenInNewTab()} size="md" />
       </div>
       {t('searchNewTab.label')}
     </Group>

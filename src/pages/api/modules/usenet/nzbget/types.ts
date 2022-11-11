@@ -25,9 +25,9 @@ export interface NzbgetHistoryItem {
   DownloadTimeSec: number;
   PostTotalTimeSec: number;
   ParTimeSec: number;
-  RepairTimeSec: number
+  RepairTimeSec: number;
   UnpackTimeSec: number;
-  MessageCount:number;
+  MessageCount: number;
   DupeKey: string;
   DupeScore: number;
   DupeMode: 'SCORE' | 'ALL' | 'FORCE';
@@ -71,7 +71,21 @@ export interface NzbgetQueueItem {
   MaxPostTime: number;
   MaxPriority: number;
   ActiveDownloads: number;
-  Status: 'QUEUED' | 'PAUSED' | 'DOWNLOADING' | 'FETCHING' | 'PP_QUEUED' | 'LOADING_PARS' | 'VERIFYING_SOURCES' | 'REPAIRING' | 'VERIFYING_REPAIRED' | 'RENAMING' | 'UNPACKING' | 'MOVING' | 'EXECUTING_SCRIPT' | 'PP_FINISHED';
+  Status:
+    | 'QUEUED'
+    | 'PAUSED'
+    | 'DOWNLOADING'
+    | 'FETCHING'
+    | 'PP_QUEUED'
+    | 'LOADING_PARS'
+    | 'VERIFYING_SOURCES'
+    | 'REPAIRING'
+    | 'VERIFYING_REPAIRED'
+    | 'RENAMING'
+    | 'UNPACKING'
+    | 'MOVING'
+    | 'EXECUTING_SCRIPT'
+    | 'PP_FINISHED';
   TotalArticles: number;
   SuccessArticles: number;
   FailedArticles: number;
@@ -128,8 +142,8 @@ export interface NzbgetStatus {
 }
 
 export interface NzbgetClientOptions {
-  host: string,
-  port: string,
-  login: string | undefined,
-  hash: string | undefined,
+  host: string;
+  port: string;
+  login: string | undefined;
+  hash: string | undefined;
 }

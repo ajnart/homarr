@@ -14,7 +14,7 @@ export interface IModule {
   padding?: PaddingOptions = {
     right: 15,
     top: 15,
-  },
+  };
 }
 
 interface PaddingOptions {

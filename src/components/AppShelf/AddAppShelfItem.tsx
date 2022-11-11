@@ -308,7 +308,9 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
                       target="_blank"
                       weight="bold"
                       style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
-                      href={`${hostname}/${apiKeyPaths[form.values.type as keyof typeof apiKeyPaths]}`}
+                      href={`${hostname}/${
+                        apiKeyPaths[form.values.type as keyof typeof apiKeyPaths]
+                      }`}
                     >
                       {t('modal.tabs.options.form.integrations.apiKey.tip.link')}
                     </Anchor>
