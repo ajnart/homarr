@@ -1,11 +1,11 @@
 {
   "actions": {
-    "save": ""
+    "save": "Сохранить"
   },
-  "tip": "",
+  "tip": "Совет: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "секунды",
+    "minutes": "минут",
+    "hours": "часы"
   }
 }

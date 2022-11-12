@@ -1,0 +1,27 @@
+{
+  "title": "Chào mừng quay trở lại!",
+  "text": "Vui lòng nhập mật khẩu",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "Mật khẩu",
+        "placeholder": "Mật khẩu của bạn"
+      }
+    },
+    "buttons": {
+      "submit": "Đăng nhập"
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "Đang kiểm tra mật khẩu",
+      "message": "Mật khẩu của bạn đang được kiểm tra..."
+    },
+    "correct": {
+      "title": "Mật khẩu chính xác, đang điều hướng..."
+    },
+    "wrong": {
+      "title": "Sai mật khẩu, xin hãy thử lại."
+    }
+  }
+}

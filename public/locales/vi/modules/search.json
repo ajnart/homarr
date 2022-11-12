@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Thanh tìm kiếm",
+    "description": "Thanh tìm kiếm để tìm trên web, Youtube, torrent hoặc Overseerr"
+  },
+  "input": {
+    "placeholder": "Tìm kiếm trên web..."
+  }
+}

@@ -90,6 +90,22 @@
                                     "invalidPassword": "Contraseña Incorrecta"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Nombre de usuario",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Nombre de usuario incorrecto"
+                                }
+                            },
+                            "password": {
+                                "label": "Contraseña",
+                                "placeholder": "contraseña",
+                                "validation": {
+                                    "invalidPassword": "Contraseña Incorrecta"
+                                }
+                            }
                         }
                     }
                 }

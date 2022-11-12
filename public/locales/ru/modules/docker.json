@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Позволяет легко управлять контейнерами docker"
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Поиск по имени контейнера или изображения"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Имя",
+      "image": "Изображение",
+      "ports": "Порты",
+      "state": "Государство"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} больше"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Бег",
+      "created": "Создано",
+      "stopped": "Остановлено",
+      "unknown": "Неизвестно"
     }
   },
   "actionBar": {
     "addService": {
       "title": "Добавить сервис",
-      "message": ""
+      "message": "Добавить услугу в Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Перезапустить"
     },
     "stop": {
-      "title": ""
+      "title": "Остановить"
     },
     "start": {
-      "title": ""
+      "title": "Начало"
     },
     "refreshData": {
-      "title": ""
+      "title": "Обновить данные"
     },
     "remove": {
-      "title": ""
+      "title": "Удалить"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Добавить в Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Начало",
+      "end": "Начало"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Остановка",
+      "end": "Остановлено"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Перезапуск",
+      "end": "Перезапущен"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Удаление",
+      "end": "Удалено"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Сбой интеграции Docker",
+      "message": "Вы забыли смонтировать сокет docker?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Произошла ошибка"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Пожалуйста, добавляйте только одну услугу за один раз!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }

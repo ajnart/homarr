@@ -90,6 +90,22 @@
                                     "invalidPassword": "Neveljavno geslo"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Uporabniško ime",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Neveljavno uporabniško ime"
+                                }
+                            },
+                            "password": {
+                                "label": "Geslo",
+                                "placeholder": "geslo",
+                                "validation": {
+                                    "invalidPassword": "Neveljavno geslo"
+                                }
+                            }
                         }
                     }
                 }

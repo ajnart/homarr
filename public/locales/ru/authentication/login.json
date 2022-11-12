@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "С возвращением!",
+  "text": "Пожалуйста, введите пароль",
   "form": {
     "fields": {
       "password": {
         "label": "Пароль",
-        "placeholder": ""
+        "placeholder": "Ваш пароль"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Войти"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Проверка пароля",
+      "message": "Ваш пароль проверяется..."
     },
     "correct": {
-      "title": ""
+      "title": "Пароль верный, перенаправляет вас..."
     },
     "wrong": {
-      "title": ""
+      "title": "Пароль неверный, попробуйте еще раз."
     }
   }
 }

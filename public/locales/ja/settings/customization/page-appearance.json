@@ -4,16 +4,13 @@
     "placeholder": "ホーマー"
   },
   "logo": {
-    "label": "ロゴマーク",
-    "placeholder": "/img/logo.png"
+    "label": "ロゴマーク"
   },
   "favicon": {
-    "label": "ファビコン",
-    "placeholder": "/imgs/favicon/favicon.png"
+    "label": "Favicon"
   },
   "background": {
-    "label": "背景",
-    "placeholder": "/img/background.png"
+    "label": "背景"
   },
   "customCSS": {
     "label": "カスタムCSS",

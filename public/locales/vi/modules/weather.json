@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Thời tiết",
+    "description": "Kiểm tra thời tiết hiện tại theo khu vực của bạn",
+    "settings": {
+      "displayInFahrenheit": {
+        "label": "Hiển thị bằng Fahrenheit"
+      },
+      "location": {
+        "label": "Vị trí thời tiết"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Nhiều nắng",
+      "mainlyClear": "Nắng nhẹ",
+      "fog": "Sương mù",
+      "drizzle": "Mưa phùn",
+      "freezingDrizzle": "Mưa phùn đông đá",
+      "rain": "Mưa",
+      "freezingRain": "Mưa băng",
+      "snowFall": "Tuyết rơi",
+      "snowGrains": "Có hạt tuyết",
+      "rainShowers": "Mưa rào",
+      "snowShowers": "Mưa tuyết",
+      "thunderstorm": "Bão",
+      "thunderstormWithHail": "Sấm sét kèm mưa đá",
+      "unknown": "Không xác định"
+    }
+  }
+}

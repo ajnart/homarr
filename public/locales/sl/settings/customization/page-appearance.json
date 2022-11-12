@@ -4,16 +4,13 @@
     "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "Logotip",
-    "placeholder": "/img/logo.png"
+    "label": "Logotip"
   },
   "favicon": {
-    "label": "Favicon",
-    "placeholder": "/imgs/favicon/favicon.png"
+    "label": "Favicon"
   },
   "background": {
-    "label": "Ozadje",
-    "placeholder": "/img/background.png"
+    "label": "Ozadje"
   },
   "customCSS": {
     "label": "Po meri CSS",

@@ -90,6 +90,22 @@
                                     "invalidPassword": "Senha inválida"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Usuário",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Usuário inválido"
+                                }
+                            },
+                            "password": {
+                                "label": "Senha",
+                                "placeholder": "senha",
+                                "validation": {
+                                    "invalidPassword": "Senha inválida"
+                                }
+                            }
                         }
                     }
                 }

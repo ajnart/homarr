@@ -1,0 +1,134 @@
+{
+    "actionIcon": {
+        "tooltip": "Thêm một dịch vụ"
+    },
+    "modal": {
+        "title": "Thêm dịch vụ",
+        "form": {
+            "validation": {
+                "invalidUrl": "Vui lòng nhập một URL hợp lệ",
+                "noStatusCodeSelected": "Vui lòng chọn một mã trạng thái"
+            }
+        },
+        "tabs": {
+            "options": {
+                "title": "Tùy chọn",
+                "form": {
+                    "serviceName": {
+                        "label": "Tên dịch vụ",
+                        "placeholder": "Plex"
+                    },
+                    "iconUrl": {
+                        "label": "ULR biểu tượng"
+                    },
+                    "serviceUrl": {
+                        "label": "URL dịch vụ"
+                    },
+                    "onClickUrl": {
+                        "label": "URL khi nhấp chuột"
+                    },
+                    "serviceType": {
+                        "label": "Loại dịch vụ",
+                        "defaultValue": "Khác",
+                        "placeholder": "Chọn một"
+                    },
+                    "category": {
+                        "label": "Phân loại",
+                        "placeholder": "Chọn một phân loại hoặc tạo mới",
+                        "nothingFound": "Không tìm thấy",
+                        "createLabel": "+ Tạo {{query}}"
+                    },
+                    "integrations": {
+                        "apiKey": {
+                            "label": "Khoá API",
+                            "placeholder": "Khóa API của bạn",
+                            "validation": {
+                                "noKey": "Khóa không hợp lệ"
+                            },
+                            "tip": {
+                                "text": "Nhận khóa API",
+                                "link": "ở đây."
+                            }
+                        },
+                        "qBittorrent": {
+                            "username": {
+                                "label": "Tên người dùng",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Tên người dùng không hợp lệ"
+                                }
+                            },
+                            "password": {
+                                "label": "Mật khẩu",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
+                                }
+                            }
+                        },
+                        "deluge": {
+                            "password": {
+                                "label": "Mật khẩu",
+                                "placeholder": "mật_khẩu",
+                                "validation": {
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "username": {
+                                "label": "Tên người dùng",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Tên người dùng không hợp lệ"
+                                }
+                            },
+                            "password": {
+                                "label": "Mật khẩu",
+                                "placeholder": "adminadmin",
+                                "validation": {
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
+                                }
+                            }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Tên người dùng",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Tên người dùng không hợp lệ"
+                                }
+                            },
+                            "password": {
+                                "label": "Mật khẩu",
+                                "placeholder": "mật_khẩu",
+                                "validation": {
+                                    "invalidPassword": "Mật khẩu không hợp lệ"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "advancedOptions": {
+                "title": "Tùy chọn nâng cao",
+                "form": {
+                    "httpStatusCodes": {
+                        "label": "Mã trạng thái HTTP",
+                        "placeholder": "Chọn một mã trạng thái hợp lệ",
+                        "clearButtonLabel": "Xóa lựa chọn",
+                        "nothingFound": "Không tìm thấy"
+                    },
+                    "openServiceInNewTab": {
+                        "label": "Mở trong tab mới"
+                    },
+                    "buttons": {
+                        "submit": {
+                            "content": "Thêm dịch vụ"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

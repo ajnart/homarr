@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Tốc độ tải",
+    "description": "Hiển thị tốc độ tải xuống của các dịch vụ được hỗ trợ"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Tên",
+        "size": "Kích cỡ",
+        "download": "Tải xuống",
+        "upload": "Tải lên",
+        "estimatedTimeOfArrival": "Thời gian dự kiến",
+        "progress": "Tiến độ"
+      },
+      "body": {
+        "nothingFound": "Không tìm thấy torrent nào"
+      }
+    },
+    "lineChart": {
+      "title": "Tốc độ tải hiện tại",
+      "download": "Tải xuống: {{download}}",
+      "upload": "Tải lên: {{upload}}",
+      "timeSpan": "{{seconds}} giây trước",
+      "totalDownload": "Tải xuống: {{download}}/giây",
+      "totalUpload": "Tải lên: {{upload}}/giây"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Không tìm thấy ứng dụng tải xuống được hỗ trợ nào!",
+        "text": "Hãy thêm dịch vụ tải xuống để xem các bản tải xuống của bạn"
+      }
+    }
+  }
+}

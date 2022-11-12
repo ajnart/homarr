@@ -90,12 +90,28 @@
                                     "invalidPassword": "Неверный пароль"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Имя пользователя",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Неверное имя пользователя"
+                                }
+                            },
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "Введите пароль",
+                                "validation": {
+                                    "invalidPassword": "Неверный пароль"
+                                }
+                            }
                         }
                     }
                 }
             },
             "advancedOptions": {
-                "title": "",
+                "title": "Дополнительные параметры",
                 "form": {
                     "httpStatusCodes": {
                         "label": "Коды состояния HTTP",

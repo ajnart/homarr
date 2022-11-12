@@ -90,6 +90,22 @@
                                     "invalidPassword": "无效密码"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "用户名",
+                                "placeholder": "管理员",
+                                "validation": {
+                                    "invalidUsername": "无效的用户名"
+                                }
+                            },
+                            "password": {
+                                "label": "密码",
+                                "placeholder": "密码",
+                                "validation": {
+                                    "invalidPassword": "无效密码"
+                                }
+                            }
                         }
                     }
                 }
