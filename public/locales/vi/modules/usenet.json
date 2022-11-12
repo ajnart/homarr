@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Cho phép bạn xem lịch sử và hàng chờ usenet (Sabnzbd hoặc NZBGet), cũng như tạm dừng và tiếp tục tải xuống"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Không tìm thấy ứng dụng tải xuống được hỗ trợ nào!",
+        "text": "Hãy thêm dịch vụ tải xuống để xem các bản tải xuống của bạn"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Chờ",
+    "history": "Lịch sử"
+  },
+  "info": {
+    "sizeLeft": "Kích cỡ còn lại",
+    "paused": "Tạm dừng"
+  },
+  "queue": {
+    "header": {
+      "name": "Tên",
+      "size": "Kích cỡ",
+      "eta": "Thời gian dự kiến",
+      "progress": "Tiến độ"
+    },
+    "empty": "Trống",
+    "error": {
+      "title": "Lỗi",
+      "message": "Có lỗi xảy ra"
+    },
+    "paused": "Tạm dừng"
+  },
+  "history": {
+    "header": {
+      "name": "Tên",
+      "size": "Kích cỡ",
+      "duration": "Thời lượng"
+    },
+    "empty": "Trống",
+    "error": {
+      "title": "Lỗi",
+      "message": "Lỗi khi tải lịch sử"
+    },
+    "paused": "Tạm dừng"
+  }
+}

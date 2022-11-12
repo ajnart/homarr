@@ -90,6 +90,22 @@
                                     "invalidPassword": "סיסמה שגויה"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "שם משתמש",
+                                "placeholder": "מנהל מערכת",
+                                "validation": {
+                                    "invalidUsername": "שם משתמש לא חוקי"
+                                }
+                            },
+                            "password": {
+                                "label": "סיסמה",
+                                "placeholder": "סיסמה",
+                                "validation": {
+                                    "invalidPassword": "סיסמה שגויה"
+                                }
+                            }
                         }
                     }
                 }

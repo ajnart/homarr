@@ -4,16 +4,13 @@
     "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "סמל",
-    "placeholder": "/img/logo.png"
+    "label": "סמל"
   },
   "favicon": {
-    "label": "אייקון לצד שם העמוד",
-    "placeholder": "/favicon.png"
+    "label": "אייקון לצד שם העמוד"
   },
   "background": {
-    "label": "רקע",
-    "placeholder": "/img/background.png"
+    "label": "רקע"
   },
   "customCSS": {
     "label": "CSS מותאם אישית",

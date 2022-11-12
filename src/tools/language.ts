@@ -25,6 +25,20 @@ export const languages: Language[] = [
     translatedName: 'English',
     emoji: '🇬🇧',
   },
+  // Danish
+  {
+    shortName: 'da',
+    originalName: 'Dansk',
+    translatedName: 'Danish',
+    emoji: '🇩🇰',
+  },
+  // Hebrew
+  {
+    shortName: 'he',
+    originalName: 'עברית',
+    translatedName: 'Hebrew',
+    emoji: '🇮🇱',
+  },
   {
     shortName: 'es',
     originalName: 'Español',
@@ -103,6 +117,13 @@ export const languages: Language[] = [
     originalName: 'Українська',
     translatedName: 'Ukrainian',
     emoji: '🇺🇦',
+  },
+  // Vietnamese
+  {
+    shortName: 'vi',
+    originalName: 'Tiếng Việt',
+    translatedName: 'Vietnamese',
+    emoji: '🇻🇳',
   },
   {
     shortName: 'zh',

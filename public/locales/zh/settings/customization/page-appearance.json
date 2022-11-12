@@ -4,16 +4,13 @@
     "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "徽标",
-    "placeholder": "/img/logo.png"
+    "label": "徽标"
   },
   "favicon": {
-    "label": "网站图标",
-    "placeholder": "/favicon.png"
+    "label": "网站图标"
   },
   "background": {
-    "label": "背景",
-    "placeholder": "/img/background.png"
+    "label": "背景"
   },
   "customCSS": {
     "label": "自定义CSS",

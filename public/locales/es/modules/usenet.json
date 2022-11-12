@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Sabnzbd",
-    "description": "Te permite ver tu cola e historial de Sabnzbd, pausar y resumir descargas"
+    "name": "Usenet",
+    "description": "Le permite ver la cola y el historial de usenet (Sabnzbd o NZBGet), pausar y reanudar las descargas"
   },
   "card": {
     "errors": {

@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Cho phép bạn dễ dàng quản lý các khoang chứa docker"
+  },
+  "search": {
+    "placeholder": "Tìm kiếm bằng tên khoang chứa hoặc tên hình ảnh"
+  },
+  "table": {
+    "header": {
+      "name": "Tên",
+      "image": "Hình ảnh",
+      "ports": "Cổng",
+      "state": "Trạng thái"
+    },
+    "body": {
+      "portCollapse": "còn {{ports}}"
+    },
+    "states": {
+      "running": "Đang chạy",
+      "created": "Đã tạo",
+      "stopped": "Đã dừng",
+      "unknown": "Không rõ"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Thêm dịch vụ",
+      "message": "Thêm dịch vụ vào Homarr"
+    },
+    "restart": {
+      "title": "Khởi động lại"
+    },
+    "stop": {
+      "title": "Dừng"
+    },
+    "start": {
+      "title": "Bắt đầu"
+    },
+    "refreshData": {
+      "title": "Làm mới dữ liệu"
+    },
+    "remove": {
+      "title": "Xóa"
+    },
+    "addToHomarr": {
+      "title": "Thêm vào Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Đang bắt đầu",
+      "end": "Đã bắt đầu"
+    },
+    "stop": {
+      "start": "Đang dừng",
+      "end": "Đã dừng"
+    },
+    "restart": {
+      "start": "Đang khởi động lại",
+      "end": "Đã khởi động lại"
+    },
+    "remove": {
+      "start": "Đang xoá",
+      "end": "Đã xoá"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Tích hợp Docker thất bại",
+      "message": "Có phải bạn quên gắn ổ cắm docker không?"
+    },
+    "unknownError": {
+      "title": "Có lỗi xảy ra"
+    },
+    "oneServiceAtATime": {
+      "title": "Vui lòng chỉ thêm từng dịch vụ một!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

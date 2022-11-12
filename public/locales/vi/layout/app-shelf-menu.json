@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "title": "Chỉnh sửa dịch vụ",
+    "buttons": {
+      "save": "Lưu dịch vụ"
+    }
+  },
+  "menu": {
+    "labels": {
+      "settings": "Cài đặt",
+      "dangerZone": "Khu vực nguy hiểm"
+    },
+    "actions": {
+      "edit": "Sửa",
+      "delete": "Xóa"
+    }
+  }
+}

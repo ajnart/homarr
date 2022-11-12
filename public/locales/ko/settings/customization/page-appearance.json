@@ -4,16 +4,13 @@
     "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "로고",
-    "placeholder": "/img/logo.png"
+    "label": "로고"
   },
   "favicon": {
-    "label": "파비콘",
-    "placeholder": "/favicon.png"
+    "label": "Favicon"
   },
   "background": {
-    "label": "배경",
-    "placeholder": "/img/background.png"
+    "label": "배경"
   },
   "customCSS": {
     "label": "커스텀 CSS",

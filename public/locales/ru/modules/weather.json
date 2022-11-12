@@ -21,12 +21,12 @@
       "rain": "Дождь",
       "freezingRain": "Ледяной дождь",
       "snowFall": "Снегопад",
-      "snowGrains": "",
+      "snowGrains": "Снежные зерна",
       "rainShowers": "Ливневый дождь",
       "snowShowers": "Пурга",
       "thunderstorm": "Гроза",
       "thunderstormWithHail": "Гроза с градом",
-      "unknown": ""
+      "unknown": "Неизвестно"
     }
   }
 }

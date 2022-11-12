@@ -1,55 +1,55 @@
 {
   "configSelect": {
-    "label": ""
+    "label": "Загрузчик конфигурации"
   },
   "modal": {
-    "title": "",
+    "title": "Выберите имя новой конфигурации",
     "form": {
       "configName": {
-        "label": "",
-        "placeholder": ""
+        "label": "Имя конфигурации",
+        "placeholder": "Имя вашей новой конфигурации"
       },
-      "submitButton": ""
+      "submitButton": "Подтвердить"
     },
     "events": {
       "configSaved": {
-        "title": "",
-        "message": ""
+        "title": "Конфигурация сохранена",
+        "message": "Конфигурация сохранена как {{configName}}"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Загрузить конфигурацию",
     "delete": {
-      "text": "",
+      "text": "Удалить конфигурацию",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Конфигурация удалена",
+          "message": "Конфигурация удалена"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Не удалось удалить конфигурацию",
+          "message": "Не удалось удалить конфигурацию"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Сохранить копию"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Невозможно загрузить конфигурацию",
+        "message": "Не удалось загрузить вашу конфигурацию. Неверный формат JSON."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Конфигурация {{configName}} успешно загружена"
       }
     },
     "accept": {
-      "text": ""
+      "text": "Перетащите файлы сюда, чтобы загрузить конфигурацию. Поддерживается только JSON."
     },
     "reject": {
-      "text": ""
+      "text": "Этот формат файла не поддерживается. Пожалуйста, загружайте только JSON."
     }
   }
 }

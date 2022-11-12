@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Пинг",
+    "description": "Позволяет проверить, работает ли служба или возвращает определенный код состояния HTTP."
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "Онлайн {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Загрузка..."
   }
 }

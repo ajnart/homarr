@@ -90,6 +90,22 @@
                                     "invalidPassword": "Nieprawidłowe hasło"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Nazwa użytkownika",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Nieprawidłowa nazwa użytkownika"
+                                }
+                            },
+                            "password": {
+                                "label": "Hasło",
+                                "placeholder": "hasło",
+                                "validation": {
+                                    "invalidPassword": "Nieprawidłowe hasło"
+                                }
+                            }
                         }
                     }
                 }

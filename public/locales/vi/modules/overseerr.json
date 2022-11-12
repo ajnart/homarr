@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Cho phép bạn tìm và thêm phương tiện truyền thông từ Overseerr/Jellyseerr"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Yêu cầu {{title}}",
+        "cancel": "Hủy",
+        "request": "Yêu cầu"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Dùng khoá API",
+          "text": "Yêu cầu này sẽ được tự động phê duyệt"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Đánh dấu các mùa bạn muốn tải về",
+      "table": {
+        "header": {
+          "season": "Mùa",
+          "numberOfEpisodes": "Số tập"
+        }
+      }
+    }
+  }
+}

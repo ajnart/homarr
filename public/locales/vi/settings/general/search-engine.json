@@ -1,0 +1,14 @@
+{
+  "title": "Công cụ tìm kiếm",
+  "tips": {
+    "generalTip": "Sử dụng các tiền tố !yt và !t trước truy vấn để tìm kiếm trên YouTube hoặc torrent.",
+    "placeholderTip": "%s có thể được sử dụng làm phần giữ chỗ cho truy vấn."
+  },
+  "customEngine": {
+    "label": "URL truy vấn",
+    "placeholder": "URL truy vấn tuỳ chỉnh"
+  },
+  "searchNewTab": {
+    "label": "Mở kết quả tìm kiếm trong tab mới"
+  }
+}

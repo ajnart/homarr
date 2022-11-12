@@ -90,6 +90,22 @@
                                     "invalidPassword": "Невірний пароль"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Логін",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Невірний логін"
+                                }
+                            },
+                            "password": {
+                                "label": "Пароль",
+                                "placeholder": "пароль",
+                                "validation": {
+                                    "invalidPassword": "Невірний пароль"
+                                }
+                            }
                         }
                     }
                 }

@@ -14,7 +14,7 @@ function Post(req: NextApiRequest, res: NextApiResponse) {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  // Filter out if the reuqest is a POST or a GET
+  // Filter out if the request is a POST or a GET
   if (req.method === 'POST') {
     return Post(req, res);
   }

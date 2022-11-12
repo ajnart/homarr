@@ -8,8 +8,8 @@
       "header": {
         "name": "Nom",
         "size": "Taille",
-        "download": "Duvet",
-        "upload": "Up",
+        "download": "Descendant",
+        "upload": "Montant",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Progrès"
       },

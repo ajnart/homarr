@@ -11,7 +11,7 @@ export interface Settings {
   secondaryColor?: MantineTheme['primaryColor'];
   primaryShade?: MantineTheme['primaryShade'];
   background?: string;
-  customCSS?: string,
+  customCSS?: string;
   appOpacity?: number;
   widgetPosition?: string;
   appCardWidth?: number;
@@ -76,6 +76,7 @@ export const ServiceTypeList = [
   'Overseerr',
   'Jellyseerr',
   'Sabnzbd',
+  'NZBGet',
 ];
 export type ServiceType =
   | 'Other'
@@ -91,7 +92,8 @@ export type ServiceType =
   | 'Overseerr'
   | 'Jellyseerr'
   | 'Transmission'
-  | 'Sabnzbd';
+  | 'Sabnzbd'
+  | 'NZBGet';
 
 export function tryMatchPort(name: string | undefined, form?: any) {
   if (!name) {
@@ -118,6 +120,7 @@ export const portmap = [
   { name: 'overseerr', value: '5055' },
   { name: 'dash.', value: '3001' },
   { name: 'sabnzbd', value: '8080' },
+  { name: 'nzbget', value: '6789' },
 ];
 
 export const MatchingImages: {

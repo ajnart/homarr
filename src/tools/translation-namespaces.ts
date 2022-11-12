@@ -30,6 +30,4 @@ export const dashboardNamespaces = [
   'modules/common-media-cards',
 ];
 
-export const loginNamespaces = [
-  'authentication/login',
-];
+export const loginNamespaces = ['authentication/login'];

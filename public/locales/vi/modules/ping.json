@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Giúp bạn kiểm tra nếu dịch vụ đang hoạt động hoặc trả lại một mã trạng thái HTTP cụ thể."
+  },
+  "states": {
+    "online": "Trực tuyến {{response}}",
+    "offline": "Ngoại tuyến {{response}}",
+    "loading": "Đang tải..."
+  }
+}

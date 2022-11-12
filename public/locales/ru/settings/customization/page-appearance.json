@@ -1,25 +1,22 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "Название страницы",
+    "placeholder": "Хомарр 🦞"
   },
   "logo": {
-    "label": "",
-    "placeholder": ""
+    "label": "Логотип"
   },
   "favicon": {
-    "label": "",
-    "placeholder": ""
+    "label": "Фавикон"
   },
   "background": {
-    "label": "",
-    "placeholder": ""
+    "label": "Справочная информация"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "Пользовательский CSS",
+    "placeholder": "Пользовательский CSS будет выполняться в последнюю очередь"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Отправить"
   }
 }

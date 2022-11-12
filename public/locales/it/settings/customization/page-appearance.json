@@ -4,16 +4,13 @@
     "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "Logo",
-    "placeholder": "/img/logo.png"
+    "label": "Logo"
   },
   "favicon": {
-    "label": "Favicon",
-    "placeholder": "/favicon.png"
+    "label": "Favicon"
   },
   "background": {
-    "label": "Sfondo",
-    "placeholder": "/img/sfondo.png"
+    "label": "Sfondo"
   },
   "customCSS": {
     "label": "CSS personalizzato",

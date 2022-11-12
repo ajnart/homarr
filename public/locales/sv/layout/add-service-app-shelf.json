@@ -90,6 +90,22 @@
                                     "invalidPassword": "Ogiltigt lösenord"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Användarnamn",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Ogiltigt användarnamn"
+                                }
+                            },
+                            "password": {
+                                "label": "Lösenord",
+                                "placeholder": "lösenord",
+                                "validation": {
+                                    "invalidPassword": "Ogiltigt lösenord"
+                                }
+                            }
                         }
                     }
                 }

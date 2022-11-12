@@ -47,22 +47,22 @@ export default function TitleChanger() {
         <Stack>
           <TextInput
             label={t('pageTitle.label')}
-            placeholder={t('pageTitle.placeholder')}
+            placeholder="Homarr 🦞"
             {...form.getInputProps('title')}
           />
           <TextInput
             label={t('logo.label')}
-            placeholder={t('logo.placeholder')}
+            placeholder="/imgs/logo.png"
             {...form.getInputProps('logo')}
           />
           <TextInput
             label={t('favicon.label')}
-            placeholder={t('favicon.placeholder')}
+            placeholder="/imgs/favicon/favicon.png"
             {...form.getInputProps('favicon')}
           />
           <TextInput
             label={t('background.label')}
-            placeholder={t('background.placeholder')}
+            placeholder="/img/background.png"
             {...form.getInputProps('background')}
           />
           <Textarea

@@ -1,0 +1,22 @@
+{
+  "pageTitle": {
+    "label": "Tiêu đề trang",
+    "placeholder": "Homarr 🦞"
+  },
+  "logo": {
+    "label": "Logo"
+  },
+  "favicon": {
+    "label": "Favicon"
+  },
+  "background": {
+    "label": "Hình nền"
+  },
+  "customCSS": {
+    "label": "CSS tuỳ chỉnh",
+    "placeholder": "CSS tùy chỉnh sẽ được áp dụng sau cùng"
+  },
+  "buttons": {
+    "submit": "Gửi"
+  }
+}

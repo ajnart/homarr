@@ -4,16 +4,12 @@
     "placeholder": "Homarr 🦞"
   },
   "logo": {
-    "label": "Логотип",
-    "placeholder": "/img/logo.png"
+    "label": "Логотип"
   },
   "favicon": {
-    "label": "Іконка",
-    "placeholder": "/favicon.png"
-  },
+    "label": "Іконка"
   "background": {
-    "label": "Фон",
-    "placeholder": "/img/background.png"
+    "label": "Фон"
   },
   "customCSS": {
     "label": "Власний CSS",

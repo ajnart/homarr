@@ -90,6 +90,22 @@
                                     "invalidPassword": "Password non valida"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "Nome utente",
+                                "placeholder": "admin",
+                                "validation": {
+                                    "invalidUsername": "Nome utente non valido"
+                                }
+                            },
+                            "password": {
+                                "label": "Password",
+                                "placeholder": "password",
+                                "validation": {
+                                    "invalidPassword": "Password non valida"
+                                }
+                            }
                         }
                     }
                 }

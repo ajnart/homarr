@@ -2,8 +2,8 @@
   "accordions": {
     "downloads": {
       "text": "Ваши загрузки",
-      "torrents": "",
-      "usenet": ""
+      "torrents": "Ваши торрент-загрузки",
+      "usenet": "Ваши загрузки Usenet"
     },
     "others": {
       "text": "Другое"

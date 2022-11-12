@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Sabnzbd",
-    "description": "מאפשר צפייה בהיסטוריה ותור ההורדות, עצירה וחידוש הורדות"
+    "description": "מאמאפשר לך לראות את התור וההיסטוריה של usenet (Sabnzbd או NZBGet), להשהות ולחדש הורדות"
   },
   "card": {
     "errors": {

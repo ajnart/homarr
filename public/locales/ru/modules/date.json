@@ -1,10 +1,10 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Дата",
+    "description": "Показать текущее время и дату в карточке",
     "settings": {
       "display24HourFormat": {
-        "label": ""
+        "label": "Отображение полного времени (24 часа)"
       }
     }
   }

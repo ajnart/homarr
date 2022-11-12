@@ -1,11 +1,11 @@
 import React from 'react';
-import { PasswordInput, Anchor, Paper, Title, Text, Container, Group, Button } from '@mantine/core';
+import { PasswordInput, Paper, Title, Text, Container, Group, Button } from '@mantine/core';
 import { setCookie } from 'cookies-next';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';
 import { IconCheck, IconX } from '@tabler/icons';
 import { useRouter } from 'next/router';
-import { Trans, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import { useForm } from '@mantine/form';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { loginNamespaces } from '../tools/translation-namespaces';

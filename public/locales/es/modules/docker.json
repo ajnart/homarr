@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Le permite manejar sus contenedores Docker de manera sencilla"
+    "description": "Permite administrar sus contenedores docker de manera sencilla"
   },
   "search": {
     "placeholder": "Buscar por nombre de contenedor o nombre de imagen"

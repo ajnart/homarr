@@ -90,6 +90,22 @@
                                     "invalidPassword": "パスワードが無効です"
                                 }
                             }
+                        },
+                        "nzbget": {
+                            "username": {
+                                "label": "ユーザー名",
+                                "placeholder": "アドミン",
+                                "validation": {
+                                    "invalidUsername": "ユーザー名が無効です"
+                                }
+                            },
+                            "password": {
+                                "label": "パスワード",
+                                "placeholder": "暗証番号",
+                                "validation": {
+                                    "invalidPassword": "パスワードが無効です"
+                                }
+                            }
                         }
                     }
                 }

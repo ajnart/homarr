@@ -1,0 +1,53 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Một mô-đun để hiển thị biểu đồ cho quá trình Dash. của bạn.",
+    "settings": {
+      "cpuMultiView": {
+        "label": "Chế độ hiện đa nhân CPU"
+      },
+      "storageMultiView": {
+        "label": "Chế độ hiện đa ổ đĩa"
+      },
+      "useCompactView": {
+        "label": "Dùng chế độ thu gọn"
+      },
+      "graphs": {
+        "label": "Biểu đồ"
+      },
+      "url": {
+        "label": "URL của Dash."
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Dịch vụ Dash. không được tìm thấy. Vui lòng thêm nó vào bảng Homarr của bạn hoặc thiết lập một đường dẫn Dash. trong tuỳ chọn của mô-đun",
+      "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Bộ nhớ",
+        "label": "Bộ nhớ:"
+      },
+      "network": {
+        "title": "Mạng",
+        "label": "Mạng:",
+        "metrics": {
+          "download": "Tải xuống",
+          "upload": "Tải lên"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

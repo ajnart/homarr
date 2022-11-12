@@ -83,7 +83,7 @@ function MatchService(name: string, form: any) {
   }
 }
 
-const DEFAULT_ICON = '/favicon.png';
+const DEFAULT_ICON = '/imgs/favicon/favicon.png';
 
 interface AddAppShelfItemFormProps {
   setOpened: (b: boolean) => void;
@@ -308,7 +308,9 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
                       target="_blank"
                       weight="bold"
                       style={{ fontStyle: 'inherit', fontSize: 'inherit' }}
-                      href={`${hostname}/${apiKeyPaths[form.values.type as keyof typeof apiKeyPaths]}`}
+                      href={`${hostname}/${
+                        apiKeyPaths[form.values.type as keyof typeof apiKeyPaths]
+                      }`}
                     >
                       {t('modal.tabs.options.form.integrations.apiKey.tip.link')}
                     </Anchor>
@@ -402,6 +404,42 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
                       form.errors.password &&
                       t(
                         'modal.tabs.options.form.integrations.transmission.password.validation.invalidPassword'
+                      )
+                    }
+                  />
+                </>
+              )}
+              {form.values.type === 'NZBGet' && (
+                <>
+                  <TextInput
+                    label={t('modal.tabs.options.form.integrations.nzbget.username.label')}
+                    placeholder={t(
+                      'modal.tabs.options.form.integrations.nzbget.username.placeholder'
+                    )}
+                    value={form.values.username}
+                    onChange={(event) => {
+                      form.setFieldValue('username', event.currentTarget.value);
+                    }}
+                    error={
+                      form.errors.username &&
+                      t(
+                        'modal.tabs.options.form.integrations.nzbget.username.validation.invalidUsername'
+                      )
+                    }
+                  />
+                  <PasswordInput
+                    label={t('modal.tabs.options.form.integrations.nzbget.password.label')}
+                    placeholder={t(
+                      'modal.tabs.options.form.integrations.nzbget.password.placeholder'
+                    )}
+                    value={form.values.password}
+                    onChange={(event) => {
+                      form.setFieldValue('password', event.currentTarget.value);
+                    }}
+                    error={
+                      form.errors.password &&
+                      t(
+                        'modal.tabs.options.form.integrations.nzbget.password.validation.invalidPassword'
                       )
                     }
                   />
