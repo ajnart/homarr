@@ -1,8 +1,14 @@
 import React from 'react';
-import { createStyles, Switch, Group, useMantineColorScheme, Kbd } from '@mantine/core';
-import { IconSun as Sun, IconMoonStars as MoonStars } from '@tabler/icons';
+import {
+  createStyles,
+  Switch,
+  Group,
+  useMantineColorScheme,
+  Kbd,
+  useMantineTheme,
+} from '@mantine/core';
+import { IconMoonStars, IconSun } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { useConfig } from '../../tools/state';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -31,18 +37,18 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function ColorSchemeSwitch() {
-  const { config } = useConfig();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const { classes, cx } = useStyles();
   const { t } = useTranslation('settings/general/theme-selector');
-
+  const theme = useMantineTheme();
   return (
     <Group>
-      <div className={classes.root}>
-        <Sun className={cx(classes.icon, classes.iconLight)} size={18} />
-        <MoonStars className={cx(classes.icon, classes.iconDark)} size={18} />
-        <Switch checked={colorScheme === 'dark'} onChange={() => toggleColorScheme()} size="md" />
-      </div>
+      <Switch
+        checked={colorScheme === 'dark'}
+        onChange={() => toggleColorScheme()}
+        size="md"
+        onLabel={<IconSun color={theme.white} size={20} stroke={1.5} />}
+        offLabel={<IconMoonStars color={theme.colors.gray[6]} size={20} stroke={1.5} />}
+      />
       {t('label', {
         theme: colorScheme === 'dark' ? 'light' : 'dark',
       })}
