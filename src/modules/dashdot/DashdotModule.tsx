@@ -38,7 +38,7 @@ export const DashdotModule = asModule({
   id: 'dashdot',
 });
 
-const useStyles = createStyles((theme, _params) => ({
+const useStyles = createStyles((theme, _params, getRef) => ({
   heading: {
     marginTop: 0,
     marginBottom: 10,
@@ -72,6 +72,19 @@ const useStyles = createStyles((theme, _params) => ({
     borderRadius: theme.radius.lg,
     border: 'none',
     colorScheme: 'none',
+  },
+  graphTitle: {
+    ref: getRef('graphTitle'),
+    position: 'absolute',
+    right: 0,
+    opacity: 0,
+    transition: 'opacity .1s ease-in-out',
+    pointerEvents: 'none',
+  },
+  graphStack: {
+    [`&:hover .${getRef('graphTitle')}`]: {
+      opacity: 0.5,
+    },
   },
 }));
 
@@ -223,6 +236,7 @@ export function DashdotComponent() {
 
           {graphs.map((graph) => (
             <Stack
+              className={classes.graphStack}
               style={
                 isCompact
                   ? {
@@ -232,7 +246,7 @@ export function DashdotComponent() {
                   : undefined
               }
             >
-              <Title style={{ position: 'absolute', right: 0 }} order={4} mt={10} mr={25}>
+              <Title className={classes.graphTitle} order={4} mt={10} mr={25}>
                 {graph.name}
               </Title>
               <iframe
@@ -250,6 +264,7 @@ export function DashdotComponent() {
                         .join('&')}`
                     : ''
                 }`}
+                allowTransparency
               />
             </Stack>
           ))}
