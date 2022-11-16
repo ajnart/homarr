@@ -70,6 +70,8 @@ const useStyles = createStyles((theme, _params) => ({
     maxWidth: '100%',
     height: '140px',
     borderRadius: theme.radius.lg,
+    border: 'none',
+    colorScheme: 'none',
   },
 }));
 
@@ -248,7 +250,6 @@ export function DashdotComponent() {
                         .join('&')}`
                     : ''
                 }`}
-                frameBorder="0"
               />
             </Stack>
           ))}
