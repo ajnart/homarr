@@ -9,9 +9,9 @@ function Post(req: NextApiRequest, res: NextApiResponse) {
       success: true,
     });
   }
-  // Warn that there was a wrong password attempt (date : wrong password, password tried, person's IP)
+  // Warn that there was a wrong password attempt (date : wrong password, person's IP)
   Consola.warn(
-    `${new Date().toLocaleString()} : Wrong password attempt, tried ${tried}, from ${
+    `${new Date().toLocaleString()} : Wrong password attempt, from ${
       req.headers['x-forwarded-for']
     }`
   );
