@@ -1,4 +1,5 @@
 import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
@@ -26,6 +27,7 @@ export default function DockerTable({
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
+  const { ref, width, height } = useElementSize();
 
   const { t } = useTranslation('modules/docker');
 
@@ -67,28 +69,30 @@ export default function DockerTable({
           />
         </td>
         <td>{element.Names[0].replace('/', '')}</td>
-        <td>{element.Image}</td>
-        <td>
-          <Group>
-            {element.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
-              // Remove duplicates with filter function
-              .filter(
-                (port, index, self) =>
-                  index === self.findIndex((t) => t.PrivatePort === port.PrivatePort)
-              )
-              .slice(-3)
-              .map((port) => (
-                <Badge key={port.PrivatePort} variant="outline">
-                  {port.PrivatePort}:{port.PublicPort}
+        {width > 576 ? <td>{element.Image}</td> : null}
+        {width > 576 ? (
+          <td>
+            <Group>
+              {element.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
+                // Remove duplicates with filter function
+                .filter(
+                  (port, index, self) =>
+                    index === self.findIndex((t) => t.PrivatePort === port.PrivatePort)
+                )
+                .slice(-3)
+                .map((port) => (
+                  <Badge key={port.PrivatePort} variant="outline">
+                    {port.PrivatePort}:{port.PublicPort}
+                  </Badge>
+                ))}
+              {element.Ports.length > 3 && (
+                <Badge variant="filled">
+                  {t('table.body.portCollapse', { ports: element.Ports.length - 3 })}
                 </Badge>
-              ))}
-            {element.Ports.length > 3 && (
-              <Badge variant="filled">
-                {t('table.body.portCollapse', { ports: element.Ports.length - 3 })}
-              </Badge>
-            )}
-          </Group>
-        </td>
+              )}
+            </Group>
+          </td>
+        ) : null}
         <td>
           <ContainerState state={element.State} />
         </td>
@@ -106,7 +110,7 @@ export default function DockerTable({
         onChange={handleSearchChange}
         disabled={usedContainers.length === 0}
       />
-      <Table captionSide="bottom" highlightOnHover sx={{ minWidth: 800 }} verticalSpacing="sm">
+      <Table ref={ref} captionSide="bottom" highlightOnHover verticalSpacing="sm">
         <thead>
           <tr>
             <th style={{ width: 40 }}>
@@ -119,8 +123,8 @@ export default function DockerTable({
               />
             </th>
             <th>{t('table.header.name')}</th>
-            <th>{t('table.header.image')}</th>
-            <th>{t('table.header.ports')}</th>
+            {width > 576 ? <th>{t('table.header.image')}</th> : null}
+            {width > 576 ? <th>{t('table.header.ports')}</th> : null}
             <th>{t('table.header.state')}</th>
           </tr>
         </thead>

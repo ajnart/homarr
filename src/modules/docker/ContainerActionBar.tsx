@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Button, Group, TextInput, Title } from '@mantine/core';
-import { closeAllModals, closeModal, openModal } from '@mantine/modals';
+import { Button, Group } from '@mantine/core';
+import { closeModal, openModal } from '@mantine/modals';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
@@ -72,7 +72,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
   const { config, setConfig } = useConfig();
 
   return (
-    <Group>
+    <Group spacing="xs">
       <Button
         leftIcon={<IconRefresh />}
         onClick={() => {
