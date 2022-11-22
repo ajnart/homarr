@@ -1,11 +1,13 @@
 import axios from 'axios';
+import https from 'https';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   // Parse req.body as a ServiceItem
   const { url } = req.query;
+  const agent = new https.Agent({ rejectUnauthorized: false });
   await axios
-    .get(url as string)
+    .get(url as string, { httpsAgent: agent })
     .then((response) => {
       res.status(response.status).json(response.statusText);
     })
