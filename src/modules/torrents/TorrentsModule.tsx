@@ -23,6 +23,8 @@ import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
 
+const MIM_WIDTH_MOBILE = 576;
+
 export const TorrentsModule: IModule = {
   id: 'torrents-status',
   title: 'Torrent',
@@ -112,9 +114,9 @@ export default function TorrentsComponent() {
     <tr ref={ref}>
       <th>{t('card.table.header.name')}</th>
       <th>{t('card.table.header.size')}</th>
-      {width > 576 ? <th>{t('card.table.header.download')}</th> : null}
-      {width > 576 ? <th>{t('card.table.header.upload')}</th> : null}
-      {width > 576 ? <th>{t('card.table.header.estimatedTimeOfArrival')}</th> : null}
+      {width > MIM_WIDTH_MOBILE && <th>{t('card.table.header.download')}</th>}
+      {width > MIM_WIDTH_MOBILE && <th>{t('card.table.header.upload')}</th>}
+      {width > MIM_WIDTH_MOBILE && <th>{t('card.table.header.estimatedTimeOfArrival')}</th>}
       <th>{t('card.table.header.progress')}</th>
     </tr>
   );
