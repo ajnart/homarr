@@ -1,0 +1,1 @@
+export { SpotlightModule } from './SpotlightModule';
