@@ -9,6 +9,7 @@ import {
   ScrollArea,
   Center,
   Stack,
+  useMantineTheme,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
@@ -22,8 +23,6 @@ import { useConfig } from '../../tools/state';
 import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
-
-const MIM_WIDTH_MOBILE = 576;
 
 export const TorrentsModule: IModule = {
   id: 'torrents-status',
@@ -54,6 +53,7 @@ export default function TorrentsComponent() {
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
   const { ref, width, height } = useElementSize();
+  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   const { t } = useTranslation(`modules/${TorrentsModule.id}`);
 
@@ -114,9 +114,9 @@ export default function TorrentsComponent() {
     <tr ref={ref}>
       <th>{t('card.table.header.name')}</th>
       <th>{t('card.table.header.size')}</th>
-      {width > MIM_WIDTH_MOBILE && <th>{t('card.table.header.download')}</th>}
-      {width > MIM_WIDTH_MOBILE && <th>{t('card.table.header.upload')}</th>}
-      {width > MIM_WIDTH_MOBILE && <th>{t('card.table.header.estimatedTimeOfArrival')}</th>}
+      {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.download')}</th>}
+      {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.upload')}</th>}
+      {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.estimatedTimeOfArrival')}</th>}
       <th>{t('card.table.header.progress')}</th>
     </tr>
   );
@@ -161,25 +161,21 @@ export default function TorrentsComponent() {
           <td>
             <Text size="xs">{humanFileSize(size)}</Text>
           </td>
-          {width > 576 ? (
+          {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
             </td>
-          ) : (
-            ''
           )}
-          {width > 576 ? (
+          {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
             </td>
-          ) : (
-            ''
           )}
-          {width > 576 ? (
+          {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
             </td>
-          ) : null}
+          )}
           <td>
             <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
             <Progress

@@ -1,4 +1,4 @@
-import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput } from '@mantine/core';
+import { Table, Checkbox, Group, Badge, createStyles, ScrollArea, TextInput, useMantineTheme } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
@@ -24,6 +24,7 @@ export default function DockerTable({
   containers: Dockerode.ContainerInfo[];
   selection: Dockerode.ContainerInfo[];
 }) {
+  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
@@ -69,8 +70,8 @@ export default function DockerTable({
           />
         </td>
         <td>{element.Names[0].replace('/', '')}</td>
-        {width > 576 ? <td>{element.Image}</td> : null}
-        {width > 576 ? (
+        {width > MIN_WIDTH_MOBILE && <td>{element.Image}</td>}
+        {width > MIN_WIDTH_MOBILE && (
           <td>
             <Group>
               {element.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
@@ -92,7 +93,7 @@ export default function DockerTable({
               )}
             </Group>
           </td>
-        ) : null}
+        )}
         <td>
           <ContainerState state={element.State} />
         </td>
@@ -123,8 +124,8 @@ export default function DockerTable({
               />
             </th>
             <th>{t('table.header.name')}</th>
-            {width > 576 ? <th>{t('table.header.image')}</th> : null}
-            {width > 576 ? <th>{t('table.header.ports')}</th> : null}
+            {width > MIN_WIDTH_MOBILE ? <th>{t('table.header.image')}</th> : null}
+            {width > MIN_WIDTH_MOBILE ? <th>{t('table.header.ports')}</th> : null}
             <th>{t('table.header.state')}</th>
           </tr>
         </thead>
