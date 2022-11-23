@@ -49,20 +49,20 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Démarrage en cours",
+      "end": "Démarré"
     },
     "stop": {
-      "start": "",
+      "start": "Arrêt en cours",
       "end": "Arrêté"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Redémarrage en cours",
+      "end": "Redémarré"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Suppression en cours",
+      "end": "Supprimé"
     }
   },
   "errors": {
