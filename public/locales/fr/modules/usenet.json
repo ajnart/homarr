@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Vous permet de voir votre file d'attente et votre historique Usenet (Sabnzbd ou NZBGet), de mettre en pause et de reprendre les téléchargements"
+    "description": "Permet de voir la file d'attente et l'historique de vos téléchargements usenet (Sabnzbd ou NZBGet), de mettre en pause et de reprendre les téléchargements"
   },
   "card": {
     "errors": {
