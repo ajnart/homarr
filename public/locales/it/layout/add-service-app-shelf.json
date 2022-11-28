@@ -7,7 +7,7 @@
         "form": {
             "validation": {
                 "invalidUrl": "Inserire un URL valido",
-                "noStatusCodeSelected": "Selezionare un codice di stato"
+                "noStatusCodeSelected": "Scegliere uno status code"
             }
         },
         "tabs": {
@@ -15,27 +15,27 @@
                 "title": "Opzioni",
                 "form": {
                     "serviceName": {
-                        "label": "Nome del servizio",
+                        "label": "Nome servizio",
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
                         "label": "URL dell'icona"
                     },
                     "serviceUrl": {
-                        "label": "URL del servizio"
+                        "label": "URL servizio"
                     },
                     "onClickUrl": {
                         "label": "URL di destinazione"
                     },
                     "serviceType": {
-                        "label": "Tipo di servizio",
+                        "label": "Tipologia servizio",
                         "defaultValue": "Altro",
-                        "placeholder": "Scegli Uno"
+                        "placeholder": "Sceglierne uno"
                     },
                     "category": {
                         "label": "Categoria",
                         "placeholder": "Seleziona una categoria o creane una nuova",
-                        "nothingFound": "Non è stato trovato nulla",
+                        "nothingFound": "Nessun risultato",
                         "createLabel": "+ Crea {{query}}"
                     },
                     "integrations": {
@@ -46,7 +46,7 @@
                                 "noKey": "Chiave non valida"
                             },
                             "tip": {
-                                "text": "Ottenere la chiave API",
+                                "text": "Ottieni la tua chiave API",
                                 "link": "qui."
                             }
                         },
@@ -111,16 +111,16 @@
                 }
             },
             "advancedOptions": {
-                "title": "Opzioni avanzate",
+                "title": "Impostazioni avanzate",
                 "form": {
                     "httpStatusCodes": {
-                        "label": "Codici di stato HTTP",
-                        "placeholder": "Selezionare i codici di stato validi",
-                        "clearButtonLabel": "Cancella la selezione",
-                        "nothingFound": "Non è stato trovato nulla"
+                        "label": "Status Codes HTTP",
+                        "placeholder": "Selezionare status codes validi",
+                        "clearButtonLabel": "Elimina selezione",
+                        "nothingFound": "Nessun risultato"
                     },
                     "openServiceInNewTab": {
-                        "label": "Aprire il servizio in una nuova scheda"
+                        "label": "Apri servizio in una nuova scheda"
                     },
                     "buttons": {
                         "submit": {
