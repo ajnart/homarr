@@ -35,8 +35,8 @@
         "title": "Rete",
         "label": "Rete:",
         "metrics": {
-          "download": "In basso",
-          "upload": "Su"
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {
