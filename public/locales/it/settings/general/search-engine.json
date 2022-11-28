@@ -1,7 +1,7 @@
 {
   "title": "Motore di ricerca",
   "tips": {
-    "generalTip": "Utilizzate i prefissi !yt e !t davanti alla vostra ricerca per cercare rispettivamente su YouTube o su un Torrent.",
+    "generalTip": "Usa i prefissi !yt e !t di fronte alla tua ricerca per cercare rispettivamente su YouTube o un Torrent.",
     "placeholderTip": "%s può essere usato come segnaposto per la ricerca."
   },
   "customEngine": {
