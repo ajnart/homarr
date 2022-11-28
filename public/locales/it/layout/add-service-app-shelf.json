@@ -1,6 +1,6 @@
 {
     "actionIcon": {
-        "tooltip": "Aggiungere un servizio"
+        "tooltip": "Aggiungi un servizio"
     },
     "modal": {
         "title": "Aggiungi servizio",
@@ -19,13 +19,13 @@
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
-                        "label": "Icona URL"
+                        "label": "URL dell'icona"
                     },
                     "serviceUrl": {
                         "label": "URL del servizio"
                     },
                     "onClickUrl": {
-                        "label": "URL di destinatione"
+                        "label": "URL di destinazione"
                     },
                     "serviceType": {
                         "label": "Tipo di servizio",
@@ -34,9 +34,9 @@
                     },
                     "category": {
                         "label": "Categoria",
-                        "placeholder": "Selezionare una categoria o crearne una nuova",
+                        "placeholder": "Seleziona una categoria o creane una nuova",
                         "nothingFound": "Non è stato trovato nulla",
-                        "createLabel": "+ Creare {{query}}"
+                        "createLabel": "+ Crea {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
