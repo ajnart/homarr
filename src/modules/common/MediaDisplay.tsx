@@ -163,7 +163,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
   const { t } = useTranslation('modules/common-media-cards');
 
   return (
-    <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 200 }}>
+    <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 200 }} spacing="xs">
       <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
       <Stack justify="space-around">
         <Stack spacing="sm">

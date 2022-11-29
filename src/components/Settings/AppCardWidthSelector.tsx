@@ -21,11 +21,11 @@ export function AppCardWidthSelector() {
     <Stack spacing="xs">
       <Text>{t('label')}</Text>
       <Slider
-        label={null}
-        defaultValue={config.settings.appCardWidth}
-        step={0.2}
-        min={0.8}
-        max={2}
+        label={config.settings.appCardWidth?.toFixed(1)}
+        defaultValue={config.settings.appCardWidth ?? 0.7}
+        step={0.1}
+        min={0.3}
+        max={1.2}
         styles={{ markLabel: { fontSize: 'xx-small' } }}
         onChange={(value) => setappCardWidth(value)}
       />

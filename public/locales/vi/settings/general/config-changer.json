@@ -19,7 +19,7 @@
     }
   },
   "buttons": {
-    "download": "Tải cấu hình xuống",
+    "download": "Tải cấu hình",
     "delete": {
       "text": "Xóa cấu hình",
       "notifications": {

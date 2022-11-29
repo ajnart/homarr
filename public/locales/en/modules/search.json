@@ -5,5 +5,26 @@
   },
   "input": {
     "placeholder": "Search the web..."
-  }
+  },
+  "switched-to": "Switched to",
+  "searchEngines": {
+    "search": {
+      "name": "Web",
+      "description": "Search using your search engine (defined in settings)"
+    },
+    "youtube": {
+      "name": "Youtube",
+      "description": "Search on Youtube"
+    },
+    "torrents": {
+      "name": "Torrents",
+      "description": "Search for Torrents"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "Search for Movies and TV Shows using Overseerr (module must be enabled)"
+    }
+  },
+  "tip": "You can select the search bar with the shortcut ",
+  "switchedSearchEngine": "Switched to searching with {{searchEngine}}"
 }

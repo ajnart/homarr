@@ -9,11 +9,12 @@ import {
   ScrollArea,
   Center,
   Stack,
+  useMantineTheme,
 } from '@mantine/core';
 import { IconDownload as Download } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useViewportSize } from '@mantine/hooks';
+import { useElementSize } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useTranslation } from 'next-i18next';
@@ -34,15 +35,10 @@ export const TorrentsModule: IModule = {
       value: false,
     },
   },
-  padding: {
-    right: 0,
-    top: -10,
-  },
 };
 
 export default function TorrentsComponent() {
   const { config } = useConfig();
-  const { height, width } = useViewportSize();
   const downloadServices =
     config.services.filter(
       (service) =>
@@ -56,6 +52,8 @@ export default function TorrentsComponent() {
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
   const setSafeInterval = useSetSafeInterval();
   const [isLoading, setIsLoading] = useState(true);
+  const { ref, width, height } = useElementSize();
+  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   const { t } = useTranslation(`modules/${TorrentsModule.id}`);
 
@@ -112,14 +110,13 @@ export default function TorrentsComponent() {
       </>
     );
   }
-  const DEVICE_WIDTH = 576;
   const ths = (
-    <tr>
+    <tr ref={ref}>
       <th>{t('card.table.header.name')}</th>
       <th>{t('card.table.header.size')}</th>
-      {width > 576 ? <th>{t('card.table.header.download')}</th> : ''}
-      {width > 576 ? <th>{t('card.table.header.upload')}</th> : ''}
-      <th>{t('card.table.header.estimatedTimeOfArrival')}</th>
+      {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.download')}</th>}
+      {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.upload')}</th>}
+      {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.estimatedTimeOfArrival')}</th>}
       <th>{t('card.table.header.progress')}</th>
     </tr>
   );
@@ -164,23 +161,21 @@ export default function TorrentsComponent() {
           <td>
             <Text size="xs">{humanFileSize(size)}</Text>
           </td>
-          {width > 576 ? (
+          {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
             </td>
-          ) : (
-            ''
           )}
-          {width > 576 ? (
+          {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
             </td>
-          ) : (
-            ''
           )}
-          <td>
-            <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
-          </td>
+          {width > MIN_WIDTH_MOBILE && (
+            <td>
+              <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
+            </td>
+          )}
           <td>
             <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
             <Progress

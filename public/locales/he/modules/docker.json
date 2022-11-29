@@ -9,7 +9,7 @@
   "table": {
     "header": {
       "name": "שם",
-      "image": "תמונה",
+      "image": "קובץ תמונה",
       "ports": "יציאות",
       "state": "מצב"
     },

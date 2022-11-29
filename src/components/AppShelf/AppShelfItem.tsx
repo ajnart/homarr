@@ -31,7 +31,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function SortableAppShelfItem(props: any) {
+export function SortableItem(props: any) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
     id: props.id,
   });
@@ -43,7 +43,7 @@ export function SortableAppShelfItem(props: any) {
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <AppShelfItem service={props.service} />
+      {props.children}
     </div>
   );
 }
@@ -75,6 +75,8 @@ export function AppShelfItem(props: any) {
         shadow="md"
         className={classes.item}
         style={{
+          // Use the grab cursor when hovering over the card
+          cursor: hovering ? 'grab' : 'auto',
           background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
           ${(config.settings.appOpacity || 100) / 100}`,
           borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
@@ -105,14 +107,14 @@ export function AppShelfItem(props: any) {
             <AppShelfMenu service={service} />
           </motion.div>
         </Card.Section>
-        <Center>
-          <Card.Section>
+        <Card.Section>
+          <Center>
             <AspectRatio
               ratio={3 / 5}
-              m="xl"
+              m="lg"
               style={{
-                width: 150,
-                height: 90,
+                height: 75 * ((config.settings.appCardWidth ?? 1) * 1.2),
+                width: 75 * ((config.settings.appCardWidth ?? 1) * 2),
               }}
             >
               <motion.i
@@ -126,8 +128,8 @@ export function AppShelfItem(props: any) {
                 >
                   <Image
                     styles={{ root: { cursor: 'pointer' } }}
-                    width={80}
-                    height={80}
+                    width={75 * ((config.settings.appCardWidth ?? 1) * 1.2)}
+                    height={75 * ((config.settings.appCardWidth ?? 1) * 1.2)}
                     src={service.icon}
                     fit="contain"
                   />
@@ -135,8 +137,8 @@ export function AppShelfItem(props: any) {
               </motion.i>
             </AspectRatio>
             {service.ping !== false && <PingComponent url={service.url} status={service.status} />}
-          </Card.Section>
-        </Center>
+          </Center>
+        </Card.Section>
       </Card>
     </motion.div>
   );

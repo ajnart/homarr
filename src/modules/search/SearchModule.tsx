@@ -1,236 +1,159 @@
-import { Kbd, createStyles, Autocomplete, Popover, ScrollArea, Divider } from '@mantine/core';
-import { useClickOutside, useDebouncedValue, useHotkeys } from '@mantine/hooks';
-import { useForm } from '@mantine/form';
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import {
-  IconSearch as Search,
-  IconBrandYoutube as BrandYoutube,
-  IconDownload as Download,
-  IconMovie,
-} from '@tabler/icons';
+  ActionIcon,
+  Box,
+  createStyles,
+  Divider,
+  Kbd,
+  Menu,
+  Popover,
+  ScrollArea,
+  TextInput,
+  Tooltip,
+} from '@mantine/core';
+import { IconSearch, IconBrandYoutube, IconDownload, IconMovie } from '@tabler/icons';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
+import { showNotification } from '@mantine/notifications';
 import { useTranslation } from 'next-i18next';
 import axios from 'axios';
-import { showNotification } from '@mantine/notifications';
-import { useConfig } from '../../tools/state';
 import { IModule } from '../ModuleTypes';
+import { useConfig } from '../../tools/state';
 import { OverseerrModule } from '../overseerr';
+import Tip from '../../components/layout/Tip';
 import { OverseerrMediaDisplay } from '../common';
-import SmallServiceItem from '../../components/AppShelf/SmallServiceItem';
-
-const useStyles = createStyles((theme) => ({
-  hide: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-    display: 'flex',
-    alignItems: 'center',
-  },
-}));
 
 export const SearchModule: IModule = {
   title: 'Search',
-  icon: Search,
-  component: SearchBar,
+  icon: IconSearch,
+  component: SearchModuleComponent,
   id: 'search',
 };
 
-export default function SearchBar(props: any) {
-  const { classes, cx } = useStyles();
-  // Config
+interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
+  label: string;
+  disabled: boolean;
+  value: string;
+  description: string;
+  icon: React.ReactNode;
+  url: string;
+  shortcut: string;
+}
+
+const useStyles = createStyles((theme) => ({
+  item: {
+    '&[data-hovered]': {
+      backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
+      color: theme.white,
+    },
+  },
+}));
+
+export function SearchModuleComponent() {
   const { config } = useConfig();
-  const isModuleEnabled = config.modules?.[SearchModule.id]?.enabled ?? false;
+  const { t } = useTranslation('modules/search');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
+  const queryUrl = config.settings.searchUrl;
   const isOverseerrEnabled = config.modules?.[OverseerrModule.id]?.enabled ?? false;
   const OverseerrService = config.services.find(
     (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
   );
-  const queryUrl = config.settings.searchUrl ?? 'https://www.google.com/search?q=';
 
-  const [OverseerrResults, setOverseerrResults] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [icon, setIcon] = useState(<Search />);
-  const [results, setResults] = useState<any[]>([]);
-  const [opened, setOpened] = useState(false);
-  const ref = useClickOutside(() => setOpened(false));
-
-  const textInput = useRef<HTMLInputElement>();
-  useHotkeys([['ctrl+K', () => textInput.current && textInput.current.focus()]]);
-
-  const form = useForm({
-    initialValues: {
-      query: '',
+  const searchEnginesList: ItemProps[] = [
+    {
+      icon: <IconSearch />,
+      disabled: false,
+      label: t('searchEngines.search.name'),
+      value: 'search',
+      description: t('searchEngines.search.description'),
+      url: queryUrl,
+      shortcut: 's',
     },
-  });
-  const [debounced, cancel] = useDebouncedValue(form.values.query, 250);
-  const { t } = useTranslation('modules/search');
+    {
+      icon: <IconDownload />,
+      disabled: false,
+      label: t('searchEngines.torrents.name'),
+      value: 'torrents',
+      description: t('searchEngines.torrents.description'),
+      url: 'https://www.torrentdownloads.me/search/?search=',
+      shortcut: 't',
+    },
+    {
+      icon: <IconBrandYoutube />,
+      disabled: false,
+      label: t('searchEngines.youtube.name'),
+      value: 'youtube',
+      description: t('searchEngines.youtube.description'),
+      url: 'https://www.youtube.com/results?search_query=',
+      shortcut: 'y',
+    },
+    {
+      icon: <IconMovie />,
+      disabled: !(isOverseerrEnabled === true && OverseerrService !== undefined),
+      label: t('searchEngines.overseerr.name'),
+      value: 'overseerr',
+      description: t('searchEngines.overseerr.description'),
+      url: `${OverseerrService?.url}search?query=`,
+      shortcut: 'm',
+    },
+  ];
+  const [selectedSearchEngine, setSearchEngine] = useState<ItemProps>(searchEnginesList[0]);
+  const textInput = useRef<HTMLInputElement>(null);
+  useHotkeys([['mod+K', () => textInput.current && textInput.current.focus()]]);
+  const { classes } = useStyles();
+  const openInNewTab = config.settings.searchNewTab ? '_blank' : '_self';
+  const [OverseerrResults, setOverseerrResults] = useState<any[]>([]);
+  const [opened, setOpened] = useState(false);
 
   useEffect(() => {
-    if (OverseerrService === undefined && isOverseerrEnabled) {
-      showNotification({
-        title: 'Overseerr integration',
-        message:
-          'Module enabled but no service is configured with the type "Overseerr" / "Jellyseerr"',
-        color: 'red',
+    if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && searchQuery.length > 3) {
+      axios.get(`/api/modules/overseerr?query=${searchQuery}`).then((res) => {
+        setOverseerrResults(res.data.results ?? []);
       });
-    }
-  }, [OverseerrService, isOverseerrEnabled]);
-
-  useEffect(() => {
-    if (
-      form.values.query !== debounced ||
-      form.values.query === '' ||
-      (form.values.query.startsWith('!') && !form.values.query.startsWith('!os'))
-    ) {
-      return;
-    }
-    if (form.values.query.startsWith('!os')) {
-      axios
-        .get(`/api/modules/overseerr?query=${form.values.query.replace('!os', '').trim()}`)
-        .then((res) => {
-          setOverseerrResults(res.data.results ?? []);
-          setLoading(false);
-        });
-      setLoading(true);
-    } else {
-      setOverseerrResults([]);
-      axios
-        .get(`/api/modules/search?q=${form.values.query}`)
-        .then((res) => setResults(res.data ?? []));
     }
   }, [debounced]);
 
+  const isModuleEnabled = config.modules?.[SearchModule.id]?.enabled ?? false;
   if (!isModuleEnabled) {
     return null;
   }
-  // Match all the services that contain the query in their name if the query is not empty
-  const matchingServices = config.services.filter((service) => {
-    if (form.values.query === '' || form.values.query === undefined) {
-      return false;
-    }
-    return service.name.toLowerCase().includes(form.values.query.toLowerCase());
-  });
-  const autocompleteData = matchingServices.map((service) => ({
-    label: service.name,
-    value: service.name,
-    icon: service.icon,
-    url: service.openedUrl ?? service.url,
-  }));
-  // Append the matching results to the autocomplete data
-  const autoCompleteResults = results.map((result) => ({
-    label: result.phrase,
-    value: result.phrase,
-    icon: result.icon,
-    url: result.url,
-  }));
-  autocompleteData.push(...autoCompleteResults);
-
-  const AutoCompleteItem = forwardRef<HTMLDivElement, any>(
-    ({ label, value, icon, url, ...others }: any, ref) => (
-      <div ref={ref} {...others}>
-        <SmallServiceItem service={{ label, value, icon, url }} />
-      </div>
-    )
-  );
-
+  //TODO: Fix the bug where clicking anything inside the Modal to ask for a movie
+  // will close it (Because it closes the underlying Popover)
   return (
-    <form
-      onChange={() => {
-        // If query contains !yt or !t add "Searching on YouTube" or "Searching torrent"
-        const query = form.values.query.trim();
-        switch (query.substring(0, 3)) {
-          case '!yt':
-            setIcon(<BrandYoutube />);
-            break;
-          case '!t ':
-            setIcon(<Download />);
-            break;
-          case '!os':
-            setIcon(<IconMovie />);
-            break;
-          default:
-            setIcon(<Search />);
-            break;
-        }
-      }}
-      onSubmit={form.onSubmit((values) => {
-        const query = values.query.trim();
-        const open_in = config.settings.searchNewTab ? '_blank' : '_self';
-        setTimeout(() => {
-          form.setValues({ query: '' });
-          switch (query.substring(0, 3)) {
-            case '!yt':
-              window.open(
-                `https://www.youtube.com/results?search_query=${query.substring(3)}`,
-                open_in
-              );
-              break;
-            case '!t ':
-              window.open(
-                `https://www.torrentdownloads.me/search/?search=${query.substring(3)}`,
-                open_in
-              );
-              break;
-            case '!os':
-              break;
-            default:
-              window.open(
-                `${
-                  queryUrl.includes('%s') ? queryUrl.replace('%s', query) : `${queryUrl}${query}`
-                }`,
-                open_in
-              );
-              break;
-          }
-        }, 500);
-      })}
-    >
+    <Box style={{ width: '100%', maxWidth: 400, minWidth: 300 }}>
       <Popover
-        opened={OverseerrResults.length > 0 && opened}
+        opened={OverseerrResults.length > 0 && opened && searchQuery.length > 3}
         position="bottom"
-        withArrow
         withinPortal
         shadow="md"
         radius="md"
         zIndex={100}
-        trapFocus
         transition="pop-top-right"
       >
         <Popover.Target>
-          <Autocomplete
+          <TextInput
+            ref={textInput}
             onFocusCapture={() => setOpened(true)}
             autoFocus
-            variant="filled"
-            itemComponent={AutoCompleteItem}
-            onItemSubmit={(item) => {
-              setOpened(false);
-              if (item.url) {
-                results.splice(0, autocompleteData.length);
-                form.reset();
-                window.open(item.url);
+            rightSection={<SearchModuleMenu />}
+            placeholder={t(`searchEngines.${selectedSearchEngine.value}.description`)}
+            value={searchQuery}
+            onChange={(event) => tryMatchSearchEngine(event.currentTarget.value, setSearchQuery)}
+            // Replace %s if it is in selectedSearchEngine.url with searchQuery, otherwise append searchQuery at the end of it
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' && searchQuery.length > 0) {
+                if (selectedSearchEngine.url.includes('%s')) {
+                  window.open(selectedSearchEngine.url.replace('%s', searchQuery), openInNewTab);
+                } else {
+                  window.open(selectedSearchEngine.url + searchQuery, openInNewTab);
+                }
               }
             }}
-            data={autocompleteData}
-            icon={icon}
-            ref={textInput}
-            rightSectionWidth={90}
-            rightSection={
-              <div className={classes.hide}>
-                <Kbd>Ctrl</Kbd>
-                <span style={{ margin: '0 5px' }}>+</span>
-                <Kbd>K</Kbd>
-              </div>
-            }
-            radius="md"
-            size="md"
-            styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder={t('input.placeholder')}
-            {...props}
-            {...form.getInputProps('query')}
           />
         </Popover.Target>
-
         <Popover.Dropdown>
-          <div ref={ref}>
-            <ScrollArea style={{ height: 400, width: 400 }} offsetScrollbars>
+          <div>
+            <ScrollArea style={{ height: 400, width: 420 }} offsetScrollbars>
               {OverseerrResults.slice(0, 5).map((result, index) => (
                 <React.Fragment key={index}>
                   <OverseerrMediaDisplay key={result.id} media={result} />
@@ -241,6 +164,71 @@ export default function SearchBar(props: any) {
           </div>
         </Popover.Dropdown>
       </Popover>
-    </form>
+    </Box>
   );
+
+  function tryMatchSearchEngine(query: string, setSearchQuery: (value: string) => void) {
+    const foundSearchEngine = searchEnginesList.find(
+      (engine) => query.includes(`!${engine.shortcut}`) && !engine.disabled
+    );
+    if (foundSearchEngine) {
+      setSearchQuery(query.replace(`!${foundSearchEngine.shortcut}`, ''));
+      changeSearchEngine(foundSearchEngine);
+    } else {
+      setSearchQuery(query);
+    }
+  }
+
+  function SearchModuleMenu() {
+    return (
+      <Menu shadow="md" width={200} withinPortal classNames={classes}>
+        <Menu.Target>
+          <ActionIcon>{selectedSearchEngine.icon}</ActionIcon>
+        </Menu.Target>
+
+        <Menu.Dropdown>
+          {searchEnginesList.map((item) => (
+            <Tooltip
+              multiline
+              label={item.description}
+              withinPortal
+              width={200}
+              position="left"
+              key={item.value}
+            >
+              <Menu.Item
+                key={item.value}
+                icon={item.icon}
+                rightSection={<Kbd>!{item.shortcut}</Kbd>}
+                disabled={item.disabled}
+                onClick={() => {
+                  changeSearchEngine(item);
+                }}
+              >
+                {item.label}
+              </Menu.Item>
+            </Tooltip>
+          ))}
+          <Menu.Divider />
+          <Menu.Label>
+            <Tip>
+              {t('tip')} <Kbd>mod+k</Kbd>{' '}
+            </Tip>
+          </Menu.Label>
+        </Menu.Dropdown>
+      </Menu>
+    );
+  }
+
+  function changeSearchEngine(item: ItemProps) {
+    setSearchEngine(item);
+    showNotification({
+      radius: 'lg',
+      disallowClose: true,
+      id: 'spotlight',
+      autoClose: 1000,
+      icon: <ActionIcon size="sm">{item.icon}</ActionIcon>,
+      message: t('switchedSearchEngine', { searchEngine: t(`searchEngines.${item.value}.name`) }),
+    });
+  }
 }

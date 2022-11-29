@@ -9,7 +9,7 @@ export function Logo({ style, withoutText }: any) {
   const { primaryColor, secondaryColor } = useColorTheme();
 
   return (
-    <Group spacing="xs">
+    <Group spacing="xs" noWrap>
       <Image
         width={50}
         src={config.settings.logo || '/imgs/logo/logo.png'}
@@ -18,26 +18,18 @@ export function Logo({ style, withoutText }: any) {
         }}
       />
       {withoutText ? null : (
-        <NextLink
-          href="/"
-          style={{
-            textDecoration: 'none',
-            position: 'relative',
+        <Text
+          sx={style}
+          weight="bold"
+          variant="gradient"
+          gradient={{
+            from: primaryColor,
+            to: secondaryColor,
+            deg: 145,
           }}
         >
-          <Text
-            sx={style}
-            weight="bold"
-            variant="gradient"
-            gradient={{
-              from: primaryColor,
-              to: secondaryColor,
-              deg: 145,
-            }}
-          >
-            {config.settings.title || 'Homarr'}
-          </Text>
-        </NextLink>
+          {config.settings.title || 'Homarr'}
+        </Text>
       )}
     </Group>
   );
