@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "זמן תגובה",
+    "name": "פינג",
     "description": "מאפשר בדיקה אם השירות פעיל או מחזיר קוד ספציפי של HTTP"
   },
   "states": {
-    "online": "מקון",
-    "offline": "לא מקון",
+    "online": "מקוון",
+    "offline": "לא מקוון",
     "loading": "טוען..."
   }
 }
