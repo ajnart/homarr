@@ -48,7 +48,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function SearchModuleComponent(props: any) {
+export function SearchModuleComponent() {
   const { config } = useConfig();
   const { t } = useTranslation('modules/search');
   const [searchQuery, setSearchQuery] = useState('');
