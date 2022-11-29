@@ -19,8 +19,8 @@
     },
     "lineChart": {
       "title": "מהירות הורדה נוכחית",
-      "download": "הורדה ממתינה",
-      "upload": "העלאה ממתינה",
+      "download": "הורדה",
+      "upload": "העלאה",
       "timeSpan": "לפני שניות",
       "totalDownload": "הורדה ממתינה",
       "totalUpload": "העלאה ממתינה"
