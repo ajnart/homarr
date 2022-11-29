@@ -6,25 +6,25 @@
   "input": {
     "placeholder": "חפש באינטרנט..."
   },
-  "switched-to": "",
+  "switched-to": "להחליף ל",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "אינטרנט",
+      "description": "חיפוש באמצעות מנוע החיפוש שלך (מוגדר בהגדרות)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "יוטיוב",
+      "description": "חפש ביוטיוב"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "טורנטים",
+      "description": "חיפוש אחר טורנטים"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "חיפוש סרטים ותוכניות טלוויזיה באמצעות  Overseerr (המודול חייב להיות מאופשר)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "באפשרותך לבחור את סרגל החיפוש באמצעות קיצור הדרך",
+  "switchedSearchEngine": "עבור לחיפוש עם"
 }
