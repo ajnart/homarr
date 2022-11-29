@@ -144,12 +144,6 @@ export default function CalendarComponent(props: any) {
               margin: 1,
             }
       }
-      styles={{
-        calendarHeader: {
-          marginRight: 40,
-          marginLeft: 40,
-        },
-      }}
       allowLevelChange={false}
       dayClassName={(date, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
       renderDay={(renderdate) => (
