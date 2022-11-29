@@ -6,25 +6,25 @@
   "input": {
     "placeholder": "Cerca sul web..."
   },
-  "switched-to": "",
+  "switched-to": "Impostato su",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Cerca usando il tuo motore di ricerca (definito nelle impostazioni)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "Youtube",
+      "description": "Cerca su YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrents",
+      "description": "Cerca Torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Cerca film e serie TV con Overseerr (il modulo deve essere abilitato)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Puoi selezionare la barra di ricerca con la scorciatoia ",
+  "switchedSearchEngine": "Ricerca cambiata con {{searchEngine}}"
 }
