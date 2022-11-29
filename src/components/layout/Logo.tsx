@@ -9,7 +9,7 @@ export function Logo({ style, withoutText }: any) {
   const { primaryColor, secondaryColor } = useColorTheme();
 
   return (
-    <Group spacing="xs">
+    <Group spacing="xs" noWrap>
       <Image
         width={50}
         src={config.settings.logo || '/imgs/logo/logo.png'}
