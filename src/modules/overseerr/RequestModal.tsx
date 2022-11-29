@@ -188,7 +188,7 @@ export function TvRequestModal({
           </thead>
           <tbody>{rows}</tbody>
         </Table>
-        <Group>
+        <Group position="center">
           <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
             {t('popup.item.buttons.cancel')}
           </Button>
