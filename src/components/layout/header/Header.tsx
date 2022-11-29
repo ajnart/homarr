@@ -1,9 +1,4 @@
-import {
-  Group,
-  Header as Head,
-  useMantineColorScheme,
-  useMantineTheme,
-} from '@mantine/core';
+import { Group, Header as Head, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 

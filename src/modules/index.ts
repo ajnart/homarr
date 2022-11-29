@@ -8,4 +8,3 @@ export * from './weather';
 export * from './docker';
 export * from './overseerr';
 export * from './usenet';
-export * from './spotlight';

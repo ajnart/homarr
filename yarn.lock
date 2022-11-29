@@ -1231,20 +1231,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/spotlight@npm:^5.8.2":
-  version: 5.8.2
-  resolution: "@mantine/spotlight@npm:5.8.2"
-  dependencies:
-    "@mantine/utils": 5.8.2
-  peerDependencies:
-    "@mantine/core": 5.8.2
-    "@mantine/hooks": 5.8.2
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-  checksum: 162eec73807649015d56359c8cdd565447b7ace86fd66705047657320be73e52e27119dc5f3b3e85367f316181b8cf9afeb18f9993cf396718fa20b5d1edccc1
-  languageName: node
-  linkType: hard
-
 "@mantine/ssr@npm:5.2.3":
   version: 5.2.3
   resolution: "@mantine/ssr@npm:5.2.3"
@@ -1312,15 +1298,6 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
   checksum: 35ce46a03a24f8f2b649b833b725120e50e639a66a3a9b399a10f5c4083446a4338ececd8b1d6f0897743cb1bc6d6757c7a530c515f032c0ab23b4f8e9d04b2a
-  languageName: node
-  linkType: hard
-
-"@mantine/utils@npm:5.8.2":
-  version: 5.8.2
-  resolution: "@mantine/utils@npm:5.8.2"
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: bb6b1de7e8bee92751410e634e7e475ea38eef4d822ee955aa885a739c4379c8d8cbdc12aee570b6c1dcf83ae1202297f1f1c3d78b11de3e3ffe64076edd3a71
   languageName: node
   linkType: hard
 
@@ -4858,7 +4835,6 @@ __metadata:
     "@mantine/next": ^5.2.3
     "@mantine/notifications": ^5.7.2
     "@mantine/prism": ^5.0.0
-    "@mantine/spotlight": ^5.8.2
     "@next/bundle-analyzer": ^12.1.4
     "@next/eslint-plugin-next": ^12.1.4
     "@nivo/core": ^0.79.0
