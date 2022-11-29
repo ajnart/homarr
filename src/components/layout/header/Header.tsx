@@ -1,27 +1,21 @@
-import { Box, createStyles, Group, Header as Head, useMantineColorScheme } from '@mantine/core';
+import {
+  Group,
+  Header as Head,
+  useMantineColorScheme,
+  useMantineTheme,
+} from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 
 import DockerMenuButton from '../../../modules/docker/DockerModule';
-import SearchBar from '../../../modules/search/SearchModule';
 import { SettingsMenuButton } from '../../Settings/SettingsMenu';
 import { Logo } from '../Logo';
 import { useConfig } from '../../../tools/state';
-
-const useStyles = createStyles((theme) => ({
-  hide: {
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
-  },
-  burger: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-  },
-}));
+import { SearchModuleComponent } from '../../../modules/search/SearchModule';
 
 export function Header(props: any) {
-  const { classes } = useStyles();
+  const { width } = useViewportSize();
+  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const { config } = useConfig();
   const { colorScheme } = useMantineColorScheme();
 
@@ -35,12 +29,10 @@ export function Header(props: any) {
       ${(config.settings.appOpacity || 100) / 100}`,
       }}
     >
-      <Group p="xs" position="apart">
-        <Box className={classes.hide}>
-          <Logo style={{ fontSize: 22 }} />
-        </Box>
-        <Group noWrap>
-          <SearchBar />
+      <Group p="xs" noWrap grow>
+        {width > MIN_WIDTH_MOBILE && <Logo style={{ fontSize: 22 }} />}
+        <Group position="right" noWrap>
+          <SearchModuleComponent />
           <DockerMenuButton />
           <SettingsMenuButton />
           <AddItemShelfButton />
