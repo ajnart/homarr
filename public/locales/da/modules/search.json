@@ -6,25 +6,25 @@
   "input": {
     "placeholder": "Søg på nettet..."
   },
-  "switched-to": "",
+  "switched-to": "Skiftet til",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Søg ved hjælp af din søgemaskine (defineret i indstillinger)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Søg på YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrents",
+      "description": "Søg efter torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Søg efter film og tv-serier ved hjælp af Overseerr (modul skal være aktiveret)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Du kan vælge søgefeltet med genvejen ",
+  "switchedSearchEngine": "Skiftede til søgning med {{searchEngine}}"
 }
