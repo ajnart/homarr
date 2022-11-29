@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Usenet",
-    "description": "Allows you to see your usenet (Sabnzbd or NZBGet) queue and history, pause and resume downloads"
+    "name": "",
+    "description": ""
   },
   "card": {
     "errors": {
