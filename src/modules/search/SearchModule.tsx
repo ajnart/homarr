@@ -53,7 +53,6 @@ export function SearchModuleComponent() {
   const { t } = useTranslation('modules/search');
   const [searchQuery, setSearchQuery] = useState('');
   const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
-  const queryUrl = config.settings.searchUrl;
   const isOverseerrEnabled = config.modules?.[OverseerrModule.id]?.enabled ?? false;
   const OverseerrService = config.services.find(
     (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
@@ -66,7 +65,7 @@ export function SearchModuleComponent() {
       label: t('searchEngines.search.name'),
       value: 'search',
       description: t('searchEngines.search.description'),
-      url: queryUrl,
+      url: config.settings.searchUrl,
       shortcut: 's',
     },
     {
@@ -98,6 +97,10 @@ export function SearchModuleComponent() {
     },
   ];
   const [selectedSearchEngine, setSearchEngine] = useState<ItemProps>(searchEnginesList[0]);
+  useEffect(() => {
+    // Refresh the default search engine every time the config for it changes #521
+    setSearchEngine(searchEnginesList[0]);
+  }, [config.settings.searchUrl]);
   const textInput = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => textInput.current && textInput.current.focus()]]);
   const { classes } = useStyles();
