@@ -1,9 +1,30 @@
 {
   "descriptor": {
     "name": "Barra di ricerca",
-    "description": "Barra di ricerca per cercare sul web, su Youtube, su Torrents o su Overseerr"
+    "description": "Barra di ricerca per cercare sul web, Youtube, Torrent o Overseerr"
   },
   "input": {
     "placeholder": "Cerca sul web..."
-  }
+  },
+  "switched-to": "Impostato su",
+  "searchEngines": {
+    "search": {
+      "name": "Web",
+      "description": "Cerca usando il tuo motore di ricerca (definito nelle impostazioni)"
+    },
+    "youtube": {
+      "name": "Youtube",
+      "description": "Cerca su YouTube"
+    },
+    "torrents": {
+      "name": "Torrents",
+      "description": "Cerca Torrents"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "Cerca film e serie TV con Overseerr (il modulo deve essere abilitato)"
+    }
+  },
+  "tip": "Puoi selezionare la barra di ricerca con la scorciatoia ",
+  "switchedSearchEngine": "Ricerca cambiata con {{searchEngine}}"
 }

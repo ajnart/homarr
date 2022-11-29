@@ -5,5 +5,26 @@
   },
   "input": {
     "placeholder": "חפש באינטרנט..."
-  }
+  },
+  "switched-to": "להחליף ל",
+  "searchEngines": {
+    "search": {
+      "name": "אינטרנט",
+      "description": "חיפוש באמצעות מנוע החיפוש שלך (מוגדר בהגדרות)"
+    },
+    "youtube": {
+      "name": "יוטיוב",
+      "description": "חפש ביוטיוב"
+    },
+    "torrents": {
+      "name": "טורנטים",
+      "description": "חיפוש אחר טורנטים"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "חיפוש סרטים ותוכניות טלוויזיה באמצעות  Overseerr (המודול חייב להיות מאופשר)"
+    }
+  },
+  "tip": "באפשרותך לבחור את סרגל החיפוש באמצעות קיצור הדרך",
+  "switchedSearchEngine": "עבור לחיפוש עם"
 }

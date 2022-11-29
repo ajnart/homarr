@@ -1,5 +1,5 @@
 {
-  "title": "Bentornato!",
+  "title": "Bentornati!",
   "text": "Inserisci la password",
   "form": {
     "fields": {
@@ -21,7 +21,7 @@
       "title": "Password corretta, reindirizzamento..."
     },
     "wrong": {
-      "title": "Password errata. Per favore, prova di nuovo."
+      "title": "Password errata. Per favore riprova."
     }
   }
 }

@@ -5,5 +5,26 @@
   },
   "input": {
     "placeholder": "ウェブで検索..."
-  }
+  },
+  "switched-to": "",
+  "searchEngines": {
+    "search": {
+      "name": "",
+      "description": ""
+    },
+    "youtube": {
+      "name": "",
+      "description": ""
+    },
+    "torrents": {
+      "name": "",
+      "description": ""
+    },
+    "overseerr": {
+      "name": "オーバーホール",
+      "description": ""
+    }
+  },
+  "tip": "",
+  "switchedSearchEngine": ""
 }

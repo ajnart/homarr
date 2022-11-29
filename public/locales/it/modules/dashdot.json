@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Un modulo per visualizzare i grafici dell'istanza di Dash in esecuzione.",
+    "description": "Un modulo per visualizzare i grafici dell'istanza di Dash. in esecuzione.",
     "settings": {
       "cpuMultiView": {
         "label": "Vista CPU Multi-Core"
       },
       "storageMultiView": {
-        "label": "Visualizzazione dell'unità multipla di archiviazione"
+        "label": "Visualizzazione archiviazione Multi-Drive"
       },
       "useCompactView": {
         "label": "Visualizzazione compatta"
@@ -23,8 +23,8 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "Nessun servizio Dash. trovato. Aggiungerne uno alla dashboard di Homarr o impostare un Dash. nelle opzioni del modulo",
-      "noInformation": "Impossibile acquisire informazioni da dash. - state eseguendo l'ultima versione?"
+      "noService": "Nessun servizio Dash. trovato. Aggiungine uno alla dashboard di Homarr o imposta un URL nelle impostazioni del modulo",
+      "noInformation": "Impossibile reperire informazioni da dash. - è in esecuzione l'ultima versione?"
     },
     "graphs": {
       "storage": {
@@ -35,8 +35,8 @@
         "title": "Rete",
         "label": "Rete:",
         "metrics": {
-          "download": "In basso",
-          "upload": "Su"
+          "download": "Down",
+          "upload": "Up"
         }
       },
       "cpu": {

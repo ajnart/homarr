@@ -5,5 +5,26 @@
   },
   "input": {
     "placeholder": "Doorzoek het web..."
-  }
+  },
+  "switched-to": "",
+  "searchEngines": {
+    "search": {
+      "name": "",
+      "description": ""
+    },
+    "youtube": {
+      "name": "",
+      "description": ""
+    },
+    "torrents": {
+      "name": "",
+      "description": ""
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": ""
+    }
+  },
+  "tip": "",
+  "switchedSearchEngine": ""
 }

@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "用户网",
-    "description": "允许您查看您的用户网（Sabnzbd 或 NZBGet）队列和历史记录，暂停和恢复下载。"
+    "name": "",
+    "description": ""
   },
   "card": {
     "errors": {
@@ -16,7 +16,7 @@
     "history": "历史"
   },
   "info": {
-    "sizeLeft": "左侧大小",
+    "sizeLeft": "左侧尺寸调整",
     "paused": "暂停使用"
   },
   "queue": {

@@ -8,17 +8,17 @@
       "buttons": {
         "askFor": "Richiedi {{title}}",
         "cancel": "Annulla",
-        "request": "Richiedi"
+        "request": "Richiesta"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "Utilizzo della chiave API",
+          "title": "Chiave API in uso",
           "text": "Questa richiesta verrà approvata automaticamente"
         }
       }
     },
     "seasonSelector": {
-      "caption": "Spuntare le stagioni che si desidera scaricare.",
+      "caption": "Seleziona le stagioni che desideri scaricare",
       "table": {
         "header": {
           "season": "Stagione",

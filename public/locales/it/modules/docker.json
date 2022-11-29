@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Ti permette di gestire facilmente i tuoi container docker"
+    "description": "Gestisci facilmente i tuoi container di docker"
   },
   "search": {
-    "placeholder": "Ricerca per contenitore o nome dell'immagine"
+    "placeholder": "Ricerca per container nome immagine"
   },
   "table": {
     "header": {
@@ -14,7 +14,7 @@
       "state": "Stato"
     },
     "body": {
-      "portCollapse": "{{ports}} di più"
+      "portCollapse": "{{ports}} altro"
     },
     "states": {
       "running": "In esecuzione",
@@ -38,13 +38,13 @@
       "title": "Avvia"
     },
     "refreshData": {
-      "title": "Aggiornare i dati"
+      "title": "Aggiorna dati"
     },
     "remove": {
       "title": "Rimuovi"
     },
     "addToHomarr": {
-      "title": "Aggiungi a Homarr"
+      "title": "Aggiungi ad Homarr"
     }
   },
   "actions": {
@@ -61,13 +61,13 @@
       "end": "Riavviato"
     },
     "remove": {
-      "start": "Rimozione",
+      "start": "Rimozione in corso",
       "end": "Rimosso"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "Integrazione di Docker fallita",
+      "title": "Integrazione Docker fallita",
       "message": "Hai dimenticato di montare il socket di docker?"
     },
     "unknownError": {
