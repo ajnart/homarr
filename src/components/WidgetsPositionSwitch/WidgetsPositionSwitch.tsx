@@ -48,15 +48,11 @@ export function WidgetsPositionSwitch() {
   };
 
   return (
-    <Group>
-      <div className={classes.root}>
-        <Switch
-          checked={widgetPosition === 'left'}
-          onChange={() => toggleWidgetPosition()}
-          size="md"
-        />
-      </div>
-      {t('label')}
-    </Group>
+    <Switch
+      label={t('label')}
+      checked={widgetPosition === 'left'}
+      onChange={() => toggleWidgetPosition()}
+      size="md"
+    />
   );
 }

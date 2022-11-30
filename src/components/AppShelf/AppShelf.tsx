@@ -95,7 +95,7 @@ const AppShelf = (props: any) => {
         onDragEnd={handleDragEnd}
       >
         <SortableContext items={config.services}>
-          <Grid gutter="lg" align="center">
+          <Grid gutter="lg" grow={config.settings.grow}>
             {filtered.map((service) => (
               <Grid.Col key={service.id} span="content">
                 <SortableItem service={service} key={service.id} id={service.id}>

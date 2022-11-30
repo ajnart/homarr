@@ -14,6 +14,7 @@ export interface Settings {
   customCSS?: string;
   appOpacity?: number;
   widgetPosition?: string;
+  grow?: boolean;
   appCardWidth?: number;
 }
 
