@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Дополнительные параметры",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "Коды состояния HTTP",
-                        "placeholder": "Выберите подходящие коды состояния",
-                        "clearButtonLabel": "Очистить выбранное",
-                        "nothingFound": "Ничего не найдено"
-                    },
                     "openServiceInNewTab": {
                         "label": "Открывать сервис в новой вкладке"
                     },
