@@ -62,7 +62,7 @@ export default function PingComponent(props: any) {
     <motion.div
       style={{ position: 'absolute', bottom: 20, right: 20 }}
       animate={{
-        scale: isOnline === 'online' ? [1, 0.8, 1] : 1,
+        scale: isOnline === 'online' ? [1, 0.7, 1] : 1,
       }}
       transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
     >
@@ -78,7 +78,7 @@ export default function PingComponent(props: any) {
         }
       >
         <Indicator
-          size={13}
+          size={15}
           color={isOnline === 'online' ? 'green' : isOnline === 'down' ? 'red' : 'yellow'}
         >
           {null}
