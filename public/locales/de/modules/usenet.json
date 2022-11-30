@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Ermöglicht es dir, deine Usenet (Sabnzbd oder NZBGet) Download Warteschlange und den Verlauf zu betrachten sowie Downloads anzuhalten und fortzusetzen"
   },
   "card": {
     "errors": {
