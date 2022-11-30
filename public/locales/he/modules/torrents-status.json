@@ -27,8 +27,8 @@
       "download": "הורדה",
       "upload": "העלאה",
       "timeSpan": "לפני שניות",
-      "totalDownload": "הורדה ממתינה",
-      "totalUpload": "העלאה ממתינה"
+      "totalDownload": "הורדה",
+      "totalUpload": "העלאה"
     },
     "errors": {
       "noDownloadClients": {
