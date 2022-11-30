@@ -6,6 +6,7 @@ import { ColorSelector } from './ColorSelector';
 import { OpacitySelector } from './OpacitySelector';
 import { AppCardWidthSelector } from './AppCardWidthSelector';
 import { ShadeSelector } from './ShadeSelector';
+import { GrowthSelector } from './GrowthSelector';
 
 export default function TitleChanger() {
   const { config, setConfig } = useConfig();
@@ -74,6 +75,7 @@ export default function TitleChanger() {
           <Button type="submit">{t('buttons.submit')}</Button>
         </Stack>
       </form>
+      <GrowthSelector />
       <ColorSelector type="primary" />
       <ColorSelector type="secondary" />
       <ShadeSelector />

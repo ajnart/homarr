@@ -6,25 +6,25 @@
   "input": {
     "placeholder": "Sök på webben..."
   },
-  "switched-to": "",
+  "switched-to": "Växlade till",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Webb",
+      "description": "Sök med din sökmotor (definierad i inställningar)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Sök på YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrents",
+      "description": "Sök torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Sök efter filmer och TV-program med Overseerr (modulen måste vara aktiverad)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Du kan välja sökfältet med kortkommandot ",
+  "switchedSearchEngine": "Växlade till att söka med {{searchEngine}}"
 }
