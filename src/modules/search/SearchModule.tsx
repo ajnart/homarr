@@ -1,5 +1,6 @@
 import {
   ActionIcon,
+  Autocomplete,
   Box,
   createStyles,
   Divider,
@@ -11,7 +12,7 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { IconSearch, IconBrandYoutube, IconDownload, IconMovie } from '@tabler/icons';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { useTranslation } from 'next-i18next';
@@ -21,6 +22,7 @@ import { useConfig } from '../../tools/state';
 import { OverseerrModule } from '../overseerr';
 import Tip from '../../components/layout/Tip';
 import { OverseerrMediaDisplay } from '../common';
+import SmallServiceItem from '../../components/AppShelf/SmallServiceItem';
 
 export const SearchModule: IModule = {
   title: 'Search',
@@ -97,6 +99,25 @@ export function SearchModuleComponent() {
     },
   ];
   const [selectedSearchEngine, setSearchEngine] = useState<ItemProps>(searchEnginesList[0]);
+  const matchingServices = config.services.filter((service) => {
+    if (searchQuery === '' || searchQuery === undefined) {
+      return false;
+    }
+    return service.name.toLowerCase().includes(searchQuery.toLowerCase());
+  });
+  const autocompleteData = matchingServices.map((service) => ({
+    label: service.name,
+    value: service.name,
+    icon: service.icon,
+    url: service.openedUrl ?? service.url,
+  }));
+  const AutoCompleteItem = forwardRef<HTMLDivElement, any>(
+    ({ label, value, icon, url, ...others }: any, ref) => (
+      <div ref={ref} {...others}>
+        <SmallServiceItem service={{ label, value, icon, url }} />
+      </div>
+    )
+  );
   useEffect(() => {
     // Refresh the default search engine every time the config for it changes #521
     setSearchEngine(searchEnginesList[0]);
@@ -134,17 +155,30 @@ export function SearchModuleComponent() {
         transition="pop-top-right"
       >
         <Popover.Target>
-          <TextInput
+          <Autocomplete
             ref={textInput}
             onFocusCapture={() => setOpened(true)}
             autoFocus
             rightSection={<SearchModuleMenu />}
             placeholder={t(`searchEngines.${selectedSearchEngine.value}.description`)}
             value={searchQuery}
-            onChange={(event) => tryMatchSearchEngine(event.currentTarget.value, setSearchQuery)}
+            onChange={(currentString) => tryMatchSearchEngine(currentString, setSearchQuery)}
+            itemComponent={AutoCompleteItem}
+            data={autocompleteData}
+            onItemSubmit={(item) => {
+              setOpened(false);
+              if (item.url) {
+                setSearchQuery('');
+                window.open(item.openedUrl ? item.openedUrl : item.url, openInNewTab);
+              }
+            }}
             // Replace %s if it is in selectedSearchEngine.url with searchQuery, otherwise append searchQuery at the end of it
             onKeyDown={(event) => {
-              if (event.key === 'Enter' && searchQuery.length > 0) {
+              if (
+                event.key === 'Enter' &&
+                searchQuery.length > 0 &&
+                autocompleteData.length === 0
+              ) {
                 if (selectedSearchEngine.url.includes('%s')) {
                   window.open(selectedSearchEngine.url.replace('%s', searchQuery), openInNewTab);
                 } else {
@@ -152,6 +186,8 @@ export function SearchModuleComponent() {
                 }
               }
             }}
+            radius="md"
+            size="md"
           />
         </Popover.Target>
         <Popover.Dropdown>
