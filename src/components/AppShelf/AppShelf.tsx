@@ -143,7 +143,14 @@ const AppShelf = (props: any) => {
             value={idx.toString()}
           >
             <Accordion.Control>
-              <Title order={5}>{category}</Title>
+              <Title
+                order={5}
+                style={{
+                  minWidth: 0,
+                }}
+              >
+                {category}
+              </Title>
             </Accordion.Control>
             <Accordion.Panel>{getItems(category)}</Accordion.Panel>
           </Accordion.Item>

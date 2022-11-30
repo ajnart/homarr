@@ -144,7 +144,7 @@ export function SearchModuleComponent() {
   //TODO: Fix the bug where clicking anything inside the Modal to ask for a movie
   // will close it (Because it closes the underlying Popover)
   return (
-    <Box style={{ width: '100%', maxWidth: 400, minWidth: 300 }}>
+    <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
         opened={OverseerrResults.length > 0 && opened && searchQuery.length > 3}
         position="bottom"
