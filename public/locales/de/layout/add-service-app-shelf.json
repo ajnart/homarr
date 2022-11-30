@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Erweiterte Optionen",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTP Status Nummern",
-                        "placeholder": "Gültige Statuscodes auswählen",
-                        "clearButtonLabel": "Auswahl löschen",
-                        "nothingFound": "Nichts gefunden"
-                    },
                     "openServiceInNewTab": {
                         "label": "Service in einem neuen Tab öffnen"
                     },
