@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Suche mit Ihrer Suchmaschine (in den Einstellungen definiert)"
+      "description": "Suche mit deiner Suchmaschine (in den Einstellungen definiert)"
     },
     "youtube": {
       "name": "YouTube",
