@@ -39,7 +39,7 @@ export const AboutModal = ({ opened, closeModal }: AboutModalProps) => {
       opened={opened}
       title={
         <Group spacing="sm">
-          <Image src="/favicon-squared.png" width={30} height={30} />
+          <Image src="/imgs/logo/logo.png" width={30} height={30} objectFit="contain" />
           <Title order={3} variant="gradient" gradient={colorGradiant}>
             About Homarr
           </Title>
