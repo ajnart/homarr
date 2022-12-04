@@ -3,7 +3,6 @@ import { useConfigContext } from '../../config/provider';
 import ConfigChanger from '../Config/ConfigChanger';
 import ConfigActions from './Common/ConfigActions';
 import LanguageSelect from './Common/LanguageSelect';
-import { SearchEnabledSwitch } from './Common/SearchEngineEnabledSwitch';
 import { SearchEngineSelector } from './Common/SearchEngineSelector';
 import { SearchNewTabSwitch } from './Common/SearchNewTabSwitch';
 
@@ -21,10 +20,6 @@ export default function CommonSettings() {
   return (
     <Stack mb="md" mr="sm">
       <SearchEngineSelector searchEngine={config.settings.common.searchEngine} />
-      <SearchNewTabSwitch
-        defaultValue={config.settings.common.searchEngine.properties.openInNewTab}
-      />
-      <SearchEnabledSwitch defaultValue={config.settings.common.searchEngine.properties.enabled} />
       <Space />
       <LanguageSelect />
       <ConfigChanger />

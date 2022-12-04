@@ -42,7 +42,6 @@ export function SearchNewTabSwitch({ defaultValue }: SearchNewTabSwitchProps) {
     <Switch
       checked={openInNewTab}
       onChange={toggleOpenInNewTab}
-      size="md"
       label={t('searchNewTab.label')}
     />
   );
