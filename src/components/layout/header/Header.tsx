@@ -4,9 +4,9 @@ import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 
 import DockerMenuButton from '../../../modules/docker/DockerModule';
 import { Search } from './Search';
-import { SettingsMenuButton } from '../../Settings/SettingsMenu';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
+import { SettingsMenu } from './SettingsMenu';
 
 export const HeaderHeight = 64;
 
@@ -23,7 +23,7 @@ export function Header(props: any) {
         <Group position="right" noWrap>
           <Search />
           <DockerMenuButton />
-          <SettingsMenuButton />
+          <SettingsMenu />
           <AddItemShelfButton />
         </Group>
       </Group>

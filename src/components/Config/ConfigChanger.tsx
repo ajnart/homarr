@@ -15,7 +15,7 @@ export default function ConfigChanger() {
   const onConfigChange = (value: string) => {
     // TODO: check what should happen here with @manuel-rw
     // Wheter it should check for the current url and then load the new config only on index
-    // Or it should always load the selected config and open index or ?
+    // Or it should always load the selected config and open index or ? --> change url to page
     setActiveConfig(value);
     /*
         loadConfig(e ?? 'default');

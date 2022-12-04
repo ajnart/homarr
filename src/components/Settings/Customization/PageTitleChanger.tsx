@@ -8,6 +8,7 @@ interface PageTitleChangerProps {
   defaultValue: string | undefined;
 }
 
+// TODO: change to dashboard title
 export const PageTitleChanger = ({ defaultValue }: PageTitleChangerProps) => {
   const { t } = useTranslation('settings/customization/page-appearance');
   const updateConfig = useConfigStore((x) => x.updateConfig);

@@ -8,6 +8,7 @@ interface MetaTitleChangerProps {
   defaultValue: string | undefined;
 }
 
+// TODO: change to pageTitle
 export const MetaTitleChanger = ({ defaultValue }: MetaTitleChangerProps) => {
   const { t } = useTranslation('settings/customization/page-appearance');
   const updateConfig = useConfigStore((x) => x.updateConfig);

@@ -31,37 +31,25 @@ function SettingsMenu() {
   );
 }
 
-export function SettingsMenuButton(props: any) {
-  useHotkeys([['ctrl+L', () => setOpened(!opened)]]);
+interface SettingsDrawerProps {
+  opened: boolean;
+  closeDrawer: () => void;
+}
+
+export function SettingsDrawer({ opened, closeDrawer }: SettingsDrawerProps) {
   const { t } = useTranslation('settings/common');
 
-  const [opened, setOpened] = useState(false);
-
   return (
-    <>
-      <Drawer
-        size="xl"
-        padding="lg"
-        position="right"
-        title={<Title order={5}>{t('title')}</Title>}
-        opened={props.opened || opened}
-        onClose={() => setOpened(false)}
-      >
-        <SettingsMenu />
-        <Credits />
-      </Drawer>
-      <Tooltip label={t('tooltip')}>
-        <ActionIcon
-          variant="default"
-          radius="md"
-          size="xl"
-          color="blue"
-          style={props.style}
-          onClick={() => setOpened(true)}
-        >
-          <IconSettings />
-        </ActionIcon>
-      </Tooltip>
-    </>
+    <Drawer
+      size="xl"
+      padding="lg"
+      position="right"
+      title={<Title order={5}>{t('title')}</Title>}
+      opened={opened}
+      onClose={closeDrawer}
+    >
+      <SettingsMenu />
+      <Credits />
+    </Drawer>
   );
 }
