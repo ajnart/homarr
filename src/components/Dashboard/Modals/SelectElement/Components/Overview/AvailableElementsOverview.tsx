@@ -41,9 +41,21 @@ export const AvailableElementTypes = ({
                     enabledStatusChecker: false,
                     okStatus: [],
                   },
-                  integration: {
-                    type: 'deluge',
-                    properties: {},
+                  behaviour: {
+                    isOpeningNewTab: false,
+                  },
+                  area: {
+                    type: 'wrapper',
+                  },
+                  shape: {
+                    location: {
+                      x: 0,
+                      y: 0,
+                    },
+                    size: {
+                      height: 1,
+                      width: 1,
+                    },
                   },
                 },
               },

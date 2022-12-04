@@ -7,13 +7,11 @@ export interface ServiceType extends TileBaseType {
   behaviour: ServiceBehaviourType;
   network: ServiceNetworkType;
   appearance: ServiceAppearanceType;
-  integration?: ServiceIntegrationType; //TODO: make this nullable
+  integration?: ServiceIntegrationType;
 }
 
 interface ServiceBehaviourType {
-  onClickUrl: string;
-  isMoveable: boolean; //TODO: remove this proeprty
-  isSticky: boolean; //TODO: remove this property
+  onClickUrl?: string;
   isOpeningNewTab: boolean;
 }
 
