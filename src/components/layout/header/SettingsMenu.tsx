@@ -1,11 +1,13 @@
 import { ActionIcon, Menu, Tooltip } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
+import { AboutModal } from '../../About/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
 import { ColorSchemeSwitch } from './SettingsMenu/ColorSchemeSwitch';
 
 export const SettingsMenu = () => {
   const [drawerOpened, drawer] = useDisclosure(false);
+  const [aboutModalOpened, aboutModal] = useDisclosure(false);
 
   return (
     <>
@@ -22,13 +24,17 @@ export const SettingsMenu = () => {
             <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
               Homarr Settings
             </Menu.Item>
-            <Menu.Item icon={<IconInfoCircle strokeWidth={1.2} size={18} />} onClick={() => {}}>
+            <Menu.Item
+              icon={<IconInfoCircle strokeWidth={1.2} size={18} />}
+              onClick={aboutModal.open}
+            >
               About
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>
       </Tooltip>
       <SettingsDrawer opened={drawerOpened} closeDrawer={drawer.close} />
+      <AboutModal opened={aboutModalOpened} closeModal={aboutModal.close} />
     </>
   );
 };

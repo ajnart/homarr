@@ -1,6 +1,6 @@
 import { Group, Image, Text } from '@mantine/core';
 import { useConfigContext } from '../../config/provider';
-import { useColorTheme } from '../../tools/color';
+import { usePrimaryGradient } from './useGradient';
 
 interface LogoProps {
   size?: 'md' | 'xs';
@@ -9,7 +9,7 @@ interface LogoProps {
 
 export function Logo({ size = 'md', withoutText = false }: LogoProps) {
   const { config } = useConfigContext();
-  const { primaryColor, secondaryColor } = useColorTheme();
+  const primaryGradient = usePrimaryGradient();
 
   return (
     <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
@@ -25,11 +25,7 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
           size={size === 'md' ? 22 : 'xs'}
           weight="bold"
           variant="gradient"
-          gradient={{
-            from: primaryColor,
-            to: secondaryColor,
-            deg: 145,
-          }}
+          gradient={primaryGradient}
         >
           {config?.settings.customization.pageTitle || 'Homarr'}
         </Text>
