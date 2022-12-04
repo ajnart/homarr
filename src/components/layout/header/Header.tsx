@@ -7,6 +7,7 @@ import { Search } from './Search';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
 import { SettingsMenu } from './SettingsMenu';
+import { ToolsMenu } from './ToolsMenu';
 
 export const HeaderHeight = 64;
 
@@ -22,9 +23,9 @@ export function Header(props: any) {
         </Box>
         <Group position="right" noWrap>
           <Search />
-          <DockerMenuButton />
-          <SettingsMenu />
           <AddItemShelfButton />
+          <ToolsMenu />
+          <SettingsMenu />
         </Group>
       </Group>
     </MantineHeader>
