@@ -1,4 +1,4 @@
-import { Alert, Paper, SegmentedControl, Stack, TextInput, Title } from '@mantine/core';
+import { Alert, Paper, SegmentedControl, Space, Stack, TextInput, Title } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ChangeEventHandler, useState } from 'react';
@@ -9,12 +9,12 @@ import {
   SearchEngineCommonSettingsType,
 } from '../../../types/settings';
 import Tip from '../../layout/Tip';
+import { SearchNewTabSwitch } from './SearchNewTabSwitch';
 
 interface Props {
   searchEngine: SearchEngineCommonSettingsType;
 }
 
-// TODO: discuss with @manuel-rw the design of the search engine
 export const SearchEngineSelector = ({ searchEngine }: Props) => {
   const { t } = useTranslation(['settings/general/search-engine']);
   const { updateSearchEngineConfig } = useUpdateSearchEngineConfig();
@@ -49,18 +49,26 @@ export const SearchEngineSelector = ({ searchEngine }: Props) => {
         onChange={onEngineChange}
         data={searchEngineOptions}
       />
-      {engine === 'custom' && (
-        <Paper p="md" py="sm" mb="xs" withBorder>
-          <Title order={6}>{t('customEngine.title')}</Title>
-          <Tip>{t('tips.placeholderTip')}</Tip>
-          <TextInput
-            label={t('customEngine.label')}
-            placeholder={t('customEngine.placeholder')}
-            value={searchUrl}
-            onChange={onSearchUrlChange}
-          />
-        </Paper>
-      )}
+      <Paper p="md" py="sm" mb="md" withBorder>
+        <Title order={6} mb={0}>
+          Search engine configuration
+        </Title>
+
+        <SearchNewTabSwitch defaultValue={searchEngine.properties.openInNewTab} />
+
+        {engine === 'custom' && (
+          <>
+            <Space mb="md" />
+            <TextInput
+              label={t('customEngine.label')}
+              description={t('tips.placeholderTip')}
+              placeholder={t('customEngine.placeholder')}
+              value={searchUrl}
+              onChange={onSearchUrlChange}
+            />
+          </>
+        )}
+      </Paper>
       <Alert icon={<IconInfoCircle />} color="blue">
         {t('tips.generalTip')}
       </Alert>
@@ -87,10 +95,11 @@ const useUpdateSearchEngineConfig = () => {
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
-  if (!configName)
+  if (!configName) {
     return {
       updateSearchEngineConfig: () => {},
     };
+  }
 
   const updateSearchEngineConfig = (engine: EngineType, searchUrl: string) => {
     updateConfig(configName, (prev) => ({
