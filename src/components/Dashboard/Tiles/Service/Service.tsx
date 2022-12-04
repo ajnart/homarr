@@ -3,7 +3,7 @@ import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
 import { ServiceType } from '../../../../types/service';
 import { useCardStyles } from '../../../layout/useCardStyles';
-import { useEditModeStore } from '../../Views/store';
+import { useEditModeStore } from '../../Views/useEditModeStore';
 import { BaseTileProps } from '../type';
 
 interface ServiceTileProps extends BaseTileProps {

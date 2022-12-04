@@ -1,6 +1,6 @@
 import { Card } from '@mantine/core';
 import { RefObject } from 'react';
-import { Tiles } from '../../Tiles/definition';
+import { Tiles } from '../../Tiles/tilesDefinitions';
 import { GridstackTileWrapper } from '../../Tiles/TileWrapper';
 import { useGridstack } from '../gridstack/use-gridstack';
 

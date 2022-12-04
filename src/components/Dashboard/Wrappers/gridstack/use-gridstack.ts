@@ -15,7 +15,7 @@ import { useResize } from '../../../../hooks/use-resize';
 import { IntegrationsType } from '../../../../types/integration';
 import { ServiceType } from '../../../../types/service';
 import { TileBaseType } from '../../../../types/tile';
-import { useEditModeStore } from '../../Views/store';
+import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
 
 interface UseGristackReturnType {
