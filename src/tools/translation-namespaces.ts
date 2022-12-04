@@ -4,6 +4,7 @@ export const dashboardNamespaces = [
   'layout/add-service-app-shelf',
   'layout/app-shelf-menu',
   'layout/tools',
+  'layout/element-selector/selector',
   'settings/common',
   'settings/general/theme-selector',
   'settings/general/config-changer',

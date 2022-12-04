@@ -1,0 +1,9 @@
+{
+    "modal": {
+        "title": "Add a new tile to your Dashboard",
+        "text": "You can use tiles, to make Homarr's dashboard yours. You may choose your desired tiles from the collection below and drag them anywhere on the dashboard where you like."
+    },
+    "actionIcon": {
+        "tooltip": "Add a tile"
+    }
+}

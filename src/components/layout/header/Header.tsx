@@ -8,6 +8,7 @@ import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
 import { SettingsMenu } from './SettingsMenu';
 import { ToolsMenu } from './ToolsMenu';
+import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
 
 export const HeaderHeight = 64;
 
@@ -24,6 +25,7 @@ export function Header(props: any) {
         <Group position="right" noWrap>
           <Search />
           <AddItemShelfButton />
+          <AddElementAction />
           <ToolsMenu />
           <SettingsMenu />
         </Group>

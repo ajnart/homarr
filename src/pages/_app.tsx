@@ -9,6 +9,8 @@ import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
+import { EditServiceModal } from '../components/Dashboard/Modals/EditService/EditServiceModal';
+import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
 import { ConfigProvider } from '../config/provider';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
@@ -75,7 +77,9 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
               withNormalizeCSS
             >
               <NotificationsProvider limit={4} position="bottom-left">
-                <ModalsProvider>
+                <ModalsProvider
+                  modals={{ editService: EditServiceModal, selectElement: SelectElementModal }}
+                >
                   <ConfigProvider>
                     <Component {...pageProps} />
                   </ConfigProvider>

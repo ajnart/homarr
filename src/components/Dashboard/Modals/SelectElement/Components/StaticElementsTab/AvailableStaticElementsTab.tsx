@@ -1,0 +1,31 @@
+import { Stack, Text, Title } from '@mantine/core';
+import { IconCursorText } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
+import { GenericAvailableElementType } from '../Shared/GenericElementType';
+import { SelectorBackArrow } from '../Shared/SelectorBackArrow';
+
+interface AvailableStaticTypesProps {
+  onClickBack: () => void;
+}
+
+export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps) => {
+  const { t } = useTranslation('layout/element-selector/selector');
+  return (
+    <>
+      <SelectorBackArrow onClickBack={onClickBack} />
+
+      <Text mb="md" color="dimmed">
+        Static elements provide you additional control over your dashboard. They are static, because
+        they don&apos;t integrate with any services and their content never changes.
+      </Text>
+
+      <Stack>
+        <GenericAvailableElementType
+          name="Static Text"
+          description="Display a fixed string on your dashboard"
+          image={<IconCursorText />}
+        />
+      </Stack>
+    </>
+  );
+};
