@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import { CURRENT_VERSION } from '../../../data/constants';
 
-export default function Credits(props: any) {
+export default function Credits() {
   const { t } = useTranslation('settings/common');
 
   return (

@@ -4,27 +4,27 @@ import { useState } from 'react';
 import { IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 
-import AdvancedSettings from './AdvancedSettings';
+import CustomizationSettings from './CustomizationSettings';
 import CommonSettings from './CommonSettings';
 import Credits from './Credits';
 
-function SettingsMenu(props: any) {
+function SettingsMenu() {
   const { t } = useTranslation('settings/common');
 
   return (
-    <Tabs defaultValue="Common">
+    <Tabs defaultValue="common">
       <Tabs.List grow>
-        <Tabs.Tab value="Common">{t('tabs.common')}</Tabs.Tab>
-        <Tabs.Tab value="Customizations">{t('tabs.customizations')}</Tabs.Tab>
+        <Tabs.Tab value="common">{t('tabs.common')}</Tabs.Tab>
+        <Tabs.Tab value="customization">{t('tabs.customizations')}</Tabs.Tab>
       </Tabs.List>
-      <Tabs.Panel data-autofocus value="Common">
+      <Tabs.Panel data-autofocus value="common">
         <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
           <CommonSettings />
         </ScrollArea>
       </Tabs.Panel>
-      <Tabs.Panel value="Customizations">
+      <Tabs.Panel value="customization">
         <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
-          <AdvancedSettings />
+          <CustomizationSettings />
         </ScrollArea>
       </Tabs.Panel>
     </Tabs>

@@ -1,18 +1,18 @@
-import { GetServerSidePropsContext } from 'next';
-import { useState } from 'react';
-import { AppProps } from 'next/app';
-import { getCookie } from 'cookies-next';
-import Head from 'next/head';
-import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from '@mantine/core';
-import { NotificationsProvider } from '@mantine/notifications';
+import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
-import { appWithTranslation } from 'next-i18next';
+import { NotificationsProvider } from '@mantine/notifications';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { ConfigProvider } from '../tools/state';
-import { theme } from '../tools/theme';
+import { getCookie } from 'cookies-next';
+import { GetServerSidePropsContext } from 'next';
+import { appWithTranslation } from 'next-i18next';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { useState } from 'react';
+import { ConfigProvider } from '../config/provider';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
+import { theme } from '../tools/theme';
 
 function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;

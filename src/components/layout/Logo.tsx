@@ -1,25 +1,28 @@
 import { Group, Image, Text } from '@mantine/core';
-import { NextLink } from '@mantine/next';
-import * as React from 'react';
+import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
-import { useConfig } from '../../tools/state';
 
-export function Logo({ style, withoutText }: any) {
-  const { config } = useConfig();
+interface LogoProps {
+  size?: 'md' | 'xs';
+  withoutText?: boolean;
+}
+
+export function Logo({ size = 'md', withoutText = false }: LogoProps) {
+  const { config } = useConfigContext();
   const { primaryColor, secondaryColor } = useColorTheme();
 
   return (
-    <Group spacing="xs" noWrap>
+    <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
       <Image
-        width={50}
-        src={config.settings.logo || '/imgs/logo/logo.png'}
+        width={size === 'md' ? 50 : 20}
+        src={config?.settings.customization.logoImageUrl || '/imgs/logo/logo.png'}
         style={{
           position: 'relative',
         }}
       />
       {withoutText ? null : (
         <Text
-          sx={style}
+          size={size === 'md' ? 22 : 'xs'}
           weight="bold"
           variant="gradient"
           gradient={{
@@ -28,7 +31,7 @@ export function Logo({ style, withoutText }: any) {
             deg: 145,
           }}
         >
-          {config.settings.title || 'Homarr'}
+          {config?.settings.customization.pageTitle || 'Homarr'}
         </Text>
       )}
     </Group>

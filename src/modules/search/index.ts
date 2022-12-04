@@ -1,1 +1,0 @@
-export { SearchModule } from './SearchModule';

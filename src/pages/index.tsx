@@ -1,17 +1,15 @@
 import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
-import { useEffect } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
-import { Config } from '../tools/types';
-import { useConfig } from '../tools/state';
-import { migrateToIdConfig } from '../tools/migrate';
-import { getConfig } from '../tools/getConfig';
-import { useColorTheme } from '../tools/color';
+import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
+import { useInitConfig } from '../config/init';
+import { getConfig } from '../tools/getConfig';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
+import { Config } from '../tools/types';
+import { ConfigType } from '../types/config';
 
 export async function getServerSideProps({
   req,
@@ -38,18 +36,20 @@ export async function getServerSideProps({
 }
 
 export default function HomePage(props: any) {
-  const { config: initialConfig }: { config: Config } = props;
-  const { setConfig } = useConfig();
+  const { config: initialConfig }: { config: ConfigType } = props;
+  /*const { setConfig } = useConfig();
   const { setPrimaryColor, setSecondaryColor } = useColorTheme();
   useEffect(() => {
     const migratedConfig = migrateToIdConfig(initialConfig);
     setPrimaryColor(migratedConfig.settings.primaryColor || 'red');
     setSecondaryColor(migratedConfig.settings.secondaryColor || 'orange');
     setConfig(migratedConfig);
-  }, [initialConfig]);
+  }, [initialConfig]);*/
+  useInitConfig(initialConfig);
+
   return (
     <Layout>
-      <AppShelf />
+      <Dashboard />
       <LoadConfigComponent />
     </Layout>
   );
