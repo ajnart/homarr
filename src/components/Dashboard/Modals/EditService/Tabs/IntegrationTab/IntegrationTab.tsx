@@ -12,7 +12,8 @@ interface IntegrationTabProps {
 
 export const IntegrationTab = ({ form }: IntegrationTabProps) => {
   const { t } = useTranslation('');
-  const hasIntegrationSelected = form.values.integration !== null;
+  const hasIntegrationSelected =
+    form.values.integration && Object.keys(form.values.integration.properties).length;
 
   return (
     <Tabs.Panel value="integration" pt="lg">

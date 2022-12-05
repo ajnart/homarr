@@ -1,7 +1,7 @@
 import { Stack } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconKey, IconKeyOff, IconLock, IconLockOff, IconUser, IconUserOff } from '@tabler/icons';
-import { ServiceType } from '../../../../../../../../../types/service';
+import { ServiceType } from '../../../../../../../../types/service';
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
 
 interface IntegrationOptionsRendererProps {
@@ -31,7 +31,7 @@ const secretMappings = [
 
 export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererProps) => (
   <Stack spacing="xs" mb="md">
-    {Object.entries(form.values.integration.properties).map((entry) => {
+    {form.values.integration && Object.entries(form.values.integration.properties).map((entry) => {
       const mapping = secretMappings.find((item) => item.label === entry[0]);
       const isPresent = entry[1] !== undefined;
 
