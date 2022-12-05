@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import { Button, createStyles, Group, Stack, Tabs, Text } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { closeModal, ContextModalProps } from '@mantine/modals';
+import { ContextModalProps } from '@mantine/modals';
+import { hideNotification, showNotification } from '@mantine/notifications';
 import {
   IconAccessPoint,
   IconAdjustments,
@@ -12,7 +12,7 @@ import {
   IconPlug,
 } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { hideNotification, showNotification } from '@mantine/notifications';
+import Image from 'next/image';
 import { ServiceType } from '../../../../types/service';
 import { AppearanceTab } from './Tabs/AppereanceTab/AppereanceTab';
 import { BehaviourTab } from './Tabs/BehaviourTab/BehaviourTab';
