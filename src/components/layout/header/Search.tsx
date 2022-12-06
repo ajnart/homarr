@@ -18,7 +18,7 @@ import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import SmallServiceItem from '../../AppShelf/SmallServiceItem';
 import Tip from '../Tip';
-import { searchUrls } from '../../Settings/Common/SearchEngineSelector';
+import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import { useConfigContext } from '../../../config/provider';
 import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';

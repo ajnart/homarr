@@ -1,7 +1,7 @@
 import { ActionIcon, Menu, Text } from '@mantine/core';
 import { IconAxe } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import DockerMenuButton from '../../../modules/docker/DockerModule';
+import DockerMenuButton from '../../../../../modules/docker/DockerModule';
 
 export const ToolsMenu = () => {
   const { t } = useTranslation('layout/tools');

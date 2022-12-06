@@ -1,4 +1,5 @@
 import {
+  ActionIcon,
   Box,
   Center,
   Checkbox,
@@ -8,6 +9,7 @@ import {
   Stack,
   Text,
   Title,
+  useMantineTheme,
 } from '@mantine/core';
 import { IconBrandDocker, IconLayout, IconSearch } from '@tabler/icons';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
@@ -33,6 +35,8 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
   const [ping, setPing] = useState(defaultLayout?.enabledPing ?? false);
   const [searchBar, setSearchBar] = useState(defaultLayout?.enabledSearchbar ?? false);
 
+  const { colors, colorScheme } = useMantineTheme();
+
   if (!configName) return null;
 
   const handleChange = (
@@ -43,7 +47,7 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
     const value = event.target.checked;
     setState(value);
     updateConfig(configName, (prev) => {
-      const layout = prev.settings.customization.layout;
+      const { layout } = prev.settings.customization;
 
       layout[key] = value;
 
@@ -73,21 +77,21 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
           turned on or off
         </Text>
 
-        <Paper px="xs" py={2} withBorder>
+        <Paper px="xs" py={4} withBorder>
           <Group position="apart">
             <Logo size="xs" />
-            <Group spacing={4}>
+            <Group spacing={5}>
               {searchBar ? (
-                <Paper withBorder p={2} w={60}>
-                  <Group spacing={2} align="center">
-                    <IconSearch size={8} />
-                    <Text size={8} color="dimmed">
-                      Search
-                    </Text>
-                  </Group>
-                </Paper>
+                <Paper
+                  style={{
+                    height: 10,
+                    backgroundColor: colorScheme === 'dark' ? colors.gray[8] : colors.gray[1],
+                  }}
+                  p={2}
+                  w={60}
+                />
               ) : null}
-              {docker ? <IconBrandDocker size={18} color="#0db7ed" /> : null}
+              {docker ? <ActionIcon size={10} disabled /> : null}
             </Group>
           </Group>
         </Paper>

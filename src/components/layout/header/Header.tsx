@@ -1,14 +1,12 @@
-import { Box, createStyles, Group, Header as MantineHeader, useMantineTheme } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
+import { Box, createStyles, Group, Header as MantineHeader } from '@mantine/core';
 import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
 
-import DockerMenuButton from '../../../modules/docker/DockerModule';
-import { Search } from './Search';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
-import { SettingsMenu } from './SettingsMenu';
-import { ToolsMenu } from './ToolsMenu';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
+import { ToolsMenu } from './Actions/RunToolAction/ToolsMenu';
+import { Search } from './Search';
+import { SettingsMenu } from './SettingsMenu';
 
 export const HeaderHeight = 64;
 
