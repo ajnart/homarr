@@ -2,13 +2,12 @@ import { Alert, Paper, SegmentedControl, Space, Stack, TextInput, Title } from '
 import { IconInfoCircle } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ChangeEventHandler, useState } from 'react';
-import { useConfigContext } from '../../../config/provider';
-import { useConfigStore } from '../../../config/store';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
 import {
   CommonSearchEngineCommonSettingsType,
   SearchEngineCommonSettingsType,
-} from '../../../types/settings';
-import Tip from '../../layout/Tip';
+} from '../../../../types/settings';
 import { SearchNewTabSwitch } from './SearchNewTabSwitch';
 
 interface Props {

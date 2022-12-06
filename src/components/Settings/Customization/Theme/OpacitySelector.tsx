@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Text, Slider, Stack } from '@mantine/core';
+import { Slider, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '../../../config/provider';
-import { useConfigStore } from '../../../config/store';
+import { useState } from 'react';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
 
 interface OpacitySelectorProps {
   defaultValue: number | undefined;

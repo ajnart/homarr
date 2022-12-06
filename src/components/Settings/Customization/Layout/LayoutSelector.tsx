@@ -11,10 +11,10 @@ import {
 } from '@mantine/core';
 import { IconBrandDocker, IconLayout, IconSearch } from '@tabler/icons';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
-import { useConfigContext } from '../../../config/provider';
-import { useConfigStore } from '../../../config/store';
-import { CustomizationSettingsType } from '../../../types/settings';
-import { Logo } from '../../layout/Logo';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
+import { CustomizationSettingsType } from '../../../../types/settings';
+import { Logo } from '../../../layout/Logo';
 
 interface LayoutSelectorProps {
   defaultLayout: CustomizationSettingsType['layout'] | undefined;

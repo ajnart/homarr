@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   ColorSwatch,
   Grid,
@@ -8,11 +7,12 @@ import {
   Text,
   useMantineTheme,
 } from '@mantine/core';
-import { useTranslation } from 'next-i18next';
-import { useColorTheme } from '../../../tools/color';
 import { useDisclosure } from '@mantine/hooks';
-import { useConfigStore } from '../../../config/store';
-import { useConfigContext } from '../../../config/provider';
+import { useTranslation } from 'next-i18next';
+import { useState } from 'react';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
+import { useColorTheme } from '../../../../tools/color';
 
 interface ColorControlProps {
   defaultValue: MantineTheme['primaryColor'] | undefined;
@@ -40,7 +40,7 @@ export function ColorSelector({ type, defaultValue }: ColorControlProps) {
     if (type === 'primary') setPrimaryColor(color);
     else setSecondaryColor(color);
     updateConfig(configName, (prev) => {
-      const colors = prev.settings.customization.colors;
+      const { colors } = prev.settings.customization;
       colors[type] = color;
       return {
         ...prev,

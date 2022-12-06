@@ -1,13 +1,13 @@
-import { Button, Center, Group } from '@mantine/core';
+import { ActionIcon, Center, createStyles, Flex, Text, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { IconCheck, IconDownload, IconPlus, IconTrash, IconX } from '@tabler/icons';
+import { IconCheck, IconCopy, IconDownload, IconTrash, IconX } from '@tabler/icons';
 import { useMutation } from '@tanstack/react-query';
 import fileDownload from 'js-file-download';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '../../../config/provider';
-import Tip from '../../layout/Tip';
-import { CreateConfigCopyModal } from './ConfigActions/CreateCopyModal';
+import { useConfigContext } from '../../../../config/provider';
+import Tip from '../../../layout/Tip';
+import { CreateConfigCopyModal } from './CreateCopyModal';
 
 export default function ConfigActions() {
   const { t } = useTranslation(['settings/general/config-changer', 'settings/common']);
@@ -26,6 +26,9 @@ export default function ConfigActions() {
     await mutateAsync();
   };
 
+  const { classes } = useStyles();
+  const { colors } = useMantineTheme();
+
   return (
     <>
       <CreateConfigCopyModal
@@ -33,32 +36,25 @@ export default function ConfigActions() {
         closeModal={createCopyModal.close}
         initialConfigName={config.configProperties.name}
       />
-      <Group spacing="xs" position="center">
-        <Button
-          size="xs"
-          leftIcon={<IconDownload size={18} />}
-          variant="default"
-          onClick={handleDownload}
-        >
-          {t('buttons.download')}
-        </Button>
-        <Button
-          size="xs"
-          leftIcon={<IconTrash size={18} />}
-          variant="default"
+      <Flex gap="xs" justify="stretch">
+        <ActionIcon className={classes.actionIcon} onClick={handleDownload} variant="default">
+          <IconDownload size={20} />
+          <Text>{t('buttons.download')}</Text>
+        </ActionIcon>
+        <ActionIcon
+          className={classes.actionIcon}
           onClick={handleDeletion}
+          color="red"
+          variant="light"
         >
-          {t('buttons.delete.text')}
-        </Button>
-        <Button
-          size="xs"
-          leftIcon={<IconPlus size={18} />}
-          variant="default"
-          onClick={createCopyModal.open}
-        >
-          {t('buttons.saveCopy')}
-        </Button>
-      </Group>
+          <IconTrash color={colors.red[2]} size={20} />
+          <Text>{t('buttons.delete.text')}</Text>
+        </ActionIcon>
+        <ActionIcon className={classes.actionIcon} onClick={createCopyModal.open} variant="default">
+          <IconCopy size={20} />
+          <Text>{t('buttons.saveCopy')}</Text>
+        </ActionIcon>
+      </Flex>
 
       <Center>
         <Tip>{t('settings/common:tips.configTip')}</Tip>
@@ -66,6 +62,23 @@ export default function ConfigActions() {
     </>
   );
 }
+
+const useStyles = createStyles(() => ({
+  actionIcon: {
+    width: 'auto',
+    height: 'auto',
+    maxWidth: 'auto',
+    maxHeight: 'auto',
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    rowGap: 10,
+    padding: 10,
+  },
+}));
 
 const useDeleteConfigMutation = (configName: string) => {
   const { t } = useTranslation(['settings/general/config-changer']);

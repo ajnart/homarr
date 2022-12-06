@@ -2,7 +2,7 @@ import { Group, ActionIcon, Anchor, Text } from '@mantine/core';
 import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 
-import { CURRENT_VERSION } from '../../../data/constants';
+import { CURRENT_VERSION } from '../../../../data/constants';
 
 export default function Credits() {
   const { t } = useTranslation('settings/common');

@@ -1,10 +1,10 @@
 import { Space, Stack, Text } from '@mantine/core';
-import { useConfigContext } from '../../config/provider';
-import ConfigChanger from '../Config/ConfigChanger';
-import ConfigActions from './Common/ConfigActions';
-import LanguageSelect from './Common/LanguageSelect';
-import { SearchEngineSelector } from './Common/SearchEngineSelector';
-import { SearchNewTabSwitch } from './Common/SearchNewTabSwitch';
+import { useConfigContext } from '../../../config/provider';
+import ConfigChanger from '../../Config/ConfigChanger';
+import ConfigActions from './Config/ConfigActions';
+import LanguageSelect from './Language/LanguageSelect';
+import { SearchEngineSelector } from './SearchEngine/SearchEngineSelector';
+import { SearchNewTabSwitch } from './SearchNewTabSwitch';
 
 export default function CommonSettings() {
   const { config } = useConfigContext();

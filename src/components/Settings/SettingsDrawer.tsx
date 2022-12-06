@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 
-import CustomizationSettings from './CustomizationSettings';
-import CommonSettings from './CommonSettings';
-import Credits from './Credits';
+import CustomizationSettings from './Customization/CustomizationSettings';
+import CommonSettings from './Common/CommonSettings';
+import Credits from './Common/Credits';
 
 function SettingsMenu() {
   const { t } = useTranslation('settings/common');

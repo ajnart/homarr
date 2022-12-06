@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
 import {
   ColorSwatch,
+  Grid,
   Group,
+  MantineTheme,
   Popover,
+  Stack,
   Text,
   useMantineTheme,
-  MantineTheme,
-  Stack,
-  Grid,
 } from '@mantine/core';
-import { useTranslation } from 'next-i18next';
-import { useColorTheme } from '../../../tools/color';
 import { useDisclosure } from '@mantine/hooks';
-import { useConfigStore } from '../../../config/store';
-import { useConfigContext } from '../../../config/provider';
+import { useTranslation } from 'next-i18next';
+import { useState } from 'react';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
+import { useColorTheme } from '../../../../tools/color';
 
 interface ShadeSelectorProps {
   defaultValue: MantineTheme['primaryShade'] | undefined;

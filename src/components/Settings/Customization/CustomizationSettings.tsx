@@ -1,15 +1,15 @@
 import { Stack } from '@mantine/core';
-import { useConfigContext } from '../../config/provider';
-import { ColorSelector } from './Customization/ColorSelector';
-import { BackgroundChanger } from './Customization/BackgroundChanger';
-import { CustomCssChanger } from './Customization/CustomCssChanger';
-import { FaviconChanger } from './Customization/FaviconChanger';
-import { LogoImageChanger } from './Customization/LogoImageChanger';
-import { MetaTitleChanger } from './Customization/MetaTitleChanger';
-import { PageTitleChanger } from './Customization/PageTitleChanger';
-import { OpacitySelector } from './Customization/OpacitySelector';
-import { ShadeSelector } from './Customization/ShadeSelector';
-import { LayoutSelector } from './Customization/LayoutSelector';
+import { useConfigContext } from '../../../config/provider';
+import { ColorSelector } from './Theme/ColorSelector';
+import { BackgroundChanger } from './Meta/BackgroundChanger';
+import { CustomCssChanger } from './Theme/CustomCssChanger';
+import { FaviconChanger } from './Meta/FaviconChanger';
+import { LogoImageChanger } from './Meta/LogoImageChanger';
+import { MetaTitleChanger } from './Meta/MetaTitleChanger';
+import { PageTitleChanger } from './Meta/PageTitleChanger';
+import { OpacitySelector } from './Theme/OpacitySelector';
+import { ShadeSelector } from './Theme/ShadeSelector';
+import { LayoutSelector } from './Layout/LayoutSelector';
 
 export default function CustomizationSettings() {
   const { config } = useConfigContext();
