@@ -11,7 +11,7 @@ export interface ServiceType extends TileBaseType {
 }
 
 interface ServiceBehaviourType {
-  onClickUrl?: string;
+  onClickUrl: string;
   isOpeningNewTab: boolean;
 }
 

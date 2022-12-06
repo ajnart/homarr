@@ -31,6 +31,7 @@ export const AppearanceTab = ({ form }: AppearanceTabProps) => {
           className={classes.textInput}
           icon={<Image />}
           label="Service Icon"
+          description="Logo of your service displayed in your dashboard. Must return a body content containg an image"
           variant="default"
           withAsterisk
           required

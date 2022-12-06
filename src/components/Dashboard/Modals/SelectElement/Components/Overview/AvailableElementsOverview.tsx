@@ -42,7 +42,8 @@ export const AvailableElementTypes = ({
                     okStatus: [],
                   },
                   behaviour: {
-                    isOpeningNewTab: false,
+                    isOpeningNewTab: true,
+                    onClickUrl: '',
                   },
                   area: {
                     type: 'wrapper',

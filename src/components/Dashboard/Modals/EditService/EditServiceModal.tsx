@@ -1,24 +1,23 @@
-import { Button, createStyles, Group, Stack, Tabs, Text } from '@mantine/core';
+import { Alert, Button, createStyles, Group, Stack, Tabs, Text } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
-import {
-  IconAccessPoint,
-  IconAdjustments,
-  IconBrush,
-  IconClick,
-  IconDeviceFloppy,
-  IconDoorExit,
-  IconPlug,
-} from '@tabler/icons';
+import { IconAccessPoint, IconAdjustments, IconBrush, IconClick, IconPlug } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { useState } from 'react';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
 import { ServiceType } from '../../../../types/service';
 import { AppearanceTab } from './Tabs/AppereanceTab/AppereanceTab';
 import { BehaviourTab } from './Tabs/BehaviourTab/BehaviourTab';
 import { GeneralTab } from './Tabs/GeneralTab/GeneralTab';
 import { IntegrationTab } from './Tabs/IntegrationTab/IntegrationTab';
 import { NetworkTab } from './Tabs/NetworkTab/NetworkTab';
+import { EditServiceModalTab } from './Tabs/type';
+
+const serviceUrlRegex =
+  '(https?://(?:www.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|https?://(?:www.|(?!www))[a-zA-Z0-9]+.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
 
 export const EditServiceModal = ({
   context,
@@ -27,15 +26,54 @@ export const EditServiceModal = ({
 }: ContextModalProps<{ service: ServiceType }>) => {
   const { t } = useTranslation();
   const { classes } = useStyles();
+  const { name: configName, config } = useConfigContext();
+  const updateConfig = useConfigStore((store) => store.updateConfig);
 
   const form = useForm<ServiceType>({
     initialValues: innerProps.service,
+    validate: {
+      name: (name) => (!name ? 'Name is required' : null),
+      url: (url) => {
+        if (!url) {
+          return 'Url is required';
+        }
+
+        if (!url.match(serviceUrlRegex)) {
+          return 'Value is not a valid url';
+        }
+
+        return null;
+      },
+      appearance: (appearance) => (!appearance.iconUrl ? 'Icon is required' : null),
+      behaviour: (behaviour) => {
+        if (behaviour.onClickUrl === undefined || behaviour.onClickUrl.length < 1) {
+          return null;
+        }
+
+        if (!behaviour.onClickUrl?.match(serviceUrlRegex)) {
+          return 'Uri override is not a valid uri';
+        }
+
+        return null;
+      },
+    },
+    validateInputOnChange: true,
   });
 
   const onSubmit = (values: ServiceType) => {
-    console.log('form submitted');
     console.log(values);
+
+    if (!configName) {
+      return;
+    }
+
+    updateConfig(configName, (previousConfig) => ({
+      ...previousConfig,
+      services: [...previousConfig.services.filter((x) => x.id !== form.values.id), form.values],
+    }));
   };
+
+  const [activeTab, setActiveTab] = useState<EditServiceModalTab>('general');
 
   const tryCloseModal = () => {
     if (form.isDirty()) {
@@ -65,6 +103,13 @@ export const EditServiceModal = ({
 
   return (
     <>
+      {configName === undefined ||
+        (config === undefined && (
+          <Alert color="red">
+            There was an unexpected problem loading the configuration. Functionality might be
+            restricted. Please report this incident.
+          </Alert>
+        ))}
       <Stack spacing={0} align="center" my="lg">
         {form.values.appearance.iconUrl ? (
           // disabled because image target is too dynamic for next image cache
@@ -85,7 +130,11 @@ export const EditServiceModal = ({
         </Text>
       </Stack>
       <form onSubmit={form.onSubmit(onSubmit)}>
-        <Tabs defaultValue="general">
+        <Tabs
+          value={activeTab}
+          onTabChange={(tab) => setActiveTab(tab as EditServiceModalTab)}
+          defaultValue="general"
+        >
           <Tabs.List grow>
             <Tabs.Tab value="general" icon={<IconAdjustments size={14} />}>
               General
@@ -104,7 +153,7 @@ export const EditServiceModal = ({
             </Tabs.Tab>
           </Tabs.List>
 
-          <GeneralTab form={form} />
+          <GeneralTab form={form} openTab={(targetTab) => setActiveTab(targetTab)} />
           <BehaviourTab form={form} />
           <NetworkTab form={form} />
           <AppearanceTab form={form} />
@@ -112,16 +161,10 @@ export const EditServiceModal = ({
         </Tabs>
 
         <Group position="right" mt={100}>
-          <Button
-            leftIcon={<IconDoorExit size={20} />}
-            px={50}
-            variant="light"
-            color="gray"
-            onClick={tryCloseModal}
-          >
+          <Button px={50} variant="light" color="gray" onClick={tryCloseModal}>
             Cancel
           </Button>
-          <Button type="submit" leftIcon={<IconDeviceFloppy size={20} />} px={50}>
+          <Button type="submit" px={50}>
             Save
           </Button>
         </Group>

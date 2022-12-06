@@ -62,11 +62,9 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
 
   return (
     <>
-      <TextExplanation />
-      <Space h="sm" />
-
       <Select
-        label="Configure this service for the following integration"
+        label="Integration configuration"
+        description="Treats this service as the selected integration and provides you with per-service configuration"
         placeholder="Select your desired configuration"
         itemComponent={SelectItemComponent}
         data={data}

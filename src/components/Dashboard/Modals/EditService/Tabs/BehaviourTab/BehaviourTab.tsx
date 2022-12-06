@@ -15,13 +15,17 @@ export const BehaviourTab = ({ form }: BehaviourTabProps) => {
       <TextInput
         icon={<IconClick size={16} />}
         label="On click url"
-        placeholder="Override the default service url when clicking on the service"
+        description="Overrides the service URL when clicking on the service"
+        placeholder="URL that should be opened instead when clicking on the service"
         variant="default"
         mb="md"
         {...form.getInputProps('behaviour.onClickUrl')}
       />
 
-      <Switch label="Open in new tab" {...form.getInputProps('behaviour.isOpeningNewTab')} />
+      <Switch
+        label="Open in new tab"
+        {...form.getInputProps('behaviour.isOpeningNewTab', { type: 'checkbox' })}
+      />
     </Tabs.Panel>
   );
 };

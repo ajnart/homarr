@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import {
   ActionIcon,
+  Button,
   createStyles,
   Divider,
   Flex,
@@ -12,7 +13,7 @@ import {
   TextInput,
   Title,
 } from '@mantine/core';
-import { IconFlame, IconSearch, IconX } from '@tabler/icons';
+import { IconSearch, IconX } from '@tabler/icons';
 import { useState } from 'react';
 import { ICON_PICKER_SLICE_LIMIT } from '../../../../../../../../data/constants';
 import { useRepositoryIconsQuery } from '../../../../../../../tools/hooks/useRepositoryIconsQuery';
@@ -38,7 +39,12 @@ export const IconSelector = ({ onChange }: IconSelectorProps) => {
     return <Loader />;
   }
 
-  const filteredItems = searchTerm ? data.filter((x) => x.url.includes(searchTerm)) : data;
+  const replaceCharacters = (value: string) =>
+    value.toLowerCase().replaceAll(' ', '').replaceAll('-', '');
+
+  const filteredItems = searchTerm
+    ? data.filter((x) => replaceCharacters(x.url).includes(replaceCharacters(searchTerm)))
+    : data;
   const slicedFilteredItems = filteredItems.slice(0, ICON_PICKER_SLICE_LIMIT);
   const isTruncated =
     slicedFilteredItems.length > 0 && slicedFilteredItems.length !== filteredItems.length;
@@ -46,9 +52,13 @@ export const IconSelector = ({ onChange }: IconSelectorProps) => {
   return (
     <Popover width={310}>
       <Popover.Target>
-        <ActionIcon className={classes.actionIcon} size={36} variant="default">
-          <IconSearch size={20} />
-        </ActionIcon>
+        <Button
+          className={classes.actionIcon}
+          variant="default"
+          leftIcon={<IconSearch size={20} />}
+        >
+          Icon Picker
+        </Button>
       </Popover.Target>
       <Popover.Dropdown>
         <Stack pt={4}>
@@ -76,7 +86,6 @@ export const IconSelector = ({ onChange }: IconSelectorProps) => {
             {isTruncated && (
               <Stack spacing="xs" pr={15}>
                 <Divider mt={35} mx="xl" />
-                <IconFlame className={classes.flameIcon} size={40} opacity={0.6} strokeWidth={1} />
                 <Title order={6} color="dimmed" align="center">
                   Search is limited to {ICON_PICKER_SLICE_LIMIT} icons
                 </Title>
