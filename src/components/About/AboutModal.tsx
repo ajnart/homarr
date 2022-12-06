@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import {
   ActionIcon,
   Badge,
@@ -18,7 +17,9 @@ import {
   IconVocabulary,
   IconWorldWww,
 } from '@tabler/icons';
+import { InitOptions } from 'i18next';
 import { i18n } from 'next-i18next';
+import Image from 'next/image';
 import { ReactNode } from 'react';
 import { CURRENT_VERSION } from '../../../data/constants';
 import { usePrimaryGradient } from '../layout/useGradient';
@@ -118,13 +119,44 @@ interface InformationTableItem {
   content: ReactNode;
 }
 
+interface ExtendedInitOptions extends InitOptions {
+  locales: string[];
+}
+
 const useInformationTableItems = (): InformationTableItem[] => {
   const colorGradiant = usePrimaryGradient();
 
-  const usedI18nNamespaces = i18n?.reportNamespaces?.getUsedNamespaces();
-  const configuredi18nLocales: string[] = i18n?.options.locales;
+  let items: InformationTableItem[] = [];
 
-  return [
+  if (i18n !== null) {
+    const usedI18nNamespaces = i18n.reportNamespaces.getUsedNamespaces();
+    const initOptions = i18n.options as ExtendedInitOptions;
+
+    items = [
+      ...items,
+      {
+        icon: <IconLanguage size={20} />,
+        label: 'Loaded I18n translation namespaces',
+        content: (
+          <Badge variant="gradient" gradient={colorGradiant}>
+            {usedI18nNamespaces.length}
+          </Badge>
+        ),
+      },
+      {
+        icon: <IconVocabulary size={20} />,
+        label: 'Configured I18n locales',
+        content: (
+          <Badge variant="gradient" gradient={colorGradiant}>
+            {initOptions.locales.length}
+          </Badge>
+        ),
+      },
+    ];
+  }
+
+  items = [
+    ...items,
     {
       icon: <IconVersions size={20} />,
       label: 'Homarr version',
@@ -134,25 +166,9 @@ const useInformationTableItems = (): InformationTableItem[] => {
         </Badge>
       ),
     },
-    {
-      icon: <IconLanguage size={20} />,
-      label: 'Loaded I18n translation namespaces',
-      content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
-          {usedI18nNamespaces?.length ?? 'loading'}
-        </Badge>
-      ),
-    },
-    {
-      icon: <IconVocabulary size={20} />,
-      label: 'Configured I18n locales',
-      content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
-          {configuredi18nLocales?.length ?? 'loading'}
-        </Badge>
-      ),
-    },
   ];
+
+  return items;
 };
 
 const useStyles = createStyles(() => ({
