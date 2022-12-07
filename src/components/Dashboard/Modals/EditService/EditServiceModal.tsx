@@ -61,8 +61,6 @@ export const EditServiceModal = ({
   });
 
   const onSubmit = (values: ServiceType) => {
-    console.log(values);
-
     if (!configName) {
       return;
     }
@@ -71,6 +69,9 @@ export const EditServiceModal = ({
       ...previousConfig,
       services: [...previousConfig.services.filter((x) => x.id !== form.values.id), form.values],
     }));
+
+    // also close the parent modal
+    context.closeAll();
   };
 
   const [activeTab, setActiveTab] = useState<EditServiceModalTab>('general');

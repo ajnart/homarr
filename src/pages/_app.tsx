@@ -77,13 +77,13 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
               withNormalizeCSS
             >
               <NotificationsProvider limit={4} position="bottom-left">
-                <ModalsProvider
-                  modals={{ editService: EditServiceModal, selectElement: SelectElementModal }}
-                >
-                  <ConfigProvider>
+                <ConfigProvider>
+                  <ModalsProvider
+                    modals={{ editService: EditServiceModal, selectElement: SelectElementModal }}
+                  >
                     <Component {...pageProps} />
-                  </ConfigProvider>
-                </ModalsProvider>
+                  </ModalsProvider>
+                </ConfigProvider>
               </NotificationsProvider>
             </MantineProvider>
           </ColorTheme.Provider>
