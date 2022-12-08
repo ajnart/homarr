@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Omogoča enostavno upravljanje torrent zabojnikov"
   },
   "search": {
     "placeholder": "Iskanje po zabojniku ali imenu njegove slike"
