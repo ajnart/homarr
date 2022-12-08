@@ -1,8 +1,15 @@
-import { Alert, Button, createStyles, Group, Stack, Tabs, Text } from '@mantine/core';
+import { Alert, Button, createStyles, Group, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
-import { IconAccessPoint, IconAdjustments, IconBrush, IconClick, IconPlug } from '@tabler/icons';
+import {
+  IconAccessPoint,
+  IconAdjustments,
+  IconAlertTriangle,
+  IconBrush,
+  IconClick,
+  IconPlug,
+} from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -44,17 +51,27 @@ export const EditServiceModal = ({
 
         return null;
       },
-      appearance: (appearance) => (!appearance.iconUrl ? 'Icon is required' : null),
-      behaviour: (behaviour) => {
-        if (behaviour.onClickUrl === undefined || behaviour.onClickUrl.length < 1) {
+      appearance: {
+        iconUrl: (url: string) => {
+          if (url.length < 1) {
+            return 'This field is required';
+          }
+
           return null;
-        }
+        },
+      },
+      behaviour: {
+        onClickUrl: (url: string) => {
+          if (url === undefined || url.length < 1) {
+            return null;
+          }
 
-        if (!behaviour.onClickUrl?.match(serviceUrlRegex)) {
-          return 'Uri override is not a valid uri';
-        }
+          if (!url.match(serviceUrlRegex)) {
+            return 'Uri override is not a valid uri';
+          }
 
-        return null;
+          return null;
+        },
       },
     },
     validateInputOnChange: true,
@@ -102,6 +119,18 @@ export const EditServiceModal = ({
     context.closeModal(id);
   };
 
+  const validationErrors = Object.keys(form.errors);
+
+  const ValidationErrorIndicator = ({ keys }: { keys: string[] }) => {
+    const relevantErrors = validationErrors.filter((x) => keys.includes(x));
+
+    return (
+      <ThemeIcon opacity={relevantErrors.length === 0 ? 0 : 1} color="red" variant="light">
+        <IconAlertTriangle size={15} />
+      </ThemeIcon>
+    );
+  };
+
   return (
     <>
       {configName === undefined ||
@@ -130,6 +159,7 @@ export const EditServiceModal = ({
           {form.values.name ?? 'New Service'}
         </Text>
       </Stack>
+
       <form onSubmit={form.onSubmit(onSubmit)}>
         <Tabs
           value={activeTab}
@@ -137,19 +167,39 @@ export const EditServiceModal = ({
           defaultValue="general"
         >
           <Tabs.List grow>
-            <Tabs.Tab value="general" icon={<IconAdjustments size={14} />}>
+            <Tabs.Tab
+              rightSection={<ValidationErrorIndicator keys={['name', 'url']} />}
+              icon={<IconAdjustments size={14} />}
+              value="general"
+            >
               General
             </Tabs.Tab>
-            <Tabs.Tab value="behaviour" icon={<IconClick size={14} />}>
+            <Tabs.Tab
+              rightSection={<ValidationErrorIndicator keys={['behaviour.onClickUrl']} />}
+              icon={<IconClick size={14} />}
+              value="behaviour"
+            >
               Behaviour
             </Tabs.Tab>
-            <Tabs.Tab value="network" icon={<IconAccessPoint size={14} />}>
+            <Tabs.Tab
+              rightSection={<ValidationErrorIndicator keys={[]} />}
+              icon={<IconAccessPoint size={14} />}
+              value="network"
+            >
               Network
             </Tabs.Tab>
-            <Tabs.Tab value="appearance" icon={<IconBrush size={14} />}>
+            <Tabs.Tab
+              rightSection={<ValidationErrorIndicator keys={['appearance.iconUrl']} />}
+              icon={<IconBrush size={14} />}
+              value="appearance"
+            >
               Appearance
             </Tabs.Tab>
-            <Tabs.Tab value="integration" icon={<IconPlug size={14} />}>
+            <Tabs.Tab
+              rightSection={<ValidationErrorIndicator keys={[]} />}
+              icon={<IconPlug size={14} />}
+              value="integration"
+            >
               Integration
             </Tabs.Tab>
           </Tabs.List>
@@ -162,10 +212,10 @@ export const EditServiceModal = ({
         </Tabs>
 
         <Group position="right" mt={100}>
-          <Button px={50} variant="light" color="gray" onClick={tryCloseModal}>
+          <Button onClick={tryCloseModal} px={50} variant="light" color="gray">
             Cancel
           </Button>
-          <Button type="submit" px={50}>
+          <Button disabled={!form.isValid()} px={50} type="submit">
             Save
           </Button>
         </Group>

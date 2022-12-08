@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import { createStyles, Flex, Tabs, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconPhoto } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ServiceType } from '../../../../../../types/service';
 import { IconSelector } from './IconSelector/IconSelector';
@@ -13,14 +13,22 @@ export const AppearanceTab = ({ form }: AppearanceTabProps) => {
   const { t } = useTranslation('');
   const { classes } = useStyles();
 
-  const Image = () => {
-    if (form.values.appearance.iconUrl !== undefined) {
+  const PreviewImage = () => {
+    if (form.values.appearance.iconUrl !== undefined && form.values.appearance.iconUrl.length > 0) {
       // disabled due to too many dynamic targets for next image cache
       // eslint-disable-next-line @next/next/no-img-element
-      return <img className={classes.iconImage} src={form.values.appearance.iconUrl} alt="jife" />;
+      return <img className={classes.iconImage} src={form.values.appearance.iconUrl} alt="" />;
     }
 
-    return <IconPhoto />;
+    return (
+      <Image
+        src="/imgs/logo/logo.png"
+        width={20}
+        height={20}
+        objectFit="contain"
+        alt=""
+      />
+    );
   };
 
   return (
@@ -29,7 +37,7 @@ export const AppearanceTab = ({ form }: AppearanceTabProps) => {
         <TextInput
           defaultValue={form.values.appearance.iconUrl}
           className={classes.textInput}
-          icon={<Image />}
+          icon={<PreviewImage />}
           label="Service Icon"
           description="Logo of your service displayed in your dashboard. Must return a body content containg an image"
           variant="default"

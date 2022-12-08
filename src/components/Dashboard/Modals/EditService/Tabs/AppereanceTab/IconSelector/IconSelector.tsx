@@ -78,7 +78,7 @@ export const IconSelector = ({ onChange }: IconSelectorProps) => {
             <Flex gap={4} wrap="wrap" pr={15}>
               {slicedFilteredItems.map((item) => (
                 <ActionIcon onClick={() => onChange(item)} size={40} p={3}>
-                  <img className={classes.icon} src={item.url} alt="icon from repository" />
+                  <img className={classes.icon} src={item.url} alt="" />
                 </ActionIcon>
               ))}
             </Flex>
