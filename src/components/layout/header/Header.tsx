@@ -1,6 +1,4 @@
 import { Box, createStyles, Group, Header as MantineHeader } from '@mantine/core';
-import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
-
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
@@ -22,7 +20,6 @@ export function Header(props: any) {
         </Box>
         <Group position="right" noWrap>
           <Search />
-          <AddItemShelfButton />
           <AddElementAction />
           <ToolsMenu />
           <SettingsMenu />

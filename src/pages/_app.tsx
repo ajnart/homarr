@@ -9,6 +9,7 @@ import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
+import { ChangePositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangePositionModal';
 import { EditServiceModal } from '../components/Dashboard/Modals/EditService/EditServiceModal';
 import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
 import { ConfigProvider } from '../config/provider';
@@ -79,7 +80,11 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
               <NotificationsProvider limit={4} position="bottom-left">
                 <ConfigProvider>
                   <ModalsProvider
-                    modals={{ editService: EditServiceModal, selectElement: SelectElementModal }}
+                    modals={{
+                      editService: EditServiceModal,
+                      selectElement: SelectElementModal,
+                      changeTilePosition: ChangePositionModal,
+                    }}
                   >
                     <Component {...pageProps} />
                   </ModalsProvider>

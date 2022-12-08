@@ -16,9 +16,11 @@ import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { TFunction } from 'react-i18next';
-import { AddAppShelfItemForm } from '../../components/AppShelf/AddAppShelfItem';
+import { v4 as uuidv4 } from 'uuid';
 import { tryMatchService } from '../../tools/addToHomarr';
+import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
 import { useConfig } from '../../tools/state';
+import { ServiceType } from '../../types/service';
 
 let t: TFunction<'modules/docker', undefined>;
 
@@ -160,21 +162,40 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         radius="md"
         disabled={selected.length === 0 || selected.length > 1}
         onClick={() => {
-          openModal({
-            size: 'xl',
-            modalId: selected.at(0)!.Id,
-            radius: 'md',
-            title: t('actionBar.addService.title'),
-            zIndex: 500,
-            children: (
-              <AddAppShelfItemForm
-                setConfig={setConfig}
-                config={config}
-                setOpened={() => closeModal(selected.at(0)!.Id)}
-                message={t('actionBar.addService.message')}
-                {...tryMatchService(selected.at(0)!)}
-              />
-            ),
+          const containerUrl = `http://localhost:${selected[0].Ports[0].PublicPort}`;
+          openContextModalGeneric<{ service: ServiceType }>({
+            modal: 'editService',
+            innerProps: {
+              service: {
+                id: uuidv4(),
+                name: selected[0].Names[0],
+                url: containerUrl,
+                appearance: {
+                  iconUrl: '/imgs/logo/logo.png', // TODO: find icon automatically
+                },
+                network: {
+                  enabledStatusChecker: false,
+                  okStatus: [],
+                },
+                behaviour: {
+                  isOpeningNewTab: true,
+                  onClickUrl: '',
+                },
+                area: {
+                  type: 'wrapper', // TODO: Set the wrapper automatically
+                },
+                shape: {
+                  location: {
+                    x: 0,
+                    y: 0,
+                  },
+                  size: {
+                    height: 1,
+                    width: 1,
+                  },
+                },
+              },
+            },
           });
         }}
       >

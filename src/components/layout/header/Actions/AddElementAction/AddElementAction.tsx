@@ -2,9 +2,6 @@ import { ActionIcon, Tooltip } from '@mantine/core';
 import { openContextModal } from '@mantine/modals';
 import { IconApps } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { v4 as uuidv4 } from 'uuid';
-import { openContextModalGeneric } from '../../../../../tools/mantineModalManagerExtensions';
-import { ServiceType } from '../../../../../types/service';
 
 export const AddElementAction = () => {
   const { t } = useTranslation('layout/add-service-app-shelf');

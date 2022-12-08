@@ -20,7 +20,6 @@ import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { useTranslation } from 'next-i18next';
 import { IModule } from '../ModuleTypes';
 import { useConfig } from '../../tools/state';
-import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
 
@@ -93,7 +92,6 @@ export default function TorrentsComponent() {
         <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
         <Group>
           <Text>{t('card.errors.noDownloadClients.text')}</Text>
-          <AddItemShelfButton />
         </Group>
       </Stack>
     );
