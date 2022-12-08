@@ -1,9 +1,9 @@
 import {
   ActionIcon,
-  Box,
   Center,
   Checkbox,
   createStyles,
+  Flex,
   Group,
   Paper,
   Stack,
@@ -11,7 +11,6 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import { IconBrandDocker, IconLayout, IconSearch } from '@tabler/icons';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
@@ -65,104 +64,104 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
   };
 
   return (
-    <Box className={classes.box} p="xl" pb="sm">
-      <Stack spacing="xs">
-        <Group spacing={5}>
-          <IconLayout size={20} />
-          <Title order={6}>Dashboard layout</Title>
-        </Group>
+    <Stack spacing="xs">
+      <Title order={6}>Dashboard layout</Title>
 
-        <Text color="dimmed" size="sm">
-          You can adjust the layout of the Dashboard to your preferences. The main are cannot be
-          turned on or off
-        </Text>
-
-        <Paper px="xs" py={4} withBorder>
-          <Group position="apart">
-            <Logo size="xs" />
-            <Group spacing={5}>
-              {searchBar ? (
-                <Paper
-                  style={{
-                    height: 10,
-                    backgroundColor: colorScheme === 'dark' ? colors.gray[8] : colors.gray[1],
-                  }}
-                  p={2}
-                  w={60}
-                />
-              ) : null}
-              {docker ? <ActionIcon size={10} disabled /> : null}
-            </Group>
+      <Paper px="xs" py={4} withBorder>
+        <Group position="apart">
+          <Logo size="xs" />
+          <Group spacing={5}>
+            {searchBar ? (
+              <Paper
+                style={{
+                  height: 10,
+                  backgroundColor: colorScheme === 'dark' ? colors.gray[8] : colors.gray[1],
+                }}
+                p={2}
+                w={60}
+              />
+            ) : null}
+            {docker ? <ActionIcon size={10} disabled /> : null}
           </Group>
+        </Group>
+      </Paper>
+
+      <Group align="stretch">
+        {leftSidebar && (
+          <Paper className={classes.secondaryWrapper} p="xs" withBorder>
+            <Flex align="center" justify="center" direction="column">
+              <Text align="center">Sidebar</Text>
+              <Text color="dimmed" size="xs" align="center">
+                Only for
+                <br />
+                services &<br />
+                integrations
+              </Text>
+            </Flex>
+          </Paper>
+        )}
+
+        <Paper className={classes.primaryWrapper} p="xs" withBorder>
+          <Text align="center">Main</Text>
+          <Text color="dimmed" size="xs" align="center">
+            Cannot be turned of.
+          </Text>
         </Paper>
 
-        <Group align="stretch">
-          {leftSidebar && (
-            <Paper p="xs" withBorder>
-              <Center style={{ height: '100%' }}>
-                <Text align="center">Sidebar</Text>
-              </Center>
-            </Paper>
-          )}
-
-          <Paper className={classes.main} p="xs" withBorder>
-            <Text align="center">Main</Text>
-            <Text color="dimmed" size="xs" align="center">
-              Can be used for categories,
-              <br />
-              services and integrations
-            </Text>
+        {rightSidebar && (
+          <Paper className={classes.secondaryWrapper} p="xs" withBorder>
+            <Flex align="center" justify="center" direction="column">
+              <Text align="center">Sidebar</Text>
+              <Text color="dimmed" size="xs" align="center">
+                Only for
+                <br />
+                services &<br />
+                integrations
+              </Text>
+            </Flex>
           </Paper>
+        )}
+      </Group>
 
-          {rightSidebar && (
-            <Paper p="xs" withBorder>
-              <Center style={{ height: '100%' }}>
-                <Text align="center">Sidebar</Text>
-              </Center>
-            </Paper>
-          )}
-        </Group>
-
-        <Stack spacing="xs">
-          <Checkbox
-            label="Enable left sidebar"
-            description="Optional. Can be used for services and integrations only"
-            checked={leftSidebar}
-            onChange={(ev) => handleChange('enabledLeftSidebar', ev, setLeftSidebar)}
-          />
-          <Checkbox
-            label="Enable right sidebar"
-            description="Optional. Can be used for services and integrations only"
-            checked={rightSidebar}
-            onChange={(ev) => handleChange('enabledRightSidebar', ev, setRightSidebar)}
-          />
-          <Checkbox
-            label="Enable search bar"
-            checked={searchBar}
-            onChange={(ev) => handleChange('enabledSearchbar', ev, setSearchBar)}
-          />
-          <Checkbox
-            label="Enable docker"
-            checked={docker}
-            onChange={(ev) => handleChange('enabledDocker', ev, setDocker)}
-          />
-          <Checkbox
-            label="Enable pings"
-            checked={ping}
-            onChange={(ev) => handleChange('enabledPing', ev, setPing)}
-          />
-        </Stack>
+      <Stack spacing="xs">
+        <Checkbox
+          label="Enable left sidebar"
+          description="Optional. Can be used for services and integrations only"
+          checked={leftSidebar}
+          onChange={(ev) => handleChange('enabledLeftSidebar', ev, setLeftSidebar)}
+        />
+        <Checkbox
+          label="Enable right sidebar"
+          description="Optional. Can be used for services and integrations only"
+          checked={rightSidebar}
+          onChange={(ev) => handleChange('enabledRightSidebar', ev, setRightSidebar)}
+        />
+        <Checkbox
+          label="Enable search bar"
+          checked={searchBar}
+          onChange={(ev) => handleChange('enabledSearchbar', ev, setSearchBar)}
+        />
+        <Checkbox
+          label="Enable docker"
+          checked={docker}
+          onChange={(ev) => handleChange('enabledDocker', ev, setDocker)}
+        />
+        <Checkbox
+          label="Enable pings"
+          checked={ping}
+          onChange={(ev) => handleChange('enabledPing', ev, setPing)}
+        />
       </Stack>
-    </Box>
+    </Stack>
   );
 };
 
 const useStyles = createStyles((theme) => ({
-  main: {
-    flexGrow: 1,
+  primaryWrapper: {
+    flexGrow: 2,
   },
-  box: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
-    borderRadius: theme.radius.md,
+  secondaryWrapper: {
+    flexGrow: 1,
+    maxWidth: 100,
   },
 }));
