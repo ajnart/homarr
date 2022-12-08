@@ -104,7 +104,7 @@ export function AppShelfItem(props: any) {
               opacity: hovering ? 1 : 0,
             }}
           >
-            <TileMenu service={service} />
+            { /* <TileMenu service={service} /> TODO: Remove this component */ }
           </motion.div>
         </Card.Section>
         <Card.Section>
