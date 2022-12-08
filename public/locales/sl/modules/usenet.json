@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Omogoča ogled čakalne vrste in zgodovine, prekinitev in nadaljevanje prenosov prek omrežja Usenet (Sabnzbd ali NZBGet)"
   },
   "card": {
     "errors": {
