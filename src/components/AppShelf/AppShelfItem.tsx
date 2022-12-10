@@ -15,7 +15,6 @@ import { useState } from 'react';
 import PingComponent from '../../modules/ping/PingModule';
 import { useConfig } from '../../tools/state';
 import { serviceItem } from '../../tools/types';
-import { TileMenu } from '../Dashboard/Menu/TileMenu';
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -104,7 +103,7 @@ export function AppShelfItem(props: any) {
               opacity: hovering ? 1 : 0,
             }}
           >
-            { /* <TileMenu service={service} /> TODO: Remove this component */ }
+            {/* <TileMenu service={service} /> TODO: Remove this component */}
           </motion.div>
         </Card.Section>
         <Card.Section>

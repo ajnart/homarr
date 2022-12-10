@@ -1,5 +1,4 @@
-import { Box, createStyles, Group, Header as MantineHeader, Text } from '@mantine/core';
-import { openContextModal } from '@mantine/modals';
+import { Box, createStyles, Group, Header as MantineHeader } from '@mantine/core';
 import { useConfigContext } from '../../../config/provider';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
@@ -23,21 +22,6 @@ export function Header(props: any) {
           <Logo />
         </Box>
         <Group position="right" style={{ maxWidth: 'none' }} noWrap>
-          <Text
-            onClick={() => {
-              openContextModal({
-                modal: 'changeTilePosition',
-                title: 'Change tile position',
-                innerProps: {
-                  tile: config?.services[0],
-                },
-              });
-            }}
-            variant="link"
-          >
-            Test
-          </Text>
-
           <Search />
           <AddElementAction />
           <ToggleEditModeAction />

@@ -2,7 +2,14 @@
   "actions": {
     "save": "Save",
     "cancel": "Cancel",
-    "ok": "Okay"
+    "ok": "Okay",
+    "edit": "Edit",
+    "changePosition": "Change position",
+    "remove": "Remove"
+  },
+  "sections": {
+    "settings": "Settings",
+    "dangerZone": "Danger zone"
   },
   "tip": "Tip: ",
   "time": {

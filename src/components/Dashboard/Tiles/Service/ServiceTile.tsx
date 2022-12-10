@@ -1,11 +1,11 @@
-import { ActionIcon, Card, Center, Text, UnstyledButton } from '@mantine/core';
+import { Card, Center, Text, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
-import { IconDots } from '@tabler/icons';
 import { ServiceType } from '../../../../types/service';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { BaseTileProps } from '../type';
+import { ServiceMenu } from './ServiceMenu';
 
 interface ServiceTileProps extends BaseTileProps {
   service: ServiceType;
@@ -26,6 +26,7 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
         {service.name}
       </Text>
       <Center style={{ height: '75%', flex: 1 }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className={classes.image} src={service.appearance.iconUrl} alt="" />
       </Center>
     </>
@@ -34,6 +35,11 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
   return (
     <Card className={cx(className, cardClass)} withBorder radius="lg" shadow="md">
       {/* TODO: add service menu */}
+
+      <div style={{ position: 'absolute', top: 10, right: 10 }}>
+        <ServiceMenu service={service} />
+      </div>
+
       {!service.url || isEditMode ? (
         <UnstyledButton
           className={classes.button}
@@ -57,32 +63,30 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
   );
 };
 
-const useStyles = createStyles((theme, _params, getRef) => {
-  return {
-    image: {
-      ref: getRef('image'),
-      maxHeight: '80%',
-      maxWidth: '80%',
-      transition: 'transform 100ms ease-in-out',
+const useStyles = createStyles((theme, _params, getRef) => ({
+  image: {
+    ref: getRef('image'),
+    maxHeight: '80%',
+    maxWidth: '80%',
+    transition: 'transform 100ms ease-in-out',
+  },
+  serviceName: {
+    ref: getRef('serviceName'),
+  },
+  button: {
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 4,
+  },
+  link: {
+    [`&:hover .${getRef('image')}`]: {
+      // TODO: add styles for image when hovering card
     },
-    serviceName: {
-      ref: getRef('serviceName'),
+    [`&:hover .${getRef('serviceName')}`]: {
+      // TODO: add styles for service name when hovering card
     },
-    button: {
-      height: '100%',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: 4,
-    },
-    link: {
-      [`&:hover .${getRef('image')}`]: {
-        // TODO: add styles for image when hovering card
-      },
-      [`&:hover .${getRef('serviceName')}`]: {
-        // TODO: add styles for service name when hovering card
-      },
-    },
-  };
-});
+  },
+}));

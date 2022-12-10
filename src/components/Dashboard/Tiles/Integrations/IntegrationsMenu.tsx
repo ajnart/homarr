@@ -1,9 +1,9 @@
-import { ActionIcon, Menu, Title } from '@mantine/core';
-import { IconDots, IconLayoutKanban, IconPencil, IconTrash } from '@tabler/icons';
+import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
 import { IntegrationsType } from '../../../../types/integration';
 import { TileBaseType } from '../../../../types/tile';
+import { GenericTileMenu } from '../GenericTileMenu';
 import { IntegrationChangePositionModalInnerProps } from '../IntegrationChangePositionModal';
 import { IntegrationRemoveModalInnerProps } from '../IntegrationRemoveModal';
 import {
@@ -65,34 +65,11 @@ export const IntegrationsMenu = <TIntegrationKey extends keyof IntegrationsType>
   };
 
   return (
-    <Menu withinPortal>
-      <Menu.Target>
-        <ActionIcon pos="absolute" top={4} right={4}>
-          <IconDots />
-        </ActionIcon>
-      </Menu.Target>
-      <Menu.Dropdown w={250}>
-        <Menu.Label>Settings</Menu.Label>
-        {options && (
-          <Menu.Item icon={<IconPencil size={16} stroke={1.5} />} onClick={handleEditClick}>
-            Edit
-          </Menu.Item>
-        )}
-        <Menu.Item
-          icon={<IconLayoutKanban size={16} stroke={1.5} />}
-          onClick={handleChangeSizeClick}
-        >
-          Change position
-        </Menu.Item>
-        <Menu.Label>Danger zone</Menu.Label>
-        <Menu.Item
-          color="red"
-          icon={<IconTrash size={16} stroke={1.5} color="red" />}
-          onClick={handleDeleteClick}
-        >
-          Remove
-        </Menu.Item>
-      </Menu.Dropdown>
-    </Menu>
+    <GenericTileMenu
+      handleClickEdit={handleEditClick}
+      handleClickChangePosition={handleChangeSizeClick}
+      handleClickDelete={handleDeleteClick}
+      displayEdit={options !== undefined}
+    />
   );
 };

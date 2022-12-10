@@ -1,4 +1,4 @@
-import { Card, Center, Stack, Text, Title } from '@mantine/core';
+import { Center, Stack, Text, Title } from '@mantine/core';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
 import { useSetSafeInterval } from '../../../../tools/hooks/useSetSafeInterval';

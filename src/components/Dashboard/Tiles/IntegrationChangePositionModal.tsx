@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react';
 import {
   Button,
   Center,
@@ -10,14 +9,10 @@ import {
   SelectItem,
   Stack,
   Text,
-  TextInput,
   Title,
 } from '@mantine/core';
+import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
-import { useTranslation } from 'next-i18next';
-import { ClockIntegrationType, IntegrationsType } from '../../../types/integration';
-import { integrationModuleTranslationsMap } from './IntegrationsEditModal';
-import { TileBaseType } from '../../../types/tile';
 import {
   IconArrowsUpDown,
   IconCalendarTime,
@@ -25,11 +20,14 @@ import {
   IconCloudRain,
   IconFileDownload,
 } from '@tabler/icons';
-import { ServiceIcon } from './Service/ServiceIcon';
-import { useForm } from '@mantine/form';
-import { Tiles } from './tilesDefinitions';
+import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../config/provider';
 import { useConfigStore } from '../../../config/store';
+import { IntegrationsType } from '../../../types/integration';
+import { TileBaseType } from '../../../types/tile';
+import { integrationModuleTranslationsMap } from './IntegrationsEditModal';
+import { ServiceIcon } from './Service/ServiceIcon';
+import { Tiles } from './tilesDefinitions';
 
 export type IntegrationChangePositionModalInnerProps = {
   integration: keyof IntegrationsType;
