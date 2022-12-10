@@ -46,7 +46,10 @@ export const AvailableElementTypes = ({
                     onClickUrl: '',
                   },
                   area: {
-                    type: 'wrapper',
+                    type: 'sidebar',
+                    properties: {
+                      location: 'right',
+                    },
                   },
                   shape: {
                     location: {
