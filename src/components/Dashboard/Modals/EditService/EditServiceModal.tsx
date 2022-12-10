@@ -21,6 +21,7 @@ import { BehaviourTab } from './Tabs/BehaviourTab/BehaviourTab';
 import { GeneralTab } from './Tabs/GeneralTab/GeneralTab';
 import { IntegrationTab } from './Tabs/IntegrationTab/IntegrationTab';
 import { NetworkTab } from './Tabs/NetworkTab/NetworkTab';
+import { DebouncedServiceIcon } from './Tabs/Shared/DebouncedServiceIcon';
 import { EditServiceModalTab } from './Tabs/type';
 
 const serviceUrlRegex =
@@ -141,19 +142,7 @@ export const EditServiceModal = ({
           </Alert>
         ))}
       <Stack spacing={0} align="center" my="lg">
-        {form.values.appearance.iconUrl ? (
-          // disabled because image target is too dynamic for next image cache
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            className={classes.serviceImage}
-            src={form.values.appearance.iconUrl}
-            width={120}
-            height={120}
-            alt="service icon"
-          />
-        ) : (
-          <Image src="/favicon-squared.png" width={120} height={120} />
-        )}
+        <DebouncedServiceIcon form={form} width={120} height={120} />
 
         <Text align="center" weight="bold" size="lg" mt="md">
           {form.values.name ?? 'New Service'}
