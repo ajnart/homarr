@@ -2,10 +2,10 @@
     "tooltip": "The edit mode enables you to configure your dashboard",
     "button": {
         "disabled": "Enter Edit Mode",
-        "enabled": "Exit Edit Mode"
+        "enabled": "Exit and Save"
     },
     "popover": {
         "title": "Edit mode is enabled",
-        "text": "You can adjust and configure your apps now"
+        "text": "You can adjust and configure your apps now. Changes are not saved until you exit edit mode"
     }
 }
