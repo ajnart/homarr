@@ -5,7 +5,6 @@ import { useConfigContext } from '../../../config/provider';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
-import { ToolsMenu } from './Actions/RunToolAction/ToolsMenu';
 import { Search } from './Search';
 import { SettingsMenu } from './SettingsMenu';
 
@@ -26,7 +25,6 @@ export function Header(props: any) {
         <Group position="right" noWrap>
           <Search />
           <AddElementAction />
-          <ToolsMenu />
 
           <ActionIcon
             onClick={() => {

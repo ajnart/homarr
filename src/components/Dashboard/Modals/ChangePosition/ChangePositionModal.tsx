@@ -33,6 +33,8 @@ export const ChangePositionModal = ({
       ...previous,
       services: [...previous.services.filter((x) => x.id === tileAsService.id), tileAsService],
     }));
+
+    closeModal(id);
   };
 
   return (
