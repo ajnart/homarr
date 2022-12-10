@@ -22,7 +22,7 @@ export function Header(props: any) {
         <Box className={classes.hide}>
           <Logo />
         </Box>
-        <Group position="right" noWrap>
+        <Group position="right" style={{ maxWidth: 'none' }} noWrap>
           <Text
             onClick={() => {
               openContextModal({
@@ -35,7 +35,7 @@ export function Header(props: any) {
             }}
             variant="link"
           >
-            Test: Open Change Pos Modal
+            Test
           </Text>
 
           <Search />
