@@ -11,6 +11,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { IntegrationsEditModal } from '../components/Dashboard/Tiles/IntegrationsEditModal';
 import { IntegrationRemoveModal } from '../components/Dashboard/Tiles/IntegrationRemoveModal';
+import { ChangePositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangePositionModal';
 import { EditServiceModal } from '../components/Dashboard/Modals/EditService/EditServiceModal';
 import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
 import { ConfigProvider } from '../config/provider';
@@ -91,6 +92,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
                       integrationRemove: IntegrationRemoveModal,
                       integrationChangePosition: IntegrationChangePositionModal,
                       categoryEditModal: CategoryEditModal,
+                      changeTilePosition: ChangePositionModal,
                     }}
                   >
                     <Component {...pageProps} />

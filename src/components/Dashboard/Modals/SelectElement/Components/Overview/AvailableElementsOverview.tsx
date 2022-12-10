@@ -42,10 +42,14 @@ export const AvailableElementTypes = ({
                     okStatus: [],
                   },
                   behaviour: {
-                    isOpeningNewTab: false,
+                    isOpeningNewTab: true,
+                    onClickUrl: '',
                   },
                   area: {
-                    type: 'wrapper',
+                    type: 'sidebar',
+                    properties: {
+                      location: 'right',
+                    },
                   },
                   shape: {
                     location: {

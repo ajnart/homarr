@@ -14,7 +14,7 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
   return (
     <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
       <Image
-        width={size === 'md' ? 50 : 20}
+        width={size === 'md' ? 50 : 12}
         src={config?.settings.customization.logoImageUrl || '/imgs/logo/logo.png'}
         style={{
           position: 'relative',
@@ -22,7 +22,7 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
       />
       {withoutText ? null : (
         <Text
-          size={size === 'md' ? 22 : 'xs'}
+          size={size === 'md' ? 22 : 10}
           weight="bold"
           variant="gradient"
           gradient={primaryGradient}

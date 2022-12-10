@@ -22,7 +22,6 @@ import { UsenetHistoryList } from './UsenetHistoryList';
 import { useGetServiceByType } from '../../tools/hooks/useGetServiceByType';
 import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
-import { AddItemShelfButton } from '../../components/AppShelf/AddAppShelfItem';
 
 dayjs.extend(duration);
 
@@ -49,7 +48,6 @@ export const UsenetComponent: FunctionComponent = () => {
         <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
         <Group>
           <Text>{t('card.errors.noDownloadClients.text')}</Text>
-          <AddItemShelfButton />
         </Group>
       </Stack>
     );

@@ -15,32 +15,16 @@ export const BehaviourTab = ({ form }: BehaviourTabProps) => {
       <TextInput
         icon={<IconClick size={16} />}
         label="On click url"
-        placeholder="Override the default service url when clicking on the service"
+        description="Overrides the service URL when clicking on the service"
+        placeholder="URL that should be opened instead when clicking on the service"
         variant="default"
         mb="md"
-        {...form.getInputProps('onClickUrl')}
+        {...form.getInputProps('behaviour.onClickUrl')}
       />
 
       <Switch
-        value="disable_handle"
-        label="Disable direct moving in edit modus"
-        description={
-          <Text color="dimmed" size="sm">
-            Disables the direct movement of the tile
-          </Text>
-        }
-        mb="md"
-        {...form.getInputProps('isEditModeMovingDisabled')}
-      />
-      <Switch
-        value="freze"
-        label="Freeze tile within edit modus"
-        description={
-          <Text color="dimmed" size="sm">
-            Disables the movement of the tile when moving others
-          </Text>
-        }
-        {...form.getInputProps('isEditModeTileFreezed')}
+        label="Open in new tab"
+        {...form.getInputProps('behaviour.isOpeningNewTab', { type: 'checkbox' })}
       />
     </Tabs.Panel>
   );

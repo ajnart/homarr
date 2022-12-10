@@ -14,6 +14,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
     <Tabs.Panel value="network" pt="lg">
       <Switch
         label="Enable status checker"
+        description="Sends a simple HTTP / HTTPS request to check if your service is online"
         mb="md"
         defaultChecked={form.values.network.enabledStatusChecker}
         {...form.getInputProps('network.enabledStatusChecker')}
@@ -22,6 +23,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
         <MultiSelect
           required
           label="HTTP status codes"
+          description="Determines what response codes are allowed for this service to be 'Online'"
           data={StatusCodes}
           clearable
           searchable

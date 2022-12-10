@@ -3,7 +3,7 @@ import { useConfigContext } from '../../config/provider';
 import { Background } from './Background';
 import { Footer } from './Footer';
 import { Header } from './Header/Header';
-import { Head } from './Head/Head';
+import { Head } from './Header/Meta/Head';
 
 const useStyles = createStyles(() => ({}));
 

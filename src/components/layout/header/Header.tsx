@@ -1,21 +1,20 @@
-import { Box, createStyles, Group, Header as MantineHeader, useMantineTheme } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
-import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
-
-import DockerMenuButton from '../../../modules/docker/DockerModule';
-import { Search } from './Search';
+import { Box, createStyles, Group, Header as MantineHeader, Text } from '@mantine/core';
+import { openContextModal } from '@mantine/modals';
+import { useConfigContext } from '../../../config/provider';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
-import { SettingsMenu } from './SettingsMenu';
-import { ToolsMenu } from './ToolsMenu';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
-import { ViewToggleButton } from '../../Dashboard/Views/ViewToggleButton';
+import { ToggleEditModeAction } from './Actions/ToggleEditMode/ToggleEditMode';
+import { Search } from './Search';
+import { SettingsMenu } from './SettingsMenu';
 
 export const HeaderHeight = 64;
 
 export function Header(props: any) {
   const { classes } = useStyles();
   const { classes: cardClasses } = useCardStyles();
+
+  const { config } = useConfigContext();
 
   return (
     <MantineHeader height={HeaderHeight} className={cardClasses.card}>
@@ -24,11 +23,24 @@ export function Header(props: any) {
           <Logo />
         </Box>
         <Group position="right" noWrap>
+          <Text
+            onClick={() => {
+              openContextModal({
+                modal: 'changeTilePosition',
+                title: 'Change tile position',
+                innerProps: {
+                  tile: config?.services[0],
+                },
+              });
+            }}
+            variant="link"
+          >
+            Test: Open Change Pos Modal
+          </Text>
+
           <Search />
-          <AddItemShelfButton />
           <AddElementAction />
-          <ToolsMenu />
-          <ViewToggleButton />
+          <ToggleEditModeAction />
           <SettingsMenu />
         </Group>
       </Group>

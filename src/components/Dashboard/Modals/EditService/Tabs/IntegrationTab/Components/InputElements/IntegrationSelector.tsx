@@ -1,21 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import {
-  Alert,
-  Card,
-  Group,
-  PasswordInput,
-  Select,
-  SelectItem,
-  Space,
-  Text,
-  TextInput,
-} from '@mantine/core';
+import { Group, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconKey, IconUser } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { forwardRef, useState } from 'react';
-import { ServiceType } from '../../../../../../../../../types/service';
-import { TextExplanation } from '../TextExplanation/TextExplanation';
+import { ServiceType } from '../../../../../../../../types/service';
 
 interface IntegrationSelectorProps {
   form: UseFormReturnType<ServiceType, (item: ServiceType) => ServiceType>;
@@ -62,11 +50,9 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
 
   return (
     <>
-      <TextExplanation />
-      <Space h="sm" />
-
       <Select
-        label="Configure this service for the following integration"
+        label="Integration configuration"
+        description="Treats this service as the selected integration and provides you with per-service configuration"
         placeholder="Select your desired configuration"
         itemComponent={SelectItemComponent}
         data={data}
