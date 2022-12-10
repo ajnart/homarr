@@ -1,10 +1,10 @@
-import { ActionIcon, Box, createStyles, Group, Header as MantineHeader } from '@mantine/core';
+import { Box, createStyles, Group, Header as MantineHeader, Text } from '@mantine/core';
 import { openContextModal } from '@mantine/modals';
-import { IconCode } from '@tabler/icons';
 import { useConfigContext } from '../../../config/provider';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
+import { ToggleEditModeAction } from './Actions/ToggleEditMode/ToggleEditMode';
 import { Search } from './Search';
 import { SettingsMenu } from './SettingsMenu';
 
@@ -23,10 +23,7 @@ export function Header(props: any) {
           <Logo />
         </Box>
         <Group position="right" noWrap>
-          <Search />
-          <AddElementAction />
-
-          <ActionIcon
+          <Text
             onClick={() => {
               openContextModal({
                 modal: 'changeTilePosition',
@@ -36,14 +33,14 @@ export function Header(props: any) {
                 },
               });
             }}
-            variant="default"
-            radius="md"
-            size="xl"
-            color="blue"
+            variant="link"
           >
-            <IconCode />
-          </ActionIcon>
+            Test: Open Change Pos Modal
+          </Text>
 
+          <Search />
+          <AddElementAction />
+          <ToggleEditModeAction />
           <SettingsMenu />
         </Group>
       </Group>
