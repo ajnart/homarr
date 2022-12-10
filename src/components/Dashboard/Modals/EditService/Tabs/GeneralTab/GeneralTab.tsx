@@ -28,15 +28,21 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         icon={<IconLink size={16} />}
         label="Service url"
         description={
-          <Group spacing={3}>
-            <Text>
-              URL that will be opened when clicking on the service. Can be overwritten using
+          <Text>
+            URL that will be opened when clicking on the service. Can be overwritten using
+            <Text
+              onClick={() => openTab('behaviour')}
+              variant="link"
+              span
+              style={{
+                cursor: 'pointer',
+              }}
+            >
+              {' '}
+              on click URL{' '}
             </Text>
-            <Text onClick={() => openTab('behaviour')} variant="link">
-              on click URL
-            </Text>
-            <Text>when using external URLs to enhance security.</Text>
-          </Group>
+            when using external URLs to enhance security.
+          </Text>
         }
         placeholder="https://google.com"
         variant="default"
