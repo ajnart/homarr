@@ -12,10 +12,10 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   });
   // Return 200 if the alive property is true
   if (response.alive) {
-    return res.status(200).end();
+    return res.status(200).json({ alive: true });
   }
   // Return 404 if the alive property is false
-  return res.status(404).end();
+  return res.status(404).json({ alive: false });
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {

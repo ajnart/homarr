@@ -1,39 +1,80 @@
-import { ActionIcon, Title, Tooltip, Drawer, Tabs, ScrollArea } from '@mantine/core';
-import { useHotkeys } from '@mantine/hooks';
-import { useState } from 'react';
-import { IconSettings } from '@tabler/icons';
+import {
+  ActionIcon,
+  Title,
+  Tooltip,
+  Drawer,
+  Tabs,
+  ScrollArea,
+  Indicator,
+  Alert,
+  Notification,
+} from '@mantine/core';
+import { useElementSize, useHotkeys, useViewportSize } from '@mantine/hooks';
+import { useEffect, useState } from 'react';
+import { IconInfoCircle, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 
 import AdvancedSettings from './AdvancedSettings';
 import CommonSettings from './CommonSettings';
 import Credits from './Credits';
+import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
 
-function SettingsMenu(props: any) {
+function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
+  const { height, width } = useViewportSize();
 
   return (
-    <Tabs defaultValue="Common">
-      <Tabs.List grow>
-        <Tabs.Tab value="Common">{t('tabs.common')}</Tabs.Tab>
-        <Tabs.Tab value="Customizations">{t('tabs.customizations')}</Tabs.Tab>
-      </Tabs.List>
-      <Tabs.Panel data-autofocus value="Common">
-        <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
-          <CommonSettings />
-        </ScrollArea>
-      </Tabs.Panel>
-      <Tabs.Panel value="Customizations">
-        <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
-          <AdvancedSettings />
-        </ScrollArea>
-      </Tabs.Panel>
-    </Tabs>
+    <>
+      <Notification
+        icon={<IconInfoCircle size={25} />}
+        disallowClose
+        color="teal"
+        radius="md"
+        title="New update available"
+        hidden={newVersionAvailable === ''}
+      >
+        {
+          //TODO: Translate and add link to release page}
+        }
+        Version <b>{newVersionAvailable}</b> is available, update now!
+      </Notification>
+
+      <Tabs defaultValue="Common">
+        <Tabs.List grow>
+          <Tabs.Tab value="Common">{t('tabs.common')}</Tabs.Tab>
+          <Tabs.Tab value="Customizations">{t('tabs.customizations')}</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel data-autofocus value="Common">
+          <ScrollArea style={{ height: height - 100 }} offsetScrollbars>
+            <CommonSettings />
+            <Credits />
+          </ScrollArea>
+        </Tabs.Panel>
+        <Tabs.Panel value="Customizations">
+          <ScrollArea style={{ height: height - 120 }} offsetScrollbars>
+            <AdvancedSettings />
+            <Credits />
+          </ScrollArea>
+        </Tabs.Panel>
+      </Tabs>
+    </>
   );
 }
 
 export function SettingsMenuButton(props: any) {
   useHotkeys([['ctrl+L', () => setOpened(!opened)]]);
   const { t } = useTranslation('settings/common');
+  const [newVersionAvailable, setNewVersionAvailable] = useState<string>('');
+  useEffect(() => {
+    // Fetch Data here when component first mounted
+    fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
+      res.json().then((data) => {
+        if (data.tag_name > CURRENT_VERSION) {
+          setNewVersionAvailable(data.tag_name);
+        }
+      });
+    });
+  }, [CURRENT_VERSION]);
 
   const [opened, setOpened] = useState(false);
 
@@ -47,20 +88,21 @@ export function SettingsMenuButton(props: any) {
         opened={props.opened || opened}
         onClose={() => setOpened(false)}
       >
-        <SettingsMenu />
-        <Credits />
+        <SettingsMenu newVersionAvailable={newVersionAvailable} />
       </Drawer>
       <Tooltip label={t('tooltip')}>
-        <ActionIcon
-          variant="default"
-          radius="md"
-          size="xl"
-          color="blue"
-          style={props.style}
-          onClick={() => setOpened(true)}
-        >
-          <IconSettings />
-        </ActionIcon>
+        <Indicator size={15} color="blue" withBorder processing disabled={!newVersionAvailable}>
+          <ActionIcon
+            variant="default"
+            radius="md"
+            size="xl"
+            color="blue"
+            style={props.style}
+            onClick={() => setOpened(true)}
+          >
+            <IconSettings />
+          </ActionIcon>
+        </Indicator>
       </Tooltip>
     </>
   );
