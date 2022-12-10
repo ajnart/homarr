@@ -31,13 +31,14 @@ export interface WeatherIntegrationType extends TileBaseType {
 
 export interface DashDotIntegrationType extends TileBaseType {
   properties: {
-    graphs: DashDotIntegrationGraphType[];
+    graphs: DashDotGraphType[];
+    isStorageMultiView: boolean;
+    isCpuMultiView: boolean;
     isCompactView: boolean;
     url: string;
   };
 }
 
-type DashDotIntegrationGraphType = { name: DashDotGraphType; isMultiView?: boolean };
 export type DashDotGraphType = 'cpu' | 'storage' | 'ram' | 'network' | 'gpu';
 
 export interface BitTorrentIntegrationType extends TileBaseType {

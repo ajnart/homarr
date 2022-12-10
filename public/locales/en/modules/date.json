@@ -3,6 +3,7 @@
     "name": "Date",
     "description": "Show the current time and date in a card",
     "settings": {
+      "title": "Settings for date integration",
       "display24HourFormat": {
         "label": "Display full time (24-hour)"
       }

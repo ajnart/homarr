@@ -9,12 +9,17 @@ import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
+import { IntegrationsEditModal } from '../components/Dashboard/Tiles/IntegrationsEditModal';
+import { IntegrationRemoveModal } from '../components/Dashboard/Tiles/IntegrationRemoveModal';
 import { EditServiceModal } from '../components/Dashboard/Modals/EditService/EditServiceModal';
 import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
 import { ConfigProvider } from '../config/provider';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
 import { theme } from '../tools/theme';
+import { IntegrationChangePositionModal } from '../components/Dashboard/Tiles/IntegrationChangePositionModal';
+import '../styles/global.scss';
+import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 
 function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -76,15 +81,22 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
               withGlobalStyles
               withNormalizeCSS
             >
-              <NotificationsProvider limit={4} position="bottom-left">
-                <ModalsProvider
-                  modals={{ editService: EditServiceModal, selectElement: SelectElementModal }}
-                >
-                  <ConfigProvider>
+              <ConfigProvider>
+                <NotificationsProvider limit={4} position="bottom-left">
+                  <ModalsProvider
+                    modals={{
+                      editService: EditServiceModal,
+                      selectElement: SelectElementModal,
+                      integrationOptions: IntegrationsEditModal,
+                      integrationRemove: IntegrationRemoveModal,
+                      integrationChangePosition: IntegrationChangePositionModal,
+                      categoryEditModal: CategoryEditModal,
+                    }}
+                  >
                     <Component {...pageProps} />
-                  </ConfigProvider>
-                </ModalsProvider>
-              </NotificationsProvider>
+                  </ModalsProvider>
+                </NotificationsProvider>
+              </ConfigProvider>
             </MantineProvider>
           </ColorTheme.Provider>
         </ColorSchemeProvider>

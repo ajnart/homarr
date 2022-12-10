@@ -1,0 +1,56 @@
+@import 'fily-publish-gridstack/dist/gridstack.min.css';
+
+.grid-stack-placeholder > .placeholder-content {
+  background-color: rgb(248, 249, 250) !important;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .grid-stack-placeholder > .placeholder-content {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+@for $i from 1 to 13 {
+	.grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: $i * 64px }
+	.grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: $i * 64px }
+	.grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: $i * 64px }
+}
+
+@for $i from 1 to 13 {
+  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height: $i * 64px; }
+  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height: $i * 64px; }
+  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height: $i * 64px; }
+}
+
+.grid-stack>.grid-stack-item>.grid-stack-item-content,
+.grid-stack>.grid-stack-item>.placeholder-content {
+  inset: 10px;
+}
+
+.grid-stack>.grid-stack-item>.ui-resizable-se {
+  bottom: 10px;
+  right: 10px;
+}
+
+.grid-stack>.grid-stack-item {
+  min-width: 64px;
+}
+
+@for $i from 1 to 96 {
+	.grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: $i * 64px }
+}
+
+
+@for $i from 1 to 96 {
+	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top: $i * 64px }
+}
+
+.grid-stack > .grid-stack-item > .grid-stack-item-content {
+  overflow-y: hidden;
+}
+
+.grid-stack.grid-stack-animate {
+  transition: none;
+}

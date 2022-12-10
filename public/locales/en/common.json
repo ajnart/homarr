@@ -1,6 +1,8 @@
 {
   "actions": {
-    "save": "Save"
+    "save": "Save",
+    "cancel": "Cancel",
+    "ok": "Okay"
   },
   "tip": "Tip: ",
   "time": {

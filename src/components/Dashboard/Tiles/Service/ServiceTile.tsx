@@ -1,6 +1,7 @@
-import { Card, Center, Text, UnstyledButton } from '@mantine/core';
+import { ActionIcon, Card, Center, Text, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
+import { IconDots } from '@tabler/icons';
 import { ServiceType } from '../../../../types/service';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -32,11 +33,7 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
 
   return (
     <Card className={cx(className, cardClass)} withBorder radius="lg" shadow="md">
-      {isEditMode &&
-        {
-          /*<AppShelfMenu service={service} />*/
-        }}{' '}
-      {/* TODO: change to serviceMenu */}
+      {/* TODO: add service menu */}
       {!service.url || isEditMode ? (
         <UnstyledButton
           className={classes.button}

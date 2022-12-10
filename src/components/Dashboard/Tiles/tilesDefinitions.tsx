@@ -1,9 +1,11 @@
 import { IntegrationsType } from '../../../types/integration';
-import { ServiceTile } from './Service/Service';
+import { ClockTile } from './Clock/ClockTile';
+import { EmptyTile } from './EmptyTile';
+import { ServiceTile } from './Service/ServiceTile';
+import { WeatherTile } from './Weather/WeatherTile';
 /*import { CalendarTile } from './calendar';
 import { ClockTile } from './clock';
-import { DashDotTile } from './dash-dot';
-import { WeatherTile } from './weather';*/
+import { DashDotTile } from './dash-dot';*/
 
 type TileDefinitionProps = {
   [key in keyof IntegrationsType | 'service']: {
@@ -25,14 +27,14 @@ export const Tiles: TileDefinitionProps = {
     maxHeight: 12,
   },
   bitTorrent: {
-    component: CalendarTile,
+    component: EmptyTile, //CalendarTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,
     maxHeight: 12,
   },
   calendar: {
-    component: CalendarTile,
+    component: EmptyTile, //CalendarTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,
@@ -46,21 +48,21 @@ export const Tiles: TileDefinitionProps = {
     maxHeight: 12,
   },
   dashDot: {
-    component: DashDotTile,
+    component: EmptyTile, //DashDotTile,
     minWidth: 4,
     maxWidth: 9,
     minHeight: 5,
     maxHeight: 14,
   },
   torrentNetworkTraffic: {
-    component: CalendarTile,
+    component: EmptyTile, //CalendarTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,
     maxHeight: 12,
   },
   useNet: {
-    component: CalendarTile,
+    component: EmptyTile, //CalendarTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,

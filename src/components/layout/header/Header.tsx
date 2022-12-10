@@ -9,6 +9,7 @@ import { useCardStyles } from '../useCardStyles';
 import { SettingsMenu } from './SettingsMenu';
 import { ToolsMenu } from './ToolsMenu';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
+import { ViewToggleButton } from '../../Dashboard/Views/ViewToggleButton';
 
 export const HeaderHeight = 64;
 
@@ -27,6 +28,7 @@ export function Header(props: any) {
           <AddItemShelfButton />
           <AddElementAction />
           <ToolsMenu />
+          <ViewToggleButton />
           <SettingsMenu />
         </Group>
       </Group>

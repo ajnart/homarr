@@ -95,6 +95,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "jest": "^28.1.3",
     "prettier": "^2.7.1",
+    "sass": "^1.56.1",
     "typescript": "^4.7.4"
   },
   "resolutions": {
