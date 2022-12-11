@@ -53,7 +53,7 @@ export const IconSelector = ({
     }
 
     const matchingDebouncedIcon = data?.find(
-      (x) => replaceCharacters(x.fileName.split('.')[0]) === replaceCharacters(form.values.name)
+      (x) => replaceCharacters(x.fileName.split('.')[0]) === replaceCharacters(debouncedValue)
     );
 
     if (!matchingDebouncedIcon) {
@@ -61,7 +61,7 @@ export const IconSelector = ({
     }
 
     form.setFieldValue('appearance.iconUrl', matchingDebouncedIcon.url);
-  }, [form.values.name]);
+  }, [debouncedValue]);
 
   if (isLoading || !data) {
     return <Loader />;
