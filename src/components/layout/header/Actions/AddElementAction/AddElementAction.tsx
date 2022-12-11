@@ -17,6 +17,7 @@ export const AddElementAction = () => {
           openContextModal({
             modal: 'selectElement',
             title: 'Add an element to your dashboard',
+            size: 'xl',
             innerProps: {},
           })
         }

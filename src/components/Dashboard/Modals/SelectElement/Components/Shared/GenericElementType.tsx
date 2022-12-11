@@ -1,4 +1,4 @@
-import { Button, Stack, Text } from '@mantine/core';
+import { Box, Button, Card, Center, Grid, Stack, Text, UnstyledButton } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons';
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
@@ -28,34 +28,27 @@ export const GenericAvailableElementType = ({
   };
 
   return (
-    <Button
-      className={classes.styledButton}
-      leftIcon={<Icon />}
-      rightIcon={<IconChevronRight opacity={0.5} />}
-      styles={{
-        root: {
-          height: 'auto',
-          padding: '8px 12px',
-        },
-        inner: {
-          justifyContent: 'left',
-        },
-        label: {
-          justifyContent: 'space-between',
-          width: '100%',
-        },
-      }}
-      disabled={disabled}
-      fullWidth
-    >
-      <Stack spacing={0}>
-        <Text className={classes.elementText}>{name}</Text>
-        {description && (
-          <Text className={classes.elementText} size="xs" color="dimmed">
-            {description}
-          </Text>
-        )}
-      </Stack>
-    </Button>
+    <Grid.Col span={3}>
+      <Card style={{ height: '100%' }}>
+        <Stack justify="space-between" style={{ height: '100%' }}>
+          <Stack spacing="xs">
+            <Center>
+              <Icon />
+            </Center>
+            <Text className={classes.elementText} align="center">
+              {name}
+            </Text>
+            {description && (
+              <Text className={classes.elementText} size="xs" align="center" color="dimmed">
+                {description}
+              </Text>
+            )}
+          </Stack>
+          <Button disabled={disabled} variant="light" size="xs" mt="auto" radius="md" fullWidth>
+            Add to Dashboard
+          </Button>
+        </Stack>
+      </Card>
+    </Grid.Col>
   );
 };

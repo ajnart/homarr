@@ -1,4 +1,4 @@
-import { Stack, Text, Title } from '@mantine/core';
+import { Grid, Text } from '@mantine/core';
 import {
   IconArrowsUpDown,
   IconCalendarTime,
@@ -27,7 +27,7 @@ export const AvailableIntegrationElements = ({
         applications. They usually require a few configurations before use.
       </Text>
 
-      <Stack spacing="xs">
+      <Grid>
         <GenericAvailableElementType
           name="Usenet downloads"
           description="Display and manage your Usenet downloads directly from Homarr"
@@ -63,7 +63,7 @@ export const AvailableIntegrationElements = ({
           description="Display the current download & upload of your torrent clients"
           image={<IconArrowsUpDown />}
         />
-      </Stack>
+      </Grid>
     </>
   );
 };

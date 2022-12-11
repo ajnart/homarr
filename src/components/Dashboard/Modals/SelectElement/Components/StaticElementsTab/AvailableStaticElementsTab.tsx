@@ -1,4 +1,4 @@
-import { Stack, Text, Title } from '@mantine/core';
+import { Grid, Text } from '@mantine/core';
 import { IconCursorText } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { GenericAvailableElementType } from '../Shared/GenericElementType';
@@ -19,13 +19,13 @@ export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps)
         they don&apos;t integrate with any services and their content never changes.
       </Text>
 
-      <Stack>
+      <Grid>
         <GenericAvailableElementType
           name="Static Text"
           description="Display a fixed string on your dashboard"
           image={<IconCursorText />}
         />
-      </Stack>
+      </Grid>
     </>
   );
 };

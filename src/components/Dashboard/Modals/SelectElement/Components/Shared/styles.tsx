@@ -11,7 +11,7 @@ export const useStyles = createStyles((theme) => ({
   elementButton: {
     width: '100%',
     height: '100%',
-    borderRadius: theme.radius.sm
+    borderRadius: theme.radius.sm,
   },
   elementStack: {
     width: '100%',
