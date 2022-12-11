@@ -1,4 +1,4 @@
-import { Card, createStyles, MantineThemeColors, useMantineTheme } from '@mantine/core';
+import { createStyles, MantineThemeColors, useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
@@ -6,6 +6,7 @@ import { useConfigContext } from '../../../../config/provider';
 import { useColorTheme } from '../../../../tools/color';
 import { isToday } from '../../../../tools/isToday';
 import { CalendarIntegrationType } from '../../../../types/integration';
+import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
 import { CalendarDay } from './CalendarDay';
 import { MediasType } from './type';
@@ -36,7 +37,7 @@ export const CalendarTile = ({ className, module }: CalendarTileProps) => {
   if (!module) return <></>;
 
   return (
-    <Card className={className} withBorder p="xs">
+    <HomarrCardWrapper className={className} p={6}>
       <Calendar
         month={month}
         onMonthChange={setMonth}
@@ -63,8 +64,8 @@ export const CalendarTile = ({ className, module }: CalendarTileProps) => {
         renderDay={(date) => (
           <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date)} />
         )}
-      ></Calendar>
-    </Card>
+      />
+    </HomarrCardWrapper>
   );
 };
 
