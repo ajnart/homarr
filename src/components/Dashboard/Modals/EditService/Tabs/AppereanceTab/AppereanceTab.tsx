@@ -7,9 +7,15 @@ import { IconSelector } from './IconSelector/IconSelector';
 
 interface AppearanceTabProps {
   form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
+  disallowServiceNameProgagation: () => void;
+  allowServiceNamePropagation: boolean;
 }
 
-export const AppearanceTab = ({ form }: AppearanceTabProps) => {
+export const AppearanceTab = ({
+  form,
+  disallowServiceNameProgagation,
+  allowServiceNamePropagation,
+}: AppearanceTabProps) => {
   const { t } = useTranslation('');
   const { classes } = useStyles();
 
@@ -28,13 +34,16 @@ export const AppearanceTab = ({ form }: AppearanceTabProps) => {
           {...form.getInputProps('appearance.iconUrl')}
         />
         <IconSelector
-          onChange={(item) =>
+          onChange={(item) => {
             form.setValues({
               appearance: {
                 iconUrl: item.url,
               },
-            })
-          }
+            });
+            disallowServiceNameProgagation();
+          }}
+          allowServiceNamePropagation={allowServiceNamePropagation}
+          form={form}
         />
       </Flex>
     </Tabs.Panel>

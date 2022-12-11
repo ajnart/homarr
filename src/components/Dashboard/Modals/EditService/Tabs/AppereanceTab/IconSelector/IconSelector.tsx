@@ -13,22 +13,32 @@ import {
   TextInput,
   Title,
 } from '@mantine/core';
+import { UseFormReturnType } from '@mantine/form';
+import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch, IconX } from '@tabler/icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ICON_PICKER_SLICE_LIMIT } from '../../../../../../../../data/constants';
 import { useRepositoryIconsQuery } from '../../../../../../../tools/hooks/useRepositoryIconsQuery';
 import { IconSelectorItem } from '../../../../../../../types/iconSelector/iconSelectorItem';
 import { WalkxcodeRepositoryIcon } from '../../../../../../../types/iconSelector/repositories/walkxcodeIconRepository';
+import { ServiceType } from '../../../../../../../types/service';
 
 interface IconSelectorProps {
+  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
   onChange: (icon: IconSelectorItem) => void;
+  allowServiceNamePropagation: boolean;
 }
 
-export const IconSelector = ({ onChange }: IconSelectorProps) => {
+export const IconSelector = ({
+  onChange,
+  allowServiceNamePropagation,
+  form,
+}: IconSelectorProps) => {
   const { data, isLoading } = useRepositoryIconsQuery<WalkxcodeRepositoryIcon>({
     url: 'https://api.github.com/repos/walkxcode/Dashboard-Icons/contents/png',
     converter: (item) => ({
       url: `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${item.name}`,
+      fileName: item.name,
     }),
   });
 
@@ -39,8 +49,7 @@ export const IconSelector = ({ onChange }: IconSelectorProps) => {
     return <Loader />;
   }
 
-  const replaceCharacters = (value: string) =>
-    value.toLowerCase().replaceAll(' ', '').replaceAll('-', '');
+  const replaceCharacters = (value: string) => value.toLowerCase().replaceAll('', '-');
 
   const filteredItems = searchTerm
     ? data.filter((x) => replaceCharacters(x.url).includes(replaceCharacters(searchTerm)))
@@ -48,6 +57,24 @@ export const IconSelector = ({ onChange }: IconSelectorProps) => {
   const slicedFilteredItems = filteredItems.slice(0, ICON_PICKER_SLICE_LIMIT);
   const isTruncated =
     slicedFilteredItems.length > 0 && slicedFilteredItems.length !== filteredItems.length;
+
+  const [debouncedValue] = useDebouncedValue(form.values.name, 500);
+
+  useEffect(() => {
+    if (allowServiceNamePropagation !== true) {
+      return;
+    }
+
+    const matchingDebouncedIcon = data.find(
+      (x) => replaceCharacters(x.fileName.split('.')[0]) === replaceCharacters(debouncedValue)
+    );
+
+    if (!matchingDebouncedIcon) {
+      return;
+    }
+
+    form.setFieldValue('appearance.iconUrl', matchingDebouncedIcon.url);
+  }, [debouncedValue]);
 
   return (
     <Popover width={310}>
