@@ -1,5 +1,4 @@
 import { Group, Image, Text } from '@mantine/core';
-import { NextLink } from '@mantine/next';
 import * as React from 'react';
 import { useColorTheme } from '../../tools/color';
 import { useConfig } from '../../tools/state';

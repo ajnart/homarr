@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createStyles, Switch, Group } from '@mantine/core';
+import { createStyles, Switch } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { useConfig } from '../../tools/state';
 

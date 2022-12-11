@@ -6,11 +6,10 @@ import {
   Tabs,
   ScrollArea,
   Indicator,
-  Alert,
   Notification,
   Anchor,
 } from '@mantine/core';
-import { useElementSize, useHotkeys, useViewportSize } from '@mantine/hooks';
+import { useHotkeys, useViewportSize } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 import { IconInfoCircle, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
@@ -19,8 +18,6 @@ import AdvancedSettings from './AdvancedSettings';
 import CommonSettings from './CommonSettings';
 import Credits from './Credits';
 import { CURRENT_VERSION, REPO_URL } from '../../../data/constants';
-import Link from 'next/link';
-import { NextLink } from '@mantine/next';
 
 function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
