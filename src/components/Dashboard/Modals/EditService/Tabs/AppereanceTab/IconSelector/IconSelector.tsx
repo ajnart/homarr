@@ -77,7 +77,7 @@ export const IconSelector = ({ onChange }: IconSelectorProps) => {
           <ScrollArea style={{ height: 250 }} type="always">
             <Flex gap={4} wrap="wrap" pr={15}>
               {slicedFilteredItems.map((item) => (
-                <ActionIcon onClick={() => onChange(item)} size={40} p={3}>
+                <ActionIcon key={item.url} onClick={() => onChange(item)} size={40} p={3}>
                   <img className={classes.icon} src={item.url} alt="" />
                 </ActionIcon>
               ))}
