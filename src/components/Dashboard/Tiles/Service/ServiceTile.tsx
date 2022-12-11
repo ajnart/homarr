@@ -1,9 +1,10 @@
-import { Card, Center, Text, UnstyledButton } from '@mantine/core';
+import { Center, Text, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
 import { ServiceType } from '../../../../types/service';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
+import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
 import { ServiceMenu } from './ServiceMenu';
 
@@ -33,7 +34,7 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
   );
 
   return (
-    <Card className={cx(className, cardClass)} withBorder radius="lg" shadow="md">
+    <HomarrCardWrapper>
       {/* TODO: add service menu */}
 
       <div style={{ position: 'absolute', top: 10, right: 10 }}>
@@ -59,7 +60,7 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
         </UnstyledButton>
       )}
       {/*<ServicePing service={service} />*/}
-    </Card>
+    </HomarrCardWrapper>
   );
 };
 
