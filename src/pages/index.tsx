@@ -1,21 +1,29 @@
 import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
+import { SSRConfig } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import LoadConfigComponent from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
+import { getFrontendConfig } from '../tools/config/getFrontendConfig';
 import { getConfig } from '../tools/getConfig';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
 import { Config } from '../tools/types';
 import { ConfigType } from '../types/config';
 
+type ServerSideProps = {
+  config: ConfigType;
+  configName: string;
+  _nextI18Next: SSRConfig['_nextI18Next'];
+};
+
 export async function getServerSideProps({
   req,
   res,
   locale,
-}: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
+}: GetServerSidePropsContext): Promise<{ props: ServerSideProps }> {
   let configName = getCookie('config-name', { req, res });
   const configLocale = getCookie('config-locale', { req, res });
   if (!configName) {
@@ -32,19 +40,14 @@ export async function getServerSideProps({
     (configLocale ?? locale) as string,
     dashboardNamespaces
   );
-  return getConfig(configName as string, translations);
+  const config = getFrontendConfig(configName as string);
+
+  return {
+    props: { configName: configName as string, config, ...translations },
+  };
 }
 
-export default function HomePage(props: any) {
-  const { config: initialConfig }: { config: ConfigType } = props;
-  /*const { setConfig } = useConfig();
-  const { setPrimaryColor, setSecondaryColor } = useColorTheme();
-  useEffect(() => {
-    const migratedConfig = migrateToIdConfig(initialConfig);
-    setPrimaryColor(migratedConfig.settings.primaryColor || 'red');
-    setSecondaryColor(migratedConfig.settings.secondaryColor || 'orange');
-    setConfig(migratedConfig);
-  }, [initialConfig]);*/
+export default function HomePage({ config: initialConfig }: ServerSideProps) {
   useInitConfig(initialConfig);
 
   return (

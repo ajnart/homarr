@@ -12,15 +12,15 @@ import {
   ThemeIcon,
   Title,
 } from '@mantine/core';
-import { IconDeviceFloppy } from '@tabler/icons';
+import { IconDeviceFloppy, TablerIcon } from '@tabler/icons';
 import { ReactNode, useState } from 'react';
 
 interface GenericSecretInputProps {
   label: string;
   value: string;
   secretIsPresent: boolean;
-  unsetIcon: ReactNode;
-  setIcon: ReactNode;
+  unsetIcon: TablerIcon;
+  setIcon: TablerIcon;
 }
 
 export const GenericSecretInput = ({
@@ -33,13 +33,15 @@ export const GenericSecretInput = ({
   const { classes } = useStyles();
   const [dirty, setDirty] = useState(false);
 
+  const IconComponent = secretIsPresent ? setIcon : unsetIcon;
+
   return (
     <Card withBorder>
       <Grid>
         <Grid.Col className={classes.alignSelfCenter} xs={12} md={6}>
           <Group spacing="sm">
             <ThemeIcon color={secretIsPresent ? 'green' : 'red'} variant="light">
-              {secretIsPresent ? setIcon : unsetIcon}
+              <IconComponent size={16} />
             </ThemeIcon>
             <Stack spacing={0}>
               <Title className={classes.subtitle} order={6}>

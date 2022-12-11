@@ -1,6 +1,6 @@
-import { ConfigType } from '../../types/config';
+import { BackendConfigType } from '../../types/config';
 
-export const getFallbackConfig = (name?: string): ConfigType => ({
+export const getFallbackConfig = (name?: string): BackendConfigType => ({
   schemaVersion: '1.0.0',
   configProperties: {
     name: name ?? 'default',
@@ -12,7 +12,12 @@ export const getFallbackConfig = (name?: string): ConfigType => ({
     common: {
       searchEngine: {
         type: 'google',
+        properties: {
+          enabled: true,
+          openInNewTab: true,
+        },
       },
+      defaultConfig: 'default',
     },
     customization: {
       colors: {},

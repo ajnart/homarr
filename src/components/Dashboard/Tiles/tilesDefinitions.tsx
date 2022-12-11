@@ -64,7 +64,7 @@ export const Tiles: TileDefinitionProps = {
     maxHeight: 12,
   },
   useNet: {
-    component: UseNetTile, //CalendarTile,
+    component: UseNetTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,

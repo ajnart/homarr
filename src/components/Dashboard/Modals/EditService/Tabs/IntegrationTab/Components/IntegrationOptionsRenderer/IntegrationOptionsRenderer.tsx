@@ -3,9 +3,9 @@ import { UseFormReturnType } from '@mantine/form';
 import { IconKey, IconKeyOff, IconLock, IconLockOff, IconUser, IconUserOff } from '@tabler/icons';
 import {
   IntegrationField,
-  IntegrationFieldDefinitionType,
   integrationFieldDefinitions,
   integrationFieldProperties,
+  ServiceIntegrationPropertyType,
   ServiceType,
 } from '../../../../../../../../types/service';
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
@@ -13,27 +13,6 @@ import { GenericSecretInput } from '../InputElements/GenericSecretInput';
 interface IntegrationOptionsRendererProps {
   form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
 }
-
-const secretMappings = [
-  {
-    label: 'username',
-    prettyName: 'Username',
-    icon: <IconUser size={18} />,
-    iconUnset: <IconUserOff size={18} />,
-  },
-  {
-    label: 'password',
-    prettyName: 'Password',
-    icon: <IconLock size={18} />,
-    iconUnset: <IconLockOff size={18} />,
-  },
-  {
-    label: 'apiKey',
-    prettyName: 'API Key',
-    icon: <IconKey size={18} />,
-    iconUnset: <IconKeyOff size={18} />,
-  },
-];
 
 export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererProps) => {
   const selectedIntegration = form.values.integration?.type;
@@ -44,31 +23,49 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
 
   return (
     <Stack spacing="xs" mb="md">
-      {displayedProperties.map((property) => {
-        const mapping = Object.entries(integrationFieldDefinitions).find(
-          ([key, value]) => key as IntegrationField === property
-        );
-        const isPresent = entry[1] !== undefined;
+      {displayedProperties.map((property, index) => {
+        const [_, definition] = Object.entries(integrationFieldDefinitions).find(
+          ([key]) => property === key
+        )!;
 
-        if (!mapping) {
+        let indexInFormValue =
+          form.values.integration?.properties.findIndex((p) => p.field === property) ?? -1;
+        if (indexInFormValue === -1) {
+          const type = Object.entries(integrationFieldDefinitions).find(
+            ([k, v]) => k === property
+          )![1].type;
+          const newProperty: ServiceIntegrationPropertyType = {
+            type,
+            field: property as IntegrationField,
+            isDefined: false,
+          };
+          form.insertListItem('integration.properties', newProperty);
+          indexInFormValue = form.values.integration!.properties.length;
+        }
+        const formValue = form.values.integration?.properties[indexInFormValue];
+
+        const isPresent = formValue?.isDefined;
+
+        if (!definition) {
           return (
             <GenericSecretInput
-              label={`${entry[0]} (potentionally unmapped)`}
-              value={entry[1]}
+              label={`${property} (potentionally unmapped)`}
               secretIsPresent={isPresent}
-              setIcon={<IconKey size={18} />}
-              unsetIcon={<IconKeyOff size={18} />}
+              setIcon={IconKey}
+              unsetIcon={IconKeyOff}
+              {...form.getInputProps(`integration.properties.${index}.value`)}
             />
           );
         }
 
         return (
           <GenericSecretInput
-            label={mapping.prettyName}
-            value={entry[1]}
+            label={definition.label}
+            value=""
             secretIsPresent={isPresent}
-            setIcon={mapping.icon}
-            unsetIcon={mapping.iconUnset}
+            setIcon={definition.icon}
+            unsetIcon={definition.iconUnset}
+            {...form.getInputProps(`integration.properties.${index}.value`)}
           />
         );
       })}

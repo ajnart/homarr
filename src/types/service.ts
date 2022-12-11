@@ -16,8 +16,12 @@ export interface ServiceType extends TileBaseType {
   behaviour: ServiceBehaviourType;
   network: ServiceNetworkType;
   appearance: ServiceAppearanceType;
-  integration?: ServiceIntegrationType;
+  integration?: ServiceIntegrationType | null;
 }
+
+export type ConfigServiceType = Omit<ServiceType, 'integration'> & {
+  integration?: ConfigServiceIntegrationType | null;
+};
 
 interface ServiceBehaviourType {
   onClickUrl: string;
@@ -33,7 +37,7 @@ interface ServiceAppearanceType {
   iconUrl: string;
 }
 
-type IntegrationType =
+export type IntegrationType =
   | 'readarr'
   | 'radarr'
   | 'sonarr'
@@ -51,11 +55,18 @@ export type ServiceIntegrationType = {
   properties: ServiceIntegrationPropertyType[];
 };
 
-type ServiceIntegrationPropertyType = {
+export type ConfigServiceIntegrationType = Omit<ServiceIntegrationType, 'properties'> & {
+  properties: ConfigServiceIntegrationPropertyType[];
+};
+
+export type ServiceIntegrationPropertyType = {
   type: 'private' | 'public';
   field: IntegrationField;
-  value?: string;
+  value?: string | null;
+  isDefined: boolean;
 };
+
+type ConfigServiceIntegrationPropertyType = Omit<ServiceIntegrationPropertyType, 'isDefined'>;
 
 export type IntegrationField = 'apiKey' | 'password' | 'username';
 
@@ -76,6 +87,7 @@ export const integrationFieldProperties: {
 };
 
 export type IntegrationFieldDefinitionType = {
+  type: 'private' | 'public';
   icon: TablerIcon;
   iconUnset: TablerIcon;
   label: string;
@@ -85,16 +97,19 @@ export const integrationFieldDefinitions: {
   [key in IntegrationField]: IntegrationFieldDefinitionType;
 } = {
   apiKey: {
+    type: 'private',
     icon: IconKey,
     iconUnset: IconKeyOff,
     label: 'API Key',
   },
   username: {
+    type: 'public',
     icon: IconUser,
     iconUnset: IconUserOff,
     label: 'Username',
   },
   password: {
+    type: 'private',
     icon: IconPassword,
     iconUnset: IconLockOff,
     label: 'Password',

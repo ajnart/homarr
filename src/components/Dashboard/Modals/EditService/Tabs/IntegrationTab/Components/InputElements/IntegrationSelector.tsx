@@ -3,7 +3,15 @@ import { Group, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
-import { ServiceType } from '../../../../../../../../types/service';
+import { IntegrationsType } from '../../../../../../../../types/integration';
+import {
+  IntegrationField,
+  integrationFieldDefinitions,
+  integrationFieldProperties,
+  ServiceIntegrationPropertyType,
+  ServiceIntegrationType,
+  ServiceType,
+} from '../../../../../../../../types/service';
 
 interface IntegrationSelectorProps {
   form: UseFormReturnType<ServiceType, (item: ServiceType) => ServiceType>;
@@ -44,7 +52,23 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/overseerr.png',
       label: 'Overseerr',
     },
-  ];
+  ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
+
+  const inputProps = form.getInputProps('integration.type');
+
+  const getNewProperties = (value: string | null): ServiceIntegrationPropertyType[] => {
+    if (!value) return [];
+    const requiredProperties = Object.entries(integrationFieldDefinitions).filter(([k, v]) => {
+      const val = integrationFieldProperties[value as ServiceIntegrationType['type']];
+      return val.includes(k as IntegrationField);
+    })!;
+    return requiredProperties.map(([k, value]) => ({
+      type: value.type,
+      field: k as IntegrationField,
+      value: undefined,
+      isDefined: false,
+    }));
+  };
 
   return (
     <>
@@ -58,8 +82,22 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
         clearable
         variant="default"
         mb="md"
-        icon={form.values.integration?.type && <img src={data.find(x => x.value === form.values.integration?.type)?.image} alt="test" width={20} height={20} />}
-        {...form.getInputProps('integration.type')}
+        icon={
+          form.values.integration?.type && (
+            <img
+              src={data.find((x) => x.value === form.values.integration?.type)?.image}
+              alt="test"
+              width={20}
+              height={20}
+            />
+          )
+        }
+        {...inputProps}
+        onChange={(value) => {
+          form.setFieldValue('integration.properties', getNewProperties(value));
+          console.log(`changed to value ${value}`);
+          inputProps.onChange(value);
+        }}
       />
     </>
   );

@@ -1,6 +1,6 @@
 import { CategoryType } from './category';
 import { WrapperType } from './wrapper';
-import { ServiceType } from './service';
+import { ConfigServiceType, ServiceType } from './service';
 import { IntegrationsType } from './integration';
 import { SettingsType } from './settings';
 
@@ -13,6 +13,10 @@ export interface ConfigType {
   integrations: IntegrationsType;
   settings: SettingsType;
 }
+
+export type BackendConfigType = Omit<ConfigType, 'services'> & {
+  services: ConfigServiceType[];
+};
 
 export interface ConfigPropertiesType {
   name: string;
