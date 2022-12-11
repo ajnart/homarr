@@ -3,12 +3,12 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { UsenetHistoryItem } from '../../../../modules';
 import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
 import { Config } from '../../../../tools/types';
 import { NzbgetHistoryItem } from './nzbget/types';
 import { NzbgetClient } from './nzbget/nzbget-client';
 import { getConfig } from '../../../../tools/config/getConfig';
+import { UsenetHistoryItem } from '../../../../components/Dashboard/Tiles/UseNet/types';
 
 dayjs.extend(duration);
 
@@ -42,8 +42,10 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const options = {
           host: url.hostname,
           port: url.port,
-          login: service.integration.properties.username,
-          hash: service.integration.properties.password,
+          login:
+            service.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash:
+            service.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);
@@ -79,14 +81,12 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       case 'sabnzbd': {
         const { origin } = new URL(service.url);
 
-        if (!service.integration.properties.apiKey) {
+        const apiKey = service.integration.properties.find((x) => x.field === 'apiKey')?.value;
+        if (!apiKey) {
           throw new Error(`API Key for service "${service.name}" is missing`);
         }
 
-        const history = await new Client(origin, service.integration.properties.apiKey).history(
-          offset,
-          limit
-        );
+        const history = await new Client(origin, apiKey).history(offset, limit);
 
         const items: UsenetHistoryItem[] = history.slots.map((slot) => ({
           id: slot.nzo_id,

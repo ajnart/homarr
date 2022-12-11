@@ -41,8 +41,10 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const options = {
           host: url.hostname,
           port: url.port,
-          login: service.integration.properties.username,
-          hash: service.integration.properties.password,
+          login:
+            service.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash:
+            service.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);
@@ -72,13 +74,14 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       case 'sabnzbd': {
-        if (!service.integration.properties.apiKey) {
+        const apiKey = service.integration.properties.find((x) => x.field === 'apiKey')?.value;
+        if (!apiKey) {
           throw new Error(`API Key for service "${service.name}" is missing`);
         }
 
         const { origin } = new URL(service.url);
 
-        const queue = await new Client(origin, service.integration.properties.apiKey).queue(0, -1);
+        const queue = await new Client(origin, apiKey).queue(0, -1);
 
         const [hours, minutes, seconds] = queue.timeleft.split(':');
         const eta = dayjs.duration({

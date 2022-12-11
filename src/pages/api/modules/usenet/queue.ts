@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { UsenetQueueItem } from '../../../../modules';
+import { UsenetQueueItem } from '../../../../components/Dashboard/Tiles/UseNet/types';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { NzbgetClient } from './nzbget/nzbget-client';
 import { NzbgetQueueItem, NzbgetStatus } from './nzbget/types';
@@ -40,8 +40,10 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const options = {
           host: url.hostname,
           port: url.port,
-          login: service.integration.properties.username,
-          hash: service.integration.properties.password,
+          login:
+            service.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash:
+            service.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);
@@ -91,15 +93,13 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       case 'sabnzbd': {
-        if (!service.integration.properties.apiKey) {
+        const apiKey = service.integration.properties.find((x) => x.field === 'apiKey')?.value;
+        if (!apiKey) {
           throw new Error(`API Key for service "${service.name}" is missing`);
         }
 
         const { origin } = new URL(service.url);
-        const queue = await new Client(origin, service.integration.properties.apiKey).queue(
-          offset,
-          limit
-        );
+        const queue = await new Client(origin, apiKey).queue(offset, limit);
 
         const items: UsenetQueueItem[] = queue.slots.map((slot) => {
           const [hours, minutes, seconds] = slot.timeleft.split(':');

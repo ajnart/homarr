@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../tools/config/getConfig';
-import { ServiceIntegrationApiKeyType, ServiceType } from '../../../types/service';
+import { ServiceIntegrationType, ServiceType } from '../../../types/service';
 
 /*async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Parse req.body as a ServiceItem
@@ -114,7 +114,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
   const medias = await Promise.all(
     await mediaServices.map(async (service) => {
-      const integration = service.integration as ServiceIntegrationApiKeyType;
+      const integration = service.integration!;
       const endpoint = IntegrationTypeEndpointMap.get(integration.type);
       if (!endpoint)
         return {
@@ -131,14 +131,11 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       const start = new Date(year, month - 1, 1); // First day of month
       const end = new Date(year, month, 0); // Last day of month
 
-      console.log(
-        `${origin}${endpoint}?apiKey=${integration.properties.apiKey}&end=${end}&start=${start}`
-      );
+      const apiKey = integration.properties.find((x) => x.field === 'apiKey')?.value;
+      if (!apiKey) return { type: integration.type, items: [] };
       return await axios
         .get(
-          `${origin}${endpoint}?apiKey=${
-            integration.properties.apiKey
-          }&end=${end.toISOString()}&start=${start.toISOString()}`
+          `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}`
         )
         .then((x) => ({ type: integration.type, items: x.data as any[] }));
     })
@@ -160,5 +157,3 @@ const IntegrationTypeEndpointMap = new Map<ServiceIntegrationType['type'], strin
   ['lidarr', '/api/v1/calendar'],
   ['readarr', '/api/v1/calendar'],
 ]);
-
-type ServiceIntegrationType = Exclude<ServiceType['integration'], undefined>;
