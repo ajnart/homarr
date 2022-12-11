@@ -7,13 +7,15 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const { url } = req.query;
   const agent = new https.Agent({ rejectUnauthorized: false });
   await axios
-    .get(url as string, { httpsAgent: agent })
+    .get(url as string, { httpsAgent: agent, timeout: 2000 })
     .then((response) => {
       res.status(response.status).json(response.statusText);
     })
     .catch((error) => {
       if (error.response) {
         res.status(error.response.status).json(error.response.statusText);
+      } else if (error.code === 'ECONNABORTED') {
+        res.status(408).json('Request Timeout');
       } else {
         res.status(500).json('Server Error');
       }
