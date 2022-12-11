@@ -4,21 +4,23 @@ import {
   Code,
   Group,
   Pagination,
+  ScrollArea,
   Skeleton,
   Table,
   Text,
   Title,
   Tooltip,
 } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import { IconAlertCircle } from '@tabler/icons';
 import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
-import { useGetUsenetHistory } from '../../tools/hooks/api';
-import { humanFileSize } from '../../tools/humanFileSize';
-import { parseDuration } from '../../tools/parseDuration';
+import { useGetUsenetHistory } from '../../../../tools/hooks/api';
+import { humanFileSize } from '../../../../tools/humanFileSize';
+import { parseDuration } from '../../../../tools/parseDuration';
 
 dayjs.extend(duration);
 
@@ -32,6 +34,8 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
   const [page, setPage] = useState(1);
   const { t } = useTranslation(['modules/usenet', 'common']);
 
+  const { ref, width, height } = useElementSize();
+  const durationBreakpoint = 400;
   const { data, isLoading, isError, error } = useGetUsenetHistory({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
@@ -78,46 +82,47 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
 
   return (
     <>
-      <Table highlightOnHover style={{ tableLayout: 'fixed' }}>
-        <colgroup>
-          <col span={1} />
-          <col span={1} style={{ width: 100 }} />
-          <col span={1} style={{ width: 200 }} />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>{t('modules/usenet:history.header.name')}</th>
-            <th>{t('modules/usenet:history.header.size')}</th>
-            <th>{t('modules/usenet:history.header.duration')}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.items.map((history) => (
-            <tr key={history.id}>
-              <td>
-                <Tooltip position="top" label={history.name}>
-                  <Text
-                    size="xs"
-                    style={{
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                    }}
-                  >
-                    {history.name}
-                  </Text>
-                </Tooltip>
-              </td>
-              <td>
-                <Text size="xs">{humanFileSize(history.size)}</Text>
-              </td>
-              <td>
-                <Text size="xs">{parseDuration(history.time, t)}</Text>
-              </td>
+      <ScrollArea style={{ flex: 1 }}>
+        <Table highlightOnHover style={{ tableLayout: 'fixed' }} ref={ref}>
+          <thead>
+            <tr>
+              <th>{t('modules/usenet:history.header.name')}</th>
+              <th style={{ width: 100 }}>{t('modules/usenet:history.header.size')}</th>
+              {durationBreakpoint < width ? (
+                <th style={{ width: 200 }}>{t('modules/usenet:history.header.duration')}</th>
+              ) : null}
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {data.items.map((history) => (
+              <tr key={history.id}>
+                <td>
+                  <Tooltip position="top" label={history.name}>
+                    <Text
+                      size="xs"
+                      style={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                      }}
+                    >
+                      {history.name}
+                    </Text>
+                  </Tooltip>
+                </td>
+                <td>
+                  <Text size="xs">{humanFileSize(history.size)}</Text>
+                </td>
+                {durationBreakpoint < width ? (
+                  <td>
+                    <Text size="xs">{parseDuration(history.time, t)}</Text>
+                  </td>
+                ) : null}
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </ScrollArea>
       {totalPages > 1 && (
         <Pagination
           size="sm"

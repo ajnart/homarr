@@ -3,6 +3,7 @@ import { CalendarTile } from './Calendar/CalendarTile';
 import { ClockTile } from './Clock/ClockTile';
 import { EmptyTile } from './EmptyTile';
 import { ServiceTile } from './Service/ServiceTile';
+import { UseNetTile } from './UseNet/UseNetTile';
 import { WeatherTile } from './Weather/WeatherTile';
 /*import { CalendarTile } from './calendar';
 import { ClockTile } from './clock';
@@ -63,7 +64,7 @@ export const Tiles: TileDefinitionProps = {
     maxHeight: 12,
   },
   useNet: {
-    component: EmptyTile, //CalendarTile,
+    component: UseNetTile, //CalendarTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,

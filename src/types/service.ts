@@ -24,11 +24,12 @@ interface ServiceAppearanceType {
   iconUrl: string;
 }
 
-type ServiceIntegrationType =
+export type ServiceIntegrationType =
   | ServiceIntegrationApiKeyType
   | ServiceIntegrationPasswordType
   | ServiceIntegrationUsernamePasswordType;
 
+// TODO: add nzbGet somewhere
 export interface ServiceIntegrationApiKeyType {
   type: 'readarr' | 'radarr' | 'sonarr' | 'lidarr' | 'sabnzbd' | 'jellyseerr' | 'overseerr';
   properties: {
@@ -44,7 +45,7 @@ interface ServiceIntegrationPasswordType {
 }
 
 interface ServiceIntegrationUsernamePasswordType {
-  type: 'qBittorrent' | 'transmission';
+  type: 'qBittorrent' | 'transmission' | 'nzbGet';
   properties: {
     username?: string;
     password?: string;

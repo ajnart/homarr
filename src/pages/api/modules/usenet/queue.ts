@@ -4,9 +4,7 @@ import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
 import { UsenetQueueItem } from '../../../../modules';
-import { getConfig } from '../../../../tools/getConfig';
-import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
-import { Config } from '../../../../tools/types';
+import { getConfig } from '../../../../tools/config/getConfig';
 import { NzbgetClient } from './nzbget/nzbget-client';
 import { NzbgetQueueItem, NzbgetStatus } from './nzbget/types';
 
@@ -26,24 +24,24 @@ export interface UsenetQueueResponse {
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   try {
     const configName = getCookie('config-name', { req });
-    const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
+    const config = getConfig(configName?.toString() ?? 'default');
     const { limit, offset, serviceId } = req.query as any as UsenetQueueRequestParams;
 
-    const service = getServiceById(config, serviceId);
+    const service = config.services.find((x) => x.id === serviceId);
 
     if (!service) {
       throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
     }
 
     let response: UsenetQueueResponse;
-    switch (service.type) {
-      case 'NZBGet': {
+    switch (service.integration?.type) {
+      case 'nzbGet': {
         const url = new URL(service.url);
         const options = {
           host: url.hostname,
           port: url.port,
-          login: service.username,
-          hash: service.password,
+          login: service.integration.properties.username,
+          hash: service.integration.properties.password,
         };
 
         const nzbGet = NzbgetClient(options);
@@ -92,13 +90,16 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         };
         break;
       }
-      case 'Sabnzbd': {
-        if (!service.apiKey) {
+      case 'sabnzbd': {
+        if (!service.integration.properties.apiKey) {
           throw new Error(`API Key for service "${service.name}" is missing`);
         }
 
         const { origin } = new URL(service.url);
-        const queue = await new Client(origin, service.apiKey).queue(offset, limit);
+        const queue = await new Client(origin, service.integration.properties.apiKey).queue(
+          offset,
+          limit
+        );
 
         const items: UsenetQueueItem[] = queue.slots.map((slot) => {
           const [hours, minutes, seconds] = slot.timeleft.split(':');
@@ -125,7 +126,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       default:
-        throw new Error(`Service type "${service.type}" unrecognized.`);
+        throw new Error(`Service type "${service.integration?.type}" unrecognized.`);
     }
 
     return res.status(200).json(response);
