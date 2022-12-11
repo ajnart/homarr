@@ -4,7 +4,7 @@ import { openContextModalGeneric } from '../../../../tools/mantineModalManagerEx
 import { IntegrationsType } from '../../../../types/integration';
 import { TileBaseType } from '../../../../types/tile';
 import { GenericTileMenu } from '../GenericTileMenu';
-import { IntegrationChangePositionModalInnerProps } from '../IntegrationChangePositionModal';
+import { IntegrationChangePositionModalInnerProps } from '../../Modals/ChangePosition/ChangeIntegrationPositionModal';
 import { IntegrationRemoveModalInnerProps } from '../IntegrationRemoveModal';
 import {
   IntegrationEditModalInnerProps,
