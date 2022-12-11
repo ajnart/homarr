@@ -1,4 +1,4 @@
-import { Center, Text, UnstyledButton } from '@mantine/core';
+import { Card, Center, Text, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
 import { ServiceType } from '../../../../types/service';
@@ -35,7 +35,7 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
   );
 
   return (
-    <HomarrCardWrapper>
+    <HomarrCardWrapper className={className}>
       {/* TODO: add service menu */}
 
       <div style={{ position: 'absolute', top: 10, right: 10 }}>
