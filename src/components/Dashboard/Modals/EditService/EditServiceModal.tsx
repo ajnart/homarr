@@ -104,7 +104,12 @@ export const EditServiceModal = ({
     const relevantErrors = validationErrors.filter((x) => keys.includes(x));
 
     return (
-      <ThemeIcon opacity={relevantErrors.length === 0 ? 0 : 1} color="red" variant="light">
+      <ThemeIcon
+        opacity={relevantErrors.length === 0 ? 0 : 1}
+        color="red"
+        size={18}
+        variant="light"
+      >
         <IconAlertTriangle size={15} />
       </ThemeIcon>
     );
