@@ -2,7 +2,7 @@
 import { Group, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-import { forwardRef, useState } from 'react';
+import { forwardRef } from 'react';
 import { ServiceType } from '../../../../../../../../types/service';
 
 interface IntegrationSelectorProps {
@@ -46,8 +46,6 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     },
   ];
 
-  const [selectedItem, setSelectedItem] = useState<SelectItem>();
-
   return (
     <>
       <Select
@@ -58,49 +56,11 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
         data={data}
         maxDropdownHeight={400}
         clearable
-        onSelect={(e) => {
-          const item = data.find((x) => x.label === e.currentTarget.value);
-
-          if (item === undefined) {
-            setSelectedItem(undefined);
-            return;
-          }
-
-          setSelectedItem(item);
-        }}
         variant="default"
         mb="md"
-        icon={selectedItem && <img src={selectedItem.image} alt="test" width={20} height={20} />}
+        icon={form.values.integration?.type && <img src={data.find(x => x.value === form.values.integration?.type)?.image} alt="test" width={20} height={20} />}
+        {...form.getInputProps('integration.type')}
       />
-
-      {/*
-      {selectedItem && (
-        <Card p="md" pt="sm" radius="sm">
-          <Text weight={500} mb="lg">
-            Integration Configuration
-          </Text>
-
-          <Group grow>
-            <TextInput
-              icon={<IconUser size={16} />}
-              label="Username"
-              description="Optional"
-              placeholder="deluge"
-              variant="default"
-              {...form.getInputProps('username')}
-            />
-
-            <PasswordInput
-              icon={<IconKey />}
-              label="Password"
-              description="Optional, never share this with anybody else"
-              variant="default"
-              {...form.getInputProps('password')}
-            />
-          </Group>
-        </Card>
-      )}
-      */}
     </>
   );
 };

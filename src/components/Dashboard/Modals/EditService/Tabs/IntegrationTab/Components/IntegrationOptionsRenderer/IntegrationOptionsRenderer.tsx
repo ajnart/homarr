@@ -1,7 +1,13 @@
 import { Stack } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconKey, IconKeyOff, IconLock, IconLockOff, IconUser, IconUserOff } from '@tabler/icons';
-import { ServiceType } from '../../../../../../../../types/service';
+import {
+  IntegrationField,
+  IntegrationFieldDefinitionType,
+  integrationFieldDefinitions,
+  integrationFieldProperties,
+  ServiceType,
+} from '../../../../../../../../types/service';
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
 
 interface IntegrationOptionsRendererProps {
@@ -29,33 +35,43 @@ const secretMappings = [
   },
 ];
 
-export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererProps) => (
-  <Stack spacing="xs" mb="md">
-    {form.values.integration && Object.entries(form.values.integration.properties).map((entry) => {
-      const mapping = secretMappings.find((item) => item.label === entry[0]);
-      const isPresent = entry[1] !== undefined;
+export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererProps) => {
+  const selectedIntegration = form.values.integration?.type;
 
-      if (!mapping) {
+  if (!selectedIntegration) return null;
+
+  const displayedProperties = integrationFieldProperties[selectedIntegration];
+
+  return (
+    <Stack spacing="xs" mb="md">
+      {displayedProperties.map((property) => {
+        const mapping = Object.entries(integrationFieldDefinitions).find(
+          ([key, value]) => key as IntegrationField === property
+        );
+        const isPresent = entry[1] !== undefined;
+
+        if (!mapping) {
+          return (
+            <GenericSecretInput
+              label={`${entry[0]} (potentionally unmapped)`}
+              value={entry[1]}
+              secretIsPresent={isPresent}
+              setIcon={<IconKey size={18} />}
+              unsetIcon={<IconKeyOff size={18} />}
+            />
+          );
+        }
+
         return (
           <GenericSecretInput
-            label={`${entry[0]} (potentionally unmapped)`}
+            label={mapping.prettyName}
             value={entry[1]}
             secretIsPresent={isPresent}
-            setIcon={<IconKey size={18} />}
-            unsetIcon={<IconKeyOff size={18} />}
+            setIcon={mapping.icon}
+            unsetIcon={mapping.iconUnset}
           />
         );
-      }
-
-      return (
-        <GenericSecretInput
-          label={mapping.prettyName}
-          value={entry[1]}
-          secretIsPresent={isPresent}
-          setIcon={mapping.icon}
-          unsetIcon={mapping.iconUnset}
-        />
-      );
-    })}
-  </Stack>
-);
+      })}
+    </Stack>
+  );
+};

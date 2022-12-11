@@ -1,3 +1,12 @@
+import {
+  IconKey,
+  IconKeyOff,
+  IconLockOff,
+  IconPassword,
+  IconUser,
+  IconUserOff,
+  TablerIcon,
+} from '@tabler/icons';
 import { TileBaseType } from './tile';
 
 export interface ServiceType extends TileBaseType {
@@ -24,30 +33,70 @@ interface ServiceAppearanceType {
   iconUrl: string;
 }
 
-export type ServiceIntegrationType =
-  | ServiceIntegrationApiKeyType
-  | ServiceIntegrationPasswordType
-  | ServiceIntegrationUsernamePasswordType;
+type IntegrationType =
+  | 'readarr'
+  | 'radarr'
+  | 'sonarr'
+  | 'lidarr'
+  | 'sabnzbd'
+  | 'jellyseerr'
+  | 'overseerr'
+  | 'deluge'
+  | 'qBittorrent'
+  | 'transmission'
+  | 'nzbGet';
 
-// TODO: add nzbGet somewhere
-export interface ServiceIntegrationApiKeyType {
-  type: 'readarr' | 'radarr' | 'sonarr' | 'lidarr' | 'sabnzbd' | 'jellyseerr' | 'overseerr';
-  properties: {
-    apiKey: string;
-  };
-}
+export type ServiceIntegrationType = {
+  type: IntegrationType;
+  properties: ServiceIntegrationPropertyType[];
+};
 
-interface ServiceIntegrationPasswordType {
-  type: 'deluge';
-  properties: {
-    password?: string;
-  };
-}
+type ServiceIntegrationPropertyType = {
+  type: 'private' | 'public';
+  field: IntegrationField;
+  value?: string;
+};
 
-interface ServiceIntegrationUsernamePasswordType {
-  type: 'qBittorrent' | 'transmission' | 'nzbGet';
-  properties: {
-    username?: string;
-    password?: string;
-  };
-}
+export type IntegrationField = 'apiKey' | 'password' | 'username';
+
+export const integrationFieldProperties: {
+  [key in ServiceIntegrationType['type']]: IntegrationField[];
+} = {
+  lidarr: ['apiKey'],
+  radarr: ['apiKey'],
+  sonarr: ['apiKey'],
+  sabnzbd: ['apiKey'],
+  readarr: ['apiKey'],
+  overseerr: ['apiKey'],
+  jellyseerr: ['apiKey'],
+  deluge: ['password'],
+  nzbGet: ['username', 'password'],
+  qBittorrent: ['username', 'password'],
+  transmission: ['username', 'password'],
+};
+
+export type IntegrationFieldDefinitionType = {
+  icon: TablerIcon;
+  iconUnset: TablerIcon;
+  label: string;
+};
+
+export const integrationFieldDefinitions: {
+  [key in IntegrationField]: IntegrationFieldDefinitionType;
+} = {
+  apiKey: {
+    icon: IconKey,
+    iconUnset: IconKeyOff,
+    label: 'API Key',
+  },
+  username: {
+    icon: IconUser,
+    iconUnset: IconUserOff,
+    label: 'Username',
+  },
+  password: {
+    icon: IconPassword,
+    iconUnset: IconLockOff,
+    label: 'Password',
+  },
+};
