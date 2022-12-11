@@ -1,4 +1,4 @@
-import { Group, Tabs, Text, TextInput } from '@mantine/core';
+import { Tabs, Text, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconCursorText, IconLink } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';

@@ -1,7 +1,6 @@
 import { Alert, Button, createStyles, Group, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
-import { hideNotification, showNotification } from '@mantine/notifications';
 import {
   IconAccessPoint,
   IconAdjustments,
@@ -11,7 +10,6 @@ import {
   IconPlug,
 } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
 import { useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
@@ -31,11 +29,13 @@ export const EditServiceModal = ({
   context,
   id,
   innerProps,
-}: ContextModalProps<{ service: ServiceType }>) => {
+}: ContextModalProps<{ service: ServiceType; allowServiceNamePropagation: boolean }>) => {
   const { t } = useTranslation();
-  const { classes } = useStyles();
   const { name: configName, config } = useConfigContext();
   const updateConfig = useConfigStore((store) => store.updateConfig);
+  const [allowServiceNamePropagation, setAllowServiceNamePropagation] = useState<boolean>(
+    innerProps.allowServiceNamePropagation
+  );
 
   const form = useForm<ServiceType>({
     initialValues: innerProps.service,
@@ -94,29 +94,7 @@ export const EditServiceModal = ({
 
   const [activeTab, setActiveTab] = useState<EditServiceModalTab>('general');
 
-  const tryCloseModal = () => {
-    if (form.isDirty()) {
-      showNotification({
-        id: 'unsaved-edit-service-modal-changes',
-        title: 'You have unsaved changes',
-        message: (
-          <Stack>
-            <Text color="dimmed">If you close, your changes will be discarded and not saved.</Text>
-            <Button
-              onClick={() => {
-                context.closeModal(id);
-                hideNotification('unsaved-edit-service-modal-changes');
-              }}
-              variant="light"
-            >
-              Close anyway
-            </Button>
-          </Stack>
-        ),
-      });
-      return;
-    }
-
+  const closeModal = () => {
     context.closeModal(id);
   };
 
@@ -196,12 +174,16 @@ export const EditServiceModal = ({
           <GeneralTab form={form} openTab={(targetTab) => setActiveTab(targetTab)} />
           <BehaviourTab form={form} />
           <NetworkTab form={form} />
-          <AppearanceTab form={form} />
+          <AppearanceTab
+            form={form}
+            disallowServiceNameProgagation={() => setAllowServiceNamePropagation(false)}
+            allowServiceNamePropagation={allowServiceNamePropagation}
+          />
           <IntegrationTab form={form} />
         </Tabs>
 
         <Group position="right" mt={100}>
-          <Button onClick={tryCloseModal} px={50} variant="light" color="gray">
+          <Button onClick={closeModal} px={50} variant="light" color="gray">
             Cancel
           </Button>
           <Button disabled={!form.isValid()} px={50} type="submit">

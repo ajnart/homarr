@@ -8,11 +8,12 @@ interface TileMenuProps {
 
 export const ServiceMenu = ({ service }: TileMenuProps) => {
   const handleClickEdit = () => {
-    openContextModalGeneric<{ service: ServiceType }>({
+    openContextModalGeneric<{ service: ServiceType; allowServiceNamePropagation: boolean }>({
       modal: 'editService',
       size: 'xl',
       innerProps: {
         service,
+        allowServiceNamePropagation: false,
       },
     });
   };

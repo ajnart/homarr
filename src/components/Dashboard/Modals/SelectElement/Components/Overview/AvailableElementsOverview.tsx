@@ -27,44 +27,47 @@ export const AvailableElementTypes = ({
           name="Service"
           icon={<IconBox size={40} strokeWidth={1.3} />}
           onClick={() => {
-            openContextModalGeneric<{ service: ServiceType }>({
-              modal: 'editService',
-              innerProps: {
-                service: {
-                  id: uuidv4(),
-                  name: 'Your service',
-                  url: 'https://homarr.dev',
-                  appearance: {
-                    iconUrl: '/imgs/logo/logo.png',
-                  },
-                  network: {
-                    enabledStatusChecker: false,
-                    okStatus: [],
-                  },
-                  behaviour: {
-                    isOpeningNewTab: true,
-                    onClickUrl: '',
-                  },
-                  area: {
-                    type: 'sidebar',
-                    properties: {
-                      location: 'right',
+            openContextModalGeneric<{ service: ServiceType; allowServiceNamePropagation: boolean }>(
+              {
+                modal: 'editService',
+                innerProps: {
+                  service: {
+                    id: uuidv4(),
+                    name: 'Your service',
+                    url: 'https://homarr.dev',
+                    appearance: {
+                      iconUrl: '/imgs/logo/logo.png',
+                    },
+                    network: {
+                      enabledStatusChecker: false,
+                      okStatus: [],
+                    },
+                    behaviour: {
+                      isOpeningNewTab: true,
+                      onClickUrl: '',
+                    },
+                    area: {
+                      type: 'sidebar',
+                      properties: {
+                        location: 'right',
+                      },
+                    },
+                    shape: {
+                      location: {
+                        x: 0,
+                        y: 0,
+                      },
+                      size: {
+                        height: 1,
+                        width: 1,
+                      },
                     },
                   },
-                  shape: {
-                    location: {
-                      x: 0,
-                      y: 0,
-                    },
-                    size: {
-                      height: 1,
-                      width: 1,
-                    },
-                  },
+                  allowServiceNamePropagation: true,
                 },
-              },
-              size: 'xl',
-            });
+                size: 'xl',
+              }
+            );
           }}
         />
         <ElementItem
