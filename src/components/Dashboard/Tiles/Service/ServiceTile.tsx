@@ -6,6 +6,7 @@ import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { BaseTileProps } from '../type';
 import { ServiceMenu } from './ServiceMenu';
+import { ServicePing } from './ServicePing';
 
 interface ServiceTileProps extends BaseTileProps {
   service: ServiceType;
@@ -58,7 +59,7 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
           {inner}
         </UnstyledButton>
       )}
-      {/*<ServicePing service={service} />*/}
+      <ServicePing service={service} />
     </Card>
   );
 };
