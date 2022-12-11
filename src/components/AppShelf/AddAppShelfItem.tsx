@@ -7,7 +7,6 @@ import {
   Image,
   LoadingOverlay,
   Modal,
-  MultiSelect,
   PasswordInput,
   Select,
   Space,
@@ -25,7 +24,7 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfig } from '../../tools/state';
-import { tryMatchPort, ServiceTypeList, StatusCodes, Config } from '../../tools/types';
+import { tryMatchPort, ServiceTypeList, Config } from '../../tools/types';
 import apiKeyPaths from './apiKeyPaths.json';
 import Tip from '../layout/Tip';
 
@@ -121,7 +120,6 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
       password: props.password ?? undefined,
       openedUrl: props.openedUrl ?? undefined,
       ping: props.ping ?? true,
-      status: props.status ?? ['200'],
       newTab: props.newTab ?? true,
     },
     validate: {
@@ -136,12 +134,6 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
           const _isValid = new URL(value);
         } catch (e) {
           return t('modal.form.validation.invalidUrl');
-        }
-        return null;
-      },
-      status: (value: string[]) => {
-        if (!value.length) {
-          return t('modal.form.validation.noStatusCodeSelected');
         }
         return null;
       },
@@ -190,12 +182,6 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
           if (newForm.openedUrl === '') newForm.openedUrl = undefined;
           if (newForm.category === null) newForm.category = undefined;
           if (newForm.ping === true) newForm.ping = undefined;
-          if (
-            (newForm.status.length === 1 && newForm.status[0] === '200') ||
-            newForm.ping === false
-          ) {
-            delete newForm.status;
-          }
           // If service already exists, update it.
           if (config.services && config.services.find((s) => s.id === newForm.id)) {
             setConfig({
@@ -451,26 +437,10 @@ export function AddAppShelfItemForm(props: AddAppShelfItemFormProps) {
             <Space h="sm" />
             <Stack>
               <Switch
-                label={t('modal.tabs.advancedOptions.form.ping.label')}
+                label="Ping service"
                 defaultChecked={form.values.ping}
                 {...form.getInputProps('ping')}
               />
-              {form.values.ping && (
-                <MultiSelect
-                  required
-                  label={t('modal.tabs.advancedOptions.form.httpStatusCodes.label')}
-                  data={StatusCodes}
-                  placeholder={t('modal.tabs.advancedOptions.form.httpStatusCodes.placeholder')}
-                  clearButtonLabel={t(
-                    'modal.tabs.advancedOptions.form.httpStatusCodes.clearButtonLabel'
-                  )}
-                  nothingFound={t('modal.tabs.advancedOptions.form.httpStatusCodes.nothingFound')}
-                  defaultValue={['200']}
-                  clearable
-                  searchable
-                  {...form.getInputProps('status')}
-                />
-              )}
               <Switch
                 label={t('modal.tabs.advancedOptions.form.openServiceInNewTab.label')}
                 defaultChecked={form.values.newTab}

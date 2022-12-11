@@ -1,5 +1,4 @@
-import axios from 'axios';
-import https from 'https';
+import ping from 'ping';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {

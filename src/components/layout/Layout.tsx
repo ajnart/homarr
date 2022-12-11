@@ -1,6 +1,5 @@
 import { AppShell, createStyles } from '@mantine/core';
 import { Header } from './header/Header';
-import { Footer } from './Footer';
 import Aside from './Aside';
 import Navbar from './Navbar';
 import { HeaderConfig } from './header/HeaderConfig';
@@ -30,7 +29,6 @@ export default function Layout({ children, style }: any) {
       header={<Header />}
       navbar={widgetPosition ? <Navbar /> : undefined}
       aside={widgetPosition ? undefined : <Aside />}
-      footer={<Footer links={[]} />}
     >
       <HeaderConfig />
       <Background />
