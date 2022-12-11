@@ -1,44 +1,55 @@
-import { Button, Flex, Grid, NumberInput } from '@mantine/core';
+import { Button, Flex, Grid, NumberInput, Select, SelectItem } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { closeModal, ContextModalProps } from '@mantine/modals';
 import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
-import { ServiceType } from '../../../../types/service';
-import { TileBaseType } from '../../../../types/tile';
+
+interface ChangePositionModalProps {
+  initialX: number;
+  initialY: number;
+  initialWidth: number;
+  initialHeight: number;
+  widthData: SelectItem[];
+  heightData: SelectItem[];
+  onSubmit: (x: number, y: number, width: number, height: number) => void;
+  onCancel: () => void;
+}
 
 export const ChangePositionModal = ({
-  context,
-  id,
-  innerProps,
-}: ContextModalProps<{ type: 'service' | 'type'; tile: TileBaseType }>) => {
-  const updateConfig = useConfigStore((x) => x.updateConfig);
+  initialX,
+  initialY,
+  initialWidth,
+  initialHeight,
+  widthData,
+  heightData,
+  onCancel,
+  onSubmit,
+}: ChangePositionModalProps) => {
   const { name: configName } = useConfigContext();
 
-  const form = useForm({
+  const form = useForm<FormType>({
     initialValues: {
-      tile: innerProps.tile,
+      x: initialX,
+      y: initialY,
+      width: initialWidth,
+      height: initialHeight,
     },
     validateInputOnChange: true,
     validateInputOnBlur: true,
   });
 
-  const onSubmit = () => {
+  const handleSubmit = () => {
     if (!configName) {
       return;
     }
 
-    const tileAsService = form.values.tile as ServiceType;
-
-    updateConfig(configName, (previous) => ({
-      ...previous,
-      services: [...previous.services.filter((x) => x.id === tileAsService.id), tileAsService],
-    }));
-
-    closeModal(id);
+    onSubmit(form.values.x, form.values.y, form.values.width, form.values.height);
   };
 
+  console.log(`Initial: (${form.values.width} / ${form.values.height})`);
+  console.log(widthData);
+  console.log(heightData);
+
   return (
-    <form onSubmit={form.onSubmit(onSubmit)}>
+    <form onSubmit={form.onSubmit(handleSubmit)}>
       <Grid>
         <Grid.Col xs={12} md={6}>
           <NumberInput
@@ -46,7 +57,7 @@ export const ChangePositionModal = ({
             min={0}
             label="X Position"
             description="0 or higher"
-            {...form.getInputProps('tile.shape.location.x')}
+            {...form.getInputProps('x')}
           />
         </Grid.Col>
 
@@ -56,39 +67,48 @@ export const ChangePositionModal = ({
             min={0}
             label="Y Position"
             description="0 or higher"
-            {...form.getInputProps('tile.shape.location.y')}
+            {...form.getInputProps('y')}
           />
         </Grid.Col>
       </Grid>
 
       <Grid>
         <Grid.Col xs={12} md={6}>
-          <NumberInput
+          <Select
+            data={widthData}
             max={24}
             min={1}
             label="Width"
-            description="Between 1 and 24"
-            {...form.getInputProps('tile.shape.size.width')}
+            description={`Between ${widthData.at(0)?.label} and ${widthData.at(-1)?.label}`}
+            {...form.getInputProps('width')}
           />
         </Grid.Col>
 
         <Grid.Col xs={12} md={6}>
-          <NumberInput
+          <Select
+            data={heightData}
             max={24}
             min={1}
             label="Height"
-            description="Between 1 and 24"
-            {...form.getInputProps('tile.shape.size.height')}
+            description={`Between ${heightData.at(0)?.label} and ${heightData.at(-1)?.label}`}
+            {...form.getInputProps('height')}
           />
         </Grid.Col>
       </Grid>
 
       <Flex justify="end" gap="sm" mt="md">
-        <Button onClick={() => closeModal(id)} variant="light" color="gray">
+        <Button onClick={() => onCancel()} variant="light" color="gray">
           Cancel
         </Button>
-        <Button type="submit">Change Position</Button>
+        <Button type="submit">Save</Button>
       </Flex>
     </form>
   );
+};
+
+type FormType = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
 };

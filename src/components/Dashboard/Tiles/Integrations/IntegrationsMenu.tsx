@@ -42,7 +42,7 @@ export const IntegrationsMenu = <TIntegrationKey extends keyof IntegrationsType>
 
   const handleChangeSizeClick = () => {
     openContextModalGeneric<IntegrationChangePositionModalInnerProps>({
-      modal: 'integrationChangePosition',
+      modal: 'changeIntegrationPositionModal',
       size: 'xl',
       title: null,
       innerProps: {

@@ -19,9 +19,9 @@ export const ServiceMenu = ({ service }: TileMenuProps) => {
 
   const handleClickChangePosition = () => {
     openContextModalGeneric({
-      modal: 'changeTilePosition',
+      modal: 'changeServicePositionModal',
       innerProps: {
-        tile: service,
+        service,
       },
     });
   };
