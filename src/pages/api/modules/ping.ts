@@ -4,19 +4,24 @@ import { NextApiRequest, NextApiResponse } from 'next';
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   // Parse req.body as a AppItem
   const { url } = req.query;
-  // Parse url as URL object
-  const parsedUrl = new URL(url as string);
-  // Ping the URL
-  const response = await ping.promise.probe(parsedUrl.hostname, {
-    timeout: 1,
-  });
-
-  // Return 200 if the alive property is true
-  if (response.alive) {
-    return res.status(200).json({ alive: true });
-  }
-  // Return 404 if the alive property is false
-  return res.status(404).json({ alive: false });
+  const agent = new https.Agent({ rejectUnauthorized: false });
+  await axios
+    .get(url as string, { httpsAgent: agent, timeout: 2000 })
+    .then((response) => {
+      res.status(response.status).json(response.statusText);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.status(error.response.status).json(error.response.statusText);
+      } else if (error.code === 'ECONNABORTED') {
+        res.status(408).json('Request Timeout');
+      } else {
+        res.status(500).json('Server Error');
+      }
+    });
+  // // Make a request to the URL
+  // const response = await axios.get(url);
+  // // Return the response
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
