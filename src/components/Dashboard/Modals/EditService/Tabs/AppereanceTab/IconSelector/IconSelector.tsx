@@ -45,6 +45,24 @@ export const IconSelector = ({
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { classes } = useStyles();
 
+  const [debouncedValue] = useDebouncedValue(form.values.name, 500);
+
+  useEffect(() => {
+    if (allowServiceNamePropagation !== true) {
+      return;
+    }
+
+    const matchingDebouncedIcon = data?.find(
+      (x) => replaceCharacters(x.fileName.split('.')[0]) === replaceCharacters(form.values.name)
+    );
+
+    if (!matchingDebouncedIcon) {
+      return;
+    }
+
+    form.setFieldValue('appearance.iconUrl', matchingDebouncedIcon.url);
+  }, [form.values.name]);
+
   if (isLoading || !data) {
     return <Loader />;
   }
@@ -57,24 +75,6 @@ export const IconSelector = ({
   const slicedFilteredItems = filteredItems.slice(0, ICON_PICKER_SLICE_LIMIT);
   const isTruncated =
     slicedFilteredItems.length > 0 && slicedFilteredItems.length !== filteredItems.length;
-
-  const [debouncedValue] = useDebouncedValue(form.values.name, 500);
-
-  useEffect(() => {
-    if (allowServiceNamePropagation !== true) {
-      return;
-    }
-
-    const matchingDebouncedIcon = data.find(
-      (x) => replaceCharacters(x.fileName.split('.')[0]) === replaceCharacters(debouncedValue)
-    );
-
-    if (!matchingDebouncedIcon) {
-      return;
-    }
-
-    form.setFieldValue('appearance.iconUrl', matchingDebouncedIcon.url);
-  }, [debouncedValue]);
 
   return (
     <Popover width={310}>
