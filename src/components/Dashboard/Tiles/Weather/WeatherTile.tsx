@@ -4,8 +4,8 @@ import { WeatherIcon } from './WeatherIcon';
 import { BaseTileProps } from '../type';
 import { useWeatherForCity } from './useWeatherForCity';
 import { WeatherIntegrationType } from '../../../../types/integration';
-import { useCardStyles } from '../../../layout/useCardStyles';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
+import { IntegrationsMenu } from '../Integrations/IntegrationsMenu';
 
 interface WeatherTileProps extends BaseTileProps {
   module: WeatherIntegrationType | undefined;
@@ -45,8 +45,17 @@ export const WeatherTile = ({ className, module }: WeatherTileProps) => {
 
   return (
     <HomarrCardWrapper className={className}>
+      <IntegrationsMenu
+        integration="weather"
+        module={module}
+        options={module?.properties}
+        labels={{
+          isFahrenheit: 'descriptor.settings.displayInFahrenheit.label',
+          location: 'descriptor.settings.location.label',
+        }}
+      />
       <Center style={{ height: '100%' }}>
-        <Group spacing="xl" noWrap align="center">
+        <Group spacing="md" noWrap align="center">
           <WeatherIcon code={weather!.current_weather.weathercode} />
           <Stack p={0} spacing={4}>
             <Title order={2}>
@@ -55,7 +64,7 @@ export const WeatherTile = ({ className, module }: WeatherTileProps) => {
                 module?.properties.isFahrenheit
               )}
             </Title>
-            <Group spacing="sm">
+            <Group spacing="xs" noWrap>
               <div>
                 <span>
                   {getPerferedUnit(

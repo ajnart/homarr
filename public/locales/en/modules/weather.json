@@ -3,6 +3,7 @@
     "name": "Weather",
     "description": "Look up the current weather in your location",
     "settings": {
+      "title": "Settings for weather integration",
       "displayInFahrenheit": {
         "label": "Display in Fahrenheit"
       },

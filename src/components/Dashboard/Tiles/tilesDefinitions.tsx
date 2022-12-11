@@ -1,4 +1,5 @@
 import { IntegrationsType } from '../../../types/integration';
+import { CalendarTile } from './Calendar/CalendarTile';
 import { ClockTile } from './Clock/ClockTile';
 import { EmptyTile } from './EmptyTile';
 import { ServiceTile } from './Service/ServiceTile';
@@ -34,7 +35,7 @@ export const Tiles: TileDefinitionProps = {
     maxHeight: 12,
   },
   calendar: {
-    component: EmptyTile, //CalendarTile,
+    component: CalendarTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,

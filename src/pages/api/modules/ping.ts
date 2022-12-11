@@ -10,6 +10,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const response = await ping.promise.probe(parsedUrl.hostname, {
     timeout: 1,
   });
+
+  console.log(response);
+
   // Return 200 if the alive property is true
   if (response.alive) {
     return res.status(200).end();
