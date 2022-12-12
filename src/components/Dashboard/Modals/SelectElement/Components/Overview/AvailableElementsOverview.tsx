@@ -62,6 +62,10 @@ export const AvailableElementTypes = ({
                         width: 1,
                       },
                     },
+                    integration: {
+                      type: null,
+                      properties: [],
+                    },
                   },
                   allowServiceNamePropagation: true,
                 },
