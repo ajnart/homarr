@@ -3,7 +3,6 @@ import { Group, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
-import { IntegrationsType } from '../../../../../../../../types/integration';
 import {
   IntegrationField,
   integrationFieldDefinitions,
@@ -54,12 +53,15 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
 
-  const inputProps = form.getInputProps('integration.type');
-
   const getNewProperties = (value: string | null): ServiceIntegrationPropertyType[] => {
     if (!value) return [];
+    const integrationType = value as ServiceIntegrationType['type'];
+    if (integrationType === null) {
+      return [];
+    }
+
     const requiredProperties = Object.entries(integrationFieldDefinitions).filter(([k, v]) => {
-      const val = integrationFieldProperties[value as ServiceIntegrationType['type']];
+      const val = integrationFieldProperties[integrationType['type']];
       return val.includes(k as IntegrationField);
     })!;
     return requiredProperties.map(([k, value]) => ({
@@ -70,36 +72,36 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     }));
   };
 
+  const inputProps = form.getInputProps('integration.type');
+
   return (
-    <>
-      <Select
-        label="Integration configuration"
-        description="Treats this service as the selected integration and provides you with per-service configuration"
-        placeholder="Select your desired configuration"
-        itemComponent={SelectItemComponent}
-        data={data}
-        maxDropdownHeight={400}
-        clearable
-        variant="default"
-        mb="md"
-        icon={
-          form.values.integration?.type && (
-            <img
-              src={data.find((x) => x.value === form.values.integration?.type)?.image}
-              alt="test"
-              width={20}
-              height={20}
-            />
-          )
-        }
-        {...inputProps}
-        onChange={(value) => {
-          form.setFieldValue('integration.properties', getNewProperties(value));
-          console.log(`changed to value ${value}`);
-          inputProps.onChange(value);
-        }}
-      />
-    </>
+    <Select
+      label="Integration configuration"
+      description="Treats this service as the selected integration and provides you with per-service configuration"
+      placeholder="Select your desired configuration"
+      itemComponent={SelectItemComponent}
+      data={data}
+      maxDropdownHeight={400}
+      clearable
+      variant="default"
+      mb="md"
+      icon={
+        form.values.integration?.type && (
+          <img
+            src={data.find((x) => x.value === form.values.integration?.type)?.image}
+            alt="test"
+            width={20}
+            height={20}
+          />
+        )
+      }
+      onChange={(value) => {
+        form.setFieldValue('integration.properties', getNewProperties(value));
+        console.log(`changed to value ${value}`);
+        inputProps.onChange(value);
+      }}
+      {...inputProps}
+    />
   );
 };
 

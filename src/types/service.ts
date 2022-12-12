@@ -16,7 +16,7 @@ export interface ServiceType extends TileBaseType {
   behaviour: ServiceBehaviourType;
   network: ServiceNetworkType;
   appearance: ServiceAppearanceType;
-  integration?: ServiceIntegrationType | null;
+  integration: ServiceIntegrationType;
 }
 
 export type ConfigServiceType = Omit<ServiceType, 'integration'> & {
@@ -51,7 +51,7 @@ export type IntegrationType =
   | 'nzbGet';
 
 export type ServiceIntegrationType = {
-  type: IntegrationType;
+  type: IntegrationType | null;
   properties: ServiceIntegrationPropertyType[];
 };
 
