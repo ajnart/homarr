@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Flex, Popover, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Button, Popover, Text, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
