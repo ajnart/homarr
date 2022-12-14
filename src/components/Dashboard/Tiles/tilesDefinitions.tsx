@@ -1,6 +1,7 @@
 import { IntegrationsType } from '../../../types/integration';
 import { CalendarTile } from './Calendar/CalendarTile';
 import { ClockTile } from './Clock/ClockTile';
+import { DashDotTile } from './DashDot/DashDotTile';
 import { EmptyTile } from './EmptyTile';
 import { ServiceTile } from './Service/ServiceTile';
 import { UseNetTile } from './UseNet/UseNetTile';
@@ -50,7 +51,7 @@ export const Tiles: TileDefinitionProps = {
     maxHeight: 12,
   },
   dashDot: {
-    component: EmptyTile, //DashDotTile,
+    component: DashDotTile,
     minWidth: 4,
     maxWidth: 9,
     minHeight: 5,

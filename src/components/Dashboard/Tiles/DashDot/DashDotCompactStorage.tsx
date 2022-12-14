@@ -2,33 +2,25 @@ import { Group, Stack, Text } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '../../../../config/provider';
 import { bytes } from '../../../../tools/bytesHelper';
 import { percentage } from '../../../../tools/percentage';
 import { DashDotInfo } from './DashDotTile';
 
 interface DashDotCompactStorageProps {
   info: DashDotInfo;
-  dashDotUrl: string;
 }
 
-export const DashDotCompactStorage = ({ info, dashDotUrl }: DashDotCompactStorageProps) => {
+export const DashDotCompactStorage = ({ info }: DashDotCompactStorageProps) => {
   const { t } = useTranslation('modules/dashdot');
-  const { data: storageLoad } = useQuery({
-    queryKey: [
-      'dashdot/storageLoad',
-      {
-        dashDotUrl,
-      },
-    ],
-    queryFn: () => fetchDashDotStorageLoad(dashDotUrl),
-  });
+  const { data: storageLoad } = useDashDotStorage();
 
   const totalUsed = calculateTotalLayoutSize({
     layout: storageLoad?.layout ?? [],
     key: 'load',
   });
   const totalSize = calculateTotalLayoutSize({
-    layout: info?.storage.layout ?? [],
+    layout: info?.storage?.layout ?? [],
     key: 'size',
   });
 
@@ -61,9 +53,26 @@ interface CalculateTotalLayoutSizeProps<TLayoutItem> {
   key: keyof TLayoutItem;
 }
 
-const fetchDashDotStorageLoad = async (targetUrl: string) => {
+const useDashDotStorage = () => {
+  const { name: configName, config } = useConfigContext();
+
+  return useQuery({
+    queryKey: [
+      'dashdot/storage',
+      {
+        configName,
+        url: config?.integrations.dashDot?.properties.url,
+      },
+    ],
+    queryFn: () => fetchDashDotStorageLoad(configName),
+  });
+};
+
+const fetchDashDotStorageLoad = async (configName: string | undefined) => {
+  console.log('storage request: ' + configName);
+  if (!configName) return;
   return (await (
-    await axios.get('/api/modules/dashdot', { params: { url: '/load/storage', base: targetUrl } })
+    await axios.get('/api/modules/dashdot/storage', { params: { configName } })
   ).data) as DashDotStorageLoad;
 };
 

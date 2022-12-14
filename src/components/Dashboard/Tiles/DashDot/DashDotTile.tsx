@@ -17,6 +17,8 @@ import { BaseTileProps } from '../type';
 import { DashDotGraph } from './DashDotGraph';
 import { DashDotIntegrationType } from '../../../../types/integration';
 import { IntegrationsMenu } from '../Integrations/IntegrationsMenu';
+import { useConfigContext } from '../../../../config/provider';
+import { HomarrCardWrapper } from '../HomarrCardWrapper';
 
 interface DashDotTileProps extends BaseTileProps {
   module: DashDotIntegrationType | undefined;
@@ -28,7 +30,7 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
 
   const dashDotUrl = module?.properties.url;
 
-  const { data: info } = useDashDotInfo(dashDotUrl);
+  const { data: info } = useDashDotInfo();
 
   const graphs = module?.properties.graphs.map((g) => ({
     id: g,
@@ -62,13 +64,13 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
 
   if (!dashDotUrl) {
     return (
-      <Card className={className} withBorder p="xs">
+      <HomarrCardWrapper className={className}>
         {menu}
         <div>
           {heading}
           <p>{t('card.errors.noService')}</p>
         </div>
-      </Card>
+      </HomarrCardWrapper>
     );
   }
 
@@ -83,16 +85,14 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
   );
 
   return (
-    <Card className={className} withBorder p="xs">
+    <HomarrCardWrapper className={className}>
       {menu}
       {heading}
       {!info && <p>{t('card.errors.noInformation')}</p>}
       {info && (
         <div className={classes.graphsContainer}>
           <Group position="apart" w="100%">
-            {isCompactStorageVisible && (
-              <DashDotCompactStorage dashDotUrl={dashDotUrl} info={info} />
-            )}
+            {isCompactStorageVisible && <DashDotCompactStorage info={info} />}
             {isCompactNetworkVisible && <DashDotCompactNetwork info={info} />}
           </Group>
           <Group position="center" w="100%" className={classes.graphsWrapper}>
@@ -107,26 +107,28 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
           </Group>
         </div>
       )}
-    </Card>
+    </HomarrCardWrapper>
   );
 };
 
-const useDashDotInfo = (dashDotUrl: string | undefined) => {
+const useDashDotInfo = () => {
+  const { name: configName, config } = useConfigContext();
   return useQuery({
     queryKey: [
       'dashdot/info',
       {
-        dashDotUrl,
+        configName,
+        url: config?.integrations.dashDot?.properties.url,
       },
     ],
-    queryFn: () => fetchDashDotInfo(dashDotUrl),
+    queryFn: () => fetchDashDotInfo(configName),
   });
 };
 
-const fetchDashDotInfo = async (targetUrl: string | undefined) => {
-  if (!targetUrl) return {} as DashDotInfo;
+const fetchDashDotInfo = async (configName: string | undefined) => {
+  if (!configName) return {} as DashDotInfo;
   return (await (
-    await axios.get('/api/modules/dashdot', { params: { url: '/info', base: targetUrl } })
+    await axios.get('/api/modules/dashdot/info', { params: { configName } })
   ).data) as DashDotInfo;
 };
 
