@@ -14,20 +14,28 @@ export const ToggleEditModeAction = () => {
 
   const smallerThanSm = useScreenSmallerThan('sm');
 
+  const toggleButtonClicked = () => {
+    toggleEditMode();
+    setPopoverManuallyHidden(false);
+  };
+
   return (
     <Tooltip label={t('tooltip')} withinPortal>
       <Popover opened={enabled && !smallerThanSm && !popoverManuallyHidden} width={250} withArrow>
         <Popover.Target>
           {smallerThanSm ? (
-            <ActionIcon variant="default" radius="md" size="xl" color="blue">
+            <ActionIcon
+              onClick={() => toggleButtonClicked()}
+              variant="default"
+              radius="md"
+              size="xl"
+              color="blue"
+            >
               {enabled ? <IconEditCircleOff /> : <IconEditCircle />}
             </ActionIcon>
           ) : (
             <Button
-              onClick={() => {
-                toggleEditMode();
-                setPopoverManuallyHidden(false);
-              }}
+              onClick={() => toggleButtonClicked()}
               leftIcon={enabled ? <IconEditCircleOff /> : <IconEditCircle />}
               variant="default"
               radius="md"
