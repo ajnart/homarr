@@ -1,4 +1,4 @@
-import { DashDotGraphType } from '../../../../types/integration';
+import { DashDotGraphType } from '../../types/integration';
 
 export interface DashDotGraph {
   id: DashDotGraphType;

@@ -2,11 +2,11 @@ import { Button, Group, MultiSelect, Stack, Switch, TextInput } from '@mantine/c
 import { ContextModalProps } from '@mantine/modals';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { useConfigContext } from '../../../config/provider';
-import { useConfigStore } from '../../../config/store';
-import { DashDotGraphType, IntegrationsType } from '../../../types/integration';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
+import { DashDotGraphType, IntegrationsType } from '../../../../types/integration';
 
-export type IntegrationEditModalInnerProps<
+export type WidgetEditModalInnerProps<
   TIntegrationKey extends keyof IntegrationsType = keyof IntegrationsType
 > = {
   integration: TIntegrationKey;
@@ -14,11 +14,11 @@ export type IntegrationEditModalInnerProps<
   labels: IntegrationOptionLabels<IntegrationOptions<TIntegrationKey>>;
 };
 
-export const IntegrationsEditModal = ({
+export const WidgetsEditModal = ({
   context,
   id,
   innerProps,
-}: ContextModalProps<IntegrationEditModalInnerProps>) => {
+}: ContextModalProps<WidgetEditModalInnerProps>) => {
   const translationKey = integrationModuleTranslationsMap.get(innerProps.integration);
   const { t } = useTranslation([translationKey ?? '', 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);

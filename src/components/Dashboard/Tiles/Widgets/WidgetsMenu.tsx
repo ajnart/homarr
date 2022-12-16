@@ -4,38 +4,38 @@ import { openContextModalGeneric } from '../../../../tools/mantineModalManagerEx
 import { IntegrationsType } from '../../../../types/integration';
 import { TileBaseType } from '../../../../types/tile';
 import { GenericTileMenu } from '../GenericTileMenu';
-import { IntegrationRemoveModalInnerProps } from '../IntegrationRemoveModal';
+import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 import {
-  IntegrationEditModalInnerProps,
+  WidgetEditModalInnerProps,
   integrationModuleTranslationsMap,
   IntegrationOptionLabels,
   IntegrationOptions,
-} from '../IntegrationsEditModal';
+} from './WidgetsEditModal';
 
-export type IntegrationChangePositionModalInnerProps = {
+export type WidgetChangePositionModalInnerProps = {
   integration: keyof IntegrationsType;
   module: TileBaseType;
 };
 
-interface IntegrationsMenuProps<TIntegrationKey extends keyof IntegrationsType> {
+interface WidgetsMenuProps<TIntegrationKey extends keyof IntegrationsType> {
   integration: TIntegrationKey;
   module: TileBaseType | undefined;
   options: IntegrationOptions<TIntegrationKey> | undefined;
   labels: IntegrationOptionLabels<IntegrationOptions<TIntegrationKey>>;
 }
 
-export const IntegrationsMenu = <TIntegrationKey extends keyof IntegrationsType>({
+export const WidgetsMenu = <TIntegrationKey extends keyof IntegrationsType>({
   integration,
   options,
   labels,
   module,
-}: IntegrationsMenuProps<TIntegrationKey>) => {
+}: WidgetsMenuProps<TIntegrationKey>) => {
   const { t } = useTranslation(integrationModuleTranslationsMap.get(integration));
 
   if (!module) return null;
 
   const handleDeleteClick = () => {
-    openContextModalGeneric<IntegrationRemoveModalInnerProps>({
+    openContextModalGeneric<WidgetsRemoveModalInnerProps>({
       modal: 'integrationRemove',
       title: <Title order={4}>{t('descriptor.remove.title')}</Title>,
       innerProps: {
@@ -45,7 +45,7 @@ export const IntegrationsMenu = <TIntegrationKey extends keyof IntegrationsType>
   };
 
   const handleChangeSizeClick = () => {
-    openContextModalGeneric<IntegrationChangePositionModalInnerProps>({
+    openContextModalGeneric<WidgetChangePositionModalInnerProps>({
       modal: 'changeIntegrationPositionModal',
       size: 'xl',
       title: null,
@@ -57,7 +57,7 @@ export const IntegrationsMenu = <TIntegrationKey extends keyof IntegrationsType>
   };
 
   const handleEditClick = () => {
-    openContextModalGeneric<IntegrationEditModalInnerProps<TIntegrationKey>>({
+    openContextModalGeneric<WidgetEditModalInnerProps<TIntegrationKey>>({
       modal: 'integrationOptions',
       title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
       innerProps: {

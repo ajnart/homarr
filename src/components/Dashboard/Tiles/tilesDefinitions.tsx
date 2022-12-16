@@ -1,15 +1,13 @@
 import { IntegrationsType } from '../../../types/integration';
-import { CalendarTile } from './Calendar/CalendarTile';
-import { ClockTile } from './Clock/ClockTile';
-import { DashDotTile } from './DashDot/DashDotTile';
+import { CalendarTile } from '../../../widgets/calendar/CalendarTile';
+import { ClockTile } from '../../../widgets/clock/ClockTile';
+import { DashDotTile } from '../../../widgets/dashDot/DashDotTile';
+import { UseNetTile } from '../../../widgets/useNet/UseNetTile';
+import { WeatherTile } from '../../../widgets/weather/WeatherTile';
 import { EmptyTile } from './EmptyTile';
 import { ServiceTile } from './Service/ServiceTile';
-import { UseNetTile } from './UseNet/UseNetTile';
-import { WeatherTile } from './Weather/WeatherTile';
-/*import { CalendarTile } from './calendar';
-import { ClockTile } from './clock';
-import { DashDotTile } from './dash-dot';*/
 
+// TODO: just remove and use service (later app) directly. For widgets the the definition should contain min/max width/height
 type TileDefinitionProps = {
   [key in keyof IntegrationsType | 'service']: {
     minWidth?: number;

@@ -13,8 +13,8 @@ import { ChangeIntegrationPositionModal } from '../components/Dashboard/Modals/C
 import { ChangeServicePositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeServicePositionModal';
 import { EditServiceModal } from '../components/Dashboard/Modals/EditService/EditServiceModal';
 import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
-import { IntegrationRemoveModal } from '../components/Dashboard/Tiles/IntegrationRemoveModal';
-import { IntegrationsEditModal } from '../components/Dashboard/Tiles/IntegrationsEditModal';
+import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
+import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsEditModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
 import '../styles/global.scss';
@@ -88,8 +88,8 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
                     modals={{
                       editService: EditServiceModal,
                       selectElement: SelectElementModal,
-                      integrationOptions: IntegrationsEditModal,
-                      integrationRemove: IntegrationRemoveModal,
+                      integrationOptions: WidgetsEditModal,
+                      integrationRemove: WidgetsRemoveModal,
                       categoryEditModal: CategoryEditModal,
                       changeServicePositionModal: ChangeServicePositionModal,
                       changeIntegrationPositionModal: ChangeIntegrationPositionModal,

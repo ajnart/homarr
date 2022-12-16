@@ -3,7 +3,7 @@ import { closeModal, ContextModalProps } from '@mantine/modals';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { IntegrationsType } from '../../../../types/integration';
-import { IntegrationChangePositionModalInnerProps } from '../../Tiles/Integrations/IntegrationsMenu';
+import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
 import { Tiles } from '../../Tiles/tilesDefinitions';
 import { ChangePositionModal } from './ChangePositionModal';
 
@@ -11,7 +11,7 @@ export const ChangeIntegrationPositionModal = ({
   context,
   id,
   innerProps,
-}: ContextModalProps<IntegrationChangePositionModalInnerProps>) => {
+}: ContextModalProps<WidgetChangePositionModalInnerProps>) => {
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 

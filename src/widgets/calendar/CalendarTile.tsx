@@ -2,17 +2,17 @@ import { createStyles, MantineThemeColors, useMantineTheme } from '@mantine/core
 import { Calendar } from '@mantine/dates';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { useConfigContext } from '../../../../config/provider';
-import { useColorTheme } from '../../../../tools/color';
-import { isToday } from '../../../../tools/isToday';
-import { CalendarIntegrationType } from '../../../../types/integration';
-import { HomarrCardWrapper } from '../HomarrCardWrapper';
-import { BaseTileProps } from '../type';
+import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
+import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
+import { useConfigContext } from '../../config/provider';
+import { useColorTheme } from '../../tools/color';
+import { isToday } from '../../tools/isToday';
+import { CalendarIntegrationType } from '../../types/integration';
 import { CalendarDay } from './CalendarDay';
 import { MediasType } from './type';
 
 interface CalendarTileProps extends BaseTileProps {
-  module: CalendarIntegrationType | undefined;
+  module: CalendarIntegrationType | undefined; // TODO: change to new type defined through widgetDefinition
 }
 
 export const CalendarTile = ({ className, module }: CalendarTileProps) => {

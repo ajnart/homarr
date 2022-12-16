@@ -1,23 +1,24 @@
 import { Center, Stack, Text, Title } from '@mantine/core';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
-import { useSetSafeInterval } from '../../../../tools/hooks/useSetSafeInterval';
-import { ClockIntegrationType } from '../../../../types/integration';
-import { HomarrCardWrapper } from '../HomarrCardWrapper';
-import { IntegrationsMenu } from '../Integrations/IntegrationsMenu';
-import { BaseTileProps } from '../type';
+import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
+import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
+import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
+import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
+import { ClockIntegrationType } from '../../types/integration';
 
 interface ClockTileProps extends BaseTileProps {
-  module: ClockIntegrationType | undefined;
+  module: ClockIntegrationType; // TODO: change to new type defined through widgetDefinition
 }
 
 export const ClockTile = ({ className, module }: ClockTileProps) => {
   const date = useDateState();
   const formatString = module?.properties.is24HoursFormat ? 'HH:mm' : 'h:mm A';
 
+  // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <HomarrCardWrapper className={className}>
-      <IntegrationsMenu<'clock'>
+      <WidgetsMenu<'clock'>
         integration="clock"
         module={module}
         options={module?.properties}

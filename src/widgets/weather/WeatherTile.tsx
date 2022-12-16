@@ -1,14 +1,14 @@
 import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
 import { IconArrowDownRight, IconArrowUpRight } from '@tabler/icons';
-import { WeatherIcon } from './WeatherIcon';
-import { BaseTileProps } from '../type';
+import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
+import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
+import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
+import { WeatherIntegrationType } from '../../types/integration';
 import { useWeatherForCity } from './useWeatherForCity';
-import { WeatherIntegrationType } from '../../../../types/integration';
-import { HomarrCardWrapper } from '../HomarrCardWrapper';
-import { IntegrationsMenu } from '../Integrations/IntegrationsMenu';
+import { WeatherIcon } from './WeatherIcon';
 
 interface WeatherTileProps extends BaseTileProps {
-  module: WeatherIntegrationType | undefined;
+  module: WeatherIntegrationType; // TODO: change to new type defined through widgetDefinition
 }
 
 export const WeatherTile = ({ className, module }: WeatherTileProps) => {
@@ -43,9 +43,10 @@ export const WeatherTile = ({ className, module }: WeatherTileProps) => {
     );
   }
 
+  // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <HomarrCardWrapper className={className}>
-      <IntegrationsMenu
+      <WidgetsMenu
         integration="weather"
         module={module}
         options={module?.properties}

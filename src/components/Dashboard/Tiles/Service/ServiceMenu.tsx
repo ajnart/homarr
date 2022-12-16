@@ -15,6 +15,11 @@ export const ServiceMenu = ({ service }: TileMenuProps) => {
         service,
         allowServiceNamePropagation: false,
       },
+      styles: {
+        root: {
+          zIndex: 201,
+        },
+      },
     });
   };
 
@@ -23,6 +28,11 @@ export const ServiceMenu = ({ service }: TileMenuProps) => {
       modal: 'changeServicePositionModal',
       innerProps: {
         service,
+      },
+      styles: {
+        root: {
+          zIndex: 201,
+        },
       },
     });
   };

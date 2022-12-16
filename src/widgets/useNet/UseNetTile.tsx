@@ -16,18 +16,14 @@ import { useElementSize } from '@mantine/hooks';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '../../../../config/provider';
 import { UsenetQueueList } from './UsenetQueueList';
-import {
-  useGetUsenetInfo,
-  usePauseUsenetQueue,
-  useResumeUsenetQueue,
-} from '../../../../tools/hooks/api';
-import { humanFileSize } from '../../../../tools/humanFileSize';
-import { ServiceIntegrationType } from '../../../../types/service';
-import { HomarrCardWrapper } from '../HomarrCardWrapper';
-import { BaseTileProps } from '../type';
 import { UsenetHistoryList } from './UsenetHistoryList';
+import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
+import { ServiceIntegrationType } from '../../types/service';
+import { useConfigContext } from '../../config/provider';
+import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
+import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
+import { humanFileSize } from '../../tools/humanFileSize';
 
 dayjs.extend(duration);
 

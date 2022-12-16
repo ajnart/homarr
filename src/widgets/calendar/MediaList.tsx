@@ -5,7 +5,7 @@ import {
   RadarrMediaDisplay,
   ReadarrMediaDisplay,
   SonarrMediaDisplay,
-} from '../../../../modules/common';
+} from '../../modules/common';
 import { MediasType } from './type';
 
 interface MediaListProps {

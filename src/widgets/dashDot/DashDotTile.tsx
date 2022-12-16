@@ -3,16 +3,16 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
-import { BaseTileProps } from '../type';
 import { DashDotGraph } from './DashDotGraph';
-import { DashDotIntegrationType } from '../../../../types/integration';
-import { IntegrationsMenu } from '../Integrations/IntegrationsMenu';
-import { useConfigContext } from '../../../../config/provider';
-import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
+import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
+import { DashDotIntegrationType } from '../../types/integration';
+import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
+import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
+import { useConfigContext } from '../../config/provider';
 
 interface DashDotTileProps extends BaseTileProps {
-  module: DashDotIntegrationType | undefined;
+  module: DashDotIntegrationType; // TODO: change to new type defined through widgetDefinition
 }
 
 export const DashDotTile = ({ module, className }: DashDotTileProps) => {
@@ -39,7 +39,8 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
   );
 
   const menu = (
-    <IntegrationsMenu<'dashDot'>
+    // TODO: add widgetWrapper that is generic and uses the definition
+    <WidgetsMenu<'dashDot'>
       module={module}
       integration="dashDot"
       options={module?.properties}
