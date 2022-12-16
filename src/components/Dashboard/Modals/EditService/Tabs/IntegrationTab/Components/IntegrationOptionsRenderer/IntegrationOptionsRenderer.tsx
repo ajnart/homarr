@@ -56,6 +56,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
               label={`${property} (potentionally unmapped)`}
               secretIsPresent={isPresent}
               setIcon={IconKey}
+              value={formValue.value}
               {...form.getInputProps(`integration.properties.${index}.value`)}
             />
           );

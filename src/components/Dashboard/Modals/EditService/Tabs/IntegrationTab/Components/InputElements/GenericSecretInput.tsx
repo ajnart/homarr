@@ -1,18 +1,16 @@
 import {
-  ActionIcon,
   Button,
   Card,
   createStyles,
   Flex,
   Grid,
   Group,
+  PasswordInput,
   Stack,
-  TextInput,
   ThemeIcon,
   Title,
-  Tooltip,
 } from '@mantine/core';
-import { IconDeviceFloppy, TablerIcon } from '@tabler/icons';
+import { TablerIcon } from '@tabler/icons';
 import { useState } from 'react';
 
 interface GenericSecretInputProps {
@@ -27,12 +25,13 @@ export const GenericSecretInput = ({
   value,
   setIcon,
   onClickUpdateButton,
+  ...props
 }: GenericSecretInputProps) => {
   const { classes } = useStyles();
 
   const Icon = setIcon;
 
-  const [fieldValue, setFieldValue] = useState<string>(value);
+  const [displayUpdateField, setDisplayUpdateField] = useState<boolean>(false);
 
   return (
     <Card withBorder>
@@ -51,31 +50,16 @@ export const GenericSecretInput = ({
         </Grid.Col>
         <Grid.Col xs={12} md={6}>
           <Flex gap={10} justify="end" align="end">
-            <Button
-              onClick={() => {
-                setFieldValue('');
-                onClickUpdateButton(undefined);
-              }}
-              variant="subtle"
-              color="gray"
-              px="xl"
-            >
+            <Button variant="subtle" color="gray" px="xl">
               Clear Secret
             </Button>
-            <TextInput
-              onChange={(event) => setFieldValue(event.currentTarget.value)}
-              rightSection={
-                <Tooltip label="Update this secret" withinPortal>
-                  <ActionIcon onClick={() => onClickUpdateButton(fieldValue)}>
-                    <IconDeviceFloppy width={20} strokeWidth={1.2} />
-                  </ActionIcon>
-                </Tooltip>
-              }
-              value={fieldValue}
-              type="password"
-              placeholder="no value is set"
-              withAsterisk
-            />
+            {displayUpdateField === true ? (
+              <PasswordInput placeholder="new secret" width={200} {...props} />
+            ) : (
+              <Button onClick={() => setDisplayUpdateField(true)} variant="light">
+                Set Secret
+              </Button>
+            )}
           </Flex>
         </Grid.Col>
       </Grid>
