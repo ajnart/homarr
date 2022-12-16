@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "אינטרנט",
-      "description": "חיפוש באמצעות מנוע החיפוש שלך (מוגדר בהגדרות)"
+      "description": "חיפוש באמצעות מנוע החיפוש שלך"
     },
     "youtube": {
       "name": "יוטיוב",
