@@ -1,6 +1,7 @@
 import { Group, Stack } from '@mantine/core';
 import { useMemo } from 'react';
 import { useConfigContext } from '../../../config/provider';
+import { useScreenLargerThan } from '../../../tools/hooks/useScreenLargerThan';
 import { CategoryType } from '../../../types/category';
 import { WrapperType } from '../../../types/wrapper';
 import { DashboardCategory } from '../Wrappers/Category/Category';
@@ -9,11 +10,14 @@ import { DashboardWrapper } from '../Wrappers/Wrapper/Wrapper';
 
 export const DashboardView = () => {
   const wrappers = useWrapperItems();
-  const clockModule = useConfigContext().config?.integrations.clock;
+  const layoutSettings = useConfigContext()?.config?.settings.customization.layout;
+  const showSidebars = useScreenLargerThan('md');
 
   return (
     <Group align="top" h="100%">
-      <DashboardSidebar location="left" />
+      {layoutSettings?.enabledLeftSidebar && showSidebars ? (
+        <DashboardSidebar location="left" />
+      ) : null}
       <Stack mx={-10} style={{ flexGrow: 1 }}>
         {wrappers.map((item) =>
           item.type === 'category' ? (
@@ -23,7 +27,9 @@ export const DashboardView = () => {
           )
         )}
       </Stack>
-      <DashboardSidebar location="right" />
+      {layoutSettings?.enabledRightSidebar && showSidebars ? (
+        <DashboardSidebar location="right" />
+      ) : null}
     </Group>
   );
 };

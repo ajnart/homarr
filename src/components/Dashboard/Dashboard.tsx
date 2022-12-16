@@ -11,14 +11,8 @@ export const Dashboard = () => {
   return (
     <>
       {/* The following elemens are splitted because gridstack doesn't reinitialize them when using same item. */}
-      {isEditMode ? (
-        <>
-          <DashboardEditView />
-          <MobileRibbons />
-        </>
-      ) : (
-        <DashboardDetailView />
-      )}
+      {isEditMode ? <DashboardEditView /> : <DashboardDetailView />}
+      <MobileRibbons />
     </>
   );
 };

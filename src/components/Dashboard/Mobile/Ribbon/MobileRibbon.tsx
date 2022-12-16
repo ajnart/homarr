@@ -1,36 +1,68 @@
-import { ActionIcon, createStyles, useMantineTheme } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
+import { ActionIcon, createStyles } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons';
+import { useConfigContext } from '../../../../config/provider';
+import { useScreenLargerThan } from '../../../../tools/hooks/useScreenLargerThan';
+import { MobileRibbonSidebarDrawer } from './MobileRibbonSidebarDrawer';
 
 export const MobileRibbons = () => {
-  const theme = useMantineTheme();
   const { classes, cx } = useStyles();
+  const { config } = useConfigContext();
+  const [openedRight, rightSidebar] = useDisclosure(false);
+  const [openedLeft, leftSidebar] = useDisclosure(false);
+  const screenLargerThanMd = useScreenLargerThan('md');
 
-  const screenSmallerThanSm = useMediaQuery(`(min-width: ${theme.breakpoints.sm}px)`);
-
-  if (screenSmallerThanSm) {
+  if (screenLargerThanMd || !config) {
     return <></>;
   }
 
+  const layoutSettings = config.settings.customization.layout;
+
   return (
     <div className={classes.root}>
-      <ActionIcon className={cx(classes.button, classes.removeBorderLeft)} variant="default">
-        <IconChevronRight />
-      </ActionIcon>
+      {layoutSettings.enabledLeftSidebar ? (
+        <>
+          <ActionIcon
+            onClick={leftSidebar.open}
+            className={cx(classes.button, classes.removeBorderLeft)}
+            variant="default"
+          >
+            <IconChevronRight />
+          </ActionIcon>
+          <MobileRibbonSidebarDrawer
+            onClose={leftSidebar.close}
+            opened={openedLeft}
+            location="left"
+          />
+        </>
+      ) : null}
 
-      <ActionIcon className={cx(classes.button, classes.removeBorderRight)} variant="default">
-        <IconChevronLeft />
-      </ActionIcon>
+      {layoutSettings.enabledRightSidebar ? (
+        <>
+          <ActionIcon
+            onClick={rightSidebar.open}
+            className={cx(classes.button, classes.removeBorderRight)}
+            variant="default"
+          >
+            <IconChevronLeft />
+          </ActionIcon>
+          <MobileRibbonSidebarDrawer
+            onClose={rightSidebar.close}
+            opened={openedRight}
+            location="right"
+          />
+        </>
+      ) : null}
     </div>
   );
 };
 
 const useStyles = createStyles(() => ({
   root: {
-    position: 'absolute',
+    position: 'fixed',
     top: 0,
     left: 0,
-    width: '100vw',
+    width: '100%',
     height: '100%',
     display: 'flex',
     alignItems: 'center',
