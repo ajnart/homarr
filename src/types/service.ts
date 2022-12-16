@@ -1,12 +1,4 @@
-import {
-  IconKey,
-  IconKeyOff,
-  IconLockOff,
-  IconPassword,
-  IconUser,
-  IconUserOff,
-  TablerIcon,
-} from '@tabler/icons';
+import { IconKey, IconPassword, IconUser, TablerIcon } from '@tabler/icons';
 import { TileBaseType } from './tile';
 
 export interface ServiceType extends TileBaseType {
@@ -62,7 +54,7 @@ export type ConfigServiceIntegrationType = Omit<ServiceIntegrationType, 'propert
 export type ServiceIntegrationPropertyType = {
   type: 'private' | 'public';
   field: IntegrationField;
-  value?: string | null;
+  value?: string | undefined;
   isDefined: boolean;
 };
 
@@ -89,7 +81,6 @@ export const integrationFieldProperties: {
 export type IntegrationFieldDefinitionType = {
   type: 'private' | 'public';
   icon: TablerIcon;
-  iconUnset: TablerIcon;
   label: string;
 };
 
@@ -99,19 +90,16 @@ export const integrationFieldDefinitions: {
   apiKey: {
     type: 'private',
     icon: IconKey,
-    iconUnset: IconKeyOff,
     label: 'API Key',
   },
   username: {
     type: 'public',
     icon: IconUser,
-    iconUnset: IconUserOff,
     label: 'Username',
   },
   password: {
     type: 'private',
     icon: IconPassword,
-    iconUnset: IconLockOff,
     label: 'Password',
   },
 };

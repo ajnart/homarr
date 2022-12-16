@@ -1,6 +1,6 @@
 import { Stack } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconKey, IconKeyOff } from '@tabler/icons';
+import { IconKey } from '@tabler/icons';
 import {
   IntegrationField,
   integrationFieldDefinitions,
@@ -49,11 +49,13 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
         if (!definition) {
           return (
             <GenericSecretInput
+              onClickUpdateButton={(value) => {
+                form.setFieldValue(`integration.properties.${index}.value`, value);
+              }}
               key={`input-${property}`}
               label={`${property} (potentionally unmapped)`}
               secretIsPresent={isPresent}
               setIcon={IconKey}
-              unsetIcon={IconKeyOff}
               {...form.getInputProps(`integration.properties.${index}.value`)}
             />
           );
@@ -61,12 +63,14 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
 
         return (
           <GenericSecretInput
+            onClickUpdateButton={(value) => {
+              form.setFieldValue(`integration.properties.${index}.value`, value);
+            }}
             key={`input-${definition.label}`}
             label={definition.label}
             value=""
             secretIsPresent={isPresent}
             setIcon={definition.icon}
-            unsetIcon={definition.iconUnset}
             {...form.getInputProps(`integration.properties.${index}.value`)}
           />
         );

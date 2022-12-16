@@ -21,6 +21,10 @@ export const IntegrationTab = ({ form }: IntegrationTabProps) => {
       {hasIntegrationSelected && (
         <>
           <Divider label="Integration Configuration" labelPosition="center" mt="xl" mb="md" />
+          <Text size="sm" color="dimmed" mb="lg">
+            To update a secret, enter a value and click the save button. To remove a secret, use the
+            clear button.
+          </Text>
           <IntegrationOptionsRenderer form={form} />
           <Alert icon={<IconAlertTriangle />} color="yellow">
             <Text>
