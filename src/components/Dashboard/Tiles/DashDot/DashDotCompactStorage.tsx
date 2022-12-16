@@ -25,7 +25,7 @@ export const DashDotCompactStorage = ({ info }: DashDotCompactStorageProps) => {
   });
 
   return (
-    <Group noWrap align="start" position="apart" w={'100%'} maw={'251px'}>
+    <Group noWrap align="start" position="apart" w="100%" maw="251px">
       <Text weight={500}>{t('card.graphs.storage.label')}</Text>
       <Stack align="end" spacing={0}>
         <Text color="dimmed" size="xs">
@@ -42,11 +42,8 @@ export const DashDotCompactStorage = ({ info }: DashDotCompactStorageProps) => {
 const calculateTotalLayoutSize = <TLayoutItem,>({
   layout,
   key,
-}: CalculateTotalLayoutSizeProps<TLayoutItem>) => {
-  return layout.reduce((total, current) => {
-    return total + (current[key] as number);
-  }, 0);
-};
+}: CalculateTotalLayoutSizeProps<TLayoutItem>) =>
+  layout.reduce((total, current) => total + (current[key] as number), 0);
 
 interface CalculateTotalLayoutSizeProps<TLayoutItem> {
   layout: TLayoutItem[];
@@ -68,13 +65,13 @@ const useDashDotStorage = () => {
   });
 };
 
-const fetchDashDotStorageLoad = async (configName: string | undefined) => {
-  console.log('storage request: ' + configName);
-  if (!configName) return;
+async function fetchDashDotStorageLoad(configName: string | undefined) {
+  console.log(`storage request: ${configName}`);
+  if (!configName) throw new Error('configName is undefined');
   return (await (
     await axios.get('/api/modules/dashdot/storage', { params: { configName } })
   ).data) as DashDotStorageLoad;
-};
+}
 
 interface DashDotStorageLoad {
   layout: { load: number }[];

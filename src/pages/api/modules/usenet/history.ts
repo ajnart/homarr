@@ -3,8 +3,6 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
-import { Config } from '../../../../tools/types';
 import { NzbgetHistoryItem } from './nzbget/types';
 import { NzbgetClient } from './nzbget/nzbget-client';
 import { getConfig } from '../../../../tools/config/getConfig';

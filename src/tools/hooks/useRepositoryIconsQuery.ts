@@ -12,13 +12,14 @@ export const useRepositoryIconsQuery = <TRepositoryIcon extends object>({
     queryKey: ['repository-icons', { url }],
     queryFn: async () => fetchRepositoryIcons<TRepositoryIcon>(url),
     select(data) {
-      return data.map(x => converter(x));
+      return data.map((x) => converter(x));
     },
     refetchOnWindowFocus: false,
   });
 
-const fetchRepositoryIcons =
-    async <TRepositoryIcon extends object>(url: string): Promise<TRepositoryIcon[]> => {
+const fetchRepositoryIcons = async <TRepositoryIcon extends object>(
+  url: string
+): Promise<TRepositoryIcon[]> => {
   const response = await fetch(
     'https://api.github.com/repos/walkxcode/Dashboard-Icons/contents/png'
   );

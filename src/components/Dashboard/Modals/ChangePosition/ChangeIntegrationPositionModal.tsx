@@ -3,14 +3,9 @@ import { closeModal, ContextModalProps } from '@mantine/modals';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { IntegrationsType } from '../../../../types/integration';
-import { TileBaseType } from '../../../../types/tile';
+import { IntegrationChangePositionModalInnerProps } from '../../Tiles/Integrations/IntegrationsMenu';
 import { Tiles } from '../../Tiles/tilesDefinitions';
 import { ChangePositionModal } from './ChangePositionModal';
-
-export type IntegrationChangePositionModalInnerProps = {
-  integration: keyof IntegrationsType;
-  module: TileBaseType;
-};
 
 export const ChangeIntegrationPositionModal = ({
   context,

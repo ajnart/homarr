@@ -34,28 +34,26 @@ export const IntegrationsEditModal = ({
 
   const handleChange = (key: string, value: IntegrationOptionsValueType) => {
     setModuleProperties((prev) => {
-      let copyOfPrev: any = { ...prev };
+      const copyOfPrev: any = { ...prev };
       copyOfPrev[key] = value;
       return copyOfPrev;
     });
   };
 
   const handleSave = () => {
-    updateConfig(configName, (prev) => {
-      return {
-        ...prev,
-        integrations: {
-          ...prev.integrations,
-          [innerProps.integration]:
-            'properties' in (prev.integrations[innerProps.integration] ?? {})
-              ? {
-                  ...prev.integrations[innerProps.integration],
-                  properties: moduleProperties,
-                }
-              : prev.integrations[innerProps.integration],
-        },
-      };
-    });
+    updateConfig(configName, (prev) => ({
+      ...prev,
+      integrations: {
+        ...prev.integrations,
+        [innerProps.integration]:
+          'properties' in (prev.integrations[innerProps.integration] ?? {})
+            ? {
+                ...prev.integrations[innerProps.integration],
+                properties: moduleProperties,
+              }
+            : prev.integrations[innerProps.integration],
+      },
+    }));
     context.closeModal(id);
   };
 

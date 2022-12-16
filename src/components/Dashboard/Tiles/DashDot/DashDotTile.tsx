@@ -1,24 +1,15 @@
-import {
-  Card,
-  createStyles,
-  Flex,
-  Grid,
-  Group,
-  Stack,
-  Title,
-  useMantineTheme,
-} from '@mantine/core';
+import { createStyles, Group, Title } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
-import { DashDotCompactNetwork } from './DashDotCompactNetwork';
-import { DashDotCompactStorage } from './DashDotCompactStorage';
+import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { BaseTileProps } from '../type';
 import { DashDotGraph } from './DashDotGraph';
 import { DashDotIntegrationType } from '../../../../types/integration';
 import { IntegrationsMenu } from '../Integrations/IntegrationsMenu';
 import { useConfigContext } from '../../../../config/provider';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
+import { DashDotCompactStorage } from './DashDotCompactStorage';
 
 interface DashDotTileProps extends BaseTileProps {
   module: DashDotIntegrationType | undefined;
@@ -132,16 +123,6 @@ const fetchDashDotInfo = async (configName: string | undefined) => {
   ).data) as DashDotInfo;
 };
 
-export interface DashDotInfo {
-  storage: {
-    layout: { size: number }[];
-  };
-  network: {
-    speedUp: number;
-    speedDown: number;
-  };
-}
-
 export const useDashDotTileStyles = createStyles(() => ({
   graphsContainer: {
     display: 'flex',
@@ -151,7 +132,7 @@ export const useDashDotTileStyles = createStyles(() => ({
     columnGap: 10,
   },
   graphsWrapper: {
-    [`& > *:nth-child(odd):last-child`]: {
+    '& > *:nth-child(odd):last-child': {
       width: '100% !important',
       maxWidth: '100% !important',
     },

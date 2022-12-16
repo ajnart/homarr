@@ -82,9 +82,7 @@ export default function TotalDownloadsComponent() {
     return (
       <Group>
         <Title order={4}>{t('card.errors.noDownloadClients.title')}</Title>
-        <div>
-          {t('card.errors.noDownloadClients.text')}
-        </div>
+        <div>{t('card.errors.noDownloadClients.text')}</div>
       </Group>
     );
   }

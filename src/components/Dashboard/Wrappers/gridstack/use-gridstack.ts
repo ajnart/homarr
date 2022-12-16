@@ -1,7 +1,6 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
 import {
   createRef,
-  LegacyRef,
   MutableRefObject,
   RefObject,
   useEffect,

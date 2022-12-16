@@ -110,6 +110,5 @@ const useDeleteConfigMutation = (configName: string) => {
   });
 };
 
-const fetchDeletion = async (configName: string) => {
-  return await (await fetch(`/api/configs/${configName}`)).json();
-};
+const fetchDeletion = async (configName: string) =>
+  (await fetch(`/api/configs/${configName}`)).json();

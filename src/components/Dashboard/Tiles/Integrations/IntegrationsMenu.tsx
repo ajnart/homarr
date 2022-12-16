@@ -4,7 +4,6 @@ import { openContextModalGeneric } from '../../../../tools/mantineModalManagerEx
 import { IntegrationsType } from '../../../../types/integration';
 import { TileBaseType } from '../../../../types/tile';
 import { GenericTileMenu } from '../GenericTileMenu';
-import { IntegrationChangePositionModalInnerProps } from '../../Modals/ChangePosition/ChangeIntegrationPositionModal';
 import { IntegrationRemoveModalInnerProps } from '../IntegrationRemoveModal';
 import {
   IntegrationEditModalInnerProps,
@@ -12,6 +11,11 @@ import {
   IntegrationOptionLabels,
   IntegrationOptions,
 } from '../IntegrationsEditModal';
+
+export type IntegrationChangePositionModalInnerProps = {
+  integration: keyof IntegrationsType;
+  module: TileBaseType;
+};
 
 interface IntegrationsMenuProps<TIntegrationKey extends keyof IntegrationsType> {
   integration: TIntegrationKey;

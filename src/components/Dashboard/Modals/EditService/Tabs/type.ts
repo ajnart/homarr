@@ -1,1 +1,6 @@
-export type EditServiceModalTab = 'general' | 'behaviour' | 'network' | 'appereance' | 'integration';
+export type EditServiceModalTab =
+  | 'general'
+  | 'behaviour'
+  | 'network'
+  | 'appereance'
+  | 'integration';

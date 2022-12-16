@@ -1,4 +1,4 @@
-import { Card, Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
+import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
 import { IconArrowDownRight, IconArrowUpRight } from '@tabler/icons';
 import { WeatherIcon } from './WeatherIcon';
 import { BaseTileProps } from '../type';
@@ -91,6 +91,5 @@ export const WeatherTile = ({ className, module }: WeatherTileProps) => {
   );
 };
 
-const getPerferedUnit = (value: number, isFahrenheit: boolean = false): string => {
-  return isFahrenheit ? `${(value * (9 / 5) + 32).toFixed(1)}°F` : `${value.toFixed(1)}°C`;
-};
+const getPerferedUnit = (value: number, isFahrenheit = false): string =>
+  isFahrenheit ? `${(value * (9 / 5) + 32).toFixed(1)}°F` : `${value.toFixed(1)}°C`;

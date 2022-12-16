@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../tools/config/getConfig';
-import { ServiceIntegrationType, ServiceType } from '../../../types/service';
+import { ServiceIntegrationType } from '../../../types/service';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Filter out if the reuqest is a POST or a GET
@@ -22,10 +22,10 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     configName,
   } = req.query as { month: string; year: string; configName: string };
 
-  const month = parseInt(monthString);
-  const year = parseInt(yearString);
+  const month = parseInt(monthString, 10);
+  const year = parseInt(yearString, 10);
 
-  if (isNaN(month) || isNaN(year) || !configName) {
+  if (Number.isNaN(month) || Number.isNaN(year) || !configName) {
     return res.status(400).json({
       statusCode: 400,
       message: 'Missing required parameter in url: year, month or configName',
@@ -49,11 +49,12 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     await mediaServices.map(async (service) => {
       const integration = service.integration!;
       const endpoint = IntegrationTypeEndpointMap.get(integration.type);
-      if (!endpoint)
+      if (!endpoint) {
         return {
           type: integration.type,
           items: [],
         };
+      }
 
       // Get the origin URL
       let { href: origin } = new URL(service.url);
@@ -66,7 +67,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
       const apiKey = integration.properties.find((x) => x.field === 'apiKey')?.value;
       if (!apiKey) return { type: integration.type, items: [] };
-      return await axios
+      return axios
         .get(
           `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}`
         )

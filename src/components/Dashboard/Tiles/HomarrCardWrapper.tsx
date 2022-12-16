@@ -11,5 +11,13 @@ export const HomarrCardWrapper = ({ ...props }: HomarrCardWrapperProps) => {
     cx,
     classes: { card: cardClass },
   } = useCardStyles();
-  return <Card {...props} className={cx(props.className, cardClass)} withBorder radius="lg" shadow="md" />;
+  return (
+    <Card
+      {...props}
+      className={cx(props.className, cardClass)}
+      withBorder
+      radius="lg"
+      shadow="md"
+    />
+  );
 };

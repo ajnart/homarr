@@ -39,10 +39,6 @@ export function SearchNewTabSwitch({ defaultValue }: SearchNewTabSwitchProps) {
   };
 
   return (
-    <Switch
-      checked={openInNewTab}
-      onChange={toggleOpenInNewTab}
-      label={t('searchNewTab.label')}
-    />
+    <Switch checked={openInNewTab} onChange={toggleOpenInNewTab} label={t('searchNewTab.label')} />
   );
 }

@@ -2,10 +2,19 @@ import { Group, Stack, Text } from '@mantine/core';
 import { IconArrowNarrowDown, IconArrowNarrowUp } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { bytes } from '../../../../tools/bytesHelper';
-import { DashDotInfo } from './DashDotTile';
 
 interface DashDotCompactNetworkProps {
   info: DashDotInfo;
+}
+
+export interface DashDotInfo {
+  storage: {
+    layout: { size: number }[];
+  };
+  network: {
+    speedUp: number;
+    speedDown: number;
+  };
 }
 
 export const DashDotCompactNetwork = ({ info }: DashDotCompactNetworkProps) => {
@@ -15,7 +24,7 @@ export const DashDotCompactNetwork = ({ info }: DashDotCompactNetworkProps) => {
   const downSpeed = bytes.toPerSecondString(info?.network?.speedDown);
 
   return (
-    <Group noWrap align="start" position="apart" w={'100%'} maw={'251px'}>
+    <Group noWrap align="start" position="apart" w="100%" maw="251px">
       <Text weight={500}>{t('card.graphs.network.label')}</Text>
       <Stack align="end" spacing={0}>
         <Group spacing={0}>

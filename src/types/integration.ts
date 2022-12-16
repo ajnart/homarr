@@ -47,6 +47,6 @@ export interface BitTorrentIntegrationType extends TileBaseType {
   };
 }
 
-export interface UseNetIntegrationType extends TileBaseType {}
+export type UseNetIntegrationType = TileBaseType;
 
-export interface TorrentNetworkTrafficIntegrationType extends TileBaseType {}
+export type TorrentNetworkTrafficIntegrationType = TileBaseType;
