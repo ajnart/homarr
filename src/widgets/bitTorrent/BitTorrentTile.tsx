@@ -5,7 +5,7 @@ import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
 const definition = defineWidget({
-  id: 'bitTorrent',
+  id: 'torrents-status',
   icon: IconClock,
   options: {},
   gridstack: {

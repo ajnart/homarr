@@ -1,5 +1,5 @@
 import calendarDefinition from '../../../widgets/calendar/CalendarTile';
-import clockDefinition from '../../../widgets/clock/ClockTile';
+import clockDefinition from '../../../widgets/date/DateTile';
 import dashDotDefinition from '../../../widgets/dashDot/DashDotTile';
 import useNetDefinition from '../../../widgets/useNet/UseNetTile';
 import weatherDefinition from '../../../widgets/weather/WeatherTile';

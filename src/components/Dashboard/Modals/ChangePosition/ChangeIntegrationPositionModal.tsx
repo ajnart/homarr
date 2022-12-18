@@ -2,10 +2,10 @@ import { SelectItem } from '@mantine/core';
 import { closeModal, ContextModalProps } from '@mantine/modals';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { IntegrationsType } from '../../../../types/integration';
 import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
 import { Tiles } from '../../Tiles/tilesDefinitions';
 import { ChangePositionModal } from './ChangePositionModal';
+import widgets from '../../../../widgets';
 
 export const ChangeIntegrationPositionModal = ({
   context,
@@ -63,20 +63,22 @@ export const ChangeIntegrationPositionModal = ({
   );
 };
 
-const useWidthData = (integration: keyof IntegrationsType): SelectItem[] => {
-  const tileDefinitions = Tiles[integration];
-  const offset = tileDefinitions.minWidth ?? 2;
-  const length = (tileDefinitions.maxWidth ?? 12) - offset;
+const useWidthData = (integration: string): SelectItem[] => {
+  const currentWidget = widgets[integration as keyof typeof widgets];
+  if (!currentWidget) return [];
+  const offset = currentWidget.gridstack.minWidth ?? 2;
+  const length = (currentWidget.gridstack.maxWidth ?? 12) - offset;
   return Array.from({ length }, (_, i) => i + offset).map((n) => ({
     value: n.toString(),
     label: `${64 * n}px`,
   }));
 };
 
-const useHeightData = (integration: keyof IntegrationsType): SelectItem[] => {
-  const tileDefinitions = Tiles[integration];
-  const offset = tileDefinitions.minHeight ?? 2;
-  const length = (tileDefinitions.maxHeight ?? 12) - offset;
+const useHeightData = (integration: string): SelectItem[] => {
+  const currentWidget = widgets[integration as keyof typeof widgets];
+  if (!currentWidget) return [];
+  const offset = currentWidget.gridstack.minHeight ?? 2;
+  const length = (currentWidget.gridstack.maxHeight ?? 12) - offset;
   return Array.from({ length }, (_, i) => i + offset).map((n) => ({
     value: n.toString(),
     label: `${64 * n}px`,

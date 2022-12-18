@@ -32,7 +32,7 @@ dayjs.extend(duration);
 const downloadServiceTypes: ServiceIntegrationType['type'][] = ['sabnzbd', 'nzbGet'];
 
 const definition = defineWidget({
-  id: 'useNet',
+  id: 'usenet',
   icon: IconFileDownload,
   options: {},
   component: UseNetTile,

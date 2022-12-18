@@ -13,7 +13,7 @@ import { DashDotCompactStorage } from './DashDotCompactStorage';
 import { DashDotGraph } from './DashDotGraph';
 
 const definition = defineWidget({
-  id: 'dashDot',
+  id: 'dashdot',
   icon: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png',
   options: {
     cpuMultiView: {
@@ -78,18 +78,7 @@ function DashDotTile({ module, className }: DashDotTileProps) {
 
   const menu = (
     // TODO: add widgetWrapper that is generic and uses the definition
-    <WidgetsMenu<'dashDot'>
-      module={module}
-      integration="dashDot"
-      options={module?.properties}
-      labels={{
-        isCpuMultiView: 'descriptor.settings.cpuMultiView.label',
-        isStorageMultiView: 'descriptor.settings.storageMultiView.label',
-        isCompactView: 'descriptor.settings.useCompactView.label',
-        graphs: 'descriptor.settings.graphs.label',
-        url: 'descriptor.settings.url.label',
-      }}
-    />
+    <WidgetsMenu module={module} integration={definition.id} />
   );
 
   if (!dashDotUrl) {

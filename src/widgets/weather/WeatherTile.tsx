@@ -67,15 +67,7 @@ function WeatherTile({ className, module }: WeatherTileProps) {
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <HomarrCardWrapper className={className}>
-      <WidgetsMenu
-        integration="weather"
-        module={module}
-        options={module.properties}
-        labels={{
-          isFahrenheit: 'descriptor.settings.displayInFahrenheit.label',
-          location: 'descriptor.settings.location.label',
-        }}
-      />
+      <WidgetsMenu integration={definition.id} module={module} />
       <Center style={{ height: '100%' }}>
         <Group spacing="md" noWrap align="center">
           <WeatherIcon code={weather!.current_weather.weathercode} />

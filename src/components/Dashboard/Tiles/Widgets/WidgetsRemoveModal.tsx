@@ -2,11 +2,9 @@ import React from 'react';
 import { Button, Group, Stack, Text } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { useTranslation } from 'next-i18next';
-import { IntegrationsType } from '../../../../types/integration';
-import { integrationModuleTranslationsMap } from './WidgetsEditModal';
 
 export type WidgetsRemoveModalInnerProps = {
-  integration: keyof IntegrationsType;
+  integration: string;
 };
 
 export const WidgetsRemoveModal = ({
@@ -14,8 +12,7 @@ export const WidgetsRemoveModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetsRemoveModalInnerProps>) => {
-  const translationKey = integrationModuleTranslationsMap.get(innerProps.integration);
-  const { t } = useTranslation([translationKey ?? '', 'common']);
+  const { t } = useTranslation([`modules/${innerProps.integration}`, 'common']);
   const handleDeletion = () => {
     // TODO: remove tile
     context.closeModal(id);

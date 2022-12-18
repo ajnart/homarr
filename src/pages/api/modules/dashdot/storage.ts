@@ -13,7 +13,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
   const config = getConfig(configName);
 
-  const dashDotUrl = config.integrations.dashDot?.properties.url;
+  const dashDotUrl = config.integrations.dashdot?.properties.url;
 
   if (!dashDotUrl) {
     return res.status(400).json({

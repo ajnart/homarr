@@ -1,36 +1,23 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
-import { IntegrationsType } from '../../../../types/integration';
-import { TileBaseType } from '../../../../types/tile';
+import { IWidget } from '../../../../widgets/widgets';
 import { GenericTileMenu } from '../GenericTileMenu';
+import { WidgetEditModalInnerProps } from './WidgetsEditModal';
 import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
-import {
-  WidgetEditModalInnerProps,
-  integrationModuleTranslationsMap,
-  IntegrationOptionLabels,
-  IntegrationOptions,
-} from './WidgetsEditModal';
 
 export type WidgetChangePositionModalInnerProps = {
-  integration: keyof IntegrationsType;
-  module: TileBaseType;
+  integration: string;
+  module: IWidget<string, any>;
 };
 
-interface WidgetsMenuProps<TIntegrationKey extends keyof IntegrationsType> {
-  integration: TIntegrationKey;
-  module: TileBaseType | undefined;
-  options: IntegrationOptions<TIntegrationKey> | undefined;
-  labels: IntegrationOptionLabels<IntegrationOptions<TIntegrationKey>>;
+interface WidgetsMenuProps {
+  integration: string;
+  module: IWidget<string, any> | undefined;
 }
 
-export const WidgetsMenu = <TIntegrationKey extends keyof IntegrationsType>({
-  integration,
-  options,
-  labels,
-  module,
-}: WidgetsMenuProps<TIntegrationKey>) => {
-  const { t } = useTranslation(integrationModuleTranslationsMap.get(integration));
+export const WidgetsMenu = ({ integration, module }: WidgetsMenuProps) => {
+  const { t } = useTranslation(`modules/${integration}`);
 
   if (!module) return null;
 
@@ -57,13 +44,12 @@ export const WidgetsMenu = <TIntegrationKey extends keyof IntegrationsType>({
   };
 
   const handleEditClick = () => {
-    openContextModalGeneric<WidgetEditModalInnerProps<TIntegrationKey>>({
+    openContextModalGeneric<WidgetEditModalInnerProps>({
       modal: 'integrationOptions',
       title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
       innerProps: {
         integration,
-        options,
-        labels,
+        options: module.properties,
       },
     });
   };
@@ -73,7 +59,7 @@ export const WidgetsMenu = <TIntegrationKey extends keyof IntegrationsType>({
       handleClickEdit={handleEditClick}
       handleClickChangePosition={handleChangeSizeClick}
       handleClickDelete={handleDeleteClick}
-      displayEdit={options !== undefined}
+      displayEdit={module.properties !== undefined}
     />
   );
 };

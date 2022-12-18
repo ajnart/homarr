@@ -1,31 +1,27 @@
+import Widgets from '../../../../widgets';
 import { Button, Group, MultiSelect, Stack, Switch, TextInput } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { DashDotGraphType, IntegrationsType } from '../../../../types/integration';
+import { IWidget } from '../../../../widgets/widgets';
 
-export type WidgetEditModalInnerProps<
-  TIntegrationKey extends keyof IntegrationsType = keyof IntegrationsType
-> = {
-  integration: TIntegrationKey;
-  options: IntegrationOptions<TIntegrationKey> | undefined;
-  labels: IntegrationOptionLabels<IntegrationOptions<TIntegrationKey>>;
+export type WidgetEditModalInnerProps = {
+  integration: string;
+  options: IWidget<string, any>['properties'];
 };
+
+type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
 
 export const WidgetsEditModal = ({
   context,
   id,
   innerProps,
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
-  const translationKey = integrationModuleTranslationsMap.get(innerProps.integration);
-  const { t } = useTranslation([translationKey ?? '', 'common']);
+  const { t } = useTranslation([`modules/${innerProps.integration}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
-  const items = Object.entries(moduleProperties ?? {}) as [
-    keyof typeof innerProps.options,
-    IntegrationOptionsValueType
-  ][];
+  const items = Object.entries(moduleProperties ?? {}) as [string, IntegrationOptionsValueType][];
 
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
@@ -38,6 +34,14 @@ export const WidgetsEditModal = ({
       copyOfPrev[key] = value;
       return copyOfPrev;
     });
+  };
+
+  const getMutliselectData = (option: string) => {
+    const currentWidgetDefinition = Widgets[innerProps.integration as keyof typeof Widgets];
+    if (!Widgets) return [];
+
+    const options = currentWidgetDefinition.options as any;
+    return options[option]?.data ?? [];
   };
 
   const handleSave = () => {
@@ -63,23 +67,24 @@ export const WidgetsEditModal = ({
         <>
           {typeof value === 'boolean' ? (
             <Switch
-              label={t(innerProps.labels[key as keyof typeof innerProps.labels])}
+              label={t(`descriptor.settings.${key}.label`)}
               checked={value}
               onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
             />
           ) : null}
           {typeof value === 'string' ? (
             <TextInput
-              label={t(innerProps.labels[key])}
+              label={t(`descriptor.settings.${key}.label`)}
               value={value}
               onChange={(ev) => handleChange(key, ev.currentTarget.value)}
             />
           ) : null}
           {typeof value === 'object' && Array.isArray(value) ? (
             <MultiSelect
-              data={['cpu', 'gpu', 'ram', 'storage', 'network']}
+              data={getMutliselectData(key)}
+              label={t(`descriptor.settings.${key}.label`)}
               value={value}
-              onChange={(v) => handleChange(key, v as DashDotGraphType[])}
+              onChange={(v) => handleChange(key, v)}
             />
           ) : null}
         </>
@@ -94,29 +99,3 @@ export const WidgetsEditModal = ({
     </Stack>
   );
 };
-
-type PropertiesOf<
-  TKey extends keyof IntegrationsType,
-  T extends IntegrationsType[TKey]
-> = T extends { properties: unknown } ? T['properties'] : {};
-
-export type IntegrationOptions<TKey extends keyof IntegrationsType> = PropertiesOf<
-  TKey,
-  IntegrationsType[TKey]
->;
-
-export type IntegrationOptionLabels<TIntegrationOptions> = {
-  [key in keyof TIntegrationOptions]: string;
-};
-
-type IntegrationOptionsValueType = boolean | string | DashDotGraphType[];
-
-export const integrationModuleTranslationsMap = new Map<keyof IntegrationsType, string>([
-  ['calendar', 'modules/calendar'],
-  ['clock', 'modules/date'],
-  ['weather', 'modules/weather'],
-  ['dashDot', 'modules/dashdot'],
-  ['bitTorrent', 'modules/torrents-status'],
-  ['useNet', 'modules/usenet'],
-  ['torrentNetworkTraffic', 'modules/dlspeed'],
-]);

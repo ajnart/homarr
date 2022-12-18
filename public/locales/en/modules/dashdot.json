@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "A module for displaying the graphs of your running Dash. instance.",
     "settings": {
-      "title": "Settings for Dash. integration",
+      "title": "Settings for Dash. widget",
       "cpuMultiView": {
         "label": "CPU Multi-Core View"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "Remove Dash. integration",
-      "confirm": "Are you sure, that you want to remove the Dash. integration?"
+      "title": "Remove Dash. widget",
+      "confirm": "Are you sure, that you want to remove the Dash. widget?"
     }
   },
   "card": {

@@ -5,7 +5,7 @@ import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
 const definition = defineWidget({
-  id: 'torrentNetworkTraffic',
+  id: 'dlspeed',
   icon: IconClock,
   options: {},
 

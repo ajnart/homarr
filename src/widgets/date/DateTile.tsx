@@ -10,7 +10,7 @@ import { IWidget } from '../widgets';
 import { IconClock } from '@tabler/icons';
 
 const definition = defineWidget({
-  id: 'clock',
+  id: 'date',
   icon: IconClock,
   options: {
     display24HourFormat: {
@@ -18,35 +18,29 @@ const definition = defineWidget({
       defaultValue: false,
     },
   },
-
   gridstack: {
     minWidth: 4,
     minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
   },
-  component: ClockTile,
+  component: DateTile,
 });
 
-export type IClockWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IDateWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface ClockTileProps extends BaseTileProps {
-  module: IClockWidget; // TODO: change to new type defined through widgetDefinition
+interface DateTileProps extends BaseTileProps {
+  module: IDateWidget; // TODO: change to new type defined through widgetDefinition
 }
 
-function ClockTile({ className, module }: ClockTileProps) {
+function DateTile({ className, module }: DateTileProps) {
   const date = useDateState();
   const formatString = module.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
 
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <HomarrCardWrapper className={className}>
-      <WidgetsMenu<'clock'>
-        integration="clock"
-        module={module}
-        options={module.properties}
-        labels={{ is24HoursFormat: 'descriptor.settings.display24HourFormat.label' }}
-      />
+      <WidgetsMenu integration={definition.id} module={module} />
       <Center style={{ height: '100%' }}>
         <Stack spacing="xs">
           <Title>{dayjs(date).format(formatString)}</Title>
