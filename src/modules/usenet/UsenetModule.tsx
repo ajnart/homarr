@@ -17,11 +17,11 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useElementSize } from '@mantine/hooks';
 import { IModule } from '../ModuleTypes';
-import { UsenetQueueList } from '../../components/Dashboard/Tiles/UseNet/UsenetQueueList';
 import { useGetServiceByType } from '../../tools/hooks/useGetServiceByType';
 import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
-import { UsenetHistoryList } from '../../components/Dashboard/Tiles/UseNet/UsenetHistoryList';
+import { UsenetQueueList } from '../../widgets/useNet/UsenetQueueList';
+import { UsenetHistoryList } from '../../widgets/useNet/UsenetHistoryList';
 
 dayjs.extend(duration);
 
