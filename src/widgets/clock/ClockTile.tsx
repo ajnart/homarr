@@ -5,15 +5,31 @@ import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWr
 import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
-import { ClockIntegrationType } from '../../types/integration';
+import { defineWidget } from '../helper';
+import { IWidget } from '../widgets';
+import { IconClock } from '@tabler/icons';
+
+const definition = defineWidget({
+  id: 'clock',
+  icon: IconClock,
+  options: {
+    display24HourFormat: {
+      type: 'switch',
+      defaultValue: false,
+    },
+  },
+  component: ClockTile,
+});
+
+export type IClockWidget = IWidget<typeof definition['id'], typeof definition>;
 
 interface ClockTileProps extends BaseTileProps {
-  module: ClockIntegrationType; // TODO: change to new type defined through widgetDefinition
+  module: IClockWidget; // TODO: change to new type defined through widgetDefinition
 }
 
-export const ClockTile = ({ className, module }: ClockTileProps) => {
+function ClockTile({ className, module }: ClockTileProps) {
   const date = useDateState();
-  const formatString = module?.properties.is24HoursFormat ? 'HH:mm' : 'h:mm A';
+  const formatString = module.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
 
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
@@ -21,7 +37,7 @@ export const ClockTile = ({ className, module }: ClockTileProps) => {
       <WidgetsMenu<'clock'>
         integration="clock"
         module={module}
-        options={module?.properties}
+        options={module.properties}
         labels={{ is24HoursFormat: 'descriptor.settings.display24HourFormat.label' }}
       />
       <Center style={{ height: '100%' }}>
@@ -32,7 +48,7 @@ export const ClockTile = ({ className, module }: ClockTileProps) => {
       </Center>
     </HomarrCardWrapper>
   );
-};
+}
 
 /**
  * State which updates when the minute is changing
@@ -69,3 +85,5 @@ const getMsUntilNextMinute = () => {
   );
   return nextMinute.getTime() - now.getTime();
 };
+
+export default definition;

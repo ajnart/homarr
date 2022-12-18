@@ -9,7 +9,7 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import { IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
+import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 
 import { useElementSize } from '@mantine/hooks';
@@ -24,14 +24,25 @@ import { useConfigContext } from '../../config/provider';
 import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
 import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
 import { humanFileSize } from '../../tools/humanFileSize';
+import { defineWidget } from '../helper';
+import { IWidget } from '../widgets';
 
 dayjs.extend(duration);
 
 const downloadAppTypes: AppIntegrationType['type'][] = ['sabnzbd', 'nzbGet'];
 
+const definition = defineWidget({
+  id: 'useNet',
+  icon: IconFileDownload,
+  options: {},
+  component: UseNetTile,
+});
+
+export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
+
 interface UseNetTileProps extends BaseTileProps {}
 
-export const UseNetTile = ({ className }: UseNetTileProps) => {
+function UseNetTile({ className }: UseNetTileProps) {
   const { t } = useTranslation('modules/usenet');
   const { config } = useConfigContext();
   const downloadApps =
@@ -117,4 +128,6 @@ export const UseNetTile = ({ className }: UseNetTileProps) => {
       </Tabs>
     </HomarrCardWrapper>
   );
-};
+}
+
+export default definition;

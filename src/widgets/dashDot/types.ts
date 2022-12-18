@@ -1,7 +1,5 @@
-import { DashDotGraphType } from '../../types/integration';
-
 export interface DashDotGraph {
-  id: DashDotGraphType;
+  id: string;
   name: string;
   twoSpan: boolean;
   isMultiView: boolean | undefined;

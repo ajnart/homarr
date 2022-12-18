@@ -1,5 +1,6 @@
 import { createStyles, MantineThemeColors, useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
+import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
@@ -7,15 +8,30 @@ import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
 import { isToday } from '../../tools/isToday';
-import { CalendarIntegrationType } from '../../types/integration';
+import { defineWidget } from '../helper';
+import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { MediasType } from './type';
 
+const definition = defineWidget({
+  id: 'calendar',
+  icon: IconCalendarTime,
+  options: {
+    sundayStart: {
+      type: 'switch',
+      defaultValue: false,
+    },
+  },
+  component: CalendarTile,
+});
+
+export type ICalendarWidget = IWidget<typeof definition['id'], typeof definition>;
+
 interface CalendarTileProps extends BaseTileProps {
-  module: CalendarIntegrationType | undefined; // TODO: change to new type defined through widgetDefinition
+  module: ICalendarWidget;
 }
 
-export const CalendarTile = ({ className, module }: CalendarTileProps) => {
+function CalendarTile({ className, module }: CalendarTileProps) {
   const { secondaryColor } = useColorTheme();
   const { name: configName } = useConfigContext();
   const { classes, cx } = useStyles(secondaryColor);
@@ -34,8 +50,6 @@ export const CalendarTile = ({ className, module }: CalendarTileProps) => {
       ).json()) as MediasType,
   });
 
-  if (!module) return <></>;
-
   return (
     <HomarrCardWrapper className={className} p={6}>
       <Calendar
@@ -44,7 +58,7 @@ export const CalendarTile = ({ className, module }: CalendarTileProps) => {
         size="xs"
         fullWidth
         onChange={() => {}}
-        firstDayOfWeek={module.properties?.isWeekStartingAtSunday ? 'sunday' : 'monday'}
+        firstDayOfWeek={module.properties.sundayStart ? 'sunday' : 'monday'}
         dayStyle={(date) => ({
           margin: 1,
           backgroundColor: isToday(date)
@@ -67,7 +81,7 @@ export const CalendarTile = ({ className, module }: CalendarTileProps) => {
       />
     </HomarrCardWrapper>
   );
-};
+}
 
 const useStyles = createStyles((theme, secondaryColor: keyof MantineThemeColors) => ({
   weekend: {
@@ -99,3 +113,5 @@ const getReleasedMediasForDate = (medias: MediasType | undefined, date: Date): M
     totalCount,
   };
 };
+
+export default definition;

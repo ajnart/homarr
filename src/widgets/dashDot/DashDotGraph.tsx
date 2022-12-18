@@ -35,10 +35,13 @@ export const DashDotGraph = ({ graph, isCompact, dashDotUrl }: DashDotGraphProps
 const useIframeSrc = (dashDotUrl: string, graph: GraphType, isCompact: boolean) => {
   const { colorScheme, colors, radius } = useMantineTheme();
   const surface = (colorScheme === 'dark' ? colors.dark[7] : colors.gray[0]).substring(1); // removes # from hex value
+
+  const graphId = graph.id === 'memory' ? 'ram' : graph.id;
+
   return (
     `${dashDotUrl}` +
     `?singleGraphMode=true` +
-    `&graph=${graph.id}` +
+    `&graph=${graphId}` +
     `&theme=${colorScheme}` +
     `&surface=${surface}` +
     `&gap=${isCompact ? 10 : 5}` +
