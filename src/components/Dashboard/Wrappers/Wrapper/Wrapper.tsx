@@ -34,7 +34,6 @@ export const DashboardWrapper = ({ wrapper }: DashboardWrapperProps) => {
         );
       })}
       {Object.entries(integrations).map(([k, v]) => {
-        console.log(k);
         const { component: TileComponent, ...tile } = Tiles[k as keyof typeof Tiles];
 
         return (

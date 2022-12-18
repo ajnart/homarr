@@ -1,15 +1,14 @@
-import { IntegrationsType } from '../../../types/integration';
-import { CalendarTile } from '../../../widgets/calendar/CalendarTile';
-import { ClockTile } from '../../../widgets/clock/ClockTile';
-import { DashDotTile } from '../../../widgets/dashDot/DashDotTile';
-import { UseNetTile } from '../../../widgets/useNet/UseNetTile';
-import { WeatherTile } from '../../../widgets/weather/WeatherTile';
+import calendarDefinition from '../../../widgets/calendar/CalendarTile';
+import clockDefinition from '../../../widgets/clock/ClockTile';
+import dashDotDefinition from '../../../widgets/dashDot/DashDotTile';
+import useNetDefinition from '../../../widgets/useNet/UseNetTile';
+import weatherDefinition from '../../../widgets/weather/WeatherTile';
 import { EmptyTile } from './EmptyTile';
 import { ServiceTile } from './Service/ServiceTile';
 
 // TODO: just remove and use service (later app) directly. For widgets the the definition should contain min/max width/height
 type TileDefinitionProps = {
-  [key in keyof IntegrationsType | 'service']: {
+  [key in keyof any | 'service']: {
     minWidth?: number;
     minHeight?: number;
     maxWidth?: number;
@@ -18,7 +17,6 @@ type TileDefinitionProps = {
   };
 };
 
-// TODO: change components for other modules
 export const Tiles: TileDefinitionProps = {
   service: {
     component: ServiceTile,
@@ -28,49 +26,49 @@ export const Tiles: TileDefinitionProps = {
     maxHeight: 12,
   },
   bitTorrent: {
-    component: EmptyTile, //CalendarTile,
+    component: EmptyTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,
     maxHeight: 12,
   },
   calendar: {
-    component: CalendarTile,
+    component: calendarDefinition.component,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,
     maxHeight: 12,
   },
   clock: {
-    component: ClockTile,
+    component: clockDefinition.component,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 2,
     maxHeight: 12,
   },
   dashDot: {
-    component: DashDotTile,
+    component: dashDotDefinition.component,
     minWidth: 4,
     maxWidth: 9,
     minHeight: 5,
     maxHeight: 14,
   },
   torrentNetworkTraffic: {
-    component: EmptyTile, //CalendarTile,
+    component: EmptyTile,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,
     maxHeight: 12,
   },
   useNet: {
-    component: UseNetTile,
+    component: useNetDefinition.component,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 5,
     maxHeight: 12,
   },
   weather: {
-    component: WeatherTile,
+    component: weatherDefinition.component,
     minWidth: 4,
     maxWidth: 12,
     minHeight: 2,

@@ -2,20 +2,52 @@ import { createStyles, Group, Title } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
-import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
-import { DashDotGraph } from './DashDotGraph';
-import { DashDotCompactStorage } from './DashDotCompactStorage';
-import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
-import { DashDotIntegrationType } from '../../types/integration';
-import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
+import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
+import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import { useConfigContext } from '../../config/provider';
+import { defineWidget } from '../helper';
+import { IWidget } from '../widgets';
+import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
+import { DashDotCompactStorage } from './DashDotCompactStorage';
+import { DashDotGraph } from './DashDotGraph';
+
+const definition = defineWidget({
+  id: 'dashDot',
+  icon: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png',
+  options: {
+    cpuMultiView: {
+      type: 'switch',
+      defaultValue: false,
+    },
+    storageMultiView: {
+      type: 'switch',
+      defaultValue: false,
+    },
+    useCompactView: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    graphs: {
+      type: 'multi-select',
+      defaultValue: ['cpu', 'memory'],
+      data: ['cpu', 'memory', 'storage', 'network', 'gpu'],
+    },
+    url: {
+      type: 'text',
+      defaultValue: '',
+    },
+  },
+  component: DashDotTile,
+});
+
+export type IDashDotTile = IWidget<typeof definition['id'], typeof definition>;
 
 interface DashDotTileProps extends BaseTileProps {
-  module: DashDotIntegrationType; // TODO: change to new type defined through widgetDefinition
+  module: IDashDotTile; // TODO: change to new type defined through widgetDefinition
 }
 
-export const DashDotTile = ({ module, className }: DashDotTileProps) => {
+function DashDotTile({ module, className }: DashDotTileProps) {
   const { classes } = useDashDotTileStyles();
   const { t } = useTranslation('modules/dashdot');
 
@@ -25,11 +57,11 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
 
   const graphs = module?.properties.graphs.map((g) => ({
     id: g,
-    name: t(`card.graphs.${g === 'ram' ? 'memory' : g}.title`),
+    name: t(`card.graphs.${g}.title`),
     twoSpan: ['network', 'gpu'].includes(g),
     isMultiView:
-      (g === 'cpu' && module.properties.isCpuMultiView) ||
-      (g === 'storage' && module.properties.isStorageMultiView),
+      (g === 'cpu' && module.properties.cpuMultiView) ||
+      (g === 'storage' && module.properties.storageMultiView),
   }));
 
   const heading = (
@@ -66,7 +98,7 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
     );
   }
 
-  const isCompact = module?.properties.isCompactView ?? false;
+  const isCompact = module?.properties.useCompactView ?? false;
 
   const isCompactStorageVisible = graphs?.some((g) => g.id === 'storage' && isCompact);
 
@@ -101,7 +133,7 @@ export const DashDotTile = ({ module, className }: DashDotTileProps) => {
       )}
     </HomarrCardWrapper>
   );
-};
+}
 
 const useDashDotInfo = () => {
   const { name: configName, config } = useConfigContext();
@@ -139,3 +171,5 @@ export const useDashDotTileStyles = createStyles(() => ({
     },
   },
 }));
+
+export default definition;
