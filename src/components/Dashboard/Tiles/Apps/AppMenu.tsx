@@ -1,19 +1,19 @@
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
-import { ServiceType } from '../../../../types/service';
+import { AppType } from '../../../../types/app';
 import { GenericTileMenu } from '../GenericTileMenu';
 
 interface TileMenuProps {
-  service: ServiceType;
+  app: AppType;
 }
 
-export const ServiceMenu = ({ service }: TileMenuProps) => {
+export const AppMenu = ({ app }: TileMenuProps) => {
   const handleClickEdit = () => {
-    openContextModalGeneric<{ service: ServiceType; allowServiceNamePropagation: boolean }>({
-      modal: 'editService',
+    openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
+      modal: 'editApp',
       size: 'xl',
       innerProps: {
-        service,
-        allowServiceNamePropagation: false,
+        app,
+        allowAppNamePropagation: false,
       },
       styles: {
         root: {
@@ -25,9 +25,9 @@ export const ServiceMenu = ({ service }: TileMenuProps) => {
 
   const handleClickChangePosition = () => {
     openContextModalGeneric({
-      modal: 'changeServicePositionModal',
+      modal: 'changeAppPositionModal',
       innerProps: {
-        service,
+        app,
       },
       styles: {
         root: {

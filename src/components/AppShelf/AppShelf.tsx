@@ -23,7 +23,7 @@ import { UsenetModule, TorrentsModule } from '../../modules';
 const AppShelf = (props: any) => {
   const { config, setConfig } = useConfig();
   // Extract all the categories from the services in config
-  const categoryList = config.services.reduce((acc, cur) => {
+  const categoryList = config.apps.reduce((acc, cur) => {
     if (cur.category && !acc.includes(cur.category)) {
       acc.push(cur.category);
     }
@@ -67,9 +67,9 @@ const AppShelf = (props: any) => {
 
     if (active.id !== over.id) {
       const newConfig = { ...config };
-      const activeIndex = newConfig.services.findIndex((e) => e.id === active.id);
-      const overIndex = newConfig.services.findIndex((e) => e.id === over.id);
-      newConfig.services = arrayMove(newConfig.services, activeIndex, overIndex);
+      const activeIndex = newConfig.apps.findIndex((e) => e.id === active.id);
+      const overIndex = newConfig.apps.findIndex((e) => e.id === over.id);
+      newConfig.apps = arrayMove(newConfig.apps, activeIndex, overIndex);
       setConfig(newConfig);
     }
 
@@ -78,14 +78,14 @@ const AppShelf = (props: any) => {
 
   const getItems = (filter?: string) => {
     // If filter is not set, return all the services without a category or a null category
-    let filtered = config.services;
+    let filtered = config.apps;
     const modules = Object.values(Modules).map((module) => module);
 
     if (!filter) {
-      filtered = config.services.filter((e) => !e.category || e.category === null);
+      filtered = config.apps.filter((e) => !e.category || e.category === null);
     }
     if (filter) {
-      filtered = config.services.filter((e) => e.category === filter);
+      filtered = config.apps.filter((e) => e.category === filter);
     }
     return (
       <DndContext
@@ -94,7 +94,7 @@ const AppShelf = (props: any) => {
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       >
-        <SortableContext items={config.services}>
+        <SortableContext items={config.apps}>
           <Grid gutter="lg" grow={config.settings.grow}>
             {filtered.map((service) => (
               <Grid.Col key={service.id} span="content">
@@ -112,7 +112,7 @@ const AppShelf = (props: any) => {
           }}
         >
           {activeId ? (
-            <AppShelfItem service={config.services.find((e) => e.id === activeId)} id={activeId} />
+            <AppShelfItem service={config.apps.find((e) => e.id === activeId)} id={activeId} />
           ) : null}
         </DragOverlay>
       </DndContext>

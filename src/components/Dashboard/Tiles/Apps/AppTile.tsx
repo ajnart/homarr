@@ -1,19 +1,19 @@
 import { Card, Center, Text, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
-import { ServiceType } from '../../../../types/service';
+import { AppType } from '../../../../types/app';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
-import { ServiceMenu } from './ServiceMenu';
-import { ServicePing } from './ServicePing';
+import { AppMenu } from './AppMenu';
+import { AppPing } from './AppPing';
 
-interface ServiceTileProps extends BaseTileProps {
-  service: ServiceType;
+interface AppTileProps extends BaseTileProps {
+  app: AppType;
 }
 
-export const ServiceTile = ({ className, service }: ServiceTileProps) => {
+export const AppTile = ({ className, app }: AppTileProps) => {
   const isEditMode = useEditModeStore((x) => x.enabled);
 
   const { cx, classes } = useStyles();
@@ -24,25 +24,25 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
 
   const inner = (
     <>
-      <Text align="center" weight={500} size="md" className={classes.serviceName}>
-        {service.name}
+      <Text align="center" weight={500} size="md" className={classes.appName}>
+        {app.name}
       </Text>
       <Center style={{ height: '75%', flex: 1 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className={classes.image} src={service.appearance.iconUrl} alt="" />
+        <img className={classes.image} src={app.appearance.iconUrl} alt="" />
       </Center>
     </>
   );
 
   return (
     <HomarrCardWrapper className={className}>
-      {/* TODO: add service menu */}
+      {/* TODO: add app menu */}
 
       <div style={{ position: 'absolute', top: 10, right: 10 }}>
-        <ServiceMenu service={service} />
+        <AppMenu app={app} />
       </div>
 
-      {!service.url || isEditMode ? (
+      {!app.url || isEditMode ? (
         <UnstyledButton
           className={classes.button}
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
@@ -53,14 +53,14 @@ export const ServiceTile = ({ className, service }: ServiceTileProps) => {
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
           component={NextLink}
-          href={service.url}
-          target={service.behaviour.isOpeningNewTab ? '_blank' : '_self'}
+          href={app.url}
+          target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={cx(classes.button, classes.link)}
         >
           {inner}
         </UnstyledButton>
       )}
-      <ServicePing service={service} />
+      <AppPing app={app} />
     </HomarrCardWrapper>
   );
 };
@@ -72,8 +72,8 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     maxWidth: '80%',
     transition: 'transform 100ms ease-in-out',
   },
-  serviceName: {
-    ref: getRef('serviceName'),
+  appName: {
+    ref: getRef('appName'),
   },
   button: {
     height: '100%',
@@ -87,8 +87,8 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     [`&:hover .${getRef('image')}`]: {
       // TODO: add styles for image when hovering card
     },
-    [`&:hover .${getRef('serviceName')}`]: {
-      // TODO: add styles for service name when hovering card
+    [`&:hover .${getRef('appName')}`]: {
+      // TODO: add styles for app name when hovering card
     },
   },
 }));

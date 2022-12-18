@@ -137,7 +137,7 @@ export function DashdotComponent() {
 
   const dashConfig = config.modules?.[DashdotModule.id].options as typeof DashdotModule['options'];
   const isCompact = dashConfig?.useCompactView?.value ?? false;
-  const dashdotService: serviceItem | undefined = config.services.filter(
+  const dashdotService: serviceItem | undefined = config.apps.filter(
     (service) => service.type === 'Dash.'
   )[0];
   const dashdotUrl = dashdotService?.url ?? dashConfig?.url?.value ?? '';

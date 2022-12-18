@@ -9,12 +9,12 @@ import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
+import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeIntegrationPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeIntegrationPositionModal';
-import { ChangeServicePositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeServicePositionModal';
-import { EditServiceModal } from '../components/Dashboard/Modals/EditService/EditServiceModal';
+import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
 import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
-import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsEditModal';
+import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
 import '../styles/global.scss';
@@ -86,12 +86,12 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
                 <NotificationsProvider limit={4} position="bottom-left">
                   <ModalsProvider
                     modals={{
-                      editService: EditServiceModal,
+                      editApp: EditAppModal,
                       selectElement: SelectElementModal,
                       integrationOptions: WidgetsEditModal,
                       integrationRemove: WidgetsRemoveModal,
                       categoryEditModal: CategoryEditModal,
-                      changeServicePositionModal: ChangeServicePositionModal,
+                      changeAppPositionModal: ChangeAppPositionModal,
                       changeIntegrationPositionModal: ChangeIntegrationPositionModal,
                     }}
                   >

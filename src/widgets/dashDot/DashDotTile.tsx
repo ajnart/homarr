@@ -87,7 +87,7 @@ function DashDotTile({ module, className }: DashDotTileProps) {
         {menu}
         <div>
           {heading}
-          <p>{t('card.errors.noService')}</p>
+          <p>{t('card.errors.noApp')}</p>
         </div>
       </HomarrCardWrapper>
     );

@@ -11,8 +11,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const { id, type } = req.query as { id: string; type: string };
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const service = config.services.find(
-    (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
+  const app = config.apps.find(
+    (app) => app.type === 'Overseerr' || app.type === 'Jellyseerr'
   );
   if (!id) {
     return res.status(400).json({ error: 'No id provided' });
@@ -20,18 +20,18 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   if (!type) {
     return res.status(400).json({ error: 'No type provided' });
   }
-  if (!service?.apiKey) {
-    return res.status(400).json({ error: 'No service found' });
+  if (!app?.apiKey) {
+    return res.status(400).json({ error: 'No apps found' });
   }
 
-  const serviceUrl = new URL(service.url);
+  const appUrl = new URL(app.url);
   switch (type) {
     case 'movie':
       return axios
-        .get(`${serviceUrl.origin}/api/v1/movie/${id}`, {
+        .get(`${appUrl.origin}/api/v1/movie/${id}`, {
           headers: {
             // Set X-Api-Key to the value of the API key
-            'X-Api-Key': service.apiKey,
+            'X-Api-Key': app.apiKey,
           },
         })
         .then((axiosres) => res.status(200).json(axiosres.data))
@@ -45,10 +45,10 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     case 'tv':
       // Make request to the tv api
       return axios
-        .get(`${serviceUrl.origin}/api/v1/tv/${id}`, {
+        .get(`${appUrl.origin}/api/v1/tv/${id}`, {
           headers: {
             // Set X-Api-Key to the value of the API key
-            'X-Api-Key': service.apiKey,
+            'X-Api-Key': app.apiKey,
           },
         })
         .then((axiosres) => res.status(200).json(axiosres.data))
@@ -72,8 +72,8 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   const { seasons, type } = req.body as { seasons?: number[]; type: MediaType };
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const service = config.services.find(
-    (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
+  const app = config.apps.find(
+    (app) => app.type === 'Overseerr' || app.type === 'Jellyseerr'
   );
   if (!id) {
     return res.status(400).json({ error: 'No id provided' });
@@ -81,13 +81,13 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   if (!type) {
     return res.status(400).json({ error: 'No type provided' });
   }
-  if (!service?.apiKey) {
-    return res.status(400).json({ error: 'No service found' });
+  if (!app?.apiKey) {
+    return res.status(400).json({ error: 'No app found' });
   }
   if (type === 'movie' && !seasons) {
     return res.status(400).json({ error: 'No seasons provided' });
   }
-  const serviceUrl = new URL(service.url);
+  const appUrl = new URL(app.url);
   Consola.info('Got an Overseerr request with these arguments', {
     mediaType: type,
     mediaId: id,
@@ -95,7 +95,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   });
   return axios
     .post(
-      `${serviceUrl.origin}/api/v1/request`,
+      `${appUrl.origin}/api/v1/request`,
       {
         mediaType: type,
         mediaId: Number(id),
@@ -104,7 +104,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       {
         headers: {
           // Set X-Api-Key to the value of the API key
-          'X-Api-Key': service.apiKey,
+          'X-Api-Key': app.apiKey,
         },
       }
     )

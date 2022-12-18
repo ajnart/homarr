@@ -23,7 +23,7 @@ export const AvailableIntegrationElements = ({
       <SelectorBackArrow onClickBack={onClickBack} />
 
       <Text mb="md" color="dimmed">
-        Integrations interact with your services, to provide you with more control over your
+        Integrations interact with your apps, to provide you with more control over your
         applications. They usually require a few configurations before use.
       </Text>
 

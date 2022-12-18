@@ -2,10 +2,10 @@ import { Tabs, Switch, MultiSelect } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { StatusCodes } from '../../../../../../tools/acceptableStatusCodes';
-import { ServiceType } from '../../../../../../types/service';
+import { AppType } from '../../../../../../types/app';
 
 interface NetworkTabProps {
-  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
+  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
 }
 
 export const NetworkTab = ({ form }: NetworkTabProps) => {
@@ -14,7 +14,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
     <Tabs.Panel value="network" pt="lg">
       <Switch
         label="Enable status checker"
-        description="Sends a simple HTTP / HTTPS request to check if your service is online"
+        description="Sends a simple HTTP / HTTPS request to check if your app is online"
         mb="md"
         defaultChecked={form.values.network.enabledStatusChecker}
         {...form.getInputProps('network.enabledStatusChecker')}
@@ -23,7 +23,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
         <MultiSelect
           required
           label="HTTP status codes"
-          description="Determines what response codes are allowed for this service to be 'Online'"
+          description="Determines what response codes are allowed for this app to be 'Online'"
           data={StatusCodes}
           clearable
           searchable

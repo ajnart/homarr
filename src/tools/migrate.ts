@@ -3,12 +3,12 @@ import { Config } from './types';
 
 export function migrateToIdConfig(config: Config): Config {
   // Set the config and add an ID to all the services that don't have one
-  const services = config.services.map((service) => ({
+  const services = config.apps.map((service) => ({
     ...service,
     id: service.id ?? uuidv4(),
   }));
   return {
     ...config,
-    services,
+    apps: services,
   };
 }

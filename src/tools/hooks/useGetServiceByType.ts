@@ -8,7 +8,7 @@ export const useGetServiceByType = (...serviceTypes: ServiceType[]) => {
 };
 
 export const getServiceByType = (config: Config, ...serviceTypes: ServiceType[]) =>
-  config.services.filter((s) => serviceTypes.includes(s.type));
+  config.apps.filter((s) => serviceTypes.includes(s.type));
 
 export const getServiceById = (config: Config, id: string) =>
-  config.services.find((s) => s.id === id);
+  config.apps.find((s) => s.id === id);

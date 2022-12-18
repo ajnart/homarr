@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../tools/config/getConfig';
-import { ServiceIntegrationType } from '../../../types/service';
+import { AppIntegrationType } from '../../../types/app';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Filter out if the reuqest is a POST or a GET
@@ -15,7 +15,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
-  // Parse req.body as a ServiceItem
+  // Parse req.body as a AppItem
   const {
     month: monthString,
     year: yearString,
@@ -34,20 +34,20 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
   const config = getConfig(configName);
 
-  const mediaServiceIntegrationTypes: ServiceIntegrationType['type'][] = [
+  const mediaAppIntegrationTypes: AppIntegrationType['type'][] = [
     'sonarr',
     'radarr',
     'readarr',
     'lidarr',
   ];
-  const mediaServices = config.services.filter(
-    (service) =>
-      service.integration && mediaServiceIntegrationTypes.includes(service.integration.type)
+  const mediaApps = config.apps.filter(
+    (app) =>
+      app.integration && mediaAppIntegrationTypes.includes(app.integration.type)
   );
 
   const medias = await Promise.all(
-    await mediaServices.map(async (service) => {
-      const integration = service.integration!;
+    await mediaApps.map(async (app) => {
+      const integration = app.integration!;
       const endpoint = IntegrationTypeEndpointMap.get(integration.type);
       if (!endpoint) {
         return {
@@ -57,7 +57,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       }
 
       // Get the origin URL
-      let { href: origin } = new URL(service.url);
+      let { href: origin } = new URL(app.url);
       if (origin.endsWith('/')) {
         origin = origin.slice(0, -1);
       }
@@ -85,7 +85,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   });
 }
 
-const IntegrationTypeEndpointMap = new Map<ServiceIntegrationType['type'], string>([
+const IntegrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([
   ['sonarr', '/api/calendar'],
   ['radarr', '/api/v3/calendar'],
   ['lidarr', '/api/v1/calendar'],

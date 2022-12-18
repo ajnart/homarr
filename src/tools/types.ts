@@ -20,7 +20,7 @@ export interface Settings {
 
 export interface Config {
   name: string;
-  services: serviceItem[];
+  apps: serviceItem[];
   settings: Settings;
   modules: {
     [key: string]: ConfigModule;

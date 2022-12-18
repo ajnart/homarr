@@ -52,10 +52,10 @@ export default function CalendarComponent(props: any) {
   const [lidarrMedias, setLidarrMedias] = useState([] as any);
   const [radarrMedias, setRadarrMedias] = useState([] as any);
   const [readarrMedias, setReadarrMedias] = useState([] as any);
-  const sonarrServices = config.services.filter((service) => service.type === 'Sonarr');
-  const radarrServices = config.services.filter((service) => service.type === 'Radarr');
-  const lidarrServices = config.services.filter((service) => service.type === 'Lidarr');
-  const readarrServices = config.services.filter((service) => service.type === 'Readarr');
+  const sonarrServices = config.apps.filter((service) => service.type === 'Sonarr');
+  const radarrServices = config.apps.filter((service) => service.type === 'Radarr');
+  const lidarrServices = config.apps.filter((service) => service.type === 'Lidarr');
+  const readarrServices = config.apps.filter((service) => service.type === 'Readarr');
   const today = new Date();
 
   const { classes, cx } = useStyles();
@@ -125,7 +125,7 @@ export default function CalendarComponent(props: any) {
     ).then(() => {
       setReadarrMedias(currentReadarrMedias);
     });
-  }, [config.services]);
+  }, [config.apps]);
 
   const weekStartsAtSunday =
     (config?.modules?.[CalendarModule.id]?.options?.sundaystart?.value as boolean) ?? false;

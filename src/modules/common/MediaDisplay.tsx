@@ -28,7 +28,7 @@ export interface IMedia {
 export function OverseerrMediaDisplay(props: any) {
   const { media }: { media: Result } = props;
   const { config } = useConfig();
-  const service = config.services.find(
+  const service = config.apps.find(
     (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
   );
 
@@ -58,7 +58,7 @@ export function ReadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   const { config } = useConfig();
   // Find lidarr in services
-  const readarr = config.services.find((service: serviceItem) => service.type === 'Readarr');
+  const readarr = config.apps.find((service: serviceItem) => service.type === 'Readarr');
   // Find a poster CoverType
   const poster = media.images.find((image: any) => image.coverType === 'cover');
   if (!readarr) {
@@ -90,7 +90,7 @@ export function LidarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   const { config } = useConfig();
   // Find lidarr in services
-  const lidarr = config.services.find((service: serviceItem) => service.type === 'Lidarr');
+  const lidarr = config.apps.find((service: serviceItem) => service.type === 'Lidarr');
   // Find a poster CoverType
   const poster = media.images.find((image: any) => image.coverType === 'cover');
   if (!lidarr) {

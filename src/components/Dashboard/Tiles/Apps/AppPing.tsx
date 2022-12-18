@@ -3,23 +3,23 @@ import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
-import { ServiceType } from '../../../../types/service';
+import { AppType } from '../../../../types/app';
 
-interface ServicePingProps {
-  service: ServiceType;
+interface AppPingProps {
+  app: AppType;
 }
 
-export const ServicePing = ({ service }: ServicePingProps) => {
+export const AppPing = ({ app }: AppPingProps) => {
   const { t } = useTranslation('modules/ping');
   const { config } = useConfigContext();
   const active =
-    (config?.settings.customization.layout.enabledPing && service.network.enabledStatusChecker) ??
+    (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
   const { data, isLoading } = useQuery({
-    queryKey: [`ping/${service.id}`],
+    queryKey: [`ping/${app.id}`],
     queryFn: async () => {
-      const response = await fetch(`/api/modules/ping?url=${encodeURI(service.url)}`);
-      const isOk = service.network.okStatus.includes(response.status);
+      const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
+      const isOk = app.network.okStatus.includes(response.status);
       return {
         status: response.status,
         state: isOk ? 'online' : 'down',

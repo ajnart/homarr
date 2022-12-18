@@ -2,7 +2,7 @@ import ping from 'ping';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
-  // Parse req.body as a ServiceItem
+  // Parse req.body as a AppItem
   const { url } = req.query;
   // Parse url as URL object
   const parsedUrl = new URL(url as string);

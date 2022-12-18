@@ -19,19 +19,19 @@ export const DashboardWrapper = ({ wrapper }: DashboardWrapperProps) => {
       data-wrapper={wrapper.id}
       ref={refs.wrapper}
     >
-      {items?.map((service) => {
-        const { component: TileComponent, ...tile } = Tiles['service'];
+      {items?.map((app) => {
+        const { component: TileComponent, ...tile } = Tiles['app'];
         return (
           <GridstackTileWrapper
-            id={service.id}
-            type="service"
-            key={service.id}
-            itemRef={refs.items.current[service.id]}
+            id={app.id}
+            type="app"
+            key={app.id}
+            itemRef={refs.items.current[app.id]}
             {...tile}
-            {...service.shape.location}
-            {...service.shape.size}
+            {...app.shape.location}
+            {...app.shape.size}
           >
-            <TileComponent className="grid-stack-item-content" service={service} />
+            <TileComponent className="grid-stack-item-content" app={app} />
           </GridstackTileWrapper>
         );
       })}

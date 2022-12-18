@@ -7,13 +7,13 @@ import {
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
-  ServiceIntegrationPropertyType,
-  ServiceIntegrationType,
-  ServiceType,
-} from '../../../../../../../../types/service';
+  AppIntegrationPropertyType,
+  AppIntegrationType,
+  AppType,
+} from '../../../../../../../../types/app';
 
 interface IntegrationSelectorProps {
-  form: UseFormReturnType<ServiceType, (item: ServiceType) => ServiceType>;
+  form: UseFormReturnType<AppType, (item: AppType) => AppType>;
 }
 
 export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
@@ -53,9 +53,9 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
 
-  const getNewProperties = (value: string | null): ServiceIntegrationPropertyType[] => {
+  const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {
     if (!value) return [];
-    const integrationType = value as ServiceIntegrationType['type'];
+    const integrationType = value as AppIntegrationType['type'];
     if (integrationType === null) {
       return [];
     }
@@ -77,7 +77,7 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
   return (
     <Select
       label="Integration configuration"
-      description="Treats this service as the selected integration and provides you with per-service configuration"
+      description="Treats this app as the selected integration and provides you with per-app configuration"
       placeholder="Select your desired configuration"
       itemComponent={SelectItemComponent}
       data={data}

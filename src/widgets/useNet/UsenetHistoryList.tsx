@@ -25,12 +25,12 @@ import { parseDuration } from '../../tools/parseDuration';
 dayjs.extend(duration);
 
 interface UsenetHistoryListProps {
-  serviceId: string;
+  appId: string;
 }
 
 const PAGE_SIZE = 10;
 
-export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ serviceId }) => {
+export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ appId }) => {
   const [page, setPage] = useState(1);
   const { t } = useTranslation(['modules/usenet', 'common']);
 
@@ -39,7 +39,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ s
   const { data, isLoading, isError, error } = useGetUsenetHistory({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
-    serviceId,
+    appId: appId,
   });
   const totalPages = Math.ceil((data?.total || 1) / PAGE_SIZE);
 

@@ -2,10 +2,10 @@ import { Tabs, TextInput, Switch, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconClick } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { ServiceType } from '../../../../../../types/service';
+import { AppType } from '../../../../../../types/app';
 
 interface BehaviourTabProps {
-  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
+  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
 }
 
 export const BehaviourTab = ({ form }: BehaviourTabProps) => {
@@ -15,8 +15,8 @@ export const BehaviourTab = ({ form }: BehaviourTabProps) => {
       <TextInput
         icon={<IconClick size={16} />}
         label="On click url"
-        description="Overrides the service URL when clicking on the service"
-        placeholder="URL that should be opened instead when clicking on the service"
+        description="Overrides the app URL when clicking on the app"
+        placeholder="URL that should be opened instead when clicking on the app"
         variant="default"
         mb="md"
         {...form.getInputProps('behaviour.onClickUrl')}

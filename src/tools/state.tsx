@@ -15,7 +15,7 @@ type configContextType = {
 const configContext = createContext<configContextType>({
   config: {
     name: 'default',
-    services: [],
+    apps: [],
     settings: {
       searchUrl: 'https://google.com/search?q=',
     },
@@ -41,7 +41,7 @@ type Props = {
 export function ConfigProvider({ children }: Props) {
   const [config, setConfigInternal] = useState<Config>({
     name: 'default',
-    services: [],
+    apps: [],
     settings: {
       searchUrl: 'https://www.google.com/search?q=',
     },

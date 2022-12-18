@@ -30,7 +30,7 @@ export default function TotalDownloadsComponent() {
   const setSafeInterval = useSetSafeInterval();
   const { config } = useConfig();
   const downloadServices =
-    config.services.filter(
+    config.apps.filter(
       (service) =>
         service.type === 'qBittorrent' ||
         service.type === 'Transmission' ||
@@ -68,7 +68,7 @@ export default function TotalDownloadsComponent() {
           clearInterval(interval);
         });
     }, 1000);
-  }, [config.services]);
+  }, [config.apps]);
 
   useEffect(() => {
     torrentHistoryHandlers.append({

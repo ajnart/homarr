@@ -2,18 +2,18 @@ import { SelectItem } from '@mantine/core';
 import { closeModal, ContextModalProps } from '@mantine/modals';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { ServiceType } from '../../../../types/service';
+import { AppType } from '../../../../types/app';
 import { ChangePositionModal } from './ChangePositionModal';
 
-type ChangeServicePositionModalInnerProps = {
-  service: ServiceType;
+type ChangeAppPositionModalInnerProps = {
+  app: AppType;
 };
 
-export const ChangeServicePositionModal = ({
+export const ChangeAppPositionModal = ({
   id,
   context,
   innerProps,
-}: ContextModalProps<ChangeServicePositionModalInnerProps>) => {
+}: ContextModalProps<ChangeAppPositionModalInnerProps>) => {
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
@@ -24,9 +24,9 @@ export const ChangeServicePositionModal = ({
 
     updateConfig(configName, (previousConfig) => ({
       ...previousConfig,
-      services: [
-        ...previousConfig.services.filter((x) => x.id !== innerProps.service.id),
-        { ...innerProps.service, shape: { location: { x, y }, size: { width, height } } },
+      apps: [
+        ...previousConfig.apps.filter((x) => x.id !== innerProps.app.id),
+        { ...innerProps.app, shape: { location: { x, y }, size: { width, height } } },
       ],
     }));
     context.closeModal(id);
@@ -45,10 +45,10 @@ export const ChangeServicePositionModal = ({
       onCancel={handleCancel}
       widthData={widthData}
       heightData={heightData}
-      initialX={innerProps.service.shape.location.x}
-      initialY={innerProps.service.shape.location.y}
-      initialWidth={innerProps.service.shape.size.width}
-      initialHeight={innerProps.service.shape.size.height}
+      initialX={innerProps.app.shape.location.x}
+      initialY={innerProps.app.shape.location.y}
+      initialWidth={innerProps.app.shape.size.width}
+      initialHeight={innerProps.app.shape.size.height}
     />
   );
 };

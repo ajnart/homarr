@@ -1,20 +1,20 @@
 import { createStyles, Flex, Tabs, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-import { ServiceType } from '../../../../../../types/service';
-import { DebouncedServiceIcon } from '../Shared/DebouncedServiceIcon';
+import { AppType } from '../../../../../../types/app';
+import { DebouncedAppIcon } from '../Shared/DebouncedAppIcon';
 import { IconSelector } from './IconSelector/IconSelector';
 
 interface AppearanceTabProps {
-  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
-  disallowServiceNameProgagation: () => void;
-  allowServiceNamePropagation: boolean;
+  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
+  disallowAppNameProgagation: () => void;
+  allowAppNamePropagation: boolean;
 }
 
 export const AppearanceTab = ({
   form,
-  disallowServiceNameProgagation,
-  allowServiceNamePropagation,
+  disallowAppNameProgagation,
+  allowAppNamePropagation,
 }: AppearanceTabProps) => {
   const { t } = useTranslation('');
   const { classes } = useStyles();
@@ -25,9 +25,9 @@ export const AppearanceTab = ({
         <TextInput
           defaultValue={form.values.appearance.iconUrl}
           className={classes.textInput}
-          icon={<DebouncedServiceIcon form={form} width={20} height={20} />}
-          label="Service Icon"
-          description="Logo of your service displayed in your dashboard. Must return a body content containg an image"
+          icon={<DebouncedAppIcon form={form} width={20} height={20} />}
+          label="App Icon"
+          description="Logo of your app displayed in your dashboard. Must return a body content containg an image"
           variant="default"
           withAsterisk
           required
@@ -40,9 +40,9 @@ export const AppearanceTab = ({
                 iconUrl: item.url,
               },
             });
-            disallowServiceNameProgagation();
+            disallowAppNameProgagation();
           }}
-          allowServiceNamePropagation={allowServiceNamePropagation}
+          allowAppNamePropagation={allowAppNamePropagation}
           form={form}
         />
       </Flex>

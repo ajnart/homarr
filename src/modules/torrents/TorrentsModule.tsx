@@ -39,7 +39,7 @@ export const TorrentsModule: IModule = {
 export default function TorrentsComponent() {
   const { config } = useConfig();
   const downloadServices =
-    config.services.filter(
+    config.apps.filter(
       (service) =>
         service.type === 'qBittorrent' ||
         service.type === 'Transmission' ||
