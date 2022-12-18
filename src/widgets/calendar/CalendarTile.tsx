@@ -22,6 +22,12 @@ const definition = defineWidget({
       defaultValue: false,
     },
   },
+  gridstack: {
+    minWidth: 4,
+    minHeight: 5,
+    maxWidth: 12,
+    maxHeight: 12,
+  },
   component: CalendarTile,
 });
 

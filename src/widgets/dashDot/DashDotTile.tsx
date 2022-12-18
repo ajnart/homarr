@@ -38,6 +38,12 @@ const definition = defineWidget({
       defaultValue: '',
     },
   },
+  gridstack: {
+    minWidth: 4,
+    minHeight: 5,
+    maxWidth: 12,
+    maxHeight: 14,
+  },
   component: DashDotTile,
 });
 

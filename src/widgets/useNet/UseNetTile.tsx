@@ -36,6 +36,12 @@ const definition = defineWidget({
   icon: IconFileDownload,
   options: {},
   component: UseNetTile,
+  gridstack: {
+    minWidth: 4,
+    minHeight: 5,
+    maxWidth: 12,
+    maxHeight: 12,
+  },
 });
 
 export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;

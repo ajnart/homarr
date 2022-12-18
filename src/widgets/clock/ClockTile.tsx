@@ -18,6 +18,13 @@ const definition = defineWidget({
       defaultValue: false,
     },
   },
+
+  gridstack: {
+    minWidth: 4,
+    minHeight: 2,
+    maxWidth: 12,
+    maxHeight: 12,
+  },
   component: ClockTile,
 });
 

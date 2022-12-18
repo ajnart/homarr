@@ -66,5 +66,11 @@ export type IWidgetDefinition<TKey extends string = string> = {
   options: {
     [key: string]: IWidgetOptionValue;
   };
+  gridstack: {
+    minWidth: number;
+    minHeight: number;
+    maxWidth: number;
+    maxHeight: number;
+  };
   component: React.ComponentType<any>;
 };

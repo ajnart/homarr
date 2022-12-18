@@ -1,4 +1,6 @@
 import { WrapperType } from '../../../../types/wrapper';
+import Widgets from '../../../../widgets';
+import { IWidget, IWidgetDefinition } from '../../../../widgets/widgets';
 import { Tiles } from '../../Tiles/tilesDefinitions';
 import { GridstackTileWrapper } from '../../Tiles/TileWrapper';
 import { useGridstack } from '../gridstack/use-gridstack';
@@ -34,19 +36,20 @@ export const DashboardWrapper = ({ wrapper }: DashboardWrapperProps) => {
         );
       })}
       {Object.entries(integrations).map(([k, v]) => {
-        const { component: TileComponent, ...tile } = Tiles[k as keyof typeof Tiles];
+        const widget = Widgets[k as keyof typeof Widgets] as IWidgetDefinition | undefined;
+        if (!widget) return null;
 
         return (
           <GridstackTileWrapper
-            id={k}
             type="module"
             key={k}
             itemRef={refs.items.current[k]}
-            {...tile}
+            id={widget.id}
+            {...widget.gridstack}
             {...v.shape.location}
             {...v.shape.size}
           >
-            <TileComponent className="grid-stack-item-content" module={v} />
+            <widget.component className="grid-stack-item-content" module={v} />
           </GridstackTileWrapper>
         );
       })}

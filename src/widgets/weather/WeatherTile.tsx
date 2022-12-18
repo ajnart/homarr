@@ -21,6 +21,12 @@ const definition = defineWidget({
       defaultValue: 'Paris',
     },
   },
+  gridstack: {
+    minWidth: 4,
+    minHeight: 2,
+    maxWidth: 12,
+    maxHeight: 12,
+  },
   component: WeatherTile,
 });
 
