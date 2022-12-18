@@ -1,4 +1,4 @@
-import { IconClock } from '@tabler/icons';
+import { IconArrowsUpDown, IconClock } from '@tabler/icons';
 import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
 import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
 import { defineWidget } from '../helper';
@@ -6,7 +6,7 @@ import { IWidget } from '../widgets';
 
 const definition = defineWidget({
   id: 'dlspeed',
-  icon: IconClock,
+  icon: IconArrowsUpDown,
   options: {},
 
   gridstack: {

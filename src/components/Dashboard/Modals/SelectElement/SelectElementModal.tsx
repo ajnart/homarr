@@ -1,6 +1,6 @@
 import { ContextModalProps } from '@mantine/modals';
 import { useState } from 'react';
-import { AvailableIntegrationElements } from './Components/IntegrationsTab/AvailableIntegrationsTab';
+import { AvailableIntegrationElements } from './Components/WidgetsTab/AvailableWidgetsTab';
 import { AvailableElementTypes } from './Components/Overview/AvailableElementsOverview';
 import { AvailableStaticTypes } from './Components/StaticElementsTab/AvailableStaticElementsTab';
 

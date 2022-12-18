@@ -1,13 +1,13 @@
-import { Box, Button, Card, Center, Grid, Stack, Text, UnstyledButton } from '@mantine/core';
-import { IconChevronRight } from '@tabler/icons';
+import { Button, Card, Center, Grid, Stack, Text } from '@mantine/core';
+import { TablerIcon } from '@tabler/icons';
 import Image from 'next/image';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useStyles } from './styles';
 
 interface GenericAvailableElementTypeProps {
   name: string;
   description?: string;
-  image: string | ReactNode;
+  image: string | TablerIcon;
   disabled?: boolean;
 }
 
@@ -19,13 +19,8 @@ export const GenericAvailableElementType = ({
 }: GenericAvailableElementTypeProps) => {
   const { classes } = useStyles();
 
-  const Icon = () => {
-    if (React.isValidElement(image)) {
-      return <>{image}</>;
-    }
-
-    return <Image src={image as string} width={24} height={24} />;
-  };
+  const Icon =
+    typeof image === 'string' ? () => <Image src={image} width={24} height={24} /> : image;
 
   return (
     <Grid.Col span={3}>

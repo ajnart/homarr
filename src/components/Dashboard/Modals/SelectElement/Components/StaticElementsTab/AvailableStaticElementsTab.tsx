@@ -23,7 +23,7 @@ export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps)
         <GenericAvailableElementType
           name="Static Text"
           description="Display a fixed string on your dashboard"
-          image={<IconCursorText />}
+          image={IconCursorText}
         />
       </Grid>
     </>
