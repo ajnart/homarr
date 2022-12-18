@@ -3,4 +3,4 @@ interface ServiceIconProps {
   service: string;
 }
 
-export const ServiceIcon = ({ size }: ServiceIconProps) => null;
+export const AppIcon = ({ size }: ServiceIconProps) => null;

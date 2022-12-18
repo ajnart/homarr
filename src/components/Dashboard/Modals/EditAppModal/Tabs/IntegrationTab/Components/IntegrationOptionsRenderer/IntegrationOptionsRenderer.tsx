@@ -5,13 +5,13 @@ import {
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
-  ServiceIntegrationPropertyType,
-  ServiceType,
-} from '../../../../../../../../types/service';
+  AppIntegrationPropertyType,
+  AppType,
+} from '../../../../../../../../types/app';
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
 
 interface IntegrationOptionsRendererProps {
-  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
+  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
 }
 
 export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererProps) => {
@@ -34,7 +34,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
           const type = Object.entries(integrationFieldDefinitions).find(
             ([k, v]) => k === property
           )![1].type;
-          const newProperty: ServiceIntegrationPropertyType = {
+          const newProperty: AppIntegrationPropertyType = {
             type,
             field: property as IntegrationField,
             isDefined: false,

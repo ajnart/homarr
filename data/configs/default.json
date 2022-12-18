@@ -1,20 +1,196 @@
 {
-  "name": "default",
-  "services": [
+  "schemaVersion": "1.0",
+  "configProperties": {
+    "name": "default"
+  },
+  "categories": [],
+  "wrappers": [
     {
-      "name": "example",
-      "id": "09c45847-8afc-4c1a-9697-f03192de948a",
-      "type": "Other",
-      "icon": "https://c.tenor.com/o656qFKDzeUAAAAC/rick-astley-never-gonna-give-you-up.gif",
-      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e",
+      "position": 1
     }
   ],
+  "apps": [
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "isOpeningInNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "width": 3,
+          "height": 3
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a330",
+      "name": "Support",
+      "url": "https://github.com/ajnart/homarr",
+      "behaviour": {
+        "onClickUrl": "https://github.com/ajnart/homarr",
+        "isOpeningInNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/github.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 3,
+          "y": 0
+        },
+        "size": {
+          "width": 3,
+          "height": 3
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
+      "name": "Community",
+      "url": "https://discord.com/invite/aCsmEV5RgA",
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningInNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 6,
+          "y": 0
+        },
+        "size": {
+          "width": 3,
+          "height": 3
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
+      "name": "Donate",
+      "url": "https://homarr.dev/docs/community/donate",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev/docs/community/donate",
+        "isOpeningInNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 9,
+          "y": 0
+        },
+        "size": {
+          "width": 3,
+          "height": 3
+        }
+      }
+    }
+  ],
+  "integrations": [],
   "settings": {
-    "searchUrl": "https://google.com/search?q="
-  },
-  "modules": {
-    "Search Bar": {
-      "enabled": true
+    "common": {
+      "searchEngine": {
+        "type": "google",
+        "properties": {}
+      }
+    },
+    "customization": {
+      "layout": {
+        "enabledLeftSidebar": false,
+        "enabledRightSidebar": false,
+        "enabledDocker": false,
+        "enabledPing": false,
+        "enabledSearchbar": true
+      },
+      "pageTitle": "Homarr",
+      "logoImageUrl": "/imgs/logo/logo.png",
+      "faviconUrl": "/imgs/logo/logo.png",
+      "backgroundImageUrl": "",
+      "customCss": "",
+      "colors": {
+        "primary": "red",
+        "secondary": "orange",
+        "shade": 5
+      },
+      "appOpacity": 100
     }
   }
 }

@@ -8,50 +8,50 @@ import { getConfig } from '../../../tools/getConfig';
 import { Config } from '../../../tools/types';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
-  // Get the type of service from the request url
+  // Get the type of app from the request url
   const configName = getCookie('config-name', { req });
   const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const qBittorrentServices = config.services.filter((service) => service.type === 'qBittorrent');
-  const delugeServices = config.services.filter((service) => service.type === 'Deluge');
-  const transmissionServices = config.services.filter((service) => service.type === 'Transmission');
+  const qBittorrentApp = config.apps.filter((app) => app.type === 'qBittorrent');
+  const delugeApp = config.apps.filter((app) => app.type === 'Deluge');
+  const transmissionApp = config.apps.filter((app) => app.type === 'Transmission');
 
   const torrents: NormalizedTorrent[] = [];
 
-  if (!qBittorrentServices && !delugeServices && !transmissionServices) {
+  if (!qBittorrentApp && !delugeApp && !transmissionApp) {
     return res.status(500).json({
       statusCode: 500,
-      message: 'Missing services',
+      message: 'Missing apps',
     });
   }
   try {
     await Promise.all(
-      qBittorrentServices.map((service) =>
+      qBittorrentApp.map((apps) =>
         new QBittorrent({
-          baseUrl: service.url,
-          username: service.username,
-          password: service.password,
+          baseUrl: apps.url,
+          username: apps.username,
+          password: apps.password,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
       )
     );
     await Promise.all(
-      delugeServices.map((service) =>
+      delugeApp.map((apps) =>
         new Deluge({
-          baseUrl: service.url,
-          password: 'password' in service ? service.password : '',
+          baseUrl: apps.url,
+          password: 'password' in apps ? apps.password : '',
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
       )
     );
-    // Map transmissionServices
+    // Map transmissionApps
     await Promise.all(
-      transmissionServices.map((service) =>
+      transmissionApp.map((apps) =>
         new Transmission({
-          baseUrl: service.url,
-          username: 'username' in service ? service.username : '',
-          password: 'password' in service ? service.password : '',
+          baseUrl: apps.url,
+          username: 'username' in apps ? apps.username : '',
+          password: 'password' in apps ? apps.password : '',
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))

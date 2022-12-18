@@ -27,12 +27,12 @@ import { humanFileSize } from '../../tools/humanFileSize';
 dayjs.extend(duration);
 
 interface UsenetQueueListProps {
-  serviceId: string;
+  appId: string;
 }
 
 const PAGE_SIZE = 10;
 
-export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ serviceId }) => {
+export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId }) => {
   const theme = useMantineTheme();
   const { t } = useTranslation('modules/usenet');
   const progressbarBreakpoint = theme.breakpoints.xs;
@@ -44,7 +44,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ servi
   const { data, isLoading, isError, error } = useGetUsenetDownloads({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
-    serviceId,
+    appId: appId,
   });
   const totalPages = Math.ceil((data?.total || 1) / PAGE_SIZE);
 

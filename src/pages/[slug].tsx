@@ -29,7 +29,7 @@ export async function getServerSideProps({
       props: {
         config: {
           name: 'Default config',
-          services: [],
+          apps: [],
           settings: {
             searchUrl: 'https://www.google.com/search?q=',
           },

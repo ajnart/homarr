@@ -6,7 +6,7 @@ export const getFrontendConfig = (name: string): ConfigType => {
 
   return {
     ...config,
-    services: config.services.map((s) => ({
+    apps: config.apps.map((s) => ({
       ...s,
       integration: s.integration
         ? {

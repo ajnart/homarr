@@ -16,7 +16,7 @@ import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/i
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
-import SmallServiceItem from '../../AppShelf/SmallServiceItem';
+import SmallAppItem from './SmallAppItem';
 import Tip from '../Tip';
 import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import { useConfigContext } from '../../../config/provider';
@@ -56,12 +56,12 @@ export function Search() {
   const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
 
   // TODO: ask manuel-rw about overseerr
-  // Answer: We can simply check if there is a service of the type overseer and display results if there is one.
+  // Answer: We can simply check if there is a app of the type overseer and display results if there is one.
   // Overseerr is not use anywhere else, so it makes no sense to add a standalone toggle for displaying results
   const isOverseerrEnabled = false; //config?.settings.common.enabledModules.overseerr;
-  const overseerrService = config?.services.find(
-    (service) =>
-      service.integration?.type === 'overseerr' || service.integration?.type === 'jellyseerr'
+  const overseerrApp = config?.apps.find(
+    (app) =>
+      app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
   );
   const searchEngineSettings = config?.settings.common.searchEngine;
   const searchEngineUrl = !searchEngineSettings
@@ -100,32 +100,32 @@ export function Search() {
     },
     {
       icon: <IconMovie />,
-      disabled: !(isOverseerrEnabled === true && overseerrService !== undefined),
+      disabled: !(isOverseerrEnabled === true && overseerrApp !== undefined),
       label: t('searchEngines.overseerr.name'),
       value: 'overseerr',
       description: t('searchEngines.overseerr.description'),
-      url: `${overseerrService?.url}search?query=`,
+      url: `${overseerrApp?.url}search?query=`,
       shortcut: 'm',
     },
   ];
   const [selectedSearchEngine, setSearchEngine] = useState<ItemProps>(searchEnginesList[0]);
-  const matchingServices =
-    config?.services.filter((service) => {
+  const matchingApps =
+    config?.apps.filter((app) => {
       if (searchQuery === '' || searchQuery === undefined) {
         return false;
       }
-      return service.name.toLowerCase().includes(searchQuery.toLowerCase());
+      return app.name.toLowerCase().includes(searchQuery.toLowerCase());
     }) ?? [];
-  const autocompleteData = matchingServices.map((service) => ({
-    label: service.name,
-    value: service.name,
-    icon: service.appearance.iconUrl,
-    url: service.behaviour.onClickUrl ?? service.url,
+  const autocompleteData = matchingApps.map((app) => ({
+    label: app.name,
+    value: app.name,
+    icon: app.appearance.iconUrl,
+    url: app.behaviour.onClickUrl ?? app.url,
   }));
   const AutoCompleteItem = forwardRef<HTMLDivElement, any>(
     ({ label, value, icon, url, ...others }: any, ref) => (
       <div ref={ref} {...others}>
-        <SmallServiceItem service={{ label, value, icon, url }} />
+        <SmallAppItem app={{ label, value, icon, url }} />
       </div>
     )
   );

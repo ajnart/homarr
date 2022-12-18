@@ -31,7 +31,7 @@ export const UsenetComponent: FunctionComponent = () => {
   const { t } = useTranslation('modules/usenet');
 
   const [selectedServiceId, setSelectedService] = useState<string | null>(downloadServices[0]?.id);
-  const { data } = useGetUsenetInfo({ serviceId: selectedServiceId! });
+  const { data } = useGetUsenetInfo({ appId: selectedServiceId! });
 
   useEffect(() => {
     if (!selectedServiceId && downloadServices.length) {
@@ -39,8 +39,8 @@ export const UsenetComponent: FunctionComponent = () => {
     }
   }, [downloadServices, selectedServiceId]);
 
-  const { mutate: pause } = usePauseUsenetQueue({ serviceId: selectedServiceId! });
-  const { mutate: resume } = useResumeUsenetQueue({ serviceId: selectedServiceId! });
+  const { mutate: pause } = usePauseUsenetQueue({ appId: selectedServiceId! });
+  const { mutate: resume } = useResumeUsenetQueue({ appId: selectedServiceId! });
 
   if (downloadServices.length === 0) {
     return (
@@ -98,10 +98,10 @@ export const UsenetComponent: FunctionComponent = () => {
         />
       )}
       <Tabs.Panel value="queue">
-        <UsenetQueueList serviceId={selectedServiceId} />
+        <UsenetQueueList appId={selectedServiceId} />
       </Tabs.Panel>
       <Tabs.Panel value="history">
-        <UsenetHistoryList serviceId={selectedServiceId} />
+        <UsenetHistoryList appId={selectedServiceId} />
       </Tabs.Panel>
     </Tabs>
   );

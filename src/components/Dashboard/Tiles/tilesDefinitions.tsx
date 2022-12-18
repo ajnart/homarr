@@ -5,11 +5,11 @@ import { DashDotTile } from '../../../widgets/dashDot/DashDotTile';
 import { UseNetTile } from '../../../widgets/useNet/UseNetTile';
 import { WeatherTile } from '../../../widgets/weather/WeatherTile';
 import { EmptyTile } from './EmptyTile';
-import { ServiceTile } from './Service/ServiceTile';
+import { AppTile } from './Apps/AppTile';
 
-// TODO: just remove and use service (later app) directly. For widgets the the definition should contain min/max width/height
+// TODO: just remove and use app (later app) directly. For widgets the the definition should contain min/max width/height
 type TileDefinitionProps = {
-  [key in keyof IntegrationsType | 'service']: {
+  [key in keyof IntegrationsType | 'app']: {
     minWidth?: number;
     minHeight?: number;
     maxWidth?: number;
@@ -20,8 +20,8 @@ type TileDefinitionProps = {
 
 // TODO: change components for other modules
 export const Tiles: TileDefinitionProps = {
-  service: {
-    component: ServiceTile,
+  app: {
+    component: AppTile,
     minWidth: 2,
     maxWidth: 12,
     minHeight: 2,

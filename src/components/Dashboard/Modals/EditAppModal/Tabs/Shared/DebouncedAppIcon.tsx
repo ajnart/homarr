@@ -4,21 +4,21 @@ import Image from 'next/image';
 import { createStyles, Loader } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
-import { ServiceType } from '../../../../../../types/service';
+import { AppType } from '../../../../../../types/app';
 
-interface DebouncedServiceIconProps {
+interface DebouncedAppIconProps {
   width: number;
   height: number;
-  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
+  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
   debouncedWaitPeriod?: number;
 }
 
-export const DebouncedServiceIcon = ({
+export const DebouncedAppIcon = ({
   form,
   width,
   height,
   debouncedWaitPeriod = 1000,
-}: DebouncedServiceIconProps) => {
+}: DebouncedAppIconProps) => {
   const { classes } = useStyles();
   const [debouncedIconImageUrl] = useDebouncedValue(
     form.values.appearance.iconUrl,

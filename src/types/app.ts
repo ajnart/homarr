@@ -1,31 +1,31 @@
 import { IconKey, IconPassword, IconUser, TablerIcon } from '@tabler/icons';
 import { TileBaseType } from './tile';
 
-export interface ServiceType extends TileBaseType {
+export interface AppType extends TileBaseType {
   id: string;
   name: string;
   url: string;
-  behaviour: ServiceBehaviourType;
-  network: ServiceNetworkType;
-  appearance: ServiceAppearanceType;
-  integration: ServiceIntegrationType;
+  behaviour: AppBehaviourType;
+  network: AppNetworkType;
+  appearance: AppAppearanceType;
+  integration: AppIntegrationType;
 }
 
-export type ConfigServiceType = Omit<ServiceType, 'integration'> & {
-  integration?: ConfigServiceIntegrationType | null;
+export type ConfigAppType = Omit<AppType, 'integration'> & {
+  integration?: ConfigAppIntegrationType | null;
 };
 
-interface ServiceBehaviourType {
+interface AppBehaviourType {
   onClickUrl: string;
   isOpeningNewTab: boolean;
 }
 
-interface ServiceNetworkType {
+interface AppNetworkType {
   enabledStatusChecker: boolean;
   okStatus: number[];
 }
 
-interface ServiceAppearanceType {
+interface AppAppearanceType {
   iconUrl: string;
 }
 
@@ -42,28 +42,28 @@ export type IntegrationType =
   | 'transmission'
   | 'nzbGet';
 
-export type ServiceIntegrationType = {
+export type AppIntegrationType = {
   type: IntegrationType | null;
-  properties: ServiceIntegrationPropertyType[];
+  properties: AppIntegrationPropertyType[];
 };
 
-export type ConfigServiceIntegrationType = Omit<ServiceIntegrationType, 'properties'> & {
-  properties: ConfigServiceIntegrationPropertyType[];
+export type ConfigAppIntegrationType = Omit<AppIntegrationType, 'properties'> & {
+  properties: ConfigAppIntegrationPropertyType[];
 };
 
-export type ServiceIntegrationPropertyType = {
+export type AppIntegrationPropertyType = {
   type: 'private' | 'public';
   field: IntegrationField;
   value?: string | undefined;
   isDefined: boolean;
 };
 
-type ConfigServiceIntegrationPropertyType = Omit<ServiceIntegrationPropertyType, 'isDefined'>;
+type ConfigAppIntegrationPropertyType = Omit<AppIntegrationPropertyType, 'isDefined'>;
 
 export type IntegrationField = 'apiKey' | 'password' | 'username';
 
 export const integrationFieldProperties: {
-  [key in ServiceIntegrationType['type']]: IntegrationField[];
+  [key in AppIntegrationType['type']]: IntegrationField[];
 } = {
   lidarr: ['apiKey'],
   radarr: ['apiKey'],

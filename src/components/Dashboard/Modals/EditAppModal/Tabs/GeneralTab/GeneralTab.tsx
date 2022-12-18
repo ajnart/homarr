@@ -2,12 +2,12 @@ import { Tabs, Text, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconCursorText, IconLink } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { ServiceType } from '../../../../../../types/service';
-import { EditServiceModalTab } from '../type';
+import { AppType } from '../../../../../../types/app';
+import { EditAppModalTab } from '../type';
 
 interface GeneralTabProps {
-  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
-  openTab: (tab: EditServiceModalTab) => void;
+  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
+  openTab: (tab: EditAppModalTab) => void;
 }
 
 export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
@@ -16,9 +16,9 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
     <Tabs.Panel value="general" pt="lg">
       <TextInput
         icon={<IconCursorText size={16} />}
-        label="Service name"
-        description="Used for displaying the service on the dashboard"
-        placeholder="My example service"
+        label="App name"
+        description="Used for displaying the app on the dashboard"
+        placeholder="My example app"
         variant="default"
         mb="md"
         withAsterisk
@@ -26,10 +26,10 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
       />
       <TextInput
         icon={<IconLink size={16} />}
-        label="Service url"
+        label="App url"
         description={
           <Text>
-            URL that will be opened when clicking on the service. Can be overwritten using
+            URL that will be opened when clicking on the app. Can be overwritten using
             <Text
               onClick={() => openTab('behaviour')}
               variant="link"

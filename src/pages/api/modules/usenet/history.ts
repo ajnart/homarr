@@ -11,7 +11,7 @@ import { UsenetHistoryItem } from '../../../../components/Dashboard/Tiles/UseNet
 dayjs.extend(duration);
 
 export interface UsenetHistoryRequestParams {
-  serviceId: string;
+  appId: string;
   offset: number;
   limit: number;
 }
@@ -25,25 +25,25 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   try {
     const configName = getCookie('config-name', { req });
     const config = getConfig(configName?.toString() ?? 'default');
-    const { limit, offset, serviceId } = req.query as any as UsenetHistoryRequestParams;
+    const { limit, offset, appId } = req.query as any as UsenetHistoryRequestParams;
 
-    const service = config.services.find((x) => x.id === serviceId);
+    const app = config.apps.find((x) => x.id === appId);
 
-    if (!service) {
-      throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
+    if (!app) {
+      throw new Error(`App with ID "${req.query.appId}" could not be found.`);
     }
 
     let response: UsenetHistoryResponse;
-    switch (service.integration?.type) {
+    switch (app.integration?.type) {
       case 'nzbGet': {
-        const url = new URL(service.url);
+        const url = new URL(app.url);
         const options = {
           host: url.hostname,
           port: url.port,
           login:
-            service.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+            app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
           hash:
-            service.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+            app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);
@@ -77,11 +77,11 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       case 'sabnzbd': {
-        const { origin } = new URL(service.url);
+        const { origin } = new URL(app.url);
 
-        const apiKey = service.integration.properties.find((x) => x.field === 'apiKey')?.value;
+        const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
         if (!apiKey) {
-          throw new Error(`API Key for service "${service.name}" is missing`);
+          throw new Error(`API Key for app "${app.name}" is missing`);
         }
 
         const history = await new Client(origin, apiKey).history(offset, limit);
@@ -100,7 +100,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       default:
-        throw new Error(`Service type "${service.integration?.type}" unrecognized.`);
+        throw new Error(`App type "${app.integration?.type}" unrecognized.`);
     }
 
     return res.status(200).json(response);

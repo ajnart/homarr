@@ -7,7 +7,7 @@ export const getFallbackConfig = (name?: string): BackendConfigType => ({
   },
   categories: [],
   integrations: {},
-  services: [],
+  apps: [],
   settings: {
     common: {
       searchEngine: {

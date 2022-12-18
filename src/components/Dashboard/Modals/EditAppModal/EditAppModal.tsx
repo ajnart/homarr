@@ -13,32 +13,32 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { ServiceType } from '../../../../types/service';
+import { AppType } from '../../../../types/app';
 import { AppearanceTab } from './Tabs/AppereanceTab/AppereanceTab';
 import { BehaviourTab } from './Tabs/BehaviourTab/BehaviourTab';
 import { GeneralTab } from './Tabs/GeneralTab/GeneralTab';
 import { IntegrationTab } from './Tabs/IntegrationTab/IntegrationTab';
 import { NetworkTab } from './Tabs/NetworkTab/NetworkTab';
-import { DebouncedServiceIcon } from './Tabs/Shared/DebouncedServiceIcon';
-import { EditServiceModalTab } from './Tabs/type';
+import { DebouncedAppIcon } from './Tabs/Shared/DebouncedAppIcon';
+import { EditAppModalTab } from './Tabs/type';
 
-const serviceUrlRegex =
+const appUrlRegex =
   '(https?://(?:www.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|https?://(?:www.|(?!www))[a-zA-Z0-9]+.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
 
-export const EditServiceModal = ({
+export const EditAppModal = ({
   context,
   id,
   innerProps,
-}: ContextModalProps<{ service: ServiceType; allowServiceNamePropagation: boolean }>) => {
+}: ContextModalProps<{ app: AppType; allowAppNamePropagation: boolean }>) => {
   const { t } = useTranslation();
   const { name: configName, config } = useConfigContext();
   const updateConfig = useConfigStore((store) => store.updateConfig);
-  const [allowServiceNamePropagation, setAllowServiceNamePropagation] = useState<boolean>(
-    innerProps.allowServiceNamePropagation
+  const [allowAppNamePropagation, setAllowAppNamePropagation] = useState<boolean>(
+    innerProps.allowAppNamePropagation
   );
 
-  const form = useForm<ServiceType>({
-    initialValues: innerProps.service,
+  const form = useForm<AppType>({
+    initialValues: innerProps.app,
     validate: {
       name: (name) => (!name ? 'Name is required' : null),
       url: (url) => {
@@ -46,7 +46,7 @@ export const EditServiceModal = ({
           return 'Url is required';
         }
 
-        if (!url.match(serviceUrlRegex)) {
+        if (!url.match(appUrlRegex)) {
           return 'Value is not a valid url';
         }
 
@@ -67,7 +67,7 @@ export const EditServiceModal = ({
             return null;
           }
 
-          if (!url.match(serviceUrlRegex)) {
+          if (!url.match(appUrlRegex)) {
             return 'Uri override is not a valid uri';
           }
 
@@ -78,21 +78,21 @@ export const EditServiceModal = ({
     validateInputOnChange: true,
   });
 
-  const onSubmit = (values: ServiceType) => {
+  const onSubmit = (values: AppType) => {
     if (!configName) {
       return;
     }
 
     updateConfig(configName, (previousConfig) => ({
       ...previousConfig,
-      services: [...previousConfig.services.filter((x) => x.id !== form.values.id), form.values],
+      apps: [...previousConfig.apps.filter((x) => x.id !== form.values.id), form.values],
     }));
 
     // also close the parent modal
     context.closeAll();
   };
 
-  const [activeTab, setActiveTab] = useState<EditServiceModalTab>('general');
+  const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');
 
   const closeModal = () => {
     context.closeModal(id);
@@ -125,17 +125,17 @@ export const EditServiceModal = ({
           </Alert>
         ))}
       <Stack spacing={0} align="center" my="lg">
-        <DebouncedServiceIcon form={form} width={120} height={120} />
+        <DebouncedAppIcon form={form} width={120} height={120} />
 
         <Text align="center" weight="bold" size="lg" mt="md">
-          {form.values.name ?? 'New Service'}
+          {form.values.name ?? 'New App'}
         </Text>
       </Stack>
 
       <form onSubmit={form.onSubmit(onSubmit)}>
         <Tabs
           value={activeTab}
-          onTabChange={(tab) => setActiveTab(tab as EditServiceModalTab)}
+          onTabChange={(tab) => setActiveTab(tab as EditAppModalTab)}
           defaultValue="general"
         >
           <Tabs.List grow>
@@ -181,8 +181,8 @@ export const EditServiceModal = ({
           <NetworkTab form={form} />
           <AppearanceTab
             form={form}
-            disallowServiceNameProgagation={() => setAllowServiceNamePropagation(false)}
-            allowServiceNamePropagation={allowServiceNamePropagation}
+            disallowAppNameProgagation={() => setAllowAppNamePropagation(false)}
+            allowAppNamePropagation={allowAppNamePropagation}
           />
           <IntegrationTab form={form} />
         </Tabs>
@@ -199,9 +199,3 @@ export const EditServiceModal = ({
     </>
   );
 };
-
-const useStyles = createStyles(() => ({
-  serviceImage: {
-    objectFit: 'contain',
-  },
-}));

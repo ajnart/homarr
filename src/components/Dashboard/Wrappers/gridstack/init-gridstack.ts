@@ -1,7 +1,7 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
 import { IntegrationsType } from '../../../../types/integration';
-import { ServiceType } from '../../../../types/service';
+import { AppType } from '../../../../types/app';
 
 export const initializeGridstack = (
   areaType: 'wrapper' | 'category' | 'sidebar',
@@ -9,7 +9,7 @@ export const initializeGridstack = (
   gridRef: MutableRefObject<GridStack | undefined>,
   itemRefs: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>,
   areaId: string,
-  items: ServiceType[],
+  items: AppType[],
   integrations: IntegrationsType,
   isEditMode: boolean,
   events: {

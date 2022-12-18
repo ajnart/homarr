@@ -43,8 +43,8 @@ export default async function addToHomarr(
 ) {
   setConfig({
     ...config,
-    services: [
-      ...config.services,
+    apps: [
+      ...config.apps,
       {
         name: container.Names[0].substring(1),
         id: container.Id,

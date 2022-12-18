@@ -94,7 +94,7 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
               <Text color="dimmed" size="xs" align="center">
                 Only for
                 <br />
-                services &<br />
+                apps &<br />
                 integrations
               </Text>
             </Flex>
@@ -115,7 +115,7 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
               <Text color="dimmed" size="xs" align="center">
                 Only for
                 <br />
-                services &<br />
+                apps &<br />
                 integrations
               </Text>
             </Flex>
@@ -126,13 +126,13 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
       <Stack spacing="xs">
         <Checkbox
           label="Enable left sidebar"
-          description="Optional. Can be used for services and integrations only"
+          description="Optional. Can be used for apps and integrations only"
           checked={leftSidebar}
           onChange={(ev) => handleChange('enabledLeftSidebar', ev, setLeftSidebar)}
         />
         <Checkbox
           label="Enable right sidebar"
-          description="Optional. Can be used for services and integrations only"
+          description="Optional. Can be used for apps and integrations only"
           checked={rightSidebar}
           onChange={(ev) => handleChange('enabledRightSidebar', ev, setRightSidebar)}
         />

@@ -1,4 +1,4 @@
-export type EditServiceModalTab =
+export type EditAppModalTab =
   | 'general'
   | 'behaviour'
   | 'network'

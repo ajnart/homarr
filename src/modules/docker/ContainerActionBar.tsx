@@ -20,7 +20,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { tryMatchService } from '../../tools/addToHomarr';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
 import { useConfig } from '../../tools/state';
-import { ServiceType } from '../../types/service';
+import { AppType } from '../../types/app';
 
 let t: TFunction<'modules/docker', undefined>;
 
@@ -163,7 +163,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         disabled={selected.length === 0 || selected.length > 1}
         onClick={() => {
           const containerUrl = `http://localhost:${selected[0].Ports[0].PublicPort}`;
-          openContextModalGeneric<{ service: ServiceType }>({
+          openContextModalGeneric<{ service: AppType }>({
             modal: 'editService',
             innerProps: {
               service: {

@@ -21,17 +21,17 @@ import { ICON_PICKER_SLICE_LIMIT } from '../../../../../../../../data/constants'
 import { useRepositoryIconsQuery } from '../../../../../../../tools/hooks/useRepositoryIconsQuery';
 import { IconSelectorItem } from '../../../../../../../types/iconSelector/iconSelectorItem';
 import { WalkxcodeRepositoryIcon } from '../../../../../../../types/iconSelector/repositories/walkxcodeIconRepository';
-import { ServiceType } from '../../../../../../../types/service';
+import { AppType } from '../../../../../../../types/app';
 
 interface IconSelectorProps {
-  form: UseFormReturnType<ServiceType, (values: ServiceType) => ServiceType>;
+  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
   onChange: (icon: IconSelectorItem) => void;
-  allowServiceNamePropagation: boolean;
+  allowAppNamePropagation: boolean;
 }
 
 export const IconSelector = ({
   onChange,
-  allowServiceNamePropagation,
+  allowAppNamePropagation,
   form,
 }: IconSelectorProps) => {
   const { data, isLoading } = useRepositoryIconsQuery<WalkxcodeRepositoryIcon>({
@@ -48,7 +48,7 @@ export const IconSelector = ({
   const [debouncedValue] = useDebouncedValue(form.values.name, 500);
 
   useEffect(() => {
-    if (allowServiceNamePropagation !== true) {
+    if (allowAppNamePropagation !== true) {
       return;
     }
 

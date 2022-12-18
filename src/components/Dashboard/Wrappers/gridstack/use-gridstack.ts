@@ -12,13 +12,13 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useResize } from '../../../../hooks/use-resize';
 import { IntegrationsType } from '../../../../types/integration';
-import { ServiceType } from '../../../../types/service';
+import { AppType } from '../../../../types/app';
 import { TileBaseType } from '../../../../types/tile';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
 
 interface UseGristackReturnType {
-  items: ServiceType[];
+  items: AppType[];
   integrations: Partial<IntegrationsType>;
   refs: {
     wrapper: RefObject<HTMLDivElement>;
@@ -45,7 +45,7 @@ export const useGridstack = (
 
   const items = useMemo(
     () =>
-      config?.services.filter(
+      config?.apps.filter(
         (x) =>
           x.area.type === areaType &&
           (x.area.type === 'sidebar'
@@ -100,8 +100,8 @@ export const useGridstack = (
         // Updates the config and defines the new position of the item
         updateConfig(configName, (previous) => {
           const currentItem =
-            itemType === 'service'
-              ? previous.services.find((x) => x.id === itemId)
+            itemType === 'app'
+              ? previous.apps.find((x) => x.id === itemId)
               : previous.integrations[itemId as keyof typeof previous.integrations];
           if (!currentItem) return previous;
 
@@ -116,12 +116,12 @@ export const useGridstack = (
             },
           };
 
-          if (itemType === 'service') {
+          if (itemType === 'app') {
             return {
               ...previous,
-              services: [
-                ...previous.services.filter((x) => x.id !== itemId),
-                { ...(currentItem as ServiceType) },
+              apps: [
+                ...previous.apps.filter((x) => x.id !== itemId),
+                { ...(currentItem as AppType) },
               ],
             };
           }
@@ -147,8 +147,8 @@ export const useGridstack = (
         // Updates the config and defines the new position and wrapper of the item
         updateConfig(configName, (previous) => {
           const currentItem =
-            itemType === 'service'
-              ? previous.services.find((x) => x.id === itemId)
+            itemType === 'app'
+              ? previous.apps.find((x) => x.id === itemId)
               : previous.integrations[itemId as keyof typeof previous.integrations];
 
           if (!currentItem) return previous;
@@ -180,12 +180,12 @@ export const useGridstack = (
             },
           };
 
-          if (itemType === 'service') {
+          if (itemType === 'app') {
             return {
               ...previous,
-              services: [
-                ...previous.services.filter((x) => x.id !== itemId),
-                { ...(currentItem as ServiceType) },
+              apps: [
+                ...previous.apps.filter((x) => x.id !== itemId),
+                { ...(currentItem as AppType) },
               ],
             };
           }

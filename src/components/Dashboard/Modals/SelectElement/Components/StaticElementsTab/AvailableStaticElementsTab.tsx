@@ -16,7 +16,7 @@ export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps)
 
       <Text mb="md" color="dimmed">
         Static elements provide you additional control over your dashboard. They are static, because
-        they don&apos;t integrate with any services and their content never changes.
+        they don&apos;t integrate with any apps and their content never changes.
       </Text>
 
       <Grid>

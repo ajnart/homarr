@@ -19,7 +19,7 @@ import { useTranslation } from 'next-i18next';
 import { UsenetQueueList } from './UsenetQueueList';
 import { UsenetHistoryList } from './UsenetHistoryList';
 import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
-import { ServiceIntegrationType } from '../../types/service';
+import { AppIntegrationType } from '../../types/app';
 import { useConfigContext } from '../../config/provider';
 import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
 import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
@@ -27,31 +27,31 @@ import { humanFileSize } from '../../tools/humanFileSize';
 
 dayjs.extend(duration);
 
-const downloadServiceTypes: ServiceIntegrationType['type'][] = ['sabnzbd', 'nzbGet'];
+const downloadAppTypes: AppIntegrationType['type'][] = ['sabnzbd', 'nzbGet'];
 
 interface UseNetTileProps extends BaseTileProps {}
 
 export const UseNetTile = ({ className }: UseNetTileProps) => {
   const { t } = useTranslation('modules/usenet');
   const { config } = useConfigContext();
-  const downloadServices =
-    config?.services.filter(
-      (x) => x.integration && downloadServiceTypes.includes(x.integration.type)
+  const downloadApps =
+    config?.apps.filter(
+      (x) => x.integration && downloadAppTypes.includes(x.integration.type)
     ) ?? [];
 
-  const [selectedServiceId, setSelectedService] = useState<string | null>(downloadServices[0]?.id);
-  const { data } = useGetUsenetInfo({ serviceId: selectedServiceId! });
+  const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
+  const { data } = useGetUsenetInfo({ appId: selectedAppId! });
 
   useEffect(() => {
-    if (!selectedServiceId && downloadServices.length) {
-      setSelectedService(downloadServices[0].id);
+    if (!selectedAppId && downloadApps.length) {
+      setSelectedApp(downloadApps[0].id);
     }
-  }, [downloadServices, selectedServiceId]);
+  }, [downloadApps, selectedAppId]);
 
-  const { mutate: pause } = usePauseUsenetQueue({ serviceId: selectedServiceId! });
-  const { mutate: resume } = useResumeUsenetQueue({ serviceId: selectedServiceId! });
+  const { mutate: pause } = usePauseUsenetQueue({ appId: selectedAppId! });
+  const { mutate: resume } = useResumeUsenetQueue({ appId: selectedAppId! });
 
-  if (downloadServices.length === 0) {
+  if (downloadApps.length === 0) {
     return (
       <HomarrCardWrapper className={className}>
         <Stack>
@@ -64,7 +64,7 @@ export const UseNetTile = ({ className }: UseNetTileProps) => {
     );
   }
 
-  if (!selectedServiceId) {
+  if (!selectedAppId) {
     return null;
   }
 
@@ -90,16 +90,16 @@ export const UseNetTile = ({ className }: UseNetTileProps) => {
             </Group>
           )}
         </Tabs.List>
-        {downloadServices.length > 1 && (
+        {downloadApps.length > 1 && (
           <Select
-            value={selectedServiceId}
-            onChange={setSelectedService}
+            value={selectedAppId}
+            onChange={setSelectedApp}
             ml="xs"
-            data={downloadServices.map((service) => ({ value: service.id, label: service.name }))}
+            data={downloadApps.map((app) => ({ value: app.id, label: app.name }))}
           />
         )}
         <Tabs.Panel value="queue">
-          <UsenetQueueList serviceId={selectedServiceId} />
+          <UsenetQueueList appId={selectedAppId} />
           {!data ? null : data.paused ? (
             <Button uppercase onClick={() => resume()} radius="xl" size="xs" fullWidth mt="sm">
               <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
@@ -112,7 +112,7 @@ export const UseNetTile = ({ className }: UseNetTileProps) => {
           )}
         </Tabs.Panel>
         <Tabs.Panel value="history" style={{ display: 'flex', flexDirection: 'column' }}>
-          <UsenetHistoryList serviceId={selectedServiceId} />
+          <UsenetHistoryList appId={selectedAppId} />
         </Tabs.Panel>
       </Tabs>
     </HomarrCardWrapper>

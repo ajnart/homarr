@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
-import { ServiceType } from '../../../../../../types/service';
+import { AppType } from '../../../../../../types/app';
 import { useStyles } from '../Shared/styles';
 
 interface AvailableElementTypesProps {
@@ -24,16 +24,16 @@ export const AvailableElementTypes = ({
       <Space h="lg" />
       <Group spacing="md" grow>
         <ElementItem
-          name="Service"
+          name="Apps"
           icon={<IconBox size={40} strokeWidth={1.3} />}
           onClick={() => {
-            openContextModalGeneric<{ service: ServiceType; allowServiceNamePropagation: boolean }>(
+            openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>(
               {
-                modal: 'editService',
+                modal: 'editApp',
                 innerProps: {
-                  service: {
+                  app: {
                     id: uuidv4(),
-                    name: 'Your service',
+                    name: 'Your app',
                     url: 'https://homarr.dev',
                     appearance: {
                       iconUrl: '/imgs/logo/logo.png',
@@ -67,7 +67,7 @@ export const AvailableElementTypes = ({
                       properties: [],
                     },
                   },
-                  allowServiceNamePropagation: true,
+                  allowAppNamePropagation: true,
                 },
                 size: 'xl',
               }

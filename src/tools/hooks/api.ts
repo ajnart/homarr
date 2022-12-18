@@ -18,7 +18,7 @@ const POLLING_INTERVAL = 2000;
 
 export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
   useQuery(
-    ['usenetInfo', params.serviceId],
+    ['usenetInfo', params.appId],
     async () =>
       (
         await axios.get<UsenetInfoResponse>('/api/modules/usenet', {
@@ -29,7 +29,7 @@ export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
-      enabled: !!params.serviceId,
+      enabled: !!params.appId,
     }
   );
 
@@ -80,14 +80,14 @@ export const usePauseUsenetQueue = (params: UsenetPauseRequestParams) =>
       ).data,
     {
       async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.serviceId]);
+        await queryClient.cancelQueries(['usenetInfo', params.appId]);
         const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
           'usenetInfo',
-          params.serviceId,
+          params.appId,
         ]);
 
         if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.serviceId], {
+          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
             ...previousInfo,
             paused: true,
           });
@@ -98,13 +98,13 @@ export const usePauseUsenetQueue = (params: UsenetPauseRequestParams) =>
       onError(err, _, context) {
         if (context?.previousInfo) {
           queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.serviceId],
+            ['usenetInfo', params.appId],
             context.previousInfo
           );
         }
       },
       onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.serviceId]);
+        queryClient.invalidateQueries(['usenetInfo', params.appId]);
       },
     }
   );
@@ -124,14 +124,14 @@ export const useResumeUsenetQueue = (params: UsenetResumeRequestParams) =>
       ).data,
     {
       async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.serviceId]);
+        await queryClient.cancelQueries(['usenetInfo', params.appId]);
         const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
           'usenetInfo',
-          params.serviceId,
+          params.appId,
         ]);
 
         if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.serviceId], {
+          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
             ...previousInfo,
             paused: false,
           });
@@ -142,13 +142,13 @@ export const useResumeUsenetQueue = (params: UsenetResumeRequestParams) =>
       onError(err, _, context) {
         if (context?.previousInfo) {
           queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.serviceId],
+            ['usenetInfo', params.appId],
             context.previousInfo
           );
         }
       },
       onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.serviceId]);
+        queryClient.invalidateQueries(['usenetInfo', params.appId]);
       },
     }
   );
