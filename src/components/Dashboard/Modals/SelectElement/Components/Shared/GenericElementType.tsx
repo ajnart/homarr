@@ -6,6 +6,7 @@ import { useStyles } from './styles';
 
 interface GenericAvailableElementTypeProps {
   name: string;
+  handleAddition: () => Promise<void>;
   description?: string;
   image: string | TablerIcon;
   disabled?: boolean;
@@ -16,6 +17,7 @@ export const GenericAvailableElementType = ({
   description,
   image,
   disabled,
+  handleAddition,
 }: GenericAvailableElementTypeProps) => {
   const { classes } = useStyles();
 
@@ -39,7 +41,15 @@ export const GenericAvailableElementType = ({
               </Text>
             )}
           </Stack>
-          <Button disabled={disabled} variant="light" size="xs" mt="auto" radius="md" fullWidth>
+          <Button
+            disabled={disabled}
+            onClick={handleAddition}
+            variant="light"
+            size="xs"
+            mt="auto"
+            radius="md"
+            fullWidth
+          >
             Add to Dashboard
           </Button>
         </Stack>

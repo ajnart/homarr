@@ -1,14 +1,7 @@
 import { Grid, Text } from '@mantine/core';
-import {
-  IconArrowsUpDown,
-  IconCalendarTime,
-  IconClock,
-  IconCloudRain,
-  IconFileDownload,
-} from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '../../../../../../config/provider';
 import widgets from '../../../../../../widgets';
-import { GenericAvailableElementType } from '../Shared/GenericElementType';
 import { SelectorBackArrow } from '../Shared/SelectorBackArrow';
 import { WidgetElementType } from './WidgetElementType';
 
@@ -20,6 +13,7 @@ export const AvailableIntegrationElements = ({
   onClickBack,
 }: AvailableIntegrationElementsProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
+  const activeWidgets = useConfigContext().config?.widgets ?? [];
   return (
     <>
       <SelectorBackArrow onClickBack={onClickBack} />
@@ -30,9 +24,11 @@ export const AvailableIntegrationElements = ({
       </Text>
 
       <Grid>
-        {Object.entries(widgets).map(([k, v]) => (
-          <WidgetElementType key={k} id={k} image={v.icon} />
-        ))}
+        {Object.entries(widgets)
+          .filter(([widgetId]) => !activeWidgets.some((aw) => aw.id === widgetId))
+          .map(([k, v]) => (
+            <WidgetElementType key={k} id={k} image={v.icon} widget={v} />
+          ))}
       </Grid>
     </>
   );
