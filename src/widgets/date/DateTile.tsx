@@ -30,17 +30,17 @@ const definition = defineWidget({
 export type IDateWidget = IWidget<typeof definition['id'], typeof definition>;
 
 interface DateTileProps extends BaseTileProps {
-  module: IDateWidget; // TODO: change to new type defined through widgetDefinition
+  widget: IDateWidget; // TODO: change to new type defined through widgetDefinition
 }
 
-function DateTile({ className, module }: DateTileProps) {
+function DateTile({ className, widget }: DateTileProps) {
   const date = useDateState();
-  const formatString = module.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
+  const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
 
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <HomarrCardWrapper className={className}>
-      <WidgetsMenu integration={definition.id} module={module} />
+      <WidgetsMenu integration={definition.id} widget={widget} />
       <Center style={{ height: '100%' }}>
         <Stack spacing="xs">
           <Title>{dayjs(date).format(formatString)}</Title>

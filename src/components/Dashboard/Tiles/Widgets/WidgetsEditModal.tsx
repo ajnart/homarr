@@ -47,15 +47,15 @@ export const WidgetsEditModal = ({
   const handleSave = () => {
     updateConfig(configName, (prev) => ({
       ...prev,
-      integrations: {
-        ...prev.integrations,
+      widgets: {
+        ...prev.widgets,
         [innerProps.integration]:
-          'properties' in (prev.integrations[innerProps.integration] ?? {})
+          'properties' in (prev.widgets[innerProps.integration] ?? {})
             ? {
-                ...prev.integrations[innerProps.integration],
+                ...prev.widgets[innerProps.integration],
                 properties: moduleProperties,
               }
-            : prev.integrations[innerProps.integration],
+            : prev.widgets[innerProps.integration],
       },
     }));
     context.closeModal(id);

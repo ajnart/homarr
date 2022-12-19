@@ -1,8 +1,8 @@
 import { CategoryType } from './category';
 import { WrapperType } from './wrapper';
 import { ConfigAppType, AppType } from './app';
-import { IntegrationsType } from './integration';
 import { SettingsType } from './settings';
+import { IWidget } from '../widgets/widgets';
 
 export interface ConfigType {
   schemaVersion: string;
@@ -10,7 +10,7 @@ export interface ConfigType {
   categories: CategoryType[];
   wrappers: WrapperType[];
   apps: AppType[];
-  integrations: IntegrationsType;
+  widgets: IWidget<string, any>[];
   settings: SettingsType;
 }
 

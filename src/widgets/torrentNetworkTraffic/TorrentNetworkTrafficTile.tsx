@@ -21,10 +21,10 @@ const definition = defineWidget({
 export type ITorrentNetworkTraffic = IWidget<typeof definition['id'], typeof definition>;
 
 interface TorrentNetworkTrafficTileProps extends BaseTileProps {
-  module: ITorrentNetworkTraffic; // TODO: change to new type defined through widgetDefinition
+  widget: ITorrentNetworkTraffic; // TODO: change to new type defined through widgetDefinition
 }
 
-function TorrentNetworkTrafficTile({ className, module }: TorrentNetworkTrafficTileProps) {
+function TorrentNetworkTrafficTile({ className, widget }: TorrentNetworkTrafficTileProps) {
   return <HomarrCardWrapper>TorrentNetworkTraffic</HomarrCardWrapper>;
 }
 

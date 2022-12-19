@@ -2,7 +2,7 @@ import { ReactNode, RefObject } from 'react';
 
 interface GridstackTileWrapperProps {
   id: string;
-  type: 'app' | 'module';
+  type: 'app' | 'widget';
   x?: number;
   y?: number;
   width?: number;

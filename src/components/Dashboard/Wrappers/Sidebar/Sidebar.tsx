@@ -11,7 +11,7 @@ interface DashboardSidebarProps {
 }
 
 export const DashboardSidebar = ({ location }: DashboardSidebarProps) => {
-  const { refs, items, integrations } = useGridstack('sidebar', location);
+  const { refs, items, widgets } = useGridstack('sidebar', location);
 
   const minRow = useMinRowForFullHeight(refs.wrapper);
 
@@ -47,21 +47,23 @@ export const DashboardSidebar = ({ location }: DashboardSidebarProps) => {
             </GridstackTileWrapper>
           );
         })}
-        {Object.entries(integrations).map(([k, v]) => {
-          const widget = Widgets[k as keyof typeof Widgets] as IWidgetDefinition | undefined;
-          if (!widget) return null;
+        {widgets.map((widget) => {
+          const definition = Widgets[widget.id as keyof typeof Widgets] as
+            | IWidgetDefinition
+            | undefined;
+          if (!definition) return null;
 
           return (
             <GridstackTileWrapper
-              type="module"
-              key={k}
-              itemRef={refs.items.current[k]}
-              id={widget.id}
-              {...widget.gridstack}
-              {...v.shape.location}
-              {...v.shape.size}
+              type="widget"
+              key={widget.id}
+              itemRef={refs.items.current[widget.id]}
+              id={definition.id}
+              {...definition.gridstack}
+              {...widget.shape.location}
+              {...widget.shape.size}
             >
-              <widget.component className="grid-stack-item-content" module={v} />
+              <definition.component className="grid-stack-item-content" widget={widget} />
             </GridstackTileWrapper>
           );
         })}

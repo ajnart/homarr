@@ -50,24 +50,24 @@ const definition = defineWidget({
 export type IDashDotTile = IWidget<typeof definition['id'], typeof definition>;
 
 interface DashDotTileProps extends BaseTileProps {
-  module: IDashDotTile; // TODO: change to new type defined through widgetDefinition
+  widget: IDashDotTile; // TODO: change to new type defined through widgetDefinition
 }
 
-function DashDotTile({ module, className }: DashDotTileProps) {
+function DashDotTile({ widget, className }: DashDotTileProps) {
   const { classes } = useDashDotTileStyles();
   const { t } = useTranslation('modules/dashdot');
 
-  const dashDotUrl = module?.properties.url;
+  const dashDotUrl = widget?.properties.url;
 
-  const { data: info } = useDashDotInfo();
+  const { data: info } = useDashDotInfo({ dashDotUrl });
 
-  const graphs = module?.properties.graphs.map((g) => ({
+  const graphs = widget?.properties.graphs.map((g) => ({
     id: g,
     name: t(`card.graphs.${g}.title`),
     twoSpan: ['network', 'gpu'].includes(g),
     isMultiView:
-      (g === 'cpu' && module.properties.cpuMultiView) ||
-      (g === 'storage' && module.properties.storageMultiView),
+      (g === 'cpu' && widget.properties.cpuMultiView) ||
+      (g === 'storage' && widget.properties.storageMultiView),
   }));
 
   const heading = (
@@ -78,7 +78,7 @@ function DashDotTile({ module, className }: DashDotTileProps) {
 
   const menu = (
     // TODO: add widgetWrapper that is generic and uses the definition
-    <WidgetsMenu module={module} integration={definition.id} />
+    <WidgetsMenu widget={widget} integration={definition.id} />
   );
 
   if (!dashDotUrl) {
@@ -93,7 +93,7 @@ function DashDotTile({ module, className }: DashDotTileProps) {
     );
   }
 
-  const isCompact = module?.properties.useCompactView ?? false;
+  const isCompact = widget?.properties.useCompactView ?? false;
 
   const isCompactStorageVisible = graphs?.some((g) => g.id === 'storage' && isCompact);
 
@@ -130,14 +130,14 @@ function DashDotTile({ module, className }: DashDotTileProps) {
   );
 }
 
-const useDashDotInfo = () => {
-  const { name: configName, config } = useConfigContext();
+const useDashDotInfo = ({ dashDotUrl }: { dashDotUrl: string }) => {
+  const { name: configName } = useConfigContext();
   return useQuery({
     queryKey: [
       'dashdot/info',
       {
         configName,
-        url: config?.integrations.dashDot?.properties.url,
+        dashDotUrl,
       },
     ],
     queryFn: () => fetchDashDotInfo(configName),

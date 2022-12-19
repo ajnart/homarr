@@ -20,10 +20,10 @@ const definition = defineWidget({
 export type IBitTorrent = IWidget<typeof definition['id'], typeof definition>;
 
 interface BitTorrentTileProps extends BaseTileProps {
-  module: IBitTorrent; // TODO: change to new type defined through widgetDefinition
+  widget: IBitTorrent; // TODO: change to new type defined through widgetDefinition
 }
 
-function BitTorrentTile({ className, module }: BitTorrentTileProps) {
+function BitTorrentTile({ className, widget }: BitTorrentTileProps) {
   return <HomarrCardWrapper>Bit Torrent</HomarrCardWrapper>;
 }
 

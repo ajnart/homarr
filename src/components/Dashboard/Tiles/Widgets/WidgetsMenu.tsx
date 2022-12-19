@@ -8,18 +8,18 @@ import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 
 export type WidgetChangePositionModalInnerProps = {
   integration: string;
-  module: IWidget<string, any>;
+  widget: IWidget<string, any>;
 };
 
 interface WidgetsMenuProps {
   integration: string;
-  module: IWidget<string, any> | undefined;
+  widget: IWidget<string, any> | undefined;
 }
 
-export const WidgetsMenu = ({ integration, module }: WidgetsMenuProps) => {
+export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const { t } = useTranslation(`modules/${integration}`);
 
-  if (!module) return null;
+  if (!widget) return null;
 
   const handleDeleteClick = () => {
     openContextModalGeneric<WidgetsRemoveModalInnerProps>({
@@ -38,7 +38,7 @@ export const WidgetsMenu = ({ integration, module }: WidgetsMenuProps) => {
       title: null,
       innerProps: {
         integration,
-        module,
+        widget: widget,
       },
     });
   };
@@ -49,7 +49,7 @@ export const WidgetsMenu = ({ integration, module }: WidgetsMenuProps) => {
       title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
       innerProps: {
         integration,
-        options: module.properties,
+        options: widget.properties,
       },
     });
   };
@@ -59,7 +59,7 @@ export const WidgetsMenu = ({ integration, module }: WidgetsMenuProps) => {
       handleClickEdit={handleEditClick}
       handleClickChangePosition={handleChangeSizeClick}
       handleClickDelete={handleDeleteClick}
-      displayEdit={module.properties !== undefined}
+      displayEdit={widget.properties !== undefined}
     />
   );
 };

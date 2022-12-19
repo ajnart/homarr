@@ -58,7 +58,7 @@ const useDashDotStorage = () => {
       'dashdot/storage',
       {
         configName,
-        url: config?.integrations.dashDot?.properties.url,
+        url: config?.widgets.dashDot?.properties.url,
       },
     ],
     queryFn: () => fetchDashDotStorageLoad(configName),

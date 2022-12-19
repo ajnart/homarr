@@ -11,15 +11,14 @@ import {
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useResize } from '../../../../hooks/use-resize';
-import { IntegrationsType } from '../../../../types/integration';
 import { AppType } from '../../../../types/app';
-import { TileBaseType } from '../../../../types/tile';
+import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
 
 interface UseGristackReturnType {
   items: AppType[];
-  integrations: Partial<IntegrationsType>;
+  widgets: IWidget<string, any>[];
   refs: {
     wrapper: RefObject<HTMLDivElement>;
     items: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>;
@@ -54,32 +53,24 @@ export const useGridstack = (
       ) ?? [],
     [config]
   );
-  const integrations = useMemo(() => {
-    if (!config) return;
-    return (Object.entries(config.integrations) as [keyof IntegrationsType, TileBaseType][])
-      .filter(
-        ([k, v]) =>
-          v.area.type === areaType &&
-          (v.area.type === 'sidebar'
-            ? v.area.properties.location === areaId
-            : v.area.properties.id === areaId)
-      )
-      .reduce((prev, [k, v]) => {
-        prev[k] = v as unknown as any;
-        return prev;
-      }, {} as IntegrationsType);
+  const widgets = useMemo(() => {
+    if (!config) return [];
+    return config.widgets.filter(
+      (w) =>
+        w.area.type === areaType &&
+        (w.area.type === 'sidebar'
+          ? w.area.properties.location === areaId
+          : w.area.properties.id === areaId)
+    );
   }, [config]);
 
   // define items in itemRefs for easy access and reference to items
-  if (
-    Object.keys(itemRefs.current).length !==
-    items.length + Object.keys(integrations ?? {}).length
-  ) {
+  if (Object.keys(itemRefs.current).length !== items.length + (widgets ?? []).length) {
     items.forEach(({ id }: { id: keyof typeof itemRefs.current }) => {
       itemRefs.current[id] = itemRefs.current[id] || createRef();
     });
-    Object.keys(integrations ?? {}).forEach((k) => {
-      itemRefs.current[k] = itemRefs.current[k] || createRef();
+    (widgets ?? []).forEach(({ id }) => {
+      itemRefs.current[id] = itemRefs.current[id] || createRef();
     });
   }
 
@@ -102,7 +93,7 @@ export const useGridstack = (
           const currentItem =
             itemType === 'app'
               ? previous.apps.find((x) => x.id === itemId)
-              : previous.integrations[itemId as keyof typeof previous.integrations];
+              : previous.widgets.find((x) => x.id === itemId);
           if (!currentItem) return previous;
 
           currentItem.shape = {
@@ -126,11 +117,12 @@ export const useGridstack = (
             };
           }
 
-          const integrationsCopy = { ...previous.integrations };
-          integrationsCopy[itemId as keyof typeof integrationsCopy] = currentItem as any;
           return {
             ...previous,
-            integrations: integrationsCopy,
+            widgets: [
+              ...previous.widgets.filter((x) => x.id !== itemId),
+              { ...(currentItem as IWidget<string, any>) },
+            ],
           };
         });
       }
@@ -149,8 +141,7 @@ export const useGridstack = (
           const currentItem =
             itemType === 'app'
               ? previous.apps.find((x) => x.id === itemId)
-              : previous.integrations[itemId as keyof typeof previous.integrations];
-
+              : previous.widgets.find((x) => x.id === itemId);
           if (!currentItem) return previous;
 
           if (areaType === 'sidebar') {
@@ -190,11 +181,12 @@ export const useGridstack = (
             };
           }
 
-          const integrationsCopy = { ...previous.integrations };
-          integrationsCopy[itemId as keyof typeof integrationsCopy] = currentItem as any;
           return {
             ...previous,
-            integrations: integrationsCopy,
+            widgets: [
+              ...previous.widgets.filter((x) => x.id !== itemId),
+              { ...(currentItem as IWidget<string, any>) },
+            ],
           };
         });
       }
@@ -209,18 +201,18 @@ export const useGridstack = (
       itemRefs,
       areaId,
       items,
-      integrations ?? {},
+      widgets ?? [],
       isEditMode,
       {
         onChange,
         onAdd,
       }
     );
-  }, [items.length, wrapperRef.current, Object.keys(integrations ?? {}).length]);
+  }, [items.length, wrapperRef.current, (widgets ?? []).length]);
 
   return {
     items,
-    integrations: integrations ?? {},
+    widgets: widgets ?? [],
     refs: {
       items: itemRefs,
       wrapper: wrapperRef,

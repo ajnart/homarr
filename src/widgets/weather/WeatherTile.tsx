@@ -33,11 +33,11 @@ const definition = defineWidget({
 export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
 
 interface WeatherTileProps extends BaseTileProps {
-  module: IWeatherWidget;
+  widget: IWeatherWidget;
 }
 
-function WeatherTile({ className, module }: WeatherTileProps) {
-  const { data: weather, isLoading, isError } = useWeatherForCity(module.properties.location);
+function WeatherTile({ className, widget }: WeatherTileProps) {
+  const { data: weather, isLoading, isError } = useWeatherForCity(widget.properties.location);
 
   if (isLoading) {
     return (
@@ -67,7 +67,7 @@ function WeatherTile({ className, module }: WeatherTileProps) {
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <HomarrCardWrapper className={className}>
-      <WidgetsMenu integration={definition.id} module={module} />
+      <WidgetsMenu integration={definition.id} widget={widget} />
       <Center style={{ height: '100%' }}>
         <Group spacing="md" noWrap align="center">
           <WeatherIcon code={weather!.current_weather.weathercode} />
@@ -75,7 +75,7 @@ function WeatherTile({ className, module }: WeatherTileProps) {
             <Title order={2}>
               {getPerferedUnit(
                 weather!.current_weather.temperature,
-                module.properties.displayInFahrenheit
+                widget.properties.displayInFahrenheit
               )}
             </Title>
             <Group spacing="xs" noWrap>
@@ -83,7 +83,7 @@ function WeatherTile({ className, module }: WeatherTileProps) {
                 <span>
                   {getPerferedUnit(
                     weather!.daily.temperature_2m_max[0],
-                    module.properties.displayInFahrenheit
+                    widget.properties.displayInFahrenheit
                   )}
                 </span>
                 <IconArrowUpRight size={16} style={{ right: 15 }} />
@@ -92,7 +92,7 @@ function WeatherTile({ className, module }: WeatherTileProps) {
                 <span>
                   {getPerferedUnit(
                     weather!.daily.temperature_2m_min[0],
-                    module.properties.displayInFahrenheit
+                    widget.properties.displayInFahrenheit
                   )}
                 </span>
                 <IconArrowDownRight size={16} />

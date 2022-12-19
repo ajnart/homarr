@@ -22,10 +22,10 @@ export const ChangeIntegrationPositionModal = ({
 
     updateConfig(configName, (prev) => ({
       ...prev,
-      integrations: {
-        ...prev.integrations,
+      widgets: {
+        ...prev.widgets,
         [innerProps.integration]: {
-          ...prev.integrations[innerProps.integration],
+          ...prev.widgets[innerProps.integration],
           shape: {
             location: {
               x,
@@ -55,10 +55,10 @@ export const ChangeIntegrationPositionModal = ({
       onCancel={handleCancel}
       heightData={heightData}
       widthData={widthData}
-      initialX={innerProps.module.shape.location.x}
-      initialY={innerProps.module.shape.location.y}
-      initialWidth={innerProps.module.shape.size.width}
-      initialHeight={innerProps.module.shape.size.height}
+      initialX={innerProps.widget.shape.location.x}
+      initialY={innerProps.widget.shape.location.y}
+      initialWidth={innerProps.widget.shape.size.width}
+      initialHeight={innerProps.widget.shape.size.height}
     />
   );
 };

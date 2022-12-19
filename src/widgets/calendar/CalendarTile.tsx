@@ -34,10 +34,10 @@ const definition = defineWidget({
 export type ICalendarWidget = IWidget<typeof definition['id'], typeof definition>;
 
 interface CalendarTileProps extends BaseTileProps {
-  module: ICalendarWidget;
+  widget: ICalendarWidget;
 }
 
-function CalendarTile({ className, module }: CalendarTileProps) {
+function CalendarTile({ className, widget }: CalendarTileProps) {
   const { secondaryColor } = useColorTheme();
   const { name: configName } = useConfigContext();
   const { classes, cx } = useStyles(secondaryColor);
@@ -64,7 +64,7 @@ function CalendarTile({ className, module }: CalendarTileProps) {
         size="xs"
         fullWidth
         onChange={() => {}}
-        firstDayOfWeek={module.properties.sundayStart ? 'sunday' : 'monday'}
+        firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
         dayStyle={(date) => ({
           margin: 1,
           backgroundColor: isToday(date)

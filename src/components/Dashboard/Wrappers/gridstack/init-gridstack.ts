@@ -1,7 +1,7 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
-import { IntegrationsType } from '../../../../types/integration';
 import { AppType } from '../../../../types/app';
+import { IWidget } from '../../../../widgets/widgets';
 
 export const initializeGridstack = (
   areaType: 'wrapper' | 'category' | 'sidebar',
@@ -10,7 +10,7 @@ export const initializeGridstack = (
   itemRefs: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>,
   areaId: string,
   items: AppType[],
-  integrations: IntegrationsType,
+  widgets: IWidget<string, any>[],
   isEditMode: boolean,
   events: {
     onChange: (changedNode: GridStackNode) => void;
@@ -60,9 +60,10 @@ export const initializeGridstack = (
     ({ id }) =>
       itemRefs.current[id] && grid.makeWidget(itemRefs.current[id].current as HTMLDivElement)
   );
-  Object.keys(integrations).forEach(
-    (key) =>
-      itemRefs.current[key] && grid.makeWidget(itemRefs.current[key].current as HTMLDivElement)
+  console.log('widgets', widgets, itemRefs.current);
+  widgets.forEach(
+    ({ id }) =>
+      itemRefs.current[id] && grid.makeWidget(itemRefs.current[id].current as HTMLDivElement)
   );
   grid.batchUpdate(false);
 };
