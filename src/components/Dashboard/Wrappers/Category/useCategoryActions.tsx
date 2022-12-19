@@ -29,29 +29,35 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
           };
 
           // Adding category and wrapper and moving other items down
-          updateConfig(configName, (previous) => {
-            const aboveWrappers = previous.wrappers.filter((x) => x.position <= abovePosition);
-            const aboveCategories = previous.categories.filter((x) => x.position <= abovePosition);
+          updateConfig(
+            configName,
+            (previous) => {
+              const aboveWrappers = previous.wrappers.filter((x) => x.position <= abovePosition);
+              const aboveCategories = previous.categories.filter(
+                (x) => x.position <= abovePosition
+              );
 
-            const belowWrappers = previous.wrappers.filter((x) => x.position > abovePosition);
-            const belowCategories = previous.categories.filter((x) => x.position > abovePosition);
+              const belowWrappers = previous.wrappers.filter((x) => x.position > abovePosition);
+              const belowCategories = previous.categories.filter((x) => x.position > abovePosition);
 
-            return {
-              ...previous,
-              categories: [
-                ...aboveCategories,
-                category,
-                // Move categories below down
-                ...belowCategories.map((x) => ({ ...x, position: x.position + 2 })),
-              ],
-              wrappers: [
-                ...aboveWrappers,
-                newWrapper,
-                // Move wrappers below down
-                ...belowWrappers.map((x) => ({ ...x, position: x.position + 2 })),
-              ],
-            };
-          });
+              return {
+                ...previous,
+                categories: [
+                  ...aboveCategories,
+                  category,
+                  // Move categories below down
+                  ...belowCategories.map((x) => ({ ...x, position: x.position + 2 })),
+                ],
+                wrappers: [
+                  ...aboveWrappers,
+                  newWrapper,
+                  // Move wrappers below down
+                  ...belowWrappers.map((x) => ({ ...x, position: x.position + 2 })),
+                ],
+              };
+            },
+            true
+          );
         },
       },
     });
@@ -78,29 +84,35 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
           };
 
           // Adding category and wrapper and moving other items down
-          updateConfig(configName, (previous) => {
-            const aboveWrappers = previous.wrappers.filter((x) => x.position < belowPosition);
-            const aboveCategories = previous.categories.filter((x) => x.position < belowPosition);
+          updateConfig(
+            configName,
+            (previous) => {
+              const aboveWrappers = previous.wrappers.filter((x) => x.position < belowPosition);
+              const aboveCategories = previous.categories.filter((x) => x.position < belowPosition);
 
-            const belowWrappers = previous.wrappers.filter((x) => x.position >= belowPosition);
-            const belowCategories = previous.categories.filter((x) => x.position >= belowPosition);
+              const belowWrappers = previous.wrappers.filter((x) => x.position >= belowPosition);
+              const belowCategories = previous.categories.filter(
+                (x) => x.position >= belowPosition
+              );
 
-            return {
-              ...previous,
-              categories: [
-                ...aboveCategories,
-                category,
-                // Move categories below down
-                ...belowCategories.map((x) => ({ ...x, position: x.position + 2 })),
-              ],
-              wrappers: [
-                ...aboveWrappers,
-                newWrapper,
-                // Move wrappers below down
-                ...belowWrappers.map((x) => ({ ...x, position: x.position + 2 })),
-              ],
-            };
-          });
+              return {
+                ...previous,
+                categories: [
+                  ...aboveCategories,
+                  category,
+                  // Move categories below down
+                  ...belowCategories.map((x) => ({ ...x, position: x.position + 2 })),
+                ],
+                wrappers: [
+                  ...aboveWrappers,
+                  newWrapper,
+                  // Move wrappers below down
+                  ...belowWrappers.map((x) => ({ ...x, position: x.position + 2 })),
+                ],
+              };
+            },
+            true
+          );
         },
       },
     });
@@ -109,51 +121,59 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
   const moveCategoryUp = () => {
     if (!configName) return;
 
-    updateConfig(configName, (previous) => {
-      const currentItem = previous.categories.find((x) => x.id === category.id);
-      if (!currentItem) return previous;
+    updateConfig(
+      configName,
+      (previous) => {
+        const currentItem = previous.categories.find((x) => x.id === category.id);
+        if (!currentItem) return previous;
 
-      const upperItem = previous.categories.find((x) => x.position === currentItem.position - 2);
+        const upperItem = previous.categories.find((x) => x.position === currentItem.position - 2);
 
-      if (!upperItem) return previous;
+        if (!upperItem) return previous;
 
-      currentItem.position -= 2;
-      upperItem.position += 2;
+        currentItem.position -= 2;
+        upperItem.position += 2;
 
-      return {
-        ...previous,
-        categories: [
-          ...previous.categories.filter((c) => ![currentItem.id, upperItem.id].includes(c.id)),
-          { ...upperItem },
-          { ...currentItem },
-        ],
-      };
-    });
+        return {
+          ...previous,
+          categories: [
+            ...previous.categories.filter((c) => ![currentItem.id, upperItem.id].includes(c.id)),
+            { ...upperItem },
+            { ...currentItem },
+          ],
+        };
+      },
+      true
+    );
   };
 
   const moveCategoryDown = () => {
     if (!configName) return;
 
-    updateConfig(configName, (previous) => {
-      const currentItem = previous.categories.find((x) => x.id === category.id);
-      if (!currentItem) return previous;
+    updateConfig(
+      configName,
+      (previous) => {
+        const currentItem = previous.categories.find((x) => x.id === category.id);
+        if (!currentItem) return previous;
 
-      const belowItem = previous.categories.find((x) => x.position === currentItem.position + 2);
+        const belowItem = previous.categories.find((x) => x.position === currentItem.position + 2);
 
-      if (!belowItem) return previous;
+        if (!belowItem) return previous;
 
-      currentItem.position += 2;
-      belowItem.position -= 2;
+        currentItem.position += 2;
+        belowItem.position -= 2;
 
-      return {
-        ...previous,
-        categories: [
-          ...previous.categories.filter((c) => ![currentItem.id, belowItem.id].includes(c.id)),
-          { ...currentItem },
-          { ...belowItem },
-        ],
-      };
-    });
+        return {
+          ...previous,
+          categories: [
+            ...previous.categories.filter((c) => ![currentItem.id, belowItem.id].includes(c.id)),
+            { ...currentItem },
+            { ...belowItem },
+          ],
+        };
+      },
+      true
+    );
   };
 
   const edit = async () => {

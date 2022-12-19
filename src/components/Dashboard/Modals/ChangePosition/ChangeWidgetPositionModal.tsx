@@ -19,25 +19,28 @@ export const ChangeWidgetPositionModal = ({
       return;
     }
 
-    updateConfig(configName, (prev) => {
-      let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
-      currentWidget!.shape = {
-        location: {
-          x,
-          y,
-        },
-        size: {
-          height,
-          width,
-        },
-      };
+    updateConfig(
+      configName,
+      (prev) => {
+        let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+        currentWidget!.shape = {
+          location: {
+            x,
+            y,
+          },
+          size: {
+            height,
+            width,
+          },
+        };
 
-      return {
-        ...prev,
-        widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
-      };
-    });
-
+        return {
+          ...prev,
+          widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
+        };
+      },
+      true
+    );
     context.closeModal(id);
   };
 

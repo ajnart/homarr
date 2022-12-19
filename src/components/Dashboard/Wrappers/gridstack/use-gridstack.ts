@@ -31,7 +31,7 @@ export const useGridstack = (
   areaId: string
 ): UseGristackReturnType => {
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const { config, name: configName } = useConfigContext();
+  const { config, configVersion, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
   // define reference for wrapper - is used to calculate the width of the wrapper
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -51,7 +51,7 @@ export const useGridstack = (
             ? x.area.properties.location === areaId
             : x.area.properties.id === areaId)
       ) ?? [],
-    [config]
+    [configVersion]
   );
   const widgets = useMemo(() => {
     if (!config) return [];
@@ -62,7 +62,7 @@ export const useGridstack = (
           ? w.area.properties.location === areaId
           : w.area.properties.id === areaId)
     );
-  }, [config]);
+  }, [configVersion]);
 
   // define items in itemRefs for easy access and reference to items
   if (Object.keys(itemRefs.current).length !== items.length + (widgets ?? []).length) {
@@ -208,7 +208,7 @@ export const useGridstack = (
         onAdd,
       }
     );
-  }, [items.length, wrapperRef.current, (widgets ?? []).length]);
+  }, [items, wrapperRef.current, widgets]);
 
   return {
     apps: items,

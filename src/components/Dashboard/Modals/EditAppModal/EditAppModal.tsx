@@ -83,10 +83,14 @@ export const EditAppModal = ({
       return;
     }
 
-    updateConfig(configName, (previousConfig) => ({
-      ...previousConfig,
-      apps: [...previousConfig.apps.filter((x) => x.id !== form.values.id), form.values],
-    }));
+    updateConfig(
+      configName,
+      (previousConfig) => ({
+        ...previousConfig,
+        apps: [...previousConfig.apps.filter((x) => x.id !== form.values.id), form.values],
+      }),
+      true
+    );
 
     // also close the parent modal
     context.closeAll();

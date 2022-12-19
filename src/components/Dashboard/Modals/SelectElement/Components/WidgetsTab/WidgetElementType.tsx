@@ -26,35 +26,39 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
   };
 
   const handleAddition = async () => {
-    updateConfig(configName, (prev) => ({
-      ...prev,
-      widgets: [
-        ...prev.widgets.filter((w) => w.id !== widget.id),
-        {
-          id: widget.id,
-          properties: Object.entries(widget.options).reduce((prev, [k, v]) => {
-            prev[k] = v.defaultValue;
-            return prev;
-          }, {} as IWidget<string, any>['properties']),
-          area: {
-            type: 'wrapper',
-            properties: {
-              id: getLowestWrapper()?.id ?? '',
+    updateConfig(
+      configName,
+      (prev) => ({
+        ...prev,
+        widgets: [
+          ...prev.widgets.filter((w) => w.id !== widget.id),
+          {
+            id: widget.id,
+            properties: Object.entries(widget.options).reduce((prev, [k, v]) => {
+              prev[k] = v.defaultValue;
+              return prev;
+            }, {} as IWidget<string, any>['properties']),
+            area: {
+              type: 'wrapper',
+              properties: {
+                id: getLowestWrapper()?.id ?? '',
+              },
+            },
+            shape: {
+              location: {
+                x: 0,
+                y: 0,
+              },
+              size: {
+                width: widget.gridstack.minWidth,
+                height: widget.gridstack.minHeight,
+              },
             },
           },
-          shape: {
-            location: {
-              x: 0,
-              y: 0,
-            },
-            size: {
-              width: widget.gridstack.minWidth,
-              height: widget.gridstack.minHeight,
-            },
-          },
-        },
-      ],
-    }));
+        ],
+      }),
+      true
+    );
     // TODO: safe to file system
     closeModal('selectElement');
   };

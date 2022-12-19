@@ -19,10 +19,14 @@ export const WidgetsRemoveModal = ({
   if (!configName) return null;
   const updateConfig = useConfigStore((x) => x.updateConfig);
   const handleDeletion = () => {
-    updateConfig(configName, (prev) => ({
-      ...prev,
-      widgets: prev.widgets.filter((w) => w.id !== innerProps.widgetId),
-    }));
+    updateConfig(
+      configName,
+      (prev) => ({
+        ...prev,
+        widgets: prev.widgets.filter((w) => w.id !== innerProps.widgetId),
+      }),
+      true
+    );
     context.closeModal(id);
   };
 

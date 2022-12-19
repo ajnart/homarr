@@ -45,15 +45,19 @@ export const WidgetsEditModal = ({
   };
 
   const handleSave = () => {
-    updateConfig(configName, (prev) => {
-      let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
-      currentWidget!.properties = moduleProperties;
+    updateConfig(
+      configName,
+      (prev) => {
+        let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+        currentWidget!.properties = moduleProperties;
 
-      return {
-        ...prev,
-        widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
-      };
-    });
+        return {
+          ...prev,
+          widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
+        };
+      },
+      true
+    );
     context.closeModal(id);
   };
 

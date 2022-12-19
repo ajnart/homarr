@@ -54,6 +54,7 @@ export const initializeGridstack = (
     if (!firstNode) return;
     events.onAdd(firstNode);
   });
+
   grid.batchUpdate();
   grid.removeAll(false);
   items.forEach(

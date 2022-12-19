@@ -22,13 +22,17 @@ export const ChangeAppPositionModal = ({
       return;
     }
 
-    updateConfig(configName, (previousConfig) => ({
-      ...previousConfig,
-      apps: [
-        ...previousConfig.apps.filter((x) => x.id !== innerProps.app.id),
-        { ...innerProps.app, shape: { location: { x, y }, size: { width, height } } },
-      ],
-    }));
+    updateConfig(
+      configName,
+      (previousConfig) => ({
+        ...previousConfig,
+        apps: [
+          ...previousConfig.apps.filter((x) => x.id !== innerProps.app.id),
+          { ...innerProps.app, shape: { location: { x, y }, size: { width, height } } },
+        ],
+      }),
+      true
+    );
     context.closeModal(id);
   };
 

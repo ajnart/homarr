@@ -45,22 +45,26 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
   ) => {
     const value = event.target.checked;
     setState(value);
-    updateConfig(configName, (prev) => {
-      const { layout } = prev.settings.customization;
+    updateConfig(
+      configName,
+      (prev) => {
+        const { layout } = prev.settings.customization;
 
-      layout[key] = value;
+        layout[key] = value;
 
-      return {
-        ...prev,
-        settings: {
-          ...prev.settings,
-          customization: {
-            ...prev.settings.customization,
-            layout,
+        return {
+          ...prev,
+          settings: {
+            ...prev.settings,
+            customization: {
+              ...prev.settings.customization,
+              layout,
+            },
           },
-        },
-      };
-    });
+        };
+      },
+      true
+    );
   };
 
   return (

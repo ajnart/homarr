@@ -3,33 +3,46 @@ import { ConfigType } from '../types/config';
 
 export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
   configs: [],
-  initConfig: (name, config) => {
+  initConfig: (name, config, increaseVersion) => {
     set((old) => ({
       ...old,
-      configs: [...old.configs.filter((x) => x.configProperties?.name !== name), config],
+      configs: [
+        ...old.configs.filter((x) => x.value.configProperties?.name !== name),
+        { increaseVersion, value: config },
+      ],
     }));
   },
-  // TODO: use callback with current config as input
-  updateConfig: async (name, updateCallback: (previous: ConfigType) => ConfigType) => {
+  updateConfig: async (
+    name,
+    updateCallback: (previous: ConfigType) => ConfigType,
+    shouldRegenerateGridstack = false
+  ) => {
     const { configs } = get();
-    const currentConfig = configs.find((x) => x.configProperties.name === name);
+    const currentConfig = configs.find((x) => x.value.configProperties.name === name);
     if (!currentConfig) return;
 
     // TODO: update config on server
-    const updatedConfig = updateCallback(currentConfig);
-
+    const updatedConfig = updateCallback(currentConfig.value);
     set((old) => ({
       ...old,
-      configs: [...old.configs.filter((x) => x.configProperties.name !== name), updatedConfig],
+      configs: [
+        ...old.configs.filter((x) => x.value.configProperties.name !== name),
+        { value: updatedConfig, increaseVersion: currentConfig.increaseVersion },
+      ],
     }));
+
+    if (shouldRegenerateGridstack) {
+      currentConfig.increaseVersion();
+    }
   },
 }));
 
 interface UseConfigStoreType {
-  configs: ConfigType[];
-  initConfig: (name: string, config: ConfigType) => void;
+  configs: { increaseVersion: () => void; value: ConfigType }[];
+  initConfig: (name: string, config: ConfigType, increaseVersion: () => void) => void;
   updateConfig: (
     name: string,
-    updateCallback: (previous: ConfigType) => ConfigType
+    updateCallback: (previous: ConfigType) => ConfigType,
+    shouldRegenerateGridstack?: boolean
   ) => Promise<void>;
 }
