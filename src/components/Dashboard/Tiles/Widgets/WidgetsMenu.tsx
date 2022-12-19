@@ -26,7 +26,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       modal: 'integrationRemove',
       title: <Title order={4}>{t('descriptor.remove.title')}</Title>,
       innerProps: {
-        integration,
+        widgetId: integration,
       },
     });
   };
@@ -48,7 +48,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       modal: 'integrationOptions',
       title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
       innerProps: {
-        integration,
+        widgetId: integration,
         options: widget.properties,
       },
     });

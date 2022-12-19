@@ -24,6 +24,7 @@ export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps)
           name="Static Text"
           description="Display a fixed string on your dashboard"
           image={IconCursorText}
+          handleAddition={/* TODO: add something? */ async () => {}}
         />
       </Grid>
     </>

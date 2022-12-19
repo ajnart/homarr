@@ -8,7 +8,7 @@ import { useConfigStore } from '../../../../config/store';
 import { IWidget } from '../../../../widgets/widgets';
 
 export type WidgetEditModalInnerProps = {
-  integration: string;
+  widgetId: string;
   options: IWidget<string, any>['properties'];
 };
 
@@ -19,7 +19,7 @@ export const WidgetsEditModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
-  const { t } = useTranslation([`modules/${innerProps.integration}`, 'common']);
+  const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(moduleProperties ?? {}) as [string, IntegrationOptionsValueType][];
 
@@ -37,7 +37,7 @@ export const WidgetsEditModal = ({
   };
 
   const getMutliselectData = (option: string) => {
-    const currentWidgetDefinition = Widgets[innerProps.integration as keyof typeof Widgets];
+    const currentWidgetDefinition = Widgets[innerProps.widgetId as keyof typeof Widgets];
     if (!Widgets) return [];
 
     const options = currentWidgetDefinition.options as any;
@@ -45,19 +45,15 @@ export const WidgetsEditModal = ({
   };
 
   const handleSave = () => {
-    updateConfig(configName, (prev) => ({
-      ...prev,
-      widgets: {
-        ...prev.widgets,
-        [innerProps.integration]:
-          'properties' in (prev.widgets[innerProps.integration] ?? {})
-            ? {
-                ...prev.widgets[innerProps.integration],
-                properties: moduleProperties,
-              }
-            : prev.widgets[innerProps.integration],
-      },
-    }));
+    updateConfig(configName, (prev) => {
+      let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+      currentWidget!.properties = moduleProperties;
+
+      return {
+        ...prev,
+        widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
+      };
+    });
     context.closeModal(id);
   };
 
