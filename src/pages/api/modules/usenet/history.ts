@@ -6,7 +6,7 @@ import { Client } from 'sabnzbd-api';
 import { NzbgetHistoryItem } from './nzbget/types';
 import { NzbgetClient } from './nzbget/nzbget-client';
 import { getConfig } from '../../../../tools/config/getConfig';
-import { UsenetHistoryItem } from '../../../../components/Dashboard/Tiles/UseNet/types';
+import { UsenetHistoryItem } from '../../../../widgets/useNet/types';
 
 dayjs.extend(duration);
 
@@ -40,10 +40,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const options = {
           host: url.hostname,
           port: url.port,
-          login:
-            app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash:
-            app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);

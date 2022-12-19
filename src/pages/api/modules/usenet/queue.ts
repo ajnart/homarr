@@ -3,8 +3,8 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { UsenetQueueItem } from '../../../../components/Dashboard/Tiles/UseNet/types';
 import { getConfig } from '../../../../tools/config/getConfig';
+import { UsenetQueueItem } from '../../../../widgets/useNet/types';
 import { NzbgetClient } from './nzbget/nzbget-client';
 import { NzbgetQueueItem, NzbgetStatus } from './nzbget/types';
 
@@ -40,10 +40,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const options = {
           host: url.hostname,
           port: url.port,
-          login:
-            app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash:
-            app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);

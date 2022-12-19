@@ -8,9 +8,7 @@ import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
 import { getFrontendConfig } from '../tools/config/getFrontendConfig';
-import { getConfig } from '../tools/getConfig';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
-import { Config } from '../tools/types';
 import { ConfigType } from '../types/config';
 
 type ServerSideProps = {

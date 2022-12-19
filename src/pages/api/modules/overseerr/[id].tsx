@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getCookie } from 'cookies-next';
 import axios from 'axios';
 import Consola from 'consola';
-import { getConfig } from '../../../../tools/getConfig';
+import { getConfig } from '../../../../tools/config/getConfig';
 import { Config } from '../../../../tools/types';
 import { MediaType } from '../../../../modules/overseerr/SearchResult';
 
@@ -10,9 +10,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   // Get the slug of the request
   const { id, type } = req.query as { id: string; type: string };
   const configName = getCookie('config-name', { req });
-  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
+  const config = getConfig(configName?.toString() ?? 'default');
   const app = config.apps.find(
-    (app) => app.type === 'Overseerr' || app.type === 'Jellyseerr'
+    (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
   );
   if (!id) {
     return res.status(400).json({ error: 'No id provided' });
@@ -20,7 +20,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   if (!type) {
     return res.status(400).json({ error: 'No type provided' });
   }
-  if (!app?.apiKey) {
+  const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+  if (!apiKey) {
     return res.status(400).json({ error: 'No apps found' });
   }
 
@@ -31,7 +32,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         .get(`${appUrl.origin}/api/v1/movie/${id}`, {
           headers: {
             // Set X-Api-Key to the value of the API key
-            'X-Api-Key': app.apiKey,
+            'X-Api-Key': apiKey,
           },
         })
         .then((axiosres) => res.status(200).json(axiosres.data))
@@ -48,7 +49,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         .get(`${appUrl.origin}/api/v1/tv/${id}`, {
           headers: {
             // Set X-Api-Key to the value of the API key
-            'X-Api-Key': app.apiKey,
+            'X-Api-Key': apiKey,
           },
         })
         .then((axiosres) => res.status(200).json(axiosres.data))
@@ -71,9 +72,9 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query as { id: string };
   const { seasons, type } = req.body as { seasons?: number[]; type: MediaType };
   const configName = getCookie('config-name', { req });
-  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
+  const config = getConfig(configName?.toString() ?? 'default');
   const app = config.apps.find(
-    (app) => app.type === 'Overseerr' || app.type === 'Jellyseerr'
+    (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
   );
   if (!id) {
     return res.status(400).json({ error: 'No id provided' });
@@ -81,7 +82,9 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   if (!type) {
     return res.status(400).json({ error: 'No type provided' });
   }
-  if (!app?.apiKey) {
+
+  const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+  if (!apiKey) {
     return res.status(400).json({ error: 'No app found' });
   }
   if (type === 'movie' && !seasons) {
@@ -104,7 +107,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       {
         headers: {
           // Set X-Api-Key to the value of the API key
-          'X-Api-Key': app.apiKey,
+          'X-Api-Key': apiKey,
         },
       }
     )

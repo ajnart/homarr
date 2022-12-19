@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../../tools/config/getConfig';
+import { IDashDotTile } from '../../../../widgets/dashDot/DashDotTile';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   const { configName } = req.query;
@@ -13,7 +14,15 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
   const config = getConfig(configName);
 
-  const dashDotUrl = config.widgets.dashdot?.properties.url;
+  const dashDotWidget = config.widgets.find((x) => x.id === 'dashdot');
+
+  if (!dashDotWidget) {
+    return res.status(400).json({
+      message: 'There is no dashdot widget defined',
+    });
+  }
+
+  const dashDotUrl = (dashDotWidget as IDashDotTile).properties.url;
 
   if (!dashDotUrl) {
     return res.status(400).json({
