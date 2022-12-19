@@ -8,13 +8,14 @@ import { GridstackTileWrapper } from '../../Tiles/TileWrapper';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { useGridstack } from '../gridstack/use-gridstack';
 import { CategoryEditMenu } from './CategoryEditMenu';
+import { WrapperContent } from '../WrapperContent';
 
 interface DashboardCategoryProps {
   category: CategoryType;
 }
 
 export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
-  const { refs, items, widgets } = useGridstack('category', category.id);
+  const { refs, apps, widgets } = useGridstack('category', category.id);
   const isEditMode = useEditModeStore((x) => x.enabled);
 
   return (
@@ -29,42 +30,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
         data-category={category.id}
         ref={refs.wrapper}
       >
-        {items?.map((app) => {
-          const { component: TileComponent, ...tile } = Tiles['app'];
-          return (
-            <GridstackTileWrapper
-              id={app.id}
-              type="app"
-              key={app.id}
-              itemRef={refs.items.current[app.id]}
-              {...tile}
-              {...app.shape.location}
-              {...app.shape.size}
-            >
-              <TileComponent className="grid-stack-item-content" app={app} />
-            </GridstackTileWrapper>
-          );
-        })}
-        {widgets.map((widget) => {
-          const definition = Widgets[widget.id as keyof typeof Widgets] as
-            | IWidgetDefinition
-            | undefined;
-          if (!definition) return null;
-
-          return (
-            <GridstackTileWrapper
-              type="widget"
-              key={widget.id}
-              itemRef={refs.items.current[widget.id]}
-              id={definition.id}
-              {...definition.gridstack}
-              {...widget.shape.location}
-              {...widget.shape.size}
-            >
-              <definition.component className="grid-stack-item-content" widget={widget} />
-            </GridstackTileWrapper>
-          );
-        })}
+        <WrapperContent apps={apps} refs={refs} widgets={widgets} />
       </div>
     </HomarrCardWrapper>
   );

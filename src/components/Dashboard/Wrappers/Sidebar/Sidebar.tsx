@@ -5,13 +5,14 @@ import { Tiles } from '../../Tiles/tilesDefinitions';
 import Widgets from '../../../../widgets';
 import { GridstackTileWrapper } from '../../Tiles/TileWrapper';
 import { useGridstack } from '../gridstack/use-gridstack';
+import { WrapperContent } from '../WrapperContent';
 
 interface DashboardSidebarProps {
   location: 'right' | 'left';
 }
 
 export const DashboardSidebar = ({ location }: DashboardSidebarProps) => {
-  const { refs, items, widgets } = useGridstack('sidebar', location);
+  const { refs, apps, widgets } = useGridstack('sidebar', location);
 
   const minRow = useMinRowForFullHeight(refs.wrapper);
 
@@ -31,42 +32,7 @@ export const DashboardSidebar = ({ location }: DashboardSidebarProps) => {
         gs-min-row={minRow}
         ref={refs.wrapper}
       >
-        {items.map((app) => {
-          const { component: TileComponent, ...tile } = Tiles['app'];
-          return (
-            <GridstackTileWrapper
-              id={app.id}
-              type="app"
-              key={app.id}
-              itemRef={refs.items.current[app.id]}
-              {...tile}
-              {...app.shape.location}
-              {...app.shape.size}
-            >
-              <TileComponent className="grid-stack-item-content" app={app} />
-            </GridstackTileWrapper>
-          );
-        })}
-        {widgets.map((widget) => {
-          const definition = Widgets[widget.id as keyof typeof Widgets] as
-            | IWidgetDefinition
-            | undefined;
-          if (!definition) return null;
-
-          return (
-            <GridstackTileWrapper
-              type="widget"
-              key={widget.id}
-              itemRef={refs.items.current[widget.id]}
-              id={definition.id}
-              {...definition.gridstack}
-              {...widget.shape.location}
-              {...widget.shape.size}
-            >
-              <definition.component className="grid-stack-item-content" widget={widget} />
-            </GridstackTileWrapper>
-          );
-        })}
+        <WrapperContent apps={apps} refs={refs} widgets={widgets} />
       </div>
     </Card>
   );

@@ -17,7 +17,7 @@ import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
 
 interface UseGristackReturnType {
-  items: AppType[];
+  apps: AppType[];
   widgets: IWidget<string, any>[];
   refs: {
     wrapper: RefObject<HTMLDivElement>;
@@ -211,7 +211,7 @@ export const useGridstack = (
   }, [items.length, wrapperRef.current, (widgets ?? []).length]);
 
   return {
-    items,
+    apps: items,
     widgets: widgets ?? [],
     refs: {
       items: itemRefs,
