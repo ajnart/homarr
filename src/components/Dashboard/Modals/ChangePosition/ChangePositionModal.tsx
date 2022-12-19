@@ -44,10 +44,6 @@ export const ChangePositionModal = ({
     onSubmit(form.values.x, form.values.y, form.values.width, form.values.height);
   };
 
-  console.log(`Initial: (${form.values.width} / ${form.values.height})`);
-  console.log(widthData);
-  console.log(heightData);
-
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
       <Grid>

@@ -63,7 +63,7 @@ type ConfigAppIntegrationPropertyType = Omit<AppIntegrationPropertyType, 'isDefi
 export type IntegrationField = 'apiKey' | 'password' | 'username';
 
 export const integrationFieldProperties: {
-  [key in AppIntegrationType['type']]: IntegrationField[];
+  [key in Exclude<AppIntegrationType['type'], null>]: IntegrationField[];
 } = {
   lidarr: ['apiKey'],
   radarr: ['apiKey'],

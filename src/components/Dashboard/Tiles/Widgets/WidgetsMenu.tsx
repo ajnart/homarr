@@ -7,7 +7,7 @@ import { WidgetEditModalInnerProps } from './WidgetsEditModal';
 import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 
 export type WidgetChangePositionModalInnerProps = {
-  integration: string;
+  widgetId: string;
   widget: IWidget<string, any>;
 };
 
@@ -37,7 +37,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       size: 'xl',
       title: null,
       innerProps: {
-        integration,
+        widgetId: integration,
         widget: widget,
       },
     });

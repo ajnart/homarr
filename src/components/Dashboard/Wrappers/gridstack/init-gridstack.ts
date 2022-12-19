@@ -60,7 +60,6 @@ export const initializeGridstack = (
     ({ id }) =>
       itemRefs.current[id] && grid.makeWidget(itemRefs.current[id].current as HTMLDivElement)
   );
-  console.log('widgets', widgets, itemRefs.current);
   widgets.forEach(
     ({ id }) =>
       itemRefs.current[id] && grid.makeWidget(itemRefs.current[id].current as HTMLDivElement)

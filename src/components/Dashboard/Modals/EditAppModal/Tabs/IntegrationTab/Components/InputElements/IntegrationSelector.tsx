@@ -55,13 +55,13 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
 
   const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {
     if (!value) return [];
-    const integrationType = value as AppIntegrationType['type'];
+    const integrationType = value as Exclude<AppIntegrationType['type'], null>;
     if (integrationType === null) {
       return [];
     }
 
     const requiredProperties = Object.entries(integrationFieldDefinitions).filter(([k, v]) => {
-      const val = integrationFieldProperties[integrationType['type']];
+      const val = integrationFieldProperties[integrationType];
       return val.includes(k as IntegrationField);
     })!;
     return requiredProperties.map(([k, value]) => ({
@@ -97,7 +97,6 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       }
       onChange={(value) => {
         form.setFieldValue('integration.properties', getNewProperties(value));
-        console.log(`changed to value ${value}`);
         inputProps.onChange(value);
       }}
       {...inputProps}

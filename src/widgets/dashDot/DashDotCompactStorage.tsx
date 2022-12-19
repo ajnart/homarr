@@ -58,7 +58,7 @@ const useDashDotStorage = () => {
       'dashdot/storage',
       {
         configName,
-        url: config?.widgets.dashDot?.properties.url,
+        url: config?.widgets.find((x) => x.id === 'dashdot')?.properties.url,
       },
     ],
     queryFn: () => fetchDashDotStorageLoad(configName),
@@ -66,7 +66,6 @@ const useDashDotStorage = () => {
 };
 
 async function fetchDashDotStorageLoad(configName: string | undefined) {
-  console.log(`storage request: ${configName}`);
   if (!configName) throw new Error('configName is undefined');
   return (await (
     await axios.get('/api/modules/dashdot/storage', { params: { configName } })

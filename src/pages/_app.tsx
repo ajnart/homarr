@@ -10,7 +10,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
-import { ChangeIntegrationPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeIntegrationPositionModal';
+import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
 import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
 import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsEditModal';
@@ -92,7 +92,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
                       integrationRemove: WidgetsRemoveModal,
                       categoryEditModal: CategoryEditModal,
                       changeAppPositionModal: ChangeAppPositionModal,
-                      changeIntegrationPositionModal: ChangeIntegrationPositionModal,
+                      changeIntegrationPositionModal: ChangeWidgetPositionModal,
                     }}
                   >
                     <Component {...pageProps} />

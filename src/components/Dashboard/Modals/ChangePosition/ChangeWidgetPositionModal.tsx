@@ -2,12 +2,11 @@ import { SelectItem } from '@mantine/core';
 import { closeModal, ContextModalProps } from '@mantine/modals';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
-import { Tiles } from '../../Tiles/tilesDefinitions';
-import { ChangePositionModal } from './ChangePositionModal';
 import widgets from '../../../../widgets';
+import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
+import { ChangePositionModal } from './ChangePositionModal';
 
-export const ChangeIntegrationPositionModal = ({
+export const ChangeWidgetPositionModal = ({
   context,
   id,
   innerProps,
@@ -20,25 +19,25 @@ export const ChangeIntegrationPositionModal = ({
       return;
     }
 
-    updateConfig(configName, (prev) => ({
-      ...prev,
-      widgets: {
-        ...prev.widgets,
-        [innerProps.integration]: {
-          ...prev.widgets[innerProps.integration],
-          shape: {
-            location: {
-              x,
-              y,
-            },
-            size: {
-              height,
-              width,
-            },
-          },
+    updateConfig(configName, (prev) => {
+      let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+      currentWidget!.shape = {
+        location: {
+          x,
+          y,
         },
-      },
-    }));
+        size: {
+          height,
+          width,
+        },
+      };
+
+      return {
+        ...prev,
+        widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
+      };
+    });
+
     context.closeModal(id);
   };
 
@@ -46,8 +45,8 @@ export const ChangeIntegrationPositionModal = ({
     closeModal(id);
   };
 
-  const widthData = useWidthData(innerProps.integration);
-  const heightData = useHeightData(innerProps.integration);
+  const widthData = useWidthData(innerProps.widgetId);
+  const heightData = useHeightData(innerProps.widgetId);
 
   return (
     <ChangePositionModal
