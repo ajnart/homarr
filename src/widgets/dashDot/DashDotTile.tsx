@@ -2,9 +2,6 @@ import { createStyles, Group, Title } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
-import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
-import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
-import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -49,11 +46,11 @@ const definition = defineWidget({
 
 export type IDashDotTile = IWidget<typeof definition['id'], typeof definition>;
 
-interface DashDotTileProps extends BaseTileProps {
-  widget: IDashDotTile; // TODO: change to new type defined through widgetDefinition
+interface DashDotTileProps {
+  widget: IDashDotTile;
 }
 
-function DashDotTile({ widget, className }: DashDotTileProps) {
+function DashDotTile({ widget }: DashDotTileProps) {
   const { classes } = useDashDotTileStyles();
   const { t } = useTranslation('modules/dashdot');
 
@@ -76,23 +73,6 @@ function DashDotTile({ widget, className }: DashDotTileProps) {
     </Title>
   );
 
-  const menu = (
-    // TODO: add widgetWrapper that is generic and uses the definition
-    <WidgetsMenu widget={widget} integration={definition.id} />
-  );
-
-  if (!dashDotUrl) {
-    return (
-      <HomarrCardWrapper className={className}>
-        {menu}
-        <div>
-          {heading}
-          <p>{t('card.errors.noApp')}</p>
-        </div>
-      </HomarrCardWrapper>
-    );
-  }
-
   const isCompact = widget?.properties.useCompactView ?? false;
 
   const isCompactStorageVisible = graphs?.some((g) => g.id === 'storage' && isCompact);
@@ -104,8 +84,7 @@ function DashDotTile({ widget, className }: DashDotTileProps) {
   );
 
   return (
-    <HomarrCardWrapper className={className}>
-      {menu}
+    <>
       {heading}
       {!info && <p>{t('card.errors.noInformation')}</p>}
       {info && (
@@ -126,7 +105,7 @@ function DashDotTile({ widget, className }: DashDotTileProps) {
           </Group>
         </div>
       )}
-    </HomarrCardWrapper>
+    </>
   );
 }
 

@@ -1,13 +1,10 @@
 import { Center, Stack, Text, Title } from '@mantine/core';
+import { IconClock } from '@tabler/icons';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
-import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
-import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
-import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
 import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { IconClock } from '@tabler/icons';
 
 const definition = defineWidget({
   id: 'date',
@@ -29,25 +26,21 @@ const definition = defineWidget({
 
 export type IDateWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface DateTileProps extends BaseTileProps {
-  widget: IDateWidget; // TODO: change to new type defined through widgetDefinition
+interface DateTileProps {
+  widget: IDateWidget;
 }
 
-function DateTile({ className, widget }: DateTileProps) {
+function DateTile({ widget }: DateTileProps) {
   const date = useDateState();
   const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
 
-  // TODO: add widgetWrapper that is generic and uses the definition
   return (
-    <HomarrCardWrapper className={className}>
-      <WidgetsMenu integration={definition.id} widget={widget} />
-      <Center style={{ height: '100%' }}>
-        <Stack spacing="xs">
-          <Title>{dayjs(date).format(formatString)}</Title>
-          <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>
-        </Stack>
-      </Center>
-    </HomarrCardWrapper>
+    <Center style={{ height: '100%' }}>
+      <Stack spacing="xs">
+        <Title>{dayjs(date).format(formatString)}</Title>
+        <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>
+      </Stack>
+    </Center>
   );
 }
 

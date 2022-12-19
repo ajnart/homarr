@@ -1,6 +1,4 @@
-import { IconArrowsUpDown, IconClock } from '@tabler/icons';
-import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
-import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
+import { IconArrowsUpDown } from '@tabler/icons';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -20,12 +18,12 @@ const definition = defineWidget({
 
 export type ITorrentNetworkTraffic = IWidget<typeof definition['id'], typeof definition>;
 
-interface TorrentNetworkTrafficTileProps extends BaseTileProps {
-  widget: ITorrentNetworkTraffic; // TODO: change to new type defined through widgetDefinition
+interface TorrentNetworkTrafficTileProps {
+  widget: ITorrentNetworkTraffic;
 }
 
-function TorrentNetworkTrafficTile({ className, widget }: TorrentNetworkTrafficTileProps) {
-  return <HomarrCardWrapper>TorrentNetworkTraffic</HomarrCardWrapper>;
+function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTrafficTileProps) {
+  return null;
 }
 
 export default definition;

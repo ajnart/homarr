@@ -16,16 +16,14 @@ import { useElementSize } from '@mantine/hooks';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
-import { UsenetQueueList } from './UsenetQueueList';
-import { UsenetHistoryList } from './UsenetHistoryList';
-import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
-import { AppIntegrationType } from '../../types/app';
 import { useConfigContext } from '../../config/provider';
 import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
-import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
 import { humanFileSize } from '../../tools/humanFileSize';
+import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
+import { UsenetHistoryList } from './UsenetHistoryList';
+import { UsenetQueueList } from './UsenetQueueList';
 
 dayjs.extend(duration);
 
@@ -46,15 +44,14 @@ const definition = defineWidget({
 
 export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface UseNetTileProps extends BaseTileProps {}
+interface UseNetTileProps {}
 
-function UseNetTile({ className }: UseNetTileProps) {
+function UseNetTile({}: UseNetTileProps) {
   const { t } = useTranslation('modules/usenet');
   const { config } = useConfigContext();
   const downloadApps =
-    config?.apps.filter(
-      (x) => x.integration && downloadAppTypes.includes(x.integration.type)
-    ) ?? [];
+    config?.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ??
+    [];
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
   const { data } = useGetUsenetInfo({ appId: selectedAppId! });
@@ -70,14 +67,12 @@ function UseNetTile({ className }: UseNetTileProps) {
 
   if (downloadApps.length === 0) {
     return (
-      <HomarrCardWrapper className={className}>
-        <Stack>
-          <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
-          <Group>
-            <Text>{t('card.errors.noDownloadClients.text')}</Text>
-          </Group>
-        </Stack>
-      </HomarrCardWrapper>
+      <Stack>
+        <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
+        <Group>
+          <Text>{t('card.errors.noDownloadClients.text')}</Text>
+        </Group>
+      </Stack>
     );
   }
 
@@ -89,50 +84,48 @@ function UseNetTile({ className }: UseNetTileProps) {
   const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   return (
-    <HomarrCardWrapper className={className}>
-      <Tabs keepMounted={false} defaultValue="queue">
-        <Tabs.List ref={ref} mb="md" style={{ flex: 1 }} grow>
-          <Tabs.Tab value="queue">{t('tabs.queue')}</Tabs.Tab>
-          <Tabs.Tab value="history">{t('tabs.history')}</Tabs.Tab>
-          {data && (
-            <Group position="right" ml="auto">
-              {width > MIN_WIDTH_MOBILE && (
-                <>
-                  <Badge>{humanFileSize(data?.speed)}/s</Badge>
-                  <Badge>
-                    {t('info.sizeLeft')}: {humanFileSize(data?.sizeLeft)}
-                  </Badge>
-                </>
-              )}
-            </Group>
-          )}
-        </Tabs.List>
-        {downloadApps.length > 1 && (
-          <Select
-            value={selectedAppId}
-            onChange={setSelectedApp}
-            ml="xs"
-            data={downloadApps.map((app) => ({ value: app.id, label: app.name }))}
-          />
+    <Tabs keepMounted={false} defaultValue="queue">
+      <Tabs.List ref={ref} mb="md" style={{ flex: 1 }} grow>
+        <Tabs.Tab value="queue">{t('tabs.queue')}</Tabs.Tab>
+        <Tabs.Tab value="history">{t('tabs.history')}</Tabs.Tab>
+        {data && (
+          <Group position="right" ml="auto">
+            {width > MIN_WIDTH_MOBILE && (
+              <>
+                <Badge>{humanFileSize(data?.speed)}/s</Badge>
+                <Badge>
+                  {t('info.sizeLeft')}: {humanFileSize(data?.sizeLeft)}
+                </Badge>
+              </>
+            )}
+          </Group>
         )}
-        <Tabs.Panel value="queue">
-          <UsenetQueueList appId={selectedAppId} />
-          {!data ? null : data.paused ? (
-            <Button uppercase onClick={() => resume()} radius="xl" size="xs" fullWidth mt="sm">
-              <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
-            </Button>
-          ) : (
-            <Button uppercase onClick={() => pause()} radius="xl" size="xs" fullWidth mt="sm">
-              <IconPlayerPause size={12} style={{ marginRight: 5 }} />{' '}
-              {dayjs.duration(data.eta, 's').format('HH:mm')}
-            </Button>
-          )}
-        </Tabs.Panel>
-        <Tabs.Panel value="history" style={{ display: 'flex', flexDirection: 'column' }}>
-          <UsenetHistoryList appId={selectedAppId} />
-        </Tabs.Panel>
-      </Tabs>
-    </HomarrCardWrapper>
+      </Tabs.List>
+      {downloadApps.length > 1 && (
+        <Select
+          value={selectedAppId}
+          onChange={setSelectedApp}
+          ml="xs"
+          data={downloadApps.map((app) => ({ value: app.id, label: app.name }))}
+        />
+      )}
+      <Tabs.Panel value="queue">
+        <UsenetQueueList appId={selectedAppId} />
+        {!data ? null : data.paused ? (
+          <Button uppercase onClick={() => resume()} radius="xl" size="xs" fullWidth mt="sm">
+            <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
+          </Button>
+        ) : (
+          <Button uppercase onClick={() => pause()} radius="xl" size="xs" fullWidth mt="sm">
+            <IconPlayerPause size={12} style={{ marginRight: 5 }} />{' '}
+            {dayjs.duration(data.eta, 's').format('HH:mm')}
+          </Button>
+        )}
+      </Tabs.Panel>
+      <Tabs.Panel value="history" style={{ display: 'flex', flexDirection: 'column' }}>
+        <UsenetHistoryList appId={selectedAppId} />
+      </Tabs.Panel>
+    </Tabs>
   );
 }
 

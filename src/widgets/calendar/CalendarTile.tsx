@@ -3,8 +3,6 @@ import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
-import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
 import { isToday } from '../../tools/isToday';
@@ -33,11 +31,11 @@ const definition = defineWidget({
 
 export type ICalendarWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface CalendarTileProps extends BaseTileProps {
+interface CalendarTileProps {
   widget: ICalendarWidget;
 }
 
-function CalendarTile({ className, widget }: CalendarTileProps) {
+function CalendarTile({ widget }: CalendarTileProps) {
   const { secondaryColor } = useColorTheme();
   const { name: configName } = useConfigContext();
   const { classes, cx } = useStyles(secondaryColor);
@@ -57,35 +55,33 @@ function CalendarTile({ className, widget }: CalendarTileProps) {
   });
 
   return (
-    <HomarrCardWrapper className={className} p={6}>
-      <Calendar
-        month={month}
-        onMonthChange={setMonth}
-        size="xs"
-        fullWidth
-        onChange={() => {}}
-        firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
-        dayStyle={(date) => ({
-          margin: 1,
-          backgroundColor: isToday(date)
-            ? colorScheme === 'dark'
-              ? colors.dark[5]
-              : colors.gray[0]
-            : undefined,
-        })}
-        styles={{
-          calendarHeader: {
-            marginRight: 40,
-            marginLeft: 40,
-          },
-        }}
-        allowLevelChange={false}
-        dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
-        renderDay={(date) => (
-          <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date)} />
-        )}
-      />
-    </HomarrCardWrapper>
+    <Calendar
+      month={month}
+      onMonthChange={setMonth}
+      size="xs"
+      fullWidth
+      onChange={() => {}}
+      firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
+      dayStyle={(date) => ({
+        margin: 1,
+        backgroundColor: isToday(date)
+          ? colorScheme === 'dark'
+            ? colors.dark[5]
+            : colors.gray[0]
+          : undefined,
+      })}
+      styles={{
+        calendarHeader: {
+          marginRight: 40,
+          marginLeft: 40,
+        },
+      }}
+      allowLevelChange={false}
+      dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
+      renderDay={(date) => (
+        <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date)} />
+      )}
+    />
   );
 }
 

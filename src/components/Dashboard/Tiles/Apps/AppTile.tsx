@@ -36,11 +36,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 
   return (
     <HomarrCardWrapper className={className}>
-      {/* TODO: add app menu */}
-
-      <div style={{ position: 'absolute', top: 10, right: 10 }}>
-        <AppMenu app={app} />
-      </div>
+      <AppMenu app={app} />
 
       {!app.url || isEditMode ? (
         <UnstyledButton

@@ -3,6 +3,7 @@ import { MutableRefObject, RefObject } from 'react';
 import { AppType } from '../../../types/app';
 import Widgets from '../../../widgets';
 import { IWidget, IWidgetDefinition } from '../../../widgets/widgets';
+import { WidgetWrapper } from '../../../widgets/WidgetWrapper';
 import { Tiles } from '../Tiles/tilesDefinitions';
 import { GridstackTileWrapper } from '../Tiles/TileWrapper';
 
@@ -51,7 +52,9 @@ export const WrapperContent = ({ apps, refs, widgets }: WrapperContentProps) => 
             {...widget.shape.location}
             {...widget.shape.size}
           >
-            <definition.component className="grid-stack-item-content" widget={widget} />
+            <WidgetWrapper className="grid-stack-item-content" widget={widget} widgetId={widget.id}>
+              <definition.component className="grid-stack-item-content" widget={widget} />
+            </WidgetWrapper>
           </GridstackTileWrapper>
         );
       })}

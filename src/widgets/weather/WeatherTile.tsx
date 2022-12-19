@@ -32,16 +32,16 @@ const definition = defineWidget({
 
 export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface WeatherTileProps extends BaseTileProps {
+interface WeatherTileProps {
   widget: IWeatherWidget;
 }
 
-function WeatherTile({ className, widget }: WeatherTileProps) {
+function WeatherTile({ widget }: WeatherTileProps) {
   const { data: weather, isLoading, isError } = useWeatherForCity(widget.properties.location);
 
   if (isLoading) {
     return (
-      <HomarrCardWrapper className={className}>
+      <>
         <Skeleton height={40} width={100} mb="xl" />
         <Group noWrap>
           <Skeleton height={50} circle />
@@ -50,58 +50,53 @@ function WeatherTile({ className, widget }: WeatherTileProps) {
             <Skeleton height={25} width={70} />
           </Group>
         </Group>
-      </HomarrCardWrapper>
+      </>
     );
   }
 
   if (isError) {
     return (
-      <HomarrCardWrapper className={className}>
-        <Center>
-          <Text weight={500}>An error occured</Text>
-        </Center>
-      </HomarrCardWrapper>
+      <Center>
+        <Text weight={500}>An error occured</Text>
+      </Center>
     );
   }
 
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
-    <HomarrCardWrapper className={className}>
-      <WidgetsMenu integration={definition.id} widget={widget} />
-      <Center style={{ height: '100%' }}>
-        <Group spacing="md" noWrap align="center">
-          <WeatherIcon code={weather!.current_weather.weathercode} />
-          <Stack p={0} spacing={4}>
-            <Title order={2}>
-              {getPerferedUnit(
-                weather!.current_weather.temperature,
-                widget.properties.displayInFahrenheit
-              )}
-            </Title>
-            <Group spacing="xs" noWrap>
-              <div>
-                <span>
-                  {getPerferedUnit(
-                    weather!.daily.temperature_2m_max[0],
-                    widget.properties.displayInFahrenheit
-                  )}
-                </span>
-                <IconArrowUpRight size={16} style={{ right: 15 }} />
-              </div>
-              <div>
-                <span>
-                  {getPerferedUnit(
-                    weather!.daily.temperature_2m_min[0],
-                    widget.properties.displayInFahrenheit
-                  )}
-                </span>
-                <IconArrowDownRight size={16} />
-              </div>
-            </Group>
-          </Stack>
-        </Group>
-      </Center>
-    </HomarrCardWrapper>
+    <Center style={{ height: '100%' }}>
+      <Group spacing="md" noWrap align="center">
+        <WeatherIcon code={weather!.current_weather.weathercode} />
+        <Stack p={0} spacing={4}>
+          <Title order={2}>
+            {getPerferedUnit(
+              weather!.current_weather.temperature,
+              widget.properties.displayInFahrenheit
+            )}
+          </Title>
+          <Group spacing="xs" noWrap>
+            <div>
+              <span>
+                {getPerferedUnit(
+                  weather!.daily.temperature_2m_max[0],
+                  widget.properties.displayInFahrenheit
+                )}
+              </span>
+              <IconArrowUpRight size={16} style={{ right: 15 }} />
+            </div>
+            <div>
+              <span>
+                {getPerferedUnit(
+                  weather!.daily.temperature_2m_min[0],
+                  widget.properties.displayInFahrenheit
+                )}
+              </span>
+              <IconArrowDownRight size={16} />
+            </div>
+          </Group>
+        </Stack>
+      </Group>
+    </Center>
   );
 }
 
