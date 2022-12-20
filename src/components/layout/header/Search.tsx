@@ -60,8 +60,7 @@ export function Search() {
   // Overseerr is not use anywhere else, so it makes no sense to add a standalone toggle for displaying results
   const isOverseerrEnabled = false; //config?.settings.common.enabledModules.overseerr;
   const overseerrApp = config?.apps.find(
-    (app) =>
-      app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
+    (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
   );
   const searchEngineSettings = config?.settings.common.searchEngine;
   const searchEngineUrl = !searchEngineSettings

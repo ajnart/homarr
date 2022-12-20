@@ -1,4 +1,4 @@
-import { Card, Center, Text, UnstyledButton } from '@mantine/core';
+import { Center, Text, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
 import { AppType } from '../../../../types/app';

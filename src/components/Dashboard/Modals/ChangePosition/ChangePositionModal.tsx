@@ -1,5 +1,6 @@
 import { Button, Flex, Grid, NumberInput, Select, SelectItem } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
 
 interface ChangePositionModalProps {
@@ -43,6 +44,8 @@ export const ChangePositionModal = ({
 
     onSubmit(form.values.x, form.values.y, form.values.width, form.values.height);
   };
+
+  const { t } = useTranslation('common');
 
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -94,9 +97,9 @@ export const ChangePositionModal = ({
 
       <Flex justify="end" gap="sm" mt="md">
         <Button onClick={() => onCancel()} variant="light" color="gray">
-          Cancel
+          {t('cancel')}
         </Button>
-        <Button type="submit">Save</Button>
+        <Button type="submit">{t('save')}</Button>
       </Flex>
     </form>
   );

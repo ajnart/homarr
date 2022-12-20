@@ -1,6 +1,6 @@
-import { Tabs, Text, TextInput } from '@mantine/core';
+import { Tabs, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconCursorText, IconLink } from '@tabler/icons';
+import { IconClick, IconCursorText, IconLink } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { AppType } from '../../../../../../types/app';
 import { EditAppModalTab } from '../type';
@@ -11,43 +11,42 @@ interface GeneralTabProps {
 }
 
 export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
-  const { t } = useTranslation('');
+  const { t } = useTranslation('layout/modals/add-app');
   return (
-    <Tabs.Panel value="general" pt="lg">
+    <Tabs.Panel value="general" pt="sm">
       <TextInput
         icon={<IconCursorText size={16} />}
-        label="App name"
-        description="Used for displaying the app on the dashboard"
+        label={t('general.appname.label')}
+        description={t('general.appname.description')}
         placeholder="My example app"
         variant="default"
         mb="md"
         withAsterisk
+        required
         {...form.getInputProps('name')}
       />
       <TextInput
         icon={<IconLink size={16} />}
-        label="App url"
-        description={
-          <Text>
-            URL that will be opened when clicking on the app. Can be overwritten using
-            <Text
-              onClick={() => openTab('behaviour')}
-              variant="link"
-              span
-              style={{
-                cursor: 'pointer',
-              }}
-            >
-              {' '}
-              on click URL{' '}
-            </Text>
-            when using external URLs to enhance security.
-          </Text>
-        }
+        label={t('general.internalAddress.label')}
+        description={t('general.internalAddress.description')}
         placeholder="https://google.com"
         variant="default"
         withAsterisk
+        required
         {...form.getInputProps('url')}
+        onChange={(e) => {
+          form.setFieldValue('behaviour.onClickUrl', e.target.value);
+          form.setFieldValue('url', e.target.value);
+        }}
+      />
+      <TextInput
+        icon={<IconClick size={16} />}
+        label={t('general.externalAddress.label')}
+        description={t('general.externalAddress.description')}
+        placeholder="https://homarr.mywebsite.com/"
+        variant="default"
+        mb="md"
+        {...form.getInputProps('behaviour.onClickUrl')}
       />
     </Tabs.Panel>
   );

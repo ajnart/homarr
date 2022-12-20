@@ -1,0 +1,59 @@
+{
+	"tabs": {
+		"general": "General",
+		"behaviour": "Behaviour",
+		"network": "Network",
+		"appearance": "Appearance",
+		"integration": "Integration"
+	},
+	"general": {
+		"appname": {
+			"label": "App name",
+			"description": "Used for displaying the app on the dashboard"
+		},
+		"internalAddress": {
+			"label": "Internal address",
+			"description": "Internal IP of the app"
+		},
+		"externalAddress": {
+			"label": "External address",
+			"description": "Url that will be opened in the browser when clicking on the app"
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Open in new tab",
+			"description": "Open the link in a new tab"
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Status checker",
+			"description": "Sends a simple HTTP / HTTPS request to check if your app is online"
+		},
+		"statusCodes": {
+			"label": "HTTP status codes",
+			"description": "Determines what response codes are allowed for this app to be 'Online'"
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App Icon",
+			"description": "Logo of your app displayed in your dashboard. (Must return a body content containg an image)"
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integration configuration",
+			"description": "Treats this app as the selected integration and provides you with per-app configuration",
+			"placeholder": "Select an integration"
+		},
+		"secrets": {
+			"description": "To update a secret, enter a value and click the save button. To remove a secret, use the clear button.",
+			"warning": "Please note that Homarr removes secrets from the configuration for security reasons. Thus, you can only either define or unset any credentials. Your credentials act as the main access for your integrations and you should <strong>never</strong> share them with anybody else. Make sure to <strong>store and manage your secrets safely</strong>.",
+			"clear": "Clear secret",
+			"save": "Save secret",
+			"update": "Update secret"
+		}
+	}
+}

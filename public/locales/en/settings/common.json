@@ -11,5 +11,19 @@
   "credits": {
     "madeWithLove": "Made with ❤️ by @"
   },
-  "grow": "Grow grid (take all space)"
+  "grow": "Grow grid (take all space)",
+  "layout": {
+    "title": "Dashboard yayout",
+    "main": "Main",
+    "sidebar": "Sidebar",
+    "cannotturnoff": "Cannot be turned off",
+    "dashboardlayout": "Dashboard layout",
+    "enablersidebar": "Enable right sidebar",
+    "enablelsidebar": "Enable left sidebar",
+    "enablesearchbar": "Enable search bar",
+    "enabledocker": "Enable docker integration",
+    "enableping": "Enable pings",
+    "enablelsidebardescription": "Optional. Can be used for apps and integrations only",
+    "enablersidebardescription": "Optional. Can be used for apps and integrations only"
+  }
 }

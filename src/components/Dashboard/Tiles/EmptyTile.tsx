@@ -1,6 +1,6 @@
 import { HomarrCardWrapper } from './HomarrCardWrapper';
 import { BaseTileProps } from './type';
 
-export const EmptyTile = ({ className }: BaseTileProps) => {
-  return <HomarrCardWrapper className={className}>Empty</HomarrCardWrapper>;
-};
+export const EmptyTile = ({ className }: BaseTileProps) => (
+  <HomarrCardWrapper className={className}>Empty</HomarrCardWrapper>
+);

@@ -1,14 +1,11 @@
-import { ActionIcon, Title, Tooltip, Drawer, Tabs, ScrollArea } from '@mantine/core';
-import { useHotkeys } from '@mantine/hooks';
-import { useState } from 'react';
-import { IconSettings } from '@tabler/icons';
+import { Title, Drawer, Tabs, ScrollArea } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import CustomizationSettings from './Customization/CustomizationSettings';
 import CommonSettings from './Common/CommonSettings';
 import Credits from './Common/Credits';
 
-function SettingsMenu() {
+function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
 
   return (
@@ -36,7 +33,11 @@ interface SettingsDrawerProps {
   closeDrawer: () => void;
 }
 
-export function SettingsDrawer({ opened, closeDrawer }: SettingsDrawerProps) {
+export function SettingsDrawer({
+  opened,
+  closeDrawer,
+  newVersionAvailable,
+}: SettingsDrawerProps & { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
 
   return (
@@ -48,7 +49,7 @@ export function SettingsDrawer({ opened, closeDrawer }: SettingsDrawerProps) {
       opened={opened}
       onClose={closeDrawer}
     >
-      <SettingsMenu />
+      <SettingsMenu newVersionAvailable={newVersionAvailable} />
       <Credits />
     </Drawer>
   );

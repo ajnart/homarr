@@ -18,47 +18,45 @@ interface WrapperContentProps {
   };
 }
 
-export const WrapperContent = ({ apps, refs, widgets }: WrapperContentProps) => {
-  return (
-    <>
-      {apps?.map((app) => {
-        const { component: TileComponent, ...tile } = Tiles['app'];
-        return (
-          <GridstackTileWrapper
-            id={app.id}
-            type="app"
-            key={app.id}
-            itemRef={refs.items.current[app.id]}
-            {...tile}
-            {...app.shape.location}
-            {...app.shape.size}
-          >
-            <TileComponent className="grid-stack-item-content" app={app} />
-          </GridstackTileWrapper>
-        );
-      })}
-      {widgets.map((widget) => {
-        const definition = Widgets[widget.id as keyof typeof Widgets] as
-          | IWidgetDefinition
-          | undefined;
-        if (!definition) return null;
+export const WrapperContent = ({ apps, refs, widgets }: WrapperContentProps) => (
+  <>
+    {apps?.map((app) => {
+      const { component: TileComponent, ...tile } = Tiles.app;
+      return (
+        <GridstackTileWrapper
+          id={app.id}
+          type="app"
+          key={app.id}
+          itemRef={refs.items.current[app.id]}
+          {...tile}
+          {...app.shape.location}
+          {...app.shape.size}
+        >
+          <TileComponent className="grid-stack-item-content" app={app} />
+        </GridstackTileWrapper>
+      );
+    })}
+    {widgets.map((widget) => {
+      const definition = Widgets[widget.id as keyof typeof Widgets] as
+        | IWidgetDefinition
+        | undefined;
+      if (!definition) return null;
 
-        return (
-          <GridstackTileWrapper
-            type="widget"
-            key={widget.id}
-            itemRef={refs.items.current[widget.id]}
-            id={definition.id}
-            {...definition.gridstack}
-            {...widget.shape.location}
-            {...widget.shape.size}
-          >
-            <WidgetWrapper className="grid-stack-item-content" widget={widget} widgetId={widget.id}>
-              <definition.component className="grid-stack-item-content" widget={widget} />
-            </WidgetWrapper>
-          </GridstackTileWrapper>
-        );
-      })}
-    </>
-  );
-};
+      return (
+        <GridstackTileWrapper
+          type="widget"
+          key={widget.id}
+          itemRef={refs.items.current[widget.id]}
+          id={definition.id}
+          {...definition.gridstack}
+          {...widget.shape.location}
+          {...widget.shape.size}
+        >
+          <WidgetWrapper className="grid-stack-item-content" widget={widget} widgetId={widget.id}>
+            <definition.component className="grid-stack-item-content" widget={widget} />
+          </WidgetWrapper>
+        </GridstackTileWrapper>
+      );
+    })}
+  </>
+);

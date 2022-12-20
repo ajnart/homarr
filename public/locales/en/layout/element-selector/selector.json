@@ -1,7 +1,7 @@
 {
     "modal": {
-        "title": "Add a new tile to your Dashboard",
-        "text": "You can use tiles, to make Homarr's dashboard yours. You may choose your desired tiles from the collection below and drag them anywhere on the dashboard where you like."
+        "title": "Add a new tile omegalaul",
+        "text": "Tiles are the main element of homarr. They allow you to configure the dashboard and display the information you want."
     },
     "actionIcon": {
         "tooltip": "Add a tile"

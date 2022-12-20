@@ -17,7 +17,7 @@ interface IntegrationSelectorProps {
 }
 
 export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
-  const { t } = useTranslation('');
+  const { t } = useTranslation('layout/modals/add-app');
 
   // TODO: read this out from integrations dynamically.
   const data: SelectItem[] = [
@@ -76,9 +76,9 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
 
   return (
     <Select
-      label="Integration configuration"
-      description="Treats this app as the selected integration and provides you with per-app configuration"
-      placeholder="Select your desired configuration"
+      label={t('integration.type.label')}
+      description={t('integration.type.description')}
+      placeholder={t('integration.type.placeholder')}
       itemComponent={SelectItemComponent}
       data={data}
       maxDropdownHeight={400}

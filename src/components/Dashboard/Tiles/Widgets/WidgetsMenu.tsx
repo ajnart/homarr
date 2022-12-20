@@ -38,7 +38,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       title: null,
       innerProps: {
         widgetId: integration,
-        widget: widget,
+        widget,
       },
     });
   };

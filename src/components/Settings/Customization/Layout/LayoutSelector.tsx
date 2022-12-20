@@ -1,6 +1,5 @@
 import {
   ActionIcon,
-  Center,
   Checkbox,
   createStyles,
   Flex,
@@ -11,6 +10,7 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
@@ -35,6 +35,7 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
   const [searchBar, setSearchBar] = useState(defaultLayout?.enabledSearchbar ?? false);
 
   const { colors, colorScheme } = useMantineTheme();
+  const { t } = useTranslation('settings/common');
 
   if (!configName) return null;
 
@@ -69,7 +70,7 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
 
   return (
     <Stack spacing="xs">
-      <Title order={6}>Dashboard layout</Title>
+      <Title order={6}>{t('layout.title')}</Title>
 
       <Paper px="xs" py={4} withBorder>
         <Group position="apart">
@@ -94,7 +95,7 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
         {leftSidebar && (
           <Paper className={classes.secondaryWrapper} p="xs" withBorder>
             <Flex align="center" justify="center" direction="column">
-              <Text align="center">Sidebar</Text>
+              <Text align="center">{t('layout.sidebar')}</Text>
               <Text color="dimmed" size="xs" align="center">
                 Only for
                 <br />
@@ -106,16 +107,16 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
         )}
 
         <Paper className={classes.primaryWrapper} p="xs" withBorder>
-          <Text align="center">Main</Text>
+          <Text align="center">{t('layout.main')}</Text>
           <Text color="dimmed" size="xs" align="center">
-            Cannot be turned of.
+            {t('layout.cannotturnoff')}
           </Text>
         </Paper>
 
         {rightSidebar && (
           <Paper className={classes.secondaryWrapper} p="xs" withBorder>
             <Flex align="center" justify="center" direction="column">
-              <Text align="center">Sidebar</Text>
+              <Text align="center">{t('layout.sidebar')}</Text>
               <Text color="dimmed" size="xs" align="center">
                 Only for
                 <br />
@@ -129,29 +130,29 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
 
       <Stack spacing="xs">
         <Checkbox
-          label="Enable left sidebar"
-          description="Optional. Can be used for apps and integrations only"
+          label={t('layout.enablelsidebar')}
+          description={t('layout.enablelsidebardesc')}
           checked={leftSidebar}
           onChange={(ev) => handleChange('enabledLeftSidebar', ev, setLeftSidebar)}
         />
         <Checkbox
-          label="Enable right sidebar"
-          description="Optional. Can be used for apps and integrations only"
+          label={t('layout.enablersidebar')}
+          description={t('layout.enablersidebardesc')}
           checked={rightSidebar}
           onChange={(ev) => handleChange('enabledRightSidebar', ev, setRightSidebar)}
         />
         <Checkbox
-          label="Enable search bar"
+          label={t('layout.enablesearchbar')}
           checked={searchBar}
           onChange={(ev) => handleChange('enabledSearchbar', ev, setSearchBar)}
         />
         <Checkbox
-          label="Enable docker"
+          label={t('layout.enabledocker')}
           checked={docker}
           onChange={(ev) => handleChange('enabledDocker', ev, setDocker)}
         />
         <Checkbox
-          label="Enable pings"
+          label={t('layout.enableping')}
           checked={ping}
           onChange={(ev) => handleChange('enabledPing', ev, setPing)}
         />

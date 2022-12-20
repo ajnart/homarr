@@ -4,7 +4,7 @@ import { IconApps } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 
 export const AddElementAction = () => {
-  const { t } = useTranslation('layout/add-service-app-shelf');
+  const { t } = useTranslation('layout/element-selector/selector');
 
   return (
     <Tooltip withinPortal label={t('actionIcon.tooltip')}>
@@ -16,7 +16,7 @@ export const AddElementAction = () => {
         onClick={() =>
           openContextModal({
             modal: 'selectElement',
-            title: 'Add an element to your dashboard',
+            title: t('modal.title'),
             size: 'xl',
             innerProps: {},
           })

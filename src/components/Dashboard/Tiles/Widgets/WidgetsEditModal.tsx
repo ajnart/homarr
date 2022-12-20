@@ -1,8 +1,8 @@
-import Widgets from '../../../../widgets';
 import { Button, Group, MultiSelect, Stack, Switch, TextInput } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import Widgets from '../../../../widgets';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { IWidget } from '../../../../widgets/widgets';
@@ -48,7 +48,7 @@ export const WidgetsEditModal = ({
     updateConfig(
       configName,
       (prev) => {
-        let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+        const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
         currentWidget!.properties = moduleProperties;
 
         return {

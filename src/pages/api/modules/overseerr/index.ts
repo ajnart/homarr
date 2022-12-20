@@ -2,7 +2,6 @@ import axios from 'axios';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../../tools/config/getConfig';
-import { Config } from '../../../../tools/types';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   const configName = getCookie('config-name', { req });

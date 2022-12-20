@@ -1,7 +1,7 @@
 import { Alert, Divider, Tabs, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconAlertTriangle } from '@tabler/icons';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import { AppType } from '../../../../../../types/app';
 import { IntegrationSelector } from './Components/InputElements/IntegrationSelector';
 import { IntegrationOptionsRenderer } from './Components/IntegrationOptionsRenderer/IntegrationOptionsRenderer';
@@ -11,7 +11,7 @@ interface IntegrationTabProps {
 }
 
 export const IntegrationTab = ({ form }: IntegrationTabProps) => {
-  const { t } = useTranslation('');
+  const { t } = useTranslation('layout/modals/add-app');
   const hasIntegrationSelected = form.values.integration?.type;
 
   return (
@@ -20,18 +20,14 @@ export const IntegrationTab = ({ form }: IntegrationTabProps) => {
 
       {hasIntegrationSelected && (
         <>
-          <Divider label="Integration Configuration" labelPosition="center" mt="xl" mb="md" />
+          <Divider label={t('integration.type.label')} labelPosition="center" mt="xl" mb="md" />
           <Text size="sm" color="dimmed" mb="lg">
-            To update a secret, enter a value and click the save button. To remove a secret, use the
-            clear button.
+            {t('integration.secrets.description')}
           </Text>
           <IntegrationOptionsRenderer form={form} />
           <Alert icon={<IconAlertTriangle />} color="yellow">
             <Text>
-              Please note that Homarr removes secrets from the configuration for security reasons.
-              Thus, you can only either define or unset any credentials. Your credentials act as the
-              main access for your integrations and you should <b>never</b> share them with anybody
-              else. Make sure to <b>store and manage your secrets safely</b>.
+              <Trans i18nKey="integration.secrets.warning" />
             </Text>
           </Alert>
         </>

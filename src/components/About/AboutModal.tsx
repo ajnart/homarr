@@ -1,9 +1,11 @@
 import {
   ActionIcon,
+  Anchor,
   Badge,
   Button,
   createStyles,
   Group,
+  HoverCard,
   Modal,
   Table,
   Text,
@@ -17,6 +19,7 @@ import {
   IconVocabulary,
   IconWorldWww,
 } from '@tabler/icons';
+import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
 import { i18n } from 'next-i18next';
 import Image from 'next/image';
@@ -27,12 +30,13 @@ import { usePrimaryGradient } from '../layout/useGradient';
 interface AboutModalProps {
   opened: boolean;
   closeModal: () => void;
+  newVersionAvailable?: string;
 }
 
-export const AboutModal = ({ opened, closeModal }: AboutModalProps) => {
+export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutModalProps) => {
   const { classes } = useStyles();
   const colorGradiant = usePrimaryGradient();
-  const informations = useInformationTableItems();
+  const informations = useInformationTableItems(newVersionAvailable);
 
   return (
     <Modal
@@ -50,8 +54,8 @@ export const AboutModal = ({ opened, closeModal }: AboutModalProps) => {
     >
       <Text mb="lg">
         Homarr is a simple and modern homepage for your server that helps you access all of your
-        apps in one place. It integrates with the apps you use to display useful information
-        or control them. It&apos;s easy to install and supports many different devices.
+        apps in one place. It integrates with the apps you use to display useful information or
+        control them. It&apos;s easy to install and supports many different devices.
       </Text>
 
       <Title order={6} mb="xs" align="center">
@@ -123,7 +127,8 @@ interface ExtendedInitOptions extends InitOptions {
   locales: string[];
 }
 
-const useInformationTableItems = (): InformationTableItem[] => {
+const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
+  // TODO: Fix this to not request. Pass it as a prop.
   const colorGradiant = usePrimaryGradient();
 
   let items: InformationTableItem[] = [];
@@ -161,9 +166,41 @@ const useInformationTableItems = (): InformationTableItem[] => {
       icon: <IconVersions size={20} />,
       label: 'Homarr version',
       content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
-          {CURRENT_VERSION}
-        </Badge>
+        <Group position="right">
+          <Badge variant="gradient" gradient={colorGradiant}>
+            {CURRENT_VERSION}
+          </Badge>
+          {newVersionAvailable && (
+            <HoverCard shadow="md" position="top" withArrow>
+              <HoverCard.Target>
+                <motion.div
+                  initial={{ scale: 1.2 }}
+                  animate={{
+                    scale: [0.8, 1.10, 1],
+                    rotate: [0, 10, 0],
+                  }}
+                  transition={{ duration: 0.8, ease: 'easeInOut' }}
+                >
+                  <Badge color="green" variant="filled">
+                    new: {newVersionAvailable}
+                  </Badge>
+                </motion.div>
+              </HoverCard.Target>
+              <HoverCard.Dropdown>
+                Version{' '}
+                <b>
+                  <Anchor
+                    target="_blank"
+                    href={`https://github.com/ajnart/homarr/releases/tag/${newVersionAvailable}`}
+                  >
+                    {newVersionAvailable}
+                  </Anchor>
+                </b>{' '}
+                is available ! Current version: {CURRENT_VERSION}
+              </HoverCard.Dropdown>
+            </HoverCard>
+          )}
+        </Group>
       ),
     },
   ];

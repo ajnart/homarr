@@ -22,7 +22,7 @@ export const ChangeWidgetPositionModal = ({
     updateConfig(
       configName,
       (prev) => {
-        let currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+        const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
         currentWidget!.shape = {
           location: {
             x,

@@ -39,7 +39,7 @@ export default function ConfigActions() {
       <Flex gap="xs" justify="stretch">
         <ActionIcon className={classes.actionIcon} onClick={handleDownload} variant="default">
           <IconDownload size={20} />
-          <Text>{t('buttons.download')}</Text>
+          <Text size="sm">{t('buttons.download')}</Text>
         </ActionIcon>
         <ActionIcon
           className={classes.actionIcon}
@@ -48,11 +48,11 @@ export default function ConfigActions() {
           variant="light"
         >
           <IconTrash color={colors.red[2]} size={20} />
-          <Text>{t('buttons.delete.text')}</Text>
+          <Text size="sm">{t('buttons.delete.text')}</Text>
         </ActionIcon>
         <ActionIcon className={classes.actionIcon} onClick={createCopyModal.open} variant="default">
           <IconCopy size={20} />
-          <Text>{t('buttons.saveCopy')}</Text>
+          <Text size="sm">{t('buttons.saveCopy')}</Text>
         </ActionIcon>
       </Flex>
 

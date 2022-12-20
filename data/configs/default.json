@@ -164,28 +164,30 @@
       }
     }
   ],
-  "widgets": [{
-    "id": "date",
-    "properties": {
-      "display24HourFormat": true
-    },
-    "area": {
-      "type": "wrapper",
+  "widgets": [
+    {
+      "id": "date",
       "properties": {
-        "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
-      }
-    },
-    "shape": {
-      "location": {
-        "x": 0,
-        "y": 3
+        "display24HourFormat": true
       },
-      "size": {
-        "width": 4,
-        "height": 2
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 3
+        },
+        "size": {
+          "width": 4,
+          "height": 2
+        }
       }
     }
-  }],
+  ],
   "settings": {
     "common": {
       "searchEngine": {

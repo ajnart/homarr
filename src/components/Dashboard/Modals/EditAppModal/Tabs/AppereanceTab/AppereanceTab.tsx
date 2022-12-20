@@ -16,7 +16,7 @@ export const AppearanceTab = ({
   disallowAppNameProgagation,
   allowAppNamePropagation,
 }: AppearanceTabProps) => {
-  const { t } = useTranslation('');
+  const { t } = useTranslation('layout/modals/add-app');
   const { classes } = useStyles();
 
   return (
@@ -26,8 +26,8 @@ export const AppearanceTab = ({
           defaultValue={form.values.appearance.iconUrl}
           className={classes.textInput}
           icon={<DebouncedAppIcon form={form} width={20} height={20} />}
-          label="App Icon"
-          description="Logo of your app displayed in your dashboard. Must return a body content containg an image"
+          label={t('appearance.icon.label')}
+          description={t('appearance.icon.description')}
           variant="default"
           withAsterisk
           required

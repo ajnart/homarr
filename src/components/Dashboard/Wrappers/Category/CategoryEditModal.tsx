@@ -1,6 +1,7 @@
 import { Button, Group, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
+import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { CategoryType } from '../../../../types/category';
@@ -31,15 +32,17 @@ export const CategoryEditModal = ({
     context.closeModal(id);
   };
 
+  const { t } = useTranslation('common');
+
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
       <TextInput data-autoFocus {...form.getInputProps('name')} label="Name of category" />
 
       <Group mt="md" grow>
         <Button onClick={() => context.closeModal(id)} variant="light" color="gray">
-          Cancel
+          {t('cancel')}
         </Button>
-        <Button type="submit">Save</Button>
+        <Button type="submit">{t('save')}</Button>
       </Group>
     </form>
   );

@@ -10,8 +10,7 @@ interface MobileRibbonSidebarDrawerProps {
 export const MobileRibbonSidebarDrawer = ({
   location,
   ...props
-}: MobileRibbonSidebarDrawerProps) => {
-  return (
+}: MobileRibbonSidebarDrawerProps) => (
     <Drawer
       position={location}
       title={<Title order={4}>{location} sidebar</Title>}
@@ -24,4 +23,3 @@ export const MobileRibbonSidebarDrawer = ({
       <DashboardSidebar location={location} />
     </Drawer>
   );
-};
