@@ -35,9 +35,9 @@ export const WidgetsRemoveModal = ({
       <Text>{t('descriptor.remove.confirm')}</Text>
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
-          {t('common:actions.cancel')}
+          {t('common:cancel')}
         </Button>
-        <Button onClick={() => handleDeletion()}>{t('common:actions.ok')}</Button>
+        <Button onClick={() => handleDeletion()}>{t('common:ok')}</Button>
       </Group>
     </Stack>
   );

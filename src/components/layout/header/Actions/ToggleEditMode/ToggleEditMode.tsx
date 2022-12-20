@@ -1,6 +1,6 @@
 import { ActionIcon, Button, Popover, Text, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useScreenSmallerThan } from '../../../../../tools/hooks/useScreenSmallerThan';
 
@@ -54,7 +54,9 @@ export const ToggleEditModeAction = () => {
           </div>
           <Text align="center" size="sm">
             <Text weight="bold">{t('popover.title')}</Text>
-            {t('popover.text')}
+            <Text>
+              <Trans i18nKey="layout/header/actions/toggle-edit-mode:popover.text" />
+            </Text>
           </Text>
         </Popover.Dropdown>
       </Popover>
