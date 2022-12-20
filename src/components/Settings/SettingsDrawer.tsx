@@ -5,7 +5,7 @@ import CustomizationSettings from './Customization/CustomizationSettings';
 import CommonSettings from './Common/CommonSettings';
 import Credits from './Common/Credits';
 
-function SettingsMenu() {
+function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
 
   return (
@@ -33,7 +33,11 @@ interface SettingsDrawerProps {
   closeDrawer: () => void;
 }
 
-export function SettingsDrawer({ opened, closeDrawer }: SettingsDrawerProps) {
+export function SettingsDrawer({
+  opened,
+  closeDrawer,
+  newVersionAvailable,
+}: SettingsDrawerProps & { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
 
   return (
@@ -45,7 +49,7 @@ export function SettingsDrawer({ opened, closeDrawer }: SettingsDrawerProps) {
       opened={opened}
       onClose={closeDrawer}
     >
-      <SettingsMenu />
+      <SettingsMenu newVersionAvailable={newVersionAvailable} />
       <Credits />
     </Drawer>
   );

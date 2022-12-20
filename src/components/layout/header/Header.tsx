@@ -1,4 +1,6 @@
-import { Box, createStyles, Group, Header as MantineHeader } from '@mantine/core';
+import { Box, createStyles, Group, Header as MantineHeader, Indicator } from '@mantine/core';
+import { useState, useEffect } from 'react';
+import { REPO_URL, CURRENT_VERSION } from '../../../../data/constants';
 import { useConfigContext } from '../../../config/provider';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
@@ -15,6 +17,18 @@ export function Header(props: any) {
 
   const { config } = useConfigContext();
 
+  const [newVersionAvailable, setNewVersionAvailable] = useState<string>('');
+  useEffect(() => {
+    // Fetch Data here when component first mounted
+    fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
+      res.json().then((data) => {
+        if (data.tag_name > CURRENT_VERSION) {
+          setNewVersionAvailable(data.tag_name);
+        }
+      });
+    });
+  }, [CURRENT_VERSION]);
+
   return (
     <MantineHeader height={HeaderHeight} className={cardClasses.card}>
       <Group p="xs" noWrap grow>
@@ -25,7 +39,9 @@ export function Header(props: any) {
           <Search />
           <AddElementAction />
           <ToggleEditModeAction />
-          <SettingsMenu />
+          <Indicator size={15} color="blue" withBorder processing disabled={!newVersionAvailable}>
+            <SettingsMenu newVersionAvailable={newVersionAvailable} />
+          </Indicator>
         </Group>
       </Group>
     </MantineHeader>
