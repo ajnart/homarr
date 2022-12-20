@@ -3,7 +3,6 @@ import { getCookie } from 'cookies-next';
 import axios from 'axios';
 import Consola from 'consola';
 import { getConfig } from '../../../../tools/config/getConfig';
-import { Config } from '../../../../tools/types';
 import { MediaType } from '../../../../modules/overseerr/SearchResult';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {

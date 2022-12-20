@@ -29,11 +29,7 @@ interface IconSelectorProps {
   allowAppNamePropagation: boolean;
 }
 
-export const IconSelector = ({
-  onChange,
-  allowAppNamePropagation,
-  form,
-}: IconSelectorProps) => {
+export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSelectorProps) => {
   const { data, isLoading } = useRepositoryIconsQuery<WalkxcodeRepositoryIcon>({
     url: 'https://api.github.com/repos/walkxcode/Dashboard-Icons/contents/png',
     converter: (item) => ({

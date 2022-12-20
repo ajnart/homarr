@@ -1,6 +1,5 @@
-import { Tabs, TextInput, Switch, Text } from '@mantine/core';
+import { Tabs, Switch } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconClick } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { AppType } from '../../../../../../types/app';
 

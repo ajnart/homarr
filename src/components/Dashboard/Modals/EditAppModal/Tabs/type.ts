@@ -1,6 +1,1 @@
-export type EditAppModalTab =
-  | 'general'
-  | 'behaviour'
-  | 'network'
-  | 'appereance'
-  | 'integration';
+export type EditAppModalTab = 'general' | 'behaviour' | 'network' | 'appereance' | 'integration';

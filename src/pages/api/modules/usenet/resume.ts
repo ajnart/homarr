@@ -32,10 +32,8 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
         const options = {
           host: url.hostname,
           port: url.port,
-          login:
-            app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash:
-            app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);

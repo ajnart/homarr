@@ -1,7 +1,4 @@
-import { ActionIcon, Title, Tooltip, Drawer, Tabs, ScrollArea } from '@mantine/core';
-import { useHotkeys } from '@mantine/hooks';
-import { useState } from 'react';
-import { IconSettings } from '@tabler/icons';
+import { Title, Drawer, Tabs, ScrollArea } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import CustomizationSettings from './Customization/CustomizationSettings';

@@ -4,7 +4,6 @@ import ConfigChanger from '../../Config/ConfigChanger';
 import ConfigActions from './Config/ConfigActions';
 import LanguageSelect from './Language/LanguageSelect';
 import { SearchEngineSelector } from './SearchEngine/SearchEngineSelector';
-import { SearchNewTabSwitch } from './SearchNewTabSwitch';
 
 export default function CommonSettings() {
   const { config } = useConfigContext();

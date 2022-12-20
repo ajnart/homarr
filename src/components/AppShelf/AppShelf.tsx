@@ -12,7 +12,6 @@ import {
 
 import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import { useLocalStorage } from '@mantine/hooks';
-import { useTranslation } from 'next-i18next';
 import * as Modules from '../../modules';
 import { useConfig } from '../../tools/state';
 

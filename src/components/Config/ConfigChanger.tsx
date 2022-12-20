@@ -47,11 +47,9 @@ export default function ConfigChanger() {
   );
 }
 
-const useConfigsQuery = () => {
-  return useQuery({
+const useConfigsQuery = () => useQuery({
     queryKey: ['config/get-all'],
     queryFn: fetchConfigs,
   });
-};
 
 const fetchConfigs = async () => (await (await fetch('/api/configs')).json()) as string[];

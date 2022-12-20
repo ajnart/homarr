@@ -41,8 +41,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     'lidarr',
   ];
   const mediaApps = config.apps.filter(
-    (app) =>
-      app.integration && mediaAppIntegrationTypes.includes(app.integration.type)
+    (app) => app.integration && mediaAppIntegrationTypes.includes(app.integration.type)
   );
 
   const medias = await Promise.all(

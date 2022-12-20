@@ -31,9 +31,9 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
         let indexInFormValue =
           form.values.integration?.properties.findIndex((p) => p.field === property) ?? -1;
         if (indexInFormValue === -1) {
-          const type = Object.entries(integrationFieldDefinitions).find(
+          const { type } = Object.entries(integrationFieldDefinitions).find(
             ([k, v]) => k === property
-          )![1].type;
+          )![1];
           const newProperty: AppIntegrationPropertyType = {
             type,
             field: property as IntegrationField,

@@ -1,4 +1,4 @@
-import { Menu, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import { Menu, useMantineColorScheme } from '@mantine/core';
 import { IconMoonStars, IconSun } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 

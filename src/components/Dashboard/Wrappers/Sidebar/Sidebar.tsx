@@ -1,9 +1,5 @@
 import { Card } from '@mantine/core';
 import { RefObject } from 'react';
-import { IWidgetDefinition } from '../../../../widgets/widgets';
-import { Tiles } from '../../Tiles/tilesDefinitions';
-import Widgets from '../../../../widgets';
-import { GridstackTileWrapper } from '../../Tiles/TileWrapper';
 import { useGridstack } from '../gridstack/use-gridstack';
 import { WrapperContent } from '../WrapperContent';
 
@@ -38,6 +34,5 @@ export const DashboardSidebar = ({ location }: DashboardSidebarProps) => {
   );
 };
 
-const useMinRowForFullHeight = (wrapperRef: RefObject<HTMLDivElement>) => {
-  return wrapperRef.current ? Math.floor(wrapperRef.current!.offsetHeight / 64) : 2;
-};
+const useMinRowForFullHeight = (wrapperRef: RefObject<HTMLDivElement>) =>
+  wrapperRef.current ? Math.floor(wrapperRef.current!.offsetHeight / 64) : 2;

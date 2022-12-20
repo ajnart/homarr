@@ -3,8 +3,6 @@ import { DashboardDetailView } from './Views/DetailView';
 import { DashboardEditView } from './Views/EditView';
 import { useEditModeStore } from './Views/useEditModeStore';
 
-interface DashboardProps {}
-
 export const Dashboard = () => {
   const isEditMode = useEditModeStore((x) => x.enabled);
 

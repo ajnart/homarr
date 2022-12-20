@@ -1,10 +1,6 @@
-import { Card, Group, Title } from '@mantine/core';
+import { Group, Title } from '@mantine/core';
 import { CategoryType } from '../../../../types/category';
-import { IWidgetDefinition } from '../../../../widgets/widgets';
 import { HomarrCardWrapper } from '../../Tiles/HomarrCardWrapper';
-import { Tiles } from '../../Tiles/tilesDefinitions';
-import Widgets from '../../../../widgets';
-import { GridstackTileWrapper } from '../../Tiles/TileWrapper';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { useGridstack } from '../gridstack/use-gridstack';
 import { CategoryEditMenu } from './CategoryEditMenu';

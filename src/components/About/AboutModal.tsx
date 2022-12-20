@@ -50,8 +50,8 @@ export const AboutModal = ({ opened, closeModal }: AboutModalProps) => {
     >
       <Text mb="lg">
         Homarr is a simple and modern homepage for your server that helps you access all of your
-        apps in one place. It integrates with the apps you use to display useful information
-        or control them. It&apos;s easy to install and supports many different devices.
+        apps in one place. It integrates with the apps you use to display useful information or
+        control them. It&apos;s easy to install and supports many different devices.
       </Text>
 
       <Title order={6} mb="xs" align="center">
