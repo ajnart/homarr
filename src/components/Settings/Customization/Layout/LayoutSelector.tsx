@@ -110,7 +110,7 @@ export const LayoutSelector = ({ defaultLayout }: LayoutSelectorProps) => {
         <Paper className={classes.primaryWrapper} p="xs" withBorder>
           <Text align="center">{t('layout.main')}</Text>
           <Text color="dimmed" size="xs" align="center">
-            {t('cannotturnoff')}
+            {t('layout.cannotturnoff')}
           </Text>
         </Paper>
 

@@ -12,7 +12,7 @@
     "madeWithLove": "Made with ❤️ by @"
   },
   "grow": "Grow grid (take all space)",
-  "yayout": {
+  "layout": {
     "title": "Dashboard yayout",
     "main": "Main",
     "sidebar": "Sidebar",
