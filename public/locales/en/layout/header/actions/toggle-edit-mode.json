@@ -6,6 +6,6 @@
     },
     "popover": {
         "title": "Edit mode is enabled",
-        "text": "You can adjust and configure your apps now. Changes are not saved until you exit edit mode"
+        "text": "You can adjust and configure your apps now. Changes are <strong>not saved</strong> until you exit edit mode"
     }
 }

@@ -37,7 +37,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
               }
               onClick={() => aboutModal.open()}
             >
-              About
+              {t('about')}
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>

@@ -98,7 +98,7 @@ function getItems(module: IModule) {
                 onChange={(e) => {}}
               />
 
-              <Button type="submit">{t('actions.save', { ns: 'common' })}</Button>
+              <Button type="submit">{t('save', { ns: 'common' })}</Button>
             </Group>
           </form>
         );

@@ -200,10 +200,10 @@ export const EditAppModal = ({
 
           <Group position="right" mt="md">
             <Button onClick={closeModal} px={50} variant="light" color="gray">
-              {t('common:actions.cancel')}
+              {t('common:cancel')}
             </Button>
             <Button disabled={!form.isValid()} px={50} type="submit">
-              {t('common:actions.save')}
+              {t('common:save')}
             </Button>
           </Group>
         </Stack>

@@ -1,5 +1,6 @@
-import { Button, Card, Center, Grid, Stack, Text } from '@mantine/core';
+import { Button, Card, Center, Grid, ScrollArea, Stack, Text } from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import React from 'react';
 import { useStyles } from './styles';
@@ -20,6 +21,7 @@ export const GenericAvailableElementType = ({
   handleAddition,
 }: GenericAvailableElementTypeProps) => {
   const { classes } = useStyles();
+  const { t } = useTranslation('layout/modals/about');
 
   const Icon =
     typeof image === 'string' ? () => <Image src={image} width={24} height={24} /> : image;
@@ -50,7 +52,7 @@ export const GenericAvailableElementType = ({
             radius="md"
             fullWidth
           >
-            Add to Dashboard
+            {t('addToDashboard')}
           </Button>
         </Stack>
       </Card>

@@ -92,9 +92,9 @@ export const WidgetsEditModal = ({
 
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
-          {t('common:actions.cancel')}
+          {t('common:cancel')}
         </Button>
-        <Button onClick={handleSave}>{t('common:actions.save')}</Button>
+        <Button onClick={handleSave}>{t('common:save')}</Button>
       </Group>
     </Stack>
   );

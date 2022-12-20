@@ -24,7 +24,7 @@ export const GenericTileMenu = ({
   }
 
   return (
-    <Menu withinPortal>
+    <Menu withinPortal withArrow position="right-start">
       <Menu.Target>
         <ActionIcon pos="absolute" top={4} right={4}>
           <IconDots />
@@ -34,14 +34,14 @@ export const GenericTileMenu = ({
         <Menu.Label>{t('sections.settings')}</Menu.Label>
         {displayEdit && (
           <Menu.Item icon={<IconPencil size={16} stroke={1.5} />} onClick={handleClickEdit}>
-            {t('actions.edit')}
+            {t('edit')}
           </Menu.Item>
         )}
         <Menu.Item
           icon={<IconLayoutKanban size={16} stroke={1.5} />}
           onClick={handleClickChangePosition}
         >
-          {t('actions.changePosition')}
+          {t('changePosition')}
         </Menu.Item>
         <Menu.Label>{t('sections.dangerZone')}</Menu.Label>
         <Menu.Item
@@ -49,7 +49,7 @@ export const GenericTileMenu = ({
           icon={<IconTrash size={16} stroke={1.5} color="red" />}
           onClick={handleClickDelete}
         >
-          {t('actions.remove')}
+          {t('remove')}
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

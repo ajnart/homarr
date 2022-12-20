@@ -1,11 +1,13 @@
 import { ActionIcon, Button, Text, Tooltip } from '@mantine/core';
 import { IconEdit, IconEditOff } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { useScreenLargerThan } from '../../../tools/hooks/useScreenLargerThan';
 import { useEditModeStore } from './useEditModeStore';
 
 export const ViewToggleButton = () => {
   const screenLargerThanMd = useScreenLargerThan('md');
   const { enabled: isEditMode, toggleEditMode } = useEditModeStore();
+  const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
 
   return (
     <Tooltip
@@ -27,7 +29,7 @@ export const ViewToggleButton = () => {
           color={isEditMode ? 'red' : undefined}
           radius="md"
         >
-          <Text>{isEditMode ? 'Exit Edit Mode' : 'Enter Edit Mode'}</Text>
+          <Text>{isEditMode ? t('button.enabled') : t('button.disabled')}</Text>
         </Button>
       ) : (
         <ActionIcon

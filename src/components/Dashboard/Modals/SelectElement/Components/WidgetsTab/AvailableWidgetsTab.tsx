@@ -19,8 +19,7 @@ export const AvailableIntegrationElements = ({
       <SelectorBackArrow onClickBack={onClickBack} />
 
       <Text mb="md" color="dimmed">
-        Widgets interact with your apps, to provide you with more control over your applications.
-        They usually require a few configurations before use.
+        {t('widgetDescription')}
       </Text>
 
       <Grid>

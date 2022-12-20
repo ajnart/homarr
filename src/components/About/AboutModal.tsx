@@ -4,6 +4,7 @@ import {
   Badge,
   Button,
   createStyles,
+  Divider,
   Group,
   HoverCard,
   Modal,
@@ -21,7 +22,7 @@ import {
 } from '@tabler/icons';
 import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
-import { i18n } from 'next-i18next';
+import { i18n, Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 import { CURRENT_VERSION } from '../../../data/constants';
@@ -37,6 +38,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
   const { classes } = useStyles();
   const colorGradiant = usePrimaryGradient();
   const informations = useInformationTableItems(newVersionAvailable);
+  const { t } = useTranslation(['common', 'layout/modals/about']);
 
   return (
     <Modal
@@ -46,21 +48,15 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
         <Group spacing="sm">
           <Image src="/imgs/logo/logo.png" width={30} height={30} objectFit="contain" />
           <Title order={3} variant="gradient" gradient={colorGradiant}>
-            About Homarr
+            {t('about')} Homarr
           </Title>
         </Group>
       }
       size="xl"
     >
       <Text mb="lg">
-        Homarr is a simple and modern homepage for your server that helps you access all of your
-        apps in one place. It integrates with the apps you use to display useful information or
-        control them. It&apos;s easy to install and supports many different devices.
+        <Trans i18nKey="layout/modals/about:description" />
       </Text>
-
-      <Title order={6} mb="xs" align="center">
-        Version information:
-      </Title>
 
       <Table mb="lg" striped highlightOnHover withBorder>
         <tbody>
@@ -71,7 +67,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
                   <ActionIcon className={classes.informationIcon} variant="default">
                     {item.icon}
                   </ActionIcon>
-                  {item.label}
+                  {t(item.label)}
                 </Group>
               </td>
               <td className={classes.informationTableColumn}>{item.content}</td>
@@ -79,9 +75,9 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
           ))}
         </tbody>
       </Table>
-
+      <Divider variant="dashed" mb="md" />
       <Title order={6} mb="xs" align="center">
-        Having trouble or questions? Connect with us!
+        {t('layout/modals/about:contact')}
       </Title>
 
       <Group grow>
@@ -101,7 +97,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
           leftIcon={<IconWorldWww size={20} />}
           variant="default"
         >
-          Website
+          Documentation
         </Button>
         <Button
           component="a"
@@ -141,7 +137,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       ...items,
       {
         icon: <IconLanguage size={20} />,
-        label: 'Loaded I18n translation namespaces',
+        label: 'layout/modals/about:i18n',
         content: (
           <Badge variant="gradient" gradient={colorGradiant}>
             {usedI18nNamespaces.length}
@@ -150,7 +146,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       },
       {
         icon: <IconVocabulary size={20} />,
-        label: 'Configured I18n locales',
+        label: 'layout/modals/about:locales',
         content: (
           <Badge variant="gradient" gradient={colorGradiant}>
             {initOptions.locales.length}
@@ -164,7 +160,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
     ...items,
     {
       icon: <IconVersions size={20} />,
-      label: 'Homarr version',
+      label: 'version',
       content: (
         <Group position="right">
           <Badge variant="gradient" gradient={colorGradiant}>
@@ -176,7 +172,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                 <motion.div
                   initial={{ scale: 1.2 }}
                   animate={{
-                    scale: [0.8, 1.10, 1],
+                    scale: [0.8, 1.1, 1],
                     rotate: [0, 10, 0],
                   }}
                   transition={{ duration: 0.8, ease: 'easeInOut' }}
