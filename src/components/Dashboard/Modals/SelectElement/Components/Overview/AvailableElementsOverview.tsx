@@ -77,11 +77,11 @@ export const AvailableElementTypes = ({
           icon={<IconStack size={40} strokeWidth={1.3} />}
           onClick={onOpenWidgets}
         />
-        <ElementItem
+        {/*<ElementItem
           name="Static Element"
           icon={<IconTextResize size={40} strokeWidth={1.3} />}
           onClick={onOpenStaticElements}
-        />
+        />*/}
       </Group>
     </>
   );
