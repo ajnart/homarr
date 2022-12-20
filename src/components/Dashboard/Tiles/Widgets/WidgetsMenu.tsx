@@ -59,7 +59,9 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       handleClickEdit={handleEditClick}
       handleClickChangePosition={handleChangeSizeClick}
       handleClickDelete={handleDeleteClick}
-      displayEdit={widget.properties !== undefined}
+      displayEdit={
+        typeof widget.properties !== 'undefined' && Object.keys(widget.properties).length !== 0
+      }
     />
   );
 };
