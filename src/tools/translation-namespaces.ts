@@ -1,10 +1,8 @@
 export const dashboardNamespaces = [
   'common',
-  'layout/app-shelf',
-  'layout/add-service-app-shelf',
-  'layout/app-shelf-menu',
   'layout/tools',
   'layout/element-selector/selector',
+  'layout/modals/add-app',
   'layout/header/actions/toggle-edit-mode',
   'settings/common',
   'settings/general/theme-selector',

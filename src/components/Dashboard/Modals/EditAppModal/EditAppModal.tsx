@@ -1,4 +1,4 @@
-import { Alert, Button, createStyles, Group, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
+import { Alert, Button, Group, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
 import {
@@ -30,7 +30,7 @@ export const EditAppModal = ({
   id,
   innerProps,
 }: ContextModalProps<{ app: AppType; allowAppNamePropagation: boolean }>) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['layout/modals/add-app', 'common']);
   const { name: configName, config } = useConfigContext();
   const updateConfig = useConfigStore((store) => store.updateConfig);
   const [allowAppNamePropagation, setAllowAppNamePropagation] = useState<boolean>(
@@ -137,68 +137,76 @@ export const EditAppModal = ({
       </Stack>
 
       <form onSubmit={form.onSubmit(onSubmit)}>
-        <Tabs
-          value={activeTab}
-          onTabChange={(tab) => setActiveTab(tab as EditAppModalTab)}
-          defaultValue="general"
+        <Stack
+          justify="space-between"
+          style={{
+            minHeight: 300,
+          }}
         >
-          <Tabs.List grow>
-            <Tabs.Tab
-              rightSection={<ValidationErrorIndicator keys={['name', 'url']} />}
-              icon={<IconAdjustments size={14} />}
-              value="general"
-            >
-              General
-            </Tabs.Tab>
-            <Tabs.Tab
-              rightSection={<ValidationErrorIndicator keys={['behaviour.onClickUrl']} />}
-              icon={<IconClick size={14} />}
-              value="behaviour"
-            >
-              Behaviour
-            </Tabs.Tab>
-            <Tabs.Tab
-              rightSection={<ValidationErrorIndicator keys={[]} />}
-              icon={<IconAccessPoint size={14} />}
-              value="network"
-            >
-              Network
-            </Tabs.Tab>
-            <Tabs.Tab
-              rightSection={<ValidationErrorIndicator keys={['appearance.iconUrl']} />}
-              icon={<IconBrush size={14} />}
-              value="appearance"
-            >
-              Appearance
-            </Tabs.Tab>
-            <Tabs.Tab
-              rightSection={<ValidationErrorIndicator keys={[]} />}
-              icon={<IconPlug size={14} />}
-              value="integration"
-            >
-              Integration
-            </Tabs.Tab>
-          </Tabs.List>
+          <Tabs
+            value={activeTab}
+            onTabChange={(tab) => setActiveTab(tab as EditAppModalTab)}
+            defaultValue="general"
+            radius="md"
+          >
+            <Tabs.List grow>
+              <Tabs.Tab
+                rightSection={<ValidationErrorIndicator keys={['name', 'url']} />}
+                icon={<IconAdjustments size={14} />}
+                value="general"
+              >
+                {t('tabs.general')}
+              </Tabs.Tab>
+              <Tabs.Tab
+                rightSection={<ValidationErrorIndicator keys={['behaviour.onClickUrl']} />}
+                icon={<IconClick size={14} />}
+                value="behaviour"
+              >
+                {t('tabs.behaviour')}
+              </Tabs.Tab>
+              <Tabs.Tab
+                rightSection={<ValidationErrorIndicator keys={[]} />}
+                icon={<IconAccessPoint size={14} />}
+                value="network"
+              >
+                {t('tabs.network')}
+              </Tabs.Tab>
+              <Tabs.Tab
+                rightSection={<ValidationErrorIndicator keys={['appearance.iconUrl']} />}
+                icon={<IconBrush size={14} />}
+                value="appearance"
+              >
+                {t('tabs.appearance')}
+              </Tabs.Tab>
+              <Tabs.Tab
+                rightSection={<ValidationErrorIndicator keys={[]} />}
+                icon={<IconPlug size={14} />}
+                value="integration"
+              >
+                {t('tabs.integration')}
+              </Tabs.Tab>
+            </Tabs.List>
 
-          <GeneralTab form={form} openTab={(targetTab) => setActiveTab(targetTab)} />
-          <BehaviourTab form={form} />
-          <NetworkTab form={form} />
-          <AppearanceTab
-            form={form}
-            disallowAppNameProgagation={() => setAllowAppNamePropagation(false)}
-            allowAppNamePropagation={allowAppNamePropagation}
-          />
-          <IntegrationTab form={form} />
-        </Tabs>
+            <GeneralTab form={form} openTab={(targetTab) => setActiveTab(targetTab)} />
+            <BehaviourTab form={form} />
+            <NetworkTab form={form} />
+            <AppearanceTab
+              form={form}
+              disallowAppNameProgagation={() => setAllowAppNamePropagation(false)}
+              allowAppNamePropagation={allowAppNamePropagation}
+            />
+            <IntegrationTab form={form} />
+          </Tabs>
 
-        <Group position="right" mt={100}>
-          <Button onClick={closeModal} px={50} variant="light" color="gray">
-            Cancel
-          </Button>
-          <Button disabled={!form.isValid()} px={50} type="submit">
-            Save
-          </Button>
-        </Group>
+          <Group position="right" mt="md">
+            <Button onClick={closeModal} px={50} variant="light" color="gray">
+              {t('common:actions.cancel')}
+            </Button>
+            <Button disabled={!form.isValid()} px={50} type="submit">
+              {t('common:actions.save')}
+            </Button>
+          </Group>
+        </Stack>
       </form>
     </>
   );

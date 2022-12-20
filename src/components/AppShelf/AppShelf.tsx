@@ -38,8 +38,6 @@ const AppShelf = (props: any) => {
   const [activeId, setActiveId] = useState(null);
   const { colorScheme } = useMantineColorScheme();
 
-  const { t } = useTranslation('layout/app-shelf');
-
   const sensors = useSensors(
     useSensor(TouchSensor, {
       activationConstraint: {

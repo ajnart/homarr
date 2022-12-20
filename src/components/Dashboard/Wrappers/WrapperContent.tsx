@@ -18,11 +18,10 @@ interface WrapperContentProps {
   };
 }
 
-export const WrapperContent = ({ apps, refs, widgets }: WrapperContentProps) => {
-  return (
+export const WrapperContent = ({ apps, refs, widgets }: WrapperContentProps) => (
     <>
       {apps?.map((app) => {
-        const { component: TileComponent, ...tile } = Tiles['app'];
+        const { component: TileComponent, ...tile } = Tiles.app;
         return (
           <GridstackTileWrapper
             id={app.id}
@@ -61,4 +60,3 @@ export const WrapperContent = ({ apps, refs, widgets }: WrapperContentProps) => 
       })}
     </>
   );
-};

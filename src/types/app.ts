@@ -90,16 +90,16 @@ export const integrationFieldDefinitions: {
   apiKey: {
     type: 'private',
     icon: IconKey,
-    label: 'API Key',
+    label: 'common:secrets.apiKey',
   },
   username: {
     type: 'public',
     icon: IconUser,
-    label: 'Username',
+    label: 'common:secrets.username',
   },
   password: {
     type: 'private',
     icon: IconPassword,
-    label: 'Password',
+    label: 'common:secrets.password',
   },
 };

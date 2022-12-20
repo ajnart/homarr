@@ -9,12 +9,12 @@ interface NetworkTabProps {
 }
 
 export const NetworkTab = ({ form }: NetworkTabProps) => {
-  const { t } = useTranslation('');
+  const { t } = useTranslation('layout/modals/add-app');
   return (
     <Tabs.Panel value="network" pt="lg">
       <Switch
-        label="Enable status checker"
-        description="Sends a simple HTTP / HTTPS request to check if your app is online"
+        label={t('network.statusChecker.label')}
+        description={t('network.statusChecker.description')}
         mb="md"
         defaultChecked={form.values.network.enabledStatusChecker}
         {...form.getInputProps('network.enabledStatusChecker')}
@@ -22,8 +22,8 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
       {form.values.network.enabledStatusChecker && (
         <MultiSelect
           required
-          label="HTTP status codes"
-          description="Determines what response codes are allowed for this app to be 'Online'"
+          label={t('network.statusCodes.label')}
+          description={t('network.statusCodes.description')}
           data={StatusCodes}
           clearable
           searchable

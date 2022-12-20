@@ -11,6 +11,7 @@ import {
   Title,
 } from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
 interface GenericSecretInputProps {
@@ -32,6 +33,7 @@ export const GenericSecretInput = ({
   const Icon = setIcon;
 
   const [displayUpdateField, setDisplayUpdateField] = useState<boolean>(false);
+  const { t } = useTranslation(['layout/modals/add-app', 'common']);
 
   return (
     <Card withBorder>
@@ -43,7 +45,7 @@ export const GenericSecretInput = ({
             </ThemeIcon>
             <Stack spacing={0}>
               <Title className={classes.subtitle} order={6}>
-                {label}
+                {t(label)}
               </Title>
             </Stack>
           </Group>
@@ -51,13 +53,13 @@ export const GenericSecretInput = ({
         <Grid.Col xs={12} md={6}>
           <Flex gap={10} justify="end" align="end">
             <Button variant="subtle" color="gray" px="xl">
-              Clear Secret
+              {t('integration.secrets.clear')}
             </Button>
             {displayUpdateField === true ? (
               <PasswordInput placeholder="new secret" width={200} {...props} />
             ) : (
               <Button onClick={() => setDisplayUpdateField(true)} variant="light">
-                Set Secret
+                {t('integration.secrets.update')}
               </Button>
             )}
           </Flex>

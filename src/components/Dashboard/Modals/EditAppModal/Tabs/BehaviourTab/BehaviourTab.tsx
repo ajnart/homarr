@@ -9,21 +9,13 @@ interface BehaviourTabProps {
 }
 
 export const BehaviourTab = ({ form }: BehaviourTabProps) => {
-  const { t } = useTranslation('');
+  const { t } = useTranslation('layout/modals/add-app');
+
   return (
     <Tabs.Panel value="behaviour" pt="xs">
-      <TextInput
-        icon={<IconClick size={16} />}
-        label="On click url"
-        description="Overrides the app URL when clicking on the app"
-        placeholder="URL that should be opened instead when clicking on the app"
-        variant="default"
-        mb="md"
-        {...form.getInputProps('behaviour.onClickUrl')}
-      />
-
       <Switch
-        label="Open in new tab"
+        label={t('behaviour.isOpeningNewTab.label')}
+        description={t('behaviour.isOpeningNewTab.description')}
         {...form.getInputProps('behaviour.isOpeningNewTab', { type: 'checkbox' })}
       />
     </Tabs.Panel>
