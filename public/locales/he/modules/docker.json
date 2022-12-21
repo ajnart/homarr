@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "דוקר",
-    "description": "מאפשר ניהול בקלות את הקונטיינרים בדוקר"
+    "description": "מאפשר ניהול קונטיינרים בדוקר"
   },
   "search": {
     "placeholder": "חיפוש לפי קונטיינר או שם קובץ תמונה"
@@ -14,7 +14,7 @@
       "state": "מצב"
     },
     "body": {
-      "portCollapse": "יציאות"
+      "portCollapse": "עוד {{ports}}"
     },
     "states": {
       "running": "פועל",
