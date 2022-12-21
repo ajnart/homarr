@@ -38,7 +38,7 @@ function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTrafficTileProps) {
   const { t } = useTranslation(`modules/${definition.id}`);
   const { colors } = useMantineTheme();
   const setSafeInterval = useSetSafeInterval();
-  const { config } = useConfigContext();
+  const { configVersion, config } = useConfigContext();
 
   const [torrentHistory, torrentHistoryHandlers] = useListState<TorrentHistory>([]);
   const [torrents, setTorrents] = useState<NormalizedTorrent[]>([]);
@@ -63,6 +63,7 @@ function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTrafficTileProps) {
           setTorrents(response.data);
         })
         .catch((error) => {
+          if (error.status === 401) return;
           setTorrents([]);
           // eslint-disable-next-line no-console
           console.error('Error while fetching torrents', error.response.data);
@@ -78,7 +79,7 @@ function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTrafficTileProps) {
           clearInterval(interval);
         });
     }, 1000);
-  }, [config?.apps]);
+  }, [configVersion]);
 
   useEffect(() => {
     torrentHistoryHandlers.append({
