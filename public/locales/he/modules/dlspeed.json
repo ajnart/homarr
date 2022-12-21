@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "מהירות הורדה",
-    "description": "מציג את מהירות ההורדה הנוכחית של שירות נתמך"
+    "description": "מציג את מהירות הורדה / העלאה נוכחית"
   },
   "card": {
     "table": {
@@ -19,11 +19,11 @@
     },
     "lineChart": {
       "title": "מהירות הורדה נוכחית",
-      "download": "הורדה",
-      "upload": "העלאה",
-      "timeSpan": "לפני שניות",
-      "totalDownload": "הורדה",
-      "totalUpload": "העלאה"
+      "download": "הורדה {{download}}",
+      "upload": "העלאה {{upload}}",
+      "timeSpan": "לפני {{seconds}} שניות",
+      "totalDownload": "הורדות: {{download}}",
+      "totalUpload": "העלאות: {{upload}}"
     },
     "errors": {
       "noDownloadClients": {
