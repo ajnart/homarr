@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "מזג אוויר",
-    "description": "חפש את מזג האוויר הנוכחי במיקום שלך",
+    "description": "מציג את מזג האוויר הנוכחי",
     "settings": {
       "displayInFahrenheit": {
-        "label": "להציג בפרנהייט"
+        "label": "פרנהייט"
       },
       "location": {
         "label": "מיקום מזג האוויר"
