@@ -12,6 +12,7 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useResize } from '../../../../hooks/use-resize';
 import { AppType } from '../../../../types/app';
+import { AreaType } from '../../../../types/area';
 import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
@@ -51,7 +52,7 @@ export const useGridstack = (
             ? x.area.properties.location === areaId
             : x.area.properties.id === areaId)
       ) ?? [],
-    [configVersion]
+    [configVersion, config?.apps.length]
   );
   const widgets = useMemo(() => {
     if (!config) return [];
@@ -62,7 +63,7 @@ export const useGridstack = (
           ? w.area.properties.location === areaId
           : w.area.properties.id === areaId)
     );
-  }, [configVersion]);
+  }, [configVersion, config?.widgets.length]);
 
   // define items in itemRefs for easy access and reference to items
   if (Object.keys(itemRefs.current).length !== items.length + (widgets ?? []).length) {
@@ -137,58 +138,90 @@ export const useGridstack = (
         if (!itemType || !itemId) return;
 
         // Updates the config and defines the new position and wrapper of the item
-        updateConfig(configName, (previous) => {
-          const currentItem =
-            itemType === 'app'
-              ? previous.apps.find((x) => x.id === itemId)
-              : previous.widgets.find((x) => x.id === itemId);
-          if (!currentItem) return previous;
+        updateConfig(
+          configName,
+          (previous) => {
+            const currentItem =
+              itemType === 'app'
+                ? previous.apps.find((x) => x.id === itemId)
+                : previous.widgets.find((x) => x.id === itemId);
+            if (!currentItem) return previous;
 
-          if (areaType === 'sidebar') {
-            currentItem.area = {
-              type: areaType,
-              properties: {
-                location: areaId as 'right' | 'left',
+            if (areaType === 'sidebar') {
+              currentItem.area = {
+                type: areaType,
+                properties: {
+                  location: areaId as 'right' | 'left',
+                },
+              };
+            } else {
+              currentItem.area = {
+                type: areaType,
+                properties: {
+                  id: areaId,
+                },
+              };
+            }
+
+            currentItem.shape = {
+              location: {
+                x: addedNode.x ?? currentItem.shape.location.x,
+                y: addedNode.y ?? currentItem.shape.location.y,
+              },
+              size: {
+                width: addedNode.w ?? currentItem.shape.size.width,
+                height: addedNode.h ?? currentItem.shape.size.height,
               },
             };
-          } else {
-            currentItem.area = {
-              type: areaType,
-              properties: {
-                id: areaId,
-              },
-            };
-          }
 
-          currentItem.shape = {
-            location: {
-              x: addedNode.x ?? currentItem.shape.location.x,
-              y: addedNode.y ?? currentItem.shape.location.y,
-            },
-            size: {
-              width: addedNode.w ?? currentItem.shape.size.width,
-              height: addedNode.h ?? currentItem.shape.size.height,
-            },
-          };
+            if (itemType === 'app') {
+              return {
+                ...previous,
+                apps: [
+                  ...previous.apps.filter((x) => x.id !== itemId),
+                  { ...(currentItem as AppType) },
+                ],
+              };
+            }
 
-          if (itemType === 'app') {
             return {
               ...previous,
-              apps: [
-                ...previous.apps.filter((x) => x.id !== itemId),
-                { ...(currentItem as AppType) },
+              widgets: [
+                ...previous.widgets.filter((x) => x.id !== itemId),
+                { ...(currentItem as IWidget<string, any>) },
               ],
             };
-          }
+          },
+          (prev, curr) => {
+            const isApp = itemType === 'app';
 
-          return {
-            ...previous,
-            widgets: [
-              ...previous.widgets.filter((x) => x.id !== itemId),
-              { ...(currentItem as IWidget<string, any>) },
-            ],
-          };
-        });
+            if (isApp) {
+              const currItem = curr.apps.find((x) => x.id === itemId);
+              const prevItem = prev.apps.find((x) => x.id === itemId);
+              if (!currItem || !prevItem) return false;
+
+              return (
+                currItem.area.type !== prevItem.area.type ||
+                Object.entries(currItem.area.properties).some(
+                  ([key, value]) =>
+                    prevItem.area.properties[key as keyof AreaType['properties']] !== value
+                )
+              );
+            }
+
+            const currItem = curr.widgets.find((x) => x.id === itemId);
+            const prevItem = prev.widgets.find((x) => x.id === itemId);
+            if (!currItem || !prevItem) return false;
+
+            return (
+              currItem.area.type !== prevItem.area.type ||
+              Object.entries(currItem.area.properties).some(
+                ([key, value]) =>
+                  prevItem.area.properties[key as keyof AreaType['properties']] !== value
+              )
+            );
+          }
+        );
       }
     : () => {};
 
