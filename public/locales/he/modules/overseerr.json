@@ -1,12 +1,12 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "מאפשר חיפוש והוספת מידה מ- Overseerr/Jellyseerr"
+    "description": "מאפשר חיפוש והוספת מדיה מ- Overseerr/Jellyseerr"
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "בקש מ",
+        "askFor": "בקש {{title}}",
         "cancel": "בטל",
         "request": "בקשה"
       },
