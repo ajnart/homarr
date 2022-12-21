@@ -4,16 +4,15 @@ import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { Transmission } from '@ctrl/transmission';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getConfig } from '../../../tools/getConfig';
-import { Config } from '../../../tools/types';
+import { getConfig } from '../../../tools/config/getConfig';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   // Get the type of app from the request url
   const configName = getCookie('config-name', { req });
-  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const qBittorrentApp = config.apps.filter((app) => app.type === 'qBittorrent');
-  const delugeApp = config.apps.filter((app) => app.type === 'Deluge');
-  const transmissionApp = config.apps.filter((app) => app.type === 'Transmission');
+  const config = getConfig(configName?.toString() ?? 'default');
+  const qBittorrentApp = config.apps.filter((app) => app.integration?.type === 'qBittorrent');
+  const delugeApp = config.apps.filter((app) => app.integration?.type === 'deluge');
+  const transmissionApp = config.apps.filter((app) => app.integration?.type === 'transmission');
 
   const torrents: NormalizedTorrent[] = [];
 
@@ -25,21 +24,21 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   }
   try {
     await Promise.all(
-      qBittorrentApp.map((apps) =>
+      qBittorrentApp.map((app) =>
         new QBittorrent({
-          baseUrl: apps.url,
-          username: apps.username,
-          password: apps.password,
+          baseUrl: app.url,
+          username: app.integration!.properties.find((x) => x.field === 'username')?.value,
+          password: app.integration!.properties.find((x) => x.field === 'password')?.value,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
       )
     );
     await Promise.all(
-      delugeApp.map((apps) =>
+      delugeApp.map((app) =>
         new Deluge({
-          baseUrl: apps.url,
-          password: 'password' in apps ? apps.password : '',
+          baseUrl: app.url,
+          password: app.integration!.properties.find((x) => x.field === 'password')?.value,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
@@ -47,11 +46,11 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     );
     // Map transmissionApps
     await Promise.all(
-      transmissionApp.map((apps) =>
+      transmissionApp.map((app) =>
         new Transmission({
-          baseUrl: apps.url,
-          username: 'username' in apps ? apps.username : '',
-          password: 'password' in apps ? apps.password : '',
+          baseUrl: app.url,
+          username: app.integration!.properties.find((x) => x.field === 'username')?.value,
+          password: app.integration!.properties.find((x) => x.field === 'password')?.value,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))

@@ -20,10 +20,10 @@ const definition = defineWidget({
   options: {},
 
   gridstack: {
-    minWidth: 4,
-    minHeight: 4,
+    minWidth: 6,
+    minHeight: 6,
     maxWidth: 12,
-    maxHeight: 12,
+    maxHeight: 6,
   },
   component: TorrentNetworkTrafficTile,
 });
