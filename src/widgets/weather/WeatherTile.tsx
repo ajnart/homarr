@@ -1,8 +1,5 @@
 import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
 import { IconArrowDownRight, IconArrowUpRight, IconCloudRain } from '@tabler/icons';
-import { HomarrCardWrapper } from '../../components/Dashboard/Tiles/HomarrCardWrapper';
-import { BaseTileProps } from '../../components/Dashboard/Tiles/type';
-import { WidgetsMenu } from '../../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { useWeatherForCity } from './useWeatherForCity';

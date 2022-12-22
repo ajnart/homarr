@@ -22,7 +22,8 @@ export const initializeGridstack = (
   const columnCount = areaType === 'sidebar' ? 4 : Math.floor(wrapperRef.current.offsetWidth / 64);
   const minRow = areaType !== 'sidebar' ? 1 : Math.floor(wrapperRef.current.offsetHeight / 64);
   // initialize gridstack
-  gridRef.current = GridStack.init(
+  const newGrid = gridRef;
+  newGrid.current = GridStack.init(
     {
       column: columnCount,
       margin: 10,
@@ -37,7 +38,7 @@ export const initializeGridstack = (
     // selector of the gridstack item (it's eather category or wrapper)
     `.grid-stack-${areaType}[data-${areaType}='${areaId}']`
   );
-  const grid = gridRef.current;
+  const grid = newGrid.current;
 
   // Add listener for moving items around in a wrapper
   grid.on('change', (_, el) => {

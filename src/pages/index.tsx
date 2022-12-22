@@ -1,6 +1,5 @@
 import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
-import { SSRConfig } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import LoadConfigComponent from '../components/Config/LoadConfig';

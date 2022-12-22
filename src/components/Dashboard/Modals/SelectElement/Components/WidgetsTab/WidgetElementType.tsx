@@ -33,8 +33,9 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
           {
             id: widget.id,
             properties: Object.entries(widget.options).reduce((prev, [k, v]) => {
-              prev[k] = v.defaultValue;
-              return prev;
+              const newPrev = prev;
+              newPrev[k] = v.defaultValue;
+              return newPrev;
             }, {} as IWidget<string, any>['properties']),
             area: {
               type: 'wrapper',
