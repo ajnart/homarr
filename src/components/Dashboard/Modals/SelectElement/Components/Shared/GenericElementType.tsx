@@ -1,4 +1,4 @@
-import { Button, Card, Center, Grid, ScrollArea, Stack, Text } from '@mantine/core';
+import { Button, Card, Center, Grid, Stack, Text } from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';

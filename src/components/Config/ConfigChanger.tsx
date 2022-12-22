@@ -47,7 +47,8 @@ export default function ConfigChanger() {
   );
 }
 
-const useConfigsQuery = () => useQuery({
+const useConfigsQuery = () =>
+  useQuery({
     queryKey: ['config/get-all'],
     queryFn: fetchConfigs,
   });

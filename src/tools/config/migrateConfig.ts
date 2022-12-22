@@ -68,7 +68,7 @@ export function migrateConfig(config: Config): ConfigType {
     shape: {
       location: {
         x: (idx * 3) % 18,
-        y: Math.floor((idx / 6)) * 3,
+        y: Math.floor(idx / 6) * 3,
       },
       size: {
         width: 3,

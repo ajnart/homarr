@@ -11,15 +11,15 @@ export const MobileRibbonSidebarDrawer = ({
   location,
   ...props
 }: MobileRibbonSidebarDrawerProps) => (
-    <Drawer
-      position={location}
-      title={<Title order={4}>{location} sidebar</Title>}
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-      {...props}
-    >
-      <DashboardSidebar location={location} />
-    </Drawer>
-  );
+  <Drawer
+    position={location}
+    title={<Title order={4}>{location} sidebar</Title>}
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+    }}
+    {...props}
+  >
+    <DashboardSidebar location={location} />
+  </Drawer>
+);

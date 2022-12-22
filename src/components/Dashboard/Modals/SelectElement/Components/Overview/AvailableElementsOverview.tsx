@@ -1,5 +1,5 @@
 import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
-import { IconBox, IconStack, IconTextResize } from '@tabler/icons';
+import { IconBox, IconStack } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
