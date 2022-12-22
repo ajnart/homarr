@@ -14,7 +14,6 @@ interface WrapperContentProps {
     wrapper: RefObject<HTMLDivElement>;
     items: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>;
     gridstack: MutableRefObject<GridStack | undefined>;
-    updateGridstackRef: MutableRefObject<(() => void) | undefined>;
   };
 }
 
