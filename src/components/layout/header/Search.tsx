@@ -119,7 +119,7 @@ export function Search() {
     label: app.name,
     value: app.name,
     icon: app.appearance.iconUrl,
-    url: app.behaviour.onClickUrl ?? app.url,
+    url: app.behaviour.externalUrl ?? app.url,
   }));
   const AutoCompleteItem = forwardRef<HTMLDivElement, any>(
     ({ label, value, icon, url, ...others }: any, ref) => (

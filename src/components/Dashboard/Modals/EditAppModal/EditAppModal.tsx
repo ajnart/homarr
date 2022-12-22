@@ -62,7 +62,7 @@ export const EditAppModal = ({
         },
       },
       behaviour: {
-        onClickUrl: (url: string) => {
+        externalUrl: (url: string) => {
           if (url === undefined || url.length < 1) {
             return null;
           }
@@ -158,7 +158,7 @@ export const EditAppModal = ({
                 {t('tabs.general')}
               </Tabs.Tab>
               <Tabs.Tab
-                rightSection={<ValidationErrorIndicator keys={['behaviour.onClickUrl']} />}
+                rightSection={<ValidationErrorIndicator keys={['behaviour.externalUrl']} />}
                 icon={<IconClick size={14} />}
                 value="behaviour"
               >

@@ -179,7 +179,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 },
                 behaviour: {
                   isOpeningNewTab: true,
-                  onClickUrl: '',
+                  externalUrl: '',
                 },
                 area: {
                   type: 'wrapper', // TODO: Set the wrapper automatically

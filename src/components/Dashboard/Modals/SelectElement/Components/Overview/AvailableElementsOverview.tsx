@@ -43,7 +43,7 @@ export const AvailableElementTypes = ({
                   },
                   behaviour: {
                     isOpeningNewTab: true,
-                    onClickUrl: '',
+                    externalUrl: '',
                   },
                   area: {
                     type: 'sidebar',

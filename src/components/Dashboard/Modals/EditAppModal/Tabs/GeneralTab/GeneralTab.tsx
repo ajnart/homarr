@@ -35,7 +35,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         required
         {...form.getInputProps('url')}
         onChange={(e) => {
-          form.setFieldValue('behaviour.onClickUrl', e.target.value);
+          form.setFieldValue('behaviour.externalUrl', e.target.value);
           form.setFieldValue('url', e.target.value);
         }}
       />
@@ -46,7 +46,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         placeholder="https://homarr.mywebsite.com/"
         variant="default"
         mb="md"
-        {...form.getInputProps('behaviour.onClickUrl')}
+        {...form.getInputProps('behaviour.externalUrl')}
       />
     </Tabs.Panel>
   );

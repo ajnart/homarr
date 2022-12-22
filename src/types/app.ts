@@ -16,7 +16,7 @@ export type ConfigAppType = Omit<AppType, 'integration'> & {
 };
 
 interface AppBehaviourType {
-  onClickUrl: string;
+  externalUrl: string;
   isOpeningNewTab: boolean;
 }
 

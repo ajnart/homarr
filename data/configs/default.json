@@ -128,9 +128,9 @@
     {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
       "name": "Donate",
-      "url": "https://homarr.dev/docs/community/donate",
+      "url": "https://ko-fi.com/ajnart",
       "behaviour": {
-        "onClickUrl": "https://homarr.dev/docs/community/donate",
+        "onClickUrl": "https://ko-fi.com/ajnart",
         "isOpeningInNewTab": true
       },
       "network": {
@@ -140,7 +140,7 @@
         ]
       },
       "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
+        "iconUrl": "https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e1116779fc0a9bd5bdbcc7_Frame%206.png"
       },
       "integration": {
         "type": null,
