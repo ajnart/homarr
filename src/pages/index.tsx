@@ -1,5 +1,6 @@
 import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
+import { SSRConfig } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import LoadConfigComponent from '../components/Config/LoadConfig';
@@ -12,7 +13,9 @@ import { ConfigType } from '../types/config';
 
 type ServerSideProps = {
   config: ConfigType;
+  // eslint-disable-next-line react/no-unused-prop-types
   configName: string;
+  // eslint-disable-next-line react/no-unused-prop-types
   _nextI18Next: SSRConfig['_nextI18Next'];
 };
 

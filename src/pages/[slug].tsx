@@ -4,20 +4,25 @@ import { GetServerSidePropsContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import path from 'path';
 import { useEffect } from 'react';
-import AppShelf from '../components/AppShelf/AppShelf';
 import LoadConfigComponent from '../components/Config/LoadConfig';
+import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
+import { useConfigContext } from '../config/provider';
+import { useConfigStore } from '../config/store';
 import { getConfig } from '../tools/getConfig';
-import { useConfig } from '../tools/state';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
-import { Config } from '../tools/types';
+import { ConfigType } from '../types/config';
+
+type ServerSideProps = {
+  config: ConfigType;
+};
 
 export async function getServerSideProps({
   req,
   res,
   locale,
   query,
-}: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
+}: GetServerSidePropsContext): Promise<{ props: ServerSideProps }> {
   const configByUrl = query.slug;
   const configPath = path.join(process.cwd(), 'data/configs', `${configByUrl}.json`);
   const configExists = fs.existsSync(configPath);
@@ -28,12 +33,36 @@ export async function getServerSideProps({
     return {
       props: {
         config: {
-          name: 'Default config',
+          schemaVersion: '1.0',
+          configProperties: {
+            name: 'Default Configuration',
+          },
           apps: [],
           settings: {
-            searchUrl: 'https://www.google.com/search?q=',
+            common: {
+              searchEngine: {
+                type: 'google',
+                properties: {
+                  enabled: true,
+                  openInNewTab: true,
+                },
+              },
+              defaultConfig: 'default',
+            },
+            customization: {
+              layout: {
+                enabledLeftSidebar: false,
+                enabledRightSidebar: false,
+                enabledSearchbar: true,
+                enabledDocker: false,
+                enabledPing: false,
+              },
+              colors: {},
+            },
           },
-          modules: {},
+          categories: [],
+          wrappers: [],
+          widgets: [],
         },
       },
     };
@@ -46,14 +75,18 @@ export async function getServerSideProps({
 }
 
 export default function HomePage(props: any) {
-  const { config: initialConfig }: { config: Config } = props;
-  const { setConfig } = useConfig();
+  const { config: initialConfig }: { config: ConfigType } = props;
+  const { name: configName } = useConfigContext();
+  const { updateConfig } = useConfigStore();
   useEffect(() => {
-    setConfig(initialConfig);
+    if (!configName) {
+      return;
+    }
+    updateConfig(configName, () => initialConfig);
   }, [initialConfig]);
   return (
     <Layout>
-      <AppShelf />
+      <Dashboard />
       <LoadConfigComponent />
     </Layout>
   );

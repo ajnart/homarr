@@ -6,7 +6,7 @@ export const getFallbackConfig = (name?: string): BackendConfigType => ({
     name: name ?? 'default',
   },
   categories: [],
-  widgets: {},
+  widgets: [],
   apps: [],
   settings: {
     common: {

@@ -6,10 +6,10 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { CategoryType } from '../../../../types/category';
 
-export interface CategoryEditModalInnerProps {
+export type CategoryEditModalInnerProps = {
   category: CategoryType;
   onSuccess: (category: CategoryType) => Promise<void>;
-}
+};
 
 export const CategoryEditModal = ({
   context,

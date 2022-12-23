@@ -1,10 +1,10 @@
 import { Indicator, Tooltip } from '@mantine/core';
+import { IconPlug as Plug } from '@tabler/icons';
 import axios, { AxiosResponse } from 'axios';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { IconPlug as Plug } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { useConfig } from '../../tools/state';
+import { useEffect, useState } from 'react';
+import { useConfigContext } from '../../config/provider';
 import { IModule } from '../ModuleTypes';
 
 export const PingModule: IModule = {
@@ -16,12 +16,12 @@ export const PingModule: IModule = {
 
 export default function PingComponent(props: any) {
   type State = 'loading' | 'down' | 'online';
-  const { config } = useConfig();
+  const { config } = useConfigContext();
 
   const { url }: { url: string } = props;
   const [isOnline, setOnline] = useState<State>('loading');
   const [response, setResponse] = useState(500);
-  const exists = config.modules?.[PingModule.id]?.enabled ?? false;
+  const exists = config?.settings.customization.layout.enabledPing || false;
 
   const { t } = useTranslation('modules/ping');
 
@@ -54,7 +54,7 @@ export default function PingComponent(props: any) {
       .catch((error) => {
         statusCheck(error.response);
       });
-  }, [config.modules?.[PingModule.id]?.enabled]);
+  }, [config?.settings.customization.layout.enabledPing]);
   if (!exists) {
     return null;
   }

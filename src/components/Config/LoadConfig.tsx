@@ -1,15 +1,14 @@
 import { Group, Text, useMantineTheme } from '@mantine/core';
-import { IconX as X, IconCheck as Check, IconX, IconPhoto, IconUpload } from '@tabler/icons';
-import { showNotification } from '@mantine/notifications';
-import { setCookie } from 'cookies-next';
 import { Dropzone } from '@mantine/dropzone';
+import { showNotification } from '@mantine/notifications';
+import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons';
+import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
-import { useConfig } from '../../tools/state';
+import { useConfigStore } from '../../config/store';
 import { Config } from '../../tools/types';
-import { migrateToIdConfig } from '../../tools/migrate';
 
 export default function LoadConfigComponent(props: any) {
-  const { setConfig } = useConfig();
+  const { updateConfig } = useConfigStore();
   const theme = useMantineTheme();
   const { t } = useTranslation('settings/general/config-changer');
 
@@ -48,8 +47,7 @@ export default function LoadConfigComponent(props: any) {
             maxAge: 60 * 60 * 24 * 30,
             sameSite: 'strict',
           });
-          const migratedConfig = migrateToIdConfig(newConfig);
-          setConfig(migratedConfig);
+          updateConfig(newConfig.name, (previousConfig) => ({ ...previousConfig, newConfig }));
         });
       }}
       accept={['application/json']}

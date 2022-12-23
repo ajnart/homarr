@@ -35,23 +35,3 @@ export function tryMatchService(container: Dockerode.ContainerInfo | undefined) 
       .toLowerCase()}.png`,
   };
 }
-
-export default async function addToHomarr(
-  container: Dockerode.ContainerInfo,
-  config: Config,
-  setConfig: (newconfig: Config) => void
-) {
-  setConfig({
-    ...config,
-    apps: [
-      ...config.apps,
-      {
-        name: container.Names[0].substring(1),
-        id: container.Id,
-        type: tryMatchType(container.Image),
-        url: `localhost:${container.Ports.at(0)?.PublicPort}`,
-        icon: await MatchIcon(container.Names[0].substring(1)),
-      },
-    ],
-  });
-}

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Button, Group } from '@mantine/core';
-import { closeModal, openModal } from '@mantine/modals';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconCheck,
@@ -17,9 +16,7 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { TFunction } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
-import { tryMatchService } from '../../tools/addToHomarr';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
-import { useConfig } from '../../tools/state';
 import { AppType } from '../../types/app';
 
 let t: TFunction<'modules/docker', undefined>;
@@ -71,7 +68,6 @@ export interface ContainerActionBarProps {
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   t = useTranslation('modules/docker').t;
   const [isLoading, setisLoading] = useState(false);
-  const { config, setConfig } = useConfig();
 
   return (
     <Group spacing="xs">
@@ -182,7 +178,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                   externalUrl: '',
                 },
                 area: {
-                  type: 'wrapper', // TODO: Set the wrapper automatically
+                  type: 'sidebar', // TODO: Set the wrapper automatically
+                  properties: {
+                    location: 'right',
+                  },
                 },
                 shape: {
                   location: {
@@ -193,6 +192,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                     height: 1,
                     width: 1,
                   },
+                },
+                integration: {
+                  type: null,
+                  properties: [],
                 },
               },
             },

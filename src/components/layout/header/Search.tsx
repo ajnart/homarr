@@ -58,7 +58,9 @@ export function Search() {
   // TODO: ask manuel-rw about overseerr
   // Answer: We can simply check if there is a app of the type overseer and display results if there is one.
   // Overseerr is not use anywhere else, so it makes no sense to add a standalone toggle for displaying results
-  const isOverseerrEnabled = false; //config?.settings.common.enabledModules.overseerr;
+  const isOverseerrEnabled = config?.apps.some(
+    (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
+  );
   const overseerrApp = config?.apps.find(
     (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
   );

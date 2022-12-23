@@ -6,18 +6,17 @@ export const getFrontendConfig = (name: string): ConfigType => {
 
   return {
     ...config,
-    apps: config.apps.map((s) => ({
-      ...s,
-      integration: s.integration
-        ? {
-            ...s.integration,
-            properties: s.integration?.properties.map((p) => ({
-              ...p,
-              value: p.type === 'private' ? null : p.value,
-              isDefined: p.value != null,
-            })),
-          }
-        : null,
+    apps: config.apps.map((app) => ({
+      ...app,
+      integration: {
+        ...app.integration ?? null,
+        type: app.integration?.type ?? null,
+        properties: app.integration?.properties.map((property) => ({
+          ...property,
+          value: property.type === 'private' ? undefined : property.value,
+          isDefined: property.value != null,
+        })) ?? [],
+      },
     })),
   };
 };

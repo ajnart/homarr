@@ -1,1 +1,0 @@
-export { UsenetModule } from './UsenetModule';

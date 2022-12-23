@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { ReactNode, RefObject } from 'react';
 
 interface GridstackTileWrapperProps {

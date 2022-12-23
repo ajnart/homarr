@@ -1,15 +1,15 @@
 import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import Docker from 'dockerode';
-import { IconBrandDocker, IconX } from '@tabler/icons';
 import { showNotification } from '@mantine/notifications';
+import { IconBrandDocker, IconX } from '@tabler/icons';
+import axios from 'axios';
+import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';
+import { useEffect, useState } from 'react';
 
+import { useConfigContext } from '../../config/provider';
+import { IModule } from '../ModuleTypes';
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
-import { useConfig } from '../../tools/state';
-import { IModule } from '../ModuleTypes';
 
 export const DockerModule: IModule = {
   title: 'Docker',
@@ -22,17 +22,18 @@ export default function DockerMenuButton(props: any) {
   const [opened, setOpened] = useState(false);
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
-  const { config } = useConfig();
-  const moduleEnabled = config.modules?.[DockerModule.id]?.enabled ?? false;
+  const { config } = useConfigContext();
+
+  const dockerEnabled = config?.settings.customization.layout.enabledDocker || false;
 
   const { t } = useTranslation('modules/docker');
 
   useEffect(() => {
     reload();
-  }, [config.modules]);
+  }, [config?.settings]);
 
   function reload() {
-    if (!moduleEnabled) {
+    if (!dockerEnabled) {
       return;
     }
     setTimeout(() => {
@@ -56,8 +57,8 @@ export default function DockerMenuButton(props: any) {
         });
     }, 300);
   }
-  const exists = config.modules?.[DockerModule.id]?.enabled ?? false;
-  if (!exists) {
+
+  if (!dockerEnabled) {
     return null;
   }
   // Check if the user has at least one container
