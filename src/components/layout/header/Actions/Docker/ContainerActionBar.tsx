@@ -16,8 +16,8 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { TFunction } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
-import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
-import { AppType } from '../../types/app';
+import { openContextModalGeneric } from '../../../../../tools/mantineModalManagerExtensions';
+import { AppType } from '../../../../../types/app';
 
 let t: TFunction<'modules/docker', undefined>;
 

@@ -5,8 +5,8 @@ import axios from 'axios';
 import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
+import { useConfigContext } from '../../../../../config/provider';
 
-import { useConfigContext } from '../../config/provider';
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
 

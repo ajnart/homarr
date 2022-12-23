@@ -2,10 +2,10 @@ import { Box, createStyles, Group, Header as MantineHeader, Indicator } from '@m
 import { useEffect, useState } from 'react';
 import { CURRENT_VERSION, REPO_URL } from '../../../../data/constants';
 import { useConfigContext } from '../../../config/provider';
-import DockerMenuButton from '../../../modules/docker/DockerModule';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
+import DockerMenuButton from './Actions/Docker/DockerModule';
 import { ToggleEditModeAction } from './Actions/ToggleEditMode/ToggleEditMode';
 import { Search } from './Search';
 import { SettingsMenu } from './SettingsMenu';
