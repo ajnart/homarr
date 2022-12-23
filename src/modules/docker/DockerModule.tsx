@@ -7,16 +7,8 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
 import { useConfigContext } from '../../config/provider';
-import { IModule } from '../ModuleTypes';
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
-
-export const DockerModule: IModule = {
-  title: 'Docker',
-  icon: IconBrandDocker,
-  component: DockerMenuButton,
-  id: 'docker',
-};
 
 export default function DockerMenuButton(props: any) {
   const [opened, setOpened] = useState(false);
@@ -61,8 +53,7 @@ export default function DockerMenuButton(props: any) {
   if (!dockerEnabled) {
     return null;
   }
-  // Check if the user has at least one container
-  if (containers.length < 1) return null;
+
   return (
     <>
       <Drawer

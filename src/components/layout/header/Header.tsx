@@ -1,7 +1,8 @@
 import { Box, createStyles, Group, Header as MantineHeader, Indicator } from '@mantine/core';
-import { useState, useEffect } from 'react';
-import { REPO_URL, CURRENT_VERSION } from '../../../../data/constants';
+import { useEffect, useState } from 'react';
+import { CURRENT_VERSION, REPO_URL } from '../../../../data/constants';
 import { useConfigContext } from '../../../config/provider';
+import DockerMenuButton from '../../../modules/docker/DockerModule';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
 import { AddElementAction } from './Actions/AddElementAction/AddElementAction';
@@ -39,6 +40,7 @@ export function Header(props: any) {
           <Search />
           <AddElementAction />
           <ToggleEditModeAction />
+          <DockerMenuButton />
           <Indicator size={15} color="blue" withBorder processing disabled={!newVersionAvailable}>
             <SettingsMenu newVersionAvailable={newVersionAvailable} />
           </Indicator>
