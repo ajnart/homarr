@@ -15,7 +15,9 @@ import {
 import {
   IconBrandDiscord,
   IconBrandGithub,
+  IconFile,
   IconLanguage,
+  IconSchema,
   IconVersions,
   IconVocabulary,
   IconWorldWww,
@@ -26,6 +28,8 @@ import { i18n, Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 import { CURRENT_VERSION } from '../../../data/constants';
+import { useConfigContext } from '../../config/provider';
+import { useConfigStore } from '../../config/store';
 import { usePrimaryGradient } from '../layout/useGradient';
 
 interface AboutModalProps {
@@ -127,6 +131,9 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   // TODO: Fix this to not request. Pass it as a prop.
   const colorGradiant = usePrimaryGradient();
 
+  const { configVersion } = useConfigContext();
+  const { configs } = useConfigStore();
+
   let items: InformationTableItem[] = [];
 
   if (i18n !== null) {
@@ -157,7 +164,24 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   }
 
   items = [
-    ...items,
+    {
+      icon: <IconSchema size={20} />,
+      label: 'Configuration schema version',
+      content: (
+        <Badge variant="gradient" gradient={colorGradiant}>
+          {configVersion}
+        </Badge>
+      ),
+    },
+    {
+      icon: <IconFile size={20} />,
+      label: 'Available configurations',
+      content: (
+        <Badge variant="gradient" gradient={colorGradiant}>
+          {configs.length}
+        </Badge>
+      ),
+    },
     {
       icon: <IconVersions size={20} />,
       label: 'version',
@@ -199,6 +223,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
         </Group>
       ),
     },
+    ...items,
   ];
 
   return items;
