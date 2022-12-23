@@ -18,7 +18,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
-import { useGetUsenetHistory } from '../../tools/hooks/api';
+import { useGetUsenetHistory } from '../../hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { parseDuration } from '../../tools/parseDuration';
 

@@ -17,7 +17,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../config/provider';
-import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../tools/hooks/api';
+import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../hooks/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';

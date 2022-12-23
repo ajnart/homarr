@@ -2,7 +2,7 @@ import { ActionIcon, createStyles } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons';
 import { useConfigContext } from '../../../../config/provider';
-import { useScreenLargerThan } from '../../../../tools/hooks/useScreenLargerThan';
+import { useScreenLargerThan } from '../../../../hooks/useScreenLargerThan';
 import { MobileRibbonSidebarDrawer } from './MobileRibbonSidebarDrawer';
 
 export const MobileRibbons = () => {

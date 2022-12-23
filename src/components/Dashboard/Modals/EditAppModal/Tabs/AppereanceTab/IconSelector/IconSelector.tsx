@@ -18,10 +18,10 @@ import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch, IconX } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 import { ICON_PICKER_SLICE_LIMIT } from '../../../../../../../../data/constants';
-import { useRepositoryIconsQuery } from '../../../../../../../tools/hooks/useRepositoryIconsQuery';
 import { IconSelectorItem } from '../../../../../../../types/iconSelector/iconSelectorItem';
 import { WalkxcodeRepositoryIcon } from '../../../../../../../types/iconSelector/repositories/walkxcodeIconRepository';
 import { AppType } from '../../../../../../../types/app';
+import { useRepositoryIconsQuery } from '../../../../../../../hooks/useRepositoryIconsQuery';
 
 interface IconSelectorProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;

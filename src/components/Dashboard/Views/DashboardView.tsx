@@ -1,7 +1,7 @@
 import { Group, Stack } from '@mantine/core';
 import { useMemo } from 'react';
 import { useConfigContext } from '../../../config/provider';
-import { useScreenSmallerThan } from '../../../tools/hooks/useScreenSmallerThan';
+import { useScreenSmallerThan } from '../../../hooks/useScreenSmallerThan';
 import { CategoryType } from '../../../types/category';
 import { WrapperType } from '../../../types/wrapper';
 import { DashboardCategory } from '../Wrappers/Category/Category';

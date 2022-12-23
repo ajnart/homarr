@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { IconSelectorItem } from '../../types/iconSelector/iconSelectorItem';
+import { IconSelectorItem } from '../types/iconSelector/iconSelectorItem';
 
 export const useRepositoryIconsQuery = <TRepositoryIcon extends object>({
   url,

@@ -9,7 +9,7 @@ import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { useConfigContext } from '../../config/provider';
-import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
+import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';

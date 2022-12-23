@@ -2,7 +2,7 @@ import { ActionIcon, Button, Popover, Text, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
 import { Trans, useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { useScreenSmallerThan } from '../../../../../tools/hooks/useScreenSmallerThan';
+import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
 
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 

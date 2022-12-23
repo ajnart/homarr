@@ -2,7 +2,7 @@ import { Center, Stack, Text, Title } from '@mantine/core';
 import { IconClock } from '@tabler/icons';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
-import { useSetSafeInterval } from '../../tools/hooks/useSetSafeInterval';
+import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
