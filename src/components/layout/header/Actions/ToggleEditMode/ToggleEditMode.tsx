@@ -1,7 +1,11 @@
 import { ActionIcon, Button, Popover, Text, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
+import axios from 'axios';
+import Consola from 'consola';
+import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
 
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
@@ -13,9 +17,18 @@ export const ToggleEditModeAction = () => {
   const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
 
   const smallerThanSm = useScreenSmallerThan('sm');
+  const { config } = useConfigContext();
+
+  useEffect(() => {
+    if (enabled || config === undefined || config?.schemaVersion === undefined) return;
+    const configName = getCookie('config-name')?.toString() ?? 'default';
+    axios.put(`/api/configs/${configName}`, { ...config });
+    Consola.log('Saved config to server', configName);
+  }, [enabled]);
 
   const toggleButtonClicked = () => {
     toggleEditMode();
+
     setPopoverManuallyHidden(false);
   };
 

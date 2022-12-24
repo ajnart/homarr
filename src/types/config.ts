@@ -5,7 +5,7 @@ import { SettingsType } from './settings';
 import { IWidget } from '../widgets/widgets';
 
 export interface ConfigType {
-  schemaVersion: string;
+  schemaVersion: number;
   configProperties: ConfigPropertiesType;
   categories: CategoryType[];
   wrappers: WrapperType[];

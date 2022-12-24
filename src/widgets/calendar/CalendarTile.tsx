@@ -1,4 +1,4 @@
-import { createStyles, MantineThemeColors, useMantineTheme } from '@mantine/core';
+import { Center, createStyles, MantineThemeColors, useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
@@ -57,6 +57,8 @@ function CalendarTile({ widget }: CalendarTileProps) {
   return (
     <Calendar
       month={month}
+      // Should be offset 5px to the left
+      style={{ position: 'relative', left: -10, top: -10 }}
       onMonthChange={setMonth}
       size="xs"
       fullWidth

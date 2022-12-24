@@ -20,7 +20,6 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         description={t('general.appname.description')}
         placeholder="My example app"
         variant="default"
-        mb="md"
         withAsterisk
         required
         {...form.getInputProps('name')}
@@ -45,7 +44,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         description={t('general.externalAddress.description')}
         placeholder="https://homarr.mywebsite.com/"
         variant="default"
-        mb="md"
+        required
         {...form.getInputProps('behaviour.externalUrl')}
       />
     </Tabs.Panel>

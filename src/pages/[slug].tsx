@@ -33,7 +33,7 @@ export async function getServerSideProps({
     return {
       props: {
         config: {
-          schemaVersion: '1.0',
+          schemaVersion: 1,
           configProperties: {
             name: 'Default Configuration',
           },

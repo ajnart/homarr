@@ -6,6 +6,7 @@ import {
   IconRowInsertTop,
   IconRowInsertBottom,
   IconEdit,
+  IconTrash,
 } from '@tabler/icons';
 import { useConfigContext } from '../../../../config/provider';
 import { CategoryType } from '../../../../types/category';
@@ -17,11 +18,11 @@ interface CategoryEditMenuProps {
 
 export const CategoryEditMenu = ({ category }: CategoryEditMenuProps) => {
   const { name: configName } = useConfigContext();
-  const { addCategoryAbove, addCategoryBelow, moveCategoryUp, moveCategoryDown, edit } =
+  const { addCategoryAbove, addCategoryBelow, moveCategoryUp, moveCategoryDown, edit, remove } =
     useCategoryActions(configName, category);
 
   return (
-    <Menu withinPortal>
+    <Menu withinPortal position="left-start" withArrow>
       <Menu.Target>
         <ActionIcon>
           <IconDots />
@@ -30,6 +31,9 @@ export const CategoryEditMenu = ({ category }: CategoryEditMenuProps) => {
       <Menu.Dropdown>
         <Menu.Item icon={<IconEdit size={20} />} onClick={edit}>
           Edit
+        </Menu.Item>
+        <Menu.Item icon={<IconTrash size={20} />} onClick={remove}>
+          Remove
         </Menu.Item>
         <Menu.Label>Change positon</Menu.Label>
         <Menu.Item icon={<IconTransitionTop size={20} />} onClick={moveCategoryUp}>

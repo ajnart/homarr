@@ -3,6 +3,7 @@ import { GetServerSidePropsContext } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import fs from 'fs';
 import LoadConfigComponent from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
@@ -24,6 +25,24 @@ export async function getServerSideProps({
   res,
   locale,
 }: GetServerSidePropsContext): Promise<{ props: ServerSideProps }> {
+  // Check that all the json files in the /data/configs folder are migrated
+  // If not, redirect to the migrate page
+  const configs = await fs.readdirSync('./data/configs');
+  if (
+    !configs.every(
+      (config) => JSON.parse(fs.readFileSync(`./data/configs/${config}`, 'utf8')).schemaVersion
+    )
+  ) {
+    // Replace the current page with the migrate page but don't redirect
+    // This is to prevent the user from seeing the redirect
+    res.writeHead(302, {
+      Location: '/migrate',
+    });
+    res.end();
+
+    return { props: {} as ServerSideProps };
+  }
+
   let configName = getCookie('config-name', { req, res });
   const configLocale = getCookie('config-locale', { req, res });
   if (!configName) {

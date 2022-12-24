@@ -15,10 +15,8 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
     <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
       <Image
         width={size === 'md' ? 50 : 12}
-        src={config?.settings.customization.logoImageUrl || '/imgs/logo/logo.png'}
-        style={{
-          position: 'relative',
-        }}
+        src={config?.settings.customization.logoImageUrl || '/imgs/logo/logo-color.svg'}
+        alt="Homarr Logo"
       />
       {withoutText ? null : (
         <Text

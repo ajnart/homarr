@@ -11,6 +11,7 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
       (url.pathname.includes('/_next/') && !url.pathname.includes('/pages/')) ||
       url.pathname === '/favicon.ico' ||
       url.pathname === '/404' ||
+      url.pathname === '/migrate' ||
       url.pathname.includes('pages/_app'));
   if (!skipURL && !isCorrectPassword && process.env.PASSWORD) {
     url.pathname = '/login';

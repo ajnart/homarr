@@ -1,7 +1,7 @@
 import { BackendConfigType } from '../../types/config';
 
 export const getFallbackConfig = (name?: string): BackendConfigType => ({
-  schemaVersion: '1.0.0',
+  schemaVersion: 1,
   configProperties: {
     name: name ?? 'default',
   },

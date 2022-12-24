@@ -9,10 +9,10 @@ export const getConfig = (name: string): BackendConfigType => {
   // Else if config exists but contains no "schema_version" property
   // then it is an old config file and we should try to migrate it
   // to the new format.
-  let config = readConfig(name);
-  if (!config.schemaVersion) {
-    // TODO: Migrate config to new format
-    config = migrateConfig(config);
+  const config = readConfig(name);
+  if (config.schemaVersion === undefined) {
+    console.log('Migrating config file...', config);
+    return migrateConfig(config, name);
   }
   return config;
 };

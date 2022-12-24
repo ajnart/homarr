@@ -176,6 +176,37 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
     );
   };
 
+  // Removes the current category
+  const remove = () => {
+    if (!configName) return;
+    updateConfig(
+      configName,
+      (previous) => {
+        const currentItem = previous.categories.find((x) => x.id === category.id);
+        if (!currentItem) return previous;
+        // Find the main wrapper
+        const mainWrapper = previous.wrappers.find((x) => x.position === 1);
+
+        // Check that the app has an area.type or "category" and that the area.id is the current category
+        const appsToMove = previous.apps.filter(
+          (x) => x.area && x.area.type === 'category' && x.area.properties.id === currentItem.id
+        );
+        appsToMove.forEach((x) => {
+          // eslint-disable-next-line no-param-reassign
+          x.area = { type: 'wrapper', properties: { id: mainWrapper?.id ?? 'default' } };
+        });
+
+        return {
+          ...previous,
+          apps: previous.apps,
+          categories: previous.categories.filter((x) => x.id !== category.id),
+          wrappers: previous.wrappers.filter((x) => x.position !== currentItem.position),
+        };
+      },
+      true
+    );
+  };
+
   const edit = async () => {
     openContextModalGeneric<CategoryEditModalInnerProps>({
       modal: 'categoryEditModal',
@@ -201,6 +232,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
     addCategoryBelow,
     moveCategoryUp,
     moveCategoryDown,
+    remove,
     edit,
   };
 };

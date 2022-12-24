@@ -1,9 +1,10 @@
+import fs from 'fs';
 import { ConfigType } from '../../types/config';
 import { Config } from '../types';
 
-export function migrateConfig(config: Config): ConfigType {
+export function migrateConfig(config: Config, name: string): ConfigType {
   const newConfig: ConfigType = {
-    schemaVersion: '1.0.0',
+    schemaVersion: 1,
     configProperties: {
       name: config.name ?? 'default',
     },
@@ -76,6 +77,9 @@ export function migrateConfig(config: Config): ConfigType {
       },
     },
   }));
+  // Overrite the file ./data/configs/${name}.json
+  // with the new config format
+  fs.writeFileSync(`./data/configs/${name}.json`, JSON.stringify(newConfig, null, 2));
 
   return newConfig;
 }

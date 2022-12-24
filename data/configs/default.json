@@ -1,23 +1,30 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": 1,
   "configProperties": {
     "name": "default"
   },
-  "categories": [],
+  "categories": [
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f",
+      "position": 0,
+      "name": "Example Category"
+    }
+  ],
   "wrappers": [
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e",
+      "id": "default",
       "position": 1
     }
   ],
   "apps": [
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
+      "name": "Community",
+      "url": "https://discord.com/invite/aCsmEV5RgA",
       "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "isOpeningInNewTab": true
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
       },
       "network": {
         "enabledStatusChecker": false,
@@ -26,7 +33,7 @@
         ]
       },
       "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
       },
       "integration": {
         "type": null,
@@ -35,7 +42,46 @@
       "area": {
         "type": "wrapper",
         "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
+          "id": "default"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 3,
+          "y": 0
+        },
+        "size": {
+          "width": 3,
+          "height": 3
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
+      "name": "Donate",
+      "url": "https://ko-fi.com/ajnart",
+      "behaviour": {
+        "onClickUrl": "https://ko-fi.com/ajnart",
+        "externalUrl": "https://ko-fi.com/ajnart",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e1116779fc0a9bd5bdbcc7_Frame%206.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
         }
       },
       "shape": {
@@ -55,7 +101,8 @@
       "url": "https://github.com/ajnart/homarr",
       "behaviour": {
         "onClickUrl": "https://github.com/ajnart/homarr",
-        "isOpeningInNewTab": true
+        "externalUrl": "https://github.com/ajnart/homarr",
+        "isOpeningNewTab": true
       },
       "network": {
         "enabledStatusChecker": false,
@@ -73,107 +120,7 @@
       "area": {
         "type": "wrapper",
         "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 3,
-          "y": 0
-        },
-        "size": {
-          "width": 3,
-          "height": 3
-        }
-      }
-    },
-    {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
-      "name": "Community",
-      "url": "https://discord.com/invite/aCsmEV5RgA",
-      "behaviour": {
-        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
-        "isOpeningInNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 6,
-          "y": 0
-        },
-        "size": {
-          "width": 3,
-          "height": 3
-        }
-      }
-    },
-    {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
-      "name": "Donate",
-      "url": "https://ko-fi.com/ajnart",
-      "behaviour": {
-        "onClickUrl": "https://ko-fi.com/ajnart",
-        "isOpeningInNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e1116779fc0a9bd5bdbcc7_Frame%206.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 9,
-          "y": 0
-        },
-        "size": {
-          "width": 3,
-          "height": 3
-        }
-      }
-    }
-  ],
-  "widgets": [
-    {
-      "id": "date",
-      "properties": {
-        "display24HourFormat": true
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33e"
+          "id": "default"
         }
       },
       "shape": {
@@ -182,8 +129,224 @@
           "y": 3
         },
         "size": {
+          "width": 3,
+          "height": 3
+        }
+      }
+    },
+    {
+      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
+      "name": "Your app",
+      "url": "https://homarr.dev",
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": []
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://homarr.dev"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 15,
+          "y": 5
+        },
+        "size": {
+          "width": 5,
+          "height": 4
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 3,
+          "y": 3
+        },
+        "size": {
+          "width": 3,
+          "height": 3
+        }
+      }
+    },
+    {
+      "id": "76217a87-7151-42d0-b0cf-1b72aef63f83",
+      "name": "Small app",
+      "url": "https://homarr.dev",
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": []
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://homarr.dev"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 17,
+          "y": 0
+        },
+        "size": {
+          "width": 2,
+          "height": 2
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "e41a11f5-9c6e-41bc-ac0e-4c4c47582faa",
+      "name": "Your app",
+      "url": "https://homarr.dev",
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": []
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": ""
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 6
+        },
+        "size": {
+          "width": 2,
+          "height": 2
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "id": "weather",
+      "properties": {
+        "displayInFahrenheit": false,
+        "location": "Paris"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 6,
+          "y": 0
+        },
+        "size": {
           "width": 4,
           "height": 2
+        }
+      }
+    },
+    {
+      "id": "date",
+      "properties": {
+        "display24HourFormat": true
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "width": 4,
+          "height": 2
+        }
+      }
+    },
+    {
+      "id": "calendar",
+      "properties": {
+        "sundayStart": false
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 15,
+          "y": 0
+        },
+        "size": {
+          "width": 5,
+          "height": 5
         }
       }
     }
