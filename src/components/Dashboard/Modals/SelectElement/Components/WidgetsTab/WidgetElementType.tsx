@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../../../config/provider';
 import { useConfigStore } from '../../../../../../config/store';
 import { IWidget, IWidgetDefinition } from '../../../../../../widgets/widgets';
+import { useEditModeStore } from '../../../../Views/useEditModeStore';
 import { GenericAvailableElementType } from '../Shared/GenericElementType';
 
 interface WidgetElementTypeProps {
@@ -18,6 +19,7 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
   const { t } = useTranslation(`modules/${id}`);
   const { name: configName, config } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
+  const isEditMode = useEditModeStore((x) => x.enabled);
 
   if (!configName) return null;
 
@@ -56,9 +58,10 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
           },
         ],
       }),
-      true
+      true,
+      !isEditMode
     );
-    // TODO: safe to file system
+
     closeModal('selectElement');
   };
 

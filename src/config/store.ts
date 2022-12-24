@@ -1,3 +1,4 @@
+import axios from 'axios';
 import create from 'zustand';
 import { ConfigType } from '../types/config';
 
@@ -15,7 +16,8 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
   updateConfig: async (
     name,
     updateCallback: (previous: ConfigType) => ConfigType,
-    shouldRegenerateGridstack = false
+    shouldRegenerateGridstack = false,
+    shouldSaveConfigToFileSystem = false
   ) => {
     const { configs } = get();
     const currentConfig = configs.find((x) => x.value.configProperties.name === name);
@@ -23,7 +25,6 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
     // copies the value of currentConfig and creates a non reference object named previousConfig
     const previousConfig: ConfigType = JSON.parse(JSON.stringify(currentConfig.value));
 
-    // TODO: update config on server
     const updatedConfig = updateCallback(currentConfig.value);
     set((old) => ({
       ...old,
@@ -40,6 +41,10 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
     ) {
       currentConfig.increaseVersion();
     }
+
+    if (shouldSaveConfigToFileSystem) {
+      axios.put(`/api/configs/${name}`, { ...updatedConfig });
+    }
   },
 }));
 
@@ -51,6 +56,7 @@ interface UseConfigStoreType {
     updateCallback: (previous: ConfigType) => ConfigType,
     shouldRegenerateGridstace?:
       | boolean
-      | ((previousConfig: ConfigType, currentConfig: ConfigType) => boolean)
+      | ((previousConfig: ConfigType, currentConfig: ConfigType) => boolean),
+    shouldSaveConfigToFileSystem?: boolean
   ) => Promise<void>;
 }

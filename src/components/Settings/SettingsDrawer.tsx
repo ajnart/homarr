@@ -1,9 +1,9 @@
-import { Title, Drawer, Tabs, ScrollArea } from '@mantine/core';
+import { Drawer, ScrollArea, Tabs, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
-import CustomizationSettings from './Customization/CustomizationSettings';
 import CommonSettings from './Common/CommonSettings';
 import Credits from './Common/Credits';
+import CustomizationSettings from './Customization/CustomizationSettings';
 
 function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
@@ -20,9 +20,7 @@ function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) 
         </ScrollArea>
       </Tabs.Panel>
       <Tabs.Panel value="customization">
-        <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
-          <CustomizationSettings />
-        </ScrollArea>
+        <CustomizationSettings />
       </Tabs.Panel>
     </Tabs>
   );

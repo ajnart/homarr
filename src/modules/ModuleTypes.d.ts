@@ -5,6 +5,7 @@
 import { TablerIcon } from '@tabler/icons';
 
 // Note: Maybe use context to keep track of the modules
+// TODO: Remove this old component and the entire file
 export interface IModule {
   id: string;
   title: string;

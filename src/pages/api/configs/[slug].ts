@@ -1,22 +1,61 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { BackendConfigType, ConfigType } from '../../../types/config';
+import { getConfig } from '../../../tools/config/getConfig';
 
 function Put(req: NextApiRequest, res: NextApiResponse) {
   // Get the slug of the request
   const { slug } = req.query as { slug: string };
   // Get the body of the request
-  const { body }: { body: string } = req;
-  if (!slug || !body) {
-    res.status(400).json({
+  const { body: config }: { body: ConfigType } = req;
+  if (!slug || !config) {
+    return res.status(400).json({
       error: 'Wrong request',
     });
   }
-  // Save the body in the /data/config folder with the slug as filename
 
+  const previousConfig = getConfig(slug);
+
+  const newConfig: BackendConfigType = {
+    ...config,
+    apps: [
+      ...config.apps.map((app) => ({
+        ...app,
+        integration: {
+          ...app.integration,
+          properties: app.integration.properties.map((property) => {
+            if (property.type === 'public') {
+              return {
+                field: property.field,
+                type: property.type,
+                value: property.value,
+              };
+            }
+
+            const previousApp = previousConfig.apps.find(
+              (previousApp) => previousApp.id === app.id
+            );
+
+            const previousProperty = previousApp?.integration?.properties.find(
+              (previousProperty) => previousProperty.field === property.field
+            );
+
+            return {
+              field: property.field,
+              type: property.type,
+              value: property.value !== undefined ? property.value : previousProperty?.value,
+            };
+          }),
+        },
+      })),
+    ],
+  };
+
+  // Save the body in the /data/config folder with the slug as filename
   fs.writeFileSync(
     path.join('data/configs', `${slug}.json`),
-    JSON.stringify(body, null, 2),
+    JSON.stringify(newConfig, null, 2),
     'utf8'
   );
   return res.status(200).json({
