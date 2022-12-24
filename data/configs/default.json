@@ -19,7 +19,7 @@
   "apps": [
     {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
-      "name": "Community",
+      "name": "Discord",
       "url": "https://discord.com/invite/aCsmEV5RgA",
       "behaviour": {
         "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
