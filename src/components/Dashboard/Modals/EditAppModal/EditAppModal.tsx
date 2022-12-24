@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { AppType } from '../../../../types/app';
+import { useEditModeStore } from '../../Views/useEditModeStore';
 import { AppearanceTab } from './Tabs/AppereanceTab/AppereanceTab';
 import { BehaviourTab } from './Tabs/BehaviourTab/BehaviourTab';
 import { GeneralTab } from './Tabs/GeneralTab/GeneralTab';
@@ -33,6 +34,7 @@ export const EditAppModal = ({
   const { t } = useTranslation(['layout/modals/add-app', 'common']);
   const { name: configName, config } = useConfigContext();
   const updateConfig = useConfigStore((store) => store.updateConfig);
+  const { enabled: isEditMode } = useEditModeStore();
   const [allowAppNamePropagation, setAllowAppNamePropagation] = useState<boolean>(
     innerProps.allowAppNamePropagation
   );
@@ -87,9 +89,15 @@ export const EditAppModal = ({
       configName,
       (previousConfig) => ({
         ...previousConfig,
-        apps: [...previousConfig.apps.filter((x) => x.id !== form.values.id), form.values],
+        apps: [
+          ...previousConfig.apps.filter((x) => x.id !== values.id),
+          {
+            ...values,
+          },
+        ],
       }),
-      true
+      true,
+      !isEditMode
     );
 
     // also close the parent modal

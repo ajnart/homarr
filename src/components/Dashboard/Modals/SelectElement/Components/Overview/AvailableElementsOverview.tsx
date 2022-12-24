@@ -3,8 +3,10 @@ import { IconBox, IconStack } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useConfigContext } from '../../../../../../config/provider';
 import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../../../../../types/app';
+import { appTileDefinition } from '../../../../Tiles/Apps/AppTile';
 import { useStyles } from '../Shared/styles';
 
 interface AvailableElementTypesProps {
@@ -17,6 +19,8 @@ export const AvailableElementTypes = ({
   onOpenStaticElements,
 }: AvailableElementTypesProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
+  const { config } = useConfigContext();
+  const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
   return (
     <>
@@ -45,10 +49,11 @@ export const AvailableElementTypes = ({
                     isOpeningNewTab: true,
                     externalUrl: '',
                   },
+
                   area: {
-                    type: 'sidebar',
+                    type: 'wrapper',
                     properties: {
-                      location: 'right',
+                      id: getLowestWrapper()?.id ?? '',
                     },
                   },
                   shape: {
@@ -57,8 +62,8 @@ export const AvailableElementTypes = ({
                       y: 0,
                     },
                     size: {
-                      height: 1,
-                      width: 1,
+                      width: appTileDefinition.minWidth,
+                      height: appTileDefinition.minHeight,
                     },
                   },
                   integration: {

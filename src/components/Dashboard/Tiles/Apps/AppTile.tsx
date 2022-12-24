@@ -88,3 +88,11 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     },
   },
 }));
+
+export const appTileDefinition = {
+  component: AppTile,
+  minWidth: 2,
+  maxWidth: 12,
+  minHeight: 2,
+  maxHeight: 12,
+};

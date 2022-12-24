@@ -4,7 +4,7 @@ import { AppType } from '../../../types/app';
 import Widgets from '../../../widgets';
 import { IWidget, IWidgetDefinition } from '../../../widgets/widgets';
 import { WidgetWrapper } from '../../../widgets/WidgetWrapper';
-import { Tiles } from '../Tiles/tilesDefinitions';
+import { appTileDefinition } from '../Tiles/Apps/AppTile';
 import { GridstackTileWrapper } from '../Tiles/TileWrapper';
 
 interface WrapperContentProps {
@@ -21,7 +21,7 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
   return (
     <>
       {apps?.map((app) => {
-        const { component: TileComponent, ...tile } = Tiles.app;
+        const { component: TileComponent, ...tile } = appTileDefinition;
         return (
           <GridstackTileWrapper
             id={app.id}
