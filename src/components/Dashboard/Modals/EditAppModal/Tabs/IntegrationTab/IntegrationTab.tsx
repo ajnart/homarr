@@ -27,7 +27,7 @@ export const IntegrationTab = ({ form }: IntegrationTabProps) => {
           <IntegrationOptionsRenderer form={form} />
           <Alert icon={<IconAlertTriangle />} color="yellow">
             <Text>
-              <Trans i18nKey="integration.secrets.warning" />
+              <Trans i18nKey="layout/modals/add-app:integration.secrets.warning" />
             </Text>
           </Alert>
         </>
