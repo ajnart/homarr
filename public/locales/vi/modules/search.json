@@ -6,25 +6,25 @@
   "input": {
     "placeholder": "Tìm kiếm trên web..."
   },
-  "switched-to": "",
+  "switched-to": "Đổi sang",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Tìm kiếm bằng công cụ tìm kiếm của bạn (được thiết lập trong cài đặt)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Tìm kiếm trên YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrent",
+      "description": "Tìm kiếm torrent"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Tìm kiếm phim lẻ và phim bộ bằng Overseerr (mô-đun phải được kích hoạt)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Bạn có thể chọn thanh tìm kiếm bằng phím tắt ",
+  "switchedSearchEngine": "Đã đổi sang tìm kiếm bằng {{searchEngine}}"
 }
