@@ -1,7 +1,5 @@
 import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
-import { SSRConfig } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import fs from 'fs';
 import LoadConfigComponent from '../components/Config/LoadConfig';
@@ -9,22 +7,15 @@ import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
 import { getFrontendConfig } from '../tools/config/getFrontendConfig';
+import { getServerSideTranslations } from '../tools/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
-import { ConfigType } from '../types/config';
-
-type ServerSideProps = {
-  config: ConfigType;
-  // eslint-disable-next-line react/no-unused-prop-types
-  configName: string;
-  // eslint-disable-next-line react/no-unused-prop-types
-  _nextI18Next: SSRConfig['_nextI18Next'];
-};
+import { DashboardServerSideProps } from '../types/dashboardPageType';
 
 export async function getServerSideProps({
   req,
   res,
   locale,
-}: GetServerSidePropsContext): Promise<{ props: ServerSideProps }> {
+}: GetServerSidePropsContext): Promise<{ props: DashboardServerSideProps }> {
   // Check that all the json files in the /data/configs folder are migrated
   // If not, redirect to the migrate page
   const configs = await fs.readdirSync('./data/configs');
@@ -40,11 +31,10 @@ export async function getServerSideProps({
     });
     res.end();
 
-    return { props: {} as ServerSideProps };
+    return { props: {} as DashboardServerSideProps };
   }
 
   let configName = getCookie('config-name', { req, res });
-  const configLocale = getCookie('config-locale', { req, res });
   if (!configName) {
     setCookie('config-name', 'default', {
       req,
@@ -55,10 +45,7 @@ export async function getServerSideProps({
     configName = 'default';
   }
 
-  const translations = await serverSideTranslations(
-    (configLocale ?? locale) as string,
-    dashboardNamespaces
-  );
+  const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
   const config = getFrontendConfig(configName as string);
 
   return {
@@ -66,7 +53,7 @@ export async function getServerSideProps({
   };
 }
 
-export default function HomePage({ config: initialConfig }: ServerSideProps) {
+export default function HomePage({ config: initialConfig }: DashboardServerSideProps) {
   useInitConfig(initialConfig);
 
   return (
