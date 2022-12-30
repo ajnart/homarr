@@ -49,7 +49,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
           component={NextLink}
-          href={app.behaviour.externalUrl ?? app.url}
+          href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={cx(classes.button, classes.link)}
         >
