@@ -5,18 +5,20 @@ import { useEditModeStore } from '../Views/useEditModeStore';
 
 interface HomarrCardWrapperProps extends CardProps {
   children: ReactNode;
+  isCategory?: boolean;
 }
 
 export const HomarrCardWrapper = ({ ...props }: HomarrCardWrapperProps) => {
+  const { isCategory = false, ...restProps } = props;
   const {
     cx,
     classes: { card: cardClass },
-  } = useCardStyles();
+  } = useCardStyles(isCategory);
   const isEditMode = useEditModeStore((x) => x.enabled);
   return (
     <Card
-      {...props}
-      className={cx(props.className, cardClass)}
+      {...restProps}
+      className={cx(restProps.className, cardClass)}
       withBorder
       style={{ cursor: isEditMode ? 'move' : 'default' }}
       radius="lg"

@@ -1,4 +1,4 @@
-import { Group, Title } from '@mantine/core';
+import { createStyles, Group, Title } from '@mantine/core';
 import { CategoryType } from '../../../../types/category';
 import { HomarrCardWrapper } from '../../Tiles/HomarrCardWrapper';
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -15,7 +15,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   const isEditMode = useEditModeStore((x) => x.enabled);
 
   return (
-    <HomarrCardWrapper pt={10} mx={10}>
+    <HomarrCardWrapper pt={10} mx={10} isCategory>
       <Group position="apart" align="center">
         <Title order={3}>{category.name}</Title>
         {isEditMode ? <CategoryEditMenu category={category} /> : null}
