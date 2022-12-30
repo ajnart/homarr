@@ -26,7 +26,6 @@ export const DashDotGraph = ({ graph, isCompact, dashDotUrl }: DashDotGraphProps
         key={graph.name}
         title={graph.name}
         src={useIframeSrc(dashDotUrl, graph, isCompact)}
-        frameBorder="0"
       />
     </Stack>
   );
@@ -40,7 +39,7 @@ const useIframeSrc = (dashDotUrl: string, graph: GraphType, isCompact: boolean) 
 
   return (
     `${dashDotUrl}` +
-    `?singleGraphMode=true` +
+    '?singleGraphMode=true' +
     `&graph=${graphId}` +
     `&theme=${colorScheme}` +
     `&surface=${surface}` +
@@ -56,6 +55,8 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     maxWidth: '100%',
     height: '140px',
     borderRadius: theme.radius.lg,
+    border: 'none',
+    colorScheme: 'light', // fixes white borders around iframe
   },
   graphTitle: {
     ref: getRef('graphTitle'),
