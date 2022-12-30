@@ -56,7 +56,11 @@ export const GenericSecretInput = ({
               {t('integration.secrets.clear')}
             </Button>
             {displayUpdateField === true ? (
-              <PasswordInput placeholder="new secret" width={200} {...props} />
+              <PasswordInput
+                placeholder="new secret"
+                styles={{ root: { width: 200 } }}
+                {...props}
+              />
             ) : (
               <Button onClick={() => setDisplayUpdateField(true)} variant="light">
                 {t('integration.secrets.update')}

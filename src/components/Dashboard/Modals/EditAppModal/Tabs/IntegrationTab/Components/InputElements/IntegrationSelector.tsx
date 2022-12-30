@@ -19,7 +19,6 @@ interface IntegrationSelectorProps {
 export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
   const { t } = useTranslation('layout/modals/add-app');
 
-  // TODO: read this out from integrations dynamically.
   const data: SelectItem[] = [
     {
       value: 'sabnzbd',
@@ -50,6 +49,26 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       value: 'overseerr',
       image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/overseerr.png',
       label: 'Overseerr',
+    },
+    {
+      value: 'sonarr',
+      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/sonarr.png',
+      label: 'Sonarr',
+    },
+    {
+      value: 'radarr',
+      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/radarr.png',
+      label: 'Radarr',
+    },
+    {
+      value: 'lidarr',
+      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/lidarr.png',
+      label: 'Lidarr',
+    },
+    {
+      value: 'readarr',
+      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/readarr.png',
+      label: 'Readarr',
     },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
 

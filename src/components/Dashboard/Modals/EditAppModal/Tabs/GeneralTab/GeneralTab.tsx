@@ -21,7 +21,6 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         placeholder="My example app"
         variant="default"
         withAsterisk
-        required
         {...form.getInputProps('name')}
       />
       <TextInput
@@ -31,7 +30,6 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         placeholder="https://google.com"
         variant="default"
         withAsterisk
-        required
         {...form.getInputProps('url')}
         onChange={(e) => {
           form.setFieldValue('behaviour.externalUrl', e.target.value);
@@ -44,7 +42,6 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         description={t('general.externalAddress.description')}
         placeholder="https://homarr.mywebsite.com/"
         variant="default"
-        required
         {...form.getInputProps('behaviour.externalUrl')}
       />
     </Tabs.Panel>
