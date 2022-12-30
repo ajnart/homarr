@@ -14,7 +14,7 @@ export const HeaderHeight = 64;
 
 export function Header(props: any) {
   const { classes } = useStyles();
-  const { classes: cardClasses } = useCardStyles();
+  const { classes: cardClasses } = useCardStyles(false);
 
   const { config } = useConfigContext();
 

@@ -1,10 +1,10 @@
-import { createStyles, Group, Title } from '@mantine/core';
+import { Group, Title } from '@mantine/core';
 import { CategoryType } from '../../../../types/category';
 import { HomarrCardWrapper } from '../../Tiles/HomarrCardWrapper';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { useGridstack } from '../gridstack/use-gridstack';
-import { CategoryEditMenu } from './CategoryEditMenu';
 import { WrapperContent } from '../WrapperContent';
+import { CategoryEditMenu } from './CategoryEditMenu';
 
 interface DashboardCategoryProps {
   category: CategoryType;

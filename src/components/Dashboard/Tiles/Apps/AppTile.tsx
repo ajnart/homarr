@@ -20,7 +20,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 
   const {
     classes: { card: cardClass },
-  } = useCardStyles();
+  } = useCardStyles(false);
 
   const inner = (
     <>
