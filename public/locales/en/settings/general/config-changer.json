@@ -18,6 +18,14 @@
       "configSaved": {
         "title": "Config saved",
         "message": "Config saved as {{configName}}"
+      },
+      "configCopied": {
+        "title": "Config copied",
+        "message": "Config copied as {{configName}}"
+      },
+      "configNotCopied": {
+        "title": "Unable to copy config",
+        "message": "Your config was not copied as {{configName}}"
       }
     }
   },

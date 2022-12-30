@@ -1,11 +1,10 @@
 import { ActionIcon, Center, createStyles, Flex, Text, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { showNotification } from '@mantine/notifications';
-import { IconCheck, IconCopy, IconDownload, IconTrash, IconX } from '@tabler/icons';
-import { useMutation } from '@tanstack/react-query';
+import { IconCopy, IconDownload, IconTrash } from '@tabler/icons';
 import fileDownload from 'js-file-download';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
+import { useDeleteConfigMutation } from '../../../../tools/config/mutations/useDeleteConfigMutation';
 import Tip from '../../../layout/Tip';
 import { CreateConfigCopyModal } from './CreateCopyModal';
 
@@ -79,36 +78,3 @@ const useStyles = createStyles(() => ({
     padding: 10,
   },
 }));
-
-const useDeleteConfigMutation = (configName: string) => {
-  const { t } = useTranslation(['settings/general/config-changer']);
-
-  return useMutation({
-    mutationKey: ['config/delete', { configName }],
-    mutationFn: () => fetchDeletion(configName),
-    onSuccess() {
-      showNotification({
-        title: t('buttons.delete.notifications.deleted.title'),
-        icon: <IconCheck />,
-        color: 'green',
-        autoClose: 1500,
-        radius: 'md',
-        message: t('buttons.delete.notifications.deleted.message'),
-      });
-      // TODO: set config to default config and use fallback config if necessary
-    },
-    onError() {
-      showNotification({
-        title: t('buttons.delete.notifications.deleteFailed.title'),
-        icon: <IconX />,
-        color: 'red',
-        autoClose: 1500,
-        radius: 'md',
-        message: t('buttons.delete.notifications.deleteFailed.message'),
-      });
-    },
-  });
-};
-
-const fetchDeletion = async (configName: string) =>
-  (await fetch(`/api/configs/${configName}`)).json();

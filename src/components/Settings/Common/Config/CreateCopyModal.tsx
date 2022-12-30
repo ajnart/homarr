@@ -1,9 +1,7 @@
 import { Button, Group, Modal, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { showNotification } from '@mantine/notifications';
-import { IconCheck } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '../../../../config/provider';
+import { useCopyConfigMutation } from '../../../../tools/config/mutations/useCopyConfigMutation';
 
 interface CreateConfigCopyModalProps {
   opened: boolean;
@@ -17,7 +15,7 @@ export const CreateConfigCopyModal = ({
   initialConfigName,
 }: CreateConfigCopyModalProps) => {
   const { t } = useTranslation(['settings/general/config-changer']);
-  const { config } = useConfigContext();
+
   const form = useForm({
     initialValues: {
       configName: initialConfigName,
@@ -27,23 +25,18 @@ export const CreateConfigCopyModal = ({
     },
   });
 
+  const { mutateAsync } = useCopyConfigMutation(form.values.configName);
+
   const handleClose = () => {
     form.setFieldValue('configName', initialConfigName);
     closeModal();
   };
 
-  const handleSubmit = (values: typeof form.values) => {
+  const handleSubmit = async (values: typeof form.values) => {
     if (!form.isValid) return;
-    // TODO: create config file with copied data
+
+    await mutateAsync();
     closeModal();
-    showNotification({
-      title: t('modal.events.configSaved.title'),
-      icon: <IconCheck />,
-      color: 'green',
-      autoClose: 1500,
-      radius: 'md',
-      message: t('modal.events.configSaved.message', { configName: values.configName }),
-    });
   };
 
   return (

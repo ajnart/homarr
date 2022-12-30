@@ -71,16 +71,20 @@ function Get(req: NextApiRequest, res: NextApiResponse) {
       message: 'Wrong request',
     });
   }
+
   // Loop over all the files in the /data/configs directory
   const files = fs.readdirSync('data/configs');
+
   // Strip the .json extension from the file name
   const configs = files.map((file) => file.replace('.json', ''));
+
   // If the target is not in the list of files, return an error
   if (!configs.includes(slug)) {
     return res.status(404).json({
       message: 'Target not found',
     });
   }
+
   // Return the content of the file
   return res.status(200).json(fs.readFileSync(path.join('data/configs', `${slug}.json`), 'utf8'));
 }
@@ -90,12 +94,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'PUT') {
     return Put(req, res);
   }
+
   if (req.method === 'DELETE') {
     return Delete(req, res);
   }
+
   if (req.method === 'GET') {
     return Get(req, res);
   }
+
   return res.status(405).json({
     statusCode: 405,
     message: 'Method not allowed',
@@ -110,16 +117,20 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
       message: 'Wrong request',
     });
   }
+
   // Loop over all the files in the /data/configs directory
   const files = fs.readdirSync('data/configs');
+
   // Strip the .json extension from the file name
   const configs = files.map((file) => file.replace('.json', ''));
+
   // If the target is not in the list of files, return an error
   if (!configs.includes(slug)) {
     return res.status(404).json({
       message: 'Target not found',
     });
   }
+
   // Delete the file
   fs.unlinkSync(path.join('data/configs', `${slug}.json`));
   return res.status(200).json({
