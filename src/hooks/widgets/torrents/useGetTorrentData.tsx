@@ -13,7 +13,6 @@ export const useGetTorrentData = (params: TorrentsDataRequestParams) =>
     queryKey: ['torrentsData', params.appId],
     queryFn: async () => fetchData(),
     refetchOnWindowFocus: true,
-    refetchIntervalInBackground: POLLING_INTERVAL * 3,
     refetchInterval(_: any, query: Query) {
       if (query.state.fetchFailureCount < 3) {
         return 5000;

@@ -1,3 +1,4 @@
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Center,
   Group,
@@ -125,7 +126,7 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {data.map((item: NormalizedTorrent, index: number) => (
             <BitTorrrentQueueItem key={index} torrent={item} />
           ))}
         </tbody>
