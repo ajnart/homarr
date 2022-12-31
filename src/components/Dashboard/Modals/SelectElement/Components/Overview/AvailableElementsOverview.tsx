@@ -53,7 +53,7 @@ export const AvailableElementTypes = ({
                   area: {
                     type: 'wrapper',
                     properties: {
-                      id: getLowestWrapper()?.id ?? '',
+                      id: getLowestWrapper()?.id ?? 'default',
                     },
                   },
                   shape: {

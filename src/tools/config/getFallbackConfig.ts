@@ -22,13 +22,18 @@ export const getFallbackConfig = (name?: string): BackendConfigType => ({
     customization: {
       colors: {},
       layout: {
-        enabledDocker: true,
-        enabledLeftSidebar: true,
-        enabledPing: true,
-        enabledRightSidebar: true,
+        enabledDocker: false,
+        enabledLeftSidebar: false,
+        enabledPing: false,
+        enabledRightSidebar: false,
         enabledSearchbar: true,
       },
     },
   },
-  wrappers: [],
+  wrappers: [
+    {
+      id: 'default',
+      position: 0,
+    },
+  ],
 });
