@@ -11,7 +11,7 @@ interface TorrentsDataRequestParams {
 export const useGetTorrentData = (params: TorrentsDataRequestParams) =>
   useQuery({
     queryKey: ['torrentsData', params.appId],
-    queryFn: async () => fetchData(),
+    queryFn: fetchData,
     refetchOnWindowFocus: true,
     refetchInterval(_: any, query: Query) {
       if (query.state.fetchFailureCount < 3) {

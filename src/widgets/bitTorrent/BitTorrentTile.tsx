@@ -1,4 +1,4 @@
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
+import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
 import {
   Center,
   Group,
@@ -52,7 +52,7 @@ interface BitTorrentTileProps {
 }
 
 function BitTorrentTile({ widget }: BitTorrentTileProps) {
-  const { t } = useTranslation('modules/torrents');
+  const { t } = useTranslation('modules/torrents-status');
   const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const { width } = useElementSize();
 
@@ -112,6 +112,18 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
     );
   }
 
+  const filter = (torrent: NormalizedTorrent) => {
+    if (!widget.properties.displayCompletedTorrents && torrent.isCompleted) {
+      return false;
+    }
+
+    if (!widget.properties.displayStaleTorrents && !torrent.isCompleted && torrent.eta <= 0) {
+      return false;
+    }
+
+    return true;
+  };
+
   return (
     <ScrollArea sx={{ height: 300, width: '100%' }}>
       <Table highlightOnHover p="sm">
@@ -126,7 +138,7 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
           </tr>
         </thead>
         <tbody>
-          {data.map((item: NormalizedTorrent, index: number) => (
+          {data.filter(filter).map((item: NormalizedTorrent, index: number) => (
             <BitTorrrentQueueItem key={index} torrent={item} />
           ))}
         </tbody>

@@ -23,7 +23,7 @@ export const dashboardNamespaces = [
   'modules/dlspeed',
   'modules/usenet',
   'modules/search',
-  'modules/torrents',
+  'modules/torrents-status',
   'modules/weather',
   'modules/ping',
   'modules/docker',

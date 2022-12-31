@@ -1,6 +1,7 @@
-import { Button, Group, MultiSelect, Stack, Switch, TextInput } from '@mantine/core';
+import { Alert, Button, Group, MultiSelect, Stack, Switch, TextInput, Text } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { useTranslation } from 'next-i18next';
+import { IconAlertTriangle } from '@tabler/icons';
+import { Trans, useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import Widgets from '../../../../widgets';
 import type { IWidgetOptionValue } from '../../../../widgets/widgets';
@@ -30,6 +31,8 @@ export const WidgetsEditModal = ({
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
   if (!configName || !innerProps.options) return null;
+
+  console.log(`loaded namespace modules/${innerProps.widgetId}`);
 
   const handleChange = (key: string, value: IntegrationOptionsValueType) => {
     setModuleProperties((prev) => {
@@ -66,12 +69,28 @@ export const WidgetsEditModal = ({
 
   return (
     <Stack>
-      {items.map(([key, value]) => {
+      {items.map(([key, value], index) => {
         const option = (currentWidgetDefinition as any).options[key] as IWidgetOptionValue;
+
+        if (!option) {
+          return (
+            <Alert icon={<IconAlertTriangle />} color="red">
+              <Text>
+                <Trans
+                  i18nKey="modules/common:errors.unmappedOptions.text"
+                  values={{ key }}
+                  components={{ b: <b />, code: <code /> }}
+                />
+              </Text>
+            </Alert>
+          );
+        }
+
         switch (option.type) {
           case 'switch':
             return (
               <Switch
+                key={`${option.type}-${index}`}
                 label={t(`descriptor.settings.${key}.label`)}
                 checked={value as boolean}
                 onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
@@ -80,6 +99,7 @@ export const WidgetsEditModal = ({
           case 'text':
             return (
               <TextInput
+                key={`${option.type}-${index}`}
                 label={t(`descriptor.settings.${key}.label`)}
                 value={value as string}
                 onChange={(ev) => handleChange(key, ev.currentTarget.value)}
@@ -88,6 +108,7 @@ export const WidgetsEditModal = ({
           case 'multi-select':
             return (
               <MultiSelect
+                key={`${option.type}-${index}`}
                 data={getMutliselectData(key)}
                 label={t(`descriptor.settings.${key}.label`)}
                 value={value as string[]}
