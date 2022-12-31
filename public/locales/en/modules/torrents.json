@@ -34,7 +34,14 @@
       "noDownloadClients": {
         "title": "No supported download clients found!",
         "text": "Add a download service to view your current downloads"
+      },
+      "generic": {
+        "title": "An unexpected error occured",
+        "text": "Homarr was unable to communicate with your download clients. Please check your configuration"
       }
+    },
+    "loading": {
+      "title": "Loading..."
     }
   }
 }

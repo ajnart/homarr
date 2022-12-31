@@ -54,7 +54,7 @@ export type ConfigAppIntegrationType = Omit<AppIntegrationType, 'properties'> & 
 export type AppIntegrationPropertyType = {
   type: 'private' | 'public';
   field: IntegrationField;
-  value?: string | undefined;
+  value?: string | null;
   isDefined: boolean;
 };
 

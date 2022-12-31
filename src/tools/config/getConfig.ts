@@ -1,3 +1,4 @@
+import Consola from 'consola';
 import { BackendConfigType } from '../../types/config';
 import { configExists } from './configExists';
 import { getFallbackConfig } from './getFallbackConfig';
@@ -11,8 +12,9 @@ export const getConfig = (name: string): BackendConfigType => {
   // to the new format.
   const config = readConfig(name);
   if (config.schemaVersion === undefined) {
-    console.log('Migrating config file...', config);
+    Consola.log('Migrating config file...', config);
     return migrateConfig(config, name);
   }
+
   return config;
 };

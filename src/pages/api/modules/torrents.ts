@@ -1,3 +1,4 @@
+import Consola from 'consola';
 import { Deluge } from '@ctrl/deluge';
 import { QBittorrent } from '@ctrl/qbittorrent';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
@@ -22,43 +23,53 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       message: 'Missing apps',
     });
   }
+
   try {
     await Promise.all(
       qBittorrentApp.map((app) =>
         new QBittorrent({
           baseUrl: app.url,
-          username: app.integration!.properties.find((x) => x.field === 'username')?.value,
-          password: app.integration!.properties.find((x) => x.field === 'password')?.value,
+          username:
+            app.integration!.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          password:
+            app.integration!.properties.find((x) => x.field === 'password')?.value ?? undefined,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
       )
     );
     await Promise.all(
-      delugeApp.map((app) =>
-        new Deluge({
+      delugeApp.map((app) => {
+        const password = app.integration?.properties.find((x) => x.field === 'password')?.value ?? undefined;
+        const test = new Deluge({
           baseUrl: app.url,
-          password: app.integration!.properties.find((x) => x.field === 'password')?.value,
+          password,
         })
           .getAllData()
-          .then((e) => torrents.push(...e.torrents))
-      )
+          .then((e) => torrents.push(...e.torrents));
+        return test;
+      })
     );
     // Map transmissionApps
     await Promise.all(
       transmissionApp.map((app) =>
         new Transmission({
           baseUrl: app.url,
-          username: app.integration!.properties.find((x) => x.field === 'username')?.value,
-          password: app.integration!.properties.find((x) => x.field === 'password')?.value,
+          username:
+            app.integration!.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          password:
+            app.integration!.properties.find((x) => x.field === 'password')?.value ?? undefined,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
       )
     );
   } catch (e: any) {
+    Consola.error('Error while communicating with your torrent applications:\n', e);
     return res.status(401).json(e);
   }
+
+  Consola.debug(`Retrieved ${torrents.length} from all download clients`);
   return res.status(200).json(torrents);
 }
 

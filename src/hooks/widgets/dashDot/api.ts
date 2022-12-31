@@ -1,15 +1,15 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Results } from 'sabnzbd-api';
-import { UsenetQueueRequestParams, UsenetQueueResponse } from '../pages/api/modules/usenet/queue';
+import { UsenetQueueRequestParams, UsenetQueueResponse } from '../../../pages/api/modules/usenet/queue';
 import {
   UsenetHistoryRequestParams,
   UsenetHistoryResponse,
-} from '../pages/api/modules/usenet/history';
-import { UsenetInfoRequestParams, UsenetInfoResponse } from '../pages/api/modules/usenet';
-import { UsenetPauseRequestParams } from '../pages/api/modules/usenet/pause';
-import { queryClient } from '../tools/queryClient';
-import { UsenetResumeRequestParams } from '../pages/api/modules/usenet/resume';
+} from '../../../pages/api/modules/usenet/history';
+import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
+import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
+import { queryClient } from '../../../tools/queryClient';
+import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
 
 const POLLING_INTERVAL = 2000;
 

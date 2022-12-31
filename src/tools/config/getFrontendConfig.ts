@@ -14,8 +14,8 @@ export const getFrontendConfig = (name: string): ConfigType => {
         properties:
           app.integration?.properties.map((property) => ({
             ...property,
-            value: property.type === 'private' ? undefined : property.value,
-            isDefined: property.value != null,
+            value: property.type === 'private' ? null : property.value,
+            isDefined: property.value !== null,
           })) ?? [],
       },
     })),
