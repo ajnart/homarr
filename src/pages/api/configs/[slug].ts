@@ -44,7 +44,10 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
             return {
               field: property.field,
               type: property.type,
-              value: property.value !== undefined ? property.value : previousProperty?.value,
+              value:
+                property.value !== undefined || property.value === null
+                  ? property.value
+                  : previousProperty?.value,
             };
           }),
         },
