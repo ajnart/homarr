@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
 import path from 'path';
-import LoadConfigComponent from '../components/Config/LoadConfig';
+import { LoadConfigComponent } from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';

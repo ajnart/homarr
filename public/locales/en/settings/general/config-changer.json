@@ -57,9 +57,11 @@
       }
     },
     "accept": {
+      "title": "Configuration Upload",
       "text": "Drag files here to upload a config. Support for JSON only."
     },
     "reject": {
+      "title": "Drag and Drop Upload rejected",
       "text": "This file format is not supported. Please only upload JSON."
     }
   }

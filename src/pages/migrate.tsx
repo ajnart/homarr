@@ -1,45 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import React, { useEffect, useState } from 'react';
 
 import {
-  createStyles,
-  Title,
-  Text,
-  Container,
-  Group,
-  Stepper,
-  useMantineTheme,
-  Header,
+  Alert,
+  Anchor,
   AppShell,
-  useMantineColorScheme,
-  Switch,
+  Badge,
   Box,
   Button,
-  Alert,
-  Badge,
+  Container,
+  createStyles,
+  Group,
+  Header,
   List,
   Loader,
   Paper,
   Progress,
   Space,
   Stack,
+  Stepper,
+  Switch,
+  Text,
   ThemeIcon,
-  Anchor,
+  Title,
+  useMantineColorScheme,
+  useMantineTheme,
 } from '@mantine/core';
 import {
-  IconSun,
-  IconMoonStars,
-  IconCheck,
   IconAlertCircle,
-  IconCircleCheck,
   IconBrandDiscord,
+  IconCheck,
+  IconCircleCheck,
+  IconMoonStars,
+  IconSun,
 } from '@tabler/icons';
 import { motion } from 'framer-motion';
 import { Logo } from '../components/layout/Logo';
 import { usePrimaryGradient } from '../components/layout/useGradient';
-import { migrateConfig } from '../tools/config/migrateConfig';
+import { backendMigrateConfig } from '../tools/config/backendMigrateConfig';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -274,7 +274,7 @@ export async function getServerSideProps({ req, res, locale }: GetServerSideProp
     const configData = JSON.parse(fs.readFileSync(`./data/configs/${config}`, 'utf8'));
     if (!configData.schemaVersion) {
       // Migrate the config
-      migrateConfig(configData, config.replace('.json', ''));
+      backendMigrateConfig(configData, config.replace('.json', ''));
     }
     return config;
   });

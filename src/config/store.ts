@@ -13,6 +13,20 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
       ],
     }));
   },
+  addConfig: async (name: string, config: ConfigType, shouldSaveConfigToFileSystem = true) => {
+    set((old) => ({
+      ...old,
+      configs: [
+        ...old.configs.filter((x) => x.value.configProperties.name !== name),
+        { value: config, increaseVersion: () => {} },
+      ],
+    }));
+
+    if (!shouldSaveConfigToFileSystem) {
+      return;
+    }
+    axios.put(`/api/configs/${name}`, { ...config });
+  },
   updateConfig: async (
     name,
     updateCallback: (previous: ConfigType) => ConfigType,
@@ -21,7 +35,9 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
   ) => {
     const { configs } = get();
     const currentConfig = configs.find((x) => x.value.configProperties.name === name);
-    if (!currentConfig) return;
+    if (!currentConfig) {
+      return;
+    }
     // copies the value of currentConfig and creates a non reference object named previousConfig
     const previousConfig: ConfigType = JSON.parse(JSON.stringify(currentConfig.value));
 
@@ -51,6 +67,11 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
 interface UseConfigStoreType {
   configs: { increaseVersion: () => void; value: ConfigType }[];
   initConfig: (name: string, config: ConfigType, increaseVersion: () => void) => void;
+  addConfig: (
+    name: string,
+    config: ConfigType,
+    shouldSaveConfigToFileSystem: boolean,
+  ) => Promise<void>;
   updateConfig: (
     name: string,
     updateCallback: (previous: ConfigType) => ConfigType,

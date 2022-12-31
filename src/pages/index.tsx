@@ -2,7 +2,7 @@ import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 
 import fs from 'fs';
-import LoadConfigComponent from '../components/Config/LoadConfig';
+import Consola from 'consola';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
@@ -10,6 +10,7 @@ import { getFrontendConfig } from '../tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '../tools/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
+import { LoadConfigComponent } from '../components/Config/LoadConfig';
 
 export async function getServerSideProps({
   req,
@@ -46,6 +47,9 @@ export async function getServerSideProps({
   }
 
   const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
+
+  Consola.info(`Decided to use configuration '${configName}'`);
+
   const config = getFrontendConfig(configName as string);
 
   return {

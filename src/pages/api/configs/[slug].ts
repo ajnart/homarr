@@ -1,6 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
+import Consola from 'consola';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { BackendConfigType, ConfigType } from '../../../types/config';
 import { getConfig } from '../../../tools/config/getConfig';
 
@@ -10,10 +11,13 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
   // Get the body of the request
   const { body: config }: { body: ConfigType } = req;
   if (!slug || !config) {
+    Consola.warn('Rejected configuration update because either config or slug were undefined');
     return res.status(400).json({
       error: 'Wrong request',
     });
   }
+
+  Consola.info(`Saving updated configuration of '${slug}' config.`);
 
   const previousConfig = getConfig(slug);
 
@@ -56,11 +60,11 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
   };
 
   // Save the body in the /data/config folder with the slug as filename
-  fs.writeFileSync(
-    path.join('data/configs', `${slug}.json`),
-    JSON.stringify(newConfig, null, 2),
-    'utf8'
-  );
+  const targetPath = path.join('data/configs', `${slug}.json`);
+  fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
+
+  Consola.info(`Config '${slug}' has been updated and flushed to '${targetPath}'.`);
+
   return res.status(200).json({
     message: 'Configuration saved with success',
   });

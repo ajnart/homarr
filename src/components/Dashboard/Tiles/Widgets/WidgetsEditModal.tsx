@@ -32,8 +32,6 @@ export const WidgetsEditModal = ({
 
   if (!configName || !innerProps.options) return null;
 
-  console.log(`loaded namespace modules/${innerProps.widgetId}`);
-
   const handleChange = (key: string, value: IntegrationOptionsValueType) => {
     setModuleProperties((prev) => {
       const copyOfPrev: any = { ...prev };
