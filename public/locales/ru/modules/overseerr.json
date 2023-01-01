@@ -6,7 +6,7 @@
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "Спросите на {{title}}",
+        "askFor": "Запросить {{title}}",
         "cancel": "Отмена",
         "request": "Запрос"
       },
