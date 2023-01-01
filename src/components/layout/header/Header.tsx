@@ -38,7 +38,6 @@ export function Header(props: any) {
         </Box>
         <Group position="right" style={{ maxWidth: 'none' }} noWrap>
           <Search />
-          <AddElementAction />
           <ToggleEditModeAction />
           <DockerMenuButton />
           <Indicator size={15} color="blue" withBorder processing disabled={!newVersionAvailable}>

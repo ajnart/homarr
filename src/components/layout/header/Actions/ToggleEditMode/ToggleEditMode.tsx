@@ -1,7 +1,7 @@
-import { ActionIcon, Button, Popover, Text, Tooltip } from '@mantine/core';
-import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
 import axios from 'axios';
 import Consola from 'consola';
+import { ActionIcon, Button, Group, Popover, Stack, Text, Tooltip } from '@mantine/core';
+import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
@@ -9,6 +9,7 @@ import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
 
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
+import { AddElementAction } from '../AddElementAction/AddElementAction';
 
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
@@ -32,33 +33,59 @@ export const ToggleEditModeAction = () => {
     setPopoverManuallyHidden(false);
   };
 
+  const ToggleButtonDesktop = () => (
+    <Button
+      onClick={() => toggleButtonClicked()}
+      leftIcon={enabled ? <IconEditCircleOff /> : <IconEditCircle />}
+      variant="default"
+      radius="md"
+      color="blue"
+      style={{ height: 43 }}
+    >
+      <Text>{enabled ? t('button.enabled') : t('button.disabled')}</Text>
+    </Button>
+  );
+
+  const ToggleActionIconMobile = () => (
+    <ActionIcon
+      onClick={() => toggleButtonClicked()}
+      variant="default"
+      radius="md"
+      size="xl"
+      color="blue"
+    >
+      {enabled ? <IconEditCircleOff /> : <IconEditCircle />}
+    </ActionIcon>
+  );
+
   return (
     <Tooltip label={t('tooltip')} withinPortal>
-      <Popover opened={enabled && !smallerThanSm && !popoverManuallyHidden} width={250} withArrow>
+      <Popover
+        opened={enabled && !smallerThanSm && !popoverManuallyHidden}
+        width={250}
+        zIndex={199}
+        withArrow
+      >
         <Popover.Target>
           {smallerThanSm ? (
-            <ActionIcon
-              onClick={() => toggleButtonClicked()}
-              variant="default"
-              radius="md"
-              size="xl"
-              color="blue"
-            >
-              {enabled ? <IconEditCircleOff /> : <IconEditCircle />}
-            </ActionIcon>
+            enabled ? (
+              <Group style={{ flexWrap: 'nowrap' }}>
+                <AddElementAction type="action-icon" />
+                <ToggleActionIconMobile />
+              </Group>
+            ) : (
+              <ToggleActionIconMobile />
+            )
+          ) : enabled ? (
+            <Button.Group>
+              <ToggleButtonDesktop />
+              {enabled && <AddElementAction type="button" />}
+            </Button.Group>
           ) : (
-            <Button
-              onClick={() => toggleButtonClicked()}
-              leftIcon={enabled ? <IconEditCircleOff /> : <IconEditCircle />}
-              variant="default"
-              radius="md"
-              color="blue"
-              style={{ height: 44 }}
-            >
-              <Text>{enabled ? t('button.enabled') : t('button.disabled')}</Text>
-            </Button>
+            <ToggleButtonDesktop />
           )}
         </Popover.Target>
+
         <Popover.Dropdown p={4} px={6}>
           <div style={{ position: 'absolute', top: 2, right: 2 }}>
             <ActionIcon onClick={() => setPopoverManuallyHidden(true)}>
