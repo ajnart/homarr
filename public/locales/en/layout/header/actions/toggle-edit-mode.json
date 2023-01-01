@@ -1,5 +1,4 @@
 {
-    "tooltip": "The edit mode enables you to configure your dashboard",
     "description": "In edit mode, you can adjust the size and position of your tiles.",
     "button": {
         "disabled": "Enter Edit Mode",

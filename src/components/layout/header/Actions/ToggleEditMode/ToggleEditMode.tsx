@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Consola from 'consola';
-import { ActionIcon, Button, Group, Popover, Stack, Text, Tooltip } from '@mantine/core';
+import { ActionIcon, Button, Group, Paper, Popover, Space, Text } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
@@ -61,33 +61,31 @@ export const ToggleEditModeAction = () => {
   return (
     <Popover
       opened={enabled && !smallerThanSm && !popoverManuallyHidden}
-      width={250}
+      width="target"
+      transition="scale"
       zIndex={199}
-      withArrow
     >
       <Popover.Target>
-        <Tooltip label={t('tooltip')} withinPortal>
-          {smallerThanSm ? (
-            enabled ? (
-              <Group style={{ flexWrap: 'nowrap' }}>
-                <AddElementAction type="action-icon" />
-                <ToggleActionIconMobile />
-              </Group>
-            ) : (
+        {smallerThanSm ? (
+          enabled ? (
+            <Group style={{ flexWrap: 'nowrap' }}>
+              <AddElementAction type="action-icon" />
               <ToggleActionIconMobile />
-            )
-          ) : enabled ? (
-            <Button.Group>
-              <ToggleButtonDesktop />
-              {enabled && <AddElementAction type="button" />}
-            </Button.Group>
+            </Group>
           ) : (
+            <ToggleActionIconMobile />
+          )
+        ) : enabled ? (
+          <Button.Group>
             <ToggleButtonDesktop />
-          )}
-        </Tooltip>
+            {enabled && <AddElementAction type="button" />}
+          </Button.Group>
+        ) : (
+          <ToggleButtonDesktop />
+        )}
       </Popover.Target>
 
-      <Popover.Dropdown p={4} px={6}>
+      <Popover.Dropdown p={4} px={6} mt={-5}>
         <div style={{ position: 'absolute', top: 2, right: 2 }}>
           <ActionIcon onClick={() => setPopoverManuallyHidden(true)}>
             <IconX size={18} />

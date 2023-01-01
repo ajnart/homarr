@@ -2,6 +2,7 @@ import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
 import { closeModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
 import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -166,7 +167,12 @@ const ElementItem = ({ name, icon, onClick }: ElementItemProps) => {
       py="md"
     >
       <Stack className={classes.elementStack} align="center" spacing={5}>
-        {icon}
+        <motion.div
+          // On hover zoom in
+          whileHover={{ scale: 1.2 }}
+        >
+          {icon}
+        </motion.div>
         <Text className={classes.elementName} weight={500} size="sm">
           {name}
         </Text>

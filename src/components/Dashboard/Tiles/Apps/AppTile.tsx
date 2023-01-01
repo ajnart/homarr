@@ -1,6 +1,7 @@
 import { Center, Text, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
+import { motion } from 'framer-motion';
 import { AppType } from '../../../../types/app';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -29,7 +30,18 @@ export const AppTile = ({ className, app }: AppTileProps) => {
       </Text>
       <Center style={{ height: '75%', flex: 1 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className={classes.image} src={app.appearance.iconUrl} alt="" />
+        <motion.img
+          className={classes.image}
+          src={app.appearance.iconUrl}
+          alt=""
+          animate={{
+            scale: [0.8, 1.15, 1],
+            rotate: [0, 15, -15, 0],
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+        />
       </Center>
     </>
   );
