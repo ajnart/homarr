@@ -36,7 +36,7 @@ export const CategoryEditModal = ({
 
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
-      <TextInput data-autoFocus {...form.getInputProps('name')} label="Name of category" />
+      <TextInput data-autoFocus {...form.getInputProps('name')} autoFocus />
 
       <Group mt="md" grow>
         <Button onClick={() => context.closeModal(id)} variant="filled" color="gray">

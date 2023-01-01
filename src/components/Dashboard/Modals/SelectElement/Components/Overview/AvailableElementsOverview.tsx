@@ -1,5 +1,6 @@
 import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
 import { closeModal } from '@mantine/modals';
+import { showNotification } from '@mantine/notifications';
 import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
@@ -9,6 +10,7 @@ import { useConfigStore } from '../../../../../../config/store';
 import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../../../../../types/app';
 import { appTileDefinition } from '../../../../Tiles/Apps/AppTile';
+import { CategoryEditModalInnerProps } from '../../../../Wrappers/Category/CategoryEditModal';
 import { useStyles } from '../Shared/styles';
 
 interface AvailableElementTypesProps {
@@ -28,33 +30,50 @@ export const AvailableElementTypes = ({
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
   const onClickCreateCategory = async () => {
-    if (!configName) {
-      return;
-    }
+    openContextModalGeneric<CategoryEditModalInnerProps>({
+      modal: 'categoryEditModal',
+      title: 'Name of new category',
+      withCloseButton: false,
+      innerProps: {
+        category: {
+          id: uuidv4(),
+          name: 'New category',
+          position: 0,
+        },
+        onSuccess: async (category) => {
+          if (!configName) return;
 
-    await updateConfig(configName, (previousConfig) => ({
-      ...previousConfig,
-      wrappers:
-        previousConfig.wrappers.length <= previousConfig.categories.length
-          ? [
-              ...previousConfig.wrappers,
+          await updateConfig(configName, (previousConfig) => ({
+            ...previousConfig,
+            wrappers:
+              previousConfig.wrappers.length <= previousConfig.categories.length
+                ? [
+                    ...previousConfig.wrappers,
+                    {
+                      id: uuidv4(),
+                      position: previousConfig.categories.length,
+                    },
+                  ]
+                : previousConfig.wrappers,
+            categories: [
+              ...previousConfig.categories,
               {
                 id: uuidv4(),
+                name: category.name,
                 position: previousConfig.categories.length,
               },
-            ]
-          : previousConfig.wrappers,
-      categories: [
-        ...previousConfig.categories,
-        {
-          id: uuidv4(),
-          name: `Category ${previousConfig.categories.length + 1}`,
-          position: previousConfig.categories.length,
+            ],
+          })).then(() => {
+            closeModal(modalId);
+            showNotification({
+              title: 'Category created',
+              message: `The category ${category.name} has been created`,
+              color: 'teal',
+            });
+          });
         },
-      ],
-    }));
-
-    closeModal(modalId);
+      },
+    });
   };
 
   return (

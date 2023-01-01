@@ -31,6 +31,8 @@ interface IconSelectorProps {
 }
 
 export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSelectorProps) => {
+  const { t } = useTranslation('layout/tools');
+
   const { data, isLoading } = useRepositoryIconsQuery<WalkxcodeRepositoryIcon>({
     url: 'https://api.github.com/repos/walkxcode/Dashboard-Icons/contents/png',
     converter: (item) => ({
@@ -72,8 +74,6 @@ export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSe
   const slicedFilteredItems = filteredItems.slice(0, ICON_PICKER_SLICE_LIMIT);
   const isTruncated =
     slicedFilteredItems.length > 0 && slicedFilteredItems.length !== filteredItems.length;
-
-  const { t } = useTranslation('layout/tools');
 
   return (
     <Popover width={310}>

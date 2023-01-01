@@ -23,7 +23,6 @@ export const AppearanceTab = ({
     <Tabs.Panel value="appearance" pt="lg">
       <Flex gap={5}>
         <TextInput
-          defaultValue={form.values.appearance.iconUrl}
           className={classes.textInput}
           icon={<DebouncedAppIcon form={form} width={20} height={20} />}
           label={t('appearance.icon.label')}

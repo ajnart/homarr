@@ -210,6 +210,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
   const edit = async () => {
     openContextModalGeneric<CategoryEditModalInnerProps>({
       modal: 'categoryEditModal',
+      withCloseButton: false,
       innerProps: {
         category,
         onSuccess: async (category) => {

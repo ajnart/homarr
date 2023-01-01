@@ -13,35 +13,33 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
 
   return (
     <>
-      <Tooltip label="Open Menu">
-        <Menu width={250}>
-          <Menu.Target>
-            <ActionIcon variant="default" radius="md" size="xl" color="blue">
-              <IconMenu2 />
-            </ActionIcon>
-          </Menu.Target>
-          <Menu.Dropdown>
-            <ColorSchemeSwitch />
-            <Menu.Divider />
-            <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
-              {t('sections.settings')}
-            </Menu.Item>
-            <Menu.Item
-              icon={<IconInfoCircle strokeWidth={1.2} size={18} />}
-              rightSection={
-                newVersionAvailable && (
-                  <Badge variant="light" color="blue">
-                    New
-                  </Badge>
-                )
-              }
-              onClick={() => aboutModal.open()}
-            >
-              {t('about')}
-            </Menu.Item>
-          </Menu.Dropdown>
-        </Menu>
-      </Tooltip>
+      <Menu width={250}>
+        <Menu.Target>
+          <ActionIcon variant="default" radius="md" size="xl" color="blue">
+            <IconMenu2 />
+          </ActionIcon>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <ColorSchemeSwitch />
+          <Menu.Divider />
+          <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
+            {t('sections.settings')}
+          </Menu.Item>
+          <Menu.Item
+            icon={<IconInfoCircle strokeWidth={1.2} size={18} />}
+            rightSection={
+              newVersionAvailable && (
+                <Badge variant="light" color="blue">
+                  New
+                </Badge>
+              )
+            }
+            onClick={() => aboutModal.open()}
+          >
+            {t('about')}
+          </Menu.Item>
+        </Menu.Dropdown>
+      </Menu>
       <SettingsDrawer
         opened={drawerOpened}
         closeDrawer={drawer.close}

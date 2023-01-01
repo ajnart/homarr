@@ -59,14 +59,14 @@ export const ToggleEditModeAction = () => {
   );
 
   return (
-    <Tooltip label={t('tooltip')} withinPortal>
-      <Popover
-        opened={enabled && !smallerThanSm && !popoverManuallyHidden}
-        width={250}
-        zIndex={199}
-        withArrow
-      >
-        <Popover.Target>
+    <Popover
+      opened={enabled && !smallerThanSm && !popoverManuallyHidden}
+      width={250}
+      zIndex={199}
+      withArrow
+    >
+      <Popover.Target>
+        <Tooltip label={t('tooltip')} withinPortal>
           {smallerThanSm ? (
             enabled ? (
               <Group style={{ flexWrap: 'nowrap' }}>
@@ -84,22 +84,22 @@ export const ToggleEditModeAction = () => {
           ) : (
             <ToggleButtonDesktop />
           )}
-        </Popover.Target>
+        </Tooltip>
+      </Popover.Target>
 
-        <Popover.Dropdown p={4} px={6}>
-          <div style={{ position: 'absolute', top: 2, right: 2 }}>
-            <ActionIcon onClick={() => setPopoverManuallyHidden(true)}>
-              <IconX size={18} />
-            </ActionIcon>
-          </div>
-          <Text align="center" size="sm">
-            <Text weight="bold">{t('popover.title')}</Text>
-            <Text>
-              <Trans i18nKey="layout/header/actions/toggle-edit-mode:popover.text" />
-            </Text>
+      <Popover.Dropdown p={4} px={6}>
+        <div style={{ position: 'absolute', top: 2, right: 2 }}>
+          <ActionIcon onClick={() => setPopoverManuallyHidden(true)}>
+            <IconX size={18} />
+          </ActionIcon>
+        </div>
+        <Text align="center" size="sm">
+          <Text weight="bold">{t('popover.title')}</Text>
+          <Text>
+            <Trans i18nKey="layout/header/actions/toggle-edit-mode:popover.text" />
           </Text>
-        </Popover.Dropdown>
-      </Popover>
-    </Tooltip>
+        </Text>
+      </Popover.Dropdown>
+    </Popover>
   );
 };
