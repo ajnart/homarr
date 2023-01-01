@@ -15,17 +15,17 @@
                 "title": "Настройки",
                 "form": {
                     "serviceName": {
-                        "label": "Имя сервиса",
+                        "label": "Название сервиса",
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
                         "label": "URL-адрес иконки"
                     },
                     "serviceUrl": {
-                        "label": "Адрес сервиса"
+                        "label": "URL-адрес сервиса"
                     },
                     "onClickUrl": {
-                        "label": "URL-адрес при нажатии"
+                        "label": "URL-адрес по клику"
                     },
                     "serviceType": {
                         "label": "Тип сервиса",
