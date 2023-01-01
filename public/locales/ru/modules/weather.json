@@ -14,16 +14,16 @@
   "card": {
     "weatherDescriptions": {
       "clear": "Ясно",
-      "mainlyClear": "В основном ясно",
+      "mainlyClear": "Преимущественно ясно",
       "fog": "Туман",
-      "drizzle": "Мелкий дождь",
+      "drizzle": "Небольшой дождь",
       "freezingDrizzle": "Изморозь",
       "rain": "Дождь",
       "freezingRain": "Ледяной дождь",
       "snowFall": "Снегопад",
-      "snowGrains": "Снежные зерна",
-      "rainShowers": "Ливневый дождь",
-      "snowShowers": "Пурга",
+      "snowGrains": "Снежные зёрна",
+      "rainShowers": "Ливень",
+      "snowShowers": "Снегопад",
       "thunderstorm": "Гроза",
       "thunderstormWithHail": "Гроза с градом",
       "unknown": "Неизвестно"
