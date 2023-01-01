@@ -4,6 +4,7 @@
         "text": "Tiles are the main element of homarr. They allow you to configure the dashboard and display the information you want."
     },
     "widgetDescription": "Widgets interact with your apps, to provide you with more control over your applications. They usually require a few configurations before use.",
+    "goBack": "Go back to the previous step",
     "actionIcon": {
         "tooltip": "Add a tile"
     }

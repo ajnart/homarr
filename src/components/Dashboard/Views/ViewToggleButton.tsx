@@ -10,15 +10,7 @@ export const ViewToggleButton = () => {
   const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
 
   return (
-    <Tooltip
-      label={
-        <Text align="center">
-          In edit mode, you can adjust
-          <br />
-          the size and position of your tiles.
-        </Text>
-      }
-    >
+    <Tooltip width={100} label={<Text align="center">{t('description')}</Text>}>
       {screenLargerThanMd ? (
         <Button
           variant={isEditMode ? 'filled' : 'default'}

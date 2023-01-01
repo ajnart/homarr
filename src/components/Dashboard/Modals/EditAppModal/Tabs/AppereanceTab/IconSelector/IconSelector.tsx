@@ -17,6 +17,7 @@ import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch, IconX } from '@tabler/icons';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { ICON_PICKER_SLICE_LIMIT } from '../../../../../../../../data/constants';
 import { IconSelectorItem } from '../../../../../../../types/iconSelector/iconSelectorItem';
 import { WalkxcodeRepositoryIcon } from '../../../../../../../types/iconSelector/repositories/walkxcodeIconRepository';
@@ -72,6 +73,8 @@ export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSe
   const isTruncated =
     slicedFilteredItems.length > 0 && slicedFilteredItems.length !== filteredItems.length;
 
+  const { t } = useTranslation('layout/tools');
+
   return (
     <Popover width={310}>
       <Popover.Target>
@@ -88,7 +91,7 @@ export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSe
           <TextInput
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.currentTarget.value)}
-            placeholder="Search for icons..."
+            placeholder={t('iconPicker.textInputPlaceholder')}
             variant="filled"
             rightSection={
               <ActionIcon onClick={() => setSearchTerm('')}>
@@ -110,11 +113,10 @@ export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSe
               <Stack spacing="xs" pr={15}>
                 <Divider mt={35} mx="xl" />
                 <Title order={6} color="dimmed" align="center">
-                  Search is limited to {ICON_PICKER_SLICE_LIMIT} icons
+                  {t('iconPicker.searchLimitationTitle', { max: ICON_PICKER_SLICE_LIMIT })}
                 </Title>
                 <Text color="dimmed" align="center" size="sm">
-                  To keep things snappy and fast, the search is limited to {ICON_PICKER_SLICE_LIMIT}{' '}
-                  icons. Use the search box to find more icons.
+                  {t('iconPicker.searchLimitationMessage', { max: ICON_PICKER_SLICE_LIMIT })}
                 </Text>
               </Stack>
             )}
