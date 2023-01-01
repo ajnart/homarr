@@ -36,7 +36,7 @@
                         "label": "Категория",
                         "placeholder": "Выберите категорию или создайте новую",
                         "nothingFound": "Ничего не найдено",
-                        "createLabel": "+ Добавить {{query}}"
+                        "createLabel": "+ Создать {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
@@ -69,7 +69,7 @@
                         "deluge": {
                             "password": {
                                 "label": "Пароль",
-                                "placeholder": "Введите пароль",
+                                "placeholder": "пароль",
                                 "validation": {
                                     "invalidPassword": "Неверный пароль"
                                 }
@@ -101,7 +101,7 @@
                             },
                             "password": {
                                 "label": "Пароль",
-                                "placeholder": "Введите пароль",
+                                "placeholder": "пароль",
                                 "validation": {
                                     "invalidPassword": "Неверный пароль"
                                 }
@@ -111,7 +111,7 @@
                 }
             },
             "advancedOptions": {
-                "title": "Дополнительные параметры",
+                "title": "Дополнительные настройки",
                 "form": {
                     "openServiceInNewTab": {
                         "label": "Открывать сервис в новой вкладке"
