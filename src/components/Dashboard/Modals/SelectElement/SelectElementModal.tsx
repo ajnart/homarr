@@ -11,6 +11,7 @@ export const SelectElementModal = ({ context, id }: ContextModalProps) => {
     case undefined:
       return (
         <AvailableElementTypes
+          modalId={id}
           onOpenIntegrations={() => setActiveTab('integrations')}
           onOpenStaticElements={() => setActiveTab('static_elements')}
         />

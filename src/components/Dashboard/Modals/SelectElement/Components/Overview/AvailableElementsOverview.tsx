@@ -1,26 +1,61 @@
 import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
-import { IconBox, IconStack } from '@tabler/icons';
+import { closeModal } from '@mantine/modals';
+import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfigContext } from '../../../../../../config/provider';
+import { useConfigStore } from '../../../../../../config/store';
 import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../../../../../types/app';
 import { appTileDefinition } from '../../../../Tiles/Apps/AppTile';
 import { useStyles } from '../Shared/styles';
 
 interface AvailableElementTypesProps {
+  modalId: string;
   onOpenIntegrations: () => void;
   onOpenStaticElements: () => void;
 }
 
 export const AvailableElementTypes = ({
+  modalId,
   onOpenIntegrations: onOpenWidgets,
   onOpenStaticElements,
 }: AvailableElementTypesProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
-  const { config } = useConfigContext();
+  const { config, name: configName } = useConfigContext();
+  const { updateConfig } = useConfigStore();
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
+
+  const onClickCreateCategory = async () => {
+    if (!configName) {
+      return;
+    }
+
+    await updateConfig(configName, (previousConfig) => ({
+      ...previousConfig,
+      wrappers:
+        previousConfig.wrappers.length <= previousConfig.categories.length
+          ? [
+              ...previousConfig.wrappers,
+              {
+                id: uuidv4(),
+                position: previousConfig.categories.length,
+              },
+            ]
+          : previousConfig.wrappers,
+      categories: [
+        ...previousConfig.categories,
+        {
+          id: uuidv4(),
+          name: `Category ${previousConfig.categories.length + 1}`,
+          position: previousConfig.categories.length,
+        },
+      ],
+    }));
+
+    closeModal(modalId);
+  };
 
   return (
     <>
@@ -81,6 +116,11 @@ export const AvailableElementTypes = ({
           name="Widgets"
           icon={<IconStack size={40} strokeWidth={1.3} />}
           onClick={onOpenWidgets}
+        />
+        <ElementItem
+          name="Category"
+          icon={<IconBoxAlignTop size={40} strokeWidth={1.3} />}
+          onClick={onClickCreateCategory}
         />
         {/*<ElementItem
           name="Static Element"
