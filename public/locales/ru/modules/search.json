@@ -1,30 +1,30 @@
 {
   "descriptor": {
-    "name": "Поиск",
-    "description": "Строка поиска для поиска в Интернете, Youtube, Torrents или Overseerr"
+    "name": "Панель поиска",
+    "description": "Панель для поиска в интернете, по Youtube, торрентам или Overseerr"
   },
   "input": {
     "placeholder": "Искать в интернете..."
   },
-  "switched-to": "",
+  "switched-to": "Переключен на",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Поиск с помощью вашей поисковой системы (задается в настройках)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "Youtube",
+      "description": "Поиск на Youtube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Торренты",
+      "description": "Поиск по торрентам"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Поиск фильмов и сериалов с помощью Overseerr (модуль должен быть включен)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Вы можете выбрать строку поиска с помощью сочетания клавиш ",
+  "switchedSearchEngine": "Переключился на поиск с помощью {{searchEngine}}"
 }
