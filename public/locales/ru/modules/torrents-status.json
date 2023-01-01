@@ -15,7 +15,7 @@
         "size": "Размер",
         "download": "Вниз",
         "upload": "Вверх",
-        "estimatedTimeOfArrival": "РАСЧЕТНОЕ ВРЕМЯ ПРИБЫТИЯ",
+        "estimatedTimeOfArrival": "ETA",
         "progress": "Прогресс"
       },
       "body": {
@@ -24,11 +24,11 @@
     },
     "lineChart": {
       "title": "Текущая скорость загрузки",
-      "download": "Скачать: {{download}}",
-      "upload": "Загрузка: {{upload}}",
-      "timeSpan": "{{seconds}} несколько секунд назад",
+      "download": "Загрузка: {{download}}",
+      "upload": "Отдача: {{upload}}",
+      "timeSpan": "{{seconds}} секунд назад",
       "totalDownload": "Скачать: {{download}}/s",
-      "totalUpload": "Загрузка: {{upload}}/s"
+      "totalUpload": "Отдача: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
