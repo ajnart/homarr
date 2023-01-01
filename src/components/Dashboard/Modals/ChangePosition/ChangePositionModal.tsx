@@ -45,7 +45,7 @@ export const ChangePositionModal = ({
     onSubmit(form.values.x, form.values.y, form.values.width, form.values.height);
   };
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['layout/modals/change-position', 'common']);
 
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -54,8 +54,8 @@ export const ChangePositionModal = ({
           <NumberInput
             max={99}
             min={0}
-            label="X Position"
-            description="0 or higher"
+            label={t('xPosition')}
+            description={t('layout/modals/change-position:zeroOrHigher')}
             {...form.getInputProps('x')}
           />
         </Grid.Col>
@@ -64,8 +64,8 @@ export const ChangePositionModal = ({
           <NumberInput
             max={99}
             min={0}
-            label="Y Position"
-            description="0 or higher"
+            label={t('layout/modals/change-position:yPosition')}
+            description={t('layout/modals/change-position:zeroOrHigher')}
             {...form.getInputProps('y')}
           />
         </Grid.Col>
@@ -77,8 +77,11 @@ export const ChangePositionModal = ({
             data={widthData}
             max={24}
             min={1}
-            label="Width"
-            description={`Between ${widthData.at(0)?.label} and ${widthData.at(-1)?.label}`}
+            label={t('layout/modals/change-position:width')}
+            description={t('layout/modals/change-position:betweenXandY', {
+              min: widthData.at(0)?.label,
+              max: widthData.at(-1)?.label,
+            })}
             {...form.getInputProps('width')}
           />
         </Grid.Col>
@@ -88,8 +91,11 @@ export const ChangePositionModal = ({
             data={heightData}
             max={24}
             min={1}
-            label="Height"
-            description={`Between ${heightData.at(0)?.label} and ${heightData.at(-1)?.label}`}
+            label={t('layout/modals/change-position:height')}
+            description={t('layout/modals/change-position:betweenXandY', {
+              min: heightData.at(0)?.label,
+              max: heightData.at(-1)?.label,
+            })}
             {...form.getInputProps('height')}
           />
         </Grid.Col>
@@ -97,9 +103,9 @@ export const ChangePositionModal = ({
 
       <Flex justify="end" gap="sm" mt="md">
         <Button onClick={() => onCancel()} variant="light" color="gray">
-          {t('cancel')}
+          {t('common:cancel')}
         </Button>
-        <Button type="submit">{t('save')}</Button>
+        <Button type="submit">{t('common:save')}</Button>
       </Flex>
     </form>
   );
