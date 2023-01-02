@@ -13,15 +13,24 @@
 }
 
 @for $i from 1 to 13 {
-	.grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: $i * 64px }
-	.grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: $i * 64px }
-	.grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: $i * 64px }
+	.grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: ($i / 12) * 100 + "%" }
+	.grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: ($i / 12) * 100 + "%" }
+	.grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: ($i / 12) * 100 + "%" }
 }
 
 @for $i from 1 to 13 {
-  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height: $i * 64px; }
-  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height: $i * 64px; }
-  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height: $i * 64px; }
+  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height: ($i / 12) * 100 + "%" }
+  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height: ($i / 12) * 100 + "%" }
+  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height: ($i / 12) * 100 + "%" }
+}
+
+@for $i from 1 to 96 {
+	.grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: ($i / 12) * 100 + "%" }
+}
+
+
+@for $i from 1 to 96 {
+	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top: ($i / 12) * 100 + "%" }
 }
 
 .grid-stack>.grid-stack-item>.grid-stack-item-content,
@@ -35,16 +44,7 @@
 }
 
 .grid-stack>.grid-stack-item {
-  min-width: 64px;
-}
-
-@for $i from 1 to 96 {
-	.grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: $i * 64px }
-}
-
-
-@for $i from 1 to 96 {
-	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top: $i * 64px }
+  min-width: (1/12)+'%';
 }
 
 .grid-stack > .grid-stack-item > .grid-stack-item-content {

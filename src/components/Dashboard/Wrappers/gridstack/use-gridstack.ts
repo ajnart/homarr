@@ -78,7 +78,7 @@ export const useGridstack = (
   // change column count depending on the width and the gridRef
   useEffect(() => {
     if (areaType === 'sidebar') return;
-    gridRef.current?.column(Math.floor(width / 64), 'moveScale');
+    gridRef.current?.column(12);
   }, [gridRef, width]);
 
   const onChange = isEditMode

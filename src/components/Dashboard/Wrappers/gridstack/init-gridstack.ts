@@ -19,7 +19,7 @@ export const initializeGridstack = (
 ) => {
   if (!wrapperRef.current) return;
   // calculates the currently available count of columns
-  const columnCount = areaType === 'sidebar' ? 4 : Math.floor(wrapperRef.current.offsetWidth / 64);
+  const columnCount = areaType === 'sidebar' ? 4 : 12;
   const minRow = areaType !== 'sidebar' ? 1 : Math.floor(wrapperRef.current.offsetHeight / 64);
   // initialize gridstack
   const newGrid = gridRef;
