@@ -11,11 +11,13 @@ import {
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useResize } from '../../../../hooks/use-resize';
+import { useScreenLargerThan } from '../../../../hooks/useScreenLargerThan';
 import { AppType } from '../../../../types/app';
 import { AreaType } from '../../../../types/area';
 import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
+import { ShapeType } from '../../../../types/shape';
 
 interface UseGristackReturnType {
   apps: AppType[];
@@ -31,6 +33,7 @@ export const useGridstack = (
   areaType: 'wrapper' | 'category' | 'sidebar',
   areaId: string
 ): UseGristackReturnType => {
+  const isLargerThanSm = useScreenLargerThan('sm');
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { config, configVersion, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
@@ -78,8 +81,48 @@ export const useGridstack = (
   // change column count depending on the width and the gridRef
   useEffect(() => {
     if (areaType === 'sidebar') return;
-    gridRef.current?.column(12);
-  }, [gridRef, width]);
+    gridRef.current?.column(isLargerThanSm || typeof isLargerThanSm === 'undefined' ? 12 : 6, (column, prevColumn, newNodes, nodes) => {
+      let nextRow = 0;
+      let available = 6;
+
+      if (column === prevColumn) {
+        newNodes.concat(nodes);
+        return;
+      }
+
+      nodes.reverse().forEach(node => {
+        const width = parseInt(node.el!.getAttribute('data-gridstack-w')!, 10);
+        const height = parseInt(node.el!.getAttribute('data-gridstack-h')!, 10);
+        const x = parseInt(node.el!.getAttribute('data-gridstack-x')!, 10);
+        const y = parseInt(node.el!.getAttribute('data-gridstack-y')!, 10);
+
+        if (column === 6) {
+          node.x = available >= width ? 6 - available : 0;
+          node.y = nextRow;
+
+          if (width > 6) {
+            node.w = 6;
+            nextRow += 2;
+            available = 6;
+          } else if (available >= width) {
+            available -= width;
+            if (available === 0) {
+              nextRow += 2;
+              available = 6;
+            }
+          } else if (available < width) {
+            node.y = node.y! + 2;
+            available = 6 - width;
+            nextRow += 2;
+          }
+        } else {
+          node.x = y % 2 === 1 ? x + 6 : x;
+          node.y = Math.floor(y / 2);
+        }
+        newNodes.push(node);
+      });
+    });
+  }, [isLargerThanSm]);
 
   const onChange = isEditMode
     ? (changedNode: GridStackNode) => {
@@ -236,6 +279,7 @@ export const useGridstack = (
       items,
       widgets ?? [],
       isEditMode,
+      isLargerThanSm,
       {
         onChange,
         onAdd,
