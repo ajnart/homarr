@@ -19,7 +19,7 @@ const definition = defineWidget({
     },
   },
   gridstack: {
-    minWidth: 4,
+    minWidth: 2,
     minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
@@ -61,39 +61,34 @@ function WeatherTile({ widget }: WeatherTileProps) {
 
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
-    <Center style={{ height: '100%' }}>
-      <Group spacing="md" noWrap align="center">
+    <Stack
+      spacing="xs"
+      justify="space-around"
+      align="center"
+      style={{ height: '100%', width: '100%' }}
+    >
+      <Group grow>
         <WeatherIcon code={weather!.current_weather.weathercode} />
-        <Stack p={0} spacing={4}>
-          <Title order={2}>
-            {getPerferedUnit(
-              weather!.current_weather.temperature,
-              widget.properties.displayInFahrenheit
-            )}
-          </Title>
-          <Group spacing="xs" noWrap>
-            <div>
-              <span>
-                {getPerferedUnit(
-                  weather!.daily.temperature_2m_max[0],
-                  widget.properties.displayInFahrenheit
-                )}
-              </span>
-              <IconArrowUpRight size={16} style={{ right: 15 }} />
-            </div>
-            <div>
-              <span>
-                {getPerferedUnit(
-                  weather!.daily.temperature_2m_min[0],
-                  widget.properties.displayInFahrenheit
-                )}
-              </span>
-              <IconArrowDownRight size={16} />
-            </div>
-          </Group>
-        </Stack>
+        <Title order={2}>
+          {getPerferedUnit(
+            weather!.current_weather.temperature,
+            widget.properties.displayInFahrenheit
+          )}
+        </Title>
       </Group>
-    </Center>
+      <Group noWrap spacing="xs">
+        <IconArrowUpRight />
+        {getPerferedUnit(
+          weather!.daily.temperature_2m_max[0],
+          widget.properties.displayInFahrenheit
+        )}
+        <IconArrowDownRight />
+        {getPerferedUnit(
+          weather!.daily.temperature_2m_min[0],
+          widget.properties.displayInFahrenheit
+        )}
+      </Group>
+    </Stack>
   );
 }
 

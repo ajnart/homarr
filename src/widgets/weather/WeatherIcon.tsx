@@ -30,7 +30,7 @@ export const WeatherIcon = ({ code }: WeatherIconProps) => {
   return (
     <Tooltip withinPortal withArrow label={t(`card.weatherDescriptions.${name}`)}>
       <Box>
-        <Icon size={50} />
+        <Icon style={{ float: 'left' }} size={50} />
       </Box>
     </Tooltip>
   );
