@@ -100,10 +100,11 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       placeholder={t('integration.type.placeholder')}
       itemComponent={SelectItemComponent}
       data={data}
-      maxDropdownHeight={400}
+      maxDropdownHeight={150}
+      dropdownPosition="bottom"
       clearable
       variant="default"
-      mb="md"
+      searchable
       icon={
         form.values.integration?.type && (
           <img
