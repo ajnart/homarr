@@ -23,39 +23,40 @@ export const AppTile = ({ className, app }: AppTileProps) => {
     classes: { card: cardClass },
   } = useCardStyles(false);
 
-  const inner = (
-    <>
-      <Text align="center" weight={500} size="md" className={classes.appName}>
-        {app.name}
-      </Text>
-      <Center style={{ height: '75%', flex: 1 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <motion.img
-          className={classes.image}
-          src={app.appearance.iconUrl}
-          alt=""
-          animate={{
-            scale: [0.8, 1.15, 1],
-            rotate: [0, 15, -15, 0],
-          }}
-          transition={{
-            duration: 0.5,
-          }}
-        />
-      </Center>
-    </>
-  );
+  function Inner() {
+    return (
+      <>
+        <Text align="center" weight={500} size="md" className={classes.appName}>
+          {app.name}
+        </Text>
+        <Center style={{ height: '85%', flex: 1 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <motion.img
+            className={classes.image}
+            src={app.appearance.iconUrl}
+            alt={app.name}
+            whileHover={{
+              scale: 1.2,
+              transition: { duration: 0.2 },
+            }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          />
+        </Center>
+      </>
+    );
+  }
 
   return (
     <HomarrCardWrapper className={className}>
       <AppMenu app={app} />
-
       {!app.url || isEditMode ? (
         <UnstyledButton
           className={classes.button}
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
         >
-          {inner}
+          <Inner />
         </UnstyledButton>
       ) : (
         <UnstyledButton
@@ -63,9 +64,9 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           component={NextLink}
           href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
-          className={cx(classes.button, classes.link)}
+          className={cx(classes.button)}
         >
-          {inner}
+          <Inner />
         </UnstyledButton>
       )}
       <AppPing app={app} />
@@ -76,14 +77,14 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 const useStyles = createStyles((theme, _params, getRef) => ({
   image: {
     ref: getRef('image'),
-    maxHeight: '80%',
-    maxWidth: '80%',
-    transition: 'transform 100ms ease-in-out',
+    maxHeight: '90%',
+    maxWidth: '90%',
   },
   appName: {
     ref: getRef('appName'),
   },
   button: {
+    paddingBottom: 10,
     height: '100%',
     width: '100%',
     display: 'flex',
@@ -91,20 +92,12 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     alignItems: 'center',
     gap: 4,
   },
-  link: {
-    [`&:hover .${getRef('image')}`]: {
-      // TODO: add styles for image when hovering card
-    },
-    [`&:hover .${getRef('appName')}`]: {
-      // TODO: add styles for app name when hovering card
-    },
-  },
 }));
 
 export const appTileDefinition = {
   component: AppTile,
-  minWidth: 2,
+  minWidth: 1,
+  minHeight: 1,
   maxWidth: 12,
-  minHeight: 2,
   maxHeight: 12,
 };

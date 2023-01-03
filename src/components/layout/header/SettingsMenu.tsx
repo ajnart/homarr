@@ -1,4 +1,4 @@
-import { ActionIcon, Badge, Menu, Tooltip } from '@mantine/core';
+import { ActionIcon, Badge, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';

@@ -16,7 +16,7 @@ const definition = defineWidget({
     },
   },
   gridstack: {
-    minWidth: 4,
+    minWidth: 2,
     minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
@@ -35,12 +35,10 @@ function DateTile({ widget }: DateTileProps) {
   const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
 
   return (
-    <Center style={{ height: '100%' }}>
-      <Stack spacing="xs">
-        <Title>{dayjs(date).format(formatString)}</Title>
-        <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>
-      </Stack>
-    </Center>
+    <Stack spacing="xs" justify="space-around" align="center" style={{ height: '100%' }}>
+      <Title>{dayjs(date).format(formatString)}</Title>
+      <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>
+    </Stack>
   );
 }
 

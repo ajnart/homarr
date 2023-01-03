@@ -1,5 +1,5 @@
 import React from 'react';
-import { PasswordInput, Paper, Title, Text, Container, Group, Button } from '@mantine/core';
+import { PasswordInput, Paper, Title, Text, Container, Button } from '@mantine/core';
 import { setCookie } from 'cookies-next';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';

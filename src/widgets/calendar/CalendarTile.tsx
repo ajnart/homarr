@@ -1,4 +1,4 @@
-import { Center, createStyles, MantineThemeColors, useMantineTheme } from '@mantine/core';
+import { createStyles, Group, MantineThemeColors, useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
@@ -21,7 +21,7 @@ const definition = defineWidget({
     },
   },
   gridstack: {
-    minWidth: 4,
+    minWidth: 3,
     minHeight: 5,
     maxWidth: 12,
     maxHeight: 12,
@@ -55,35 +55,37 @@ function CalendarTile({ widget }: CalendarTileProps) {
   });
 
   return (
-    <Calendar
-      month={month}
-      // Should be offset 5px to the left
-      style={{ position: 'relative', left: -10, top: -10 }}
-      onMonthChange={setMonth}
-      size="xs"
-      fullWidth
-      onChange={() => {}}
-      firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
-      dayStyle={(date) => ({
-        margin: 1,
-        backgroundColor: isToday(date)
-          ? colorScheme === 'dark'
-            ? colors.dark[5]
-            : colors.gray[0]
-          : undefined,
-      })}
-      styles={{
-        calendarHeader: {
-          marginRight: 40,
-          marginLeft: 40,
-        },
-      }}
-      allowLevelChange={false}
-      dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
-      renderDay={(date) => (
-        <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date)} />
-      )}
-    />
+    <Group grow style={{ height: '100%' }}>
+      <Calendar
+        month={month}
+        // Should be offset 5px to the left
+        style={{ position: 'relative', top: -10 }}
+        onMonthChange={setMonth}
+        size="xs"
+        fullWidth
+        onChange={() => {}}
+        firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
+        dayStyle={(date) => ({
+          margin: 1,
+          backgroundColor: isToday(date)
+            ? colorScheme === 'dark'
+              ? colors.dark[5]
+              : colors.gray[0]
+            : undefined,
+        })}
+        styles={{
+          calendarHeader: {
+            marginRight: 40,
+            marginLeft: 40,
+          },
+        }}
+        allowLevelChange={false}
+        dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
+        renderDay={(date) => (
+          <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date)} />
+        )}
+      />
+    </Group>
   );
 }
 

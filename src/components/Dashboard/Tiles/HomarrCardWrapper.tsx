@@ -22,7 +22,7 @@ export const HomarrCardWrapper = ({ ...props }: HomarrCardWrapperProps) => {
       withBorder
       style={{ cursor: isEditMode ? 'move' : 'default' }}
       radius="lg"
-      shadow="md"
+      shadow="sm"
     />
   );
 };

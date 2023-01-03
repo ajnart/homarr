@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Consola from 'consola';
-import { ActionIcon, Button, Group, Paper, Popover, Space, Text } from '@mantine/core';
+import { ActionIcon, Button, Group, Popover, Text } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
