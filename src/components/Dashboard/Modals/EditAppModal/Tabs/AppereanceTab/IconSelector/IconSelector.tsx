@@ -36,7 +36,7 @@ export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSe
   const { data, isLoading } = useRepositoryIconsQuery<WalkxcodeRepositoryIcon>({
     url: 'https://api.github.com/repos/walkxcode/Dashboard-Icons/contents/png',
     converter: (item) => ({
-      url: `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${item.name}`,
+      url: `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/${item.name}`,
       fileName: item.name,
     }),
   });
