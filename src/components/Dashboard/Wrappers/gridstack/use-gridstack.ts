@@ -43,7 +43,8 @@ export const useGridstack = (
   // reference of the gridstack object for modifications after initialization
   const gridRef = useRef<GridStack>();
   // width of the wrapper (updating on page resize)
-  const { width, height } = useResize(wrapperRef);
+  const { width } = useResize(wrapperRef);
+  const root: HTMLHtmlElement = useMemo(() => document.querySelector(':root')!, []);
 
   const items = useMemo(
     () =>
@@ -126,6 +127,14 @@ export const useGridstack = (
       }
     );
   }, [isLargerThanSm]);
+
+  useEffect(() => {
+    if (width === 0) return;
+    const widgetWidth = width / (isLargerThanSm ? 12 : 6);
+    // widget width is used to define sizes of gridstack items within global.scss
+    root.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
+    gridRef.current?.cellHeight(widgetWidth);
+  }, [width, isLargerThanSm]);
 
   const onChange = isEditMode
     ? (changedNode: GridStackNode) => {

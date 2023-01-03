@@ -19,5 +19,9 @@ export const useResize = (myRef: MutableRefObject<HTMLDivElement | null>) => {
     };
   }, [myRef, handleResize]);
 
+  useEffect(() => {
+    handleResize();
+  }, [myRef]);
+
   return { width, height };
 };
