@@ -1,4 +1,4 @@
-import { Center, Stack, Text, Title } from '@mantine/core';
+import { Stack, Text, Title } from '@mantine/core';
 import { IconClock } from '@tabler/icons';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';

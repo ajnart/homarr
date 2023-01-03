@@ -1,6 +1,7 @@
-import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Center,
+  Flex,
   Group,
   Loader,
   ScrollArea,
@@ -12,6 +13,9 @@ import {
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload } from '@tabler/icons';
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { useConfigContext } from '../../config/provider';
@@ -20,6 +24,9 @@ import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { BitTorrrentQueueItem } from './BitTorrentQueueItem';
+
+dayjs.extend(duration);
+dayjs.extend(relativeTime);
 
 const downloadAppTypes: AppIntegrationType['type'][] = ['deluge', 'qBittorrent', 'transmission'];
 
@@ -62,7 +69,9 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
     [];
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
-  const { data, isFetching, isError } = useGetTorrentData({ appId: selectedAppId! });
+  const { data, isError, isInitialLoading, dataUpdatedAt } = useGetTorrentData({
+    appId: selectedAppId!,
+  });
 
   useEffect(() => {
     if (!selectedAppId && downloadApps.length) {
@@ -92,7 +101,7 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
     );
   }
 
-  if (isFetching) {
+  if (isInitialLoading) {
     return (
       <Stack align="center">
         <Loader />
@@ -124,26 +133,35 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
     return true;
   };
 
+  const difference = new Date().getTime() - dataUpdatedAt;
+  const duration = dayjs.duration(difference, 'ms');
+  const humanizedDuration = duration.humanize();
+
   return (
-    <ScrollArea sx={{ height: 300, width: '100%' }}>
-      <Table highlightOnHover p="sm">
-        <thead>
-          <tr>
-            <th>{t('card.table.header.name')}</th>
-            <th>{t('card.table.header.size')}</th>
-            {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.download')}</th>}
-            {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.upload')}</th>}
-            {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.estimatedTimeOfArrival')}</th>}
-            <th>{t('card.table.header.progress')}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.filter(filter).map((item: NormalizedTorrent, index: number) => (
-            <BitTorrrentQueueItem key={index} torrent={item} />
-          ))}
-        </tbody>
-      </Table>
-    </ScrollArea>
+    <Flex direction="column" sx={{ height: '100%' }}>
+      <ScrollArea sx={{ height: '100%', width: '100%' }}>
+        <Table highlightOnHover p="sm">
+          <thead>
+            <tr>
+              <th>{t('card.table.header.name')}</th>
+              <th>{t('card.table.header.size')}</th>
+              {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.download')}</th>}
+              {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.upload')}</th>}
+              {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.estimatedTimeOfArrival')}</th>}
+              <th>{t('card.table.header.progress')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.filter(filter).map((item: NormalizedTorrent, index: number) => (
+              <BitTorrrentQueueItem key={index} torrent={item} />
+            ))}
+          </tbody>
+        </Table>
+      </ScrollArea>
+      <Text color="dimmed" size="xs">
+        Last updated {humanizedDuration} ago
+      </Text>
+    </Flex>
   );
 }
 
