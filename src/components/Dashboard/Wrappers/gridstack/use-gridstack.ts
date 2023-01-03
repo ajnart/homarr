@@ -17,7 +17,6 @@ import { AreaType } from '../../../../types/area';
 import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
-import { ShapeType } from '../../../../types/shape';
 
 interface UseGristackReturnType {
   apps: AppType[];
@@ -81,47 +80,51 @@ export const useGridstack = (
   // change column count depending on the width and the gridRef
   useEffect(() => {
     if (areaType === 'sidebar') return;
-    gridRef.current?.column(isLargerThanSm || typeof isLargerThanSm === 'undefined' ? 12 : 6, (column, prevColumn, newNodes, nodes) => {
-      let nextRow = 0;
-      let available = 6;
+    gridRef.current?.column(
+      isLargerThanSm || typeof isLargerThanSm === 'undefined' ? 12 : 6,
+      (column, prevColumn, newNodes, nodes) => {
+        let nextRow = 0;
+        let available = 6;
 
-      if (column === prevColumn) {
-        newNodes.concat(nodes);
-        return;
-      }
+        if (column === prevColumn) {
+          newNodes.concat(nodes);
+          return;
+        }
 
-      nodes.reverse().forEach(node => {
-        const width = parseInt(node.el!.getAttribute('data-gridstack-w')!, 10);
-        const height = parseInt(node.el!.getAttribute('data-gridstack-h')!, 10);
-        const x = parseInt(node.el!.getAttribute('data-gridstack-x')!, 10);
-        const y = parseInt(node.el!.getAttribute('data-gridstack-y')!, 10);
+        nodes.reverse().forEach((node) => {
+          const newnode = node;
+          const width = parseInt(newnode.el!.getAttribute('data-gridstack-w')!, 10);
+          const height = parseInt(newnode.el!.getAttribute('data-gridstack-h')!, 10);
+          const x = parseInt(newnode.el!.getAttribute('data-gridstack-x')!, 10);
+          const y = parseInt(newnode.el!.getAttribute('data-gridstack-y')!, 10);
 
-        if (column === 6) {
-          node.x = available >= width ? 6 - available : 0;
-          node.y = nextRow;
+          if (column === 6) {
+            newnode.x = available >= width ? 6 - available : 0;
+            newnode.y = nextRow;
 
-          if (width > 6) {
-            node.w = 6;
-            nextRow += 2;
-            available = 6;
-          } else if (available >= width) {
-            available -= width;
-            if (available === 0) {
+            if (width > 6) {
+              newnode.w = 6;
               nextRow += 2;
               available = 6;
+            } else if (available >= width) {
+              available -= width;
+              if (available === 0) {
+                nextRow += 2;
+                available = 6;
+              }
+            } else if (available < width) {
+              newnode.y = newnode.y! + 2;
+              available = 6 - width;
+              nextRow += 2;
             }
-          } else if (available < width) {
-            node.y = node.y! + 2;
-            available = 6 - width;
-            nextRow += 2;
+          } else {
+            newnode.x = y % 2 === 1 ? x + 6 : x;
+            newnode.y = Math.floor(y / 2);
           }
-        } else {
-          node.x = y % 2 === 1 ? x + 6 : x;
-          node.y = Math.floor(y / 2);
-        }
-        newNodes.push(node);
-      });
-    });
+          newNodes.push(newnode);
+        });
+      }
+    );
   }, [isLargerThanSm]);
 
   const onChange = isEditMode
