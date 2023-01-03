@@ -118,7 +118,6 @@ export default function DockerTable({
         icon={<IconSearch size={14} />}
         value={search}
         onChange={handleSearchChange}
-        disabled={usedContainers.length === 0}
       />
       <Table ref={ref} captionSide="bottom" highlightOnHover verticalSpacing="sm">
         <thead>
