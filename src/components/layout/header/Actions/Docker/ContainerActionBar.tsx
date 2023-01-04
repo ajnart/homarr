@@ -170,8 +170,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                   iconUrl: '/imgs/logo/logo.png', // TODO: find icon automatically
                 },
                 network: {
-                  enabledStatusChecker: false,
-                  okStatus: [],
+                  enabledStatusChecker: true,
+                  okStatus: [200],
                 },
                 behaviour: {
                   isOpeningNewTab: true,

@@ -1,3 +1,4 @@
+import { i18n } from 'next-i18next';
 import { MobileRibbons } from './Mobile/Ribbon/MobileRibbon';
 import { DashboardDetailView } from './Views/DetailView';
 import { DashboardEditView } from './Views/EditView';
@@ -5,6 +6,7 @@ import { useEditModeStore } from './Views/useEditModeStore';
 
 export const Dashboard = () => {
   const isEditMode = useEditModeStore((x) => x.enabled);
+  i18n?.changeLanguage('cimode');
 
   return (
     <>
