@@ -12,7 +12,7 @@ export const initializeGridstack = (
   items: AppType[],
   widgets: IWidget<string, any>[],
   isEditMode: boolean,
-  isLargerThanSm: boolean,
+  wrapperColumnCount: 3 | 6 | 12,
   events: {
     onChange: (changedNode: GridStackNode) => void;
     onAdd: (addedNode: GridStackNode) => void;
@@ -20,7 +20,7 @@ export const initializeGridstack = (
 ) => {
   if (!wrapperRef.current) return;
   // calculates the currently available count of columns
-  const columnCount = areaType === 'sidebar' ? 4 : isLargerThanSm || typeof isLargerThanSm === 'undefined' ? 12 : 6;
+  const columnCount = areaType === 'sidebar' ? 4 : wrapperColumnCount;
   const minRow = areaType !== 'sidebar' ? 1 : Math.floor(wrapperRef.current.offsetHeight / 64);
   // initialize gridstack
   const newGrid = gridRef;

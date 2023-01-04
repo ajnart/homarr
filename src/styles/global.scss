@@ -59,7 +59,7 @@
   transition: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1400px) {
   @for $i from 1 to 7 {
     .grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: percentage(($i / 6)) !important }
     .grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: percentage(($i / 6)) !important }
@@ -72,5 +72,21 @@
 
   .grid-stack>.grid-stack-item {
     min-width: percentage(1/6) !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @for $i from 1 to 4 {
+    .grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: percentage(($i / 3)) !important }
+    .grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: percentage(($i / 3)) !important }
+    .grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: percentage(($i / 3)) !important }
+  }
+  
+  @for $i from 1 to 4 {
+    .grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: percentage(($i / 3)) }
+  }
+
+  .grid-stack>.grid-stack-item {
+    min-width: percentage(1/3) !important;
   }
 }

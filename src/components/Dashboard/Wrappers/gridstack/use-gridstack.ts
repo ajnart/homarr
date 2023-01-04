@@ -28,11 +28,18 @@ interface UseGristackReturnType {
   };
 }
 
+const useWrapperColumnCount = () => {
+  const isLargerThanSm = useScreenLargerThan('sm');
+  const isLargerThanXl = useScreenLargerThan('xl');
+
+  return typeof isLargerThanXl === 'undefined' || isLargerThanXl ? 12 : isLargerThanSm ? 6 : 3;
+};
+
 export const useGridstack = (
   areaType: 'wrapper' | 'category' | 'sidebar',
   areaId: string
 ): UseGristackReturnType => {
-  const isLargerThanSm = useScreenLargerThan('sm');
+  const wrapperColumnCount = useWrapperColumnCount();
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { config, configVersion, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
@@ -82,59 +89,104 @@ export const useGridstack = (
   useEffect(() => {
     if (areaType === 'sidebar') return;
     gridRef.current?.column(
-      isLargerThanSm || typeof isLargerThanSm === 'undefined' ? 12 : 6,
+      wrapperColumnCount,
       (column, prevColumn, newNodes, nodes) => {
         let nextRow = 0;
-        let available = 6;
+        let available = column;
 
         if (column === prevColumn) {
           newNodes.concat(nodes);
           return;
         }
 
-        nodes.reverse().forEach((node) => {
+        const getGridstackAttribute = (node: GridStackNode, path: 'x' | 'y' | 'w' | 'h'): number => parseInt(node.el!.getAttribute(`data-gridstack-${path}`)!, 10);
+
+        const getGridstackAttributes = (node: GridStackNode) => ({
+          width: getGridstackAttribute(node, 'w'),
+          height: getGridstackAttribute(node, 'h'),
+          x: getGridstackAttribute(node, 'x'),
+          y: getGridstackAttribute(node, 'y'),
+        });
+
+        const sortNodes = (a: GridStackNode, b: GridStackNode) => {
+          const aAttributes = getGridstackAttributes(a);
+          const bAttributes = getGridstackAttributes(b);
+
+          const differenceY = aAttributes.y - bAttributes.y;
+
+          return differenceY !== 0 ? differenceY : aAttributes.x - bAttributes.x;
+        };
+
+        const sorted = nodes.sort(sortNodes);
+
+        console.log(sorted);
+
+        sorted.forEach((node) => {
           const newnode = node;
           const width = parseInt(newnode.el!.getAttribute('data-gridstack-w')!, 10);
           const height = parseInt(newnode.el!.getAttribute('data-gridstack-h')!, 10);
           const x = parseInt(newnode.el!.getAttribute('data-gridstack-x')!, 10);
           const y = parseInt(newnode.el!.getAttribute('data-gridstack-y')!, 10);
+          const moveYDown = 1;
 
-          if (column === 6) {
+          if (column === 3) {
+            newnode.x = available >= width ? 3 - available : 0;
+            newnode.y = available === 3 || available >= width ? nextRow : nextRow += moveYDown;
+
+            if (width > 3) {
+              newnode.w = 3;
+              nextRow += moveYDown;
+              available = 3;
+            } else if (available >= width) {
+              available -= width;
+              if (available === 0) {
+                nextRow += moveYDown;
+                available = 3;
+              }
+            } else if (available < width) {
+              newnode.y = newnode.y! + moveYDown;
+              available = 3 - width;
+              nextRow += moveYDown;
+            }
+          } else if (column === 6) {
             newnode.x = available >= width ? 6 - available : 0;
             newnode.y = nextRow;
 
             if (width > 6) {
               newnode.w = 6;
-              nextRow += 2;
+              nextRow += moveYDown;
               available = 6;
             } else if (available >= width) {
               available -= width;
               if (available === 0) {
-                nextRow += 2;
+                nextRow += moveYDown;
                 available = 6;
               }
             } else if (available < width) {
-              newnode.y = newnode.y! + 2;
+              newnode.y = newnode.y! + moveYDown;
               available = 6 - width;
-              nextRow += 2;
+              nextRow += moveYDown;
             }
           } else {
             newnode.x = y % 2 === 1 ? x + 6 : x;
             newnode.y = Math.floor(y / 2);
           }
+
+          console.log(newnode);
+
           newNodes.push(newnode);
         });
       }
     );
-  }, [isLargerThanSm]);
+  }, [wrapperColumnCount]);
 
   useEffect(() => {
     if (width === 0) return;
-    const widgetWidth = width / (isLargerThanSm ? 12 : 6);
+    const widgetWidth = width / wrapperColumnCount;
     // widget width is used to define sizes of gridstack items within global.scss
     root.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
     gridRef.current?.cellHeight(widgetWidth);
-  }, [width, isLargerThanSm]);
+  }, [width, wrapperColumnCount]);
 
   const onChange = isEditMode
     ? (changedNode: GridStackNode) => {
@@ -291,7 +343,7 @@ export const useGridstack = (
       items,
       widgets ?? [],
       isEditMode,
-      isLargerThanSm,
+      wrapperColumnCount,
       {
         onChange,
         onAdd,

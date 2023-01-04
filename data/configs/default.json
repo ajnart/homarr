@@ -18,81 +18,6 @@
   ],
   "apps": [
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
-      "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 0,
-          "y": 11
-        },
-        "size": {
-          "width": 4,
-          "height": 3
-        }
-      }
-    },
-    {
-      "id": "e41a11f5-9c6e-41bc-ac0e-4c4c47582faa",
-      "name": "Your app",
-      "url": "https://homarr.dev",
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": []
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": ""
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 8,
-          "y": 10
-        },
-        "size": {
-          "width": 4,
-          "height": 2
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
       "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
       "name": "Your app",
       "url": "https://homarr.dev",
@@ -121,6 +46,42 @@
         "size": {
           "width": 6,
           "height": 4
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "76217a87-7151-42d0-b0cf-1b72aef63f83",
+      "name": "Small app",
+      "url": "https://homarr.dev",
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": []
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://homarr.dev"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 4,
+          "y": 0
+        },
+        "size": {
+          "width": 1,
+          "height": 1
         }
       },
       "integration": {
@@ -158,49 +119,13 @@
       },
       "shape": {
         "location": {
-          "x": 4,
+          "x": 7,
           "y": 0
         },
         "size": {
           "width": 1,
           "height": 1
         }
-      }
-    },
-    {
-      "id": "76217a87-7151-42d0-b0cf-1b72aef63f83",
-      "name": "Small app",
-      "url": "https://homarr.dev",
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": []
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://homarr.dev"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 5,
-          "y": 0
-        },
-        "size": {
-          "width": 1,
-          "height": 1
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
       }
     },
     {
@@ -243,6 +168,45 @@
       }
     },
     {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 11
+        },
+        "size": {
+          "width": 4,
+          "height": 3
+        }
+      }
+    },
+    {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
       "name": "Donate",
       "url": "https://ko-fi.com/ajnart",
@@ -272,7 +236,7 @@
       },
       "shape": {
         "location": {
-          "x": 7,
+          "x": 5,
           "y": 0
         },
         "size": {
@@ -280,54 +244,45 @@
           "height": 1
         }
       }
+    },
+    {
+      "id": "e41a11f5-9c6e-41bc-ac0e-4c4c47582faa",
+      "name": "Your app",
+      "url": "https://homarr.dev",
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": []
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": ""
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 8,
+          "y": 10
+        },
+        "size": {
+          "width": 4,
+          "height": 2
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
     }
   ],
   "widgets": [
-    {
-      "id": "weather",
-      "properties": {
-        "displayInFahrenheit": false,
-        "location": "Paris"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 0,
-          "y": 0
-        },
-        "size": {
-          "width": 2,
-          "height": 2
-        }
-      }
-    },
-    {
-      "id": "date",
-      "properties": {
-        "display24HourFormat": true
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 2,
-          "y": 0
-        },
-        "size": {
-          "width": 2,
-          "height": 2
-        }
-      }
-    },
     {
       "id": "calendar",
       "properties": {
@@ -347,6 +302,51 @@
         "size": {
           "width": 5,
           "height": 5
+        }
+      }
+    },
+    {
+      "id": "weather",
+      "properties": {
+        "displayInFahrenheit": false,
+        "location": "Paris"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "width": 4,
+          "height": 1
+        }
+      }
+    },
+    {
+      "id": "date",
+      "properties": {
+        "display24HourFormat": true
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 8,
+          "y": 0
+        },
+        "size": {
+          "width": 4,
+          "height": 1
         }
       }
     }
