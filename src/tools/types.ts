@@ -102,6 +102,7 @@ export const portmap = [
   { name: 'nzbget', value: '6789' },
 ];
 
+//TODO: Fix this to be used in the docker add to homarr button
 export const MatchingImages: {
   image: string;
   type: ServiceType;

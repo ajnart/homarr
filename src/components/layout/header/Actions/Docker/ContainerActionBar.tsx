@@ -16,8 +16,11 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { TFunction } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
+import { useConfigContext } from '../../../../../config/provider';
+import { tryMatchService } from '../../../../../tools/addToHomarr';
 import { openContextModalGeneric } from '../../../../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../../../../types/app';
+import { appTileDefinition } from '../../../../Dashboard/Tiles/Apps/AppTile';
 
 let t: TFunction<'modules/docker', undefined>;
 
@@ -68,6 +71,8 @@ export interface ContainerActionBarProps {
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   t = useTranslation('modules/docker').t;
   const [isLoading, setisLoading] = useState(false);
+  const { name: configName, config } = useConfigContext();
+  const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
   return (
     <Group spacing="xs">
@@ -158,16 +163,17 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         radius="md"
         disabled={selected.length === 0 || selected.length > 1}
         onClick={() => {
+          const app = tryMatchService(selected.at(0)!);
           const containerUrl = `http://localhost:${selected[0].Ports[0].PublicPort}`;
-          openContextModalGeneric<{ service: AppType }>({
-            modal: 'editService',
+          openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
+            modal: 'editApp',
             innerProps: {
-              service: {
+              app: {
                 id: uuidv4(),
-                name: selected[0].Names[0],
+                name: app.name ? app.name : selected[0].Names[0].substring(1),
                 url: containerUrl,
                 appearance: {
-                  iconUrl: '/imgs/logo/logo.png', // TODO: find icon automatically
+                  iconUrl: app.icon ? app.icon : '/imgs/logo/logo.png',
                 },
                 network: {
                   enabledStatusChecker: true,
@@ -178,9 +184,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                   externalUrl: '',
                 },
                 area: {
-                  type: 'sidebar', // TODO: Set the wrapper automatically
+                  type: 'wrapper',
                   properties: {
-                    location: 'right',
+                    id: getLowestWrapper()?.id ?? 'default',
                   },
                 },
                 shape: {
@@ -189,8 +195,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                     y: 0,
                   },
                   size: {
-                    height: 1,
-                    width: 1,
+                    width: appTileDefinition.minWidth,
+                    height: appTileDefinition.minHeight,
                   },
                 },
                 integration: {
@@ -198,7 +204,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                   properties: [],
                 },
               },
+              allowAppNamePropagation: true,
             },
+            size: 'xl',
           });
         }}
       >
