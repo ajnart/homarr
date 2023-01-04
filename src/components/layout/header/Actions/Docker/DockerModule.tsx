@@ -60,6 +60,7 @@ export default function DockerMenuButton(props: any) {
         opened={opened}
         onClose={() => setOpened(false)}
         padding="xl"
+        position="right"
         size="full"
         title={<ContainerActionBar selected={selection} reload={reload} />}
       >
