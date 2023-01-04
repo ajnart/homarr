@@ -1,4 +1,4 @@
-import { Space, Stack, Text } from '@mantine/core';
+import { ScrollArea, Space, Stack, Text } from '@mantine/core';
 import { useConfigContext } from '../../../config/provider';
 import ConfigChanger from '../../Config/ConfigChanger';
 import ConfigActions from './Config/ConfigActions';
@@ -17,12 +17,14 @@ export default function CommonSettings() {
   }
 
   return (
-    <Stack mb="md" mr="sm">
-      <SearchEngineSelector searchEngine={config.settings.common.searchEngine} />
-      <Space />
-      <LanguageSelect />
-      <ConfigChanger />
-      <ConfigActions />
+    <Stack mb="md" mt="xs">
+      <ScrollArea style={{ height: '76vh' }} offsetScrollbars>
+        <SearchEngineSelector searchEngine={config.settings.common.searchEngine} />
+        <Space />
+        <LanguageSelect />
+        <ConfigChanger />
+        <ConfigActions />
+      </ScrollArea>
     </Stack>
   );
 }

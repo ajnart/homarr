@@ -1,4 +1,5 @@
 import { Button, ScrollArea, Stack } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../config/provider';
 import { useConfigStore } from '../../../config/store';
 import { LayoutSelector } from './Layout/LayoutSelector';
@@ -14,6 +15,7 @@ import { ShadeSelector } from './Theme/ShadeSelector';
 
 export default function CustomizationSettings() {
   const { config, name: configName } = useConfigContext();
+  const { t } = useTranslation('common');
 
   const { updateConfig } = useConfigStore();
 
@@ -26,8 +28,8 @@ export default function CustomizationSettings() {
   };
 
   return (
-    <Stack mb="md" mr="sm" mt="xs">
-      <ScrollArea style={{ height: '76vh' }} offsetScrollbars>
+    <Stack mt="xs" spacing={0}>
+      <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
         <LayoutSelector defaultLayout={config?.settings.customization.layout} />
         <PageTitleChanger defaultValue={config?.settings.customization.pageTitle} />
         <MetaTitleChanger defaultValue={config?.settings.customization.metaTitle} />
@@ -47,7 +49,9 @@ export default function CustomizationSettings() {
         <OpacitySelector defaultValue={config?.settings.customization.appOpacity} />
       </ScrollArea>
 
-      <Button onClick={saveConfiguration} variant="light">Save Customizations</Button>
+      <Button onClick={saveConfiguration} variant="filled">
+        {t('common:save')}
+      </Button>
     </Stack>
   );
 }

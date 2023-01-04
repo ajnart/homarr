@@ -31,6 +31,7 @@ import { CURRENT_VERSION } from '../../../data/constants';
 import { useConfigContext } from '../../config/provider';
 import { useConfigStore } from '../../config/store';
 import { usePrimaryGradient } from '../layout/useGradient';
+import Credits from '../Settings/Common/Credits';
 
 interface AboutModalProps {
   opened: boolean;
@@ -113,6 +114,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
           Discord
         </Button>
       </Group>
+      <Credits />
     </Modal>
   );
 };
