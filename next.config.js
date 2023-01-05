@@ -8,7 +8,7 @@ module.exports = withBundleAnalyzer({
   images: {
     domains: ['cdn.jsdelivr.net'],
   },
-  reactStrictMode: false,
+  reactStrictMode: true,
   output: 'standalone',
   i18n,
 });
