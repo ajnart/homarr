@@ -40,7 +40,8 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     );
     await Promise.all(
       delugeApp.map((app) => {
-        const password = app.integration?.properties.find((x) => x.field === 'password')?.value ?? undefined;
+        const password =
+          app.integration?.properties.find((x) => x.field === 'password')?.value ?? undefined;
         const test = new Deluge({
           baseUrl: app.url,
           password,

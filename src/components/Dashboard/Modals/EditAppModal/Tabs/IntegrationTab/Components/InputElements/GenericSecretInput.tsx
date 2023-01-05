@@ -13,7 +13,7 @@ import {
   Badge,
   Tooltip,
 } from '@mantine/core';
-import { IconLock, TablerIcon } from '@tabler/icons';
+import { TablerIcon } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { AppIntegrationPropertyAccessabilityType } from '../../../../../../../../types/app';
@@ -76,7 +76,7 @@ export const GenericSecretInput = ({
                       withArrow
                     >
                       <Badge className={classes.textTransformUnset} color="orange" variant="dot">
-                      {t('integration.type.private')}
+                        {t('integration.type.private')}
                       </Badge>
                     </Tooltip>
                   ) : (
@@ -88,7 +88,7 @@ export const GenericSecretInput = ({
                       withArrow
                     >
                       <Badge className={classes.textTransformUnset} color="red" variant="dot">
-                      {t('integration.type.public')}
+                        {t('integration.type.public')}
                       </Badge>
                     </Tooltip>
                   )}

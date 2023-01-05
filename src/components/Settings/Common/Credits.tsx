@@ -1,8 +1,5 @@
-import { Group, ActionIcon, Anchor, Text } from '@mantine/core';
-import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons';
+import { Group, Anchor, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-
-import { CURRENT_VERSION } from '../../../../data/constants';
 
 export default function Credits() {
   const { t } = useTranslation('settings/common');
@@ -22,8 +19,8 @@ export default function Credits() {
           style={{ color: 'inherit', fontStyle: 'inherit', fontSize: 'inherit' }}
         >
           ajnart
-        </Anchor>
-        {' '}and you !
+        </Anchor>{' '}
+        and you !
       </Text>
     </Group>
   );
