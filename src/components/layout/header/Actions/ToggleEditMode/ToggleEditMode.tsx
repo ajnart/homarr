@@ -5,7 +5,7 @@ import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
-import { cleanNotifications, showNotification } from '@mantine/notifications';
+import { hideNotification, showNotification } from '@mantine/notifications';
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
 
@@ -47,12 +47,13 @@ export const ToggleEditModeAction = () => {
           },
         }),
         radius: 'md',
+        id: 'toggle-edit-mode',
         autoClose: false,
         title: <Title order={4}>{t('popover.title')}</Title>,
         message: <Trans i18nKey="layout/header/actions/toggle-edit-mode:popover.text" />,
       });
     } else {
-      cleanNotifications();
+      hideNotification('toggle-edit-mode');
     }
   };
   const { primaryColor, secondaryColor } = useColorTheme();
