@@ -1,5 +1,7 @@
 import { Drawer, ScrollArea, Tabs, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '../../config/provider';
+import { useConfigStore } from '../../config/store';
 
 import CommonSettings from './Common/CommonSettings';
 import CustomizationSettings from './Customization/CustomizationSettings';
@@ -34,6 +36,8 @@ export function SettingsDrawer({
   newVersionAvailable,
 }: SettingsDrawerProps & { newVersionAvailable: string }) {
   const { t } = useTranslation('settings/common');
+  const { config, name: configName } = useConfigContext();
+  const { updateConfig } = useConfigStore();
 
   return (
     <Drawer
@@ -42,7 +46,14 @@ export function SettingsDrawer({
       position="right"
       title={<Title order={5}>{t('title')}</Title>}
       opened={opened}
-      onClose={closeDrawer}
+      onClose={() => {
+        closeDrawer();
+        if (!configName || !config) {
+          return;
+        }
+
+        updateConfig(configName, (_) => config, false, true);
+      }}
     >
       <SettingsMenu newVersionAvailable={newVersionAvailable} />
     </Drawer>
