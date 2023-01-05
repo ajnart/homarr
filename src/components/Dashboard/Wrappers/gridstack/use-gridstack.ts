@@ -16,7 +16,45 @@ import { AppType } from '../../../../types/app';
 import { AreaType } from '../../../../types/area';
 import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
+import { commonColumnSorting } from './column-sorting';
 import { initializeGridstack } from './init-gridstack';
+
+const getGridstackAttribute = (node: GridStackNode, path: 'x' | 'y' | 'w' | 'h'): number => parseInt(node.el!.getAttribute(`data-gridstack-${path}`)!, 10);
+
+        const getGridstackAttributes = (node: GridStackNode) => ({
+          width: getGridstackAttribute(node, 'w'),
+          height: getGridstackAttribute(node, 'h'),
+          x: getGridstackAttribute(node, 'x'),
+          y: getGridstackAttribute(node, 'y'),
+        });
+
+type Type = (ReturnType<typeof getGridstackAttributes> & { node: GridStackNode });
+
+const nextItem = (start: number, end: number, nodes: Type[]): number => {
+  const next = nodes
+  .filter(x => x.y <= end && x.y + x.height - 1 > end)
+  .sort((a, b) => (a.y + a.height) - (b.y + b.height))
+  .at(0);
+if (!next) return end;
+return nextItem(start, next.height - 1 + next.y, nodes);
+};
+
+const nextRowHeight = (nodes: Type[], values: number[], current = 0) => {
+  const item = nodes.find(x => x.y >= current);
+  if (!item) return;
+  const next = nextItem(item.y, item.y + item.height - 1, nodes);
+  values.push(next + 1 - item.y);
+  nextRowHeight(nodes, values, next);
+};
+
+const getRowHeights = (nodes: GridStackNode[]) => {
+  const rowHeights: number[] = [];
+  nextRowHeight(nodes.map((node) => ({
+    ...getGridstackAttributes(node),
+    node,
+  })), rowHeights);
+  return rowHeights;
+};
 
 interface UseGristackReturnType {
   apps: AppType[];
@@ -90,23 +128,15 @@ export const useGridstack = (
     if (areaType === 'sidebar') return;
     gridRef.current?.column(
       wrapperColumnCount,
-      (column, prevColumn, newNodes, nodes) => {
+      /*(column, prevColumn, newNodes, nodes) => {
         let nextRow = 0;
         let available = column;
+        let maxHeightInRow = 1;
 
         if (column === prevColumn) {
           newNodes.concat(nodes);
           return;
         }
-
-        const getGridstackAttribute = (node: GridStackNode, path: 'x' | 'y' | 'w' | 'h'): number => parseInt(node.el!.getAttribute(`data-gridstack-${path}`)!, 10);
-
-        const getGridstackAttributes = (node: GridStackNode) => ({
-          width: getGridstackAttribute(node, 'w'),
-          height: getGridstackAttribute(node, 'h'),
-          x: getGridstackAttribute(node, 'x'),
-          y: getGridstackAttribute(node, 'y'),
-        });
 
         const sortNodes = (a: GridStackNode, b: GridStackNode) => {
           const aAttributes = getGridstackAttributes(a);
@@ -117,36 +147,39 @@ export const useGridstack = (
           return differenceY !== 0 ? differenceY : aAttributes.x - bAttributes.x;
         };
 
-        const sorted = nodes.sort(sortNodes);
+        const sortedNodes = nodes.sort(sortNodes);
+        const rowHeights = getRowHeights(sortedNodes);
 
-        console.log(sorted);
-
-        sorted.forEach((node) => {
+        sortedNodes.forEach((node) => {
           const newnode = node;
           const width = parseInt(newnode.el!.getAttribute('data-gridstack-w')!, 10);
           const height = parseInt(newnode.el!.getAttribute('data-gridstack-h')!, 10);
           const x = parseInt(newnode.el!.getAttribute('data-gridstack-x')!, 10);
           const y = parseInt(newnode.el!.getAttribute('data-gridstack-y')!, 10);
-          const moveYDown = 1;
+          maxHeightInRow = height > maxHeightInRow ? height : maxHeightInRow;
+
+          const continueInNextRow = () => {
+            nextRow += maxHeightInRow;
+            maxHeightInRow = 1;
+            available = column;
+            return nextRow;
+          };
 
           if (column === 3) {
             newnode.x = available >= width ? 3 - available : 0;
-            newnode.y = available === 3 || available >= width ? nextRow : nextRow += moveYDown;
+            newnode.y = available === 3 || available >= width ? nextRow : continueInNextRow();
 
             if (width > 3) {
               newnode.w = 3;
-              nextRow += moveYDown;
-              available = 3;
+              continueInNextRow();
             } else if (available >= width) {
               available -= width;
               if (available === 0) {
-                nextRow += moveYDown;
-                available = 3;
+                continueInNextRow();
               }
             } else if (available < width) {
-              newnode.y = newnode.y! + moveYDown;
+              newnode.y = continueInNextRow();
               available = 3 - width;
-              nextRow += moveYDown;
             }
           } else if (column === 6) {
             newnode.x = available >= width ? 6 - available : 0;
@@ -154,29 +187,25 @@ export const useGridstack = (
 
             if (width > 6) {
               newnode.w = 6;
-              nextRow += moveYDown;
-              available = 6;
+              continueInNextRow();
             } else if (available >= width) {
               available -= width;
               if (available === 0) {
-                nextRow += moveYDown;
-                available = 6;
+                continueInNextRow();
               }
             } else if (available < width) {
-              newnode.y = newnode.y! + moveYDown;
+              newnode.y = continueInNextRow();
               available = 6 - width;
-              nextRow += moveYDown;
             }
           } else {
             newnode.x = y % 2 === 1 ? x + 6 : x;
             newnode.y = Math.floor(y / 2);
           }
 
-          console.log(newnode);
-
           newNodes.push(newnode);
         });
-      }
+      }*/
+      commonColumnSorting
     );
   }, [wrapperColumnCount]);
 
