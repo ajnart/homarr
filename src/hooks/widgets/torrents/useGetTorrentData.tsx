@@ -6,6 +6,7 @@ const POLLING_INTERVAL = 2000;
 
 interface TorrentsDataRequestParams {
   appId: string;
+  refreshInterval: number;
 }
 
 export const useGetTorrentData = (params: TorrentsDataRequestParams) =>
@@ -15,7 +16,7 @@ export const useGetTorrentData = (params: TorrentsDataRequestParams) =>
     refetchOnWindowFocus: true,
     refetchInterval(_: any, query: Query) {
       if (query.state.fetchFailureCount < 3) {
-        return 5000;
+        return params.refreshInterval;
       }
       return false;
     },
