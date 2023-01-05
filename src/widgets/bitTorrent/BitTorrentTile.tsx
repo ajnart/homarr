@@ -42,6 +42,13 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    refreshInterval: {
+      type: 'slider',
+      defaultValue: 1,
+      min: 1,
+      max: 60,
+      step: 1,
+    },
   },
   gridstack: {
     minWidth: 4,
@@ -71,6 +78,7 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
   const { data, isError, isInitialLoading, dataUpdatedAt } = useGetTorrentData({
     appId: selectedAppId!,
+    refreshInterval: widget.properties.refreshInterval * 1000,
   });
 
   useEffect(() => {
@@ -103,7 +111,13 @@ function BitTorrentTile({ widget }: BitTorrentTileProps) {
 
   if (isInitialLoading) {
     return (
-      <Stack align="center">
+      <Stack
+        align="center"
+        justify="center"
+        style={{
+          height: '100%',
+        }}
+      >
         <Loader />
         <Stack align="center" spacing={0}>
           <Text>{t('card.loading.title')}</Text>
