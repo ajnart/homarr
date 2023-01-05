@@ -39,7 +39,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
   const { data, isLoading, isError, error } = useGetUsenetHistory({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
-    appId: appId,
+    appId,
   });
   const totalPages = Math.ceil((data?.total || 1) / PAGE_SIZE);
 

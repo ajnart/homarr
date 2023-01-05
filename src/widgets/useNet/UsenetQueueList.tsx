@@ -44,7 +44,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
   const { data, isLoading, isError, error } = useGetUsenetDownloads({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
-    appId: appId,
+    appId,
   });
   const totalPages = Math.ceil((data?.total || 1) / PAGE_SIZE);
 

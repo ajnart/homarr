@@ -17,7 +17,11 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../config/provider';
-import { useGetUsenetInfo, usePauseUsenetQueue, useResumeUsenetQueue } from '../../hooks/widgets/dashDot/api';
+import {
+  useGetUsenetInfo,
+  usePauseUsenetQueue,
+  useResumeUsenetQueue,
+} from '../../hooks/widgets/dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';
@@ -52,6 +56,8 @@ function UseNetTile({}: UseNetTileProps) {
   const downloadApps =
     config?.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ??
     [];
+  const { ref, width, height } = useElementSize();
+  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
   const { data } = useGetUsenetInfo({ appId: selectedAppId! });
@@ -79,9 +85,6 @@ function UseNetTile({}: UseNetTileProps) {
   if (!selectedAppId) {
     return null;
   }
-
-  const { ref, width, height } = useElementSize();
-  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   return (
     <Tabs keepMounted={false} defaultValue="queue">
