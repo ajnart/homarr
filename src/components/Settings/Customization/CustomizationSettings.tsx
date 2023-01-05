@@ -1,4 +1,5 @@
 import { Button, ScrollArea, Stack } from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../config/provider';
 import { useConfigStore } from '../../../config/store';
@@ -16,20 +17,13 @@ import { ShadeSelector } from './Theme/ShadeSelector';
 export default function CustomizationSettings() {
   const { config, name: configName } = useConfigContext();
   const { t } = useTranslation('common');
+  const { height, width } = useViewportSize();
 
   const { updateConfig } = useConfigStore();
 
-  const saveConfiguration = () => {
-    if (!configName || !config) {
-      return;
-    }
-
-    updateConfig(configName, (_) => config, false, true);
-  };
-
   return (
-    <Stack mt="xs" spacing={0}>
-      <ScrollArea style={{ height: '78vh' }} offsetScrollbars>
+    <ScrollArea style={{ height: height - 100 }} offsetScrollbars>
+      <Stack mt="xs" mb="md" spacing="xs">
         <LayoutSelector defaultLayout={config?.settings.customization.layout} />
         <PageTitleChanger defaultValue={config?.settings.customization.pageTitle} />
         <MetaTitleChanger defaultValue={config?.settings.customization.metaTitle} />
@@ -47,11 +41,7 @@ export default function CustomizationSettings() {
         />
         <ShadeSelector defaultValue={config?.settings.customization.colors.shade} />
         <OpacitySelector defaultValue={config?.settings.customization.appOpacity} />
-      </ScrollArea>
-
-      <Button onClick={saveConfiguration} variant="filled">
-        {t('common:save')}
-      </Button>
-    </Stack>
+      </Stack>
+    </ScrollArea>
   );
 }

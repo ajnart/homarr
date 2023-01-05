@@ -32,7 +32,7 @@ export function OpacitySelector({ defaultValue }: OpacitySelectorProps) {
   };
 
   return (
-    <Stack spacing="xs">
+    <Stack spacing="xs" mb="md">
       <Text>{t('label')}</Text>
       <Slider
         defaultValue={opacity}
