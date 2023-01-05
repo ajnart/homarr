@@ -28,20 +28,31 @@ const nextItem = (start: number, end: number, nodes: Type[]): number => {
   return nextItem(start, next.height - 1 + next.y, nodes);
 };
 
-const nextRowHeight = (nodes: Type[], values: number[], current = 0) => {
+const nextRowHeight = (
+  nodes: Type[],
+  values: { height: number; items: Type[] }[],
+  maxHeight: number,
+  current = 0
+) => {
   const item = nodes.find((x) => x.y >= current);
   if (!item) return;
+  if (current < item.y) {
+    values.push({ height: item.y - current, items: [] });
+  }
   const next = nextItem(item.y, item.y + item.height - 1, nodes);
-  values.push(next + 1 - item.y);
-  nextRowHeight(nodes, values, next);
+  values.push({
+    height: next + 1 - item.y,
+    items: nodes.filter((x) => x.y >= current - 2 && x.y + x.height <= current + next + 1 - item.y),
+  });
+  nextRowHeight(nodes, values, maxHeight, next + 1);
 };
 
 const getRowHeights = (nodes: Type[]) => {
-  const rowHeights: number[] = [];
-  nextRowHeight(
-    nodes,
-    rowHeights
-  );
+  const maxHeightElement = nodes.sort((a, b) => a.y + a.height - (b.y + b.height)).at(-1);
+  if (!maxHeightElement) return [];
+  const maxHeight = maxHeightElement.height + maxHeightElement.y;
+  const rowHeights: { height: number; items: Type[] }[] = [];
+  nextRowHeight(nodes, rowHeights, maxHeight);
   return rowHeights;
 };
 
@@ -79,10 +90,10 @@ export const commonColumnSorting: GridstackColumnSortingFn = (
 
   // TODO: fix issue with spaces between.
   let rowTotal = 0;
-  rowHeights.forEach(height => {
-    rowItems.push(mappedNodes.filter(node => node.y >= rowTotal && node.y < rowTotal + height));
+  rowHeights.forEach(({ height }) => {
+    rowItems.push(mappedNodes.filter((node) => node.y >= rowTotal && node.y < rowTotal + height));
     rowTotal += height;
   });
 
-  console.log(rowItems);
+  console.log(rowHeights);
 };
