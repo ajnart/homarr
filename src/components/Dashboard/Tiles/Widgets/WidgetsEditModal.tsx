@@ -1,4 +1,15 @@
-import { Alert, Button, Group, MultiSelect, Stack, Switch, TextInput, Text } from '@mantine/core';
+import {
+  Alert,
+  Button,
+  Group,
+  MultiSelect,
+  Stack,
+  Switch,
+  TextInput,
+  Text,
+  NumberInput,
+  Slider,
+} from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle } from '@tabler/icons';
 import { Trans, useTranslation } from 'next-i18next';
@@ -8,6 +19,7 @@ import type { IWidgetOptionValue } from '../../../../widgets/widgets';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { IWidget } from '../../../../widgets/widgets';
+import { useColorTheme } from '../../../../tools/color';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -83,39 +95,15 @@ export const WidgetsEditModal = ({
             </Alert>
           );
         }
-
-        switch (option.type) {
-          case 'switch':
-            return (
-              <Switch
-                key={`${option.type}-${index}`}
-                label={t(`descriptor.settings.${key}.label`)}
-                checked={value as boolean}
-                onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
-              />
-            );
-          case 'text':
-            return (
-              <TextInput
-                key={`${option.type}-${index}`}
-                label={t(`descriptor.settings.${key}.label`)}
-                value={value as string}
-                onChange={(ev) => handleChange(key, ev.currentTarget.value)}
-              />
-            );
-          case 'multi-select':
-            return (
-              <MultiSelect
-                key={`${option.type}-${index}`}
-                data={getMutliselectData(key)}
-                label={t(`descriptor.settings.${key}.label`)}
-                value={value as string[]}
-                onChange={(v) => handleChange(key, v)}
-              />
-            );
-          default:
-            return null;
-        }
+        return WidgetOptionTypeSwitch(
+          option,
+          index,
+          t,
+          key,
+          value,
+          handleChange,
+          getMutliselectData
+        );
       })}
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
@@ -126,3 +114,74 @@ export const WidgetsEditModal = ({
     </Stack>
   );
 };
+
+// Widget options are computed based on their type.
+// here you can define new types for options (along with editing the widgets.d.ts file)
+function WidgetOptionTypeSwitch(
+  option: IWidgetOptionValue,
+  index: number,
+  t: any,
+  key: string,
+  value: string | number | boolean | string[],
+  handleChange: (key: string, value: IntegrationOptionsValueType) => void,
+  getMutliselectData: (option: string) => any
+) {
+  const { primaryColor, secondaryColor } = useColorTheme();
+  switch (option.type) {
+    case 'switch':
+      return (
+        <Switch
+          key={`${option.type}-${index}`}
+          label={t(`descriptor.settings.${key}.label`)}
+          checked={value as boolean}
+          onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
+        />
+      );
+    case 'text':
+      return (
+        <TextInput
+          color={primaryColor}
+          key={`${option.type}-${index}`}
+          label={t(`descriptor.settings.${key}.label`)}
+          value={value as string}
+          onChange={(ev) => handleChange(key, ev.currentTarget.value)}
+        />
+      );
+    case 'multi-select':
+      return (
+        <MultiSelect
+          color={primaryColor}
+          key={`${option.type}-${index}`}
+          data={getMutliselectData(key)}
+          label={t(`descriptor.settings.${key}.label`)}
+          value={value as string[]}
+          onChange={(v) => handleChange(key, v)}
+        />
+      );
+    case 'number':
+      return (
+        <NumberInput
+          color={primaryColor}
+          key={`${option.type}-${index}`}
+          label={t(`descriptor.settings.${key}.label`)}
+          value={value as number}
+          onChange={(v) => handleChange(key, v!)}
+        />
+      );
+    case 'slider':
+      return (
+        <Slider
+          color={primaryColor}
+          key={`${option.type}-${index}`}
+          label={t(`descriptor.settings.${key}.label`)}
+          value={value as number}
+          min={option.min}
+          max={option.max}
+          step={option.step}
+          onChange={(v) => handleChange(key, v)}
+        />
+      );
+    default:
+      return null;
+  }
+}
