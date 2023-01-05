@@ -1,19 +1,20 @@
 import axios from 'axios';
 import Consola from 'consola';
-import { ActionIcon, Button, Group, Popover, Text } from '@mantine/core';
-import { IconEditCircle, IconEditCircleOff, IconX } from '@tabler/icons';
+import { ActionIcon, Button, Group, Title, Tooltip } from '@mantine/core';
+import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { cleanNotifications, showNotification } from '@mantine/notifications';
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
 
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 import { AddElementAction } from '../AddElementAction/AddElementAction';
+import { useColorTheme } from '../../../../../tools/color';
 
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
-  const [popoverManuallyHidden, setPopoverManuallyHidden] = useState<boolean>();
 
   const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
 
@@ -29,21 +30,45 @@ export const ToggleEditModeAction = () => {
 
   const toggleButtonClicked = () => {
     toggleEditMode();
+    if (!enabled) {
+      showNotification({
+        styles: (theme) => ({
+          root: {
+            backgroundColor: theme.colors.orange[7],
+            borderColor: theme.colors.orange[7],
 
-    setPopoverManuallyHidden(false);
+            '&::before': { backgroundColor: theme.white },
+          },
+          title: { color: theme.white },
+          description: { color: theme.white },
+          closeButton: {
+            color: theme.white,
+            '&:hover': { backgroundColor: theme.colors.orange[7] },
+          },
+        }),
+        radius: 'md',
+        autoClose: false,
+        title: <Title order={4}>{t('popover.title')}</Title>,
+        message: <Trans i18nKey="layout/header/actions/toggle-edit-mode:popover.text" />,
+      });
+    } else {
+      cleanNotifications();
+    }
   };
+  const { primaryColor, secondaryColor } = useColorTheme();
 
   const ToggleButtonDesktop = () => (
-    <Button
-      onClick={() => toggleButtonClicked()}
-      leftIcon={enabled ? <IconEditCircleOff /> : <IconEditCircle />}
-      variant="default"
-      radius="md"
-      color="blue"
-      style={{ height: 43 }}
-    >
-      <Text>{enabled ? t('button.enabled') : t('button.disabled')}</Text>
-    </Button>
+    <Tooltip label={enabled ? t('button.enabled') : t('button.disabled')}>
+      <Button
+        onClick={() => toggleButtonClicked()}
+        variant="white"
+        radius="md"
+        color={secondaryColor}
+        style={{ height: 43 }}
+      >
+        {enabled ? <IconEditCircleOff /> : <IconEditCircle />}
+      </Button>
+    </Tooltip>
   );
 
   const ToggleActionIconMobile = () => (
@@ -59,45 +84,24 @@ export const ToggleEditModeAction = () => {
   );
 
   return (
-    <Popover
-      opened={enabled && !smallerThanSm && !popoverManuallyHidden}
-      width="target"
-      transition="scale"
-      zIndex={199}
-    >
-      <Popover.Target>
-        {smallerThanSm ? (
-          enabled ? (
-            <Group style={{ flexWrap: 'nowrap' }}>
-              <AddElementAction type="action-icon" />
-              <ToggleActionIconMobile />
-            </Group>
-          ) : (
+    <>
+      {smallerThanSm ? (
+        enabled ? (
+          <Group style={{ flexWrap: 'nowrap' }}>
+            <AddElementAction type="action-icon" />
             <ToggleActionIconMobile />
-          )
-        ) : enabled ? (
-          <Button.Group>
-            <ToggleButtonDesktop />
-            {enabled && <AddElementAction type="button" />}
-          </Button.Group>
+          </Group>
         ) : (
+          <ToggleActionIconMobile />
+        )
+      ) : enabled ? (
+        <Button.Group>
           <ToggleButtonDesktop />
-        )}
-      </Popover.Target>
-
-      <Popover.Dropdown p={4} px={6} mt={-5}>
-        <div style={{ position: 'absolute', top: 2, right: 2 }}>
-          <ActionIcon onClick={() => setPopoverManuallyHidden(true)}>
-            <IconX size={18} />
-          </ActionIcon>
-        </div>
-        <Text align="center" size="sm">
-          <Text weight="bold">{t('popover.title')}</Text>
-          <Text>
-            <Trans i18nKey="layout/header/actions/toggle-edit-mode:popover.text" />
-          </Text>
-        </Text>
-      </Popover.Dropdown>
-    </Popover>
+          {enabled && <AddElementAction type="button" />}
+        </Button.Group>
+      ) : (
+        <ToggleButtonDesktop />
+      )}
+    </>
   );
 };
