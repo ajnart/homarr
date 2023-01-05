@@ -115,6 +115,7 @@ export const WidgetsEditModal = ({
   );
 };
 
+// Widget switch
 // Widget options are computed based on their type.
 // here you can define new types for options (along with editing the widgets.d.ts file)
 function WidgetOptionTypeSwitch(
@@ -170,16 +171,19 @@ function WidgetOptionTypeSwitch(
       );
     case 'slider':
       return (
-        <Slider
-          color={primaryColor}
-          key={`${option.type}-${index}`}
-          label={t(`descriptor.settings.${key}.label`)}
-          value={value as number}
-          min={option.min}
-          max={option.max}
-          step={option.step}
-          onChange={(v) => handleChange(key, v)}
-        />
+        <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+          <Slider
+            color={primaryColor}
+            key={`${option.type}-${index}`}
+            label={t(`descriptor.settings.${key}.label`)}
+            value={value as number}
+            min={option.min}
+            max={option.max}
+            step={option.step}
+            onChange={(v) => handleChange(key, v)}
+          />
+        </Stack>
       );
     default:
       return null;
