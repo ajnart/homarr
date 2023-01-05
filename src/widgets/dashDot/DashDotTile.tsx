@@ -13,6 +13,13 @@ const definition = defineWidget({
   id: 'dashdot',
   icon: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png',
   options: {
+    refreshInterval: {
+      type: 'slider',
+      defaultValue: 5,
+      min: 1,
+      max: 60,
+      step: 1,
+    },
     cpuMultiView: {
       type: 'switch',
       defaultValue: false,
@@ -54,9 +61,12 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { classes } = useDashDotTileStyles();
   const { t } = useTranslation('modules/dashdot');
 
-  const dashDotUrl = widget?.properties.url;
+  const dashDotUrl = widget.properties.url;
 
-  const { data: info } = useDashDotInfo({ dashDotUrl });
+  const { data: info } = useDashDotInfo({
+    dashDotUrl,
+    refreshInterval: widget.properties.refreshInterval,
+  });
 
   const graphs = widget?.properties.graphs.map((g) => ({
     id: g,
@@ -109,9 +119,16 @@ function DashDotTile({ widget }: DashDotTileProps) {
   );
 }
 
-const useDashDotInfo = ({ dashDotUrl }: { dashDotUrl: string }) => {
+const useDashDotInfo = ({
+  dashDotUrl,
+  refreshInterval,
+}: {
+  dashDotUrl: string;
+  refreshInterval: number;
+}) => {
   const { name: configName } = useConfigContext();
   return useQuery({
+    refetchInterval: refreshInterval * 1000 ?? 50000,
     queryKey: [
       'dashdot/info',
       {
