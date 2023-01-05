@@ -2,6 +2,7 @@ import { ActionIcon, Button, Tooltip } from '@mantine/core';
 import { openContextModal } from '@mantine/modals';
 import { IconApps } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
+import { useColorTheme } from '../../../../../tools/color';
 
 interface AddElementActionProps {
   type: 'action-icon' | 'button';
@@ -9,15 +10,16 @@ interface AddElementActionProps {
 
 export const AddElementAction = ({ type }: AddElementActionProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
+  const { primaryColor, secondaryColor } = useColorTheme();
 
   switch (type) {
     case 'button':
       return (
         <Tooltip label={t('actionIcon.tooltip')} withinPortal withArrow>
           <Button
-            variant="default"
+            variant="white"
             radius="md"
-            color="blue"
+            color={secondaryColor}
             style={{ height: 43 }}
             onClick={() =>
               openContextModal({
