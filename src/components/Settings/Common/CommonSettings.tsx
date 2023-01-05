@@ -1,4 +1,5 @@
 import { ScrollArea, Space, Stack, Text } from '@mantine/core';
+import { useElementSize, useViewportSize } from '@mantine/hooks';
 import { useConfigContext } from '../../../config/provider';
 import ConfigChanger from '../../Config/ConfigChanger';
 import ConfigActions from './Config/ConfigActions';
@@ -7,6 +8,7 @@ import { SearchEngineSelector } from './SearchEngine/SearchEngineSelector';
 
 export default function CommonSettings() {
   const { config } = useConfigContext();
+  const { height, width } = useViewportSize();
 
   if (!config) {
     return (
@@ -15,16 +17,15 @@ export default function CommonSettings() {
       </Text>
     );
   }
-
   return (
-    <Stack mb="md" mt="xs">
-      <ScrollArea style={{ height: '76vh' }} offsetScrollbars>
+    <ScrollArea style={{ height: height - 100 }} offsetScrollbars>
+      <Stack>
         <SearchEngineSelector searchEngine={config.settings.common.searchEngine} />
         <Space />
         <LanguageSelect />
         <ConfigChanger />
         <ConfigActions />
-      </ScrollArea>
-    </Stack>
+      </Stack>
+    </ScrollArea>
   );
 }
