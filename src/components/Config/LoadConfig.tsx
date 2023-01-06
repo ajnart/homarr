@@ -2,6 +2,7 @@ import { Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { Dropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
 import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons';
+import Consola from 'consola';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useConfigStore } from '../../config/store';
@@ -36,7 +37,7 @@ export const LoadConfigComponent = () => {
         let newConfig: ConfigType = JSON.parse(fileText);
 
         if (!newConfig.schemaVersion) {
-          console.warn(
+          Consola.warn(
             'a legacy configuration schema was deteced and migrated to the current schema'
           );
           const oldConfig = JSON.parse(fileText) as Config;
