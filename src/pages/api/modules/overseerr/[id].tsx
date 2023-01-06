@@ -3,7 +3,7 @@ import { getCookie } from 'cookies-next';
 import axios from 'axios';
 import Consola from 'consola';
 import { getConfig } from '../../../../tools/config/getConfig';
-import { MediaType } from '../../../../modules/overseerr/SearchResult';
+import type { MediaType } from '../../../../modules/overseerr/SearchResult';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   // Get the slug of the request

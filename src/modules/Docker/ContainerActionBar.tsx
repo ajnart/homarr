@@ -16,11 +16,11 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { TFunction } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
-import { useConfigContext } from '../../../../../config/provider';
-import { tryMatchService } from '../../../../../tools/addToHomarr';
-import { openContextModalGeneric } from '../../../../../tools/mantineModalManagerExtensions';
-import { AppType } from '../../../../../types/app';
-import { appTileDefinition } from '../../../../Dashboard/Tiles/Apps/AppTile';
+import { useConfigContext } from '../../config/provider';
+import { tryMatchService } from '../../tools/addToHomarr';
+import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
+import { AppType } from '../../types/app';
+import { appTileDefinition } from '../../components/Dashboard/Tiles/Apps/AppTile';
 
 let t: TFunction<'modules/docker', undefined>;
 
