@@ -1,10 +1,12 @@
-import { Group, Stack } from '@mantine/core';
-import { useMemo } from 'react';
+import { Center, Group, Loader, Stack } from '@mantine/core';
+import { useEffect, useMemo, useRef } from 'react';
 import { useConfigContext } from '../../../config/provider';
+import { useResize } from '../../../hooks/use-resize';
 import { useScreenSmallerThan } from '../../../hooks/useScreenSmallerThan';
 import { CategoryType } from '../../../types/category';
 import { WrapperType } from '../../../types/wrapper';
 import { DashboardCategory } from '../Wrappers/Category/Category';
+import { useGridstackStore } from '../Wrappers/gridstack/store';
 import { DashboardSidebar } from '../Wrappers/Sidebar/Sidebar';
 import { DashboardWrapper } from '../Wrappers/Wrapper/Wrapper';
 
@@ -12,14 +14,26 @@ export const DashboardView = () => {
   const wrappers = useWrapperItems();
   const layoutSettings = useConfigContext()?.config?.settings.customization.layout;
   const doNotShowSidebar = useScreenSmallerThan('md');
+  const notReady = typeof doNotShowSidebar === 'undefined';
+  const mainAreaRef = useRef<HTMLDivElement>(null);
+  const { width } = useResize(mainAreaRef, [doNotShowSidebar]);
+  const setMainAreaWidth = useGridstackStore(x => x.setMainAreaWidth);
+  const mainAreaWidth = useGridstackStore(x => x.mainAreaWidth);
+
+  useEffect(() => {
+    setMainAreaWidth(width);
+  }, [width]);
 
   return (
     <Group align="top" h="100%">
-      {layoutSettings?.enabledLeftSidebar && !doNotShowSidebar ? (
+      {notReady ? <Center w="100%">
+          <Loader />
+        </Center> : <>
+      {layoutSettings?.enabledLeftSidebar && !doNotShowSidebar && mainAreaWidth ? (
         <DashboardSidebar location="left" />
       ) : null}
-      <Stack mx={-10} style={{ flexGrow: 1 }}>
-        {wrappers.map((item) =>
+      <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
+        {!mainAreaWidth ? null : wrappers.map((item) =>
           item.type === 'category' ? (
             <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
           ) : (
@@ -27,9 +41,11 @@ export const DashboardView = () => {
           )
         )}
       </Stack>
-      {layoutSettings?.enabledRightSidebar && !doNotShowSidebar ? (
+      {layoutSettings?.enabledRightSidebar && !doNotShowSidebar && mainAreaWidth ? (
         <DashboardSidebar location="right" />
       ) : null}
+      </>
+}
     </Group>
   );
 };

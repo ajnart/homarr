@@ -20,7 +20,7 @@ export const initializeGridstack = (
 ) => {
   if (!wrapperRef.current) return;
   // calculates the currently available count of columns
-  const columnCount = areaType === 'sidebar' ? 4 : wrapperColumnCount;
+  const columnCount = areaType === 'sidebar' ? 2 : wrapperColumnCount;
   const minRow = areaType !== 'sidebar' ? 1 : Math.floor(wrapperRef.current.offsetHeight / 64);
   // initialize gridstack
   const newGrid = gridRef;
@@ -35,11 +35,14 @@ export const initializeGridstack = (
       disableOneColumnMode: true,
       staticGrid: !isEditMode,
       minRow,
+      animate: false,
     },
     // selector of the gridstack item (it's eather category or wrapper)
     `.grid-stack-${areaType}[data-${areaType}='${areaId}']`
   );
   const grid = newGrid.current;
+  // Must be used to update the column count after the initialization
+  grid.column(columnCount);
 
   // Add listener for moving items around in a wrapper
   grid.on('change', (_, el) => {
@@ -60,12 +63,16 @@ export const initializeGridstack = (
   grid.batchUpdate();
   grid.removeAll(false);
   items.forEach(
-    ({ id }) =>
-      itemRefs.current[id] && grid.makeWidget(itemRefs.current[id].current as HTMLDivElement)
+    ({ id }) => {
+      const item = itemRefs.current[id]?.current;
+      item && grid.makeWidget(item as HTMLDivElement);
+    }
   );
   widgets.forEach(
-    ({ id }) =>
-      itemRefs.current[id] && grid.makeWidget(itemRefs.current[id].current as HTMLDivElement)
+    ({ id }) => {
+      const item = itemRefs.current[id]?.current;
+      item && grid.makeWidget(item as HTMLDivElement);
+    }
   );
   grid.batchUpdate(false);
 };

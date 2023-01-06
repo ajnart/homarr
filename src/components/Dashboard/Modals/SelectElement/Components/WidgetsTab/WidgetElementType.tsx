@@ -46,13 +46,35 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
               },
             },
             shape: {
-              location: {
-                x: 0,
-                y: 0,
+              sm: {
+                location: {
+                  x: 0,
+                  y: 0,
+                },
+                size: {
+                  width: widget.gridstack.minWidth,
+                  height: widget.gridstack.minHeight,
+                },
               },
-              size: {
-                width: widget.gridstack.minWidth,
-                height: widget.gridstack.minHeight,
+              md: {
+                location: {
+                  x: 0,
+                  y: 0,
+                },
+                size: {
+                  width: widget.gridstack.minWidth,
+                  height: widget.gridstack.minHeight,
+                },
+              },
+              lg: {
+                location: {
+                  x: 0,
+                  y: 0,
+                },
+                size: {
+                  width: widget.gridstack.minWidth,
+                  height: widget.gridstack.minHeight,
+                },
               },
             },
           },

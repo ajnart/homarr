@@ -6,6 +6,7 @@ import { IWidget, IWidgetDefinition } from '../../../widgets/widgets';
 import { WidgetWrapper } from '../../../widgets/WidgetWrapper';
 import { appTileDefinition } from '../Tiles/Apps/AppTile';
 import { GridstackTileWrapper } from '../Tiles/TileWrapper';
+import { useGridstackStore } from './gridstack/store';
 
 interface WrapperContentProps {
   apps: AppType[];
@@ -18,6 +19,10 @@ interface WrapperContentProps {
 }
 
 export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
+ const shapeSize = useGridstackStore(x => x.currentShapeSize);
+
+ if (!shapeSize) return null;
+
   return (
     <>
       {apps?.map((app) => {
@@ -29,8 +34,8 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
             key={app.id}
             itemRef={refs.items.current[app.id]}
             {...tile}
-            {...app.shape.location}
-            {...app.shape.size}
+            {...app.shape[shapeSize]?.location}
+            {...app.shape[shapeSize]?.size}
           >
             <TileComponent className="grid-stack-item-content" app={app} />
           </GridstackTileWrapper>
@@ -49,8 +54,8 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
             itemRef={refs.items.current[widget.id]}
             id={definition.id}
             {...definition.gridstack}
-            {...widget.shape.location}
-            {...widget.shape.size}
+            {...widget.shape[shapeSize]?.location}
+            {...widget.shape[shapeSize]?.size}
           >
             <WidgetWrapper className="grid-stack-item-content" widget={widget} widgetId={widget.id}>
               <definition.component className="grid-stack-item-content" widget={widget} />

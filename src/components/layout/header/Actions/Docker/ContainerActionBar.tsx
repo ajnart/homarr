@@ -184,13 +184,35 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                   },
                 },
                 shape: {
-                  location: {
-                    x: 0,
-                    y: 0,
+                  lg: {
+                    location: {
+                      x: 0,
+                      y: 0,
+                    },
+                    size: {
+                      height: 1,
+                      width: 1,
+                    },
                   },
-                  size: {
-                    height: 1,
-                    width: 1,
+                  md: {
+                    location: {
+                      x: 0,
+                      y: 0,
+                    },
+                    size: {
+                      height: 1,
+                      width: 1,
+                    },
+                  },
+                  sm: {
+                    location: {
+                      x: 0,
+                      y: 0,
+                    },
+                    size: {
+                      height: 1,
+                      width: 1,
+                    },
                   },
                 },
                 integration: {

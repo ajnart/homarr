@@ -4,6 +4,7 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import widgets from '../../../../widgets';
 import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
+import { useGridstackStore } from '../../Wrappers/gridstack/store';
 import { ChangePositionModal } from './ChangePositionModal';
 
 export const ChangeWidgetPositionModal = ({
@@ -13,6 +14,7 @@ export const ChangeWidgetPositionModal = ({
 }: ContextModalProps<WidgetChangePositionModalInnerProps>) => {
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
+  const shapeSize = useGridstackStore(x => x.currentShapeSize);
 
   const handleSubmit = (x: number, y: number, width: number, height: number) => {
     if (!configName) {
@@ -23,7 +25,7 @@ export const ChangeWidgetPositionModal = ({
       configName,
       (prev) => {
         const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
-        currentWidget!.shape = {
+        currentWidget!.shape[shapeSize] = {
           location: {
             x,
             y,
@@ -57,10 +59,10 @@ export const ChangeWidgetPositionModal = ({
       onCancel={handleCancel}
       heightData={heightData}
       widthData={widthData}
-      initialX={innerProps.widget.shape.location.x}
-      initialY={innerProps.widget.shape.location.y}
-      initialWidth={innerProps.widget.shape.size.width}
-      initialHeight={innerProps.widget.shape.size.height}
+      initialX={innerProps.widget.shape[shapeSize].location.x}
+      initialY={innerProps.widget.shape[shapeSize].location.y}
+      initialWidth={innerProps.widget.shape[shapeSize].size.width}
+      initialHeight={innerProps.widget.shape[shapeSize].size.height}
     />
   );
 };

@@ -22,7 +22,6 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
       </Group>
       <div
         className="grid-stack grid-stack-category"
-        style={{ transitionDuration: '0s' }}
         data-category={category.id}
         ref={refs.wrapper}
       >

@@ -2,6 +2,7 @@
 
 :root {
   --gridstack-widget-width: 64;
+  --gridstack-column-count: 12;
 }
 
 .grid-stack-placeholder > .placeholder-content {
@@ -17,24 +18,24 @@
 }
 
 @for $i from 1 to 13 {
-	.grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: ($i / 12) * 100 + "%" }
-	.grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: ($i / 12) * 100 + "%" }
-	.grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: ($i / 12) * 100 + "%" }
+	.grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
+	.grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
+	.grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
 }
 
 @for $i from 1 to 96 {
-  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height:  calc($i * #{var(--gridstack-widget-width)}) }
-  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height:  calc($i * #{var(--gridstack-widget-width)}) }
-  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  calc($i * #{var(--gridstack-widget-width)}) }
+  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height:  calc(#{$i} * #{var(--gridstack-widget-width)}) }
+  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height:  calc(#{$i} * #{var(--gridstack-widget-width)}) }
+  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  calc(#{$i} * #{var(--gridstack-widget-width)}) }
 }
 
 @for $i from 1 to 13 {
-	.grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: ($i / 12) * 100 + "%" }
+	.grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
 }
 
 
 @for $i from 1 to 96 {
-	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top:  calc($i * #{var(--gridstack-widget-width)})  }
+	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top:  calc(#{$i} * #{var(--gridstack-widget-width)})  }
 }
 
 .grid-stack>.grid-stack-item>.grid-stack-item-content,
@@ -48,7 +49,7 @@
 }
 
 .grid-stack>.grid-stack-item {
-  min-width: (1/12)+'%';
+  min-width: calc(percentage(1) * #{var(--gridstack-widget-width)});
 }
 
 .grid-stack > .grid-stack-item > .grid-stack-item-content {
@@ -57,36 +58,4 @@
 
 .grid-stack.grid-stack-animate {
   transition: none;
-}
-
-@media screen and (max-width: 1400px) {
-  @for $i from 1 to 7 {
-    .grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: percentage(($i / 6)) !important }
-    .grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: percentage(($i / 6)) !important }
-    .grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: percentage(($i / 6)) !important }
-  }
-  
-  @for $i from 1 to 7 {
-    .grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: percentage(($i / 6)) }
-  }
-
-  .grid-stack>.grid-stack-item {
-    min-width: percentage(1/6) !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  @for $i from 1 to 4 {
-    .grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: percentage(($i / 3)) !important }
-    .grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: percentage(($i / 3)) !important }
-    .grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: percentage(($i / 3)) !important }
-  }
-  
-  @for $i from 1 to 4 {
-    .grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: percentage(($i / 3)) }
-  }
-
-  .grid-stack>.grid-stack-item {
-    min-width: percentage(1/3) !important;
-  }
 }

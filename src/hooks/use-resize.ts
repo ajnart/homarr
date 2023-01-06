@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState, MutableRefObject } from 'react';
 
-export const useResize = (myRef: MutableRefObject<HTMLDivElement | null>) => {
+export const useResize = (myRef: MutableRefObject<HTMLDivElement | null>, dependencies: any[]) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -21,7 +21,7 @@ export const useResize = (myRef: MutableRefObject<HTMLDivElement | null>) => {
 
   useEffect(() => {
     handleResize();
-  }, [myRef]);
+  }, [myRef, dependencies]);
 
   return { width, height };
 };
