@@ -11,7 +11,6 @@ import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan'
 
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 import { AddElementAction } from '../AddElementAction/AddElementAction';
-import { useColorTheme } from '../../../../../tools/color';
 
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
@@ -56,15 +55,13 @@ export const ToggleEditModeAction = () => {
       hideNotification('toggle-edit-mode');
     }
   };
-  const { primaryColor, secondaryColor } = useColorTheme();
 
   const ToggleButtonDesktop = () => (
     <Tooltip label={enabled ? t('button.enabled') : t('button.disabled')}>
       <Button
         onClick={() => toggleButtonClicked()}
-        variant="white"
         radius="md"
-        color={secondaryColor}
+        variant="default"
         style={{ height: 43 }}
       >
         {enabled ? <IconEditCircleOff /> : <IconEditCircle />}

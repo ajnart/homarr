@@ -2,7 +2,6 @@ import { Badge, Button, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { useColorTheme } from '../../../tools/color';
 import { AboutModal } from '../../About/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
 import { ColorSchemeSwitch } from './SettingsMenu/ColorSchemeSwitch';
@@ -11,13 +10,12 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
   const [drawerOpened, drawer] = useDisclosure(false);
   const { t } = useTranslation('common');
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
-  const { primaryColor, secondaryColor } = useColorTheme();
 
   return (
     <>
       <Menu width={250}>
         <Menu.Target>
-          <Button variant="white" radius="md" color={secondaryColor} style={{ height: 43 }}>
+          <Button variant="default" radius="md" style={{ height: 43 }}>
             <IconMenu2 />
           </Button>
         </Menu.Target>
