@@ -1,6 +1,7 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
 import { AppType } from '../../../../types/app';
+import { ShapeType } from '../../../../types/shape';
 import { IWidget } from '../../../../widgets/widgets';
 
 export const initializeGridstack = (
@@ -13,6 +14,7 @@ export const initializeGridstack = (
   widgets: IWidget<string, any>[],
   isEditMode: boolean,
   wrapperColumnCount: 3 | 6 | 12,
+  shapeSize: 'sm' | 'md' | 'lg',
   events: {
     onChange: (changedNode: GridStackNode) => void;
     onAdd: (addedNode: GridStackNode) => void;
@@ -21,14 +23,14 @@ export const initializeGridstack = (
   if (!wrapperRef.current) return;
   // calculates the currently available count of columns
   const columnCount = areaType === 'sidebar' ? 2 : wrapperColumnCount;
-  const minRow = areaType !== 'sidebar' ? 1 : Math.floor(wrapperRef.current.offsetHeight / 64);
+  const minRow = areaType !== 'sidebar' ? 1 : Math.floor(wrapperRef.current.offsetHeight / 128);
   // initialize gridstack
   const newGrid = gridRef;
   newGrid.current = GridStack.init(
     {
       column: columnCount,
       margin: 10,
-      cellHeight: 64,
+      cellHeight: 128,
       float: true,
       alwaysShowResizeHandle: 'mobile',
       acceptWidgets: true,
@@ -63,16 +65,26 @@ export const initializeGridstack = (
   grid.batchUpdate();
   grid.removeAll(false);
   items.forEach(
-    ({ id }) => {
+    ({ id, shape }) => {
       const item = itemRefs.current[id]?.current;
+      setAttributesFromShape(item, shape[shapeSize]);
       item && grid.makeWidget(item as HTMLDivElement);
     }
   );
   widgets.forEach(
-    ({ id }) => {
+    ({ id, shape }) => {
       const item = itemRefs.current[id]?.current;
+      setAttributesFromShape(item, shape[shapeSize]);
       item && grid.makeWidget(item as HTMLDivElement);
     }
   );
   grid.batchUpdate(false);
 };
+
+function setAttributesFromShape(ref: HTMLDivElement | null, sizedShape: ShapeType['lg']) {
+  if (!sizedShape || !ref) return;
+  ref.setAttribute('gs-x', sizedShape.location.x.toString());
+  ref.setAttribute('gs-y', sizedShape.location.y.toString());
+  ref.setAttribute('gs-w', sizedShape.size.width.toString());
+  ref.setAttribute('gs-h', sizedShape.size.height.toString());
+}

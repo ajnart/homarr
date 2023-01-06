@@ -21,6 +21,7 @@ export const DashboardView = () => {
   const mainAreaWidth = useGridstackStore(x => x.mainAreaWidth);
 
   useEffect(() => {
+    if (width === 0) return;
     setMainAreaWidth(width);
   }, [width]);
 
@@ -29,8 +30,8 @@ export const DashboardView = () => {
       {notReady ? <Center w="100%">
           <Loader />
         </Center> : <>
-      {layoutSettings?.enabledLeftSidebar && !doNotShowSidebar && mainAreaWidth ? (
-        <DashboardSidebar location="left" />
+      {layoutSettings?.enabledLeftSidebar && !doNotShowSidebar ? (
+        <DashboardSidebar location="left" isGridstackReady={!!mainAreaWidth} />
       ) : null}
       <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
         {!mainAreaWidth ? null : wrappers.map((item) =>
@@ -41,8 +42,8 @@ export const DashboardView = () => {
           )
         )}
       </Stack>
-      {layoutSettings?.enabledRightSidebar && !doNotShowSidebar && mainAreaWidth ? (
-        <DashboardSidebar location="right" />
+      {layoutSettings?.enabledRightSidebar && !doNotShowSidebar ? (
+        <DashboardSidebar location="right" isGridstackReady={!!mainAreaWidth} />
       ) : null}
       </>
 }

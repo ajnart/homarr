@@ -3,16 +3,12 @@ import { RefObject } from 'react';
 import { useGridstack } from '../gridstack/use-gridstack';
 import { WrapperContent } from '../WrapperContent';
 
-interface DashboardSidebarProps {
+interface DashboardSidebarProps extends DashboardSidebarInnerProps {
   location: 'right' | 'left';
+  isGridstackReady: boolean;
 }
 
-export const DashboardSidebar = ({ location }: DashboardSidebarProps) => {
-  const { refs, apps, widgets } = useGridstack('sidebar', location);
-
-  const minRow = useMinRowForFullHeight(refs.wrapper);
-
-  return (
+export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSidebarProps) => (
     <Card
       withBorder
       w={300}
@@ -21,19 +17,32 @@ export const DashboardSidebar = ({ location }: DashboardSidebarProps) => {
         borderStyle: 'dashed',
       }}
     >
-      <div
-        className="grid-stack grid-stack-sidebar"
-        style={{ transitionDuration: '0s', height: '100%' }}
-        data-sidebar={location}
-        // eslint-disable-next-line react/no-unknown-property
-        gs-min-row={minRow}
-        ref={refs.wrapper}
-      >
-        <WrapperContent apps={apps} refs={refs} widgets={widgets} />
-      </div>
+      {isGridstackReady && <SidebarInner location={location} />}
     </Card>
   );
+
+  interface DashboardSidebarInnerProps {
+    location: 'right' | 'left';
+  }
+
+// Is Required because of the gridstack main area width.
+const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
+  const { refs, apps, widgets } = useGridstack('sidebar', location);
+
+  const minRow = useMinRowForFullHeight(refs.wrapper);
+
+  return (
+<div
+  className="grid-stack grid-stack-sidebar"
+  style={{ transitionDuration: '0s', height: '100%' }}
+  data-sidebar={location}
+  // eslint-disable-next-line react/no-unknown-property
+  gs-min-row={minRow}
+  ref={refs.wrapper}
+>
+  <WrapperContent apps={apps} refs={refs} widgets={widgets} />
+</div>);
 };
 
 const useMinRowForFullHeight = (wrapperRef: RefObject<HTMLDivElement>) =>
-  wrapperRef.current ? Math.floor(wrapperRef.current!.offsetHeight / 64) : 2;
+  wrapperRef.current ? Math.floor(wrapperRef.current!.offsetHeight / 128) : 2;

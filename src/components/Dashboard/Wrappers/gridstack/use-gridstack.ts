@@ -243,6 +243,7 @@ export const useGridstack = (
       widgets ?? [],
       isEditMode,
       wrapperColumnCount,
+      shapeSize,
       {
         onChange,
         onAdd,

@@ -1,17 +1,22 @@
-import { useCallback, useEffect, useState, MutableRefObject } from 'react';
+import { MutableRefObject, useCallback, useEffect, useState } from 'react';
 
 export const useResize = (myRef: MutableRefObject<HTMLDivElement | null>, dependencies: any[]) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
   const handleResize = useCallback(() => {
-    setWidth(myRef.current?.offsetWidth ?? 0);
-    setHeight(myRef.current?.offsetHeight ?? 0);
+    if (!myRef.current) return;
+    setWidth(myRef.current.offsetWidth);
+    setHeight(myRef.current.offsetHeight);
   }, [myRef]);
 
   useEffect(() => {
-    window.addEventListener('load', handleResize);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', () =>
+    handleResize()
+    );
+    window.addEventListener('resize', () =>
+    handleResize()
+    );
 
     return () => {
       window.removeEventListener('load', handleResize);
