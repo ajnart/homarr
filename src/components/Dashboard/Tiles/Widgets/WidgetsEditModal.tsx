@@ -24,6 +24,7 @@ import { useColorTheme } from '../../../../tools/color';
 export type WidgetEditModalInnerProps = {
   widgetId: string;
   options: IWidget<string, any>['properties'];
+  widgetOptions: IWidget<string, any>['properties'];
 };
 
 type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
@@ -35,7 +36,11 @@ export const WidgetsEditModal = ({
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
   const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
-  const items = Object.entries(moduleProperties ?? {}) as [string, IntegrationOptionsValueType][];
+  // const items = Object.entries(moduleProperties ?? {}) as [string, IntegrationOptionsValueType][];
+  const items = Object.entries(innerProps.widgetOptions ?? {}) as [
+    string,
+    IntegrationOptionsValueType
+  ][];
 
   // Find the Key in the "Widgets" Object that matches the widgetId
   const currentWidgetDefinition = Widgets[innerProps.widgetId as keyof typeof Widgets];
@@ -79,8 +84,9 @@ export const WidgetsEditModal = ({
 
   return (
     <Stack>
-      {items.map(([key, value], index) => {
+      {items.map(([key, defaultValue], index) => {
         const option = (currentWidgetDefinition as any).options[key] as IWidgetOptionValue;
+        const value = moduleProperties[key] ?? defaultValue;
 
         if (!option) {
           return (
@@ -176,7 +182,6 @@ function WidgetOptionTypeSwitch(
           <Slider
             color={primaryColor}
             key={`${option.type}-${index}`}
-            label={t(`descriptor.settings.${key}.label`)}
             value={value as number}
             min={option.min}
             max={option.max}
