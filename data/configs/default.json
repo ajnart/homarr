@@ -18,120 +18,6 @@
   ],
   "apps": [
     {
-      "id": "76217a87-7151-42d0-b0cf-1b72aef63f83",
-      "name": "Small app",
-      "url": "https://homarr.dev",
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": []
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://homarr.dev"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 0,
-          "y": 2
-        },
-        "size": {
-          "width": 2,
-          "height": 2
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
-      "name": "Discord",
-      "url": "https://discord.com/invite/aCsmEV5RgA",
-      "behaviour": {
-        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
-        "isOpeningNewTab": true,
-        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 0,
-          "y": 4
-        },
-        "size": {
-          "width": 4,
-          "height": 3
-        }
-      }
-    },
-    {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
-      "name": "Donate",
-      "url": "https://ko-fi.com/ajnart",
-      "behaviour": {
-        "onClickUrl": "https://ko-fi.com/ajnart",
-        "externalUrl": "https://ko-fi.com/ajnart",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e1116779fc0a9bd5bdbcc7_Frame%206.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "location": {
-          "x": 2,
-          "y": 2
-        },
-        "size": {
-          "width": 2,
-          "height": 2
-        }
-      }
-    },
-    {
       "id": "e41a11f5-9c6e-41bc-ac0e-4c4c47582faa",
       "name": "Your app",
       "url": "https://homarr.dev",
@@ -183,7 +69,7 @@
         ]
       },
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/github.png"
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png"
       },
       "integration": {
         "type": null,
@@ -203,6 +89,45 @@
         "size": {
           "width": 2,
           "height": 2
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
+      "name": "Discord",
+      "url": "https://discord.com/invite/aCsmEV5RgA",
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 4
+        },
+        "size": {
+          "width": 4,
+          "height": 3
         }
       }
     },
@@ -243,6 +168,81 @@
           "width": 4,
           "height": 3
         }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
+      "name": "Donate",
+      "url": "https://ko-fi.com/ajnart",
+      "behaviour": {
+        "onClickUrl": "https://ko-fi.com/ajnart",
+        "externalUrl": "https://ko-fi.com/ajnart",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/ko-fi.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 2,
+          "y": 2
+        },
+        "size": {
+          "width": 2,
+          "height": 2
+        }
+      }
+    },
+    {
+      "id": "76217a87-7151-42d0-b0cf-1b72aef63f83",
+      "name": "Small app",
+      "url": "https://homarr.dev",
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": []
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://homarr.dev"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "location": {
+          "x": 0,
+          "y": 2
+        },
+        "size": {
+          "width": 2,
+          "height": 2
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
       }
     },
     {
