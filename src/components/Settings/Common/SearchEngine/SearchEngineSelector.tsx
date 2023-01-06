@@ -50,7 +50,7 @@ export const SearchEngineSelector = ({ searchEngine }: Props) => {
       />
       <Paper p="md" py="sm" mb="md" withBorder>
         <Title order={6} mb={0}>
-          Search engine configuration
+          {t('configurationName')}
         </Title>
 
         <SearchNewTabSwitch defaultValue={searchEngine.properties.openInNewTab} />

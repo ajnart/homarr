@@ -8,7 +8,6 @@ interface smallAppItem {
 
 export default function SmallAppItem(props: any) {
   const { app }: { app: smallAppItem } = props;
-  // TODO : Use Next/link
   return (
     <Group>
       {app.icon && <Avatar src={app.icon} />}

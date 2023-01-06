@@ -55,9 +55,6 @@ export function Search() {
   const [searchQuery, setSearchQuery] = useState('');
   const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
 
-  // TODO: ask manuel-rw about overseerr
-  // Answer: We can simply check if there is a app of the type overseer and display results if there is one.
-  // Overseerr is not use anywhere else, so it makes no sense to add a standalone toggle for displaying results
   const isOverseerrEnabled = config?.apps.some(
     (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
   );
