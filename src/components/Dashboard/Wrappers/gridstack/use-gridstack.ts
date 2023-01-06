@@ -81,11 +81,14 @@ export const useGridstack = (
   useEffect(() => {
     const widgetWidth = mainAreaWidth / wrapperColumnCount;
     // widget width is used to define sizes of gridstack items within global.scss
-    // TODO: improve
     root.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
-    root.style.setProperty('--gridstack-column-count', wrapperColumnCount.toString());
     gridRef.current?.cellHeight(widgetWidth);
   }, [mainAreaWidth, wrapperColumnCount]);
+
+  useEffect(() => {
+        // column count is used to define count of columns of gridstack within global.scss
+    root.style.setProperty('--gridstack-column-count', wrapperColumnCount.toString());
+  }, [wrapperColumnCount]);
 
   const onChange = isEditMode
     ? (changedNode: GridStackNode) => {
