@@ -46,11 +46,13 @@ const definition = defineWidget({
   },
 });
 
-export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IUsenetWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface UseNetTileProps {}
+interface UseNetTileProps {
+  widget: IUsenetWidget;
+}
 
-function UseNetTile({}: UseNetTileProps) {
+function UseNetTile({ widget }: UseNetTileProps) {
   const { t } = useTranslation('modules/usenet');
   const { config } = useConfigContext();
   const downloadApps =
