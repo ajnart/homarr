@@ -38,8 +38,9 @@ export const useGridstack = (
   // width of the wrapper (updating on page resize)
   const root: HTMLHtmlElement = useMemo(() => document.querySelector(':root')!, []);
 
-  if (!mainAreaWidth || !shapeSize || !wrapperColumnCount)
+  if (!mainAreaWidth || !shapeSize || !wrapperColumnCount) {
     throw new Error('UseGridstack should not be executed before mainAreaWidth has been set!');
+  }
 
   const items = useMemo(
     () =>

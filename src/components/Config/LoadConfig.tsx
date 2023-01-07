@@ -36,6 +36,8 @@ export const LoadConfigComponent = () => {
         let newConfig: ConfigType = JSON.parse(fileText);
 
         if (!newConfig.schemaVersion) {
+          // client side logging
+          // eslint-disable-next-line no-console
           console.warn(
             'a legacy configuration schema was deteced and migrated to the current schema'
           );
