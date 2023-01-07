@@ -25,9 +25,9 @@
 }
 
 @for $i from 1 to 96 {
-  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height:  calc(#{$i} * #{var(--gridstack-widget-width)}) }
-  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height:  calc(#{$i} * #{var(--gridstack-widget-width)}) }
-  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  calc(#{$i} * #{var(--gridstack-widget-width)}) }
+  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height:  calc(#{$i}px * #{var(--gridstack-widget-width)}) }
+  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height:  calc(#{$i}px * #{var(--gridstack-widget-width)}) }
+  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  calc(#{$i}px * #{var(--gridstack-widget-width)}) }
 }
 
 @for $i from 1 to 13 {
@@ -36,7 +36,7 @@
 
 
 @for $i from 1 to 96 {
-	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top:  calc(#{$i} * #{var(--gridstack-widget-width)})  }
+	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top:  calc(#{$i}px * #{var(--gridstack-widget-width)})  }
 }
 
 .grid-stack>.grid-stack-item {
