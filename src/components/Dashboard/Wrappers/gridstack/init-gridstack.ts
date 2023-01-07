@@ -64,20 +64,16 @@ export const initializeGridstack = (
 
   grid.batchUpdate();
   grid.removeAll(false);
-  items.forEach(
-    ({ id, shape }) => {
-      const item = itemRefs.current[id]?.current;
-      setAttributesFromShape(item, shape[shapeSize]);
-      item && grid.makeWidget(item as HTMLDivElement);
-    }
-  );
-  widgets.forEach(
-    ({ id, shape }) => {
-      const item = itemRefs.current[id]?.current;
-      setAttributesFromShape(item, shape[shapeSize]);
-      item && grid.makeWidget(item as HTMLDivElement);
-    }
-  );
+  items.forEach(({ id, shape }) => {
+    const item = itemRefs.current[id]?.current;
+    setAttributesFromShape(item, shape[shapeSize]);
+    item && grid.makeWidget(item as HTMLDivElement);
+  });
+  widgets.forEach(({ id, shape }) => {
+    const item = itemRefs.current[id]?.current;
+    setAttributesFromShape(item, shape[shapeSize]);
+    item && grid.makeWidget(item as HTMLDivElement);
+  });
   grid.batchUpdate(false);
 };
 

@@ -11,12 +11,8 @@ export const useResize = (myRef: MutableRefObject<HTMLDivElement | null>, depend
   }, [myRef]);
 
   useEffect(() => {
-    window.addEventListener('load', () =>
-    handleResize()
-    );
-    window.addEventListener('resize', () =>
-    handleResize()
-    );
+    window.addEventListener('load', () => handleResize());
+    window.addEventListener('resize', () => handleResize());
 
     return () => {
       window.removeEventListener('load', handleResize);

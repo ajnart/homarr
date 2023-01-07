@@ -70,7 +70,7 @@ interface UseConfigStoreType {
   addConfig: (
     name: string,
     config: ConfigType,
-    shouldSaveConfigToFileSystem: boolean,
+    shouldSaveConfigToFileSystem: boolean
   ) => Promise<void>;
   updateConfig: (
     name: string,

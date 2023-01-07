@@ -27,64 +27,6 @@
   ],
   "apps": [
     {
-      "id": "76217a87-7151-42d0-b0cf-1b72aef63f83",
-      "name": "Small app",
-      "url": "https://homarr.dev",
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": []
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "https://homarr.dev"
-      },
-      "area": {
-        "type": "sidebar",
-        "properties": {
-          "location": "left"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
       "name": "Donate",
       "url": "https://ko-fi.com/ajnart",
@@ -146,6 +88,64 @@
       }
     },
     {
+      "id": "76217a87-7151-42d0-b0cf-1b72aef63f83",
+      "name": "Small app",
+      "url": "https://homarr.dev",
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": []
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://homarr.dev"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
       "id": "e41a11f5-9c6e-41bc-ac0e-4c4c47582faa",
       "name": "Haha",
       "url": "https://homarr.dev",
@@ -169,8 +169,8 @@
       "shape": {
         "md": {
           "location": {
-            "x": 0,
-            "y": 3
+            "x": 5,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -189,8 +189,8 @@
         },
         "lg": {
           "location": {
-            "x": 0,
-            "y": 6
+            "x": 4,
+            "y": 2
           },
           "size": {
             "width": 1,
@@ -204,13 +204,13 @@
       }
     },
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
+      "name": "Discord",
+      "url": "https://discord.com/invite/aCsmEV5RgA",
       "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
       },
       "network": {
         "enabledStatusChecker": false,
@@ -219,7 +219,7 @@
         ]
       },
       "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
       },
       "integration": {
         "type": null,
@@ -234,28 +234,28 @@
       "shape": {
         "md": {
           "location": {
-            "x": 0,
-            "y": 10
+            "x": 3,
+            "y": 0
           },
           "size": {
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         },
         "sm": {
           "location": {
             "x": 0,
-            "y": 10
+            "y": 1
           },
           "size": {
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         },
         "lg": {
           "location": {
-            "x": 3,
-            "y": 1
+            "x": 0,
+            "y": 0
           },
           "size": {
             "width": 1,
@@ -308,8 +308,8 @@
         },
         "lg": {
           "location": {
-            "x": 1,
-            "y": 0
+            "x": 2,
+            "y": 2
           },
           "size": {
             "width": 1,
@@ -320,67 +320,6 @@
       "integration": {
         "type": null,
         "properties": []
-      }
-    },
-    {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
-      "name": "Discord",
-      "url": "https://discord.com/invite/aCsmEV5RgA",
-      "behaviour": {
-        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
-        "isOpeningNewTab": true,
-        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
       }
     },
     {
@@ -414,8 +353,8 @@
       "shape": {
         "md": {
           "location": {
-            "x": 2,
-            "y": 3
+            "x": 0,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -434,8 +373,8 @@
         },
         "lg": {
           "location": {
-            "x": 2,
-            "y": 3
+            "x": 3,
+            "y": 2
           },
           "size": {
             "width": 1,
@@ -479,7 +418,7 @@
         "md": {
           "location": {
             "x": 0,
-            "y": 5
+            "y": 9
           },
           "size": {
             "width": 1,
@@ -501,29 +440,43 @@
         "type": null,
         "properties": []
       }
-    }
-  ],
-  "widgets": [
+    },
     {
-      "id": "weather",
-      "properties": {
-        "displayInFahrenheit": false,
-        "location": "Paris"
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
       },
       "area": {
         "type": "category",
         "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+          "id": "c1c4bec3-1044-4a80-957f-afe7ff49f421"
         }
       },
       "shape": {
         "md": {
           "location": {
-            "x": 0,
+            "x": 2,
             "y": 0
           },
           "size": {
-            "width": 3,
+            "width": 2,
             "height": 1
           }
         },
@@ -533,66 +486,24 @@
             "y": 0
           },
           "size": {
-            "width": 3,
+            "width": 2,
             "height": 1
           }
         },
         "lg": {
           "location": {
-            "x": 0,
-            "y": 0
+            "x": 1,
+            "y": 2
           },
           "size": {
-            "width": 3,
+            "width": 1,
             "height": 1
           }
         }
       }
-    },
-    {
-      "id": "calendar",
-      "properties": {
-        "sundayStart": false
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 3,
-            "height": 5
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 3,
-            "height": 5
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 3,
-            "height": 5
-          }
-        }
-      }
-    },
+    }
+  ],
+  "widgets": [
     {
       "id": "date",
       "properties": {
@@ -617,8 +528,8 @@
         },
         "md": {
           "location": {
-            "x": 1,
-            "y": 1
+            "x": 4,
+            "y": 0
           },
           "size": {
             "width": 2,
@@ -627,12 +538,101 @@
         },
         "lg": {
           "location": {
-            "x": 1,
-            "y": 1
+            "x": 7,
+            "y": 0
+          },
+          "size": {
+            "width": 5,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "weather",
+      "properties": {
+        "displayInFahrenheit": false,
+        "location": "Paris"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
           },
           "size": {
             "width": 2,
             "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 7,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "calendar",
+      "properties": {
+        "sundayStart": false
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 3,
+            "height": 5
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 5
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 5
           }
         }
       }
@@ -647,8 +647,8 @@
     },
     "customization": {
       "layout": {
-        "enabledLeftSidebar": true,
-        "enabledRightSidebar": true,
+        "enabledLeftSidebar": false,
+        "enabledRightSidebar": false,
         "enabledDocker": false,
         "enabledPing": false,
         "enabledSearchbar": true

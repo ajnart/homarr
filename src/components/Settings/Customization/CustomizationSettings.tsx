@@ -47,7 +47,9 @@ export default function CustomizationSettings() {
         <OpacitySelector defaultValue={config?.settings.customization.appOpacity} />
       </ScrollArea>
 
-      <Button onClick={saveConfiguration} variant="light">Save Customizations</Button>
+      <Button onClick={saveConfiguration} variant="light">
+        Save Customizations
+      </Button>
     </Stack>
   );
 }

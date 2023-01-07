@@ -19,9 +19,9 @@ interface WrapperContentProps {
 }
 
 export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
- const shapeSize = useGridstackStore(x => x.currentShapeSize);
+  const shapeSize = useGridstackStore((x) => x.currentShapeSize);
 
- if (!shapeSize) return null;
+  if (!shapeSize) return null;
 
   return (
     <>

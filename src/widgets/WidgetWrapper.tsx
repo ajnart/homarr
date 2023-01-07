@@ -11,8 +11,8 @@ interface WidgetWrapperProps {
 }
 
 export const WidgetWrapper = ({ widgetId, widget, className, children }: WidgetWrapperProps) => (
-    <HomarrCardWrapper className={className}>
-      <WidgetsMenu integration={widgetId} widget={widget} />
-      {children}
-    </HomarrCardWrapper>
-  );
+  <HomarrCardWrapper className={className}>
+    <WidgetsMenu integration={widgetId} widget={widget} />
+    {children}
+  </HomarrCardWrapper>
+);

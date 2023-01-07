@@ -14,7 +14,7 @@ export const ChangeWidgetPositionModal = ({
 }: ContextModalProps<WidgetChangePositionModalInnerProps>) => {
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const shapeSize = useGridstackStore(x => x.currentShapeSize);
+  const shapeSize = useGridstackStore((x) => x.currentShapeSize);
 
   const handleSubmit = (x: number, y: number, width: number, height: number) => {
     if (!configName) {
@@ -72,13 +72,14 @@ const useWidthData = (integration: string): SelectItem[] => {
   const currentWidget = widgets[integration as keyof typeof widgets];
   if (!currentWidget) return [];
   const offset = currentWidget.gridstack.minWidth ?? 2;
-  const length = (currentWidget.gridstack.maxWidth > wrapperColumnCount!
-    ? wrapperColumnCount!
-    : currentWidget.gridstack.maxWidth) - offset;
+  const length =
+    (currentWidget.gridstack.maxWidth > wrapperColumnCount!
+      ? wrapperColumnCount!
+      : currentWidget.gridstack.maxWidth) - offset;
   return Array.from({ length: length + 1 }, (_, i) => i + offset).map((n) => ({
     value: n.toString(),
     // eslint-disable-next-line no-mixed-operators
-    label: `${(100 / wrapperColumnCount! * n).toFixed(2)}%`,
+    label: `${((100 / wrapperColumnCount!) * n).toFixed(2)}%`,
   }));
 };
 

@@ -1,11 +1,5 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
-import {
-  createRef,
-  MutableRefObject,
-  RefObject,
-  useEffect, useMemo,
-  useRef,
-} from 'react';
+import { createRef, MutableRefObject, RefObject, useEffect, useMemo, useRef } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { AppType } from '../../../../types/app';
@@ -39,12 +33,13 @@ export const useGridstack = (
   // reference of the gridstack object for modifications after initialization
   const gridRef = useRef<GridStack>();
   const wrapperColumnCount = useWrapperColumnCount();
-  const shapeSize = useGridstackStore(x => x.currentShapeSize);
-  const mainAreaWidth = useGridstackStore(x => x.mainAreaWidth);
+  const shapeSize = useGridstackStore((x) => x.currentShapeSize);
+  const mainAreaWidth = useGridstackStore((x) => x.mainAreaWidth);
   // width of the wrapper (updating on page resize)
   const root: HTMLHtmlElement = useMemo(() => document.querySelector(':root')!, []);
 
-  if (!mainAreaWidth || !shapeSize || !wrapperColumnCount) throw new Error('UseGridstack should not be executed before mainAreaWidth has been set!');
+  if (!mainAreaWidth || !shapeSize || !wrapperColumnCount)
+    throw new Error('UseGridstack should not be executed before mainAreaWidth has been set!');
 
   const items = useMemo(
     () =>
@@ -86,7 +81,7 @@ export const useGridstack = (
   }, [mainAreaWidth, wrapperColumnCount, gridRef.current]);
 
   useEffect(() => {
-        // column count is used to define count of columns of gridstack within global.scss
+    // column count is used to define count of columns of gridstack within global.scss
     root.style.setProperty('--gridstack-column-count', wrapperColumnCount.toString());
   }, [wrapperColumnCount]);
 

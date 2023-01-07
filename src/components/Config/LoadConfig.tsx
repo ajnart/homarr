@@ -36,7 +36,9 @@ export const LoadConfigComponent = () => {
         let newConfig: ConfigType = JSON.parse(fileText);
 
         if (!newConfig.schemaVersion) {
-          console.warn('a legacy configuration schema was deteced and migrated to the current schema');
+          console.warn(
+            'a legacy configuration schema was deteced and migrated to the current schema'
+          );
           const oldConfig = JSON.parse(fileText) as Config;
           newConfig = migrateConfig(oldConfig);
         }
