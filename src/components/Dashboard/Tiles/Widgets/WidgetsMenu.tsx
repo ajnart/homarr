@@ -2,6 +2,7 @@ import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
 import { IWidget } from '../../../../widgets/widgets';
+import { useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { GenericTileMenu } from '../GenericTileMenu';
 import { WidgetEditModalInnerProps } from './WidgetsEditModal';
 import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
@@ -10,6 +11,7 @@ import WidgetsDefinitions from '../../../../widgets';
 export type WidgetChangePositionModalInnerProps = {
   widgetId: string;
   widget: IWidget<string, any>;
+  wrapperColumnCount: number;
 };
 
 interface WidgetsMenuProps {
@@ -19,8 +21,9 @@ interface WidgetsMenuProps {
 
 export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const { t } = useTranslation(`modules/${integration}`);
+  const wrapperColumnCount = useWrapperColumnCount();
 
-  if (!widget) return null;
+  if (!widget || !wrapperColumnCount) return null;
   // Match widget.id with WidgetsDefinitions
   // First get the keys
   const keys = Object.keys(WidgetsDefinitions);
@@ -48,6 +51,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       innerProps: {
         widgetId: integration,
         widget,
+        wrapperColumnCount,
       },
     });
   };

@@ -112,13 +112,35 @@ export const AvailableElementTypes = ({
                     },
                   },
                   shape: {
-                    location: {
-                      x: 0,
-                      y: 0,
+                    sm: {
+                      location: {
+                        x: 0,
+                        y: 0,
+                      },
+                      size: {
+                        width: appTileDefinition.minWidth,
+                        height: appTileDefinition.minHeight,
+                      },
                     },
-                    size: {
-                      width: appTileDefinition.minWidth,
-                      height: appTileDefinition.minHeight,
+                    md: {
+                      location: {
+                        x: 0,
+                        y: 0,
+                      },
+                      size: {
+                        width: appTileDefinition.minWidth,
+                        height: appTileDefinition.minHeight,
+                      },
+                    },
+                    lg: {
+                      location: {
+                        x: 0,
+                        y: 0,
+                      },
+                      size: {
+                        width: appTileDefinition.minWidth,
+                        height: appTileDefinition.minHeight,
+                      },
                     },
                   },
                   integration: {

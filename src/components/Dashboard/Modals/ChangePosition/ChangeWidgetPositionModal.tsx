@@ -4,6 +4,7 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import widgets from '../../../../widgets';
 import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
+import { useGridstackStore, useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { ChangePositionModal } from './ChangePositionModal';
 
 export const ChangeWidgetPositionModal = ({
@@ -13,6 +14,7 @@ export const ChangeWidgetPositionModal = ({
 }: ContextModalProps<WidgetChangePositionModalInnerProps>) => {
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
+  const shapeSize = useGridstackStore((x) => x.currentShapeSize);
 
   const handleSubmit = (x: number, y: number, width: number, height: number) => {
     if (!configName) {
@@ -23,7 +25,7 @@ export const ChangeWidgetPositionModal = ({
       configName,
       (prev) => {
         const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
-        currentWidget!.shape = {
+        currentWidget!.shape[shapeSize] = {
           location: {
             x,
             y,
@@ -57,32 +59,40 @@ export const ChangeWidgetPositionModal = ({
       onCancel={handleCancel}
       heightData={heightData}
       widthData={widthData}
-      initialX={innerProps.widget.shape.location.x}
-      initialY={innerProps.widget.shape.location.y}
-      initialWidth={innerProps.widget.shape.size.width}
-      initialHeight={innerProps.widget.shape.size.height}
+      initialX={innerProps.widget.shape[shapeSize].location.x}
+      initialY={innerProps.widget.shape[shapeSize].location.y}
+      initialWidth={innerProps.widget.shape[shapeSize].size.width}
+      initialHeight={innerProps.widget.shape[shapeSize].size.height}
     />
   );
 };
 
 const useWidthData = (integration: string): SelectItem[] => {
+  const wrapperColumnCount = useWrapperColumnCount();
   const currentWidget = widgets[integration as keyof typeof widgets];
   if (!currentWidget) return [];
   const offset = currentWidget.gridstack.minWidth ?? 2;
-  const length = (currentWidget.gridstack.maxWidth ?? 12) - offset;
-  return Array.from({ length }, (_, i) => i + offset).map((n) => ({
+  const length =
+    (currentWidget.gridstack.maxWidth > wrapperColumnCount!
+      ? wrapperColumnCount!
+      : currentWidget.gridstack.maxWidth) - offset;
+  return Array.from({ length: length + 1 }, (_, i) => i + offset).map((n) => ({
     value: n.toString(),
-    label: `${64 * n}px`,
+    // eslint-disable-next-line no-mixed-operators
+    label: `${((100 / wrapperColumnCount!) * n).toFixed(2)}%`,
   }));
 };
 
 const useHeightData = (integration: string): SelectItem[] => {
+  const mainAreaWidth = useGridstackStore((x) => x.mainAreaWidth);
+  const wrapperColumnCount = useWrapperColumnCount();
+
   const currentWidget = widgets[integration as keyof typeof widgets];
   if (!currentWidget) return [];
   const offset = currentWidget.gridstack.minHeight ?? 2;
   const length = (currentWidget.gridstack.maxHeight ?? 12) - offset;
   return Array.from({ length }, (_, i) => i + offset).map((n) => ({
     value: n.toString(),
-    label: `${64 * n}px`,
+    label: `${(mainAreaWidth! / wrapperColumnCount!) * n}px`,
   }));
 };

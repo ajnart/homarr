@@ -1,22 +1,13 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
-import {
-  createRef,
-  MutableRefObject,
-  RefObject,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-} from 'react';
+import { createRef, MutableRefObject, RefObject, useEffect, useMemo, useRef } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { useResize } from '../../../../hooks/use-resize';
-import { useScreenLargerThan } from '../../../../hooks/useScreenLargerThan';
 import { AppType } from '../../../../types/app';
 import { AreaType } from '../../../../types/area';
 import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
+import { useGridstackStore, useWrapperColumnCount } from './store';
 
 interface UseGristackReturnType {
   apps: AppType[];
@@ -32,7 +23,6 @@ export const useGridstack = (
   areaType: 'wrapper' | 'category' | 'sidebar',
   areaId: string
 ): UseGristackReturnType => {
-  const isLargerThanSm = useScreenLargerThan('sm');
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { config, configVersion, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
@@ -42,8 +32,15 @@ export const useGridstack = (
   const itemRefs = useRef<Record<string, RefObject<HTMLDivElement>>>({});
   // reference of the gridstack object for modifications after initialization
   const gridRef = useRef<GridStack>();
+  const wrapperColumnCount = useWrapperColumnCount();
+  const shapeSize = useGridstackStore((x) => x.currentShapeSize);
+  const mainAreaWidth = useGridstackStore((x) => x.mainAreaWidth);
   // width of the wrapper (updating on page resize)
-  const { width, height } = useResize(wrapperRef);
+  const root: HTMLHtmlElement = useMemo(() => document.querySelector(':root')!, []);
+
+  if (!mainAreaWidth || !shapeSize || !wrapperColumnCount) {
+    throw new Error('UseGridstack should not be executed before mainAreaWidth has been set!');
+  }
 
   const items = useMemo(
     () =>
@@ -77,55 +74,17 @@ export const useGridstack = (
     });
   }
 
-  // change column count depending on the width and the gridRef
   useEffect(() => {
-    if (areaType === 'sidebar') return;
-    gridRef.current?.column(
-      isLargerThanSm || typeof isLargerThanSm === 'undefined' ? 12 : 6,
-      (column, prevColumn, newNodes, nodes) => {
-        let nextRow = 0;
-        let available = 6;
+    const widgetWidth = mainAreaWidth / wrapperColumnCount;
+    // widget width is used to define sizes of gridstack items within global.scss
+    root.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
+    gridRef.current?.cellHeight(widgetWidth);
+  }, [mainAreaWidth, wrapperColumnCount, gridRef.current]);
 
-        if (column === prevColumn) {
-          newNodes.concat(nodes);
-          return;
-        }
-
-        nodes.reverse().forEach((node) => {
-          const newnode = node;
-          const width = parseInt(newnode.el!.getAttribute('data-gridstack-w')!, 10);
-          const height = parseInt(newnode.el!.getAttribute('data-gridstack-h')!, 10);
-          const x = parseInt(newnode.el!.getAttribute('data-gridstack-x')!, 10);
-          const y = parseInt(newnode.el!.getAttribute('data-gridstack-y')!, 10);
-
-          if (column === 6) {
-            newnode.x = available >= width ? 6 - available : 0;
-            newnode.y = nextRow;
-
-            if (width > 6) {
-              newnode.w = 6;
-              nextRow += 2;
-              available = 6;
-            } else if (available >= width) {
-              available -= width;
-              if (available === 0) {
-                nextRow += 2;
-                available = 6;
-              }
-            } else if (available < width) {
-              newnode.y = newnode.y! + 2;
-              available = 6 - width;
-              nextRow += 2;
-            }
-          } else {
-            newnode.x = y % 2 === 1 ? x + 6 : x;
-            newnode.y = Math.floor(y / 2);
-          }
-          newNodes.push(newnode);
-        });
-      }
-    );
-  }, [isLargerThanSm]);
+  useEffect(() => {
+    // column count is used to define count of columns of gridstack within global.scss
+    root.style.setProperty('--gridstack-column-count', wrapperColumnCount.toString());
+  }, [wrapperColumnCount]);
 
   const onChange = isEditMode
     ? (changedNode: GridStackNode) => {
@@ -143,14 +102,14 @@ export const useGridstack = (
               : previous.widgets.find((x) => x.id === itemId);
           if (!currentItem) return previous;
 
-          currentItem.shape = {
+          currentItem.shape[shapeSize] = {
             location: {
-              x: changedNode.x ?? currentItem.shape.location.x,
-              y: changedNode.y ?? currentItem.shape.location.y,
+              x: changedNode.x ?? currentItem.shape[shapeSize].location.x,
+              y: changedNode.y ?? currentItem.shape[shapeSize].location.y,
             },
             size: {
-              width: changedNode.w ?? currentItem.shape.size.width,
-              height: changedNode.h ?? currentItem.shape.size.height,
+              width: changedNode.w ?? currentItem.shape[shapeSize].size.width,
+              height: changedNode.h ?? currentItem.shape[shapeSize].size.height,
             },
           };
 
@@ -209,14 +168,14 @@ export const useGridstack = (
               };
             }
 
-            currentItem.shape = {
+            currentItem.shape[shapeSize] = {
               location: {
-                x: addedNode.x ?? currentItem.shape.location.x,
-                y: addedNode.y ?? currentItem.shape.location.y,
+                x: addedNode.x ?? currentItem.shape[shapeSize].location.x,
+                y: addedNode.y ?? currentItem.shape[shapeSize].location.y,
               },
               size: {
-                width: addedNode.w ?? currentItem.shape.size.width,
-                height: addedNode.h ?? currentItem.shape.size.height,
+                width: addedNode.w ?? currentItem.shape[shapeSize].size.width,
+                height: addedNode.h ?? currentItem.shape[shapeSize].size.height,
               },
             };
 
@@ -272,7 +231,7 @@ export const useGridstack = (
     : () => {};
 
   // initialize the gridstack
-  useLayoutEffect(() => {
+  useEffect(() => {
     initializeGridstack(
       areaType,
       wrapperRef,
@@ -282,13 +241,14 @@ export const useGridstack = (
       items,
       widgets ?? [],
       isEditMode,
-      isLargerThanSm,
+      wrapperColumnCount,
+      shapeSize,
       {
         onChange,
         onAdd,
       }
     );
-  }, [items, wrapperRef.current, widgets]);
+  }, [items, wrapperRef.current, widgets, wrapperColumnCount]);
 
   return {
     apps: items,

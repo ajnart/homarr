@@ -92,6 +92,17 @@ const getConfigAndCreateIfNotExsists = (
   return category;
 };
 
+const getShapeForColumnCount = (index: number, columnCount: number) => ({
+  location: {
+    x: index % columnCount,
+    y: Math.floor(index / columnCount),
+  },
+  size: {
+    width: 1,
+    height: 1,
+  },
+});
+
 const migrateService = (
   oldService: serviceItem,
   serviceIndex: number,
@@ -117,13 +128,8 @@ const migrateService = (
   },
   area: areaType,
   shape: {
-    location: {
-      x: (serviceIndex * 3) % 18,
-      y: Math.floor(serviceIndex / 6) * 3,
-    },
-    size: {
-      width: 3,
-      height: 3,
-    },
+    lg: getShapeForColumnCount(serviceIndex, 12),
+    md: getShapeForColumnCount(serviceIndex, 6),
+    sm: getShapeForColumnCount(serviceIndex, 3),
   },
 });

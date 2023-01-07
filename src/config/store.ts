@@ -75,7 +75,7 @@ interface UseConfigStoreType {
   updateConfig: (
     name: string,
     updateCallback: (previous: ConfigType) => ConfigType,
-    shouldRegenerateGridstace?:
+    shouldRegenerateGridstack?:
       | boolean
       | ((previousConfig: ConfigType, currentConfig: ConfigType) => boolean),
     shouldSaveConfigToFileSystem?: boolean

@@ -29,7 +29,7 @@ export const MobileRibbonSidebarDrawer = ({
       }}
       {...props}
     >
-      <DashboardSidebar location={location} />
+      <DashboardSidebar location={location} isGridstackReady />
     </Drawer>
   );
 };
