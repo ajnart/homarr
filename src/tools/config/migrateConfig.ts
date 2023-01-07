@@ -120,7 +120,7 @@ const migrateService = (
     okStatus: oldService.status?.map((str) => parseInt(str, 10)) ?? [200],
   },
   appearance: {
-    iconUrl: oldService.icon,
+    iconUrl: migrateIcon(oldService.icon),
   },
   integration: {
     type: null,
@@ -133,3 +133,14 @@ const migrateService = (
     sm: getShapeForColumnCount(serviceIndex, 3),
   },
 });
+
+const migrateIcon = (iconUrl: string) => {
+  if (iconUrl.startsWith('https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/')) {
+    console.log('migrating icon:');
+    const icon = iconUrl.split('/').at(-1);
+    console.log(`${iconUrl} -> ${icon}`);
+    return `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}`;
+  }
+
+  return iconUrl;
+};
