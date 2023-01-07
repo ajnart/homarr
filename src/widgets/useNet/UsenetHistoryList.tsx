@@ -4,8 +4,8 @@ import {
   Code,
   Group,
   Pagination,
-  ScrollArea,
   Skeleton,
+  Stack,
   Table,
   Text,
   Title,
@@ -28,7 +28,7 @@ interface UsenetHistoryListProps {
   appId: string;
 }
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 13;
 
 export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ appId }) => {
   const [page, setPage] = useState(1);
@@ -39,7 +39,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
   const { data, isLoading, isError, error } = useGetUsenetHistory({
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
-    appId: appId,
+    appId,
   });
   const totalPages = Math.ceil((data?.total || 1) / PAGE_SIZE);
 
@@ -81,50 +81,49 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
   }
 
   return (
-    <>
-      <ScrollArea style={{ flex: 1 }}>
-        <Table highlightOnHover style={{ tableLayout: 'fixed' }} ref={ref}>
-          <thead>
-            <tr>
-              <th>{t('modules/usenet:history.header.name')}</th>
-              <th style={{ width: 100 }}>{t('modules/usenet:history.header.size')}</th>
+    <Stack justify="space-around" spacing="xs">
+      <Table highlightOnHover style={{ tableLayout: 'fixed' }} ref={ref}>
+        <thead>
+          <tr>
+            <th>{t('modules/usenet:history.header.name')}</th>
+            <th style={{ width: 100 }}>{t('modules/usenet:history.header.size')}</th>
+            {durationBreakpoint < width ? (
+              <th style={{ width: 200 }}>{t('modules/usenet:history.header.duration')}</th>
+            ) : null}
+          </tr>
+        </thead>
+        <tbody>
+          {data.items.map((history) => (
+            <tr key={history.id}>
+              <td>
+                <Tooltip position="top" label={history.name}>
+                  <Text
+                    size="xs"
+                    style={{
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    }}
+                  >
+                    {history.name}
+                  </Text>
+                </Tooltip>
+              </td>
+              <td>
+                <Text size="xs">{humanFileSize(history.size)}</Text>
+              </td>
               {durationBreakpoint < width ? (
-                <th style={{ width: 200 }}>{t('modules/usenet:history.header.duration')}</th>
+                <td>
+                  <Text size="xs">{parseDuration(history.time, t)}</Text>
+                </td>
               ) : null}
             </tr>
-          </thead>
-          <tbody>
-            {data.items.map((history) => (
-              <tr key={history.id}>
-                <td>
-                  <Tooltip position="top" label={history.name}>
-                    <Text
-                      size="xs"
-                      style={{
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                      }}
-                    >
-                      {history.name}
-                    </Text>
-                  </Tooltip>
-                </td>
-                <td>
-                  <Text size="xs">{humanFileSize(history.size)}</Text>
-                </td>
-                {durationBreakpoint < width ? (
-                  <td>
-                    <Text size="xs">{parseDuration(history.time, t)}</Text>
-                  </td>
-                ) : null}
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </ScrollArea>
+          ))}
+        </tbody>
+      </Table>
       {totalPages > 1 && (
         <Pagination
+          noWrap
           size="sm"
           position="center"
           mt="md"
@@ -133,6 +132,6 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
           onChange={setPage}
         />
       )}
-    </>
+    </Stack>
   );
 };

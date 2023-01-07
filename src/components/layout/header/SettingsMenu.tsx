@@ -1,4 +1,4 @@
-import { ActionIcon, Badge, Menu } from '@mantine/core';
+import { Badge, Button, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
@@ -15,9 +15,9 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
     <>
       <Menu width={250}>
         <Menu.Target>
-          <ActionIcon variant="default" radius="md" size="xl" color="blue">
+          <Button variant="default" radius="md" style={{ height: 43 }}>
             <IconMenu2 />
-          </ActionIcon>
+          </Button>
         </Menu.Target>
         <Menu.Dropdown>
           <ColorSchemeSwitch />

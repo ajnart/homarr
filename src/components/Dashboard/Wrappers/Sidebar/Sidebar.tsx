@@ -1,5 +1,6 @@
 import { Card } from '@mantine/core';
 import { RefObject } from 'react';
+import { useCardStyles } from '../../../layout/useCardStyles';
 import { useGridstack } from '../gridstack/use-gridstack';
 import { WrapperContent } from '../WrapperContent';
 
@@ -30,18 +31,23 @@ const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
   const { refs, apps, widgets } = useGridstack('sidebar', location);
 
   const minRow = useMinRowForFullHeight(refs.wrapper);
+  const {
+    cx,
+    classes: { card: cardClass },
+  } = useCardStyles(false);
 
   return (
-    <div
-      className="grid-stack grid-stack-sidebar"
-      style={{ transitionDuration: '0s', height: '100%' }}
-      data-sidebar={location}
-      // eslint-disable-next-line react/no-unknown-property
-      gs-min-row={minRow}
-      ref={refs.wrapper}
-    >
-      <WrapperContent apps={apps} refs={refs} widgets={widgets} />
-    </div>
+    <Card withBorder mih="100%" p={0} radius="lg" className={cardClass} ref={refs.wrapper}>
+      <div
+        className="grid-stack grid-stack-sidebar"
+        style={{ transitionDuration: '0s', height: '100%' }}
+        data-sidebar={location}
+        // eslint-disable-next-line react/no-unknown-property
+        gs-min-row={minRow}
+      >
+        <WrapperContent apps={apps} refs={refs} widgets={widgets} />
+      </div>
+    </Card>
   );
 };
 

@@ -97,8 +97,8 @@ export const AvailableElementTypes = ({
                     iconUrl: '/imgs/logo/logo.png',
                   },
                   network: {
-                    enabledStatusChecker: false,
-                    okStatus: [],
+                    enabledStatusChecker: true,
+                    okStatus: [200],
                   },
                   behaviour: {
                     isOpeningNewTab: true,

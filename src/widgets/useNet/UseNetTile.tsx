@@ -46,16 +46,20 @@ const definition = defineWidget({
   },
 });
 
-export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IUsenetWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface UseNetTileProps {}
+interface UseNetTileProps {
+  widget: IUsenetWidget;
+}
 
-function UseNetTile({}: UseNetTileProps) {
+function UseNetTile({ widget }: UseNetTileProps) {
   const { t } = useTranslation('modules/usenet');
   const { config } = useConfigContext();
   const downloadApps =
     config?.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ??
     [];
+  const { ref, width, height } = useElementSize();
+  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
   const { data } = useGetUsenetInfo({ appId: selectedAppId! });
@@ -83,9 +87,6 @@ function UseNetTile({}: UseNetTileProps) {
   if (!selectedAppId) {
     return null;
   }
-
-  const { ref, width, height } = useElementSize();
-  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   return (
     <Tabs keepMounted={false} defaultValue="queue">

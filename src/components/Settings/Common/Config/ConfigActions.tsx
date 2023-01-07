@@ -35,7 +35,7 @@ export default function ConfigActions() {
         closeModal={createCopyModal.close}
         initialConfigName={config.configProperties.name}
       />
-      <Flex gap="xs" justify="stretch">
+      <Flex gap="xs" mt="xs" justify="stretch">
         <ActionIcon className={classes.actionIcon} onClick={handleDownload} variant="default">
           <IconDownload size={20} />
           <Text size="sm">{t('buttons.download')}</Text>

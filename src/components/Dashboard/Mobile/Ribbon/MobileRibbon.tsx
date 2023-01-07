@@ -1,4 +1,4 @@
-import { ActionIcon, createStyles } from '@mantine/core';
+import { ActionIcon, createStyles, Space } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons';
 import { useConfigContext } from '../../../../config/provider';
@@ -35,7 +35,9 @@ export const MobileRibbons = () => {
             location="left"
           />
         </>
-      ) : null}
+      ) : (
+        <Space />
+      )}
 
       {layoutSettings.enabledRightSidebar ? (
         <>

@@ -15,9 +15,8 @@ export const AddElementAction = ({ type }: AddElementActionProps) => {
       return (
         <Tooltip label={t('actionIcon.tooltip')} withinPortal withArrow>
           <Button
-            variant="default"
             radius="md"
-            color="blue"
+            variant="default"
             style={{ height: 43 }}
             onClick={() =>
               openContextModal({

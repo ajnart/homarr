@@ -5,7 +5,7 @@ import axios from 'axios';
 import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
-import { useConfigContext } from '../../../../../config/provider';
+import { useConfigContext } from '../../config/provider';
 
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
@@ -60,6 +60,7 @@ export default function DockerMenuButton(props: any) {
         opened={opened}
         onClose={() => setOpened(false)}
         padding="xl"
+        position="right"
         size="full"
         title={<ContainerActionBar selected={selection} reload={reload} />}
       >

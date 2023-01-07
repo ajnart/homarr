@@ -52,11 +52,13 @@ export type ConfigAppIntegrationType = Omit<AppIntegrationType, 'properties'> & 
 };
 
 export type AppIntegrationPropertyType = {
-  type: 'private' | 'public';
+  type: AppIntegrationPropertyAccessabilityType;
   field: IntegrationField;
   value?: string | null;
   isDefined: boolean;
 };
+
+export type AppIntegrationPropertyAccessabilityType = 'private' | 'public';
 
 type ConfigAppIntegrationPropertyType = Omit<AppIntegrationPropertyType, 'isDefined'>;
 

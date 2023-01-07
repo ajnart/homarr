@@ -18,7 +18,7 @@ export const BitTorrrentQueueItem = ({ torrent }: BitTorrentQueueItemProps) => {
   return (
     <tr key={torrent.id}>
       <td>
-        <Tooltip position="top" label={torrent.name}>
+        <Tooltip position="top" withinPortal label={torrent.name}>
           <Text
             style={{
               maxWidth: '30vw',

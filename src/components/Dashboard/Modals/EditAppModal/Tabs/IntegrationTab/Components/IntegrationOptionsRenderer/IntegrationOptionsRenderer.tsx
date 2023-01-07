@@ -45,6 +45,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
         const formValue = form.values.integration?.properties[indexInFormValue];
 
         const isPresent = formValue?.isDefined;
+        const accessabilityType = formValue?.type;
 
         if (!definition) {
           return (
@@ -57,6 +58,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
               secretIsPresent={isPresent}
               setIcon={IconKey}
               value={formValue.value}
+              type={accessabilityType}
               {...form.getInputProps(`integration.properties.${index}.value`)}
             />
           );
@@ -72,6 +74,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
             value=""
             secretIsPresent={isPresent}
             setIcon={definition.icon}
+            type={accessabilityType}
             {...form.getInputProps(`integration.properties.${index}.value`)}
           />
         );

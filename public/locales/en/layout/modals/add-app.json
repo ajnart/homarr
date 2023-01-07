@@ -46,11 +46,17 @@
 		"type": {
 			"label": "Integration configuration",
 			"description": "Treats this app as the selected integration and provides you with per-app configuration",
-			"placeholder": "Select an integration"
+			"placeholder": "Select an integration",
+			"defined": "Defined",
+			"undefined": "Undefined",
+			"public": "Public",
+			"private": "Private",
+			"explanationPublic": "A private secret will be sent to the server. Once your browser has refreshed the page, it will never be sent to the client.",
+			"explanationPrivate": "A public secret will always be sent to the client and is accessible over the API. It should not contain any confidential values such as usernames, passwords, tokens, certificates and similar"
 		},
 		"secrets": {
 			"description": "To update a secret, enter a value and click the save button. To remove a secret, use the clear button.",
-			"warning": "Please note that Homarr removes secrets from the configuration for security reasons. Thus, you can only either define or unset any credentials. Your credentials act as the main access for your integrations and you should <strong>never</strong> share them with anybody else. Make sure to <strong>store and manage your secrets safely</strong>.",
+			"warning": "Your credentials act as the access for your integrations and you should <strong>never</strong> share them with anybody else. The official Homarr team will never ask for credentials. Make sure to <strong>store and manage your secrets safely</strong>.",
 			"clear": "Clear secret",
 			"save": "Save secret",
 			"update": "Update secret"

@@ -1,5 +1,6 @@
 import { useModals } from '@mantine/modals';
-import { TablerIcon } from '@tabler/icons';
+import { showNotification } from '@mantine/notifications';
+import { IconChecks, TablerIcon } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../../../config/provider';
 import { useConfigStore } from '../../../../../../config/store';
@@ -83,8 +84,13 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
       true,
       !isEditMode
     );
-
     closeModal('selectElement');
+    showNotification({
+      title: t('descriptor.name'),
+      message: t('descriptor.description'),
+      icon: <IconChecks stroke={1.5} />,
+      color: 'teal',
+    });
   };
 
   return (

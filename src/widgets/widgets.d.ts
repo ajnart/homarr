@@ -1,6 +1,5 @@
-import { IconSun, TablerIcon } from '@tabler/icons';
+import { TablerIcon } from '@tabler/icons';
 import React from 'react';
-import { BaseTileProps } from '../components/Dashboard/Tiles/type';
 
 // Type of widgets which are safed to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {
@@ -32,6 +31,7 @@ export type IWidgetOptionValue =
   | IMultiSelectOptionValue
   | ISwitchOptionValue
   | ITextInputOptionValue
+  | ISliderInputOptionValue
   | INumberInputOptionValue;
 
 // will show a multi-select with specified data
@@ -56,7 +56,16 @@ export type ITextInputOptionValue = {
 // will show a number-input
 export type INumberInputOptionValue = {
   type: 'number';
-  defaultValue: string;
+  defaultValue: number;
+};
+
+// will show a slider-input
+export type ISliderInputOptionValue = {
+  type: 'slider';
+  defaultValue: number;
+  min: number;
+  max: number;
+  step: number;
 };
 
 // is used to type the widget definitions which will be used to display all widgets

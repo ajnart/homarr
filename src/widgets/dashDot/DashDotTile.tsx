@@ -54,9 +54,11 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { classes } = useDashDotTileStyles();
   const { t } = useTranslation('modules/dashdot');
 
-  const dashDotUrl = widget?.properties.url;
+  const dashDotUrl = widget.properties.url;
 
-  const { data: info } = useDashDotInfo({ dashDotUrl });
+  const { data: info } = useDashDotInfo({
+    dashDotUrl,
+  });
 
   const graphs = widget?.properties.graphs.map((g) => ({
     id: g,
@@ -112,6 +114,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
 const useDashDotInfo = ({ dashDotUrl }: { dashDotUrl: string }) => {
   const { name: configName } = useConfigContext();
   return useQuery({
+    refetchInterval: 50000,
     queryKey: [
       'dashdot/info',
       {

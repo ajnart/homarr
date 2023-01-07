@@ -1,6 +1,8 @@
 {
   "configSelect": {
-    "label": "Config loader"
+    "label": "Config loader",
+    "loadingNew": "Loading your config...",
+    "pleaseWait": "Please wait until your new config is loaded"
   },
   "modal": {
     "title": "Choose the name of your new config",

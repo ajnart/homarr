@@ -17,7 +17,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       } else if (error.code === 'ECONNABORTED') {
         res.status(408).json('Request Timeout');
       } else {
-        res.status(500).json('Server Error');
+        res.status(error.response ? error.response.status : 500).json('Server Error');
       }
     });
   // // Make a request to the URL

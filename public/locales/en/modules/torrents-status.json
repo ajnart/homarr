@@ -4,6 +4,9 @@
     "description": "Displays a list of the torrent which are currently downloading",
     "settings": {
       "title": "Settings for BitTorrent integration",
+      "refreshInterval": {
+        "label": "Refresh interval (in seconds)"
+      },
       "displayCompletedTorrents": {
         "label": "Display completed torrents"
       },

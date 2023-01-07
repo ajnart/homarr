@@ -36,7 +36,7 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       label: 'Transmission',
     },
     {
-      value: 'qbittorrent',
+      value: 'qBittorrent',
       image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/qbittorrent.png',
       label: 'qBittorrent',
     },
@@ -100,16 +100,20 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       placeholder={t('integration.type.placeholder')}
       itemComponent={SelectItemComponent}
       data={data}
-      maxDropdownHeight={150}
+      maxDropdownHeight={250}
       dropdownPosition="bottom"
       clearable
       variant="default"
       searchable
+      filter={(value, item) =>
+        item.label?.toLowerCase().includes(value.toLowerCase().trim()) ||
+        item.description?.toLowerCase().includes(value.toLowerCase().trim())
+      }
       icon={
         form.values.integration?.type && (
           <img
             src={data.find((x) => x.value === form.values.integration?.type)?.image}
-            alt="test"
+            alt="integration"
             width={20}
             height={20}
           />
@@ -119,6 +123,7 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
         form.setFieldValue('integration.properties', getNewProperties(value));
         inputProps.onChange(value);
       }}
+      withinPortal
       {...inputProps}
     />
   );
@@ -126,17 +131,23 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
 
 interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
   image: string;
+  description: string;
   label: string;
 }
 
 const SelectItemComponent = forwardRef<HTMLDivElement, ItemProps>(
-  ({ image, label, ...others }: ItemProps, ref) => (
+  ({ image, label, description, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
         <img src={image} alt="integration icon" width={20} height={20} />
 
         <div>
           <Text size="sm">{label}</Text>
+          {description && (
+            <Text size="xs" color="dimmed">
+              {description}
+            </Text>
+          )}
         </div>
       </Group>
     </div>

@@ -45,13 +45,21 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
               (previousProperty) => previousProperty.field === property.field
             );
 
+            if (property.value !== undefined && property.value !== null) {
+              Consola.info(
+                'Detected credential change of private secret. Value will be overwritten in configuration'
+              );
+              return {
+                field: property.field,
+                type: property.type,
+                value: property.value,
+              };
+            }
+
             return {
               field: property.field,
               type: property.type,
-              value:
-                property.value !== undefined || property.value === null
-                  ? property.value
-                  : previousProperty?.value,
+              value: previousProperty?.value,
             };
           }),
         },
