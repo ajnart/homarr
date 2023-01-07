@@ -4,7 +4,6 @@ import { AppIntegrationType, AppType, IntegrationType } from '../../types/app';
 import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
 import { ConfigType } from '../../types/config';
-import widgets from '../../widgets';
 import { IBitTorrent } from '../../widgets/bitTorrent/BitTorrentTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
 import { IDateWidget } from '../../widgets/date/DateTile';

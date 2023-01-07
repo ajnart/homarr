@@ -104,12 +104,12 @@ export const useGridstack = (
 
           currentItem.shape[shapeSize] = {
             location: {
-              x: changedNode.x ?? currentItem.shape[shapeSize].location.x,
-              y: changedNode.y ?? currentItem.shape[shapeSize].location.y,
+              x: changedNode.x!,
+              y: changedNode.y!,
             },
             size: {
-              width: changedNode.w ?? currentItem.shape[shapeSize].size.width,
-              height: changedNode.h ?? currentItem.shape[shapeSize].size.height,
+              width: changedNode.w!,
+              height: changedNode.h!,
             },
           };
 
@@ -170,12 +170,12 @@ export const useGridstack = (
 
             currentItem.shape[shapeSize] = {
               location: {
-                x: addedNode.x ?? currentItem.shape[shapeSize].location.x,
-                y: addedNode.y ?? currentItem.shape[shapeSize].location.y,
+                x: addedNode.x!,
+                y: addedNode.y!,
               },
               size: {
-                width: addedNode.w ?? currentItem.shape[shapeSize].size.width,
-                height: addedNode.h ?? currentItem.shape[shapeSize].size.height,
+                width: addedNode.w!,
+                height: addedNode.h!,
               },
             };
 

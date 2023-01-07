@@ -16,6 +16,10 @@ export const ChangeWidgetPositionModal = ({
   const updateConfig = useConfigStore((x) => x.updateConfig);
   const shapeSize = useGridstackStore((x) => x.currentShapeSize);
 
+  if (shapeSize === null) {
+    return null;
+  }
+
   const handleSubmit = (x: number, y: number, width: number, height: number) => {
     if (!configName) {
       return;
@@ -59,10 +63,10 @@ export const ChangeWidgetPositionModal = ({
       onCancel={handleCancel}
       heightData={heightData}
       widthData={widthData}
-      initialX={innerProps.widget.shape[shapeSize].location.x}
-      initialY={innerProps.widget.shape[shapeSize].location.y}
-      initialWidth={innerProps.widget.shape[shapeSize].size.width}
-      initialHeight={innerProps.widget.shape[shapeSize].size.height}
+      initialX={innerProps.widget.shape[shapeSize]?.location.x}
+      initialY={innerProps.widget.shape[shapeSize]?.location.y}
+      initialWidth={innerProps.widget.shape[shapeSize]?.size.width}
+      initialHeight={innerProps.widget.shape[shapeSize]?.size.height}
     />
   );
 };

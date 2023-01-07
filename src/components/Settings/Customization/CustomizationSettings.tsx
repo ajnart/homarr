@@ -1,4 +1,4 @@
-import { Button, ScrollArea, Stack } from '@mantine/core';
+import { ScrollArea, Stack } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../config/provider';
