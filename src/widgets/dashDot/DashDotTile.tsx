@@ -60,13 +60,13 @@ function DashDotTile({ widget }: DashDotTileProps) {
     dashDotUrl,
   });
 
-  const graphs = widget?.properties.graphs.map((g) => ({
-    id: g,
-    name: t(`card.graphs.${g}.title`),
-    twoSpan: ['network', 'gpu'].includes(g),
+  const graphs = widget?.properties.graphs.map((graph) => ({
+    id: graph,
+    name: t(`card.graphs.${graph}.title`),
+    twoSpan: ['network', 'gpu'].includes(graph),
     isMultiView:
-      (g === 'cpu' && widget.properties.cpuMultiView) ||
-      (g === 'storage' && widget.properties.storageMultiView),
+      (graph === 'cpu' && widget.properties.cpuMultiView) ||
+      (graph === 'storage' && widget.properties.storageMultiView),
   }));
 
   const heading = (

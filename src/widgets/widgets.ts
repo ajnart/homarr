@@ -1,5 +1,7 @@
 import { TablerIcon } from '@tabler/icons';
 import React from 'react';
+import { AreaType } from '../types/area';
+import { ShapeType } from '../types/shape';
 
 // Type of widgets which are safed to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {

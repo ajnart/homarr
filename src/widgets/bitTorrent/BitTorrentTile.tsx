@@ -44,7 +44,7 @@ const definition = defineWidget({
     },
     refreshInterval: {
       type: 'slider',
-      defaultValue: 1,
+      defaultValue: 10,
       min: 1,
       max: 60,
       step: 1,
