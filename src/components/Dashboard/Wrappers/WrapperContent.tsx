@@ -34,8 +34,8 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
             key={app.id}
             itemRef={refs.items.current[app.id]}
             {...tile}
-            {...app.shape[shapeSize]?.location}
-            {...app.shape[shapeSize]?.size}
+            {...(app.shape[shapeSize]?.location ?? {})}
+            {...(app.shape[shapeSize]?.size ?? {})}
           >
             <TileComponent className="grid-stack-item-content" app={app} />
           </GridstackTileWrapper>

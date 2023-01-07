@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { ReactNode, RefObject } from 'react';
+import widgets from '../../../widgets';
 
 interface GridstackTileWrapperProps {
   id: string;
@@ -29,25 +30,46 @@ export const GridstackTileWrapper = ({
   maxHeight,
   children,
   itemRef,
-}: GridstackTileWrapperProps) => (
-  <div
-    className="grid-stack-item"
-    data-type={type}
-    data-id={id}
-    gs-x={x}
-    data-gridstack-x={x}
-    gs-y={y}
-    data-gridstack-y={y}
-    gs-w={width}
-    data-gridstack-w={width}
-    gs-h={height}
-    data-gridstack-h={height}
-    gs-min-w={minWidth}
-    gs-min-h={minHeight}
-    gs-max-w={maxWidth}
-    gs-max-h={maxHeight}
-    ref={itemRef}
-  >
-    {children}
-  </div>
-);
+}: GridstackTileWrapperProps) => {
+  const locationProperties = useLocationProperties(x, y);
+  const normalizedWidth = width ?? minWidth;
+
+  const normalizedHeight = height ?? minHeight;
+
+  return (
+    <div
+      className="grid-stack-item"
+      data-type={type}
+      data-id={id}
+      {...locationProperties}
+      gs-w={normalizedWidth}
+      data-gridstack-w={normalizedWidth}
+      gs-h={normalizedHeight}
+      data-gridstack-h={normalizedHeight}
+      gs-min-w={minWidth}
+      gs-min-h={minHeight}
+      gs-max-w={maxWidth}
+      gs-max-h={maxHeight}
+      ref={itemRef}
+    >
+      {children}
+    </div>
+  );
+};
+
+const useLocationProperties = (x: number | undefined, y: number | undefined) => {
+  const isLocationDefined = x !== undefined && y !== undefined;
+
+  if (!isLocationDefined) {
+    return {
+      'gs-auto-position': 'true',
+    };
+  }
+
+  return {
+    'gs-x': x.toString(),
+    'data-gridstack-x': x.toString(),
+    'gs-y': y.toString(),
+    'data-gridstack-y': y.toString(),
+  };
+};

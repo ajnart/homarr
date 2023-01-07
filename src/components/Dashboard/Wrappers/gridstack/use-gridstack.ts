@@ -6,7 +6,7 @@ import { AppType } from '../../../../types/app';
 import { AreaType } from '../../../../types/area';
 import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
-import { initializeGridstack } from './init-gridstack';
+import { initializeGridstack, TileWithUnknownLocation } from './init-gridstack';
 import { useGridstackStore, useWrapperColumnCount } from './store';
 
 interface UseGristackReturnType {
@@ -232,6 +232,7 @@ export const useGridstack = (
 
   // initialize the gridstack
   useEffect(() => {
+    const tilesWithUnknownLocation: TileWithUnknownLocation[] = [];
     initializeGridstack(
       areaType,
       wrapperRef,
@@ -243,11 +244,62 @@ export const useGridstack = (
       isEditMode,
       wrapperColumnCount,
       shapeSize,
+      tilesWithUnknownLocation,
       {
         onChange,
         onAdd,
       }
     );
+    if (!configName) return;
+    updateConfig(configName, (prev) => ({
+      ...prev,
+      apps: prev.apps.map((app) => {
+        const currentUnknownLocation = tilesWithUnknownLocation.find(
+          (x) => x.type === 'app' && x.id === app.id
+        );
+        if (!currentUnknownLocation) return app;
+
+        return {
+          ...app,
+          shape: {
+            ...app.shape,
+            [shapeSize]: {
+              location: {
+                x: currentUnknownLocation.x,
+                y: currentUnknownLocation.y,
+              },
+              size: {
+                width: currentUnknownLocation.w,
+                height: currentUnknownLocation.h,
+              },
+            },
+          },
+        };
+      }),
+      widgets: prev.widgets.map((widget) => {
+        const currentUnknownLocation = tilesWithUnknownLocation.find(
+          (x) => x.type === 'widget' && x.id === widget.id
+        );
+        if (!currentUnknownLocation) return widget;
+
+        return {
+          ...widget,
+          shape: {
+            ...widget.shape,
+            [shapeSize]: {
+              location: {
+                x: currentUnknownLocation.x,
+                y: currentUnknownLocation.y,
+              },
+              size: {
+                width: currentUnknownLocation.w,
+                height: currentUnknownLocation.h,
+              },
+            },
+          },
+        };
+      }),
+    }));
   }, [items, wrapperRef.current, widgets, wrapperColumnCount]);
 
   return {

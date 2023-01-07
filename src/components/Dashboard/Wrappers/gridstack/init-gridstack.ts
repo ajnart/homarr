@@ -1,4 +1,4 @@
-import { GridStack, GridStackNode } from 'fily-publish-gridstack';
+import { GridItemHTMLElement, GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
 import { AppType } from '../../../../types/app';
 import { ShapeType } from '../../../../types/shape';
@@ -15,6 +15,7 @@ export const initializeGridstack = (
   isEditMode: boolean,
   wrapperColumnCount: 3 | 6 | 12,
   shapeSize: 'sm' | 'md' | 'lg',
+  tilesWithUnknownLocation: TileWithUnknownLocation[],
   events: {
     onChange: (changedNode: GridStackNode) => void;
     onAdd: (addedNode: GridStackNode) => void;
@@ -68,11 +69,25 @@ export const initializeGridstack = (
     const item = itemRefs.current[id]?.current;
     setAttributesFromShape(item, shape[shapeSize]);
     item && grid.makeWidget(item as HTMLDivElement);
+    if (!shape[shapeSize] && item) {
+      const gridItemElement = item as GridItemHTMLElement;
+      if (gridItemElement.gridstackNode) {
+        const { x, y, w, h } = gridItemElement.gridstackNode;
+        tilesWithUnknownLocation.push({ x, y, w, h, type: 'app', id });
+      }
+    }
   });
   widgets.forEach(({ id, shape }) => {
     const item = itemRefs.current[id]?.current;
     setAttributesFromShape(item, shape[shapeSize]);
     item && grid.makeWidget(item as HTMLDivElement);
+    if (!shape[shapeSize] && item) {
+      const gridItemElement = item as GridItemHTMLElement;
+      if (gridItemElement.gridstackNode) {
+        const { x, y, w, h } = gridItemElement.gridstackNode;
+        tilesWithUnknownLocation.push({ x, y, w, h, type: 'widget', id });
+      }
+    }
   });
   grid.batchUpdate(false);
 };
@@ -84,3 +99,12 @@ function setAttributesFromShape(ref: HTMLDivElement | null, sizedShape: ShapeTyp
   ref.setAttribute('gs-w', sizedShape.size.width.toString());
   ref.setAttribute('gs-h', sizedShape.size.height.toString());
 }
+
+export type TileWithUnknownLocation = {
+  x?: number;
+  y?: number;
+  w?: number;
+  h?: number;
+  type: 'app' | 'widget';
+  id: string;
+};

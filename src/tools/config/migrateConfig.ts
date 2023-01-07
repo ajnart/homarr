@@ -34,9 +34,9 @@ export function migrateConfig(config: Config): ConfigType {
       },
       customization: {
         colors: {
-          primary: config.settings.primaryColor,
-          secondary: config.settings.secondaryColor,
-          shade: config.settings.primaryShade,
+          primary: config.settings.primaryColor ?? 'red',
+          secondary: config.settings.secondaryColor ?? 'orange',
+          shade: config.settings.primaryShade ?? 7,
         },
         layout: {
           enabledDocker: config.modules.docker?.enabled ?? false,
@@ -60,7 +60,7 @@ export function migrateConfig(config: Config): ConfigType {
 
     if (!categoryName) {
       newConfig.apps.push(
-        migrateService(service, index, {
+        migrateService(service, {
           type: 'wrapper',
           properties: {
             id: 'default',
@@ -77,7 +77,7 @@ export function migrateConfig(config: Config): ConfigType {
     }
 
     newConfig.apps.push(
-      migrateService(service, index, { type: 'category', properties: { id: category.id } })
+      migrateService(service, { type: 'category', properties: { id: category.id } })
     );
   });
 
@@ -114,11 +114,7 @@ const getShapeForColumnCount = (index: number, columnCount: number) => ({
   },
 });
 
-const migrateService = (
-  oldService: serviceItem,
-  serviceIndex: number,
-  areaType: AreaType
-): AppType => ({
+const migrateService = (oldService: serviceItem, areaType: AreaType): AppType => ({
   id: uuidv4(),
   name: oldService.name,
   url: oldService.url,
@@ -135,11 +131,7 @@ const migrateService = (
   },
   integration: migrateIntegration(oldService),
   area: areaType,
-  shape: {
-    lg: getShapeForColumnCount(serviceIndex, 12),
-    md: getShapeForColumnCount(serviceIndex, 6),
-    sm: getShapeForColumnCount(serviceIndex, 3),
-  },
+  shape: {},
 });
 
 const migrateModules = (config: Config): IWidget<string, any>[] => {

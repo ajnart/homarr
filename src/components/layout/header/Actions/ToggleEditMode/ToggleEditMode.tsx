@@ -20,16 +20,14 @@ export const ToggleEditModeAction = () => {
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
 
-  useEffect(() => {
-    if (enabled || config === undefined || config?.schemaVersion === undefined) return;
-    const configName = getCookie('config-name')?.toString() ?? 'default';
-    axios.put(`/api/configs/${configName}`, { ...config });
-    Consola.log('Saved config to server', configName);
-  }, [enabled]);
-
   const toggleButtonClicked = () => {
     toggleEditMode();
-    if (!enabled) {
+    if (enabled || config === undefined || config?.schemaVersion === undefined) {
+      const configName = getCookie('config-name')?.toString() ?? 'default';
+      axios.put(`/api/configs/${configName}`, { ...config });
+      Consola.log('Saved config to server', configName);
+      hideNotification('toggle-edit-mode');
+    } else if (!enabled) {
       showNotification({
         styles: (theme) => ({
           root: {
