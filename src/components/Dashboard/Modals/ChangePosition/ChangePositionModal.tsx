@@ -4,10 +4,10 @@ import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
 
 interface ChangePositionModalProps {
-  initialX: number;
-  initialY: number;
-  initialWidth: number;
-  initialHeight: number;
+  initialX?: number;
+  initialY?: number;
+  initialWidth?: number;
+  initialHeight?: number;
   widthData: SelectItem[];
   heightData: SelectItem[];
   onSubmit: (x: number, y: number, width: number, height: number) => void;
@@ -28,10 +28,10 @@ export const ChangePositionModal = ({
 
   const form = useForm<FormType>({
     initialValues: {
-      x: initialX,
-      y: initialY,
-      width: initialWidth,
-      height: initialHeight,
+      x: initialX ?? null,
+      y: initialY ?? null,
+      width: initialWidth?.toString() ?? '',
+      height: initialHeight?.toString() ?? '',
     },
     validateInputOnChange: true,
     validateInputOnBlur: true,
@@ -42,7 +42,12 @@ export const ChangePositionModal = ({
       return;
     }
 
-    onSubmit(form.values.x, form.values.y, form.values.width, form.values.height);
+    const width = parseInt(form.values.width, 10);
+    const height = parseInt(form.values.height, 10);
+
+    if (!form.values.x || !form.values.y || Number.isNaN(width) || Number.isNaN(height)) return;
+
+    onSubmit(form.values.x, form.values.y, width, height);
   };
 
   const { t } = useTranslation(['layout/modals/change-position', 'common']);
@@ -112,8 +117,8 @@ export const ChangePositionModal = ({
 };
 
 type FormType = {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
+  x: number | null;
+  y: number | null;
+  width: string;
+  height: string;
 };

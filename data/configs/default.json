@@ -195,67 +195,6 @@
       }
     },
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
-      "name": "Discord",
-      "url": "https://discord.com/invite/aCsmEV5RgA",
-      "behaviour": {
-        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
-        "isOpeningNewTab": true,
-        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 4
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
       "name": "Donate",
       "url": "https://ko-fi.com/ajnart",
@@ -308,67 +247,6 @@
           "location": {
             "x": 1,
             "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
-      "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 10
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 10
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 3,
-            "y": 1
           },
           "size": {
             "width": 1,
@@ -433,6 +311,128 @@
       "integration": {
         "type": null,
         "properties": []
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
+      "name": "Discord",
+      "url": "https://discord.com/invite/aCsmEV5RgA",
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/discord.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 3
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33a",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 10
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
       }
     }
   ],

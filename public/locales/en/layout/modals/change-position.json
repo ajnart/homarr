@@ -4,5 +4,5 @@
 	"height": "Height",
 	"yPosition": "Y axis position",
 	"zeroOrHigher": "0 or higher",
-	"betweenXandY": "Between {{mim}} and {{max}}"
+	"betweenXandY": "Between {{min}} and {{max}}"
 }
