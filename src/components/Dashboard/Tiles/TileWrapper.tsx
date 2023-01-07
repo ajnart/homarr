@@ -33,7 +33,6 @@ export const GridstackTileWrapper = ({
 }: GridstackTileWrapperProps) => {
   const locationProperties = useLocationProperties(x, y);
   const normalizedWidth = width ?? minWidth;
-
   const normalizedHeight = height ?? minHeight;
 
   return (
