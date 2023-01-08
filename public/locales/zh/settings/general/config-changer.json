@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "配置加载器"
+    "label": "配置加载器",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "选择你的新配置的名称",
     "form": {
       "configName": {
         "label": "配置名称",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "你的新配置名称"
       },
       "submitButton": "确认"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "配置已保存",
         "message": "配置保存为 {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "在这里拖动文件来上传配置。只支持JSON。"
     },
     "reject": {
+      "title": "",
       "text": "不支持这种文件格式。请只上传JSON。"
     }
   }
