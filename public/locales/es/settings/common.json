@@ -13,17 +13,17 @@
   },
   "grow": "Aumentar cuadrícula (toma todo el espacio)",
   "layout": {
-    "title": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "title": "Diseño del dashboard",
+    "main": "Principal",
+    "sidebar": "Barra lateral",
+    "cannotturnoff": "No puede ser apagado",
+    "dashboardlayout": "Diseño del dashboard",
+    "enablersidebar": "Habilitar barra lateral derecha",
+    "enablelsidebar": "Habilitar barra lateral izquierda",
+    "enablesearchbar": "Habilitar barra de búsqueda",
+    "enabledocker": "Habilitar integración docker",
+    "enableping": "Habilitar pings",
+    "enablelsidebardesc": "Opcional. Solo puede usarse con apps e integraciones",
+    "enablersidebardesc": "Opcional. Solo puede usarse con apps e integraciones"
   }
 }
