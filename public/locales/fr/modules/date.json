@@ -3,7 +3,7 @@
     "name": "Date",
     "description": "Affiche l'heure et la date actuelle dans un module",
     "settings": {
-      "title": "",
+      "title": "Paramètres pour le widget de date",
       "display24HourFormat": {
         "label": "Affichage 24 h"
       }
