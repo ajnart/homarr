@@ -11,5 +11,19 @@
   "credits": {
     "madeWithLove": "Hecho con ❤️ por @"
   },
-  "grow": "Aumentar cuadrícula (toma todo el espacio)"
+  "grow": "Aumentar cuadrícula (toma todo el espacio)",
+  "layout": {
+    "title": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "",
+    "enablelsidebar": "",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "",
+    "enablelsidebardesc": "",
+    "enablersidebardesc": ""
+  }
 }
