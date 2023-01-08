@@ -5,10 +5,14 @@
     "placeholderTip": "%s peut être utilisé en tant que placeholder pour la requête."
   },
   "customEngine": {
+    "title": "",
     "label": "URL de la requête",
     "placeholder": "URL de requête personnalisée"
   },
   "searchNewTab": {
     "label": "Ouvrir les résultats de la recherche dans un nouvel onglet"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
