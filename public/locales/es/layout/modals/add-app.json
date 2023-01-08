@@ -23,43 +23,43 @@
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Abrir en nueva pestaña",
-			"description": ""
+			"description": "Abrir enlace en nueva pestaña"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Verificador de estado",
+			"description": "Enviar una petición HTTP/HTTPS para comprobar si tu app está en línea"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Códigos HTTP de estado",
+			"description": "Determina qué códigos de respuesta están permitidos para la app para que ésta esté 'Online'"
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "Icono App",
+			"description": "Logo de tu app mostrar en el dashboard. (Debe devolver un body content que tenga una imagen)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "Configuración de integración",
+			"description": "Tratar esta app como la integración seleccionada, y proporcionar una configuración por aplicación",
+			"placeholder": "Seleccionar una integración",
+			"defined": "Definido",
+			"undefined": "Sin definir",
+			"public": "Público",
+			"private": "Privado",
+			"explanationPublic": "Una clave privada será enviada al servidor. Una vez tu navegador haya refrescado la página, ésta nunca será enviada al cliente.",
+			"explanationPrivate": "Una clave privada siempre será enviada al cliente, y será accesible a través de la API. Ésta no debe contenedor información confidenciales, como: nombres de usuario, contraseñas, tokens, certificados o similar"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Para actualizar una clave, introducir un valor y pulsar el botón guardar. Para eliminar una clave, usa el botón limpiar.",
+			"warning": "Tus credenciales actúan como el acceso para tus integraciones, y <strong>nunca</strong> debes compartírlas con nadie. El equipo oficial de Homarr nunca te preguntará sobre ellas. Asegúrate de <strong>guardar y administrar tus claves de manera segura</strong>.",
+			"clear": "Limpiar clave",
+			"save": "Guardar clave",
+			"update": "Actualizar clave"
 		}
 	}
 }
