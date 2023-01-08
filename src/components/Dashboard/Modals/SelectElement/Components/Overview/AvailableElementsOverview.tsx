@@ -10,7 +10,6 @@ import { useConfigContext } from '../../../../../../config/provider';
 import { useConfigStore } from '../../../../../../config/store';
 import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../../../../../types/app';
-import { appTileDefinition } from '../../../../Tiles/Apps/AppTile';
 import { CategoryEditModalInnerProps } from '../../../../Wrappers/Category/CategoryEditModal';
 import { useStyles } from '../Shared/styles';
 

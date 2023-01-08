@@ -37,10 +37,9 @@ import {
   IconSun,
 } from '@tabler/icons';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 import { Logo } from '../components/layout/Logo';
 import { usePrimaryGradient } from '../components/layout/useGradient';
-import { backendMigrateConfig } from '../tools/config/backendMigrateConfig';
-import axios from 'axios';
 
 const useStyles = createStyles((theme) => ({
   root: {

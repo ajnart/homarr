@@ -17,7 +17,7 @@ export async function getServerSideProps({
   res,
   locale,
 }: GetServerSidePropsContext): Promise<{ props: DashboardServerSideProps }> {
-    // Get all the configs in the /data/configs folder
+  // Get all the configs in the /data/configs folder
   // All the files that end in ".json"
   const configs = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
 

@@ -4,7 +4,6 @@ import { ActionIcon, Button, Group, Title, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
-import { useEffect } from 'react';
 import { hideNotification, showNotification } from '@mantine/notifications';
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
