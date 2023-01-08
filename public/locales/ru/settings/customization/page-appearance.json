@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Название страницы",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Логотип"
