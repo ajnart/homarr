@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Ajouter une tuile",
+        "text": "Les tuiles sont l'élément principal d'Homarr. Elles vous permettent de configurer le tableau de bord et d'afficher les informations que vous souhaitez."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Les widgets interagissent avec vos applications, pour vous permettre de mieux les contrôler. Ils nécessitent généralement quelques configurations avant d'être utilisés.",
+    "goBack": "Retourner à la page précédente",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Ajouter une tuile"
     }
 }
