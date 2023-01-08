@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "BitTorrent",
+    "description": "Visar en lista över torrents som just nu laddas ner",
     "settings": {
-      "title": "",
+      "title": "Inställningar för BitTorrent integration",
       "refreshInterval": {
-        "label": ""
+        "label": "Uppdateringsfrekvens (sekunder)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Visa slutförda torrents"
       },
       "displayStaleTorrents": {
         "label": ""
@@ -43,8 +43,8 @@
         "text": "Lägg till en nedladdningstjänst för att visa dina aktuella nedladdningar"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Ett oväntat fel uppstod",
+        "text": "Homarr kunde inte kommunicera med dina nedladdningsklienter. Kontrollera din konfiguration"
       }
     },
     "loading": {
