@@ -1,10 +1,10 @@
 {
     "fallback": {
-        "title": ""
+        "title": "Je hebt momenteel geen tools"
     },
     "iconPicker": {
-        "textInputPlaceholder": "",
-        "searchLimitationTitle": "",
-        "searchLimitationMessage": ""
+        "textInputPlaceholder": "Zoek naar iconen...",
+        "searchLimitationTitle": "Zoeken is beperkt tot {{max}} iconen",
+        "searchLimitationMessage": "Om alles snel en vlot te laten verlopen, is de zoekopdracht beperkt tot {{max}} iconen. Gebruik het zoekvak om meer iconen te vinden"
     }
 }
