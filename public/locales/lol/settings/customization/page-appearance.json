@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Paeg Titel",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Logooo"
