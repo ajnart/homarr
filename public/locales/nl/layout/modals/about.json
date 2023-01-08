@@ -1,1 +1,7 @@
-{}
+{
+	"description": "Homarr is een <strong>eenvoudige</strong> en <strong>moderne</strong> startpagina voor uw server die u helpt al uw apps op één plaats te benaderen. Het integreert met de apps die je gebruikt om nuttige informatie weer te geven of ze te besturen. Het is eenvoudig te installeren en ondersteunt veel verschillende apparaten.",
+	"i18n": "\"I18n translation namespaces\" geladen",
+	"locales": "\"I18n locales\" geconfigureerd",
+	"contact": "Problemen of vragen? Neem contact met ons op!",
+	"addToDashboard": "Aan dashboard toevoegen"
+}
