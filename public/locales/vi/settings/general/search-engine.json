@@ -5,10 +5,14 @@
     "placeholderTip": "%s có thể được sử dụng làm phần giữ chỗ cho truy vấn."
   },
   "customEngine": {
+    "title": "",
     "label": "URL truy vấn",
     "placeholder": "URL truy vấn tuỳ chỉnh"
   },
   "searchNewTab": {
     "label": "Mở kết quả tìm kiếm trong tab mới"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
