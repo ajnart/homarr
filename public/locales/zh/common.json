@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "保存"
+  "save": "",
+  "about": "",
+  "cancel": "取消",
+  "close": "",
+  "delete": "删除",
+  "ok": "",
+  "edit": "编辑",
+  "version": "",
+  "changePosition": "",
+  "remove": "移除",
+  "sections": {
+    "settings": "设置",
+    "dangerZone": "危险操作"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "用户名",
+    "password": "密码"
   },
   "tip": "提示。 ",
   "time": {
