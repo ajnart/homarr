@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "保存"
+  "save": "",
+  "about": "",
+  "cancel": "キャンセル",
+  "close": "",
+  "delete": "削除",
+  "ok": "",
+  "edit": "編集",
+  "version": "",
+  "changePosition": "",
+  "remove": "削除",
+  "sections": {
+    "settings": "設定",
+    "dangerZone": "デンジャーゾーン"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "ユーザー名",
+    "password": "パスワード"
   },
   "tip": "ヒント ",
   "time": {
