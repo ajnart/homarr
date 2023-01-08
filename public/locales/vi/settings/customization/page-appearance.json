@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "Tiêu đề trang",
-    "placeholder": ""
+    "label": "Tiêu đề trang"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "logo": {
     "label": "Logo"
