@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "설정 불러오기"
+    "label": "설정 불러오기",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "새로운 설정의 이름을 입력하세요",
     "form": {
       "configName": {
         "label": "설정 이름",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "새로운 설정 이름"
       },
       "submitButton": "확인"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "설정 저장됨",
         "message": "{{configName}} 로 설정 저장됨"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "구성을 업로드하려면 여기로 파일을 드래그하세요. JSON 형식만 지원합니다."
     },
     "reject": {
+      "title": "",
       "text": "이 파일 형식은 지원되지 않습니다. JSON 형식만 업로드하세요."
     }
   }
