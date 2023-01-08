@@ -1,3 +1,4 @@
+/*eslint import/no-cycle: [2, { maxDepth: 1 }]*/
 import {
   Badge,
   Button,
