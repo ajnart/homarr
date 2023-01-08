@@ -27,13 +27,13 @@
   ],
   "apps": [
     {
-      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
+      "name": "Discord",
+      "url": "https://discord.com/invite/aCsmEV5RgA",
       "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
       },
       "network": {
         "enabledStatusChecker": false,
@@ -42,7 +42,7 @@
         ]
       },
       "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/discord.png"
       },
       "integration": {
         "type": null,
@@ -57,18 +57,18 @@
       "shape": {
         "md": {
           "location": {
-            "x": 0,
+            "x": 3,
             "y": 1
           },
           "size": {
-            "width": 2,
+            "width": 3,
             "height": 1
           }
         },
         "sm": {
           "location": {
-            "x": 0,
-            "y": 0
+            "x": 2,
+            "y": 1
           },
           "size": {
             "width": 1,
@@ -77,11 +77,11 @@
         },
         "lg": {
           "location": {
-            "x": 0,
+            "x": 2,
             "y": 1
           },
           "size": {
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         }
@@ -147,13 +147,13 @@
       }
     },
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
-      "name": "Discord",
-      "url": "https://discord.com/invite/aCsmEV5RgA",
+      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
       "behaviour": {
-        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
-        "isOpeningNewTab": true,
-        "externalUrl": "https://discord.com/invite/aCsmEV5RgA"
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
       },
       "network": {
         "enabledStatusChecker": false,
@@ -162,7 +162,7 @@
         ]
       },
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/discord.png"
+        "iconUrl": "/imgs/logo/logo.png"
       },
       "integration": {
         "type": null,
@@ -177,7 +177,7 @@
       "shape": {
         "md": {
           "location": {
-            "x": 4,
+            "x": 0,
             "y": 1
           },
           "size": {
@@ -187,8 +187,8 @@
         },
         "sm": {
           "location": {
-            "x": 2,
-            "y": 1
+            "x": 0,
+            "y": 0
           },
           "size": {
             "width": 1,
@@ -197,11 +197,11 @@
         },
         "lg": {
           "location": {
-            "x": 2,
+            "x": 0,
             "y": 1
           },
           "size": {
-            "width": 1,
+            "width": 2,
             "height": 1
           }
         }
@@ -242,7 +242,7 @@
             "y": 1
           },
           "size": {
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         },
@@ -270,6 +270,50 @@
     }
   ],
   "widgets": [
+    {
+      "id": "date",
+      "properties": {
+        "display24HourFormat": true
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
     {
       "id": "weather",
       "properties": {
@@ -314,50 +358,6 @@
           }
         }
       }
-    },
-    {
-      "id": "date",
-      "properties": {
-        "display24HourFormat": true
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        }
-      }
     }
   ],
   "settings": {
@@ -375,7 +375,7 @@
         "enabledPing": false,
         "enabledSearchbar": true
       },
-      "pageTitle": "Homarr",
+      "pageTitle": "Homarr v0.11  ⭐️",
       "logoImageUrl": "/imgs/logo/logo.png",
       "faviconUrl": "/imgs/logo/logo.png",
       "backgroundImageUrl": "",
@@ -383,7 +383,7 @@
       "colors": {
         "primary": "red",
         "secondary": "yellow",
-        "shade": 4
+        "shade": 7
       },
       "appOpacity": 100
     }
