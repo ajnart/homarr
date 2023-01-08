@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "מודול להצגת הגרפים משירות Dash.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "תצוגת מעבד מרובת ליבות"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "כתובת אתר Dash."
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
