@@ -1,1 +1,8 @@
-{}
+{
+	"xPosition": "Posición eje X",
+	"width": "Ancho",
+	"height": "Altura",
+	"yPosition": "Posición eje Y",
+	"zeroOrHigher": "0 o superior",
+	"betweenXandY": "Entre {{min}} y {{max}}"
+}
