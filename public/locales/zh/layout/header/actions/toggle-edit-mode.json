@@ -1,11 +1,11 @@
 {
-    "description": "",
+    "description": "在编辑模式下，你可以调整瓷砖的大小和位置。",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "进入编辑模式",
+        "enabled": "退出并保存"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "编辑模式已启用",
+        "text": "你现在可以调整和配置你的应用程序。更改是 <strong>，不保存</strong> ，直到你退出编辑模式。"
     }
 }
