@@ -47,7 +47,7 @@ export const GenericSecretInput = ({
     <Card p="xs" withBorder>
       <Grid>
         <Grid.Col className={classes.alignSelfCenter} xs={12} md={6}>
-          <Group spacing="sm">
+          <Group spacing="sm" noWrap>
             <ThemeIcon color={secretIsPresent ? 'green' : 'red'} variant="light" size="lg">
               <Icon size={18} />
             </ThemeIcon>
