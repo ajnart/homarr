@@ -11,7 +11,7 @@
   "remove": "Supprimer",
   "sections": {
     "settings": "Paramètres",
-    "dangerZone": "Attention"
+    "dangerZone": "Zone de danger"
   },
   "secrets": {
     "apiKey": "Clé d'Api",
