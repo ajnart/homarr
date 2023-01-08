@@ -55,7 +55,7 @@ export function migrateConfig(config: Config): ConfigType {
     ],
   };
 
-  config.services.forEach((service, index) => {
+  config.services.forEach((service) => {
     const { category: categoryName } = service;
 
     if (!categoryName) {
@@ -96,23 +96,12 @@ const getConfigAndCreateIfNotExsists = (
   const category: CategoryType = {
     id: uuidv4(),
     name: categoryName,
-    position: 0,
+    position: config.categories.length,
   };
 
   config.categories.push(category);
   return category;
 };
-
-const getShapeForColumnCount = (index: number, columnCount: number) => ({
-  location: {
-    x: index % columnCount,
-    y: Math.floor(index / columnCount),
-  },
-  size: {
-    width: 1,
-    height: 1,
-  },
-});
 
 const migrateService = (oldService: serviceItem, areaType: AreaType): AppType => ({
   id: uuidv4(),
@@ -160,6 +149,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
                 id: 'default',
               },
             },
+            shape: {},
           } as IBitTorrent;
         case 'weather':
           return {
@@ -168,6 +158,13 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
               displayInFahrenheit: oldModule.options?.freedomunit?.value ?? false,
               location: oldModule.options?.location?.value ?? 'Paris',
             },
+            area: {
+              type: 'wrapper',
+              properties: {
+                id: 'default',
+              },
+            },
+            shape: {},
           } as IWeatherWidget;
         case 'dashdot':
         case 'Dash.':
@@ -180,6 +177,13 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
               useCompactView: oldModule.options?.useCompactView?.value ?? false,
               graphs: oldModule.options?.graphs?.value ?? ['cpu', 'ram'],
             },
+            area: {
+              type: 'wrapper',
+              properties: {
+                id: 'default',
+              },
+            },
+            shape: {},
           } as IDashDotTile;
         case 'date':
           return {
@@ -187,12 +191,26 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
             properties: {
               display24HourFormat: oldModule.options?.full?.value ?? true,
             },
+            area: {
+              type: 'wrapper',
+              properties: {
+                id: 'default',
+              },
+            },
+            shape: {},
           } as IDateWidget;
         case 'Download Speed':
         case 'dlspeed':
           return {
             id: uuidv4(),
             properties: {},
+            area: {
+              type: 'wrapper',
+              properties: {
+                id: 'default',
+              },
+            },
+            shape: {},
           } as ITorrentNetworkTraffic;
         default:
           Consola.error(`Failed to map unknown module type ${moduleKey} to new type definitions.`);
