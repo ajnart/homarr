@@ -14,7 +14,7 @@
     "dangerZone": "Zone de danger"
   },
   "secrets": {
-    "apiKey": "Clé d'Api",
+    "apiKey": "Clé d'API",
     "username": "Nom d'utilisateur",
     "password": "Mot de passe"
   },
