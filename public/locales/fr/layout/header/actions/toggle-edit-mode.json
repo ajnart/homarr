@@ -1,11 +1,11 @@
 {
-    "description": "",
+    "description": "En mode édition, vous pouvez ajuster la taille et la position de vos tuiles.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Entrer en mode édition",
+        "enabled": "Quitter et sauvegarder"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Le mode édition est activé",
+        "text": "Vous pouvez ajuster et configurer vos applications maintenant. Les modifications ne sont <strong>pas enregistrées</strong> jusqu'à ce que vous quittiez le mode édition"
     }
 }
