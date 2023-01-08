@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Un module pour afficher les graphiques de votre instance Dash. en cours.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Vue du CPU multi-cœur"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "URL Dash."
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
