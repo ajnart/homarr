@@ -1,11 +1,11 @@
 {
-    "description": "",
+    "description": "En el modo edición, puedes ajustar el tamaño y la posición de tus tarjetas.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Abrir Modo Edición",
+        "enabled": "Salir y Guardar"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Modo edición está activado",
+        "text": "Puedes ajustar y configurar tus apps ahora. Los cambios <strong>no se guardarán</strong> hasta que no salgas del modo edición."
     }
 }
