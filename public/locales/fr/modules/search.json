@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Chercher des films et séries TV avec Overseerr (le module doit-être activé)"
+      "description": "Rechercher des films et séries TV avec Overseerr (le module doit être activé)"
     }
   },
   "tip": "Vous pouvez sélectionner la barre de recherche avec le raccourci ",
