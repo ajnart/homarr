@@ -3,6 +3,7 @@
     "name": "Datum",
     "description": "Prikaz trenutnega časa in datuma na kartici",
     "settings": {
+      "title": "",
       "display24HourFormat": {
         "label": "Prikaz polnega časa (24-urni)"
       }
