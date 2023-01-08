@@ -26,5 +26,6 @@
     }
   },
   "tip": "Iskalno vrstico lahko izberete z bližnjico ",
-  "switchedSearchEngine": "Preklopljen na iskanje s {{searchEngine}}"
+  "switchedSearchEngine": "Preklopljen na iskanje s {{searchEngine}}",
+  "configurationName": ""
 }
