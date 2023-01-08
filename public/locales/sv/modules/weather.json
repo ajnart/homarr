@@ -3,6 +3,7 @@
     "name": "Väder",
     "description": "Se det aktuella vädret på din plats",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Visa i Fahrenheit"
       },
