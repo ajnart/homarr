@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ドッカー",
-    "description": ""
+    "description": "dockerコンテナを簡単に管理できるようになります。"
   },
   "search": {
     "placeholder": "コンテナ名、画像名で検索"
@@ -49,20 +49,20 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "スタート",
+      "end": "開始"
     },
     "stop": {
-      "start": "",
+      "start": "停止",
       "end": "停止中"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "再スタート",
+      "end": "再スタート"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "削除",
+      "end": "削除"
     }
   },
   "errors": {
