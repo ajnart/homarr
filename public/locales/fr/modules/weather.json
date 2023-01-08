@@ -3,7 +3,7 @@
     "name": "Météo",
     "description": "Consultez la météo actuelle dans votre région",
     "settings": {
-      "title": "",
+      "title": "Paramètres pour l'intégration de la météo",
       "displayInFahrenheit": {
         "label": "Affichage en Fahrenheit"
       },
