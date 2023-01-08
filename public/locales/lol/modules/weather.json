@@ -3,6 +3,7 @@
     "name": "Weafr",
     "description": "Look up teh current weafr in ur locashun",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Display in Fahrenheit"
       },
