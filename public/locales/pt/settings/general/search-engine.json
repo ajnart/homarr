@@ -5,10 +5,14 @@
     "placeholderTip": ""
   },
   "customEngine": {
+    "title": "",
     "label": "",
     "placeholder": ""
   },
   "searchNewTab": {
+    "label": ""
+  },
+  "searchEnabled": {
     "label": ""
   }
 }
