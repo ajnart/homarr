@@ -3,6 +3,7 @@
     "name": "מזג אוויר",
     "description": "מציג את מזג האוויר הנוכחי",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "פרנהייט"
       },
