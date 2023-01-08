@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Carica configurazione"
+    "label": "Carica configurazione",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Scegli il nome della nuova configurazione",
     "form": {
       "configName": {
         "label": "Nome configurazione",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "Nuovo nome configurazione"
       },
       "submitButton": "Conferma"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Configurazione salvata",
         "message": "Configurazione salvata come {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "Trascina qui i file per caricare una configurazione. Solo file JSON supportati."
     },
     "reject": {
+      "title": "",
       "text": "Formato file non supportato. Caricare solo file JSON."
     }
   }
