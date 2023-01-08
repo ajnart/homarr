@@ -11,7 +11,6 @@ export const dashboardNamespaces = [
   'settings/general/theme-selector',
   'settings/general/config-changer',
   'settings/general/internationalization',
-  'settings/general/module-enabler',
   'settings/general/search-engine',
   'settings/general/widget-positions',
   'settings/customization/color-selector',
