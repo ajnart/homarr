@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Visa den aktuella nedladdningshastigheten för tjänster som stöds",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Dölj slutförda torrents"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "Inga nedladdningsklienter som stöds hittades!",
         "text": "Lägg till en nedladdningstjänst för att visa dina aktuella nedladdningar"
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Laddar..."
     }
   }
 }
