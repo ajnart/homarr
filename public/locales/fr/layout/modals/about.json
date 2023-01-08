@@ -1,1 +1,7 @@
-{}
+{
+	"description": "Homarr est une page d'accueil <strong>simple</strong> et <strong>moderne</strong> pour votre serveur qui vous aide à accéder à toutes vos applications en un seul endroit. Il s'intègre aux applications que vous utilisez pour afficher des informations utiles ou les contrôler. Il est facile à installer et prend en charge de nombreux appareils différents.",
+	"i18n": "Espaces de traduction I18n chargés",
+	"locales": "Locales I18n configurées",
+	"contact": "Vous avez des problèmes ou des questions ? Communiquez-le nous !",
+	"addToDashboard": "Ajouter au tableau de bord"
+}
