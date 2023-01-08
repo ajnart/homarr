@@ -3,6 +3,7 @@
     "name": "Meteo",
     "description": "Consulta il meteo attuale della propria località",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Mostra in Fahrenheit"
       },
