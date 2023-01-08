@@ -1,18 +1,18 @@
 {
   "title": "Zoekmachine",
   "tips": {
-    "generalTip": "Gebruik de voorvoegsels !yt en !t voor uw zoekopdracht om te zoeken op YouTube of naar een Torrent respectievelijk.",
+    "generalTip": "Gebruik de voorvoegsels !yt en !t voor uw zoekopdracht om respectievelijk op YouTube of naar een Torrent te zoeken.",
     "placeholderTip": "%s kan worden gebruikt als plaatshouder voor de query."
   },
   "customEngine": {
-    "title": "",
+    "title": "Aangepaste zoekmachine",
     "label": "Query URL",
-    "placeholder": "Eigen query URL"
+    "placeholder": "Aangepaste query-URL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Open zoekresultaten in nieuw tabblad"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Zoeken ingeschakeld"
   }
 }
