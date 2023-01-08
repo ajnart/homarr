@@ -3,7 +3,7 @@
     "name": "日期",
     "description": "在卡片中显示当前时间和日期",
     "settings": {
-      "title": "",
+      "title": "日期整合的设置",
       "display24HourFormat": {
         "label": "显示完整时间 (24小时)"
       }
