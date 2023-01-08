@@ -1,10 +1,10 @@
 {
     "fallback": {
-        "title": ""
+        "title": "你目前没有任何工具"
     },
     "iconPicker": {
-        "textInputPlaceholder": "",
-        "searchLimitationTitle": "",
-        "searchLimitationMessage": ""
+        "textInputPlaceholder": "搜索图标...",
+        "searchLimitationTitle": "搜索范围限于 {{max}} 图标",
+        "searchLimitationMessage": "为了保持迅速和快捷，搜索范围仅限于 {{max}} 图标。使用搜索框来寻找更多的图标"
     }
 }
