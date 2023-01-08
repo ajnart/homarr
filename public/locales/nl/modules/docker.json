@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Hiermee kunt u gemakkelijk uw docker containers beheren"
   },
   "search": {
     "placeholder": "Zoek op container of afbeeldingsnaam"
@@ -17,7 +17,7 @@
       "portCollapse": "{{ports}} meer"
     },
     "states": {
-      "running": "Draait",
+      "running": "Actief",
       "created": "Aangemaakt",
       "stopped": "Gestopt",
       "unknown": "Onbekend"
@@ -38,7 +38,7 @@
       "title": "Start"
     },
     "refreshData": {
-      "title": "Gegevens verversen"
+      "title": "Gegevens vernieuwen"
     },
     "remove": {
       "title": "Verwijder"
@@ -49,32 +49,32 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Bezig met starten",
+      "end": "Gestart"
     },
     "stop": {
-      "start": "",
+      "start": "Bezig met Stoppen",
       "end": "Gestopt"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Bezig met herstarten",
+      "end": "Opnieuw gestart"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Bezig met verwijderen",
+      "end": "Verwijderd"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Docker integratie mislukt",
-      "message": "Bent u vergeten de doktersocket te koppelen?"
+      "message": "Bent u vergeten de dokter-socket te koppelen?"
     },
     "unknownError": {
       "title": "Er is een fout opgetreden"
     },
     "oneServiceAtATime": {
-      "title": "Voeg alstublieft slechts één dienst per keer toe!"
+      "title": "Voeg slechts één service per keer toe!"
     }
   },
   "actionIcon": {
