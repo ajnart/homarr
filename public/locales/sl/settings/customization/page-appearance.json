@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Naslov strani",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Logotip"
