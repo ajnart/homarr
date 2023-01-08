@@ -1,28 +1,28 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "General",
+		"behaviour": "Comportamiento",
 		"network": "Red",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Apariencia",
+		"integration": "Integración"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Nombre de la app",
+			"description": "Utilizado para mostrar la app en el dashboard"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Dirección interna",
+			"description": "IP interna de la app"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Dirección externa",
+			"description": "URL que se abrirá en el navegador al pulsar en la app"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
+			"label": "Abrir en nueva pestaña",
 			"description": ""
 		}
 	},
