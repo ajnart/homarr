@@ -1,8 +1,8 @@
 {
   "configSelect": {
     "label": "Konfigurationslader",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "loadingNew": "Ihre Konfiguration wird geladen...",
+    "pleaseWait": "Bitte warten Sie, bis Ihre neue Konfiguration geladen ist"
   },
   "modal": {
     "title": "Wählen Sie den Namen für Ihre neue Konfiguration",
@@ -10,7 +10,7 @@
       "configName": {
         "label": "Konfigurationsname",
         "validation": {
-          "required": ""
+          "required": "Name der Konfiguration ist erforderlich"
         },
         "placeholder": "Ihr neuer Konfigurationsname"
       },
@@ -22,12 +22,12 @@
         "message": "Konfiguration gespeichert als {{configName}}"
       },
       "configCopied": {
-        "title": "",
-        "message": ""
+        "title": "Konfiguration kopiert",
+        "message": "Konfiguration gespeichert als {{configName}}"
       },
       "configNotCopied": {
-        "title": "",
-        "message": ""
+        "title": "Konfiguration konnte nicht kopiert werden",
+        "message": "Ihre Konfiguration wurde nicht als {{configName}} kopiert"
       }
     }
   },
@@ -59,11 +59,11 @@
       }
     },
     "accept": {
-      "title": "",
+      "title": "Konfiguration hochladen",
       "text": "Ziehen Sie Dateien hierher, um eine Konfiguration hochzuladen. Unterstützung nur für JSON."
     },
     "reject": {
-      "title": "",
+      "title": "Drag and Drop Upload abgelehnt",
       "text": "Dieses Dateiformat wird nicht unterstützt. Bitte lade nur JSON hoch."
     }
   }
