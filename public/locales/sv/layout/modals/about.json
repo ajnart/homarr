@@ -1,1 +1,7 @@
-{}
+{
+	"description": "Homarr är en <strong>enkel</strong> och <strong>modern</strong> hemsida för din server som hjälper dig att komma åt alla dina appar på ett ställe. Den integreras med de appar du använder för att visa användbar information eller styra dem. Den är enkel att installera och har stöd för många olika enheter.",
+	"i18n": "Laddade namnområden för I18n-översättningar",
+	"locales": "Konfigurerade I18n lokalspråk",
+	"contact": "Har du problem eller frågor? Kontakta oss!",
+	"addToDashboard": "Lägg till i instrumentpanel"
+}
