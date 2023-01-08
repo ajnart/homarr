@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "Заголовок сторінки",
-    "placeholder": ""
+    "label": "Заголовок сторінки"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "logo": {
     "label": "Логотип"
