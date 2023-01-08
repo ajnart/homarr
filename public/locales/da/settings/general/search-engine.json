@@ -5,7 +5,7 @@
     "placeholderTip": "%s kan bruges som en pladsholder for forespørgslen."
   },
   "customEngine": {
-    "title": "",
+    "title": "Brugerdefineret søgemaskine",
     "label": "Forespørgsels URL",
     "placeholder": "Brugerdefineret forespørgsels URL"
   },
@@ -13,6 +13,6 @@
     "label": "Åben søgeresultater i en ny fane"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Søgning aktiveret"
   }
 }
