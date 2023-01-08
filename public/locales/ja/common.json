@@ -1,20 +1,20 @@
 {
-  "save": "",
-  "about": "",
+  "save": "保存",
+  "about": "について",
   "cancel": "キャンセル",
-  "close": "",
+  "close": "閉じる",
   "delete": "削除",
-  "ok": "",
+  "ok": "よっしゃー",
   "edit": "編集",
-  "version": "",
-  "changePosition": "",
+  "version": "バージョン",
+  "changePosition": "ポジションを変更する",
   "remove": "削除",
   "sections": {
     "settings": "設定",
     "dangerZone": "デンジャーゾーン"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Apiキー",
     "username": "ユーザー名",
     "password": "パスワード"
   },
