@@ -1,10 +1,10 @@
 {
     "fallback": {
-        "title": ""
+        "title": "כרגע אין לך כלים"
     },
     "iconPicker": {
-        "textInputPlaceholder": "",
-        "searchLimitationTitle": "",
-        "searchLimitationMessage": ""
+        "textInputPlaceholder": "מחפש אחר סמלים",
+        "searchLimitationTitle": "חיפוש מוגבל ל- {{max}} סמלים",
+        "searchLimitationMessage": "כדי לשמור על פעולות מהירות, החיפוש מוגבל ל- {{max}} סמלים. השתמש בתיבת החיפוש למציאת סמלים נוספים"
     }
 }
