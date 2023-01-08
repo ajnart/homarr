@@ -59,7 +59,7 @@
       }
     },
     "accept": {
-      "title": "Upload de configuration",
+      "title": "Téléversement de la configuration",
       "text": "Faites glisser les fichiers ici pour télécharger une configuration. Support pour JSON uniquement."
     },
     "reject": {
