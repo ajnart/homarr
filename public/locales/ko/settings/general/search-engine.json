@@ -5,10 +5,14 @@
     "placeholderTip": "%s는 쿼리의 자리 표시자로 사용할 수 있습니다."
   },
   "customEngine": {
+    "title": "",
     "label": "쿼리 URL",
     "placeholder": "커스텀 쿼리 URL"
   },
   "searchNewTab": {
+    "label": ""
+  },
+  "searchEnabled": {
     "label": ""
   }
 }
