@@ -3,6 +3,7 @@
     "name": "Дата",
     "description": "Показати поточний час і дату в картці",
     "settings": {
+      "title": "",
       "display24HourFormat": {
         "label": "Показувати повний час (24 години)"
       }
