@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Et modul til visning af graferne for din kørende Dash. instans.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "CPU Multikerne Visning"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
