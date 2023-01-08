@@ -27,5 +27,5 @@
   },
   "tip": "Vous pouvez sélectionner la barre de recherche avec le raccourci ",
   "switchedSearchEngine": "Basculer vers la recherche avec {{searchEngine}}",
-  "configurationName": ""
+  "configurationName": "Configurations du moteur de recherche"
 }
