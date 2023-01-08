@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "ビットトレント",
+    "description": "現在ダウンロード中のトレントを一覧で表示します。",
     "settings": {
-      "title": "",
+      "title": "BitTorrent統合のための設定",
       "refreshInterval": {
-        "label": ""
+        "label": "リフレッシュ間隔(秒)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "完了したトレントを表示する"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "古くなったトレントを表示する"
       }
     }
   },
@@ -43,8 +43,8 @@
         "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "予期せぬエラーが発生しました",
+        "text": "ホーマーは、あなたのダウンロードクライアントと通信することができませんでした。設定を確認してください。"
       }
     },
     "loading": {
