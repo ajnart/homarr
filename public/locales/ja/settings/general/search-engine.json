@@ -5,10 +5,14 @@
     "placeholderTip": "%s は、クエリのプレースホルダとして使用することができます。"
   },
   "customEngine": {
+    "title": "",
     "label": "クエリURL",
     "placeholder": "カスタムクエリURL"
   },
   "searchNewTab": {
+    "label": ""
+  },
+  "searchEnabled": {
     "label": ""
   }
 }
