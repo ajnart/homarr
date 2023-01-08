@@ -11,7 +11,7 @@
         "label": "Visa slutförda torrents"
       },
       "displayStaleTorrents": {
-        "label": "Visa föråldrade torrents"
+        "label": "Visa inaktuella torrents"
       }
     }
   },
