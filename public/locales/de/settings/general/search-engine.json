@@ -5,10 +5,14 @@
     "placeholderTip": "%s kann als Platzhalter für deine Suchanfrage verwendet werden."
   },
   "customEngine": {
+    "title": "",
     "label": "Suchanfrage URL",
     "placeholder": "Benutzerdefinierte Abfrage-URL"
   },
   "searchNewTab": {
     "label": "Öffne Suchergebnisse in einem neuen Tab"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
