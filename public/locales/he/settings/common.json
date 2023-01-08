@@ -11,5 +11,19 @@
   "credits": {
     "madeWithLove": "נעשה ב- ❤️ ע״י @"
   },
-  "grow": "הגדלת אריחים (תופס את כל השטח)"
+  "grow": "הגדלת אריחים (תופס את כל השטח)",
+  "layout": {
+    "title": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "",
+    "enablelsidebar": "",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "",
+    "enablelsidebardesc": "",
+    "enablersidebardesc": ""
+  }
 }
