@@ -1,51 +1,51 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Algemeen",
+		"behaviour": "Gedrag",
 		"network": "Netwerk",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Opmaak",
+		"integration": "Integratie"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "App naam",
+			"description": "Gebruikt voor de weergave van de app op het dashboard"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Intern adres",
+			"description": "Intern IP-adres van de app"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Extern adres",
+			"description": "URL die wordt geopend in de browser wanneer op de app wordt geklikt"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Open in nieuw tabblad",
+			"description": "Open de link in een nieuw tabblad"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Status checker",
+			"description": "Stuurt een eenvoudig HTTP / HTTPS-verzoek om te controleren of uw app online is"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP-statuscodes",
+			"description": "Bepaalt welke responscodes zijn toegestaan voor deze app om \"Online\" te zijn"
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "App icoon",
+			"description": "Logo van uw app weergegeven in uw dashboard. (Moet een inhoud met een afbeelding terugsturen)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
+			"label": "Integratie configuratie",
+			"description": "Behandelt deze app als de geselecteerde integratie en biedt u configuratie per app",
 			"placeholder": "Selecteer een integratie",
 			"defined": "Gedefinieerd",
 			"undefined": "Ongedefinieerd",
