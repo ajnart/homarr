@@ -3,7 +3,7 @@
     "name": "ダッシュ",
     "description": "実行中のDash.インスタンスのグラフを表示するためのモジュールです。",
     "settings": {
-      "title": "",
+      "title": "Dash.ウィジェットの設定",
       "cpuMultiView": {
         "label": "CPUマルチコアビュー"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Dash.ウィジェットを削除する",
+      "confirm": "本当にDash.ウィジェットを削除するのですか？"
     }
   },
   "card": {
