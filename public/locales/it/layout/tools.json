@@ -5,6 +5,6 @@
     "iconPicker": {
         "textInputPlaceholder": "Cerca un'icona...",
         "searchLimitationTitle": "La ricerca è limitata a {{max}} icone",
-        "searchLimitationMessage": ""
+        "searchLimitationMessage": "Per garantire le performance, la ricerca è limitata a {{max}} icone. Usa la barra di ricerca per trovare più icone"
     }
 }
