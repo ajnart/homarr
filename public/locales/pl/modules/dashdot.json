@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Moduł do wyświetlania wykresów z uruchomionej instancji Dash.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Widok wielordzeniowy procesora"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Adres URL usługi Dash."
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
