@@ -11,5 +11,19 @@
   "credits": {
     "madeWithLove": "From @ with ❤️"
   },
-  "grow": "Khung giãn (chiếm toàn bộ không gian)"
+  "grow": "Khung giãn (chiếm toàn bộ không gian)",
+  "layout": {
+    "title": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "",
+    "enablelsidebar": "",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "",
+    "enablelsidebardesc": "",
+    "enablersidebardesc": ""
+  }
 }
