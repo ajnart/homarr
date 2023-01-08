@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Un module pour afficher les graphiques de votre instance Dash. en cours.",
     "settings": {
-      "title": "",
+      "title": "Paramètres du widget Dash",
       "cpuMultiView": {
         "label": "Vue du CPU multi-cœur"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Supprimer le widget Dashdot",
+      "confirm": "Êtes-vous certain de vouloir retirer le widget dashdot ?"
     }
   },
   "card": {
