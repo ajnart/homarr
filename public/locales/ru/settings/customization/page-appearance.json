@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "Название страницы",
-    "placeholder": ""
+    "label": "Название страницы"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "logo": {
     "label": "Логотип"
