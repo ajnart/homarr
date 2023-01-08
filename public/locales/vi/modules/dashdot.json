@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Một mô-đun để hiển thị biểu đồ cho quá trình Dash. của bạn.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Chế độ hiện đa nhân CPU"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "URL của Dash."
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
