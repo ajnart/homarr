@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Зберегти"
+  "save": "",
+  "about": "",
+  "cancel": "Скасувати",
+  "close": "",
+  "delete": "Видалити",
+  "ok": "",
+  "edit": "Редагувати",
+  "version": "",
+  "changePosition": "",
+  "remove": "Видалити",
+  "sections": {
+    "settings": "Налаштування",
+    "dangerZone": "Небезпечна зона"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Логін",
+    "password": "Пароль"
   },
   "tip": "Підказка: ",
   "time": {
