@@ -5,10 +5,14 @@
     "placeholderTip": "s% יכול לשמש כמציין מיקום עבור השאילתה."
   },
   "customEngine": {
+    "title": "",
     "label": "כתובת URL של שאילתה",
     "placeholder": "כתובת URL של שאילתה מותאמת אישית"
   },
   "searchNewTab": {
     "label": "פתיחת תוצאות חיפוש בכרטיסיה חדשה"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
