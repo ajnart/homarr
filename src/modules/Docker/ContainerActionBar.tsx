@@ -167,6 +167,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
           const containerUrl = `http://localhost:${selected[0].Ports[0].PublicPort}`;
           openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
             modal: 'editApp',
+            zIndex: 1000,
             innerProps: {
               app: {
                 id: uuidv4(),
