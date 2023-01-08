@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "添加一个新的瓦片",
+        "text": "瓷砖是homarr的主要元素。它们允许你配置仪表板并显示你想要的信息。"
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "小工具与你的应用程序互动，为你提供对应用程序的更多控制。它们通常需要在使用前进行一些配置。",
+    "goBack": "回到上一个步骤",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "增加一块瓦片"
     }
 }
