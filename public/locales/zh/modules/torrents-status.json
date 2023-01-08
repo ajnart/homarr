@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "BitTorrent",
+    "description": "显示当前正在下载的洪流列表。",
     "settings": {
-      "title": "",
+      "title": "为BitTorrent集成设置",
       "refreshInterval": {
-        "label": ""
+        "label": "刷新时间间隔（秒）。"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "显示已完成的洪流"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "显示陈旧的山洪"
       }
     }
   },
@@ -43,8 +43,8 @@
         "text": "添加下载服务，查看你当前的下载量"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "发生了一个意外的错误",
+        "text": "Homarr无法与您的下载客户端通信。请检查您的配置"
       }
     },
     "loading": {
