@@ -5,10 +5,14 @@
     "placeholderTip": "%s può essere usato come segnaposto per la ricerca."
   },
   "customEngine": {
+    "title": "",
     "label": "URL di ricerca",
     "placeholder": "URL di ricerca personalizzato"
   },
   "searchNewTab": {
     "label": "Apri i risultati della ricerca in una nuova scheda"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
