@@ -4,28 +4,28 @@
     "description": "Zoekbalk om te zoeken op het web, Youtube, Torrents of Overseerr"
   },
   "input": {
-    "placeholder": "Doorzoek het web..."
+    "placeholder": "Zoek op het web..."
   },
-  "switched-to": "",
+  "switched-to": "Omgeschakeld naar",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Zoeken met uw zoekmachine (gedefinieerd in instellingen)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Zoek op YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrents",
+      "description": "Zoek naar Torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Zoek naar Films en TV-series met behulp van Overseerr (module moet ingeschakeld zijn)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": "",
-  "configurationName": ""
+  "tip": "U kunt de zoekbalk selecteren met de sneltoets ",
+  "switchedSearchEngine": "Omgeschakeld naar zoeken met {{searchEngine}}",
+  "configurationName": "Zoekmachine configuratie"
 }
