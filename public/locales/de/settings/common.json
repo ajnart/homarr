@@ -15,15 +15,15 @@
   "layout": {
     "title": "Dashboard Anordnung",
     "main": "Haupt",
-    "sidebar": "Sidebar",
-    "cannotturnoff": "",
+    "sidebar": "Seitenleiste",
+    "cannotturnoff": "Kann nicht deaktiviert werden",
     "dashboardlayout": "Dashboard Anordnung",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "enablersidebar": "Rechte Seitenleiste aktivieren",
+    "enablelsidebar": "Linke Seitenleiste aktivieren",
+    "enablesearchbar": "Suchleiste aktivieren",
+    "enabledocker": "Docker Integration aktivieren",
+    "enableping": "Pings aktivieren",
+    "enablelsidebardesc": "Optional. Kann nur für Anwendungen und Integrationen verwendet werden",
+    "enablersidebardesc": "Optional. Kann nur für Anwendungen und Integrationen verwendet werden"
   }
 }
