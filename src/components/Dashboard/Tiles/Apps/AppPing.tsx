@@ -34,7 +34,7 @@ export const AppPing = ({ app }: AppPingProps) => {
 
   return (
     <motion.div
-      style={{ position: 'absolute', bottom: 20, right: 20 }}
+      style={{ position: 'absolute', bottom: 20, right: 20, zIndex: 2 }}
       animate={{
         scale: isOnline ? [1, 0.7, 1] : 1,
       }}
