@@ -40,6 +40,7 @@ import { motion } from 'framer-motion';
 import { Logo } from '../components/layout/Logo';
 import { usePrimaryGradient } from '../components/layout/useGradient';
 import { backendMigrateConfig } from '../tools/config/backendMigrateConfig';
+import axios from 'axios';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -245,8 +246,7 @@ function SwitchToggle() {
 
 export async function getServerSideProps({ req, res, locale }: GetServerSidePropsContext) {
   // Get all the configs in the /data/configs folder
-  const configs = await fs.readdirSync('./data/configs');
-  // If there is no config, redirect to the index
+  const configs = fs.readdirSync('./data/configs');
   if (configs.length === 0) {
     res.writeHead(302, {
       Location: '/',
@@ -265,27 +265,15 @@ export async function getServerSideProps({ req, res, locale }: GetServerSideProp
     });
     res.end();
     return {
-      props: {
-        ...(await serverSideTranslations(locale ?? 'en', [])),
-      },
+      processed: true,
     };
   }
-  configs.every((config) => {
-    const configData = JSON.parse(fs.readFileSync(`./data/configs/${config}`, 'utf8'));
-    if (!configData.schemaVersion) {
-      // Migrate the config
-      backendMigrateConfig(configData, config.replace('.json', ''));
-    }
-    return config;
-  });
-
   return {
     props: {
       configs: configs.map(
         // Get all the file names in ./data/configs
         (config) => config.replace('.json', '')
       ),
-
       ...(await serverSideTranslations(locale!, [])),
       // Will be passed to the page component as props
     },
@@ -309,6 +297,10 @@ export function StatsCard({
   const [treatedConfigs, setTreatedConfigs] = useState<string[]>([]);
   // Stop the progress at 100%
   useEffect(() => {
+    const data = axios.post('/api/migrate').then((response) => {
+      setProgress(100);
+    });
+
     const interval = setInterval(() => {
       if (configs.length === 0) {
         clearInterval(interval);
@@ -321,8 +313,7 @@ export function StatsCard({
       configs.pop();
     }, 500);
     return () => clearInterval(interval);
-  }, []);
-  // TODO: Actually use the configs
+  }, [configs]);
 
   return (
     <Paper radius="md" className={classes.card} mt={ICON_SIZE / 3}>
