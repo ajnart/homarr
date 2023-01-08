@@ -1,1 +1,8 @@
-{}
+{
+	"xPosition": "X軸位置",
+	"width": "幅",
+	"height": "高さ",
+	"yPosition": "Y軸位置",
+	"zeroOrHigher": "0以上",
+	"betweenXandY": "{{min}} と {{max}}の間"
+}
