@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Заголовок сторінки",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Логотип"
