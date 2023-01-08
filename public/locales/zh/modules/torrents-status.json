@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "显示支持的服务的当前下载速度",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "隐藏已完成的种子"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "没有找到支持的下载客户端！",
         "text": "添加下载服务，查看你当前的下载量"
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "正在加载..."
     }
   }
 }
