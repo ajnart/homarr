@@ -3,7 +3,7 @@
     "name": "Datum",
     "description": "Die aktuelle Zeit und das aktuelle Datum in der Card anzeigen",
     "settings": {
-      "title": "Einstellungen für die Datums Integration",
+      "title": "Einstellungen für die Datum Integration",
       "display24HourFormat": {
         "label": "24-Stunden Format"
       }
