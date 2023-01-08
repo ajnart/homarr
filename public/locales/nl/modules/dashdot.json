@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Een module voor het weergeven van de grafieken van uw Dash. instance.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "CPU Multi-Core Weergave"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
