@@ -4,7 +4,7 @@
     "description": "מודול לוח שנה להצגת עדכונים מ- Sonarr/Radarr/Readarr/Lidarr",
     "settings": {
       "sundayStart": {
-        "label": "להתחיל את השבוע ביום ראשון"
+        "label": "התחל את השבוע ביום ראשון"
       }
     }
   }
