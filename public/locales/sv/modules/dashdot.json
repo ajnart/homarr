@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "En modul för att visa graferna från din Dash. instans.",
     "settings": {
-      "title": "",
+      "title": "Inställningar för Dash. widget",
       "cpuMultiView": {
         "label": "Flerkärnig CPU vy"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Ta bort Dash. widget",
+      "confirm": "Är du säker, att du vill ta bort Dash. widget?"
     }
   },
   "card": {
