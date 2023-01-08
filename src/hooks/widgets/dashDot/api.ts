@@ -1,11 +1,11 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Results } from 'sabnzbd-api';
-import {
+import type {
   UsenetQueueRequestParams,
   UsenetQueueResponse,
 } from '../../../pages/api/modules/usenet/queue';
-import {
+import type {
   UsenetHistoryRequestParams,
   UsenetHistoryResponse,
 } from '../../../pages/api/modules/usenet/history';
