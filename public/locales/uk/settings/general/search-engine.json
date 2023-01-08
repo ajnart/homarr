@@ -5,10 +5,14 @@
     "placeholderTip": "%s можна використовувати як заповнювач для запиту."
   },
   "customEngine": {
+    "title": "",
     "label": "URL-адреса запиту",
     "placeholder": "Власна URL-адреса запиту"
   },
   "searchNewTab": {
     "label": "Відкрити результати пошуку у новій вкладці"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
