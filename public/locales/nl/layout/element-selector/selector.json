@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Nieuwe tegel toevoegen",
+        "text": "Tegels zijn het belangrijkste element van Homarr. Hiermee kun je het dashboard configureren en de gewenste informatie weergeven."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Widgets werken samen met uw apps, om u meer controle over uw applicaties te geven. Ze vereisen meestal een paar configuraties voor gebruik.",
+    "goBack": "Ga terug naar de vorige stap",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Tegel toevoegen"
     }
 }
