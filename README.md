@@ -23,8 +23,9 @@
 <p align="center">
 <i>Join the discord! — Don't forget to star the repo if you are enjoying the project!</i>
 </p>
+<h3 align="center"><a href="https://homarr.dev">Read the Docs</a></h3>
 <p align="center">
-<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.vercel.app/docs/introduction/installation"><strong> Install ➡️ </strong></a> • <a href="https://homarr.vercel.app/docs/about"><strong> Read the Docs 📄 </strong></a>
+<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.dev/docs/introduction/installation"><strong> Install ➡️ </strong></a>
 </p>
 
 ---
@@ -36,16 +37,14 @@ Homarr is a simple and lightweight homepage for your server, that helps you easi
 
 It integrates with the services you use to display information on the homepage (E.g. Show upcoming Sonarr/Radarr releases).
 
-For a full list of integrations, [head over to our documentation](https://homarr.vercel.app/docs/advanced-configuration/integrations).
+For a full list of integrations, [head over to our documentation](https://homarr.dev/docs/advanced-configuration/integrations).
 
 If you have any questions about Homarr or want to share information with us, please go to one of the following places:
 
 - [Github Discussions](https://github.com/ajnart/homarr/discussions)
 - [Discord Server](https://discord.gg/aCsmEV5RgA)
 
-*Before you file an [issue](https://github.com/ajnart/homarr/issues/new/choose), make sure you have read the [known issues](#-known-issues) section.*
-
-**For more information, [read the documentation!](https://homarr.vercel.app/docs/about)**
+**For more information, [read the documentation!](https://homarr.dev/docs/about)**
 
 <details>
   <summary><b>Table of Contents</b></summary>
@@ -53,10 +52,7 @@ If you have any questions about Homarr or want to share information with us, ple
 
 - [✨ Features](#-features)
 - [👀 Preview](#-preview)
-- [💥 Known Issues](#-known-issues)
-- [🚀 Installation](#-installation)
-  - [🐳 Deploying from Docker Image](#-deploying-from-docker-image)
-  - [🛠️ Building from Source](#️-building-from-source)
+- [🛠️ Running a dev environment](#️-running-a-dev-environment)
 - [💖 Contributing](#-contributing)
 - [📜 License](#-license)
 
@@ -87,58 +83,7 @@ If you have any questions about Homarr or want to share information with us, ple
 
 ---
 
-## 💥 Known Issues
-- Posters on the Calendar get blocked by adblockers. (IMDb posters)
-
-**[⤴️ Back to Top](#homarr)**
-
----
-
-## 🚀 Installation
-### 🐳 Deploying from Docker Image
-> Supported architectures: x86-64, ARM, ARM64
-
-_Requirements_:
-- [Docker](https://docs.docker.com/get-docker/)
-
-**Standard Docker Install**
-```bash
-docker run  \
-  --name homarr \
-  --restart unless-stopped \
-  -p 7575:7575 \
-  -v ./homarr/configs:/app/data/configs \
-  -v ./homarr/icons:/app/public/icons \
-  -d ghcr.io/ajnart/homarr:latest
-```
-
-**Docker Compose**
-```yml
-version: '3'
-#---------------------------------------------------------------------#
-#                Homarr -  A homepage for your server.                #
-#---------------------------------------------------------------------#
-services:
-  homarr:
-    container_name: homarr
-    image: ghcr.io/ajnart/homarr:latest
-    restart: unless-stopped
-    volumes:
-      - ./homarr/configs:/app/data/configs
-      - ./homarr/icons:/app/public/icons
-    ports:
-      - '7575:7575'
-```
-
-```sh
-docker compose up -d
-```
-
-*Getting EACCESS errors in the logs? Try running `sudo chmod 777 /directory-you-mounted-to`!*
-
-**[⤴️ Back to Top](#homarr)**
-
-### 🛠️ Building from Source
+### 🛠️ Running a dev environment
 
 _Requirements_:
 - [Git](https://git-scm.com/downloads)
@@ -197,7 +142,7 @@ SOFTWARE.
 ---
 
 <p align="center">
-  <i>Thank you for visiting! <b>For more information <a href="https://homarr.vercel.app/docs/about">read the documentation!</a></b></i>
+  <i>Thank you for visiting! <b>For more information <a href="https://homarr.dev">read the documentation!</a></b></i>
   <br/>
   <br/>
 </p>
