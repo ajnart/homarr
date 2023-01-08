@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Модуль для отображения графиков из Dash.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Многоядерный процессор Вид"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "URL-адрес Dash."
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
