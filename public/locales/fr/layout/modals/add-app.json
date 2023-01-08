@@ -12,12 +12,12 @@
 			"description": "Utilisé pour afficher l'application sur le tableau de bord"
 		},
 		"internalAddress": {
-			"label": "Adresse Interne",
+			"label": "Adresse interne",
 			"description": "IP interne de l'application"
 		},
 		"externalAddress": {
 			"label": "Adresse externe",
-			"description": "Url qui sera ouverte dans le navigateur lorsqu'on clique sur l'application"
+			"description": "URL qui sera ouverte dans le navigateur lorsqu'on clique sur l'application"
 		}
 	},
 	"behaviour": {
