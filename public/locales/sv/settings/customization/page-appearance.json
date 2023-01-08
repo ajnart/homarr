@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Sidotitel",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Logotyp"
