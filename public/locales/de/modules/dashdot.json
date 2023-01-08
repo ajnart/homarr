@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Ein Modul, welches die Graphen aus einer laufenden Dash. Instanz anzeigt.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "CPU Multi-Core View"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
