@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "BitTorrent",
+    "description": "Zeigt eine Liste der Torrents an, die gerade heruntergeladen werden",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für die BitTorrent Integration",
       "refreshInterval": {
-        "label": ""
+        "label": "Aktualisierungsintervall (in Sekunden)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Abgeschlossene Torrents anzeigen"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Angehaltene Torrents anzeigen"
       }
     }
   },
@@ -43,8 +43,8 @@
         "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Ein unerwarteter Fehler ist aufgetreten",
+        "text": "Homarr konnte nicht mit Ihren Download-Clients kommunizieren. Bitte überprüfen Sie Ihre Konfiguration"
       }
     },
     "loading": {
