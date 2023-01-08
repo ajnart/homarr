@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Configuratie lader",
+    "label": "Laad een configuratie",
     "loadingNew": "Uw configuratie wordt geladen...",
     "pleaseWait": "Wacht tot uw nieuwe configuratie is geladen"
   },
@@ -46,7 +46,7 @@
         }
       }
     },
-    "saveCopy": "Sla kopie op"
+    "saveCopy": "Kopie opslaan"
   },
   "dropzone": {
     "notifications": {
