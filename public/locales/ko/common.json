@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "저장"
+  "save": "",
+  "about": "",
+  "cancel": "취소",
+  "close": "",
+  "delete": "삭제",
+  "ok": "",
+  "edit": "수정",
+  "version": "",
+  "changePosition": "",
+  "remove": "제거",
+  "sections": {
+    "settings": "설정",
+    "dangerZone": "위험한 설정"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "사용자 이름",
+    "password": "비밀번호"
   },
   "tip": "팁: ",
   "time": {
