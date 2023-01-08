@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Модуль для зображення графіків від вашого Dash. сервісу.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Процесор по ядрах"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
