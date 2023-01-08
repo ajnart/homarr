@@ -1,65 +1,65 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "一般",
+		"behaviour": "行为",
 		"network": "网络",
-		"appearance": "",
-		"integration": ""
+		"appearance": "外观",
+		"integration": "融合"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "应用程序名称",
+			"description": "用于在仪表板上显示应用程序"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "内部地址",
+			"description": "应用程序的内部IP"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "外部地址",
+			"description": "点击应用程序时将在浏览器中打开的网址"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "在新标签中打开",
+			"description": "在新标签中打开链接"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "状态检查器",
+			"description": "发送一个简单的HTTP/HTTPS请求以检查你的应用程序是否在线"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP状态代码",
+			"description": "确定该应用允许哪些响应代码为 \"在线\"。"
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "应用图标",
+			"description": "在你的仪表板上显示的你的应用程序的标志。(必须返回一个包含图像的主体内容)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "集成配置",
+			"description": "将此应用视为选定的集成，并为你提供每个应用的配置。",
+			"placeholder": "选择一个整合",
+			"defined": "定义",
+			"undefined": "未定义",
+			"public": "公众",
+			"private": "私营",
+			"explanationPublic": "一个私人秘密将被发送到服务器。一旦你的浏览器刷新了页面，它将永远不会被发送到客户端。",
+			"explanationPrivate": "公共秘密将始终被发送到客户端，并可通过API访问。它不应该包含任何机密值，如用户名、密码、令牌、证书和类似的东西。"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "要更新一个秘密，输入一个值并点击保存按钮。要删除一个秘密，请使用清除按钮。",
+			"warning": "</strong> 你的凭证作为你的集成的入口，你应该 <strong>，永远不要与其他人分享它们。Homarr官方团队永远不会要求你提供证书。请确保 <strong>，安全地存储和管理你的秘密</strong>。",
+			"clear": "清除秘密",
+			"save": "保存秘密",
+			"update": "更新秘密"
 		}
 	}
 }
