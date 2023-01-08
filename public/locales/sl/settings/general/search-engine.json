@@ -5,10 +5,14 @@
     "placeholderTip": "%s lahko uporabite kot nadomestno ime za poizvedbo."
   },
   "customEngine": {
+    "title": "",
     "label": "URL poizvedbe",
     "placeholder": "URL poizvedbe po meri"
   },
   "searchNewTab": {
     "label": "Odprite rezultate iskanja v novem zavihku"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
