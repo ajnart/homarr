@@ -27,5 +27,5 @@
   },
   "tip": "Puedes seleccionar la barra de búsqueda con el atajo ",
   "switchedSearchEngine": "Cambiado a buscando con {{searchEngine}}",
-  "configurationName": ""
+  "configurationName": "Configuración del motor de búsqueda"
 }
