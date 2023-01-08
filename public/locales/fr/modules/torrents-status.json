@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "P2P/BitTorrent",
+    "description": "Affiche une liste des torrents en cours de téléchargement",
     "settings": {
-      "title": "",
+      "title": "Paramètres pour l'intégration de BitTorrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Intervalle d'actualisation en secondes"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Cacher les torrents terminés"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Afficher les torrents périmés"
       }
     }
   },
@@ -43,8 +43,8 @@
         "text": "Ajouter un service de téléchargement pour afficher vos téléchargements en cours"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Une erreur inattendue s'est produite",
+        "text": "Homarr n'a pas pu communiquer avec vos clients de téléchargement. Veuillez vérifier votre configuration"
       }
     },
     "loading": {
