@@ -2,9 +2,8 @@ import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
-import { useConfig } from '../../tools/state';
-import { serviceItem } from '../../tools/types';
 import { RequestModal } from '../overseerr/RequestModal';
 import { Result } from '../overseerr/SearchResult';
 
@@ -27,9 +26,15 @@ export interface IMedia {
 
 export function OverseerrMediaDisplay(props: any) {
   const { media }: { media: Result } = props;
-  const { config } = useConfig();
-  const service = config.services.find(
-    (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
+  const { config } = useConfigContext();
+
+  if (!config) {
+    return null;
+  }
+
+  const service = config.apps.find(
+    (service) =>
+      service.integration.type === 'overseerr' || service.integration.type === 'jellyseerr'
   );
 
   return (
@@ -45,9 +50,9 @@ export function OverseerrMediaDisplay(props: any) {
         plexUrl: media.mediaInfo?.plexUrl ?? media.mediaInfo?.mediaUrl,
         voteAverage: media.voteAverage?.toString(),
         overseerrResult: media,
-        overseerrId: `${service?.openedUrl ? service?.openedUrl : service?.url}/${
-          media.mediaType
-        }/${media.id}`,
+        overseerrId: `${
+          service?.behaviour.externalUrl ? service.behaviour.externalUrl : service?.url
+        }/${media.mediaType}/${media.id}`,
         type: 'overseer',
       }}
     />
@@ -56,16 +61,21 @@ export function OverseerrMediaDisplay(props: any) {
 
 export function ReadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
-  const { config } = useConfig();
+  const { config } = useConfigContext();
+
+  if (!config) {
+    return null;
+  }
+
   // Find lidarr in services
-  const readarr = config.services.find((service: serviceItem) => service.type === 'Readarr');
+  const readarr = config.apps.find((service) => service.integration.type === 'readarr');
   // Find a poster CoverType
   const poster = media.images.find((image: any) => image.coverType === 'cover');
   if (!readarr) {
     return null;
   }
-  const baseUrl = readarr.openedUrl
-    ? new URL(readarr.openedUrl).origin
+  const baseUrl = readarr.behaviour.externalUrl
+    ? new URL(readarr.behaviour.externalUrl).origin
     : new URL(readarr.url).origin;
   // Remove '/' from the end of the lidarr url
   const fullLink = poster ? `${baseUrl}${poster.url}` : undefined;
@@ -88,15 +98,22 @@ export function ReadarrMediaDisplay(props: any) {
 
 export function LidarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
-  const { config } = useConfig();
+  const { config } = useConfigContext();
+
+  if (!config) {
+    return null;
+  }
+
   // Find lidarr in services
-  const lidarr = config.services.find((service: serviceItem) => service.type === 'Lidarr');
+  const lidarr = config.apps.find((service) => service.integration.type === 'lidarr');
   // Find a poster CoverType
   const poster = media.images.find((image: any) => image.coverType === 'cover');
   if (!lidarr) {
     return null;
   }
-  const baseUrl = lidarr.openedUrl ? new URL(lidarr.openedUrl).origin : new URL(lidarr.url).origin;
+  const baseUrl = lidarr.behaviour.externalUrl
+    ? new URL(lidarr.behaviour.externalUrl).origin
+    : new URL(lidarr.url).origin;
   // Remove '/' from the end of the lidarr url
   const fullLink = poster ? `${baseUrl}${poster.url}` : undefined;
   // Return a movie poster containting the title and the description

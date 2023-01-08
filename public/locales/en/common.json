@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Save"
+  "save": "Save",
+  "about": "About",
+  "cancel": "Cancel",
+  "close": "Close",
+  "delete": "Delete",
+  "ok": "OK",
+  "edit": "Edit",
+  "version": "Version",
+  "changePosition": "Change position",
+  "remove": "Remove",
+  "sections": {
+    "settings": "Settings",
+    "dangerZone": "Danger zone"
+  },
+  "secrets": {
+    "apiKey": "Api key",
+    "username": "Username",
+    "password": "Password"
   },
   "tip": "Tip: ",
   "time": {

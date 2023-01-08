@@ -14,6 +14,8 @@ COPY package.json ./package.json
 COPY .next/standalone ./
 COPY .next/static ./.next/static
 
+RUN apk add --update nodejs npm 
+
 EXPOSE 7575
 
 ENV PORT 7575

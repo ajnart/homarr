@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Config loader"
+    "label": "Config loader",
+    "loadingNew": "Loading your config...",
+    "pleaseWait": "Please wait until your new config is loaded"
   },
   "modal": {
     "title": "Choose the name of your new config",
     "form": {
       "configName": {
         "label": "Config name",
+        "validation": {
+          "required": "Config name is required"
+        },
         "placeholder": "Your new config name"
       },
       "submitButton": "Confirm"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Config saved",
         "message": "Config saved as {{configName}}"
+      },
+      "configCopied": {
+        "title": "Config copied",
+        "message": "Config copied as {{configName}}"
+      },
+      "configNotCopied": {
+        "title": "Unable to copy config",
+        "message": "Your config was not copied as {{configName}}"
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "Configuration Upload",
       "text": "Drag files here to upload a config. Support for JSON only."
     },
     "reject": {
+      "title": "Drag and Drop Upload rejected",
       "text": "This file format is not supported. Please only upload JSON."
     }
   }

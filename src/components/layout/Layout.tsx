@@ -1,46 +1,29 @@
 import { AppShell, createStyles } from '@mantine/core';
-import { Header } from './header/Header';
-import Aside from './Aside';
-import Navbar from './Navbar';
-import { HeaderConfig } from './header/HeaderConfig';
+import { useConfigContext } from '../../config/provider';
 import { Background } from './Background';
-import { useConfig } from '../../tools/state';
+import { Header } from './header/Header';
+import { Head } from './header/Meta/Head';
 
-const useStyles = createStyles((theme) => ({
-  main: {},
-  appShell: {
-    // eslint-disable-next-line no-useless-computed-key
-    ['@media screen and (display-mode: standalone)']: {
-      '&': {
-        paddingTop: '88px !important',
-      },
-    },
-  },
-}));
+const useStyles = createStyles(() => ({}));
 
-export default function Layout({ children, style }: any) {
-  const { classes, cx } = useStyles();
-  const { config } = useConfig();
-  const widgetPosition = config?.settings?.widgetPosition === 'left';
+export default function Layout({ children }: any) {
+  const { cx } = useStyles();
+  const { config } = useConfigContext();
 
   return (
     <AppShell
       fixed={false}
       header={<Header />}
-      navbar={widgetPosition ? <Navbar /> : undefined}
-      aside={widgetPosition ? undefined : <Aside />}
+      styles={{
+        main: {
+          minHeight: 'calc(100vh - var(--mantine-header-height))',
+        },
+      }}
     >
-      <HeaderConfig />
+      <Head />
       <Background />
-      <main
-        className={cx(classes.main)}
-        style={{
-          ...style,
-        }}
-      >
-        {children}
-      </main>
-      <style>{cx(config.settings.customCSS)}</style>
+      {children}
+      <style>{cx(config?.settings.customization.customCss)}</style>
     </AppShell>
   );
 }

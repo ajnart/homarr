@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Show the current download speed of supported services",
+    "name": "BitTorrent",
+    "description": "Displays a list of the torrent which are currently downloading",
     "settings": {
-      "hideComplete": {
-        "label": "Hide completed torrents"
+      "title": "Settings for BitTorrent integration",
+      "refreshInterval": {
+        "label": "Refresh interval (in seconds)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Display completed torrents"
+      },
+      "displayStaleTorrents": {
+        "label": "Display stale torrents"
       }
     }
   },
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "No supported download clients found!",
         "text": "Add a download service to view your current downloads"
+      },
+      "generic": {
+        "title": "An unexpected error occured",
+        "text": "Homarr was unable to communicate with your download clients. Please check your configuration"
       }
+    },
+    "loading": {
+      "title": "Loading..."
     }
   }
 }

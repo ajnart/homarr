@@ -1,25 +1,42 @@
 import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
-import { useEffect } from 'react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import AppShelf from '../components/AppShelf/AppShelf';
-import LoadConfigComponent from '../components/Config/LoadConfig';
-import { Config } from '../tools/types';
-import { useConfig } from '../tools/state';
-import { migrateToIdConfig } from '../tools/migrate';
-import { getConfig } from '../tools/getConfig';
-import { useColorTheme } from '../tools/color';
+import fs from 'fs';
+import Consola from 'consola';
+import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
+import { useInitConfig } from '../config/init';
+import { getFrontendConfig } from '../tools/config/getFrontendConfig';
+import { getServerSideTranslations } from '../tools/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
+import { DashboardServerSideProps } from '../types/dashboardPageType';
+import { LoadConfigComponent } from '../components/Config/LoadConfig';
 
 export async function getServerSideProps({
   req,
   res,
   locale,
-}: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
+}: GetServerSidePropsContext): Promise<{ props: DashboardServerSideProps }> {
+  // Get all the configs in the /data/configs folder
+  // All the files that end in ".json"
+  const configs = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
+
+  if (
+    !configs.every(
+      (config) => JSON.parse(fs.readFileSync(`./data/configs/${config}`, 'utf8')).schemaVersion
+    )
+  ) {
+    // Replace the current page with the migrate page but don't redirect
+    // This is to prevent the user from seeing the redirect
+    res.writeHead(302, {
+      Location: '/migrate',
+    });
+    res.end();
+
+    return { props: {} as DashboardServerSideProps };
+  }
+
   let configName = getCookie('config-name', { req, res });
-  const configLocale = getCookie('config-locale', { req, res });
   if (!configName) {
     setCookie('config-name', 'default', {
       req,
@@ -30,26 +47,23 @@ export async function getServerSideProps({
     configName = 'default';
   }
 
-  const translations = await serverSideTranslations(
-    (configLocale ?? locale) as string,
-    dashboardNamespaces
-  );
-  return getConfig(configName as string, translations);
+  const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
+
+  Consola.info(`Decided to use configuration '${configName}'`);
+
+  const config = getFrontendConfig(configName as string);
+
+  return {
+    props: { configName: configName as string, config, ...translations },
+  };
 }
 
-export default function HomePage(props: any) {
-  const { config: initialConfig }: { config: Config } = props;
-  const { setConfig } = useConfig();
-  const { setPrimaryColor, setSecondaryColor } = useColorTheme();
-  useEffect(() => {
-    const migratedConfig = migrateToIdConfig(initialConfig);
-    setPrimaryColor(migratedConfig.settings.primaryColor || 'red');
-    setSecondaryColor(migratedConfig.settings.secondaryColor || 'orange');
-    setConfig(migratedConfig);
-  }, [initialConfig]);
+export default function HomePage({ config: initialConfig }: DashboardServerSideProps) {
+  useInitConfig(initialConfig);
+
   return (
     <Layout>
-      <AppShelf />
+      <Dashboard />
       <LoadConfigComponent />
     </Layout>
   );
