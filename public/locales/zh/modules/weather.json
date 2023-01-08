@@ -3,7 +3,7 @@
     "name": "天气",
     "description": "查看你所在地区的当前天气",
     "settings": {
-      "title": "",
+      "title": "气象整合的设置",
       "displayInFahrenheit": {
         "label": "显示为华氏度"
       },
