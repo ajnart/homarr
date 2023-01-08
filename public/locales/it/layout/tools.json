@@ -1,10 +1,10 @@
 {
     "fallback": {
-        "title": ""
+        "title": "Al momento non si dispone di alcuno strumento"
     },
     "iconPicker": {
-        "textInputPlaceholder": "",
-        "searchLimitationTitle": "",
+        "textInputPlaceholder": "Cerca un'icona...",
+        "searchLimitationTitle": "La ricerca è limitata a {{max}} icone",
         "searchLimitationMessage": ""
     }
 }
