@@ -1,8 +1,8 @@
 {
   "configSelect": {
     "label": "Configuratie lader",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "loadingNew": "Uw configuratie wordt geladen...",
+    "pleaseWait": "Wacht tot uw nieuwe configuratie is geladen"
   },
   "modal": {
     "title": "Kies de naam van uw nieuwe configuratie",
@@ -10,7 +10,7 @@
       "configName": {
         "label": "Configuratie naam",
         "validation": {
-          "required": ""
+          "required": "Configuratienaam is vereist"
         },
         "placeholder": "Uw nieuwe configuratienaam"
       },
@@ -22,11 +22,11 @@
         "message": "Configuratie opgeslagen als {{configName}}"
       },
       "configCopied": {
-        "title": "",
-        "message": ""
+        "title": "Configuratie gekopieerd",
+        "message": "Configuratie gekopieerd als {{configName}}"
       },
       "configNotCopied": {
-        "title": "",
+        "title": "Kan configuratie niet kopiëren",
         "message": ""
       }
     }
