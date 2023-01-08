@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Configuratie lader"
+    "label": "Configuratie lader",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Kies de naam van uw nieuwe configuratie",
     "form": {
       "configName": {
         "label": "Configuratie naam",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "Uw nieuwe configuratienaam"
       },
       "submitButton": "Bevestig"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Configuratie opgeslagen",
         "message": "Configuratie opgeslagen als {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON."
     },
     "reject": {
+      "title": "",
       "text": "Dit bestandsformaat wordt niet ondersteund. Upload a.u.b. alleen JSON."
     }
   }
