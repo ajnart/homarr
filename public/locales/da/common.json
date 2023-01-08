@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Gem"
+  "save": "",
+  "about": "",
+  "cancel": "Annuller",
+  "close": "",
+  "delete": "Slet",
+  "ok": "",
+  "edit": "Rediger",
+  "version": "",
+  "changePosition": "",
+  "remove": "Fjern",
+  "sections": {
+    "settings": "Indstillinger",
+    "dangerZone": "Farezone"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Brugernavn",
+    "password": "Adgangskode"
   },
   "tip": "Tip: ",
   "time": {
