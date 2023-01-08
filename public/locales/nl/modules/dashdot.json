@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Een module voor het weergeven van de grafieken van uw Dash. instance.",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor Dash. widget",
       "cpuMultiView": {
         "label": "CPU Multi-Core Weergave"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Verwijder Dash. widget",
+      "confirm": "Weet u zeker dat u de Dash. widget wilt verwijderen?"
     }
   },
   "card": {
