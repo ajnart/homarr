@@ -1,20 +1,20 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Spara",
+  "about": "Om",
   "cancel": "Avbryt",
-  "close": "",
+  "close": "Stäng",
   "delete": "Radera",
-  "ok": "",
+  "ok": "OK",
   "edit": "Redigera",
-  "version": "",
-  "changePosition": "",
+  "version": "Version",
+  "changePosition": "Ändra position",
   "remove": "Ta bort",
   "sections": {
     "settings": "Inställningar",
     "dangerZone": "Farozon"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "API-nyckel",
     "username": "Användarnamn",
     "password": "Lösenord"
   },
