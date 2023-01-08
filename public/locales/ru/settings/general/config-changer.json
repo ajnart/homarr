@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Загрузчик конфигурации"
+    "label": "Загрузчик конфигурации",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Выберите имя новой конфигурации",
     "form": {
       "configName": {
         "label": "Имя конфигурации",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "Имя вашей новой конфигурации"
       },
       "submitButton": "Подтвердить"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Конфигурация сохранена",
         "message": "Конфигурация сохранена как {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "Перетащите файлы сюда, чтобы загрузить конфигурацию. Поддерживается только JSON."
     },
     "reject": {
+      "title": "",
       "text": "Этот формат файла не поддерживается. Пожалуйста, загружайте только JSON."
     }
   }
