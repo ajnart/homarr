@@ -1,10 +1,10 @@
 {
     "fallback": {
-        "title": ""
+        "title": "Du har i øjeblikket ingen værktøjer"
     },
     "iconPicker": {
-        "textInputPlaceholder": "",
-        "searchLimitationTitle": "",
-        "searchLimitationMessage": ""
+        "textInputPlaceholder": "Søg efter ikoner...",
+        "searchLimitationTitle": "Søgningen er begrænset til {{max}} ikoner",
+        "searchLimitationMessage": "For at holde det hele hurtigt og hurtigt er søgningen begrænset til {{max}} ikoner. Brug søgefeltet til at finde flere ikoner"
     }
 }
