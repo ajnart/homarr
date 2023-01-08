@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Moduel 4 displaying teh graphs ov ur runnin Dash. instanz.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "CPU Multi-Coer View"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
