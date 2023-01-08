@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Tiêu đề trang",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Logo"
