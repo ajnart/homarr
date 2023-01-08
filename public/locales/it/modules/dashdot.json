@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Un modulo per visualizzare i grafici dell'istanza di Dash. in esecuzione.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Vista CPU Multi-Core"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
