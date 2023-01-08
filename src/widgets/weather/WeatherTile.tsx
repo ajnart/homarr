@@ -1,4 +1,5 @@
 import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import { IconArrowDownRight, IconArrowUpRight, IconCloudRain } from '@tabler/icons';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -19,7 +20,7 @@ const definition = defineWidget({
     },
   },
   gridstack: {
-    minWidth: 2,
+    minWidth: 1,
     minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
@@ -35,10 +36,17 @@ interface WeatherTileProps {
 
 function WeatherTile({ widget }: WeatherTileProps) {
   const { data: weather, isLoading, isError } = useWeatherForCity(widget.properties.location);
+  const { width, height, ref } = useElementSize();
 
   if (isLoading) {
     return (
-      <>
+      <Stack
+        ref={ref}
+        spacing="xs"
+        justify="space-around"
+        align="center"
+        style={{ height: '100%', width: '100%' }}
+      >
         <Skeleton height={40} width={100} mb="xl" />
         <Group noWrap>
           <Skeleton height={50} circle />
@@ -47,7 +55,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
             <Skeleton height={25} width={70} />
           </Group>
         </Group>
-      </>
+      </Stack>
     );
   }
 
@@ -62,32 +70,35 @@ function WeatherTile({ widget }: WeatherTileProps) {
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <Stack
+      ref={ref}
       spacing="xs"
       justify="space-around"
       align="center"
       style={{ height: '100%', width: '100%' }}
     >
-      <Group grow>
+      <Group align={'center'} position="center" spacing="xs">
         <WeatherIcon code={weather!.current_weather.weathercode} />
-        <Title order={2}>
+        <Title>
           {getPerferedUnit(
             weather!.current_weather.temperature,
             widget.properties.displayInFahrenheit
           )}
         </Title>
       </Group>
-      <Group noWrap spacing="xs">
-        <IconArrowUpRight />
-        {getPerferedUnit(
-          weather!.daily.temperature_2m_max[0],
-          widget.properties.displayInFahrenheit
-        )}
-        <IconArrowDownRight />
-        {getPerferedUnit(
-          weather!.daily.temperature_2m_min[0],
-          widget.properties.displayInFahrenheit
-        )}
-      </Group>
+      {width > 200 && (
+        <Group noWrap spacing="xs">
+          <IconArrowUpRight />
+          {getPerferedUnit(
+            weather!.daily.temperature_2m_max[0],
+            widget.properties.displayInFahrenheit
+          )}
+          <IconArrowDownRight />
+          {getPerferedUnit(
+            weather!.daily.temperature_2m_min[0],
+            widget.properties.displayInFahrenheit
+          )}
+        </Group>
+      )}
     </Stack>
   );
 }

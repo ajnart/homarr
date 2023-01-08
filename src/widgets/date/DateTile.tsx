@@ -1,4 +1,5 @@
 import { Stack, Text, Title } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
@@ -16,7 +17,7 @@ const definition = defineWidget({
     },
   },
   gridstack: {
-    minWidth: 2,
+    minWidth: 1,
     minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
@@ -33,11 +34,12 @@ interface DateTileProps {
 function DateTile({ widget }: DateTileProps) {
   const date = useDateState();
   const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
+  const { width, height, ref } = useElementSize();
 
   return (
-    <Stack spacing="xs" justify="space-around" align="center" style={{ height: '100%' }}>
+    <Stack ref={ref} spacing="xs" justify="space-around" align="center" style={{ height: '100%' }}>
       <Title>{dayjs(date).format(formatString)}</Title>
-      <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>
+      {width > 200 && <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>}
     </Stack>
   );
 }

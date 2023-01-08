@@ -42,7 +42,6 @@ const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
         className="grid-stack grid-stack-sidebar"
         style={{ transitionDuration: '0s', height: '100%' }}
         data-sidebar={location}
-        // eslint-disable-next-line react/no-unknown-property
         gs-min-row={minRow}
       >
         <WrapperContent apps={apps} refs={refs} widgets={widgets} />
