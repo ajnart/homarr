@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "ביטורנט",
+    "description": "מציג רשימת טורנטים פעילים",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור אינטגרצית ביטורנט",
       "refreshInterval": {
-        "label": ""
+        "label": "מרווח הזמן לרענון (בשניות)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "הצג טורנטים שהושלמו"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "הצג טורנטים שהושלמו"
       }
     }
   },
@@ -43,8 +43,8 @@
         "text": "הוסף שירות הורדה כדי להציג את ההורדות הנוכחיות שלך"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "שגיאה לא צפויה התרחשה",
+        "text": "אין אפשרות לתקשר עם קליינט ההורדה. נא לבדוק את ההגדרות."
       }
     },
     "loading": {
