@@ -3,6 +3,7 @@
     "name": "Погода",
     "description": "Шукати поточну погоду у вашому місцеперебуванні",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Використовувати Фаренгейт"
       },
