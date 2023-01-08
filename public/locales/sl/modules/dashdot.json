@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Modul za prikazovanje grafov iz vašega delujočega programa Dash.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Pogled večjedrnih procesorjev"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
