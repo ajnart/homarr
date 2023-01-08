@@ -1,20 +1,20 @@
 {
-  "save": "",
-  "about": "",
+  "save": "שמור",
+  "about": "אודות",
   "cancel": "בטל",
-  "close": "",
+  "close": "סגור",
   "delete": "מחיקה",
-  "ok": "",
+  "ok": "אישור",
   "edit": "עריכה",
-  "version": "",
-  "changePosition": "",
+  "version": "גרסה",
+  "changePosition": "שנה מיקום",
   "remove": "הסר",
   "sections": {
     "settings": "הגדרות",
     "dangerZone": "אזור מסוכן"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "מפתח API",
     "username": "שם משתמש",
     "password": "סיסמה"
   },
