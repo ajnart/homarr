@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "页面标题",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "徽标"
