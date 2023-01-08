@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "ページタイトル",
-    "placeholder": "ホーマー"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "ロゴマーク"
