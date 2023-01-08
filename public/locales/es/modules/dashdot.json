@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "Un módulo para mostrar los gráficos de la instancia de Dash. en ejecución.",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Vista CPU Multinúcleo"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. URL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
