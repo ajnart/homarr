@@ -13,17 +13,17 @@
   },
   "grow": "הגדלת אריחים (תופס את כל השטח)",
   "layout": {
-    "title": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "title": "פריסת לוח מחוונים",
+    "main": "ראשי",
+    "sidebar": "סרגל צד",
+    "cannotturnoff": "לא ניתן להסרה",
+    "dashboardlayout": "פריסת לוח מחוונים",
+    "enablersidebar": "הפעלת סרגל הצד הימני",
+    "enablelsidebar": "הפעלת סרגל הצד השמאלי",
+    "enablesearchbar": "הפעלת סרגל חיפוש",
+    "enabledocker": "הפעלת אינטגרצית דוקר",
+    "enableping": "הפעלת פינג",
+    "enablelsidebardesc": "אופציונלי. ניתן להשתמש עבור יישומים ואינטגרציות בלבד",
+    "enablersidebardesc": "אופציונלי. ניתן להשתמש עבור יישומים ואינטגרציות בלבד"
   }
 }
