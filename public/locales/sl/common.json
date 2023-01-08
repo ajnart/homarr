@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Shrani"
+  "save": "",
+  "about": "",
+  "cancel": "Prekliči",
+  "close": "",
+  "delete": "Izbriši",
+  "ok": "",
+  "edit": "Uredi",
+  "version": "",
+  "changePosition": "",
+  "remove": "Odstrani",
+  "sections": {
+    "settings": "Nastavitve",
+    "dangerZone": "Nevarno območje"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Uporabniško ime",
+    "password": "Geslo"
   },
   "tip": "Nasvet: ",
   "time": {
