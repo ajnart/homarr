@@ -3,6 +3,7 @@
     "name": "Dash.",
     "description": "一个显示运行中的仪表板实例的图表模块。",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "CPU多核视图"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "Dash. 网址"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
