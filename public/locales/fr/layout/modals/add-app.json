@@ -1,65 +1,65 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Général",
+		"behaviour": "Comportement",
 		"network": "Réseau",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Apparence",
+		"integration": "Intégration"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Nom de l'application",
+			"description": "Utilisé pour afficher l'application sur le tableau de bord"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Adresse Interne",
+			"description": "IP interne de l'application"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Adresse externe",
+			"description": "Url qui sera ouverte dans le navigateur lorsqu'on clique sur l'application"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Ouvrir dans un nouvel onglet",
+			"description": "Ouvrir le lien dans un nouvel onglet"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Vérificateur de statut",
+			"description": "Envoie une simple demande HTTP / HTTPS pour vérifier si votre application est en ligne"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Codes d'état HTTP",
+			"description": "Détermine quels codes de réponse sont autorisés pour que cette application soit \"en ligne\""
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "Icône de l’app",
+			"description": "Logo de votre application affiché dans votre tableau de bord. (Doit retourner un contenu contenant une image)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "Configuration d’intégrations",
+			"description": "Traite cette application comme l'intégration sélectionnée et vous fournit une configuration supplémentaire",
+			"placeholder": "Sélectionner une itégration",
+			"defined": "Défini",
+			"undefined": "Indéfini",
+			"public": "Public",
+			"private": "Privé",
+			"explanationPublic": "Un secret privé sera envoyé au serveur. Une fois que votre navigateur a rafraîchi la page. Il ne sera jamais envoyé au client.",
+			"explanationPrivate": "Un secret public est toujours envoyé au client et est accessible via l'API. Il ne doit pas contenir de valeurs confidentielles telles que des noms d'utilisateur, des mots de passe, des jetons, des certificats et d'autres éléments similaires"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Pour mettre à jour un secret, entrez une valeur et cliquez sur le bouton Enregistrer. Pour supprimer un secret, utilisez le bouton Effacer.",
+			"warning": "Vos informations d'identification servent d'accès à vos intégrations et vous devez <strong>ne jamais</strong> les partager avec quelqu'un d'autre. L'équipe officielle d'Homarr ne vous demandera jamais vos informations d'identification. Veillez à <strong>stocker et gérer vos secrets en toute sécurité</strong>.",
+			"clear": "Effacer le secret",
+			"save": "Sauvegarder le secret",
+			"update": "Mettre à jour le secret"
 		}
 	}
 }
