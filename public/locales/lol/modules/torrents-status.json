@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Show teh current download sped ov supportd servicez",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Hied completd torrentz"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "No supportd download clientz findz!",
         "text": "Add download survis 2 view ur current downloadz"
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Loadin..."
     }
   }
 }
