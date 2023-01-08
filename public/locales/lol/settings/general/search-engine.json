@@ -5,10 +5,14 @@
     "placeholderTip": "%s can bees usd as placeholdah 4 teh quewee."
   },
   "customEngine": {
+    "title": "",
     "label": "Quewee URL",
     "placeholder": "Custom quewee URL"
   },
   "searchNewTab": {
+    "label": ""
+  },
+  "searchEnabled": {
     "label": ""
   }
 }
