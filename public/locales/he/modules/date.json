@@ -3,7 +3,7 @@
     "name": "תאריך",
     "description": "הצגת השעה והתאריך הנוכחיים",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור אינטגרצית יומן",
       "display24HourFormat": {
         "label": "הצגת זמן בפורמט 24 שעות"
       }
