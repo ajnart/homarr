@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Trình nạp cấu hình"
+    "label": "Trình nạp cấu hình",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Chọn tên cho cấu hình mới của bạn",
     "form": {
       "configName": {
         "label": "Tên cấu hình",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "Tên cấu hình mới của bạn"
       },
       "submitButton": "Xác nhận"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Đã lưu cấu hình",
         "message": "Đã lưu cấu hình thành {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "Kéo thả tệp vào đây để tải cấu hình lên. Chỉ hỗ trợ JSON."
     },
     "reject": {
+      "title": "",
       "text": "Định dạng tệp này không được hỗ trợ. Vui lòng chỉ tải lên JSON."
     }
   }
