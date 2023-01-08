@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "BitTorrent",
+    "description": "Mostrar lista de torrents que están descargándose actualmente",
     "settings": {
-      "title": "",
+      "title": "Ajustes para integración BitTorrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Intervalo de refresco (en segundos)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Mostrar torrents completados"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Mostrar torrents estancados"
       }
     }
   },
@@ -43,8 +43,8 @@
         "text": "Añade un servicio de descarga para ver tus descargas actuales"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Ocurrió un error inesperado",
+        "text": "Homarr no pudo comunicarse con tus clientes de descarga. Por favor, comprueba tu configuración"
       }
     },
     "loading": {
