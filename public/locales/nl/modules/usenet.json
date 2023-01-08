@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Hiermee kunt u uw usenet (Sabnzbd of NZBGet) wachtrij en geschiedenis zien, downloads pauzeren en hervatten"
   },
   "card": {
     "errors": {
@@ -42,7 +42,7 @@
     "empty": "Leeg",
     "error": {
       "title": "Fout",
-      "message": "Fout bij laden geschiedenis"
+      "message": "Fout bij het laden van de geschiedenis"
     },
     "paused": "Gepauzeerd"
   }
