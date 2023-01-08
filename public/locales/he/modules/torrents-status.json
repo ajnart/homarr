@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "טורנט",
-    "description": "מציג את מהירות ההורדה הנוכחית של שירות נתמך",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "הסתר טורנטים שהושלמו"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -24,8 +31,8 @@
     },
     "lineChart": {
       "title": "מהירות הורדה נוכחית",
-      "download": "הורדה: {{download}}",
-      "upload": "העלאה: {{upload}}",
+      "download": "הורדה {{download}}",
+      "upload": "העלאה {{upload}}",
       "timeSpan": "לפני {{seconds}} שניות",
       "totalDownload": "הורדות: {{download}}",
       "totalUpload": "העלאות: {{upload}}"
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "לא נמצאו לקוחות הורדה נתמכים!",
         "text": "הוסף שירות הורדה כדי להציג את ההורדות הנוכחיות שלך"
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "טוען..."
     }
   }
 }
