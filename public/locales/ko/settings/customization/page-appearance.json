@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "페이지 제목",
-    "placeholder": ""
+    "label": "페이지 제목"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "logo": {
     "label": "로고"
