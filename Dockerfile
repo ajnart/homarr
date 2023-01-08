@@ -20,4 +20,4 @@ EXPOSE 7575
 
 ENV PORT 7575
 
-CMD "SET PORT=8080 && node server.js"
+CMD node -E "PORT=7575" server.js
