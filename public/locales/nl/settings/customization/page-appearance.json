@@ -3,7 +3,7 @@
     "label": "Paginatitel"
   },
   "metaTitle": {
-    "label": ""
+    "label": "Meta Titel"
   },
   "logo": {
     "label": "Logo"
@@ -15,8 +15,8 @@
     "label": "Achtergrond"
   },
   "customCSS": {
-    "label": "Eigen CSS",
-    "placeholder": "Eigen CSS wordt als laatste uitgevoerd"
+    "label": "Aangepaste CSS",
+    "placeholder": "Aangepaste CSS wordt als laatste toegevoegd"
   },
   "buttons": {
     "submit": "Indienen"
