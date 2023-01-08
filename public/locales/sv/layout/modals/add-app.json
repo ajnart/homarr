@@ -1,65 +1,65 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Allmänt",
+		"behaviour": "Beteende",
 		"network": "Nätverk",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Utseende",
+		"integration": "Integration"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Appnamn",
+			"description": "Används för att visa appen på instrumentpanelen"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Intern adress",
+			"description": "Appens interna IP-adress"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Extern adress",
+			"description": "Url som öppnas i webbläsaren när du klickar på appen"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Öppna i ny flik",
+			"description": "Öppna länken i en ny flik"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Statuskontroll",
+			"description": "Skickar en enkel HTTP / HTTPS-förfrågan för att kontrollera om din app är online"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP-statuskoder",
+			"description": "Bestämmer vilka svarskoder som tillåts för att appen ska vara \"Online\""
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "Appikon",
+			"description": "Logotyp för din app som visas i kontrollpanelen. (Vänd tillbaka ett innehåll som innehåller en bild)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "Integrationskonfiguration",
+			"description": "Behandlar denna app som den valda integrationen och ger dig per-app konfiguration",
+			"placeholder": "Välj en integration",
+			"defined": "Definierad",
+			"undefined": "Odefinierad",
+			"public": "Publik",
+			"private": "Privat",
+			"explanationPublic": "En privat hemlighet kommer att skickas till servern. När din webbläsare har uppdaterat sidan, kommer den aldrig att skickas till klienten.",
+			"explanationPrivate": "En offentlig hemlighet kommer alltid att skickas till klienten och är tillgänglig över API. Det bör inte innehålla några konfidentiella värden som användarnamn, lösenord, tokens, certifikat och liknande"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "För att uppdatera en hemlighet, ange ett värde och klicka på knappen Spara. För att ta bort en hemlighet, använd knappen rensa.",
+			"warning": "Dina autentiseringsuppgifter fungerar som åtkomst till dina integrationer och du bör <strong>aldrig</strong> dela dem med någon annan. Det officiella Homarr-teamet kommer aldrig att be om autentiseringsuppgifter. Se till att <strong>lagra och hantera dina hemligheter på ett säkert sätt</strong>.",
+			"clear": "Rensa hemlighet",
+			"save": "Spara hemlighet",
+			"update": "Uppdatera hemlighet"
 		}
 	}
 }
