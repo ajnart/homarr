@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "おそれについて",
+    "description": "允许你查看你的usenet（Sabnzbd或NZBGet）队列和历史，暂停和恢复下载"
   },
   "card": {
     "errors": {
