@@ -3,6 +3,7 @@
     "name": "ダッシュ",
     "description": "実行中のDash.インスタンスのグラフを表示するためのモジュールです。",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "CPUマルチコアビュー"
       },
@@ -18,6 +19,10 @@
       "url": {
         "label": "ダッシュURL"
       }
+    },
+    "remove": {
+      "title": "",
+      "confirm": ""
     }
   },
   "card": {
