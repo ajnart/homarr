@@ -1,20 +1,20 @@
 {
-  "save": "",
-  "about": "",
+  "save": "拯救",
+  "about": "关于",
   "cancel": "取消",
-  "close": "",
+  "close": "关闭",
   "delete": "删除",
-  "ok": "",
+  "ok": "认可",
   "edit": "编辑",
-  "version": "",
-  "changePosition": "",
+  "version": "版本",
+  "changePosition": "改变立场",
   "remove": "移除",
   "sections": {
     "settings": "设置",
     "dangerZone": "危险操作"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Api密钥",
     "username": "用户名",
     "password": "密码"
   },
