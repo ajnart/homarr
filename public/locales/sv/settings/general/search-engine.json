@@ -5,10 +5,14 @@
     "placeholderTip": "%s kan användas som platshållare för förfrågningen."
   },
   "customEngine": {
+    "title": "",
     "label": "URL för förfrågan",
     "placeholder": "Anpassad sök-URL"
   },
   "searchNewTab": {
     "label": "Öppna sökresultaten i en ny flik"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
