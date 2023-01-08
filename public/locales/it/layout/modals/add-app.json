@@ -1,65 +1,65 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Generale",
+		"behaviour": "Comportamento",
 		"network": "Rete",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Aspetto",
+		"integration": "Integrazione"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Nome app",
+			"description": "Utilizzato per visualizzare l'app sulla dashboard"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Indirizzo interno",
+			"description": "IP interno dell'app"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Indirizzo esterno",
+			"description": "URL che verrà aperto nel browser al clic dell'app"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Apri in una nuova scheda",
+			"description": "Apri il link in una nuova scheda"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Status checker",
+			"description": "Invia una semplice richiesta HTTP / HTTPS per verificare se la tua app è online"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Codici di stato HTTP",
+			"description": "Determina quali response codes sono consentiti per questa app per essere 'Online'"
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "Icona App",
+			"description": "Logo dell'app visualizzato nella dashboard. (Deve restituire un contenuto del body contenente un'immagine)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "Configurazione integrazioni",
+			"description": "Considera questa app come l'integrazione selezionata e ti fornisce la configurazione per app",
+			"placeholder": "Seleziona un'integrazione",
+			"defined": "Definito",
+			"undefined": "Indefinito",
+			"public": "Pubblico",
+			"private": "Privato",
+			"explanationPublic": "Un segreto privato verrà inviato al server. Una volta che il browser avrà aggiornato la pagina, non verrà mai inviato al client.",
+			"explanationPrivate": "Un secret pubblico sarà sempre inviato al client ed è accessibile tramite API. Non dovrebbe contenere dati sensibili come nomi utente, password, token, certificati e simili"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Per aggiornare un secret, inserisci un valore e fai clic sul pulsante Salva. Per rimuoverlo, usa il pulsante rimuovi.",
+			"warning": "Le tue credenziali fungono da accesso per le tue integrazioni e non devi <strong>mai</strong> condividerle con nessuno. Il team ufficiale di Homarr non chiederà mai le credenziali. Assicurati di <strong>memorizzare e gestire i tuoi dati privati in modo sicuro</strong>.",
+			"clear": "Rimuovi secret",
+			"save": "Salva secret",
+			"update": "Aggiorna secret"
 		}
 	}
 }
