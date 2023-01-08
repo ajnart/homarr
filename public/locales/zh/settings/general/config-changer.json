@@ -1,8 +1,8 @@
 {
   "configSelect": {
     "label": "配置加载器",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "loadingNew": "加载你的配置...",
+    "pleaseWait": "请等待，直到你的新配置加载完毕"
   },
   "modal": {
     "title": "选择你的新配置的名称",
@@ -10,7 +10,7 @@
       "configName": {
         "label": "配置名称",
         "validation": {
-          "required": ""
+          "required": "配置名称是必需的"
         },
         "placeholder": "你的新配置名称"
       },
@@ -22,12 +22,12 @@
         "message": "配置保存为 {{configName}}"
       },
       "configCopied": {
-        "title": "",
-        "message": ""
+        "title": "复制的配置",
+        "message": "配置复制为 {{configName}}"
       },
       "configNotCopied": {
-        "title": "",
-        "message": ""
+        "title": "无法复制配置",
+        "message": "你的配置没有被复制为 {{configName}}"
       }
     }
   },
@@ -59,11 +59,11 @@
       }
     },
     "accept": {
-      "title": "",
+      "title": "配置上传",
       "text": "在这里拖动文件来上传配置。只支持JSON。"
     },
     "reject": {
-      "title": "",
+      "title": "拒绝拖拽式上传",
       "text": "不支持这种文件格式。请只上传JSON。"
     }
   }
