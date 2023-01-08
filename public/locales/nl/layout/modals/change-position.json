@@ -1,1 +1,8 @@
-{}
+{
+	"xPosition": "X-as positie",
+	"width": "Breedte",
+	"height": "Hoogte",
+	"yPosition": "Y-as positie",
+	"zeroOrHigher": "0 of hoger",
+	"betweenXandY": "Tussen {{min}} en {{max}}"
+}
