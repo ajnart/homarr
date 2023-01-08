@@ -3,6 +3,7 @@
     "name": "Pogoda",
     "description": "Sprawdź aktualną pogodę w swojej lokalizacji",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Wyświetlaj w Fahrenheitach"
       },
