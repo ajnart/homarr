@@ -26,5 +26,6 @@
     }
   },
   "tip": "Bạn có thể chọn thanh tìm kiếm bằng phím tắt ",
-  "switchedSearchEngine": "Đã đổi sang tìm kiếm bằng {{searchEngine}}"
+  "switchedSearchEngine": "Đã đổi sang tìm kiếm bằng {{searchEngine}}",
+  "configurationName": ""
 }
