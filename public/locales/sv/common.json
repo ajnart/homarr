@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Spara"
+  "save": "",
+  "about": "",
+  "cancel": "Avbryt",
+  "close": "",
+  "delete": "Radera",
+  "ok": "",
+  "edit": "Redigera",
+  "version": "",
+  "changePosition": "",
+  "remove": "Ta bort",
+  "sections": {
+    "settings": "Inställningar",
+    "dangerZone": "Farozon"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Användarnamn",
+    "password": "Lösenord"
   },
   "tip": "Tips: ",
   "time": {
