@@ -3,7 +3,7 @@
     "name": "Vreme",
     "description": "Iskanje trenutnega vremena na vaši lokaciji",
     "settings": {
-      "title": "",
+      "title": "Nastavitve za integracijo vremena",
       "displayInFahrenheit": {
         "label": "Prikaz v Fahrenheitu"
       },
