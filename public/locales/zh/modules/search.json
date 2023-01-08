@@ -6,26 +6,26 @@
   "input": {
     "placeholder": "在网上搜索..."
   },
-  "switched-to": "",
+  "switched-to": "换成了",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "网络",
+      "description": "使用你的搜索引擎进行搜索（在设置中定义）。"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "录像带",
+      "description": "在Youtube上搜索"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "火炬",
+      "description": "搜索山洪病毒"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "使用Overseerr搜索电影和电视节目(模块必须启用)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": "",
-  "configurationName": ""
+  "tip": "你可以用快捷键选择搜索栏 ",
+  "switchedSearchEngine": "改为用 {{searchEngine}}进行搜索",
+  "configurationName": "搜索引擎配置"
 }
