@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "Logotyp för din app som visas i kontrollpanelen. (Vänd tillbaka ett innehåll som innehåller en bild)"
+			"description": "Logotyp för din app som visas i instrumentpanelen. (Måste visa ett innehåll som innehåller en bild)"
 		}
 	},
 	"integration": {
