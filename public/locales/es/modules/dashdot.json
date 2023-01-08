@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Un módulo para mostrar los gráficos de la instancia de Dash. en ejecución.",
     "settings": {
-      "title": "",
+      "title": "Ajustes para el widget Dash.",
       "cpuMultiView": {
         "label": "Vista CPU Multinúcleo"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Eliminar widget de Dash.",
+      "confirm": "Seguro que quieres eliminar el widget de Dash.?"
     }
   },
   "card": {
