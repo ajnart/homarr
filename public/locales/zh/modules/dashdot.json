@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "一个显示运行中的仪表板实例的图表模块。",
     "settings": {
-      "title": "",
+      "title": "为Dash.Widget设置",
       "cpuMultiView": {
         "label": "CPU多核视图"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "移除Dash.Widget",
+      "confirm": "你确定要删除Dash.widget吗？"
     }
   },
   "card": {
