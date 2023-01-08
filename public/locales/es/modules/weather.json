@@ -3,6 +3,7 @@
     "name": "Clima",
     "description": "Consulta el clima actual en tu ubicación",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Mostrar en Fahrenheit"
       },
