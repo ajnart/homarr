@@ -39,8 +39,8 @@ const definition = defineWidget({
   options: {},
   component: UseNetTile,
   gridstack: {
-    minWidth: 4,
-    minHeight: 5,
+    minWidth: 2,
+    minHeight: 3,
     maxWidth: 12,
     maxHeight: 12,
   },
