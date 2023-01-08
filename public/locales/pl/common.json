@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Zapisz"
+  "save": "",
+  "about": "",
+  "cancel": "Anuluj",
+  "close": "",
+  "delete": "Usuń",
+  "ok": "",
+  "edit": "Edytuj",
+  "version": "",
+  "changePosition": "",
+  "remove": "Usuń",
+  "sections": {
+    "settings": "Ustawienia",
+    "dangerZone": "Strefa zagrożenia"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Nazwa użytkownika",
+    "password": "Hasło"
   },
   "tip": "Wskazówka: ",
   "time": {
