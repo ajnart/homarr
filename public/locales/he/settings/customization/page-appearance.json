@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "כותרת העמוד",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "סמל"
