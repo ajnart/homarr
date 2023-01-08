@@ -1,3 +1,4 @@
+/*eslint import/no-cycle: [2, { maxDepth: 1 }]*/
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Results } from 'sabnzbd-api';
