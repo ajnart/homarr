@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Nalagalnik konfiguracije"
+    "label": "Nalagalnik konfiguracije",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Izberite ime vaše nove konfiguracije",
     "form": {
       "configName": {
         "label": "Ime konfiguracije",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "Vaše novo ime konfiguracije"
       },
       "submitButton": "Potrdi"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Konfiguracija je shranjena",
         "message": "Konfiguracija shranjena kot {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "Če želite naložiti konfiguracijo, povlecite datoteke sem. Podpora samo za JSON."
     },
     "reject": {
+      "title": "",
       "text": "Ta oblika datoteke ni podprta. Prenesite samo JSON."
     }
   }
