@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Toon de huidige downloadsnelheid van ondersteunde diensten",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Verberg voltooide torrents"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "Geen ondersteunde download clients gevonden!",
         "text": "Voeg een downloadservice toe om uw huidige downloads weer te geven"
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Laden..."
     }
   }
 }
