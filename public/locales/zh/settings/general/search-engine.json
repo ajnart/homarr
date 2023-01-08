@@ -5,7 +5,7 @@
     "placeholderTip": "%s 可以作为查询的占位符。"
   },
   "customEngine": {
-    "title": "",
+    "title": "自定义搜索引擎",
     "label": "查询网址",
     "placeholder": "自定义查询网址"
   },
@@ -13,6 +13,6 @@
     "label": "在新选项卡中打开搜索结果页"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "启用搜索"
   }
 }
