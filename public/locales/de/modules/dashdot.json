@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Ein Modul, welches die Graphen aus einer laufenden Dash. Instanz anzeigt.",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für Dash. Widget",
       "cpuMultiView": {
         "label": "CPU Multi-Core View"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Dash. widget entfernen",
+      "confirm": "Sind Sie sicher, dass sie das Dash. widget entfernen möchten?"
     }
   },
   "card": {
