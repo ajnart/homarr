@@ -3,6 +3,7 @@
     "name": "Погода",
     "description": "Узнайте текущую погоду в вашем регионе",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Отображение в градусах Фаренгейта"
       },
