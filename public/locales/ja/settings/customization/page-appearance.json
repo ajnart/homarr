@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "ページタイトル",
-    "placeholder": ""
+    "label": "ページタイトル"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": "メタ・タイトル"
   },
   "logo": {
     "label": "ロゴマーク"
