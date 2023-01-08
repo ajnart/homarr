@@ -27,7 +27,7 @@
       },
       "configNotCopied": {
         "title": "Kan configuratie niet kopiëren",
-        "message": ""
+        "message": "Uw configuratie werd niet gekopieerd als {{configName}}"
       }
     }
   },
@@ -46,25 +46,25 @@
         }
       }
     },
-    "saveCopy": "Sla op als een kopie"
+    "saveCopy": "Sla kopie op"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
         "title": "Kan configuratie niet laden",
-        "message": "Kon uw configuratie niet laden. Ongeldig JSON formaat."
+        "message": "Kon uw configuratie niet laden. Ongeldige JSON-indeling."
       },
       "loadedSuccessfully": {
         "title": "Configuratie {{configName}} succesvol geladen"
       }
     },
     "accept": {
-      "title": "",
-      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON."
+      "title": "Configuratie Upload",
+      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen JSON-bestanden worden ondersteund."
     },
     "reject": {
-      "title": "",
-      "text": "Dit bestandsformaat wordt niet ondersteund. Upload a.u.b. alleen JSON."
+      "title": "Drag & Drop Upload afgewezen",
+      "text": "Deze bestandsindeling wordt niet ondersteund. Upload alleen JSON."
     }
   }
 }
