@@ -3,7 +3,7 @@
     "name": "Data",
     "description": "Mostra l'ora e la data corrente in una scheda",
     "settings": {
-      "title": "",
+      "title": "Impostazioni per l'integrazione della data",
       "display24HourFormat": {
         "label": "Visualizza formato 24 ore"
       }
