@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "מודול להצגת הגרפים משירות Dash.",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור וידג׳ט Dash.",
       "cpuMultiView": {
         "label": "תצוגת מעבד מרובת ליבות"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "הסרת וידג׳ט Dash.",
+      "confirm": "האם אתה בטוח שברצונך להסיר את וידג׳ט Dash."
     }
   },
   "card": {
