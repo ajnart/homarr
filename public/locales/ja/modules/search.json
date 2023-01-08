@@ -6,26 +6,26 @@
   "input": {
     "placeholder": "ウェブで検索..."
   },
-  "switched-to": "",
+  "switched-to": "に切り替わりました。",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "ウェブ",
+      "description": "検索エンジンで検索する（設定で設定可能）"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "Youtube",
+      "description": "Youtubeで検索"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "トレント",
+      "description": "トレントを検索する"
     },
     "overseerr": {
       "name": "オーバーホール",
-      "description": ""
+      "description": "Overseerrを使った映画・テレビ番組検索（モジュールの有効化が必要です）"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": "",
-  "configurationName": ""
+  "tip": "ショートカットで検索バーを選択することができます ",
+  "switchedSearchEngine": "{{searchEngine}}で検索するように変更しました。",
+  "configurationName": "検索エンジンの設定"
 }
