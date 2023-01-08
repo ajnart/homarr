@@ -26,5 +26,6 @@
     }
   },
   "tip": "Вы можете выбрать строку поиска с помощью сочетания клавиш ",
-  "switchedSearchEngine": "Переключился на поиск с помощью {{searchEngine}}"
+  "switchedSearchEngine": "Переключился на поиск с помощью {{searchEngine}}",
+  "configurationName": ""
 }
