@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Et modul til visning af graferne for din kørende Dash. instans.",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for Dash. widget",
       "cpuMultiView": {
         "label": "CPU Multikerne Visning"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Fjern Dash. widget",
+      "confirm": "Er du sikker på, at du ønsker at fjerne Dash. widget'en?"
     }
   },
   "card": {
