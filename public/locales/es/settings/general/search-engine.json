@@ -5,10 +5,14 @@
     "placeholderTip": "%s puede utilizarse como modelo para la petición."
   },
   "customEngine": {
+    "title": "",
     "label": "URL de la Petición",
     "placeholder": "URL de petición personalizada"
   },
   "searchNewTab": {
     "label": "Abrir los resultados de la búsqueda en una pestaña nueva"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
