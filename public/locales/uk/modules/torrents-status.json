@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Торент",
-    "description": "Показувати поточну швидкість завантаження для сервісів, які підтримуються",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Приховувати завершені"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "Не знайдено клієнтів для завантаження що підтримуються!",
         "text": "Додайте сервіс завантаження, щоб переглянути поточні завантаження"
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Завантаження..."
     }
   }
 }
