@@ -1,28 +1,28 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "כללי",
+		"behaviour": "התנהגות",
 		"network": "רשת",
-		"appearance": "",
-		"integration": ""
+		"appearance": "מראה",
+		"integration": "אינטגרציה"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "שם אפליקציה",
+			"description": "משמש להצגת האפליקציה בלוח המחוונים"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "כתובת פנימית",
+			"description": "כתובת רשת פנימית של האפליקציה"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "כתובת חיצונית",
+			"description": "כתובת אתר שתיפתח בדפדפן בעת לחיצה על האפליקציה"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
+			"label": "פתיחה בכרטיסיה חדשה",
 			"description": ""
 		}
 	},
