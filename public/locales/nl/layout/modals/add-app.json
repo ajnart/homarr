@@ -46,20 +46,20 @@
 		"type": {
 			"label": "",
 			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"placeholder": "Selecteer een integratie",
+			"defined": "Gedefinieerd",
+			"undefined": "Ongedefinieerd",
+			"public": "Openbaar",
+			"private": "Privé",
+			"explanationPublic": "Er wordt een privé geheim naar de server gestuurd. Zodra uw browser de pagina heeft ververst, wordt deze nooit meer naar de client gestuurd.",
+			"explanationPrivate": "Een public secret wordt altijd naar de client gestuurd en is toegankelijk via de API. Het mag geen vertrouwelijke waarden bevatten zoals gebruikersnamen, wachtwoorden, tokens, certificaten en dergelijke"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Om een geheim bij te werken, voert u een waarde in en klikt u op de knop Opslaan. Om een geheim te verwijderen, gebruikt u de knop wissen.",
+			"warning": "Uw gegevens fungeren als de toegang tot uw integraties en u zou deze <strong>nooit</strong> moeten delen met iemand anders. Het officiële Homarr team zal nooit om inloggegevens vragen. Zorg ervoor dat <strong>u uw geheimen veilig opslaat en beheert</strong>.",
+			"clear": "Wis geheim",
+			"save": "Geheim opslaan",
+			"update": "Update geheim"
 		}
 	}
 }
