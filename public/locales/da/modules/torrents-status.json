@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "BitTorrent",
+    "description": "Viser en liste over de torrent, der er ved at blive downloadet",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for BitTorrent-integration",
       "refreshInterval": {
-        "label": ""
+        "label": "Opdateringsinterval (i sekunder)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Vis fuldførte torrents"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Vis torrents uden aktivitet"
       }
     }
   },
@@ -43,8 +43,8 @@
         "text": "Tilføj en downloadtjeneste for at se dine aktuelle downloads"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Der opstod en uventet fejl",
+        "text": "Homarr kunne ikke kommunikere med dine downloadklienter. Kontroller venligst din konfiguration"
       }
     },
     "loading": {
