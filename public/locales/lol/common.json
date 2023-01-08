@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Save"
+  "save": "",
+  "about": "",
+  "cancel": "Cancel",
+  "close": "",
+  "delete": "Deleet",
+  "ok": "",
+  "edit": "Edit",
+  "version": "",
+  "changePosition": "",
+  "remove": "Remoev",
+  "sections": {
+    "settings": "Settingz",
+    "dangerZone": "Dangr zoen"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Usernaem",
+    "password": "Password"
   },
   "tip": "Tip: ",
   "time": {
