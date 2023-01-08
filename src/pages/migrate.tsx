@@ -246,7 +246,9 @@ function SwitchToggle() {
 
 export async function getServerSideProps({ req, res, locale }: GetServerSidePropsContext) {
   // Get all the configs in the /data/configs folder
-  const configs = fs.readdirSync('./data/configs');
+  // All the files that end in ".json"
+  const configs = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
+
   if (configs.length === 0) {
     res.writeHead(302, {
       Location: '/',

@@ -17,9 +17,10 @@ export async function getServerSideProps({
   res,
   locale,
 }: GetServerSidePropsContext): Promise<{ props: DashboardServerSideProps }> {
-  // Check that all the json files in the /data/configs folder are migrated
-  // If not, redirect to the migrate page
-  const configs = await fs.readdirSync('./data/configs');
+    // Get all the configs in the /data/configs folder
+  // All the files that end in ".json"
+  const configs = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
+
   if (
     !configs.every(
       (config) => JSON.parse(fs.readFileSync(`./data/configs/${config}`, 'utf8')).schemaVersion

@@ -3,8 +3,8 @@ import fs from 'fs';
 import { backendMigrateConfig } from '../../tools/config/backendMigrateConfig';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  // Get all the configs in the /data/configs folder
-  const configs = fs.readdirSync('./data/configs');
+  // Gets all the config files
+  const configs = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
   // If there is no config, redirect to the index
   configs.every((config) => {
     const configData = JSON.parse(fs.readFileSync(`./data/configs/${config}`, 'utf8'));
