@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "Paginatitel",
-    "placeholder": ""
+    "label": "Paginatitel"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "logo": {
     "label": "Logo"
