@@ -23,43 +23,43 @@
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "פתיחה בכרטיסיה חדשה",
-			"description": ""
+			"description": "פתיחת הקישור בכרטיסיה חדשה"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "בודק מצב",
+			"description": "שליחת בקשת רשת לבדיקה אם האפליקציה אונליין "
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "קוד מצב HTTP ",
+			"description": "קובע אילו קודי תגובה מותרים לאפליקציה זו להיות מקוונת"
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "סמל אפליקציה",
+			"description": "סמל האפליקציה שלך מוצג בלוח המחוונים. (חייב להחזיר תוכן גוף המכיל תמונה)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "תצורת אינטגרציה",
+			"description": "מתייחס ליישום זה כאל האינטגרציה שנבחרה ומספק לך תצורה לכל יישום",
+			"placeholder": "בחר אינטגרציה",
+			"defined": "מוגדר",
+			"undefined": "לא מוגדר",
+			"public": "ציבורי",
+			"private": "פרטי",
+			"explanationPublic": "קוד פרטי יישלח לשרת. ברגע שהדפדפן יבצע רענון לדף, לעולם לא יישלח ללקוח.",
+			"explanationPrivate": "קוד ציבורי תמיד יישלח ללקוח ונגיש דרך ה-API. אינו מכיל ערכים כגון שמות משתמש, סיסמאות, אסימונים וכדומה."
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "כדי לעדכן את הקוד, הזן ערך ולחץ על הלחצן שמור. כדי להסיר סוד השתמש בלחצן נקה.",
+			"warning": "האישורים שלך משמשים כגישה לאינטגרציות שלך ולעולם אל תשתף אותם. הצוות הרשמי של Homarr לעולם לא יבקש אישורים. יש לדאוג לשמור ולנהל את האישורים בצורה בטוחה.",
+			"clear": "נקה אישורים",
+			"save": "שמור אישורים",
+			"update": "עדכן אישורים"
 		}
 	}
 }
