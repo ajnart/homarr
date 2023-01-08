@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "BitTorrent",
+    "description": "Toont een lijst van de torrents die momenteel worden gedownload",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor BitTorrent-integratie",
       "refreshInterval": {
-        "label": ""
+        "label": "Verversingsinterval (in seconden)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Afgeronde torrents weergeven"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Toon verouderde torrents"
       }
     }
   },
@@ -43,12 +43,12 @@
         "text": "Voeg een downloadservice toe om uw huidige downloads weer te geven"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Onbekende fout opgetreden",
+        "text": "Homarr kon niet communiceren met uw downloadclients. Controleer uw configuratie"
       }
     },
     "loading": {
-      "title": "Laden..."
+      "title": "Bezig met laden..."
     }
   }
 }
