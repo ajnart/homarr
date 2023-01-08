@@ -3,6 +3,7 @@
     "name": "Wetter",
     "description": "Aktuelles Wetter an deinem Standort anzeigen",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "In Fahrenheit anzeigen"
       },
