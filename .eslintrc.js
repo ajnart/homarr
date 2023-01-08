@@ -18,6 +18,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    'import/no-cycle': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/no-children-prop': 'off',
     'unused-imports/no-unused-imports': 'warn',
@@ -28,6 +29,6 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-    'linebreak-style': 0
+    'linebreak-style': 0,
   },
 };
