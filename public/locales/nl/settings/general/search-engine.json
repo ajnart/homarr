@@ -5,10 +5,14 @@
     "placeholderTip": "%s kan worden gebruikt als plaatshouder voor de query."
   },
   "customEngine": {
+    "title": "",
     "label": "Query URL",
     "placeholder": "Eigen query URL"
   },
   "searchNewTab": {
+    "label": ""
+  },
+  "searchEnabled": {
     "label": ""
   }
 }
