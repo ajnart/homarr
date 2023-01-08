@@ -3,9 +3,9 @@
     "name": "Weer",
     "description": "Zoek het actuele weer op uw locatie",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor weer-integratie",
       "displayInFahrenheit": {
-        "label": "Toon in Fahrenheit"
+        "label": "Weergeven in Fahrenheit"
       },
       "location": {
         "label": "Weerslocatie"
