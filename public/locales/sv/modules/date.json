@@ -3,7 +3,7 @@
     "name": "Datum",
     "description": "Visa aktuell tid och datum på ett kort",
     "settings": {
-      "title": "",
+      "title": "Inställningar för integrering av datum",
       "display24HourFormat": {
         "label": "Visa heltid (24-timmars)"
       }
