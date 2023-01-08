@@ -1,6 +1,22 @@
 {
-  "actions": {
-    "save": "Opslaan"
+  "save": "",
+  "about": "",
+  "cancel": "Annuleer",
+  "close": "",
+  "delete": "Verwijder",
+  "ok": "",
+  "edit": "Wijzig",
+  "version": "",
+  "changePosition": "",
+  "remove": "Verwijder",
+  "sections": {
+    "settings": "Instellingen",
+    "dangerZone": "Gevarenzone"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Gebruikersnaam",
+    "password": "Wachtwoord"
   },
   "tip": "Tip: ",
   "time": {
