@@ -3,6 +3,7 @@
     "name": "Ngày giờ",
     "description": "Hiển thị ngày và giờ trong một thẻ",
     "settings": {
+      "title": "",
       "display24HourFormat": {
         "label": "Dùng thời gian 24 giờ"
       }
