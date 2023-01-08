@@ -1,20 +1,20 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Guardar",
+  "about": "Sobre",
   "cancel": "Cancelar",
-  "close": "",
+  "close": "Cerrar",
   "delete": "Eliminar",
-  "ok": "",
+  "ok": "OK",
   "edit": "Editar",
-  "version": "",
-  "changePosition": "",
+  "version": "Versión",
+  "changePosition": "Cambiar posición",
   "remove": "Eliminar",
   "sections": {
     "settings": "Ajustes",
     "dangerZone": "Zona de riesgo"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Clave API",
     "username": "Nombre de usuario",
     "password": "Contraseña"
   },
