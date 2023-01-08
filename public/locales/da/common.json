@@ -1,20 +1,20 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Gem",
+  "about": "Om",
   "cancel": "Annuller",
-  "close": "",
+  "close": "Luk",
   "delete": "Slet",
-  "ok": "",
+  "ok": "OK",
   "edit": "Rediger",
-  "version": "",
-  "changePosition": "",
+  "version": "Version",
+  "changePosition": "Ændre placering",
   "remove": "Fjern",
   "sections": {
     "settings": "Indstillinger",
     "dangerZone": "Farezone"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "API nøgle",
     "username": "Brugernavn",
     "password": "Adgangskode"
   },
