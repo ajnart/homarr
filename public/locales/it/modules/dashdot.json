@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Un modulo per visualizzare i grafici dell'istanza di Dash. in esecuzione.",
     "settings": {
-      "title": "",
+      "title": "Impostazioni del widget Dash.",
       "cpuMultiView": {
         "label": "Vista CPU Multi-Core"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Rimuovi il widget Dash.",
+      "confirm": "Siete sicuri di voler rimuovere il widget Dash.?"
     }
   },
   "card": {
