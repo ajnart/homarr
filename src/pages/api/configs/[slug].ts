@@ -88,7 +88,9 @@ function Get(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Loop over all the files in the /data/configs directory
-  const files = fs.readdirSync('data/configs');
+  // Get all the configs in the /data/configs folder
+  // All the files that end in ".json"
+  const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
 
   // Strip the .json extension from the file name
   const configs = files.map((file) => file.replace('.json', ''));
@@ -134,7 +136,9 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
   }
 
   // Loop over all the files in the /data/configs directory
-  const files = fs.readdirSync('data/configs');
+  // Get all the configs in the /data/configs folder
+  // All the files that end in ".json"
+  const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
 
   // Strip the .json extension from the file name
   const configs = files.map((file) => file.replace('.json', ''));
