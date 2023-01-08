@@ -22,52 +22,52 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
   const data: SelectItem[] = [
     {
       value: 'sabnzbd',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/sabnzbd.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/sabnzbd.png',
       label: 'SABnzbd',
     },
     {
       value: 'deluge',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/deluge.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/deluge.png',
       label: 'Deluge',
     },
     {
       value: 'transmission',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/transmission.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/transmission.png',
       label: 'Transmission',
     },
     {
       value: 'qBittorrent',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/qbittorrent.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/qbittorrent.png',
       label: 'qBittorrent',
     },
     {
       value: 'jellyseerr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/jellyseerr.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyseerr.png',
       label: 'Jellyseerr',
     },
     {
       value: 'overseerr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/overseerr.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/overseerr.png',
       label: 'Overseerr',
     },
     {
       value: 'sonarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/sonarr.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/sonarr.png',
       label: 'Sonarr',
     },
     {
       value: 'radarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/radarr.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/radarr.png',
       label: 'Radarr',
     },
     {
       value: 'lidarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/lidarr.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/lidarr.png',
       label: 'Lidarr',
     },
     {
       value: 'readarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxhub/dashboard-icons/png/readarr.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/readarr.png',
       label: 'Readarr',
     },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
