@@ -3,6 +3,7 @@
     "name": "Thời tiết",
     "description": "Kiểm tra thời tiết hiện tại theo khu vực của bạn",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Hiển thị bằng Fahrenheit"
       },
