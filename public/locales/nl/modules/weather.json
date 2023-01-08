@@ -3,6 +3,7 @@
     "name": "Weer",
     "description": "Zoek het actuele weer op uw locatie",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Toon in Fahrenheit"
       },
