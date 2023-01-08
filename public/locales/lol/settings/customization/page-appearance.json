@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "Paeg Titel",
-    "placeholder": ""
+    "label": "Paeg Titel"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "logo": {
     "label": "Logooo"
