@@ -1,65 +1,65 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Generelt",
+		"behaviour": "Adfærd",
 		"network": "Netværk",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Udseende",
+		"integration": "Integration"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "App navn",
+			"description": "Bruges til visning af appen på dashboardet"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Intern adresse",
+			"description": "Appens interne IP"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Ekstern adresse",
+			"description": "Url, der åbnes i browseren, når du klikker på appen"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Åbn i nyt faneblad",
+			"description": "Åbn linket i en ny fane"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Statuskontrol",
+			"description": "Sender en simpel HTTP / HTTPS-forespørgsel for at kontrollere, om din app er online"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP statuskoder",
+			"description": "Bestemmer, hvilke svarkoder der er tilladt, for at denne app kan være \"online\""
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "App Ikon",
+			"description": "Logoet for din app vises på dit dashboard. (Skal returnere et indhold med et billede)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "Konfiguration af integration",
+			"description": "Behandler denne app som den valgte integration og giver dig mulighed for konfiguration pr. app",
+			"placeholder": "Vælg en integration",
+			"defined": "Defineret",
+			"undefined": "Udefineret",
+			"public": "Offentlig",
+			"private": "Privat",
+			"explanationPublic": "Der sendes en privat hemmelighed til serveren. Når din browser har opdateret siden, vil den aldrig blive sendt til klienten.",
+			"explanationPrivate": "En offentlig hemmelighed vil altid blive sendt til klienten og er tilgængelig via API'en. Den bør ikke indeholde fortrolige værdier som f. eks. brugernavne, adgangskoder, tokens, certifikater og lignende"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Hvis du vil opdatere en hemmelighed, skal du indtaste en værdi og klikke på knappen Gem. Hvis du vil fjerne en hemmelighed, skal du bruge knappen \"clear\".",
+			"warning": "Dine legitimationsoplysninger fungerer som adgang til dine integrationer, og du bør <strong>aldrig</strong> dele dem med andre. Det officielle Homarr-team vil aldrig bede om legitimationsoplysninger. Sørg for at <strong>opbevare og administrere dine hemmeligheder sikkert</strong>.",
+			"clear": "Ryd hemmelighed",
+			"save": "Gem hemmelighed",
+			"update": "Opdater hemmelighed"
 		}
 	}
 }
