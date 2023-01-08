@@ -1,11 +1,9 @@
 {
   "pageTitle": {
-    "label": "Naslov strani",
-    "placeholder": ""
+    "label": "Naslov strani"
   },
   "metaTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
   },
   "logo": {
     "label": "Logotip"
