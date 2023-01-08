@@ -13,7 +13,7 @@
   },
   "grow": "Grow grid (take all space)",
   "layout": {
-    "title": "Dashboard yayout",
+    "title": "Dashboard layout",
     "main": "Main",
     "sidebar": "Sidebar",
     "cannotturnoff": "Cannot be turned off",
