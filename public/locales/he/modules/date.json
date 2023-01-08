@@ -3,6 +3,7 @@
     "name": "תאריך",
     "description": "הצגת השעה והתאריך הנוכחיים",
     "settings": {
+      "title": "",
       "display24HourFormat": {
         "label": "הצגת זמן בפורמט 24 שעות"
       }
