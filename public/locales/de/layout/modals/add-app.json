@@ -1,65 +1,65 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Allgemein",
+		"behaviour": "Verhalten",
 		"network": "Netzwerk",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Aussehen",
+		"integration": "Integration"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Anwendungsname",
+			"description": "Wird für die Anzeige der App auf dem Dashboard verwendet"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Interne Adresse",
+			"description": "Interne IP der Anwendung"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Externe Adresse",
+			"description": "URL, die beim Anklicken der App im Browser geöffnet wird"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "In neuem Tab öffnen",
+			"description": "Link in neuem Tab öffnen"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Statusprüfer",
+			"description": "Sendet eine einfache HTTP / HTTPS-Anfrage, um zu prüfen, ob Ihre Anwendung online ist"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP Statuscodes",
+			"description": "Legt fest, welche Antwortcodes für diese Anwendung erlaubt sind, um \"online\" zu sein"
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "App Symbol",
+			"description": "Logo Ihrer Anwendung, das in Ihrem Dashboard angezeigt wird. (Muss den Inhalt mittels eines Bildes zurückgeben)"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "Integrations-Konfiguration",
+			"description": "Behandelt diese Anwendung als die ausgewählte Integration und bietet Ihnen die Konfiguration für jede Anwendung",
+			"placeholder": "Integration auswählen",
+			"defined": "Definiert",
+			"undefined": "Nicht definiert",
+			"public": "Öffentlich sichtbar",
+			"private": "Privat",
+			"explanationPublic": "Es wird eine geheime Phrase an den Server gesendet. Sobald Ihr Browser die Seite aktualisiert hat, wird sie nicht mehr an den Client gesendet.",
+			"explanationPrivate": "Eine allgemeine Phrase wird immer an den Client gesendet und ist über die API zugänglich. Es sollte keine vertraulichen Daten wie Benutzernamen, Kennwörter, Token, Zertifikate oder Ähnliches enthalten"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Um eine Phrase zu aktualisieren, geben Sie einen Wert ein und klicken Sie auf Speichern. Um eine Phrase zu entfernen, klicken Sie auf die Schaltfläche Löschen.",
+			"warning": "Ihre Anmeldedaten dienen als Zugang für Homarr und sie sollten diese <strong>niemals</strong> an andere Personen weitergeben. Das Homarr-Team wird Sie niemals nach Ihren Zugangsdaten fragen. Stellen Sie sicher, dass sie <strong>ihre Zugangsdaten sicher aufbewahren und verwalten</strong>.",
+			"clear": "Phrase löschen",
+			"save": "Phrase speichern",
+			"update": "Phrase ändern"
 		}
 	}
 }
