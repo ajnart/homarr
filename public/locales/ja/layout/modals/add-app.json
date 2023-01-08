@@ -1,65 +1,65 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "一般",
+		"behaviour": "ビヘイビア",
 		"network": "ネットワーク",
-		"appearance": "",
-		"integration": ""
+		"appearance": "外観",
+		"integration": "統合化"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "アプリ名",
+			"description": "ダッシュボードにアプリを表示する際に使用します"
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "内部アドレス",
+			"description": "アプリの内部IP"
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "外部アドレス",
+			"description": "アプリをクリックするとブラウザで開かれるURL"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "新しいタブで開く",
+			"description": "リンク先を新しいタブで開く"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "ステータスチェッカー",
+			"description": "アプリがオンラインかどうかを確認するためのシンプルなHTTP / HTTPSリクエストを送信します。"
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTPステータスコード",
+			"description": "このアプリが「オンライン」であるために許可されるレスポンスコードを決定する。"
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "アプリアイコン",
+			"description": "ダッシュボードに表示されるアプリのロゴ。(画像を含む本文を返す必要があります。）"
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPublic": "",
-			"explanationPrivate": ""
+			"label": "インテグレーション構成",
+			"description": "このアプリを選択された統合として扱い、アプリごとの設定を提供する",
+			"placeholder": "インテグレーションを選択する",
+			"defined": "定義",
+			"undefined": "未定義",
+			"public": "公開",
+			"private": "プライベート",
+			"explanationPublic": "プライベートシークレットがサーバーに送信されます。ブラウザがページを更新した後は、クライアントに送信されることはありません。",
+			"explanationPrivate": "公開秘密は常にクライアントに送信され、API上でアクセス可能です。ユーザー名、パスワード、トークン、証明書、その他類似のものなど、機密性の高い値を含んではいけません。"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "シークレットを更新するには、値を入力し、保存ボタンをクリックします。シークレットを削除するには、クリアボタンを使用します。",
+			"warning": "あなたの認証情報は、あなたの統合のためのアクセスとして機能します。あなたは、 <strong>決して</strong> 他の誰ともそれを共有してはいけません。公式のHomarrチームは決してクレデンシャルを求めません。 <strong>あなたの秘密を安全に保存し、管理することを確認してください</strong>。",
+			"clear": "クリアシークレット",
+			"save": "秘密を守る",
+			"update": "アップデートシークレット"
 		}
 	}
 }
