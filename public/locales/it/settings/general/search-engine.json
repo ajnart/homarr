@@ -5,7 +5,7 @@
     "placeholderTip": "%s può essere usato come segnaposto per la ricerca."
   },
   "customEngine": {
-    "title": "",
+    "title": "Motore di ricerca personalizzato",
     "label": "URL di ricerca",
     "placeholder": "URL di ricerca personalizzato"
   },
@@ -13,6 +13,6 @@
     "label": "Apri i risultati della ricerca in una nuova scheda"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Ricerca abilitata"
   }
 }
