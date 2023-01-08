@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "טעינת קובץ הגדרות"
+    "label": "טעינת קובץ הגדרות",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "בחירת שם קובץ הגדרות חדש",
     "form": {
       "configName": {
         "label": "שם קובץ הגדרות",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "שם קובץ הגדרות חדש"
       },
       "submitButton": "אישור"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "קובץ הגדרות נשמר",
         "message": "קובץ הגדרות נשמר בשם  {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,9 +59,11 @@
       }
     },
     "accept": {
+      "title": "",
       "text": "גרור קובץ הגדרות לכאן כדי להעלותו (תמיכה ב- JSON בלבד)"
     },
     "reject": {
+      "title": "",
       "text": "תבנית קובץ זו אינה נתמכת, ניתן להעלות קובץ JSON בלבד"
     }
   }
