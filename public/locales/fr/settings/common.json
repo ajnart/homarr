@@ -11,5 +11,19 @@
   "credits": {
     "madeWithLove": "Fait avec ❤️ par @"
   },
-  "grow": "Grille progressive (prend toute la largeur)"
+  "grow": "Grille progressive (prend toute la largeur)",
+  "layout": {
+    "title": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "",
+    "enablelsidebar": "",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "",
+    "enablelsidebardesc": "",
+    "enablersidebardesc": ""
+  }
 }
