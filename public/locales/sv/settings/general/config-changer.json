@@ -1,8 +1,8 @@
 {
   "configSelect": {
     "label": "Konfigurationsladdare",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "loadingNew": "Laddar din konfiguration...",
+    "pleaseWait": "Vänta tills din nya konfiguration är laddad"
   },
   "modal": {
     "title": "Välj namn på din nya konfigurering",
@@ -10,7 +10,7 @@
       "configName": {
         "label": "Konfigurationsnamn",
         "validation": {
-          "required": ""
+          "required": "Konfigurationsnamn krävs"
         },
         "placeholder": "Ditt nya konfigurationsnamn"
       },
@@ -22,12 +22,12 @@
         "message": "Konfigurationen sparad som {{configName}}"
       },
       "configCopied": {
-        "title": "",
-        "message": ""
+        "title": "Konfigurationen kopierad",
+        "message": "Konfigurationen kopierades som {{configName}}"
       },
       "configNotCopied": {
-        "title": "",
-        "message": ""
+        "title": "Kunde inte kopiera konfigurationen",
+        "message": "Din konfiguration kopierades inte som {{configName}}"
       }
     }
   },
@@ -59,11 +59,11 @@
       }
     },
     "accept": {
-      "title": "",
+      "title": "Uppladdning av konfiguration",
       "text": "Dra filer hit för att ladda upp en konfiguration. Endast stöd för JSON."
     },
     "reject": {
-      "title": "",
+      "title": "Dra och släpp uppladdningen avvisades",
       "text": "Det här filformatet stöds inte. Ladda endast upp JSON."
     }
   }
