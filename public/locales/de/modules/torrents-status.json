@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Zeige die aktuellen Downloadgeschwindigkeiten von unterstützten Services",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Abgeschlossene Torrents ausblenden"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -34,7 +41,14 @@
       "noDownloadClients": {
         "title": "Keine unterstützten Download-Clients gefunden!",
         "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Wird geladen..."
     }
   }
 }
