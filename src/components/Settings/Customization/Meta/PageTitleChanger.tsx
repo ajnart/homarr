@@ -36,7 +36,7 @@ export const PageTitleChanger = ({ defaultValue }: PageTitleChangerProps) => {
   return (
     <TextInput
       label={t('pageTitle.label')}
-      placeholder={t('pageTitle.placeholder')}
+      placeholder="homarr"
       value={pageTitle}
       onChange={handleChange}
     />

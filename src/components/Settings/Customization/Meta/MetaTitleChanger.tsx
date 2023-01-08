@@ -36,7 +36,7 @@ export const MetaTitleChanger = ({ defaultValue }: MetaTitleChangerProps) => {
   return (
     <TextInput
       label={t('metaTitle.label')}
-      placeholder={t('metaTitle.placeholder')}
+      placeholder="homarr - the best dashboard"
       value={metaTitle}
       onChange={handleChange}
     />
