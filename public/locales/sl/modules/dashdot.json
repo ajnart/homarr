@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Modul za prikazovanje grafov iz vašega delujočega programa Dash.",
     "settings": {
-      "title": "",
+      "title": "Nastavitve za pripomoček Dash",
       "cpuMultiView": {
         "label": "Pogled večjedrnih procesorjev"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Odstranite pripomoček Dash",
+      "confirm": "Ali ste prepričani, da želite odstraniti Dash. pripomoček?"
     }
   },
   "card": {
