@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Seiten Titel",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Logo"
