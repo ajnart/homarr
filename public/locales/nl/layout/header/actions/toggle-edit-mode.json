@@ -1,11 +1,11 @@
 {
-    "description": "",
+    "description": "In de bewerkingsmodus kunt u de grootte en de positie van uw tegels aanpassen.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Ga naar de bewerkingsmodus",
+        "enabled": "Afsluiten en opslaan"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "De bewerkingsmodus is ingeschakeld",
+        "text": "U kunt uw apps nu aanpassen en configureren. Wijzigingen zijn <strong>niet opgeslagen</strong> totdat u de bewerkingsmodus verlaat"
     }
 }
