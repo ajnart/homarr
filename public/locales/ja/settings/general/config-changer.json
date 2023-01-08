@@ -1,8 +1,8 @@
 {
   "configSelect": {
     "label": "コンフィグローダ",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "loadingNew": "コンフィグを読み込む...",
+    "pleaseWait": "新しいコンフィグがロードされるまでお待ちください"
   },
   "modal": {
     "title": "新しいコンフィグの名前を選択します。",
@@ -10,7 +10,7 @@
       "configName": {
         "label": "コンフィグ名",
         "validation": {
-          "required": ""
+          "required": "コンフィグ名は必須です"
         },
         "placeholder": "新しいコンフィグ名"
       },
@@ -22,12 +22,12 @@
         "message": "{{configName}}として保存されたコンフィグ"
       },
       "configCopied": {
-        "title": "",
-        "message": ""
+        "title": "コンフィグをコピーした",
+        "message": "{{configName}}としてコピーされたコンフィグ"
       },
       "configNotCopied": {
-        "title": "",
-        "message": ""
+        "title": "コンフィグをコピーできない",
+        "message": "あなたのコンフィグが {{configName}}としてコピーされていない"
       }
     }
   },
@@ -59,11 +59,11 @@
       }
     },
     "accept": {
-      "title": "",
+      "title": "コンフィギュレーションアップロード",
       "text": "ここにファイルをドラッグしてコンフィグをアップロードしてください。JSONのみ対応。"
     },
     "reject": {
-      "title": "",
+      "title": "ドラッグ＆ドロップによるアップロードを拒否",
       "text": "このファイル形式はサポートされていません。JSONのみアップロードしてください。"
     }
   }
