@@ -13,17 +13,17 @@
   },
   "grow": "Espandi la griglia (occupa tutto lo spazio)",
   "layout": {
-    "title": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "title": "Layout della Dashboard",
+    "main": "Main",
+    "sidebar": "Barra laterale",
+    "cannotturnoff": "Impossibile disattivare",
+    "dashboardlayout": "Layout della Dashboard",
+    "enablersidebar": "Abilita la barra laterale destra",
+    "enablelsidebar": "Abilita la barra laterale sinistra",
+    "enablesearchbar": "Abilita barra di ricerca",
+    "enabledocker": "Abilita integrazione di docker",
+    "enableping": "Abilita i ping",
+    "enablelsidebardesc": "Facoltativo. Può essere utilizzato solo per applicazioni e integrazioni",
+    "enablersidebardesc": "Facoltativo. Può essere utilizzato solo per applicazioni e integrazioni"
   }
 }
