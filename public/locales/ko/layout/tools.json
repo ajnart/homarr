@@ -1,0 +1,10 @@
+{
+    "fallback": {
+        "title": ""
+    },
+    "iconPicker": {
+        "textInputPlaceholder": "",
+        "searchLimitationTitle": "",
+        "searchLimitationMessage": ""
+    }
+}
