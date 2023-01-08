@@ -5,9 +5,11 @@ import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
 import { ConfigType } from '../../types/config';
 import { IBitTorrent } from '../../widgets/bitTorrent/BitTorrentTile';
+import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
 import { IDateWidget } from '../../widgets/date/DateTile';
 import { ITorrentNetworkTraffic } from '../../widgets/torrentNetworkTraffic/TorrentNetworkTrafficTile';
+import { IUsenetWidget } from '../../widgets/useNet/UseNetTile';
 import { IWeatherWidget } from '../../widgets/weather/WeatherTile';
 import { IWidget } from '../../widgets/widgets';
 import { Config, serviceItem } from '../types';
@@ -137,7 +139,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
         case 'torrent-status':
         case 'Torrent':
           return {
-            id: uuidv4(),
+            id: 'torrents-status',
             properties: {
               refreshInterval: 10,
               displayCompletedTorrents: oldModule.options?.hideComplete?.value ?? false,
@@ -153,7 +155,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
           } as IBitTorrent;
         case 'weather':
           return {
-            id: uuidv4(),
+            id: 'weather',
             properties: {
               displayInFahrenheit: oldModule.options?.freedomunit?.value ?? false,
               location: oldModule.options?.location?.value ?? 'Paris',
@@ -169,7 +171,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
         case 'dashdot':
         case 'Dash.':
           return {
-            id: uuidv4(),
+            id: 'dashdot',
             properties: {
               url: oldModule.options?.url?.value ?? '',
               cpuMultiView: oldModule.options?.cpuMultiView?.value ?? false,
@@ -187,7 +189,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
           } as IDashDotTile;
         case 'date':
           return {
-            id: uuidv4(),
+            id: 'date',
             properties: {
               display24HourFormat: oldModule.options?.full?.value ?? true,
             },
@@ -199,10 +201,9 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
             },
             shape: {},
           } as IDateWidget;
-        case 'Download Speed':
-        case 'dlspeed':
+        case 'Download Speed' || 'dlspeed':
           return {
-            id: uuidv4(),
+            id: 'dlspeed',
             properties: {},
             area: {
               type: 'wrapper',
@@ -212,6 +213,30 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
             },
             shape: {},
           } as ITorrentNetworkTraffic;
+        case 'calendar':
+          return {
+            id: 'calendar',
+            properties: {},
+            area: {
+              type: 'wrapper',
+              properties: {
+                id: 'default',
+              },
+            },
+            shape: {},
+          } as ICalendarWidget;
+        case 'usenet':
+          return {
+            id: 'usenet',
+            properties: {},
+            area: {
+              type: 'wrapper',
+              properties: {
+                id: 'default',
+              },
+            },
+            shape: {},
+          } as IUsenetWidget;
         default:
           Consola.error(`Failed to map unknown module type ${moduleKey} to new type definitions.`);
           return null;
