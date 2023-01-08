@@ -1,7 +1,11 @@
 {
   "pageTitle": {
     "label": "Título de Página",
-    "placeholder": "Homarr 🦞"
+    "placeholder": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "placeholder": ""
   },
   "logo": {
     "label": "Logo"
