@@ -6,24 +6,24 @@
     "customizations": "Aanpassingen"
   },
   "tips": {
-    "configTip": "Upload uw configuratiebestand door het op de pagina te slepen!"
+    "configTip": "Upload uw configuratiebestand door het naar de pagina te slepen!"
   },
   "credits": {
     "madeWithLove": "Gemaakt met ❤️ door @"
   },
-  "grow": "",
+  "grow": "Groei raster (neem alle ruimte)",
   "layout": {
-    "title": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "title": "Dashboard lay-out",
+    "main": "Algemeen",
+    "sidebar": "Zijbalk",
+    "cannotturnoff": "Kan niet worden uitgeschakeld",
+    "dashboardlayout": "Dashboard lay-out",
+    "enablersidebar": "Rechter zijbalk inschakelen",
+    "enablelsidebar": "Linker zijbalk inschakelen",
+    "enablesearchbar": "Zoekbalk inschakelen",
+    "enabledocker": "Docker-integratie inschakelen",
+    "enableping": "Pings inschakelen",
+    "enablelsidebardesc": "Optioneel. Kan alleen worden gebruikt voor apps en integraties",
+    "enablersidebardesc": "Optioneel. Kan alleen worden gebruikt voor apps en integraties"
   }
 }
