@@ -398,6 +398,11 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
           },
         ],
       };
+    case 'Other':
+      return {
+        type: null,
+        properties: [],
+      };
     default:
       Consola.warn(
         `Integration type of service ${oldService.name} could not be mapped to new integration type definition`
