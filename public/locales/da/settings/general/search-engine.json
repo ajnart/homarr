@@ -5,10 +5,14 @@
     "placeholderTip": "%s kan bruges som en pladsholder for forespørgslen."
   },
   "customEngine": {
+    "title": "",
     "label": "Forespørgsels URL",
     "placeholder": "Brugerdefineret forespørgsels URL"
   },
   "searchNewTab": {
     "label": "Åben søgeresultater i en ny fane"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }
