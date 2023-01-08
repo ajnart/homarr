@@ -1,11 +1,11 @@
 {
-    "description": "",
+    "description": "編集モードでは、タイルのサイズや位置を調整することができます。",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "編集モードに入る",
+        "enabled": "終了と保存"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "編集モードが有効",
+        "text": "アプリの調整と設定ができるようになりました。変更は、 <strong>編集モードを終了するまで保存されません</strong>"
     }
 }
