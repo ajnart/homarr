@@ -26,5 +26,6 @@
     }
   },
   "tip": "באפשרותך לבחור את סרגל החיפוש באמצעות קיצור הדרך",
-  "switchedSearchEngine": "עבור לחיפוש עם"
+  "switchedSearchEngine": "עבור לחיפוש עם",
+  "configurationName": ""
 }
