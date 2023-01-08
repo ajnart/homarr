@@ -1,11 +1,11 @@
 {
-    "description": "",
+    "description": "Im Bearbeitungsmodus können Sie die Größe und Position Ihrer Kacheln anpassen.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Bearbeitungsmodus aktivieren",
+        "enabled": "Speichern und Beenden"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Bearbeitungsmodus ist aktiv",
+        "text": "Sie können Ihre Anwendungen jetzt anpassen und konfigurieren. Änderungen werden <strong>nicht gespeichert</strong> bis Sie den Bearbeitungsmodus verlassen"
     }
 }
