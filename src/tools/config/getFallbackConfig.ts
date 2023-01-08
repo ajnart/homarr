@@ -1,39 +1,8 @@
-import { BackendConfigType } from '../../types/config';
+import defaultConfig from '../../../data/configs/default.json';
 
-export const getFallbackConfig = (name?: string): BackendConfigType => ({
-  schemaVersion: 1,
+export const getFallbackConfig = (name?: string) => ({
+  ...defaultConfig,
   configProperties: {
     name: name ?? 'default',
   },
-  categories: [],
-  widgets: [],
-  apps: [],
-  settings: {
-    common: {
-      searchEngine: {
-        type: 'google',
-        properties: {
-          enabled: true,
-          openInNewTab: true,
-        },
-      },
-      defaultConfig: 'default',
-    },
-    customization: {
-      colors: {},
-      layout: {
-        enabledDocker: false,
-        enabledLeftSidebar: false,
-        enabledPing: false,
-        enabledRightSidebar: false,
-        enabledSearchbar: true,
-      },
-    },
-  },
-  wrappers: [
-    {
-      id: 'default',
-      position: 0,
-    },
-  ],
 });

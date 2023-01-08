@@ -5,9 +5,11 @@ import { LoadConfigComponent } from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
+import { getFallbackConfig } from '../tools/config/getFallbackConfig';
 import { getFrontendConfig } from '../tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '../tools/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
+import { ConfigType } from '../types/config';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
 
 export async function getServerSideProps({
@@ -28,38 +30,7 @@ export async function getServerSideProps({
     res.end();
     return {
       props: {
-        config: {
-          schemaVersion: 1,
-          configProperties: {
-            name: 'Default Configuration',
-          },
-          apps: [],
-          settings: {
-            common: {
-              searchEngine: {
-                type: 'google',
-                properties: {
-                  enabled: true,
-                  openInNewTab: true,
-                },
-              },
-              defaultConfig: 'default',
-            },
-            customization: {
-              layout: {
-                enabledLeftSidebar: false,
-                enabledRightSidebar: false,
-                enabledSearchbar: true,
-                enabledDocker: false,
-                enabledPing: false,
-              },
-              colors: {},
-            },
-          },
-          categories: [],
-          wrappers: [],
-          widgets: [],
-        },
+        config: getFallbackConfig() as unknown as ConfigType,
         configName,
         ...translations,
       },
