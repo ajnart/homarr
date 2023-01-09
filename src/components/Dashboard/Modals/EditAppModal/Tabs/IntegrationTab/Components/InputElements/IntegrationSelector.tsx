@@ -26,6 +26,11 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       label: 'SABnzbd',
     },
     {
+      value: 'nzbGet',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/nzbget.png',
+      label: 'NZBGet',
+    },
+    {
       value: 'deluge',
       image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/deluge.png',
       label: 'Deluge',
