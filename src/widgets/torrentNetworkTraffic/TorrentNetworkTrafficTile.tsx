@@ -20,8 +20,8 @@ const definition = defineWidget({
   options: {},
 
   gridstack: {
-    minWidth: 6,
-    minHeight: 6,
+    minWidth: 2,
+    minHeight: 2,
     maxWidth: 12,
     maxHeight: 6,
   },

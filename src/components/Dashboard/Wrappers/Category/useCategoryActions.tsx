@@ -46,13 +46,13 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
                   ...aboveCategories,
                   category,
                   // Move categories below down
-                  ...belowCategories.map((x) => ({ ...x, position: x.position + 2 })),
+                  ...belowCategories.map((x) => ({ ...x, position: x.position + 1 })),
                 ],
                 wrappers: [
                   ...aboveWrappers,
                   newWrapper,
                   // Move wrappers below down
-                  ...belowWrappers.map((x) => ({ ...x, position: x.position + 2 })),
+                  ...belowWrappers.map((x) => ({ ...x, position: x.position + 1 })),
                 ],
               };
             },
@@ -127,12 +127,12 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
         const currentItem = previous.categories.find((x) => x.id === category.id);
         if (!currentItem) return previous;
 
-        const upperItem = previous.categories.find((x) => x.position === currentItem.position - 2);
+        const upperItem = previous.categories.find((x) => x.position === currentItem.position - 1);
 
         if (!upperItem) return previous;
 
-        currentItem.position -= 2;
-        upperItem.position += 2;
+        currentItem.position -= 1;
+        upperItem.position += 1;
 
         return {
           ...previous,
@@ -156,12 +156,12 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
         const currentItem = previous.categories.find((x) => x.id === category.id);
         if (!currentItem) return previous;
 
-        const belowItem = previous.categories.find((x) => x.position === currentItem.position + 2);
+        const belowItem = previous.categories.find((x) => x.position === currentItem.position + 1);
 
         if (!belowItem) return previous;
 
-        currentItem.position += 2;
-        belowItem.position -= 2;
+        currentItem.position += 1;
+        belowItem.position -= 1;
 
         return {
           ...previous,
@@ -192,6 +192,15 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
           (x) => x.area && x.area.type === 'category' && x.area.properties.id === currentItem.id
         );
         appsToMove.forEach((x) => {
+          // eslint-disable-next-line no-param-reassign
+          x.area = { type: 'wrapper', properties: { id: mainWrapper?.id ?? 'default' } };
+        });
+
+        const widgetsToMove = previous.widgets.filter(
+          (x) => x.area && x.area.type === 'category' && x.area.properties.id === currentItem.id
+        );
+
+        widgetsToMove.forEach((x) => {
           // eslint-disable-next-line no-param-reassign
           x.area = { type: 'wrapper', properties: { id: mainWrapper?.id ?? 'default' } };
         });
