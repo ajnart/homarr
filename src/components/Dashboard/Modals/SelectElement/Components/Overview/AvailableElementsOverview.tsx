@@ -38,29 +38,27 @@ export const AvailableElementTypes = ({
         category: {
           id: uuidv4(),
           name: 'New category',
-          position: 0,
+          position: 0, // doesn't matter, is being overwritten
         },
         onSuccess: async (category) => {
           if (!configName) return;
 
           await updateConfig(configName, (previousConfig) => ({
             ...previousConfig,
-            wrappers:
-              previousConfig.wrappers.length <= previousConfig.categories.length
-                ? [
-                    ...previousConfig.wrappers,
-                    {
-                      id: uuidv4(),
-                      position: previousConfig.categories.length,
-                    },
-                  ]
-                : previousConfig.wrappers,
+            wrappers: [
+              ...previousConfig.wrappers,
+              {
+                id: uuidv4(),
+                // Thank you ChatGPT ;)
+                position: previousConfig.categories.length + 1,
+              },
+            ],
             categories: [
               ...previousConfig.categories,
               {
                 id: uuidv4(),
                 name: category.name,
-                position: previousConfig.categories.length,
+                position: previousConfig.categories.length + 1,
               },
             ],
           })).then(() => {
