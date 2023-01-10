@@ -3,6 +3,7 @@
     "name": "Kalendarz",
     "description": "Moduł kalendarza do wyświetlania nadchodzących wydań. Współpracuje z API Sonarra i Radarra.",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Rozpoczynaj tydzień od niedzieli"
       }
