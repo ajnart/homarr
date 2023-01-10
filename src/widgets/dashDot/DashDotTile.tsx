@@ -28,7 +28,14 @@ const definition = defineWidget({
     graphs: {
       type: 'multi-select',
       defaultValue: ['cpu', 'memory'],
-      data: ['cpu', 'memory', 'storage', 'network', 'gpu'],
+      data: [
+        // ['cpu', 'memory', 'storage', 'network', 'gpu'], into { label, value }
+        { label: 'CPU', value: 'cpu' },
+        { label: 'Memory', value: 'memory' },
+        { label: 'Storage', value: 'storage' },
+        { label: 'Network', value: 'network' },
+        { label: 'GPU', value: 'gpu' },
+      ],
     },
     url: {
       type: 'text',
