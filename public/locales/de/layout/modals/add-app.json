@@ -61,5 +61,8 @@
 			"save": "Phrase speichern",
 			"update": "Phrase ändern"
 		}
+	},
+	"validation": {
+		"popover": "Ihr Formular enthält ungültige Angaben, daher konnte es nicht gespeichert werden. Bitte beseitigen Sie diese ungültigen Angaben und klicken Sie erneut auf diesen Button, um Ihre Änderungen zu speichern"
 	}
 }
