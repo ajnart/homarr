@@ -3,6 +3,7 @@
     "name": "캘린더",
     "description": "일정을 표시하기 위한 캘린더 모듈입니다. Sonarr API와 Radarr API로 작동합니다.",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "한 주의 시작을 일요일로 설정"
       }
