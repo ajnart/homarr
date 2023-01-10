@@ -61,5 +61,8 @@
 			"save": "保存秘密",
 			"update": "更新秘密"
 		}
+	},
+	"validation": {
+		"popover": ""
 	}
 }
