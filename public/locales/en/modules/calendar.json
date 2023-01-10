@@ -6,6 +6,9 @@
       "title": "Settings for calendar integration",
       "sundayStart": {
         "label": "Start the week on Sunday"
+      },
+      "radarrReleaseType": {
+        "label": "Radarr release type"
       }
     }
   }
