@@ -61,5 +61,8 @@
 			"save": "Salva secret",
 			"update": "Aggiorna secret"
 		}
+	},
+	"validation": {
+		"popover": ""
 	}
 }
