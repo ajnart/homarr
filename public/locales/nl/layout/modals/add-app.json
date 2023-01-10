@@ -61,5 +61,8 @@
 			"save": "Geheim opslaan",
 			"update": "Update geheim"
 		}
+	},
+	"validation": {
+		"popover": ""
 	}
 }
