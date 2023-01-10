@@ -19,6 +19,15 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: false,
     },
+    radarrReleaseType: {
+      type: 'select',
+      defaultValue: 'inCinemas',
+      data: [
+        { label: 'In Cinemas', value: 'inCinemas' },
+        { label: 'Physical', value: 'physicalRelease' },
+        { label: 'Digital', value: 'digitalRelease' },
+      ],
+    },
   },
   gridstack: {
     minWidth: 2,
@@ -82,7 +91,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         allowLevelChange={false}
         dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
         renderDay={(date) => (
-          <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date)} />
+          <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
         )}
       />
     </Group>
@@ -95,13 +104,20 @@ const useStyles = createStyles((theme, secondaryColor: keyof MantineThemeColors)
   },
 }));
 
-const getReleasedMediasForDate = (medias: MediasType | undefined, date: Date): MediasType => {
+const getReleasedMediasForDate = (
+  medias: MediasType | undefined,
+  date: Date,
+  widget: ICalendarWidget
+): MediasType => {
+  const radarrReleaseType = widget.properties.radarrReleaseType ?? 'inCinemas';
+
   const books =
     medias?.books.filter((b) => new Date(b.releaseDate).toDateString() === date.toDateString()) ??
     [];
   const movies =
-    medias?.movies.filter((m) => new Date(m.inCinemas).toDateString() === date.toDateString()) ??
-    [];
+    medias?.movies.filter(
+      (m) => new Date(m[radarrReleaseType]).toDateString() === date.toDateString()
+    ) ?? [];
   const musics =
     medias?.musics.filter((m) => new Date(m.releaseDate).toDateString() === date.toDateString()) ??
     [];
