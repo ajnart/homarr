@@ -4,6 +4,7 @@ import { AppIntegrationType, AppType, IntegrationType } from '../../types/app';
 import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
 import { ConfigType } from '../../types/config';
+import { SearchEngineCommonSettingsType } from '../../types/settings';
 import { IBitTorrent } from '../../widgets/bitTorrent/BitTorrentTile';
 import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
@@ -25,13 +26,7 @@ export function migrateConfig(config: Config): ConfigType {
     apps: [],
     settings: {
       common: {
-        searchEngine: {
-          type: 'google',
-          properties: {
-            enabled: true,
-            openInNewTab: true,
-          },
-        },
+        searchEngine: migrateSearchEngine(config),
         defaultConfig: 'default',
       },
       customization: {
@@ -85,6 +80,44 @@ export function migrateConfig(config: Config): ConfigType {
 
   return newConfig;
 }
+
+const migrateSearchEngine = (config: Config): SearchEngineCommonSettingsType => {
+  switch (config.settings.searchUrl) {
+    case 'https://bing.com/search?q=':
+      return {
+        type: 'bing',
+        properties: {
+          enabled: true,
+          openInNewTab: true,
+        },
+      };
+    case 'https://google.com/search?q=':
+      return {
+        type: 'google',
+        properties: {
+          enabled: true,
+          openInNewTab: true,
+        },
+      };
+    case 'https://duckduckgo.com/?q=':
+      return {
+        type: 'duckDuckGo',
+        properties: {
+          enabled: true,
+          openInNewTab: true,
+        },
+      };
+    default:
+      return {
+        type: 'custom',
+        properties: {
+          enabled: true,
+          openInNewTab: true,
+          template: config.settings.searchUrl,
+        },
+      };
+  }
+};
 
 const getConfigAndCreateIfNotExsists = (
   config: ConfigType,
