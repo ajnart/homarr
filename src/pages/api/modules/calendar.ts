@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Consola from 'consola';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../tools/config/getConfig';
 import { AppIntegrationType } from '../../../types/app';
@@ -44,44 +45,55 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     (app) => app.integration && mediaAppIntegrationTypes.includes(app.integration.type)
   );
 
-  const medias = await Promise.all(
-    await mediaApps.map(async (app) => {
-      const integration = app.integration!;
-      const endpoint = IntegrationTypeEndpointMap.get(integration.type);
-      if (!endpoint) {
-        return {
-          type: integration.type,
-          items: [],
-        };
-      }
+  try {
+    const medias = await Promise.all(
+      await mediaApps.map(async (app) => {
+        const integration = app.integration!;
+        const endpoint = IntegrationTypeEndpointMap.get(integration.type);
+        if (!endpoint) {
+          return {
+            type: integration.type,
+            items: [],
+          };
+        }
 
-      // Get the origin URL
-      let { href: origin } = new URL(app.url);
-      if (origin.endsWith('/')) {
-        origin = origin.slice(0, -1);
-      }
+        // Get the origin URL
+        let { href: origin } = new URL(app.url);
+        if (origin.endsWith('/')) {
+          origin = origin.slice(0, -1);
+        }
 
-      const start = new Date(year, month - 1, 1); // First day of month
-      const end = new Date(year, month, 0); // Last day of month
+        const start = new Date(year, month - 1, 1); // First day of month
+        const end = new Date(year, month, 0); // Last day of month
 
-      const apiKey = integration.properties.find((x) => x.field === 'apiKey')?.value;
-      if (!apiKey) return { type: integration.type, items: [] };
-      return axios
-        .get(
-          `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}`
-        )
-        .then((x) => ({ type: integration.type, items: x.data as any[] }));
-    })
-  );
+        const apiKey = integration.properties.find((x) => x.field === 'apiKey')?.value;
+        if (!apiKey) return { type: integration.type, items: [] };
+        return axios
+          .get(
+            `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}`
+          )
+          .then((x) => ({ type: integration.type, items: x.data as any[] }));
+      })
+    );
 
-  // FIXME: I need an integration for each of them
-  return res.status(200).json({
-    tvShows: medias.filter((m) => m.type === 'sonarr').flatMap((m) => m.items),
-    movies: medias.filter((m) => m.type === 'radarr').flatMap((m) => m.items),
-    books: medias.filter((m) => m.type === 'readarr').flatMap((m) => m.items),
-    musics: medias.filter((m) => m.type === 'lidarr').flatMap((m) => m.items),
-    totalCount: medias.reduce((p, c) => p + c.items.length, 0),
-  });
+    return res.status(200).json({
+      tvShows: medias.filter((m) => m.type === 'sonarr').flatMap((m) => m.items),
+      movies: medias.filter((m) => m.type === 'radarr').flatMap((m) => m.items),
+      books: medias.filter((m) => m.type === 'readarr').flatMap((m) => m.items),
+      musics: medias.filter((m) => m.type === 'lidarr').flatMap((m) => m.items),
+      totalCount: medias.reduce((p, c) => p + c.items.length, 0),
+    });
+  } catch (error) {
+    Consola.error(`Error while requesting media from your app. Check your configuration. ${error}`);
+
+    return res.status(500).json({
+      tvShows: [],
+      movies: [],
+      books: [],
+      musics: [],
+      totalCount: 0,
+    });
+  }
 }
 
 const IntegrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([

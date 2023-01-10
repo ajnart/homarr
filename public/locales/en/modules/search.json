@@ -26,6 +26,5 @@
     }
   },
   "tip": "You can select the search bar with the shortcut ",
-  "switchedSearchEngine": "Switched to searching with {{searchEngine}}",
-  "configurationName": "Search engine configuration"
+  "switchedSearchEngine": "Switched to searching with {{searchEngine}}"
 }
