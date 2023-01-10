@@ -61,5 +61,8 @@
 			"save": "Gem hemmelighed",
 			"update": "Opdater hemmelighed"
 		}
+	},
+	"validation": {
+		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer"
 	}
 }
