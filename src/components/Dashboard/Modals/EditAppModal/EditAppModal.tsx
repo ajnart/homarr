@@ -224,7 +224,7 @@ const SaveButton = ({ formIsValid }: { formIsValid: boolean }) => {
   const { t } = useTranslation(['layout/modals/add-app', 'common']);
 
   return (
-    <Popover opened={opened && !formIsValid} withArrow withinPortal>
+    <Popover opened={opened && !formIsValid} width={300} withArrow withinPortal>
       <Popover.Target>
         <div onMouseEnter={open} onMouseLeave={close}>
           <Button disabled={!formIsValid} px={50} type="submit">
