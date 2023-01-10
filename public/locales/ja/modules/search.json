@@ -26,6 +26,5 @@
     }
   },
   "tip": "ショートカットで検索バーを選択することができます ",
-  "switchedSearchEngine": "{{searchEngine}}で検索するように変更しました。",
-  "configurationName": "検索エンジンの設定"
+  "switchedSearchEngine": "{{searchEngine}}で検索するように変更しました。"
 }
