@@ -61,5 +61,8 @@
 			"save": "秘密を守る",
 			"update": "アップデートシークレット"
 		}
+	},
+	"validation": {
+		"popover": ""
 	}
 }
