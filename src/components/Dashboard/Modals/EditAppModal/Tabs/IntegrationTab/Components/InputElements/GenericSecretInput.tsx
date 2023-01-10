@@ -104,7 +104,15 @@ export const GenericSecretInput = ({
         </Grid.Col>
         <Grid.Col xs={12} md={6}>
           <Flex gap={10} justify="end" align="end">
-            <Button variant="subtle" color="gray" px="xl">
+            <Button
+              onClick={() => {
+                setDisplayUpdateField(false);
+                onClickUpdateButton(undefined);
+              }}
+              variant="subtle"
+              color="gray"
+              px="xl"
+            >
               {t('integration.secrets.clear')}
             </Button>
             {displayUpdateField === true ? (

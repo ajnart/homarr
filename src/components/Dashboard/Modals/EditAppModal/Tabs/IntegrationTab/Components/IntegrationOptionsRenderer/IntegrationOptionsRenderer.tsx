@@ -52,6 +52,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
             <GenericSecretInput
               onClickUpdateButton={(value) => {
                 form.setFieldValue(`integration.properties.${index}.value`, value);
+                form.setFieldValue(`integration.properties.${index}.isDefined`, value !== undefined);
               }}
               key={`input-${property}`}
               label={`${property} (potentionally unmapped)`}
@@ -68,6 +69,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
           <GenericSecretInput
             onClickUpdateButton={(value) => {
               form.setFieldValue(`integration.properties.${index}.value`, value);
+              form.setFieldValue(`integration.properties.${index}.isDefined`, value !== undefined);
             }}
             key={`input-${definition.label}`}
             label={definition.label}
