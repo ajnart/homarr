@@ -3,6 +3,7 @@
     "name": "Lịch",
     "description": "Một mô-đun lịch để hiển thị các lượt phát hành sắp tới. Nó tương tác với API của Sonarr và Radarr.",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Đặt đầu tuần là Chủ Nhật"
       }
