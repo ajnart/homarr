@@ -180,14 +180,19 @@ export function MediaDisplay({ media }: { media: IMedia }) {
   const { t } = useTranslation('modules/common-media-cards');
 
   return (
-    <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 200 }} spacing="xs">
+    <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 250, maxWidth: 400 }} spacing="xs">
       <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
       <Stack justify="space-around">
         <Stack spacing="sm">
           <Text lineClamp={2}>
             <Title order={5}>{media.title}</Title>
           </Text>
-          <Group spacing="xs">
+          <Group
+            spacing={5}
+            style={{
+              maxWidth: 250,
+            }}
+          >
             {media.type === 'tvshow' && (
               <Badge variant="dot" size="xs" radius="md" color="blue">
                 s{media.seasonNumber}e{media.episodeNumber} - {media.episodetitle}
