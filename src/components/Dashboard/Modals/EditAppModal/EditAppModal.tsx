@@ -1,5 +1,6 @@
-import { Alert, Button, Group, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
+import { Alert, Button, Group, Popover, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { useDisclosure } from '@mantine/hooks';
 import { ContextModalProps } from '@mantine/modals';
 import {
   IconAccessPoint,
@@ -210,12 +211,28 @@ export const EditAppModal = ({
             <Button onClick={closeModal} px={50} variant="light" color="gray">
               {t('common:cancel')}
             </Button>
-            <Button disabled={!form.isValid()} px={50} type="submit">
-              {t('common:save')}
-            </Button>
+            <SaveButton formIsValid={form.isValid()} />
           </Group>
         </Stack>
       </form>
     </>
+  );
+};
+
+const SaveButton = ({ formIsValid }: { formIsValid: boolean }) => {
+  const [opened, { close, open }] = useDisclosure(false);
+  const { t } = useTranslation(['layout/modals/add-app', 'common']);
+
+  return (
+    <Popover opened={opened && !formIsValid} withArrow withinPortal>
+      <Popover.Target>
+        <div onMouseEnter={open} onMouseLeave={close}>
+          <Button disabled={!formIsValid} px={50} type="submit">
+            {t('common:save')}
+          </Button>
+        </div>
+      </Popover.Target>
+      <Popover.Dropdown sx={{ pointerEvents: 'none' }}>{t('validation.popover')}</Popover.Dropdown>
+    </Popover>
   );
 };
