@@ -1,5 +1,6 @@
 {
   "title": "Sökmotor",
+  "configurationName": "",
   "tips": {
     "generalTip": "Använd prefixen !yt och !t framför din sökning för att söka på YouTube eller efter en Torrent.",
     "placeholderTip": "%s kan användas som platshållare för förfrågningen."
