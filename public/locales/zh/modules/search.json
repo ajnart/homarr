@@ -26,6 +26,5 @@
     }
   },
   "tip": "你可以用快捷键选择搜索栏 ",
-  "switchedSearchEngine": "改为用 {{searchEngine}}进行搜索",
-  "configurationName": "搜索引擎配置"
+  "switchedSearchEngine": "改为用 {{searchEngine}}进行搜索"
 }
