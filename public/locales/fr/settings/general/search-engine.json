@@ -1,5 +1,6 @@
 {
   "title": "Moteur de recherche",
+  "configurationName": "",
   "tips": {
     "generalTip": "Utilisez les préfixes !yt et !t devant votre requête pour rechercher respectivement sur YouTube ou pour un Torrent.",
     "placeholderTip": "%s peut être utilisé en tant que placeholder pour la requête."
