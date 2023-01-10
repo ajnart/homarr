@@ -3,6 +3,7 @@
     "name": "Koledar",
     "description": "Koledarski modul za prikaz prihajajočih izdaj. Deluje z API vmesnikom od Sonarr in Radarr.",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Začni teden z nedeljo"
       }
