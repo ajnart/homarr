@@ -61,5 +61,8 @@
 			"save": "Spara hemlighet",
 			"update": "Uppdatera hemlighet"
 		}
+	},
+	"validation": {
+		"popover": "Ditt formulär innehåller ogiltiga data. Därför kan det inte sparas. Vänligen lös alla problem och klicka på denna knapp igen för att spara dina ändringar"
 	}
 }
