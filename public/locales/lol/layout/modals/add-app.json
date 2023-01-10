@@ -61,5 +61,8 @@
 			"save": "",
 			"update": ""
 		}
+	},
+	"validation": {
+		"popover": ""
 	}
 }
