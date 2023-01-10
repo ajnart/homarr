@@ -167,7 +167,7 @@ function WidgetOptionTypeSwitch(
           data={option.data}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as string}
-          onChange={(v) => handleChange(key, v)}
+          onChange={(v) => handleChange(key, v ?? option.defaultValue)}
         />
       );
     case 'number':
