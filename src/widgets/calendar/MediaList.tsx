@@ -41,14 +41,13 @@ const mapMedias = (
   medias: any[],
   MediaComponent: (props: { media: any }) => JSX.Element | null,
   containsLastItem: boolean
-) => {
-  return medias.map((media, index) => (
-    <React.Fragment>
+) =>
+  medias.map((media, index) => (
+    <div key={index}>
       <MediaComponent media={media} />
       {containsLastItem && index === medias.length - 1 ? null : <MediaDivider />}
-    </React.Fragment>
+    </div>
   ));
-};
 
 const MediaDivider = () => <Divider variant="dashed" size="sm" my="xl" />;
 

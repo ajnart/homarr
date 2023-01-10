@@ -28,10 +28,10 @@ export const CalendarDay = ({ date, medias }: CalendarDayProps) => {
     >
       <Popover.Target>
         <Box onClick={open}>
-          <DayIndicator color={'red'} position="bottom-start" medias={medias.books}>
-            <DayIndicator color={'yellow'} position="top-start" medias={medias.movies}>
-              <DayIndicator color={'blue'} position="top-end" medias={medias.tvShows}>
-                <DayIndicator color={'green'} position="bottom-end" medias={medias.musics}>
+          <DayIndicator color="red" position="bottom-start" medias={medias.books}>
+            <DayIndicator color="yellow" position="top-start" medias={medias.movies}>
+              <DayIndicator color="blue" position="top-end" medias={medias.tvShows}>
+                <DayIndicator color="green" position="bottom-end" medias={medias.musics}>
                   <div>{date.getDate()}</div>
                 </DayIndicator>
               </DayIndicator>
