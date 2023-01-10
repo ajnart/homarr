@@ -34,13 +34,27 @@ export type IWidgetOptionValue =
   | ISwitchOptionValue
   | ITextInputOptionValue
   | ISliderInputOptionValue
+  | ISelectOptionValue
   | INumberInputOptionValue;
+
+// Interface for data type
+interface DataType {
+  label: string
+  value: string
+}
 
 // will show a multi-select with specified data
 export type IMultiSelectOptionValue = {
   type: 'multi-select';
   defaultValue: string[];
-  data: string[];
+  data: DataType[];
+};
+
+// will show a multi-select with specified data
+export type ISelectOptionValue = {
+  type: 'select';
+  defaultValue: string;
+  data: DataType[];
 };
 
 // will show a switch

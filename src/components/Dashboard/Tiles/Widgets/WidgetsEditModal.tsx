@@ -9,6 +9,7 @@ import {
   Text,
   NumberInput,
   Slider,
+  Select,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle } from '@tabler/icons';
@@ -101,15 +102,7 @@ export const WidgetsEditModal = ({
             </Alert>
           );
         }
-        return WidgetOptionTypeSwitch(
-          option,
-          index,
-          t,
-          key,
-          value,
-          handleChange,
-          getMutliselectData
-        );
+        return WidgetOptionTypeSwitch(option, index, t, key, value, handleChange);
       })}
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
@@ -130,8 +123,7 @@ function WidgetOptionTypeSwitch(
   t: any,
   key: string,
   value: string | number | boolean | string[],
-  handleChange: (key: string, value: IntegrationOptionsValueType) => void,
-  getMutliselectData: (option: string) => any
+  handleChange: (key: string, value: IntegrationOptionsValueType) => void
 ) {
   const { primaryColor, secondaryColor } = useColorTheme();
   switch (option.type) {
@@ -159,9 +151,22 @@ function WidgetOptionTypeSwitch(
         <MultiSelect
           color={primaryColor}
           key={`${option.type}-${index}`}
-          data={getMutliselectData(key)}
+          data={option.data}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as string[]}
+          defaultValue={option.defaultValue}
+          onChange={(v) => handleChange(key, v)}
+        />
+      );
+    case 'select':
+      return (
+        <Select
+          color={primaryColor}
+          key={`${option.type}-${index}`}
+          defaultValue={option.defaultValue}
+          data={option.data}
+          label={t(`descriptor.settings.${key}.label`)}
+          value={value as string}
           onChange={(v) => handleChange(key, v)}
         />
       );
