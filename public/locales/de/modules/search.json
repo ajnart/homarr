@@ -26,6 +26,5 @@
     }
   },
   "tip": "Sie können die Suchleiste mit dem Tastenkürzel auswählen ",
-  "switchedSearchEngine": "Umgestellt auf die Suche mit {{searchEngine}}",
-  "configurationName": "Suchmaschineneinstellungen"
+  "switchedSearchEngine": "Umgestellt auf die Suche mit {{searchEngine}}"
 }
