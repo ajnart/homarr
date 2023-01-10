@@ -26,6 +26,5 @@
     }
   },
   "tip": "Puoi selezionare la barra di ricerca con la scorciatoia ",
-  "switchedSearchEngine": "Ricerca cambiata con {{searchEngine}}",
-  "configurationName": "Configurazione del motore di ricerca"
+  "switchedSearchEngine": "Ricerca cambiata con {{searchEngine}}"
 }
