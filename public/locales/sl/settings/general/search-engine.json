@@ -1,5 +1,6 @@
 {
   "title": "Iskalnik",
+  "configurationName": "",
   "tips": {
     "generalTip": "Za iskanje v YouTubu ali Torrentu uporabite predponi !yt in !t pred poizvedbo.",
     "placeholderTip": "%s lahko uporabite kot nadomestno ime za poizvedbo."
