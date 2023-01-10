@@ -26,6 +26,5 @@
     }
   },
   "tip": "Du kan välja sökfältet med kortkommandot ",
-  "switchedSearchEngine": "Växlade till att söka med {{searchEngine}}",
-  "configurationName": "Konfiguration av sökmotor"
+  "switchedSearchEngine": "Växlade till att söka med {{searchEngine}}"
 }
