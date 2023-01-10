@@ -26,6 +26,5 @@
     }
   },
   "tip": "U kunt de zoekbalk selecteren met de sneltoets ",
-  "switchedSearchEngine": "Omgeschakeld naar zoeken met {{searchEngine}}",
-  "configurationName": "Zoekmachine configuratie"
+  "switchedSearchEngine": "Omgeschakeld naar zoeken met {{searchEngine}}"
 }
