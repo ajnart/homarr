@@ -61,5 +61,8 @@
 			"save": "Guardar clave",
 			"update": "Actualizar clave"
 		}
+	},
+	"validation": {
+		"popover": ""
 	}
 }
