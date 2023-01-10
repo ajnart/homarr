@@ -3,6 +3,7 @@
     "name": "Kalender",
     "description": "Ein Kalendermodul für die Anzeige der kommenden Veröffentlichungen. Es interagiert mit der Sonarr- und Radarr-API.",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Wochenbeginn am Sonntag"
       }
