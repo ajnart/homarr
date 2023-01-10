@@ -3,6 +3,7 @@
     "name": "Kalender",
     "description": "Et kalendermodul til visning af kommende udgivelser. Det interagerer med Sonarr- og Radarr-API'erne.",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Søndag første ugedag"
       }
