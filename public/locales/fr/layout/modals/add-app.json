@@ -61,5 +61,8 @@
 			"save": "Sauvegarder le secret",
 			"update": "Mettre à jour le secret"
 		}
+	},
+	"validation": {
+		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications"
 	}
 }
