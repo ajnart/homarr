@@ -6,23 +6,15 @@
   "categories": [
     {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f",
-      "position": 0,
+      "position": 1,
       "name": "Welcome to Homarr 🎉",
       "type": "category"
     }
   ],
   "wrappers": [
     {
-      "id": "5823c4d6-6baf-4436-b990-93fe77e1dc62",
-      "position": 1
-    },
-    {
-      "id": "943f0681-a15b-4576-9a61-a74bd6fdd3ab",
-      "position": 3
-    },
-    {
       "id": "default",
-      "position": 5
+      "position": 1
     }
   ],
   "apps": [
@@ -147,67 +139,6 @@
       }
     },
     {
-      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
-      "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "okStatus": [
-          200
-        ]
-      },
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
       "name": "Donate",
       "url": "https://ko-fi.com/ajnart",
@@ -263,6 +194,67 @@
           },
           "size": {
             "width": 1,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "okStatus": [
+          200
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
             "height": 1
           }
         }
