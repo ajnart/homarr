@@ -1,5 +1,6 @@
 {
   "title": "Søgemaskine",
+  "configurationName": "",
   "tips": {
     "generalTip": "Brug præfikserne !yt og !t foran din forespørgsel for at søge på YouTube eller efter en Torrent.",
     "placeholderTip": "%s kan bruges som en pladsholder for forespørgslen."
