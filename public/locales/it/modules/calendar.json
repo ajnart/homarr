@@ -3,12 +3,12 @@
     "name": "Calendario",
     "description": "Un calendario per la visualizzazione delle prossime uscite. Può comunicare con le API di Sonarr e Radarr.",
     "settings": {
-      "title": "",
+      "title": "Impostazioni per l'integrazione del calendario",
       "sundayStart": {
         "label": "Inizia la settimana di domenica"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Tipo di release Radarr"
       }
     }
   }
