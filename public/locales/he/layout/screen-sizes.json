@@ -1,11 +1,11 @@
 {
   "popover": {
-    "title": "",
-    "description": ""
+    "title": "הגדרת גודל מסך \"{{size}}\"",
+    "description": "אתה עורך את גודל המסך הנוכחי שלך"
   },
   "sizes": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "קטן",
+    "medium": "בינוני",
+    "large": "גדול"
   }
 }
