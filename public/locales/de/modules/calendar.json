@@ -6,6 +6,9 @@
       "title": "Einstellungen für die Kalender Integration",
       "sundayStart": {
         "label": "Wochenbeginn am Sonntag"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
