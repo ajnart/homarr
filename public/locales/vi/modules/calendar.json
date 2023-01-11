@@ -6,6 +6,9 @@
       "title": "",
       "sundayStart": {
         "label": "Đặt đầu tuần là Chủ Nhật"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
