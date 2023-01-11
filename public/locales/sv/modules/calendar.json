@@ -6,6 +6,9 @@
       "title": "Inställningar för kalenderintegration",
       "sundayStart": {
         "label": "Börja veckan på söndag"
+      },
+      "radarrReleaseType": {
+        "label": "Radarr releasetyp"
       }
     }
   }
