@@ -8,7 +8,7 @@
         "label": "Søndag første ugedag"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Radarr udgivelsestype"
       }
     }
   }
