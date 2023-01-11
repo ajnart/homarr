@@ -6,6 +6,9 @@
       "title": "",
       "sundayStart": {
         "label": "Begin de week op zondag"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
