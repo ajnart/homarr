@@ -8,7 +8,7 @@
         "label": "התחל את השבוע ביום ראשון"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "סוג שחרור של Radarr"
       }
     }
   }
