@@ -6,25 +6,25 @@
   "input": {
     "placeholder": "Пошук в Інтернеті..."
   },
-  "switched-to": "",
+  "switched-to": "Змінити на",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Веб",
+      "description": "Пошук за допомогою вашої пошукової системи (визначається в налаштуваннях)"
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Пошук на YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrent",
+      "description": "Пошук за торентами"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Пошук фільмів та серіалів за допомогою Overseerr (модуль повинен бути увімкнений)"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Викликати рядок пошуку можна за допомогою комбінації клавіш ",
+  "switchedSearchEngine": "Перейшли на пошук за допомогою {{searchEngine}}"
 }
