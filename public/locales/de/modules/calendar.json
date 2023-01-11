@@ -8,7 +8,7 @@
         "label": "Wochenbeginn am Sonntag"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Radarr Veröffentlichungs Typ"
       }
     }
   }
