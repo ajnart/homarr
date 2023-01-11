@@ -1,10 +1,10 @@
 {
     "fallback": {
-        "title": ""
+        "title": "Наразі у вас немає жодного інструменту"
     },
     "iconPicker": {
-        "textInputPlaceholder": "",
-        "searchLimitationTitle": "",
-        "searchLimitationMessage": ""
+        "textInputPlaceholder": "Пошук іконки...",
+        "searchLimitationTitle": "Пошук обмежений до {{max}} значків",
+        "searchLimitationMessage": "Для того, щоб зробити пошук швидким і швидким, пошук обмежений іконками {{max}}. Використовуйте поле пошуку, щоб знайти більше іконок"
     }
 }
