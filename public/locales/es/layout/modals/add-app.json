@@ -63,6 +63,6 @@
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no pude ser guardado. Por favor, resuelve los problemas, y presiona este botón, otra vez, para guardar cambios"
 	}
 }
