@@ -6,6 +6,9 @@
       "title": "Paramètres pour l'intégration du calendrier",
       "sundayStart": {
         "label": "Commencez la semaine par dimanche"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
