@@ -6,6 +6,9 @@
       "title": "הגדרות עבור אינטגרצית יומן",
       "sundayStart": {
         "label": "התחל את השבוע ביום ראשון"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
