@@ -14,16 +14,29 @@ interface GridstackStoreType {
   setMainAreaWidth: (width: number) => void;
 }
 
-export const useWrapperColumnCount = () => {
+export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | null => {
   const mainAreaWidth = useGridstackStore((x) => x.mainAreaWidth);
   const { sm, xl } = useMantineTheme().breakpoints;
   if (!mainAreaWidth) return null;
 
-  if (mainAreaWidth >= xl) return 12;
+  if (mainAreaWidth >= xl) return 'large';
 
-  if (mainAreaWidth >= sm) return 6;
+  if (mainAreaWidth >= sm) return 'medium';
 
-  return 3;
+  return 'small';
+};
+
+export const useWrapperColumnCount = () => {
+  switch (useNamedWrapperColumnCount()) {
+    case 'large':
+      return 12;
+    case 'medium':
+      return 6;
+    case 'small':
+      return 3;
+    default:
+      return null;
+  }
 };
 
 function getCurrentShapeSize(size: number) {
