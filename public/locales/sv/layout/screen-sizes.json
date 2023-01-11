@@ -1,11 +1,11 @@
 {
   "popover": {
-    "title": "",
-    "description": ""
+    "title": "Konfigurera för skärmstorlek \"{{size}}\"",
+    "description": "Du redigerar storleken för din aktuella skärm"
   },
   "sizes": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "liten",
+    "medium": "mellan",
+    "large": "stor"
   }
 }
