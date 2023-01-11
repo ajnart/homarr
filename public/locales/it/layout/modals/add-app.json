@@ -63,6 +63,6 @@
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Il form contiene dati invalidi. Pertanto, non può essere salvato. Risolvere tutti i problemi e fare nuovamente clic su questo pulsante per salvare le modifiche"
 	}
 }
