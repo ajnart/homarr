@@ -6,6 +6,9 @@
       "title": "",
       "sundayStart": {
         "label": "使用周日作为一周的开始"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
