@@ -1,11 +1,11 @@
 {
   "popover": {
-    "title": "",
-    "description": ""
+    "title": "Configureren voor schermgrootte \"{{size}}\"",
+    "description": "U bewerkt de grootte voor uw huidige scherm"
   },
   "sizes": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "klein",
+    "medium": "gemiddeld",
+    "large": "groot"
   }
 }
