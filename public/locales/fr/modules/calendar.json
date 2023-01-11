@@ -8,7 +8,7 @@
         "label": "Commencez la semaine par dimanche"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Type de sortie Radarr"
       }
     }
   }
