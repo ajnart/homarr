@@ -87,3 +87,8 @@
 .grid-stack.grid-stack-animate {
   transition: none;
 }
+
+.gridstack-empty-wrapper {
+  height: 0px;
+  min-height: 0px !important;
+}
