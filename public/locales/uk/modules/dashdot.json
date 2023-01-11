@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Модуль для зображення графіків від вашого Dash. сервісу.",
     "settings": {
-      "title": "",
+      "title": "Налаштування віджета Dash.",
       "cpuMultiView": {
         "label": "Процесор по ядрах"
       },
@@ -21,8 +21,8 @@
       }
     },
     "remove": {
-      "title": "",
-      "confirm": ""
+      "title": "Видалити віджет Dash.",
+      "confirm": "Ви впевнені, що хочете видалити віджет Dash.?"
     }
   },
   "card": {
