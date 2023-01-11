@@ -1,20 +1,20 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Зберегти",
+  "about": "Про програму",
   "cancel": "Скасувати",
-  "close": "",
+  "close": "Закрити",
   "delete": "Видалити",
-  "ok": "",
+  "ok": "OK",
   "edit": "Редагувати",
-  "version": "",
-  "changePosition": "",
+  "version": "Версія",
+  "changePosition": "Змінити положення",
   "remove": "Видалити",
   "sections": {
     "settings": "Налаштування",
     "dangerZone": "Небезпечна зона"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Ключ API",
     "username": "Логін",
     "password": "Пароль"
   },
