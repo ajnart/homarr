@@ -1,11 +1,11 @@
 {
   "popover": {
     "title": "",
-    "description": ""
+    "description": "Vous modifiez la taille pour la taille de votre écran actuel"
   },
   "sizes": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "petit",
+    "medium": "moyen",
+    "large": "grand"
   }
 }
