@@ -6,6 +6,9 @@
       "title": "",
       "sundayStart": {
         "label": "Rozpoczynaj tydzień od niedzieli"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
