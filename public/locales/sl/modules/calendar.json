@@ -6,6 +6,9 @@
       "title": "",
       "sundayStart": {
         "label": "Začni teden z nedeljo"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
