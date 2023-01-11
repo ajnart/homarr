@@ -6,6 +6,9 @@
       "title": "Indstillinger for kalenderintegration",
       "sundayStart": {
         "label": "Søndag første ugedag"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
