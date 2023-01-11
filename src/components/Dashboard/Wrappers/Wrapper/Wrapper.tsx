@@ -14,7 +14,11 @@ export const DashboardWrapper = ({ wrapper }: DashboardWrapperProps) => {
 
   return (
     <div
-      className={apps.length > 0 || isEditMode ? defaultClasses : `${defaultClasses} gridstack-empty-wrapper`}
+      className={
+        apps.length > 0 || widgets.length > 0 || isEditMode
+          ? defaultClasses
+          : `${defaultClasses} gridstack-empty-wrapper`
+      }
       style={{ transitionDuration: '0s' }}
       data-wrapper={wrapper.id}
       ref={refs.wrapper}

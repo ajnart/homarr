@@ -131,10 +131,19 @@ const getConfigAndCreateIfNotExsists = (
   const category: CategoryType = {
     id: uuidv4(),
     name: categoryName,
-    position: config.categories.length,
+    position: config.categories.length + 1, // sync up with index of categories
   };
 
   config.categories.push(category);
+
+  // sync up with categories
+  if (config.wrappers.length < config.categories.length) {
+    config.wrappers.push({
+      id: uuidv4(),
+      position: config.wrappers.length + 1, // sync up with index of categories
+    });
+  }
+
   return category;
 };
 
