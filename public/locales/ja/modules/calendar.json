@@ -6,6 +6,9 @@
       "title": "",
       "sundayStart": {
         "label": "週の始まりは日曜日"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }
