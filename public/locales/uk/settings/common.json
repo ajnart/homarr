@@ -22,8 +22,8 @@
     "enablelsidebar": "Увімкнути ліву бічну панель",
     "enablesearchbar": "Увімкнути панель пошуку",
     "enabledocker": "Увімкнути інтеграцію з Docker",
-    "enableping": "Увімкнути пінги",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "enableping": "Увімкнути пінг",
+    "enablelsidebardesc": "Необов'язково. Може використовуватися тільки для додатків та інтеграцій",
+    "enablersidebardesc": "Необов'язково. Може використовуватися тільки для додатків та інтеграцій"
   }
 }
