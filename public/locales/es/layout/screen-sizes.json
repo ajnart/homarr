@@ -1,11 +1,11 @@
 {
   "popover": {
-    "title": "",
-    "description": ""
+    "title": "Configuración para tamaño de pantalla \"{{size}}\"",
+    "description": "Estás editando el tamaño de tu actual pantalla"
   },
   "sizes": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "pequeño",
+    "medium": "medio",
+    "large": "grande"
   }
 }
