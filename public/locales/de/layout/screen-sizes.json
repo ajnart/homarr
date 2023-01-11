@@ -1,11 +1,11 @@
 {
   "popover": {
-    "title": "",
-    "description": ""
+    "title": "Konfigurieren für die Bildschirmgröße \"{{size}}\"",
+    "description": "Sie bearbeiten gerade die Größe Ihres aktuellen Bildschirms"
   },
   "sizes": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "Klein",
+    "medium": "Mittel",
+    "large": "Groß"
   }
 }
