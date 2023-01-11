@@ -63,6 +63,6 @@
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Uw formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om uw wijzigingen op te slaan"
 	}
 }
