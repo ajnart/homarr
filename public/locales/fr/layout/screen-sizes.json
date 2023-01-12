@@ -1,6 +1,6 @@
 {
   "popover": {
-    "title": "",
+    "title": "Configuration pour la taille de l'écran \"{{size}}\"",
     "description": "Vous modifiez la taille pour la taille de votre écran actuel"
   },
   "sizes": {
