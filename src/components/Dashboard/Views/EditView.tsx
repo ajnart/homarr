@@ -27,7 +27,12 @@ export const DashboardEditView = () => {
               </Text>
             </Stack>
 
-            <ActionIcon size="sm">
+            <ActionIcon
+              size="sm"
+              component="a"
+              href="https://homarr.dev/docs/customizations/layout"
+              target="_blank"
+            >
               <IconQuestionMark size={16} />
             </ActionIcon>
           </Group>
