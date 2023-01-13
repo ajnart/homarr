@@ -9,6 +9,7 @@
   "version": "Različica",
   "changePosition": "Spremeni položaj",
   "remove": "Odstrani",
+  "removeConfirm": "",
   "sections": {
     "settings": "Nastavitve",
     "dangerZone": "Nevarno območje"
