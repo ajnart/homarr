@@ -9,6 +9,7 @@
   "version": "",
   "changePosition": "",
   "remove": "Usuń",
+  "removeConfirm": "",
   "sections": {
     "settings": "Ustawienia",
     "dangerZone": "Strefa zagrożenia"
