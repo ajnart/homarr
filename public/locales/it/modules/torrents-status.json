@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "BitTorrent",
+    "name": "",
     "description": "Visualizza l'elenco dei torrent in download",
     "settings": {
-      "title": "Impostazioni per l'integrazione di BitTorrent",
+      "title": "",
       "refreshInterval": {
         "label": "Intervallo di aggiornamento (in secondi)"
       },
