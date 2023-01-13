@@ -9,6 +9,7 @@
   "version": "גרסה",
   "changePosition": "שנה מיקום",
   "remove": "הסר",
+  "removeConfirm": "",
   "sections": {
     "settings": "הגדרות",
     "dangerZone": "אזור מסוכן"
