@@ -9,6 +9,7 @@
   "version": "Version",
   "changePosition": "Ändra position",
   "remove": "Ta bort",
+  "removeConfirm": "",
   "sections": {
     "settings": "Inställningar",
     "dangerZone": "Farozon"
