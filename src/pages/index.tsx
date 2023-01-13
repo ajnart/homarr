@@ -49,8 +49,6 @@ export async function getServerSideProps({
 
   const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
 
-  Consola.info(`Decided to use configuration '${configName}'`);
-
   const config = getFrontendConfig(configName as string);
 
   return {
