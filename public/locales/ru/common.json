@@ -9,6 +9,7 @@
   "version": "",
   "changePosition": "",
   "remove": "Удалить",
+  "removeConfirm": "",
   "sections": {
     "settings": "Настройки",
     "dangerZone": "Опасная зона"
