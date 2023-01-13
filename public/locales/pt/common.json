@@ -9,6 +9,7 @@
   "version": "",
   "changePosition": "",
   "remove": "Excluir",
+  "removeConfirm": "",
   "sections": {
     "settings": "Configurações",
     "dangerZone": "Zona de risco"
