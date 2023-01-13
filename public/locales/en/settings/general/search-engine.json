@@ -2,7 +2,7 @@
   "title": "Search engine",
   "configurationName": "Search engine configuration",
   "tips": {
-    "generalTip": "There are multiple prefixes you can use! Adding these infront of your query will filter the results. !s (Web), !t (Torrents), !y (YouTube), and !m (Overseerr).",
+    "generalTip": "There are multiple prefixes you can use! Adding these infront of your query will filter the results. !s (Web), !t (Torrents), !y (YouTube), and !m (Media).",
     "placeholderTip": "%s can be used as a placeholder for the query."
   },
   "customEngine": {
