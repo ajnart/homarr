@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "BitTorrent",
+    "name": "",
     "description": "Показувати список торентів, які зараз завантажуються",
     "settings": {
-      "title": "Налаштування інтеграції з BitTorrent",
+      "title": "",
       "refreshInterval": {
         "label": "Інтервал оновлення (у секундах)"
       },
