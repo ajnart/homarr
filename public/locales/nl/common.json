@@ -9,7 +9,7 @@
   "version": "Versie",
   "changePosition": "Positie wijzigen",
   "remove": "Verwijder",
-  "removeConfirm": "",
+  "removeConfirm": "Weet u zeker dat u {{item}} wilt verwijderen?",
   "sections": {
     "settings": "Instellingen",
     "dangerZone": "Gevarenzone"
