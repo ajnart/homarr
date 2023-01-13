@@ -7,7 +7,6 @@ export const dashboardNamespaces = [
   'layout/modals/about',
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
-  'layout/screen-sizes',
   'settings/common',
   'settings/general/theme-selector',
   'settings/general/config-changer',
