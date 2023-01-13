@@ -9,7 +9,7 @@
   "version": "Version",
   "changePosition": "Ändra position",
   "remove": "Ta bort",
-  "removeConfirm": "",
+  "removeConfirm": "Är du säker på att du vill ta bort {{item}} ?",
   "sections": {
     "settings": "Inställningar",
     "dangerZone": "Farozon"
