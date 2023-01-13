@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Download Speed",
-    "description": "Displays the Download and Upload speed on supported devices."
+    "description": "Displays the Download and Upload speed of supported integrations."
   },
   "card": {
     "table": {
