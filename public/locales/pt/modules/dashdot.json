@@ -19,10 +19,6 @@
       "url": {
         "label": "URL do Dash."
       }
-    },
-    "remove": {
-      "title": "",
-      "confirm": ""
     }
   },
   "card": {
