@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "BitTorrent",
+    "name": "Torrent",
     "description": "Visar en lista över torrents som just nu laddas ner",
     "settings": {
-      "title": "Inställningar för BitTorrent integration",
+      "title": "Inställningar för Torrent-integration",
       "refreshInterval": {
         "label": "Uppdateringsfrekvens (sekunder)"
       },
