@@ -19,10 +19,6 @@
       "url": {
         "label": "Adres URL usługi Dash."
       }
-    },
-    "remove": {
-      "title": "",
-      "confirm": ""
     }
   },
   "card": {
