@@ -9,6 +9,7 @@
   "version": "Versione",
   "changePosition": "Cambia posizione",
   "remove": "Rimuovi",
+  "removeConfirm": "",
   "sections": {
     "settings": "Impostazioni",
     "dangerZone": "Danger zone"
