@@ -20,7 +20,7 @@ export default function Credits() {
         >
           ajnart
         </Anchor>{' '}
-        and you !
+        and you!
       </Text>
     </Group>
   );

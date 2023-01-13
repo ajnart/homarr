@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Displays a list of the torrent which are currently downloading",
+    "description": "Displays a list of torrents from supported Torrent Download clients.",
     "settings": {
-      "title": "Settings for Torrent integration",
+      "title": "Settings for Torrent widget",
       "refreshInterval": {
         "label": "Refresh interval (in seconds)"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "No supported download clients found!",
-        "text": "Add a download service to view your current downloads"
+        "title": "No supported Torrent Download clients found!",
+        "text": "Add a supported Torrent Download client to view your current downloads"
       },
       "generic": {
         "title": "An unexpected error occured",
-        "text": "Homarr was unable to communicate with your download clients. Please check your configuration"
+        "text": "Homarr was unable to communicate with your Torrent Download clients. Please check your configuration"
       }
     },
     "loading": {

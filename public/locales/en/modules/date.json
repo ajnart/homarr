@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Date",
-    "description": "Show the current time and date in a card",
+    "name": "Date and Time",
+    "description": "Displays the current date and time.",
     "settings": {
-      "title": "Settings for date integration",
+      "title": "Settings for Date and Time widget",
       "display24HourFormat": {
         "label": "Display full time (24-hour)"
       }

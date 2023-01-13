@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Search Bar",
-    "description": "Search bar to search the web, Youtube, Torrents or Overseerr"
+    "description": "A search bar that allows you to search your custom search engine, YouTube, and supported integrations."
   },
   "input": {
     "placeholder": "Search the web..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Search using your search engine (defined in settings)"
+      "description": "Search..."
     },
     "youtube": {
       "name": "Youtube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Search for Movies and TV Shows using Overseerr (module must be enabled)"
+      "description": "Search for Movies and TV Shows on Overseerr"
     }
   },
   "tip": "You can select the search bar with the shortcut ",

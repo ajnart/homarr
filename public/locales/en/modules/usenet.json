@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Allows you to see your usenet (Sabnzbd or NZBGet) queue and history, pause and resume downloads"
+    "description": "Allows you to view and manage your Usenet instance."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "No supported download clients found!",
-        "text": "Add a download service to view your current downloads"
+        "text": "Add a supported Usenet Download Client to view your current downloads"
       }
     }
   },

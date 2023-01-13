@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Allows you to search and add media from Overseerr/Jellyseerr"
+    "description": "Allows you to search and add media from Overseerr and Jellyseerr."
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "Tick the seasons that you want to be downloaded",
+      "caption": "Tick the seasons you want to download",
       "table": {
         "header": {
           "season": "Season",
