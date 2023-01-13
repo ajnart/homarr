@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "BitTorrent",
+    "name": "",
     "description": "Mostrar lista de torrents que están descargándose actualmente",
     "settings": {
-      "title": "Ajustes para integración BitTorrent",
+      "title": "",
       "refreshInterval": {
         "label": "Intervalo de refresco (en segundos)"
       },
