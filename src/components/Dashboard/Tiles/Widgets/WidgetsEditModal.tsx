@@ -58,14 +58,6 @@ export const WidgetsEditModal = ({
     });
   };
 
-  const getMutliselectData = (option: string) => {
-    const currentWidgetDefinition = Widgets[innerProps.widgetId as keyof typeof Widgets];
-    if (!Widgets) return [];
-
-    const options = currentWidgetDefinition.options as any;
-    return options[option]?.data ?? [];
-  };
-
   const handleSave = () => {
     updateConfig(
       configName,
@@ -85,9 +77,9 @@ export const WidgetsEditModal = ({
 
   return (
     <Stack>
-      {items.map(([key, defaultValue], index) => {
+      {items.map(([key, _], index) => {
         const option = (currentWidgetDefinition as any).options[key] as IWidgetOptionValue;
-        const value = moduleProperties[key] ?? defaultValue;
+        const value = moduleProperties[key] ?? option.defaultValue;
 
         if (!option) {
           return (
@@ -183,10 +175,10 @@ function WidgetOptionTypeSwitch(
     case 'slider':
       return (
         <Stack spacing="xs">
-          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
           <Slider
             color={primaryColor}
             key={`${option.type}-${index}`}
+            label={value}
             value={value as number}
             min={option.min}
             max={option.max}

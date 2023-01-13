@@ -1,5 +1,6 @@
 import { useMantineTheme } from '@mantine/core';
 import create from 'zustand';
+import { useConfigContext } from '../../../../config/provider';
 
 export const useGridstackStore = create<GridstackStoreType>((set, get) => ({
   mainAreaWidth: null,
@@ -27,11 +28,16 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 };
 
 export const useWrapperColumnCount = () => {
+  const { config } = useConfigContext();
+  const numberOfSidebars =
+    (config?.settings.customization.layout.enabledLeftSidebar ? 1 : 0) +
+    (config?.settings.customization.layout.enabledRightSidebar ? 1 : 0);
+
   switch (useNamedWrapperColumnCount()) {
     case 'large':
-      return 12;
+      return 15 - numberOfSidebars * 2;
     case 'medium':
-      return 6;
+      return 9 - numberOfSidebars * 2;
     case 'small':
       return 3;
     default:

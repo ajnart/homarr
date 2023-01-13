@@ -1,4 +1,4 @@
-import { Card } from '@mantine/core';
+import { Card, Group, Stack } from '@mantine/core';
 import { RefObject } from 'react';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useGridstack } from '../gridstack/use-gridstack';
@@ -9,18 +9,24 @@ interface DashboardSidebarProps extends DashboardSidebarInnerProps {
   isGridstackReady: boolean;
 }
 
-export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSidebarProps) => (
-  <Card
-    withBorder
-    w={300}
-    style={{
-      background: 'none',
-      borderStyle: 'dashed',
-    }}
-  >
-    {isGridstackReady && <SidebarInner location={location} />}
-  </Card>
-);
+export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSidebarProps) => {
+  const {
+    cx,
+    classes: { card: cardClass },
+  } = useCardStyles(false);
+
+  return (
+    <Card
+      p={0}
+      m={0}
+      radius="lg"
+      className={cardClass}
+      w={300}
+    >
+      {isGridstackReady && <SidebarInner location={location} />}
+    </Card>
+  );
+};
 
 interface DashboardSidebarInnerProps {
   location: 'right' | 'left';
@@ -37,17 +43,18 @@ const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
   } = useCardStyles(false);
 
   return (
-    <Card withBorder mih="100%" p={0} radius="lg" className={cardClass} ref={refs.wrapper}>
-      <div
-        className="grid-stack grid-stack-sidebar"
-        style={{ transitionDuration: '0s', height: '100%' }}
-        data-sidebar={location}
-        // eslint-disable-next-line react/no-unknown-property
-        gs-min-row={minRow}
-      >
-        <WrapperContent apps={apps} refs={refs} widgets={widgets} />
-      </div>
-    </Card>
+    <div
+      ref={refs.wrapper}
+      className="grid-stack grid-stack-sidebar"
+      style={{
+        transitionDuration: '0s',
+      }}
+      data-sidebar={location}
+      // eslint-disable-next-line react/no-unknown-property
+      gs-min-row={minRow}
+    >
+      <WrapperContent apps={apps} refs={refs} widgets={widgets} />
+    </div>
   );
 };
 
