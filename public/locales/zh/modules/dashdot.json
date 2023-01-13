@@ -19,10 +19,6 @@
       "url": {
         "label": "Dash. 网址"
       }
-    },
-    "remove": {
-      "title": "移除Dash.Widget",
-      "confirm": "你确定要删除Dash.widget吗？"
     }
   },
   "card": {
