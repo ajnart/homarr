@@ -1,4 +1,4 @@
-import { Card, Group, Stack } from '@mantine/core';
+import { Card } from '@mantine/core';
 import { RefObject } from 'react';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useGridstack } from '../gridstack/use-gridstack';
@@ -16,13 +16,7 @@ export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSideba
   } = useCardStyles(false);
 
   return (
-    <Card
-      p={0}
-      m={0}
-      radius="lg"
-      className={cardClass}
-      w={300}
-    >
+    <Card p={0} m={0} radius="lg" className={cardClass} w={300}>
       {isGridstackReady && <SidebarInner location={location} />}
     </Card>
   );
