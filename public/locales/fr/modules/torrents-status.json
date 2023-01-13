@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "P2P/BitTorrent",
+    "name": "Torrent",
     "description": "Affiche une liste des torrents en cours de téléchargement",
     "settings": {
-      "title": "Paramètres pour l'intégration de BitTorrent",
+      "title": "Paramètres pour l'intégration Torrent",
       "refreshInterval": {
         "label": "Intervalle d'actualisation en secondes"
       },
