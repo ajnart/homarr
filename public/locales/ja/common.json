@@ -9,6 +9,7 @@
   "version": "バージョン",
   "changePosition": "ポジションを変更する",
   "remove": "削除",
+  "removeConfirm": "",
   "sections": {
     "settings": "設定",
     "dangerZone": "デンジャーゾーン"
