@@ -9,6 +9,7 @@
   "version": "",
   "changePosition": "",
   "remove": "Xóa",
+  "removeConfirm": "",
   "sections": {
     "settings": "Cài đặt",
     "dangerZone": "Khu vực nguy hiểm"
