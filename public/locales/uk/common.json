@@ -9,6 +9,7 @@
   "version": "Версія",
   "changePosition": "Змінити положення",
   "remove": "Видалити",
+  "removeConfirm": "",
   "sections": {
     "settings": "Налаштування",
     "dangerZone": "Небезпечна зона"
