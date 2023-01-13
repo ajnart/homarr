@@ -9,7 +9,7 @@
   "version": "Версія",
   "changePosition": "Змінити положення",
   "remove": "Видалити",
-  "removeConfirm": "",
+  "removeConfirm": "Ви впевнені, що хочете видалити {{item}} ?",
   "sections": {
     "settings": "Налаштування",
     "dangerZone": "Небезпечна зона"
