@@ -19,10 +19,6 @@
       "url": {
         "label": "Dash. URL"
       }
-    },
-    "remove": {
-      "title": "Odstranite pripomoček Dash",
-      "confirm": "Ali ste prepričani, da želite odstraniti Dash. pripomoček?"
     }
   },
   "card": {
