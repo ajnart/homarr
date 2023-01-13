@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Torrent",
     "description": "Zeigt eine Liste der Torrents an, die gerade heruntergeladen werden",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für die Torrent Integration",
       "refreshInterval": {
         "label": "Aktualisierungsintervall (in Sekunden)"
       },
