@@ -9,6 +9,7 @@
   "version": "Version",
   "changePosition": "Ændre placering",
   "remove": "Fjern",
+  "removeConfirm": "",
   "sections": {
     "settings": "Indstillinger",
     "dangerZone": "Farezone"
