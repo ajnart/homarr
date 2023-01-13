@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Group, Stack, Text } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
@@ -32,7 +32,11 @@ export const WidgetsRemoveModal = ({
 
   return (
     <Stack>
-      <Text>{t('descriptor.remove.confirm')}</Text>
+      <Trans
+        i18nKey="common:removeConfirm"
+        components={[<Text weight={500} />]}
+        values={{ item: innerProps.widgetId }}
+      />
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
           {t('common:cancel')}
