@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "BitTorrent",
+    "name": "",
     "description": "Viser en liste over de torrent, der er ved at blive downloadet",
     "settings": {
-      "title": "Indstillinger for BitTorrent-integration",
+      "title": "",
       "refreshInterval": {
         "label": "Opdateringsinterval (i sekunder)"
       },
