@@ -9,6 +9,7 @@
   "version": "",
   "changePosition": "",
   "remove": "Remoev",
+  "removeConfirm": "",
   "sections": {
     "settings": "Settingz",
     "dangerZone": "Dangr zoen"
