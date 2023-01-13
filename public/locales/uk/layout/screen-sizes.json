@@ -1,11 +1,11 @@
 {
   "popover": {
-    "title": "",
-    "description": ""
+    "title": "Налаштування розміру екрану \"{{size}}\"",
+    "description": "Ви редагуєте розмір вашого екрану"
   },
   "sizes": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "малий",
+    "medium": "середній",
+    "large": "великий"
   }
 }
