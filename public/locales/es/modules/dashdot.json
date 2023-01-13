@@ -19,10 +19,6 @@
       "url": {
         "label": "Dash. URL"
       }
-    },
-    "remove": {
-      "title": "Eliminar widget de Dash.",
-      "confirm": "Seguro que quieres eliminar el widget de Dash.?"
     }
   },
   "card": {
