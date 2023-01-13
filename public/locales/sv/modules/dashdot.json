@@ -19,10 +19,6 @@
       "url": {
         "label": "Dash. URL"
       }
-    },
-    "remove": {
-      "title": "Ta bort Dash. widget",
-      "confirm": "Är du säker, att du vill ta bort Dash. widget?"
     }
   },
   "card": {
