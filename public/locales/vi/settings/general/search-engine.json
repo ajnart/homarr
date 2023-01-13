@@ -1,12 +1,12 @@
 {
   "title": "Công cụ tìm kiếm",
-  "configurationName": "",
+  "configurationName": "Thiết lập công cụ tìm kiếm",
   "tips": {
     "generalTip": "Sử dụng các tiền tố !yt và !t trước truy vấn để tìm kiếm trên YouTube hoặc torrent.",
     "placeholderTip": "%s có thể được sử dụng làm phần giữ chỗ cho truy vấn."
   },
   "customEngine": {
-    "title": "",
+    "title": "Công cụ tìm kiếm tuỳ chỉnh",
     "label": "URL truy vấn",
     "placeholder": "URL truy vấn tuỳ chỉnh"
   },
@@ -14,6 +14,6 @@
     "label": "Mở kết quả tìm kiếm trong tab mới"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Đã bật tìm kiếm"
   }
 }
