@@ -9,7 +9,7 @@
   "version": "Version",
   "changePosition": "Modifier la position",
   "remove": "Supprimer",
-  "removeConfirm": "",
+  "removeConfirm": "Êtes-vous sûr de vouloir supprimer {{item}} ?",
   "sections": {
     "settings": "Paramètres",
     "dangerZone": "Zone de danger"
