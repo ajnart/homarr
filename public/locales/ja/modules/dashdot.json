@@ -19,10 +19,6 @@
       "url": {
         "label": "ダッシュURL"
       }
-    },
-    "remove": {
-      "title": "Dash.ウィジェットを削除する",
-      "confirm": "本当にDash.ウィジェットを削除するのですか？"
     }
   },
   "card": {
