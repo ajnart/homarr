@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "BitTorrent",
+    "name": "",
     "description": "显示当前正在下载的洪流列表。",
     "settings": {
-      "title": "为BitTorrent集成设置",
+      "title": "",
       "refreshInterval": {
         "label": "刷新时间间隔（秒）。"
       },
