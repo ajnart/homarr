@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "ビットトレント",
+    "name": "",
     "description": "現在ダウンロード中のトレントを一覧で表示します。",
     "settings": {
-      "title": "BitTorrent統合のための設定",
+      "title": "",
       "refreshInterval": {
         "label": "リフレッシュ間隔(秒)"
       },
