@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "סרגל חיפוש",
-    "description": ""
+    "description": "שורת חיפוש המאפשרת לחפש במנוע החיפוש, ביוטיוב ובאינטגרציות נתמכות."
   },
   "input": {
     "placeholder": "חפש באינטרנט..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "אינטרנט",
-      "description": ""
+      "description": "חיפוש..."
     },
     "youtube": {
       "name": "יוטיוב",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "חפש סרטים ותוכניות טלוויזיה ב-Overseerr"
     }
   },
   "tip": "באפשרותך לבחור את סרגל החיפוש באמצעות קיצור הדרך",
