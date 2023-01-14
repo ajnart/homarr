@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Po meri CSS",
-    "placeholder": "CSS po meri se izvede kot zadnji"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Pošlji"
