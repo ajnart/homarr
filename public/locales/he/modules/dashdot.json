@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "מציג נתוני גרפים.",
     "settings": {
       "title": "הגדרות עבור וידג׳ט Dash.",
       "cpuMultiView": {
