@@ -1,7 +1,7 @@
 {
   "popover": {
-    "title": "Konfigurering til skærmstørrelse \"{{size}}\"",
-    "description": "Du redigerer størrelsen for din aktuelle skærm"
+    "title": "",
+    "description": ""
   },
   "sizes": {
     "small": "lille",
