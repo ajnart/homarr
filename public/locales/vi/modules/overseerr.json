@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Cho phép bạn tìm và thêm phương tiện truyền thông từ Overseerr/Jellyseerr"
+    "description": ""
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "Đánh dấu các mùa bạn muốn tải về",
+      "caption": "",
       "table": {
         "header": {
           "season": "Mùa",
