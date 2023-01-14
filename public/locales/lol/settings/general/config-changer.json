@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Config loadah",
+    "label": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "",
-      "text": "Drag filez hah 2 upload config. Support 4 JSON only."
+      "text": ""
     },
     "reject": {
       "title": "",
-      "text": "Dis fiel format iz not supportd. Srsly plz only upload JSON."
+      "text": ""
     }
   }
 }
