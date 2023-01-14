@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Vejr",
-    "description": "Se det aktuelle vejr på din placering",
+    "description": "",
     "settings": {
-      "title": "Indstillinger for vejr-integration",
+      "title": "",
       "displayInFahrenheit": {
         "label": "Vis i Fahrenheit"
       },
