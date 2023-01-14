@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Väder",
-    "description": "",
+    "description": "Visar aktuell väderinformation för en bestämd plats.",
     "settings": {
       "title": "",
       "displayInFahrenheit": {
