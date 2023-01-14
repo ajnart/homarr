@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Ermöglicht es dir, deine Usenet (Sabnzbd oder NZBGet) Download Warteschlange und den Verlauf zu betrachten sowie Downloads anzuhalten und fortzusetzen"
+    "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Keine unterstützten Download-Clients gefunden!",
-        "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
+        "text": ""
       }
     }
   },
