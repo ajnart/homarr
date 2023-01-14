@@ -1,11 +1,11 @@
 {
-    "description": "I redigeringsläget kan du justera storleken och placeringen av dina rutor.",
+    "description": "",
     "button": {
         "disabled": "Gå till redigeringsläge",
         "enabled": "Avsluta och spara"
     },
     "popover": {
-        "title": "Redigeringsläget är aktiverat",
-        "text": "Du kan justera och konfigurera dina appar nu. Ändringarna <strong>sparas inte</strong> förrän du lämnar redigeringsläget"
+        "title": "",
+        "text": ""
     }
 }
