@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "ユーズネット",
-    "description": "usenet（SabnzbdまたはNZBGet）のキューと履歴の確認、ダウンロードの一時停止と再開が可能です。"
+    "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "対応するダウンロードクライアントが見つかりません",
-        "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
+        "text": ""
       }
     }
   },
