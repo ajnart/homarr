@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Пинг",
-    "description": "Позволяет проверить, работает ли служба или возвращает определенный код статуса HTTP."
+    "description": ""
   },
   "states": {
     "online": "Онлайн {{response}}",
