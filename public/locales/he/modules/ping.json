@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "פינג",
-    "description": "מאפשר בדיקה אם השירות פעיל"
+    "description": ""
   },
   "states": {
     "online": "מקוון {{response}}",
