@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "Cargador de configuración",
+    "label": "",
     "loadingNew": "Cargando tu configuración...",
-    "pleaseWait": "Por favor, espera hasta que tu nueva configuración se cargue"
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Escoge el nombre de tu nueva configuración",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "Configuración subida",
-      "text": "Arrastra un archivo aqui para subir una configuración. Sólo se admiten archivos JSON."
+      "text": ""
     },
     "reject": {
       "title": "Subida Arrastar y Soltar rechada",
-      "text": "Este formato de archivo no es compatible. Por favor, sube solo archivos JSON."
+      "text": ""
     }
   }
 }
