@@ -39,8 +39,8 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "No supportd download clientz findz!",
-        "text": "Add download survis 2 view ur current downloadz"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "",
