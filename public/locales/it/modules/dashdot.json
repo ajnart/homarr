@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Un modulo per visualizzare i grafici dell'istanza di Dash. in esecuzione.",
+    "description": "",
     "settings": {
       "title": "Impostazioni del widget Dash.",
       "cpuMultiView": {
