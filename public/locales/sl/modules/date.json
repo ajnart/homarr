@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Datum",
-    "description": "Prikaz trenutnega časa in datuma na kartici",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "Nastavitve za integracijo datuma",
+      "title": "",
       "display24HourFormat": {
         "label": "Prikaz polnega časa (24-urni)"
       }
