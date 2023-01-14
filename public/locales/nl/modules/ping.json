@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "Hiermee kunt u controleren of de service werkt of een specifieke HTTP-statuscode retourneert."
+    "description": ""
   },
   "states": {
     "online": "Online {{response}}",
