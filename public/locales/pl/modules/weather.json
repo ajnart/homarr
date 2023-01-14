@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Pogoda",
-    "description": "Sprawdź aktualną pogodę w swojej lokalizacji",
+    "description": "",
     "settings": {
       "title": "",
       "displayInFahrenheit": {
