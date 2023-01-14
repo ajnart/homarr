@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "一般",
+		"behaviour": "行为",
+		"network": "网络",
+		"appearance": "外观",
+		"integration": "融合"
+	},
+	"general": {
+		"appname": {
+			"label": "应用程序名称",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "内部地址",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "外部地址",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "在新标签中打开",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "状态检查器",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "HTTP状态代码",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "应用图标",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "集成配置",
+			"description": "",
+			"placeholder": "选择一个整合",
+			"defined": "定义",
+			"undefined": "未定义",
+			"public": "公众",
+			"private": "私营",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "要更新一个秘密，输入一个值并点击保存按钮。要删除一个秘密，请使用清除按钮。",
+			"warning": "",
+			"clear": "清除秘密",
+			"save": "保存秘密",
+			"update": "更新秘密"
+		}
+	},
+	"validation": {
+		"popover": ""
+	}
+}

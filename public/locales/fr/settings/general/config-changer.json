@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Chargeur de configuration"
+    "label": "",
+    "loadingNew": "Chargement des configurations ...",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Choisissez le nom de votre nouvelle configuration",
     "form": {
       "configName": {
         "label": "Nom de la configuration",
+        "validation": {
+          "required": "Le nom de la configuration est obligatoire"
+        },
         "placeholder": "Le nom de votre nouvelle configuration"
       },
       "submitButton": "Confirmer"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Configuration sauvegardée",
         "message": "Configuration enregistrée sous {{configName}}"
+      },
+      "configCopied": {
+        "title": "Configuration copiée",
+        "message": "Configuration copiée comme {{configName}}"
+      },
+      "configNotCopied": {
+        "title": "Impossible de copier le fichier",
+        "message": "Votre configuration n'a pas été copiée en tant que {{configName}}"
       }
     }
   },
@@ -46,10 +59,12 @@
       }
     },
     "accept": {
-      "text": "Faites glisser les fichiers ici pour télécharger une configuration. Support pour JSON uniquement."
+      "title": "Téléversement de la configuration",
+      "text": ""
     },
     "reject": {
-      "text": "Ce format de fichier n'est pas pris en charge. Veuillez télécharger uniquement JSON."
+      "title": "Upload par glisser-déposer rejeté",
+      "text": ""
     }
   }
 }

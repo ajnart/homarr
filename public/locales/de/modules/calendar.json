@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "Kalender",
-    "description": "Ein Kalendermodul für die Anzeige der kommenden Veröffentlichungen. Es interagiert mit der Sonarr- und Radarr-API.",
+    "description": "",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Wochenbeginn am Sonntag"
+      },
+      "radarrReleaseType": {
+        "label": "Radarr Veröffentlichungs Typ"
       }
     }
   }

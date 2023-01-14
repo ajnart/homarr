@@ -1,6 +1,23 @@
 {
-  "actions": {
-    "save": "שמור"
+  "save": "שמור",
+  "about": "אודות",
+  "cancel": "בטל",
+  "close": "סגור",
+  "delete": "מחיקה",
+  "ok": "אישור",
+  "edit": "עריכה",
+  "version": "גרסה",
+  "changePosition": "שנה מיקום",
+  "remove": "הסר",
+  "removeConfirm": "האם אתה בטוח שברצונך להסיר את  {{item}} ?",
+  "sections": {
+    "settings": "הגדרות",
+    "dangerZone": "אזור מסוכן"
+  },
+  "secrets": {
+    "apiKey": "מפתח API",
+    "username": "שם משתמש",
+    "password": "סיסמה"
   },
   "tip": "טיפ:",
   "time": {

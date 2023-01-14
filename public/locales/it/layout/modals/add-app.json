@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Generale",
+		"behaviour": "Comportamento",
+		"network": "Rete",
+		"appearance": "Aspetto",
+		"integration": "Integrazione"
+	},
+	"general": {
+		"appname": {
+			"label": "Nome app",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Indirizzo interno",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Indirizzo esterno",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Apri in una nuova scheda",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Status checker",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "Codici di stato HTTP",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Icona App",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Configurazione integrazioni",
+			"description": "",
+			"placeholder": "Seleziona un'integrazione",
+			"defined": "Definito",
+			"undefined": "Indefinito",
+			"public": "Pubblico",
+			"private": "Privato",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "Per aggiornare un secret, inserisci un valore e fai clic sul pulsante Salva. Per rimuoverlo, usa il pulsante rimuovi.",
+			"warning": "",
+			"clear": "Rimuovi secret",
+			"save": "Salva secret",
+			"update": "Aggiorna secret"
+		}
+	},
+	"validation": {
+		"popover": "Il form contiene dati invalidi. Pertanto, non può essere salvato. Risolvere tutti i problemi e fare nuovamente clic su questo pulsante per salvare le modifiche"
+	}
+}

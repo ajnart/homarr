@@ -6,10 +6,24 @@
     "customizations": "个性化"
   },
   "tips": {
-    "configTip": "将你的配置文件拖放到页面上，就可以上传了!"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "用❤️创造，出品于"
   },
-  "grow": ""
+  "grow": "增长的网格（占用所有空间）",
+  "layout": {
+    "title": "仪表板布局",
+    "main": "主要的",
+    "sidebar": "侧边栏",
+    "cannotturnoff": "不能关闭",
+    "dashboardlayout": "仪表板布局",
+    "enablersidebar": "启用右边的侧边栏",
+    "enablelsidebar": "启用左边的侧边栏",
+    "enablesearchbar": "启用搜索栏",
+    "enabledocker": "启用docker集成",
+    "enableping": "启用平移功能",
+    "enablelsidebardesc": "可选的。只能用于应用程序和集成",
+    "enablersidebardesc": "可选的。只能用于应用程序和集成"
+  }
 }

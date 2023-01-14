@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Gå i redigeringstilstand",
+        "enabled": "Afslut og gem"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

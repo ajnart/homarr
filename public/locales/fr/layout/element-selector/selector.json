@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Ajouter une tuile",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Retourner à la page précédente",
+    "actionIcon": {
+        "tooltip": "Ajouter une tuile"
+    }
+}

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "Allowz u 2 check if teh survis iz up or returns specific HTTP status coed."
+    "description": ""
   },
   "states": {
     "online": "Onlien {{response}}",

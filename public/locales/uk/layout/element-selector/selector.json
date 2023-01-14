@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Додати плитку",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Повернутися на попередню сторінку",
+    "actionIcon": {
+        "tooltip": "Додати плитку"
+    }
+}

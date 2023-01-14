@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "כותרת העמוד",
-    "placeholder": "Homarr 🦞"
+    "label": "כותרת העמוד"
+  },
+  "metaTitle": {
+    "label": "כותרת על"
   },
   "logo": {
     "label": "סמל"
@@ -14,9 +16,9 @@
   },
   "customCSS": {
     "label": "CSS מותאם אישית",
-    "placeholder": "css מותאם אישית יבוצע אחרון"
+    "placeholder": ""
   },
   "buttons": {
-    "submit": "שמירה"
+    "submit": "שלח"
   }
 }

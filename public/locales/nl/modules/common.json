@@ -1,5 +1,10 @@
 {
   "settings": {
     "label": "Instellingen"
+  },
+  "errors": {
+    "unmappedOptions": {
+      "text": ""
+    }
   }
 }

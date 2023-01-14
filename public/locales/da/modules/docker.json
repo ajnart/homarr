@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Tillader dig nemt at administrere dine docker containere"
+    "description": ""
   },
   "search": {
     "placeholder": "Søg efter container- eller imagenavn"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Tilføj tjeneste",
-      "message": "Tilføj tjeneste til Homarr"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "Genstart"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker integration mislykkedes",
-      "message": "Har du glemt at montere docker socket ?"
+      "message": ""
     },
     "unknownError": {
       "title": "Der opstod en fejl"
     },
     "oneServiceAtATime": {
-      "title": "Du må kun tilføje én tjeneste ad gangen!"
+      "title": ""
     }
   },
   "actionIcon": {

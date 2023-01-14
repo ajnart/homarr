@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "高度なオプション",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTPステータスコード",
-                        "placeholder": "有効なステータスコードを選択する",
-                        "clearButtonLabel": "クリア選択",
-                        "nothingFound": "何も見つかりません"
-                    },
                     "openServiceInNewTab": {
                         "label": "新しいタブでサービスを開く"
                     },

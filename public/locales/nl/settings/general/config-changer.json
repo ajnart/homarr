@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Configuratie lader"
+    "label": "",
+    "loadingNew": "Uw configuratie wordt geladen...",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Kies de naam van uw nieuwe configuratie",
     "form": {
       "configName": {
         "label": "Configuratie naam",
+        "validation": {
+          "required": "Configuratienaam is vereist"
+        },
         "placeholder": "Uw nieuwe configuratienaam"
       },
       "submitButton": "Bevestig"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Configuratie opgeslagen",
         "message": "Configuratie opgeslagen als {{configName}}"
+      },
+      "configCopied": {
+        "title": "Configuratie gekopieerd",
+        "message": "Configuratie gekopieerd als {{configName}}"
+      },
+      "configNotCopied": {
+        "title": "Kan configuratie niet kopiëren",
+        "message": "Uw configuratie werd niet gekopieerd als {{configName}}"
       }
     }
   },
@@ -33,23 +46,25 @@
         }
       }
     },
-    "saveCopy": "Sla op als een kopie"
+    "saveCopy": "Kopie opslaan"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
         "title": "Kan configuratie niet laden",
-        "message": "Kon uw configuratie niet laden. Ongeldig JSON formaat."
+        "message": "Kon uw configuratie niet laden. Ongeldige JSON-indeling."
       },
       "loadedSuccessfully": {
         "title": "Configuratie {{configName}} succesvol geladen"
       }
     },
     "accept": {
-      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON."
+      "title": "Configuratie Upload",
+      "text": ""
     },
     "reject": {
-      "text": "Dit bestandsformaat wordt niet ondersteund. Upload a.u.b. alleen JSON."
+      "title": "Drag & Drop Upload afgewezen",
+      "text": ""
     }
   }
 }

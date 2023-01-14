@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "כניסה למצב עריכה",
+        "enabled": "יציאה ושמירה"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

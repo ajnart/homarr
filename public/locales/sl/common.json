@@ -1,6 +1,23 @@
 {
-  "actions": {
-    "save": "Shrani"
+  "save": "Shrani",
+  "about": "O programu",
+  "cancel": "Prekliči",
+  "close": "Zapri",
+  "delete": "Izbriši",
+  "ok": "V redu",
+  "edit": "Uredi",
+  "version": "Različica",
+  "changePosition": "Spremeni položaj",
+  "remove": "Odstrani",
+  "removeConfirm": "",
+  "sections": {
+    "settings": "Nastavitve",
+    "dangerZone": "Nevarno območje"
+  },
+  "secrets": {
+    "apiKey": "Api ključ",
+    "username": "Uporabniško ime",
+    "password": "Geslo"
   },
   "tip": "Nasvet: ",
   "time": {

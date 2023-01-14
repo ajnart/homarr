@@ -1,8 +1,9 @@
 {
   "descriptor": {
-    "name": "날짜",
-    "description": "시간과 날짜를 보여주는 카드를 추가합니다",
+    "name": "",
+    "description": "",
     "settings": {
+      "title": "",
       "display24HourFormat": {
         "label": "24시간제로 표시"
       }

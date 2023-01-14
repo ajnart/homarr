@@ -1,14 +1,19 @@
 {
   "title": "Silnik wyszukiwania",
+  "configurationName": "",
   "tips": {
-    "generalTip": "Użyj prefiksów !yt i !t aby szukać plików torrent lub wyszukać zapytanie na YouTube.",
+    "generalTip": "",
     "placeholderTip": "%s może być użyte jako symbol zastępczy dla zapytania."
   },
   "customEngine": {
+    "title": "",
     "label": "Adres URL zapytania",
     "placeholder": "Własny adres URL zapytania"
   },
   "searchNewTab": {
+    "label": ""
+  },
+  "searchEnabled": {
     "label": ""
   }
 }

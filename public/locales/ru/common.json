@@ -1,11 +1,28 @@
 {
-  "actions": {
-    "save": "Сохранить"
+  "save": "",
+  "about": "",
+  "cancel": "Отмена",
+  "close": "",
+  "delete": "Удалить",
+  "ok": "",
+  "edit": "Изменить",
+  "version": "",
+  "changePosition": "",
+  "remove": "Удалить",
+  "removeConfirm": "",
+  "sections": {
+    "settings": "Настройки",
+    "dangerZone": "Опасная зона"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Имя пользователя",
+    "password": "Пароль"
   },
   "tip": "Совет: ",
   "time": {
-    "seconds": "секунды",
+    "seconds": "секунд",
     "minutes": "минут",
-    "hours": "часы"
+    "hours": "часов"
   }
 }

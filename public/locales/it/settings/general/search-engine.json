@@ -1,14 +1,19 @@
 {
   "title": "Motore di ricerca",
+  "configurationName": "Configurazione del motore di ricerca",
   "tips": {
-    "generalTip": "Usa i prefissi !yt e !t di fronte alla tua ricerca per cercare rispettivamente su YouTube o un Torrent.",
+    "generalTip": "",
     "placeholderTip": "%s può essere usato come segnaposto per la ricerca."
   },
   "customEngine": {
+    "title": "Motore di ricerca personalizzato",
     "label": "URL di ricerca",
     "placeholder": "URL di ricerca personalizzato"
   },
   "searchNewTab": {
     "label": "Apri i risultati della ricerca in una nuova scheda"
+  },
+  "searchEnabled": {
+    "label": "Ricerca abilitata"
   }
 }

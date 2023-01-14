@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "מודול להצגת הגרפים משירות Dash.",
+    "description": "",
     "settings": {
+      "title": "הגדרות עבור וידג׳ט Dash.",
       "cpuMultiView": {
         "label": "תצוגת מעבד מרובת ליבות"
       },

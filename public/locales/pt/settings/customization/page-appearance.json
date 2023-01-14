@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "",
-    "placeholder": ""
+    "label": ""
+  },
+  "metaTitle": {
+    "label": ""
   },
   "logo": {
     "label": "Logo"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "placeholder": "O CSS personalizado será executado por último"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Enviar"

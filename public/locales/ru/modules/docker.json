@@ -1,23 +1,23 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Позволяет легко управлять контейнерами docker"
+    "description": ""
   },
   "search": {
-    "placeholder": "Поиск по имени контейнера или изображения"
+    "placeholder": "Поиск по названию контейнера или образа"
   },
   "table": {
     "header": {
       "name": "Имя",
-      "image": "Изображение",
+      "image": "Образ",
       "ports": "Порты",
-      "state": "Государство"
+      "state": "Состояние"
     },
     "body": {
-      "portCollapse": "{{ports}} больше"
+      "portCollapse": "Ещё {{ports}}"
     },
     "states": {
-      "running": "Бег",
+      "running": "Запущено",
       "created": "Создано",
       "stopped": "Остановлено",
       "unknown": "Неизвестно"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Добавить сервис",
-      "message": "Добавить услугу в Homarr"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "Перезапустить"
@@ -35,7 +35,7 @@
       "title": "Остановить"
     },
     "start": {
-      "title": "Начало"
+      "title": "Запустить"
     },
     "refreshData": {
       "title": "Обновить данные"
@@ -49,11 +49,11 @@
   },
   "actions": {
     "start": {
-      "start": "Начало",
-      "end": "Начало"
+      "start": "Запуск",
+      "end": "Запущен"
     },
     "stop": {
-      "start": "Остановка",
+      "start": "Останавливается",
       "end": "Остановлено"
     },
     "restart": {
@@ -61,20 +61,20 @@
       "end": "Перезапущен"
     },
     "remove": {
-      "start": "Удаление",
+      "start": "Удаляется",
       "end": "Удалено"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Сбой интеграции Docker",
-      "message": "Вы забыли смонтировать сокет docker?"
+      "message": ""
     },
     "unknownError": {
       "title": "Произошла ошибка"
     },
     "oneServiceAtATime": {
-      "title": "Пожалуйста, добавляйте только одну услугу за один раз!"
+      "title": ""
     }
   },
   "actionIcon": {

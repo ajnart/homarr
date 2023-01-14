@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Entrer en mode édition",
+        "enabled": "Quitter et sauvegarder"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

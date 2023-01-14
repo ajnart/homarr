@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Låter dig se din usenet (Sabnzbd eller NZBGet) kö och historik, pausa och återuppta nedladdningar"
+    "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Inga nedladdningsklienter som stöds hittades!",
-        "text": "Lägg till en nedladdningstjänst för att visa dina aktuella nedladdningar"
+        "text": ""
       }
     }
   },

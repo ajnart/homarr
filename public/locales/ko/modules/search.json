@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "검색창",
-    "description": "웹, 유튜브. 토렌트, Overseerr를 검색할 수 있는 검색창"
+    "description": ""
   },
   "input": {
     "placeholder": "웹에서 검색..."

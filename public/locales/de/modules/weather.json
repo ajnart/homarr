@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Wetter",
-    "description": "Aktuelles Wetter an deinem Standort anzeigen",
+    "description": "",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "In Fahrenheit anzeigen"
       },

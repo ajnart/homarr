@@ -3,6 +3,7 @@
     "name": "Tempo",
     "description": "",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Mostrar em Fahrenheit"
       },

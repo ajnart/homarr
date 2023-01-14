@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Bearbeitungsmodus aktivieren",
+        "enabled": "Speichern und Beenden"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Aggiungi nuovo riquadro",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Torna indietro allo step precedente",
+    "actionIcon": {
+        "tooltip": "Aggiungi riquadro"
+    }
+}

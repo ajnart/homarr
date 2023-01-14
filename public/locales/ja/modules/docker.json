@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "サービス追加",
-      "message": "ホーマーにサービスを追加する"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "再スタート"
@@ -49,32 +49,32 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "スタート",
+      "end": "開始"
     },
     "stop": {
-      "start": "",
+      "start": "停止",
       "end": "停止中"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "再スタート",
+      "end": "再スタート"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "削除",
+      "end": "削除"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Dockerとの連携に失敗",
-      "message": "ドッカーソケットをマウントするのを忘れていませんか？"
+      "message": ""
     },
     "unknownError": {
       "title": "エラーが発生しました"
     },
     "oneServiceAtATime": {
-      "title": "一度に1つのサービスのみを追加してください"
+      "title": ""
     }
   },
   "actionIcon": {

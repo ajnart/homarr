@@ -2,14 +2,28 @@
   "title": "Paramètres",
   "tooltip": "Paramètres",
   "tabs": {
-    "common": "Common",
+    "common": "Général",
     "customizations": "Personnalisations"
   },
   "tips": {
-    "configTip": "Téléchargez votre fichier de configuration en le faisant glisser et en le déposant sur la page !"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "Fait avec ❤️ par @"
   },
-  "grow": ""
+  "grow": "Grille progressive (prend toute la largeur)",
+  "layout": {
+    "title": "Disposition du tableau de bord",
+    "main": "Principal",
+    "sidebar": "Barre latérale",
+    "cannotturnoff": "Ne peut être désactivé",
+    "dashboardlayout": "Disposition du tableau de bord",
+    "enablersidebar": "Activer la barre latérale droite",
+    "enablelsidebar": "Activer la barre latérale gauche",
+    "enablesearchbar": "Activer la barre de recherche",
+    "enabledocker": "Activer l'intégration Docker",
+    "enableping": "Activer les \"pings\"",
+    "enablelsidebardesc": "Optionnel. Ne peut être utilisé que pour les applications et les intégrations",
+    "enablersidebardesc": "Optionnel. Ne peut être utilisé que pour les applications et les intégrations"
+  }
 }

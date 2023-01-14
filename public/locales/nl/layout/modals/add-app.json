@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Algemeen",
+		"behaviour": "Gedrag",
+		"network": "Netwerk",
+		"appearance": "Opmaak",
+		"integration": "Integratie"
+	},
+	"general": {
+		"appname": {
+			"label": "App naam",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Intern adres",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Extern adres",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Open in nieuw tabblad",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Status checker",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "HTTP-statuscodes",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App icoon",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integratie configuratie",
+			"description": "",
+			"placeholder": "Selecteer een integratie",
+			"defined": "Gedefinieerd",
+			"undefined": "Ongedefinieerd",
+			"public": "Openbaar",
+			"private": "Privé",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "Om een geheim bij te werken, voert u een waarde in en klikt u op de knop Opslaan. Om een geheim te verwijderen, gebruikt u de knop wissen.",
+			"warning": "",
+			"clear": "Wis geheim",
+			"save": "Geheim opslaan",
+			"update": "Update geheim"
+		}
+	},
+	"validation": {
+		"popover": "Uw formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om uw wijzigingen op te slaan"
+	}
+}

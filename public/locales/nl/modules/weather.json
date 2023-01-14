@@ -1,10 +1,11 @@
 {
   "descriptor": {
     "name": "Weer",
-    "description": "Zoek het actuele weer op uw locatie",
+    "description": "",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
-        "label": "Toon in Fahrenheit"
+        "label": "Weergeven in Fahrenheit"
       },
       "location": {
         "label": "Weerslocatie"

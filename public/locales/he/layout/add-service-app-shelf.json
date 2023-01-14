@@ -36,7 +36,7 @@
                         "label": "קטגוריה",
                         "placeholder": "בחר קטגוריה קיימת או צור חדשה",
                         "nothingFound": "לא נמצא דבר",
-                        "createLabel": "יצירת שאילתה"
+                        "createLabel": "יצירת שאילתה {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "אפשרויות מתקדמות",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "סטטוס קוד HTTP",
-                        "placeholder": "בחר קודי מצב חוקיים",
-                        "clearButtonLabel": "נקה בחירה",
-                        "nothingFound": "לא נמצא דבר"
-                    },
                     "openServiceInNewTab": {
                         "label": "פתיחת שירות בכרטיסיה חדשה"
                     },

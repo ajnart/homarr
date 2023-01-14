@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Opciones avanzadas",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "Códigos de Estado HTTP",
-                        "placeholder": "Seleccionar códigos de estado válidos",
-                        "clearButtonLabel": "Borrar selección",
-                        "nothingFound": "No se ha encontrado ningún resultado"
-                    },
                     "openServiceInNewTab": {
                         "label": "Abrir el servicio en una nueva pestaña"
                     },

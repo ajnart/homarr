@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Permite que você pesquise e adicione conteúdo do Overseerr/Jellyseerr"
+    "description": ""
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "Marque as temporadas que você deseja que sejam baixadas",
+      "caption": "",
       "table": {
         "header": {
           "season": "Temporada",

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "Permet de vérifier si le service est en place ou renvoie un code d'état HTTP spécifique."
+    "description": ""
   },
   "states": {
     "online": "En ligne {{response}}",

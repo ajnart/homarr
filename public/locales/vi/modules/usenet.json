@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Cho phép bạn xem lịch sử và hàng chờ usenet (Sabnzbd hoặc NZBGet), cũng như tạm dừng và tiếp tục tải xuống"
+    "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Không tìm thấy ứng dụng tải xuống được hỗ trợ nào!",
-        "text": "Hãy thêm dịch vụ tải xuống để xem các bản tải xuống của bạn"
+        "text": ""
       }
     }
   },

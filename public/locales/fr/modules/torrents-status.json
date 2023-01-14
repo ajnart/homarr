@@ -1,10 +1,17 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Afficher la vitesse de téléchargement actuelle des services pris en charge",
+    "description": "",
     "settings": {
-      "hideComplete": {
+      "title": "",
+      "refreshInterval": {
+        "label": "Intervalle d'actualisation en secondes"
+      },
+      "displayCompletedTorrents": {
         "label": "Cacher les torrents terminés"
+      },
+      "displayStaleTorrents": {
+        "label": "Afficher les torrents périmés"
       }
     }
   },
@@ -13,8 +20,8 @@
       "header": {
         "name": "Nom",
         "size": "Taille",
-        "download": "Duvet",
-        "upload": "Up",
+        "download": "Descendant",
+        "upload": "Montant",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Progrès"
       },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Aucun client de téléchargement supporté n'a été trouvé !",
-        "text": "Ajouter un service de téléchargement pour afficher vos téléchargements en cours"
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "Une erreur inattendue s'est produite",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Chargement..."
     }
   }
 }

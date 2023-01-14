@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Abrir Modo Edición",
+        "enabled": "Salir y Guardar"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

@@ -1,6 +1,6 @@
 {
   "title": "Bienvenue !",
-  "text": "Veuillez entrer votre mot de passe",
+  "text": "",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Votre mot de passe est en cours de vérification..."
     },
     "correct": {
-      "title": "Mot de passe correct, redirection en cours..."
+      "title": ""
     },
     "wrong": {
-      "title": "Mot de passe erroné, veuillez réessayer."
+      "title": ""
     }
   }
 }

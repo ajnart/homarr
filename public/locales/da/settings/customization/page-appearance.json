@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "Sidetitel",
-    "placeholder": "Homarr 🦞"
+    "label": "Sidetitel"
+  },
+  "metaTitle": {
+    "label": "Metatitel"
   },
   "logo": {
     "label": "Logo"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "Tilpasset CSS",
-    "placeholder": "Brugerdefineret CSS vil blive eksekveret som det sidste"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Indsend"

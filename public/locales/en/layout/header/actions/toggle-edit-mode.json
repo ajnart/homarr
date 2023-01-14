@@ -1,5 +1,5 @@
 {
-    "description": "In edit mode, you can adjust the size and position of your tiles.",
+    "description": "In Edit Mode, you can adjust tiles and configure apps. Changes are not saved until you exit Edit Mode.",
     "button": {
         "disabled": "Enter Edit Mode",
         "enabled": "Exit and Save"

@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Neue Kachel hinzufügen",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Zurück auf die vorherige Seite",
+    "actionIcon": {
+        "tooltip": "Kachel hinzufügen"
+    }
+}

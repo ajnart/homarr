@@ -211,11 +211,12 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
             shape: {},
           } as IWeatherWidget;
         case 'dashdot':
-        case 'Dash.':
+        case 'Dash.': {
+          const oldDashDotService = config.services.find((service) => service.type === 'Dash.');
           return {
             id: 'dashdot',
             properties: {
-              url: oldModule.options?.url?.value ?? '',
+              url: oldModule.options?.url?.value ?? oldDashDotService?.url ?? '',
               cpuMultiView: oldModule.options?.cpuMultiView?.value ?? false,
               storageMultiView: oldModule.options?.storageMultiView?.value ?? false,
               useCompactView: oldModule.options?.useCompactView?.value ?? false,
@@ -229,6 +230,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
             },
             shape: {},
           } as IDashDotTile;
+        }
         case 'date':
           return {
             id: 'date',

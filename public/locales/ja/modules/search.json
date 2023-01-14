@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "検索バー",
-    "description": "ウェブ、Youtube、Torrent、Overseerrを検索するための検索バー"
+    "description": ""
   },
   "input": {
     "placeholder": "ウェブで検索..."
   },
-  "switched-to": "",
+  "switched-to": "に切り替わりました。",
   "searchEngines": {
     "search": {
-      "name": "",
+      "name": "ウェブ",
       "description": ""
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "Youtube",
+      "description": "Youtubeで検索"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "トレント",
+      "description": "トレントを検索する"
     },
     "overseerr": {
       "name": "オーバーホール",
       "description": ""
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "ショートカットで検索バーを選択することができます ",
+  "switchedSearchEngine": "{{searchEngine}}で検索するように変更しました。"
 }

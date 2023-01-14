@@ -1,6 +1,23 @@
 {
-  "actions": {
-    "save": "Lưu"
+  "save": "",
+  "about": "",
+  "cancel": "Hủy",
+  "close": "",
+  "delete": "Xóa",
+  "ok": "",
+  "edit": "Sửa",
+  "version": "",
+  "changePosition": "",
+  "remove": "Xóa",
+  "removeConfirm": "",
+  "sections": {
+    "settings": "Cài đặt",
+    "dangerZone": "Khu vực nguy hiểm"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "Tên người dùng",
+    "password": "Mật khẩu"
   },
   "tip": "Mẹo: ",
   "time": {

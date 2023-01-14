@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "Kalendarz",
-    "description": "Moduł kalendarza do wyświetlania nadchodzących wydań. Współpracuje z API Sonarra i Radarra.",
+    "description": "",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Rozpoczynaj tydzień od niedzieli"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }

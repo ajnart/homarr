@@ -7,7 +7,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "Nie znaleziono obsługiwanych klientów pobierania!",
-        "text": "Dodaj usługę pobierania, aby wyświetlić aktualnie pobierane pliki"
+        "text": ""
       }
     }
   },

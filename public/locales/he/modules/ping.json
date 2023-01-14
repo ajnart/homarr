@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "פינג",
-    "description": "מאפשר בדיקה אם השירות פעיל או מחזיר קוד ספציפי של HTTP"
+    "description": ""
   },
   "states": {
-    "online": "מקוון",
-    "offline": "לא מקוון",
+    "online": "מקוון {{response}}",
+    "offline": "לא מקוון {{response}}",
     "loading": "טוען..."
   }
 }

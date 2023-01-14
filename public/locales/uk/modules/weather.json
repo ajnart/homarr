@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Погода",
-    "description": "Шукати поточну погоду у вашому місцеперебуванні",
+    "description": "",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Використовувати Фаренгейт"
       },

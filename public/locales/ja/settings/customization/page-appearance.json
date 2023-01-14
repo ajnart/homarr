@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "ページタイトル",
-    "placeholder": "ホーマー"
+    "label": "ページタイトル"
+  },
+  "metaTitle": {
+    "label": "メタ・タイトル"
   },
   "logo": {
     "label": "ロゴマーク"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "カスタムCSS",
-    "placeholder": "カスタムCSSは最後に実行されます"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "提出"

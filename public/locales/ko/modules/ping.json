@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "핑",
-    "description": "서비스가 작동 중인지 또는 특정 HTTP 상태 코드를 반환하는지 확인할 수 있습니다"
+    "description": ""
   },
   "states": {
     "online": "온라인 {{response}}",

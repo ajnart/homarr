@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Général",
+		"behaviour": "Comportement",
+		"network": "Réseau",
+		"appearance": "Apparence",
+		"integration": "Intégration"
+	},
+	"general": {
+		"appname": {
+			"label": "Nom de l'application",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Adresse interne",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Adresse externe",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Ouvrir dans un nouvel onglet",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Vérificateur de statut",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "Codes d'état HTTP",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Icône de l’app",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Configuration d’intégrations",
+			"description": "",
+			"placeholder": "Sélectionner une itégration",
+			"defined": "Défini",
+			"undefined": "Indéfini",
+			"public": "Public",
+			"private": "Privé",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "Pour mettre à jour un secret, entrez une valeur et cliquez sur le bouton Enregistrer. Pour supprimer un secret, utilisez le bouton Effacer.",
+			"warning": "",
+			"clear": "Effacer le secret",
+			"save": "Sauvegarder le secret",
+			"update": "Mettre à jour le secret"
+		}
+	},
+	"validation": {
+		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications"
+	}
+}

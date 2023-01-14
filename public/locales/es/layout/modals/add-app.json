@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "General",
+		"behaviour": "Comportamiento",
+		"network": "Red",
+		"appearance": "Apariencia",
+		"integration": "Integración"
+	},
+	"general": {
+		"appname": {
+			"label": "Nombre de la app",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Dirección interna",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Dirección externa",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Abrir en nueva pestaña",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Verificador de estado",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "Códigos HTTP de estado",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Icono App",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Configuración de integración",
+			"description": "",
+			"placeholder": "Seleccionar una integración",
+			"defined": "Definido",
+			"undefined": "Sin definir",
+			"public": "Público",
+			"private": "Privado",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "Para actualizar una clave, introducir un valor y pulsar el botón guardar. Para eliminar una clave, usa el botón limpiar.",
+			"warning": "",
+			"clear": "Limpiar clave",
+			"save": "Guardar clave",
+			"update": "Actualizar clave"
+		}
+	},
+	"validation": {
+		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no pude ser guardado. Por favor, resuelve los problemas, y presiona este botón, otra vez, para guardar cambios"
+	}
+}

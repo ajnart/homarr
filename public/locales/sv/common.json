@@ -1,6 +1,23 @@
 {
-  "actions": {
-    "save": "Spara"
+  "save": "Spara",
+  "about": "Om",
+  "cancel": "Avbryt",
+  "close": "Stäng",
+  "delete": "Radera",
+  "ok": "OK",
+  "edit": "Redigera",
+  "version": "Version",
+  "changePosition": "Ändra position",
+  "remove": "Ta bort",
+  "removeConfirm": "Är du säker på att du vill ta bort {{item}} ?",
+  "sections": {
+    "settings": "Inställningar",
+    "dangerZone": "Farozon"
+  },
+  "secrets": {
+    "apiKey": "API-nyckel",
+    "username": "Användarnamn",
+    "password": "Lösenord"
   },
   "tip": "Tips: ",
   "time": {

@@ -6,10 +6,24 @@
     "customizations": "カスタマイズ"
   },
   "tips": {
-    "configTip": "設定ファイルをドラッグ＆ドロップでアップロードしよう"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "で作った❤️ by @さん"
   },
-  "grow": ""
+  "grow": "グロースグリッド（全領域を占有）",
+  "layout": {
+    "title": "ダッシュボードのレイアウト",
+    "main": "メイン",
+    "sidebar": "サイドバー",
+    "cannotturnoff": "OFFにできない",
+    "dashboardlayout": "ダッシュボードのレイアウト",
+    "enablersidebar": "右サイドバーを有効にする",
+    "enablelsidebar": "左サイドバーを有効にする",
+    "enablesearchbar": "検索バーを有効にする",
+    "enabledocker": "dockerとの統合を有効にする",
+    "enableping": "Pingを有効にする",
+    "enablelsidebardesc": "オプションです。アプリと統合にのみ使用可能",
+    "enablersidebardesc": "オプションです。アプリと統合にのみ使用可能"
+  }
 }

@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Allgemein",
+		"behaviour": "Verhalten",
+		"network": "Netzwerk",
+		"appearance": "Aussehen",
+		"integration": "Integration"
+	},
+	"general": {
+		"appname": {
+			"label": "Anwendungsname",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Interne Adresse",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Externe Adresse",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "In neuem Tab öffnen",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Statusprüfer",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "HTTP Statuscodes",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App Symbol",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integrations-Konfiguration",
+			"description": "",
+			"placeholder": "Integration auswählen",
+			"defined": "Definiert",
+			"undefined": "Nicht definiert",
+			"public": "Öffentlich sichtbar",
+			"private": "Privat",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "Um eine Phrase zu aktualisieren, geben Sie einen Wert ein und klicken Sie auf Speichern. Um eine Phrase zu entfernen, klicken Sie auf die Schaltfläche Löschen.",
+			"warning": "",
+			"clear": "Phrase löschen",
+			"save": "Phrase speichern",
+			"update": "Phrase ändern"
+		}
+	},
+	"validation": {
+		"popover": "Ihr Formular enthält ungültige Angaben, daher konnte es nicht gespeichert werden. Bitte beseitigen Sie diese ungültigen Angaben und klicken Sie erneut auf diesen Button, um Ihre Änderungen zu speichern"
+	}
+}

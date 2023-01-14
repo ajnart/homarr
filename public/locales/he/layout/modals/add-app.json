@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "כללי",
+		"behaviour": "התנהגות",
+		"network": "רשת",
+		"appearance": "מראה",
+		"integration": "אינטגרציה"
+	},
+	"general": {
+		"appname": {
+			"label": "שם אפליקציה",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "כתובת פנימית",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "כתובת חיצונית",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "פתיחה בכרטיסיה חדשה",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "בודק מצב",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "קוד מצב HTTP ",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "סמל אפליקציה",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "תצורת אינטגרציה",
+			"description": "",
+			"placeholder": "בחר אינטגרציה",
+			"defined": "מוגדר",
+			"undefined": "לא מוגדר",
+			"public": "ציבורי",
+			"private": "פרטי",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "כדי לעדכן את הקוד, הזן ערך ולחץ על הלחצן שמור. כדי להסיר סוד השתמש בלחצן נקה.",
+			"warning": "",
+			"clear": "נקה אישורים",
+			"save": "שמור אישורים",
+			"update": "עדכן אישורים"
+		}
+	},
+	"validation": {
+		"popover": "הטופס שלך מכיל מידע שגוי ולכן לא ניתן לשמירה. תקן את השגיאות ותשמור בשנית."
+	}
+}

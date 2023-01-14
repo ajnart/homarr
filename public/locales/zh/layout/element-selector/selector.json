@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "添加一个新的瓦片",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "回到上一个步骤",
+    "actionIcon": {
+        "tooltip": "增加一块瓦片"
+    }
+}

@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Tùy chọn nâng cao",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "Mã trạng thái HTTP",
-                        "placeholder": "Chọn một mã trạng thái hợp lệ",
-                        "clearButtonLabel": "Xóa lựa chọn",
-                        "nothingFound": "Không tìm thấy"
-                    },
                     "openServiceInNewTab": {
                         "label": "Mở trong tab mới"
                     },

@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "서비스 추가",
-      "message": "Homarr에 서비스 추가"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "재시작"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker 통합 실패",
-      "message": "도커 소켓 마운트를 잊지 않으셨나요?"
+      "message": ""
     },
     "unknownError": {
       "title": "오류가 발생했습니다"
     },
     "oneServiceAtATime": {
-      "title": "한 번에 하나의 서비스만 추가해 주세요!"
+      "title": ""
     }
   },
   "actionIcon": {

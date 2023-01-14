@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Konfigurations indlæser"
+    "label": "",
+    "loadingNew": "Indlæser din konfiguration...",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Vælg navnet på din nye konfiguration",
     "form": {
       "configName": {
         "label": "Konfigurationens navn",
+        "validation": {
+          "required": "Konfigurationsnavn er påkrævet"
+        },
         "placeholder": "Dit nye konfigurationsnavn"
       },
       "submitButton": "Bekræft"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Konfigurationen gemt",
         "message": "Konfigurationen gemt som {{configName}}"
+      },
+      "configCopied": {
+        "title": "Konfigurationen kopieret",
+        "message": "Konfigurationen gemt som {{configName}}"
+      },
+      "configNotCopied": {
+        "title": "Kan ikke kopiere konfigurationen",
+        "message": "Din konfiguration blev ikke kopieret som {{configName}}"
       }
     }
   },
@@ -46,10 +59,12 @@
       }
     },
     "accept": {
-      "text": "Træk filer hertil for at uploade en konfiguration. Kun understøttelse af JSON."
+      "title": "Upload af konfiguration",
+      "text": ""
     },
     "reject": {
-      "text": "Dette filformat understøttes ikke. Upload venligst kun JSON."
+      "title": "Træk og slip Upload afvist",
+      "text": ""
     }
   }
 }

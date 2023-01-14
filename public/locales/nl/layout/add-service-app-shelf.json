@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Geavanceerde opties",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTP-statuscodes",
-                        "placeholder": "Selecteer geldige statuscodes",
-                        "clearButtonLabel": "Selectie wissen",
-                        "nothingFound": "Geen resultaten"
-                    },
                     "openServiceInNewTab": {
                         "label": "Service in nieuw tabblad openen"
                     },

@@ -1,14 +1,19 @@
 {
   "title": "Поисковая система",
+  "configurationName": "",
   "tips": {
-    "generalTip": "Используйте префиксы !yt и !t перед вашим запросом для поиска на YouTube или для поиска торрента соответственно.",
+    "generalTip": "",
     "placeholderTip": "%s можно использовать в качестве заполнителя для запроса."
   },
   "customEngine": {
+    "title": "",
     "label": "URL запроса",
     "placeholder": "URL пользовательского запроса"
   },
   "searchNewTab": {
     "label": "Открыть результаты поиска в новой вкладке"
+  },
+  "searchEnabled": {
+    "label": ""
   }
 }

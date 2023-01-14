@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "允许你检查服务是否启动或返回一个特定的HTTP状态代码。"
+    "description": ""
   },
   "states": {
     "online": "在线 {{response}}",

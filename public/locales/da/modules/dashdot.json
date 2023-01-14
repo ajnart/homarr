@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Et modul til visning af graferne for din kørende Dash. instans.",
+    "description": "",
     "settings": {
+      "title": "Indstillinger for Dash. widget",
       "cpuMultiView": {
         "label": "CPU Multikerne Visning"
       },

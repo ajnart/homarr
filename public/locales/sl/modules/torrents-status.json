@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Prikaži trenutno hitrost prenosa podprtih storitev",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Skrijte dokončane torrente"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Ni bilo najdenih podprtih odjemalcev za prenos!",
-        "text": "Dodajte storitev prenosa za ogled trenutnih prenosov"
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Nalaganje..."
     }
   }
 }
