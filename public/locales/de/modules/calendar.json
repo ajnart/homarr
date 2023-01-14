@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Kalender",
-    "description": "",
+    "description": "Zeigt einen Kalender mit anstehenden Veröffentlichungen von unterstützten Widgets an.",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für das Kalender Widget",
       "sundayStart": {
         "label": "Wochenbeginn am Sonntag"
       },
