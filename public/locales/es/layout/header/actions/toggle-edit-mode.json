@@ -1,5 +1,5 @@
 {
-    "description": "",
+    "description": "En Modo Edición, puedes ajustar tarjetas y configurar apps. Los cambios no se guardan hasta que salgas del Modo Edición.",
     "button": {
         "disabled": "Abrir Modo Edición",
         "enabled": "Salir y Guardar"
@@ -7,5 +7,10 @@
     "popover": {
         "title": "",
         "text": ""
+    },
+    "screenSizes": {
+        "small": "pequeño",
+        "medium": "medio",
+        "large": "grande"
     }
 }
