@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "",
-    "description": "現在ダウンロード中のトレントを一覧で表示します。",
+    "description": "",
     "settings": {
       "title": "",
       "refreshInterval": {
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "対応するダウンロードクライアントが見つかりません",
-        "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "予期せぬエラーが発生しました",
-        "text": "ホーマーは、あなたのダウンロードクライアントと通信することができませんでした。設定を確認してください。"
+        "text": ""
       }
     },
     "loading": {
