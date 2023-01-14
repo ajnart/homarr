@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Calendario",
-    "description": "Un módulo de calendario para mostrar próximos lanzamientos. Interactúa con las API de Sonarr y Radarr.",
+    "description": "",
     "settings": {
-      "title": "Ajustes para integración calendario",
+      "title": "",
       "sundayStart": {
         "label": "Marcar Domingo como primer día de la semana"
       },
