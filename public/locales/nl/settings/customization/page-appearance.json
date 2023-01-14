@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Aangepaste CSS",
-    "placeholder": "Aangepaste CSS wordt als laatste toegevoegd"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Indienen"
