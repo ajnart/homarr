@@ -2,7 +2,7 @@
   "title": "Suchmaschine",
   "configurationName": "Suchmaschinen Einstellungen",
   "tips": {
-    "generalTip": "Verwenden die Präfixe !yt und !t vor deiner Suchanfrage, um auf YouTube bzw. nach einem Torrent zu suchen.",
+    "generalTip": "",
     "placeholderTip": "%s kann als Platzhalter für deine Suchanfrage verwendet werden."
   },
   "customEngine": {
