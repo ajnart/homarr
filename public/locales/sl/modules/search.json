@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Iskalna vrstica",
-    "description": "Iskalna vrstica za iskanje po spletu, YouTubu, torrentih ali Overseerru"
+    "description": ""
   },
   "input": {
     "placeholder": "Preišči splet..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Splet",
-      "description": "Iskanje z iskalnikom (določen v nastavitvah)"
+      "description": ""
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Iskanje filmov in televizijskih oddaj z uporabo storitve Overseerr (modul mora biti omogočen)"
+      "description": ""
     }
   },
   "tip": "Iskalno vrstico lahko izberete z bližnjico ",
