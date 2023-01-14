@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Панель поиска",
-    "description": "Панель для поиска в интернете, по Youtube, торрентам или Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Искать в интернете..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Поиск с помощью вашей поисковой системы (задается в настройках)"
+      "description": ""
     },
     "youtube": {
       "name": "Youtube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Поиск фильмов и сериалов с помощью Overseerr (модуль должен быть включен)"
+      "description": ""
     }
   },
   "tip": "Вы можете выбрать строку поиска с помощью сочетания клавиш ",
