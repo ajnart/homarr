@@ -18,10 +18,10 @@
       "message": "Votre mot de passe est en cours de vérification..."
     },
     "correct": {
-      "title": ""
+      "title": "Inscription réussie, redirection..."
     },
     "wrong": {
-      "title": ""
+      "title": "Le mot de passe saisi est incorrect, veuillez réessayer."
     }
   }
 }
