@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ドッカー",
-    "description": "dockerコンテナを簡単に管理できるようになります。"
+    "description": ""
   },
   "search": {
     "placeholder": "コンテナ名、画像名で検索"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "サービス追加",
-      "message": "ホーマーにサービスを追加する"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "再スタート"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Dockerとの連携に失敗",
-      "message": "ドッカーソケットをマウントするのを忘れていませんか？"
+      "message": ""
     },
     "unknownError": {
       "title": "エラーが発生しました"
     },
     "oneServiceAtATime": {
-      "title": "一度に1つのサービスのみを追加してください"
+      "title": ""
     }
   },
   "actionIcon": {
