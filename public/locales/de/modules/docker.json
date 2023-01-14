@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Ermöglicht dir die einfache Verwaltung deiner Docker-Container"
+    "description": ""
   },
   "search": {
     "placeholder": "Suche nach Container- oder Image namen"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Service hinzufügen",
-      "message": "Service zu Homarr hinzufügen"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "Neustarten"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker-Integration fehlgeschlagen",
-      "message": "Hast du vergessen, den Docker Socket zu verbinden?"
+      "message": ""
     },
     "unknownError": {
       "title": "Es ist ein Fehler aufgetreten"
     },
     "oneServiceAtATime": {
-      "title": "Bitte nur einen Service gleichzeitig hinzufügen!"
+      "title": ""
     }
   },
   "actionIcon": {
