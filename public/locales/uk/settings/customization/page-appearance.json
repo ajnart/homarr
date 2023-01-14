@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Власний CSS",
-    "placeholder": "Власний CSS буде оброблятися в останню чергу"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Надіслати"
