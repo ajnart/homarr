@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Nalagalnik konfiguracije",
+    "label": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "",
-      "text": "Če želite naložiti konfiguracijo, povlecite datoteke sem. Podpora samo za JSON."
+      "text": ""
     },
     "reject": {
       "title": "",
-      "text": "Ta oblika datoteke ni podprta. Prenesite samo JSON."
+      "text": ""
     }
   }
 }
