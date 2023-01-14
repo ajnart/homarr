@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Add survis",
-      "message": "Add survis 2 Homarr"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "Restart"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Dockah integrashn faild",
-      "message": "Did u forget 2 mount teh dockah socket ?"
+      "message": ""
     },
     "unknownError": {
       "title": "Thar wuz an error"
     },
     "oneServiceAtATime": {
-      "title": "Plz only add wan survis at tiem!"
+      "title": ""
     }
   },
   "actionIcon": {
