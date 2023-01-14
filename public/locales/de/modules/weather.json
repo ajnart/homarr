@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Wetter",
-    "description": "",
+    "description": "Zeigt die aktuellen Wetterinformationen für einen bestimmten Ort an.",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für das Wetter Widget",
       "displayInFahrenheit": {
         "label": "In Fahrenheit anzeigen"
       },
