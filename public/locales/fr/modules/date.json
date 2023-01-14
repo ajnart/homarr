@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Date",
-    "description": "Affiche l'heure et la date actuelle dans un module",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "Paramètres pour le widget de date",
+      "title": "",
       "display24HourFormat": {
         "label": "Affichage 24 h"
       }
