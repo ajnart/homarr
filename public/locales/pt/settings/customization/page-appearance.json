@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "placeholder": "O CSS personalizado será executado por último"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Enviar"
