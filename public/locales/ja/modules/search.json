@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "検索バー",
-    "description": "ウェブ、Youtube、Torrent、Overseerrを検索するための検索バー"
+    "description": ""
   },
   "input": {
     "placeholder": "ウェブで検索..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "ウェブ",
-      "description": "検索エンジンで検索する（設定で設定可能）"
+      "description": ""
     },
     "youtube": {
       "name": "Youtube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "オーバーホール",
-      "description": "Overseerrを使った映画・テレビ番組検索（モジュールの有効化が必要です）"
+      "description": ""
     }
   },
   "tip": "ショートカットで検索バーを選択することができます ",
