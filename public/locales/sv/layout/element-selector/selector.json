@@ -1,9 +1,9 @@
 {
     "modal": {
         "title": "Lägg till en ny ruta",
-        "text": "Rutor är det viktigaste elementet i homarr. De låter dig konfigurera instrumentpanelen och visa den information du vill ha."
+        "text": ""
     },
-    "widgetDescription": "Widgetar interagerar med dina appar, för att ge dig mer kontroll över dina applikationer. De kräver oftast några konfigurationer innan användning.",
+    "widgetDescription": "",
     "goBack": "Gå tillbaka till föregående steg",
     "actionIcon": {
         "tooltip": "Lägg till en ruta"
