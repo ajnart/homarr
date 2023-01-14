@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Wybór konfiguracji",
+    "label": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "",
-      "text": "Przeciągnij pliki tutaj, aby przesłać konfigurację. Wsparcie tylko dla plików JSON."
+      "text": ""
     },
     "reject": {
       "title": "",
-      "text": "Ten format pliku nie jest obsługiwany. Przesyłaj tylko pliki JSON."
+      "text": ""
     }
   }
 }
