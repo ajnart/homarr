@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Clima",
-    "description": "Consulta el clima actual en tu ubicación",
+    "description": "",
     "settings": {
-      "title": "Ajustes para la integración del tiempo",
+      "title": "",
       "displayInFahrenheit": {
         "label": "Mostrar en Fahrenheit"
       },
