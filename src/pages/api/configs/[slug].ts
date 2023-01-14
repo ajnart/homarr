@@ -71,7 +71,7 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
   const targetPath = path.join('data/configs', `${slug}.json`);
   fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
 
-  Consola.info(`Config '${slug}' has been updated and flushed to '${targetPath}'.`);
+  Consola.debug(`Config '${slug}' has been updated and flushed to '${targetPath}'.`);
 
   return res.status(200).json({
     message: 'Configuration saved with success',

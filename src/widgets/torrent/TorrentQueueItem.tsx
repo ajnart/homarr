@@ -4,11 +4,11 @@ import { useElementSize } from '@mantine/hooks';
 import { calculateETA } from '../../tools/calculateEta';
 import { humanFileSize } from '../../tools/humanFileSize';
 
-interface BitTorrentQueueItemProps {
+interface TorrentQueueItemProps {
   torrent: NormalizedTorrent;
 }
 
-export const BitTorrrentQueueItem = ({ torrent }: BitTorrentQueueItemProps) => {
+export const BitTorrrentQueueItem = ({ torrent }: TorrentQueueItemProps) => {
   const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const { width } = useElementSize();
 

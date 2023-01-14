@@ -1,3 +1,4 @@
+import { setCookie } from 'cookies-next';
 import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
 import path from 'path';
@@ -38,6 +39,12 @@ export async function getServerSideProps({
   }
 
   const config = getFrontendConfig(configName as string);
+  setCookie('config-name', configName, {
+    req,
+    res,
+    maxAge: 60 * 60 * 24 * 30,
+    sameSite: 'strict',
+  });
 
   return {
     props: {

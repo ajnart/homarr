@@ -36,7 +36,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const handleDeleteClick = () => {
     openContextModalGeneric<WidgetsRemoveModalInnerProps>({
       modal: 'integrationRemove',
-      title: <Title order={4}>{t('descriptor.remove.title')}</Title>,
+      title: <Title order={4}>{t('common:remove')}</Title>,
       innerProps: {
         widgetId: integration,
       },

@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "BitTorrent",
+    "name": "Torrent",
     "description": "Displays a list of the torrent which are currently downloading",
     "settings": {
-      "title": "Settings for BitTorrent integration",
+      "title": "Settings for Torrent integration",
       "refreshInterval": {
         "label": "Refresh interval (in seconds)"
       },

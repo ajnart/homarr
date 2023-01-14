@@ -23,7 +23,7 @@ import { useGetTorrentData } from '../../hooks/widgets/torrents/useGetTorrentDat
 import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { BitTorrrentQueueItem } from './BitTorrentQueueItem';
+import { BitTorrrentQueueItem } from './TorrentQueueItem';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -56,16 +56,16 @@ const definition = defineWidget({
     maxWidth: 12,
     maxHeight: 14,
   },
-  component: BitTorrentTile,
+  component: TorrentTile,
 });
 
-export type IBitTorrent = IWidget<typeof definition['id'], typeof definition>;
+export type ITorrent = IWidget<typeof definition['id'], typeof definition>;
 
-interface BitTorrentTileProps {
-  widget: IBitTorrent;
+interface TorrentTileProps {
+  widget: ITorrent;
 }
 
-function BitTorrentTile({ widget }: BitTorrentTileProps) {
+function TorrentTile({ widget }: TorrentTileProps) {
   const { t } = useTranslation('modules/torrents-status');
   const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const { width } = useElementSize();

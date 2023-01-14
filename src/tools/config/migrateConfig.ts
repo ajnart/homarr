@@ -5,7 +5,7 @@ import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
 import { ConfigType } from '../../types/config';
 import { SearchEngineCommonSettingsType } from '../../types/settings';
-import { IBitTorrent } from '../../widgets/bitTorrent/BitTorrentTile';
+import { ITorrent } from '../../widgets/torrent/TorrentTile';
 import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
 import { IDateWidget } from '../../widgets/date/DateTile';
@@ -194,7 +194,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
               },
             },
             shape: {},
-          } as IBitTorrent;
+          } as ITorrent;
         case 'weather':
           return {
             id: 'weather',

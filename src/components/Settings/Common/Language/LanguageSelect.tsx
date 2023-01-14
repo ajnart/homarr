@@ -77,8 +77,14 @@ export default function LanguageSelect() {
         filter={(value, item) => {
           const selectItems = item as unknown as { value: string; language: Language };
           return (
-            selectItems.language.originalName.trim().includes(value.trim()) ||
-            selectItems.language.translatedName.trim().includes(value.trim())
+            selectItems.language.originalName
+              .toLowerCase()
+              .trim()
+              .includes(value.toLowerCase().trim()) ||
+            selectItems.language.translatedName
+              .toLowerCase()
+              .trim()
+              .includes(value.toLowerCase().trim())
           );
         }}
         styles={{

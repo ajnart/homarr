@@ -39,8 +39,8 @@ export type IWidgetOptionValue =
 
 // Interface for data type
 interface DataType {
-  label: string
-  value: string
+  label: string;
+  value: string;
 }
 
 // will show a multi-select with specified data

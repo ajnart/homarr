@@ -3,7 +3,7 @@ import calendar from './calendar/CalendarTile';
 import dashdot from './dashDot/DashDotTile';
 import usenet from './useNet/UseNetTile';
 import weather from './weather/WeatherTile';
-import bitTorrent from './bitTorrent/BitTorrentTile';
+import torrent from './torrent/TorrentTile';
 import torrentNetworkTraffic from './torrentNetworkTraffic/TorrentNetworkTrafficTile';
 
 export default {
@@ -11,7 +11,7 @@ export default {
   dashdot,
   usenet,
   weather,
-  'torrents-status': bitTorrent,
+  'torrents-status': torrent,
   dlspeed: torrentNetworkTraffic,
   date,
 };

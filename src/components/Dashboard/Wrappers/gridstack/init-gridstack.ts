@@ -13,7 +13,7 @@ export const initializeGridstack = (
   items: AppType[],
   widgets: IWidget<string, any>[],
   isEditMode: boolean,
-  wrapperColumnCount: 3 | 6 | 12,
+  wrapperColumnCount: number,
   shapeSize: 'sm' | 'md' | 'lg',
   tilesWithUnknownLocation: TileWithUnknownLocation[],
   events: {
