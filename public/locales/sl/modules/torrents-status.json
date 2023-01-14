@@ -39,8 +39,8 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Ni bilo najdenih podprtih odjemalcev za prenos!",
-        "text": "Dodajte storitev prenosa za ogled trenutnih prenosov"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "",
