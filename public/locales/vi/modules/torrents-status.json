@@ -39,8 +39,8 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Không tìm thấy ứng dụng tải xuống được hỗ trợ nào!",
-        "text": "Hãy thêm dịch vụ tải xuống để xem các bản tải xuống của bạn"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "",
