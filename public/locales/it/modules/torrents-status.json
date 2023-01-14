@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "",
-    "description": "Visualizza l'elenco dei torrent in download",
+    "description": "",
     "settings": {
       "title": "",
       "refreshInterval": {
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Nessun client di download supportato trovato!",
-        "text": "Aggiungi un servizio di download per visualizzare i tuoi download attuali"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "Si è verificato un errore inaspettato",
-        "text": "Homarr non è riuscito a comunicare con i client di download. Controlla la tua configurazione"
+        "text": ""
       }
     },
     "loading": {
