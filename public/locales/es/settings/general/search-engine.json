@@ -2,7 +2,7 @@
   "title": "Motor de búsqueda",
   "configurationName": "Configuración del motor de búsqueda",
   "tips": {
-    "generalTip": "Usa los prefijos !yt y !t delante de tu consulta para buscar en YouTube o un torrent respectivamente.",
+    "generalTip": "",
     "placeholderTip": "%s puede utilizarse como modelo para la petición."
   },
   "customEngine": {
