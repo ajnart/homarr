@@ -1,7 +1,7 @@
 {
   "popover": {
-    "title": "Configuración para tamaño de pantalla \"{{size}}\"",
-    "description": "Estás editando el tamaño de tu actual pantalla"
+    "title": "",
+    "description": ""
   },
   "sizes": {
     "small": "pequeño",
