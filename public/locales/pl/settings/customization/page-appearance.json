@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Niestandardowy CSS",
-    "placeholder": "Niestandardowy CSS zostanie wykonany jako ostatni"
+    "placeholder": ""
   },
   "buttons": {
     "submit": ""
