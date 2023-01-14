@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "天気",
-    "description": "現在地の天気を調べる",
+    "description": "",
     "settings": {
-      "title": "天気予報との連動設定",
+      "title": "",
       "displayInFahrenheit": {
         "label": "表示単位：華氏"
       },
