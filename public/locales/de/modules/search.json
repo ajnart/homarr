@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Suchleiste",
-    "description": "Suchleiste zum Durchsuchen des Internets, von Youtube, Torrents oder Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Das Internet durchsuchen..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Suche mit deiner Suchmaschine (in den Einstellungen definiert)"
+      "description": ""
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Suche nach Filmen und Fernsehserien mit Overseerr (Modul muss aktiviert sein)"
+      "description": ""
     }
   },
   "tip": "Sie können die Suchleiste mit dem Tastenkürzel auswählen ",
