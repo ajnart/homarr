@@ -9,54 +9,54 @@
 	"general": {
 		"appname": {
 			"label": "Nome app",
-			"description": "Utilizzato per visualizzare l'app sulla dashboard"
+			"description": ""
 		},
 		"internalAddress": {
 			"label": "Indirizzo interno",
-			"description": "IP interno dell'app"
+			"description": ""
 		},
 		"externalAddress": {
 			"label": "Indirizzo esterno",
-			"description": "URL che verrà aperto nel browser al clic dell'app"
+			"description": ""
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Apri in una nuova scheda",
-			"description": "Apri il link in una nuova scheda"
+			"description": ""
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Status checker",
-			"description": "Invia una semplice richiesta HTTP / HTTPS per verificare se la tua app è online"
+			"description": ""
 		},
 		"statusCodes": {
 			"label": "Codici di stato HTTP",
-			"description": "Determina quali response codes sono consentiti per questa app per essere 'Online'"
+			"description": ""
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "Icona App",
-			"description": "Logo dell'app visualizzato nella dashboard. (Deve restituire un contenuto del body contenente un'immagine)"
+			"description": ""
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "Configurazione integrazioni",
-			"description": "Considera questa app come l'integrazione selezionata e ti fornisce la configurazione per app",
+			"description": "",
 			"placeholder": "Seleziona un'integrazione",
 			"defined": "Definito",
 			"undefined": "Indefinito",
 			"public": "Pubblico",
 			"private": "Privato",
-			"explanationPublic": "Un segreto privato verrà inviato al server. Una volta che il browser avrà aggiornato la pagina, non verrà mai inviato al client.",
-			"explanationPrivate": "Un secret pubblico sarà sempre inviato al client ed è accessibile tramite API. Non dovrebbe contenere dati sensibili come nomi utente, password, token, certificati e simili"
+			"explanationPrivate": "",
+			"explanationPublic": ""
 		},
 		"secrets": {
 			"description": "Per aggiornare un secret, inserisci un valore e fai clic sul pulsante Salva. Per rimuoverlo, usa il pulsante rimuovi.",
-			"warning": "Le tue credenziali fungono da accesso per le tue integrazioni e non devi <strong>mai</strong> condividerle con nessuno. Il team ufficiale di Homarr non chiederà mai le credenziali. Assicurati di <strong>memorizzare e gestire i tuoi dati privati in modo sicuro</strong>.",
+			"warning": "",
 			"clear": "Rimuovi secret",
 			"save": "Salva secret",
 			"update": "Aggiorna secret"
