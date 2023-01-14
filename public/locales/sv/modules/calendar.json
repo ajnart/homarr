@@ -3,7 +3,7 @@
     "name": "Kalender",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Inställningar för kalenderwidget",
       "sundayStart": {
         "label": "Börja veckan på söndag"
       },
