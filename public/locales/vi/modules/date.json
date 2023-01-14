@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Ngày giờ",
-    "description": "Hiển thị ngày và giờ trong một thẻ",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "Cài đặt cho tích hợp ngày giờ",
+      "title": "",
       "display24HourFormat": {
         "label": "Dùng thời gian 24 giờ"
       }
