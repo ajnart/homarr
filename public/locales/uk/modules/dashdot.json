@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Модуль для зображення графіків від вашого Dash. сервісу.",
+    "description": "",
     "settings": {
       "title": "Налаштування віджета Dash.",
       "cpuMultiView": {
