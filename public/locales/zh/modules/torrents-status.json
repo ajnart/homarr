@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "",
-    "description": "显示当前正在下载的洪流列表。",
+    "description": "",
     "settings": {
       "title": "",
       "refreshInterval": {
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "没有找到支持的下载客户端！",
-        "text": "添加下载服务，查看你当前的下载量"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "发生了一个意外的错误",
-        "text": "Homarr无法与您的下载客户端通信。请检查您的配置"
+        "text": ""
       }
     },
     "loading": {
