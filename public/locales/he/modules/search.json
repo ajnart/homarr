@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "סרגל חיפוש",
-    "description": "סרגל לחיפוש ברשת, יוטיוב, טורנטים או Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "חפש באינטרנט..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "אינטרנט",
-      "description": "חיפוש באמצעות מנוע החיפוש שלך"
+      "description": ""
     },
     "youtube": {
       "name": "יוטיוב",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "חיפוש סרטים ותוכניות טלוויזיה באמצעות  Overseerr (המודול חייב להיות מאופשר)"
+      "description": ""
     }
   },
   "tip": "באפשרותך לבחור את סרגל החיפוש באמצעות קיצור הדרך",
