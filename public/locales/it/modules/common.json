@@ -4,7 +4,7 @@
   },
   "errors": {
     "unmappedOptions": {
-      "text": "<b>Parametro non utilizzato nella configurazione rilevata</b><br /><code>{{key}}</code>. Homarr non è in grado d'interpretare e utilizzare questo parametro. Onde evitare comportamenti imprevisti, eseguire un backup della configurazione e correggerla."
+      "text": ""
     }
   }
 }
