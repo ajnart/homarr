@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "搜索栏",
-    "description": "搜索栏可搜索网页、Youtube、Torrents或Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "在网上搜索..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "网络",
-      "description": "使用你的搜索引擎进行搜索（在设置中定义）。"
+      "description": ""
     },
     "youtube": {
       "name": "录像带",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "使用Overseerr搜索电影和电视节目(模块必须启用)"
+      "description": ""
     }
   },
   "tip": "你可以用快捷键选择搜索栏 ",
