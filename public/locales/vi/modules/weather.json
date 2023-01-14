@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Thời tiết",
-    "description": "Kiểm tra thời tiết hiện tại theo khu vực của bạn",
+    "description": "",
     "settings": {
-      "title": "Cài đặt cho tích hợp thời tiết",
+      "title": "",
       "displayInFahrenheit": {
         "label": "Hiển thị bằng Fahrenheit"
       },
