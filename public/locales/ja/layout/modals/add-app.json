@@ -9,54 +9,54 @@
 	"general": {
 		"appname": {
 			"label": "アプリ名",
-			"description": "ダッシュボードにアプリを表示する際に使用します"
+			"description": ""
 		},
 		"internalAddress": {
 			"label": "内部アドレス",
-			"description": "アプリの内部IP"
+			"description": ""
 		},
 		"externalAddress": {
 			"label": "外部アドレス",
-			"description": "アプリをクリックするとブラウザで開かれるURL"
+			"description": ""
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "新しいタブで開く",
-			"description": "リンク先を新しいタブで開く"
+			"description": ""
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "ステータスチェッカー",
-			"description": "アプリがオンラインかどうかを確認するためのシンプルなHTTP / HTTPSリクエストを送信します。"
+			"description": ""
 		},
 		"statusCodes": {
 			"label": "HTTPステータスコード",
-			"description": "このアプリが「オンライン」であるために許可されるレスポンスコードを決定する。"
+			"description": ""
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "アプリアイコン",
-			"description": "ダッシュボードに表示されるアプリのロゴ。(画像を含む本文を返す必要があります。）"
+			"description": ""
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "インテグレーション構成",
-			"description": "このアプリを選択された統合として扱い、アプリごとの設定を提供する",
+			"description": "",
 			"placeholder": "インテグレーションを選択する",
 			"defined": "定義",
 			"undefined": "未定義",
 			"public": "公開",
 			"private": "プライベート",
-			"explanationPublic": "プライベートシークレットがサーバーに送信されます。ブラウザがページを更新した後は、クライアントに送信されることはありません。",
-			"explanationPrivate": "公開秘密は常にクライアントに送信され、API上でアクセス可能です。ユーザー名、パスワード、トークン、証明書、その他類似のものなど、機密性の高い値を含んではいけません。"
+			"explanationPrivate": "",
+			"explanationPublic": ""
 		},
 		"secrets": {
 			"description": "シークレットを更新するには、値を入力し、保存ボタンをクリックします。シークレットを削除するには、クリアボタンを使用します。",
-			"warning": "あなたの認証情報は、あなたの統合のためのアクセスとして機能します。あなたは、 <strong>決して</strong> 他の誰ともそれを共有してはいけません。公式のHomarrチームは決してクレデンシャルを求めません。 <strong>あなたの秘密を安全に保存し、管理することを確認してください</strong>。",
+			"warning": "",
 			"clear": "クリアシークレット",
 			"save": "秘密を守る",
 			"update": "アップデートシークレット"
