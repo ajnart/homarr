@@ -25,7 +25,7 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
+      "title": "Ajouter une application",
       "message": ""
     },
     "restart": {
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "L'intégration de Docker a échoué",
-      "message": ""
+      "message": "Avez-vous oublié de monter le socket Docker ?"
     },
     "unknownError": {
       "title": "Une erreur s’est produite"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Veuillez n'ajouter qu'une application ou service à la fois !"
     }
   },
   "actionIcon": {
