@@ -1,9 +1,9 @@
 {
     "modal": {
         "title": "Añadir nueva tarjeta",
-        "text": ""
+        "text": "Las tarjetas son el elemento principal de Homarr. Éstas se usan para mostrar tus apps, e información extra. Puedes agregar tantas tarjetas como quieras."
     },
-    "widgetDescription": "",
+    "widgetDescription": "Los widgets interactúan con tus apps, para otorgarte mayor control sobre éstas. Por lo general, éstos requieren de configuración adicional antes de poder usarlos.",
     "goBack": "Volver al paso anterior",
     "actionIcon": {
         "tooltip": "Añadir tarjeta"
