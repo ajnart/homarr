@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Omogoča ogled čakalne vrste in zgodovine, prekinitev in nadaljevanje prenosov prek omrežja Usenet (Sabnzbd ali NZBGet)"
+    "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Ni bilo najdenih podprtih odjemalcev za prenos!",
-        "text": "Dodajte storitev prenosa za ogled trenutnih prenosov"
+        "text": ""
       }
     }
   },
