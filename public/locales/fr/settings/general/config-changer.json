@@ -2,7 +2,7 @@
   "configSelect": {
     "label": "",
     "loadingNew": "Chargement des configurations ...",
-    "pleaseWait": ""
+    "pleaseWait": "Veuillez attendre que votre nouvelle configuration soit chargée !"
   },
   "modal": {
     "title": "Choisissez le nom de votre nouvelle configuration",
@@ -64,7 +64,7 @@
     },
     "reject": {
       "title": "Upload par glisser-déposer rejeté",
-      "text": ""
+      "text": "Ce format de fichier n'est pas pris en charge. Veuillez ne téléverser que des fichiers JSON."
     }
   }
 }
