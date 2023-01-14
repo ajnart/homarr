@@ -1,11 +1,11 @@
 {
-    "description": "In edit mode, puoi regolare la dimensione e posizione dei riquadri.",
+    "description": "",
     "button": {
         "disabled": "Attiva Edit Mode",
         "enabled": "Salva ed esci"
     },
     "popover": {
-        "title": "Edit mode attiva",
-        "text": "Ora puoi regolare e configurare le tue app. Le modifiche <strong>non verranno salvate</strong> finchè non si esce dall'edit mode"
+        "title": "",
+        "text": ""
     }
 }
