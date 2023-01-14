@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Thanh tìm kiếm",
-    "description": "Thanh tìm kiếm để tìm trên web, Youtube, torrent hoặc Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Tìm kiếm trên web..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Tìm kiếm bằng công cụ tìm kiếm của bạn (được thiết lập trong cài đặt)"
+      "description": ""
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Tìm kiếm phim lẻ và phim bộ bằng Overseerr (mô-đun phải được kích hoạt)"
+      "description": ""
     }
   },
   "tip": "Bạn có thể chọn thanh tìm kiếm bằng phím tắt ",
