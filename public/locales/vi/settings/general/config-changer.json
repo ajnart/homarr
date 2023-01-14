@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Trình nạp cấu hình",
+    "label": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "",
-      "text": "Kéo thả tệp vào đây để tải cấu hình lên. Chỉ hỗ trợ JSON."
+      "text": ""
     },
     "reject": {
       "title": "",
-      "text": "Định dạng tệp này không được hỗ trợ. Vui lòng chỉ tải lên JSON."
+      "text": ""
     }
   }
 }
