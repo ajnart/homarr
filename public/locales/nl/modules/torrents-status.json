@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Toont een lijst van de torrents die momenteel worden gedownload",
+    "description": "",
     "settings": {
-      "title": "Instellingen voor Torrent-integratie",
+      "title": "",
       "refreshInterval": {
         "label": "Verversingsinterval (in seconden)"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Geen ondersteunde download clients gevonden!",
-        "text": "Voeg een downloadservice toe om uw huidige downloads weer te geven"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "Onbekende fout opgetreden",
-        "text": "Homarr kon niet communiceren met uw downloadclients. Controleer uw configuratie"
+        "text": ""
       }
     },
     "loading": {
