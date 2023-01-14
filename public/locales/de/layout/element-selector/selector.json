@@ -1,9 +1,9 @@
 {
     "modal": {
         "title": "Neue Kachel hinzufügen",
-        "text": ""
+        "text": "Kacheln sind das Hauptelement von Homarr. Sie werden verwendet, um Ihre Anwendungen und andere Informationen anzuzeigen. Sie können so viele Kacheln hinzufügen, wie Sie möchten."
     },
-    "widgetDescription": "",
+    "widgetDescription": "Widgets interagieren mit Ihren Anwendungen, um Ihnen mehr Kontrolle über sie zu geben. Sie erfordern in der Regel eine zusätzliche Konfiguration vor der Verwendung.",
     "goBack": "Zurück auf die vorherige Seite",
     "actionIcon": {
         "tooltip": "Kachel hinzufügen"
