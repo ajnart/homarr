@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "Konfigurationslader",
+    "label": "",
     "loadingNew": "Ihre Konfiguration wird geladen...",
-    "pleaseWait": "Bitte warten Sie, bis Ihre neue Konfiguration geladen ist"
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Wählen Sie den Namen für Ihre neue Konfiguration",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "Konfiguration hochladen",
-      "text": "Ziehen Sie Dateien hierher, um eine Konfiguration hochzuladen. Unterstützung nur für JSON."
+      "text": ""
     },
     "reject": {
       "title": "Drag and Drop Upload abgelehnt",
-      "text": "Dieses Dateiformat wird nicht unterstützt. Bitte lade nur JSON hoch."
+      "text": ""
     }
   }
 }
