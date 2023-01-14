@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Download Geschwindigkeit",
-    "description": ""
+    "description": "Zeigt die Download- und Upload-Geschwindigkeit der unterstützten Widgets an."
   },
   "card": {
     "table": {
