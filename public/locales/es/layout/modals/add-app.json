@@ -9,54 +9,54 @@
 	"general": {
 		"appname": {
 			"label": "Nombre de la app",
-			"description": "Utilizado para mostrar la app en el dashboard"
+			"description": ""
 		},
 		"internalAddress": {
 			"label": "Dirección interna",
-			"description": "IP interna de la app"
+			"description": ""
 		},
 		"externalAddress": {
 			"label": "Dirección externa",
-			"description": "URL que se abrirá en el navegador al pulsar en la app"
+			"description": ""
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Abrir en nueva pestaña",
-			"description": "Abrir enlace en nueva pestaña"
+			"description": ""
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Verificador de estado",
-			"description": "Enviar una petición HTTP/HTTPS para comprobar si tu app está en línea"
+			"description": ""
 		},
 		"statusCodes": {
 			"label": "Códigos HTTP de estado",
-			"description": "Determina qué códigos de respuesta están permitidos para la app para que ésta esté 'Online'"
+			"description": ""
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "Icono App",
-			"description": "Logo de tu app mostrar en el dashboard. (Debe devolver un body content que tenga una imagen)"
+			"description": ""
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "Configuración de integración",
-			"description": "Tratar esta app como la integración seleccionada, y proporcionar una configuración por aplicación",
+			"description": "",
 			"placeholder": "Seleccionar una integración",
 			"defined": "Definido",
 			"undefined": "Sin definir",
 			"public": "Público",
 			"private": "Privado",
-			"explanationPublic": "Una clave privada será enviada al servidor. Una vez tu navegador haya refrescado la página, ésta nunca será enviada al cliente.",
-			"explanationPrivate": "Una clave privada siempre será enviada al cliente, y será accesible a través de la API. Ésta no debe contenedor información confidenciales, como: nombres de usuario, contraseñas, tokens, certificados o similar"
+			"explanationPrivate": "",
+			"explanationPublic": ""
 		},
 		"secrets": {
 			"description": "Para actualizar una clave, introducir un valor y pulsar el botón guardar. Para eliminar una clave, usa el botón limpiar.",
-			"warning": "Tus credenciales actúan como el acceso para tus integraciones, y <strong>nunca</strong> debes compartírlas con nadie. El equipo oficial de Homarr nunca te preguntará sobre ellas. Asegúrate de <strong>guardar y administrar tus claves de manera segura</strong>.",
+			"warning": "",
 			"clear": "Limpiar clave",
 			"save": "Guardar clave",
 			"update": "Actualizar clave"
