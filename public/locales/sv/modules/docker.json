@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Låter dig enkelt se och hantera dina docker containers."
   },
   "search": {
     "placeholder": "Sök efter container eller imagenamn"
@@ -25,7 +25,7 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
+      "title": "Lägg till app",
       "message": ""
     },
     "restart": {
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Dockerintegration misslyckades",
-      "message": ""
+      "message": "Glömde du att montera docker socket?"
     },
     "unknownError": {
       "title": "Ett fel inträffade"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Lägg bara till en app eller tjänst åt gången!"
     }
   },
   "actionIcon": {
