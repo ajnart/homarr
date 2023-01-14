@@ -2,7 +2,7 @@
   "title": "מנוע חיפוש",
   "configurationName": "הגדרות מנוע חיפוש",
   "tips": {
-    "generalTip": "ניתן להשתמש בקידומות כדי למקד את החיפוש ע״י הוספת סימן קריאה ו- y / t / m / s",
+    "generalTip": "",
     "placeholderTip": "s% יכול לשמש כמציין מיקום עבור השאילתה."
   },
   "customEngine": {
