@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "CSS tuỳ chỉnh",
-    "placeholder": "CSS tùy chỉnh sẽ được áp dụng sau cùng"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Gửi"
