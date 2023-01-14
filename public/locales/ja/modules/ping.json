@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ピング",
-    "description": "サービスが稼働しているか、特定のHTTPステータスコードを返しているかどうかを確認できるようにします。"
+    "description": ""
   },
   "states": {
     "online": "オンライン {{response}}",
