@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "דוקר",
-    "description": "מאפשר ניהול קונטיינרים בדוקר"
+    "description": ""
   },
   "search": {
     "placeholder": "חיפוש לפי קונטיינר או שם קובץ תמונה"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "הוספת שירות",
-      "message": "הוסף שירות ל- Homarr"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "אתחל"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "שילוב docker נכשל",
-      "message": "האם שכחת לטעון את ה- Docker?"
+      "message": ""
     },
     "unknownError": {
       "title": "אירעה שגיאה"
     },
     "oneServiceAtATime": {
-      "title": "אנא הוסף שירות אחד בלבד בכל פעם!"
+      "title": ""
     }
   },
   "actionIcon": {
