@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Viser en liste over torrents fra understøttede Torrent-klienter.",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for Torrent-widget",
       "refreshInterval": {
         "label": "Opdateringsinterval (i sekunder)"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Ingen understøttede Torrent-klienter fundet!",
+        "text": "Tilføj en understøttet Torrent-klient for at se dine aktuelle downloads"
       },
       "generic": {
         "title": "Der opstod en uventet fejl",
-        "text": ""
+        "text": "Homarr kunne ikke kommunikere med dine Torrent-klienter. Kontroller venligst din konfiguration"
       }
     },
     "loading": {
