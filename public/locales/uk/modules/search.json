@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Панель пошуку",
-    "description": "Панель для пошуку в Інтернеті, Youtube, Torrents або Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Пошук в Інтернеті..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Веб",
-      "description": "Пошук за допомогою вашої пошукової системи (визначається в налаштуваннях)"
+      "description": ""
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Пошук фільмів та серіалів за допомогою Overseerr (модуль повинен бути увімкнений)"
+      "description": ""
     }
   },
   "tip": "Викликати рядок пошуку можна за допомогою комбінації клавіш ",
