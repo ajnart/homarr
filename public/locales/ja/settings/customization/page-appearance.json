@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "カスタムCSS",
-    "placeholder": "カスタムCSSは最後に実行されます"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "提出"
