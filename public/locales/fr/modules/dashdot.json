@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Un module pour afficher les graphiques de votre instance Dash. en cours.",
+    "description": "",
     "settings": {
       "title": "Paramètres du widget Dash",
       "cpuMultiView": {
