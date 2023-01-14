@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "一个显示运行中的仪表板实例的图表模块。",
+    "description": "",
     "settings": {
       "title": "为Dash.Widget设置",
       "cpuMultiView": {
