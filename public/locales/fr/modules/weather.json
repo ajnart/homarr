@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Météo",
-    "description": "Consultez la météo actuelle dans votre région",
+    "description": "",
     "settings": {
-      "title": "Paramètres pour l'intégration de la météo",
+      "title": "",
       "displayInFahrenheit": {
         "label": "Affichage en Fahrenheit"
       },
