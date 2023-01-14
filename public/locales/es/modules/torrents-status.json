@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Mostrar lista de torrents que están descargándose actualmente",
+    "description": "",
     "settings": {
-      "title": "Ajustes para la integración Torrent",
+      "title": "",
       "refreshInterval": {
         "label": "Intervalo de refresco (en segundos)"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "¡No se han encontrado clientes de descarga compatibles!",
-        "text": "Añade un servicio de descarga para ver tus descargas actuales"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "Ocurrió un error inesperado",
-        "text": "Homarr no pudo comunicarse con tus clientes de descarga. Por favor, comprueba tu configuración"
+        "text": ""
       }
     },
     "loading": {
