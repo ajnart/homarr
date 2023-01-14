@@ -1,11 +1,11 @@
 {
-    "description": "I redigeringstilstand kan du justere størrelsen og placeringen af dine felter.",
+    "description": "",
     "button": {
         "disabled": "Gå i redigeringstilstand",
         "enabled": "Afslut og gem"
     },
     "popover": {
-        "title": "Redigeringstilstand er aktiveret",
-        "text": "Du kan justere og konfigurere dine apps nu. Ændringer er <strong>ikke gemt</strong> indtil du forlader redigeringstilstanden"
+        "title": "",
+        "text": ""
     }
 }
