@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Consola from 'consola';
-import { ActionIcon, Button, Group, Title, Tooltip } from '@mantine/core';
+import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
@@ -10,11 +10,13 @@ import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan'
 
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 import { AddElementAction } from '../AddElementAction/AddElementAction';
+import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/gridstack/store';
 
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
-
+  const namedWrapperColumnCount = useNamedWrapperColumnCount();
   const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
+  const translatedSize = t(`screenSizes.${namedWrapperColumnCount}`);
 
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
@@ -44,8 +46,25 @@ export const ToggleEditModeAction = () => {
         }),
         radius: 'md',
         id: 'toggle-edit-mode',
-        autoClose: false,
-        title: <Title order={4}>{t('popover.title')}</Title>,
+        autoClose: 10000,
+        title: (
+          <Title order={4}>
+            <Trans
+              i18nKey="layout/header/actions/toggle-edit-mode:popover.title"
+              values={{ size: translatedSize }}
+              components={{
+                1: (
+                  <Text
+                    component="a"
+                    style={{ color: 'inherit', textDecoration: 'underline' }}
+                    href="https://homarr.dev/docs/customizations/layout"
+                    target="_blank"
+                  />
+                ),
+              }}
+            />
+          </Title>
+        ),
         message: <Trans i18nKey="layout/header/actions/toggle-edit-mode:popover.text" />,
       });
     } else {
