@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Kalender",
-    "description": "Et kalendermodul til visning af kommende udgivelser. Det interagerer med Sonarr- og Radarr-API'erne.",
+    "description": "",
     "settings": {
-      "title": "Indstillinger for kalenderintegration",
+      "title": "",
       "sundayStart": {
         "label": "Søndag første ugedag"
       },
