@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Zoekbalk",
-    "description": "Zoekbalk om te zoeken op het web, Youtube, Torrents of Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Zoek op het web..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Zoeken met uw zoekmachine (gedefinieerd in instellingen)"
+      "description": ""
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Zoek naar Films en TV-series met behulp van Overseerr (module moet ingeschakeld zijn)"
+      "description": ""
     }
   },
   "tip": "U kunt de zoekbalk selecteren met de sneltoets ",
