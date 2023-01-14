@@ -130,6 +130,7 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
   // Get the slug of the request
   const { slug } = req.query as { slug: string };
   if (!slug) {
+    Consola.error('Rejected config deletion request because config slug was not present');
     return res.status(400).json({
       message: 'Wrong request',
     });
@@ -145,6 +146,7 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
 
   // If the target is not in the list of files, return an error
   if (!configs.includes(slug)) {
+    Consola.error(`Rejected config deletion request because config name '${slug}' was not included in present configurations`);
     return res.status(404).json({
       message: 'Target not found',
     });
@@ -152,6 +154,7 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
 
   // Delete the file
   fs.unlinkSync(path.join('data/configs', `${slug}.json`));
+  Consola.info(`Successfully deleted configuration '${slug}' from your file system`);
   return res.status(200).json({
     message: 'Configuration deleted with success',
   });

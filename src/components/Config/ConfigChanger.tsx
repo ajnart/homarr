@@ -16,9 +16,6 @@ export default function ConfigChanger() {
   const [isRefreshing, toggle] = useToggle();
 
   const onConfigChange = (value: string) => {
-    // TODO: check what should happen here with @manuel-rw
-    // Wheter it should check for the current url and then load the new config only on index
-    // Or it should always load the selected config and open index or ? --> change url to page
     setCookie('config-name', value ?? 'default', {
       maxAge: 60 * 60 * 24 * 30,
       sameSite: 'strict',
