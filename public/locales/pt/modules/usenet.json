@@ -7,7 +7,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "Nenhum cliente de download suportado encontrado!",
-        "text": "Adicione um serviço de download para ver seus downloads atuais"
+        "text": ""
       }
     }
   },
