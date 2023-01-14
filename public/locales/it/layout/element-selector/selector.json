@@ -1,9 +1,9 @@
 {
     "modal": {
         "title": "Aggiungi nuovo riquadro",
-        "text": "I riquadri sono gli elementi principali di Homarr. Permettono di configurare la dashboard e di visualizzare le informazioni desiderate."
+        "text": ""
     },
-    "widgetDescription": "I widget interagiscono con le applicazioni per fornire un maggior controllo. Normalmente richiedono alcune configurazioni prima di essere utilizzati.",
+    "widgetDescription": "",
     "goBack": "Torna indietro allo step precedente",
     "actionIcon": {
         "tooltip": "Aggiungi riquadro"
