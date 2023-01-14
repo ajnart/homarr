@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Дата",
-    "description": "Показати поточний час і дату в картці",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "Налаштування інтеграції дат",
+      "title": "",
       "display24HourFormat": {
         "label": "Показувати повний час (24 години)"
       }
