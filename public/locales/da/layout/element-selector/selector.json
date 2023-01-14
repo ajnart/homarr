@@ -1,9 +1,9 @@
 {
     "modal": {
         "title": "Tilføj et nyt felt",
-        "text": "Felter er det primære element i homarr. De giver dig mulighed for at konfigurere dashboarded og vise den information du ønsker."
+        "text": ""
     },
-    "widgetDescription": "Widgets interagerer med dine apps for at give dig mere kontrol over dine programmer. De kræver normalt nogle få konfigurationer, før de kan bruges.",
+    "widgetDescription": "",
     "goBack": "Gå tilbage til det forrige trin",
     "actionIcon": {
         "tooltip": "Tilføj et felt"
