@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Velocità Di Download",
-    "description": "Mostra la velocità di download corrente dei servizi supportati"
+    "description": ""
   },
   "card": {
     "table": {
