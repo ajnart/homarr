@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Nedladdningshastighet ",
-    "description": "Visa den aktuella nedladdningshastigheten för tjänster som stöds"
+    "description": ""
   },
   "card": {
     "table": {
