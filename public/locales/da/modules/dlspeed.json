@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Download hastighed",
-    "description": ""
+    "description": "Viser download- og uploadhastigheden for understøttede integrationer."
   },
   "card": {
     "table": {
