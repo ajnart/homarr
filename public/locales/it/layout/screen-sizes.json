@@ -1,7 +1,7 @@
 {
   "popover": {
-    "title": "Configurazione per la dimensione dello schermo \"{{size}}\"",
-    "description": "Stai modificando la dimensione dello schermo corrente"
+    "title": "",
+    "description": ""
   },
   "sizes": {
     "small": "piccolo",
