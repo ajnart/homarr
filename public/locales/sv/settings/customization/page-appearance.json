@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Anpassad CSS",
-    "placeholder": "Anpassad CSS kommer att utföras sist"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Skicka"
