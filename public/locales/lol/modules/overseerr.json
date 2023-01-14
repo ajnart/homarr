@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Allowz u 2 search an add media frum Overseerr/Jellyseerr"
+    "description": ""
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "Tick teh seasons dat u wantz 2 bees downloaded",
+      "caption": "",
       "table": {
         "header": {
           "season": "Season",
