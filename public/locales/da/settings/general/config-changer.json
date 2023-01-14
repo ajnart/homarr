@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "Konfigurations indlæser",
+    "label": "",
     "loadingNew": "Indlæser din konfiguration...",
-    "pleaseWait": "Vent venligst, indtil din nye konfiguration er indlæst"
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Vælg navnet på din nye konfiguration",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "Upload af konfiguration",
-      "text": "Træk filer hertil for at uploade en konfiguration. Kun understøttelse af JSON."
+      "text": ""
     },
     "reject": {
       "title": "Træk og slip Upload afvist",
-      "text": "Dette filformat understøttes ikke. Upload venligst kun JSON."
+      "text": ""
     }
   }
 }
