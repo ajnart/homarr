@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "CSS מותאם אישית",
-    "placeholder": "קובץ CSS מותאם אישית יטען אחרון"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "שלח"
