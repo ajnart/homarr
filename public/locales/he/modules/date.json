@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "תאריך",
-    "description": "הצגת השעה והתאריך הנוכחיים",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "הגדרות עבור אינטגרצית יומן",
+      "title": "",
       "display24HourFormat": {
         "label": "הצגת זמן בפורמט 24 שעות"
       }
