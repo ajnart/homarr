@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Zeigt eine Liste der Torrents an, die gerade heruntergeladen werden",
+    "description": "",
     "settings": {
-      "title": "Einstellungen für die Torrent Integration",
+      "title": "",
       "refreshInterval": {
         "label": "Aktualisierungsintervall (in Sekunden)"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Keine unterstützten Download-Clients gefunden!",
-        "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "Ein unerwarteter Fehler ist aufgetreten",
-        "text": "Homarr konnte nicht mit Ihren Download-Clients kommunizieren. Bitte überprüfen Sie Ihre Konfiguration"
+        "text": ""
       }
     },
     "loading": {
