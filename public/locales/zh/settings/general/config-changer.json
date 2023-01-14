@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "配置加载器",
+    "label": "",
     "loadingNew": "加载你的配置...",
-    "pleaseWait": "请等待，直到你的新配置加载完毕"
+    "pleaseWait": ""
   },
   "modal": {
     "title": "选择你的新配置的名称",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "配置上传",
-      "text": "在这里拖动文件来上传配置。只支持JSON。"
+      "text": ""
     },
     "reject": {
       "title": "拒绝拖拽式上传",
-      "text": "不支持这种文件格式。请只上传JSON。"
+      "text": ""
     }
   }
 }
