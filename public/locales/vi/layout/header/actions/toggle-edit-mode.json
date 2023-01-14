@@ -1,11 +1,11 @@
 {
-    "description": "Trong chế độ chỉnh sửa, bạn có thể chỉnh kích thước và vị trí các ô của bạn.",
+    "description": "",
     "button": {
         "disabled": "Vào chế độ chỉnh sửa",
         "enabled": "Lưu và thoát"
     },
     "popover": {
-        "title": "Đã bật chế độ chỉnh sửa",
-        "text": "Bạn giờ có thể chỉnh sửa và thiết lập các ứng dụng. Các thay đổi sẽ <strong>không được lưu</strong> cho tới khi bạn thoát chế độ chỉnh sửa"
+        "title": "",
+        "text": ""
     }
 }
