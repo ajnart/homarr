@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "Config loader",
+    "label": "Config changer",
     "loadingNew": "Loading your config...",
-    "pleaseWait": "Please wait until your new config is loaded"
+    "pleaseWait": "Please wait until your new config is loaded!"
   },
   "modal": {
     "title": "Choose the name of your new config",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "Configuration Upload",
-      "text": "Drag files here to upload a config. Support for JSON only."
+      "text": "Drag files here to upload a config. Support for JSON files only."
     },
     "reject": {
       "title": "Drag and Drop Upload rejected",
-      "text": "This file format is not supported. Please only upload JSON."
+      "text": "This file format is not supported. Please only upload JSON files."
     }
   }
 }

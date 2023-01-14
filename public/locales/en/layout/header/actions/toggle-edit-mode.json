@@ -1,11 +1,11 @@
 {
-    "description": "In edit mode, you can adjust the size and position of your tiles.",
+    "description": "In Edit Mode, you can adjust tiles and configure apps. Changes are not saved until you exit Edit Mode.",
     "button": {
         "disabled": "Enter Edit Mode",
         "enabled": "Exit and Save"
     },
     "popover": {
-        "title": "Edit mode is enabled",
-        "text": "You can adjust and configure your apps now. Changes are <strong>not saved</strong> until you exit edit mode"
+        "title": "Edit Mode is enabled",
+        "text": "You can adjust tiles and configure your apps now. Changes are <strong>not saved</strong> until you exit edit mode!"
     }
 }

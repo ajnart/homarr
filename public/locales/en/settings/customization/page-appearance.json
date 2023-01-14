@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Custom CSS",
-    "placeholder": "Custom CSS will be executed last"
+    "placeholder": "Custom CSS will be applied last"
   },
   "buttons": {
     "submit": "Submit"

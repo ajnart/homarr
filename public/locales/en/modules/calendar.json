@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Calendar",
-    "description": "A calendar module for displaying upcoming releases. It interacts with the Sonarr and Radarr API.",
+    "description": "Displays a calendar with upcoming releases, from supported integrations.",
     "settings": {
-      "title": "Settings for calendar integration",
+      "title": "Settings for Calendar widget",
       "sundayStart": {
         "label": "Start the week on Sunday"
       },

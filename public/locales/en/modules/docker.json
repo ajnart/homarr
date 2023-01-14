@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Allows you to easily manage your docker containers"
+    "description": "Allows you to easily see and manage all of your Docker Containers."
   },
   "search": {
     "placeholder": "Search by container or image name"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Add service",
-      "message": "Add service to Homarr"
+      "title": "Add app",
+      "message": "Add app Homarr"
     },
     "restart": {
       "title": "Restart"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker integration failed",
-      "message": "Did you forget to mount the docker socket ?"
+      "message": "Did you forget to mount the docker socket?"
     },
     "unknownError": {
       "title": "There was an error"
     },
     "oneServiceAtATime": {
-      "title": "Please only add one service at a time!"
+      "title": "Please only add one app or service at a time!"
     }
   },
   "actionIcon": {

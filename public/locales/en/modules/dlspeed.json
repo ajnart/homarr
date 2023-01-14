@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Download Speed",
-    "description": "Show the current download speed of supported services"
+    "description": "Displays the Download and Upload speed of supported integrations."
   },
   "card": {
     "table": {
