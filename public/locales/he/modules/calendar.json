@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "לוח שנה",
-    "description": "מודול לוח שנה להצגת עדכונים מ- Sonarr/Radarr/Readarr/Lidarr",
+    "description": "",
     "settings": {
-      "title": "הגדרות עבור אינטגרצית יומן",
+      "title": "",
       "sundayStart": {
         "label": "התחל את השבוע ביום ראשון"
       },
