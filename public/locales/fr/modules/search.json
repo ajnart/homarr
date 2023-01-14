@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": ""
+      "description": "Rechercher..."
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Rechercher des films et sériess sur Overseerr"
     }
   },
   "tip": "Vous pouvez sélectionner la barre de recherche avec le raccourci ",
