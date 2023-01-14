@@ -1,6 +1,6 @@
 {
   "title": "¡Bienvenido/a otra vez!",
-  "text": "",
+  "text": "Por favor, introduce tu contraseña",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Tu contraseña está siendo comprobada..."
     },
     "correct": {
-      "title": ""
+      "title": "Inicio de sesión satisfactorio, redirigiendo..."
     },
     "wrong": {
-      "title": ""
+      "title": "La contraseña introducida es incorrecta, por favor, intenta de nuevo."
     }
   }
 }
