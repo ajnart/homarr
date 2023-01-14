@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "允许你从Overseerr/Jellyseerr搜索和添加媒体"
+    "description": ""
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "勾选你想要下载的季数",
+      "caption": "",
       "table": {
         "header": {
           "season": "季数",
