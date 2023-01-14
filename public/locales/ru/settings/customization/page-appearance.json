@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Пользовательский CSS",
-    "placeholder": "Пользовательский CSS будет выполняться в последнюю очередь"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Подтвердить"
