@@ -2,7 +2,7 @@
   "title": "Công cụ tìm kiếm",
   "configurationName": "Thiết lập công cụ tìm kiếm",
   "tips": {
-    "generalTip": "Sử dụng các tiền tố !yt và !t trước truy vấn để tìm kiếm trên YouTube hoặc torrent.",
+    "generalTip": "",
     "placeholderTip": "%s có thể được sử dụng làm phần giữ chỗ cho truy vấn."
   },
   "customEngine": {
