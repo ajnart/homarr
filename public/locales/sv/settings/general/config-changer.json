@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "Konfigurationsladdare",
+    "label": "",
     "loadingNew": "Laddar din konfiguration...",
-    "pleaseWait": "Vänta tills din nya konfiguration är laddad"
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Välj namn på din nya konfigurering",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "Uppladdning av konfiguration",
-      "text": "Dra filer hit för att ladda upp en konfiguration. Endast stöd för JSON."
+      "text": ""
     },
     "reject": {
       "title": "Dra och släpp uppladdningen avvisades",
-      "text": "Det här filformatet stöds inte. Ladda endast upp JSON."
+      "text": ""
     }
   }
 }
