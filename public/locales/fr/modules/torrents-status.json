@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Affiche une liste des torrents en cours de téléchargement",
+    "description": "",
     "settings": {
-      "title": "Paramètres pour l'intégration Torrent",
+      "title": "",
       "refreshInterval": {
         "label": "Intervalle d'actualisation en secondes"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Aucun client de téléchargement supporté n'a été trouvé !",
-        "text": "Ajouter un service de téléchargement pour afficher vos téléchargements en cours"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "Une erreur inattendue s'est produite",
-        "text": "Homarr n'a pas pu communiquer avec vos clients de téléchargement. Veuillez vérifier votre configuration"
+        "text": ""
       }
     },
     "loading": {
