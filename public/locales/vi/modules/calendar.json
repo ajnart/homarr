@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Lịch",
-    "description": "Một mô-đun lịch để hiển thị các lượt phát hành sắp tới. Nó tương tác với API của Sonarr và Radarr.",
+    "description": "",
     "settings": {
-      "title": "Cài đặt cho tích hợp lịch",
+      "title": "",
       "sundayStart": {
         "label": "Đặt đầu tuần là Chủ Nhật"
       },
