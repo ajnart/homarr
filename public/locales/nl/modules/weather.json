@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Weer",
-    "description": "Zoek het actuele weer op uw locatie",
+    "description": "",
     "settings": {
-      "title": "Instellingen voor weer-integratie",
+      "title": "",
       "displayInFahrenheit": {
         "label": "Weergeven in Fahrenheit"
       },
