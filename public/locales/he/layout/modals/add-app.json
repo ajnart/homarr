@@ -9,54 +9,54 @@
 	"general": {
 		"appname": {
 			"label": "שם אפליקציה",
-			"description": ""
+			"description": "משמש להצגת האפליקציה בלוח המחוונים."
 		},
 		"internalAddress": {
 			"label": "כתובת פנימית",
-			"description": ""
+			"description": "כתובת פנימית של האפליקציה."
 		},
 		"externalAddress": {
 			"label": "כתובת חיצונית",
-			"description": ""
+			"description": "כתובת אינטרנט שתיפתח בעת לחיצה על האפליקציה."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "פתיחה בכרטיסיה חדשה",
-			"description": ""
+			"description": "פתח את האפליקציה בלשונית חדשה במקום הנוכחית."
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "בודק מצב",
-			"description": ""
+			"description": "בודק אם האפליקציה שלך מקוונת באמצעות בקשת אינטרנט פשוטה."
 		},
 		"statusCodes": {
 			"label": "קוד מצב HTTP ",
-			"description": ""
+			"description": "קודי סטטוס שנחשבים מקוונים."
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "סמל אפליקציה",
-			"description": ""
+			"description": "הסמל שיוצג בלוח המחוונים."
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "תצורת אינטגרציה",
-			"description": "",
+			"description": "תצורת האינטגרציה שתשמש לחיבור לאפליקציה שלך.",
 			"placeholder": "בחר אינטגרציה",
 			"defined": "מוגדר",
 			"undefined": "לא מוגדר",
 			"public": "ציבורי",
 			"private": "פרטי",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"explanationPrivate": "קוד פרטי יישלח לשרת פעם אחת בלבד. לאחר שהדפדפן שלך ירענן את הדף, הוא לעולם לא יישלח שוב.",
+			"explanationPublic": "קוד ציבורי יישלח תמיד ללקוח והוא נגיש דרך ה-API. זה לא אמור להכיל ערכים סודיים כגון שמות משתמש, סיסמאות, אסימונים, אישורים וכדומה!"
 		},
 		"secrets": {
 			"description": "כדי לעדכן את הקוד, הזן ערך ולחץ על הלחצן שמור. כדי להסיר סוד השתמש בלחצן נקה.",
-			"warning": "",
+			"warning": "האישורים שלך משמשים כגישה לאינטגרציות שלך ואתה <strong>לעולם לא</strong> תשתף אותם עם אף אחד אחר. צוות Homarr לעולם לא יבקש אישורים. הקפד <strong>לאחסן ולנהל את אישורים שלך בבטחה</strong>.",
 			"clear": "נקה אישורים",
 			"save": "שמור אישורים",
 			"update": "עדכן אישורים"
