@@ -16,7 +16,15 @@ export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSideba
   } = useCardStyles(false);
 
   return (
-    <Card p={0} m={0} radius="lg" className={cardClass} w={300}>
+    <Card
+      p={0}
+      m={0}
+      radius="lg"
+      className={cardClass}
+      style={{ borderStyle: 'dashed' }}
+      w={300}
+      withBorder
+    >
       {isGridstackReady && <SidebarInner location={location} />}
     </Card>
   );

@@ -28,16 +28,11 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 };
 
 export const useWrapperColumnCount = () => {
-  const { config } = useConfigContext();
-  const numberOfSidebars =
-    (config?.settings.customization.layout.enabledLeftSidebar ? 1 : 0) +
-    (config?.settings.customization.layout.enabledRightSidebar ? 1 : 0);
-
   switch (useNamedWrapperColumnCount()) {
     case 'large':
-      return 15 - numberOfSidebars * 2;
+      return 12;
     case 'medium':
-      return 9 - numberOfSidebars * 2;
+      return 6;
     case 'small':
       return 3;
     default:
