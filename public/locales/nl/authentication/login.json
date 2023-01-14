@@ -1,6 +1,6 @@
 {
   "title": "Welkom terug!",
-  "text": "Voer uw wachtwoord in",
+  "text": "",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Uw wachtwoord wordt gecontroleerd..."
     },
     "correct": {
-      "title": "Wachtwoord correct, u wordt doorgestuurd..."
+      "title": ""
     },
     "wrong": {
-      "title": "Wachtwoord onjuist, probeer het nogmaals."
+      "title": ""
     }
   }
 }
