@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Data",
-    "description": "Mostra l'ora e la data corrente in una scheda",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "Impostazioni per l'integrazione della data",
+      "title": "",
       "display24HourFormat": {
         "label": "Visualizza formato 24 ore"
       }
