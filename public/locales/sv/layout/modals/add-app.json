@@ -9,54 +9,54 @@
 	"general": {
 		"appname": {
 			"label": "Appnamn",
-			"description": "Används för att visa appen på instrumentpanelen"
+			"description": ""
 		},
 		"internalAddress": {
 			"label": "Intern adress",
-			"description": "Appens interna IP-adress"
+			"description": ""
 		},
 		"externalAddress": {
 			"label": "Extern adress",
-			"description": "Url som öppnas i webbläsaren när du klickar på appen"
+			"description": ""
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Öppna i ny flik",
-			"description": "Öppna länken i en ny flik"
+			"description": ""
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Statuskontroll",
-			"description": "Skickar en enkel HTTP / HTTPS-förfrågan för att kontrollera om din app är online"
+			"description": ""
 		},
 		"statusCodes": {
 			"label": "HTTP-statuskoder",
-			"description": "Bestämmer vilka svarskoder som tillåts för att appen ska vara \"Online\""
+			"description": ""
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "Logotyp för din app som visas i instrumentpanelen. (Måste visa ett innehåll som innehåller en bild)"
+			"description": ""
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "Integrationskonfiguration",
-			"description": "Behandlar denna app som den valda integrationen och ger dig per-app konfiguration",
+			"description": "",
 			"placeholder": "Välj en integration",
 			"defined": "Definierad",
 			"undefined": "Odefinierad",
 			"public": "Publik",
 			"private": "Privat",
-			"explanationPublic": "En privat hemlighet kommer att skickas till servern. När din webbläsare har uppdaterat sidan, kommer den aldrig att skickas till klienten.",
-			"explanationPrivate": "En offentlig hemlighet kommer alltid att skickas till klienten och är tillgänglig över API. Det bör inte innehålla några konfidentiella värden som användarnamn, lösenord, tokens, certifikat och liknande"
+			"explanationPrivate": "",
+			"explanationPublic": ""
 		},
 		"secrets": {
 			"description": "För att uppdatera en hemlighet, ange ett värde och klicka på knappen Spara. För att ta bort en hemlighet, använd knappen rensa.",
-			"warning": "Dina autentiseringsuppgifter fungerar som åtkomst till dina integrationer och du bör <strong>aldrig</strong> dela dem med någon annan. Det officiella Homarr-teamet kommer aldrig att be om autentiseringsuppgifter. Se till att <strong>lagra och hantera dina hemligheter på ett säkert sätt</strong>.",
+			"warning": "",
 			"clear": "Rensa hemlighet",
 			"save": "Spara hemlighet",
 			"update": "Uppdatera hemlighet"
