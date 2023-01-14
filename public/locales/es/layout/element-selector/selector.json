@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Añadir nueva tarjeta",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Volver al paso anterior",
+    "actionIcon": {
+        "tooltip": "Añadir tarjeta"
+    }
+}

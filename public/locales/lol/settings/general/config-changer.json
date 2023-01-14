@@ -1,12 +1,17 @@
 {
   "configSelect": {
-    "label": "Config loadah"
+    "label": "",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Chooz teh naym ov ur nu config",
     "form": {
       "configName": {
         "label": "Config naym",
+        "validation": {
+          "required": ""
+        },
         "placeholder": "Ur nu config naym"
       },
       "submitButton": "Confirm"
@@ -15,6 +20,14 @@
       "configSaved": {
         "title": "Config saved",
         "message": "Config saved as {{configName}}"
+      },
+      "configCopied": {
+        "title": "",
+        "message": ""
+      },
+      "configNotCopied": {
+        "title": "",
+        "message": ""
       }
     }
   },
@@ -46,10 +59,12 @@
       }
     },
     "accept": {
-      "text": "Drag filez hah 2 upload config. Support 4 JSON only."
+      "title": "",
+      "text": ""
     },
     "reject": {
-      "text": "Dis fiel format iz not supportd. Srsly plz only upload JSON."
+      "title": "",
+      "text": ""
     }
   }
 }

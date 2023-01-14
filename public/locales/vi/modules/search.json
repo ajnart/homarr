@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "Thanh tìm kiếm",
-    "description": "Thanh tìm kiếm để tìm trên web, Youtube, torrent hoặc Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Tìm kiếm trên web..."
   },
-  "switched-to": "",
+  "switched-to": "Đổi sang",
   "searchEngines": {
     "search": {
-      "name": "",
+      "name": "Web",
       "description": ""
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Tìm kiếm trên YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrent",
+      "description": "Tìm kiếm torrent"
     },
     "overseerr": {
       "name": "Overseerr",
       "description": ""
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Bạn có thể chọn thanh tìm kiếm bằng phím tắt ",
+  "switchedSearchEngine": "Đã đổi sang tìm kiếm bằng {{searchEngine}}"
 }

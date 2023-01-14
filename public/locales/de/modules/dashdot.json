@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Ein Modul, welches die Graphen aus einer laufenden Dash. Instanz anzeigt.",
+    "description": "",
     "settings": {
+      "title": "Einstellungen für Dash. Widget",
       "cpuMultiView": {
         "label": "CPU Multi-Core View"
       },

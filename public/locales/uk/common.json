@@ -1,6 +1,23 @@
 {
-  "actions": {
-    "save": "Зберегти"
+  "save": "Зберегти",
+  "about": "Про програму",
+  "cancel": "Скасувати",
+  "close": "Закрити",
+  "delete": "Видалити",
+  "ok": "OK",
+  "edit": "Редагувати",
+  "version": "Версія",
+  "changePosition": "Змінити положення",
+  "remove": "Видалити",
+  "removeConfirm": "Ви впевнені, що хочете видалити {{item}} ?",
+  "sections": {
+    "settings": "Налаштування",
+    "dangerZone": "Небезпечна зона"
+  },
+  "secrets": {
+    "apiKey": "Ключ API",
+    "username": "Логін",
+    "password": "Пароль"
   },
   "tip": "Підказка: ",
   "time": {

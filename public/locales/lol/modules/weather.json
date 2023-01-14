@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Weafr",
-    "description": "Look up teh current weafr in ur locashun",
+    "description": "",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "Display in Fahrenheit"
       },

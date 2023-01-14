@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Overseerr/Jellyseerr에서 미디어를 추가하고 검색할 수 있습니다"
+    "description": ""
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "다운로드하려는 시즌을 선택하세요",
+      "caption": "",
       "table": {
         "header": {
           "season": "시즌",

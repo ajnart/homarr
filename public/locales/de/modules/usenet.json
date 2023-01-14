@@ -1,13 +1,13 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Usenet",
     "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Keine unterstützten Download-Clients gefunden!",
-        "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
+        "text": ""
       }
     }
   },

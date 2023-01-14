@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Adicionar serviço",
-      "message": "Adicionar serviço ao Homarr"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "Reiniciar"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Integração com Docker falhou",
-      "message": "Você esqueceu de montar o Docker socket?"
+      "message": ""
     },
     "unknownError": {
       "title": "Ocorreu um erro"
     },
     "oneServiceAtATime": {
-      "title": "Por favor, acrescente apenas um serviço de cada vez!"
+      "title": ""
     }
   },
   "actionIcon": {

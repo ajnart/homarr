@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "Календар",
-    "description": "Модуль календаря для відстежування майбутніх релізів. Він взаємодіє з API Sonarr і Radarr.",
+    "description": "",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Почати тиждень у Неділю"
+      },
+      "radarrReleaseType": {
+        "label": "Radarr - тип релізів"
       }
     }
   }

@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Ga naar de bewerkingsmodus",
+        "enabled": "Afsluiten en opslaan"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

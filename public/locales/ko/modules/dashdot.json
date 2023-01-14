@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "실행 중인 Dash. 인스턴스의 그래프를 표시하는 모듈입니다.",
+    "description": "",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "CPU 멀티 코어 보기"
       },

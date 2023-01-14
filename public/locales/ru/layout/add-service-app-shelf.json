@@ -15,17 +15,17 @@
                 "title": "Настройки",
                 "form": {
                     "serviceName": {
-                        "label": "Имя сервиса",
+                        "label": "Название сервиса",
                         "placeholder": "Plex"
                     },
                     "iconUrl": {
                         "label": "URL-адрес иконки"
                     },
                     "serviceUrl": {
-                        "label": "Адрес сервиса"
+                        "label": "URL-адрес сервиса"
                     },
                     "onClickUrl": {
-                        "label": "URL-адрес при нажатии"
+                        "label": "URL-адрес по клику"
                     },
                     "serviceType": {
                         "label": "Тип сервиса",
@@ -36,7 +36,7 @@
                         "label": "Категория",
                         "placeholder": "Выберите категорию или создайте новую",
                         "nothingFound": "Ничего не найдено",
-                        "createLabel": "+ Добавить {{query}}"
+                        "createLabel": "+ Создать {{query}}"
                     },
                     "integrations": {
                         "apiKey": {
@@ -69,7 +69,7 @@
                         "deluge": {
                             "password": {
                                 "label": "Пароль",
-                                "placeholder": "Введите пароль",
+                                "placeholder": "пароль",
                                 "validation": {
                                     "invalidPassword": "Неверный пароль"
                                 }
@@ -101,7 +101,7 @@
                             },
                             "password": {
                                 "label": "Пароль",
-                                "placeholder": "Введите пароль",
+                                "placeholder": "пароль",
                                 "validation": {
                                     "invalidPassword": "Неверный пароль"
                                 }
@@ -111,14 +111,8 @@
                 }
             },
             "advancedOptions": {
-                "title": "Дополнительные параметры",
+                "title": "Дополнительные настройки",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "Коды состояния HTTP",
-                        "placeholder": "Выберите подходящие коды состояния",
-                        "clearButtonLabel": "Очистить выбранное",
-                        "nothingFound": "Ничего не найдено"
-                    },
                     "openServiceInNewTab": {
                         "label": "Открывать сервис в новой вкладке"
                     },

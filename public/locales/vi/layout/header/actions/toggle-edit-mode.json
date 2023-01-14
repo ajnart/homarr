@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Vào chế độ chỉnh sửa",
+        "enabled": "Lưu và thoát"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

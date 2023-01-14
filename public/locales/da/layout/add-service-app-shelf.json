@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Avancerede indstillinger",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTP status kode",
-                        "placeholder": "Vælg gyldige statuskoder",
-                        "clearButtonLabel": "Ryd valgte",
-                        "nothingFound": "Intet fundet"
-                    },
                     "openServiceInNewTab": {
                         "label": "Åbn tjeneste i ny fane"
                     },

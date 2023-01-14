@@ -1,6 +1,6 @@
 {
   "title": "Bem-vindo de volta!",
-  "text": "Por favor digite a senha",
+  "text": "",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Sua senha está sendo verificada..."
     },
     "correct": {
-      "title": "Senha correta, redirecionando você..."
+      "title": ""
     },
     "wrong": {
-      "title": "A senha está errada, por favor tente novamente."
+      "title": ""
     }
   }
 }

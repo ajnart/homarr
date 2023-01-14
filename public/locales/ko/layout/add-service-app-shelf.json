@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "고급 설정",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTP 상태 코드",
-                        "placeholder": "유효한 상태 코드를 선택해 주세요",
-                        "clearButtonLabel": "모두 선택 취소",
-                        "nothingFound": "찾을 수 없음"
-                    },
                     "openServiceInNewTab": {
                         "label": "새 탭에서 서비스 열기"
                     },

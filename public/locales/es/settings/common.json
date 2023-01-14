@@ -6,10 +6,24 @@
     "customizations": "Personalizaciones"
   },
   "tips": {
-    "configTip": "¡Sube tu archivo de configuración arrastrándolo y soltándolo en la página!"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "Hecho con ❤️ por @"
   },
-  "grow": "Aumentar cuadrícula (toma todo el espacio)"
+  "grow": "Aumentar cuadrícula (toma todo el espacio)",
+  "layout": {
+    "title": "Diseño del dashboard",
+    "main": "Principal",
+    "sidebar": "Barra lateral",
+    "cannotturnoff": "No puede ser apagado",
+    "dashboardlayout": "Diseño del dashboard",
+    "enablersidebar": "Habilitar barra lateral derecha",
+    "enablelsidebar": "Habilitar barra lateral izquierda",
+    "enablesearchbar": "Habilitar barra de búsqueda",
+    "enabledocker": "Habilitar integración docker",
+    "enableping": "Habilitar pings",
+    "enablelsidebardesc": "Opcional. Solo puede usarse con apps e integraciones",
+    "enablersidebardesc": "Opcional. Solo puede usarse con apps e integraciones"
+  }
 }

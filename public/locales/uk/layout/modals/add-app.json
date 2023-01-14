@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Загальне",
+		"behaviour": "Поведінка",
+		"network": "Мережа",
+		"appearance": "Вигляд",
+		"integration": "Інтеграція"
+	},
+	"general": {
+		"appname": {
+			"label": "Назва застосунку",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Внутрішня адреса",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Зовнішня адреса",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Відкрити в новій вкладці",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Перевірка стану",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "Код Статусу HTTP",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Іконка програми",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Налаштування інтеграції",
+			"description": "",
+			"placeholder": "Виберіть інтеграцію",
+			"defined": "Визначено",
+			"undefined": "Невизначено",
+			"public": "Публічний",
+			"private": "Приватний",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "Щоб оновити секрет, введіть значення і натисніть кнопку Зберегти. Щоб видалити секрет, використовуйте кнопку \"Очистити\".",
+			"warning": "",
+			"clear": "Очистити секрет",
+			"save": "Зберегти секрет",
+			"update": "Оновити секрет"
+		}
+	},
+	"validation": {
+		"popover": "Ваша форма містить неприпустимі дані тож не може бути збережена. Будь ласка, розв'яжіть усі проблеми та натисніть цю кнопку знову, щоб зберегти свої зміни"
+	}
+}

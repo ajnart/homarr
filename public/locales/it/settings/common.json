@@ -6,10 +6,24 @@
     "customizations": "Personalizza"
   },
   "tips": {
-    "configTip": "Carica il file di configurazione trascinandolo e rilasciandolo sulla pagina!"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "Realizzato con ❤️ da @"
   },
-  "grow": ""
+  "grow": "Espandi la griglia (occupa tutto lo spazio)",
+  "layout": {
+    "title": "Layout della Dashboard",
+    "main": "Main",
+    "sidebar": "Barra laterale",
+    "cannotturnoff": "Impossibile disattivare",
+    "dashboardlayout": "Layout della Dashboard",
+    "enablersidebar": "Abilita la barra laterale destra",
+    "enablelsidebar": "Abilita la barra laterale sinistra",
+    "enablesearchbar": "Abilita barra di ricerca",
+    "enabledocker": "Abilita integrazione di docker",
+    "enableping": "Abilita i ping",
+    "enablelsidebardesc": "Facoltativo. Può essere utilizzato solo per applicazioni e integrazioni",
+    "enablersidebardesc": "Facoltativo. Può essere utilizzato solo per applicazioni e integrazioni"
+  }
 }

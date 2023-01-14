@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Mostra la velocità di download corrente dei servizi supportati",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Nascondi torrent completati"
+      "title": "",
+      "refreshInterval": {
+        "label": "Intervallo di aggiornamento (in secondi)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Mostra torrent completati"
+      },
+      "displayStaleTorrents": {
+        "label": "Mostra torrent in stallo"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Nessun client di download supportato trovato!",
-        "text": "Aggiungi un servizio di download per visualizzare i tuoi download attuali"
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "Si è verificato un errore inaspettato",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Caricamento in corso..."
     }
   }
 }

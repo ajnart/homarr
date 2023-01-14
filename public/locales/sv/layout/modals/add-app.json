@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Allmänt",
+		"behaviour": "Beteende",
+		"network": "Nätverk",
+		"appearance": "Utseende",
+		"integration": "Integration"
+	},
+	"general": {
+		"appname": {
+			"label": "Appnamn",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Intern adress",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Extern adress",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Öppna i ny flik",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Statuskontroll",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "HTTP-statuskoder",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Appikon",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integrationskonfiguration",
+			"description": "",
+			"placeholder": "Välj en integration",
+			"defined": "Definierad",
+			"undefined": "Odefinierad",
+			"public": "Publik",
+			"private": "Privat",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "För att uppdatera en hemlighet, ange ett värde och klicka på knappen Spara. För att ta bort en hemlighet, använd knappen rensa.",
+			"warning": "",
+			"clear": "Rensa hemlighet",
+			"save": "Spara hemlighet",
+			"update": "Uppdatera hemlighet"
+		}
+	},
+	"validation": {
+		"popover": "Ditt formulär innehåller ogiltiga data. Därför kan det inte sparas. Vänligen lös alla problem och klicka på denna knapp igen för att spara dina ändringar"
+	}
+}

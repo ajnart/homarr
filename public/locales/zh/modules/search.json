@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "搜索栏",
-    "description": "搜索栏可搜索网页、Youtube、Torrents或Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "在网上搜索..."
   },
-  "switched-to": "",
+  "switched-to": "换成了",
   "searchEngines": {
     "search": {
-      "name": "",
+      "name": "网络",
       "description": ""
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "录像带",
+      "description": "在Youtube上搜索"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "火炬",
+      "description": "搜索山洪病毒"
     },
     "overseerr": {
       "name": "Overseerr",
       "description": ""
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "你可以用快捷键选择搜索栏 ",
+  "switchedSearchEngine": "改为用 {{searchEngine}}进行搜索"
 }

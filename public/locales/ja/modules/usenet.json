@@ -1,13 +1,13 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "ユーズネット",
     "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "対応するダウンロードクライアントが見つかりません",
-        "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
+        "text": ""
       }
     }
   },

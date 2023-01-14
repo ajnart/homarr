@@ -6,10 +6,24 @@
     "customizations": "Tilpasninger"
   },
   "tips": {
-    "configTip": "Upload din konfigurationsfil ved at trække og slippe den på siden!"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "Lavet med ❤️ af @"
   },
-  "grow": ""
+  "grow": "Forøg gitteret (udnyt al pladsen)",
+  "layout": {
+    "title": "Dashboard layout",
+    "main": "Primær",
+    "sidebar": "Sidepanel",
+    "cannotturnoff": "Kan ikke slås fra",
+    "dashboardlayout": "Dashboard layout",
+    "enablersidebar": "Aktivér højre sidepanel",
+    "enablelsidebar": "Aktiver venstre sidebar",
+    "enablesearchbar": "Aktiver søgelinje",
+    "enabledocker": "Aktiver integration af docker",
+    "enableping": "Aktiver pings",
+    "enablelsidebardesc": "Valgfrit. Kan kun bruges til apps og integrationer",
+    "enablersidebardesc": "Valgfrit. Kan kun bruges til apps og integrationer"
+  }
 }

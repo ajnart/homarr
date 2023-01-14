@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "高级选项",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTP状态代码",
-                        "placeholder": "选择有效的状态代码",
-                        "clearButtonLabel": "清除选择项",
-                        "nothingFound": "没有找到"
-                    },
                     "openServiceInNewTab": {
                         "label": "在新标签中打开应用"
                     },

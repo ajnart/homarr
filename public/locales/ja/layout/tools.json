@@ -1,0 +1,10 @@
+{
+    "fallback": {
+        "title": "現在お持ちでないツール"
+    },
+    "iconPicker": {
+        "textInputPlaceholder": "アイコンの検索...",
+        "searchLimitationTitle": "検索対象は {{max}} のアイコンに限定されます。",
+        "searchLimitationMessage": "迅速な処理を行うため、検索対象は {{max}} のアイコンに限定されています。その他のアイコンを探すには、検索ボックスをご利用ください。"
+    }
+}

@@ -1,14 +1,19 @@
 {
   "title": "搜索引擎",
+  "configurationName": "",
   "tips": {
-    "generalTip": "在查询前使用前缀 !yt和 !t，可以在YouTube或Torrent中搜索。",
+    "generalTip": "",
     "placeholderTip": "%s 可以作为查询的占位符。"
   },
   "customEngine": {
+    "title": "自定义搜索引擎",
     "label": "查询网址",
     "placeholder": "自定义查询网址"
   },
   "searchNewTab": {
     "label": "在新选项卡中打开搜索结果页"
+  },
+  "searchEnabled": {
+    "label": "启用搜索"
   }
 }

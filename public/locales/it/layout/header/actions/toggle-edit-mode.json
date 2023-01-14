@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Attiva Edit Mode",
+        "enabled": "Salva ed esci"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

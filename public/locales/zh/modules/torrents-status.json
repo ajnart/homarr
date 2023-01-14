@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "显示支持的服务的当前下载速度",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "隐藏已完成的种子"
+      "title": "",
+      "refreshInterval": {
+        "label": "刷新时间间隔（秒）。"
+      },
+      "displayCompletedTorrents": {
+        "label": "显示已完成的洪流"
+      },
+      "displayStaleTorrents": {
+        "label": "显示陈旧的山洪"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "没有找到支持的下载客户端！",
-        "text": "添加下载服务，查看你当前的下载量"
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "发生了一个意外的错误",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "正在加载..."
     }
   }
 }

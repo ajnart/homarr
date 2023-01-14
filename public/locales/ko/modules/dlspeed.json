@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "다운로드 속도",
-    "description": "지원하는 서비스의 현재 다운로드 속도를 표시합니다"
+    "description": ""
   },
   "card": {
     "table": {

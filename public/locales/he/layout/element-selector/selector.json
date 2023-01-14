@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "הוספת אריח חדש",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "חזרה לשלב הקודם",
+    "actionIcon": {
+        "tooltip": "הוספת אריח"
+    }
+}

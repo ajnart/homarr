@@ -1,6 +1,6 @@
 {
   "title": "Välkommen tillbaka!",
-  "text": "Vänligen ange lösenordet",
+  "text": "",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Ditt lösenord kontrolleras..."
     },
     "correct": {
-      "title": "Lösenord korrekt, omdirigerar dig..."
+      "title": ""
     },
     "wrong": {
-      "title": "Lösenordet är fel, försök igen."
+      "title": ""
     }
   }
 }

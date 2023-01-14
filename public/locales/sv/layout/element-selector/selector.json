@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Lägg till en ny ruta",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Gå tillbaka till föregående steg",
+    "actionIcon": {
+        "tooltip": "Lägg till en ruta"
+    }
+}

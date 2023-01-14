@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Nieuwe tegel toevoegen",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Ga terug naar de vorige stap",
+    "actionIcon": {
+        "tooltip": "Tegel toevoegen"
+    }
+}

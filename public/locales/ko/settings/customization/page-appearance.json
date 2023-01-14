@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "페이지 제목",
-    "placeholder": "Homarr 🦞"
+    "label": "페이지 제목"
+  },
+  "metaTitle": {
+    "label": ""
   },
   "logo": {
     "label": "로고"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "커스텀 CSS",
-    "placeholder": "커스텀 CSS는 마지막으로 실행됩니다"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "적용"

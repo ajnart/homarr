@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Un módulo para mostrar los gráficos de la instancia de Dash. en ejecución.",
+    "description": "",
     "settings": {
+      "title": "Ajustes para el widget Dash.",
       "cpuMultiView": {
         "label": "Vista CPU Multinúcleo"
       },

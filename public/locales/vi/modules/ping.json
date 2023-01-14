@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "Giúp bạn kiểm tra nếu dịch vụ đang hoạt động hoặc trả lại một mã trạng thái HTTP cụ thể."
+    "description": ""
   },
   "states": {
     "online": "Trực tuyến {{response}}",

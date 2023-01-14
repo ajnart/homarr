@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Te permite ver la cola e historial de tu usenet (Sabnzbd or NZBGet), pausar y reanudar descargas"
+    "description": ""
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "¡No se han encontrado clientes de descarga compatibles!",
-        "text": "Añade un servicio de descarga para ver tus descargas actuales"
+        "text": ""
       }
     }
   },

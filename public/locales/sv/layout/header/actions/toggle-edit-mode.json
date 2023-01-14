@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Gå till redigeringsläge",
+        "enabled": "Avsluta och spara"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}

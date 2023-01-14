@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Generelt",
+		"behaviour": "Adfærd",
+		"network": "Netværk",
+		"appearance": "Udseende",
+		"integration": "Integration"
+	},
+	"general": {
+		"appname": {
+			"label": "App navn",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "Intern adresse",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "Ekstern adresse",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Åbn i nyt faneblad",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Statuskontrol",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "HTTP statuskoder",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App Ikon",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Konfiguration af integration",
+			"description": "",
+			"placeholder": "Vælg en integration",
+			"defined": "Defineret",
+			"undefined": "Udefineret",
+			"public": "Offentlig",
+			"private": "Privat",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "Hvis du vil opdatere en hemmelighed, skal du indtaste en værdi og klikke på knappen Gem. Hvis du vil fjerne en hemmelighed, skal du bruge knappen \"clear\".",
+			"warning": "",
+			"clear": "Ryd hemmelighed",
+			"save": "Gem hemmelighed",
+			"update": "Opdater hemmelighed"
+		}
+	},
+	"validation": {
+		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer"
+	}
+}

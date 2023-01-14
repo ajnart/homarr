@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Tilføj et nyt felt",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Gå tilbage til det forrige trin",
+    "actionIcon": {
+        "tooltip": "Tilføj et felt"
+    }
+}

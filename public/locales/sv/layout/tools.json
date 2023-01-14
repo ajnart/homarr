@@ -1,0 +1,10 @@
+{
+    "fallback": {
+        "title": "Du har för närvarande inga verktyg"
+    },
+    "iconPicker": {
+        "textInputPlaceholder": "Sök efter ikoner...",
+        "searchLimitationTitle": "Sökningen är begränsad till {{max}} ikoner",
+        "searchLimitationMessage": "För att det ska gå snabbt och smidigt är sökningen begränsad till {{max}} ikoner. Använd sökrutan för att hitta fler ikoner"
+    }
+}

@@ -1,21 +1,21 @@
 {
-  "title": "",
+  "title": "Welkom terug!",
   "text": "",
   "form": {
     "fields": {
       "password": {
         "label": "Wachtwoord",
-        "placeholder": ""
+        "placeholder": "Uw wachtwoord"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Inloggen"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Bezig met uw wachtwoord controleren",
+      "message": "Uw wachtwoord wordt gecontroleerd..."
     },
     "correct": {
       "title": ""

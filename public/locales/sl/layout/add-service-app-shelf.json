@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Napredne nastavitve",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTP statusne kode",
-                        "placeholder": "Izberite veljavne kode statusa",
-                        "clearButtonLabel": "Počisti izbiro",
-                        "nothingFound": "Brez rezultatov iskanja"
-                    },
                     "openServiceInNewTab": {
                         "label": "Odprite storitev v novem zavihku"
                     },

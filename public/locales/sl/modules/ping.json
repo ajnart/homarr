@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "Omogoča preverjanje, ali je storitev vzpostavljena ali vrača določeno HTTP kodo statusa."
+    "description": ""
   },
   "states": {
     "online": "Povezan {{response}}",

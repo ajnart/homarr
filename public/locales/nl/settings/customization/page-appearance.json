@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "Paginatitel",
-    "placeholder": "Homarr 🦞"
+    "label": "Paginatitel"
+  },
+  "metaTitle": {
+    "label": "Meta Titel"
   },
   "logo": {
     "label": "Logo"
@@ -13,8 +15,8 @@
     "label": "Achtergrond"
   },
   "customCSS": {
-    "label": "Eigen CSS",
-    "placeholder": "Eigen CSS wordt als laatste uitgevoerd"
+    "label": "Aangepaste CSS",
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Indienen"

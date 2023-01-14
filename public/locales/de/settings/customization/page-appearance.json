@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "Seiten Titel",
-    "placeholder": "Homarr 🦞"
+    "label": "Seiten Titel"
+  },
+  "metaTitle": {
+    "label": "Meta Titel"
   },
   "logo": {
     "label": "Logo"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "Benutzerdefiniertes CSS",
-    "placeholder": "Benutzerdefiniertes CSS wird zuletzt ausgeführt"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Absenden"

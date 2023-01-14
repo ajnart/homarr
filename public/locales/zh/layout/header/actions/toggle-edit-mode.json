@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "进入编辑模式",
+        "enabled": "退出并保存"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    }
+}
