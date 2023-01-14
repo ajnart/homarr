@@ -5,8 +5,8 @@
         "enabled": "Salir y Guardar"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Modo edición activado para el tamaño <1>{{size}}</1>",
+        "text": "Puedes ajustar y configurar tus apps ahora. Los cambios <strong>no son guardados</strong> hasta que salgas del modo edición"
     },
     "screenSizes": {
         "small": "pequeño",
