@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Vreme",
-    "description": "Iskanje trenutnega vremena na vaši lokaciji",
+    "description": "",
     "settings": {
-      "title": "Nastavitve za integracijo vremena",
+      "title": "",
       "displayInFahrenheit": {
         "label": "Prikaz v Fahrenheitu"
       },
