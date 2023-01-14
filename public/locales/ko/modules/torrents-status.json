@@ -39,8 +39,8 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "지원되는 다운로드 클라이언트를 찾을 수 없습니다!",
-        "text": "현재 다운로드를 보려면 다운로드 서비스를 추가하세요"
+        "title": "",
+        "text": ""
       },
       "generic": {
         "title": "",
