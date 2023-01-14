@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "קבוצת דיון",
-    "description": ""
+    "description": "מאפשר לך להציג ולנהל את מופע Usenet שלך."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "לא נמצאו לקוחות הורדה נתמכים!",
-        "text": ""
+        "text": "הוסף לקוח הורדה נתמך של Usenet כדי להציג את ההורדות הנוכחיות שלך"
       }
     }
   },
