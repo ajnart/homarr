@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "Carica configurazione",
+    "label": "",
     "loadingNew": "Caricamento della configurazione...",
-    "pleaseWait": "Attendere fino al caricamento della nuova configurazione"
+    "pleaseWait": ""
   },
   "modal": {
     "title": "Scegli il nome della nuova configurazione",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "Caricamento configurazione",
-      "text": "Trascina qui i file per caricare una configurazione. Solo file JSON supportati."
+      "text": ""
     },
     "reject": {
       "title": "Caricamento Drag and Drop rifiutato",
-      "text": "Formato file non supportato. Caricare solo file JSON."
+      "text": ""
     }
   }
 }
