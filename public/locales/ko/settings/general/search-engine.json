@@ -2,7 +2,7 @@
   "title": "검색 엔진",
   "configurationName": "",
   "tips": {
-    "generalTip": "YouTube 또는 Torrent에서 검색하려면 각각 검색어 앞에 !yt 및 !t 접두사를 사용하십시오.",
+    "generalTip": "",
     "placeholderTip": "%s는 쿼리의 자리 표시자로 사용할 수 있습니다."
   },
   "customEngine": {
