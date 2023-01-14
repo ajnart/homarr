@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "CSS personnalisé",
-    "placeholder": "Le CSS personnalisé sera exécuté en dernier"
+    "placeholder": ""
   },
   "buttons": {
     "submit": "Soumettre"
