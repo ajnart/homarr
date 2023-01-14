@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "天气",
-    "description": "查看你所在地区的当前天气",
+    "description": "",
     "settings": {
-      "title": "气象整合的设置",
+      "title": "",
       "displayInFahrenheit": {
         "label": "显示为华氏度"
       },
