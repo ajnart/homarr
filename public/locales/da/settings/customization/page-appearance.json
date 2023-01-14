@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Tilpasset CSS",
-    "placeholder": ""
+    "placeholder": "Brugerdefineret CSS vil blive anvendt sidst"
   },
   "buttons": {
     "submit": "Indsend"
