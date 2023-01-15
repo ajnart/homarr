@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "Search Bar",
-    "description": ""
+    "description": "A Search Bar Dat Allows U 2 Search Ur Custom Search Engine, Youtube, An Supportd Integrashuns."
   },
   "input": {
     "placeholder": "Search teh web..."
   },
-  "switched-to": "",
+  "switched-to": "Switchd 2",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Search..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "Youtube",
+      "description": "Search on Youtube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrents",
+      "description": "Search 4 Torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Search 4 Movies An TV Shows On Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "U Can Select Teh Search Bar Wif Teh Shortcut ",
+  "switchedSearchEngine": "Switchd 2 Searchin Wif {{searchEngine}}"
 }
