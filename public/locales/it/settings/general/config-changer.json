@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Eliminazione configurazione fallita",
           "message": "Eliminazione configurazione fallita"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
