@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "La suppression de la configuration a échoué",
           "message": "La suppression de la configuration a échoué"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
