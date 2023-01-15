@@ -1,21 +1,21 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Saev",
+  "about": "'bout",
   "cancel": "Cancel",
-  "close": "",
+  "close": "Cloes",
   "delete": "Deleet",
-  "ok": "",
+  "ok": "K",
   "edit": "Edit",
-  "version": "",
-  "changePosition": "",
+  "version": "Vershun",
+  "changePosition": "Change Posishun",
   "remove": "Remoev",
-  "removeConfirm": "",
+  "removeConfirm": "R U Sure Dat U Wants 2 Remoov {{item}} ?",
   "sections": {
     "settings": "Settingz",
     "dangerZone": "Dangr zoen"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Api key",
     "username": "Usernaem",
     "password": "Password"
   },
