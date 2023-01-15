@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Toont een lijst met torrents van ondersteunde Torrent-clients.",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor Torrent widget",
       "refreshInterval": {
         "label": "Verversingsinterval (in seconden)"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Geen ondersteunde Torrent clients gevonden!",
+        "text": "Voeg een ondersteunde Torrent-client toe om je huidige downloads te bekijken"
       },
       "generic": {
         "title": "Onbekende fout opgetreden",
-        "text": ""
+        "text": "Homarr kon niet communiceren met je Torrent-clients. Controleer je configuratie"
       }
     },
     "loading": {
