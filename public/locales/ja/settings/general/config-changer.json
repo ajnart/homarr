@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "コンフィグ削除の失敗",
           "message": "コンフィグ削除の失敗"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
