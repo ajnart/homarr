@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Brisanje konfiguracije ni uspelo",
           "message": "Brisanje konfiguracije ni uspelo"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
