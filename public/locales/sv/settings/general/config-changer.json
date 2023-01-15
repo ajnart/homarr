@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Radering av konfigurationen misslyckades",
           "message": "Radering av konfigurationen misslyckades"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
