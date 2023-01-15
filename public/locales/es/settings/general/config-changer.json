@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Error en el borrado de la configuración",
           "message": "Error en el borrado de la configuración"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
