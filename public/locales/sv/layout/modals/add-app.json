@@ -33,30 +33,30 @@
 		},
 		"statusCodes": {
 			"label": "HTTP-statuskoder",
-			"description": ""
+			"description": "HTTP-statuskoder som anses vara online."
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": ""
+			"description": "Ikonen som kommer att visas på instrumentpanelen."
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "Integrationskonfiguration",
-			"description": "",
+			"description": "Integrationskonfigurationen som kommer att användas för att ansluta till din app.",
 			"placeholder": "Välj en integration",
 			"defined": "Definierad",
 			"undefined": "Odefinierad",
 			"public": "Publik",
 			"private": "Privat",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"explanationPrivate": "En privat hemlighet skickas endast en gång till servern. När webbläsaren har uppdaterat sidan kommer den aldrig skickas igen.",
+			"explanationPublic": "En offentlig hemlighet kommer alltid att skickas till klienten och är tillgänglig över API. Det bör inte innehålla några konfidentiella värden som användarnamn, lösenord, tokens, certifikat och liknande!"
 		},
 		"secrets": {
 			"description": "För att uppdatera en hemlighet, ange ett värde och klicka på knappen Spara. För att ta bort en hemlighet, använd knappen rensa.",
-			"warning": "",
+			"warning": "Dina autentiseringsuppgifter fungerar som åtkomst till dina integrationer och du bör <strong>aldrig</strong> dela dem med någon annan. Homarr-teamet kommer aldrig att be om autentiseringsuppgifter. Se till att <strong>lagra och hantera dina hemligheter på ett säkert sätt</strong>.",
 			"clear": "Rensa hemlighet",
 			"save": "Spara hemlighet",
 			"update": "Uppdatera hemlighet"
