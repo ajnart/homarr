@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Weafr",
-    "description": "",
+    "description": "Displays Teh Current Weathr Informashun Ov Set Locashun.",
     "settings": {
-      "title": "",
+      "title": "Settings 4 Weathr Widget",
       "displayInFahrenheit": {
         "label": "Display in Fahrenheit"
       },
