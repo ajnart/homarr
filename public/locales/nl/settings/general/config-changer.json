@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "",
+    "label": "Configuratiewisselaar",
     "loadingNew": "Uw configuratie wordt geladen...",
-    "pleaseWait": ""
+    "pleaseWait": "Wacht tot uw nieuwe configuratie is geladen!"
   },
   "modal": {
     "title": "Kies de naam van uw nieuwe configuratie",
@@ -60,11 +60,11 @@
     },
     "accept": {
       "title": "Configuratie Upload",
-      "text": ""
+      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON-bestanden."
     },
     "reject": {
       "title": "Drag & Drop Upload afgewezen",
-      "text": ""
+      "text": "Dit bestandsformaat wordt niet ondersteund. Upload alleen JSON-bestanden."
     }
   }
 }
