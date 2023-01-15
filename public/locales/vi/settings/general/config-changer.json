@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Xoá cấu hình thất bại",
           "message": "Xoá cấu hình thất bại"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
