@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Config deleet faild",
           "message": "Config deleet faild"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
