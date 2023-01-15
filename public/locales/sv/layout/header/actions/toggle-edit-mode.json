@@ -1,5 +1,5 @@
 {
-    "description": "",
+    "description": "I redigeringsläge kan du justera rutor och konfigurera appar. Ändringar sparas inte förrän du avslutar redigeringsläget.",
     "button": {
         "disabled": "Gå till redigeringsläge",
         "enabled": "Avsluta och spara"
