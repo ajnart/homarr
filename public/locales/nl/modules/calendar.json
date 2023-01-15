@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Kalender",
-    "description": "",
+    "description": "Toont een kalender met komende releases, van ondersteunde integraties.",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor Kalender widget",
       "sundayStart": {
         "label": "Begin de week op zondag"
       },
