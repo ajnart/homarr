@@ -9,17 +9,6 @@ export const useDeleteConfigMutation = (configName: string) => {
   return useMutation({
     mutationKey: ['configs/delete', { configName }],
     mutationFn: () => fetchDeletion(configName),
-    onSuccess() {
-      showNotification({
-        title: t('buttons.delete.notifications.deleted.title'),
-        icon: <IconCheck />,
-        color: 'green',
-        autoClose: 1500,
-        radius: 'md',
-        message: t('buttons.delete.notifications.deleted.message'),
-      });
-      // TODO: set config to default config and use fallback config if necessary
-    },
     onError() {
       showNotification({
         title: t('buttons.delete.notifications.deleteFailed.title'),

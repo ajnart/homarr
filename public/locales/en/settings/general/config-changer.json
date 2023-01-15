@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Config delete failed",
           "message": "Config delete failed"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Default config can't be deleted",
+          "message": "Configuration was not deleted from the file system"
         }
       }
     },

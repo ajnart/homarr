@@ -27,6 +27,12 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
     }
     axios.put(`/api/configs/${name}`, { ...config });
   },
+  removeConfig: (name: string) => {
+    set((old) => ({
+      ...old,
+      configs: old.configs.filter((x) => x.value.configProperties.name !== name),
+    }));
+  },
   updateConfig: async (
     name,
     updateCallback: (previous: ConfigType) => ConfigType,
@@ -72,6 +78,7 @@ interface UseConfigStoreType {
     config: ConfigType,
     shouldSaveConfigToFileSystem: boolean
   ) => Promise<void>;
+  removeConfig: (name: string) => void;
   updateConfig: (
     name: string,
     updateCallback: (previous: ConfigType) => ConfigType,

@@ -136,6 +136,13 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
     });
   }
 
+  if (slug.toLowerCase() === 'default') {
+    Consola.error('Rejected config deletion because default configuration can\'t be deleted');
+    return res.status(403).json({
+      message: 'Default config can\'t be deleted',
+    });
+  }
+
   // Loop over all the files in the /data/configs directory
   // Get all the configs in the /data/configs folder
   // All the files that end in ".json"

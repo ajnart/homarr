@@ -1,9 +1,11 @@
 import { ActionIcon, Center, createStyles, Flex, Text, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconCopy, IconDownload, IconTrash } from '@tabler/icons';
+import { showNotification } from '@mantine/notifications';
+import { IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons';
 import fileDownload from 'js-file-download';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
 import { useDeleteConfigMutation } from '../../../../tools/config/mutations/useDeleteConfigMutation';
 import Tip from '../../../layout/Tip';
 import { CreateConfigCopyModal } from './CreateCopyModal';
@@ -12,6 +14,7 @@ export default function ConfigActions() {
   const { t } = useTranslation(['settings/general/config-changer', 'settings/common']);
   const [createCopyModalOpened, createCopyModal] = useDisclosure(false);
   const { config } = useConfigContext();
+  const { removeConfig } = useConfigStore();
   const { mutateAsync } = useDeleteConfigMutation(config?.configProperties.name ?? 'default');
 
   if (!config) return null;
@@ -22,7 +25,26 @@ export default function ConfigActions() {
   };
 
   const handleDeletion = async () => {
-    await mutateAsync();
+    const response = await mutateAsync();
+
+    if (response.message) {
+      showNotification({
+        title: t('buttons.delete.notifications.deleteFailedDefaultConfig.title'),
+        message: t('buttons.delete.notifications.deleteFailedDefaultConfig.message'),
+      });
+      return;
+    }
+
+    showNotification({
+      title: t('buttons.delete.notifications.deleted.title'),
+      icon: <IconCheck />,
+      color: 'green',
+      autoClose: 1500,
+      radius: 'md',
+      message: t('buttons.delete.notifications.deleted.message'),
+    });
+
+    removeConfig(config?.configProperties.name ?? 'default');
   };
 
   const { classes } = useStyles();
