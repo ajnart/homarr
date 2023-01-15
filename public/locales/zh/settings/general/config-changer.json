@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "配置删除失败",
           "message": "配置删除失败"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
