@@ -1,16 +1,16 @@
 {
-    "description": "",
+    "description": "In Edit Mode, U Can Adjust Tilez An Configure Apps. Changez R Not Savd Til U Exit Edit Mode.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Entr Edit Mode",
+        "enabled": "Exit An Save"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Edit Mode Iz Enabld 4  <1>{{size}}</1> Size",
+        "text": "U Can Adjust An Configure Ur Apps Nao. Changez R <strong>Not Savd</strong> Til U Exit Edit Mode"
     },
     "screenSizes": {
-        "small": "",
-        "medium": "",
-        "large": ""
+        "small": "small",
+        "medium": "medium",
+        "large": "large"
     }
 }
