@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "",
           "message": ""
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
