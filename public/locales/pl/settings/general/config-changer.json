@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Nie udało się usunąć konfiguracji",
           "message": "Nie udało się usunąć konfiguracji"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
