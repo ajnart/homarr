@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Configuratie verwijderen mislukt",
           "message": "Configuratie verwijderen mislukt"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
