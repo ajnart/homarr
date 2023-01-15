@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Sletning af konfiguration mislykkedes",
           "message": "Sletning af konfiguration mislykkedes"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
