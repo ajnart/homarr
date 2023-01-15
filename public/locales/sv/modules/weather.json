@@ -3,7 +3,7 @@
     "name": "Väder",
     "description": "Visar aktuell väderinformation för en bestämd plats.",
     "settings": {
-      "title": "",
+      "title": "Inställningar för väderwidget",
       "displayInFahrenheit": {
         "label": "Visa i Fahrenheit"
       },
