@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dockah",
-    "description": ""
+    "description": "Allows U 2 Easily C An Manage All Ov Ur Dockr Containers."
   },
   "search": {
     "placeholder": "Search by contaneah or imaeg naym"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Add app",
+      "message": "Add App 2 Homarr"
     },
     "restart": {
       "title": "Restart"
@@ -49,32 +49,32 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Startin",
+      "end": "Startd"
     },
     "stop": {
-      "start": "",
+      "start": "Stoppin",
       "end": "Stopped"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Restartin",
+      "end": "Restartd"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Removin",
+      "end": "Removd"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Dockah integrashn faild",
-      "message": ""
+      "message": "Did U Forget 2 Mount Teh Dockr Socket?"
     },
     "unknownError": {
       "title": "Thar wuz an error"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Plz Only Add Wan App Or Service At Tiem!"
     }
   },
   "actionIcon": {
