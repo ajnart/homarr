@@ -2,7 +2,7 @@
   "title": "Zoekmachine",
   "configurationName": "Zoekmachine configuratie",
   "tips": {
-    "generalTip": "",
+    "generalTip": "Er zijn meerdere voorvoegsels die u kunt gebruiken! Door deze voor uw zoekopdracht toe te voegen worden de resultaten gefilterd. !s (Web), !t (Torrents), !y (YouTube), en !m (Media).",
     "placeholderTip": "%s kan worden gebruikt als plaatshouder voor de query."
   },
   "customEngine": {
