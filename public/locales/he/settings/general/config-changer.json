@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "נכשל במחיקת קובץ הגדרות",
           "message": "נכשל במחיקת קובץ הגדרות"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
