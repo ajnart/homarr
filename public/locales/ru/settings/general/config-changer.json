@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "Не удалось удалить конфигурацию",
           "message": "Не удалось удалить конфигурацию"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
