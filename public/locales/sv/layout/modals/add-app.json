@@ -9,11 +9,11 @@
 	"general": {
 		"appname": {
 			"label": "Appnamn",
-			"description": ""
+			"description": "Används för att visa appen på instrumentpanelen."
 		},
 		"internalAddress": {
 			"label": "Intern adress",
-			"description": ""
+			"description": "Appens interna IP-adress."
 		},
 		"externalAddress": {
 			"label": "Extern adress",
