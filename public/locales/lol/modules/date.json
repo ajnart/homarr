@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Date An Tiem",
+    "description": "Displays Teh Current Date An Tiem.",
     "settings": {
-      "title": "",
+      "title": "Settings 4 Date An Tiem Widget",
       "display24HourFormat": {
         "label": "Display fol tiem (24-hour)"
       }
