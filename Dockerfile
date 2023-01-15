@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.17
+FROM node:16-alpine
 WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
@@ -14,10 +14,8 @@ COPY package.json ./package.json
 COPY .next/standalone ./
 COPY .next/static ./.next/static
 
-RUN apk add --update nodejs npm 
-
 EXPOSE 7575
 
 ENV PORT 7575
 
-CMD env PORT=7575 node server.js
+CMD ["node", "server.js"]
