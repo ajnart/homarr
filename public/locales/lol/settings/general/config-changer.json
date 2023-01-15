@@ -1,8 +1,8 @@
 {
   "configSelect": {
-    "label": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Config Changr",
+    "loadingNew": "Loadin Ur Config...",
+    "pleaseWait": "Plz Wait Til Ur New Config Iz Loadd!"
   },
   "modal": {
     "title": "Chooz teh naym ov ur nu config",
@@ -10,7 +10,7 @@
       "configName": {
         "label": "Config naym",
         "validation": {
-          "required": ""
+          "required": "Config Naym Iz Requird"
         },
         "placeholder": "Ur nu config naym"
       },
@@ -22,12 +22,12 @@
         "message": "Config saved as {{configName}}"
       },
       "configCopied": {
-        "title": "",
-        "message": ""
+        "title": "Config Copid",
+        "message": "Config Copied az {{configName}}"
       },
       "configNotCopied": {
-        "title": "",
-        "message": ""
+        "title": "Unable 2 Copy Config",
+        "message": "Ur Config Wuz Not Copid As {{configName}}"
       }
     }
   },
@@ -59,12 +59,12 @@
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Configurashun Upload",
+      "text": "Drag Filez Her 2 Upload Config. Support 4 JSON Filez Only."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Drag An Drop Upload Rejectd",
+      "text": "Dis File Format Iz Not Supportd. Plz Only Upload JSON Filez."
     }
   }
 }
