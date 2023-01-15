@@ -17,19 +17,19 @@
 		},
 		"externalAddress": {
 			"label": "Extern adress",
-			"description": ""
+			"description": "URL som öppnas när du klickar på appen."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Öppna i ny flik",
-			"description": ""
+			"description": "Öppna appen i en ny flik istället för den nuvarande."
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Statuskontroll",
-			"description": ""
+			"description": "Kontrollerar om din app är online med en enkel HTTP(S) begäran."
 		},
 		"statusCodes": {
 			"label": "HTTP-statuskoder",
