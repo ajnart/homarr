@@ -43,6 +43,10 @@
         "deleteFailed": {
           "title": "설정 삭제 실패",
           "message": "설정 삭제 실패"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
