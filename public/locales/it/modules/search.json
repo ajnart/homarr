@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Barra di ricerca",
-    "description": ""
+    "description": "Una barra di ricerca che consente di cercare nel motore di ricerca personalizzato, YouTube e integrazioni supportate."
   },
   "input": {
     "placeholder": "Cerca sul web..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": ""
+      "description": "Cerca..."
     },
     "youtube": {
       "name": "Youtube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Cerca film e serie TV su Overseerr"
     }
   },
   "tip": "Puoi selezionare la barra di ricerca con la scorciatoia ",
