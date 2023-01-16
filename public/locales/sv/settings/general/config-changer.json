@@ -45,8 +45,8 @@
           "message": "Radering av konfigurationen misslyckades"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Standardkonfigurationen kan inte tas bort",
+          "message": "Konfigurationen togs inte bort från filsystemet"
         }
       }
     },
