@@ -45,18 +45,18 @@
 	"integration": {
 		"type": {
 			"label": "Configurazione integrazioni",
-			"description": "",
+			"description": "La configurazione dell'integrazione che verrà utilizzata per connettersi all'applicazione.",
 			"placeholder": "Seleziona un'integrazione",
 			"defined": "Definito",
 			"undefined": "Indefinito",
 			"public": "Pubblico",
 			"private": "Privato",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"explanationPrivate": "Un secret privato verrà inviato al server una sola volta. Una volta che il browser avrà aggiornato la pagina, non verrà mai inviato di nuovo.",
+			"explanationPublic": "Un secret pubblico sarà sempre inviato al client ed è accessibile tramite API. Non dovrebbe contenere dati sensibili come nomi utente, password, token, certificati e simili!"
 		},
 		"secrets": {
 			"description": "Per aggiornare un secret, inserisci un valore e fai clic sul pulsante Salva. Per rimuoverlo, usa il pulsante rimuovi.",
-			"warning": "",
+			"warning": "Le tue credenziali fungono da accesso per le tue integrazioni e non devi <strong>mai</strong> condividerle con nessuno. Il team ufficiale di Homarr non chiederà mai le credenziali. Assicurati di <strong>memorizzare e gestire i tuoi dati privati in modo sicuro</strong>.",
 			"clear": "Rimuovi secret",
 			"save": "Salva secret",
 			"update": "Aggiorna secret"
