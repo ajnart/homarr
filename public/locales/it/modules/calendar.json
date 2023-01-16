@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Calendario",
-    "description": "",
+    "description": "Mostra un calendario con le prossime versioni dalle integrazioni supportate.",
     "settings": {
-      "title": "",
+      "title": "Impostazioni per il widget Calendario",
       "sundayStart": {
         "label": "Inizia la settimana di domenica"
       },
