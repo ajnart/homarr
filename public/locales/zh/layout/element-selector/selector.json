@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "添加一个新的瓦片",
+        "title": "添加新磁贴",
         "text": ""
     },
-    "widgetDescription": "",
+    "widgetDescription": "小工具与你的应用程序互动，为你提供对应用程序的更多控制。它们在使用前通常需要额外的配置。",
     "goBack": "回到上一个步骤",
     "actionIcon": {
-        "tooltip": "增加一块瓦片"
+        "tooltip": "添加磁贴"
     }
 }
