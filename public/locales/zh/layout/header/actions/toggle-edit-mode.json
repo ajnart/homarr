@@ -1,16 +1,16 @@
 {
-    "description": "",
+    "description": "在编辑模式下，你可以调整磁贴和配置应用程序。在退出编辑模式之前不会保存更改。",
     "button": {
         "disabled": "进入编辑模式",
         "enabled": "退出并保存"
     },
     "popover": {
         "title": "",
-        "text": ""
+        "text": "现在你可以调整和配置你的应用程序，在退出编辑模式之前<strong>不会保存</strong>更改 。"
     },
     "screenSizes": {
-        "small": "",
-        "medium": "",
-        "large": ""
+        "small": "小",
+        "medium": "中",
+        "large": "大"
     }
 }
