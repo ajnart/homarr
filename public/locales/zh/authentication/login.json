@@ -14,7 +14,7 @@
   },
   "notifications": {
     "checking": {
-      "title": "正在验证密码",
+      "title": "检查你的密码",
       "message": "正在检查你的密码..."
     },
     "correct": {
