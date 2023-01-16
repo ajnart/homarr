@@ -1,9 +1,9 @@
 {
     "modal": {
         "title": "Aggiungi nuovo riquadro",
-        "text": ""
+        "text": "I tile sono l'elemento principale di Homarr. Sono utilizzati per visualizzare le tue app e altre informazioni. Puoi aggiungere tutti i tile che vuoi."
     },
-    "widgetDescription": "",
+    "widgetDescription": "I widget interagiscono con le applicazioni per fornire un maggior controllo. Normalmente richiedono configurazioni aggiuntive prima di essere utilizzati.",
     "goBack": "Torna indietro allo step precedente",
     "actionIcon": {
         "tooltip": "Aggiungi riquadro"
