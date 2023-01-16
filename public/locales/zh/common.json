@@ -1,13 +1,13 @@
 {
-  "save": "拯救",
+  "save": "保存",
   "about": "关于",
   "cancel": "取消",
   "close": "关闭",
   "delete": "删除",
-  "ok": "认可",
+  "ok": "确定",
   "edit": "编辑",
   "version": "版本",
-  "changePosition": "改变立场",
+  "changePosition": "改变位置",
   "remove": "移除",
   "removeConfirm": "",
   "sections": {
