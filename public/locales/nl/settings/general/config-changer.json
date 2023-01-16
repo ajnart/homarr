@@ -45,8 +45,8 @@
           "message": "Configuratie verwijderen mislukt"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Standaardconfiguratie kan niet worden verwijderd",
+          "message": "Configuratie is niet verwijderd uit het bestandssysteem"
         }
       }
     },
