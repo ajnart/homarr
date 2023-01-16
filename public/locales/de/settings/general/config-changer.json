@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "Konfigurationsloader",
+    "label": "Konfigurationslader",
     "loadingNew": "Ihre Konfiguration wird geladen...",
     "pleaseWait": "Bitte warten Sie, bis Ihre neue Konfiguration geladen ist!"
   },
@@ -45,8 +45,8 @@
           "message": "Löschung der Konfiguration fehlgeschlagen"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Die Standardkonfiguration kann nicht gelöscht werden",
+          "message": "Die Konfiguration wurde nicht vom System gelöscht"
         }
       }
     },
