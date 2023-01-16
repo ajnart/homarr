@@ -45,8 +45,8 @@
           "message": "Sletning af konfiguration mislykkedes"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Standardkonfiguration kan ikke slettes",
+          "message": "Konfigurationen blev ikke slettet fra filsystemet"
         }
       }
     },
