@@ -9,37 +9,37 @@
 	"general": {
 		"appname": {
 			"label": "Nome app",
-			"description": ""
+			"description": "Utilizzato per visualizzare l'app sulla dashboard."
 		},
 		"internalAddress": {
 			"label": "Indirizzo interno",
-			"description": ""
+			"description": "IP interno dell'app."
 		},
 		"externalAddress": {
 			"label": "Indirizzo esterno",
-			"description": ""
+			"description": "URL che verrà aperto nel browser al clic dell'app."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Apri in una nuova scheda",
-			"description": ""
+			"description": "Apri l'app in una nuova scheda invece di quella attuale."
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Status checker",
-			"description": ""
+			"description": "Verifica se l'applicazione è online utilizzando una semplice richiesta HTTP(S)."
 		},
 		"statusCodes": {
 			"label": "Codici di stato HTTP",
-			"description": ""
+			"description": "Gli status code HTTP considerati online."
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "Icona App",
-			"description": ""
+			"description": "L'icona che verrà visualizzata sulla dashboard."
 		}
 	},
 	"integration": {
