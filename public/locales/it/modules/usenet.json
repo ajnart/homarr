@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Consente di visualizzare e gestire la propria istanza Usenet."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Nessun client di download supportato trovato!",
-        "text": ""
+        "text": "Aggiungi un client di download Usenet supportato per visualizzare i download attuali"
       }
     }
   },
