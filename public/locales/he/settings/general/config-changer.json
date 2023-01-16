@@ -45,8 +45,8 @@
           "message": "נכשל במחיקת קובץ הגדרות"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "לא ניתן למחוק את תצורת ברירת המחדל",
+          "message": "התצורה לא נמחקה ממערכת הקבצים"
         }
       }
     },
