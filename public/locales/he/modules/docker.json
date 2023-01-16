@@ -67,7 +67,7 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "שילוב docker נכשל",
+      "title": "שילוב דוקר נכשל",
       "message": "האם שכחת לטעון את הדוקר?"
     },
     "unknownError": {
@@ -78,6 +78,6 @@
     }
   },
   "actionIcon": {
-    "tooltip": "Docker"
+    "tooltip": "דוקר"
   }
 }
