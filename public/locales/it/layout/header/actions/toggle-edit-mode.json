@@ -1,12 +1,12 @@
 {
-    "description": "",
+    "description": "In Edit Mode, è possibile regolare i tile e configurare le applicazioni. Le modifiche non vengono salvate fino all'uscita dalla Edit Mode.",
     "button": {
         "disabled": "Attiva Edit Mode",
         "enabled": "Salva ed esci"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Edit mode abilitata per dimensione <1>{{size}}</1>",
+        "text": "Ora è possibile regolare e configurare le applicazioni. Le modifiche <strong>non verranno salvate</strong> finché non si esce dalla edit mode"
     },
     "screenSizes": {
         "small": "piccolo",
