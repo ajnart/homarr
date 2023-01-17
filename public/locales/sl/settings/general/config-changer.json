@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "Izberite ime vaše nove konfiguracije",
-    "form": {
-      "configName": {
-        "label": "Ime konfiguracije",
-        "validation": {
-          "required": ""
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Vaše novo ime konfiguracije"
+        "submitButton": ""
       },
-      "submitButton": "Potrdi"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Konfiguracija je shranjena",
-        "message": "Konfiguracija shranjena kot {{configName}}"
-      },
-      "configCopied": {
-        "title": "",
-        "message": ""
-      },
-      "configNotCopied": {
-        "title": "",
-        "message": ""
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
