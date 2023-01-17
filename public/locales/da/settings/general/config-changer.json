@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "Konfigurationsskifter",
+    "description": "",
     "loadingNew": "Indlæser din konfiguration...",
     "pleaseWait": "Vent venligst, indtil din nye konfiguration er indlæst!"
   },
   "modal": {
-    "title": "Vælg navnet på din nye konfiguration",
-    "form": {
-      "configName": {
-        "label": "Konfigurationens navn",
-        "validation": {
-          "required": "Konfigurationsnavn er påkrævet"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Dit nye konfigurationsnavn"
+        "submitButton": ""
       },
-      "submitButton": "Bekræft"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Konfigurationen gemt",
-        "message": "Konfigurationen gemt som {{configName}}"
-      },
-      "configCopied": {
-        "title": "Konfigurationen kopieret",
-        "message": "Konfigurationen gemt som {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Kan ikke kopiere konfigurationen",
-        "message": "Din konfiguration blev ikke kopieret som {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
