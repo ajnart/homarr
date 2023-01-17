@@ -3,7 +3,7 @@
     "name": "Météo",
     "description": "Affiche la météo actuelle d'un emplacement préconfiguré.",
     "settings": {
-      "title": "",
+      "title": "Paramètres du widget météo",
       "displayInFahrenheit": {
         "label": "Affichage en Fahrenheit"
       },
