@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Affiche une liste de torrents provenant de clients Torrent pris en charge.",
     "settings": {
-      "title": "",
+      "title": "Paramètres du widget Torrent",
       "refreshInterval": {
         "label": "Intervalle d'actualisation en secondes"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Aucun client Torrent supporté n'a été trouvé !",
+        "text": "Ajouter un client Torrent pris en charge pour voir vos téléchargements en cours"
       },
       "generic": {
         "title": "Une erreur inattendue s'est produite",
-        "text": ""
+        "text": "Homarr n'a pas pu communiquer avec vos clients Torrent. Veuillez vérifier votre configuration"
       }
     },
     "loading": {
