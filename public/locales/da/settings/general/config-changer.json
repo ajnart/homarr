@@ -1,44 +1,45 @@
 {
   "configSelect": {
     "label": "Konfigurationsskifter",
-    "description": "",
+    "description": "{{configCount}} konfigurationer er tilgængelige",
     "loadingNew": "Indlæser din konfiguration...",
     "pleaseWait": "Vent venligst, indtil din nye konfiguration er indlæst!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Vælg navnet på din nye konfiguration",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Konfigurationens navn",
           "validation": {
-            "required": ""
+            "required": "Konfigurationsnavn er påkrævet",
+            "notUnique": "Konfigurationsnavnet er allerede i brug"
           },
-          "placeholder": ""
+          "placeholder": "Dit nye konfigurationsnavn"
         },
-        "submitButton": ""
+        "submitButton": "Bekræft"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurationen gemt",
+          "message": "Konfigurationen gemt som {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurationen kopieret",
+          "message": "Konfigurationen kopieret som {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Kan ikke kopiere konfigurationen",
+          "message": "Din konfiguration blev ikke kopieret som {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Bekræft sletning af din konfiguration",
+      "warningText": "Du er ved at slette '<b>{{configName}}</b>'",
+      "text": "Bemærk venligst, at sletningen ikke kan fortrydes, og at dine data vil gå tabt permanent. Når du klikker på denne knap, slettes filen permanent fra din disk. Sørg for at oprette en passende sikkerhedskopi af din konfiguration.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Ja, slet '<b>{{configName}}</b>'"
       }
     }
   },
