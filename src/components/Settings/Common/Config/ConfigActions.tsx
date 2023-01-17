@@ -13,6 +13,7 @@ import { showNotification } from '@mantine/notifications';
 import { IconAlertTriangle, IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons';
 import fileDownload from 'js-file-download';
 import { Trans, useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useDeleteConfigMutation } from '../../../../tools/config/mutations/useDeleteConfigMutation';
@@ -20,6 +21,7 @@ import Tip from '../../../layout/Tip';
 import { CreateConfigCopyModal } from './CreateCopyModal';
 
 export default function ConfigActions() {
+  const router = useRouter();
   const { t } = useTranslation(['settings/general/config-changer', 'settings/common', 'common']);
   const [createCopyModalOpened, createCopyModal] = useDisclosure(false);
   const { config } = useConfigContext();
@@ -79,6 +81,8 @@ export default function ConfigActions() {
         });
 
         removeConfig(config?.configProperties.name ?? 'default');
+
+        router.push('/');
       },
     });
   };

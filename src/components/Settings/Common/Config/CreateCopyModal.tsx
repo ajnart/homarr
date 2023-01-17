@@ -1,6 +1,8 @@
 import { Button, Group, Modal, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
 import { useCopyConfigMutation } from '../../../../tools/config/mutations/useCopyConfigMutation';
 
 interface CreateConfigCopyModalProps {
@@ -14,6 +16,7 @@ export const CreateConfigCopyModal = ({
   closeModal,
   initialConfigName,
 }: CreateConfigCopyModalProps) => {
+  const { configs } = useConfigStore();
   const { t } = useTranslation(['settings/general/config-changer']);
 
   const form = useForm({
@@ -21,8 +24,21 @@ export const CreateConfigCopyModal = ({
       configName: initialConfigName,
     },
     validate: {
-      configName: (v) => (!v ? t('modal.form.configName.validation.required') : null),
+      configName: (value) => {
+        if (!value) {
+          return t('modal.copy.form.configName.validation.required');
+        }
+
+        const configNames = configs.map((x) => x.value.configProperties.name);
+        if (configNames.includes(value)) {
+          return t('modal.copy.form.configName.validation.notUnique');
+        }
+
+        return undefined;
+      },
     },
+    validateInputOnChange: true,
+    validateInputOnBlur: true,
   });
 
   const { mutateAsync } = useCopyConfigMutation(form.values.configName);
@@ -44,16 +60,18 @@ export const CreateConfigCopyModal = ({
       radius="md"
       opened={opened}
       onClose={handleClose}
-      title={<Title order={4}>{t('modal.title')}</Title>}
+      title={<Title order={4}>{t('modal.copy.title')}</Title>}
     >
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <TextInput
-          label={t('modal.form.configName.label')}
-          placeholder={t('modal.form.configName.placeholder')}
+          label={t('modal.copy.form.configName.label')}
+          placeholder={t('modal.copy.form.configName.placeholder')}
           {...form.getInputProps('configName')}
         />
         <Group position="right" mt="md">
-          <Button type="submit">{t('modal.form.submitButton')}</Button>
+          <Button type="submit" disabled={!form.isValid()}>
+            {t('modal.copy.form.submitButton')}
+          </Button>
         </Group>
       </form>
     </Modal>

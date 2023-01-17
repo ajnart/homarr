@@ -12,7 +12,8 @@
         "configName": {
           "label": "Config name",
           "validation": {
-            "required": "Config name is required"
+            "required": "Config name is required",
+            "notUnique": "Config name is already in use"
           },
           "placeholder": "Your new config name"
         },
