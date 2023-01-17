@@ -1,44 +1,45 @@
 {
   "configSelect": {
     "label": "מחליף הגדרות",
-    "description": "",
+    "description": "{{configCount}} תצורות זמינות",
     "loadingNew": "טוען הגדרות...",
     "pleaseWait": "אנא המתן עד לטעינת התצורה החדשה שלך!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "בחר/י את שם התצורה החדשה שלך",
       "form": {
         "configName": {
-          "label": "",
+          "label": "שם תצורה",
           "validation": {
-            "required": ""
+            "required": "נדרש שם תצורה",
+            "notUnique": "שם התצורה כבר בשימוש"
           },
-          "placeholder": ""
+          "placeholder": "שם התצורה החדש שלך"
         },
-        "submitButton": ""
+        "submitButton": "לאשר"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "התצורה נשמרה",
+          "message": "התצורה נשמרה בשם {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "התצורה הועתקה",
+          "message": "התצורה הועתקה בשם {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "לא ניתן להעתיק את התצורה",
+          "message": "התצורה שלך לא הועתקה בשם {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "אשר את מחיקת התצורה שלך",
+      "warningText": "אתה עומד למחוק את ' <b>{{configName}}</b>'",
+      "text": "שים לב שהמחיקה לא ניתנת לשינוי והנתונים שלך יאבדו לצמיתות. לאחר לחיצה על כפתור זה, הקובץ יימחק לצמיתות מהדיסק שלך. הקפד ליצור גיבוי מתאים של התצורה שלך.",
       "buttons": {
-        "confirm": ""
+        "confirm": "כן, למחוק ' <b>{{configName}}</b>'"
       }
     }
   },
