@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "",
-    "form": {
-      "configName": {
-        "label": "",
-        "validation": {
-          "required": ""
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": ""
+        "submitButton": ""
       },
-      "submitButton": ""
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "",
-        "message": ""
-      },
-      "configCopied": {
-        "title": "",
-        "message": ""
-      },
-      "configNotCopied": {
-        "title": "",
-        "message": ""
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
