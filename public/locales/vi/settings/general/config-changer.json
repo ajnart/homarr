@@ -12,7 +12,8 @@
         "configName": {
           "label": "",
           "validation": {
-            "required": ""
+            "required": "",
+            "notUnique": ""
           },
           "placeholder": ""
         },
