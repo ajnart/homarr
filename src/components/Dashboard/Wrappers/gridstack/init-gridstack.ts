@@ -1,5 +1,5 @@
 import { GridItemHTMLElement, GridStack, GridStackNode } from 'fily-publish-gridstack';
-import { MutableRefObject, RefObject } from 'react';
+import { MutableRefObject, RefObject, useEffect } from 'react';
 import { AppType } from '../../../../types/app';
 import { ShapeType } from '../../../../types/shape';
 import { IWidget } from '../../../../widgets/widgets';
@@ -45,7 +45,7 @@ export const initializeGridstack = (
   );
   const grid = newGrid.current;
   // Must be used to update the column count after the initialization
-  grid.column(columnCount);
+  grid.column(columnCount, 'none');
 
   // Add listener for moving items around in a wrapper
   grid.on('change', (_, el) => {

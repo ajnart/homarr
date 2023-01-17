@@ -1,6 +1,5 @@
 import { useMantineTheme } from '@mantine/core';
 import create from 'zustand';
-import { useConfigContext } from '../../../../config/provider';
 
 export const useGridstackStore = create<GridstackStoreType>((set, get) => ({
   mainAreaWidth: null,

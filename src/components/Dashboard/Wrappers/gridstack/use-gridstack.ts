@@ -232,6 +232,11 @@ export const useGridstack = (
 
   // initialize the gridstack
   useEffect(() => {
+    const removeEventHandlers = () => {
+      gridRef.current?.off('change');
+      gridRef.current?.off('added');
+    };
+
     const tilesWithUnknownLocation: TileWithUnknownLocation[] = [];
     initializeGridstack(
       areaType,
@@ -250,7 +255,7 @@ export const useGridstack = (
         onAdd,
       }
     );
-    if (!configName) return;
+    if (!configName) return removeEventHandlers;
     updateConfig(configName, (prev) => ({
       ...prev,
       apps: prev.apps.map((app) => {
@@ -300,6 +305,7 @@ export const useGridstack = (
         };
       }),
     }));
+    return removeEventHandlers;
   }, [items, wrapperRef.current, widgets, wrapperColumnCount]);
 
   return {
