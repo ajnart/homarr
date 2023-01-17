@@ -1,7 +1,7 @@
 {
   "configSelect": {
     "label": "Konfigurationsväxlare",
-    "description": "",
+    "description": "{{configCount}} konfigurationer finns tillgängliga",
     "loadingNew": "Laddar din konfiguration...",
     "pleaseWait": "Vänta tills din nya konfiguration är laddad!"
   },
@@ -13,7 +13,7 @@
           "label": "",
           "validation": {
             "required": "",
-            "notUnique": ""
+            "notUnique": "Konfigurationens namn används redan"
           },
           "placeholder": ""
         },
