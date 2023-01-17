@@ -75,6 +75,7 @@ export const useGridstack = (
   }
 
   useEffect(() => {
+    if (areaType === 'sidebar') return;
     const widgetWidth = mainAreaWidth / wrapperColumnCount;
     // widget width is used to define sizes of gridstack items within global.scss
     root.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
