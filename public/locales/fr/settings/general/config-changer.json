@@ -46,7 +46,7 @@
         },
         "deleteFailedDefaultConfig": {
           "title": "La configuration par défaut ne peut pas être supprimée",
-          "message": ""
+          "message": "La configuration n'a pas pu être supprimée du système de fichiers"
         }
       }
     },
@@ -64,7 +64,7 @@
     },
     "accept": {
       "title": "Téléversement de la configuration",
-      "text": ""
+      "text": "Faites glisser les fichiers ici pour importer votre configuration. Supporte uniquement les fichiers JSON."
     },
     "reject": {
       "title": "Upload par glisser-déposer rejeté",
