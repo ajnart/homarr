@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "새로운 설정의 이름을 입력하세요",
-    "form": {
-      "configName": {
-        "label": "설정 이름",
-        "validation": {
-          "required": ""
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "새로운 설정 이름"
+        "submitButton": ""
       },
-      "submitButton": "확인"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "설정 저장됨",
-        "message": "{{configName}} 로 설정 저장됨"
-      },
-      "configCopied": {
-        "title": "",
-        "message": ""
-      },
-      "configNotCopied": {
-        "title": "",
-        "message": ""
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
