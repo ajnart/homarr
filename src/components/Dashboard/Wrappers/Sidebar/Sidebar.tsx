@@ -13,18 +13,10 @@ export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSideba
   const {
     cx,
     classes: { card: cardClass },
-  } = useCardStyles(false);
+  } = useCardStyles(true);
 
   return (
-    <Card
-      p={0}
-      m={0}
-      radius="lg"
-      className={cardClass}
-      style={{ borderStyle: 'dashed' }}
-      w={300}
-      withBorder
-    >
+    <Card p={0} m={0} radius="lg" className={cardClass} withBorder>
       {isGridstackReady && <SidebarInner location={location} />}
     </Card>
   );
@@ -50,7 +42,9 @@ const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
       className="grid-stack grid-stack-sidebar"
       style={{
         transitionDuration: '0s',
+        minWidth: 256,
         height: '100%',
+        width: '100%',
       }}
       data-sidebar={location}
       // eslint-disable-next-line react/no-unknown-property
