@@ -1,9 +1,18 @@
-import { ActionIcon, Center, createStyles, Flex, Text, useMantineTheme } from '@mantine/core';
+import {
+  ActionIcon,
+  Alert,
+  Center,
+  createStyles,
+  Flex,
+  Text,
+  useMantineTheme,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { openConfirmModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons';
+import { IconAlertTriangle, IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons';
 import fileDownload from 'js-file-download';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useDeleteConfigMutation } from '../../../../tools/config/mutations/useDeleteConfigMutation';
@@ -11,7 +20,7 @@ import Tip from '../../../layout/Tip';
 import { CreateConfigCopyModal } from './CreateCopyModal';
 
 export default function ConfigActions() {
-  const { t } = useTranslation(['settings/general/config-changer', 'settings/common']);
+  const { t } = useTranslation(['settings/general/config-changer', 'settings/common', 'common']);
   const [createCopyModalOpened, createCopyModal] = useDisclosure(false);
   const { config } = useConfigContext();
   const { removeConfig } = useConfigStore();
@@ -24,26 +33,54 @@ export default function ConfigActions() {
   };
 
   const handleDeletion = async () => {
-    const response = await mutateAsync();
+    openConfirmModal({
+      title: t('modal.confirmDeletion.title'),
+      children: (
+        <>
+          <Alert icon={<IconAlertTriangle />} mb="md">
+            <Trans
+              i18nKey="settings/general/config-changer:modal.confirmDeletion.warningText"
+              values={{ configName: config.configProperties.name ?? 'default' }}
+              components={{ b: <b />, code: <code /> }}
+            />
+          </Alert>
+          <Text>{t('modal.confirmDeletion.text')}</Text>
+        </>
+      ),
+      labels: {
+        confirm: (
+          <Trans
+            i18nKey="settings/general/config-changer:modal.confirmDeletion.buttons.confirm"
+            values={{ configName: config.configProperties.name ?? 'default' }}
+            components={{ b: <b />, code: <code /> }}
+          />
+        ),
+        cancel: t('common:cancel'),
+      },
+      zIndex: 201,
+      onConfirm: async () => {
+        const response = await mutateAsync();
 
-    if (response.message) {
-      showNotification({
-        title: t('buttons.delete.notifications.deleteFailedDefaultConfig.title'),
-        message: t('buttons.delete.notifications.deleteFailedDefaultConfig.message'),
-      });
-      return;
-    }
+        if (response.message) {
+          showNotification({
+            title: t('buttons.delete.notifications.deleteFailedDefaultConfig.title'),
+            message: t('buttons.delete.notifications.deleteFailedDefaultConfig.message'),
+          });
+          return;
+        }
 
-    showNotification({
-      title: t('buttons.delete.notifications.deleted.title'),
-      icon: <IconCheck />,
-      color: 'green',
-      autoClose: 1500,
-      radius: 'md',
-      message: t('buttons.delete.notifications.deleted.message'),
+        showNotification({
+          title: t('buttons.delete.notifications.deleted.title'),
+          icon: <IconCheck />,
+          color: 'green',
+          autoClose: 1500,
+          radius: 'md',
+          message: t('buttons.delete.notifications.deleted.message'),
+        });
+
+        removeConfig(config?.configProperties.name ?? 'default');
+      },
     });
-
-    removeConfig(config?.configProperties.name ?? 'default');
   };
 
   const { classes } = useStyles();
