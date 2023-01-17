@@ -1,6 +1,6 @@
 {
   "title": "Bienvenue !",
-  "text": "",
+  "text": "Veuillez entrer votre mot de passe",
   "form": {
     "fields": {
       "password": {
