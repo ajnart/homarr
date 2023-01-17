@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "Config Changr",
+    "description": "",
     "loadingNew": "Loadin Ur Config...",
     "pleaseWait": "Plz Wait Til Ur New Config Iz Loadd!"
   },
   "modal": {
-    "title": "Chooz teh naym ov ur nu config",
-    "form": {
-      "configName": {
-        "label": "Config naym",
-        "validation": {
-          "required": "Config Naym Iz Requird"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Ur nu config naym"
+        "submitButton": ""
       },
-      "submitButton": "Confirm"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Config saved",
-        "message": "Config saved as {{configName}}"
-      },
-      "configCopied": {
-        "title": "Config Copid",
-        "message": "Config Copied az {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Unable 2 Copy Config",
-        "message": "Ur Config Wuz Not Copid As {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
