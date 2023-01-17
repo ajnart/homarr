@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "מחליף הגדרות",
+    "description": "",
     "loadingNew": "טוען הגדרות...",
     "pleaseWait": "אנא המתן עד לטעינת התצורה החדשה שלך!"
   },
   "modal": {
-    "title": "בחירת שם קובץ הגדרות חדש",
-    "form": {
-      "configName": {
-        "label": "שם קובץ הגדרות",
-        "validation": {
-          "required": "נדרש שם קובץ הגדרות"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "שם קובץ הגדרות חדש"
+        "submitButton": ""
       },
-      "submitButton": "אישור"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "קובץ הגדרות נשמר",
-        "message": "קובץ הגדרות נשמר בשם  {{configName}}"
-      },
-      "configCopied": {
-        "title": "קובץ ההגדרות הועתק",
-        "message": "קובץ ההגדרות הועתק כ- {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "אין אפשרות להעתיק את קובץ ההגדרות",
-        "message": "קובץ ההגדרות לא נשמר כ- {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
