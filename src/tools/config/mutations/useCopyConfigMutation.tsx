@@ -40,6 +40,9 @@ const fetchCopy = async (configName: string, config: ConfigType | undefined) => 
     throw new Error('config is not defiend');
   }
 
+  const copiedConfig = config;
+  copiedConfig.configProperties.name = configName;
+
   const response = await fetch(`/api/configs/${configName}`, {
     method: 'PUT',
     headers: {

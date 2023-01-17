@@ -20,7 +20,6 @@ export default function ConfigActions() {
   if (!config) return null;
 
   const handleDownload = () => {
-    // TODO: remove secrets
     fileDownload(JSON.stringify(config, null, '\t'), `${config?.configProperties.name}.json`);
   };
 

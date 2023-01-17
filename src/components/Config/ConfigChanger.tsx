@@ -3,15 +3,17 @@ import { useToggle } from '@mantine/hooks';
 import { useQuery } from '@tanstack/react-query';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 
 export default function ConfigChanger() {
-  const { t } = useTranslation('settings/general/config-changer');
-  const { name: configName } = useConfigContext();
-  // const loadConfig = useConfigStore((x) => x.loadConfig);
+  const router = useRouter();
 
-  const { data: configs, isLoading, isError } = useConfigsQuery();
+  const { t } = useTranslation('settings/general/config-changer');
+  const { name: configName, setConfigName } = useConfigContext();
+
+  const { data: configs, isLoading } = useConfigsQuery();
   const [activeConfig, setActiveConfig] = useState(configName);
   const [isRefreshing, toggle] = useToggle();
 
@@ -22,14 +24,13 @@ export default function ConfigChanger() {
     });
     setActiveConfig(value);
     toggle();
-    // Use timeout to wait for the cookie to be set
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
+
+    router.push(`/${value}`);
+    setConfigName(value);
   };
 
   // If configlist is empty, return a loading indicator
-  if (isLoading || !configs || configs?.length === 0 || !configName) {
+  if (isLoading || !configs || configs.length === 0 || !configName) {
     return (
       <Tooltip label={"Loading your configs. This doesn't load in vercel."}>
         <Center>
@@ -43,6 +44,7 @@ export default function ConfigChanger() {
     <>
       <Select
         label={t('configSelect.label')}
+        description={t('configSelect.description', { configCount: configs.length })}
         value={activeConfig}
         onChange={onConfigChange}
         data={configs}
