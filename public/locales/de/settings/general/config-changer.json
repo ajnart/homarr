@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "Konfigurationslader",
+    "description": "",
     "loadingNew": "Ihre Konfiguration wird geladen...",
     "pleaseWait": "Bitte warten Sie, bis Ihre neue Konfiguration geladen ist!"
   },
   "modal": {
-    "title": "Wählen Sie den Namen für Ihre neue Konfiguration",
-    "form": {
-      "configName": {
-        "label": "Konfigurationsname",
-        "validation": {
-          "required": "Name der Konfiguration ist erforderlich"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Ihr neuer Konfigurationsname"
+        "submitButton": ""
       },
-      "submitButton": "Bestätigen"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Konfiguration gespeichert",
-        "message": "Konfiguration gespeichert als {{configName}}"
-      },
-      "configCopied": {
-        "title": "Konfiguration kopiert",
-        "message": "Konfiguration gespeichert als {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Konfiguration konnte nicht kopiert werden",
-        "message": "Ihre Konfiguration wurde nicht als {{configName}} kopiert"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
