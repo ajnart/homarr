@@ -45,7 +45,7 @@
           "message": "La suppression de la configuration a échoué"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
+          "title": "La configuration par défaut ne peut pas être supprimée",
           "message": ""
         }
       }
