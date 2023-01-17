@@ -1,6 +1,7 @@
 {
   "configSelect": {
     "label": "Config changer",
+    "description": "{{configCount}} configurations are available",
     "loadingNew": "Loading your config...",
     "pleaseWait": "Please wait until your new config is loaded!"
   },

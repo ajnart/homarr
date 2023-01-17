@@ -1,8 +1,12 @@
+import Consola from 'consola';
+
 import { ConfigType } from '../../types/config';
 import { getConfig } from './getConfig';
 
 export const getFrontendConfig = (name: string): ConfigType => {
   const config = getConfig(name);
+
+  Consola.info(`Requested frontend content of configuration '${name}'`);
 
   return {
     ...config,
