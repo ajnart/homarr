@@ -137,9 +137,9 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
   }
 
   if (slug.toLowerCase() === 'default') {
-    Consola.error('Rejected config deletion because default configuration can\'t be deleted');
+    Consola.error("Rejected config deletion because default configuration can't be deleted");
     return res.status(403).json({
-      message: 'Default config can\'t be deleted',
+      message: "Default config can't be deleted",
     });
   }
 
@@ -147,20 +147,24 @@ function Delete(req: NextApiRequest, res: NextApiResponse<any>) {
   // Get all the configs in the /data/configs folder
   // All the files that end in ".json"
   const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
-
-  // Strip the .json extension from the file name
-  const configs = files.map((file) => file.replace('.json', ''));
+  // Match one file if the configProperties.name is the same as the slug
+  const matchedFile = files.find((file) => {
+    const config = JSON.parse(fs.readFileSync(path.join('data/configs', file), 'utf8'));
+    return config.configProperties.name === slug;
+  });
 
   // If the target is not in the list of files, return an error
-  if (!configs.includes(slug)) {
-    Consola.error(`Rejected config deletion request because config name '${slug}' was not included in present configurations`);
+  if (!matchedFile) {
+    Consola.error(
+      `Rejected config deletion request because config name '${slug}' was not included in present configurations`
+    );
     return res.status(404).json({
       message: 'Target not found',
     });
   }
 
   // Delete the file
-  fs.unlinkSync(path.join('data/configs', `${slug}.json`));
+  fs.unlinkSync(path.join('data/configs', matchedFile));
   Consola.info(`Successfully deleted configuration '${slug}' from your file system`);
   return res.status(200).json({
     message: 'Configuration deleted with success',
