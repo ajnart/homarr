@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "Configuratiewisselaar",
+    "description": "",
     "loadingNew": "Uw configuratie wordt geladen...",
     "pleaseWait": "Wacht tot uw nieuwe configuratie is geladen!"
   },
   "modal": {
-    "title": "Kies de naam van uw nieuwe configuratie",
-    "form": {
-      "configName": {
-        "label": "Configuratie naam",
-        "validation": {
-          "required": "Configuratienaam is vereist"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Uw nieuwe configuratienaam"
+        "submitButton": ""
       },
-      "submitButton": "Bevestig"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Configuratie opgeslagen",
-        "message": "Configuratie opgeslagen als {{configName}}"
-      },
-      "configCopied": {
-        "title": "Configuratie gekopieerd",
-        "message": "Configuratie gekopieerd als {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Kan configuratie niet kopiëren",
-        "message": "Uw configuratie werd niet gekopieerd als {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
