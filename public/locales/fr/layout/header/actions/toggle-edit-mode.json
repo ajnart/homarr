@@ -6,7 +6,7 @@
     },
     "popover": {
         "title": "",
-        "text": ""
+        "text": "Vous pouvez désormais ajuster et configurer vos applications. Les modifications ne sont <strong>pas enregistrées</strong> jusqu'à ce que vous quittiez le mode édition"
     },
     "screenSizes": {
         "small": "petit",
