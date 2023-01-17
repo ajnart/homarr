@@ -1,33 +1,44 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "Выберите имя новой конфигурации",
-    "form": {
-      "configName": {
-        "label": "Имя конфигурации",
-        "validation": {
-          "required": ""
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Имя вашей новой конфигурации"
+        "submitButton": ""
       },
-      "submitButton": "Подтвердить"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Конфигурация сохранена",
-        "message": "Конфигурация сохранена как {{configName}}"
-      },
-      "configCopied": {
-        "title": "",
-        "message": ""
-      },
-      "configNotCopied": {
-        "title": "",
-        "message": ""
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
