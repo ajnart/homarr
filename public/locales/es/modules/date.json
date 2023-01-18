@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Fecha y hora",
+    "description": "Muestra la fecha y hora actuales.",
     "settings": {
       "title": "",
       "display24HourFormat": {
