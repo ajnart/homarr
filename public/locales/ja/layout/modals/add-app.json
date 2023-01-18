@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "一般",
+		"behaviour": "ビヘイビア",
+		"network": "ネットワーク",
+		"appearance": "外観",
+		"integration": "統合化"
+	},
+	"general": {
+		"appname": {
+			"label": "アプリ名",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "内部アドレス",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "外部アドレス",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "新しいタブで開く",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "ステータスチェッカー",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "HTTPステータスコード",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "アプリアイコン",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "インテグレーション構成",
+			"description": "",
+			"placeholder": "インテグレーションを選択する",
+			"defined": "定義",
+			"undefined": "未定義",
+			"public": "公開",
+			"private": "プライベート",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "シークレットを更新するには、値を入力し、保存ボタンをクリックします。シークレットを削除するには、クリアボタンを使用します。",
+			"warning": "",
+			"clear": "クリアシークレット",
+			"save": "秘密を守る",
+			"update": "アップデートシークレット"
+		}
+	},
+	"validation": {
+		"popover": ""
+	}
+}

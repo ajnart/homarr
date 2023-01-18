@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "Sidotitel",
-    "placeholder": "Homarr 🦞"
+    "label": "Sidotitel"
+  },
+  "metaTitle": {
+    "label": "Metatitel"
   },
   "logo": {
     "label": "Logotyp"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "Anpassad CSS",
-    "placeholder": "Anpassad CSS kommer att utföras sist"
+    "placeholder": "Anpassad CSS tillämpas sist"
   },
   "buttons": {
     "submit": "Skicka"

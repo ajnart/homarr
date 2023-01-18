@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Generelt",
+		"behaviour": "Adfærd",
+		"network": "Netværk",
+		"appearance": "Udseende",
+		"integration": "Integration"
+	},
+	"general": {
+		"appname": {
+			"label": "App navn",
+			"description": "Bruges til visning af appen på dashboardet."
+		},
+		"internalAddress": {
+			"label": "Intern adresse",
+			"description": "Appens interne IP."
+		},
+		"externalAddress": {
+			"label": "Ekstern adresse",
+			"description": "URL-adresse, der åbnes, når du klikker på appen."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Åbn i nyt faneblad",
+			"description": "Åbn appen i en ny fane i stedet for den aktuelle fane."
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Statuskontrol",
+			"description": "Kontrollerer, om din app er online ved hjælp af en simpel HTTP(S)-anmodning."
+		},
+		"statusCodes": {
+			"label": "HTTP statuskoder",
+			"description": "De HTTP-statuskoder, der betragtes som online."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App Ikon",
+			"description": "Det ikon, der vises på dashboarded."
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Konfiguration af integration",
+			"description": "Den integrationskonfiguration, der skal bruges til at oprette forbindelse til din app.",
+			"placeholder": "Vælg en integration",
+			"defined": "Defineret",
+			"undefined": "Udefineret",
+			"public": "Offentlig",
+			"private": "Privat",
+			"explanationPrivate": "En privat hemmelighed sendes kun én gang til serveren. Når din browser har opdateret siden, vil den aldrig blive sendt igen.",
+			"explanationPublic": "En offentlig hemmelighed vil altid blive sendt til klienten og er tilgængelig via API'en. Den bør ikke indeholde fortrolige værdier som f. eks. brugernavne, adgangskoder, tokens, certifikater og lignende!"
+		},
+		"secrets": {
+			"description": "Hvis du vil opdatere en hemmelighed, skal du indtaste en værdi og klikke på knappen Gem. Hvis du vil fjerne en hemmelighed, skal du bruge knappen \"clear\".",
+			"warning": "Dine legitimationsoplysninger fungerer som adgang til dine integrationer, og du bør <strong>aldrig</strong> dele dem med andre. Det officielle Homarr-team vil aldrig bede om legitimationsoplysninger. Sørg for at <strong>opbevare og administrere dine hemmeligheder sikkert</strong>.",
+			"clear": "Ryd hemmelighed",
+			"save": "Gem hemmelighed",
+			"update": "Opdater hemmelighed"
+		}
+	},
+	"validation": {
+		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer"
+	}
+}

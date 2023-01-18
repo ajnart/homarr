@@ -18,10 +18,10 @@
       "message": "La tua password è in fase di controllo..."
     },
     "correct": {
-      "title": "Password corretta, reindirizzamento..."
+      "title": "Accesso effettuato, reindirizzamento..."
     },
     "wrong": {
-      "title": "Password errata. Per favore riprova."
+      "title": "La password inserita non è corretta. Si prega di riprovare."
     }
   }
 }

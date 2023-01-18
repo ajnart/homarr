@@ -1,0 +1,16 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "Ввійти в режим редагування",
+        "enabled": "Зберегти та вийти"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    },
+    "screenSizes": {
+        "small": "малий",
+        "medium": "середній",
+        "large": "великий"
+    }
+}

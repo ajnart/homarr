@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Config loadah"
+    "label": "Config Changr",
+    "description": "",
+    "loadingNew": "Loadin Ur Config...",
+    "pleaseWait": "Plz Wait Til Ur New Config Iz Loadd!"
   },
   "modal": {
-    "title": "Chooz teh naym ov ur nu config",
-    "form": {
-      "configName": {
-        "label": "Config naym",
-        "placeholder": "Ur nu config naym"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Confirm"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Config saved",
-        "message": "Config saved as {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "Config deleet faild",
           "message": "Config deleet faild"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "Drag filez hah 2 upload config. Support 4 JSON only."
+      "title": "Configurashun Upload",
+      "text": "Drag Filez Her 2 Upload Config. Support 4 JSON Filez Only."
     },
     "reject": {
-      "text": "Dis fiel format iz not supportd. Srsly plz only upload JSON."
+      "title": "Drag An Drop Upload Rejectd",
+      "text": "Dis File Format Iz Not Supportd. Plz Only Upload JSON Filez."
     }
   }
 }

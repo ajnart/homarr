@@ -1,6 +1,23 @@
 {
-  "actions": {
-    "save": "Speichern"
+  "save": "Speichern",
+  "about": "Über",
+  "cancel": "Abbrechen",
+  "close": "Schließen",
+  "delete": "Löschen",
+  "ok": "OK",
+  "edit": "Bearbeiten",
+  "version": "Version",
+  "changePosition": "Position wechseln",
+  "remove": "Entfernen",
+  "removeConfirm": "Sind Sie sicher, dass Sie {{item}} entfernen möchten?",
+  "sections": {
+    "settings": "Einstellungen",
+    "dangerZone": "Gefahrenzone"
+  },
+  "secrets": {
+    "apiKey": "API-Schlüssel",
+    "username": "Benutzername",
+    "password": "Passwort"
   },
   "tip": "Tipp: ",
   "time": {

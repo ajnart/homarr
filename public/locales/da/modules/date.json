@@ -1,8 +1,9 @@
 {
   "descriptor": {
-    "name": "Dato",
-    "description": "Vis det aktuelle klokkeslæt og den aktuelle dato på et kort",
+    "name": "Dato og tid",
+    "description": "Viser aktuel dag og klokkeslæt.",
     "settings": {
+      "title": "Indstillinger for dato og tid widget",
       "display24HourFormat": {
         "label": "Vis fuld tid (24-timer)"
       }

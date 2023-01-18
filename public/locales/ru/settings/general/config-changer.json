@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Загрузчик конфигурации"
+    "label": "",
+    "description": "",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
-    "title": "Выберите имя новой конфигурации",
-    "form": {
-      "configName": {
-        "label": "Имя конфигурации",
-        "placeholder": "Имя вашей новой конфигурации"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Подтвердить"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Конфигурация сохранена",
-        "message": "Конфигурация сохранена как {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "Не удалось удалить конфигурацию",
           "message": "Не удалось удалить конфигурацию"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "Перетащите файлы сюда, чтобы загрузить конфигурацию. Поддерживается только JSON."
+      "title": "",
+      "text": ""
     },
     "reject": {
-      "text": "Этот формат файла не поддерживается. Пожалуйста, загружайте только JSON."
+      "title": "",
+      "text": ""
     }
   }
 }

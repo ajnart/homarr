@@ -1,65 +1,76 @@
+import Consola from 'consola';
 import { Deluge } from '@ctrl/deluge';
 import { QBittorrent } from '@ctrl/qbittorrent';
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { Transmission } from '@ctrl/transmission';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getConfig } from '../../../tools/getConfig';
-import { Config } from '../../../tools/types';
+import { getConfig } from '../../../tools/config/getConfig';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
-  // Get the type of service from the request url
+  // Get the type of app from the request url
   const configName = getCookie('config-name', { req });
-  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-  const qBittorrentServices = config.services.filter((service) => service.type === 'qBittorrent');
-  const delugeServices = config.services.filter((service) => service.type === 'Deluge');
-  const transmissionServices = config.services.filter((service) => service.type === 'Transmission');
+  const config = getConfig(configName?.toString() ?? 'default');
+  const qBittorrentApp = config.apps.filter((app) => app.integration?.type === 'qBittorrent');
+  const delugeApp = config.apps.filter((app) => app.integration?.type === 'deluge');
+  const transmissionApp = config.apps.filter((app) => app.integration?.type === 'transmission');
 
   const torrents: NormalizedTorrent[] = [];
 
-  if (!qBittorrentServices && !delugeServices && !transmissionServices) {
+  if (!qBittorrentApp && !delugeApp && !transmissionApp) {
     return res.status(500).json({
       statusCode: 500,
-      message: 'Missing services',
+      message: 'Missing apps',
     });
   }
+
   try {
     await Promise.all(
-      qBittorrentServices.map((service) =>
+      qBittorrentApp.map((app) =>
         new QBittorrent({
-          baseUrl: service.url,
-          username: service.username,
-          password: service.password,
+          baseUrl: app.url,
+          username:
+            app.integration!.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          password:
+            app.integration!.properties.find((x) => x.field === 'password')?.value ?? undefined,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
       )
     );
     await Promise.all(
-      delugeServices.map((service) =>
-        new Deluge({
-          baseUrl: service.url,
-          password: 'password' in service ? service.password : '',
+      delugeApp.map((app) => {
+        const password =
+          app.integration?.properties.find((x) => x.field === 'password')?.value ?? undefined;
+        const test = new Deluge({
+          baseUrl: app.url,
+          password,
         })
           .getAllData()
-          .then((e) => torrents.push(...e.torrents))
-      )
+          .then((e) => torrents.push(...e.torrents));
+        return test;
+      })
     );
-    // Map transmissionServices
+    // Map transmissionApps
     await Promise.all(
-      transmissionServices.map((service) =>
+      transmissionApp.map((app) =>
         new Transmission({
-          baseUrl: service.url,
-          username: 'username' in service ? service.username : '',
-          password: 'password' in service ? service.password : '',
+          baseUrl: app.url,
+          username:
+            app.integration!.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          password:
+            app.integration!.properties.find((x) => x.field === 'password')?.value ?? undefined,
         })
           .getAllData()
           .then((e) => torrents.push(...e.torrents))
       )
     );
   } catch (e: any) {
+    Consola.error('Error while communicating with your torrent applications:\n', e);
     return res.status(401).json(e);
   }
+
+  Consola.debug(`Retrieved ${torrents.length} from all download clients`);
   return res.status(200).json(torrents);
 }
 

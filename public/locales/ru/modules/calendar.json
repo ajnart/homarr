@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "Календарь",
-    "description": "Модуль календаря для отображения предстоящих релизов. Интегрируется с Sonarr и Radarr.",
+    "description": "",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Начинать неделю с воскресенья"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }

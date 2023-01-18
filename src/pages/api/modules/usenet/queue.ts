@@ -3,17 +3,15 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { UsenetQueueItem } from '../../../../modules';
-import { getConfig } from '../../../../tools/getConfig';
-import { getServiceById } from '../../../../tools/hooks/useGetServiceByType';
-import { Config } from '../../../../tools/types';
+import { getConfig } from '../../../../tools/config/getConfig';
+import { UsenetQueueItem } from '../../../../widgets/useNet/types';
 import { NzbgetClient } from './nzbget/nzbget-client';
 import { NzbgetQueueItem, NzbgetStatus } from './nzbget/types';
 
 dayjs.extend(duration);
 
 export interface UsenetQueueRequestParams {
-  serviceId: string;
+  appId: string;
   offset: number;
   limit: number;
 }
@@ -26,24 +24,24 @@ export interface UsenetQueueResponse {
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   try {
     const configName = getCookie('config-name', { req });
-    const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
-    const { limit, offset, serviceId } = req.query as any as UsenetQueueRequestParams;
+    const config = getConfig(configName?.toString() ?? 'default');
+    const { limit, offset, appId } = req.query as any as UsenetQueueRequestParams;
 
-    const service = getServiceById(config, serviceId);
+    const app = config.apps.find((x) => x.id === appId);
 
-    if (!service) {
-      throw new Error(`Service with ID "${req.query.serviceId}" could not be found.`);
+    if (!app) {
+      throw new Error(`App with ID "${req.query.appId}" could not be found.`);
     }
 
     let response: UsenetQueueResponse;
-    switch (service.type) {
-      case 'NZBGet': {
-        const url = new URL(service.url);
+    switch (app.integration?.type) {
+      case 'nzbGet': {
+        const url = new URL(app.url);
         const options = {
           host: url.hostname,
           port: url.port,
-          login: service.username,
-          hash: service.password,
+          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
 
         const nzbGet = NzbgetClient(options);
@@ -92,13 +90,14 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         };
         break;
       }
-      case 'Sabnzbd': {
-        if (!service.apiKey) {
-          throw new Error(`API Key for service "${service.name}" is missing`);
+      case 'sabnzbd': {
+        const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+        if (!apiKey) {
+          throw new Error(`API Key for app "${app.name}" is missing`);
         }
 
-        const { origin } = new URL(service.url);
-        const queue = await new Client(origin, service.apiKey).queue(offset, limit);
+        const { origin } = new URL(app.url);
+        const queue = await new Client(origin, apiKey).queue(offset, limit);
 
         const items: UsenetQueueItem[] = queue.slots.map((slot) => {
           const [hours, minutes, seconds] = slot.timeleft.split(':');
@@ -125,7 +124,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       default:
-        throw new Error(`Service type "${service.type}" unrecognized.`);
+        throw new Error(`App type "${app.integration?.type}" unrecognized.`);
     }
 
     return res.status(200).json(response);

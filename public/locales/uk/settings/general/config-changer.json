@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Завантаження налаштувань"
+    "label": "",
+    "description": "",
+    "loadingNew": "Завантаження конфігурації...",
+    "pleaseWait": ""
   },
   "modal": {
-    "title": "Виберіть ім'я для нової конфігурації",
-    "form": {
-      "configName": {
-        "label": "Ім'я конфігурації",
-        "placeholder": "Нове ім'я вашої конфігурації"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Підтвердити"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Конфігурацію збережено",
-        "message": "Конфігурація збережена як {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "Помилка видалення конфігурації",
           "message": "Помилка видалення конфігурації"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "Перетягніть файли сюди для завантаження конфігурації. Підтримка лише для JSON."
+      "title": "Завантаження конфігурації",
+      "text": ""
     },
     "reject": {
-      "text": "Цей формат файлу не підтримується. Будь ласка, лише завантажте JSON."
+      "title": "Відхилено завантаження за допомогою перетягування",
+      "text": ""
     }
   }
 }

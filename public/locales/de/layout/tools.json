@@ -1,0 +1,10 @@
+{
+    "fallback": {
+        "title": "Sie haben derzeit keine Werkzeuge"
+    },
+    "iconPicker": {
+        "textInputPlaceholder": "Suche nach Symbolen...",
+        "searchLimitationTitle": "Die Suche ist auf {{max}} Symbole beschränkt",
+        "searchLimitationMessage": "Um die Suche schnell und effizient zu halten, ist die Suche auf {{max}} Symbole beschränkt. Verwenden Sie die Suche, um weitere Symbole zu finden"
+    }
+}

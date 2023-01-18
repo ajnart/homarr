@@ -1,0 +1,16 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "",
+        "enabled": ""
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    },
+    "screenSizes": {
+        "small": "",
+        "medium": "",
+        "large": ""
+    }
+}

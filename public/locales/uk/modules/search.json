@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "Панель пошуку",
-    "description": "Панель для пошуку в Інтернеті, Youtube, Torrents або Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Пошук в Інтернеті..."
   },
-  "switched-to": "",
+  "switched-to": "Змінити на",
   "searchEngines": {
     "search": {
-      "name": "",
+      "name": "Веб",
       "description": ""
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Пошук на YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrent",
+      "description": "Пошук за торентами"
     },
     "overseerr": {
       "name": "Overseerr",
       "description": ""
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Викликати рядок пошуку можна за допомогою комбінації клавіш ",
+  "switchedSearchEngine": "Перейшли на пошук за допомогою {{searchEngine}}"
 }

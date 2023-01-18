@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "Algemeen",
+		"behaviour": "Gedrag",
+		"network": "Netwerk",
+		"appearance": "Opmaak",
+		"integration": "Integratie"
+	},
+	"general": {
+		"appname": {
+			"label": "App naam",
+			"description": "Wordt gebruikt om de app op het dashboard weer te geven."
+		},
+		"internalAddress": {
+			"label": "Intern adres",
+			"description": "Intern IP-adres van de app."
+		},
+		"externalAddress": {
+			"label": "Extern adres",
+			"description": "URL die wordt geopend wanneer op de app wordt geklikt."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Open in nieuw tabblad",
+			"description": "Open de app in een nieuw tabblad in plaats van de huidige."
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Status checker",
+			"description": "Controleert of uw app online is met een eenvoudig HTTP(S)-verzoek."
+		},
+		"statusCodes": {
+			"label": "HTTP-statuscodes",
+			"description": "De HTTP-statuscodes die als online worden beschouwd."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App icoon",
+			"description": "Het pictogram dat op het dashboard wordt weergegeven."
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integratie configuratie",
+			"description": "De integratieconfiguratie die zal worden gebruikt om verbinding te maken met uw app.",
+			"placeholder": "Selecteer een integratie",
+			"defined": "Gedefinieerd",
+			"undefined": "Ongedefinieerd",
+			"public": "Openbaar",
+			"private": "Privé",
+			"explanationPrivate": "Een geheim wordt slechts eenmaal naar de server gestuurd. Zodra uw browser de pagina heeft ververst, wordt het nooit meer verzonden.",
+			"explanationPublic": "Een publiek geheim wordt altijd naar de client gestuurd en is toegankelijk via de API. Het mag geen vertrouwelijke waarden bevatten zoals gebruikersnamen, wachtwoorden, tokens, certificaten en dergelijke!"
+		},
+		"secrets": {
+			"description": "Om een geheim bij te werken, voert u een waarde in en klikt u op de knop Opslaan. Om een geheim te verwijderen, gebruikt u de knop wissen.",
+			"warning": "Uw referenties fungeren als de toegang tot uw integraties en u zou deze <strong>nooit</strong> hoeven delen met iemand anders. Het Homarr team zal nooit om inloggegevens vragen. Zorg ervoor dat <strong>uw geheimen veilig opslaat en beheert</strong>.",
+			"clear": "Wis geheim",
+			"save": "Geheim opslaan",
+			"update": "Update geheim"
+		}
+	},
+	"validation": {
+		"popover": "Uw formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om uw wijzigingen op te slaan"
+	}
+}

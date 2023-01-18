@@ -1,0 +1,16 @@
+{
+    "description": "Im Bearbeitungsmodus können Sie Kacheln anpassen und Anwendungen konfigurieren. Die Änderungen werden erst gespeichert, wenn Sie den Bearbeitungsmodus verlassen.",
+    "button": {
+        "disabled": "Bearbeitungsmodus aktivieren",
+        "enabled": "Speichern und Beenden"
+    },
+    "popover": {
+        "title": "Der Bearbeitungsmodus ist für <1>{{size}}</1> aktiviert",
+        "text": "Sie können Ihre Apps jetzt anpassen und konfigurieren. Änderungen werden <strong>nicht gespeichert</strong> bis Sie den Bearbeitungsmodus verlassen"
+    },
+    "screenSizes": {
+        "small": "Klein",
+        "medium": "Mittel",
+        "large": "Groß"
+    }
+}

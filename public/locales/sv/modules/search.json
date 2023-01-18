@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Sökfält",
-    "description": "Sökfältet för att söka på webben, Youtube, Torrents eller Overseerr"
+    "description": "Ett sökfält där du kan söka i din anpassade sökmotor, YouTube och integreringar som stöds."
   },
   "input": {
     "placeholder": "Sök på webben..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Webb",
-      "description": "Sök med din sökmotor (definierad i inställningar)"
+      "description": "Sök..."
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Sök efter filmer och TV-program med Overseerr (modulen måste vara aktiverad)"
+      "description": "Sök efter filmer och TV-program i Overseerr"
     }
   },
   "tip": "Du kan välja sökfältet med kortkommandot ",

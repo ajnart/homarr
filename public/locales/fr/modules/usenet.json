@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Permet de voir la file d'attente et l'historique de vos téléchargements usenet (Sabnzbd ou NZBGet), de mettre en pause et de reprendre les téléchargements"
+    "description": "Vous permet d'afficher et de gérer votre instance Usenet."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Aucun client de téléchargement supporté n'a été trouvé !",
-        "text": "Ajouter un service de téléchargement pour afficher vos téléchargements en cours"
+        "text": "Ajoutez un client de téléchargement Usenet pris en charge pour afficher vos téléchargements"
       }
     }
   },

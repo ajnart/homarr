@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Väder",
-    "description": "Se det aktuella vädret på din plats",
+    "description": "Visar aktuell väderinformation för en bestämd plats.",
     "settings": {
+      "title": "Inställningar för väderwidget",
       "displayInFahrenheit": {
         "label": "Visa i Fahrenheit"
       },

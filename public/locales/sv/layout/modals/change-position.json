@@ -1,0 +1,8 @@
+{
+	"xPosition": "X axel position",
+	"width": "Bredd",
+	"height": "Höjd",
+	"yPosition": "Y axel position",
+	"zeroOrHigher": "0 eller högre",
+	"betweenXandY": "Mellan {{min}} och {{max}}"
+}

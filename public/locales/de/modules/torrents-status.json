@@ -1,10 +1,17 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Zeige die aktuellen Downloadgeschwindigkeiten von unterstützten Services",
+    "description": "Zeigt eine Liste von Torrents der unterstützten Torrent-Clients an.",
     "settings": {
-      "hideComplete": {
-        "label": "Abgeschlossene Torrents ausblenden"
+      "title": "Einstellungen für das Torrent Widget",
+      "refreshInterval": {
+        "label": "Aktualisierungsintervall (in Sekunden)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Abgeschlossene Torrents anzeigen"
+      },
+      "displayStaleTorrents": {
+        "label": "Angehaltene Torrents anzeigen"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Keine unterstützten Download-Clients gefunden!",
-        "text": "Fügen Sie einen Download-Service hinzu, um Ihre aktuellen Downloads anzuzeigen"
+        "title": "Keine unterstützten Torrent Clients gefunden!",
+        "text": "Fügen Sie einen unterstützten Torrent Client hinzu, um Ihre aktuellen Downloads anzuzeigen"
+      },
+      "generic": {
+        "title": "Ein unerwarteter Fehler ist aufgetreten",
+        "text": "Homarr konnte nicht mit Ihren Torrent Clients kommunizieren. Bitte überprüfen Sie Ihre Konfiguration"
       }
+    },
+    "loading": {
+      "title": "Wird geladen..."
     }
   }
 }

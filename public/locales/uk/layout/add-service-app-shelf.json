@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Додаткові параметри",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "Коди статусу HTTP",
-                        "placeholder": "Виберіть правильні коди статусу",
-                        "clearButtonLabel": "Очистити вибране",
-                        "nothingFound": "Нічого не знайдено"
-                    },
                     "openServiceInNewTab": {
                         "label": "Відкрити сервіс у новій вкладці"
                     },

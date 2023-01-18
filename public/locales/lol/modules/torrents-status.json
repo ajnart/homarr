@@ -1,10 +1,17 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Show teh current download sped ov supportd servicez",
+    "description": "Displays List Ov Torrents Frum Supportd Torrent Clients.",
     "settings": {
-      "hideComplete": {
-        "label": "Hied completd torrentz"
+      "title": "Settings 4 Torrent Widget",
+      "refreshInterval": {
+        "label": "Refresh Interval (In Secondz)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Display Completd Torrents"
+      },
+      "displayStaleTorrents": {
+        "label": "Display Stale Torrents"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "No supportd download clientz findz!",
-        "text": "Add download survis 2 view ur current downloadz"
+        "title": "No Supportd Torrent Clients Findz!",
+        "text": "Add Supportd Torrent Client 2 View Ur Current Downloadz"
+      },
+      "generic": {
+        "title": "An Unexpectd Error Occurd",
+        "text": "Homarr Wuz Unable 2 Speek Wif Ur Torrent Clients. Plz Check Ur Configurashun"
       }
+    },
+    "loading": {
+      "title": "Loadin..."
     }
   }
 }

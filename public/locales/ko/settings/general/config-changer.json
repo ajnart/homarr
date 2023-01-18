@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "설정 불러오기"
+    "label": "",
+    "description": "",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
-    "title": "새로운 설정의 이름을 입력하세요",
-    "form": {
-      "configName": {
-        "label": "설정 이름",
-        "placeholder": "새로운 설정 이름"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "확인"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "설정 저장됨",
-        "message": "{{configName}} 로 설정 저장됨"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "설정 삭제 실패",
           "message": "설정 삭제 실패"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "구성을 업로드하려면 여기로 파일을 드래그하세요. JSON 형식만 지원합니다."
+      "title": "",
+      "text": ""
     },
     "reject": {
-      "text": "이 파일 형식은 지원되지 않습니다. JSON 형식만 업로드하세요."
+      "title": "",
+      "text": ""
     }
   }
 }

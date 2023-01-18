@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "General",
+		"behaviour": "Behaviour",
+		"network": "Netwerk",
+		"appearance": "Appearance",
+		"integration": "Integrashun"
+	},
+	"general": {
+		"appname": {
+			"label": "App Naym",
+			"description": "Usd 2 Display Teh App On Teh Dashbord."
+		},
+		"internalAddress": {
+			"label": "Internal Addres",
+			"description": "Internal IP-address Ov Teh App."
+		},
+		"externalAddress": {
+			"label": "External address",
+			"description": "URL Dat Will Be Opend When Clickin On Teh App."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Open in new tab",
+			"description": "Open Teh App In New Tab Instead Ov Teh Current Wan."
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Status Checkr",
+			"description": "Checkz If Ur App Iz Online Usin Simple HTTP(S) Request."
+		},
+		"statusCodes": {
+			"label": "HTTP Status Codez",
+			"description": "Teh HTTP Status Codez Dat R Considerd As Online."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App Icon",
+			"description": "Teh Icon Dat Will Be Displayd On Teh Dashbord."
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integrashun Configurashun",
+			"description": "Teh Integrashun Configurashun Dat Will Be Usd 2 Connect 2 Ur App.",
+			"placeholder": "Select An Integrashun",
+			"defined": "Defind",
+			"undefined": "Undefind",
+			"public": "Public",
+			"private": "Private",
+			"explanationPrivate": "A Private Seekret Will Be Sent 2 Teh Servr Only Once. Once Ur Browsr Has Refreshd Teh Paeg, It Will Nevr Be Sent Again.",
+			"explanationPublic": "A Public Seekret Will Always Be Sent 2 Teh Client An Iz Accesible Ovar Teh Api. It Shud Not Contain Any Confidential Valuez Such As Usernamez, Paswordz, Tokens, Certificatez An Similar!"
+		},
+		"secrets": {
+			"description": "2 Update Seekret, Entr Value An Click Teh Save Butn. 2 Remoov Seekret, Use Teh Clear Butn.",
+			"warning": "Ur Credentials Act As Teh Acces 4 Ur Integrashuns An U Shud <strong>Nevr</strong> Share Them Wif Anybody Else. Teh Homarr Team Will Nevr Ask 4 Credentials. Mak Sure 2 <strong>Store An Manage Ur Secrets Safely</strong>.",
+			"clear": "Clear Seekret",
+			"save": "Save Seekret",
+			"update": "Update Seekret"
+		}
+	},
+	"validation": {
+		"popover": "Ur Form Contains Invalid Data. Hence, It Cant Be Savd. Plz Resolve All Issuez An Click Dis Butn Again 2 Save Ur Changez"
+	}
+}

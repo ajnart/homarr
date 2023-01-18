@@ -1,13 +1,13 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Allows U 2 View An Manage Ur Usenet Instance."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "No supportd download clientz findz!",
-        "text": "Add download survis 2 view ur current downloadz"
+        "text": "Add Supportd Usenet Download Client 2 View Ur Current Downloadz"
       }
     }
   },

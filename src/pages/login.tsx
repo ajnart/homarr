@@ -1,5 +1,5 @@
 import React from 'react';
-import { PasswordInput, Paper, Title, Text, Container, Group, Button } from '@mantine/core';
+import { PasswordInput, Paper, Title, Text, Container, Button } from '@mantine/core';
 import { setCookie } from 'cookies-next';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';
@@ -32,19 +32,6 @@ export default function AuthenticationTitle() {
         justifyContent: 'center',
       }}
     >
-      <Group>
-        <Title
-          align="center"
-          sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
-        >
-          {t('title')}
-        </Title>
-      </Group>
-
-      <Text color="dimmed" size="sm" align="center" mt={5}>
-        {t('text')}
-      </Text>
-
       <Paper
         withBorder
         shadow="md"
@@ -53,6 +40,16 @@ export default function AuthenticationTitle() {
         radius="md"
         style={{ width: '100%', maxWidth: 420 }}
       >
+        <Title
+          align="center"
+          sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
+        >
+          {t('title')}
+        </Title>
+
+        <Text color="dimmed" size="sm" align="center" mt={5}>
+          {t('text')}
+        </Text>
         <form
           onSubmit={form.onSubmit((values) => {
             setCookie('password', values.password, {

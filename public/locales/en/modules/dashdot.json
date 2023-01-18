@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "A module for displaying the graphs of your running Dash. instance.",
+    "description": "Displays the graphs of an external Dash. instance inside of Homarr.",
     "settings": {
+      "title": "Settings for Dash. widget",
       "cpuMultiView": {
         "label": "CPU Multi-Core View"
       },

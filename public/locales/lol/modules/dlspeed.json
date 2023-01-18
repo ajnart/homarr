@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Download Sped",
-    "description": "Show teh current download sped ov supportd servicez"
+    "description": "Displays Teh Download An Upload Sped Ov Supportd Integrashuns."
   },
   "card": {
     "table": {

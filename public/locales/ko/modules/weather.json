@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "날씨",
-    "description": "현재 위치의 날씨 보기",
+    "description": "",
     "settings": {
+      "title": "",
       "displayInFahrenheit": {
         "label": "화씨로 표시"
       },

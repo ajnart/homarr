@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Météo",
-    "description": "Consultez la météo actuelle dans votre région",
+    "description": "Affiche la météo actuelle d'un emplacement préconfiguré.",
     "settings": {
+      "title": "Paramètres du widget météo",
       "displayInFahrenheit": {
         "label": "Affichage en Fahrenheit"
       },

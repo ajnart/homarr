@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "ダッシュ",
-    "description": "実行中のDash.インスタンスのグラフを表示するためのモジュールです。",
+    "description": "",
     "settings": {
+      "title": "Dash.ウィジェットの設定",
       "cpuMultiView": {
         "label": "CPUマルチコアビュー"
       },

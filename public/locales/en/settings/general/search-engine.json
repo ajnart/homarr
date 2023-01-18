@@ -1,14 +1,19 @@
 {
   "title": "Search engine",
+  "configurationName": "Search engine configuration",
   "tips": {
-    "generalTip": "Use the prefixes !yt and !t in front of your query to search on YouTube or for a Torrent respectively.",
+    "generalTip": "There are multiple prefixes you can use! Adding these infront of your query will filter the results. !s (Web), !t (Torrents), !y (YouTube), and !m (Media).",
     "placeholderTip": "%s can be used as a placeholder for the query."
   },
   "customEngine": {
+    "title": "Custom search engine",
     "label": "Query URL",
     "placeholder": "Custom query URL"
   },
   "searchNewTab": {
     "label": "Open search results in new tab"
+  },
+  "searchEnabled": {
+    "label": "Search enabled"
   }
 }

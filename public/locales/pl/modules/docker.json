@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Dodaj usługę",
-      "message": "Dodaj usługę do Homarra"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "Uruchom ponownie"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Integracja Dockera nie powiodła się",
-      "message": "Czy zapomniałeś nie zamontować docker socket?"
+      "message": ""
     },
     "unknownError": {
       "title": "Wystąpił błąd"
     },
     "oneServiceAtATime": {
-      "title": "Nie dodawaj wielu usług naraz!"
+      "title": ""
     }
   },
   "actionIcon": {

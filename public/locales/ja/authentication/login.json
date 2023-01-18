@@ -1,21 +1,21 @@
 {
-  "title": "",
+  "title": "お帰りなさい",
   "text": "",
   "form": {
     "fields": {
       "password": {
         "label": "パスワード",
-        "placeholder": ""
+        "placeholder": "パスワード"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "サインイン"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "パスワードの確認",
+      "message": "パスワードは確認中です..."
     },
     "correct": {
       "title": ""

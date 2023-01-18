@@ -6,10 +6,24 @@
     "customizations": "Customahzations"
   },
   "tips": {
-    "configTip": "Upload ur config fiel by dragging an dropping it onto teh paeg!"
+    "configTip": "Upload Ur Config File By Drag An Droppin It Onto Teh Paeg!"
   },
   "credits": {
     "madeWithLove": "Maded wif ❤️ by @"
   },
-  "grow": ""
+  "grow": "Grow Grid (Taek All Space)",
+  "layout": {
+    "title": "Dashbord Layout",
+    "main": "Main",
+    "sidebar": "Sidebar",
+    "cannotturnoff": "Cant Be Turnd Off",
+    "dashboardlayout": "Dashbord Layout",
+    "enablersidebar": "Enable Rite Sidebar",
+    "enablelsidebar": "Enable Left Sidebar",
+    "enablesearchbar": "Enable Search Bar",
+    "enabledocker": "Enable Dockr Integrashun",
+    "enableping": "Enable Pings",
+    "enablelsidebardesc": "Opshunal. Can Be Usd 4 Apps An Integrashuns Only",
+    "enablersidebardesc": "Opshunal. Can Be Usd 4 Apps An Integrashuns Only"
+  }
 }

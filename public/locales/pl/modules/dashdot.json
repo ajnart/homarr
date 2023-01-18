@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Moduł do wyświetlania wykresów z uruchomionej instancji Dash.",
+    "description": "",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Widok wielordzeniowy procesora"
       },

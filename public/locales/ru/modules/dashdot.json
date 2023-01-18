@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Модуль для отображения графиков из Dash.",
+    "description": "",
     "settings": {
+      "title": "",
       "cpuMultiView": {
         "label": "Многоядерный процессор Вид"
       },
@@ -16,7 +17,7 @@
         "label": "Графики"
       },
       "url": {
-        "label": "Тире. URL"
+        "label": "URL-адрес Dash."
       }
     }
   },

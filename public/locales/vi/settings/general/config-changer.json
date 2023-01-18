@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Trình nạp cấu hình"
+    "label": "",
+    "description": "",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
-    "title": "Chọn tên cho cấu hình mới của bạn",
-    "form": {
-      "configName": {
-        "label": "Tên cấu hình",
-        "placeholder": "Tên cấu hình mới của bạn"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Xác nhận"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Đã lưu cấu hình",
-        "message": "Đã lưu cấu hình thành {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "Xoá cấu hình thất bại",
           "message": "Xoá cấu hình thất bại"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "Kéo thả tệp vào đây để tải cấu hình lên. Chỉ hỗ trợ JSON."
+      "title": "",
+      "text": ""
     },
     "reject": {
-      "text": "Định dạng tệp này không được hỗ trợ. Vui lòng chỉ tải lên JSON."
+      "title": "",
+      "text": ""
     }
   }
 }

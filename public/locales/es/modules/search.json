@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Barra de búsqueda",
-    "description": "Barra de búsqueda para buscar en la web, YouTube, Torrents u Overseerr"
+    "description": ""
   },
   "input": {
     "placeholder": "Buscar en Internet..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Buscar usando tu motor de búsqueda (definido en ajustes)"
+      "description": ""
     },
     "youtube": {
       "name": "Youtube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Buscar Películas y Series TV usando Overseerr (el módulo debe esta activado)"
+      "description": ""
     }
   },
   "tip": "Puedes seleccionar la barra de búsqueda con el atajo ",

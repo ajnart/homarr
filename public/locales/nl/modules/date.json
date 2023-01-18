@@ -1,8 +1,9 @@
 {
   "descriptor": {
-    "name": "Datum",
-    "description": "Toon de huidige tijd en datum in een kaart",
+    "name": "Datum en tijd",
+    "description": "Toont de huidige datum en tijd.",
     "settings": {
+      "title": "Instellingen voor datum en tijd widget",
       "display24HourFormat": {
         "label": "Volledige tijd weergeven (24-uur)"
       }

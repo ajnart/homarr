@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Latencia",
-    "description": "Te permite comprobar si el servicio está operativo o si devuelve un código HTTP en específico."
+    "description": ""
   },
   "states": {
     "online": "En línea {{response}}",

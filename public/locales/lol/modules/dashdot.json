@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Moduel 4 displaying teh graphs ov ur runnin Dash. instanz.",
+    "description": "Displays Teh Grafs Ov An External Dash. Instance Inside Ov Homarr.",
     "settings": {
+      "title": "Settings 4 Dash. Widget",
       "cpuMultiView": {
         "label": "CPU Multi-Coer View"
       },

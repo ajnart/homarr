@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "Welkom terug!",
+  "text": "Voer uw wachtwoord in",
   "form": {
     "fields": {
       "password": {
         "label": "Wachtwoord",
-        "placeholder": ""
+        "placeholder": "Uw wachtwoord"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Inloggen"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Bezig met uw wachtwoord controleren",
+      "message": "Uw wachtwoord wordt gecontroleerd..."
     },
     "correct": {
-      "title": ""
+      "title": "Log in succesvol, redirect..."
     },
     "wrong": {
-      "title": ""
+      "title": "Het ingevoerde wachtwoord is onjuist, probeer het opnieuw."
     }
   }
 }

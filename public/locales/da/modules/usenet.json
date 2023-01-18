@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Tillader dig at se din usenet (Sabnzbd eller NZBGet) kø og historie, pause og genoptage downloads"
+    "description": "Tillader dig at se og administrere din Usenet instans."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Ingen understøttede downloadklienter fundet!",
-        "text": "Tilføj en downloadtjeneste for at se dine aktuelle downloads"
+        "text": "Tilføj en understøttet Usenet Download Client for at se dine aktuelle downloads"
       }
     }
   },

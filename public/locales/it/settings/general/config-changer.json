@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Carica configurazione"
+    "label": "Config changer",
+    "description": "",
+    "loadingNew": "Caricamento della configurazione...",
+    "pleaseWait": "Attendere fino al caricamento della nuova configurazione!"
   },
   "modal": {
-    "title": "Scegli il nome della nuova configurazione",
-    "form": {
-      "configName": {
-        "label": "Nome configurazione",
-        "placeholder": "Nuovo nome configurazione"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Conferma"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Configurazione salvata",
-        "message": "Configurazione salvata come {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "Eliminazione configurazione fallita",
           "message": "Eliminazione configurazione fallita"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Il config predefinito non può essere eliminato",
+          "message": "La configurazione non è stata eliminata dal file system"
         }
       }
     },
@@ -46,9 +75,11 @@
       }
     },
     "accept": {
-      "text": "Trascina qui i file per caricare una configurazione. Solo file JSON supportati."
+      "title": "Caricamento configurazione",
+      "text": "Trascinare i file qui per caricare una configurazione. Supporto solo per i file JSON."
     },
     "reject": {
+      "title": "Caricamento Drag and Drop rifiutato",
       "text": "Formato file non supportato. Caricare solo file JSON."
     }
   }

@@ -1,31 +1,32 @@
 import axios from 'axios';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getConfig } from '../../../../tools/getConfig';
-import { Config } from '../../../../tools/types';
+import { getConfig } from '../../../../tools/config/getConfig';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   const configName = getCookie('config-name', { req });
-  const { config }: { config: Config } = getConfig(configName?.toString() ?? 'default').props;
+  const config = getConfig(configName?.toString() ?? 'default');
   const { query } = req.query;
-  const service = config.services.find(
-    (service) => service.type === 'Overseerr' || service.type === 'Jellyseerr'
+  const app = config.apps.find(
+    (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
   );
   // If query is an empty string, return an empty array
   if (query === '' || query === undefined) {
     return res.status(200).json([]);
   }
-  if (!service || !query || service === undefined || !service.apiKey) {
+
+  const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+  if (!app || !query || !apiKey) {
     return res.status(400).json({
       error: 'Wrong request',
     });
   }
-  const serviceUrl = new URL(service.url);
+  const appUrl = new URL(app.url);
   const data = await axios
-    .get(`${serviceUrl.origin}/api/v1/search?query=${query}`, {
+    .get(`${appUrl.origin}/api/v1/search?query=${query}`, {
       headers: {
         // Set X-Api-Key to the value of the API key
-        'X-Api-Key': service.apiKey,
+        'X-Api-Key': apiKey,
       },
     })
     .then((res) => res.data);

@@ -6,10 +6,24 @@
     "customizations": "Prilagoditve"
   },
   "tips": {
-    "configTip": "Konfiguracijsko datoteko naložite tako, da jo povlečete in spustite na stran!"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "Narejeno s ❤️ od @"
   },
-  "grow": ""
+  "grow": "Rastoča mreža (zavzema ves prostor)",
+  "layout": {
+    "title": "Postavitev nadzorne plošče",
+    "main": "Glavno",
+    "sidebar": "Stranska vrstica",
+    "cannotturnoff": "Ni mogoče izklopiti",
+    "dashboardlayout": "Postavitev nadzorne plošče",
+    "enablersidebar": "Omogočite desno stransko vrstico",
+    "enablelsidebar": "Omogočite levo stransko vrstico",
+    "enablesearchbar": "Omogočite iskalno vrstico",
+    "enabledocker": "Omogočite integracijo dockerja",
+    "enableping": "Omogočite pinganje",
+    "enablelsidebardesc": "Izbirno. Uporablja se lahko samo za aplikacije in integracije",
+    "enablersidebardesc": "Izbirno. Uporablja se lahko samo za aplikacije in integracije"
+  }
 }

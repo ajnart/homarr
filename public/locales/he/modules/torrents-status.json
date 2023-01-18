@@ -1,10 +1,17 @@
 {
   "descriptor": {
     "name": "טורנט",
-    "description": "מציג את מהירות ההורדה הנוכחית של שירות נתמך",
+    "description": "מציג רשימה של טורנטים מלקוחות טורנט נתמכים.",
     "settings": {
-      "hideComplete": {
-        "label": "הסתר טורנטים שהושלמו"
+      "title": "הגדרות עבור וידג׳ט טורנט",
+      "refreshInterval": {
+        "label": "מרווח הזמן לרענון (בשניות)"
+      },
+      "displayCompletedTorrents": {
+        "label": "הצג טורנטים שהושלמו"
+      },
+      "displayStaleTorrents": {
+        "label": "הצג טורנטים שהושלמו"
       }
     }
   },
@@ -24,17 +31,24 @@
     },
     "lineChart": {
       "title": "מהירות הורדה נוכחית",
-      "download": "הורדה",
-      "upload": "העלאה",
-      "timeSpan": "לפני שניות",
-      "totalDownload": "הורדה ממתינה",
-      "totalUpload": "העלאה ממתינה"
+      "download": "הורדה {{download}}",
+      "upload": "העלאה {{upload}}",
+      "timeSpan": "לפני {{seconds}} שניות",
+      "totalDownload": "הורדות: {{download}}",
+      "totalUpload": "העלאות: {{upload}}"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "לא נמצאו לקוחות הורדה נתמכים!",
-        "text": "הוסף שירות הורדה כדי להציג את ההורדות הנוכחיות שלך"
+        "title": "לא נמצאו לקוחות טורנט נתמכים!",
+        "text": "הוסף לקוח טורנט נתמך כדי להציג את ההורדות הנוכחיות שלך"
+      },
+      "generic": {
+        "title": "שגיאה לא צפויה התרחשה",
+        "text": "לא ניתן לתקשר עם לקוחות הטורנט שלך. אנא בדוק את התצורה שלך"
       }
+    },
+    "loading": {
+      "title": "טוען..."
     }
   }
 }

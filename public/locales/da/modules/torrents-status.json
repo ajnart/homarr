@@ -1,10 +1,17 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Vis den aktuelle downloadhastighed for understøttede tjenester",
+    "description": "Viser en liste over torrents fra understøttede Torrent-klienter.",
     "settings": {
-      "hideComplete": {
-        "label": "Skjul fuldførte torrents"
+      "title": "Indstillinger for Torrent-widget",
+      "refreshInterval": {
+        "label": "Opdateringsinterval (i sekunder)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Vis fuldførte torrents"
+      },
+      "displayStaleTorrents": {
+        "label": "Vis torrents uden aktivitet"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Ingen understøttede downloadklienter fundet!",
-        "text": "Tilføj en downloadtjeneste for at se dine aktuelle downloads"
+        "title": "Ingen understøttede Torrent-klienter fundet!",
+        "text": "Tilføj en understøttet Torrent-klient for at se dine aktuelle downloads"
+      },
+      "generic": {
+        "title": "Der opstod en uventet fejl",
+        "text": "Homarr kunne ikke kommunikere med dine Torrent-klienter. Kontroller venligst din konfiguration"
       }
+    },
+    "loading": {
+      "title": "Indlæser..."
     }
   }
 }

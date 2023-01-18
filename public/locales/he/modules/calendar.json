@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "לוח שנה",
-    "description": "מודול לוח שנה להצגת עדכונים. מקושר ל- Sonarr ו- Radarr API.",
+    "description": "מציג לוח שנה עם עדכונים מאינטגרציות נתמכות.",
     "settings": {
+      "title": "הגדרות עבור ווידג'ט יומן",
       "sundayStart": {
-        "label": "להתחיל את השבוע ביום ראשון"
+        "label": "התחל את השבוע ביום ראשון"
+      },
+      "radarrReleaseType": {
+        "label": "סוג שחרור של Radarr"
       }
     }
   }

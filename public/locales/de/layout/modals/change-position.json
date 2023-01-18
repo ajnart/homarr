@@ -1,0 +1,8 @@
+{
+	"xPosition": "Position der X-Achse",
+	"width": "Breite",
+	"height": "Höhe",
+	"yPosition": "Position der Y-Achse",
+	"zeroOrHigher": "0 oder höher",
+	"betweenXandY": "Zwischen {{min}} und {{max}}"
+}

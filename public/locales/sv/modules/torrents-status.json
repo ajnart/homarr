@@ -1,10 +1,17 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Visa den aktuella nedladdningshastigheten för tjänster som stöds",
+    "description": "Visar en lista med torrents från Torrent-klienter som stöds.",
     "settings": {
-      "hideComplete": {
-        "label": "Dölj slutförda torrents"
+      "title": "Inställningar för Torrent widget",
+      "refreshInterval": {
+        "label": "Uppdateringsfrekvens (sekunder)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Visa slutförda torrents"
+      },
+      "displayStaleTorrents": {
+        "label": "Visa inaktuella torrents"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Inga nedladdningsklienter som stöds hittades!",
-        "text": "Lägg till en nedladdningstjänst för att visa dina aktuella nedladdningar"
+        "title": "Inga Torrent-klienter som stöds hittades!",
+        "text": "Lägg till en Torrent-klient som stöds för att visa dina aktuella nedladdningar"
+      },
+      "generic": {
+        "title": "Ett oväntat fel uppstod",
+        "text": "Homarr kunde inte kommunicera med dina torrent-klienter. Vänligen kontrollera din konfiguration"
       }
+    },
+    "loading": {
+      "title": "Laddar..."
     }
   }
 }

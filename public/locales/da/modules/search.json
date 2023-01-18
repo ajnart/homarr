@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Søgebjælke",
-    "description": "Søgebjælke til at søge på nettet, Youtube, Torrents eller Overseerr"
+    "description": "En søgelinje, der giver dig mulighed for at søge i din brugerdefinerede søgemaskine, YouTube og understøttede integrationer."
   },
   "input": {
     "placeholder": "Søg på nettet..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Søg ved hjælp af din søgemaskine (defineret i indstillinger)"
+      "description": "Søg..."
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Søg efter film og tv-serier ved hjælp af Overseerr (modul skal være aktiveret)"
+      "description": "Søg efter film og tv-udsendelser på Overseerr"
     }
   },
   "tip": "Du kan vælge søgefeltet med genvejen ",

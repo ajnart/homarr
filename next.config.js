@@ -1,5 +1,3 @@
-const { env } = require('process');
-
 const { i18n } = require('./next-i18next.config');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -10,7 +8,7 @@ module.exports = withBundleAnalyzer({
   images: {
     domains: ['cdn.jsdelivr.net'],
   },
-  reactStrictMode: false,
+  reactStrictMode: true,
   output: 'standalone',
   i18n,
 });

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Låter dig enkelt hantera dina docker containers"
+    "description": "Låter dig enkelt se och hantera dina docker containers."
   },
   "search": {
     "placeholder": "Sök efter container eller imagenamn"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Lägg till tjänst",
-      "message": "Lägg till tjänst till Homarr"
+      "title": "Lägg till app",
+      "message": "Lägg till i Homarr"
     },
     "restart": {
       "title": "Starta om"
@@ -74,7 +74,7 @@
       "title": "Ett fel inträffade"
     },
     "oneServiceAtATime": {
-      "title": "Lägg bara till en tjänst åt gången!"
+      "title": "Lägg bara till en app eller tjänst åt gången!"
     }
   },
   "actionIcon": {

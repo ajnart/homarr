@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Configuratie lader"
+    "label": "Configuratiewisselaar",
+    "description": "",
+    "loadingNew": "Uw configuratie wordt geladen...",
+    "pleaseWait": "Wacht tot uw nieuwe configuratie is geladen!"
   },
   "modal": {
-    "title": "Kies de naam van uw nieuwe configuratie",
-    "form": {
-      "configName": {
-        "label": "Configuratie naam",
-        "placeholder": "Uw nieuwe configuratienaam"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Bevestig"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Configuratie opgeslagen",
-        "message": "Configuratie opgeslagen als {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,26 +55,32 @@
         "deleteFailed": {
           "title": "Configuratie verwijderen mislukt",
           "message": "Configuratie verwijderen mislukt"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Standaardconfiguratie kan niet worden verwijderd",
+          "message": "Configuratie is niet verwijderd uit het bestandssysteem"
         }
       }
     },
-    "saveCopy": "Sla op als een kopie"
+    "saveCopy": "Kopie opslaan"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
         "title": "Kan configuratie niet laden",
-        "message": "Kon uw configuratie niet laden. Ongeldig JSON formaat."
+        "message": "Kon uw configuratie niet laden. Ongeldige JSON-indeling."
       },
       "loadedSuccessfully": {
         "title": "Configuratie {{configName}} succesvol geladen"
       }
     },
     "accept": {
-      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON."
+      "title": "Configuratie Upload",
+      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON-bestanden."
     },
     "reject": {
-      "text": "Dit bestandsformaat wordt niet ondersteund. Upload a.u.b. alleen JSON."
+      "title": "Drag & Drop Upload afgewezen",
+      "text": "Dit bestandsformaat wordt niet ondersteund. Upload alleen JSON-bestanden."
     }
   }
 }

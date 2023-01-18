@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Konfigurationslader"
+    "label": "Konfigurationslader",
+    "description": "",
+    "loadingNew": "Ihre Konfiguration wird geladen...",
+    "pleaseWait": "Bitte warten Sie, bis Ihre neue Konfiguration geladen ist!"
   },
   "modal": {
-    "title": "Wählen Sie den Namen für Ihre neue Konfiguration",
-    "form": {
-      "configName": {
-        "label": "Konfigurationsname",
-        "placeholder": "Ihr neuer Konfigurationsname"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Bestätigen"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Konfiguration gespeichert",
-        "message": "Konfiguration gespeichert als {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "Löschung der Konfiguration fehlgeschlagen",
           "message": "Löschung der Konfiguration fehlgeschlagen"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Die Standardkonfiguration kann nicht gelöscht werden",
+          "message": "Die Konfiguration wurde nicht vom System gelöscht"
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "Ziehen Sie Dateien hierher, um eine Konfiguration hochzuladen. Unterstützung nur für JSON."
+      "title": "Konfiguration hochladen",
+      "text": "Ziehen Sie unterstütze Dateien hierher, um eine Konfiguration hochzuladen. Nur für JSON-Dateien."
     },
     "reject": {
-      "text": "Dieses Dateiformat wird nicht unterstützt. Bitte lade nur JSON hoch."
+      "title": "Drag and Drop Upload abgelehnt",
+      "text": "Dieses Dateiformat wird nicht unterstützt. Bitte laden Sie nur JSON-Dateien hoch."
     }
   }
 }

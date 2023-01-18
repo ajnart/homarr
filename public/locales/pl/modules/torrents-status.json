@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Pokaż bieżącą prędkość pobierania obsługiwanych usług",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "Ukryj ukończone torrenty"
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Nie znaleziono obsługiwanych klientów pobierania!",
-        "text": "Dodaj usługę pobierania, aby wyświetlić aktualnie pobierane pliki"
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "Ładowanie..."
     }
   }
 }

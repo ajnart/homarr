@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Permette di vedere la coda e la cronologia di usenet (Sabnzbd o NZBGet), di mettere in pausa e riprendere i download"
+    "description": "Consente di visualizzare e gestire la propria istanza Usenet."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Nessun client di download supportato trovato!",
-        "text": "Aggiungi un servizio di download per visualizzare i tuoi download attuali"
+        "text": "Aggiungi un client di download Usenet supportato per visualizzare i download attuali"
       }
     }
   },

@@ -1,38 +1,57 @@
-import { Group, Header as Head, useMantineColorScheme, useMantineTheme } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
-import { AddItemShelfButton } from '../../AppShelf/AddAppShelfItem';
-
-import DockerMenuButton from '../../../modules/docker/DockerModule';
-import { SettingsMenuButton } from '../../Settings/SettingsMenu';
+import { Box, createStyles, Group, Header as MantineHeader, Indicator } from '@mantine/core';
+import { useEffect, useState } from 'react';
+import { CURRENT_VERSION, REPO_URL } from '../../../../data/constants';
+import { useConfigContext } from '../../../config/provider';
 import { Logo } from '../Logo';
-import { useConfig } from '../../../tools/state';
-import { SearchModuleComponent } from '../../../modules/search/SearchModule';
+import { useCardStyles } from '../useCardStyles';
+import DockerMenuButton from '../../../modules/Docker/DockerModule';
+import { ToggleEditModeAction } from './Actions/ToggleEditMode/ToggleEditMode';
+import { Search } from './Search';
+import { SettingsMenu } from './SettingsMenu';
+
+export const HeaderHeight = 64;
 
 export function Header(props: any) {
-  const { width } = useViewportSize();
-  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
-  const { config } = useConfig();
-  const { colorScheme } = useMantineColorScheme();
+  const { classes } = useStyles();
+  const { classes: cardClasses } = useCardStyles(false);
+
+  const { config } = useConfigContext();
+
+  const [newVersionAvailable, setNewVersionAvailable] = useState<string>('');
+  useEffect(() => {
+    // Fetch Data here when component first mounted
+    fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
+      res.json().then((data) => {
+        if (data.tag_name > CURRENT_VERSION) {
+          setNewVersionAvailable(data.tag_name);
+        }
+      });
+    });
+  }, [CURRENT_VERSION]);
 
   return (
-    <Head
-      height="auto"
-      style={{
-        background: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '255, 255, 255,'} \
-      ${(config.settings.appOpacity || 100) / 100}`,
-        borderColor: `rgba(${colorScheme === 'dark' ? '37, 38, 43,' : '233, 236, 239,'} \
-      ${(config.settings.appOpacity || 100) / 100}`,
-      }}
-    >
+    <MantineHeader height={HeaderHeight} className={cardClasses.card}>
       <Group p="xs" noWrap grow>
-        {width > MIN_WIDTH_MOBILE && <Logo style={{ fontSize: 22 }} />}
-        <Group position="right" noWrap>
-          <SearchModuleComponent />
+        <Box className={classes.hide}>
+          <Logo />
+        </Box>
+        <Group position="right" style={{ maxWidth: 'none' }} noWrap>
+          <Search />
+          <ToggleEditModeAction />
           <DockerMenuButton />
-          <SettingsMenuButton />
-          <AddItemShelfButton />
+          <Indicator size={15} color="blue" withBorder processing disabled={!newVersionAvailable}>
+            <SettingsMenu newVersionAvailable={newVersionAvailable} />
+          </Indicator>
         </Group>
       </Group>
-    </Head>
+    </MantineHeader>
   );
 }
+
+const useStyles = createStyles((theme) => ({
+  hide: {
+    [theme.fn.smallerThan('xs')]: {
+      display: 'none',
+    },
+  },
+}));

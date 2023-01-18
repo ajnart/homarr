@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "מהירות הורדה",
-    "description": "מציג את מהירות ההורדה הנוכחית של שירות נתמך"
+    "description": "מציג את מהירות ההורדה וההעלאה של אינטגרציות נתמכות."
   },
   "card": {
     "table": {
@@ -19,16 +19,16 @@
     },
     "lineChart": {
       "title": "מהירות הורדה נוכחית",
-      "download": "הורדה",
-      "upload": "העלאה",
-      "timeSpan": "לפני שניות",
-      "totalDownload": "הורדה ממתינה",
-      "totalUpload": "העלאה ממתינה"
+      "download": "הורדה {{download}}",
+      "upload": "העלאה {{upload}}",
+      "timeSpan": "לפני {{seconds}} שניות",
+      "totalDownload": "הורדות: {{download}}",
+      "totalUpload": "העלאות: {{upload}}"
     },
     "errors": {
       "noDownloadClients": {
         "title": "לא נמצאו לקוחות הורדה נתמכים!",
-        "text": "הוסף שירות הורדה כדי להציג את ההורדות הנוכחיות שלך"
+        "text": "הוסף שירות הורדה כדי להציג ססטוס ההורדה / העלאה נוכחית"
       }
     }
   }

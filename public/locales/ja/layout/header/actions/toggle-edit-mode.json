@@ -1,0 +1,16 @@
+{
+    "description": "",
+    "button": {
+        "disabled": "編集モードに入る",
+        "enabled": "終了と保存"
+    },
+    "popover": {
+        "title": "",
+        "text": ""
+    },
+    "screenSizes": {
+        "small": "",
+        "medium": "",
+        "large": ""
+    }
+}

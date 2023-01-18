@@ -1,6 +1,6 @@
 {
   "title": "Velkommen tilbage!",
-  "text": "Angiv venligst adgangskoden",
+  "text": "Indtast venligst din adgangskode",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Din adgangskode er ved at blive tjekket..."
     },
     "correct": {
-      "title": "Adgangskode korrekt, omdirigerer dig..."
+      "title": "Log ind vellykket, omdirigerer..."
     },
     "wrong": {
-      "title": "Adgangskoden er forkert, prøv venligst igen."
+      "title": "Kodeordet du tastede ind, var forkert. Prøv venligst igen."
     }
   }
 }

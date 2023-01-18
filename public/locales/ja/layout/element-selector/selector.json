@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "新しいタイルを追加する",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "前のステップに戻る",
+    "actionIcon": {
+        "tooltip": "タイルを追加する"
+    }
+}

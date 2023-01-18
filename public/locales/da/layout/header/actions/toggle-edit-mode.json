@@ -1,0 +1,16 @@
+{
+    "description": "I redigeringstilstand kan du justere felter og konfigurere apps. Ændringerne gemmes først, når du forlader redigeringstilstand.",
+    "button": {
+        "disabled": "Gå i redigeringstilstand",
+        "enabled": "Afslut og gem"
+    },
+    "popover": {
+        "title": "Redigeringstilstand er aktiveret for  <1>{{size}}</1> størrelse",
+        "text": "Du kan justere og konfigurere dine apps nu. Ændringer er <strong>ikke gemt</strong> indtil du forlader redigeringstilstanden"
+    },
+    "screenSizes": {
+        "small": "lille",
+        "medium": "mellem",
+        "large": "stor"
+    }
+}

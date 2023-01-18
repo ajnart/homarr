@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "Kalender",
-    "description": "Et kalendermodul til visning af kommende udgivelser. Det interagerer med Sonarr- og Radarr-API'erne.",
+    "description": "Viser en kalender med kommende udgivelser fra understøttede integrationer.",
     "settings": {
+      "title": "Indstillinger for kalender widget",
       "sundayStart": {
         "label": "Søndag første ugedag"
+      },
+      "radarrReleaseType": {
+        "label": "Radarr udgivelsestype"
       }
     }
   }

@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "页面标题",
-    "placeholder": "Homarr 🦞"
+    "label": "页面标题"
+  },
+  "metaTitle": {
+    "label": "元标题"
   },
   "logo": {
     "label": "徽标"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "自定义CSS",
-    "placeholder": "自定义CSS将被最后执行"
+    "placeholder": "自定义 CSS 将在最后应用"
   },
   "buttons": {
     "submit": "提交"

@@ -1,0 +1,11 @@
+{
+  "popover": {
+    "title": "",
+    "description": ""
+  },
+  "sizes": {
+    "small": "קטן",
+    "medium": "בינוני",
+    "large": "גדול"
+  }
+}

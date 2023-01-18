@@ -1,0 +1,10 @@
+{
+    "fallback": {
+        "title": "Vous ne disposez actuellement d'aucun outil"
+    },
+    "iconPicker": {
+        "textInputPlaceholder": "Rechercher des icônes",
+        "searchLimitationTitle": "La recherche est limitée à {{max}} icônes",
+        "searchLimitationMessage": "Pour que les choses restent rapides, la recherche est limitée à {{max}} icônes. Utilisez le champ de recherche pour trouver d'autres icônes"
+    }
+}

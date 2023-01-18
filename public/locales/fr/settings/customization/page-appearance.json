@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "Titre de la page",
-    "placeholder": "Homarr 🦞"
+    "label": "Titre de la page"
+  },
+  "metaTitle": {
+    "label": "Titre Méta"
   },
   "logo": {
     "label": "Logo"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "CSS personnalisé",
-    "placeholder": "Le CSS personnalisé sera exécuté en dernier"
+    "placeholder": "Le CSS personnalisé sera appliqué en dernier"
   },
   "buttons": {
     "submit": "Soumettre"

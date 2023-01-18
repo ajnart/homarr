@@ -1,10 +1,17 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Toon de huidige downloadsnelheid van ondersteunde diensten",
+    "description": "Toont een lijst met torrents van ondersteunde Torrent-clients.",
     "settings": {
-      "hideComplete": {
-        "label": "Verberg voltooide torrents"
+      "title": "Instellingen voor Torrent widget",
+      "refreshInterval": {
+        "label": "Verversingsinterval (in seconden)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Afgeronde torrents weergeven"
+      },
+      "displayStaleTorrents": {
+        "label": "Toon verouderde torrents"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "Geen ondersteunde download clients gevonden!",
-        "text": "Voeg een downloadservice toe om uw huidige downloads weer te geven"
+        "title": "Geen ondersteunde Torrent clients gevonden!",
+        "text": "Voeg een ondersteunde Torrent-client toe om je huidige downloads te bekijken"
+      },
+      "generic": {
+        "title": "Onbekende fout opgetreden",
+        "text": "Homarr kon niet communiceren met je Torrent-clients. Controleer je configuratie"
       }
+    },
+    "loading": {
+      "title": "Bezig met laden..."
     }
   }
 }

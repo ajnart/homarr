@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Дозволяє вам легко керувати контейнерами докер"
+    "description": ""
   },
   "search": {
     "placeholder": "Пошук по назві контейнера або образу"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "Додати сервіс",
-      "message": "Додати сервіс до Homarr"
+      "title": "",
+      "message": ""
     },
     "restart": {
       "title": "Перезапустити"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Помилка інтеграції з Docker",
-      "message": "Ви забули під'єднати docker сокет?"
+      "message": ""
     },
     "unknownError": {
       "title": "Виникла помилка"
     },
     "oneServiceAtATime": {
-      "title": "Будь ласка, лише один сервіс за один раз!"
+      "title": ""
     }
   },
   "actionIcon": {

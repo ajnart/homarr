@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "דוקר",
-    "description": "מאפשר ניהול בקלות את הקונטיינרים בדוקר"
+    "description": "מאפשר לראות ולנהל בקלות את כל מכולות הדוקר."
   },
   "search": {
     "placeholder": "חיפוש לפי קונטיינר או שם קובץ תמונה"
@@ -14,7 +14,7 @@
       "state": "מצב"
     },
     "body": {
-      "portCollapse": "יציאות"
+      "portCollapse": "עוד {{ports}}"
     },
     "states": {
       "running": "פועל",
@@ -25,14 +25,14 @@
   },
   "actionBar": {
     "addService": {
-      "title": "הוספת שירות",
-      "message": "הוסף שירות ל- Homarr"
+      "title": "הוספת יישום",
+      "message": "הוספת יישום ל-Homarr"
     },
     "restart": {
       "title": "אתחל"
     },
     "stop": {
-      "title": "עצר"
+      "title": "עצור"
     },
     "start": {
       "title": "התחל"
@@ -67,17 +67,17 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "שילוב docker נכשל",
-      "message": "האם שכחת לטעון את ה- Docker?"
+      "title": "שילוב דוקר נכשל",
+      "message": "האם שכחת לטעון את הדוקר?"
     },
     "unknownError": {
       "title": "אירעה שגיאה"
     },
     "oneServiceAtATime": {
-      "title": "אנא הוסף שירות אחד בלבד בכל פעם!"
+      "title": "אנא הוסף רק אפליקציה או שירות אחד בכל פעם!"
     }
   },
   "actionIcon": {
-    "tooltip": "Docker"
+    "tooltip": "דוקר"
   }
 }

@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "Suchleiste",
-    "description": "Suchleiste zum Durchsuchen des Internets, von Youtube, Torrents oder Overseerr"
+    "description": "Eine Suchleiste, mit der Sie Ihre eigene Suchmaschine, YouTube und andere unterstützte Konfigurationen durchsuchen können."
   },
   "input": {
     "placeholder": "Das Internet durchsuchen..."
   },
-  "switched-to": "",
+  "switched-to": "Wechseln zu",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Suche..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Auf YouTube suchen"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrents",
+      "description": "Suche nach Torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Suche nach Filmen und TV-Sendungen auf Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Sie können die Suchleiste mit dem Tastenkürzel auswählen ",
+  "switchedSearchEngine": "Umgestellt auf die Suche mit {{searchEngine}}"
 }

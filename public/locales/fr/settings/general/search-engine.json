@@ -1,14 +1,19 @@
 {
   "title": "Moteur de recherche",
+  "configurationName": "Configuration du moteur de recherche",
   "tips": {
-    "generalTip": "Utilisez les préfixes !yt et !t devant votre requête pour rechercher respectivement sur YouTube ou pour un Torrent.",
+    "generalTip": "Il existe plusieurs préfixes que vous pouvez utiliser ! L'ajout de ces préfixes devant votre requête filtrera les résultats. !s (Web), !t (Torrents), !y (YouTube), et !m (Media).",
     "placeholderTip": "%s peut être utilisé en tant que placeholder pour la requête."
   },
   "customEngine": {
+    "title": "Moteur de recherche personnalisé",
     "label": "URL de la requête",
     "placeholder": "URL de requête personnalisée"
   },
   "searchNewTab": {
     "label": "Ouvrir les résultats de la recherche dans un nouvel onglet"
+  },
+  "searchEnabled": {
+    "label": "Recherche activée"
   }
 }

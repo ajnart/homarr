@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Ajouter une tuile",
+        "text": ""
+    },
+    "widgetDescription": "Les widgets interagissent avec vos applications, pour vous permettre de mieux les contrôler. Ils nécessitent généralement quelques configurations supplémentaires avant d'être utilisés.",
+    "goBack": "Retourner à la page précédente",
+    "actionIcon": {
+        "tooltip": "Ajouter une tuile"
+    }
+}

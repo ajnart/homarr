@@ -1,0 +1,11 @@
+{
+  "popover": {
+    "title": "",
+    "description": ""
+  },
+  "sizes": {
+    "small": "pequeño",
+    "medium": "medio",
+    "large": "grande"
+  }
+}

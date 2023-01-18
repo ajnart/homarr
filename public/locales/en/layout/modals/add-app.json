@@ -1,0 +1,68 @@
+{
+	"tabs": {
+		"general": "General",
+		"behaviour": "Behaviour",
+		"network": "Network",
+		"appearance": "Appearance",
+		"integration": "Integration"
+	},
+	"general": {
+		"appname": {
+			"label": "App name",
+			"description": "Used to display the app on the dashboard."
+		},
+		"internalAddress": {
+			"label": "Internal address",
+			"description": "Internal IP-address of the app."
+		},
+		"externalAddress": {
+			"label": "External address",
+			"description": "URL that will be opened when clicking on the app."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Open in new tab",
+			"description": "Open the app in a new tab instead of the current one."
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Status checker",
+			"description": "Checks if your app is online using a simple HTTP(S) request."
+		},
+		"statusCodes": {
+			"label": "HTTP status codes",
+			"description": "The HTTP status codes that are considered as online."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "App Icon",
+			"description": "The icon that will be displayed on the dashboard."
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integration configuration",
+			"description": "The integration configuration that will be used to connect to your app.",
+			"placeholder": "Select an integration",
+			"defined": "Defined",
+			"undefined": "Undefined",
+			"public": "Public",
+			"private": "Private",
+			"explanationPrivate": "A private secret will be sent to the server only once. Once your browser has refreshed the page, it will never be sent again.",
+			"explanationPublic": "A public secret will always be sent to the client and is accessible over the API. It should not contain any confidential values such as usernames, passwords, tokens, certificates and similar!"
+		},
+		"secrets": {
+			"description": "To update a secret, enter a value and click the save button. To remove a secret, use the clear button.",
+			"warning": "Your credentials act as the access for your integrations and you should <strong>never</strong> share them with anybody else. The Homarr team will never ask for credentials. Make sure to <strong>store and manage your secrets safely</strong>.",
+			"clear": "Clear secret",
+			"save": "Save secret",
+			"update": "Update secret"
+		}
+	},
+	"validation": {
+		"popover": "Your form contains invalid data. Hence, it can't be saved. Please resolve all issues and click this button again to save your changes"
+	}
+}

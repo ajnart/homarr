@@ -1,14 +1,19 @@
 {
   "title": "Search engien",
+  "configurationName": "Search Engine Configurashun",
   "tips": {
-    "generalTip": "Ues teh prefixes !yt an !t in frunt ov ur quewee 2 search on yootoob or 4 Torrent respectively.",
+    "generalTip": "Thar R Multiple Prefixez U Can Use! Addin Thees Infront Ov Ur Query Will Filtr Teh Results. !S (Web), !T (Torrents), !Y (Youtube), An !M (Media).",
     "placeholderTip": "%s can bees usd as placeholdah 4 teh quewee."
   },
   "customEngine": {
+    "title": "Custom Search Engine",
     "label": "Quewee URL",
     "placeholder": "Custom quewee URL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Open Search Results In New Tab"
+  },
+  "searchEnabled": {
+    "label": "Search Enabld"
   }
 }

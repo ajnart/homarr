@@ -1,7 +1,9 @@
 {
   "pageTitle": {
-    "label": "Paeg Titel",
-    "placeholder": "Homarr 🦞"
+    "label": "Paeg Titel"
+  },
+  "metaTitle": {
+    "label": "Meta Title"
   },
   "logo": {
     "label": "Logooo"
@@ -14,7 +16,7 @@
   },
   "customCSS": {
     "label": "Custom CSS",
-    "placeholder": "Custom CSS will bees executed last"
+    "placeholder": "Custom CSS Will Be Applid Last"
   },
   "buttons": {
     "submit": "Submit"

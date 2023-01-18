@@ -11,5 +11,19 @@
   "credits": {
     "madeWithLove": "Gjort med ❤️ av @"
   },
-  "grow": "Växande rutnät (ta allt utrymme)"
+  "grow": "Växande rutnät (ta allt utrymme)",
+  "layout": {
+    "title": "Instrumentpanelslayout",
+    "main": "Allmänt",
+    "sidebar": "Sidopanel",
+    "cannotturnoff": "Kan inte inaktiveras",
+    "dashboardlayout": "Instrumentpanelslayout",
+    "enablersidebar": "Aktivera höger sidopanel",
+    "enablelsidebar": "Aktivera vänster sidopanel",
+    "enablesearchbar": "Aktivera sökfält",
+    "enabledocker": "Aktivera dockerintegration",
+    "enableping": "Aktivera pings",
+    "enablelsidebardesc": "Valfritt. Kan endast användas för appar och integrationer",
+    "enablersidebardesc": "Valfritt. Kan endast användas för appar och integrationer"
+  }
 }

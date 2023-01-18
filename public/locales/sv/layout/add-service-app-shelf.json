@@ -113,12 +113,6 @@
             "advancedOptions": {
                 "title": "Avancerade inställningar",
                 "form": {
-                    "httpStatusCodes": {
-                        "label": "HTTP-statuskoder",
-                        "placeholder": "Välj giltiga statuskoder",
-                        "clearButtonLabel": "Rensa markering",
-                        "nothingFound": "Ingenting hittades"
-                    },
                     "openServiceInNewTab": {
                         "label": "Öppna tjänsten i ny flik"
                     },

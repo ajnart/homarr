@@ -1,10 +1,17 @@
 {
   "descriptor": {
-    "name": "奔流",
-    "description": "対応サービスの現在のダウンロード速度を表示する",
+    "name": "",
+    "description": "",
     "settings": {
-      "hideComplete": {
-        "label": "完了したトレントを隠す"
+      "title": "",
+      "refreshInterval": {
+        "label": "リフレッシュ間隔(秒)"
+      },
+      "displayCompletedTorrents": {
+        "label": "完了したトレントを表示する"
+      },
+      "displayStaleTorrents": {
+        "label": "古くなったトレントを表示する"
       }
     }
   },
@@ -32,9 +39,16 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "対応するダウンロードクライアントが見つかりません",
-        "text": "ダウンロードサービスを追加して、現在のダウンロードを表示する"
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "予期せぬエラーが発生しました",
+        "text": ""
       }
+    },
+    "loading": {
+      "title": "読み込み中..."
     }
   }
 }

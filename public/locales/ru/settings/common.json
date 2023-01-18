@@ -2,14 +2,28 @@
   "title": "Настройки",
   "tooltip": "Настройки",
   "tabs": {
-    "common": "Общий",
-    "customizations": "Персонализации"
+    "common": "Общие",
+    "customizations": "Оформление"
   },
   "tips": {
-    "configTip": "Загрузите файл конфигурации, перетащив его на страницу!"
+    "configTip": ""
   },
   "credits": {
-    "madeWithLove": "Сделано с ❤️ по @."
+    "madeWithLove": "Сделано с ❤️ от @"
   },
-  "grow": ""
+  "grow": "Увеличение сетки (занимает все пространство)",
+  "layout": {
+    "title": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "",
+    "enablelsidebar": "",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "",
+    "enablelsidebardesc": "",
+    "enablersidebardesc": ""
+  }
 }

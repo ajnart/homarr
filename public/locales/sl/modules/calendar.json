@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "Koledar",
-    "description": "Koledarski modul za prikaz prihajajočih izdaj. Deluje z API vmesnikom od Sonarr in Radarr.",
+    "description": "",
     "settings": {
+      "title": "",
       "sundayStart": {
         "label": "Začni teden z nedeljo"
+      },
+      "radarrReleaseType": {
+        "label": ""
       }
     }
   }

@@ -1,14 +1,19 @@
 {
   "title": "検索エンジン",
+  "configurationName": "",
   "tips": {
-    "generalTip": "YouTube を検索する場合は「!yt」、Torrent を検索する場合は「!t」という接頭辞を付けてください。",
+    "generalTip": "",
     "placeholderTip": "%s は、クエリのプレースホルダとして使用することができます。"
   },
   "customEngine": {
+    "title": "カスタム検索エンジン",
     "label": "クエリURL",
     "placeholder": "カスタムクエリURL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "検索結果を新しいタブで開く"
+  },
+  "searchEnabled": {
+    "label": "検索可能"
   }
 }

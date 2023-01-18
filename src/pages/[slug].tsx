@@ -1,59 +1,66 @@
-import { getCookie } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import path from 'path';
-import { useEffect } from 'react';
-import AppShelf from '../components/AppShelf/AppShelf';
-import LoadConfigComponent from '../components/Config/LoadConfig';
+import { LoadConfigComponent } from '../components/Config/LoadConfig';
+import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
-import { getConfig } from '../tools/getConfig';
-import { useConfig } from '../tools/state';
+import { useInitConfig } from '../config/init';
+import { getFallbackConfig } from '../tools/config/getFallbackConfig';
+import { getFrontendConfig } from '../tools/config/getFrontendConfig';
+import { getServerSideTranslations } from '../tools/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
-import { Config } from '../tools/types';
+import { ConfigType } from '../types/config';
+import { DashboardServerSideProps } from '../types/dashboardPageType';
 
 export async function getServerSideProps({
   req,
   res,
   locale,
   query,
-}: GetServerSidePropsContext): Promise<{ props: { config: Config } }> {
-  const configByUrl = query.slug;
-  const configPath = path.join(process.cwd(), 'data/configs', `${configByUrl}.json`);
+}: GetServerSidePropsContext): Promise<{ props: DashboardServerSideProps }> {
+  const configName = query.slug as string;
+  const configPath = path.join(process.cwd(), 'data/configs', `${configName}.json`);
   const configExists = fs.existsSync(configPath);
+
+  const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
+
   if (!configExists) {
     // Redirect to 404
     res.writeHead(301, { Location: '/404' });
     res.end();
     return {
       props: {
-        config: {
-          name: 'Default config',
-          services: [],
-          settings: {
-            searchUrl: 'https://www.google.com/search?q=',
-          },
-          modules: {},
-        },
+        config: getFallbackConfig() as unknown as ConfigType,
+        configName,
+        ...translations,
       },
     };
   }
 
-  const configLocale = getCookie('config-locale', { req, res });
-  const targetLanguage = (configLocale ?? locale) as string;
-  const translations = await serverSideTranslations(targetLanguage, dashboardNamespaces);
-  return getConfig(configByUrl as string, translations);
+  const config = getFrontendConfig(configName as string);
+  setCookie('config-name', configName, {
+    req,
+    res,
+    maxAge: 60 * 60 * 24 * 30,
+    sameSite: 'strict',
+  });
+
+  return {
+    props: {
+      configName,
+      config,
+      ...translations,
+    },
+  };
 }
 
-export default function HomePage(props: any) {
-  const { config: initialConfig }: { config: Config } = props;
-  const { setConfig } = useConfig();
-  useEffect(() => {
-    setConfig(initialConfig);
-  }, [initialConfig]);
+export default function HomePage({ config: initialConfig }: DashboardServerSideProps) {
+  useInitConfig(initialConfig);
+
   return (
     <Layout>
-      <AppShelf />
+      <Dashboard />
       <LoadConfigComponent />
     </Layout>
   );

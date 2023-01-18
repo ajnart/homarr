@@ -1,14 +1,19 @@
 {
   "title": "Søgemaskine",
+  "configurationName": "Konfiguration af søgemaskiner",
   "tips": {
-    "generalTip": "Brug præfikserne !yt og !t foran din forespørgsel for at søge på YouTube eller efter en Torrent.",
+    "generalTip": "Der er flere præfikser, du kan bruge! Hvis du tilføjer disse foran din forespørgsel, filtreres resultaterne. !s (Web), !t (Torrents), !y (YouTube) og !m (Media).",
     "placeholderTip": "%s kan bruges som en pladsholder for forespørgslen."
   },
   "customEngine": {
+    "title": "Brugerdefineret søgemaskine",
     "label": "Forespørgsels URL",
     "placeholder": "Brugerdefineret forespørgsels URL"
   },
   "searchNewTab": {
     "label": "Åben søgeresultater i en ny fane"
+  },
+  "searchEnabled": {
+    "label": "Søgning aktiveret"
   }
 }

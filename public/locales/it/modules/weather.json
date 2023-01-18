@@ -1,8 +1,9 @@
 {
   "descriptor": {
     "name": "Meteo",
-    "description": "Consulta il meteo attuale della propria località",
+    "description": "Mostra le informazioni meteo attuali di una località.",
     "settings": {
+      "title": "Impostazioni per l'integrazione meteo",
       "displayInFahrenheit": {
         "label": "Mostra in Fahrenheit"
       },

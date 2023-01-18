@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "Låter dig kontrollera om tjänsten är uppe eller returnerar en specifik HTTP-statuskod."
+    "description": "Visar en statusindikator beroende på HTTP-svarskoden för en given URL."
   },
   "states": {
     "online": "Online {{response}}",

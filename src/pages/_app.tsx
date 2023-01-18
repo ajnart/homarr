@@ -1,18 +1,26 @@
-import { GetServerSidePropsContext } from 'next';
-import { useState } from 'react';
-import { AppProps } from 'next/app';
-import { getCookie } from 'cookies-next';
-import Head from 'next/head';
-import { MantineProvider, ColorScheme, ColorSchemeProvider, MantineTheme } from '@mantine/core';
-import { NotificationsProvider } from '@mantine/notifications';
+import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
-import { appWithTranslation } from 'next-i18next';
+import { NotificationsProvider } from '@mantine/notifications';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { ConfigProvider } from '../tools/state';
-import { theme } from '../tools/theme';
+import { getCookie } from 'cookies-next';
+import { GetServerSidePropsContext } from 'next';
+import { appWithTranslation } from 'next-i18next';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { useState } from 'react';
+import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
+import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
+import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
+import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
+import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsEditModal';
+import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
+import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
+import { ConfigProvider } from '../config/provider';
+import '../styles/global.scss';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
+import { theme } from '../tools/theme';
 
 function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -74,13 +82,23 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
               withGlobalStyles
               withNormalizeCSS
             >
-              <NotificationsProvider limit={4} position="bottom-left">
-                <ModalsProvider>
-                  <ConfigProvider>
+              <ConfigProvider>
+                <NotificationsProvider limit={4} position="bottom-left">
+                  <ModalsProvider
+                    modals={{
+                      editApp: EditAppModal,
+                      selectElement: SelectElementModal,
+                      integrationOptions: WidgetsEditModal,
+                      integrationRemove: WidgetsRemoveModal,
+                      categoryEditModal: CategoryEditModal,
+                      changeAppPositionModal: ChangeAppPositionModal,
+                      changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                    }}
+                  >
                     <Component {...pageProps} />
-                  </ConfigProvider>
-                </ModalsProvider>
-              </NotificationsProvider>
+                  </ModalsProvider>
+                </NotificationsProvider>
+              </ConfigProvider>
             </MantineProvider>
           </ColorTheme.Provider>
         </ColorSchemeProvider>

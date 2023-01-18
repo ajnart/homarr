@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "Cargador de configuración"
+    "label": "",
+    "description": "",
+    "loadingNew": "Cargando tu configuración...",
+    "pleaseWait": ""
   },
   "modal": {
-    "title": "Escoge el nombre de tu nueva configuración",
-    "form": {
-      "configName": {
-        "label": "Nombre de la configuración",
-        "placeholder": "Tu nuevo nombre de configuración"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "Confirmar"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Configuración guardada",
-        "message": "Configuración guardada como {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "Error en el borrado de la configuración",
           "message": "Error en el borrado de la configuración"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "Arrastra un archivo aqui para subir una configuración. Sólo se admiten archivos JSON."
+      "title": "Configuración subida",
+      "text": ""
     },
     "reject": {
-      "text": "Este formato de archivo no es compatible. Por favor, sube solo archivos JSON."
+      "title": "Subida Arrastar y Soltar rechada",
+      "text": ""
     }
   }
 }

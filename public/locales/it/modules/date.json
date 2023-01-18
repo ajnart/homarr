@@ -1,8 +1,9 @@
 {
   "descriptor": {
-    "name": "Data",
-    "description": "Mostra l'ora e la data corrente in una scheda",
+    "name": "Data e Ora",
+    "description": "Visualizza la data e l'ora correnti.",
     "settings": {
+      "title": "Impostazioni per il widget Data e Ora",
       "display24HourFormat": {
         "label": "Visualizza formato 24 ore"
       }

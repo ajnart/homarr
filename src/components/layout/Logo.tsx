@@ -1,34 +1,31 @@
 import { Group, Image, Text } from '@mantine/core';
-import { NextLink } from '@mantine/next';
-import * as React from 'react';
-import { useColorTheme } from '../../tools/color';
-import { useConfig } from '../../tools/state';
+import { useConfigContext } from '../../config/provider';
+import { usePrimaryGradient } from './useGradient';
 
-export function Logo({ style, withoutText }: any) {
-  const { config } = useConfig();
-  const { primaryColor, secondaryColor } = useColorTheme();
+interface LogoProps {
+  size?: 'md' | 'xs';
+  withoutText?: boolean;
+}
+
+export function Logo({ size = 'md', withoutText = false }: LogoProps) {
+  const { config } = useConfigContext();
+  const primaryGradient = usePrimaryGradient();
 
   return (
-    <Group spacing="xs" noWrap>
+    <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
       <Image
-        width={50}
-        src={config.settings.logo || '/imgs/logo/logo.png'}
-        style={{
-          position: 'relative',
-        }}
+        width={size === 'md' ? 50 : 12}
+        src={config?.settings.customization.logoImageUrl || '/imgs/logo/logo-color.svg'}
+        alt="Homarr Logo"
       />
       {withoutText ? null : (
         <Text
-          sx={style}
+          size={size === 'md' ? 22 : 10}
           weight="bold"
           variant="gradient"
-          gradient={{
-            from: primaryColor,
-            to: secondaryColor,
-            deg: 145,
-          }}
+          gradient={primaryGradient}
         >
-          {config.settings.title || 'Homarr'}
+          {config?.settings.customization.pageTitle || 'Homarr'}
         </Text>
       )}
     </Group>

@@ -1,10 +1,14 @@
 {
   "descriptor": {
     "name": "Calendar",
-    "description": "Calendar moduel 4 displaying upcomin releasez, Srsly. It interacts wif teh Sonarr an Radarr API.",
+    "description": "Displayz calendar wif upcomin releasez, frum supportd integrations.",
     "settings": {
+      "title": "Settings 4 Calendar Widget",
       "sundayStart": {
         "label": "Start teh week on Sunday"
+      },
+      "radarrReleaseType": {
+        "label": "Radarr Release Type"
       }
     }
   }

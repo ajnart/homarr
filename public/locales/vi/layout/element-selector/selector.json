@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Thêm ô mới",
+        "text": ""
+    },
+    "widgetDescription": "",
+    "goBack": "Quay lại bước trước",
+    "actionIcon": {
+        "tooltip": "Thêm ô"
+    }
+}

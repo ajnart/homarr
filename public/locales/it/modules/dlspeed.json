@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Velocità Di Download",
-    "description": "Mostra la velocità di download corrente dei servizi supportati"
+    "description": "Visualizza la velocità di download e upload delle integrazioni supportate."
   },
   "card": {
     "table": {

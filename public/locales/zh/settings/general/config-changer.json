@@ -1,20 +1,45 @@
 {
   "configSelect": {
-    "label": "配置加载器"
+    "label": "",
+    "description": "",
+    "loadingNew": "加载你的配置...",
+    "pleaseWait": ""
   },
   "modal": {
-    "title": "选择你的新配置的名称",
-    "form": {
-      "configName": {
-        "label": "配置名称",
-        "placeholder": "你的新配置名称"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
       },
-      "submitButton": "确认"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "配置已保存",
-        "message": "配置保存为 {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -30,6 +55,10 @@
         "deleteFailed": {
           "title": "配置删除失败",
           "message": "配置删除失败"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -46,10 +75,12 @@
       }
     },
     "accept": {
-      "text": "在这里拖动文件来上传配置。只支持JSON。"
+      "title": "配置上传",
+      "text": ""
     },
     "reject": {
-      "text": "不支持这种文件格式。请只上传JSON。"
+      "title": "拒绝拖拽式上传",
+      "text": ""
     }
   }
 }

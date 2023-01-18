@@ -1,8 +1,9 @@
 {
   "descriptor": {
-    "name": "Datum",
-    "description": "Die aktuelle Zeit und das aktuelle Datum in der Card anzeigen",
+    "name": "Datum und Zeit",
+    "description": "Zeigt das aktuelle Datum und die Uhrzeit an",
     "settings": {
+      "title": "Einstellungen für das Widget \"Datum und Uhrzeit",
       "display24HourFormat": {
         "label": "24-Stunden Format"
       }
