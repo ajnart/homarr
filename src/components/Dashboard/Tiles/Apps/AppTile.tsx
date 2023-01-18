@@ -29,8 +29,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         <Text align="center" weight={500} size="md" className={classes.appName}>
           {app.name}
         </Text>
-        <Center style={{ height: '85%', flex: 1 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+        <Center style={{ height: '85%', flex: 1, width: '85%' }}>
           <motion.img
             className={classes.image}
             src={app.appearance.iconUrl}
