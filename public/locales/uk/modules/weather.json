@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Погода",
-    "description": "",
+    "description": "Показує поточну інформацію про погоду в заданому місці.",
     "settings": {
-      "title": "",
+      "title": "Налаштування віджету погоди",
       "displayInFahrenheit": {
         "label": "Використовувати Фаренгейт"
       },

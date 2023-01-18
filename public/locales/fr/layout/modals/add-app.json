@@ -45,7 +45,7 @@
 	"integration": {
 		"type": {
 			"label": "Configuration d’intégrations",
-			"description": "",
+			"description": "La configuration d'intégration qui sera utilisée pour se connecter à votre application.",
 			"placeholder": "Sélectionner une itégration",
 			"defined": "Défini",
 			"undefined": "Indéfini",

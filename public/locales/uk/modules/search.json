@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Панель пошуку",
-    "description": ""
+    "description": "Пошукова панель, яка дозволяє шукати через обраний пошуковий двигун, YouTube та підтримувані інтеграції."
   },
   "input": {
     "placeholder": "Пошук в Інтернеті..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Веб",
-      "description": ""
+      "description": "Пошук..."
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Пошук фільмів і серіалів на Overseerr"
     }
   },
   "tip": "Викликати рядок пошуку можна за допомогою комбінації клавіш ",

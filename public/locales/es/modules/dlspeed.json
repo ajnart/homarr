@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Velocidad de Descarga",
-    "description": ""
+    "description": "Muestra la velocidad de Descarga y Subida de las integraciones soportadas."
   },
   "card": {
     "table": {

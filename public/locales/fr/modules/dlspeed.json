@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Vitesse de téléchargement",
-    "description": ""
+    "description": "Affiche la vitesse de téléchargement et d'envoi des intégrations prises en charge."
   },
   "card": {
     "table": {

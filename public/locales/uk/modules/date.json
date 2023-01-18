@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Дата і час",
+    "description": "Відображає поточну дату і час.",
     "settings": {
-      "title": "",
+      "title": "Налаштування віджету дати й часу",
       "display24HourFormat": {
         "label": "Показувати повний час (24 години)"
       }
