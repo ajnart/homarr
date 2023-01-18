@@ -25,7 +25,7 @@
 </p>
 <h3 align="center"><a href="https://homarr.dev">Read the Docs</a></h3>
 <p align="center">
-<a href="https://homarr.ajnart.fr/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.dev/docs/introduction/installation"><strong> Install ➡️ </strong></a>
+<a href="https://demo.homarr.dev/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.dev/docs/introduction/installation"><strong> Install ➡️ </strong></a>
 </p>
 
 ---
