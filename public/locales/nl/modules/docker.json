@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "App toevoegen",
-      "message": ""
+      "message": "Toevoegen aan Homarr"
     },
     "restart": {
       "title": "Herstart"
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker integratie mislukt",
-      "message": ""
+      "message": "Bent u vergeten de dokter-socket te koppelen?"
     },
     "unknownError": {
       "title": "Er is een fout opgetreden"
