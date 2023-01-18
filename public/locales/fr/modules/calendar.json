@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Calendrier",
-    "description": "",
+    "description": "Affiche un calendrier avec les prochaines sorties, à partir des intégrations prises en charge.",
     "settings": {
       "title": "Paramètres du widget Calendrier",
       "sundayStart": {
