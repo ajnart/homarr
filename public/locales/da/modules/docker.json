@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "Tilføj app",
-      "message": "Tilføj app til Homarr"
+      "message": ""
     },
     "restart": {
       "title": "Genstart"
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker integration mislykkedes",
-      "message": "Har du glemt at mounte docker socket?"
+      "message": ""
     },
     "unknownError": {
       "title": "Der opstod en fejl"
