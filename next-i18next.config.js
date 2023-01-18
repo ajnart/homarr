@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   // https://www.i18next.com/overview/configuration-options#logging
   i18n: {
@@ -23,6 +25,7 @@ module.exports = {
       'uk',
       'zh',
     ],
+    localePath: path.resolve('./public/locales'),
     fallbackLng: 'en',
     localeDetection: true,
     returnEmptyString: false,
