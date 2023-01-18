@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Показує графіки зовнішньої Dash. всередині Homarr.",
     "settings": {
       "title": "Налаштування віджета Dash.",
       "cpuMultiView": {
