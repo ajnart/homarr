@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Hiermee kunt u gemakkelijk al uw Docker Containers zien en beheren."
   },
   "search": {
     "placeholder": "Zoek op container of afbeeldingsnaam"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "App toevoegen",
+      "message": "App aan Homarr toevoegen"
     },
     "restart": {
       "title": "Herstart"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker integratie mislukt",
-      "message": ""
+      "message": "Bent u vergeten de dokter-socket te koppelen?"
     },
     "unknownError": {
       "title": "Er is een fout opgetreden"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Voeg slechts één app of dienst per keer toe!"
     }
   },
   "actionIcon": {

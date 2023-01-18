@@ -8,61 +8,61 @@
 	},
 	"general": {
 		"appname": {
-			"label": "应用程序名称",
-			"description": ""
+			"label": "应用名称",
+			"description": "用于在面板上显示应用。"
 		},
 		"internalAddress": {
 			"label": "内部地址",
-			"description": ""
+			"description": "应用的内部IP地址。"
 		},
 		"externalAddress": {
 			"label": "外部地址",
-			"description": ""
+			"description": "点击应用时打开的URL。"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "在新标签中打开",
-			"description": ""
+			"description": "在新标签中打开应用，而不是当前标签。"
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "状态检查器",
-			"description": ""
+			"label": "状态检测",
+			"description": "使用简单的HTTP(S) 请求检查你的应用是否在线。"
 		},
 		"statusCodes": {
-			"label": "HTTP状态代码",
-			"description": ""
+			"label": "HTTP状态码",
+			"description": "被视为在线的 HTTP 状态码。"
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "应用图标",
-			"description": ""
+			"description": "将在面板上显示的图标。"
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "集成配置",
-			"description": "",
+			"description": "将用于连接您的应用的集成配置。",
 			"placeholder": "选择一个整合",
-			"defined": "定义",
+			"defined": "已定义",
 			"undefined": "未定义",
-			"public": "公众",
-			"private": "私营",
+			"public": "公开的",
+			"private": "私有的",
 			"explanationPrivate": "",
 			"explanationPublic": ""
 		},
 		"secrets": {
 			"description": "要更新一个秘密，输入一个值并点击保存按钮。要删除一个秘密，请使用清除按钮。",
 			"warning": "",
-			"clear": "清除秘密",
-			"save": "保存秘密",
-			"update": "更新秘密"
+			"clear": "清除密钥",
+			"save": "保存密钥",
+			"update": "更新密钥"
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "你的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮保存您的更改。"
 	}
 }

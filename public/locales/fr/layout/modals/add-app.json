@@ -9,37 +9,37 @@
 	"general": {
 		"appname": {
 			"label": "Nom de l'application",
-			"description": ""
+			"description": "Utilisé pour afficher l'application sur le tableau de bord."
 		},
 		"internalAddress": {
 			"label": "Adresse interne",
-			"description": ""
+			"description": "IP interne de l'application."
 		},
 		"externalAddress": {
 			"label": "Adresse externe",
-			"description": ""
+			"description": "URL qui sera ouverte dans le navigateur lorsque l'on clique sur l'application."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Ouvrir dans un nouvel onglet",
-			"description": ""
+			"description": "Ouvrez l'application dans un nouvel onglet au lieu de l'onglet actuel."
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Vérificateur de statut",
-			"description": ""
+			"description": "Vérifie si votre application est en ligne en utilisant une simple requête HTTP(S)."
 		},
 		"statusCodes": {
 			"label": "Codes d'état HTTP",
-			"description": ""
+			"description": "Les codes d'état HTTP qui sont considérés comme étant en ligne."
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "Icône de l’app",
-			"description": ""
+			"description": "L'icône qui sera affichée sur le tableau de bord."
 		}
 	},
 	"integration": {

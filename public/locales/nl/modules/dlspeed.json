@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Downloadsnelheid",
-    "description": ""
+    "description": "Toont de download- en uploadsnelheid van ondersteunde integraties."
   },
   "card": {
     "table": {

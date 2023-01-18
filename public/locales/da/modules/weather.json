@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Vejr",
-    "description": "",
+    "description": "Viser de aktuelle vejroplysninger for en bestemt placering.",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for vejr widget",
       "displayInFahrenheit": {
         "label": "Vis i Fahrenheit"
       },

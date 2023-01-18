@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Ermöglicht es Ihnen, Ihre Usenet-Instanz anzuzeigen und zu verwalten."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Keine unterstützten Download-Clients gefunden!",
-        "text": ""
+        "text": "Fügen Sie einen unterstützten Usenet Download Client hinzu, um Ihre aktuellen Downloads anzuzeigen"
       }
     }
   },

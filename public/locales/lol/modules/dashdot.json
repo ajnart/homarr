@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Displays Teh Grafs Ov An External Dash. Instance Inside Ov Homarr.",
     "settings": {
-      "title": "",
+      "title": "Settings 4 Dash. Widget",
       "cpuMultiView": {
         "label": "CPU Multi-Coer View"
       },

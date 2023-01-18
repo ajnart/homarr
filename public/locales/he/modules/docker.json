@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "דוקר",
-    "description": ""
+    "description": "מאפשר לראות ולנהל בקלות את כל מכולות הדוקר."
   },
   "search": {
     "placeholder": "חיפוש לפי קונטיינר או שם קובץ תמונה"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "הוספת יישום",
+      "message": "הוספת יישום ל-Homarr"
     },
     "restart": {
       "title": "אתחל"
@@ -67,17 +67,17 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "שילוב docker נכשל",
-      "message": ""
+      "title": "שילוב דוקר נכשל",
+      "message": "האם שכחת לטעון את הדוקר?"
     },
     "unknownError": {
       "title": "אירעה שגיאה"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "אנא הוסף רק אפליקציה או שירות אחד בכל פעם!"
     }
   },
   "actionIcon": {
-    "tooltip": "Docker"
+    "tooltip": "דוקר"
   }
 }

@@ -1,33 +1,45 @@
 {
   "configSelect": {
-    "label": "",
+    "label": "Konfigurationsväxlare",
+    "description": "{{configCount}} konfigurationer finns tillgängliga",
     "loadingNew": "Laddar din konfiguration...",
-    "pleaseWait": ""
+    "pleaseWait": "Vänta tills din nya konfiguration är laddad!"
   },
   "modal": {
-    "title": "Välj namn på din nya konfigurering",
-    "form": {
-      "configName": {
-        "label": "Konfigurationsnamn",
-        "validation": {
-          "required": "Konfigurationsnamn krävs"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": "Konfigurationens namn används redan"
+          },
+          "placeholder": ""
         },
-        "placeholder": "Ditt nya konfigurationsnamn"
+        "submitButton": ""
       },
-      "submitButton": "Bekräfta"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Konfigurationen sparad",
-        "message": "Konfigurationen sparad som {{configName}}"
-      },
-      "configCopied": {
-        "title": "Konfigurationen kopierad",
-        "message": "Konfigurationen kopierades som {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Kunde inte kopiera konfigurationen",
-        "message": "Din konfiguration kopierades inte som {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "Radering av konfigurationen misslyckades",
           "message": "Radering av konfigurationen misslyckades"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Standardkonfigurationen kan inte tas bort",
+          "message": "Konfigurationen togs inte bort från filsystemet"
         }
       }
     },
@@ -60,11 +76,11 @@
     },
     "accept": {
       "title": "Uppladdning av konfiguration",
-      "text": ""
+      "text": "Dra filer hit för att ladda upp en konfiguration. Stöd för endast JSON-filer."
     },
     "reject": {
       "title": "Dra och släpp uppladdningen avvisades",
-      "text": ""
+      "text": "Det här filformatet stöds inte. Ladda bara upp JSON-filer."
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "Calendar",
-    "description": "",
+    "description": "Displayz calendar wif upcomin releasez, frum supportd integrations.",
     "settings": {
-      "title": "",
+      "title": "Settings 4 Calendar Widget",
       "sundayStart": {
         "label": "Start teh week on Sunday"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Radarr Release Type"
       }
     }
   }

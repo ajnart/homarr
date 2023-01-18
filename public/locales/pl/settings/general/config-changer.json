@@ -1,33 +1,45 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "Wybierz nazwę nowej konfiguracji",
-    "form": {
-      "configName": {
-        "label": "Nazwa konfiguracji",
-        "validation": {
-          "required": ""
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Twoja nowa nazwa konfiguracji"
+        "submitButton": ""
       },
-      "submitButton": "Potwierdź"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Konfiguracja zapisana",
-        "message": "Konfiguracja zapisana jako {{configName}}"
-      },
-      "configCopied": {
-        "title": "",
-        "message": ""
-      },
-      "configNotCopied": {
-        "title": "",
-        "message": ""
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "Nie udało się usunąć konfiguracji",
           "message": "Nie udało się usunąć konfiguracji"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },

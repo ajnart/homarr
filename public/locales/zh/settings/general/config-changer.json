@@ -1,33 +1,45 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "加载你的配置...",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "选择你的新配置的名称",
-    "form": {
-      "configName": {
-        "label": "配置名称",
-        "validation": {
-          "required": "配置名称是必需的"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "你的新配置名称"
+        "submitButton": ""
       },
-      "submitButton": "确认"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "配置已保存",
-        "message": "配置保存为 {{configName}}"
-      },
-      "configCopied": {
-        "title": "复制的配置",
-        "message": "配置复制为 {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "无法复制配置",
-        "message": "你的配置没有被复制为 {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "配置删除失败",
           "message": "配置删除失败"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },

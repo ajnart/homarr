@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Suchleiste",
-    "description": ""
+    "description": "Eine Suchleiste, mit der Sie Ihre eigene Suchmaschine, YouTube und andere unterstützte Konfigurationen durchsuchen können."
   },
   "input": {
     "placeholder": "Das Internet durchsuchen..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": ""
+      "description": "Suche..."
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Suche nach Filmen und TV-Sendungen auf Overseerr"
     }
   },
   "tip": "Sie können die Suchleiste mit dem Tastenkürzel auswählen ",

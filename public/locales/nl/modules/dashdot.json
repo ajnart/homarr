@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Toont de grafieken van een externe Dash. instantie binnen Homarr.",
     "settings": {
       "title": "Instellingen voor Dash. widget",
       "cpuMultiView": {

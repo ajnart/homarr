@@ -1,33 +1,45 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "Завантаження конфігурації...",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "Виберіть ім'я для нової конфігурації",
-    "form": {
-      "configName": {
-        "label": "Ім'я конфігурації",
-        "validation": {
-          "required": "Потрібна назва конфігурації"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Нове ім'я вашої конфігурації"
+        "submitButton": ""
       },
-      "submitButton": "Підтвердити"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Конфігурацію збережено",
-        "message": "Конфігурація збережена як {{configName}}"
-      },
-      "configCopied": {
-        "title": "Конфігурацію скопійовано",
-        "message": "Конфігурація збережена як {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Не вдалося скопіювати конфігурацію",
-        "message": "Ваша конфігурація не була скопійована як {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "Помилка видалення конфігурації",
           "message": "Помилка видалення конфігурації"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },

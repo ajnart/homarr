@@ -2,7 +2,7 @@
   "title": "Søgemaskine",
   "configurationName": "Konfiguration af søgemaskiner",
   "tips": {
-    "generalTip": "",
+    "generalTip": "Der er flere præfikser, du kan bruge! Hvis du tilføjer disse foran din forespørgsel, filtreres resultaterne. !s (Web), !t (Torrents), !y (YouTube) og !m (Media).",
     "placeholderTip": "%s kan bruges som en pladsholder for forespørgslen."
   },
   "customEngine": {

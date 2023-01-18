@@ -1,6 +1,6 @@
 {
   "title": "Bentornati!",
-  "text": "",
+  "text": "Inserisci la password",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "La tua password è in fase di controllo..."
     },
     "correct": {
-      "title": ""
+      "title": "Accesso effettuato, reindirizzamento..."
     },
     "wrong": {
-      "title": ""
+      "title": "La password inserita non è corretta. Si prega di riprovare."
     }
   }
 }

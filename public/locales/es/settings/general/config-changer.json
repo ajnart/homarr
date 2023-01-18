@@ -1,33 +1,45 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "Cargando tu configuración...",
     "pleaseWait": ""
   },
   "modal": {
-    "title": "Escoge el nombre de tu nueva configuración",
-    "form": {
-      "configName": {
-        "label": "Nombre de la configuración",
-        "validation": {
-          "required": "Nombre de configuración requerido"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Tu nuevo nombre de configuración"
+        "submitButton": ""
       },
-      "submitButton": "Confirmar"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Configuración guardada",
-        "message": "Configuración guardada como {{configName}}"
-      },
-      "configCopied": {
-        "title": "Configuración copiada",
-        "message": "Configuración copiada como {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Imposible copiar configuración",
-        "message": "Tu configuración no pudo ser copiada como {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "Error en el borrado de la configuración",
           "message": "Error en el borrado de la configuración"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },

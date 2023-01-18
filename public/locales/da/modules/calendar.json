@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Kalender",
-    "description": "",
+    "description": "Viser en kalender med kommende udgivelser fra understøttede integrationer.",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for kalender widget",
       "sundayStart": {
         "label": "Søndag første ugedag"
       },

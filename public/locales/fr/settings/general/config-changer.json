@@ -1,33 +1,45 @@
 {
   "configSelect": {
     "label": "",
+    "description": "",
     "loadingNew": "Chargement des configurations ...",
-    "pleaseWait": ""
+    "pleaseWait": "Veuillez attendre que votre nouvelle configuration soit chargée !"
   },
   "modal": {
-    "title": "Choisissez le nom de votre nouvelle configuration",
-    "form": {
-      "configName": {
-        "label": "Nom de la configuration",
-        "validation": {
-          "required": "Le nom de la configuration est obligatoire"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Le nom de votre nouvelle configuration"
+        "submitButton": ""
       },
-      "submitButton": "Confirmer"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Configuration sauvegardée",
-        "message": "Configuration enregistrée sous {{configName}}"
-      },
-      "configCopied": {
-        "title": "Configuration copiée",
-        "message": "Configuration copiée comme {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Impossible de copier le fichier",
-        "message": "Votre configuration n'a pas été copiée en tant que {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "La suppression de la configuration a échoué",
           "message": "La suppression de la configuration a échoué"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "La configuration par défaut ne peut pas être supprimée",
+          "message": "La configuration n'a pas pu être supprimée du système de fichiers"
         }
       }
     },
@@ -60,11 +76,11 @@
     },
     "accept": {
       "title": "Téléversement de la configuration",
-      "text": ""
+      "text": "Faites glisser les fichiers ici pour importer votre configuration. Supporte uniquement les fichiers JSON."
     },
     "reject": {
       "title": "Upload par glisser-déposer rejeté",
-      "text": ""
+      "text": "Ce format de fichier n'est pas pris en charge. Veuillez ne téléverser que des fichiers JSON."
     }
   }
 }

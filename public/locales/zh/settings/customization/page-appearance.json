@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "自定义CSS",
-    "placeholder": ""
+    "placeholder": "自定义 CSS 将在最后应用"
   },
   "buttons": {
     "submit": "提交"

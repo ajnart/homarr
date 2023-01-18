@@ -1,6 +1,6 @@
 {
   "title": "欢迎回来！",
-  "text": "",
+  "text": "请输入密码。",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "正在检查你的密码..."
     },
     "correct": {
-      "title": ""
+      "title": "登录成功，正在跳转..."
     },
     "wrong": {
-      "title": ""
+      "title": "密码错误，请重新输入。"
     }
   }
 }

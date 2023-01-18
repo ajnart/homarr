@@ -1,6 +1,6 @@
 {
-  "title": "ברוך הבא",
-  "text": "",
+  "title": "ברוך שובך!",
+  "text": "נא להזין סיסמה",
   "form": {
     "fields": {
       "password": {
@@ -9,7 +9,7 @@
       }
     },
     "buttons": {
-      "submit": "כניסה למערכת"
+      "submit": "התחבר\\י"
     }
   },
   "notifications": {
@@ -18,10 +18,10 @@
       "message": "הסיסמה בבדיקה..."
     },
     "correct": {
-      "title": ""
+      "title": "התחברת בהצלחה"
     },
     "wrong": {
-      "title": ""
+      "title": "הסיסמה שגויה, נסה שנית"
     }
   }
 }

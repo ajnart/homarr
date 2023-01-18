@@ -1,33 +1,45 @@
 {
   "configSelect": {
-    "label": "",
+    "label": "Configuratiewisselaar",
+    "description": "",
     "loadingNew": "Uw configuratie wordt geladen...",
-    "pleaseWait": ""
+    "pleaseWait": "Wacht tot uw nieuwe configuratie is geladen!"
   },
   "modal": {
-    "title": "Kies de naam van uw nieuwe configuratie",
-    "form": {
-      "configName": {
-        "label": "Configuratie naam",
-        "validation": {
-          "required": "Configuratienaam is vereist"
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Uw nieuwe configuratienaam"
+        "submitButton": ""
       },
-      "submitButton": "Bevestig"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Configuratie opgeslagen",
-        "message": "Configuratie opgeslagen als {{configName}}"
-      },
-      "configCopied": {
-        "title": "Configuratie gekopieerd",
-        "message": "Configuratie gekopieerd als {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Kan configuratie niet kopiëren",
-        "message": "Uw configuratie werd niet gekopieerd als {{configName}}"
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "Configuratie verwijderen mislukt",
           "message": "Configuratie verwijderen mislukt"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Standaardconfiguratie kan niet worden verwijderd",
+          "message": "Configuratie is niet verwijderd uit het bestandssysteem"
         }
       }
     },
@@ -60,11 +76,11 @@
     },
     "accept": {
       "title": "Configuratie Upload",
-      "text": ""
+      "text": "Sleep bestanden hierheen om een configuratie te uploaden. Alleen ondersteuning voor JSON-bestanden."
     },
     "reject": {
       "title": "Drag & Drop Upload afgewezen",
-      "text": ""
+      "text": "Dit bestandsformaat wordt niet ondersteund. Upload alleen JSON-bestanden."
     }
   }
 }

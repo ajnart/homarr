@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Zeigt eine Liste von Torrents der unterstützten Torrent-Clients an.",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für das Torrent Widget",
       "refreshInterval": {
         "label": "Aktualisierungsintervall (in Sekunden)"
       },
@@ -39,12 +39,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Keine unterstützten Torrent Clients gefunden!",
+        "text": "Fügen Sie einen unterstützten Torrent Client hinzu, um Ihre aktuellen Downloads anzuzeigen"
       },
       "generic": {
         "title": "Ein unerwarteter Fehler ist aufgetreten",
-        "text": ""
+        "text": "Homarr konnte nicht mit Ihren Torrent Clients kommunizieren. Bitte überprüfen Sie Ihre Konfiguration"
       }
     },
     "loading": {

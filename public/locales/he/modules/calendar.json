@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "לוח שנה",
-    "description": "",
+    "description": "מציג לוח שנה עם עדכונים מאינטגרציות נתמכות.",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור ווידג'ט יומן",
       "sundayStart": {
         "label": "התחל את השבוע ביום ראשון"
       },

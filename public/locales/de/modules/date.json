@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Datum und Zeit",
+    "description": "Zeigt das aktuelle Datum und die Uhrzeit an",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für das Widget \"Datum und Uhrzeit",
       "display24HourFormat": {
         "label": "24-Stunden Format"
       }

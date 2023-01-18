@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Låter dig visa och hantera din Usenet instans."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Inga nedladdningsklienter som stöds hittades!",
-        "text": ""
+        "text": "Lägg till en nedladdningsklient för Usenet som stöds för att se dina aktuella nedladdningar"
       }
     }
   },

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Barre de recherche",
-    "description": ""
+    "description": "Une barre de recherche qui vous permet d'effectuer des recherches dans un moteur de recherche personnalisé, sur YouTube et dans les intégrations prises en charge."
   },
   "input": {
     "placeholder": "Cherchez sur le web..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": ""
+      "description": "Rechercher..."
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Rechercher des films et sériess sur Overseerr"
     }
   },
   "tip": "Vous pouvez sélectionner la barre de recherche avec le raccourci ",

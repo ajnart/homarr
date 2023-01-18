@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": ""
+    "description": "מאפשר לך לחפש ולהוסיף מדיה מ-Overseerr או Jellyseerr."
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "סמן את העונות שברצונך להוריד",
       "table": {
         "header": {
           "season": "עונה",

@@ -15,8 +15,8 @@
     "label": "Achtergrond"
   },
   "customCSS": {
-    "label": "Aangepaste CSS",
-    "placeholder": ""
+    "label": "Eigen CSS",
+    "placeholder": "Eigen CSS wordt als laatste toegepast"
   },
   "buttons": {
     "submit": "Indienen"

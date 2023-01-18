@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Add New Tile",
+        "text": "Tilez R Teh Main Element Ov Homarr. They R Usd 2 Display Ur Apps An Othr Informashun. U Can Add As Lotz Da Tilez As U Wants."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Widgets Interact Wif Ur Apps, 2 Provide U Wif Moar Control Ovar Ur Applicashuns. They Usually Require Addishunal Configurashun Before Use.",
+    "goBack": "Go Bak 2 Teh Previous Step",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Add Tile"
     }
 }

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Giver dig mulighed for nemt at se og administrere alle dine Docker Containers."
   },
   "search": {
     "placeholder": "Søg efter container- eller imagenavn"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Tilføj app",
+      "message": "Tilføj app til Homarr"
     },
     "restart": {
       "title": "Genstart"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker integration mislykkedes",
-      "message": ""
+      "message": "Har du glemt at mounte docker socket?"
     },
     "unknownError": {
       "title": "Der opstod en fejl"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Tilføj kun én app eller tjeneste ad gangen!"
     }
   },
   "actionIcon": {

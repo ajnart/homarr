@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "מזג אוויר",
-    "description": "",
+    "description": "מציג את מידע מזג האוויר הנוכחי של מיקום מוגדר.",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור ווידג'ט מזג אוויר",
       "displayInFahrenheit": {
         "label": "פרנהייט"
       },

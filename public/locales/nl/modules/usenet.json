@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Maakt het mogelijk om je Usenet installatie te bekijken en te beheren."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Geen ondersteunde download clients gevonden!",
-        "text": ""
+        "text": "Voeg een ondersteunde Usenet Download Client toe om uw huidige downloads te bekijken"
       }
     }
   },

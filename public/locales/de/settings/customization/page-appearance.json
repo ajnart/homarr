@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Benutzerdefiniertes CSS",
-    "placeholder": ""
+    "placeholder": "Benutzerdefiniertes CSS wird zuletzt angewendet"
   },
   "buttons": {
     "submit": "Absenden"

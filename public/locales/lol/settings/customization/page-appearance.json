@@ -3,7 +3,7 @@
     "label": "Paeg Titel"
   },
   "metaTitle": {
-    "label": ""
+    "label": "Meta Title"
   },
   "logo": {
     "label": "Logooo"
@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Custom CSS",
-    "placeholder": ""
+    "placeholder": "Custom CSS Will Be Applid Last"
   },
   "buttons": {
     "submit": "Submit"

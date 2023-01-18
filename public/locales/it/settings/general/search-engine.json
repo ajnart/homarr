@@ -2,7 +2,7 @@
   "title": "Motore di ricerca",
   "configurationName": "Configurazione del motore di ricerca",
   "tips": {
-    "generalTip": "",
+    "generalTip": "È possibile utilizzare diversi prefissi! L'aggiunta di questi prefissi davanti alla query filtrerà i risultati. !s (Web), !t (Torrent), !y (YouTube) e !m (Media).",
     "placeholderTip": "%s può essere usato come segnaposto per la ricerca."
   },
   "customEngine": {

@@ -1,33 +1,45 @@
 {
   "configSelect": {
-    "label": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Config Changr",
+    "description": "",
+    "loadingNew": "Loadin Ur Config...",
+    "pleaseWait": "Plz Wait Til Ur New Config Iz Loadd!"
   },
   "modal": {
-    "title": "Chooz teh naym ov ur nu config",
-    "form": {
-      "configName": {
-        "label": "Config naym",
-        "validation": {
-          "required": ""
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
         },
-        "placeholder": "Ur nu config naym"
+        "submitButton": ""
       },
-      "submitButton": "Confirm"
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Config saved",
-        "message": "Config saved as {{configName}}"
-      },
-      "configCopied": {
-        "title": "",
-        "message": ""
-      },
-      "configNotCopied": {
-        "title": "",
-        "message": ""
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "Config deleet faild",
           "message": "Config deleet faild"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -59,12 +75,12 @@
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Configurashun Upload",
+      "text": "Drag Filez Her 2 Upload Config. Support 4 JSON Filez Only."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Drag An Drop Upload Rejectd",
+      "text": "Dis File Format Iz Not Supportd. Plz Only Upload JSON Filez."
     }
   }
 }

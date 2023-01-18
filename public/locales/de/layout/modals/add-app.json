@@ -9,54 +9,54 @@
 	"general": {
 		"appname": {
 			"label": "Anwendungsname",
-			"description": ""
+			"description": "Wird für die Anzeige der App auf dem Dashboard verwendet."
 		},
 		"internalAddress": {
 			"label": "Interne Adresse",
-			"description": ""
+			"description": "Interne IP-Adresse der Anwendung."
 		},
 		"externalAddress": {
 			"label": "Externe Adresse",
-			"description": ""
+			"description": "URL, die beim Anklicken der App geöffnet wird."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "In neuem Tab öffnen",
-			"description": ""
+			"description": "Öffnen Sie die App in einer neuen Registerkarte, anstatt in der aktuellen Registerkarte."
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Statusprüfer",
-			"description": ""
+			"description": "Prüft, ob Ihre Anwendung online und mittels einer einfachen HTTP(S)-Anfrage erreichbar ist."
 		},
 		"statusCodes": {
 			"label": "HTTP Statuscodes",
-			"description": ""
+			"description": "Die HTTP-Statuscodes, die als online angesehen werden."
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "App Symbol",
-			"description": ""
+			"description": "Das Symbol, das auf dem Dashboard angezeigt werden soll."
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "Integrations-Konfiguration",
-			"description": "",
+			"description": "Die Integrationskonfiguration, die für die Verbindung mit Ihrer Anwendung verwendet wird.",
 			"placeholder": "Integration auswählen",
 			"defined": "Definiert",
 			"undefined": "Nicht definiert",
 			"public": "Öffentlich sichtbar",
 			"private": "Privat",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"explanationPrivate": "Ein private Phrase wird nur einmal an den Server gesendet. Sobald Ihr Browser die Seite aktualisiert hat, wird es nie wieder gesendet.",
+			"explanationPublic": "Ein öffentliche Phrase wird immer an den Client gesendet und ist über die API zugänglich. Es sollte keine vertraulichen Werte wie Benutzernamen, Passwörter, Token, Zertifikate und ähnliches enthalten!"
 		},
 		"secrets": {
 			"description": "Um eine Phrase zu aktualisieren, geben Sie einen Wert ein und klicken Sie auf Speichern. Um eine Phrase zu entfernen, klicken Sie auf die Schaltfläche Löschen.",
-			"warning": "",
+			"warning": "Ihre Anmeldedaten dienen als Zugang für Homarr und sie sollten diese <strong>niemals</strong> an andere Personen weitergeben. Das Homarr-Team wird Sie niemals nach Ihren Zugangsdaten fragen. Stellen Sie sicher, dass sie ihre <strong>Zugangsdaten sicher aufbewahren und verwalten</strong>.",
 			"clear": "Phrase löschen",
 			"save": "Phrase speichern",
 			"update": "Phrase ändern"

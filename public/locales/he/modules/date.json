@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "תאריך ושעה",
+    "description": "מציג את התאריך והשעה הנוכחיים.",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור ווידג'ט תאריך ושעה",
       "display24HourFormat": {
         "label": "הצגת זמן בפורמט 24 שעות"
       }

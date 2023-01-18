@@ -1,33 +1,45 @@
 {
   "configSelect": {
-    "label": "",
+    "label": "Konfigurationsskifter",
+    "description": "{{configCount}} konfigurationer er tilgængelige",
     "loadingNew": "Indlæser din konfiguration...",
-    "pleaseWait": ""
+    "pleaseWait": "Vent venligst, indtil din nye konfiguration er indlæst!"
   },
   "modal": {
-    "title": "Vælg navnet på din nye konfiguration",
-    "form": {
-      "configName": {
-        "label": "Konfigurationens navn",
-        "validation": {
-          "required": "Konfigurationsnavn er påkrævet"
+    "copy": {
+      "title": "Vælg navnet på din nye konfiguration",
+      "form": {
+        "configName": {
+          "label": "Konfigurationens navn",
+          "validation": {
+            "required": "Konfigurationsnavn er påkrævet",
+            "notUnique": "Konfigurationsnavnet er allerede i brug"
+          },
+          "placeholder": "Dit nye konfigurationsnavn"
         },
-        "placeholder": "Dit nye konfigurationsnavn"
+        "submitButton": "Bekræft"
       },
-      "submitButton": "Bekræft"
+      "events": {
+        "configSaved": {
+          "title": "Konfigurationen gemt",
+          "message": "Konfigurationen gemt som {{configName}}"
+        },
+        "configCopied": {
+          "title": "Konfigurationen kopieret",
+          "message": "Konfigurationen kopieret som {{configName}}"
+        },
+        "configNotCopied": {
+          "title": "Kan ikke kopiere konfigurationen",
+          "message": "Din konfiguration blev ikke kopieret som {{configName}}"
+        }
+      }
     },
-    "events": {
-      "configSaved": {
-        "title": "Konfigurationen gemt",
-        "message": "Konfigurationen gemt som {{configName}}"
-      },
-      "configCopied": {
-        "title": "Konfigurationen kopieret",
-        "message": "Konfigurationen gemt som {{configName}}"
-      },
-      "configNotCopied": {
-        "title": "Kan ikke kopiere konfigurationen",
-        "message": "Din konfiguration blev ikke kopieret som {{configName}}"
+    "confirmDeletion": {
+      "title": "Bekræft sletning af din konfiguration",
+      "warningText": "Du er ved at slette '<b>{{configName}}</b>'",
+      "text": "Bemærk venligst, at sletningen ikke kan fortrydes, og at dine data vil gå tabt permanent. Når du klikker på denne knap, slettes filen permanent fra din disk. Sørg for at oprette en passende sikkerhedskopi af din konfiguration.",
+      "buttons": {
+        "confirm": "Ja, slet '<b>{{configName}}</b>'"
       }
     }
   },
@@ -43,6 +55,10 @@
         "deleteFailed": {
           "title": "Sletning af konfiguration mislykkedes",
           "message": "Sletning af konfiguration mislykkedes"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Standardkonfiguration kan ikke slettes",
+          "message": "Konfigurationen blev ikke slettet fra filsystemet"
         }
       }
     },
@@ -60,11 +76,11 @@
     },
     "accept": {
       "title": "Upload af konfiguration",
-      "text": ""
+      "text": "Træk filer hertil for at uploade en konfiguration. Kun understøttelse af JSON."
     },
     "reject": {
       "title": "Træk og slip Upload afvist",
-      "text": ""
+      "text": "Dette filformat understøttes ikke. Upload venligst kun JSON."
     }
   }
 }
