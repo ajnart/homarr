@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "פינג",
-    "description": ""
+    "description": "מציג מחוון סטטוס בהתאם לקוד תגובת בקשת רשת של כתובת אינטרנט נתונה."
   },
   "states": {
     "online": "מקוון {{response}}",
