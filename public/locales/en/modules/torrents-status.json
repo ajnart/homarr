@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Error",
+      "lastUpdated": "Last updated {{time}} ago"
+    },
     "table": {
       "header": {
         "name": "Name",
@@ -49,6 +53,16 @@
     },
     "loading": {
       "title": "Loading..."
+    },
+    "popover": {
+      "introductionPrefix": "Managed by",
+      "metrics": {
+        "queuePosition": "Queue position - {{position}}",
+        "progress": "Progress - {{progress}}%",
+        "totalSelectedSize": "Total - {{totalSize}}",
+        "state": "State - {{state}}",
+        "completed": "Completed"
+      }
     }
   }
 }

@@ -1,8 +1,6 @@
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import { Query, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-
-const POLLING_INTERVAL = 2000;
+import { NormalizedTorrentListResponse } from '../../../types/api/NormalizedTorrentListResponse';
 
 interface TorrentsDataRequestParams {
   appId: string;
@@ -23,7 +21,7 @@ export const useGetTorrentData = (params: TorrentsDataRequestParams) =>
     enabled: !!params.appId,
   });
 
-const fetchData = async (): Promise<NormalizedTorrent[]> => {
+const fetchData = async (): Promise<NormalizedTorrentListResponse> => {
   const response = await axios.post('/api/modules/torrents');
-  return response.data as NormalizedTorrent[];
+  return response.data as NormalizedTorrentListResponse;
 };
