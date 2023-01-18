@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Te permite ver y administrar fácilmente todos tus contenedores Docker."
   },
   "search": {
     "placeholder": "Buscar por nombre de contenedor o nombre de imagen"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Añadir app",
+      "message": "Añadir app a Homarr"
     },
     "restart": {
       "title": "Reiniciar"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Error en la integración con Docker",
-      "message": ""
+      "message": "Has olvidado montar el socket de docker?"
     },
     "unknownError": {
       "title": "Se ha producido un error"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Por favor, ¡añade solo una app o servicio a la vez!"
     }
   },
   "actionIcon": {
