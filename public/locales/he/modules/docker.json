@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "הוספת יישום",
-      "message": ""
+      "message": "הוסף אפליקציה ל-Homarr"
     },
     "restart": {
       "title": "אתחל"
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "שילוב דוקר נכשל",
-      "message": ""
+      "message": "האם שכחת לטעון את הדוקר?"
     },
     "unknownError": {
       "title": "אירעה שגיאה"
