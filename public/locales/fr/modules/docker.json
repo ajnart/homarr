@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Vous permet de voir et de gérer facilement tous vos conteneurs Docker."
   },
   "search": {
     "placeholder": "Recherche par nom de conteneur ou d'image"
@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "Ajouter une application",
-      "message": ""
+      "message": "Ajouter une application à Homarr"
     },
     "restart": {
       "title": "Redémarrer"
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "L'intégration de Docker a échoué",
-      "message": ""
+      "message": "Avez-vous oublié de monter le socket Docker ?"
     },
     "unknownError": {
       "title": "Une erreur s’est produite"
