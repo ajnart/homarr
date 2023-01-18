@@ -1,45 +1,45 @@
 {
   "configSelect": {
     "label": "Configuratiewisselaar",
-    "description": "",
+    "description": "{{configCount}} configuraties zijn beschikbaar",
     "loadingNew": "Uw configuratie wordt geladen...",
     "pleaseWait": "Wacht tot uw nieuwe configuratie is geladen!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Kies de naam van uw nieuwe configuratie",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Configuratie naam",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Configuratienaam is vereist",
+            "notUnique": "Configuratienaam is al in gebruik"
           },
-          "placeholder": ""
+          "placeholder": "Uw nieuwe configuratienaam"
         },
-        "submitButton": ""
+        "submitButton": "Bevestig"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Configuratie opgeslagen",
+          "message": "Configuratie opgeslagen als {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Configuratie gekopieerd",
+          "message": "Configuratie gekopieerd als {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Kan configuratie niet kopiëren",
+          "message": "Uw configuratie werd niet gekopieerd als {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Bevestig de verwijdering van uw configuratie",
+      "warningText": "Je staat op het punt om '<b>{{configName}}</b>' te verwijderen",
+      "text": "Houd er rekening mee dat de verwijdering niet onomkeerbaar is en dat uw gegevens permanent verloren gaan. Na het klikken op deze knop wordt het bestand permanent van uw schijf verwijderd. Zorg voor een adequate back-up van uw configuratie.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Ja, verwijder '<b>{{configName}}</b>'"
       }
     }
   },
