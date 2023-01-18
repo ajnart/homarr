@@ -47,7 +47,7 @@ export function migrateConfig(config: Config): ConfigType {
     wrappers: [
       {
         id: 'default',
-        position: 1,
+        position: 0,
       },
     ],
   };
