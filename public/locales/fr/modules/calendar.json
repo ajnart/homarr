@@ -3,7 +3,7 @@
     "name": "Calendrier",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Paramètres du widget Calendrier",
       "sundayStart": {
         "label": "Commencez la semaine par dimanche"
       },
