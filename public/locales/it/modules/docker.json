@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "Aggiungi App",
-      "message": "Aggiungi app ad Homarr"
+      "message": ""
     },
     "restart": {
       "title": "Riavvia"
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Integrazione Docker fallita",
-      "message": "Vi siete dimenticati di montare il socket di Docker?"
+      "message": ""
     },
     "unknownError": {
       "title": "Si è verificato un errore"
