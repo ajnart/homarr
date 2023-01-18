@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Integrazione Docker fallita",
-      "message": "Vi siete dimenticati di montare il socket di Docker?"
+      "message": "Hai dimenticato di montare il socket di docker?"
     },
     "unknownError": {
       "title": "Si è verificato un errore"

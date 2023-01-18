@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Calendario",
-    "description": "",
+    "description": "Muestra un calendario con las próximas emisiones, desde las integraciones compatibles.",
     "settings": {
-      "title": "",
+      "title": "Ajustes para el widget del Calendario",
       "sundayStart": {
         "label": "Marcar Domingo como primer día de la semana"
       },

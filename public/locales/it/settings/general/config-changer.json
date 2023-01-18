@@ -1,45 +1,45 @@
 {
   "configSelect": {
     "label": "Config changer",
-    "description": "",
+    "description": "{{configCount}} configurazioni disponibili",
     "loadingNew": "Caricamento della configurazione...",
     "pleaseWait": "Attendere fino al caricamento della nuova configurazione!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Scegli il nome della nuova configurazione",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Nome configurazione",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Il nome della configurazione è obbligatorio",
+            "notUnique": "Nome configurazione già in uso"
           },
-          "placeholder": ""
+          "placeholder": "Nuovo nome configurazione"
         },
-        "submitButton": ""
+        "submitButton": "Conferma"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Configurazione salvata",
+          "message": "Configurazione salvata come {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Configurazione copiata",
+          "message": "Configurazione copiata come {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Impossibile copiare la configurazione",
+          "message": "La tua configurazione non è stata copiata come {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Conferma l'eliminazione della configurazione",
+      "warningText": "Stai per cancellare '<b>{{configName}}</b>'",
+      "text": "Si noti che l'eliminazione non è reversibile e i dati andranno persi in modo permanente. Dopo aver fatto clic su questo pulsante, il file verrà eliminato definitivamente dal disco. Assicurarsi di creare un backup adeguato della propria configurazione.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Sì, elimina '<b>{{configName}}</b>'"
       }
     }
   },

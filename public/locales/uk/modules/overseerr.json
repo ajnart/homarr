@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": ""
+    "description": "Дозволяє вам шукати та додавати медіа з Overseerr/Jellyseerr."
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Позначте сезони, які ви хочете завантажити",
       "table": {
         "header": {
           "season": "Сезон",
