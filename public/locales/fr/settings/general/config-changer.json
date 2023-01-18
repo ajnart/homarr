@@ -7,39 +7,39 @@
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Choisissez le nom de votre nouvelle configuration",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Nom de la configuration",
           "validation": {
-            "required": "",
+            "required": "Le nom de la configuration est requis",
             "notUnique": ""
           },
-          "placeholder": ""
+          "placeholder": "Le nom de votre nouvelle configuration"
         },
-        "submitButton": ""
+        "submitButton": "Confirmer"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Configuration sauvegardée",
+          "message": "Configuration enregistrée en tant que {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Configuration copiée",
+          "message": "Configuration enregistrée en tant que {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Impossible de copier la configuration",
+          "message": "Votre configuration n'a pas pu être copiée en tant que {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Confirmer la suppression de votre configuration",
+      "warningText": "Vous êtes sur le point de supprimer '<b>{{configName}}</b>'",
+      "text": "Veuillez noter que la suppression n'est pas réversible et que vos données seront définitivement perdues. Après avoir cliqué sur ce bouton, le fichier sera définitivement supprimé de votre disque. Veillez à créer une sauvegarde adéquate de votre configuration.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Oui, supprimer '<b>{{configName}}</b>'"
       }
     }
   },
