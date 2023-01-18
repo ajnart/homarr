@@ -1,42 +1,42 @@
 {
   "configSelect": {
     "label": "",
-    "description": "",
+    "description": "{{configCount}} configuraciones disponibles",
     "loadingNew": "Cargando tu configuración...",
-    "pleaseWait": ""
+    "pleaseWait": "Por favor, ¡espera hasta que tu nueva configuración esté carga!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Elige el nombre de tu nueva configuración",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Nombre de la configuración",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Se requiere nombre de la configuración",
+            "notUnique": "El nombre de la configuración ya está en uso"
           },
-          "placeholder": ""
+          "placeholder": "Nombre de tu nueva configuración"
         },
-        "submitButton": ""
+        "submitButton": "Confirmar"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Configuración guardada",
+          "message": "Configuración guardada como {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Configuración copiada",
+          "message": "Configuración copiada como {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Imposible copiar la configuración",
+          "message": "Tu configuración no fue copiada como {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
+      "title": "Confirmar eliminación de tu configuración",
+      "warningText": "Estás a punto de eliminar '<b>{{configName}}</b>'",
       "text": "",
       "buttons": {
         "confirm": ""
