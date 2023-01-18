@@ -9,27 +9,27 @@
 	"general": {
 		"appname": {
 			"label": "Nombre de la app",
-			"description": ""
+			"description": "Usado para mostrar la app en el dashboard."
 		},
 		"internalAddress": {
 			"label": "Dirección interna",
-			"description": ""
+			"description": "Dirección IP interna de la app."
 		},
 		"externalAddress": {
 			"label": "Dirección externa",
-			"description": ""
+			"description": "URL que se abrirá al hacer clic en la app."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Abrir en nueva pestaña",
-			"description": ""
+			"description": "Abrir la app en una nueva pestaña, en vez de en la actual."
 		}
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Verificador de estado",
-			"description": ""
+			"description": "Comprueba si tu app está en línea usando una simple petición HTTP(S)."
 		},
 		"statusCodes": {
 			"label": "Códigos HTTP de estado",
