@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "",
+    "label": "Cambiador de configuración",
     "description": "{{configCount}} configuraciones disponibles",
     "loadingNew": "Cargando tu configuración...",
     "pleaseWait": "Por favor, ¡espera hasta que tu nueva configuración esté carga!"
@@ -37,9 +37,9 @@
     "confirmDeletion": {
       "title": "Confirmar eliminación de tu configuración",
       "warningText": "Estás a punto de eliminar '<b>{{configName}}</b>'",
-      "text": "",
+      "text": "Por favor, ten en cuenta que la eliminación no es reversible y tus datos serán borrados indefinidamente. Después de hacer clic en el botón, el archivo será eliminado permanentemente del disco. Asegúrate de crear un respaldo adecuado de tu configuración.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Si, eliminar '<b>{{configName}}</b>'"
       }
     }
   },
@@ -57,8 +57,8 @@
           "message": "Error en el borrado de la configuración"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "La configuración por defecto no puede ser eliminada",
+          "message": "La configuración no fue eliminada del sistema"
         }
       }
     },
@@ -76,11 +76,11 @@
     },
     "accept": {
       "title": "Configuración subida",
-      "text": ""
+      "text": "Arrastra archivos aquí para subir la configuración. Solo se soportan archivos JSON."
     },
     "reject": {
       "title": "Subida Arrastar y Soltar rechada",
-      "text": ""
+      "text": "Este formato der archivo no está soportado. Por favor, sube solo archivos JSON."
     }
   }
 }
