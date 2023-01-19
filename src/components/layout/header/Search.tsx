@@ -8,6 +8,7 @@ import {
   Menu,
   Popover,
   ScrollArea,
+  TextInput,
   Tooltip,
 } from '@mantine/core';
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
@@ -22,6 +23,7 @@ import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelec
 import { useConfigContext } from '../../../config/provider';
 import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
+import { useCardStyles } from '../useCardStyles';
 
 export const SearchModule: IModule = {
   title: 'Search',
@@ -54,6 +56,7 @@ export function Search() {
   const { config } = useConfigContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
+  const { classes: cardClasses } = useCardStyles(false);
 
   const isOverseerrEnabled = config?.apps.some(
     (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
@@ -197,7 +200,10 @@ export function Search() {
                 }
               }
             }}
-            radius="md"
+            classNames={{
+              input: cardClasses.card,
+            }}
+            radius="lg"
             size="md"
           />
         </Popover.Target>

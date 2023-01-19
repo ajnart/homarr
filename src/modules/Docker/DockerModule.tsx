@@ -5,6 +5,7 @@ import axios from 'axios';
 import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
+import { useCardStyles } from '../../components/layout/useCardStyles';
 import { useConfigContext } from '../../config/provider';
 
 import ContainerActionBar from './ContainerActionBar';
@@ -15,6 +16,7 @@ export default function DockerMenuButton(props: any) {
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const { config } = useConfigContext();
+  const { classes } = useCardStyles(false);
 
   const dockerEnabled = config?.settings.customization.layout.enabledDocker || false;
 
@@ -69,6 +71,7 @@ export default function DockerMenuButton(props: any) {
       <Tooltip label={t('actionIcon.tooltip')}>
         <ActionIcon
           variant="default"
+          className={classes.card}
           radius="md"
           size="xl"
           color="blue"

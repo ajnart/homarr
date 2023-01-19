@@ -11,6 +11,7 @@ import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan'
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 import { AddElementAction } from '../AddElementAction/AddElementAction';
 import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/gridstack/store';
+import { useCardStyles } from '../../../useCardStyles';
 
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
@@ -20,6 +21,7 @@ export const ToggleEditModeAction = () => {
 
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
+  const { classes } = useCardStyles(false);
 
   const toggleButtonClicked = () => {
     toggleEditMode();
@@ -75,6 +77,7 @@ export const ToggleEditModeAction = () => {
   const ToggleButtonDesktop = () => (
     <Tooltip label={enabled ? t('button.enabled') : t('button.disabled')}>
       <Button
+        className={classes.card}
         onClick={() => toggleButtonClicked()}
         radius="md"
         variant="default"
@@ -87,6 +90,7 @@ export const ToggleEditModeAction = () => {
 
   const ToggleActionIconMobile = () => (
     <ActionIcon
+      className={classes.card}
       onClick={() => toggleButtonClicked()}
       variant="default"
       radius="md"
