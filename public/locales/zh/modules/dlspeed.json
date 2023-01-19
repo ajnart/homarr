@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "下载速度",
-    "description": ""
+    "description": "显示支持的集成的下载和上传速度。"
   },
   "card": {
     "table": {
