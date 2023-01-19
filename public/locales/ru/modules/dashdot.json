@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Отображает графики внешнего экземпляра Dash. внутри Homarr.",
     "settings": {
-      "title": "",
+      "title": "Настройки для виджета Dash.",
       "cpuMultiView": {
         "label": "Многоядерный процессор Вид"
       },
