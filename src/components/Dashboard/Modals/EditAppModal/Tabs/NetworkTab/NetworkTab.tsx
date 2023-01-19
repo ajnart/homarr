@@ -22,14 +22,14 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
       {form.values.network.enabledStatusChecker && (
         <MultiSelect
           required
-          label={t('network.statusCodes.label')}
-          description={t('network.statusCodes.description')}
+          label={t('network.okStatus.label')}
+          description={t('network.okStatus.description')}
           data={StatusCodes}
           clearable
           searchable
           defaultValue={form.values.network.okStatus}
           variant="default"
-          {...form.getInputProps('network.statusCodes')}
+          {...form.getInputProps('network.okStatus')}
         />
       )}
     </Tabs.Panel>
