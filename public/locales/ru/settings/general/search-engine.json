@@ -1,6 +1,6 @@
 {
   "title": "Поисковая система",
-  "configurationName": "",
+  "configurationName": "Настройка поисковой системы",
   "tips": {
     "generalTip": "",
     "placeholderTip": "%s можно использовать в качестве заполнителя для запроса."
