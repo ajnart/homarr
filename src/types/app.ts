@@ -22,7 +22,7 @@ interface AppBehaviourType {
 
 interface AppNetworkType {
   enabledStatusChecker: boolean;
-  okStatus: number[];
+  statusCodes: number[];
 }
 
 interface AppAppearanceType {
