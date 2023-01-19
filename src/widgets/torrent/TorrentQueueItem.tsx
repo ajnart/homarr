@@ -38,6 +38,7 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
   const [popoverOpened, { open: openPopover, close: closePopover }] = useDisclosure(false);
   const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const { width } = useElementSize();
+  const { t } = useTranslation('modules/torrents-status');
 
   const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
   const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
@@ -45,13 +46,7 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
   return (
     <tr key={torrent.id}>
       <td>
-        <Popover
-          opened={popoverOpened}
-          radius="md"
-          shadow="md"
-          width="target"
-          withinPortal
-        >
+        <Popover opened={popoverOpened} radius="md" shadow="md" width={350} withinPortal>
           <Popover.Dropdown>
             <TorrentQueuePopover torrent={torrent} app={app} />
           </Popover.Dropdown>
@@ -68,7 +63,10 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
               </Text>
               {app && (
                 <Text size="xs" color="dimmed">
-                  Managed by {app.name}, {torrent.ratio.toFixed(2)} ratio
+                  {t('card.table.item.text', {
+                    appName: app.name,
+                    ratio: torrent.ratio.toFixed(2),
+                  })}
                 </Text>
               )}
             </div>
@@ -125,7 +123,7 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
     return (
       <Group spacing="xs">
         <Group spacing={3}>
-          <Text>Ratio -</Text>
+          <Text>{t('card.popover.metrics.ratio')}</Text>
 
           <Text color={color()} weight="bold">
             {torrent.ratio.toFixed(2)}
@@ -188,7 +186,6 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
         <List.Item icon={<IconDownload size={16} />}>
           <Group spacing="xs">
             <Text>{humanFileSize(torrent.totalDownloaded)}</Text>
-            <Divider orientation="vertical" />
             <IconUpload size={16} />
             <Text>{humanFileSize(torrent.totalUploaded)}</Text>
           </Group>
@@ -200,18 +197,14 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
             })}
           </Text>
         </List.Item>
-        {(torrent.label || torrent.isCompleted) && (
-          <List.Item>
-            <Flex gap="sm">
-              {torrent.label && <Badge variant="outline">{torrent.label}</Badge>}
-              {torrent.isCompleted && (
-                <Badge variant="dot" color="green">
-                  {t('card.popover.metrics.completed')}
-                </Badge>
-              )}
-            </Flex>
-          </List.Item>
-        )}
+        <Flex gap="sm" mt="md">
+          {torrent.label && <Badge variant="outline">{torrent.label}</Badge>}
+          {torrent.isCompleted && (
+            <Badge variant="dot" color="green">
+              {t('card.popover.metrics.completed')}
+            </Badge>
+          )}
+        </Flex>
       </List>
     </Stack>
   );

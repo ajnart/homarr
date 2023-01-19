@@ -29,6 +29,9 @@
         "estimatedTimeOfArrival": "ETA",
         "progress": "Progress"
       },
+      "item": {
+        "text": "Managed by {{appName}}, {{ratio}} ratio"
+      },
       "body": {
         "nothingFound": "No torrents found"
       }
@@ -61,6 +64,7 @@
         "progress": "Progress - {{progress}}%",
         "totalSelectedSize": "Total - {{totalSize}}",
         "state": "State - {{state}}",
+        "ratio": "Ratio -",
         "completed": "Completed"
       }
     }
