@@ -45,7 +45,7 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
-  const { secondaryColor, primaryColor } = useColorTheme();
+  const { secondaryColor } = useColorTheme();
   const { name: configName } = useConfigContext();
   const { classes, cx } = useStyles(secondaryColor);
   const { colorScheme, colors } = useMantineTheme();
@@ -77,7 +77,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         onChange={() => {}}
         firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
         dayStyle={(date) => ({
-          margin: 0,
+          margin: -1,
           backgroundColor: isToday(date)
             ? colorScheme === 'dark'
               ? colors.dark[5]
@@ -86,7 +86,12 @@ function CalendarTile({ widget }: CalendarTileProps) {
         })}
         hideWeekdays
         styles={{
+          weekdayCell: {
+            margin: 0,
+            padding: 0,
+          },
           calendarHeader: {
+            position: 'relative',
             margin: 0,
             padding: 0,
           },
