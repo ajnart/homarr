@@ -1,21 +1,21 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Сохранить",
+  "about": "О приложении",
   "cancel": "Отмена",
-  "close": "",
+  "close": "Закрыть",
   "delete": "Удалить",
-  "ok": "",
+  "ok": "ОК",
   "edit": "Изменить",
-  "version": "",
-  "changePosition": "",
+  "version": "Версия",
+  "changePosition": "Изменить положение",
   "remove": "Удалить",
-  "removeConfirm": "",
+  "removeConfirm": "Вы действительно хотите удалить {{item}} ?",
   "sections": {
     "settings": "Настройки",
     "dangerZone": "Опасная зона"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Ключ API",
     "username": "Имя пользователя",
     "password": "Пароль"
   },
