@@ -2,12 +2,16 @@
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Badge,
+  Divider,
   Flex,
   Group,
+  List,
   MantineColor,
   Popover,
   Progress,
+  Stack,
   Text,
+  Title,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure, useElementSize } from '@mantine/hooks';
@@ -41,7 +45,13 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
   return (
     <tr key={torrent.id}>
       <td>
-        <Popover opened={popoverOpened} width={350} position="top" withinPortal>
+        <Popover
+          opened={popoverOpened}
+          radius="md"
+          shadow="md"
+          width="target"
+          withinPortal
+        >
           <Popover.Dropdown>
             <TorrentQueuePopover torrent={torrent} app={app} />
           </Popover.Dropdown>
@@ -114,7 +124,6 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
     };
     return (
       <Group spacing="xs">
-        <IconAffiliate size={16} />
         <Group spacing={3}>
           <Text>Ratio -</Text>
 
@@ -127,7 +136,7 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
   };
 
   return (
-    <>
+    <Stack spacing="xs" justify="space-evenly">
       {app && (
         <Group spacing={3}>
           <Text size="xs" color="dimmed">
@@ -139,54 +148,71 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
           </Text>
         </Group>
       )}
-      <Text mb="md" weight="bold">
-        {torrent.name}
-      </Text>
-
-      <RatioMetric />
-      <Group spacing="xs">
-        <IconSortDescending size={16} />
-        <Text>{t('card.popover.metrics.queuePosition', { position: torrent.queuePosition })}</Text>
-      </Group>
-
-      <Group spacing="xs">
-        <IconPercentage size={16} />
-        <Text>
-          {t('card.popover.metrics.progress', { progress: (torrent.progress * 100).toFixed(2) })}
-        </Text>
-      </Group>
-      <Group spacing="xs">
-        <IconDatabase size={16} />
-        <Text>
-          {t('card.popover.metrics.totalSelectedSize', {
-            totalSize: humanFileSize(torrent.totalSelected),
-          })}
-        </Text>
-      </Group>
-      <Group>
-        <Group spacing="xs">
-          <IconDownload size={16} />
-          <Text>{humanFileSize(torrent.totalDownloaded)}</Text>
-        </Group>
-        <Group spacing="xs">
-          <IconUpload size={16} />
-          <Text>{humanFileSize(torrent.totalUploaded)}</Text>
-        </Group>
-      </Group>
-
-      <Group spacing="xs">
-        <IconInfoCircle size={16} />
-        <Text>{t('card.popover.metrics.state', { state: torrent.stateMessage })}</Text>
-      </Group>
-
-      <Flex mt="md" mb="xs" gap="sm">
-        {torrent.label && <Badge variant="outline">{torrent.label}</Badge>}
-        {torrent.isCompleted && (
-          <Badge variant="dot" color="green">
-            {t('card.popover.metrics.completed')}
-          </Badge>
+      <Title order={5}>{torrent.name}</Title>
+      <List>
+        <List.Item icon={<IconAffiliate size={16} />}>
+          <RatioMetric />
+        </List.Item>
+        <List.Item icon={<IconSortDescending size={16} />}>
+          <Group spacing="xs">
+            <Text>
+              {t('card.popover.metrics.queuePosition', { position: torrent.queuePosition })}
+            </Text>
+          </Group>
+        </List.Item>
+        <List.Item icon={<IconPercentage size={16} />}>
+          <Group spacing="xs">
+            <Text>
+              {t('card.popover.metrics.progress', {
+                progress: (torrent.progress * 100).toFixed(2),
+              })}
+              <Progress
+                color={
+                  torrent.progress === 1 ? 'green' : torrent.state === 'paused' ? 'yellow' : 'blue'
+                }
+                radius="md"
+                size="sm"
+                value={torrent.progress * 100}
+                animate={torrent.state !== 'paused'}
+              />
+            </Text>
+          </Group>
+        </List.Item>
+        <List.Item icon={<IconDatabase size={16} />}>
+          <Text>
+            {t('card.popover.metrics.totalSelectedSize', {
+              totalSize: humanFileSize(torrent.totalSelected),
+            })}
+          </Text>
+        </List.Item>
+        <List.Item icon={<IconDownload size={16} />}>
+          <Group spacing="xs">
+            <Text>{humanFileSize(torrent.totalDownloaded)}</Text>
+            <Divider orientation="vertical" />
+            <IconUpload size={16} />
+            <Text>{humanFileSize(torrent.totalUploaded)}</Text>
+          </Group>
+        </List.Item>
+        <List.Item icon={<IconInfoCircle size={16} />}>
+          <Text>
+            {t('card.popover.metrics.state', {
+              state: torrent.stateMessage !== '' ? torrent.stateMessage : torrent.state,
+            })}
+          </Text>
+        </List.Item>
+        {(torrent.label || torrent.isCompleted) && (
+          <List.Item>
+            <Flex gap="sm">
+              {torrent.label && <Badge variant="outline">{torrent.label}</Badge>}
+              {torrent.isCompleted && (
+                <Badge variant="dot" color="green">
+                  {t('card.popover.metrics.completed')}
+                </Badge>
+              )}
+            </Flex>
+          </List.Item>
         )}
-      </Flex>
-    </>
+      </List>
+    </Stack>
   );
 };
