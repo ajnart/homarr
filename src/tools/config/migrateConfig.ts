@@ -157,7 +157,7 @@ const migrateService = (oldService: serviceItem, areaType: AreaType): AppType =>
   },
   network: {
     enabledStatusChecker: oldService.ping ?? true,
-    okStatus: oldService.status?.map((str) => parseInt(str, 10)) ?? [200],
+    statusCodes: oldService.status?.map((str) => parseInt(str, 10)) ?? [200],
   },
   appearance: {
     iconUrl: migrateIcon(oldService.icon),
