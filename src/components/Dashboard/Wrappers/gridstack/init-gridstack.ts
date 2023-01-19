@@ -30,7 +30,7 @@ export const initializeGridstack = (
   newGrid.current = GridStack.init(
     {
       column: columnCount,
-      margin: 10,
+      margin: areaType === 'sidebar' ? 5 : 10,
       cellHeight: 128,
       float: true,
       alwaysShowResizeHandle: 'mobile',

@@ -16,7 +16,7 @@ export const DashboardView = () => {
   const { isReady, mainAreaRef } = usePrepareGridstack();
 
   return (
-    <Group align="top" h="100%">
+    <Group align="top" h="100%" spacing="xs">
       {sidebarsVisible.isLoading ? (
         <Center w="100%">
           <Loader />
