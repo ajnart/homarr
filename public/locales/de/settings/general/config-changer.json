@@ -1,45 +1,45 @@
 {
   "configSelect": {
     "label": "Konfigurationslader",
-    "description": "",
+    "description": "{{configCount}} Konfigurationen sind verfügbar",
     "loadingNew": "Ihre Konfiguration wird geladen...",
     "pleaseWait": "Bitte warten Sie, bis Ihre neue Konfiguration geladen ist!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Wählen Sie den Namen für Ihre neue Konfiguration",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Name der Konfiguration",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Name der Konfiguration ist erforderlich",
+            "notUnique": "Der Name dieser Konfiguration wird bereits verwendet"
           },
-          "placeholder": ""
+          "placeholder": "Ihr neuer Konfigurationsname"
         },
-        "submitButton": ""
+        "submitButton": "Bestätigen"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguration gespeichert",
+          "message": "Konfiguration gespeichert als {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguration kopiert",
+          "message": "Konfiguration kopiert als {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguration konnte nicht kopiert werden",
+          "message": "Ihre Konfiguration wurde nicht als {{configName}} kopiert"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Bestätigen Sie die Löschung Ihrer Konfiguration",
+      "warningText": "Sie sind dabei, '<b>{{configName}}</b>' zu löschen",
+      "text": "Bitte beachten Sie, dass die Löschung nicht rückgängig gemacht werden kann und Ihre Konfigurations Daten dauerhaft verloren gehen. Nachdem Sie auf diese Schaltfläche geklickt haben, wird die Konfiguration dauerhaft gelöscht. Stellen Sie sicher, dass Sie ein angemessenes Backup dieser Datei erstellen.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Ja, lösche die folgende Konfiguration: '<b>{{configName}}</b>'"
       }
     }
   },
