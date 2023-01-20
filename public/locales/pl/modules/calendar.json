@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "Kalendarz",
-    "description": "",
+    "description": "Wyświetla kalendarz z nadchodzącymi wydaniami, z obsługiwanych integracji.",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widżetu Kalendarz",
       "sundayStart": {
         "label": "Rozpoczynaj tydzień od niedzieli"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Typ zwolnienia Radarr"
       }
     }
   }
