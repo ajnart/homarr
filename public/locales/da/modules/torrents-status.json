@@ -63,9 +63,9 @@
         "queuePosition": "Placering i køen - {{position}}",
         "progress": "Fremskridt - {{progress}}%",
         "totalSelectedSize": "I alt - {{totalSize}}",
-        "state": "Stat - {{state}}",
-        "ratio": "Forhold -",
-        "completed": "Færdiggjort"
+        "state": "Status - {{state}}",
+        "ratio": "Ratio -",
+        "completed": "Fuldført"
       }
     }
   }
