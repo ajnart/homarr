@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "天気",
-    "description": "",
+    "description": "設定した場所の現在の天気情報を表示します。",
     "settings": {
-      "title": "",
+      "title": "天気予報ウィジェットの設定",
       "displayInFahrenheit": {
         "label": "表示単位：華氏"
       },
