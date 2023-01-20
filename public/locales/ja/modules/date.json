@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "日付と時間",
+    "description": "現在の日付と時刻を表示します。",
     "settings": {
-      "title": "",
+      "title": "日付と時刻ウィジェットの設定",
       "display24HourFormat": {
         "label": "フルタイム（24時間）表示"
       }
