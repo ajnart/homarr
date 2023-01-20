@@ -8,7 +8,6 @@ import {
   Menu,
   Popover,
   ScrollArea,
-  TextInput,
   Tooltip,
 } from '@mantine/core';
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
@@ -17,13 +16,13 @@ import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/i
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
-import SmallAppItem from './SmallAppItem';
-import Tip from '../Tip';
-import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import { useConfigContext } from '../../../config/provider';
 import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
+import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
+import Tip from '../Tip';
 import { useCardStyles } from '../useCardStyles';
+import SmallAppItem from './SmallAppItem';
 
 export const SearchModule: IModule = {
   title: 'Search',

@@ -1,7 +1,6 @@
 import { Button, Group, Modal, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useCopyConfigMutation } from '../../../../tools/config/mutations/useCopyConfigMutation';
 
