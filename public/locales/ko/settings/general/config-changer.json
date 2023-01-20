@@ -7,22 +7,22 @@
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "새로운 설정의 이름을 입력하세요",
       "form": {
         "configName": {
-          "label": "",
+          "label": "설정 이름",
           "validation": {
             "required": "",
             "notUnique": ""
           },
-          "placeholder": ""
+          "placeholder": "새로운 설정 이름"
         },
-        "submitButton": ""
+        "submitButton": "확인"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "설정 저장됨",
+          "message": "{{configName}} 로 설정 저장됨"
         },
         "configCopied": {
           "title": "",
