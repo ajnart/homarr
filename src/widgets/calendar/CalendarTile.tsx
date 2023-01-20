@@ -66,26 +66,34 @@ function CalendarTile({ widget }: CalendarTileProps) {
   return (
     <Group grow style={{ height: '100%' }}>
       <Calendar
+        m={0}
+        p={0}
         month={month}
         // Should be offset 5px to the left
-        style={{ position: 'relative', top: -10 }}
+        style={{ position: 'relative', top: -15 }}
         onMonthChange={setMonth}
         size="xs"
         fullWidth
         onChange={() => {}}
         firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
         dayStyle={(date) => ({
-          margin: 1,
+          margin: -1,
           backgroundColor: isToday(date)
             ? colorScheme === 'dark'
               ? colors.dark[5]
               : colors.gray[0]
             : undefined,
         })}
+        hideWeekdays
         styles={{
+          weekdayCell: {
+            margin: 0,
+            padding: 0,
+          },
           calendarHeader: {
-            marginRight: 40,
-            marginLeft: 40,
+            position: 'relative',
+            margin: 0,
+            padding: 0,
           },
         }}
         allowLevelChange={false}
