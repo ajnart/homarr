@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "שגיאה",
+      "lastUpdated": ""
+    },
     "table": {
       "header": {
         "name": "שם",
@@ -24,6 +28,9 @@
         "upload": "העלאה",
         "estimatedTimeOfArrival": "זמן סיום משוער",
         "progress": "התקדמות"
+      },
+      "item": {
+        "text": ""
       },
       "body": {
         "nothingFound": "לא נמצא טורנט"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "טוען..."
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
     }
   }
 }
