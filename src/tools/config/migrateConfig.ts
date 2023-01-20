@@ -22,7 +22,7 @@ export function migrateConfig(config: Config): ConfigType {
       name: config.name ?? 'default',
     },
     categories: [],
-    widgets: migrateModules(config),
+    widgets: migrateModules(config).filter(widget => widget !== null),
     apps: [],
     settings: {
       common: {
