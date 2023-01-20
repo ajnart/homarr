@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "奔流",
+    "description": "サポートされている Torrent クライアントのトレントのリストを表示します。",
     "settings": {
-      "title": "",
+      "title": "Torrentウィジェットの設定",
       "refreshInterval": {
         "label": "リフレッシュ間隔(秒)"
       },
@@ -18,7 +18,7 @@
   "card": {
     "footer": {
       "error": "エラー",
-      "lastUpdated": ""
+      "lastUpdated": "最終更新 {{time}} 前"
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "進捗状況"
       },
       "item": {
-        "text": ""
+        "text": "運営： {{appName}}, {{ratio}} 比率"
       },
       "body": {
         "nothingFound": "トレントが見つかりません"
@@ -46,26 +46,26 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "サポートされているTorrentクライアントが見つかりません。",
+        "text": "サポートされているTorrentクライアントを追加して、現在のダウンロードを表示します。"
       },
       "generic": {
         "title": "予期せぬエラーが発生しました",
-        "text": ""
+        "text": "HomarrはあなたのTorrentクライアントと通信できませんでした。設定を確認してください。"
       }
     },
     "loading": {
       "title": "読み込み中..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "マネージド・バイ",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "キューポジション - {{position}}",
+        "progress": "進捗状況 - {{progress}}%.",
+        "totalSelectedSize": "合計 - {{totalSize}}",
+        "state": "状態 - {{state}}",
+        "ratio": "比率",
+        "completed": "完成品"
       }
     }
   }
