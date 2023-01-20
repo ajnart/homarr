@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Помилка",
+      "lastUpdated": "Востаннє оновлено {{time}} тому"
+    },
     "table": {
       "header": {
         "name": "Ім’я",
@@ -24,6 +28,9 @@
         "upload": "Віддача",
         "estimatedTimeOfArrival": "Залишилося",
         "progress": "Прогрес"
+      },
+      "item": {
+        "text": "Управляється {{appName}}, {{ratio}} співвідношення"
       },
       "body": {
         "nothingFound": "Не знайдено торентів"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Завантаження..."
+    },
+    "popover": {
+      "introductionPrefix": "Під керівництвом",
+      "metrics": {
+        "queuePosition": "Позиція в черзі - {{position}}",
+        "progress": "Прогрес - {{progress}}%.",
+        "totalSelectedSize": "Всього - {{totalSize}}",
+        "state": "Держава - {{state}}",
+        "ratio": "Коефіцієнт -",
+        "completed": "Завершено"
+      }
     }
   }
 }
