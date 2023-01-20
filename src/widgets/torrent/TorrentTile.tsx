@@ -1,5 +1,6 @@
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
+  Badge,
   Center,
   Flex,
   Group,
@@ -20,6 +21,7 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 import { useGetTorrentData } from '../../hooks/widgets/torrents/useGetTorrentData';
+import { NormalizedTorrentListResponse } from '../../types/api/NormalizedTorrentListResponse';
 import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -76,7 +78,17 @@ function TorrentTile({ widget }: TorrentTileProps) {
     [];
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
-  const { data, isError, isInitialLoading, dataUpdatedAt } = useGetTorrentData({
+  const {
+    data,
+    isError,
+    isInitialLoading,
+    dataUpdatedAt,
+  }: {
+    data: NormalizedTorrentListResponse | undefined;
+    isError: boolean;
+    isInitialLoading: boolean;
+    dataUpdatedAt: number;
+  } = useGetTorrentData({
     appId: selectedAppId!,
     refreshInterval: widget.properties.refreshInterval * 1000,
   });
@@ -127,7 +139,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     );
   }
 
-  if (!data || data.length < 1) {
+  if (!data || Object.values(data.torrents).length < 1) {
     return (
       <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Title order={3}>{t('card.table.body.nothingFound')}</Title>
@@ -153,7 +165,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   return (
     <Flex direction="column" sx={{ height: '100%' }}>
-      <ScrollArea sx={{ height: '100%', width: '100%' }}>
+      <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
         <Table highlightOnHover p="sm">
           <thead>
             <tr>
@@ -166,15 +178,28 @@ function TorrentTile({ widget }: TorrentTileProps) {
             </tr>
           </thead>
           <tbody>
-            {data.filter(filter).map((item: NormalizedTorrent, index: number) => (
-              <BitTorrrentQueueItem key={index} torrent={item} />
-            ))}
+            {data.torrents.map((concatenatedTorrentList) => {
+              const app = config?.apps.find((x) => x.id === concatenatedTorrentList.appId);
+              return concatenatedTorrentList.torrents
+                .filter(filter)
+                .map((item: NormalizedTorrent, index: number) => (
+                  <BitTorrrentQueueItem key={index} torrent={item} app={app} />
+                ));
+            })}
           </tbody>
         </Table>
       </ScrollArea>
-      <Text color="dimmed" size="xs">
-        Last updated {humanizedDuration} ago
-      </Text>
+      <Group spacing="sm">
+        {!data.allSuccess && (
+          <Badge variant="dot" color="red">
+            {t('card.footer.error')}
+          </Badge>
+        )}
+
+        <Text color="dimmed" size="xs">
+          {t('card.footer.lastUpdated', { time: humanizedDuration })}
+        </Text>
+      </Group>
     </Flex>
   );
 }

@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { humanFileSize } from '../../tools/humanFileSize';
+import { NormalizedTorrentListResponse } from '../../types/api/NormalizedTorrentListResponse';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -60,7 +61,8 @@ function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTrafficTileProps) {
       axios
         .post('/api/modules/torrents')
         .then((response) => {
-          setTorrents(response.data);
+          const responseData: NormalizedTorrentListResponse = response.data;
+          setTorrents(responseData.torrents.flatMap((x) => x.torrents));
         })
         .catch((error) => {
           if (error.status === 401) return;
