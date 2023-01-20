@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Pogoda",
-    "description": "",
+    "description": "Wyświetla aktualne informacje o pogodzie w ustawionej lokalizacji.",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widgetu pogody",
       "displayInFahrenheit": {
         "label": "Wyświetlaj w Fahrenheitach"
       },
@@ -18,12 +18,12 @@
       "mainlyClear": "Częściowe zachmurzenie",
       "fog": "Mgła",
       "drizzle": "Mżawka",
-      "freezingDrizzle": "",
+      "freezingDrizzle": "Mrożąca mżawka",
       "rain": "Deszcz",
-      "freezingRain": "",
+      "freezingRain": "Marznący deszcz",
       "snowFall": "Opady śniegu",
-      "snowGrains": "",
-      "rainShowers": "",
+      "snowGrains": "Ziarna śniegu",
+      "rainShowers": "Deszczownice",
       "snowShowers": "Przelotne opady śniegu",
       "thunderstorm": "Burza",
       "thunderstormWithHail": "Burza z gradem",
