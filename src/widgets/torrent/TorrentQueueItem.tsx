@@ -73,7 +73,7 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
         </Popover>
       </td>
       <td>
-        <Text size="xs">{humanFileSize(size)}</Text>
+        <Text size="xs">{humanFileSize(size, false)}</Text>
       </td>
       {width > MIN_WIDTH_MOBILE && (
         <td>
@@ -188,15 +188,15 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
         <List.Item icon={<IconDatabase size={16} />}>
           <Text>
             {t('card.popover.metrics.totalSelectedSize', {
-              totalSize: humanFileSize(torrent.totalSelected),
+              totalSize: humanFileSize(torrent.totalSelected, false),
             })}
           </Text>
         </List.Item>
         <List.Item icon={<IconDownload size={16} />}>
           <Group spacing="xs">
-            <Text>{humanFileSize(torrent.totalDownloaded)}</Text>
+            <Text>{humanFileSize(torrent.totalDownloaded, false)}</Text>
             <IconUpload size={16} />
-            <Text>{humanFileSize(torrent.totalUploaded)}</Text>
+            <Text>{humanFileSize(torrent.totalUploaded, false)}</Text>
           </Group>
         </List.Item>
         <List.Item icon={<IconInfoCircle size={16} />}>
