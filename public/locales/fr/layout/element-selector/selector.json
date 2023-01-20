@@ -1,7 +1,7 @@
 {
     "modal": {
         "title": "Ajouter une tuile",
-        "text": ""
+        "text": "Les tuiles sont l'élément principal de Homarr. Elles sont utilisées pour afficher vos applications et autres informations. Vous pouvez ajouter autant de tuiles que vous le souhaitez."
     },
     "widgetDescription": "Les widgets interagissent avec vos applications, pour vous permettre de mieux les contrôler. Ils nécessitent généralement quelques configurations supplémentaires avant d'être utilisés.",
     "goBack": "Retourner à la page précédente",

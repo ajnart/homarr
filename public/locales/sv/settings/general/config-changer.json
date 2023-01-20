@@ -7,39 +7,39 @@
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Välj namn på din nya konfigurering",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Konfigurationsnamn",
           "validation": {
-            "required": "",
+            "required": "Konfigurationsnamn krävs",
             "notUnique": "Konfigurationens namn används redan"
           },
-          "placeholder": ""
+          "placeholder": "Ditt nya konfigurationsnamn"
         },
-        "submitButton": ""
+        "submitButton": "Bekräfta"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurationen sparad",
+          "message": "Konfigurationen sparad som {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurationen kopierad",
+          "message": "Konfigurationen kopierades som {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Kunde inte kopiera konfigurationen",
+          "message": "Din konfiguration kopierades inte som {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Bekräfta radering av din konfiguration",
+      "warningText": "Du är på väg att radera '<b>{{configName}}</b>'",
+      "text": "Observera att raderingen inte kan göras om och att dina uppgifter kommer att gå förlorade permanent. När du har klickat på den här knappen kommer filen att raderas permanent från din disk. Se till att skapa en lämplig säkerhetskopia av din konfiguration.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Ja, radera '<b>{{configName}}</b>'"
       }
     }
   },

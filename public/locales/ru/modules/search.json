@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Панель поиска",
-    "description": ""
+    "description": "Строка поиска, позволяющая искать в пользовательской поисковой системе, YouTube и поддерживаемых интеграциях."
   },
   "input": {
     "placeholder": "Искать в интернете..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": ""
+      "description": "Поиск..."
     },
     "youtube": {
       "name": "Youtube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Поиск фильмов и телешоу на Overseerr"
     }
   },
   "tip": "Вы можете выбрать строку поиска с помощью сочетания клавиш ",

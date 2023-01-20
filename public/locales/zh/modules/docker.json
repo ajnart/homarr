@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "允许你轻松查看和管理所有的Docker容器。"
   },
   "search": {
     "placeholder": "按容器或镜像名称搜索"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "添加应用",
+      "message": "添加应用到 Homarr"
     },
     "restart": {
       "title": "重新启动"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker整合失败",
-      "message": ""
+      "message": "你是不是忘了挂载docker socket？"
     },
     "unknownError": {
       "title": "出现了一个错误"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "请每次只添加一个应用程序或服务!"
     }
   },
   "actionIcon": {

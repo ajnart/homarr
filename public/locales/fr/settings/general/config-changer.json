@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "",
+    "label": "Changeur de configuration",
     "description": "{{configCount}} configurations disponibles",
     "loadingNew": "Chargement des configurations ...",
     "pleaseWait": "Veuillez attendre que votre nouvelle configuration soit chargée !"

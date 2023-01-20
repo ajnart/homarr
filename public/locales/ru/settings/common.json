@@ -6,24 +6,24 @@
     "customizations": "Оформление"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Загрузите файл конфигурации, перетащив его на страницу!"
   },
   "credits": {
     "madeWithLove": "Сделано с ❤️ от @"
   },
   "grow": "Увеличение сетки (занимает все пространство)",
   "layout": {
-    "title": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "title": "Макет панели",
+    "main": "Главная",
+    "sidebar": "Боковая панель",
+    "cannotturnoff": "Невозможно отключить",
+    "dashboardlayout": "Макет панели",
+    "enablersidebar": "Включить правую боковую панель",
+    "enablelsidebar": "Включить левую боковую панель",
+    "enablesearchbar": "Включить панель поиска",
+    "enabledocker": "Включить интеграцию с docker",
+    "enableping": "Включить пинги",
+    "enablelsidebardesc": "Необязательно. Может использоваться только для приложений и интеграций",
+    "enablersidebardesc": "Необязательно. Может использоваться только для приложений и интеграций"
   }
 }

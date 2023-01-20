@@ -51,12 +51,12 @@
 			"undefined": "未定义",
 			"public": "公开的",
 			"private": "私有的",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"explanationPrivate": "私有密钥只会被发送到服务器一次。一旦你的浏览器刷新了页面，它就再也不会发送了。",
+			"explanationPublic": "公开的密钥将始终发送给客户端，并且可以通过API访问。它不应该包含任何机密值，如用户名、密码、令牌、证书等!"
 		},
 		"secrets": {
 			"description": "要更新一个秘密，输入一个值并点击保存按钮。要删除一个秘密，请使用清除按钮。",
-			"warning": "",
+			"warning": "您的凭据充当集成的访问权限，您应该，<strong>永远不要</strong>与任何人共享它们。Homarr团队永远不会要求证书。确保<strong>安全地存储和管理你的秘钥</strong>。",
 			"clear": "清除密钥",
 			"save": "保存密钥",
 			"update": "更新密钥"

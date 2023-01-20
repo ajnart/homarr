@@ -1,45 +1,45 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
+    "label": "配置更改",
+    "description": "{{configCount}} 个可用的配置",
     "loadingNew": "加载你的配置...",
-    "pleaseWait": ""
+    "pleaseWait": "请稍等，直到您的新配置加载完成!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "选择新配置的名称",
       "form": {
         "configName": {
-          "label": "",
+          "label": "配置名称",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "配置名称是必需的",
+            "notUnique": "配置名称已被使用"
           },
-          "placeholder": ""
+          "placeholder": "你的新配置名称"
         },
-        "submitButton": ""
+        "submitButton": "确认"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "保存配置",
+          "message": "配置保存为 {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "复制配置",
+          "message": "配置复制为 {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "无法复制",
+          "message": "你的配置没有被复制为 {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "确认删除你的配置",
+      "warningText": "你即将删除 '<b>{{configName}}</b>'。",
+      "text": "请注意，删除是不可逆的，您的数据将永久丢失。点击此按钮后，该文件将从您的磁盘上永久删除。请确保为您的配置创建足够的备份。",
       "buttons": {
-        "confirm": ""
+        "confirm": "是的，删除 '<b>{{configName}}</b>' 。"
       }
     }
   },
@@ -57,8 +57,8 @@
           "message": "配置删除失败"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "默认值不能被删除",
+          "message": "配置没有从文件系统中删除"
         }
       }
     },
@@ -76,11 +76,11 @@
     },
     "accept": {
       "title": "配置上传",
-      "text": ""
+      "text": "将文件拖动到这里上传配置。仅支持 JSON 文件。"
     },
     "reject": {
       "title": "拒绝拖拽式上传",
-      "text": ""
+      "text": "此文件格式不受支持。请只上传JSON文件。"
     }
   }
 }

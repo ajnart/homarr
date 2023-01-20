@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Позволяет легко видеть и управлять всеми вашими контейнерами Docker."
   },
   "search": {
     "placeholder": "Поиск по названию контейнера или образа"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Добавить приложение",
+      "message": "Добавить приложение в Homarr"
     },
     "restart": {
       "title": "Перезапустить"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Сбой интеграции Docker",
-      "message": ""
+      "message": "Вы забыли смонтировать сокет docker?"
     },
     "unknownError": {
       "title": "Произошла ошибка"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Пожалуйста, добавляйте только одно приложение или услугу за один раз!"
     }
   },
   "actionIcon": {
