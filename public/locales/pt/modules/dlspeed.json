@@ -1,15 +1,15 @@
 {
   "descriptor": {
     "name": "Velocidade de Transferência",
-    "description": ""
+    "description": "Mostra a velocidade de download e Upload das integrações suportadas."
   },
   "card": {
     "table": {
       "header": {
         "name": "Nome",
         "size": "Tamanho",
-        "download": "",
-        "upload": "",
+        "download": "Para baixo",
+        "upload": "Para cima",
         "estimatedTimeOfArrival": "TED",
         "progress": "Progresso"
       },
@@ -18,12 +18,12 @@
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
+      "title": "Velocidade de descarga actual",
+      "download": "Descarregar: {{download}}",
+      "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} atrás",
-      "totalDownload": "",
-      "totalUpload": ""
+      "totalDownload": "Descarregar: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
