@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Fejl",
+      "lastUpdated": ""
+    },
     "table": {
       "header": {
         "name": "Navn",
@@ -25,12 +29,15 @@
         "estimatedTimeOfArrival": "ETA",
         "progress": "Fremskridt"
       },
+      "item": {
+        "text": ""
+      },
       "body": {
         "nothingFound": "Ingen torrents fundet"
       }
     },
     "lineChart": {
-      "title": "Nuværende downloadhastighed",
+      "title": "Nuværende netværkstrafik",
       "download": "Download: {{download}}",
       "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} sekunder siden",
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Indlæser..."
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
     }
   }
 }
