@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ドッカー",
-    "description": ""
+    "description": "すべてのDockerコンテナを簡単に確認し、管理することができます。"
   },
   "search": {
     "placeholder": "コンテナ名、画像名で検索"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "アプリを追加する",
+      "message": "Homarrにアプリを追加"
     },
     "restart": {
       "title": "再スタート"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Dockerとの連携に失敗",
-      "message": ""
+      "message": "ドッカーソケットをマウントするのを忘れていませんか？"
     },
     "unknownError": {
       "title": "エラーが発生しました"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "一度に1つのアプリやサービスだけを追加してください"
     }
   },
   "actionIcon": {
