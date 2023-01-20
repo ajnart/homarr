@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "토렌트",
     "description": "",
     "settings": {
       "title": "",
@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "오류",
+      "lastUpdated": ""
+    },
     "table": {
       "header": {
         "name": "이름",
@@ -24,6 +28,9 @@
         "upload": "업로드",
         "estimatedTimeOfArrival": "남은 시간",
         "progress": "진행률"
+      },
+      "item": {
+        "text": ""
       },
       "body": {
         "nothingFound": "토렌트 없음"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "불러오는 중…"
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
     }
   }
 }
