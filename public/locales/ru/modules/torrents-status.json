@@ -30,7 +30,7 @@
         "progress": "Прогресс"
       },
       "item": {
-        "text": "Управляется {{appName}}, {{ratio}} соотношение"
+        "text": "Управляется {{appName}}, {{ratio}} рейтинг"
       },
       "body": {
         "nothingFound": "Торренты не найдены"
@@ -60,11 +60,11 @@
     "popover": {
       "introductionPrefix": "Управляется",
       "metrics": {
-        "queuePosition": "Положение в очереди - {{position}}",
+        "queuePosition": "Позиция очереди - {{position}}",
         "progress": "Прогресс - {{progress}}%",
         "totalSelectedSize": "Всего - {{totalSize}}",
-        "state": "Государство - {{state}}",
-        "ratio": "Соотношение -",
+        "state": "Состояние - {{state}}",
+        "ratio": "Рейтинг -",
         "completed": "Завершено"
       }
     }
