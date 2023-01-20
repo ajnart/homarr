@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ピング",
-    "description": ""
+    "description": "指定されたURLのHTTPレスポンスコードに応じたステータスインジケータを表示します。"
   },
   "states": {
     "online": "オンライン {{response}}",
