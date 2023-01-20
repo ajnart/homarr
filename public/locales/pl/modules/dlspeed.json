@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Prędkość pobierania",
-    "description": ""
+    "description": "Wyświetla prędkość pobierania i wysyłania obsługiwanych integracji."
   },
   "card": {
     "table": {
