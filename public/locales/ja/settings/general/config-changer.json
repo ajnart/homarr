@@ -1,45 +1,45 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
+    "label": "コンフィグチェンジャー",
+    "description": "{{configCount}} の構成が可能です。",
     "loadingNew": "コンフィグを読み込む...",
-    "pleaseWait": ""
+    "pleaseWait": "新しいコンフィグが読み込まれるまで、しばらくお待ちください"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "新しいコンフィグの名前を選択します。",
       "form": {
         "configName": {
-          "label": "",
+          "label": "コンフィグ名",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "コンフィグ名は必須です",
+            "notUnique": "コンフィグ名はすでに使用されています"
           },
-          "placeholder": ""
+          "placeholder": "新しいコンフィグ名"
         },
-        "submitButton": ""
+        "submitButton": "確認"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "コンフィグ保存",
+          "message": "{{configName}}として保存されたコンフィグ"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "コンフィグをコピーした",
+          "message": "{{configName}}としてコピーされたコンフィグ"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "コンフィグをコピーできない",
+          "message": "コンフィグが {{configName}}としてコピーされていない"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "コンフィグの削除を確認する",
+      "warningText": "あなたが削除しようとしているのは '<b>{{configName}}</b>' です。",
+      "text": "削除は元に戻すことができず、データは永久に失われることに注意してください。このボタンをクリックした後、ファイルはディスクから永久に削除されます。必ず、設定の適切なバックアップを作成してください。",
       "buttons": {
-        "confirm": ""
+        "confirm": "はい、'<b>{{configName}}</b>' を削除してください。"
       }
     }
   },
@@ -57,8 +57,8 @@
           "message": "コンフィグ削除の失敗"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "デフォルトのコンフィグを削除できない",
+          "message": "ファイルシステムからコンフィギュレーションが削除されていない"
         }
       }
     },
@@ -76,11 +76,11 @@
     },
     "accept": {
       "title": "コンフィギュレーションアップロード",
-      "text": ""
+      "text": "ここにファイルをドラッグしてコンフィグをアップロードしてください。JSONファイルのみ対応。"
     },
     "reject": {
       "title": "ドラッグ＆ドロップによるアップロードを拒否",
-      "text": ""
+      "text": "このファイル形式はサポートされていません。JSONファイルのみアップロードしてください。"
     }
   }
 }
