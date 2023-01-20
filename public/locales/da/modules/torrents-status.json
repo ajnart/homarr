@@ -18,7 +18,7 @@
   "card": {
     "footer": {
       "error": "Fejl",
-      "lastUpdated": ""
+      "lastUpdated": "Sidst opdateret {{time}} siden"
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "Fremskridt"
       },
       "item": {
-        "text": ""
+        "text": "Administreret af {{appName}}, {{ratio}} ratio"
       },
       "body": {
         "nothingFound": "Ingen torrents fundet"
@@ -58,14 +58,14 @@
       "title": "Indlæser..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Administreret af",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Placering i køen - {{position}}",
+        "progress": "Fremskridt - {{progress}}%",
+        "totalSelectedSize": "I alt - {{totalSize}}",
+        "state": "Stat - {{state}}",
+        "ratio": "Forhold -",
+        "completed": "Færdiggjort"
       }
     }
   }
