@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Dodajanje nove ploščice",
+        "text": "Ploščice so glavni element sistema Homarr. Uporabljajo se za prikaz aplikacij in drugih informacij. Dodate lahko poljubno število ploščic."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Pripomočki sodelujejo z vašimi aplikacijami in vam omogočajo boljši nadzor nad aplikacijami. Pred uporabo običajno zahtevajo dodatno konfiguracijo.",
+    "goBack": "Vrnite se na prejšnji korak",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Dodajanje ploščice"
     }
 }
