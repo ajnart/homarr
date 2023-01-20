@@ -92,6 +92,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   appName: {
     ref: getRef('appName'),
+    wordBreak: 'break-word',
   },
   button: {
     paddingBottom: 10,
