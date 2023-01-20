@@ -1,19 +1,19 @@
 {
   "title": "Silnik wyszukiwania",
-  "configurationName": "",
+  "configurationName": "Konfiguracja wyszukiwarki",
   "tips": {
-    "generalTip": "",
+    "generalTip": "Istnieje wiele prefiksów, których możesz użyć! Dodanie ich przed zapytaniem spowoduje przefiltrowanie wyników. !s (Web), !t (Torrenty), !y (YouTube) i !m (Media).",
     "placeholderTip": "%s może być użyte jako symbol zastępczy dla zapytania."
   },
   "customEngine": {
-    "title": "",
+    "title": "Własna wyszukiwarka",
     "label": "Adres URL zapytania",
     "placeholder": "Własny adres URL zapytania"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Otwórz wyniki wyszukiwania w nowej karcie"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Włączone wyszukiwanie"
   }
 }
