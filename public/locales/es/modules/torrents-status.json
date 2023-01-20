@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Error",
+      "lastUpdated": ""
+    },
     "table": {
       "header": {
         "name": "Nombre",
@@ -24,6 +28,9 @@
         "upload": "Subida",
         "estimatedTimeOfArrival": "Tiempo restante",
         "progress": "Completado %"
+      },
+      "item": {
+        "text": ""
       },
       "body": {
         "nothingFound": "No se han encontrado torrents"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Cargando..."
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
     }
   }
 }
