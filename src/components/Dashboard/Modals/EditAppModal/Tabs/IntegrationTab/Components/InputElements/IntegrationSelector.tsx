@@ -110,6 +110,8 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       clearable
       variant="default"
       searchable
+      zIndex={203}
+      withinPortal
       filter={(value, item) =>
         item.label?.toLowerCase().includes(value.toLowerCase().trim()) ||
         item.description?.toLowerCase().includes(value.toLowerCase().trim())
@@ -128,7 +130,6 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
         form.setFieldValue('integration.properties', getNewProperties(value));
         inputProps.onChange(value);
       }}
-      withinPortal
       {...inputProps}
     />
   );
