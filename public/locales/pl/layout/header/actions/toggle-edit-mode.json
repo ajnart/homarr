@@ -1,16 +1,16 @@
 {
-    "description": "",
+    "description": "W trybie edycji można dostosować kafelki i skonfigurować aplikacje. Zmiany nie są zapisywane do momentu wyjścia z trybu edycji.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Wejdź w tryb edycji",
+        "enabled": "Zakończ i zapisz"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Tryb edycji jest włączony dla  <1>{{size}}</1> rozmiar",
+        "text": "Możesz teraz dostosować i skonfigurować swoje aplikacje. Zmiany nie są <strong>zapisywane</strong> do momentu wyjścia z trybu edycji."
     },
     "screenSizes": {
-        "small": "",
-        "medium": "",
-        "large": ""
+        "small": "mała",
+        "medium": "średni",
+        "large": "duży"
     }
 }
