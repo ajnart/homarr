@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Erreur",
+      "lastUpdated": ""
+    },
     "table": {
       "header": {
         "name": "Nom",
@@ -24,6 +28,9 @@
         "upload": "Montant",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Progrès"
+      },
+      "item": {
+        "text": ""
       },
       "body": {
         "nothingFound": "Aucun torrent trouvé"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Chargement..."
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
     }
   }
 }
