@@ -1,6 +1,6 @@
 {
   "title": "Witaj ponownie!",
-  "text": "",
+  "text": "Proszę podać hasło",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Twoje hasło jest sprawdzane..."
     },
     "correct": {
-      "title": ""
+      "title": "Logowanie zakończone sukcesem, przekierowanie..."
     },
     "wrong": {
-      "title": ""
+      "title": "Wprowadzone hasło jest nieprawidłowe, proszę spróbować ponownie."
     }
   }
 }
