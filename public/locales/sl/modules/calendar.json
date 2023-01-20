@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "Koledar",
-    "description": "",
+    "description": "Prikaže koledar s prihajajočimi izdajami iz podprtih integracij.",
     "settings": {
-      "title": "",
+      "title": "Nastavitve za gradnik Koledar",
       "sundayStart": {
         "label": "Začni teden z nedeljo"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Tip sprostitve Radarr"
       }
     }
   }
