@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Отображает графики внешнего экземпляра Dash. внутри Homarr.",
+    "description": "Показывает графики внешнего экземпляра Dash. в Homarr.",
     "settings": {
       "title": "Настройки для виджета Dash.",
       "cpuMultiView": {
-        "label": "Многоядерный вид ЦП"
+        "label": "Показать все ядра ЦП"
       },
       "storageMultiView": {
-        "label": "Вид многодискового хранилища"
+        "label": "Хранилище с несколькими дисками"
       },
       "useCompactView": {
         "label": "Использовать компактный вид"
@@ -36,18 +36,18 @@
         "title": "Сеть",
         "label": "Сеть:",
         "metrics": {
-          "download": "Вниз",
-          "upload": "Вверх"
+          "download": "Загрузка",
+          "upload": "Отдача"
         }
       },
       "cpu": {
-        "title": "Процессор"
+        "title": "ЦП"
       },
       "memory": {
         "title": "ОЗУ"
       },
       "gpu": {
-        "title": "Графический процессор"
+        "title": "ГП"
       }
     }
   }
