@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "ユーズネット",
-    "description": ""
+    "description": "ユーズネットインスタンスの表示と管理を可能にします。"
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "対応するダウンロードクライアントが見つかりません",
-        "text": ""
+        "text": "サポートされているUsenetダウンロードクライアントを追加して、現在のダウンロードを表示する"
       }
     }
   },
