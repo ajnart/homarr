@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "Barra de pesquisa",
-    "description": ""
+    "description": "Uma barra de pesquisa que lhe permite pesquisar no seu motor de pesquisa personalizado, YouTube, e integrações suportadas."
   },
   "input": {
     "placeholder": "Pesquisar na Internet..."
   },
-  "switched-to": "",
+  "switched-to": "Comutado para",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Pesquisar..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "Youtube",
+      "description": "Pesquisa no Youtube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrentes",
+      "description": "Pesquisa de Torrentes"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Pesquisa de Filmes e Programas de TV no Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Pode seleccionar a barra de pesquisa com o atalho ",
+  "switchedSearchEngine": "Comutado para pesquisa com {{searchEngine}}"
 }
