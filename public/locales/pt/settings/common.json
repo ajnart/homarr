@@ -3,27 +3,27 @@
   "tooltip": "Configurações",
   "tabs": {
     "common": "Comum",
-    "customizations": ""
+    "customizations": "Personalizações"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Carregue o seu ficheiro de configuração arrastando-o e largando-o na página!"
   },
   "credits": {
     "madeWithLove": "Feito com ❤️ por @"
   },
-  "grow": "",
+  "grow": "Grelha de cultivo (ocupar todo o espaço)",
   "layout": {
-    "title": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "title": "Disposição do painel de instrumentos",
+    "main": "Principal",
+    "sidebar": "Sidebar",
+    "cannotturnoff": "Não pode ser desligado",
+    "dashboardlayout": "Disposição do painel de instrumentos",
+    "enablersidebar": "Activar a barra lateral direita",
+    "enablelsidebar": "Activar a barra lateral esquerda",
+    "enablesearchbar": "Activar a barra de pesquisa",
+    "enabledocker": "Permitir a integração de estivadores",
+    "enableping": "Habilitar os pings",
+    "enablelsidebardesc": "Opcional. Pode ser utilizado apenas para aplicações e integrações",
+    "enablersidebardesc": "Opcional. Pode ser utilizado apenas para aplicações e integrações"
   }
 }
