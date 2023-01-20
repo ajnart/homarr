@@ -2,7 +2,6 @@
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Badge,
-  Divider,
   Flex,
   Group,
   List,
@@ -11,7 +10,6 @@ import {
   Progress,
   Stack,
   Text,
-  Title,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure, useElementSize } from '@mantine/hooks';
@@ -19,6 +17,7 @@ import {
   IconAffiliate,
   IconDatabase,
   IconDownload,
+  IconFileInfo,
   IconInfoCircle,
   IconPercentage,
   IconSortDescending,
@@ -134,7 +133,7 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
   };
 
   return (
-    <Stack spacing="xs" justify="space-evenly">
+    <Stack spacing="xs">
       {app && (
         <Group spacing={3}>
           <Text size="xs" color="dimmed">
@@ -146,8 +145,18 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
           </Text>
         </Group>
       )}
-      <Title order={5}>{torrent.name}</Title>
+
       <List>
+        <List.Item icon={<IconFileInfo size={16} />}>
+          <Text
+            style={{
+              display: 'inline-block',
+              wordBreak: 'break-word',
+            }}
+          >
+            {torrent.name}
+          </Text>
+        </List.Item>
         <List.Item icon={<IconAffiliate size={16} />}>
           <RatioMetric />
         </List.Item>
