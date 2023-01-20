@@ -4,18 +4,20 @@ import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { AboutModal } from '../../About/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
+import { useCardStyles } from '../useCardStyles';
 import { ColorSchemeSwitch } from './SettingsMenu/ColorSchemeSwitch';
 
 export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const [drawerOpened, drawer] = useDisclosure(false);
   const { t } = useTranslation('common');
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
+  const { classes } = useCardStyles(false);
 
   return (
     <>
       <Menu width={250}>
         <Menu.Target>
-          <Button variant="default" radius="md" style={{ height: 43 }}>
+          <Button className={classes.card} variant="default" radius="md" style={{ height: 43 }}>
             <IconMenu2 />
           </Button>
         </Menu.Target>
