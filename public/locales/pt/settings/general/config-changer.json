@@ -1,86 +1,86 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Alterador de configuração",
+    "description": "{{configCount}} configurações estão disponíveis",
+    "loadingNew": "Carregando a sua configuração...",
+    "pleaseWait": "Por favor aguarde até que a sua nova configuração seja carregada!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Escolha o nome da sua nova configuração",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Nome da configuração",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "O nome de configuração é necessário",
+            "notUnique": "O nome Config já está em uso"
           },
-          "placeholder": ""
+          "placeholder": "O seu novo nome de configuração"
         },
-        "submitButton": ""
+        "submitButton": "Confirme"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Config guardado",
+          "message": "Config guardado como {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Config copiado",
+          "message": "Config copiado como {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Impossibilidade de copiar a configuração",
+          "message": "A sua configuração não foi copiada como {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Confirme a eliminação da sua configuração",
+      "warningText": "Está prestes a eliminar '<b>{{configName}}</b>'",
+      "text": "Note, por favor, que a eliminação não é invertível e os seus dados serão perdidos permanentemente. Depois de clicar neste botão, o ficheiro será apagado permanentemente do seu disco. Assegure-se de criar uma cópia de segurança adequada da sua configuração.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Sim, eliminar '<b>{{configName}}</b>'"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Descarregar config",
     "delete": {
-      "text": "",
+      "text": "Apagar configuração",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Config apagado",
+          "message": "Config apagado"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "A configuração de apagar falhou",
+          "message": "A configuração de apagar falhou"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "A configuração por defeito não pode ser apagada",
+          "message": "A configuração não foi apagada do sistema de ficheiros"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Guardar uma cópia"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Incapaz de carregar a configuração",
+        "message": "Não foi possível carregar a sua configuração. Formato JSON inválido."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Config {{configName}} carregado com sucesso"
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Upload de configuração",
+      "text": "Arraste aqui os ficheiros para carregar uma configuração. Suporte apenas para ficheiros JSON."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Upload de Arrastar e Soltar rejeitado",
+      "text": "Este formato de ficheiro não é suportado. Por favor, carregue apenas ficheiros JSON."
     }
   }
 }
