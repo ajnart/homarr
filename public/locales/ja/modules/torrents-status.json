@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "エラー",
+      "lastUpdated": ""
+    },
     "table": {
       "header": {
         "name": "名称",
@@ -24,6 +28,9 @@
         "upload": "上",
         "estimatedTimeOfArrival": "ETA",
         "progress": "進捗状況"
+      },
+      "item": {
+        "text": ""
       },
       "body": {
         "nothingFound": "トレントが見つかりません"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "読み込み中..."
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
     }
   }
 }
