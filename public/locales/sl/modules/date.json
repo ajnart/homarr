@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Datum in ura",
+    "description": "Prikaže trenutni datum in čas.",
     "settings": {
-      "title": "",
+      "title": "Nastavitve za gradnik Datum in čas",
       "display24HourFormat": {
         "label": "Prikaz polnega časa (24-urni)"
       }
