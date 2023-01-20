@@ -18,7 +18,7 @@
   "card": {
     "footer": {
       "error": "שגיאה",
-      "lastUpdated": ""
+      "lastUpdated": "עודכן לאחרונה לפני {{time}}"
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "התקדמות"
       },
       "item": {
-        "text": ""
+        "text": "מנוהל על ידי {{appName}}, יחס {{ratio}}"
       },
       "body": {
         "nothingFound": "לא נמצא טורנט"
@@ -58,14 +58,14 @@
       "title": "טוען..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "מנוהל על ידי",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "מיקום בתור - {{position}}",
+        "progress": "התקדמות - {{progress}}%",
+        "totalSelectedSize": "סה״כ - {{totalSize}}",
+        "state": "מצב - {{state}}",
+        "ratio": "יחס -",
+        "completed": "הושלם"
       }
     }
   }
