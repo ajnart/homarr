@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Ошибка",
+      "lastUpdated": "Последнее обновление {{time}} назад"
+    },
     "table": {
       "header": {
         "name": "Имя",
@@ -24,6 +28,9 @@
         "upload": "Вверх",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Прогресс"
+      },
+      "item": {
+        "text": "Управляется {{appName}}, {{ratio}} соотношение"
       },
       "body": {
         "nothingFound": "Торренты не найдены"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Загрузка..."
+    },
+    "popover": {
+      "introductionPrefix": "Управляется",
+      "metrics": {
+        "queuePosition": "Положение в очереди - {{position}}",
+        "progress": "Прогресс - {{progress}}%",
+        "totalSelectedSize": "Всего - {{totalSize}}",
+        "state": "Государство - {{state}}",
+        "ratio": "Соотношение -",
+        "completed": "Завершено"
+      }
     }
   }
 }
