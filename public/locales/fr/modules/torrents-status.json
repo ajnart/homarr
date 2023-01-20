@@ -18,7 +18,7 @@
   "card": {
     "footer": {
       "error": "Erreur",
-      "lastUpdated": ""
+      "lastUpdated": "Dernière mise à jour : {{time}}"
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "Progrès"
       },
       "item": {
-        "text": ""
+        "text": "Géré par {{appName}}, {{ratio}} ratio"
       },
       "body": {
         "nothingFound": "Aucun torrent trouvé"
@@ -58,14 +58,14 @@
       "title": "Chargement..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Géré par",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Position dans la file d'attente - {{position}}",
+        "progress": "Progrès - {{progress}}%",
+        "totalSelectedSize": "Total - {{totalSize}}",
+        "state": "État - {{state}}",
+        "ratio": "Ratio -",
+        "completed": "Complété"
       }
     }
   }
