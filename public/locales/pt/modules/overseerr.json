@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": ""
+    "description": "Permite-lhe pesquisar e adicionar meios de comunicação de Overseerr ou Jellyseerr."
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Assinale as estações que pretende descarregar",
       "table": {
         "header": {
           "season": "Temporada",
