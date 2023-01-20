@@ -1,16 +1,16 @@
 {
-    "description": "",
+    "description": "V načinu urejanja lahko prilagodite ploščice in konfigurirate aplikacije. Spremembe se ne shranijo, dokler ne zapustite načina za urejanje.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Vstopite v način urejanja",
+        "enabled": "Izhod in shranjevanje"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Način urejanja je omogočen za  <1>{{size}}</1> velikost",
+        "text": "Zdaj lahko prilagodite in konfigurirate aplikacije. Spremembe so <strong>in niso shranjene</strong> , dokler ne zapustite načina urejanja."
     },
     "screenSizes": {
-        "small": "",
-        "medium": "",
-        "large": ""
+        "small": "majhen",
+        "medium": "srednja",
+        "large": "velika"
     }
 }
