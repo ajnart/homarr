@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { AppIntegrationType, AppType, IntegrationType } from '../../types/app';
 import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
-import { ConfigType } from '../../types/config';
+import { BackendConfigType, ConfigType } from '../../types/config';
 import { SearchEngineCommonSettingsType } from '../../types/settings';
 import { ITorrent } from '../../widgets/torrent/TorrentTile';
 import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
@@ -15,7 +15,7 @@ import { IWeatherWidget } from '../../widgets/weather/WeatherTile';
 import { IWidget } from '../../widgets/widgets';
 import { Config, serviceItem } from '../types';
 
-export function migrateConfig(config: Config): ConfigType {
+export function migrateConfig(config: Config): BackendConfigType {
   const newConfig: ConfigType = {
     schemaVersion: 1,
     configProperties: {
