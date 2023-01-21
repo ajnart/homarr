@@ -1,14 +1,14 @@
 import Consola from 'consola';
 import { v4 as uuidv4 } from 'uuid';
-import { AppIntegrationType, AppType, IntegrationType } from '../../types/app';
+import { ConfigAppIntegrationType, ConfigAppType, IntegrationType } from '../../types/app';
 import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
-import { BackendConfigType, ConfigType } from '../../types/config';
+import { BackendConfigType } from '../../types/config';
 import { SearchEngineCommonSettingsType } from '../../types/settings';
-import { ITorrent } from '../../widgets/torrent/TorrentTile';
 import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
 import { IDateWidget } from '../../widgets/date/DateTile';
+import { ITorrent } from '../../widgets/torrent/TorrentTile';
 import { ITorrentNetworkTraffic } from '../../widgets/torrentNetworkTraffic/TorrentNetworkTrafficTile';
 import { IUsenetWidget } from '../../widgets/useNet/UseNetTile';
 import { IWeatherWidget } from '../../widgets/weather/WeatherTile';
@@ -16,7 +16,7 @@ import { IWidget } from '../../widgets/widgets';
 import { Config, serviceItem } from '../types';
 
 export function migrateConfig(config: Config): BackendConfigType {
-  const newConfig: ConfigType = {
+  const newConfig: BackendConfigType = {
     schemaVersion: 1,
     configProperties: {
       name: config.name ?? 'default',
@@ -78,6 +78,8 @@ export function migrateConfig(config: Config): BackendConfigType {
     );
   });
 
+  Consola.info('Migrator converted a configuration with the old schema to the new schema');
+
   return newConfig;
 }
 
@@ -120,7 +122,7 @@ const migrateSearchEngine = (config: Config): SearchEngineCommonSettingsType => 
 };
 
 const getConfigAndCreateIfNotExsists = (
-  config: ConfigType,
+  config: BackendConfigType,
   categoryName: string
 ): CategoryType | null => {
   const foundCategory = config.categories.find((c) => c.name === categoryName);
@@ -147,7 +149,7 @@ const getConfigAndCreateIfNotExsists = (
   return category;
 };
 
-const migrateService = (oldService: serviceItem, areaType: AreaType): AppType => ({
+const migrateService = (oldService: serviceItem, areaType: AreaType): ConfigAppType => ({
   id: uuidv4(),
   name: oldService.name,
   url: oldService.url,
@@ -301,7 +303,7 @@ const migrateIcon = (iconUrl: string) => {
   return iconUrl;
 };
 
-const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
+const migrateIntegration = (oldService: serviceItem): ConfigAppIntegrationType => {
   const logInformation = (newType: IntegrationType) => {
     Consola.info(`Migrated integration ${oldService.type} to the new type ${newType}`);
   };
@@ -313,7 +315,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'password',
-            isDefined: oldService.password !== undefined,
             type: 'private',
             value: oldService.password,
           },
@@ -326,7 +327,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'apiKey',
-            isDefined: oldService.apiKey !== undefined,
             type: 'private',
             value: oldService.apiKey,
           },
@@ -339,7 +339,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'apiKey',
-            isDefined: oldService.apiKey !== undefined,
             type: 'private',
             value: oldService.apiKey,
           },
@@ -352,7 +351,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'apiKey',
-            isDefined: oldService.apiKey !== undefined,
             type: 'private',
             value: oldService.apiKey,
           },
@@ -365,7 +363,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'apiKey',
-            isDefined: oldService.apiKey !== undefined,
             type: 'private',
             value: oldService.apiKey,
           },
@@ -378,7 +375,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'apiKey',
-            isDefined: oldService.apiKey !== undefined,
             type: 'private',
             value: oldService.apiKey,
           },
@@ -391,7 +387,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'apiKey',
-            isDefined: oldService.apiKey !== undefined,
             type: 'private',
             value: oldService.apiKey,
           },
@@ -404,7 +399,6 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'apiKey',
-            isDefined: oldService.apiKey !== undefined,
             type: 'private',
             value: oldService.apiKey,
           },
@@ -417,13 +411,11 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'username',
-            isDefined: oldService.username !== undefined,
             type: 'private',
             value: oldService.username,
           },
           {
             field: 'password',
-            isDefined: oldService.password !== undefined,
             type: 'private',
             value: oldService.password,
           },
@@ -436,13 +428,11 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'username',
-            isDefined: oldService.username !== undefined,
             type: 'private',
             value: oldService.username,
           },
           {
             field: 'password',
-            isDefined: oldService.password !== undefined,
             type: 'private',
             value: oldService.password,
           },
@@ -455,13 +445,11 @@ const migrateIntegration = (oldService: serviceItem): AppIntegrationType => {
         properties: [
           {
             field: 'username',
-            isDefined: oldService.username !== undefined,
             type: 'private',
             value: oldService.username,
           },
           {
             field: 'password',
-            isDefined: oldService.password !== undefined,
             type: 'private',
             value: oldService.password,
           },

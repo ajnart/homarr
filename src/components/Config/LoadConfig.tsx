@@ -2,12 +2,9 @@ import { Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { Dropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
 import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons';
-import Consola from 'consola';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useConfigStore } from '../../config/store';
-import { migrateConfig } from '../../tools/config/migrateConfig';
-import { Config } from '../../tools/types';
 import { ConfigType } from '../../types/config';
 
 export const LoadConfigComponent = () => {
@@ -34,15 +31,7 @@ export const LoadConfigComponent = () => {
           return;
         }
 
-        let newConfig: ConfigType = JSON.parse(fileText);
-
-        if (!newConfig.schemaVersion) {
-          Consola.warn(
-            'a legacy configuration schema was deteced and migrated to the current schema'
-          );
-          const oldConfig = JSON.parse(fileText) as Config;
-          newConfig = migrateConfig(oldConfig);
-        }
+        const newConfig: ConfigType = JSON.parse(fileText);
 
         await addConfig(fileName, newConfig, true);
         showNotification({

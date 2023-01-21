@@ -1,9 +1,9 @@
 import fs from 'fs';
-import { ConfigType } from '../../types/config';
+import { BackendConfigType } from '../../types/config';
 import { Config } from '../types';
 import { migrateConfig } from './migrateConfig';
 
-export function backendMigrateConfig(config: Config, name: string): ConfigType {
+export function backendMigrateConfig(config: Config, name: string): BackendConfigType {
   const migratedConfig = migrateConfig(config);
 
   // Make a backup of the old file ./data/configs/${name}.json
