@@ -54,6 +54,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
           return {
             type: integration.type,
             items: [],
+            success: false,
           };
         }
 
@@ -67,14 +68,29 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const end = new Date(year, month, 0); // Last day of month
 
         const apiKey = integration.properties.find((x) => x.field === 'apiKey')?.value;
-        if (!apiKey) return { type: integration.type, items: [] };
+        if (!apiKey) return { type: integration.type, items: [], success: false };
         return axios
           .get(
             `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}`
           )
-          .then((x) => ({ type: integration.type, items: x.data as any[] }));
+          .then((x) => ({ type: integration.type, items: x.data as any[], success: true }))
+          .catch((err) => {
+            Consola.error(
+              `failed to process request to app '${integration.type}' (${app.id}): ${err}`
+            );
+            return {
+              type: integration.type,
+              items: [],
+              success: false,
+            };
+          });
       })
     );
+
+    const countFailed = medias.filter(x => !x.success).length;
+    if (countFailed > 0) {
+      Consola.warn(`A total of ${countFailed} apps for the calendar widget failed`);
+    }
 
     return res.status(200).json({
       tvShows: medias.filter((m) => m.type === 'sonarr').flatMap((m) => m.items),
