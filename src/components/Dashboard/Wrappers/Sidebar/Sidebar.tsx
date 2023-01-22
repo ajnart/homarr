@@ -31,10 +31,6 @@ const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
   const { refs, apps, widgets } = useGridstack('sidebar', location);
 
   const minRow = useMinRowForFullHeight(refs.wrapper);
-  const {
-    cx,
-    classes: { card: cardClass },
-  } = useCardStyles(false);
 
   return (
     <div
