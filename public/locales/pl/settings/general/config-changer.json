@@ -1,45 +1,45 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Zmieniacz konfiguracji",
+    "description": "{{configCount}} dostępne są konfiguracje",
+    "loadingNew": "Wczytanie konfiguracji...",
+    "pleaseWait": "Proszę poczekać aż nowy config zostanie załadowany!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Wybierz nazwę nowej konfiguracji",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Nazwa konfiguracji",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Nazwa konfiguracji jest wymagana",
+            "notUnique": "Nazwa konfiguracji jest już używana"
           },
-          "placeholder": ""
+          "placeholder": "Twoja nowa nazwa konfiguracji"
         },
-        "submitButton": ""
+        "submitButton": "Potwierdź"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguracja zapisana",
+          "message": "Konfiguracja zapisana jako {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Skopiowana konfiguracja",
+          "message": "Konfiguracja skopiowana jako {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Nie można skopiować konfiguracji",
+          "message": "Twój config nie został skopiowany jako {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Potwierdź usunięcie konfiguracji",
+      "warningText": "Chciałbyś usunąć '<b>{{configName}}</b>'",
+      "text": "Należy pamiętać, że usunięcie nie jest odwracalne i dane zostaną trwale utracone. Po kliknięciu tego przycisku plik zostanie trwale usunięty z dysku. Upewnij się, że stworzyłeś odpowiednią kopię zapasową swojej konfiguracji.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Tak, usuń \"<b>{{configName}}</b>"
       }
     }
   },
@@ -57,8 +57,8 @@
           "message": "Nie udało się usunąć konfiguracji"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Domyślna konfiguracja nie może być usunięta",
+          "message": "Konfiguracja nie została usunięta z systemu plików"
         }
       }
     },
@@ -75,12 +75,12 @@
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Przesyłanie konfiguracji",
+      "text": "Przeciągnij pliki tutaj, aby przesłać konfigurację. Wsparcie tylko dla plików JSON."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Przeciągnij i upuść Prześlij odrzucony",
+      "text": "Ten format pliku nie jest obsługiwany. Prosimy o przesyłanie wyłącznie plików JSON."
     }
   }
 }

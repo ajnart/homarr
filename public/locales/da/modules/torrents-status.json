@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Fejl",
+      "lastUpdated": "Sidst opdateret {{time}} siden"
+    },
     "table": {
       "header": {
         "name": "Navn",
@@ -25,12 +29,15 @@
         "estimatedTimeOfArrival": "ETA",
         "progress": "Fremskridt"
       },
+      "item": {
+        "text": "Administreret af {{appName}}, {{ratio}} ratio"
+      },
       "body": {
         "nothingFound": "Ingen torrents fundet"
       }
     },
     "lineChart": {
-      "title": "Nuværende downloadhastighed",
+      "title": "Nuværende netværkstrafik",
       "download": "Download: {{download}}",
       "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} sekunder siden",
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Indlæser..."
+    },
+    "popover": {
+      "introductionPrefix": "Administreret af",
+      "metrics": {
+        "queuePosition": "Placering i køen - {{position}}",
+        "progress": "Fremskridt - {{progress}}%",
+        "totalSelectedSize": "I alt - {{totalSize}}",
+        "state": "Status - {{state}}",
+        "ratio": "Ratio -",
+        "completed": "Fuldført"
+      }
     }
   }
 }

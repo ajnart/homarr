@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Prikaže grafe zunanjega primerka Dash. znotraj Homarra.",
     "settings": {
       "title": "Nastavitve za pripomoček Dash",
       "cpuMultiView": {

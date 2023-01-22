@@ -1,30 +1,30 @@
 {
   "descriptor": {
     "name": "Pasek wyszukiwania",
-    "description": ""
+    "description": "Pasek wyszukiwania, który umożliwia przeszukiwanie niestandardowej wyszukiwarki, YouTube i obsługiwanych integracji."
   },
   "input": {
     "placeholder": "Szukaj w internecie..."
   },
-  "switched-to": "",
+  "switched-to": "Przełączone na",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Strona internetowa",
+      "description": "Szukaj..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "Youtube",
+      "description": "Szukaj na Youtube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrenty",
+      "description": "Wyszukiwanie torrentów"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Wyszukaj filmy i programy telewizyjne na Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Pasek wyszukiwania można wybrać za pomocą skrótu klawiszowego ",
+  "switchedSearchEngine": "Przełączono się na wyszukiwanie za pomocą {{searchEngine}}"
 }

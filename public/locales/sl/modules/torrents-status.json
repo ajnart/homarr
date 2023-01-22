@@ -1,21 +1,25 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Prikaže seznam torrentov iz podprtih odjemalcev Torrent.",
     "settings": {
-      "title": "",
+      "title": "Nastavitve za gradnik Torrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Interval osveževanja (v sekundah)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Prikaži dokončane torrente"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Prikaži zastarele torrente"
       }
     }
   },
   "card": {
+    "footer": {
+      "error": "Napaka",
+      "lastUpdated": "Nazadnje posodobljeno {{time}} nazaj"
+    },
     "table": {
       "header": {
         "name": "Ime",
@@ -24,6 +28,9 @@
         "upload": "Gor",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Napredek"
+      },
+      "item": {
+        "text": "Upravlja {{appName}}, {{ratio}} razmerje"
       },
       "body": {
         "nothingFound": "Ni najdenih torrentov"
@@ -39,16 +46,27 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Ni bilo najdenih podprtih odjemalcev Torrent!",
+        "text": "Dodajte podprt odjemalec Torrent, da si ogledate trenutne prenose"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Zgodila se je nepričakovana napaka",
+        "text": "Homarr ni mogel komunicirati z vašimi odjemalci Torrent. Prosimo, preverite svojo konfiguracijo"
       }
     },
     "loading": {
       "title": "Nalaganje..."
+    },
+    "popover": {
+      "introductionPrefix": "Upravlja jo",
+      "metrics": {
+        "queuePosition": "Položaj v čakalni vrsti - {{position}}",
+        "progress": "Napredek - {{progress}}%",
+        "totalSelectedSize": "Skupaj - {{totalSize}}",
+        "state": "Država - {{state}}",
+        "ratio": "Razmerje -",
+        "completed": "Zaključeno"
+      }
     }
   }
 }

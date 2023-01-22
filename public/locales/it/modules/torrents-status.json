@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Errore",
+      "lastUpdated": "Ultimo aggiornamento {{time}} ago"
+    },
     "table": {
       "header": {
         "name": "Nome",
@@ -24,6 +28,9 @@
         "upload": "Up",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Avanzamento"
+      },
+      "item": {
+        "text": "Gestito da {{appName}}, rapporto {{ratio}}"
       },
       "body": {
         "nothingFound": "Nessun torrent trovato"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Caricamento in corso..."
+    },
+    "popover": {
+      "introductionPrefix": "Gestito da",
+      "metrics": {
+        "queuePosition": "Posizione in coda - {{position}}",
+        "progress": "Progressi - {{progress}}%",
+        "totalSelectedSize": "Totale - {{totalSize}}",
+        "state": "Stato - {{state}}",
+        "ratio": "Rapporto -",
+        "completed": "Completato"
+      }
     }
   }
 }

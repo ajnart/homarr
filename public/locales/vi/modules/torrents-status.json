@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Torrent",
     "description": "",
     "settings": {
       "title": "",
@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Lỗi",
+      "lastUpdated": ""
+    },
     "table": {
       "header": {
         "name": "Tên",
@@ -24,6 +28,9 @@
         "upload": "Tải lên",
         "estimatedTimeOfArrival": "Thời gian dự kiến",
         "progress": "Tiến độ"
+      },
+      "item": {
+        "text": ""
       },
       "body": {
         "nothingFound": "Không tìm thấy torrent nào"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Đang tải..."
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
     }
   }
 }

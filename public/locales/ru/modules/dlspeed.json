@@ -1,16 +1,16 @@
 {
   "descriptor": {
     "name": "Скорость загрузки",
-    "description": "Отображает скорость загрузки и выгрузки поддерживаемых интеграций."
+    "description": "Отображает скорость загрузки и отдачи поддерживаемых интеграций."
   },
   "card": {
     "table": {
       "header": {
         "name": "Имя",
         "size": "Размер",
-        "download": "Вниз",
-        "upload": "Вверх",
-        "estimatedTimeOfArrival": "ETA",
+        "download": "Загрузка",
+        "upload": "Отдача",
+        "estimatedTimeOfArrival": "Осталось",
         "progress": "Прогресс"
       },
       "body": {
@@ -22,7 +22,7 @@
       "download": "Загрузка: {{download}}",
       "upload": "Отдача: {{upload}}",
       "timeSpan": "{{seconds}} секунд назад",
-      "totalDownload": "Скачать: {{download}}/s",
+      "totalDownload": "Загрузка: {{download}}/s",
       "totalUpload": "Отдача: {{upload}}/s"
     },
     "errors": {

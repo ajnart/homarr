@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Umożliwia przeglądanie i zarządzanie instancją Usenetu."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Nie znaleziono obsługiwanych klientów pobierania!",
-        "text": ""
+        "text": "Dodaj obsługiwanego klienta pobierania Usenet, aby wyświetlić bieżące pobrania."
       }
     }
   },
@@ -16,7 +16,7 @@
     "history": "Historia"
   },
   "info": {
-    "sizeLeft": "",
+    "sizeLeft": "Rozmiar lewy",
     "paused": "Zatrzymane"
   },
   "queue": {
@@ -26,7 +26,7 @@
       "eta": "ETA",
       "progress": "Postęp"
     },
-    "empty": "",
+    "empty": "Puste",
     "error": {
       "title": "Błąd",
       "message": "Coś poszło nie tak"
@@ -37,9 +37,9 @@
     "header": {
       "name": "Nazwa",
       "size": "Rozmiar",
-      "duration": ""
+      "duration": "Czas trwania"
     },
-    "empty": "",
+    "empty": "Puste",
     "error": {
       "title": "Błąd",
       "message": "Wystąpił błąd podczas ładowania historii"

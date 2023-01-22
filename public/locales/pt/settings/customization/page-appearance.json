@@ -1,22 +1,22 @@
 {
   "pageTitle": {
-    "label": ""
+    "label": "Título da página"
   },
   "metaTitle": {
-    "label": ""
+    "label": "Meta Título"
   },
   "logo": {
     "label": "Logo"
   },
   "favicon": {
-    "label": ""
+    "label": "Favicon"
   },
   "background": {
-    "label": ""
+    "label": "Antecedentes"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "placeholder": ""
+    "placeholder": "O CSS personalizado será aplicado por último"
   },
   "buttons": {
     "submit": "Enviar"

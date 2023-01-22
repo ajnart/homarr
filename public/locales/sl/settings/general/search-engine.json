@@ -1,12 +1,12 @@
 {
   "title": "Iskalnik",
-  "configurationName": "",
+  "configurationName": "Nastavitve iskalnika",
   "tips": {
-    "generalTip": "",
+    "generalTip": "Uporabite lahko več predpon! Če jih dodate pred poizvedbo, se rezultati filtrirajo. !s (splet), !t (torrenti), !y (YouTube) in !m (mediji).",
     "placeholderTip": "%s lahko uporabite kot nadomestno ime za poizvedbo."
   },
   "customEngine": {
-    "title": "",
+    "title": "Iskalnik po meri",
     "label": "URL poizvedbe",
     "placeholder": "URL poizvedbe po meri"
   },
@@ -14,6 +14,6 @@
     "label": "Odprite rezultate iskanja v novem zavihku"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Omogočeno iskanje"
   }
 }

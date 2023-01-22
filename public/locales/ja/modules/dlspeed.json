@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ダウンロード速度",
-    "description": ""
+    "description": "サポートされている統合機能のDownloadとUploadの速度を表示します。"
   },
   "card": {
     "table": {

@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Панель поиска",
+    "name": "Строка поиска",
     "description": "Строка поиска, позволяющая искать в пользовательской поисковой системе, YouTube и поддерживаемых интеграциях."
   },
   "input": {
@@ -9,7 +9,7 @@
   "switched-to": "Переключен на",
   "searchEngines": {
     "search": {
-      "name": "Web",
+      "name": "Интернет",
       "description": "Поиск..."
     },
     "youtube": {
@@ -18,7 +18,7 @@
     },
     "torrents": {
       "name": "Торренты",
-      "description": "Поиск по торрентам"
+      "description": "Поиск торрентов"
     },
     "overseerr": {
       "name": "Overseerr",
@@ -26,5 +26,5 @@
     }
   },
   "tip": "Вы можете выбрать строку поиска с помощью сочетания клавиш ",
-  "switchedSearchEngine": "Переключился на поиск с помощью {{searchEngine}}"
+  "switchedSearchEngine": "Переключено на поиск по {{searchEngine}}"
 }

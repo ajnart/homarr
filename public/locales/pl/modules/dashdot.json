@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Wyświetla wykresy zewnętrznej instancji Dash. wewnątrz Homarr.",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widgetu Dash.",
       "cpuMultiView": {
         "label": "Widok wielordzeniowy procesora"
       },

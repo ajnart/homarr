@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Pozwala na łatwy podgląd i zarządzanie wszystkimi kontenerami Docker."
   },
   "search": {
     "placeholder": "Szukaj według kontenera nazwy lub obrazu"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Dodaj aplikację",
+      "message": "Dodaj aplikację do Homarr"
     },
     "restart": {
       "title": "Uruchom ponownie"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Integracja Dockera nie powiodła się",
-      "message": ""
+      "message": "Czy zapomniałeś zamontować gniazdo docker?"
     },
     "unknownError": {
       "title": "Wystąpił błąd"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Proszę dodawać tylko jedną aplikację lub usługę na raz!"
     }
   },
   "actionIcon": {

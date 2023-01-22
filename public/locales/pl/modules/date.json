@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Data i godzina",
+    "description": "Wyświetla bieżącą datę i godzinę.",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widżetu Data i Czas",
       "display24HourFormat": {
         "label": "Wyświetlaj pełną godzinę (24 godziny)"
       }

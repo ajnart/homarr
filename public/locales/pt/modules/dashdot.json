@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Apresenta os gráficos de um Dash. exemplo externo dentro de Homarr.",
     "settings": {
-      "title": "",
+      "title": "Definições para o Dash. widget",
       "cpuMultiView": {
         "label": "Visualização múltipla de CPU"
       },
@@ -22,7 +22,7 @@
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
       "noService": "Nenhum serviço Dash. encontrado. Por favor, adicione um ao seu painel Homarr ou defina uma URL para o Dash. nas opções do módulo",
       "noInformation": "Não é possível obter informações do Dash. Você está executando a versão mais recente?"
@@ -36,8 +36,8 @@
         "title": "Rede",
         "label": "Rede:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Para baixo",
+          "upload": "Para cima"
         }
       },
       "cpu": {

@@ -9,7 +9,7 @@
   "version": "バージョン",
   "changePosition": "ポジションを変更する",
   "remove": "削除",
-  "removeConfirm": "",
+  "removeConfirm": "本当に {{item}} を削除したいのですか？",
   "sections": {
     "settings": "設定",
     "dangerZone": "デンジャーゾーン"

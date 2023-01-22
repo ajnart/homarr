@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "Add app",
-      "message": ""
+      "message": "Add App 2 Homarr"
     },
     "restart": {
       "title": "Restart"
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Dockah integrashn faild",
-      "message": ""
+      "message": "Did U Forget 2 Mount Teh Dockr Socket?"
     },
     "unknownError": {
       "title": "Thar wuz an error"

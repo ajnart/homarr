@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Acrescentar um novo azulejo",
+        "text": "Os azulejos são o principal elemento do Homarr. São utilizados para exibir as suas aplicações e outras informações. Pode adicionar tantos azulejos quantos desejar."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Os widgets interagem com as suas aplicações, para lhe proporcionar mais controlo sobre as suas aplicações. Normalmente requerem configuração adicional antes da sua utilização.",
+    "goBack": "Voltar ao passo anterior",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Acrescentar um azulejo"
     }
 }

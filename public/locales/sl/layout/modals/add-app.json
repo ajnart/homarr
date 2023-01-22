@@ -1,68 +1,68 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Splošno",
+		"behaviour": "Vedenje",
 		"network": "Omrežje",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Videz",
+		"integration": "Integracija"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Ime aplikacije",
+			"description": "Uporablja se za prikaz aplikacije na armaturni plošči."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Notranji naslov",
+			"description": "Notranji naslov IP aplikacije."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Zunanji naslov",
+			"description": "URL, ki se odpre ob kliku na aplikacijo."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Odprite v novem zavihku",
+			"description": "Odprite aplikacijo v novem zavihku namesto v trenutnem zavihku."
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Preverjanje stanja",
+			"description": "S preprostim zahtevkom HTTP(S) preveri, ali je vaša aplikacija v spletu."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Kode stanja HTTP",
+			"description": "Kode stanja HTTP, ki se štejejo za spletne."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "Ikona aplikacije",
+			"description": "Ikona, ki bo prikazana na armaturni plošči."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Konfiguracija integracije",
+			"description": "Konfiguracija integracije, ki bo uporabljena za povezavo z vašo aplikacijo.",
+			"placeholder": "Izberite integracijo",
+			"defined": "Opredeljen",
+			"undefined": "Nedoločen",
+			"public": "Javna stran",
+			"private": "Zasebno",
+			"explanationPrivate": "Zasebna skrivnost bo strežniku poslana samo enkrat. Ko brskalnik osveži stran, ne bo nikoli več poslana.",
+			"explanationPublic": "Javna skrivnost se vedno pošlje odjemalcu in je dostopna prek vmesnika API. Ne sme vsebovati nobenih zaupnih vrednosti, kot so uporabniška imena, gesla, žetoni, potrdila in podobno!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Če želite posodobiti skrivnost, vnesite vrednost in kliknite gumb Shrani. Če želite odstraniti skrivnost, uporabite gumb izbriši.",
+			"warning": "Vaši poverilnice služijo kot dostop za vaše integracije in jih ne smete <strong>nikoli</strong> deliti z nikomer drugim. Ekipa Homarr vas nikoli ne bo prosila za poverilnice. Prepričajte se, da <strong>svoje skrivnosti varno hranite in upravljate</strong>.",
+			"clear": "Jasna skrivnost",
+			"save": "Shrani skrivnost",
+			"update": "Posodobitev skrivnosti"
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Vaš obrazec vsebuje neveljavne podatke. Zato ga ni mogoče shraniti. Odpravite vse težave in ponovno kliknite ta gumb, da shranite spremembe."
 	}
 }
