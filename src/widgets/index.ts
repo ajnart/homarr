@@ -4,7 +4,7 @@ import dashdot from './dashDot/DashDotTile';
 import usenet from './useNet/UseNetTile';
 import weather from './weather/WeatherTile';
 import torrent from './torrent/TorrentTile';
-import torrentNetworkTraffic from './torrentNetworkTraffic/TorrentNetworkTrafficTile';
+import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
 
 export default {
   calendar,
