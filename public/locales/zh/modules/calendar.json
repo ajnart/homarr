@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "日历",
-    "description": "",
+    "description": "在日历中显示来自支持集成中的即将发布的版本。",
     "settings": {
-      "title": "",
+      "title": "设置日历小部件",
       "sundayStart": {
         "label": "使用周日作为一周的开始"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Radarr发布类型"
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": ""
+    "description": "Omogoča iskanje in dodajanje medijev iz storitev Overseerr ali Jellyseerr."
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Označite letne čase, ki jih želite prenesti",
       "table": {
         "header": {
           "season": "Sezona",

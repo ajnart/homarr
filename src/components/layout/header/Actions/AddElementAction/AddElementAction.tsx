@@ -2,6 +2,7 @@ import { ActionIcon, Button, Tooltip } from '@mantine/core';
 import { openContextModal } from '@mantine/modals';
 import { IconApps } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
+import { useCardStyles } from '../../../useCardStyles';
 
 interface AddElementActionProps {
   type: 'action-icon' | 'button';
@@ -9,6 +10,7 @@ interface AddElementActionProps {
 
 export const AddElementAction = ({ type }: AddElementActionProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
+  const { classes } = useCardStyles(true);
 
   switch (type) {
     case 'button':
@@ -18,6 +20,7 @@ export const AddElementAction = ({ type }: AddElementActionProps) => {
             radius="md"
             variant="default"
             style={{ height: 43 }}
+            className={classes.card}
             onClick={() =>
               openContextModal({
                 modal: 'selectElement',

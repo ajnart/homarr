@@ -3,7 +3,7 @@
     "label": "Tytuł strony"
   },
   "metaTitle": {
-    "label": ""
+    "label": "Meta Title"
   },
   "logo": {
     "label": "Logo"
@@ -16,9 +16,9 @@
   },
   "customCSS": {
     "label": "Niestandardowy CSS",
-    "placeholder": ""
+    "placeholder": "Custom CSS zostanie zastosowany jako ostatni"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Zgłoś"
   }
 }

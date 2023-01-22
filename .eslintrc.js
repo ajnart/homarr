@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    'no-continue': 'off',
     'linebreak-style': 0,
   },
 };

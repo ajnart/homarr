@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Iskalna vrstica",
-    "description": ""
+    "description": "Iskalna vrstica, ki omogoča iskanje po iskalniku po meri, YouTubu in podprtih integracijah."
   },
   "input": {
     "placeholder": "Preišči splet..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Splet",
-      "description": ""
+      "description": "Iskanje..."
     },
     "youtube": {
       "name": "YouTube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": ""
+      "description": "Iskanje filmov in televizijskih oddaj na Overseerr"
     }
   },
   "tip": "Iskalno vrstico lahko izberete z bližnjico ",

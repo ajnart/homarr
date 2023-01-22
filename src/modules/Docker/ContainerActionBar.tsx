@@ -164,10 +164,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         disabled={selected.length === 0 || selected.length > 1}
         onClick={() => {
           const app = tryMatchService(selected.at(0)!);
-          const containerUrl = `http://localhost:${selected[0].Ports[0].PublicPort}`;
+          const containerUrl = `http://localhost:${selected[0].Ports[0]?.PublicPort ?? 0}`;
           openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
             modal: 'editApp',
-            zIndex: 1000,
+            zIndex: 202,
             innerProps: {
               app: {
                 id: uuidv4(),

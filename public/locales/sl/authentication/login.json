@@ -1,6 +1,6 @@
 {
   "title": "Dobrodošli nazaj!",
-  "text": "",
+  "text": "Prosimo, vnesite svoje geslo",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Preverjamo vaše geslo..."
     },
     "correct": {
-      "title": ""
+      "title": "Prijava uspešna, preusmeritev..."
     },
     "wrong": {
-      "title": ""
+      "title": "Vneseno geslo je napačno, poskusite znova."
     }
   }
 }

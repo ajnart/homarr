@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "Καιρός",
+    "description": "Εμφανίζει τις τρέχουσες πληροφορίες καιρού μιας καθορισμένης τοποθεσίας.",
+    "settings": {
+      "title": "Ρυθμίσεις για το widget καιρού",
+      "displayInFahrenheit": {
+        "label": "Εμφάνιση σε Φαρενάιτ"
+      },
+      "location": {
+        "label": "Τοποθεσία καιρού"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Καθαρός",
+      "mainlyClear": "Κυρίως καθαρός",
+      "fog": "Ομίχλη",
+      "drizzle": "Ψιχάλες",
+      "freezingDrizzle": "Παγωμένο ψιλόβροχο",
+      "rain": "Βροχή",
+      "freezingRain": "Παγωμένη βροχή",
+      "snowFall": "Χιονόπτωση",
+      "snowGrains": "Κόκκοι χιονιού",
+      "rainShowers": "Βροχοπτώσεις",
+      "snowShowers": "Χιονοπτώσεις",
+      "thunderstorm": "Καταιγίδα",
+      "thunderstormWithHail": "Καταιγίδα με χαλάζι",
+      "unknown": "Άγνωστο"
+    }
+  }
+}

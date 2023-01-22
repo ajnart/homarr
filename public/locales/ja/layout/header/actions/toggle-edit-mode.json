@@ -1,16 +1,16 @@
 {
-    "description": "",
+    "description": "編集モードでは、タイルの調整とアプリの設定を行います。編集モードを終了するまで、変更内容は保存されません。",
     "button": {
         "disabled": "編集モードに入る",
         "enabled": "終了と保存"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "編集モードが有効なのは  <1>{{size}}</1>サイズ",
+        "text": "今すぐアプリを調整し、設定することができます。変更は、 <strong>編集モードを終了するまで保存されません</strong>"
     },
     "screenSizes": {
-        "small": "",
-        "medium": "",
-        "large": ""
+        "small": "小",
+        "medium": "巫女",
+        "large": "おおきな"
     }
 }

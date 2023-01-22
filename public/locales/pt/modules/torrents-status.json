@@ -1,54 +1,72 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Apresenta uma lista de torrentes de clientes Torrent apoiados.",
     "settings": {
-      "title": "",
+      "title": "Definições para o widget Torrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Intervalo de actualização (em segundos)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Mostrar torrentes completas"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Exibição de torrentes envelhecidas"
       }
     }
   },
   "card": {
+    "footer": {
+      "error": "Erro",
+      "lastUpdated": "Última actualização {{time}} atrás"
+    },
     "table": {
       "header": {
         "name": "Nome",
         "size": "Tamanho",
-        "download": "",
-        "upload": "",
+        "download": "Para baixo",
+        "upload": "Para cima",
         "estimatedTimeOfArrival": "TED",
         "progress": "Progresso"
+      },
+      "item": {
+        "text": "Gerido por {{appName}}, {{ratio}} ratio"
       },
       "body": {
         "nothingFound": "Nenhum torrent encontrado"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
+      "title": "Velocidade de descarga actual",
+      "download": "Descarregar: {{download}}",
+      "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} atrás",
-      "totalDownload": "",
-      "totalUpload": ""
+      "totalDownload": "Descarregar: {{download}}/s",
+      "totalUpload": "Upload: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Não foram encontrados clientes Torrent apoiados!",
+        "text": "Adicione um cliente Torrent suportado para ver os seus downloads actuais"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Ocorreu um erro inesperado",
+        "text": "Homarr foi incapaz de comunicar com os seus clientes Torrent. Por favor, verifique a sua configuração"
       }
     },
     "loading": {
       "title": "Carregando..."
+    },
+    "popover": {
+      "introductionPrefix": "Gerido por",
+      "metrics": {
+        "queuePosition": "Posição na fila - {{position}}",
+        "progress": "Progresso - {{progress}}%",
+        "totalSelectedSize": "Total - {{totalSize}}",
+        "state": "Estado - {{state}}",
+        "ratio": "Relação -",
+        "completed": "Concluído"
+      }
     }
   }
 }

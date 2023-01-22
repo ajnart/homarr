@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "ダッシュ",
-    "description": "",
+    "description": "Homarr内部の外部Dash.インスタンスのグラフを表示します。",
     "settings": {
       "title": "Dash.ウィジェットの設定",
       "cpuMultiView": {

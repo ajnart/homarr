@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "שגיאה",
+      "lastUpdated": "עודכן לאחרונה לפני {{time}}"
+    },
     "table": {
       "header": {
         "name": "שם",
@@ -24,6 +28,9 @@
         "upload": "העלאה",
         "estimatedTimeOfArrival": "זמן סיום משוער",
         "progress": "התקדמות"
+      },
+      "item": {
+        "text": "מנוהל על ידי {{appName}}, יחס {{ratio}}"
       },
       "body": {
         "nothingFound": "לא נמצא טורנט"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "טוען..."
+    },
+    "popover": {
+      "introductionPrefix": "מנוהל על ידי",
+      "metrics": {
+        "queuePosition": "מיקום בתור - {{position}}",
+        "progress": "התקדמות - {{progress}}%",
+        "totalSelectedSize": "סה״כ - {{totalSize}}",
+        "state": "מצב - {{state}}",
+        "ratio": "יחס -",
+        "completed": "הושלם"
+      }
     }
   }
 }

@@ -1,21 +1,25 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "显示支持的Torrent客户端的torrent列表。",
     "settings": {
-      "title": "",
+      "title": "Torrent 部件设置",
       "refreshInterval": {
         "label": "刷新时间间隔（秒）。"
       },
       "displayCompletedTorrents": {
-        "label": "显示已完成的洪流"
+        "label": "显示已完成的种子"
       },
       "displayStaleTorrents": {
-        "label": "显示陈旧的山洪"
+        "label": "显示过期种子"
       }
     }
   },
   "card": {
+    "footer": {
+      "error": "错误",
+      "lastUpdated": "最后更新 {{time}} 前"
+    },
     "table": {
       "header": {
         "name": "名称",
@@ -24,6 +28,9 @@
         "upload": "上移",
         "estimatedTimeOfArrival": "剩余时间",
         "progress": "进度"
+      },
+      "item": {
+        "text": "由 {{appName}}, {{ratio}} 管理的比率"
       },
       "body": {
         "nothingFound": "没有找到种子"
@@ -39,16 +46,27 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "没有找到支持Torrent的客户端!",
+        "text": "添加一个支持Torrent的客户端来查看你当前的下载情况"
       },
       "generic": {
-        "title": "发生了一个意外的错误",
-        "text": ""
+        "title": "发生了一个未知的错误",
+        "text": "Homarr无法与您的Torrent客户端通信。请检查您的配置"
       }
     },
     "loading": {
       "title": "正在加载..."
+    },
+    "popover": {
+      "introductionPrefix": "管理的是",
+      "metrics": {
+        "queuePosition": "队列位置 - {{position}}",
+        "progress": "进展 - {{progress}}%",
+        "totalSelectedSize": "共计 - {{totalSize}}",
+        "state": "国家 - {{state}}",
+        "ratio": "比率-",
+        "completed": "已完成"
+      }
     }
   }
 }

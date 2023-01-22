@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Tempo",
-    "description": "",
+    "description": "Apresenta a informação meteorológica actual de um local definido.",
     "settings": {
-      "title": "",
+      "title": "Definições para o widget meteorológico",
       "displayInFahrenheit": {
         "label": "Mostrar em Fahrenheit"
       },
@@ -15,18 +15,18 @@
   "card": {
     "weatherDescriptions": {
       "clear": "Limpar",
-      "mainlyClear": "",
+      "mainlyClear": "Principalmente claro",
       "fog": "Névoa",
-      "drizzle": "",
-      "freezingDrizzle": "",
+      "drizzle": "Drizzle",
+      "freezingDrizzle": "Chuvisco de congelação",
       "rain": "Chuva",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "freezingRain": "Chuva gelada",
+      "snowFall": "Queda de neve",
+      "snowGrains": "Grãos de neve",
+      "rainShowers": "Duches de chuva",
+      "snowShowers": "Duches de neve",
+      "thunderstorm": "Tempestade de trovoada",
+      "thunderstormWithHail": "Tempestade de trovoada com granizo",
       "unknown": "Desconhecido"
     }
   }

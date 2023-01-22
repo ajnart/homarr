@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Fel",
+      "lastUpdated": "Senast uppdaterad {{time}} ago"
+    },
     "table": {
       "header": {
         "name": "Namn",
@@ -24,6 +28,9 @@
         "upload": "Upp",
         "estimatedTimeOfArrival": "Beräknad sluttid",
         "progress": "Förlopp"
+      },
+      "item": {
+        "text": "Hanteras av {{appName}}, {{ratio}} förhållande"
       },
       "body": {
         "nothingFound": "Inga torrents hittades"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Laddar..."
+    },
+    "popover": {
+      "introductionPrefix": "Förvaltas av",
+      "metrics": {
+        "queuePosition": "Position i kön - {{position}}",
+        "progress": "Framsteg - {{progress}}%",
+        "totalSelectedSize": "Totalt - {{totalSize}}",
+        "state": "Stat - {{state}}",
+        "ratio": "Förhållande -",
+        "completed": "Slutförd"
+      }
     }
   }
 }

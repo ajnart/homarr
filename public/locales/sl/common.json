@@ -9,7 +9,7 @@
   "version": "Različica",
   "changePosition": "Spremeni položaj",
   "remove": "Odstrani",
-  "removeConfirm": "",
+  "removeConfirm": "Ali ste prepričani, da želite odstraniti {{item}} ?",
   "sections": {
     "settings": "Nastavitve",
     "dangerZone": "Nevarno območje"

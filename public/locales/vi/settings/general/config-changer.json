@@ -7,22 +7,22 @@
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Chọn tên cho cấu hình mới của bạn",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Tên cấu hình",
           "validation": {
             "required": "",
             "notUnique": ""
           },
-          "placeholder": ""
+          "placeholder": "Tên cấu hình mới của bạn"
         },
-        "submitButton": ""
+        "submitButton": "Xác nhận"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Đã lưu cấu hình",
+          "message": "Đã lưu cấu hình thành {{configName}}"
         },
         "configCopied": {
           "title": "",

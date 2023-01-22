@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Fehler",
+      "lastUpdated": "Zuletzt aktualisiert {{time}} vor"
+    },
     "table": {
       "header": {
         "name": "Name",
@@ -24,6 +28,9 @@
         "upload": "Up",
         "estimatedTimeOfArrival": "Voraussichtlicher Abschluss",
         "progress": "Fortschritt"
+      },
+      "item": {
+        "text": "Verwaltet von {{appName}}, {{ratio}} ratio"
       },
       "body": {
         "nothingFound": "Keine Torrents gefunden"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Wird geladen..."
+    },
+    "popover": {
+      "introductionPrefix": "Verwaltet von",
+      "metrics": {
+        "queuePosition": "Position in der Warteschlange - {{position}}",
+        "progress": "Fortschritt - {{progress}}%",
+        "totalSelectedSize": "Insgesamt - {{totalSize}}",
+        "state": "Staat - {{state}}",
+        "ratio": "Verhältnis -",
+        "completed": "Abgeschlossen"
+      }
     }
   }
 }

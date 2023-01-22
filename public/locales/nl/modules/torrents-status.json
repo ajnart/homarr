@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Fout",
+      "lastUpdated": "Laatst bijgewerkt {{time}} geleden"
+    },
     "table": {
       "header": {
         "name": "Naam",
@@ -24,6 +28,9 @@
         "upload": "Up",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Voortgang"
+      },
+      "item": {
+        "text": "Beheerd door {{appName}}, {{ratio}} verhouding"
       },
       "body": {
         "nothingFound": "Geen torrents gevonden"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Bezig met laden..."
+    },
+    "popover": {
+      "introductionPrefix": "Beheerd door",
+      "metrics": {
+        "queuePosition": "Positie in de wachtrij - {{position}}",
+        "progress": "Vooruitgang - {{progress}}%",
+        "totalSelectedSize": "Totaal - {{totalSize}}",
+        "state": "Staat - {{state}}",
+        "ratio": "Verhouding -",
+        "completed": "Voltooid"
+      }
     }
   }
 }

@@ -1,29 +1,36 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Торрент",
+    "description": "Отображает список торрентов из поддерживаемых Torrent-клиентов.",
     "settings": {
-      "title": "",
+      "title": "Настройки для виджета торрента",
       "refreshInterval": {
-        "label": ""
+        "label": "Интервал обновления (в секундах)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Показать завершенные торренты"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Показать устаревшие торренты"
       }
     }
   },
   "card": {
+    "footer": {
+      "error": "Ошибка",
+      "lastUpdated": "Последнее обновление {{time}} назад"
+    },
     "table": {
       "header": {
         "name": "Имя",
         "size": "Размер",
-        "download": "Вниз",
-        "upload": "Вверх",
-        "estimatedTimeOfArrival": "ETA",
+        "download": "Загрузка",
+        "upload": "Отдача",
+        "estimatedTimeOfArrival": "Осталось",
         "progress": "Прогресс"
+      },
+      "item": {
+        "text": "Управляется {{appName}}, {{ratio}} рейтинг"
       },
       "body": {
         "nothingFound": "Торренты не найдены"
@@ -34,21 +41,32 @@
       "download": "Загрузка: {{download}}",
       "upload": "Отдача: {{upload}}",
       "timeSpan": "{{seconds}} секунд назад",
-      "totalDownload": "Скачать: {{download}}/s",
+      "totalDownload": "Загрузка: {{download}}/s",
       "totalUpload": "Отдача: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Не найдено ни одного поддерживаемого Torrent-клиента!",
+        "text": "Добавьте поддерживаемый Torrent-клиент для просмотра текущих загрузок"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Произошла непредвиденная ошибка",
+        "text": "Homarr не может связаться с вашими Torrent-клиентами. Пожалуйста, проверьте настройки"
       }
     },
     "loading": {
       "title": "Загрузка..."
+    },
+    "popover": {
+      "introductionPrefix": "Под управлением",
+      "metrics": {
+        "queuePosition": "Позиция в очереди - {{position}}",
+        "progress": "Прогресс - {{progress}}%",
+        "totalSelectedSize": "Всего - {{totalSize}}",
+        "state": "Состояние - {{state}}",
+        "ratio": "Рейтинг -",
+        "completed": "Завершено"
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Center, Text, UnstyledButton } from '@mantine/core';
+import { Box, Stack, Title, UnstyledButton } from '@mantine/core';
 import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
 import { motion } from 'framer-motion';
@@ -26,24 +26,34 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   function Inner() {
     return (
       <>
-        <Text align="center" weight={500} size="md" className={classes.appName}>
-          {app.name}
-        </Text>
-        <Center style={{ height: '85%', flex: 1 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+        <Stack
+          m={0}
+          p={0}
+          spacing="xs"
+          justify="space-around"
+          align="center"
+          style={{ height: '100%', width: '100%' }}
+        >
+          <Box hidden={false}>
+            <Title order={5} size="md" ta="center" lineClamp={1} className={classes.appName}>
+              {app.name}
+            </Title>
+          </Box>
           <motion.img
             className={classes.image}
+            height="85%"
+            width="85%"
+            style={{
+              objectFit: 'contain',
+            }}
             src={app.appearance.iconUrl}
             alt={app.name}
             whileHover={{
               scale: 1.2,
               transition: { duration: 0.2 },
             }}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
           />
-        </Center>
+        </Stack>
       </>
     );
   }
@@ -82,6 +92,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   appName: {
     ref: getRef('appName'),
+    wordBreak: 'break-word',
   },
   button: {
     paddingBottom: 10,

@@ -1,13 +1,13 @@
 {
   "descriptor": {
-    "name": "おそれについて",
-    "description": ""
+    "name": "新闻组",
+    "description": "允许你查看和管理你的Usenet实例。"
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "没有找到支持的下载客户端！",
-        "text": ""
+        "text": "添加支持的Usenet下载客户端来查看当前下载"
       }
     }
   },

@@ -1,22 +1,22 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Сохранить",
+  "about": "О программе",
   "cancel": "Отмена",
-  "close": "",
+  "close": "Закрыть",
   "delete": "Удалить",
-  "ok": "",
+  "ok": "ОК",
   "edit": "Изменить",
-  "version": "",
-  "changePosition": "",
+  "version": "Версия",
+  "changePosition": "Изменить положение",
   "remove": "Удалить",
-  "removeConfirm": "",
+  "removeConfirm": "Вы действительно хотите удалить {{item}} ?",
   "sections": {
     "settings": "Настройки",
     "dangerZone": "Опасная зона"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "Имя пользователя",
+    "apiKey": "Ключ API",
+    "username": "Логин",
     "password": "Пароль"
   },
   "tip": "Совет: ",

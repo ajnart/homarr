@@ -16,6 +16,10 @@
     }
   },
   "card": {
+    "footer": {
+      "error": "Error",
+      "lastUpdated": "Última actualización {{time}} ago"
+    },
     "table": {
       "header": {
         "name": "Nombre",
@@ -24,6 +28,9 @@
         "upload": "Subida",
         "estimatedTimeOfArrival": "Tiempo restante",
         "progress": "Completado %"
+      },
+      "item": {
+        "text": "Gestionado por {{appName}}, {{ratio}} ratio"
       },
       "body": {
         "nothingFound": "No se han encontrado torrents"
@@ -49,6 +56,17 @@
     },
     "loading": {
       "title": "Cargando..."
+    },
+    "popover": {
+      "introductionPrefix": "Gestionado por",
+      "metrics": {
+        "queuePosition": "Posición en la cola - {{position}}",
+        "progress": "Progreso - {{progress}}%",
+        "totalSelectedSize": "Total - {{totalSize}}",
+        "state": "Estado - {{state}}",
+        "ratio": "Ratio -",
+        "completed": "Completado"
+      }
     }
   }
 }

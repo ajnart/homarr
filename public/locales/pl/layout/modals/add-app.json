@@ -1,68 +1,68 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Ogólne",
+		"behaviour": "Zachowanie",
 		"network": "Sieć",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Wygląd",
+		"integration": "Integracja"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Nazwa aplikacji",
+			"description": "Służy do wyświetlania aplikacji na desce rozdzielczej."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Adres wewnętrzny",
+			"description": "Wewnętrzny adres IP aplikacji."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Adres zewnętrzny",
+			"description": "URL, który zostanie otwarty po kliknięciu na aplikację."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Otwórz w nowej karcie",
+			"description": "Otwórz aplikację w nowej karcie zamiast w bieżącej."
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Kontroler stanu",
+			"description": "Sprawdza czy Twoja aplikacja jest online używając prostego żądania HTTP(S)."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Kody statusu HTTP",
+			"description": "Kody statusów HTTP, które są uznawane za internetowe."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "Ikona aplikacji",
+			"description": "Ikona, która będzie wyświetlana na desce rozdzielczej."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Konfiguracja integracji",
+			"description": "Konfiguracja integracji, która zostanie użyta do połączenia z twoją aplikacją.",
+			"placeholder": "Wybierz integrację",
+			"defined": "Określone",
+			"undefined": "Niezdefiniowane",
+			"public": "Publiczna",
+			"private": "Prywatny",
+			"explanationPrivate": "Prywatny sekret zostanie wysłany do serwera tylko raz. Po odświeżeniu strony przez przeglądarkę, nie zostanie on już nigdy wysłany.",
+			"explanationPublic": "Sekret publiczny będzie zawsze wysyłany do klienta i jest dostępny za pośrednictwem interfejsu API. Nie powinien zawierać żadnych poufnych wartości, takich jak nazwy użytkowników, hasła, tokeny, certyfikaty i podobne!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Aby zaktualizować sekret, wprowadź wartość i kliknij przycisk Zapisz. Aby usunąć sekret, należy użyć przycisku wyczyść.",
+			"warning": "Twoje dane uwierzytelniające działają jako dostęp do Twoich integracji i powinieneś <strong>nigdy</strong> dzielić się nimi z nikim innym. Zespół Homarr nigdy nie będzie prosił o dane uwierzytelniające. Upewnij się, że <strong>przechowujesz i zarządzasz swoimi sekretami bezpiecznie</strong>.",
+			"clear": "Wyraźna tajemnica",
+			"save": "Zachowaj tajemnicę",
+			"update": "Tajemnica aktualizacji"
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Twój formularz zawiera nieprawidłowe dane. Dlatego nie można go zapisać. Proszę rozwiązać wszystkie problemy i kliknąć ten przycisk ponownie, aby zapisać zmiany."
 	}
 }

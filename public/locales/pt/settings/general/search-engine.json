@@ -1,19 +1,19 @@
 {
-  "title": "",
-  "configurationName": "",
+  "title": "Motor de busca",
+  "configurationName": "Configuração do motor de busca",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Há vários prefixos que pode usar! A adição destes infratores da sua consulta irá filtrar os resultados. !s (Web), !t (Torrents), !y (YouTube), e !m (Media).",
+    "placeholderTip": "%s pode ser utilizado como um local para a consulta."
   },
   "customEngine": {
-    "title": "",
-    "label": "",
-    "placeholder": ""
+    "title": "Motor de busca personalizado",
+    "label": "Consulta URL",
+    "placeholder": "URL de consulta personalizada"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Abrir resultados de pesquisa em novo separador"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Pesquisa activada"
   }
 }

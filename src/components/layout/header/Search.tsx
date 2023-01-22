@@ -16,12 +16,13 @@ import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/i
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
-import SmallAppItem from './SmallAppItem';
-import Tip from '../Tip';
-import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import { useConfigContext } from '../../../config/provider';
 import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
+import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
+import Tip from '../Tip';
+import { useCardStyles } from '../useCardStyles';
+import SmallAppItem from './SmallAppItem';
 
 export const SearchModule: IModule = {
   title: 'Search',
@@ -53,7 +54,8 @@ export function Search() {
   const { t } = useTranslation('modules/search');
   const { config } = useConfigContext();
   const [searchQuery, setSearchQuery] = useState('');
-  const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
+  const [debounced] = useDebouncedValue(searchQuery, 250);
+  const { classes: cardClasses } = useCardStyles(true);
 
   const isOverseerrEnabled = config?.apps.some(
     (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
@@ -197,7 +199,10 @@ export function Search() {
                 }
               }
             }}
-            radius="md"
+            classNames={{
+              input: cardClasses.card,
+            }}
+            radius="lg"
             size="md"
           />
         </Popover.Target>

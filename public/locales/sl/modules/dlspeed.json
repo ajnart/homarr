@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Hitrost prenosa",
-    "description": ""
+    "description": "Prikaže hitrost prenosa in prenosa podprtih integracij."
   },
   "card": {
     "table": {

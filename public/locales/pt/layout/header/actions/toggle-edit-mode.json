@@ -1,16 +1,16 @@
 {
-    "description": "",
+    "description": "No Modo de Edição, é possível ajustar azulejos e configurar aplicações. As alterações não são guardadas até sair do Modo de Edição.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Entrar no modo de edição",
+        "enabled": "Sair e Salvar"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "O modo de edição está activado para  <1>{{size}}</1> tamanho",
+        "text": "Pode agora ajustar e configurar as suas aplicações. As alterações são <strong>não guardadas</strong> até sair do modo de edição"
     },
     "screenSizes": {
-        "small": "",
-        "medium": "",
-        "large": ""
+        "small": "pequeno",
+        "medium": "médio",
+        "large": "grande"
     }
 }

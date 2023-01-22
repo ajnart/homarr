@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "Calendário",
-    "description": "",
+    "description": "Apresenta um calendário com os próximos lançamentos, a partir das integrações suportadas.",
     "settings": {
-      "title": "",
+      "title": "Definições para o widget Calendário",
       "sundayStart": {
         "label": "Comece a semana no Domingo"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Tipo de libertação de Radarr"
       }
     }
   }

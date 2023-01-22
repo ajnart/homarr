@@ -3,7 +3,7 @@
     "label": "Naslov strani"
   },
   "metaTitle": {
-    "label": ""
+    "label": "Meta naslov"
   },
   "logo": {
     "label": "Logotip"
@@ -16,7 +16,7 @@
   },
   "customCSS": {
     "label": "Po meri CSS",
-    "placeholder": ""
+    "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji"
   },
   "buttons": {
     "submit": "Pošlji"

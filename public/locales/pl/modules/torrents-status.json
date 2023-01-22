@@ -1,21 +1,25 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Wyświetla listę torrentów z obsługiwanych klientów Torrent.",
     "settings": {
-      "title": "",
+      "title": "Ustawienia widżetu Torrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Interwał odświeżania (w sekundach)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Wyświetlanie ukończonych torrentów"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Wyświetlanie nieaktualnych torrentów"
       }
     }
   },
   "card": {
+    "footer": {
+      "error": "Błąd",
+      "lastUpdated": "Ostatnia aktualizacja {{time}} temu"
+    },
     "table": {
       "header": {
         "name": "Nazwa",
@@ -24,6 +28,9 @@
         "upload": "Udostępnianie",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Postęp"
+      },
+      "item": {
+        "text": "Zarządzany przez {{appName}}, {{ratio}} stosunek"
       },
       "body": {
         "nothingFound": "Nie znaleziono torrentów"
@@ -39,16 +46,27 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nie znaleziono żadnych obsługiwanych klientów Torrent!",
+        "text": "Dodaj obsługiwanego klienta sieci Torrent, aby wyświetlić aktualnie pobierane pliki"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Wystąpił nieoczekiwany błąd",
+        "text": "Program Homarr nie mógł się skomunikować z Twoim klientem Torrent. Proszę sprawdzić swoją konfigurację"
       }
     },
     "loading": {
       "title": "Ładowanie..."
+    },
+    "popover": {
+      "introductionPrefix": "Zarządzany przez",
+      "metrics": {
+        "queuePosition": "Pozycja w kolejce - {{position}}",
+        "progress": "Postęp - {{progress}}%",
+        "totalSelectedSize": "Razem - {{totalSize}}",
+        "state": "Państwo - {{state}}",
+        "ratio": "Współczynnik -.",
+        "completed": "Zakończono"
+      }
     }
   }
 }

@@ -3,20 +3,20 @@
     "label": "Название страницы"
   },
   "metaTitle": {
-    "label": ""
+    "label": "Мета-заголовок"
   },
   "logo": {
     "label": "Логотип"
   },
   "favicon": {
-    "label": "Значок веб-страницы"
+    "label": "Иконка"
   },
   "background": {
     "label": "Фон"
   },
   "customCSS": {
     "label": "Пользовательский CSS",
-    "placeholder": ""
+    "placeholder": "Пользовательский CSS будет применяться в последнюю очередь"
   },
   "buttons": {
     "submit": "Подтвердить"

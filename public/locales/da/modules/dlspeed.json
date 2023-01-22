@@ -18,7 +18,7 @@
       }
     },
     "lineChart": {
-      "title": "Nuværende downloadhastighed",
+      "title": "Nuværende netværkstrafik",
       "download": "Download: {{download}}",
       "upload": "Upload: {{upload}}",
       "timeSpan": "{{seconds}} sekunder siden",

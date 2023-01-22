@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Погода",
-    "description": "",
+    "description": "Отображает текущую информацию о погоде для заданного местоположения.",
     "settings": {
-      "title": "",
+      "title": "Настройки для виджета погоды",
       "displayInFahrenheit": {
-        "label": "Отображение в градусах Фаренгейта"
+        "label": "Показать в градусах Фаренгейта"
       },
       "location": {
         "label": "Местоположение"
@@ -15,14 +15,14 @@
   "card": {
     "weatherDescriptions": {
       "clear": "Ясно",
-      "mainlyClear": "Преимущественно ясно",
+      "mainlyClear": "Малооблачно",
       "fog": "Туман",
       "drizzle": "Небольшой дождь",
-      "freezingDrizzle": "Изморозь",
+      "freezingDrizzle": "Изморозь, возможен гололёд",
       "rain": "Дождь",
-      "freezingRain": "Ледяной дождь",
+      "freezingRain": "Моросящий дождь",
       "snowFall": "Снегопад",
-      "snowGrains": "Снежные зёрна",
+      "snowGrains": "Снежные зерна",
       "rainShowers": "Ливень",
       "snowShowers": "Снегопад",
       "thunderstorm": "Гроза",

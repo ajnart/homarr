@@ -1,10 +1,10 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Позволяет легко видеть и управлять всеми вашими контейнерами Docker."
   },
   "search": {
-    "placeholder": "Поиск по названию контейнера или образа"
+    "placeholder": "Поиск по имени контейнера или образу"
   },
   "table": {
     "header": {
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Добавить приложение",
+      "message": "Добавить приложение в Homarr"
     },
     "restart": {
       "title": "Перезапустить"
@@ -53,28 +53,28 @@
       "end": "Запущен"
     },
     "stop": {
-      "start": "Останавливается",
-      "end": "Остановлено"
+      "start": "Остановка",
+      "end": "Остановлен"
     },
     "restart": {
       "start": "Перезапуск",
       "end": "Перезапущен"
     },
     "remove": {
-      "start": "Удаляется",
-      "end": "Удалено"
+      "start": "Удаление",
+      "end": "Удален"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Сбой интеграции Docker",
-      "message": ""
+      "message": "Вы забыли смонтировать сокет docker?"
     },
     "unknownError": {
       "title": "Произошла ошибка"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Пожалуйста, добавляйте только один сервис за раз!"
     }
   },
   "actionIcon": {

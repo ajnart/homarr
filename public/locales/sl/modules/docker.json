@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Omogoča enostaven pregled in upravljanje vseh kontejnerjev Docker."
   },
   "search": {
     "placeholder": "Iskanje po zabojniku ali imenu njegove slike"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Dodajanje aplikacije",
+      "message": "Dodajanje aplikacije v Homarr"
     },
     "restart": {
       "title": "Ponovno zaženi"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Integracija Dockerja ni uspela",
-      "message": ""
+      "message": "Ste pozabili namestiti vtičnico docker?"
     },
     "unknownError": {
       "title": "Prišlo je do napake"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Naenkrat dodajte le eno aplikacijo ali storitev!"
     }
   },
   "actionIcon": {

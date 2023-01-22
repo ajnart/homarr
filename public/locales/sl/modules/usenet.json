@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Omogoča pregledovanje in upravljanje instance Useneta."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Ni bilo najdenih podprtih odjemalcev za prenos!",
-        "text": ""
+        "text": "Dodajte podprtega odjemalca za prenos Usenet, da si ogledate trenutne prenose"
       }
     }
   },

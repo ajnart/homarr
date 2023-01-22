@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Data e Hora",
+    "description": "Apresenta a data e hora actuais.",
     "settings": {
-      "title": "",
+      "title": "Definições para o widget de Data e Hora",
       "display24HourFormat": {
         "label": "Mostrar tempo (24 horas)"
       }
