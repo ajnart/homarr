@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Σας επιτρέπει να αναζητήσετε και να προσθέσετε πολυμέσα από το Overseerr ή το Jellyseerr."
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
-        "cancel": "",
-        "request": ""
+        "askFor": "Ρωτήστε για {{title}}",
+        "cancel": "Ακύρωση",
+        "request": "Αίτημα"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "Χρήση κλειδιού API",
+          "text": "Το αίτημα αυτό θα εγκριθεί αυτόματα"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Επιλέξτε τις σεζόν που θέλετε να κατεβάσετε",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "Σεζόν",
+          "numberOfEpisodes": "Αριθμός επεισοδίων"
         }
       }
     }
