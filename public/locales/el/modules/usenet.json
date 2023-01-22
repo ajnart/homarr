@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Σας επιτρέπει να δείτε και να διαχειριστείτε το Usenet instance σας."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Δεν βρέθηκαν υποστηριζόμενα προγράμματα λήψης!",
+        "text": "Προσθέστε έναν υποστηριζόμενο πρόγραμμα λήψης Usenet για να δείτε τις τρέχουσες λήψεις σας"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Ουρά",
+    "history": "Ιστορικό"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Μέγεθος που απομένει",
+    "paused": "Σε παύση"
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "Όνομα",
+      "size": "Μέγεθος",
+      "eta": "Εκτιμώμενος χρόνος αναμονής",
+      "progress": "Πρόοδος"
     },
-    "empty": "",
+    "empty": "Άδειο",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Σφάλμα",
+      "message": "Παρουσιάστηκε σφάλμα"
     },
-    "paused": ""
+    "paused": "Σε παύση"
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
-      "duration": ""
+      "name": "Όνομα",
+      "size": "Μέγεθος",
+      "duration": "Διάρκεια"
     },
-    "empty": "",
+    "empty": "Άδειο",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Σφάλμα",
+      "message": "Σφάλμα φόρτωσης ιστορικού"
     },
-    "paused": ""
+    "paused": "Σε παύση"
   }
 }
