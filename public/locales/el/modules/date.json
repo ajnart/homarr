@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Ημερομηνία και ώρα",
+    "description": "Εμφανίζει την τρέχουσα ημερομηνία και ώρα.",
     "settings": {
-      "title": "",
+      "title": "Ρυθμίσεις για το widget ημερομηνίας και ώρας",
       "display24HourFormat": {
-        "label": ""
+        "label": "Εμφάνιση πλήρης ώρας(24-ώρο)"
       }
     }
   }
