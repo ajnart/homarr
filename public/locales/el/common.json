@@ -1,0 +1,28 @@
+{
+  "save": "",
+  "about": "",
+  "cancel": "",
+  "close": "",
+  "delete": "",
+  "ok": "",
+  "edit": "",
+  "version": "",
+  "changePosition": "",
+  "remove": "",
+  "removeConfirm": "",
+  "sections": {
+    "settings": "",
+    "dangerZone": ""
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "",
+    "password": "Κωδικός"
+  },
+  "tip": "",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  }
+}
