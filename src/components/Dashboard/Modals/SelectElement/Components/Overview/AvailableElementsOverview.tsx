@@ -95,7 +95,7 @@ export const AvailableElementTypes = ({
                   },
                   network: {
                     enabledStatusChecker: true,
-                    statusCodes: [200],
+                    okStatus: [200],
                   },
                   behaviour: {
                     isOpeningNewTab: true,
