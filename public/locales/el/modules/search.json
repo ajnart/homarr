@@ -1,30 +1,30 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Μπάρα Αναζήτησης",
+    "description": "Μια γραμμή αναζήτησης που σας επιτρέπει να κάνετε αναζήτηση στην προσαρμοσμένη μηχανή αναζήτησης σας, στο YouTube και στις υποστηριζόμενες ενσωματώσεις."
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "Αναζήτηση στον Ιστό..."
   },
-  "switched-to": "",
+  "switched-to": "Αλλαγή σε",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Ιστός",
+      "description": "Αναζήτηση..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Αναζήτηση στο YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Τόρρεντ",
+      "description": "Αναζήτηση για Torrents"
     },
     "overseerr": {
-      "name": "",
-      "description": ""
+      "name": "Overseerr",
+      "description": "Αναζήτηση για ταινίες και τηλεοπτικές εκπομπές στο Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Μπορείτε να επιλέξετε τη γραμμή αναζήτησης με τη συντόμευση ",
+  "switchedSearchEngine": "Εναλλαγή για αναζήτηση με {{searchEngine}}"
 }
