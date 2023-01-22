@@ -21,7 +21,7 @@ export const ToggleEditModeAction = () => {
 
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
-  const { classes } = useCardStyles(false);
+  const { classes } = useCardStyles(true);
 
   const toggleButtonClicked = () => {
     toggleEditMode();

@@ -10,7 +10,7 @@ interface AddElementActionProps {
 
 export const AddElementAction = ({ type }: AddElementActionProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
-  const { classes } = useCardStyles(false);
+  const { classes } = useCardStyles(true);
 
   switch (type) {
     case 'button':

@@ -16,7 +16,7 @@ export default function DockerMenuButton(props: any) {
   const [containers, setContainers] = useState<Docker.ContainerInfo[]>([]);
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const { config } = useConfigContext();
-  const { classes } = useCardStyles(false);
+  const { classes } = useCardStyles(true);
 
   const dockerEnabled = config?.settings.customization.layout.enabledDocker || false;
 

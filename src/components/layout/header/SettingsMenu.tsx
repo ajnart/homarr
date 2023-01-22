@@ -11,7 +11,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
   const [drawerOpened, drawer] = useDisclosure(false);
   const { t } = useTranslation('common');
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
-  const { classes } = useCardStyles(false);
+  const { classes } = useCardStyles(true);
 
   return (
     <>
