@@ -131,6 +131,12 @@ export const languages: Language[] = [
     translatedName: 'Chinese',
     emoji: '🇨🇳',
   },
+  {
+    shortName: 'el',
+    originalName: 'Ελληνικά',
+    translatedName: 'Greek',
+    emoji: '🇬🇷',
+  },
 ];
 
 export const getLanguageByCode = (code: string | null) =>

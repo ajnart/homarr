@@ -24,6 +24,7 @@ module.exports = {
       'vi',
       'uk',
       'zh',
+      'el',
     ],
     localePath: path.resolve('./public/locales'),
     fallbackLng: 'en',
