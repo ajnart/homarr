@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Σας επιτρέπει να βλέπετε και να διαχειρίζεστε εύκολα όλα τα Docker Containers σας."
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Αναζήτηση με βάση container ή όνομα εικόνας"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Όνομα",
+      "image": "Εικόνα",
+      "ports": "Θύρες",
+      "state": "Κατάσταση"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} περισσότερα"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Εκτελείται",
+      "created": "Δημιουργήθηκε",
+      "stopped": "Διακόπηκε",
+      "unknown": "Άγνωστο"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Προσθήκη εφαρμογής",
+      "message": "Προσθήκη εφαρμογής στο Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Επανεκκίνηση"
     },
     "stop": {
-      "title": ""
+      "title": "Διακοπή"
     },
     "start": {
-      "title": ""
+      "title": "Έναρξη"
     },
     "refreshData": {
-      "title": ""
+      "title": "Ανανέωση δεδομένων"
     },
     "remove": {
-      "title": ""
+      "title": "Αφαίρεση"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Προσθήκη στο Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Ξεκινάει",
+      "end": "Ξεκίνησε"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Διακόπτεται",
+      "end": "Διακόπηκε"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Γίνεται επανεκκίνηση",
+      "end": "Επανεκκινήθηκε"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Αφαιρείται",
+      "end": "Αφαιρέθηκε"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Η ενσωμάτωση του Docker απέτυχε",
+      "message": "Μήπως ξεχάσατε να προσαρτήσετε την υποδοχή docker;"
     },
     "unknownError": {
-      "title": ""
+      "title": "Παρουσιάστηκε σφάλμα"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Παρακαλώ προσθέστε μόνο μία εφαρμογή ή υπηρεσία τη φορά!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
