@@ -18,7 +18,7 @@
   "card": {
     "footer": {
       "error": "Errore",
-      "lastUpdated": "Ultimo aggiornamento {{time}} ago"
+      "lastUpdated": "Ultimo aggiornamento {{time}} fa"
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "Avanzamento"
       },
       "item": {
-        "text": "Gestito da {{appName}}, rapporto {{ratio}}"
+        "text": "Gestito da {{appName}}, {{ratio}} ratio"
       },
       "body": {
         "nothingFound": "Nessun torrent trovato"
@@ -61,10 +61,10 @@
       "introductionPrefix": "Gestito da",
       "metrics": {
         "queuePosition": "Posizione in coda - {{position}}",
-        "progress": "Progressi - {{progress}}%",
+        "progress": "Progresso - {{progress}}%",
         "totalSelectedSize": "Totale - {{totalSize}}",
         "state": "Stato - {{state}}",
-        "ratio": "Rapporto -",
+        "ratio": "Ratio -",
         "completed": "Completato"
       }
     }
