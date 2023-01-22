@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Ημερολόγιο",
+    "description": "Εμφανίζει ένα ημερολόγιο με τις επερχόμενες κυκλοφορίες, από τις υποστηριζόμενες ενσωματώσεις.",
     "settings": {
-      "title": "",
+      "title": "Ρυθμίσεις για το widget ημερολογίου",
       "sundayStart": {
-        "label": ""
+        "label": "Ξεκινήστε την εβδομάδα από την Κυριακή"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Τύπος κυκλοφορίας Radarr"
       }
     }
   }
