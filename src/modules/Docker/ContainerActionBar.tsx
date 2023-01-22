@@ -178,7 +178,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 },
                 network: {
                   enabledStatusChecker: true,
-                  statusCodes: [200],
+                  okStatus: [200],
                 },
                 behaviour: {
                   isOpeningNewTab: true,
