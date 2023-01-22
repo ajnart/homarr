@@ -27,9 +27,9 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
           data={StatusCodes}
           clearable
           searchable
-          defaultValue={form.values.network.okStatus}
+          defaultValue={form.values.network.statusCodes}
           variant="default"
-          {...form.getInputProps('network.okStatus')}
+          {...form.getInputProps('network.statusCodes')}
         />
       )}
     </Tabs.Panel>

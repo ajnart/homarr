@@ -73,6 +73,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         style={{ position: 'relative', top: -15 }}
         onMonthChange={setMonth}
         size="xs"
+        locale={i18n.resolvedLanguage}
         fullWidth
         onChange={() => {}}
         firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}

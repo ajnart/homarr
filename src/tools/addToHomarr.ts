@@ -1,5 +1,5 @@
 import Dockerode from 'dockerode';
-import { Config, MatchingImages, ServiceType, tryMatchPort } from './types';
+import { MatchingImages, ServiceType, tryMatchPort } from './types';
 
 async function MatchIcon(name: string) {
   const res = await fetch(

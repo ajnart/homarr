@@ -3,6 +3,6 @@ export const isToday = (date: Date) => {
   return (
     today.getDate() === date.getDate() &&
     today.getMonth() === date.getMonth() &&
-    date.getFullYear() === date.getFullYear()
+    today.getFullYear() === date.getFullYear()
   );
 };

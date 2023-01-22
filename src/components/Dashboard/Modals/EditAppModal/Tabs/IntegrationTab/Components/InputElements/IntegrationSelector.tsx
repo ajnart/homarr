@@ -126,11 +126,11 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
           />
         )
       }
+      {...inputProps}
       onChange={(value) => {
         form.setFieldValue('integration.properties', getNewProperties(value));
         inputProps.onChange(value);
       }}
-      {...inputProps}
     />
   );
 };

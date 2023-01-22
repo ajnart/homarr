@@ -11,6 +11,7 @@ import {
 import { NextLink } from '@mantine/next';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -85,9 +86,9 @@ export default function Custom404() {
             The config you are trying to access does not exist. Please check the URL and try again.
           </Text>
           <Group position="center">
-            <NextLink href="/">
+            <Link href="/">
               <Button size="md">Take me back to home page</Button>
-            </NextLink>
+            </Link>
           </Group>
         </div>
       </div>

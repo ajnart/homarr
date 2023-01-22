@@ -10,6 +10,8 @@ import { getServerSideTranslations } from '../tools/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
 import { LoadConfigComponent } from '../components/Config/LoadConfig';
+import dayjs from 'dayjs';
+import { useTranslation } from 'next-i18next';
 
 export async function getServerSideProps({
   req,
