@@ -1,86 +1,86 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Αλλαγή παραμέτρων",
+    "description": "{{configCount}} ρυθμίσεις είναι διαθέσιμες",
+    "loadingNew": "Φόρτωση της διαμόρφωσής σας...",
+    "pleaseWait": "Παρακαλώ περιμένετε μέχρι να φορτωθεί η νέα σας διαμόρφωση!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Επιλέξτε το όνομα της νέας σας διαμόρφωσης",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Όνομα διαμόρφωσης",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Απαιτείται όνομα διαμόρφωσης",
+            "notUnique": "Αυτό το όνομα είναι ήδη σε χρήση"
           },
-          "placeholder": ""
+          "placeholder": "Το νέο σας όνομα ρυθμίσεων"
         },
-        "submitButton": ""
+        "submitButton": "Επιβεβαίωση"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Η διαμόρφωση αποθηκεύτηκε",
+          "message": "Διαμόρφωση αποθηκεύτηκε ως {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Η ρύθμιση αντιγράφηκε",
+          "message": "Η διαμόρφωση αντιγράφηκε ως {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Αδυναμία αντιγραφής αρχείου ρυθμίσεων",
+          "message": "Οι ρυθμίσεις σας δεν αντιγράφηκαν ως {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Επιβεβαιώστε τη διαγραφή της διαμόρφωσής σας",
+      "warningText": "Πρόκειται να διαγράψετε το '<b>{{configName}}</b>'",
+      "text": "Λάβετε υπόψη ότι η διαγραφή δεν είναι αναστρέψιμη και τα δεδομένα σας θα χαθούν οριστικά. Αφού κάνετε κλικ σε αυτό το κουμπί, το αρχείο θα διαγραφεί οριστικά από το δίσκο σας. Φροντίστε να δημιουργήσετε ένα επαρκές αντίγραφο ασφαλείας της διαμόρφωσής σας.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Ναι, διαγράψτε το '<b>{{configName}}</b>'"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Λήψη ρυθμίσεων",
     "delete": {
-      "text": "",
+      "text": "Διαγραφή ρυθμίσεων",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Η ρύθμιση διαγράφηκε",
+          "message": "Η ρύθμιση διαγράφηκε"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Η διαγραφή ρυθμίσεων απέτυχε",
+          "message": "Η διαγραφή ρυθμίσεων απέτυχε"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Η προεπιλεγμένη ρύθμιση παραμέτρων δεν μπορεί να διαγραφεί",
+          "message": "Η διαμόρφωση δεν διαγράφηκε από το σύστημα αρχείων"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Αποθήκευση αντιγράφου"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Αποτυχία φόρτωσης του αρχείου ρυθμίσεων",
+        "message": "Δεν μπόρεσε να φορτώσει τις ρυθμίσεις σας. Μη έγκυρη μορφή JSON."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Οι ρυθμίσεις {{configName}} φορτώθηκαν επιτυχώς"
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Φόρτωση ρυθμίσεων",
+      "text": "Σύρετε αρχεία εδώ για να ανεβάσετε μια διαμόρφωση ρυθμίσεων. Υποστήριξη μόνο για αρχεία JSON."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Η μεταφόρτωση απορρίφθηκε",
+      "text": "Αυτή η μορφή αρχείου δεν υποστηρίζεται. Παρακαλούμε ανεβάζετε μόνο αρχεία JSON."
     }
   }
 }
