@@ -1,24 +1,24 @@
 {
   "pageTitle": {
-    "label": ""
+    "label": "Τίτλος Σελίδας"
   },
   "metaTitle": {
-    "label": ""
+    "label": "Meta Τίτλος"
   },
   "logo": {
-    "label": ""
+    "label": "Λογότυπο"
   },
   "favicon": {
-    "label": ""
+    "label": "Έμβλημα"
   },
   "background": {
-    "label": ""
+    "label": "Φόντο"
   },
   "customCSS": {
-    "label": "",
-    "placeholder": ""
+    "label": "Προσαρμοσμένη CSS",
+    "placeholder": "Το προσαρμοσμένο CSS θα εφαρμοστεί τελευταίο"
   },
   "buttons": {
-    "submit": ""
+    "submit": "Υποβολή"
   }
 }
