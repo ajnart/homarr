@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Ping",
+    "description": "Εμφανίζει μια ένδειξη κατάστασης ανάλογα με τον κωδικό απόκρισης HTTP μιας δεδομένης διεύθυνσης URL."
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "Online {{response}}",
+    "offline": "Χωρίς σύνδεση {{response}}",
+    "loading": "Φόρτωση..."
   }
 }
