@@ -54,8 +54,8 @@ export function Search() {
   const { t } = useTranslation('modules/search');
   const { config } = useConfigContext();
   const [searchQuery, setSearchQuery] = useState('');
-  const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
-  const { classes: cardClasses } = useCardStyles(false);
+  const [debounced] = useDebouncedValue(searchQuery, 250);
+  const { classes: cardClasses } = useCardStyles(true);
 
   const isOverseerrEnabled = config?.apps.some(
     (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
