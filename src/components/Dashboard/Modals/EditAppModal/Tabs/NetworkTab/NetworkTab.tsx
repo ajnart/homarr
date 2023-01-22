@@ -29,7 +29,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
           searchable
           defaultValue={form.values.network.okStatus}
           variant="default"
-          {...form.getInputProps('network.statusCodes')}
+          {...form.getInputProps('network.okStatus')}
         />
       )}
     </Tabs.Panel>
