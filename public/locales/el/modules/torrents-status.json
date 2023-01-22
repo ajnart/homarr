@@ -1,71 +1,71 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Τόρρεντ",
+    "description": "Εμφανίζει μια λίστα με torrents από υποστηριζόμενους εφαρμογές Torrent.",
     "settings": {
-      "title": "",
+      "title": "Ρυθμίσεις για το widget Torrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Χρονικό διάστημα ανανέωσης (σε δευτερόλεπτα)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Εμφάνιση ολοκληρωμένων torrents"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Εμφάνιση stale torrents"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "",
-      "lastUpdated": ""
+      "error": "Σφάλμα",
+      "lastUpdated": "Τελευταία ενημέρωση {{time}} πριν"
     },
     "table": {
       "header": {
-        "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "name": "Όνομα",
+        "size": "Μέγεθος",
+        "download": "Κάτω",
+        "upload": "Πάνω",
+        "estimatedTimeOfArrival": "Εκτιμώμενος χρόνος αναμονής",
+        "progress": "Πρόοδος"
       },
       "item": {
-        "text": ""
+        "text": "Διαχειρίζεται από {{appName}}, {{ratio}} αναλογία"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Δεν βρέθηκαν torrents"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Τρέχουσα ταχύτητα λήψης",
+      "download": "Λήψη: {{download}}",
+      "upload": "Ανέβασμα: {{upload}}",
+      "timeSpan": "{{seconds}} δευτερόλεπτα πριν",
+      "totalDownload": "Λήψη: {{download}}/s",
+      "totalUpload": "Ανέβασμα: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Δεν βρέθηκαν υποστηριζόμενες εφαρμογές Torrent!",
+        "text": "Προσθέστε έναν υποστηριζόμενης εφαρμογής Torrent για να δείτε τις τρέχουσες λήψεις σας"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Παρουσιάστηκε ένα απροσδόκητο σφάλμα",
+        "text": "Το Homarr δεν μπόρεσε να επικοινωνήσει με τις εφαρμογές Torrent. Ελέγξτε τις ρυθμίσεις σας"
       }
     },
     "loading": {
-      "title": ""
+      "title": "Φόρτωση..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Διαχειριζόμενα από",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Θέση ουράς - {{position}}",
+        "progress": "Πρόοδος - {{progress}}%",
+        "totalSelectedSize": "Σύνολο - {{totalSize}}",
+        "state": "Κατάσταση - {{state}}",
+        "ratio": "Αναλογία -",
+        "completed": "Ολοκληρώθηκε"
       }
     }
   }
