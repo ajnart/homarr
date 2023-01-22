@@ -1,0 +1,54 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Εμφανίζει τα γραφήματα μιας εξωτερικής Dash. μέσα στο Homarr.",
+    "settings": {
+      "title": "Ρυθμίσεις για το widget Dash",
+      "cpuMultiView": {
+        "label": "Προβολή πολλαπλών πυρήνων CPU"
+      },
+      "storageMultiView": {
+        "label": "Προβολή πολλαπλών μονάδων αποθήκευσης"
+      },
+      "useCompactView": {
+        "label": "Χρήση Συμπαγούς Προβολής"
+      },
+      "graphs": {
+        "label": "Γραφήματα"
+      },
+      "url": {
+        "label": "Dash. URL"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Δεν βρέθηκε υπηρεσία Dash. Παρακαλούμε προσθέστε μία στο ταμπλό Homarr ή ορίστε μια Dash. URL στις επιλογές της ενότητας",
+      "noInformation": "Δεν μπορεί να αποκτήσει πληροφορίες από το dash. - τρέχετε την τελευταία έκδοση;"
+    },
+    "graphs": {
+      "storage": {
+        "title": "Αποθηκευτικός χώρος",
+        "label": "Αποθηκευτικός χώρος:"
+      },
+      "network": {
+        "title": "Δίκτυο",
+        "label": "Δίκτυο:",
+        "metrics": {
+          "download": "Κάτω",
+          "upload": "Πάνω"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "Μνήμη RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}
