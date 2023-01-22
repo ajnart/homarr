@@ -1,0 +1,29 @@
+{
+  "title": "",
+  "tooltip": "",
+  "tabs": {
+    "common": "",
+    "customizations": ""
+  },
+  "tips": {
+    "configTip": ""
+  },
+  "credits": {
+    "madeWithLove": ""
+  },
+  "grow": "",
+  "layout": {
+    "title": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "",
+    "enablelsidebar": "",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "",
+    "enablelsidebardesc": "",
+    "enablersidebardesc": ""
+  }
+}
