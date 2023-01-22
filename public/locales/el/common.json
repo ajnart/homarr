@@ -1,28 +1,28 @@
 {
-  "save": "",
-  "about": "",
-  "cancel": "",
-  "close": "",
-  "delete": "",
-  "ok": "",
-  "edit": "",
-  "version": "",
-  "changePosition": "",
-  "remove": "",
-  "removeConfirm": "",
+  "save": "Αποθήκευση",
+  "about": "Σχετικά",
+  "cancel": "Ακύρωση",
+  "close": "Κλείσιμο",
+  "delete": "Διαγραφή",
+  "ok": "ΟΚ",
+  "edit": "Επεξεργασία",
+  "version": "Έκδοση",
+  "changePosition": "Αλλαγή θέσης",
+  "remove": "Αφαίρεση",
+  "removeConfirm": "Είστε σίγουροι ότι θέλετε να καταργήσετε το {{item}} ;",
   "sections": {
-    "settings": "",
-    "dangerZone": ""
+    "settings": "Ρυθμίσεις",
+    "dangerZone": "Επικίνδυνη Περιοχή"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
+    "apiKey": "Κλειδί Api",
+    "username": "Όνομα Χρήστη",
     "password": "Κωδικός"
   },
-  "tip": "",
+  "tip": "Συμβουλές: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "δευτερόλεπτα",
+    "minutes": "λεπτά",
+    "hours": "ώρες"
   }
 }
