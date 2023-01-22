@@ -1,29 +1,29 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Ρυθμίσεις",
+  "tooltip": "Ρυθμίσεις",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Συχνά",
+    "customizations": "Παραμετροποιήσεις"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Ανεβάστε το αρχείο ρυθμίσεών σας σύροντάς το στη σελίδα!"
   },
   "credits": {
-    "madeWithLove": ""
+    "madeWithLove": "Φτιαγμένο με ❤️ από @"
   },
-  "grow": "",
+  "grow": "Πλέγμα ανάπτυξης (παίρνει όλο το χώρο)",
   "layout": {
-    "title": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "title": "Διάταξη ταμπλό",
+    "main": "Κύριο",
+    "sidebar": "Πλαϊνή μπάρα",
+    "cannotturnoff": "Δεν μπορεί να απενεργοποιηθεί",
+    "dashboardlayout": "Διάταξη ταμπλό",
+    "enablersidebar": "Απόκρυψη δεξιάς πλευρικής στήλης",
+    "enablelsidebar": "Ενεργοποίηση της αριστερής πλευρικής γραμμής",
+    "enablesearchbar": "Ενεργοποίηση της γραμμής αναζήτησης",
+    "enabledocker": "Ενεργοποίηση ενσωμάτωση docker",
+    "enableping": "Ενεργοποίηση pings",
+    "enablelsidebardesc": "Προαιρετικά. Μπορεί να χρησιμοποιηθεί μόνο για εφαρμογές και ενσωματώσεις",
+    "enablersidebardesc": "Προαιρετικά. Μπορεί να χρησιμοποιηθεί μόνο για εφαρμογές και ενσωματώσεις"
   }
 }
