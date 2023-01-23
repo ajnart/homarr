@@ -1,4 +1,5 @@
 import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
+import { useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { IconBrandDocker, IconX } from '@tabler/icons';
 import axios from 'axios';
@@ -17,6 +18,7 @@ export default function DockerMenuButton(props: any) {
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const { config } = useConfigContext();
   const { classes } = useCardStyles(true);
+  useHotkeys([['mod+B', () => setOpened(!opened)]]);
 
   const dockerEnabled = config?.settings.customization.layout.enabledDocker || false;
 
@@ -60,6 +62,7 @@ export default function DockerMenuButton(props: any) {
     <>
       <Drawer
         opened={opened}
+        trapFocus={false}
         onClose={() => setOpened(false)}
         padding="xl"
         position="right"
