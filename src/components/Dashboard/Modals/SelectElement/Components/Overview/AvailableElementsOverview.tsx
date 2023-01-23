@@ -50,7 +50,7 @@ export const AvailableElementTypes = ({
               {
                 id: uuidv4(),
                 // Thank you ChatGPT ;)
-                position: previousConfig.wrappers.length + 1,
+                position: previousConfig.categories.length + 1,
               },
             ],
             categories: [
