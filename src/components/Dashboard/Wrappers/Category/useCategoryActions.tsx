@@ -1,8 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useConfigStore } from '../../../../config/store';
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
+import { AppType } from '../../../../types/app';
 import { CategoryType } from '../../../../types/category';
+import { ConfigType } from '../../../../types/config';
 import { WrapperType } from '../../../../types/wrapper';
+import { IWidget } from '../../../../widgets/widgets';
 import { CategoryEditModalInnerProps } from './CategoryEditModal';
 
 export const useCategoryActions = (configName: string | undefined, category: CategoryType) => {
@@ -181,33 +184,71 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
     if (!configName) return;
     updateConfig(
       configName,
-      (previous) => {
+      (previous): ConfigType => {
         const currentItem = previous.categories.find((x) => x.id === category.id);
         if (!currentItem) return previous;
         // Find the main wrapper
-        const mainWrapper = previous.wrappers.find((x) => x.position === 1);
+        const mainWrapper = previous.wrappers.find((x) => x.position === 0);
+        const mainWrapperId = mainWrapper?.id ?? 'default';
 
-        // Check that the app has an area.type or "category" and that the area.id is the current category
-        const appsToMove = previous.apps.filter(
-          (x) => x.area && x.area.type === 'category' && x.area.properties.id === currentItem.id
-        );
-        appsToMove.forEach((x) => {
-          // eslint-disable-next-line no-param-reassign
-          x.area = { type: 'wrapper', properties: { id: mainWrapper?.id ?? 'default' } };
-        });
+        const isAppAffectedFilter = (app: AppType): boolean => {
+          if (!app.area) {
+            return false;
+          }
 
-        const widgetsToMove = previous.widgets.filter(
-          (x) => x.area && x.area.type === 'category' && x.area.properties.id === currentItem.id
-        );
+          if (app.area.type !== 'category') {
+            return false;
+          }
 
-        widgetsToMove.forEach((x) => {
-          // eslint-disable-next-line no-param-reassign
-          x.area = { type: 'wrapper', properties: { id: mainWrapper?.id ?? 'default' } };
-        });
+          return app.area.properties.id !== mainWrapperId;
+        };
+
+        const isWidgetAffectedFilter = (widget: IWidget<string, any>): boolean => {
+          if (!widget.area) {
+            return false;
+          }
+
+          if (widget.area.type !== 'category') {
+            return false;
+          }
+
+          return widget.area.properties.id !== mainWrapperId;
+        };
 
         return {
           ...previous,
-          apps: previous.apps,
+          apps: [
+            ...previous.apps.filter((x) => !isAppAffectedFilter(x)),
+            ...previous.apps
+              .filter((x) => isAppAffectedFilter(x))
+              .map((app): AppType => ({
+                ...app,
+                area: {
+                  ...app.area,
+                  type: 'wrapper',
+                  properties: {
+                    ...app.area.properties,
+                    id: mainWrapperId,
+                  },
+                },
+              })),
+          ],
+          widgets: [
+            ...previous.widgets.filter((widget) => !isWidgetAffectedFilter(widget)),
+            ...previous.widgets
+              .filter((widget) => isWidgetAffectedFilter(widget))
+              .map((widget): IWidget<string, any> => ({
+                ...widget,
+                area: {
+                  ...widget.area,
+                  type: 'wrapper',
+                  properties: {
+                    ...widget.area.properties,
+                    id: mainWrapperId,
+                  },
+                },
+              })),
+          ],
           categories: previous.categories.filter((x) => x.id !== category.id),
           wrappers: previous.wrappers.filter((x) => x.position !== currentItem.position),
         };
