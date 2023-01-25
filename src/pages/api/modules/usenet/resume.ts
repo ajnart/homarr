@@ -31,7 +31,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,
-          port: url.port,
+          port: url.port || (url.protocol === 'https:' ? '443' : '80'),
           login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
           hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
         };
