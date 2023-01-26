@@ -180,7 +180,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
   const { t } = useTranslation('modules/common-media-cards');
 
   return (
-    <Group mr="xs" align="stretch" noWrap style={{ maxHeight: 250, maxWidth: 400 }} spacing="xs">
+    <Group noWrap style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} spacing="xs">
       <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
       <Stack justify="space-around">
         <Stack spacing="sm">
@@ -223,7 +223,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
             {media.overview}
           </Text>
         </Stack>
-        <Group noWrap>
+        <Group spacing="xs">
           {media.plexUrl && (
             <Button
               component="a"
