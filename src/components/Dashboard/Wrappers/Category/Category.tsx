@@ -15,8 +15,8 @@ interface DashboardCategoryProps {
 export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   const { refs, apps, widgets } = useGridstack('category', category.id);
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const { classes: cardClasses } = useCardStyles(true);
   const { config } = useConfigContext();
+  const { classes: cardClasses } = useCardStyles(true);
 
   const categoryList = config?.categories.map((x) => x.name) ?? [];
   const [toggledCategories, setToggledCategories] = useLocalStorage({
@@ -34,7 +34,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
       chevronPosition="left"
       multiple
       value={isEditMode ? categoryList : toggledCategories}
-      variant="filled"
+      variant="separated"
       radius="lg"
       onChange={(state) => {
         // Cancel if edit mode is on
