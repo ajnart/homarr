@@ -140,10 +140,13 @@ export function Search() {
   const openInNewTab = config?.settings.common.searchEngine.properties.openInNewTab
     ? '_blank'
     : '_self';
-  const [OverseerrResults, setOverseerrResults] = useState<any[]>([]);
   const [opened, setOpened] = useState(false);
 
-  const { data, isLoading, error } = useQuery(
+  const {
+    data: OverseerrResults,
+    isLoading,
+    error,
+  } = useQuery(
     ['overseerr', debounced],
     async () => {
       if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && debounced.length > 3) {
@@ -159,10 +162,6 @@ export function Search() {
     }
   );
 
-  useEffect(() => {
-    setOverseerrResults(data ?? []);
-  }, [data]);
-
   const isModuleEnabled = config?.settings.customization.layout.enabledSearchbar;
   if (!isModuleEnabled) {
     return null;
@@ -172,7 +171,7 @@ export function Search() {
   return (
     <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
-        opened={OverseerrResults.length > 0 && opened && searchQuery.length > 3}
+        opened={OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3}
         position="bottom"
         withinPortal
         shadow="md"
@@ -221,10 +220,12 @@ export function Search() {
         </Popover.Target>
         <Popover.Dropdown>
           <ScrollArea style={{ height: '80vh', maxWidth: '90vw' }} offsetScrollbars>
-            {OverseerrResults.slice(0, 4).map((result, index) => (
+            {OverseerrResults && OverseerrResults.slice(0, 4).map((result: any, index: number) => (
               <React.Fragment key={index}>
                 <OverseerrMediaDisplay key={result.id} media={result} />
-                {index < OverseerrResults.length - 1 && index < 3 && <Divider variant="dashed" my="xs" />}
+                {index < OverseerrResults.length - 1 && index < 3 && (
+                  <Divider variant="dashed" my="xs" />
+                )}
               </React.Fragment>
             ))}
           </ScrollArea>

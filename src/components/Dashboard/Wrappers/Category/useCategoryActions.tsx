@@ -184,7 +184,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
     if (!configName) return;
     updateConfig(
       configName,
-      (previous): ConfigType => {
+      (previous) => {
         const currentItem = previous.categories.find((x) => x.id === category.id);
         if (!currentItem) return previous;
         // Find the main wrapper
