@@ -30,7 +30,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
       classNames={{
         item: cardClasses.card,
       }}
-      mx={0}
+      mx={10}
       chevronPosition="left"
       multiple
       value={isEditMode ? categoryList : toggledCategories}
