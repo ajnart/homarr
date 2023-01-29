@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "Ikonen som kommer att visas på instrumentpanelen."
+			"description": "Ikon som kommer att visas på instrumentpanelen."
 		}
 	},
 	"integration": {
