@@ -1,0 +1,7 @@
+{
+  "iconPicker": {
+    "textInputPlaceholder": "Search something...",
+    "searchLimitationTitle": "Limited to 30 results",
+    "searchLimitationMessage": "Search results were limited to 30 because there were too many matches"
+  }
+}

@@ -33,7 +33,7 @@ export const AppearanceTab = ({
           label={t('appearance.icon.label')}
           description={t('appearance.icon.description')}
           variant="default"
-          data={data.files ?? []}
+          data={data?.files ?? []}
           withAsterisk
           required
           {...form.getInputProps('appearance.iconUrl')}
