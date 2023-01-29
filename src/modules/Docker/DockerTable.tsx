@@ -7,6 +7,7 @@ import {
   ScrollArea,
   TextInput,
   useMantineTheme,
+  Text,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons';
@@ -78,8 +79,16 @@ export default function DockerTable({
             transitionDuration={0}
           />
         </td>
-        <td>{element.Names[0].replace('/', '')}</td>
-        {width > MIN_WIDTH_MOBILE && <td>{element.Image}</td>}
+        <td>
+          <Text size="lg" weight={600}>
+            {element.Names[0].replace('/', '')}
+          </Text>
+        </td>
+        {width > MIN_WIDTH_MOBILE && (
+          <td>
+            <Text size="lg">{element.Image}</Text>
+          </td>
+        )}
         {width > MIN_WIDTH_MOBILE && (
           <td>
             <Group>
@@ -111,12 +120,13 @@ export default function DockerTable({
   });
 
   return (
-    <ScrollArea style={{ height: '80vh' }}>
+    <ScrollArea style={{ height: '90vh' }} offsetScrollbars>
       <TextInput
         placeholder={t('search.placeholder')}
-        mt="md"
+        mr="md"
         icon={<IconSearch size={14} />}
         value={search}
+        autoFocus
         onChange={handleSearchChange}
       />
       <Table ref={ref} captionSide="bottom" highlightOnHover verticalSpacing="sm">

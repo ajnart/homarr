@@ -13,6 +13,7 @@ import {
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/icons';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
@@ -139,16 +140,27 @@ export function Search() {
   const openInNewTab = config?.settings.common.searchEngine.properties.openInNewTab
     ? '_blank'
     : '_self';
-  const [OverseerrResults, setOverseerrResults] = useState<any[]>([]);
   const [opened, setOpened] = useState(false);
 
-  useEffect(() => {
-    if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && searchQuery.length > 3) {
-      axios.get(`/api/modules/overseerr?query=${searchQuery}`).then((res) => {
-        setOverseerrResults(res.data.results ?? []);
-      });
+  const {
+    data: OverseerrResults,
+    isLoading,
+    error,
+  } = useQuery(
+    ['overseerr', debounced],
+    async () => {
+      if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && debounced.length > 3) {
+        const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
+        return res.data.results ?? [];
+      }
+      return [];
+    },
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchInterval: false,
     }
-  }, [debounced]);
+  );
 
   const isModuleEnabled = config?.settings.customization.layout.enabledSearchbar;
   if (!isModuleEnabled) {
@@ -159,7 +171,7 @@ export function Search() {
   return (
     <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
-        opened={OverseerrResults.length > 0 && opened && searchQuery.length > 3}
+        opened={OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3}
         position="bottom"
         withinPortal
         shadow="md"
@@ -207,16 +219,16 @@ export function Search() {
           />
         </Popover.Target>
         <Popover.Dropdown>
-          <div>
-            <ScrollArea style={{ height: 400, width: 420 }} offsetScrollbars>
-              {OverseerrResults.slice(0, 5).map((result, index) => (
-                <React.Fragment key={index}>
-                  <OverseerrMediaDisplay key={result.id} media={result} />
-                  {index < OverseerrResults.length - 1 && <Divider variant="dashed" my="xl" />}
-                </React.Fragment>
-              ))}
-            </ScrollArea>
-          </div>
+          <ScrollArea style={{ height: '80vh', maxWidth: '90vw' }} offsetScrollbars>
+            {OverseerrResults && OverseerrResults.slice(0, 4).map((result: any, index: number) => (
+              <React.Fragment key={index}>
+                <OverseerrMediaDisplay key={result.id} media={result} />
+                {index < OverseerrResults.length - 1 && index < 3 && (
+                  <Divider variant="dashed" my="xs" />
+                )}
+              </React.Fragment>
+            ))}
+          </ScrollArea>
         </Popover.Dropdown>
       </Popover>
     </Box>
