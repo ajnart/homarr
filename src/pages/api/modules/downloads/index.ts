@@ -1,5 +1,6 @@
 import { Deluge } from '@ctrl/deluge';
 import { AllClientData } from '@ctrl/shared-torrent';
+import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import dayjs from 'dayjs';
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -18,16 +19,36 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
-  const clientData: Promise<NormalizedDownloadAppStat | undefined>[] = config.apps.map((app) =>
-    GetDataFromClient(app)
-  );
+  const failedClients: string[] = [];
+
+  const clientData: Promise<NormalizedDownloadAppStat>[] = config.apps.map(async (app) => {
+    try {
+      const response = await GetDataFromClient(app);
+
+      if (!response) {
+        return {
+          success: false,
+        } as NormalizedDownloadAppStat;
+      }
+
+      return response;
+    } catch (err) {
+      Consola.error(
+        `Error communicating with your download client '${app.name}' (${app.id}): ${err}`
+      );
+      failedClients.push(app.id);
+      return {
+        success: false,
+      } as NormalizedDownloadAppStat;
+    }
+  });
 
   const settledPromises = await Promise.allSettled(clientData);
 
   const data: NormalizedDownloadAppStat[] = settledPromises
     .filter((x) => x.status === 'fulfilled')
     .map((promise) => (promise as PromiseFulfilledResult<NormalizedDownloadAppStat>).value)
-    .filter((x) => x !== undefined);
+    .filter((x) => x !== undefined && x.type !== undefined);
 
   const responseBody = { apps: data } as NormalizedDownloadQueueResponse;
 
