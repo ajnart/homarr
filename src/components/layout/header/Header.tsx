@@ -30,7 +30,7 @@ export function Header(props: any) {
   }, [CURRENT_VERSION]);
 
   return (
-    <MantineHeader height={HeaderHeight} className={cardClasses.card}>
+    <MantineHeader height="auto" className={cardClasses.card}>
       <Group p="xs" noWrap grow>
         <Box className={classes.hide}>
           <Logo />
