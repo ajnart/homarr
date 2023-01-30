@@ -3,6 +3,7 @@ import { UsenetQueueItem } from '../../../../widgets/useNet/types';
 
 export type NormalizedDownloadQueueResponse = {
   apps: NormalizedDownloadAppStat[];
+  failedApps: string[];
 };
 
 export type NormalizedDownloadAppStat = {

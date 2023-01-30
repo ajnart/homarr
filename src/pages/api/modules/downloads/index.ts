@@ -1,4 +1,6 @@
 import { Deluge } from '@ctrl/deluge';
+import { QBittorrent } from '@ctrl/qbittorrent';
+import { Transmission } from '@ctrl/transmission';
 import { AllClientData } from '@ctrl/shared-torrent';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
@@ -32,7 +34,7 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
       }
 
       return response;
-    } catch (err) {
+    } catch (err: any) {
       Consola.error(
         `Error communicating with your download client '${app.name}' (${app.id}): ${err}`
       );
@@ -50,7 +52,11 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
     .map((promise) => (promise as PromiseFulfilledResult<NormalizedDownloadAppStat>).value)
     .filter((x) => x !== undefined && x.type !== undefined);
 
-  const responseBody = { apps: data } as NormalizedDownloadQueueResponse;
+  const responseBody = { apps: data, failedApps: failedClients } as NormalizedDownloadQueueResponse;
+
+  if (failedClients.length > 0) {
+    Consola.warn(`${failedClients.length} download clients failed. Please check your configuration and the above log`);
+  }
 
   return response.status(200).json(responseBody);
 };
@@ -85,7 +91,7 @@ const GetDataFromClient = async (
     }
     case 'transmission': {
       return reduceTorrent(
-        await new Deluge({
+        await new Transmission({
           baseUrl: app.url,
           username: findField(app, 'username'),
           password: findField(app, 'password'),
@@ -94,7 +100,7 @@ const GetDataFromClient = async (
     }
     case 'qBittorrent': {
       return reduceTorrent(
-        await new Deluge({
+        await new QBittorrent({
           baseUrl: app.url,
           username: findField(app, 'username'),
           password: findField(app, 'password'),
@@ -147,6 +153,7 @@ const GetDataFromClient = async (
           if (!err) {
             resolve(result);
           } else {
+            Consola.error(`Error while listing groups: ${err}`);
             reject(err);
           }
         });
@@ -160,6 +167,7 @@ const GetDataFromClient = async (
           if (!err) {
             resolve(result);
           } else {
+            Consola.error(`Error while retrieving NZBGet stats: ${err}`);
             reject(err);
           }
         });
