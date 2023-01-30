@@ -18,10 +18,10 @@
       "message": "Mật khẩu của bạn đang được kiểm tra..."
     },
     "correct": {
-      "title": ""
+      "title": "Đăng nhập thành công, đang chuyển hướng..."
     },
     "wrong": {
-      "title": ""
+      "title": "Mật khẩu vừa nhập không đúng, xin vui lòng thử lại."
     }
   }
 }
