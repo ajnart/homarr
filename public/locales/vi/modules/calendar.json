@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Lịch",
-    "description": "",
+    "description": "Hiển thị lịch cùng các phát hành sắp tới, từ các tích hợp được hỗ trợ.",
     "settings": {
-      "title": "",
+      "title": "Cài đặt cho tiện ích lịch",
       "sundayStart": {
         "label": "Đặt đầu tuần là Chủ Nhật"
       },
