@@ -200,7 +200,11 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return app.area.properties.id !== mainWrapperId;
+          if (app.area.properties.id === mainWrapperId) {
+            return false;
+          }
+
+          return app.area.properties.id === currentItem.id;
         };
 
         const isWidgetAffectedFilter = (widget: IWidget<string, any>): boolean => {
@@ -212,7 +216,11 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return widget.area.properties.id !== mainWrapperId;
+          if (widget.area.properties.id === mainWrapperId) {
+            return false;
+          }
+
+          return widget.area.properties.id === currentItem.id;
         };
 
         return {
