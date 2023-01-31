@@ -1,14 +1,13 @@
-import React from 'react';
 import {
-  createStyles,
-  Container,
-  Title,
-  Text,
   Button,
+  Container,
+  createStyles,
   Group,
+  Text,
+  Title,
   useMantineTheme,
 } from '@mantine/core';
-import { NextLink } from '@mantine/next';
+import React from 'react';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';

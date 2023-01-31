@@ -1,5 +1,4 @@
-import { Anchor, Box, Stack, Title, UnstyledButton } from '@mantine/core';
-import { NextLink } from '@mantine/next';
+import { Box, Stack, Title, UnstyledButton } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';

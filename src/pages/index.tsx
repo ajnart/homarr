@@ -2,6 +2,7 @@ import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 
 import fs from 'fs';
+import { LoadConfigComponent } from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
@@ -9,9 +10,6 @@ import { getFrontendConfig } from '../tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '../tools/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/translation-namespaces';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
-import { LoadConfigComponent } from '../components/Config/LoadConfig';
-import dayjs from 'dayjs';
-import { useTranslation } from 'next-i18next';
 
 export async function getServerSideProps({
   req,
