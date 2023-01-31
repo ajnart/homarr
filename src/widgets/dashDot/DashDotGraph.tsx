@@ -5,9 +5,15 @@ interface DashDotGraphProps {
   graph: GraphType;
   isCompact: boolean;
   dashDotUrl: string;
+  usePercentages: boolean;
 }
 
-export const DashDotGraph = ({ graph, isCompact, dashDotUrl }: DashDotGraphProps) => {
+export const DashDotGraph = ({
+  graph,
+  isCompact,
+  dashDotUrl,
+  usePercentages,
+}: DashDotGraphProps) => {
   const { classes } = useStyles();
   return (
     <Stack
@@ -25,13 +31,18 @@ export const DashDotGraph = ({ graph, isCompact, dashDotUrl }: DashDotGraphProps
         className={classes.iframe}
         key={graph.name}
         title={graph.name}
-        src={useIframeSrc(dashDotUrl, graph, isCompact)}
+        src={useIframeSrc(dashDotUrl, graph, isCompact, usePercentages)}
       />
     </Stack>
   );
 };
 
-const useIframeSrc = (dashDotUrl: string, graph: GraphType, isCompact: boolean) => {
+const useIframeSrc = (
+  dashDotUrl: string,
+  graph: GraphType,
+  isCompact: boolean,
+  usePercentages: boolean
+) => {
   const { colorScheme, colors, radius } = useMantineTheme();
   const surface = (colorScheme === 'dark' ? colors.dark[7] : colors.gray[0]).substring(1); // removes # from hex value
 
@@ -45,7 +56,8 @@ const useIframeSrc = (dashDotUrl: string, graph: GraphType, isCompact: boolean) 
     `&surface=${surface}` +
     `&gap=${isCompact ? 10 : 5}` +
     `&innerRadius=${radius.lg}` +
-    `&multiView=${graph.isMultiView}`
+    `&multiView=${graph.isMultiView}` +
+    `&showPercentage=${usePercentages ? 'true' : 'false'}`
   );
 };
 
