@@ -148,13 +148,14 @@ export function Search() {
   } = useQuery(
     ['overseerr', debounced],
     async () => {
-      if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && debounced.length > 3) {
-        const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
-        return res.data.results ?? [];
-      }
-      return [];
+      const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
+      return res.data.results ?? [];
     },
     {
+      enabled:
+        isOverseerrEnabled === true &&
+        selectedSearchEngine.value === 'overseerr' &&
+        debounced.length > 3,
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchInterval: false,

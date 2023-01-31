@@ -53,6 +53,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
 
   const { data: medias } = useQuery({
     queryKey: ['calendar/medias', { month: month.getMonth(), year: month.getFullYear() }],
+    staleTime: 1000 * 60 * 60 * 5,
     queryFn: async () =>
       (await (
         await fetch(
