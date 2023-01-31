@@ -14,6 +14,7 @@ import {
   Title,
 } from '@mantine/core';
 import {
+  IconAnchor,
   IconBrandDiscord,
   IconBrandGithub,
   IconFile,
@@ -28,11 +29,11 @@ import { InitOptions } from 'i18next';
 import { i18n, Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { CURRENT_VERSION } from '../../../../../data/constants';
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
-import { usePrimaryGradient } from '../../../layout/useGradient';
-import Credits from '../../../Settings/Common/Credits';
+import { useConfigContext } from '../../config/provider';
+import { useConfigStore } from '../../config/store';
+import { usePackageAttributesStore } from '../../tools/client/zustands/usePackageAttributesStore';
+import { usePrimaryGradient } from '../layout/useGradient';
+import Credits from '../Settings/Common/Credits';
 
 interface AboutModalProps {
   opened: boolean;
@@ -143,6 +144,7 @@ interface ExtendedInitOptions extends InitOptions {
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
   // TODO: Fix this to not request. Pass it as a prop.
   const colorGradiant = usePrimaryGradient();
+  const { attributes } = usePackageAttributesStore();
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
@@ -201,7 +203,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       content: (
         <Group position="right">
           <Badge variant="gradient" gradient={colorGradiant}>
-            {CURRENT_VERSION}
+            {attributes.packageVersion ?? 'Unknown'}
           </Badge>
           {newVersionAvailable && (
             <HoverCard shadow="md" position="top" withArrow>
@@ -229,11 +231,20 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                     {newVersionAvailable}
                   </Anchor>
                 </b>{' '}
-                is available ! Current version: {CURRENT_VERSION}
+                is available ! Current version: {attributes.packageVersion}
               </HoverCard.Dropdown>
             </HoverCard>
           )}
         </Group>
+      ),
+    },
+    {
+      icon: <IconAnchor size={20} />,
+      label: 'Node environment',
+      content: (
+        <Badge variant="gradient" gradient={colorGradiant}>
+          {attributes.environment}
+        </Badge>
       ),
     },
     ...items,

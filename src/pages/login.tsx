@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useForm } from '@mantine/form';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { loginNamespaces } from '../tools/translation-namespaces';
+import { loginNamespaces } from '../tools/server/translation-namespaces';
 
 // TODO: Add links to the wiki articles about the login process.
 export default function AuthenticationTitle() {

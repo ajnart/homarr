@@ -8,7 +8,7 @@ import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
@@ -22,8 +22,16 @@ import '../styles/global.scss';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
 import { theme } from '../tools/theme';
+import {
+  getServiceSidePackageAttributes,
+  ServerSidePackageAttributesType,
+} from '../tools/server/getPackageVersion';
+import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 
-function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
+function App(
+  this: any,
+  props: AppProps & { colorScheme: ColorScheme; packageAttributes: ServerSidePackageAttributesType }
+) {
   const { Component, pageProps } = props;
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
@@ -45,6 +53,12 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
     defaultValue: preferredColorScheme,
     getInitialValueInEffect: true,
   });
+
+  const { setInitialPackageAttributes } = usePackageAttributesStore();
+
+  useEffect(() => {
+    setInitialPackageAttributes(props.packageAttributes);
+  }, []);
 
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
@@ -111,6 +125,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
 
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie('color-scheme', ctx) || 'light',
+  packageAttributes: getServiceSidePackageAttributes(),
 });
 
 export default appWithTranslation(App);
