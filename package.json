@@ -57,7 +57,7 @@
     "i18next-browser-languagedetector": "^6.1.5",
     "i18next-http-backend": "^1.4.1",
     "js-file-download": "^0.4.12",
-    "next": "^13.1.4",
+    "next": "^13.1.6",
     "next-i18next": "^11.3.0",
     "nzbget-api": "^0.0.3",
     "ping": "^0.4.2",
