@@ -1,4 +1,4 @@
-import { Autocomplete, createStyles, Flex, Tabs, TextInput } from '@mantine/core';
+import { Autocomplete, createStyles, Flex, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
