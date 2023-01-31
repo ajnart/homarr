@@ -25,6 +25,10 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    usePercentages: {
+      type: 'switch',
+      defaultValue: false,
+    },
     graphs: {
       type: 'multi-select',
       defaultValue: ['cpu', 'memory'],
@@ -88,6 +92,8 @@ function DashDotTile({ widget }: DashDotTileProps) {
 
   const isCompactNetworkVisible = graphs?.some((g) => g.id === 'network' && isCompact);
 
+  const usePercentages = widget?.properties.usePercentages ?? false;
+
   const displayedGraphs = graphs?.filter(
     (g) => !isCompact || !['network', 'storage'].includes(g.id)
   );
@@ -109,6 +115,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
                 graph={graph}
                 dashDotUrl={dashDotUrl}
                 isCompact={isCompact}
+                usePercentages={usePercentages}
               />
             ))}
           </Group>
