@@ -5,6 +5,7 @@ import {
   Button,
   createStyles,
   Divider,
+  Grid,
   Group,
   HoverCard,
   Modal,
@@ -27,11 +28,11 @@ import { InitOptions } from 'i18next';
 import { i18n, Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { CURRENT_VERSION } from '../../../data/constants';
-import { useConfigContext } from '../../config/provider';
-import { useConfigStore } from '../../config/store';
-import { usePrimaryGradient } from '../layout/useGradient';
-import Credits from '../Settings/Common/Credits';
+import { CURRENT_VERSION } from '../../../../../data/constants';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
+import { usePrimaryGradient } from '../../../layout/useGradient';
+import Credits from '../../../Settings/Common/Credits';
 
 interface AboutModalProps {
   opened: boolean;
@@ -85,35 +86,45 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
         {t('layout/modals/about:contact')}
       </Title>
 
-      <Group grow>
-        <Button
-          component="a"
-          href="https://github.com/ajnart/homarr"
-          target="_blank"
-          leftIcon={<IconBrandGithub size={20} />}
-          variant="default"
-        >
-          GitHub
-        </Button>
-        <Button
-          component="a"
-          href="https://homarr.dev/"
-          target="_blank"
-          leftIcon={<IconWorldWww size={20} />}
-          variant="default"
-        >
-          Documentation
-        </Button>
-        <Button
-          component="a"
-          href="https://discord.gg/aCsmEV5RgA"
-          target="_blank"
-          leftIcon={<IconBrandDiscord size={20} />}
-          variant="default"
-        >
-          Discord
-        </Button>
-      </Group>
+      <Grid grow>
+        <Grid.Col md={4} xs={12}>
+          <Button
+            component="a"
+            href="https://github.com/ajnart/homarr"
+            target="_blank"
+            leftIcon={<IconBrandGithub size={20} />}
+            variant="default"
+            fullWidth
+          >
+            GitHub
+          </Button>
+        </Grid.Col>
+        <Grid.Col md={4} xs={12}>
+          <Button
+            component="a"
+            href="https://homarr.dev/"
+            target="_blank"
+            leftIcon={<IconWorldWww size={20} />}
+            variant="default"
+            fullWidth
+          >
+            Documentation
+          </Button>
+        </Grid.Col>
+
+        <Grid.Col md={4} xs={12}>
+          <Button
+            component="a"
+            href="https://discord.gg/aCsmEV5RgA"
+            target="_blank"
+            leftIcon={<IconBrandDiscord size={20} />}
+            variant="default"
+            fullWidth
+          >
+            Discord
+          </Button>
+        </Grid.Col>
+      </Grid>
       <Credits />
     </Modal>
   );
