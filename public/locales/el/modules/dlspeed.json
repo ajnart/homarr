@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Ταχύτητα Λήψης",
+    "description": "Εμφανίζει την ταχύτητα λήψης και μεταφόρτωσης των υποστηριζόμενων ενσωματώσεων."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Όνομα",
+        "size": "Μέγεθος",
+        "download": "Κάτω",
+        "upload": "Πάνω",
+        "estimatedTimeOfArrival": "Εκτιμώμενος χρόνος αναμονής",
+        "progress": "Πρόοδος"
+      },
+      "body": {
+        "nothingFound": "Δεν βρέθηκαν torrents"
+      }
+    },
+    "lineChart": {
+      "title": "Τρέχουσα ταχύτητα λήψης",
+      "download": "Λήψη: {{download}}",
+      "upload": "Ανέβασμα: {{upload}}",
+      "timeSpan": "{{seconds}} δευτερόλεπτα πριν",
+      "totalDownload": "Λήψη: {{download}}/s",
+      "totalUpload": "Ανέβασμα: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Δεν βρέθηκαν υποστηριζόμενα προγράμματα λήψης!",
+        "text": "Προσθέστε μια υπηρεσία λήψης για να δείτε τις τρέχουσες λήψεις σας"
+      }
+    }
+  }
+}

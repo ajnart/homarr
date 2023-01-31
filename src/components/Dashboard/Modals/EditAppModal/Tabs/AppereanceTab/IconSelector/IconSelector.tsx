@@ -31,7 +31,7 @@ interface IconSelectorProps {
 }
 
 export const IconSelector = ({ onChange, allowAppNamePropagation, form }: IconSelectorProps) => {
-  const { t } = useTranslation('layout/tools');
+  const { t } = useTranslation('layout/modals/icon-picker');
 
   const { data, isLoading } = useRepositoryIconsQuery<WalkxcodeRepositoryIcon>({
     url: 'https://api.github.com/repos/walkxcode/Dashboard-Icons/contents/png',

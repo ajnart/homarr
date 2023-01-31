@@ -4,6 +4,7 @@ import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
+import { useHotkeys } from '@mantine/hooks';
 import { hideNotification, showNotification } from '@mantine/notifications';
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
@@ -22,6 +23,8 @@ export const ToggleEditModeAction = () => {
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
   const { classes } = useCardStyles(true);
+
+  useHotkeys([['ctrl+E', toggleEditMode]]);
 
   const toggleButtonClicked = () => {
     toggleEditMode();

@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Σας επιτρέπει να βλέπετε και να διαχειρίζεστε εύκολα όλα τα Docker Containers σας."
+  },
+  "search": {
+    "placeholder": "Αναζήτηση με βάση container ή όνομα εικόνας"
+  },
+  "table": {
+    "header": {
+      "name": "Όνομα",
+      "image": "Εικόνα",
+      "ports": "Θύρες",
+      "state": "Κατάσταση"
+    },
+    "body": {
+      "portCollapse": "{{ports}} περισσότερα"
+    },
+    "states": {
+      "running": "Εκτελείται",
+      "created": "Δημιουργήθηκε",
+      "stopped": "Διακόπηκε",
+      "unknown": "Άγνωστο"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Προσθήκη εφαρμογής",
+      "message": "Προσθήκη εφαρμογής στο Homarr"
+    },
+    "restart": {
+      "title": "Επανεκκίνηση"
+    },
+    "stop": {
+      "title": "Διακοπή"
+    },
+    "start": {
+      "title": "Έναρξη"
+    },
+    "refreshData": {
+      "title": "Ανανέωση δεδομένων"
+    },
+    "remove": {
+      "title": "Αφαίρεση"
+    },
+    "addToHomarr": {
+      "title": "Προσθήκη στο Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Ξεκινάει",
+      "end": "Ξεκίνησε"
+    },
+    "stop": {
+      "start": "Διακόπτεται",
+      "end": "Διακόπηκε"
+    },
+    "restart": {
+      "start": "Γίνεται επανεκκίνηση",
+      "end": "Επανεκκινήθηκε"
+    },
+    "remove": {
+      "start": "Αφαιρείται",
+      "end": "Αφαιρέθηκε"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Η ενσωμάτωση του Docker απέτυχε",
+      "message": "Μήπως ξεχάσατε να προσαρτήσετε την υποδοχή docker;"
+    },
+    "unknownError": {
+      "title": "Παρουσιάστηκε σφάλμα"
+    },
+    "oneServiceAtATime": {
+      "title": "Παρακαλώ προσθέστε μόνο μία εφαρμογή ή υπηρεσία τη φορά!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

@@ -13,12 +13,14 @@ import {
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/icons';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { useConfigContext } from '../../../config/provider';
 import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
+import { ConfigType } from '../../../types/config';
 import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import Tip from '../Tip';
 import { useCardStyles } from '../useCardStyles';
@@ -54,8 +56,8 @@ export function Search() {
   const { t } = useTranslation('modules/search');
   const { config } = useConfigContext();
   const [searchQuery, setSearchQuery] = useState('');
-  const [debounced, cancel] = useDebouncedValue(searchQuery, 250);
-  const { classes: cardClasses } = useCardStyles(false);
+  const [debounced] = useDebouncedValue(searchQuery, 250);
+  const { classes: cardClasses } = useCardStyles(true);
 
   const isOverseerrEnabled = config?.apps.some(
     (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
@@ -136,30 +138,40 @@ export function Search() {
   const textInput = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => textInput.current?.focus()]]);
   const { classes } = useStyles();
-  const openInNewTab = config?.settings.common.searchEngine.properties.openInNewTab
-    ? '_blank'
-    : '_self';
-  const [OverseerrResults, setOverseerrResults] = useState<any[]>([]);
+  const openTarget = getOpenTarget(config);
   const [opened, setOpened] = useState(false);
 
-  useEffect(() => {
-    if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && searchQuery.length > 3) {
-      axios.get(`/api/modules/overseerr?query=${searchQuery}`).then((res) => {
-        setOverseerrResults(res.data.results ?? []);
-      });
+  const {
+    data: OverseerrResults,
+    isLoading,
+    error,
+  } = useQuery(
+    ['overseerr', debounced],
+    async () => {
+      if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && debounced.length > 3) {
+        const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
+        return res.data.results ?? [];
+      }
+      return [];
+    },
+    {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchInterval: false,
     }
-  }, [debounced]);
+  );
 
   const isModuleEnabled = config?.settings.customization.layout.enabledSearchbar;
   if (!isModuleEnabled) {
     return null;
   }
+
   //TODO: Fix the bug where clicking anything inside the Modal to ask for a movie
   // will close it (Because it closes the underlying Popover)
   return (
     <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
-        opened={OverseerrResults.length > 0 && opened && searchQuery.length > 3}
+        opened={OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3}
         position="bottom"
         withinPortal
         shadow="md"
@@ -182,7 +194,7 @@ export function Search() {
               setOpened(false);
               if (item.url) {
                 setSearchQuery('');
-                window.open(item.openedUrl ? item.openedUrl : item.url, openInNewTab);
+                window.open(item.openedUrl ? item.openedUrl : item.url, openTarget);
               }
             }}
             // Replace %s if it is in selectedSearchEngine.url with searchQuery, otherwise append searchQuery at the end of it
@@ -193,9 +205,9 @@ export function Search() {
                 autocompleteData.length === 0
               ) {
                 if (selectedSearchEngine.url.includes('%s')) {
-                  window.open(selectedSearchEngine.url.replace('%s', searchQuery), openInNewTab);
+                  window.open(selectedSearchEngine.url.replace('%s', searchQuery), openTarget);
                 } else {
-                  window.open(selectedSearchEngine.url + searchQuery, openInNewTab);
+                  window.open(selectedSearchEngine.url + searchQuery, openTarget);
                 }
               }
             }}
@@ -207,16 +219,17 @@ export function Search() {
           />
         </Popover.Target>
         <Popover.Dropdown>
-          <div>
-            <ScrollArea style={{ height: 400, width: 420 }} offsetScrollbars>
-              {OverseerrResults.slice(0, 5).map((result, index) => (
+          <ScrollArea style={{ height: '80vh', maxWidth: '90vw' }} offsetScrollbars>
+            {OverseerrResults &&
+              OverseerrResults.slice(0, 4).map((result: any, index: number) => (
                 <React.Fragment key={index}>
                   <OverseerrMediaDisplay key={result.id} media={result} />
-                  {index < OverseerrResults.length - 1 && <Divider variant="dashed" my="xl" />}
+                  {index < OverseerrResults.length - 1 && index < 3 && (
+                    <Divider variant="dashed" my="xs" />
+                  )}
                 </React.Fragment>
               ))}
-            </ScrollArea>
-          </div>
+          </ScrollArea>
         </Popover.Dropdown>
       </Popover>
     </Box>
@@ -287,3 +300,11 @@ export function Search() {
     });
   }
 }
+
+const getOpenTarget = (config: ConfigType | undefined): '_blank' | '_self' => {
+  if (!config || config.settings.common.searchEngine.properties.openInNewTab === undefined) {
+    return '_blank';
+  }
+
+  return config.settings.common.searchEngine.properties.openInNewTab ? '_blank' : '_self';
+};

@@ -1,14 +1,14 @@
 import { getCookie, setCookie } from 'cookies-next';
+import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
 
-import fs from 'fs';
 import { LoadConfigComponent } from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
 import { getFrontendConfig } from '../tools/config/getFrontendConfig';
-import { getServerSideTranslations } from '../tools/getServerSideTranslations';
-import { dashboardNamespaces } from '../tools/translation-namespaces';
+import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
+import { dashboardNamespaces } from '../tools/server/translation-namespaces';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
 
 export async function getServerSideProps({
@@ -47,11 +47,14 @@ export async function getServerSideProps({
   }
 
   const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
-
   const config = getFrontendConfig(configName as string);
 
   return {
-    props: { configName: configName as string, config, ...translations },
+    props: {
+      configName: configName as string,
+      config,
+      ...translations,
+    },
   };
 }
 

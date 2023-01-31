@@ -1,5 +1,6 @@
-import { createStyles, Flex, Tabs, TextInput } from '@mantine/core';
+import { Autocomplete, createStyles, Flex, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
+import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
 import { AppType } from '../../../../../../types/app';
 import { DebouncedAppIcon } from '../Shared/DebouncedAppIcon';
@@ -18,16 +19,21 @@ export const AppearanceTab = ({
 }: AppearanceTabProps) => {
   const { t } = useTranslation('layout/modals/add-app');
   const { classes } = useStyles();
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['autocompleteLocale'],
+    queryFn: () => fetch('/api/getLocalImages').then((res) => res.json()),
+  });
 
   return (
     <Tabs.Panel value="appearance" pt="lg">
       <Flex gap={5}>
-        <TextInput
+        <Autocomplete
           className={classes.textInput}
           icon={<DebouncedAppIcon form={form} width={20} height={20} />}
           label={t('appearance.icon.label')}
           description={t('appearance.icon.description')}
           variant="default"
+          data={data?.files ?? []}
           withAsterisk
           required
           {...form.getInputProps('appearance.iconUrl')}

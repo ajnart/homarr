@@ -22,7 +22,7 @@ export const CategoryEditMenu = ({ category }: CategoryEditMenuProps) => {
     useCategoryActions(configName, category);
 
   return (
-    <Menu withinPortal position="left-start" withArrow>
+    <Menu withinPortal withArrow>
       <Menu.Target>
         <ActionIcon>
           <IconDots />

@@ -45,7 +45,14 @@ export const ChangePositionModal = ({
     const width = parseInt(form.values.width, 10);
     const height = parseInt(form.values.height, 10);
 
-    if (!form.values.x || !form.values.y || Number.isNaN(width) || Number.isNaN(height)) return;
+    if (
+      form.values.x === null ||
+      form.values.y === null ||
+      Number.isNaN(width) ||
+      Number.isNaN(height)
+    ) {
+      return;
+    }
 
     onSubmit(form.values.x, form.values.y, width, height);
   };

@@ -9,7 +9,7 @@ import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
 import { IDateWidget } from '../../widgets/date/DateTile';
 import { ITorrent } from '../../widgets/torrent/TorrentTile';
-import { ITorrentNetworkTraffic } from '../../widgets/torrentNetworkTraffic/TorrentNetworkTrafficTile';
+import { ITorrentNetworkTraffic } from '../../widgets/download-speed/TorrentNetworkTrafficTile';
 import { IUsenetWidget } from '../../widgets/useNet/UseNetTile';
 import { IWeatherWidget } from '../../widgets/weather/WeatherTile';
 import { IWidget } from '../../widgets/widgets';

@@ -22,7 +22,7 @@
     "enablelsidebar": "启用左边的侧边栏",
     "enablesearchbar": "启用搜索栏",
     "enabledocker": "启用docker集成",
-    "enableping": "启用平移功能",
+    "enableping": "启用Ping功能",
     "enablelsidebardesc": "可选的。只能用于应用程序和集成",
     "enablersidebardesc": "可选的。只能用于应用程序和集成"
   }

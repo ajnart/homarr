@@ -58,12 +58,12 @@
       "title": "Завантаження..."
     },
     "popover": {
-      "introductionPrefix": "Під керівництвом",
+      "introductionPrefix": "Керується",
       "metrics": {
         "queuePosition": "Позиція в черзі - {{position}}",
         "progress": "Прогрес - {{progress}}%.",
         "totalSelectedSize": "Всього - {{totalSize}}",
-        "state": "Держава - {{state}}",
+        "state": "Стан - {{state}}",
         "ratio": "Коефіцієнт -",
         "completed": "Завершено"
       }
