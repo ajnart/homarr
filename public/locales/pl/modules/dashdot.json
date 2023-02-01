@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "Adres URL usługi Dash."
+      },
+      "usePercentages": {
+        "label": ""
       }
     }
   },
