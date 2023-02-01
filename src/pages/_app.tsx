@@ -18,7 +18,6 @@ import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsE
 import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
-import '../styles/global.scss';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
 import { theme } from '../tools/theme';
@@ -27,6 +26,9 @@ import {
   ServerSidePackageAttributesType,
 } from '../tools/server/getPackageVersion';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
+
+import '../styles/global.scss';
+import '@uiw/react-textarea-code-editor/dist.css';
 
 function App(
   this: any,

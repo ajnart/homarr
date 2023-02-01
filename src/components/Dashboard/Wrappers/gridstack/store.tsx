@@ -27,6 +27,8 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 };
 
 export const useWrapperColumnCount = () => {
+  // TODO: Implement the config hook and read out the column count out of the settings.
+  // Use default fallbacks and check for values out of range, to ensure that this never fails!
   switch (useNamedWrapperColumnCount()) {
     case 'large':
       return 12;

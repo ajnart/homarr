@@ -4,22 +4,17 @@ import { ChangeEventHandler, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
-interface MetaTitleChangerProps {
-  defaultValue: string | undefined;
-}
-
-// TODO: change to pageTitle
-export const MetaTitleChanger = ({ defaultValue }: MetaTitleChangerProps) => {
+export const BrowserTabTitle = () => {
   const { t } = useTranslation('settings/customization/page-appearance');
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { name: configName } = useConfigContext();
-  const [metaTitle, setMetaTitle] = useState(defaultValue);
+  const { config, name: configName } = useConfigContext();
+  const [metaTitle, setMetaTitle] = useState(config?.settings.customization.metaTitle ?? '');
 
   if (!configName) return null;
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (ev) => {
     const { value } = ev.currentTarget;
-    const metaTitle = value.trim().length === 0 ? undefined : value;
+    const metaTitle = value.trim();
     setMetaTitle(metaTitle);
     updateConfig(configName, (prev) => ({
       ...prev,
@@ -36,9 +31,11 @@ export const MetaTitleChanger = ({ defaultValue }: MetaTitleChangerProps) => {
   return (
     <TextInput
       label={t('metaTitle.label')}
+      description="The title, that is being displayed as your tab name"
       placeholder="homarr - the best dashboard"
       value={metaTitle}
       onChange={handleChange}
+      mb="sm"
     />
   );
 };

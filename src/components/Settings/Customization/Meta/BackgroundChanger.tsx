@@ -4,15 +4,13 @@ import { ChangeEventHandler, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
-interface BackgroundChangerProps {
-  defaultValue: string | undefined;
-}
-
-export const BackgroundChanger = ({ defaultValue }: BackgroundChangerProps) => {
+export const BackgroundChanger = () => {
   const { t } = useTranslation('settings/customization/page-appearance');
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { name: configName } = useConfigContext();
-  const [backgroundImageUrl, setBackgroundImageUrl] = useState(defaultValue);
+  const { config, name: configName } = useConfigContext();
+  const [backgroundImageUrl, setBackgroundImageUrl] = useState(
+    config?.settings.customization.backgroundImageUrl
+  );
 
   if (!configName) return null;
 
