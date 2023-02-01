@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "URL của Dash."
+      },
+      "usePercentages": {
+        "label": ""
       }
     }
   },
