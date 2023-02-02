@@ -53,15 +53,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
       opened={opened}
       title={
         <Group spacing="sm">
-          <Image
-            alt="Homarr logo"
-            src="/imgs/logo/logo.png"
-            width={30}
-            height={30}
-            style={{
-              objectFit: 'contain',
-            }}
-          />
+          <Image src="/imgs/logo/logo.png" width={30} height={30} objectFit="contain" />
           <Title order={3} variant="gradient" gradient={colorGradiant}>
             {t('about')} Homarr
           </Title>

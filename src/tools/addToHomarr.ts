@@ -1,5 +1,4 @@
 import Dockerode from 'dockerode';
-
 import { MatchingImages, ServiceType, tryMatchPort } from './types';
 
 function tryMatchType(imageName: string): ServiceType {
