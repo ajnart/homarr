@@ -172,7 +172,10 @@ export function Search() {
   return (
     <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
-        opened={OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3}
+        opened={
+          (OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3) ??
+          false
+        }
         position="bottom"
         withinPortal
         shadow="md"
