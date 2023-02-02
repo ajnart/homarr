@@ -16,17 +16,15 @@ export function Header(props: any) {
   const { classes: cardClasses } = useCardStyles(false);
   const { attributes } = usePackageAttributesStore();
 
-  const [newVersionAvailable, setNewVersionAvailable] = useState<string>('');
-  useEffect(() => {
-    // Fetch Data here when component first mounted
-    fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
-      res.json().then((data) => {
-        if (data.tag_name > `v${attributes.packageVersion}`) {
-          setNewVersionAvailable(data.tag_name);
-        }
-      });
-    });
-  }, []);
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['github/latest'],
+    cacheTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 5,
+    queryFn: () =>
+      fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => res.json()),
+  });
+  const newVersionAvailable =
+    data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
 
   return (
     <MantineHeader height="auto" className={cardClasses.card}>
@@ -38,7 +36,13 @@ export function Header(props: any) {
           <Search />
           <ToggleEditModeAction />
           <DockerMenuButton />
-          <Indicator size={15} color="blue" withBorder processing disabled={!newVersionAvailable}>
+          <Indicator
+            size={15}
+            color="blue"
+            withBorder
+            processing
+            disabled={newVersionAvailable === undefined}
+          >
             <SettingsMenu newVersionAvailable={newVersionAvailable} />
           </Indicator>
         </Group>

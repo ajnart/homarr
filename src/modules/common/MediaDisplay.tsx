@@ -194,7 +194,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
             }}
           >
             {media.type === 'tvshow' && (
-              <Badge variant="dot" size="xs" radius="md" color="blue">
+              <Badge variant="dot" size="xs" radius="md" color="blue" style={{ maxWidth: 200 }}>
                 s{media.seasonNumber}e{media.episodeNumber} - {media.episodetitle}
               </Badge>
             )}
