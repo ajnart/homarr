@@ -2,6 +2,7 @@ import { createStyles, Group, MantineThemeColors, useMantineTheme } from '@manti
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
+import { i18n } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
@@ -74,6 +75,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         style={{ position: 'relative', top: -15 }}
         onMonthChange={setMonth}
         size="xs"
+        locale={i18n?.resolvedLanguage ?? 'en'}
         fullWidth
         onChange={() => {}}
         firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}

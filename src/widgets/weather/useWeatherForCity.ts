@@ -53,6 +53,7 @@ async function fetchWeather(coordinates?: Coordinates) {
   const res = await fetch(
     `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe%2FLondon`
   );
+  // eslint-disable-next-line consistent-return
   return (await res.json()) as WeatherResponse;
 }
 
