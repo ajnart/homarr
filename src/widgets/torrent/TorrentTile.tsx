@@ -1,3 +1,4 @@
+import { TorrentState } from '@ctrl/shared-torrent';
 import {
   Badge,
   Center,
@@ -122,7 +123,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
     );
   }
 
-  const torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []));
+  const torrents = data.apps
+    .flatMap((app) => (app.type === 'torrent' ? app.torrents : []))
+    .filter((torrent) => (widget.properties.displayCompletedTorrents ? true : !torrent.isCompleted))
+    .filter((torrent) =>
+      widget.properties.displayStaleTorrents
+        ? true
+        : torrent.isCompleted || torrent.downloadSpeed > 0
+    );
 
   const difference = new Date().getTime() - dataUpdatedAt;
   const duration = dayjs.duration(difference, 'ms');

@@ -1,14 +1,5 @@
 import Dockerode from 'dockerode';
-import { Config, MatchingImages, ServiceType, tryMatchPort } from './types';
-
-async function MatchIcon(name: string) {
-  const res = await fetch(
-    `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${name
-      .replace(/\s+/g, '-')
-      .toLowerCase()}.png`
-  );
-  return res.ok ? res.url : '/imgs/favicon/favicon.png';
-}
+import { MatchingImages, ServiceType, tryMatchPort } from './types';
 
 function tryMatchType(imageName: string): ServiceType {
   // Try to find imageName inside MatchingImages
