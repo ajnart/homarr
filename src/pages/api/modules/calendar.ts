@@ -35,6 +35,11 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
   const config = getConfig(configName);
 
+  // Find the calendar widget in the config
+  const calendar = config.widgets.find((w) => w.id === 'calendar');
+  const useSonarrv4 = calendar?.properties.sonarrV4 ?? false;
+  console.log('useSonarrv4', useSonarrv4);
+
   const mediaAppIntegrationTypes: AppIntegrationType['type'][] = [
     'sonarr',
     'radarr',
@@ -44,6 +49,13 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const mediaApps = config.apps.filter(
     (app) => app.integration && mediaAppIntegrationTypes.includes(app.integration.type)
   );
+
+  const IntegrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([
+    useSonarrv4 ? ['sonarr', '/api/v3/calendar'] : ['sonarr', '/api/calendar'],
+    ['radarr', '/api/v3/calendar'],
+    ['lidarr', '/api/v1/calendar'],
+    ['readarr', '/api/v1/calendar'],
+  ]);
 
   try {
     const medias = await Promise.all(
@@ -71,7 +83,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         if (!apiKey) return { type: integration.type, items: [], success: false };
         return axios
           .get(
-            `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}`
+            `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}&includeSeries=true&includeEpisodeFile=true&includeEpisodeImages=true`
           )
           .then((x) => ({ type: integration.type, items: x.data as any[], success: true }))
           .catch((err) => {
@@ -87,7 +99,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       })
     );
 
-    const countFailed = medias.filter(x => !x.success).length;
+    const countFailed = medias.filter((x) => !x.success).length;
     if (countFailed > 0) {
       Consola.warn(`A total of ${countFailed} apps for the calendar widget failed`);
     }
@@ -111,10 +123,3 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     });
   }
 }
-
-const IntegrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([
-  ['sonarr', '/api/calendar'],
-  ['radarr', '/api/v3/calendar'],
-  ['lidarr', '/api/v1/calendar'],
-  ['readarr', '/api/v1/calendar'],
-]);

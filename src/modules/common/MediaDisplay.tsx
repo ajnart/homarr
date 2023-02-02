@@ -162,7 +162,7 @@ export function SonarrMediaDisplay(props: any) {
         genres: media.series.genres ?? [],
         overview: media.overview ?? media.series.overview ?? '',
         title: media.series.title,
-        poster: poster ? poster.url : undefined,
+        poster: poster ? poster.remoteUrl : undefined,
         episodeNumber: media.episodeNumber,
         seasonNumber: media.seasonNumber,
         episodetitle: media.title,
