@@ -354,6 +354,51 @@
           }
         }
       }
+    },
+    {
+      "id": "RTSPtoWeb",
+      "properties": {
+        "url": "http://192.168.0.11:8083/stream/bcceb64a-7e5c-4065-819d-501ac1fd794d/channel/1/hls/live/index.m3u8",
+        "name": "Camera 3"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
     }
   ],
   "settings": {
