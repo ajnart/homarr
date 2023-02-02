@@ -29,11 +29,11 @@ import { InitOptions } from 'i18next';
 import { i18n, Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { useConfigContext } from '../../config/provider';
-import { useConfigStore } from '../../config/store';
-import { usePackageAttributesStore } from '../../tools/client/zustands/usePackageAttributesStore';
-import { usePrimaryGradient } from '../layout/useGradient';
-import Credits from '../Settings/Common/Credits';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
+import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
+import { usePrimaryGradient } from '../../../layout/useGradient';
+import Credits from '../../../Settings/Common/Credits';
 
 interface AboutModalProps {
   opened: boolean;
