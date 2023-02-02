@@ -20,6 +20,7 @@ import { useConfigContext } from '../../config/provider';
 import { tryMatchService } from '../../tools/addToHomarr';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../types/app';
+import { appTileDefinition } from '../../components/Dashboard/Tiles/Apps/AppTile';
 
 let t: TFunction<'modules/docker', undefined>;
 

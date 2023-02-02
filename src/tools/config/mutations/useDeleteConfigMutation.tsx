@@ -1,5 +1,5 @@
 import { showNotification } from '@mantine/notifications';
-import { IconX } from '@tabler/icons';
+import { IconCheck, IconX } from '@tabler/icons';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
 
