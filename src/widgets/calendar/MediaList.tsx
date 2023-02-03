@@ -18,7 +18,7 @@ export const MediaList = ({ medias }: MediaListProps) => {
 
   return (
     <ScrollArea
-      style={{ maxHeight: 450, minHeight: 210, maxWidth: '90vw' }}
+      style={{ height: 450, minHeight: 210, maxWidth: '90vw' }}
       offsetScrollbars
       pt={5}
       className={classes.scrollArea}
