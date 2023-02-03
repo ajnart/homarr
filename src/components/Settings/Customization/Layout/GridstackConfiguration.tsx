@@ -56,7 +56,6 @@ export const GridstackConfiguration = () => {
 
   return (
     <form onSubmit={form.onSubmit(handleSubmit)} style={{ position: 'relative' }}>
-      Is Saving: {isSaving ? 'true' : 'false'}
       <LoadingOverlay overlayBlur={2} visible={isSaving} radius="md" />
       <Title order={6}>Gridstack configuration</Title>
       <Input.Wrapper
