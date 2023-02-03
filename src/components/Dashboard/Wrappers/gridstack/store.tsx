@@ -1,5 +1,6 @@
 import { useMantineTheme } from '@mantine/core';
 import create from 'zustand';
+import { GridstackBreakpoints } from '../../../../constants/gridstack-breakpoints';
 
 export const useGridstackStore = create<GridstackStoreType>((set, get) => ({
   mainAreaWidth: null,
@@ -42,5 +43,9 @@ export const useWrapperColumnCount = () => {
 };
 
 function getCurrentShapeSize(size: number) {
-  return size >= 1400 ? 'lg' : size >= 768 ? 'md' : 'sm';
+  return size >= GridstackBreakpoints.Large
+    ? 'lg'
+    : size >= GridstackBreakpoints.Medium
+    ? 'md'
+    : 'sm';
 }
