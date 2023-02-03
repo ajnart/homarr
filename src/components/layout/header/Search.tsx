@@ -148,13 +148,14 @@ export function Search() {
   } = useQuery(
     ['overseerr', debounced],
     async () => {
-      if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && debounced.length > 3) {
-        const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
-        return res.data.results ?? [];
-      }
-      return [];
+      const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
+      return res.data.results ?? [];
     },
     {
+      enabled:
+        isOverseerrEnabled === true &&
+        selectedSearchEngine.value === 'overseerr' &&
+        debounced.length > 3,
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchInterval: false,
@@ -171,7 +172,10 @@ export function Search() {
   return (
     <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
-        opened={OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3}
+        opened={
+          (OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3) ??
+          false
+        }
         position="bottom"
         withinPortal
         shadow="md"

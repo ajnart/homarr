@@ -24,7 +24,9 @@ export const GenericAvailableElementType = ({
   const { t } = useTranslation('layout/modals/about');
 
   const Icon =
-    typeof image === 'string' ? () => <Image src={image} width={24} height={24} /> : image;
+    typeof image === 'string'
+      ? () => <Image alt={name} src={image} width={24} height={24} />
+      : image;
 
   return (
     <Grid.Col span={3}>

@@ -68,6 +68,15 @@ export default function DockerMenuButton(props: any) {
         position="right"
         size="full"
         title={<ContainerActionBar selected={selection} reload={reload} />}
+        styles={{
+          drawer: {
+            display: 'flex',
+            flexDirection: 'column',
+          },
+          body: {
+            minHeight: 0,
+          },
+        }}
       >
         <DockerTable containers={containers} selection={selection} setSelection={setSelection} />
       </Drawer>
