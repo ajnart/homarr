@@ -1,5 +1,6 @@
 import { useMantineTheme } from '@mantine/core';
 import create from 'zustand';
+import { useConfigContext } from '../../../../config/provider';
 import { GridstackBreakpoints } from '../../../../constants/gridstack-breakpoints';
 
 export const useGridstackStore = create<GridstackStoreType>((set, get) => ({
@@ -28,15 +29,19 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 };
 
 export const useWrapperColumnCount = () => {
-  // TODO: Implement the config hook and read out the column count out of the settings.
-  // Use default fallbacks and check for values out of range, to ensure that this never fails!
+  const { config } = useConfigContext();
+
+  if (!config) {
+    return null;
+  }
+
   switch (useNamedWrapperColumnCount()) {
     case 'large':
-      return 12;
+      return config.settings.customization.gridstack?.columnCountLarge ?? 12;
     case 'medium':
-      return 6;
+      return config.settings.customization.gridstack?.columnCountMedium ?? 6;
     case 'small':
-      return 3;
+      return config.settings.customization.gridstack?.columnCountSmall ?? 3;
     default:
       return null;
   }
