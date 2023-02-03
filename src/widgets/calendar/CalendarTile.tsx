@@ -16,6 +16,10 @@ const definition = defineWidget({
   id: 'calendar',
   icon: IconCalendarTime,
   options: {
+    useSonarrv4: {
+      type: 'switch',
+      defaultValue: false,
+    },
     sundayStart: {
       type: 'switch',
       defaultValue: false,
