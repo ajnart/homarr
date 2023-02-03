@@ -13,7 +13,6 @@ const VideoFeed: React.FC<VideoFeedProps> = ({ src }) => {
       if (!videoElement) return;
 
       setPlayer(videojs(videoElement, {}, () => {
-          // console.log("player is ready");
         })
       );
     }
@@ -28,14 +27,10 @@ const VideoFeed: React.FC<VideoFeedProps> = ({ src }) => {
   return (
     <div>
       <video className="video-js" ref={videoRef} controls>
-        <source src={src} type="application/x-mpegURL" />
+        <source src={src} type="video/mp4" />
       </video>
     </div>
   );
 };
-
-interface VideoFeedProps {
-  src: string;
-}
 
 export default VideoFeed;

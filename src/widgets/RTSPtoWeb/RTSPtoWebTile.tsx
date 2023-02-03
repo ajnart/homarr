@@ -8,40 +8,53 @@ const definition = defineWidget({
   id: 'RTSPtoWeb',
   icon: IconDeviceCctv,
   options: {
-    name: {
+    camera1: {
       type: 'text',
       defaultValue: '',
     },
-    url: {
+    camera2: {
+      type: 'text',
+      defaultValue: '',
+    },
+    camera3: {
+      type: 'text',
+      defaultValue: '',
+    },
+    camera4: {
+      type: 'text',
+      defaultValue: '',
+    },
+    camera5: {
       type: 'text',
       defaultValue: '',
     },
   },
   gridstack: {
-    minWidth: 2,
+    minWidth: 3,
     minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
   },
-  component: RTSPtoWebTile,
+  component: RTSPtoWebWidget,
 });
 
 export type IRTSPtoWebWidget = IWidget<typeof definition['id'], typeof definition>;
 
-interface RTSPtoWebTileProps {
+interface RTSPtoWebWidgetProps {
   widget: IRTSPtoWebWidget;
 }
 
-function RTSPtoWebTile({ widget }: RTSPtoWebTileProps) {
-  const cameraName = widget.properties.name;
-  const stream = widget.properties.url;
+function RTSPtoWebWidget({ widget }: RTSPtoWebWidgetProps) {
+  const camera1 = widget?.properties.camera1;
+  const camera2 = widget?.properties.camera2;
+  const camera3 = widget?.properties.camera3;
+  const camera4 = widget?.properties.camera4;
+  const camera5 = widget?.properties.camera5;
   return (
     <div className="app">
       <Group position="center" w="100%">
-      Camera 3
-      </Group>
-      <Group position="center" w="100%">
-      <VideoFeed src="http://192.168.0.11:8083/stream/bcceb64a-7e5c-4065-819d-501ac1fd794d/channel/1/hls/live/index.m3u8" />
+      <VideoFeed src={camera1} />
+      <VideoFeed src={camera2} />
       </Group>
     </div>
   );
