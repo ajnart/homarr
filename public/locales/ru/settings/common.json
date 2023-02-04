@@ -9,7 +9,12 @@
     "configTip": "Загрузите файл конфигурации, перетащив его на страницу!"
   },
   "credits": {
-    "madeWithLove": "Сделано с ❤️ от @"
+    "madeWithLove": "Сделано с ❤️ от @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Версия"
+    }
   },
   "grow": "Увеличение сетки (занимает все пространство)",
   "layout": {
