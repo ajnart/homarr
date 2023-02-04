@@ -9,7 +9,12 @@
     "configTip": "Importer votre fichier de configuration en le faisant glisser et en le déposant sur la page !"
   },
   "credits": {
-    "madeWithLove": "Fait avec ❤️ par @"
+    "madeWithLove": "Fait avec ❤️ par @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Grille progressive (prend toute la largeur)",
   "layout": {
