@@ -9,7 +9,12 @@
     "configTip": "Carregue o seu ficheiro de configuração arrastando-o e largando-o na página!"
   },
   "credits": {
-    "madeWithLove": "Feito com ❤️ por @"
+    "madeWithLove": "Feito com ❤️ por @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Versão"
+    }
   },
   "grow": "Grelha de cultivo (ocupar todo o espaço)",
   "layout": {
