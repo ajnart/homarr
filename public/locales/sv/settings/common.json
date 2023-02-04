@@ -9,7 +9,12 @@
     "configTip": "Ladda upp din konfigurationsfil genom att dra och släppa den på sidan!"
   },
   "credits": {
-    "madeWithLove": "Gjort med ❤️ av @"
+    "madeWithLove": "Gjort med ❤️ av @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Växande rutnät (ta allt utrymme)",
   "layout": {
