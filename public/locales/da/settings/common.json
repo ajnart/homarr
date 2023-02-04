@@ -9,7 +9,12 @@
     "configTip": "Upload din konfigurationsfil ved at trække og slippe den på siden!"
   },
   "credits": {
-    "madeWithLove": "Lavet med ❤️ af @"
+    "madeWithLove": "Lavet med ❤️ af @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Forøg gitteret (udnyt al pladsen)",
   "layout": {
