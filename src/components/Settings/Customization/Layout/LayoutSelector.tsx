@@ -35,8 +35,6 @@ export const LayoutSelector = () => {
   const [docker, setDocker] = useState(layoutSettings?.enabledDocker ?? false);
   const [ping, setPing] = useState(layoutSettings?.enabledPing ?? false);
   const [searchBar, setSearchBar] = useState(layoutSettings?.enabledSearchbar ?? false);
-
-  const { colors, colorScheme } = useMantineTheme();
   const { t } = useTranslation('settings/common');
 
   if (!configName || !config) return null;
@@ -76,9 +74,9 @@ export const LayoutSelector = () => {
     <>
       <Group position="apart" mb="md">
         <Stack spacing={0}>
-          <Title order={6}>Preview</Title>
+          <Title order={6}>{t('layout.preview.title')}</Title>
           <Text color="dimmed" size="xs">
-            Changes will be saved automatically
+            {t('layout.preview.subtitle')}
           </Text>
         </Stack>
         <Tooltip

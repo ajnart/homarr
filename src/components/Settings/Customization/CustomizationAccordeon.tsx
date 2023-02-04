@@ -1,5 +1,6 @@
 import { Accordion, Grid, Group, Stack, Text } from '@mantine/core';
 import { IconBrush, IconChartCandle, IconDragDrop, IconLayout } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { GridstackConfiguration } from './Layout/GridstackConfiguration';
 import { LayoutSelector } from './Layout/LayoutSelector';
@@ -14,26 +15,27 @@ import { DashboardTilesOpacitySelector } from './Theme/OpacitySelector';
 import { ShadeSelector } from './Theme/ShadeSelector';
 
 export const CustomizationSettingsAccordeon = () => {
+  const { t } = useTranslation('settings/customization/general');
   const accordeonItems = [
     {
       id: 'layout',
       image: <IconLayout />,
-      label: 'Layout',
-      description: 'Enable and disable elements on your header and dashboard tiles',
+      label: t('accordeon.layout.name'),
+      description: t('accordeon.layout.description'),
       content: <LayoutSelector />,
     },
     {
       id: 'gridstack',
       image: <IconDragDrop />,
-      label: 'Gridstack',
-      description: 'Customize the behaviour and columns of your dashboard area',
+      label: t('accordeon.gridstack.name'),
+      description: t('accordeon.gridstack.description'),
       content: <GridstackConfiguration />,
     },
     {
       id: 'page_metadata',
       image: <IconChartCandle />,
-      label: 'Page Metadata',
-      description: 'Adjust titles, logo and PWA',
+      label: t('accordeon.pageMetadata.name'),
+      description: t('accordeon.pageMetadata.description'),
       content: (
         <>
           <DashboardTitleChanger />
@@ -46,8 +48,8 @@ export const CustomizationSettingsAccordeon = () => {
     {
       id: 'appereance',
       image: <IconBrush />,
-      label: 'Appereance',
-      description: 'Customize the background, colors and apps appereance',
+      label: t('accordeon.appereance.name'),
+      description: t('accordeon.appereance.description'),
       content: (
         <>
           <BackgroundChanger />

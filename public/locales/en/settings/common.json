@@ -13,6 +13,10 @@
   },
   "grow": "Grow grid (take all space)",
   "layout": {
+    "preview": {
+      "title": "Preview",
+      "subtitle": "Changes will be saved automatically"
+    },
     "main": "Main",
     "sidebar": "Sidebar",
     "cannotturnoff": "Cannot be turned off",

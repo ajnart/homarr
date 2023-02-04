@@ -18,7 +18,8 @@ export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
   const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
-  const translatedSize = t(`screenSizes.${namedWrapperColumnCount}`);
+  const translatedSize =
+    namedWrapperColumnCount !== null ? t(`screenSizes.${namedWrapperColumnCount}`) : 'loading...';
 
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();

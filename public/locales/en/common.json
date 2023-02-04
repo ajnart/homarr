@@ -24,5 +24,10 @@
     "seconds": "seconds",
     "minutes": "minutes",
     "hours": "hours"
+  },
+  "breakPoints": {
+    "small": "small",
+    "medium": "medium",
+    "large": "large"
   }
 }

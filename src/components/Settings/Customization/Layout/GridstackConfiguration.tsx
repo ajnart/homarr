@@ -1,4 +1,4 @@
-import { Alert, Button, Grid, Input, LoadingOverlay, Slider, Title } from '@mantine/core';
+import { Alert, Button, Grid, Input, LoadingOverlay, Slider } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconCheck, IconReload } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
@@ -10,7 +10,7 @@ import { sleep } from '../../../../tools/client/time';
 import { GridstackSettingsType } from '../../../../types/settings';
 
 export const GridstackConfiguration = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['settings/customization/gridstack', 'common']);
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
@@ -57,36 +57,37 @@ export const GridstackConfiguration = () => {
   return (
     <form onSubmit={form.onSubmit(handleSubmit)} style={{ position: 'relative' }}>
       <LoadingOverlay overlayBlur={2} visible={isSaving} radius="md" />
-      <Title order={6}>Gridstack configuration</Title>
       <Input.Wrapper
-        label="Small"
-        description={`Number of columns when the screen is less than ${GridstackBreakpoints.Medium} pixels wide`}
+        label={t('columnsCount.labelPreset', { size: t('common:breakPoints.small') })}
+        description={t('columnsCount.descriptionPreset', { pixels: GridstackBreakpoints.Medium })}
         mb="md"
       >
         <Slider min={1} max={8} mt="xs" {...form.getInputProps('columnCountSmall')} />
       </Input.Wrapper>
       <Input.Wrapper
-        label="Medium"
-        description={`Number of columns when the screen is less than ${GridstackBreakpoints.Large} pixels wide`}
+        label={t('columnsCount.labelPreset', { size: t('common:breakPoints.medium') })}
+        description={t('columnsCount.descriptionPreset', { pixels: GridstackBreakpoints.Large })}
         mb="md"
       >
         <Slider min={3} max={16} mt="xs" {...form.getInputProps('columnCountMedium')} />
       </Input.Wrapper>
       <Input.Wrapper
-        label="Large"
-        description={`Number of columns when the screen is more than ${GridstackBreakpoints.Large} pixels wide`}
+        label={t('columnsCount.labelPreset', { size: t('common:breakPoints.large') })}
+        description={t('columnsCount.descriptionExceedsPreset', {
+          pixels: GridstackBreakpoints.Large,
+        })}
       >
         <Slider min={5} max={20} mt="xs" {...form.getInputProps('columnCountLarge')} />
       </Input.Wrapper>
       {form.isDirty() && (
         <Alert variant="light" color="yellow" title="Unsaved changes" my="md">
-          You have unsaved changes. Click the Apply changes button below to apply and save.
+          {t('unsavedChanges')}
         </Alert>
       )}
       <Grid mt="md">
         <Grid.Col md={6} xs={12}>
           <Button variant="light" leftIcon={<IconCheck size={18} />} type="submit" fullWidth>
-            Apply changes
+            {t('applyChanges')}
           </Button>
         </Grid.Col>
         <Grid.Col md={6} xs={12}>
@@ -102,7 +103,7 @@ export const GridstackConfiguration = () => {
             }
             fullWidth
           >
-            Default values
+            {t('defaultValues')}
           </Button>
         </Grid.Col>
       </Grid>
