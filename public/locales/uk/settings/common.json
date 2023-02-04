@@ -9,7 +9,12 @@
     "configTip": "Завантажте файл конфігурації, перетягуючи його на сторінку!"
   },
   "credits": {
-    "madeWithLove": "Зроблено з ❤️ by @"
+    "madeWithLove": "Зроблено з ❤️ by @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Версія"
+    }
   },
   "grow": "Виростити сітку (зайняти весь простір)",
   "layout": {
