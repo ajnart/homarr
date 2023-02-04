@@ -9,7 +9,12 @@
     "configTip": "Wgraj swój plik konfiguracyjny poprzez przeciągnięcie i upuszczenie go na stronę!"
   },
   "credits": {
-    "madeWithLove": "Wykonane z ❤️ przez @"
+    "madeWithLove": "Wykonane z ❤️ przez @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Wersja"
+    }
   },
   "grow": "Rozwijaj siatkę (zajmij całą przestrzeń)",
   "layout": {
