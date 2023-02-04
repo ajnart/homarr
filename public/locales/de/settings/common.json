@@ -10,9 +10,9 @@
   },
   "credits": {
     "madeWithLove": "Gemacht mit ❤️ von @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Inhalte von Dritten anzeigen",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Abhängigkeiten",
       "dependencyVersion": "Version"
     }
   },
