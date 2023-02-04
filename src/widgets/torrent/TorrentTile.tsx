@@ -1,4 +1,3 @@
-import { TorrentState } from '@ctrl/shared-torrent';
 import {
   Badge,
   Center,
@@ -52,7 +51,7 @@ const definition = defineWidget({
   component: TorrentTile,
 });
 
-export type ITorrent = IWidget<typeof definition['id'], typeof definition>;
+export type ITorrent = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface TorrentTileProps {
   widget: ITorrent;
