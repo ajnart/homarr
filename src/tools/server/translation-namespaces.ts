@@ -31,6 +31,7 @@ export const dashboardNamespaces = [
   'modules/dashdot',
   'modules/overseerr',
   'modules/common-media-cards',
+  'modules/video-stream',
 ];
 
 export const loginNamespaces = ['authentication/login'];

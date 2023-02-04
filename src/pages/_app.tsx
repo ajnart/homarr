@@ -27,6 +27,7 @@ import {
   ServerSidePackageAttributesType,
 } from '../tools/server/getPackageVersion';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
+import 'video.js/dist/video-js.css';
 
 function App(
   this: any,
