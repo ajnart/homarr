@@ -9,7 +9,12 @@
     "configTip": "将你的配置文件拖放到页面上，就可以上传了!"
   },
   "credits": {
-    "madeWithLove": "用❤️创造，出品于"
+    "madeWithLove": "用❤️创造，出品于",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "版本"
+    }
   },
   "grow": "增长的网格（占用所有空间）",
   "layout": {
