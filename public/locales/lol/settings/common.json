@@ -9,7 +9,12 @@
     "configTip": "Upload Ur Config File By Drag An Droppin It Onto Teh Paeg!"
   },
   "credits": {
-    "madeWithLove": "Maded wif ❤️ by @"
+    "madeWithLove": "Maded wif ❤️ by @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Vershun"
+    }
   },
   "grow": "Grow Grid (Taek All Space)",
   "layout": {
