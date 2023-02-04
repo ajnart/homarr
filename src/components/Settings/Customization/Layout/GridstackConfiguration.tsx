@@ -59,14 +59,14 @@ export const GridstackConfiguration = () => {
       <LoadingOverlay overlayBlur={2} visible={isSaving} radius="md" />
       <Input.Wrapper
         label={t('columnsCount.labelPreset', { size: t('common:breakPoints.small') })}
-        description={t('columnsCount.descriptionPreset', { pixels: GridstackBreakpoints.Medium })}
+        description={t('columnsCount.descriptionPreset', { pixels: GridstackBreakpoints.medium })}
         mb="md"
       >
         <Slider min={1} max={8} mt="xs" {...form.getInputProps('columnCountSmall')} />
       </Input.Wrapper>
       <Input.Wrapper
         label={t('columnsCount.labelPreset', { size: t('common:breakPoints.medium') })}
-        description={t('columnsCount.descriptionPreset', { pixels: GridstackBreakpoints.Large })}
+        description={t('columnsCount.descriptionPreset', { pixels: GridstackBreakpoints.large })}
         mb="md"
       >
         <Slider min={3} max={16} mt="xs" {...form.getInputProps('columnCountMedium')} />
@@ -74,7 +74,7 @@ export const GridstackConfiguration = () => {
       <Input.Wrapper
         label={t('columnsCount.labelPreset', { size: t('common:breakPoints.large') })}
         description={t('columnsCount.descriptionExceedsPreset', {
-          pixels: GridstackBreakpoints.Large,
+          pixels: GridstackBreakpoints.large,
         })}
       >
         <Slider min={5} max={20} mt="xs" {...form.getInputProps('columnCountLarge')} />

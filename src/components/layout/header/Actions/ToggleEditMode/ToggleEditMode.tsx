@@ -17,9 +17,11 @@ import { useCardStyles } from '../../../useCardStyles';
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
-  const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
+  const { t } = useTranslation(['layout/header/actions/toggle-edit-mode', 'common']);
   const translatedSize =
-    namedWrapperColumnCount !== null ? t(`screenSizes.${namedWrapperColumnCount}`) : 'loading...';
+    namedWrapperColumnCount !== null
+      ? t(`common:breakPoints.${namedWrapperColumnCount}`)
+      : t('common:loading');
 
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();

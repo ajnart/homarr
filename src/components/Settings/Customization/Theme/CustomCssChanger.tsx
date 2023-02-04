@@ -51,9 +51,9 @@ export const CustomCssChanger = () => {
 
   return (
     <Stack spacing={4} mt="xl">
-      <Text>Custom CSS</Text>
+      <Text>{t('customCSS.label')}</Text>
       <Text color="dimmed" size="xs">
-        Customize all elements on your dashboard, only recommended for experienced users
+      {t('customCSS.description')}
       </Text>
       <div className={classes.codeEditorRoot}>
         <ScrollArea style={{ height: codeEditorHeight }}>
@@ -73,7 +73,7 @@ export const CustomCssChanger = () => {
           <Box className={classes.codeEditorFooter}>
             <Group p="xs" spacing="xs">
               <Loader color={colors.gray[0]} size={18} />
-              <Text>Applying CSS...</Text>
+              <Text>{t('customCSS.applying')}</Text>
             </Group>
           </Box>
         )}

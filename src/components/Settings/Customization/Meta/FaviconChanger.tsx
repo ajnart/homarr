@@ -33,7 +33,7 @@ export const FaviconChanger = () => {
   return (
     <TextInput
       label={t('favicon.label')}
-      description="The icon, that is being used in front of your tab name"
+      description={t('favicon.description')}
       placeholder="/imgs/favicon/favicon.svg"
       value={faviconUrl}
       onChange={handleChange}

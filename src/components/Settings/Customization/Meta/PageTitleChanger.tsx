@@ -31,7 +31,7 @@ export const DashboardTitleChanger = () => {
   return (
     <TextInput
       label={t('pageTitle.label')}
-      description="The dashboard title at the top left"
+      description={t('pageTitle.description')}
       placeholder="homarr"
       value={pageTitle}
       onChange={handleChange}

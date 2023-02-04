@@ -31,7 +31,7 @@ export const BrowserTabTitle = () => {
   return (
     <TextInput
       label={t('metaTitle.label')}
-      description="The title, that is being displayed as your tab name"
+      description={t('metaTitle.description')}
       placeholder="homarr - the best dashboard"
       value={metaTitle}
       onChange={handleChange}

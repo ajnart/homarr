@@ -15,8 +15,44 @@ import { DashboardTilesOpacitySelector } from './Theme/OpacitySelector';
 import { ShadeSelector } from './Theme/ShadeSelector';
 
 export const CustomizationSettingsAccordeon = () => {
+  const items = getItems().map((item) => (
+    <Accordion.Item value={item.id} key={item.label}>
+      <Accordion.Control>
+        <AccordionLabel {...item} />
+      </Accordion.Control>
+      <Accordion.Panel>
+        <Text size="sm">{item.content}</Text>
+      </Accordion.Panel>
+    </Accordion.Item>
+  ));
+  return (
+    <Accordion variant="contained" chevronPosition="right">
+      {items}
+    </Accordion>
+  );
+};
+
+interface AccordionLabelProps {
+  label: string;
+  image: ReactNode;
+  description: string;
+}
+
+const AccordionLabel = ({ label, image, description }: AccordionLabelProps) => (
+  <Group noWrap>
+    {image}
+    <div>
+      <Text>{label}</Text>
+      <Text size="sm" color="dimmed" weight={400}>
+        {description}
+      </Text>
+    </div>
+  </Group>
+);
+
+const getItems = () => {
   const { t } = useTranslation('settings/customization/general');
-  const accordeonItems = [
+  return [
     {
       id: 'layout',
       image: <IconLayout />,
@@ -75,38 +111,4 @@ export const CustomizationSettingsAccordeon = () => {
       ),
     },
   ];
-
-  const children = accordeonItems.map((item) => (
-    <Accordion.Item value={item.id} key={item.label}>
-      <Accordion.Control>
-        <AccordionLabel {...item} />
-      </Accordion.Control>
-      <Accordion.Panel>
-        <Text size="sm">{item.content}</Text>
-      </Accordion.Panel>
-    </Accordion.Item>
-  ));
-  return (
-    <Accordion variant="contained" chevronPosition="right">
-      {children}
-    </Accordion>
-  );
 };
-
-interface AccordionLabelProps {
-  label: string;
-  image: ReactNode;
-  description: string;
-}
-
-const AccordionLabel = ({ label, image, description }: AccordionLabelProps) => (
-  <Group noWrap>
-    {image}
-    <div>
-      <Text>{label}</Text>
-      <Text size="sm" color="dimmed" weight={400}>
-        {description}
-      </Text>
-    </div>
-  </Group>
-);

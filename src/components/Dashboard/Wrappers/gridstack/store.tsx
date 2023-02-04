@@ -48,9 +48,9 @@ export const useWrapperColumnCount = () => {
 };
 
 function getCurrentShapeSize(size: number) {
-  return size >= GridstackBreakpoints.Large
+  return size >= GridstackBreakpoints.large
     ? 'lg'
-    : size >= GridstackBreakpoints.Medium
+    : size >= GridstackBreakpoints.medium
     ? 'md'
     : 'sm';
 }

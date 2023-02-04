@@ -31,7 +31,7 @@ export const LogoImageChanger = () => {
   return (
     <TextInput
       label={t('logo.label')}
-      description="The dashboard logo at the top left"
+      description={t('logo.description')}
       placeholder="/imgs/logo/logo.png"
       value={logoImageSrc}
       onChange={handleChange}

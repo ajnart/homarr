@@ -1,5 +1,4 @@
 import {
-  ActionIcon,
   Checkbox,
   createStyles,
   Divider,
@@ -10,10 +9,7 @@ import {
   Stack,
   Text,
   Title,
-  Tooltip,
-  useMantineTheme,
 } from '@mantine/core';
-import { IconInfoCircle } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
@@ -72,23 +68,12 @@ export const LayoutSelector = () => {
 
   return (
     <>
-      <Group position="apart" mb="md">
-        <Stack spacing={0}>
-          <Title order={6}>{t('layout.preview.title')}</Title>
-          <Text color="dimmed" size="xs">
-            {t('layout.preview.subtitle')}
-          </Text>
-        </Stack>
-        <Tooltip
-          label="This configuration affects what elements will be activated in your layout."
-          width={150}
-          multiline
-        >
-          <ActionIcon size={24} variant="default">
-            <IconInfoCircle size={16} />
-          </ActionIcon>
-        </Tooltip>
-      </Group>
+      <Stack spacing={0} mb="md">
+        <Title order={6}>{t('layout.preview.title')}</Title>
+        <Text color="dimmed" size="xs">
+          {t('layout.preview.subtitle')}
+        </Text>
+      </Stack>
       <Stack spacing="xs">
         <Paper px="xs" py={4} withBorder>
           <Group position="apart">
@@ -148,7 +133,7 @@ export const LayoutSelector = () => {
           )}
         </Flex>
 
-        <Divider label="Layout options" labelPosition="center" mt="md" mb="xs" />
+        <Divider label={t('layout.divider')} labelPosition="center" mt="md" mb="xs" />
         <Stack spacing="xs">
           <Checkbox
             label={t('layout.enablelsidebar')}
@@ -183,20 +168,19 @@ export const LayoutSelector = () => {
   );
 };
 
-const PlaceholderElement = (props: any) => {
-  const { colorScheme, colors } = useMantineTheme();
-  const { height, width, hasPing, index } = props;
+const BaseElement = ({ height, width }: { height: number; width: number }) => (
+  <Paper
+    sx={(theme) => ({
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.gray[8] : theme.colors.gray[1],
+    })}
+    h={height}
+    p={2}
+    w={width}
+  />
+);
 
-  const Element = () => (
-    <Paper
-      style={{
-        height,
-        backgroundColor: colorScheme === 'dark' ? colors.gray[8] : colors.gray[1],
-      }}
-      p={2}
-      w={width}
-    />
-  );
+const PlaceholderElement = (props: any) => {
+  const { height, width, hasPing, index } = props;
 
   if (hasPing) {
     return (
@@ -206,12 +190,12 @@ const PlaceholderElement = (props: any) => {
         offset={10}
         color={index % 4 === 0 ? 'red' : 'green'}
       >
-        <Element />
+        <BaseElement width={width} height={height} />
       </Indicator>
     );
   }
 
-  return <Element />;
+  return <BaseElement width={width} height={height} />;
 };
 
 const useStyles = createStyles((theme) => ({

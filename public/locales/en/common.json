@@ -25,6 +25,7 @@
     "minutes": "minutes",
     "hours": "hours"
   },
+  "loading": "Loading...",
   "breakPoints": {
     "small": "small",
     "medium": "medium",
