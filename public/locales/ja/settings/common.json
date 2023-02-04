@@ -9,7 +9,12 @@
     "configTip": "設定ファイルをドラッグ＆ドロップでアップロードしよう"
   },
   "credits": {
-    "madeWithLove": "で作った❤️ by @さん"
+    "madeWithLove": "で作った❤️ by @さん",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "バージョン"
+    }
   },
   "grow": "グロースグリッド（全領域を占有）",
   "layout": {
