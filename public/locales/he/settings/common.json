@@ -9,7 +9,12 @@
     "configTip": "העלה את קובץ התצורה שלך על ידי גרירה ושחרור שלו אל הדף!"
   },
   "credits": {
-    "madeWithLove": "נעשה ב- ❤️ ע״י @"
+    "madeWithLove": "נעשה ב- ❤️ ע״י @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "גרסה"
+    }
   },
   "grow": "הגדלת אריחים (תופס את כל השטח)",
   "layout": {
