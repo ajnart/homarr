@@ -5,7 +5,7 @@
     "settings": {
       "title": "Einstellungen für das Kalender Widget",
       "useSonarrv4": {
-        "label": ""
+        "label": "Sonarr v4 API verwenden"
       },
       "sundayStart": {
         "label": "Wochenbeginn am Sonntag"
