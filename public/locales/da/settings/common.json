@@ -10,9 +10,9 @@
   },
   "credits": {
     "madeWithLove": "Lavet med ❤️ af @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Se indhold fra tredjepart",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Afhængighed",
       "dependencyVersion": "Version"
     }
   },
