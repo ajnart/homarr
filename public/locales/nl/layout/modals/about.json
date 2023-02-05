@@ -1,7 +1,13 @@
 {
 	"description": "Homarr is een <strong>sterk</strong>, <strong>modern</strong> dashboard dat al je apps en diensten binnen handbereik brengt. Met Homarr heb je toegang tot en controle over alles op één handige locatie. Homarr integreert naadloos met de apps die je hebt toegevoegd en geeft je waardevolle informatie en volledige controle. Installatie is een fluitje van een cent en Homarr ondersteunt een breed scala aan implementatiemethoden.",
-	"i18n": "\"I18n translation namespaces\" geladen",
-	"locales": "\"I18n locales\" geconfigureerd",
 	"contact": "Problemen of vragen? Neem contact met ons op!",
-	"addToDashboard": "Aan dashboard toevoegen"
+	"addToDashboard": "Aan dashboard toevoegen",
+	"metrics": {
+		"configurationSchemaVersion": "",
+		"configurationsCount": "",
+		"version": "Versie",
+		"nodeEnvironment": "",
+		"i18n": "",
+		"locales": ""
+	}
 }
