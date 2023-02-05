@@ -4,6 +4,9 @@
     "description": "Hiển thị lịch cùng các phát hành sắp tới, từ các tích hợp được hỗ trợ.",
     "settings": {
       "title": "Cài đặt cho tiện ích lịch",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "Đặt đầu tuần là Chủ Nhật"
       },
