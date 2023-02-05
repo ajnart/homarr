@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "כותרת העמוד"
+    "label": "כותרת העמוד",
+    "description": ""
   },
   "metaTitle": {
-    "label": "כותרת דף"
+    "label": "כותרת דף",
+    "description": ""
   },
   "logo": {
-    "label": "סמל"
+    "label": "סמל",
+    "description": ""
   },
   "favicon": {
-    "label": "אייקון לצד שם הדף"
+    "label": "אייקון לצד שם הדף",
+    "description": ""
   },
   "background": {
     "label": "רקע"
   },
   "customCSS": {
     "label": "CSS מותאם אישית",
-    "placeholder": "CSS מותאם אישית יוחל אחרון"
+    "description": "",
+    "placeholder": "CSS מותאם אישית יוחל אחרון",
+    "applying": ""
   },
   "buttons": {
     "submit": "שלח"
