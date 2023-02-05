@@ -20,7 +20,7 @@
         "label": "URL-адрес Dash."
       },
       "usePercentages": {
-        "label": ""
+        "label": "Отображать проценты"
       }
     }
   },
