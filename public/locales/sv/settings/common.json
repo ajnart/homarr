@@ -18,7 +18,11 @@
   },
   "grow": "Växande rutnät (ta allt utrymme)",
   "layout": {
-    "title": "Instrumentpanelslayout",
+    "preview": {
+      "title": "Förhandsvisa",
+      "subtitle": "Ändringarna sparas automatiskt"
+    },
+    "divider": "Alternativ för layout",
     "main": "Allmänt",
     "sidebar": "Sidopanel",
     "cannotturnoff": "Kan inte inaktiveras",
