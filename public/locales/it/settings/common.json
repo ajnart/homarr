@@ -19,10 +19,10 @@
   "grow": "Espandi la griglia (occupa tutto lo spazio)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Anteprima",
+      "subtitle": "Le modifiche saranno salvate automaticamente"
     },
-    "divider": "",
+    "divider": "Opzioni di layout",
     "main": "Main",
     "sidebar": "Barra laterale",
     "cannotturnoff": "Impossibile disattivare",
