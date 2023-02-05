@@ -40,6 +40,12 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       innerProps: {
         widgetId: integration,
       },
+      styles: {
+        inner: {
+          position: 'sticky',
+          top: 30,
+        },
+      },
     });
   };
 
@@ -52,6 +58,12 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
         widgetId: integration,
         widget,
         wrapperColumnCount,
+      },
+      styles: {
+        inner: {
+          position: 'sticky',
+          top: 30,
+        },
       },
     });
   };
@@ -67,6 +79,12 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
         widgetOptions: widgetDefinitionObject.options as any,
       },
       zIndex: 5,
+      styles: {
+        inner: {
+          position: 'sticky',
+          top: 30,
+        },
+      },
     });
   };
 
