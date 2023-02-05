@@ -82,7 +82,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
                   <ActionIcon className={classes.informationIcon} variant="default">
                     {item.icon}
                   </ActionIcon>
-                  {t(item.label)}
+                  {t(`layout/modals/about:metrics.${item.label}`)}
                 </Group>
               </td>
               <td className={classes.informationTableColumn}>{item.content}</td>
@@ -151,7 +151,6 @@ interface ExtendedInitOptions extends InitOptions {
 }
 
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
-  // TODO: Fix this to not request. Pass it as a prop.
   const colorGradiant = usePrimaryGradient();
   const { attributes } = usePackageAttributesStore();
 
@@ -168,7 +167,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       ...items,
       {
         icon: <IconLanguage size={20} />,
-        label: 'layout/modals/about:i18n',
+        label: 'i18n',
         content: (
           <Badge variant="gradient" gradient={colorGradiant}>
             {usedI18nNamespaces.length}
@@ -177,7 +176,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       },
       {
         icon: <IconVocabulary size={20} />,
-        label: 'layout/modals/about:locales',
+        label: 'locales',
         content: (
           <Badge variant="gradient" gradient={colorGradiant}>
             {initOptions.locales.length}
@@ -190,7 +189,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   items = [
     {
       icon: <IconSchema size={20} />,
-      label: 'Configuration schema version',
+      label: 'configurationSchemaVersion',
       content: (
         <Badge variant="gradient" gradient={colorGradiant}>
           {configVersion}
@@ -199,7 +198,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
     },
     {
       icon: <IconFile size={20} />,
-      label: 'Available configurations',
+      label: 'configurationsCount',
       content: (
         <Badge variant="gradient" gradient={colorGradiant}>
           {configs.length}
@@ -249,7 +248,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
     },
     {
       icon: <IconAnchor size={20} />,
-      label: 'Node environment',
+      label: 'nodeEnvironment',
       content: (
         <Badge variant="gradient" gradient={colorGradiant}>
           {attributes.environment}

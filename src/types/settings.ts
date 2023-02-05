@@ -44,6 +44,13 @@ export interface CustomizationSettingsType {
   customCss?: string;
   colors: ColorsCustomizationSettingsType;
   appOpacity?: number;
+  gridstack?: GridstackSettingsType;
+}
+
+export interface GridstackSettingsType {
+  columnCountSmall: number; // default: 3
+  columnCountMedium: number; // default: 6
+  columnCountLarge: number; // default: 12
 }
 
 interface LayoutCustomizationSettingsType {
