@@ -18,7 +18,11 @@
   },
   "grow": "Erweitertes Raster (nutzt den ganzen Platz)",
   "layout": {
-    "title": "Dashboard Anordnung",
+    "preview": {
+      "title": "Vorschau",
+      "subtitle": "Änderungen werden automatisch gespeichert"
+    },
+    "divider": "Layout-Einstellungen",
     "main": "Haupt",
     "sidebar": "Seitenleiste",
     "cannotturnoff": "Kann nicht deaktiviert werden",
