@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Título da página"
+    "label": "Título da página",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Meta Título"
+    "label": "Meta Título",
+    "description": ""
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": ""
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": ""
   },
   "background": {
     "label": "Antecedentes"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "placeholder": "O CSS personalizado será aplicado por último"
+    "description": "",
+    "placeholder": "O CSS personalizado será aplicado por último",
+    "applying": ""
   },
   "buttons": {
     "submit": "Enviar"
