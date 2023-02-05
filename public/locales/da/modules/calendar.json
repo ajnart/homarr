@@ -5,7 +5,7 @@
     "settings": {
       "title": "Indstillinger for kalender widget",
       "useSonarrv4": {
-        "label": ""
+        "label": "Brug Sonarr v4 API"
       },
       "sundayStart": {
         "label": "Søndag første ugedag"
