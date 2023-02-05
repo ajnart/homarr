@@ -2,7 +2,7 @@ import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
 // eslint-disable-next-line consistent-return
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-  const isCorrectPassword = req.cookies.get('password') === process.env.PASSWORD;
+  /*const isCorrectPassword = req.cookies.get('password') === process.env.PASSWORD;
   const url = req.nextUrl.clone();
   const skipURL =
     url.pathname &&
@@ -16,5 +16,5 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
   if (!skipURL && !isCorrectPassword && process.env.PASSWORD) {
     url.pathname = '/login';
     return NextResponse.rewrite(url);
-  }
+  }*/
 }

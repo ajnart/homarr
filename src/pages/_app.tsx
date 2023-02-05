@@ -9,6 +9,7 @@ import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
+import { InviteCreateModal } from '../components/Admin/Invite/InviteCreateModal';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -93,6 +94,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
                       categoryEditModal: CategoryEditModal,
                       changeAppPositionModal: ChangeAppPositionModal,
                       changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                      inviteCreateModal: InviteCreateModal,
                     }}
                   >
                     <Component {...pageProps} />

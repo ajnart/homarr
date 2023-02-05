@@ -1,123 +1,141 @@
-import React from 'react';
-import { PasswordInput, Paper, Title, Text, Container, Button } from '@mantine/core';
-import { setCookie } from 'cookies-next';
-import { showNotification, updateNotification } from '@mantine/notifications';
-import axios from 'axios';
-import { IconCheck, IconX } from '@tabler/icons';
+import {
+  Anchor,
+  Button,
+  Card,
+  Center,
+  PasswordInput,
+  Stack,
+  Text,
+  TextInput,
+  Title,
+} from '@mantine/core';
+import { useForm, zodResolver } from '@mantine/form';
+import { NotificationProps, showNotification } from '@mantine/notifications';
+import { IconX } from '@tabler/icons';
+import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
+import { signIn } from 'next-auth/react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import { useForm } from '@mantine/form';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useEffect, useRef } from 'react';
+import { getServerAuthSession } from '../server/common/get-server-auth-session';
+import { ILogin, loginSchema } from '../validation/auth';
 import { loginNamespaces } from '../tools/translation-namespaces';
+import { getServerSideTranslations } from '../tools/getServerSideTranslations';
+import { getInputPropsMiddleware } from '../tools/getInputPropsMiddleware';
 
-// TODO: Add links to the wiki articles about the login process.
-export default function AuthenticationTitle() {
+const Login: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ errorType }) => {
   const router = useRouter();
-  const { t } = useTranslation('authentication/login');
-
-  const form = useForm({
-    initialValues: {
-      password: '',
-    },
+  const { onSubmit, getInputProps } = useForm<ILogin>({
+    validate: zodResolver(loginSchema),
   });
-  return (
-    <Container
-      size="lg"
-      style={{
-        height: '100vh',
-        display: 'flex',
-        width: '100%',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Paper
-        withBorder
-        shadow="md"
-        p={30}
-        mt={30}
-        radius="md"
-        style={{ width: '100%', maxWidth: 420 }}
-      >
-        <Title
-          align="center"
-          sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
-        >
-          {t('title')}
-        </Title>
+  usePageLoadNotification({
+    enabled: !!errorType,
+    title: 'Login failed',
+    message: 'Please provide correct login informations',
+    color: 'red',
+    icon: <IconX size={16} />,
+  });
 
-        <Text color="dimmed" size="sm" align="center" mt={5}>
-          {t('text')}
-        </Text>
-        <form
-          onSubmit={form.onSubmit((values) => {
-            setCookie('password', values.password, {
-              maxAge: 60 * 60 * 24 * 30,
-              sameSite: 'lax',
-            });
-            showNotification({
-              id: 'load-data',
-              loading: true,
-              title: t('notifications.checking.title'),
-              message: t('notifications.checking.message'),
-              autoClose: false,
-              disallowClose: true,
-            });
-            axios
-              .post('/api/configs/tryPassword', {
-                tried: values.password,
-              })
-              .then((res) => {
-                setTimeout(() => {
-                  if (res.data.success === true) {
-                    router.push('/');
-                    updateNotification({
-                      id: 'load-data',
-                      color: 'teal',
-                      title: t('notifications.correct.title'),
-                      message: undefined,
-                      icon: <IconCheck />,
-                      autoClose: 1000,
-                    });
-                  }
-                  if (res.data.success === false) {
-                    updateNotification({
-                      id: 'load-data',
-                      color: 'red',
-                      title: t('notifications.wrong.title'),
-                      message: undefined,
-                      icon: <IconX />,
-                      autoClose: 2000,
-                    });
-                  }
-                }, 500);
-              });
-          })}
-        >
-          <PasswordInput
-            id="password"
-            label={t('form.fields.password.label')}
-            placeholder={t('form.fields.password.placeholder')}
-            required
-            autoFocus
-            mt="md"
-            {...form.getInputProps('password')}
-          />
-          <Button fullWidth type="submit" mt="xl">
-            {t('form.buttons.submit')}
-          </Button>
-        </form>
-      </Paper>
-    </Container>
-  );
-}
-
-export async function getServerSideProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, loginNamespaces)),
-      // Will be passed to the page component as props
-    },
+  const handleSubmit = async (data: ILogin) => {
+    try {
+      await signIn('credentials', { ...data });
+      router.push('/dashboard');
+    } catch (e) {
+      /* empty */
+    }
   };
-}
+
+  return (
+    <>
+      <Head>
+        <title>Create T3 App</title>
+        <meta name="description" content="Generated by create-t3-app" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Center h="100vh">
+        <Card p="lg" w="100%" maw="420px" withBorder>
+          <form onSubmit={onSubmit(handleSubmit)}>
+            <Stack>
+              <Stack align="center">
+                <Title>Welcome back!</Title>
+                <Text color="dimmed" size="sm">
+                  Please login to view your dashboards
+                </Text>
+              </Stack>
+
+              <TextInput
+                {...getInputPropsMiddleware(getInputProps('username'))}
+                withAsterisk
+                label="Username"
+              />
+              <PasswordInput
+                {...getInputPropsMiddleware(getInputProps('password'))}
+                withAsterisk
+                label="Password"
+              />
+
+              <Button fullWidth type="submit">
+                Login
+              </Button>
+              <Anchor color="dimmed" align="center" component="button" type="button">
+                Don&apos;t have an account?
+              </Anchor>
+            </Stack>
+          </form>
+        </Card>
+      </Center>
+    </>
+  );
+};
+
+export const getServerSideProps: GetServerSideProps<{ errorType?: string }> = async (context) => {
+  const session = await getServerAuthSession({
+    req: context.req,
+    res: context.res,
+  });
+
+  if (session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  const errorType = (context.query.error as string) ?? null;
+
+  if ((context.query.callbackUrl as string)?.endsWith('/login')) {
+    return {
+      redirect: {
+        destination: !errorType ? '/login' : `/login?error=${errorType}`,
+        permanent: false,
+      },
+    };
+  }
+
+  const translations = await getServerSideTranslations(
+    context.req,
+    context.res,
+    loginNamespaces,
+    context.locale
+  );
+
+  return { props: { errorType, ...translations } };
+};
+
+export default Login;
+
+const usePageLoadNotification = ({
+  enabled,
+  ...notificationProps
+}: NotificationProps & { enabled: boolean }) => {
+  const notificationSendRef = useRef<boolean>(!enabled);
+
+  useEffect(() => {
+    if (notificationSendRef.current) return;
+    notificationSendRef.current = true;
+    showNotification(notificationProps);
+  }, []);
+};

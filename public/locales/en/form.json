@@ -1,0 +1,10 @@
+{
+  "common": {
+    "required": "This value is required.",
+    "minLength": "The value must be longer.",
+    "maxLength": "The value must be shorter."
+  },
+  "password": {
+    "complex": "The password must contain at least a lower- and uppercase letter, a number and a special character."
+  }
+}

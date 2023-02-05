@@ -1,5 +1,6 @@
 export const dashboardNamespaces = [
   'common',
+  'form',
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',
@@ -33,4 +34,4 @@ export const dashboardNamespaces = [
   'modules/common-media-cards',
 ];
 
-export const loginNamespaces = ['authentication/login'];
+export const loginNamespaces = ['form', 'authentication/login'];
