@@ -1,7 +1,13 @@
 {
 	"description": "Homarr je <strong>elegantna</strong>, <strong>sodobna</strong> nadzorna plošča, s katero so vse vaše aplikacije in storitve na dosegu roke. Z aplikacijo Homarr lahko do vsega dostopate in nadzorujete na enem priročnem mestu. Homarr se brez težav poveže z aplikacijami, ki ste jih dodali, in vam zagotavlja dragocene informacije ter popoln nadzor. Namestitev je preprosta, Homarr pa podpira širok nabor načinov namestitve.",
-	"i18n": "Nalaganje imenskih prostorov za prevod I18n",
-	"locales": "Konfigurirani krajevni jeziki I18n",
 	"contact": "Imate težave ali vprašanja? Povežite se z nami!",
-	"addToDashboard": "Dodajanje v nadzorno ploščo"
+	"addToDashboard": "Dodajanje v nadzorno ploščo",
+	"metrics": {
+		"configurationSchemaVersion": "",
+		"configurationsCount": "",
+		"version": "Različica",
+		"nodeEnvironment": "",
+		"i18n": "",
+		"locales": ""
+	}
 }
