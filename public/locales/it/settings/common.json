@@ -18,7 +18,11 @@
   },
   "grow": "Espandi la griglia (occupa tutto lo spazio)",
   "layout": {
-    "title": "Layout della Dashboard",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Main",
     "sidebar": "Barra laterale",
     "cannotturnoff": "Impossibile disattivare",
