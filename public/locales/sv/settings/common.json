@@ -10,9 +10,9 @@
   },
   "credits": {
     "madeWithLove": "Gjort med ❤️ av @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Se innehåll från tredje part",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Beroenden",
       "dependencyVersion": "Version"
     }
   },
