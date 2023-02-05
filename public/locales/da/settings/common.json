@@ -18,7 +18,11 @@
   },
   "grow": "Forøg gitteret (udnyt al pladsen)",
   "layout": {
-    "title": "Dashboard layout",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Primær",
     "sidebar": "Sidepanel",
     "cannotturnoff": "Kan ikke slås fra",
