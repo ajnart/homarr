@@ -4,6 +4,9 @@
     "description": "Zeigt einen Kalender mit anstehenden Veröffentlichungen von unterstützten Widgets an.",
     "settings": {
       "title": "Einstellungen für das Kalender Widget",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "Wochenbeginn am Sonntag"
       },
