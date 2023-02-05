@@ -1,21 +1,21 @@
 {
-  "text": "",
+  "text": "Tilpasninger giver dig mulighed for at konfigurere og justere din oplevelse med Homarr til dine præferencer.",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "Layout",
+      "description": "Aktiver og deaktiver elementer på din header og dashboard felter"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Gridstack",
+      "description": "Tilpas adfærd og kolonner i dit dashboardområde"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Metadata om siden",
+      "description": "Juster titler, logo og PWA"
     },
     "appereance": {
-      "name": "",
-      "description": ""
+      "name": "Udseende",
+      "description": "Tilpas baggrunden, farverne og appenes udseende"
     }
   }
 }
