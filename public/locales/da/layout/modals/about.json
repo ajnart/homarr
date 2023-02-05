@@ -3,11 +3,11 @@
 	"contact": "Har du problemer eller spørgsmål? Kontakt os!",
 	"addToDashboard": "Tilføj til dashboard",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "Konfigurationsskema version",
+		"configurationsCount": "Tilgængelige konfigurationer",
 		"version": "Version",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": ""
+		"nodeEnvironment": "Node miljø",
+		"i18n": "Indlæste I18n-oversættelsesnavneområder",
+		"locales": "Konfigurerede I18n landestandarder"
 	}
 }
