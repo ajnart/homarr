@@ -7,10 +7,5 @@
     "popover": {
         "title": "Tryb edycji jest włączony dla  <1>{{size}}</1> rozmiar",
         "text": "Możesz teraz dostosować i skonfigurować swoje aplikacje. Zmiany nie są <strong>zapisywane</strong> do momentu wyjścia z trybu edycji."
-    },
-    "screenSizes": {
-        "small": "mała",
-        "medium": "średni",
-        "large": "duży"
     }
 }
