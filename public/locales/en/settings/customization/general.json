@@ -2,7 +2,7 @@
   "text": "Customizations allow you to configure and adjust your experience with Homarr to your preferences.",
   "accordeon": {
     "layout": {
-      "name": "Laoyut",
+      "name": "Layout",
       "description": "Enable and disable elements on your header and dashboard tiles"
     },
     "gridstack": {
