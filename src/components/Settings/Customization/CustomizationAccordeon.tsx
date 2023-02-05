@@ -51,7 +51,10 @@ const AccordionLabel = ({ label, image, description }: AccordionLabelProps) => (
 );
 
 const getItems = () => {
-  const { t } = useTranslation('settings/customization/general');
+  const { t } = useTranslation([
+    'settings/customization/general',
+    'settings/customization/color-selector',
+  ]);
   return [
     {
       id: 'layout',
@@ -91,7 +94,7 @@ const getItems = () => {
           <BackgroundChanger />
 
           <Stack spacing="xs" my="md">
-            <Text>Colors</Text>
+            <Text>{t('settings/customization/color-selector:colors')}</Text>
             <Grid>
               <Grid.Col sm={12} md={6}>
                 <ColorSelector type="primary" defaultValue="red" />
