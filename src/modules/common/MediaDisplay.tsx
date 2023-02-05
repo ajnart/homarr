@@ -152,6 +152,10 @@ export function RadarrMediaDisplay(props: any) {
 
 export function SonarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
+  const { config } = useConfigContext();
+  const calendar = config?.widgets.find((w) => w.id === 'calendar');
+  const useSonarrv4 = calendar?.properties.useSonarrv4 ?? false;
+
   // Find a poster CoverType
   const poster = media.series.images.find((image: any) => image.coverType === 'poster');
   // Return a movie poster containting the title and the description
@@ -162,7 +166,7 @@ export function SonarrMediaDisplay(props: any) {
         genres: media.series.genres ?? [],
         overview: media.overview ?? media.series.overview ?? '',
         title: media.series.title,
-        poster: poster ? poster.remoteUrl : undefined,
+        poster: useSonarrv4 ? poster.remoteUrl : poster.url,
         episodeNumber: media.episodeNumber,
         seasonNumber: media.seasonNumber,
         episodetitle: media.title,
