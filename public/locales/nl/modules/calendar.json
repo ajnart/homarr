@@ -4,6 +4,9 @@
     "description": "Toont een kalender met komende releases, van ondersteunde integraties.",
     "settings": {
       "title": "Instellingen voor Kalender widget",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "Begin de week op zondag"
       },
