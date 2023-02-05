@@ -4,6 +4,9 @@
     "description": "Visar en kalender med kommande utgåvor, från integrationer som stöds.",
     "settings": {
       "title": "Inställningar för kalenderwidget",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "Börja veckan på söndag"
       },
