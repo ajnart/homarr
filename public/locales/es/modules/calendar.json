@@ -4,6 +4,9 @@
     "description": "Muestra un calendario con las próximas emisiones, desde las integraciones compatibles.",
     "settings": {
       "title": "Ajustes para el widget del Calendario",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "Marcar Domingo como primer día de la semana"
       },
