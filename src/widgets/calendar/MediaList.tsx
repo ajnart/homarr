@@ -20,13 +20,15 @@ export const MediaList = ({ medias }: MediaListProps) => {
 
   return (
     <ScrollArea
-      style={{
-        height: 230,
-        maxWidth: '90vw',
-      }}
       offsetScrollbars
       pt={5}
       className={classes.scrollArea}
+      styles={{
+        viewport: {
+          maxHeight: 450,
+          minHeight: 210,
+        },
+      }}
     >
       {mapMedias(medias.tvShows, SonarrMediaDisplay, lastMediaType === 'tv-show')}
       {mapMedias(medias.movies, RadarrMediaDisplay, lastMediaType === 'movie')}
