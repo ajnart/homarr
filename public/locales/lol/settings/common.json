@@ -18,7 +18,11 @@
   },
   "grow": "Grow Grid (Taek All Space)",
   "layout": {
-    "title": "Dashbord Layout",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Main",
     "sidebar": "Sidebar",
     "cannotturnoff": "Cant Be Turnd Off",
