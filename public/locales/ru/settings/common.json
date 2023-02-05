@@ -10,15 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Сделано с ❤️ от @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Просмотреть сторонний контент",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Зависимости",
       "dependencyVersion": "Версия"
     }
   },
   "grow": "Увеличение сетки (занимает все пространство)",
   "layout": {
-    "title": "Макет панели",
+    "preview": {
+      "title": "Предпросмотр",
+      "subtitle": "Изменения будут сохранены автоматически"
+    },
+    "divider": "",
     "main": "Главная",
     "sidebar": "Боковая панель",
     "cannotturnoff": "Невозможно отключить",
