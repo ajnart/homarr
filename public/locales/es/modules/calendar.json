@@ -5,7 +5,7 @@
     "settings": {
       "title": "Ajustes para el widget del Calendario",
       "useSonarrv4": {
-        "label": ""
+        "label": "Usar API Sonarr v4"
       },
       "sundayStart": {
         "label": "Marcar Domingo como primer día de la semana"
