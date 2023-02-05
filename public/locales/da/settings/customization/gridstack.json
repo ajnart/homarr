@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Kolonner i {{size}} størrelse",
+    "descriptionPreset": "Antal kolonner, når skærmen er mindre end {{pixels}} pixel bred",
+    "descriptionExceedsPreset": "Antal kolonner, når skærmstørrelsen er større end {{pixels}} pixels"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
-  "defaultValues": ""
+  "unsavedChanges": "Du har ændringer, der ikke er gemt. Klik på knappen Anvend ændringer nedenfor for at anvende og gemme.",
+  "applyChanges": "Anvend ændringer",
+  "defaultValues": "Standardværdier"
 }
