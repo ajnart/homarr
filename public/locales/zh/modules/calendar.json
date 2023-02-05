@@ -5,7 +5,7 @@
     "settings": {
       "title": "设置日历小部件",
       "useSonarrv4": {
-        "label": ""
+        "label": "使用Sonarr v4 API"
       },
       "sundayStart": {
         "label": "使用周日作为一周的开始"
