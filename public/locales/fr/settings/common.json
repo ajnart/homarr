@@ -10,15 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Fait avec ❤️ par @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Voir le contenu tiers",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Dépendance",
       "dependencyVersion": "Version"
     }
   },
   "grow": "Grille progressive (prend toute la largeur)",
   "layout": {
-    "title": "Disposition du tableau de bord",
+    "preview": {
+      "title": "Aperçu",
+      "subtitle": "Les changements seront sauvegarder automatiquement"
+    },
+    "divider": "Option de mise en page",
     "main": "Principal",
     "sidebar": "Barre latérale",
     "cannotturnoff": "Ne peut être désactivé",
