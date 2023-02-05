@@ -13,16 +13,16 @@
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "El icono, que se usa delante del nombre de la pestaña"
   },
   "background": {
     "label": "Fondo"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "description": "",
+    "description": "Personalizar todos los elementos de tu dashboard, solo recomendado para usuarios experimentados",
     "placeholder": "El CSS personalizado será aplicado en último lugar",
-    "applying": ""
+    "applying": "Aplicando CSS..."
   },
   "buttons": {
     "submit": "Aplicar"
