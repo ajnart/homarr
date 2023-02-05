@@ -18,7 +18,7 @@
 }
 
 // Styling for grid-stack main area
-@for $i from 1 to 13 {
+@for $i from 1 to 21 {
 	.grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
 	.grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
 	.grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
@@ -30,7 +30,7 @@
   .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  calc(#{$i}px * #{var(--gridstack-widget-width)}) }
 }
 
-@for $i from 1 to 13 {
+@for $i from 1 to 21 {
 	.grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
 }
 
@@ -56,7 +56,7 @@
   .grid-stack.grid-stack-sidebar>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  128px * $i }
 }
 
-@for $i from 1 to 13 {
+@for $i from 1 to 3 {
 	.grid-stack.grid-stack-sidebar>.grid-stack-item[gs-x="#{$i}"]  { left: 128px * $i }
 }
 
