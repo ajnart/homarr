@@ -18,7 +18,11 @@
   },
   "grow": "グロースグリッド（全領域を占有）",
   "layout": {
-    "title": "ダッシュボードのレイアウト",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "メイン",
     "sidebar": "サイドバー",
     "cannotturnoff": "OFFにできない",
