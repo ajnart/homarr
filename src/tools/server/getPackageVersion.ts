@@ -1,14 +1,24 @@
-const getServerPackageVersion = (): string | undefined => process.env.npm_package_version;
+import packageJson from '../../../package.json';
 
-const getServerNodeEnvironment = (): 'development' | 'production' | 'test' =>
-  process.env.NODE_ENV;
+const getServerPackageVersion = (): string | undefined => packageJson.version;
 
-export const getServiceSidePackageAttributes = (): ServerSidePackageAttributesType => ({
-  packageVersion: getServerPackageVersion(),
-  environment: getServerNodeEnvironment(),
-});
+const getServerNodeEnvironment = (): 'development' | 'production' | 'test' => process.env.NODE_ENV;
+
+const getDependencies = (): PackageJsonDependencies => packageJson.dependencies;
+
+export const getServiceSidePackageAttributes = (): ServerSidePackageAttributesType => {
+  const result = {
+    packageVersion: getServerPackageVersion(),
+    environment: getServerNodeEnvironment(),
+    dependencies: getDependencies(),
+  } as ServerSidePackageAttributesType;
+  return result;
+};
 
 export type ServerSidePackageAttributesType = {
   packageVersion: string | undefined;
   environment: 'development' | 'production' | 'test';
+  dependencies: PackageJsonDependencies;
 };
+
+type PackageJsonDependencies = { [key in string]: string };

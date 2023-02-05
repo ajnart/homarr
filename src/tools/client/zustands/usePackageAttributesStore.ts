@@ -8,7 +8,7 @@ interface PackageAttributesState {
 }
 
 export const usePackageAttributesStore = create<PackageAttributesState>((set) => ({
-  attributes: { packageVersion: undefined, environment: 'test' },
+  attributes: { packageVersion: undefined, environment: 'test', dependencies: {} },
   setInitialPackageAttributes(attributes) {
     set((state) => ({ ...state, attributes }));
   },

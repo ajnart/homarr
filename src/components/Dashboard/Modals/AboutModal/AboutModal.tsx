@@ -90,6 +90,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
           ))}
         </tbody>
       </Table>
+
       <Divider variant="dashed" mb="md" />
       <Title order={6} mb="xs" align="center">
         {t('layout/modals/about:contact')}
