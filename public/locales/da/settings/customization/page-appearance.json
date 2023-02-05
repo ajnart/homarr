@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Sidetitel"
+    "label": "Sidetitel",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Metatitel"
+    "label": "Metatitel",
+    "description": ""
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": ""
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": ""
   },
   "background": {
     "label": "Baggrund"
   },
   "customCSS": {
     "label": "Tilpasset CSS",
-    "placeholder": "Brugerdefineret CSS vil blive anvendt sidst"
+    "description": "",
+    "placeholder": "Brugerdefineret CSS vil blive anvendt sidst",
+    "applying": ""
   },
   "buttons": {
     "submit": "Indsend"
