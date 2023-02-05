@@ -1,28 +1,28 @@
 {
   "pageTitle": {
     "label": "Sidetitel",
-    "description": ""
+    "description": "Dashboardets titel øverst til venstre"
   },
   "metaTitle": {
     "label": "Metatitel",
-    "description": ""
+    "description": "Titlen, der vises som dit fanebladsnavn"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Dashboard-logoet øverst til venstre"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "Ikonet, der bruges foran dit fanebladsnavn"
   },
   "background": {
     "label": "Baggrund"
   },
   "customCSS": {
     "label": "Tilpasset CSS",
-    "description": "",
+    "description": "Tilpas alle elementer på dit dashboard, kun anbefalet til erfarne brugere",
     "placeholder": "Brugerdefineret CSS vil blive anvendt sidst",
-    "applying": ""
+    "applying": "Anvender CSS..."
   },
   "buttons": {
     "submit": "Indsend"
