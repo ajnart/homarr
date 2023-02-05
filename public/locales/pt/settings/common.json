@@ -18,7 +18,11 @@
   },
   "grow": "Grelha de cultivo (ocupar todo o espaço)",
   "layout": {
-    "title": "Disposição do painel de instrumentos",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Principal",
     "sidebar": "Sidebar",
     "cannotturnoff": "Não pode ser desligado",
