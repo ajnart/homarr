@@ -19,10 +19,10 @@
   "grow": "Forøg gitteret (udnyt al pladsen)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Forhåndsvisning",
+      "subtitle": "Ændringer vil blive gemt automatisk"
     },
-    "divider": "",
+    "divider": "Layout indstillinger",
     "main": "Primær",
     "sidebar": "Sidepanel",
     "cannotturnoff": "Kan ikke slås fra",
