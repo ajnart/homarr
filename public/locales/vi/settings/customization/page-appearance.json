@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Tiêu đề trang"
+    "label": "Tiêu đề trang",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Tiêu đề meta"
+    "label": "Tiêu đề meta",
+    "description": ""
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": ""
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": ""
   },
   "background": {
     "label": "Hình nền"
   },
   "customCSS": {
     "label": "CSS tuỳ chỉnh",
-    "placeholder": ""
+    "description": "",
+    "placeholder": "",
+    "applying": ""
   },
   "buttons": {
     "submit": "Gửi"
