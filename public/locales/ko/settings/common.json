@@ -18,7 +18,11 @@
   },
   "grow": "",
   "layout": {
-    "title": "",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "",
     "sidebar": "",
     "cannotturnoff": "",
