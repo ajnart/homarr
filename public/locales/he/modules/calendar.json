@@ -5,7 +5,7 @@
     "settings": {
       "title": "הגדרות עבור ווידג'ט יומן",
       "useSonarrv4": {
-        "label": ""
+        "label": "השתמש בAPI גרסא 4 של סונאר (Sonarr)"
       },
       "sundayStart": {
         "label": "התחל את השבוע ביום ראשון"
