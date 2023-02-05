@@ -10,15 +10,19 @@
   },
   "credits": {
     "madeWithLove": "用❤️创造，出品于",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "查看第三方内容",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "依赖",
       "dependencyVersion": "版本"
     }
   },
   "grow": "增长的网格（占用所有空间）",
   "layout": {
-    "title": "仪表板布局",
+    "preview": {
+      "title": "预览",
+      "subtitle": "更改将自动保存"
+    },
+    "divider": "布局选项",
     "main": "主要的",
     "sidebar": "侧边栏",
     "cannotturnoff": "不能关闭",
