@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "No Dash. survis findz. plz add wan 2 ur Homarr dashboard or set Dash. URL in teh moduel opshuns",
-      "noInformation": "Cannot acquier informashun frum dash. - r u runnin teh latest vershun?"
+      "noInformation": "Cannot acquier informashun frum dash. - r u runnin teh latest vershun?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
