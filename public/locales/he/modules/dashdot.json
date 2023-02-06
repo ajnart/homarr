@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "לא נמצא שירות Dash. בבקשה הוסף ל- Homarr או הגדר כתובת באפשרויות המודול ",
-      "noInformation": "אין מידע מ- Dash. האם אתה משתמש בגירסה העדכנית"
+      "noInformation": "אין מידע מ- Dash. האם אתה משתמש בגירסה העדכנית",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
