@@ -3,11 +3,11 @@
 	"contact": "נתקלת בבעיות או בשאלות? צור איתנו קשר!",
 	"addToDashboard": "הוספה ללוח מחוונים",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "גירסת סכימת תצורה",
+		"configurationsCount": "תצורות זמינות",
 		"version": "גרסה",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": ""
+		"nodeEnvironment": "סביבת Node",
+		"i18n": "מרחבי שמות של תרגום I18n טעונים",
+		"locales": "אזורי I18n מוגדרים"
 	}
 }
