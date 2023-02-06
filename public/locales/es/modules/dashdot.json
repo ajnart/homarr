@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "No se ha encontrado el servicio Dash. Por favor, añade uno al Panel de Control de Homarr o indica una URL de Dash. en las opciones del módulo",
-      "noInformation": "No se puede obtener información de Dash. - ¿estás utilizando la última versión?"
+      "noInformation": "No se puede obtener información de Dash. - ¿estás utilizando la última versión?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
