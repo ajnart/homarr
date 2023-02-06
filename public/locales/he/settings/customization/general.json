@@ -1,21 +1,21 @@
 {
-  "text": "",
+  "text": "התאמות אישיות מאפשרות לך להגדיר ולהתאים את החוויה שלך עם Homarr להעדפותיך.",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "פריסה",
+      "description": "הפעל והשבת אלמנטים באריחי הכותרת ולוח המחוונים שלך"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Gridstack",
+      "description": "התאם אישית את ההתנהגות והעמודות של אזור לוח המחוונים שלך"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "מטא נתונים של עמוד",
+      "description": "התאם כותרות, לוגו ו-PWA"
     },
     "appereance": {
-      "name": "",
-      "description": ""
+      "name": "מראה חיצוני",
+      "description": "התאם אישית את הרקע, הצבעים ומראה האפליקציות"
     }
   }
 }
