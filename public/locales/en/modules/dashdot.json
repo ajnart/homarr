@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "No Dash. service found. Please add one to your Homarr dashboard or set a Dash. URL in the module options",
-      "noInformation": "Cannot acquire information from dash. - are you running the latest version?"
+      "noInformation": "Cannot acquire information from dash. - are you running the latest version?",
+      "protocolDowngrade": {
+        "title": "Detected protocol downgrade",
+        "text": "The protocol to your Dash. instance is being downgraded. This is security risk, since HTTP is unencrypted and attackers could abuse this connection. Make sure that Dash. is running on HTTPS too or downgrade Homarr to HTTP (not recommended)."
+      }
     },
     "graphs": {
       "storage": {
