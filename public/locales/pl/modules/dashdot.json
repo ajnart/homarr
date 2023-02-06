@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Nie znaleziono usługi Dash. Proszę dodać ją do pulpitu Homarra lub ustawić adres URL usługi Dash. w opcjach modułu",
-      "noInformation": "Nie można uzyskać informacji z dash. - używasz najnowszej wersji?"
+      "noInformation": "Nie można uzyskać informacji z dash. - używasz najnowszej wersji?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
