@@ -30,8 +30,8 @@
       "noService": "Ingen Dash. service fundet. Tilføj venligst en til dit Homarr-dashboard eller indstil en Dash. URL i modulindstillingerne",
       "noInformation": "Kan ikke hente information fra dash. - kører du den nyeste version?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Registreret protokolnedgradering",
+        "text": "Protokollen til din Dash. instans bliver nedgraderet. Dette er sikkerhedsrisiko, da HTTP er ukrypteret og angribere kunne misbruge denne forbindelse. Sørg for, at Dash. kører på HTTPS også eller nedgraderer Homarr til HTTP (anbefales ikke)."
       }
     },
     "graphs": {
