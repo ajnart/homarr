@@ -1,6 +1,6 @@
 
 <!-- Project Title -->
-<h1 align="center">Homarr</h1>
+<img src="./docs/banner.png" />
 
 <!-- Badges -->
 <p align="center">
@@ -21,128 +21,102 @@
 
 <!-- Links -->
 <p align="center">
-<i>Join the discord! — Don't forget to star the repo if you are enjoying the project!</i>
+  <a href="https://demo.homarr.dev/">
+    <strong>Demo ✨</strong>
+  </a>
+  •
+  <a href="https://homarr.dev/docs/introduction/installation">
+    <strong>Install 💻</strong>
+  </a> •
+  <a href="https://crowdin.com/project/homarr">
+    <strong>Translations 🈺</strong>
+  </a> •
+  <a href="https://discord.com/invite/aCsmEV5RgA">
+    <strong>Discord 👋</strong>
+  </a>
 </p>
-<h3 align="center"><a href="https://homarr.dev">Read the Docs</a></h3>
-<p align="center">
-<a href="https://demo.homarr.dev/"><strong> Demo ↗️ </strong></a> • <a href="https://homarr.dev/docs/introduction/installation"><strong> Install ➡️ </strong></a>
-</p>
 
----
 
-<!-- Homarr Description -->
-<img align="right" width=150 src="public/imgs/logo/logo-color.svg" />
+Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
 
-Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.
+<br/>
+<br/>
 
-It integrates with the services you use to display information on the homepage (E.g. Show upcoming Sonarr/Radarr releases).
+![](docs/section-features.png)
+- 🖌️ Highly customizeable with extensive drag and drop grid system
+- ✨ Integrates seamlessly with your favorite self-hosted applications
+- 📌 Easy and fast app management - no yaml involved
+- 🙊 Advanced secrets management system for enhanced security
+- 📄 Detailed documentation and active community
+- 🔍 Search though the web or supported integrations in an instant
+- 🏴󠁧󠁢󠁮󠁩󠁲󠁿 Monitor your application with a built in status system
+- 🦞 Comprehensive built-in icon picker with over 1000 icons
+- 🐳 Easy deployment with Docker, Unraid, Synology
+- 🚀 Comatible with any major consumer hardware (x86, Rasperry Pi, ...)
+- 💵 Free and Open-Source - your data stays on your device
 
-For a full list of integrations, [head over to our documentation](https://homarr.dev/docs/integrations/).
+<br/>
+<br/>
 
-If you have any questions about Homarr or want to share information with us, please go to one of the following places:
+![](docs/section-widgets-and-integrations.png)
 
-- [Github Discussions](https://github.com/ajnart/homarr/discussions)
-- [Discord Server](https://discord.gg/aCsmEV5RgA)
+Homarr has a [built in collection of widgets and integrations](https://homarr.dev/docs/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
+Each widget and integration has a comprehensive documentation for your confort.
+Homarr will integrate with the following applications of yours:
 
-**For more information, [read the documentation!](https://homarr.dev/docs/about)**
+- 📥 Torrent clients
+  - [Delguge](https://homarr.dev/docs/integrations/#deluge)
+  - [Transmission](https://homarr.dev/docs/integrations/#transmission)
+  - [qBittorrent](https://homarr.dev/docs/integrations/#qbittorrent-integration)
+- 📥 Usenet clients
+  - [SABnzbd](https://homarr.dev/docs/integrations/#sabnzbd)
+  - [NZBGet](https://homarr.dev/docs/integrations/#nzbget)
+- 📚 Media collection managers
+  - [Sonarr](https://homarr.dev/docs/integrations/#sonarr)
+  - [Radarr](https://homarr.dev/docs/integrations/#radarr)
+  - [Lidarr](https://homarr.dev/docs/integrations/#lidarr)
+  - [Readarr](https://homarr.dev/docs/integrations/#readarr)
+- 🎞️ Media request managers
+  - [Overseerr](https://homarr.dev/docs/integrations/#overseerr--jellyseerr)
+  - [Jellyseerr](https://homarr.dev/docs/integrations/#overseerr--jellyseerr)
+- 🔌 [Dash.](https://homarr.dev/docs/integrations/#dash)
+- 🐳 [Docker](https://homarr.dev/docs/integrations/#docker)
 
-<details>
-  <summary><b>Table of Contents</b></summary>
-  <p>
+We're constantly adding new integrations and widgets, which will enhance your experience even further.
 
-- [✨ Features](#-features)
-- [👀 Preview](#-preview)
-- [🛠️ Running a dev environment](#️-running-a-dev-environment)
-- [💖 Contributing](#-contributing)
-- [📜 License](#-license)
+<br/>
+<br/>
 
-  </p>
-</details>
+![](docs/section-preview.png)
 
----
+https://homarr.dev/img/videos/showcase.mp4
 
-## ✨ Features
-- Integrates with services you use.
-- Search the web directly from your homepage.
-- Real-time status indicator for every service.
-- Automatically finds icons while you type the name of a service.
-- Widgets that can display all types of information.
-- Easy deployment with Docker.
-- Very light-weight and fast.
-- Free and Open-Source.
-- And more...
+<br/>
+<br/>
 
-**[⤴️ Back to Top](#homarr)**
+![](docs/section-installation.png)
 
----
+There are many different ways, how Homarr can be installed.
+Since we are developing Homarr very frequently, we recommend to read our official installation guides:
 
-## 👀 Preview
-<img alt="Homarr Preview" align="center" width="100%" src="https://user-images.githubusercontent.com/71191962/169860380-856634fb-4f41-47cb-ba54-6a9e7b3b9c81.gif" />
+<a href="https://homarr.dev/docs/introduction/installation">
+  <img src="docs/installation-button.png" width="200" />
+</a>
 
-**[⤴️ Back to Top](#homarr)**
+<br/>
+<br/>
 
----
+![](docs/section-contribute.png)
+Homarr is maintained by motivated developers in their free-time.
+We work for fun and learning on this project.
 
-### 🛠️ Running a dev environment
+Hence, we're glad for all help and support we can get.
+Altough a donation is apprechiated, there are also other ways you can support us.
 
-_Requirements_:
-- [Git](https://git-scm.com/downloads)
-- [NodeJS](https://nodejs.org/en/) _(Latest or LTS)_
-- [Yarn](https://yarnpkg.com/)
+[_![](https://cdn.ko-fi.com/cdn/kofi3.png?v=3)_](https://ko-fi.com/ajnart)
 
-**Installing**
+You can also support us [translating the entire project in as many languages as possible](https://homarr.dev/docs/community/translations) or contribute directly to the code or documentation.
 
-- Clone the GitHub repo: `git clone https://github.com/ajnart/homarr.git` & `cd homarr`
-- Install all dependencies: `yarn install`
-- Build the source: `yarn build`
-- Start the NextJS web server: ``yarn start``
-- *Note: If you want to update the code in real time, launch with ``yarn dev``*
-
-**[⤴️ Back to Top](#homarr)**
-
----
-
-## 💖 Contributing
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
-All contributions are highly appreciated.
-
-**[⤴️ Back to Top](#homarr)**
-
----
-
-
-## 📜 License
-Homarr is Licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License)
-
-```txt
-Copyright © 2022 Thomas "ajnart" Camlong
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-**[⤴️ Back to Top](#homarr)**
-
----
-
-<p align="center">
-  <i>Thank you for visiting! <b>For more information <a href="https://homarr.dev">read the documentation!</a></b></i>
-  <br/>
-  <br/>
-</p>
+All contributions, regardless of their size or scope, are welcome and highly apprechiated! Thank you ❤️
