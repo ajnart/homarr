@@ -89,7 +89,7 @@ We're constantly adding new integrations and widgets, which will enhance your ex
 
 ![](docs/section-preview.png)
 
-https://homarr.dev/img/videos/showcase.mp4
+https://user-images.githubusercontent.com/30572287/217098893-5880e7de-13d0-42c5-b505-f7921593396f.mp4
 
 <br/>
 <br/>
