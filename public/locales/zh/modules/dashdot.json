@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "Dash. 网址"
+      },
+      "usePercentages": {
+        "label": "显示百分比"
       }
     }
   },

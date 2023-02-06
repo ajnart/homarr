@@ -5,6 +5,7 @@ import {
   Button,
   createStyles,
   Divider,
+  Grid,
   Group,
   HoverCard,
   Modal,
@@ -13,6 +14,7 @@ import {
   Title,
 } from '@mantine/core';
 import {
+  IconAnchor,
   IconBrandDiscord,
   IconBrandGithub,
   IconFile,
@@ -27,11 +29,11 @@ import { InitOptions } from 'i18next';
 import { i18n, Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { CURRENT_VERSION } from '../../../data/constants';
-import { useConfigContext } from '../../config/provider';
-import { useConfigStore } from '../../config/store';
-import { usePrimaryGradient } from '../layout/useGradient';
-import Credits from '../Settings/Common/Credits';
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
+import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
+import { usePrimaryGradient } from '../../../layout/useGradient';
+import Credits from '../../../Settings/Common/Credits';
 
 interface AboutModalProps {
   opened: boolean;
@@ -51,7 +53,15 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
       opened={opened}
       title={
         <Group spacing="sm">
-          <Image src="/imgs/logo/logo.png" width={30} height={30} objectFit="contain" />
+          <Image
+            alt="Homarr logo"
+            src="/imgs/logo/logo.png"
+            width={30}
+            height={30}
+            style={{
+              objectFit: 'contain',
+            }}
+          />
           <Title order={3} variant="gradient" gradient={colorGradiant}>
             {t('about')} Homarr
           </Title>
@@ -72,7 +82,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
                   <ActionIcon className={classes.informationIcon} variant="default">
                     {item.icon}
                   </ActionIcon>
-                  {t(item.label)}
+                  {t(`layout/modals/about:metrics.${item.label}`)}
                 </Group>
               </td>
               <td className={classes.informationTableColumn}>{item.content}</td>
@@ -80,40 +90,51 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
           ))}
         </tbody>
       </Table>
+
       <Divider variant="dashed" mb="md" />
       <Title order={6} mb="xs" align="center">
         {t('layout/modals/about:contact')}
       </Title>
 
-      <Group grow>
-        <Button
-          component="a"
-          href="https://github.com/ajnart/homarr"
-          target="_blank"
-          leftIcon={<IconBrandGithub size={20} />}
-          variant="default"
-        >
-          GitHub
-        </Button>
-        <Button
-          component="a"
-          href="https://homarr.dev/"
-          target="_blank"
-          leftIcon={<IconWorldWww size={20} />}
-          variant="default"
-        >
-          Documentation
-        </Button>
-        <Button
-          component="a"
-          href="https://discord.gg/aCsmEV5RgA"
-          target="_blank"
-          leftIcon={<IconBrandDiscord size={20} />}
-          variant="default"
-        >
-          Discord
-        </Button>
-      </Group>
+      <Grid grow>
+        <Grid.Col md={4} xs={12}>
+          <Button
+            component="a"
+            href="https://github.com/ajnart/homarr"
+            target="_blank"
+            leftIcon={<IconBrandGithub size={20} />}
+            variant="default"
+            fullWidth
+          >
+            GitHub
+          </Button>
+        </Grid.Col>
+        <Grid.Col md={4} xs={12}>
+          <Button
+            component="a"
+            href="https://homarr.dev/"
+            target="_blank"
+            leftIcon={<IconWorldWww size={20} />}
+            variant="default"
+            fullWidth
+          >
+            Documentation
+          </Button>
+        </Grid.Col>
+
+        <Grid.Col md={4} xs={12}>
+          <Button
+            component="a"
+            href="https://discord.gg/aCsmEV5RgA"
+            target="_blank"
+            leftIcon={<IconBrandDiscord size={20} />}
+            variant="default"
+            fullWidth
+          >
+            Discord
+          </Button>
+        </Grid.Col>
+      </Grid>
       <Credits />
     </Modal>
   );
@@ -130,8 +151,8 @@ interface ExtendedInitOptions extends InitOptions {
 }
 
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
-  // TODO: Fix this to not request. Pass it as a prop.
   const colorGradiant = usePrimaryGradient();
+  const { attributes } = usePackageAttributesStore();
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
@@ -146,7 +167,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       ...items,
       {
         icon: <IconLanguage size={20} />,
-        label: 'layout/modals/about:i18n',
+        label: 'i18n',
         content: (
           <Badge variant="gradient" gradient={colorGradiant}>
             {usedI18nNamespaces.length}
@@ -155,7 +176,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       },
       {
         icon: <IconVocabulary size={20} />,
-        label: 'layout/modals/about:locales',
+        label: 'locales',
         content: (
           <Badge variant="gradient" gradient={colorGradiant}>
             {initOptions.locales.length}
@@ -168,7 +189,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   items = [
     {
       icon: <IconSchema size={20} />,
-      label: 'Configuration schema version',
+      label: 'configurationSchemaVersion',
       content: (
         <Badge variant="gradient" gradient={colorGradiant}>
           {configVersion}
@@ -177,7 +198,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
     },
     {
       icon: <IconFile size={20} />,
-      label: 'Available configurations',
+      label: 'configurationsCount',
       content: (
         <Badge variant="gradient" gradient={colorGradiant}>
           {configs.length}
@@ -190,7 +211,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       content: (
         <Group position="right">
           <Badge variant="gradient" gradient={colorGradiant}>
-            {CURRENT_VERSION}
+            {attributes.packageVersion ?? 'Unknown'}
           </Badge>
           {newVersionAvailable && (
             <HoverCard shadow="md" position="top" withArrow>
@@ -218,11 +239,20 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                     {newVersionAvailable}
                   </Anchor>
                 </b>{' '}
-                is available ! Current version: {CURRENT_VERSION}
+                is available ! Current version: {attributes.packageVersion}
               </HoverCard.Dropdown>
             </HoverCard>
           )}
         </Group>
+      ),
+    },
+    {
+      icon: <IconAnchor size={20} />,
+      label: 'nodeEnvironment',
+      content: (
+        <Badge variant="gradient" gradient={colorGradiant}>
+          {attributes.environment}
+        </Badge>
       ),
     },
     ...items,

@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "페이지 제목"
+    "label": "페이지 제목",
+    "description": ""
   },
   "metaTitle": {
-    "label": ""
+    "label": "",
+    "description": ""
   },
   "logo": {
-    "label": "로고"
+    "label": "로고",
+    "description": ""
   },
   "favicon": {
-    "label": "파비콘"
+    "label": "파비콘",
+    "description": ""
   },
   "background": {
     "label": "배경"
   },
   "customCSS": {
     "label": "커스텀 CSS",
-    "placeholder": ""
+    "description": "",
+    "placeholder": "",
+    "applying": ""
   },
   "buttons": {
     "submit": "적용"

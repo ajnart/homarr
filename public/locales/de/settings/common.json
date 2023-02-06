@@ -9,11 +9,20 @@
     "configTip": "Laden Sie Ihre Konfigurationsdatei hoch, indem Sie sie per Drag & Drop auf diese Seite ziehen!"
   },
   "credits": {
-    "madeWithLove": "Gemacht mit ❤️ von @"
+    "madeWithLove": "Gemacht mit ❤️ von @",
+    "thirdPartyContent": "Inhalte von Dritten anzeigen",
+    "thirdPartyContentTable": {
+      "dependencyName": "Abhängigkeiten",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Erweitertes Raster (nutzt den ganzen Platz)",
   "layout": {
-    "title": "Dashboard Anordnung",
+    "preview": {
+      "title": "Vorschau",
+      "subtitle": "Änderungen werden automatisch gespeichert"
+    },
+    "divider": "Layout-Einstellungen",
     "main": "Haupt",
     "sidebar": "Seitenleiste",
     "cannotturnoff": "Kann nicht deaktiviert werden",

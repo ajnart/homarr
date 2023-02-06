@@ -24,5 +24,11 @@
     "seconds": "секунд",
     "minutes": "минут",
     "hours": "часов"
+  },
+  "loading": "Загрузка...",
+  "breakPoints": {
+    "small": "маленького",
+    "medium": "среднего",
+    "large": "большого"
   }
 }

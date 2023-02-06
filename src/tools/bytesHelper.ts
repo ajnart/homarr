@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
+/* eslint-disable consistent-return */
 export const bytes = {
   toPerSecondString: (bytes?: number) => {
     if (!bytes) return '-';

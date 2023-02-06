@@ -24,5 +24,11 @@
     "seconds": "초",
     "minutes": "분",
     "hours": "시간"
+  },
+  "loading": "불러오는 중…",
+  "breakPoints": {
+    "small": "",
+    "medium": "",
+    "large": ""
   }
 }

@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Prozentangaben anzeigen"
       }
     }
   },

@@ -1,35 +1,68 @@
 import { Deluge } from '@ctrl/deluge';
+import { QBittorrent } from '@ctrl/qbittorrent';
+import { Transmission } from '@ctrl/transmission';
 import { AllClientData } from '@ctrl/shared-torrent';
+
+import Consola from 'consola';
+
 import { getCookie } from 'cookies-next';
+
 import dayjs from 'dayjs';
+
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import { Client } from 'sabnzbd-api';
+
+import { NzbgetClient } from '../usenet/nzbget/nzbget-client';
+import { NzbgetQueueItem, NzbgetStatus } from '../usenet/nzbget/types';
+import { ConfigAppType, IntegrationField } from '../../../../types/app';
 import { getConfig } from '../../../../tools/config/getConfig';
+import { UsenetQueueItem } from '../../../../widgets/useNet/types';
 import {
   NormalizedDownloadAppStat,
   NormalizedDownloadQueueResponse,
 } from '../../../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { ConfigAppType, IntegrationField } from '../../../../types/app';
-import { UsenetQueueItem } from '../../../../widgets/useNet/types';
-import { NzbgetClient } from '../usenet/nzbget/nzbget-client';
-import { NzbgetQueueItem, NzbgetStatus } from '../usenet/nzbget/types';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
-  const clientData: Promise<NormalizedDownloadAppStat | undefined>[] = config.apps.map((app) =>
-    GetDataFromClient(app)
-  );
+  const failedClients: string[] = [];
+
+  const clientData: Promise<NormalizedDownloadAppStat>[] = config.apps.map(async (app) => {
+    try {
+      const response = await GetDataFromClient(app);
+
+      if (!response) {
+        return {
+          success: false,
+        } as NormalizedDownloadAppStat;
+      }
+
+      return response;
+    } catch (err: any) {
+      Consola.error(
+        `Error communicating with your download client '${app.name}' (${app.id}): ${err}`
+      );
+      failedClients.push(app.id);
+      return {
+        success: false,
+      } as NormalizedDownloadAppStat;
+    }
+  });
 
   const settledPromises = await Promise.allSettled(clientData);
 
   const data: NormalizedDownloadAppStat[] = settledPromises
     .filter((x) => x.status === 'fulfilled')
     .map((promise) => (promise as PromiseFulfilledResult<NormalizedDownloadAppStat>).value)
-    .filter((x) => x !== undefined);
+    .filter((x) => x !== undefined && x.type !== undefined);
 
-  const responseBody = { apps: data } as NormalizedDownloadQueueResponse;
+  const responseBody = { apps: data, failedApps: failedClients } as NormalizedDownloadQueueResponse;
+
+  if (failedClients.length > 0) {
+    Consola.warn(`${failedClients.length} download clients failed. Please check your configuration and the above log`);
+  }
 
   return response.status(200).json(responseBody);
 };
@@ -44,10 +77,10 @@ const GetDataFromClient = async (
     torrents: data.torrents,
     totalDownload: data.torrents
       .map((torrent) => torrent.downloadSpeed)
-      .reduce((acc, torrent) => acc + torrent),
+      .reduce((acc, torrent) => acc + torrent, 0),
     totalUpload: data.torrents
       .map((torrent) => torrent.uploadSpeed)
-      .reduce((acc, torrent) => acc + torrent),
+      .reduce((acc, torrent) => acc + torrent, 0),
   });
 
   const findField = (app: ConfigAppType, field: IntegrationField) =>
@@ -64,7 +97,7 @@ const GetDataFromClient = async (
     }
     case 'transmission': {
       return reduceTorrent(
-        await new Deluge({
+        await new Transmission({
           baseUrl: app.url,
           username: findField(app, 'username'),
           password: findField(app, 'password'),
@@ -73,7 +106,7 @@ const GetDataFromClient = async (
     }
     case 'qBittorrent': {
       return reduceTorrent(
-        await new Deluge({
+        await new QBittorrent({
           baseUrl: app.url,
           username: findField(app, 'username'),
           password: findField(app, 'password'),
@@ -126,6 +159,7 @@ const GetDataFromClient = async (
           if (!err) {
             resolve(result);
           } else {
+            Consola.error(`Error while listing groups: ${err}`);
             reject(err);
           }
         });
@@ -139,6 +173,7 @@ const GetDataFromClient = async (
           if (!err) {
             resolve(result);
           } else {
+            Consola.error(`Error while retrieving NZBGet stats: ${err}`);
             reject(err);
           }
         });

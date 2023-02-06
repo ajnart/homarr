@@ -24,5 +24,11 @@
     "seconds": "giây",
     "minutes": "phút",
     "hours": "giờ"
+  },
+  "loading": "Đang tải...",
+  "breakPoints": {
+    "small": "nhỏ",
+    "medium": "trung bình",
+    "large": "lớn"
   }
 }

@@ -1,10 +1,10 @@
 import { Box, createStyles, Group, Header as MantineHeader, Indicator } from '@mantine/core';
-import { useEffect, useState } from 'react';
-import { CURRENT_VERSION, REPO_URL } from '../../../../data/constants';
-import { useConfigContext } from '../../../config/provider';
+import { useQuery } from '@tanstack/react-query';
+import { REPO_URL } from '../../../../data/constants';
+import DockerMenuButton from '../../../modules/Docker/DockerModule';
+import { usePackageAttributesStore } from '../../../tools/client/zustands/usePackageAttributesStore';
 import { Logo } from '../Logo';
 import { useCardStyles } from '../useCardStyles';
-import DockerMenuButton from '../../../modules/Docker/DockerModule';
 import { ToggleEditModeAction } from './Actions/ToggleEditMode/ToggleEditMode';
 import { Search } from './Search';
 import { SettingsMenu } from './SettingsMenu';
@@ -14,23 +14,20 @@ export const HeaderHeight = 64;
 export function Header(props: any) {
   const { classes } = useStyles();
   const { classes: cardClasses } = useCardStyles(false);
+  const { attributes } = usePackageAttributesStore();
 
-  const { config } = useConfigContext();
-
-  const [newVersionAvailable, setNewVersionAvailable] = useState<string>('');
-  useEffect(() => {
-    // Fetch Data here when component first mounted
-    fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => {
-      res.json().then((data) => {
-        if (data.tag_name > CURRENT_VERSION) {
-          setNewVersionAvailable(data.tag_name);
-        }
-      });
-    });
-  }, [CURRENT_VERSION]);
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['github/latest'],
+    cacheTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 5,
+    queryFn: () =>
+      fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => res.json()),
+  });
+  const newVersionAvailable =
+    data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
 
   return (
-    <MantineHeader height={HeaderHeight} className={cardClasses.card}>
+    <MantineHeader height="auto" className={cardClasses.card}>
       <Group p="xs" noWrap grow>
         <Box className={classes.hide}>
           <Logo />
@@ -39,7 +36,13 @@ export function Header(props: any) {
           <Search />
           <ToggleEditModeAction />
           <DockerMenuButton />
-          <Indicator size={15} color="blue" withBorder processing disabled={!newVersionAvailable}>
+          <Indicator
+            size={15}
+            color="blue"
+            withBorder
+            processing
+            disabled={newVersionAvailable === undefined}
+          >
             <SettingsMenu newVersionAvailable={newVersionAvailable} />
           </Indicator>
         </Group>

@@ -1,4 +1,5 @@
-import { createStyles, Group, Title } from '@mantine/core';
+import { Center, createStyles, Group, Stack, Text, Title } from '@mantine/core';
+import { IconUnlink } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
@@ -24,6 +25,10 @@ const definition = defineWidget({
     useCompactView: {
       type: 'switch',
       defaultValue: true,
+    },
+    usePercentages: {
+      type: 'switch',
+      defaultValue: false,
     },
     graphs: {
       type: 'multi-select',
@@ -51,7 +56,7 @@ const definition = defineWidget({
   component: DashDotTile,
 });
 
-export type IDashDotTile = IWidget<typeof definition['id'], typeof definition>;
+export type IDashDotTile = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface DashDotTileProps {
   widget: IDashDotTile;
@@ -62,10 +67,28 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { t } = useTranslation('modules/dashdot');
 
   const dashDotUrl = widget.properties.url;
+  const locationProtocol = window.location.protocol;
+  const detectedProtocolDowngrade =
+    locationProtocol === 'https:' && dashDotUrl.toLowerCase().startsWith('http:');
 
   const { data: info } = useDashDotInfo({
     dashDotUrl,
+    enabled: !detectedProtocolDowngrade,
   });
+
+  if (detectedProtocolDowngrade) {
+    return (
+      <Center h="100%">
+        <Stack spacing="xs" align="center">
+          <IconUnlink size={40} strokeWidth={1.2} />
+          <Title order={5}>{t('card.errors.protocolDowngrade.title')}</Title>
+          <Text align="center" size="sm">
+          {t('card.errors.protocolDowngrade.text')}
+          </Text>
+        </Stack>
+      </Center>
+    );
+  }
 
   const graphs = widget?.properties.graphs.map((graph) => ({
     id: graph,
@@ -76,17 +99,13 @@ function DashDotTile({ widget }: DashDotTileProps) {
       (graph === 'storage' && widget.properties.storageMultiView),
   }));
 
-  const heading = (
-    <Title order={3} mb="xs">
-      {t('card.title')}
-    </Title>
-  );
-
   const isCompact = widget?.properties.useCompactView ?? false;
 
   const isCompactStorageVisible = graphs?.some((g) => g.id === 'storage' && isCompact);
 
   const isCompactNetworkVisible = graphs?.some((g) => g.id === 'network' && isCompact);
+
+  const usePercentages = widget?.properties.usePercentages ?? false;
 
   const displayedGraphs = graphs?.filter(
     (g) => !isCompact || !['network', 'storage'].includes(g.id)
@@ -94,7 +113,9 @@ function DashDotTile({ widget }: DashDotTileProps) {
 
   return (
     <>
-      {heading}
+      <Title order={3} mb="xs">
+        {t('card.title')}
+      </Title>
       {!info && <p>{t('card.errors.noInformation')}</p>}
       {info && (
         <div className={classes.graphsContainer}>
@@ -109,6 +130,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
                 graph={graph}
                 dashDotUrl={dashDotUrl}
                 isCompact={isCompact}
+                usePercentages={usePercentages}
               />
             ))}
           </Group>
@@ -118,7 +140,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
   );
 }
 
-const useDashDotInfo = ({ dashDotUrl }: { dashDotUrl: string }) => {
+const useDashDotInfo = ({ dashDotUrl, enabled }: { dashDotUrl: string; enabled: boolean }) => {
   const { name: configName } = useConfigContext();
   return useQuery({
     refetchInterval: 50000,
@@ -130,6 +152,7 @@ const useDashDotInfo = ({ dashDotUrl }: { dashDotUrl: string }) => {
       },
     ],
     queryFn: () => fetchDashDotInfo(configName),
+    enabled,
   });
 };
 

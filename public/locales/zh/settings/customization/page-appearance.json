@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "页面标题"
+    "label": "页面标题",
+    "description": "左上角的仪表板标题"
   },
   "metaTitle": {
-    "label": "元标题"
+    "label": "元标题",
+    "description": "标题显示为您的标签名称"
   },
   "logo": {
-    "label": "徽标"
+    "label": "徽标",
+    "description": "左上角的仪表盘标志"
   },
   "favicon": {
-    "label": "网站图标"
+    "label": "网站图标",
+    "description": "在您的选项卡名称前面使用的图标"
   },
   "background": {
     "label": "背景"
   },
   "customCSS": {
     "label": "自定义CSS",
-    "placeholder": "自定义 CSS 将在最后应用"
+    "description": "自定义你的仪表板上的所有元素，只推荐给有经验的用户",
+    "placeholder": "自定义 CSS 将在最后应用",
+    "applying": "应用CSS..."
   },
   "buttons": {
     "submit": "提交"

@@ -120,7 +120,7 @@ export default function DockerTable({
   });
 
   return (
-    <ScrollArea style={{ height: '90vh' }} offsetScrollbars>
+    <ScrollArea style={{ height: '100%' }} offsetScrollbars>
       <TextInput
         placeholder={t('search.placeholder')}
         mr="md"

@@ -4,6 +4,9 @@
     "description": "Displayz calendar wif upcomin releasez, frum supportd integrations.",
     "settings": {
       "title": "Settings 4 Calendar Widget",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "Start teh week on Sunday"
       },

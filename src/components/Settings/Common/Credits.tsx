@@ -1,11 +1,13 @@
-import { Group, Anchor, Text } from '@mantine/core';
+import { Anchor, Box, Collapse, Flex, Table, Text } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
+import { usePackageAttributesStore } from '../../../tools/client/zustands/usePackageAttributesStore';
 
 export default function Credits() {
   const { t } = useTranslation('settings/common');
 
   return (
-    <Group position="center" mt="xs">
+    <Flex justify="center" direction="column" mt="xs">
       <Text
         style={{
           fontSize: '0.90rem',
@@ -22,6 +24,49 @@ export default function Credits() {
         </Anchor>{' '}
         and you!
       </Text>
-    </Group>
+      <DependencyTable />
+    </Flex>
   );
 }
+
+const DependencyTable = () => {
+  const { t } = useTranslation('settings/common');
+  const [opened, { toggle }] = useDisclosure(false);
+  const { attributes } = usePackageAttributesStore();
+  return (
+    <>
+      <Text variant="link" mx="auto" size="xs" opacity={0.3} onClick={toggle}>
+        {t('credits.thirdPartyContent')}
+      </Text>
+
+      <Collapse in={opened}>
+        <Box
+          sx={(theme) => ({
+            backgroundColor:
+              theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+            padding: theme.spacing.xl,
+            borderRadius: theme.radius.md,
+          })}
+          mt="md"
+        >
+          <Table>
+            <thead>
+              <tr>
+                <th>{t('credits.thirdPartyContentTable.dependencyName')}</th>
+                <th>{t('credits.thirdPartyContentTable.dependencyVersion')}</th>
+              </tr>
+            </thead>
+            {Object.keys(attributes.dependencies).map((key, index) => (
+              <tbody key={`dependency-${index}`}>
+                <tr>
+                  <td>{key}</td>
+                  <td>{attributes.dependencies[key]}</td>
+                </tr>
+              </tbody>
+            ))}
+          </Table>
+        </Box>
+      </Collapse>
+    </>
+  );
+};

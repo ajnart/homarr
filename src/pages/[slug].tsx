@@ -8,8 +8,8 @@ import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
 import { getFallbackConfig } from '../tools/config/getFallbackConfig';
 import { getFrontendConfig } from '../tools/config/getFrontendConfig';
-import { getServerSideTranslations } from '../tools/getServerSideTranslations';
-import { dashboardNamespaces } from '../tools/translation-namespaces';
+import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
+import { dashboardNamespaces } from '../tools/server/translation-namespaces';
 import { ConfigType } from '../types/config';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
 

@@ -9,11 +9,20 @@
     "configTip": "Upload din konfigurationsfil ved at trække og slippe den på siden!"
   },
   "credits": {
-    "madeWithLove": "Lavet med ❤️ af @"
+    "madeWithLove": "Lavet med ❤️ af @",
+    "thirdPartyContent": "Se indhold fra tredjepart",
+    "thirdPartyContentTable": {
+      "dependencyName": "Afhængighed",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Forøg gitteret (udnyt al pladsen)",
   "layout": {
-    "title": "Dashboard layout",
+    "preview": {
+      "title": "Forhåndsvisning",
+      "subtitle": "Ændringer vil blive gemt automatisk"
+    },
+    "divider": "Layout indstillinger",
     "main": "Primær",
     "sidebar": "Sidepanel",
     "cannotturnoff": "Kan ikke slås fra",

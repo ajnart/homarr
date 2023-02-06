@@ -3,7 +3,6 @@ import { useConfigStore } from '../../../../config/store';
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../../../types/app';
 import { CategoryType } from '../../../../types/category';
-import { ConfigType } from '../../../../types/config';
 import { WrapperType } from '../../../../types/wrapper';
 import { IWidget } from '../../../../widgets/widgets';
 import { CategoryEditModalInnerProps } from './CategoryEditModal';
@@ -200,7 +199,11 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return app.area.properties.id !== mainWrapperId;
+          if (app.area.properties.id === mainWrapperId) {
+            return false;
+          }
+
+          return app.area.properties.id === currentItem.id;
         };
 
         const isWidgetAffectedFilter = (widget: IWidget<string, any>): boolean => {
@@ -212,7 +215,11 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return widget.area.properties.id !== mainWrapperId;
+          if (widget.area.properties.id === mainWrapperId) {
+            return false;
+          }
+
+          return widget.area.properties.id === currentItem.id;
         };
 
         return {

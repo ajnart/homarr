@@ -2,6 +2,7 @@ import { createStyles, Group, MantineThemeColors, useMantineTheme } from '@manti
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
+import { i18n } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
@@ -15,6 +16,10 @@ const definition = defineWidget({
   id: 'calendar',
   icon: IconCalendarTime,
   options: {
+    useSonarrv4: {
+      type: 'switch',
+      defaultValue: false,
+    },
     sundayStart: {
       type: 'switch',
       defaultValue: false,
@@ -53,6 +58,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
 
   const { data: medias } = useQuery({
     queryKey: ['calendar/medias', { month: month.getMonth(), year: month.getFullYear() }],
+    staleTime: 1000 * 60 * 60 * 5,
     queryFn: async () =>
       (await (
         await fetch(
@@ -73,6 +79,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         style={{ position: 'relative', top: -15 }}
         onMonthChange={setMonth}
         size="xs"
+        locale={i18n?.resolvedLanguage ?? 'en'}
         fullWidth
         onChange={() => {}}
         firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}

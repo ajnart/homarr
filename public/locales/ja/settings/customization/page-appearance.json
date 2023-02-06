@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "ページタイトル"
+    "label": "ページタイトル",
+    "description": ""
   },
   "metaTitle": {
-    "label": "メタ・タイトル"
+    "label": "メタ・タイトル",
+    "description": ""
   },
   "logo": {
-    "label": "ロゴマーク"
+    "label": "ロゴマーク",
+    "description": ""
   },
   "favicon": {
-    "label": "ファビコン"
+    "label": "ファビコン",
+    "description": ""
   },
   "background": {
     "label": "背景"
   },
   "customCSS": {
     "label": "カスタムCSS",
-    "placeholder": "カスタムCSSは最後に適用されます"
+    "description": "",
+    "placeholder": "カスタムCSSは最後に適用されます",
+    "applying": ""
   },
   "buttons": {
     "submit": "提出"

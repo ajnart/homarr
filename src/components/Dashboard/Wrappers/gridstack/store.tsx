@@ -1,5 +1,7 @@
 import { useMantineTheme } from '@mantine/core';
 import create from 'zustand';
+import { useConfigContext } from '../../../../config/provider';
+import { GridstackBreakpoints } from '../../../../constants/gridstack-breakpoints';
 
 export const useGridstackStore = create<GridstackStoreType>((set, get) => ({
   mainAreaWidth: null,
@@ -27,18 +29,28 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 };
 
 export const useWrapperColumnCount = () => {
+  const { config } = useConfigContext();
+
+  if (!config) {
+    return null;
+  }
+
   switch (useNamedWrapperColumnCount()) {
     case 'large':
-      return 12;
+      return config.settings.customization.gridstack?.columnCountLarge ?? 12;
     case 'medium':
-      return 6;
+      return config.settings.customization.gridstack?.columnCountMedium ?? 6;
     case 'small':
-      return 3;
+      return config.settings.customization.gridstack?.columnCountSmall ?? 3;
     default:
       return null;
   }
 };
 
 function getCurrentShapeSize(size: number) {
-  return size >= 1400 ? 'lg' : size >= 768 ? 'md' : 'sm';
+  return size >= GridstackBreakpoints.large
+    ? 'lg'
+    : size >= GridstackBreakpoints.medium
+    ? 'md'
+    : 'sm';
 }

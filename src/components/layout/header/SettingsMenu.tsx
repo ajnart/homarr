@@ -2,7 +2,7 @@ import { Badge, Button, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { AboutModal } from '../../About/AboutModal';
+import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
 import { useCardStyles } from '../useCardStyles';
 import { ColorSchemeSwitch } from './SettingsMenu/ColorSchemeSwitch';

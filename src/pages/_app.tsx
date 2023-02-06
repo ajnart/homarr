@@ -8,7 +8,8 @@ import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -17,12 +18,22 @@ import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsE
 import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
-import '../styles/global.scss';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
 import { theme } from '../tools/theme';
+import {
+  getServiceSidePackageAttributes,
+  ServerSidePackageAttributesType,
+} from '../tools/server/getPackageVersion';
+import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 
-function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
+import '../styles/global.scss';
+import '@uiw/react-textarea-code-editor/dist.css';
+
+function App(
+  this: any,
+  props: AppProps & { colorScheme: ColorScheme; packageAttributes: ServerSidePackageAttributesType }
+) {
   const { Component, pageProps } = props;
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
@@ -45,6 +56,12 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
     getInitialValueInEffect: true,
   });
 
+  const { setInitialPackageAttributes } = usePackageAttributesStore();
+
+  useEffect(() => {
+    setInitialPackageAttributes(props.packageAttributes);
+  }, []);
+
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
@@ -53,7 +70,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   return (
     <>
       <Head>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
@@ -102,6 +119,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
             </MantineProvider>
           </ColorTheme.Provider>
         </ColorSchemeProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   );
@@ -109,6 +127,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
 
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie('color-scheme', ctx) || 'light',
+  packageAttributes: getServiceSidePackageAttributes(),
 });
 
 export default appWithTranslation(App);

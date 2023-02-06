@@ -1,7 +1,13 @@
 {
 	"description": "Homarr é um <strong>elegante</strong>, <strong>moderno</strong> painel de instrumentos que coloca todas as suas aplicações e serviços na ponta dos seus dedos. Com Homarr, pode aceder e controlar tudo num único local conveniente. Homarr integra-se perfeitamente com as aplicações que adicionou, fornecendo-lhe informações valiosas e dando-lhe um controlo completo. A instalação é uma brisa, e Homarr suporta uma vasta gama de métodos de implantação.",
-	"i18n": "Carregado I18n namespaces de tradução",
-	"locales": "Locales I18n configurados",
 	"contact": "Com problemas ou perguntas? Ligue-se a nós!",
-	"addToDashboard": "Adicionar ao Painel de instrumentos"
+	"addToDashboard": "Adicionar ao Painel de instrumentos",
+	"metrics": {
+		"configurationSchemaVersion": "",
+		"configurationsCount": "",
+		"version": "Versão",
+		"nodeEnvironment": "",
+		"i18n": "",
+		"locales": ""
+	}
 }

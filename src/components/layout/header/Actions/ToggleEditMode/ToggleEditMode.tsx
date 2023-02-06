@@ -4,6 +4,7 @@ import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
+import { useHotkeys } from '@mantine/hooks';
 import { hideNotification, showNotification } from '@mantine/notifications';
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
@@ -16,12 +17,17 @@ import { useCardStyles } from '../../../useCardStyles';
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
-  const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
-  const translatedSize = t(`screenSizes.${namedWrapperColumnCount}`);
+  const { t } = useTranslation(['layout/header/actions/toggle-edit-mode', 'common']);
+  const translatedSize =
+    namedWrapperColumnCount !== null
+      ? t(`common:breakPoints.${namedWrapperColumnCount}`)
+      : t('common:loading');
 
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
   const { classes } = useCardStyles(true);
+
+  useHotkeys([['ctrl+E', toggleEditMode]]);
 
   const toggleButtonClicked = () => {
     toggleEditMode();

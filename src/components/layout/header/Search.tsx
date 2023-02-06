@@ -20,6 +20,7 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { useConfigContext } from '../../../config/provider';
 import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
+import { ConfigType } from '../../../types/config';
 import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import Tip from '../Tip';
 import { useCardStyles } from '../useCardStyles';
@@ -137,9 +138,7 @@ export function Search() {
   const textInput = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => textInput.current?.focus()]]);
   const { classes } = useStyles();
-  const openInNewTab = config?.settings.common.searchEngine.properties.openInNewTab
-    ? '_blank'
-    : '_self';
+  const openTarget = getOpenTarget(config);
   const [opened, setOpened] = useState(false);
 
   const {
@@ -149,13 +148,14 @@ export function Search() {
   } = useQuery(
     ['overseerr', debounced],
     async () => {
-      if (debounced !== '' && selectedSearchEngine.value === 'overseerr' && debounced.length > 3) {
-        const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
-        return res.data.results ?? [];
-      }
-      return [];
+      const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
+      return res.data.results ?? [];
     },
     {
+      enabled:
+        isOverseerrEnabled === true &&
+        selectedSearchEngine.value === 'overseerr' &&
+        debounced.length > 3,
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchInterval: false,
@@ -166,12 +166,16 @@ export function Search() {
   if (!isModuleEnabled) {
     return null;
   }
+
   //TODO: Fix the bug where clicking anything inside the Modal to ask for a movie
   // will close it (Because it closes the underlying Popover)
   return (
     <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
-        opened={OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3}
+        opened={
+          (OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3) ??
+          false
+        }
         position="bottom"
         withinPortal
         shadow="md"
@@ -194,7 +198,7 @@ export function Search() {
               setOpened(false);
               if (item.url) {
                 setSearchQuery('');
-                window.open(item.openedUrl ? item.openedUrl : item.url, openInNewTab);
+                window.open(item.openedUrl ? item.openedUrl : item.url, openTarget);
               }
             }}
             // Replace %s if it is in selectedSearchEngine.url with searchQuery, otherwise append searchQuery at the end of it
@@ -205,9 +209,9 @@ export function Search() {
                 autocompleteData.length === 0
               ) {
                 if (selectedSearchEngine.url.includes('%s')) {
-                  window.open(selectedSearchEngine.url.replace('%s', searchQuery), openInNewTab);
+                  window.open(selectedSearchEngine.url.replace('%s', searchQuery), openTarget);
                 } else {
-                  window.open(selectedSearchEngine.url + searchQuery, openInNewTab);
+                  window.open(selectedSearchEngine.url + searchQuery, openTarget);
                 }
               }
             }}
@@ -220,14 +224,15 @@ export function Search() {
         </Popover.Target>
         <Popover.Dropdown>
           <ScrollArea style={{ height: '80vh', maxWidth: '90vw' }} offsetScrollbars>
-            {OverseerrResults && OverseerrResults.slice(0, 4).map((result: any, index: number) => (
-              <React.Fragment key={index}>
-                <OverseerrMediaDisplay key={result.id} media={result} />
-                {index < OverseerrResults.length - 1 && index < 3 && (
-                  <Divider variant="dashed" my="xs" />
-                )}
-              </React.Fragment>
-            ))}
+            {OverseerrResults &&
+              OverseerrResults.slice(0, 4).map((result: any, index: number) => (
+                <React.Fragment key={index}>
+                  <OverseerrMediaDisplay key={result.id} media={result} />
+                  {index < OverseerrResults.length - 1 && index < 3 && (
+                    <Divider variant="dashed" my="xs" />
+                  )}
+                </React.Fragment>
+              ))}
           </ScrollArea>
         </Popover.Dropdown>
       </Popover>
@@ -299,3 +304,11 @@ export function Search() {
     });
   }
 }
+
+const getOpenTarget = (config: ConfigType | undefined): '_blank' | '_self' => {
+  if (!config || config.settings.common.searchEngine.properties.openInNewTab === undefined) {
+    return '_blank';
+  }
+
+  return config.settings.common.searchEngine.properties.openInNewTab ? '_blank' : '_self';
+};

@@ -4,21 +4,17 @@ import { ChangeEventHandler, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
-interface LogoImageChangerProps {
-  defaultValue: string | undefined;
-}
-
-export const LogoImageChanger = ({ defaultValue }: LogoImageChangerProps) => {
+export const LogoImageChanger = () => {
   const { t } = useTranslation('settings/customization/page-appearance');
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { name: configName } = useConfigContext();
-  const [logoImageSrc, setLogoImageSrc] = useState(defaultValue);
+  const { config, name: configName } = useConfigContext();
+  const [logoImageSrc, setLogoImageSrc] = useState(config?.settings.customization.logoImageUrl ?? '/imgs/logo/logo.png');
 
   if (!configName) return null;
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (ev) => {
     const { value } = ev.currentTarget;
-    const logoImageSrc = value.trim().length === 0 ? undefined : value;
+    const logoImageSrc = value.trim();
     setLogoImageSrc(logoImageSrc);
     updateConfig(configName, (prev) => ({
       ...prev,
@@ -35,9 +31,11 @@ export const LogoImageChanger = ({ defaultValue }: LogoImageChangerProps) => {
   return (
     <TextInput
       label={t('logo.label')}
+      description={t('logo.description')}
       placeholder="/imgs/logo/logo.png"
       value={logoImageSrc}
       onChange={handleChange}
+      mb="sm"
     />
   );
 };

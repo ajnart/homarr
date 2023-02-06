@@ -1,12 +1,12 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
+import WidgetsDefinitions from '../../../../widgets';
 import { IWidget } from '../../../../widgets/widgets';
 import { useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { GenericTileMenu } from '../GenericTileMenu';
 import { WidgetEditModalInnerProps } from './WidgetsEditModal';
 import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
-import WidgetsDefinitions from '../../../../widgets';
 
 export type WidgetChangePositionModalInnerProps = {
   widgetId: string;
@@ -40,6 +40,12 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       innerProps: {
         widgetId: integration,
       },
+      styles: {
+        inner: {
+          position: 'sticky',
+          top: 30,
+        },
+      },
     });
   };
 
@@ -52,6 +58,12 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
         widgetId: integration,
         widget,
         wrapperColumnCount,
+      },
+      styles: {
+        inner: {
+          position: 'sticky',
+          top: 30,
+        },
       },
     });
   };
@@ -67,6 +79,12 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
         widgetOptions: widgetDefinitionObject.options as any,
       },
       zIndex: 5,
+      styles: {
+        inner: {
+          position: 'sticky',
+          top: 30,
+        },
+      },
     });
   };
 
@@ -76,7 +94,8 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       handleClickChangePosition={handleChangeSizeClick}
       handleClickDelete={handleDeleteClick}
       displayEdit={
-        typeof widget.properties !== 'undefined' && Object.keys(widget.properties).length !== 0
+        typeof widget.properties !== 'undefined' &&
+        Object.keys(widgetDefinitionObject?.options ?? {}).length !== 0
       }
     />
   );

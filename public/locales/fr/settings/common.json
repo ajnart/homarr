@@ -9,11 +9,20 @@
     "configTip": "Importer votre fichier de configuration en le faisant glisser et en le déposant sur la page !"
   },
   "credits": {
-    "madeWithLove": "Fait avec ❤️ par @"
+    "madeWithLove": "Fait avec ❤️ par @",
+    "thirdPartyContent": "Voir le contenu tiers",
+    "thirdPartyContentTable": {
+      "dependencyName": "Dépendance",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Grille progressive (prend toute la largeur)",
   "layout": {
-    "title": "Disposition du tableau de bord",
+    "preview": {
+      "title": "Aperçu",
+      "subtitle": "Les changements seront sauvegarder automatiquement"
+    },
+    "divider": "Option de mise en page",
     "main": "Principal",
     "sidebar": "Barre latérale",
     "cannotturnoff": "Ne peut être désactivé",

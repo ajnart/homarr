@@ -24,5 +24,11 @@
     "seconds": "sekunder",
     "minutes": "minutter",
     "hours": "timer"
+  },
+  "loading": "Indlæser...",
+  "breakPoints": {
+    "small": "lille",
+    "medium": "mellem",
+    "large": "stor"
   }
 }

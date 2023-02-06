@@ -4,6 +4,9 @@
     "description": "Mostra un calendario con le prossime versioni dalle integrazioni supportate.",
     "settings": {
       "title": "Impostazioni per il widget Calendario",
+      "useSonarrv4": {
+        "label": "Usa le API di Sonarr v4"
+      },
       "sundayStart": {
         "label": "Inizia la settimana di domenica"
       },

@@ -1,4 +1,5 @@
 import { createStyles, Divider, ScrollArea } from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
 import React from 'react';
 import {
   LidarrMediaDisplay,
@@ -14,12 +15,12 @@ interface MediaListProps {
 
 export const MediaList = ({ medias }: MediaListProps) => {
   const { classes } = useStyles();
+  const { height } = useViewportSize();
   const lastMediaType = getLastMediaType(medias);
 
   return (
     <ScrollArea
       offsetScrollbars
-      scrollbarSize={5}
       pt={5}
       className={classes.scrollArea}
       styles={{
