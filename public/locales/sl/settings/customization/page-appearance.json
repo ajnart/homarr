@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Naslov strani"
+    "label": "Naslov strani",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Meta naslov"
+    "label": "Meta naslov",
+    "description": ""
   },
   "logo": {
-    "label": "Logotip"
+    "label": "Logotip",
+    "description": ""
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": ""
   },
   "background": {
     "label": "Ozadje"
   },
   "customCSS": {
     "label": "Po meri CSS",
-    "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji"
+    "description": "",
+    "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji",
+    "applying": ""
   },
   "buttons": {
     "submit": "Pošlji"

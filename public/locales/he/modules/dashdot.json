@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "כתובת אתר Dash."
+      },
+      "usePercentages": {
+        "label": "הצג אחוזים"
       }
     }
   },

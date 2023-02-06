@@ -4,6 +4,9 @@
     "description": "サポートされている統合製品から、今後のリリースをカレンダーで表示します。",
     "settings": {
       "title": "カレンダーウィジェットの設定",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "週の始まりは日曜日"
       },

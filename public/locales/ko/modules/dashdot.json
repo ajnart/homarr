@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "Dash. 주소"
+      },
+      "usePercentages": {
+        "label": ""
       }
     }
   },

@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Titre de la page"
+    "label": "Titre de la page",
+    "description": "Le titre du tableau de bord en haut à gauche"
   },
   "metaTitle": {
-    "label": "Titre Méta"
+    "label": "Titre Méta",
+    "description": "Le titre qui est affiché comme nom d'onglet"
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": "Le logo du tableau de bord en haut à gauche"
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": "L'icône qui est utilisé devant le nom de votre onglet"
   },
   "background": {
     "label": "Contexte"
   },
   "customCSS": {
     "label": "CSS personnalisé",
-    "placeholder": "Le CSS personnalisé sera appliqué en dernier"
+    "description": "Personnaliser tous les éléments du tableau de bord, recommandé seulement pour les utilisateurs expérimentés",
+    "placeholder": "Le CSS personnalisé sera appliqué en dernier",
+    "applying": "Appliquation du CSS..."
   },
   "buttons": {
     "submit": "Soumettre"

@@ -1,0 +1,21 @@
+{
+  "text": "Anpassungen ermöglichen es Ihnen, Ihre Homarr Umgebung nach Ihren Wünschen anzupassen und zu konfigurieren.",
+  "accordeon": {
+    "layout": {
+      "name": "Ansicht",
+      "description": "Aktivieren und Deaktivieren von Elementen in der Kopfzeile und der Dashboard-Kacheln"
+    },
+    "gridstack": {
+      "name": "Gridstack",
+      "description": "Passen Sie das Verhalten und die Spalten Ihres Dashboard-Bereichs an"
+    },
+    "pageMetadata": {
+      "name": "Seiten Metadaten",
+      "description": "Titel, Logo und PWA anpassen"
+    },
+    "appereance": {
+      "name": "Erscheinungsbild",
+      "description": "Anpassen des Hintergrunds, der Farben und des Erscheinungsbilds der Anwendung"
+    }
+  }
+}

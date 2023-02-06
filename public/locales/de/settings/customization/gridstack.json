@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Spalten in {{size}} Größe",
+    "descriptionPreset": "Anzahl der Spalten, wenn der Bildschirm weniger als {{pixels}} Pixel breit ist",
+    "descriptionExceedsPreset": "Anzahl der Spalten, wenn die Bildschirmgröße {{pixels}} Pixel überschreitet"
+  },
+  "unsavedChanges": "Sie haben nicht gespeicherte Änderungen. Klicken Sie unten auf die Schaltfläche 'Änderungen übernehmen', um sie zu übernehmen und zu speichern.",
+  "applyChanges": "Änderungen übernehmen",
+  "defaultValues": "Standardwerte"
+}

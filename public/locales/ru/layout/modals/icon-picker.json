@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "Начните искать...",
+    "searchLimitationTitle": "Ограничение до 30 результатов",
+    "searchLimitationMessage": "Результаты поиска были ограничены до 30 из-за слишком большого количества совпадений"
   }
 }

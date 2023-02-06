@@ -9,11 +9,20 @@
     "configTip": "Загрузите файл конфигурации, перетащив его на страницу!"
   },
   "credits": {
-    "madeWithLove": "Сделано с ❤️ от @"
+    "madeWithLove": "Сделано с ❤️ от @",
+    "thirdPartyContent": "Просмотреть сторонний контент",
+    "thirdPartyContentTable": {
+      "dependencyName": "Зависимости",
+      "dependencyVersion": "Версия"
+    }
   },
   "grow": "Увеличение сетки (занимает все пространство)",
   "layout": {
-    "title": "Макет панели",
+    "preview": {
+      "title": "Предпросмотр",
+      "subtitle": "Изменения будут сохранены автоматически"
+    },
+    "divider": "",
     "main": "Главная",
     "sidebar": "Боковая панель",
     "cannotturnoff": "Невозможно отключить",

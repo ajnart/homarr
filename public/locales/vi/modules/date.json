@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Ngày giờ",
+    "description": "Hiện thị ngày giờ hiện tại.",
     "settings": {
-      "title": "",
+      "title": "Cài đặt cho tiện ích ngày giờ",
       "display24HourFormat": {
         "label": "Dùng thời gian 24 giờ"
       }

@@ -9,11 +9,20 @@
     "configTip": "Ladda upp din konfigurationsfil genom att dra och släppa den på sidan!"
   },
   "credits": {
-    "madeWithLove": "Gjort med ❤️ av @"
+    "madeWithLove": "Gjort med ❤️ av @",
+    "thirdPartyContent": "Se innehåll från tredje part",
+    "thirdPartyContentTable": {
+      "dependencyName": "Beroenden",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Växande rutnät (ta allt utrymme)",
   "layout": {
-    "title": "Instrumentpanelslayout",
+    "preview": {
+      "title": "Förhandsvisa",
+      "subtitle": "Ändringarna sparas automatiskt"
+    },
+    "divider": "Alternativ för layout",
     "main": "Allmänt",
     "sidebar": "Sidopanel",
     "cannotturnoff": "Kan inte inaktiveras",

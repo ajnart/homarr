@@ -1,0 +1,21 @@
+{
+  "text": "Anpassningar gör att du kan konfigurera och justera din upplevelse med Homarr efter dina önskemål.",
+  "accordeon": {
+    "layout": {
+      "name": "Layout",
+      "description": "Aktivera och inaktivera element i sidhuvudet och instrumentbrädan"
+    },
+    "gridstack": {
+      "name": "Gridstack",
+      "description": "Anpassa beteendet och kolumnerna i din instrumentpanel"
+    },
+    "pageMetadata": {
+      "name": "Sidans metadata",
+      "description": "Justera titlar, logotyp och PWA"
+    },
+    "appereance": {
+      "name": "Utseende",
+      "description": "Anpassa bakgrunden, färgerna och apparnas utseende"
+    }
+  }
+}

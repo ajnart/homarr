@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "Tìm kiếm...",
+    "searchLimitationTitle": "Giới hạn tới 30 kết quả",
+    "searchLimitationMessage": "Kết quả tìm kiếm được giới hạn tới 30 vì có quá nhiều kết quả"
   }
 }

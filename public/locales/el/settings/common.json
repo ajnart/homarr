@@ -9,11 +9,20 @@
     "configTip": "Ανεβάστε το αρχείο ρυθμίσεών σας σύροντάς το στη σελίδα!"
   },
   "credits": {
-    "madeWithLove": "Φτιαγμένο με ❤️ από @"
+    "madeWithLove": "Φτιαγμένο με ❤️ από @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Έκδοση"
+    }
   },
   "grow": "Πλέγμα ανάπτυξης (παίρνει όλο το χώρο)",
   "layout": {
-    "title": "Διάταξη ταμπλό",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Κύριο",
     "sidebar": "Πλαϊνή μπάρα",
     "cannotturnoff": "Δεν μπορεί να απενεργοποιηθεί",

@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Заголовок сторінки"
+    "label": "Заголовок сторінки",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Мета-заголовок"
+    "label": "Мета-заголовок",
+    "description": ""
   },
   "logo": {
-    "label": "Логотип"
+    "label": "Логотип",
+    "description": ""
   },
   "favicon": {
-    "label": "Іконка"
+    "label": "Іконка",
+    "description": ""
   },
   "background": {
     "label": "Фон"
   },
   "customCSS": {
     "label": "Власний CSS",
-    "placeholder": "Власний CSS буде оброблятися в останню чергу"
+    "description": "",
+    "placeholder": "Власний CSS буде оброблятися в останню чергу",
+    "applying": ""
   },
   "buttons": {
     "submit": "Надіслати"

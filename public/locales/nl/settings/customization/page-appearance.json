@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Paginatitel"
+    "label": "Paginatitel",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Meta Titel"
+    "label": "Meta Titel",
+    "description": ""
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": ""
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": ""
   },
   "background": {
     "label": "Achtergrond"
   },
   "customCSS": {
     "label": "Eigen CSS",
-    "placeholder": "Eigen CSS wordt als laatste toegepast"
+    "description": "",
+    "placeholder": "Eigen CSS wordt als laatste toegepast",
+    "applying": ""
   },
   "buttons": {
     "submit": "Indienen"

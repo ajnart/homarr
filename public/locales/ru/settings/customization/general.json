@@ -1,0 +1,21 @@
+{
+  "text": "",
+  "accordeon": {
+    "layout": {
+      "name": "",
+      "description": ""
+    },
+    "gridstack": {
+      "name": "",
+      "description": ""
+    },
+    "pageMetadata": {
+      "name": "Метаданные страницы",
+      "description": ""
+    },
+    "appereance": {
+      "name": "",
+      "description": ""
+    }
+  }
+}

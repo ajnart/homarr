@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Seiten Titel"
+    "label": "Seiten Titel",
+    "description": "Der Titel des Dashboards oben links"
   },
   "metaTitle": {
-    "label": "Meta Titel"
+    "label": "Meta Titel",
+    "description": "Der Titel, der als Tab-Name angezeigt wird"
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": "Der Logo des Dashboards oben links"
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": "Das Symbol, das vor dem Namen Ihres Tabs verwendet wird"
   },
   "background": {
     "label": "Hintergrund"
   },
   "customCSS": {
     "label": "Benutzerdefiniertes CSS",
-    "placeholder": "Benutzerdefiniertes CSS wird zuletzt angewendet"
+    "description": "Anpassen aller Elemente auf Ihrem Dashboard, nur für erfahrene Benutzer empfohlen",
+    "placeholder": "Benutzerdefiniertes CSS wird zuletzt angewendet",
+    "applying": "CSS wird übernommen..."
   },
   "buttons": {
     "submit": "Absenden"

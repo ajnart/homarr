@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "Sök efter något...",
+    "searchLimitationTitle": "Begränsat till 30 resultat",
+    "searchLimitationMessage": "Sökresultaten begränsades till 30 eftersom det fanns för många träffar"
   }
 }

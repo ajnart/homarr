@@ -1,0 +1,21 @@
+{
+  "text": "Le personalizzazioni consentono di configurare e adattare l'esperienza con Homarr a piacimento.",
+  "accordeon": {
+    "layout": {
+      "name": "Layout",
+      "description": "Abilita e disabilita gli elementi dell'intestazione e dei riquadri della dashboard"
+    },
+    "gridstack": {
+      "name": "Gridstack",
+      "description": "Personalizza il comportamento e le colonne dell'area della dashboard"
+    },
+    "pageMetadata": {
+      "name": "Metadati della pagina",
+      "description": "Regola titoli, logo e PWA"
+    },
+    "appereance": {
+      "name": "Aspetto",
+      "description": "Personalizza lo sfondo, i colori e l'aspetto delle app"
+    }
+  }
+}
