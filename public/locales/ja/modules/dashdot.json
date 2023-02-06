@@ -28,7 +28,11 @@
     "title": "ダッシュ",
     "errors": {
       "noService": "Dash.サービスが見当たりません。HOMARダッシュボードに追加するか、モジュールオプションでDash.サービスを設定してください。のURLをモジュールオプションで設定してください。",
-      "noInformation": "dashから情報を取得できません。- は最新版ですか？"
+      "noInformation": "dashから情報を取得できません。- は最新版ですか？",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
