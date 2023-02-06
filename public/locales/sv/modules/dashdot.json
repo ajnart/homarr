@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Ingen Dash-tjänst hittades. Lägg till en i din Homarr-instrumentpanel eller ange en Dash. URL i modulalternativen.",
-      "noInformation": "Kan inte få information från dash. - Kör du den senaste versionen?"
+      "noInformation": "Kan inte få information från dash. - Kör du den senaste versionen?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
