@@ -22,7 +22,7 @@
     "label": "CSS personnalisé",
     "description": "Personnaliser tous les éléments du tableau de bord, recommandé seulement pour les utilisateurs expérimentés",
     "placeholder": "Le CSS personnalisé sera appliqué en dernier",
-    "applying": "Appliquation du CSS..."
+    "applying": "Application du code CSS..."
   },
   "buttons": {
     "submit": "Soumettre"
