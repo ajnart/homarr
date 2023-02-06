@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Nessun servizio Dash. trovato. Aggiungine uno alla dashboard di Homarr o imposta un URL nelle impostazioni del modulo",
-      "noInformation": "Impossibile reperire informazioni da dash. - è in esecuzione l'ultima versione?"
+      "noInformation": "Impossibile reperire informazioni da dash. - è in esecuzione l'ultima versione?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
