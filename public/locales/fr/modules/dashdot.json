@@ -30,8 +30,8 @@
       "noService": "Aucun service Dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir l'URL du service Dash. dans les options du module",
       "noInformation": "Impossible d'acquérir des informations de Dash. - Utilisez-vous la dernière version ?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Protocole rétrograde détecté (HTTP)",
+        "text": "Le protocole vers votre instance de Dash. n'est pas en mode sécurisé. Ceci est considéré comme étant un risque de sécurité, puisque HTTP ne supporte pas l'encryption, et des attaquants pourraient en abuser. Assurez-vous que Dash. fonctionne en mode HTTPS, ou retirez le mode HTTPS de Homarr (pas recommandé)."
       }
     },
     "graphs": {
