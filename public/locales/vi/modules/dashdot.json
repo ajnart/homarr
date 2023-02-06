@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Dịch vụ Dash. không được tìm thấy. Vui lòng thêm nó vào bảng Homarr của bạn hoặc thiết lập một đường dẫn Dash. trong tuỳ chọn của mô-đun",
-      "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?"
+      "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
