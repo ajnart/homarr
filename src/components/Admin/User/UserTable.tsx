@@ -11,10 +11,11 @@ import {
 } from '@mantine/core';
 import { User } from '@prisma/client';
 import { IconArchive, IconArchiveOff, IconKey, IconShield, IconTrash } from '@tabler/icons';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import { z } from 'zod';
+import { queryClient } from '../../../tools/queryClient';
 import { userFilterSchema } from '../../../validation/user';
 
 type UserTableProps = UseUsersQueryInput;
@@ -82,64 +83,101 @@ interface UserTableRowProps {
   user: UseUsersQueryResponse[number];
 }
 
-const UserTableRow = ({ user }: UserTableRowProps) => (
-  <tr key={user.id}>
-    <td>
-      <Group spacing="sm">
-        <Avatar size={40} radius={40}>
-          {user.username?.slice(0, 2).toUpperCase()}
-        </Avatar>
-        <div>
-          <Text size="sm" weight={500}>
-            {user.username}
-          </Text>
-        </div>
-      </Group>
-    </td>
+const UserTableRow = ({ user }: UserTableRowProps) => {
+  const { mutateAsync: archiveAsync } = useArchiveUserMutation();
+  const { mutateAsync: enableAsync } = useEnableUserMutation();
 
-    <td>{user.role === 'admin' ? 'Admin' : 'User'}</td>
-    <td>{dayjs(user.lastActiveAt).fromNow()}</td>
-    <td>
-      {user.isEnabled ? (
-        <Badge fullWidth color="green">
-          Enabled
-        </Badge>
-      ) : (
-        <Badge color="red" fullWidth>
-          Archived
-        </Badge>
-      )}
-    </td>
-    <td>
-      <Group>
+  return (
+    <tr key={user.id}>
+      <td>
+        <Group spacing="sm">
+          <Avatar size={40} radius={40}>
+            {user.username?.slice(0, 2).toUpperCase()}
+          </Avatar>
+          <div>
+            <Text size="sm" weight={500}>
+              {user.username}
+            </Text>
+          </div>
+        </Group>
+      </td>
+
+      <td>{user.role === 'admin' ? 'Admin' : 'User'}</td>
+      <td>{dayjs(user.lastActiveAt).fromNow()}</td>
+      <td>
         {user.isEnabled ? (
-          <>
-            <ActionIcon>
-              <IconKey size={16} />
-            </ActionIcon>
-            <ActionIcon>
-              <IconShield size={16} />
-            </ActionIcon>
-            <ActionIcon>
-              <IconArchive color="red" size={16} />
-            </ActionIcon>
-          </>
+          <Badge fullWidth color="green">
+            Enabled
+          </Badge>
         ) : (
-          <>
-            <ActionIcon>
-              <IconArchiveOff size={16} />
-            </ActionIcon>
-            <ActionIcon>
-              <IconShield size={16} />
-            </ActionIcon>
-            <ActionIcon>
-              <IconTrash color="red" size={16} />
-            </ActionIcon>
-          </>
+          <Badge color="red" fullWidth>
+            Archived
+          </Badge>
         )}
-      </Group>
-    </td>
-  </tr>
-);
+      </td>
+      <td>
+        <Group>
+          {user.isEnabled ? (
+            <>
+              <ActionIcon>
+                <IconKey size={16} />
+              </ActionIcon>
+              <ActionIcon>
+                <IconShield size={16} />
+              </ActionIcon>
+              <ActionIcon onClick={() => archiveAsync(user.id)}>
+                <IconArchive color="red" size={16} />
+              </ActionIcon>
+            </>
+          ) : (
+            <>
+              <ActionIcon onClick={() => enableAsync(user.id)}>
+                <IconArchiveOff size={16} />
+              </ActionIcon>
+              <ActionIcon>
+                <IconShield size={16} />
+              </ActionIcon>
+              <ActionIcon>
+                <IconTrash color="red" size={16} />
+              </ActionIcon>
+            </>
+          )}
+        </Group>
+      </td>
+    </tr>
+  );
+};
+
+const useArchiveUserMutation = () =>
+  useMutation({
+    mutationKey: ['user/archive'],
+    mutationFn: async (id: string) => {
+      const result = await axios.post(`/api/users/${id}/archive`);
+      return result.data;
+    },
+    onSuccess() {
+      // TODO: add showNotification
+      queryClient.invalidateQueries(['users']);
+    },
+    onError() {
+      // TODO: add showNotification
+    },
+  });
+
+const useEnableUserMutation = () =>
+  useMutation({
+    mutationKey: ['user/enable'],
+    mutationFn: async (id: string) => {
+      const result = await axios.post(`/api/users/${id}/enable`);
+      return result.data;
+    },
+    onSuccess() {
+      // TODO: add showNotification
+      queryClient.invalidateQueries(['users']);
+    },
+    onError() {
+      // TODO: add showNotification
+    },
+  });
 
 export type UserFilterType = z.infer<typeof userFilterSchema>;
