@@ -1,4 +1,4 @@
-import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
+import { NextFetchEvent, NextRequest } from 'next/server';
 
 // eslint-disable-next-line consistent-return
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
