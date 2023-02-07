@@ -4,6 +4,9 @@
     "description": "Wyświetla kalendarz z nadchodzącymi wydaniami, z obsługiwanych integracji.",
     "settings": {
       "title": "Ustawienia dla widżetu Kalendarz",
+      "useSonarrv4": {
+        "label": ""
+      },
       "sundayStart": {
         "label": "Rozpoczynaj tydzień od niedzieli"
       },

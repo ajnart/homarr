@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "URL Dash."
+      },
+      "usePercentages": {
+        "label": "Afficher les pourcentages"
       }
     }
   },

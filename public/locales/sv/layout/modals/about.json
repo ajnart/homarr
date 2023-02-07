@@ -1,7 +1,13 @@
 {
 	"description": "Homarr är en <strong>stilren</strong>, <strong>modern</strong> instrumentpanel som ger dig tillgång till alla dina appar och tjänster. Med Homarr kan du få tillgång till och kontrollera allt på ett bekvämt ställe. Homarr integreras sömlöst med de appar du har lagt till, vilket ger dig värdefull information och ger dig fullständig kontroll. Installationen är enkel och Homarr stöder ett stort antal installationsmetoder.",
-	"i18n": "Laddade namnområden för I18n-översättningar",
-	"locales": "Konfigurerade I18n lokalspråk",
 	"contact": "Har du problem eller frågor? Kontakta oss!",
-	"addToDashboard": "Lägg till på instrumentpanel"
+	"addToDashboard": "Lägg till på instrumentpanel",
+	"metrics": {
+		"configurationSchemaVersion": "Version av konfigurationsschemat",
+		"configurationsCount": "Tillgängliga konfigurationer",
+		"version": "Version",
+		"nodeEnvironment": "Nod miljö",
+		"i18n": "Laddade namnområden för I18n-översättningar",
+		"locales": "Konfigurerade I18n lokalspråk"
+	}
 }

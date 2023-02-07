@@ -9,11 +9,20 @@
     "configTip": ""
   },
   "credits": {
-    "madeWithLove": "Made with ❤️ by @"
+    "madeWithLove": "Made with ❤️ by @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": ""
+    }
   },
   "grow": "",
   "layout": {
-    "title": "",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "",
     "sidebar": "",
     "cannotturnoff": "",

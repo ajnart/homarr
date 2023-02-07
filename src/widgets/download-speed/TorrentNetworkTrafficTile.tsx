@@ -3,7 +3,6 @@ import {
   Box,
   Card,
   Group,
-  Indicator,
   Stack,
   Text,
   Title,
@@ -41,7 +40,7 @@ const definition = defineWidget({
   component: TorrentNetworkTrafficTile,
 });
 
-export type ITorrentNetworkTraffic = IWidget<typeof definition['id'], typeof definition>;
+export type ITorrentNetworkTraffic = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface TorrentNetworkTrafficTileProps {
   widget: ITorrentNetworkTraffic;

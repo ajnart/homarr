@@ -9,11 +9,20 @@
     "configTip": ""
   },
   "credits": {
-    "madeWithLove": "From @ with ❤️"
+    "madeWithLove": "From @ with ❤️",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": ""
+    }
   },
   "grow": "Khung giãn (chiếm toàn bộ không gian)",
   "layout": {
-    "title": "",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "",
     "sidebar": "",
     "cannotturnoff": "",

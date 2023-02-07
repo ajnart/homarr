@@ -2,20 +2,26 @@ import { Deluge } from '@ctrl/deluge';
 import { QBittorrent } from '@ctrl/qbittorrent';
 import { Transmission } from '@ctrl/transmission';
 import { AllClientData } from '@ctrl/shared-torrent';
+
 import Consola from 'consola';
+
 import { getCookie } from 'cookies-next';
+
 import dayjs from 'dayjs';
+
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import { Client } from 'sabnzbd-api';
+
+import { NzbgetClient } from '../usenet/nzbget/nzbget-client';
+import { NzbgetQueueItem, NzbgetStatus } from '../usenet/nzbget/types';
+import { ConfigAppType, IntegrationField } from '../../../../types/app';
 import { getConfig } from '../../../../tools/config/getConfig';
+import { UsenetQueueItem } from '../../../../widgets/useNet/types';
 import {
   NormalizedDownloadAppStat,
   NormalizedDownloadQueueResponse,
 } from '../../../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { ConfigAppType, IntegrationField } from '../../../../types/app';
-import { UsenetQueueItem } from '../../../../widgets/useNet/types';
-import { NzbgetClient } from '../usenet/nzbget/nzbget-client';
-import { NzbgetQueueItem, NzbgetStatus } from '../usenet/nzbget/types';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
@@ -71,10 +77,10 @@ const GetDataFromClient = async (
     torrents: data.torrents,
     totalDownload: data.torrents
       .map((torrent) => torrent.downloadSpeed)
-      .reduce((acc, torrent) => acc + torrent),
+      .reduce((acc, torrent) => acc + torrent, 0),
     totalUpload: data.torrents
       .map((torrent) => torrent.uploadSpeed)
-      .reduce((acc, torrent) => acc + torrent),
+      .reduce((acc, torrent) => acc + torrent, 0),
   });
 
   const findField = (app: ConfigAppType, field: IntegrationField) =>

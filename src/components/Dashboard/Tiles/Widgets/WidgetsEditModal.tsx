@@ -37,7 +37,6 @@ export const WidgetsEditModal = ({
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
   const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
-  // const items = Object.entries(moduleProperties ?? {}) as [string, IntegrationOptionsValueType][];
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
     string,
     IntegrationOptionsValueType

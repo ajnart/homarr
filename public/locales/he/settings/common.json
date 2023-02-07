@@ -9,11 +9,20 @@
     "configTip": "העלה את קובץ התצורה שלך על ידי גרירה ושחרור שלו אל הדף!"
   },
   "credits": {
-    "madeWithLove": "נעשה ב- ❤️ ע״י @"
+    "madeWithLove": "נעשה ב- ❤️ ע״י @",
+    "thirdPartyContent": "ראה תוכן של צד שלישי",
+    "thirdPartyContentTable": {
+      "dependencyName": "תלות",
+      "dependencyVersion": "גרסה"
+    }
   },
   "grow": "הגדלת אריחים (תופס את כל השטח)",
   "layout": {
-    "title": "פריסת לוח מחוונים",
+    "preview": {
+      "title": "תצוגה מקדימה",
+      "subtitle": "השינוים יישמרו באופן אוטומאטי"
+    },
+    "divider": "אפשרויות סידור",
     "main": "ראשי",
     "sidebar": "סרגל צד",
     "cannotturnoff": "לא ניתן להסרה",

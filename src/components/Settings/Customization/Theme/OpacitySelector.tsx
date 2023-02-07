@@ -4,15 +4,11 @@ import { useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
-interface OpacitySelectorProps {
-  defaultValue: number | undefined;
-}
-
-export function OpacitySelector({ defaultValue }: OpacitySelectorProps) {
-  const [opacity, setOpacity] = useState(defaultValue || 100);
+export function DashboardTilesOpacitySelector() {
+  const { config, name: configName } = useConfigContext();
+  const [opacity, setOpacity] = useState(config?.settings.customization.appOpacity || 100);
   const { t } = useTranslation('settings/customization/opacity-selector');
 
-  const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
   if (!configName) return null;

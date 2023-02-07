@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "URL do Dash."
+      },
+      "usePercentages": {
+        "label": ""
       }
     }
   },

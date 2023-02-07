@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Tytuł strony"
+    "label": "Tytuł strony",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Meta Title"
+    "label": "Meta Title",
+    "description": ""
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": ""
   },
   "favicon": {
-    "label": "Ikona"
+    "label": "Ikona",
+    "description": ""
   },
   "background": {
     "label": "Tło"
   },
   "customCSS": {
     "label": "Niestandardowy CSS",
-    "placeholder": "Custom CSS zostanie zastosowany jako ostatni"
+    "description": "",
+    "placeholder": "Custom CSS zostanie zastosowany jako ostatni",
+    "applying": ""
   },
   "buttons": {
     "submit": "Zgłoś"

@@ -9,11 +9,20 @@
     "configTip": "Konfiguracijsko datoteko naložite tako, da jo povlečete in spustite na stran!"
   },
   "credits": {
-    "madeWithLove": "Narejeno s ❤️ od @"
+    "madeWithLove": "Narejeno s ❤️ od @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Različica"
+    }
   },
   "grow": "Rastoča mreža (zavzema ves prostor)",
   "layout": {
-    "title": "Postavitev nadzorne plošče",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Glavno",
     "sidebar": "Stranska vrstica",
     "cannotturnoff": "Ni mogoče izklopiti",

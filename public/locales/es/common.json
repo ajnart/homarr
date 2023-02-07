@@ -24,5 +24,11 @@
     "seconds": "segundos",
     "minutes": "minutos",
     "hours": "horas"
+  },
+  "loading": "Cargando...",
+  "breakPoints": {
+    "small": "pequeño",
+    "medium": "medio",
+    "large": "grande"
   }
 }

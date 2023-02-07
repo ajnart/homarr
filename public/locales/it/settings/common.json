@@ -9,11 +9,20 @@
     "configTip": "Carica il file di configurazione trascinandolo e rilasciandolo sulla pagina!"
   },
   "credits": {
-    "madeWithLove": "Realizzato con ❤️ da @"
+    "madeWithLove": "Realizzato con ❤️ da @",
+    "thirdPartyContent": "Visualizza contenuti di terze parti",
+    "thirdPartyContentTable": {
+      "dependencyName": "Dipendenza",
+      "dependencyVersion": "Versione"
+    }
   },
   "grow": "Espandi la griglia (occupa tutto lo spazio)",
   "layout": {
-    "title": "Layout della Dashboard",
+    "preview": {
+      "title": "Anteprima",
+      "subtitle": "Le modifiche saranno salvate automaticamente"
+    },
+    "divider": "Opzioni di layout",
     "main": "Main",
     "sidebar": "Barra laterale",
     "cannotturnoff": "Impossibile disattivare",

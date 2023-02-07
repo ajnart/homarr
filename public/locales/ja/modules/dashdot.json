@@ -18,6 +18,9 @@
       },
       "url": {
         "label": "ダッシュURL"
+      },
+      "usePercentages": {
+        "label": ""
       }
     }
   },

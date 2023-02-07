@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "Chercher quelque chose...",
+    "searchLimitationTitle": "Limité à 30 résultats",
+    "searchLimitationMessage": "Les résultats de la recherche ont été limités à 30 car il y avait trop de correspondances"
   }
 }

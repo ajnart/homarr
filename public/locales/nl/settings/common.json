@@ -9,11 +9,20 @@
     "configTip": "Upload uw configuratiebestand door het naar de pagina te slepen!"
   },
   "credits": {
-    "madeWithLove": "Gemaakt met ❤️ door @"
+    "madeWithLove": "Gemaakt met ❤️ door @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Versie"
+    }
   },
   "grow": "Groei raster (neem alle ruimte)",
   "layout": {
-    "title": "Dashboard lay-out",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Algemeen",
     "sidebar": "Zijbalk",
     "cannotturnoff": "Kan niet worden uitgeschakeld",
