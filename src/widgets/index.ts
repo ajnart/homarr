@@ -16,4 +16,4 @@ export default {
   dlspeed: torrentNetworkTraffic,
   date,
   'video-stream': videoStream,
-}
+};
