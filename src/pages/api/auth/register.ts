@@ -48,11 +48,8 @@ const Post = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  const salt = bcrypt.genSaltSync(SALT_ROUNDS);
-  const hash = bcrypt.hashSync(password, salt);
-
   await prisma?.user.create({
-    data: { username, password: hash },
+    data: { username, password: hashPassword(password) },
   });
 
   return res.status(201).json({
@@ -70,4 +67,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     statusCode: 405,
     message: 'Method not allowed',
   });
+};
+
+export const hashPassword = (password: string) => {
+  const salt = bcrypt.genSaltSync(SALT_ROUNDS);
+  return bcrypt.hashSync(password, salt);
 };
