@@ -1,9 +1,9 @@
 import { randomBytes } from 'crypto';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { z } from 'zod';
-import { getServerAuthSession } from '../../../../server/common/get-server-auth-session';
+import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
+import { registrationTokenCreationInputSchema } from '../../../validation/invite';
 
-const Post = async (req: NextApiRequest, res: NextApiResponse) => {
+async function Post(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
   const user = await prisma?.user.findFirst({
     where: { id: session?.user?.id },
@@ -16,7 +16,7 @@ const Post = async (req: NextApiRequest, res: NextApiResponse) => {
     });
   }
 
-  const result = await registrationTokenCreationSchema.safeParseAsync(req.body);
+  const result = await registrationTokenCreationInputSchema.safeParseAsync(req.body);
   if (!result.success) {
     return res.status(400).json({
       code: 'BAD_REQUEST',
@@ -42,13 +42,9 @@ const Post = async (req: NextApiRequest, res: NextApiResponse) => {
   });
 
   res.status(200).json(registrationToken);
-};
+}
 
-const registrationTokenCreationSchema = z.object({
-  name: z.string().min(4).max(64),
-});
-
-const Get = async (req: NextApiRequest, res: NextApiResponse) => {
+async function Get(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
   const user = await prisma?.user.findFirst({
     where: { id: session?.user?.id },
@@ -71,7 +67,7 @@ const Get = async (req: NextApiRequest, res: NextApiResponse) => {
       expiresAt: token.expiresAt,
     }))
   );
-};
+}
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {

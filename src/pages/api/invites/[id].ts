@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
-import { getServerAuthSession } from '../../../../server/common/get-server-auth-session';
+import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
 
-const Delete = async (req: NextApiRequest, res: NextApiResponse) => {
+async function Delete(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
   const user = await prisma?.user.findFirst({
     where: { id: session?.user?.id },
@@ -15,7 +15,7 @@ const Delete = async (req: NextApiRequest, res: NextApiResponse) => {
     });
   }
 
-  const result = await deletionSchema.safeParseAsync(req.query);
+  const result = await deletionInputSchema.safeParseAsync(req.query);
   if (!result.success) {
     return res.status(400).json({
       code: 'BAD_REQUEST',
@@ -39,9 +39,9 @@ const Delete = async (req: NextApiRequest, res: NextApiResponse) => {
       message: 'The specified token has not been found.',
     });
   }
-};
+}
 
-const deletionSchema = z.object({
+const deletionInputSchema = z.object({
   id: z.string(),
 });
 

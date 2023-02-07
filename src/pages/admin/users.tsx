@@ -1,19 +1,30 @@
 import { Badge, Button, Container, Group, Menu, Stack, TextInput, Title } from '@mantine/core';
+import { useDebouncedState, useDebouncedValue } from '@mantine/hooks';
 import { NextLink } from '@mantine/next';
-import { User } from '@prisma/client';
 import { IconChevronDown, IconMail, IconSearch } from '@tabler/icons';
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import Head from 'next/head';
+import { useState } from 'react';
 import { openInviteCreateModal } from '../../components/Admin/Invite/InviteCreateModal';
-import { UserTable } from '../../components/Admin/User/UserTable';
+import { useInvitesQuery } from '../../components/Admin/Invite/InviteTable';
+import { UserFilterType, UserTable } from '../../components/Admin/User/UserTable';
 import { getServerAuthSession } from '../../server/common/get-server-auth-session';
 import { getServerSideTranslations } from '../../tools/getServerSideTranslations';
 
-type GetUsersResponse = (Omit<User, 'password' | 'createdAt' | 'updatedAt' | 'isAdmin'> & {
-  role: 'admin' | 'user';
-})[];
+const titleMap: Record<UserFilterType, string> = {
+  all: 'All users',
+  'user-enabled': 'Enabled users',
+  'user-archived': 'Archived users',
+  'user-non-admin': 'Non admin users',
+  'user-admin': 'Admin users',
+};
 
 const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
+  const { data: invites } = useInvitesQuery();
+  const [filter, setFilter] = useState<UserFilterType>('all');
+  const [search, setSearch] = useState<string>('');
+  const [debouncedSearch] = useDebouncedValue(search, 200);
+
   return (
     <>
       <Head>
@@ -25,14 +36,14 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
       <Container>
         <Stack>
           <div>
-            <Title>Users</Title>
+            <Title>{titleMap[filter]}</Title>
             <Title order={4} weight={400}>
               Manage the users that can access your dashboards.
             </Title>
           </div>
           <Group position="apart" noWrap>
             <Group spacing={0} w="100%" noWrap>
-              <Menu>
+              <Menu position="bottom-start">
                 <Menu.Target>
                   <Button
                     variant="default"
@@ -46,6 +57,13 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
                     Filters
                   </Button>
                 </Menu.Target>
+                <Menu.Dropdown>
+                  <Menu.Item onClick={() => setFilter('all')}>All users</Menu.Item>
+                  <Menu.Item onClick={() => setFilter('user-enabled')}>Enabled users</Menu.Item>
+                  <Menu.Item onClick={() => setFilter('user-archived')}>Archived users</Menu.Item>
+                  <Menu.Item onClick={() => setFilter('user-non-admin')}>Non admin users</Menu.Item>
+                  <Menu.Item onClick={() => setFilter('user-admin')}>Admin users</Menu.Item>
+                </Menu.Dropdown>
               </Menu>
               <TextInput
                 icon={<IconSearch size={16} />}
@@ -57,6 +75,8 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
                 }}
                 w="100%"
                 placeholder="Search all users"
+                value={search}
+                onChange={(ev) => setSearch(ev.target.value)}
               />
             </Group>
             <Group noWrap>
@@ -65,14 +85,14 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
                 href="/admin/invites"
                 variant="default"
                 leftIcon={<IconMail size={16} />}
-                rightIcon={<Badge>59</Badge>}
+                rightIcon={<Badge>{invites?.length ?? 0}</Badge>}
               >
                 Invites
               </Button>
               <Button onClick={openInviteCreateModal}>Invite user</Button>
             </Group>
           </Group>
-          <UserTable />
+          <UserTable search={debouncedSearch} filter={filter} />
         </Stack>
       </Container>
     </>

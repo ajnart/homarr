@@ -9,13 +9,17 @@ import {
   Title,
   Tooltip,
 } from '@mantine/core';
-import { useForm } from '@mantine/form';
+import { useForm, zodResolver } from '@mantine/form';
 import { ContextModalProps, openContextModal } from '@mantine/modals';
 import { RegistrationToken } from '@prisma/client';
 import { IconCheck, IconCopy } from '@tabler/icons';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { useState } from 'react';
+import { z } from 'zod';
+import { getInputPropsMiddleware } from '../../../tools/getInputPropsMiddleware';
+import { queryClient } from '../../../tools/queryClient';
+import { registrationTokenCreationInputSchema } from '../../../validation/invite';
 
 const useBaseUrl = () => {
   if (typeof window === 'undefined') return null;
@@ -23,19 +27,22 @@ const useBaseUrl = () => {
 };
 
 export const InviteCreateModal = ({ context, id }: ContextModalProps) => {
-  const { getInputProps, onSubmit } = useForm<FormType>();
+  const { getInputProps, onSubmit } = useForm<FormType>({
+    validate: zodResolver(registrationTokenCreationInputSchema),
+  });
   const [generatedToken, setGeneratedToken] = useState<RegistrationToken>();
   const baseUrl = useBaseUrl();
   const url = `${baseUrl}/register?token=${generatedToken?.token}`;
 
   const { mutateAsync } = useMutation({
-    mutationKey: ['registrationToken/create'],
+    mutationKey: ['invite/create'],
     mutationFn: async (data: FormType) => {
-      const response = await axios.post('/api/auth/registration-token', data);
+      const response = await axios.post('/api/invites', data);
       return response.data;
     },
     onSuccess(data: RegistrationToken) {
       setGeneratedToken(data);
+      queryClient.invalidateQueries(['invite']);
     },
   });
 
@@ -47,7 +54,11 @@ export const InviteCreateModal = ({ context, id }: ContextModalProps) => {
     <form onSubmit={onSubmit(handleSubmit)}>
       <Stack>
         <Text>You can invite other users so they can enjoy your dashboards.</Text>
-        <TextInput placeholder="Invite for John Doe" label="Name" {...getInputProps('name')} />
+        <TextInput
+          placeholder="Invite for John Doe"
+          label="Name"
+          {...getInputPropsMiddleware(getInputProps('name'))}
+        />
         <Group position="right">
           <Button type="submit">Create</Button>
         </Group>
@@ -90,9 +101,7 @@ export const InviteCreateModal = ({ context, id }: ContextModalProps) => {
   );
 };
 
-type FormType = {
-  name: string;
-};
+type FormType = z.infer<typeof registrationTokenCreationInputSchema>;
 
 export const openInviteCreateModal = () =>
   openContextModal({

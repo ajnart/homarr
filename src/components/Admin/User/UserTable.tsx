@@ -6,29 +6,21 @@ import {
   Group,
   Loader,
   ScrollArea,
-  Select,
   Table,
   Text,
 } from '@mantine/core';
 import { User } from '@prisma/client';
-import {
-  IconArchive,
-  IconArchiveOff,
-  IconDisabled,
-  IconKey,
-  IconLock,
-  IconLockAccess,
-  IconPencil,
-  IconShield,
-  IconShieldLock,
-  IconTrash,
-} from '@tabler/icons';
+import { IconArchive, IconArchiveOff, IconKey, IconShield, IconTrash } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import dayjs from 'dayjs';
+import { z } from 'zod';
+import { userFilterSchema } from '../../../validation/user';
 
-export const UserTable = () => {
-  const { data: users, isLoading, isError } = useUsersQuery();
+type UserTableProps = UseUsersQueryInput;
+
+export const UserTable = ({ filter, search }: UserTableProps) => {
+  const { data: users, isLoading, isError } = useUsersQuery({ filter, search });
 
   return (
     <ScrollArea>
@@ -58,6 +50,11 @@ export const UserTable = () => {
           An error occurred during the query
         </Text>
       ) : null}
+      {users?.length === 0 ? (
+        <Text align="center" mt="md">
+          No items have been found
+        </Text>
+      ) : null}
     </ScrollArea>
   );
 };
@@ -66,11 +63,16 @@ type UseUsersQueryResponse = (Omit<User, 'password' | 'createdAt' | 'updatedAt' 
   role: 'admin' | 'user';
 })[];
 
-const useUsersQuery = () =>
+interface UseUsersQueryInput {
+  filter: UserFilterType;
+  search?: string;
+}
+
+export const useUsersQuery = (params: UseUsersQueryInput = { filter: 'all' }) =>
   useQuery<UseUsersQueryResponse>({
-    queryKey: ['users'],
+    queryKey: ['users', params.filter, params.search],
     queryFn: async () => {
-      const response = await axios.get('/api/users');
+      const response = await axios.get('/api/users', { params });
       return response.data;
     },
     retry: false,
@@ -139,3 +141,5 @@ const UserTableRow = ({ user }: UserTableRowProps) => (
     </td>
   </tr>
 );
+
+export type UserFilterType = z.infer<typeof userFilterSchema>;
