@@ -20,7 +20,7 @@ const VideoFeed = ({ source, controls, autoPlay, muted }: VideoFeedProps) => {
   useEffect(() => {
     // make sure Video.js player is only initialized once
     if (player) {
-      return;
+      return
     }
 
     const videoElement = videoRef.current;
