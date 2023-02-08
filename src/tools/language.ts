@@ -77,7 +77,7 @@ export const languages: Language[] = [
   },
   // Norwegian
   {
-    shortName: 'nb',
+    shortName: 'no',
     originalName: 'Norsk',
     translatedName: 'Norwegian',
     emoji: '🇳🇴',
