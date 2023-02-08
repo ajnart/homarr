@@ -1,0 +1,72 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "",
+      "lastUpdated": ""
+    },
+    "table": {
+      "header": {
+        "name": "Navn",
+        "size": "",
+        "download": "Ned",
+        "upload": "Opp",
+        "estimatedTimeOfArrival": "",
+        "progress": ""
+      },
+      "item": {
+        "text": ""
+      },
+      "body": {
+        "nothingFound": "Ingen torrenter funnet"
+      }
+    },
+    "lineChart": {
+      "title": "Gjeldende nedlastingshastighet",
+      "download": "Nedlasting: {{download}}",
+      "upload": "Opplasting: {{upload}}",
+      "timeSpan": "{{seconds}} sekunder siden",
+      "totalDownload": "Nedlasting: {{download}}/s",
+      "totalUpload": "Opplasting: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "",
+        "text": ""
+      }
+    },
+    "loading": {
+      "title": ""
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
+    }
+  }
+}
