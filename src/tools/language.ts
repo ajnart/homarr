@@ -75,6 +75,20 @@ export const languages: Language[] = [
     translatedName: 'LOLCAT',
     emoji: '🐱',
   },
+  // Norwegian
+  {
+    shortName: 'nb',
+    originalName: 'Norsk',
+    translatedName: 'Norwegian',
+    emoji: '🇳🇴',
+  },
+  // Slovak
+  {
+    shortName: 'sk',
+    originalName: 'Slovenčina',
+    translatedName: 'Slovak',
+    emoji: '🇸🇰',
+  },
   {
     shortName: 'nl',
     originalName: 'Nederlands',
