@@ -1,33 +1,33 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Vær",
+    "description": "Viser gjeldende værinformasjon for en angitt plassering.",
     "settings": {
-      "title": "",
+      "title": "Innstillinger for vær widget",
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Vis i Fahrenheit"
       },
       "location": {
-        "label": ""
+        "label": "Vær plassering"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
-      "unknown": ""
+      "clear": "Tøm",
+      "mainlyClear": "Klar himmel",
+      "fog": "Tåke",
+      "drizzle": "Yr",
+      "freezingDrizzle": "Underkjølt yr",
+      "rain": "Regn",
+      "freezingRain": "Underkjølt regn",
+      "snowFall": "Snø",
+      "snowGrains": "Snø korn",
+      "rainShowers": "Regnbyger",
+      "snowShowers": "Snøbyger",
+      "thunderstorm": "Tordenvær",
+      "thunderstormWithHail": "Tordenvær med hagl",
+      "unknown": "Ukjent"
     }
   }
 }
