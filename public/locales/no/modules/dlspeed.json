@@ -7,11 +7,11 @@
     "table": {
       "header": {
         "name": "Navn",
-        "size": "",
+        "size": "Størrelse",
         "download": "Ned",
         "upload": "Opp",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "Gjenstående tid (estimat)",
+        "progress": "Fremgang"
       },
       "body": {
         "nothingFound": "Ingen torrenter funnet"
@@ -27,7 +27,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Ingen støttede nedlastingsklienter funnet!",
         "text": "Legg til en nedlastingstjeneste for å se pågående nedlastinger"
       }
     }
