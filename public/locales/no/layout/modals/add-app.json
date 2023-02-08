@@ -1,68 +1,68 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Generelt",
+		"behaviour": "Oppførsel",
 		"network": "Nettverk",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Utseende",
+		"integration": "Integrasjon"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Navn på app",
+			"description": "Brukes til å vise appen på dashbordet."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Intern adresse",
+			"description": "Intern IP-adresse til appen."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Ekstern adresse",
+			"description": "URL som vil åpnes når du klikker på appen."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Åpne i ny fane",
+			"description": "Åpne appen i en ny fane i stedet for denne."
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Statussjekk",
+			"description": "Sjekker om appen er online med en enkel HTTP(S) forespørsel."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP statuskoder",
+			"description": "HTTP-statuskoder som regnes som online."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "App ikon",
+			"description": "Ikonet som vises på dashbordet."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Integrasjons konfigurasjon",
+			"description": "Integrasjonskonfigurasjonen som blir brukt til å koble til appen din.",
+			"placeholder": "Velg en integrasjon",
+			"defined": "Definert",
+			"undefined": "Undefined",
+			"public": "Offentlig",
+			"private": "Privat",
+			"explanationPrivate": "En privat hemmelighet sendes bare til serveren én gang. Når nettleseren har oppdatert siden, sendes den aldri igjen.",
+			"explanationPublic": "En offentlig hemmelighet vil alltid sendes til klienten og er tilgjengelig over API-et. Det bør ikke inneholde noen konfidensielle verdier som brukernavn, passord, tokens, sertifikater og lignende!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "For å oppdatere en hemmelig, skriv inn en verdi og klikk på Lagre-knappen for å fjerne en hemmelighet, bruk fjern knappen.",
+			"warning": "Din legitimasjon fungerer som tilgang for dine integrasjoner, og du bør <strong>aldri</strong> dele dem med noen andre. Homarr teamet vil aldri be om legitimasjon. Sørg for å <strong>lagre og behandle hemmeligheter trygt</strong>.",
+			"clear": "Fjern hemmelighet",
+			"save": "Lagre hemmelighet",
+			"update": "Oppdater hemmelighet"
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Skjemaet inneholder ugyldig data. Derfor kan den ikke lagres. Vennligst løs alle problemer og klikk på denne knappen igjen for å lagre endringene dine"
 	}
 }
