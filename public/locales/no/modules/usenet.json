@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Lar deg se og administrere din Usenet-forekomst."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Ingen støttede nedlastingsklienter funnet!",
+        "text": "Legg til en støttet Usenet Nedlastings-klient for å se de gjeldende nedlastingene"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Kø",
+    "history": "Logg"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Størrelse til venstre",
+    "paused": "Pauset"
   },
   "queue": {
     "header": {
       "name": "Navn",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "size": "Størrelse",
+      "eta": "Gjenstående tid (estimat)",
+      "progress": "Fremgang"
     },
-    "empty": "",
+    "empty": "Tøm",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Feil",
+      "message": "Det oppstod en feil"
     },
-    "paused": ""
+    "paused": "Pauset"
   },
   "history": {
     "header": {
       "name": "Navn",
-      "size": "",
-      "duration": ""
+      "size": "Størrelse",
+      "duration": "Varighet"
     },
-    "empty": "",
+    "empty": "Tøm",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Feil",
+      "message": "Feil under lasting av historikk"
     },
-    "paused": ""
+    "paused": "Pauset"
   }
 }
