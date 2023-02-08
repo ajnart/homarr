@@ -11,70 +11,70 @@
       "name": "Navn",
       "image": "Image",
       "ports": "Porter",
-      "state": ""
+      "state": "Status"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} flere"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Kjører",
+      "created": "Opprettet",
+      "stopped": "Stoppet",
+      "unknown": "Ukjent"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Legg til app",
+      "message": "Legg til app i Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Omstart"
     },
     "stop": {
-      "title": ""
+      "title": "Stopp"
     },
     "start": {
-      "title": ""
+      "title": "Start"
     },
     "refreshData": {
-      "title": ""
+      "title": "Oppdater data"
     },
     "remove": {
-      "title": ""
+      "title": "Fjern"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Legg til i Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Starter",
+      "end": "Startet"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Stopper",
+      "end": "Stoppet"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Starter på nytt",
+      "end": "Startet på nytt"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Fjerner",
+      "end": "Fjernet"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker-integrasjonen mislyktes",
+      "message": "Har du glemt å koble til Docker socket?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Det oppstod en feil"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Legg bare til en app eller en tjeneste om gangen!"
     }
   },
   "actionIcon": {
