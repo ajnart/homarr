@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "input": {
+    "placeholder": ""
+  },
+  "switched-to": "",
+  "searchEngines": {
+    "search": {
+      "name": "",
+      "description": ""
+    },
+    "youtube": {
+      "name": "",
+      "description": ""
+    },
+    "torrents": {
+      "name": "",
+      "description": ""
+    },
+    "overseerr": {
+      "name": "",
+      "description": ""
+    }
+  },
+  "tip": "",
+  "switchedSearchEngine": ""
+}
