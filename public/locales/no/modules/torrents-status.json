@@ -1,36 +1,36 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Viser en liste over torrenter fra støttede Torrent-klienter.",
     "settings": {
-      "title": "",
+      "title": "Innstillinger for Torrent widget",
       "refreshInterval": {
-        "label": ""
+        "label": "Oppdaterings intervall (i sekunder)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Vis fullførte torrenter"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Vis gamle torrenter"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "",
-      "lastUpdated": ""
+      "error": "Feil",
+      "lastUpdated": "Sist oppdatert for {{time}} siden"
     },
     "table": {
       "header": {
         "name": "Navn",
-        "size": "",
+        "size": "Størrelse",
         "download": "Ned",
         "upload": "Opp",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "Gjenstående tid (estimat)",
+        "progress": "Fremgang"
       },
       "item": {
-        "text": ""
+        "text": "Styrt med {{appName}}, {{ratio}} forhold"
       },
       "body": {
         "nothingFound": "Ingen torrenter funnet"
@@ -46,26 +46,26 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Ingen støttede Torrent-klienter funnet!",
+        "text": "Legg til en støttet Torrent-klient for å se de nåværende nedlastingene"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "En uventet feil har oppstått",
+        "text": "Homarr kunne ikke kommunisere med dine Torrent-klienter. Kontroller konfigurasjonen"
       }
     },
     "loading": {
-      "title": ""
+      "title": "Laster inn..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Administrert av",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Kø posisjon - {{position}}",
+        "progress": "Fremgang - {{progress}}%",
+        "totalSelectedSize": "Totalt - {{totalSize}}",
+        "state": "Status – {{state}}",
+        "ratio": "Forhold -",
+        "completed": "Fullført"
       }
     }
   }
