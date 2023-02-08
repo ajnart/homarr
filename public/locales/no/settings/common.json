@@ -2,37 +2,37 @@
   "title": "Innstillinger",
   "tooltip": "Innstillinger",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Generelt",
+    "customizations": "Tilpasninger"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Last opp konfigurasjonsfilen ved å dra og slippe den på siden!"
   },
   "credits": {
-    "madeWithLove": "",
-    "thirdPartyContent": "",
+    "madeWithLove": "Laget med ❤️ av @",
+    "thirdPartyContent": "Se tredjepartsinnhold",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Avhengighet",
       "dependencyVersion": "Versjon"
     }
   },
-  "grow": "",
+  "grow": "Forstørr rutenett (ta all plass)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Forhåndsvis",
+      "subtitle": "Endringer lagres automatisk"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "Alternativer for layout",
+    "main": "Hoved",
+    "sidebar": "Sidepanel",
+    "cannotturnoff": "Kan ikke slås av",
+    "dashboardlayout": "Dashbord layout",
+    "enablersidebar": "Aktiver høyre sidepanel",
+    "enablelsidebar": "Aktiver venstre sidepanel",
+    "enablesearchbar": "Aktiver søkefelt",
+    "enabledocker": "Aktiver dockerintegrering",
+    "enableping": "Aktiver ping",
+    "enablelsidebardesc": "Valgfritt. Kan kun brukes for apper og integrasjoner",
+    "enablersidebardesc": "Valgfritt. Kan kun brukes for apper og integrasjoner"
   }
 }
