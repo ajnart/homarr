@@ -1,0 +1,12 @@
+{
+  "descriptor": {
+    "name": "Dato og klokkeslett",
+    "description": "Viser gjeldende dato og klokkeslett.",
+    "settings": {
+      "title": "Innstillinger for dato og klokkeslett widget",
+      "display24HourFormat": {
+        "label": "Vis 24 timers formatering"
+      }
+    }
+  }
+}
