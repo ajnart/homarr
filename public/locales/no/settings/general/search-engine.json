@@ -1,19 +1,19 @@
 {
-  "title": "",
-  "configurationName": "",
+  "title": "Søkemotor",
+  "configurationName": "Søkemotor konfigurasjon",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Det finnes flere prefikser du kan bruke! Å legge til disse før spørringen vil filtrere resultatene. !s (Web), !t (Torrents), !y (YouTube), og !m (Media).",
+    "placeholderTip": "%s kan brukes som plassholder for spørringen."
   },
   "customEngine": {
-    "title": "",
-    "label": "",
-    "placeholder": ""
+    "title": "Egendefinert søkemotor",
+    "label": "SpørringsURL",
+    "placeholder": "Egendefinert spørrings URL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Åpne søkeresultater i ny fane"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Søk aktivert"
   }
 }
