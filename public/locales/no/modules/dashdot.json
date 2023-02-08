@@ -1,0 +1,61 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Viser grafene til en ekstern Dash. Eksempel inni av Homarr.",
+    "settings": {
+      "title": "Innstillinger for Dash. widget",
+      "cpuMultiView": {
+        "label": "CPU flerkjernevisning"
+      },
+      "storageMultiView": {
+        "label": "Lagring flerdiskvisning"
+      },
+      "useCompactView": {
+        "label": "Bruk kompakt visning"
+      },
+      "graphs": {
+        "label": "Grafer"
+      },
+      "url": {
+        "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Vis prosentandel"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Ingen Dash.-tjeneste funnet. Vennligst legg til en Homarr dashbordet eller angi en Dash. URL i modulalternativene",
+      "noInformation": "Kan ikke hente informasjon fra dash. - kjører du den nyeste versjonen?",
+      "protocolDowngrade": {
+        "title": "Oppdaget protokollnedgradering",
+        "text": "Protokollen til Dash. instansen blir nedgradert. Dette er sikkerhetsrisiko, siden HTTP er ukryptert og angripere kan misbruke denne tilkoblingen. Kontroller at Dash. kjører på HTTPS for eller nedgraderer Homarr til HTTP (ikke anbefalt)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Lagring",
+        "label": "Lagring:"
+      },
+      "network": {
+        "title": "Nettverk",
+        "label": "Nettverk:",
+        "metrics": {
+          "download": "Ned",
+          "upload": "Opp"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}
