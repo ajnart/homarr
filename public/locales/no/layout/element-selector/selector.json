@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Legg til en ny flis",
+        "text": "Fliser er det viktigste elementet i Homarr. De brukes til å vise appene og annen informasjon. Du kan legge til så mange fliser som du vil."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Widgets samhandler med appene dine for å gi deg mer kontroll over applikasjonene. De krever vanligvis ekstra konfigurasjon før bruk.",
+    "goBack": "Gå tilbake til forrige steg",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Legg til en flis"
     }
 }
