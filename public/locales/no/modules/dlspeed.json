@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Nedlastingshastighet",
+    "description": "Viser nedlastingshastighet og opplastingshastighet av støttede integrasjoner."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Navn",
+        "size": "",
+        "download": "Ned",
+        "upload": "Opp",
+        "estimatedTimeOfArrival": "",
+        "progress": ""
+      },
+      "body": {
+        "nothingFound": "Ingen torrenter funnet"
+      }
+    },
+    "lineChart": {
+      "title": "Gjeldende nedlastingshastighet",
+      "download": "Nedlasting: {{download}}",
+      "upload": "Opplasting: {{upload}}",
+      "timeSpan": "{{seconds}} sekunder siden",
+      "totalDownload": "Nedlasting: {{download}}/s",
+      "totalUpload": "Opplasting: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": "Legg til en nedlastingstjeneste for å se pågående nedlastinger"
+      }
+    }
+  }
+}
