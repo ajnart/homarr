@@ -1,0 +1,34 @@
+{
+  "save": "Lagre",
+  "about": "Info",
+  "cancel": "Avbryt",
+  "close": "Lukk",
+  "delete": "Slett",
+  "ok": "OK",
+  "edit": "Rediger",
+  "version": "Versjon",
+  "changePosition": "Endre posisjon",
+  "remove": "Fjern",
+  "removeConfirm": "Er du sikker på at du vil fjerne {{item}}?",
+  "sections": {
+    "settings": "Innstillinger",
+    "dangerZone": "Faresonen"
+  },
+  "secrets": {
+    "apiKey": "API-nøkkel",
+    "username": "Brukernavn",
+    "password": "Passord"
+  },
+  "tip": "Tips: ",
+  "time": {
+    "seconds": "sekunder",
+    "minutes": "minutter",
+    "hours": "timer"
+  },
+  "loading": "Laster inn...",
+  "breakPoints": {
+    "small": "liten",
+    "medium": "middels",
+    "large": "stor"
+  }
+}
