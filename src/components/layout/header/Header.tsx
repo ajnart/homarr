@@ -13,7 +13,7 @@ export const HeaderHeight = 64;
 
 export function Header(props: any) {
   const { classes } = useStyles();
-  const { classes: cardClasses } = useCardStyles(false);
+  const { classes: cardClasses, cx } = useCardStyles(false);
   const { attributes } = usePackageAttributesStore();
 
   const { isLoading, error, data } = useQuery({
@@ -27,12 +27,12 @@ export function Header(props: any) {
     data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
 
   return (
-    <MantineHeader height="auto" className={cardClasses.card}>
+    <MantineHeader height="auto" className={cx(cardClasses.card, 'dashboard-header')}>
       <Group p="xs" noWrap grow>
-        <Box className={classes.hide}>
+        <Box className={cx(classes.hide, 'dashboard-header-logo-root')}>
           <Logo />
         </Box>
-        <Group position="right" style={{ maxWidth: 'none' }} noWrap>
+        <Group className="dashboard-header-group-right" position="right" style={{ maxWidth: 'none' }} noWrap>
           <Search />
           <ToggleEditModeAction />
           <DockerMenuButton />

@@ -16,7 +16,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   const { refs, apps, widgets } = useGridstack('category', category.id);
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { config } = useConfigContext();
-  const { classes: cardClasses } = useCardStyles(true);
+  const { classes: cardClasses, cx } = useCardStyles(true);
 
   const categoryList = config?.categories.map((x) => x.name) ?? [];
   const [toggledCategories, setToggledCategories] = useLocalStorage({
@@ -28,7 +28,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   return (
     <Accordion
       classNames={{
-        item: cardClasses.card,
+        item: cx(cardClasses.card, 'dashboard-gs-category-item'),
       }}
       mx={10}
       chevronPosition="left"

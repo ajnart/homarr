@@ -18,7 +18,7 @@ export const HomarrCardWrapper = ({ ...props }: HomarrCardWrapperProps) => {
   return (
     <Card
       {...restProps}
-      className={cx(restProps.className, cardClass)}
+      className={cx(restProps.className, cardClass, 'dashboard-gs-generic-item')}
       withBorder
       style={{ cursor: isEditMode ? 'move' : 'default' }}
       radius="lg"

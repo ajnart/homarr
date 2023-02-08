@@ -57,7 +57,7 @@ export function Search() {
   const { config } = useConfigContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [debounced] = useDebouncedValue(searchQuery, 250);
-  const { classes: cardClasses } = useCardStyles(true);
+  const { classes: cardClasses, cx } = useCardStyles(true);
 
   const isOverseerrEnabled = config?.apps.some(
     (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
@@ -216,7 +216,8 @@ export function Search() {
               }
             }}
             classNames={{
-              input: cardClasses.card,
+              input: cx(cardClasses.card, 'dashboard-header-search-input'),
+              root: 'dashboard-header-search-root',
             }}
             radius="lg"
             size="md"

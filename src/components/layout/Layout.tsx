@@ -19,6 +19,7 @@ export default function Layout({ children }: any) {
           minHeight: 'calc(100vh - var(--mantine-header-height))',
         },
       }}
+      className="dashboard-app-shell"
     >
       <Head />
       <Background />
