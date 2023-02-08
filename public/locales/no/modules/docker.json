@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Lar deg enkelt se og administrere alle dine Docker containere."
+  },
+  "search": {
+    "placeholder": "Søk etter container eller imagenavn"
+  },
+  "table": {
+    "header": {
+      "name": "Navn",
+      "image": "Image",
+      "ports": "Porter",
+      "state": ""
+    },
+    "body": {
+      "portCollapse": ""
+    },
+    "states": {
+      "running": "",
+      "created": "",
+      "stopped": "",
+      "unknown": ""
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "",
+      "message": ""
+    },
+    "restart": {
+      "title": ""
+    },
+    "stop": {
+      "title": ""
+    },
+    "start": {
+      "title": ""
+    },
+    "refreshData": {
+      "title": ""
+    },
+    "remove": {
+      "title": ""
+    },
+    "addToHomarr": {
+      "title": ""
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "",
+      "end": ""
+    },
+    "stop": {
+      "start": "",
+      "end": ""
+    },
+    "restart": {
+      "start": "",
+      "end": ""
+    },
+    "remove": {
+      "start": "",
+      "end": ""
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "",
+      "message": ""
+    },
+    "unknownError": {
+      "title": ""
+    },
+    "oneServiceAtATime": {
+      "title": ""
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}
