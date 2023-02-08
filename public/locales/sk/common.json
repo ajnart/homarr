@@ -1,0 +1,34 @@
+{
+  "save": "",
+  "about": "",
+  "cancel": "",
+  "close": "",
+  "delete": "",
+  "ok": "",
+  "edit": "",
+  "version": "",
+  "changePosition": "",
+  "remove": "",
+  "removeConfirm": "",
+  "sections": {
+    "settings": "",
+    "dangerZone": ""
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "",
+    "password": ""
+  },
+  "tip": "",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  },
+  "loading": "",
+  "breakPoints": {
+    "small": "",
+    "medium": "",
+    "large": ""
+  }
+}
