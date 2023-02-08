@@ -1,86 +1,86 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Konfigurasjonsendrer",
+    "description": "{{configCount}} konfigurasjoner er tilgjengelige",
+    "loadingNew": "Laster inn din konfigurasjon...",
+    "pleaseWait": "Vennligst vent til den nye konfigurasjonen er lastet!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Velg navnet på den nye konfigurasjonen",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Navn på konfigurasjon",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Navn på konfigurasjon er påkrevd",
+            "notUnique": "Navnet på konfigurasjonen er allerede i bruk"
           },
-          "placeholder": ""
+          "placeholder": "Ditt nye konfigurasjonsnavn"
         },
-        "submitButton": ""
+        "submitButton": "Bekreft"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurasjon lagret",
+          "message": "Konfigurasjon lagret som {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurasjon kopiert",
+          "message": "Konfigurasjon kopiert som {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Kan ikke kopiere konfigurasjon",
+          "message": "Din konfigurasjon ble ikke kopiert som {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Bekreft sletting av konfigurasjonen",
+      "warningText": "Du er i ferd med å slette '<b>{{configName}}</b>'",
+      "text": "Vær oppmerksom på at slettingen ikke er invertikal, og at dataene dine vil gå tapt permanent. Når du klikker på denne knappen, vil filen slettes permanent fra disken. Pass på å opprette en tilstrekkelig sikkerhetskopi av konfigurasjonen.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Ja, slett '<b>{{configName}}</b>'"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Last ned konfigurasjon",
     "delete": {
-      "text": "",
+      "text": "Slett konfigurasjon",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Konfigurasjon slettet",
+          "message": "Konfigurasjon slettet"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Sletting av konfigurasjon mislyktes",
+          "message": "Sletting av konfigurasjon mislyktes"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Standard konfigurasjon kan ikke slettes",
+          "message": "Konfigurasjonen ble ikke slettet fra filsystemet"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Lagre en kopi"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Kan ikke laste konfigurasjonen",
+        "message": "Kunne ikke laste inn config. Ugyldig JSON-format."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Konfigurasjon {{configName}} er lastet inn"
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Konfigurasjon Opplasting",
+      "text": "Dra filer her for å laste opp en config. Støtter kun JSON-filer."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Dra og slipp opplasting avvist",
+      "text": "Dette filformatet støttes ikke. Last bare opp JSON-filer."
     }
   }
 }
