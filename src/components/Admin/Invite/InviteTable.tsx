@@ -1,6 +1,6 @@
 import { ActionIcon, Center, Group, Loader, ScrollArea, Table, Text, Title } from '@mantine/core';
 import { openConfirmModal } from '@mantine/modals';
-import { RegistrationToken } from '@prisma/client';
+import { RegistrationInvite } from '@prisma/client';
 import { IconTrash } from '@tabler/icons';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -45,7 +45,7 @@ export const InviteTable = () => {
   );
 };
 
-type UseInvitesQueryResponse = Omit<RegistrationToken, 'token'>[];
+type UseInvitesQueryResponse = Omit<RegistrationInvite, 'token'>[];
 
 export const useInvitesQuery = () =>
   useQuery<UseInvitesQueryResponse>({

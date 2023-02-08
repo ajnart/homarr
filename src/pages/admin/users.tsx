@@ -1,13 +1,16 @@
-import { Badge, Button, Container, Group, Menu, Stack, TextInput, Title } from '@mantine/core';
+import { Badge, Button, Container, Grid, Group, Stack, Title } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { NextLink } from '@mantine/next';
-import { IconChevronDown, IconMail, IconSearch } from '@tabler/icons';
+import { IconMail } from '@tabler/icons';
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useState } from 'react';
 import { openInviteCreateModal } from '../../components/Admin/Invite/InviteCreateModal';
 import { useInvitesQuery } from '../../components/Admin/Invite/InviteTable';
-import { UserFilterType, UserTable } from '../../components/Admin/User/UserTable';
+import { GenericSearch } from '../../components/Admin/User/UserSearch';
+import { UserFilterType, UserList } from '../../components/Admin/User/UserList';
+import { useScreenLargerThan } from '../../hooks/useScreenLargerThan';
 import { getServerAuthSession } from '../../server/common/get-server-auth-session';
 import { getServerSideTranslations } from '../../tools/getServerSideTranslations';
 
@@ -19,11 +22,38 @@ const titleMap: Record<UserFilterType, string> = {
   'user-admin': 'Admin users',
 };
 
+const useUserFilter = () => {
+  const { t } = useTranslation();
+
+  return [
+    {
+      value: 'all',
+      label: 'All users',
+    },
+    {
+      value: 'user-admin',
+      label: 'Admin users',
+    },
+    {
+      value: 'user-archived',
+      label: 'Archived users',
+    },
+    {
+      value: 'user-enabled',
+      label: 'Enabled users',
+    },
+    {
+      value: 'user-non-admin',
+      label: 'Non admin users',
+    },
+  ] as const;
+};
+
 const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
-  const { data: invites } = useInvitesQuery();
   const [filter, setFilter] = useState<UserFilterType>('all');
   const [search, setSearch] = useState<string>('');
   const [debouncedSearch] = useDebouncedValue(search, 200);
+  const largerThanSm = useScreenLargerThan('sm');
 
   return (
     <>
@@ -41,58 +71,39 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
               Manage the users that can access your dashboards.
             </Title>
           </div>
-          <Group position="apart" noWrap>
-            <Group spacing={0} w="100%" noWrap>
-              <Menu position="bottom-start">
-                <Menu.Target>
-                  <Button
-                    variant="default"
-                    style={{
-                      borderTopRightRadius: 0,
-                      borderBottomRightRadius: 0,
-                      borderRight: 'none',
-                    }}
-                    rightIcon={<IconChevronDown size={16} />}
-                  >
-                    Filters
-                  </Button>
-                </Menu.Target>
-                <Menu.Dropdown>
-                  <Menu.Item onClick={() => setFilter('all')}>All users</Menu.Item>
-                  <Menu.Item onClick={() => setFilter('user-enabled')}>Enabled users</Menu.Item>
-                  <Menu.Item onClick={() => setFilter('user-archived')}>Archived users</Menu.Item>
-                  <Menu.Item onClick={() => setFilter('user-non-admin')}>Non admin users</Menu.Item>
-                  <Menu.Item onClick={() => setFilter('user-admin')}>Admin users</Menu.Item>
-                </Menu.Dropdown>
-              </Menu>
-              <TextInput
-                icon={<IconSearch size={16} />}
-                styles={{
-                  input: {
-                    borderTopLeftRadius: 0,
-                    borderBottomLeftRadius: 0,
-                  },
-                }}
-                w="100%"
-                placeholder="Search all users"
-                value={search}
-                onChange={(ev) => setSearch(ev.target.value)}
+
+          {largerThanSm ? (
+            <Group position="apart" noWrap>
+              <GenericSearch
+                search={search}
+                setSearch={setSearch}
+                filters={useUserFilter()}
+                applyFilter={(v) => setFilter(v as UserFilterType)}
               />
+              <Group noWrap>
+                <InvitesButton />
+                <Button onClick={openInviteCreateModal}>Invite user</Button>
+              </Group>
             </Group>
-            <Group noWrap>
-              <Button
-                component={NextLink}
-                href="/admin/invites"
-                variant="default"
-                leftIcon={<IconMail size={16} />}
-                rightIcon={<Badge>{invites?.length ?? 0}</Badge>}
-              >
-                Invites
-              </Button>
-              <Button onClick={openInviteCreateModal}>Invite user</Button>
-            </Group>
-          </Group>
-          <UserTable search={debouncedSearch} filter={filter} />
+          ) : (
+            <Grid>
+              <Grid.Col span={12}>
+                <Group noWrap position="apart" grow>
+                  <InvitesButton />
+                  <Button onClick={openInviteCreateModal}>Invite user</Button>
+                </Group>
+              </Grid.Col>
+              <Grid.Col span={12}>
+                <GenericSearch
+                  search={search}
+                  setSearch={setSearch}
+                  filters={useUserFilter()}
+                  applyFilter={(v) => setFilter(v as UserFilterType)}
+                />
+              </Grid.Col>
+            </Grid>
+          )}
+          <UserList search={debouncedSearch} filter={filter} />
         </Stack>
       </Container>
     </>
@@ -128,3 +139,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default Users;
+
+const InvitesButton = () => {
+  const { data: invites } = useInvitesQuery();
+
+  return (
+    <Button
+      component={NextLink}
+      href="/admin/invites"
+      variant="default"
+      leftIcon={<IconMail size={16} />}
+      rightIcon={invites?.length === 0 || !invites ? null : <Badge>{invites.length}</Badge>}
+    >
+      Invites
+    </Button>
+  );
+};

@@ -1,7 +1,7 @@
 import { randomBytes } from 'crypto';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
-import { registrationTokenCreationInputSchema } from '../../../validation/invite';
+import { registrationInviteCreationInputSchema } from '../../../validation/invite';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
@@ -16,7 +16,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     });
   }
 
-  const result = await registrationTokenCreationInputSchema.safeParseAsync(req.body);
+  const result = await registrationInviteCreationInputSchema.safeParseAsync(req.body);
   if (!result.success) {
     return res.status(400).json({
       code: 'BAD_REQUEST',
@@ -33,7 +33,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   const expirationDate = new Date();
   expirationDate.setDate(currentDate + 7);
 
-  const registrationToken = await prisma?.registrationToken.create({
+  const registrationInvite = await prisma?.registrationInvite.create({
     data: {
       name: result.data.name,
       token,
@@ -41,7 +41,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     },
   });
 
-  res.status(200).json(registrationToken);
+  res.status(200).json(registrationInvite);
 }
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
@@ -57,7 +57,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     });
   }
 
-  const tokens = await prisma?.registrationToken.findMany();
+  const tokens = await prisma?.registrationInvite.findMany();
 
   // !!! NEVER ADD THE TOKEN TO THE RESPONSE !!!
   res.status(200).json(

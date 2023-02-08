@@ -1,17 +1,15 @@
 import {
+  Anchor,
+  Button,
   Card,
   Center,
+  PasswordInput,
   Stack,
-  Title,
   Text,
   TextInput,
-  PasswordInput,
-  Button,
-  Anchor,
+  Title,
 } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
-import { showNotification } from '@mantine/notifications';
-import { IconCheck, IconX } from '@tabler/icons';
 import { useMutation } from '@tanstack/react-query';
 import axios, { AxiosError } from 'axios';
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
@@ -21,10 +19,11 @@ import { z, ZodError } from 'zod';
 
 import { getServerAuthSession } from '../server/common/get-server-auth-session';
 import { getInputPropsMiddleware } from '../tools/getInputPropsMiddleware';
-import { IRegister, formRegisterSchema } from '../validation/auth';
+import { showErrorNotification, showSuccessNotification } from '../tools/notifications';
+import { formRegisterSchema, IRegister } from '../validation/auth';
 
 const Register: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
-  registrationToken,
+  registrationInvite,
 }) => {
   const router = useRouter();
   const { onSubmit, getInputProps } = useForm<Omit<IRegister, 'token'>>({
@@ -35,7 +34,7 @@ const Register: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>>
     mutationFn: async (props: Omit<IRegister, 'token'>) => {
       const response = await axios.post('/api/auth/register', {
         ...props,
-        token: registrationToken,
+        token: registrationInvite,
       });
       return response.data;
     },
@@ -49,37 +48,29 @@ const Register: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>>
     ) {
       const errorData = error.response?.data;
       if (errorData?.code === 'BAD_REQUEST') {
-        return showNotification({
+        return showErrorNotification({
           title: 'Registration failed',
           message: 'Please provide valid registration information.',
-          icon: <IconX />,
-          color: 'red',
         });
       }
       if (errorData?.code === 'CONFLICT') {
-        return showNotification({
+        return showErrorNotification({
           title: 'Registration failed',
           message: 'The provided username is already used.',
-          icon: <IconX />,
-          color: 'red',
         });
       }
       if (errorData?.code === 'FORBIDDEN') {
-        return showNotification({
+        return showErrorNotification({
           title: 'Registration failed',
           message: 'The invationtoken expired.',
-          icon: <IconX />,
-          color: 'red',
         });
       }
     },
     onSuccess() {
       router.push('/login');
-      return showNotification({
+      return showSuccessNotification({
         title: 'Registration successful',
         message: 'Registration was successful, please login now.',
-        icon: <IconCheck />,
-        color: 'teal',
       });
     },
   });
@@ -138,7 +129,7 @@ const Register: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>>
   );
 };
 
-export const getServerSideProps: GetServerSideProps<{ registrationToken: string }> = async (
+export const getServerSideProps: GetServerSideProps<{ registrationInvite: string }> = async (
   context
 ) => {
   const session = await getServerAuthSession({
@@ -162,13 +153,13 @@ export const getServerSideProps: GetServerSideProps<{ registrationToken: string 
     };
   }
 
-  const registrationToken = await prisma?.registrationToken.findFirst({
+  const registrationInvite = await prisma?.registrationInvite.findFirst({
     where: {
       token: result.data.token,
     },
   });
 
-  if (!registrationToken || registrationToken.expiresAt <= new Date()) {
+  if (!registrationInvite || registrationInvite.expiresAt <= new Date()) {
     return {
       notFound: true,
     };
@@ -176,7 +167,7 @@ export const getServerSideProps: GetServerSideProps<{ registrationToken: string 
 
   return {
     props: {
-      registrationToken: registrationToken.token,
+      registrationInvite: registrationInvite.token,
     },
   };
 };

@@ -25,7 +25,7 @@ async function Delete(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    await prisma?.registrationToken.delete({
+    await prisma?.registrationInvite.delete({
       where: {
         id: result.data.id,
       },

@@ -15,19 +15,28 @@ datasource db {
 }
 
 model User {
-  id           String   @id @default(cuid())
-  username     String?  @unique
+  id           String                @id @default(cuid())
+  username     String?               @unique
   password     String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  isAdmin      Boolean  @default(false)
-  isEnabled    Boolean  @default(true)
-  lastActiveAt DateTime @default(now())
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  isAdmin      Boolean               @default(false)
+  isEnabled    Boolean               @default(true)
+  lastActiveAt DateTime              @default(now())
+  permissions  DashboardPermission[]
 }
 
-model RegistrationToken {
+model RegistrationInvite {
   id        String   @id @default(cuid())
   name      String
   token     String   @unique
   expiresAt DateTime
+}
+
+model DashboardPermission {
+  id          String @id @default(cuid())
+  dashboardId String
+  userId      String
+  user        User   @relation(fields: [userId], references: [id])
+  permission  String // can be read or write
 }

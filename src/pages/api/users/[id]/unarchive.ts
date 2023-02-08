@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
 import { getServerAuthSession } from '../../../../server/common/get-server-auth-session';
+import { checkIfOwnerUser } from '../../../../tools/api/apiMiddleware';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
@@ -15,13 +16,20 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     });
   }
 
-  const input = await userArchiveInputSchema.safeParseAsync(req.query);
+  const input = await userUnarchiveInputSchema.safeParseAsync(req.query);
 
   if (!input.success) {
     return res.status(400).json({
       code: 'BAD_REQUEST',
       message: 'Invalid body input.',
       data: input.error,
+    });
+  }
+
+  if (await checkIfOwnerUser(input.data.id)) {
+    return res.status(403).json({
+      code: 'FORBIDDEN',
+      message: 'Can not unarchive owner of homarr.',
     });
   }
 
@@ -37,7 +45,7 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
   return res.status(200).end();
 }
 
-const userArchiveInputSchema = z.object({
+const userUnarchiveInputSchema = z.object({
   id: z.string(),
 });
 

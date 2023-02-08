@@ -29,22 +29,22 @@ const Post = async (req: NextApiRequest, res: NextApiResponse) => {
     });
   }
 
-  const registrationToken = await prisma?.registrationToken.findFirst({
+  const registrationInvite = await prisma?.registrationInvite.findFirst({
     where: {
       token,
     },
   });
 
-  if (!registrationToken || registrationToken.expiresAt <= new Date()) {
+  if (!registrationInvite || registrationInvite.expiresAt <= new Date()) {
     return res.status(401).json({
       code: 'FORBIDDEN',
       message: 'Invalid token.',
     });
   }
 
-  await prisma?.registrationToken.delete({
+  await prisma?.registrationInvite.delete({
     where: {
-      id: registrationToken.id,
+      id: registrationInvite.id,
     },
   });
 

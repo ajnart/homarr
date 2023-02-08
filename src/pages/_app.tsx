@@ -10,6 +10,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useState } from 'react';
 import { InviteCreateModal } from '../components/Admin/Invite/InviteCreateModal';
+import { UserPermissionModal } from '../components/Admin/User/UserPermissionModal';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -95,6 +96,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
                       changeAppPositionModal: ChangeAppPositionModal,
                       changeIntegrationPositionModal: ChangeWidgetPositionModal,
                       inviteCreateModal: InviteCreateModal,
+                      userPermissionModal: UserPermissionModal,
                     }}
                   >
                     <Component {...pageProps} />

@@ -5,7 +5,7 @@ import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from '
 import Head from 'next/head';
 import { openInviteCreateModal } from '../../components/Admin/Invite/InviteCreateModal';
 import { InviteTable } from '../../components/Admin/Invite/InviteTable';
-import { useUsersQuery } from '../../components/Admin/User/UserTable';
+import { useUsersQuery } from '../../components/Admin/User/UserList';
 import { getServerAuthSession } from '../../server/common/get-server-auth-session';
 import { getServerSideTranslations } from '../../tools/getServerSideTranslations';
 

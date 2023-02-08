@@ -49,7 +49,7 @@ export const authOptions: NextAuthOptions = {
           where: { username: cred.username },
         });
 
-        if (!user) {
+        if (!user || !user.isEnabled) {
           return null;
         }
 
