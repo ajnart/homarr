@@ -1,0 +1,19 @@
+{
+  "title": "",
+  "configurationName": "",
+  "tips": {
+    "generalTip": "",
+    "placeholderTip": ""
+  },
+  "customEngine": {
+    "title": "",
+    "label": "",
+    "placeholder": ""
+  },
+  "searchNewTab": {
+    "label": ""
+  },
+  "searchEnabled": {
+    "label": ""
+  }
+}
