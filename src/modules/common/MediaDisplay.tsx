@@ -264,7 +264,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               TMDb
             </Button>
           )}
-          {media.type === 'overseer' && !media.overseerrResult?.mediaInfo?.mediaAddedAt && (
+          {media.type === 'overseer' && (
             <>
               <RequestModal
                 base={media.overseerrResult as Result}
