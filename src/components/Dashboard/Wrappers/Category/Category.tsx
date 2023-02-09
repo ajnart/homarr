@@ -28,7 +28,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   return (
     <Accordion
       classNames={{
-        item: cx(cardClasses.card, 'dashboard-gs-category-item'),
+        item: cx(cardClasses.card, 'dashboard-gs-category'),
       }}
       mx={10}
       chevronPosition="left"
