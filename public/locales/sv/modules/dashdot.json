@@ -30,8 +30,8 @@
       "noService": "Ingen Dash-tjänst hittades. Lägg till en i din Homarr-instrumentpanel eller ange en Dash. URL i modulalternativen.",
       "noInformation": "Kan inte få information från dash. - Kör du den senaste versionen?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Nedgradering av protokoll upptäcktes",
+        "text": "Protokollet till din Dash.-instans håller på att nedgraderas. Detta är en säkerhetsrisk eftersom HTTP är okrypterat och angripare kan missbruka denna anslutning. Se till att Dash. också körs på HTTPS eller nedgradera Homarr till HTTP (rekommenderas inte)."
       }
     },
     "graphs": {
