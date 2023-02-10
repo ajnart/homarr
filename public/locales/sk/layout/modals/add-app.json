@@ -1,68 +1,68 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
-		"network": "",
-		"appearance": "",
-		"integration": ""
+		"general": "Všeobecné",
+		"behaviour": "Správanie",
+		"network": "Sieť",
+		"appearance": "Vzhľad",
+		"integration": "Integrácia"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Názov aplikácie",
+			"description": "Používa sa na zobrazenie aplikácie na palubnej doske."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Interná adresa",
+			"description": "Interná IP adresa aplikácie."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Externá adresa",
+			"description": "URL, ktorá sa otvorí po kliknutí na aplikáciu."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Otvoriť na novej karte",
+			"description": "Otvorenie aplikácie na novej karte namiesto aktuálnej."
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Kontrola stavu",
+			"description": "Pomocou jednoduchej požiadavky HTTP skontroluje, či je vaša aplikácia online."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Stavové kódy HTTP",
+			"description": "Stavové kódy HTTP, ktoré sa považujú za online."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "Ikona aplikácie",
+			"description": "Ikona, ktorá sa zobrazí na prístrojovej doske."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Konfigurácia integrácií",
+			"description": "Konfigurácia integrácie, ktorá sa použije na pripojenie k vašej aplikácii.",
+			"placeholder": "Výber integrácie",
+			"defined": "Definované",
+			"undefined": "Nedefinované",
+			"public": "Verejné",
+			"private": "Súkromné",
+			"explanationPrivate": "Súkromné tajomstvo sa odošle na server iba raz. Po obnovení stránky prehliadačom sa už nikdy neodošle.",
+			"explanationPublic": "Verejné tajomstvo sa vždy odošle klientovi a je prístupné cez API. Nemalo by obsahovať žiadne dôverné hodnoty, ako sú používateľské mená, heslá, tokeny, certifikáty a podobne!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Ak chcete aktualizovať tajomstvo, zadajte hodnotu a kliknite na tlačidlo Uložiť. Ak chcete odstrániť tajomstvo, použite tlačidlo vymazať.",
+			"warning": "Vaše poverovacie údaje slúžia ako prístupové údaje pre vaše integrácie a nikdy by ste ich nemali <strong></strong> zdieľať s nikým iným. Tím Homarr vás nikdy nebude žiadať o prístupové údaje. Dbajte na to, aby ste svoje <strong>tajné údaje bezpečne uchovávali a spravovali</strong>.",
+			"clear": "Vymazať tajomstvo",
+			"save": "Uložiť tajomstvo",
+			"update": "Aktualizovať tajomstvo"
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Váš formulár obsahuje neplatné údaje. Preto ho nemožno uložiť. Vyriešte všetky problémy a znovu kliknite na toto tlačidlo, aby ste uložili svoje zmeny"
 	}
 }
