@@ -1,24 +1,13 @@
-import {
-  Box,
-  createStyles,
-  Group,
-  Loader,
-  ScrollArea,
-  Stack,
-  Text,
-  useMantineTheme,
-} from '@mantine/core';
+import { Box, createStyles, Group, Loader, Stack, Text, useMantineTheme } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
-import dynamic from 'next/dynamic';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-
-const CodeEditor = dynamic(
-  () => import('@uiw/react-textarea-code-editor').then((mod) => mod.default),
-  { ssr: false }
-);
+import 'prismjs/components/prism-css';
+import 'prismjs/themes/prism.css';
 
 export const CustomCssChanger = () => {
   const { t } = useTranslation('settings/customization/page-appearance');
@@ -53,22 +42,20 @@ export const CustomCssChanger = () => {
     <Stack spacing={4} mt="xl">
       <Text>{t('customCSS.label')}</Text>
       <Text color="dimmed" size="xs">
-      {t('customCSS.description')}
+        {t('customCSS.description')}
       </Text>
       <div className={classes.codeEditorRoot}>
-        <ScrollArea style={{ height: codeEditorHeight }}>
-          <CodeEditor
-            className={classes.codeEditor}
-            placeholder={t('customCSS.placeholder')}
-            value={nonDebouncedCustomCSS}
-            onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
-              setNonDebouncedCustomCSS(event.target.value.trim())
-            }
-            language="css"
-            data-color-mode={colorScheme}
-            minHeight={codeEditorHeight}
-          />
-        </ScrollArea>
+        <Editor
+          value={nonDebouncedCustomCSS}
+          onValueChange={(code) => setNonDebouncedCustomCSS(code)}
+          highlight={(code) => highlight(code, languages.extend('css', {}), 'css')}
+          padding={10}
+          style={{
+            fontFamily: '"Fira code", "Fira Mono", monospace',
+            fontSize: 12,
+            minHeight: codeEditorHeight,
+          }}
+        />
         {codeIsDirty && (
           <Box className={classes.codeEditorFooter}>
             <Group p="xs" spacing="xs">
