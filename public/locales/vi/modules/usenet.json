@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Cho phép bạn xem và quản lý phiên bản Usenet của mình."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Không tìm thấy ứng dụng tải xuống được hỗ trợ nào!",
-        "text": ""
+        "text": "Thêm ứng dụng tải xuống Usenet được hỗ trợ để xem các bản tải xuống hiện tại"
       }
     }
   },

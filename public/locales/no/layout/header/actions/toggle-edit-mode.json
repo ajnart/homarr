@@ -1,0 +1,11 @@
+{
+    "description": "I Redigeringsmodus kan du justere fliser og konfigurere apper. Endringer lagres ikke før du avslutter Redigeringsmodus.",
+    "button": {
+        "disabled": "Gå inn i Redigeringsmodus",
+        "enabled": "Avslutt og lagre"
+    },
+    "popover": {
+        "title": "Redigeringsmodus er aktivert for <1>{{size}}</1> størrelse",
+        "text": "Du kan justere og konfigurere appene nå. Endringer er <strong>ikke lagret</strong> før du avslutter redigeringsmodus"
+    }
+}

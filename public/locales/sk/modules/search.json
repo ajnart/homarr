@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Vyhľadávací panel",
+    "description": "Vyhľadávací panel, ktorý umožňuje vyhľadávať vo vlastnom vyhľadávači, službe YouTube a podporovaných integráciách."
+  },
+  "input": {
+    "placeholder": "Vyhľadajte na webe..."
+  },
+  "switched-to": "Prepnúť na",
+  "searchEngines": {
+    "search": {
+      "name": "Web",
+      "description": "Hľadať..."
+    },
+    "youtube": {
+      "name": "Youtube",
+      "description": "Vyhľadať na Youtube"
+    },
+    "torrents": {
+      "name": "Torrenty",
+      "description": "Vyhľadávanie torrentov"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "Vyhľadajte filmy a televízne relácie na Overseerr"
+    }
+  },
+  "tip": "Pomocou skratky môžete vybrať panel vyhľadávania ",
+  "switchedSearchEngine": "Prepnuté na vyhľadávanie pomocou {{searchEngine}}"
+}

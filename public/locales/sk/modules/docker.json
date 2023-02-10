@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Umožňuje vám jednoducho zobraziť a spravovať všetky vaše kontajnery Docker."
+  },
+  "search": {
+    "placeholder": "Vyhľadávajte podľa názvu kontajnera alebo obrazu"
+  },
+  "table": {
+    "header": {
+      "name": "Názov",
+      "image": "Obraz",
+      "ports": "Porty",
+      "state": "Stav"
+    },
+    "body": {
+      "portCollapse": "{{ports}} viac"
+    },
+    "states": {
+      "running": "Spustené",
+      "created": "Vytvorené",
+      "stopped": "Zastavené",
+      "unknown": "Neznámy"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Pridať aplikáciu",
+      "message": "Pridanie aplikácie do aplikácie Homarr"
+    },
+    "restart": {
+      "title": "Reštartovať"
+    },
+    "stop": {
+      "title": "Zastaviť"
+    },
+    "start": {
+      "title": "Spustiť"
+    },
+    "refreshData": {
+      "title": "Obnoviť údaje"
+    },
+    "remove": {
+      "title": "Odstrániť"
+    },
+    "addToHomarr": {
+      "title": "Pridať do Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Štartuje",
+      "end": "Začaté"
+    },
+    "stop": {
+      "start": "Zastavovanie",
+      "end": "Zastavené"
+    },
+    "restart": {
+      "start": "Reštartovanie",
+      "end": "Reštartované"
+    },
+    "remove": {
+      "start": "Odstraňujem",
+      "end": "Odstránené"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Integrácia Dockera zlyhala",
+      "message": "Zabudli ste pripojiť docker socket?"
+    },
+    "unknownError": {
+      "title": "Došlo k chybe"
+    },
+    "oneServiceAtATime": {
+      "title": "Prosím, pridávajte vždy len jednu aplikáciu alebo službu!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

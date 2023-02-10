@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Lar deg enkelt se og administrere alle dine Docker containere."
+  },
+  "search": {
+    "placeholder": "Søk etter container eller imagenavn"
+  },
+  "table": {
+    "header": {
+      "name": "Navn",
+      "image": "Image",
+      "ports": "Porter",
+      "state": "Status"
+    },
+    "body": {
+      "portCollapse": "{{ports}} flere"
+    },
+    "states": {
+      "running": "Kjører",
+      "created": "Opprettet",
+      "stopped": "Stoppet",
+      "unknown": "Ukjent"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Legg til app",
+      "message": "Legg til app i Homarr"
+    },
+    "restart": {
+      "title": "Omstart"
+    },
+    "stop": {
+      "title": "Stopp"
+    },
+    "start": {
+      "title": "Start"
+    },
+    "refreshData": {
+      "title": "Oppdater data"
+    },
+    "remove": {
+      "title": "Fjern"
+    },
+    "addToHomarr": {
+      "title": "Legg til i Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Starter",
+      "end": "Startet"
+    },
+    "stop": {
+      "start": "Stopper",
+      "end": "Stoppet"
+    },
+    "restart": {
+      "start": "Starter på nytt",
+      "end": "Startet på nytt"
+    },
+    "remove": {
+      "start": "Fjerner",
+      "end": "Fjernet"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker-integrasjonen mislyktes",
+      "message": "Har du glemt å koble til Docker socket?"
+    },
+    "unknownError": {
+      "title": "Det oppstod en feil"
+    },
+    "oneServiceAtATime": {
+      "title": "Legg bare til en app eller en tjeneste om gangen!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}
