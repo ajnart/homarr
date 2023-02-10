@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dátum a čas",
+    "description": "Zobrazuje aktuálny dátum a čas.",
     "settings": {
-      "title": "",
+      "title": "Nastavenia miniaplikácie Dátum a čas",
       "display24HourFormat": {
-        "label": ""
+        "label": "Zobraziť celý čas (24 hodín)"
       }
     }
   }
