@@ -26,6 +26,7 @@ import {
   ServerSidePackageAttributesType,
 } from '../tools/server/getPackageVersion';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
+import 'video.js/dist/video-js.css';
 
 import '../styles/global.scss';
 import '@uiw/react-textarea-code-editor/dist.css';
