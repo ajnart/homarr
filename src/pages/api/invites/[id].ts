@@ -4,6 +4,14 @@ import { getServerAuthSession } from '../../../server/common/get-server-auth-ses
 
 async function Delete(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
+
+  if (!session) {
+    return res.status(401).json({
+      code: 'UNAUTHORIZED',
+      message: 'Unauthorized.',
+    });
+  }
+
   const user = await prisma?.user.findFirst({
     where: { id: session?.user?.id },
   });

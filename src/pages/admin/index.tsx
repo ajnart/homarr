@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import { MainLayout } from '../../components/layout/admin/main-layout';
 import { getServerSideTranslations } from '../../tools/getServerSideTranslations';
 

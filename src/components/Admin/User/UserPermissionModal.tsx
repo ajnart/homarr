@@ -1,6 +1,6 @@
 import { Button, Center, Checkbox, Group, Table, Text, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { ContextModalProps, openContextModal } from '@mantine/modals';
+import { ContextModalProps, openConfirmModal, openContextModal } from '@mantine/modals';
 import { DashboardPermission } from '@prisma/client';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -11,23 +11,22 @@ type InnerProps = {
 };
 
 export const UserPermissionModal = ({ context, id, innerProps }: ContextModalProps<InnerProps>) => {
-  const form = useForm<FormType>();
+  const { onSubmit, getInputProps, values, setFieldValue, isTouched, setValues } =
+    useForm<FormType>();
   useUserPermissionsQuery(innerProps.user.id, {
     onSuccess(permissions) {
-      form.setValues((prev) => ({
+      setValues((prev) => ({
         permissions:
           permissions?.map((p, index) => {
             const previousDashboard = prev.permissions?.find((x) => x.id === p.id);
             return {
               id: p.id,
               canRead:
-                previousDashboard &&
-                form.isTouched(`permissions.${previousDashboard.index}.canRead`)
+                previousDashboard && isTouched(`permissions.${previousDashboard.index}.canRead`)
                   ? previousDashboard.canRead
                   : p.permission !== null,
               canWrite:
-                previousDashboard &&
-                form.isTouched(`permissions.${previousDashboard.index}.canWrite`)
+                previousDashboard && isTouched(`permissions.${previousDashboard.index}.canWrite`)
                   ? previousDashboard.canWrite
                   : p.permission?.permission === 'write',
               index,
@@ -40,7 +39,7 @@ export const UserPermissionModal = ({ context, id, innerProps }: ContextModalPro
   const handleSubmit = (values: FormType) => {};
 
   return (
-    <form onSubmit={form.onSubmit(handleSubmit)}>
+    <form onSubmit={onSubmit(handleSubmit)}>
       <Table>
         <thead>
           <tr>
@@ -54,7 +53,7 @@ export const UserPermissionModal = ({ context, id, innerProps }: ContextModalPro
           </tr>
         </thead>
         <tbody>
-          {form.values.permissions?.map((p, index) => (
+          {values.permissions?.map((p, index) => (
             <tr>
               <td>
                 <Text weight={500}>{p.id}</Text>
@@ -62,13 +61,13 @@ export const UserPermissionModal = ({ context, id, innerProps }: ContextModalPro
               <td>
                 <Center>
                   <Checkbox
-                    {...form.getInputProps(`permissions.${index}.canRead`, { type: 'checkbox' })}
+                    {...getInputProps(`permissions.${index}.canRead`, { type: 'checkbox' })}
                     onChange={(ev) => {
-                      form
-                        .getInputProps(`permissions.${index}.canRead`, { type: 'checkbox' })
-                        .onChange(ev);
+                      getInputProps(`permissions.${index}.canRead`, { type: 'checkbox' }).onChange(
+                        ev
+                      );
                       if (!ev.target.checked) {
-                        form.setFieldValue(`permissions.${index}.canWrite`, false);
+                        setFieldValue(`permissions.${index}.canWrite`, false);
                       }
                     }}
                   />
@@ -77,13 +76,13 @@ export const UserPermissionModal = ({ context, id, innerProps }: ContextModalPro
               <td>
                 <Center>
                   <Checkbox
-                    {...form.getInputProps(`permissions.${index}.canWrite`, { type: 'checkbox' })}
+                    {...getInputProps(`permissions.${index}.canWrite`, { type: 'checkbox' })}
                     onChange={(ev) => {
-                      form
-                        .getInputProps(`permissions.${index}.canWrite`, { type: 'checkbox' })
-                        .onChange(ev);
+                      getInputProps(`permissions.${index}.canWrite`, { type: 'checkbox' }).onChange(
+                        ev
+                      );
                       if (ev.target.checked) {
-                        form.setFieldValue(`permissions.${index}.canRead`, true);
+                        setFieldValue(`permissions.${index}.canRead`, true);
                       }
                     }}
                   />
@@ -94,18 +93,7 @@ export const UserPermissionModal = ({ context, id, innerProps }: ContextModalPro
         </tbody>
       </Table>
       <Group position="right">
-        <Button
-          onClick={() => {
-            if (!form.isTouched('permissions')) {
-              context.closeModal(id);
-              return;
-            }
-
-            // open confirm modal if user is sure to cancel all current changes
-          }}
-        >
-          Cancel
-        </Button>
+        <Button onClick={() => context.closeModal(id)}>Cancel</Button>
         <Button type="submit">Save</Button>
       </Group>
     </form>

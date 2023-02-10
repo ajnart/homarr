@@ -7,8 +7,8 @@ import {
   Card,
   Grid,
   Group,
-  Image,
   Header,
+  Image,
   Menu,
   Navbar,
   NavLink,
@@ -19,7 +19,6 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import {
-  IconAdjustments,
   IconAdjustmentsAlt,
   IconArticle,
   IconBook2,
@@ -28,7 +27,6 @@ import {
   IconDashboard,
   IconGitFork,
   IconLogout,
-  IconMacro,
   IconMailForward,
   IconPlus,
   IconQuestionMark,
@@ -39,6 +37,7 @@ import {
   IconUser,
   IconUserSearch,
 } from '@tabler/icons';
+import { signOut } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { Logo } from '../Logo';
 
@@ -118,7 +117,7 @@ export const MainLayout = () => {
                   <Menu.Item icon={<IconUserSearch size={18} />}>View Profile</Menu.Item>
                   <Menu.Item icon={<IconDashboard size={18} />}>Default Dashboard</Menu.Item>
                   <Menu.Divider />
-                  <Menu.Item icon={<IconLogout size={18} />} color="red">
+                  <Menu.Item icon={<IconLogout size={18} />} color="red" onClick={() => signOut()}>
                     Logout
                   </Menu.Item>
                 </Menu.Dropdown>

@@ -6,11 +6,12 @@ import Head from 'next/head';
 import { openInviteCreateModal } from '../../components/Admin/Invite/InviteCreateModal';
 import { InviteTable } from '../../components/Admin/Invite/InviteTable';
 import { useUsersQuery } from '../../components/Admin/User/UserList';
+import { useScreenSmallerThan } from '../../hooks/useScreenSmallerThan';
 import { getServerAuthSession } from '../../server/common/get-server-auth-session';
 import { getServerSideTranslations } from '../../tools/getServerSideTranslations';
 
 const Invites: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
-  const { data: users } = useUsersQuery();
+  const smallerThanSm = useScreenSmallerThan('sm');
 
   return (
     <>
@@ -28,19 +29,9 @@ const Invites: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> 
               Manage your invites for new users.
             </Title>
           </div>
-          <Group position="right" noWrap>
-            <Group noWrap>
-              <Button
-                component={NextLink}
-                href="/admin/users"
-                variant="default"
-                leftIcon={<IconUser size={16} />}
-                rightIcon={<Badge>{users?.length ?? 0}</Badge>}
-              >
-                Users
-              </Button>
-              <Button onClick={openInviteCreateModal}>New invite</Button>
-            </Group>
+          <Group grow={smallerThanSm} position="right">
+            <UsersButton />
+            <Button onClick={openInviteCreateModal}>New invite</Button>
           </Group>
           <InviteTable />
         </Stack>
@@ -78,3 +69,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default Invites;
+
+const UsersButton = () => {
+  const { data: users } = useUsersQuery();
+
+  return (
+    <Button
+      component={NextLink}
+      href="/admin/users"
+      variant="default"
+      leftIcon={<IconUser size={16} />}
+      rightIcon={users?.length === 0 || !users ? null : <Badge>{users.length}</Badge>}
+    >
+      Users
+    </Button>
+  );
+};

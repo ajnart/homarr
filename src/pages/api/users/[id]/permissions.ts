@@ -6,6 +6,14 @@ import { getDashboards } from '../../../../tools/getDashboards';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
+
+  if (!session) {
+    return res.status(401).json({
+      code: 'UNAUTHORIZED',
+      message: 'Unauthorized.',
+    });
+  }
+
   const user = await prisma?.user.findFirst({
     where: { id: session?.user?.id },
   });
@@ -52,6 +60,14 @@ const userArchiveInputSchema = z.object({
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
+
+  if (!session) {
+    return res.status(401).json({
+      code: 'UNAUTHORIZED',
+      message: 'Unauthorized.',
+    });
+  }
+
   const user = await prisma?.user.findFirst({
     where: { id: session?.user?.id },
   });
