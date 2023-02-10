@@ -9,7 +9,6 @@ import {
 } from '@mantine/core';
 import React from 'react';
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
@@ -93,13 +92,4 @@ export default function Custom404() {
       </div>
     </Container>
   );
-}
-
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      // Will be passed to the page component as props
-    },
-  };
 }
