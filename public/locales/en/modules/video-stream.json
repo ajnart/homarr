@@ -4,8 +4,8 @@
     "description": "Embed a video stream or video from a camera or a website",
     "settings": {
       "title": "Settings for video stream widget",
-      "cameraFeedUrl": {
-        "label": "Camera feed url"
+      "FeedUrl": {
+        "label": "Feed url"
       },
       "autoPlay": {
         "label": "Auto play"
