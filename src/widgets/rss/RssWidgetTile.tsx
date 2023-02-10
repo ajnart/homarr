@@ -1,24 +1,35 @@
 import {
   ActionIcon,
-  BackgroundImage,
   Badge,
-  Button,
   Card,
   Center,
   createStyles,
   Flex,
   Group,
   Image,
-  Indicator,
   Loader,
+  LoadingOverlay,
+  MediaQuery,
   Stack,
   Text,
   Title,
   UnstyledButton,
 } from '@mantine/core';
-import NextLink from 'next/link';
-import { IconClock, IconRefresh, IconRss } from '@tabler/icons';
+import { useElementSize } from '@mantine/hooks';
+import {
+  IconBulldozer,
+  IconCalendarTime,
+  IconClock,
+  IconCopyright,
+  IconRefresh,
+  IconRss,
+  IconSpeakerphone,
+} from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { useState } from 'react';
 import { useGetRssFeed } from '../../hooks/widgets/rss/useGetRssFeed';
+import { sleep } from '../../tools/client/time';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -47,8 +58,11 @@ interface RssTileProps {
 }
 
 function RssTile({ widget }: RssTileProps) {
+  const { t } = useTranslation('modules/rss');
   const { data, isLoading, isFetching, refetch } = useGetRssFeed();
   const { classes } = useStyles();
+  const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
+
   if (!data || isLoading) {
     return (
       <Center>
@@ -57,44 +71,50 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  console.log(data);
+  if (!data.success) {
+    return (
+      <Center>
+        <Stack align="center">
+          <IconRss size={40} strokeWidth={1} />
+          <Title order={6}>{t('card.errors.general.title')}</Title>
+          <Text align="center">{t('card.errors.general.text')}</Text>
+        </Stack>
+      </Center>
+    );
+  }
 
   return (
     <Stack>
+      <LoadingOverlay visible={loadingOverlayVisible} />
       <Flex gap="md">
-        {data.image && (
-          <Indicator label={data.items.length} size={22}>
-            <Image src={data.image.url} alt={data.image.title} width={50} height={50} />
-          </Indicator>
+        {data.feed.image ? (
+          <Image
+            src={data.feed.image.url}
+            alt={data.feed.image.title}
+            width="auto"
+            height={40}
+            maw="50%"
+            mx="auto"
+          />
+        ) : (
+          <Title order={6}>{data.feed.title}</Title>
         )}
-
-        <Stack spacing={0}>
-          <Title order={6} lineClamp={1}>
-            {data.title}
-          </Title>
-          <Text>{data.description}</Text>
-        </Stack>
-
-        {isFetching && 'fetching'}
-        {isLoading && 'loading'}
-
-        <Group ml="auto">
-          <UnstyledButton onClick={() => refetch()} disabled={isFetching || isLoading}>
-            <ActionIcon>
-              <IconRefresh />
-            </ActionIcon>
-          </UnstyledButton>
-        </Group>
-      </Flex>
-      {data.items.map((item: any, index: number) => (
-        <Card
-          key={index}
-          withBorder
-          component={NextLink}
-          href={item.link}
-          radius="md"
-          target="_blank"
+        <UnstyledButton
+          onClick={async () => {
+            setLoadingOverlayVisible(true);
+            await sleep(1500);
+            await refetch();
+            setLoadingOverlayVisible(false);
+          }}
+          disabled={isFetching || isLoading}
         >
+          <ActionIcon>
+            <IconRefresh />
+          </ActionIcon>
+        </UnstyledButton>
+      </Flex>
+      {data.feed.items.map((item: any, index: number) => (
+        <Card key={index} withBorder component={Link} href={item.link} radius="md" target="_blank">
           {item.enclosure && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -105,13 +125,16 @@ function RssTile({ widget }: RssTileProps) {
           )}
 
           <Flex gap="xs">
-            <Image
-              src={item.enclosure?.url ?? undefined}
-              width={140}
-              height={140}
-              radius="md"
-              withPlaceholder
-            />
+            <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
+              <Image
+                src={item.enclosure?.url ?? undefined}
+                width={140}
+                height={140}
+                radius="md"
+                withPlaceholder
+              />
+            </MediaQuery>
+
             <Flex gap={2} direction="column">
               {item.categories && (
                 <Flex gap="xs" wrap="wrap" style={{ height: 20, overflow: 'hidden' }}>
@@ -131,6 +154,41 @@ function RssTile({ widget }: RssTileProps) {
           </Flex>
         </Card>
       ))}
+      <Flex wrap="wrap" columnGap="md">
+        <Group spacing="sm">
+          <IconCopyright size={14} />
+          <Text color="dimmed" size="sm">
+            {data.feed.copyright}
+          </Text>
+        </Group>
+        <Group>
+          <IconCalendarTime size={14} />
+          <Text color="dimmed" size="sm">
+            {data.feed.pubDate}
+          </Text>
+        </Group>
+        <Group>
+          <IconBulldozer size={14} />
+          <Text color="dimmed" size="sm">
+            {data.feed.lastBuildDate}
+          </Text>
+        </Group>
+        {data.feed.feedUrl && (
+          <Group spacing="sm">
+            <IconSpeakerphone size={14} />
+            <Text
+              color="dimmed"
+              size="sm"
+              variant="link"
+              target="_blank"
+              component={Link}
+              href={data.feed.feedUrl}
+            >
+              {data.feed.feedUrl}
+            </Text>
+          </Group>
+        )}
+      </Flex>
     </Stack>
   );
 }
@@ -144,14 +202,20 @@ const TimeDisplay = ({ date }: { date: string }) => (
   </Group>
 );
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles(({ colorScheme }) => ({
   backgroundImage: {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    filter: 'blur(30px)',
+    filter: colorScheme === 'dark' ? 'blur(30px)' : 'blur(15px)',
     transform: 'scaleX(-1)',
-    opacity: 0.2,
+    opacity: colorScheme === 'dark' ? 0.3 : 0.2,
+    transition: 'ease-in-out 0.2s',
+
+    '&:hover': {
+      opacity: colorScheme === 'dark' ? 0.4 : 0.3,
+      filter: 'blur(40px) brightness(0.7)',
+    },
   },
 }));
 

@@ -1,18 +1,16 @@
 import Consola from 'consola';
 
+import { getCookie } from 'cookies-next';
+
 import { decode } from 'html-entities';
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import Parser from 'rss-parser';
 
+import { getConfig } from '../../../../tools/config/getConfig';
 import { Stopwatch } from '../../../../tools/shared/stopwatch';
-
-const test1 = 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml';
-const test2 = 'http://rss.cnn.com/rss/edition.rss';
-const test3 = 'https://partner-feeds.beta.20min.ch/rss/20minuten';
-const test4 =
-  'https://www.bmi.bund.de/DE/service/rss-newsfeed/function/rssnewsfeed-pressemitteilungen.xml;jsessionid=C1C89DBDAEB9C8DAD90A0AC24E78735A.2_cid364';
+import { IRssWidget } from '../../../../widgets/rss/RssWidgetTile';
 
 type CustomItem = {
   'media:content': string;
@@ -28,9 +26,23 @@ const parser: Parser<any, CustomItem> = new Parser({
 });
 
 export const Get = async (request: NextApiRequest, response: NextApiResponse) => {
+  const configName = getCookie('config-name', { req: request });
+  const config = getConfig(configName?.toString() ?? 'default');
+
+  const rssWidget = config.widgets.find((x) => x.id === 'rss') as IRssWidget | undefined;
+
+  if (
+    !rssWidget ||
+    !rssWidget.properties.rssFeedUrl ||
+    rssWidget.properties.rssFeedUrl.length < 1
+  ) {
+    response.status(400).json({ message: 'required widget does not exist' });
+    return;
+  }
+
   Consola.info('Requesting RSS feed...');
   const stopWatch = new Stopwatch();
-  const feed = await parser.parseURL(test1);
+  const feed = await parser.parseURL(rssWidget.properties.rssFeedUrl);
   Consola.info(`Retrieved RSS feed after ${stopWatch.getEllapsedMilliseconds()} milliseconds`);
 
   const orderedFeed = {
@@ -60,7 +72,10 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
       .slice(0, 20),
   };
 
-  response.status(200).json(orderedFeed);
+  response.status(200).json({
+    feed: orderedFeed,
+    success: orderedFeed?.items !== undefined,
+  });
 };
 
 const createEnclosure = (item: any) => {
