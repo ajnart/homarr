@@ -1,38 +1,38 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Nastavenia",
+  "tooltip": "Nastavenia",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Spoločné",
+    "customizations": "Prispôsobenia"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Nahrajte svoj konfiguračný súbor presunutím myšou na stránku!"
   },
   "credits": {
-    "madeWithLove": "",
-    "thirdPartyContent": "",
+    "madeWithLove": "Vyrobené z ❤️ od @",
+    "thirdPartyContent": "Pozrite si obsah tretích strán",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Závislosť",
       "dependencyVersion": "Verzia"
     }
   },
-  "grow": "",
+  "grow": "Zväčšiť mriežku (zabrať všetok priestor)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Náhľad",
+      "subtitle": "Zmeny sa uložia automaticky"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "Možnosti rozloženia",
+    "main": "Hlavný",
+    "sidebar": "Bočný panel",
+    "cannotturnoff": "Nedá sa vypnúť",
+    "dashboardlayout": "Rozloženie dashboardu",
+    "enablersidebar": "Povoliť pravý bočný panel",
+    "enablelsidebar": "Povoliť ľavý bočný panel",
+    "enablesearchbar": "Povoliť panel vyhľadávania",
+    "enabledocker": "Povoliť Docker integráciu",
+    "enableping": "Povoliť pingy",
+    "enablelsidebardesc": "Voliteľné. Dá sa použiť iba pre aplikácie a integrácie",
+    "enablersidebardesc": "Voliteľné. Dá sa použiť iba pre aplikácie a integrácie"
   }
 }
