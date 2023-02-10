@@ -1,24 +1,24 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Hiển thị danh sách torrent của các ứng dụng torrent được hỗ trợ.",
     "settings": {
-      "title": "",
+      "title": "Cài đặt cho tiện ích torrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Khoảng thời gian làm mới (bằng giây)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Hiển thị torrent hoàn thành"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Hiển thị torrent hết hạn"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Lỗi",
-      "lastUpdated": ""
+      "lastUpdated": "Cập nhật cuối cách đây {{time}}"
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "Tiến độ"
       },
       "item": {
-        "text": ""
+        "text": "Quản lý bởi {{appName}}, tỷ lệ {{ratio}}"
       },
       "body": {
         "nothingFound": "Không tìm thấy torrent nào"
@@ -46,26 +46,26 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Không tìm thấy ứng dụng torrent được hỗ trợ nào!",
+        "text": "Thêm ứng dụng torrent được hỗ trợ để xem các bản tải xuống hiện tại"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Đã xảy ra lỗi không mong muốn",
+        "text": "Homarr không thể giao tiếp với ứng dụng torrent của bạn. Vui lòng kiểm tra lại cấu hình"
       }
     },
     "loading": {
       "title": "Đang tải..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Quản lý bởi",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Vị trí hàng đợi - {{position}}",
+        "progress": "Tiến độ - {{progress}}%",
+        "totalSelectedSize": "Tổng - {{totalSize}}",
+        "state": "Trạng thái - {{state}}",
+        "ratio": "Tỷ lệ -",
+        "completed": "Đã hoàn thành"
       }
     }
   }
