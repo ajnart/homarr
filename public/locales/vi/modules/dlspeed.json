@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Tốc độ tải",
-    "description": ""
+    "description": "Hiện thị tốc độ tải xuống và tải lên của các tích hợp được hỗ trợ."
   },
   "card": {
     "table": {
