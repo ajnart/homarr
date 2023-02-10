@@ -1,0 +1,72 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "Viser en liste over torrenter fra støttede Torrent-klienter.",
+    "settings": {
+      "title": "Innstillinger for Torrent widget",
+      "refreshInterval": {
+        "label": "Oppdaterings intervall (i sekunder)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Vis fullførte torrenter"
+      },
+      "displayStaleTorrents": {
+        "label": "Vis gamle torrenter"
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "Feil",
+      "lastUpdated": "Sist oppdatert for {{time}} siden"
+    },
+    "table": {
+      "header": {
+        "name": "Navn",
+        "size": "Størrelse",
+        "download": "Ned",
+        "upload": "Opp",
+        "estimatedTimeOfArrival": "Gjenstående tid (estimat)",
+        "progress": "Fremgang"
+      },
+      "item": {
+        "text": "Styrt med {{appName}}, {{ratio}} forhold"
+      },
+      "body": {
+        "nothingFound": "Ingen torrenter funnet"
+      }
+    },
+    "lineChart": {
+      "title": "Gjeldende nedlastingshastighet",
+      "download": "Nedlasting: {{download}}",
+      "upload": "Opplasting: {{upload}}",
+      "timeSpan": "{{seconds}} sekunder siden",
+      "totalDownload": "Nedlasting: {{download}}/s",
+      "totalUpload": "Opplasting: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Ingen støttede Torrent-klienter funnet!",
+        "text": "Legg til en støttet Torrent-klient for å se de nåværende nedlastingene"
+      },
+      "generic": {
+        "title": "En uventet feil har oppstått",
+        "text": "Homarr kunne ikke kommunisere med dine Torrent-klienter. Kontroller konfigurasjonen"
+      }
+    },
+    "loading": {
+      "title": "Laster inn..."
+    },
+    "popover": {
+      "introductionPrefix": "Administrert av",
+      "metrics": {
+        "queuePosition": "Kø posisjon - {{position}}",
+        "progress": "Fremgang - {{progress}}%",
+        "totalSelectedSize": "Totalt - {{totalSize}}",
+        "state": "Status – {{state}}",
+        "ratio": "Forhold -",
+        "completed": "Fullført"
+      }
+    }
+  }
+}

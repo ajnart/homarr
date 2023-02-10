@@ -1,6 +1,6 @@
 {
   "columnsCount": {
-    "labelPreset": "",
+    "labelPreset": "Colonnes de taille {{size}}",
     "descriptionPreset": "Nombre de colonnes lorsque l'écran a une largeur inférieure à {{pixels}} pixels",
     "descriptionExceedsPreset": "Nombre de colonnes lorsque la taille de l'écran dépasse {{pixels}} pixels"
   },

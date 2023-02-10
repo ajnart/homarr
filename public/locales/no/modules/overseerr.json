@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Lar deg søke og legge til media fra Overseerr eller Jellyseerr."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Be om {{title}}",
+        "cancel": "Avbryt",
+        "request": "Forespørsel"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Bruker API-nøkkel",
+          "text": "Denne forespørselen blir automatisk godkjent"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Marker sesongen du vil laste ned",
+      "table": {
+        "header": {
+          "season": "Sesong",
+          "numberOfEpisodes": "Antall episoder"
+        }
+      }
+    }
+  }
+}

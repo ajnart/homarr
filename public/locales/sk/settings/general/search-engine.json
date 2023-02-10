@@ -1,0 +1,19 @@
+{
+  "title": "Vyhľadávač",
+  "configurationName": "Konfigurácia vyhľadávača",
+  "tips": {
+    "generalTip": "Môžete použiť viacero predpon! Ich pridaním pred dotaz sa budú výsledky filtrovať. !s (Web), !t (Torrenty), !y (YouTube) a !m (Médiá).",
+    "placeholderTip": "%s možno použiť ako zástupný symbol pre dotaz."
+  },
+  "customEngine": {
+    "title": "Vlastný vyhľadávač",
+    "label": "Adresa URL dopytu",
+    "placeholder": "Adresa URL vlastného dopytu"
+  },
+  "searchNewTab": {
+    "label": "Otvoriť výsledky vyhľadávania na novej karte"
+  },
+  "searchEnabled": {
+    "label": "Vyhľadávanie povolené"
+  }
+}

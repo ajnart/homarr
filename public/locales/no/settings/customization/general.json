@@ -1,0 +1,21 @@
+{
+  "text": "Med tilpasninger kan du konfigurere og justere din opplevelse med Homarr etter dine preferanser.",
+  "accordeon": {
+    "layout": {
+      "name": "Oppsett",
+      "description": "Aktiver og deaktiver elementer i headeren din og dashbord fliser"
+    },
+    "gridstack": {
+      "name": "Gridstack",
+      "description": "Tilpass oppførselen og kolonnene i ditt dashbordområde"
+    },
+    "pageMetadata": {
+      "name": "Side metadata",
+      "description": "Juster titler, logo og PWA"
+    },
+    "appereance": {
+      "name": "Utseende",
+      "description": "Tilpass både bakgrunn, farger og apper"
+    }
+  }
+}
