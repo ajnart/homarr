@@ -1,63 +1,71 @@
-import { createStyles, Stack, Title, useMantineTheme } from '@mantine/core';
-import { DashDotGraph as GraphType } from './types';
+import { createStyles, Title, useMantineTheme } from '@mantine/core';
+import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
+import { DashDotCompactStorage } from './DashDotCompactStorage';
 
 interface DashDotGraphProps {
-  graph: GraphType;
+  graph: string;
+  graphHeight: number;
   isCompact: boolean;
+  multiView: boolean;
   dashDotUrl: string;
   usePercentages: boolean;
+  info: DashDotInfo;
 }
 
 export const DashDotGraph = ({
   graph,
+  graphHeight,
   isCompact,
+  multiView,
   dashDotUrl,
   usePercentages,
+  info,
 }: DashDotGraphProps) => {
   const { classes } = useStyles();
-  return (
-    <Stack
-      className={classes.graphStack}
-      w="100%"
-      maw="251px"
-      style={{
-        width: isCompact ? (graph.twoSpan ? '100%' : 'calc(50% - 10px)') : undefined,
-      }}
-    >
+
+  return graph === 'storage' && isCompact ? (
+    <DashDotCompactStorage info={info} />
+  ) : graph === 'network' && isCompact ? (
+    <DashDotCompactNetwork info={info} />
+  ) : (
+    <div className={classes.graphContainer}>
       <Title className={classes.graphTitle} order={4}>
-        {graph.name}
+        {graph}
       </Title>
       <iframe
         className={classes.iframe}
-        key={graph.name}
-        title={graph.name}
-        src={useIframeSrc(dashDotUrl, graph, isCompact, usePercentages)}
+        key={graph}
+        title={graph}
+        src={useIframeSrc(dashDotUrl, graph, multiView, usePercentages)}
+        style={{
+          height: `${graphHeight}px`,
+        }}
       />
-    </Stack>
+    </div>
   );
 };
 
 const useIframeSrc = (
   dashDotUrl: string,
-  graph: GraphType,
-  isCompact: boolean,
+  graph: string,
+  multiView: boolean,
   usePercentages: boolean
 ) => {
   const { colorScheme, colors, radius } = useMantineTheme();
   const surface = (colorScheme === 'dark' ? colors.dark[7] : colors.gray[0]).substring(1); // removes # from hex value
 
-  const graphId = graph.id === 'memory' ? 'ram' : graph.id;
-
   return (
     `${dashDotUrl}` +
-    '?singleGraphMode=true' +
-    `&graph=${graphId}` +
+    '?singleGraphMode=true' + // obsolete in newer versions
+    `&graph=${graph}` +
     `&theme=${colorScheme}` +
     `&surface=${surface}` +
-    `&gap=${isCompact ? 10 : 5}` +
+    '&gap=5' +
     `&innerRadius=${radius.lg}` +
-    `&multiView=${graph.isMultiView}` +
-    `&showPercentage=${usePercentages ? 'true' : 'false'}`
+    `&multiView=${multiView}` +
+    `&showPercentage=${usePercentages.toString()}` +
+    '&textOffset=16' +
+    '&textSize=12'
   );
 };
 
@@ -65,7 +73,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   iframe: {
     flex: '1 0 auto',
     maxWidth: '100%',
-    height: '140px',
+    width: '100%',
     borderRadius: theme.radius.lg,
     border: 'none',
     colorScheme: 'light', // fixes white borders around iframe
@@ -74,13 +82,14 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     ref: getRef('graphTitle'),
     position: 'absolute',
     right: 0,
+    bottom: 0,
     opacity: 0,
     transition: 'opacity .1s ease-in-out',
     pointerEvents: 'none',
-    marginTop: 10,
-    marginRight: 25,
+    marginBottom: 12,
+    marginRight: 12,
   },
-  graphStack: {
+  graphContainer: {
     position: 'relative',
     [`&:hover .${getRef('graphTitle')}`]: {
       opacity: 0.5,

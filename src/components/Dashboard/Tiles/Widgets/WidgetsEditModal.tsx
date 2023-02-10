@@ -3,24 +3,25 @@ import {
   Button,
   Group,
   MultiSelect,
+  NumberInput,
+  Select,
+  Slider,
   Stack,
   Switch,
-  TextInput,
   Text,
-  NumberInput,
-  Slider,
-  Select,
+  TextInput,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle } from '@tabler/icons';
 import { Trans, useTranslation } from 'next-i18next';
-import { useState } from 'react';
-import Widgets from '../../../../widgets';
-import type { IWidgetOptionValue } from '../../../../widgets/widgets';
+import { FC, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { IWidget } from '../../../../widgets/widgets';
 import { useColorTheme } from '../../../../tools/color';
+import Widgets from '../../../../widgets';
+import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
+import { IWidget } from '../../../../widgets/widgets';
+import { DraggableList } from './DraggableList';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -93,7 +94,17 @@ export const WidgetsEditModal = ({
             </Alert>
           );
         }
-        return WidgetOptionTypeSwitch(option, index, t, key, value, handleChange);
+
+        return (
+          <WidgetOptionTypeSwitch
+            key={`${key}.${index}`}
+            option={option}
+            widgetId={innerProps.widgetId}
+            propName={key}
+            value={value}
+            handleChange={handleChange}
+          />
+        );
       })}
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
@@ -108,20 +119,20 @@ export const WidgetsEditModal = ({
 // Widget switch
 // Widget options are computed based on their type.
 // here you can define new types for options (along with editing the widgets.d.ts file)
-function WidgetOptionTypeSwitch(
-  option: IWidgetOptionValue,
-  index: number,
-  t: any,
-  key: string,
-  value: string | number | boolean | string[],
-  handleChange: (key: string, value: IntegrationOptionsValueType) => void
-) {
-  const { primaryColor, secondaryColor } = useColorTheme();
+const WidgetOptionTypeSwitch: FC<{
+  option: IWidgetOptionValue;
+  widgetId: string;
+  propName: string;
+  value: any;
+  handleChange: (key: string, value: IntegrationOptionsValueType) => void;
+}> = ({ option, widgetId, propName: key, value, handleChange }) => {
+  const { t } = useTranslation([`modules/${widgetId}`, 'common']);
+  const { primaryColor } = useColorTheme();
+
   switch (option.type) {
     case 'switch':
       return (
         <Switch
-          key={`${option.type}-${index}`}
           label={t(`descriptor.settings.${key}.label`)}
           checked={value as boolean}
           onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
@@ -131,7 +142,6 @@ function WidgetOptionTypeSwitch(
       return (
         <TextInput
           color={primaryColor}
-          key={`${option.type}-${index}`}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as string}
           onChange={(ev) => handleChange(key, ev.currentTarget.value)}
@@ -141,7 +151,6 @@ function WidgetOptionTypeSwitch(
       return (
         <MultiSelect
           color={primaryColor}
-          key={`${option.type}-${index}`}
           data={option.data}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as string[]}
@@ -153,7 +162,6 @@ function WidgetOptionTypeSwitch(
       return (
         <Select
           color={primaryColor}
-          key={`${option.type}-${index}`}
           defaultValue={option.defaultValue}
           data={option.data}
           label={t(`descriptor.settings.${key}.label`)}
@@ -165,7 +173,6 @@ function WidgetOptionTypeSwitch(
       return (
         <NumberInput
           color={primaryColor}
-          key={`${option.type}-${index}`}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as number}
           onChange={(v) => handleChange(key, v!)}
@@ -176,7 +183,6 @@ function WidgetOptionTypeSwitch(
         <Stack spacing="xs">
           <Slider
             color={primaryColor}
-            key={`${option.type}-${index}`}
             label={value}
             value={value as number}
             min={option.min}
@@ -186,7 +192,57 @@ function WidgetOptionTypeSwitch(
           />
         </Stack>
       );
+    case 'draggable-list':
+      // eslint-disable-next-line no-case-declarations
+      const typedVal = value as IDraggableListInputValue['defaultValue'];
+
+      return (
+        <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+          <DraggableList
+            value={typedVal}
+            onChange={(v) => handleChange(key, v)}
+            labels={Object.fromEntries(
+              Object.entries(option.items).map(([graphName]) => [
+                graphName,
+                t(`descriptor.settings.${graphName}.label`),
+              ])
+            )}
+          >
+            {Object.fromEntries(
+              Object.entries(option.items).map(([graphName, graph]) => [
+                graphName,
+                Object.entries(graph).map(([subKey, setting], i) => (
+                  <WidgetOptionTypeSwitch
+                    key={`${graphName}.${subKey}.${i}`}
+                    option={setting as IWidgetOptionValue}
+                    widgetId={widgetId}
+                    propName={`${graphName}.${subKey}`}
+                    value={typedVal.find((v) => v.key === graphName)?.subValues?.[subKey]}
+                    handleChange={(_, newVal) =>
+                      handleChange(
+                        key,
+                        typedVal.map((oldVal) =>
+                          oldVal.key === graphName
+                            ? {
+                                ...oldVal,
+                                subValues: {
+                                  ...oldVal.subValues,
+                                  [subKey]: newVal,
+                                },
+                              }
+                            : oldVal
+                        )
+                      )
+                    }
+                  />
+                )),
+              ])
+            )}
+          </DraggableList>
+        </Stack>
+      );
     default:
       return null;
   }
-}
+};

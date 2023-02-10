@@ -53,7 +53,7 @@
     "dockerode": "^3.3.2",
     "embla-carousel-react": "^7.0.0",
     "fily-publish-gridstack": "^0.0.13",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^9.0.2",
     "i18next": "^21.9.1",
     "i18next-browser-languagedetector": "^6.1.5",
     "i18next-http-backend": "^1.4.1",

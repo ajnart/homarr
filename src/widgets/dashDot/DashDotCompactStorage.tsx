@@ -25,7 +25,7 @@ export const DashDotCompactStorage = ({ info }: DashDotCompactStorageProps) => {
   });
 
   return (
-    <Group noWrap align="start" position="apart" w="100%" maw="251px">
+    <Group noWrap align="start" position="apart" w="100%">
       <Text weight={500}>{t('card.graphs.storage.label')}</Text>
       <Stack align="end" spacing={0}>
         <Text color="dimmed" size="xs">

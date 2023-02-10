@@ -83,6 +83,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
         inner: {
           position: 'sticky',
           top: 30,
+          maxHeight: '100%',
         },
       },
     });

@@ -1,4 +1,4 @@
-import { Center, createStyles, Group, Stack, Text, Title } from '@mantine/core';
+import { Center, createStyles, Grid, Stack, Text, Title } from '@mantine/core';
 import { IconUnlink } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -6,45 +6,126 @@ import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
-import { DashDotCompactStorage } from './DashDotCompactStorage';
+import { DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotGraph } from './DashDotGraph';
 
 const definition = defineWidget({
   id: 'dashdot',
   icon: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png',
   options: {
-    cpuMultiView: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    storageMultiView: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    useCompactView: {
-      type: 'switch',
-      defaultValue: true,
+    url: {
+      type: 'text',
+      defaultValue: '',
     },
     usePercentages: {
       type: 'switch',
       defaultValue: false,
     },
-    graphs: {
-      type: 'multi-select',
-      defaultValue: ['cpu', 'memory'],
-      data: [
-        // ['cpu', 'memory', 'storage', 'network', 'gpu'], into { label, value }
-        { label: 'CPU', value: 'cpu' },
-        { label: 'Memory', value: 'memory' },
-        { label: 'Storage', value: 'storage' },
-        { label: 'Network', value: 'network' },
-        { label: 'GPU', value: 'gpu' },
-      ],
+    columns: {
+      type: 'number',
+      defaultValue: 2,
     },
-    url: {
-      type: 'text',
-      defaultValue: '',
+    graphHeight: {
+      type: 'number',
+      defaultValue: 115,
+    },
+    graphsOrder: {
+      type: 'draggable-list',
+      defaultValue: [
+        {
+          key: 'storage',
+          subValues: {
+            enabled: true,
+            compactView: true,
+            span: 2,
+            multiView: false,
+          },
+        },
+        {
+          key: 'network',
+          subValues: {
+            enabled: true,
+            compactView: true,
+            span: 2,
+          },
+        },
+        {
+          key: 'cpu',
+          subValues: {
+            enabled: true,
+            multiView: false,
+            span: 1,
+          },
+        },
+        {
+          key: 'ram',
+          subValues: {
+            enabled: true,
+            span: 1,
+          },
+        },
+        {
+          key: 'gpu',
+          subValues: {
+            enabled: false,
+            span: 1,
+          },
+        },
+      ],
+      items: {
+        cpu: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+          multiView: {
+            type: 'switch',
+          },
+        },
+        storage: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+          compactView: {
+            type: 'switch',
+          },
+          multiView: {
+            type: 'switch',
+          },
+        },
+        ram: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+        },
+        network: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+          compactView: {
+            type: 'switch',
+          },
+        },
+        gpu: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+        },
+      },
     },
   },
   gridstack: {
@@ -83,60 +164,41 @@ function DashDotTile({ widget }: DashDotTileProps) {
           <IconUnlink size={40} strokeWidth={1.2} />
           <Title order={5}>{t('card.errors.protocolDowngrade.title')}</Title>
           <Text align="center" size="sm">
-          {t('card.errors.protocolDowngrade.text')}
+            {t('card.errors.protocolDowngrade.text')}
           </Text>
         </Stack>
       </Center>
     );
   }
 
-  const graphs = widget?.properties.graphs.map((graph) => ({
-    id: graph,
-    name: t(`card.graphs.${graph}.title`),
-    twoSpan: ['network', 'gpu'].includes(graph),
-    isMultiView:
-      (graph === 'cpu' && widget.properties.cpuMultiView) ||
-      (graph === 'storage' && widget.properties.storageMultiView),
-  }));
-
-  const isCompact = widget?.properties.useCompactView ?? false;
-
-  const isCompactStorageVisible = graphs?.some((g) => g.id === 'storage' && isCompact);
-
-  const isCompactNetworkVisible = graphs?.some((g) => g.id === 'network' && isCompact);
-
-  const usePercentages = widget?.properties.usePercentages ?? false;
-
-  const displayedGraphs = graphs?.filter(
-    (g) => !isCompact || !['network', 'storage'].includes(g.id)
-  );
+  const { graphsOrder, usePercentages, columns, graphHeight } = widget.properties;
 
   return (
-    <>
-      <Title order={3} mb="xs">
-        {t('card.title')}
-      </Title>
+    <Stack spacing="xs">
+      <Title order={3}>{t('card.title')}</Title>
       {!info && <p>{t('card.errors.noInformation')}</p>}
       {info && (
         <div className={classes.graphsContainer}>
-          <Group position="apart" w="100%">
-            {isCompactStorageVisible && <DashDotCompactStorage info={info} />}
-            {isCompactNetworkVisible && <DashDotCompactNetwork info={info} />}
-          </Group>
-          <Group position="center" w="100%" className={classes.graphsWrapper}>
-            {displayedGraphs?.map((graph) => (
-              <DashDotGraph
-                key={graph.id}
-                graph={graph}
-                dashDotUrl={dashDotUrl}
-                isCompact={isCompact}
-                usePercentages={usePercentages}
-              />
-            ))}
-          </Group>
+          <Grid grow gutter="sm" w="100%" columns={columns}>
+            {graphsOrder
+              .filter((g) => g.subValues.enabled)
+              .map((g) => (
+                <Grid.Col span={Math.min(columns, g.subValues.span)}>
+                  <DashDotGraph
+                    dashDotUrl={dashDotUrl}
+                    info={info}
+                    graph={g.key as any}
+                    graphHeight={graphHeight}
+                    isCompact={g.subValues.compactView ?? false}
+                    multiView={g.subValues.multiView ?? false}
+                    usePercentages={usePercentages}
+                  />
+                </Grid.Col>
+              ))}
+          </Grid>
         </div>
       )}
-    </>
+    </Stack>
   );
 }
 
@@ -170,12 +232,6 @@ export const useDashDotTileStyles = createStyles(() => ({
     flexWrap: 'wrap',
     rowGap: 10,
     columnGap: 10,
-  },
-  graphsWrapper: {
-    '& > *:nth-child(odd):last-child': {
-      width: '100% !important',
-      maxWidth: '100% !important',
-    },
   },
 }));
 
