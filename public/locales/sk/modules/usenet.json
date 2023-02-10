@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Umožňuje vám zobraziť a spravovať vašu inštanciu Usenet."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nenašli sa žiadni podporovaní klienti na sťahovanie!",
+        "text": "Ak chcete zobraziť aktuálne stiahnuté súbory, pridajte podporovaného klienta Usenet Download Client"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Fronta",
+    "history": "História"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Veľkosť vľavo",
+    "paused": "Pozastavené"
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "Názov",
+      "size": "Veľkosť",
+      "eta": "Odhad",
+      "progress": "Stav"
     },
-    "empty": "",
+    "empty": "Prázdny",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Chyba",
+      "message": "Došlo k chybe"
     },
-    "paused": ""
+    "paused": "Pozastavené"
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
-      "duration": ""
+      "name": "Názov",
+      "size": "Veľkosť",
+      "duration": "Trvanie"
     },
-    "empty": "",
+    "empty": "Prázdny",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Chyba",
+      "message": "Chyba pri načítavaní histórie"
     },
-    "paused": ""
+    "paused": "Pozastavené"
   }
 }
