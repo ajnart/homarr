@@ -29,7 +29,6 @@ import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAt
 import 'video.js/dist/video-js.css';
 
 import '../styles/global.scss';
-import '@uiw/react-textarea-code-editor/dist.css';
 
 function App(
   this: any,
