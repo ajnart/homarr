@@ -1,9 +1,9 @@
 {
   "configSelect": {
     "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "description": "{{configCount}} cấu hình có sẵn",
+    "loadingNew": "Đang tải cấu hình...",
+    "pleaseWait": "Vui lòng chờ cho đến khi cấu hình mới được tải!"
   },
   "modal": {
     "copy": {
@@ -12,8 +12,8 @@
         "configName": {
           "label": "Tên cấu hình",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Tên cấu hình là bắt buộc",
+            "notUnique": "Tên cấu hình đã được sử dụng"
           },
           "placeholder": "Tên cấu hình mới của bạn"
         },
@@ -25,17 +25,17 @@
           "message": "Đã lưu cấu hình thành {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Đã sao chép cấu hình",
+          "message": "Đã sao chép cấu hình thành {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Không thể sao chép cấu hình",
+          "message": "Cấu hình chưa được sao chép thành {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
+      "title": "Xác nhận xóa cấu hình của bạn",
       "warningText": "",
       "text": "",
       "buttons": {
@@ -57,7 +57,7 @@
           "message": "Xoá cấu hình thất bại"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
+          "title": "Cấu hình mặc định không thể bị xoá",
           "message": ""
         }
       }
