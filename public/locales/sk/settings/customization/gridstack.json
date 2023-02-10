@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Stĺpce vo veľkosti {{size}}",
+    "descriptionPreset": "Počet stĺpcov, keď je obrazovka široká menej ako {{pixels}} pixelov",
+    "descriptionExceedsPreset": "Počet stĺpcov, keď veľkosť obrazovky presahuje {{pixels}} pixelov"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
-  "defaultValues": ""
+  "unsavedChanges": "Máte neuložené zmeny. Kliknite na tlačidlo Použiť zmeny nižšie, aby ste ich použili a uložili.",
+  "applyChanges": "Použiť zmeny",
+  "defaultValues": "Predvolené hodnoty"
 }
