@@ -21,8 +21,8 @@
   "customCSS": {
     "label": "CSS tuỳ chỉnh",
     "description": "",
-    "placeholder": "",
-    "applying": ""
+    "placeholder": "CSS tùy chỉnh sẽ được áp dụng sau cùng",
+    "applying": "Đang áp dụng CSS..."
   },
   "buttons": {
     "submit": "Gửi"
