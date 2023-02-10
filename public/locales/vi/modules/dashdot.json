@@ -20,7 +20,7 @@
         "label": "URL của Dash."
       },
       "usePercentages": {
-        "label": ""
+        "label": "Hiển thị phần trăm"
       }
     }
   },
@@ -30,8 +30,8 @@
       "noService": "Dịch vụ Dash. không được tìm thấy. Vui lòng thêm nó vào bảng Homarr của bạn hoặc thiết lập một đường dẫn Dash. trong tuỳ chọn của mô-đun",
       "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Phát hiện hạ cấp giao thức",
+        "text": "Giao thức cho phiên bản Dash của bạn. không ở chế độ bảo mật. Đây được coi là rủi ro bảo mật vì HTTP không hỗ trợ mã hóa và những kẻ tấn công có thể lạm dụng nó. Hãy chắc chắn rằng Dash. hoạt động ở chế độ HTTPS hoặc xóa chế độ HTTPS khỏi Homarr (không được khuyến nghị)."
       }
     },
     "graphs": {
