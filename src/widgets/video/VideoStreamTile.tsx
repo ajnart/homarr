@@ -1,15 +1,17 @@
 import { Center, Group, Stack, Title } from '@mantine/core';
 import { IconDeviceCctv, IconHeartBroken } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
+import dynamic from 'next/dynamic';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import VideoFeed from './VideoFeed';
+
+const VideoFeed = dynamic(() => import('./VideoFeed'), { ssr: false });
 
 const definition = defineWidget({
   id: 'video-stream',
   icon: IconDeviceCctv,
   options: {
-    cameraFeedUrl: {
+    FeedUrl: {
       type: 'text',
       defaultValue: '',
     },
@@ -43,7 +45,7 @@ interface VideoStreamWidgetProps {
 
 function VideoStreamWidget({ widget }: VideoStreamWidgetProps) {
   const { t } = useTranslation('modules/video-stream');
-  if (!widget.properties.cameraFeedUrl) {
+  if (!widget.properties.FeedUrl) {
     return (
       <Center h="100%">
         <Stack align="center">
@@ -56,7 +58,7 @@ function VideoStreamWidget({ widget }: VideoStreamWidgetProps) {
   return (
     <Group position="center" w="100%" h="100%">
       <VideoFeed
-        source={widget?.properties.cameraFeedUrl}
+        source={widget?.properties.FeedUrl}
         muted={widget?.properties.muted}
         autoPlay={widget?.properties.autoPlay}
         controls={widget?.properties.controls}
