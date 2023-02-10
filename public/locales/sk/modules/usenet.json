@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Umožňuje vám zobraziť a spravovať vašu inštanciu Usenet."
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nenašli sa žiadni podporovaní klienti na sťahovanie!",
+        "text": "Ak chcete zobraziť aktuálne stiahnuté súbory, pridajte podporovaného klienta Usenet Download Client"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Fronta",
+    "history": "História"
+  },
+  "info": {
+    "sizeLeft": "Veľkosť vľavo",
+    "paused": "Pozastavené"
+  },
+  "queue": {
+    "header": {
+      "name": "Názov",
+      "size": "Veľkosť",
+      "eta": "Odhad",
+      "progress": "Stav"
+    },
+    "empty": "Prázdny",
+    "error": {
+      "title": "Chyba",
+      "message": "Došlo k chybe"
+    },
+    "paused": "Pozastavené"
+  },
+  "history": {
+    "header": {
+      "name": "Názov",
+      "size": "Veľkosť",
+      "duration": "Trvanie"
+    },
+    "empty": "Prázdny",
+    "error": {
+      "title": "Chyba",
+      "message": "Chyba pri načítavaní histórie"
+    },
+    "paused": "Pozastavené"
+  }
+}

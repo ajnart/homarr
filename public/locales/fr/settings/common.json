@@ -10,7 +10,7 @@
   },
   "credits": {
     "madeWithLove": "Fait avec ❤️ par @",
-    "thirdPartyContent": "Voir le contenu tiers",
+    "thirdPartyContent": "Voir le contenu de tierce partie",
     "thirdPartyContentTable": {
       "dependencyName": "Dépendance",
       "dependencyVersion": "Version"
@@ -20,9 +20,9 @@
   "layout": {
     "preview": {
       "title": "Aperçu",
-      "subtitle": "Les changements seront sauvegarder automatiquement"
+      "subtitle": "Les changements seront sauvegardés automatiquement"
     },
-    "divider": "Option de mise en page",
+    "divider": "Options de mise en page",
     "main": "Principal",
     "sidebar": "Barre latérale",
     "cannotturnoff": "Ne peut être désactivé",

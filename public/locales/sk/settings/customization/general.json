@@ -1,0 +1,21 @@
+{
+  "text": "Prispôsobenia vám umožňujú konfigurovať a prispôsobiť si prácu s aplikáciou Homarr podľa vašich preferencií.",
+  "accordeon": {
+    "layout": {
+      "name": "Rozloženie",
+      "description": "Povolenie a zakázanie prvkov na dlaždiciach záhlavia a prístrojového panela"
+    },
+    "gridstack": {
+      "name": "Gridstack",
+      "description": "Prispôsobenie správania a stĺpcov v oblasti prístrojovej dosky"
+    },
+    "pageMetadata": {
+      "name": "Metadáta stránky",
+      "description": "Úprava názvov, loga a PWA"
+    },
+    "appereance": {
+      "name": "Vzhľad",
+      "description": "Prispôsobenie pozadia, farieb a vzhľadu aplikácií"
+    }
+  }
+}

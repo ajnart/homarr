@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Søkefelt",
+    "description": "Et søkefelt som lar deg søke i din egendefinerte søkemotor, Youtube, og støttede integrasjoner."
+  },
+  "input": {
+    "placeholder": "Søk på nettet..."
+  },
+  "switched-to": "Endret til",
+  "searchEngines": {
+    "search": {
+      "name": "Web",
+      "description": "Søk..."
+    },
+    "youtube": {
+      "name": "Youtube",
+      "description": "Søk på Youtube"
+    },
+    "torrents": {
+      "name": "Torrenter",
+      "description": "Søk etter torrents"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "Søk etter filmer og TV-serier på Overseerr"
+    }
+  },
+  "tip": "Du kan velge søkefeltet med snarveien ",
+  "switchedSearchEngine": "Byttet til å søke med {{searchEngine}}"
+}

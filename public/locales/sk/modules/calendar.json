@@ -1,0 +1,18 @@
+{
+  "descriptor": {
+    "name": "Kalendár",
+    "description": "Zobraz kalendár s pripravovanými vydaniami z podporovaných integrácií.",
+    "settings": {
+      "title": "Nastavenia mini aplikácie Kalendár",
+      "useSonarrv4": {
+        "label": "Použi Sonarr v4 API"
+      },
+      "sundayStart": {
+        "label": "Začni týždeň v Nedeľu"
+      },
+      "radarrReleaseType": {
+        "label": "Typ Radarr releasu"
+      }
+    }
+  }
+}
