@@ -1,71 +1,71 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Zobrazí zoznam torrentov z podporovaných klientov Torrent.",
     "settings": {
-      "title": "",
+      "title": "Nastavenia mini aplikácie Torrent",
       "refreshInterval": {
-        "label": ""
+        "label": "Interval obnovovania (v sekundách)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Zobraz dokončené torrenty"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Zobraz zastarané torrenty"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "",
-      "lastUpdated": ""
+      "error": "Chyba",
+      "lastUpdated": "Naposledy aktualizované pred {{time}}"
     },
     "table": {
       "header": {
-        "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "name": "Názov",
+        "size": "Veľkosť",
+        "download": "Dole",
+        "upload": "Hore",
+        "estimatedTimeOfArrival": "Odhad",
+        "progress": "Stav"
       },
       "item": {
-        "text": ""
+        "text": "Spravuje {{appName}}, {{ratio}} pomer"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Nenašli sa žiadne torrenty"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Aktuálna rýchlosť sťahovania",
+      "download": "Stiahnuť: {{download}}",
+      "upload": "Nahrať: {{upload}}",
+      "timeSpan": "pred {{seconds}} sekundami",
+      "totalDownload": "Stiahnuť: {{download}}/s",
+      "totalUpload": "Nahrať: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nenašli sa žiadni podporovaní klienti na sťahovanie!",
+        "text": "Pridanie podporovaného klienta Torrent na zobrazenie aktuálnych stiahnutí"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Vyskytla sa neočakávaná chyba",
+        "text": "Homarr nedokázal komunikovať s vašimi klientmi Torrent. Skontrolujte prosím svoju konfiguráciu"
       }
     },
     "loading": {
-      "title": ""
+      "title": "Nahrávam..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Spravovaný",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Pozícia vo fronte - {{position}}",
+        "progress": "Stav - {{progress}}%",
+        "totalSelectedSize": "Spolu - {{totalSize}}",
+        "state": "Stav - {{state}}",
+        "ratio": "Pomer -",
+        "completed": "Dokončené"
       }
     }
   }
