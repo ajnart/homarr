@@ -2,7 +2,7 @@
   "text": "",
   "accordeon": {
     "layout": {
-      "name": "",
+      "name": "Bố cục",
       "description": ""
     },
     "gridstack": {
@@ -10,11 +10,11 @@
       "description": ""
     },
     "pageMetadata": {
-      "name": "",
+      "name": "Metadata trang",
       "description": ""
     },
     "appereance": {
-      "name": "",
+      "name": "Hiển thị",
       "description": ""
     }
   }
