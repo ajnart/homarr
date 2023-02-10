@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "Vitaj späť!",
+  "text": "Prosím zadajte heslo",
   "form": {
     "fields": {
       "password": {
-        "label": "",
-        "placeholder": ""
+        "label": "Heslo",
+        "placeholder": "Tvoje heslo"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Prihlásiť sa"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Kontrola hesla",
+      "message": "Vaše heslo sa kontroluje..."
     },
     "correct": {
-      "title": ""
+      "title": "Prihlásenie bolo úspešné, prebieha presmerovanie..."
     },
     "wrong": {
-      "title": ""
+      "title": "Zadané heslo je nesprávne, skúste to znova."
     }
   }
 }
