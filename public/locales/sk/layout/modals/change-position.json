@@ -1,1 +1,8 @@
-{}
+{
+	"xPosition": "Poloha osi X",
+	"width": "Šírka",
+	"height": "Výška",
+	"yPosition": "Poloha osi Y",
+	"zeroOrHigher": "0 alebo vyššia",
+	"betweenXandY": "Medzi {{min}} a {{max}}"
+}
