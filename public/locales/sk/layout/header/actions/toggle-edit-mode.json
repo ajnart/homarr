@@ -1,11 +1,11 @@
 {
-    "description": "",
+    "description": "V režime úprav môžete upravovať dlaždice a konfigurovať aplikácie. Zmeny sa neuložia, kým neukončíte režim úprav.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Vstúpte do režimu úprav",
+        "enabled": "Ukončiť a uložiť"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Režim úprav je povolený pre veľkosť <1>{{size}}</1>",
+        "text": "Teraz môžete svoje aplikácie upravovať a konfigurovať. Zmeny sa <strong>neuložia</strong>, kým neukončíte režim úprav"
     }
 }
