@@ -1,30 +1,30 @@
 {
   "pageTitle": {
-    "label": "",
-    "description": ""
+    "label": "Názov stránky",
+    "description": "Názov hlavného panela vľavo hore"
   },
   "metaTitle": {
-    "label": "",
-    "description": ""
+    "label": "Meta názov",
+    "description": "Názov, ktorý sa zobrazuje ako názov vašej karty"
   },
   "logo": {
-    "label": "",
-    "description": ""
+    "label": "Logo",
+    "description": "Logo prístrojovej dosky vľavo hore"
   },
   "favicon": {
-    "label": "",
-    "description": ""
+    "label": "Favicon",
+    "description": "Ikona, ktorá sa používa pred názvom karty"
   },
   "background": {
-    "label": ""
+    "label": "Pozadie"
   },
   "customCSS": {
-    "label": "",
-    "description": "",
-    "placeholder": "",
-    "applying": ""
+    "label": "Vlastné CSS",
+    "description": "Prispôsobenie všetkých prvkov na prístrojovej doske, odporúča sa len skúseným používateľom",
+    "placeholder": "Vlastné CSS sa použije ako posledné",
+    "applying": "Aplikuje sa CSS..."
   },
   "buttons": {
-    "submit": ""
+    "submit": "Odoslať"
   }
 }
