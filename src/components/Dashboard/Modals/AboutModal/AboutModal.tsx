@@ -40,6 +40,7 @@ import { useColorTheme } from '../../../../tools/color';
 import Tip from '../../../layout/Tip';
 import { usePrimaryGradient } from '../../../layout/useGradient';
 import Credits from '../../../Settings/Common/Credits';
+import packageJson from '../../../../../package.json';
 
 interface AboutModalProps {
   opened: boolean;

@@ -2,6 +2,7 @@ import { Anchor, Box, Collapse, Flex, Table, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { usePackageAttributesStore } from '../../../tools/client/zustands/usePackageAttributesStore';
+import packageJson from '../../../../package.json';
 
 export default function Credits() {
   const { t } = useTranslation('settings/common');
@@ -56,11 +57,11 @@ const DependencyTable = () => {
                 <th>{t('credits.thirdPartyContentTable.dependencyVersion')}</th>
               </tr>
             </thead>
-            {Object.keys(attributes.dependencies).map((key, index) => (
+            {Object.keys(packageJson.dependencies).map((key, index) => (
               <tbody key={`dependency-${index}`}>
                 <tr>
                   <td>{key}</td>
-                  <td>{attributes.dependencies[key]}</td>
+                  <td>{(packageJson.dependencies as any)[key]}</td>
                 </tr>
               </tbody>
             ))}

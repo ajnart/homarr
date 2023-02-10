@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
+import { trpc } from '../../../../tools/tRPC';
 import { AppType } from '../../../../types/app';
 
 interface AppPingProps {
@@ -15,20 +16,9 @@ export const AppPing = ({ app }: AppPingProps) => {
   const active =
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
-  const { data, isLoading } = useQuery({
-    queryKey: ['ping', { id: app.id, name: app.name }],
-    queryFn: async () => {
-      const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = app.network.statusCodes.includes(response.status.toString());
-      return {
-        status: response.status,
-        state: isOk ? 'online' : 'down',
-      };
-    },
-    enabled: active,
-  });
+  const data = trpc.ping.useQuery(app.url);
 
-  const isOnline = data?.state === 'online';
+  const isOnline = data.isSuccess;
 
   if (!active) return null;
 
@@ -44,7 +34,7 @@ export const AppPing = ({ app }: AppPingProps) => {
         withinPortal
         radius="lg"
         label={
-          isLoading
+          data.isLoading
             ? t('states.loading')
             : isOnline
             ? t('states.online', { response: data.status })
@@ -53,7 +43,7 @@ export const AppPing = ({ app }: AppPingProps) => {
       >
         <Indicator
           size={15}
-          color={isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
+          color={data.isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
           children={null}
         />
       </Tooltip>

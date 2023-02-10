@@ -3,11 +3,31 @@
  */
 import { observable } from '@trpc/server/observable';
 import { clearInterval } from 'timers';
-import { router, publicProcedure } from '../trpc';
+import { z } from 'zod';
+import { procedure, router } from '../trpc';
 
 export const appRouter = router({
-  healthcheck: publicProcedure.query(() => 'yay!'),
-  randomNumber: publicProcedure.subscription(() =>
+  // Ping should take a Query param for URL
+  ping: procedure.input(z.string()).query(async ({ input }) => {
+    const result = await fetch(input);
+    return {
+      status: result.status,
+    };
+  }),
+
+  hello: procedure
+    .input(
+      z
+        .object({
+          text: z.string().nullish(),
+        })
+        .nullish()
+    )
+    .query(({ input }) => ({
+      greeting: `hello ${input?.text ?? 'world'}`,
+    })),
+  healthcheck: procedure.query(() => 'yay!'),
+  randomNumber: procedure.subscription(() =>
     observable<number>((emit) => {
       const int = setInterval(() => {
         emit.next(Math.random());

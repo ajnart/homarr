@@ -9,6 +9,7 @@ import { useCardStyles } from '../useCardStyles';
 import { ToggleEditModeAction } from './Actions/ToggleEditMode/ToggleEditMode';
 import { Search } from './Search';
 import { SettingsMenu } from './SettingsMenu';
+import packageJson from '../../../../package.json';
 
 export const HeaderHeight = 64;
 
@@ -26,7 +27,7 @@ export function Header(props: any) {
       fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => res.json()),
   });
   const newVersionAvailable =
-    data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
+    data?.tag_name > `v${packageJson.version}` ? data?.tag_name : undefined;
 
   return (
     <MantineHeader height="auto" className={cx(cardClasses.card, 'dashboard-header')}>

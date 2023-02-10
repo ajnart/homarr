@@ -7,9 +7,11 @@ interface PackageAttributesState {
   setInitialPackageAttributes: (attributes: ServerSidePackageAttributesType) => void;
 }
 
-export const usePackageAttributesStore = create<PackageAttributesState>((set) => ({
-  attributes: { packageVersion: undefined, environment: 'test', dependencies: {} },
-  setInitialPackageAttributes(attributes) {
-    set((state) => ({ ...state, attributes }));
-  },
-}));
+export const usePackageAttributesStore = create<PackageAttributesState>(
+  (set: (arg0: (state: any) => any) => void) => ({
+    attributes: { packageVersion: undefined, environment: 'test', dependencies: {} },
+    setInitialPackageAttributes(attributes: any) {
+      set((state) => ({ ...state, attributes }));
+    },
+  })
+);
