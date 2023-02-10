@@ -1,60 +1,60 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Zobrazovať grafy externej Dash. vo vnútri Homarru.",
     "settings": {
-      "title": "",
+      "title": "Nastavenia pre Dash. mini aplikácie",
       "cpuMultiView": {
-        "label": ""
+        "label": "CPU Multi-Core Zobrazenie"
       },
       "storageMultiView": {
-        "label": ""
+        "label": "Zobrazenie Multi-Drive úložiska"
       },
       "useCompactView": {
-        "label": ""
+        "label": "Použi kompaktné zobrazenie"
       },
       "graphs": {
-        "label": ""
+        "label": "Grafy"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Zobraziť percentá"
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Žiadna Dash. služba nájdená. Pridajte službu na svoj informačný panel Homarr alebo nastavte Dash. URL v možnostiach modulu",
+      "noInformation": "Nie je možné získať informácie z Dash. - používate najnovšiu verziu?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Zistený downgrade protokol",
+        "text": "Protokol k vášmu Dash. inštancii sa downgraduje. Ide o bezpečnostné riziko, pretože HTTP je nešifrované a útočníci by mohli toto pripojenie zneužiť. Uistite sa, že Dash. beží aj na HTTPS alebo downgradujte Homarr na HTTP (neodporúča sa)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Úložisko",
+        "label": "Úložisko:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Sieť",
+        "label": "Sieť:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Dole",
+          "upload": "Hore"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "memory": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
