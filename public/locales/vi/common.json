@@ -1,21 +1,21 @@
 {
   "save": "Lưu",
-  "about": "",
+  "about": "Về chúng tôi",
   "cancel": "Hủy",
-  "close": "",
+  "close": "Đóng",
   "delete": "Xóa",
-  "ok": "",
+  "ok": "OK",
   "edit": "Sửa",
-  "version": "",
-  "changePosition": "",
+  "version": "Phiên bản",
+  "changePosition": "Đổi vị trí",
   "remove": "Xóa",
-  "removeConfirm": "",
+  "removeConfirm": "Bạn có chắc muốn xoá {{item}} ?",
   "sections": {
     "settings": "Cài đặt",
     "dangerZone": "Khu vực nguy hiểm"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Khóa API",
     "username": "Tên người dùng",
     "password": "Mật khẩu"
   },
