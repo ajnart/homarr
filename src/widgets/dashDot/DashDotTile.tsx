@@ -225,13 +225,9 @@ const fetchDashDotInfo = async (configName: string | undefined) => {
   ).data) as DashDotInfo;
 };
 
-export const useDashDotTileStyles = createStyles(() => ({
+export const useDashDotTileStyles = createStyles((theme) => ({
   graphsContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    rowGap: 10,
-    columnGap: 10,
+    marginRight: theme.spacing.sm * -1, // fix because margin collapses weirdly
   },
 }));
 
