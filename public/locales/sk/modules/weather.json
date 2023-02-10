@@ -1,33 +1,33 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Počasie",
+    "description": "Zobrazí aktuálne informácie o počasí na nastavenom mieste.",
     "settings": {
-      "title": "",
+      "title": "Nastavenia mini aplikácie počasia",
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Zobrazenie vo stupňoch Fahrenheita"
       },
       "location": {
-        "label": ""
+        "label": "Poloha počasia"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
-      "unknown": ""
+      "clear": "Jasno",
+      "mainlyClear": "Prevažne jasno",
+      "fog": "Hmla",
+      "drizzle": "Mrholenie",
+      "freezingDrizzle": "Mrznúce mrholenie",
+      "rain": "Dážď",
+      "freezingRain": "Mrznúci dážď",
+      "snowFall": "Sneženie",
+      "snowGrains": "Snehové zrná",
+      "rainShowers": "Prehánky",
+      "snowShowers": "Snehové prehánky",
+      "thunderstorm": "Búrka",
+      "thunderstormWithHail": "Búrka s krúpami",
+      "unknown": "Neznámy"
     }
   }
 }
