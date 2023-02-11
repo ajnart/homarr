@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Displays the graphs of an external Dash. instance inside of Homarr.",
+    "description": "",
     "settings": {
-      "title": "Settings for Dash. widget",
+      "title": "",
       "cpuMultiView": {
         "label": "CPU Multi-Core View"
       },
@@ -20,7 +20,7 @@
         "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": "Display percentages"
+        "label": ""
       }
     }
   },
@@ -30,8 +30,8 @@
       "noService": "No Dash. service found. Please add one to your Homarr dashboard or set a Dash. URL in the module options",
       "noInformation": "Cannot acquire information from dash. - are you running the latest version?",
       "protocolDowngrade": {
-        "title": "Detected protocol downgrade",
-        "text": "The protocol to your Dash. instance is being downgraded. This is security risk, since HTTP is unencrypted and attackers could abuse this connection. Make sure that Dash. is running on HTTPS too or downgrade Homarr to HTTP (not recommended)."
+        "title": "",
+        "text": ""
       }
     },
     "graphs": {
