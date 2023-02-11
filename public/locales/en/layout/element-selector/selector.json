@@ -4,8 +4,8 @@
         "text": ""
     },
     "widgetDescription": "",
-    "goBack": "",
+    "goBack": "Go back to the previous step",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Add a tile"
     }
 }
