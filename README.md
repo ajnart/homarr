@@ -66,7 +66,8 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 <picture id="widgets-and-integrations">
 <img src="docs/section-widgets-and-integrations.png" />
 </picture>
-Homarr has a [built in collection of widgets and [integrations](https://homarr.dev/docs/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
+
+Homarr has a [built in collection of widgets and integrations](https://homarr.dev/docs/integrations/) , that connect to your applications and enable you to control them directly from the dashboard.
 Each widget and integration has a comprehensive documentation for your confort.
 Homarr will integrate with the following applications of yours:
 
