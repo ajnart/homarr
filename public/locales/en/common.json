@@ -1,21 +1,21 @@
 {
-  "save": "Save",
-  "about": "About",
+  "save": "",
+  "about": "",
   "cancel": "Cancel",
-  "close": "Close",
+  "close": "",
   "delete": "Delete",
-  "ok": "OK",
+  "ok": "",
   "edit": "Edit",
-  "version": "Version",
-  "changePosition": "Change position",
+  "version": "",
+  "changePosition": "",
   "remove": "Remove",
-  "removeConfirm": "Are you sure that you want to remove {{item}} ?",
+  "removeConfirm": "",
   "sections": {
     "settings": "Settings",
     "dangerZone": "Danger zone"
   },
   "secrets": {
-    "apiKey": "Api key",
+    "apiKey": "",
     "username": "Username",
     "password": "Password"
   },
@@ -27,8 +27,8 @@
   },
   "loading": "Loading...",
   "breakPoints": {
-    "small": "small",
-    "medium": "medium",
-    "large": "large"
+    "small": "",
+    "medium": "",
+    "large": ""
   }
 }
