@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Media Server",
+    "description": "Interact with your Jellyfin or Plex media server",
+    "settings": {
+      "title": "Settings for media server widget"
+    }
+  }
+}
