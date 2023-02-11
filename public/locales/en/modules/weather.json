@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Weather",
-    "description": "",
+    "description": "Displays the current weather information of a set location.",
     "settings": {
-      "title": "",
+      "title": "Settings for weather widget",
       "displayInFahrenheit": {
         "label": "Display in Fahrenheit"
       },
