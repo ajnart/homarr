@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Videostream",
+    "description": "Einbetten eines Videostreams oder eines Videos von einer Kamera oder einer Website",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für das Video Stream Widget",
       "FeedUrl": {
-        "label": ""
+        "label": "Feed URL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatisch abspielen"
       },
       "muted": {
-        "label": ""
+        "label": "Audio stummschalten"
       },
       "controls": {
-        "label": ""
+        "label": "Videoplayer Steuerung"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Ungültiger Stream"
   }
 }
