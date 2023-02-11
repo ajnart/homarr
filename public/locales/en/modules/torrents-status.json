@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "Torrent",
-    "description": "Displays a list of torrents from supported Torrent clients.",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "Settings for Torrent widget",
+      "title": "",
       "refreshInterval": {
-        "label": "Refresh interval (in seconds)"
+        "label": ""
       },
       "displayCompletedTorrents": {
-        "label": "Display completed torrents"
+        "label": ""
       },
       "displayStaleTorrents": {
-        "label": "Display stale torrents"
+        "label": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Error",
-      "lastUpdated": "Last updated {{time}} ago"
+      "lastUpdated": ""
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "Progress"
       },
       "item": {
-        "text": "Managed by {{appName}}, {{ratio}} ratio"
+        "text": ""
       },
       "body": {
         "nothingFound": "No torrents found"
@@ -46,26 +46,26 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "No supported Torrent clients found!",
-        "text": "Add a supported Torrent client to view your current downloads"
+        "title": "",
+        "text": ""
       },
       "generic": {
-        "title": "An unexpected error occured",
-        "text": "Homarr was unable to communicate with your Torrent clients. Please check your configuration"
+        "title": "",
+        "text": ""
       }
     },
     "loading": {
       "title": "Loading..."
     },
     "popover": {
-      "introductionPrefix": "Managed by",
+      "introductionPrefix": "",
       "metrics": {
-        "queuePosition": "Queue position - {{position}}",
-        "progress": "Progress - {{progress}}%",
-        "totalSelectedSize": "Total - {{totalSize}}",
-        "state": "State - {{state}}",
-        "ratio": "Ratio -",
-        "completed": "Completed"
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
       }
     }
   }
