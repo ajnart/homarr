@@ -55,7 +55,7 @@ const getItems = () => {
     'settings/customization/general',
     'settings/customization/color-selector',
   ]);
-  return [
+  const items = [
     {
       id: 'layout',
       image: <IconLayout />,
@@ -113,7 +113,9 @@ const getItems = () => {
         </>
       ),
     },
-    process.env.NODE_ENV === 'development' && {
+  ];
+  if (process.env.NODE_ENV === 'development') {
+    items.push({
       id: 'dev',
       image: <IconCode />,
       label: 'Developer options',
@@ -130,6 +132,7 @@ const getItems = () => {
           />
         </Stack>
       ),
-    },
-  ];
+    });
+  }
+  return items;
 };
