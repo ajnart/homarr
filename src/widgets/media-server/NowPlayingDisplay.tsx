@@ -8,14 +8,48 @@ import {
   IconMovie,
   IconPlaylist,
   IconQuestionMark,
+  IconVideo,
   TablerIcon,
 } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { JellyfinSessionInfo } from '../../types/api/media-server/session-info';
+import { PlexSession } from '../../tools/server/sdk/plex/plexClient';
+import {
+  GenericSessionInfo,
+  JellyfinSessionInfo,
+  PlexSessionInfo,
+} from '../../types/api/media-server/session-info';
 
-export const NowPlayingDisplay = ({ session }: { session: JellyfinSessionInfo }) => {
+export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) => {
   const { t } = useTranslation();
 
+  switch (session.type) {
+    case 'jellyfin':
+      return <NowPlayingDisplayJellyin session={session} />;
+    case 'plex':
+      return <NowPlayingDisplayPlex session={session} />;
+    default:
+      return null;
+  }
+};
+
+const NowPlayingDisplayPlex = ({ session }: { session: PlexSessionInfo }) => {
+  if (!session.nowPlayingItem) {
+    return null;
+  }
+
+  const PlexIcon = PlexTypeIcon({ type: session.nowPlayingItem.type });
+
+  return (
+    <Group spacing="sm">
+      <PlexIcon size={14} />
+      <Group spacing="xs">
+        <Text>{session.nowPlayingItem.title}</Text>
+      </Group>
+    </Group>
+  );
+};
+
+const NowPlayingDisplayJellyin = ({ session }: { session: JellyfinSessionInfo }) => {
   if (!session.nowPlayingItem) {
     return null;
   }
@@ -24,13 +58,24 @@ export const NowPlayingDisplay = ({ session }: { session: JellyfinSessionInfo })
 
   return (
     <Group spacing="sm">
-      <Test size={20} />
+      <Test size={14} />
       <Group spacing="xs">
         <Text>{session.nowPlayingItem.Name}</Text>
         {session.nowPlayingItem.SeasonName && <Text>- {session.nowPlayingItem.SeasonName}</Text>}
       </Group>
     </Group>
   );
+};
+
+const PlexTypeIcon = ({ type }: { type: PlexSession['type'] }): TablerIcon => {
+  switch (type) {
+    case 'track':
+      return IconHeadphones;
+    case 'video':
+      return IconVideo;
+    default:
+      return IconQuestionMark;
+  }
 };
 
 const BaseItemKindIcon = ({ kind }: { kind?: BaseItemKind }): TablerIcon => {
