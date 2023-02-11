@@ -1,21 +1,21 @@
 {
-  "text": "Customizations allow you to configure and adjust your experience with Homarr to your preferences.",
+  "text": "",
   "accordeon": {
     "layout": {
-      "name": "Layout",
-      "description": "Enable and disable elements on your header and dashboard tiles"
+      "name": "",
+      "description": ""
     },
     "gridstack": {
-      "name": "Gridstack",
-      "description": "Customize the behaviour and columns of your dashboard area"
+      "name": "",
+      "description": ""
     },
     "pageMetadata": {
-      "name": "Page Metadata",
-      "description": "Adjust titles, logo and PWA"
+      "name": "",
+      "description": ""
     },
     "appereance": {
-      "name": "Appereance",
-      "description": "Customize the background, colors and apps appereance"
+      "name": "",
+      "description": ""
     }
   }
 }
