@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Video stream",
+    "description": "Vloženie videoprenosu alebo videa z kamery alebo webovej lokality",
     "settings": {
-      "title": "",
+      "title": "Nastavenia pre mini aplikáciu videostreamu",
       "FeedUrl": {
-        "label": ""
+        "label": "Url adresa"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatické prehrávanie"
       },
       "muted": {
-        "label": ""
+        "label": "Stlmiť zvuk"
       },
       "controls": {
-        "label": ""
+        "label": "Ovládacie prvky prehrávača videa"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Neplatný tok"
   }
 }
