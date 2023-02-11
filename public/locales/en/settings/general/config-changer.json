@@ -1,28 +1,28 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Config changer",
+    "description": "{{configCount}} configurations are available",
+    "loadingNew": "Loading your config...",
+    "pleaseWait": "Please wait until your new config is loaded!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Choose the name of your new config",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Config name",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Config name is required",
+            "notUnique": "Config name is already in use"
           },
-          "placeholder": ""
+          "placeholder": "Your new config name"
         },
-        "submitButton": ""
+        "submitButton": "Confirm"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Config saved",
+          "message": "Config saved as {{configName}}"
         },
         "configCopied": {
           "title": "",
