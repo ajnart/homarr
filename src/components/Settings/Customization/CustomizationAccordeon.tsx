@@ -1,6 +1,6 @@
-import { Accordion, Grid, Group, Stack, Text } from '@mantine/core';
-import { IconBrush, IconChartCandle, IconDragDrop, IconLayout } from '@tabler/icons';
-import { useTranslation } from 'next-i18next';
+import { Accordion, Checkbox, Grid, Group, Stack, Switch, Text } from '@mantine/core';
+import { IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons';
+import { i18n, useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { GridstackConfiguration } from './Layout/GridstackConfiguration';
 import { LayoutSelector } from './Layout/LayoutSelector';
@@ -111,6 +111,24 @@ const getItems = () => {
           <DashboardTilesOpacitySelector />
           <CustomCssChanger />
         </>
+      ),
+    },
+    process.env.NODE_ENV === 'development' && {
+      id: 'dev',
+      image: <IconCode />,
+      label: 'Developer options',
+      description: 'Options to help when developing',
+      content: (
+        <Stack>
+          <Checkbox
+            label="Use debug language"
+            description="This will show the translation keys instead of the actual translations"
+            onChange={(e) =>
+              // Change to CI mode language
+              i18n?.changeLanguage(e.target.checked ? 'cimode' : 'en')
+            }
+          />
+        </Stack>
       ),
     },
   ];
