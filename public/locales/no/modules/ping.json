@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Viser en statusindikator avhengig av HTTP responskoden mottatt fra en URL."
+  },
+  "states": {
+    "online": "Online {{response}}",
+    "offline": "Frakoblet {{response}}",
+    "loading": "Laster inn..."
+  }
+}

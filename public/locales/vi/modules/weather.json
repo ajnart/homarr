@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Thời tiết",
-    "description": "",
+    "description": "Hiển thị thông tin thời tiết của vị trí được đặt.",
     "settings": {
-      "title": "",
+      "title": "Cài đặt cho tiện ích thời tiết",
       "displayInFahrenheit": {
         "label": "Hiển thị bằng Fahrenheit"
       },

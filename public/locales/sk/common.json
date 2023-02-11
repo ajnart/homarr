@@ -1,0 +1,34 @@
+{
+  "save": "Uložiť",
+  "about": "O aplikácii",
+  "cancel": "Zrušiť",
+  "close": "Zatvoriť",
+  "delete": "Vymazať",
+  "ok": "OK",
+  "edit": "Upraviť",
+  "version": "Verzia",
+  "changePosition": "Zmeniť pozíciu",
+  "remove": "Odstrániť",
+  "removeConfirm": "Ste si istý ze chcete odstrániť {{item}} ?",
+  "sections": {
+    "settings": "Nastavenia",
+    "dangerZone": "Nebezpečná zóna"
+  },
+  "secrets": {
+    "apiKey": "Api kľúč",
+    "username": "Používateľské meno",
+    "password": "Heslo"
+  },
+  "tip": "Tip: ",
+  "time": {
+    "seconds": "sekundy",
+    "minutes": "minúty",
+    "hours": "hodiny"
+  },
+  "loading": "Nahrávam...",
+  "breakPoints": {
+    "small": "malý",
+    "medium": "stredný",
+    "large": "veľký"
+  }
+}

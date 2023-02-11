@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Dash. 서비스를 찾을 수 없습니다. Homarr 대시보드에 추가하거나 모듈 옵션에서 Dash. URL을 설정해 주세요.",
-      "noInformation": "Dash. 에서 정보를 얻을 수 없습니다. 최신 버전을 사용 중인가요?"
+      "noInformation": "Dash. 에서 정보를 얻을 수 없습니다. 최신 버전을 사용 중인가요?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {

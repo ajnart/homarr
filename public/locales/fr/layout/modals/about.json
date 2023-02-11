@@ -3,11 +3,11 @@
 	"contact": "Vous avez des problèmes ou des questions ? Dites-le-nous !",
 	"addToDashboard": "Ajouter au tableau de bord",
 	"metrics": {
-		"configurationSchemaVersion": "",
+		"configurationSchemaVersion": "Version de schéma de configuration",
 		"configurationsCount": "Configurations disponibles",
 		"version": "Version",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": ""
+		"nodeEnvironment": "Environnement Node",
+		"i18n": "Traductions I18n chargées",
+		"locales": "Locales I18n configurées"
 	}
 }
