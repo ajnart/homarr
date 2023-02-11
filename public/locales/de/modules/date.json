@@ -3,7 +3,7 @@
     "name": "Datum und Zeit",
     "description": "Zeigt das aktuelle Datum und die Uhrzeit an",
     "settings": {
-      "title": "Einstellungen für das Widget \"Datum und Uhrzeit",
+      "title": "\"Datum und Uhrzeit\" Widget Einstellungen",
       "display24HourFormat": {
         "label": "24-Stunden Format"
       }
