@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "זרם וידאו",
+    "description": "הטמע זרם וידאו או וידאו ממצלמה או אתר אינטרנט",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור ווידג'ט זרם וידאו",
       "FeedUrl": {
-        "label": ""
+        "label": "כתובת אתר הזנה"
       },
       "autoPlay": {
-        "label": ""
+        "label": "הפעלה אוטומטית"
       },
       "muted": {
-        "label": ""
+        "label": "השתק קול"
       },
       "controls": {
-        "label": ""
+        "label": "פקדי נגן וידאו"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "זרם לא חוקי"
   }
 }
