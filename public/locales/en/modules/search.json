@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Search Bar",
-    "description": "A search bar that allows you to search your custom search engine, YouTube, and supported integrations."
+    "description": ""
   },
   "input": {
     "placeholder": "Search the web..."
@@ -10,7 +10,7 @@
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Search..."
+      "description": ""
     },
     "youtube": {
       "name": "Youtube",
@@ -22,7 +22,7 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Search for Movies and TV Shows on Overseerr"
+      "description": ""
     }
   },
   "tip": "You can select the search bar with the shortcut ",
