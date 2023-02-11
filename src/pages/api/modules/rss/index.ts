@@ -48,13 +48,13 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
   const orderedFeed = {
     ...feed,
     items: feed.items
-      .map((item) => ({
+      .map((item: { title: any; content: any }) => ({
         ...item,
         title: item.title ? decode(item.title) : undefined,
         content: decode(item.content),
         enclosure: createEnclosure(item),
       }))
-      .sort((a, b) => {
+      .sort((a: { pubDate: number }, b: { pubDate: number }) => {
         if (!a.pubDate || !b.pubDate) {
           return 0;
         }
@@ -85,7 +85,7 @@ const createEnclosure = (item: any) => {
 
   if (item['media:content']) {
     return {
-      url: item['media:content']['$'].url,
+      url: item['media:content'].$.url,
     };
   }
 

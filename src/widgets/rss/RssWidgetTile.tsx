@@ -10,6 +10,7 @@ import {
   Loader,
   LoadingOverlay,
   MediaQuery,
+  ScrollArea,
   Stack,
   Text,
   Title,
@@ -62,6 +63,7 @@ function RssTile({ widget }: RssTileProps) {
   const { data, isLoading, isFetching, refetch } = useGetRssFeed();
   const { classes } = useStyles();
   const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
+  const { ref, height } = useElementSize();
 
   if (!data || isLoading) {
     return (
@@ -73,7 +75,7 @@ function RssTile({ widget }: RssTileProps) {
 
   if (!data.success) {
     return (
-      <Center>
+      <Center style={{ height: '100%' }}>
         <Stack align="center">
           <IconRss size={40} strokeWidth={1} />
           <Title order={6}>{t('card.errors.general.title')}</Title>
@@ -84,7 +86,7 @@ function RssTile({ widget }: RssTileProps) {
   }
 
   return (
-    <Stack>
+    <Stack ref={ref} style={{ height: '100%' }}>
       <LoadingOverlay visible={loadingOverlayVisible} />
       <Flex gap="md">
         {data.feed.image ? (
@@ -113,47 +115,57 @@ function RssTile({ widget }: RssTileProps) {
           </ActionIcon>
         </UnstyledButton>
       </Flex>
-      {data.feed.items.map((item: any, index: number) => (
-        <Card key={index} withBorder component={Link} href={item.link} radius="md" target="_blank">
-          {item.enclosure && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              className={classes.backgroundImage}
-              src={item.enclosure.url ?? undefined}
-              alt="backdrop"
-            />
-          )}
-
-          <Flex gap="xs">
-            <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
-              <Image
-                src={item.enclosure?.url ?? undefined}
-                width={140}
-                height={140}
-                radius="md"
-                withPlaceholder
-              />
-            </MediaQuery>
-
-            <Flex gap={2} direction="column">
-              {item.categories && (
-                <Flex gap="xs" wrap="wrap" style={{ height: 20, overflow: 'hidden' }}>
-                  {item.categories.map((category, categoryIndex: number) => (
-                    <Badge key={categoryIndex}>{category._}</Badge>
-                  ))}
-                </Flex>
+      <ScrollArea style={{ height }}>
+        <Stack>
+          {data.feed.items.map((item: any, index: number) => (
+            <Card
+              key={index}
+              withBorder
+              component={Link}
+              href={item.link}
+              radius="md"
+              target="_blank"
+            >
+              {item.enclosure && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  className={classes.backgroundImage}
+                  src={item.enclosure.url ?? undefined}
+                  alt="backdrop"
+                />
               )}
 
-              <Text lineClamp={2}>{item.title}</Text>
-              <Text color="dimmed" size="xs" lineClamp={3}>
-                {item.content}
-              </Text>
+              <Flex gap="xs">
+                <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
+                  <Image
+                    src={item.enclosure?.url ?? undefined}
+                    width={140}
+                    height={140}
+                    radius="md"
+                    withPlaceholder
+                  />
+                </MediaQuery>
+                <Flex gap={2} direction="column">
+                  {item.categories && (
+                    <Flex gap="xs" wrap="wrap" style={{ height: 20, overflow: 'hidden' }}>
+                      {item.categories.map((category: any, categoryIndex: number) => (
+                        <Badge key={categoryIndex}>{category._}</Badge>
+                      ))}
+                    </Flex>
+                  )}
 
-              {item.pubDate && <TimeDisplay date={item.pubDate} />}
-            </Flex>
-          </Flex>
-        </Card>
-      ))}
+                  <Text lineClamp={2}>{item.title}</Text>
+                  <Text color="dimmed" size="xs" lineClamp={3}>
+                    {item.content}
+                  </Text>
+
+                  {item.pubDate && <TimeDisplay date={item.pubDate} />}
+                </Flex>
+              </Flex>
+            </Card>
+          ))}
+        </Stack>
+      </ScrollArea>
       <Flex wrap="wrap" columnGap="md">
         <Group spacing="sm">
           <IconCopyright size={14} />
