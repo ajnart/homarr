@@ -5,7 +5,7 @@
 	"metrics": {
 		"configurationSchemaVersion": "",
 		"configurationsCount": "",
-		"version": "",
+		"version": "Version",
 		"nodeEnvironment": "",
 		"i18n": "",
 		"locales": ""
