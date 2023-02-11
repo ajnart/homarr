@@ -3,11 +3,11 @@
 	"contact": "Проблемы или вопросы? Свяжитесь с нами!",
 	"addToDashboard": "Добавить на панель",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "Версия схемы конфигурации",
+		"configurationsCount": "Доступные конфигурации",
 		"version": "Версия",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": ""
+		"nodeEnvironment": "Окружение узла",
+		"i18n": "Загружено I18n переводов пространств имён",
+		"locales": "Настроено I18n локализаций"
 	}
 }
