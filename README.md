@@ -1,6 +1,8 @@
 
 <!-- Project Title -->
+<picture>
 <img src="./docs/banner.png" />
+</picture>
 
 <!-- Badges -->
 <p align="center">
@@ -42,7 +44,10 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 <br/>
 <br/>
 
-![](docs/section-features.png)
+<picture>
+<img src="docs/section-features.png" />
+</picture>
+
 - 🖌️ Highly customizeable with extensive drag and drop grid system
 - ✨ Integrates seamlessly with your favorite self-hosted applications
 - 📌 Easy and fast app management - no yaml involved
@@ -58,8 +63,9 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 <br/>
 <br/>
 
-![](docs/section-widgets-and-integrations.png)
-
+<picture>
+<img src="docs/section-widgets-and-integrations.png" />
+</picture>
 Homarr has a [built in collection of widgets and integrations](https://homarr.dev/docs/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
 Each widget and integration has a comprehensive documentation for your confort.
 Homarr will integrate with the following applications of yours:
@@ -87,14 +93,18 @@ We're constantly adding new integrations and widgets, which will enhance your ex
 <br/>
 <br/>
 
-![](docs/section-preview.png)
+<picture>
+<img src="docs/section-preview.png" />
+</picture>
 
 https://user-images.githubusercontent.com/30572287/217098893-5880e7de-13d0-42c5-b505-f7921593396f.mp4
 
 <br/>
 <br/>
 
-![](docs/section-installation.png)
+<picture>
+<img src="docs/section-installation.png" />
+</picture>
 
 There are many different ways, how Homarr can be installed.
 Since we are developing Homarr very frequently, we recommend to read our official installation guides:
@@ -106,7 +116,9 @@ Since we are developing Homarr very frequently, we recommend to read our officia
 <br/>
 <br/>
 
-![](docs/section-contribute.png)
+<picture>
+<img src="docs/section-contribute.png" />
+</picture>
 Homarr is maintained by motivated developers in their free-time.
 We work for fun and learning on this project.
 
