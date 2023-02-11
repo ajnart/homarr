@@ -3,9 +3,13 @@ import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 // eslint-disable-next-line consistent-return
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
   const { cookies } = req;
-  const passwordCookie = cookies.get('password')?.value;
-  const isCorrectPassword = passwordCookie?.toString() === process.env.PASSWORD;
+  // Don't even bother with the middleware if there is no defined password
+  if (!process.env.PASSWORD) return NextResponse.next();
+
   const url = req.nextUrl.clone();
+  const passwordCookie = cookies.get('password')?.value;
+
+  const isCorrectPassword = passwordCookie?.toString() === process.env.PASSWORD;
   // Skip the middleware if the URL is 'login', 'api/configs/tryPassword', '_next/*', 'favicon.ico', '404', 'migrate' or 'pages/_app'
   const skippedUrls = [
     '/login',
