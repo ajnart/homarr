@@ -6,33 +6,33 @@
     "customizations": "Customizations"
   },
   "tips": {
-    "configTip": "Upload your config file by drag and dropping it onto the page!"
+    "configTip": ""
   },
   "credits": {
     "madeWithLove": "Made with ❤️ by @",
-    "thirdPartyContent": "See third party content",
+    "thirdPartyContent": "",
     "thirdPartyContentTable": {
-      "dependencyName": "Dependency",
-      "dependencyVersion": "Version"
+      "dependencyName": "",
+      "dependencyVersion": ""
     }
   },
-  "grow": "Grow grid (take all space)",
+  "grow": "",
   "layout": {
     "preview": {
-      "title": "Preview",
-      "subtitle": "Changes will be saved automatically"
+      "title": "",
+      "subtitle": ""
     },
-    "divider": "Layout options",
-    "main": "Main",
-    "sidebar": "Sidebar",
-    "cannotturnoff": "Cannot be turned off",
-    "dashboardlayout": "Dashboard layout",
-    "enablersidebar": "Enable right sidebar",
-    "enablelsidebar": "Enable left sidebar",
-    "enablesearchbar": "Enable search bar",
-    "enabledocker": "Enable docker integration",
-    "enableping": "Enable pings",
-    "enablelsidebardesc": "Optional. Can be used for apps and integrations only",
-    "enablersidebardesc": "Optional. Can be used for apps and integrations only"
+    "divider": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "",
+    "enablelsidebar": "",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "",
+    "enablelsidebardesc": "",
+    "enablersidebardesc": ""
   }
 }
