@@ -1,4 +1,4 @@
-import { Avatar, Group, Table, Text } from '@mantine/core';
+import { Avatar, Group, Stack, Table, Text } from '@mantine/core';
 import { IconMovie } from '@tabler/icons';
 import { AppAvatar } from '../../components/AppAvatar';
 import { useConfigContext } from '../../config/provider';
@@ -38,8 +38,8 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
   }
 
   return (
-    <>
-      <Table striped highlightOnHover>
+    <Stack h="100%">
+      <Table striped>
         <thead>
           <tr>
             <th>Session</th>
@@ -106,7 +106,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
         </tbody>
       </Table>
 
-      <Group mt="auto">
+      <Group position="right" mt="auto">
         <Avatar.Group>
           {data?.servers.map((server) => {
             const app = config?.apps.find((x) => x.id === server.appId);
@@ -124,7 +124,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
           })}
         </Avatar.Group>
       </Group>
-    </>
+    </Stack>
   );
 }
 

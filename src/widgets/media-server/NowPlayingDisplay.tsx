@@ -1,11 +1,15 @@
 import { BaseItemKind } from '@jellyfin/sdk/lib/generated-client/models';
-import { Group, Text } from '@mantine/core';
+import { ActionIcon, Group, Menu, Text } from '@mantine/core';
 import {
   IconBook,
   IconBrandZoom,
   IconDeviceTv,
+  IconDotsVertical,
   IconHeadphones,
+  IconInfoCircle,
   IconMovie,
+  IconPlayerPause,
+  IconPlayerStop,
   IconPlaylist,
   IconQuestionMark,
   IconVideo,
@@ -45,6 +49,19 @@ const NowPlayingDisplayPlex = ({ session }: { session: PlexSessionInfo }) => {
       <Group spacing="xs">
         <Text lineClamp={1}>{session.nowPlayingItem.title}</Text>
       </Group>
+
+      <Menu>
+        <Menu.Target>
+          <ActionIcon ml="auto">
+            <IconDotsVertical size={14} />
+          </ActionIcon>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Item icon={<IconInfoCircle size={14} />}>Session details</Menu.Item>
+          <Menu.Item icon={<IconPlayerStop size={14} />}>Pause</Menu.Item>
+          <Menu.Item icon={<IconPlayerPause size={14} />}>Stop</Menu.Item>
+        </Menu.Dropdown>
+      </Menu>
     </Group>
   );
 };
