@@ -18,7 +18,7 @@
   "card": {
     "footer": {
       "error": "Fehler",
-      "lastUpdated": "Zuletzt aktualisiert {{time}} vor"
+      "lastUpdated": "Zuletzt aktualisiert vor {{time}}"
     },
     "table": {
       "header": {
@@ -63,7 +63,7 @@
         "queuePosition": "Position in der Warteschlange - {{position}}",
         "progress": "Fortschritt - {{progress}}%",
         "totalSelectedSize": "Insgesamt - {{totalSize}}",
-        "state": "Staat - {{state}}",
+        "state": "Status - {{state}}",
         "ratio": "Verhältnis -",
         "completed": "Abgeschlossen"
       }
