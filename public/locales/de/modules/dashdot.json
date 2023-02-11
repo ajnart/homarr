@@ -5,7 +5,7 @@
     "settings": {
       "title": "Einstellungen für Dash. Widget",
       "cpuMultiView": {
-        "label": "CPU Multi-Core View"
+        "label": "CPU Multi-Core Ansicht"
       },
       "storageMultiView": {
         "label": "Speicher Multi-Drive View"
