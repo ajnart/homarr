@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Потокова трансляція відео",
+    "description": "Вставте відеопотік чи відео з камери або вебсайту",
     "settings": {
-      "title": "",
+      "title": "Налаштування віджету потокового зображення відео",
       "FeedUrl": {
-        "label": ""
+        "label": "URL-адреса стрічки"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Автоматичне відтворення"
       },
       "muted": {
-        "label": ""
+        "label": "Звук вимкнуто"
       },
       "controls": {
-        "label": ""
+        "label": "Керування відеоплеєром"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Неправильний потік"
   }
 }
