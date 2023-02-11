@@ -52,7 +52,7 @@ const definition = defineWidget({
   component: RssTile,
 });
 
-export type IRssWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IRssWidget = IWidget<typeof definition['id'], typeof definition>;
 
 interface RssTileProps {
   widget: IRssWidget;
@@ -60,7 +60,7 @@ interface RssTileProps {
 
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
-  const { data, isLoading, isFetching, refetch } = useGetRssFeed();
+  const { data, isLoading, isFetching, refetch } = useGetRssFeed(widget.properties.rssFeedUrl);
   const { classes } = useStyles();
   const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
   const { ref, height } = useElementSize();
