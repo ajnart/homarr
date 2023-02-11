@@ -1,6 +1,6 @@
 
 <!-- Project Title -->
-<picture>
+<picture id="banner">
 <img src="./docs/banner.png" />
 </picture>
 
@@ -44,7 +44,7 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 <br/>
 <br/>
 
-<picture>
+<picture id="features">
 <img src="docs/section-features.png" />
 </picture>
 
@@ -63,7 +63,7 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 <br/>
 <br/>
 
-<picture>
+<picture id="widgets-and-integrations">
 <img src="docs/section-widgets-and-integrations.png" />
 </picture>
 Homarr has a [built in collection of widgets and integrations](https://homarr.dev/docs/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
@@ -93,7 +93,7 @@ We're constantly adding new integrations and widgets, which will enhance your ex
 <br/>
 <br/>
 
-<picture>
+<picture id="preview">
 <img src="docs/section-preview.png" />
 </picture>
 
@@ -102,7 +102,7 @@ https://user-images.githubusercontent.com/30572287/217098893-5880e7de-13d0-42c5-
 <br/>
 <br/>
 
-<picture>
+<picture id="installation">
 <img src="docs/section-installation.png" />
 </picture>
 
@@ -116,7 +116,7 @@ Since we are developing Homarr very frequently, we recommend to read our officia
 <br/>
 <br/>
 
-<picture>
+<picture id="contribute">
 <img src="docs/section-contribute.png" />
 </picture>
 Homarr is maintained by motivated developers in their free-time.
