@@ -59,15 +59,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
           return 0;
         }
 
-        if (a.pubDate < b.pubDate) {
-          return -1;
-        }
-
-        if (a.pubDate > b.pubDate) {
-          return 1;
-        }
-
-        return 0;
+        return a.pubDate - b.pubDate;
       })
       .slice(0, 20),
   };

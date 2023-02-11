@@ -52,7 +52,7 @@ const definition = defineWidget({
   component: RssTile,
 });
 
-export type IRssWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IRssWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface RssTileProps {
   widget: IRssWidget;
@@ -75,7 +75,7 @@ function RssTile({ widget }: RssTileProps) {
 
   if (!data.success) {
     return (
-      <Center style={{ height: '100%' }}>
+      <Center h="100%">
         <Stack align="center">
           <IconRss size={40} strokeWidth={1} />
           <Title order={6}>{t('card.errors.general.title')}</Title>
@@ -86,7 +86,7 @@ function RssTile({ widget }: RssTileProps) {
   }
 
   return (
-    <Stack ref={ref} style={{ height: '100%' }}>
+    <Stack ref={ref} h="100%">
       <LoadingOverlay visible={loadingOverlayVisible} />
       <Flex gap="md">
         {data.feed.image ? (
@@ -104,8 +104,7 @@ function RssTile({ widget }: RssTileProps) {
         <UnstyledButton
           onClick={async () => {
             setLoadingOverlayVisible(true);
-            await sleep(1500);
-            await refetch();
+            await Promise.all([sleep(1500), refetch()]);
             setLoadingOverlayVisible(false);
           }}
           disabled={isFetching || isLoading}
@@ -147,7 +146,7 @@ function RssTile({ widget }: RssTileProps) {
                 </MediaQuery>
                 <Flex gap={2} direction="column">
                   {item.categories && (
-                    <Flex gap="xs" wrap="wrap" style={{ height: 20, overflow: 'hidden' }}>
+                    <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
                       {item.categories.map((category: any, categoryIndex: number) => (
                         <Badge key={categoryIndex}>{category._}</Badge>
                       ))}
