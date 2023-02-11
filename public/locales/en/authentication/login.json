@@ -1,6 +1,6 @@
 {
   "title": "Welcome back!",
-  "text": "",
+  "text": "Please enter your password",
   "form": {
     "fields": {
       "password": {
@@ -18,10 +18,10 @@
       "message": "Your password is being checked..."
     },
     "correct": {
-      "title": ""
+      "title": "Sign in successful, redirecting..."
     },
     "wrong": {
-      "title": ""
+      "title": "The password you entered is incorrect, please try again."
     }
   }
 }
