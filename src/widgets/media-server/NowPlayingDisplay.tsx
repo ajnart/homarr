@@ -43,7 +43,7 @@ const NowPlayingDisplayPlex = ({ session }: { session: PlexSessionInfo }) => {
     <Group spacing="sm">
       <PlexIcon size={14} />
       <Group spacing="xs">
-        <Text>{session.nowPlayingItem.title}</Text>
+        <Text lineClamp={1}>{session.nowPlayingItem.title}</Text>
       </Group>
     </Group>
   );
@@ -60,7 +60,7 @@ const NowPlayingDisplayJellyin = ({ session }: { session: JellyfinSessionInfo })
     <Group spacing="sm">
       <Test size={14} />
       <Group spacing="xs">
-        <Text>{session.nowPlayingItem.Name}</Text>
+        <Text lineClamp={1}>{session.nowPlayingItem.Name}</Text>
         {session.nowPlayingItem.SeasonName && <Text>- {session.nowPlayingItem.SeasonName}</Text>}
       </Group>
     </Group>

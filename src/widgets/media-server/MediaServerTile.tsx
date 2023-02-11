@@ -44,7 +44,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
           <tr>
             <th>Session</th>
             <th>Username</th>
-            <th>Item</th>
+            <th>Currently playing</th>
           </tr>
         </thead>
         <tbody>
@@ -61,7 +61,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
                       </Group>
                     </td>
                     <td>
-                      <Group>
+                      <Group spacing="sm">
                         {session.type === 'plex' && session.userThumb ? (
                           <Avatar src={session.userThumb} size="sm" />
                         ) : (
@@ -105,6 +105,25 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
           })}
         </tbody>
       </Table>
+
+      <Group mt="auto">
+        <Avatar.Group>
+          {data?.servers.map((server) => {
+            const app = config?.apps.find((x) => x.id === server.appId);
+
+            if (!app) {
+              return null;
+            }
+
+            return (
+              <AppAvatar
+                iconUrl={app.appearance.iconUrl}
+                color={server.success === true ? undefined : 'red'}
+              />
+            );
+          })}
+        </Avatar.Group>
+      </Group>
     </>
   );
 }
