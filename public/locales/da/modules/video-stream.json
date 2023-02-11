@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Video Stream",
+    "description": "Indlejr en video stream eller video fra et kamera eller et website",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for video stream widget",
       "FeedUrl": {
-        "label": ""
+        "label": "Feed url"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatisk afspilning"
       },
       "muted": {
-        "label": ""
+        "label": "Slå lyden fra"
       },
       "controls": {
-        "label": ""
+        "label": "Video afspilnings kontrol"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Ugyldig stream"
   }
 }
