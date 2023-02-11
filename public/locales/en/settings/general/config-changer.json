@@ -1,45 +1,45 @@
 {
   "configSelect": {
-    "label": "Config changer",
-    "description": "{{configCount}} configurations are available",
-    "loadingNew": "Loading your config...",
-    "pleaseWait": "Please wait until your new config is loaded!"
+    "label": "",
+    "description": "",
+    "loadingNew": "",
+    "pleaseWait": ""
   },
   "modal": {
     "copy": {
-      "title": "Choose the name of your new config",
+      "title": "",
       "form": {
         "configName": {
-          "label": "Config name",
+          "label": "",
           "validation": {
-            "required": "Config name is required",
-            "notUnique": "Config name is already in use"
+            "required": "",
+            "notUnique": ""
           },
-          "placeholder": "Your new config name"
+          "placeholder": ""
         },
-        "submitButton": "Confirm"
+        "submitButton": ""
       },
       "events": {
         "configSaved": {
-          "title": "Config saved",
-          "message": "Config saved as {{configName}}"
+          "title": "",
+          "message": ""
         },
         "configCopied": {
-          "title": "Config copied",
-          "message": "Config copied as {{configName}}"
+          "title": "",
+          "message": ""
         },
         "configNotCopied": {
-          "title": "Unable to copy config",
-          "message": "Your config was not copied as {{configName}}"
+          "title": "",
+          "message": ""
         }
       }
     },
     "confirmDeletion": {
-      "title": "Confirm deletion of your config",
-      "warningText": "You're about to delete '<b>{{configName}}</b>'",
-      "text": "Please note, that the deletion is not invertible and your data will be lost permanently. After clicking this button, the file will be permanently deleted from your disk. Make sure to create an adequate backup of your configuration.",
+      "title": "",
+      "warningText": "",
+      "text": "",
       "buttons": {
-        "confirm": "Yes, delete '<b>{{configName}}</b>'"
+        "confirm": ""
       }
     }
   },
@@ -57,8 +57,8 @@
           "message": "Config delete failed"
         },
         "deleteFailedDefaultConfig": {
-          "title": "Default config can't be deleted",
-          "message": "Configuration was not deleted from the file system"
+          "title": "",
+          "message": ""
         }
       }
     },
@@ -75,12 +75,12 @@
       }
     },
     "accept": {
-      "title": "Configuration Upload",
-      "text": "Drag files here to upload a config. Support for JSON files only."
+      "title": "",
+      "text": ""
     },
     "reject": {
-      "title": "Drag and Drop Upload rejected",
-      "text": "This file format is not supported. Please only upload JSON files."
+      "title": "",
+      "text": ""
     }
   }
 }
