@@ -1,17 +1,17 @@
 {
   "descriptor": {
     "name": "Calendar",
-    "description": "",
+    "description": "Displays a calendar with upcoming releases, from supported integrations.",
     "settings": {
-      "title": "",
+      "title": "Settings for Calendar widget",
       "useSonarrv4": {
-        "label": ""
+        "label": "Use Sonarr v4 API"
       },
       "sundayStart": {
         "label": "Start the week on Sunday"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Radarr release type"
       }
     }
   }
