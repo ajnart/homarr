@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Трансляция видео",
+    "description": "Встраивание видео или прямой трансляции видео с камеры или веб-сайта",
     "settings": {
-      "title": "",
+      "title": "Настройки для виджета трансляции видео",
       "FeedUrl": {
-        "label": ""
+        "label": "URL-адрес канала"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Автовоспроизведение"
       },
       "muted": {
-        "label": ""
+        "label": "Отключить звук"
       },
       "controls": {
-        "label": ""
+        "label": "Элементы управления видеоплеера"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Некорректная трансляция"
   }
 }
