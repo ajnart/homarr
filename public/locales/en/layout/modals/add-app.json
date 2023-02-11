@@ -1,52 +1,52 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "General",
+		"behaviour": "Behavior",
 		"network": "Network",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Appearance",
+		"integration": "Integration"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "App name",
+			"description": "Used to display the app on the dashboard."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Internal address",
+			"description": "Internal IP-address of the app."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "External address",
+			"description": "URL that will be opened when clicking on the app."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Open in new tab",
+			"description": "Open the app in a new tab instead of the current one."
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Status checker",
+			"description": "Checks if your app is online using a simple HTTP(S) request."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP status codes",
+			"description": "The HTTP status codes that are considered as online."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": ""
+			"label": "App Icon",
+			"description": "The icon that will be displayed on the dashboard."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
+			"label": "Integration configuration",
+			"description": "The integration configuration that will be used to connect to your app.",
+			"placeholder": "Select an integration",
 			"defined": "",
 			"undefined": "",
 			"public": "",
