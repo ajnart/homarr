@@ -31,8 +31,9 @@ export class PlexClient {
         const userElement = this.findElement('User', videoElement.elements);
         const playerElement = this.findElement('Player', videoElement.elements);
         const mediaElement = this.findElement('Media', videoElement.elements);
+        const sessionElement = this.findElement('Session', videoElement.elements);
 
-        if (!userElement || !playerElement || !mediaElement) {
+        if (!userElement || !playerElement || !mediaElement || !sessionElement) {
           return undefined;
         }
 
@@ -42,6 +43,7 @@ export class PlexClient {
         const transcodingElement = this.findElement('TranscodeSession', videoElement.elements);
 
         return {
+          id: sessionElement.id as string,
           username: userElement.title as string,
           userProfilePicture: userElement.thumb as string,
           sessionName: `${playerElement.product} (${playerElement.title})`,

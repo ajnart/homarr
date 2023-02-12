@@ -104,6 +104,7 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
         version: infoApi.data.Version ?? undefined,
         sessions: sessions.data.map(
           (session): GenericSessionInfo => ({
+            id: session.Id ?? '?',
             username: session.UserName ?? undefined,
             sessionName: `${session.Client} (${session.DeviceName})`,
             supportsMediaControl: session.SupportsMediaControl ?? false,
