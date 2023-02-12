@@ -1,11 +1,11 @@
-import { Avatar, Group, Stack, Table, Text } from '@mantine/core';
+import { Avatar, Group, ScrollArea, Stack, Table } from '@mantine/core';
 import { IconMovie } from '@tabler/icons';
 import { AppAvatar } from '../../components/AppAvatar';
 import { useConfigContext } from '../../config/provider';
 import { useGetMediaServers } from '../../hooks/widgets/media-servers/useGetMediaServers';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { NowPlayingDisplay } from './NowPlayingDisplay';
+import { TableRow } from './TableRow';
 
 const definition = defineWidget({
   id: 'media-server',
@@ -39,72 +39,25 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
 
   return (
     <Stack h="100%">
-      <Table striped>
-        <thead>
-          <tr>
-            <th>Session</th>
-            <th>Username</th>
-            <th>Currently playing</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data?.servers.map((server) => {
-            const app = config?.apps.find((x) => x.id === server.appId);
-            return server.sessions.map((session, index) => {
-              if (!session.nowPlayingItem) {
-                return (
-                  <tr key={index}>
-                    <td>
-                      <Group>
-                        <AppAvatar iconUrl={app?.appearance.iconUrl} />
-                        <Text>{session.sessionName}</Text>
-                      </Group>
-                    </td>
-                    <td>
-                      <Group spacing="sm">
-                        {session.type === 'plex' && session.userThumb ? (
-                          <Avatar src={session.userThumb} size="sm" />
-                        ) : (
-                          <Avatar src={null} alt={session.username} size="sm">
-                            {session.username?.at(0)?.toUpperCase()}
-                          </Avatar>
-                        )}
-                        <Text>{session.username}</Text>
-                      </Group>
-                    </td>
-                    <td />
-                  </tr>
-                );
-              }
-              return (
-                <tr key={index}>
-                  <td>
-                    <Group>
-                      <AppAvatar iconUrl={app?.appearance.iconUrl} />
-                      <Text>{session.sessionName}</Text>
-                    </Group>
-                  </td>
-                  <td>
-                    <Group spacing="sm">
-                      {session.type === 'plex' && session.userThumb ? (
-                        <Avatar src={session.userThumb} size="sm" />
-                      ) : (
-                        <Avatar src={null} alt={session.username} size="sm">
-                          {session.username?.at(0)?.toUpperCase()}
-                        </Avatar>
-                      )}
-                      <Text>{session.username}</Text>
-                    </Group>
-                  </td>
-                  <td>
-                    <NowPlayingDisplay session={session} />
-                  </td>
-                </tr>
-              );
-            });
-          })}
-        </tbody>
-      </Table>
+      <ScrollArea>
+        <Table striped>
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th>Username</th>
+              <th>Currently playing</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data?.servers.map((server) => {
+              const app = config?.apps.find((x) => x.id === server.appId);
+              return server.sessions.map((session, index) => (
+                <TableRow session={session} app={app} key={index} />
+              ));
+            })}
+          </tbody>
+        </Table>
+      </ScrollArea>
 
       <Group position="right" mt="auto">
         <Avatar.Group>
