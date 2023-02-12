@@ -1,104 +1,42 @@
-import { BaseItemKind } from '@jellyfin/sdk/lib/generated-client/models';
 import { Flex, Group, Text } from '@mantine/core';
 import {
-  IconBook,
-  IconBrandZoom,
   IconDeviceTv,
   IconHeadphones,
-  IconMovie,
-  IconPlaylist,
   IconQuestionMark,
   IconVideo,
   TablerIcon,
 } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { PlexSession } from '../../tools/server/sdk/plex/plexClient';
-import {
-  GenericSessionInfo,
-  JellyfinSessionInfo,
-  PlexSessionInfo,
-} from '../../types/api/media-server/session-info';
+import { GenericSessionInfo } from '../../types/api/media-server/session-info';
 
 export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) => {
   const { t } = useTranslation();
 
-  switch (session.type) {
-    case 'jellyfin':
-      return <NowPlayingDisplayJellyin session={session} />;
-    case 'plex':
-      return <NowPlayingDisplayPlex session={session} />;
-    default:
-      return null;
-  }
-};
-
-const NowPlayingDisplayPlex = ({ session }: { session: PlexSessionInfo }) => {
-  if (!session.nowPlayingItem) {
+  if (!session.currentlyPlaying) {
     return null;
   }
 
-  const PlexIcon = PlexTypeIcon({ type: session.nowPlayingItem.type });
+  const Icon = (): TablerIcon => {
+    switch (session.currentlyPlaying?.type) {
+      case 'audio':
+        return IconHeadphones;
+      case 'tv':
+        return IconDeviceTv;
+      case 'video':
+        return IconVideo;
+      default:
+        return IconQuestionMark;
+    }
+  };
+
+  const Test = Icon();
 
   return (
     <Flex wrap="nowrap" gap="sm" align="center">
-      <PlexIcon size={16} />
+      <Test size={16} />
       <Group spacing="xs">
-        <Text lineClamp={1}>{session.nowPlayingItem.title}</Text>
+        <Text lineClamp={1}>{session.currentlyPlaying.name}</Text>
       </Group>
     </Flex>
   );
-};
-
-const NowPlayingDisplayJellyin = ({ session }: { session: JellyfinSessionInfo }) => {
-  if (!session.nowPlayingItem) {
-    return null;
-  }
-
-  const Test = BaseItemKindIcon({ kind: session.nowPlayingItem?.Type });
-
-  return (
-    <Flex wrap="nowrap" gap="sm" align="center">
-      <Test size={18} />
-      <Group spacing="xs">
-        <Text lineClamp={1}>{session.nowPlayingItem.Name}</Text>
-        {session.nowPlayingItem.SeasonName && <Text>- {session.nowPlayingItem.SeasonName}</Text>}
-      </Group>
-    </Flex>
-  );
-};
-
-const PlexTypeIcon = ({ type }: { type: PlexSession['type'] }): TablerIcon => {
-  switch (type) {
-    case 'track':
-      return IconHeadphones;
-    case 'video':
-      return IconVideo;
-    default:
-      return IconQuestionMark;
-  }
-};
-
-const BaseItemKindIcon = ({ kind }: { kind?: BaseItemKind }): TablerIcon => {
-  switch (kind) {
-    case BaseItemKind.Audio:
-      return IconHeadphones;
-    case BaseItemKind.Episode:
-    case BaseItemKind.Movie:
-      return IconMovie;
-    case BaseItemKind.Video:
-    case BaseItemKind.MusicVideo:
-      return IconBrandZoom;
-    case BaseItemKind.TvChannel:
-    case BaseItemKind.TvProgram:
-    case BaseItemKind.LiveTvChannel:
-    case BaseItemKind.LiveTvProgram:
-      return IconDeviceTv;
-    case BaseItemKind.Playlist:
-    case BaseItemKind.PlaylistsFolder:
-      return IconPlaylist;
-    case BaseItemKind.Book:
-      return IconBook;
-    default:
-      return IconQuestionMark;
-  }
 };

@@ -1,0 +1,97 @@
+import { Card, Grid, Group, Text } from '@mantine/core';
+import { GenericSessionInfo } from '../../types/api/media-server/session-info';
+
+export const DetailCollapseable = ({ session }: { session: GenericSessionInfo }) => {
+  let details: { title: string; metrics: { name: string; value: string }[] }[] = [];
+
+  if (session.currentlyPlaying) {
+    details = [
+      ...details,
+      {
+        title: 'Video',
+        metrics: [
+          {
+            name: 'Resolution',
+            value: `${session.currentlyPlaying.metadata.video.width}x${session.currentlyPlaying.metadata.video.height}`,
+          },
+          {
+            name: 'Framerate',
+            value: session.currentlyPlaying.metadata.video.videoFrameRate,
+          },
+          {
+            name: 'Codec',
+            value: session.currentlyPlaying.metadata.video.videoCodec,
+          },
+          {
+            name: 'Bitrate',
+            value: `${session.currentlyPlaying.metadata.video.bitrate}`,
+          },
+        ],
+      },
+      {
+        title: 'Audio',
+        metrics: [
+          {
+            name: 'Audio channels',
+            value: `${session.currentlyPlaying.metadata.audio.audioChannels}`,
+          },
+          {
+            name: 'Audio codec',
+            value: session.currentlyPlaying.metadata.audio.audioCodec,
+          },
+        ],
+      },
+    ];
+
+    if (session.currentlyPlaying.metadata.transcoding) {
+      details = [
+        ...details,
+        {
+          title: 'Transcoding',
+          metrics: [
+            {
+              name: 'Resolution',
+              value: `${session.currentlyPlaying.metadata.transcoding.width}x${session.currentlyPlaying.metadata.transcoding.height}`,
+            },
+            {
+              name: 'Context',
+              value: session.currentlyPlaying.metadata.transcoding.context,
+            },
+            {
+              name: 'Hardware encoding requested',
+              value: session.currentlyPlaying.metadata.transcoding.transcodeHwRequested
+                ? 'yes'
+                : 'no',
+            },
+            {
+              name: 'Source codec',
+              value: `${session.currentlyPlaying.metadata.transcoding.sourceVideoCodec} ${session.currentlyPlaying.metadata.transcoding.sourceAudioCodec}`,
+            },
+            {
+              name: 'Target codec',
+              value: `${session.currentlyPlaying.metadata.transcoding.videoCodec} ${session.currentlyPlaying.metadata.transcoding.audioCodec}`,
+            },
+          ],
+        },
+      ];
+    }
+  }
+
+  return (
+    <Card>
+      <Grid>
+        {details.map((detail, index) => (
+          <Grid.Col xs={12} sm={6} key={index}>
+            <Text weight="bold">{detail.title}</Text>
+            {detail.metrics.map((metric, index2) => (
+              <Group position="apart" key={index2}>
+                <Text>{metric.name}</Text>
+                <Text>{metric.value}</Text>
+              </Group>
+            ))}
+          </Grid.Col>
+        ))}
+      </Grid>
+    </Card>
+  );
+};

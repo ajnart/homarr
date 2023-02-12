@@ -1,23 +1,42 @@
-import { BaseItemDto } from '@jellyfin/sdk/lib/generated-client/models';
-import { PlexSession } from '../../../tools/server/sdk/plex/plexClient';
-
 export type GenericSessionInfo = {
   supportsMediaControl: boolean;
   username: string | undefined;
   sessionName: string;
-} & (JellyfinSessionInfo | PlexSessionInfo);
-
-export type JellyfinSessionInfo = {
-  type: 'jellyfin';
-  supportsMediaControl: boolean;
-  nowPlayingItem: BaseItemDto | undefined;
-};
-
-export type PlexSessionInfo = {
-  nowPlayingItem: {
-    title: string;
-    type: PlexSession['type'];
-  },
-  userThumb: string | undefined;
-  type: 'plex';
+  userProfilePicture: string | undefined;
+  currentlyPlaying:
+    | {
+        name: string;
+        type: 'audio' | 'video' | 'tv';
+        metadata: {
+          video: {
+            videoCodec: string;
+            videoFrameRate: string;
+            height: number;
+            width: number;
+            bitrate: number;
+          };
+          audio: {
+            audioCodec: string;
+            audioChannels: number;
+          };
+          transcoding: {
+            context: string;
+            sourceVideoCodec: string;
+            sourceAudioCodec: string;
+            videoDecision: string;
+            audioDecision: string;
+            container: string;
+            videoCodec: string;
+            audioCodec: string;
+            error: boolean;
+            duration: number;
+            audioChannels: number;
+            width: number;
+            height: number;
+            transcodeHwRequested: boolean;
+            timeStamp: number;
+          } | undefined;
+        };
+      }
+    | undefined;
 };

@@ -3,14 +3,17 @@ import { getSessionApi } from '@jellyfin/sdk/lib/utils/api/session-api';
 import { getSystemApi } from '@jellyfin/sdk/lib/utils/api/system-api';
 
 import Consola from 'consola';
+
 import { getCookie } from 'cookies-next';
+
 import { NextApiRequest, NextApiResponse } from 'next';
+
+import { ConfigAppType } from '../../../../types/app';
 import { getConfig } from '../../../../tools/config/getConfig';
-import { PlexClient } from '../../../../tools/server/sdk/plex/plexClient';
 import { GenericMediaServer } from '../../../../types/api/media-server/media-server';
 import { MediaServersResponseType } from '../../../../types/api/media-server/response';
 import { GenericSessionInfo } from '../../../../types/api/media-server/session-info';
-import { ConfigAppType } from '../../../../types/app';
+import { PlexClient } from '../../../../tools/server/sdk/plex/plexClient';
 
 const jellyfin = new Jellyfin({
   clientInfo: {
@@ -97,11 +100,11 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
         version: infoApi.data.Version ?? undefined,
         sessions: sessions.data.map(
           (session): GenericSessionInfo => ({
-            type: 'jellyfin',
             username: session.UserName ?? undefined,
             sessionName: `${session.Client} (${session.DeviceName})`,
             supportsMediaControl: session.SupportsMediaControl ?? false,
-            nowPlayingItem: session.NowPlayingItem,
+            currentlyPlaying: undefined,
+            userProfilePicture: undefined,
           })
         ),
         success: true,
@@ -125,17 +128,7 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       const sessions = await plexClient.getSessions();
       return {
         serverAddress: app.url,
-          sessions: sessions.map((session): GenericSessionInfo => ({
-            type: 'plex',
-            sessionName: `${session.product} (${session.player})`,
-            supportsMediaControl: false,
-            username: session.username,
-            userThumb: session.userThumb,
-            nowPlayingItem: {
-              title: session.title,
-              type: session.type,
-            },
-          })),
+          sessions,
           type: 'plex',
           version: undefined,
           appId: app.id,

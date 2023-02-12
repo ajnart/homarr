@@ -39,8 +39,8 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
 
   return (
     <Stack h="100%">
-      <ScrollArea>
-        <Table striped>
+      <ScrollArea offsetScrollbars>
+        <Table highlightOnHover striped>
           <thead>
             <tr>
               <th>Session</th>
