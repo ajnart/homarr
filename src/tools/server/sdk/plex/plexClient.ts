@@ -1,6 +1,9 @@
 import { Element, xml2js } from 'xml-js';
 
-import { GenericSessionInfo } from '../../../../types/api/media-server/session-info';
+import {
+  GenericCurrentlyPlaying,
+  GenericSessionInfo,
+} from '../../../../types/api/media-server/session-info';
 
 export class PlexClient {
   constructor(private readonly apiAddress: string, private readonly token: string) {}
@@ -44,7 +47,7 @@ export class PlexClient {
           sessionName: `${playerElement.product} (${playerElement.title})`,
           currentlyPlaying: {
             name: videoElement.attributes?.title as string,
-            type: 'audio',
+            type: this.getCurrentlyPlayingType(videoElement.attributes?.type as string),
             metadata: {
               video: {
                 bitrate,
@@ -72,8 +75,7 @@ export class PlexClient {
                       sourceAudioCodec: transcodingElement.sourceAudioCodec,
                       sourceVideoCodec: transcodingElement.sourceVideoCodec,
                       timeStamp: transcodingElement.timeStamp,
-                      transcodeHwRequested:
-                        transcodingElement.transcodeHwRequested === 1,
+                      transcodeHwRequested: transcodingElement.transcodeHwRequested === 1,
                       videoCodec: transcodingElement.videoCodec,
                       videoDecision: transcodingElement.videoDecision,
                       width: transcodingElement.width,
@@ -90,38 +92,15 @@ export class PlexClient {
   private findElement(name: string, elements: Element[] | undefined) {
     return elements?.find((x) => x.name === name)?.attributes;
   }
+
+  private getCurrentlyPlayingType(type: string): GenericCurrentlyPlaying['type'] {
+    switch (type) {
+      case 'movie':
+        return 'movie';
+      case 'episode':
+        return 'video';
+      default:
+        return undefined;
+    }
+  }
 }
-
-export type PlexSession = {
-  /**
-   * The title of the content being played
-   */
-  title: string;
-
-  /**
-   * The username
-   */
-  username: string;
-
-  /**
-   * A relative link to the user profile picture
-   */
-  userThumb: string;
-
-  /**
-   * The product in use, eg. Plex Web
-   */
-  product: string;
-
-  /**
-   * The player in use, eg. Firefox
-   */
-  player: string;
-
-  /**
-   * The type of content being played
-   * Video: A single video like a movie
-   * Track: A audio track
-   */
-  type: 'video' | 'track';
-};

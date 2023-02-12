@@ -8,12 +8,16 @@ import { getCookie } from 'cookies-next';
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { ConfigAppType } from '../../../../types/app';
+import { BaseItemKind, ProgramAudio } from '@jellyfin/sdk/lib/generated-client/models';
 import { getConfig } from '../../../../tools/config/getConfig';
+import { PlexClient } from '../../../../tools/server/sdk/plex/plexClient';
 import { GenericMediaServer } from '../../../../types/api/media-server/media-server';
 import { MediaServersResponseType } from '../../../../types/api/media-server/response';
-import { GenericSessionInfo } from '../../../../types/api/media-server/session-info';
-import { PlexClient } from '../../../../tools/server/sdk/plex/plexClient';
+import {
+  GenericCurrentlyPlaying,
+  GenericSessionInfo,
+} from '../../../../types/api/media-server/session-info';
+import { ConfigAppType } from '../../../../types/app';
 
 const jellyfin = new Jellyfin({
   clientInfo: {
@@ -103,7 +107,56 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
             username: session.UserName ?? undefined,
             sessionName: `${session.Client} (${session.DeviceName})`,
             supportsMediaControl: session.SupportsMediaControl ?? false,
-            currentlyPlaying: undefined,
+            currentlyPlaying: session.NowPlayingItem
+              ? {
+                  name: session.NowPlayingItem.Name as string,
+                  seasonName: session.NowPlayingItem.SeasonName as string,
+                  albumName: session.NowPlayingItem.Album as string,
+                  episodeCount: session.NowPlayingItem.EpisodeCount ?? undefined,
+                  metadata: {
+                    video:
+                      session.NowPlayingItem &&
+                      session.NowPlayingItem.Width &&
+                      session.NowPlayingItem.Height
+                        ? {
+                            videoCodec: undefined,
+                            width: session.NowPlayingItem.Width ?? undefined,
+                            height: session.NowPlayingItem.Height ?? undefined,
+                            bitrate: undefined,
+                            videoFrameRate: session.TranscodingInfo?.Framerate
+                              ? String(session.TranscodingInfo?.Framerate)
+                              : undefined,
+                          }
+                        : undefined,
+                    audio: session.TranscodingInfo
+                      ? {
+                          audioChannels: session.TranscodingInfo.AudioChannels ?? undefined,
+                          audioCodec: session.TranscodingInfo.AudioCodec ?? undefined,
+                        }
+                      : undefined,
+                    transcoding: session.TranscodingInfo
+                      ? {
+                          audioChannels: session.TranscodingInfo.AudioChannels ?? -1,
+                          audioCodec: session.TranscodingInfo.AudioCodec ?? undefined,
+                          container: session.TranscodingInfo.Container ?? undefined,
+                          width: session.TranscodingInfo.Width ?? undefined,
+                          height: session.TranscodingInfo.Height ?? undefined,
+                          videoCodec: session.TranscodingInfo?.VideoCodec ?? undefined,
+                          audioDecision: undefined,
+                          context: undefined,
+                          duration: undefined,
+                          error: undefined,
+                          sourceAudioCodec: undefined,
+                          sourceVideoCodec: undefined,
+                          timeStamp: undefined,
+                          transcodeHwRequested: undefined,
+                          videoDecision: undefined,
+                        }
+                      : undefined,
+                  },
+                  type: convertJellyfinType(session.NowPlayingItem.Type),
+                }
+              : undefined,
             userProfilePicture: undefined,
           })
         ),
@@ -128,11 +181,11 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       const sessions = await plexClient.getSessions();
       return {
         serverAddress: app.url,
-          sessions,
-          type: 'plex',
-          version: undefined,
-          appId: app.id,
-          success: true,
+        sessions,
+        type: 'plex',
+        version: undefined,
+        appId: app.id,
+        success: true,
       };
     }
     default: {
@@ -141,6 +194,26 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       );
       return undefined;
     }
+  }
+};
+
+const convertJellyfinType = (kind: BaseItemKind | undefined): GenericCurrentlyPlaying['type'] => {
+  switch (kind) {
+    case BaseItemKind.Audio:
+    case BaseItemKind.MusicVideo:
+      return 'audio';
+    case BaseItemKind.Episode:
+    case BaseItemKind.Video:
+      return 'video';
+    case BaseItemKind.Movie:
+      return 'movie';
+    case BaseItemKind.TvChannel:
+    case BaseItemKind.TvProgram:
+    case BaseItemKind.LiveTvChannel:
+    case BaseItemKind.LiveTvProgram:
+      return 'tv';
+    default:
+      return undefined;
   }
 };
 
