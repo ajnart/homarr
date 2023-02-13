@@ -5,5 +5,20 @@
     "settings": {
       "title": "Settings for media server widget"
     }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "session": "Session",
+        "user": "User",
+        "currentlyPlaying": "Currently playing"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Unable to load content",
+        "text": "Unable to retrieve information from the server. Please check the logs for more details"
+      }
+    }
   }
 }

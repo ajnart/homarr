@@ -1,5 +1,16 @@
-import { Avatar, Group, ScrollArea, Stack, Table } from '@mantine/core';
-import { IconMovie } from '@tabler/icons';
+import {
+  Avatar,
+  Center,
+  Group,
+  Loader,
+  ScrollArea,
+  Stack,
+  Table,
+  Text,
+  Title,
+} from '@mantine/core';
+import { IconAlertTriangle, IconMovie } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { AppAvatar } from '../../components/AppAvatar';
 import { useConfigContext } from '../../config/provider';
 import { useGetMediaServers } from '../../hooks/widgets/media-servers/useGetMediaServers';
@@ -27,14 +38,29 @@ interface MediaServerWidgetProps {
 }
 
 function MediaServerTile({ widget }: MediaServerWidgetProps) {
+  const { t } = useTranslation('modules/media-server');
   const { config } = useConfigContext();
 
-  const { data } = useGetMediaServers({
+  const { data, isError } = useGetMediaServers({
     enabled: config !== undefined,
   });
 
+  if (isError) {
+    return (
+      <Center>
+        <Stack align="center">
+          <IconAlertTriangle />
+          <Title order={6}>{t('card.errors.general.title')}</Title>
+          <Text>{t('card.errors.general.text')}</Text>
+        </Stack>
+      </Center>
+    );
+  }
+
   if (!data) {
-    <>loading...</>;
+    <Center h="100%">
+      <Loader />
+    </Center>;
   }
 
   return (
@@ -43,9 +69,9 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
         <Table highlightOnHover striped>
           <thead>
             <tr>
-              <th>Session</th>
-              <th>Username</th>
-              <th>Currently playing</th>
+              <th>{t('card.table.header.session')}</th>
+              <th>{t('card.table.header.user')}</th>
+              <th>{t('card.table.header.currentlyPlaying')}</th>
             </tr>
           </thead>
           <tbody>

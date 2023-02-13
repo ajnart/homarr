@@ -1,4 +1,4 @@
-import { Card, Flex, Grid, Group, Text } from '@mantine/core';
+import { Card, Divider, Flex, Grid, Group, Text } from '@mantine/core';
 import { IconDeviceMobile, IconId } from '@tabler/icons';
 import { GenericSessionInfo } from '../../types/api/media-server/session-info';
 
@@ -107,6 +107,7 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
         </Group>
         <Text>{session.sessionName}</Text>
       </Flex>
+      {details.length > 0 && <Divider label="Stats for nerds" labelPosition="center" mt="lg" mb="sm" />}
       <Grid>
         {details.map((detail, index) => (
           <Grid.Col xs={12} sm={6} key={index}>
