@@ -30,8 +30,8 @@
       "noService": "Geen Dash. service gevonden. Voeg er een toe aan uw Homarr dashboard of stel een Dashdot URL in in de opties van de module",
       "noInformation": "Kan geen informatie verkrijgen van dash. - gebruikt u de laatste versie?",
       "protocolDowngrade": {
-        "title": "Gedetecteerd protocol downgrade",
-        "text": ""
+        "title": "Gedetecteerd protocol degradatie",
+        "text": "Het protocol naar uw Dash. instantie wordt gedegradeerd. Dit is een veiligheidsrisico, want HTTP is niet gecodeerd en aanvallers zouden deze verbinding kunnen misbruiken. Zorg ervoor dat Dash. ook op HTTPS draait of downgrade Homarr naar HTTP (niet aanbevolen)."
       }
     },
     "graphs": {
