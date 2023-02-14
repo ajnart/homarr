@@ -28,6 +28,11 @@ const definition = defineWidget({
     graphHeight: {
       type: 'number',
       defaultValue: 115,
+      inputProps: {
+        step: 5,
+        stepHoldDelay: 500,
+        stepHoldInterval: 100,
+      },
     },
     graphsOrder: {
       type: 'draggable-list',

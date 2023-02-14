@@ -17,6 +17,7 @@ import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
+import { mapObject } from '../../../../tools/client/objects';
 import { useColorTheme } from '../../../../tools/color';
 import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
@@ -176,6 +177,7 @@ const WidgetOptionTypeSwitch: FC<{
           label={t(`descriptor.settings.${key}.label`)}
           value={value as number}
           onChange={(v) => handleChange(key, v!)}
+          {...option.inputProps}
         />
       );
     case 'slider':
@@ -193,8 +195,27 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'draggable-list':
-      // eslint-disable-next-line no-case-declarations
+      /* eslint-disable no-case-declarations */
       const typedVal = value as IDraggableListInputValue['defaultValue'];
+
+      const extractSubValue = (liName: string, settingName: string) =>
+        typedVal.find((v) => v.key === liName)?.subValues?.[settingName];
+
+      const handleSubChange = (liName: string, settingName: string) => (_: any, newVal: any) =>
+        handleChange(
+          key,
+          typedVal.map((oldVal) =>
+            oldVal.key === liName
+              ? {
+                  ...oldVal,
+                  subValues: {
+                    ...oldVal.subValues,
+                    [settingName]: newVal,
+                  },
+                }
+              : oldVal
+          )
+        );
 
       return (
         <Stack spacing="xs">
@@ -202,46 +223,26 @@ const WidgetOptionTypeSwitch: FC<{
           <DraggableList
             value={typedVal}
             onChange={(v) => handleChange(key, v)}
-            labels={Object.fromEntries(
-              Object.entries(option.items).map(([graphName]) => [
-                graphName,
-                t(`descriptor.settings.${key}.${graphName}.label`),
-              ])
+            labels={mapObject(option.items, (liName) =>
+              t(`descriptor.settings.${key}.${liName}.label`)
             )}
           >
-            {Object.fromEntries(
-              Object.entries(option.items).map(([graphName, graph]) => [
-                graphName,
-                Object.entries(graph).map(([subKey, setting], i) => (
-                  <WidgetOptionTypeSwitch
-                    key={`${graphName}.${subKey}.${i}`}
-                    option={setting as IWidgetOptionValue}
-                    widgetId={widgetId}
-                    propName={`${key}.${graphName}.${subKey}`}
-                    value={typedVal.find((v) => v.key === graphName)?.subValues?.[subKey]}
-                    handleChange={(_, newVal) =>
-                      handleChange(
-                        key,
-                        typedVal.map((oldVal) =>
-                          oldVal.key === graphName
-                            ? {
-                                ...oldVal,
-                                subValues: {
-                                  ...oldVal.subValues,
-                                  [subKey]: newVal,
-                                },
-                              }
-                            : oldVal
-                        )
-                      )
-                    }
-                  />
-                )),
-              ])
+            {mapObject(option.items, (liName, liSettings) =>
+              Object.entries(liSettings).map(([settingName, setting], i) => (
+                <WidgetOptionTypeSwitch
+                  key={`${liName}.${settingName}.${i}`}
+                  option={setting as IWidgetOptionValue}
+                  widgetId={widgetId}
+                  propName={`${key}.${liName}.${settingName}`}
+                  value={extractSubValue(liName, settingName)}
+                  handleChange={handleSubChange(liName, settingName)}
+                />
+              ))
             )}
           </DraggableList>
         </Stack>
       );
+    /* eslint-enable no-case-declarations */
     default:
       return null;
   }

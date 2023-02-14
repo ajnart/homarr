@@ -1,3 +1,11 @@
+import {
+  MultiSelectProps,
+  NumberInputProps,
+  SelectProps,
+  SliderProps,
+  SwitchProps,
+  TextInputProps,
+} from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
 import React from 'react';
 import { AreaType } from '../types/area';
@@ -41,31 +49,36 @@ export type IMultiSelectOptionValue = {
   type: 'multi-select';
   defaultValue: string[];
   data: DataType[];
+  inputProps?: Partial<MultiSelectProps>;
 };
 
-// will show a multi-select with specified data
+// will show a select with specified data
 export type ISelectOptionValue = {
   type: 'select';
   defaultValue: string;
   data: DataType[];
+  inputProps?: Partial<SelectProps>;
 };
 
 // will show a switch
 export type ISwitchOptionValue = {
   type: 'switch';
   defaultValue: boolean;
+  inputProps?: Partial<SwitchProps>;
 };
 
 // will show a text-input
 export type ITextInputOptionValue = {
   type: 'text';
   defaultValue: string;
+  inputProps?: Partial<TextInputProps>;
 };
 
 // will show a number-input
 export type INumberInputOptionValue = {
   type: 'number';
   defaultValue: number;
+  inputProps?: Partial<NumberInputProps>;
 };
 
 // will show a slider-input
@@ -75,8 +88,10 @@ export type ISliderInputOptionValue = {
   min: number;
   max: number;
   step: number;
+  inputProps?: Partial<SliderProps>;
 };
 
+// will show a sortable list that can have sub settings
 export type IDraggableListInputValue = {
   type: 'draggable-list';
   defaultValue: {
