@@ -1,8 +1,8 @@
-import { Collapse, createStyles, Stack, Text } from '@mantine/core';
+import { Collapse, createStyles, Flex, Stack, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons';
 import { Reorder, useDragControls } from 'framer-motion';
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect, useRef } from 'react';
 import { IDraggableListInputValue } from '../../../../widgets/widgets';
 
 const useStyles = createStyles((theme) => ({
@@ -83,16 +83,32 @@ const ListItem: FC<{
   const [opened, handlers] = useDisclosure(false);
   const hasContent = props.children != null && Object.keys(props.children).length !== 0;
 
+  // Workaround for mobile drag controls not working
+  // https://github.com/framer/motion/issues/1597#issuecomment-1235026724
+  const dragRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const touchHandler: EventListener = (e) => e.preventDefault();
+
+    const dragItem = dragRef.current;
+
+    if (dragItem) {
+      dragItem.addEventListener('touchstart', touchHandler, { passive: false });
+
+      return () => {
+        dragItem.removeEventListener('touchstart', touchHandler);
+      };
+    }
+
+    return undefined;
+  }, [dragRef]);
+
   return (
     <Reorder.Item value={props.item.key} dragListener={false} dragControls={controls} as="div">
       <div className={classes.container}>
         <div className={classes.row}>
-          <IconGripVertical
-            className={classes.clickableIcons}
-            onPointerDown={(e) => controls.start(e)}
-            size={18}
-            stroke={1.5}
-          />
+          <Flex ref={dragRef} onPointerDown={(e) => controls.start(e)}>
+            <IconGripVertical className={classes.clickableIcons} size={18} stroke={1.5} />
+          </Flex>
 
           <div className={classes.middle}>
             <Text className={classes.symbol}>{props.label}</Text>
