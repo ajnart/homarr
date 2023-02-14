@@ -50,7 +50,7 @@
       "cpu": {
         "title": "ЦП"
       },
-      "memory": {
+      "ram": {
         "title": "ОЗУ"
       },
       "gpu": {

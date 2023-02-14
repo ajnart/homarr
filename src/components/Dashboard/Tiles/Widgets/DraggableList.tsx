@@ -1,7 +1,8 @@
 import { Collapse, createStyles, Stack, Text } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons';
 import { Reorder, useDragControls } from 'framer-motion';
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode } from 'react';
 import { IDraggableListInputValue } from '../../../../widgets/widgets';
 
 const useStyles = createStyles((theme) => ({
@@ -14,7 +15,6 @@ const useStyles = createStyles((theme) => ({
     }`,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.white,
     marginBottom: theme.spacing.xs,
-    gap: theme.spacing.xs,
   },
   row: {
     display: 'flex',
@@ -80,7 +80,7 @@ const ListItem: FC<{
   const { classes, cx } = useStyles();
   const controls = useDragControls();
 
-  const [showContent, setShowContent] = useState(false);
+  const [opened, handlers] = useDisclosure(false);
   const hasContent = props.children != null && Object.keys(props.children).length !== 0;
 
   return (
@@ -100,8 +100,8 @@ const ListItem: FC<{
 
           {hasContent && (
             <IconChevronDown
-              className={cx(classes.clickableIcons, { [classes.rotate]: showContent })}
-              onClick={() => setShowContent(!showContent)}
+              className={cx(classes.clickableIcons, { [classes.rotate]: opened })}
+              onClick={() => handlers.toggle()}
               size={18}
               stroke={1.5}
             />
@@ -109,7 +109,7 @@ const ListItem: FC<{
         </div>
 
         {hasContent && (
-          <Collapse in={showContent}>
+          <Collapse in={opened}>
             <Stack className={classes.collapseContent}>{props.children}</Stack>
           </Collapse>
         )}

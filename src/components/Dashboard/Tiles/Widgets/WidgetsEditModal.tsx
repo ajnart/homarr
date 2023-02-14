@@ -205,7 +205,7 @@ const WidgetOptionTypeSwitch: FC<{
             labels={Object.fromEntries(
               Object.entries(option.items).map(([graphName]) => [
                 graphName,
-                t(`descriptor.settings.${graphName}.label`),
+                t(`descriptor.settings.${key}.${graphName}.label`),
               ])
             )}
           >
@@ -217,7 +217,7 @@ const WidgetOptionTypeSwitch: FC<{
                     key={`${graphName}.${subKey}.${i}`}
                     option={setting as IWidgetOptionValue}
                     widgetId={widgetId}
-                    propName={`${graphName}.${subKey}`}
+                    propName={`${key}.${graphName}.${subKey}`}
                     value={typedVal.find((v) => v.key === graphName)?.subValues?.[subKey]}
                     handleChange={(_, newVal) =>
                       handleChange(

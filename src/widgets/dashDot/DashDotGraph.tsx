@@ -1,4 +1,5 @@
 import { createStyles, Title, useMantineTheme } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
 
@@ -21,21 +22,28 @@ export const DashDotGraph = ({
   usePercentages,
   info,
 }: DashDotGraphProps) => {
+  const { t } = useTranslation('modules/dashdot');
   const { classes } = useStyles();
 
-  return graph === 'storage' && isCompact ? (
-    <DashDotCompactStorage info={info} />
-  ) : graph === 'network' && isCompact ? (
-    <DashDotCompactNetwork info={info} />
-  ) : (
+  if (graph === 'storage' && isCompact) {
+    return <DashDotCompactStorage info={info} />;
+  }
+
+  if (graph === 'network' && isCompact) {
+    return <DashDotCompactNetwork info={info} />;
+  }
+
+  const title = t(`card.graphs.${graph}.title`);
+
+  return (
     <div className={classes.graphContainer}>
       <Title className={classes.graphTitle} order={4}>
-        {graph}
+        {title}
       </Title>
       <iframe
         className={classes.iframe}
         key={graph}
-        title={graph}
+        title={title}
         src={useIframeSrc(dashDotUrl, graph, multiView, usePercentages)}
         style={{
           height: `${graphHeight}px`,

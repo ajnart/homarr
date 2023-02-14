@@ -50,7 +50,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "内存"
       },
       "gpu": {

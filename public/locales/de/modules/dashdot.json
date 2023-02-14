@@ -4,23 +4,77 @@
     "description": "Zeigt die Graphen einer externen Dash.-Instanz innerhalb von Homarr an.",
     "settings": {
       "title": "Einstellungen für Dash. Widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Core View"
-      },
-      "storageMultiView": {
-        "label": "Speicher Multi-Drive View"
-      },
-      "useCompactView": {
-        "label": "Kompaktmodus verwenden"
-      },
-      "graphs": {
-        "label": "Graphen"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": "Prozentangaben anzeigen"
+      },
+      "columns": {
+        "label": "Anzahl Spalten"
+      },
+      "graphHeight": {
+        "label": "Höhe der Graphen"
+      },
+      "graphsOrder": {
+        "label": "Graphen (Reihenfolge)",
+        "storage": {
+          "label": "Speicher",
+          "enabled": {
+            "label": "Im Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          },
+          "compactView": {
+            "label": "Als Text anzeigen (Kompakt)"
+          },
+          "multiView": {
+            "label": "Als Multi-Laufwerk anzeigen"
+          }
+        },
+        "network": {
+          "label": "Netzwerk",
+          "enabled": {
+            "label": "Im Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          },
+          "compactView": {
+            "label": "Als Text anzeigen (Kompakt)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Im Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          },
+          "multiView": {
+            "label": "Als Multi-Core anzeigen"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Im Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Im Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          }
+        }
       }
     }
   },
@@ -50,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {
