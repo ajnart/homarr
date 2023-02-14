@@ -4,18 +4,6 @@
     "description": "Показує графіки зовнішньої Dash. всередині Homarr.",
     "settings": {
       "title": "Налаштування віджета Dash.",
-      "cpuMultiView": {
-        "label": "Процесор по ядрах"
-      },
-      "storageMultiView": {
-        "label": "Сховище по дисках"
-      },
-      "useCompactView": {
-        "label": "Компактний вигляд"
-      },
-      "graphs": {
-        "label": "Графіки"
-      },
       "url": {
         "label": "Dash. URL"
       },

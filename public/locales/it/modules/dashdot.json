@@ -4,18 +4,6 @@
     "description": "Visualizza i grafici di un'istanza Dash. esterna all'interno di Homarr.",
     "settings": {
       "title": "Impostazioni del widget Dash.",
-      "cpuMultiView": {
-        "label": "Vista CPU Multi-Core"
-      },
-      "storageMultiView": {
-        "label": "Visualizzazione archiviazione Multi-Drive"
-      },
-      "useCompactView": {
-        "label": "Visualizzazione compatta"
-      },
-      "graphs": {
-        "label": "Grafici"
-      },
       "url": {
         "label": "Dash. URL"
       },

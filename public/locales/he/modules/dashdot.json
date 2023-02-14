@@ -4,18 +4,6 @@
     "description": "מציג נתוני גרפים.",
     "settings": {
       "title": "הגדרות עבור וידג׳ט Dash.",
-      "cpuMultiView": {
-        "label": "תצוגת מעבד מרובת ליבות"
-      },
-      "storageMultiView": {
-        "label": "תצוגת אחסון מרובת כוננים"
-      },
-      "useCompactView": {
-        "label": "השתמש בתצוגה קומפקטית"
-      },
-      "graphs": {
-        "label": "גרפים"
-      },
       "url": {
         "label": "כתובת אתר Dash."
       },

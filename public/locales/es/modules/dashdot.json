@@ -4,18 +4,6 @@
     "description": "Muestra los gráficos de una instancia de Dash. externa, dentro de Homarr.",
     "settings": {
       "title": "Ajustes para el widget Dash.",
-      "cpuMultiView": {
-        "label": "Vista CPU Multinúcleo"
-      },
-      "storageMultiView": {
-        "label": "Vista Almacenamiento Multidisco"
-      },
-      "useCompactView": {
-        "label": "Usar vista Compacta"
-      },
-      "graphs": {
-        "label": "Gráficos"
-      },
       "url": {
         "label": "Dash. URL"
       },

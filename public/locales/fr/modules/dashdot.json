@@ -4,18 +4,6 @@
     "description": "Affiche les graphiques d'une instance externe de Dash. dans Homarr.",
     "settings": {
       "title": "Paramètres du widget Dash",
-      "cpuMultiView": {
-        "label": "Vue du CPU multi-cœur"
-      },
-      "storageMultiView": {
-        "label": "Vue du stockage multidisque"
-      },
-      "useCompactView": {
-        "label": "Utiliser la vue compacte"
-      },
-      "graphs": {
-        "label": "Graphiques"
-      },
       "url": {
         "label": "URL Dash."
       },

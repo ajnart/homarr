@@ -4,18 +4,6 @@
     "description": "Homarr内部の外部Dash.インスタンスのグラフを表示します。",
     "settings": {
       "title": "Dash.ウィジェットの設定",
-      "cpuMultiView": {
-        "label": "CPUマルチコアビュー"
-      },
-      "storageMultiView": {
-        "label": "ストレージマルチドライブビュー"
-      },
-      "useCompactView": {
-        "label": "コンパクトビューを使用する"
-      },
-      "graphs": {
-        "label": "グラフ"
-      },
       "url": {
         "label": "ダッシュURL"
       },
