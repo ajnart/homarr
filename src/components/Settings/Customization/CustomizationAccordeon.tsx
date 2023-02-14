@@ -124,6 +124,7 @@ const getItems = () => {
         <Stack>
           <Checkbox
             label="Use debug language"
+            defaultChecked={i18n?.language === 'cimode'}
             description="This will show the translation keys instead of the actual translations"
             onChange={(e) =>
               // Change to CI mode language
