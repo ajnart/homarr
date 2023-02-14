@@ -1,0 +1,30 @@
+{
+  "pageTitle": {
+    "label": "Sidetittel",
+    "description": "Tittel på dashbordet øverst til venstre"
+  },
+  "metaTitle": {
+    "label": "Meta tittel",
+    "description": "Tittelen som vises som fanenavn"
+  },
+  "logo": {
+    "label": "Logo",
+    "description": "Dashbord logoen øverst til venstre"
+  },
+  "favicon": {
+    "label": "Favicon",
+    "description": "Ikonet som brukes foran fanenavnet"
+  },
+  "background": {
+    "label": "Bakgrunn"
+  },
+  "customCSS": {
+    "label": "Egendefinert CSS",
+    "description": "Tilpass alle elementer på dashbordet, anbefales bare for erfarne brukere",
+    "placeholder": "Egendefinert CSS vil bli brukt sist",
+    "applying": "Tar i bruk CSS..."
+  },
+  "buttons": {
+    "submit": "Legg til"
+  }
+}

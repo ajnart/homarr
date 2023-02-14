@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Cho phép bạn dễ dàng quản lý các khoang chứa docker."
   },
   "search": {
     "placeholder": "Tìm kiếm bằng tên khoang chứa hoặc tên hình ảnh"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Thêm ứng dụng",
+      "message": "Thêm ứng dụng vào Homarr"
     },
     "restart": {
       "title": "Khởi động lại"
@@ -68,13 +68,13 @@
   "errors": {
     "integrationFailed": {
       "title": "Tích hợp Docker thất bại",
-      "message": ""
+      "message": "Có phải bạn quên gắn ổ cắm docker không?"
     },
     "unknownError": {
       "title": "Có lỗi xảy ra"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Vui lòng chỉ thêm từng dịch vụ một!"
     }
   },
   "actionIcon": {

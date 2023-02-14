@@ -1,0 +1,61 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Zobrazovať grafy externej Dash. vo vnútri Homarru.",
+    "settings": {
+      "title": "Nastavenia pre Dash. mini aplikácie",
+      "cpuMultiView": {
+        "label": "CPU Multi-Core Zobrazenie"
+      },
+      "storageMultiView": {
+        "label": "Zobrazenie Multi-Drive úložiska"
+      },
+      "useCompactView": {
+        "label": "Použi kompaktné zobrazenie"
+      },
+      "graphs": {
+        "label": "Grafy"
+      },
+      "url": {
+        "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Zobraziť percentá"
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Žiadna Dash. služba nájdená. Pridajte službu na svoj informačný panel Homarr alebo nastavte Dash. URL v možnostiach modulu",
+      "noInformation": "Nie je možné získať informácie z Dash. - používate najnovšiu verziu?",
+      "protocolDowngrade": {
+        "title": "Zistený downgrade protokol",
+        "text": "Protokol k vášmu Dash. inštancii sa downgraduje. Ide o bezpečnostné riziko, pretože HTTP je nešifrované a útočníci by mohli toto pripojenie zneužiť. Uistite sa, že Dash. beží aj na HTTPS alebo downgradujte Homarr na HTTP (neodporúča sa)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Úložisko",
+        "label": "Úložisko:"
+      },
+      "network": {
+        "title": "Sieť",
+        "label": "Sieť:",
+        "metrics": {
+          "download": "Dole",
+          "upload": "Hore"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "memory": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

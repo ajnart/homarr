@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Umožňuje vyhľadávať a pridávať médiá z Overseerr alebo Jellyseerr."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Požiadajte o {{title}}",
+        "cancel": "Zrušiť",
+        "request": "Požiadavka"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Používanie kľúča API",
+          "text": "Táto žiadosť bude automaticky schválená"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Označte série, ktoré chcete prevziať",
+      "table": {
+        "header": {
+          "season": "Séria",
+          "numberOfEpisodes": "Počet epizód"
+        }
+      }
+    }
+  }
+}

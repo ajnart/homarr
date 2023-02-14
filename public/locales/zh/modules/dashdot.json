@@ -28,7 +28,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "没有找到Dash.服务。请在你的Homarr仪表板上添加，或者设置一个仪表板网址。网址在应用选项中添加",
-      "noInformation": "无法从仪表板获取信息。- 你运行的是最新版本吗？"
+      "noInformation": "无法从仪表板获取信息。- 你运行的是最新版本吗？",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {

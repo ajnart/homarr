@@ -5,6 +5,7 @@ import usenet from './useNet/UseNetTile';
 import weather from './weather/WeatherTile';
 import torrent from './torrent/TorrentTile';
 import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
+import videoStream from './video/VideoStreamTile';
 
 export default {
   calendar,
@@ -14,4 +15,5 @@ export default {
   'torrents-status': torrent,
   dlspeed: torrentNetworkTraffic,
   date,
+  'video-stream': videoStream,
 };

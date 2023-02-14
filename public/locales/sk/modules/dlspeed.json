@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Rýchlosť sťahovania",
+    "description": "Zobrazuje rýchlosť sťahovania a nahrávania podporovaných integrácií."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Názov",
+        "size": "Veľkosť",
+        "download": "Dole",
+        "upload": "Hore",
+        "estimatedTimeOfArrival": "Odhad",
+        "progress": "Stav"
+      },
+      "body": {
+        "nothingFound": "Nenašli sa žiadne torrenty"
+      }
+    },
+    "lineChart": {
+      "title": "Aktuálna rýchlosť sťahovania",
+      "download": "Stiahnuť: {{download}}",
+      "upload": "Nahrať: {{upload}}",
+      "timeSpan": "pred {{seconds}} sekundami",
+      "totalDownload": "Stiahnuť: {{download}}/s",
+      "totalUpload": "Nahrať: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nenašli sa žiadni podporovaní klienti na sťahovanie!",
+        "text": "Ak chcete zobraziť aktuálne stiahnuté súbory, pridajte službu sťahovania"
+      }
+    }
+  }
+}
