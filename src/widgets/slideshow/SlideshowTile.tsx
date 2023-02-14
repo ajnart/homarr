@@ -1,37 +1,29 @@
-import { Center, Group, Stack, Title } from '@mantine/core';
+/* eslint-disable @next/next/no-img-element */
+import { Center, Stack, Title, createStyles, Image } from '@mantine/core';
 import { IconPhoto, IconPhotoX } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import React from 'react';
-import { Slide, Fade, Zoom } from 'react-slideshow-image';
+import { useRef } from 'react';
+import { Carousel } from '@mantine/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import 'react-slideshow-image/dist/styles.css';
 
 const definition = defineWidget({
   id: 'slideshow',
   icon: IconPhoto,
   options: {
-    FeedUrl: {
+    feedUrl: {
       type: 'text',
       defaultValue: '',
     },
-    Effect: {
-      type: 'select',
-      defaultValue: 'Fade',
-      data: [
-        { label: 'Slide', value: 'Slide' },
-        { label: 'Fade', value: 'Fade' },
-        { label: 'Zoom', value: 'Zoom scale={0.4}' },
-      ],
-    },
-    Duration: {
+    duration: {
       type: 'number',
       defaultValue: 5000,
     },
   },
   gridstack: {
     minWidth: 3,
-    minHeight: 3,
+    minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -44,51 +36,57 @@ interface SlideshowWidgetProps {
   widget: SlideshowWidget;
 }
 
+const useStyles = createStyles((_theme, _params, getRef) => ({
+  controls: {
+    ref: getRef('controls'),
+    transition: 'opacity 150ms ease',
+    opacity: 0,
+  },
+
+  root: {
+    '&:hover': {
+      [`& .${getRef('controls')}`]: {
+        opacity: 1,
+      },
+    },
+  },
+}));
+
 function SlideshowWidget({ widget }: SlideshowWidgetProps) {
   const { t } = useTranslation('modules/slideshow');
-  const divStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundSize: 'cover',
-    height: '400px',
-  };
-  const Images = [
-    {
-      url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-      caption: 'Slide 1',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80',
-      caption: 'Slide 2',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-      caption: 'Slide 3',
-    },
-  ];
+  const { classes } = useStyles();
+  const autoplay = useRef(Autoplay({ delay: 5000 }));
+  const images: any[] = [widget.properties.feedUrl];
+  const slides = images.map((url) => (
+    <Carousel.Slide key={url}>
+      <Image src={url} />
+    </Carousel.Slide>
+  ));
 
-  if (!widget.properties.FeedUrl) {
+  if (!widget.properties.feedUrl) {
     return (
       <Center h="100%">
         <Stack align="center">
           <IconPhotoX />
-          <Title order={4}>{t('errors.invalidStream')}</Title>
+          <Title order={4}>{t('errors.invalidUrl')}</Title>
         </Stack>
       </Center>
     );
   }
   return (
-    <div className="slide-container">
-      <Fade>
-        {Images.map((Image, index) => (
-          <div key={index}>
-            <div style={{ ...divStyle, backgroundImage: `url(${Image.url})` }} />
-          </div>
-        ))}
-      </Fade>
-    </div>
+    <Carousel
+      sx={{ maxWidth: '100%' }}
+      mx="auto"
+      loop
+      controlSize={25}
+      height="450px"
+      plugins={[autoplay.current]}
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
+      classNames={classes}
+    >
+      {slides}
+    </Carousel>
   );
 }
-
 export default definition;
