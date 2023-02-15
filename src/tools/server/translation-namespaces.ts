@@ -29,6 +29,7 @@ export const dashboardNamespaces = [
   'modules/torrents-status',
   'modules/weather',
   'modules/ping',
+  'modules/rss',
   'modules/docker',
   'modules/dashdot',
   'modules/overseerr',
