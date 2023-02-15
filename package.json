@@ -29,6 +29,7 @@
     "@ctrl/transmission": "^4.1.1",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
+    "@jellyfin/sdk": "^0.7.0",
     "@mantine/core": "^5.9.3",
     "@mantine/dates": "^5.9.3",
     "@mantine/dropzone": "^5.9.3",
@@ -62,6 +63,7 @@
     "rss-parser": "^3.12.0",
     "sabnzbd-api": "^1.5.0",
     "uuid": "^8.3.2",
+    "xml-js": "^1.6.11",
     "yarn": "^1.22.19",
     "zustand": "^4.1.4"
   },

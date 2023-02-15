@@ -15,6 +15,7 @@ import { Serie, Datum, ResponsiveLine } from '@nivo/line';
 import { IconDownload, IconUpload } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
+import { AppAvatar } from '../../components/AppAvatar';
 import { useConfigContext } from '../../config/provider';
 import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
 import { useColorTheme } from '../../tools/color';
@@ -258,17 +259,3 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
     </Stack>
   );
 }
-
-const AppAvatar = ({ iconUrl }: { iconUrl: string }) => {
-  const { colors, colorScheme } = useMantineTheme();
-
-  return (
-    <Avatar
-      src={iconUrl}
-      bg={colorScheme === 'dark' ? colors.gray[8] : colors.gray[2]}
-      size="sm"
-      radius="xl"
-      p={4}
-    />
-  );
-};

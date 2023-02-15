@@ -33,6 +33,7 @@ export const dashboardNamespaces = [
   'modules/docker',
   'modules/dashdot',
   'modules/overseerr',
+  'modules/media-server',
   'modules/common-media-cards',
   'modules/video-stream',
 ];
