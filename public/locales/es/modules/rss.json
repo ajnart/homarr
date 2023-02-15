@@ -1,19 +1,19 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Widget RSS",
+    "description": "Toma los elementos de una fuente RSS y los muestra. Comúnmente utilizado para noticias en línea",
     "settings": {
-      "title": "",
+      "title": "Ajustes para el widget RSS",
       "rssFeedUrl": {
-        "label": ""
+        "label": "url de la fuente RSS"
       }
     }
   },
   "card": {
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Imposible recuperar la fuente RSS",
+        "text": "Hubo un problema al comunicarse con la fuente RSS. Asegúrate de haber configurado el feed correctamente y utiliza una URL de RSS válida que coincida con la especificación estándar oficial. Después de actualizar el feed, es posible que debas guardar tu dashboard y actualizar la página."
       }
     }
   }
