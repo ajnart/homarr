@@ -1,4 +1,4 @@
-import { Flex, Group, Text } from '@mantine/core';
+import { Flex, Group, Stack, Text } from '@mantine/core';
 import {
   IconDeviceTv,
   IconHeadphones,
@@ -34,9 +34,17 @@ export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) 
   return (
     <Flex wrap="nowrap" gap="sm" align="center">
       <Test size={16} />
-      <Group spacing="xs">
+      <Stack spacing={0}>
         <Text lineClamp={1}>{session.currentlyPlaying.name}</Text>
-      </Group>
+
+        {session.currentlyPlaying.albumName ? (
+          <Text lineClamp={1} color="dimmed" size="xs">{session.currentlyPlaying.albumName}</Text>
+        ) : (
+          session.currentlyPlaying.seasonName && (
+            <Text lineClamp={1} color="dimmed" size="xs">{session.currentlyPlaying.seasonName}</Text>
+          )
+        )}
+      </Stack>
     </Flex>
   );
 };
