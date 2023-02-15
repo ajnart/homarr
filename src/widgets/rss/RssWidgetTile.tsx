@@ -60,7 +60,9 @@ interface RssTileProps {
 
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
-  const { data, isLoading, isFetching, refetch } = useGetRssFeed(widget.properties.rssFeedUrl);
+  const { data, isLoading, isFetching, isError, refetch } = useGetRssFeed(
+    widget.properties.rssFeedUrl
+  );
   const { classes } = useStyles();
   const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
   const { ref, height } = useElementSize();
@@ -73,7 +75,7 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  if (!data.success) {
+  if (!data.success || isError) {
     return (
       <Center h="100%">
         <Stack align="center">
