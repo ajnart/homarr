@@ -6,16 +6,16 @@
       "description": "Включение и отключение элементов в заголовке и на панели"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Сетка",
+      "description": "Настройте поведение и столбцы панели инструментов"
     },
     "pageMetadata": {
       "name": "Метаданные страницы",
-      "description": ""
+      "description": "Настройте заголовки, логотип и PWA"
     },
     "appereance": {
-      "name": "",
-      "description": ""
+      "name": "Внешний вид",
+      "description": "Настройте фон, цвета и внешний вид приложений"
     }
   }
 }
