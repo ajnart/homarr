@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Stolpci v velikosti {{size}}",
+    "descriptionPreset": "Število stolpcev, če je zaslon širok manj kot {{pixels}} pikslov",
+    "descriptionExceedsPreset": "Število stolpcev, ko velikost zaslona presega {{pixels}} slikovnih pik"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
-  "defaultValues": ""
+  "unsavedChanges": "Spremembe niso shranjene. Kliknite spodnji gumb Uveljavi spremembe, da jih uporabite in shranite.",
+  "applyChanges": "Uveljavi spremembe",
+  "defaultValues": "Privzete vrednosti"
 }
