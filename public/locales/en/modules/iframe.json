@@ -3,7 +3,7 @@
     "name": "IFrame",
     "description": "Embed any content from the internet. Some websites may restrict access.",
     "settings": {
-      "title": "Settings for IFrame widget",
+      "title": "IFrame settings",
       "embedUrl": {
         "label": "Embed URL"
       },
