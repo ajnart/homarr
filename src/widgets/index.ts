@@ -3,6 +3,8 @@ import dashdot from './dashDot/DashDotTile';
 import date from './date/DateTile';
 import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
 import iframe from './iframe/IFrameTile';
+import mediaServer from './media-server/MediaServerTile';
+import rss from './rss/RssWidgetTile';
 import torrent from './torrent/TorrentTile';
 import usenet from './useNet/UseNetTile';
 import videoStream from './video/VideoStreamTile';
@@ -16,6 +18,8 @@ export default {
   'torrents-status': torrent,
   dlspeed: torrentNetworkTraffic,
   date,
+  rss,
   'video-stream': videoStream,
   iframe,
+  'media-server': mediaServer,
 };

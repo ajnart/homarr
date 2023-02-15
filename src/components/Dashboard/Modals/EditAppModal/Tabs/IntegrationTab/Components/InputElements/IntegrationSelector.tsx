@@ -75,6 +75,16 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/readarr.png',
       label: 'Readarr',
     },
+    {
+      value: 'jellyfin',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyfin.png',
+      label: 'Jellyfin',
+    },
+    {
+      value: 'plex',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/plex.png',
+      label: 'Plex',
+    },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
 
   const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {

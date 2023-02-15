@@ -30,9 +30,11 @@ export const dashboardNamespaces = [
   'modules/weather',
   'modules/ping',
   'modules/iframe',
+  'modules/rss',
   'modules/docker',
   'modules/dashdot',
   'modules/overseerr',
+  'modules/media-server',
   'modules/common-media-cards',
   'modules/video-stream',
 ];
