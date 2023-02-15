@@ -1,7 +1,7 @@
 {
   "pageTitle": {
     "label": "Naslov strani",
-    "description": "Naslov plošče v zgornjem levem kotu"
+    "description": "Naslov armaturne plošče v zgornjem levem kotu"
   },
   "metaTitle": {
     "label": "Meta naslov",
@@ -9,7 +9,7 @@
   },
   "logo": {
     "label": "Logotip",
-    "description": "Logotip plošče v zgornjem levem kotu"
+    "description": "Logotip armaturne plošče v zgornjem levem kotu"
   },
   "favicon": {
     "label": "Favicon",
