@@ -2,6 +2,7 @@ import calendar from './calendar/CalendarTile';
 import dashdot from './dashDot/DashDotTile';
 import date from './date/DateTile';
 import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
+import iframe from './iframe/IFrameTile';
 import mediaServer from './media-server/MediaServerTile';
 import rss from './rss/RssWidgetTile';
 import torrent from './torrent/TorrentTile';
@@ -19,5 +20,6 @@ export default {
   date,
   rss,
   'video-stream': videoStream,
+  iframe,
   'media-server': mediaServer,
 };
