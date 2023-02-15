@@ -1,19 +1,19 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "RSS Widget",
+    "description": "Griber elementerne fra et RSS-feed og viser dem. Anvendes normalt til online-nyheder",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for RSS-widget",
       "rssFeedUrl": {
-        "label": ""
+        "label": "RSS-feed url"
       }
     }
   },
   "card": {
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Det er ikke muligt at hente RSS-feed",
+        "text": "Der var et problem med at nå ud til RSS-feedet. Sørg for, at du&apos;har konfigureret feedet korrekt og bruger en gyldig RSS-url, der passer til den officielle standardspecifikation. Når du har opdateret feed'et, skal du muligvis gemme dit dashboard og opdatere siden."
       }
     }
   }
