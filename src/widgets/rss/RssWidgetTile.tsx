@@ -97,7 +97,6 @@ function RssTile({ widget }: RssTileProps) {
             alt={data.feed.image.title}
             width="auto"
             height={40}
-            maw="50%"
             mx="auto"
           />
         ) : (
@@ -116,8 +115,8 @@ function RssTile({ widget }: RssTileProps) {
           </ActionIcon>
         </UnstyledButton>
       </Flex>
-      <ScrollArea style={{ height }}>
-        <Stack>
+      <ScrollArea className="scroll-area-w100" w="100%">
+        <Stack w="100%" spacing="xs">
           {data.feed.items.map((item: any, index: number) => (
             <Card
               key={index}
@@ -126,6 +125,7 @@ function RssTile({ widget }: RssTileProps) {
               href={item.link}
               radius="md"
               target="_blank"
+              w="100%"
             >
               {item.enclosure && (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -167,6 +167,7 @@ function RssTile({ widget }: RssTileProps) {
           ))}
         </Stack>
       </ScrollArea>
+
       <Flex wrap="wrap" columnGap="md">
         <Group spacing="sm">
           <IconCopyright size={14} />
@@ -197,7 +198,7 @@ function RssTile({ widget }: RssTileProps) {
               component={Link}
               href={data.feed.feedUrl}
             >
-              {data.feed.feedUrl}
+              Feed URL
             </Text>
           </Group>
         )}

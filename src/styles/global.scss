@@ -92,3 +92,8 @@
   height: 0px;
   min-height: 0px !important;
 }
+
+.scroll-area-w100 .mantine-ScrollArea-viewport > div:nth-of-type(1) {
+  width: 100%;
+  display: inherit !important;
+}
