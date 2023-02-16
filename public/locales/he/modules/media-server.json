@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "שרת מדיה",
+    "description": "אינטראקציה עם שרת המדיה של Jellyfin או Plex",
     "settings": {
-      "title": ""
+      "title": "הגדרות עבור ווידג'ט של שרת מדיה"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "מופעים",
+        "user": "משתמש",
+        "currentlyPlaying": "מנגן כרגע"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "אין אפשרות לטעון תוכן",
+        "text": "לא ניתן לאחזר מידע מהשרת. אנא בדוק את היומנים לפרטים נוספים"
       }
     }
   }
