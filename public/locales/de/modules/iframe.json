@@ -1,22 +1,22 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Einbetten von Inhalten aus dem Internet. Einige Websites können den Zugriff einschränken.",
     "settings": {
-      "title": "",
+      "title": "iFrame Einstellungen",
       "embedUrl": {
-        "label": ""
+        "label": "URL einbetten"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Vollbildmodus zulassen"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Geben Sie eine URL ein",
+        "text": "Stellen Sie sicher, dass Sie in der Konfiguration Ihres Widgets eine gültige Adresse eingegeben haben"
       }
     }
   }
