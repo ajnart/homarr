@@ -1,18 +1,18 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "RSS mini aplikácia",
+    "description": "Stiahne položky z informačného kanála RSS a zobrazí ich. Bežne sa používa pre online správy",
     "settings": {
-      "title": "",
+      "title": "Nastavenia mini aplikácie RSS",
       "rssFeedUrl": {
-        "label": ""
+        "label": "URL adresa RSS"
       }
     }
   },
   "card": {
     "errors": {
       "general": {
-        "title": "",
+        "title": "Nie je možné načítať kanál RSS",
         "text": ""
       }
     }
