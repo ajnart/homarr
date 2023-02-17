@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Multimediálny Server",
+    "description": "Interakcia s mediálnym serverom Jellyfin alebo Plex",
     "settings": {
-      "title": ""
+      "title": "Nastavenia mini aplikácie mediálneho servera"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Relácia",
+        "user": "Používateľ",
+        "currentlyPlaying": "Momentálne sa prehráva"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nie je možné načítať obsah",
+        "text": "Nie je možné načítať informácie zo servera. Podrobnejšie informácie nájdete v denníkoch"
       }
     }
   }
