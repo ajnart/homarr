@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "RSS Widget",
+    "description": "Grabs the items from a RSS feed and displays them. Commonly used for online news",
+    "settings": {
+      "title": "Settings for RSS widget",
+      "rssFeedUrl": {
+        "label": "RSS feed url"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "general": {
+        "title": "Unable to retrieve RSS feed",
+        "text": "There was a problem reaching out the the RSS feed. Make sure that you&apos;ve configured the feed correctly and use a valid RSS url, that matches the official standard specification. After updating the feed, you may need to save your dashboard and refresh the page."
+      }
+    }
+  }
+}
