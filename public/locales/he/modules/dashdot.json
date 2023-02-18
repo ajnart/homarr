@@ -11,20 +11,20 @@
         "label": "הצג אחוזים"
       },
       "columns": {
-        "label": ""
+        "label": "הצג עמודות"
       },
       "graphHeight": {
-        "label": ""
+        "label": "גובה הגרפים"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "גרפים (הזמנה)",
         "storage": {
           "label": "אחסון",
           "enabled": {
-            "label": ""
+            "label": "הצג בווידג'ט"
           },
           "span": {
-            "label": ""
+            "label": "טווח עמודות"
           },
           "compactView": {
             "label": ""
@@ -36,10 +36,10 @@
         "network": {
           "label": "רשת",
           "enabled": {
-            "label": ""
+            "label": "הצג בווידג'ט"
           },
           "span": {
-            "label": ""
+            "label": "טווח עמודות"
           },
           "compactView": {
             "label": ""
@@ -48,10 +48,10 @@
         "cpu": {
           "label": "מעבד",
           "enabled": {
-            "label": ""
+            "label": "הצג בווידג'ט"
           },
           "span": {
-            "label": ""
+            "label": "טווח עמודות"
           },
           "multiView": {
             "label": ""
@@ -60,19 +60,19 @@
         "ram": {
           "label": "",
           "enabled": {
-            "label": ""
+            "label": "הצג בווידג'ט"
           },
           "span": {
-            "label": ""
+            "label": "טווח עמודות"
           }
         },
         "gpu": {
           "label": "מעבד גרפי",
           "enabled": {
-            "label": ""
+            "label": "הצג בווידג'ט"
           },
           "span": {
-            "label": ""
+            "label": "טווח עמודות"
           }
         }
       }
