@@ -4,23 +4,77 @@
     "description": "Visualizza i grafici di un'istanza Dash. esterna all'interno di Homarr.",
     "settings": {
       "title": "Impostazioni del widget Dash.",
-      "cpuMultiView": {
-        "label": "Vista CPU Multi-Core"
-      },
-      "storageMultiView": {
-        "label": "Visualizzazione archiviazione Multi-Drive"
-      },
-      "useCompactView": {
-        "label": "Visualizzazione compatta"
-      },
-      "graphs": {
-        "label": "Grafici"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": "Visualizza percentuali"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Spazio di archiviazione",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Rete",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
-        "title": "RAM"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
