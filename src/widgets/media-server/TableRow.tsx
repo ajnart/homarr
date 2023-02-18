@@ -1,15 +1,4 @@
-import {
-  Avatar,
-  Card,
-  Collapse,
-  createStyles,
-  Flex,
-  Grid,
-  Group,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Avatar, Collapse, createStyles, Flex, Text } from '@mantine/core';
 import { useState } from 'react';
 import { AppAvatar } from '../../components/AppAvatar';
 import { GenericSessionInfo } from '../../types/api/media-server/session-info';

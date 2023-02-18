@@ -1,6 +1,7 @@
 import { Jellyfin } from '@jellyfin/sdk';
 import { getSessionApi } from '@jellyfin/sdk/lib/utils/api/session-api';
 import { getSystemApi } from '@jellyfin/sdk/lib/utils/api/system-api';
+import { BaseItemKind } from '@jellyfin/sdk/lib/generated-client/models';
 
 import Consola from 'consola';
 
@@ -8,16 +9,15 @@ import { getCookie } from 'cookies-next';
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { BaseItemKind, ProgramAudio } from '@jellyfin/sdk/lib/generated-client/models';
+import { ConfigAppType } from '../../../../types/app';
 import { getConfig } from '../../../../tools/config/getConfig';
-import { PlexClient } from '../../../../tools/server/sdk/plex/plexClient';
 import { GenericMediaServer } from '../../../../types/api/media-server/media-server';
 import { MediaServersResponseType } from '../../../../types/api/media-server/response';
 import {
   GenericCurrentlyPlaying,
   GenericSessionInfo,
 } from '../../../../types/api/media-server/session-info';
-import { ConfigAppType } from '../../../../types/app';
+import { PlexClient } from '../../../../tools/server/sdk/plex/plexClient';
 
 const jellyfin = new Jellyfin({
   clientInfo: {
