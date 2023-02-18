@@ -6,6 +6,10 @@ import {
 } from './abstract-icons-repository';
 
 export class LocalIconsRepository extends AbstractIconRepository {
+  constructor() {
+    super('');
+  }
+
   protected async fetchInternally(): Promise<NormalizedIconRepositoryResult> {
     if (!fs.existsSync('./public/icons')) {
       return {
@@ -13,6 +17,7 @@ export class LocalIconsRepository extends AbstractIconRepository {
         entries: [],
         name: 'Local',
         success: true,
+        copyright: this.copyright,
       };
     }
 
@@ -33,6 +38,7 @@ export class LocalIconsRepository extends AbstractIconRepository {
       count: normalizedEntries.length,
       success: true,
       name: 'Local',
+      copyright: this.copyright,
     };
   }
 }

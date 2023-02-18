@@ -5,16 +5,27 @@ import {
 } from './abstract-icons-repository';
 
 export class JsdelivrIconsRepository extends AbstractIconRepository {
-  static tablerRepository = {
+  static readonly tablerRepository = {
     api: 'https://data.jsdelivr.com/v1/packages/gh/walkxcode/dashboard-icons@main?structure=flat',
     blob: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/{0}/{1}',
   } as JsdelivrRepositoryUrl;
 
+  static readonly papirusRepository = {
+    api: 'https://data.jsdelivr.com/v1/packages/gh/PapirusDevelopmentTeam/papirus_icons@master?structure=flat',
+    blob: 'https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/{1}',
+  } as JsdelivrRepositoryUrl;
+
+  static readonly homelabSvgAssetsRepository = {
+    api: 'https://data.jsdelivr.com/v1/packages/gh/loganmarchione/homelab-svg-assets@main?structure=flat',
+    blob: 'https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/{1}',
+  } as JsdelivrRepositoryUrl;
+
   constructor(
     private readonly repository: JsdelivrRepositoryUrl,
-    private readonly displayName: string
+    private readonly displayName: string,
+    copyright: string,
   ) {
-    super();
+    super(copyright);
   }
 
   protected async fetchInternally(): Promise<NormalizedIconRepositoryResult> {
@@ -40,6 +51,7 @@ export class JsdelivrIconsRepository extends AbstractIconRepository {
       count: normalizedEntries.length,
       success: true,
       name: this.displayName,
+      copyright: this.copyright,
     };
   }
 }

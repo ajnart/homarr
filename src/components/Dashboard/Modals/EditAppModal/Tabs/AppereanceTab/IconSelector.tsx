@@ -12,7 +12,6 @@ import {
   Text,
 } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconClearAll } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
 import { humanFileSize } from '../../../../../../tools/humanFileSize';
@@ -36,6 +35,7 @@ export const IconSelector = ({ form, data }: IconSelectorProps) => {
       size: entry.size,
       value: entry.url,
       group: repository.name,
+      copyright: repository.copyright,
     }))
   );
 
@@ -79,7 +79,7 @@ const useStyles = createStyles(() => ({
 }));
 
 const AutoCompleteItem = forwardRef<HTMLDivElement, ItemProps>(
-  ({ label, size, url, ...others }: ItemProps, ref) => (
+  ({ label, size, copyright, url, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
         <Box
@@ -94,9 +94,16 @@ const AutoCompleteItem = forwardRef<HTMLDivElement, ItemProps>(
         </Box>
         <Stack spacing={0}>
           <Text>{label}</Text>
-          <Text color="dimmed" size="xs">
-            {humanFileSize(size, false)}
-          </Text>
+          <Group>
+            <Text color="dimmed" size="xs">
+              {humanFileSize(size, false)}
+            </Text>
+            {copyright && (
+              <Text color="dimmed" size="xs">
+                © {copyright}
+              </Text>
+            )}
+          </Group>
         </Stack>
       </Group>
     </div>
@@ -107,4 +114,5 @@ interface ItemProps extends SelectItemProps {
   url: string;
   group: string;
   size: number;
+  copyright: string | undefined;
 }

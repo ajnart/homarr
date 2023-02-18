@@ -1,4 +1,6 @@
 export abstract class AbstractIconRepository {
+  constructor(readonly copyright?: string) {}
+
   async fetch(): Promise<NormalizedIconRepositoryResult> {
     try {
       return await this.fetchInternally();
@@ -8,6 +10,7 @@ export abstract class AbstractIconRepository {
         count: 0,
         entries: [],
         name: '',
+        copyright: this.copyright,
       };
     }
   }
@@ -18,6 +21,7 @@ export type NormalizedIconRepositoryResult = {
   name: string;
   success: boolean;
   count: number;
+  copyright: string | undefined;
   entries: NormalizedIcon[];
 };
 
