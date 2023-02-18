@@ -11,68 +11,68 @@
         "label": "Vis procentdele"
       },
       "columns": {
-        "label": ""
+        "label": "Vis kolonner"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Højde af grafer"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafer (rækkefølge)",
         "storage": {
           "label": "Lager",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spændvidde"
           },
           "compactView": {
-            "label": ""
+            "label": "Vis som tekst (kompakt)"
           },
           "multiView": {
-            "label": ""
+            "label": "Vis som multi-drevvisning"
           }
         },
         "network": {
           "label": "Netværk",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spændvidde"
           },
           "compactView": {
-            "label": ""
+            "label": "Vis som tekst (kompakt)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spændvidde"
           },
           "multiView": {
-            "label": ""
+            "label": "Vis som multi-core-visning"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spændvidde"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spændvidde"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
