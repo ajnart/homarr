@@ -5,7 +5,7 @@
     "settings": {
       "title": "设置视频流小部件",
       "FeedUrl": {
-        "label": ""
+        "label": "订阅URL"
       },
       "autoPlay": {
         "label": "自动播放"
