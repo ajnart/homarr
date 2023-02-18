@@ -4,23 +4,77 @@
     "description": "Εμφανίζει τα γραφήματα μιας εξωτερικής Dash. μέσα στο Homarr.",
     "settings": {
       "title": "Ρυθμίσεις για το widget Dash",
-      "cpuMultiView": {
-        "label": "Προβολή πολλαπλών πυρήνων CPU"
-      },
-      "storageMultiView": {
-        "label": "Προβολή πολλαπλών μονάδων αποθήκευσης"
-      },
-      "useCompactView": {
-        "label": "Χρήση Συμπαγούς Προβολής"
-      },
-      "graphs": {
-        "label": "Γραφήματα"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": ""
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Αποθηκευτικός χώρος",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Δίκτυο",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
-        "title": "Μνήμη RAM"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
