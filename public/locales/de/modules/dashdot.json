@@ -11,7 +11,7 @@
         "label": "Prozentangaben anzeigen"
       },
       "columns": {
-        "label": ""
+        "label": "Spalten anzeigen"
       },
       "graphHeight": {
         "label": ""
@@ -21,13 +21,13 @@
         "storage": {
           "label": "Speicher",
           "enabled": {
-            "label": ""
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "Als Text anzeigen (kompakt)"
           },
           "multiView": {
             "label": ""
@@ -36,19 +36,19 @@
         "network": {
           "label": "Netzwerk",
           "enabled": {
-            "label": ""
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "Als Text anzeigen (kompakt)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": ""
@@ -58,9 +58,9 @@
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": ""
@@ -69,7 +69,7 @@
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": ""
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
