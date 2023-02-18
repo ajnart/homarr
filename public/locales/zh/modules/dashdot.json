@@ -4,23 +4,77 @@
     "description": "在Homarr中显示一个外部Dash的图表。",
     "settings": {
       "title": "设置Dash小部件",
-      "cpuMultiView": {
-        "label": "CPU多核视图"
-      },
-      "storageMultiView": {
-        "label": "存储多驱动器视图"
-      },
-      "useCompactView": {
-        "label": "使用紧凑型视图"
-      },
-      "graphs": {
-        "label": "图表"
-      },
       "url": {
         "label": "Dash. 网址"
       },
       "usePercentages": {
         "label": "显示百分比"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "存储",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "网络",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
-        "title": "内存"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
