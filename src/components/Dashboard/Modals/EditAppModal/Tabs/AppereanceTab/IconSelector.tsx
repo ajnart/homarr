@@ -1,5 +1,4 @@
 import {
-  ActionIcon,
   Autocomplete,
   Box,
   CloseButton,
@@ -10,8 +9,10 @@ import {
   SelectItemProps,
   Stack,
   Text,
+  Title,
 } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
+import { IconSearch } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
 import { humanFileSize } from '../../../../../../tools/humanFileSize';
@@ -41,6 +42,17 @@ export const IconSelector = ({ form, data }: IconSelectorProps) => {
 
   return (
     <Autocomplete
+      nothingFound={
+        <Stack align="center" spacing="xs" my="lg">
+          <IconSearch />
+          <Title order={6} align="center">
+            {t('appearance.icon.autocomplete.title')}
+          </Title>
+          <Text align="center" maw={350}>
+            {t('appearance.icon.autocomplete.text')}
+          </Text>
+        </Stack>
+      }
       icon={<DebouncedAppIcon form={form} width={20} height={20} />}
       rightSection={
         form.values.appearance.iconUrl.length > 0 ? (
@@ -63,7 +75,6 @@ export const IconSelector = ({ form, data }: IconSelectorProps) => {
           .includes(search.toLowerCase().replaceAll('_', '').replaceAll(' ', '-'))
       }
       variant="default"
-      initiallyOpened
       withAsterisk
       dropdownComponent={(props: any) => <ScrollArea {...props} mah={400} />}
       required
