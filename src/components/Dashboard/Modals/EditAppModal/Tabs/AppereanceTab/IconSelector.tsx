@@ -5,6 +5,7 @@ import {
   createStyles,
   Group,
   Image,
+  Loader,
   ScrollArea,
   SelectItemProps,
   Stack,
@@ -22,64 +23,83 @@ import { DebouncedAppIcon } from '../Shared/DebouncedAppIcon';
 
 interface IconSelectorProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;
-  data: NormalizedIconRepositoryResult[];
+  data: NormalizedIconRepositoryResult[] | undefined;
+  isLoading: boolean;
 }
 
-export const IconSelector = ({ form, data }: IconSelectorProps) => {
+export const IconSelector = ({ form, data, isLoading }: IconSelectorProps) => {
   const { t } = useTranslation('layout/modals/add-app');
   const { classes } = useStyles();
 
-  const a = data.flatMap((repository) =>
-    repository.entries.map((entry) => ({
-      url: entry.url,
-      label: entry.name,
-      size: entry.size,
-      value: entry.url,
-      group: repository.name,
-      copyright: repository.copyright,
-    }))
-  );
+  const a =
+    data === undefined
+      ? []
+      : data.flatMap((repository) =>
+          repository.entries.map((entry) => ({
+            url: entry.url,
+            label: entry.name,
+            size: entry.size,
+            value: entry.url,
+            group: repository.name,
+            copyright: repository.copyright,
+          }))
+        );
 
   return (
-    <Autocomplete
-      nothingFound={
-        <Stack align="center" spacing="xs" my="lg">
-          <IconSearch />
-          <Title order={6} align="center">
-            {t('appearance.icon.autocomplete.title')}
-          </Title>
-          <Text align="center" maw={350}>
-            {t('appearance.icon.autocomplete.text')}
-          </Text>
-        </Stack>
-      }
-      icon={<DebouncedAppIcon form={form} width={20} height={20} />}
-      rightSection={
-        form.values.appearance.iconUrl.length > 0 ? (
-          <CloseButton onClick={() => form.setFieldValue('appearance.iconUrl', '')} />
-        ) : null
-      }
-      itemComponent={AutoCompleteItem}
-      className={classes.textInput}
-      data={a}
-      limit={25}
-      label={t('appearance.icon.label')}
-      description={t('appearance.icon.description', {
-        suggestionsCount: data.reduce((a, b) => a + b.count, 0),
-      })}
-      filter={(search, item) =>
-        item.value
-          .toLowerCase()
-          .replaceAll('_', '')
-          .replaceAll(' ', '-')
-          .includes(search.toLowerCase().replaceAll('_', '').replaceAll(' ', '-'))
-      }
-      variant="default"
-      withAsterisk
-      dropdownComponent={(props: any) => <ScrollArea {...props} mah={400} />}
-      required
-      {...form.getInputProps('appearance.iconUrl')}
-    />
+    <Stack w="100%">
+      <Autocomplete
+        nothingFound={
+          <Stack align="center" spacing="xs" my="lg">
+            <IconSearch />
+            <Title order={6} align="center">
+              {t('appearance.icon.autocomplete.title')}
+            </Title>
+            <Text align="center" maw={350}>
+              {t('appearance.icon.autocomplete.text')}
+            </Text>
+          </Stack>
+        }
+        icon={<DebouncedAppIcon form={form} width={20} height={20} />}
+        rightSection={
+          form.values.appearance.iconUrl.length > 0 ? (
+            <CloseButton onClick={() => form.setFieldValue('appearance.iconUrl', '')} />
+          ) : null
+        }
+        itemComponent={AutoCompleteItem}
+        className={classes.textInput}
+        data={a}
+        limit={25}
+        label={t('appearance.icon.label')}
+        description={t('appearance.icon.description', {
+          suggestionsCount: data?.reduce((a, b) => a + b.count, 0) ?? 0,
+        })}
+        filter={(search, item) =>
+          item.value
+            .toLowerCase()
+            .replaceAll('_', '')
+            .replaceAll(' ', '-')
+            .includes(search.toLowerCase().replaceAll('_', '').replaceAll(' ', '-'))
+        }
+        variant="default"
+        withAsterisk
+        dropdownComponent={(props: any) => <ScrollArea {...props} mah={400} />}
+        required
+        {...form.getInputProps('appearance.iconUrl')}
+      />
+      {(!data || isLoading) && (
+        <Group>
+          <Loader variant="oval" size="sm" />
+          <Stack spacing={0}>
+            <Text size="xs" weight="bold">
+              {t('appearance.icon.noItems.title')}
+            </Text>
+            <Text color="dimmed" size="xs">
+              {t('appearance.icon.noItems.text')}
+            </Text>
+          </Stack>
+        </Group>
+      )}
+    </Stack>
   );
 };
 

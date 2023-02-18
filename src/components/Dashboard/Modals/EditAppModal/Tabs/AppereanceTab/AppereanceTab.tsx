@@ -20,7 +20,7 @@ export const AppearanceTab = ({
   return (
     <Tabs.Panel value="appearance" pt="lg">
       <Flex gap={5}>
-        {!data || isLoading ? <Loader /> : <IconSelector form={form} data={data} />}
+      <IconSelector form={form} data={data} isLoading={isLoading} />
       </Flex>
     </Tabs.Panel>
   );
