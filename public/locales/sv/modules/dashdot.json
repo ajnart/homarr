@@ -11,68 +11,68 @@
         "label": "Visa procent"
       },
       "columns": {
-        "label": ""
+        "label": "Visa kolumner"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Höjden på grafer"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafer (Ordning)",
         "storage": {
           "label": "Lagring",
           "enabled": {
-            "label": ""
+            "label": "Visa på widget"
           },
           "span": {
-            "label": ""
+            "label": "Spännvidd för kolumnen"
           },
           "compactView": {
-            "label": ""
+            "label": "Visa som text (kompakt)"
           },
           "multiView": {
-            "label": ""
+            "label": "Visa som flerenhetsvy"
           }
         },
         "network": {
           "label": "Nätverk",
           "enabled": {
-            "label": ""
+            "label": "Visa på widget"
           },
           "span": {
-            "label": ""
+            "label": "Spännvidd för kolumnen"
           },
           "compactView": {
-            "label": ""
+            "label": "Visa som text (kompakt)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Visa på widget"
           },
           "span": {
-            "label": ""
+            "label": "Spännvidd för kolumnen"
           },
           "multiView": {
-            "label": ""
+            "label": "Visa som flerkärningvy"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Visa på widget"
           },
           "span": {
-            "label": ""
+            "label": "Spännvidd för kolumnen"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Visa på widget"
           },
           "span": {
-            "label": ""
+            "label": "Spännvidd för kolumnen"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
