@@ -5,11 +5,11 @@
   },
   "metaTitle": {
     "label": "Meta Title",
-    "description": "The title, that is being displayed as your tab name"
+    "description": "The title displayed in your browser tab"
   },
   "logo": {
     "label": "Logo",
-    "description": "The dashboard logo at the top left"
+    "description": "The logo displayed at the top left"
   },
   "favicon": {
     "label": "Favicon",
