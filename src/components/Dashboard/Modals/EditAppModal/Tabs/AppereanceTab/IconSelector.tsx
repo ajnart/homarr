@@ -25,9 +25,17 @@ interface IconSelectorProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;
   data: NormalizedIconRepositoryResult[] | undefined;
   isLoading: boolean;
+  disallowAppNameProgagation: () => void;
+  allowAppNamePropagation: boolean;
 }
 
-export const IconSelector = ({ form, data, isLoading }: IconSelectorProps) => {
+export const IconSelector = ({
+  form,
+  data,
+  isLoading,
+  allowAppNamePropagation,
+  disallowAppNameProgagation,
+}: IconSelectorProps) => {
   const { t } = useTranslation('layout/modals/add-app');
   const { classes } = useStyles();
 
@@ -84,7 +92,13 @@ export const IconSelector = ({ form, data, isLoading }: IconSelectorProps) => {
         withAsterisk
         dropdownComponent={(props: any) => <ScrollArea {...props} mah={400} />}
         required
-        {...form.getInputProps('appearance.iconUrl')}
+        onChange={(event) => {
+          if (allowAppNamePropagation) {
+            disallowAppNameProgagation();
+          }
+          form.setFieldValue('appearance.iconUrl', event);
+        }}
+        value={form.values.appearance.iconUrl}
       />
       {(!data || isLoading) && (
         <Group>
