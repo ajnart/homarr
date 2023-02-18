@@ -11,68 +11,68 @@
         "label": "Mostrar porcentajes"
       },
       "columns": {
-        "label": ""
+        "label": "Mostrar columnas"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Altura de gráficos"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Gráficos (Órden)",
         "storage": {
           "label": "Almacenamiento",
           "enabled": {
-            "label": ""
+            "label": "Mostrar en widget"
           },
           "span": {
-            "label": ""
+            "label": "Espacio de columna (span)"
           },
           "compactView": {
-            "label": ""
+            "label": "Mostrar como texto (compacto)"
           },
           "multiView": {
-            "label": ""
+            "label": "Mostrar como vistas de varias unidades"
           }
         },
         "network": {
           "label": "Red",
           "enabled": {
-            "label": ""
+            "label": "Mostrar en widget"
           },
           "span": {
-            "label": ""
+            "label": "Espacio de columna (span)"
           },
           "compactView": {
-            "label": ""
+            "label": "Mostrar como texto (compacto)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Mostrar en widget"
           },
           "span": {
-            "label": ""
+            "label": "Espacio de columna (span)"
           },
           "multiView": {
-            "label": ""
+            "label": "Mostrar como vistas multi-core"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Mostrar en widget"
           },
           "span": {
-            "label": ""
+            "label": "Espacio de columna (span)"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Mostrar en widget"
           },
           "span": {
-            "label": ""
+            "label": "Espacio de columna (span)"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
