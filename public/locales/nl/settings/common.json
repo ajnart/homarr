@@ -12,17 +12,17 @@
     "madeWithLove": "Gemaakt met ❤️ door @",
     "thirdPartyContent": "Inhoud van derden bekijken",
     "thirdPartyContentTable": {
-      "dependencyName": "Afhankelijkheid",
+      "dependencyName": "Dependency",
       "dependencyVersion": "Versie"
     }
   },
   "grow": "Groei raster (neem alle ruimte)",
   "layout": {
     "preview": {
-      "title": "Voorvertoning",
-      "subtitle": "Veranderingen worden automatisch opgeslagen."
+      "title": "Voorbeeld",
+      "subtitle": "Wijzigingen worden automatisch opgeslagen"
     },
-    "divider": "Indelingsopties",
+    "divider": "Layout opties",
     "main": "Algemeen",
     "sidebar": "Zijbalk",
     "cannotturnoff": "Kan niet worden uitgeschakeld",
