@@ -4,23 +4,77 @@
     "description": "Displays Teh Grafs Ov An External Dash. Instance Inside Ov Homarr.",
     "settings": {
       "title": "Settings 4 Dash. Widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Coer View"
-      },
-      "storageMultiView": {
-        "label": "Storagzzz Multi-Driveh View"
-      },
-      "useCompactView": {
-        "label": "Ues Compact View"
-      },
-      "graphs": {
-        "label": "Graphz"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": ""
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Storagzzz",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Netwerk",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
-        "title": "RAM"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
