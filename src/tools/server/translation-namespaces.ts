@@ -3,7 +3,6 @@ export const dashboardNamespaces = [
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',
-  'layout/modals/icon-picker',
   'layout/modals/about',
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',

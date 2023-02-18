@@ -1,10 +1,8 @@
-import { Autocomplete, createStyles, Flex, Tabs } from '@mantine/core';
+import { Flex, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { useQuery } from '@tanstack/react-query';
-import { useTranslation } from 'next-i18next';
+import { useGetDashboardIcons } from '../../../../../../hooks/icons/useGetDashboardIcons';
 import { AppType } from '../../../../../../types/app';
-import { DebouncedAppIcon } from '../Shared/DebouncedAppIcon';
-import { IconSelector } from './IconSelector/IconSelector';
+import { IconSelector } from './IconSelector';
 
 interface AppearanceTabProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;
@@ -17,46 +15,17 @@ export const AppearanceTab = ({
   disallowAppNameProgagation,
   allowAppNamePropagation,
 }: AppearanceTabProps) => {
-  const { t } = useTranslation('layout/modals/add-app');
-  const { classes } = useStyles();
-  const { isLoading, error, data } = useQuery({
-    queryKey: ['autocompleteLocale'],
-    queryFn: () => fetch('/api/getLocalImages').then((res) => res.json()),
-  });
+  const { data } = useGetDashboardIcons();
+
+  if (!data) {
+    return null;
+  }
 
   return (
     <Tabs.Panel value="appearance" pt="lg">
       <Flex gap={5}>
-        <Autocomplete
-          className={classes.textInput}
-          icon={<DebouncedAppIcon form={form} width={20} height={20} />}
-          label={t('appearance.icon.label')}
-          description={t('appearance.icon.description')}
-          variant="default"
-          data={data?.files ?? []}
-          withAsterisk
-          required
-          {...form.getInputProps('appearance.iconUrl')}
-        />
-        <IconSelector
-          onChange={(item) => {
-            form.setValues({
-              appearance: {
-                iconUrl: item.url,
-              },
-            });
-            disallowAppNameProgagation();
-          }}
-          allowAppNamePropagation={allowAppNamePropagation}
-          form={form}
-        />
+        <IconSelector form={form} data={data} />
       </Flex>
     </Tabs.Panel>
   );
 };
-
-const useStyles = createStyles(() => ({
-  textInput: {
-    flexGrow: 1,
-  },
-}));
