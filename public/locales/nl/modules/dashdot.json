@@ -8,71 +8,71 @@
         "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": "Geef percentages weer"
+        "label": "Percentages weergeven"
       },
       "columns": {
-        "label": ""
+        "label": "Kolommen weergeven"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Hoogte van de grafieken"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafieken (volgorde)",
         "storage": {
           "label": "Opslagruimte",
           "enabled": {
-            "label": ""
+            "label": "Toon in widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolombreedte"
           },
           "compactView": {
-            "label": ""
+            "label": "Toon als tekst (compact)"
           },
           "multiView": {
-            "label": ""
+            "label": "Toon als multi-drive-weergave"
           }
         },
         "network": {
           "label": "Netwerk",
           "enabled": {
-            "label": ""
+            "label": "Toon in widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolombreedte"
           },
           "compactView": {
-            "label": ""
+            "label": "Toon als tekst (compact)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Toon in widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolombreedte"
           },
           "multiView": {
-            "label": ""
+            "label": "Toon als multi-core-weergave"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Toon in widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolombreedte"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Toon in widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolombreedte"
           }
         }
       }
@@ -84,8 +84,8 @@
       "noService": "Geen Dash. service gevonden. Voeg er een toe aan uw Homarr dashboard of stel een Dashdot URL in in de opties van de module",
       "noInformation": "Kan geen informatie verkrijgen van dash. - gebruikt u de laatste versie?",
       "protocolDowngrade": {
-        "title": "Gedetecteerd protocol degradatie",
-        "text": "Het protocol naar uw Dash. instantie wordt gedegradeerd. Dit is een veiligheidsrisico, want HTTP is niet gecodeerd en aanvallers zouden deze verbinding kunnen misbruiken. Zorg ervoor dat Dash. ook op HTTPS draait of downgrade Homarr naar HTTP (niet aanbevolen)."
+        "title": "Protocol downgrade gedetecteerd",
+        "text": "Het protocol voor uw Dash. instantie wordt gedegradeerd. Dit vormt een risico voor de beveiliging, aangezien HTTP ongecodeerd is en aanvallers deze verbinding kunnen misbruiken. Zorg ervoor dat Dash. wordt uitgevoerd op HTTPS of downgrade Homarr naar HTTP (niet aanbevolen)."
       }
     },
     "graphs": {
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
