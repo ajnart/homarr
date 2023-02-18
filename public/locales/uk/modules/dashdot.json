@@ -4,23 +4,77 @@
     "description": "Показує графіки зовнішньої Dash. всередині Homarr.",
     "settings": {
       "title": "Налаштування віджета Dash.",
-      "cpuMultiView": {
-        "label": "Процесор по ядрах"
-      },
-      "storageMultiView": {
-        "label": "Сховище по дисках"
-      },
-      "useCompactView": {
-        "label": "Компактний вигляд"
-      },
-      "graphs": {
-        "label": "Графіки"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": "Показувати відсотки"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Диск",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Мережа",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "Процесор",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "Графічний процесор",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "Процесор"
       },
-      "memory": {
-        "title": "Оперативна пам'ять"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "Графічний процесор"
