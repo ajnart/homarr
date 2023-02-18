@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "iFrame",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "iFrame settings",
       "embedUrl": {
         "label": ""
       },
@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Enter a URL",
         "text": ""
       }
     }
