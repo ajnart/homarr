@@ -11,68 +11,68 @@
         "label": "Показувати відсотки"
       },
       "columns": {
-        "label": ""
+        "label": "Показувати стовпчики"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Висота графіків"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Графіки (порядок)",
         "storage": {
           "label": "Диск",
           "enabled": {
-            "label": ""
+            "label": "Показувати у віджеті"
           },
           "span": {
-            "label": ""
+            "label": "Ширина стовпця"
           },
           "compactView": {
-            "label": ""
+            "label": "Показати як текст (компактно)"
           },
           "multiView": {
-            "label": ""
+            "label": "Показувати як multi-drive-view"
           }
         },
         "network": {
           "label": "Мережа",
           "enabled": {
-            "label": ""
+            "label": "Показувати у віджеті"
           },
           "span": {
-            "label": ""
+            "label": "Ширина стовпця"
           },
           "compactView": {
-            "label": ""
+            "label": "Показати як текст (компактно)"
           }
         },
         "cpu": {
           "label": "Процесор",
           "enabled": {
-            "label": ""
+            "label": "Показувати у віджеті"
           },
           "span": {
-            "label": ""
+            "label": "Ширина стовпця"
           },
           "multiView": {
-            "label": ""
+            "label": "Показувати як multi-core-view"
           }
         },
         "ram": {
-          "label": "",
+          "label": "Оперативна пам'ять",
           "enabled": {
-            "label": ""
+            "label": "Показувати у віджеті"
           },
           "span": {
-            "label": ""
+            "label": "Ширина стовпця"
           }
         },
         "gpu": {
           "label": "Графічний процесор",
           "enabled": {
-            "label": ""
+            "label": "Показувати у віджеті"
           },
           "span": {
-            "label": ""
+            "label": "Ширина стовпця"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "Процесор"
       },
       "ram": {
-        "title": ""
+        "title": "Оперативна пам'ять"
       },
       "gpu": {
         "title": "Графічний процесор"
