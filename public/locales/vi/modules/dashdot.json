@@ -4,23 +4,77 @@
     "description": "Hiển thị biểu đồ của Dash. bên trong Homarr.",
     "settings": {
       "title": "Cài đặt cho tiện ích Dash.",
-      "cpuMultiView": {
-        "label": "Chế độ hiện đa nhân CPU"
-      },
-      "storageMultiView": {
-        "label": "Chế độ hiện đa ổ đĩa"
-      },
-      "useCompactView": {
-        "label": "Dùng chế độ thu gọn"
-      },
-      "graphs": {
-        "label": "Biểu đồ"
-      },
       "url": {
         "label": "URL của Dash."
       },
       "usePercentages": {
         "label": "Hiển thị phần trăm"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Bộ nhớ",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Mạng",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
-        "title": "RAM"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
