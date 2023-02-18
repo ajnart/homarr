@@ -4,23 +4,77 @@
     "description": "Zeigt die Graphen einer externen Dash.-Instanz innerhalb von Homarr an.",
     "settings": {
       "title": "Einstellungen für Dash. Widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Core Ansicht"
-      },
-      "storageMultiView": {
-        "label": "Speicher Multi-Drive View"
-      },
-      "useCompactView": {
-        "label": "Kompaktmodus verwenden"
-      },
-      "graphs": {
-        "label": "Graphen"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": "Prozentangaben anzeigen"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Speicher",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Netzwerk",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
-        "title": "RAM"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
