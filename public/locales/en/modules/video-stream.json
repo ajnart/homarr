@@ -5,7 +5,7 @@
     "settings": {
       "title": "",
       "FeedUrl": {
-        "label": ""
+        "label": "Feed URL"
       },
       "autoPlay": {
         "label": ""
