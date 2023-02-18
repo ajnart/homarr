@@ -1,14 +1,18 @@
 import {
+  ActionIcon,
   Autocomplete,
   Box,
+  CloseButton,
   createStyles,
   Group,
   Image,
+  ScrollArea,
   SelectItemProps,
   Stack,
   Text,
 } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
+import { IconClearAll } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
 import { humanFileSize } from '../../../../../../tools/humanFileSize';
@@ -37,17 +41,31 @@ export const IconSelector = ({ form, data }: IconSelectorProps) => {
 
   return (
     <Autocomplete
+      icon={<DebouncedAppIcon form={form} width={20} height={20} />}
+      rightSection={
+        form.values.appearance.iconUrl.length > 0 ? (
+          <CloseButton onClick={() => form.setFieldValue('appearance.iconUrl', '')} />
+        ) : null
+      }
       itemComponent={AutoCompleteItem}
       className={classes.textInput}
       data={a}
-      icon={<DebouncedAppIcon form={form} width={20} height={20} />}
+      limit={25}
       label={t('appearance.icon.label')}
       description={t('appearance.icon.description', {
         suggestionsCount: data.reduce((a, b) => a + b.count, 0),
       })}
+      filter={(search, item) =>
+        item.value
+          .toLowerCase()
+          .replaceAll('_', '')
+          .replaceAll(' ', '-')
+          .includes(search.toLowerCase().replaceAll('_', '').replaceAll(' ', '-'))
+      }
       variant="default"
       initiallyOpened
       withAsterisk
+      dropdownComponent={(props: any) => <ScrollArea {...props} mah={400} />}
       required
       {...form.getInputProps('appearance.iconUrl')}
     />

@@ -22,6 +22,7 @@ export class JsdelivrIconsRepository extends AbstractIconRepository {
     const body = (await response.json()) as JsdelivrResponse;
 
     const normalizedEntries = body.files
+      .filter((file) => !['_banner.png', '_logo.png'].some((x) => file.name.includes(x)))
       .filter((file) => ['.png', '.svg'].some((x) => file.name.endsWith(x)))
       .map((file): NormalizedIcon => {
         const fileNameParts = file.name.split('/');

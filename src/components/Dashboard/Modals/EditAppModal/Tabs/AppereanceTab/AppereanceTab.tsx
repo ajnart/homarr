@@ -1,4 +1,4 @@
-import { Flex, Tabs } from '@mantine/core';
+import { Flex, Loader, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useGetDashboardIcons } from '../../../../../../hooks/icons/useGetDashboardIcons';
 import { AppType } from '../../../../../../types/app';
@@ -15,16 +15,12 @@ export const AppearanceTab = ({
   disallowAppNameProgagation,
   allowAppNamePropagation,
 }: AppearanceTabProps) => {
-  const { data } = useGetDashboardIcons();
-
-  if (!data) {
-    return null;
-  }
+  const { data, isLoading } = useGetDashboardIcons();
 
   return (
     <Tabs.Panel value="appearance" pt="lg">
       <Flex gap={5}>
-        <IconSelector form={form} data={data} />
+        {!data || isLoading ? <Loader /> : <IconSelector form={form} data={data} />}
       </Flex>
     </Tabs.Panel>
   );
