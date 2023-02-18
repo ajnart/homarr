@@ -4,18 +4,6 @@
     "description": "Показывает графики внешнего экземпляра Dash. в Homarr.",
     "settings": {
       "title": "Настройки для виджета Dash.",
-      "cpuMultiView": {
-        "label": "Показать все ядра ЦП"
-      },
-      "storageMultiView": {
-        "label": "Хранилище с несколькими дисками"
-      },
-      "useCompactView": {
-        "label": "Использовать компактный вид"
-      },
-      "graphs": {
-        "label": "Графики"
-      },
       "url": {
         "label": "URL-адрес Dash."
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "ЦП"
       },
-      "memory": {
+      "ram": {
         "title": "ОЗУ"
       },
       "gpu": {

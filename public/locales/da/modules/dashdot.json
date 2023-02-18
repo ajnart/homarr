@@ -4,18 +4,6 @@
     "description": "Viser graferne for en ekstern Dash. instans i Homarr.",
     "settings": {
       "title": "Indstillinger for Dash. widget",
-      "cpuMultiView": {
-        "label": "CPU Multikerne Visning"
-      },
-      "storageMultiView": {
-        "label": "Multidrevet Lagervisning"
-      },
-      "useCompactView": {
-        "label": "Brug kompakt tilstand"
-      },
-      "graphs": {
-        "label": "Grafer"
-      },
       "url": {
         "label": "Dash. URL"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

@@ -4,18 +4,6 @@
     "description": "",
     "settings": {
       "title": "",
-      "cpuMultiView": {
-        "label": "CPU 멀티 코어 보기"
-      },
-      "storageMultiView": {
-        "label": "저장소 모든 드라이브 보기"
-      },
-      "useCompactView": {
-        "label": "작은 모듈 사용"
-      },
-      "graphs": {
-        "label": "그래프"
-      },
       "url": {
         "label": "Dash. 주소"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

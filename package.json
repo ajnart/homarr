@@ -49,7 +49,7 @@
     "dayjs": "^1.11.7",
     "dockerode": "^3.3.2",
     "fily-publish-gridstack": "^0.0.13",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^9.0.2",
     "html-entities": "^2.3.3",
     "i18next": "^21.9.1",
     "js-file-download": "^0.4.12",

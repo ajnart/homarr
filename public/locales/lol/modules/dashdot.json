@@ -4,18 +4,6 @@
     "description": "Displays Teh Grafs Ov An External Dash. Instance Inside Ov Homarr.",
     "settings": {
       "title": "Settings 4 Dash. Widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Coer View"
-      },
-      "storageMultiView": {
-        "label": "Storagzzz Multi-Driveh View"
-      },
-      "useCompactView": {
-        "label": "Ues Compact View"
-      },
-      "graphs": {
-        "label": "Graphz"
-      },
       "url": {
         "label": "Dash. URL"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {
