@@ -4,23 +4,77 @@
     "description": "Показывает графики внешнего экземпляра Dash. в Homarr.",
     "settings": {
       "title": "Настройки для виджета Dash.",
-      "cpuMultiView": {
-        "label": "Показать все ядра ЦП"
-      },
-      "storageMultiView": {
-        "label": "Хранилище с несколькими дисками"
-      },
-      "useCompactView": {
-        "label": "Использовать компактный вид"
-      },
-      "graphs": {
-        "label": "Графики"
-      },
       "url": {
         "label": "URL-адрес Dash."
       },
       "usePercentages": {
         "label": "Отображать проценты"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Хранилище",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Сеть",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "ЦП",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "ГП",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -50,8 +104,8 @@
       "cpu": {
         "title": "ЦП"
       },
-      "memory": {
-        "title": "ОЗУ"
+      "ram": {
+        "title": ""
       },
       "gpu": {
         "title": "ГП"
