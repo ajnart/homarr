@@ -1,22 +1,22 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "IFrame",
+    "description": "嵌入互联网上的任何内容。一些网站可能限制访问。",
     "settings": {
-      "title": "",
+      "title": "IFrame设置",
       "embedUrl": {
-        "label": ""
+        "label": "嵌入URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "允许全屏"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "输入 URL",
+        "text": "确保您在小部件配置中输入了一个有效的地址"
       }
     }
   }
