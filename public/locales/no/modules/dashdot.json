@@ -4,18 +4,6 @@
     "description": "Viser grafene til en ekstern Dash. Eksempel inni av Homarr.",
     "settings": {
       "title": "Innstillinger for Dash. widget",
-      "cpuMultiView": {
-        "label": "CPU flerkjernevisning"
-      },
-      "storageMultiView": {
-        "label": "Lagring flerdiskvisning"
-      },
-      "useCompactView": {
-        "label": "Bruk kompakt visning"
-      },
-      "graphs": {
-        "label": "Grafer"
-      },
       "url": {
         "label": "Dash. URL"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

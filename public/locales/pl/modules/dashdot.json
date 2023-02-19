@@ -4,18 +4,6 @@
     "description": "Wyświetla wykresy zewnętrznej instancji Dash. wewnątrz Homarr.",
     "settings": {
       "title": "Ustawienia dla widgetu Dash.",
-      "cpuMultiView": {
-        "label": "Widok wielordzeniowy procesora"
-      },
-      "storageMultiView": {
-        "label": "Widok wielu dysków"
-      },
-      "useCompactView": {
-        "label": "Użyj trybu kompaktowego"
-      },
-      "graphs": {
-        "label": "Wykresy"
-      },
       "url": {
         "label": "Adres URL usługi Dash."
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

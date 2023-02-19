@@ -4,18 +4,6 @@
     "description": "Εμφανίζει τα γραφήματα μιας εξωτερικής Dash. μέσα στο Homarr.",
     "settings": {
       "title": "Ρυθμίσεις για το widget Dash",
-      "cpuMultiView": {
-        "label": "Προβολή πολλαπλών πυρήνων CPU"
-      },
-      "storageMultiView": {
-        "label": "Προβολή πολλαπλών μονάδων αποθήκευσης"
-      },
-      "useCompactView": {
-        "label": "Χρήση Συμπαγούς Προβολής"
-      },
-      "graphs": {
-        "label": "Γραφήματα"
-      },
       "url": {
         "label": "Dash. URL"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "Μνήμη RAM"
       },
       "gpu": {

@@ -4,18 +4,6 @@
     "description": "Zobrazovať grafy externej Dash. vo vnútri Homarru.",
     "settings": {
       "title": "Nastavenia pre Dash. mini aplikácie",
-      "cpuMultiView": {
-        "label": "CPU Multi-Core Zobrazenie"
-      },
-      "storageMultiView": {
-        "label": "Zobrazenie Multi-Drive úložiska"
-      },
-      "useCompactView": {
-        "label": "Použi kompaktné zobrazenie"
-      },
-      "graphs": {
-        "label": "Grafy"
-      },
       "url": {
         "label": "Dash. URL"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

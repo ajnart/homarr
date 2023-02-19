@@ -4,18 +4,6 @@
     "description": "Prikaže grafe zunanjega primerka Dash. znotraj Homarra.",
     "settings": {
       "title": "Nastavitve za pripomoček Dash",
-      "cpuMultiView": {
-        "label": "Pogled večjedrnih procesorjev"
-      },
-      "storageMultiView": {
-        "label": "Pogled naprav za shranjevanje"
-      },
-      "useCompactView": {
-        "label": "Uporaba kompaktnega pogleda"
-      },
-      "graphs": {
-        "label": "Grafi"
-      },
       "url": {
         "label": "Dash. URL"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

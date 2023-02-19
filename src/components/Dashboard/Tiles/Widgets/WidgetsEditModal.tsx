@@ -3,24 +3,26 @@ import {
   Button,
   Group,
   MultiSelect,
+  NumberInput,
+  Select,
+  Slider,
   Stack,
   Switch,
-  TextInput,
   Text,
-  NumberInput,
-  Slider,
-  Select,
+  TextInput,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle } from '@tabler/icons';
 import { Trans, useTranslation } from 'next-i18next';
-import { useState } from 'react';
-import Widgets from '../../../../widgets';
-import type { IWidgetOptionValue } from '../../../../widgets/widgets';
+import { FC, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { IWidget } from '../../../../widgets/widgets';
+import { mapObject } from '../../../../tools/client/objects';
 import { useColorTheme } from '../../../../tools/color';
+import Widgets from '../../../../widgets';
+import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
+import { IWidget } from '../../../../widgets/widgets';
+import { DraggableList } from './DraggableList';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -93,7 +95,17 @@ export const WidgetsEditModal = ({
             </Alert>
           );
         }
-        return WidgetOptionTypeSwitch(option, index, t, key, value, handleChange);
+
+        return (
+          <WidgetOptionTypeSwitch
+            key={`${key}.${index}`}
+            option={option}
+            widgetId={innerProps.widgetId}
+            propName={key}
+            value={value}
+            handleChange={handleChange}
+          />
+        );
       })}
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
@@ -108,20 +120,20 @@ export const WidgetsEditModal = ({
 // Widget switch
 // Widget options are computed based on their type.
 // here you can define new types for options (along with editing the widgets.d.ts file)
-function WidgetOptionTypeSwitch(
-  option: IWidgetOptionValue,
-  index: number,
-  t: any,
-  key: string,
-  value: string | number | boolean | string[],
-  handleChange: (key: string, value: IntegrationOptionsValueType) => void
-) {
-  const { primaryColor, secondaryColor } = useColorTheme();
+const WidgetOptionTypeSwitch: FC<{
+  option: IWidgetOptionValue;
+  widgetId: string;
+  propName: string;
+  value: any;
+  handleChange: (key: string, value: IntegrationOptionsValueType) => void;
+}> = ({ option, widgetId, propName: key, value, handleChange }) => {
+  const { t } = useTranslation([`modules/${widgetId}`, 'common']);
+  const { primaryColor } = useColorTheme();
+
   switch (option.type) {
     case 'switch':
       return (
         <Switch
-          key={`${option.type}-${index}`}
           label={t(`descriptor.settings.${key}.label`)}
           checked={value as boolean}
           onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
@@ -131,7 +143,6 @@ function WidgetOptionTypeSwitch(
       return (
         <TextInput
           color={primaryColor}
-          key={`${option.type}-${index}`}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as string}
           onChange={(ev) => handleChange(key, ev.currentTarget.value)}
@@ -141,7 +152,6 @@ function WidgetOptionTypeSwitch(
       return (
         <MultiSelect
           color={primaryColor}
-          key={`${option.type}-${index}`}
           data={option.data}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as string[]}
@@ -153,7 +163,6 @@ function WidgetOptionTypeSwitch(
       return (
         <Select
           color={primaryColor}
-          key={`${option.type}-${index}`}
           defaultValue={option.defaultValue}
           data={option.data}
           label={t(`descriptor.settings.${key}.label`)}
@@ -165,10 +174,10 @@ function WidgetOptionTypeSwitch(
       return (
         <NumberInput
           color={primaryColor}
-          key={`${option.type}-${index}`}
           label={t(`descriptor.settings.${key}.label`)}
           value={value as number}
           onChange={(v) => handleChange(key, v!)}
+          {...option.inputProps}
         />
       );
     case 'slider':
@@ -176,7 +185,6 @@ function WidgetOptionTypeSwitch(
         <Stack spacing="xs">
           <Slider
             color={primaryColor}
-            key={`${option.type}-${index}`}
             label={value}
             value={value as number}
             min={option.min}
@@ -186,7 +194,56 @@ function WidgetOptionTypeSwitch(
           />
         </Stack>
       );
+    case 'draggable-list':
+      /* eslint-disable no-case-declarations */
+      const typedVal = value as IDraggableListInputValue['defaultValue'];
+
+      const extractSubValue = (liName: string, settingName: string) =>
+        typedVal.find((v) => v.key === liName)?.subValues?.[settingName];
+
+      const handleSubChange = (liName: string, settingName: string) => (_: any, newVal: any) =>
+        handleChange(
+          key,
+          typedVal.map((oldVal) =>
+            oldVal.key === liName
+              ? {
+                  ...oldVal,
+                  subValues: {
+                    ...oldVal.subValues,
+                    [settingName]: newVal,
+                  },
+                }
+              : oldVal
+          )
+        );
+
+      return (
+        <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+          <DraggableList
+            value={typedVal}
+            onChange={(v) => handleChange(key, v)}
+            labels={mapObject(option.items, (liName) =>
+              t(`descriptor.settings.${key}.${liName}.label`)
+            )}
+          >
+            {mapObject(option.items, (liName, liSettings) =>
+              Object.entries(liSettings).map(([settingName, setting], i) => (
+                <WidgetOptionTypeSwitch
+                  key={`${liName}.${settingName}.${i}`}
+                  option={setting as IWidgetOptionValue}
+                  widgetId={widgetId}
+                  propName={`${key}.${liName}.${settingName}`}
+                  value={extractSubValue(liName, settingName)}
+                  handleChange={handleSubChange(liName, settingName)}
+                />
+              ))
+            )}
+          </DraggableList>
+        </Stack>
+      );
+    /* eslint-enable no-case-declarations */
     default:
       return null;
   }
-}
+};

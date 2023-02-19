@@ -4,18 +4,6 @@
     "description": "Toont de grafieken van een externe Dash. instantie binnen Homarr.",
     "settings": {
       "title": "Instellingen voor Dash. widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Core Weergave"
-      },
-      "storageMultiView": {
-        "label": "Opslag Multi-Drive weergave"
-      },
-      "useCompactView": {
-        "label": "Compacte weergave gebruiken"
-      },
-      "graphs": {
-        "label": "Grafieken"
-      },
       "url": {
         "label": "Dash. URL"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

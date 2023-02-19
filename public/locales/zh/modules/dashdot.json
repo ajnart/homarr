@@ -4,18 +4,6 @@
     "description": "在Homarr中显示一个外部Dash的图表。",
     "settings": {
       "title": "设置Dash小部件",
-      "cpuMultiView": {
-        "label": "CPU多核视图"
-      },
-      "storageMultiView": {
-        "label": "存储多驱动器视图"
-      },
-      "useCompactView": {
-        "label": "使用紧凑型视图"
-      },
-      "graphs": {
-        "label": "图表"
-      },
       "url": {
         "label": "Dash. 网址"
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "内存"
       },
       "gpu": {

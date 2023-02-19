@@ -1,4 +1,4 @@
-import { Accordion, Checkbox, Grid, Group, Stack, Switch, Text } from '@mantine/core';
+import { Accordion, Checkbox, Grid, Group, Stack, Text } from '@mantine/core';
 import { IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons';
 import { i18n, useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';

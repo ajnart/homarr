@@ -4,18 +4,6 @@
     "description": "Hiển thị biểu đồ của Dash. bên trong Homarr.",
     "settings": {
       "title": "Cài đặt cho tiện ích Dash.",
-      "cpuMultiView": {
-        "label": "Chế độ hiện đa nhân CPU"
-      },
-      "storageMultiView": {
-        "label": "Chế độ hiện đa ổ đĩa"
-      },
-      "useCompactView": {
-        "label": "Dùng chế độ thu gọn"
-      },
-      "graphs": {
-        "label": "Biểu đồ"
-      },
       "url": {
         "label": "URL của Dash."
       },
@@ -50,7 +38,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {
