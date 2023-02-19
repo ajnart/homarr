@@ -1,15 +1,17 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
+import Consola from 'consola';
 import { NotificationsProvider } from '@mantine/notifications';
 import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { getCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import 'video.js/dist/video-js.css';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -18,21 +20,25 @@ import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsE
 import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
+import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
-import { theme } from '../tools/theme';
 import {
   getServiceSidePackageAttributes,
   ServerSidePackageAttributesType,
 } from '../tools/server/getPackageVersion';
-import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
-import 'video.js/dist/video-js.css';
+import { theme } from '../tools/theme';
 
+import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
 
 function App(
   this: any,
-  props: AppProps & { colorScheme: ColorScheme; packageAttributes: ServerSidePackageAttributesType }
+  props: AppProps & {
+    colorScheme: ColorScheme;
+    packageAttributes: ServerSidePackageAttributesType;
+    isEditModeDisabled: boolean;
+  }
 ) {
   const { Component, pageProps } = props;
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
@@ -57,9 +63,14 @@ function App(
   });
 
   const { setInitialPackageAttributes } = usePackageAttributesStore();
+  const { setDisabled } = useEditModeInformationStore();
 
   useEffect(() => {
     setInitialPackageAttributes(props.packageAttributes);
+
+    if (props.isEditModeDisabled) {
+      setDisabled();
+    }
   }, []);
 
   const toggleColorScheme = (value?: ColorScheme) =>
@@ -125,9 +136,19 @@ function App(
   );
 }
 
-App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
-  colorScheme: getCookie('color-scheme', ctx) || 'light',
-  packageAttributes: getServiceSidePackageAttributes(),
-});
+App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
+  const disableEditMode =
+    process.env.DISABLE_EDIT_MODE && process.env.DISABLE_EDIT_MODE.toLowerCase() === 'true';
+  if (disableEditMode) {
+    Consola.warn(
+      'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible any any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
+    );
+  }
+  return {
+    colorScheme: getCookie('color-scheme', ctx) || 'light',
+    packageAttributes: getServiceSidePackageAttributes(),
+    isEditModeDisabled: disableEditMode,
+  };
+};
 
 export default appWithTranslation(App);

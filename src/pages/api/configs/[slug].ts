@@ -1,13 +1,22 @@
 import fs from 'fs';
+
 import path from 'path';
+
 import Consola from 'consola';
+
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import { BackendConfigType, ConfigType } from '../../../types/config';
 import { getConfig } from '../../../tools/config/getConfig';
 
 function Put(req: NextApiRequest, res: NextApiResponse) {
+  if (process.env.DISABLE_EDIT_MODE === 'true') {
+    return res.status(409).json({ error: 'Edit mode has been disabled by the administrator' });
+  }
+
   // Get the slug of the request
   const { slug } = req.query as { slug: string };
+
   // Get the body of the request
   const { body: config }: { body: ConfigType } = req;
   if (!slug || !config) {
