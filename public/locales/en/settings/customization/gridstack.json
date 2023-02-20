@@ -5,6 +5,6 @@
     "descriptionExceedsPreset": "Number of columns when the screen size exceeds {{pixels}} pixels"
   },
   "unsavedChanges": "You have unsaved changes. Click the Apply changes button below to apply and save.",
-  "applyChanges": "",
-  "defaultValues": ""
+  "applyChanges": "Apply changes",
+  "defaultValues": "Default values"
 }
