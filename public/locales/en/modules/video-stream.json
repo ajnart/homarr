@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Video Stream",
+    "description": "Embed a video stream or video from a camera or a website",
     "settings": {
-      "title": "",
+      "title": "Settings for video stream widget",
       "FeedUrl": {
         "label": "Feed URL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Autoplay"
       },
       "muted": {
-        "label": ""
+        "label": "Muted audio"
       },
       "controls": {
-        "label": ""
+        "label": "Video player controls"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Invalid stream"
   }
 }
