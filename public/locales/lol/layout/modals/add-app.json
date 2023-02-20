@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "App Icon",
-			"description": "Teh Icon Dat Will Be Displayd On Teh Dashbord."
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
 		}
 	},
 	"integration": {
