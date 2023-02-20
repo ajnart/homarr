@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "Иконка приложения",
-			"description": "Иконка, которая будет отображаться на панели."
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
 		}
 	},
 	"integration": {
