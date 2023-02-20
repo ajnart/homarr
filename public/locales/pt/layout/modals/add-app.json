@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "Ícone de aplicação",
-			"description": "O ícone que será exibido no painel de instrumentos."
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
 		}
 	},
 	"integration": {
