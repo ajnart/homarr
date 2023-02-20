@@ -25,21 +25,21 @@
           "message": "Config saved as {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Config copied",
+          "message": "Config copied as {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Unable to copy config",
+          "message": "Your config was not copied as {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
+      "title": "Confirm deletion of your config",
       "warningText": "You are about to delete '<b>{{configName}}</b>'",
       "text": "Please note that the deletion is not revertible, and your data will be lost permanently. After clicking this button, the file will be permanently deleted from your disk. Make sure to create an adequate backup of your configuration.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Yes, delete '<b>{{configName}}</b>'"
       }
     }
   },
@@ -58,7 +58,7 @@
         },
         "deleteFailedDefaultConfig": {
           "title": "The default config can't be deleted",
-          "message": ""
+          "message": "Configuration was not deleted from the file system"
         }
       }
     },
@@ -75,12 +75,12 @@
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Configuration Upload",
+      "text": "Drag files here to upload a config. Support for JSON files only."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Drag and Drop Upload rejected",
+      "text": "This file format is not supported. Please only upload JSON files."
     }
   }
 }
