@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Torrent",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Settings for Torrent widget",
       "refreshInterval": {
-        "label": ""
+        "label": "Refresh interval (in seconds)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Display completed torrents"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Display stale torrents"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Error",
-      "lastUpdated": ""
+      "lastUpdated": "Last updated {{time}} ago"
     },
     "table": {
       "header": {
@@ -30,7 +30,7 @@
         "progress": "Progress"
       },
       "item": {
-        "text": ""
+        "text": "Managed by {{appName}}, {{ratio}} ratio"
       },
       "body": {
         "nothingFound": "No torrents found"
@@ -46,26 +46,26 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "No supported Torrent clients found!",
+        "text": "Add a supported Torrent client to view your current downloads"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "An unexpected error occurred",
+        "text": "Homarr was unable to communicate with your Torrent clients. Please check your configuration"
       }
     },
     "loading": {
       "title": "Loading..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Managed by",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Queue position - {{position}}",
+        "progress": "Progress - {{progress}}%",
+        "totalSelectedSize": "Total - {{totalSize}}",
+        "state": "State - {{state}}",
+        "ratio": "Ratio -",
+        "completed": "Completed"
       }
     }
   }
