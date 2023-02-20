@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "iFrame",
-    "description": "",
+    "description": "Embed any content from the internet. Some websites may restrict access.",
     "settings": {
       "title": "iFrame settings",
       "embedUrl": {
-        "label": ""
+        "label": "Embed URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Allow full screen"
       }
     }
   },
@@ -16,7 +16,7 @@
     "errors": {
       "noUrl": {
         "title": "Enter a URL",
-        "text": ""
+        "text": "Ensure that you've entered a valid address in the configuration of your widget"
       }
     }
   }
