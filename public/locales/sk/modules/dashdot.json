@@ -11,68 +11,68 @@
         "label": "Zobraziť percentá"
       },
       "columns": {
-        "label": ""
+        "label": "Zobraziť stĺpce"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Výška grafov"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafy (poradie)",
         "storage": {
           "label": "Úložisko",
           "enabled": {
-            "label": ""
+            "label": "Zobraziť v miniaplikácii"
           },
           "span": {
-            "label": ""
+            "label": "Rozpätie stĺpca"
           },
           "compactView": {
-            "label": ""
+            "label": "Zobraziť ako text (kompaktný)"
           },
           "multiView": {
-            "label": ""
+            "label": "Zobraziť ako multi-drive-view"
           }
         },
         "network": {
           "label": "Sieť",
           "enabled": {
-            "label": ""
+            "label": "Zobraziť v miniaplikácii"
           },
           "span": {
-            "label": ""
+            "label": "Rozpätie stĺpca"
           },
           "compactView": {
-            "label": ""
+            "label": "Zobraziť ako text (kompaktný)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Zobraziť v miniaplikácii"
           },
           "span": {
-            "label": ""
+            "label": "Rozpätie stĺpca"
           },
           "multiView": {
-            "label": ""
+            "label": "Zobraziť ako viacjadrové zobrazenie"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Zobraziť v miniaplikácii"
           },
           "span": {
-            "label": ""
+            "label": "Rozpätie stĺpca"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Zobraziť v miniaplikácii"
           },
           "span": {
-            "label": ""
+            "label": "Rozpätie stĺpca"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
