@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "",
+    "description": "Displays a list of torrents from supported Torrent clients.",
     "settings": {
       "title": "Settings for Torrent widget",
       "refreshInterval": {
