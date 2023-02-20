@@ -11,68 +11,68 @@
         "label": "Display percentages"
       },
       "columns": {
-        "label": ""
+        "label": "Display columns"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Height of graphs"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Graphs (Order)",
         "storage": {
           "label": "Storage",
           "enabled": {
-            "label": ""
+            "label": "Show in widget"
           },
           "span": {
-            "label": ""
+            "label": "Column span"
           },
           "compactView": {
-            "label": ""
+            "label": "Show as text (compact)"
           },
           "multiView": {
-            "label": ""
+            "label": "Show as multi-drive-view"
           }
         },
         "network": {
           "label": "Network",
           "enabled": {
-            "label": ""
+            "label": "Show in widget"
           },
           "span": {
-            "label": ""
+            "label": "Column span"
           },
           "compactView": {
-            "label": ""
+            "label": "Show as text (compact)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Show in widget"
           },
           "span": {
-            "label": ""
+            "label": "Column span"
           },
           "multiView": {
-            "label": ""
+            "label": "Show as multi-core-view"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Show in widget"
           },
           "span": {
-            "label": ""
+            "label": "Column span"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Show in widget"
           },
           "span": {
-            "label": ""
+            "label": "Column span"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
