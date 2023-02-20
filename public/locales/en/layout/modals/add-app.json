@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "App Icon",
-			"description": "The icon that will be displayed on the dashboard."
+			"description": "Choose an icon to be displayed on your dashboard. Choose from {{suggestionsCount}} icons or enter your own URL",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
 		}
 	},
 	"integration": {
