@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Media Server",
+    "description": "Interact with your Jellyfin or Plex media server",
     "settings": {
-      "title": ""
+      "title": "Settings for media server widget"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Session",
+        "user": "User",
+        "currentlyPlaying": "Currently playing"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Unable to load content",
+        "text": "Unable to retrieve information from the server. Please check the logs for more details"
       }
     }
   }
