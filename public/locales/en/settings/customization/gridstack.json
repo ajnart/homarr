@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Columns in {{size}} size",
+    "descriptionPreset": "Number of columns when the screen is less than {{pixels}} pixels wide",
+    "descriptionExceedsPreset": "Number of columns when the screen size exceeds {{pixels}} pixels"
   },
-  "unsavedChanges": "",
+  "unsavedChanges": "You have unsaved changes. Click the Apply changes button below to apply and save.",
   "applyChanges": "",
   "defaultValues": ""
 }
