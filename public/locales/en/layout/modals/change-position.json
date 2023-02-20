@@ -1,1 +1,6 @@
-{}
+{
+	"width": "Width",
+	"height": "Height",
+	"zeroOrHigher": "0 or higher",
+	"betweenXandY": "Between {{min}} and {{max}}"
+}
