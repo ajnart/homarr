@@ -1,12 +1,12 @@
 {
   "title": "Search engine",
-  "configurationName": "",
+  "configurationName": "Search engine configuration",
   "tips": {
-    "generalTip": "",
+    "generalTip": "There are multiple prefixes you can use! Adding these in front of your query will filter the results. !s (Web), !t (Torrents), !y (YouTube), and !m (Media).",
     "placeholderTip": "%s can be used as a placeholder for the query."
   },
   "customEngine": {
-    "title": "",
+    "title": "Custom search engine",
     "label": "Query URL",
     "placeholder": "Custom query URL"
   },
@@ -14,6 +14,6 @@
     "label": "Open search results in new tab"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Search enabled"
   }
 }
