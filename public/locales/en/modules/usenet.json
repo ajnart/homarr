@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": ""
+    "description": "Allows you to view and manage your Usenet instance."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "No supported download clients found!",
-        "text": ""
+        "text": "Add a supported Usenet Download Client to view your current downloads"
       }
     }
   },
