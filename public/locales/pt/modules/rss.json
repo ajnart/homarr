@@ -1,19 +1,19 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Widget RSS",
+    "description": "Pega os itens de um feed RSS e os exibe. Geralmente usado para notícias on-line",
     "settings": {
-      "title": "",
+      "title": "Configurações para o widget RSS",
       "rssFeedUrl": {
-        "label": ""
+        "label": "URL do feed RSS"
       }
     }
   },
   "card": {
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Não foi possível recuperar o feed RSS",
+        "text": "Houve um problema ao alcançar o feed RSS. Certifique-se de que você configurou o feed corretamente e use uma URL de RSS válido, e que corresponda à especificação padrão oficial. Depois de atualizar o feed, talvez seja necessário salvar o painel de controle e atualizar a página."
       }
     }
   }
