@@ -1,21 +1,21 @@
 {
-  "text": "",
+  "text": "As personalizações permitem que você configure e ajuste sua experiência com Homarr de acordo com suas preferências.",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "Layout",
+      "description": "Ativar e desativar elementos em seus blocos de cabeçalho e painel de controle"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Grade de ícones",
+      "description": "Personalizar o comportamento e as colunas da área do seu painel de controle"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Metadado da página",
+      "description": "Ajustar títulos, logotipo e PWA"
     },
     "appereance": {
-      "name": "",
-      "description": ""
+      "name": "Aparência",
+      "description": "Personalizar o plano de fundo, cores e aparência dos aplicativos"
     }
   }
 }
