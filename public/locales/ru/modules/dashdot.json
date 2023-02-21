@@ -11,13 +11,13 @@
         "label": "Отображать проценты"
       },
       "columns": {
-        "label": ""
+        "label": "Отображать столбцы"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Высота графиков"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Графики (порядок)",
         "storage": {
           "label": "Хранилище",
           "enabled": {
@@ -27,7 +27,7 @@
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "Показать в виде текста (компактный)"
           },
           "multiView": {
             "label": ""
@@ -42,7 +42,7 @@
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "Показать в виде текста (компактный)"
           }
         },
         "cpu": {
@@ -58,7 +58,7 @@
           }
         },
         "ram": {
-          "label": "",
+          "label": "ОЗУ",
           "enabled": {
             "label": ""
           },
@@ -105,7 +105,7 @@
         "title": "ЦП"
       },
       "ram": {
-        "title": ""
+        "title": "ОЗУ"
       },
       "gpu": {
         "title": "ГП"
