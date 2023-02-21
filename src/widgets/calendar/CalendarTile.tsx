@@ -43,7 +43,7 @@ const definition = defineWidget({
   component: CalendarTile,
 });
 
-export type ICalendarWidget = IWidget<typeof definition['id'], typeof definition>;
+export type ICalendarWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface CalendarTileProps {
   widget: ICalendarWidget;
@@ -124,7 +124,7 @@ const getReleasedMediasForDate = (
   date: Date,
   widget: ICalendarWidget
 ): MediasType => {
-  const radarrReleaseType = widget.properties.radarrReleaseType ?? 'inCinemas';
+  const { radarrReleaseType } = widget.properties;
 
   const books =
     medias?.books.filter((b) => new Date(b.releaseDate).toDateString() === date.toDateString()) ??
