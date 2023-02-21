@@ -1,22 +1,22 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "IFrame",
+    "description": "Incorpora qualsiasi contenuto da Internet. Alcuni siti web possono limitare l'accesso.",
     "settings": {
-      "title": "",
+      "title": "Impostazioni IFrame",
       "embedUrl": {
-        "label": ""
+        "label": "Incorpora URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Consenti schermo intero"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Inserisci un URL",
+        "text": "Assicurarsi di aver inserito un indirizzo valido nella configurazione del widget"
       }
     }
   }
