@@ -39,9 +39,9 @@
 	"appearance": {
 		"icon": {
 			"label": "סמל אפליקציה",
-			"description": "",
+			"description": "בחר סמל שיוצג בלוח המחוונים שלך. ניתן לבחור סמלים מ- {{suggestionsCount}} או הזן כתובת אתר משלך",
 			"autocomplete": {
-				"title": "",
+				"title": "לא נמצאו תוצאות",
 				"text": ""
 			},
 			"noItems": {
