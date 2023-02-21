@@ -39,14 +39,14 @@
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "",
+			"description": "Välj en ikon som ska visas på kontrollpanelen. Välj mellan {{suggestionsCount}} ikoner eller ange din egen URL",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Hittade inga resultat",
+				"text": "Försök att använda en mer specifik sökterm. Om du inte kan hitta önskad ikon, klistra in bild-URL ovan för en anpassad ikon"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Laddar externa ikoner",
+				"text": "Detta kan ta några sekunder"
 			}
 		}
 	},
