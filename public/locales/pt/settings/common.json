@@ -10,19 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Feito com ❤️ por @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Ver conteúdo de terceiros",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Dependência",
       "dependencyVersion": "Versão"
     }
   },
   "grow": "Grelha de cultivo (ocupar todo o espaço)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Pré-visualizar",
+      "subtitle": "As alterações serão salvas automaticamente"
     },
-    "divider": "",
+    "divider": "Opções de Layout",
     "main": "Principal",
     "sidebar": "Sidebar",
     "cannotturnoff": "Não pode ser desligado",
