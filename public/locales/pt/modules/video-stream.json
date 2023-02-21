@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Transmissão de vídeo",
+    "description": "Incorporar um stream de vídeo ou vídeo de uma câmera ou de um site",
     "settings": {
-      "title": "",
+      "title": "Configurações para o widget de transmissão de vídeo",
       "FeedUrl": {
-        "label": ""
+        "label": "url do feed"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Reprodução automática"
       },
       "muted": {
-        "label": ""
+        "label": "Silenciar áudio"
       },
       "controls": {
-        "label": ""
+        "label": "Controles do reprodutor de vídeo"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Transmissão inválida"
   }
 }
