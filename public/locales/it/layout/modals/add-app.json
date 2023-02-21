@@ -39,14 +39,14 @@
 	"appearance": {
 		"icon": {
 			"label": "Icona App",
-			"description": "",
+			"description": "Scegli un'icona da visualizzare sulla tua dashboard. Scegli tra {{suggestionsCount}} icone o inserisci il tuo URL",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Nessun risultato trovato",
+				"text": "Prova a usare un termine di ricerca più specifico. Se non riesci a trovare l'icona desiderata, incolla l'URL dell'immagine sopra per un'icona personalizzata"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Caricamento icone esterne",
+				"text": "Questa operazione potrebbe richiedere alcuni secondi"
 			}
 		}
 	},
