@@ -11,68 +11,68 @@
         "label": "Visualizza percentuali"
       },
       "columns": {
-        "label": ""
+        "label": "Visualizza colonne"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Altezza dei grafici"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafici (Ordine)",
         "storage": {
           "label": "Spazio di archiviazione",
           "enabled": {
-            "label": ""
+            "label": "Mostra nel widget"
           },
           "span": {
-            "label": ""
+            "label": "Larghezza colonna"
           },
           "compactView": {
-            "label": ""
+            "label": "Mostra come testo (compatto)"
           },
           "multiView": {
-            "label": ""
+            "label": "Mostra come multi-drive-view"
           }
         },
         "network": {
           "label": "Rete",
           "enabled": {
-            "label": ""
+            "label": "Mostra nel widget"
           },
           "span": {
-            "label": ""
+            "label": "Larghezza colonna"
           },
           "compactView": {
-            "label": ""
+            "label": "Mostra come testo (compatto)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Mostra nel widget"
           },
           "span": {
-            "label": ""
+            "label": "Larghezza colonna"
           },
           "multiView": {
-            "label": ""
+            "label": "Mostra come multi-core-view"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Mostra nel widget"
           },
           "span": {
-            "label": ""
+            "label": "Larghezza colonna"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Mostra nel widget"
           },
           "span": {
-            "label": ""
+            "label": "Larghezza colonna"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
