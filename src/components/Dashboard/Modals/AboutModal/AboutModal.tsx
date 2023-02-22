@@ -85,7 +85,12 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
                   <ActionIcon className={classes.informationIcon} variant="default">
                     {item.icon}
                   </ActionIcon>
-                  {t(`layout/modals/about:metrics.${item.label}`)}
+                  <Text>
+                    <Trans
+                      i18nKey={`layout/modals/about:metrics.${item.label}`}
+                      components={{ b: <b /> }}
+                    />
+                  </Text>
                 </Group>
               </td>
               <td className={classes.informationTableColumn} style={{ maxWidth: 200 }}>
