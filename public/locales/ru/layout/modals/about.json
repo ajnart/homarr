@@ -9,6 +9,6 @@
 		"nodeEnvironment": "Окружение узла",
 		"i18n": "Загружено I18n переводов пространств имён",
 		"locales": "Настроено I18n локализаций",
-		"experimental_disableEditMode": ""
+		"experimental_disableEditMode": "<b>ЭКСПЕРИМЕНТАЛЬНЫЙ</b>: Отключить режим редактирования"
 	}
 }
