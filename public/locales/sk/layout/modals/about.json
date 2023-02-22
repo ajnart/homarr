@@ -8,6 +8,7 @@
 		"version": "Verzia",
 		"nodeEnvironment": "Node prostredie",
 		"i18n": "Načítané prekladové priestory I18n",
-		"locales": "Nakonfigurované lokality I18n"
+		"locales": "Nakonfigurované lokality I18n",
+		"experimental_disableEditMode": ""
 	}
 }
