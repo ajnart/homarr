@@ -8,6 +8,7 @@
 		"version": "Версия",
 		"nodeEnvironment": "Окружение узла",
 		"i18n": "Загружено I18n переводов пространств имён",
-		"locales": "Настроено I18n локализаций"
+		"locales": "Настроено I18n локализаций",
+		"experimental_disableEditMode": ""
 	}
 }
