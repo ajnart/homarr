@@ -9,6 +9,6 @@
 		"nodeEnvironment": "Node-Umgebung",
 		"i18n": "Geladene I18n Übersetzungs Namensräume",
 		"locales": "Konfigurierte I18n Sprachumgebungen",
-		"experimental_disableEditMode": ""
+		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Bearbeitungsmodus deaktivieren"
 	}
 }
