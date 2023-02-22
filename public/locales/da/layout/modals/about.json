@@ -8,6 +8,7 @@
 		"version": "Version",
 		"nodeEnvironment": "Node miljø",
 		"i18n": "Indlæste I18n-oversættelsesnavneområder",
-		"locales": "Konfigurerede I18n landestandarder"
+		"locales": "Konfigurerede I18n landestandarder",
+		"experimental_disableEditMode": ""
 	}
 }
