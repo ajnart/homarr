@@ -8,6 +8,7 @@
 		"version": "Versie",
 		"nodeEnvironment": "Knooppuntomgeving",
 		"i18n": "I18n vertaling namespaces geladen",
-		"locales": "I18n talen geconfigureerd"
+		"locales": "I18n talen geconfigureerd",
+		"experimental_disableEditMode": ""
 	}
 }
