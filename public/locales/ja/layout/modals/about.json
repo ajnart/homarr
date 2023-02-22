@@ -8,6 +8,7 @@
 		"version": "バージョン",
 		"nodeEnvironment": "",
 		"i18n": "",
-		"locales": ""
+		"locales": "",
+		"experimental_disableEditMode": ""
 	}
 }
