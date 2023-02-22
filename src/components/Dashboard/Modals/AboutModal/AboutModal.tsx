@@ -163,14 +163,14 @@ interface ExtendedInitOptions extends InitOptions {
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
   const colorGradiant = usePrimaryGradient();
   const { attributes } = usePackageAttributesStore();
-  const { isEditModeDisabled } = useEditModeInformationStore();
+  const { editModeEnabled } = useEditModeInformationStore();
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
 
   let items: InformationTableItem[] = [];
 
-  if (isEditModeDisabled) {
+  if (editModeEnabled) {
     items = [
       ...items,
       {

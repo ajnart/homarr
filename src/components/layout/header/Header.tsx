@@ -16,7 +16,7 @@ export function Header(props: any) {
   const { classes } = useStyles();
   const { classes: cardClasses, cx } = useCardStyles(false);
   const { attributes } = usePackageAttributesStore();
-  const { isEditModeDisabled } = useEditModeInformationStore();
+  const { editModeEnabled } = useEditModeInformationStore();
 
   const { data } = useQuery({
     queryKey: ['github/latest'],
@@ -41,7 +41,7 @@ export function Header(props: any) {
           noWrap
         >
           <Search />
-          {!isEditModeDisabled && <ToggleEditModeAction />}
+          {!editModeEnabled && <ToggleEditModeAction />}
           <DockerMenuButton />
           <Indicator
             size={15}

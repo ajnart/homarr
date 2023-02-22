@@ -13,7 +13,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
   const { t } = useTranslation('common');
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { classes } = useCardStyles(true);
-  const { isEditModeDisabled } = useEditModeInformationStore();
+  const { editModeEnabled } = useEditModeInformationStore();
 
   return (
     <>
@@ -26,7 +26,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
         <Menu.Dropdown>
           <ColorSchemeSwitch />
           <Menu.Divider />
-          {!isEditModeDisabled && (
+          {!editModeEnabled && (
             <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
               {t('sections.settings')}
             </Menu.Item>

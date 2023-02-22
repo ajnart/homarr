@@ -37,7 +37,7 @@ function App(
   props: AppProps & {
     colorScheme: ColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
-    isEditModeDisabled: boolean;
+    editModeEnabled: boolean;
   }
 ) {
   const { Component, pageProps } = props;
@@ -68,7 +68,7 @@ function App(
   useEffect(() => {
     setInitialPackageAttributes(props.packageAttributes);
 
-    if (props.isEditModeDisabled) {
+    if (!props.editModeEnabled) {
       setDisabled();
     }
   }, []);
@@ -141,13 +141,13 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     process.env.DISABLE_EDIT_MODE && process.env.DISABLE_EDIT_MODE.toLowerCase() === 'true';
   if (disableEditMode) {
     Consola.warn(
-      'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible any any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
+      'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
     );
   }
   return {
     colorScheme: getCookie('color-scheme', ctx) || 'light',
     packageAttributes: getServiceSidePackageAttributes(),
-    isEditModeDisabled: disableEditMode,
+    editModeEnabled: !disableEditMode,
   };
 };
 

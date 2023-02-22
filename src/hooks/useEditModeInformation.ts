@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
 interface EditModeInformationStore {
-  isEditModeDisabled: boolean;
+  editModeEnabled: boolean;
   setDisabled: () => void;
 }
 
 export const useEditModeInformationStore = create<EditModeInformationStore>((set) => ({
-  isEditModeDisabled: false,
-  setDisabled: () => set(() => ({ isEditModeDisabled: true })),
+  editModeEnabled: false,
+  setDisabled: () => set(() => ({ editModeEnabled: true })),
 }));
