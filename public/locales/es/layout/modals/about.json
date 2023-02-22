@@ -9,6 +9,6 @@
 		"nodeEnvironment": "Entorno del nodo",
 		"i18n": "I18n translation namespaces cargadas",
 		"locales": "I18n locales configurados",
-		"experimental_disableEditMode": ""
+		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desactivar modo edición"
 	}
 }
