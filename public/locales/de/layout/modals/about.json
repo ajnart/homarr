@@ -8,6 +8,7 @@
 		"version": "Version",
 		"nodeEnvironment": "Node-Umgebung",
 		"i18n": "Geladene I18n Übersetzungs Namensräume",
-		"locales": "Konfigurierte I18n Sprachumgebungen"
+		"locales": "Konfigurierte I18n Sprachumgebungen",
+		"experimental_disableEditMode": ""
 	}
 }
