@@ -9,6 +9,6 @@
 		"nodeEnvironment": "Node miljø",
 		"i18n": "Indlæste I18n-oversættelsesnavneområder",
 		"locales": "Konfigurerede I18n landestandarder",
-		"experimental_disableEditMode": ""
+		"experimental_disableEditMode": "<b>EKSPERIMENTAL</b>: Deaktivér redigeringstilstand"
 	}
 }
