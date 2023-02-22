@@ -8,6 +8,7 @@
 		"version": "Različica",
 		"nodeEnvironment": "Okolje vozlišča",
 		"i18n": "Nalaganje imenskih prostorov za prevod I18n",
-		"locales": "Konfigurirani krajevni jeziki I18n"
+		"locales": "Konfigurirani krajevni jeziki I18n",
+		"experimental_disableEditMode": ""
 	}
 }
