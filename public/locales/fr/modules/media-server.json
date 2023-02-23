@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Serveur multimédia",
+    "description": "Interagissez avec votre server multimédia Jellyfin ou Plex",
     "settings": {
       "title": ""
     }
@@ -9,15 +9,15 @@
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
+        "session": "Session",
+        "user": "Utilisateur",
         "currentlyPlaying": ""
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Impossible de charger le contenu",
+        "text": "Impossible de récupérer les informations du serveur. Veuillez vérifier les journaux pour davantage de détails"
       }
     }
   }
