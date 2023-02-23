@@ -1,22 +1,22 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "IFrame",
+    "description": "Vstavite katero koli vsebino iz interneta. Nekatera spletna mesta lahko omejijo dostop.",
     "settings": {
-      "title": "",
+      "title": "Nastavitve okvirja IFrame",
       "embedUrl": {
-        "label": ""
+        "label": "URL za vstavljanje"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Omogočite celozaslonsko prikazovanje"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Vnesite naslov URL",
+        "text": "Prepričajte se, da ste v konfiguracijo svojega pripomočka vnesli veljaven naslov"
       }
     }
   }
