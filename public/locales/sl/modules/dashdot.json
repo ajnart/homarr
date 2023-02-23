@@ -11,68 +11,68 @@
         "label": "Prikaz odstotkov"
       },
       "columns": {
-        "label": ""
+        "label": "Prikaži stolpce"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Višina grafov"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafi (vrstni red)",
         "storage": {
           "label": "Shramba",
           "enabled": {
-            "label": ""
+            "label": "Prikaži v pripomočku"
           },
           "span": {
-            "label": ""
+            "label": "Razpon stolpca"
           },
           "compactView": {
-            "label": ""
+            "label": "Prikaži kot besedilo (kompaktno)"
           },
           "multiView": {
-            "label": ""
+            "label": "Prikaži kot večpredstavnostni pogled"
           }
         },
         "network": {
           "label": "Omrežje",
           "enabled": {
-            "label": ""
+            "label": "Prikaži v pripomočku"
           },
           "span": {
-            "label": ""
+            "label": "Razpon stolpca"
           },
           "compactView": {
-            "label": ""
+            "label": "Prikaži kot besedilo (kompaktno)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Prikaži v pripomočku"
           },
           "span": {
-            "label": ""
+            "label": "Razpon stolpca"
           },
           "multiView": {
-            "label": ""
+            "label": "Prikaži kot večjedrni pogled"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Prikaži v pripomočku"
           },
           "span": {
-            "label": ""
+            "label": "Razpon stolpca"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Prikaži v pripomočku"
           },
           "span": {
-            "label": ""
+            "label": "Razpon stolpca"
           }
         }
       }
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
