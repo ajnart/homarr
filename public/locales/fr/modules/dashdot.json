@@ -11,7 +11,7 @@
         "label": "Afficher les pourcentages"
       },
       "columns": {
-        "label": ""
+        "label": "Affichage des colonnes"
       },
       "graphHeight": {
         "label": ""
@@ -58,7 +58,7 @@
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
             "label": ""
           },
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
