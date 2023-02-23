@@ -188,7 +188,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
             {graphsOrder
               .filter((g) => g.subValues.enabled)
               .map((g) => (
-                <Grid.Col span={Math.min(columns, g.subValues.span)}>
+                <Grid.Col key={g.key} span={Math.min(columns, g.subValues.span)}>
                   <DashDotGraph
                     dashDotUrl={dashDotUrl}
                     info={info}

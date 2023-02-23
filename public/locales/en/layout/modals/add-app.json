@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "App Icon",
-			"description": "The icon that will be displayed on the dashboard."
+			"description": "Choose a an icon to be displayed on your dashboard. Choose from {{suggestionsCount}} icons or enter your own URL",
+			"autocomplete": {
+				"title": "No results found",
+				"text": "Try to use a more specific search term. If you can't find your desired icon, paste the image URL above for a custom icon"
+			},
+			"noItems": {
+				"title": "Loading external icons",
+				"text": "This may take a few seconds"
+			}
 		}
 	},
 	"integration": {
