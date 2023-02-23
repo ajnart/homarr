@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Predstavnostni strežnik",
+    "description": "Sodelovanje z medijskim strežnikom Jellyfin ali Plex",
     "settings": {
-      "title": ""
+      "title": "Nastavitve za gradnik video strežnika"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Seja",
+        "user": "Uporabnik",
+        "currentlyPlaying": "Trenutno se predvaja"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Ni mogoče naložiti vsebine",
+        "text": "Ni mogoče pridobiti informacij iz strežnika. Za več podrobnosti preverite dnevnike"
       }
     }
   }
