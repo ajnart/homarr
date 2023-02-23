@@ -8,14 +8,14 @@
         "label": ""
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Permettre le plein écran"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Saisir une URL",
         "text": ""
       }
     }
