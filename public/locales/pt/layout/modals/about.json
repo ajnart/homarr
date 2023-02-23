@@ -9,6 +9,6 @@
 		"nodeEnvironment": "Ambiente do nó",
 		"i18n": "Espaços de tradução do I18n carregados",
 		"locales": "Localidades I18n configurados",
-		"experimental_disableEditMode": ""
+		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desativar o modo de edição"
 	}
 }
