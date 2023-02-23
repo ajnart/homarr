@@ -19,6 +19,6 @@
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Flux invalide"
   }
 }
