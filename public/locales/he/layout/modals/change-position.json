@@ -1,8 +1,6 @@
 {
-	"xPosition": "מיקום ציר X",
 	"width": "רוחב",
 	"height": "גובה",
-	"yPosition": "מיקום ציר Y",
 	"zeroOrHigher": "אפס או גבוה יותר",
 	"betweenXandY": "בין {{min}} ל- {{max}}"
 }
