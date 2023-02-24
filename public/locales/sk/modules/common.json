@@ -4,7 +4,7 @@
   },
   "errors": {
     "unmappedOptions": {
-      "text": "<b>Zistil sa nepoužitý parameter v konfigurácii</b><br /><code>{{key}}</code>. Homarr nedokáže interpretovať a použiť tento parameter. Ak sa chcete vyhnúť akémukoľvek neočakávanému správaniu, zálohujte svoju konfiguráciu a opravte ju."
+      "text": ""
     }
   }
 }
