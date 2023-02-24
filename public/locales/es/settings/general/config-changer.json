@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Confirmar eliminación de tu configuración",
-      "warningText": "Estás a punto de eliminar '<b>{{configName}}</b>'",
-      "text": "Por favor, ten en cuenta que la eliminación no es reversible y tus datos serán borrados indefinidamente. Después de hacer clic en el botón, el archivo será eliminado permanentemente del disco. Asegúrate de crear un respaldo adecuado de tu configuración.",
+      "warningText": "",
+      "text": "",
       "buttons": {
         "confirm": "Si, eliminar '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "Error en el borrado de la configuración"
         },
         "deleteFailedDefaultConfig": {
-          "title": "La configuración por defecto no puede ser eliminada",
+          "title": "",
           "message": "La configuración no fue eliminada del sistema"
         }
       }
