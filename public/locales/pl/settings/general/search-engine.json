@@ -2,7 +2,7 @@
   "title": "Silnik wyszukiwania",
   "configurationName": "Konfiguracja wyszukiwarki",
   "tips": {
-    "generalTip": "Istnieje wiele prefiksów, których możesz użyć! Dodanie ich przed zapytaniem spowoduje przefiltrowanie wyników. !s (Web), !t (Torrenty), !y (YouTube) i !m (Media).",
+    "generalTip": "",
     "placeholderTip": "%s może być użyte jako symbol zastępczy dla zapytania."
   },
   "customEngine": {
