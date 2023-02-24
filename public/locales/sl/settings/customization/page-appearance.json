@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta naslov",
-    "description": "Naslov, ki se prikaže kot ime zavihka"
+    "description": ""
   },
   "logo": {
     "label": "Logotip",
-    "description": "Logotip armaturne plošče v zgornjem levem kotu"
+    "description": ""
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Ikona, ki se uporablja pred imenom zavihka"
+    "description": ""
   },
   "background": {
     "label": "Ozadje"
   },
   "customCSS": {
     "label": "Po meri CSS",
-    "description": "Prilagodite vse elemente na nadzorni plošči, priporočljivo le za izkušene uporabnike",
+    "description": "",
     "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji",
     "applying": "Uporaba CSS..."
   },
