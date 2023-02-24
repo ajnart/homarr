@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Displays the graphs of an external Dash. Instance inside Homarr.",
+    "description": "",
     "settings": {
       "title": "Settings for Dash. widget",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "Cannot acquire information from dash. - are you running the latest version?",
       "protocolDowngrade": {
         "title": "Detected protocol downgrade",
-        "text": "The connection to your Dash. instance is using HTTP. This is a security risk, because HTTP is unencrypted and attackers could abuse this connection. Make sure that Dash. is using HTTPS, or downgrade Homarr to HTTP (not recommended)."
+        "text": ""
       }
     },
     "graphs": {
