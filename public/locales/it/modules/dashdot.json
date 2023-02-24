@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Visualizza i grafici di un'istanza Dash. esterna all'interno di Homarr.",
+    "description": "",
     "settings": {
       "title": "Impostazioni del widget Dash.",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "Impossibile reperire informazioni da dash. - è in esecuzione l'ultima versione?",
       "protocolDowngrade": {
         "title": "Rilevato downgrade del protocollo",
-        "text": "Il protocollo all'istanza Dash. è in fase di downgrade. Questo è un rischio per la sicurezza, poiché HTTP non è crittografato e gli aggressori potrebbero abusare di questa connessione. Assicurarsi che Dash. sia in esecuzione anche su HTTPS o fare il downgrade di Homarr su HTTP (non consigliato)."
+        "text": ""
       }
     },
     "graphs": {
