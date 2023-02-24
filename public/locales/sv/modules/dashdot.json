@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Visar graferna för en extern Dash.-instans i Homarr.",
+    "description": "",
     "settings": {
       "title": "Inställningar för Dash. widget",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "Kan inte få information från dash. - Kör du den senaste versionen?",
       "protocolDowngrade": {
         "title": "Nedgradering av protokoll upptäcktes",
-        "text": "Protokollet till din Dash.-instans håller på att nedgraderas. Detta är en säkerhetsrisk eftersom HTTP är okrypterat och angripare kan missbruka denna anslutning. Se till att Dash. också körs på HTTPS eller nedgradera Homarr till HTTP (rekommenderas inte)."
+        "text": ""
       }
     },
     "graphs": {
