@@ -1,8 +1,6 @@
 {
-	"xPosition": "Pozycja osi X",
 	"width": "Szerokość",
 	"height": "Wysokość",
-	"yPosition": "Pozycja osi Y",
 	"zeroOrHigher": "0 lub wyższy",
 	"betweenXandY": "Między {{min}} a {{max}}"
 }
