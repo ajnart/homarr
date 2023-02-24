@@ -5,10 +5,10 @@
     "settings": {
       "title": "设置视频流小部件",
       "FeedUrl": {
-        "label": "订阅URL"
+        "label": ""
       },
       "autoPlay": {
-        "label": "自动播放"
+        "label": ""
       },
       "muted": {
         "label": "静音"
