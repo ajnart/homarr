@@ -14,23 +14,23 @@
         "label": "Spalten anzeigen"
       },
       "graphHeight": {
-        "label": "Höhe des Graphen"
+        "label": "Höhe der Graphen"
       },
       "graphsOrder": {
-        "label": "Reihenfolge der Graphen",
+        "label": "Graphen (Reihenfolge)",
         "storage": {
           "label": "Speicher",
           "enabled": {
-            "label": "In Widget anzeigen"
+            "label": "Im Widget anzeigen"
           },
           "span": {
-            "label": "Länge der Säulen"
+            "label": "Spaltenbreite"
           },
           "compactView": {
-            "label": "Als Text anzeigen (kompakt)"
+            "label": "Als Text anzeigen (Kompakt)"
           },
           "multiView": {
-            "label": "Als Multi-Laufwerk-Ansicht anzeigen"
+            "label": "Als Multi-Laufwerk anzeigen"
           }
         },
         "network": {
@@ -39,10 +39,10 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Länge der Säulen"
+            "label": "Spaltenbreite"
           },
           "compactView": {
-            "label": "Als Text anzeigen (kompakt)"
+            "label": "Als Text anzeigen (Kompakt)"
           }
         },
         "cpu": {
@@ -51,10 +51,10 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Länge der Säulen"
+            "label": "Spaltenbreite"
           },
           "multiView": {
-            "label": "Als Multi-Core-Ansicht anzeigen"
+            "label": "Als Multi-Core anzeigen"
           }
         },
         "ram": {
@@ -63,7 +63,7 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Länge der Säulen"
+            "label": "Spaltenbreite"
           }
         },
         "gpu": {
@@ -72,7 +72,7 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Länge der Säulen"
+            "label": "Spaltenbreite"
           }
         }
       }

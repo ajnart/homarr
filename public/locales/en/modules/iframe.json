@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Enter a URL",
+        "title": "Enter an URL",
         "text": "Ensure that you've entered a valid address in the configuration of your widget"
       }
     }

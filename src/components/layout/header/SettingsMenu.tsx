@@ -2,6 +2,7 @@ import { Badge, Button, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
+import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
 import { useCardStyles } from '../useCardStyles';
@@ -12,6 +13,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
   const { t } = useTranslation('common');
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { classes } = useCardStyles(true);
+  const { editModeEnabled } = useEditModeInformationStore();
 
   return (
     <>
@@ -24,9 +26,11 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
         <Menu.Dropdown>
           <ColorSchemeSwitch />
           <Menu.Divider />
-          <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
-            {t('sections.settings')}
-          </Menu.Item>
+          {!editModeEnabled && (
+            <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
+              {t('sections.settings')}
+            </Menu.Item>
+          )}
           <Menu.Item
             icon={<IconInfoCircle strokeWidth={1.2} size={18} />}
             rightSection={

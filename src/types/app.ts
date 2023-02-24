@@ -41,6 +41,8 @@ export type IntegrationType =
   | 'deluge'
   | 'qBittorrent'
   | 'transmission'
+  | 'plex'
+  | 'jellyfin'
   | 'nzbGet';
 
 export type AppIntegrationType = {
@@ -79,6 +81,8 @@ export const integrationFieldProperties: {
   nzbGet: ['username', 'password'],
   qBittorrent: ['username', 'password'],
   transmission: ['username', 'password'],
+  jellyfin: ['username', 'password'],
+  plex: ['apiKey'],
 };
 
 export type IntegrationFieldDefinitionType = {

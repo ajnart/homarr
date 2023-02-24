@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "RSS Widget",
-    "description": "Grabs the items from an RSS feed and displays them. Commonly used for online news",
+    "description": "Grabs the items from a RSS feed and displays them. Commonly used for online news",
     "settings": {
       "title": "Settings for RSS widget",
       "rssFeedUrl": {
-        "label": "RSS feed URL"
+        "label": "RSS feed url"
       }
     }
   },

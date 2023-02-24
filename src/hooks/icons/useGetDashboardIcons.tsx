@@ -1,0 +1,14 @@
+import { useQuery } from '@tanstack/react-query';
+import { NormalizedIconRepositoryResult } from '../../tools/server/images/abstract-icons-repository';
+
+export const useGetDashboardIcons = () =>
+  useQuery({
+    queryKey: ['repository-icons'],
+    queryFn: async () => {
+      const response = await fetch('/api/icons/');
+      const data = await response.json();
+      return data as NormalizedIconRepositoryResult[];
+    },
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+  });
