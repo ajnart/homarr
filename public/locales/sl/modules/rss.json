@@ -13,7 +13,7 @@
     "errors": {
       "general": {
         "title": "Ni mogoče pridobiti vira RSS",
-        "text": "Prišlo je do težave pri doseganju vira RSS. Prepričajte se, da ste pravilno nastavili vir in uporabili veljavni URL naslov RSS, ki ustreza uradni standardni specifikaciji. Po posodobitvi vira boste morda morali shraniti nadzorno ploščo in osvežiti stran."
+        "text": ""
       }
     }
   }
