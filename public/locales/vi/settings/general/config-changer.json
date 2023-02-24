@@ -57,7 +57,7 @@
           "message": "Xoá cấu hình thất bại"
         },
         "deleteFailedDefaultConfig": {
-          "title": "Cấu hình mặc định không thể bị xoá",
+          "title": "",
           "message": ""
         }
       }
