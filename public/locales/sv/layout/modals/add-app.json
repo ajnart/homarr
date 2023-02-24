@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "Ikon som kommer att visas på instrumentpanelen."
+			"description": "Välj en ikon som ska visas på kontrollpanelen. Välj mellan {{suggestionsCount}} ikoner eller ange din egen URL",
+			"autocomplete": {
+				"title": "Hittade inga resultat",
+				"text": "Försök att använda en mer specifik sökterm. Om du inte kan hitta önskad ikon, klistra in bild-URL ovan för en anpassad ikon"
+			},
+			"noItems": {
+				"title": "Laddar externa ikoner",
+				"text": "Detta kan ta några sekunder"
+			}
 		}
 	},
 	"integration": {

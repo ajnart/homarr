@@ -1,0 +1,23 @@
+{
+  "descriptor": {
+    "name": "IFrame",
+    "description": "Indlejr ethvert indhold fra internettet. Nogle websteder kan begrænse adgang.",
+    "settings": {
+      "title": "IFrame indstillinger",
+      "embedUrl": {
+        "label": "Indlejr URL"
+      },
+      "allowFullScreen": {
+        "label": "Tillad fuld skærm"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "Indtast URL",
+        "text": "Sørg for, at du har indtastet en gyldig adresse i konfigurationen af din widget"
+      }
+    }
+  }
+}

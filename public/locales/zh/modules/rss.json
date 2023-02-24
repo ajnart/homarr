@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "RSS小工具",
+    "description": "从RSS提要中抓取项目并显示它们。常用于在线新闻",
+    "settings": {
+      "title": "设置RSS小部件",
+      "rssFeedUrl": {
+        "label": "RSS订阅网址"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "general": {
+        "title": "无法检索到RSS源",
+        "text": "触发RSS 种子时出现问题。 请确保您&apos;ve 正确配置了种子并使用一个符合官方标准规格的有效RSS url。 更新种子后，您可能需要保存您的面板并刷新页面。"
+      }
+    }
+  }
+}

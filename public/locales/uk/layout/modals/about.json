@@ -8,6 +8,7 @@
 		"version": "Версія",
 		"nodeEnvironment": "",
 		"i18n": "",
-		"locales": ""
+		"locales": "",
+		"experimental_disableEditMode": "<b>ЕКСПЕРИМЕНТАЛЬНО</b>: Вимкнути режим редагування"
 	}
 }

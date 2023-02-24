@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": ""
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "session": "",
+        "user": "",
+        "currentlyPlaying": ""
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@
 		"version": "版本",
 		"nodeEnvironment": "节点环境",
 		"i18n": "加载了I18n翻译名称空间",
-		"locales": "配置的I18n区域设置"
+		"locales": "配置的I18n区域设置",
+		"experimental_disableEditMode": ""
 	}
 }

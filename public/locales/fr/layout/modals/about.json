@@ -8,6 +8,7 @@
 		"version": "Version",
 		"nodeEnvironment": "Environnement Node",
 		"i18n": "Traductions I18n chargées",
-		"locales": "Locales I18n configurées"
+		"locales": "Locales I18n configurées",
+		"experimental_disableEditMode": "<b>EXPÉRIMENTAL</b> : désactiver le mode édition"
 	}
 }

@@ -16,7 +16,7 @@
     "description": "L'icône qui est utilisé devant le nom de votre onglet"
   },
   "background": {
-    "label": "Contexte"
+    "label": "Fond"
   },
   "customCSS": {
     "label": "CSS personnalisé",

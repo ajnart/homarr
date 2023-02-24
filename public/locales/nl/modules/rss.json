@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "RSS Widget",
+    "description": "Pakt de items uit een RSS-feed en geeft ze weer. Wordt vaak gebruikt voor online nieuws",
+    "settings": {
+      "title": "Instellingen voor RSS widget",
+      "rssFeedUrl": {
+        "label": "RSS feed URL"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "general": {
+        "title": "Kan RSS feed niet ophalen",
+        "text": "Er was een probleem met het bereiken van de RSS feed. Zorg ervoor dat je de feed correct hebt geconfigureerd en een geldige RSS URL gebruikt, die overeenkomt met de officiële standaardspecificatie. Nadat u de feed hebt bijgewerkt, moet u mogelijk uw dashboard opslaan en de pagina vernieuwen."
+      }
+    }
+  }
+}

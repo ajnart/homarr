@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "FeedUrl": {
+        "label": ""
+      },
+      "autoPlay": {
+        "label": ""
+      },
+      "muted": {
+        "label": ""
+      },
+      "controls": {
+        "label": ""
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": ""
+  }
+}

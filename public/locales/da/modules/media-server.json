@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Medieserver",
+    "description": "Interagere med din Jellyfin- eller Plex-medieserver",
+    "settings": {
+      "title": "Indstillinger for medieserver widget"
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "session": "Session",
+        "user": "Bruger",
+        "currentlyPlaying": "Afspiller i øjeblikket"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Kunne ikke indlæse indholdet",
+        "text": "Det er ikke muligt at hente oplysninger fra serveren. Se venligst logfilerne for at få flere oplysninger"
+      }
+    }
+  }
+}

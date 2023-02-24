@@ -9,6 +9,72 @@
       },
       "usePercentages": {
         "label": "Mostrar porcentajes"
+      },
+      "columns": {
+        "label": "Mostrar columnas"
+      },
+      "graphHeight": {
+        "label": "Altura de gráficos"
+      },
+      "graphsOrder": {
+        "label": "Gráficos (Órden)",
+        "storage": {
+          "label": "Almacenamiento",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          },
+          "compactView": {
+            "label": "Mostrar como texto (compacto)"
+          },
+          "multiView": {
+            "label": "Mostrar como vistas de varias unidades"
+          }
+        },
+        "network": {
+          "label": "Red",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          },
+          "compactView": {
+            "label": "Mostrar como texto (compacto)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          },
+          "multiView": {
+            "label": "Mostrar como vistas multi-core"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          }
+        }
       }
     }
   },

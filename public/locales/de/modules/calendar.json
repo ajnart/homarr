@@ -3,7 +3,7 @@
     "name": "Kalender",
     "description": "Zeigt einen Kalender mit anstehenden Veröffentlichungen von unterstützten Widgets an.",
     "settings": {
-      "title": "Einstellungen für das Kalender Widget",
+      "title": "Kalender Widget Einstellungen",
       "useSonarrv4": {
         "label": "Sonarr v4 API verwenden"
       },

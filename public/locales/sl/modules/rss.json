@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "RSS pripomoček",
+    "description": "Prevzame elemente iz vira RSS in jih prikaže. Običajno se uporablja za spletne novice",
+    "settings": {
+      "title": "Nastavitve za RSS pripomoček",
+      "rssFeedUrl": {
+        "label": "URL naslov vira RSS"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "general": {
+        "title": "Ni mogoče pridobiti vira RSS",
+        "text": "Prišlo je do težave pri doseganju vira RSS. Prepričajte se, da ste pravilno nastavili vir in uporabili veljavni URL naslov RSS, ki ustreza uradni standardni specifikaciji. Po posodobitvi vira boste morda morali shraniti nadzorno ploščo in osvežiti stran."
+      }
+    }
+  }
+}

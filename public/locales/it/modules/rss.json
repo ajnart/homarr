@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "Widget RSS",
+    "description": "Ottiene gli oggetti da un feed RSS e li visualizza. Utilizzati comunemente per le notizie online",
+    "settings": {
+      "title": "Impostazioni del widget RSS",
+      "rssFeedUrl": {
+        "label": "RSS feed url"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "general": {
+        "title": "Impossibile recuperare il feed RSS",
+        "text": "Si è verificato un problema nel raggiungere il feed RSS. Assicurarsi di aver configurato correttamente il feed e di utilizzare un url RSS valido, che corrisponda alle specifiche standard ufficiali. Dopo aver aggiornato il feed, potrebbe essere necessario salvare la dashboard e aggiornare la pagina."
+      }
+    }
+  }
+}
