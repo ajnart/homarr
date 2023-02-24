@@ -50,7 +50,7 @@
         "text": "Fügen Sie einen unterstützten Torrent Client hinzu, um Ihre aktuellen Downloads anzuzeigen"
       },
       "generic": {
-        "title": "Ein unerwarteter Fehler ist aufgetreten",
+        "title": "",
         "text": "Homarr konnte nicht mit Ihren Torrent Clients kommunizieren. Bitte überprüfen Sie Ihre Konfiguration"
       }
     },
