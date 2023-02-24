@@ -1,8 +1,6 @@
 {
-	"xPosition": "Posisjon for X akse",
 	"width": "Bredde",
 	"height": "Høyde",
-	"yPosition": "Posisjon for Y akse",
 	"zeroOrHigher": "0 eller høyere",
 	"betweenXandY": "Mellom {{min}} og {{max}}"
 }
