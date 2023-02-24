@@ -2,7 +2,7 @@
   "title": "検索エンジン",
   "configurationName": "検索エンジンの設定",
   "tips": {
-    "generalTip": "複数の接頭辞を使用することができます。これらをクエリの前に追加することで、結果をフィルタリングすることができます。s (ウェブ)、 !t (トレント)、 !y (YouTube)、 !m (メディア).",
+    "generalTip": "",
     "placeholderTip": "%s は、クエリのプレースホルダとして使用することができます。"
   },
   "customEngine": {
