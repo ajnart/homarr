@@ -9,13 +9,13 @@
   "version": "Versjon",
   "changePosition": "Endre posisjon",
   "remove": "Fjern",
-  "removeConfirm": "Er du sikker på at du vil fjerne {{item}}?",
+  "removeConfirm": "",
   "sections": {
     "settings": "Innstillinger",
     "dangerZone": "Faresonen"
   },
   "secrets": {
-    "apiKey": "API-nøkkel",
+    "apiKey": "",
     "username": "Brukernavn",
     "password": "Passord"
   },
