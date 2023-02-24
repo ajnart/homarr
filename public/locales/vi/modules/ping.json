@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "Hiển thị chỉ báo trạng thái dựa trên mã phản hồi HTTP của URL được chỉ định."
+    "description": ""
   },
   "states": {
     "online": "Trực tuyến {{response}}",
