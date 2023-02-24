@@ -9,13 +9,13 @@
   "version": "Verzia",
   "changePosition": "Zmeniť pozíciu",
   "remove": "Odstrániť",
-  "removeConfirm": "Ste si istý ze chcete odstrániť {{item}} ?",
+  "removeConfirm": "",
   "sections": {
     "settings": "Nastavenia",
     "dangerZone": "Nebezpečná zóna"
   },
   "secrets": {
-    "apiKey": "Api kľúč",
+    "apiKey": "",
     "username": "Používateľské meno",
     "password": "Heslo"
   },
