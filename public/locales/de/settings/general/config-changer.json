@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Bestätigen Sie die Löschung Ihrer Konfiguration",
-      "warningText": "Sie sind dabei, '<b>{{configName}}</b>' zu löschen",
-      "text": "Bitte beachten Sie, dass die Löschung nicht rückgängig gemacht werden kann und Ihre Konfigurations Daten dauerhaft verloren gehen. Nachdem Sie auf diese Schaltfläche geklickt haben, wird die Konfiguration dauerhaft gelöscht. Stellen Sie sicher, dass Sie ein angemessenes Backup dieser Datei erstellen.",
+      "warningText": "",
+      "text": "",
       "buttons": {
         "confirm": "Ja, lösche die folgende Konfiguration: '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "Löschung der Konfiguration fehlgeschlagen"
         },
         "deleteFailedDefaultConfig": {
-          "title": "Die Standardkonfiguration kann nicht gelöscht werden",
+          "title": "",
           "message": "Die Konfiguration wurde nicht vom System gelöscht"
         }
       }
