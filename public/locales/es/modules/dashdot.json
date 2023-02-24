@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Muestra los gráficos de una instancia de Dash. externa, dentro de Homarr.",
+    "description": "",
     "settings": {
       "title": "Ajustes para el widget Dash.",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "No se puede obtener información de Dash. - ¿estás utilizando la última versión?",
       "protocolDowngrade": {
         "title": "Degradación de protocolo detectada",
-        "text": "El protocolo de tu instancia Dash. está siendo degradado. Esto es un riesgo de seguridad, debido a que HTTP no está cifrado, y los atacantes pueden abusar de esta conexión. Asegúrate de que Dash. esté ejecutándo en HTTPS también, o degrada Homarr a HTTP (no recomendado)."
+        "text": ""
       }
     },
     "graphs": {
