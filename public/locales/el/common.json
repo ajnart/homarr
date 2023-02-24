@@ -9,13 +9,13 @@
   "version": "Έκδοση",
   "changePosition": "Αλλαγή θέσης",
   "remove": "Αφαίρεση",
-  "removeConfirm": "Είστε σίγουροι ότι θέλετε να καταργήσετε το {{item}} ;",
+  "removeConfirm": "",
   "sections": {
     "settings": "Ρυθμίσεις",
     "dangerZone": "Επικίνδυνη Περιοχή"
   },
   "secrets": {
-    "apiKey": "Κλειδί Api",
+    "apiKey": "",
     "username": "Όνομα Χρήστη",
     "password": "Κωδικός"
   },
