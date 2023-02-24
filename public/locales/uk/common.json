@@ -9,13 +9,13 @@
   "version": "Версія",
   "changePosition": "Змінити положення",
   "remove": "Видалити",
-  "removeConfirm": "Ви впевнені, що хочете видалити {{item}} ?",
+  "removeConfirm": "",
   "sections": {
     "settings": "Налаштування",
     "dangerZone": "Небезпечна зона"
   },
   "secrets": {
-    "apiKey": "Ключ API",
+    "apiKey": "",
     "username": "Логін",
     "password": "Пароль"
   },
