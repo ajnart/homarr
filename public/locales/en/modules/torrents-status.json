@@ -50,7 +50,7 @@
         "text": "Add a supported Torrent client to view your current downloads"
       },
       "generic": {
-        "title": "An unexpected error occurred",
+        "title": "",
         "text": "Homarr was unable to communicate with your Torrent clients. Please check your configuration"
       }
     },
