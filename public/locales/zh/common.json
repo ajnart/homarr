@@ -9,13 +9,13 @@
   "version": "版本",
   "changePosition": "改变位置",
   "remove": "移除",
-  "removeConfirm": "确定要删除 {{item}} 吗？",
+  "removeConfirm": "",
   "sections": {
     "settings": "设置",
     "dangerZone": "危险操作"
   },
   "secrets": {
-    "apiKey": "Api密钥",
+    "apiKey": "",
     "username": "用户名",
     "password": "密码"
   },
