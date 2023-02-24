@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "IFrame",
+    "name": "",
     "description": "嵌入互联网上的任何内容。一些网站可能限制访问。",
     "settings": {
-      "title": "IFrame设置",
+      "title": "",
       "embedUrl": {
         "label": "嵌入URL"
       },
