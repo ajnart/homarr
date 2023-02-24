@@ -2,7 +2,7 @@
   "title": "Motor de busca",
   "configurationName": "Configuração do motor de busca",
   "tips": {
-    "generalTip": "Há vários prefixos que pode usar! A adição destes infratores da sua consulta irá filtrar os resultados. !s (Web), !t (Torrents), !y (YouTube), e !m (Media).",
+    "generalTip": "",
     "placeholderTip": "%s pode ser utilizado como um local para a consulta."
   },
   "customEngine": {
