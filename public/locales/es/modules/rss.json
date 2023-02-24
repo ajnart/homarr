@@ -5,7 +5,7 @@
     "settings": {
       "title": "Ajustes para el widget RSS",
       "rssFeedUrl": {
-        "label": "url de la fuente RSS"
+        "label": "URL de la fuente RSS"
       }
     }
   },
@@ -13,7 +13,7 @@
     "errors": {
       "general": {
         "title": "Imposible recuperar la fuente RSS",
-        "text": "Hubo un problema al comunicarse con la fuente RSS. Asegúrate de haber configurado el feed correctamente y utiliza una URL de RSS válida que coincida con la especificación estándar oficial. Después de actualizar el feed, es posible que debas guardar tu dashboard y actualizar la página."
+        "text": "Hubo un problema al contactar con el feed RSS. Asegúrate de haber configurado correctamente la fuente RSS usando una URL válida. Las URLs deben coincidir con la especificación oficial. Después de actualizar la fuente, deberás refrescar el dashboard."
       }
     }
   }
