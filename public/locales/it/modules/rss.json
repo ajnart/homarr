@@ -13,7 +13,7 @@
     "errors": {
       "general": {
         "title": "Impossibile recuperare il feed RSS",
-        "text": "Si è verificato un problema nel raggiungere il feed RSS. Assicurarsi di aver configurato correttamente il feed e di utilizzare un url RSS valido, che corrisponda alle specifiche standard ufficiali. Dopo aver aggiornato il feed, potrebbe essere necessario salvare la dashboard e aggiornare la pagina."
+        "text": ""
       }
     }
   }
