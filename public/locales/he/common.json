@@ -9,13 +9,13 @@
   "version": "גרסה",
   "changePosition": "שנה מיקום",
   "remove": "הסר",
-  "removeConfirm": "האם אתה בטוח שברצונך להסיר את  {{item}} ?",
+  "removeConfirm": "",
   "sections": {
     "settings": "הגדרות",
     "dangerZone": "אזור מסוכן"
   },
   "secrets": {
-    "apiKey": "מפתח API",
+    "apiKey": "",
     "username": "שם משתמש",
     "password": "סיסמה"
   },
