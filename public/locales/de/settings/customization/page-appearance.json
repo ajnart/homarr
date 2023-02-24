@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta Titel",
-    "description": "Der Titel, der als Tab-Name angezeigt wird"
+    "description": ""
   },
   "logo": {
     "label": "Logo",
-    "description": "Der Logo des Dashboards oben links"
+    "description": ""
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Das Symbol, das vor dem Namen Ihres Tabs verwendet wird"
+    "description": ""
   },
   "background": {
     "label": "Hintergrund"
   },
   "customCSS": {
     "label": "Benutzerdefiniertes CSS",
-    "description": "Anpassen aller Elemente auf Ihrem Dashboard, nur für erfahrene Benutzer empfohlen",
+    "description": "",
     "placeholder": "Benutzerdefiniertes CSS wird zuletzt angewendet",
     "applying": "CSS wird übernommen..."
   },
