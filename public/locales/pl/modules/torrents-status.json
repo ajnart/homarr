@@ -50,7 +50,7 @@
         "text": "Dodaj obsługiwanego klienta sieci Torrent, aby wyświetlić aktualnie pobierane pliki"
       },
       "generic": {
-        "title": "Wystąpił nieoczekiwany błąd",
+        "title": "",
         "text": "Program Homarr nie mógł się skomunikować z Twoim klientem Torrent. Proszę sprawdzić swoją konfigurację"
       }
     },
