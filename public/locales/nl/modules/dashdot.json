@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Toont de grafieken van een externe Dash. instantie binnen Homarr.",
+    "description": "",
     "settings": {
       "title": "Instellingen voor Dash. widget",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "Kan geen informatie verkrijgen van dash. - gebruikt u de laatste versie?",
       "protocolDowngrade": {
         "title": "Protocol downgrade gedetecteerd",
-        "text": "Het protocol voor uw Dash. instantie wordt gedegradeerd. Dit vormt een risico voor de beveiliging, aangezien HTTP ongecodeerd is en aanvallers deze verbinding kunnen misbruiken. Zorg ervoor dat Dash. wordt uitgevoerd op HTTPS of downgrade Homarr naar HTTP (niet aanbevolen)."
+        "text": ""
       }
     },
     "graphs": {
