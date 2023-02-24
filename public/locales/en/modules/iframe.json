@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "iFrame",
+    "name": "",
     "description": "Embed any content from the internet. Some websites may restrict access.",
     "settings": {
-      "title": "iFrame settings",
+      "title": "",
       "embedUrl": {
         "label": "Embed URL"
       },
@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Enter an URL",
+        "title": "Enter a URL",
         "text": "Ensure that you've entered a valid address in the configuration of your widget"
       }
     }
