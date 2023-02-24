@@ -50,7 +50,7 @@
         "text": "Thêm ứng dụng torrent được hỗ trợ để xem các bản tải xuống hiện tại"
       },
       "generic": {
-        "title": "Đã xảy ra lỗi không mong muốn",
+        "title": "",
         "text": "Homarr không thể giao tiếp với ứng dụng torrent của bạn. Vui lòng kiểm tra lại cấu hình"
       }
     },
