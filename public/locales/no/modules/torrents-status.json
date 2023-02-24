@@ -50,7 +50,7 @@
         "text": "Legg til en støttet Torrent-klient for å se de nåværende nedlastingene"
       },
       "generic": {
-        "title": "En uventet feil har oppstått",
+        "title": "",
         "text": "Homarr kunne ikke kommunisere med dine Torrent-klienter. Kontroller konfigurasjonen"
       }
     },
