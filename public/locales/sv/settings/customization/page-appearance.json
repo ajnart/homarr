@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Metatitel",
-    "description": "Titeln som visas som fliknamn"
+    "description": ""
   },
   "logo": {
     "label": "Logotyp",
-    "description": "Instrumentbrädans logotyp längst upp till vänster"
+    "description": ""
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Ikonen, som används framför flikens namn"
+    "description": ""
   },
   "background": {
     "label": "Bakgrund"
   },
   "customCSS": {
     "label": "Anpassad CSS",
-    "description": "Anpassa alla element på instrumentpanelen, rekommenderas endast för erfarna användare",
+    "description": "",
     "placeholder": "Anpassad CSS tillämpas sist",
     "applying": "Tillämpar CSS..."
   },
