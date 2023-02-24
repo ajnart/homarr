@@ -5,10 +5,10 @@
     "settings": {
       "title": "Nastavitve za gradnik videoprenosa",
       "FeedUrl": {
-        "label": "URL naslov pretoka"
+        "label": ""
       },
       "autoPlay": {
-        "label": "Samodejno predvajanje"
+        "label": ""
       },
       "muted": {
         "label": "Utišani zvok"
