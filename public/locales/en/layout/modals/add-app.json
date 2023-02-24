@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "General",
-		"behaviour": "Behavior",
+		"behaviour": "",
 		"network": "Network",
 		"appearance": "Appearance",
 		"integration": "Integration"
@@ -39,14 +39,14 @@
 	"appearance": {
 		"icon": {
 			"label": "App Icon",
-			"description": "Choose a an icon to be displayed on your dashboard. Choose from {{suggestionsCount}} icons or enter your own URL",
+			"description": "Choose an icon to be displayed on your dashboard. Choose from {{suggestionsCount}} icons or enter your own URL",
 			"autocomplete": {
-				"title": "No results found",
-				"text": "Try to use a more specific search term. If you can't find your desired icon, paste the image URL above for a custom icon"
+				"title": "",
+				"text": ""
 			},
 			"noItems": {
-				"title": "Loading external icons",
-				"text": "This may take a few seconds"
+				"title": "",
+				"text": ""
 			}
 		}
 	},
