@@ -13,7 +13,7 @@
     "errors": {
       "general": {
         "title": "Nie je možné načítať kanál RSS",
-        "text": "Vyskytol sa problém s kontaktovaním informačného kanála RSS. Uistite sa, že ste &apos; informačný kanál správne nakonfigurovali a používate platnú adresu URL RSS, ktorá zodpovedá oficiálnej štandardnej špecifikácii. Po aktualizácii informačného kanála možno budete musieť uložiť informačný panel a obnoviť stránku."
+        "text": ""
       }
     }
   }
