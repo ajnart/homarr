@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Hiển thị biểu đồ của Dash. bên trong Homarr.",
+    "description": "",
     "settings": {
       "title": "Cài đặt cho tiện ích Dash.",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?",
       "protocolDowngrade": {
         "title": "Phát hiện hạ cấp giao thức",
-        "text": "Giao thức cho phiên bản Dash của bạn. không ở chế độ bảo mật. Đây được coi là rủi ro bảo mật vì HTTP không hỗ trợ mã hóa và những kẻ tấn công có thể lạm dụng nó. Hãy chắc chắn rằng Dash. hoạt động ở chế độ HTTPS hoặc xóa chế độ HTTPS khỏi Homarr (không được khuyến nghị)."
+        "text": ""
       }
     },
     "graphs": {
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": "RAM"
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
