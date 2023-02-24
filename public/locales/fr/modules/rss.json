@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "Widget RSS",
+    "description": "",
+    "settings": {
+      "title": "",
+      "rssFeedUrl": {
+        "label": "URL du flux RSS"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "general": {
+        "title": "Impossible de récupérer le flux RSS",
+        "text": ""
+      }
+    }
+  }
+}

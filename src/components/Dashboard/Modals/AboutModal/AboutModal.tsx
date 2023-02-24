@@ -9,6 +9,7 @@ import {
   Group,
   HoverCard,
   Modal,
+  Stack,
   Table,
   Text,
   Title,
@@ -18,6 +19,7 @@ import {
   IconBrandDiscord,
   IconBrandGithub,
   IconFile,
+  IconKey,
   IconLanguage,
   IconSchema,
   IconVersions,
@@ -31,6 +33,7 @@ import Image from 'next/image';
 import { ReactNode } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
+import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
 import { usePrimaryGradient } from '../../../layout/useGradient';
 import Credits from '../../../Settings/Common/Credits';
@@ -82,10 +85,17 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
                   <ActionIcon className={classes.informationIcon} variant="default">
                     {item.icon}
                   </ActionIcon>
-                  {t(`layout/modals/about:metrics.${item.label}`)}
+                  <Text>
+                    <Trans
+                      i18nKey={`layout/modals/about:metrics.${item.label}`}
+                      components={{ b: <b /> }}
+                    />
+                  </Text>
                 </Group>
               </td>
-              <td className={classes.informationTableColumn}>{item.content}</td>
+              <td className={classes.informationTableColumn} style={{ maxWidth: 200 }}>
+                {item.content}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -153,11 +163,33 @@ interface ExtendedInitOptions extends InitOptions {
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
   const colorGradiant = usePrimaryGradient();
   const { attributes } = usePackageAttributesStore();
+  const { editModeEnabled } = useEditModeInformationStore();
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
 
   let items: InformationTableItem[] = [];
+
+  if (editModeEnabled) {
+    items = [
+      ...items,
+      {
+        icon: <IconKey size={20} />,
+        label: 'experimental_disableEditMode',
+        content: (
+          <Stack>
+            <Badge color="red">WARNING</Badge>
+            <Text color="red" size="xs">
+              This is an experimental feature, where the edit mode is disabled entirely - no config
+              modifications are possbile anymore. All update requests for the config will be dropped
+              on the API. This will be removed in future versions, as Homarr will receive a proper
+              authentication system, which will make this obsolete.
+            </Text>
+          </Stack>
+        ),
+      },
+    ];
+  }
 
   if (i18n !== null) {
     const usedI18nNamespaces = i18n.reportNamespaces.getUsedNamespaces();

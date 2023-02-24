@@ -4,23 +4,77 @@
     "description": "Homarr内部の外部Dash.インスタンスのグラフを表示します。",
     "settings": {
       "title": "Dash.ウィジェットの設定",
-      "cpuMultiView": {
-        "label": "CPUマルチコアビュー"
-      },
-      "storageMultiView": {
-        "label": "ストレージマルチドライブビュー"
-      },
-      "useCompactView": {
-        "label": "コンパクトビューを使用する"
-      },
-      "graphs": {
-        "label": "グラフ"
-      },
       "url": {
         "label": "ダッシュURL"
       },
       "usePercentages": {
         "label": ""
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "ストレージ",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "ネットワーク",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -28,7 +82,11 @@
     "title": "ダッシュ",
     "errors": {
       "noService": "Dash.サービスが見当たりません。HOMARダッシュボードに追加するか、モジュールオプションでDash.サービスを設定してください。のURLをモジュールオプションで設定してください。",
-      "noInformation": "dashから情報を取得できません。- は最新版ですか？"
+      "noInformation": "dashから情報を取得できません。- は最新版ですか？",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
@@ -46,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "ラム"
       },
       "gpu": {

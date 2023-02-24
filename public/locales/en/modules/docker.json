@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "Add app",
-      "message": "Add app Homarr"
+      "message": "Add app to Homarr"
     },
     "restart": {
       "title": "Restart"

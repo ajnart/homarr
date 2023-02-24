@@ -1,26 +1,80 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Displays the graphs of an external Dash. instance inside of Homarr.",
+    "description": "Displays the graphs of an external Dash. Instance inside Homarr.",
     "settings": {
       "title": "Settings for Dash. widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Core View"
-      },
-      "storageMultiView": {
-        "label": "Storage Multi-Drive View"
-      },
-      "useCompactView": {
-        "label": "Use Compact View"
-      },
-      "graphs": {
-        "label": "Graphs"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": "Display percentages"
+      },
+      "columns": {
+        "label": "Display columns"
+      },
+      "graphHeight": {
+        "label": "Height of graphs"
+      },
+      "graphsOrder": {
+        "label": "Graphs (Order)",
+        "storage": {
+          "label": "Storage",
+          "enabled": {
+            "label": "Show in widget"
+          },
+          "span": {
+            "label": "Column span"
+          },
+          "compactView": {
+            "label": "Show as text (compact)"
+          },
+          "multiView": {
+            "label": "Show as multi-drive-view"
+          }
+        },
+        "network": {
+          "label": "Network",
+          "enabled": {
+            "label": "Show in widget"
+          },
+          "span": {
+            "label": "Column span"
+          },
+          "compactView": {
+            "label": "Show as text (compact)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Show in widget"
+          },
+          "span": {
+            "label": "Column span"
+          },
+          "multiView": {
+            "label": "Show as multi-core-view"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Show in widget"
+          },
+          "span": {
+            "label": "Column span"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Show in widget"
+          },
+          "span": {
+            "label": "Column span"
+          }
+        }
       }
     }
   },
@@ -31,7 +85,7 @@
       "noInformation": "Cannot acquire information from dash. - are you running the latest version?",
       "protocolDowngrade": {
         "title": "Detected protocol downgrade",
-        "text": "The protocol to your Dash. instance is being downgraded. This is security risk, since HTTP is unencrypted and attackers could abuse this connection. Make sure that Dash. is running on HTTPS too or downgrade Homarr to HTTP (not recommended)."
+        "text": "The connection to your Dash. instance is using HTTP. This is a security risk, because HTTP is unencrypted and attackers could abuse this connection. Make sure that Dash. is using HTTPS, or downgrade Homarr to HTTP (not recommended)."
       }
     },
     "graphs": {
@@ -50,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

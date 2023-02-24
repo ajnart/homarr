@@ -1,0 +1,23 @@
+{
+  "descriptor": {
+    "name": "iFrame",
+    "description": "",
+    "settings": {
+      "title": "iFrame Instellingen",
+      "embedUrl": {
+        "label": ""
+      },
+      "allowFullScreen": {
+        "label": "Volledig scherm toestaan"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "Voer URL in",
+        "text": "Zorg ervoor dat je een geldig adres hebt ingevoerd in de configuratie van je widget"
+      }
+    }
+  }
+}

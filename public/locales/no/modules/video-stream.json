@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Videostrømming",
+    "description": "Bygg inn en videostrøm eller video fra et kamera eller et nettsted",
+    "settings": {
+      "title": "Innstillinger for videostrøm widget",
+      "FeedUrl": {
+        "label": "Feed URL"
+      },
+      "autoPlay": {
+        "label": "Automatisk avspilling"
+      },
+      "muted": {
+        "label": "Dempet lyd"
+      },
+      "controls": {
+        "label": "Kontroll av videospiller"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Ugyldig strøm"
+  }
+}

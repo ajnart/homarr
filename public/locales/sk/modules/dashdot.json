@@ -1,0 +1,115 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Zobrazovať grafy externej Dash. vo vnútri Homarru.",
+    "settings": {
+      "title": "Nastavenia pre Dash. mini aplikácie",
+      "url": {
+        "label": "Dash. URL adresa"
+      },
+      "usePercentages": {
+        "label": "Zobraziť percentá"
+      },
+      "columns": {
+        "label": "Zobraziť stĺpce"
+      },
+      "graphHeight": {
+        "label": "Výška grafov"
+      },
+      "graphsOrder": {
+        "label": "Grafy (poradie)",
+        "storage": {
+          "label": "Úložisko",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          },
+          "compactView": {
+            "label": "Zobraziť ako text (kompaktný)"
+          },
+          "multiView": {
+            "label": "Zobraziť ako multi-drive-view"
+          }
+        },
+        "network": {
+          "label": "Sieť",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          },
+          "compactView": {
+            "label": "Zobraziť ako text (kompaktný)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          },
+          "multiView": {
+            "label": "Zobraziť ako viacjadrové zobrazenie"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Žiadna Dash. služba nájdená. Pridajte službu na svoj informačný panel Homarr alebo nastavte Dash. URL v možnostiach modulu",
+      "noInformation": "Nie je možné získať informácie z Dash. - používate najnovšiu verziu?",
+      "protocolDowngrade": {
+        "title": "Zistený downgrade protokol",
+        "text": "Protokol k vášmu Dash. inštancii sa downgraduje. Ide o bezpečnostné riziko, pretože HTTP je nešifrované a útočníci by mohli toto pripojenie zneužiť. Uistite sa, že Dash. beží aj na HTTPS alebo downgradujte Homarr na HTTP (neodporúča sa)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Úložisko",
+        "label": "Úložisko:"
+      },
+      "network": {
+        "title": "Sieť",
+        "label": "Sieť:",
+        "metrics": {
+          "download": "Dole",
+          "upload": "Hore"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "ram": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

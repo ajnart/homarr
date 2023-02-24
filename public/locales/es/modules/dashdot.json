@@ -4,23 +4,77 @@
     "description": "Muestra los gráficos de una instancia de Dash. externa, dentro de Homarr.",
     "settings": {
       "title": "Ajustes para el widget Dash.",
-      "cpuMultiView": {
-        "label": "Vista CPU Multinúcleo"
-      },
-      "storageMultiView": {
-        "label": "Vista Almacenamiento Multidisco"
-      },
-      "useCompactView": {
-        "label": "Usar vista Compacta"
-      },
-      "graphs": {
-        "label": "Gráficos"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": "Mostrar porcentajes"
+      },
+      "columns": {
+        "label": "Mostrar columnas"
+      },
+      "graphHeight": {
+        "label": "Altura de gráficos"
+      },
+      "graphsOrder": {
+        "label": "Gráficos (Órden)",
+        "storage": {
+          "label": "Almacenamiento",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          },
+          "compactView": {
+            "label": "Mostrar como texto (compacto)"
+          },
+          "multiView": {
+            "label": "Mostrar como vistas de varias unidades"
+          }
+        },
+        "network": {
+          "label": "Red",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          },
+          "compactView": {
+            "label": "Mostrar como texto (compacto)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          },
+          "multiView": {
+            "label": "Mostrar como vistas multi-core"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Mostrar en widget"
+          },
+          "span": {
+            "label": "Espacio de columna (span)"
+          }
+        }
       }
     }
   },
@@ -28,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "No se ha encontrado el servicio Dash. Por favor, añade uno al Panel de Control de Homarr o indica una URL de Dash. en las opciones del módulo",
-      "noInformation": "No se puede obtener información de Dash. - ¿estás utilizando la última versión?"
+      "noInformation": "No se puede obtener información de Dash. - ¿estás utilizando la última versión?",
+      "protocolDowngrade": {
+        "title": "Degradación de protocolo detectada",
+        "text": "El protocolo de tu instancia Dash. está siendo degradado. Esto es un riesgo de seguridad, debido a que HTTP no está cifrado, y los atacantes pueden abusar de esta conexión. Asegúrate de que Dash. esté ejecutándo en HTTPS también, o degrada Homarr a HTTP (no recomendado)."
+      }
     },
     "graphs": {
       "storage": {
@@ -46,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

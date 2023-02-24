@@ -22,7 +22,7 @@ export function migrateConfig(config: Config): BackendConfigType {
       name: config.name ?? 'default',
     },
     categories: [],
-    widgets: migrateModules(config).filter(widget => widget !== null),
+    widgets: migrateModules(config).filter((widget) => widget !== null),
     apps: [],
     settings: {
       common: {
@@ -231,7 +231,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
               },
             },
             shape: {},
-          } as IDashDotTile;
+          } as unknown as IDashDotTile;
         }
         case 'date':
           return {

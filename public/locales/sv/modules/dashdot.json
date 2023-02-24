@@ -4,23 +4,77 @@
     "description": "Visar graferna för en extern Dash.-instans i Homarr.",
     "settings": {
       "title": "Inställningar för Dash. widget",
-      "cpuMultiView": {
-        "label": "Flerkärnig CPU vy"
-      },
-      "storageMultiView": {
-        "label": "Visning av flera lagringsenheter"
-      },
-      "useCompactView": {
-        "label": "Använd kompakt vy"
-      },
-      "graphs": {
-        "label": "Grafer"
-      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
         "label": "Visa procent"
+      },
+      "columns": {
+        "label": "Visa kolumner"
+      },
+      "graphHeight": {
+        "label": "Höjden på grafer"
+      },
+      "graphsOrder": {
+        "label": "Grafer (Ordning)",
+        "storage": {
+          "label": "Lagring",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          },
+          "compactView": {
+            "label": "Visa som text (kompakt)"
+          },
+          "multiView": {
+            "label": "Visa som flerenhetsvy"
+          }
+        },
+        "network": {
+          "label": "Nätverk",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          },
+          "compactView": {
+            "label": "Visa som text (kompakt)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          },
+          "multiView": {
+            "label": "Visa som flerkärningvy"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          }
+        }
       }
     }
   },
@@ -28,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Ingen Dash-tjänst hittades. Lägg till en i din Homarr-instrumentpanel eller ange en Dash. URL i modulalternativen.",
-      "noInformation": "Kan inte få information från dash. - Kör du den senaste versionen?"
+      "noInformation": "Kan inte få information från dash. - Kör du den senaste versionen?",
+      "protocolDowngrade": {
+        "title": "Nedgradering av protokoll upptäcktes",
+        "text": "Protokollet till din Dash.-instans håller på att nedgraderas. Detta är en säkerhetsrisk eftersom HTTP är okrypterat och angripare kan missbruka denna anslutning. Se till att Dash. också körs på HTTPS eller nedgradera Homarr till HTTP (rekommenderas inte)."
+      }
     },
     "graphs": {
       "storage": {
@@ -46,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

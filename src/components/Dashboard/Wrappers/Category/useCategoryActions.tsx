@@ -228,33 +228,37 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             ...previous.apps.filter((x) => !isAppAffectedFilter(x)),
             ...previous.apps
               .filter((x) => isAppAffectedFilter(x))
-              .map((app): AppType => ({
-                ...app,
-                area: {
-                  ...app.area,
-                  type: 'wrapper',
-                  properties: {
-                    ...app.area.properties,
-                    id: mainWrapperId,
+              .map(
+                (app): AppType => ({
+                  ...app,
+                  area: {
+                    ...app.area,
+                    type: 'wrapper',
+                    properties: {
+                      ...app.area.properties,
+                      id: mainWrapperId,
+                    },
                   },
-                },
-              })),
+                })
+              ),
           ],
           widgets: [
             ...previous.widgets.filter((widget) => !isWidgetAffectedFilter(widget)),
             ...previous.widgets
               .filter((widget) => isWidgetAffectedFilter(widget))
-              .map((widget): IWidget<string, any> => ({
-                ...widget,
-                area: {
-                  ...widget.area,
-                  type: 'wrapper',
-                  properties: {
-                    ...widget.area.properties,
-                    id: mainWrapperId,
+              .map(
+                (widget): IWidget<string, any> => ({
+                  ...widget,
+                  area: {
+                    ...widget.area,
+                    type: 'wrapper',
+                    properties: {
+                      ...widget.area.properties,
+                      id: mainWrapperId,
+                    },
                   },
-                },
-              })),
+                })
+              ),
           ],
           categories: previous.categories.filter((x) => x.id !== category.id),
           wrappers: previous.wrappers.filter((x) => x.position !== currentItem.position),

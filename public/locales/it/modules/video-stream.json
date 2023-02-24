@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Flusso Video",
+    "description": "Incorpora un flusso video o un video da una videocamera o da un sito web",
+    "settings": {
+      "title": "Impostazioni per il widget flusso video",
+      "FeedUrl": {
+        "label": "Url del feed"
+      },
+      "autoPlay": {
+        "label": "Auto play"
+      },
+      "muted": {
+        "label": "Audio mutato"
+      },
+      "controls": {
+        "label": "Controlli player video"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Flusso non valido"
+  }
+}

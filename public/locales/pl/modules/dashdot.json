@@ -4,23 +4,77 @@
     "description": "Wyświetla wykresy zewnętrznej instancji Dash. wewnątrz Homarr.",
     "settings": {
       "title": "Ustawienia dla widgetu Dash.",
-      "cpuMultiView": {
-        "label": "Widok wielordzeniowy procesora"
-      },
-      "storageMultiView": {
-        "label": "Widok wielu dysków"
-      },
-      "useCompactView": {
-        "label": "Użyj trybu kompaktowego"
-      },
-      "graphs": {
-        "label": "Wykresy"
-      },
       "url": {
         "label": "Adres URL usługi Dash."
       },
       "usePercentages": {
         "label": ""
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Pamięć",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Sieć",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -28,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Nie znaleziono usługi Dash. Proszę dodać ją do pulpitu Homarra lub ustawić adres URL usługi Dash. w opcjach modułu",
-      "noInformation": "Nie można uzyskać informacji z dash. - używasz najnowszej wersji?"
+      "noInformation": "Nie można uzyskać informacji z dash. - używasz najnowszej wersji?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
@@ -46,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

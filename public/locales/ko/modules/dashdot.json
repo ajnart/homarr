@@ -4,23 +4,77 @@
     "description": "",
     "settings": {
       "title": "",
-      "cpuMultiView": {
-        "label": "CPU 멀티 코어 보기"
-      },
-      "storageMultiView": {
-        "label": "저장소 모든 드라이브 보기"
-      },
-      "useCompactView": {
-        "label": "작은 모듈 사용"
-      },
-      "graphs": {
-        "label": "그래프"
-      },
       "url": {
         "label": "Dash. 주소"
       },
       "usePercentages": {
         "label": ""
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "저장소",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "네트워크",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -28,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Dash. 서비스를 찾을 수 없습니다. Homarr 대시보드에 추가하거나 모듈 옵션에서 Dash. URL을 설정해 주세요.",
-      "noInformation": "Dash. 에서 정보를 얻을 수 없습니다. 최신 버전을 사용 중인가요?"
+      "noInformation": "Dash. 에서 정보를 얻을 수 없습니다. 최신 버전을 사용 중인가요?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
@@ -46,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

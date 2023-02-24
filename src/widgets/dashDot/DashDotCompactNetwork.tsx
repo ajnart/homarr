@@ -24,7 +24,7 @@ export const DashDotCompactNetwork = ({ info }: DashDotCompactNetworkProps) => {
   const downSpeed = bytes.toPerSecondString(info?.network?.speedDown);
 
   return (
-    <Group noWrap align="start" position="apart" w="100%" maw="251px">
+    <Group noWrap align="start" position="apart" w="100%">
       <Text weight={500}>{t('card.graphs.network.label')}</Text>
       <Stack align="end" spacing={0}>
         <Group spacing={0}>
