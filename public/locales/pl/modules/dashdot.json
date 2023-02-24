@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Wyświetla wykresy zewnętrznej instancji Dash. wewnątrz Homarr.",
+    "description": "",
     "settings": {
       "title": "Ustawienia dla widgetu Dash.",
       "url": {
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": "RAM"
+        "title": ""
       },
       "gpu": {
         "title": "GPU"
