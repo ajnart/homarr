@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "IFrame",
+    "name": "",
     "description": "Встраивать любой контент из интернета. Некоторые веб-сайты могут ограничивать доступ.",
     "settings": {
-      "title": "Настройки IFrame",
+      "title": "",
       "embedUrl": {
         "label": "Вставить URL-адрес"
       },
