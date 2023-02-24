@@ -1,8 +1,6 @@
 {
-	"xPosition": "Vị trí trục X",
 	"width": "Chiều rộng",
 	"height": "Chiều cao",
-	"yPosition": "Vị trí trục Y",
 	"zeroOrHigher": "0 hoặc cao hơn",
 	"betweenXandY": "Giữa {{min}} và {{max}}"
 }
