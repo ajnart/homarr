@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Potrdite brisanje konfiguracije",
-      "warningText": "Želite izbrisati '<b>{{configName}}</b>'",
-      "text": "Upoštevajte, da izbrisa ni mogoče spremeniti in da bodo vaši podatki trajno izgubljeni. Ko kliknete ta gumb, bo datoteka trajno izbrisana z vašega diska. Poskrbite, da ustvarite ustrezno varnostno kopijo svoje konfiguracije.",
+      "warningText": "",
+      "text": "",
       "buttons": {
         "confirm": "Da, izbrišite '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "Brisanje konfiguracije ni uspelo"
         },
         "deleteFailedDefaultConfig": {
-          "title": "Privzete konfiguracije ni mogoče izbrisati",
+          "title": "",
           "message": "Konfiguracija ni bila izbrisana iz datotečnega sistema"
         }
       }
