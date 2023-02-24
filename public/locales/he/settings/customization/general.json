@@ -14,8 +14,8 @@
       "description": "התאם כותרות, לוגו ו-PWA"
     },
     "appereance": {
-      "name": "מראה חיצוני",
-      "description": "התאם אישית את הרקע, הצבעים ומראה האפליקציות"
+      "name": "מראה",
+      "description": ""
     }
   }
 }
