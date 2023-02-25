@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "iFrame",
     "description": "Vložte akýkoľvek obsah z internetu. Niektoré webové stránky môžu obmedziť prístup.",
     "settings": {
-      "title": "",
+      "title": "Nastavenia iFrame",
       "embedUrl": {
         "label": "Vložiť adresu URL"
       },
