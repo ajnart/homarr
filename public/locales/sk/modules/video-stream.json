@@ -5,10 +5,10 @@
     "settings": {
       "title": "Nastavenia pre mini aplikáciu videostreamu",
       "FeedUrl": {
-        "label": ""
+        "label": "Adresa URL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatické prehrávanie"
       },
       "muted": {
         "label": "Stlmiť zvuk"
