@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "iFrame",
     "description": "הטמע כל תוכן מהאינטרנט. חלק מהאתרים עשויים להגביל את הגישה.",
     "settings": {
-      "title": "",
+      "title": "הגדרות IFrame",
       "embedUrl": {
         "label": "הטמע כתובת אתר"
       },
