@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "כותרת דף",
-    "description": ""
+    "description": "הכותרת המוצגת בלשונית הדפדפן שלך"
   },
   "logo": {
     "label": "סמל",
-    "description": ""
+    "description": "הלוגו מוצג בצד שמאל למעלה"
   },
   "favicon": {
     "label": "אייקון לצד שם הדף",
-    "description": ""
+    "description": "הכותרת המוצגת בלשונית הדפדפן שלך"
   },
   "background": {
     "label": "רקע"
   },
   "customCSS": {
     "label": "CSS מותאם אישית",
-    "description": "",
+    "description": "יתר על כן, התאם את לוח המחוונים שלך באמצעות CSS, מומלץ רק למשתמשים מנוסים",
     "placeholder": "CSS מותאם אישית יוחל אחרון",
     "applying": "מחיל CSS..."
   },
