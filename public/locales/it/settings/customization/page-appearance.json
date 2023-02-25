@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Titolo meta",
-    "description": ""
+    "description": "Il titolo visualizzato nella scheda del browser"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Il logo visualizzato in alto a sinistra"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "L'icona visualizzata nella scheda del browser"
   },
   "background": {
     "label": "Sfondo"
   },
   "customCSS": {
     "label": "CSS personalizzato",
-    "description": "",
+    "description": "Inoltre, personalizza la dashboard utilizzando i CSS, consigliato solo agli utenti esperti",
     "placeholder": "I CSS personalizzati saranno applicati per ultimi",
     "applying": "Applicazione CSS..."
   },
