@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "iFrame",
     "description": "Einbetten von Inhalten aus dem Internet. Einige Websites können den Zugriff einschränken.",
     "settings": {
-      "title": "",
+      "title": "iFrame Einstellungen",
       "embedUrl": {
         "label": "URL einbetten"
       },
