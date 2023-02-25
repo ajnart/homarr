@@ -5,10 +5,10 @@
     "settings": {
       "title": "הגדרות עבור ווידג'ט זרם וידאו",
       "FeedUrl": {
-        "label": ""
+        "label": "כתובת הזנה"
       },
       "autoPlay": {
-        "label": ""
+        "label": "הפעלה אוטומטית"
       },
       "muted": {
         "label": "השתק קול"
