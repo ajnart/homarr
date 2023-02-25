@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta Titel",
-    "description": ""
+    "description": "Der in der Registerkarte Ihres Browsers angezeigte Titel"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Das oben links angezeigte Logo"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "Der in der Registerkarte Ihres Browsers angezeigte Symbol"
   },
   "background": {
     "label": "Hintergrund"
   },
   "customCSS": {
     "label": "Benutzerdefiniertes CSS",
-    "description": "",
+    "description": "Außerdem können Sie Ihr Dashboard mittels CSS anpassen, dies wird nur für erfahrene Benutzer empfohlen",
     "placeholder": "Benutzerdefiniertes CSS wird zuletzt angewendet",
     "applying": "CSS wird übernommen..."
   },
