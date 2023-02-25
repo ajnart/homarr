@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "מציג מופעי נתוני גרפים מ- Dash בתוך Homarr.",
     "settings": {
       "title": "הגדרות עבור וידג׳ט Dash.",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "אין מידע מ- Dash. האם אתה משתמש בגירסה העדכנית",
       "protocolDowngrade": {
         "title": "זוהה שדרוג לאחור של פרוטוקול",
-        "text": ""
+        "text": "הפרוטוקול ל-Dash שלך. המופע נמצא בדירוג לאחור. זהו סיכון אבטחה, מכיוון ש-HTTP אינו מוצפן ותוקפים עלולים לעשות שימוש לרעה בחיבור זה. ודא ש-Dash. פועל גם ב-HTTPS או שדרוג לאחור של Homarr ל-HTTP (לא מומלץ)."
       }
     },
     "graphs": {
