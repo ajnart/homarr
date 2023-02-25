@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Zeigt die Graphen einer externen Dash.-Instanz innerhalb von Homarr an.",
     "settings": {
       "title": "Einstellungen für Dash. Widget",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "Es können keine Informationen vom Dash. abgerufen werden. - Verwenden Sie die neueste Version?",
       "protocolDowngrade": {
         "title": "Protokoll-Downgrade erkannt",
-        "text": ""
+        "text": "Die Verbindung zu Ihrer Dash.-Instanz erfolgt über HTTP. Dies ist ein Sicherheitsrisiko, da HTTP unverschlüsselt ist und Angreifer diese Verbindung missbrauchen könnten. Stellen Sie sicher, dass Dash. HTTPS verwendet, oder setzen Sie Homarr auf HTTP herab (nicht empfohlen)."
       }
     },
     "graphs": {
