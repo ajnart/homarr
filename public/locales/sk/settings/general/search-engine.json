@@ -2,7 +2,7 @@
   "title": "Vyhľadávač",
   "configurationName": "Konfigurácia vyhľadávača",
   "tips": {
-    "generalTip": "",
+    "generalTip": "Môžete použiť viacero predpon! Ich pridaním pred dotaz sa výsledky vyfiltrujú. !s (Web), !t (Torrenty), !y (YouTube) a !m (Médiá).",
     "placeholderTip": "%s možno použiť ako zástupný symbol pre dotaz."
   },
   "customEngine": {
