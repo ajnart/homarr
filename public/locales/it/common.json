@@ -9,13 +9,13 @@
   "version": "Versione",
   "changePosition": "Cambia posizione",
   "remove": "Rimuovi",
-  "removeConfirm": "",
+  "removeConfirm": "Siete sicuri di voler rimuovere {{item}}?",
   "sections": {
     "settings": "Impostazioni",
     "dangerZone": "Danger zone"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Chiave API",
     "username": "Nome utente",
     "password": "Password"
   },
