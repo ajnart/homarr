@@ -9,6 +9,72 @@
       },
       "usePercentages": {
         "label": "Visa procent"
+      },
+      "columns": {
+        "label": "Visa kolumner"
+      },
+      "graphHeight": {
+        "label": "Höjden på grafer"
+      },
+      "graphsOrder": {
+        "label": "Grafer (Ordning)",
+        "storage": {
+          "label": "Lagring",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          },
+          "compactView": {
+            "label": "Visa som text (kompakt)"
+          },
+          "multiView": {
+            "label": "Visa som flerenhetsvy"
+          }
+        },
+        "network": {
+          "label": "Nätverk",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          },
+          "compactView": {
+            "label": "Visa som text (kompakt)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          },
+          "multiView": {
+            "label": "Visa som flerkärningvy"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Visa på widget"
+          },
+          "span": {
+            "label": "Spännvidd för kolumnen"
+          }
+        }
       }
     }
   },

@@ -9,6 +9,72 @@
       },
       "usePercentages": {
         "label": "הצג אחוזים"
+      },
+      "columns": {
+        "label": "הצג עמודות"
+      },
+      "graphHeight": {
+        "label": "גובה הגרפים"
+      },
+      "graphsOrder": {
+        "label": "גרפים (הזמנה)",
+        "storage": {
+          "label": "אחסון",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          },
+          "compactView": {
+            "label": "הצג כטקסט (קומפקטי)"
+          },
+          "multiView": {
+            "label": "הצג כתצוגת ריבוי כוננים"
+          }
+        },
+        "network": {
+          "label": "רשת",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          },
+          "compactView": {
+            "label": "הצג כטקסט (קומפקטי)"
+          }
+        },
+        "cpu": {
+          "label": "מעבד",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          },
+          "multiView": {
+            "label": "הצג כתצוגה מרובה ליבות"
+          }
+        },
+        "ram": {
+          "label": "זיכרון פנימי",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          }
+        },
+        "gpu": {
+          "label": "מעבד גרפי",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          }
+        }
       }
     }
   },

@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta Title",
-    "description": "The title, that is being displayed as your tab name"
+    "description": "The title displayed in your browser tab"
   },
   "logo": {
     "label": "Logo",
-    "description": "The dashboard logo at the top left"
+    "description": "The logo displayed at the top left"
   },
   "favicon": {
     "label": "Favicon",
-    "description": "The icon, that is being used in front of your tab name"
+    "description": "The icon displayed in your browser tab"
   },
   "background": {
     "label": "Background"
   },
   "customCSS": {
     "label": "Custom CSS",
-    "description": "Customize all elements on your dashboard, only recommended for experienced users",
+    "description": "Further, customize your dashboard using CSS, only recommended for experienced users",
     "placeholder": "Custom CSS will be applied last",
     "applying": "Applying CSS..."
   },

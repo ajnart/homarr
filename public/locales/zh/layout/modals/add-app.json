@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "应用图标",
-			"description": "将在面板上显示的图标。"
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
 		}
 	},
 	"integration": {

@@ -9,6 +9,72 @@
       },
       "usePercentages": {
         "label": "Отображать проценты"
+      },
+      "columns": {
+        "label": "Отображать столбцы"
+      },
+      "graphHeight": {
+        "label": "Высота графиков"
+      },
+      "graphsOrder": {
+        "label": "Графики (порядок)",
+        "storage": {
+          "label": "Хранилище",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": "Размеры столбцов"
+          },
+          "compactView": {
+            "label": "Показать в виде текста (компактный)"
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Сеть",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": "Размеры столбцов"
+          },
+          "compactView": {
+            "label": "Показать в виде текста (компактный)"
+          }
+        },
+        "cpu": {
+          "label": "ЦП",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": "Размеры столбцов"
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "ОЗУ",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": "Размеры столбцов"
+          }
+        },
+        "gpu": {
+          "label": "ГП",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": "Размеры столбцов"
+          }
+        }
       }
     }
   },

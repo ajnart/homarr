@@ -5,10 +5,10 @@
     "settings": {
       "title": "Settings for video stream widget",
       "FeedUrl": {
-        "label": "Feed url"
+        "label": "Feed URL"
       },
       "autoPlay": {
-        "label": "Auto play"
+        "label": "Autoplay"
       },
       "muted": {
         "label": "Muted audio"

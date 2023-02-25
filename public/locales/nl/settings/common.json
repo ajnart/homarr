@@ -10,19 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Gemaakt met ❤️ door @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Inhoud van derden bekijken",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Dependency",
       "dependencyVersion": "Versie"
     }
   },
   "grow": "Groei raster (neem alle ruimte)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Voorbeeld",
+      "subtitle": "Wijzigingen worden automatisch opgeslagen"
     },
-    "divider": "",
+    "divider": "Layout opties",
     "main": "Algemeen",
     "sidebar": "Zijbalk",
     "cannotturnoff": "Kan niet worden uitgeschakeld",

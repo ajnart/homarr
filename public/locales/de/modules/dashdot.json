@@ -11,7 +11,7 @@
         "label": "Prozentangaben anzeigen"
       },
       "columns": {
-        "label": "Anzahl Spalten"
+        "label": "Spalten anzeigen"
       },
       "graphHeight": {
         "label": "Höhe der Graphen"
@@ -36,7 +36,7 @@
         "network": {
           "label": "Netzwerk",
           "enabled": {
-            "label": "Im Widget anzeigen"
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": "Spaltenbreite"
@@ -48,7 +48,7 @@
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": "Im Widget anzeigen"
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": "Spaltenbreite"
@@ -60,7 +60,7 @@
         "ram": {
           "label": "RAM",
           "enabled": {
-            "label": "Im Widget anzeigen"
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": "Spaltenbreite"
@@ -69,7 +69,7 @@
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": "Im Widget anzeigen"
+            "label": "In Widget anzeigen"
           },
           "span": {
             "label": "Spaltenbreite"

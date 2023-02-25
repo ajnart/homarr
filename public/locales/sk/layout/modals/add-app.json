@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "Ikona aplikácie",
-			"description": "Ikona, ktorá sa zobrazí na prístrojovej doske."
+			"description": "Vyberte si ikonu, ktorá sa má zobrazovať na prístrojovej doske. Vyberte si z ikon {{suggestionsCount}} alebo zadajte vlastnú adresu URL",
+			"autocomplete": {
+				"title": "Nenašli sa žiadne výsledky",
+				"text": "Skúste použiť konkrétnejší vyhľadávací výraz. Ak nemôžete nájsť požadovanú ikonu, vložte vyššie uvedenú adresu URL obrázka pre vlastnú ikonu"
+			},
+			"noItems": {
+				"title": "Načítanie externých ikon",
+				"text": "Môže to trvať niekoľko sekúnd"
+			}
 		}
 	},
 	"integration": {

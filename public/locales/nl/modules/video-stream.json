@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Video streams",
+    "description": "Voeg een video stream, video van een camera of een website in",
+    "settings": {
+      "title": "Instellingen voor videostream-widget",
+      "FeedUrl": {
+        "label": "Feed URL"
+      },
+      "autoPlay": {
+        "label": "Automatisch afspelen"
+      },
+      "muted": {
+        "label": "Gedempte audio"
+      },
+      "controls": {
+        "label": "Bedieningselementen videospeler"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Ongeldige stream"
+  }
+}

@@ -3,11 +3,12 @@
 	"contact": "Problemen of vragen? Neem contact met ons op!",
 	"addToDashboard": "Aan dashboard toevoegen",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "Versie configuratieschema",
+		"configurationsCount": "Beschikbare configuraties",
 		"version": "Versie",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": ""
+		"nodeEnvironment": "Knooppuntomgeving",
+		"i18n": "I18n vertaling namespaces geladen",
+		"locales": "I18n talen geconfigureerd",
+		"experimental_disableEditMode": ""
 	}
 }

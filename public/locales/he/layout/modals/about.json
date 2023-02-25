@@ -8,6 +8,7 @@
 		"version": "גרסה",
 		"nodeEnvironment": "סביבת Node",
 		"i18n": "מרחבי שמות של תרגום I18n טעונים",
-		"locales": "אזורי I18n מוגדרים"
+		"locales": "אזורי I18n מוגדרים",
+		"experimental_disableEditMode": "<b>נסיוני</b>: ביטול מצב עריכה"
 	}
 }

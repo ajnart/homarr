@@ -5,7 +5,7 @@
     "settings": {
       "title": "Nastavitve za gradnik Koledar",
       "useSonarrv4": {
-        "label": ""
+        "label": "Uporaba vmesnika API Sonarr v4"
       },
       "sundayStart": {
         "label": "Začni teden z nedeljo"

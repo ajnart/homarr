@@ -1,0 +1,23 @@
+{
+  "descriptor": {
+    "name": "IFrame",
+    "description": "Incrustar cualquier contenido de Internet. Algunos sitios web pueden restringir el acceso.",
+    "settings": {
+      "title": "Ajustes de IFrame",
+      "embedUrl": {
+        "label": "URL incrustada"
+      },
+      "allowFullScreen": {
+        "label": "Permitir pantalla completa"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "Introducir una URL",
+        "text": "Asegúrate de que has introducido una dirección válida en la configuración del widget"
+      }
+    }
+  }
+}

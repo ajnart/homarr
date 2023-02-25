@@ -1,28 +1,28 @@
 {
   "pageTitle": {
     "label": "Paginatitel",
-    "description": ""
+    "description": "De titel van het dashboard linksboven"
   },
   "metaTitle": {
     "label": "Meta Titel",
-    "description": ""
+    "description": "De titel, die als uw tabnaam wordt weergegeven"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Het dashboardlogo linksboven"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "Het pictogram, dat wordt gebruik voor de naam van het tabblad"
   },
   "background": {
     "label": "Achtergrond"
   },
   "customCSS": {
     "label": "Eigen CSS",
-    "description": "",
+    "description": "Alle elementen op je dashboard aanpassen, alleen aanbevolen voor ervaren gebruikers",
     "placeholder": "Eigen CSS wordt als laatste toegepast",
-    "applying": ""
+    "applying": "CSS toepassen..."
   },
   "buttons": {
     "submit": "Indienen"

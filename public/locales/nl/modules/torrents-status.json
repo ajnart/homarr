@@ -61,9 +61,9 @@
       "introductionPrefix": "Beheerd door",
       "metrics": {
         "queuePosition": "Positie in de wachtrij - {{position}}",
-        "progress": "Vooruitgang - {{progress}}%",
+        "progress": "Voortgang - {{progress}}%",
         "totalSelectedSize": "Totaal - {{totalSize}}",
-        "state": "Staat - {{state}}",
+        "state": "Status - {{state}}",
         "ratio": "Verhouding -",
         "completed": "Voltooid"
       }

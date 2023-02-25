@@ -5,10 +5,76 @@
     "settings": {
       "title": "Nastavenia pre Dash. mini aplikácie",
       "url": {
-        "label": "Dash. URL"
+        "label": "Dash. URL adresa"
       },
       "usePercentages": {
         "label": "Zobraziť percentá"
+      },
+      "columns": {
+        "label": "Zobraziť stĺpce"
+      },
+      "graphHeight": {
+        "label": "Výška grafov"
+      },
+      "graphsOrder": {
+        "label": "Grafy (poradie)",
+        "storage": {
+          "label": "Úložisko",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          },
+          "compactView": {
+            "label": "Zobraziť ako text (kompaktný)"
+          },
+          "multiView": {
+            "label": "Zobraziť ako multi-drive-view"
+          }
+        },
+        "network": {
+          "label": "Sieť",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          },
+          "compactView": {
+            "label": "Zobraziť ako text (kompaktný)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          },
+          "multiView": {
+            "label": "Zobraziť ako viacjadrové zobrazenie"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Zobraziť v miniaplikácii"
+          },
+          "span": {
+            "label": "Rozpätie stĺpca"
+          }
+        }
       }
     }
   },

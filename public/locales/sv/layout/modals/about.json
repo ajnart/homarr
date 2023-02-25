@@ -8,6 +8,7 @@
 		"version": "Version",
 		"nodeEnvironment": "Nod miljö",
 		"i18n": "Laddade namnområden för I18n-översättningar",
-		"locales": "Konfigurerade I18n lokalspråk"
+		"locales": "Konfigurerade I18n lokalspråk",
+		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Inaktivera redigeringsläge"
 	}
 }

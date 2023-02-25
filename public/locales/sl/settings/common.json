@@ -10,19 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Narejeno s ❤️ od @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Oglejte si vsebino tretjih oseb",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Odvisnost",
       "dependencyVersion": "Različica"
     }
   },
   "grow": "Rastoča mreža (zavzema ves prostor)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Predogled",
+      "subtitle": "Spremembe se samodejno shranijo"
     },
-    "divider": "",
+    "divider": "Možnosti postavitve",
     "main": "Glavno",
     "sidebar": "Stranska vrstica",
     "cannotturnoff": "Ni mogoče izklopiti",

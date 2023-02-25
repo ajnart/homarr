@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "IFrame",
+    "name": "iFrame",
     "description": "Embed any content from the internet. Some websites may restrict access.",
     "settings": {
-      "title": "IFrame settings",
+      "title": "iFrame settings",
       "embedUrl": {
         "label": "Embed URL"
       },

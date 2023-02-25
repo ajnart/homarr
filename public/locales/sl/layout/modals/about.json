@@ -3,11 +3,12 @@
 	"contact": "Imate težave ali vprašanja? Povežite se z nami!",
 	"addToDashboard": "Dodajanje v nadzorno ploščo",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "Različica konfiguracijske sheme",
+		"configurationsCount": "Razpoložljive konfiguracije",
 		"version": "Različica",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": ""
+		"nodeEnvironment": "Okolje vozlišča",
+		"i18n": "Nalaganje imenskih prostorov za prevod I18n",
+		"locales": "Konfigurirani krajevni jeziki I18n",
+		"experimental_disableEditMode": "<b>EKSPERIMENTALNO</b>: Onemogočite način urejanja"
 	}
 }

@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "Іконка програми",
-			"description": "Іконка, яка буде показуватися на інформаційній панелі."
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
 		}
 	},
 	"integration": {

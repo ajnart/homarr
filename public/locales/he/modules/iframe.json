@@ -1,0 +1,23 @@
+{
+  "descriptor": {
+    "name": "IFrame",
+    "description": "הטמע כל תוכן מהאינטרנט. חלק מהאתרים עשויים להגביל את הגישה.",
+    "settings": {
+      "title": "הגדרות IFrame",
+      "embedUrl": {
+        "label": "הטמע כתובת אתר"
+      },
+      "allowFullScreen": {
+        "label": "הרשאה למסך מלא"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "הזן קישור",
+        "text": "ודא שהזנת כתובת חוקית בתצורת הווידג'ט שלך"
+      }
+    }
+  }
+}
