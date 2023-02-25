@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta názov",
-    "description": ""
+    "description": "Názov zobrazený na karte prehliadača"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Logo zobrazené vľavo hore"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "Ikona zobrazená na karte prehliadača"
   },
   "background": {
     "label": "Pozadie"
   },
   "customCSS": {
     "label": "Vlastné CSS",
-    "description": "",
+    "description": "Ďalej si prispôsobte ovládací panel pomocou CSS, odporúča sa len pre skúsených používateľov",
     "placeholder": "Vlastné CSS sa použije ako posledné",
     "applying": "Aplikuje sa CSS..."
   },
