@@ -1,28 +1,28 @@
 {
   "pageTitle": {
     "label": "Заголовок сторінки",
-    "description": ""
+    "description": "Заголовок інформаційної панелі вгорі ліворуч"
   },
   "metaTitle": {
     "label": "Мета-заголовок",
-    "description": ""
+    "description": "Назва, що відображається у вкладці вашого браузера"
   },
   "logo": {
     "label": "Логотип",
-    "description": ""
+    "description": "Логотип відображається вгорі ліворуч"
   },
   "favicon": {
     "label": "Іконка",
-    "description": ""
+    "description": "Іконка, що відображається у вкладці вашого браузера"
   },
   "background": {
     "label": "Фон"
   },
   "customCSS": {
     "label": "Власний CSS",
-    "description": "",
+    "description": "Крім того, налаштуйте дашборд за допомогою CSS, що рекомендується лише досвідченим користувачам",
     "placeholder": "Власний CSS буде оброблятися в останню чергу",
-    "applying": ""
+    "applying": "Застосувати CSS..."
   },
   "buttons": {
     "submit": "Надіслати"
