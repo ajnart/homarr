@@ -5,15 +5,15 @@
   },
   "metaTitle": {
     "label": "Titre Méta",
-    "description": ""
+    "description": "Le titre affiché dans l'onglet de votre navigateur"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Le logo affiché en haut à gauche"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "L'icône affichée dans l'onglet de votre navigateur"
   },
   "background": {
     "label": "Fond"
