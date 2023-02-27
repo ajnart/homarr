@@ -36,7 +36,7 @@
     },
     "confirmDeletion": {
       "title": "Підтвердьте видалення конфігурації",
-      "warningText": "",
+      "warningText": "Ви збираєтеся видалити '<b>{{configName}}</b>'",
       "text": "",
       "buttons": {
         "confirm": "Так, видалити '<b>{{configName}}</b>'"
