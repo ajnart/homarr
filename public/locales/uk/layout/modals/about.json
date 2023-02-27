@@ -3,12 +3,12 @@
 	"contact": "Виникли проблеми або питання? Зв'яжіться з нами!",
 	"addToDashboard": "Додати до панелі інструментів",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "Версія схеми конфігурації",
+		"configurationsCount": "Доступні конфігурації",
 		"version": "Версія",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
+		"nodeEnvironment": "Середовище вузла",
+		"i18n": "Завантажено інтернаціональні переклади",
+		"locales": "Налаштовано інтернаціональні локалі",
 		"experimental_disableEditMode": "<b>ЕКСПЕРИМЕНТАЛЬНО</b>: Вимкнути режим редагування"
 	}
 }
