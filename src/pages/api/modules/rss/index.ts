@@ -53,6 +53,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
         title: item.title ? decode(item.title) : undefined,
         content: decode(item.content),
         enclosure: createEnclosure(item),
+        link: createLink(item),
       }))
       .sort((a: { pubDate: number }, b: { pubDate: number }) => {
         if (!a.pubDate || !b.pubDate) {
@@ -68,6 +69,14 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     feed: orderedFeed,
     success: orderedFeed?.items !== undefined,
   });
+};
+
+const createLink = (item: any) => {
+  if (item.link) {
+    return item.link;
+  }
+
+  return item.guid;
 };
 
 const createEnclosure = (item: any) => {

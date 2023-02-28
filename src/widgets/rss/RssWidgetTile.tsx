@@ -16,7 +16,6 @@ import {
   Title,
   UnstyledButton,
 } from '@mantine/core';
-import { useElementSize } from '@mantine/hooks';
 import {
   IconBulldozer,
   IconCalendarTime,
@@ -65,7 +64,6 @@ function RssTile({ widget }: RssTileProps) {
   );
   const { classes } = useStyles();
   const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
-  const { ref, height } = useElementSize();
 
   if (!data || isLoading) {
     return (
@@ -88,7 +86,7 @@ function RssTile({ widget }: RssTileProps) {
   }
 
   return (
-    <Stack ref={ref} h="100%">
+    <Stack h="100%">
       <LoadingOverlay visible={loadingOverlayVisible} />
       <Flex gap="md">
         {data.feed.image ? (
@@ -121,7 +119,7 @@ function RssTile({ widget }: RssTileProps) {
             <Card
               key={index}
               withBorder
-              component={Link}
+              component={Link ?? 'div'}
               href={item.link}
               radius="md"
               target="_blank"
@@ -181,12 +179,14 @@ function RssTile({ widget }: RssTileProps) {
             {data.feed.pubDate}
           </Text>
         </Group>
-        <Group>
-          <IconBulldozer size={14} />
-          <Text color="dimmed" size="sm">
-            {data.feed.lastBuildDate}
-          </Text>
-        </Group>
+        {data.feed.lastBuildDate && (
+          <Group>
+            <IconBulldozer size={14} />
+            <Text color="dimmed" size="sm">
+              {data.feed.lastBuildDate}
+            </Text>
+          </Group>
+        )}
         {data.feed.feedUrl && (
           <Group spacing="sm">
             <IconSpeakerphone size={14} />
