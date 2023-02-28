@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": ""
+    "description": "Visar en statusindikator beroende på HTTP-svarskoden för en given URL."
   },
   "states": {
     "online": "Online {{response}}",
