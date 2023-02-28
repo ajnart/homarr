@@ -53,7 +53,7 @@
     "html-entities": "^2.3.3",
     "i18next": "^21.9.1",
     "js-file-download": "^0.4.12",
-    "next": "^13.1.6",
+    "next": "^13.2.1",
     "next-i18next": "^11.3.0",
     "nzbget-api": "^0.0.3",
     "prismjs": "^1.29.0",
