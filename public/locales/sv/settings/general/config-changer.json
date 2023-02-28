@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Bekräfta radering av din konfiguration",
-      "warningText": "",
-      "text": "",
+      "warningText": "Du är på väg att radera '<b>{{configName}}</b>'",
+      "text": "Observera att raderingen inte kan återställas och att dina uppgifter kommer att gå förlorade för alltid. När du har klickat på den här knappen raderas filen permanent från din disk. Se till att skapa en lämplig säkerhetskopia av din konfiguration.",
       "buttons": {
         "confirm": "Ja, radera '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "Radering av konfigurationen misslyckades"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
+          "title": "Standardkonfigurationen kan inte tas bort",
           "message": "Konfigurationen togs inte bort från filsystemet"
         }
       }
