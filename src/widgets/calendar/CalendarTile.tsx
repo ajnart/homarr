@@ -74,26 +74,25 @@ function CalendarTile({ widget }: CalendarTileProps) {
       <Calendar
         m={0}
         p={0}
-        month={month}
+        defaultDate={new Date()}
         // Should be offset 5px to the left
         style={{ position: 'relative', top: -15 }}
-        onMonthChange={setMonth}
+        onPreviousMonth={setMonth}
+        onNextMonth={setMonth}
         size="xs"
         locale={i18n?.resolvedLanguage ?? 'en'}
-        fullWidth
-        onChange={() => {}}
-        firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
-        dayStyle={(date) => ({
-          margin: -1,
-          backgroundColor: isToday(date)
-            ? colorScheme === 'dark'
-              ? colors.dark[5]
-              : colors.gray[0]
-            : undefined,
-        })}
+        firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
         hideWeekdays
         styles={{
-          weekdayCell: {
+          day: {
+            margin: -1,
+            backgroundColor: isToday(new Date())
+              ? colorScheme === 'dark'
+                ? colors.dark[5]
+                : colors.gray[0]
+              : undefined,
+          },
+          weekday: {
             margin: 0,
             padding: 0,
           },
@@ -103,8 +102,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
             padding: 0,
           },
         }}
-        allowLevelChange={false}
-        dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
+        hasNextLevel={false}
         renderDay={(date) => (
           <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
         )}

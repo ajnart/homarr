@@ -18,12 +18,12 @@ interface GridstackStoreType {
 
 export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | null => {
   const mainAreaWidth = useGridstackStore((x) => x.mainAreaWidth);
-  const { sm, xl } = useMantineTheme().breakpoints;
   if (!mainAreaWidth) return null;
 
-  if (mainAreaWidth >= xl) return 'large';
+  // TODO: Calculate rem to pixels using Calc function
+  if (mainAreaWidth >= 1400) return 'large';
 
-  if (mainAreaWidth >= sm) return 'medium';
+  if (mainAreaWidth >= 800) return 'medium';
 
   return 'small';
 };

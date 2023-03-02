@@ -8,7 +8,7 @@ export default function CustomizationSettings() {
   const { t } = useTranslation('settings/customization/general');
 
   return (
-    <ScrollArea style={{ height: height - 100 }} offsetScrollbars>
+    <ScrollArea style={{ height: height - 100 }} scrollbarSize={5}>
       <Stack mt="xs" mb="md" spacing="xs">
         <Text color="dimmed">
           {t('text')}

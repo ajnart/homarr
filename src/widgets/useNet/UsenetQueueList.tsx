@@ -35,7 +35,7 @@ const PAGE_SIZE = 13;
 export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId }) => {
   const theme = useMantineTheme();
   const { t } = useTranslation('modules/usenet');
-  const progressbarBreakpoint = theme.breakpoints.xs;
+  const progressbarBreakpoint = parseInt(theme.breakpoints.xs, 10);
   const progressBreakpoint = 400;
   const sizeBreakpoint = 300;
   const { ref, width } = useElementSize();
@@ -177,7 +177,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
           size="sm"
           position="center"
           total={totalPages}
-          page={page}
+          value={page}
           onChange={setPage}
         />
       )}

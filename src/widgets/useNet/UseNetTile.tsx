@@ -28,6 +28,7 @@ import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { UsenetHistoryList } from './UsenetHistoryList';
 import { UsenetQueueList } from './UsenetQueueList';
+import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 
 dayjs.extend(duration);
 
@@ -59,7 +60,6 @@ function UseNetTile({ widget }: UseNetTileProps) {
     config?.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ??
     [];
   const { ref, width, height } = useElementSize();
-  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
   const { data } = useGetUsenetInfo({ appId: selectedAppId! });

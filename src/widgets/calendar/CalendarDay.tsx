@@ -22,7 +22,9 @@ export const CalendarDay = ({ date, medias }: CalendarDayProps) => {
       withinPortal
       radius="lg"
       shadow="sm"
-      transition="pop"
+      transitionProps={{
+        transition: 'pop',
+      }}
       onClose={close}
       opened={opened}
     >
