@@ -26,7 +26,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
         </Menu.Target>
         <Menu.Dropdown>
           <ColorSchemeSwitch />
-          <EditModeToggle />
+          {process.env.EDIT_MODE_PASSWORD !== undefined && <EditModeToggle />}
           <Menu.Divider />
           {!editModeEnabled && (
             <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
