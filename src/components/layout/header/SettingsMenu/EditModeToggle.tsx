@@ -38,7 +38,8 @@ function ModalContent() {
       <Stack>
         <Text size="sm">
           In order to toggle edit mode, you need to enter the password you entered in the
-          environment variable named <Code>EDIT_MODE_PASSWORD</Code>
+          environment variable named <Code>EDIT_MODE_PASSWORD</Code> . If it is not set, you are not
+          able to toggle edit mode on and off.
         </Text>
         <PasswordInput
           id="triedPassword"
@@ -47,9 +48,7 @@ function ModalContent() {
           required
           {...form.getInputProps('triedPassword')}
         />
-        <Button type="submit">
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </Stack>
     </form>
   );

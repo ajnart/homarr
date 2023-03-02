@@ -4,7 +4,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 function Post(req: NextApiRequest, res: NextApiResponse) {
   const { tried } = req.body;
   // Try to match the password with the EDIT_PASSWORD env variable
-  Consola.log(req.body, process.env.EDIT_MODE_PASSWORD);
   if (tried === process.env.EDIT_MODE_PASSWORD) {
     process.env.DISABLE_EDIT_MODE = process.env.DISABLE_EDIT_MODE === 'true' ? 'false' : 'true';
     return res.status(200).json({
