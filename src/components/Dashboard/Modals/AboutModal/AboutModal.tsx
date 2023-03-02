@@ -9,10 +9,10 @@ import {
   Group,
   HoverCard,
   Modal,
-  Stack,
   Table,
   Text,
   Title,
+  Tooltip,
 } from '@mantine/core';
 import {
   IconAnchor,
@@ -35,6 +35,7 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
+import { useColorTheme } from '../../../../tools/color';
 import { usePrimaryGradient } from '../../../layout/useGradient';
 import Credits from '../../../Settings/Common/Credits';
 
@@ -161,9 +162,9 @@ interface ExtendedInitOptions extends InitOptions {
 }
 
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
-  const colorGradiant = usePrimaryGradient();
   const { attributes } = usePackageAttributesStore();
   const { editModeEnabled } = useEditModeInformationStore();
+  const { primaryColor } = useColorTheme();
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
@@ -177,15 +178,19 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
         icon: <IconKey size={20} />,
         label: 'experimental_disableEditMode',
         content: (
-          <Stack>
+          <Tooltip
+            color="red"
+            withinPortal
+            width={300}
+            multiline
+            withArrow
+            label="This is an experimental feature, where the edit mode is disabled entirely - no config
+            modifications are possbile anymore. All update requests for the config will be dropped
+            on the API. This will be removed in future versions, as Homarr will receive a proper
+            authentication system, which will make this obsolete."
+          >
             <Badge color="red">WARNING</Badge>
-            <Text color="red" size="xs">
-              This is an experimental feature, where the edit mode is disabled entirely - no config
-              modifications are possbile anymore. All update requests for the config will be dropped
-              on the API. This will be removed in future versions, as Homarr will receive a proper
-              authentication system, which will make this obsolete.
-            </Text>
-          </Stack>
+          </Tooltip>
         ),
       },
     ];
@@ -201,7 +206,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
         icon: <IconLanguage size={20} />,
         label: 'i18n',
         content: (
-          <Badge variant="gradient" gradient={colorGradiant}>
+          <Badge variant="light" color={primaryColor}>
             {usedI18nNamespaces.length}
           </Badge>
         ),
@@ -210,7 +215,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
         icon: <IconVocabulary size={20} />,
         label: 'locales',
         content: (
-          <Badge variant="gradient" gradient={colorGradiant}>
+          <Badge variant="light" color={primaryColor}>
             {initOptions.locales.length}
           </Badge>
         ),
@@ -223,7 +228,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       icon: <IconSchema size={20} />,
       label: 'configurationSchemaVersion',
       content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
+        <Badge variant="light" color={primaryColor}>
           {configVersion}
         </Badge>
       ),
@@ -232,7 +237,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       icon: <IconFile size={20} />,
       label: 'configurationsCount',
       content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
+        <Badge variant="light" color={primaryColor}>
           {configs.length}
         </Badge>
       ),
@@ -242,7 +247,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       label: 'version',
       content: (
         <Group position="right">
-          <Badge variant="gradient" gradient={colorGradiant}>
+          <Badge variant="light" color={primaryColor}>
             {attributes.packageVersion ?? 'Unknown'}
           </Badge>
           {newVersionAvailable && (
@@ -282,7 +287,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       icon: <IconAnchor size={20} />,
       label: 'nodeEnvironment',
       content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
+        <Badge variant="light" color={primaryColor}>
           {attributes.environment}
         </Badge>
       ),
