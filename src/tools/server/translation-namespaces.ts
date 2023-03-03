@@ -36,6 +36,7 @@ export const dashboardNamespaces = [
   'modules/media-server',
   'modules/common-media-cards',
   'modules/video-stream',
+  'widgets/error-boundary',
 ];
 
 export const loginNamespaces = ['authentication/login'];
