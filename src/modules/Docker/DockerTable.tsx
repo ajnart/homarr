@@ -29,8 +29,12 @@ export default function DockerTable({
   containers,
   selection,
   setSelection,
+  widgetMode,
+  hideSearchBar,
 }: {
   setSelection: any;
+  widgetMode: boolean;
+  hideSearchBar: boolean;
   containers: Dockerode.ContainerInfo[];
   selection: Dockerode.ContainerInfo[];
 }) {
@@ -72,13 +76,15 @@ export default function DockerTable({
     const selected = selection.includes(element);
     return (
       <tr key={element.Id} className={cx({ [classes.rowSelected]: selected })}>
-        <td>
-          <Checkbox
-            checked={selection.includes(element)}
-            onChange={() => toggleRow(element)}
-            transitionDuration={0}
-          />
-        </td>
+        {!widgetMode && (
+          <td>
+            <Checkbox
+              checked={selection.includes(element)}
+              onChange={() => toggleRow(element)}
+              transitionDuration={0}
+            />
+          </td>
+        )}
         <td>
           <Text size="lg" weight={600}>
             {element.Names[0].replace('/', '')}
@@ -121,26 +127,30 @@ export default function DockerTable({
 
   return (
     <ScrollArea style={{ height: '100%' }} offsetScrollbars>
-      <TextInput
-        placeholder={t('search.placeholder')}
-        mr="md"
-        icon={<IconSearch size={14} />}
-        value={search}
-        autoFocus
-        onChange={handleSearchChange}
-      />
-      <Table ref={ref} captionSide="bottom" highlightOnHover verticalSpacing="sm">
+      {!hideSearchBar && (
+        <TextInput
+          placeholder={t('search.placeholder')}
+          mr="md"
+          icon={<IconSearch size={14} />}
+          value={search}
+          autoFocus
+          onChange={handleSearchChange}
+        />
+      )}
+      <Table ref={ref} captionSide="bottom" highlightOnHover={!widgetMode} verticalSpacing="sm">
         <thead>
           <tr>
-            <th style={{ width: 40 }}>
-              <Checkbox
-                onChange={toggleAll}
-                checked={selection.length === usedContainers.length && selection.length > 0}
-                indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
-                transitionDuration={0}
-                disabled={usedContainers.length === 0}
-              />
-            </th>
+            {!widgetMode && (
+              <th style={{ width: 40 }}>
+                <Checkbox
+                  onChange={toggleAll}
+                  checked={selection.length === usedContainers.length && selection.length > 0}
+                  indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
+                  transitionDuration={0}
+                  disabled={usedContainers.length === 0}
+                />
+              </th>
+            )}
             <th>{t('table.header.name')}</th>
             {width > MIN_WIDTH_MOBILE ? <th>{t('table.header.image')}</th> : null}
             {width > MIN_WIDTH_MOBILE ? <th>{t('table.header.ports')}</th> : null}

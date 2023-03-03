@@ -9,6 +9,7 @@ import torrent from './torrent/TorrentTile';
 import usenet from './useNet/UseNetTile';
 import videoStream from './video/VideoStreamTile';
 import weather from './weather/WeatherTile';
+import docker from './docker/DockerTile';
 
 export default {
   calendar,
@@ -22,4 +23,5 @@ export default {
   'video-stream': videoStream,
   iframe,
   'media-server': mediaServer,
+  docker,
 };

@@ -78,10 +78,7 @@ export const LayoutSelector = () => {
         <Paper px="xs" py={4} withBorder>
           <Group position="apart">
             <Logo size="xs" />
-            <Group spacing={5}>
-              {searchBar && <PlaceholderElement width={60} height={10} />}
-              {docker && <PlaceholderElement width={10} height={10} />}
-            </Group>
+            <Group spacing={5}>{searchBar && <PlaceholderElement width={60} height={10} />}</Group>
           </Group>
         </Paper>
 
@@ -151,11 +148,6 @@ export const LayoutSelector = () => {
             label={t('layout.enablesearchbar')}
             checked={searchBar}
             onChange={(ev) => handleChange('enabledSearchbar', ev, setSearchBar)}
-          />
-          <Checkbox
-            label={t('layout.enabledocker')}
-            checked={docker}
-            onChange={(ev) => handleChange('enabledDocker', ev, setDocker)}
           />
           <Checkbox
             label={t('layout.enableping')}
