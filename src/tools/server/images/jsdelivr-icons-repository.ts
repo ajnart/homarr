@@ -23,7 +23,7 @@ export class JsdelivrIconsRepository extends AbstractIconRepository {
   constructor(
     private readonly repository: JsdelivrRepositoryUrl,
     private readonly displayName: string,
-    copyright: string,
+    copyright: string
   ) {
     super(copyright);
   }

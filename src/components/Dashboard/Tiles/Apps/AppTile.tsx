@@ -36,7 +36,13 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           className="dashboard-tile-app"
         >
           <Box hidden={false}>
-            <Title order={5} size="md" ta="center" lineClamp={1} className={cx(classes.appName, 'dashboard-tile-app-title')}>
+            <Title
+              order={5}
+              size="md"
+              ta="center"
+              lineClamp={1}
+              className={cx(classes.appName, 'dashboard-tile-app-title')}
+            >
               {app.name}
             </Title>
           </Box>

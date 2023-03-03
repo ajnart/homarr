@@ -10,9 +10,7 @@ export default function CustomizationSettings() {
   return (
     <ScrollArea style={{ height: height - 100 }} offsetScrollbars>
       <Stack mt="xs" mb="md" spacing="xs">
-        <Text color="dimmed">
-          {t('text')}
-        </Text>
+        <Text color="dimmed">{t('text')}</Text>
         <CustomizationSettingsAccordeon />
       </Stack>
     </ScrollArea>

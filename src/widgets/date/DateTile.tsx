@@ -25,7 +25,7 @@ const definition = defineWidget({
   component: DateTile,
 });
 
-export type IDateWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IDateWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface DateTileProps {
   widget: IDateWidget;

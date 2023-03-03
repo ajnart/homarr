@@ -107,7 +107,9 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
         </Group>
         <Text>{session.sessionName}</Text>
       </Flex>
-      {details.length > 0 && <Divider label="Stats for nerds" labelPosition="center" mt="lg" mb="sm" />}
+      {details.length > 0 && (
+        <Divider label="Stats for nerds" labelPosition="center" mt="lg" mb="sm" />
+      )}
       <Grid>
         {details.map((detail, index) => (
           <Grid.Col xs={12} sm={6} key={index}>
