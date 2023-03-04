@@ -1,22 +1,22 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Nhúng bất kỳ nội dung nào từ internet. Một số trang web có thể hạn chế quyền truy cập.",
     "settings": {
-      "title": "",
+      "title": "Cài đặt iFrame",
       "embedUrl": {
-        "label": ""
+        "label": "URL nhúng"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Cho phép toàn màn hình"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Nhập một URL",
+        "text": "Đảm bảo rằng bạn đã nhập một địa chỉ hợp lệ trong cấu hình tiện ích"
       }
     }
   }
