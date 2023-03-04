@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Máy chủ đa phương tiện",
+    "description": "Tương tác với máy chủ Jellyfin hoặc Plex của bạn",
     "settings": {
-      "title": ""
+      "title": "Cài đặt cho máy chủ đa phương tiện"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Phiên",
+        "user": "Người dùng",
+        "currentlyPlaying": "Hiện đang phát"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Không thể tải nội dung",
+        "text": "Không thể lấy thông tin từ máy chủ. Vui lòng kiểm tra nhật ký để biết thêm chi tiết"
       }
     }
   }
