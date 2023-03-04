@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Số cột cho kích thước {{size}}",
+    "descriptionPreset": "Số cột khi màn hình có chiều rộng ít hơn {{pixels}} pixel",
+    "descriptionExceedsPreset": "Số cột khi màn hình có chiều rộng vượt quá {{pixels}} pixel"
   },
-  "unsavedChanges": "",
+  "unsavedChanges": "Bạn có các thay đổi chưa lưu. Nhấp vào nút Áp dụng thay đổi bên dưới để áp dụng và lưu.",
   "applyChanges": "Áp dụng thay đổi",
   "defaultValues": "Giá trị mặc định"
 }
