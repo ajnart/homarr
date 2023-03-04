@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Hiển thị biểu đồ của Dash. bên trong Homarr.",
     "settings": {
       "title": "Cài đặt cho tiện ích Dash.",
       "url": {
@@ -11,68 +11,68 @@
         "label": "Hiển thị phần trăm"
       },
       "columns": {
-        "label": ""
+        "label": "Cột hiển thị"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Chiều cao của biểu đồ"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Biểu đồ (thứ tự)",
         "storage": {
           "label": "Bộ nhớ",
           "enabled": {
-            "label": ""
+            "label": "Hiển thị trong tiện ích"
           },
           "span": {
-            "label": ""
+            "label": "Số cột chiếm"
           },
           "compactView": {
-            "label": ""
+            "label": "Hiển thị bằng chữ (gọn)"
           },
           "multiView": {
-            "label": ""
+            "label": "Chế độ hiện đa ổ đĩa"
           }
         },
         "network": {
           "label": "Mạng",
           "enabled": {
-            "label": ""
+            "label": "Hiển thị trong tiện ích"
           },
           "span": {
-            "label": ""
+            "label": "Số cột chiếm"
           },
           "compactView": {
-            "label": ""
+            "label": "Hiển thị bằng chữ (gọn)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Hiển thị trong tiện ích"
           },
           "span": {
-            "label": ""
+            "label": "Số cột chiếm"
           },
           "multiView": {
-            "label": ""
+            "label": "Chế độ hiện đa nhân"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Hiển thị trong tiện ích"
           },
           "span": {
-            "label": ""
+            "label": "Số cột chiếm"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Hiển thị trong tiện ích"
           },
           "span": {
-            "label": ""
+            "label": "Số cột chiếm"
           }
         }
       }
@@ -85,7 +85,7 @@
       "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?",
       "protocolDowngrade": {
         "title": "Phát hiện hạ cấp giao thức",
-        "text": ""
+        "text": "Dash. của bạn đang sử dụng HTTP. Đây là một rủi ro bảo mật, vì HTTP không được mã hóa và những kẻ tấn công có thể lạm dụng phương thức này. Hãy đảm bảo rằng Dash. sử dụng HTTPS hoặc hạ cấp Homarr xuống HTTP (không khuyến nghị)."
       }
     },
     "graphs": {
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
