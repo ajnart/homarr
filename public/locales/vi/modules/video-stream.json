@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Luồng video",
+    "description": "Nhúng luồng hoặc video từ camera hoặc trang web",
     "settings": {
-      "title": "",
+      "title": "Cài đặt cho tiện ích luồng video",
       "FeedUrl": {
-        "label": ""
+        "label": "URL nguồn"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Tự động phát"
       },
       "muted": {
-        "label": ""
+        "label": "Tắt âm thanh"
       },
       "controls": {
-        "label": ""
+        "label": "Trình điều khiển video"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Luồng không hợp lệ"
   }
 }
