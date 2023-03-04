@@ -6,33 +6,33 @@
     "customizations": "Cá nhân hoá"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Tải tệp cấu hình của bạn lên chỉ bằng cách kéo và thả tệp vào trong trang!"
   },
   "credits": {
     "madeWithLove": "From @ with ❤️",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Xem nội dung bên thứ ba",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Phụ thuộc",
       "dependencyVersion": "Phiên bản"
     }
   },
   "grow": "Khung giãn (chiếm toàn bộ không gian)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Xem trước",
+      "subtitle": "Thay đổi sẽ được tự động lưu"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "Tùy chọn bố cục",
+    "main": "Chính",
+    "sidebar": "Thanh bên",
+    "cannotturnoff": "Không thể tắt",
+    "dashboardlayout": "Bố cục bảng điều khiển",
+    "enablersidebar": "Bật thanh bên phải",
+    "enablelsidebar": "Bật thanh bên trái",
+    "enablesearchbar": "Bật thanh tìm kiếm",
+    "enabledocker": "Bật tích hợp docker",
+    "enableping": "Bật chức năng Ping",
+    "enablelsidebardesc": "Tuỳ thích. Chỉ có thể được sử dụng cho các ứng dụng và tích hợp",
+    "enablersidebardesc": "Tuỳ thích. Chỉ có thể được sử dụng cho các ứng dụng và tích hợp"
   }
 }
