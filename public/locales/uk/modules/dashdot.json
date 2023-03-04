@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Відображає графіки зовнішнього Dash. Екземпляр всередині Homarr.",
+    "description": "Відображає графіки зовнішнього Dash. всередині Homarr.",
     "settings": {
       "title": "Налаштування віджета Dash.",
       "url": {
