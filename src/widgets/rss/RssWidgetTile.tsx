@@ -148,7 +148,7 @@ function RssTile({ widget }: RssTileProps) {
                     />
                   </MediaQuery>
                 )}
-                <Flex gap={2} direction="column">
+                <Flex gap={2} direction="column" w="100%">
                   {item.categories && (
                     <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
                       {item.categories.map((category: any, categoryIndex: number) => (
