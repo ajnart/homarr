@@ -137,15 +137,17 @@ function RssTile({ widget }: RssTileProps) {
               )}
 
               <Flex gap="xs">
-                <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
-                  <Image
-                    src={item.enclosure?.url ?? undefined}
-                    width={140}
-                    height={140}
-                    radius="md"
-                    withPlaceholder
-                  />
-                </MediaQuery>
+                {item.enclosure && (
+                  <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
+                    <Image
+                      src={item.enclosure?.url ?? undefined}
+                      width={140}
+                      height={140}
+                      radius="md"
+                      withPlaceholder
+                    />
+                  </MediaQuery>
+                )}
                 <Flex gap={2} direction="column">
                   {item.categories && (
                     <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
