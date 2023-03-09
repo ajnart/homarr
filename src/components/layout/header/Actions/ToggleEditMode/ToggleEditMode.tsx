@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Consola from 'consola';
+import { useBeforeunload } from 'react-beforeunload';
 import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
 import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
@@ -28,6 +29,14 @@ export const ToggleEditModeAction = () => {
   const { classes } = useCardStyles(true);
 
   useHotkeys([['ctrl+E', toggleEditMode]]);
+
+  useBeforeunload((event) => {
+    if (!enabled) {
+      return;
+    }
+
+    event.preventDefault();
+  });
 
   const toggleButtonClicked = () => {
     toggleEditMode();
