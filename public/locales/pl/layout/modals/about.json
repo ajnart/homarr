@@ -6,9 +6,9 @@
 		"configurationSchemaVersion": "Wersja schematu konfiguracji",
 		"configurationsCount": "Dostępne konfiguracje",
 		"version": "Wersja",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
+		"nodeEnvironment": "Środowisko węzła",
+		"i18n": "Załadowane nazwy tłumaczeń I18n",
+		"locales": "Skonfigurowane lokalizacje I18n",
 		"experimental_disableEditMode": "<b>EKSPERIMENTAL</b>: Wyłącz tryb edycji"
 	}
 }
