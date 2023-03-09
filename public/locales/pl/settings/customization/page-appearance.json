@@ -1,28 +1,28 @@
 {
   "pageTitle": {
     "label": "Tytuł strony",
-    "description": ""
+    "description": "Tytuł pulpitu w lewym górnym rogu"
   },
   "metaTitle": {
     "label": "Meta Title",
-    "description": ""
+    "description": "Tytuł wyświetlany w karcie przeglądarki"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Logo wyświetlane u góry po lewej stronie"
   },
   "favicon": {
     "label": "Ikona",
-    "description": ""
+    "description": "Ikona wyświetlana w karcie przeglądarki"
   },
   "background": {
     "label": "Tło"
   },
   "customCSS": {
     "label": "Niestandardowy CSS",
-    "description": "",
+    "description": "Jeszcze bardziej dostosuj swój pulpit za pomocą CSS, zalecane tylko dla doświadczonych użytkowników",
     "placeholder": "Custom CSS zostanie zastosowany jako ostatni",
-    "applying": ""
+    "applying": "Zastosowanie CSS..."
   },
   "buttons": {
     "submit": "Zgłoś"
