@@ -3,12 +3,12 @@
 	"contact": "Masz problemy lub pytania? Skontaktuj się z nami!",
 	"addToDashboard": "Dodaj do pulpitu nawigacyjnego",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "Wersja schematu konfiguracji",
+		"configurationsCount": "Dostępne konfiguracje",
 		"version": "Wersja",
 		"nodeEnvironment": "",
 		"i18n": "",
 		"locales": "",
-		"experimental_disableEditMode": ""
+		"experimental_disableEditMode": "<b>EKSPERIMENTAL</b>: Wyłącz tryb edycji"
 	}
 }
