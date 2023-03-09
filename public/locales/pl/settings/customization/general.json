@@ -1,21 +1,21 @@
 {
-  "text": "",
+  "text": "Personalizacje pozwalają na skonfigurowanie i dostosowanie Homarr do swoich preferencji.",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "Układ",
+      "description": "Włączanie i wyłączanie elementów w nagłówku i na pulpicie"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Gridstack",
+      "description": "Dostosuj zachowanie i kolumny obszaru pulpitu"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Metadane strony",
+      "description": "Dostosowanie tytułów, logo i PWA"
     },
     "appereance": {
       "name": "Wygląd",
-      "description": ""
+      "description": "Dostosuj tło, kolory i wygląd aplikacji"
     }
   }
 }
