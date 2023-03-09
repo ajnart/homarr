@@ -1,19 +1,19 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Widget RSS",
+    "description": "Przechwytywa elementy z kanału RSS i je wyświetla. Często używane do wiadomości online",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widgetu RSS",
       "rssFeedUrl": {
-        "label": ""
+        "label": "Adres url kanału RSS"
       }
     }
   },
   "card": {
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nie można pobrać kanału RSS",
+        "text": "Wystąpił problem z osiągnięciem kanału RSS. Upewnij się, że poprawnie skonfigurowałeś kanał RSS używając poprawnego adresu URL. Adresy URL powinny być zgodne z oficjalną specyfikacją. Po aktualizacji kanału należy odświeżyć panel nawigacyjny."
       }
     }
   }
