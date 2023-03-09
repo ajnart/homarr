@@ -1,6 +1,6 @@
 {
   "save": "Zapisz",
-  "about": "O",
+  "about": "O programie",
   "cancel": "Anuluj",
   "close": "Zamknij",
   "delete": "Usuń",
@@ -9,26 +9,26 @@
   "version": "Wersja",
   "changePosition": "Zmiana pozycji",
   "remove": "Usuń",
-  "removeConfirm": "",
+  "removeConfirm": "Czy na pewno chcesz usunąć {{item}}?",
   "sections": {
     "settings": "Ustawienia",
     "dangerZone": "Strefa zagrożenia"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Klucz API",
     "username": "Nazwa użytkownika",
     "password": "Hasło"
   },
   "tip": "Wskazówka: ",
   "time": {
-    "seconds": "sekund",
-    "minutes": "minut",
+    "seconds": "sekundy",
+    "minutes": "minuty",
     "hours": "godziny"
   },
   "loading": "Ładowanie...",
   "breakPoints": {
     "small": "mała",
-    "medium": "średni",
-    "large": "duży"
+    "medium": "średnia",
+    "large": "duża"
   }
 }
