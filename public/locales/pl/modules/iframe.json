@@ -1,22 +1,22 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Osadzaj dowolne treści z internetu. Niektóre strony internetowe mogą ograniczać dostęp.",
     "settings": {
-      "title": "",
+      "title": "ustawienia iFrame",
       "embedUrl": {
-        "label": ""
+        "label": "Osadź URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Pozwól na pełny ekran"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Podaj adres URL",
+        "text": "Upewnij się, że wprowadziłeś poprawny adres w konfiguracji swojego widgetu"
       }
     }
   }
