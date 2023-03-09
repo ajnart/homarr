@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Serwery mediów",
+    "description": "Współdziałanie z serwerem multimediów Jellyfin lub Plex",
     "settings": {
-      "title": ""
+      "title": "Ustawienia dla widgetu serwera mediów"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Sesja",
+        "user": "Użytkownik",
+        "currentlyPlaying": "Aktualnie odtwarzane"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nie można załadować zawartości",
+        "text": "Nie udało się pobrać informacji z serwera. Proszę sprawdzić logi, aby uzyskać więcej szczegółów"
       }
     }
   }
