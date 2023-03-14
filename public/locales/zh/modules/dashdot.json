@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "在Homarr中显示一个外部Dash的图表。",
     "settings": {
       "title": "设置Dash小部件",
       "url": {
@@ -14,53 +14,53 @@
         "label": ""
       },
       "graphHeight": {
-        "label": ""
+        "label": "图形的高度"
       },
       "graphsOrder": {
         "label": "",
         "storage": {
           "label": "存储",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "显示为文本(紧凑)"
           },
           "multiView": {
-            "label": ""
+            "label": "显示为多驱动视图"
           }
         },
         "network": {
           "label": "网络",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "显示为文本(紧凑)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
           },
           "multiView": {
-            "label": ""
+            "label": "显示为多核视图"
           }
         },
         "ram": {
-          "label": "",
+          "label": "内存",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
@@ -69,7 +69,7 @@
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
@@ -85,7 +85,7 @@
       "noInformation": "无法从仪表板获取信息。- 你运行的是最新版本吗？",
       "protocolDowngrade": {
         "title": "检测到协议降级",
-        "text": ""
+        "text": "Dash实例的协议被降级。这存在安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保Dash也在HTTPS上运行，或者将Homarr降级为HTTP(不推荐)。"
       }
     },
     "graphs": {
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "内存"
       },
       "gpu": {
         "title": "GPU"
