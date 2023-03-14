@@ -39,14 +39,14 @@
 	"appearance": {
 		"icon": {
 			"label": "应用图标",
-			"description": "",
+			"description": "选择一个图标来显示在你的仪表板上。从 {{suggestionsCount}} 图标中选择，或输入你自己的URL。",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "未找到相应结果",
+				"text": "尝试使用一个更具体的搜索词。如果你找不到你想要的图标，请粘贴上面的图片URL，以获得一个自定义图标。"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "加载外部图标",
+				"text": "这可能需要几秒钟"
 			}
 		}
 	},
