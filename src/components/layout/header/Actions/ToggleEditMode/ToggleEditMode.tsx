@@ -33,6 +33,7 @@ export const ToggleEditModeAction = () => {
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
     if (enabled) {
+      // eslint-disable-next-line no-param-reassign
       event.returnValue = beforeUnloadEventText;
       return beforeUnloadEventText;
     }
