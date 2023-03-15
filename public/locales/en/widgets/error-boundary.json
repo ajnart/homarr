@@ -1,13 +1,13 @@
 {
   "card": {
-    "title": "Oops, there is an error!",
+    "title": "Oops, there was an error!",
     "buttons": {
       "details": "Details",
       "tryAgain": "Try again"
     }
   },
   "modal": {
-    "text": "We're sorry for the inconvinience! Usually, this shouln't happen. Please report this issue on GitHub.",
+    "text": "We're sorry for the inconvinience! This shouln't happen - please report this issue on GitHub.",
     "label": "Your error",
     "reportButton": "Report this error"
   }
