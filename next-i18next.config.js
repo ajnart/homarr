@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  // https://www.i18next.com/overview/configuration-options#logging
   i18n: {
     defaultLocale: 'en',
     locales: [
@@ -28,12 +27,12 @@ module.exports = {
       'sk',
       'no',
     ],
-    localePath: path.resolve('./public/locales'),
-    fallbackLng: 'en',
+
     localeDetection: true,
-    returnEmptyString: false,
-    debug: false,
-    appendNamespaceToCIMode: true,
-    reloadOnPrerender: process.env.NODE_ENV === 'development',
   },
+  returnEmptyString: false,
+  appendNamespaceToCIMode: true,
+  reloadOnPrerender: process.env.NODE_ENV === 'development',
+  fallbackLng: 'en',
+  localePath: path.resolve('./public/locales'),
 };

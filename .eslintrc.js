@@ -2,12 +2,12 @@ module.exports = {
   extends: [
     'mantine',
     'plugin:@next/next/recommended',
-    'plugin:jest/recommended',
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:vitest/recommended',
   ],
-  plugins: ['testing-library', 'jest', 'react-hooks', 'react', 'unused-imports'],
+  plugins: ['testing-library', 'react-hooks', 'react', 'unused-imports', 'vitest'],
   overrides: [
     {
       files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
@@ -31,5 +31,11 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     'no-continue': 'off',
     'linebreak-style': 0,
+    'vitest/max-nested-describe': [
+      'error',
+      {
+        max: 3,
+      },
+    ],
   },
 };
