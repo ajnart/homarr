@@ -7,5 +7,11 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: 'jsdom',
+    coverage: {
+      provider: 'c8',
+      reporter: ['html'],
+      all: true,
+      exclude: ['.next/', '.yarn/', 'data/']
+    }
   },
 });

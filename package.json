@@ -19,7 +19,8 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@ctrl/deluge": "^4.1.0",
@@ -79,6 +80,7 @@
     "@types/video.js": "^7.3.51",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
+    "@vitest/coverage-c8": "^0.29.3",
     "@vitest/ui": "^0.29.3",
     "eslint": "^8.20.0",
     "eslint-config-airbnb": "^19.0.4",
