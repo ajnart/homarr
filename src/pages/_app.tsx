@@ -22,12 +22,12 @@ import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/Cat
 import { ConfigProvider } from '../config/provider';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
-import { queryClient } from '../tools/queryClient';
+import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
 import {
   getServiceSidePackageAttributes,
   ServerSidePackageAttributesType,
 } from '../tools/server/getPackageVersion';
-import { theme } from '../tools/theme';
+import { theme } from '../tools/server/theme/theme';
 
 import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';

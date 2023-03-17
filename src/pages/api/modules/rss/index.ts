@@ -9,8 +9,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import Parser from 'rss-parser';
 
 import { getConfig } from '../../../../tools/config/getConfig';
-import { Stopwatch } from '../../../../tools/shared/stopwatch';
 import { IRssWidget } from '../../../../widgets/rss/RssWidgetTile';
+import { Stopwatch } from '../../../../tools/shared/time/stopwatch.tool';
 
 type CustomItem = {
   'media:content': string;
