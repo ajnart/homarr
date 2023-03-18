@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ops, Si è veritivato un errore!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Dettagli",
+      "tryAgain": "Riprova"
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "Ci dispiace per l'inconveniente! Ciò non dovrebbe accadere - si prega di segnalare questo problema su GitHub.",
+    "label": "Il tuo errore",
+    "reportButton": "Segnala questo errore"
   }
 }
