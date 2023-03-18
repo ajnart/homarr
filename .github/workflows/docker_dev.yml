@@ -70,7 +70,7 @@ jobs:
 
       - run: yarn install --immutable
 
-      - run: turbo build
+      - run: yarn turbo build
 
       - name: Docker meta
         if: github.event_name != 'pull_request'
