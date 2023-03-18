@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Confirm deletion of your config",
-      "warningText": "",
-      "text": "",
+      "warningText": "You are about to delete '<b>{{configName}}</b>'",
+      "text": "Please note that the deletion is not revertible, and your data will be lost permanently. After clicking this button, the file will be permanently deleted from your disk. Make sure to create an adequate backup of your configuration.",
       "buttons": {
         "confirm": "Yes, delete '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "Config delete failed"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
+          "title": "The default config can't be deleted",
           "message": "Configuration was not deleted from the file system"
         }
       }
