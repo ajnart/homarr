@@ -1,18 +1,20 @@
+import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
+import { useHotkeys, useWindowEvent } from '@mantine/hooks';
+import { hideNotification, showNotification } from '@mantine/notifications';
+import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import axios from 'axios';
 import Consola from 'consola';
-import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
-import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
-import { useHotkeys } from '@mantine/hooks';
-import { hideNotification, showNotification } from '@mantine/notifications';
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
 
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
-import { AddElementAction } from '../AddElementAction/AddElementAction';
 import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/gridstack/store';
 import { useCardStyles } from '../../../useCardStyles';
+import { AddElementAction } from '../AddElementAction/AddElementAction';
+
+const beforeUnloadEventText = 'Exit the edit mode to save your changes';
 
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
@@ -28,6 +30,16 @@ export const ToggleEditModeAction = () => {
   const { classes } = useCardStyles(true);
 
   useHotkeys([['ctrl+E', toggleEditMode]]);
+
+  useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
+    if (enabled) {
+      // eslint-disable-next-line no-param-reassign
+      event.returnValue = beforeUnloadEventText;
+      return beforeUnloadEventText;
+    }
+
+    return undefined;
+  });
 
   const toggleButtonClicked = () => {
     toggleEditMode();
