@@ -33,7 +33,7 @@ interface UserTableRowProps {
 }
 
 const UserTableRow = ({ user }: UserTableRowProps) => {
-  const { archiveAsync, unarchiveAsync: enableAsync } = useUserListActions();
+  const { archiveAsync, unarchiveAsync, remove } = useUserListActions();
 
   return (
     <tr key={user.id}>
@@ -76,10 +76,10 @@ const UserTableRow = ({ user }: UserTableRowProps) => {
             </>
           ) : (
             <>
-              <ActionIcon onClick={() => enableAsync(user.id)}>
+              <ActionIcon onClick={() => unarchiveAsync(user.id)}>
                 <IconArchiveOff size={16} />
               </ActionIcon>
-              <ActionIcon>
+              <ActionIcon onClick={() => remove(user)}>
                 <IconTrash color="red" size={16} />
               </ActionIcon>
             </>

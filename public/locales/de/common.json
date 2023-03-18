@@ -24,5 +24,34 @@
     "seconds": "Sekunden",
     "minutes": "Minuten",
     "hours": "Stunden"
+  },
+  "dayjs": {
+    "lastDay": "[Gestern um] LT",
+    "sameDay": "[Heute um] LT",
+    "nextDay": "[Morgen um] LT",
+    "nextWeek": "dddd [um] LT",
+    "lastWeek": "[Letzten] dddd [um] LT"
+  },
+  "events": {
+    "register": {
+      "label": "{{user}} hat sich mit der Einladung <strong>{{inviteName}}</strong> registriert"
+    },
+    "login": {
+      "label": "{{user}} hat sich angemeldet"
+    },
+    "login-failed": {
+      "label": "Die Anmeldung von {{user}} ist fehlgeschlagen - $t(events.login-failed.reason.{{reason}})",
+      "reason": {
+        "invalid-credentials": "Ungültige Anmeldeinformationen",
+        "not-found": "Benutzer nicht gefunden",
+        "disabled": "Benutzer deaktiviert"
+      }
+    },
+    "logout": {
+      "label": "{{user}} hat sich abgemeldet"
+    },
+    "invite": {
+      "label": "{{user}} hat die Einladung <strong>{{name}}</strong> erstellt."
+    }
   }
 }

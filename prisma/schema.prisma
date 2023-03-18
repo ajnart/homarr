@@ -24,6 +24,7 @@ model User {
   isEnabled    Boolean               @default(true)
   lastActiveAt DateTime              @default(now())
   permissions  DashboardPermission[]
+  events       SecurityEvent[]
 }
 
 model RegistrationInvite {
@@ -39,4 +40,13 @@ model DashboardPermission {
   userId      String
   user        User   @relation(fields: [userId], references: [id])
   permission  String // can be read or write
+}
+
+model SecurityEvent {
+  id        String   @id @default(cuid())
+  type      String
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  timestamp DateTime @default(now())
+  data      String // JSON
 }

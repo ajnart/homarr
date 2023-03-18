@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcrypt';
 import { registerSchema } from '../../../validation/auth';
+import { addSecurityEvent } from '../../../tools/events/addSecurityEvent';
 
 const SALT_ROUNDS = 10;
 
@@ -48,9 +49,11 @@ const Post = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  await prisma?.user.create({
+  const user = await prisma?.user.create({
     data: { username, password: hashPassword(password) },
   });
+
+  await addSecurityEvent('register', { inviteName: registrationInvite.name }, user?.id ?? null);
 
   return res.status(201).json({
     message: 'Account created successfully.',

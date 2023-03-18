@@ -1,6 +1,7 @@
 import { randomBytes } from 'crypto';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
+import { addSecurityEvent } from '../../../tools/events/addSecurityEvent';
 import { registrationInviteCreationInputSchema } from '../../../validation/invite';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
@@ -48,6 +49,8 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
       expiresAt: expirationDate,
     },
   });
+
+  await addSecurityEvent('invite', { name: result.data.name }, user.id);
 
   res.status(200).json(registrationInvite);
 }

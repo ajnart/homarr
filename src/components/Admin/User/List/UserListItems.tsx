@@ -29,7 +29,7 @@ interface UserListItemProps {
 }
 
 const UserListItem = ({ user }: UserListItemProps) => {
-  const { archiveAsync, unarchiveAsync } = useUserListActions();
+  const { archiveAsync, unarchiveAsync, remove } = useUserListActions();
 
   return (
     <Box
@@ -107,10 +107,10 @@ const UserListItem = ({ user }: UserListItemProps) => {
                   size="xs"
                   color="red"
                   variant="light"
-                  onClick={() => {}}
+                  onClick={() => remove(user)}
                   leftIcon={<IconTrash size={14} />}
                 >
-                  Delete user
+                  Remove user
                 </Button>
               </>
             )}

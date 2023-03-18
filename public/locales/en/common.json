@@ -24,5 +24,34 @@
     "seconds": "seconds",
     "minutes": "minutes",
     "hours": "hours"
+  },
+  "dayjs": {
+    "lastDay": "[Yesterday at] LT",
+    "sameDay": "[Today at] LT",
+    "nextDay": "[Tomorrow at] LT",
+    "nextWeek": "dddd [at] LT",
+    "lastWeek": "[Last] dddd [at] LT"
+  },
+  "events": {
+    "register": {
+      "label": "{{user}} has registered a new account with the invite <strong>{{inviteName}}</strong>."
+    },
+    "login": {
+      "label": "{{user}} has logged in."
+    },
+    "login-failed": {
+      "label": "{{user}} has failed to log in - $t(events.login-failed.reason.{{reason}})",
+      "reason": {
+        "invalid-credentials": "Invalid credentials",
+        "not-found": "User not found",
+        "disabled": "User disabled"
+      }
+    },
+    "logout": {
+      "label": "{{user}} has logged out."
+    },
+    "invite": {
+      "label": "{{user}} has created the invite <strong>{{name}}</strong>."
+    }
   }
 }

@@ -6,13 +6,13 @@ import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from '
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useState } from 'react';
-import { openInviteCreateModal } from '../../components/Admin/Invite/InviteCreateModal';
-import { useInvitesQuery } from '../../components/Admin/Invite/InviteTable';
-import { UserFilterType, UserList } from '../../components/Admin/User/UserList';
-import { GenericSearch } from '../../components/Admin/User/UserSearch';
-import { useScreenLargerThan } from '../../hooks/useScreenLargerThan';
-import { getServerAuthSession } from '../../server/common/get-server-auth-session';
-import { getServerSideTranslations } from '../../tools/getServerSideTranslations';
+import { openInviteCreateModal } from '../../../components/Admin/Invite/InviteCreateModal';
+import { useInvitesQuery } from '../../../components/Admin/Invite/InviteTable';
+import { UserFilterType, UserList } from '../../../components/Admin/User/UserList';
+import { GenericSearch } from '../../../components/Admin/User/UserSearch';
+import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
+import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
+import { getServerSideTranslations } from '../../../tools/getServerSideTranslations';
 
 const titleMap: Record<UserFilterType, string> = {
   all: 'All users',
@@ -146,7 +146,7 @@ const InvitesButton = () => {
   return (
     <Button
       component={NextLink}
-      href="/admin/invites"
+      href="/admin/users/invites"
       variant="default"
       leftIcon={<IconMail size={16} />}
       rightIcon={invites?.length === 0 || !invites ? null : <Badge>{invites.length}</Badge>}

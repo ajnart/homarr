@@ -26,7 +26,7 @@ export const InviteCreateTab = ({ onCreated }: InviteCreateTabProps) => {
       <Stack>
         <Text>You can invite other users so they can enjoy your dashboards.</Text>
         <TextInput
-          data-autoFocus
+          data-autofocus
           placeholder="Invite for John Doe"
           label="Name"
           {...getInputPropsMiddleware(getInputProps('name'))}

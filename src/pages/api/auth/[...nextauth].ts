@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 
 import { prisma } from '../../../server/db/client';
 import { loginSchema } from '../../../validation/auth';
+import { addSecurityEvent } from '../../../tools/events/addSecurityEvent';
 
 export const authOptions: NextAuthOptions = {
   callbacks: {
@@ -50,14 +51,25 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (!user || !user.isEnabled) {
+          await addSecurityEvent(
+            'login-failed',
+            {
+              fallbackUsername: cred.username,
+              reason: !user ? 'not-found' : 'disabled',
+            },
+            null
+          );
           return null;
         }
 
         const isValidPassword = bcrypt.compareSync(cred.password, user.password);
 
         if (!isValidPassword) {
+          await addSecurityEvent('login-failed', { reason: 'invalid-credentials' }, user.id);
           return null;
         }
+
+        await addSecurityEvent('login', {}, user.id);
 
         return {
           id: user.id,
@@ -67,6 +79,11 @@ export const authOptions: NextAuthOptions = {
     }),
     // ...add more providers here
   ],
+  events: {
+    signOut: async ({ token }) => {
+      await addSecurityEvent('logout', {}, token.sub ?? null);
+    },
+  },
 };
 
 export default NextAuth(authOptions);
