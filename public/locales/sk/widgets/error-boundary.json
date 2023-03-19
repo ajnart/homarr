@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ups, došlo k chybe!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Detaily",
+      "tryAgain": "Skúste znova"
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "Ospravedlňujeme sa za nepríjemnosti! Toto by sa nemalo stávať - nahláste tento problém na GitHub.",
+    "label": "Vaša chyba",
+    "reportButton": "Nahlásiť chybu"
   }
 }
