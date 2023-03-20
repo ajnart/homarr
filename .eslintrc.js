@@ -37,5 +37,6 @@ module.exports = {
         max: 3,
       },
     ],
+    'testing-library/no-node-access': ['error', { allowContainerFirstChild: true }],
   },
 };

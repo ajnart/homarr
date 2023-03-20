@@ -9,7 +9,7 @@ export const getServerSideTranslations = async (
   res?: ServerResponse,
 ) => {
   if (!req || !res) {
-    return await serverSideTranslations(
+    return serverSideTranslations(
       requestLocale ?? 'en',
       namespaces
     );
@@ -17,7 +17,7 @@ export const getServerSideTranslations = async (
 
   const configLocale = getCookie('config-locale', { req, res });
 
-  return await serverSideTranslations(
+  return serverSideTranslations(
     (configLocale ?? requestLocale ?? 'en') as string,
     namespaces
   );

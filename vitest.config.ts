@@ -12,6 +12,9 @@ export default defineConfig({
       reporter: ['html'],
       all: true,
       exclude: ['.next/', '.yarn/', 'data/']
-    }
+    },
+    setupFiles: [
+      "./setupVitest.ts"
+    ]
   },
 });
