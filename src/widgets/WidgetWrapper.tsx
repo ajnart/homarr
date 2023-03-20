@@ -2,6 +2,7 @@ import { ComponentType, useMemo } from 'react';
 import Widgets from '.';
 import { HomarrCardWrapper } from '../components/Dashboard/Tiles/HomarrCardWrapper';
 import { WidgetsMenu } from '../components/Dashboard/Tiles/Widgets/WidgetsMenu';
+import ErrorBoundary from './boundary';
 import { IWidget } from './widgets';
 
 interface WidgetWrapperProps {
@@ -40,9 +41,11 @@ export const WidgetWrapper = ({
   const widgetWithDefaultProps = useWidget(widget);
 
   return (
-    <HomarrCardWrapper className={className}>
-      <WidgetsMenu integration={widgetId} widget={widgetWithDefaultProps} />
-      <WidgetComponent widget={widgetWithDefaultProps} />
-    </HomarrCardWrapper>
+    <ErrorBoundary>
+      <HomarrCardWrapper className={className}>
+        <WidgetsMenu integration={widgetId} widget={widgetWithDefaultProps} />
+        <WidgetComponent widget={widgetWithDefaultProps} />
+      </HomarrCardWrapper>
+    </ErrorBoundary>
   );
 };

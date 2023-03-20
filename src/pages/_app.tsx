@@ -38,6 +38,7 @@ function App(
     colorScheme: ColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
+    defaultColorScheme: ColorScheme;
   }
 ) {
   const { Component, pageProps } = props;
@@ -55,7 +56,7 @@ function App(
 
   // hook will return either 'dark' or 'light' on client
   // and always 'light' during ssr as window.matchMedia is not available
-  const preferredColorScheme = useColorScheme();
+  const preferredColorScheme = useColorScheme(props.defaultColorScheme);
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: preferredColorScheme,
@@ -144,10 +145,18 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
       'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
     );
   }
+
+  if (process.env.DEFAULT_COLOR_SCHEME !== undefined) {
+    Consola.debug(`Overriding the default color scheme with ${process.env.DEFAULT_COLOR_SCHEME}`);
+  }
+
+  const colorScheme: ColorScheme = process.env.DEFAULT_COLOR_SCHEME as ColorScheme ?? 'light';
+
   return {
     colorScheme: getCookie('color-scheme', ctx) || 'light',
     packageAttributes: getServiceSidePackageAttributes(),
     editModeEnabled: !disableEditMode,
+    defaultColorScheme: colorScheme,
   };
 };
 
