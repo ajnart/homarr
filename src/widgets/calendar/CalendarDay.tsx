@@ -11,7 +11,6 @@ interface CalendarDayProps {
 
 export const CalendarDay = ({ date, medias }: CalendarDayProps) => {
   const [opened, { close, open }] = useDisclosure(false);
-  const { colorScheme, colors } = useMantineTheme();
 
   if (medias.totalCount === 0) {
     return <div>{date.getDate()}</div>;
@@ -33,14 +32,14 @@ export const CalendarDay = ({ date, medias }: CalendarDayProps) => {
       <Popover.Target>
         <Box
           onClick={open}
-          style={{
+          sx={(theme) => ({
             margin: 5,
             backgroundColor: isToday(date)
-              ? colorScheme === 'dark'
-                ? colors.dark[5]
-                : colors.gray[0]
+              ? theme.colorScheme === 'dark'
+                ? theme.colors.dark[5]
+                : theme.colors.gray[0]
               : undefined,
-          }}
+          })}
         >
           <DayIndicator color="red" position="bottom-start" medias={medias.books}>
             <DayIndicator color="yellow" position="top-start" medias={medias.movies}>

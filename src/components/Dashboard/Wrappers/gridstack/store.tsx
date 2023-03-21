@@ -20,7 +20,6 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
   const mainAreaWidth = useGridstackStore((x) => x.mainAreaWidth);
   if (!mainAreaWidth) return null;
 
-  // TODO: Calculate rem to pixels using Calc function
   if (mainAreaWidth >= 1400) return 'large';
 
   if (mainAreaWidth >= 800) return 'medium';
