@@ -124,13 +124,13 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
             <Table mb={5}>
               <thead>
                 <tr>
-                  <th>Key</th>
-                  <th>Shortcut</th>
+                  <th>t{'layout/modals/about:key'}</th>
+                  <th>t{'layout/modals/about:action'}</th>
                 </tr>
               </thead>
               <tbody>{rows}</tbody>
             </Table>
-            <Tip>Mod refers to your modifier key, it is Ctrl and Command/Super/Windows key</Tip>
+            <Tip>{t('layout/modals/about:tip')}</Tip>
           </Accordion.Panel>
         </Accordion.Item>
       </Accordion>
