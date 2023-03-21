@@ -5,6 +5,7 @@
 	"tip": "Mod refers to your modifier key, it is Ctrl and Command/Super/Windows key",
 	"key": "Shortcut key",
 	"action": "Action",
+	"keybinds": "Keybinds",
 	"metrics": {
 		"configurationSchemaVersion": "Configuration schema version",
 		"configurationsCount": "Available configurations",

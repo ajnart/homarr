@@ -119,7 +119,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
       </Table>
       <Accordion mb={5} variant="contained" radius="md">
         <Accordion.Item value="keybinds">
-          <Accordion.Control icon={<IconKey size={20} />}>Keybinds</Accordion.Control>
+          <Accordion.Control icon={<IconKey size={20} />}>t{'layout/modals/about:keybinds'}</Accordion.Control>
           <Accordion.Panel>
             <Table mb={5}>
               <thead>
