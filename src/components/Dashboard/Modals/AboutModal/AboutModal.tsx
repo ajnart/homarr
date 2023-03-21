@@ -63,7 +63,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
       <td>
         <Kbd>{element.key}</Kbd>
       </td>
-      <td>{element.shortcut}</td>
+      <td><Text>{element.shortcut}</Text></td>
     </tr>
   ));
 
