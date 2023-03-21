@@ -18,22 +18,21 @@ function ModalContent() {
         axios
           .post('/api/configs/tryPassword', { tried: values.triedPassword, type: 'edit' })
           .then((res) => {
-            if (res.data.success) {
-              showNotification({
-                title: 'Success',
-                message: 'Successfully toggled edit mode, reloading the page...',
-                color: 'green',
-              });
-              setTimeout(() => {
-                window.location.reload();
-              }, 500);
-            } else {
-              showNotification({
-                title: 'Wrong password',
-                message: 'The password you entered is wrong.',
-                color: 'red',
-              });
-            }
+            showNotification({
+              title: 'Success',
+              message: 'Successfully toggled edit mode, reloading the page...',
+              color: 'green',
+            });
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
+          })
+          .catch((_) => {
+            showNotification({
+              title: 'Error',
+              message: 'Failed to toggle edit mode, please try again.',
+              color: 'red',
+            });
           });
       })}
     >
