@@ -63,7 +63,9 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
       <td>
         <Kbd>{element.key}</Kbd>
       </td>
-      <td><Text>{element.shortcut}</Text></td>
+      <td>
+        <Text>{element.shortcut}</Text>
+      </td>
     </tr>
   ));
 
@@ -119,13 +121,15 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
       </Table>
       <Accordion mb={5} variant="contained" radius="md">
         <Accordion.Item value="keybinds">
-          <Accordion.Control icon={<IconKey size={20} />}>t{'layout/modals/about:keybinds'}</Accordion.Control>
+          <Accordion.Control icon={<IconKey size={20} />}>
+            {t('layout/modals/about:keybinds')}
+          </Accordion.Control>
           <Accordion.Panel>
             <Table mb={5}>
               <thead>
                 <tr>
-                  <th>t{'layout/modals/about:key'}</th>
-                  <th>t{'layout/modals/about:action'}</th>
+                  <th>{t('layout/modals/about:key')}</th>
+                  <th>{t('layout/modals/about:action')}</th>
                 </tr>
               </thead>
               <tbody>{rows}</tbody>
