@@ -15,24 +15,26 @@ function ModalContent() {
   return (
     <form
       onSubmit={form.onSubmit((values) => {
-        axios.post('/api/configs/tryToggleEdit', { tried: values.triedPassword }).then((res) => {
-          if (res.data.success) {
-            showNotification({
-              title: 'Success',
-              message: 'Successfully toggled edit mode, reloading the page...',
-              color: 'green',
-            });
-            setTimeout(() => {
-              window.location.reload();
-            }, 500);
-          } else {
-            showNotification({
-              title: 'Wrong password',
-              message: 'The password you entered is wrong.',
-              color: 'red',
-            });
-          }
-        });
+        axios
+          .post('/api/configs/tryPassword', { tried: values.triedPassword, type: 'edit' })
+          .then((res) => {
+            if (res.data.success) {
+              showNotification({
+                title: 'Success',
+                message: 'Successfully toggled edit mode, reloading the page...',
+                color: 'green',
+              });
+              setTimeout(() => {
+                window.location.reload();
+              }, 500);
+            } else {
+              showNotification({
+                title: 'Wrong password',
+                message: 'The password you entered is wrong.',
+                color: 'red',
+              });
+            }
+          });
       })}
     >
       <Stack>
