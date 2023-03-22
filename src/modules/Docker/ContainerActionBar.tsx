@@ -207,6 +207,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
   );
 }
 
+/**
+ * @deprecated legacy code
+ */
 function tryMatchType(imageName: string): ServiceType {
   const match = MatchingImages.find(({ image }) => imageName.includes(image));
   if (match) {
@@ -216,6 +219,11 @@ function tryMatchType(imageName: string): ServiceType {
   return 'Other';
 }
 
+/**
+ * @deprecated
+ * @param container the container to match
+ * @returns a new service
+ */
 const tryMatchService = (container: Dockerode.ContainerInfo | undefined) => {
   if (container === undefined) return {};
   const name = container.Names[0].substring(1);

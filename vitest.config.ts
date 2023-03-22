@@ -6,15 +6,15 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   plugins: [react()],
   test: {
-    environment: 'jsdom',
+    environment: 'happy-dom',
     coverage: {
       provider: 'c8',
       reporter: ['html'],
       all: true,
-      exclude: ['.next/', '.yarn/', 'data/']
+      exclude: ['.next/', '.yarn/', 'data/'],
     },
     setupFiles: [
-      "./setupVitest.ts"
-    ]
+      './tests/setupVitest.ts',
+    ],
   },
 });

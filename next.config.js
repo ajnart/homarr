@@ -10,5 +10,5 @@ module.exports = withBundleAnalyzer({
   },
   reactStrictMode: true,
   output: 'standalone',
-  i18n: i18n,
+  i18n,
 });
