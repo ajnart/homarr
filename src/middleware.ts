@@ -1,8 +1,8 @@
-import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-// eslint-disable-next-line consistent-return
-export function middleware(req: NextRequest, ev: NextFetchEvent) {
+export function middleware(req: NextRequest) {
   const { cookies } = req;
+
   // Don't even bother with the middleware if there is no defined password
   if (!process.env.PASSWORD) return NextResponse.next();
 

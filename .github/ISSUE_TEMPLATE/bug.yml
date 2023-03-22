@@ -32,8 +32,15 @@ body:
   - type: textarea
     id: logs
     attributes:
-      label: Additional info
-      description: Logs? Screenshots? More info?
+      label: Logs
+      description: Provide your Homarr logs so we can investigate what's going on
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Screenshots? More info?
     validations:
       required: false
   - type: checkboxes
@@ -42,9 +49,11 @@ body:
       label: Please tick the boxes
       description: Before submitting, please ensure that
       options:
-        - label: You've read the [docs](https://github.com/ajnart/homarr#readme)
+        - label: I confirm that I attached the proper logs
           required: true
-        - label: You've checked for [duplicate issues](https://github.com/ajnart/homarr/issues)
+        - label: I've read the [docs](https://github.com/ajnart/homarr#readme)
           required: true
-        - label: You've tried to debug yourself
+        - label: I've checked for [duplicate issues](https://github.com/ajnart/homarr/issues)
+          required: true
+        - label: I've tried to debug myself
           required: true

@@ -61,7 +61,9 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const responseBody = { apps: data, failedApps: failedClients } as NormalizedDownloadQueueResponse;
 
   if (failedClients.length > 0) {
-    Consola.warn(`${failedClients.length} download clients failed. Please check your configuration and the above log`);
+    Consola.warn(
+      `${failedClients.length} download clients failed. Please check your configuration and the above log`
+    );
   }
 
   return response.status(200).json(responseBody);

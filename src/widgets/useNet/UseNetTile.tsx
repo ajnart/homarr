@@ -46,7 +46,7 @@ const definition = defineWidget({
   },
 });
 
-export type IUsenetWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IUsenetWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface UseNetTileProps {
   widget: IUsenetWidget;

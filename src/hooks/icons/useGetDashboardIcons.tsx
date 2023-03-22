@@ -10,5 +10,7 @@ export const useGetDashboardIcons = () =>
       return data as NormalizedIconRepositoryResult[];
     },
     refetchOnMount: false,
+    // Cache for infinity, refetch every so often.
+    cacheTime: Infinity,
     refetchOnWindowFocus: false,
   });

@@ -53,7 +53,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   );
 
   const IntegrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([
-     ['sonarr', useSonarrv4 ? '/api/v3/calendar' : '/api/calendar'],
+    ['sonarr', useSonarrv4 ? '/api/v3/calendar' : '/api/calendar'],
     ['radarr', '/api/v3/calendar'],
     ['lidarr', '/api/v1/calendar'],
     ['readarr', '/api/v1/calendar'],

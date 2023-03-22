@@ -32,6 +32,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+.turbo
 *.tsbuildinfo
 
 # storybook
