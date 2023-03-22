@@ -42,7 +42,7 @@ export function Header(props: any) {
         >
           <Search />
           {!editModeEnabled && <ToggleEditModeAction />}
-          <DockerMenuButton />
+          {!editModeEnabled && <DockerMenuButton />}
           <Indicator
             size={15}
             color="blue"

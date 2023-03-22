@@ -54,7 +54,7 @@ export default function DockerMenuButton(props: any) {
     }, 300);
   }
 
-  if (!dockerEnabled) {
+  if (!dockerEnabled || process.env.DISABLE_EDIT_MODE === 'true') {
     return null;
   }
 
