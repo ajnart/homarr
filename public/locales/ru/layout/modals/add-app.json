@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "Общие",
-		"behaviour": "",
+		"behaviour": "Поведение",
 		"network": "Сеть",
 		"appearance": "Внешний вид",
 		"integration": "Интеграция"
