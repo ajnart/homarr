@@ -3,8 +3,8 @@
 	"contact": "¿Tienes problemas o preguntas? ¡Conéctate con nosotros!",
 	"addToDashboard": "Añadir al Dashboard",
 	"tip": "",
-	"key": "",
-	"action": "",
+	"key": "Tecla de acceso directo",
+	"action": "Acción",
 	"keybinds": "",
 	"metrics": {
 		"configurationSchemaVersion": "Versión del esquema de configuración",
