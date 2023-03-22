@@ -5,7 +5,7 @@
 	"tip": "Mod относится к клавише модификатору, это клавиши Ctrl и Command/Super/Windows",
 	"key": "Горячие клавиши",
 	"action": "Действие",
-	"keybinds": "",
+	"keybinds": "Сочетания клавиш",
 	"metrics": {
 		"configurationSchemaVersion": "Версия схемы конфигурации",
 		"configurationsCount": "Доступные конфигурации",
