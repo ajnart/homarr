@@ -14,7 +14,6 @@ import {
   Stack,
   Text,
   Title,
-  UnstyledButton,
 } from '@mantine/core';
 import {
   IconBulldozer,
@@ -25,11 +24,11 @@ import {
   IconRss,
   IconSpeakerphone,
 } from '@tabler/icons';
+import { useQuery } from '@tanstack/react-query';
+import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useGetRssFeed } from '../../hooks/widgets/rss/useGetRssFeed';
-import { sleep } from '../../tools/client/time';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -57,6 +56,15 @@ interface RssTileProps {
   widget: IRssWidget;
 }
 
+const useGetRssFeed = (feedUrl: string) =>
+  useQuery({
+    queryKey: ['rss-feed', feedUrl],
+    queryFn: async () => {
+      const response = await fetch('/api/modules/rss');
+      return response.json();
+    },
+  });
+
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeed(
@@ -65,9 +73,27 @@ function RssTile({ widget }: RssTileProps) {
   const { classes } = useStyles();
   const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
 
+  function formatDate(input: string): string {
+    // Parse the input date as a local date
+    const inputDate = dayjs(new Date(input));
+    const now = dayjs(); // Current date and time
+
+    const diffInHours = now.diff(inputDate, 'hour');
+    const diffInDays = now.diff(inputDate, 'day');
+
+    // If the input date is more than 2 weeks ago, return the formatted date
+    if (diffInDays > 14) {
+      return inputDate.format('DD MMM YYYY');
+    }
+    if (diffInDays >= 1) {
+      return `${diffInDays} days ago`;
+    }
+    return `${diffInHours} hours ago`;
+  }
+
   if (!data || isLoading) {
     return (
-      <Center>
+      <Center h="100%">
         <Loader />
       </Center>
     );
@@ -87,32 +113,8 @@ function RssTile({ widget }: RssTileProps) {
 
   return (
     <Stack h="100%">
-      <LoadingOverlay visible={loadingOverlayVisible} />
-      <Flex gap="md">
-        {data.feed.image ? (
-          <Image
-            src={data.feed.image.url}
-            alt={data.feed.image.title}
-            width="auto"
-            height={40}
-            mx="auto"
-          />
-        ) : (
-          <Title order={6}>{data.feed.title}</Title>
-        )}
-        <UnstyledButton
-          onClick={async () => {
-            setLoadingOverlayVisible(true);
-            await Promise.all([sleep(1500), refetch()]);
-            setLoadingOverlayVisible(false);
-          }}
-          disabled={isFetching || isLoading}
-        >
-          <ActionIcon>
-            <IconRefresh />
-          </ActionIcon>
-        </UnstyledButton>
-      </Flex>
+      <LoadingOverlay visible={isFetching} />
+      <Flex align="end">{data.feed.title && <Title order={5}>{data.feed.title}</Title>}</Flex>
       <ScrollArea className="scroll-area-w100" w="100%">
         <Stack w="100%" spacing="xs">
           {data.feed.items.map((item: any, index: number) => (
@@ -150,7 +152,7 @@ function RssTile({ widget }: RssTileProps) {
                   {item.categories && (
                     <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
                       {item.categories.map((category: any, categoryIndex: number) => (
-                        <Badge key={categoryIndex}>{category._}</Badge>
+                        <Badge key={categoryIndex}>{category}</Badge>
                       ))}
                     </Flex>
                   )}
@@ -160,7 +162,7 @@ function RssTile({ widget }: RssTileProps) {
                     {item.content}
                   </Text>
 
-                  {item.pubDate && <TimeDisplay date={item.pubDate} />}
+                  {item.pubDate && <TimeDisplay date={formatDate(item.pubDate)} />}
                 </Flex>
               </Flex>
             </Card>
@@ -169,23 +171,27 @@ function RssTile({ widget }: RssTileProps) {
       </ScrollArea>
 
       <Flex wrap="wrap" columnGap="md">
-        <Group spacing="sm">
-          <IconCopyright size={14} />
-          <Text color="dimmed" size="sm">
-            {data.feed.copyright}
-          </Text>
-        </Group>
-        <Group>
-          <IconCalendarTime size={14} />
-          <Text color="dimmed" size="sm">
-            {data.feed.pubDate}
-          </Text>
-        </Group>
+        {data.feed.copyright && (
+          <Group spacing="sm">
+            <IconCopyright size={14} />
+            <Text color="dimmed" size="sm">
+              {data.feed.copyright}
+            </Text>
+          </Group>
+        )}
+        {data.feed.pubDate && (
+          <Group>
+            <IconCalendarTime size={14} />
+            <Text color="dimmed" size="sm">
+              {data.feed.pubDate}
+            </Text>
+          </Group>
+        )}
         {data.feed.lastBuildDate && (
           <Group>
             <IconBulldozer size={14} />
             <Text color="dimmed" size="sm">
-              {data.feed.lastBuildDate}
+              {formatDate(data.feed.lastBuildDate)}
             </Text>
           </Group>
         )}
@@ -204,6 +210,25 @@ function RssTile({ widget }: RssTileProps) {
             </Text>
           </Group>
         )}
+        <ActionIcon
+          size="sm"
+          radius="xl"
+          pos="absolute"
+          right={10}
+          onClick={() => refetch()}
+          bottom={10}
+          styles={{
+            root: {
+              borderColor: 'red',
+            },
+          }}
+        >
+          {data.feed.image ? (
+            <Image src={data.feed.image.url} alt={data.feed.image.title} mx="auto" />
+          ) : (
+            <IconRefresh />
+          )}
+        </ActionIcon>
       </Flex>
     </Stack>
   );
