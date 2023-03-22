@@ -2,10 +2,10 @@
 	"description": "Homarr es un dashboard <strong>elegante</strong> y <strong>moderno</strong> que pone todas tus apps y servicios a tu alcance. Con Homarr, puedes acceder y controlar todo desde una sola ubicación. Homarr se integra a la perfección con las apps que hayas añadido, ofreciendote información valiosa y dándote control total. La instalación es muy sencilla, y Homarr soporta una amplia gama de métodos de implementación.",
 	"contact": "¿Tienes problemas o preguntas? ¡Conéctate con nosotros!",
 	"addToDashboard": "Añadir al Dashboard",
-	"tip": "",
+	"tip": "Mod se refiere a tu tecla modificadora, es Ctrl y tecla Command/Super/Windows",
 	"key": "Tecla de acceso directo",
 	"action": "Acción",
-	"keybinds": "",
+	"keybinds": "Combinaciones de teclas",
 	"metrics": {
 		"configurationSchemaVersion": "Versión del esquema de configuración",
 		"configurationsCount": "Configuraciones disponibles",
