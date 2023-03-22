@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Показывает графики внешнего экземпляра Dash. в Homarr.",
     "settings": {
       "title": "Настройки для виджета Dash.",
       "url": {
@@ -21,7 +21,7 @@
         "storage": {
           "label": "Хранилище",
           "enabled": {
-            "label": ""
+            "label": "Показать в виджете"
           },
           "span": {
             "label": "Размеры столбцов"
@@ -36,7 +36,7 @@
         "network": {
           "label": "Сеть",
           "enabled": {
-            "label": ""
+            "label": "Показать в виджете"
           },
           "span": {
             "label": "Размеры столбцов"
@@ -48,7 +48,7 @@
         "cpu": {
           "label": "ЦП",
           "enabled": {
-            "label": ""
+            "label": "Показать в виджете"
           },
           "span": {
             "label": "Размеры столбцов"
@@ -60,7 +60,7 @@
         "ram": {
           "label": "ОЗУ",
           "enabled": {
-            "label": ""
+            "label": "Показать в виджете"
           },
           "span": {
             "label": "Размеры столбцов"
@@ -69,7 +69,7 @@
         "gpu": {
           "label": "ГП",
           "enabled": {
-            "label": ""
+            "label": "Показать в виджете"
           },
           "span": {
             "label": "Размеры столбцов"
