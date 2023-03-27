@@ -20,7 +20,7 @@ export const useWeatherForCity = (cityName: string) => {
   const weatherQuery = useQuery({
     queryKey: ['weather', { cityName }],
     queryFn: () => fetchWeather(city?.results[0]),
-    enabled: !!city,
+    enabled: Boolean(city),
     cacheTime: 1000 * 60 * 60 * 6, // the weather is cached for 6 hours
     staleTime: 1000 * 60 * 5, // the weather is considered stale after 5 minutes
   });
