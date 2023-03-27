@@ -94,7 +94,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
                             mt="md"
                             fullWidth
                           >
-                            {(this.props.t('modal.reportButton'))}
+                            {this.props.t('modal.reportButton')}
                           </Button>
                         </>
                       ),

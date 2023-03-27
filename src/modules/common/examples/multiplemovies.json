@@ -1,3324 +1,3298 @@
 [
-	{
-		"title": "Sword Art Online the Movie -Progressive- Aria of a Starless Night",
-		"originalTitle": "劇場版 ソードアート・オンライン-プログレッシブ- 星なき夜のアリア",
-		"originalLanguage": {
-			"id": 8,
-			"name": "Japanese"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "Gekijō-ban Sword Art Online: Progressive Hoshi Naki Yoru no Aria",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1749
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "SAO Progressive",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1751
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "Gekijouban Sword Art Online: Progressive - Hoshinaki Yoru no Ari",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1752
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "Sōdo Āto Onrain",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1753
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "Sword Art Online the Movie: The Aria of the Night Without Stars",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1754
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "극장판 소드 아트 온라인 -프로그레시브-: 별 없는 밤의 아리아",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1755
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "소드 아트 온라인 프로그레시브",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1756
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "Sword Art Online: Progressive - Aria of a Starless Night",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1757
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "刀劍神域劇場版 - PROGRESSIVE - 無星夜的詠嘆調",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1758
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "ซอร์ดอาร์ตออนไลน์ โปรเกรสซีฟ เดอะมูฟวี่",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 28,
-					"name": "Thai"
-				},
-				"id": 1759
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "剧场版 刀剑神域 进击篇 无星之夜的咏叹调",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1760
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "Sword Art Online Progressive: Ária de Uma Noite Sem Estrelas",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1761
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "刀剑神域 进击篇 无星夜的咏叹调",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1776
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "Sword Art Online Progressive Movie: Hoshi Naki Yoru no Aria",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1788
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 170,
-				"title": "刀剑神域：无星之夜的咏叹调",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1826
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "sword art online movie progressive aria starless night",
-		"sizeOnDisk": 0,
-		"status": "released",
-		"overview": "One month after Kayaba Akihiko's game of death began, the death toll continues to rise, two thousand players having already lost their lives to the ultra-difficult VRMMO world of Sword Art Online. On the day of the strategy meeting to plan out the first-floor boss battle, Kirito, a solo player who vows to fight alone to get stronger, runs into a rare, high-level female player. She gracefully dispatches powerful monsters with a single rapier that flashes like a shooting star in the night...",
-		"inCinemas": "2021-10-30T00:00:00Z",
-		"physicalRelease": "2022-07-08T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/yD9RhgIVydQNBK7OLEbCWYcWMUd.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/2kvl6lcgoyAaf8cSRkzxE611u6T.jpg"
-			}
-		],
-		"website": "https://sao-p.net",
-		"year": 2021,
-		"hasFile": false,
-		"youTubeTrailerId": "Jf6RyZkuVco",
-		"studio": "Aniplex",
-		"path": "/movies/Sword Art Online the Movie -Progressive- Aria of a Starless Night (2021)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Sword Art Online the Movie -Progressive- Aria of a Starless Night (2021)",
-		"runtime": 97,
-		"cleanTitle": "swordartonlinemovieprogressiveariastarlessnight",
-		"imdbId": "tt13424422",
-		"tmdbId": 761898,
-		"titleSlug": "761898",
-		"certification": "PG-13",
-		"genres": [
-			"Animation",
-			"Action",
-			"Fantasy"
-		],
-		"tags": [],
-		"added": "2022-07-04T17:05:05Z",
-		"ratings": {
-			"imdb": {
-				"votes": 1048,
-				"value": 7.1,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 82,
-				"value": 8.341,
-				"type": "user"
-			}
-		},
-		"collection": {
-			"name": "Sword Art Online the Movie -Progressive-",
-			"tmdbId": 893713,
-			"images": []
-		},
-		"id": 170
-	},
-	{
-		"title": "Jujutsu Kaisen 0",
-		"originalTitle": "劇場版 呪術廻戦 0",
-		"originalLanguage": {
-			"id": 8,
-			"name": "Japanese"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "Gekijō-ban Jujutsu Kaisen 0",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1672
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "Gekijou-ban Jujutsu Kaisen 0",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1673
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "극장판 주술회전 0",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1674
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "Jujutsu Kaisen 0: The Movie",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1675
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "呪術廻戦 0",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1676
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "JUJUTSU KAISEN 0 the Movie",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1677
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "劇場版 咒術迴戰 0",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1678
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 164,
-				"title": "Jujutsu Kaisen 0: Film",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 12,
-					"name": "Polish"
-				},
-				"id": 1845
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "jujutsu kaisen 0",
-		"sizeOnDisk": 0,
-		"status": "inCinemas",
-		"overview": "Yuta Okkotsu is a nervous high school student who is suffering from a serious problem—his childhood friend Rika has turned into a curse and won't leave him alone. Since Rika is no ordinary curse, his plight is noticed by Satoru Gojo, a teacher at Jujutsu High, a school where fledgling exorcists learn how to combat curses. Gojo convinces Yuta to enroll, but can he learn enough in time to confront the curse that haunts him?",
-		"inCinemas": "2021-12-24T00:00:00Z",
-		"physicalRelease": "2022-09-21T00:00:00Z",
-		"digitalRelease": "2022-09-21T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/3pTwMUEavTzVOh6yLN0aEwR7uSy.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/t9K8ycUBCplWiICDOKRNRYcEH9e.jpg"
-			}
-		],
-		"website": "",
-		"year": 2021,
-		"hasFile": false,
-		"youTubeTrailerId": "2docezZl574",
-		"studio": "Toho",
-		"path": "/movies/Jujutsu Kaisen 0 (2021)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": false,
-		"folderName": "/movies/Jujutsu Kaisen 0 (2021)",
-		"runtime": 105,
-		"cleanTitle": "jujutsukaisen0",
-		"imdbId": "tt14331144",
-		"tmdbId": 810693,
-		"titleSlug": "810693",
-		"certification": "PG-13",
-		"genres": [
-			"Animation",
-			"Action",
-			"Fantasy"
-		],
-		"tags": [],
-		"added": "2022-06-27T13:00:43Z",
-		"ratings": {
-			"imdb": {
-				"votes": 11063,
-				"value": 7.9,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 241,
-				"value": 7.8,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 72,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 98,
-				"type": "user"
-			}
-		},
-		"id": 164
-	},
-	{
-		"title": "Morbius",
-		"originalTitle": "Morbius",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 113,
-				"title": "Morbiuss",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1484
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 113,
-				"title": "暗夜博士：莫比亚斯",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1600
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "morbius",
-		"sizeOnDisk": 2130913775,
-		"status": "released",
-		"overview": "Dangerously ill with a rare blood disorder, and determined to save others suffering his same fate, Dr. Michael Morbius attempts a desperate gamble. What at first appears to be a radical success soon reveals itself to be a remedy potentially worse than the disease.",
-		"inCinemas": "2022-03-30T00:00:00Z",
-		"physicalRelease": "2022-06-14T00:00:00Z",
-		"digitalRelease": "2022-05-14T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/gG9fTyDL03fiKnOpf2tr01sncnt.jpg"
-			}
-		],
-		"website": "https://www.morbius.movie/",
-		"year": 2022,
-		"hasFile": true,
-		"youTubeTrailerId": "wG2TjtueeSU",
-		"studio": "Columbia Pictures",
-		"path": "/movies/Morbius (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Morbius (2022)",
-		"runtime": 105,
-		"cleanTitle": "morbius",
-		"imdbId": "tt5108870",
-		"tmdbId": 526896,
-		"titleSlug": "526896",
-		"certification": "PG-13",
-		"genres": [
-			"Action",
-			"Science Fiction",
-			"Fantasy"
-		],
-		"tags": [],
-		"added": "2022-02-11T19:39:55Z",
-		"ratings": {
-			"imdb": {
-				"votes": 92720,
-				"value": 5.2,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 2174,
-				"value": 6.4,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 35,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 16,
-				"type": "user"
-			}
-		},
-		"movieFile": {
-			"movieId": 113,
-			"relativePath": "Morbius (2022) WEBRip-1080p.mp4",
-			"path": "/movies/Morbius (2022)/Morbius (2022) WEBRip-1080p.mp4",
-			"size": 2130913775,
-			"dateAdded": "2022-05-17T03:04:01Z",
-			"sceneName": "Morbius.2022.1080p.WEBRip.x264-RARBG",
-			"indexerFlags": 1,
-			"quality": {
-				"quality": {
-					"id": 15,
-					"name": "WEBRip-1080p",
-					"source": "webrip",
-					"resolution": 1080,
-					"modifier": "none"
-				},
-				"revision": {
-					"version": 1,
-					"real": 0,
-					"isRepack": false
-				}
-			},
-			"mediaInfo": {
-				"audioBitrate": 224000,
-				"audioChannels": 5.1,
-				"audioCodec": "AAC",
-				"audioLanguages": "eng",
-				"audioStreamCount": 1,
-				"videoBitDepth": 8,
-				"videoBitrate": 2498238,
-				"videoCodec": "x264",
-				"videoDynamicRangeType": "",
-				"videoFps": 23.976,
-				"resolution": "1920x800",
-				"runTime": "1:44:09",
-				"scanType": "Progressive",
-				"subtitles": ""
-			},
-			"originalFilePath": "Morbius.2022.1080p.WEBRip.x264-RARBG/Morbius.2022.1080p.WEBRip.x264-RARBG.mp4",
-			"qualityCutoffNotMet": false,
-			"languages": [
-				{
-					"id": 1,
-					"name": "English"
-				}
-			],
-			"releaseGroup": "RARBG",
-			"edition": "",
-			"id": 219
-		},
-		"id": 113
-	},
-	{
-		"title": "Rise",
-		"originalTitle": "En corps",
-		"originalLanguage": {
-			"id": 2,
-			"name": "French"
-		},
-		"alternateTitles": [],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "rise",
-		"sizeOnDisk": 0,
-		"status": "released",
-		"overview": "Elise thought she had the perfect life: an ideal boyfriend and a promising career as a ballet dancer. It all falls apart the day she catches him cheating on her with her stage backup; and after she suffers an injury on stage, it seems like she might not be able to dance ever again.  A heartwarming and inspiring story that tells us how sometimes, the worst thing that could happen may turn out to be the best.",
-		"inCinemas": "2022-03-30T00:00:00Z",
-		"physicalRelease": "2022-08-03T00:00:00Z",
-		"digitalRelease": "2022-07-30T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/9lbVcQfSfcMewo03UM7knSvN31T.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/duCaYLwr7LOhGTcyhcZP94rd2BS.jpg"
-			}
-		],
-		"website": "",
-		"year": 2022,
-		"hasFile": false,
-		"youTubeTrailerId": "",
-		"studio": "France 2 Cinéma",
-		"path": "/movies/Rise (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Rise (2022)",
-		"runtime": 117,
-		"cleanTitle": "rise",
-		"imdbId": "tt13531468",
-		"tmdbId": 771077,
-		"titleSlug": "771077",
-		"genres": [
-			"Comedy",
-			"Drama"
-		],
-		"tags": [],
-		"added": "2022-03-29T14:52:43Z",
-		"ratings": {
-			"imdb": {
-				"votes": 818,
-				"value": 7.5,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 167,
-				"value": 7.913,
-				"type": "user"
-			}
-		},
-		"id": 147
-	},
-	{
-		"title": "Fantastic Beasts: The Secrets of Dumbledore",
-		"originalTitle": "Fantastic Beasts: The Secrets of Dumbledore",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Фантастические твари и где они обитают 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1251
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Φανταστικά Ζώα και που Βρίσκονται 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1252
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Les Animaux fantastiques - 3e partie",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 2,
-					"name": "French"
-				},
-				"id": 1253
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Fantastic Beasts 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1255
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Fantastická zvířata 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1256
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Фантастичні звірі 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1257
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Fantastiske Skabninger: Dumbledores Hemmeligheder",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1258
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "怪獸與鄧不利多的秘密",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1453
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Fantastyczne zwierzęta: Tajemnice Dumbledore'a",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 12,
-					"name": "Polish"
-				},
-				"id": 1482
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Fantastiskās būtnes: Dumidora noslēpumi",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1483
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Animales Fantásticos: Los Secretos de Dumbledore",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1540
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Fantastic Beasts 3 - The Secrets of Dumbledore",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1595
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Animali Fantastici - I Segreti Di Silente",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 5,
-					"name": "Italian"
-				},
-				"id": 1638
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Animali Fantastici 3 I Segreti Di Silente",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 5,
-					"name": "Italian"
-				},
-				"id": 1639
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "Les Animaux fantastiques 3 - Les Secrets de Dumbledore",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 2,
-					"name": "French"
-				},
-				"id": 1774
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 121,
-				"title": "神奇动物3：邓布利多之谜",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1823
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "fantastic beasts secrets dumbledore",
-		"sizeOnDisk": 9631363612,
-		"status": "released",
-		"overview": "Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts magizoologist Newt Scamander to lead an intrepid team of wizards and witches. They soon encounter an array of old and new beasts as they clash with Grindelwald's growing legion of followers.",
-		"inCinemas": "2022-04-06T00:00:00Z",
-		"physicalRelease": "2022-06-28T00:00:00Z",
-		"digitalRelease": "2022-05-30T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/3c5GNLB4yRSLBby0trHoA1DSQxQ.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/zGLHX92Gk96O1DJvLil7ObJTbaL.jpg"
-			}
-		],
-		"website": "https://www.fantasticbeasts.com",
-		"year": 2022,
-		"hasFile": true,
-		"youTubeTrailerId": "Fo6TfHkLW6Y",
-		"studio": "Warner Bros. Pictures",
-		"path": "/movies/Fantastic Beasts The Secrets of Dumbledore (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Fantastic Beasts The Secrets of Dumbledore (2022)",
-		"runtime": 142,
-		"cleanTitle": "fantasticbeastssecretsdumbledore",
-		"imdbId": "tt4123432",
-		"tmdbId": 338953,
-		"titleSlug": "338953",
-		"certification": "PG-13",
-		"genres": [
-			"Fantasy",
-			"Adventure",
-			"Action"
-		],
-		"tags": [],
-		"added": "2022-03-04T21:08:32Z",
-		"ratings": {
-			"imdb": {
-				"votes": 118753,
-				"value": 6.2,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 2455,
-				"value": 6.864,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 47,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 46,
-				"type": "user"
-			}
-		},
-		"movieFile": {
-			"movieId": 121,
-			"relativePath": "Fantastic Beasts The Secrets of Dumbledore (2022) WEBDL-1080p.mkv",
-			"path": "/movies/Fantastic Beasts The Secrets of Dumbledore (2022)/Fantastic Beasts The Secrets of Dumbledore (2022) WEBDL-1080p.mkv",
-			"size": 9631363612,
-			"dateAdded": "2022-05-30T09:12:04Z",
-			"sceneName": "Fantastic.Beasts.The.Secrets.of.Dumbledore.2022.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-SMURF",
-			"indexerFlags": 1,
-			"quality": {
-				"quality": {
-					"id": 3,
-					"name": "WEBDL-1080p",
-					"source": "webdl",
-					"resolution": 1080,
-					"modifier": "none"
-				},
-				"revision": {
-					"version": 1,
-					"real": 0,
-					"isRepack": false
-				}
-			},
-			"mediaInfo": {
-				"audioBitrate": 768000,
-				"audioChannels": 5.1,
-				"audioCodec": "EAC3 Atmos",
-				"audioLanguages": "eng",
-				"audioStreamCount": 1,
-				"videoBitDepth": 8,
-				"videoBitrate": 0,
-				"videoCodec": "x264",
-				"videoDynamicRangeType": "",
-				"videoFps": 23.976,
-				"resolution": "1920x816",
-				"runTime": "2:22:39",
-				"scanType": "Progressive",
-				"subtitles": "eng/eng/bul/cze/dan/spa/spa/fin/hrv/hun/mac/dut/nor/pol/por/por/rum/slo/slv/srp/swe/spa"
-			},
-			"originalFilePath": "Fantastic.Beasts.The.Secrets.of.Dumbledore.2022.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-SMURF/Fantastic.Beasts.The.Secrets.of.Dumbledore.2022.1080p.HMAX.WEB-DL.DDP5.1.Atmos.H.264-SMURF.mkv",
-			"qualityCutoffNotMet": false,
-			"languages": [
-				{
-					"id": 1,
-					"name": "English"
-				}
-			],
-			"releaseGroup": "SMURF",
-			"edition": "",
-			"id": 223
-		},
-		"collection": {
-			"name": "Fantastic Beasts Collection",
-			"tmdbId": 435259,
-			"images": []
-		},
-		"id": 121
-	},
-	{
-		"title": "Doctor Strange in the Multiverse of Madness",
-		"originalTitle": "Doctor Strange in the Multiverse of Madness",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doctor Strange 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1504
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Доктор Стрэндж 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1505
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doutor Estranho 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1506
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doctor Strange v multivesmíre šialenstva",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1507
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doctor Strange 2: El multiverso de la locura",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 3,
-					"name": "Spanish"
-				},
-				"id": 1508
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "মহাবিশ্বের পাগলামিতে অদ্ভুত চিকিৎসক",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1510
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "จอมเวทย์มหากาฬ ในมัลติเวิร์สมหาภัย",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 28,
-					"name": "Thai"
-				},
-				"id": 1511
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Marvel Studios' Doctor Strange in the Multiverse of Madness",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1512
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doctor Strange en el Multiverso de la Locura de Marvel Studios",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 3,
-					"name": "Spanish"
-				},
-				"id": 1513
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doktors Streindžs neprāta multivisumā",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1514
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doctor Strange in the Multitude of Madness 3D",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1515
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "닥터 스트레인지 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1531
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "奇異博士2: 失控多元宇宙",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1532
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Ο Δόκτωρ Στρέιντζ στο πολυσύμπαν της τρέλας",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1544
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doktor Streync 2: Multikainatın Dəliliklərində",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1566
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doctor Strange 2 - The Multiverse of Madness",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1664
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "奇异博士2：疯狂多元宇宙",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1665
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "奇異博士2：失控多重宇宙",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1667
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doutor Estranho no Multiverso da Loucura (2022)",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1668
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doctor Strange: Đa Vũ Trụ Hỗn Loạn",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1766
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Բժիշկ Սթրենջը Խելագարության Բազմաշխարհում",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1772
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Stellar Vortex",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1773
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "Doktor Strange 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 17,
-					"name": "Turkish"
-				},
-				"id": 1777
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "დოქტორი სტრეინჯი სიგიჟის მრავალსამყაროში",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1834
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "დოქტორი სტრეინჯი სიგიჟის მულტისამყაროში",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1835
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "마블 닥터 스트레인지: 대혼돈의 멀티버스",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1836
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 153,
-				"title": "닥터 스트레인지 대혼돈의 멀티버스",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1837
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "doctor strange in multiverse madness",
-		"sizeOnDisk": 9961899948,
-		"status": "released",
-		"overview": "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.",
-		"inCinemas": "2022-05-04T00:00:00Z",
-		"physicalRelease": "2022-07-26T00:00:00Z",
-		"digitalRelease": "2022-06-22T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg"
-			}
-		],
-		"website": "https://www.marvel.com/movies/doctor-strange-in-the-multiverse-of-madness",
-		"year": 2022,
-		"hasFile": true,
-		"youTubeTrailerId": "Rf8LAYJSOL8",
-		"studio": "Marvel Studios",
-		"path": "/movies/Doctor Strange in the Multiverse of Madness (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Doctor Strange in the Multiverse of Madness (2022)",
-		"runtime": 126,
-		"cleanTitle": "doctorstrangeinmultiversemadness",
-		"imdbId": "tt9419884",
-		"tmdbId": 453395,
-		"titleSlug": "453395",
-		"certification": "PG-13",
-		"genres": [
-			"Fantasy",
-			"Action",
-			"Adventure"
-		],
-		"tags": [],
-		"added": "2022-05-03T20:20:14Z",
-		"ratings": {
-			"imdb": {
-				"votes": 336918,
-				"value": 7,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 5076,
-				"value": 7.5,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 60,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 74,
-				"type": "user"
-			}
-		},
-		"movieFile": {
-			"movieId": 153,
-			"relativePath": "Doctor Strange in the Multiverse of Madness (2022) WEBRip-1080p.mkv",
-			"path": "/movies/Doctor Strange in the Multiverse of Madness (2022)/Doctor Strange in the Multiverse of Madness (2022) WEBRip-1080p.mkv",
-			"size": 9961899948,
-			"dateAdded": "2022-06-22T00:45:05Z",
-			"sceneName": "Doctor.Strange.in.the.Multiverse.of.Madness.2022.1080p.WEBRip.DDP5.1.Atmos.x264-NOGRP",
-			"indexerFlags": 1,
-			"quality": {
-				"quality": {
-					"id": 15,
-					"name": "WEBRip-1080p",
-					"source": "webrip",
-					"resolution": 1080,
-					"modifier": "none"
-				},
-				"revision": {
-					"version": 1,
-					"real": 0,
-					"isRepack": false
-				}
-			},
-			"mediaInfo": {
-				"audioBitrate": 768000,
-				"audioChannels": 5.1,
-				"audioCodec": "EAC3 Atmos",
-				"audioLanguages": "eng",
-				"audioStreamCount": 1,
-				"videoBitDepth": 8,
-				"videoBitrate": 0,
-				"videoCodec": "x264",
-				"videoDynamicRangeType": "",
-				"videoFps": 23.976,
-				"resolution": "1920x804",
-				"runTime": "2:06:31",
-				"scanType": "Progressive",
-				"subtitles": "eng/eng"
-			},
-			"originalFilePath": "Doctor.Strange.in.the.Multiverse.of.Madness.2022.1080p.WEBRip.DDP5.1.Atmos.x264-NOGRP/Doctor.Strange.in.the.Multiverse.of.Madness.2022.1080p.WEBRip.DDP5.1.Atmos.x264-NOGRP.mkv",
-			"qualityCutoffNotMet": false,
-			"languages": [
-				{
-					"id": 1,
-					"name": "English"
-				}
-			],
-			"releaseGroup": "NOGRP",
-			"edition": "",
-			"id": 224
-		},
-		"collection": {
-			"name": "Doctor Strange Collection",
-			"tmdbId": 618529,
-			"images": []
-		},
-		"id": 153
-	},
-	{
-		"title": "Top Gun: Maverick",
-		"originalTitle": "Top Gun: Maverick",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Лучший стрелок 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1611
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Top Gun 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1612
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Кращий стрілець 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1614
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Top Gun 2 - Maverick",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 4,
-					"name": "German"
-				},
-				"id": 1615
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Phi Công Siêu Đẳng Maverick",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1621
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Кращий стрілець: Меверік",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1623
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "壮志凌云2：独行侠",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1671
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Топ Ган: Мэверик",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1729
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "توب قن: مافريك",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1763
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Top Gun: Sayohatchi",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1764
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 160,
-				"title": "Топ ган: Маверик",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1765
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "top gun maverick",
-		"sizeOnDisk": 0,
-		"status": "released",
-		"overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
-		"inCinemas": "2022-05-24T00:00:00Z",
-		"physicalRelease": "2022-10-05T00:00:00Z",
-		"digitalRelease": "2022-08-08T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/62HCnUTziyWcpDaBO2i1DX17ljH.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg"
-			}
-		],
-		"website": "https://www.topgunmovie.com",
-		"year": 2022,
-		"hasFile": false,
-		"youTubeTrailerId": "giXco2jaZ_4",
-		"studio": "Paramount",
-		"path": "/movies/Top Gun Maverick (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Top Gun Maverick (2022)",
-		"runtime": 131,
-		"cleanTitle": "topgunmaverick",
-		"imdbId": "tt1745960",
-		"tmdbId": 361743,
-		"titleSlug": "361743",
-		"certification": "PG-13",
-		"genres": [
-			"Action",
-			"Drama"
-		],
-		"tags": [],
-		"added": "2022-06-07T19:53:34Z",
-		"ratings": {
-			"imdb": {
-				"votes": 255677,
-				"value": 8.6,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 1811,
-				"value": 8.3,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 78,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 97,
-				"type": "user"
-			}
-		},
-		"collection": {
-			"name": "Top Gun Collection",
-			"tmdbId": 531330,
-			"images": []
-		},
-		"id": 160
-	},
-	{
-		"title": "Jurassic World Dominion",
-		"originalTitle": "Jurassic World Dominion",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Jurassic Park 6",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1872
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Jurassic World 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1873
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "쥬라기 공원 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1874
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Мир Юрского периода 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1875
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Jurassic World 3: Dominion",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1876
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Jurassic World 3: Dominio",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1877
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Світ Юрського періоду 3",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1878
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Світ Юрського періоду: Домініон",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1879
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Мир Юрского периода: Власть",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1880
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "จูราสสิค เวิลด์ ทวงคืนอาณาจักร",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 28,
-					"name": "Thai"
-				},
-				"id": 1881
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "La monde jurassique : Domination",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1882
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Monde jurassique : la domination",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1883
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "ジュラシックワールドドミニオン",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1884
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Thế Giới Khủng Long: Lãnh Địa",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1885
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Jurassic World 3 - Dominion (2022)",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1887
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "Jurassic World",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 2,
-					"name": "French"
-				},
-				"id": 1888
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 176,
-				"title": "侏儸紀世界：統霸天下",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1891
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "jurassic world dominion",
-		"sizeOnDisk": 3288297053,
-		"status": "released",
-		"overview": "Four years after Isla Nublar was destroyed, dinosaurs now live—and hunt—alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history’s most fearsome creatures.",
-		"inCinemas": "2022-06-01T00:00:00Z",
-		"physicalRelease": "2022-08-25T00:00:00Z",
-		"digitalRelease": "2022-07-14T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/kAVRgw7GgK1CfYEJq8ME6EvRIgU.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/9eAn20y26wtB3aet7w9lHjuSgZ3.jpg"
-			}
-		],
-		"website": "https://www.jurassicworld.com",
-		"year": 2022,
-		"hasFile": true,
-		"youTubeTrailerId": "DtQycgMD4HQ",
-		"studio": "Universal Pictures",
-		"path": "/movies/Jurassic World Dominion (2022)",
-		"qualityProfileId": 4,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Jurassic World Dominion (2022)",
-		"runtime": 147,
-		"cleanTitle": "jurassicworlddominion",
-		"imdbId": "tt8041270",
-		"tmdbId": 507086,
-		"titleSlug": "507086",
-		"certification": "PG-13",
-		"genres": [
-			"Adventure",
-			"Action",
-			"Science Fiction"
-		],
-		"tags": [],
-		"added": "2022-08-03T22:37:52Z",
-		"ratings": {
-			"imdb": {
-				"votes": 105728,
-				"value": 5.7,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 2532,
-				"value": 7.1,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 38,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 30,
-				"type": "user"
-			}
-		},
-		"movieFile": {
-			"movieId": 176,
-			"relativePath": "Jurassic World Dominion (2022) Bluray-1080p.mp4",
-			"path": "/movies/Jurassic World Dominion (2022)/Jurassic World Dominion (2022) Bluray-1080p.mp4",
-			"size": 3288297053,
-			"dateAdded": "2022-08-03T22:40:58Z",
-			"sceneName": "Jurassic.World.3.Dominion.2022.EXTENDED.1080p.BluRay.H264.AAC-RARBG",
-			"indexerFlags": 1,
-			"quality": {
-				"quality": {
-					"id": 7,
-					"name": "Bluray-1080p",
-					"source": "bluray",
-					"resolution": 1080,
-					"modifier": "none"
-				},
-				"revision": {
-					"version": 1,
-					"real": 0,
-					"isRepack": false
-				}
-			},
-			"mediaInfo": {
-				"audioBitrate": 224000,
-				"audioChannels": 5.1,
-				"audioCodec": "AAC",
-				"audioLanguages": "eng",
-				"audioStreamCount": 1,
-				"videoBitDepth": 8,
-				"videoBitrate": 2497768,
-				"videoCodec": "x264",
-				"videoDynamicRangeType": "",
-				"videoFps": 23.976,
-				"resolution": "1920x960",
-				"runTime": "2:40:40",
-				"scanType": "Progressive",
-				"subtitles": ""
-			},
-			"originalFilePath": "Jurassic.World.3.Dominion.2022.EXTENDED.1080p.BluRay.H264.AAC-RARBG/Jurassic.World.3.Dominion.2022.EXTENDED.1080p.BluRay.H264.AAC-RARBG.mp4",
-			"qualityCutoffNotMet": false,
-			"languages": [
-				{
-					"id": 1,
-					"name": "English"
-				}
-			],
-			"releaseGroup": "RARBG",
-			"edition": "EXTENDED",
-			"id": 232
-		},
-		"collection": {
-			"name": "Jurassic Park Collection",
-			"tmdbId": 328,
-			"images": []
-		},
-		"id": 176
-	},
-	{
-		"title": "Lightyear",
-		"originalTitle": "Lightyear",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Баз Светлинна година",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 29,
-					"name": "Bulgarian"
-				},
-				"id": 1580
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Buzz Astral",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 12,
-					"name": "Polish"
-				},
-				"id": 1581
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Buzz Lightyear",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 18,
-					"name": "Portuguese"
-				},
-				"id": 1582
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Lightyear - Cảnh Sát Vũ Trụ",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1583
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Bazs Gaismasgads",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1584
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "光年正傳",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1598
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "บัซ ไลท์เยียร์",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 28,
-					"name": "Thai"
-				},
-				"id": 1633
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "光年正传",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1635
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Buzz l'Éclair",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 2,
-					"name": "French"
-				},
-				"id": 1648
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Rakeťák",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1649
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Svjetlosni",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1650
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "लाइटईयर",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1651
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "שנות-אור",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1652
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "バズ・ライトイヤー",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1653
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Lightyear - La vera storia di Buzz",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 5,
-					"name": "Italian"
-				},
-				"id": 1654
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Базз Лайтер",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1655
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "버즈 라이트이어",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1656
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Баз Светлосни",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1657
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "巴斯光年",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1658
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Işıkyılı",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 17,
-					"name": "Turkish"
-				},
-				"id": 1659
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "Bazz Layter",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1660
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "ბაზ ლაითერი",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1829
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 157,
-				"title": "სათამაშოების ისტორია: ბაზ ლაითერი",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1830
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "lightyear",
-		"sizeOnDisk": 4162236849,
-		"status": "released",
-		"overview": "Legendary Space Ranger Buzz Lightyear embarks on an intergalactic adventure alongside a group of ambitious recruits and his robot companion Sox.",
-		"inCinemas": "2022-06-15T00:00:00Z",
-		"physicalRelease": "2022-09-29T00:00:00Z",
-		"digitalRelease": "2022-08-03T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/ox4goZd956BxqJH6iLwhWPL9ct4.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg"
-			}
-		],
-		"website": "https://movies.disney.com/lightyear",
-		"year": 2022,
-		"hasFile": true,
-		"youTubeTrailerId": "0ir3Z8hLeHc",
-		"studio": "Walt Disney Pictures",
-		"path": "/movies/Lightyear (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "announced",
-		"isAvailable": true,
-		"folderName": "/movies/Lightyear (2022)",
-		"runtime": 105,
-		"cleanTitle": "lightyear",
-		"imdbId": "tt10298810",
-		"tmdbId": 718789,
-		"titleSlug": "718789",
-		"certification": "PG",
-		"genres": [
-			"Animation",
-			"Science Fiction",
-			"Adventure"
-		],
-		"tags": [],
-		"added": "2022-05-25T11:01:52Z",
-		"ratings": {
-			"imdb": {
-				"votes": 57059,
-				"value": 5.5,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 1405,
-				"value": 7.362,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 60,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 75,
-				"type": "user"
-			}
-		},
-		"movieFile": {
-			"movieId": 157,
-			"relativePath": "Lightyear (2022) WEBRip-1080p.mkv",
-			"path": "/movies/Lightyear (2022)/Lightyear (2022) WEBRip-1080p.mkv",
-			"size": 4162236849,
-			"dateAdded": "2022-07-14T12:39:18Z",
-			"sceneName": "Lightyear.2022.1080p.WEBRip.DD5.1.x264-EVO[TGx]",
-			"indexerFlags": 1,
-			"quality": {
-				"quality": {
-					"id": 15,
-					"name": "WEBRip-1080p",
-					"source": "webrip",
-					"resolution": 1080,
-					"modifier": "none"
-				},
-				"revision": {
-					"version": 1,
-					"real": 0,
-					"isRepack": false
-				}
-			},
-			"mediaInfo": {
-				"audioBitrate": 384000,
-				"audioChannels": 5.1,
-				"audioCodec": "AC3",
-				"audioLanguages": "eng",
-				"audioStreamCount": 1,
-				"videoBitDepth": 8,
-				"videoBitrate": 0,
-				"videoCodec": "x264",
-				"videoDynamicRangeType": "",
-				"videoFps": 23.976,
-				"resolution": "1920x804",
-				"runTime": "1:45:04",
-				"scanType": "Progressive",
-				"subtitles": ""
-			},
-			"originalFilePath": "Lightyear.2022.1080p.WEBRip.DD5.1.x264-EVO[TGx]/Lightyear.2022.1080p.WEBRip.DD5.1.x264-EVO.mkv",
-			"qualityCutoffNotMet": false,
-			"languages": [
-				{
-					"id": 1,
-					"name": "English"
-				}
-			],
-			"releaseGroup": "EVO",
-			"edition": "",
-			"id": 227
-		},
-		"id": 157
-	},
-	{
-		"title": "Minions: The Rise of Gru",
-		"originalTitle": "Minions: The Rise of Gru",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "미니언즈: 라이즈 오브 그루",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1679
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Miljenici: Uspon Grua",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1680
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Käsilased 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1681
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions 2: Η Άνοδος του Γκρου",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1682
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minioni 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1683
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions: Historien om Gru",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 15,
-					"name": "Norwegian"
-				},
-				"id": 1684
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Mínimos 2: A Ascensão de Gru",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 18,
-					"name": "Portuguese"
-				},
-				"id": 1685
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Миньоны: Грювитация",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1686
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Малци: Успон Груа",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1687
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Mimoni: Zloduch prichádza",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1688
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions: El origen de Gru",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 3,
-					"name": "Spanish"
-				},
-				"id": 1689
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minioner: Berättelsen om Gru",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1690
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions 2: Come Gru diventa cattivissimo",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 5,
-					"name": "Italian"
-				},
-				"id": 1691
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions 2: Historien om Gru",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1692
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1693
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions 2: Nace un villano",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1694
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions - Auf der Suche nach dem Mini-Boss",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 4,
-					"name": "German"
-				},
-				"id": 1695
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions 2: The Rise of Gru",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 7,
-					"name": "Dutch"
-				},
-				"id": 1696
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "迷你兵團 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1697
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions: Hoe Gru superschurk were",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 7,
-					"name": "Dutch"
-				},
-				"id": 1698
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "มินเนี่ยน 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 28,
-					"name": "Thai"
-				},
-				"id": 1699
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minyonlar 2: Gru'nun Yükselişi",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 17,
-					"name": "Turkish"
-				},
-				"id": 1726
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions: Nace un villano",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1734
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Մինիոններ. Գրուի վերելքը",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1787
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "Minions: KEBANGKITAN GRU",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1838
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "미니언즈 2",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1846
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 165,
-				"title": "小黄人大眼萌：神偷奶爸前传",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1860
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "minions rise gru",
-		"sizeOnDisk": 6621540111,
-		"status": "released",
-		"overview": "A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.",
-		"inCinemas": "2022-06-29T00:00:00Z",
-		"physicalRelease": "2022-09-15T00:00:00Z",
-		"digitalRelease": "2022-08-02T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg"
-			}
-		],
-		"website": "https://www.minionsmovie.com/",
-		"year": 2022,
-		"hasFile": true,
-		"youTubeTrailerId": "HhIl_XJ-OGA",
-		"studio": "Universal Pictures",
-		"path": "/movies/Minions The Rise of Gru (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": true,
-		"folderName": "/movies/Minions The Rise of Gru (2022)",
-		"runtime": 87,
-		"cleanTitle": "minionsrisegru",
-		"imdbId": "tt5113044",
-		"tmdbId": 438148,
-		"titleSlug": "438148",
-		"certification": "PG",
-		"genres": [
-			"Family",
-			"Animation",
-			"Adventure"
-		],
-		"tags": [],
-		"added": "2022-06-27T13:00:47Z",
-		"ratings": {
-			"imdb": {
-				"votes": 29174,
-				"value": 6.8,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 1038,
-				"value": 7.8,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 56,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 70,
-				"type": "user"
-			}
-		},
-		"movieFile": {
-			"movieId": 165,
-			"relativePath": "Minions The Rise of Gru (2022) WEBRip-1080p.mkv",
-			"path": "/movies/Minions The Rise of Gru (2022)/Minions The Rise of Gru (2022) WEBRip-1080p.mkv",
-			"size": 6621540111,
-			"dateAdded": "2022-08-02T07:18:57Z",
-			"sceneName": "Minions.The.Rise.of.Gru.2022.1080p.AMZN.WEBRip.DDP5.1.Atmos.x264-NOGRP",
-			"indexerFlags": 1,
-			"quality": {
-				"quality": {
-					"id": 15,
-					"name": "WEBRip-1080p",
-					"source": "webrip",
-					"resolution": 1080,
-					"modifier": "none"
-				},
-				"revision": {
-					"version": 1,
-					"real": 0,
-					"isRepack": false
-				}
-			},
-			"mediaInfo": {
-				"audioBitrate": 768000,
-				"audioChannels": 5.1,
-				"audioCodec": "EAC3 Atmos",
-				"audioLanguages": "eng",
-				"audioStreamCount": 1,
-				"videoBitDepth": 8,
-				"videoBitrate": 0,
-				"videoCodec": "x264",
-				"videoDynamicRangeType": "",
-				"videoFps": 23.976,
-				"resolution": "1920x800",
-				"runTime": "1:27:35",
-				"scanType": "Progressive",
-				"subtitles": "eng/eng/fre"
-			},
-			"originalFilePath": "Minions.The.Rise.of.Gru.2022.1080p.AMZN.WEBRip.DDP5.1.Atmos.x264-NOGRP/Minions.The.Rise.of.Gru.2022.1080p.AMZN.WEBRip.DDP5.1.Atmos.x264-NOGRP.mkv",
-			"qualityCutoffNotMet": false,
-			"languages": [
-				{
-					"id": 1,
-					"name": "English"
-				}
-			],
-			"releaseGroup": "NOGRP",
-			"edition": "",
-			"id": 230
-		},
-		"collection": {
-			"name": "Minions Collection",
-			"tmdbId": 544669,
-			"images": []
-		},
-		"id": 165
-	},
-	{
-		"title": "Thor: Love and Thunder",
-		"originalTitle": "Thor: Love and Thunder",
-		"originalLanguage": {
-			"id": 1,
-			"name": "English"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Thor 4",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1735
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "雷神4:爱与雷霆",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1736
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Тор 4",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 11,
-					"name": "Russian"
-				},
-				"id": 1737
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "থর: প্রেম এবং বজ্রপাত",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1738
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Marvel Studios' Thor: Love and Thunder",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1739
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Thor: Love and Thunder de Marvel Studios",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 3,
-					"name": "Spanish"
-				},
-				"id": 1740
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Tors: Mīla un Pērkons",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1741
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Thor : Amour et tonnerre de Marvel Studios",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1742
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Marvel Studios' Thor: Tình Yêu và Sấm Sét",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1743
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Thor: amor y trueno",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 3,
-					"name": "Spanish"
-				},
-				"id": 1745
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "თორი: სიყვარული და ჭექა-ქუხილი",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1746
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "토르 4",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1770
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Թոր: Սեր և ամպրոպ",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1775
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "תור: אהבה ורעם",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1781
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "Thor: Cinta dan Guntur",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1790
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "마블 토르: 러브 앤 썬더",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1839
-			},
-			{
-				"sourceType": "tmdb",
-				"movieId": 168,
-				"title": "토르 러브 앤 썬더",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1840
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "thor love thunder",
-		"sizeOnDisk": 0,
-		"status": "inCinemas",
-		"overview": "After his retirement is interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods, Thor enlists the help of King Valkyrie, Korg, and ex-girlfriend Jane Foster, who now inexplicably wields Mjolnir as the Mighty Thor. Together they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher’s vengeance and stop him before it’s too late.",
-		"inCinemas": "2022-07-06T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg"
-			},
-			{
-				"coverType": "fanart",
-				"url": "https://image.tmdb.org/t/p/original/p1F51Lvj3sMopG948F5HsBbl43C.jpg"
-			}
-		],
-		"website": "https://www.marvel.com/movies/thor-love-and-thunder",
-		"year": 2022,
-		"hasFile": false,
-		"youTubeTrailerId": "Go8nTmfrQd8",
-		"studio": "Marvel Studios",
-		"path": "/movies/Thor Love and Thunder (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": false,
-		"folderName": "/movies/Thor Love and Thunder (2022)",
-		"runtime": 119,
-		"cleanTitle": "thorlovethunder",
-		"imdbId": "tt10648342",
-		"tmdbId": 616037,
-		"titleSlug": "616037",
-		"certification": "PG-13",
-		"genres": [
-			"Action",
-			"Adventure",
-			"Fantasy"
-		],
-		"tags": [],
-		"added": "2022-07-04T17:04:57Z",
-		"ratings": {
-			"imdb": {
-				"votes": 146274,
-				"value": 6.8,
-				"type": "user"
-			},
-			"tmdb": {
-				"votes": 1695,
-				"value": 6.8,
-				"type": "user"
-			},
-			"metacritic": {
-				"votes": 0,
-				"value": 57,
-				"type": "user"
-			},
-			"rottenTomatoes": {
-				"votes": 0,
-				"value": 67,
-				"type": "user"
-			}
-		},
-		"collection": {
-			"name": "Thor Collection",
-			"tmdbId": 131296,
-			"images": []
-		},
-		"id": 168
-	},
-	{
-		"title": "Sword Art Online the Movie -Progressive- Scherzo of a Deep Night",
-		"originalTitle": "劇場版 ソードアート・オンライン プログレッシブ 冥き夕闇のスケルツォ",
-		"originalLanguage": {
-			"id": 8,
-			"name": "Japanese"
-		},
-		"alternateTitles": [
-			{
-				"sourceType": "tmdb",
-				"movieId": 169,
-				"title": "Sword Art Online Progressive",
-				"sourceId": 0,
-				"votes": 0,
-				"voteCount": 0,
-				"language": {
-					"id": 1,
-					"name": "English"
-				},
-				"id": 1748
-			}
-		],
-		"secondaryYearSourceId": 0,
-		"sortTitle": "sword art online movie progressive scherzo deep night",
-		"sizeOnDisk": 0,
-		"status": "announced",
-		"overview": "",
-		"inCinemas": "2022-09-10T00:00:00Z",
-		"images": [
-			{
-				"coverType": "poster",
-				"url": "https://image.tmdb.org/t/p/original/1L904CSzPCEEpPcUoBWH4cjuGJW.jpg"
-			}
-		],
-		"website": "",
-		"year": 2022,
-		"hasFile": false,
-		"youTubeTrailerId": "",
-		"studio": "Aniplex",
-		"path": "/movies/Sword Art Online the Movie -Progressive- Scherzo of a Deep Night (2022)",
-		"qualityProfileId": 1,
-		"monitored": true,
-		"minimumAvailability": "released",
-		"isAvailable": false,
-		"folderName": "/movies/Sword Art Online the Movie -Progressive- Scherzo of a Deep Night (2022)",
-		"runtime": 0,
-		"cleanTitle": "swordartonlinemovieprogressivescherzodeepnight",
-		"tmdbId": 893712,
-		"titleSlug": "893712",
-		"genres": [
-			"Animation",
-			"Action",
-			"Fantasy"
-		],
-		"tags": [],
-		"added": "2022-07-04T17:05:01Z",
-		"ratings": {
-			"tmdb": {
-				"votes": 0,
-				"value": 0,
-				"type": "user"
-			}
-		},
-		"collection": {
-			"name": "Sword Art Online the Movie -Progressive-",
-			"tmdbId": 893713,
-			"images": []
-		},
-		"id": 169
-	}
-]
+  {
+    title: 'Sword Art Online the Movie -Progressive- Aria of a Starless Night',
+    originalTitle: '劇場版 ソードアート・オンライン-プログレッシブ- 星なき夜のアリア',
+    originalLanguage: {
+      id: 8,
+      name: 'Japanese',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'Gekijō-ban Sword Art Online: Progressive Hoshi Naki Yoru no Aria',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1749,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'SAO Progressive',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1751,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'Gekijouban Sword Art Online: Progressive - Hoshinaki Yoru no Ari',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1752,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'Sōdo Āto Onrain',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1753,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'Sword Art Online the Movie: The Aria of the Night Without Stars',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1754,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: '극장판 소드 아트 온라인 -프로그레시브-: 별 없는 밤의 아리아',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1755,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: '소드 아트 온라인 프로그레시브',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1756,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'Sword Art Online: Progressive - Aria of a Starless Night',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1757,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: '刀劍神域劇場版 - PROGRESSIVE - 無星夜的詠嘆調',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1758,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'ซอร์ดอาร์ตออนไลน์ โปรเกรสซีฟ เดอะมูฟวี่',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 28,
+          name: 'Thai',
+        },
+        id: 1759,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: '剧场版 刀剑神域 进击篇 无星之夜的咏叹调',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1760,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'Sword Art Online Progressive: Ária de Uma Noite Sem Estrelas',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1761,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: '刀剑神域 进击篇 无星夜的咏叹调',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1776,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: 'Sword Art Online Progressive Movie: Hoshi Naki Yoru no Aria',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1788,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 170,
+        title: '刀剑神域：无星之夜的咏叹调',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1826,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'sword art online movie progressive aria starless night',
+    sizeOnDisk: 0,
+    status: 'released',
+    overview:
+      "One month after Kayaba Akihiko's game of death began, the death toll continues to rise, two thousand players having already lost their lives to the ultra-difficult VRMMO world of Sword Art Online. On the day of the strategy meeting to plan out the first-floor boss battle, Kirito, a solo player who vows to fight alone to get stronger, runs into a rare, high-level female player. She gracefully dispatches powerful monsters with a single rapier that flashes like a shooting star in the night...",
+    inCinemas: '2021-10-30T00:00:00Z',
+    physicalRelease: '2022-07-08T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/yD9RhgIVydQNBK7OLEbCWYcWMUd.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/2kvl6lcgoyAaf8cSRkzxE611u6T.jpg',
+      },
+    ],
+    website: 'https://sao-p.net',
+    year: 2021,
+    hasFile: false,
+    youTubeTrailerId: 'Jf6RyZkuVco',
+    studio: 'Aniplex',
+    path: '/movies/Sword Art Online the Movie -Progressive- Aria of a Starless Night (2021)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Sword Art Online the Movie -Progressive- Aria of a Starless Night (2021)',
+    runtime: 97,
+    cleanTitle: 'swordartonlinemovieprogressiveariastarlessnight',
+    imdbId: 'tt13424422',
+    tmdbId: 761898,
+    titleSlug: '761898',
+    certification: 'PG-13',
+    genres: ['Animation', 'Action', 'Fantasy'],
+    tags: [],
+    added: '2022-07-04T17:05:05Z',
+    ratings: {
+      imdb: {
+        votes: 1048,
+        value: 7.1,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 82,
+        value: 8.341,
+        type: 'user',
+      },
+    },
+    collection: {
+      name: 'Sword Art Online the Movie -Progressive-',
+      tmdbId: 893713,
+      images: [],
+    },
+    id: 170,
+  },
+  {
+    title: 'Jujutsu Kaisen 0',
+    originalTitle: '劇場版 呪術廻戦 0',
+    originalLanguage: {
+      id: 8,
+      name: 'Japanese',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: 'Gekijō-ban Jujutsu Kaisen 0',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1672,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: 'Gekijou-ban Jujutsu Kaisen 0',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1673,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: '극장판 주술회전 0',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1674,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: 'Jujutsu Kaisen 0: The Movie',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1675,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: '呪術廻戦 0',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1676,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: 'JUJUTSU KAISEN 0 the Movie',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1677,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: '劇場版 咒術迴戰 0',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1678,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 164,
+        title: 'Jujutsu Kaisen 0: Film',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 12,
+          name: 'Polish',
+        },
+        id: 1845,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'jujutsu kaisen 0',
+    sizeOnDisk: 0,
+    status: 'inCinemas',
+    overview:
+      "Yuta Okkotsu is a nervous high school student who is suffering from a serious problem—his childhood friend Rika has turned into a curse and won't leave him alone. Since Rika is no ordinary curse, his plight is noticed by Satoru Gojo, a teacher at Jujutsu High, a school where fledgling exorcists learn how to combat curses. Gojo convinces Yuta to enroll, but can he learn enough in time to confront the curse that haunts him?",
+    inCinemas: '2021-12-24T00:00:00Z',
+    physicalRelease: '2022-09-21T00:00:00Z',
+    digitalRelease: '2022-09-21T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/3pTwMUEavTzVOh6yLN0aEwR7uSy.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/t9K8ycUBCplWiICDOKRNRYcEH9e.jpg',
+      },
+    ],
+    website: '',
+    year: 2021,
+    hasFile: false,
+    youTubeTrailerId: '2docezZl574',
+    studio: 'Toho',
+    path: '/movies/Jujutsu Kaisen 0 (2021)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: false,
+    folderName: '/movies/Jujutsu Kaisen 0 (2021)',
+    runtime: 105,
+    cleanTitle: 'jujutsukaisen0',
+    imdbId: 'tt14331144',
+    tmdbId: 810693,
+    titleSlug: '810693',
+    certification: 'PG-13',
+    genres: ['Animation', 'Action', 'Fantasy'],
+    tags: [],
+    added: '2022-06-27T13:00:43Z',
+    ratings: {
+      imdb: {
+        votes: 11063,
+        value: 7.9,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 241,
+        value: 7.8,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 72,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 98,
+        type: 'user',
+      },
+    },
+    id: 164,
+  },
+  {
+    title: 'Morbius',
+    originalTitle: 'Morbius',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 113,
+        title: 'Morbiuss',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1484,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 113,
+        title: '暗夜博士：莫比亚斯',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1600,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'morbius',
+    sizeOnDisk: 2130913775,
+    status: 'released',
+    overview:
+      'Dangerously ill with a rare blood disorder, and determined to save others suffering his same fate, Dr. Michael Morbius attempts a desperate gamble. What at first appears to be a radical success soon reveals itself to be a remedy potentially worse than the disease.',
+    inCinemas: '2022-03-30T00:00:00Z',
+    physicalRelease: '2022-06-14T00:00:00Z',
+    digitalRelease: '2022-05-14T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/gG9fTyDL03fiKnOpf2tr01sncnt.jpg',
+      },
+    ],
+    website: 'https://www.morbius.movie/',
+    year: 2022,
+    hasFile: true,
+    youTubeTrailerId: 'wG2TjtueeSU',
+    studio: 'Columbia Pictures',
+    path: '/movies/Morbius (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Morbius (2022)',
+    runtime: 105,
+    cleanTitle: 'morbius',
+    imdbId: 'tt5108870',
+    tmdbId: 526896,
+    titleSlug: '526896',
+    certification: 'PG-13',
+    genres: ['Action', 'Science Fiction', 'Fantasy'],
+    tags: [],
+    added: '2022-02-11T19:39:55Z',
+    ratings: {
+      imdb: {
+        votes: 92720,
+        value: 5.2,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 2174,
+        value: 6.4,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 35,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 16,
+        type: 'user',
+      },
+    },
+    movieFile: {
+      movieId: 113,
+      relativePath: 'Morbius (2022) WEBRip-1080p.mp4',
+      path: '/movies/Morbius (2022)/Morbius (2022) WEBRip-1080p.mp4',
+      size: 2130913775,
+      dateAdded: '2022-05-17T03:04:01Z',
+      sceneName: 'Morbius.2022.1080p.WEBRip.x264-RARBG',
+      indexerFlags: 1,
+      quality: {
+        quality: {
+          id: 15,
+          name: 'WEBRip-1080p',
+          source: 'webrip',
+          resolution: 1080,
+          modifier: 'none',
+        },
+        revision: {
+          version: 1,
+          real: 0,
+          isRepack: false,
+        },
+      },
+      mediaInfo: {
+        audioBitrate: 224000,
+        audioChannels: 5.1,
+        audioCodec: 'AAC',
+        audioLanguages: 'eng',
+        audioStreamCount: 1,
+        videoBitDepth: 8,
+        videoBitrate: 2498238,
+        videoCodec: 'x264',
+        videoDynamicRangeType: '',
+        videoFps: 23.976,
+        resolution: '1920x800',
+        runTime: '1:44:09',
+        scanType: 'Progressive',
+        subtitles: '',
+      },
+      originalFilePath:
+        'Morbius.2022.1080p.WEBRip.x264-RARBG/Morbius.2022.1080p.WEBRip.x264-RARBG.mp4',
+      qualityCutoffNotMet: false,
+      languages: [
+        {
+          id: 1,
+          name: 'English',
+        },
+      ],
+      releaseGroup: 'RARBG',
+      edition: '',
+      id: 219,
+    },
+    id: 113,
+  },
+  {
+    title: 'Rise',
+    originalTitle: 'En corps',
+    originalLanguage: {
+      id: 2,
+      name: 'French',
+    },
+    alternateTitles: [],
+    secondaryYearSourceId: 0,
+    sortTitle: 'rise',
+    sizeOnDisk: 0,
+    status: 'released',
+    overview:
+      'Elise thought she had the perfect life: an ideal boyfriend and a promising career as a ballet dancer. It all falls apart the day she catches him cheating on her with her stage backup; and after she suffers an injury on stage, it seems like she might not be able to dance ever again.  A heartwarming and inspiring story that tells us how sometimes, the worst thing that could happen may turn out to be the best.',
+    inCinemas: '2022-03-30T00:00:00Z',
+    physicalRelease: '2022-08-03T00:00:00Z',
+    digitalRelease: '2022-07-30T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/9lbVcQfSfcMewo03UM7knSvN31T.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/duCaYLwr7LOhGTcyhcZP94rd2BS.jpg',
+      },
+    ],
+    website: '',
+    year: 2022,
+    hasFile: false,
+    youTubeTrailerId: '',
+    studio: 'France 2 Cinéma',
+    path: '/movies/Rise (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Rise (2022)',
+    runtime: 117,
+    cleanTitle: 'rise',
+    imdbId: 'tt13531468',
+    tmdbId: 771077,
+    titleSlug: '771077',
+    genres: ['Comedy', 'Drama'],
+    tags: [],
+    added: '2022-03-29T14:52:43Z',
+    ratings: {
+      imdb: {
+        votes: 818,
+        value: 7.5,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 167,
+        value: 7.913,
+        type: 'user',
+      },
+    },
+    id: 147,
+  },
+  {
+    title: 'Fantastic Beasts: The Secrets of Dumbledore',
+    originalTitle: 'Fantastic Beasts: The Secrets of Dumbledore',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Фантастические твари и где они обитают 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1251,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Φανταστικά Ζώα και που Βρίσκονται 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1252,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Les Animaux fantastiques - 3e partie',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 2,
+          name: 'French',
+        },
+        id: 1253,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Fantastic Beasts 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1255,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Fantastická zvířata 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1256,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Фантастичні звірі 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1257,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Fantastiske Skabninger: Dumbledores Hemmeligheder',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1258,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: '怪獸與鄧不利多的秘密',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1453,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: "Fantastyczne zwierzęta: Tajemnice Dumbledore'a",
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 12,
+          name: 'Polish',
+        },
+        id: 1482,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Fantastiskās būtnes: Dumidora noslēpumi',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1483,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Animales Fantásticos: Los Secretos de Dumbledore',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1540,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Fantastic Beasts 3 - The Secrets of Dumbledore',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1595,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Animali Fantastici - I Segreti Di Silente',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 5,
+          name: 'Italian',
+        },
+        id: 1638,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Animali Fantastici 3 I Segreti Di Silente',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 5,
+          name: 'Italian',
+        },
+        id: 1639,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: 'Les Animaux fantastiques 3 - Les Secrets de Dumbledore',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 2,
+          name: 'French',
+        },
+        id: 1774,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 121,
+        title: '神奇动物3：邓布利多之谜',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1823,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'fantastic beasts secrets dumbledore',
+    sizeOnDisk: 9631363612,
+    status: 'released',
+    overview:
+      "Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts magizoologist Newt Scamander to lead an intrepid team of wizards and witches. They soon encounter an array of old and new beasts as they clash with Grindelwald's growing legion of followers.",
+    inCinemas: '2022-04-06T00:00:00Z',
+    physicalRelease: '2022-06-28T00:00:00Z',
+    digitalRelease: '2022-05-30T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/3c5GNLB4yRSLBby0trHoA1DSQxQ.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/zGLHX92Gk96O1DJvLil7ObJTbaL.jpg',
+      },
+    ],
+    website: 'https://www.fantasticbeasts.com',
+    year: 2022,
+    hasFile: true,
+    youTubeTrailerId: 'Fo6TfHkLW6Y',
+    studio: 'Warner Bros. Pictures',
+    path: '/movies/Fantastic Beasts The Secrets of Dumbledore (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Fantastic Beasts The Secrets of Dumbledore (2022)',
+    runtime: 142,
+    cleanTitle: 'fantasticbeastssecretsdumbledore',
+    imdbId: 'tt4123432',
+    tmdbId: 338953,
+    titleSlug: '338953',
+    certification: 'PG-13',
+    genres: ['Fantasy', 'Adventure', 'Action'],
+    tags: [],
+    added: '2022-03-04T21:08:32Z',
+    ratings: {
+      imdb: {
+        votes: 118753,
+        value: 6.2,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 2455,
+        value: 6.864,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 47,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 46,
+        type: 'user',
+      },
+    },
+    movieFile: {
+      movieId: 121,
+      relativePath: 'Fantastic Beasts The Secrets of Dumbledore (2022) WEBDL-1080p.mkv',
+      path: '/movies/Fantastic Beasts The Secrets of Dumbledore (2022)/Fantastic Beasts The Secrets of Dumbledore (2022) WEBDL-1080p.mkv',
+      size: 9631363612,
+      dateAdded: '2022-05-30T09:12:04Z',
+      sceneName:
+        'Fantastic.Beasts.The.Secrets.of.Dumbledore.2022.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-SMURF',
+      indexerFlags: 1,
+      quality: {
+        quality: {
+          id: 3,
+          name: 'WEBDL-1080p',
+          source: 'webdl',
+          resolution: 1080,
+          modifier: 'none',
+        },
+        revision: {
+          version: 1,
+          real: 0,
+          isRepack: false,
+        },
+      },
+      mediaInfo: {
+        audioBitrate: 768000,
+        audioChannels: 5.1,
+        audioCodec: 'EAC3 Atmos',
+        audioLanguages: 'eng',
+        audioStreamCount: 1,
+        videoBitDepth: 8,
+        videoBitrate: 0,
+        videoCodec: 'x264',
+        videoDynamicRangeType: '',
+        videoFps: 23.976,
+        resolution: '1920x816',
+        runTime: '2:22:39',
+        scanType: 'Progressive',
+        subtitles:
+          'eng/eng/bul/cze/dan/spa/spa/fin/hrv/hun/mac/dut/nor/pol/por/por/rum/slo/slv/srp/swe/spa',
+      },
+      originalFilePath:
+        'Fantastic.Beasts.The.Secrets.of.Dumbledore.2022.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-SMURF/Fantastic.Beasts.The.Secrets.of.Dumbledore.2022.1080p.HMAX.WEB-DL.DDP5.1.Atmos.H.264-SMURF.mkv',
+      qualityCutoffNotMet: false,
+      languages: [
+        {
+          id: 1,
+          name: 'English',
+        },
+      ],
+      releaseGroup: 'SMURF',
+      edition: '',
+      id: 223,
+    },
+    collection: {
+      name: 'Fantastic Beasts Collection',
+      tmdbId: 435259,
+      images: [],
+    },
+    id: 121,
+  },
+  {
+    title: 'Doctor Strange in the Multiverse of Madness',
+    originalTitle: 'Doctor Strange in the Multiverse of Madness',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doctor Strange 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1504,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Доктор Стрэндж 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1505,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doutor Estranho 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1506,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doctor Strange v multivesmíre šialenstva',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1507,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doctor Strange 2: El multiverso de la locura',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 3,
+          name: 'Spanish',
+        },
+        id: 1508,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'মহাবিশ্বের পাগলামিতে অদ্ভুত চিকিৎসক',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1510,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'จอมเวทย์มหากาฬ ในมัลติเวิร์สมหาภัย',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 28,
+          name: 'Thai',
+        },
+        id: 1511,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: "Marvel Studios' Doctor Strange in the Multiverse of Madness",
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1512,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doctor Strange en el Multiverso de la Locura de Marvel Studios',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 3,
+          name: 'Spanish',
+        },
+        id: 1513,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doktors Streindžs neprāta multivisumā',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1514,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doctor Strange in the Multitude of Madness 3D',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1515,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: '닥터 스트레인지 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1531,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: '奇異博士2: 失控多元宇宙',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1532,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Ο Δόκτωρ Στρέιντζ στο πολυσύμπαν της τρέλας',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1544,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doktor Streync 2: Multikainatın Dəliliklərində',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1566,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doctor Strange 2 - The Multiverse of Madness',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1664,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: '奇异博士2：疯狂多元宇宙',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1665,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: '奇異博士2：失控多重宇宙',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1667,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doutor Estranho no Multiverso da Loucura (2022)',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1668,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doctor Strange: Đa Vũ Trụ Hỗn Loạn',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1766,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Բժիշկ Սթրենջը Խելագարության Բազմաշխարհում',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1772,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Stellar Vortex',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1773,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'Doktor Strange 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 17,
+          name: 'Turkish',
+        },
+        id: 1777,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'დოქტორი სტრეინჯი სიგიჟის მრავალსამყაროში',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1834,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: 'დოქტორი სტრეინჯი სიგიჟის მულტისამყაროში',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1835,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: '마블 닥터 스트레인지: 대혼돈의 멀티버스',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1836,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 153,
+        title: '닥터 스트레인지 대혼돈의 멀티버스',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1837,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'doctor strange in multiverse madness',
+    sizeOnDisk: 9961899948,
+    status: 'released',
+    overview:
+      'Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.',
+    inCinemas: '2022-05-04T00:00:00Z',
+    physicalRelease: '2022-07-26T00:00:00Z',
+    digitalRelease: '2022-06-22T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg',
+      },
+    ],
+    website: 'https://www.marvel.com/movies/doctor-strange-in-the-multiverse-of-madness',
+    year: 2022,
+    hasFile: true,
+    youTubeTrailerId: 'Rf8LAYJSOL8',
+    studio: 'Marvel Studios',
+    path: '/movies/Doctor Strange in the Multiverse of Madness (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Doctor Strange in the Multiverse of Madness (2022)',
+    runtime: 126,
+    cleanTitle: 'doctorstrangeinmultiversemadness',
+    imdbId: 'tt9419884',
+    tmdbId: 453395,
+    titleSlug: '453395',
+    certification: 'PG-13',
+    genres: ['Fantasy', 'Action', 'Adventure'],
+    tags: [],
+    added: '2022-05-03T20:20:14Z',
+    ratings: {
+      imdb: {
+        votes: 336918,
+        value: 7,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 5076,
+        value: 7.5,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 60,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 74,
+        type: 'user',
+      },
+    },
+    movieFile: {
+      movieId: 153,
+      relativePath: 'Doctor Strange in the Multiverse of Madness (2022) WEBRip-1080p.mkv',
+      path: '/movies/Doctor Strange in the Multiverse of Madness (2022)/Doctor Strange in the Multiverse of Madness (2022) WEBRip-1080p.mkv',
+      size: 9961899948,
+      dateAdded: '2022-06-22T00:45:05Z',
+      sceneName:
+        'Doctor.Strange.in.the.Multiverse.of.Madness.2022.1080p.WEBRip.DDP5.1.Atmos.x264-NOGRP',
+      indexerFlags: 1,
+      quality: {
+        quality: {
+          id: 15,
+          name: 'WEBRip-1080p',
+          source: 'webrip',
+          resolution: 1080,
+          modifier: 'none',
+        },
+        revision: {
+          version: 1,
+          real: 0,
+          isRepack: false,
+        },
+      },
+      mediaInfo: {
+        audioBitrate: 768000,
+        audioChannels: 5.1,
+        audioCodec: 'EAC3 Atmos',
+        audioLanguages: 'eng',
+        audioStreamCount: 1,
+        videoBitDepth: 8,
+        videoBitrate: 0,
+        videoCodec: 'x264',
+        videoDynamicRangeType: '',
+        videoFps: 23.976,
+        resolution: '1920x804',
+        runTime: '2:06:31',
+        scanType: 'Progressive',
+        subtitles: 'eng/eng',
+      },
+      originalFilePath:
+        'Doctor.Strange.in.the.Multiverse.of.Madness.2022.1080p.WEBRip.DDP5.1.Atmos.x264-NOGRP/Doctor.Strange.in.the.Multiverse.of.Madness.2022.1080p.WEBRip.DDP5.1.Atmos.x264-NOGRP.mkv',
+      qualityCutoffNotMet: false,
+      languages: [
+        {
+          id: 1,
+          name: 'English',
+        },
+      ],
+      releaseGroup: 'NOGRP',
+      edition: '',
+      id: 224,
+    },
+    collection: {
+      name: 'Doctor Strange Collection',
+      tmdbId: 618529,
+      images: [],
+    },
+    id: 153,
+  },
+  {
+    title: 'Top Gun: Maverick',
+    originalTitle: 'Top Gun: Maverick',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Лучший стрелок 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1611,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Top Gun 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1612,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Кращий стрілець 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1614,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Top Gun 2 - Maverick',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 4,
+          name: 'German',
+        },
+        id: 1615,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Phi Công Siêu Đẳng Maverick',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1621,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Кращий стрілець: Меверік',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1623,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: '壮志凌云2：独行侠',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1671,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Топ Ган: Мэверик',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1729,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'توب قن: مافريك',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1763,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Top Gun: Sayohatchi',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1764,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 160,
+        title: 'Топ ган: Маверик',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1765,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'top gun maverick',
+    sizeOnDisk: 0,
+    status: 'released',
+    overview:
+      'After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.',
+    inCinemas: '2022-05-24T00:00:00Z',
+    physicalRelease: '2022-10-05T00:00:00Z',
+    digitalRelease: '2022-08-08T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/62HCnUTziyWcpDaBO2i1DX17ljH.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg',
+      },
+    ],
+    website: 'https://www.topgunmovie.com',
+    year: 2022,
+    hasFile: false,
+    youTubeTrailerId: 'giXco2jaZ_4',
+    studio: 'Paramount',
+    path: '/movies/Top Gun Maverick (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Top Gun Maverick (2022)',
+    runtime: 131,
+    cleanTitle: 'topgunmaverick',
+    imdbId: 'tt1745960',
+    tmdbId: 361743,
+    titleSlug: '361743',
+    certification: 'PG-13',
+    genres: ['Action', 'Drama'],
+    tags: [],
+    added: '2022-06-07T19:53:34Z',
+    ratings: {
+      imdb: {
+        votes: 255677,
+        value: 8.6,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 1811,
+        value: 8.3,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 78,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 97,
+        type: 'user',
+      },
+    },
+    collection: {
+      name: 'Top Gun Collection',
+      tmdbId: 531330,
+      images: [],
+    },
+    id: 160,
+  },
+  {
+    title: 'Jurassic World Dominion',
+    originalTitle: 'Jurassic World Dominion',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Jurassic Park 6',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1872,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Jurassic World 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1873,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: '쥬라기 공원 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1874,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Мир Юрского периода 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1875,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Jurassic World 3: Dominion',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1876,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Jurassic World 3: Dominio',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1877,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Світ Юрського періоду 3',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1878,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Світ Юрського періоду: Домініон',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1879,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Мир Юрского периода: Власть',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1880,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'จูราสสิค เวิลด์ ทวงคืนอาณาจักร',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 28,
+          name: 'Thai',
+        },
+        id: 1881,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'La monde jurassique : Domination',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1882,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Monde jurassique : la domination',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1883,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'ジュラシックワールドドミニオン',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1884,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Thế Giới Khủng Long: Lãnh Địa',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1885,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Jurassic World 3 - Dominion (2022)',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1887,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: 'Jurassic World',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 2,
+          name: 'French',
+        },
+        id: 1888,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 176,
+        title: '侏儸紀世界：統霸天下',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1891,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'jurassic world dominion',
+    sizeOnDisk: 3288297053,
+    status: 'released',
+    overview:
+      'Four years after Isla Nublar was destroyed, dinosaurs now live—and hunt—alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history’s most fearsome creatures.',
+    inCinemas: '2022-06-01T00:00:00Z',
+    physicalRelease: '2022-08-25T00:00:00Z',
+    digitalRelease: '2022-07-14T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/kAVRgw7GgK1CfYEJq8ME6EvRIgU.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/9eAn20y26wtB3aet7w9lHjuSgZ3.jpg',
+      },
+    ],
+    website: 'https://www.jurassicworld.com',
+    year: 2022,
+    hasFile: true,
+    youTubeTrailerId: 'DtQycgMD4HQ',
+    studio: 'Universal Pictures',
+    path: '/movies/Jurassic World Dominion (2022)',
+    qualityProfileId: 4,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Jurassic World Dominion (2022)',
+    runtime: 147,
+    cleanTitle: 'jurassicworlddominion',
+    imdbId: 'tt8041270',
+    tmdbId: 507086,
+    titleSlug: '507086',
+    certification: 'PG-13',
+    genres: ['Adventure', 'Action', 'Science Fiction'],
+    tags: [],
+    added: '2022-08-03T22:37:52Z',
+    ratings: {
+      imdb: {
+        votes: 105728,
+        value: 5.7,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 2532,
+        value: 7.1,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 38,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 30,
+        type: 'user',
+      },
+    },
+    movieFile: {
+      movieId: 176,
+      relativePath: 'Jurassic World Dominion (2022) Bluray-1080p.mp4',
+      path: '/movies/Jurassic World Dominion (2022)/Jurassic World Dominion (2022) Bluray-1080p.mp4',
+      size: 3288297053,
+      dateAdded: '2022-08-03T22:40:58Z',
+      sceneName: 'Jurassic.World.3.Dominion.2022.EXTENDED.1080p.BluRay.H264.AAC-RARBG',
+      indexerFlags: 1,
+      quality: {
+        quality: {
+          id: 7,
+          name: 'Bluray-1080p',
+          source: 'bluray',
+          resolution: 1080,
+          modifier: 'none',
+        },
+        revision: {
+          version: 1,
+          real: 0,
+          isRepack: false,
+        },
+      },
+      mediaInfo: {
+        audioBitrate: 224000,
+        audioChannels: 5.1,
+        audioCodec: 'AAC',
+        audioLanguages: 'eng',
+        audioStreamCount: 1,
+        videoBitDepth: 8,
+        videoBitrate: 2497768,
+        videoCodec: 'x264',
+        videoDynamicRangeType: '',
+        videoFps: 23.976,
+        resolution: '1920x960',
+        runTime: '2:40:40',
+        scanType: 'Progressive',
+        subtitles: '',
+      },
+      originalFilePath:
+        'Jurassic.World.3.Dominion.2022.EXTENDED.1080p.BluRay.H264.AAC-RARBG/Jurassic.World.3.Dominion.2022.EXTENDED.1080p.BluRay.H264.AAC-RARBG.mp4',
+      qualityCutoffNotMet: false,
+      languages: [
+        {
+          id: 1,
+          name: 'English',
+        },
+      ],
+      releaseGroup: 'RARBG',
+      edition: 'EXTENDED',
+      id: 232,
+    },
+    collection: {
+      name: 'Jurassic Park Collection',
+      tmdbId: 328,
+      images: [],
+    },
+    id: 176,
+  },
+  {
+    title: 'Lightyear',
+    originalTitle: 'Lightyear',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Баз Светлинна година',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 29,
+          name: 'Bulgarian',
+        },
+        id: 1580,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Buzz Astral',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 12,
+          name: 'Polish',
+        },
+        id: 1581,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Buzz Lightyear',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 18,
+          name: 'Portuguese',
+        },
+        id: 1582,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Lightyear - Cảnh Sát Vũ Trụ',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1583,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Bazs Gaismasgads',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1584,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: '光年正傳',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1598,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'บัซ ไลท์เยียร์',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 28,
+          name: 'Thai',
+        },
+        id: 1633,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: '光年正传',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1635,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: "Buzz l'Éclair",
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 2,
+          name: 'French',
+        },
+        id: 1648,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Rakeťák',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1649,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Svjetlosni',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1650,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'लाइटईयर',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1651,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'שנות-אור',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1652,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'バズ・ライトイヤー',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1653,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Lightyear - La vera storia di Buzz',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 5,
+          name: 'Italian',
+        },
+        id: 1654,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Базз Лайтер',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1655,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: '버즈 라이트이어',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1656,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Баз Светлосни',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1657,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: '巴斯光年',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1658,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Işıkyılı',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 17,
+          name: 'Turkish',
+        },
+        id: 1659,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'Bazz Layter',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1660,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'ბაზ ლაითერი',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1829,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 157,
+        title: 'სათამაშოების ისტორია: ბაზ ლაითერი',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1830,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'lightyear',
+    sizeOnDisk: 4162236849,
+    status: 'released',
+    overview:
+      'Legendary Space Ranger Buzz Lightyear embarks on an intergalactic adventure alongside a group of ambitious recruits and his robot companion Sox.',
+    inCinemas: '2022-06-15T00:00:00Z',
+    physicalRelease: '2022-09-29T00:00:00Z',
+    digitalRelease: '2022-08-03T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/ox4goZd956BxqJH6iLwhWPL9ct4.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg',
+      },
+    ],
+    website: 'https://movies.disney.com/lightyear',
+    year: 2022,
+    hasFile: true,
+    youTubeTrailerId: '0ir3Z8hLeHc',
+    studio: 'Walt Disney Pictures',
+    path: '/movies/Lightyear (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'announced',
+    isAvailable: true,
+    folderName: '/movies/Lightyear (2022)',
+    runtime: 105,
+    cleanTitle: 'lightyear',
+    imdbId: 'tt10298810',
+    tmdbId: 718789,
+    titleSlug: '718789',
+    certification: 'PG',
+    genres: ['Animation', 'Science Fiction', 'Adventure'],
+    tags: [],
+    added: '2022-05-25T11:01:52Z',
+    ratings: {
+      imdb: {
+        votes: 57059,
+        value: 5.5,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 1405,
+        value: 7.362,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 60,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 75,
+        type: 'user',
+      },
+    },
+    movieFile: {
+      movieId: 157,
+      relativePath: 'Lightyear (2022) WEBRip-1080p.mkv',
+      path: '/movies/Lightyear (2022)/Lightyear (2022) WEBRip-1080p.mkv',
+      size: 4162236849,
+      dateAdded: '2022-07-14T12:39:18Z',
+      sceneName: 'Lightyear.2022.1080p.WEBRip.DD5.1.x264-EVO[TGx]',
+      indexerFlags: 1,
+      quality: {
+        quality: {
+          id: 15,
+          name: 'WEBRip-1080p',
+          source: 'webrip',
+          resolution: 1080,
+          modifier: 'none',
+        },
+        revision: {
+          version: 1,
+          real: 0,
+          isRepack: false,
+        },
+      },
+      mediaInfo: {
+        audioBitrate: 384000,
+        audioChannels: 5.1,
+        audioCodec: 'AC3',
+        audioLanguages: 'eng',
+        audioStreamCount: 1,
+        videoBitDepth: 8,
+        videoBitrate: 0,
+        videoCodec: 'x264',
+        videoDynamicRangeType: '',
+        videoFps: 23.976,
+        resolution: '1920x804',
+        runTime: '1:45:04',
+        scanType: 'Progressive',
+        subtitles: '',
+      },
+      originalFilePath:
+        'Lightyear.2022.1080p.WEBRip.DD5.1.x264-EVO[TGx]/Lightyear.2022.1080p.WEBRip.DD5.1.x264-EVO.mkv',
+      qualityCutoffNotMet: false,
+      languages: [
+        {
+          id: 1,
+          name: 'English',
+        },
+      ],
+      releaseGroup: 'EVO',
+      edition: '',
+      id: 227,
+    },
+    id: 157,
+  },
+  {
+    title: 'Minions: The Rise of Gru',
+    originalTitle: 'Minions: The Rise of Gru',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: '미니언즈: 라이즈 오브 그루',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1679,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Miljenici: Uspon Grua',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1680,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Käsilased 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1681,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions 2: Η Άνοδος του Γκρου',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1682,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minioni 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1683,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions: Historien om Gru',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 15,
+          name: 'Norwegian',
+        },
+        id: 1684,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Mínimos 2: A Ascensão de Gru',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 18,
+          name: 'Portuguese',
+        },
+        id: 1685,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Миньоны: Грювитация',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1686,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Малци: Успон Груа',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1687,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Mimoni: Zloduch prichádza',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1688,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions: El origen de Gru',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 3,
+          name: 'Spanish',
+        },
+        id: 1689,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minioner: Berättelsen om Gru',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1690,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions 2: Come Gru diventa cattivissimo',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 5,
+          name: 'Italian',
+        },
+        id: 1691,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions 2: Historien om Gru',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1692,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1693,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions 2: Nace un villano',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1694,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions - Auf der Suche nach dem Mini-Boss',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 4,
+          name: 'German',
+        },
+        id: 1695,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions 2: The Rise of Gru',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 7,
+          name: 'Dutch',
+        },
+        id: 1696,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: '迷你兵團 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1697,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions: Hoe Gru superschurk were',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 7,
+          name: 'Dutch',
+        },
+        id: 1698,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'มินเนี่ยน 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 28,
+          name: 'Thai',
+        },
+        id: 1699,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: "Minyonlar 2: Gru'nun Yükselişi",
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 17,
+          name: 'Turkish',
+        },
+        id: 1726,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions: Nace un villano',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1734,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Մինիոններ. Գրուի վերելքը',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1787,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: 'Minions: KEBANGKITAN GRU',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1838,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: '미니언즈 2',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1846,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 165,
+        title: '小黄人大眼萌：神偷奶爸前传',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1860,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'minions rise gru',
+    sizeOnDisk: 6621540111,
+    status: 'released',
+    overview:
+      'A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.',
+    inCinemas: '2022-06-29T00:00:00Z',
+    physicalRelease: '2022-09-15T00:00:00Z',
+    digitalRelease: '2022-08-02T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg',
+      },
+    ],
+    website: 'https://www.minionsmovie.com/',
+    year: 2022,
+    hasFile: true,
+    youTubeTrailerId: 'HhIl_XJ-OGA',
+    studio: 'Universal Pictures',
+    path: '/movies/Minions The Rise of Gru (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: true,
+    folderName: '/movies/Minions The Rise of Gru (2022)',
+    runtime: 87,
+    cleanTitle: 'minionsrisegru',
+    imdbId: 'tt5113044',
+    tmdbId: 438148,
+    titleSlug: '438148',
+    certification: 'PG',
+    genres: ['Family', 'Animation', 'Adventure'],
+    tags: [],
+    added: '2022-06-27T13:00:47Z',
+    ratings: {
+      imdb: {
+        votes: 29174,
+        value: 6.8,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 1038,
+        value: 7.8,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 56,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 70,
+        type: 'user',
+      },
+    },
+    movieFile: {
+      movieId: 165,
+      relativePath: 'Minions The Rise of Gru (2022) WEBRip-1080p.mkv',
+      path: '/movies/Minions The Rise of Gru (2022)/Minions The Rise of Gru (2022) WEBRip-1080p.mkv',
+      size: 6621540111,
+      dateAdded: '2022-08-02T07:18:57Z',
+      sceneName: 'Minions.The.Rise.of.Gru.2022.1080p.AMZN.WEBRip.DDP5.1.Atmos.x264-NOGRP',
+      indexerFlags: 1,
+      quality: {
+        quality: {
+          id: 15,
+          name: 'WEBRip-1080p',
+          source: 'webrip',
+          resolution: 1080,
+          modifier: 'none',
+        },
+        revision: {
+          version: 1,
+          real: 0,
+          isRepack: false,
+        },
+      },
+      mediaInfo: {
+        audioBitrate: 768000,
+        audioChannels: 5.1,
+        audioCodec: 'EAC3 Atmos',
+        audioLanguages: 'eng',
+        audioStreamCount: 1,
+        videoBitDepth: 8,
+        videoBitrate: 0,
+        videoCodec: 'x264',
+        videoDynamicRangeType: '',
+        videoFps: 23.976,
+        resolution: '1920x800',
+        runTime: '1:27:35',
+        scanType: 'Progressive',
+        subtitles: 'eng/eng/fre',
+      },
+      originalFilePath:
+        'Minions.The.Rise.of.Gru.2022.1080p.AMZN.WEBRip.DDP5.1.Atmos.x264-NOGRP/Minions.The.Rise.of.Gru.2022.1080p.AMZN.WEBRip.DDP5.1.Atmos.x264-NOGRP.mkv',
+      qualityCutoffNotMet: false,
+      languages: [
+        {
+          id: 1,
+          name: 'English',
+        },
+      ],
+      releaseGroup: 'NOGRP',
+      edition: '',
+      id: 230,
+    },
+    collection: {
+      name: 'Minions Collection',
+      tmdbId: 544669,
+      images: [],
+    },
+    id: 165,
+  },
+  {
+    title: 'Thor: Love and Thunder',
+    originalTitle: 'Thor: Love and Thunder',
+    originalLanguage: {
+      id: 1,
+      name: 'English',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Thor 4',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1735,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: '雷神4:爱与雷霆',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1736,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Тор 4',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 11,
+          name: 'Russian',
+        },
+        id: 1737,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'থর: প্রেম এবং বজ্রপাত',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1738,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: "Marvel Studios' Thor: Love and Thunder",
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1739,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Thor: Love and Thunder de Marvel Studios',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 3,
+          name: 'Spanish',
+        },
+        id: 1740,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Tors: Mīla un Pērkons',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1741,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Thor : Amour et tonnerre de Marvel Studios',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1742,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: "Marvel Studios' Thor: Tình Yêu và Sấm Sét",
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1743,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Thor: amor y trueno',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 3,
+          name: 'Spanish',
+        },
+        id: 1745,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'თორი: სიყვარული და ჭექა-ქუხილი',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1746,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: '토르 4',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1770,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Թոր: Սեր և ամպրոպ',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1775,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'תור: אהבה ורעם',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1781,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: 'Thor: Cinta dan Guntur',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1790,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: '마블 토르: 러브 앤 썬더',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1839,
+      },
+      {
+        sourceType: 'tmdb',
+        movieId: 168,
+        title: '토르 러브 앤 썬더',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1840,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'thor love thunder',
+    sizeOnDisk: 0,
+    status: 'inCinemas',
+    overview:
+      'After his retirement is interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods, Thor enlists the help of King Valkyrie, Korg, and ex-girlfriend Jane Foster, who now inexplicably wields Mjolnir as the Mighty Thor. Together they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher’s vengeance and stop him before it’s too late.',
+    inCinemas: '2022-07-06T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg',
+      },
+      {
+        coverType: 'fanart',
+        url: 'https://image.tmdb.org/t/p/original/p1F51Lvj3sMopG948F5HsBbl43C.jpg',
+      },
+    ],
+    website: 'https://www.marvel.com/movies/thor-love-and-thunder',
+    year: 2022,
+    hasFile: false,
+    youTubeTrailerId: 'Go8nTmfrQd8',
+    studio: 'Marvel Studios',
+    path: '/movies/Thor Love and Thunder (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: false,
+    folderName: '/movies/Thor Love and Thunder (2022)',
+    runtime: 119,
+    cleanTitle: 'thorlovethunder',
+    imdbId: 'tt10648342',
+    tmdbId: 616037,
+    titleSlug: '616037',
+    certification: 'PG-13',
+    genres: ['Action', 'Adventure', 'Fantasy'],
+    tags: [],
+    added: '2022-07-04T17:04:57Z',
+    ratings: {
+      imdb: {
+        votes: 146274,
+        value: 6.8,
+        type: 'user',
+      },
+      tmdb: {
+        votes: 1695,
+        value: 6.8,
+        type: 'user',
+      },
+      metacritic: {
+        votes: 0,
+        value: 57,
+        type: 'user',
+      },
+      rottenTomatoes: {
+        votes: 0,
+        value: 67,
+        type: 'user',
+      },
+    },
+    collection: {
+      name: 'Thor Collection',
+      tmdbId: 131296,
+      images: [],
+    },
+    id: 168,
+  },
+  {
+    title: 'Sword Art Online the Movie -Progressive- Scherzo of a Deep Night',
+    originalTitle: '劇場版 ソードアート・オンライン プログレッシブ 冥き夕闇のスケルツォ',
+    originalLanguage: {
+      id: 8,
+      name: 'Japanese',
+    },
+    alternateTitles: [
+      {
+        sourceType: 'tmdb',
+        movieId: 169,
+        title: 'Sword Art Online Progressive',
+        sourceId: 0,
+        votes: 0,
+        voteCount: 0,
+        language: {
+          id: 1,
+          name: 'English',
+        },
+        id: 1748,
+      },
+    ],
+    secondaryYearSourceId: 0,
+    sortTitle: 'sword art online movie progressive scherzo deep night',
+    sizeOnDisk: 0,
+    status: 'announced',
+    overview: '',
+    inCinemas: '2022-09-10T00:00:00Z',
+    images: [
+      {
+        coverType: 'poster',
+        url: 'https://image.tmdb.org/t/p/original/1L904CSzPCEEpPcUoBWH4cjuGJW.jpg',
+      },
+    ],
+    website: '',
+    year: 2022,
+    hasFile: false,
+    youTubeTrailerId: '',
+    studio: 'Aniplex',
+    path: '/movies/Sword Art Online the Movie -Progressive- Scherzo of a Deep Night (2022)',
+    qualityProfileId: 1,
+    monitored: true,
+    minimumAvailability: 'released',
+    isAvailable: false,
+    folderName: '/movies/Sword Art Online the Movie -Progressive- Scherzo of a Deep Night (2022)',
+    runtime: 0,
+    cleanTitle: 'swordartonlinemovieprogressivescherzodeepnight',
+    tmdbId: 893712,
+    titleSlug: '893712',
+    genres: ['Animation', 'Action', 'Fantasy'],
+    tags: [],
+    added: '2022-07-04T17:05:01Z',
+    ratings: {
+      tmdb: {
+        votes: 0,
+        value: 0,
+        type: 'user',
+      },
+    },
+    collection: {
+      name: 'Sword Art Online the Movie -Progressive-',
+      tmdbId: 893713,
+      images: [],
+    },
+    id: 169,
+  },
+];
