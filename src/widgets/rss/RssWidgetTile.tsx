@@ -78,17 +78,11 @@ function RssTile({ widget }: RssTileProps) {
     const inputDate = dayjs(new Date(input));
     const now = dayjs(); // Current date and time
 
-    const diffInHours = now.diff(inputDate, 'hour');
-    const diffInDays = now.diff(inputDate, 'day');
-
-    // If the input date is more than 2 weeks ago, return the formatted date
-    if (diffInDays > 14) {
-      return inputDate.format('DD MMM YYYY');
-    }
-    if (diffInDays >= 1) {
-      return `${diffInDays} days ago`;
-    }
-    return `${diffInHours} hours ago`;
+    // The difference between the input date and now
+    const difference = now.diff(inputDate, 'ms');
+    const duration = dayjs.duration(difference, 'ms');
+    const humanizedDuration = duration.humanize();
+    return `${humanizedDuration} ago`;
   }
 
   if (!data || isLoading) {
