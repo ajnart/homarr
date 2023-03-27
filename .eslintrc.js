@@ -1,18 +1,21 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
   extends: [
     'mantine',
     'plugin:@next/next/recommended',
-    'plugin:jest/recommended',
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
   ],
-  plugins: ['testing-library', 'jest', 'react-hooks', 'react', 'unused-imports'],
-  overrides: [
-    {
-      files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: ['plugin:testing-library/react'],
-    },
+  plugins: [
+    '@typescript-eslint',
+    'react-hooks',
+    'react',
+    'unused-imports',
+    'jsx-a11y',
   ],
   parserOptions: {
     project: './tsconfig.json',
@@ -32,4 +35,5 @@ module.exports = {
     'no-continue': 'off',
     'linebreak-style': 0,
   },
+  root: true,
 };

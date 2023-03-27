@@ -32,6 +32,7 @@ module.exports = {
     fallbackLng: 'en',
     localeDetection: true,
     returnEmptyString: false,
+    returnNull: false,
     debug: false,
     appendNamespaceToCIMode: true,
     reloadOnPrerender: process.env.NODE_ENV === 'development',

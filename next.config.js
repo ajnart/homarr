@@ -10,5 +10,6 @@ module.exports = withBundleAnalyzer({
   },
   reactStrictMode: true,
   output: 'standalone',
+  // @ts-ignore
   i18n,
 });
