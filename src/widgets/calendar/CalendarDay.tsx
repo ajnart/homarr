@@ -1,5 +1,6 @@
-import { Box, Indicator, IndicatorProps, Popover } from '@mantine/core';
+import { Box, Indicator, IndicatorProps, Popover, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { isToday } from '../../tools/isToday';
 import { MediaList } from './MediaList';
 import { MediasType } from './type';
 
@@ -22,12 +23,24 @@ export const CalendarDay = ({ date, medias }: CalendarDayProps) => {
       withinPortal
       radius="lg"
       shadow="sm"
-      transition="pop"
+      transitionProps={{
+        transition: 'pop',
+      }}
       onClose={close}
       opened={opened}
     >
       <Popover.Target>
-        <Box onClick={open}>
+        <Box
+          onClick={open}
+          sx={(theme) => ({
+            margin: 5,
+            backgroundColor: isToday(date)
+              ? theme.colorScheme === 'dark'
+                ? theme.colors.dark[5]
+                : theme.colors.gray[0]
+              : undefined,
+          })}
+        >
           <DayIndicator color="red" position="bottom-start" medias={medias.books}>
             <DayIndicator color="yellow" position="top-start" medias={medias.movies}>
               <DayIndicator color="blue" position="top-end" medias={medias.tvShows}>
