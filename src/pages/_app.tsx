@@ -149,7 +149,7 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     Consola.debug(`Overriding the default color scheme with ${process.env.DEFAULT_COLOR_SCHEME}`);
   }
 
-  const colorScheme: ColorScheme = process.env.DEFAULT_COLOR_SCHEME as ColorScheme ?? 'light';
+  const colorScheme: ColorScheme = (process.env.DEFAULT_COLOR_SCHEME as ColorScheme) ?? 'light';
 
   return {
     colorScheme: getCookie('color-scheme', ctx) || 'light',
