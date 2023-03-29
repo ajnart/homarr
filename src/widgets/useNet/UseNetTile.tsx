@@ -1,14 +1,4 @@
-import {
-  Badge,
-  Button,
-  Group,
-  Select,
-  Stack,
-  Tabs,
-  Text,
-  Title,
-  useMantineTheme,
-} from '@mantine/core';
+import { Badge, Button, Group, Select, Stack, Tabs, Text, Title } from '@mantine/core';
 import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
 import { useEffect, useState } from 'react';
 
@@ -17,6 +7,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../config/provider';
+import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import {
   useGetUsenetInfo,
   usePauseUsenetQueue,
@@ -28,7 +19,6 @@ import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { UsenetHistoryList } from './UsenetHistoryList';
 import { UsenetQueueList } from './UsenetQueueList';
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 
 dayjs.extend(duration);
 

@@ -9,7 +9,6 @@ import {
   Table,
   Text,
   Title,
-  useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload } from '@tabler/icons';
