@@ -29,7 +29,7 @@ export const ToggleEditModeAction = () => {
   const { config } = useConfigContext();
   const { classes } = useCardStyles(true);
 
-  useHotkeys([['ctrl+E', toggleEditMode]]);
+  useHotkeys([['mod+E', toggleEditMode]]);
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
     if (enabled) {

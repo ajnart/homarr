@@ -1,4 +1,4 @@
-import { createStyles, Title, useMantineTheme } from '@mantine/core';
+import { createStyles, Title, useMantineTheme, getStylesRef } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
@@ -77,7 +77,7 @@ const useIframeSrc = (
   );
 };
 
-export const useStyles = createStyles((theme, _params, getRef) => ({
+export const useStyles = createStyles((theme, _params) => ({
   iframe: {
     flex: '1 0 auto',
     maxWidth: '100%',
@@ -87,7 +87,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     colorScheme: 'light', // fixes white borders around iframe
   },
   graphTitle: {
-    ref: getRef('graphTitle'),
+    ref: getStylesRef('graphTitle'),
     position: 'absolute',
     right: 0,
     bottom: 0,
@@ -99,7 +99,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   },
   graphContainer: {
     position: 'relative',
-    [`&:hover .${getRef('graphTitle')}`]: {
+    [`&:hover .${getStylesRef('graphTitle')}`]: {
       opacity: 0.5,
     },
   },

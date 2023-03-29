@@ -19,7 +19,7 @@ export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps)
         they don&apos;t integrate with any apps and their content never changes.
       </Text>
 
-      <Grid>
+      <Grid grow>
         <GenericAvailableElementType
           name="Static Text"
           description="Display a fixed string on your dashboard"

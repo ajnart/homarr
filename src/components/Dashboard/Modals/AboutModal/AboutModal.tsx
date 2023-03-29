@@ -1,18 +1,19 @@
 import {
+  Accordion,
   ActionIcon,
   Anchor,
   Badge,
   Button,
   createStyles,
-  Divider,
   Grid,
   Group,
   HoverCard,
+  Kbd,
   Modal,
-  Stack,
   Table,
   Text,
   Title,
+  Tooltip,
 } from '@mantine/core';
 import {
   IconAnchor,
@@ -35,6 +36,8 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
+import { useColorTheme } from '../../../../tools/color';
+import Tip from '../../../layout/Tip';
 import { usePrimaryGradient } from '../../../layout/useGradient';
 import Credits from '../../../Settings/Common/Credits';
 
@@ -49,6 +52,23 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
   const colorGradiant = usePrimaryGradient();
   const informations = useInformationTableItems(newVersionAvailable);
   const { t } = useTranslation(['common', 'layout/modals/about']);
+
+  const keybinds = [
+    { key: 'Mod + J', shortcut: 'Toggle light/dark mode' },
+    { key: 'Mod + K', shortcut: 'Focus on search bar' },
+    { key: 'Mod + B', shortcut: 'Open docker widget' },
+    { key: 'Mod + E', shortcut: 'Toggle Edit mode' },
+  ];
+  const rows = keybinds.map((element) => (
+    <tr key={element.key}>
+      <td>
+        <Kbd>{element.key}</Kbd>
+      </td>
+      <td>
+        <Text>{element.shortcut}</Text>
+      </td>
+    </tr>
+  ));
 
   return (
     <Modal
@@ -76,7 +96,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
         <Trans i18nKey="layout/modals/about:description" />
       </Text>
 
-      <Table mb="lg" striped highlightOnHover withBorder>
+      <Table mb="lg" highlightOnHover withBorder>
         <tbody>
           {informations.map((item, index) => (
             <tr key={index}>
@@ -100,8 +120,26 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
           ))}
         </tbody>
       </Table>
+      <Accordion mb={5} variant="contained" radius="md">
+        <Accordion.Item value="keybinds">
+          <Accordion.Control icon={<IconKey size={20} />}>
+            {t('layout/modals/about:keybinds')}
+          </Accordion.Control>
+          <Accordion.Panel>
+            <Table mb={5}>
+              <thead>
+                <tr>
+                  <th>{t('layout/modals/about:key')}</th>
+                  <th>{t('layout/modals/about:action')}</th>
+                </tr>
+              </thead>
+              <tbody>{rows}</tbody>
+            </Table>
+            <Tip>{t('layout/modals/about:tip')}</Tip>
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
 
-      <Divider variant="dashed" mb="md" />
       <Title order={6} mb="xs" align="center">
         {t('layout/modals/about:contact')}
       </Title>
@@ -161,9 +199,9 @@ interface ExtendedInitOptions extends InitOptions {
 }
 
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
-  const colorGradiant = usePrimaryGradient();
   const { attributes } = usePackageAttributesStore();
   const { editModeEnabled } = useEditModeInformationStore();
+  const { primaryColor } = useColorTheme();
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
@@ -177,15 +215,19 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
         icon: <IconKey size={20} />,
         label: 'experimental_disableEditMode',
         content: (
-          <Stack>
+          <Tooltip
+            color="red"
+            withinPortal
+            width={300}
+            multiline
+            withArrow
+            label="This is an experimental feature, where the edit mode is disabled entirely - no config
+            modifications are possbile anymore. All update requests for the config will be dropped
+            on the API. This will be removed in future versions, as Homarr will receive a proper
+            authentication system, which will make this obsolete."
+          >
             <Badge color="red">WARNING</Badge>
-            <Text color="red" size="xs">
-              This is an experimental feature, where the edit mode is disabled entirely - no config
-              modifications are possbile anymore. All update requests for the config will be dropped
-              on the API. This will be removed in future versions, as Homarr will receive a proper
-              authentication system, which will make this obsolete.
-            </Text>
-          </Stack>
+          </Tooltip>
         ),
       },
     ];
@@ -201,7 +243,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
         icon: <IconLanguage size={20} />,
         label: 'i18n',
         content: (
-          <Badge variant="gradient" gradient={colorGradiant}>
+          <Badge variant="light" color={primaryColor}>
             {usedI18nNamespaces.length}
           </Badge>
         ),
@@ -210,7 +252,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
         icon: <IconVocabulary size={20} />,
         label: 'locales',
         content: (
-          <Badge variant="gradient" gradient={colorGradiant}>
+          <Badge variant="light" color={primaryColor}>
             {initOptions.locales.length}
           </Badge>
         ),
@@ -223,7 +265,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       icon: <IconSchema size={20} />,
       label: 'configurationSchemaVersion',
       content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
+        <Badge variant="light" color={primaryColor}>
           {configVersion}
         </Badge>
       ),
@@ -232,7 +274,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       icon: <IconFile size={20} />,
       label: 'configurationsCount',
       content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
+        <Badge variant="light" color={primaryColor}>
           {configs.length}
         </Badge>
       ),
@@ -242,7 +284,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       label: 'version',
       content: (
         <Group position="right">
-          <Badge variant="gradient" gradient={colorGradiant}>
+          <Badge variant="light" color={primaryColor}>
             {attributes.packageVersion ?? 'Unknown'}
           </Badge>
           {newVersionAvailable && (
@@ -282,7 +324,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       icon: <IconAnchor size={20} />,
       label: 'nodeEnvironment',
       content: (
-        <Badge variant="gradient" gradient={colorGradiant}>
+        <Badge variant="light" color={primaryColor}>
           {attributes.environment}
         </Badge>
       ),

@@ -10,6 +10,7 @@ export type GenericSessionInfo = {
 export type GenericCurrentlyPlaying = {
   name: string;
   seasonName: string | undefined;
+  episodeName: string | undefined;
   albumName: string | undefined;
   episodeCount: number | undefined;
   type: 'audio' | 'video' | 'tv' | 'movie' | undefined;

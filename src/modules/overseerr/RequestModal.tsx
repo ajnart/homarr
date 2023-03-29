@@ -221,7 +221,7 @@ function askForMedia(type: MediaType, id: number, name: string, seasons?: number
     color: 'orange',
     loading: true,
     autoClose: false,
-    disallowClose: true,
+    withCloseButton: false,
     icon: <IconAlertCircle />,
   });
   axios

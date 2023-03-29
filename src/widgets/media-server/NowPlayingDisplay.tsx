@@ -30,11 +30,10 @@ export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) 
   };
 
   const Test = Icon();
-
   return (
     <Flex wrap="nowrap" gap="sm" align="center">
       <Test size={16} />
-      <Stack spacing={0}>
+      <Stack spacing={0} w={200}>
         <Text lineClamp={1}>{session.currentlyPlaying.name}</Text>
 
         {session.currentlyPlaying.albumName ? (
@@ -43,8 +42,8 @@ export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) 
           </Text>
         ) : (
           session.currentlyPlaying.seasonName && (
-            <Text lineClamp={1} color="dimmed" size="xs">
-              {session.currentlyPlaying.seasonName}
+            <Text lineClamp={2} color="dimmed" size="xs">
+              {session.currentlyPlaying.seasonName} - {session.currentlyPlaying.episodeName}
             </Text>
           )
         )}

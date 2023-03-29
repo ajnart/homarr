@@ -1,4 +1,4 @@
-import { Badge, BadgeVariant, MantineSize } from '@mantine/core';
+import { Badge, BadgeProps, MantineSize } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import Dockerode from 'dockerode';
 
@@ -14,7 +14,7 @@ export default function ContainerState(props: ContainerStateProps) {
   const options: {
     size: MantineSize;
     radius: MantineSize;
-    variant: BadgeVariant;
+    variant: BadgeProps['variant'];
   } = {
     size: 'md',
     radius: 'md',

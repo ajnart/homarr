@@ -35,7 +35,7 @@ function sendDockerCommand(
     title: `${t(`actions.${action}.start`)} ${containerName}`,
     message: undefined,
     autoClose: false,
-    disallowClose: true,
+    withCloseButton: false,
   });
   axios
     .get(`/api/docker/container/${containerId}?action=${action}`)

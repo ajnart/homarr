@@ -93,12 +93,10 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   image: {
-    ref: getRef('image'),
     maxHeight: '90%',
     maxWidth: '90%',
   },
   appName: {
-    ref: getRef('appName'),
     wordBreak: 'break-word',
   },
   button: {
