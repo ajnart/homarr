@@ -13,8 +13,6 @@ export default defineConfig({
       all: true,
       exclude: ['.next/', '.yarn/', 'data/'],
     },
-    setupFiles: [
-      './tests/setupVitest.ts',
-    ],
+    setupFiles: ['./tests/setupVitest.ts'],
   },
 });
