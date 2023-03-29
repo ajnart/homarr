@@ -33,7 +33,9 @@ describe('Plex SDK', () => {
 
     // assert
     expect(fetchMock.requests().length).toBe(1);
-    expect(fetchMock.requests()[0].url).toBe('https://plex.local/status/sessions?X-Plex-Token=MY_TOKEN');
+    expect(fetchMock.requests()[0].url).toBe(
+      'https://plex.local/status/sessions?X-Plex-Token=MY_TOKEN'
+    );
     expect(response).not.toBeNull();
     expect(response.length).toBe(1);
     expect(response[0].id).toBe('2894294r2jf2038fj3098jgf3gt');
