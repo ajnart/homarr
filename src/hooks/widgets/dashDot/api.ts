@@ -11,7 +11,7 @@ import type {
 } from '../../../pages/api/modules/usenet/history';
 import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import { queryClient } from '../../../tools/queryClient';
+import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
 
 const POLLING_INTERVAL = 2000;

@@ -1,4 +1,3 @@
-import { useMantineTheme } from '@mantine/core';
 import { create } from 'zustand';
 import { useConfigContext } from '../../../../config/provider';
 import { GridstackBreakpoints } from '../../../../constants/gridstack-breakpoints';

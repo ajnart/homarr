@@ -104,3 +104,11 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/ajnart
 Homarr uses [GitMoji](https://gitmoji.dev/).
 We would appreciate it if everyone keeps their commit messages withing these rulings.
 
+### Tests
+
+> Components should be tested using unit tests. A unit is the smallest isolated part of the component. Unit tests must not have any dependencies and must be isolated.
+
+- Place testfiles directly at the root of the unit
+- Only test a single unit of work inside a unit test
+- You may test multiple units inside one test file
+- Testnames do not begin with ``should`` or the unit name

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../config/provider';
 import { bytes } from '../../tools/bytesHelper';
-import { percentage } from '../../tools/percentage';
+import { percentage } from '../../tools/shared/math/percentage.tool';
 import { DashDotInfo } from './DashDotCompactNetwork';
 
 interface DashDotCompactStorageProps {

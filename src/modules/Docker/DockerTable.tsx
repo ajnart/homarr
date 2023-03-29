@@ -1,13 +1,12 @@
 import {
-  Table,
-  Checkbox,
-  Group,
   Badge,
+  Checkbox,
   createStyles,
+  Group,
   ScrollArea,
-  TextInput,
-  useMantineTheme,
+  Table,
   Text,
+  TextInput,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons';

@@ -6,7 +6,6 @@ import { i18n } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
-import { isToday } from '../../tools/isToday';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
