@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
+
 import 'vitest-fetch-mock';
+
 import { PlexClient } from './plexClient';
 
 const mockResponse = `<MediaContainer size="1">
@@ -22,7 +24,7 @@ const mockResponse = `<MediaContainer size="1">
 describe('Plex SDK', () => {
   it('abc', async () => {
     // arrange
-    const client = new PlexClient('https://plex', 'MY_TOKEN');
+    const client = new PlexClient('https://plex.local', 'MY_TOKEN');
 
     fetchMock.mockResponseOnce(mockResponse);
 
@@ -31,7 +33,7 @@ describe('Plex SDK', () => {
 
     // assert
     expect(fetchMock.requests().length).toBe(1);
-    expect(fetchMock.requests()[0].url).toBe('https://plex/status/sessions?X-Plex-Token=MY_TOKEN');
+    expect(fetchMock.requests()[0].url).toBe('https://plex.local/status/sessions?X-Plex-Token=MY_TOKEN');
     expect(response).not.toBeNull();
     expect(response.length).toBe(1);
     expect(response[0].id).toBe('2894294r2jf2038fj3098jgf3gt');
