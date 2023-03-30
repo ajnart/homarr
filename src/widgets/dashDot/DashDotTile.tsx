@@ -160,6 +160,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { data: info } = useDashDotInfo({
     dashDotUrl,
     enabled: !detectedProtocolDowngrade,
+    widgetId: widget.id,
   });
 
   if (detectedProtocolDowngrade) {
@@ -197,6 +198,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
                     isCompact={g.subValues.compactView ?? false}
                     multiView={g.subValues.multiView ?? false}
                     usePercentages={usePercentages}
+                    widgetId={widget.id}
                   />
                 </Grid.Col>
               ))}
@@ -207,7 +209,15 @@ function DashDotTile({ widget }: DashDotTileProps) {
   );
 }
 
-const useDashDotInfo = ({ dashDotUrl, enabled }: { dashDotUrl: string; enabled: boolean }) => {
+const useDashDotInfo = ({
+  dashDotUrl,
+  enabled,
+  widgetId,
+}: {
+  dashDotUrl: string;
+  enabled: boolean;
+  widgetId: string;
+}) => {
   const { name: configName } = useConfigContext();
   return useQuery({
     refetchInterval: 50000,
@@ -218,15 +228,15 @@ const useDashDotInfo = ({ dashDotUrl, enabled }: { dashDotUrl: string; enabled: 
         dashDotUrl,
       },
     ],
-    queryFn: () => fetchDashDotInfo(configName),
+    queryFn: () => fetchDashDotInfo(configName, widgetId),
     enabled,
   });
 };
 
-const fetchDashDotInfo = async (configName: string | undefined) => {
+const fetchDashDotInfo = async (configName: string | undefined, widgetId: string) => {
   if (!configName) return {} as DashDotInfo;
   return (await (
-    await axios.get('/api/modules/dashdot/info', { params: { configName } })
+    await axios.get('/api/modules/dashdot/info', { params: { configName, widgetId } })
   ).data) as DashDotInfo;
 };
 

@@ -11,6 +11,7 @@ interface DashDotGraphProps {
   dashDotUrl: string;
   usePercentages: boolean;
   info: DashDotInfo;
+  widgetId: string;
 }
 
 export const DashDotGraph = ({
@@ -21,12 +22,13 @@ export const DashDotGraph = ({
   dashDotUrl,
   usePercentages,
   info,
+  widgetId,
 }: DashDotGraphProps) => {
   const { t } = useTranslation('modules/dashdot');
   const { classes } = useStyles();
 
   if (graph === 'storage' && isCompact) {
-    return <DashDotCompactStorage info={info} />;
+    return <DashDotCompactStorage info={info} widgetId={widgetId} />;
   }
 
   if (graph === 'network' && isCompact) {

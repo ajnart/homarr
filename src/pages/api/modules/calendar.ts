@@ -4,6 +4,7 @@ import Consola from 'consola';
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import { z } from 'zod';
 import { AppIntegrationType } from '../../../types/app';
 import { getConfig } from '../../../tools/config/getConfig';
 
@@ -18,28 +19,36 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   });
 };
 
+const getQuerySchema = z.object({
+  month: z
+    .string()
+    .regex(/^\d+$/)
+    .transform((x) => parseInt(x, 10)),
+  year: z
+    .string()
+    .regex(/^\d+$/)
+    .transform((x) => parseInt(x, 10)),
+  widgetId: z.string().uuid(),
+  configName: z.string(),
+});
+
 async function Get(req: NextApiRequest, res: NextApiResponse) {
-  // Parse req.body as a AppItem
-  const {
-    month: monthString,
-    year: yearString,
-    configName,
-  } = req.query as { month: string; year: string; configName: string };
+  const parseResult = getQuerySchema.safeParse(req.query);
 
-  const month = parseInt(monthString, 10);
-  const year = parseInt(yearString, 10);
-
-  if (Number.isNaN(month) || Number.isNaN(year) || !configName) {
+  if (!parseResult.success) {
     return res.status(400).json({
       statusCode: 400,
-      message: 'Missing required parameter in url: year, month or configName',
+      message: 'Invalid query parameters, please specify the widgetId, month, year and configName',
     });
   }
+
+  // Parse req.body as a AppItem
+  const { month, year, widgetId, configName } = parseResult.data;
 
   const config = getConfig(configName);
 
   // Find the calendar widget in the config
-  const calendar = config.widgets.find((w) => w.type === 'calendar');
+  const calendar = config.widgets.find((w) => w.type === 'calendar' && w.id === widgetId);
   const useSonarrv4 = calendar?.properties.useSonarrv4 ?? false;
 
   const mediaAppIntegrationTypes: AppIntegrationType['type'][] = [

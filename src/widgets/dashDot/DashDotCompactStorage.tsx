@@ -9,11 +9,12 @@ import { DashDotInfo } from './DashDotCompactNetwork';
 
 interface DashDotCompactStorageProps {
   info: DashDotInfo;
+  widgetId: string;
 }
 
-export const DashDotCompactStorage = ({ info }: DashDotCompactStorageProps) => {
+export const DashDotCompactStorage = ({ info, widgetId }: DashDotCompactStorageProps) => {
   const { t } = useTranslation('modules/dashdot');
-  const { data: storageLoad } = useDashDotStorage();
+  const { data: storageLoad } = useDashDotStorage(widgetId);
 
   const totalUsed = calculateTotalLayoutSize({
     layout: storageLoad?.layout ?? [],
@@ -50,7 +51,7 @@ interface CalculateTotalLayoutSizeProps<TLayoutItem> {
   key: keyof TLayoutItem;
 }
 
-const useDashDotStorage = () => {
+const useDashDotStorage = (widgetId: string) => {
   const { name: configName, config } = useConfigContext();
 
   return useQuery({
@@ -59,16 +60,17 @@ const useDashDotStorage = () => {
       {
         configName,
         url: config?.widgets.find((x) => x.type === 'dashdot')?.properties.url,
+        widgetId,
       },
     ],
-    queryFn: () => fetchDashDotStorageLoad(configName),
+    queryFn: () => fetchDashDotStorageLoad(configName, widgetId),
   });
 };
 
-async function fetchDashDotStorageLoad(configName: string | undefined) {
+async function fetchDashDotStorageLoad(configName: string | undefined, widgetId: string) {
   if (!configName) throw new Error('configName is undefined');
   return (await (
-    await axios.get('/api/modules/dashdot/storage', { params: { configName } })
+    await axios.get('/api/modules/dashdot/storage', { params: { configName, widgetId } })
   ).data) as DashDotStorageLoad;
 }
 

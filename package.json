@@ -67,6 +67,7 @@
     "uuid": "^8.3.2",
     "xml-js": "^1.6.11",
     "yarn": "^1.22.19",
+    "zod": "^3.21.4",
     "zustand": "^4.1.4"
   },
   "devDependencies": {
