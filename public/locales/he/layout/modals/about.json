@@ -3,8 +3,8 @@
 	"contact": "נתקלת בבעיות או בשאלות? צור איתנו קשר!",
 	"addToDashboard": "הוספה ללוח מחוונים",
 	"tip": "",
-	"key": "",
-	"action": "",
+	"key": "מקש קיצור",
+	"action": "פעולה",
 	"keybinds": "",
 	"metrics": {
 		"configurationSchemaVersion": "גירסת סכימת תצורה",
