@@ -6,6 +6,7 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
 export type WidgetsRemoveModalInnerProps = {
+  widgetId: string;
   widgetType: string;
 };
 
@@ -23,7 +24,7 @@ export const WidgetsRemoveModal = ({
       configName,
       (prev) => ({
         ...prev,
-        widgets: prev.widgets.filter((w) => w.type !== innerProps.widgetType),
+        widgets: prev.widgets.filter((w) => w.id !== innerProps.widgetId),
       }),
       true
     );
