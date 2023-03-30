@@ -27,8 +27,8 @@ export const getConfig = (name: string): BackendConfigType => {
       ...backendConfig,
       widgets: backendConfig.widgets.map((widget) => ({
         ...widget,
-        id: uuidv4(),
-        type: widget.id,
+        id: uuidRegex.test(widget.id) ? widget.id : uuidv4(),
+        type: !uuidRegex.test(widget.id) ? widget.id : widget.type,
       })),
     };
 

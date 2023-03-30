@@ -63,7 +63,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         await fetch(
           `/api/modules/calendar?year=${month.getFullYear()}&month=${
             month.getMonth() + 1
-          }&configName=${configName}&id=${widget.id}`
+          }&configName=${configName}&widgetId=${widget.id}`
         )
       ).json()) as MediasType,
   });
