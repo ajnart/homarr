@@ -12,9 +12,51 @@ interface DashDotGraphProps {
   dashDotUrl: string;
   usePercentages: boolean;
   info: DashDotInfo;
+  widgetId: string;
 }
 
-const generateIframeSrc = (
+export const DashDotGraph = ({
+  graph,
+  graphHeight,
+  isCompact,
+  multiView,
+  dashDotUrl,
+  usePercentages,
+  info,
+  widgetId,
+}: DashDotGraphProps) => {
+  const { t } = useTranslation('modules/dashdot');
+  const { classes } = useStyles();
+
+  if (graph === 'storage' && isCompact) {
+    return <DashDotCompactStorage info={info} widgetId={widgetId} />;
+  }
+
+  if (graph === 'network' && isCompact) {
+    return <DashDotCompactNetwork info={info} />;
+  }
+
+  const title = t(`card.graphs.${graph}.title`);
+
+  return (
+    <div className={classes.graphContainer}>
+      <Title className={classes.graphTitle} order={4}>
+        {title}
+      </Title>
+      <iframe
+        className={classes.iframe}
+        key={graph}
+        title={title}
+        src={useIframeSrc(dashDotUrl, graph, multiView, usePercentages)}
+        style={{
+          height: `${graphHeight}px`,
+        }}
+      />
+    </div>
+  );
+};
+
+const useIframeSrc = (
   dashDotUrl: string,
   graph: string,
   multiView: boolean,

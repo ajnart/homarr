@@ -69,7 +69,8 @@ const useGetRssFeed = (feedUrl: string) =>
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeed(
-    widget.properties.rssFeedUrl
+    widget.properties.rssFeedUrl,
+    widget.id
   );
   const { classes } = useStyles();
   const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
