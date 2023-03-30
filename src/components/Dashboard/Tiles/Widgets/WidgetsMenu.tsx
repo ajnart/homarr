@@ -9,7 +9,7 @@ import { WidgetEditModalInnerProps } from './WidgetsEditModal';
 import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 
 export type WidgetChangePositionModalInnerProps = {
-  widgetId: string;
+  widgetType: string;
   widget: IWidget<string, any>;
   wrapperColumnCount: number;
 };
@@ -27,8 +27,8 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   // Match widget.id with WidgetsDefinitions
   // First get the keys
   const keys = Object.keys(WidgetsDefinitions);
-  // Then find the key that matches the widget.id
-  const widgetDefinition = keys.find((key) => key === widget.id);
+  // Then find the key that matches the widget.type
+  const widgetDefinition = keys.find((key) => key === widget.type);
   // Then get the widget definition
   const widgetDefinitionObject =
     WidgetsDefinitions[widgetDefinition as keyof typeof WidgetsDefinitions];
@@ -38,7 +38,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       modal: 'integrationRemove',
       title: <Title order={4}>{t('common:remove')}</Title>,
       innerProps: {
-        widgetId: integration,
+        widgetType: integration,
       },
       styles: {
         inner: {
@@ -55,15 +55,9 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       size: 'xl',
       title: null,
       innerProps: {
-        widgetId: integration,
+        widgetType: integration,
         widget,
         wrapperColumnCount,
-      },
-      styles: {
-        inner: {
-          position: 'sticky',
-          top: 30,
-        },
       },
     });
   };
@@ -71,21 +65,14 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const handleEditClick = () => {
     openContextModalGeneric<WidgetEditModalInnerProps>({
       modal: 'integrationOptions',
-      title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
+      title: t('descriptor.settings.title'),
       innerProps: {
-        widgetId: integration,
+        widgetType: integration,
         options: widget.properties,
         // Cast as the right type for the correct widget
         widgetOptions: widgetDefinitionObject.options as any,
       },
       zIndex: 5,
-      styles: {
-        inner: {
-          position: 'sticky',
-          top: 30,
-          maxHeight: '100%',
-        },
-      },
     });
   };
 

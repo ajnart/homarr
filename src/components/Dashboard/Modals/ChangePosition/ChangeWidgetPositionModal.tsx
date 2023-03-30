@@ -28,7 +28,7 @@ export const ChangeWidgetPositionModal = ({
     updateConfig(
       configName,
       (prev) => {
-        const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+        const currentWidget = prev.widgets.find((x) => x.type === innerProps.widgetType);
         currentWidget!.shape[shapeSize] = {
           location: {
             x,
@@ -42,7 +42,10 @@ export const ChangeWidgetPositionModal = ({
 
         return {
           ...prev,
-          widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
+          widgets: [
+            ...prev.widgets.filter((x) => x.type !== innerProps.widgetType),
+            currentWidget!,
+          ],
         };
       },
       true
@@ -54,8 +57,8 @@ export const ChangeWidgetPositionModal = ({
     closeModal(id);
   };
 
-  const widthData = useWidthData(innerProps.widgetId);
-  const heightData = useHeightData(innerProps.widgetId);
+  const widthData = useWidthData(innerProps.widgetType);
+  const heightData = useHeightData(innerProps.widgetType);
 
   return (
     <ChangePositionModal

@@ -25,7 +25,7 @@ import { IWidget } from '../../../../widgets/widgets';
 import { DraggableList } from './DraggableList';
 
 export type WidgetEditModalInnerProps = {
-  widgetId: string;
+  widgetType: string;
   options: IWidget<string, any>['properties'];
   widgetOptions: IWidget<string, any>['properties'];
 };
@@ -37,7 +37,8 @@ export const WidgetsEditModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
-  const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
+  console.log('?');
+  const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
     string,
@@ -45,7 +46,7 @@ export const WidgetsEditModal = ({
   ][];
 
   // Find the Key in the "Widgets" Object that matches the widgetId
-  const currentWidgetDefinition = Widgets[innerProps.widgetId as keyof typeof Widgets];
+  const currentWidgetDefinition = Widgets[innerProps.widgetType as keyof typeof Widgets];
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
@@ -63,18 +64,23 @@ export const WidgetsEditModal = ({
     updateConfig(
       configName,
       (prev) => {
-        const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
+        const currentWidget = prev.widgets.find((x) => x.type === innerProps.widgetType);
         currentWidget!.properties = moduleProperties;
 
         return {
           ...prev,
-          widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
+          widgets: [
+            ...prev.widgets.filter((x) => x.type !== innerProps.widgetType),
+            currentWidget!,
+          ],
         };
       },
       true
     );
     context.closeModal(id);
   };
+
+  console.log('??');
 
   return (
     <Stack>
@@ -100,7 +106,7 @@ export const WidgetsEditModal = ({
           <WidgetOptionTypeSwitch
             key={`${key}.${index}`}
             option={option}
-            widgetId={innerProps.widgetId}
+            widgetId={innerProps.widgetType}
             propName={key}
             value={value}
             handleChange={handleChange}

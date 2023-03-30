@@ -58,7 +58,7 @@ const useDashDotStorage = () => {
       'dashdot/storage',
       {
         configName,
-        url: config?.widgets.find((x) => x.id === 'dashdot')?.properties.url,
+        url: config?.widgets.find((x) => x.type === 'dashdot')?.properties.url,
       },
     ],
     queryFn: () => fetchDashDotStorageLoad(configName),
