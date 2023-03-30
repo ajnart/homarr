@@ -37,7 +37,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const config = getConfig(configName);
 
   // Find the calendar widget in the config
-  const calendar = config.widgets.find((w) => w.id === 'calendar');
+  const calendar = config.widgets.find((w) => w.type === 'calendar');
   const useSonarrv4 = calendar?.properties.useSonarrv4 ?? false;
 
   const mediaAppIntegrationTypes: AppIntegrationType['type'][] = [

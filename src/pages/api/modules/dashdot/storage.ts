@@ -14,7 +14,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const config = getConfig(configName);
-  const dashDotWidget = config.widgets.find((x) => x.id === 'dashdot');
+  const dashDotWidget = config.widgets.find((x) => x.type === 'dashdot');
 
   if (!dashDotWidget) {
     return res.status(400).json({

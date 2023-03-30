@@ -34,7 +34,7 @@ const useWidget = <T extends IWidget<string, any>>(widget: T): T => {
 };
 
 export const WidgetWrapper = ({
-  widgetType: widgetId,
+  widgetType,
   widget,
   className,
   WidgetComponent,
@@ -44,7 +44,7 @@ export const WidgetWrapper = ({
   return (
     <ErrorBoundary>
       <HomarrCardWrapper className={className}>
-        <WidgetsMenu integration={widgetId} widget={widgetWithDefaultProps} />
+        <WidgetsMenu integration={widgetType} widget={widgetWithDefaultProps} />
         <WidgetComponent widget={widgetWithDefaultProps} />
       </HomarrCardWrapper>
     </ErrorBoundary>

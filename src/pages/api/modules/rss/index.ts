@@ -25,7 +25,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
-  const rssWidget = config.widgets.find((x) => x.id === 'rss') as IRssWidget | undefined;
+  const rssWidget = config.widgets.find((x) => x.type === 'rss') as IRssWidget | undefined;
 
   if (
     !rssWidget ||

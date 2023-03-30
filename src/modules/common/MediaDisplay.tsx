@@ -154,7 +154,7 @@ export function RadarrMediaDisplay(props: any) {
 export function SonarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   const { config } = useConfigContext();
-  const calendar = config?.widgets.find((w) => w.id === 'calendar');
+  const calendar = config?.widgets.find((w) => w.type === 'calendar');
   const useSonarrv4 = calendar?.properties.useSonarrv4 ?? false;
 
   // Find a poster CoverType

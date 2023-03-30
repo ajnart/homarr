@@ -7,7 +7,7 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
 export type WidgetsRemoveModalInnerProps = {
-  widgetId: string;
+  widgetType: string;
 };
 
 export const WidgetsRemoveModal = ({
@@ -15,7 +15,7 @@ export const WidgetsRemoveModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetsRemoveModalInnerProps>) => {
-  const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
+  const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
   if (!configName) return null;
@@ -24,7 +24,7 @@ export const WidgetsRemoveModal = ({
       configName,
       (prev) => ({
         ...prev,
-        widgets: prev.widgets.filter((w) => w.id !== innerProps.widgetId),
+        widgets: prev.widgets.filter((w) => w.type !== innerProps.widgetType),
       }),
       true
     );
@@ -35,8 +35,8 @@ export const WidgetsRemoveModal = ({
     <Stack>
       <Trans
         i18nKey="common:removeConfirm"
-        components={[<Text key={0} weight={500} />]}
-        values={{ item: innerProps.widgetId }}
+        components={[<Text weight={500} />]}
+        values={{ item: innerProps.widgetType }}
       />
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
