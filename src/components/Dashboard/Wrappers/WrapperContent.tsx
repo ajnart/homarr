@@ -48,7 +48,6 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
           | IWidgetDefinition
           | undefined;
         if (!definition) return null;
-        console.log(definition);
 
         return (
           <GridstackTileWrapper

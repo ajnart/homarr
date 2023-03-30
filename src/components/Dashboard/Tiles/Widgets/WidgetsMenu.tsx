@@ -10,6 +10,7 @@ import { WidgetEditModalInnerProps } from './WidgetsEditModal';
 import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 
 export type WidgetChangePositionModalInnerProps = {
+  widgetId: string;
   widgetType: string;
   widget: IWidget<string, any>;
   wrapperColumnCount: number;
@@ -39,13 +40,8 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       modal: 'integrationRemove',
       title: <Title order={4}>{t('common:remove')}</Title>,
       innerProps: {
+        widgetId: widget.id,
         widgetType: integration,
-      },
-      styles: {
-        inner: {
-          position: 'sticky',
-          top: 30,
-        },
       },
     });
   };
@@ -56,6 +52,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       size: 'xl',
       title: null,
       innerProps: {
+        widgetId: widget.id,
         widgetType: integration,
         widget,
         wrapperColumnCount,
@@ -66,8 +63,9 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const handleEditClick = () => {
     openContextModalGeneric<WidgetEditModalInnerProps>({
       modal: 'integrationOptions',
-      title: t('descriptor.settings.title'),
+      title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
       innerProps: {
+        widgetId: widget.id,
         widgetType: integration,
         options: widget.properties,
         // Cast as the right type for the correct widget

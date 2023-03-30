@@ -17,20 +17,18 @@ interface WidgetWrapperProps {
 const useWidget = <T extends IWidget<string, any>>(widget: T): T => {
   const definition = Widgets[widget.type as keyof typeof Widgets];
 
-  return useMemo(() => {
-    const newProps = { ...widget.properties };
+  const newProps = { ...widget.properties };
 
-    Object.entries(definition.options).forEach(([key, option]) => {
-      if (newProps[key] == null) {
-        newProps[key] = option.defaultValue;
-      }
-    });
+  Object.entries(definition.options).forEach(([key, option]) => {
+    if (newProps[key] == null) {
+      newProps[key] = option.defaultValue;
+    }
+  });
 
-    return {
-      ...widget,
-      properties: newProps,
-    };
-  }, [widget]);
+  return {
+    ...widget,
+    properties: newProps,
+  };
 };
 
 export const WidgetWrapper = ({

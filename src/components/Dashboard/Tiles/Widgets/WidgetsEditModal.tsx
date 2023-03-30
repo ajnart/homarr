@@ -29,6 +29,7 @@ import {
 import { DraggableList } from './DraggableList';
 
 export type WidgetEditModalInnerProps = {
+  widgetId: string;
   widgetType: string;
   options: IWidget<string, any>['properties'];
   widgetOptions: IWidget<string, any>['properties'];
@@ -41,7 +42,6 @@ export const WidgetsEditModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
-  console.log('?');
   const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
@@ -68,23 +68,18 @@ export const WidgetsEditModal = ({
     updateConfig(
       configName,
       (prev) => {
-        const currentWidget = prev.widgets.find((x) => x.type === innerProps.widgetType);
+        const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
         currentWidget!.properties = moduleProperties;
 
         return {
           ...prev,
-          widgets: [
-            ...prev.widgets.filter((x) => x.type !== innerProps.widgetType),
-            currentWidget!,
-          ],
+          widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
         };
       },
       true
     );
     context.closeModal(id);
   };
-
-  console.log('??');
 
   return (
     <Stack>
