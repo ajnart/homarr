@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     ['common', 'form'],
     context.locale,
     context.req,
-    context.res,
+    context.res
   );
 
   return { props: { ...translations } };
