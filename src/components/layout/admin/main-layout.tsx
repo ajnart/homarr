@@ -1,10 +1,9 @@
 import {
   AppShell,
   Avatar,
-  Badge,
-  Button,
   Card,
-  Grid,
+  Container,
+  Flex,
   Group,
   Header,
   Image,
@@ -28,7 +27,6 @@ import {
   IconGitFork,
   IconLogout,
   IconMailForward,
-  IconPlus,
   IconQuestionMark,
   IconShield,
   IconShieldLock,
@@ -38,6 +36,7 @@ import {
 } from '@tabler/icons';
 import { signOut } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import { ReactNode } from 'react';
 import { Logo } from '../Logo';
 
 export const MainLayout = () => {
@@ -117,34 +116,56 @@ export const MainLayout = () => {
         </Header>
       }
     >
-      <Title mb="md">Good evening, @example-user 👋</Title>
-      <Group position="apart" mb="sm">
-        <Title order={2} color="dimmed" weight="normal">
-          Available dashboards
-        </Title>
-        <Button leftIcon={<IconPlus />} variant="light">
-          Create
-        </Button>
-      </Group>
-      <Grid>
-        <Grid.Col xs={12} sm={4}>
-          <Card>
-            <Card.Section>
-              <Image
-                src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-                height={160}
-                alt="Norway"
-              />
-            </Card.Section>
-            <Group position="apart" mt="md" mb="xs">
-              <Text weight={500}>Default</Text>
-              <Badge color="pink" variant="light">
-                Recently edited
-              </Badge>
-            </Group>
-          </Card>
-        </Grid.Col>
-      </Grid>
+      <Container h={200} style={{ overflow: 'hidden' }} pos="relative">
+        <Image
+          src="https://homarr.dev/img/pictures/homarr-devices-preview/compressed/homarr-devices-2d-mockup-flat-shadow-light-compressed.png"
+          pos="absolute"
+          h="100%"
+          w="auto"
+          style={{ zIndex: -2 }}
+          opacity={0.5}
+        />
+        <Container
+          pos="absolute"
+          h="100%"
+          w="100%"
+          bg="linear-gradient(180deg, transparent, rgba(255,255,255,1) 95%, white 100%);"
+          style={{ zIndex: -1 }}
+        />
+
+        <Stack p="md">
+          <Text size="xl" style={{ lineHeight: 1 }}>
+            Welcome back to Homarr
+          </Text>
+          <Title order={1} style={{ lineHeight: 1 }}>
+            Your Dashboard
+          </Title>
+        </Stack>
+      </Container>
+
+      <Text mt="lg" mb="xs">
+        Quick Actions
+      </Text>
+      <Flex gap="md">
+        <QuickAction name="Dashboards" icon={<IconDashboard size={50} strokeWidth={1.4} />} />
+        <QuickAction name="Users" icon={<IconUser size={50} strokeWidth={1.4} />} />
+        <QuickAction name="A" icon={<></>} />
+      </Flex>
+
+      <Text mt="xl">Changelog</Text>
     </AppShell>
+  );
+};
+
+const QuickAction = ({ icon, name }: { icon: ReactNode; name: string }) => {
+  return (
+    <UnstyledButton>
+      <Card bg="gray" w={120} h={120}>
+        <Stack align="center" spacing="xs">
+          {icon}
+          <Text weight="bold">{name}</Text>
+        </Stack>
+      </Card>
+    </UnstyledButton>
   );
 };
