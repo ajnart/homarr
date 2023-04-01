@@ -1,10 +1,9 @@
 import {
   AppShell,
   Avatar,
-  Badge,
-  Button,
   Card,
-  Grid,
+  Container,
+  Flex,
   Group,
   Header,
   Image,
@@ -28,17 +27,16 @@ import {
   IconGitFork,
   IconLogout,
   IconMailForward,
-  IconPlus,
   IconQuestionMark,
   IconShield,
   IconShieldLock,
   IconSun,
-  IconTools,
   IconUser,
   IconUserSearch,
 } from '@tabler/icons';
 import { signOut } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import { ReactNode } from 'react';
 import { Logo } from '../Logo';
 
 export const MainLayout = () => {
@@ -88,65 +86,86 @@ export const MainLayout = () => {
       }
       header={
         <Header height={60} p="sm" pt="xs">
-          <Group spacing="xl" position="apart">
+          <Group spacing="xl" position="apart" noWrap>
             <Logo />
-            <TextInput radius="xl" w={400} placeholder="Sarch..." />
-            <UnstyledButton>
-              <Menu>
-                <Menu.Target>
-                  <Group>
+            <TextInput radius="xl" w={400} placeholder="Sarch..." variant="filled" />
+
+            <Group noWrap>
+              <UnstyledButton>
+                <Menu>
+                  <Menu.Target>
                     <Avatar />
-                    <Stack spacing={0}>
-                      <Text size="sm">@Username</Text>
-                      <Text size="xs" color="dimmed">
-                        Administrator
-                      </Text>
-                    </Stack>
-                  </Group>
-                </Menu.Target>
-                <Menu.Dropdown>
-                  <Menu.Item icon={<IconSun size={18} />}>Switch theme</Menu.Item>
-                  <Menu.Item icon={<IconUserSearch size={18} />}>View Profile</Menu.Item>
-                  <Menu.Item icon={<IconDashboard size={18} />}>Default Dashboard</Menu.Item>
-                  <Menu.Divider />
-                  <Menu.Item icon={<IconLogout size={18} />} color="red" onClick={() => signOut()}>
-                    Logout
-                  </Menu.Item>
-                </Menu.Dropdown>
-              </Menu>
-            </UnstyledButton>
+                  </Menu.Target>
+                  <Menu.Dropdown>
+                    <Menu.Item icon={<IconSun size={18} />}>Switch theme</Menu.Item>
+                    <Menu.Item icon={<IconUserSearch size={18} />}>View Profile</Menu.Item>
+                    <Menu.Item icon={<IconDashboard size={18} />}>Default Dashboard</Menu.Item>
+                    <Menu.Divider />
+                    <Menu.Item
+                      icon={<IconLogout size={18} />}
+                      color="red"
+                      onClick={() => signOut()}
+                    >
+                      Logout
+                    </Menu.Item>
+                  </Menu.Dropdown>
+                </Menu>
+              </UnstyledButton>
+            </Group>
           </Group>
         </Header>
       }
     >
-      <Title mb="md">Good evening, @example-user 👋</Title>
-      <Group position="apart" mb="sm">
-        <Title order={2} color="dimmed" weight="normal">
-          Available dashboards
-        </Title>
-        <Button leftIcon={<IconPlus />} variant="light">
-          Create
-        </Button>
-      </Group>
-      <Grid>
-        <Grid.Col xs={12} sm={4}>
-          <Card>
-            <Card.Section>
-              <Image
-                src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-                height={160}
-                alt="Norway"
-              />
-            </Card.Section>
-            <Group position="apart" mt="md" mb="xs">
-              <Text weight={500}>Default</Text>
-              <Badge color="pink" variant="light">
-                Recently edited
-              </Badge>
-            </Group>
-          </Card>
-        </Grid.Col>
-      </Grid>
+      <Container h={200} style={{ overflow: 'hidden' }} pos="relative">
+        <Image
+          src="https://homarr.dev/img/pictures/homarr-devices-preview/compressed/homarr-devices-2d-mockup-flat-shadow-light-compressed.png"
+          pos="absolute"
+          h="100%"
+          w="auto"
+          style={{ zIndex: -2 }}
+          opacity={0.5}
+        />
+        <Container
+          pos="absolute"
+          h="100%"
+          w="100%"
+          bg="linear-gradient(180deg, transparent, rgba(255,255,255,1) 95%, white 100%);"
+          style={{ zIndex: -1 }}
+        />
+
+        <Stack p="md">
+          <Text size="xl" style={{ lineHeight: 1 }}>
+            Welcome back to Homarr
+          </Text>
+          <Title order={1} style={{ lineHeight: 1 }}>
+            Your Dashboard
+          </Title>
+        </Stack>
+      </Container>
+
+      <Text mt="lg" mb="xs">
+        Quick Actions
+      </Text>
+      <Flex gap="md">
+        <QuickAction name="Dashboards" icon={<IconDashboard size={50} strokeWidth={1.4} />} />
+        <QuickAction name="Users" icon={<IconUser size={50} strokeWidth={1.4} />} />
+        <QuickAction name="A" icon={<></>} />
+      </Flex>
+
+      <Text mt="xl">Changelog</Text>
     </AppShell>
+  );
+};
+
+const QuickAction = ({ icon, name }: { icon: ReactNode; name: string }) => {
+  return (
+    <UnstyledButton>
+      <Card bg="gray" w={120} h={120}>
+        <Stack align="center" spacing="xs">
+          {icon}
+          <Text weight="bold">{name}</Text>
+        </Stack>
+      </Card>
+    </UnstyledButton>
   );
 };
