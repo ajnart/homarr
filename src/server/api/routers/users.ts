@@ -43,7 +43,7 @@ export const usersRouter = createTRPCRouter({
     }),
 });
 
-const constructWhereFilter = (filter: typeof userFilters[number]) => {
+const constructWhereFilter = (filter: (typeof userFilters)[number]) => {
   if (filter === 'all') {
     return {};
   }
