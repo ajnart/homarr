@@ -114,23 +114,22 @@ function App(
               withNormalizeCSS
             >
               <ConfigProvider>
-                <Notifications limit={4} position="bottom-left">
-                  <ModalsProvider
-                    modals={{
-                      editApp: EditAppModal,
-                      selectElement: SelectElementModal,
-                      integrationOptions: WidgetsEditModal,
-                      integrationRemove: WidgetsRemoveModal,
-                      categoryEditModal: CategoryEditModal,
-                      changeAppPositionModal: ChangeAppPositionModal,
-                      changeIntegrationPositionModal: ChangeWidgetPositionModal,
-                      inviteCreateModal: InviteCreateModal,
-                      userPermissionModal: UserPermissionModal,
-                    }}
-                  >
-                    <Component {...pageProps} />
-                  </ModalsProvider>
-                </Notifications>
+                <Notifications limit={4} position="bottom-left" />
+                <ModalsProvider
+                  modals={{
+                    editApp: EditAppModal,
+                    selectElement: SelectElementModal,
+                    integrationOptions: WidgetsEditModal,
+                    integrationRemove: WidgetsRemoveModal,
+                    categoryEditModal: CategoryEditModal,
+                    changeAppPositionModal: ChangeAppPositionModal,
+                    changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                    inviteCreateModal: InviteCreateModal,
+                    userPermissionModal: UserPermissionModal,
+                  }}
+                >
+                  <Component {...pageProps} />
+                </ModalsProvider>
               </ConfigProvider>
             </MantineProvider>
           </ColorTheme.Provider>
