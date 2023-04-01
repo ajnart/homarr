@@ -1,56 +1,27 @@
 import { Badge, Button, Container, Grid, Group, Stack, Title } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
-import NextLink from 'next/link';
 import { IconMail } from '@tabler/icons';
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
+import NextLink from 'next/link';
 import { useState } from 'react';
 import { openInviteCreateModal } from '../../../components/Admin/Invite/InviteCreateModal';
 import { useInvitesQuery } from '../../../components/Admin/Invite/InviteTable';
-import { UserFilterType, UserList } from '../../../components/Admin/User/UserList';
+import { UserList } from '../../../components/Admin/User/UserList';
 import { GenericSearch } from '../../../components/Admin/User/UserSearch';
 import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
-import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
+import { getServerAuthSession } from '../../../server/auth';
+import { prisma } from '../../../server/db';
 import { getServerSideTranslations } from '../../../tools/server/getServerSideTranslations';
+import { RouterOutputs, api } from '../../../utils/api';
 
-const titleMap: Record<UserFilterType, string> = {
-  all: 'All users',
-  'user-enabled': 'Enabled users',
-  'user-archived': 'Archived users',
-  'user-non-admin': 'Non admin users',
-  'user-admin': 'Admin users',
-};
-
-const useUserFilter = () => {
-  const { t } = useTranslation();
-
-  return [
-    {
-      value: 'all',
-      label: 'All users',
-    },
-    {
-      value: 'user-admin',
-      label: 'Admin users',
-    },
-    {
-      value: 'user-archived',
-      label: 'Archived users',
-    },
-    {
-      value: 'user-enabled',
-      label: 'Enabled users',
-    },
-    {
-      value: 'user-non-admin',
-      label: 'Non admin users',
-    },
-  ] as const;
-};
+type UserFilter = RouterOutputs['user']['filters'][number];
 
 const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
-  const [filter, setFilter] = useState<UserFilterType>('all');
+  const { t } = useTranslation();
+  const { data: userFilters } = api.user.filters.useQuery();
+  const [filter, setFilter] = useState<UserFilter>('all');
   const [search, setSearch] = useState<string>('');
   const [debouncedSearch] = useDebouncedValue(search, 200);
   const largerThanSm = useScreenLargerThan('sm');
@@ -66,7 +37,7 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
       <Container>
         <Stack>
           <div>
-            <Title>{titleMap[filter]}</Title>
+            <Title>{t(`users:filters/${filter}/title`)}</Title>
             <Title order={4} weight={400}>
               Manage the users that can access your dashboards.
             </Title>
@@ -77,8 +48,10 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
               <GenericSearch
                 search={search}
                 setSearch={setSearch}
-                filters={useUserFilter()}
-                applyFilter={(v) => setFilter(v as UserFilterType)}
+                filters={userFilters}
+                applyFilter={(v) => setFilter(v)}
+                labelTranslationPath={(v) => `users:filters/${v}/label`}
+                searchPlaceholder="users:search/placeholder"
               />
               <Group noWrap>
                 <InvitesButton />
@@ -97,8 +70,10 @@ const Users: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
                 <GenericSearch
                   search={search}
                   setSearch={setSearch}
-                  filters={useUserFilter()}
-                  applyFilter={(v) => setFilter(v as UserFilterType)}
+                  filters={userFilters}
+                  applyFilter={(v) => setFilter(v)}
+                  labelTranslationPath={(v) => `users:filters/${v}/label`}
+                  searchPlaceholder="users:search/placeholder"
                 />
               </Grid.Col>
             </Grid>

@@ -5,10 +5,11 @@ import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from '
 import Head from 'next/head';
 import { openInviteCreateModal } from '../../../components/Admin/Invite/InviteCreateModal';
 import { InviteTable } from '../../../components/Admin/Invite/InviteTable';
-import { useUsersQuery } from '../../../components/Admin/User/UserList';
 import { useScreenSmallerThan } from '../../../hooks/useScreenSmallerThan';
-import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
 import { getServerSideTranslations } from '../../../tools/server/getServerSideTranslations';
+import { getServerAuthSession } from '../../../server/auth';
+import { prisma } from '../../../server/db';
+import { api } from '../../../utils/api';
 
 const Invites: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
   const smallerThanSm = useScreenSmallerThan('sm');
@@ -71,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default Invites;
 
 const UsersButton = () => {
-  const { data: users } = useUsersQuery();
+  const { data: users } = api.user.list.useQuery({ filter: 'all' });
 
   return (
     <Button

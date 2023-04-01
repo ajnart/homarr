@@ -1849,6 +1849,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@trpc/client@npm:^10.18.0":
+  version: 10.18.0
+  resolution: "@trpc/client@npm:10.18.0"
+  peerDependencies:
+    "@trpc/server": 10.18.0
+  checksum: 1bc5b32cf40ba0019321a047977366ae4f7d7e2c49c677ca96dcc4d04a7a6ec0ddbae1e8d51eecfd95e79b4fb90bedda3e3a9557bbeaf6d36c35deb3d2238d71
+  languageName: node
+  linkType: hard
+
+"@trpc/next@npm:^10.18.0":
+  version: 10.18.0
+  resolution: "@trpc/next@npm:10.18.0"
+  dependencies:
+    react-ssr-prepass: ^1.5.0
+  peerDependencies:
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.18.0
+    "@trpc/react-query": 10.18.0
+    "@trpc/server": 10.18.0
+    next: "*"
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: d6ab6ac4e4538c82daeebae18f6007a8447164b615b64b64997ffa5554eb8083f4bbb4ae38fcbd6c5475a04b3424a4af4431625ca80643eed4fde7afc9fb3c1b
+  languageName: node
+  linkType: hard
+
+"@trpc/react-query@npm:^10.18.0":
+  version: 10.18.0
+  resolution: "@trpc/react-query@npm:10.18.0"
+  peerDependencies:
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.18.0
+    "@trpc/server": 10.18.0
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 67471dd99231e8d1f00a14fde31ce0eae9039e374e4bbc774fca96a1be74c60ad46e4a1ad1936bad963780fe9926bc4b75dc58d24d79a8058e4831e66c941480
+  languageName: node
+  linkType: hard
+
+"@trpc/server@npm:^10.18.0":
+  version: 10.18.0
+  resolution: "@trpc/server@npm:10.18.0"
+  checksum: 727ae5c12ea33063b13e054893d9b8ecd82b68a3cc93e54e25255181a45b3590c0ade0070237b68a7033e49c9b590ec743049eb7ebdef237c4b10732d1d0d432
+  languageName: node
+  linkType: hard
+
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.9
   resolution: "@tsconfig/node10@npm:1.0.9"
@@ -5087,6 +5133,10 @@ __metadata:
     "@tanstack/react-query-devtools": ^4.24.4
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
+    "@trpc/client": ^10.18.0
+    "@trpc/next": ^10.18.0
+    "@trpc/react-query": ^10.18.0
+    "@trpc/server": ^10.18.0
     "@types/bcrypt": ^5.0.0
     "@types/dockerode": ^3.3.9
     "@types/node": 17.0.1
@@ -5123,7 +5173,7 @@ __metadata:
     i18next: ^21.9.1
     js-file-download: ^0.4.12
     next: ^13.2.1
-    next-auth: ^4.19.2
+    next-auth: ^4.20.1
     next-i18next: ^11.3.0
     nzbget-api: ^0.0.3
     prettier: ^2.7.1
@@ -5135,6 +5185,7 @@ __metadata:
     rss-parser: ^3.12.0
     sabnzbd-api: ^1.5.0
     sass: ^1.56.1
+    superjson: ^1.12.2
     ts-node: ^10.9.1
     turbo: ^1.8.3
     typescript: ^4.7.4
@@ -6415,7 +6466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-auth@npm:^4.19.2":
+"next-auth@npm:^4.20.1":
   version: 4.20.1
   resolution: "next-auth@npm:4.20.1"
   dependencies:
@@ -7336,6 +7387,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-ssr-prepass@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "react-ssr-prepass@npm:1.5.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: efe89b9f8b2053474613f56dfdbeb41d8ee2e572bf819a39377d95d3e4a9acf8a4a16e28d8d8034cb9ac2b316d11dc9e62217743e4322046d08175eb3b4fed3e
+  languageName: node
+  linkType: hard
+
 "react-style-singleton@npm:^2.2.1":
   version: 2.2.1
   resolution: "react-style-singleton@npm:2.2.1"
@@ -8125,7 +8185,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"superjson@npm:^1.10.0":
+"superjson@npm:^1.10.0, superjson@npm:^1.12.2":
   version: 1.12.2
   resolution: "superjson@npm:1.12.2"
   dependencies:

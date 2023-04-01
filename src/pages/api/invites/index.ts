@@ -1,8 +1,9 @@
 import { randomBytes } from 'crypto';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
 import { addSecurityEvent } from '../../../tools/events/addSecurityEvent';
 import { registrationInviteCreationInputSchema } from '../../../validation/invite';
+import { getServerAuthSession } from '../../../server/auth';
+import { prisma } from '../../../server/db';
 
 async function Post(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });

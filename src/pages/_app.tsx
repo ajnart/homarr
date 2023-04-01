@@ -33,6 +33,7 @@ import { theme } from '../tools/server/theme/theme';
 
 import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
+import { api } from '../utils/api';
 
 function App(
   this: any,
@@ -163,4 +164,4 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
   };
 };
 
-export default appWithTranslation(App);
+export default api.withTRPC(appWithTranslation(App));

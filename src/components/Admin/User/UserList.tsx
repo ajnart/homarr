@@ -1,17 +1,13 @@
 import { Center, Loader, ScrollArea, Text } from '@mantine/core';
-import { User } from '@prisma/client';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { z } from 'zod';
 import { useScreenSmallerThan } from '../../../hooks/useScreenSmallerThan';
-import { userFilterSchema } from '../../../validation/user';
+import { RouterInputs, api } from '../../../utils/api';
 import { UserListItems } from './List/UserListItems';
 import { UserListTable } from './List/UserListTable';
 
-type UserListProps = UseUsersQueryInput;
+type UserListProps = RouterInputs['user']['list'];
 
 export const UserList = ({ filter, search }: UserListProps) => {
-  const { data: users, isLoading, isError } = useUsersQuery({ filter, search });
+  const { data: users, isLoading, isError } = api.user.list.useQuery({ filter, search });
   const smallerThanSm = useScreenSmallerThan('sm');
 
   return (
@@ -39,27 +35,3 @@ export const UserList = ({ filter, search }: UserListProps) => {
     </ScrollArea>
   );
 };
-
-export type UseUsersQueryResponse = (Omit<
-  User,
-  'password' | 'createdAt' | 'updatedAt' | 'isAdmin'
-> & {
-  role: 'admin' | 'user';
-})[];
-
-interface UseUsersQueryInput {
-  filter: UserFilterType;
-  search?: string;
-}
-
-export const useUsersQuery = (params: UseUsersQueryInput = { filter: 'all' }) =>
-  useQuery<UseUsersQueryResponse>({
-    queryKey: ['users', params.filter, params.search],
-    queryFn: async () => {
-      const response = await axios.get('/api/users', { params });
-      return response.data;
-    },
-    retry: false,
-  });
-
-export type UserFilterType = z.infer<typeof userFilterSchema>;

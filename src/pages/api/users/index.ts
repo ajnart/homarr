@@ -1,8 +1,9 @@
 import { Prisma } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
-import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
 import { userFilterSchema } from '../../../validation/user';
+import { getServerAuthSession } from '../../../server/auth';
+import { prisma } from '../../../server/db';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });
