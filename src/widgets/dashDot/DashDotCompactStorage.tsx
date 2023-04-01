@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../config/provider';
 import { bytes } from '../../tools/bytesHelper';
-import { percentage } from '../../tools/percentage';
+import { percentage } from '../../tools/shared/math/percentage.tool';
 import { DashDotInfo } from './DashDotCompactNetwork';
 
 interface DashDotCompactStorageProps {
@@ -25,7 +25,7 @@ export const DashDotCompactStorage = ({ info }: DashDotCompactStorageProps) => {
   });
 
   return (
-    <Group noWrap align="start" position="apart" w="100%" maw="251px">
+    <Group noWrap align="start" position="apart" w="100%">
       <Text weight={500}>{t('card.graphs.storage.label')}</Text>
       <Stack align="end" spacing={0}>
         <Text color="dimmed" size="xs">

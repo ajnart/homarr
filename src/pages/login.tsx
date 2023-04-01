@@ -19,9 +19,9 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import { getServerAuthSession } from '../server/common/get-server-auth-session';
 import { ILogin, loginSchema } from '../validation/auth';
-import { loginNamespaces } from '../tools/translation-namespaces';
-import { getServerSideTranslations } from '../tools/getServerSideTranslations';
+import { loginNamespaces } from '../tools/server/translation-namespaces';
 import { getInputPropsMiddleware } from '../tools/getInputPropsMiddleware';
+import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
 
 const Login: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ errorType }) => {
   const router = useRouter();
@@ -116,10 +116,10 @@ export const getServerSideProps: GetServerSideProps<{ errorType?: string }> = as
   }
 
   const translations = await getServerSideTranslations(
-    context.req,
-    context.res,
     loginNamespaces,
-    context.locale
+    context.locale,
+    context.req,
+    context.res
   );
 
   return { props: { errorType, ...translations } };

@@ -24,5 +24,11 @@
     "seconds": "sekund",
     "minutes": "minut",
     "hours": "ur"
+  },
+  "loading": "Nalaganje...",
+  "breakPoints": {
+    "small": "majhen",
+    "medium": "srednja",
+    "large": "velika"
   }
 }

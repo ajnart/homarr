@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Sidotitel"
+    "label": "Sidotitel",
+    "description": "Titeln på instrumentpanelen längst upp till vänster"
   },
   "metaTitle": {
-    "label": "Metatitel"
+    "label": "Metatitel",
+    "description": "Titeln som visas som fliknamn"
   },
   "logo": {
-    "label": "Logotyp"
+    "label": "Logotyp",
+    "description": "Instrumentbrädans logotyp längst upp till vänster"
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": "Ikonen, som används framför flikens namn"
   },
   "background": {
     "label": "Bakgrund"
   },
   "customCSS": {
     "label": "Anpassad CSS",
-    "placeholder": "Anpassad CSS tillämpas sist"
+    "description": "Anpassa alla element på instrumentpanelen, rekommenderas endast för erfarna användare",
+    "placeholder": "Anpassad CSS tillämpas sist",
+    "applying": "Tillämpar CSS..."
   },
   "buttons": {
     "submit": "Skicka"

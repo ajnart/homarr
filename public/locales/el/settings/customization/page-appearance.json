@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Τίτλος Σελίδας"
+    "label": "Τίτλος Σελίδας",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Meta Τίτλος"
+    "label": "Meta Τίτλος",
+    "description": ""
   },
   "logo": {
-    "label": "Λογότυπο"
+    "label": "Λογότυπο",
+    "description": ""
   },
   "favicon": {
-    "label": "Έμβλημα"
+    "label": "Έμβλημα",
+    "description": ""
   },
   "background": {
     "label": "Φόντο"
   },
   "customCSS": {
     "label": "Προσαρμοσμένη CSS",
-    "placeholder": "Το προσαρμοσμένο CSS θα εφαρμοστεί τελευταίο"
+    "description": "",
+    "placeholder": "Το προσαρμοσμένο CSS θα εφαρμοστεί τελευταίο",
+    "applying": ""
   },
   "buttons": {
     "submit": "Υποβολή"

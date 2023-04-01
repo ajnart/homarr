@@ -1,4 +1,5 @@
 import { IconKey, IconPassword, IconUser, TablerIcon } from '@tabler/icons';
+
 import { TileBaseType } from './tile';
 
 export interface AppType extends TileBaseType {
@@ -22,7 +23,7 @@ interface AppBehaviourType {
 
 interface AppNetworkType {
   enabledStatusChecker: boolean;
-  okStatus: number[];
+  statusCodes: string[];
 }
 
 interface AppAppearanceType {
@@ -40,6 +41,8 @@ export type IntegrationType =
   | 'deluge'
   | 'qBittorrent'
   | 'transmission'
+  | 'plex'
+  | 'jellyfin'
   | 'nzbGet';
 
 export type AppIntegrationType = {
@@ -78,6 +81,8 @@ export const integrationFieldProperties: {
   nzbGet: ['username', 'password'],
   qBittorrent: ['username', 'password'],
   transmission: ['username', 'password'],
+  jellyfin: ['username', 'password'],
+  plex: ['apiKey'],
 };
 
 export type IntegrationFieldDefinitionType = {

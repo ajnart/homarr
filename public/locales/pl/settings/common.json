@@ -9,11 +9,20 @@
     "configTip": "Wgraj swój plik konfiguracyjny poprzez przeciągnięcie i upuszczenie go na stronę!"
   },
   "credits": {
-    "madeWithLove": "Wykonane z ❤️ przez @"
+    "madeWithLove": "Wykonane z ❤️ przez @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Wersja"
+    }
   },
   "grow": "Rozwijaj siatkę (zajmij całą przestrzeń)",
   "layout": {
-    "title": "Układ deski rozdzielczej",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Główna",
     "sidebar": "Pasek boczny",
     "cannotturnoff": "Nie można wyłączyć",

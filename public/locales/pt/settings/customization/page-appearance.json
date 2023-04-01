@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Título da página"
+    "label": "Título da página",
+    "description": "O título do painel no canto superior esquerdo"
   },
   "metaTitle": {
-    "label": "Meta Título"
+    "label": "Meta Título",
+    "description": "O título, que está sendo exibido como o nome da sua aba"
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": "O logotipo do painel no canto superior esquerdo"
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": "O ícone, que está sendo usado na frente do nome da sua aba"
   },
   "background": {
     "label": "Antecedentes"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "placeholder": "O CSS personalizado será aplicado por último"
+    "description": "Personalize todos os elementos no seu painel, recomendado apenas para usuários experientes",
+    "placeholder": "O CSS personalizado será aplicado por último",
+    "applying": "Aplicando CSS..."
   },
   "buttons": {
     "submit": "Enviar"

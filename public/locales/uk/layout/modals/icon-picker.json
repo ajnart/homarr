@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "Пошукай щось...",
+    "searchLimitationTitle": "Обмежено до 30 результатів",
+    "searchLimitationMessage": "Результати пошуку було обмежено до 30, оскільки було занадто багато збігів"
   }
 }

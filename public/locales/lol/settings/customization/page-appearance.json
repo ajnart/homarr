@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Paeg Titel"
+    "label": "Paeg Titel",
+    "description": ""
   },
   "metaTitle": {
-    "label": "Meta Title"
+    "label": "Meta Title",
+    "description": ""
   },
   "logo": {
-    "label": "Logooo"
+    "label": "Logooo",
+    "description": ""
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": ""
   },
   "background": {
     "label": "Bakground"
   },
   "customCSS": {
     "label": "Custom CSS",
-    "placeholder": "Custom CSS Will Be Applid Last"
+    "description": "",
+    "placeholder": "Custom CSS Will Be Applid Last",
+    "applying": ""
   },
   "buttons": {
     "submit": "Submit"

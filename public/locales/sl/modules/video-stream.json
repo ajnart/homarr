@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Video tok",
+    "description": "Vstavljanje videoprenosa ali videoposnetka iz kamere ali spletnega mesta",
+    "settings": {
+      "title": "Nastavitve za gradnik videoprenosa",
+      "FeedUrl": {
+        "label": "URL naslov pretoka"
+      },
+      "autoPlay": {
+        "label": "Samodejno predvajanje"
+      },
+      "muted": {
+        "label": "Utišani zvok"
+      },
+      "controls": {
+        "label": "Upravljanje predvajalnika videoposnetkov"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Nepravilen tok"
+  }
+}

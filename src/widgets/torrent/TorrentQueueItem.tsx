@@ -24,7 +24,7 @@ import {
   IconUpload,
 } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
-import { calculateETA } from '../../tools/calculateEta';
+import { calculateETA } from '../../tools/client/calculateEta';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { AppType } from '../../types/app';
 
@@ -35,7 +35,7 @@ interface TorrentQueueItemProps {
 
 export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) => {
   const [popoverOpened, { open: openPopover, close: closePopover }] = useDisclosure(false);
-  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
+  const theme = useMantineTheme();
   const { width } = useElementSize();
   const { t } = useTranslation('modules/torrents-status');
 
@@ -75,17 +75,17 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
       <td>
         <Text size="xs">{humanFileSize(size, false)}</Text>
       </td>
-      {width > MIN_WIDTH_MOBILE && (
+      {theme.fn.largerThan('xs') && (
         <td>
           <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
         </td>
       )}
-      {width > MIN_WIDTH_MOBILE && (
+      {theme.fn.largerThan('xs') && (
         <td>
           <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
         </td>
       )}
-      {width > MIN_WIDTH_MOBILE && (
+      {theme.fn.largerThan('xs') && (
         <td>
           <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
         </td>

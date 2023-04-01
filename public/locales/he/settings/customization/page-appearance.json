@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "כותרת העמוד"
+    "label": "כותרת העמוד",
+    "description": "כותרת לוח המחוונים בפינה השמאלית העליונה"
   },
   "metaTitle": {
-    "label": "כותרת דף"
+    "label": "כותרת דף",
+    "description": "הכותרת, שמוצגת כשם הכרטיסייה שלך"
   },
   "logo": {
-    "label": "סמל"
+    "label": "סמל",
+    "description": "הלוגו של לוח המחוונים בצד שמאל למעלה"
   },
   "favicon": {
-    "label": "אייקון לצד שם הדף"
+    "label": "אייקון לצד שם הדף",
+    "description": "הסמל שנמצא בשימוש מול שם הכרטיסייה שלך"
   },
   "background": {
     "label": "רקע"
   },
   "customCSS": {
     "label": "CSS מותאם אישית",
-    "placeholder": "CSS מותאם אישית יוחל אחרון"
+    "description": "התאם אישית את כל הרכיבים בלוח המחוונים שלך, מומלץ רק למשתמשים מנוסים",
+    "placeholder": "CSS מותאם אישית יוחל אחרון",
+    "applying": "מחיל CSS..."
   },
   "buttons": {
     "submit": "שלח"

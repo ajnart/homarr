@@ -2,10 +2,10 @@ import { createStyles, Group, MantineThemeColors, useMantineTheme } from '@manti
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
+import { i18n } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
-import { isToday } from '../../tools/isToday';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
@@ -15,6 +15,10 @@ const definition = defineWidget({
   id: 'calendar',
   icon: IconCalendarTime,
   options: {
+    useSonarrv4: {
+      type: 'switch',
+      defaultValue: false,
+    },
     sundayStart: {
       type: 'switch',
       defaultValue: false,
@@ -38,7 +42,7 @@ const definition = defineWidget({
   component: CalendarTile,
 });
 
-export type ICalendarWidget = IWidget<typeof definition['id'], typeof definition>;
+export type ICalendarWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface CalendarTileProps {
   widget: ICalendarWidget;
@@ -53,6 +57,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
 
   const { data: medias } = useQuery({
     queryKey: ['calendar/medias', { month: month.getMonth(), year: month.getFullYear() }],
+    staleTime: 1000 * 60 * 60 * 5,
     queryFn: async () =>
       (await (
         await fetch(
@@ -66,38 +71,15 @@ function CalendarTile({ widget }: CalendarTileProps) {
   return (
     <Group grow style={{ height: '100%' }}>
       <Calendar
-        m={0}
-        p={0}
-        month={month}
-        // Should be offset 5px to the left
-        style={{ position: 'relative', top: -15 }}
-        onMonthChange={setMonth}
+        defaultDate={new Date()}
+        onPreviousMonth={setMonth}
+        onNextMonth={setMonth}
         size="xs"
-        fullWidth
-        onChange={() => {}}
-        firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
-        dayStyle={(date) => ({
-          margin: -1,
-          backgroundColor: isToday(date)
-            ? colorScheme === 'dark'
-              ? colors.dark[5]
-              : colors.gray[0]
-            : undefined,
-        })}
+        locale={i18n?.resolvedLanguage ?? 'en'}
+        firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
         hideWeekdays
-        styles={{
-          weekdayCell: {
-            margin: 0,
-            padding: 0,
-          },
-          calendarHeader: {
-            position: 'relative',
-            margin: 0,
-            padding: 0,
-          },
-        }}
-        allowLevelChange={false}
-        dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
+        date={month}
+        hasNextLevel={false}
         renderDay={(date) => (
           <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
         )}
@@ -117,7 +99,7 @@ const getReleasedMediasForDate = (
   date: Date,
   widget: ICalendarWidget
 ): MediasType => {
-  const radarrReleaseType = widget.properties.radarrReleaseType ?? 'inCinemas';
+  const { radarrReleaseType } = widget.properties;
 
   const books =
     medias?.books.filter((b) => new Date(b.releaseDate).toDateString() === date.toDateString()) ??

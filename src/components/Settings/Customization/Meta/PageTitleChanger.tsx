@@ -4,22 +4,17 @@ import { ChangeEventHandler, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 
-interface PageTitleChangerProps {
-  defaultValue: string | undefined;
-}
-
-// TODO: change to dashboard title
-export const PageTitleChanger = ({ defaultValue }: PageTitleChangerProps) => {
+export const DashboardTitleChanger = () => {
   const { t } = useTranslation('settings/customization/page-appearance');
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { name: configName } = useConfigContext();
-  const [pageTitle, setPageTitle] = useState(defaultValue);
+  const { config, name: configName } = useConfigContext();
+  const [pageTitle, setPageTitle] = useState(config?.settings.customization.pageTitle ?? '');
 
   if (!configName) return null;
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (ev) => {
     const { value } = ev.currentTarget;
-    const pageTitle = value.trim().length === 0 ? undefined : value;
+    const pageTitle = value.trim();
     setPageTitle(pageTitle);
     updateConfig(configName, (prev) => ({
       ...prev,
@@ -36,9 +31,11 @@ export const PageTitleChanger = ({ defaultValue }: PageTitleChangerProps) => {
   return (
     <TextInput
       label={t('pageTitle.label')}
+      description={t('pageTitle.description')}
       placeholder="homarr"
       value={pageTitle}
       onChange={handleChange}
+      mb="sm"
     />
   );
 };

@@ -24,11 +24,14 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+ 
 
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  yarn_install_and_build:
+  yarn_install_and_build_dev:
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -67,7 +70,7 @@ jobs:
 
       - run: yarn install --immutable
 
-      - run: yarn build
+      - run: yarn turbo build
 
       - name: Docker meta
         if: github.event_name != 'pull_request'

@@ -1,6 +1,6 @@
 import { Button, Center, Checkbox, Group, Table, Text, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { ContextModalProps, openConfirmModal, openContextModal } from '@mantine/modals';
+import { ContextModalProps, openContextModal } from '@mantine/modals';
 import { DashboardPermission } from '@prisma/client';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';

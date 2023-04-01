@@ -9,13 +9,13 @@
   "version": "Version",
   "changePosition": "Change position",
   "remove": "Remove",
-  "removeConfirm": "Are you sure that you want to remove {{item}} ?",
+  "removeConfirm": "Are you sure that you want to remove {{item}}?",
   "sections": {
     "settings": "Settings",
     "dangerZone": "Danger zone"
   },
   "secrets": {
-    "apiKey": "Api key",
+    "apiKey": "API key",
     "username": "Username",
     "password": "Password"
   },
@@ -53,5 +53,11 @@
     "invite": {
       "label": "{{user}} has created the invite <strong>{{name}}</strong>."
     }
+  },
+  "loading": "Loading...",
+  "breakPoints": {
+    "small": "small",
+    "medium": "medium",
+    "large": "large"
   }
 }

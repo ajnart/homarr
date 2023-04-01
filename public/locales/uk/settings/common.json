@@ -9,11 +9,20 @@
     "configTip": "Завантажте файл конфігурації, перетягуючи його на сторінку!"
   },
   "credits": {
-    "madeWithLove": "Зроблено з ❤️ by @"
+    "madeWithLove": "Зроблено з ❤️ by @",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": "Версія"
+    }
   },
   "grow": "Виростити сітку (зайняти весь простір)",
   "layout": {
-    "title": "Схема панелі інструментів",
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
     "main": "Основне",
     "sidebar": "Бокова панель",
     "cannotturnoff": "Неможливо вимкнути",

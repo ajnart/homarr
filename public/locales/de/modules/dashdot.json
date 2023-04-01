@@ -4,20 +4,77 @@
     "description": "Zeigt die Graphen einer externen Dash.-Instanz innerhalb von Homarr an.",
     "settings": {
       "title": "Einstellungen für Dash. Widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Core View"
-      },
-      "storageMultiView": {
-        "label": "Speicher Multi-Drive View"
-      },
-      "useCompactView": {
-        "label": "Kompaktmodus verwenden"
-      },
-      "graphs": {
-        "label": "Graphen"
-      },
       "url": {
         "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Prozentangaben anzeigen"
+      },
+      "columns": {
+        "label": "Spalten anzeigen"
+      },
+      "graphHeight": {
+        "label": "Höhe der Graphen"
+      },
+      "graphsOrder": {
+        "label": "Graphen (Reihenfolge)",
+        "storage": {
+          "label": "Speicher",
+          "enabled": {
+            "label": "Im Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          },
+          "compactView": {
+            "label": "Als Text anzeigen (Kompakt)"
+          },
+          "multiView": {
+            "label": "Als Multi-Laufwerk anzeigen"
+          }
+        },
+        "network": {
+          "label": "Netzwerk",
+          "enabled": {
+            "label": "In Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          },
+          "compactView": {
+            "label": "Als Text anzeigen (Kompakt)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "In Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          },
+          "multiView": {
+            "label": "Als Multi-Core anzeigen"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "In Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "In Widget anzeigen"
+          },
+          "span": {
+            "label": "Spaltenbreite"
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Kein Dash. Dienst gefunden. Bitte fügen Sie einen zu Ihrem Homarr Dashboard hinzu oder setzen Sie eine Dash. URL in den Moduloptionen",
-      "noInformation": "Es können keine Informationen vom Dash. abgerufen werden. - Verwenden Sie die neueste Version?"
+      "noInformation": "Es können keine Informationen vom Dash. abgerufen werden. - Verwenden Sie die neueste Version?",
+      "protocolDowngrade": {
+        "title": "Protokoll-Downgrade erkannt",
+        "text": "Das Protokoll zu Ihrer Dash.-Instanz wird herabgestuft. Dies ist ein Sicherheitsrisiko, da HTTP unverschlüsselt ist und Angreifer diese Verbindung missbrauchen könnten. Stellen Sie sicher, dass Dash. auch auf HTTPS läuft oder downgraden Sie Homarr auf HTTP (wird nicht empfohlen)."
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "搜索内容…",
+    "searchLimitationTitle": "限于30个结果",
+    "searchLimitationMessage": "由于匹配项太多，搜索结果被限制为30个"
   }
 }

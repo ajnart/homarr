@@ -24,10 +24,12 @@ export const GenericAvailableElementType = ({
   const { t } = useTranslation('layout/modals/about');
 
   const Icon =
-    typeof image === 'string' ? () => <Image src={image} width={24} height={24} /> : image;
+    typeof image === 'string'
+      ? () => <Image alt={name} src={image} width={24} height={24} />
+      : image;
 
   return (
-    <Grid.Col span={3}>
+    <Grid.Col span="auto">
       <Card style={{ height: '100%' }}>
         <Stack justify="space-between" style={{ height: '100%' }}>
           <Stack spacing="xs">

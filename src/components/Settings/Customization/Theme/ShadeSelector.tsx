@@ -15,17 +15,13 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useColorTheme } from '../../../../tools/color';
 
-interface ShadeSelectorProps {
-  defaultValue: MantineTheme['primaryShade'] | undefined;
-}
-
-export function ShadeSelector({ defaultValue }: ShadeSelectorProps) {
+export function ShadeSelector() {
   const { t } = useTranslation('settings/customization/shade-selector');
-  const [shade, setShade] = useState(defaultValue);
+  const { config, name: configName } = useConfigContext();
+  const [shade, setShade] = useState(config?.settings.customization.colors.shade);
   const [popoverOpened, popover] = useDisclosure(false);
   const { primaryColor, setPrimaryShade } = useColorTheme();
 
-  const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
   const theme = useMantineTheme();

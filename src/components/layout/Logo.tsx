@@ -17,12 +17,14 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
         width={size === 'md' ? 50 : 12}
         src={config?.settings.customization.logoImageUrl || '/imgs/logo/logo-color.svg'}
         alt="Homarr Logo"
+        className="dashboard-header-logo-image"
       />
       {withoutText ? null : (
         <Text
           size={size === 'md' ? 22 : 10}
           weight="bold"
           variant="gradient"
+          className="dashboard-header-logo-text"
           gradient={primaryGradient}
         >
           {config?.settings.customization.pageTitle || 'Homarr'}

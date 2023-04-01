@@ -9,11 +9,20 @@
     "configTip": "Upload your config file by drag and dropping it onto the page!"
   },
   "credits": {
-    "madeWithLove": "Made with ❤️ by @"
+    "madeWithLove": "Made with ❤️ by @",
+    "thirdPartyContent": "See third party content",
+    "thirdPartyContentTable": {
+      "dependencyName": "Dependency",
+      "dependencyVersion": "Version"
+    }
   },
   "grow": "Grow grid (take all space)",
   "layout": {
-    "title": "Dashboard layout",
+    "preview": {
+      "title": "Preview",
+      "subtitle": "Changes will be saved automatically"
+    },
+    "divider": "Layout options",
     "main": "Main",
     "sidebar": "Sidebar",
     "cannotturnoff": "Cannot be turned off",

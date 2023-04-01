@@ -1,9 +1,17 @@
+import {
+  MultiSelectProps,
+  NumberInputProps,
+  SelectProps,
+  SliderProps,
+  SwitchProps,
+  TextInputProps,
+} from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
 import React from 'react';
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
 
-// Type of widgets which are safed to config
+// Type of widgets which are saved to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {
   id: TKey;
   properties: {
@@ -18,15 +26,7 @@ export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> 
 // Makes the type less specific
 // For example when the type true is used as input the result is boolean
 // By not using this type the definition would always be { property: true }
-type MakeLessSpecific<TInput extends IWidgetOptionValue['defaultValue']> = TInput extends boolean
-  ? boolean
-  : TInput extends number
-  ? number
-  : TInput extends string[]
-  ? string[]
-  : TInput extends string
-  ? string
-  : never;
+type MakeLessSpecific<T> = T extends boolean ? boolean : T;
 
 // Types of options that can be specified for the widget edit modal
 export type IWidgetOptionValue =
@@ -35,7 +35,8 @@ export type IWidgetOptionValue =
   | ITextInputOptionValue
   | ISliderInputOptionValue
   | ISelectOptionValue
-  | INumberInputOptionValue;
+  | INumberInputOptionValue
+  | IDraggableListInputValue;
 
 // Interface for data type
 interface DataType {
@@ -48,31 +49,36 @@ export type IMultiSelectOptionValue = {
   type: 'multi-select';
   defaultValue: string[];
   data: DataType[];
+  inputProps?: Partial<MultiSelectProps>;
 };
 
-// will show a multi-select with specified data
+// will show a select with specified data
 export type ISelectOptionValue = {
   type: 'select';
   defaultValue: string;
   data: DataType[];
+  inputProps?: Partial<SelectProps>;
 };
 
 // will show a switch
 export type ISwitchOptionValue = {
   type: 'switch';
   defaultValue: boolean;
+  inputProps?: Partial<SwitchProps>;
 };
 
 // will show a text-input
 export type ITextInputOptionValue = {
   type: 'text';
   defaultValue: string;
+  inputProps?: Partial<TextInputProps>;
 };
 
 // will show a number-input
 export type INumberInputOptionValue = {
   type: 'number';
   defaultValue: number;
+  inputProps?: Partial<NumberInputProps>;
 };
 
 // will show a slider-input
@@ -82,6 +88,20 @@ export type ISliderInputOptionValue = {
   min: number;
   max: number;
   step: number;
+  inputProps?: Partial<SliderProps>;
+};
+
+// will show a sortable list that can have sub settings
+export type IDraggableListInputValue = {
+  type: 'draggable-list';
+  defaultValue: {
+    key: string;
+    subValues?: Record<string, any>;
+  }[];
+  items: Record<
+    string,
+    Record<string, Omit<Exclude<IWidgetOptionValue, IDraggableListInputValue>, 'defaultValue'>>
+  >;
 };
 
 // is used to type the widget definitions which will be used to display all widgets

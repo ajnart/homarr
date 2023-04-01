@@ -1,14 +1,17 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
-import { NotificationsProvider } from '@mantine/notifications';
+import { Notifications } from '@mantine/notifications';
 import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import 'video.js/dist/video-js.css';
 import { InviteCreateModal } from '../components/Admin/Invite/InviteCreateModal';
 import { UserPermissionModal } from '../components/Admin/User/UserPermissionModal';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
@@ -19,12 +22,27 @@ import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsE
 import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
-import '../styles/global.scss';
+import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
-import { queryClient } from '../tools/queryClient';
-import { theme } from '../tools/theme';
+import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
+import {
+  getServiceSidePackageAttributes,
+  ServerSidePackageAttributesType,
+} from '../tools/server/getPackageVersion';
+import { theme } from '../tools/server/theme/theme';
 
-function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
+import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
+import '../styles/global.scss';
+
+function App(
+  this: any,
+  props: AppProps & {
+    colorScheme: ColorScheme;
+    packageAttributes: ServerSidePackageAttributesType;
+    editModeEnabled: boolean;
+    defaultColorScheme: ColorScheme;
+  }
+) {
   const { Component, pageProps } = props;
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
@@ -40,12 +58,23 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
 
   // hook will return either 'dark' or 'light' on client
   // and always 'light' during ssr as window.matchMedia is not available
-  const preferredColorScheme = useColorScheme();
+  const preferredColorScheme = useColorScheme(props.defaultColorScheme);
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: preferredColorScheme,
     getInitialValueInEffect: true,
   });
+
+  const { setInitialPackageAttributes } = usePackageAttributesStore();
+  const { setDisabled } = useEditModeInformationStore();
+
+  useEffect(() => {
+    setInitialPackageAttributes(props.packageAttributes);
+
+    if (!props.editModeEnabled) {
+      setDisabled();
+    }
+  }, []);
 
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
@@ -55,7 +84,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
   return (
     <>
       <Head>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
@@ -85,7 +114,7 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
               withNormalizeCSS
             >
               <ConfigProvider>
-                <NotificationsProvider limit={4} position="bottom-left">
+                <Notifications limit={4} position="bottom-left">
                   <ModalsProvider
                     modals={{
                       editApp: EditAppModal,
@@ -101,18 +130,38 @@ function App(this: any, props: AppProps & { colorScheme: ColorScheme }) {
                   >
                     <Component {...pageProps} />
                   </ModalsProvider>
-                </NotificationsProvider>
+                </Notifications>
               </ConfigProvider>
             </MantineProvider>
           </ColorTheme.Provider>
         </ColorSchemeProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   );
 }
 
-App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
-  colorScheme: getCookie('color-scheme', ctx) || 'light',
-});
+App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
+  const disableEditMode =
+    process.env.DISABLE_EDIT_MODE && process.env.DISABLE_EDIT_MODE.toLowerCase() === 'true';
+  if (disableEditMode) {
+    Consola.warn(
+      'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
+    );
+  }
+
+  if (process.env.DEFAULT_COLOR_SCHEME !== undefined) {
+    Consola.debug(`Overriding the default color scheme with ${process.env.DEFAULT_COLOR_SCHEME}`);
+  }
+
+  const colorScheme: ColorScheme = (process.env.DEFAULT_COLOR_SCHEME as ColorScheme) ?? 'light';
+
+  return {
+    colorScheme: getCookie('color-scheme', ctx) || 'light',
+    packageAttributes: getServiceSidePackageAttributes(),
+    editModeEnabled: !disableEditMode,
+    defaultColorScheme: colorScheme,
+  };
+};
 
 export default appWithTranslation(App);

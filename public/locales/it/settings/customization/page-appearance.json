@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Titolo pagina"
+    "label": "Titolo pagina",
+    "description": "Il titolo della dashboard in alto a sinistra"
   },
   "metaTitle": {
-    "label": "Titolo meta"
+    "label": "Titolo meta",
+    "description": "Il titolo che viene visualizzato come nome della scheda"
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": "Il logo della dashboard in alto a sinistra"
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": "L'icona che viene utilizzata davanti al nome della scheda"
   },
   "background": {
     "label": "Sfondo"
   },
   "customCSS": {
     "label": "CSS personalizzato",
-    "placeholder": "I CSS personalizzati saranno applicati per ultimi"
+    "description": "Personalizza tutti gli elementi della dashboard, consigliata solo agli utenti esperti",
+    "placeholder": "I CSS personalizzati saranno applicati per ultimi",
+    "applying": "Applicazione CSS..."
   },
   "buttons": {
     "submit": "Invia"

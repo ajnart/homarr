@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Kolumner i storlek {{size}}",
+    "descriptionPreset": "Antal kolumner när skärmen är mindre än {{pixels}} pixlar bred",
+    "descriptionExceedsPreset": "Antal kolumner när skärmstorleken överskrider {{pixels}} pixlar"
+  },
+  "unsavedChanges": "Du har osparade ändringar. Klicka på knappen Verkställ ändringar nedan för att tillämpa och spara.",
+  "applyChanges": "Verkställ ändringar",
+  "defaultValues": "Standardvärden"
+}

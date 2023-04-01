@@ -24,5 +24,11 @@
     "seconds": "secondz",
     "minutes": "minutz",
     "hours": "hourz"
+  },
+  "loading": "Loadin...",
+  "breakPoints": {
+    "small": "small",
+    "medium": "medium",
+    "large": "large"
   }
 }

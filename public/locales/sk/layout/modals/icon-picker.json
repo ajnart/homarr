@@ -1,0 +1,7 @@
+{
+  "iconPicker": {
+    "textInputPlaceholder": "Vyhľadajte niečo...",
+    "searchLimitationTitle": "Obmedzené na 30 výsledkov",
+    "searchLimitationMessage": "Výsledky vyhľadávania boli obmedzené na 30, pretože bolo príliš veľa zhod"
+  }
+}

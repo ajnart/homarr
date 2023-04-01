@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Colunas em tamanho {{size}}",
+    "descriptionPreset": "Número de colunas quando a tela tem menos de {{pixels}} pixels de largura",
+    "descriptionExceedsPreset": "Número de colunas quando o tamanho da tela excede {{pixels}} pixels"
+  },
+  "unsavedChanges": "Você tem alterações não salvas. Clique no botão Aplicar alterações abaixo para aplicar e salvar.",
+  "applyChanges": "Aplicar alterações",
+  "defaultValues": "Valores padrão"
+}

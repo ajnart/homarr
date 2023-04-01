@@ -61,7 +61,6 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
               label={`${property} (potentionally unmapped)`}
               secretIsPresent={isPresent}
               setIcon={IconKey}
-              value={formValue.value}
               type={accessabilityType}
               {...form.getInputProps(`integration.properties.${index}.value`)}
             />
@@ -76,7 +75,6 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
             }}
             key={`input-${definition.label}`}
             label={definition.label}
-            value=""
             secretIsPresent={isPresent}
             setIcon={definition.icon}
             type={accessabilityType}

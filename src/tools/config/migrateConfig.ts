@@ -22,7 +22,7 @@ export function migrateConfig(config: Config): BackendConfigType {
       name: config.name ?? 'default',
     },
     categories: [],
-    widgets: migrateModules(config).filter(widget => widget !== null),
+    widgets: migrateModules(config).filter((widget) => widget !== null),
     apps: [],
     settings: {
       common: {
@@ -159,7 +159,7 @@ const migrateService = (oldService: serviceItem, areaType: AreaType): ConfigAppT
   },
   network: {
     enabledStatusChecker: oldService.ping ?? true,
-    okStatus: oldService.status?.map((str) => parseInt(str, 10)) ?? [200],
+    statusCodes: oldService.status ?? ['200'],
   },
   appearance: {
     iconUrl: migrateIcon(oldService.icon),
@@ -231,7 +231,7 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
               },
             },
             shape: {},
-          } as IDashDotTile;
+          } as unknown as IDashDotTile;
         }
         case 'date':
           return {

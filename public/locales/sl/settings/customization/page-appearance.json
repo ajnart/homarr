@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Naslov strani"
+    "label": "Naslov strani",
+    "description": "Naslov armaturne plošče v zgornjem levem kotu"
   },
   "metaTitle": {
-    "label": "Meta naslov"
+    "label": "Meta naslov",
+    "description": "Naslov, ki se prikaže kot ime zavihka"
   },
   "logo": {
-    "label": "Logotip"
+    "label": "Logotip",
+    "description": "Logotip armaturne plošče v zgornjem levem kotu"
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": "Ikona, ki se uporablja pred imenom zavihka"
   },
   "background": {
     "label": "Ozadje"
   },
   "customCSS": {
     "label": "Po meri CSS",
-    "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji"
+    "description": "Prilagodite vse elemente na nadzorni plošči, priporočljivo le za izkušene uporabnike",
+    "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji",
+    "applying": "Uporaba CSS..."
   },
   "buttons": {
     "submit": "Pošlji"

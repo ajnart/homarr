@@ -1,22 +1,28 @@
 {
   "pageTitle": {
-    "label": "Page Title"
+    "label": "Page Title",
+    "description": "The dashboard title at the top left"
   },
   "metaTitle": {
-    "label": "Meta Title"
+    "label": "Meta Title",
+    "description": "The title displayed in your browser tab"
   },
   "logo": {
-    "label": "Logo"
+    "label": "Logo",
+    "description": "The logo displayed at the top left"
   },
   "favicon": {
-    "label": "Favicon"
+    "label": "Favicon",
+    "description": "The icon displayed in your browser tab"
   },
   "background": {
     "label": "Background"
   },
   "customCSS": {
     "label": "Custom CSS",
-    "placeholder": "Custom CSS will be applied last"
+    "description": "Further, customize your dashboard using CSS, only recommended for experienced users",
+    "placeholder": "Custom CSS will be applied last",
+    "applying": "Applying CSS..."
   },
   "buttons": {
     "submit": "Submit"

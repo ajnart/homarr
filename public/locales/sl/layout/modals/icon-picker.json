@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "Poiščite nekaj...",
+    "searchLimitationTitle": "Omejeno na 30 rezultatov",
+    "searchLimitationMessage": "Rezultati iskanja so bili omejeni na 30, ker je bilo preveč zadetkov"
   }
 }

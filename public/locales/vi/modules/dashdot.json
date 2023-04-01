@@ -1,23 +1,80 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Hiển thị biểu đồ của Dash. bên trong Homarr.",
     "settings": {
       "title": "Cài đặt cho tiện ích Dash.",
-      "cpuMultiView": {
-        "label": "Chế độ hiện đa nhân CPU"
-      },
-      "storageMultiView": {
-        "label": "Chế độ hiện đa ổ đĩa"
-      },
-      "useCompactView": {
-        "label": "Dùng chế độ thu gọn"
-      },
-      "graphs": {
-        "label": "Biểu đồ"
-      },
       "url": {
         "label": "URL của Dash."
+      },
+      "usePercentages": {
+        "label": "Hiển thị phần trăm"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Bộ nhớ",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Mạng",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Dịch vụ Dash. không được tìm thấy. Vui lòng thêm nó vào bảng Homarr của bạn hoặc thiết lập một đường dẫn Dash. trong tuỳ chọn của mô-đun",
-      "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?"
+      "noInformation": "Không thể nhận thông tin từ dash. - bạn có đang chạy phiên bản mới nhất không?",
+      "protocolDowngrade": {
+        "title": "Phát hiện hạ cấp giao thức",
+        "text": "Giao thức cho phiên bản Dash của bạn. không ở chế độ bảo mật. Đây được coi là rủi ro bảo mật vì HTTP không hỗ trợ mã hóa và những kẻ tấn công có thể lạm dụng nó. Hãy chắc chắn rằng Dash. hoạt động ở chế độ HTTPS hoặc xóa chế độ HTTPS khỏi Homarr (không được khuyến nghị)."
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

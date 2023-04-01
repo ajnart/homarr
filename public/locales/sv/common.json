@@ -24,5 +24,11 @@
     "seconds": "sekunder",
     "minutes": "minuter",
     "hours": "timmar"
+  },
+  "loading": "Laddar...",
+  "breakPoints": {
+    "small": "liten",
+    "medium": "mellan",
+    "large": "stor"
   }
 }

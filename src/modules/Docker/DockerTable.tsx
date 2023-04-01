@@ -1,19 +1,19 @@
 import {
-  Table,
-  Checkbox,
-  Group,
   Badge,
+  Checkbox,
   createStyles,
+  Group,
   ScrollArea,
-  TextInput,
-  useMantineTheme,
+  Table,
   Text,
+  TextInput,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
+import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
@@ -34,7 +34,6 @@ export default function DockerTable({
   containers: Dockerode.ContainerInfo[];
   selection: Dockerode.ContainerInfo[];
 }) {
-  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
   const { classes, cx } = useStyles();
   const [search, setSearch] = useState('');
@@ -120,7 +119,7 @@ export default function DockerTable({
   });
 
   return (
-    <ScrollArea style={{ height: '90vh' }} offsetScrollbars>
+    <ScrollArea style={{ height: '100%' }} offsetScrollbars>
       <TextInput
         placeholder={t('search.placeholder')}
         mr="md"

@@ -24,5 +24,11 @@
     "seconds": "替わり",
     "minutes": "議事録",
     "hours": "時間"
+  },
+  "loading": "読み込み中...",
+  "breakPoints": {
+    "small": "小",
+    "medium": "巫女",
+    "large": "おおきな"
   }
 }

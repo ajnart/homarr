@@ -5,7 +5,7 @@ import { IconTrash } from '@tabler/icons';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import dayjs from 'dayjs';
-import { queryClient } from '../../../tools/queryClient';
+import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 
 export const InviteTable = () => {
   const { data: invites, isLoading, isError } = useInvitesQuery();

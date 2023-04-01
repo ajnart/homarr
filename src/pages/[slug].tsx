@@ -8,8 +8,8 @@ import Layout from '../components/layout/Layout';
 import { useInitConfig } from '../config/init';
 import { getFallbackConfig } from '../tools/config/getFallbackConfig';
 import { getFrontendConfig } from '../tools/config/getFrontendConfig';
-import { getServerSideTranslations } from '../tools/getServerSideTranslations';
-import { dashboardNamespaces } from '../tools/translation-namespaces';
+import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
+import { dashboardNamespaces } from '../tools/server/translation-namespaces';
 import { ConfigType } from '../types/config';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
 
@@ -23,7 +23,7 @@ export async function getServerSideProps({
   const configPath = path.join(process.cwd(), 'data/configs', `${configName}.json`);
   const configExists = fs.existsSync(configPath);
 
-  const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
+  const translations = await getServerSideTranslations(dashboardNamespaces, locale, req, res);
 
   if (!configExists) {
     // Redirect to 404

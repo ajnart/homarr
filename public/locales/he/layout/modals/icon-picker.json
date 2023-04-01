@@ -1,7 +1,7 @@
 {
   "iconPicker": {
-    "textInputPlaceholder": "",
-    "searchLimitationTitle": "",
-    "searchLimitationMessage": ""
+    "textInputPlaceholder": "חפש משהו...",
+    "searchLimitationTitle": "מוגבל ל-30 תוצאות",
+    "searchLimitationMessage": "תוצאות החיפוש הוגבלו ל-30 כי היו יותר מדי התאמות"
   }
 }

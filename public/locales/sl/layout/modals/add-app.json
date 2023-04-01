@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "Ikona aplikacije",
-			"description": "Ikona, ki bo prikazana na armaturni plošči."
+			"description": "Izberite ikono, ki bo prikazana na nadzorni plošči. Izbirate lahko med ikonami {{suggestionsCount}} ali vnesete svoj URL",
+			"autocomplete": {
+				"title": "Ni rezultatov",
+				"text": "Poskusite uporabiti bolj specifičen iskalni izraz. Če želene ikone ne najdete, prilepite zgornji naslov URL slike za ikono po meri"
+			},
+			"noItems": {
+				"title": "Nalaganje zunanjih ikon",
+				"text": "To lahko traja nekaj sekund"
+			}
 		}
 	},
 	"integration": {

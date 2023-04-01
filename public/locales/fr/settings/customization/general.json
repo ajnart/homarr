@@ -1,0 +1,21 @@
+{
+  "text": "Les personnalisations vous permettent de configurer et d'ajuster votre expérience utilisateur dans Homarr.",
+  "accordeon": {
+    "layout": {
+      "name": "Mise en page",
+      "description": "Activer et désactiver les éléments sur l'en-tête et le titre du tableau de bord"
+    },
+    "gridstack": {
+      "name": "Grille",
+      "description": "Personnaliser le comportement et les colonnes de la zone de votre tableau de bord"
+    },
+    "pageMetadata": {
+      "name": "Métadonnées de la page",
+      "description": "Ajuster le titre, le logo et la PWA"
+    },
+    "appereance": {
+      "name": "Apparence",
+      "description": "Personnalisez l'arrière-plan, les couleurs et l'apparence des applications"
+    }
+  }
+}

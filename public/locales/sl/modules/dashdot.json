@@ -4,20 +4,77 @@
     "description": "Prikaže grafe zunanjega primerka Dash. znotraj Homarra.",
     "settings": {
       "title": "Nastavitve za pripomoček Dash",
-      "cpuMultiView": {
-        "label": "Pogled večjedrnih procesorjev"
-      },
-      "storageMultiView": {
-        "label": "Pogled naprav za shranjevanje"
-      },
-      "useCompactView": {
-        "label": "Uporaba kompaktnega pogleda"
-      },
-      "graphs": {
-        "label": "Grafi"
-      },
       "url": {
         "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Prikaz odstotkov"
+      },
+      "columns": {
+        "label": "Prikaži stolpce"
+      },
+      "graphHeight": {
+        "label": "Višina grafov"
+      },
+      "graphsOrder": {
+        "label": "Grafi (vrstni red)",
+        "storage": {
+          "label": "Shramba",
+          "enabled": {
+            "label": "Prikaži v pripomočku"
+          },
+          "span": {
+            "label": "Razpon stolpca"
+          },
+          "compactView": {
+            "label": "Prikaži kot besedilo (kompaktno)"
+          },
+          "multiView": {
+            "label": "Prikaži kot večpredstavnostni pogled"
+          }
+        },
+        "network": {
+          "label": "Omrežje",
+          "enabled": {
+            "label": "Prikaži v pripomočku"
+          },
+          "span": {
+            "label": "Razpon stolpca"
+          },
+          "compactView": {
+            "label": "Prikaži kot besedilo (kompaktno)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Prikaži v pripomočku"
+          },
+          "span": {
+            "label": "Razpon stolpca"
+          },
+          "multiView": {
+            "label": "Prikaži kot večjedrni pogled"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Prikaži v pripomočku"
+          },
+          "span": {
+            "label": "Razpon stolpca"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Prikaži v pripomočku"
+          },
+          "span": {
+            "label": "Razpon stolpca"
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Dash. storitev ni bila najdena. Prosimo, dodajte jo na nadzorno ploščo Homarr ali nastavite Dash. URL naslov v možnostih modula",
-      "noInformation": "Ne morem pridobiti informacij iz Dash. - ali uporabljate najnovejšo različico?"
+      "noInformation": "Ne morem pridobiti informacij iz Dash. - ali uporabljate najnovejšo različico?",
+      "protocolDowngrade": {
+        "title": "Odkrit nižji protokol",
+        "text": "Protokol do vašega Dash. vmesnika se znižuje. To predstavlja varnostno tveganje, saj protokol HTTP ni šifriran in napadalci lahko zlorabijo to povezavo. Prepričajte se, da Dash. deluje tudi v protokolu HTTPS, ali pa znižajte stopnjo Homarr na HTTP (ni priporočljivo)."
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

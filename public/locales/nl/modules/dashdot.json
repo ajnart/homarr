@@ -4,20 +4,77 @@
     "description": "Toont de grafieken van een externe Dash. instantie binnen Homarr.",
     "settings": {
       "title": "Instellingen voor Dash. widget",
-      "cpuMultiView": {
-        "label": "CPU Multi-Core Weergave"
-      },
-      "storageMultiView": {
-        "label": "Opslag Multi-Drive weergave"
-      },
-      "useCompactView": {
-        "label": "Compacte weergave gebruiken"
-      },
-      "graphs": {
-        "label": "Grafieken"
-      },
       "url": {
         "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Percentages weergeven"
+      },
+      "columns": {
+        "label": "Kolommen weergeven"
+      },
+      "graphHeight": {
+        "label": "Hoogte van de grafieken"
+      },
+      "graphsOrder": {
+        "label": "Grafieken (volgorde)",
+        "storage": {
+          "label": "Opslagruimte",
+          "enabled": {
+            "label": "Toon in widget"
+          },
+          "span": {
+            "label": "Kolombreedte"
+          },
+          "compactView": {
+            "label": "Toon als tekst (compact)"
+          },
+          "multiView": {
+            "label": "Toon als multi-drive-weergave"
+          }
+        },
+        "network": {
+          "label": "Netwerk",
+          "enabled": {
+            "label": "Toon in widget"
+          },
+          "span": {
+            "label": "Kolombreedte"
+          },
+          "compactView": {
+            "label": "Toon als tekst (compact)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Toon in widget"
+          },
+          "span": {
+            "label": "Kolombreedte"
+          },
+          "multiView": {
+            "label": "Toon als multi-core-weergave"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Toon in widget"
+          },
+          "span": {
+            "label": "Kolombreedte"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Toon in widget"
+          },
+          "span": {
+            "label": "Kolombreedte"
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Geen Dash. service gevonden. Voeg er een toe aan uw Homarr dashboard of stel een Dashdot URL in in de opties van de module",
-      "noInformation": "Kan geen informatie verkrijgen van dash. - gebruikt u de laatste versie?"
+      "noInformation": "Kan geen informatie verkrijgen van dash. - gebruikt u de laatste versie?",
+      "protocolDowngrade": {
+        "title": "Protocol downgrade gedetecteerd",
+        "text": "Het protocol voor uw Dash. instantie wordt gedegradeerd. Dit vormt een risico voor de beveiliging, aangezien HTTP ongecodeerd is en aanvallers deze verbinding kunnen misbruiken. Zorg ervoor dat Dash. wordt uitgevoerd op HTTPS of downgrade Homarr naar HTTP (niet aanbevolen)."
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

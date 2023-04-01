@@ -1,16 +1,17 @@
-import React from 'react';
 import {
-  createStyles,
-  Container,
-  Title,
-  Text,
   Button,
+  Container,
+  createStyles,
   Group,
+  Text,
+  Title,
   useMantineTheme,
 } from '@mantine/core';
-import { NextLink } from '@mantine/next';
+import React from 'react';
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetServerSidePropsContext } from 'next';
+import Link from 'next/link';
+import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -56,7 +57,7 @@ const useStyles = createStyles((theme) => ({
     maxWidth: 540,
     margin: 'auto',
     marginTop: theme.spacing.xl,
-    marginBottom: theme.spacing.xl * 1.5,
+    marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
   },
 }));
 
@@ -85,21 +86,20 @@ export default function Custom404() {
             The config you are trying to access does not exist. Please check the URL and try again.
           </Text>
           <Group position="center">
-            <NextLink href="/">
+            <Link href="/">
               <Button size="md">Take me back to home page</Button>
-            </NextLink>
+            </Link>
           </Group>
         </div>
       </div>
     </Container>
   );
 }
-
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getStaticProps({ req, res, locale }: GetServerSidePropsContext) {
+  const translations = await getServerSideTranslations(['common'], locale, undefined, undefined);
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      // Will be passed to the page component as props
+      ...translations,
     },
   };
 }

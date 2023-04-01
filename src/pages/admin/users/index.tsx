@@ -1,6 +1,6 @@
 import { Badge, Button, Container, Grid, Group, Stack, Title } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
-import { NextLink } from '@mantine/next';
+import NextLink from 'next/link';
 import { IconMail } from '@tabler/icons';
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -12,7 +12,7 @@ import { UserFilterType, UserList } from '../../../components/Admin/User/UserLis
 import { GenericSearch } from '../../../components/Admin/User/UserSearch';
 import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
 import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
-import { getServerSideTranslations } from '../../../tools/getServerSideTranslations';
+import { getServerSideTranslations } from '../../../tools/server/getServerSideTranslations';
 
 const titleMap: Record<UserFilterType, string> = {
   all: 'All users',
@@ -129,10 +129,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const translations = await getServerSideTranslations(
+    ['common', 'form'],
+    context.locale,
     context.req,
     context.res,
-    ['common', 'form'],
-    context.locale
   );
 
   return { props: { ...translations } };

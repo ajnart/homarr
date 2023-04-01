@@ -57,9 +57,12 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
             {...widget.shape[shapeSize]?.location}
             {...widget.shape[shapeSize]?.size}
           >
-            <WidgetWrapper className="grid-stack-item-content" widget={widget} widgetId={widget.id}>
-              <definition.component className="grid-stack-item-content" widget={widget} />
-            </WidgetWrapper>
+            <WidgetWrapper
+              className="grid-stack-item-content"
+              widget={widget}
+              widgetId={widget.id}
+              WidgetComponent={definition.component}
+            />
           </GridstackTileWrapper>
         );
       })}

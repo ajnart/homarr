@@ -1,5 +1,5 @@
 import { Badge, Button, Container, Group, Stack, Title } from '@mantine/core';
-import { NextLink } from '@mantine/next';
+import NextLink from 'next/link';
 import { IconUser } from '@tabler/icons';
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import Head from 'next/head';
@@ -8,7 +8,7 @@ import { InviteTable } from '../../../components/Admin/Invite/InviteTable';
 import { useUsersQuery } from '../../../components/Admin/User/UserList';
 import { useScreenSmallerThan } from '../../../hooks/useScreenSmallerThan';
 import { getServerAuthSession } from '../../../server/common/get-server-auth-session';
-import { getServerSideTranslations } from '../../../tools/getServerSideTranslations';
+import { getServerSideTranslations } from '../../../tools/server/getServerSideTranslations';
 
 const Invites: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
   const smallerThanSm = useScreenSmallerThan('sm');
@@ -59,10 +59,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const translations = await getServerSideTranslations(
+    ['common', 'form'],
+    context.locale,
     context.req,
     context.res,
-    ['common', 'form'],
-    context.locale
   );
 
   return { props: { ...translations } };

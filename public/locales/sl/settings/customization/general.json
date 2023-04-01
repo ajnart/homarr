@@ -1,0 +1,21 @@
+{
+  "text": "Prilagoditve vam omogočajo, da nastavite in prilagodite svojo izkušnjo z aplikacijo Homarr svojim željam.",
+  "accordeon": {
+    "layout": {
+      "name": "Postavitev",
+      "description": "Omogočanje in onemogočanje elementov v glavi in ploščicah armaturne plošče"
+    },
+    "gridstack": {
+      "name": "Gridstack",
+      "description": "Prilagodite obnašanje in stolpce območja nadzorne plošče"
+    },
+    "pageMetadata": {
+      "name": "Metapodatki strani",
+      "description": "Prilagodite naslove, logotip in PWA"
+    },
+    "appereance": {
+      "name": "Videz",
+      "description": "Prilagodite ozadje, barve in videz aplikacij"
+    }
+  }
+}

@@ -4,20 +4,77 @@
     "description": "在Homarr中显示一个外部Dash的图表。",
     "settings": {
       "title": "设置Dash小部件",
-      "cpuMultiView": {
-        "label": "CPU多核视图"
-      },
-      "storageMultiView": {
-        "label": "存储多驱动器视图"
-      },
-      "useCompactView": {
-        "label": "使用紧凑型视图"
-      },
-      "graphs": {
-        "label": "图表"
-      },
       "url": {
         "label": "Dash. 网址"
+      },
+      "usePercentages": {
+        "label": "显示百分比"
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "存储",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "网络",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "没有找到Dash.服务。请在你的Homarr仪表板上添加，或者设置一个仪表板网址。网址在应用选项中添加",
-      "noInformation": "无法从仪表板获取信息。- 你运行的是最新版本吗？"
+      "noInformation": "无法从仪表板获取信息。- 你运行的是最新版本吗？",
+      "protocolDowngrade": {
+        "title": "检测到协议降级",
+        "text": "Dash实例的协议被降级。这存在安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保Dash也在HTTPS上运行，或者将Homarr降级为HTTP(不推荐)。"
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "内存"
       },
       "gpu": {

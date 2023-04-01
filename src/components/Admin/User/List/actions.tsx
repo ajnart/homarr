@@ -3,7 +3,7 @@ import { Text } from '@mantine/core';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { showSuccessNotification } from '../../../../tools/notifications';
-import { queryClient } from '../../../../tools/queryClient';
+import { queryClient } from '../../../../tools/server/configurations/tanstack/queryClient.tool';
 
 export const useUserListActions = () => {
   const { mutateAsync: archiveAsync } = useArchiveUserMutation();

@@ -4,20 +4,77 @@
     "description": "Affiche les graphiques d'une instance externe de Dash. dans Homarr.",
     "settings": {
       "title": "Paramètres du widget Dash",
-      "cpuMultiView": {
-        "label": "Vue du CPU multi-cœur"
-      },
-      "storageMultiView": {
-        "label": "Vue du stockage multidisque"
-      },
-      "useCompactView": {
-        "label": "Utiliser la vue compacte"
-      },
-      "graphs": {
-        "label": "Graphiques"
-      },
       "url": {
         "label": "URL Dash."
+      },
+      "usePercentages": {
+        "label": "Afficher les pourcentages"
+      },
+      "columns": {
+        "label": "Affichage des colonnes"
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "Stockage",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "Réseau",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Aucun service Dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir l'URL du service Dash. dans les options du module",
-      "noInformation": "Impossible d'acquérir des informations de Dash. - Utilisez-vous la dernière version ?"
+      "noInformation": "Impossible d'acquérir des informations de Dash. - Utilisez-vous la dernière version ?",
+      "protocolDowngrade": {
+        "title": "Protocole rétrograde détecté (HTTP)",
+        "text": "Le protocole vers votre instance de Dash. n'est pas en mode sécurisé. Ceci est considéré comme étant un risque de sécurité, puisque HTTP ne supporte pas l'encryption, et des attaquants pourraient en abuser. Assurez-vous que Dash. fonctionne en mode HTTPS, ou retirez le mode HTTPS de Homarr (pas recommandé)."
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

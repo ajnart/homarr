@@ -1,9 +1,9 @@
 {
     "modal": {
         "title": "Thêm ô mới",
-        "text": ""
+        "text": "Ô là thành phần chính của Homarr. Chúng được dùng để hiện thị các ứng dụng và thông tin khác. Bạn có thể thêm bất kỳ số lượng ô tuỳ thích."
     },
-    "widgetDescription": "",
+    "widgetDescription": "Tiện ích tương tác với ứng dụng của bạn, giúp bạn nắm thêm quyền điều khiển chúng. Các tiện ích thường cần được thiết lập đôi chút trước khi sử dụng.",
     "goBack": "Quay lại bước trước",
     "actionIcon": {
         "tooltip": "Thêm ô"

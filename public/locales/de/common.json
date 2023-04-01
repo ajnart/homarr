@@ -53,5 +53,11 @@
     "invite": {
       "label": "{{user}} hat die Einladung <strong>{{name}}</strong> erstellt."
     }
+  },
+  "loading": "Wird geladen...",
+  "breakPoints": {
+    "small": "Klein",
+    "medium": "Mittel",
+    "large": "Groß"
   }
 }

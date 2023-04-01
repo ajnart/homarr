@@ -1,0 +1,21 @@
+{
+  "text": "",
+  "accordeon": {
+    "layout": {
+      "name": "Bố cục",
+      "description": ""
+    },
+    "gridstack": {
+      "name": "",
+      "description": ""
+    },
+    "pageMetadata": {
+      "name": "Metadata trang",
+      "description": ""
+    },
+    "appereance": {
+      "name": "Hiển thị",
+      "description": ""
+    }
+  }
+}

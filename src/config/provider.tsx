@@ -16,8 +16,8 @@ const ConfigContext = createContext<ConfigContextType>({
   name: 'unknown',
   config: undefined,
   configVersion: undefined,
-  increaseVersion: () => console.error('Provider not set'),
-  setConfigName: () => console.error('Provider not set'),
+  increaseVersion: () => {},
+  setConfigName: () => {},
 });
 
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {

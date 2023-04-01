@@ -20,7 +20,7 @@ import { Trans, useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { AnySecurityEvent, SecurityEventType } from '../../../tools/events/types';
-import { getServerSideTranslations } from '../../../tools/getServerSideTranslations';
+import { getServerSideTranslations } from '../../../tools/server/getServerSideTranslations';
 
 dayjs.extend(calendar);
 dayjs.extend(localizedFormat);
@@ -75,7 +75,7 @@ const Events: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> =
 };
 
 export const getServerSideProps = async ({ req, res, locale }: GetServerSidePropsContext) => {
-  const translations = await getServerSideTranslations(req, res, ['common'], locale);
+  const translations = await getServerSideTranslations(['common'], locale, req, res);
   return {
     props: {
       ...translations,

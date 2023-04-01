@@ -24,5 +24,11 @@
     "seconds": "δευτερόλεπτα",
     "minutes": "λεπτά",
     "hours": "ώρες"
+  },
+  "loading": "Φόρτωση...",
+  "breakPoints": {
+    "small": "μικρό",
+    "medium": "μεσαίο",
+    "large": "μεγάλο"
   }
 }

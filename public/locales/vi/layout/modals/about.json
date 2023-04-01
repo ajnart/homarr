@@ -1,1 +1,14 @@
-{}
+{
+	"description": "",
+	"contact": "",
+	"addToDashboard": "",
+	"metrics": {
+		"configurationSchemaVersion": "",
+		"configurationsCount": "",
+		"version": "Phiên bản",
+		"nodeEnvironment": "",
+		"i18n": "",
+		"locales": "",
+		"experimental_disableEditMode": ""
+	}
+}

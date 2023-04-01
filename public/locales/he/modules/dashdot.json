@@ -4,20 +4,77 @@
     "description": "מציג נתוני גרפים.",
     "settings": {
       "title": "הגדרות עבור וידג׳ט Dash.",
-      "cpuMultiView": {
-        "label": "תצוגת מעבד מרובת ליבות"
-      },
-      "storageMultiView": {
-        "label": "תצוגת אחסון מרובת כוננים"
-      },
-      "useCompactView": {
-        "label": "השתמש בתצוגה קומפקטית"
-      },
-      "graphs": {
-        "label": "גרפים"
-      },
       "url": {
         "label": "כתובת אתר Dash."
+      },
+      "usePercentages": {
+        "label": "הצג אחוזים"
+      },
+      "columns": {
+        "label": "הצג עמודות"
+      },
+      "graphHeight": {
+        "label": "גובה הגרפים"
+      },
+      "graphsOrder": {
+        "label": "גרפים (הזמנה)",
+        "storage": {
+          "label": "אחסון",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          },
+          "compactView": {
+            "label": "הצג כטקסט (קומפקטי)"
+          },
+          "multiView": {
+            "label": "הצג כתצוגת ריבוי כוננים"
+          }
+        },
+        "network": {
+          "label": "רשת",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          },
+          "compactView": {
+            "label": "הצג כטקסט (קומפקטי)"
+          }
+        },
+        "cpu": {
+          "label": "מעבד",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          },
+          "multiView": {
+            "label": "הצג כתצוגה מרובה ליבות"
+          }
+        },
+        "ram": {
+          "label": "זיכרון פנימי",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          }
+        },
+        "gpu": {
+          "label": "מעבד גרפי",
+          "enabled": {
+            "label": "הצג בווידג'ט"
+          },
+          "span": {
+            "label": "טווח עמודות"
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "לא נמצא שירות Dash. בבקשה הוסף ל- Homarr או הגדר כתובת באפשרויות המודול ",
-      "noInformation": "אין מידע מ- Dash. האם אתה משתמש בגירסה העדכנית"
+      "noInformation": "אין מידע מ- Dash. האם אתה משתמש בגירסה העדכנית",
+      "protocolDowngrade": {
+        "title": "זוהה שדרוג לאחור של פרוטוקול",
+        "text": "הפרוטוקול ל-Dash שלך. המופע נמצא בדירוג לאחור. זהו סיכון אבטחה, מכיוון ש-HTTP אינו מוצפן ותוקפים עלולים לעשות שימוש לרעה בחיבור זה. ודא ש-Dash. פועל גם ב-HTTPS או שדרוג לאחור של Homarr ל-HTTP (לא מומלץ)."
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "מעבד"
       },
-      "memory": {
+      "ram": {
         "title": "זיכרון פנימי"
       },
       "gpu": {

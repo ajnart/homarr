@@ -1,4 +1,5 @@
 import { SSRConfig } from 'next-i18next';
+
 import { ConfigType } from './config';
 
 export type DashboardServerSideProps = {

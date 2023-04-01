@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "עמודות בגודל{{size}}",
+    "descriptionPreset": "מספר העמודות כאשר המסך קטן מרוחב של {{pixels}} פקסלים",
+    "descriptionExceedsPreset": "מספר העמודות כאשר גודל המסך חורג {{pixels}} פקסלים"
+  },
+  "unsavedChanges": "יש לך שינויים לא שמורים. לחץ על כפתור ״החל שינויים״ על מנת להחיל ולשמור ",
+  "applyChanges": "החל שינויים",
+  "defaultValues": "ערכי ברירת מחדל"
+}

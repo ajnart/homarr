@@ -6,7 +6,7 @@ import axios from 'axios';
 import { z } from 'zod';
 import { useScreenSmallerThan } from '../../../../hooks/useScreenSmallerThan';
 import { getInputPropsMiddleware } from '../../../../tools/getInputPropsMiddleware';
-import { queryClient } from '../../../../tools/queryClient';
+import { queryClient } from '../../../../tools/server/configurations/tanstack/queryClient.tool';
 import { registrationInviteCreationInputSchema } from '../../../../validation/invite';
 
 interface InviteCreateTabProps {

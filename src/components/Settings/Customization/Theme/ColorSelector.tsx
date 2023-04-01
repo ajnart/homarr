@@ -24,7 +24,7 @@ export function ColorSelector({ type, defaultValue }: ColorControlProps) {
   const [color, setColor] = useState(defaultValue);
   const [popoverOpened, popover] = useDisclosure(false);
   const { setPrimaryColor, setSecondaryColor } = useColorTheme();
-  const { name: configName } = useConfigContext();
+  const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
   const theme = useMantineTheme();

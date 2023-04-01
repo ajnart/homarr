@@ -9,7 +9,6 @@ import {
   Table,
   Text,
   Title,
-  useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload } from '@tabler/icons';
@@ -17,6 +16,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
+import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
 import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { AppIntegrationType } from '../../types/app';
@@ -51,7 +51,7 @@ const definition = defineWidget({
   component: TorrentTile,
 });
 
-export type ITorrent = IWidget<typeof definition['id'], typeof definition>;
+export type ITorrent = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface TorrentTileProps {
   widget: ITorrent;
@@ -59,7 +59,6 @@ interface TorrentTileProps {
 
 function TorrentTile({ widget }: TorrentTileProps) {
   const { t } = useTranslation('modules/torrents-status');
-  const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
   const { width } = useElementSize();
 
   const {
@@ -122,7 +121,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
     );
   }
 
-  const torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []));
+  const torrents = data.apps
+    .flatMap((app) => (app.type === 'torrent' ? app.torrents : []))
+    .filter((torrent) => (widget.properties.displayCompletedTorrents ? true : !torrent.isCompleted))
+    .filter((torrent) =>
+      widget.properties.displayStaleTorrents
+        ? true
+        : torrent.isCompleted || torrent.downloadSpeed > 0
+    );
 
   const difference = new Date().getTime() - dataUpdatedAt;
   const duration = dayjs.duration(difference, 'ms');

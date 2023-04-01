@@ -24,5 +24,11 @@
     "seconds": "秒",
     "minutes": "分钟",
     "hours": "小时"
+  },
+  "loading": "正在加载...",
+  "breakPoints": {
+    "small": "小",
+    "medium": "中",
+    "large": "大"
   }
 }

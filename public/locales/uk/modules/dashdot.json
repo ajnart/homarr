@@ -4,20 +4,77 @@
     "description": "Показує графіки зовнішньої Dash. всередині Homarr.",
     "settings": {
       "title": "Налаштування віджета Dash.",
-      "cpuMultiView": {
-        "label": "Процесор по ядрах"
-      },
-      "storageMultiView": {
-        "label": "Сховище по дисках"
-      },
-      "useCompactView": {
-        "label": "Компактний вигляд"
-      },
-      "graphs": {
-        "label": "Графіки"
-      },
       "url": {
         "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Показувати відсотки"
+      },
+      "columns": {
+        "label": "Показувати стовпчики"
+      },
+      "graphHeight": {
+        "label": "Висота графіків"
+      },
+      "graphsOrder": {
+        "label": "Графіки (порядок)",
+        "storage": {
+          "label": "Диск",
+          "enabled": {
+            "label": "Показувати у віджеті"
+          },
+          "span": {
+            "label": "Ширина стовпця"
+          },
+          "compactView": {
+            "label": "Показати як текст (компактно)"
+          },
+          "multiView": {
+            "label": "Показувати як multi-drive-view"
+          }
+        },
+        "network": {
+          "label": "Мережа",
+          "enabled": {
+            "label": "Показувати у віджеті"
+          },
+          "span": {
+            "label": "Ширина стовпця"
+          },
+          "compactView": {
+            "label": "Показати як текст (компактно)"
+          }
+        },
+        "cpu": {
+          "label": "Процесор",
+          "enabled": {
+            "label": "Показувати у віджеті"
+          },
+          "span": {
+            "label": "Ширина стовпця"
+          },
+          "multiView": {
+            "label": "Показувати як multi-core-view"
+          }
+        },
+        "ram": {
+          "label": "Оперативна пам'ять",
+          "enabled": {
+            "label": "Показувати у віджеті"
+          },
+          "span": {
+            "label": "Ширина стовпця"
+          }
+        },
+        "gpu": {
+          "label": "Графічний процесор",
+          "enabled": {
+            "label": "Показувати у віджеті"
+          },
+          "span": {
+            "label": "Ширина стовпця"
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Dash. сервіс не знайдено. Будь ласка, додайте його до головної панелі чи встановіть Dash. URL в налаштуваннях модулю",
-      "noInformation": "Не вдалося отримати інформацію з Dash. - чи ви використовуєте останню версію?"
+      "noInformation": "Не вдалося отримати інформацію з Dash. - чи ви використовуєте останню версію?",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "Процесор"
       },
-      "memory": {
+      "ram": {
         "title": "Оперативна пам'ять"
       },
       "gpu": {

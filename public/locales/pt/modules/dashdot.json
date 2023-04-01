@@ -4,20 +4,77 @@
     "description": "Apresenta os gráficos de um Dash. exemplo externo dentro de Homarr.",
     "settings": {
       "title": "Definições para o Dash. widget",
-      "cpuMultiView": {
-        "label": "Visualização múltipla de CPU"
-      },
-      "storageMultiView": {
-        "label": "Exibição Multi-Drive de armazenamento"
-      },
-      "useCompactView": {
-        "label": "Usar visualização compacta"
-      },
-      "graphs": {
-        "label": "Gráficos"
-      },
       "url": {
         "label": "URL do Dash."
+      },
+      "usePercentages": {
+        "label": "Exibir porcentagens"
+      },
+      "columns": {
+        "label": "Exibir Colunas"
+      },
+      "graphHeight": {
+        "label": "Altura dos gráficos"
+      },
+      "graphsOrder": {
+        "label": "Gráficos (Ordem)",
+        "storage": {
+          "label": "Armazenamento",
+          "enabled": {
+            "label": "Exibir o widget"
+          },
+          "span": {
+            "label": "Extensão da Coluna"
+          },
+          "compactView": {
+            "label": "Mostrar como texto (compacto)"
+          },
+          "multiView": {
+            "label": "Exibir como multi-drive-view"
+          }
+        },
+        "network": {
+          "label": "Rede",
+          "enabled": {
+            "label": "Exibir o widget"
+          },
+          "span": {
+            "label": "Extensão da Coluna"
+          },
+          "compactView": {
+            "label": "Mostrar como texto (compacto)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Exibir o widget"
+          },
+          "span": {
+            "label": "Extensão da Coluna"
+          },
+          "multiView": {
+            "label": "Exibir como multi-drive-view"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Exibir o widget"
+          },
+          "span": {
+            "label": "Extensão da Coluna"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Exibir o widget"
+          },
+          "span": {
+            "label": "Extensão da Coluna"
+          }
+        }
       }
     }
   },
@@ -25,7 +82,11 @@
     "title": "Dash.",
     "errors": {
       "noService": "Nenhum serviço Dash. encontrado. Por favor, adicione um ao seu painel Homarr ou defina uma URL para o Dash. nas opções do módulo",
-      "noInformation": "Não é possível obter informações do Dash. Você está executando a versão mais recente?"
+      "noInformation": "Não é possível obter informações do Dash. Você está executando a versão mais recente?",
+      "protocolDowngrade": {
+        "title": "Downgrade de protocolo detectado",
+        "text": "O protocolo da sua instancia Dash. está sendo inseguro. Uma vez que HTTP não é criptografado e os invasores podem abusar dessa conexão. Certifique-se de que o Dash. está sendo executado em HTTPS ou configure Homarr para HTTP (não recomendado)."
+      }
     },
     "graphs": {
       "storage": {
@@ -43,7 +104,7 @@
       "cpu": {
         "title": "CPU"
       },
-      "memory": {
+      "ram": {
         "title": "RAM"
       },
       "gpu": {

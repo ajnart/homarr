@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Video en directo",
+    "description": "Incrustar una transmisión de video o un video de una cámara o un sitio web",
+    "settings": {
+      "title": "Ajustes del widget de transmisión de video",
+      "FeedUrl": {
+        "label": "Feed url"
+      },
+      "autoPlay": {
+        "label": "Auto-reproducción"
+      },
+      "muted": {
+        "label": "Audio silenciado"
+      },
+      "controls": {
+        "label": "Controles del reproductor de video"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Transmisión no válida"
+  }
+}

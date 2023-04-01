@@ -1,45 +1,136 @@
-import { createStyles, Group, Title } from '@mantine/core';
+import { Center, createStyles, Grid, Stack, Text, Title } from '@mantine/core';
+import { IconUnlink } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
-import { DashDotCompactStorage } from './DashDotCompactStorage';
+import { DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotGraph } from './DashDotGraph';
 
 const definition = defineWidget({
   id: 'dashdot',
   icon: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png',
   options: {
-    cpuMultiView: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    storageMultiView: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    useCompactView: {
-      type: 'switch',
-      defaultValue: true,
-    },
-    graphs: {
-      type: 'multi-select',
-      defaultValue: ['cpu', 'memory'],
-      data: [
-        // ['cpu', 'memory', 'storage', 'network', 'gpu'], into { label, value }
-        { label: 'CPU', value: 'cpu' },
-        { label: 'Memory', value: 'memory' },
-        { label: 'Storage', value: 'storage' },
-        { label: 'Network', value: 'network' },
-        { label: 'GPU', value: 'gpu' },
-      ],
-    },
     url: {
       type: 'text',
       defaultValue: '',
+    },
+    usePercentages: {
+      type: 'switch',
+      defaultValue: false,
+    },
+    columns: {
+      type: 'number',
+      defaultValue: 2,
+    },
+    graphHeight: {
+      type: 'number',
+      defaultValue: 115,
+      inputProps: {
+        step: 5,
+        stepHoldDelay: 500,
+        stepHoldInterval: 100,
+      },
+    },
+    graphsOrder: {
+      type: 'draggable-list',
+      defaultValue: [
+        {
+          key: 'storage',
+          subValues: {
+            enabled: true,
+            compactView: true,
+            span: 2,
+            multiView: false,
+          },
+        },
+        {
+          key: 'network',
+          subValues: {
+            enabled: true,
+            compactView: true,
+            span: 2,
+          },
+        },
+        {
+          key: 'cpu',
+          subValues: {
+            enabled: true,
+            multiView: false,
+            span: 1,
+          },
+        },
+        {
+          key: 'ram',
+          subValues: {
+            enabled: true,
+            span: 1,
+          },
+        },
+        {
+          key: 'gpu',
+          subValues: {
+            enabled: false,
+            span: 1,
+          },
+        },
+      ],
+      items: {
+        cpu: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+          multiView: {
+            type: 'switch',
+          },
+        },
+        storage: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+          compactView: {
+            type: 'switch',
+          },
+          multiView: {
+            type: 'switch',
+          },
+        },
+        ram: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+        },
+        network: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+          compactView: {
+            type: 'switch',
+          },
+        },
+        gpu: {
+          enabled: {
+            type: 'switch',
+          },
+          span: {
+            type: 'number',
+          },
+        },
+      },
     },
   },
   gridstack: {
@@ -51,7 +142,7 @@ const definition = defineWidget({
   component: DashDotTile,
 });
 
-export type IDashDotTile = IWidget<typeof definition['id'], typeof definition>;
+export type IDashDotTile = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface DashDotTileProps {
   widget: IDashDotTile;
@@ -62,63 +153,61 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { t } = useTranslation('modules/dashdot');
 
   const dashDotUrl = widget.properties.url;
+  const locationProtocol = window.location.protocol;
+  const detectedProtocolDowngrade =
+    locationProtocol === 'https:' && dashDotUrl.toLowerCase().startsWith('http:');
 
   const { data: info } = useDashDotInfo({
     dashDotUrl,
+    enabled: !detectedProtocolDowngrade,
   });
 
-  const graphs = widget?.properties.graphs.map((graph) => ({
-    id: graph,
-    name: t(`card.graphs.${graph}.title`),
-    twoSpan: ['network', 'gpu'].includes(graph),
-    isMultiView:
-      (graph === 'cpu' && widget.properties.cpuMultiView) ||
-      (graph === 'storage' && widget.properties.storageMultiView),
-  }));
+  if (detectedProtocolDowngrade) {
+    return (
+      <Center h="100%">
+        <Stack spacing="xs" align="center">
+          <IconUnlink size={40} strokeWidth={1.2} />
+          <Title order={5}>{t('card.errors.protocolDowngrade.title')}</Title>
+          <Text align="center" size="sm">
+            {t('card.errors.protocolDowngrade.text')}
+          </Text>
+        </Stack>
+      </Center>
+    );
+  }
 
-  const heading = (
-    <Title order={3} mb="xs">
-      {t('card.title')}
-    </Title>
-  );
-
-  const isCompact = widget?.properties.useCompactView ?? false;
-
-  const isCompactStorageVisible = graphs?.some((g) => g.id === 'storage' && isCompact);
-
-  const isCompactNetworkVisible = graphs?.some((g) => g.id === 'network' && isCompact);
-
-  const displayedGraphs = graphs?.filter(
-    (g) => !isCompact || !['network', 'storage'].includes(g.id)
-  );
+  const { graphsOrder, usePercentages, columns, graphHeight } = widget.properties;
 
   return (
-    <>
-      {heading}
+    <Stack spacing="xs">
+      <Title order={3}>{t('card.title')}</Title>
       {!info && <p>{t('card.errors.noInformation')}</p>}
       {info && (
         <div className={classes.graphsContainer}>
-          <Group position="apart" w="100%">
-            {isCompactStorageVisible && <DashDotCompactStorage info={info} />}
-            {isCompactNetworkVisible && <DashDotCompactNetwork info={info} />}
-          </Group>
-          <Group position="center" w="100%" className={classes.graphsWrapper}>
-            {displayedGraphs?.map((graph) => (
-              <DashDotGraph
-                key={graph.id}
-                graph={graph}
-                dashDotUrl={dashDotUrl}
-                isCompact={isCompact}
-              />
-            ))}
-          </Group>
+          <Grid grow gutter="sm" w="100%" columns={columns}>
+            {graphsOrder
+              .filter((g) => g.subValues.enabled)
+              .map((g) => (
+                <Grid.Col key={g.key} span={Math.min(columns, g.subValues.span)}>
+                  <DashDotGraph
+                    dashDotUrl={dashDotUrl}
+                    info={info}
+                    graph={g.key as any}
+                    graphHeight={graphHeight}
+                    isCompact={g.subValues.compactView ?? false}
+                    multiView={g.subValues.multiView ?? false}
+                    usePercentages={usePercentages}
+                  />
+                </Grid.Col>
+              ))}
+          </Grid>
         </div>
       )}
-    </>
+    </Stack>
   );
 }
 
-const useDashDotInfo = ({ dashDotUrl }: { dashDotUrl: string }) => {
+const useDashDotInfo = ({ dashDotUrl, enabled }: { dashDotUrl: string; enabled: boolean }) => {
   const { name: configName } = useConfigContext();
   return useQuery({
     refetchInterval: 50000,
@@ -130,6 +219,7 @@ const useDashDotInfo = ({ dashDotUrl }: { dashDotUrl: string }) => {
       },
     ],
     queryFn: () => fetchDashDotInfo(configName),
+    enabled,
   });
 };
 
@@ -140,19 +230,9 @@ const fetchDashDotInfo = async (configName: string | undefined) => {
   ).data) as DashDotInfo;
 };
 
-export const useDashDotTileStyles = createStyles(() => ({
+export const useDashDotTileStyles = createStyles((theme) => ({
   graphsContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    rowGap: 10,
-    columnGap: 10,
-  },
-  graphsWrapper: {
-    '& > *:nth-child(odd):last-child': {
-      width: '100% !important',
-      maxWidth: '100% !important',
-    },
+    marginRight: `calc(${theme.spacing.sm} * -1)`,
   },
 }));
 

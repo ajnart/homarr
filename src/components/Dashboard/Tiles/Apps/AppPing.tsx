@@ -16,10 +16,10 @@ export const AppPing = ({ app }: AppPingProps) => {
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
   const { data, isLoading } = useQuery({
-    queryKey: [`ping/${app.id}`],
+    queryKey: ['ping', { id: app.id, name: app.name }],
     queryFn: async () => {
       const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = app.network.okStatus.includes(response.status);
+      const isOk = app.network.statusCodes.includes(response.status.toString());
       return {
         status: response.status,
         state: isOk ? 'online' : 'down',
@@ -60,5 +60,3 @@ export const AppPing = ({ app }: AppPingProps) => {
     </motion.div>
   );
 };
-
-type PingState = 'loading' | 'down' | 'online';

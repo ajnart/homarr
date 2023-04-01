@@ -1,7 +1,7 @@
 import { Box, Stack, Title, UnstyledButton } from '@mantine/core';
-import { NextLink } from '@mantine/next';
 import { createStyles } from '@mantine/styles';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { AppType } from '../../../../types/app';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -33,9 +33,16 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           justify="space-around"
           align="center"
           style={{ height: '100%', width: '100%' }}
+          className="dashboard-tile-app"
         >
           <Box hidden={false}>
-            <Title order={5} size="md" ta="center" lineClamp={1} className={classes.appName}>
+            <Title
+              order={5}
+              size="md"
+              ta="center"
+              lineClamp={1}
+              className={cx(classes.appName, 'dashboard-tile-app-title')}
+            >
               {app.name}
             </Title>
           </Box>
@@ -71,7 +78,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
       ) : (
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
-          component={NextLink}
+          component={Link}
           href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={cx(classes.button)}
@@ -86,12 +93,10 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   image: {
-    ref: getRef('image'),
     maxHeight: '90%',
     maxWidth: '90%',
   },
   appName: {
-    ref: getRef('appName'),
     wordBreak: 'break-word',
   },
   button: {

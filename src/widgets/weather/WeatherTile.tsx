@@ -28,7 +28,7 @@ const definition = defineWidget({
   component: WeatherTile,
 });
 
-export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IWeatherWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface WeatherTileProps {
   widget: IWeatherWidget;
@@ -76,7 +76,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
       align="center"
       style={{ height: '100%', width: '100%' }}
     >
-      <Group align={'center'} position="center" spacing="xs">
+      <Group align="center" position="center" spacing="xs">
         <WeatherIcon code={weather!.current_weather.weathercode} />
         <Title>
           {getPerferedUnit(

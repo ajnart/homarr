@@ -1,0 +1,23 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "embedUrl": {
+        "label": ""
+      },
+      "allowFullScreen": {
+        "label": "Permettre le plein écran"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "Saisir une URL",
+        "text": ""
+      }
+    }
+  }
+}

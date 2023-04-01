@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Kolommen in {{size}} grootte",
+    "descriptionPreset": "Aantal kolommen wanneer het scherm minder dan {{pixels}} pixels breed is.",
+    "descriptionExceedsPreset": "Aantal kolommen wanneer het scherm groter is dan {{pixels}} pixels"
+  },
+  "unsavedChanges": "Je hebt niet opgeslagen wijzigingen. Klik op de knop Wijzigingen toepassen om ze toe te passen en op te slaan.",
+  "applyChanges": "Wijzigingen toepassen",
+  "defaultValues": "Standaardwaarden"
+}

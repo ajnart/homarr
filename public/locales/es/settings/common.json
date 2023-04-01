@@ -9,11 +9,20 @@
     "configTip": "¡Sube tu configuración arrastrando y soltando el archivo en la página!"
   },
   "credits": {
-    "madeWithLove": "Hecho con ❤️ por @"
+    "madeWithLove": "Hecho con ❤️ por @",
+    "thirdPartyContent": "Ver contenido de terceros",
+    "thirdPartyContentTable": {
+      "dependencyName": "Dependencia",
+      "dependencyVersion": "Versión"
+    }
   },
   "grow": "Aumentar cuadrícula (toma todo el espacio)",
   "layout": {
-    "title": "Diseño del dashboard",
+    "preview": {
+      "title": "Previsualizar",
+      "subtitle": "Los cambios serán guardados automáticamente"
+    },
+    "divider": "Opciones de diseño",
     "main": "Principal",
     "sidebar": "Barra lateral",
     "cannotturnoff": "No puede ser apagado",

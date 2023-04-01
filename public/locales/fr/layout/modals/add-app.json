@@ -39,7 +39,15 @@
 	"appearance": {
 		"icon": {
 			"label": "Icône de l’app",
-			"description": "L'icône qui sera affichée sur le tableau de bord."
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
 		}
 	},
 	"integration": {

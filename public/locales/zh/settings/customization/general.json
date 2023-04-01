@@ -1,0 +1,21 @@
+{
+  "text": "自定义允许您根据自己的喜好配置和调整Homarr的使用体验。",
+  "accordeon": {
+    "layout": {
+      "name": "布局",
+      "description": "启用和禁用标题和仪表板磁贴上的元素"
+    },
+    "gridstack": {
+      "name": "网格堆栈",
+      "description": "自定义你的仪表板区域的行为和栏目"
+    },
+    "pageMetadata": {
+      "name": "页面元数据",
+      "description": "调整标题、logo和PWA"
+    },
+    "appereance": {
+      "name": "外观",
+      "description": "自定义背景，颜色和应用程序外观"
+    }
+  }
+}
