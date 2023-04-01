@@ -1,5 +1,4 @@
 import {
-  ActionIcon,
   AppShell,
   Avatar,
   Badge,
@@ -15,6 +14,7 @@ import {
   Stack,
   Text,
   TextInput,
+  ThemeIcon,
   Title,
   UnstyledButton,
 } from '@mantine/core';
@@ -47,21 +47,13 @@ export const MainLayout = () => {
     <AppShell
       navbar={
         <Navbar width={{ base: 300 }}>
-          <UnstyledButton p="md">
-            <Group>
-              <IconTools />
-              <Title weight="bold" order={3}>
-                Admin Dashboard
-              </Title>
-            </Group>
-          </UnstyledButton>
-          <Navbar.Section>
+          <Navbar.Section pt="xs">
             <NavLink
               label="Users"
               icon={
-                <ActionIcon size="sm" variant="light" color="red">
+                <ThemeIcon size="sm" variant="light" color="red">
                   <IconUser size={14} />
-                </ActionIcon>
+                </ThemeIcon>
               }
             >
               <NavLink icon={<IconAdjustmentsAlt size={14} />} label="Manage" />
@@ -70,9 +62,9 @@ export const MainLayout = () => {
             <NavLink
               label="Security"
               icon={
-                <ActionIcon size="sm" variant="light" color="red">
+                <ThemeIcon size="sm" variant="light" color="red">
                   <IconShield size={14} />
-                </ActionIcon>
+                </ThemeIcon>
               }
             >
               <NavLink icon={<IconArticle size={14} />} label="Events Log" />
@@ -81,9 +73,9 @@ export const MainLayout = () => {
             <NavLink
               label="Help"
               icon={
-                <ActionIcon size="sm" variant="light" color="red">
+                <ThemeIcon size="sm" variant="light" color="red">
                   <IconQuestionMark size={14} />
-                </ActionIcon>
+                </ThemeIcon>
               }
             >
               <NavLink icon={<IconBook2 size={14} />} label="Documentation" />

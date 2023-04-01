@@ -923,21 +923,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/carousel@npm:^5.9.3":
-  version: 5.10.5
-  resolution: "@mantine/carousel@npm:5.10.5"
+"@mantine/carousel@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "@mantine/carousel@npm:6.0.5"
   dependencies:
-    "@mantine/utils": 5.10.5
+    "@mantine/utils": 6.0.5
   peerDependencies:
-    "@mantine/core": 5.10.5
-    "@mantine/hooks": 5.10.5
+    "@mantine/core": 6.0.5
+    "@mantine/hooks": 6.0.5
     embla-carousel-react: ^7.0.0
     react: ">=16.8.0"
-  checksum: 6600ba37f495577ff14388ad16bbb72a4e92e34e7901dd3d38bc93eb0cf878fefeff0cdce414970699ea0cba9cd9a75924e435d17a481ca37f949f4f0bd950a8
+  checksum: 7b4fae9fe58d5b90b35d1ec31c47b3358852adb35960f3f2d0ee74e478be9addf4b9ccfae2b74b49d248b12d175b9be2bab37a80e6b1f43d4c2b35f18f8e90b0
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^6.0.0":
+"@mantine/core@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/core@npm:6.0.5"
   dependencies:
@@ -955,7 +955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/dates@npm:^6.0.0":
+"@mantine/dates@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/dates@npm:6.0.5"
   dependencies:
@@ -969,7 +969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/dropzone@npm:^6.0.0":
+"@mantine/dropzone@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/dropzone@npm:6.0.5"
   dependencies:
@@ -984,7 +984,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/form@npm:^6.0.0":
+"@mantine/form@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/form@npm:6.0.5"
   dependencies:
@@ -996,7 +996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^6.0.0":
+"@mantine/hooks@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/hooks@npm:6.0.5"
   peerDependencies:
@@ -1005,7 +1005,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/modals@npm:^6.0.0":
+"@mantine/modals@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/modals@npm:6.0.5"
   dependencies:
@@ -1019,7 +1019,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^6.0.0":
+"@mantine/next@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/next@npm:6.0.5"
   dependencies:
@@ -1033,7 +1033,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/notifications@npm:^6.0.0":
+"@mantine/notifications@npm:^6.0.5":
   version: 6.0.5
   resolution: "@mantine/notifications@npm:6.0.5"
   dependencies:
@@ -1048,18 +1048,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/prism@npm:^5.9.3":
-  version: 5.10.5
-  resolution: "@mantine/prism@npm:5.10.5"
+"@mantine/prism@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "@mantine/prism@npm:6.0.5"
   dependencies:
-    "@mantine/utils": 5.10.5
+    "@mantine/utils": 6.0.5
     prism-react-renderer: ^1.2.1
   peerDependencies:
-    "@mantine/core": 5.10.5
-    "@mantine/hooks": 5.10.5
+    "@mantine/core": 6.0.5
+    "@mantine/hooks": 6.0.5
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: a81a8ef2d523c609f9c3cb1bf632cacf68da0f8c792c565568990247770bdda2d433a06c74b85446a0e758958cd3ebdda5b6c656c8f685663be88de650032a13
+  checksum: 8c2055f3ad7e46eeff05fdabae58986e95fb27e3fd77006526899216bcdcc5317aec0bd168c8210508cd42868edc9d460a43f0c6d8ba842109cb79f92f293787
   languageName: node
   linkType: hard
 
@@ -1089,15 +1089,6 @@ __metadata:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
   checksum: 074012e4899516cd701dbfa032c5eb9865f6a1460fc6ebdfb934d703283a0e9229b18f93ef54d8e9127ba63390e46429cf51a1fbea6ddb77cc1f815d36072797
-  languageName: node
-  linkType: hard
-
-"@mantine/utils@npm:5.10.5":
-  version: 5.10.5
-  resolution: "@mantine/utils@npm:5.10.5"
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: fe8975a2cffb0493e9c226f2dd7d56473250806e56bdc7843c8f6cd1c8ce90d42daf3d33a31a91ec71bca3a584d8adb3fb5b805639c0f242d1d2f8887e9dd56d
   languageName: node
   linkType: hard
 
@@ -5075,16 +5066,16 @@ __metadata:
     "@emotion/react": ^11.10.6
     "@emotion/server": ^11.10.0
     "@jellyfin/sdk": ^0.7.0
-    "@mantine/carousel": ^5.9.3
-    "@mantine/core": ^6.0.0
-    "@mantine/dates": ^6.0.0
-    "@mantine/dropzone": ^6.0.0
-    "@mantine/form": ^6.0.0
-    "@mantine/hooks": ^6.0.0
-    "@mantine/modals": ^6.0.0
-    "@mantine/next": ^6.0.0
-    "@mantine/notifications": ^6.0.0
-    "@mantine/prism": ^5.9.3
+    "@mantine/carousel": ^6.0.5
+    "@mantine/core": ^6.0.5
+    "@mantine/dates": ^6.0.5
+    "@mantine/dropzone": ^6.0.5
+    "@mantine/form": ^6.0.5
+    "@mantine/hooks": ^6.0.5
+    "@mantine/modals": ^6.0.5
+    "@mantine/next": ^6.0.5
+    "@mantine/notifications": ^6.0.5
+    "@mantine/prism": ^6.0.5
     "@next-auth/prisma-adapter": ^1.0.5
     "@next/bundle-analyzer": ^12.1.4
     "@next/eslint-plugin-next": ^12.1.4
