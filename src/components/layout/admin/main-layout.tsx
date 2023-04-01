@@ -33,7 +33,6 @@ import {
   IconShield,
   IconShieldLock,
   IconSun,
-  IconTools,
   IconUser,
   IconUserSearch,
 } from '@tabler/icons';
@@ -88,33 +87,32 @@ export const MainLayout = () => {
       }
       header={
         <Header height={60} p="sm" pt="xs">
-          <Group spacing="xl" position="apart">
+          <Group spacing="xl" position="apart" noWrap>
             <Logo />
-            <TextInput radius="xl" w={400} placeholder="Sarch..." />
-            <UnstyledButton>
-              <Menu>
-                <Menu.Target>
-                  <Group>
+            <TextInput radius="xl" w={400} placeholder="Sarch..." variant="filled" />
+
+            <Group noWrap>
+              <UnstyledButton>
+                <Menu>
+                  <Menu.Target>
                     <Avatar />
-                    <Stack spacing={0}>
-                      <Text size="sm">@Username</Text>
-                      <Text size="xs" color="dimmed">
-                        Administrator
-                      </Text>
-                    </Stack>
-                  </Group>
-                </Menu.Target>
-                <Menu.Dropdown>
-                  <Menu.Item icon={<IconSun size={18} />}>Switch theme</Menu.Item>
-                  <Menu.Item icon={<IconUserSearch size={18} />}>View Profile</Menu.Item>
-                  <Menu.Item icon={<IconDashboard size={18} />}>Default Dashboard</Menu.Item>
-                  <Menu.Divider />
-                  <Menu.Item icon={<IconLogout size={18} />} color="red" onClick={() => signOut()}>
-                    Logout
-                  </Menu.Item>
-                </Menu.Dropdown>
-              </Menu>
-            </UnstyledButton>
+                  </Menu.Target>
+                  <Menu.Dropdown>
+                    <Menu.Item icon={<IconSun size={18} />}>Switch theme</Menu.Item>
+                    <Menu.Item icon={<IconUserSearch size={18} />}>View Profile</Menu.Item>
+                    <Menu.Item icon={<IconDashboard size={18} />}>Default Dashboard</Menu.Item>
+                    <Menu.Divider />
+                    <Menu.Item
+                      icon={<IconLogout size={18} />}
+                      color="red"
+                      onClick={() => signOut()}
+                    >
+                      Logout
+                    </Menu.Item>
+                  </Menu.Dropdown>
+                </Menu>
+              </UnstyledButton>
+            </Group>
           </Group>
         </Header>
       }
