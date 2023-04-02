@@ -4,10 +4,12 @@ import { ContextModalProps, openContextModal } from '@mantine/modals';
 import { DashboardPermission } from '@prisma/client';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { UseUsersQueryResponse } from './UserList';
+import { RouterOutputs } from '../../../utils/api';
+
+type UserList = RouterOutputs['user']['list'];
 
 type InnerProps = {
-  user: UseUsersQueryResponse[number];
+  user: UserList[number];
 };
 
 export const UserPermissionModal = ({ context, id, innerProps }: ContextModalProps<InnerProps>) => {

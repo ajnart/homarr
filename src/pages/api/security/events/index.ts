@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getServerAuthSession } from '../../../../server/common/get-server-auth-session';
+import { prisma } from '../../../../server/db';
+import { getServerAuthSession } from '../../../../server/auth';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerAuthSession({ req, res });

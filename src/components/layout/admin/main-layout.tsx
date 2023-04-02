@@ -157,15 +157,13 @@ export const MainLayout = () => {
   );
 };
 
-const QuickAction = ({ icon, name }: { icon: ReactNode; name: string }) => {
-  return (
-    <UnstyledButton>
-      <Card bg="gray" w={120} h={120}>
-        <Stack align="center" spacing="xs">
-          {icon}
-          <Text weight="bold">{name}</Text>
-        </Stack>
-      </Card>
-    </UnstyledButton>
-  );
-};
+const QuickAction = ({ icon, name }: { icon: ReactNode; name: string }) => (
+  <UnstyledButton>
+    <Card bg="gray" w={120} h={120}>
+      <Stack align="center" spacing="xs">
+        {icon}
+        <Text weight="bold">{name}</Text>
+      </Stack>
+    </Card>
+  </UnstyledButton>
+);
