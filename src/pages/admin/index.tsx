@@ -1,4 +1,15 @@
-import { Alert, Box, Card, Center, Image, Flex, Stack, Title, Text, UnstyledButton } from '@mantine/core';
+import {
+  Alert,
+  Box,
+  Card,
+  Center,
+  Image,
+  Flex,
+  Stack,
+  Title,
+  Text,
+  UnstyledButton,
+} from '@mantine/core';
 import { IconBook2, IconDashboard, IconInfoCircle, IconUser } from '@tabler/icons';
 import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import { ReactNode } from 'react';
