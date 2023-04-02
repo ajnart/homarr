@@ -1,14 +1,14 @@
 import { ActionIcon, Center, Group, Loader, ScrollArea, Table, Text, Title } from '@mantine/core';
 import { openConfirmModal } from '@mantine/modals';
-import { RegistrationInvite } from '@prisma/client';
 import { IconTrash } from '@tabler/icons';
-import { useMutation, useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import dayjs from 'dayjs';
-import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
+import { showSuccessNotification } from '../../../tools/notifications';
+import { RouterOutputs, api } from '../../../utils/api';
+
+type InviteList = RouterOutputs['invite']['list'];
 
 export const InviteTable = () => {
-  const { data: invites, isLoading, isError } = useInvitesQuery();
+  const { data: invites, isLoading, isError } = api.invite.list.useQuery();
 
   return (
     <ScrollArea>
@@ -45,34 +45,14 @@ export const InviteTable = () => {
   );
 };
 
-type UseInvitesQueryResponse = Omit<RegistrationInvite, 'token'>[];
-
-export const useInvitesQuery = () =>
-  useQuery<UseInvitesQueryResponse>({
-    queryKey: ['invite'],
-    queryFn: async () => {
-      const response = await axios.get('/api/invites');
-      return response.data;
-    },
-    retry: false,
-  });
-
 interface InviteTableRowProps {
-  invite: UseInvitesQueryResponse[number];
+  invite: InviteList[number];
 }
 
 const InviteTableRow = ({ invite }: InviteTableRowProps) => {
-  const { mutateAsync: removeAsync } = useMutation({
-    mutationKey: ['invite/remove'],
-    mutationFn: async (id: string) => {
-      await axios.delete(`/api/invites/${id}`);
-    },
-    onSuccess() {
-      queryClient.invalidateQueries(['invite']);
-    },
-  });
+  const { mutateAsync: removeAsync } = useInviteRemoveMutation();
 
-  const handleRemove = async (invite: UseInvitesQueryResponse[number]) => {
+  const handleRemove = async (invite: InviteList[number]) => {
     openConfirmModal({
       title: <Title order={4}>Please confirm the removal</Title>,
       children: (
@@ -81,7 +61,7 @@ const InviteTableRow = ({ invite }: InviteTableRowProps) => {
         </Text>
       ),
       labels: { confirm: 'Confirm', cancel: 'Cancel' },
-      onConfirm: async () => removeAsync(invite.id),
+      onConfirm: async () => removeAsync({ id: invite.id }),
     });
   };
 
@@ -103,4 +83,20 @@ const InviteTableRow = ({ invite }: InviteTableRowProps) => {
       </td>
     </tr>
   );
+};
+
+const useInviteRemoveMutation = () => {
+  const utils = api.useContext();
+
+  return api.invite.remove.useMutation({
+    onSuccess() {
+      showSuccessNotification({
+        title: 'Removed invite',
+        message: 'Removed invite successfully.',
+      });
+
+      utils.invite.list.invalidate();
+      utils.invite.count.invalidate();
+    },
+  });
 };

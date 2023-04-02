@@ -8,12 +8,14 @@ import {
   IconTrash,
 } from '@tabler/icons';
 import dayjs from 'dayjs';
-import { UseUsersQueryResponse } from '../UserList';
 import { openUserPermissionModal } from '../UserPermissionModal';
 import { useUserListActions } from './actions';
+import { RouterOutputs } from '../../../../utils/api';
+
+type UserList = RouterOutputs['user']['list'];
 
 interface UserListItemsProps {
-  users: UseUsersQueryResponse;
+  users: UserList;
 }
 
 export const UserListItems = ({ users }: UserListItemsProps) => (
@@ -25,7 +27,7 @@ export const UserListItems = ({ users }: UserListItemsProps) => (
 );
 
 interface UserListItemProps {
-  user: UseUsersQueryResponse[number];
+  user: UserList[number];
 }
 
 const UserListItem = ({ user }: UserListItemProps) => {
@@ -57,7 +59,7 @@ const UserListItem = ({ user }: UserListItemProps) => {
             <Group spacing={4}>
               <IconShield size={12} />
               <Text color="dimmed" size="xs">
-                {user.role === 'admin' ? 'Admin' : 'User'}
+                {user.isAdmin ? 'Admin' : 'User'}
               </Text>
             </Group>
             <Group spacing={4}>
@@ -70,7 +72,7 @@ const UserListItem = ({ user }: UserListItemProps) => {
         </Stack>
       </Group>
 
-      {user.role !== 'admin' ? (
+      {!user.isAdmin ? (
         <Group position="right" mt="sm" grow>
           <Group grow maw="400px">
             {user.isEnabled ? (
@@ -87,7 +89,7 @@ const UserListItem = ({ user }: UserListItemProps) => {
                   size="xs"
                   variant="light"
                   color="red"
-                  onClick={() => archiveAsync(user.id)}
+                  onClick={() => archiveAsync({ id: user.id })}
                   leftIcon={<IconArchive size={14} />}
                 >
                   Archive user
@@ -98,7 +100,7 @@ const UserListItem = ({ user }: UserListItemProps) => {
                 <Button
                   size="xs"
                   variant="default"
-                  onClick={() => unarchiveAsync(user.id)}
+                  onClick={() => unarchiveAsync({ id: user.id })}
                   leftIcon={<IconArchiveOff size={14} />}
                 >
                   Unarchive user

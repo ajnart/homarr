@@ -1,23 +1,23 @@
+import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
+import { ADMIN_USERNAME } from '../../../constants/constants';
 import { prisma } from '../../db';
 import { createUnionSchema } from '../../helpers/zod';
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 const userFilters = ['all', 'enabled', 'archived', 'admin', 'non-admin'] as const;
 
 export const usersRouter = createTRPCRouter({
-  filters: publicProcedure.query(() => {
-    return userFilters;
-  }),
-  list: publicProcedure
+  filters: publicProcedure.query(() => userFilters),
+  list: adminProcedure
     .input(
       z.object({
         filter: createUnionSchema(userFilters),
         search: z.string().optional(),
       })
     )
-    .query(({ input }) => {
-      return prisma.user.findMany({
+    .query(async ({ input }) => {
+      const users = await prisma.user.findMany({
         where: {
           AND: [
             {
@@ -40,7 +40,45 @@ export const usersRouter = createTRPCRouter({
           password: false,
         },
       });
+      return users;
     }),
+  count: adminProcedure.query(async () => {
+    const count = await prisma.user.count();
+    return count;
+  }),
+  remove: adminProcedure.input(z.object({ id: z.string() })).mutation(async ({ input }) => {
+    throwTrpcErrorWhenUserIsOwner(input.id);
+
+    await prisma.user.delete({
+      where: {
+        id: input.id,
+      },
+    });
+  }),
+  archive: adminProcedure.input(z.object({ id: z.string() })).mutation(async ({ input }) => {
+    throwTrpcErrorWhenUserIsOwner(input.id);
+
+    await prisma.user.update({
+      where: {
+        id: input.id,
+      },
+      data: {
+        isEnabled: false,
+      },
+    });
+  }),
+  enable: adminProcedure.input(z.object({ id: z.string() })).mutation(async ({ input }) => {
+    throwTrpcErrorWhenUserIsOwner(input.id);
+
+    await prisma.user.update({
+      where: {
+        id: input.id,
+      },
+      data: {
+        isEnabled: true,
+      },
+    });
+  }),
 });
 
 const constructWhereFilter = (filter: (typeof userFilters)[number]) => {
@@ -57,4 +95,18 @@ const constructWhereFilter = (filter: (typeof userFilters)[number]) => {
   }
 
   return {};
+};
+
+const checkIfOwnerUser = async (id: string) => {
+  const user = await prisma?.user.findFirst({ where: { id } });
+  return user?.username === ADMIN_USERNAME;
+};
+
+const throwTrpcErrorWhenUserIsOwner = async (id: string) => {
+  if (!(await checkIfOwnerUser(id))) return;
+
+  throw new TRPCError({
+    code: 'FORBIDDEN',
+    message: 'Can not unarchive owner of homarr.',
+  });
 };

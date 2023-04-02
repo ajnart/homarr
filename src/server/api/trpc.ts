@@ -17,8 +17,18 @@
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { type Session } from 'next-auth';
 
-import { getServerAuthSession } from '../auth';
+/**
+ * 2. INITIALIZATION
+ *
+ * This is where the tRPC API is initialized, connecting the context and transformer. We also parse
+ * ZodErrors so that you get typesafety on the frontend if your procedure fails due to validation
+ * errors on the backend.
+ */
+import { initTRPC, TRPCError } from '@trpc/server';
+import superjson from 'superjson';
+import { ZodError } from 'zod';
 import { prisma } from '../db';
+import { getServerAuthSession } from '../auth';
 
 type CreateContextOptions = {
   session: Session | null;
@@ -34,12 +44,10 @@ type CreateContextOptions = {
  *
  * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
  */
-const createInnerTRPCContext = (opts: CreateContextOptions) => {
-  return {
-    session: opts.session,
-    prisma,
-  };
-};
+const createInnerTRPCContext = (opts: CreateContextOptions) => ({
+  session: opts.session,
+  prisma,
+});
 
 /**
  * This is the actual context you will use in your router. It will be used to process every request
@@ -57,17 +65,6 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
     session,
   });
 };
-
-/**
- * 2. INITIALIZATION
- *
- * This is where the tRPC API is initialized, connecting the context and transformer. We also parse
- * ZodErrors so that you get typesafety on the frontend if your procedure fails due to validation
- * errors on the backend.
- */
-import { initTRPC, TRPCError } from '@trpc/server';
-import superjson from 'superjson';
-import { ZodError } from 'zod';
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
@@ -127,3 +124,30 @@ const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
  * @see https://trpc.io/docs/procedures
  */
 export const protectedProcedure = t.procedure.use(enforceUserIsAuthed);
+
+/**
+ * Admin (authenticated) procedure
+ *
+ * If you want a query or mutation to ONLY be accessible to logged in users with admin privileges, use this. It verifies
+ * the session is valid and guarantees `ctx.session.user` is not null. It also checks if the user is an admin.
+ *
+ * @see https://trpc.io/docs/procedures
+ */
+export const adminProcedure = t.procedure.use(enforceUserIsAuthed).use(async ({ ctx, next }) => {
+  const dbUser = await ctx.prisma.user.findFirst({
+    where: {
+      id: ctx.session!.user!.id,
+    },
+    select: {
+      isAdmin: true,
+    },
+  });
+
+  if (!dbUser?.isAdmin) {
+    throw new TRPCError({ code: 'FORBIDDEN' });
+  }
+
+  return next();
+});
+
+// TODO: add privilegedProcedure

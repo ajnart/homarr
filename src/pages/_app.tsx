@@ -2,7 +2,6 @@ import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from 
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
-import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
@@ -24,10 +23,9 @@ import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/Cat
 import { ConfigProvider } from '../config/provider';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
-import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
 import {
-  getServiceSidePackageAttributes,
   ServerSidePackageAttributesType,
+  getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
 
@@ -87,56 +85,54 @@ function App(
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
-      <QueryClientProvider client={queryClient}>
-        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-          <ColorTheme.Provider value={colorTheme}>
-            <MantineProvider
-              theme={{
-                ...theme,
-                components: {
-                  Checkbox: {
-                    styles: {
-                      input: { cursor: 'pointer' },
-                      label: { cursor: 'pointer' },
-                    },
-                  },
-                  Switch: {
-                    styles: {
-                      input: { cursor: 'pointer' },
-                      label: { cursor: 'pointer' },
-                    },
+      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+        <ColorTheme.Provider value={colorTheme}>
+          <MantineProvider
+            theme={{
+              ...theme,
+              components: {
+                Checkbox: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
                   },
                 },
-                primaryColor,
-                primaryShade,
-                colorScheme,
-              }}
-              withGlobalStyles
-              withNormalizeCSS
-            >
-              <ConfigProvider>
-                <Notifications limit={4} position="bottom-left" />
-                <ModalsProvider
-                  modals={{
-                    editApp: EditAppModal,
-                    selectElement: SelectElementModal,
-                    integrationOptions: WidgetsEditModal,
-                    integrationRemove: WidgetsRemoveModal,
-                    categoryEditModal: CategoryEditModal,
-                    changeAppPositionModal: ChangeAppPositionModal,
-                    changeIntegrationPositionModal: ChangeWidgetPositionModal,
-                    inviteCreateModal: InviteCreateModal,
-                    userPermissionModal: UserPermissionModal,
-                  }}
-                >
-                  <Component {...pageProps} />
-                </ModalsProvider>
-              </ConfigProvider>
-            </MantineProvider>
-          </ColorTheme.Provider>
-        </ColorSchemeProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
+                Switch: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
+                  },
+                },
+              },
+              primaryColor,
+              primaryShade,
+              colorScheme,
+            }}
+            withGlobalStyles
+            withNormalizeCSS
+          >
+            <ConfigProvider>
+              <Notifications limit={4} position="bottom-left" />
+              <ModalsProvider
+                modals={{
+                  editApp: EditAppModal,
+                  selectElement: SelectElementModal,
+                  integrationOptions: WidgetsEditModal,
+                  integrationRemove: WidgetsRemoveModal,
+                  categoryEditModal: CategoryEditModal,
+                  changeAppPositionModal: ChangeAppPositionModal,
+                  changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                  inviteCreateModal: InviteCreateModal,
+                  userPermissionModal: UserPermissionModal,
+                }}
+              >
+                <Component {...pageProps} />
+              </ModalsProvider>
+            </ConfigProvider>
+          </MantineProvider>
+        </ColorTheme.Provider>
+      </ColorSchemeProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </>
   );
 }

@@ -17,11 +17,11 @@ import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
-import { getServerAuthSession } from '../server/common/get-server-auth-session';
 import { ILogin, loginSchema } from '../validation/auth';
 import { loginNamespaces } from '../tools/server/translation-namespaces';
 import { getInputPropsMiddleware } from '../tools/getInputPropsMiddleware';
 import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
+import { getServerAuthSession } from '../server/auth';
 
 const Login: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ errorType }) => {
   const router = useRouter();

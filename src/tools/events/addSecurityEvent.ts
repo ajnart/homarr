@@ -1,5 +1,6 @@
 import Consola from 'consola';
 import { SecurityEvent, SecurityEventType } from './types';
+import { prisma } from '../../server/db';
 
 export const addSecurityEvent = async <TType extends SecurityEventType>(
   type: TType,

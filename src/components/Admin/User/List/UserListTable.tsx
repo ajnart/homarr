@@ -1,12 +1,13 @@
 import { ActionIcon, Avatar, Badge, Group, Table, Text } from '@mantine/core';
 import { IconArchive, IconArchiveOff, IconKey, IconTrash } from '@tabler/icons';
 import dayjs from 'dayjs';
-import { UseUsersQueryResponse } from '../UserList';
 import { openUserPermissionModal } from '../UserPermissionModal';
 import { useUserListActions } from './actions';
+import { RouterOutputs } from '../../../../utils/api';
 
+type UserList = RouterOutputs['user']['list'];
 interface UserListTableProps {
-  users: UseUsersQueryResponse;
+  users: UserList;
 }
 
 export const UserListTable = ({ users }: UserListTableProps) => (
@@ -29,7 +30,7 @@ export const UserListTable = ({ users }: UserListTableProps) => (
 );
 
 interface UserTableRowProps {
-  user: UseUsersQueryResponse[number];
+  user: UserList[number];
 }
 
 const UserTableRow = ({ user }: UserTableRowProps) => {
@@ -50,7 +51,7 @@ const UserTableRow = ({ user }: UserTableRowProps) => {
         </Group>
       </td>
 
-      <td>{user.role === 'admin' ? 'Admin' : 'User'}</td>
+      <td>{user.isAdmin ? 'Admin' : 'User'}</td>
       <td>{dayjs(user.lastActiveAt).fromNow()}</td>
       <td>
         {user.isEnabled ? (
@@ -65,18 +66,18 @@ const UserTableRow = ({ user }: UserTableRowProps) => {
       </td>
       <td>
         <Group>
-          {user.role === 'admin' ? null : user.isEnabled ? (
+          {user.isAdmin ? null : user.isEnabled ? (
             <>
               <ActionIcon onClick={() => openUserPermissionModal({ user })}>
                 <IconKey size={16} />
               </ActionIcon>
-              <ActionIcon onClick={() => archiveAsync(user.id)}>
+              <ActionIcon onClick={() => archiveAsync({ id: user.id })}>
                 <IconArchive color="red" size={16} />
               </ActionIcon>
             </>
           ) : (
             <>
-              <ActionIcon onClick={() => unarchiveAsync(user.id)}>
+              <ActionIcon onClick={() => unarchiveAsync({ id: user.id })}>
                 <IconArchiveOff size={16} />
               </ActionIcon>
               <ActionIcon onClick={() => remove(user)}>
