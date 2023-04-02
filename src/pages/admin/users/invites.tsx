@@ -72,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default Invites;
 
 const UsersButton = () => {
-  const { data: users } = api.user.list.useQuery({ filter: 'all' });
+  const { data: count } = api.user.count.useQuery();
 
   return (
     <Button
@@ -80,7 +80,7 @@ const UsersButton = () => {
       href="/admin/users"
       variant="default"
       leftIcon={<IconUser size={16} />}
-      rightIcon={users?.length === 0 || !users ? null : <Badge>{users.length}</Badge>}
+      rightIcon={count === 0 || count === undefined ? null : <Badge>{count}</Badge>}
     >
       Users
     </Button>

@@ -1,12 +1,11 @@
-import { Stack, TextInput, Text, Group, Button } from '@mantine/core';
+import { Button, Group, Stack, Text, TextInput } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { RegistrationInvite } from '@prisma/client';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
 import { z } from 'zod';
 import { useScreenSmallerThan } from '../../../../hooks/useScreenSmallerThan';
 import { getInputPropsMiddleware } from '../../../../tools/getInputPropsMiddleware';
-import { queryClient } from '../../../../tools/server/configurations/tanstack/queryClient.tool';
+import { showSuccessNotification } from '../../../../tools/notifications';
+import { api } from '../../../../utils/api';
 import { registrationInviteCreationInputSchema } from '../../../../validation/invite';
 
 interface InviteCreateTabProps {
@@ -41,17 +40,22 @@ export const InviteCreateTab = ({ onCreated }: InviteCreateTabProps) => {
   );
 };
 
-const useCreateInviteMutation = (setToken: (v: string) => void) =>
-  useMutation({
-    mutationKey: ['invite/create'],
-    mutationFn: async (data: FormType) => {
-      const response = await axios.post('/api/invites', data);
-      return response.data;
-    },
+const useCreateInviteMutation = (setToken: (v: string) => void) => {
+  const utils = api.useContext();
+
+  return api.invite.create.useMutation({
     onSuccess(data: RegistrationInvite) {
       setToken(data.token);
-      queryClient.invalidateQueries(['invite']);
+
+      showSuccessNotification({
+        title: 'Invite created',
+        message: 'The invite has been created successfully.',
+      });
+
+      utils.invite.list.invalidate();
+      utils.invite.count.invalidate();
     },
   });
+};
 
 type FormType = z.infer<typeof registrationInviteCreationInputSchema>;

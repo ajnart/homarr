@@ -127,3 +127,30 @@ const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
  * @see https://trpc.io/docs/procedures
  */
 export const protectedProcedure = t.procedure.use(enforceUserIsAuthed);
+
+/**
+ * Admin (authenticated) procedure
+ *
+ * If you want a query or mutation to ONLY be accessible to logged in users with admin privileges, use this. It verifies
+ * the session is valid and guarantees `ctx.session.user` is not null. It also checks if the user is an admin.
+ *
+ * @see https://trpc.io/docs/procedures
+ */
+export const adminProcedure = t.procedure.use(enforceUserIsAuthed).use(async ({ ctx, next }) => {
+  const dbUser = await ctx.prisma.user.findFirst({
+    where: {
+      id: ctx.session!.user!.id,
+    },
+    select: {
+      isAdmin: true,
+    },
+  });
+
+  if (!dbUser?.isAdmin) {
+    throw new TRPCError({ code: 'FORBIDDEN' });
+  }
+
+  return next();
+});
+
+// TODO: add privilegedProcedure

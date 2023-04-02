@@ -17,10 +17,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { z, ZodError } from 'zod';
 
-import { getServerAuthSession } from '../server/common/get-server-auth-session';
 import { getInputPropsMiddleware } from '../tools/getInputPropsMiddleware';
 import { showErrorNotification, showSuccessNotification } from '../tools/notifications';
 import { formRegisterSchema, IRegister } from '../validation/auth';
+import { getServerAuthSession } from '../server/auth';
+import { prisma } from '../server/db';
 
 const Register: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
   registrationInvite,

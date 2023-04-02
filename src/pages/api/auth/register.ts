@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcrypt';
 import { registerSchema } from '../../../validation/auth';
 import { addSecurityEvent } from '../../../tools/events/addSecurityEvent';
+import { prisma } from '../../../server/db';
 
 const SALT_ROUNDS = 10;
 
