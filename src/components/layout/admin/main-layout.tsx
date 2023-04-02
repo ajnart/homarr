@@ -1,8 +1,10 @@
 import {
+  Alert,
   AppShell,
   Avatar,
+  Box,
   Card,
-  Container,
+  Center,
   Flex,
   Group,
   Header,
@@ -25,6 +27,7 @@ import {
   IconBrandGithub,
   IconDashboard,
   IconGitFork,
+  IconInfoCircle,
   IconLogout,
   IconMailForward,
   IconQuestionMark,
@@ -116,7 +119,7 @@ export const MainLayout = () => {
         </Header>
       }
     >
-      <Container h={200} style={{ overflow: 'hidden' }} pos="relative">
+      <Box h={200} style={{ overflow: 'hidden' }} pos="relative">
         <Image
           src="https://homarr.dev/img/pictures/homarr-devices-preview/compressed/homarr-devices-2d-mockup-flat-shadow-light-compressed.png"
           pos="absolute"
@@ -125,7 +128,7 @@ export const MainLayout = () => {
           style={{ zIndex: -2 }}
           opacity={0.5}
         />
-        <Container
+        <Box
           pos="absolute"
           h="100%"
           w="100%"
@@ -133,39 +136,56 @@ export const MainLayout = () => {
           style={{ zIndex: -1 }}
         />
 
-        <Stack p="md">
-          <Text size="xl" style={{ lineHeight: 1 }}>
-            Welcome back to Homarr
-          </Text>
-          <Title order={1} style={{ lineHeight: 1 }}>
-            Your Dashboard
-          </Title>
-        </Stack>
-      </Container>
+        <Flex align="end" h="100%" pb="lg">
+          <Stack p="md" spacing={4}>
+            <Text size="xl" style={{ lineHeight: 1 }}>
+              Welcome back to Homarr
+            </Text>
+            <Title order={1} style={{ lineHeight: 1 }}>
+              Your Dashboard
+            </Title>
+          </Stack>
+        </Flex>
+      </Box>
+
+      <Alert color="blue" icon={<IconInfoCircle />}>
+        <Text color="blue">
+          The administration dashboard is experimental and may not work as intended.
+        </Text>
+      </Alert>
 
       <Text mt="lg" mb="xs">
         Quick Actions
       </Text>
       <Flex gap="md">
-        <QuickAction name="Dashboards" icon={<IconDashboard size={50} strokeWidth={1.4} />} />
-        <QuickAction name="Users" icon={<IconUser size={50} strokeWidth={1.4} />} />
-        <QuickAction name="A" icon={<></>} />
+        <QuickAction name="Dashboards" icon={<IconDashboard size={50} strokeWidth={1} />} />
+        <QuickAction name="Users" icon={<IconUser size={50} strokeWidth={1} />} />
+        <QuickAction name="Online Documentation" icon={<IconBook2 size={50} strokeWidth={1} />} />
       </Flex>
-
-      <Text mt="xl">Changelog</Text>
     </AppShell>
   );
 };
 
-const QuickAction = ({ icon, name }: { icon: ReactNode; name: string }) => {
-  return (
-    <UnstyledButton>
-      <Card bg="gray" w={120} h={120}>
+const QuickAction = ({ icon, name }: { icon: ReactNode; name: string }) => (
+  <UnstyledButton>
+    <Card
+      sx={(theme) => ({
+        backgroundColor: theme.colors.gray[2],
+        '&:hover': {
+          backgroundColor: theme.colors.gray[4],
+        },
+      })}
+      w={140}
+      h={140}
+    >
+      <Center h="100%">
         <Stack align="center" spacing="xs">
           {icon}
-          <Text weight="bold">{name}</Text>
+          <Text align="center" lineClamp={2}>
+            {name}
+          </Text>
         </Stack>
-      </Card>
-    </UnstyledButton>
-  );
-};
+      </Center>
+    </Card>
+  </UnstyledButton>
+);
