@@ -1,20 +1,13 @@
 import {
   AppShell,
   Avatar,
-  Card,
-  Container,
-  Flex,
   Group,
   Header,
-  Image,
   Menu,
   Navbar,
   NavLink,
-  Stack,
-  Text,
   TextInput,
   ThemeIcon,
-  Title,
   UnstyledButton,
 } from '@mantine/core';
 import {
@@ -36,10 +29,15 @@ import {
 } from '@tabler/icons';
 import { signOut } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import { ReactNode } from 'react';
 import { Logo } from '../Logo';
 
-export const MainLayout = () => {
+interface MainLayoutProps {
+  children: ReactNode;
+}
+
+export const MainLayout = ({ children }: MainLayoutProps) => {
   const { t } = useTranslation();
   return (
     <AppShell
@@ -54,8 +52,18 @@ export const MainLayout = () => {
                 </ThemeIcon>
               }
             >
-              <NavLink icon={<IconAdjustmentsAlt size={14} />} label="Manage" />
-              <NavLink icon={<IconMailForward size={14} />} label="Invites" />
+              <NavLink
+                icon={<IconAdjustmentsAlt size={14} />}
+                label="Manage"
+                component={Link}
+                href="/admin/users"
+              />
+              <NavLink
+                icon={<IconMailForward size={14} />}
+                label="Invites"
+                component={Link}
+                href="/admin/users/invites"
+              />
             </NavLink>
             <NavLink
               label="Security"
@@ -65,7 +73,12 @@ export const MainLayout = () => {
                 </ThemeIcon>
               }
             >
-              <NavLink icon={<IconArticle size={14} />} label="Events Log" />
+              <NavLink
+                icon={<IconArticle size={14} />}
+                label="Events Log"
+                component={Link}
+                href="/admin/security/events"
+              />
               <NavLink icon={<IconShieldLock size={14} />} label="Security settings" />
             </NavLink>
             <NavLink
@@ -87,7 +100,9 @@ export const MainLayout = () => {
       header={
         <Header height={60} p="sm" pt="xs">
           <Group spacing="xl" position="apart" noWrap>
-            <Logo />
+            <UnstyledButton component={Link} href="/admin">
+              <Logo />
+            </UnstyledButton>
             <TextInput radius="xl" w={400} placeholder="Sarch..." variant="filled" />
 
             <Group noWrap>
@@ -116,54 +131,7 @@ export const MainLayout = () => {
         </Header>
       }
     >
-      <Container h={200} style={{ overflow: 'hidden' }} pos="relative">
-        <Image
-          src="https://homarr.dev/img/pictures/homarr-devices-preview/compressed/homarr-devices-2d-mockup-flat-shadow-light-compressed.png"
-          pos="absolute"
-          h="100%"
-          w="auto"
-          style={{ zIndex: -2 }}
-          opacity={0.5}
-        />
-        <Container
-          pos="absolute"
-          h="100%"
-          w="100%"
-          bg="linear-gradient(180deg, transparent, rgba(255,255,255,1) 95%, white 100%);"
-          style={{ zIndex: -1 }}
-        />
-
-        <Stack p="md">
-          <Text size="xl" style={{ lineHeight: 1 }}>
-            Welcome back to Homarr
-          </Text>
-          <Title order={1} style={{ lineHeight: 1 }}>
-            Your Dashboard
-          </Title>
-        </Stack>
-      </Container>
-
-      <Text mt="lg" mb="xs">
-        Quick Actions
-      </Text>
-      <Flex gap="md">
-        <QuickAction name="Dashboards" icon={<IconDashboard size={50} strokeWidth={1.4} />} />
-        <QuickAction name="Users" icon={<IconUser size={50} strokeWidth={1.4} />} />
-        <QuickAction name="A" icon={<></>} />
-      </Flex>
-
-      <Text mt="xl">Changelog</Text>
+      {children}
     </AppShell>
   );
 };
-
-const QuickAction = ({ icon, name }: { icon: ReactNode; name: string }) => (
-  <UnstyledButton>
-    <Card bg="gray" w={120} h={120}>
-      <Stack align="center" spacing="xs">
-        {icon}
-        <Text weight="bold">{name}</Text>
-      </Stack>
-    </Card>
-  </UnstyledButton>
-);
