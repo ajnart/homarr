@@ -10,6 +10,7 @@ import { getServerSideTranslations } from '../../../tools/server/getServerSideTr
 import { getServerAuthSession } from '../../../server/auth';
 import { prisma } from '../../../server/db';
 import { api } from '../../../utils/api';
+import { createSSGHelper } from '../../../server/api/ssg-helper';
 
 const Invites: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
   const smallerThanSm = useScreenSmallerThan('sm');
@@ -59,6 +60,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  const ssg = await createSSGHelper(context);
+
+  await ssg.invite.list.prefetch();
+  await ssg.user.count.prefetch();
+
   const translations = await getServerSideTranslations(
     ['common', 'form'],
     context.locale,
@@ -66,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     context.res
   );
 
-  return { props: { ...translations } };
+  return { props: { ...translations, trpcState: ssg.dehydrate() } };
 };
 
 export default Invites;

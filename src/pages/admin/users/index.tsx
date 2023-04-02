@@ -10,6 +10,7 @@ import { openInviteCreateModal } from '../../../components/Admin/Invite/InviteCr
 import { UserList } from '../../../components/Admin/User/UserList';
 import { GenericSearch } from '../../../components/Admin/User/UserSearch';
 import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
+import { createSSGHelper } from '../../../server/api/ssg-helper';
 import { getServerAuthSession } from '../../../server/auth';
 import { prisma } from '../../../server/db';
 import { getServerSideTranslations } from '../../../tools/server/getServerSideTranslations';
@@ -102,6 +103,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  const ssg = await createSSGHelper(context);
+
+  await ssg.user.filters.prefetch();
+  await ssg.user.list.prefetch({ filter: 'all', search: '' });
+  await ssg.invite.count.prefetch();
+
   const translations = await getServerSideTranslations(
     ['common', 'form'],
     context.locale,
@@ -109,7 +116,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     context.res
   );
 
-  return { props: { ...translations } };
+  return { props: { ...translations, trpcState: ssg.dehydrate() } };
 };
 
 export default Users;
