@@ -24,7 +24,7 @@ export async function getServerSideProps({
   const configPath = path.join(process.cwd(), 'data/configs', `${configName}.json`);
   const configExists = fs.existsSync(configPath);
 
-  const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
+  const translations = await getServerSideTranslations(dashboardNamespaces, locale, req, res);
 
   if (!configExists) {
     // Redirect to 404

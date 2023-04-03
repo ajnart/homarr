@@ -5,13 +5,16 @@ import Head from 'next/head';
 import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
-import { NotificationsProvider } from '@mantine/notifications';
+import Consola from 'consola';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { appWithTranslation } from 'next-i18next';
-
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import { Notifications } from '@mantine/notifications';
 import 'video.js/dist/video-js.css';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
@@ -24,12 +27,14 @@ import { ConfigProvider } from '../config/provider';
 import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
-import { queryClient } from '../tools/queryClient';
+import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
 import {
   ServerSidePackageAttributesType,
   getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
-import { theme } from '../tools/theme';
+import { theme } from '../tools/server/theme/theme';
+
+import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
 
 function App(
@@ -112,21 +117,20 @@ function App(
               withNormalizeCSS
             >
               <ConfigProvider>
-                <NotificationsProvider limit={4} position="bottom-left">
-                  <ModalsProvider
-                    modals={{
-                      editApp: EditAppModal,
-                      selectElement: SelectElementModal,
-                      integrationOptions: WidgetsEditModal,
-                      integrationRemove: WidgetsRemoveModal,
-                      categoryEditModal: CategoryEditModal,
-                      changeAppPositionModal: ChangeAppPositionModal,
-                      changeIntegrationPositionModal: ChangeWidgetPositionModal,
-                    }}
-                  >
-                    <Component {...pageProps} />
-                  </ModalsProvider>
-                </NotificationsProvider>
+                <Notifications limit={4} position="bottom-left" />
+                <ModalsProvider
+                  modals={{
+                    editApp: EditAppModal,
+                    selectElement: SelectElementModal,
+                    integrationOptions: WidgetsEditModal,
+                    integrationRemove: WidgetsRemoveModal,
+                    categoryEditModal: CategoryEditModal,
+                    changeAppPositionModal: ChangeAppPositionModal,
+                    changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                  }}
+                >
+                  <Component {...pageProps} />
+                </ModalsProvider>
               </ConfigProvider>
             </MantineProvider>
           </ColorTheme.Provider>

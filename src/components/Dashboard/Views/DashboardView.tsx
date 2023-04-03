@@ -61,7 +61,7 @@ const usePrepareGridstack = () => {
   }, [width]);
 
   return {
-    isReady: !!mainAreaWidth,
+    isReady: Boolean(mainAreaWidth),
     mainAreaRef,
   };
 };

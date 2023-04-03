@@ -8,10 +8,7 @@ import type {
   UsenetHistoryResponse,
 } from '../../../pages/api/modules/usenet/history';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import type {
-  UsenetQueueRequestParams,
-  UsenetQueueResponse,
-} from '../../../pages/api/modules/usenet/queue';
+import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
 import { queryClient } from '../../../tools/queryClient';
 
@@ -30,7 +27,7 @@ export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
-      enabled: !!params.appId,
+      enabled: Boolean(params.appId),
     }
   );
 

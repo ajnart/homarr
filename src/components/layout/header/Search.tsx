@@ -184,7 +184,6 @@ export function Search() {
         shadow="md"
         radius="md"
         zIndex={100}
-        transition="pop-top-right"
       >
         <Popover.Target>
           <Autocomplete
@@ -300,7 +299,7 @@ export function Search() {
     setSearchEngine(item);
     showNotification({
       radius: 'lg',
-      disallowClose: true,
+      withCloseButton: false,
       id: 'spotlight',
       autoClose: 1000,
       icon: <ActionIcon size="sm">{item.icon}</ActionIcon>,

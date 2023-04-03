@@ -58,7 +58,12 @@ export default function ConfigChanger() {
         size="lg"
         radius="md"
       >
-        <Notification loading title={t('configSelect.loadingNew')} radius="md" disallowClose>
+        <Notification
+          loading
+          title={t('configSelect.loadingNew')}
+          radius="md"
+          withCloseButton={false}
+        >
           {t('configSelect.pleaseWait')}
         </Notification>
       </Dialog>

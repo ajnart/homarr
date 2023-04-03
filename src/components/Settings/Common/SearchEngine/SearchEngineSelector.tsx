@@ -61,6 +61,7 @@ export const SearchEngineSelector = ({ searchEngine }: Props) => {
             <Space mb="md" />
             <TextInput
               label={t('customEngine.label')}
+              name={t('configurationName')}
               description={t('tips.placeholderTip')}
               placeholder={t('customEngine.placeholder')}
               value={searchUrl}

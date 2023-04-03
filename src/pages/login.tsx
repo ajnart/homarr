@@ -63,7 +63,7 @@ export default function AuthenticationTitle() {
               title: t('notifications.checking.title'),
               message: t('notifications.checking.message'),
               autoClose: false,
-              disallowClose: true,
+              withCloseButton: false,
             });
             axios
               .post('/api/configs/tryPassword', {

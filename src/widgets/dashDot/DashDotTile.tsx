@@ -233,7 +233,7 @@ const fetchDashDotInfo = async (configName: string | undefined) => {
 
 export const useDashDotTileStyles = createStyles((theme) => ({
   graphsContainer: {
-    marginRight: theme.spacing.sm * -1, // fix because margin collapses weirdly
+    marginRight: `calc(${theme.spacing.sm} * -1)`,
   },
 }));
 

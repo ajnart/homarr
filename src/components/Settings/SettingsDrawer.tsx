@@ -41,7 +41,7 @@ export function SettingsDrawer({
 
   return (
     <Drawer
-      size="xl"
+      size="lg"
       padding="lg"
       position="right"
       title={<Title order={5}>{t('title')}</Title>}

@@ -18,8 +18,8 @@ import { useTranslation } from 'next-i18next';
 import { v4 as uuidv4 } from 'uuid';
 
 import { useConfigContext } from '../../config/provider';
-import { tryMatchService } from '../../tools/addToHomarr';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
+import { MatchingImages, ServiceType, tryMatchPort } from '../../tools/types';
 import { AppType } from '../../types/app';
 
 function SendDockerCommand(
@@ -35,7 +35,7 @@ function SendDockerCommand(
     title: `${t(`actions.${action}.start`)} ${containerName}`,
     message: undefined,
     autoClose: false,
-    disallowClose: true,
+    withCloseButton: false,
   });
   axios
     .get(`/api/docker/container/${containerId}?action=${action}`)
@@ -206,3 +206,36 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
     </Group>
   );
 }
+
+/**
+ * @deprecated legacy code
+ */
+function tryMatchType(imageName: string): ServiceType {
+  const match = MatchingImages.find(({ image }) => imageName.includes(image));
+  if (match) {
+    return match.type;
+  }
+  // TODO: Remove this legacy code
+  return 'Other';
+}
+
+/**
+ * @deprecated
+ * @param container the container to match
+ * @returns a new service
+ */
+const tryMatchService = (container: Dockerode.ContainerInfo | undefined) => {
+  if (container === undefined) return {};
+  const name = container.Names[0].substring(1);
+  const type = tryMatchType(container.Image);
+  const port = tryMatchPort(type.toLowerCase())?.value ?? container.Ports[0]?.PublicPort;
+  return {
+    name,
+    id: container.Id,
+    type: tryMatchType(container.Image),
+    url: `localhost${port ? `:${port}` : ''}`,
+    icon: `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${name
+      .replace(/\s+/g, '-')
+      .toLowerCase()}.png`,
+  };
+};

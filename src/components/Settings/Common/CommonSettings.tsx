@@ -19,7 +19,7 @@ export default function CommonSettings() {
     );
   }
   return (
-    <ScrollArea style={{ height: height - 100 }} offsetScrollbars>
+    <ScrollArea style={{ height: height - 100 }} scrollbarSize={5}>
       <Stack>
         <SearchEngineSelector searchEngine={config.settings.common.searchEngine} />
         <Space />

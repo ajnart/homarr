@@ -7,7 +7,6 @@ import { i18n } from 'next-i18next';
 
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
-import { isToday } from '../../tools/isToday';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
@@ -73,39 +72,15 @@ function CalendarTile({ widget }: CalendarTileProps) {
   return (
     <Group grow style={{ height: '100%' }}>
       <Calendar
-        m={0}
-        p={0}
-        month={month}
-        // Should be offset 5px to the left
-        style={{ position: 'relative', top: -15 }}
-        onMonthChange={setMonth}
+        defaultDate={new Date()}
+        onPreviousMonth={setMonth}
+        onNextMonth={setMonth}
         size="xs"
         locale={i18n?.resolvedLanguage ?? 'en'}
-        fullWidth
-        onChange={() => {}}
-        firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
-        dayStyle={(date) => ({
-          margin: -1,
-          backgroundColor: isToday(date)
-            ? colorScheme === 'dark'
-              ? colors.dark[5]
-              : colors.gray[0]
-            : undefined,
-        })}
+        firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
         hideWeekdays
-        styles={{
-          weekdayCell: {
-            margin: 0,
-            padding: 0,
-          },
-          calendarHeader: {
-            position: 'relative',
-            margin: 0,
-            padding: 0,
-          },
-        }}
-        allowLevelChange={false}
-        dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
+        date={month}
+        hasNextLevel={false}
         renderDay={(date) => (
           <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
         )}

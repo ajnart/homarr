@@ -6,11 +6,15 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
+    'plugin:vitest/recommended',
   ],
-  plugins: ['@typescript-eslint', 'react-hooks', 'react', 'unused-imports', 'jsx-a11y'],
+  plugins: ['testing-library', 'react-hooks', 'react', 'unused-imports', 'vitest'],
+  overrides: [
+    {
+      files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -29,6 +33,13 @@ module.exports = {
     'react/prop-types': 'off',
     'no-continue': 'off',
     'linebreak-style': 0,
+    'vitest/max-nested-describe': [
+      'error',
+      {
+        max: 3,
+      },
+    ],
+    'testing-library/no-node-access': ['error', { allowContainerFirstChild: true }],
   },
   root: true,
 };
