@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": ""
+    "description": "Prikaže indikator stanja glede na odzivno kodo HTTP danega URL-ja."
   },
   "states": {
     "online": "Povezan {{response}}",
