@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ups, prišlo je do napake!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Podrobnosti",
+      "tryAgain": "Poskusite znova"
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "Opravičujemo se za nevšečnosti! To se ne bi smelo zgoditi - prosimo, da to težavo prijavite na GitHubu.",
+    "label": "Vaša napaka",
+    "reportButton": "Prijavite to napako"
   }
 }
