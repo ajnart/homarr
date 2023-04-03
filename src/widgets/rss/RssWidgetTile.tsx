@@ -1,3 +1,5 @@
+import { defineWidget } from '../helper';
+import { IWidget } from '../widgets';
 import {
   ActionIcon,
   Badge,
@@ -29,8 +31,6 @@ import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useState } from 'react';
-import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
 
 const definition = defineWidget({
   id: 'rss',
@@ -56,11 +56,11 @@ interface RssTileProps {
   widget: IRssWidget;
 }
 
-const useGetRssFeed = (feedUrl: string) =>
+export const useGetRssFeed = (feedUrl: string, widgetId: string) =>
   useQuery({
     queryKey: ['rss-feed', feedUrl],
     queryFn: async () => {
-      const response = await fetch('/api/modules/rss');
+      const response = await fetch(`/api/modules/rss?widgetId=${widgetId}`);
       return response.json();
     },
   });
