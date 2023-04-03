@@ -18,7 +18,9 @@ export const getFrontendConfig = (name: string): ConfigType => {
     Consola.warn(
       `There are apps that have missing configuration options: [${someAppsWithoutProps
         .map((app) => app.name)
-        .join(', ')}] please input the correct secrets once again for the concerned app(s), save them, exit edit mode and reload the page.`
+        .join(
+          ', '
+        )}] please input the correct secrets once again for the concerned app(s), save them, exit edit mode and reload the page.`
     );
   }
 
