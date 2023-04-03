@@ -15,6 +15,7 @@ import {
   Stack,
   Text,
   Title,
+  createStyles,
 } from '@mantine/core';
 import {
   IconBulldozer,
@@ -24,12 +25,11 @@ import {
   IconRefresh,
   IconRss,
   IconSpeakerphone,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
-import { useState } from 'react';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 

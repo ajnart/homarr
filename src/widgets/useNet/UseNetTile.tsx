@@ -1,7 +1,5 @@
-import { Badge, Button, Group, Select, Stack, Tabs, Text, Title } from '@mantine/core';
-import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
 import { useEffect, useState } from 'react';
-
+import { Badge, Button, Group, Select, Stack, Tabs, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
 import dayjs from 'dayjs';
@@ -48,8 +46,9 @@ interface UseNetTileProps {
 function UseNetTile({ widget }: UseNetTileProps) {
   const { t } = useTranslation('modules/usenet');
   const { config } = useConfigContext();
-  const downloadApps =
-    config.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ?? [];
+  const downloadApps = config.apps.filter(
+    (x) => x.integration && downloadAppTypes.includes(x.integration.type)
+  );
   const { ref, width, height } = useElementSize();
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]!.id);

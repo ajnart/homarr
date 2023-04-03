@@ -1,4 +1,4 @@
-import { createStyles, Title, useMantineTheme, getStylesRef } from '@mantine/core';
+import { Title, createStyles, getStylesRef, useMantineTheme } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
@@ -40,7 +40,57 @@ const generateIframeSrc = (
   );
 };
 
-export const useStyles = createStyles((theme, _params) => ({
+export const DashDotGraph = ({
+  graph,
+  graphHeight,
+  isCompact,
+  multiView,
+  dashDotUrl,
+  usePercentages,
+  info,
+}: DashDotGraphProps) => {
+  const { t } = useTranslation('modules/dashdot');
+  const { classes } = useStyles();
+  const { colorScheme, colors, radius } = useMantineTheme();
+
+  if (graph === 'storage' && isCompact) {
+    return <DashDotCompactStorage info={info} />;
+  }
+
+  if (graph === 'network' && isCompact) {
+    return <DashDotCompactNetwork info={info} />;
+  }
+
+  const title = t(`card.graphs.${graph}.title`);
+  const iframeSrc = generateIframeSrc(
+    dashDotUrl,
+    graph,
+    multiView,
+    usePercentages,
+    colorScheme,
+    colors,
+    radius
+  );
+
+  return (
+    <div className={classes.graphContainer}>
+      <Title className={classes.graphTitle} order={4}>
+        {title}
+      </Title>
+      <iframe
+        className={classes.iframe}
+        key={graph}
+        title={title}
+        src={iframeSrc}
+        style={{
+          height: `${graphHeight}px`,
+        }}
+      />
+    </div>
+  );
+};
+
+export const useStyles = createStyles((theme, _params, getRef) => ({
   iframe: {
     flex: '1 0 auto',
     maxWidth: '100%',

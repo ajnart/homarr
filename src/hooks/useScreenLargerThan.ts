@@ -1,5 +1,6 @@
 import { MantineSize, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
+
 import { MIN_WIDTH_MOBILE } from '../constants/constants';
 
 export const useScreenLargerThan = (size: MantineSize | number) => {

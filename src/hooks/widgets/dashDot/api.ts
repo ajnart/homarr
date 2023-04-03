@@ -8,9 +8,12 @@ import type {
   UsenetHistoryResponse,
 } from '../../../pages/api/modules/usenet/history';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
+import {
+  UsenetQueueRequestParams,
+  UsenetQueueResponse,
+} from '../../../pages/api/modules/usenet/queue';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
-import { queryClient } from '../../../tools/queryClient';
+import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 
 const POLLING_INTERVAL = 2000;
 

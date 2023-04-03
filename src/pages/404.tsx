@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetServerSidePropsContext } from 'next';
 import Link from 'next/link';
 import {
   Button,
@@ -9,10 +10,7 @@ import {
   createStyles,
   useMantineTheme,
 } from '@mantine/core';
-import React from 'react';
 
-import { GetServerSidePropsContext } from 'next';
-import Link from 'next/link';
 import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
 
 const useStyles = createStyles((theme) => ({

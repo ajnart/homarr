@@ -226,7 +226,7 @@ function tryMatchType(imageName: string): ServiceType {
  */
 const tryMatchService = (container: Dockerode.ContainerInfo | undefined) => {
   if (container === undefined) return {};
-  const name = container.Names[0].substring(1);
+  const name = container.Names[0]!.substring(1);
   const type = tryMatchType(container.Image);
   const port = tryMatchPort(type.toLowerCase())?.value ?? container.Ports[0]?.PublicPort;
   return {

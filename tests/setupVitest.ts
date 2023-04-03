@@ -1,6 +1,7 @@
 //setupVitest.js or similar file
-import createFetchMock from 'vitest-fetch-mock';
+
 import { vi } from 'vitest';
+import createFetchMock from 'vitest-fetch-mock';
 
 const fetchMocker = createFetchMock(vi);
 

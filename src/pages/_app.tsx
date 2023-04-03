@@ -5,16 +5,13 @@ import Head from 'next/head';
 import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
-import Consola from 'consola';
+import { Notifications } from '@mantine/notifications';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { appWithTranslation } from 'next-i18next';
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import { Notifications } from '@mantine/notifications';
+
 import 'video.js/dist/video-js.css';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
@@ -33,8 +30,6 @@ import {
   getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
-
-import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
 
 function App(
@@ -77,7 +72,7 @@ function App(
     if (!props.editModeEnabled) {
       setDisabled();
     }
-  }, []);
+  });
 
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
