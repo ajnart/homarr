@@ -57,7 +57,7 @@
           "message": "Brisanje konfiguracije ni uspelo"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
+          "title": "Privzete konfiguracije ni mogoče izbrisati",
           "message": "Konfiguracija ni bila izbrisana iz datotečnega sistema"
         }
       }
