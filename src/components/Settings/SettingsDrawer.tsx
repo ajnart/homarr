@@ -1,8 +1,8 @@
 import { Drawer, Tabs, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../config/provider';
 import { useConfigStore } from '../../config/store';
-
 import CommonSettings from './Common/CommonSettings';
 import CustomizationSettings from './Customization/CustomizationSettings';
 

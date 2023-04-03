@@ -1,9 +1,10 @@
 import { Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { Dropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
-import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons';
+import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons-react';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigStore } from '../../config/store';
 import { ConfigType } from '../../types/config';
 
@@ -15,6 +16,9 @@ export const LoadConfigComponent = () => {
   return (
     <Dropzone.FullScreen
       onDrop={async (files) => {
+        if (files.length === 0 || files[0] === undefined) {
+          return;
+        }
         const fileName = files[0].name.replaceAll('.json', '');
         const fileText = await files[0].text();
 
@@ -61,7 +65,7 @@ export const LoadConfigComponent = () => {
             <IconUpload
               size={50}
               stroke={1.5}
-              color={theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 4 : 6]}
+              color={theme.colors[theme.primaryColor]![theme.colorScheme === 'dark' ? 4 : 6]}
             />
             <Title>{t('dropzone.accept.title')}</Title>
             <Text size="xl" inline>

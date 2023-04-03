@@ -1,8 +1,8 @@
+import { forwardRef } from 'react';
 import {
   Autocomplete,
   Box,
   CloseButton,
-  createStyles,
   Group,
   Image,
   Loader,
@@ -11,11 +11,12 @@ import {
   Stack,
   Text,
   Title,
+  createStyles,
 } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconSearch } from '@tabler/icons';
+import { IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { forwardRef } from 'react';
+
 import { humanFileSize } from '../../../../../../tools/humanFileSize';
 import { NormalizedIconRepositoryResult } from '../../../../../../tools/server/images/abstract-icons-repository';
 import { AppType } from '../../../../../../types/app';

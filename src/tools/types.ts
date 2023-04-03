@@ -1,4 +1,5 @@
 import { MantineTheme } from '@mantine/core';
+
 import { OptionValues } from '../modules/ModuleTypes';
 
 export interface Settings {

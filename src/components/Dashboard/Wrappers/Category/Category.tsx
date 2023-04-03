@@ -1,11 +1,12 @@
 import { Accordion, Title } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
+
 import { useConfigContext } from '../../../../config/provider';
 import { CategoryType } from '../../../../types/category';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
-import { useGridstack } from '../gridstack/use-gridstack';
 import { WrapperContent } from '../WrapperContent';
+import { useGridstack } from '../gridstack/use-gridstack';
 import { CategoryEditMenu } from './CategoryEditMenu';
 
 interface DashboardCategoryProps {

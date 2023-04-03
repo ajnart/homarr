@@ -1,12 +1,13 @@
 import { Stack } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconKey } from '@tabler/icons';
+import { IconKey } from '@tabler/icons-react';
+
 import {
+  AppIntegrationPropertyType,
+  AppType,
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
-  AppIntegrationPropertyType,
-  AppType,
 } from '../../../../../../../../types/app';
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
 
@@ -44,8 +45,8 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
         }
         const formValue = form.values.integration?.properties[indexInFormValue];
 
-        const isPresent = formValue?.isDefined;
-        const accessabilityType = formValue?.type;
+        const isPresent = formValue?.isDefined ?? false;
+        const accessabilityType = formValue?.type ?? 'private';
 
         if (!definition) {
           return (

@@ -1,8 +1,9 @@
-import { Center, createStyles, Grid, Stack, Text, Title } from '@mantine/core';
-import { IconUnlink } from '@tabler/icons';
+import { Center, Grid, Stack, Text, Title, createStyles } from '@mantine/core';
+import { IconUnlink } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';

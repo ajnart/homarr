@@ -1,15 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
+
+import { forwardRef } from 'react';
 import { Group, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-import { forwardRef } from 'react';
+
 import {
-  IntegrationField,
-  integrationFieldDefinitions,
-  integrationFieldProperties,
   AppIntegrationPropertyType,
   AppIntegrationType,
   AppType,
+  IntegrationField,
+  integrationFieldDefinitions,
+  integrationFieldProperties,
 } from '../../../../../../../../types/app';
 
 interface IntegrationSelectorProps {
@@ -112,7 +114,7 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     <Select
       label={t('integration.type.label')}
       description={t('integration.type.description')}
-      placeholder={t('integration.type.placeholder')}
+      placeholder={t('integration.type.placeholder') ?? ''}
       itemComponent={SelectItemComponent}
       data={data}
       maxDropdownHeight={250}

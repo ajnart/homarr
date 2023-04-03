@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { create } from 'zustand';
+
 import { ConfigType } from '../types/config';
 
 export const useConfigStore = create<UseConfigStoreType>((set, get) => ({

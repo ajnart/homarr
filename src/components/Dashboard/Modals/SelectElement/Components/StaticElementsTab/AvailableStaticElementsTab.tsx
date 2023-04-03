@@ -1,6 +1,7 @@
 import { Grid, Text } from '@mantine/core';
-import { IconCursorText } from '@tabler/icons';
+import { IconCursorText } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { GenericAvailableElementType } from '../Shared/GenericElementType';
 import { SelectorBackArrow } from '../Shared/SelectorBackArrow';
 

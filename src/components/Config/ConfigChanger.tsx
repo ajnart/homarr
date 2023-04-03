@@ -1,10 +1,11 @@
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { Center, Dialog, Loader, Notification, Select, Tooltip } from '@mantine/core';
 import { useToggle } from '@mantine/hooks';
 import { useQuery } from '@tanstack/react-query';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+
 import { useConfigContext } from '../../config/provider';
 
 export default function ConfigChanger() {

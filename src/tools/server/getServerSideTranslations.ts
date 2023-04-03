@@ -1,5 +1,5 @@
-import { getCookie } from 'cookies-next';
 import { IncomingMessage, ServerResponse } from 'http';
+import { getCookie } from 'cookies-next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const getServerSideTranslations = async (

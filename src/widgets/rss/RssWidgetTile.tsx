@@ -1,9 +1,10 @@
+import { useState } from 'react';
+import Link from 'next/link';
 import {
   ActionIcon,
   Badge,
   Card,
   Center,
-  createStyles,
   Flex,
   Group,
   Image,
@@ -15,6 +16,7 @@ import {
   Text,
   Title,
   UnstyledButton,
+  createStyles,
 } from '@mantine/core';
 import {
   IconBulldozer,
@@ -24,10 +26,9 @@ import {
   IconRefresh,
   IconRss,
   IconSpeakerphone,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
-import { useState } from 'react';
+
 import { useGetRssFeed } from '../../hooks/widgets/rss/useGetRssFeed';
 import { sleep } from '../../tools/client/time';
 import { defineWidget } from '../helper';

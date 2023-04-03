@@ -1,18 +1,19 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Results } from 'sabnzbd-api';
-import type {
-  UsenetQueueRequestParams,
-  UsenetQueueResponse,
-} from '../../../pages/api/modules/usenet/queue';
+
+import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
 import type {
   UsenetHistoryRequestParams,
   UsenetHistoryResponse,
 } from '../../../pages/api/modules/usenet/history';
-import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import { queryClient } from '../../../tools/queryClient';
+import type {
+  UsenetQueueRequestParams,
+  UsenetQueueResponse,
+} from '../../../pages/api/modules/usenet/queue';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
+import { queryClient } from '../../../tools/queryClient';
 
 const POLLING_INTERVAL = 2000;
 

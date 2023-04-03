@@ -1,9 +1,9 @@
-import Consola from 'consola';
 import React, { ReactNode } from 'react';
-import { openModal } from '@mantine/modals';
-import { withTranslation } from 'next-i18next';
 import { Button, Card, Center, Code, Group, Stack, Text, Title } from '@mantine/core';
-import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/icons';
+import { openModal } from '@mantine/modals';
+import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/icons-react';
+import Consola from 'consola';
+import { withTranslation } from 'next-i18next';
 
 type ErrorBoundaryState = {
   hasError: boolean;
@@ -94,7 +94,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
                             mt="md"
                             fullWidth
                           >
-                            {(this.props.t('modal.reportButton'))}
+                            {this.props.t('modal.reportButton')}
                           </Button>
                         </>
                       ),

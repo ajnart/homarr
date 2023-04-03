@@ -1,6 +1,7 @@
 import { ScrollArea, Stack, Text } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
+
 import { CustomizationSettingsAccordeon } from './CustomizationAccordeon';
 
 export default function CustomizationSettings() {

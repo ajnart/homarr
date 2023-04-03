@@ -1,19 +1,20 @@
+import { useEffect, useState } from 'react';
 import {
-  Table,
+  Badge,
   Checkbox,
   Group,
-  Badge,
-  createStyles,
   ScrollArea,
-  TextInput,
-  useMantineTheme,
+  Table,
   Text,
+  TextInput,
+  createStyles,
+  useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconSearch } from '@tabler/icons';
+import { IconSearch } from '@tabler/icons-react';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
+
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({

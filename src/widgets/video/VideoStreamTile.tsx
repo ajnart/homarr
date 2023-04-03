@@ -1,7 +1,8 @@
-import { Center, Group, Stack, Title } from '@mantine/core';
-import { IconDeviceCctv, IconHeartBroken } from '@tabler/icons';
-import { useTranslation } from 'next-i18next';
 import dynamic from 'next/dynamic';
+import { Center, Group, Stack, Title } from '@mantine/core';
+import { IconDeviceCctv, IconHeartBroken } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 

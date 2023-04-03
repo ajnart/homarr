@@ -1,16 +1,17 @@
+import { useEffect, useState } from 'react';
+import { GetServerSidePropsContext } from 'next';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
 import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
-import Consola from 'consola';
 import { NotificationsProvider } from '@mantine/notifications';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Consola from 'consola';
 import { getCookie } from 'cookies-next';
-import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
+
 import 'video.js/dist/video-js.css';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
@@ -20,16 +21,15 @@ import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsE
 import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
+import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/queryClient';
 import {
-  getServiceSidePackageAttributes,
   ServerSidePackageAttributesType,
+  getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/theme';
-
-import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
 
 function App(
@@ -150,7 +150,7 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     Consola.debug(`Overriding the default color scheme with ${process.env.DEFAULT_COLOR_SCHEME}`);
   }
 
-  const colorScheme: ColorScheme = process.env.DEFAULT_COLOR_SCHEME as ColorScheme ?? 'light';
+  const colorScheme: ColorScheme = (process.env.DEFAULT_COLOR_SCHEME as ColorScheme) ?? 'light';
 
   return {
     colorScheme: getCookie('color-scheme', ctx) || 'light',

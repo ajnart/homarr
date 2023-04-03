@@ -1,9 +1,10 @@
 // disabled due to too many dynamic targets for next image cache
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
-import { createStyles, Loader } from '@mantine/core';
+import { Loader, createStyles } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
+
 import { AppType } from '../../../../../../types/app';
 
 interface DebouncedAppIconProps {

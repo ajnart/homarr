@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react';
 import { Indicator, Tooltip } from '@mantine/core';
-import { IconPlug as Plug } from '@tabler/icons';
+import { IconPlug as Plug } from '@tabler/icons-react';
 import axios, { AxiosResponse } from 'axios';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
+
 import { useConfigContext } from '../../config/provider';
 import { IModule } from '../ModuleTypes';
 

@@ -1,6 +1,6 @@
 import { Badge, BadgeVariant, MantineSize } from '@mantine/core';
-import { useTranslation } from 'next-i18next';
 import Dockerode from 'dockerode';
+import { useTranslation } from 'next-i18next';
 
 export interface ContainerStateProps {
   state: Dockerode.ContainerInfo['State'];

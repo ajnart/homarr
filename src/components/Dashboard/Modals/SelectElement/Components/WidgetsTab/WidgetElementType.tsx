@@ -1,7 +1,8 @@
 import { useModals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconChecks, TablerIcon } from '@tabler/icons';
+import { IconChecks, Icon } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../../../../config/provider';
 import { useConfigStore } from '../../../../../../config/store';
 import { IWidget, IWidgetDefinition } from '../../../../../../widgets/widgets';
@@ -10,7 +11,7 @@ import { GenericAvailableElementType } from '../Shared/GenericElementType';
 
 interface WidgetElementTypeProps {
   id: string;
-  image: string | TablerIcon;
+  image: string | Icon;
   disabled?: boolean;
   widget: IWidgetDefinition;
 }

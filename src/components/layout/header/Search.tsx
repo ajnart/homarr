@@ -1,25 +1,26 @@
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import {
   ActionIcon,
   Autocomplete,
   Box,
-  createStyles,
   Divider,
   Kbd,
   Menu,
   Popover,
   ScrollArea,
   Tooltip,
+  createStyles,
 } from '@mantine/core';
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/icons';
+import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+
 import { useConfigContext } from '../../../config/provider';
-import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
+import { OverseerrMediaDisplay } from '../../../modules/common';
 import { ConfigType } from '../../../types/config';
 import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import Tip from '../Tip';
@@ -131,6 +132,7 @@ export function Search() {
       </div>
     )
   );
+  AutoCompleteItem.displayName = 'AutoCompleteItem';
   useEffect(() => {
     // Refresh the default search engine every time the config for it changes #521
     setSearchEngine(searchEnginesList[0]);

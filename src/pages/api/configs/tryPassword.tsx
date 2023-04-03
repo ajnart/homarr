@@ -1,5 +1,5 @@
-import Consola from 'consola';
 import { NextApiRequest, NextApiResponse } from 'next';
+import Consola from 'consola';
 
 function Post(req: NextApiRequest, res: NextApiResponse) {
   const { tried, type = 'password' } = req.body;

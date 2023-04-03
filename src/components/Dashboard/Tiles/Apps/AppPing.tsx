@@ -2,6 +2,7 @@ import { Indicator, Tooltip } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../../config/provider';
 import { AppType } from '../../../../types/app';
 

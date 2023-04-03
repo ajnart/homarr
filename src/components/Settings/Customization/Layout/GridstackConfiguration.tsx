@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { Alert, Button, Grid, Input, LoadingOverlay, Slider } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { IconCheck, IconReload } from '@tabler/icons';
+import { IconCheck, IconReload } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { GridstackBreakpoints } from '../../../../constants/gridstack-breakpoints';

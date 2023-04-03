@@ -1,9 +1,10 @@
-import { createStyles, Group, MantineThemeColors, useMantineTheme } from '@mantine/core';
+import { useState } from 'react';
+import { Group, MantineThemeColors, createStyles, useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
-import { IconCalendarTime } from '@tabler/icons';
+import { IconCalendarTime } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { i18n } from 'next-i18next';
-import { useState } from 'react';
+
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
 import { isToday } from '../../tools/isToday';

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { ConfigType } from '../types/config';
 import { useConfigContext } from './provider';
 import { useConfigStore } from './store';

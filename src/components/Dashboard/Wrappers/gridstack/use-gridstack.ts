@@ -1,12 +1,13 @@
+import { MutableRefObject, RefObject, createRef, useEffect, useMemo, useRef } from 'react';
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
-import { createRef, MutableRefObject, RefObject, useEffect, useMemo, useRef } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { AppType } from '../../../../types/app';
 import { AreaType } from '../../../../types/area';
 import { IWidget } from '../../../../widgets/widgets';
 import { useEditModeStore } from '../../Views/useEditModeStore';
-import { initializeGridstack, TileWithUnknownLocation } from './init-gridstack';
+import { TileWithUnknownLocation, initializeGridstack } from './init-gridstack';
 import { useGridstackStore, useWrapperColumnCount } from './store';
 
 interface UseGristackReturnType {

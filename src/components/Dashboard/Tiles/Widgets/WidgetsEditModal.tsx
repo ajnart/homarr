@@ -1,3 +1,4 @@
+import { FC, useState } from 'react';
 import {
   Alert,
   Button,
@@ -12,16 +13,19 @@ import {
   TextInput,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { IconAlertTriangle } from '@tabler/icons';
+import { IconAlertTriangle } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
-import { FC, useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { mapObject } from '../../../../tools/client/objects';
 import { useColorTheme } from '../../../../tools/color';
 import Widgets from '../../../../widgets';
-import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
-import { IWidget } from '../../../../widgets/widgets';
+import {
+  IWidget,
+  type IDraggableListInputValue,
+  type IWidgetOptionValue,
+} from '../../../../widgets/widgets';
 import { DraggableList } from './DraggableList';
 
 export type WidgetEditModalInnerProps = {

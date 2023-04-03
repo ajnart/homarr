@@ -1,7 +1,8 @@
-import { Alert, Paper, SegmentedControl, Space, Stack, TextInput, Title } from '@mantine/core';
-import { IconInfoCircle } from '@tabler/icons';
-import { useTranslation } from 'next-i18next';
 import { ChangeEventHandler, useState } from 'react';
+import { Alert, Paper, SegmentedControl, Space, Stack, TextInput, Title } from '@mantine/core';
+import { IconInfoCircle } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import {

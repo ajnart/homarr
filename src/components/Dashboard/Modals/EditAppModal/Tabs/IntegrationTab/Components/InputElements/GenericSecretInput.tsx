@@ -1,26 +1,27 @@
+import { useState } from 'react';
 import {
+  Badge,
   Button,
   Card,
-  createStyles,
   Flex,
   Grid,
   Group,
   PasswordInput,
+  Text,
   ThemeIcon,
   Title,
-  Text,
-  Badge,
   Tooltip,
+  createStyles,
 } from '@mantine/core';
-import { TablerIcon } from '@tabler/icons';
+import { Icon } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+
 import { AppIntegrationPropertyAccessabilityType } from '../../../../../../../../types/app';
 
 interface GenericSecretInputProps {
   label: string;
   value: string;
-  setIcon: TablerIcon;
+  setIcon: Icon;
   secretIsPresent: boolean;
   type: AppIntegrationPropertyAccessabilityType;
   onClickUpdateButton: (value: string | undefined) => void;

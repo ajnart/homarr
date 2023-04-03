@@ -2,6 +2,7 @@ import { Button, Group, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { CategoryType } from '../../../../types/category';

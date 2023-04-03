@@ -1,14 +1,15 @@
-import { Center, Group, Loader, Stack } from '@mantine/core';
 import { useEffect, useMemo, useRef } from 'react';
+import { Center, Group, Loader, Stack } from '@mantine/core';
+
 import { useConfigContext } from '../../../config/provider';
 import { useResize } from '../../../hooks/use-resize';
 import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
 import { CategoryType } from '../../../types/category';
 import { WrapperType } from '../../../types/wrapper';
 import { DashboardCategory } from '../Wrappers/Category/Category';
-import { useGridstackStore } from '../Wrappers/gridstack/store';
 import { DashboardSidebar } from '../Wrappers/Sidebar/Sidebar';
 import { DashboardWrapper } from '../Wrappers/Wrapper/Wrapper';
+import { useGridstackStore } from '../Wrappers/gridstack/store';
 
 export const DashboardView = () => {
   const wrappers = useWrapperItems();

@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Group, Stack, Text } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { Trans, useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 

@@ -1,3 +1,4 @@
+import { FunctionComponent, useState } from 'react';
 import {
   ActionIcon,
   Alert,
@@ -15,12 +16,12 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconAlertCircle, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
+import { IconAlertCircle, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
 import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
-import { FunctionComponent, useState } from 'react';
+
 import { useGetUsenetDownloads } from '../../hooks/widgets/dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 

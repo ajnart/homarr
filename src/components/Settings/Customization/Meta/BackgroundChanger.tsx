@@ -1,6 +1,7 @@
+import { ChangeEventHandler, useState } from 'react';
 import { TextInput } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { ChangeEventHandler, useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 

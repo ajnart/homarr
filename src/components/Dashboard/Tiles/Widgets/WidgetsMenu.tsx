@@ -1,5 +1,6 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
 import WidgetsDefinitions from '../../../../widgets';
 import { IWidget } from '../../../../widgets/widgets';

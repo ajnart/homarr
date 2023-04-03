@@ -1,6 +1,6 @@
-import axios from 'axios';
 import https from 'https';
 import { NextApiRequest, NextApiResponse } from 'next';
+import axios from 'axios';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
   // Parse req.body as a AppItem

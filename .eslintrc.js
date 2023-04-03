@@ -10,13 +10,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
   ],
-  plugins: [
-    '@typescript-eslint',
-    'react-hooks',
-    'react',
-    'unused-imports',
-    'jsx-a11y',
-  ],
+  plugins: ['@typescript-eslint', 'react-hooks', 'react', 'unused-imports', 'jsx-a11y'],
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -32,6 +26,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    'react/prop-types': 'off',
     'no-continue': 'off',
     'linebreak-style': 0,
   },

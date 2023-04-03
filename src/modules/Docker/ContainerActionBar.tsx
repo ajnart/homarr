@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+
+import { useState } from 'react';
 import { Button, Group } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
@@ -9,13 +11,13 @@ import {
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import axios from 'axios';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
 import { TFunction } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
+
 import { useConfigContext } from '../../config/provider';
 import { tryMatchService } from '../../tools/addToHomarr';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';

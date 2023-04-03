@@ -2,8 +2,9 @@ import { Button, Code, Menu, PasswordInput, Stack, Text } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { openModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconEdit, IconEditOff } from '@tabler/icons';
+import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import axios from 'axios';
+
 import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 
 function ModalContent() {

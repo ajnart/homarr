@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Avatar,
   Center,
@@ -9,8 +10,9 @@ import {
   Text,
   Title,
 } from '@mantine/core';
-import { IconAlertTriangle, IconMovie } from '@tabler/icons';
+import { IconAlertTriangle, IconMovie } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { AppAvatar } from '../../components/AppAvatar';
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
@@ -89,11 +91,16 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
             </tr>
           </thead>
           <tbody>
-            {data?.servers.map((server) => {
+            {data?.servers.map((server, serverIndex) => {
               const app = config?.apps.find((x) => x.id === server.appId);
-              return server.sessions.map((session, index) => (
-                <TableRow session={session} app={app} key={index} />
-              ));
+              return (
+                <React.Fragment key={`server-${serverIndex}`}>
+                  {server.sessions.map((session, sessionIndex) => {
+                    const uniqueKey = `server-${serverIndex}-session-${sessionIndex}`;
+                    return <TableRow key={uniqueKey} session={session} app={app} />;
+                  })}
+                </React.Fragment>
+              );
             })}
           </tbody>
         </Table>
@@ -110,6 +117,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
 
             return (
               <AppAvatar
+                key={server.appId}
                 iconUrl={app.appearance.iconUrl}
                 // If success, the color is undefined, otherwise it's red but if isFetching is true, it's yellow
                 color={server.success ? (isFetching ? 'yellow' : undefined) : 'red'}

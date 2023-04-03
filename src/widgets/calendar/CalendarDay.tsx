@@ -1,5 +1,6 @@
 import { Box, Indicator, IndicatorProps, Popover } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+
 import { MediaList } from './MediaList';
 import { MediasType } from './type';
 

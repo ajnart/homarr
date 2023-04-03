@@ -1,6 +1,6 @@
-import { IconArrowsUpDown } from '@tabler/icons';
-
 import dynamic from 'next/dynamic';
+import { IconArrowsUpDown } from '@tabler/icons-react';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Alert, Button, Group, Popover, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
@@ -9,9 +10,9 @@ import {
   IconBrush,
   IconClick,
   IconPlug,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { AppType } from '../../../../types/app';

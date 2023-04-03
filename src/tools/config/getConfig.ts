@@ -1,4 +1,5 @@
 import Consola from 'consola';
+
 import { BackendConfigType, ConfigType } from '../../types/config';
 import { backendMigrateConfig } from './backendMigrateConfig';
 import { configExists } from './configExists';

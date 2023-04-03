@@ -5,8 +5,9 @@ import {
   IconQuestionMark,
   IconVideo,
   TablerIcon,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { GenericSessionInfo } from '../../types/api/media-server/session-info';
 
 export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) => {

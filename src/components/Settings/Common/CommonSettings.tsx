@@ -1,5 +1,6 @@
 import { ScrollArea, Space, Stack, Text } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
+
 import { useConfigContext } from '../../../config/provider';
 import ConfigChanger from '../../Config/ConfigChanger';
 import ConfigActions from './Config/ConfigActions';

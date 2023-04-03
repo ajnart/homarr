@@ -1,9 +1,10 @@
-import { Box, createStyles, Group, Loader, Stack, Text, useMantineTheme } from '@mantine/core';
+import { useEffect, useState } from 'react';
+import { Box, Group, Loader, Stack, Text, createStyles, useMantineTheme } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
-import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs';
+import Editor from 'react-simple-code-editor';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import 'prismjs/components/prism-css';

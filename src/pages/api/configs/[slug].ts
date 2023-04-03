@@ -1,13 +1,10 @@
 import fs from 'fs';
-
 import path from 'path';
-
+import { NextApiRequest, NextApiResponse } from 'next';
 import Consola from 'consola';
 
-import { NextApiRequest, NextApiResponse } from 'next';
-
-import { BackendConfigType, ConfigType } from '../../../types/config';
 import { getConfig } from '../../../tools/config/getConfig';
+import { BackendConfigType, ConfigType } from '../../../types/config';
 
 function Put(req: NextApiRequest, res: NextApiResponse) {
   if (process.env.DISABLE_EDIT_MODE === 'true') {

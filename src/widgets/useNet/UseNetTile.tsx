@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   Badge,
   Button,
@@ -9,13 +10,12 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
-import { useEffect, useState } from 'react';
-
 import { useElementSize } from '@mantine/hooks';
+import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../config/provider';
 import {
   useGetUsenetInfo,

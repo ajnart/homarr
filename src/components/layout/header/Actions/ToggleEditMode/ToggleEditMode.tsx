@@ -1,14 +1,14 @@
 import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { hideNotification, showNotification } from '@mantine/notifications';
-import { IconEditCircle, IconEditCircleOff } from '@tabler/icons';
+import { IconEditCircle, IconEditCircleOff } from '@tabler/icons-react';
 import axios from 'axios';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
-
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/gridstack/store';
 import { useCardStyles } from '../../../useCardStyles';

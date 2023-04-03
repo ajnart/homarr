@@ -1,5 +1,6 @@
-import { GridItemHTMLElement, GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
+import { GridItemHTMLElement, GridStack, GridStackNode } from 'fily-publish-gridstack';
+
 import { AppType } from '../../../../types/app';
 import { ShapeType } from '../../../../types/shape';
 import { IWidget } from '../../../../widgets/widgets';

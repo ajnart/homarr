@@ -12,11 +12,12 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconFileDownload } from '@tabler/icons';
+import { IconFileDownload } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
+
 import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
 import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { AppIntegrationType } from '../../types/app';

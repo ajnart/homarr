@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 function Get(req: NextApiRequest, res: NextApiResponse) {
   // Get all the configs in the /data/configs folder

@@ -1,3 +1,4 @@
+import { FunctionComponent, useState } from 'react';
 import {
   Alert,
   Center,
@@ -12,15 +13,15 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconAlertCircle } from '@tabler/icons';
+import { IconAlertCircle } from '@tabler/icons-react';
 import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
-import { FunctionComponent, useState } from 'react';
+
 import { useGetUsenetHistory } from '../../hooks/widgets/dashDot/api';
-import { humanFileSize } from '../../tools/humanFileSize';
 import { parseDuration } from '../../tools/client/parseDuration';
+import { humanFileSize } from '../../tools/humanFileSize';
 
 dayjs.extend(duration);
 

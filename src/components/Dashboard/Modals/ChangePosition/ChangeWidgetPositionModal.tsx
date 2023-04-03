@@ -1,5 +1,6 @@
 import { SelectItem } from '@mantine/core';
-import { closeModal, ContextModalProps } from '@mantine/modals';
+import { ContextModalProps, closeModal } from '@mantine/modals';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import widgets from '../../../../widgets';

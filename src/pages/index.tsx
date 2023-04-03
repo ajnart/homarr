@@ -1,6 +1,6 @@
-import { getCookie, setCookie } from 'cookies-next';
 import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
+import { getCookie, setCookie } from 'cookies-next';
 
 import { LoadConfigComponent } from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';

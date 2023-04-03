@@ -1,8 +1,9 @@
-import { Collapse, createStyles, Flex, Stack, Text } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown, IconGripVertical } from '@tabler/icons';
-import { Reorder, useDragControls } from 'framer-motion';
 import { FC, ReactNode, useEffect, useRef } from 'react';
+import { Collapse, Flex, Stack, Text, createStyles } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { IconChevronDown, IconGripVertical } from '@tabler/icons-react';
+import { Reorder, useDragControls } from 'framer-motion';
+
 import { IDraggableListInputValue } from '../../../../widgets/widgets';
 
 const useStyles = createStyles((theme) => ({
@@ -64,7 +65,7 @@ export const DraggableList: FC<DraggableListParams> = (props) => {
         as="div"
       >
         {props.value.map((item) => (
-          <ListItem key={item.key} item={item} label={props.labels[item.key]}>
+          <ListItem key={item.key} item={item} label={props.labels[item.key] as string}>
             {props.children?.[item.key]}
           </ListItem>
         ))}

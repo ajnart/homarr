@@ -1,4 +1,4 @@
-import { IconKey, IconPassword, IconUser, TablerIcon } from '@tabler/icons';
+import { IconKey, IconPassword, IconUser, Icon } from '@tabler/icons-react';
 
 import { TileBaseType } from './tile';
 
@@ -87,7 +87,7 @@ export const integrationFieldProperties: {
 
 export type IntegrationFieldDefinitionType = {
   type: 'private' | 'public';
-  icon: TablerIcon;
+  icon: Icon;
   label: string;
 };
 

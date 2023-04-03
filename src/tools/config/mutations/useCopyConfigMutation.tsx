@@ -1,7 +1,8 @@
 import { showNotification } from '@mantine/notifications';
-import { IconCheck, IconX } from '@tabler/icons';
+import { IconCheck, IconX } from '@tabler/icons-react';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../config/provider';
 import { ConfigType } from '../../../types/config';
 

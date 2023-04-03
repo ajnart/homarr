@@ -1,5 +1,6 @@
-import { createStyles, Title, useMantineTheme } from '@mantine/core';
+import { Title, createStyles, useMantineTheme } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
 
@@ -13,53 +14,15 @@ interface DashDotGraphProps {
   info: DashDotInfo;
 }
 
-export const DashDotGraph = ({
-  graph,
-  graphHeight,
-  isCompact,
-  multiView,
-  dashDotUrl,
-  usePercentages,
-  info,
-}: DashDotGraphProps) => {
-  const { t } = useTranslation('modules/dashdot');
-  const { classes } = useStyles();
-
-  if (graph === 'storage' && isCompact) {
-    return <DashDotCompactStorage info={info} />;
-  }
-
-  if (graph === 'network' && isCompact) {
-    return <DashDotCompactNetwork info={info} />;
-  }
-
-  const title = t(`card.graphs.${graph}.title`);
-
-  return (
-    <div className={classes.graphContainer}>
-      <Title className={classes.graphTitle} order={4}>
-        {title}
-      </Title>
-      <iframe
-        className={classes.iframe}
-        key={graph}
-        title={title}
-        src={useIframeSrc(dashDotUrl, graph, multiView, usePercentages)}
-        style={{
-          height: `${graphHeight}px`,
-        }}
-      />
-    </div>
-  );
-};
-
-const useIframeSrc = (
+const generateIframeSrc = (
   dashDotUrl: string,
   graph: string,
   multiView: boolean,
-  usePercentages: boolean
+  usePercentages: boolean,
+  colorScheme: any,
+  colors: any,
+  radius: any
 ) => {
-  const { colorScheme, colors, radius } = useMantineTheme();
   const surface = (colorScheme === 'dark' ? colors.dark[7] : colors.gray[0]).substring(1); // removes # from hex value
 
   return (
@@ -74,6 +37,56 @@ const useIframeSrc = (
     `&showPercentage=${usePercentages.toString()}` +
     '&textOffset=16' +
     '&textSize=12'
+  );
+};
+
+export const DashDotGraph = ({
+  graph,
+  graphHeight,
+  isCompact,
+  multiView,
+  dashDotUrl,
+  usePercentages,
+  info,
+}: DashDotGraphProps) => {
+  const { t } = useTranslation('modules/dashdot');
+  const { classes } = useStyles();
+  const { colorScheme, colors, radius } = useMantineTheme();
+
+  if (graph === 'storage' && isCompact) {
+    return <DashDotCompactStorage info={info} />;
+  }
+
+  if (graph === 'network' && isCompact) {
+    return <DashDotCompactNetwork info={info} />;
+  }
+
+  const title = t(`card.graphs.${graph}.title`);
+  const iframeSrc = generateIframeSrc(
+    dashDotUrl,
+    graph,
+    multiView,
+    usePercentages,
+    colorScheme,
+    colors,
+    radius
+  );
+
+  return (
+    <div className={classes.graphContainer}>
+      <Title className={classes.graphTitle} order={4}>
+        {title}
+      </Title>
+      <iframe
+        className={classes.iframe}
+        key={graph}
+        title={title}
+        src={iframeSrc}
+        style={{
+          height: `${graphHeight}px`,
+        }}
+      />
+    </div>
   );
 };
 

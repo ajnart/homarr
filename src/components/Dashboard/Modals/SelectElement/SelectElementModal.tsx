@@ -1,8 +1,9 @@
-import { ContextModalProps } from '@mantine/modals';
 import { useState } from 'react';
-import { AvailableIntegrationElements } from './Components/WidgetsTab/AvailableWidgetsTab';
+import { ContextModalProps } from '@mantine/modals';
+
 import { AvailableElementTypes } from './Components/Overview/AvailableElementsOverview';
 import { AvailableStaticTypes } from './Components/StaticElementsTab/AvailableStaticElementsTab';
+import { AvailableIntegrationElements } from './Components/WidgetsTab/AvailableWidgetsTab';
 
 export const SelectElementModal = ({ context, id }: ContextModalProps) => {
   const [activeTab, setActiveTab] = useState<undefined | 'integrations' | 'static_elements'>();

@@ -1,19 +1,20 @@
+import { useRouter } from 'next/router';
 import {
   ActionIcon,
   Alert,
   Center,
-  createStyles,
   Flex,
   Text,
+  createStyles,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { openConfirmModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconAlertTriangle, IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons';
+import { IconAlertTriangle, IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons-react';
 import fileDownload from 'js-file-download';
 import { Trans, useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useDeleteConfigMutation } from '../../../../tools/config/mutations/useDeleteConfigMutation';

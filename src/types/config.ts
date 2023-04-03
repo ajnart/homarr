@@ -1,8 +1,8 @@
-import { CategoryType } from './category';
-import { WrapperType } from './wrapper';
-import { ConfigAppType, AppType } from './app';
-import { SettingsType } from './settings';
 import { IWidget } from '../widgets/widgets';
+import { AppType, ConfigAppType } from './app';
+import { CategoryType } from './category';
+import { SettingsType } from './settings';
+import { WrapperType } from './wrapper';
 
 export interface ConfigType {
   schemaVersion: number;

@@ -1,10 +1,11 @@
 import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconArrowDownRight, IconArrowUpRight, IconCloudRain } from '@tabler/icons';
+import { IconArrowDownRight, IconArrowUpRight, IconCloudRain } from '@tabler/icons-react';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { useWeatherForCity } from './useWeatherForCity';
 import { WeatherIcon } from './WeatherIcon';
+import { useWeatherForCity } from './useWeatherForCity';
 
 const definition = defineWidget({
   id: 'weather',

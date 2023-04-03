@@ -1,20 +1,21 @@
+import { useEffect } from 'react';
 import {
   Avatar,
   Box,
   Card,
   Group,
   Stack,
-  Title,
   Text,
+  Title,
   Tooltip,
   useMantineTheme,
 } from '@mantine/core';
 import { useElementSize, useListState } from '@mantine/hooks';
 import { linearGradientDef } from '@nivo/core';
-import { Serie, Datum, ResponsiveLine } from '@nivo/line';
-import { IconDownload, IconUpload } from '@tabler/icons';
+import { Datum, ResponsiveLine, Serie } from '@nivo/line';
+import { IconDownload, IconUpload } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useEffect } from 'react';
+
 import { AppAvatar } from '../../components/AppAvatar';
 import { useConfigContext } from '../../config/provider';
 import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
@@ -41,6 +42,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
   const [clientDataHistory, setClientDataHistory] = useListState<NormalizedDownloadQueueResponse>();
 
   const { data, dataUpdatedAt } = useGetDownloadClientsQueue();
+  const { colors } = useMantineTheme();
 
   useEffect(() => {
     if (data) {
@@ -115,8 +117,6 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
     .reduce((acc, n) => acc + n, 0);
 
   const graphHeight = heightRoot - heightFooter - heightTitle;
-
-  const { colors } = useMantineTheme();
 
   return (
     <Stack ref={refRoot} style={{ height: '100%' }}>

@@ -1,14 +1,14 @@
+import { useEffect, useState } from 'react';
 import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
 import { useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { IconBrandDocker, IconX } from '@tabler/icons';
+import { IconBrandDocker, IconX } from '@tabler/icons-react';
 import axios from 'axios';
 import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
+
 import { useCardStyles } from '../../components/layout/useCardStyles';
 import { useConfigContext } from '../../config/provider';
-
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
 
