@@ -29,7 +29,7 @@ export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
-      enabled: !!params.appId,
+      enabled: Boolean(params.appId),
     }
   );
 
