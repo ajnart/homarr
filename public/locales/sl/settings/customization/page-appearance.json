@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta naslov",
-    "description": ""
+    "description": "Naslov, prikazan v zavihku brskalnika"
   },
   "logo": {
     "label": "Logotip",
-    "description": ""
+    "description": "Logotip prikazan v zgornjem levem kotu"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "Ikona, prikazana v zavihku brskalnika"
   },
   "background": {
     "label": "Ozadje"
   },
   "customCSS": {
     "label": "Po meri CSS",
-    "description": "",
+    "description": "Dadatno prilagodite pogled s CSS. Priporočljivo le za izkušene uporabnike",
     "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji",
     "applying": "Uporaba CSS..."
   },
