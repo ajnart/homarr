@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "iFrame",
     "description": "Vstavite katero koli vsebino iz interneta. Nekatera spletna mesta lahko omejijo dostop.",
     "settings": {
-      "title": "",
+      "title": "nastavitve okvirja IFrame",
       "embedUrl": {
         "label": "URL za vstavljanje"
       },
