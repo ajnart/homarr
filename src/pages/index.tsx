@@ -25,13 +25,6 @@ export async function getServerSideProps({
       (config) => JSON.parse(fs.readFileSync(`./data/configs/${config}`, 'utf8')).schemaVersion
     )
   ) {
-    // Replace the current page with the migrate page but don't redirect
-    // This is to prevent the user from seeing the redirect
-    res.writeHead(302, {
-      Location: '/migrate',
-    });
-    res.end();
-
     return { props: {} as DashboardServerSideProps };
   }
 
