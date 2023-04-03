@@ -1,4 +1,4 @@
-import { ComponentType, useMemo } from 'react';
+import { ComponentType } from 'react';
 import Widgets from '.';
 import { HomarrCardWrapper } from '../components/Dashboard/Tiles/HomarrCardWrapper';
 import { WidgetsMenu } from '../components/Dashboard/Tiles/Widgets/WidgetsMenu';

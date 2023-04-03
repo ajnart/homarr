@@ -1,5 +1,3 @@
-import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
 import {
   ActionIcon,
   Badge,
@@ -31,6 +29,8 @@ import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useState } from 'react';
+import { IWidget } from '../widgets';
+import { defineWidget } from '../helper';
 
 const definition = defineWidget({
   id: 'rss',
