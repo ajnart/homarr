@@ -24,14 +24,16 @@ export function ShadeSelector() {
   const { primaryColor, setPrimaryShade } = useColorTheme();
 
   const updateConfig = useConfigStore((x) => x.updateConfig);
-
   const theme = useMantineTheme();
-  const primaryShades = theme.colors[primaryColor].map((s, i) => ({
-    swatch: theme.colors[primaryColor][i],
+
+  if (shade === undefined || !configName || theme.colors[primaryColor] === undefined) return null;
+
+  const primaryColorValue = theme.colors[primaryColor]!;
+
+  const primaryShades = primaryColorValue.map((s, i) => ({
+    swatch: primaryColorValue[i],
     shade: i as MantineTheme['primaryShade'],
   }));
-
-  if (shade === undefined || !configName) return null;
 
   const handleSelection = (shade: MantineTheme['primaryShade']) => {
     setPrimaryShade(shade);
@@ -57,7 +59,7 @@ export function ShadeSelector() {
         component="button"
         type="button"
         onClick={() => handleSelection(shade)}
-        color={swatch}
+        color={swatch!}
         size={22}
         style={{ cursor: 'pointer' }}
       />
@@ -78,7 +80,7 @@ export function ShadeSelector() {
           <ColorSwatch
             component="button"
             type="button"
-            color={theme.colors[primaryColor][Number(shade)]}
+            color={theme.colors[primaryColor]![Number(shade)]!}
             onClick={popover.toggle}
             size={22}
             style={{ display: 'block', cursor: 'pointer' }}

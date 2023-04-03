@@ -12,9 +12,9 @@ export interface IModule {
   icon: Icon;
   component: React.ComponentType;
   options?: Option;
-  padding?: PaddingOptions = {
-    right: 15,
-    top: 15,
+  padding?: {
+    right: 15;
+    top: 15;
   };
 }
 

@@ -116,6 +116,16 @@ const GetDataFromClient = async (
       const queue = await client.queue();
       const items: UsenetQueueItem[] = queue.slots.map((slot) => {
         const [hours, minutes, seconds] = slot.timeleft.split(':');
+        if (!hours || !minutes || !seconds) {
+          return {
+            id: slot.nzo_id,
+            eta: 0,
+            name: slot.filename,
+            progress: parseFloat(slot.percentage),
+            size: parseFloat(slot.mb) * 1000 * 1000,
+            state: slot.status.toLowerCase() as any,
+          };
+        }
         const eta = dayjs.duration({
           hour: parseInt(hours, 10),
           minutes: parseInt(minutes, 10),

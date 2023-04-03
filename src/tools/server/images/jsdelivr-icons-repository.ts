@@ -37,8 +37,8 @@ export class JsdelivrIconsRepository extends AbstractIconRepository {
       .filter((file) => ['.png', '.svg'].some((x) => file.name.endsWith(x)))
       .map((file): NormalizedIcon => {
         const fileNameParts = file.name.split('/');
-        const fileName = fileNameParts[fileNameParts.length - 1];
-        const extensions = fileName.split('.')[1];
+        const fileName = fileNameParts[fileNameParts.length - 1] ?? file.name;
+        const extensions = fileName.split('.')[1] ?? 'png';
         return {
           url: this.repository.blob.replace('{0}', extensions).replace('{1}', fileName),
           name: fileName,

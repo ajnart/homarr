@@ -29,7 +29,9 @@ export const AppearanceTab = ({
 
     const matchingDebouncedIcon = data
       ?.flatMap((x) => x.entries)
-      .find((x) => replaceCharacters(x.name.split('.')[0] ?? '') === replaceCharacters(debouncedValue));
+      .find(
+        (x) => replaceCharacters(x.name.split('.')[0] ?? '') === replaceCharacters(debouncedValue)
+      );
 
     if (!matchingDebouncedIcon) {
       return;

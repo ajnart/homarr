@@ -15,10 +15,6 @@ export const GridstackConfiguration = () => {
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
-  if (!config || !configName) {
-    return null;
-  }
-
   const initialValue = config.settings.customization?.gridstack ?? {
     columnCountSmall: 3,
     columnCountMedium: 6,
@@ -30,6 +26,10 @@ export const GridstackConfiguration = () => {
   });
 
   const [isSaving, setIsSaving] = useState(false);
+
+  if (!config || !configName) {
+    return null;
+  }
 
   const handleSubmit = async (values: GridstackSettingsType) => {
     setIsSaving(true);

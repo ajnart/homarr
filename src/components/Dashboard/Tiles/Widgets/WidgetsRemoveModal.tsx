@@ -17,8 +17,8 @@ export const WidgetsRemoveModal = ({
 }: ContextModalProps<WidgetsRemoveModalInnerProps>) => {
   const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
   const { name: configName } = useConfigContext();
-  if (!configName) return null;
   const updateConfig = useConfigStore((x) => x.updateConfig);
+  if (!configName) return null;
   const handleDeletion = () => {
     updateConfig(
       configName,
@@ -35,7 +35,7 @@ export const WidgetsRemoveModal = ({
     <Stack>
       <Trans
         i18nKey="common:removeConfirm"
-        components={[<Text weight={500} />]}
+        components={[<Text key={0} weight={500} />]}
         values={{ item: innerProps.widgetId }}
       />
       <Group position="right">

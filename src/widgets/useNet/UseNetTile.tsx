@@ -56,19 +56,18 @@ function UseNetTile({ widget }: UseNetTileProps) {
   const { t } = useTranslation('modules/usenet');
   const { config } = useConfigContext();
   const downloadApps =
-    config?.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ??
-    [];
+    config.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ?? [];
   const { ref, width, height } = useElementSize();
   const MIN_WIDTH_MOBILE = useMantineTheme().breakpoints.xs;
 
-  const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
+  const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]!.id);
   const { data } = useGetUsenetInfo({ appId: selectedAppId! });
 
   useEffect(() => {
     if (!selectedAppId && downloadApps.length) {
-      setSelectedApp(downloadApps[0].id);
+      setSelectedApp(downloadApps[0]!.id);
     }
-  }, [downloadApps, selectedAppId]);
+  }, [config, downloadApps, selectedAppId]);
 
   const { mutate: pause } = usePauseUsenetQueue({ appId: selectedAppId! });
   const { mutate: resume } = useResumeUsenetQueue({ appId: selectedAppId! });

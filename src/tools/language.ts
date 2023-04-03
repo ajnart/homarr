@@ -12,7 +12,7 @@ export class Language {
   }
 }
 
-export const languages: Language[] = [
+export const languages: [Language, ...Language[]] = [
   {
     shortName: 'de',
     originalName: 'Deutsch',
@@ -153,5 +153,5 @@ export const languages: Language[] = [
   },
 ];
 
-export const getLanguageByCode = (code: string | null) =>
-  languages.find((language) => language.shortName === code) ?? languages[languages.length - 1];
+export const getLanguageByCode = (code: string | null): Language =>
+  languages.find((language) => language.shortName === code) || languages[0];

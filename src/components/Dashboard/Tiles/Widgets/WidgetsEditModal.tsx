@@ -88,7 +88,7 @@ export const WidgetsEditModal = ({
 
         if (!option) {
           return (
-            <Alert icon={<IconAlertTriangle />} color="red">
+            <Alert key={key} icon={<IconAlertTriangle />} color="red">
               <Text>
                 <Trans
                   i18nKey="modules/common:errors.unmappedOptions.text"

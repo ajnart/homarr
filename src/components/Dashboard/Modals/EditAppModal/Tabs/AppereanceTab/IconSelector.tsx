@@ -157,6 +157,8 @@ const AutoCompleteItem = forwardRef<HTMLDivElement, ItemProps>(
   )
 );
 
+AutoCompleteItem.displayName = 'AutocompleteItem';
+
 interface ItemProps extends SelectItemProps {
   url: string;
   group: string;

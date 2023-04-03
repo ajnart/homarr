@@ -1,12 +1,13 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
-import shallow from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 
+import defaultConfig from '../../data/configs/default.json';
 import { useColorTheme } from '../tools/color';
 import { ConfigType } from '../types/config';
 import { useConfigStore } from './store';
 
 export type ConfigContextType = {
-  config: ConfigType | undefined;
+  config: ConfigType;
   name: string | undefined;
   configVersion: number | undefined;
   increaseVersion: () => void;
@@ -15,7 +16,7 @@ export type ConfigContextType = {
 
 const ConfigContext = createContext<ConfigContextType>({
   name: 'unknown',
-  config: undefined,
+  config: defaultConfig as unknown as ConfigType,
   configVersion: undefined,
   increaseVersion: () => console.error('Provider not set'),
   setConfigName: () => console.error('Provider not set'),
@@ -33,7 +34,9 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     setPrimaryColor(currentConfig?.settings.customization.colors.primary || 'red');
     setSecondaryColor(currentConfig?.settings.customization.colors.secondary || 'orange');
     setPrimaryShade(currentConfig?.settings.customization.colors.shade || 6);
-  }, [configName]);
+  });
+
+  if (!currentConfig) return null;
 
   return (
     <ConfigContext.Provider

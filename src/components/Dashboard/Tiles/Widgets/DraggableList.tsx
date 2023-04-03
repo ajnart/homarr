@@ -55,26 +55,25 @@ export const DraggableList: FC<DraggableListParams> = (props) => {
   const keys = props.value.map((v) => v.key);
 
   return (
-    <div>
-      <Reorder.Group
-        axis="y"
-        values={keys}
-        onReorder={(order) =>
-          props.onChange(order.map((key) => props.value.find((v) => v.key === key)!))
-        }
-        as="div"
-      >
-        {props.value.map((item) => (
-          <ListItem key={item.key} item={item} label={props.labels[item.key] as string}>
-            {props.children?.[item.key]}
-          </ListItem>
-        ))}
-      </Reorder.Group>
-    </div>
+    <Reorder.Group
+      axis="y"
+      values={keys}
+      onReorder={(order) =>
+        props.onChange(order.map((key) => props.value.find((v) => v.key === key)!))
+      }
+      as="div"
+    >
+      {props.value.map((item) => (
+        <ListItem key={item.key} item={item} label={props.labels[item.key] as string}>
+          {props.children?.[item.key]}
+        </ListItem>
+      ))}
+    </Reorder.Group>
   );
 };
 
 const ListItem: FC<{
+  children: ReactNode;
   item: IDraggableListInputValue['defaultValue'][number];
   label: string;
 }> = (props) => {

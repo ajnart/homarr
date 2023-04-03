@@ -21,10 +21,8 @@ export const CustomCssChanger = () => {
   const [debouncedCustomCSS] = useDebouncedValue(nonDebouncedCustomCSS, 696);
   const { classes } = useStyles();
 
-  if (!configName) return null;
-
   useEffect(() => {
-    updateConfig(configName, (prev) => ({
+    updateConfig(configName!, (prev) => ({
       ...prev,
       settings: {
         ...prev.settings,
@@ -34,7 +32,9 @@ export const CustomCssChanger = () => {
         },
       },
     }));
-  }, [debouncedCustomCSS]);
+  }, [configName, debouncedCustomCSS, updateConfig]);
+
+  if (!configName) return null;
 
   const codeIsDirty = nonDebouncedCustomCSS !== debouncedCustomCSS;
   const codeEditorHeight = codeIsDirty ? 250 - 42 : 250;

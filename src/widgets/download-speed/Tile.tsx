@@ -53,7 +53,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
       return;
     }
     setClientDataHistory.remove(0);
-  }, [dataUpdatedAt]);
+  }, [clientDataHistory.length, data, dataUpdatedAt, setClientDataHistory]);
 
   if (!data) {
     return null;
@@ -154,7 +154,12 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
                   <Card.Section p="xs">
                     <Stack spacing="xs">
                       {recordsFromPoints.map((entry, index) => {
-                        const app = config?.apps.find((x) => x.id === entry.record.appId);
+                        if (entry.record === undefined) {
+                          return null;
+                        }
+                        const app =
+                          entry.record?.appId &&
+                          config?.apps.find((x) => x.id === entry.record!.appId);
 
                         if (!app) {
                           return null;
@@ -210,8 +215,8 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
             ]}
             colors={lineChartData.flatMap((data) =>
               data.id.toString().startsWith('upload_')
-                ? colors[secondaryColor][5]
-                : colors[primaryColor][5]
+                ? colors[secondaryColor]![5]
+                : colors[primaryColor]![5]
             )}
             fill={[{ match: '*', id: 'gradientA' }]}
             margin={{ bottom: 5 }}
@@ -223,13 +228,13 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
       <Group position="apart" ref={refFooter}>
         <Group>
           <Group spacing="xs">
-            <IconDownload color={colors[primaryColor][5]} opacity={0.6} size={18} />
+            <IconDownload color={colors[primaryColor]?.[5]} opacity={0.6} size={18} />
             <Text color="dimmed" size="sm">
               {humanFileSize(totalDownload, false)}
             </Text>
           </Group>
           <Group spacing="xs">
-            <IconUpload color={colors[secondaryColor][5]} opacity={0.6} size={18} />
+            <IconUpload color={colors[secondaryColor]?.[5]} opacity={0.6} size={18} />
             <Text color="dimmed" size="sm">
               {humanFileSize(totalUpload, false)}
             </Text>

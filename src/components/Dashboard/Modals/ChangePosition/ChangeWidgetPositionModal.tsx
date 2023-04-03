@@ -16,6 +16,8 @@ export const ChangeWidgetPositionModal = ({
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
   const shapeSize = useGridstackStore((x) => x.currentShapeSize);
+  const widthData = useWidthData(innerProps.widgetId);
+  const heightData = useHeightData(innerProps.widgetId);
 
   if (shapeSize === null) {
     return null;
@@ -54,9 +56,6 @@ export const ChangeWidgetPositionModal = ({
   const handleCancel = () => {
     closeModal(id);
   };
-
-  const widthData = useWidthData(innerProps.widgetId);
-  const heightData = useHeightData(innerProps.widgetId);
 
   return (
     <ChangePositionModal

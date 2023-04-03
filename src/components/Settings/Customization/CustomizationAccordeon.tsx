@@ -1,6 +1,12 @@
 import { ReactNode } from 'react';
 import { Accordion, Checkbox, Grid, Group, Stack, Text } from '@mantine/core';
-import { IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons-react';
+import {
+  IconBrush,
+  IconChartCandle,
+  IconCode,
+  IconDragDrop,
+  IconLayout,
+} from '@tabler/icons-react';
 import { i18n, useTranslation } from 'next-i18next';
 
 import { GridstackConfiguration } from './Layout/GridstackConfiguration';
@@ -16,7 +22,7 @@ import { DashboardTilesOpacitySelector } from './Theme/OpacitySelector';
 import { ShadeSelector } from './Theme/ShadeSelector';
 
 export const CustomizationSettingsAccordeon = () => {
-  const items = getItems().map((item) => (
+  const items = GetItems().map((item) => (
     <Accordion.Item value={item.id} key={item.label}>
       <Accordion.Control>
         <AccordionLabel {...item} />
@@ -51,7 +57,7 @@ const AccordionLabel = ({ label, image, description }: AccordionLabelProps) => (
   </Group>
 );
 
-const getItems = () => {
+const GetItems = () => {
   const { t } = useTranslation([
     'settings/customization/general',
     'settings/customization/color-selector',

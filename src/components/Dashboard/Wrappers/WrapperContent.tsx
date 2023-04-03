@@ -28,12 +28,13 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
     <>
       {apps?.map((app) => {
         const { component: TileComponent, ...tile } = appTileDefinition;
+        const item = refs.items.current[app.id] as RefObject<HTMLDivElement>;
         return (
           <GridstackTileWrapper
             id={app.id}
             type="app"
             key={app.id}
-            itemRef={refs.items.current[app.id]}
+            itemRef={item}
             {...tile}
             {...(app.shape[shapeSize]?.location ?? {})}
             {...(app.shape[shapeSize]?.size ?? {})}
@@ -47,12 +48,12 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
           | IWidgetDefinition
           | undefined;
         if (!definition) return null;
-
+        const item = refs.items.current[widget.id] as RefObject<HTMLDivElement>;
         return (
           <GridstackTileWrapper
             type="widget"
             key={widget.id}
-            itemRef={refs.items.current[widget.id]}
+            itemRef={item}
             id={definition.id}
             {...definition.gridstack}
             {...widget.shape[shapeSize]?.location}

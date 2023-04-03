@@ -1,7 +1,5 @@
 import { MantineTheme } from '@mantine/core';
 
-import { OptionValues } from '../modules/ModuleTypes';
-
 export interface Settings {
   searchUrl: string;
   searchNewTab?: boolean;
@@ -17,23 +15,6 @@ export interface Settings {
   widgetPosition?: string;
   grow?: boolean;
   appCardWidth?: number;
-}
-
-export interface Config {
-  name: string;
-  services: serviceItem[];
-  settings: Settings;
-  modules: {
-    [key: string]: ConfigModule;
-  };
-}
-
-interface ConfigModule {
-  title: string;
-  enabled: boolean;
-  options: {
-    [key: string]: OptionValues;
-  };
 }
 
 export const Targets = [

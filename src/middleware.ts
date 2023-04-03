@@ -10,14 +10,13 @@ export function middleware(req: NextRequest) {
   const passwordCookie = cookies.get('password')?.value;
 
   const isCorrectPassword = passwordCookie?.toString() === process.env.PASSWORD;
-  // Skip the middleware if the URL is 'login', 'api/configs/tryPassword', '_next/*', 'favicon.ico', '404', 'migrate' or 'pages/_app'
+  // Skip the middleware if the URL is 'login', 'api/configs/tryPassword', '_next/*', 'favicon.ico', '404', or 'pages/_app'
   const skippedUrls = [
     '/login',
     '/api/configs/tryPassword',
     '/_next/',
     '/favicon.ico',
     '/404',
-    '/migrate',
     '/pages/_app',
   ];
   if (skippedUrls.some((skippedUrl) => url.pathname.startsWith(skippedUrl))) {

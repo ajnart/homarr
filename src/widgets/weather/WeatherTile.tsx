@@ -60,7 +60,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
     );
   }
 
-  if (isError) {
+  if (isError || !weather) {
     return (
       <Center>
         <Text weight={500}>An error occured</Text>
@@ -90,12 +90,12 @@ function WeatherTile({ widget }: WeatherTileProps) {
         <Group noWrap spacing="xs">
           <IconArrowUpRight />
           {getPerferedUnit(
-            weather!.daily.temperature_2m_max[0],
+            weather.daily.temperature_2m_max[0]!,
             widget.properties.displayInFahrenheit
           )}
           <IconArrowDownRight />
           {getPerferedUnit(
-            weather!.daily.temperature_2m_min[0],
+            weather.daily.temperature_2m_min[0]!,
             widget.properties.displayInFahrenheit
           )}
         </Group>

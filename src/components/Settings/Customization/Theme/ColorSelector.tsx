@@ -30,7 +30,7 @@ export function ColorSelector({ type, defaultValue }: ColorControlProps) {
 
   const theme = useMantineTheme();
   const colors = Object.keys(theme.colors).map((color) => ({
-    swatch: theme.colors[color][6],
+    swatch: theme.colors[color]![6],
     color,
   }));
 
@@ -83,7 +83,7 @@ export function ColorSelector({ type, defaultValue }: ColorControlProps) {
           <ColorSwatch
             component="button"
             type="button"
-            color={theme.colors[color][6]}
+            color={theme.colors[color]![6]}
             onClick={popover.toggle}
             size={22}
             style={{ cursor: 'pointer' }}
@@ -97,7 +97,7 @@ export function ColorSelector({ type, defaultValue }: ColorControlProps) {
       </Popover>
       <Text>
         {t('suffix', {
-          color: type[0].toUpperCase() + type.slice(1),
+          color: type[0]!.toUpperCase() + type.slice(1),
         })}
       </Text>
     </Group>

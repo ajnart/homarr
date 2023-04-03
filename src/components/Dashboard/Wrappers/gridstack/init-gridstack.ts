@@ -67,7 +67,7 @@ export const initializeGridstack = (
   grid.batchUpdate();
   grid.removeAll(false);
   items.forEach(({ id, shape }) => {
-    const item = itemRefs.current[id]?.current;
+    const item = itemRefs.current[id]?.current ?? null;
     setAttributesFromShape(item, shape[shapeSize]);
     item && grid.makeWidget(item as HTMLDivElement);
     if (!shape[shapeSize] && item) {
@@ -79,7 +79,7 @@ export const initializeGridstack = (
     }
   });
   widgets.forEach(({ id, shape }) => {
-    const item = itemRefs.current[id]?.current;
+    const item = itemRefs.current[id]?.current ?? null;
     setAttributesFromShape(item, shape[shapeSize]);
     item && grid.makeWidget(item as HTMLDivElement);
     if (!shape[shapeSize] && item) {

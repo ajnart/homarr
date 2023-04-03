@@ -102,6 +102,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
 
         const items: UsenetQueueItem[] = queue.slots.map((slot) => {
           const [hours, minutes, seconds] = slot.timeleft.split(':');
+          if (!hours || !minutes || !seconds) {
+            throw new Error(`Could not parse ETA for slot "${slot.filename}"`);
+          }
           const eta = dayjs.duration({
             hour: parseInt(hours, 10),
             minutes: parseInt(minutes, 10),

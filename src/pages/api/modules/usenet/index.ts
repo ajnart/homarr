@@ -81,6 +81,9 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const queue = await new Client(origin, apiKey).queue(0, -1);
 
         const [hours, minutes, seconds] = queue.timeleft.split(':');
+        if (hours === undefined || minutes === undefined || seconds === undefined) {
+          throw new Error(`Invalid timeleft format: ${queue.timeleft}`);
+        }
         const eta = dayjs.duration({
           hour: parseInt(hours, 10),
           minutes: parseInt(minutes, 10),

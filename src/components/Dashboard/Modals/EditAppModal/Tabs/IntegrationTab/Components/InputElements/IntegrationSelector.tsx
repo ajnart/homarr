@@ -171,3 +171,5 @@ const SelectItemComponent = forwardRef<HTMLDivElement, ItemProps>(
     </div>
   )
 );
+
+SelectItemComponent.displayName = 'SelectItemComponent';

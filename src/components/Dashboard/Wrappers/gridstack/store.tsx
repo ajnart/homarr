@@ -32,10 +32,6 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 export const useWrapperColumnCount = () => {
   const { config } = useConfigContext();
 
-  if (!config) {
-    return null;
-  }
-
   switch (useNamedWrapperColumnCount()) {
     case 'large':
       return config.settings.customization.gridstack?.columnCountLarge ?? 12;

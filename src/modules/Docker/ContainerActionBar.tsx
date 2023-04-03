@@ -15,7 +15,6 @@ import {
 import axios from 'axios';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { TFunction } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
 
 import { useConfigContext } from '../../config/provider';
@@ -23,14 +22,13 @@ import { tryMatchService } from '../../tools/addToHomarr';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../types/app';
 
-let t: TFunction<'modules/docker', undefined>;
-
-function sendDockerCommand(
+function SendDockerCommand(
   action: string,
   containerId: string,
   containerName: string,
   reload: () => void
 ) {
+  const { t } = useTranslation('modules/docker');
   showNotification({
     id: containerId,
     loading: true,
@@ -70,7 +68,7 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
-  t = useTranslation('modules/docker').t;
+  const { t } = useTranslation('modules/search');
   const [isLoading, setisLoading] = useState(false);
   const { name: configName, config } = useConfigContext();
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
@@ -98,7 +96,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('restart', container.Id, container.Names[0].substring(1), reload)
+              SendDockerCommand('restart', container.Id, container.Names[0]!.substring(1), reload)
             )
           )
         }
@@ -114,7 +112,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('stop', container.Id, container.Names[0].substring(1), reload)
+              SendDockerCommand('stop', container.Id, container.Names[0]!.substring(1), reload)
             )
           )
         }
@@ -130,7 +128,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('start', container.Id, container.Names[0].substring(1), reload)
+              SendDockerCommand('start', container.Id, container.Names[0]!.substring(1), reload)
             )
           )
         }
@@ -149,7 +147,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('remove', container.Id, container.Names[0].substring(1), reload)
+              SendDockerCommand('remove', container.Id, container.Names[0]!.substring(1), reload)
             )
           )
         }
@@ -165,14 +163,14 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         disabled={selected.length === 0 || selected.length > 1}
         onClick={() => {
           const app = tryMatchService(selected.at(0)!);
-          const containerUrl = `http://localhost:${selected[0].Ports[0]?.PublicPort ?? 0}`;
+          const containerUrl = `http://localhost:${selected[0]!.Ports[0]?.PublicPort ?? 0}`;
           openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
             modal: 'editApp',
             zIndex: 202,
             innerProps: {
               app: {
                 id: uuidv4(),
-                name: app.name ? app.name : selected[0].Names[0].substring(1),
+                name: app.name ? app.name : selected[0]!.Names[0]!.substring(1),
                 url: containerUrl,
                 appearance: {
                   iconUrl: app.icon ? app.icon : '/imgs/logo/logo.png',

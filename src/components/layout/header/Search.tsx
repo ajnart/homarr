@@ -47,7 +47,7 @@ interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
 const useStyles = createStyles((theme) => ({
   item: {
     '&[data-hovered]': {
-      backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
+      backgroundColor: theme.colors[theme.primaryColor]![theme.fn.primaryShade()],
       color: theme.white,
     },
   },
@@ -73,7 +73,7 @@ export function Search() {
     ? searchEngineSettings.properties.template
     : searchUrls[searchEngineSettings.type];
 
-  const searchEnginesList: ItemProps[] = [
+  const searchEnginesList: [ItemProps, ...ItemProps[]] = [
     {
       icon: <IconSearch />,
       disabled: false,
@@ -135,8 +135,9 @@ export function Search() {
   AutoCompleteItem.displayName = 'AutoCompleteItem';
   useEffect(() => {
     // Refresh the default search engine every time the config for it changes #521
-    setSearchEngine(searchEnginesList[0]);
-  }, [searchEngineUrl]);
+    setSearchEngine(searchEnginesList[0]!);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [config?.settings]);
   const textInput = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => textInput.current?.focus()]]);
   const { classes } = useStyles();
