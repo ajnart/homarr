@@ -54,8 +54,8 @@ export const ChangeWidgetPositionModal = ({
     closeModal(id);
   };
 
-  const widthData = useWidthData(innerProps.widgetId);
-  const heightData = useHeightData(innerProps.widgetId);
+  const widthData = useWidthData(innerProps.widgetType);
+  const heightData = useHeightData(innerProps.widgetType);
 
   return (
     <ChangePositionModal

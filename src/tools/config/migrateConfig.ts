@@ -183,7 +183,8 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
         case 'torrent-status':
         case 'Torrent':
           return {
-            id: 'torrents-status',
+            id: uuidv4(),
+            type: 'torrents-status',
             properties: {
               refreshInterval: 10,
               displayCompletedTorrents: oldModule.options?.hideComplete?.value ?? false,
@@ -199,7 +200,8 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
           } as ITorrent;
         case 'weather':
           return {
-            id: 'weather',
+            id: uuidv4(),
+            type: 'weather',
             properties: {
               displayInFahrenheit: oldModule.options?.freedomunit?.value ?? false,
               location: oldModule.options?.location?.value ?? 'Paris',
@@ -216,7 +218,8 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
         case 'Dash.': {
           const oldDashDotService = config.services.find((service) => service.type === 'Dash.');
           return {
-            id: 'dashdot',
+            id: uuidv4(),
+            type: 'dashdot',
             properties: {
               url: oldModule.options?.url?.value ?? oldDashDotService?.url ?? '',
               cpuMultiView: oldModule.options?.cpuMultiView?.value ?? false,
@@ -235,7 +238,8 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
         }
         case 'date':
           return {
-            id: 'date',
+            id: uuidv4(),
+            type: 'date',
             properties: {
               display24HourFormat: oldModule.options?.full?.value ?? true,
             },
@@ -249,7 +253,8 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
           } as IDateWidget;
         case 'Download Speed' || 'dlspeed':
           return {
-            id: 'dlspeed',
+            id: uuidv4(),
+            type: 'dlspeed',
             properties: {},
             area: {
               type: 'wrapper',
@@ -261,7 +266,8 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
           } as ITorrentNetworkTraffic;
         case 'calendar':
           return {
-            id: 'calendar',
+            id: uuidv4(),
+            type: 'calendar',
             properties: {},
             area: {
               type: 'wrapper',
@@ -273,7 +279,8 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
           } as ICalendarWidget;
         case 'usenet':
           return {
-            id: 'usenet',
+            id: uuidv4(),
+            type: 'usenet',
             properties: {},
             area: {
               type: 'wrapper',

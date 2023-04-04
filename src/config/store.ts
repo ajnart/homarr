@@ -48,6 +48,7 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
     const previousConfig: ConfigType = JSON.parse(JSON.stringify(currentConfig.value));
 
     const updatedConfig = updateCallback(currentConfig.value);
+
     set((old) => ({
       ...old,
       configs: [

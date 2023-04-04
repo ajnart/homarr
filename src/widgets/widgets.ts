@@ -13,7 +13,8 @@ import { ShapeType } from '../types/shape';
 
 // Type of widgets which are saved to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {
-  id: TKey;
+  id: string;
+  type: TKey;
   properties: {
     [key in keyof TDefinition['options']]: MakeLessSpecific<
       TDefinition['options'][key]['defaultValue']

@@ -42,7 +42,7 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
         );
       })}
       {widgets.map((widget) => {
-        const definition = Widgets[widget.id as keyof typeof Widgets] as
+        const definition = Widgets[widget.type as keyof typeof Widgets] as
           | IWidgetDefinition
           | undefined;
         if (!definition) return null;
@@ -52,7 +52,7 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
             type="widget"
             key={widget.id}
             itemRef={refs.items.current[widget.id]}
-            id={definition.id}
+            id={widget.id}
             {...definition.gridstack}
             {...widget.shape[shapeSize]?.location}
             {...widget.shape[shapeSize]?.size}
@@ -60,7 +60,7 @@ export function WrapperContent({ apps, refs, widgets }: WrapperContentProps) {
             <WidgetWrapper
               className="grid-stack-item-content"
               widget={widget}
-              widgetId={widget.id}
+              widgetType={widget.type}
               WidgetComponent={definition.component}
             />
           </GridstackTileWrapper>

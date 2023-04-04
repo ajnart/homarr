@@ -7,6 +7,7 @@ import { useConfigStore } from '../../../../config/store';
 
 export type WidgetsRemoveModalInnerProps = {
   widgetId: string;
+  widgetType: string;
 };
 
 export const WidgetsRemoveModal = ({
@@ -14,7 +15,7 @@ export const WidgetsRemoveModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetsRemoveModalInnerProps>) => {
-  const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
+  const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const { name: configName } = useConfigContext();
   if (!configName) return null;
   const updateConfig = useConfigStore((x) => x.updateConfig);
@@ -35,7 +36,7 @@ export const WidgetsRemoveModal = ({
       <Trans
         i18nKey="common:removeConfirm"
         components={[<Text weight={500} />]}
-        values={{ item: innerProps.widgetId }}
+        values={{ item: innerProps.widgetType }}
       />
       <Group position="right">
         <Button onClick={() => context.closeModal(id)} variant="light">

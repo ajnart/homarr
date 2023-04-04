@@ -29,8 +29,8 @@ import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useState } from 'react';
-import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
+import { defineWidget } from '../helper';
 
 const definition = defineWidget({
   id: 'rss',
@@ -56,11 +56,11 @@ interface RssTileProps {
   widget: IRssWidget;
 }
 
-const useGetRssFeed = (feedUrl: string) =>
+export const useGetRssFeed = (feedUrl: string, widgetId: string) =>
   useQuery({
     queryKey: ['rss-feed', feedUrl],
     queryFn: async () => {
-      const response = await fetch('/api/modules/rss');
+      const response = await fetch(`/api/modules/rss?widgetId=${widgetId}`);
       return response.json();
     },
   });
@@ -68,7 +68,8 @@ const useGetRssFeed = (feedUrl: string) =>
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeed(
-    widget.properties.rssFeedUrl
+    widget.properties.rssFeedUrl,
+    widget.id
   );
   const { classes } = useStyles();
   const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);

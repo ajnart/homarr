@@ -8,6 +8,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import Parser from 'rss-parser';
 
+import { z } from 'zod';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { IRssWidget } from '../../../../widgets/rss/RssWidgetTile';
 import { Stopwatch } from '../../../../tools/shared/time/stopwatch.tool';
@@ -25,11 +26,24 @@ const parser: Parser<any, CustomItem> = new Parser({
   },
 });
 
+const getQuerySchema = z.object({
+  widgetId: z.string().uuid(),
+});
+
 export const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
-  const rssWidget = config.widgets.find((x) => x.id === 'rss') as IRssWidget | undefined;
+  const parseResult = getQuerySchema.safeParse(request.query);
+
+  if (!parseResult.success) {
+    response.status(400).json({ message: 'invalid query parameters, please specify the widgetId' });
+    return;
+  }
+
+  const rssWidget = config.widgets.find(
+    (x) => x.type === 'rss' && x.id === parseResult.data.widgetId
+  ) as IRssWidget | undefined;
 
   if (
     !rssWidget ||
