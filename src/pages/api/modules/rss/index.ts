@@ -3,8 +3,8 @@ import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { decode } from 'html-entities';
 import Parser from 'rss-parser';
-
 import { z } from 'zod';
+
 import { getConfig } from '../../../../tools/config/getConfig';
 import { Stopwatch } from '../../../../tools/shared/time/stopwatch.tool';
 import { IRssWidget } from '../../../../widgets/rss/RssWidgetTile';

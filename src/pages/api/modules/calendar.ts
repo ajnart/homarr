@@ -1,11 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 import Consola from 'consola';
-
-import { NextApiRequest, NextApiResponse } from 'next';
-
 import { z } from 'zod';
-import { AppIntegrationType } from '../../../types/app';
+
 import { getConfig } from '../../../tools/config/getConfig';
 import { AppIntegrationType } from '../../../types/app';
 

@@ -36,7 +36,7 @@ export const WidgetsRemoveModal = ({
     <Stack>
       <Trans
         i18nKey="common:removeConfirm"
-        components={[<Text weight={500} />]}
+        components={[<Text key={0} weight={500} />]}
         values={{ item: innerProps.widgetType }}
       />
       <Group position="right">

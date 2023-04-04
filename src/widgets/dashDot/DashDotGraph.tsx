@@ -27,6 +27,7 @@ export const DashDotGraph = ({
 }: DashDotGraphProps) => {
   const { t } = useTranslation('modules/dashdot');
   const { classes } = useStyles();
+  const { colorScheme, colors, radius } = useMantineTheme();
 
   if (graph === 'storage' && isCompact) {
     return <DashDotCompactStorage info={info} widgetId={widgetId} />;
@@ -47,7 +48,7 @@ export const DashDotGraph = ({
         className={classes.iframe}
         key={graph}
         title={title}
-        src={useIframeSrc(dashDotUrl, graph, multiView, usePercentages)}
+        src={IframeSrc(dashDotUrl, graph, multiView, usePercentages, colorScheme, colors, radius)}
         style={{
           height: `${graphHeight}px`,
         }}
@@ -56,7 +57,7 @@ export const DashDotGraph = ({
   );
 };
 
-const useIframeSrc = (
+const IframeSrc = (
   dashDotUrl: string,
   graph: string,
   multiView: boolean,
@@ -79,56 +80,6 @@ const useIframeSrc = (
     `&showPercentage=${usePercentages.toString()}` +
     '&textOffset=16' +
     '&textSize=12'
-  );
-};
-
-export const DashDotGraph = ({
-  graph,
-  graphHeight,
-  isCompact,
-  multiView,
-  dashDotUrl,
-  usePercentages,
-  info,
-}: DashDotGraphProps) => {
-  const { t } = useTranslation('modules/dashdot');
-  const { classes } = useStyles();
-  const { colorScheme, colors, radius } = useMantineTheme();
-
-  if (graph === 'storage' && isCompact) {
-    return <DashDotCompactStorage info={info} />;
-  }
-
-  if (graph === 'network' && isCompact) {
-    return <DashDotCompactNetwork info={info} />;
-  }
-
-  const title = t(`card.graphs.${graph}.title`);
-  const iframeSrc = generateIframeSrc(
-    dashDotUrl,
-    graph,
-    multiView,
-    usePercentages,
-    colorScheme,
-    colors,
-    radius
-  );
-
-  return (
-    <div className={classes.graphContainer}>
-      <Title className={classes.graphTitle} order={4}>
-        {title}
-      </Title>
-      <iframe
-        className={classes.iframe}
-        key={graph}
-        title={title}
-        src={iframeSrc}
-        style={{
-          height: `${graphHeight}px`,
-        }}
-      />
-    </div>
   );
 };
 

@@ -1,5 +1,6 @@
 import Consola from 'consola';
 import { v4 as uuidv4 } from 'uuid';
+
 import { ConfigAppIntegrationType, ConfigAppType, IntegrationType } from '../../types/app';
 import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
@@ -8,8 +9,8 @@ import { SearchEngineCommonSettingsType } from '../../types/settings';
 import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
 import { IDateWidget } from '../../widgets/date/DateTile';
-import { ITorrent } from '../../widgets/torrent/TorrentTile';
 import { ITorrentNetworkTraffic } from '../../widgets/download-speed/TorrentNetworkTrafficTile';
+import { ITorrent } from '../../widgets/torrent/TorrentTile';
 import { IUsenetWidget } from '../../widgets/useNet/UseNetTile';
 import { IWeatherWidget } from '../../widgets/weather/WeatherTile';
 import { IWidget } from '../../widgets/widgets';

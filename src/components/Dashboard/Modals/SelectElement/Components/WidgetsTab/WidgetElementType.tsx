@@ -3,6 +3,7 @@ import { showNotification } from '@mantine/notifications';
 import { Icon, IconChecks } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { v4 as uuidv4 } from 'uuid';
+
 import { useConfigContext } from '../../../../../../config/provider';
 import { useConfigStore } from '../../../../../../config/store';
 import { IWidget, IWidgetDefinition } from '../../../../../../widgets/widgets';

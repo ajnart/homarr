@@ -57,9 +57,6 @@ export const ChangeWidgetPositionModal = ({
     closeModal(id);
   };
 
-  const widthData = useWidthData(innerProps.widgetType);
-  const heightData = useHeightData(innerProps.widgetType);
-
   return (
     <ChangePositionModal
       onSubmit={handleSubmit}

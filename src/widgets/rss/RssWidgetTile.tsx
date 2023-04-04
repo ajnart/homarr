@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Link from 'next/link';
 import {
   ActionIcon,
   Badge,
@@ -27,10 +29,9 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
-import { useState } from 'react';
-import { IWidget } from '../widgets';
+
 import { defineWidget } from '../helper';
+import { IWidget } from '../widgets';
 
 const definition = defineWidget({
   id: 'rss',
