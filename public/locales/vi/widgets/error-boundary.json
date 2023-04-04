@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ối, đã xảy ra lỗi!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Chi tiết",
+      "tryAgain": "Thử lại"
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "Chúng tôi rất xin lỗi vì sự bất tiện này! Điều này không nên xảy ra - xin hãy báo cáo lại vấn đề này trên GitHub.",
+    "label": "Lỗi của bạn",
+    "reportButton": "Báo cáo lỗi này"
   }
 }
