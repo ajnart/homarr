@@ -36,6 +36,8 @@ export const dashboardNamespaces = [
   'modules/media-server',
   'modules/common-media-cards',
   'modules/video-stream',
+  'modules/media-requests-list',
+  'modules/media-requests-stats',
   'widgets/error-boundary',
 ];
 

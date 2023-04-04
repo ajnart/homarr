@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Media Requests",
+    "description": "See a list of all media requests from your Overseerr and Jellyseerr",
+    "settings": {
+      "title": "Media requests list"
+    }
+  }
+}

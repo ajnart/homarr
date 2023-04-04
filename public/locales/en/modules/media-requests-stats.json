@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "name": "Media request stats",
+    "description": "Statistics about your media requests",
+    "settings": {
+      "title": "Media requests stats"
+    }
+  }
+}
