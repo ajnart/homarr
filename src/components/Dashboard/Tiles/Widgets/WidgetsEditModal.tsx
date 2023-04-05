@@ -243,6 +243,25 @@ const WidgetOptionTypeSwitch: FC<{
           </DraggableList>
         </Stack>
       );
+    case 'multiple-text':
+      return (
+        <MultiSelect
+          data={value.map((v: any) => ({ value: v, label: v }))}
+          label={t(`descriptor.settings.${key}.label`)}
+          description={t(`descriptor.settings.${key}.description`)}
+          defaultValue={value as string[]}
+          withinPortal
+          searchable
+          creatable
+          getCreateLabel={(query) => `+ Add ${query}`}
+          onChange={(values) =>
+            handleChange(
+              key,
+              values.map((item: string) => item)
+            )
+          }
+        />
+      );
     /* eslint-enable no-case-declarations */
     default:
       return null;

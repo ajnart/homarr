@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   MultiSelectProps,
   NumberInputProps,
@@ -7,7 +8,7 @@ import {
   TextInputProps,
 } from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
-import React from 'react';
+
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
 
@@ -37,7 +38,8 @@ export type IWidgetOptionValue =
   | ISliderInputOptionValue
   | ISelectOptionValue
   | INumberInputOptionValue
-  | IDraggableListInputValue;
+  | IDraggableListInputValue
+  | IMultipleTextInputOptionValue;
 
 // Interface for data type
 interface DataType {
@@ -103,6 +105,13 @@ export type IDraggableListInputValue = {
     string,
     Record<string, Omit<Exclude<IWidgetOptionValue, IDraggableListInputValue>, 'defaultValue'>>
   >;
+};
+
+// will show a text-input with a button to add a new line
+export type IMultipleTextInputOptionValue = {
+  type: 'multiple-text';
+  defaultValue: string[];
+  inputProps?: Partial<TextInputProps>;
 };
 
 // is used to type the widget definitions which will be used to display all widgets
