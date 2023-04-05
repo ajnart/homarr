@@ -51,6 +51,8 @@ interface RssTileProps {
 export const useGetRssFeeds = (feedUrls: string[], widgetId: string) =>
   useQuery({
     queryKey: ['rss-feeds', feedUrls],
+    // Cache the results for 24 hours
+    cacheTime: 1000 * 60 * 60 * 24,
     queryFn: async () => {
       const responses = await Promise.all(
         feedUrls.map((feedUrl) =>
