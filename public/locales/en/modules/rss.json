@@ -5,7 +5,8 @@
     "settings": {
       "title": "Settings for RSS widget",
       "rssFeedUrl": {
-        "label": "RSS feed url"
+        "label": "RSS feeds urls",
+        "description": "The urls of the RSS feeds you want to display from."
       }
     }
   },
