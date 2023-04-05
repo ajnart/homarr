@@ -3,9 +3,9 @@
 	"contact": "Having trouble or questions? Connect with us!",
 	"addToDashboard": "Add to Dashboard",
 	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
+	"key": "Shortcut key",
+	"action": "Action",
+	"keybinds": "Keybinds",
 	"metrics": {
 		"configurationSchemaVersion": "Configuration schema version",
 		"configurationsCount": "Available configurations",
