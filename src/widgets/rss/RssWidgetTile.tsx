@@ -110,9 +110,9 @@ function RssTile({ widget }: RssTileProps) {
     <Stack h="100%">
       <LoadingOverlay visible={isFetching} />
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
-        {data.map((item, index) => (
+        {data.map((feed, index) => (
           <Stack w="100%" spacing="xs">
-            {item.feed.items.map((item: any, index: number) => (
+            {feed.feed.items.map((item: any, index: number) => (
               <Card
                 key={index}
                 withBorder
@@ -157,7 +157,9 @@ function RssTile({ widget }: RssTileProps) {
                       {item.content}
                     </Text>
 
-                    {item.pubDate && <TimeDisplay date={formatDate(item.pubDate)} />}
+                    {item.pubDate && (
+                      <InfoDisplay title={feed.feed.title} date={formatDate(item.pubDate)} />
+                    )}
                   </Flex>
                 </Flex>
               </Card>
@@ -185,12 +187,17 @@ function RssTile({ widget }: RssTileProps) {
   );
 }
 
-const TimeDisplay = ({ date }: { date: string }) => (
+const InfoDisplay = ({ date, title }: { date: string; title: string | undefined }) => (
   <Group mt="auto" spacing="xs">
     <IconClock size={14} />
     <Text size="xs" color="dimmed">
       {date}
     </Text>
+    {title && (
+      <Badge variant="outline" size="xs">
+        {title}
+      </Badge>
+    )}
   </Group>
 );
 
