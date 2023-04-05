@@ -7,14 +7,17 @@
       "rssFeedUrl": {
         "label": "RSS feeds urls",
         "description": "The urls of the RSS feeds you want to display from."
+      },
+      "refreshInterval": {
+        "label": "Refresh interval (in seconds)"
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Unable to retrieve RSS feed",
-        "text": "There was a problem reaching out the RSS feed. Make sure that you have correctly configured the RSS feed using a valid URL. URLs should match the official specification. After updating the feed, you may need to refresh the dashboard."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Unable to retrieve RSS feed",
+          "text": "There was a problem reaching out the RSS feed. Make sure that you have correctly configured the RSS feed using a valid URL. URLs should match the official specification. After updating the feed, you may need to refresh the dashboard."
+        }
       }
     }
   }

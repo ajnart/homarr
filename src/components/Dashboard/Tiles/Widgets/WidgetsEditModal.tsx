@@ -184,6 +184,7 @@ const WidgetOptionTypeSwitch: FC<{
     case 'slider':
       return (
         <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
           <Slider
             color={primaryColor}
             label={value}

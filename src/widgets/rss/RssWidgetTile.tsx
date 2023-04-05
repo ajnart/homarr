@@ -32,6 +32,13 @@ const definition = defineWidget({
       type: 'multiple-text',
       defaultValue: ['https://github.com/ajnart/homarr/tags.atom'],
     },
+    refreshInterval: {
+      type: 'slider',
+      defaultValue: 60,
+      min: 30,
+      max: 300,
+      step: 30,
+    },
   },
   gridstack: {
     minWidth: 2,
@@ -48,11 +55,12 @@ interface RssTileProps {
   widget: IRssWidget;
 }
 
-export const useGetRssFeeds = (feedUrls: string[], widgetId: string) =>
+export const useGetRssFeeds = (feedUrls: string[], refreshInterval: number, widgetId: string) =>
   useQuery({
     queryKey: ['rss-feeds', feedUrls],
     // Cache the results for 24 hours
     cacheTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * refreshInterval,
     queryFn: async () => {
       const responses = await Promise.all(
         feedUrls.map((feedUrl) =>
@@ -69,6 +77,7 @@ function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeeds(
     widget.properties.rssFeedUrl,
+    widget.properties.refreshInterval,
     widget.id
   );
   const { classes } = useStyles();
