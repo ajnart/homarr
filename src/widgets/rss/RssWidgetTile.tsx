@@ -8,7 +8,6 @@ import {
   Group,
   Image,
   Loader,
-  LoadingOverlay,
   MediaQuery,
   ScrollArea,
   Stack,
