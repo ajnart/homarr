@@ -110,7 +110,6 @@ function RssTile({ widget }: RssTileProps) {
 
   return (
     <Stack h="100%">
-      <LoadingOverlay visible={isFetching} />
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
         {data.map((feed, index) => (
           <Stack w="100%" spacing="xs">
@@ -183,7 +182,7 @@ function RssTile({ widget }: RssTileProps) {
           },
         }}
       >
-        <IconRefresh />
+        {isFetching ? <Loader /> : <IconRefresh />}
       </ActionIcon>
     </Stack>
   );
