@@ -1,17 +1,13 @@
-import Consola from 'consola';
-
-import { getCookie } from 'cookies-next';
-
-import { decode } from 'html-entities';
-
 import { NextApiRequest, NextApiResponse } from 'next';
-
+import Consola from 'consola';
+import { getCookie } from 'cookies-next';
+import { decode } from 'html-entities';
 import Parser from 'rss-parser';
-
 import { z } from 'zod';
+
 import { getConfig } from '../../../../tools/config/getConfig';
-import { IRssWidget } from '../../../../widgets/rss/RssWidgetTile';
 import { Stopwatch } from '../../../../tools/shared/time/stopwatch.tool';
+import { IRssWidget } from '../../../../widgets/rss/RssWidgetTile';
 
 type CustomItem = {
   'media:content': string;
@@ -28,6 +24,7 @@ const parser: Parser<any, CustomItem> = new Parser({
 
 const getQuerySchema = z.object({
   widgetId: z.string().uuid(),
+  feedUrl: z.string(),
 });
 
 export const Get = async (request: NextApiRequest, response: NextApiResponse) => {
@@ -44,7 +41,6 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
   const rssWidget = config.widgets.find(
     (x) => x.type === 'rss' && x.id === parseResult.data.widgetId
   ) as IRssWidget | undefined;
-
   if (
     !rssWidget ||
     !rssWidget.properties.rssFeedUrl ||
@@ -56,7 +52,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
 
   Consola.info('Requesting RSS feed...');
   const stopWatch = new Stopwatch();
-  const feed = await parser.parseURL(rssWidget.properties.rssFeedUrl);
+  const feed = await parser.parseURL(parseResult.data.feedUrl);
   Consola.info(`Retrieved RSS feed after ${stopWatch.getEllapsedMilliseconds()} milliseconds`);
 
   const orderedFeed = {

@@ -34,7 +34,7 @@ const definition = defineWidget({
   options: {
     rssFeedUrl: {
       type: 'multiple-text',
-      defaultValue: ['https://japantimes.co.jp/feed'],
+      defaultValue: [],
     },
   },
   gridstack: {
