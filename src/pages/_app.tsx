@@ -2,7 +2,6 @@ import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from 
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
 import Consola from 'consola';
-import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { getCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
@@ -12,6 +11,9 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { Notifications } from '@mantine/notifications';
 import 'video.js/dist/video-js.css';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
+import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -77,6 +79,10 @@ function App(
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
+  const asyncStoragePersister = createAsyncStoragePersister({
+    storage: AsyncStorage,
+  });
+
   useHotkeys([['mod+J', () => toggleColorScheme()]]);
 
   return (
@@ -84,7 +90,10 @@ function App(
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
-      <QueryClientProvider client={queryClient}>
+      <PersistQueryClientProvider
+        client={queryClient}
+        persistOptions={{ persister: asyncStoragePersister }}
+      >
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
           <ColorTheme.Provider value={colorTheme}>
             <MantineProvider
@@ -131,7 +140,7 @@ function App(
           </ColorTheme.Provider>
         </ColorSchemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
+      </PersistQueryClientProvider>
     </>
   );
 }
