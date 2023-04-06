@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../../tools/config/getConfig';
 
 import { MediaRequest } from '../../../../widgets/media-requests/media-request-types';
+import { ConfigAppType } from '../../../../types/app';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
@@ -38,7 +39,7 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
               type: item.type,
               name: genericItem.name,
               userName: item.requestedBy.displayName,
-              userLink: `${app.url}/users/${item.requestedBy.id}`,
+              userLink: constructAvatarUrl(app, item),
               userProfilePicture: `${app.url}${item.requestedBy.avatar}`,
               airDate: genericItem.airDate,
               status: item.status,
@@ -60,6 +61,14 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const mediaRequests = (await Promise.all(promises)).reduce((prev, cur) => prev.concat(cur));
 
   return response.status(200).json(mediaRequests);
+};
+
+const constructAvatarUrl = (app: ConfigAppType, item: OverseerrResponseItem) => {
+  if (item.requestedBy.avatar.startsWith('http://') || item.requestedBy.avatar.startsWith('https://')) {
+    return item.requestedBy.avatar;
+  }
+
+  return `${app.url}/users/${item.requestedBy.id}`;
 };
 
 const retrieveDetailsForItem = async (
