@@ -17,33 +17,24 @@ export const DashboardView = () => {
 
   return (
     <Group align="top" h="100%" spacing="xs">
-      {sidebarsVisible.isLoading ? (
-        <Center w="100%">
-          <Loader />
-        </Center>
-      ) : (
-        <>
-          {sidebarsVisible.left ? (
-            <DashboardSidebar location="left" isGridstackReady={isReady} />
-          ) : null}
+      {sidebarsVisible.left ? (
+        <DashboardSidebar location="left" isGridstackReady={isReady} />
+      ) : null}
 
-          <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
-            {!isReady
-              ? null
-              : wrappers.map((item) =>
-                  item.type === 'category' ? (
-                    <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
-                  ) : (
-                    <DashboardWrapper key={item.id} wrapper={item as WrapperType} />
-                  )
-                )}
-          </Stack>
+      <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
+        {isReady &&
+          wrappers.map((item) =>
+            item.type === 'category' ? (
+              <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
+            ) : (
+              <DashboardWrapper key={item.id} wrapper={item as WrapperType} />
+            )
+          )}
+      </Stack>
 
-          {sidebarsVisible.right ? (
-            <DashboardSidebar location="right" isGridstackReady={isReady} />
-          ) : null}
-        </>
-      )}
+      {sidebarsVisible.right ? (
+        <DashboardSidebar location="right" isGridstackReady={isReady} />
+      ) : null}
     </Group>
   );
 };

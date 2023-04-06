@@ -5,6 +5,7 @@ import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
 import { MediaRequestStatus } from './media-request-types';
+import { useTranslation } from 'next-i18next';
 
 const definition = defineWidget({
   id: 'media-requests-stats',
@@ -26,6 +27,7 @@ interface MediaRequestStatsWidgetProps {
 }
 
 function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
+  const { t } = useTranslation('modules/media-requests-stats');
   const { data, isFetching } = useMediaRequestQuery();
 
   if (!data || isFetching) {
@@ -41,7 +43,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
               {data.filter((x) => x.status === MediaRequestStatus.PendingApproval).length}
             </Text>
             <Text color="dimmed" align="center" size="xs">
-              Pending approvals
+              {t('stats.pending')}
             </Text>
           </Stack>
         </Center>
@@ -51,7 +53,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
           <Stack spacing={0} align="center">
             <Text align="center">{data.filter((x) => x.type === 'tv').length}</Text>
             <Text color="dimmed" align="center" size="xs">
-              TV requests
+              {t('stats.tvRequests')}
             </Text>
           </Stack>
         </Center>
@@ -61,7 +63,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
           <Stack spacing={0} align="center">
             <Text align="center">{data.filter((x) => x.type === 'movie').length}</Text>
             <Text color="dimmed" align="center" size="xs">
-              Movie requests
+              {t('stats.movieRequests')}
             </Text>
           </Stack>
         </Center>

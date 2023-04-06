@@ -1,4 +1,5 @@
 import { Badge, Card, Center, Flex, Group, Image, Stack, Text } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { IconGitPullRequest } from '@tabler/icons';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
@@ -26,6 +27,7 @@ interface MediaRequestListWidgetProps {
 }
 
 function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
+  const { t } = useTranslation('modules/media-requests-list');
   const { data, isFetching } = useMediaRequestQuery();
 
   if (!data || isFetching) {
@@ -35,7 +37,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   if (data.length === 0) {
     return (
       <Center h="100%">
-        <Text>There are no requests. Ensure that you&apos;ve configured your apps correctly.</Text>
+        <Text>{t('noRequests')}</Text>
       </Center>
     );
   }
@@ -47,9 +49,9 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   return (
     <Stack>
       {countPendingApproval > 0 ? (
-        <Text>There are {countPendingApproval} requests waiting for an approval.</Text>
+        <Text>{t('pending', { countPendingApproval })}</Text>
       ) : (
-        <Text>There are currently no pending approvals. You&apos;re good to go!</Text>
+        <Text>{t('nonePending')}</Text>
       )}
       {data.map((item) => (
         <Card pos="relative" withBorder>
@@ -108,13 +110,14 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
 }
 
 const MediaRequestStatusBadge = ({ status }: { status: MediaRequestStatus }) => {
+  const { t } = useTranslation('modules/media-requests-list');
   switch (status) {
     case MediaRequestStatus.Approved:
-      return <Badge color="green">Approved</Badge>;
+      return <Badge color="green">{t('state.approved')}</Badge>;
     case MediaRequestStatus.Declined:
-      return <Badge color="red">Declined</Badge>;
+      return <Badge color="red">{t('state.declined')}</Badge>;
     case MediaRequestStatus.PendingApproval:
-      return <Badge color="orange">Pending approval</Badge>;
+      return <Badge color="orange">{t('state.pendingApproval')}</Badge>;
     default:
       return <></>;
   }

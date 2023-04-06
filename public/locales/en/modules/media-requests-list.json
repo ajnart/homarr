@@ -5,5 +5,13 @@
     "settings": {
       "title": "Media requests list"
     }
+  },
+  "noRequests": "There are no requests. Ensure that you've configured your apps correctly.",
+  "pending": "There are {countPendingApproval} requests waiting for an approval.",
+  "nonePending": "There are currently no pending approvals. You're good to go!",
+  "state": {
+    "approved": "Approved",
+    "pendingApproval": "Pending approval",
+    "declined": "Declined"
   }
 }
