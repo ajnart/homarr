@@ -7,6 +7,22 @@ export const getFrontendConfig = (name: string): ConfigType => {
   const config = getConfig(name);
 
   Consola.info(`Requested frontend content of configuration '${name}'`);
+  // If not, return the config
+  const someAppsWithoutProps = config.apps.filter(
+    (app) =>
+      app.integration?.properties.some(
+        (property) => property.value === null || property.value === undefined
+      ) ?? false
+  );
+  if (someAppsWithoutProps.length > 0) {
+    Consola.warn(
+      `There are apps that have missing configuration options: [${someAppsWithoutProps
+        .map((app) => app.name)
+        .join(
+          ', '
+        )}] please input the correct secrets once again for the concerned app(s), save them, exit edit mode and reload the page.`
+    );
+  }
 
   return {
     ...config,
