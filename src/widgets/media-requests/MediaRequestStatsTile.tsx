@@ -1,11 +1,11 @@
 import { Card, Center, Flex, Stack, Text } from '@mantine/core';
 import { IconChartBar } from '@tabler/icons';
+import { useTranslation } from 'next-i18next';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
 import { MediaRequestStatus } from './media-request-types';
-import { useTranslation } from 'next-i18next';
 
 const definition = defineWidget({
   id: 'media-requests-stats',

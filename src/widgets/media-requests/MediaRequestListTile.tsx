@@ -82,7 +82,14 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
               </Stack>
             </Flex>
             <Flex gap="xs">
-              <Image src={item.userProfilePicture} width={25} height={25} alt="requester avatar" />
+              <Image
+                src={item.userProfilePicture}
+                width={25}
+                height={25}
+                alt="requester avatar"
+                radius="xl"
+                withPlaceholder
+              />
               <Text
                 component="a"
                 href={item.userLink}

@@ -7,4 +7,5 @@ export const useMediaRequestQuery = () => useQuery({
     const response = await fetch('/api/modules/media-requests');
     return (await response.json()) as MediaRequest[];
   },
+  refetchInterval: 3 * 60 * 1000,
 });

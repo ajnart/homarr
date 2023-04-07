@@ -14,6 +14,8 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
     ['overseerr', 'jellyseerr'].includes(app.integration?.type ?? '')
   );
 
+  Consola.log(`Retrieving media requests from ${apps.length} apps`);
+
   const promises = apps.map((app): Promise<MediaRequest[]> => {
     const apiKey = app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
     const headers: HeadersInit = { 'X-Api-Key': apiKey };
@@ -39,8 +41,8 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
               type: item.type,
               name: genericItem.name,
               userName: item.requestedBy.displayName,
-              userLink: constructAvatarUrl(app, item),
-              userProfilePicture: `${app.url}${item.requestedBy.avatar}`,
+              userProfilePicture: constructAvatarUrl(app, item),
+              userLink: `${app.url}/users/${item.requestedBy.id}`,
               airDate: genericItem.airDate,
               status: item.status,
               backdropPath: `https://image.tmdb.org/t/p/original/${genericItem.backdropPath}`,
@@ -64,11 +66,14 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
 };
 
 const constructAvatarUrl = (app: ConfigAppType, item: OverseerrResponseItem) => {
-  if (item.requestedBy.avatar.startsWith('http://') || item.requestedBy.avatar.startsWith('https://')) {
+  const isAbsolute =
+    item.requestedBy.avatar.startsWith('http://') || item.requestedBy.avatar.startsWith('https://');
+
+  if (isAbsolute) {
     return item.requestedBy.avatar;
   }
 
-  return `${app.url}/users/${item.requestedBy.id}`;
+  return `${app.url}/${item.requestedBy.avatar}`;
 };
 
 const retrieveDetailsForItem = async (
