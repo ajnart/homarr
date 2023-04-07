@@ -14,57 +14,55 @@ export class Language {
 
 export const languages: Language[] = [
   {
-    shortName: 'de',
+    shortName: 'de-DE',
     originalName: 'Deutsch',
     translatedName: 'German',
     emoji: '🇩🇪',
   },
   {
-    shortName: 'en',
+    shortName: 'en-US',
     originalName: 'English',
     translatedName: 'English',
     emoji: '🇬🇧',
   },
-  // Danish
   {
-    shortName: 'da',
+    shortName: 'da-DK',
     originalName: 'Dansk',
     translatedName: 'Danish',
     emoji: '🇩🇰',
   },
-  // Hebrew
   {
-    shortName: 'he',
+    shortName: 'he-IL',
     originalName: 'עברית',
     translatedName: 'Hebrew',
     emoji: '🇮🇱',
   },
   {
-    shortName: 'es',
+    shortName: 'es-ES',
     originalName: 'Español',
     translatedName: 'Spanish',
     emoji: '🇪🇸',
   },
   {
-    shortName: 'fr',
+    shortName: 'fr-FR',
     originalName: 'Français',
     translatedName: 'French',
     emoji: '🇫🇷',
   },
   {
-    shortName: 'it',
+    shortName: 'it-IT',
     originalName: 'Italiano',
     translatedName: 'Italian',
     emoji: '🇮🇹',
   },
   {
-    shortName: 'ja',
+    shortName: 'ja-JP',
     originalName: '日本語',
     translatedName: 'Japanese',
     emoji: '🇯🇵',
   },
   {
-    shortName: 'ko',
+    shortName: 'ko-KR',
     originalName: '한국어',
     translatedName: 'Korean',
     emoji: '🇰🇷',
@@ -75,83 +73,80 @@ export const languages: Language[] = [
     translatedName: 'LOLCAT',
     emoji: '🐱',
   },
-  // Norwegian
   {
-    shortName: 'no',
+    shortName: 'no-NO',
     originalName: 'Norsk',
     translatedName: 'Norwegian',
     emoji: '🇳🇴',
   },
-  // Slovak
   {
-    shortName: 'sk',
+    shortName: 'sk-SK',
     originalName: 'Slovenčina',
     translatedName: 'Slovak',
     emoji: '🇸🇰',
   },
   {
-    shortName: 'nl',
+    shortName: 'nl-NL',
     originalName: 'Nederlands',
     translatedName: 'Dutch',
     emoji: '🇳🇱',
   },
   {
-    shortName: 'pl',
+    shortName: 'pl-PL',
     originalName: 'Polski',
     translatedName: 'Polish',
     emoji: '🇵🇱',
   },
   {
-    shortName: 'pt',
+    shortName: 'pt-PT',
     originalName: 'Português',
     translatedName: 'Portuguese',
     emoji: '🇵🇹',
   },
   {
-    shortName: 'ru',
+    shortName: 'ru-RU',
     originalName: 'Русский',
     translatedName: 'Russian',
     emoji: '🇷🇺',
   },
   {
-    shortName: 'sl',
+    shortName: 'sl-SI',
     originalName: 'Slovenščina',
     translatedName: 'Slovenian',
     emoji: '🇸🇮',
   },
 
   {
-    shortName: 'sv',
+    shortName: 'sv-SE',
     originalName: 'Svenska',
     translatedName: 'Swedish',
     emoji: '🇸🇪',
   },
   {
-    shortName: 'uk',
+    shortName: 'uk-UA',
     originalName: 'Українська',
     translatedName: 'Ukrainian',
     emoji: '🇺🇦',
   },
-  // Vietnamese
   {
-    shortName: 'vi',
+    shortName: 'vi-VN',
     originalName: 'Tiếng Việt',
     translatedName: 'Vietnamese',
     emoji: '🇻🇳',
   },
   {
-    shortName: 'zh',
+    shortName: 'zh-CN',
     originalName: '中文',
     translatedName: 'Chinese',
     emoji: '🇨🇳',
   },
   {
-    shortName: 'el',
+    shortName: 'el-GR',
     originalName: 'Ελληνικά',
     translatedName: 'Greek',
     emoji: '🇬🇷',
   },
 ];
 
-export const getLanguageByCode = (code: string | null) =>
-  languages.find((language) => language.shortName === code) ?? languages[languages.length - 1];
+export const getLanguageByCode = (code: string): Language | undefined =>
+  languages.find((language) => language.shortName === code);

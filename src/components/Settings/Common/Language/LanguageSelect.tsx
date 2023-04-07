@@ -1,5 +1,6 @@
-import { Group, Select, Stack, Text } from '@mantine/core';
+import { Group, Select, SelectItem, Stack, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
+import Consola from 'consola';
 
 import { forwardRef, useState } from 'react';
 import { useTranslation } from 'next-i18next';
@@ -16,14 +17,22 @@ export default function LanguageSelect() {
     (configLocale as string) ?? locale ?? 'en'
   );
 
-  const data = locales
-    ? locales.map((localeItem) => ({
+  const selectData =
+    locales?.map((localeItem): SelectItem | undefined => {
+      const language = getLanguageByCode(localeItem);
+      if (!language) {
+        Consola.warn(`Failed to map language code ${localeItem} to language`);
+        return undefined;
+      }
+      return {
         value: localeItem,
-        label: getLanguageByCode(localeItem).originalName,
-        icon: getLanguageByCode(localeItem).emoji,
-        language: getLanguageByCode(localeItem),
-      }))
-    : [];
+        label: language.originalName,
+        icon: language.emoji,
+        language,
+      };
+    }) ?? [];
+
+    const data = selectData.filter((x) => x !== undefined);
 
   const onChangeSelect = (value: string) => {
     setSelectedLanguage(value);
