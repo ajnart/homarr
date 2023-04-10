@@ -10,6 +10,7 @@
   "changePosition": "",
   "remove": "제거",
   "removeConfirm": "",
+  "createItem": "",
   "sections": {
     "settings": "설정",
     "dangerZone": "위험한 설정"
