@@ -10,6 +10,7 @@
   "changePosition": "Ændre placering",
   "remove": "Fjern",
   "removeConfirm": "Er du sikker på, at du ønsker at fjerne {{item}}?",
+  "createItem": "",
   "sections": {
     "settings": "Indstillinger",
     "dangerZone": "Farezone"
