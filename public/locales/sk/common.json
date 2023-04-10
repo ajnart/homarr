@@ -10,6 +10,7 @@
   "changePosition": "Zmeniť pozíciu",
   "remove": "Odstrániť",
   "removeConfirm": "Ste si istý ze chcete odstrániť {{item}}?",
+  "createItem": "",
   "sections": {
     "settings": "Nastavenia",
     "dangerZone": "Nebezpečná zóna"
