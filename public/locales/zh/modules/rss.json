@@ -5,15 +5,19 @@
     "settings": {
       "title": "设置RSS小部件",
       "rssFeedUrl": {
-        "label": "RSS订阅网址"
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "无法检索到RSS源",
-        "text": "在获取RSS信息时出现了问题。请确保你已经使用有效的URL正确配置了RSS提要。URL应符合官方规范。在更新种子后，你可能需要刷新仪表板。"
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }
