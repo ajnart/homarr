@@ -10,6 +10,7 @@
   "changePosition": "Positie wijzigen",
   "remove": "Verwijder",
   "removeConfirm": "",
+  "createItem": "",
   "sections": {
     "settings": "Instellingen",
     "dangerZone": "Gevarenzone"
