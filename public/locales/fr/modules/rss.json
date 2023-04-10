@@ -5,15 +5,19 @@
     "settings": {
       "title": "",
       "rssFeedUrl": {
-        "label": "URL du flux RSS"
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Impossible de récupérer le flux RSS",
-        "text": ""
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }
