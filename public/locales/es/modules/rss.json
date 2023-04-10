@@ -5,18 +5,18 @@
     "settings": {
       "title": "Ajustes para el widget RSS",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URLs de fuentes RSS",
+        "description": "Las URLs de las fuentes RSS desde las que deseas mostrar."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Intervalo de refresco (en minutos)"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Imposible recuperar la fuente RSS",
+          "text": "Hubo un problema al llegar a la fuente RSS. Asegúrate de haber configurado correctamente la fuente RSS utilizando una URL válida. Las URL deben coincidir con la especificación oficial. Después de actualizar la fuente, es posible que debas actualizar el dashboard."
         }
       }
     }
