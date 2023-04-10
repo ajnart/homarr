@@ -1,0 +1,17 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": ""
+    }
+  },
+  "noRequests": "",
+  "pending": "",
+  "nonePending": "",
+  "state": {
+    "approved": "",
+    "pendingApproval": "",
+    "declined": ""
+  }
+}
