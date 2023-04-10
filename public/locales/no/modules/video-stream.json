@@ -5,10 +5,10 @@
     "settings": {
       "title": "Innstillinger for videostrøm widget",
       "FeedUrl": {
-        "label": ""
+        "label": "Feed URL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Autospill"
       },
       "muted": {
         "label": "Dempet lyd"
