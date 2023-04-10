@@ -1,44 +1,42 @@
+import Link from 'next/link';
 import {
   ActionIcon,
   Badge,
   Card,
   Center,
-  createStyles,
   Flex,
   Group,
   Image,
   Loader,
-  LoadingOverlay,
   MediaQuery,
   ScrollArea,
   Stack,
   Text,
   Title,
+  createStyles,
 } from '@mantine/core';
-import {
-  IconBulldozer,
-  IconCalendarTime,
-  IconClock,
-  IconCopyright,
-  IconRefresh,
-  IconRss,
-  IconSpeakerphone,
-} from '@tabler/icons';
+import { IconClock, IconRefresh, IconRss } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
-import { useState } from 'react';
-import { IWidget } from '../widgets';
+
 import { defineWidget } from '../helper';
+import { IWidget } from '../widgets';
 
 const definition = defineWidget({
   id: 'rss',
   icon: IconRss,
   options: {
     rssFeedUrl: {
-      type: 'text',
-      defaultValue: '',
+      type: 'multiple-text',
+      defaultValue: ['https://github.com/ajnart/homarr/tags.atom'],
+    },
+    refreshInterval: {
+      type: 'slider',
+      defaultValue: 30,
+      min: 15,
+      max: 300,
+      step: 15,
     },
   },
   gridstack: {
@@ -56,34 +54,45 @@ interface RssTileProps {
   widget: IRssWidget;
 }
 
-export const useGetRssFeed = (feedUrl: string, widgetId: string) =>
+export const useGetRssFeeds = (feedUrls: string[], refreshInterval: number, widgetId: string) =>
   useQuery({
-    queryKey: ['rss-feed', feedUrl],
+    queryKey: ['rss-feeds', feedUrls],
+    // Cache the results for 24 hours
+    cacheTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * refreshInterval,
     queryFn: async () => {
-      const response = await fetch(`/api/modules/rss?widgetId=${widgetId}`);
-      return response.json();
+      const responses = await Promise.all(
+        feedUrls.map((feedUrl) =>
+          fetch(
+            `/api/modules/rss?widgetId=${widgetId}&feedUrl=${encodeURIComponent(feedUrl)}`
+          ).then((response) => response.json())
+        )
+      );
+      return responses;
     },
   });
 
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
-  const { data, isLoading, isFetching, isError, refetch } = useGetRssFeed(
+  const { data, isLoading, isFetching, isError, refetch } = useGetRssFeeds(
     widget.properties.rssFeedUrl,
+    widget.properties.refreshInterval,
     widget.id
   );
   const { classes } = useStyles();
-  const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(false);
 
   function formatDate(input: string): string {
     // Parse the input date as a local date
-    const inputDate = dayjs(new Date(input));
-    const now = dayjs(); // Current date and time
-
-    // The difference between the input date and now
-    const difference = now.diff(inputDate, 'ms');
-    const duration = dayjs.duration(difference, 'ms');
-    const humanizedDuration = duration.humanize();
-    return `${humanizedDuration} ago`;
+    try {
+      const inputDate = dayjs(new Date(input));
+      const now = dayjs(); // Current date and time
+      const difference = now.diff(inputDate, 'ms');
+      const duration = dayjs.duration(difference, 'ms');
+      const humanizedDuration = duration.humanize();
+      return `${humanizedDuration} ago`;
+    } catch (e) {
+      return 'Error';
+    }
   }
 
   if (!data || isLoading) {
@@ -94,7 +103,7 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  if (!data.success || isError) {
+  if (data.length < 1 || isError) {
     return (
       <Center h="100%">
         <Stack align="center">
@@ -108,133 +117,95 @@ function RssTile({ widget }: RssTileProps) {
 
   return (
     <Stack h="100%">
-      <LoadingOverlay visible={isFetching} />
-      <Flex align="end">{data.feed.title && <Title order={5}>{data.feed.title}</Title>}</Flex>
-      <ScrollArea className="scroll-area-w100" w="100%">
-        <Stack w="100%" spacing="xs">
-          {data.feed.items.map((item: any, index: number) => (
-            <Card
-              key={index}
-              withBorder
-              component={Link ?? 'div'}
-              href={item.link}
-              radius="md"
-              target="_blank"
-              w="100%"
-            >
-              {item.enclosure && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  className={classes.backgroundImage}
-                  src={item.enclosure.url ?? undefined}
-                  alt="backdrop"
-                />
-              )}
-
-              <Flex gap="xs">
+      <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
+        {data.map((feed, index) => (
+          <Stack w="100%" spacing="xs">
+            {feed.feed.items.map((item: any, index: number) => (
+              <Card
+                key={index}
+                withBorder
+                component={Link ?? 'div'}
+                href={item.link}
+                radius="md"
+                target="_blank"
+                w="100%"
+              >
                 {item.enclosure && (
-                  <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
-                    <Image
-                      src={item.enclosure?.url ?? undefined}
-                      width={140}
-                      height={140}
-                      radius="md"
-                      withPlaceholder
-                    />
-                  </MediaQuery>
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    className={classes.backgroundImage}
+                    src={item.enclosure.url ?? undefined}
+                    alt="backdrop"
+                  />
                 )}
-                <Flex gap={2} direction="column" w="100%">
-                  {item.categories && (
-                    <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
-                      {item.categories.map((category: any, categoryIndex: number) => (
-                        <Badge key={categoryIndex}>{category}</Badge>
-                      ))}
-                    </Flex>
+
+                <Flex gap="xs">
+                  {item.enclosure && (
+                    <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
+                      <Image
+                        src={item.enclosure?.url ?? undefined}
+                        width={140}
+                        height={140}
+                        radius="md"
+                        withPlaceholder
+                      />
+                    </MediaQuery>
                   )}
+                  <Flex gap={2} direction="column" w="100%">
+                    {item.categories && (
+                      <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
+                        {item.categories.map((category: any, categoryIndex: number) => (
+                          <Badge key={categoryIndex}>{category}</Badge>
+                        ))}
+                      </Flex>
+                    )}
 
-                  <Text lineClamp={2}>{item.title}</Text>
-                  <Text color="dimmed" size="xs" lineClamp={3}>
-                    {item.content}
-                  </Text>
+                    <Text lineClamp={2}>{item.title}</Text>
+                    <Text color="dimmed" size="xs" lineClamp={3}>
+                      {item.content}
+                    </Text>
 
-                  {item.pubDate && <TimeDisplay date={formatDate(item.pubDate)} />}
+                    {item.pubDate && (
+                      <InfoDisplay title={feed.feed.title} date={formatDate(item.pubDate)} />
+                    )}
+                  </Flex>
                 </Flex>
-              </Flex>
-            </Card>
-          ))}
-        </Stack>
+              </Card>
+            ))}
+          </Stack>
+        ))}
       </ScrollArea>
 
-      <Flex wrap="wrap" columnGap="md">
-        {data.feed.copyright && (
-          <Group spacing="sm">
-            <IconCopyright size={14} />
-            <Text color="dimmed" size="sm">
-              {data.feed.copyright}
-            </Text>
-          </Group>
-        )}
-        {data.feed.pubDate && (
-          <Group>
-            <IconCalendarTime size={14} />
-            <Text color="dimmed" size="sm">
-              {data.feed.pubDate}
-            </Text>
-          </Group>
-        )}
-        {data.feed.lastBuildDate && (
-          <Group>
-            <IconBulldozer size={14} />
-            <Text color="dimmed" size="sm">
-              {formatDate(data.feed.lastBuildDate)}
-            </Text>
-          </Group>
-        )}
-        {data.feed.feedUrl && (
-          <Group spacing="sm">
-            <IconSpeakerphone size={14} />
-            <Text
-              color="dimmed"
-              size="sm"
-              variant="link"
-              target="_blank"
-              component={Link}
-              href={data.feed.feedUrl}
-            >
-              Feed URL
-            </Text>
-          </Group>
-        )}
-        <ActionIcon
-          size="sm"
-          radius="xl"
-          pos="absolute"
-          right={10}
-          onClick={() => refetch()}
-          bottom={10}
-          styles={{
-            root: {
-              borderColor: 'red',
-            },
-          }}
-        >
-          {data.feed.image ? (
-            <Image src={data.feed.image.url} alt={data.feed.image.title} mx="auto" />
-          ) : (
-            <IconRefresh />
-          )}
-        </ActionIcon>
-      </Flex>
+      <ActionIcon
+        size="sm"
+        radius="xl"
+        pos="absolute"
+        right={10}
+        onClick={() => refetch()}
+        bottom={10}
+        styles={{
+          root: {
+            borderColor: 'red',
+          },
+        }}
+      >
+        {isFetching ? <Loader /> : <IconRefresh />}
+      </ActionIcon>
     </Stack>
   );
 }
 
-const TimeDisplay = ({ date }: { date: string }) => (
+const InfoDisplay = ({ date, title }: { date: string; title: string | undefined }) => (
   <Group mt="auto" spacing="xs">
     <IconClock size={14} />
     <Text size="xs" color="dimmed">
       {date}
     </Text>
+    {title && (
+      <Badge variant="outline" size="xs">
+        {title}
+      </Badge>
+    )}
   </Group>
 );
 

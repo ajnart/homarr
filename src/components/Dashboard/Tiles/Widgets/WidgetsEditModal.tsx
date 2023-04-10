@@ -184,6 +184,7 @@ const WidgetOptionTypeSwitch: FC<{
     case 'slider':
       return (
         <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
           <Slider
             color={primaryColor}
             label={value}
@@ -242,6 +243,25 @@ const WidgetOptionTypeSwitch: FC<{
             )}
           </DraggableList>
         </Stack>
+      );
+    case 'multiple-text':
+      return (
+        <MultiSelect
+          data={value.map((name: any) => ({ value: name, label: name }))}
+          label={t(`descriptor.settings.${key}.label`)}
+          description={t(`descriptor.settings.${key}.description`)}
+          defaultValue={value as string[]}
+          withinPortal
+          searchable
+          creatable
+          getCreateLabel={(query) => t('common:createItem', query)}
+          onChange={(values) =>
+            handleChange(
+              key,
+              values.map((item: string) => item)
+            )
+          }
+        />
       );
     /* eslint-enable no-case-declarations */
     default:
