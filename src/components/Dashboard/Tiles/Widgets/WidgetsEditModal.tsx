@@ -247,14 +247,14 @@ const WidgetOptionTypeSwitch: FC<{
     case 'multiple-text':
       return (
         <MultiSelect
-          data={value.map((v: any) => ({ value: v, label: v }))}
+          data={value.map((name: any) => ({ value: name, label: name }))}
           label={t(`descriptor.settings.${key}.label`)}
           description={t(`descriptor.settings.${key}.description`)}
           defaultValue={value as string[]}
           withinPortal
           searchable
           creatable
-          getCreateLabel={(query) => `+ Add ${query}`}
+          getCreateLabel={(query) => t('common:createItem', query)}
           onChange={(values) =>
             handleChange(
               key,

@@ -33,10 +33,10 @@ const definition = defineWidget({
     },
     refreshInterval: {
       type: 'slider',
-      defaultValue: 60,
-      min: 30,
+      defaultValue: 30,
+      min: 15,
       max: 300,
-      step: 30,
+      step: 15,
     },
   },
   gridstack: {
@@ -59,7 +59,7 @@ export const useGetRssFeeds = (feedUrls: string[], refreshInterval: number, widg
     queryKey: ['rss-feeds', feedUrls],
     // Cache the results for 24 hours
     cacheTime: 1000 * 60 * 60 * 24,
-    staleTime: 1000 * refreshInterval,
+    staleTime: 1000 * 60 * refreshInterval,
     queryFn: async () => {
       const responses = await Promise.all(
         feedUrls.map((feedUrl) =>
@@ -86,7 +86,6 @@ function RssTile({ widget }: RssTileProps) {
     try {
       const inputDate = dayjs(new Date(input));
       const now = dayjs(); // Current date and time
-      // The difference between the input date and now
       const difference = now.diff(inputDate, 'ms');
       const duration = dayjs.duration(difference, 'ms');
       const humanizedDuration = duration.humanize();

@@ -50,7 +50,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     return;
   }
 
-  Consola.info('Requesting RSS feed...');
+  Consola.info(`Requesting RSS feed at url ${parseResult.data.feedUrl}`);
   const stopWatch = new Stopwatch();
   const feed = await parser.parseURL(parseResult.data.feedUrl);
   Consola.info(`Retrieved RSS feed after ${stopWatch.getEllapsedMilliseconds()} milliseconds`);

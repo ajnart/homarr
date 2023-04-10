@@ -9,7 +9,7 @@
         "description": "The urls of the RSS feeds you want to display from."
       },
       "refreshInterval": {
-        "label": "Refresh interval (in seconds)"
+        "label": "Refresh interval (in minutes)"
       }
     },
     "card": {
