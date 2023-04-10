@@ -1,12 +1,12 @@
 {
   "descriptor": {
     "name": "Media Requests",
-    "description": "See a list of all media requests from your Overseerr and Jellyseerr",
+    "description": "See a list of all media requests from your Overseerr or Jellyseerr instance",
     "settings": {
       "title": "Media requests list"
     }
   },
-  "noRequests": "There are no requests. Ensure that you've configured your apps correctly.",
+  "noRequests": "No requests found. Please ensure that you've configured your apps correctly.",
   "pending": "There are {countPendingApproval} requests waiting for an approval.",
   "nonePending": "There are currently no pending approvals. You're good to go!",
   "state": {
