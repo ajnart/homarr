@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Statistik for medieanmodning",
+    "description": "Statistik over dine medieanmodninger",
     "settings": {
-      "title": ""
+      "title": "Statistikker over medieanmodninger"
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Afventer godkendelse",
+    "tvRequests": "TV-anmodninger",
+    "movieRequests": "Film anmodninger"
   }
 }
