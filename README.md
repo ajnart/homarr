@@ -1,23 +1,21 @@
 
 <!-- Project Title -->
-<picture id="banner">
-<img src="./docs/banner.png" />
-</picture>
+![Banner](docs/banner.png)
 
 <!-- Badges -->
 <p align="center">
 <img src="https://img.shields.io/github/stars/ajnart/homarr?label=%E2%AD%90%20Stars&style=flat-square?branch=master&kill_cache=1%22">
 <a href="https://github.com/ajnart/homarr/releases/latest">
-  <img alt="Latest Release (Semver)" src="https://img.shields.io/github/v/release/ajnart/homarr?label=%F0%9F%9A%80%20Release">
+  <img alt="Latest Release (Semver)" src="https://img.shields.io/github/v/release/ajnart/homarr?label=%F0%9F%9A%80%20Release">
 </a>
 <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
-  <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status">
+  <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status">
 </a>
 <a href=https://crowdin.com/project/homarr>
 <img title="Translations" src="https://badges.crowdin.net/homarr/localized.svg" />
 </a>
 <a href="https://discord.gg/aCsmEV5RgA">
-  <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield">
+  <img title="Discord" src="https://discordapp.com/api/guilds/972958686051962910/widget.png?style=shield">
 </a>
 </p>
 
@@ -38,43 +36,38 @@
   </a>
 </p>
 
-
 Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
 
 <br/>
 <br/>
 
-<picture id="features">
-<img src="docs/section-features.png" />
-</picture>
+![Features Section](docs/section-features.png)
 
-- 🖌️ Highly customizeable with extensive drag and drop grid system
+- 🖌️ Highly customizable with an extensive drag and drop grid system
 - ✨ Integrates seamlessly with your favorite self-hosted applications
-- 📌 Easy and fast app management - no yaml involved
-- 🙊 Advanced secrets management system for enhanced security
+- 📌 Easy and fast app management - no YAML involved
+- 🙊 Advanced secrets' management system for enhanced security
 - 📄 Detailed documentation and active community
-- 🔍 Search though the web or supported integrations in an instant
-- 🏴󠁧󠁢󠁮󠁩󠁲󠁿 Monitor your application with a built in status system
+- 🔍 Search through the web or supported integrations in an instant
+- 🏴󠁧󠁢󠁮󠁩󠁲󠁿 Monitor your application with a built-in status system
 - 🦞 Comprehensive built-in icon picker with over 1000 icons
-- 🐳 Easy deployment with Docker, Unraid, Synology
-- 🚀 Comatible with any major consumer hardware (x86, Rasperry Pi, ...)
+- 🐳 Easy deployment with Docker, unRAID, Synology
+- 🚀 Compatible with any major consumer hardware (x86, Raspberry Pi, ...)
 - 💵 Free and Open-Source - your data stays on your device
 
 <br/>
 <br/>
 
-<picture id="widgets-and-integrations">
-<img src="docs/section-widgets-and-integrations.png" />
-</picture>
+![Widgets & Integrations Section](docs/section-widgets-and-integrations.png)
 
-Homarr has a [built in collection of widgets and integrations](https://homarr.dev/docs/integrations/) , that connect to your applications and enable you to control them directly from the dashboard.
-Each widget and integration has a comprehensive documentation for your confort.
+Homarr has a [built-in collection of widgets and integrations](https://homarr.dev/docs/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
+Each widget and integration has a comprehensive documentation for your comfort.
 Homarr will integrate with the following applications of yours:
 
 - 📥 Torrent clients
-  - [Delguge](https://homarr.dev/docs/integrations/#deluge)
+  - [Deluge](https://homarr.dev/docs/integrations/#deluge)
   - [Transmission](https://homarr.dev/docs/integrations/#transmission)
-  - [qBittorrent](https://homarr.dev/docs/integrations/#qbittorrent-integration)
+  - [qBittorent](https://homarr.dev/docs/integrations/#qbittorrent-integration)
 - 📥 Usenet clients
   - [SABnzbd](https://homarr.dev/docs/integrations/#sabnzbd)
   - [NZBGet](https://homarr.dev/docs/integrations/#nzbget)
@@ -94,21 +87,17 @@ We're constantly adding new integrations and widgets, which will enhance your ex
 <br/>
 <br/>
 
-<picture id="preview">
-<img src="docs/section-preview.png" />
-</picture>
+![Preview Section](docs/section-preview.png)
 
 https://user-images.githubusercontent.com/30572287/217098893-5880e7de-13d0-42c5-b505-f7921593396f.mp4
 
 <br/>
 <br/>
 
-<picture id="installation">
-<img src="docs/section-installation.png" />
-</picture>
+![Installation Section](docs/section-installation.png)
 
 There are many different ways, how Homarr can be installed.
-Since we are developing Homarr very frequently, we recommend to read our official installation guides:
+Since we are developing Homarr very frequently, we recommend reading our official installation guides:
 
 <a href="https://homarr.dev/docs/introduction/installation">
   <img src="docs/installation-button.png" width="200" />
@@ -117,19 +106,19 @@ Since we are developing Homarr very frequently, we recommend to read our officia
 <br/>
 <br/>
 
-<picture id="contribute">
-<img src="docs/section-contribute.png" />
-</picture>
+![Contribute Section](docs/section-contribute.png)
 Homarr is maintained by motivated developers in their free-time.
 We work for fun and learning on this project.
 
-Hence, we're glad for all help and support we can get.
-Altough a donation is apprechiated, there are also other ways you can support us.
+Hence, we're glad for all the help and support we can get.
+Although a donation is appreciated, there are other ways you can support us.
 
-[_![](https://cdn.ko-fi.com/cdn/kofi3.png?v=3)_](https://ko-fi.com/ajnart)
+<a href="https://ko-fi.com/ajnart">
+  <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" width="200" />
+</a>
 
-You can also support us [translating the entire project in as many languages as possible](https://homarr.dev/docs/community/translations) or contribute directly to the code or documentation.
+You can also support us [translating the entire project in as many languages as possible,](https://homarr.dev/docs/community/translations) or contribute directly to the code or documentation.
 
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
-All contributions, regardless of their size or scope, are welcome and highly apprechiated! Thank you ❤️
+All contributions, regardless of their size or scope, are welcome and highly appreciated! Thank you ❤️
