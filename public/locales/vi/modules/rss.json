@@ -5,15 +5,19 @@
     "settings": {
       "title": "Cài đặt cho tiện ích RSS",
       "rssFeedUrl": {
-        "label": "URL nguồn cấp RSS"
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Không thể nhận nguồn cấp RSS",
-        "text": "Đã xảy ra sự cố khi tiếp cận nguồn cấp dữ liệu RSS. Hãy đảm bảo rằng cấu hình nguồn cấp RSS sử dụng URL hợp lệ. URL phải phù hợp với thông số kỹ thuật chính thức. Sau khi cập nhật nguồn cấp dữ liệu, bạn có thể cần phải làm mới bảng điều khiển."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }
