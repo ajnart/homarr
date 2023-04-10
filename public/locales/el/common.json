@@ -10,6 +10,7 @@
   "changePosition": "Αλλαγή θέσης",
   "remove": "Αφαίρεση",
   "removeConfirm": "",
+  "createItem": "",
   "sections": {
     "settings": "Ρυθμίσεις",
     "dangerZone": "Επικίνδυνη Περιοχή"
