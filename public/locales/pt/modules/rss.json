@@ -5,15 +5,19 @@
     "settings": {
       "title": "Configurações para o widget RSS",
       "rssFeedUrl": {
-        "label": "URL do feed RSS"
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Não foi possível recuperar o feed RSS",
-        "text": ""
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }
