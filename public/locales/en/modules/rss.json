@@ -5,15 +5,19 @@
     "settings": {
       "title": "Settings for RSS widget",
       "rssFeedUrl": {
-        "label": "RSS feed URL"
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Unable to retrieve RSS feed",
-        "text": "There was a problem reaching out the RSS feed. Make sure that you have correctly configured the RSS feed using a valid URL. URLs should match the official specification. After updating the feed, you may need to refresh the dashboard."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }
