@@ -5,18 +5,18 @@
     "settings": {
       "title": "Nastavenia mini aplikácie RSS",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URL adresa RSS",
+        "description": "URL adresy kanálov RSS, ktoré chcete zobraziť."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Interval obnovovania (v minútach)"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Nie je možné načítať kanál RSS",
+          "text": "Vyskytol sa problém s dosiahnutím kanála RSS. Uistite sa, že ste správne nakonfigurovali kanál RSS pomocou platnej adresy URL. Adresy URL by mali zodpovedať oficiálnej špecifikácii. Po aktualizácii kanála bude možno potrebné obnoviť ovládací panel."
         }
       }
     }
