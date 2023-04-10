@@ -10,6 +10,7 @@
   "changePosition": "Изменить положение",
   "remove": "Удалить",
   "removeConfirm": "Вы действительно хотите удалить {{item}}?",
+  "createItem": "",
   "sections": {
     "settings": "Настройки",
     "dangerZone": "Опасная зона"
