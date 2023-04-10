@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Žiadosti médií",
+    "description": "Zobrazenie zoznamu všetkých mediálnych požiadaviek z Overseerr alebo Jellyseerr",
     "settings": {
-      "title": ""
+      "title": "Zoznam požiadaviek médií"
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Nenašli sa žiadne požiadavky. Skontrolujte, či ste správne nakonfigurovali svoje aplikácie.",
+  "pending": "Na schválenie čaká {countPendingApproval} žiadostí.",
+  "nonePending": "V súčasnosti nie sú k dispozícii žiadne schválenia. Môžete začať!",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Schválené",
+    "pendingApproval": "Čaká sa na schválenie",
+    "declined": "Odmietnuté"
   }
 }
