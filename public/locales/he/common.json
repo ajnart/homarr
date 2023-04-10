@@ -10,7 +10,7 @@
   "changePosition": "שנה מיקום",
   "remove": "הסר",
   "removeConfirm": "האם אתה בטוח שברצונך להסיר את {{item}}?",
-  "createItem": "",
+  "createItem": "יצירת שאילתה {{item}}",
   "sections": {
     "settings": "הגדרות",
     "dangerZone": "אזור מסוכן"
