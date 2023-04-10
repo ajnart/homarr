@@ -5,15 +5,19 @@
     "settings": {
       "title": "",
       "rssFeedUrl": {
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
         "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "",
-        "text": "Det gick inte att nå ut RSS-flödet. Se till att du har konfigurerat RSS-flödet korrekt med en giltig URL. Webbadresser bör matcha den officiella specifikationen. Efter uppdatering av flödet, kan du behöva uppdatera instrumentpanelen."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }
