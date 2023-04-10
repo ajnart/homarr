@@ -10,6 +10,7 @@
   "changePosition": "Spremeni položaj",
   "remove": "Odstrani",
   "removeConfirm": "Ali ste prepričani, da želite odstraniti {{item}}?",
+  "createItem": "",
   "sections": {
     "settings": "Nastavitve",
     "dangerZone": "Nevarno območje"
