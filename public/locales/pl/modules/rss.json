@@ -5,15 +5,19 @@
     "settings": {
       "title": "Ustawienia dla widgetu RSS",
       "rssFeedUrl": {
-        "label": "Adres url kanału RSS"
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Nie można pobrać kanału RSS",
-        "text": "Wystąpił problem z osiągnięciem kanału RSS. Upewnij się, że poprawnie skonfigurowałeś kanał RSS używając poprawnego adresu URL. Adresy URL powinny być zgodne z oficjalną specyfikacją. Po aktualizacji kanału należy odświeżyć panel nawigacyjny."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }
