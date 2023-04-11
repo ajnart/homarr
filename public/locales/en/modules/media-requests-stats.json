@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Media request stats",
+    "description": "Statistics about your media requests",
     "settings": {
-      "title": ""
+      "title": "Media requests stats"
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Pending approvals",
+    "tvRequests": "TV requests",
+    "movieRequests": "Movie requests"
   }
 }
