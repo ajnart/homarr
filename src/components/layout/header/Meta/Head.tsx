@@ -20,7 +20,7 @@ export function Head() {
       {/* configure apple splash screen & touch icon */}
       <link
         rel="apple-touch-icon"
-        href={config?.settings.customization.faviconUrl || '/imgs/favicon/favicon-squared.png'}
+        href={config?.settings.customization.faviconUrl || '/imgs/favicon/favicon.svg'}
       />
       <meta
         name="apple-mobile-web-app-title"

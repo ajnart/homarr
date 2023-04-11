@@ -9,7 +9,7 @@ export const FaviconChanger = () => {
   const updateConfig = useConfigStore((x) => x.updateConfig);
   const { config, name: configName } = useConfigContext();
   const [faviconUrl, setFaviconUrl] = useState(
-    config?.settings.customization.faviconUrl ?? '/imgs/favicon/favicon-squared.png'
+    config?.settings.customization.faviconUrl ?? '/imgs/favicon/favicon.svg'
   );
 
   if (!configName) return null;
