@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Vnesite naslov URL",
+        "title": "",
         "text": "Prepričajte se, da ste v konfiguracijo svojega pripomočka vnesli veljaven naslov"
       }
     }
