@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Ícone de aplicação",
-			"description": "Escolha um ícone a ser exibido no seu painel. Escolha entre {{suggestionsCount}} ícones ou insira sua própria URL",
+			"description": "",
 			"autocomplete": {
 				"title": "Nenhum resultado encontrado",
 				"text": "Tente usar um termo de pesquisa mais específico. Se não conseguir encontrar o ícone desejado, cole a URL da imagem acima para obter um ícone personalizado"
