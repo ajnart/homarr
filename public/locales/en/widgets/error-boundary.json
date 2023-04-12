@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "We're sorry for the inconvenience! This shouldn't happen - please report this issue on GitHub.",
+    "text": "",
     "label": "Your error",
     "reportButton": "Report this error"
   }
