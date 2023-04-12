@@ -37,7 +37,7 @@
     "confirmDeletion": {
       "title": "Bekräfta radering av din konfiguration",
       "warningText": "Du är på väg att radera '<b>{{configName}}</b>'",
-      "text": "Observera att raderingen inte kan göras om och att dina uppgifter kommer att gå förlorade permanent. När du har klickat på den här knappen kommer filen att raderas permanent från din disk. Se till att skapa en lämplig säkerhetskopia av din konfiguration.",
+      "text": "Observera att raderingen inte kan återställas och att dina uppgifter kommer att gå förlorade för alltid. När du har klickat på den här knappen raderas filen permanent från din disk. Se till att skapa en lämplig säkerhetskopia av din konfiguration.",
       "buttons": {
         "confirm": "Ja, radera '<b>{{configName}}</b>'"
       }

@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta tittel",
-    "description": "Tittelen som vises som fanenavn"
+    "description": "Tittelen som vises i nettleserfanen"
   },
   "logo": {
     "label": "Logo",
-    "description": "Dashbord logoen øverst til venstre"
+    "description": "Logoen som vises øverst til venstre"
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Ikonet som brukes foran fanenavnet"
+    "description": "Ikonet som vises i nettleserfanen"
   },
   "background": {
     "label": "Bakgrunn"
   },
   "customCSS": {
     "label": "Egendefinert CSS",
-    "description": "Tilpass alle elementer på dashbordet, anbefales bare for erfarne brukere",
+    "description": "Videre kan du tilpasse dashbordet ved hjelp av CSS, dette er bare anbefalt for erfarne brukere",
     "placeholder": "Egendefinert CSS vil bli brukt sist",
     "applying": "Tar i bruk CSS..."
   },

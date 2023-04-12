@@ -1,19 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "RSS widget",
+    "description": "Hent elementene fra en RSS-strøm og viser dem. Vanligvis brukt for online nyheter",
     "settings": {
-      "title": "",
+      "title": "Innstillinger for RSS widget",
       "rssFeedUrl": {
-        "label": ""
+        "label": "RSS Feed URL-er",
+        "description": "URL-ene til RSS-strømmene du vil vise fra."
+      },
+      "refreshInterval": {
+        "label": "Oppdaterings intervall (i minutter)"
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "",
-        "text": ""
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Kan ikke hente RSS-feed",
+          "text": "Det oppstod et problem under henting av RSS-feed. Pass på at du har konfigurert RSS-strømmen ved å bruke en gyldig URL. URLer skal være lik den offisielle spesifikasjonen. Etter oppdatering av feeden, må du kanskje oppfriske dashbordet."
+        }
       }
     }
   }

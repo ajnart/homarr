@@ -5,10 +5,10 @@
     "settings": {
       "title": "",
       "FeedUrl": {
-        "label": ""
+        "label": "Flödes-URL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatisk uppspelning"
       },
       "muted": {
         "label": ""

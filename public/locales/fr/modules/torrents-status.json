@@ -50,7 +50,7 @@
         "text": "Ajouter un client Torrent pris en charge pour voir vos téléchargements en cours"
       },
       "generic": {
-        "title": "Une erreur inattendue s'est produite",
+        "title": "",
         "text": "Homarr n'a pas pu communiquer avec vos clients Torrent. Veuillez vérifier votre configuration"
       }
     },

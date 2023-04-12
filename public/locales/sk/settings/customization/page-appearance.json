@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta názov",
-    "description": "Názov, ktorý sa zobrazuje ako názov vašej karty"
+    "description": "Názov zobrazený na karte prehliadača"
   },
   "logo": {
     "label": "Logo",
-    "description": "Logo prístrojovej dosky vľavo hore"
+    "description": "Logo zobrazené vľavo hore"
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Ikona, ktorá sa používa pred názvom karty"
+    "description": "Ikona zobrazená na karte prehliadača"
   },
   "background": {
     "label": "Pozadie"
   },
   "customCSS": {
     "label": "Vlastné CSS",
-    "description": "Prispôsobenie všetkých prvkov na prístrojovej doske, odporúča sa len skúseným používateľom",
+    "description": "Ďalej si prispôsobte ovládací panel pomocou CSS, odporúča sa len pre skúsených používateľov",
     "placeholder": "Vlastné CSS sa použije ako posledné",
     "applying": "Aplikuje sa CSS..."
   },

@@ -5,10 +5,10 @@
     "settings": {
       "title": "Ajustes del widget de transmisión de video",
       "FeedUrl": {
-        "label": "Feed url"
+        "label": "Fuente URL"
       },
       "autoPlay": {
-        "label": "Auto-reproducción"
+        "label": "Auto reproducción"
       },
       "muted": {
         "label": "Audio silenciado"

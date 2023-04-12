@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Potwierdź usunięcie konfiguracji",
-      "warningText": "Chciałbyś usunąć '<b>{{configName}}</b>'",
-      "text": "Należy pamiętać, że usunięcie nie jest odwracalne i dane zostaną trwale utracone. Po kliknięciu tego przycisku plik zostanie trwale usunięty z dysku. Upewnij się, że stworzyłeś odpowiednią kopię zapasową swojej konfiguracji.",
+      "warningText": "Właśnie zamierzasz usunąć '<b>{{configName}}</b>'",
+      "text": "Pamiętaj, że usunięcie jest nieodwracalne, a dane zostaną utracone na stałe. Po kliknięciu tego przycisku plik zostanie trwale usunięty z dysku. Upewnij się, że stworzysz kopię zapasową swojej konfiguracji.",
       "buttons": {
         "confirm": "Tak, usuń \"<b>{{configName}}</b>"
       }
@@ -57,7 +57,7 @@
           "message": "Nie udało się usunąć konfiguracji"
         },
         "deleteFailedDefaultConfig": {
-          "title": "Domyślna konfiguracja nie może być usunięta",
+          "title": "Domyślna konfiguracja nie może być usunięta.",
           "message": "Konfiguracja nie została usunięta z systemu plików"
         }
       }

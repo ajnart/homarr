@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Ups, ein Fehler ist aufgetreten!",
+    "buttons": {
+      "details": "Details",
+      "tryAgain": "Erneut versuchen"
+    }
+  },
+  "modal": {
+    "text": "Wir entschuldigen uns für die Unannehmlichkeit! Das sollte nicht passieren - bitte melde dieses Problem auf GitHub.",
+    "label": "Dein Fehler",
+    "reportButton": "Fehler melden"
+  }
+}

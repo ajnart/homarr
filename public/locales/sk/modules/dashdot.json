@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Zobrazovať grafy externej Dash. vo vnútri Homarru.",
+    "description": "Zobrazí grafy externého Dash. Instancie vo vnútri Homarr.",
     "settings": {
       "title": "Nastavenia pre Dash. mini aplikácie",
       "url": {
@@ -85,7 +85,7 @@
       "noInformation": "Nie je možné získať informácie z Dash. - používate najnovšiu verziu?",
       "protocolDowngrade": {
         "title": "Zistený downgrade protokol",
-        "text": "Protokol k vášmu Dash. inštancii sa downgraduje. Ide o bezpečnostné riziko, pretože HTTP je nešifrované a útočníci by mohli toto pripojenie zneužiť. Uistite sa, že Dash. beží aj na HTTPS alebo downgradujte Homarr na HTTP (neodporúča sa)."
+        "text": "Pripojenie k vašej inštancii Dash. používa protokol HTTP. To predstavuje bezpečnostné riziko, pretože protokol HTTP nie je šifrovaný a útočníci by mohli toto pripojenie zneužiť. Uistite sa, že Dash. používa HTTPS, alebo znížte úroveň Homarr na HTTP (neodporúča sa)."
       }
     },
     "graphs": {

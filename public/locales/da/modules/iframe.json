@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "IFrame",
+    "name": "indlejret dokument (iframe)",
     "description": "Indlejr ethvert indhold fra internettet. Nogle websteder kan begrænse adgang.",
     "settings": {
-      "title": "IFrame indstillinger",
+      "title": "iFrame indstillinger",
       "embedUrl": {
         "label": "Indlejr URL"
       },

@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Tarjeta Meta",
-    "description": "El título, que se muestra como el nombre de tu pestaña"
+    "description": "El título mostrado en la pestaña de tu navegador"
   },
   "logo": {
     "label": "Logo",
-    "description": "El logo del dashboard en la parte superior izquierda"
+    "description": "El logo mostrado en la parte superior izquierda"
   },
   "favicon": {
     "label": "Favicon",
-    "description": "El icono, que se usa delante del nombre de la pestaña"
+    "description": "El icono mostrado en la pestaña de tu navegador"
   },
   "background": {
     "label": "Fondo"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "description": "Personalizar todos los elementos de tu dashboard, solo recomendado para usuarios experimentados",
+    "description": "Ademas, personaliza tu dashboard usando CSS, solo recomendado para usuarios avanzados",
     "placeholder": "El CSS personalizado será aplicado en último lugar",
     "applying": "Aplicando CSS..."
   },

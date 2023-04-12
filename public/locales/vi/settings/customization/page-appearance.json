@@ -1,26 +1,26 @@
 {
   "pageTitle": {
     "label": "Tiêu đề trang",
-    "description": ""
+    "description": "Tiêu đề bảng điều khiển ở góc trái"
   },
   "metaTitle": {
     "label": "Tiêu đề meta",
-    "description": ""
+    "description": "Tiêu đề hiển thị trên tab trình duyệt của bạn"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Logo bảng điều khiển ở góc trái"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "Biểu tượng hiển thị trên tab trình duyệt của bạn"
   },
   "background": {
     "label": "Hình nền"
   },
   "customCSS": {
     "label": "CSS tuỳ chỉnh",
-    "description": "",
+    "description": "Ngoài ra có thể tùy chỉnh bảng điều khiển của bạn bằng CSS, chỉ được đề xuất cho người dùng có kinh nghiệm",
     "placeholder": "CSS tùy chỉnh sẽ được áp dụng sau cùng",
     "applying": "Đang áp dụng CSS..."
   },

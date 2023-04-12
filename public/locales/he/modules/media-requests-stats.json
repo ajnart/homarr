@@ -1,0 +1,14 @@
+{
+  "descriptor": {
+    "name": "מצב בקשות מדיה",
+    "description": "סטטיסטיקה לגבי בקשות המדיה",
+    "settings": {
+      "title": "מצב בקשות מדיה"
+    }
+  },
+  "stats": {
+    "pending": "ממתין לאישור",
+    "tvRequests": "בקשות סדרות",
+    "movieRequests": "בקשות סרטים"
+  }
+}

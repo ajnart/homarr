@@ -10,19 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Зроблено з ❤️ by @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Переглянути сторонні матеріали",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Залежність",
       "dependencyVersion": "Версія"
     }
   },
   "grow": "Виростити сітку (зайняти весь простір)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Попередній перегляд",
+      "subtitle": "Зміни будуть збережені автоматично"
     },
-    "divider": "",
+    "divider": "Варіанти компонування",
     "main": "Основне",
     "sidebar": "Бокова панель",
     "cannotturnoff": "Неможливо вимкнути",

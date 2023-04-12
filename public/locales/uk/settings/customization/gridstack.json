@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Кількість стовпців в {{size}}",
+    "descriptionPreset": "Кількість стовпців, коли екран має менше ніж {{pixels}} пікселів в ширину",
+    "descriptionExceedsPreset": "Кількість колонок, коли розмір екрану перевищує {{pixels}} пікселів"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
+  "unsavedChanges": "У вас є незбережені зміни. Натисніть кнопку Застосувати зміни нижче, щоб застосувати та зберегти зміни.",
+  "applyChanges": "Застосувати зміни",
   "defaultValues": ""
 }

@@ -1,0 +1,14 @@
+{
+  "descriptor": {
+    "name": "Statistikk for mediaforespørsler",
+    "description": "Statistikk om dine medieforespørsler",
+    "settings": {
+      "title": "Statistikk for mediaforespørsler"
+    }
+  },
+  "stats": {
+    "pending": "Venter på godkjenning",
+    "tvRequests": "TV forespørsler",
+    "movieRequests": "Film forespørsler"
+  }
+}

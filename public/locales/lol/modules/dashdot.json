@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Displays Teh Grafs Ov An External Dash. Instance Inside Ov Homarr.",
+    "description": "",
     "settings": {
       "title": "Settings 4 Dash. Widget",
       "url": {
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": "RAM"
+        "title": ""
       },
       "gpu": {
         "title": "GPU"

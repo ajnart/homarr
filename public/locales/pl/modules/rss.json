@@ -1,19 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Widget RSS",
+    "description": "Przechwytywa elementy z kanału RSS i je wyświetla. Często używane do wiadomości online",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widgetu RSS",
       "rssFeedUrl": {
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
         "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "",
-        "text": ""
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }

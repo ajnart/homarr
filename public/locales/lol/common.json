@@ -9,13 +9,14 @@
   "version": "Vershun",
   "changePosition": "Change Posishun",
   "remove": "Remoev",
-  "removeConfirm": "R U Sure Dat U Wants 2 Remoov {{item}} ?",
+  "removeConfirm": "",
+  "createItem": "",
   "sections": {
     "settings": "Settingz",
     "dangerZone": "Dangr zoen"
   },
   "secrets": {
-    "apiKey": "Api key",
+    "apiKey": "",
     "username": "Usernaem",
     "password": "Password"
   },

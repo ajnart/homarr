@@ -5,10 +5,10 @@
     "settings": {
       "title": "Indstillinger for video stream widget",
       "FeedUrl": {
-        "label": "Feed url"
+        "label": "Feed URL"
       },
       "autoPlay": {
-        "label": "Automatisk afspilning"
+        "label": "Auto-afspilning"
       },
       "muted": {
         "label": "Slå lyden fra"

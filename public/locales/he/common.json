@@ -9,7 +9,8 @@
   "version": "גרסה",
   "changePosition": "שנה מיקום",
   "remove": "הסר",
-  "removeConfirm": "האם אתה בטוח שברצונך להסיר את  {{item}} ?",
+  "removeConfirm": "האם אתה בטוח שברצונך להסיר את {{item}}?",
+  "createItem": "יצירת שאילתה {{item}}",
   "sections": {
     "settings": "הגדרות",
     "dangerZone": "אזור מסוכן"

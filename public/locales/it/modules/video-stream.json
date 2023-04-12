@@ -5,10 +5,10 @@
     "settings": {
       "title": "Impostazioni per il widget flusso video",
       "FeedUrl": {
-        "label": "Url del feed"
+        "label": "URL del feed"
       },
       "autoPlay": {
-        "label": "Auto play"
+        "label": "Riproduzione automatica"
       },
       "muted": {
         "label": "Audio mutato"

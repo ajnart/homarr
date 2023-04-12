@@ -1,8 +1,6 @@
 {
-	"xPosition": "X Axis Posishun",
 	"width": "Width",
 	"height": "Height",
-	"yPosition": "Y Axis Posishun",
 	"zeroOrHigher": "0 Or Highr",
 	"betweenXandY": "Tween {{min}} An {{max}}"
 }

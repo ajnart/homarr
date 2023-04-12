@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Titre Méta",
-    "description": "Le titre qui est affiché comme nom d'onglet"
+    "description": "Le titre affiché dans l'onglet de votre navigateur"
   },
   "logo": {
     "label": "Logo",
-    "description": "Le logo du tableau de bord en haut à gauche"
+    "description": "Le logo affiché en haut à gauche"
   },
   "favicon": {
     "label": "Favicon",
-    "description": "L'icône qui est utilisé devant le nom de votre onglet"
+    "description": "L'icône affichée dans l'onglet de votre navigateur"
   },
   "background": {
     "label": "Fond"
   },
   "customCSS": {
     "label": "CSS personnalisé",
-    "description": "Personnaliser tous les éléments du tableau de bord, recommandé seulement pour les utilisateurs expérimentés",
+    "description": "",
     "placeholder": "Le CSS personnalisé sera appliqué en dernier",
     "applying": "Application du code CSS..."
   },

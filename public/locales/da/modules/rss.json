@@ -5,15 +5,19 @@
     "settings": {
       "title": "Indstillinger for RSS-widget",
       "rssFeedUrl": {
-        "label": "RSS-feed url"
+        "label": "RSS feeds URL'er",
+        "description": "URL'erne for de RSS-feeds, du vil vise fra."
+      },
+      "refreshInterval": {
+        "label": "Opdateringsinterval (i minutter)"
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Det er ikke muligt at hente RSS-feed",
-        "text": "Der var et problem med at nå ud til RSS-feedet. Sørg for, at du&apos;har konfigureret feedet korrekt og bruger en gyldig RSS-url, der passer til den officielle standardspecifikation. Når du har opdateret feed'et, skal du muligvis gemme dit dashboard og opdatere siden."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Det er ikke muligt at hente RSS-feed",
+          "text": "Der var et problem med at hente RSS-feedet. Sørg for, at du har konfigureret RSS-feedet korrekt ved hjælp af en gyldig URL. URL'er skal stemme overens med den officielle specifikation. Når du har opdateret feed'et, skal du muligvis opdatere dashboardet."
+        }
       }
     }
   }

@@ -14,8 +14,8 @@
       "description": "Titel, Logo und PWA anpassen"
     },
     "appereance": {
-      "name": "Erscheinungsbild",
-      "description": "Anpassen des Hintergrunds, der Farben und des Erscheinungsbilds der Anwendung"
+      "name": "Aussehen",
+      "description": "Anpassen des Hintergrunds, der Farben und des Erscheinungsbilds"
     }
   }
 }

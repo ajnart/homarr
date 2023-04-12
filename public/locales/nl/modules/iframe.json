@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "iFrame",
+    "name": "",
     "description": "",
     "settings": {
-      "title": "iFrame Instellingen",
+      "title": "",
       "embedUrl": {
         "label": ""
       },

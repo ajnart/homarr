@@ -14,23 +14,23 @@
         "label": "Spalten anzeigen"
       },
       "graphHeight": {
-        "label": "Höhe der Graphen"
+        "label": "Höhe des Graphen"
       },
       "graphsOrder": {
-        "label": "Graphen (Reihenfolge)",
+        "label": "Reihenfolge der Graphen",
         "storage": {
           "label": "Speicher",
           "enabled": {
-            "label": "Im Widget anzeigen"
+            "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Spaltenbreite"
+            "label": "Länge der Säulen"
           },
           "compactView": {
-            "label": "Als Text anzeigen (Kompakt)"
+            "label": "Als Text anzeigen (kompakt)"
           },
           "multiView": {
-            "label": "Als Multi-Laufwerk anzeigen"
+            "label": "Als Multi-Laufwerk-Ansicht anzeigen"
           }
         },
         "network": {
@@ -39,10 +39,10 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Spaltenbreite"
+            "label": "Länge der Säulen"
           },
           "compactView": {
-            "label": "Als Text anzeigen (Kompakt)"
+            "label": "Als Text anzeigen (kompakt)"
           }
         },
         "cpu": {
@@ -51,10 +51,10 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Spaltenbreite"
+            "label": "Länge der Säulen"
           },
           "multiView": {
-            "label": "Als Multi-Core anzeigen"
+            "label": "Als Multi-Core-Ansicht anzeigen"
           }
         },
         "ram": {
@@ -63,7 +63,7 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Spaltenbreite"
+            "label": "Länge der Säulen"
           }
         },
         "gpu": {
@@ -72,7 +72,7 @@
             "label": "In Widget anzeigen"
           },
           "span": {
-            "label": "Spaltenbreite"
+            "label": "Länge der Säulen"
           }
         }
       }
@@ -85,7 +85,7 @@
       "noInformation": "Es können keine Informationen vom Dash. abgerufen werden. - Verwenden Sie die neueste Version?",
       "protocolDowngrade": {
         "title": "Protokoll-Downgrade erkannt",
-        "text": "Das Protokoll zu Ihrer Dash.-Instanz wird herabgestuft. Dies ist ein Sicherheitsrisiko, da HTTP unverschlüsselt ist und Angreifer diese Verbindung missbrauchen könnten. Stellen Sie sicher, dass Dash. auch auf HTTPS läuft oder downgraden Sie Homarr auf HTTP (wird nicht empfohlen)."
+        "text": "Die Verbindung zu Ihrer Dash.-Instanz erfolgt über HTTP. Dies ist ein Sicherheitsrisiko, da HTTP unverschlüsselt ist und Angreifer diese Verbindung missbrauchen könnten. Stellen Sie sicher, dass Dash. HTTPS verwendet, oder setzen Sie Homarr auf HTTP herab (nicht empfohlen)."
       }
     },
     "graphs": {

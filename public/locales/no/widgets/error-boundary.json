@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Det oppstod en feil!",
+    "buttons": {
+      "details": "Detaljer",
+      "tryAgain": "Prøv igjen"
+    }
+  },
+  "modal": {
+    "text": "Vi beklager forstyrrelsen! Dette skal ikke skje - vennligst rapporter dette problemet på GitHub.",
+    "label": "Din feilmelding",
+    "reportButton": "Rapporter denne feilen"
+  }
+}

@@ -5,10 +5,10 @@
     "settings": {
       "title": "Einstellungen für das Video Stream Widget",
       "FeedUrl": {
-        "label": "Feed URL"
+        "label": "Feed-URL"
       },
       "autoPlay": {
-        "label": "Automatisch abspielen"
+        "label": "Automatische Wiedergabe"
       },
       "muted": {
         "label": "Audio stummschalten"

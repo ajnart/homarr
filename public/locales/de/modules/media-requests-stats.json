@@ -1,0 +1,14 @@
+{
+  "descriptor": {
+    "name": "Statistik der Medienanfragen",
+    "description": "Statistiken über Ihre Medienanfragen",
+    "settings": {
+      "title": "Statistik der Medienanfragen"
+    }
+  },
+  "stats": {
+    "pending": "Ausstehende Freigaben",
+    "tvRequests": "TV-Anfragen",
+    "movieRequests": "Filmanfragen"
+  }
+}

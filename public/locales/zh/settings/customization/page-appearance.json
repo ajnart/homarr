@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "元标题",
-    "description": "标题显示为您的标签名称"
+    "description": "在你的浏览器标签中显示的标题"
   },
   "logo": {
     "label": "徽标",
-    "description": "左上角的仪表盘标志"
+    "description": "显示在左上方的标志"
   },
   "favicon": {
     "label": "网站图标",
-    "description": "在您的选项卡名称前面使用的图标"
+    "description": "在你的浏览器标签中显示的图标"
   },
   "background": {
     "label": "背景"
   },
   "customCSS": {
     "label": "自定义CSS",
-    "description": "自定义你的仪表板上的所有元素，只推荐给有经验的用户",
+    "description": "此外，使用CSS定制你的仪表板，只推荐给有经验的用户。",
     "placeholder": "自定义 CSS 将在最后应用",
     "applying": "应用CSS..."
   },
