@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "输入 URL",
+        "title": "",
         "text": "确保您在小部件配置中输入了一个有效的地址"
       }
     }
