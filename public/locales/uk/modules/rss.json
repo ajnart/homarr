@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS-віджет",
-    "description": "Витягує предмети з RSS-стрічки та показує їх. Часто використовується для новин онлайн",
+    "description": "",
     "settings": {
       "title": "Налаштування віджету RSS",
       "rssFeedUrl": {
