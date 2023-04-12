@@ -9,6 +9,8 @@ import torrent from './torrent/TorrentTile';
 import usenet from './useNet/UseNetTile';
 import videoStream from './video/VideoStreamTile';
 import weather from './weather/WeatherTile';
+import mediaRequestsList from './media-requests/MediaRequestListTile';
+import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 
 export default {
   calendar,
@@ -22,4 +24,6 @@ export default {
   'video-stream': videoStream,
   iframe,
   'media-server': mediaServer,
+  'media-requests-list': mediaRequestsList,
+  'media-requests-stats': mediaRequestsStats,
 };

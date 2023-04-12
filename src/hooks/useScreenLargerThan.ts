@@ -4,5 +4,5 @@ import { useMediaQuery } from '@mantine/hooks';
 export const useScreenLargerThan = (size: MantineSize | number) => {
   const { breakpoints } = useMantineTheme();
   const pixelCount = typeof size === 'string' ? breakpoints[size] : size;
-  return useMediaQuery(`(min-width: ${pixelCount}px)`);
+  return useMediaQuery(`(min-width: ${pixelCount})`);
 };

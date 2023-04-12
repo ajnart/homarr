@@ -90,7 +90,8 @@ export const IconSelector = ({
         }
         variant="default"
         withAsterisk
-        dropdownComponent={(props: any) => <ScrollArea {...props} mah={400} />}
+        dropdownComponent={(props: any) => <ScrollArea {...props} mah={250} />}
+        dropdownPosition="bottom"
         required
         onChange={(event) => {
           if (allowAppNamePropagation) {

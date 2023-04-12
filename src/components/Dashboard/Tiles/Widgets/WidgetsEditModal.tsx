@@ -26,6 +26,7 @@ import { DraggableList } from './DraggableList';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
+  widgetType: string;
   options: IWidget<string, any>['properties'];
   widgetOptions: IWidget<string, any>['properties'];
 };
@@ -37,7 +38,7 @@ export const WidgetsEditModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
-  const { t } = useTranslation([`modules/${innerProps.widgetId}`, 'common']);
+  const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
     string,
@@ -45,7 +46,7 @@ export const WidgetsEditModal = ({
   ][];
 
   // Find the Key in the "Widgets" Object that matches the widgetId
-  const currentWidgetDefinition = Widgets[innerProps.widgetId as keyof typeof Widgets];
+  const currentWidgetDefinition = Widgets[innerProps.widgetType as keyof typeof Widgets];
   const { name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
@@ -100,7 +101,7 @@ export const WidgetsEditModal = ({
           <WidgetOptionTypeSwitch
             key={`${key}.${index}`}
             option={option}
-            widgetId={innerProps.widgetId}
+            widgetId={innerProps.widgetType}
             propName={key}
             value={value}
             handleChange={handleChange}
@@ -183,6 +184,7 @@ const WidgetOptionTypeSwitch: FC<{
     case 'slider':
       return (
         <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
           <Slider
             color={primaryColor}
             label={value}
@@ -241,6 +243,25 @@ const WidgetOptionTypeSwitch: FC<{
             )}
           </DraggableList>
         </Stack>
+      );
+    case 'multiple-text':
+      return (
+        <MultiSelect
+          data={value.map((name: any) => ({ value: name, label: name }))}
+          label={t(`descriptor.settings.${key}.label`)}
+          description={t(`descriptor.settings.${key}.description`)}
+          defaultValue={value as string[]}
+          withinPortal
+          searchable
+          creatable
+          getCreateLabel={(query) => t('common:createItem', query)}
+          onChange={(values) =>
+            handleChange(
+              key,
+              values.map((item: string) => item)
+            )
+          }
+        />
       );
     /* eslint-enable no-case-declarations */
     default:

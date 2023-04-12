@@ -1,12 +1,10 @@
-import { createStyles, Group, MantineThemeColors, useMantineTheme } from '@mantine/core';
+import { Group } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import { i18n } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../config/provider';
-import { useColorTheme } from '../../tools/color';
-import { isToday } from '../../tools/isToday';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
@@ -50,10 +48,7 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
-  const { secondaryColor } = useColorTheme();
   const { name: configName } = useConfigContext();
-  const { classes, cx } = useStyles(secondaryColor);
-  const { colorScheme, colors } = useMantineTheme();
   const [month, setMonth] = useState(new Date());
 
   const { data: medias } = useQuery({
@@ -64,7 +59,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         await fetch(
           `/api/modules/calendar?year=${month.getFullYear()}&month=${
             month.getMonth() + 1
-          }&configName=${configName}`
+          }&configName=${configName}&widgetId=${widget.id}`
         )
       ).json()) as MediasType,
   });
@@ -72,39 +67,35 @@ function CalendarTile({ widget }: CalendarTileProps) {
   return (
     <Group grow style={{ height: '100%' }}>
       <Calendar
-        m={0}
-        p={0}
-        month={month}
-        // Should be offset 5px to the left
-        style={{ position: 'relative', top: -15 }}
-        onMonthChange={setMonth}
+        defaultDate={new Date()}
+        onPreviousMonth={setMonth}
+        onNextMonth={setMonth}
         size="xs"
         locale={i18n?.resolvedLanguage ?? 'en'}
-        fullWidth
-        onChange={() => {}}
-        firstDayOfWeek={widget.properties.sundayStart ? 'sunday' : 'monday'}
-        dayStyle={(date) => ({
-          margin: -1,
-          backgroundColor: isToday(date)
-            ? colorScheme === 'dark'
-              ? colors.dark[5]
-              : colors.gray[0]
-            : undefined,
-        })}
+        firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
         hideWeekdays
+        date={month}
+        hasNextLevel={false}
         styles={{
-          weekdayCell: {
-            margin: 0,
-            padding: 0,
+          calendar: {
+            height: '100%',
+          },
+          monthLevelGroup: {
+            height: '100%',
+          },
+          monthLevel: {
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+          },
+          month: {
+            flex: 1,
           },
           calendarHeader: {
-            position: 'relative',
-            margin: 0,
-            padding: 0,
+            maxWidth: 'inherit',
           },
         }}
-        allowLevelChange={false}
-        dayClassName={(_, modifiers) => cx({ [classes.weekend]: modifiers.weekend })}
         renderDay={(date) => (
           <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
         )}
@@ -112,12 +103,6 @@ function CalendarTile({ widget }: CalendarTileProps) {
     </Group>
   );
 }
-
-const useStyles = createStyles((theme, secondaryColor: keyof MantineThemeColors) => ({
-  weekend: {
-    color: `${secondaryColor} !important`,
-  },
-}));
 
 const getReleasedMediasForDate = (
   medias: MediasType | undefined,

@@ -1,15 +1,12 @@
-import Consola from 'consola';
-
-import { getCookie } from 'cookies-next';
-
-import { decode } from 'html-entities';
-
 import { NextApiRequest, NextApiResponse } from 'next';
-
+import Consola from 'consola';
+import { getCookie } from 'cookies-next';
+import { decode } from 'html-entities';
 import Parser from 'rss-parser';
+import { z } from 'zod';
 
 import { getConfig } from '../../../../tools/config/getConfig';
-import { Stopwatch } from '../../../../tools/shared/stopwatch';
+import { Stopwatch } from '../../../../tools/shared/time/stopwatch.tool';
 import { IRssWidget } from '../../../../widgets/rss/RssWidgetTile';
 
 type CustomItem = {
@@ -25,12 +22,25 @@ const parser: Parser<any, CustomItem> = new Parser({
   },
 });
 
+const getQuerySchema = z.object({
+  widgetId: z.string().uuid(),
+  feedUrl: z.string(),
+});
+
 export const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
-  const rssWidget = config.widgets.find((x) => x.id === 'rss') as IRssWidget | undefined;
+  const parseResult = getQuerySchema.safeParse(request.query);
 
+  if (!parseResult.success) {
+    response.status(400).json({ message: 'invalid query parameters, please specify the widgetId' });
+    return;
+  }
+
+  const rssWidget = config.widgets.find(
+    (x) => x.type === 'rss' && x.id === parseResult.data.widgetId
+  ) as IRssWidget | undefined;
   if (
     !rssWidget ||
     !rssWidget.properties.rssFeedUrl ||
@@ -40,9 +50,9 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     return;
   }
 
-  Consola.info('Requesting RSS feed...');
+  Consola.info(`Requesting RSS feed at url ${parseResult.data.feedUrl}`);
   const stopWatch = new Stopwatch();
-  const feed = await parser.parseURL(rssWidget.properties.rssFeedUrl);
+  const feed = await parser.parseURL(parseResult.data.feedUrl);
   Consola.info(`Retrieved RSS feed after ${stopWatch.getEllapsedMilliseconds()} milliseconds`);
 
   const orderedFeed = {
@@ -53,6 +63,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
         title: item.title ? decode(item.title) : undefined,
         content: decode(item.content),
         enclosure: createEnclosure(item),
+        link: createLink(item),
       }))
       .sort((a: { pubDate: number }, b: { pubDate: number }) => {
         if (!a.pubDate || !b.pubDate) {
@@ -68,6 +79,14 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     feed: orderedFeed,
     success: orderedFeed?.items !== undefined,
   });
+};
+
+const createLink = (item: any) => {
+  if (item.link) {
+    return item.link;
+  }
+
+  return item.guid;
 };
 
 const createEnclosure = (item: any) => {

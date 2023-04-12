@@ -28,7 +28,7 @@ const definition = defineWidget({
   component: WeatherTile,
 });
 
-export type IWeatherWidget = IWidget<typeof definition['id'], typeof definition>;
+export type IWeatherWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface WeatherTileProps {
   widget: IWeatherWidget;
