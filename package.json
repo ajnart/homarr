@@ -104,7 +104,7 @@
     "node-mocks-http": "^1.12.2",
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
-    "turbo": "^1.8.3",
+    "turbo": "latest",
     "typescript": "^4.7.4",
     "video.js": "^8.0.3",
     "vitest": "^0.29.3",
