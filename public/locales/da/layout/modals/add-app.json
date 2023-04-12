@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "App Ikon",
-			"description": "",
+			"description": "Vælg et ikon der skal vises på dit dashboard. Vælg mellem {{suggestionsCount}} ikoner eller indtast din egen URL",
 			"autocomplete": {
 				"title": "Ingen resultater fundet",
 				"text": "Prøv at bruge et mere specifikt søgeord. Hvis du ikke kan finde det ønskede ikon, kan du indsætte billedets URL ovenfor for at få et brugerdefineret ikon"
