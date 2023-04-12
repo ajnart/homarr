@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS-Widget",
-    "description": "",
+    "description": "Nimmt die Einträge aus einem RSS-Feed und zeigt sie an. Wird üblicherweise für Online-Nachrichten verwendet",
     "settings": {
       "title": "Einstellungen für das RSS-Widget",
       "rssFeedUrl": {
