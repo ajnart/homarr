@@ -4,7 +4,7 @@
   },
   "errors": {
     "unmappedOptions": {
-      "text": "<b>Đã phát hiện tham số không được sử dụng trong cấu hình</b><br /><code>{{key}}</code>. Homarr hiện không thể diễn giải và sử dụng tham số này. Để tránh hành vi không mong muốn, vui lòng sao lưu và sửa đổi cấu hình của bạn đúng cách."
+      "text": ""
     }
   }
 }
