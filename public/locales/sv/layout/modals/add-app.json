@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "Välj en ikon som ska visas på kontrollpanelen. Välj mellan {{suggestionsCount}} ikoner eller ange din egen URL",
+			"description": "",
 			"autocomplete": {
 				"title": "Hittade inga resultat",
 				"text": "Försök att använda en mer specifik sökterm. Om du inte kan hitta önskad ikon, klistra in bild-URL ovan för en anpassad ikon"
