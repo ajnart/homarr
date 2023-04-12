@@ -1,11 +1,10 @@
-import { createStyles, Group, MantineThemeColors, useMantineTheme } from '@mantine/core';
+import { Group } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
 import { i18n } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '../../config/provider';
-import { useColorTheme } from '../../tools/color';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
@@ -49,10 +48,7 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
-  const { secondaryColor } = useColorTheme();
   const { name: configName } = useConfigContext();
-  const { classes, cx } = useStyles(secondaryColor);
-  const { colorScheme, colors } = useMantineTheme();
   const [month, setMonth] = useState(new Date());
 
   const { data: medias } = useQuery({
@@ -80,6 +76,26 @@ function CalendarTile({ widget }: CalendarTileProps) {
         hideWeekdays
         date={month}
         hasNextLevel={false}
+        styles={{
+          calendar: {
+            height: '100%',
+          },
+          monthLevelGroup: {
+            height: '100%',
+          },
+          monthLevel: {
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+          },
+          month: {
+            flex: 1,
+          },
+          calendarHeader: {
+            maxWidth: 'inherit',
+          },
+        }}
         renderDay={(date) => (
           <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
         )}
@@ -87,12 +103,6 @@ function CalendarTile({ widget }: CalendarTileProps) {
     </Group>
   );
 }
-
-const useStyles = createStyles((theme, secondaryColor: keyof MantineThemeColors) => ({
-  weekend: {
-    color: `${secondaryColor} !important`,
-  },
-}));
 
 const getReleasedMediasForDate = (
   medias: MediasType | undefined,
