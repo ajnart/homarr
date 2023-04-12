@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Inserisci un URL",
         "text": "Assicurarsi di aver inserito un indirizzo valido nella configurazione del widget"
       }
     }
