@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS pripomoček",
-    "description": "Prevzame elemente iz vira RSS in jih prikaže. Običajno se uporablja za spletne novice",
+    "description": "",
     "settings": {
       "title": "Nastavitve za RSS pripomoček",
       "rssFeedUrl": {
