@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Podaj adres URL",
+        "title": "",
         "text": "Upewnij się, że wprowadziłeś poprawny adres w konfiguracji swojego widgetu"
       }
     }
