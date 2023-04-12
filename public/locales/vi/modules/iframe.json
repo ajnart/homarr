@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Nhập một URL",
+        "title": "",
         "text": "Đảm bảo rằng bạn đã nhập một địa chỉ hợp lệ trong cấu hình tiện ích"
       }
     }
