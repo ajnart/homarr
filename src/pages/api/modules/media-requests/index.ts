@@ -60,7 +60,7 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
       });
   });
 
-  const mediaRequests = (await Promise.all(promises)).reduce((prev, cur) => prev.concat(cur));
+  const mediaRequests = (await Promise.all(promises)).reduce((prev, cur) => prev.concat(cur), []);
 
   return response.status(200).json(mediaRequests);
 };
