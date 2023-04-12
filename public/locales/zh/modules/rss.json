@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS小工具",
-    "description": "从RSS提要中抓取项目并显示它们。常用于在线新闻",
+    "description": "",
     "settings": {
       "title": "设置RSS小部件",
       "rssFeedUrl": {
