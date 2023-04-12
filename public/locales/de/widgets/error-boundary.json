@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "Wir entschuldigen uns für die Unannehmlichkeit! Das sollte nicht passieren - bitte melde dieses Problem auf GitHub.",
+    "text": "",
     "label": "Dein Fehler",
     "reportButton": "Fehler melden"
   }
