@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "",
+    "text": "Vi beklager forstyrrelsen! Dette skal ikke skje - vennligst rapporter dette problemet på GitHub.",
     "label": "Din feilmelding",
     "reportButton": "Rapporter denne feilen"
   }
