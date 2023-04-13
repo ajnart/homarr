@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "App ikon",
-			"description": "",
+			"description": "Velg et ikon som skal vises på dashbordet. Velg fra {{suggestionsCount}} ikoner eller skriv inn din egen URL",
 			"autocomplete": {
 				"title": "Ingen resultater funnet",
 				"text": "Prøv å bruke et mer spesifikt søkeord. Hvis du ikke finner det ønskede ikonet, lim inn URL adressen for et egendefinert ikon"
