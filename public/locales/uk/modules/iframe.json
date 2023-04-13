@@ -1,22 +1,22 @@
 {
   "descriptor": {
     "name": "IFrame",
-    "description": "",
+    "description": "Вставити будь-який контент з інтернету. Деякі вебсайти можуть обмежувати доступ.",
     "settings": {
       "title": "Налаштування iFrame",
       "embedUrl": {
-        "label": ""
+        "label": "Вставити URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Дозволити повноекранний режим"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Введіть URL",
+        "text": "Переконайтеся, що Ви ввели правильну адресу в налаштуваннях вашого віджета"
       }
     }
   }
