@@ -1,7 +1,7 @@
 export type GenericSessionInfo = {
   supportsMediaControl: boolean;
   username: string | undefined;
-  id: string;
+  id: string | undefined;
   sessionName: string;
   userProfilePicture: string | undefined;
   currentlyPlaying: GenericCurrentlyPlaying | undefined;
