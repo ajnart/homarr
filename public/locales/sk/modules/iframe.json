@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Zadajte adresu URL",
         "text": "Skontrolujte, či ste v konfigurácii mini aplikácie zadali platnú adresu"
       }
     }
