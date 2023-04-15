@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS mini aplikácia",
-    "description": "",
+    "description": "Stiahne položky z informačného kanála RSS a zobrazí ich. Bežne sa používa pre online správy",
     "settings": {
       "title": "Nastavenia mini aplikácie RSS",
       "rssFeedUrl": {
