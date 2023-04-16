@@ -254,7 +254,7 @@ const WidgetOptionTypeSwitch: FC<{
           withinPortal
           searchable
           creatable
-          getCreateLabel={(query) => t('common:createItem', query)}
+          getCreateLabel={(query) => t('common:createItem', { item: query })}
           onChange={(values) =>
             handleChange(
               key,
