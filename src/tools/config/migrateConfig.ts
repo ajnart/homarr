@@ -160,6 +160,7 @@ const migrateService = (oldService: serviceItem, areaType: AreaType): ConfigAppT
   network: {
     enabledStatusChecker: oldService.ping ?? true,
     statusCodes: oldService.status ?? ['200'],
+    okStatus: oldService.status ?? [200],
   },
   appearance: {
     iconUrl: migrateIcon(oldService.icon),
