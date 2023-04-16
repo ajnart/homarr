@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "Ospravedlňujeme sa za nepríjemnosti! Toto by sa nemalo stávať - nahláste tento problém na GitHub.",
+    "text": "",
     "label": "Vaša chyba",
     "reportButton": "Nahlásiť chybu"
   }
