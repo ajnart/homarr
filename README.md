@@ -50,10 +50,10 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 - 📄 Detailed documentation and active community
 - 🔍 Search through the web or supported integrations in an instant
 - 🏴󠁧󠁢󠁮󠁩󠁲󠁿 Monitor your application with a built-in status system
-- 🦞 Comprehensive built-in icon picker with over 1000 icons
-- 🐳 Easy deployment with Docker, unRAID, Synology
-- 🚀 Compatible with any major consumer hardware (x86, Raspberry Pi, ...)
-- 💵 Free and Open-Source - your data stays on your device
+- 🦞 Comprehensive built-in icon picker with over 7'000 icons
+- 🐳 Easy deployment with Docker, unRAID and Synology
+- 🚀 Compatible with any major consumer hardware (x86, Raspberry Pi, old Laptops, ...)
+- 💵 Free and Open-Source - your data stays on your device. No telemetry data.
 
 <br/>
 <br/>
@@ -96,7 +96,6 @@ https://user-images.githubusercontent.com/30572287/217098893-5880e7de-13d0-42c5-
 
 ![Installation Section](docs/section-installation.png)
 
-There are many different ways, how Homarr can be installed.
 Since we are developing Homarr very frequently, we recommend reading our official installation guides:
 
 <a href="https://homarr.dev/docs/introduction/installation">
@@ -117,7 +116,7 @@ Although a donation is appreciated, there are other ways you can support us.
   <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" width="200" />
 </a>
 
-You can also support us [translating the entire project in as many languages as possible,](https://homarr.dev/docs/community/translations) or contribute directly to the code or documentation.
+You can also support us [translating the entire project in as many languages as possible](https://homarr.dev/docs/community/translations), contribute directly to the code or documentation.
 
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
