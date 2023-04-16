@@ -4,7 +4,7 @@
   },
   "errors": {
     "unmappedOptions": {
-      "text": "<b>Detectado parámetro en desuso en la configuración</b><br /><code>{{key}}</code>. Homarr no puede interpretar y utilizar dicho parámetro. Para evitar cualquier comportamiento inesperado, respalda y corrige tu configuración."
+      "text": ""
     }
   }
 }
