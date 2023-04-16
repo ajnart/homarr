@@ -3,7 +3,10 @@
     "name": "Peticiones de contenido",
     "description": "Mostrar una lista de todas las peticiones de contenido de tu instancia Overseerr o Jellyseerr",
     "settings": {
-      "title": "Lista de peticiones de contenido"
+      "title": "Lista de peticiones de contenido",
+      "replaceLinksWithExternalHost": {
+        "label": "Abrir enlaces usando host externo"
+      }
     }
   },
   "noRequests": "Peticiones no encontradas. Por favor, asegúrate de tener configuradas tus apps correctamente.",

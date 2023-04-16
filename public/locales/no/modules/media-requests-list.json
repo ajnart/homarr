@@ -3,7 +3,10 @@
     "name": "Media forespørsler",
     "description": "Se en liste over alle medieforespørsler fra din Overseerr eller Jellyseerr instans",
     "settings": {
-      "title": "Liste over media forespørsler"
+      "title": "Liste over media forespørsler",
+      "replaceLinksWithExternalHost": {
+        "label": "Åpne lenker ved hjelp av ekstern vert"
+      }
     }
   },
   "noRequests": "Ingen forespørsler funnet. Vennligst skjekk at du har konfigurert appene dine riktig.",
