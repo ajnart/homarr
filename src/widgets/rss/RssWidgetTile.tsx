@@ -29,7 +29,7 @@ const definition = defineWidget({
   options: {
     rssFeedUrl: {
       type: 'multiple-text',
-      defaultValue: ['https://github.com/ajnart/homarr/tags.atom'],
+      defaultValue: [],
     },
     refreshInterval: {
       type: 'slider',
@@ -103,13 +103,13 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  if (data.length < 1 || isError) {
+  if (data.length < 1 || !data[0].feed || isError) {
     return (
       <Center h="100%">
         <Stack align="center">
           <IconRss size={40} strokeWidth={1} />
-          <Title order={6}>{t('card.errors.general.title')}</Title>
-          <Text align="center">{t('card.errors.general.text')}</Text>
+          <Title order={6}>{t('descriptor.card.errors.general.title')}</Title>
+          <Text align="center">{t('descriptor.card.errors.general.text')}</Text>
         </Stack>
       </Center>
     );
@@ -120,7 +120,7 @@ function RssTile({ widget }: RssTileProps) {
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
         {data.map((feed, index) => (
           <Stack w="100%" spacing="xs">
-            {feed.feed.items.map((item: any, index: number) => (
+            {feed.feed && feed.feed.items.map((item: any, index: number) => (
               <Card
                 key={index}
                 withBorder
