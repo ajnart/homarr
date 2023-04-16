@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "¡Sentimos los inconvenientes! Esto no debió de haber pasado - por favor, repórtalo en Github.",
+    "text": "¡Sentimos el inconveniente! Esto no debería de haber pasado - por favor, reporta el error en GitHub.",
     "label": "Tu error",
     "reportButton": "Reportar este error"
   }

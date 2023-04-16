@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Biểu tượng ứng dụng",
-			"description": "Chọn một biểu tượng để hiển thị trên bảng điều khiển của bạn. Chọn từ {{suggestionsCount}} biểu tượng hoặc nhập URL của riêng bạn",
+			"description": "",
 			"autocomplete": {
 				"title": "Không có kết quả",
 				"text": "Hãy thử sử dụng cụm từ tìm kiếm cụ thể hơn. Nếu bạn không tìm thấy biểu tượng mình muốn, hãy dán URL hình ảnh vào bên trên để dùng biểu tượng tùy chỉnh"

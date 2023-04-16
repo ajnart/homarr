@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Icône de l’app",
-			"description": "Choisissez une icône à afficher sur votre tableau de bord. Choisissez parmi les icônes de {{suggestionsCount}} ou entrez votre propre URL",
+			"description": "",
 			"autocomplete": {
 				"title": "Aucun résultat trouvé",
 				"text": "Essayez d'utiliser un terme de recherche plus spécifique. Si vous ne trouvez pas l'icône souhaitée, collez l'URL de l'image ci-dessus pour obtenir une icône personnalisée"

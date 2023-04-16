@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Ikona aplikacji",
-			"description": "Wybierz ikonę, która będzie wyświetlana na pulpicie. Wybierz ikon z {{suggestionsCount}} lub wprowadź swój własny adres URL",
+			"description": "",
 			"autocomplete": {
 				"title": "Nie znaleziono żadnych wyników",
 				"text": "Spróbuj użyć bardziej konkretnego hasła wyszukiwania. Jeśli nie możesz znaleźć żądanej ikony, wklej adres URL obrazu powyżej, aby wyszukać niestandardową ikonę"

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Tiện ích RSS",
-    "description": "Lấy các mục từ nguồn cấp dữ liệu RSS và hiển thị chúng. Thường được sử dụng cho tin tức trực tuyến",
+    "description": "",
     "settings": {
       "title": "Cài đặt cho tiện ích RSS",
       "rssFeedUrl": {

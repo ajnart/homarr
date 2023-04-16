@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Widget RSS",
-    "description": "Przechwytywa elementy z kanału RSS i je wyświetla. Często używane do wiadomości online",
+    "description": "",
     "settings": {
       "title": "Ustawienia dla widgetu RSS",
       "rssFeedUrl": {

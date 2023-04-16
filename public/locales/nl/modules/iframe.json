@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Voer URL in",
+        "title": "",
         "text": "Zorg ervoor dat je een geldig adres hebt ingevoerd in de configuratie van je widget"
       }
     }

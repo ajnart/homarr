@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS Widget",
-    "description": "Pakt de items uit een RSS-feed en geeft ze weer. Wordt vaak gebruikt voor online nieuws",
+    "description": "",
     "settings": {
       "title": "Instellingen voor RSS widget",
       "rssFeedUrl": {

@@ -4,7 +4,7 @@
   },
   "errors": {
     "unmappedOptions": {
-      "text": "<b>在配置中检测到未使用的参数</b><br /><code>{{key}}</code>。Homarr无法解释和使用这个参数。为了避免任何意外的行为，请备份你的配置并纠正你的配置。"
+      "text": ""
     }
   }
 }
