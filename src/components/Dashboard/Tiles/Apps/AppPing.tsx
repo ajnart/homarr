@@ -19,7 +19,7 @@ export const AppPing = ({ app }: AppPingProps) => {
     queryKey: ['ping', { id: app.id, name: app.name }],
     queryFn: async () => {
       const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = app.network.okStatus !== undefined ? app.appearance.okStatus.includes(response.statu) : app.network.statusCodes.includes(response.status.toString());
+      const isOk = app.network.okStatus !== undefined ? app.network.okStatus.includes(response.statu) : app.network.statusCodes.includes(response.status.toString());
       return {
         status: response.status,
         state: isOk ? 'online' : 'down',
