@@ -1,76 +1,76 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Chung",
+		"behaviour": "Hành vi",
 		"network": "Mạng",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Hiển thị",
+		"integration": "Tích hợp"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Tên ứng dụng",
+			"description": "Tên dùng để hiển thị trên bảng điều khiển."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Địa chỉ nội bộ",
+			"description": "Địa chỉ IP nội bộ của ứng dụng."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Địa chỉ bên ngoài",
+			"description": "Đường dẫn được mở khi nhấp vào ứng dụng."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Mở trong tab mới",
+			"description": "Mở ứng dụng trong tab mới thay vì tab hiện tại."
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Kiểm tra trạng thái",
+			"description": "Kiểm tra trạng thái trực tuyến cửa ứng dụng bằng một yêu cầu HTTP(S) đơn giản."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Mã trạng thái HTTP",
+			"description": "Các mã trạng thái HTTP được coi là trực tuyến."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
+			"label": "Biểu tượng ứng dụng",
 			"description": "",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Không có kết quả",
+				"text": "Hãy thử sử dụng cụm từ tìm kiếm cụ thể hơn. Nếu bạn không tìm thấy biểu tượng mình muốn, hãy dán URL hình ảnh vào bên trên để dùng biểu tượng tùy chỉnh"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Đang tải biểu tượng ngoài",
+				"text": "Có thể mất vài giây"
 			}
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Cấu hình tích hợp",
+			"description": "Cấu hình tích hợp sẽ được sử dụng để kết nối ứng dụng của bạn.",
+			"placeholder": "Chọn loại tích hợp",
+			"defined": "Đã định",
+			"undefined": "Chưa định",
+			"public": "Công khai",
+			"private": "Riêng tư",
+			"explanationPrivate": "Một bí mật riêng tư sẽ chỉ được gửi đến máy chủ một lần. Khi trình duyệt của bạn đã làm mới trang, nó sẽ không bao giờ được gửi lại nữa.",
+			"explanationPublic": "Một bí mật công khai sẽ luôn được gửi tới ứng dụng khách và có thể truy cập được qua API. Nó không được chứa bất kỳ giá trị bí mật nào như tên người dùng, mật khẩu, mã thông báo, chứng chỉ, v.v!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Để cập nhật một bí mật, hãy nhập một giá trị và nhấp vào nút Lưu. Để xóa một bí mật, hãy sử dụng nút Xóa bí mật.",
+			"warning": "Thông tin đăng nhập của bạn dùng để truy cập vào tích hợp và bạn nên <strong>đừng bao giờ</strong> chia sẻ chúng với bất kỳ ai. Nhóm Homarr sẽ không bao giờ yêu cầu thông tin đăng nhập. Hãy nhớ <strong>lưu trữ và quản lý khóa của bạn một cách an toàn</strong>.",
+			"clear": "Xóa bí mật",
+			"save": "Lưu bí mật",
+			"update": "Cập nhật bí mật"
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Biểu mẫu của bạn chứa dữ liệu không hợp lệ, vì vậy không thể lưu nó. Vui lòng khắc phục mọi vấn đề và nhấp lại vào nút này để lưu các thay đổi của bạn"
 	}
 }

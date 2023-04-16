@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "IFrame",
+    "name": "indlejret dokument (iframe)",
     "description": "Indlejr ethvert indhold fra internettet. Nogle websteder kan begrænse adgang.",
     "settings": {
-      "title": "IFrame indstillinger",
+      "title": "iFrame indstillinger",
       "embedUrl": {
         "label": "Indlejr URL"
       },
@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Indtast URL",
+        "title": "",
         "text": "Sørg for, at du har indtastet en gyldig adresse i konfigurationen af din widget"
       }
     }

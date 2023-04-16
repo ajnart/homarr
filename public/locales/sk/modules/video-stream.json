@@ -5,7 +5,7 @@
     "settings": {
       "title": "Nastavenia pre mini aplikáciu videostreamu",
       "FeedUrl": {
-        "label": "Url adresa"
+        "label": "Adresa URL"
       },
       "autoPlay": {
         "label": "Automatické prehrávanie"

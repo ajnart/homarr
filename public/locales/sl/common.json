@@ -9,13 +9,14 @@
   "version": "Različica",
   "changePosition": "Spremeni položaj",
   "remove": "Odstrani",
-  "removeConfirm": "Ali ste prepričani, da želite odstraniti {{item}} ?",
+  "removeConfirm": "Ali ste prepričani, da želite odstraniti {{item}}?",
+  "createItem": "",
   "sections": {
     "settings": "Nastavitve",
     "dangerZone": "Nevarno območje"
   },
   "secrets": {
-    "apiKey": "Api ključ",
+    "apiKey": "API ključ",
     "username": "Uporabniško ime",
     "password": "Geslo"
   },

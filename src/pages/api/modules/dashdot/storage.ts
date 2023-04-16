@@ -1,19 +1,28 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { z } from 'zod';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { IDashDotTile } from '../../../../widgets/dashDot/DashDotTile';
 
-async function Get(req: NextApiRequest, res: NextApiResponse) {
-  const { configName } = req.query;
+const getQuerySchema = z.object({
+  configName: z.string(),
+  widgetId: z.string().uuid(),
+});
 
-  if (!configName || typeof configName !== 'string') {
+async function Get(req: NextApiRequest, res: NextApiResponse) {
+  const parseResult = getQuerySchema.safeParse(req.query);
+
+  if (!parseResult.success) {
     return res.status(400).json({
-      message: 'Missing required configName in url',
+      statusCode: 400,
+      message: 'Invalid query parameters, please specify the widgetId and configName',
     });
   }
 
+  const { configName, widgetId } = parseResult.data;
+
   const config = getConfig(configName);
-  const dashDotWidget = config.widgets.find((x) => x.id === 'dashdot');
+  const dashDotWidget = config.widgets.find((x) => x.type === 'dashdot' && x.id === widgetId);
 
   if (!dashDotWidget) {
     return res.status(400).json({

@@ -54,7 +54,7 @@ export default function DockerMenuButton(props: any) {
     }, 300);
   }
 
-  if (!dockerEnabled) {
+  if (!dockerEnabled || process.env.DISABLE_EDIT_MODE === 'true') {
     return null;
   }
 
@@ -66,10 +66,13 @@ export default function DockerMenuButton(props: any) {
         onClose={() => setOpened(false)}
         padding="xl"
         position="right"
-        size="full"
+        size="100%"
         title={<ContainerActionBar selected={selection} reload={reload} />}
+        transitionProps={{
+          transition: 'pop',
+        }}
         styles={{
-          drawer: {
+          content: {
             display: 'flex',
             flexDirection: 'column',
           },

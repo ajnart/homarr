@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta Título",
-    "description": "O título, que está sendo exibido como o nome da sua aba"
+    "description": ""
   },
   "logo": {
     "label": "Logo",
-    "description": "O logotipo do painel no canto superior esquerdo"
+    "description": ""
   },
   "favicon": {
     "label": "Favicon",
-    "description": "O ícone, que está sendo usado na frente do nome da sua aba"
+    "description": ""
   },
   "background": {
     "label": "Antecedentes"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "description": "Personalize todos os elementos no seu painel, recomendado apenas para usuários experientes",
+    "description": "",
     "placeholder": "O CSS personalizado será aplicado por último",
     "applying": "Aplicando CSS..."
   },

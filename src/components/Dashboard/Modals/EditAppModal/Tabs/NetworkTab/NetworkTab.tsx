@@ -10,6 +10,9 @@ interface NetworkTabProps {
 
 export const NetworkTab = ({ form }: NetworkTabProps) => {
   const { t } = useTranslation('layout/modals/add-app');
+  const acceptableStatusCodes = (form.values.network.statusCodes ?? ['200']).map((x) =>
+    x.toString()
+  );
   return (
     <Tabs.Panel value="network" pt="lg">
       <Switch
@@ -27,7 +30,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
           data={StatusCodes}
           clearable
           searchable
-          defaultValue={form.values.network.okStatus.map((x) => `${x}`)}
+          defaultValue={acceptableStatusCodes}
           variant="default"
           {...form.getInputProps('network.statusCodes')}
         />

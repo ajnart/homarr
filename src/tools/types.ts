@@ -1,4 +1,5 @@
 import { MantineTheme } from '@mantine/core';
+
 import { OptionValues } from '../modules/ModuleTypes';
 
 export interface Settings {
@@ -74,6 +75,12 @@ export type ServiceType =
   | 'Sabnzbd'
   | 'NZBGet';
 
+/**
+ * @deprecated
+ * @param name the name to match
+ * @param form the form
+ * @returns the port from the map
+ */
 export function tryMatchPort(name: string | undefined, form?: any) {
   if (!name) {
     return undefined;

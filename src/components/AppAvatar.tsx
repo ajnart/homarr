@@ -11,6 +11,7 @@ export const AppAvatar = ({
 
   return (
     <Avatar
+      data-testid="app-avatar"
       src={iconUrl}
       bg={colorScheme === 'dark' ? colors.gray[8] : colors.gray[2]}
       size="sm"

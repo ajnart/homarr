@@ -1,0 +1,14 @@
+{
+  "descriptor": {
+    "name": "Statistiche richiesta multimediale",
+    "description": "Statistiche sulle richieste multimediali",
+    "settings": {
+      "title": "Statistiche richieste multimediali"
+    }
+  },
+  "stats": {
+    "pending": "In attesa di approvazione",
+    "tvRequests": "Richieste TV",
+    "movieRequests": "Richieste film"
+  }
+}

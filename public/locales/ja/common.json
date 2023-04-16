@@ -9,13 +9,14 @@
   "version": "バージョン",
   "changePosition": "ポジションを変更する",
   "remove": "削除",
-  "removeConfirm": "本当に {{item}} を削除したいのですか？",
+  "removeConfirm": "",
+  "createItem": "",
   "sections": {
     "settings": "設定",
     "dangerZone": "デンジャーゾーン"
   },
   "secrets": {
-    "apiKey": "Apiキー",
+    "apiKey": "",
     "username": "ユーザー名",
     "password": "パスワード"
   },

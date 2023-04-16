@@ -1,19 +1,23 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Widget RSS",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widgetu RSS",
       "rssFeedUrl": {
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
         "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "",
-        "text": ""
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }

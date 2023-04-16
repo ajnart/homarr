@@ -43,7 +43,7 @@ function IFrameTile({ widget }: IFrameTileProps) {
           <IconUnlink size={36} strokeWidth={1.2} />
           <Stack align="center" spacing={0}>
             <Title order={6} align="center">
-            {t('card.errors.noUrl.title')}
+              {t('card.errors.noUrl.title')}
             </Title>
             <Text align="center" maw={200}>
               {t('card.errors.noUrl.text')}

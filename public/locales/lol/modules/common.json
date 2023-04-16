@@ -4,7 +4,7 @@
   },
   "errors": {
     "unmappedOptions": {
-      "text": "<b>Un-Usd Parametr In Configurashun Detectd</b><br /><code>{{key}}</code>. Homarr Iz Unable 2 Interpret An Use Dis Parametr. 2 Avoid Any Unexpectd Behavior, Bak Up Ur Configurashun An Correct Ur Configurashun."
+      "text": ""
     }
   }
 }

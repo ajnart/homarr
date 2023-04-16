@@ -1,19 +1,23 @@
 {
   "descriptor": {
     "name": "RSS-Widget",
-    "description": "Nimmt die Einträge aus einem RSS-Feed und zeigt sie an. Wird üblicherweise für Online-Nachrichten verwendet",
+    "description": "",
     "settings": {
       "title": "Einstellungen für das RSS-Widget",
       "rssFeedUrl": {
-        "label": "RSS-Feed URL"
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "RSS-Feed konnte nicht abgerufen werden",
-        "text": "Es gab ein Problem beim Erreichen des RSS-Feeds. Vergewissern Sie sich, dass Sie den Feed richtig konfiguriert haben und eine gültige RSS-URL verwenden, die der offiziellen Standardspezifikation entspricht. Nachdem Sie den Feed aktualisiert haben, müssen Sie möglicherweise Ihr Dashboard speichern und die Seite aktualisieren."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }

@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Ối, đã xảy ra lỗi!",
+    "buttons": {
+      "details": "Chi tiết",
+      "tryAgain": "Thử lại"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Lỗi của bạn",
+    "reportButton": "Báo cáo lỗi này"
+  }
+}

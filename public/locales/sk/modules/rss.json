@@ -1,19 +1,23 @@
 {
   "descriptor": {
     "name": "RSS mini aplikácia",
-    "description": "Stiahne položky z informačného kanála RSS a zobrazí ich. Bežne sa používa pre online správy",
+    "description": "",
     "settings": {
       "title": "Nastavenia mini aplikácie RSS",
       "rssFeedUrl": {
-        "label": "URL adresa RSS"
+        "label": "URL adresa RSS",
+        "description": "URL adresy kanálov RSS, ktoré chcete zobraziť."
+      },
+      "refreshInterval": {
+        "label": "Interval obnovovania (v minútach)"
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "Nie je možné načítať kanál RSS",
-        "text": "Vyskytol sa problém s kontaktovaním informačného kanála RSS. Uistite sa, že ste &apos; informačný kanál správne nakonfigurovali a používate platnú adresu URL RSS, ktorá zodpovedá oficiálnej štandardnej špecifikácii. Po aktualizácii informačného kanála možno budete musieť uložiť informačný panel a obnoviť stránku."
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Nie je možné načítať kanál RSS",
+          "text": "Vyskytol sa problém s dosiahnutím kanála RSS. Uistite sa, že ste správne nakonfigurovali kanál RSS pomocou platnej adresy URL. Adresy URL by mali zodpovedať oficiálnej špecifikácii. Po aktualizácii kanála bude možno potrebné obnoviť ovládací panel."
+        }
       }
     }
   }

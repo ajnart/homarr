@@ -28,12 +28,12 @@ module.exports = {
       'sk',
       'no',
     ],
-    localePath: path.resolve('./public/locales'),
-    fallbackLng: 'en',
+
     localeDetection: true,
-    returnEmptyString: false,
-    debug: false,
-    appendNamespaceToCIMode: true,
-    reloadOnPrerender: process.env.NODE_ENV === 'development',
   },
+  returnEmptyString: false,
+  appendNamespaceToCIMode: true,
+  reloadOnPrerender: process.env.NODE_ENV === 'development',
+  fallbackLng: 'en',
+  localePath: path.resolve('./public/locales'),
 };

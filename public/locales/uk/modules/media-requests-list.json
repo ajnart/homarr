@@ -1,0 +1,17 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": ""
+    }
+  },
+  "noRequests": "",
+  "pending": "",
+  "nonePending": "",
+  "state": {
+    "approved": "Схвалено",
+    "pendingApproval": "Очікує схвалення",
+    "declined": "Відхилено"
+  }
+}

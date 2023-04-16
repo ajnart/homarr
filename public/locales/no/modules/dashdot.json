@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Viser grafene til en ekstern Dash. Eksempel inni av Homarr.",
+    "description": "Viser grafene til en ekstern Dash. Instanse inne i Homarr.",
     "settings": {
       "title": "Innstillinger for Dash. widget",
       "url": {
@@ -11,68 +11,68 @@
         "label": "Vis prosentandel"
       },
       "columns": {
-        "label": ""
+        "label": "Visningskolonner"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Høyde på grafer"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafer (Rekkefølge)",
         "storage": {
           "label": "Lagring",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spenn"
           },
           "compactView": {
-            "label": ""
+            "label": "Vis som tekst (kompakt)"
           },
           "multiView": {
-            "label": ""
+            "label": "Vis som multi-disk-visning"
           }
         },
         "network": {
           "label": "Nettverk",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spenn"
           },
           "compactView": {
-            "label": ""
+            "label": "Vis som tekst (kompakt)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spenn"
           },
           "multiView": {
-            "label": ""
+            "label": "Vis som multi-kjerne-visning"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spenn"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Vis i widget"
           },
           "span": {
-            "label": ""
+            "label": "Kolonne spenn"
           }
         }
       }
@@ -85,7 +85,7 @@
       "noInformation": "Kan ikke hente informasjon fra dash. - kjører du den nyeste versjonen?",
       "protocolDowngrade": {
         "title": "Oppdaget protokollnedgradering",
-        "text": "Protokollen til Dash. instansen blir nedgradert. Dette er sikkerhetsrisiko, siden HTTP er ukryptert og angripere kan misbruke denne tilkoblingen. Kontroller at Dash. kjører på HTTPS for eller nedgraderer Homarr til HTTP (ikke anbefalt)."
+        "text": "Tilkoblingen til Dash. Instansen bruker HTTP. Dette er en sikkerhetsrisiko, fordi HTTP er ukryptert og angripere kan misbruke denne tilkoblingen. Kontroller at Dash. bruker HTTPS eller nedgrader Homarr til HTTP (ikke anbefalt)."
       }
     },
     "graphs": {

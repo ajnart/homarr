@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Ups, ein Fehler ist aufgetreten!",
+    "buttons": {
+      "details": "Details",
+      "tryAgain": "Erneut versuchen"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Dein Fehler",
+    "reportButton": "Fehler melden"
+  }
+}

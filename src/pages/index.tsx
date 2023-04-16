@@ -46,7 +46,7 @@ export async function getServerSideProps({
     configName = 'default';
   }
 
-  const translations = await getServerSideTranslations(req, res, dashboardNamespaces, locale);
+  const translations = await getServerSideTranslations(dashboardNamespaces, locale, req, res);
   const config = getFrontendConfig(configName as string);
 
   return {

@@ -1,0 +1,14 @@
+{
+  "descriptor": {
+    "name": "Štatistiky požiadaviek médií",
+    "description": "Štatistiky o vašich požiadavkách na médiá",
+    "settings": {
+      "title": "Štatistiky požiadaviek médií"
+    }
+  },
+  "stats": {
+    "pending": "Čakajúce schválenia",
+    "tvRequests": "TV požiadavky",
+    "movieRequests": "Filmové požiadavky"
+  }
+}

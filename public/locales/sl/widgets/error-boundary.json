@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Ups, prišlo je do napake!",
+    "buttons": {
+      "details": "Podrobnosti",
+      "tryAgain": "Poskusite znova"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Vaša napaka",
+    "reportButton": "Prijavite to napako"
+  }
+}

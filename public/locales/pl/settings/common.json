@@ -10,19 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Wykonane z ❤️ przez @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Zobacz zawartość firm trzecich",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Zależność",
       "dependencyVersion": "Wersja"
     }
   },
   "grow": "Rozwijaj siatkę (zajmij całą przestrzeń)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Podgląd",
+      "subtitle": "Zmiany zapisywane są automatycznie"
     },
-    "divider": "",
+    "divider": "Opcje układu",
     "main": "Główna",
     "sidebar": "Pasek boczny",
     "cannotturnoff": "Nie można wyłączyć",

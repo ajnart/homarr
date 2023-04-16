@@ -8,7 +8,9 @@ export const LogoImageChanger = () => {
   const { t } = useTranslation('settings/customization/page-appearance');
   const updateConfig = useConfigStore((x) => x.updateConfig);
   const { config, name: configName } = useConfigContext();
-  const [logoImageSrc, setLogoImageSrc] = useState(config?.settings.customization.logoImageUrl ?? '/imgs/logo/logo.png');
+  const [logoImageSrc, setLogoImageSrc] = useState(
+    config?.settings.customization.logoImageUrl ?? '/imgs/logo/logo.png'
+  );
 
   if (!configName) return null;
 

@@ -8,7 +8,7 @@
         "label": "Feed URL"
       },
       "autoPlay": {
-        "label": "Automatisk avspilling"
+        "label": "Autospill"
       },
       "muted": {
         "label": "Dempet lyd"

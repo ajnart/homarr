@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Strumień wideo",
+    "description": "Osadź strumień wideo lub wideo z kamery lub strony internetowej",
     "settings": {
-      "title": "",
+      "title": "Ustawienia dla widżetu strumienia wideo",
       "FeedUrl": {
-        "label": ""
+        "label": "Adres URL kanału"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Autoodtwarzanie"
       },
       "muted": {
-        "label": ""
+        "label": "Wyciszony dźwięk"
       },
       "controls": {
-        "label": ""
+        "label": "Sterowanie odtwarzaczem wideo"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Nieprawidłowy strumień"
   }
 }

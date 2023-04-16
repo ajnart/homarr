@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Saisir une URL",
+        "title": "",
         "text": ""
       }
     }

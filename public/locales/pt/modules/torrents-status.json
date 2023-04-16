@@ -50,7 +50,7 @@
         "text": "Adicione um cliente Torrent suportado para ver os seus downloads actuais"
       },
       "generic": {
-        "title": "Ocorreu um erro inesperado",
+        "title": "",
         "text": "Homarr foi incapaz de comunicar com os seus clientes Torrent. Por favor, verifique a sua configuração"
       }
     },

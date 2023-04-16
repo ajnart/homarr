@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta Titel",
-    "description": "De titel, die als uw tabnaam wordt weergegeven"
+    "description": ""
   },
   "logo": {
     "label": "Logo",
-    "description": "Het dashboardlogo linksboven"
+    "description": ""
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Het pictogram, dat wordt gebruik voor de naam van het tabblad"
+    "description": ""
   },
   "background": {
     "label": "Achtergrond"
   },
   "customCSS": {
     "label": "Eigen CSS",
-    "description": "Alle elementen op je dashboard aanpassen, alleen aanbevolen voor ervaren gebruikers",
+    "description": "",
     "placeholder": "Eigen CSS wordt als laatste toegepast",
     "applying": "CSS toepassen..."
   },

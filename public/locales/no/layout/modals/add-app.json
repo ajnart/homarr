@@ -41,12 +41,12 @@
 			"label": "App ikon",
 			"description": "",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Ingen resultater funnet",
+				"text": "Prøv å bruke et mer spesifikt søkeord. Hvis du ikke finner det ønskede ikonet, lim inn URL adressen for et egendefinert ikon"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Laster eksterne ikoner",
+				"text": "Dette kan ta noen sekunder"
 			}
 		}
 	},

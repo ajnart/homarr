@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Oops, there was an error!",
+    "buttons": {
+      "details": "Details",
+      "tryAgain": "Try again"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Your error",
+    "reportButton": "Report this error"
+  }
+}

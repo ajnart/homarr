@@ -4,7 +4,7 @@
   },
   "errors": {
     "unmappedOptions": {
-      "text": "<b>Ubrukt parameter i konfigurasjon oppdaget</b><br /><code>{{key}}</code>. Homarr kan ikke tolke og bruke dette parameteret. For å unngå uventet oppførsel, sikkerhetskopier din konfigurasjon og korriger konfigurasjonen."
+      "text": ""
     }
   }
 }

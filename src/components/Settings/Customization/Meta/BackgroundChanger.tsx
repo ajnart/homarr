@@ -33,7 +33,7 @@ export const BackgroundChanger = () => {
   return (
     <TextInput
       label={t('background.label')}
-      placeholder="/imgs/background.png"
+      placeholder="/imgs/backgrounds/background.png"
       value={backgroundImageUrl}
       onChange={handleChange}
     />

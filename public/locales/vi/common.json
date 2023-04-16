@@ -9,13 +9,14 @@
   "version": "Phiên bản",
   "changePosition": "Đổi vị trí",
   "remove": "Xóa",
-  "removeConfirm": "Bạn có chắc muốn xoá {{item}} ?",
+  "removeConfirm": "Bạn có chắc muốn xoá {{item}}?",
+  "createItem": "",
   "sections": {
     "settings": "Cài đặt",
     "dangerZone": "Khu vực nguy hiểm"
   },
   "secrets": {
-    "apiKey": "Khóa API",
+    "apiKey": "Khoá API",
     "username": "Tên người dùng",
     "password": "Mật khẩu"
   },

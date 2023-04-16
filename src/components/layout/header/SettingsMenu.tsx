@@ -7,6 +7,7 @@ import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
 import { useCardStyles } from '../useCardStyles';
 import { ColorSchemeSwitch } from './SettingsMenu/ColorSchemeSwitch';
+import { EditModeToggle } from './SettingsMenu/EditModeToggle';
 
 export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const [drawerOpened, drawer] = useDisclosure(false);
@@ -25,6 +26,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
         </Menu.Target>
         <Menu.Dropdown>
           <ColorSchemeSwitch />
+          <EditModeToggle />
           <Menu.Divider />
           {!editModeEnabled && (
             <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>

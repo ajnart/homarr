@@ -1,21 +1,21 @@
 {
-  "text": "",
+  "text": "Tùy chỉnh cho phép bạn định cấu hình và điều chỉnh trải nghiệm Homarr theo ý thích của mình.",
   "accordeon": {
     "layout": {
       "name": "Bố cục",
-      "description": ""
+      "description": "Bật và tắt các thành phần trên tiêu đề và ô bảng điều khiển"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Chồng lưới",
+      "description": "Tùy chỉnh hành vi và các cột của khu vực bảng điều khiển của bạn"
     },
     "pageMetadata": {
       "name": "Metadata trang",
-      "description": ""
+      "description": "Điều chỉnh tiêu đề, logo và PWA"
     },
     "appereance": {
       "name": "Hiển thị",
-      "description": ""
+      "description": "Tuỳ chỉnh nền, màu và hiển thị của các ứng dụng"
     }
   }
 }

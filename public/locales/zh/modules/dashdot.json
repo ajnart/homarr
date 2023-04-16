@@ -14,53 +14,53 @@
         "label": ""
       },
       "graphHeight": {
-        "label": ""
+        "label": "图形的高度"
       },
       "graphsOrder": {
         "label": "",
         "storage": {
           "label": "存储",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "显示为文本(紧凑)"
           },
           "multiView": {
-            "label": ""
+            "label": "显示为多驱动视图"
           }
         },
         "network": {
           "label": "网络",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "显示为文本(紧凑)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
           },
           "multiView": {
-            "label": ""
+            "label": "显示为多核视图"
           }
         },
         "ram": {
-          "label": "",
+          "label": "内存",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""
@@ -69,7 +69,7 @@
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "在小工具中显示"
           },
           "span": {
             "label": ""

@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Det oppstod en feil!",
+    "buttons": {
+      "details": "Detaljer",
+      "tryAgain": "Prøv igjen"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Din feilmelding",
+    "reportButton": "Rapporter denne feilen"
+  }
+}

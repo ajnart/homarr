@@ -1,0 +1,17 @@
+{
+  "descriptor": {
+    "name": "Peticiones de contenido",
+    "description": "Mostrar una lista de todas las peticiones de contenido de tu instancia Overseerr o Jellyseerr",
+    "settings": {
+      "title": "Lista de peticiones de contenido"
+    }
+  },
+  "noRequests": "Peticiones no encontradas. Por favor, asegúrate de tener configuradas tus apps correctamente.",
+  "pending": "Hay {countPendingApproval} peticiones esperando a ser aprobadas.",
+  "nonePending": "Actualmente no hay aprobaciones pendientes. ¡Listo!",
+  "state": {
+    "approved": "Aprobado",
+    "pendingApproval": "Aprobación pendiente",
+    "declined": "Rechazado"
+  }
+}

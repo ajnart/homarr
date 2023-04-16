@@ -12,6 +12,7 @@ import {
 import { IconAlertTriangle, IconMovie } from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
 import { AppAvatar } from '../../components/AppAvatar';
+import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
 import { useGetMediaServers } from '../../hooks/widgets/media-servers/useGetMediaServers';
 import { defineWidget } from '../helper';
@@ -40,8 +41,9 @@ interface MediaServerWidgetProps {
 function MediaServerTile({ widget }: MediaServerWidgetProps) {
   const { t } = useTranslation('modules/media-server');
   const { config } = useConfigContext();
+  const isEditMode = useEditModeStore((x) => x.enabled);
 
-  const { data, isError } = useGetMediaServers({
+  const { data, isError, isFetching, isInitialLoading } = useGetMediaServers({
     enabled: config !== undefined,
   });
 
@@ -57,16 +59,28 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
     );
   }
 
-  if (!data) {
-    <Center h="100%">
-      <Loader />
-    </Center>;
+  if (isInitialLoading) {
+    return (
+      <Stack
+        align="center"
+        justify="center"
+        style={{
+          height: '100%',
+        }}
+      >
+        <Loader />
+        <Stack align="center" spacing={0}>
+          <Text>{t('descriptor.name')}</Text>
+          <Text color="dimmed">Homarr is loading streams...</Text>
+        </Stack>
+      </Stack>
+    );
   }
 
   return (
     <Stack h="100%">
       <ScrollArea offsetScrollbars>
-        <Table highlightOnHover striped>
+        <Table highlightOnHover>
           <thead>
             <tr>
               <th>{t('card.table.header.session')}</th>
@@ -97,7 +111,8 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
             return (
               <AppAvatar
                 iconUrl={app.appearance.iconUrl}
-                color={server.success === true ? undefined : 'red'}
+                // If success, the color is undefined, otherwise it's red but if isFetching is true, it's yellow
+                color={server.success ? (isFetching ? 'yellow' : undefined) : 'red'}
               />
             );
           })}

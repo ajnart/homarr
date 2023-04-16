@@ -41,12 +41,12 @@
 			"label": "Ikona aplikacji",
 			"description": "",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Nie znaleziono żadnych wyników",
+				"text": "Spróbuj użyć bardziej konkretnego hasła wyszukiwania. Jeśli nie możesz znaleźć żądanej ikony, wklej adres URL obrazu powyżej, aby wyszukać niestandardową ikonę"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Ładowanie zewnętrznych ikon",
+				"text": "To może zająć kilka sekund"
 			}
 		}
 	},

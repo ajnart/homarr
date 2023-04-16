@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "Général",
-		"behaviour": "Comportement",
+		"behaviour": "",
 		"network": "Réseau",
 		"appearance": "Apparence",
 		"integration": "Intégration"
@@ -41,12 +41,12 @@
 			"label": "Icône de l’app",
 			"description": "",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Aucun résultat trouvé",
+				"text": "Essayez d'utiliser un terme de recherche plus spécifique. Si vous ne trouvez pas l'icône souhaitée, collez l'URL de l'image ci-dessus pour obtenir une icône personnalisée"
 			},
 			"noItems": {
 				"title": "",
-				"text": ""
+				"text": "Cela peut prendre quelques secondes"
 			}
 		}
 	},

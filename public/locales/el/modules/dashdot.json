@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Εμφανίζει τα γραφήματα μιας εξωτερικής Dash. μέσα στο Homarr.",
+    "description": "",
     "settings": {
       "title": "Ρυθμίσεις για το widget Dash",
       "url": {
@@ -105,7 +105,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": "Μνήμη RAM"
+        "title": ""
       },
       "gpu": {
         "title": "GPU"

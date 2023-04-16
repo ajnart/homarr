@@ -5,7 +5,7 @@
     "settings": {
       "title": "Ustawienia dla widżetu Kalendarz",
       "useSonarrv4": {
-        "label": ""
+        "label": "Użyj API Sonarr v4"
       },
       "sundayStart": {
         "label": "Rozpoczynaj tydzień od niedzieli"

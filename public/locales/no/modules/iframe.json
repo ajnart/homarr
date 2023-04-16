@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "IFrame",
-    "description": "",
+    "name": "iFrame",
+    "description": "Bygg inn innhold fra Internett. Noen nettsteder kan begrense adgang.",
     "settings": {
-      "title": "",
+      "title": "iFrame innstillinger",
       "embedUrl": {
-        "label": ""
+        "label": "Bygg inn URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Tillat fullskjerm"
       }
     }
   },
@@ -16,7 +16,7 @@
     "errors": {
       "noUrl": {
         "title": "",
-        "text": ""
+        "text": "Sørg for at du har angitt en gyldig adresse i konfigurasjonen av widgeten din"
       }
     }
   }

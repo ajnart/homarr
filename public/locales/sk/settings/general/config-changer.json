@@ -37,7 +37,7 @@
     "confirmDeletion": {
       "title": "Potvrdenie odstránenia konfigurácie",
       "warningText": "Chystáte sa vymazať '<b>{{configName}}</b>'",
-      "text": "Upozorňujeme, že vymazanie nie je možné zvrátiť a vaše údaje budú natrvalo stratené. Po kliknutí na toto tlačidlo sa súbor natrvalo odstráni z vášho disku. Uistite sa, že ste si vytvorili primeranú zálohu konfigurácie.",
+      "text": "Upozorňujeme, že vymazanie nie je možné vrátiť späť a vaše údaje budú natrvalo stratené. Po kliknutí na toto tlačidlo sa súbor natrvalo odstráni z vášho disku. Uistite sa, že ste si vytvorili primeranú zálohu konfigurácie.",
       "buttons": {
         "confirm": "Áno, vymažte '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "Odstránenie konfigurácie zlyhalo"
         },
         "deleteFailedDefaultConfig": {
-          "title": "Predvolená konfigurácia sa nedá odstrániť",
+          "title": "Predvolenú konfiguráciu nemožno odstrániť",
           "message": "Konfigurácia nebola odstránená zo systému súborov"
         }
       }

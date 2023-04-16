@@ -1,19 +1,23 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Tiện ích RSS",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Cài đặt cho tiện ích RSS",
       "rssFeedUrl": {
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
         "label": ""
       }
-    }
-  },
-  "card": {
-    "errors": {
-      "general": {
-        "title": "",
-        "text": ""
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
       }
     }
   }

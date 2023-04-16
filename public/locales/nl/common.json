@@ -9,13 +9,14 @@
   "version": "Versie",
   "changePosition": "Positie wijzigen",
   "remove": "Verwijder",
-  "removeConfirm": "Weet u zeker dat u {{item}} wilt verwijderen?",
+  "removeConfirm": "",
+  "createItem": "",
   "sections": {
     "settings": "Instellingen",
     "dangerZone": "Gevarenzone"
   },
   "secrets": {
-    "apiKey": "API-sleutel",
+    "apiKey": "",
     "username": "Gebruikersnaam",
     "password": "Wachtwoord"
   },

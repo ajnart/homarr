@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Bevestig de verwijdering van uw configuratie",
-      "warningText": "Je staat op het punt om '<b>{{configName}}</b>' te verwijderen",
-      "text": "Houd er rekening mee dat de verwijdering niet onomkeerbaar is en dat uw gegevens permanent verloren gaan. Na het klikken op deze knop wordt het bestand permanent van uw schijf verwijderd. Zorg voor een adequate back-up van uw configuratie.",
+      "warningText": "",
+      "text": "",
       "buttons": {
         "confirm": "Ja, verwijder '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "Configuratie verwijderen mislukt"
         },
         "deleteFailedDefaultConfig": {
-          "title": "Standaardconfiguratie kan niet worden verwijderd",
+          "title": "",
           "message": "Configuratie is niet verwijderd uit het bestandssysteem"
         }
       }

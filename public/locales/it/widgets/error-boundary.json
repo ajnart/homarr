@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Ops, Si è veritivato un errore!",
+    "buttons": {
+      "details": "Dettagli",
+      "tryAgain": "Riprova"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Il tuo errore",
+    "reportButton": "Segnala questo errore"
+  }
+}

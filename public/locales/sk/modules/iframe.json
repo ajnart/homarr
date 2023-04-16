@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "IFrame",
+    "name": "iFrame",
     "description": "Vložte akýkoľvek obsah z internetu. Niektoré webové stránky môžu obmedziť prístup.",
     "settings": {
-      "title": "Nastavenia IFrame",
+      "title": "Nastavenia iFrame",
       "embedUrl": {
         "label": "Vložiť adresu URL"
       },
@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Zadajte adresu URL",
+        "title": "",
         "text": "Skontrolujte, či ste v konfigurácii mini aplikácie zadali platnú adresu"
       }
     }

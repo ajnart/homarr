@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "确认删除你的配置",
-      "warningText": "你即将删除 '<b>{{configName}}</b>'。",
-      "text": "请注意，删除是不可逆的，您的数据将永久丢失。点击此按钮后，该文件将从您的磁盘上永久删除。请确保为您的配置创建足够的备份。",
+      "warningText": "您要删除的是 '<b>{{configName}}</b>' 。",
+      "text": "请注意，删除是不可逆转的，你的数据将被永久地丢失。点击这个按钮后，该文件将从你的磁盘中永久删除。请确保为你的配置创建一个充分的备份。",
       "buttons": {
         "confirm": "是的，删除 '<b>{{configName}}</b>' 。"
       }
@@ -57,7 +57,7 @@
           "message": "配置删除失败"
         },
         "deleteFailedDefaultConfig": {
-          "title": "默认值不能被删除",
+          "title": "默认配置不能被删除",
           "message": "配置没有从文件系统中删除"
         }
       }

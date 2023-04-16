@@ -128,7 +128,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
           position="center"
           mt="md"
           total={totalPages}
-          page={page}
+          value={page}
           onChange={setPage}
         />
       )}

@@ -10,12 +10,13 @@
   "changePosition": "Modifier la position",
   "remove": "Supprimer",
   "removeConfirm": "Êtes-vous sûr de vouloir supprimer {{item}} ?",
+  "createItem": "",
   "sections": {
     "settings": "Paramètres",
     "dangerZone": "Zone de danger"
   },
   "secrets": {
-    "apiKey": "Clé d'API",
+    "apiKey": "Clé API",
     "username": "Nom d'utilisateur",
     "password": "Mot de passe"
   },

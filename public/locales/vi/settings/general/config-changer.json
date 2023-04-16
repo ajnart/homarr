@@ -1,6 +1,6 @@
 {
   "configSelect": {
-    "label": "",
+    "label": "Chuyển cấu hình",
     "description": "{{configCount}} cấu hình có sẵn",
     "loadingNew": "Đang tải cấu hình...",
     "pleaseWait": "Vui lòng chờ cho đến khi cấu hình mới được tải!"
@@ -36,10 +36,10 @@
     },
     "confirmDeletion": {
       "title": "Xác nhận xóa cấu hình của bạn",
-      "warningText": "",
-      "text": "",
+      "warningText": "Bạn sắp xóa '<b>{{configName}}</b>'",
+      "text": "Xin lưu ý rằng thao tác này không thể hoàn tác và dữ liệu của bạn sẽ bị mất vĩnh viễn. Sau khi nhấp vào nút này, tệp sẽ bị xóa vĩnh viễn khỏi đĩa của bạn. Hãy nhớ tạo một bản sao lưu thích hợp cho cấu hình của bạn.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Vâng, xoá '<b>{{configName}}</b>'"
       }
     }
   },
@@ -58,7 +58,7 @@
         },
         "deleteFailedDefaultConfig": {
           "title": "Cấu hình mặc định không thể bị xoá",
-          "message": ""
+          "message": "Cấu hình không bị xóa khỏi hệ thống tệp"
         }
       }
     },
@@ -75,12 +75,12 @@
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Tải lên cấu hình",
+      "text": "Kéo tệp vào đây để tải lên một cấu hình. Chỉ hỗ trợ tệp JSON."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Kéo và Thả bị từ chối",
+      "text": "Định dạng tệp này không được hỗ trợ. Vui lòng chỉ tải tệp JSON."
     }
   }
 }

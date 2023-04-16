@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Ups, der opstod en fejl!",
+    "buttons": {
+      "details": "Detaljer",
+      "tryAgain": "Prøv igen"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Din fejl",
+    "reportButton": "Rapportér denne fejl"
+  }
+}

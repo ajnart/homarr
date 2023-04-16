@@ -1,4 +1,4 @@
-import { Center, Group, Loader, Stack } from '@mantine/core';
+import { Group, Stack } from '@mantine/core';
 import { useEffect, useMemo, useRef } from 'react';
 import { useConfigContext } from '../../../config/provider';
 import { useResize } from '../../../hooks/use-resize';
@@ -6,9 +6,9 @@ import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
 import { CategoryType } from '../../../types/category';
 import { WrapperType } from '../../../types/wrapper';
 import { DashboardCategory } from '../Wrappers/Category/Category';
-import { useGridstackStore } from '../Wrappers/gridstack/store';
 import { DashboardSidebar } from '../Wrappers/Sidebar/Sidebar';
 import { DashboardWrapper } from '../Wrappers/Wrapper/Wrapper';
+import { useGridstackStore } from '../Wrappers/gridstack/store';
 
 export const DashboardView = () => {
   const wrappers = useWrapperItems();
@@ -17,33 +17,24 @@ export const DashboardView = () => {
 
   return (
     <Group align="top" h="100%" spacing="xs">
-      {sidebarsVisible.isLoading ? (
-        <Center w="100%">
-          <Loader />
-        </Center>
-      ) : (
-        <>
-          {sidebarsVisible.left ? (
-            <DashboardSidebar location="left" isGridstackReady={isReady} />
-          ) : null}
+      {sidebarsVisible.left ? (
+        <DashboardSidebar location="left" isGridstackReady={isReady} />
+      ) : null}
 
-          <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
-            {!isReady
-              ? null
-              : wrappers.map((item) =>
-                  item.type === 'category' ? (
-                    <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
-                  ) : (
-                    <DashboardWrapper key={item.id} wrapper={item as WrapperType} />
-                  )
-                )}
-          </Stack>
+      <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
+        {isReady &&
+          wrappers.map((item) =>
+            item.type === 'category' ? (
+              <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
+            ) : (
+              <DashboardWrapper key={item.id} wrapper={item as WrapperType} />
+            )
+          )}
+      </Stack>
 
-          {sidebarsVisible.right ? (
-            <DashboardSidebar location="right" isGridstackReady={isReady} />
-          ) : null}
-        </>
-      )}
+      {sidebarsVisible.right ? (
+        <DashboardSidebar location="right" isGridstackReady={isReady} />
+      ) : null}
     </Group>
   );
 };
@@ -60,7 +51,7 @@ const usePrepareGridstack = () => {
   }, [width]);
 
   return {
-    isReady: !!mainAreaWidth,
+    isReady: Boolean(mainAreaWidth),
     mainAreaRef,
   };
 };

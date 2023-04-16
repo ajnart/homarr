@@ -36,7 +36,7 @@
     },
     "confirmDeletion": {
       "title": "Conferma l'eliminazione della configurazione",
-      "warningText": "Stai per cancellare '<b>{{configName}}</b>'",
+      "warningText": "Siete sicuri di voler cancellare '<b>{{configName}}</b>'",
       "text": "Si noti che l'eliminazione non è reversibile e i dati andranno persi in modo permanente. Dopo aver fatto clic su questo pulsante, il file verrà eliminato definitivamente dal disco. Assicurarsi di creare un backup adeguato della propria configurazione.",
       "buttons": {
         "confirm": "Sì, elimina '<b>{{configName}}</b>'"

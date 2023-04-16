@@ -2,7 +2,7 @@
   "title": "Search engien",
   "configurationName": "Search Engine Configurashun",
   "tips": {
-    "generalTip": "Thar R Multiple Prefixez U Can Use! Addin Thees Infront Ov Ur Query Will Filtr Teh Results. !S (Web), !T (Torrents), !Y (Youtube), An !M (Media).",
+    "generalTip": "",
     "placeholderTip": "%s can bees usd as placeholdah 4 teh quewee."
   },
   "customEngine": {

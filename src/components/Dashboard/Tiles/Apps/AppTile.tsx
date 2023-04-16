@@ -36,7 +36,13 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           className="dashboard-tile-app"
         >
           <Box hidden={false}>
-            <Title order={5} size="md" ta="center" lineClamp={1} className={cx(classes.appName, 'dashboard-tile-app-title')}>
+            <Title
+              order={5}
+              size="md"
+              ta="center"
+              lineClamp={1}
+              className={cx(classes.appName, 'dashboard-tile-app-title')}
+            >
               {app.name}
             </Title>
           </Box>
@@ -87,12 +93,10 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   image: {
-    ref: getRef('image'),
     maxHeight: '90%',
     maxWidth: '90%',
   },
   appName: {
-    ref: getRef('appName'),
     wordBreak: 'break-word',
   },
   button: {

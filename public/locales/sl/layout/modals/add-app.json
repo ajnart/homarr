@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "Splošno",
-		"behaviour": "Vedenje",
+		"behaviour": "Obnašanje",
 		"network": "Omrežje",
 		"appearance": "Videz",
 		"integration": "Integracija"
@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Ikona aplikacije",
-			"description": "Izberite ikono, ki bo prikazana na nadzorni plošči. Izbirate lahko med ikonami {{suggestionsCount}} ali vnesete svoj URL",
+			"description": "",
 			"autocomplete": {
 				"title": "Ni rezultatov",
 				"text": "Poskusite uporabiti bolj specifičen iskalni izraz. Če želene ikone ne najdete, prilepite zgornji naslov URL slike za ikono po meri"

@@ -110,8 +110,9 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
             supportsMediaControl: session.SupportsMediaControl ?? false,
             currentlyPlaying: session.NowPlayingItem
               ? {
-                  name: session.NowPlayingItem.Name as string,
+                  name: `${session.NowPlayingItem.SeriesName ?? session.NowPlayingItem.Name}`,
                   seasonName: session.NowPlayingItem.SeasonName as string,
+                  episodeName: session.NowPlayingItem.Name as string,
                   albumName: session.NowPlayingItem.Album as string,
                   episodeCount: session.NowPlayingItem.EpisodeCount ?? undefined,
                   metadata: {

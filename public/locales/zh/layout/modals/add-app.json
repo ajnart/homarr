@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "一般",
-		"behaviour": "行为",
+		"behaviour": "",
 		"network": "网络",
 		"appearance": "外观",
 		"integration": "融合"
@@ -41,12 +41,12 @@
 			"label": "应用图标",
 			"description": "",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "未找到相应结果",
+				"text": "尝试使用一个更具体的搜索词。如果你找不到你想要的图标，请粘贴上面的图片URL，以获得一个自定义图标。"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "加载外部图标",
+				"text": "这可能需要几秒钟"
 			}
 		}
 	},

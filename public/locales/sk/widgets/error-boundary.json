@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Ups, došlo k chybe!",
+    "buttons": {
+      "details": "Detaily",
+      "tryAgain": "Skúste znova"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Vaša chyba",
+    "reportButton": "Nahlásiť chybu"
+  }
+}

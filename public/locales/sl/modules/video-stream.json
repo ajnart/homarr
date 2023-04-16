@@ -5,7 +5,7 @@
     "settings": {
       "title": "Nastavitve za gradnik videoprenosa",
       "FeedUrl": {
-        "label": "URL naslov pretoka"
+        "label": "URL vira"
       },
       "autoPlay": {
         "label": "Samodejno predvajanje"

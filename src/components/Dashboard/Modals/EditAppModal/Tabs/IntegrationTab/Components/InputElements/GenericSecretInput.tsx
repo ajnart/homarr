@@ -6,7 +6,6 @@ import {
   Grid,
   Group,
   PasswordInput,
-  Stack,
   ThemeIcon,
   Title,
   Text,
@@ -40,7 +39,7 @@ export const GenericSecretInput = ({
 
   const Icon = setIcon;
 
-  const [displayUpdateField, setDisplayUpdateField] = useState<boolean>(false);
+  const [displayUpdateField, setDisplayUpdateField] = useState<boolean>(!secretIsPresent);
   const { t } = useTranslation(['layout/modals/add-app', 'common']);
 
   return (
@@ -51,26 +50,26 @@ export const GenericSecretInput = ({
             <ThemeIcon color={secretIsPresent ? 'green' : 'red'} variant="light" size="lg">
               <Icon size={18} />
             </ThemeIcon>
-            <Stack spacing={0}>
+            <Flex justify="start" align="start" direction="column">
               <Group spacing="xs">
                 <Title className={classes.subtitle} order={6}>
                   {t(label)}
                 </Title>
 
                 <Group spacing="xs">
-                  {secretIsPresent ? (
-                    <Badge className={classes.textTransformUnset} color="green" variant="dot">
-                      {t('integration.type.defined')}
-                    </Badge>
-                  ) : (
-                    <Badge className={classes.textTransformUnset} color="red" variant="dot">
-                      {t('integration.type.undefined')}
-                    </Badge>
-                  )}
+                  <Badge
+                    className={classes.textTransformUnset}
+                    color={secretIsPresent ? 'green' : 'red'}
+                    variant="dot"
+                  >
+                    {secretIsPresent
+                      ? t('integration.type.defined')
+                      : t('integration.type.undefined')}
+                  </Badge>
                   {type === 'private' ? (
                     <Tooltip
                       label={t('integration.type.explanationPrivate')}
-                      width={200}
+                      width={400}
                       multiline
                       withinPortal
                       withArrow
@@ -82,7 +81,7 @@ export const GenericSecretInput = ({
                   ) : (
                     <Tooltip
                       label={t('integration.type.explanationPublic')}
-                      width={200}
+                      width={400}
                       multiline
                       withinPortal
                       withArrow
@@ -94,29 +93,20 @@ export const GenericSecretInput = ({
                   )}
                 </Group>
               </Group>
-              <Text size="xs" color="dimmed">
+              <Text size="xs" color="dimmed" w={400}>
                 {type === 'private'
                   ? 'Private: Once saved, you cannot read out this value again'
                   : 'Public: Can be read out repeatedly'}
               </Text>
-            </Stack>
+            </Flex>
           </Group>
         </Grid.Col>
         <Grid.Col xs={12} md={6}>
           <Flex gap={10} justify="end" align="end">
-            <Button
-              onClick={() => {
-                setDisplayUpdateField(false);
-                onClickUpdateButton(undefined);
-              }}
-              variant="subtle"
-              color="gray"
-              px="xl"
-            >
-              {t('integration.secrets.clear')}
-            </Button>
             {displayUpdateField === true ? (
               <PasswordInput
+                required
+                defaultValue={value}
                 placeholder="new secret"
                 styles={{ root: { width: 200 } }}
                 {...props}

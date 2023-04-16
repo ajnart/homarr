@@ -37,7 +37,7 @@
     "confirmDeletion": {
       "title": "Bekreft sletting av konfigurasjonen",
       "warningText": "Du er i ferd med å slette '<b>{{configName}}</b>'",
-      "text": "Vær oppmerksom på at slettingen ikke er invertikal, og at dataene dine vil gå tapt permanent. Når du klikker på denne knappen, vil filen slettes permanent fra disken. Pass på å opprette en tilstrekkelig sikkerhetskopi av konfigurasjonen.",
+      "text": "Vær oppmerksom på at slettingen kan ikke gås tilbake på, og at dataene dine vil gå tapt permanent. Når du klikker på denne knappen vil filen slettes permanent fra disken. Pass på å opprette en tilstrekkelig sikkerhetskopi av konfigurasjonen.",
       "buttons": {
         "confirm": "Ja, slett '<b>{{configName}}</b>'"
       }

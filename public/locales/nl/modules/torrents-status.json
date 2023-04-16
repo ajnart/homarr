@@ -50,7 +50,7 @@
         "text": "Voeg een ondersteunde Torrent-client toe om je huidige downloads te bekijken"
       },
       "generic": {
-        "title": "Onbekende fout opgetreden",
+        "title": "",
         "text": "Homarr kon niet communiceren met je Torrent-clients. Controleer je configuratie"
       }
     },
