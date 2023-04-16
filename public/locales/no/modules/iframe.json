@@ -15,7 +15,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "Skriv inn en URL",
+        "title": "",
         "text": "Sørg for at du har angitt en gyldig adresse i konfigurasjonen av widgeten din"
       }
     }
