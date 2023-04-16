@@ -40,7 +40,7 @@ export const AppPing = ({ app }: AppPingProps) => {
       }}
       transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
     >
-      <TooltipTooltip
+      <Tooltip
         withinPortal
         radius="lg"
         label={
