@@ -5,18 +5,18 @@
     "settings": {
       "title": "Einstellungen für das RSS-Widget",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "RSS Feed URLs",
+        "description": "Die URLs der RSS Feeds, die angezeigt werden sollen."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Aktualisierungsintervall (in Minuten)"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "RSS Feed konnte nicht abgerufen werden",
+          "text": "Es ist ein Fehler beim Erreichen des RSS Feeds passiert. Stelle sicher, dass die eingetragene URL des RSS Feeds richtig ist. URLs sollten den offiziellen Spezifikationen entsprechen. Nach einem Update des Feeds muss möglicherweise die Dashboard-Seite aktualisiert werden."
         }
       }
     }
