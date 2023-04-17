@@ -96,7 +96,7 @@ https://user-images.githubusercontent.com/30572287/217098893-5880e7de-13d0-42c5-
 
 ![Installation Section](docs/section-installation.png)
 
-Since we are developing Homarr very frequently, we recommend reading our official installation guides:
+Since we are updating Homarr very frequently, we recommend reading our official installation guides:
 
 <a href="https://homarr.dev/docs/introduction/installation">
   <img src="docs/installation-button.png" width="200" />
