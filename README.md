@@ -52,7 +52,7 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 - 🏴󠁧󠁢󠁮󠁩󠁲󠁿 Monitor your application with a built-in status system
 - 🦞 Comprehensive built-in icon picker with over 7000 icons
 - 🐳 Easy deployment with Docker, unRAID and Synology
-- 🚀 Compatible with any major consumer hardware (x86, Raspberry Pi, old Laptops, ...)
+- 🚀 Compatible with any major consumer hardware (x86, Raspberry Pi, old laptops, ...)
 - 💵 Free and Open-Source - your data stays on your device. No telemetry data.
 
 <br/>
