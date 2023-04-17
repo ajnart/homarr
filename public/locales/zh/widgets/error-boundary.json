@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "糟糕，出现了一个错误！",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "详情",
+      "tryAgain": "请再试一次"
     }
   },
   "modal": {
     "text": "",
     "label": "",
-    "reportButton": ""
+    "reportButton": "报告该错误"
   }
 }
