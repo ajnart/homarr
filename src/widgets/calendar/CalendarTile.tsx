@@ -65,42 +65,45 @@ function CalendarTile({ widget }: CalendarTileProps) {
   });
 
   return (
-    <Group grow style={{ height: '100%' }}>
-      <Calendar
-        defaultDate={new Date()}
-        onPreviousMonth={setMonth}
-        onNextMonth={setMonth}
-        size="xs"
-        locale={i18n?.resolvedLanguage ?? 'en'}
-        firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
-        hideWeekdays
-        date={month}
-        hasNextLevel={false}
-        styles={{
-          calendar: {
-            height: '100%',
-          },
-          monthLevelGroup: {
-            height: '100%',
-          },
-          monthLevel: {
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-          },
-          month: {
-            flex: 1,
-          },
-          calendarHeader: {
-            maxWidth: 'inherit',
-          },
-        }}
-        renderDay={(date) => (
-          <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
-        )}
-      />
-    </Group>
+    <Calendar
+      defaultDate={new Date()}
+      onPreviousMonth={setMonth}
+      onNextMonth={setMonth}
+      size="xs"
+      locale={i18n?.resolvedLanguage ?? 'en'}
+      firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
+      hideWeekdays
+      style={{ position: 'relative', top: -10 }}
+      date={month}
+      maxLevel="month"
+      hasNextLevel={false}
+      styles={{
+        calendarHeader: {
+          maxWidth: 'inherit',
+        },
+        calendar: {
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        },
+        monthLevelGroup: {
+          height: '100%',
+        },
+        monthLevel: {
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        },
+        month: {
+          flex: 1,
+        },
+      }}
+      renderDay={(date) => (
+        <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
+      )}
+    />
   );
 }
 

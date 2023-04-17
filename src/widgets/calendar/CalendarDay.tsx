@@ -70,7 +70,7 @@ const DayIndicator = ({ color, medias, children, position }: DayIndicatorProps) 
   if (medias.length === 0) return children;
 
   return (
-    <Indicator size={10} withBorder offset={5} color={color} position={position}>
+    <Indicator size={10} withBorder offset={-5} color={color} position={position}>
       {children}
     </Indicator>
   );
