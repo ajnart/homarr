@@ -9,7 +9,6 @@ import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { MediasType } from './type';
-import { useColorTheme } from '../../tools/color';
 
 const definition = defineWidget({
   id: 'calendar',
@@ -51,7 +50,6 @@ interface CalendarTileProps {
 function CalendarTile({ widget }: CalendarTileProps) {
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
-  const { secondaryColor } = useColorTheme();
 
   const { data: medias } = useQuery({
     queryKey: ['calendar/medias', { month: month.getMonth(), year: month.getFullYear() }],
