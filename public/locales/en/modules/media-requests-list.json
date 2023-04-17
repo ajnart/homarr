@@ -7,7 +7,7 @@
     }
   },
   "noRequests": "No requests found. Please ensure that you've configured your apps correctly.",
-  "pending": "There are {{countPendingApproval}} requests waiting for an approval.",
+  "pending": "",
   "nonePending": "There are currently no pending approvals. You're good to go!",
   "state": {
     "approved": "Approved",
