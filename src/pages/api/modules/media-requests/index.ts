@@ -47,7 +47,7 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
               status: item.status,
               backdropPath: `https://image.tmdb.org/t/p/original/${genericItem.backdropPath}`,
               posterPath: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${genericItem.posterPath}`,
-              href: `${app.url}/movie/${item.media.tmdbId}`,
+              href: `${app.behaviour.externalUrl}/movie/${item.media.tmdbId}`,
             };
           })
         );
