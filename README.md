@@ -116,7 +116,7 @@ Although a donation is appreciated, there are other ways you can support us.
   <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" width="200" />
 </a>
 
-You can also support us [translating the entire project in as many languages as possible](https://homarr.dev/docs/community/translations), contribute directly to the code or documentation.
+You can also support us by helping with [translating the entire project](https://homarr.dev/docs/community/translations) to as many language as possible or contributing directly to the code or documentation.
 
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
