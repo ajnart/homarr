@@ -1,4 +1,4 @@
-import { Box, Indicator, IndicatorProps, Popover } from '@mantine/core';
+import { ActionIcon, Box, Button, Indicator, IndicatorProps, Popover } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { isToday } from '../../tools/shared/time/date.tool';
 import { MediaList } from './MediaList';
@@ -70,7 +70,7 @@ const DayIndicator = ({ color, medias, children, position }: DayIndicatorProps) 
   if (medias.length === 0) return children;
 
   return (
-    <Indicator size={10} withBorder offset={5} color={color} position={position}>
+    <Indicator size={10} withBorder offset={-5} color={color} position={position}>
       {children}
     </Indicator>
   );
