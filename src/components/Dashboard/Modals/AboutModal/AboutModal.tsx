@@ -35,11 +35,11 @@ import { ReactNode } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
-import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '../../../../tools/color';
 import Tip from '../../../layout/Tip';
 import { usePrimaryGradient } from '../../../layout/useGradient';
 import Credits from '../../../Settings/Common/Credits';
+import packageJson from '../../../../../package.json';
 
 interface AboutModalProps {
   opened: boolean;
@@ -199,7 +199,6 @@ interface ExtendedInitOptions extends InitOptions {
 }
 
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
-  const { attributes } = usePackageAttributesStore();
   const { editModeEnabled } = useEditModeInformationStore();
   const { primaryColor } = useColorTheme();
 
@@ -285,7 +284,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       content: (
         <Group position="right">
           <Badge variant="light" color={primaryColor}>
-            {attributes.packageVersion ?? 'Unknown'}
+            {packageJson.version ?? 'Unknown'}
           </Badge>
           {newVersionAvailable && (
             <HoverCard shadow="md" position="top" withArrow>
@@ -313,7 +312,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                     {newVersionAvailable}
                   </Anchor>
                 </b>{' '}
-                is available ! Current version: {attributes.packageVersion}
+                is available ! Current version: {packageJson.version}
               </HoverCard.Dropdown>
             </HoverCard>
           )}
@@ -325,7 +324,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       label: 'nodeEnvironment',
       content: (
         <Badge variant="light" color={primaryColor}>
-          {attributes.environment}
+          {process.env.NODE_ENV}
         </Badge>
       ),
     },

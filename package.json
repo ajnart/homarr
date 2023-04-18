@@ -108,7 +108,7 @@
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
     "turbo": "latest",
-    "typescript": "^4.7.4",
+    "typescript": "^5.0.4",
     "video.js": "^8.0.3",
     "vitest": "^0.29.3",
     "vitest-fetch-mock": "^0.2.2"
