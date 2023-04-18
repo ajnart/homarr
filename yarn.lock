@@ -1786,90 +1786,56 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/client@npm:^10.10.0":
-  version: 10.10.0
-  resolution: "@trpc/client@npm:10.10.0"
+"@trpc/client@npm:^10.20.0":
+  version: 10.20.0
+  resolution: "@trpc/client@npm:10.20.0"
   peerDependencies:
-    "@trpc/server": 10.10.0
-  checksum: 62d467ff54160bfbbef2d9a4815557a60b4ed3026190399340a7eb479adba4f757b93b7a74823fbe6006afe66e78a5a8a407603a968ed0404d345613c2d15e11
+    "@trpc/server": 10.20.0
+  checksum: 28e576f8752c35fec038772cfda33c8c1e83735bb41711df1164ba5ca7fe7f8cad12a791c8ce3f9d9a6b19cf603791e35a7fab2e5bdb0a196a85fa0d2fbddec6
   languageName: node
   linkType: hard
 
-"@trpc/next@npm:^10.10.0":
-  version: 10.10.0
-  resolution: "@trpc/next@npm:10.10.0"
+"@trpc/next@npm:^10.20.0":
+  version: 10.20.0
+  resolution: "@trpc/next@npm:10.20.0"
   dependencies:
     react-ssr-prepass: ^1.5.0
   peerDependencies:
-    "@tanstack/react-query": ^4.3.8
-    "@trpc/client": 10.10.0
-    "@trpc/react-query": ^10.8.0
-    "@trpc/server": 10.10.0
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.20.0
+    "@trpc/react-query": 10.20.0
+    "@trpc/server": 10.20.0
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 06b5c1832c12a4b478134e22cac4f4821b3906e00c08301c50e86eddbc89d1e4469a4e6d13dfde893429477973710cb5b803a0f4d1f392ae8a1cc9da3feb721d
+  checksum: 260853309319cde6bcc560dcb74a40e36e1a7670b1419219dd58079f111ab8aebe4a170c0d49fb2e87571078f82ce9257ccf9c15ccbac887b4e29f1fc9652905
   languageName: node
   linkType: hard
 
-"@trpc/react-query@npm:^10.10.0":
-  version: 10.10.0
-  resolution: "@trpc/react-query@npm:10.10.0"
+"@trpc/react-query@npm:^10.20.0":
+  version: 10.20.0
+  resolution: "@trpc/react-query@npm:10.20.0"
   peerDependencies:
-    "@tanstack/react-query": ^4.3.8
-    "@trpc/client": 10.10.0
-    "@trpc/server": 10.10.0
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.20.0
+    "@trpc/server": 10.20.0
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 7e26bcc33f6aa97986fbfcbcdf0a4864eba79beda33d9c98bd2293c48ff3d9195977716dd1bc4b4d93988e59791ee7291581924d7d98e34104b03e90826d6e2a
+  checksum: 5d5c981e4a13d00a98d58c1632fbf688c57e9ce4e5c396bf9add690e33bdc974842c0817dd7491b4ecd8f738c3c71a9e775b510295a84a96894eded8ce31eb3e
   languageName: node
   linkType: hard
 
-"@trpc/server@npm:^10.10.0":
-  version: 10.10.0
-  resolution: "@trpc/server@npm:10.10.0"
-  checksum: a50724416886d6ec406c87e03086baa4abb2509ea87984a96f1a1a891a67ffd2e13fdfcde9bc490ca2bb41083d7beb5d59d889446b3341af887d1d6281b5fe41
+"@trpc/server@npm:^10.20.0":
+  version: 10.20.0
+  resolution: "@trpc/server@npm:10.20.0"
+  checksum: a06b8053cbd6340fb3bffbcd1ae70fa8b7ec4e162be4dafbefe545362f9232e282949c938503b5b497a06ae91243fa347cb3207e3d7373da90be4bae858aa4a6
   languageName: node
   linkType: hard
 
-"@types/babel__core@npm:^7.1.14":
-  version: 7.20.0
-  resolution: "@types/babel__core@npm:7.20.0"
-  dependencies:
-    "@babel/parser": ^7.20.7
-    "@babel/types": ^7.20.7
-    "@types/babel__generator": "*"
-    "@types/babel__template": "*"
-    "@types/babel__traverse": "*"
-  checksum: 49b601a0a7637f1f387442c8156bd086cfd10ff4b82b0e1994e73a6396643b5435366fb33d6b604eade8467cca594ef97adcbc412aede90bb112ebe88d0ad6df
-  languageName: node
-  linkType: hard
-
-"@types/babel__generator@npm:*":
-  version: 7.6.4
-  resolution: "@types/babel__generator@npm:7.6.4"
-  dependencies:
-    "@babel/types": ^7.0.0
-  checksum: 20effbbb5f8a3a0211e95959d06ae70c097fb6191011b73b38fe86deebefad8e09ee014605e0fd3cdaedc73d158be555866810e9166e1f09e4cfd880b874dcb0
-  languageName: node
-  linkType: hard
-
-"@types/babel__template@npm:*":
-  version: 7.4.1
-  resolution: "@types/babel__template@npm:7.4.1"
-  dependencies:
-    "@babel/parser": ^7.1.0
-    "@babel/types": ^7.0.0
-  checksum: 649fe8b42c2876be1fd28c6ed9b276f78152d5904ec290b6c861d9ef324206e0a5c242e8305c421ac52ecf6358fa7e32ab7a692f55370484825c1df29b1596ee
-  languageName: node
-  linkType: hard
-
-"@types/babel__traverse@npm:*, @types/babel__traverse@npm:^7.0.6":
-  version: 7.18.3
-  resolution: "@types/babel__traverse@npm:7.18.3"
-  dependencies:
-    "@babel/types": ^7.3.0
-  checksum: d20953338b2f012ab7750932ece0a78e7d1645b0a6ff42d49be90f55e9998085da1374a9786a7da252df89555c6586695ba4d1d4b4e88ab2b9f306bcd35e00d3
+"@types/aria-query@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@types/aria-query@npm:5.0.1"
+  checksum: 69fd7cceb6113ed370591aef04b3fd0742e9a1b06dd045c43531448847b85de181495e4566f98e776b37c422a12fd71866e0a1dfd904c5ec3f84d271682901de
   languageName: node
   linkType: hard
 
@@ -5025,10 +4991,13 @@ __metadata:
     "@tanstack/query-sync-storage-persister": ^4.27.1
     "@tanstack/react-query": ^4.2.1
     "@tanstack/react-query-devtools": ^4.24.4
-    "@trpc/client": ^10.10.0
-    "@trpc/next": ^10.10.0
-    "@trpc/react-query": ^10.10.0
-    "@trpc/server": ^10.10.0
+    "@tanstack/react-query-persist-client": ^4.28.0
+    "@testing-library/jest-dom": ^5.16.5
+    "@testing-library/react": ^14.0.0
+    "@trpc/client": ^10.20.0
+    "@trpc/next": ^10.20.0
+    "@trpc/react-query": ^10.20.0
+    "@trpc/server": ^10.20.0
     "@types/dockerode": ^3.3.9
     "@types/node": 17.0.1
     "@types/prismjs": ^1.26.0
@@ -7150,12 +7119,81 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-refresh@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "react-refresh@npm:0.14.0"
+  checksum: dc69fa8c993df512f42dd0f1b604978ae89bd747c0ed5ec595c0cc50d535fb2696619ccd98ae28775cc01d0a7c146a532f0f7fb81dc22e1977c242a4912312f4
+  languageName: node
+  linkType: hard
+
+"react-remove-scroll-bar@npm:^2.3.3":
+  version: 2.3.4
+  resolution: "react-remove-scroll-bar@npm:2.3.4"
+  dependencies:
+    react-style-singleton: ^2.2.1
+    tslib: ^2.0.0
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: b5ce5f2f98d65c97a3e975823ae4043a4ba2a3b63b5ba284b887e7853f051b5cd6afb74abde6d57b421931c52f2e1fdbb625dc858b1cb5a32c27c14ab85649d4
+  languageName: node
+  linkType: hard
+
+"react-remove-scroll@npm:^2.5.5":
+  version: 2.5.5
+  resolution: "react-remove-scroll@npm:2.5.5"
+  dependencies:
+    react-remove-scroll-bar: ^2.3.3
+    react-style-singleton: ^2.2.1
+    tslib: ^2.1.0
+    use-callback-ref: ^1.3.0
+    use-sidecar: ^1.1.2
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 2c7fe9cbd766f5e54beb4bec2e2efb2de3583037b23fef8fa511ab426ed7f1ae992382db5acd8ab5bfb030a4b93a06a2ebca41377d6eeaf0e6791bb0a59616a4
+  languageName: node
+  linkType: hard
+
+"react-simple-code-editor@npm:^0.13.1":
+  version: 0.13.1
+  resolution: "react-simple-code-editor@npm:0.13.1"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 1d223e34ccac5d7f91318f28d5edab6ccb13c51b1afb502094b8475214321263bb44258d355978e1714e9360c9081fb9f38d3ae89071a06628407627c362cc45
+  languageName: node
+  linkType: hard
+
 "react-ssr-prepass@npm:^1.5.0":
   version: 1.5.0
   resolution: "react-ssr-prepass@npm:1.5.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: efe89b9f8b2053474613f56dfdbeb41d8ee2e572bf819a39377d95d3e4a9acf8a4a16e28d8d8034cb9ac2b316d11dc9e62217743e4322046d08175eb3b4fed3e
+  languageName: node
+  linkType: hard
+
+"react-style-singleton@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "react-style-singleton@npm:2.2.1"
+  dependencies:
+    get-nonce: ^1.0.0
+    invariant: ^2.2.4
+    tslib: ^2.0.0
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 7ee8ef3aab74c7ae1d70ff34a27643d11ba1a8d62d072c767827d9ff9a520905223e567002e0bf6c772929d8ea1c781a3ba0cc4a563e92b1e3dc2eaa817ecbe8
   languageName: node
   linkType: hard
 
