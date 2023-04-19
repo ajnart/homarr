@@ -1,4 +1,5 @@
 import { Indicator, Tooltip } from '@mantine/core';
+import Consola from 'consola';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
@@ -19,9 +20,7 @@ export const AppPing = ({ app }: AppPingProps) => {
     queryKey: ['ping', { id: app.id, name: app.name }],
     queryFn: async () => {
       const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = app.network.okStatus === undefined || app.network.statusCodes.length >= 1 ?
-app.network.statusCodes.includes(response.status.toString()) :
-app.network.okStatus.includes(response.status);
+      const isOk = getIsOk(app, response.status);
       return {
         status: response.status,
         state: isOk ? 'online' : 'down',
@@ -62,3 +61,12 @@ app.network.okStatus.includes(response.status);
     </motion.div>
   );
 };
+
+const getIsOk = (app: AppType, status: number) => {
+if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
+Consola.log('Using new status codes');
+return app.network.statusCodes.includes(status.toString());
+}
+Consola.warn('Using deprecated okStatus');
+return app.network.okStatus.includes(status);
+}
