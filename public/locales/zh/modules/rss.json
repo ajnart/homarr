@@ -5,7 +5,7 @@
     "settings": {
       "title": "设置RSS小部件",
       "rssFeedUrl": {
-        "label": "",
+        "label": "RSS Feed地址",
         "description": ""
       },
       "refreshInterval": {
