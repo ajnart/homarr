@@ -69,4 +69,5 @@ return app.network.statusCodes.includes(status.toString());
 }
 Consola.warn('Using deprecated okStatus');
 return app.network.okStatus.includes(status);
-}
+};
+
