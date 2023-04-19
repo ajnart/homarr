@@ -48,6 +48,10 @@
     "@tanstack/react-query": "^4.2.1",
     "@tanstack/react-query-devtools": "^4.24.4",
     "@tanstack/react-query-persist-client": "^4.28.0",
+    "@trpc/client": "^10.20.0",
+    "@trpc/next": "^10.20.0",
+    "@trpc/react-query": "^10.20.0",
+    "@trpc/server": "^10.20.0",
     "@vitejs/plugin-react": "^3.1.0",
     "axios": "^0.27.2",
     "consola": "^2.15.3",
@@ -70,7 +74,6 @@
     "sabnzbd-api": "^1.5.0",
     "uuid": "^8.3.2",
     "xml-js": "^1.6.11",
-    "yarn": "^1.22.19",
     "zod": "^3.21.4",
     "zustand": "^4.1.4"
   },
@@ -105,7 +108,7 @@
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
     "turbo": "latest",
-    "typescript": "^4.7.4",
+    "typescript": "^5.0.4",
     "video.js": "^8.0.3",
     "vitest": "^0.29.3",
     "vitest-fetch-mock": "^0.2.2"
