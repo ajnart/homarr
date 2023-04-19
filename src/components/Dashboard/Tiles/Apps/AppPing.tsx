@@ -19,7 +19,7 @@ export const AppPing = ({ app }: AppPingProps) => {
     queryKey: ['ping', { id: app.id, name: app.name }],
     queryFn: async () => {
       const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = app.network.okStatus === undefined || app.network.statusCodes.length > 1 ?
+      const isOk = app.network.okStatus === undefined || app.network.statusCodes.length >= 1 ?
 app.network.statusCodes.includes(response.status.toString()) :
 app.network.okStatus.includes(response.status);
       return {
