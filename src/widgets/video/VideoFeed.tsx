@@ -2,6 +2,7 @@ import { createStyles, LoadingOverlay } from '@mantine/core';
 import { useEffect, useRef, useState } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+
 interface VideoFeedProps {
   source: string;
   muted: boolean;
@@ -48,7 +49,7 @@ const VideoFeed = ({ source, controls, autoPlay, muted }: VideoFeedProps) => {
       <LoadingOverlay visible={player === undefined} />
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video className={cx('video-js', classes.video)} ref={videoRef}>
-        <source src={source}/>
+        <source src={source} />
       </video>
     </>
   );
