@@ -6,17 +6,17 @@
       "title": "设置RSS小部件",
       "rssFeedUrl": {
         "label": "RSS Feed地址",
-        "description": ""
+        "description": "你想在其中展示的RSS订阅源URL"
       },
       "refreshInterval": {
-        "label": ""
+        "label": "刷新间隔(以分钟计)"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "无法加载此RSS订阅源",
+          "text": "加载此RSS订阅源时出现问题。请确保你正确配置了RSS订阅源的URL。URLs应该符合官方规范。在更新订阅源后，你可能需要重新加载仪表板。"
         }
       }
     }
