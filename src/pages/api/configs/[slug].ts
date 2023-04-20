@@ -36,6 +36,7 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
       ...config.apps.map((app) => ({
         ...app,
         network: {
+          ...app.network,
           statusCodes: app.network.okStatus === undefined ? app.network.statusCodes : app.network.okStatus.map((x) => x.toString()),
           okStatus: undefined,
         },
