@@ -5,8 +5,8 @@
     "settings": {
       "title": "设置RSS小部件",
       "rssFeedUrl": {
-        "label": "RSS Feed地址",
-        "description": "你想在其中展示的RSS订阅源URL"
+        "label": "",
+        "description": ""
       },
       "refreshInterval": {
         "label": "刷新间隔(以分钟计)"
