@@ -6,23 +6,23 @@
   "input": {
     "placeholder": "在网上搜索..."
   },
-  "switched-to": "换成了",
+  "switched-to": "切换到：",
   "searchEngines": {
     "search": {
       "name": "网络",
       "description": "搜索..."
     },
     "youtube": {
-      "name": "录像带",
+      "name": "油管",
       "description": "在Youtube上搜索"
     },
     "torrents": {
-      "name": "火炬",
-      "description": "搜索山洪病毒"
+      "name": "种子",
+      "description": "搜索种子"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "在Overseer上搜索电影和电视剧。"
+      "description": "在媒体请求服务上搜索电影和电视剧。"
     }
   },
   "tip": "你可以用快捷键选择搜索栏 ",

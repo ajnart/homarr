@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "Algemeen",
-		"behaviour": "",
+		"behaviour": "Gedrag",
 		"network": "Netwerk",
 		"appearance": "Opmaak",
 		"integration": "Integratie"
@@ -41,12 +41,12 @@
 			"label": "App icoon",
 			"description": "",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Geen resultaten gevonden",
+				"text": "Probeer een specifiekere zoekterm te gebruiken. Als u het gewenste pictogram niet kunt vinden, plak dan de bovenstaande URL van de afbeelding voor een aangepast pictogram"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Externe pictogrammen laden",
+				"text": "Dit kan enkele seconden duren"
 			}
 		}
 	},

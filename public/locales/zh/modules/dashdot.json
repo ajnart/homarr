@@ -11,20 +11,20 @@
         "label": "显示百分比"
       },
       "columns": {
-        "label": ""
+        "label": "显示的列"
       },
       "graphHeight": {
         "label": "图形的高度"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "图形(顺序)",
         "storage": {
           "label": "存储",
           "enabled": {
             "label": "在小工具中显示"
           },
           "span": {
-            "label": ""
+            "label": "列宽度"
           },
           "compactView": {
             "label": "显示为文本(紧凑)"
@@ -39,7 +39,7 @@
             "label": "在小工具中显示"
           },
           "span": {
-            "label": ""
+            "label": "列宽度"
           },
           "compactView": {
             "label": "显示为文本(紧凑)"
@@ -51,7 +51,7 @@
             "label": "在小工具中显示"
           },
           "span": {
-            "label": ""
+            "label": "列宽度"
           },
           "multiView": {
             "label": "显示为多核视图"
@@ -63,7 +63,7 @@
             "label": "在小工具中显示"
           },
           "span": {
-            "label": ""
+            "label": "列宽度"
           }
         },
         "gpu": {
@@ -72,7 +72,7 @@
             "label": "在小工具中显示"
           },
           "span": {
-            "label": ""
+            "label": "列宽度"
           }
         }
       }

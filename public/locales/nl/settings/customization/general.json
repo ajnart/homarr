@@ -1,21 +1,21 @@
 {
-  "text": "Met aanpassingen kan je je ervaring met Homarr configureren en aanpassen naar je voorkeuren.",
+  "text": "Met aanpassingen kunt u uw ervaring met Homarr configureren en aanpassen aan uw voorkeuren.",
   "accordeon": {
     "layout": {
       "name": "Indeling",
-      "description": "Elementen op je header en dashboard tegels in- en uitschakelen"
+      "description": "In- en uitschakelen van elementen op je header en dashboard tegels"
     },
     "gridstack": {
       "name": "Gridstack",
-      "description": "Het gedrag en de kolommen van je dashboard aanpassen"
+      "description": "Het gedrag en de kolommen van uw dashboard aanpassen"
     },
     "pageMetadata": {
-      "name": "Pagina Metadata",
-      "description": "Tegels, logo en PWA aanpassen"
+      "name": "Pagina metadata",
+      "description": "Aanpassen van titels, logo en PWA"
     },
     "appereance": {
       "name": "Opmaak",
-      "description": ""
+      "description": "Pas de achtergrond, kleuren en het uiterlijk van de app aan"
     }
   }
 }
