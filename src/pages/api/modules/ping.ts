@@ -1,5 +1,6 @@
 import axios from 'axios';
 import https from 'https';
+import Consola from 'consola';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {
@@ -13,6 +14,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     })
     .catch((error) => {
       if (error.response) {
+        Consola.error(`Unexpected response: ${error.response.data}`);
         res.status(error.response.status).json(error.response.statusText);
       } else if (error.code === 'ECONNABORTED') {
         res.status(408).json('Request Timeout');
