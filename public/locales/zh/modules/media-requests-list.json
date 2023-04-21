@@ -7,7 +7,7 @@
     }
   },
   "noRequests": "没有找到请求。请确保你已经正确配置了你的应用程序。",
-  "pending": "有 {{countPendingApproval}} 个请求正等待核准。",
+  "pending": "",
   "nonePending": "目前没有待核准的项目。静待媒体更新!",
   "state": {
     "approved": "已核准",
