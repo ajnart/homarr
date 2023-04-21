@@ -5,8 +5,8 @@
     "settings": {
       "title": "Instellingen voor RSS widget",
       "rssFeedUrl": {
-        "label": "RSS feed URLs",
-        "description": "De URL's van de RSS feeds waarvan u wilt weergeven."
+        "label": "",
+        "description": ""
       },
       "refreshInterval": {
         "label": "Verversingsinterval (in minuten)"
