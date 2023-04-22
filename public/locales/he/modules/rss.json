@@ -5,8 +5,8 @@
     "settings": {
       "title": "הגדרות עבור וידג׳ט רסס",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "כתובת אינטרנט להזנת רסס",
+        "description": "כתובות האתרים של הזנות רסס שמהן ברצונך להציג."
       },
       "refreshInterval": {
         "label": "מרווח הזמן לרענון (בשניות)"
