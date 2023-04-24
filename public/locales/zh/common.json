@@ -10,7 +10,7 @@
   "changePosition": "改变位置",
   "remove": "移除",
   "removeConfirm": "你确定要删除 {{item}} 吗？",
-  "createItem": "",
+  "createItem": "创建{{item}}",
   "sections": {
     "settings": "设置",
     "dangerZone": "危险操作"

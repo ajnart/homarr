@@ -5,22 +5,22 @@
   },
   "metaTitle": {
     "label": "Meta Titel",
-    "description": ""
+    "description": "De titel die wordt weergegeven in uw browsertabblad"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "Het logo dat linksboven wordt weergegeven"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "Het pictogram dat wordt weergegeven in uw browsertabblad"
   },
   "background": {
     "label": "Achtergrond"
   },
   "customCSS": {
     "label": "Eigen CSS",
-    "description": "",
+    "description": "Pas uw dashboard verder aan met behulp van CSS, alleen aanbevolen voor ervaren gebruikers",
     "placeholder": "Eigen CSS wordt als laatste toegepast",
     "applying": "CSS toepassen..."
   },

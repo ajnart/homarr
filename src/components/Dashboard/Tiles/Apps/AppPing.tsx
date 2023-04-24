@@ -51,3 +51,12 @@ export const AppPing = ({ app }: AppPingProps) => {
     </motion.div>
   );
 };
+
+const getIsOk = (app: AppType, status: number) => {
+if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
+Consola.log('Using new status codes');
+return app.network.statusCodes.includes(status.toString());
+}
+Consola.warn('Using deprecated okStatus');
+return app.network.okStatus.includes(status);
+};
