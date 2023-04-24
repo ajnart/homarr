@@ -72,7 +72,7 @@
     "xml-js": "^1.6.11",
     "yarn": "^1.22.19",
     "zod": "^3.21.4",
-    "zustand": "^4.1.4"
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.4",
