@@ -15,7 +15,9 @@ export const AppPing = ({ app }: AppPingProps) => {
   const active =
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
-  const data = trpc.ping.useQuery(app.url);
+  const data = trpc.ping.useQuery(app.url, {
+    enabled: active,
+  });
 
   const isOnline = data.isSuccess;
 

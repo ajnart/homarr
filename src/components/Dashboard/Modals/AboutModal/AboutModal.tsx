@@ -285,7 +285,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       content: (
         <Group position="right">
           <Badge variant="light" color={primaryColor}>
-            {attributes.packageVersion ?? 'Unknown'}
+            {attributes.version ?? 'Unknown'}
           </Badge>
           {newVersionAvailable && (
             <HoverCard shadow="md" position="top" withArrow>
@@ -313,7 +313,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                     {newVersionAvailable}
                   </Anchor>
                 </b>{' '}
-                is available ! Current version: {attributes.packageVersion}
+                is available ! Current version: {attributes.version}
               </HoverCard.Dropdown>
             </HoverCard>
           )}

@@ -1,19 +1,22 @@
 import { create } from 'zustand';
 import packageJson from 'package.json';
-import { ServerSidePackageAttributesType } from '../../server/getPackageVersion';
 
+// Add an environment attribute with the values 'development' | 'production' | 'test'
 interface PackageAttributesState {
-  attributes: ServerSidePackageAttributesType;
-  setInitialPackageAttributes: (attributes: ServerSidePackageAttributesType) => void;
+  attributes: typeof packageJson & { environment: 'development' | 'production' | 'test' };
+  setInitialPackageAttributes: (attributes: typeof packageJson) => void;
 }
 
 export const usePackageAttributesStore = create<PackageAttributesState>((set) => ({
   attributes: {
-    packageVersion: packageJson.version,
-    environment: process.env.NODE_ENV,
-    dependencies: packageJson.dependencies,
+    ...packageJson,
+    environment: process.env.NODE_ENV as 'development' | 'production' | 'test',
   },
-  setInitialPackageAttributes(attributes) {
-    set((state) => ({ ...state, attributes }));
-  },
+  setInitialPackageAttributes: (attributes) =>
+    set({
+      attributes: {
+        ...attributes,
+        environment: process.env.NODE_ENV as 'development' | 'production' | 'test',
+      },
+    }),
 }));

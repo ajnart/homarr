@@ -26,7 +26,7 @@ export function Header(props: any) {
       fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => res.json()),
   });
   const newVersionAvailable =
-    data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
+    data?.tag_name > `v${attributes.version}` ? data?.tag_name : undefined;
 
   return (
     <MantineHeader height="auto" className={cx(cardClasses.card, 'dashboard-header')}>

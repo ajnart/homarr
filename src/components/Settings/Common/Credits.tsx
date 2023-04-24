@@ -56,11 +56,11 @@ const DependencyTable = () => {
                 <th>{t('credits.thirdPartyContentTable.dependencyVersion')}</th>
               </tr>
             </thead>
-            {Object.keys(attributes.dependencies).map((key, index) => (
+            {Object.keys(attributes.dependencies).map((item, index) => (
               <tbody key={`dependency-${index}`}>
                 <tr>
-                  <td>{key}</td>
-                  <td>{attributes.dependencies[key]}</td>
+                  <td>{item}</td>
+                  <td>{(attributes.dependencies as unknown as string[])[index]}</td>
                 </tr>
               </tbody>
             ))}

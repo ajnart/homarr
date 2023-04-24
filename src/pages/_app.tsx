@@ -14,6 +14,7 @@ import 'video.js/dist/video-js.css';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
+import packageJson from 'package.json';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -25,10 +26,6 @@ import { ConfigProvider } from '../config/provider';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
-import {
-  getServiceSidePackageAttributes,
-  ServerSidePackageAttributesType,
-} from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
 
 import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
@@ -39,7 +36,6 @@ function App(
   this: any,
   props: AppProps & {
     colorScheme: ColorScheme;
-    packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
     defaultColorScheme: ColorScheme;
   }
@@ -67,14 +63,11 @@ function App(
   });
 
   const { setInitialPackageAttributes } = usePackageAttributesStore();
-  const { setDisabled } = useEditModeInformationStore();
+  const { setState } = useEditModeInformationStore();
 
   useEffect(() => {
-    setInitialPackageAttributes(props.packageAttributes);
-
-    if (!props.editModeEnabled) {
-      setDisabled();
-    }
+    setState(process.env.DISABLE_EDIT_MODE !== 'true');
+    setInitialPackageAttributes(packageJson);
   }, []);
 
   const toggleColorScheme = (value?: ColorScheme) =>
@@ -163,8 +156,6 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
 
   return {
     colorScheme: getCookie('color-scheme', ctx) || 'light',
-    packageAttributes: getServiceSidePackageAttributes(),
-    editModeEnabled: !disableEditMode,
     defaultColorScheme: colorScheme,
   };
 };
