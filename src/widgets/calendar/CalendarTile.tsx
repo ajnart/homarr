@@ -1,4 +1,4 @@
-import { Group } from '@mantine/core';
+import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
@@ -8,6 +8,7 @@ import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
+import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
 
 const definition = defineWidget({
@@ -48,6 +49,7 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
+  const { colorScheme } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
 
@@ -100,6 +102,9 @@ function CalendarTile({ widget }: CalendarTileProps) {
           flex: 1,
         },
       }}
+      getDayProps={(date) => ({
+        bg: getBgColorByDateAndTheme(colorScheme, date),
+      })}
       renderDay={(date) => (
         <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
       )}
