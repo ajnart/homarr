@@ -30,7 +30,7 @@ import { theme } from '../tools/server/theme/theme';
 
 import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
-import { trpc } from '../tools/tRPC';
+import { api } from '../tools/tRPC';
 
 function App(
   this: any,
@@ -63,10 +63,10 @@ function App(
   });
 
   const { setInitialPackageAttributes } = usePackageAttributesStore();
-  const { setState } = useEditModeInformationStore();
+  const { setEditModeDisabled } = useEditModeInformationStore();
 
   useEffect(() => {
-    setState(process.env.DISABLE_EDIT_MODE !== 'true');
+    setEditModeDisabled(process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true' || false);
     setInitialPackageAttributes(packageJson);
   }, []);
 
@@ -144,7 +144,7 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     process.env.DISABLE_EDIT_MODE && process.env.DISABLE_EDIT_MODE.toLowerCase() === 'true';
   if (disableEditMode) {
     Consola.warn(
-      'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
+      'EXPERIMENTAL: You have disabled the edit mode'
     );
   }
 
@@ -161,5 +161,5 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
 };
 
 const withTranslations = appWithTranslation(App);
-const withTrpc = trpc.withTRPC(withTranslations);
+const withTrpc = api.withTRPC(withTranslations);
 export default withTrpc;

@@ -7,6 +7,8 @@ function Post(req: NextApiRequest, res: NextApiResponse) {
   if (type === 'edit') {
     if (tried === process.env.EDIT_MODE_PASSWORD) {
       process.env.DISABLE_EDIT_MODE = process.env.DISABLE_EDIT_MODE === 'true' ? 'false' : 'true';
+      // Log it
+      Consola.info(`Changed edit mode to ${process.env.DISABLE_EDIT_MODE}`);
       return res.status(200).json({
         success: true,
       });

@@ -18,7 +18,7 @@ function getBaseUrl() {
   return `http://localhost:${process.env.PORT ?? 3000}`;
 }
 
-export const trpc = createTRPCNext<AppRouter>({
+export const api = createTRPCNext<AppRouter>({
   config({ ctx }) {
     return {
       transformer: superjson,

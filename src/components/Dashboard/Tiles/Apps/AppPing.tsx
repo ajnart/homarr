@@ -1,8 +1,7 @@
 import { Indicator, Tooltip } from '@mantine/core';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
-import { trpc } from '../../../../tools/tRPC';
+import { api } from '../../../../tools/tRPC';
 import { AppType } from '../../../../types/app';
 
 interface AppPingProps {
@@ -15,48 +14,36 @@ export const AppPing = ({ app }: AppPingProps) => {
   const active =
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
-  const data = trpc.ping.useQuery(app.url, {
+  const data = api.ping.useQuery(app.id, {
+    queryKey: ['ping', app.name],
+    retry: false,
     enabled: active,
   });
 
-  const isOnline = data.isSuccess;
+  const isOk = data.isSuccess;
 
   if (!active) return null;
 
   return (
-    <motion.div
-      style={{ position: 'absolute', bottom: 20, right: 20, zIndex: 2 }}
-      animate={{
-        scale: isOnline ? [1, 0.7, 1] : 1,
-      }}
-      transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
-    >
+    <div style={{ position: 'absolute', bottom: 20, right: 20, zIndex: 2 }}>
       <Tooltip
         withinPortal
         radius="lg"
         label={
           data.isLoading
             ? t('states.loading')
-            : isOnline
-            ? t('states.online', { response: data.status })
-            : t('states.offline', { response: data?.status })
+            : isOk
+            ? t('states.online', { response: data.data?.status ?? 'N/A' })
+            : t('states.offline', { response: data.error?.message })
         }
       >
         <Indicator
+          processing={data.isSuccess}
           size={15}
-          color={data.isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
+          color={data.isFetching ? 'yellow' : isOk ? 'green' : 'red'}
           children={null}
         />
       </Tooltip>
-    </motion.div>
+    </div>
   );
-};
-
-const getIsOk = (app: AppType, status: number) => {
-if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
-Consola.log('Using new status codes');
-return app.network.statusCodes.includes(status.toString());
-}
-Consola.warn('Using deprecated okStatus');
-return app.network.okStatus.includes(status);
 };

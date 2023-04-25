@@ -44,7 +44,7 @@ export function SettingsDrawer({
       size="lg"
       padding="lg"
       position="right"
-      title={<Title order={5}>{t('title')}</Title>}
+      title={t('title')}
       opened={opened}
       onClose={() => {
         closeDrawer();
