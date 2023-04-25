@@ -44,7 +44,8 @@ export type IntegrationType =
   | 'transmission'
   | 'plex'
   | 'jellyfin'
-  | 'nzbGet';
+  | 'nzbGet'
+  | 'pihole';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -84,6 +85,7 @@ export const integrationFieldProperties: {
   transmission: ['username', 'password'],
   jellyfin: ['username', 'password'],
   plex: ['apiKey'],
+  pihole: ['password'],
 };
 
 export type IntegrationFieldDefinitionType = {

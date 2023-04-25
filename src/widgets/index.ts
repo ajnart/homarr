@@ -11,6 +11,8 @@ import videoStream from './video/VideoStreamTile';
 import weather from './weather/WeatherTile';
 import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
+import adHoleSummary from './adhole/AdHoleSummary';
+import adHoleControls from './adhole/AdHoleControls';
 
 export default {
   calendar,
@@ -26,4 +28,6 @@ export default {
   'media-server': mediaServer,
   'media-requests-list': mediaRequestsList,
   'media-requests-stats': mediaRequestsStats,
+  'adhole-summary': adHoleSummary,
+  'adhole-controls': adHoleControls,
 };

@@ -7,6 +7,7 @@ import { WidgetWrapper } from '../../../widgets/WidgetWrapper';
 import { appTileDefinition } from '../Tiles/Apps/AppTile';
 import { GridstackTileWrapper } from '../Tiles/TileWrapper';
 import { useGridstackStore } from './gridstack/store';
+import { Alert } from '@mantine/core';
 
 interface WrapperContentProps {
   apps: AppType[];
