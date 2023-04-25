@@ -1,7 +1,7 @@
 import { Box, Indicator, IndicatorProps, Popover } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { isToday } from '../../tools/shared/time/date.tool';
 import { MediaList } from './MediaList';
+import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
 
 interface CalendarDayProps {
@@ -34,12 +34,9 @@ export const CalendarDay = ({ date, medias }: CalendarDayProps) => {
           onClick={open}
           sx={(theme) => ({
             margin: 5,
-            backgroundColor: isToday(date)
-              ? theme.colorScheme === 'dark'
-                ? theme.colors.dark[5]
-                : theme.colors.gray[0]
-              : undefined,
+            backgroundColor: getBgColorByDateAndTheme(theme.colorScheme, date),
           })}
+          w="100%"
         >
           <DayIndicator color="red" position="bottom-start" medias={medias.books}>
             <DayIndicator color="yellow" position="top-start" medias={medias.movies}>
@@ -70,7 +67,7 @@ const DayIndicator = ({ color, medias, children, position }: DayIndicatorProps) 
   if (medias.length === 0) return children;
 
   return (
-    <Indicator size={10} withBorder offset={5} color={color} position={position}>
+    <Indicator size={10} withBorder offset={-5} color={color} position={position}>
       {children}
     </Indicator>
   );

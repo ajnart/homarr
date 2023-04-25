@@ -70,7 +70,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
         // Cast as the right type for the correct widget
         widgetOptions: widgetDefinitionObject.options as any,
       },
-      zIndex: 5,
+      zIndex: 250,
     });
   };
 

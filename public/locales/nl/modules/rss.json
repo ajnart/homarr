@@ -5,18 +5,18 @@
     "settings": {
       "title": "Instellingen voor RSS widget",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "RSS feed URLs",
+        "description": "De URL's van de RSS feeds waarvan u wilt weergeven."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Verversingsinterval (in minuten)"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Kan RSS feed niet ophalen",
+          "text": "Er was een probleem met het bereiken van de RSS feed. Zorg ervoor dat u de RSS-feed correct hebt geconfigureerd met een geldige URL. URL's moeten overeenkomen met de officiële specificatie. Na het bijwerken van de feed, moet u mogelijk het dashboard vernieuwen."
         }
       }
     }

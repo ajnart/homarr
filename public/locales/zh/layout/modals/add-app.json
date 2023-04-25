@@ -1,7 +1,7 @@
 {
 	"tabs": {
-		"general": "一般",
-		"behaviour": "",
+		"general": "通用",
+		"behaviour": "动作",
 		"network": "网络",
 		"appearance": "外观",
 		"integration": "融合"

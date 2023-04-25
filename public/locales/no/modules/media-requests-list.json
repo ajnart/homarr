@@ -7,7 +7,7 @@
     }
   },
   "noRequests": "Ingen forespørsler funnet. Vennligst skjekk at du har konfigurert appene dine riktig.",
-  "pending": "Det er {countPendingApproval} forespørsler som venter på en godkjenning.",
+  "pending": "",
   "nonePending": "Det er for tiden ingen ventende godkjenninger. Alt er klart!",
   "state": {
     "approved": "Godkjent",

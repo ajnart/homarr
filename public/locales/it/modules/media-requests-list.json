@@ -7,7 +7,7 @@
     }
   },
   "noRequests": "Nessuna richiesta trovata. Assicurati di aver configurato correttamente le tue app.",
-  "pending": "Ci sono {countPendingApproval} richieste in attesa di approvazione.",
+  "pending": "Ci sono {{countPendingApproval}} richieste in attesa di approvazione.",
   "nonePending": "Al momento non ci sono approvazioni in attesa. È tutto pronto!",
   "state": {
     "approved": "Approvato",

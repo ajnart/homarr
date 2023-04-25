@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Oeps, er was een fout!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Beschrijving",
+      "tryAgain": "Probeer het opnieuw"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Uw fout",
+    "reportButton": "Deze fout melden"
   }
 }

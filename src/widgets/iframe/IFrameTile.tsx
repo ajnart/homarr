@@ -55,7 +55,7 @@ function IFrameTile({ widget }: IFrameTileProps) {
   }
 
   return (
-    <Container h="100%" w="100%" p={0}>
+    <Container h="100%" w="100%" maw="initial" mah="initial" p={0}>
       <iframe
         className={classes.iframe}
         src={widget.properties.embedUrl}

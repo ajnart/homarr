@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Insluiten van alle inhoud van het internet. Sommige websites kunnen de toegang beperken.",
     "settings": {
-      "title": "",
+      "title": "iFrame Instellingen",
       "embedUrl": {
-        "label": ""
+        "label": "URL insluiten"
       },
       "allowFullScreen": {
         "label": "Volledig scherm toestaan"
