@@ -4,6 +4,9 @@
     "description": "מציג מופעי נתוני גרפים מ- Dash בתוך Homarr.",
     "settings": {
       "title": "הגדרות עבור וידג׳ט Dash.",
+      "dashName": {
+        "label": "שֵׁם Dash."
+      },
       "url": {
         "label": "כתובת אתר Dash."
       },

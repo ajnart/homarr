@@ -4,6 +4,9 @@
     "description": "Displays the graphs of an external Dash. Instance inside Homarr.",
     "settings": {
       "title": "Settings for Dash. widget",
+      "dashName": {
+        "label": "Dash. Name"
+      },
       "url": {
         "label": "Dash. URL"
       },

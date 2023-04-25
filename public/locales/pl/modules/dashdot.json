@@ -4,6 +4,9 @@
     "description": "Wyświetla wykresy zewnętrznego Dash. Instancja wewnątrz Homarr.",
     "settings": {
       "title": "Ustawienia dla widgetu Dash.",
+      "dashName": {
+        "label": "Dash. Nazwa"
+      },
       "url": {
         "label": "Adres URL usługi Dash."
       },
