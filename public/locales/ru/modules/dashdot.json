@@ -4,9 +4,6 @@
     "description": "Показывает графики внешнего экземпляра Dash. в Homarr.",
     "settings": {
       "title": "Настройки для виджета Dash.",
-      "dashName": {
-        "label": "Имя Dash."
-      },
       "url": {
         "label": "URL-адрес Dash."
       },

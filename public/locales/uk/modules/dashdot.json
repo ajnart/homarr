@@ -4,9 +4,6 @@
     "description": "Відображає графіки зовнішнього Dash. всередині Homarr.",
     "settings": {
       "title": "Налаштування віджета Dash.",
-      "dashName": {
-        "label": "Dash. Ім'я"
-      },
       "url": {
         "label": "Dash. URL"
       },

@@ -4,9 +4,6 @@
     "description": "",
     "settings": {
       "title": "Paramètres du widget Dash",
-      "dashName": {
-        "label": "Nom Dash."
-      },
       "url": {
         "label": "URL Dash."
       },

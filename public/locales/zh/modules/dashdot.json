@@ -4,9 +4,6 @@
     "description": "在Homarr中显示一个外部Dash的图表。",
     "settings": {
       "title": "设置Dash小部件",
-      "dashName": {
-        "label": "Dash. 姓名"
-      },
       "url": {
         "label": "Dash. 网址"
       },
