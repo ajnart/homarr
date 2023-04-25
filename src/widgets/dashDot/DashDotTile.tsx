@@ -185,7 +185,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
 
   return (
     <Stack spacing="xs">
-      <Title order={3}>{dashName ? dashName : t('card.title')}</Title>
+      <Title order={3}>{dashName || t('card.title')}</Title>
       {!info && <p>{t('card.errors.noInformation')}</p>}
       {info && (
         <div className={classes.graphsContainer}>
