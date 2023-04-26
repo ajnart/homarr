@@ -21,10 +21,13 @@ interface ColorControlProps {
 
 export function ColorSelector({ type, defaultValue }: ColorControlProps) {
   const { t } = useTranslation('settings/customization/color-selector');
-  const [color, setColor] = useState(defaultValue);
+  const { config, name: configName } = useConfigContext();
+  const [color, setColor] =
+    type === 'primary'
+      ? useState(config?.settings.customization.colors.primary || defaultValue)
+      : useState(config?.settings.customization.colors.secondary || defaultValue);
   const [popoverOpened, popover] = useDisclosure(false);
   const { setPrimaryColor, setSecondaryColor } = useColorTheme();
-  const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
 
   const theme = useMantineTheme();
