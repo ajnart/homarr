@@ -5,7 +5,7 @@
     "settings": {
       "title": "הגדרות עבור וידג׳ט Dash.",
       "dashName": {
-        "label": ""
+        "label": "דאש. שם"
       },
       "url": {
         "label": "כתובת אתר Dash."
