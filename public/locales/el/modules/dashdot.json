@@ -4,6 +4,9 @@
     "description": "Εμφανίζει τα γραφήματα ενός εξωτερικού Dash. Instance μέσα στο Homarr.",
     "settings": {
       "title": "Ρυθμίσεις για το widget Dash",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "Dash. URL"
       },
