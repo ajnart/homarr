@@ -1,8 +1,13 @@
 import Consola from 'consola';
+
 import { createMocks } from 'node-mocks-http';
+
 import { describe, expect, it, vi } from 'vitest';
+
 import 'vitest-fetch-mock';
+
 import { ConfigType } from '../../../../types/config';
+
 import MediaRequestsRoute from './index';
 
 const mockedGetConfig = vi.fn();
@@ -88,6 +93,9 @@ describe('media-requests api', () => {
       apps: [
         {
           url: 'http://my-overseerr.local',
+          behaviour: {
+            externalUrl: 'http://my-overseerr.external',
+          },
           integration: {
             type: 'overseerr',
             properties: [
@@ -272,7 +280,7 @@ describe('media-requests api', () => {
         airDate: '2023-12-08',
         backdropPath: 'https://image.tmdb.org/t/p/original//mhjq8jr0qgrjnghnh.jpg',
         createdAt: '2023-04-06T19:38:45.000Z',
-        href: 'http://my-overseerr.local/movie/99999999',
+        href: 'http://my-overseerr.external/movie/99999999',
         id: 44,
         name: 'Homarrrr Movie',
         posterPath:
