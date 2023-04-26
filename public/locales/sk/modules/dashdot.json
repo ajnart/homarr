@@ -4,6 +4,9 @@
     "description": "Zobrazí grafy externého Dash. Instancie vo vnútri Homarr.",
     "settings": {
       "title": "Nastavenia pre Dash. mini aplikácie",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "Dash. URL adresa"
       },
