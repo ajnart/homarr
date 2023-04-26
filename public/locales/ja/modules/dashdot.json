@@ -4,6 +4,9 @@
     "description": "",
     "settings": {
       "title": "Dash.ウィジェットの設定",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "ダッシュURL"
       },
