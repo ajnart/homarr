@@ -5,7 +5,7 @@
     "settings": {
       "title": "设置Dash小部件",
       "dashName": {
-        "label": ""
+        "label": "Dash. 名称"
       },
       "url": {
         "label": "Dash. 网址"
