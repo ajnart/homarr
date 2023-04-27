@@ -1,10 +1,10 @@
 /* eslint-disable no-await-in-loop */
 import { z } from 'zod';
-import PiHole from 'pihole';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { findAppProperty } from '../../../../tools/client/app-properties';
+import { PiHoleClient } from '../../../../tools/server/sdk/pihole/piHole';
 
 const getQuerySchema = z.object({
   status: z.enum(['enabled', 'disabled']),
@@ -26,10 +26,9 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
   for (let i = 0; i < applicableApps.length; i += 1) {
     const app = applicableApps[i];
 
-    const pihole = new PiHole(
-      findAppProperty(app, 'password'),
-      // not sure why this is needed, but the library seems to prefix automatically
-      app.url.replace('http://', '').replace('https://', '')
+    const pihole = new PiHoleClient(
+      app.url,
+      findAppProperty(app, 'password')
     );
 
     switch (parseResult.data.status) {

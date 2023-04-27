@@ -1,4 +1,5 @@
 import { Badge, Button, Card, Group, Image, Stack, Text } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
@@ -8,11 +9,11 @@ import { useAdHoleControlMutation, useAdHoleSummeryQuery } from './query';
 import { PiholeApiSummaryType } from './type';
 
 const definition = defineWidget({
-  id: 'adhole-controls',
+  id: 'dns-hole-controls',
   icon: IconDeviceGamepad,
   options: {},
   gridstack: {
-    minWidth: 2,
+    minWidth: 3,
     minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
@@ -29,6 +30,7 @@ interface AdHoleControlsWidgetProps {
 function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
   const { isInitialLoading, data, refetch } = useAdHoleSummeryQuery();
   const { mutateAsync } = useAdHoleControlMutation();
+  const { t } = useTranslation('modules/dns-hole-controls');
 
   const { config } = useConfigContext();
 
@@ -48,7 +50,7 @@ function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
           variant="light"
           color="green"
         >
-          Enable all
+          {t('card.buttons.enableAll')}
         </Button>
         <Button
           onClick={async () => {
@@ -59,11 +61,11 @@ function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
           variant="light"
           color="red"
         >
-          Disable all
+          {t('card.buttons.disableAll')}
         </Button>
       </Group>
 
-      {data.status.map((status) => {
+      {data.status.map((status, index) => {
         const app = config?.apps.find((x) => x.id === status.appId);
 
         if (!app) {
@@ -71,7 +73,7 @@ function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
         }
 
         return (
-          <Card withBorder>
+          <Card withBorder key={index}>
             <Group position="apart">
               <Group>
                 <Image src={app.appearance.iconUrl} width={20} height={20} />
@@ -88,17 +90,18 @@ function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
 }
 
 const StatusBadge = ({ status }: { status: PiholeApiSummaryType['status'] }) => {
+  const { t } = useTranslation('modules/dns-hole-controls');
   if (status === 'enabled') {
     return (
       <Badge variant="dot" color="green">
-        Enabled
+        {t('card.status.enabled')}
       </Badge>
     );
   }
 
   return (
     <Badge variant="dot" color="red">
-      Disabled
+      {t('card.status.disabled')}
     </Badge>
   );
 };

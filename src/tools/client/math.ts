@@ -7,11 +7,11 @@ const ranges = [
   { divider: 1e3, suffix: 'k' },
 ];
 
-export const formatNumber = (n: number) => {
+export const formatNumber = (n: number, decimalPlaces: number) => {
   for (let i = 0; i < ranges.length; i += 1) {
     if (n >= ranges[i].divider) {
-      return (n / ranges[i].divider).toString() + ranges[i].suffix;
+      return (n / ranges[i].divider).toFixed(decimalPlaces) + ranges[i].suffix;
     }
   }
-  return n.toString();
+  return n.toFixed(decimalPlaces);
 };

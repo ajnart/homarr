@@ -10,21 +10,21 @@ export type AdStatistics = {
 };
 
 export type PiholeApiSummaryType = {
-  domains_being_blocked: string;
-  dns_queries_today: string;
-  ads_blocked_today: string;
+  domains_being_blocked: number;
+  dns_queries_today: number;
+  ads_blocked_today: number;
   ads_percentage_today: number;
-  unique_domains: string;
-  queries_forwarded: string;
-  queries_cached: string;
+  unique_domains: number;
+  queries_forwarded: number;
+  queries_cached: number;
   clients_ever_seen: number;
   unique_clients: number;
-  dns_queries_all_types: string;
+  dns_queries_all_types: number;
   reply_UNKNOWN: number;
-  reply_NODATA: string;
-  reply_NXDOMAIN: string;
-  reply_CNAME: string;
-  reply_IP: string;
+  reply_NODATA: number;
+  reply_NXDOMAIN: number;
+  reply_CNAME: number;
+  reply_IP: number;
   reply_DOMAIN: number;
   reply_RRNAME: number;
   reply_SERVFAIL: number;
@@ -34,7 +34,7 @@ export type PiholeApiSummaryType = {
   reply_DNSSEC: number;
   reply_NONE: number;
   reply_BLOB: number;
-  dns_queries_all_replies: string;
+  dns_queries_all_replies: number;
   privacy_level: number;
   status: 'enabled' | 'disabled';
   gravity_last_updated: {

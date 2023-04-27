@@ -29,7 +29,7 @@ export const GenericAvailableElementType = ({
       : image;
 
   return (
-    <Grid.Col span="auto">
+    <Grid.Col xs={12} sm={4} md={3}>
       <Card style={{ height: '100%' }}>
         <Stack justify="space-between" style={{ height: '100%' }}>
           <Stack spacing="xs">

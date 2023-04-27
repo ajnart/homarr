@@ -62,7 +62,6 @@
     "next": "^13.2.1",
     "next-i18next": "^11.3.0",
     "nzbget-api": "^0.0.3",
-    "pihole": "^1.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
