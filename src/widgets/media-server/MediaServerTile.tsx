@@ -43,9 +43,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
   const { config } = useConfigContext();
   const isEditMode = useEditModeStore((x) => x.enabled);
 
-  const { data, isError, isFetching, isInitialLoading } = useGetMediaServers({
-    enabled: config !== undefined,
-  });
+  const { data, isError, isFetching, isInitialLoading } = useGetMediaServers();
 
   if (isError) {
     return (

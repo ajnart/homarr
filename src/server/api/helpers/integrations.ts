@@ -13,7 +13,6 @@ export const integrationTypes = [
   'jellyfin',
   'nzbGet',
 ] as const;
-
-export type IntegrationType = (typeof integrationTypes)[number];
-
 export const mediaRequestIntegrationTypes = ['overseerr', 'jellyseerr'] as const;
+export const mediaServerIntegrationTypes = ['jellyfin', 'plex'] as const;
+export type IntegrationType = (typeof integrationTypes)[number];

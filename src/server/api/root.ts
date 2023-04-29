@@ -3,7 +3,8 @@ import { configRouter } from '~/server/api/routers/config';
 import { dockerRouter } from './routers/docker';
 import { iconsRouter } from './routers/icon';
 import { dashDotRouter } from './routers/dash-dot';
-import { mediaRequestsRouter } from './routers/mediaRequest';
+import { mediaRequestsRouter } from './routers/media-request';
+import { mediaServerRouter } from './routers/media-server';
 
 /**
  * This is the primary router for your server.
@@ -16,6 +17,7 @@ export const appRouter = createTRPCRouter({
   icon: iconsRouter,
   dashDot: dashDotRouter,
   mediaRequests: mediaRequestsRouter,
+  mediaServer: mediaServerRouter,
 });
 
 // export type definition of API

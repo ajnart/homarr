@@ -1,17 +1,19 @@
-import { useQuery } from '@tanstack/react-query';
-import { MediaServersResponseType } from '../../../types/api/media-server/response';
+import { useConfigContext } from '~/config/provider';
+import { constructClientSecretChangesForIntegrations } from '~/server/api/helpers/apps';
+import { mediaServerIntegrationTypes } from '~/server/api/helpers/integrations';
+import { api } from '~/utils/api';
 
-interface GetMediaServersParams {
-  enabled: boolean;
-}
+export const useGetMediaServers = () => {
+  const { name, config } = useConfigContext();
 
-export const useGetMediaServers = ({ enabled }: GetMediaServersParams) =>
-  useQuery({
-    queryKey: ['media-servers'],
-    queryFn: async (): Promise<MediaServersResponseType> => {
-      const response = await fetch('/api/modules/media-server');
-      return response.json();
+  return api.mediaServer.all.useQuery(
+    {
+      configName: name!,
+      apps: constructClientSecretChangesForIntegrations(config!.apps, mediaServerIntegrationTypes),
     },
-    enabled,
-    refetchInterval: 10 * 1000,
-  });
+    {
+      enabled: name !== undefined && config !== undefined,
+      refetchInterval: 10 * 1000,
+    }
+  );
+};
