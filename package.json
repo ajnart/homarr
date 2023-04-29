@@ -43,6 +43,7 @@
     "@nivo/line": "^0.80.0",
     "@prisma/client": "^4.13.0",
     "@react-native-async-storage/async-storage": "^1.18.1",
+    "@t3-oss/env-nextjs": "^0.2.2",
     "@tabler/icons": "^1.106.0",
     "@tanstack/query-async-storage-persister": "^4.27.1",
     "@tanstack/query-sync-storage-persister": "^4.27.1",

@@ -1,6 +1,6 @@
-const path = require('path');
+const path = await import('path');
 
-module.exports = {
+const i18nConfig = {
   // https://www.i18next.com/overview/configuration-options#logging
   i18n: {
     defaultLocale: 'en',
@@ -37,3 +37,5 @@ module.exports = {
   fallbackLng: 'en',
   localePath: path.resolve('./public/locales'),
 };
+
+export { i18nConfig };

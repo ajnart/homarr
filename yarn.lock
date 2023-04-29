@@ -1657,6 +1657,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@t3-oss/env-core@npm:0.2.2":
+  version: 0.2.2
+  resolution: "@t3-oss/env-core@npm:0.2.2"
+  peerDependencies:
+    zod: ^3.0.0
+  checksum: 92442f7f7d80a0d211e56a8cd52feb62400d3150ea60892214063117fefd78e5cf262de914267aa1560080450fbd478319b74fbbcddad6b0a0ec1bcdbfdf384f
+  languageName: node
+  linkType: hard
+
+"@t3-oss/env-nextjs@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "@t3-oss/env-nextjs@npm:0.2.2"
+  dependencies:
+    "@t3-oss/env-core": 0.2.2
+  peerDependencies:
+    zod: ^3.0.0
+  checksum: de786186cfcf5805c92ee341b71dad1bbcdb3da4de37dccdfdbd018f6b76c034aea4a0e16d5a9be3d4fbde47b81889573e36909cdbcfa11db21355457a9ab6d2
+  languageName: node
+  linkType: hard
+
 "@tabler/icons@npm:^1.106.0":
   version: 1.119.0
   resolution: "@tabler/icons@npm:1.119.0"
@@ -4969,6 +4989,7 @@ __metadata:
     "@nivo/line": ^0.80.0
     "@prisma/client": ^4.13.0
     "@react-native-async-storage/async-storage": ^1.18.1
+    "@t3-oss/env-nextjs": ^0.2.2
     "@tabler/icons": ^1.106.0
     "@tanstack/query-async-storage-persister": ^4.27.1
     "@tanstack/query-sync-storage-persister": ^4.27.1
