@@ -1,91 +1,91 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Homarr içerisinde harici Dash.'in grafiklerini görüntüler.",
     "settings": {
-      "title": "",
+      "title": "Dash. widget için ayarlar",
       "dashName": {
-        "label": ""
+        "label": "Dash. Görünecek Başlık"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Yüzdeleri göster"
       },
       "columns": {
-        "label": ""
+        "label": "Sütunları göster"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Grafiklerin yüksekliği"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafikler (Sıralama)",
         "storage": {
           "label": "",
           "enabled": {
-            "label": ""
+            "label": "Depolama"
           },
           "span": {
-            "label": ""
+            "label": "Sütun genişliği"
           },
           "compactView": {
-            "label": ""
+            "label": "Metin olarak göster (kompakt)"
           },
           "multiView": {
-            "label": ""
+            "label": "Çoklu sürücü görünümü olarak göster"
           }
         },
         "network": {
           "label": "",
           "enabled": {
-            "label": ""
+            "label": "Depolama"
           },
           "span": {
-            "label": ""
+            "label": "Sütun genişliği"
           },
           "compactView": {
-            "label": ""
+            "label": "Metin olarak göster (kompakt)"
           }
         },
         "cpu": {
           "label": "",
           "enabled": {
-            "label": ""
+            "label": "Depolama"
           },
           "span": {
-            "label": ""
+            "label": "Sütun genişliği"
           },
           "multiView": {
-            "label": ""
+            "label": "Çok çekirdekli görünüm olarak göster"
           }
         },
         "ram": {
-          "label": "",
+          "label": "Ram",
           "enabled": {
-            "label": ""
+            "label": "Depolama"
           },
           "span": {
-            "label": ""
+            "label": "Sütun genişliği"
           }
         },
         "gpu": {
           "label": "",
           "enabled": {
-            "label": ""
+            "label": "Depolama"
           },
           "span": {
-            "label": ""
+            "label": "Sütun genişliği"
           }
         }
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Hiç Dash. hizmeti bulunamadı. Lütfen Homarr kontrol panelinize bir tane ekleyin veya modül seçeneklerinde bir Dash. URL ayarlayın",
+      "noInformation": "Dash'ten bilgi alınamıyor. - En son sürümü mü kullanıyorsunuz?",
       "protocolDowngrade": {
         "title": "",
         "text": ""
@@ -108,7 +108,7 @@
         "title": ""
       },
       "ram": {
-        "title": ""
+        "title": "Ram"
       },
       "gpu": {
         "title": ""
