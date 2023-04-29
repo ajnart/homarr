@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "媒体请求状态",
+    "description": "您的媒体请求统计",
     "settings": {
-      "title": ""
+      "title": "媒体请求状态"
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "待核准",
+    "tvRequests": "电视请求",
+    "movieRequests": "电影请求"
   }
 }

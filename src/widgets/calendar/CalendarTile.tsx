@@ -1,4 +1,4 @@
-import { Group } from '@mantine/core';
+import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
 import { useQuery } from '@tanstack/react-query';
@@ -8,6 +8,7 @@ import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
+import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
 
 const definition = defineWidget({
@@ -48,6 +49,7 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
+  const { colorScheme } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
 
@@ -65,42 +67,48 @@ function CalendarTile({ widget }: CalendarTileProps) {
   });
 
   return (
-    <Group grow style={{ height: '100%' }}>
-      <Calendar
-        defaultDate={new Date()}
-        onPreviousMonth={setMonth}
-        onNextMonth={setMonth}
-        size="xs"
-        locale={i18n?.resolvedLanguage ?? 'en'}
-        firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
-        hideWeekdays
-        date={month}
-        hasNextLevel={false}
-        styles={{
-          calendar: {
-            height: '100%',
-          },
-          monthLevelGroup: {
-            height: '100%',
-          },
-          monthLevel: {
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-          },
-          month: {
-            flex: 1,
-          },
-          calendarHeader: {
-            maxWidth: 'inherit',
-          },
-        }}
-        renderDay={(date) => (
-          <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
-        )}
-      />
-    </Group>
+    <Calendar
+      defaultDate={new Date()}
+      onPreviousMonth={setMonth}
+      onNextMonth={setMonth}
+      size="xs"
+      locale={i18n?.resolvedLanguage ?? 'en'}
+      firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
+      hideWeekdays
+      style={{ position: 'relative', top: -10 }}
+      date={month}
+      maxLevel="month"
+      hasNextLevel={false}
+      styles={{
+        calendarHeader: {
+          maxWidth: 'inherit',
+        },
+        calendar: {
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        },
+        monthLevelGroup: {
+          height: '100%',
+        },
+        monthLevel: {
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        },
+        month: {
+          flex: 1,
+        },
+      }}
+      getDayProps={(date) => ({
+        bg: getBgColorByDateAndTheme(colorScheme, date),
+      })}
+      renderDay={(date) => (
+        <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
+      )}
+    />
   );
 }
 

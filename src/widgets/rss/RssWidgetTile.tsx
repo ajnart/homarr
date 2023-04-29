@@ -120,58 +120,59 @@ function RssTile({ widget }: RssTileProps) {
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
         {data.map((feed, index) => (
           <Stack w="100%" spacing="xs">
-            {feed.feed && feed.feed.items.map((item: any, index: number) => (
-              <Card
-                key={index}
-                withBorder
-                component={Link ?? 'div'}
-                href={item.link}
-                radius="md"
-                target="_blank"
-                w="100%"
-              >
-                {item.enclosure && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    className={classes.backgroundImage}
-                    src={item.enclosure.url ?? undefined}
-                    alt="backdrop"
-                  />
-                )}
-
-                <Flex gap="xs">
+            {feed.feed &&
+              feed.feed.items.map((item: any, index: number) => (
+                <Card
+                  key={index}
+                  withBorder
+                  component={Link ?? 'div'}
+                  href={item.link}
+                  radius="md"
+                  target="_blank"
+                  w="100%"
+                >
                   {item.enclosure && (
-                    <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
-                      <Image
-                        src={item.enclosure?.url ?? undefined}
-                        width={140}
-                        height={140}
-                        radius="md"
-                        withPlaceholder
-                      />
-                    </MediaQuery>
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      className={classes.backgroundImage}
+                      src={item.enclosure.url ?? undefined}
+                      alt="backdrop"
+                    />
                   )}
-                  <Flex gap={2} direction="column" w="100%">
-                    {item.categories && (
-                      <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
-                        {item.categories.map((category: any, categoryIndex: number) => (
-                          <Badge key={categoryIndex}>{category}</Badge>
-                        ))}
-                      </Flex>
-                    )}
 
-                    <Text lineClamp={2}>{item.title}</Text>
-                    <Text color="dimmed" size="xs" lineClamp={3}>
-                      {item.content}
-                    </Text>
-
-                    {item.pubDate && (
-                      <InfoDisplay title={feed.feed.title} date={formatDate(item.pubDate)} />
+                  <Flex gap="xs">
+                    {item.enclosure && (
+                      <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
+                        <Image
+                          src={item.enclosure?.url ?? undefined}
+                          width={140}
+                          height={140}
+                          radius="md"
+                          withPlaceholder
+                        />
+                      </MediaQuery>
                     )}
+                    <Flex gap={2} direction="column" w="100%">
+                      {item.categories && (
+                        <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
+                          {item.categories.map((category: any, categoryIndex: number) => (
+                            <Badge key={categoryIndex}>{category}</Badge>
+                          ))}
+                        </Flex>
+                      )}
+
+                      <Text lineClamp={2}>{item.title}</Text>
+                      <Text color="dimmed" size="xs" lineClamp={3}>
+                        {item.content}
+                      </Text>
+
+                      {item.pubDate && (
+                        <InfoDisplay title={feed.feed.title} date={formatDate(item.pubDate)} />
+                      )}
+                    </Flex>
                   </Flex>
-                </Flex>
-              </Card>
-            ))}
+                </Card>
+              ))}
           </Stack>
         ))}
       </ScrollArea>

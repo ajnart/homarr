@@ -8,6 +8,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { BackendConfigType, ConfigType } from '../../../types/config';
 import { getConfig } from '../../../tools/config/getConfig';
+import widgets from '../../../widgets';
+import { IRssWidget } from '../../../widgets/rss/RssWidgetTile';
 
 function Put(req: NextApiRequest, res: NextApiResponse) {
   if (process.env.DISABLE_EDIT_MODE === 'true') {
@@ -30,11 +32,19 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
 
   const previousConfig = getConfig(slug);
 
-  const newConfig: BackendConfigType = {
+  let newConfig: BackendConfigType = {
     ...config,
     apps: [
       ...config.apps.map((app) => ({
         ...app,
+        network: {
+          ...app.network,
+          statusCodes:
+            app.network.okStatus === undefined
+              ? app.network.statusCodes
+              : app.network.okStatus.map((x) => x.toString()),
+          okStatus: undefined,
+        },
         integration: {
           ...app.integration,
           properties: app.integration.properties.map((property) => {
@@ -73,6 +83,30 @@ function Put(req: NextApiRequest, res: NextApiResponse) {
           }),
         },
       })),
+    ],
+  };
+
+  newConfig = {
+    ...newConfig,
+    widgets: [
+      ...newConfig.widgets.map((x) => {
+        if (x.type !== 'rss') {
+          return x;
+        }
+
+        const rssWidget = x as IRssWidget;
+
+        return {
+          ...rssWidget,
+          properties: {
+            ...rssWidget.properties,
+            rssFeedUrl:
+              typeof rssWidget.properties.rssFeedUrl === 'string'
+                ? [rssWidget.properties.rssFeedUrl]
+                : rssWidget.properties.rssFeedUrl,
+          },
+        } as IRssWidget;
+      }),
     ],
   };
 
