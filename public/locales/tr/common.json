@@ -1,35 +1,35 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Kaydet",
+  "about": "Hakkında",
   "cancel": "",
-  "close": "",
-  "delete": "",
-  "ok": "",
-  "edit": "",
-  "version": "",
-  "changePosition": "",
+  "close": "Kapat",
+  "delete": "Sil",
+  "ok": "Tamam",
+  "edit": "Düzenle",
+  "version": "Versiyon",
+  "changePosition": "Pozisyon değiştir",
   "remove": "",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "{{item}}'i kaldırmak istediğinizden emin misiniz?",
+  "createItem": "yeni {{item}}",
   "sections": {
-    "settings": "",
-    "dangerZone": ""
+    "settings": "Ayarlar",
+    "dangerZone": "Tehlikeli bölge"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
-    "password": ""
+    "apiKey": "APİ anahtarı",
+    "username": "Kullanıcı adı",
+    "password": "Şifre"
   },
-  "tip": "",
+  "tip": "Tip: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "saniye",
+    "minutes": "dakika",
+    "hours": "saat"
   },
   "loading": "",
   "breakPoints": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "küçük",
+    "medium": "orta",
+    "large": "büyük"
   }
 }
