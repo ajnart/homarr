@@ -38,5 +38,6 @@ module.exports = {
       },
     ],
     'testing-library/no-node-access': ['error', { allowContainerFirstChild: true }],
+    'import/extensions': 'off',
   },
 };
