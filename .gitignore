@@ -52,3 +52,6 @@ data/configs
 
 #envfiles
 .env
+
+#prisma sqlite database
+prisma/db.sqlite

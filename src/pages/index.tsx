@@ -10,6 +10,7 @@ import { getFrontendConfig } from '../tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
 import { dashboardNamespaces } from '../tools/server/translation-namespaces';
 import { DashboardServerSideProps } from '../types/dashboardPageType';
+import { api } from '~/utils/api';
 
 export async function getServerSideProps({
   req,
