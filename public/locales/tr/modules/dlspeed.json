@@ -1,34 +1,34 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "İndirme Hızı",
+    "description": "Desteklenen entegrasyonların İndirme ve Yükleme hızlarını görüntüler."
   },
   "card": {
     "table": {
       "header": {
-        "name": "",
+        "name": "İsim",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "İndirme",
+        "upload": "Yükleme",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Torrent bulunamadı"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Şu anki indirme hızı",
+      "download": "İndirme: {{download}}",
+      "upload": "Yükleme: {{upload}}",
+      "timeSpan": "{{seconds}} saniye önce",
+      "totalDownload": "İndirme: {{download}}/s",
+      "totalUpload": "Yükleme: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
         "title": "",
-        "text": ""
+        "text": "Mevcut indirmelerinizi görüntülemek için bir indirme istemcisi ekleyin"
       }
     }
   }
