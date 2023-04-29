@@ -23,6 +23,7 @@ import {
   NormalizedDownloadQueueResponse,
 } from '../../../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
 
+// TODO: migrate to tRPC
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');

@@ -26,18 +26,14 @@ export const configRouter = createTRPCRouter({
       })
     )
     .query(async ({ ctx, input }) => {
-      const configPath = `${CONFIG_DIRECTORY_PATH}/${input.configName}.json`;
-      const isFilePresent = existsSync(configPath);
+      const data = getConfigData(input.configName);
 
-      if (!isFilePresent) {
+      if (!data) {
         throw new TRPCError({
           code: 'NOT_FOUND',
           message: 'Config not found',
         });
       }
-
-      const fileData = readFileSync(configPath, 'utf-8');
-      const data: BackendConfigType = JSON.parse(fileData);
       return prepareBackendConfig(data);
     }),
   deleteByName: protectedProcedure
@@ -94,3 +90,13 @@ const prepareBackendConfig = (backendConfig: BackendConfigType): ConfigType => (
     },
   })),
 });
+
+export const getConfigData = (configName: string) => {
+  const configPath = `${CONFIG_DIRECTORY_PATH}/${configName}.json`;
+  const isFilePresent = existsSync(configPath);
+
+  if (!isFilePresent) return null;
+
+  const fileData = readFileSync(configPath, 'utf-8');
+  return JSON.parse(fileData) as BackendConfigType;
+};
