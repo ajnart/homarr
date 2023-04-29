@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Takvim",
+    "description": "Desteklenen entegrasyonlardan, gelecek sürümlerin yer aldığı bir takvimi görüntüler.",
     "settings": {
-      "title": "",
+      "title": "Takvim widget'ı için ayarlar",
       "useSonarrv4": {
-        "label": ""
+        "label": "Sonarr v4 API'sini kullan"
       },
       "sundayStart": {
-        "label": ""
+        "label": "Haftaya Pazar günü başlayın"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Radarr yayın türü"
       }
     }
   }
