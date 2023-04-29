@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Ping",
+    "description": "Belirli bir URL'nin HTTP yanıt koduna bağlı olarak bir durum göstergesi görüntüler."
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "Çevrimiçi {{response}}",
+    "offline": "Çevrimiçi {{response}}",
+    "loading": "Yükleniyor..."
   }
 }
