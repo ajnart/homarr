@@ -5,7 +5,7 @@
     "settings": {
       "title": "Nastavenia pre Dash. mini aplikácie",
       "dashName": {
-        "label": ""
+        "label": "Dash. Názov"
       },
       "url": {
         "label": "Dash. URL adresa"
