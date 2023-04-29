@@ -22,7 +22,7 @@
       "graphsOrder": {
         "label": "Grafikler (Sıralama)",
         "storage": {
-          "label": "",
+          "label": "Depolama",
           "enabled": {
             "label": "Depolama"
           },
@@ -37,7 +37,7 @@
           }
         },
         "network": {
-          "label": "",
+          "label": "Ağ",
           "enabled": {
             "label": "Depolama"
           },
@@ -49,7 +49,7 @@
           }
         },
         "cpu": {
-          "label": "",
+          "label": "CPU",
           "enabled": {
             "label": "Depolama"
           },
@@ -70,7 +70,7 @@
           }
         },
         "gpu": {
-          "label": "",
+          "label": "GPU",
           "enabled": {
             "label": "Depolama"
           },
@@ -87,31 +87,31 @@
       "noService": "Hiç Dash. hizmeti bulunamadı. Lütfen Homarr kontrol panelinize bir tane ekleyin veya modül seçeneklerinde bir Dash. URL ayarlayın",
       "noInformation": "Dash'ten bilgi alınamıyor. - En son sürümü mü kullanıyorsunuz?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Algılanan protokol versiyon düşürme",
+        "text": "Dash. örneğinize bağlantı HTTP kullanıyor. Bu bir güvenlik riskidir, çünkü HTTP şifrelenmemiştir ve saldırganlar bu bağlantıyı kötüye kullanabilir. Dash.'in HTTPS kullandığından emin olun veya Homarr'ı HTTP'ye indirin (önerilmez)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Depolama",
+        "label": "Depolama:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Ağ",
+        "label": "Ağ:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "İndirme",
+          "upload": "Yükleme"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "ram": {
         "title": "Ram"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
