@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Usenet uygulamanızı görüntülemenizi ve yönetmenizi sağlar."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Desteklenen indirme istemcisi bulunamadı!",
+        "text": "Mevcut indirmelerinizi görüntülemek için desteklenen bir Usenet İndirme İstemcisi ekleyin"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Kuyruk",
+    "history": "Geçmiş"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Sol boyut",
+    "paused": "Duraklatıldı"
   },
   "queue": {
     "header": {
       "name": "İsim",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "size": "Boyut",
+      "eta": "ETA (Kalan Süre)",
+      "progress": "İlerleme"
     },
-    "empty": "",
+    "empty": "Boş",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Hata",
+      "message": "Bir hata oluştu"
     },
-    "paused": ""
+    "paused": "Duraklatıldı"
   },
   "history": {
     "header": {
       "name": "İsim",
-      "size": "",
-      "duration": ""
+      "size": "Boyut",
+      "duration": "Süre"
     },
-    "empty": "",
+    "empty": "Boş",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Hata",
+      "message": "Geçmiş yüklenirken hata oluştu"
     },
-    "paused": ""
+    "paused": "Duraklatıldı"
   }
 }
