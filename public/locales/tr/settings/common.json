@@ -2,37 +2,37 @@
   "title": "Ayarlar",
   "tooltip": "Ayarlar",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Ortak",
+    "customizations": "Kişiselleştirme"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Yapılandırma dosyanızı sayfaya sürükleyip bırakarak yükleyin!"
   },
   "credits": {
-    "madeWithLove": "",
-    "thirdPartyContent": "",
+    "madeWithLove": "Tarafından ❤️ ile yapılmıştır @",
+    "thirdPartyContent": "Üçüncü şahıs içeriğine bakın",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Bağımlılık",
       "dependencyVersion": "Versiyon"
     }
   },
-  "grow": "",
+  "grow": "Izgarayı büyütün (tüm alanı kapla)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Ön İzleme",
+      "subtitle": "Değişiklikleriniz otomatik olarak kaydedilecektir"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "Düzen ayarları",
+    "main": "Ana",
+    "sidebar": "Kenar Çubuğu",
+    "cannotturnoff": "Kapatılamaz",
+    "dashboardlayout": "Pano Yerleşimi",
+    "enablersidebar": "Sağ kenar çubuğunu etkinleştir",
+    "enablelsidebar": "Sol kenar çubuğunu etkinleştir",
+    "enablesearchbar": "Arama çubuğunu etkinleştir",
+    "enabledocker": "Docker entegrasyonunu etkinleştir",
+    "enableping": "Ping'leri etkinleştir",
+    "enablelsidebardesc": "İsteğe bağlı. Yalnızca uygulamalar ve entegrasyonlar için kullanılabilir",
+    "enablersidebardesc": "İsteğe bağlı. Yalnızca uygulamalar ve entegrasyonlar için kullanılabilir"
   }
 }
