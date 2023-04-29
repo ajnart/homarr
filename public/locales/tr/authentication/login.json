@@ -14,7 +14,7 @@
   },
   "notifications": {
     "checking": {
-      "title": "Şifreniz kontrol ediliyor",
+      "title": "Şifrenizi kontrol edin",
       "message": "Şifreniz kontrol ediliyor..."
     },
     "correct": {
