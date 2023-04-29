@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { z } from 'zod';
 import { createTRPCRouter, publicProcedure } from '../trpc';
+import { TRPCError } from '@trpc/server';
 
 const dashDotUrlSchema = z.string().url();
 
@@ -27,7 +28,18 @@ export const dashDotRouter = createTRPCRouter({
       })
     )
     .query(async ({ input }) => {
-      const response = await axios.get(`${input.url}/info`);
+      const response = await axios.get(`${input.url}/info`).catch((error) => {
+        if (error.response.status === 404) {
+          throw new TRPCError({
+            code: 'NOT_FOUND',
+            message: 'Unable to find specified dash-dot instance',
+          });
+        }
+
+        throw new TRPCError({
+          code: 'INTERNAL_SERVER_ERROR',
+        });
+      });
       return response.data;
     }),
   storage: publicProcedure
@@ -38,9 +50,18 @@ export const dashDotRouter = createTRPCRouter({
     )
     .output(z.array(z.number()))
     .query(async ({ input }) => {
-      const response = await axios.get(`${input.url}/load/storage`);
-      console.log(response.data);
+      const response = await axios.get(`${input.url}/load/storage`).catch((error) => {
+        if (error.response.status === 404) {
+          throw new TRPCError({
+            code: 'NOT_FOUND',
+            message: 'Unable to find specified dash-dot',
+          });
+        }
 
+        throw new TRPCError({
+          code: 'INTERNAL_SERVER_ERROR',
+        });
+      });
       return response.data;
     }),
 });
