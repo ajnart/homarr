@@ -1,32 +1,32 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Hava Durumu",
+    "description": "Belirlenen bir konumun güncel hava durumu bilgilerini görüntüler.",
     "settings": {
-      "title": "",
+      "title": "Hava durumu widget'ı için ayarlar",
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Fahrenheit cinsinden göster"
       },
       "location": {
-        "label": ""
+        "label": "Hava durumu konumu"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "clear": "Temiz",
+      "mainlyClear": "Genel olarak açık",
+      "fog": "Sis",
+      "drizzle": "Çiseleme",
+      "freezingDrizzle": "Soğuk çiseleme",
+      "rain": "Yağmur",
+      "freezingRain": "Dondurucu yağmur",
+      "snowFall": "Kar yağışı",
+      "snowGrains": "Kar taneleri",
+      "rainShowers": "Sağanak yağmur",
+      "snowShowers": "Kar yağışı",
+      "thunderstorm": "Fırtına",
+      "thunderstormWithHail": "Fırtına ve dolu",
       "unknown": "Bilinmeyen"
     }
   }
