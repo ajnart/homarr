@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "RSS Widget'ı",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "RSS widget'ı için ayarlar",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "RSS besleme URL'si",
+        "description": "Görüntülemek istediğiniz RSS beslemelerinin URL'leri."
       },
       "refreshInterval": {
         "label": ""
