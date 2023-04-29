@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "Tekrar hoşgeldin!",
+  "text": "Lütfen şifrenizi girin",
   "form": {
     "fields": {
       "password": {
-        "label": "",
-        "placeholder": ""
+        "label": "Şifre",
+        "placeholder": "Şifreniz"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Kayıt ol"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Şifreniz kontrol ediliyor",
+      "message": "Şifreniz kontrol ediliyor..."
     },
     "correct": {
-      "title": ""
+      "title": "Giriş başarılı, yönlendiriliyor..."
     },
     "wrong": {
-      "title": ""
+      "title": "Girdiğin şifre yanlış, lütfen tekrar dene."
     }
   }
 }
