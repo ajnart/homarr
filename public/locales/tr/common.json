@@ -1,14 +1,14 @@
 {
   "save": "Kaydet",
   "about": "Hakkında",
-  "cancel": "",
+  "cancel": "Vazgeç",
   "close": "Kapat",
   "delete": "Sil",
   "ok": "Tamam",
   "edit": "Düzenle",
   "version": "Versiyon",
   "changePosition": "Pozisyon değiştir",
-  "remove": "",
+  "remove": "Kaldır",
   "removeConfirm": "{{item}}'i kaldırmak istediğinizden emin misiniz?",
   "createItem": "yeni {{item}}",
   "sections": {
@@ -26,7 +26,7 @@
     "minutes": "dakika",
     "hours": "saat"
   },
-  "loading": "",
+  "loading": "Yükleniyor...",
   "breakPoints": {
     "small": "küçük",
     "medium": "orta",
