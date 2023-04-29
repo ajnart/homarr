@@ -22,10 +22,10 @@
     },
     "table": {
       "header": {
-        "name": "",
+        "name": "İsim",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "İndirme",
+        "upload": "Yükleme",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
@@ -33,16 +33,16 @@
         "text": ""
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Torrent bulunamadı"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Şu anki indirme hızı",
+      "download": "İndirme: {{download}}",
+      "upload": "Yükleme: {{upload}}",
+      "timeSpan": "{{seconds}} saniye önce",
+      "totalDownload": "İndirme: {{download}}/s",
+      "totalUpload": "Yükleme: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
@@ -55,7 +55,7 @@
       }
     },
     "loading": {
-      "title": ""
+      "title": "Yükleniyor..."
     },
     "popover": {
       "introductionPrefix": "",
