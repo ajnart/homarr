@@ -7,11 +7,11 @@
     "table": {
       "header": {
         "name": "İsim",
-        "size": "",
+        "size": "Boyut",
         "download": "İndirme",
         "upload": "Yükleme",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "ETA (Kalan Süre)",
+        "progress": "İlerleme"
       },
       "body": {
         "nothingFound": "Torrent bulunamadı"
@@ -27,7 +27,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Desteklenen indirme istemcisi bulunamadı!",
         "text": "Mevcut indirmelerinizi görüntülemek için bir indirme istemcisi ekleyin"
       }
     }
