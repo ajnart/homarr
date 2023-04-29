@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medya Sunucusu",
+    "description": "Jellyfin veya Plex medya sunucunuzla etkileşim kurun",
     "settings": {
-      "title": ""
+      "title": "Medya sunucusu widget'ı için ayarlar"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Oturum",
+        "user": "Kullanıcı",
+        "currentlyPlaying": "Şuan Oynatılan"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Yüklenmiş içeriğe ulaşılamıyor",
+        "text": "Sunucudan bilgi alınamıyor. Daha fazla ayrıntı için lütfen günlükleri kontrol edin"
       }
     }
   }
