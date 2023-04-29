@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medya istek istatistikleri",
+    "description": "Medya taleplerinizle ilgili istatistikler",
     "settings": {
-      "title": ""
+      "title": "Medya istekleri istatistikleri"
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Onay bekleyenler",
+    "tvRequests": "Dizi istekleri",
+    "movieRequests": "Film istekleri"
   }
 }
