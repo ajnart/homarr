@@ -23,7 +23,9 @@ export const env = createEnv({
     DISABLE_EDIT_MODE: z
       .string()
       .regex(/[true|false]/i)
-      .transform((x) => x.toLowerCase() === 'true'),
+      .transform((x) => x.toLowerCase() === 'true')
+      .or(z.undefined())
+      .default('false'),
   },
 
   /**

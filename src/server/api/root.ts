@@ -1,6 +1,7 @@
 import { createTRPCRouter } from '~/server/api/trpc';
 import { configRouter } from '~/server/api/routers/config';
 import { dockerRouter } from './routers/docker';
+import { iconsRouter } from './routers/icon';
 
 /**
  * This is the primary router for your server.
@@ -10,6 +11,7 @@ import { dockerRouter } from './routers/docker';
 export const appRouter = createTRPCRouter({
   config: configRouter,
   docker: dockerRouter,
+  icon: iconsRouter,
 });
 
 // export type definition of API
