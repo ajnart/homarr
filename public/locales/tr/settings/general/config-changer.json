@@ -1,86 +1,86 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Yapılandırma değiştirici",
+    "description": "{{configCount}} yapılandırma mevcut",
+    "loadingNew": "Yapılandırmanız yükleniyor...",
+    "pleaseWait": "Lütfen yeni yapılandırmanız yüklenene kadar bekleyin!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Yeni yapılandırmanızın adını seçin",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Yapılandırma adı",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Yapılandırma adı gereklidir",
+            "notUnique": "Yapılandırma adı zaten kullanımda"
           },
-          "placeholder": ""
+          "placeholder": "Yeni yapılandırma adınız"
         },
-        "submitButton": ""
+        "submitButton": "Onayla"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Yapılandırma kaydedildi",
+          "message": "Yapılandırma {{configName}} olarak kaydedildi"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Yapılandırma kopyalandı",
+          "message": "Yapılandırma {{configName}} olarak kopyalandı"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Yapılandırma kopyalanamıyor",
+          "message": "Yapılandırmanız {{configName}} olarak kopyalanmadı"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Yapılandırmanızın silinmesini onaylayın",
+      "warningText": "<b>{{configName}}</b>' dosyasını silmek üzeresiniz",
+      "text": "Silme işleminin geri alınamayacağını ve verilerinizin kalıcı olarak kaybolacağını lütfen unutmayın. Bu düğmeyi tıklattıktan sonra, dosya diskinizden kalıcı olarak silinecektir. Yapılandırmanızın yeterli bir yedeğini oluşturduğunuzdan emin olun.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Evet, '<b>{{configName}}</b>'' dosyasını silin"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Yapılandırmayı indir",
     "delete": {
-      "text": "",
+      "text": "Yapılandırmayı sil",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Yapılandırma silindi",
+          "message": "Yapılandırma silindi"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Yapılandırma silinemedi",
+          "message": "Yapılandırma silinemedi"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Varsayılan yapılandırma silinemez",
+          "message": "Yapılandırma dosya sisteminden silinmedi"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Kopyasını kaydet"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Yapılandırma yüklenemiyor",
+        "message": "Yapılandırmanız yüklenemedi. Geçersiz JSON biçimi."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "{{configName}} Yapılandırmanız başarıyla yüklendi"
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Yüklemeyi Yapılandırın",
+      "text": "Bir yapılandırma yüklemek için dosyaları buraya sürükleyin. Yalnızca JSON dosyaları desteklenir."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Sürükle ve Bırak Yüklemesi reddedildi",
+      "text": "Bu dosya biçimi desteklenmemektedir. Lütfen yalnızca JSON dosyalarını yükleyin."
     }
   }
 }
