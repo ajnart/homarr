@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Hay aksi, bir hata oluştu!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Detaylar",
+      "tryAgain": "Tekrar Deneyin"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Karşılaştığın Hata",
+    "reportButton": "Hatayı bildir"
   }
 }
