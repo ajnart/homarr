@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Tarih ve Saat",
+    "description": "Geçerli tarih ve saati görüntüler.",
     "settings": {
-      "title": "",
+      "title": "Tarih ve Saat widget'ı için ayarlar",
       "display24HourFormat": {
-        "label": ""
+        "label": "Tam zamanı göster (24 saat)"
       }
     }
   }
