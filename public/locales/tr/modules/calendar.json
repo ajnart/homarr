@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Takvim",
-    "description": "Desteklenen entegrasyonlardan, gelecek sürümlerin yer aldığı bir takvimi görüntüler.",
+    "description": "Desteklenen entegrasyonlarda, yaklaşan içeriklerin takvimlerini görüntüler.",
     "settings": {
       "title": "Takvim widget'ı için ayarlar",
       "useSonarrv4": {
