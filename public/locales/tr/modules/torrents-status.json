@@ -1,36 +1,36 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Desteklenen Torrent istemcilerinden gelen torrentlerin bir listesini görüntüler.",
     "settings": {
-      "title": "",
+      "title": "Torrent widget'ı için ayarlar",
       "refreshInterval": {
-        "label": ""
+        "label": "Yenileme aralığı (saniye)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Tamamlanan torrentleri görüntüle"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Eski torrentleri göster"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "",
-      "lastUpdated": ""
+      "error": "Hata",
+      "lastUpdated": "Son Güncelleme {{time}}"
     },
     "table": {
       "header": {
         "name": "İsim",
-        "size": "",
+        "size": "Boyut",
         "download": "İndirme",
         "upload": "Yükleme",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "ETA (Kalan Süre)",
+        "progress": "İlerleme"
       },
       "item": {
-        "text": ""
+        "text": "{{appName}} tarafından yönetilen, {{ratio}} oranı"
       },
       "body": {
         "nothingFound": "Torrent bulunamadı"
@@ -46,26 +46,26 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Desteklenen Torrent istemcisi bulunamadı!",
+        "text": "Mevcut indirmelerinizi görüntülemek için desteklenen bir Torrent istemcisi ekleyin"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Beklenmeyen bir hata oluştu",
+        "text": "Homarr, Torrent istemcilerinizle iletişim kuramadı. Lütfen yapılandırmanızı kontrol edin"
       }
     },
     "loading": {
       "title": "Yükleniyor..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Tarafından yönetilen",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Kuyruk pozisyonu - {{position}}",
+        "progress": "İlerleme - %{{progress}}",
+        "totalSelectedSize": "Toplam - {{totalSize}}",
+        "state": "Durum - {{state}}",
+        "ratio": "Oran -",
+        "completed": "Tamamlanan"
       }
     }
   }
