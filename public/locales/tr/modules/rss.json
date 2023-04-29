@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "rssFeedUrl": {
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
+      }
+    }
+  }
+}
