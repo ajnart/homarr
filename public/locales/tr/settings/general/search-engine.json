@@ -1,19 +1,19 @@
 {
-  "title": "",
-  "configurationName": "",
+  "title": "Arama motoru",
+  "configurationName": "Arama motoru yapılandırma",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Kullanabileceğiniz birden fazla önek var! Bunları sorgunuzun önüne eklemek, sonuçları filtreleyecektir. !s (Web), !t (Torrentler), !y (YouTube) ve !m (Medya).",
+    "placeholderTip": "%s sorgu için bir yer tutucu olarak kullanılabilir."
   },
   "customEngine": {
-    "title": "",
-    "label": "",
-    "placeholder": ""
+    "title": "Özel arama motoru",
+    "label": "Sorgu URL’si",
+    "placeholder": "Özel Sorgu URL'si"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Arama sonucunu yeni sekmede aç"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Arama etkinleştirildi"
   }
 }
