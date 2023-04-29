@@ -1,27 +1,21 @@
 import { Group, Stack, Text } from '@mantine/core';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '../../config/provider';
+import { RouterOutputs, api } from '~/utils/api';
 import { bytes } from '../../tools/bytesHelper';
 import { percentage } from '../../tools/shared/math/percentage.tool';
-import { DashDotInfo } from './DashDotCompactNetwork';
 
 interface DashDotCompactStorageProps {
-  info: DashDotInfo;
-  widgetId: string;
+  info: RouterOutputs['dashDot']['info'];
+  url: string;
 }
 
-export const DashDotCompactStorage = ({ info, widgetId }: DashDotCompactStorageProps) => {
+export const DashDotCompactStorage = ({ info, url }: DashDotCompactStorageProps) => {
   const { t } = useTranslation('modules/dashdot');
-  const { data: storageLoad } = useDashDotStorage(widgetId);
+  const { data: storageLoad } = useDashDotStorage(url);
 
-  const totalUsed = calculateTotalLayoutSize({
-    layout: storageLoad?.layout ?? [],
-    key: 'load',
-  });
+  const totalUsed = calculateTotalCount(storageLoad ?? []);
   const totalSize = calculateTotalLayoutSize({
-    layout: info?.storage?.layout ?? [],
+    layout: info?.storage ?? [],
     key: 'size',
   });
 
@@ -44,36 +38,13 @@ const calculateTotalLayoutSize = <TLayoutItem,>({
   layout,
   key,
 }: CalculateTotalLayoutSizeProps<TLayoutItem>) =>
-  layout.reduce((total, current) => total + (current[key] as number), 0);
+  calculateTotalCount(layout.map((x) => x[key] as number));
+
+const calculateTotalCount = (items: number[]) => items.reduce((p: number, c) => p + c, 0);
 
 interface CalculateTotalLayoutSizeProps<TLayoutItem> {
   layout: TLayoutItem[];
   key: keyof TLayoutItem;
 }
 
-const useDashDotStorage = (widgetId: string) => {
-  const { name: configName, config } = useConfigContext();
-
-  return useQuery({
-    queryKey: [
-      'dashdot/storage',
-      {
-        configName,
-        url: config?.widgets.find((x) => x.type === 'dashdot')?.properties.url,
-        widgetId,
-      },
-    ],
-    queryFn: () => fetchDashDotStorageLoad(configName, widgetId),
-  });
-};
-
-async function fetchDashDotStorageLoad(configName: string | undefined, widgetId: string) {
-  if (!configName) throw new Error('configName is undefined');
-  return (await (
-    await axios.get('/api/modules/dashdot/storage', { params: { configName, widgetId } })
-  ).data) as DashDotStorageLoad;
-}
-
-interface DashDotStorageLoad {
-  layout: { load: number }[];
-}
+const useDashDotStorage = (dashDotUrl: string) => api.dashDot.storage.useQuery({ url: dashDotUrl });

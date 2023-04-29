@@ -8,7 +8,7 @@ import { BackendConfigType, ConfigType } from '~/types/config';
 
 const DEFAULT_CONFIG_NAME = 'default';
 const CONFIG_DIRECTORY_PATH = './data/configs';
-const configNameSchema = z
+export const configNameSchema = z
   .string()
   .min(1)
   .regex(/^[A-Za-z0-9\-_\s]+$/g);
