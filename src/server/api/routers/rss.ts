@@ -33,7 +33,7 @@ const rssFeedResultObjectSchema = z
             categories: z.array(z.string()).or(z.undefined()),
             title: z.string(),
             content: z.string(),
-            pubDate: z.number(),
+            pubDate: z.string(),
           })
         ),
       }),

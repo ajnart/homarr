@@ -200,7 +200,7 @@ export const useGetRssFeeds = (feedUrls: string[], refreshInterval: number) =>
     }
   );
 
-function formatDate(input: number): string {
+function formatDate(input: string): string {
   // Parse the input date as a local date
   try {
     const inputDate = dayjs(new Date(input));
