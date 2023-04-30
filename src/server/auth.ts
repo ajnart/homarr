@@ -1,7 +1,10 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import bcrypt from 'bcrypt';
 import { type GetServerSidePropsContext } from 'next';
 import { getServerSession, type DefaultSession, type NextAuthOptions } from 'next-auth';
+import Credentials from 'next-auth/providers/credentials';
+import { env } from '~/env.mjs';
 import { prisma } from '~/server/db';
+import { loginSchema } from '~/validation/auth';
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -31,25 +34,58 @@ declare module 'next-auth' {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
+    jwt: ({ token }) => token,
+    session({ session, token }) {
+      if (token && session.user) {
+        // eslint-disable-next-line no-param-reassign
+        session.user.id = token.id as string;
+        // eslint-disable-next-line no-param-reassign
+        session.user.name = token.name as string;
+      }
+
+      return session;
+    },
+  },
+  secret: env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: '/login',
+    newUser: '/register',
+    error: '/login',
+  },
+  providers: [
+    Credentials({
+      name: 'credentials',
+      credentials: {
+        name: {
+          label: 'Username',
+          type: 'text',
+        },
+        password: { label: 'Password', type: 'password' },
+      },
+      authorize: async (credentials) => {
+        const cred = await loginSchema.parseAsync(credentials);
+
+        const user = await prisma.user.findFirst({
+          where: { name: cred.username },
+        });
+
+        if (!user) {
+          return null;
+        }
+
+        const isValidPassword = bcrypt.compareSync(cred.password, user.password);
+
+        if (!isValidPassword) {
+          return null;
+        }
+
+        return {
+          id: user.id,
+          name: user.name,
+        };
       },
     }),
-  },
-  adapter: PrismaAdapter(prisma),
-  providers: [
-    /**
-     * ...add more providers here.
-     *
-     * Most other providers require a bit more work than the Discord provider. For example, the
-     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
-     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     */
+    // ...add more providers here
   ],
 };
 
