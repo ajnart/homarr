@@ -10,7 +10,7 @@
   "changePosition": "Pozisyon değiştir",
   "remove": "Kaldır",
   "removeConfirm": "{{item}}'i kaldırmak istediğinizden emin misiniz?",
-  "createItem": "yeni {{item}}",
+  "createItem": "+ yeni {{item}}",
   "sections": {
     "settings": "Ayarlar",
     "dangerZone": "Tehlikeli bölge"
