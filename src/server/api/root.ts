@@ -9,6 +9,7 @@ import { overseerrRouter } from './routers/overseerr';
 import { rssRouter } from './routers/rss';
 import { usenetRouter } from './routers/usenet';
 import { calendarRouter } from './routers/calendar';
+import { pingRouter } from './routers/ping';
 
 /**
  * This is the primary router for your server.
@@ -26,6 +27,7 @@ export const appRouter = createTRPCRouter({
   rss: rssRouter,
   usenet: usenetRouter,
   calendar: calendarRouter,
+  ping: pingRouter,
 });
 
 // export type definition of API

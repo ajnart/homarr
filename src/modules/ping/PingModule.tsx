@@ -7,6 +7,9 @@ import { useEffect, useState } from 'react';
 import { useConfigContext } from '../../config/provider';
 import { IModule } from '../ModuleTypes';
 
+/**
+ * @deprecated TODO: remove
+ */
 export const PingModule: IModule = {
   title: 'Ping Services',
   icon: Plug,
@@ -14,6 +17,9 @@ export const PingModule: IModule = {
   id: 'ping',
 };
 
+/**
+ * @deprecated
+ */
 export default function PingComponent(props: any) {
   type State = 'loading' | 'down' | 'online';
   const { config } = useConfigContext();
