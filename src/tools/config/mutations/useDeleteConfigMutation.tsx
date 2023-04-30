@@ -1,14 +1,12 @@
 import { showNotification } from '@mantine/notifications';
 import { IconX } from '@tabler/icons';
-import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
 
 export const useDeleteConfigMutation = (configName: string) => {
   const { t } = useTranslation(['settings/general/config-changer']);
 
-  return useMutation({
-    mutationKey: ['configs/delete', { configName }],
-    mutationFn: () => fetchDeletion(configName),
+  return api.config.deleteByName.useMutation({
     onError() {
       showNotification({
         title: t('buttons.delete.notifications.deleteFailed.title'),
@@ -21,6 +19,3 @@ export const useDeleteConfigMutation = (configName: string) => {
     },
   });
 };
-
-const fetchDeletion = async (configName: string) =>
-  (await fetch(`/api/configs/${configName}`, { method: 'DELETE' })).json();

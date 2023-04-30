@@ -1,11 +1,19 @@
-import { useQuery } from '@tanstack/react-query';
-import { MediaRequest } from './media-request-types';
+import { useConfigContext } from '~/config/provider';
+import { constructClientSecretChangesForIntegrations } from '~/server/api/helpers/apps';
+import { mediaRequestIntegrationTypes } from '~/server/api/helpers/integrations';
+import { api } from '~/utils/api';
 
-export const useMediaRequestQuery = () => useQuery({
-  queryKey: ['media-requests'],
-  queryFn: async () => {
-    const response = await fetch('/api/modules/media-requests');
-    return (await response.json()) as MediaRequest[];
-  },
-  refetchInterval: 3 * 60 * 1000,
-});
+export const useMediaRequestQuery = () => {
+  const { name, config } = useConfigContext();
+
+  return api.mediaRequests.all.useQuery(
+    {
+      configName: name!,
+      apps: constructClientSecretChangesForIntegrations(config!.apps, mediaRequestIntegrationTypes),
+    },
+    {
+      refetchInterval: 3 * 60 * 100,
+      enabled: name !== undefined && config !== undefined,
+    }
+  );
+};

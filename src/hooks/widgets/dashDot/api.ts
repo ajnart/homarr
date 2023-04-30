@@ -1,154 +1,173 @@
-import { useMutation, useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { Results } from 'sabnzbd-api';
-import type {
-  UsenetQueueRequestParams,
-  UsenetQueueResponse,
-} from '../../../pages/api/modules/usenet/queue';
-import type {
-  UsenetHistoryRequestParams,
-  UsenetHistoryResponse,
-} from '../../../pages/api/modules/usenet/history';
-import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
-import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
+import { useConfigContext } from '~/config/provider';
+import { constructClientSecretChangesForIntegrations } from '~/server/api/helpers/apps';
+import { usenetIntegrationTypes } from '~/server/api/helpers/integrations';
+import { api } from '~/utils/api';
+import type { UsenetHistoryRequestParams } from '../../../pages/api/modules/usenet/history';
+import type { UsenetQueueRequestParams } from '../../../pages/api/modules/usenet/queue';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
 
 const POLLING_INTERVAL = 2000;
 
-export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
-  useQuery(
-    ['usenetInfo', params.appId],
-    async () =>
-      (
-        await axios.get<UsenetInfoResponse>('/api/modules/usenet', {
-          params,
-        })
-      ).data,
-    {
-      refetchInterval: POLLING_INTERVAL,
-      keepPreviousData: true,
-      retry: 2,
-      enabled: Boolean(params.appId),
-    }
-  );
+export const useGetUsenetInfo = (appId: string | null) => {
+  const { name, config } = useConfigContext();
 
-export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
-  useQuery(
-    ['usenetDownloads', ...Object.values(params)],
-    async () =>
-      (
-        await axios.get<UsenetQueueResponse>('/api/modules/usenet/queue', {
-          params,
-        })
-      ).data,
+  const app = constructClientSecretChangesForIntegrations(
+    config?.apps.filter((app) => app.id === appId) ?? [],
+    usenetIntegrationTypes
+  )[0];
+
+  return api.usenet.info.useQuery(
     {
+      configName: name!,
+      app,
+    },
+    {
+      enabled: appId !== null && app !== undefined && name !== undefined,
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
     }
   );
+};
 
-export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) =>
-  useQuery(
-    ['usenetHistory', ...Object.values(params)],
-    async () =>
-      (
-        await axios.get<UsenetHistoryResponse>('/api/modules/usenet/history', {
-          params,
-        })
-      ).data,
+export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) => {
+  const { name, config } = useConfigContext();
+
+  const app = constructClientSecretChangesForIntegrations(
+    config?.apps.filter((app) => app.id === params.appId) ?? [],
+    usenetIntegrationTypes
+  )[0];
+
+  return api.usenet.queue.useQuery(
     {
+      configName: name!,
+      app,
+      offset: params.offset,
+      limit: params.limit,
+    },
+    {
+      enabled: app !== undefined && name !== undefined,
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
     }
   );
+};
 
-export const usePauseUsenetQueue = (params: UsenetPauseRequestParams) =>
-  useMutation(
-    ['usenetPause', ...Object.values(params)],
-    async () =>
-      (
-        await axios.post<Results>(
-          '/api/modules/usenet/pause',
-          {},
+export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) => {
+  const { name, config } = useConfigContext();
+
+  const app = constructClientSecretChangesForIntegrations(
+    config?.apps.filter((app) => app.id === params.appId) ?? [],
+    usenetIntegrationTypes
+  )[0];
+
+  return api.usenet.history.useQuery(
+    {
+      configName: name!,
+      app,
+      limit: params.limit,
+      offset: params.offset,
+    },
+    {
+      enabled: app !== undefined && name !== undefined,
+      refetchInterval: POLLING_INTERVAL,
+      keepPreviousData: true,
+      retry: 2,
+    }
+  );
+};
+
+export const usePauseUsenetQueueMutation = () => {
+  const utils = api.useContext();
+  const { mutateAsync: pauseAsync } = api.usenet.pause.useMutation({
+    async onMutate({ app, configName }) {
+      await utils.usenet.info.cancel({ app, configName });
+      const previousInfo = utils.usenet.info.getData({ app, configName });
+
+      if (previousInfo) {
+        utils.usenet.info.setData(
+          { app, configName },
           {
-            params,
-          }
-        )
-      ).data,
-    {
-      async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.appId]);
-        const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
-          'usenetInfo',
-          params.appId,
-        ]);
-
-        if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
             ...previousInfo,
             paused: true,
-          });
-        }
-
-        return { previousInfo };
-      },
-      onError(err, _, context) {
-        if (context?.previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.appId],
-            context.previousInfo
-          );
-        }
-      },
-      onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.appId]);
-      },
-    }
-  );
-
-export const useResumeUsenetQueue = (params: UsenetResumeRequestParams) =>
-  useMutation(
-    ['usenetResume', ...Object.values(params)],
-    async () =>
-      (
-        await axios.post<Results>(
-          '/api/modules/usenet/resume',
-          {},
-          {
-            params,
           }
-        )
-      ).data,
-    {
-      async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.appId]);
-        const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
-          'usenetInfo',
-          params.appId,
-        ]);
+        );
+      }
 
-        if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
+      return { previousInfo };
+    },
+    onError(err, variables, context) {
+      if (context?.previousInfo) {
+        utils.usenet.info.setData(variables, context.previousInfo);
+      }
+    },
+    onSettled() {
+      utils.usenet.info.invalidate();
+    },
+  });
+  const { name, config } = useConfigContext();
+
+  return async (appId: string) => {
+    if (name === undefined || config === undefined) return;
+
+    const app = constructClientSecretChangesForIntegrations(
+      config?.apps.filter((app) => app.id === appId) ?? [],
+      usenetIntegrationTypes
+    )[0];
+
+    const res = await pauseAsync({
+      configName: name,
+      app,
+    });
+    // eslint-disable-next-line consistent-return
+    return res;
+  };
+};
+
+export const useResumeUsenetQueue = (params: UsenetResumeRequestParams) => {
+  const utils = api.useContext();
+  const { mutateAsync: resumeAsync } = api.usenet.resume.useMutation({
+    async onMutate({ app, configName }) {
+      await utils.usenet.info.cancel({ app, configName });
+      const previousInfo = utils.usenet.info.getData({ app, configName });
+
+      if (previousInfo) {
+        utils.usenet.info.setData(
+          { app, configName },
+          {
             ...previousInfo,
             paused: false,
-          });
-        }
+          }
+        );
+      }
 
-        return { previousInfo };
-      },
-      onError(err, _, context) {
-        if (context?.previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.appId],
-            context.previousInfo
-          );
-        }
-      },
-      onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.appId]);
-      },
-    }
-  );
+      return { previousInfo };
+    },
+    onError(err, variables, context) {
+      if (context?.previousInfo) {
+        utils.usenet.info.setData(variables, context.previousInfo);
+      }
+    },
+    onSettled() {
+      utils.usenet.info.invalidate();
+    },
+  });
+  const { name, config } = useConfigContext();
+
+  return async (appId: string) => {
+    if (name === undefined || config === undefined) return;
+
+    const app = constructClientSecretChangesForIntegrations(
+      config?.apps.filter((app) => app.id === appId) ?? [],
+      usenetIntegrationTypes
+    )[0];
+
+    const res = await resumeAsync({
+      configName: name,
+      app,
+    });
+    // eslint-disable-next-line consistent-return
+    return res;
+  };
+};

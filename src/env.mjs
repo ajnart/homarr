@@ -18,6 +18,14 @@ export const env = createEnv({
       // VERCEL_URL doesn't include `https` so it cant be validated as a URL
       process.env.VERCEL ? z.string().min(1) : z.string().url()
     ),
+    DOCKER_HOST: z.string().or(z.undefined()),
+    DOCKER_PORT: z.string().or(z.undefined()),
+    DISABLE_EDIT_MODE: z
+      .string()
+      .regex(/[true|false]/i)
+      .transform((x) => x.toLowerCase() === 'true')
+      .or(z.undefined())
+      .default('false'),
   },
 
   /**
@@ -27,6 +35,12 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_DISABLE_EDIT_MODE: z
+      .string()
+      .regex(/[true|false]/i)
+      .transform((x) => x.toLowerCase() === 'true')
+      .or(z.undefined())
+      .default('false'),
   },
 
   /**
@@ -38,5 +52,9 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    DOCKER_HOST: process.env.DOCKER_HOST,
+    DOCKER_PORT: process.env.DOCKER_PORT,
+    DISABLE_EDIT_MODE: process.env.DISABLE_EDIT_MODE,
+    NEXT_PUBLIC_DISABLE_EDIT_MODE: process.env.DISABLE_EDIT_MODE,
   },
 });

@@ -6,11 +6,11 @@ import Consola from 'consola';
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { BackendConfigType, ConfigType } from '../../../types/config';
 import { getConfig } from '../../../tools/config/getConfig';
-import widgets from '../../../widgets';
+import { BackendConfigType, ConfigType } from '../../../types/config';
 import { IRssWidget } from '../../../widgets/rss/RssWidgetTile';
 
+// TODO: migrate to tRPC
 function Put(req: NextApiRequest, res: NextApiResponse) {
   if (process.env.DISABLE_EDIT_MODE === 'true') {
     return res.status(409).json({ error: 'Edit mode has been disabled by the administrator' });

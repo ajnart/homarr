@@ -1,8 +1,8 @@
 import { Indicator, Tooltip } from '@mantine/core';
 import Consola from 'consola';
-import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
 import { useConfigContext } from '../../../../config/provider';
 import { AppType } from '../../../../types/app';
 
@@ -16,20 +16,18 @@ export const AppPing = ({ app }: AppPingProps) => {
   const active =
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
-  const { data, isLoading } = useQuery({
-    queryKey: ['ping', { id: app.id, name: app.name }],
-    queryFn: async () => {
-      const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = getIsOk(app, response.status);
-      return {
-        status: response.status,
-        state: isOk ? 'online' : 'down',
-      };
+  const { data, isLoading } = api.ping.url.useQuery(
+    {
+      url: app.url,
     },
-    enabled: active,
-  });
-
-  const isOnline = data?.state === 'online';
+    {
+      select: (data) => ({
+        isOnline: getIsOk(app, data.statusCode),
+        statusCode: data.statusCode,
+      }),
+      enabled: active,
+    }
+  );
 
   if (!active) return null;
 
@@ -37,7 +35,7 @@ export const AppPing = ({ app }: AppPingProps) => {
     <motion.div
       style={{ position: 'absolute', bottom: 20, right: 20, zIndex: 2 }}
       animate={{
-        scale: isOnline ? [1, 0.7, 1] : 1,
+        scale: data?.isOnline ? [1, 0.7, 1] : 1,
       }}
       transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
     >
@@ -47,14 +45,14 @@ export const AppPing = ({ app }: AppPingProps) => {
         label={
           isLoading
             ? t('states.loading')
-            : isOnline
-            ? t('states.online', { response: data.status })
-            : t('states.offline', { response: data?.status })
+            : data?.isOnline
+            ? t('states.online', { response: data.statusCode })
+            : t('states.offline', { response: data?.statusCode })
         }
       >
         <Indicator
           size={15}
-          color={isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
+          color={isLoading ? 'yellow' : data?.isOnline ? 'green' : 'red'}
           children={null}
         />
       </Tooltip>
@@ -63,10 +61,10 @@ export const AppPing = ({ app }: AppPingProps) => {
 };
 
 const getIsOk = (app: AppType, status: number) => {
-if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
-Consola.log('Using new status codes');
-return app.network.statusCodes.includes(status.toString());
-}
-Consola.warn('Using deprecated okStatus');
-return app.network.okStatus.includes(status);
+  if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
+    Consola.log('Using new status codes');
+    return app.network.statusCodes.includes(status.toString());
+  }
+  Consola.warn('Using deprecated okStatus');
+  return app.network.okStatus.includes(status);
 };

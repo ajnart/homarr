@@ -10,8 +10,8 @@ import { useConfigContext } from '../../config/provider';
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import {
   useGetUsenetInfo,
-  usePauseUsenetQueue,
-  useResumeUsenetQueue,
+  usePauseUsenetQueueMutation,
+  useResumeUsenetQueue as useResumeUsenetQueueMutation,
 } from '../../hooks/widgets/dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { AppIntegrationType } from '../../types/app';
@@ -52,7 +52,7 @@ function UseNetTile({ widget }: UseNetTileProps) {
   const { ref, width, height } = useElementSize();
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
-  const { data } = useGetUsenetInfo({ appId: selectedAppId! });
+  const { data } = useGetUsenetInfo(selectedAppId);
 
   useEffect(() => {
     if (!selectedAppId && downloadApps.length) {
@@ -60,8 +60,8 @@ function UseNetTile({ widget }: UseNetTileProps) {
     }
   }, [downloadApps, selectedAppId]);
 
-  const { mutate: pause } = usePauseUsenetQueue({ appId: selectedAppId! });
-  const { mutate: resume } = useResumeUsenetQueue({ appId: selectedAppId! });
+  const pauseAsync = usePauseUsenetQueueMutation();
+  const resumeAsync = useResumeUsenetQueueMutation({ appId: selectedAppId! });
 
   if (downloadApps.length === 0) {
     return (
@@ -107,11 +107,25 @@ function UseNetTile({ widget }: UseNetTileProps) {
       <Tabs.Panel value="queue">
         <UsenetQueueList appId={selectedAppId} />
         {!data ? null : data.paused ? (
-          <Button uppercase onClick={() => resume()} radius="xl" size="xs" fullWidth mt="sm">
+          <Button
+            uppercase
+            onClick={() => resumeAsync(selectedAppId)}
+            radius="xl"
+            size="xs"
+            fullWidth
+            mt="sm"
+          >
             <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
           </Button>
         ) : (
-          <Button uppercase onClick={() => pause()} radius="xl" size="xs" fullWidth mt="sm">
+          <Button
+            uppercase
+            onClick={() => pauseAsync(selectedAppId)}
+            radius="xl"
+            size="xs"
+            fullWidth
+            mt="sm"
+          >
             <IconPlayerPause size={12} style={{ marginRight: 5 }} />{' '}
             {dayjs.duration(data.eta, 's').format('HH:mm')}
           </Button>
