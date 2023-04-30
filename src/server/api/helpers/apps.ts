@@ -22,10 +22,11 @@ export const generateClientAppSchema = <TArray extends readonly IntegrationType[
     }),
   });
 
-export type ClientApp = z.infer<ReturnType<typeof generateClientAppSchema<IntegrationsType>>>;
+export type ClientApp<TIntegrationTypes extends readonly IntegrationType[] = IntegrationsType> =
+  z.infer<ReturnType<typeof generateClientAppSchema<TIntegrationTypes>>>;
 
-export const mergeClientAppsIntoServerApps = (
-  clientApps: ClientApp[],
+export const mergeClientAppsIntoServerApps = <TClientApp extends ClientApp>(
+  clientApps: TClientApp[],
   serverApps: ConfigAppType[]
 ) => clientApps.map((clientApp) => mergeClientAppIntoServerApp(clientApp, serverApps));
 

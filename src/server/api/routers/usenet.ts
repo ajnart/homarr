@@ -7,7 +7,7 @@ import { ClientApp, generateClientAppSchema, mergeClientAppIntoServerApp } from 
 import { usenetIntegrationTypes } from '../helpers/integrations';
 import { getSecretValue } from '../helpers/secrets';
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import { getConfigData } from './config';
+import { configNameSchema, getConfigData } from './config';
 import {
   NzbgetHistoryItem,
   NzbgetQueueItem,
@@ -20,7 +20,7 @@ export const usenetRouter = createTRPCRouter({
     .input(
       z.object({
         app: generateClientAppSchema(usenetIntegrationTypes),
-        configName: z.string(),
+        configName: configNameSchema,
       })
     )
     .query(async ({ input }) => {
@@ -83,7 +83,7 @@ export const usenetRouter = createTRPCRouter({
     .input(
       z.object({
         app: generateClientAppSchema(usenetIntegrationTypes),
-        configName: z.string(),
+        configName: configNameSchema,
         offset: z.number(),
         limit: z.number(),
       })
@@ -153,7 +153,7 @@ export const usenetRouter = createTRPCRouter({
     .input(
       z.object({
         app: generateClientAppSchema(usenetIntegrationTypes),
-        configName: z.string(),
+        configName: configNameSchema,
       })
     )
     .mutation(async ({ input }) => {
@@ -190,7 +190,7 @@ export const usenetRouter = createTRPCRouter({
     .input(
       z.object({
         app: generateClientAppSchema(usenetIntegrationTypes),
-        configName: z.string(),
+        configName: configNameSchema,
         offset: z.number(),
         limit: z.number(),
       })
@@ -289,7 +289,7 @@ export const usenetRouter = createTRPCRouter({
     .input(
       z.object({
         app: generateClientAppSchema(usenetIntegrationTypes),
-        configName: z.string(),
+        configName: configNameSchema,
       })
     )
     .mutation(async ({ input }) => {

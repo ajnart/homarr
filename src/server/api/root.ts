@@ -8,6 +8,7 @@ import { mediaServerRouter } from './routers/media-server';
 import { overseerrRouter } from './routers/overseerr';
 import { rssRouter } from './routers/rss';
 import { usenetRouter } from './routers/usenet';
+import { calendarRouter } from './routers/calendar';
 
 /**
  * This is the primary router for your server.
@@ -24,6 +25,7 @@ export const appRouter = createTRPCRouter({
   overseerr: overseerrRouter,
   rss: rssRouter,
   usenet: usenetRouter,
+  calendar: calendarRouter,
 });
 
 // export type definition of API
