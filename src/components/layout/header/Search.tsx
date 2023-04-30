@@ -311,7 +311,10 @@ const useOverseerrQuery = (props: {
   const { name, config } = useConfigContext();
   const firstApp = config?.apps
     ? undefined
-    : constructClientSecretChangesForIntegrations(config!.apps, mediaRequestIntegrationTypes)[0];
+    : constructClientSecretChangesForIntegrations(
+        config?.apps ?? [],
+        mediaRequestIntegrationTypes
+      )[0];
 
   return api.overseerr.all.useQuery(
     {
