@@ -1,9 +1,11 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons';
-import { useQuery } from '@tanstack/react-query';
 import { i18n } from 'next-i18next';
 import { useState } from 'react';
+import { constructClientSecretChangesForIntegrations } from '~/server/api/helpers/apps';
+import { mediaIntegrationTypes } from '~/server/api/helpers/integrations';
+import { api } from '~/utils/api';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -50,21 +52,29 @@ interface CalendarTileProps {
 
 function CalendarTile({ widget }: CalendarTileProps) {
   const { colorScheme } = useMantineTheme();
-  const { name: configName } = useConfigContext();
+  const { name: configName, config } = useConfigContext();
   const [month, setMonth] = useState(new Date());
 
-  const { data: medias } = useQuery({
-    queryKey: ['calendar/medias', { month: month.getMonth(), year: month.getFullYear() }],
-    staleTime: 1000 * 60 * 60 * 5,
-    queryFn: async () =>
-      (await (
-        await fetch(
-          `/api/modules/calendar?year=${month.getFullYear()}&month=${
-            month.getMonth() + 1
-          }&configName=${configName}&widgetId=${widget.id}`
-        )
-      ).json()) as MediasType,
-  });
+  const apps = constructClientSecretChangesForIntegrations(
+    config?.apps ?? [],
+    mediaIntegrationTypes
+  );
+
+  const { data: medias } = api.calendar.medias.useQuery(
+    {
+      month: month.getMonth(),
+      year: month.getFullYear(),
+      apps,
+      configName: configName!,
+      options: {
+        useSonarrv4: widget.properties.useSonarrv4,
+      },
+    },
+    {
+      enabled: apps.length >= 1 && configName !== undefined,
+      staleTime: 1000 * 60 * 60 * 5,
+    }
+  );
 
   return (
     <Calendar

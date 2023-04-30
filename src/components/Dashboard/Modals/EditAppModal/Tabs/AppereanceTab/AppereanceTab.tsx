@@ -2,9 +2,10 @@ import { Flex, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useEffect } from 'react';
-import { useGetDashboardIcons } from '../../../../../../hooks/icons/useGetDashboardIcons';
 import { AppType } from '../../../../../../types/app';
 import { IconSelector } from './IconSelector';
+
+import { api } from '~/utils/api';
 
 interface AppearanceTabProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;
@@ -53,3 +54,10 @@ export const AppearanceTab = ({
 };
 
 const replaceCharacters = (value: string) => value.toLowerCase().replaceAll('', '-');
+
+export const useGetDashboardIcons = () =>
+  api.icon.all.useQuery(undefined, {
+    refetchOnMount: true,
+    staleTime: 10 * 60 * 1000, // When opening the modal the data is only refetched every 10 minutes.
+    refetchOnWindowFocus: false,
+  });

@@ -1,12 +1,9 @@
 import { Center, createStyles, Grid, Stack, Text, Title } from '@mantine/core';
 import { IconUnlink } from '@tabler/icons';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '../../config/provider';
+import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotGraph } from './DashDotGraph';
 
 const definition = defineWidget({
@@ -160,7 +157,6 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { data: info } = useDashDotInfo({
     dashDotUrl,
     enabled: !detectedProtocolDowngrade,
-    widgetId: widget.id,
   });
 
   if (detectedProtocolDowngrade) {
@@ -198,7 +194,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
                     isCompact={g.subValues.compactView ?? false}
                     multiView={g.subValues.multiView ?? false}
                     usePercentages={usePercentages}
-                    widgetId={widget.id}
+                    url={dashDotUrl}
                   />
                 </Grid.Col>
               ))}
@@ -209,37 +205,16 @@ function DashDotTile({ widget }: DashDotTileProps) {
   );
 }
 
-const useDashDotInfo = ({
-  dashDotUrl,
-  enabled,
-  widgetId,
-}: {
-  dashDotUrl: string;
-  enabled: boolean;
-  widgetId: string;
-}) => {
-  const { name: configName } = useConfigContext();
-  return useQuery({
-    refetchInterval: 50000,
-    queryKey: [
-      'dashdot/info',
-      {
-        configName,
-        dashDotUrl,
-      },
-    ],
-    queryFn: () => fetchDashDotInfo(configName, widgetId),
-    enabled,
-  });
-};
-
-const fetchDashDotInfo = async (configName: string | undefined, widgetId: string) => {
-  if (!configName) return {} as DashDotInfo;
-  return (await (
-    await axios.get('/api/modules/dashdot/info', { params: { configName, widgetId } })
-  ).data) as DashDotInfo;
-};
-
+const useDashDotInfo = ({ dashDotUrl, enabled }: { dashDotUrl: string; enabled: boolean }) =>
+  api.dashDot.info.useQuery(
+    {
+      url: dashDotUrl,
+    },
+    {
+      refetchInterval: 50000,
+      enabled,
+    }
+  );
 export const useDashDotTileStyles = createStyles((theme) => ({
   graphsContainer: {
     marginRight: `calc(${theme.spacing.sm} * -1)`,

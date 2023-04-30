@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Button, Group } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
@@ -11,7 +10,7 @@ import {
   IconTrash,
 } from '@tabler/icons';
 import axios from 'axios';
-import Dockerode from 'dockerode';
+import Dockerode, { ContainerInfo } from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { TFunction } from 'react-i18next';
@@ -20,70 +19,33 @@ import { useConfigContext } from '../../config/provider';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
 import { MatchingImages, ServiceType, tryMatchPort } from '../../tools/types';
 import { AppType } from '../../types/app';
+import { api } from '~/utils/api';
 
 let t: TFunction<'modules/docker', undefined>;
 
-function sendDockerCommand(
-  action: string,
-  containerId: string,
-  containerName: string,
-  reload: () => void
-) {
-  showNotification({
-    id: containerId,
-    loading: true,
-    title: `${t(`actions.${action}.start`)} ${containerName}`,
-    message: undefined,
-    autoClose: false,
-    withCloseButton: false,
-  });
-  axios
-    .get(`/api/docker/container/${containerId}?action=${action}`)
-    .then((res) => {
-      updateNotification({
-        id: containerId,
-        title: containerName,
-        message: `${t(`actions.${action}.end`)} ${containerName}`,
-        icon: <IconCheck />,
-        autoClose: 2000,
-      });
-    })
-    .catch((err) => {
-      updateNotification({
-        id: containerId,
-        color: 'red',
-        title: t('errors.unknownError.title'),
-        message: err.response.data.reason,
-        autoClose: 2000,
-      });
-    })
-    .finally(() => {
-      reload();
-    });
-}
-
 export interface ContainerActionBarProps {
   selected: Dockerode.ContainerInfo[];
-  reload: () => void;
+  isLoading: boolean;
 }
 
-export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
+export default function ContainerActionBar({ selected, isLoading }: ContainerActionBarProps) {
   t = useTranslation('modules/docker').t;
-  const [isLoading, setisLoading] = useState(false);
   const { name: configName, config } = useConfigContext();
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
+  const utils = api.useContext();
+  const start = useDockerCommand('start');
+  const stop = useDockerCommand('stop');
+  const restart = useDockerCommand('restart');
+  const remove = useDockerCommand('remove');
+  const refresh = () => {
+    utils.docker.all.invalidate();
+  };
 
   return (
     <Group spacing="xs">
       <Button
         leftIcon={<IconRefresh />}
-        onClick={() => {
-          setisLoading(true);
-          setTimeout(() => {
-            reload();
-            setisLoading(false);
-          }, 750);
-        }}
+        onClick={refresh}
         variant="light"
         color="violet"
         loading={isLoading}
@@ -93,13 +55,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       </Button>
       <Button
         leftIcon={<IconRotateClockwise />}
-        onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('restart', container.Id, container.Names[0].substring(1), reload)
-            )
-          )
-        }
+        onClick={() => Promise.all(selected.map((container) => restart(container)))}
         variant="light"
         color="orange"
         radius="md"
@@ -109,13 +65,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       </Button>
       <Button
         leftIcon={<IconPlayerStop />}
-        onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('stop', container.Id, container.Names[0].substring(1), reload)
-            )
-          )
-        }
+        onClick={() => Promise.all(selected.map((container) => stop(container)))}
         variant="light"
         color="red"
         radius="md"
@@ -125,13 +75,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       </Button>
       <Button
         leftIcon={<IconPlayerPlay />}
-        onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('start', container.Id, container.Names[0].substring(1), reload)
-            )
-          )
-        }
+        onClick={() => Promise.all(selected.map((container) => start(container)))}
         variant="light"
         color="green"
         radius="md"
@@ -144,13 +88,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         color="red"
         variant="light"
         radius="md"
-        onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('remove', container.Id, container.Names[0].substring(1), reload)
-            )
-          )
-        }
+        onClick={() => Promise.all(selected.map((container) => remove(container)))}
         disabled={selected.length === 0}
       >
         {t('actionBar.remove.title')}
@@ -238,5 +176,52 @@ const tryMatchService = (container: Dockerode.ContainerInfo | undefined) => {
     icon: `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${name
       .replace(/\s+/g, '-')
       .toLowerCase()}.png`,
+  };
+};
+
+const useDockerCommand = (action: 'start' | 'stop' | 'restart' | 'remove') => {
+  const { mutateAsync } = api.docker[action].useMutation();
+  const utils = api.useContext();
+
+  return async (container: ContainerInfo) => {
+    const containerName = container.Names[0].substring(1);
+    showNotification({
+      id: container.Id,
+      loading: true,
+      title: `${t(`actions.${action}.start`)} ${containerName}`,
+      message: undefined,
+      autoClose: false,
+      withCloseButton: false,
+    });
+
+    await mutateAsync(
+      {
+        id: container.Id,
+      },
+      {
+        onSuccess() {
+          const containerName = container.Names[0].substring(1);
+
+          updateNotification({
+            id: container.Id,
+            title: containerName,
+            message: `${t(`actions.${action}.end`)} ${containerName}`,
+            icon: <IconCheck />,
+            autoClose: 2000,
+          });
+          utils.docker.all.invalidate();
+        },
+        onError() {
+          updateNotification({
+            id: container.Id,
+            color: 'red',
+            title: t('errors.unknownError.title'),
+            // TODO: Add error message
+            message: undefined,
+            autoClose: 2000,
+          });
+        },
+      }
+    );
   };
 };
