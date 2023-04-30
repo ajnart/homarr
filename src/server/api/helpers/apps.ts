@@ -29,7 +29,10 @@ export const mergeClientAppsIntoServerApps = (
   serverApps: ConfigAppType[]
 ) => clientApps.map((clientApp) => mergeClientAppIntoServerApp(clientApp, serverApps));
 
-export const mergeClientAppIntoServerApp = (clientApp: ClientApp, serverApps: ConfigAppType[]) => ({
+export const mergeClientAppIntoServerApp = <TClientApp extends ClientApp>(
+  clientApp: TClientApp,
+  serverApps: ConfigAppType[]
+) => ({
   ...clientApp,
   integration: {
     ...clientApp.integration,
