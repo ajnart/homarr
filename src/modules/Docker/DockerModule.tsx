@@ -4,7 +4,7 @@ import { showNotification } from '@mantine/notifications';
 import { IconBrandDocker, IconX } from '@tabler/icons';
 import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useCardStyles } from '../../components/layout/useCardStyles';
 import { useConfigContext } from '../../config/provider';
 
@@ -17,7 +17,6 @@ export default function DockerMenuButton(props: any) {
   const [opened, setOpened] = useState(false);
   const { config } = useConfigContext();
   const dockerEnabled = config?.settings.customization.layout.enabledDocker || false;
-  const utils = api.useContext();
   const [selection, setSelection] = useState<Docker.ContainerInfo[]>([]);
   const { data: containers, isLoading } = useDockerContainersQuery({
     enabled: dockerEnabled,
@@ -28,7 +27,7 @@ export default function DockerMenuButton(props: any) {
 
   const { t } = useTranslation('modules/docker');
 
-  if (!dockerEnabled || env.DISABLE_EDIT_MODE) {
+  if (!dockerEnabled || env.NEXT_PUBLIC_DISABLE_EDIT_MODE) {
     return null;
   }
 
