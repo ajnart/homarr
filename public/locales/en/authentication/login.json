@@ -1,27 +1,36 @@
 {
   "title": "Welcome back!",
-  "text": "Please enter your password",
+  "text": "Please login to view your dashboards",
   "form": {
     "fields": {
+      "username": {
+        "label": "Username",
+        "placeholder": "Your username"
+      },
       "password": {
         "label": "Password",
         "placeholder": "Your password"
       }
     },
     "buttons": {
-      "submit": "Sign in"
+      "submit": "Login"
+    },
+    "links": {
+      "register": "Don't have an account?"
     }
   },
   "notifications": {
     "checking": {
-      "title": "Checking your password",
-      "message": "Your password is being checked..."
+      "title": "Checking your login",
+      "message": "Your login is being checked..."
     },
     "correct": {
-      "title": "Sign in successful, redirecting..."
+      "title": "Login successful",
+      "message": "You are being redirected to your dashboard"
     },
     "wrong": {
-      "title": "The password you entered is incorrect, please try again."
+      "title": "Login failed",
+      "message": "Please provide correct login informations"
     }
   }
 }
