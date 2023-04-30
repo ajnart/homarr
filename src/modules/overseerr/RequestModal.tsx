@@ -1,11 +1,14 @@
 import { Alert, Button, Checkbox, createStyles, Group, Modal, Stack, Table } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons';
-import axios from 'axios';
 import Consola from 'consola';
 import { useTranslation } from 'next-i18next';
 
 import { useState } from 'react';
+import { useConfigContext } from '~/config/provider';
+import { constructClientSecretChangesForIntegrations } from '~/server/api/helpers/apps';
+import { mediaRequestIntegrationTypes } from '~/server/api/helpers/integrations';
+import { api } from '~/utils/api';
 import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
 import { MediaType, Result } from './SearchResult.d';
@@ -27,17 +30,23 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function RequestModal({ base, opened, setOpened }: RequestModalProps) {
-  const [result, setResult] = useState<MovieResult | TvShowResult>();
-  const { secondaryColor } = useColorTheme();
+  const { config, name } = useConfigContext();
+  const app = constructClientSecretChangesForIntegrations(
+    config?.apps ?? [],
+    mediaRequestIntegrationTypes
+  )[0];
+  const { data: result } = api.overseerr.byId.useQuery(
+    {
+      id: base.id,
+      type: base.mediaType,
+      configName: name!,
+      app,
+    },
+    {
+      enabled: opened && config !== undefined && name !== undefined,
+    }
+  );
 
-  function getResults(base: Result) {
-    axios.get(`/api/modules/overseerr/${base.id}?type=${base.mediaType}`).then((res) => {
-      setResult(res.data);
-    });
-  }
-  if (opened && !result) {
-    getResults(base);
-  }
   if (!result || !opened) {
     return null;
   }
@@ -59,6 +68,7 @@ export function MovieRequestModal({
 }) {
   const { secondaryColor } = useColorTheme();
   const { t } = useTranslation('modules/overseerr');
+  const askForMedia = useAskForMedia();
 
   return (
     <Modal
@@ -93,7 +103,7 @@ export function MovieRequestModal({
           <Button
             variant="outline"
             onClick={() => {
-              askForMedia(MediaType.Movie, result.id, result.title, []);
+              askForMedia(result.id, 'movie', result.title, []);
             }}
           >
             {t('popup.item.buttons.request')}
@@ -116,6 +126,7 @@ export function TvRequestModal({
   const [selection, setSelection] = useState<TvShowResultSeason[]>(result.seasons);
   const { classes, cx } = useStyles();
   const { t } = useTranslation('modules/overseerr');
+  const askForMedia = useAskForMedia();
 
   const toggleRow = (container: TvShowResultSeason) =>
     setSelection((current: TvShowResultSeason[]) =>
@@ -197,8 +208,8 @@ export function TvRequestModal({
             disabled={selection.length === 0}
             onClick={() => {
               askForMedia(
-                MediaType.Tv,
                 result.id,
+                'tv',
                 result.name,
                 selection.map((s) => s.seasonNumber)
               );
@@ -212,37 +223,61 @@ export function TvRequestModal({
   );
 }
 
-function askForMedia(type: MediaType, id: number, name: string, seasons?: number[]) {
-  Consola.info(`Requesting ${type} ${id} ${name}`);
-  showNotification({
-    title: 'Request',
-    id: id.toString(),
-    message: `Requesting media ${name}`,
-    color: 'orange',
-    loading: true,
-    autoClose: false,
-    withCloseButton: false,
-    icon: <IconAlertCircle />,
-  });
-  axios
-    .post(`/api/modules/overseerr/${id}`, { type, seasons })
-    .then(() => {
-      updateNotification({
-        id: id.toString(),
-        title: '',
-        color: 'green',
-        message: ` ${name} requested`,
-        icon: <IconCheck />,
-        autoClose: 2000,
-      });
-    })
-    .catch((err) => {
-      updateNotification({
-        id: id.toString(),
-        color: 'red',
-        title: 'There was an error',
-        message: err.message,
-        autoClose: 2000,
-      });
+const useAskForMedia = () => {
+  const { t } = useTranslation('modules/overseerr');
+  const { mutateAsync } = api.overseerr.requestMedia.useMutation();
+  const { name, config } = useConfigContext();
+
+  // TODO: add translations for notifications!
+  return async (id: number, type: MediaType, name: string, seasons?: number[]) => {
+    if (!config || !name) throw new Error('Config or name is not defined');
+
+    Consola.info(`Requesting ${type} ${id} ${name}`);
+    showNotification({
+      title: 'Request',
+      id: id.toString(),
+      message: `Requesting media ${name}`,
+      color: 'orange',
+      loading: true,
+      autoClose: false,
+      withCloseButton: false,
+      icon: <IconAlertCircle />,
     });
-}
+
+    const app = constructClientSecretChangesForIntegrations(
+      config.apps,
+      mediaRequestIntegrationTypes
+    )[0];
+
+    mutateAsync(
+      {
+        id,
+        type,
+        seasons: (seasons ?? []) as number[],
+        app,
+        configName: name,
+      },
+      {
+        onSuccess() {
+          updateNotification({
+            id: id.toString(),
+            title: '',
+            color: 'green',
+            message: ` ${name} requested`,
+            icon: <IconCheck />,
+            autoClose: 2000,
+          });
+        },
+        onError(err) {
+          updateNotification({
+            id: id.toString(),
+            color: 'red',
+            title: 'There was an error',
+            message: err.message,
+            autoClose: 2000,
+          });
+        },
+      }
+    );
+  };
+};

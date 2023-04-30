@@ -13,10 +13,11 @@ import {
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/icons';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import { constructClientSecretChangesForIntegrations } from '~/server/api/helpers/apps';
+import { mediaRequestIntegrationTypes } from '~/server/api/helpers/integrations';
+import { api } from '~/utils/api';
 import { useConfigContext } from '../../../config/provider';
 import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
@@ -145,22 +146,11 @@ export function Search() {
     data: OverseerrResults,
     isLoading,
     error,
-  } = useQuery(
-    ['overseerr', debounced],
-    async () => {
-      const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
-      return res.data.results ?? [];
-    },
-    {
-      enabled:
-        isOverseerrEnabled === true &&
-        selectedSearchEngine.value === 'overseerr' &&
-        debounced.length > 3,
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchInterval: false,
-    }
-  );
+  } = useOverseerrQuery({
+    debouncedValue: debounced,
+    isOverseerrEnabled: isOverseerrEnabled === true,
+    selectedSearchEngine: selectedSearchEngine.value,
+  });
 
   const isModuleEnabled = config?.settings.customization.layout.enabledSearchbar;
   if (!isModuleEnabled) {
@@ -311,4 +301,34 @@ const getOpenTarget = (config: ConfigType | undefined): '_blank' | '_self' => {
   }
 
   return config.settings.common.searchEngine.properties.openInNewTab ? '_blank' : '_self';
+};
+
+const useOverseerrQuery = (props: {
+  isOverseerrEnabled: boolean;
+  selectedSearchEngine: string;
+  debouncedValue: string;
+}) => {
+  const { name, config } = useConfigContext();
+  const firstApp = config?.apps
+    ? undefined
+    : constructClientSecretChangesForIntegrations(config!.apps, mediaRequestIntegrationTypes)[0];
+
+  return api.overseerr.all.useQuery(
+    {
+      configName: name!,
+      app: firstApp!,
+      query: props.debouncedValue,
+    },
+    {
+      enabled:
+        name !== undefined &&
+        firstApp !== undefined &&
+        props.isOverseerrEnabled &&
+        props.selectedSearchEngine === 'overseerr' &&
+        props.debouncedValue.length > 3,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchInterval: false,
+    }
+  );
 };

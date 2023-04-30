@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import { AppType, ConfigAppType, IntegrationType } from '~/types/app';
-import { integrationTypes } from './integrations';
 import { secretFields, secretTypes } from './secrets';
 import { zodUnionLiteralsFromReadonlyStringArray } from './zod';
+import { IntegrationsType } from './integrations';
 
 export const generateClientAppSchema = <TArray extends readonly IntegrationType[]>(array: TArray) =>
   z.object({
@@ -22,29 +22,28 @@ export const generateClientAppSchema = <TArray extends readonly IntegrationType[
     }),
   });
 
-export type ClientApp = z.infer<
-  ReturnType<typeof generateClientAppSchema<typeof integrationTypes>>
->;
+export type ClientApp = z.infer<ReturnType<typeof generateClientAppSchema<IntegrationsType>>>;
 
 export const mergeClientAppsIntoServerApps = (
   clientApps: ClientApp[],
   serverApps: ConfigAppType[]
-) =>
-  clientApps.map((clientApp) => ({
-    ...clientApp,
-    integration: {
-      ...clientApp.integration,
-      properties: mergeSecretProperties(
-        clientApp.integration.properties,
-        serverApps
-          .find((serverApp) => serverApp.id === clientApp.id)
-          ?.integration?.properties.map((p) => ({
-            ...p,
-            value: p.value ?? '',
-          }))
-      ),
-    },
-  }));
+) => clientApps.map((clientApp) => mergeClientAppIntoServerApp(clientApp, serverApps));
+
+export const mergeClientAppIntoServerApp = (clientApp: ClientApp, serverApps: ConfigAppType[]) => ({
+  ...clientApp,
+  integration: {
+    ...clientApp.integration,
+    properties: mergeSecretProperties(
+      clientApp.integration.properties,
+      serverApps
+        .find((serverApp) => serverApp.id === clientApp.id)
+        ?.integration?.properties.map((p) => ({
+          ...p,
+          value: p.value ?? '',
+        }))
+    ),
+  },
+});
 
 export type ChangedClientSecret = ClientApp['integration']['properties'][number];
 
