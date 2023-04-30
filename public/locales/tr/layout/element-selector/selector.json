@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "Yeni bir alan ekle",
-        "text": "Alanlar, Homarr'ın ana öğesidir. Uygulamalarınızı ve diğer bilgileri görüntülemek için kullanılırlar. İstediğiniz kadar alan ekleyebilirsiniz."
+        "title": "Yeni bir döşeme ekle",
+        "text": "Döşemeler, Homarr'ın ana öğesidir. Uygulamalarınızı ve diğer bilgileri görüntülemek için kullanılırlar. İstediğiniz kadar döşeme ekleyebilirsiniz."
     },
     "widgetDescription": "Widget'lar, uygulamalarınız üzerinde daha fazla kontrol sağlamak için uygulamalarınızla etkileşime girer. Genellikle kullanımdan önce ek yapılandırma gerektirirler.",
     "goBack": "Önceki adıma geri dön",
     "actionIcon": {
-        "tooltip": "Alan Ekle"
+        "tooltip": "Araç ve Döşeme Ekle"
     }
 }
