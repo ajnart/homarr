@@ -328,7 +328,7 @@ const useOverseerrQuery = (props: {
         firstApp !== undefined &&
         props.isOverseerrEnabled &&
         props.selectedSearchEngine === 'overseerr' &&
-        props.debouncedValue.length > 3,
+        props.debouncedValue.length >= 1,
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchInterval: false,
