@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import {
   ActionIcon,
   Badge,
@@ -16,10 +15,11 @@ import {
   createStyles,
 } from '@mantine/core';
 import { IconClock, IconRefresh, IconRss } from '@tabler/icons';
-import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 
+import { RouterOutputs, api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -29,7 +29,7 @@ const definition = defineWidget({
   options: {
     rssFeedUrl: {
       type: 'multiple-text',
-      defaultValue: [],
+      defaultValue: [] as string[],
     },
     refreshInterval: {
       type: 'slider',
@@ -54,46 +54,12 @@ interface RssTileProps {
   widget: IRssWidget;
 }
 
-export const useGetRssFeeds = (feedUrls: string[], refreshInterval: number, widgetId: string) =>
-  useQuery({
-    queryKey: ['rss-feeds', feedUrls],
-    // Cache the results for 24 hours
-    cacheTime: 1000 * 60 * 60 * 24,
-    staleTime: 1000 * 60 * refreshInterval,
-    queryFn: async () => {
-      const responses = await Promise.all(
-        feedUrls.map((feedUrl) =>
-          fetch(
-            `/api/modules/rss?widgetId=${widgetId}&feedUrl=${encodeURIComponent(feedUrl)}`
-          ).then((response) => response.json())
-        )
-      );
-      return responses;
-    },
-  });
-
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeeds(
     widget.properties.rssFeedUrl,
-    widget.properties.refreshInterval,
-    widget.id
+    widget.properties.refreshInterval
   );
-  const { classes } = useStyles();
-
-  function formatDate(input: string): string {
-    // Parse the input date as a local date
-    try {
-      const inputDate = dayjs(new Date(input));
-      const now = dayjs(); // Current date and time
-      const difference = now.diff(inputDate, 'ms');
-      const duration = dayjs.duration(difference, 'ms');
-      const humanizedDuration = duration.humanize();
-      return `${humanizedDuration} ago`;
-    } catch (e) {
-      return 'Error';
-    }
-  }
 
   if (!data || isLoading) {
     return (
@@ -119,61 +85,7 @@ function RssTile({ widget }: RssTileProps) {
     <Stack h="100%">
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
         {data.map((feed, index) => (
-          <Stack w="100%" spacing="xs">
-            {feed.feed &&
-              feed.feed.items.map((item: any, index: number) => (
-                <Card
-                  key={index}
-                  withBorder
-                  component={Link ?? 'div'}
-                  href={item.link}
-                  radius="md"
-                  target="_blank"
-                  w="100%"
-                >
-                  {item.enclosure && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      className={classes.backgroundImage}
-                      src={item.enclosure.url ?? undefined}
-                      alt="backdrop"
-                    />
-                  )}
-
-                  <Flex gap="xs">
-                    {item.enclosure && (
-                      <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
-                        <Image
-                          src={item.enclosure?.url ?? undefined}
-                          width={140}
-                          height={140}
-                          radius="md"
-                          withPlaceholder
-                        />
-                      </MediaQuery>
-                    )}
-                    <Flex gap={2} direction="column" w="100%">
-                      {item.categories && (
-                        <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
-                          {item.categories.map((category: any, categoryIndex: number) => (
-                            <Badge key={categoryIndex}>{category}</Badge>
-                          ))}
-                        </Flex>
-                      )}
-
-                      <Text lineClamp={2}>{item.title}</Text>
-                      <Text color="dimmed" size="xs" lineClamp={3}>
-                        {item.content}
-                      </Text>
-
-                      {item.pubDate && (
-                        <InfoDisplay title={feed.feed.title} date={formatDate(item.pubDate)} />
-                      )}
-                    </Flex>
-                  </Flex>
-                </Card>
-              ))}
-          </Stack>
+          <Feed key={index} feed={feed} />
         ))}
       </ScrollArea>
 
@@ -196,6 +108,73 @@ function RssTile({ widget }: RssTileProps) {
   );
 }
 
+interface FeedProps {
+  feed: RouterOutputs['rss']['all'][number];
+}
+
+const Feed = ({ feed }: FeedProps) => {
+  const { classes } = useStyles();
+
+  if (!feed.success) return null;
+
+  return (
+    <Stack w="100%" spacing="xs">
+      {feed.feed.items.map((item, index: number) => (
+        <Card
+          key={index}
+          withBorder
+          component={Link ?? 'div'}
+          href={item.link}
+          radius="md"
+          target="_blank"
+          w="100%"
+        >
+          {item.enclosure && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              className={classes.backgroundImage}
+              src={item.enclosure.url ?? undefined}
+              alt="backdrop"
+            />
+          )}
+
+          <Flex gap="xs">
+            {item.enclosure && (
+              <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
+                <Image
+                  src={item.enclosure.url ?? undefined}
+                  width={140}
+                  height={140}
+                  radius="md"
+                  withPlaceholder
+                />
+              </MediaQuery>
+            )}
+            <Flex gap={2} direction="column" w="100%">
+              {item.categories && (
+                <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
+                  {item.categories.map((category: any, categoryIndex: number) => (
+                    <Badge key={categoryIndex}>{category}</Badge>
+                  ))}
+                </Flex>
+              )}
+
+              <Text lineClamp={2}>{item.title}</Text>
+              <Text color="dimmed" size="xs" lineClamp={3}>
+                {item.content}
+              </Text>
+
+              {item.pubDate && (
+                <InfoDisplay title={feed.feed.title} date={formatDate(item.pubDate)} />
+              )}
+            </Flex>
+          </Flex>
+        </Card>
+      ))}
+    </Stack>
+  );
+};
+
 const InfoDisplay = ({ date, title }: { date: string; title: string | undefined }) => (
   <Group mt="auto" spacing="xs">
     <IconClock size={14} />
@@ -209,6 +188,31 @@ const InfoDisplay = ({ date, title }: { date: string; title: string | undefined 
     )}
   </Group>
 );
+
+export const useGetRssFeeds = (feedUrls: string[], refreshInterval: number) =>
+  api.rss.all.useQuery(
+    {
+      urls: feedUrls,
+    },
+    {
+      cacheTime: 1000 * 60 * 60 * 24,
+      staleTime: 1000 * 60 * refreshInterval,
+    }
+  );
+
+function formatDate(input: number): string {
+  // Parse the input date as a local date
+  try {
+    const inputDate = dayjs(new Date(input));
+    const now = dayjs(); // Current date and time
+    const difference = now.diff(inputDate, 'ms');
+    const duration = dayjs.duration(difference, 'ms');
+    const humanizedDuration = duration.humanize();
+    return `${humanizedDuration} ago`;
+  } catch (e) {
+    return 'Error';
+  }
+}
 
 const useStyles = createStyles(({ colorScheme }) => ({
   backgroundImage: {
