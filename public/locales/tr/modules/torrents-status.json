@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Eski torrentleri göster"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "{{appName}} tarafından yönetilen, {{ratio}} oranı"
       },
       "body": {
-        "nothingFound": "Torrent bulunamadı"
+        "nothingFound": "Torrent bulunamadı",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
