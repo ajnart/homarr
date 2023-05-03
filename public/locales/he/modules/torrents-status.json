@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "הצג טורנטים שהושלמו"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "מנוהל על ידי {{appName}}, יחס {{ratio}}"
       },
       "body": {
-        "nothingFound": "לא נמצא טורנט"
+        "nothingFound": "לא נמצא טורנט",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
