@@ -14,10 +14,10 @@
         "label": "Angehaltene Torrents anzeigen"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Labelliste ist eine Whitelist (statt einer Blacklist)"
       },
       "labelFilter": {
-        "label": "",
+        "label": "Labelliste",
         "description": ""
       }
     }
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Keine Torrents gefunden",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} Einträge sind durch Filter ausgeblendet"
       }
     },
     "lineChart": {
