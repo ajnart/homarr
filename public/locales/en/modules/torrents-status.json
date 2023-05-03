@@ -14,11 +14,11 @@
         "label": "Display stale torrents"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Label list is a whitelist (instead of blacklist)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Label list",
+        "description": "When 'is whitelist' checked, this will act as a whitelist. If not checked, this is a blacklist. Will not do anything when empty"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "No torrents found",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} entries are hidden by your filters"
       }
     },
     "lineChart": {
