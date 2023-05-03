@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Показать устаревшие торренты"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Управляется {{appName}}, {{ratio}} рейтинг"
       },
       "body": {
-        "nothingFound": "Торренты не найдены"
+        "nothingFound": "Торренты не найдены",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
