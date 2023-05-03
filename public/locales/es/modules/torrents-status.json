@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Mostrar torrents estancados"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Gestionado por {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "No se han encontrado torrents"
+        "nothingFound": "No se han encontrado torrents",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
