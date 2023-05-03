@@ -14,11 +14,11 @@
         "label": "Toon verouderde torrents"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Label lijst is een whitelist (in plaats van blacklist)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Label lijst",
+        "description": "Als \"is whitelist\" is aangevinkt, is dit een witte lijst. Indien niet aangevinkt, is dit een zwarte lijst. Doet niets als hij leeg is"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Geen torrents gevonden",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} items worden verborgen door uw filters"
       }
     },
     "lineChart": {
