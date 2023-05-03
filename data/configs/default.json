@@ -33,8 +33,8 @@
             },
             "network": {
                 "enabledStatusChecker": false,
-                "okStatus": [
-                    200
+                "statusCodes": [
+                    "200"
                 ]
             },
             "appearance": {
@@ -94,8 +94,8 @@
             },
             "network": {
                 "enabledStatusChecker": false,
-                "okStatus": [
-                    200
+                "statusCodes": [
+                    "200"
                 ]
             },
             "appearance": {
@@ -155,7 +155,7 @@
             },
             "network": {
                 "enabledStatusChecker": false,
-                "okStatus": []
+                "statusCodes": []
             },
             "appearance": {
                 "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png"
@@ -214,8 +214,8 @@
             },
             "network": {
                 "enabledStatusChecker": false,
-                "okStatus": [
-                    200
+                "statusCodes": [
+                    "200"
                 ]
             },
             "appearance": {
