@@ -18,7 +18,7 @@
       },
       "labelFilter": {
         "label": "Labelliste",
-        "description": ""
+        "description": "Wenn \"ist Whitelist\" ausgewählt ist, handel es sich um eine Whitelist. Ist \"ist Whitelist\" nicht ausgewählt, handelt es sich um eine Blacklist. Wenn die Auswahl leer ist, wird nicht passieren"
       }
     }
   },
