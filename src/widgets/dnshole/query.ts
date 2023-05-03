@@ -1,9 +1,9 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { AdStatistics, PiholeApiSummaryType } from './type';
 
-export const useAdHoleSummeryQuery = () =>
+export const useDnsHoleSummeryQuery = () =>
   useQuery({
-    queryKey: ['ad-hole-summary'],
+    queryKey: ['dns-hole-summary'],
     queryFn: async () => {
       const response = await fetch('/api/modules/dns-hole/summary');
       return (await response.json()) as AdStatistics;
@@ -11,9 +11,9 @@ export const useAdHoleSummeryQuery = () =>
     refetchInterval: 3 * 60 * 1000,
   });
 
-export const useAdHoleControlMutation = () =>
+export const useDnsHoleControlMutation = () =>
   useMutation({
-    mutationKey: ['ad-hole-control'],
+    mutationKey: ['dns-hole-control'],
     mutationFn: async (status: PiholeApiSummaryType['status']) => {
       const response = await fetch(`/api/modules/dns-hole/control?status=${status}`, {
         method: 'POST',

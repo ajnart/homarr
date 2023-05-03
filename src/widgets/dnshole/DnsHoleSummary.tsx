@@ -1,11 +1,11 @@
 import { useTranslation } from 'next-i18next';
-import { Card, Center, Container, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Card, Center, Container, Stack, Text } from '@mantine/core';
 import { IconAd, IconBarrierBlock, IconPercentage, IconSearch, IconWorldWww } from '@tabler/icons';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { formatNumber } from '../../tools/client/math';
-import { useAdHoleSummeryQuery } from './query';
+import { useDnsHoleSummeryQuery } from './query';
 
 const definition = defineWidget({
   id: 'dns-hole-summary',
@@ -22,19 +22,18 @@ const definition = defineWidget({
     maxWidth: 12,
     maxHeight: 12,
   },
-  component: AdHoleSummaryWidgetTile,
+  component: DnsHoleSummaryWidgetTile,
 });
 
-export type IAdHoleSummaryWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IDnsHoleSummaryWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
-interface AdHoleSummaryWidgetProps {
-  widget: IAdHoleSummaryWidget;
+interface DnsHoleSummaryWidgetProps {
+  widget: IDnsHoleSummaryWidget;
 }
 
-function AdHoleSummaryWidgetTile({ widget }: AdHoleSummaryWidgetProps) {
+function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
   const { t } = useTranslation('modules/dns-hole-summary');
-  const { colorScheme } = useMantineTheme();
-  const { isInitialLoading, data } = useAdHoleSummeryQuery();
+  const { isInitialLoading, data } = useDnsHoleSummeryQuery();
 
   if (isInitialLoading || !data) {
     return <WidgetLoading />;
@@ -53,7 +52,21 @@ function AdHoleSummaryWidgetTile({ widget }: AdHoleSummaryWidgetProps) {
     >
       <Card
         m="xs"
-        bg={widget.properties.usePiHoleColors ? 'rgb(145, 50, 37)' : 'rgb(240 82 60)'}
+        sx={(theme) => {
+          if (!widget.properties.usePiHoleColors) {
+            return {};
+          }
+
+          if (theme.colorScheme === 'dark') {
+            return {
+              backgroundColor: 'rgba(240, 82, 60, 0.4)',
+            };
+          }
+
+          return {
+            backgroundColor: 'rgba(240, 82, 60, 0.2)',
+          };
+        }}
         withBorder
       >
         <Center h="100%">
@@ -70,14 +83,32 @@ function AdHoleSummaryWidgetTile({ widget }: AdHoleSummaryWidgetProps) {
       </Card>
       <Card
         m="xs"
-        bg={widget.properties.usePiHoleColors ? 'rgb(177, 114, 12)' : 'rgb(255 165 20)'}
+        sx={(theme) => {
+          if (!widget.properties.usePiHoleColors) {
+            return {};
+          }
+
+          if (theme.colorScheme === 'dark') {
+            return {
+              backgroundColor: 'rgba(255, 165, 20, 0.4)',
+            };
+          }
+
+          return {
+            backgroundColor: 'rgba(255, 165, 20, 0.4)',
+          };
+        }}
         withBorder
       >
         <Center h="100%">
           <Stack align="center" spacing="xs">
             <IconPercentage size={30} />
             <div>
-              <Text align="center">{(data.adsBlockedTodayPercentage * 100).toFixed(2)}%</Text>
+              <Text align="center">
+                {t('card.metrics.adsBlockedTodayPercentage', {
+                  percentage: (data.adsBlockedTodayPercentage * 100).toFixed(2),
+                })}
+              </Text>
               <Text align="center" lh={1.2} size="sm">
                 {t('card.metrics.queriesBlockedTodayPercentage')}
               </Text>
@@ -87,7 +118,21 @@ function AdHoleSummaryWidgetTile({ widget }: AdHoleSummaryWidgetProps) {
       </Card>
       <Card
         m="xs"
-        bg={widget.properties.usePiHoleColors ? 'rgb(0, 121, 151)' : 'rgb(0 175 218)'}
+        sx={(theme) => {
+          if (!widget.properties.usePiHoleColors) {
+            return {};
+          }
+
+          if (theme.colorScheme === 'dark') {
+            return {
+              backgroundColor: 'rgba(0, 175, 218, 0.4)',
+            };
+          }
+
+          return {
+            backgroundColor: 'rgba(0, 175, 218, 0.4)',
+          };
+        }}
         withBorder
       >
         <Center h="100%">
@@ -104,7 +149,21 @@ function AdHoleSummaryWidgetTile({ widget }: AdHoleSummaryWidgetProps) {
       </Card>
       <Card
         m="xs"
-        bg={widget.properties.usePiHoleColors ? 'rgb(0, 92, 50)' : 'rgb(0 176 96)'}
+        sx={(theme) => {
+          if (!widget.properties.usePiHoleColors) {
+            return {};
+          }
+
+          if (theme.colorScheme === 'dark') {
+            return {
+              backgroundColor: 'rgba(0, 176, 96, 0.4)',
+            };
+          }
+
+          return {
+            backgroundColor: 'rgba(0, 176, 96, 0.4)',
+          };
+        }}
         withBorder
       >
         <Center h="100%">

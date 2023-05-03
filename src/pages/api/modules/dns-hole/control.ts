@@ -10,7 +10,7 @@ const getQuerySchema = z.object({
   status: z.enum(['enabled', 'disabled']),
 });
 
-export const Get = async (request: NextApiRequest, response: NextApiResponse) => {
+export const Post = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
@@ -46,7 +46,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method === 'POST') {
-    return Get(request, response);
+    return Post(request, response);
   }
 
   return response.status(405).json({});

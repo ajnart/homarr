@@ -1,12 +1,13 @@
-import { Badge, Button, Card, Group, Image, Stack, Text } from '@mantine/core';
+import { Badge, Box, Button, Card, Group, Image, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
-import { useAdHoleControlMutation, useAdHoleSummeryQuery } from './query';
+import { useDnsHoleControlMutation, useDnsHoleSummeryQuery } from './query';
 import { PiholeApiSummaryType } from './type';
+import { queryClient } from '../../tools/server/configurations/tanstack/queryClient.tool';
 
 const definition = defineWidget({
   id: 'dns-hole-controls',
@@ -18,18 +19,18 @@ const definition = defineWidget({
     maxWidth: 12,
     maxHeight: 12,
   },
-  component: AdHoleControlsWidgetTile,
+  component: DnsHoleControlsWidgetTile,
 });
 
-export type IAdHoleControlsWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IDnsHoleControlsWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
-interface AdHoleControlsWidgetProps {
-  widget: IAdHoleControlsWidget;
+interface DnsHoleControlsWidgetProps {
+  widget: IDnsHoleControlsWidget;
 }
 
-function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
-  const { isInitialLoading, data, refetch } = useAdHoleSummeryQuery();
-  const { mutateAsync } = useAdHoleControlMutation();
+function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
+  const { isInitialLoading, data, refetch } = useDnsHoleSummeryQuery();
+  const { mutateAsync } = useDnsHoleControlMutation();
   const { t } = useTranslation('modules/dns-hole-controls');
 
   const { config } = useConfigContext();
@@ -44,7 +45,7 @@ function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
         <Button
           onClick={async () => {
             await mutateAsync('enabled');
-            await refetch();
+            await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
           }}
           leftIcon={<IconPlayerPlay size={20} />}
           variant="light"
@@ -55,7 +56,7 @@ function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
         <Button
           onClick={async () => {
             await mutateAsync('disabled');
-            await refetch();
+            await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
           }}
           leftIcon={<IconPlayerStop size={20} />}
           variant="light"
@@ -73,10 +74,20 @@ function AdHoleControlsWidgetTile({ widget }: AdHoleControlsWidgetProps) {
         }
 
         return (
-          <Card withBorder key={index}>
+          <Card withBorder key={index} p="xs">
             <Group position="apart">
               <Group>
-                <Image src={app.appearance.iconUrl} width={20} height={20} />
+                <Box
+                  sx={(theme) => ({
+                    backgroundColor:
+                      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+                    textAlign: 'center',
+                    padding: 5,
+                    borderRadius: theme.radius.md,
+                  })}
+                >
+                  <Image src={app.appearance.iconUrl} width={25} height={25} fit="contain" />
+                </Box>
                 <Text>{app.name}</Text>
               </Group>
 

@@ -8,10 +8,11 @@ const ranges = [
 ];
 
 export const formatNumber = (n: number, decimalPlaces: number) => {
-  for (let i = 0; i < ranges.length; i += 1) {
-    if (n >= ranges[i].divider) {
-      return (n / ranges[i].divider).toFixed(decimalPlaces) + ranges[i].suffix;
-    }
+  // eslint-disable-next-line no-restricted-syntax
+  for (const range of ranges) {
+      if (n < range.divider) continue;
+
+     return (n / range.divider).toFixed(decimalPlaces) + range.suffix;
   }
   return n.toFixed(decimalPlaces);
 };
