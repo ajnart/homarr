@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Toon verouderde torrents"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Beheerd door {{appName}}, {{ratio}} verhouding"
       },
       "body": {
-        "nothingFound": "Geen torrents gevonden"
+        "nothingFound": "Geen torrents gevonden",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
