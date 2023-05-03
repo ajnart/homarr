@@ -14,11 +14,11 @@
         "label": "Eski torrentleri göster"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Etiket listesi bir beyaz listedir (kara liste yerine)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Etiket Listesi",
+        "description": "'Beyaz liste' işaretlendiğinde, beyaz liste olarak hareket edecektir. İşaretlenmezse kara liste gibi davranacaktır. Boş olduğunda hiçbir şey yapmaz"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Torrent bulunamadı",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} girişler filtreleriniz tarafından gizlendi"
       }
     },
     "lineChart": {
