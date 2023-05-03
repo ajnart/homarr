@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Angehaltene Torrents anzeigen"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Verwaltet von {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "Keine Torrents gefunden"
+        "nothingFound": "Keine Torrents gefunden",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
