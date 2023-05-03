@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Εμφάνιση stale torrents"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Διαχειρίζεται από {{appName}}, {{ratio}} αναλογία"
       },
       "body": {
-        "nothingFound": "Δεν βρέθηκαν torrents"
+        "nothingFound": "Δεν βρέθηκαν torrents",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
