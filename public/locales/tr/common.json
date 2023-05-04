@@ -20,7 +20,7 @@
     "username": "Kullanıcı adı",
     "password": "Şifre"
   },
-  "tip": "Tip: ",
+  "tip": "İpucu: ",
   "time": {
     "seconds": "saniye",
     "minutes": "dakika",
