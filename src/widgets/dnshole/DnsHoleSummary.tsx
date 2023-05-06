@@ -104,11 +104,7 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
           <Stack align="center" spacing="xs">
             <IconPercentage size={30} />
             <div>
-              <Text align="center">
-                {t('card.metrics.adsBlockedTodayPercentage', {
-                  percentage: (data.adsBlockedTodayPercentage * 100).toFixed(2),
-                })}
-              </Text>
+              <Text align="center">{(data.adsBlockedTodayPercentage * 100).toFixed(2)}%</Text>
               <Text align="center" lh={1.2} size="sm">
                 {t('card.metrics.queriesBlockedTodayPercentage')}
               </Text>
