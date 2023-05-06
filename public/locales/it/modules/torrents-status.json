@@ -14,11 +14,11 @@
         "label": "Mostra torrent in stallo"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "La label list è una whitelist (anzichè blacklist)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Label list",
+        "description": "Quando 'è whitelist' è selezionato, agirà come una whitelist. Se non selezionato, è una blacklist. Non farà nulla quando vuoto"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Nessun torrent trovato",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} le voci sono nascoste dai tuoi filtri"
       }
     },
     "lineChart": {
