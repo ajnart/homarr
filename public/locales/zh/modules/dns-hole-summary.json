@@ -1,0 +1,21 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "usePiHoleColors": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "",
+      "queriesToday": "",
+      "adsBlockedTodayPercentage": "",
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
+    }
+  }
+}
