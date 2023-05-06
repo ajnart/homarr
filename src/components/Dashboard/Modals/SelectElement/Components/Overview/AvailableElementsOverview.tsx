@@ -131,11 +131,6 @@ export const AvailableElementTypes = ({
           icon={<IconBoxAlignTop size={40} strokeWidth={1.3} />}
           onClick={onClickCreateCategory}
         />
-        {/*<ElementItem
-          name="Static Element"
-          icon={<IconTextResize size={40} strokeWidth={1.3} />}
-          onClick={onOpenStaticElements}
-        />*/}
       </Group>
     </>
   );

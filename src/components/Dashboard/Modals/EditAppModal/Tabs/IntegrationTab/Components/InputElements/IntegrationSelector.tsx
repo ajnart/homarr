@@ -85,6 +85,11 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/plex.png',
       label: 'Plex',
     },
+    {
+      value: 'pihole',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/pihole.png',
+      label: 'PiHole',
+    },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
 
   const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {
