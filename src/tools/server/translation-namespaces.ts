@@ -40,6 +40,7 @@ export const dashboardNamespaces = [
   'modules/media-requests-stats',
   'modules/dns-hole-summary',
   'modules/dns-hole-controls',
+  'modules/bookmark',
   'widgets/error-boundary',
 ];
 

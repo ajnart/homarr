@@ -39,6 +39,7 @@ export type IWidgetOptionValue =
   | ISelectOptionValue
   | INumberInputOptionValue
   | IDraggableListInputValue
+  | IDraggableEditableListInputValue
   | IMultipleTextInputOptionValue;
 
 // Interface for data type
@@ -104,6 +105,15 @@ export type IDraggableListInputValue = {
   items: Record<
     string,
     Record<string, Omit<Exclude<IWidgetOptionValue, IDraggableListInputValue>, 'defaultValue'>>
+  >;
+};
+
+export type IDraggableEditableListInputValue = {
+  type: 'draggable-editable-list';
+  defaultValue: [];
+  items: Record<
+    string,
+    Record<string, Omit<Exclude<IWidgetOptionValue, IDraggableEditableListInputValue>, 'defaultValue'>>
   >;
 };
 

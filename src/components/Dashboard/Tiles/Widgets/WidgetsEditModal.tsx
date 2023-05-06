@@ -1,6 +1,8 @@
 import {
   Alert,
   Button,
+  Card,
+  Flex,
   Group,
   MultiSelect,
   NumberInput,
@@ -10,9 +12,10 @@ import {
   Switch,
   Text,
   TextInput,
+  Title,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { IconAlertTriangle } from '@tabler/icons';
+import { IconAlertTriangle, IconPlaylistX, IconPlus, IconTrash } from '@tabler/icons';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
@@ -22,7 +25,7 @@ import { useColorTheme } from '../../../../tools/color';
 import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
-import { DraggableList } from './DraggableList';
+import { StaticDraggableList } from './StaticDraggableList';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -222,7 +225,7 @@ const WidgetOptionTypeSwitch: FC<{
       return (
         <Stack spacing="xs">
           <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-          <DraggableList
+          <StaticDraggableList
             value={typedVal}
             onChange={(v) => handleChange(key, v)}
             labels={mapObject(option.items, (liName) =>
@@ -241,7 +244,7 @@ const WidgetOptionTypeSwitch: FC<{
                 />
               ))
             )}
-          </DraggableList>
+          </StaticDraggableList>
         </Stack>
       );
     case 'multiple-text':
@@ -262,6 +265,54 @@ const WidgetOptionTypeSwitch: FC<{
             )
           }
         />
+      );
+    case 'draggable-editable-list':
+      const temp = Array.from(value).map((item, index) => ({ key: index.toString(), item }));
+      return (
+        <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+          <StaticDraggableList value={temp} onChange={(v) => handleChange(key, v)} labels={{}}>
+            {temp.map(({ item }) => item.name)}
+          </StaticDraggableList>
+
+          {Array.from(value).length === 0 && (
+            <Card>
+              <Stack align="center">
+                <IconPlaylistX />
+                <Stack align="center" spacing={0}>
+                  <Title order={5}>No entries yet</Title>
+                  <Text color="dimmed">Use the buttons below to add more entries</Text>
+                </Stack>
+              </Stack>
+            </Card>
+          )}
+
+          {Array.from(value).length}
+
+          <Flex gap="md">
+            <Button
+              onClick={() => {
+                handleChange('items', [...value, { name: 'test' }]);
+              }}
+              leftIcon={<IconPlus size={16} />}
+              variant="light"
+              color="green"
+              fullWidth
+            >
+              Add
+            </Button>
+            <Button
+              onClick={() => {
+                handleChange('items', []);
+              }}
+              leftIcon={<IconTrash size={16} />}
+              variant="light"
+              fullWidth
+            >
+              Delete All
+            </Button>
+          </Flex>
+        </Stack>
       );
     /* eslint-enable no-case-declarations */
     default:
