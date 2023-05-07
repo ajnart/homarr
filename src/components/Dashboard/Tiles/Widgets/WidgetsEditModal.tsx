@@ -25,7 +25,8 @@ import { useColorTheme } from '../../../../tools/color';
 import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
-import { StaticDraggableList } from './StaticDraggableList';
+import { StaticDraggableList } from './Inputs/StaticDraggableList';
+import { DraggableList } from './Inputs/DraggableList';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -267,13 +268,17 @@ const WidgetOptionTypeSwitch: FC<{
         />
       );
     case 'draggable-editable-list':
-      const temp = Array.from(value).map((item, index) => ({ key: index.toString(), item }));
       return (
         <Stack spacing="xs">
           <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-          <StaticDraggableList value={temp} onChange={(v) => handleChange(key, v)} labels={{}}>
-            {temp.map(({ item }) => item.name)}
-          </StaticDraggableList>
+          <DraggableList
+            items={Array.from(value).map((v: any) => ({
+              data: v,
+            }))}
+            value={value}
+            onChange={(v) => handleChange(key, v)}
+            options={option}
+          />
 
           {Array.from(value).length === 0 && (
             <Card>
@@ -292,7 +297,7 @@ const WidgetOptionTypeSwitch: FC<{
           <Flex gap="md">
             <Button
               onClick={() => {
-                handleChange('items', [...value, { name: 'test' }]);
+                handleChange('items', [...value, option.create()]);
               }}
               leftIcon={<IconPlus size={16} />}
               variant="light"

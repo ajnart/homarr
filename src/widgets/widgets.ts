@@ -39,7 +39,7 @@ export type IWidgetOptionValue =
   | ISelectOptionValue
   | INumberInputOptionValue
   | IDraggableListInputValue
-  | IDraggableEditableListInputValue
+  | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue;
 
 // Interface for data type
@@ -108,13 +108,12 @@ export type IDraggableListInputValue = {
   >;
 };
 
-export type IDraggableEditableListInputValue = {
+export type IDraggableEditableListInputValue<TData extends { id: string }> = {
   type: 'draggable-editable-list';
-  defaultValue: [];
-  items: Record<
-    string,
-    Record<string, Omit<Exclude<IWidgetOptionValue, IDraggableEditableListInputValue>, 'defaultValue'>>
-  >;
+  defaultValue: TData[];
+  create: () => TData;
+  getLabel: (data: TData) => string | JSX.Element;
+  itemComponent: (data: TData) => JSX.Element;
 };
 
 // will show a text-input with a button to add a new line
