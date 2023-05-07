@@ -3,10 +3,7 @@
     "name": "Media Requests",
     "description": "See a list of all media requests from your Overseerr or Jellyseerr instance",
     "settings": {
-      "title": "Media requests list",
-      "replaceLinksWithExternalHost": {
-        "label": "Open links using external host"
-      }
+      "title": "Media requests list"
     }
   },
   "noRequests": "No requests found. Please ensure that you've configured your apps correctly.",

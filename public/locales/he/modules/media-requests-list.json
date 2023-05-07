@@ -1,0 +1,17 @@
+{
+  "descriptor": {
+    "name": "בקשות מדיה",
+    "description": "ראה רשימה של כל בקשות המדיה ממופע Overseerr או Jellyseerr שלך",
+    "settings": {
+      "title": "רשימת בקשות מדיה"
+    }
+  },
+  "noRequests": "לא נמצאו בקשות. אנא ודא שהגדרת את האפליקציות שלך כנדרש.",
+  "pending": "יש {{countPendingApproval}} בקשות הממתינות לאישור.",
+  "nonePending": "אין כרגע אישורים ממתינים. ניתן להמשיך!",
+  "state": {
+    "approved": "אושר",
+    "pendingApproval": "ממתין לאישור",
+    "declined": "נדחה"
+  }
+}

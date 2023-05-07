@@ -1,0 +1,17 @@
+{
+  "descriptor": {
+    "name": "Medieforespørgsler",
+    "description": "Se en liste over alle medieforespørgsler fra din Overseerr eller Jellyseerr instans",
+    "settings": {
+      "title": "Liste over medieforespørgsler"
+    }
+  },
+  "noRequests": "Ingen anmodninger fundet. Kontroller, at du har konfigureret dine apps korrekt.",
+  "pending": "Der er {{countPendingApproval}} anmodninger, der venter på godkendelse.",
+  "nonePending": "Der er i øjeblikket ingen godkendelser, der er under behandling. Du er i mål!",
+  "state": {
+    "approved": "Godkendt",
+    "pendingApproval": "Afventer godkendelse",
+    "declined": "Afvist"
+  }
+}
