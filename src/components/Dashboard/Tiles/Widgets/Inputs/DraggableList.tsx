@@ -30,12 +30,18 @@ export const DraggableList = ({ items, value, onChange, options }: DraggableList
             <options.itemComponent
               data={data}
               onChange={(data: any) => {
+                console.log('on change');
+                console.log(data);
                 onChange(
                   items.map((item) => {
                     if (item.data.id === data.id) return data;
                     return item.data;
                   })
                 );
+              }}
+              delete={() => {
+                console.log('on delete');
+                console.log(data);
               }}
             />
           </ListItem>

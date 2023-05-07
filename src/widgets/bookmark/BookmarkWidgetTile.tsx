@@ -1,20 +1,30 @@
 import {
   Box,
+  Button,
   Card,
   Flex,
   Group,
   Image,
+  Input,
   ScrollArea,
   Stack,
   Text,
+  TextInput,
   Title,
   createStyles,
 } from '@mantine/core';
 import { v4 } from 'uuid';
 import { useTranslation } from 'next-i18next';
-import { IconBookmark, IconBrandAmd, IconPlaylistX } from '@tabler/icons';
+import { IconBookmark, IconLink, IconPlaylistX, IconTrash, IconTypography } from '@tabler/icons';
 import { IDraggableEditableListInputValue, IWidget } from '../widgets';
 import { defineWidget } from '../helper';
+
+interface BookmarkItem {
+  id: string;
+  name: string;
+  href: string;
+  iconUrl: string;
+}
 
 const definition = defineWidget({
   id: 'bookmark',
@@ -34,15 +44,32 @@ const definition = defineWidget({
           iconUrl: '/imgs/logo/logo.png',
         };
       },
-      itemComponent(data) {
-        return <Group>To be defined...</Group>;
+      itemComponent({ data, onChange, delete: deleteData }) {
+        return (
+          <Stack>
+            <TextInput
+              icon={<IconTypography size="1rem" />}
+              value={data.name}
+              onChange={(e) => onChange({ ...data, name: e.target.value })}
+              label="Name"
+            />
+            <TextInput
+              icon={<IconLink size="1rem" />}
+              value={data.href}
+              onChange={(e) => onChange({ ...data, href: e.target.value })}
+              label="URL"
+            />
+            <Button
+              onClick={() => deleteData()}
+              leftIcon={<IconTrash size="1rem" />}
+              variant="light"
+            >
+              Delete
+            </Button>
+          </Stack>
+        );
       },
-    } satisfies IDraggableEditableListInputValue<{
-      id: string;
-      name: string;
-      href: string;
-      iconUrl: string;
-    }>,
+    } satisfies IDraggableEditableListInputValue<BookmarkItem>,
     layout: {
       type: 'select',
       data: [
@@ -96,28 +123,18 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
     case 'autoGrid':
       return (
         <Box className={classes.grid} display="grid">
-          {widget.properties.items.map(
-            (item: { href: string; iconUrl: string; name: string }, index) => (
-              <Card
-                className={classes.autoGridItem}
-                key={index}
-                px="xl"
-                component="a"
-                href={item.href}
-                withBorder
-              >
-                <Group>
-                  <Image src={item.iconUrl} width={30} height={30} fit="contain" withPlaceholder />
-                  <Stack spacing={0}>
-                    <Text>{item.name}</Text>
-                    <Text color="dimmed" size="sm">
-                      {new URL(item.href).hostname}
-                    </Text>
-                  </Stack>
-                </Group>
-              </Card>
-            )
-          )}
+          {widget.properties.items.map((item: BookmarkItem, index) => (
+            <Card
+              className={classes.autoGridItem}
+              key={index}
+              px="xl"
+              component="a"
+              href={item.href}
+              withBorder
+            >
+              <BookmarkItemContent item={item} />
+            </Card>
+          ))}
         </Box>
       );
     case 'horizontal':
@@ -137,15 +154,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                 href="https://google.com"
                 withBorder
               >
-                <Group>
-                  <IconBrandAmd />
-                  <Stack spacing={0}>
-                    <Text>AMD</Text>
-                    <Text color="dimmed" size="sm">
-                      amd.com
-                    </Text>
-                  </Stack>
-                </Group>
+                <BookmarkItemContent item={item} />
               </Card>
             ))}
           </Flex>
@@ -155,6 +164,18 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
       return null;
   }
 }
+
+const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => (
+  <Group>
+    <Image src={item.iconUrl} width={30} height={30} fit="contain" withPlaceholder />
+    <Stack spacing={0}>
+      <Text>{item.name}</Text>
+      <Text color="dimmed" size="sm">
+        {new URL(item.href).hostname}
+      </Text>
+    </Stack>
+  </Group>
+);
 
 const useStyles = createStyles(() => ({
   grid: {

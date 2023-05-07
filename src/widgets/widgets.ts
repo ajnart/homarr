@@ -113,7 +113,11 @@ export type IDraggableEditableListInputValue<TData extends { id: string }> = {
   defaultValue: TData[];
   create: () => TData;
   getLabel: (data: TData) => string | JSX.Element;
-  itemComponent: (data: TData) => JSX.Element;
+  itemComponent: (props: {
+    data: TData;
+    onChange: (data: TData) => void;
+    delete: () => void;
+  }) => JSX.Element;
 };
 
 // will show a text-input with a button to add a new line
