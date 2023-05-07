@@ -27,6 +27,7 @@ module.exports = {
       'el',
       'sk',
       'no',
+      'tr',
     ],
 
     localeDetection: true,

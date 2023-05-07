@@ -38,6 +38,8 @@ export const dashboardNamespaces = [
   'modules/video-stream',
   'modules/media-requests-list',
   'modules/media-requests-stats',
+  'modules/dns-hole-summary',
+  'modules/dns-hole-controls',
   'widgets/error-boundary',
 ];
 
