@@ -14,11 +14,11 @@
         "label": "Zobraz zastarané torrenty"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Zoznam štítkov je whitelist (namiesto blacklistu)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Zoznam štítkov",
+        "description": "Ak je začiarknuté políčko 'is whitelist', bude sa toto políčko správať ako biela listina. Ak nie je začiarknuté, ide o čiernu listinu. Ak je prázdny, nerobí nič"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Nenašli sa žiadne torrenty",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} položky sú skryté vašimi filtrami"
       }
     },
     "lineChart": {
