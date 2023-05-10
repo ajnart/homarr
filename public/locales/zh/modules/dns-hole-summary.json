@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "显示来自 PiHole 或 AdGuard 的重要数据",
     "settings": {
       "title": "",
       "usePiHoleColors": {
