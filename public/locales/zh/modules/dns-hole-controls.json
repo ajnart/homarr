@@ -1,16 +1,16 @@
 {
   "descriptor": {
     "name": "",
-    "description": ""
+    "description": "从您的仪表盘控制 PiHole 或 AdGuard"
   },
   "card": {
     "buttons": {
-      "enableAll": "",
-      "disableAll": ""
+      "enableAll": "全部启用",
+      "disableAll": "全部禁用"
     },
     "status": {
-      "enabled": "",
-      "disabled": ""
+      "enabled": "已启用",
+      "disabled": "已禁用"
     }
   }
 }
