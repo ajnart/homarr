@@ -11,11 +11,11 @@
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
+      "domainsOnAdlist": "广告列表中的域名",
       "queriesToday": "",
       "adsBlockedTodayPercentage": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "今天已屏蔽",
+      "queriesBlockedToday": "今天已屏蔽"
     }
   }
 }
