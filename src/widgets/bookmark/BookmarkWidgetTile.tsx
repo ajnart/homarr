@@ -5,7 +5,6 @@ import {
   Flex,
   Group,
   Image,
-  Input,
   ScrollArea,
   Stack,
   Text,
@@ -13,11 +12,11 @@ import {
   Title,
   createStyles,
 } from '@mantine/core';
-import { v4 } from 'uuid';
-import { useTranslation } from 'next-i18next';
 import { IconBookmark, IconLink, IconPlaylistX, IconTrash, IconTypography } from '@tabler/icons';
-import { IDraggableEditableListInputValue, IWidget } from '../widgets';
+import { useTranslation } from 'next-i18next';
+import { v4 } from 'uuid';
 import { defineWidget } from '../helper';
+import { IDraggableEditableListInputValue, IWidget } from '../widgets';
 
 interface BookmarkItem {
   id: string;
