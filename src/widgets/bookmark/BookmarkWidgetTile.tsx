@@ -58,6 +58,12 @@ const definition = defineWidget({
               onChange={(e) => onChange({ ...data, href: e.target.value })}
               label="URL"
             />
+            <TextInput
+              icon={<IconLink size="1rem" />}
+              value={data.iconUrl}
+              onChange={(e) => onChange({ ...data, iconUrl: e.target.value })}
+              label="Icon"
+            />
             <Button
               onClick={() => deleteData()}
               leftIcon={<IconTrash size="1rem" />}
