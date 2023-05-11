@@ -292,29 +292,16 @@ const WidgetOptionTypeSwitch: FC<{
             </Card>
           )}
 
-          {Array.from(value).length}
-
           <Flex gap="md">
             <Button
               onClick={() => {
                 handleChange('items', [...value, option.create()]);
               }}
               leftIcon={<IconPlus size={16} />}
-              variant="light"
-              color="green"
+              variant="default"
               fullWidth
             >
               Add
-            </Button>
-            <Button
-              onClick={() => {
-                handleChange('items', []);
-              }}
-              leftIcon={<IconTrash size={16} />}
-              variant="light"
-              fullWidth
-            >
-              Delete All
             </Button>
           </Flex>
         </Stack>
