@@ -15,13 +15,13 @@ import { useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { AppType } from '../../../../types/app';
+import { DebouncedImage } from '../../../IconSelector/DebouncedImage';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { AppearanceTab } from './Tabs/AppereanceTab/AppereanceTab';
 import { BehaviourTab } from './Tabs/BehaviourTab/BehaviourTab';
 import { GeneralTab } from './Tabs/GeneralTab/GeneralTab';
 import { IntegrationTab } from './Tabs/IntegrationTab/IntegrationTab';
 import { NetworkTab } from './Tabs/NetworkTab/NetworkTab';
-import { DebouncedAppIcon } from './Tabs/Shared/DebouncedAppIcon';
 import { EditAppModalTab } from './Tabs/type';
 
 const appUrlRegex =
@@ -138,7 +138,7 @@ export const EditAppModal = ({
           </Alert>
         ))}
       <Stack spacing={0} align="center" my="lg">
-        <DebouncedAppIcon form={form} width={120} height={120} />
+        <DebouncedImage src={form.values.appearance.iconUrl} width={120} height={120} />
 
         <Text align="center" weight="bold" size="lg" mt="md">
           {form.values.name ?? 'New App'}

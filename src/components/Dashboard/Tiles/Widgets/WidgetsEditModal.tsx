@@ -15,7 +15,7 @@ import {
   Title,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { IconAlertTriangle, IconPlaylistX, IconPlus, IconTrash } from '@tabler/icons';
+import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
@@ -25,8 +25,8 @@ import { useColorTheme } from '../../../../tools/color';
 import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
-import { StaticDraggableList } from './Inputs/StaticDraggableList';
 import { DraggableList } from './Inputs/DraggableList';
+import { StaticDraggableList } from './Inputs/StaticDraggableList';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;

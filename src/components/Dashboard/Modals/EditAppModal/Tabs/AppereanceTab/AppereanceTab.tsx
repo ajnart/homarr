@@ -1,10 +1,9 @@
 import { Flex, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
-import { useEffect } from 'react';
-import { useGetDashboardIcons } from '../../../../../../hooks/icons/useGetDashboardIcons';
+import { useEffect, useRef } from 'react';
 import { AppType } from '../../../../../../types/app';
-import { IconSelector } from './IconSelector';
+import { IconSelector } from '../../../../../IconSelector/IconSelector';
 
 interface AppearanceTabProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;
@@ -17,8 +16,7 @@ export const AppearanceTab = ({
   disallowAppNameProgagation,
   allowAppNamePropagation,
 }: AppearanceTabProps) => {
-  const { data, isLoading } = useGetDashboardIcons();
-
+  const iconSelectorRef = useRef();
   const [debouncedValue] = useDebouncedValue(form.values.name, 500);
 
   useEffect(() => {
@@ -26,26 +24,27 @@ export const AppearanceTab = ({
       return;
     }
 
-    const matchingDebouncedIcon = data
-      ?.flatMap((x) => x.entries)
-      .find((x) => replaceCharacters(x.name.split('.')[0]) === replaceCharacters(debouncedValue));
-
-    if (!matchingDebouncedIcon) {
+    if (!iconSelectorRef.current) {
       return;
     }
 
-    form.setFieldValue('appearance.iconUrl', matchingDebouncedIcon.url);
+    const currentRef = iconSelectorRef.current as {
+      chooseFirstOrDefault: (debouncedValue: string) => void;
+    };
+
+    currentRef.chooseFirstOrDefault(debouncedValue);
   }, [debouncedValue]);
 
   return (
     <Tabs.Panel value="appearance" pt="lg">
       <Flex gap={5}>
         <IconSelector
-          form={form}
-          data={data}
-          isLoading={isLoading}
-          allowAppNamePropagation={allowAppNamePropagation}
-          disallowAppNameProgagation={disallowAppNameProgagation}
+          defaultValue={form.values.appearance.iconUrl}
+          onChange={(value) => {
+            form.setFieldValue('appearance.iconUrl', value);
+            disallowAppNameProgagation();
+          }}
+          ref={iconSelectorRef}
         />
       </Flex>
     </Tabs.Panel>

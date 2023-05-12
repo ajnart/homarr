@@ -17,6 +17,7 @@ import { useTranslation } from 'next-i18next';
 import { v4 } from 'uuid';
 import { defineWidget } from '../helper';
 import { IDraggableEditableListInputValue, IWidget } from '../widgets';
+import { IconSelector } from '../../components/IconSelector/IconSelector';
 
 interface BookmarkItem {
   id: string;
@@ -58,11 +59,11 @@ const definition = defineWidget({
               onChange={(e) => onChange({ ...data, href: e.target.value })}
               label="URL"
             />
-            <TextInput
-              icon={<IconLink size="1rem" />}
-              value={data.iconUrl}
-              onChange={(e) => onChange({ ...data, iconUrl: e.target.value })}
-              label="Icon"
+            <IconSelector
+              defaultValue={data.iconUrl}
+              onChange={(value) => {
+                onChange({ ...data, iconUrl: value ?? '/imgs/logo/logo.png' });
+              }}
             />
             <Button
               onClick={() => deleteData()}
