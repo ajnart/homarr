@@ -44,6 +44,7 @@ export const AppearanceTab = ({
             form.setFieldValue('appearance.iconUrl', value);
             disallowAppNameProgagation();
           }}
+          value={form.values.appearance.iconUrl}
           ref={iconSelectorRef}
         />
       </Flex>

@@ -23,15 +23,20 @@ export const IconSelector = forwardRef(
   (
     {
       defaultValue,
+      value,
       onChange,
-    }: { defaultValue: string; onChange: (debouncedValue: string | undefined) => void },
+    }: {
+      defaultValue: string;
+      value?: string;
+      onChange: (debouncedValue: string | undefined) => void;
+    },
     ref
   ) => {
     const { t } = useTranslation('layout/modals/add-app');
     const { classes } = useStyles();
 
     const { data, isLoading } = useGetDashboardIcons();
-    const [value, setValue] = useState(defaultValue);
+    const [currentValue, setValue] = useState(value ?? defaultValue);
 
     const flatIcons =
       data === undefined
@@ -75,9 +80,11 @@ export const IconSelector = forwardRef(
               </Text>
             </Stack>
           }
-          icon={<DebouncedImage src={value} width={20} height={20} />}
+          icon={<DebouncedImage src={value ?? currentValue} width={20} height={20} />}
           rightSection={
-            value.length > 0 ? <CloseButton onClick={() => onChange(undefined)} /> : null
+            (value ?? currentValue).length > 0 ? (
+              <CloseButton onClick={() => onChange(undefined)} />
+            ) : null
           }
           itemComponent={AutoCompleteItem}
           className={classes.textInput}

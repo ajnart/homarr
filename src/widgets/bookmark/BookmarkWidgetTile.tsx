@@ -78,6 +78,13 @@ const definition = defineWidget({
 
               return undefined;
             },
+            iconUrl: (value) => {
+              if (z.string().min(1).max(400).safeParse(value).success) {
+                return undefined;
+              }
+
+              return 'Length must be between 1 and 100';
+            },
           },
           validateInputOnChange: true,
           validateInputOnBlur: true,
@@ -108,12 +115,9 @@ const definition = defineWidget({
               />
               <IconSelector
                 defaultValue={data.iconUrl}
+                value={form.values.iconUrl}
                 onChange={(value) => {
-                  if (value === undefined) {
-                    onChange({ ...data, iconUrl: '' });
-                    return;
-                  }
-                  onChange({ ...data, iconUrl: value ?? '' });
+                  form.setFieldValue('iconUrl', value ?? '');
                 }}
               />
               <Button
