@@ -268,6 +268,7 @@ const WidgetOptionTypeSwitch: FC<{
         />
       );
     case 'draggable-editable-list':
+      const { t: translateDraggableList } = useTranslation('widgets/draggable-list');
       return (
         <Stack spacing="xs">
           <Text>{t(`descriptor.settings.${key}.label`)}</Text>
@@ -283,10 +284,10 @@ const WidgetOptionTypeSwitch: FC<{
           {Array.from(value).length === 0 && (
             <Card>
               <Stack align="center">
-                <IconPlaylistX />
+                <IconPlaylistX size="2rem" />
                 <Stack align="center" spacing={0}>
-                  <Title order={5}>No entries yet</Title>
-                  <Text color="dimmed">Use the buttons below to add more entries</Text>
+                  <Title order={5}>{translateDraggableList('noEntries.title')}</Title>
+                  <Text>{translateDraggableList('noEntries.text')}</Text>
                 </Stack>
               </Stack>
             </Card>
@@ -301,7 +302,7 @@ const WidgetOptionTypeSwitch: FC<{
               variant="default"
               fullWidth
             >
-              Add
+              {translateDraggableList('buttonAdd')}
             </Button>
           </Flex>
         </Stack>

@@ -160,8 +160,8 @@ const definition = defineWidget({
   gridstack: {
     minWidth: 1,
     minHeight: 1,
-    maxWidth: 12,
-    maxHeight: 12,
+    maxWidth: 24,
+    maxHeight: 24,
   },
   component: BookmarkWidgetTile,
 });
@@ -173,15 +173,16 @@ interface BookmarkWidgetTileProps {
 }
 
 function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation('modules/bookmark');
   const { classes } = useStyles();
 
   if (widget.properties.items.length === 0) {
     return (
-      <Stack>
+      <Stack align="center">
         <IconPlaylistX />
-        <Stack>
-          <Title>No items</Title>
+        <Stack spacing={0}>
+          <Title order={5} align="center">{t('card.noneFound.title')}</Title>
+          <Text align="center" size="sm">{t('card.noneFound.text')}</Text>
         </Stack>
       </Stack>
     );
@@ -213,13 +214,13 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
             style={{ flexDirection: widget.properties.layout === 'vertical' ? 'column' : 'row' }}
             gap="md"
           >
-            {widget.properties.items.map((item, index) => (
+            {widget.properties.items.map((item: BookmarkItem, index) => (
               <Card
                 key={index}
                 w={widget.properties.layout === 'vertical' ? '100%' : undefined}
                 px="xl"
                 component="a"
-                href="https://google.com"
+                href={item.href}
                 withBorder
               >
                 <BookmarkItemContent item={item} />

@@ -2,7 +2,6 @@ import { Collapse, Flex, Stack, Text, createStyles } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons';
 import { Reorder, useDragControls } from 'framer-motion';
-import { useTranslation } from 'next-i18next';
 import { FC, useEffect, useRef } from 'react';
 import { IDraggableEditableListInputValue } from '../../../../../widgets/widgets';
 
@@ -15,38 +14,35 @@ interface DraggableListProps {
   options: IDraggableEditableListInputValue<any>;
 }
 
-export const DraggableList = ({ items, value, onChange, options }: DraggableListProps) => {
-  const { t } = useTranslation();
-  return (
-    <div>
-      <Reorder.Group
-        axis="y"
-        values={items.map((x) => x.data.id)}
-        onReorder={(order) => onChange(order.map((id) => value.find((v) => v.id === id)!))}
-        as="div"
-      >
-        {items.map(({ data }) => (
-          <ListItem key={data.id} item={data} label={options.getLabel(data)}>
-            <options.itemComponent
-              data={data}
-              onChange={(data: any) => {
-                onChange(
-                  items.map((item) => {
-                    if (item.data.id === data.id) return data;
-                    return item.data;
-                  })
-                );
-              }}
-              delete={() => {
-                onChange(items.filter(item => item.data.id !== data.id).map(item => item.data));
-              }}
-            />
-          </ListItem>
-        ))}
-      </Reorder.Group>
-    </div>
-  );
-};
+export const DraggableList = ({ items, value, onChange, options }: DraggableListProps) => (
+  <div>
+    <Reorder.Group
+      axis="y"
+      values={items.map((x) => x.data.id)}
+      onReorder={(order) => onChange(order.map((id) => value.find((v) => v.id === id)!))}
+      as="div"
+    >
+      {items.map(({ data }) => (
+        <ListItem key={data.id} item={data} label={options.getLabel(data)}>
+          <options.itemComponent
+            data={data}
+            onChange={(data: any) => {
+              onChange(
+                items.map((item) => {
+                  if (item.data.id === data.id) return data;
+                  return item.data;
+                })
+              );
+            }}
+            delete={() => {
+              onChange(items.filter((item) => item.data.id !== data.id).map((item) => item.data));
+            }}
+          />
+        </ListItem>
+      ))}
+    </Reorder.Group>
+  </div>
+);
 
 const ListItem: FC<{
   item: any;

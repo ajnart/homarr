@@ -11,5 +11,11 @@
         "label": "Layout"
       }
     }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Bookmark list empty",
+      "text": "Add new items to this list in the edit mode"
+    }
   }
 }

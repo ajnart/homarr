@@ -42,6 +42,7 @@ export const dashboardNamespaces = [
   'modules/dns-hole-controls',
   'modules/bookmark',
   'widgets/error-boundary',
+  'widgets/draggable-list',
 ];
 
 export const loginNamespaces = ['authentication/login'];
