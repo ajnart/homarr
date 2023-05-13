@@ -1,4 +1,5 @@
 import {
+  Alert,
   Box,
   Button,
   Card,
@@ -12,12 +13,22 @@ import {
   Title,
   createStyles,
 } from '@mantine/core';
-import { IconBookmark, IconLink, IconPlaylistX, IconTrash, IconTypography } from '@tabler/icons';
+import { useForm } from '@mantine/form';
+import {
+  IconAlertTriangle,
+  IconBookmark,
+  IconLink,
+  IconPlaylistX,
+  IconTrash,
+  IconTypography,
+} from '@tabler/icons';
 import { useTranslation } from 'next-i18next';
+import { useEffect } from 'react';
 import { v4 } from 'uuid';
+import { z } from 'zod';
+import { IconSelector } from '../../components/IconSelector/IconSelector';
 import { defineWidget } from '../helper';
 import { IDraggableEditableListInputValue, IWidget } from '../widgets';
-import { IconSelector } from '../../components/IconSelector/IconSelector';
 
 interface BookmarkItem {
   id: string;
@@ -45,34 +56,81 @@ const definition = defineWidget({
         };
       },
       itemComponent({ data, onChange, delete: deleteData }) {
+        const form = useForm({
+          initialValues: data,
+          validate: {
+            name: (value) => {
+              const validation = z.string().min(1).max(100).safeParse(value);
+              if (validation.success) {
+                return undefined;
+              }
+
+              return 'Length must be between 1 and 100';
+            },
+            href: (value) => {
+              if (!z.string().min(1).max(200).safeParse(value).success) {
+                return 'Length must be between 1 and 200';
+              }
+
+              if (!z.string().url().safeParse(value).success) {
+                return 'Not a valid link';
+              }
+
+              return undefined;
+            },
+          },
+          validateInputOnChange: true,
+          validateInputOnBlur: true,
+        });
+
+        useEffect(() => {
+          if (!form.isValid()) {
+            return;
+          }
+
+          onChange(form.values);
+        }, [form.values]);
+
         return (
-          <Stack>
-            <TextInput
-              icon={<IconTypography size="1rem" />}
-              value={data.name}
-              onChange={(e) => onChange({ ...data, name: e.target.value })}
-              label="Name"
-            />
-            <TextInput
-              icon={<IconLink size="1rem" />}
-              value={data.href}
-              onChange={(e) => onChange({ ...data, href: e.target.value })}
-              label="URL"
-            />
-            <IconSelector
-              defaultValue={data.iconUrl}
-              onChange={(value) => {
-                onChange({ ...data, iconUrl: value ?? '/imgs/logo/logo.png' });
-              }}
-            />
-            <Button
-              onClick={() => deleteData()}
-              leftIcon={<IconTrash size="1rem" />}
-              variant="light"
-            >
-              Delete
-            </Button>
-          </Stack>
+          <form>
+            <Stack>
+              <TextInput
+                icon={<IconTypography size="1rem" />}
+                {...form.getInputProps('name')}
+                label="Name"
+                withAsterisk
+              />
+              <TextInput
+                icon={<IconLink size="1rem" />}
+                {...form.getInputProps('href')}
+                label="URL"
+                withAsterisk
+              />
+              <IconSelector
+                defaultValue={data.iconUrl}
+                onChange={(value) => {
+                  if (value === undefined) {
+                    onChange({ ...data, iconUrl: '' });
+                    return;
+                  }
+                  onChange({ ...data, iconUrl: value ?? '' });
+                }}
+              />
+              <Button
+                onClick={() => deleteData()}
+                leftIcon={<IconTrash size="1rem" />}
+                variant="light"
+                type="button"
+              >
+                Delete
+              </Button>
+              {!form.isValid() && (
+                <Alert color="red" icon={<IconAlertTriangle size="1rem" />}>
+                  Did not save, because there were validation errors. Please adust your inputs
+                </Alert>
+              )}
+            </Stack>
+          </form>
         );
       },
     } satisfies IDraggableEditableListInputValue<BookmarkItem>,
