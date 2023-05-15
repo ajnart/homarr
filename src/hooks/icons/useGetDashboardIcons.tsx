@@ -12,5 +12,6 @@ export const useGetDashboardIcons = () =>
     refetchOnMount: false,
     // Cache for infinity, refetch every so often.
     cacheTime: Infinity,
+    staleTime: 1000 * 60 * 5, // 5 minutes
     refetchOnWindowFocus: false,
   });
