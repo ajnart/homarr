@@ -3,7 +3,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons';
 import { Reorder, useDragControls } from 'framer-motion';
 import { FC, ReactNode, useEffect, useRef } from 'react';
-import { IDraggableListInputValue } from '../../../../widgets/widgets';
+import { IDraggableListInputValue } from '../../../../../widgets/widgets';
 
 const useStyles = createStyles((theme) => ({
   container: {
@@ -43,14 +43,14 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-type DraggableListParams = {
+type StaticDraggableListParams = {
   value: IDraggableListInputValue['defaultValue'];
   onChange: (value: IDraggableListInputValue['defaultValue']) => void;
   labels: Record<string, string>;
   children?: Record<string, ReactNode>;
 };
 
-export const DraggableList: FC<DraggableListParams> = (props) => {
+export const StaticDraggableList: FC<StaticDraggableListParams> = (props) => {
   const keys = props.value.map((v) => v.key);
 
   return (
@@ -64,10 +64,10 @@ export const DraggableList: FC<DraggableListParams> = (props) => {
         as="div"
       >
         {props.value.map((item) => (
-          <ListItem key={item.key} item={item} label={props.labels[item.key]}>
-            {props.children?.[item.key]}
-          </ListItem>
-        ))}
+            <ListItem key={item.key} item={item} label={props.labels[item.key]}>
+              {props.children?.[item.key]}
+            </ListItem>
+          ))}
       </Reorder.Group>
     </div>
   );
