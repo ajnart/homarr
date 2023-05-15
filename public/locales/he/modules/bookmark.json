@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "סימנייה",
+    "description": "מציג רשימה סטטית של מחרוזות או קישורים",
     "settings": {
-      "title": "",
+      "title": "הגדרות סימניה",
       "items": {
-        "label": ""
+        "label": "פריטים"
       },
       "layout": {
         "label": "פריסה"
@@ -14,8 +14,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "רשימת הסימניות ריקה",
+      "text": "הוסף פריטים חדשים לרשימה זו במצב עריכה"
     }
   }
 }
