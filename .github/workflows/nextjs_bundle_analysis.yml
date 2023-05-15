@@ -55,6 +55,8 @@ jobs:
           # change this if you prefer a more strict cache
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
+      - run: yarn install
+
       - name: Build next.js app
         # change this if your site requires a custom build command
         run: yarn turbo build
