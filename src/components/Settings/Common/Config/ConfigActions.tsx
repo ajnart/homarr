@@ -63,7 +63,7 @@ export default function ConfigActions() {
       onConfirm: async () => {
         const response = await mutateAsync();
 
-        if (response.message) {
+        if (response.error) {
           showNotification({
             title: t('buttons.delete.notifications.deleteFailedDefaultConfig.title'),
             message: t('buttons.delete.notifications.deleteFailedDefaultConfig.message'),
