@@ -1,11 +1,14 @@
-import { Badge, Card, Center, Flex, Group, Image, Stack, Text } from '@mantine/core';
+import { ActionIcon, Badge, Card, Center, Flex, Group, Image, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { IconGitPullRequest } from '@tabler/icons';
+import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
+import { notifications } from '@mantine/notifications';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
-import { MediaRequestStatus } from './media-request-types';
+import { MediaRequest, MediaRequestStatus } from './media-request-types';
 
 const definition = defineWidget({
   id: 'media-requests-list',
@@ -28,9 +31,21 @@ interface MediaRequestListWidgetProps {
 
 function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   const { t } = useTranslation('modules/media-requests-list');
-  const { data, isFetching } = useMediaRequestQuery();
+  const { data, isFetching, refetch, isLoading } = useMediaRequestQuery();
+  // Use mutation to approve or deny a pending request
+  const mutate = useMutation({
+    mutationFn: async (e: { request: MediaRequest; action: string }) => {
+      const data = await axios.put(`/api/modules/overseerr/${e.request.id}?action=${e.action}`);
+      notifications.show({
+        title: t('requestUpdated'),
+        message: t('requestUpdatedMessage', { title: e.request.name }),
+        color: 'blue',
+      });
+      refetch();
+    },
+  });
 
-  if (!data || isFetching) {
+  if (!data || isLoading) {
     return <WidgetLoading />;
   }
 
@@ -46,6 +61,17 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
     (x) => x.status === MediaRequestStatus.PendingApproval
   ).length;
 
+  // Return a sorted data by status to show pending first, then the default order
+  const sortedData = data.sort((a: MediaRequest, b: MediaRequest) => {
+    if (a.status === MediaRequestStatus.PendingApproval) {
+      return -1;
+    }
+    if (b.status === MediaRequestStatus.PendingApproval) {
+      return 1;
+    }
+    return 0;
+  });
+
   return (
     <Stack>
       {countPendingApproval > 0 ? (
@@ -53,7 +79,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
       ) : (
         <Text>{t('nonePending')}</Text>
       )}
-      {data.map((item) => (
+      {sortedData.map((item) => (
         <Card pos="relative" withBorder>
           <Flex justify="space-between" gap="md">
             <Flex gap="md">
@@ -82,6 +108,44 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
               </Stack>
             </Flex>
             <Flex gap="xs">
+              {item.status === MediaRequestStatus.PendingApproval && (
+                <Group>
+                  <ActionIcon
+                    onClick={() => {
+                      mutate.mutateAsync({ request: item, action: 'approve' }).then(() =>
+                        notifications.update({
+                          id: `approve ${item.id}`,
+                          color: 'teal',
+                          title: 'Request was approved!',
+                          message: undefined,
+                          icon: <IconCheck size="1rem" />,
+                          autoClose: 2000,
+                        })
+                      );
+                      notifications.show({
+                        id: `approve ${item.id}`,
+                        color: 'yellow',
+                        title: 'Approving request...',
+                        message: undefined,
+                        loading: true,
+                      });
+                      // eslint-disable-next-line no-param-reassign
+                      item.status = MediaRequestStatus.Approved;
+                    }}
+                  >
+                    <IconThumbUp />
+                  </ActionIcon>
+                  <ActionIcon
+                    onClick={() => {
+                      mutate.mutateAsync({ request: item, action: 'decline' });
+                      // eslint-disable-next-line no-param-reassign
+                      item.status = MediaRequestStatus.Declined;
+                    }}
+                  >
+                    <IconThumbDown />
+                  </ActionIcon>
+                </Group>
+              )}
               <Image
                 src={item.userProfilePicture}
                 width={25}
