@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Záložka",
+    "description": "Zobrazí statický zoznam reťazcov alebo odkazov",
     "settings": {
-      "title": "",
+      "title": "Nastavenia záložiek",
       "items": {
-        "label": ""
+        "label": "Položky"
       },
       "layout": {
         "label": "Rozloženie"
@@ -14,8 +14,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Zoznam záložiek je prázdny",
+      "text": "Pridanie nových položiek do tohto zoznamu v režime úprav"
     }
   }
 }
