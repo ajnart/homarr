@@ -56,6 +56,7 @@ export const IconSelector = ({
   return (
     <Stack w="100%">
       <Autocomplete
+        withinPortal
         nothingFound={
           <Stack align="center" spacing="xs" my="lg">
             <IconSearch />
