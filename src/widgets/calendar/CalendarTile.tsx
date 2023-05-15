@@ -10,6 +10,7 @@ import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
+import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 
 const definition = defineWidget({
   id: 'calendar',
@@ -52,10 +53,15 @@ function CalendarTile({ widget }: CalendarTileProps) {
   const { colorScheme } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
+  const isEditMode = useEditModeStore((x) => x.enabled);
 
   const { data: medias } = useQuery({
-    queryKey: ['calendar/medias', { month: month.getMonth(), year: month.getFullYear() }],
+    queryKey: [
+      'calendar/medias',
+      { month: month.getMonth(), year: month.getFullYear(), v4: widget.properties.useSonarrv4 },
+    ],
     staleTime: 1000 * 60 * 60 * 5,
+    enabled: isEditMode === false,
     queryFn: async () =>
       (await (
         await fetch(
