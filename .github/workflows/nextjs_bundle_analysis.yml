@@ -74,6 +74,7 @@ jobs:
 
       - name: Download base branch bundle stats
         uses: dawidd6/action-download-artifact@v2
+        continue-on-error: true
         if: success() && github.event.number
         with:
           workflow: nextjs_bundle_analysis.yml
@@ -106,26 +107,8 @@ jobs:
           echo "$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
           echo EOF >> $GITHUB_OUTPUT
 
-      - name: Find Comment
-        uses: peter-evans/find-comment@v2
-        if: success() && github.event.number
-        id: fc
-        with:
-          issue-number: ${{ github.event.number }}
-          body-includes: '<!-- __NEXTJS_BUNDLE -->'
-
-      - name: Create Comment
-        uses: peter-evans/create-or-update-comment@v2
-        if: success() && github.event.number && steps.fc.outputs.comment-id == 0
-        with:
-          issue-number: ${{ github.event.number }}
-          body: ${{ steps.get-comment-body.outputs.body }}
-
-      - name: Update Comment
-        uses: peter-evans/create-or-update-comment@v2
-        if: success() && github.event.number && steps.fc.outputs.comment-id != 0
-        with:
-          issue-number: ${{ github.event.number }}
-          body: ${{ steps.get-comment-body.outputs.body }}
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          edit-mode: replace
+    - name: Comment
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        header: next-touched-pages
+        message: ${{ steps.get-comment-body.outputs.body }}
