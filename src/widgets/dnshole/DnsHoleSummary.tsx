@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { Card, Center, Container, Stack, Text } from '@mantine/core';
-import { IconAd, IconBarrierBlock, IconPercentage, IconSearch, IconWorldWww } from '@tabler/icons';
+import { IconAd, IconBarrierBlock, IconPercentage, IconSearch, IconWorldWww } from '@tabler/icons-react';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';

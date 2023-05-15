@@ -1,6 +1,6 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
-import { IconCalendarTime } from '@tabler/icons';
+import { IconCalendarTime } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { i18n } from 'next-i18next';
 import { useState } from 'react';

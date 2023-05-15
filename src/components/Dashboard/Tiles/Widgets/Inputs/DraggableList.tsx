@@ -1,6 +1,6 @@
 import { Collapse, Flex, Stack, Text, createStyles } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown, IconGripVertical } from '@tabler/icons';
+import { IconChevronDown, IconGripVertical } from '@tabler/icons-react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
 import { IDraggableEditableListInputValue } from '../../../../../widgets/widgets';

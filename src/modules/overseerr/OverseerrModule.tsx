@@ -1,4 +1,4 @@
-import { IconEyeglass } from '@tabler/icons';
+import { IconEyeglass } from '@tabler/icons-react';
 import { OverseerrMediaDisplay } from '../common';
 import { IModule } from '../ModuleTypes';
 

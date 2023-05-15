@@ -1,6 +1,6 @@
 import { Image, Loader, createStyles } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
-import { IconPhotoOff } from '@tabler/icons';
+import { IconPhotoOff } from '@tabler/icons-react';
 
 interface DebouncedImageProps {
   width: number;

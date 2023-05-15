@@ -15,7 +15,7 @@ import {
   Title,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons';
+import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';

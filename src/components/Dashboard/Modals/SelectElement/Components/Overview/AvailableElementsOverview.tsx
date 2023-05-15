@@ -1,7 +1,7 @@
 import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
 import { closeModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons';
+import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
