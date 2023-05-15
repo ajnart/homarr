@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Yer imi",
+    "description": "Dizelerin veya bağlantıların sabit bir listesini görüntüler",
     "settings": {
-      "title": "",
+      "title": "Yer İşareti ayarları",
       "items": {
-        "label": ""
+        "label": "Ögeler"
       },
       "layout": {
         "label": "Düzen"
@@ -14,8 +14,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Yer imi listesi boş",
+      "text": "Düzenleme modunda bu listeye yeni öğeler ekleyin"
     }
   }
 }
