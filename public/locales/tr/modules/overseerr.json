@@ -6,9 +6,9 @@
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "{{title}} iste",
+        "askFor": "{{title}} Talep et",
         "cancel": "Vazgeç",
-        "request": "İstek"
+        "request": "Talep et"
       },
       "alerts": {
         "automaticApproval": {
