@@ -1,42 +1,38 @@
-// disabled due to too many dynamic targets for next image cache
-/* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
-import { createStyles, Loader } from '@mantine/core';
-import { UseFormReturnType } from '@mantine/form';
+import { Image, Loader, createStyles } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
-import { AppType } from '../../../../../../types/app';
+import { IconPhotoOff } from '@tabler/icons';
 
-interface DebouncedAppIconProps {
+interface DebouncedImageProps {
   width: number;
   height: number;
-  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
+  src: string;
   debouncedWaitPeriod?: number;
 }
 
-export const DebouncedAppIcon = ({
-  form,
+export const DebouncedImage = ({
+  src,
   width,
   height,
   debouncedWaitPeriod = 1000,
-}: DebouncedAppIconProps) => {
+}: DebouncedImageProps) => {
   const { classes } = useStyles();
-  const [debouncedIconImageUrl] = useDebouncedValue(
-    form.values.appearance.iconUrl,
-    debouncedWaitPeriod
-  );
+  const [debouncedIconImageUrl] = useDebouncedValue(src, debouncedWaitPeriod);
 
-  if (debouncedIconImageUrl !== form.values.appearance.iconUrl) {
+  if (debouncedIconImageUrl !== src) {
     return <Loader width={width} height={height} />;
   }
 
   if (debouncedIconImageUrl.length > 0) {
     return (
-      <img
+      <Image
+        placeholder={<IconPhotoOff />}
         className={classes.iconImage}
         src={debouncedIconImageUrl}
         width={width}
         height={height}
+        fit="contain"
         alt=""
+        withPlaceholder
       />
     );
   }
@@ -47,7 +43,9 @@ export const DebouncedAppIcon = ({
       src="/imgs/logo/logo.png"
       width={width}
       height={height}
+      fit="contain"
       alt=""
+      withPlaceholder
     />
   );
 };
