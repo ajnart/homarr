@@ -5,6 +5,8 @@ import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { notifications } from '@mantine/notifications';
+import { IconCheck } from '@tabler/icons';
 import { useConfigContext } from '../../config/provider';
 
 export default function ConfigChanger() {
@@ -23,10 +25,33 @@ export default function ConfigChanger() {
       sameSite: 'strict',
     });
     setActiveConfig(value);
-    toggle();
 
-    router.push(`/${value}`);
-    setConfigName(value);
+    notifications.show({
+      id: 'load-data',
+      loading: true,
+      title: t('configSelect.loadingNew'),
+      radius: 'md',
+      withCloseButton: false,
+      message: t('configSelect.pleaseWait'),
+      autoClose: false,
+    });
+
+    setTimeout(() => {
+      notifications.update({
+        id: 'load-data',
+        color: 'teal',
+        radius: 'md',
+        withCloseButton: false,
+        title: t('configSelect.loadingNew'),
+        message: t('configSelect.pleaseWait'),
+        icon: <IconCheck size="1rem" />,
+        autoClose: 2000,
+      });
+    }, 3000);
+    setTimeout(() => {
+      router.push(`/${value}`);
+      setConfigName(value);
+    }, 500);
   };
 
   // If configlist is empty, return a loading indicator
