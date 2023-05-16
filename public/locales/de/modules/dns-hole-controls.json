@@ -2,15 +2,5 @@
   "descriptor": {
     "name": "DNS-Hole Steuerung",
     "description": "Steuern Sie PiHole oder AdGuard von Ihrem Dashboard aus"
-  },
-  "card": {
-    "buttons": {
-      "enableAll": "Alle aktivieren",
-      "disableAll": "Alles deaktivieren"
-    },
-    "status": {
-      "enabled": "Aktiviert",
-      "disabled": "Deaktiviert"
-    }
   }
 }
