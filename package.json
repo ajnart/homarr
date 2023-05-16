@@ -75,8 +75,8 @@
     "zustand": "^4.3.7"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.1.4",
-    "@next/eslint-plugin-next": "^12.1.4",
+    "@next/bundle-analyzer": "^13.0.0",
+    "@next/eslint-plugin-next": "^13.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/dockerode": "^3.3.9",
