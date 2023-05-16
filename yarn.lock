@@ -3123,10 +3123,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"consola@npm:^2.15.3":
-  version: 2.15.3
-  resolution: "consola@npm:2.15.3"
-  checksum: 8ef7a09b703ec67ac5c389a372a33b6dc97eda6c9876443a60d76a3076eea0259e7f67a4e54fd5a52f97df73690822d090cf8b7e102b5761348afef7c6d03e28
+"consola@npm:^3.0.0":
+  version: 3.1.0
+  resolution: "consola@npm:3.1.0"
+  checksum: b4b16b0ff6a0645fb1b820cf89dd56c8601b9ae0e2c472652bce2f5d99932ed5b38ef7ad2cfa77f4534cd6264d99cf5cf9c3c888e98cc25fbd3c87d31c824975
   languageName: node
   linkType: hard
 
@@ -4961,7 +4961,7 @@ __metadata:
     "@vitest/coverage-c8": ^0.29.3
     "@vitest/ui": ^0.29.3
     axios: ^1.0.0
-    consola: ^2.15.3
+    consola: ^3.0.0
     cookies-next: ^2.1.1
     dayjs: ^1.11.7
     dockerode: ^3.3.2
