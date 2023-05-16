@@ -2,15 +2,5 @@
   "descriptor": {
     "name": "DNS hole kontrolleri",
     "description": "Kontrol panelinizden PiHole veya AdGuard'ı kontrol edin"
-  },
-  "card": {
-    "buttons": {
-      "enableAll": "Tümünü etkinleştir",
-      "disableAll": "Tümünü pasifleştir"
-    },
-    "status": {
-      "enabled": "Etkin",
-      "disabled": "Pasif"
-    }
   }
 }
