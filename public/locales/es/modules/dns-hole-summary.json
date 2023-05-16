@@ -13,7 +13,6 @@
     "metrics": {
       "domainsOnAdlist": "Dominios en listas de anuncios",
       "queriesToday": "Consultas hoy",
-      "adsBlockedTodayPercentage": "{{percentage}}%",
       "queriesBlockedTodayPercentage": "bloqueado hoy",
       "queriesBlockedToday": "bloqueado hoy"
     }
