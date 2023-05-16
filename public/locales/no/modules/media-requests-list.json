@@ -13,5 +13,9 @@
     "approved": "Godkjent",
     "pendingApproval": "Venter på godkjenning",
     "declined": "Avvist"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
