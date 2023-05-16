@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@ctrl/deluge": "^4.1.0",
-    "@ctrl/qbittorrent": "^4.1.0",
+    "@ctrl/qbittorrent": "^6.0.0",
     "@ctrl/shared-torrent": "^4.1.1",
     "@ctrl/transmission": "^4.1.1",
     "@emotion/react": "^11.10.6",

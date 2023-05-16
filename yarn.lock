@@ -324,18 +324,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ctrl/qbittorrent@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@ctrl/qbittorrent@npm:4.1.0"
+"@ctrl/qbittorrent@npm:^6.0.0":
+  version: 6.1.0
+  resolution: "@ctrl/qbittorrent@npm:6.1.0"
   dependencies:
     "@ctrl/magnet-link": ^3.1.1
-    "@ctrl/shared-torrent": ^4.1.1
+    "@ctrl/shared-torrent": ^4.3.2
     "@ctrl/torrent-file": ^2.0.2
     "@ctrl/url-join": ^2.0.2
-    formdata-node: ^4.3.3
-    got: ^12.1.0
-    tough-cookie: ^4.0.0
-  checksum: 0860100151785a661f30da50849dd18d2d057a6dd939afb351fdfc7c32daa99b2e621bfc35ce4fb3ec535cd4b76c489052ab60e8236f8aeca2a2b5d560fdce02
+    formdata-node: ^5.0.0
+    got: ^12.6.0
+    tough-cookie: ^4.1.2
+  checksum: 6b40d46cdce31d8a5bea3dbc15705057ecfde45dd7ea2521fcec87d76d170d66aceaea7facda815fa0f62308a1189d9a5f029e4eed4fed1f652ac614eaf7d9d6
   languageName: node
   linkType: hard
 
@@ -4455,16 +4455,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"formdata-node@npm:^4.3.3":
-  version: 4.4.1
-  resolution: "formdata-node@npm:4.4.1"
-  dependencies:
-    node-domexception: 1.0.0
-    web-streams-polyfill: 4.0.0-beta.3
-  checksum: d91d4f667cfed74827fc281594102c0dabddd03c9f8b426fc97123eedbf73f5060ee43205d89284d6854e2fc5827e030cd352ef68b93beda8decc2d72128c576
-  languageName: node
-  linkType: hard
-
 "formdata-node@npm:^5.0.0":
   version: 5.0.0
   resolution: "formdata-node@npm:5.0.0"
@@ -4783,7 +4773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"got@npm:^12.1.0, got@npm:^12.5.0, got@npm:^12.5.2, got@npm:^12.6.0":
+"got@npm:^12.5.0, got@npm:^12.5.2, got@npm:^12.6.0":
   version: 12.6.0
   resolution: "got@npm:12.6.0"
   dependencies:
@@ -4932,7 +4922,7 @@ __metadata:
   resolution: "homarr@workspace:."
   dependencies:
     "@ctrl/deluge": ^4.1.0
-    "@ctrl/qbittorrent": ^4.1.0
+    "@ctrl/qbittorrent": ^6.0.0
     "@ctrl/shared-torrent": ^4.1.1
     "@ctrl/transmission": ^4.1.1
     "@emotion/react": ^11.10.6
@@ -8094,7 +8084,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tough-cookie@npm:^4.0.0, tough-cookie@npm:^4.1.2":
+"tough-cookie@npm:^4.1.2":
   version: 4.1.2
   resolution: "tough-cookie@npm:4.1.2"
   dependencies:
