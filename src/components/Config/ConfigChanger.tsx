@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { notifications } from '@mantine/notifications';
-import { IconCheck } from '@tabler/icons';
+import { IconCheck } from '@tabler/icons-react';
 import { useConfigContext } from '../../config/provider';
 
 export default function ConfigChanger() {
@@ -44,7 +44,7 @@ export default function ConfigChanger() {
         withCloseButton: false,
         title: t('configSelect.loadingNew'),
         message: t('configSelect.pleaseWait'),
-        icon: <IconCheck size="1rem" />,
+        icon: <IconCheck size={25} />,
         autoClose: 2000,
       });
     }, 3000);
