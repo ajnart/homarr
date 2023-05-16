@@ -5038,7 +5038,7 @@ __metadata:
     html-entities: ^2.3.3
     i18next: ^21.9.1
     js-file-download: ^0.4.12
-    next: ^13.2.1
+    next: ^13.4.2
     next-i18next: ^11.3.0
     node-mocks-http: ^1.12.2
     nzbget-api: ^0.0.3
@@ -6379,7 +6379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^13.2.1":
+"next@npm:^13.4.2":
   version: 13.4.2
   resolution: "next@npm:13.4.2"
   dependencies:
