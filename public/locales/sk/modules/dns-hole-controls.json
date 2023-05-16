@@ -2,15 +2,5 @@
   "descriptor": {
     "name": "Kontrola diery DNS",
     "description": "Ovládajte PiHole alebo AdGuard z ovládacieho panela"
-  },
-  "card": {
-    "buttons": {
-      "enableAll": "Povoliť všetko",
-      "disableAll": "Zakázať všetko"
-    },
-    "status": {
-      "enabled": "Povolené",
-      "disabled": "Zakázané"
-    }
   }
 }
