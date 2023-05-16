@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "应用图标",
-			"description": "",
+			"description": "打字搜图标，也可以粘贴自定义图标的URL。",
 			"autocomplete": {
 				"title": "未找到相应结果",
 				"text": "尝试使用一个更具体的搜索词。如果你找不到你想要的图标，请粘贴上面的图片URL，以获得一个自定义图标。"
