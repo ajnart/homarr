@@ -2,14 +2,14 @@
 // Each module should have its own interface and call the following function:
 // TODO: Add a function to register a module
 
-import { TablerIcon } from '@tabler/icons';
+import { Icon } from '@tabler/icons-react';
 
 // Note: Maybe use context to keep track of the modules
 // TODO: Remove this old component and the entire file
 export interface IModule {
   id: string;
   title: string;
-  icon: TablerIcon;
+  icon: Icon;
   component: React.ComponentType;
   options?: Option;
   padding?: PaddingOptions = {

@@ -9,7 +9,7 @@ import {
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import axios from 'axios';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';

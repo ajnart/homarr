@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { openModal } from '@mantine/modals';
 import { withTranslation } from 'next-i18next';
 import { Button, Card, Center, Code, Group, Stack, Text, Title } from '@mantine/core';
-import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/icons';
+import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/icons-react';
 
 type ErrorBoundaryState = {
   hasError: boolean;

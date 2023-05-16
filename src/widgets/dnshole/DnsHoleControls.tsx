@@ -1,6 +1,6 @@
 import { Badge, Box, Button, Card, Group, Image, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons';
+import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons-react';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';

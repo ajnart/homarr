@@ -1,6 +1,6 @@
 import { Alert, Divider, Tabs, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconAlertTriangle } from '@tabler/icons';
+import { IconAlertTriangle } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { AppType } from '../../../../../../types/app';
 import { IntegrationSelector } from './Components/InputElements/IntegrationSelector';

@@ -13,6 +13,7 @@ import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import dnsHoleSummary from './dnshole/DnsHoleSummary';
 import dnsHoleControls from './dnshole/DnsHoleControls';
+import bookmark from './bookmark/BookmarkWidgetTile';
 
 export default {
   calendar,
@@ -30,4 +31,5 @@ export default {
   'media-requests-stats': mediaRequestsStats,
   'dns-hole-summary': dnsHoleSummary,
   'dns-hole-controls': dnsHoleControls,
+  bookmark,
 };

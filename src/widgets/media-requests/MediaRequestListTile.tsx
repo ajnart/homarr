@@ -1,6 +1,6 @@
 import { Badge, Card, Center, Flex, Group, Image, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { IconGitPullRequest } from '@tabler/icons';
+import { IconGitPullRequest } from '@tabler/icons-react';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';

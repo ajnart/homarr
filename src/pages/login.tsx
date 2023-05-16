@@ -3,7 +3,7 @@ import { PasswordInput, Paper, Title, Text, Container, Button } from '@mantine/c
 import { setCookie } from 'cookies-next';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import axios from 'axios';
-import { IconCheck, IconX } from '@tabler/icons';
+import { IconCheck, IconX } from '@tabler/icons-react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useForm } from '@mantine/form';
