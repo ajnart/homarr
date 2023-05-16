@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Uygulama Simgesi",
-			"description": "",
+			"description": "İkon bulmak için yazmaya başlayın. Özel ikon kullanmak için URL de yapıştırabilirsiniz.",
 			"autocomplete": {
 				"title": "Sonuç bulunamadı",
 				"text": "Daha belirgin bir arama terimi kullanmayı deneyin. İstediğiniz simgeyi bulamıyorsanız, özel bir simge için resim URL'sini yukarıya yapıştıın"
