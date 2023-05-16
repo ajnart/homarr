@@ -24,7 +24,12 @@ import { MediaRequest, MediaRequestStatus } from './media-request-types';
 const definition = defineWidget({
   id: 'media-requests-list',
   icon: IconGitPullRequest,
-  options: {},
+  options: {
+    replaceLinksWithExternalHost: {
+      type: 'switch',
+      defaultValue: true,
+    },
+  },
   component: MediaRequestListTile,
   gridstack: {
     minWidth: 3,
