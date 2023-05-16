@@ -1,4 +1,15 @@
-import { ActionIcon, Badge, Card, Center, Flex, Group, Image, Stack, Text } from '@mantine/core';
+import {
+  ActionIcon,
+  Badge,
+  Card,
+  Center,
+  Flex,
+  Group,
+  Image,
+  Stack,
+  Text,
+  Tooltip,
+} from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons';
 import { useMutation } from '@tanstack/react-query';
@@ -31,7 +42,7 @@ interface MediaRequestListWidgetProps {
 
 function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   const { t } = useTranslation('modules/media-requests-list');
-  const { data, isFetching, refetch, isLoading } = useMediaRequestQuery();
+  const { data, refetch, isLoading } = useMediaRequestQuery();
   // Use mutation to approve or deny a pending request
   const mutate = useMutation({
     mutationFn: async (e: { request: MediaRequest; action: string }) => {
@@ -107,61 +118,72 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                 </Text>
               </Stack>
             </Flex>
-            <Flex gap="xs">
+            <Stack justify="center">
+              <Flex gap="xs">
+                <Image
+                  src={item.userProfilePicture}
+                  width={25}
+                  height={25}
+                  alt="requester avatar"
+                  radius="xl"
+                  withPlaceholder
+                />
+                <Text
+                  component="a"
+                  href={item.userLink}
+                  sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
+                >
+                  {item.userName}
+                </Text>
+              </Flex>
+
               {item.status === MediaRequestStatus.PendingApproval && (
                 <Group>
-                  <ActionIcon
-                    onClick={() => {
-                      mutate.mutateAsync({ request: item, action: 'approve' }).then(() =>
-                        notifications.update({
+                  <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
+                    <ActionIcon
+                      variant="light"
+                      color="green"
+                      onClick={async () => {
+                        notifications.show({
                           id: `approve ${item.id}`,
-                          color: 'teal',
-                          title: 'Request was approved!',
+                          color: 'yellow',
+                          title: 'Approving request...',
                           message: undefined,
-                          icon: <IconCheck size="1rem" />,
-                          autoClose: 2000,
-                        })
-                      );
-                      notifications.show({
-                        id: `approve ${item.id}`,
-                        color: 'yellow',
-                        title: 'Approving request...',
-                        message: undefined,
-                        loading: true,
-                      });
-                      // eslint-disable-next-line no-param-reassign
-                      item.status = MediaRequestStatus.Approved;
-                    }}
-                  >
-                    <IconThumbUp />
-                  </ActionIcon>
-                  <ActionIcon
-                    onClick={() => {
-                      mutate.mutateAsync({ request: item, action: 'decline' });
-                      // eslint-disable-next-line no-param-reassign
-                      item.status = MediaRequestStatus.Declined;
-                    }}
-                  >
-                    <IconThumbDown />
-                  </ActionIcon>
+                          loading: true,
+                        });
+
+                        await mutate.mutateAsync({ request: item, action: 'approve' }).then(() =>
+                          notifications.update({
+                            id: `approve ${item.id}`,
+                            color: 'teal',
+                            title: 'Request was approved!',
+                            message: undefined,
+                            icon: <IconCheck size="1rem" />,
+                            autoClose: 2000,
+                          })
+                        );
+
+                        await refetch();
+                      }}
+                    >
+                      <IconThumbUp />
+                    </ActionIcon>
+                  </Tooltip>
+                  <Tooltip label={t('tooltips.decline')} withArrow withinPortal>
+                    <ActionIcon
+                      variant="light"
+                      color="red"
+                      onClick={async () => {
+                        await mutate.mutateAsync({ request: item, action: 'decline' });
+                        await refetch();
+                      }}
+                    >
+                      <IconThumbDown />
+                    </ActionIcon>
+                  </Tooltip>
                 </Group>
               )}
-              <Image
-                src={item.userProfilePicture}
-                width={25}
-                height={25}
-                alt="requester avatar"
-                radius="xl"
-                withPlaceholder
-              />
-              <Text
-                component="a"
-                href={item.userLink}
-                sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
-              >
-                {item.userName}
-              </Text>
-            </Flex>
+            </Stack>
           </Flex>
 
           <Image
