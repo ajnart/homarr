@@ -13,5 +13,9 @@
     "approved": "Onaylandı",
     "pendingApproval": "Onay bekliyor",
     "declined": "Reddedildi"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
