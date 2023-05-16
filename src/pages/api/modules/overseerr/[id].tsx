@@ -118,12 +118,54 @@ async function Post(req: NextApiRequest, res: NextApiResponse) {
     );
 }
 
+async function Put(req: NextApiRequest, res: NextApiResponse) {
+  // Get the slug of the request
+  const { id, action } = req.query as { id: string; action: string };
+  const configName = getCookie('config-name', { req });
+  const config = getConfig(configName?.toString() ?? 'default');
+  Consola.log('Got a request to approve or decline a request', id, action);
+  const app = config.apps.find(
+    (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
+  );
+  if (!id) {
+    return res.status(400).json({ error: 'No id provided' });
+  }
+  if (action !== 'approve' && action !== 'decline') {
+    return res.status(400).json({ error: 'Action type undefined' });
+  }
+
+  const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+  if (!apiKey) {
+    return res.status(400).json({ error: 'No app found' });
+  }
+  const appUrl = new URL(app.url);
+  return axios
+    .post(
+      `${appUrl.origin}/api/v1/request/${id}/${action}`,
+      {},
+      {
+        headers: {
+          'X-Api-Key': apiKey,
+        },
+      }
+    )
+    .then((axiosres) => res.status(200).json(axiosres.data))
+    .catch((err) =>
+      res.status(500).json({
+        message: err.message,
+      })
+    );
+}
+
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     return Post(req, res);
   }
   if (req.method === 'GET') {
     return Get(req, res);
+  }
+  if (req.method === 'PUT') {
+    return Put(req, res);
   }
   return res.status(405).json({
     statusCode: 405,
