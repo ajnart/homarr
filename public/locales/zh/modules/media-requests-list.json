@@ -13,5 +13,9 @@
     "approved": "已核准",
     "pendingApproval": "待核准",
     "declined": "已拒绝"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
