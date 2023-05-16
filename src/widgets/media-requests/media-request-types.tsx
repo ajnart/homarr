@@ -8,7 +8,7 @@ export type MediaRequest = {
   userName: string;
   userProfilePicture: string;
   userLink: string;
-  airDate: string;
+  airDate?: string;
   status: MediaRequestStatus;
   backdropPath: string;
   posterPath: string;

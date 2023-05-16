@@ -1,0 +1,30 @@
+{
+  "pageTitle": {
+    "label": "Sayfa Başlığı",
+    "description": "Sol üstteki gösterge tablosu başlığı"
+  },
+  "metaTitle": {
+    "label": "Meta Başlığı",
+    "description": "Tarayıcı sekmenizde görüntülenen başlık"
+  },
+  "logo": {
+    "label": "Logo",
+    "description": "Sol üstte görüntülenen logo"
+  },
+  "favicon": {
+    "label": "Favicon",
+    "description": "Tarayıcı sekmenizde görüntülenen başlık"
+  },
+  "background": {
+    "label": "Arkaplan"
+  },
+  "customCSS": {
+    "label": "Özel CSS",
+    "description": "Ayrıca, yalnızca deneyimli kullanıcılar için önerilen CSS kullanarak kontrol panelinizi özelleştirin",
+    "placeholder": "Özel CSS en son uygulanacaktır",
+    "applying": "CSS uygulanıyor..."
+  },
+  "buttons": {
+    "submit": "Gönder"
+  }
+}

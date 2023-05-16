@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons';
+import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { notifications } from '@mantine/notifications';
@@ -104,7 +104,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
               />
               <Stack spacing={0}>
                 <Group spacing="xs">
-                  <Text>{item.airDate.split('-')[0]}</Text>
+                  {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
                   <MediaRequestStatusBadge status={item.status} />
                 </Group>
                 <Text

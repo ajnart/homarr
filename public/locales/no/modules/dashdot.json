@@ -4,6 +4,9 @@
     "description": "Viser grafene til en ekstern Dash. Instanse inne i Homarr.",
     "settings": {
       "title": "Innstillinger for Dash. widget",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "Dash. URL"
       },

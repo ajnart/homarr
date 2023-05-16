@@ -1,7 +1,7 @@
 import { ActionIcon, Drawer, Text, Tooltip } from '@mantine/core';
 import { useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { IconBrandDocker, IconX } from '@tabler/icons';
+import { IconBrandDocker, IconX } from '@tabler/icons-react';
 import axios from 'axios';
 import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';

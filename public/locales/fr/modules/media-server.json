@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Serveur multimédia",
-    "description": "Interagissez avec votre server multimédia Jellyfin ou Plex",
+    "description": "Interagissez avec votre serveur multimédia Jellyfin ou Plex",
     "settings": {
       "title": ""
     }

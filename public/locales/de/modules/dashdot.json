@@ -4,6 +4,9 @@
     "description": "Zeigt die Graphen einer externen Dash.-Instanz innerhalb von Homarr an.",
     "settings": {
       "title": "Einstellungen für Dash. Widget",
+      "dashName": {
+        "label": "Dash. Name"
+      },
       "url": {
         "label": "Dash. URL"
       },

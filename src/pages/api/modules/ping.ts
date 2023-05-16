@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import https from 'https';
 import Consola from 'consola';
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -12,14 +12,15 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     .then((response) => {
       res.status(response.status).json(response.statusText);
     })
-    .catch((error) => {
+    .catch((error: AxiosError) => {
       if (error.response) {
-        Consola.error(`Unexpected response: ${error.response.data}`);
+        Consola.warn(`Unexpected response: ${error.message}`);
         res.status(error.response.status).json(error.response.statusText);
       } else if (error.code === 'ECONNABORTED') {
         res.status(408).json('Request Timeout');
       } else {
-        res.status(error.response ? error.response.status : 500).json('Server Error');
+        Consola.error(`Unexpected error: ${error.message}`);
+        res.status(500).json('Internal Server Error');
       }
     });
   // // Make a request to the URL

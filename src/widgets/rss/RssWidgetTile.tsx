@@ -15,7 +15,7 @@ import {
   Title,
   createStyles,
 } from '@mantine/core';
-import { IconClock, IconRefresh, IconRss } from '@tabler/icons';
+import { IconClock, IconRefresh, IconRss } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';

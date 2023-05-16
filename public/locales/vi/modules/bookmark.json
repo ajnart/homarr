@@ -1,0 +1,21 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "items": {
+        "label": ""
+      },
+      "layout": {
+        "label": "Bố cục"
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "",
+      "text": ""
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "סיכום DNS",
+    "description": "מציג נתונים חשובים מ-PiHole או AdGuard",
+    "settings": {
+      "title": "הגדרות עבור סיכום DNS",
+      "usePiHoleColors": {
+        "label": "השתמש בצבעים של PiHole"
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "דומיינים ברשימות מודעות",
+      "queriesToday": "שאילתות היום",
+      "queriesBlockedTodayPercentage": "נחסמו היום",
+      "queriesBlockedToday": "נחסמו היום"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { Alert, Button, Checkbox, createStyles, Group, Modal, Stack, Table } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
-import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons';
+import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons-react';
 import axios from 'axios';
 import Consola from 'consola';
 import { useTranslation } from 'next-i18next';

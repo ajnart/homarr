@@ -1,78 +1,81 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Εμφανίζει τα γραφήματα ενός εξωτερικού Dash. Instance μέσα στο Homarr.",
     "settings": {
       "title": "Ρυθμίσεις για το widget Dash",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Εμφάνιση ποσοστών"
       },
       "columns": {
-        "label": ""
+        "label": "Εμφάνιση στηλών"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Ύψος γραφημάτων"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Γραφήματα (σειρά)",
         "storage": {
           "label": "Αποθηκευτικός χώρος",
           "enabled": {
-            "label": ""
+            "label": "Εμφάνιση στο widget"
           },
           "span": {
-            "label": ""
+            "label": "Εύρος στήλης"
           },
           "compactView": {
-            "label": ""
+            "label": "Εμφάνιση ως κείμενο (συμπαγές)"
           },
           "multiView": {
-            "label": ""
+            "label": "Εμφάνιση ως multi-drive-view"
           }
         },
         "network": {
           "label": "Δίκτυο",
           "enabled": {
-            "label": ""
+            "label": "Εμφάνιση στο widget"
           },
           "span": {
-            "label": ""
+            "label": "Εύρος στήλης"
           },
           "compactView": {
-            "label": ""
+            "label": "Εμφάνιση ως κείμενο (συμπαγές)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Εμφάνιση στο widget"
           },
           "span": {
-            "label": ""
+            "label": "Εύρος στήλης"
           },
           "multiView": {
-            "label": ""
+            "label": "Εμφάνιση ως προβολή πολλαπλών πυρήνων"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Εμφάνιση στο widget"
           },
           "span": {
-            "label": ""
+            "label": "Εύρος στήλης"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Εμφάνιση στο widget"
           },
           "span": {
-            "label": ""
+            "label": "Εύρος στήλης"
           }
         }
       }
@@ -84,8 +87,8 @@
       "noService": "Δεν βρέθηκε υπηρεσία Dash. Παρακαλούμε προσθέστε μία στο ταμπλό Homarr ή ορίστε μια Dash. URL στις επιλογές της ενότητας",
       "noInformation": "Δεν μπορεί να αποκτήσει πληροφορίες από το dash. - τρέχετε την τελευταία έκδοση;",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Εντοπισμένη υποβάθμιση πρωτοκόλλου",
+        "text": "Η σύνδεση με την εμφάνισή σας Dash. χρησιμοποιεί HTTP. Αυτό αποτελεί κίνδυνο για την ασφάλεια, επειδή το HTTP δεν είναι κρυπτογραφημένο και οι επιτιθέμενοι θα μπορούσαν να κάνουν κατάχρηση αυτής της σύνδεσης. Βεβαιωθείτε ότι το Dash. χρησιμοποιεί HTTPS ή υποβαθμίστε το Homarr σε HTTP (δεν συνιστάται)."
       }
     },
     "graphs": {
@@ -105,7 +108,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"

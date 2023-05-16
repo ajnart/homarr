@@ -6,17 +6,21 @@
   "delete": "Διαγραφή",
   "ok": "ΟΚ",
   "edit": "Επεξεργασία",
+  "enabled": "",
+  "disabled": "",
+  "enableAll": "",
+  "disableAll": "",
   "version": "Έκδοση",
   "changePosition": "Αλλαγή θέσης",
   "remove": "Αφαίρεση",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "Είστε σίγουροι ότι θέλετε να καταργήσετε το {{item}};",
+  "createItem": "+ δημιουργήστε {{item}}",
   "sections": {
     "settings": "Ρυθμίσεις",
     "dangerZone": "Επικίνδυνη Περιοχή"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Κλειδί API",
     "username": "Όνομα Χρήστη",
     "password": "Κωδικός"
   },

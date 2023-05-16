@@ -1,6 +1,8 @@
 import {
   Alert,
   Button,
+  Card,
+  Flex,
   Group,
   MultiSelect,
   NumberInput,
@@ -10,9 +12,10 @@ import {
   Switch,
   Text,
   TextInput,
+  Title,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { IconAlertTriangle } from '@tabler/icons';
+import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 import { useConfigContext } from '../../../../config/provider';
@@ -22,7 +25,8 @@ import { useColorTheme } from '../../../../tools/color';
 import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
-import { DraggableList } from './DraggableList';
+import { DraggableList } from './Inputs/DraggableList';
+import { StaticDraggableList } from './Inputs/StaticDraggableList';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -222,7 +226,7 @@ const WidgetOptionTypeSwitch: FC<{
       return (
         <Stack spacing="xs">
           <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-          <DraggableList
+          <StaticDraggableList
             value={typedVal}
             onChange={(v) => handleChange(key, v)}
             labels={mapObject(option.items, (liName) =>
@@ -241,7 +245,7 @@ const WidgetOptionTypeSwitch: FC<{
                 />
               ))
             )}
-          </DraggableList>
+          </StaticDraggableList>
         </Stack>
       );
     case 'multiple-text':
@@ -262,6 +266,46 @@ const WidgetOptionTypeSwitch: FC<{
             )
           }
         />
+      );
+    case 'draggable-editable-list':
+      const { t: translateDraggableList } = useTranslation('widgets/draggable-list');
+      return (
+        <Stack spacing="xs">
+          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+          <DraggableList
+            items={Array.from(value).map((v: any) => ({
+              data: v,
+            }))}
+            value={value}
+            onChange={(v) => handleChange(key, v)}
+            options={option}
+          />
+
+          {Array.from(value).length === 0 && (
+            <Card>
+              <Stack align="center">
+                <IconPlaylistX size="2rem" />
+                <Stack align="center" spacing={0}>
+                  <Title order={5}>{translateDraggableList('noEntries.title')}</Title>
+                  <Text>{translateDraggableList('noEntries.text')}</Text>
+                </Stack>
+              </Stack>
+            </Card>
+          )}
+
+          <Flex gap="md">
+            <Button
+              onClick={() => {
+                handleChange('items', [...value, option.create()]);
+              }}
+              leftIcon={<IconPlus size={16} />}
+              variant="default"
+              fullWidth
+            >
+              {translateDraggableList('buttonAdd')}
+            </Button>
+          </Flex>
+        </Stack>
       );
     /* eslint-enable no-case-declarations */
     default:

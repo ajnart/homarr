@@ -1,8 +1,5 @@
 name: Development CI
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+
 on:
   push:
     branches: [dev]
@@ -19,6 +16,10 @@ on:
         required: true
         description: 'Tag to deploy to'
 
+defaults:
+  run:
+    working-directory: ./
+
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
@@ -27,6 +28,10 @@ env:
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
  
+permissions:
+  contents: read # for checkout repository
+  actions: read # for fetching base branch bundle stats
+  pull-requests: write # for comments
 
 jobs:
   # Push image to GitHub Packages.
@@ -56,17 +61,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Restore NextJS cache
-        uses: actions/cache@v2
+      - name: Restore next build
+        uses: actions/cache@v3
+        id: restore-build-cache
+        env:
+          cache-name: cache-next-build
         with:
-          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
-          path: |
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          path: .next/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - run: yarn install --immutable
 
@@ -110,3 +112,95 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Restore next build
+        uses: actions/cache@v3
+        id: restore-build-cache
+        env:
+          cache-name: cache-next-build
+        with:
+          # if you use a custom build directory, replace all instances of `.next` in this file with your build directory
+          # ex: if your app builds to `dist`, replace `.next` with `dist`
+          path: .next/cache
+          # change this if you prefer a more strict cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
+
+      - run: yarn install
+
+      - name: Build next.js app
+        # change this if your site requires a custom build command
+        run: yarn turbo build
+
+      # Here's the first place where next-bundle-analysis' own script is used
+      # This step pulls the raw bundle stats for the current bundle
+      - name: Analyze bundle
+        run: npx -p nextjs-bundle-analysis report
+
+      - name: Upload bundle
+        uses: actions/upload-artifact@v3
+        with:
+          name: bundle
+          path: .next/analyze/__bundle_analysis.json
+
+      - name: Download base branch bundle stats
+        uses: dawidd6/action-download-artifact@v2
+        continue-on-error: true
+        if: success() && github.event.number
+        with:
+          workflow: nextjs_bundle_analysis.yml
+          branch: ${{ github.event.pull_request.base.ref }}
+          path: .next/analyze/base
+
+      # And here's the second place - this runs after we have both the current and
+      # base branch bundle stats, and will compare them to determine what changed.
+      # There are two configurable arguments that come from package.json:
+      #
+      # - budget: optional, set a budget (bytes) against which size changes are measured
+      #           it's set to 350kb here by default, as informed by the following piece:
+      #           https://infrequently.org/2021/03/the-performance-inequality-gap/
+      #
+      # - red-status-percentage: sets the percent size increase where you get a red
+      #                          status indicator, defaults to 20%
+      #
+      # Either of these arguments can be changed or removed by editing the `nextBundleAnalysis`
+      # entry in your package.json file.
+      - name: Compare with base branch bundle
+        if: success() && github.event.number
+        run: ls -laR .next/analyze/base && npx -p nextjs-bundle-analysis compare
+
+      - name: Get Comment Body
+        id: get-comment-body
+        if: success() && github.event.number
+        # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#multiline-strings
+        run: |
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
+          echo EOF >> $GITHUB_OUTPUT
+
+      - name: Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: next-touched-pages
+          message: ${{ steps.get-comment-body.outputs.body }}

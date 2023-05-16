@@ -14,7 +14,7 @@ import {
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 
-import { IconFileDownload, IconInfoCircle } from '@tabler/icons';
+import { IconFileDownload, IconInfoCircle } from '@tabler/icons-react';
 
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';

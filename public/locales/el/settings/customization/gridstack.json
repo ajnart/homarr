@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Στήλες σε μέγεθος {{size}}",
+    "descriptionPreset": "Αριθμός στηλών όταν το πλάτος της οθόνης είναι μικρότερο από {{pixels}} pixels",
+    "descriptionExceedsPreset": "Αριθμός στηλών όταν το μέγεθος της οθόνης υπερβαίνει τα {{pixels}} pixels"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
-  "defaultValues": ""
+  "unsavedChanges": "Έχετε μη αποθηκευμένες αλλαγές. Κάντε κλικ στο κουμπί Εφαρμογή αλλαγών παρακάτω για να τις εφαρμόσετε και να τις αποθηκεύσετε.",
+  "applyChanges": "Εφαρμογή αλλαγών",
+  "defaultValues": "Προεπιλεγμένες τιμές"
 }

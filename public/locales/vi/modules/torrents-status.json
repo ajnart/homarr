@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Hiển thị torrent hết hạn"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Quản lý bởi {{appName}}, tỷ lệ {{ratio}}"
       },
       "body": {
-        "nothingFound": "Không tìm thấy torrent nào"
+        "nothingFound": "Không tìm thấy torrent nào",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

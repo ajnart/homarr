@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Exibição de torrentes envelhecidas"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Gerido por {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "Nenhum torrent encontrado"
+        "nothingFound": "Nenhum torrent encontrado",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

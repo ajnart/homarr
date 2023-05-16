@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": ""
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": ""
       },
       "body": {
-        "nothingFound": "토렌트 없음"
+        "nothingFound": "토렌트 없음",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

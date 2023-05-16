@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "RSS Widget'ı",
+    "description": "",
+    "settings": {
+      "title": "RSS widget'ı için ayarlar",
+      "rssFeedUrl": {
+        "label": "RSS besleme URL'si",
+        "description": "Görüntülemek istediğiniz RSS beslemelerinin URL'leri."
+      },
+      "refreshInterval": {
+        "label": "Yenileme aralığı (dakika olarak)"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "RSS akışı alınamadı",
+          "text": "RSS akışına ulaşılırken bir sorun oluştu. Geçerli bir URL kullanarak RSS akışını doğru şekilde yapılandırdığınızdan emin olun. URL'ler resmi spesifikasyonla eşleşmelidir. Akışı güncelledikten sonra kontrol panelini yenilemeniz gerekebilir."
+        }
+      }
+    }
+  }
+}
