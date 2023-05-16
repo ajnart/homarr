@@ -2,15 +2,5 @@
   "descriptor": {
     "name": "",
     "description": ""
-  },
-  "card": {
-    "buttons": {
-      "enableAll": "",
-      "disableAll": ""
-    },
-    "status": {
-      "enabled": "",
-      "disabled": ""
-    }
   }
 }
