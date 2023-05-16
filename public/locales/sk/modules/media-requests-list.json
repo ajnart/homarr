@@ -3,7 +3,10 @@
     "name": "Žiadosti médií",
     "description": "Zobrazenie zoznamu všetkých mediálnych požiadaviek z Overseerr alebo Jellyseerr",
     "settings": {
-      "title": "Zoznam požiadaviek médií"
+      "title": "Zoznam požiadaviek médií",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
   "noRequests": "Nenašli sa žiadne požiadavky. Skontrolujte, či ste správne nakonfigurovali svoje aplikácie.",
