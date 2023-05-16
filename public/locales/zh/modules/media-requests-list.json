@@ -3,7 +3,10 @@
     "name": "媒体请求",
     "description": "查看来自你的Overseerr或Jellyseerr实例的所有媒体请求的列表",
     "settings": {
-      "title": "媒体请求列表"
+      "title": "媒体请求列表",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
   "noRequests": "没有找到请求。请确保你已经正确配置了你的应用程序。",
