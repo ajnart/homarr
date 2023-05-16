@@ -67,7 +67,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
               />
               <Stack spacing={0}>
                 <Group spacing="xs">
-                  <Text>{item.airDate.split('-')[0]}</Text>
+                  {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
                   <MediaRequestStatusBadge status={item.status} />
                 </Group>
                 <Text
