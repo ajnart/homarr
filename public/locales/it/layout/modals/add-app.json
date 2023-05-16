@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Icona App",
-			"description": "",
+			"description": "Iniziare a digitare per trovare un'icona. È anche possibile incollare l'URL di un'immagine per utilizzare un'icona personalizzata.",
 			"autocomplete": {
 				"title": "Nessun risultato trovato",
 				"text": "Prova a usare un termine di ricerca più specifico. Se non riesci a trovare l'icona desiderata, incolla l'URL dell'immagine sopra per un'icona personalizzata"
