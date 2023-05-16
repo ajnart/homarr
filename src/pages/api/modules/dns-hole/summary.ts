@@ -54,20 +54,22 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
 
           const stats = await adGuard.getStats();
           const status = await adGuard.getStatus();
+          const countFilteredDomains = await adGuard.getCountFilteringDomains();
 
-          const domainsBlocked = stats.blocked_filtering.reduce((prev, sum) => prev + sum, 0);
+          const blockedQueriesToday = stats.blocked_filtering.reduce((prev, sum) => prev + sum, 0);
           const queriesToday = stats.dns_queries.reduce((prev, sum) => prev + sum, 0);
-          data.domainsBeingBlocked += domainsBlocked;
+          data.adsBlockedToday = blockedQueriesToday;
+          data.domainsBeingBlocked += countFilteredDomains;
           data.dnsQueriesToday += queriesToday;
           data.status.push({
             status: status.protection_enabled ? 'enabled' : 'disabled',
             appId: app.id,
           });
-          adsBlockedTodayPercentageArr.push((queriesToday / domainsBlocked) * 100);
+          adsBlockedTodayPercentageArr.push((queriesToday / blockedQueriesToday) * 100);
         }
       }
     } catch (err) {
-      Consola.error(`Failed to communicate with PiHole at ${app.url}: ${err}`);
+      Consola.error(`Failed to communicate with DNS hole at ${app.url}: ${err}`);
     }
   }
 

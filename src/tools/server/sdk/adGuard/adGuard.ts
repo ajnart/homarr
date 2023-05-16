@@ -1,5 +1,9 @@
 import { trimStringEnding } from '../../../shared/strings';
-import { adGuardApiStatsResponseSchema, adGuardApiStatusResponseSchema } from './adGuard.schema';
+import {
+  adGuardApiFilteringStatusSchema,
+  adGuardApiStatsResponseSchema,
+  adGuardApiStatusResponseSchema,
+} from './adGuard.schema';
 import { AdGuardStatsType } from './adGuard.type';
 
 export class AdGuard {
@@ -35,6 +39,21 @@ export class AdGuard {
     const data = await response.json();
 
     return adGuardApiStatusResponseSchema.parseAsync(data);
+  }
+
+  async getCountFilteringDomains() {
+    const response = await fetch(`${this.baseHostName}/control/filtering/status`, {
+      headers: {
+        Authorization: `Basic ${this.getAuthorizationHeaderValue()}`,
+      },
+    });
+
+    const data = await response.json();
+    const schemaData = await adGuardApiFilteringStatusSchema.parseAsync(data);
+
+    return schemaData.filters
+      .filter((filter) => filter.enabled)
+      .reduce((sum, filter) => filter.rules_count + sum, 0);
   }
 
   async disable() {
