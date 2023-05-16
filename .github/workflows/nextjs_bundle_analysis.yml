@@ -15,6 +15,11 @@ defaults:
     # change this if your nextjs app does not live at the root of the repo
     working-directory: ./
 
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+
 permissions:
   contents: read # for checkout repository
   actions: read # for fetching base branch bundle stats
