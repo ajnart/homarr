@@ -13,5 +13,9 @@
     "approved": "Goedgekeurd",
     "pendingApproval": "In afwachting van goedkeuring",
     "declined": "Afgewezen"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
