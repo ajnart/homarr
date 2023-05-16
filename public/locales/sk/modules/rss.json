@@ -5,8 +5,8 @@
     "settings": {
       "title": "Nastavenia mini aplikácie RSS",
       "rssFeedUrl": {
-        "label": "URL adresa RSS",
-        "description": "URL adresy kanálov RSS, ktoré chcete zobraziť."
+        "label": "Adresy URL kanálov RSS",
+        "description": "Adresy URL kanálov RSS, ktoré chcete zobraziť."
       },
       "refreshInterval": {
         "label": "Interval obnovovania (v minútach)"

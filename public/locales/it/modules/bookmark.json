@@ -1,0 +1,21 @@
+{
+  "descriptor": {
+    "name": "Preferito",
+    "description": "Visualizza un elenco statico di stringhe o link",
+    "settings": {
+      "title": "Opzioni preferiti",
+      "items": {
+        "label": "Elementi"
+      },
+      "layout": {
+        "label": "Layout"
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Lista preferiti vuota",
+      "text": "Aggiungi nuovi elementi a questo elenco in edit mode"
+    }
+  }
+}

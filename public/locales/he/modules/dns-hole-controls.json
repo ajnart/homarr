@@ -1,0 +1,6 @@
+{
+  "descriptor": {
+    "name": "בקרות DNS",
+    "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך"
+  }
+}

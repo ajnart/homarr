@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "Zhrnutie diery DNS",
+    "description": "Zobrazí dôležité údaje zo služby PiHole alebo AdGuard",
+    "settings": {
+      "title": "Nastavenia pre súhrn DNS Hole",
+      "usePiHoleColors": {
+        "label": "Použitie farieb z PiHole"
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "Domény na adlistoch",
+      "queriesToday": "Poziadavky dnes",
+      "queriesBlockedTodayPercentage": "dnes zablokované",
+      "queriesBlockedToday": "dnes zablokované"
+    }
+  }
+}

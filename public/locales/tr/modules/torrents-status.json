@@ -1,0 +1,80 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "Desteklenen Torrent istemcilerinden gelen torrentlerin bir listesini görüntüler.",
+    "settings": {
+      "title": "Torrent widget'ı için ayarlar",
+      "refreshInterval": {
+        "label": "Yenileme aralığı (saniye)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Tamamlanan torrentleri görüntüle"
+      },
+      "displayStaleTorrents": {
+        "label": "Eski torrentleri göster"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "Etiket listesi bir beyaz listedir (kara liste yerine)"
+      },
+      "labelFilter": {
+        "label": "Etiket Listesi",
+        "description": "'Beyaz liste' işaretlendiğinde, beyaz liste olarak hareket edecektir. İşaretlenmezse kara liste gibi davranacaktır. Boş olduğunda hiçbir şey yapmaz"
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "Hata",
+      "lastUpdated": "Son Güncelleme {{time}}"
+    },
+    "table": {
+      "header": {
+        "name": "İsim",
+        "size": "Boyut",
+        "download": "İndirme",
+        "upload": "Yükleme",
+        "estimatedTimeOfArrival": "ETA (Kalan Süre)",
+        "progress": "İlerleme"
+      },
+      "item": {
+        "text": "{{appName}} tarafından yönetilen, {{ratio}} oranı"
+      },
+      "body": {
+        "nothingFound": "Torrent bulunamadı",
+        "filterHidingItems": "{{count}} girişler filtreleriniz tarafından gizlendi"
+      }
+    },
+    "lineChart": {
+      "title": "Şu anki indirme hızı",
+      "download": "İndirme: {{download}}",
+      "upload": "Yükleme: {{upload}}",
+      "timeSpan": "{{seconds}} saniye önce",
+      "totalDownload": "İndirme: {{download}}/s",
+      "totalUpload": "Yükleme: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Desteklenen Torrent istemcisi bulunamadı!",
+        "text": "Mevcut indirmelerinizi görüntülemek için desteklenen bir Torrent istemcisi ekleyin"
+      },
+      "generic": {
+        "title": "Beklenmeyen bir hata oluştu",
+        "text": "Homarr, Torrent istemcilerinizle iletişim kuramadı. Lütfen yapılandırmanızı kontrol edin"
+      }
+    },
+    "loading": {
+      "title": "Yükleniyor..."
+    },
+    "popover": {
+      "introductionPrefix": "Tarafından yönetilen",
+      "metrics": {
+        "queuePosition": "Kuyruk pozisyonu - {{position}}",
+        "progress": "İlerleme - %{{progress}}",
+        "totalSelectedSize": "Toplam - {{totalSize}}",
+        "state": "Durum - {{state}}",
+        "ratio": "Oran -",
+        "completed": "Tamamlanan"
+      }
+    }
+  }
+}

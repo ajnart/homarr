@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Vis torrents uden aktivitet"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "Etiketlisten er en whitelist (i stedet for en blackliste)"
+      },
+      "labelFilter": {
+        "label": "Etiket liste",
+        "description": "Når \"er whitelist\" er markeret, fungerer dette som en whitelist. Hvis det ikke er markeret, er det en blackliste. Gør ikke noget, hvis den er tom"
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Administreret af {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "Ingen torrents fundet"
+        "nothingFound": "Ingen torrents fundet",
+        "filterHidingItems": "{{count}} poster er skjult af dine filtre"
       }
     },
     "lineChart": {

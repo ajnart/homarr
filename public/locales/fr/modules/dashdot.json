@@ -4,6 +4,9 @@
     "description": "",
     "settings": {
       "title": "Paramètres du widget Dash",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "URL Dash."
       },
@@ -84,7 +87,7 @@
       "noService": "Aucun service Dash. trouvé. Veuillez en ajouter un à votre tableau de bord Homarr ou définir l'URL du service Dash. dans les options du module",
       "noInformation": "Impossible d'acquérir des informations de Dash. - Utilisez-vous la dernière version ?",
       "protocolDowngrade": {
-        "title": "Protocole rétrograde détecté (HTTP)",
+        "title": "Dégradation du protocole détectée",
         "text": ""
       }
     },

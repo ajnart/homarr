@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "显示来自 PiHole 或 AdGuard 的重要数据",
+    "settings": {
+      "title": "",
+      "usePiHoleColors": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "广告列表中的域名",
+      "queriesToday": "",
+      "queriesBlockedTodayPercentage": "今天已屏蔽",
+      "queriesBlockedToday": "今天已屏蔽"
+    }
+  }
+}

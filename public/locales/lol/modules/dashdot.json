@@ -4,6 +4,9 @@
     "description": "",
     "settings": {
       "title": "Settings 4 Dash. Widget",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "Dash. URL"
       },

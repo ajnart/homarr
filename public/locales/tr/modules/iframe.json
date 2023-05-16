@@ -1,0 +1,23 @@
+{
+  "descriptor": {
+    "name": "iFrame",
+    "description": "İnternetten herhangi bir içeriği yerleştirin. Bazı web siteleri erişimi kısıtlayabilir.",
+    "settings": {
+      "title": "iFrame ayarları",
+      "embedUrl": {
+        "label": "Yerleştirme URL'si"
+      },
+      "allowFullScreen": {
+        "label": "Tam ekrana izin ver"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "",
+        "text": "Widget'ınızın yapılandırmasında geçerli bir adres girdiğinizden emin olun"
+      }
+    }
+  }
+}

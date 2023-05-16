@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "古くなったトレントを表示する"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "運営： {{appName}}, {{ratio}} 比率"
       },
       "body": {
-        "nothingFound": "トレントが見つかりません"
+        "nothingFound": "トレントが見つかりません",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

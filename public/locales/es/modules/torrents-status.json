@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Mostrar torrents estancados"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "La lista de etiquetas se trata de una lista blanca (en lugar de una lista negra)"
+      },
+      "labelFilter": {
+        "label": "Lista de etiquetas",
+        "description": "Cuando 'incluido en la lista blanca' esté marcado, actuará como una lista blanca. Si no lo está, ésta será una lista negra. No hará nada cuando esté vacía"
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Gestionado por {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "No se han encontrado torrents"
+        "nothingFound": "No se han encontrado torrents",
+        "filterHidingItems": "{{count}} entradas ocultas por tus filtros"
       }
     },
     "lineChart": {

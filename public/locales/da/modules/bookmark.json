@@ -1,0 +1,21 @@
+{
+  "descriptor": {
+    "name": "Bogmærke",
+    "description": "Viser en statisk liste over strenge eller links",
+    "settings": {
+      "title": "Bogmærke indstillinger",
+      "items": {
+        "label": "Elementer"
+      },
+      "layout": {
+        "label": "Layout"
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Bogmærkelisten er tom",
+      "text": "Tilføj nye elementer til denne liste i redigeringstilstand"
+    }
+  }
+}
