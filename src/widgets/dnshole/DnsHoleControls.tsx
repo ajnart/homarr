@@ -31,7 +31,7 @@ interface DnsHoleControlsWidgetProps {
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const { isInitialLoading, data, refetch } = useDnsHoleSummeryQuery();
   const { mutateAsync } = useDnsHoleControlMutation();
-  const { t } = useTranslation('modules/dns-hole-controls');
+  const { t } = useTranslation('common');
 
   const { config } = useConfigContext();
 
@@ -51,7 +51,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           variant="light"
           color="green"
         >
-          {t('card.buttons.enableAll')}
+          {t('enableAll')}
         </Button>
         <Button
           onClick={async () => {
@@ -62,7 +62,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           variant="light"
           color="red"
         >
-          {t('card.buttons.disableAll')}
+          {t('disableAll')}
         </Button>
       </Group>
 
@@ -101,18 +101,18 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
 }
 
 const StatusBadge = ({ status }: { status: PiholeApiSummaryType['status'] }) => {
-  const { t } = useTranslation('modules/dns-hole-controls');
+  const { t } = useTranslation('common');
   if (status === 'enabled') {
     return (
       <Badge variant="dot" color="green">
-        {t('card.status.enabled')}
+        {t('enabled')}
       </Badge>
     );
   }
 
   return (
     <Badge variant="dot" color="red">
-      {t('card.status.disabled')}
+      {t('disabled')}
     </Badge>
   );
 };
