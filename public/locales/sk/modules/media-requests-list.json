@@ -13,5 +13,9 @@
     "approved": "Schválené",
     "pendingApproval": "Čaká sa na schválenie",
     "declined": "Odmietnuté"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
