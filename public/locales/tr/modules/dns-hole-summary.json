@@ -13,7 +13,6 @@
     "metrics": {
       "domainsOnAdlist": "Reklam listelerindeki alan adları",
       "queriesToday": "Bugünkü sorgular",
-      "adsBlockedTodayPercentage": "{{percentage}}%",
       "queriesBlockedTodayPercentage": "bugün engellenenler",
       "queriesBlockedToday": "bugün engellenenler"
     }
