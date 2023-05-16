@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "App Icon",
-			"description": "",
+			"description": "Start typing to find an icon. You can also paste an image URL to use a custom icon.",
 			"autocomplete": {
 				"title": "No results found",
 				"text": "Try to use a more specific search term. If you can't find your desired icon, paste the image URL above for a custom icon"
