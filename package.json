@@ -50,7 +50,7 @@
     "@tanstack/react-query-persist-client": "^4.28.0",
     "@vitejs/plugin-react": "^3.1.0",
     "axios": "^1.0.0",
-    "consola": "^2.15.3",
+    "consola": "^3.0.0",
     "cookies-next": "^2.1.1",
     "dayjs": "^1.11.7",
     "dockerode": "^3.3.2",
