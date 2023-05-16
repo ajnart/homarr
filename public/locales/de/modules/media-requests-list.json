@@ -13,5 +13,9 @@
     "approved": "Genehmigt",
     "pendingApproval": "Warten auf Freigabe",
     "declined": "Abgelehnt"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
