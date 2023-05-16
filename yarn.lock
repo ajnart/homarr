@@ -2443,7 +2443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.59.6, @typescript-eslint/utils@npm:^5.53.0, @typescript-eslint/utils@npm:^5.58.0":
+"@typescript-eslint/utils@npm:5.59.6, @typescript-eslint/utils@npm:^5.58.0, @typescript-eslint/utils@npm:^5.59.2":
   version: 5.59.6
   resolution: "@typescript-eslint/utils@npm:5.59.6"
   dependencies:
@@ -4823,14 +4823,14 @@ checkly@latest:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vitest@npm:^0.0.54":
-  version: 0.0.54
-  resolution: "eslint-plugin-vitest@npm:0.0.54"
+"eslint-plugin-vitest@npm:^0.2.0":
+  version: 0.2.2
+  resolution: "eslint-plugin-vitest@npm:0.2.2"
   dependencies:
-    "@typescript-eslint/utils": ^5.53.0
+    "@typescript-eslint/utils": ^5.59.2
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 4bb699f5ffc6077fd8d39b20391059681f40af37ea2741058fcb852d5ca057ffc007f0eedac1dd84f61d5e9515777da68be47b3c439e3d8baa204eae6361d808
+  checksum: 45a3627968f82920a54c91455877469db424eb9b9dd98482769a977a2e5a43e5e7120db471bf08285c3c8e3c98762c829228f945f7a42021d5b0f43289b74eb7
   languageName: node
   linkType: hard
 
@@ -5782,7 +5782,7 @@ checkly@latest:
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-testing-library: ^5.5.1
     eslint-plugin-unused-imports: ^2.0.0
-    eslint-plugin-vitest: ^0.0.54
+    eslint-plugin-vitest: ^0.2.0
     fily-publish-gridstack: ^0.0.13
     framer-motion: ^9.0.2
     happy-dom: ^8.9.0
