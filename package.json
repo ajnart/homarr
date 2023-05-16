@@ -111,9 +111,7 @@
     "typescript": "latest",
     "video.js": "^8.0.3",
     "vitest": "^0.29.3",
-    "vitest-fetch-mock": "^0.2.2",
-    "checkly": "latest",
-    "ts-node": "latest"
+    "vitest-fetch-mock": "^0.2.2"
   },
   "resolutions": {
     "@types/react": "17.0.59",

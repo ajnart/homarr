@@ -1,6 +1,6 @@
-import { ApiCheck, AssertionBuilder } from 'checkly/constructs'
+import { ApiCheck, AssertionBuilder } from 'checkly/constructs';
 
-new ApiCheck('homepage-api-check-1', {
+const homepageApiCheck = new ApiCheck('homepage-api-check-1', {
   name: 'Fetch Book List',
   alertChannels: [],
   degradedResponseTime: 10000,
@@ -14,5 +14,7 @@ new ApiCheck('homepage-api-check-1', {
       AssertionBuilder.statusCode().equals(200),
       AssertionBuilder.jsonBody('$[0].id').isNotNull(),
     ],
-  }
-})
+  },
+});
+
+export default homepageApiCheck;
