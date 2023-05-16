@@ -114,7 +114,7 @@
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2"
   },
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.5.1",
   "nextBundleAnalysis": {
     "budget": null,
     "budgetPercentIncreaseRed": 20,
