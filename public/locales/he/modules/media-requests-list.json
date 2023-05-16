@@ -13,5 +13,9 @@
     "approved": "אושר",
     "pendingApproval": "ממתין לאישור",
     "declined": "נדחה"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
