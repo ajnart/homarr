@@ -2,15 +2,5 @@
   "descriptor": {
     "name": "בקרות DNS",
     "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך"
-  },
-  "card": {
-    "buttons": {
-      "enableAll": "אפשר הכל",
-      "disableAll": "השבת הכל"
-    },
-    "status": {
-      "enabled": "מאופשר",
-      "disabled": "מושבת"
-    }
   }
 }
