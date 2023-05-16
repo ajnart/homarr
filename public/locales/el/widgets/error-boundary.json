@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ουπς, έγινε λάθος!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Λεπτομέρειες",
+      "tryAgain": "Προσπαθήστε ξανά"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Το σφάλμα σας",
+    "reportButton": "Αναφέρετε αυτό το σφάλμα"
   }
 }

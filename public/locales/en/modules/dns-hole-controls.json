@@ -2,15 +2,5 @@
   "descriptor": {
     "name": "DNS hole controls",
     "description": "Control PiHole or AdGuard from your dashboard"
-  },
-  "card": {
-    "buttons": {
-      "enableAll": "Enable all",
-      "disableAll": "Disable all"
-    },
-    "status": {
-      "enabled": "Enabled",
-      "disabled": "Disabled"
-    }
   }
 }

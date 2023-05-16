@@ -4,6 +4,9 @@
     "description": "Mostrar los gráficos de una instancia Dash. externa en Homarr.",
     "settings": {
       "title": "Ajustes para el widget Dash.",
+      "dashName": {
+        "label": "Nombre Dash."
+      },
       "url": {
         "label": "Dash. URL"
       },

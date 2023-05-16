@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "DNS hole özeti",
+    "description": "PiHole veya AdGuard'dan önemli verileri görüntüler",
+    "settings": {
+      "title": "DNS Hole özeti için ayarlar",
+      "usePiHoleColors": {
+        "label": "PiHole'daki renkleri kullanın"
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "Reklam listelerindeki alan adları",
+      "queriesToday": "Bugünkü sorgular",
+      "queriesBlockedTodayPercentage": "bugün engellenenler",
+      "queriesBlockedToday": "bugün engellenenler"
+    }
+  }
+}

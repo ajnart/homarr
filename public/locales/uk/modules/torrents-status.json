@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Відображати застарілі торренти"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Управляється {{appName}}, {{ratio}} співвідношення"
       },
       "body": {
-        "nothingFound": "Не знайдено торентів"
+        "nothingFound": "Не знайдено торентів",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

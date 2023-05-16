@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconAlertCircle } from '@tabler/icons';
+import { IconAlertCircle } from '@tabler/icons-react';
 import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';

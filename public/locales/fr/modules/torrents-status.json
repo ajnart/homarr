@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Afficher les torrents périmés"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Géré par {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "Aucun torrent trouvé"
+        "nothingFound": "Aucun torrent trouvé",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

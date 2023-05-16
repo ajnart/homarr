@@ -1,0 +1,17 @@
+{
+  "descriptor": {
+    "name": "Medya talepleri",
+    "description": "Overseerr veya Jellyseerr uygulamanızdan gelen tüm medya taleplerinin bir listesini görün",
+    "settings": {
+      "title": "Medya talep listesi"
+    }
+  },
+  "noRequests": "Hiç talep bulunamadı. Lütfen uygulamalarınızı doğru yapılandırdığınızdan emin olun.",
+  "pending": "Onay bekleyen {{countPendingApproval}} talepleri bulunmaktadır.",
+  "nonePending": "Şu anda bekleyen onay bulunmamaktadır. Gitmeye hazırsın!",
+  "state": {
+    "approved": "Onaylandı",
+    "pendingApproval": "Onay bekliyor",
+    "declined": "Reddedildi"
+  }
+}

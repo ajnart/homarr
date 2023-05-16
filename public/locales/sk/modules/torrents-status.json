@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Zobraz zastarané torrenty"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "Zoznam štítkov je whitelist (namiesto blacklistu)"
+      },
+      "labelFilter": {
+        "label": "Zoznam štítkov",
+        "description": "Ak je začiarknuté políčko 'is whitelist', bude sa toto políčko správať ako biela listina. Ak nie je začiarknuté, ide o čiernu listinu. Ak je prázdny, nerobí nič"
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Spravuje {{appName}}, {{ratio}} pomer"
       },
       "body": {
-        "nothingFound": "Nenašli sa žiadne torrenty"
+        "nothingFound": "Nenašli sa žiadne torrenty",
+        "filterHidingItems": "{{count}} položky sú skryté vašimi filtrami"
       }
     },
     "lineChart": {

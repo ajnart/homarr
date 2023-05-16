@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": ""
+    "description": "Εμφανίζει μια ένδειξη κατάστασης ανάλογα με τον κωδικό απόκρισης HTTP μιας δεδομένης διεύθυνσης URL."
   },
   "states": {
     "online": "Online {{response}}",

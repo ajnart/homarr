@@ -1,5 +1,5 @@
 import { Center, createStyles, Grid, Stack, Text, Title } from '@mantine/core';
-import { IconUnlink } from '@tabler/icons';
+import { IconUnlink } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useTranslation } from 'next-i18next';

@@ -1,5 +1,5 @@
 import { Menu, useMantineColorScheme } from '@mantine/core';
-import { IconMoonStars, IconSun } from '@tabler/icons';
+import { IconMoonStars, IconSun } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
 export const ColorSchemeSwitch = () => {

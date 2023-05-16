@@ -7,7 +7,7 @@ import {
   SwitchProps,
   TextInputProps,
 } from '@mantine/core';
-import { TablerIcon } from '@tabler/icons';
+import { Icon } from '@tabler/icons-react';
 
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
@@ -130,7 +130,7 @@ export type IMultipleTextInputOptionValue = {
 // is used to type the widget definitions which will be used to display all widgets
 export type IWidgetDefinition<TKey extends string = string> = {
   id: TKey;
-  icon: TablerIcon | string;
+  icon: Icon | string;
   options: {
     [key: string]: IWidgetOptionValue;
   };

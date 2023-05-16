@@ -1,7 +1,7 @@
 import { Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { Dropzone } from '@mantine/dropzone';
 import { showNotification } from '@mantine/notifications';
-import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons';
+import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons-react';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useConfigStore } from '../../config/store';

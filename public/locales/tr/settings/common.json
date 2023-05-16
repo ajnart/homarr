@@ -1,0 +1,38 @@
+{
+  "title": "Ayarlar",
+  "tooltip": "Ayarlar",
+  "tabs": {
+    "common": "Genel",
+    "customizations": "Kişiselleştirme"
+  },
+  "tips": {
+    "configTip": "Yapılandırma dosyanı sayfaya sürükleyip bırakarak yükleyebilirsin!"
+  },
+  "credits": {
+    "madeWithLove": "Tarafından ❤️ ile yapılmıştır @",
+    "thirdPartyContent": "Üçüncü şahıs içeriğine bakın",
+    "thirdPartyContentTable": {
+      "dependencyName": "Bağımlılık",
+      "dependencyVersion": "Versiyon"
+    }
+  },
+  "grow": "Izgarayı büyütün (tüm alanı kapla)",
+  "layout": {
+    "preview": {
+      "title": "Ön İzleme",
+      "subtitle": "Değişiklikleriniz otomatik olarak kaydedilecektir"
+    },
+    "divider": "Düzen ayarları",
+    "main": "Ana",
+    "sidebar": "Kenar Çubuğu",
+    "cannotturnoff": "Kapatılamaz",
+    "dashboardlayout": "Pano Yerleşimi",
+    "enablersidebar": "Sağ kenar çubuğunu etkinleştir",
+    "enablelsidebar": "Sol kenar çubuğunu etkinleştir",
+    "enablesearchbar": "Arama çubuğunu etkinleştir",
+    "enabledocker": "Docker entegrasyonunu etkinleştir",
+    "enableping": "Ping'leri etkinleştir",
+    "enablelsidebardesc": "İsteğe bağlı. Yalnızca uygulamalar ve entegrasyonlar için kullanılabilir",
+    "enablersidebardesc": "İsteğe bağlı. Yalnızca uygulamalar ve entegrasyonlar için kullanılabilir"
+  }
+}

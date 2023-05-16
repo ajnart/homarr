@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Wyświetlanie nieaktualnych torrentów"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Zarządzany przez {{appName}}, {{ratio}} stosunek"
       },
       "body": {
-        "nothingFound": "Nie znaleziono torrentów"
+        "nothingFound": "Nie znaleziono torrentów",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

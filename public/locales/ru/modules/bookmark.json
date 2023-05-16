@@ -1,0 +1,21 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "items": {
+        "label": ""
+      },
+      "layout": {
+        "label": "Макет"
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "",
+      "text": ""
+    }
+  }
+}

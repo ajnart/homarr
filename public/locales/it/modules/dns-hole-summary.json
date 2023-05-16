@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "Riepilogo DNS hole",
+    "description": "Visualizza dati importanti da PiHole o AdGuard",
+    "settings": {
+      "title": "Impostazioni per il riepilogo del DNS hole",
+      "usePiHoleColors": {
+        "label": "Usa i colori da PiHole"
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "Domini su adlists",
+      "queriesToday": "Query di oggi",
+      "queriesBlockedTodayPercentage": "bloccati oggi",
+      "queriesBlockedToday": "bloccati oggi"
+    }
+  }
+}

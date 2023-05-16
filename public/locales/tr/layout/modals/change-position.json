@@ -1,0 +1,8 @@
+{
+	"xPosition": "X ekseni konumu",
+	"width": "Genişlik",
+	"height": "Yükseklik",
+	"yPosition": "Y ekseni konumu",
+	"zeroOrHigher": "0 veya üstü",
+	"betweenXandY": "{{min}} ile {{max}} arasında"
+}

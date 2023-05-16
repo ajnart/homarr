@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Visa inaktuella torrents"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Hanteras av {{appName}}, {{ratio}} förhållande"
       },
       "body": {
-        "nothingFound": "Inga torrents hittades"
+        "nothingFound": "Inga torrents hittades",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
