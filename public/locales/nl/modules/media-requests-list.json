@@ -3,7 +3,10 @@
     "name": "Media Verzoeken",
     "description": "Bekijk een lijst met alle mediaverzoeken van uw Overseerr of Jellyseerr instantie",
     "settings": {
-      "title": "Lijst met mediaverzoeken"
+      "title": "Lijst met mediaverzoeken",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
   "noRequests": "Geen verzoeken gevonden. Zorg ervoor dat u uw apps correct hebt geconfigureerd.",
