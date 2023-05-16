@@ -13,5 +13,9 @@
     "approved": "Схвалено",
     "pendingApproval": "Очікує схвалення",
     "declined": "Відхилено"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
