@@ -26,7 +26,7 @@ import {
   IconVersions,
   IconVocabulary,
   IconWorldWww,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
 import { i18n, Trans, useTranslation } from 'next-i18next';

@@ -1,5 +1,5 @@
 import { Center, createStyles, Stack, Title, Text, Container } from '@mantine/core';
-import { IconBrowser, IconUnlink } from '@tabler/icons';
+import { IconBrowser, IconUnlink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';

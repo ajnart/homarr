@@ -9,7 +9,7 @@ import {
   TextInput,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconSearch } from '@tabler/icons';
+import { IconSearch } from '@tabler/icons-react';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';

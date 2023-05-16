@@ -13,7 +13,7 @@ import {
   SelectItemProps,
   ScrollArea,
 } from '@mantine/core';
-import { IconSearch } from '@tabler/icons';
+import { IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useGetDashboardIcons } from '../../hooks/icons/useGetDashboardIcons';
 import { humanFileSize } from '../../tools/humanFileSize';

@@ -21,7 +21,7 @@ import {
   IconPlaylistX,
   IconTrash,
   IconTypography,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { v4 } from 'uuid';

@@ -1,5 +1,5 @@
 import { Button, Text } from '@mantine/core';
-import { IconArrowNarrowLeft } from '@tabler/icons';
+import { IconArrowNarrowLeft } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
 interface SelectorBackArrowProps {

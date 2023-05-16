@@ -1601,18 +1601,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:^1.106.0":
-  version: 1.119.0
-  resolution: "@tabler/icons@npm:1.119.0"
+"@tabler/icons-react@npm:^2.18.0":
+  version: 2.18.0
+  resolution: "@tabler/icons-react@npm:2.18.0"
+  dependencies:
+    "@tabler/icons": 2.18.0
+    prop-types: ^15.7.2
   peerDependencies:
-    react: ^16.x || 17.x || 18.x
-    react-dom: ^16.x || 17.x || 18.x
-  peerDependenciesMeta:
-    react:
-      optional: true
-    react-dom:
-      optional: true
-  checksum: ef1ac50c1a47b2205cb86ca43c28d69c7b8f547ad9c2c5545190fc4a455e9767f49cb511a6f9e8dc45b046ee7d2dab3d2c87af4fd5bbb1694832a15698158753
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0
+  checksum: 9a3d3121811b0e63ce6a4748d0ef306c394b7d7c5ac861e643928f2e3d36b40c7f53981672d6bcdc1245cfb02fc3114360390ed7f4e60e2abb05641f1a12aed9
+  languageName: node
+  linkType: hard
+
+"@tabler/icons@npm:2.18.0":
+  version: 2.18.0
+  resolution: "@tabler/icons@npm:2.18.0"
+  checksum: 2257b5f39c570e3e87d1c6d9cfb2a1b6326600d39c42a077c491f584f9769efc9d9c361df1d3099243774d18cdaa5506075595a3fd626c82e812dd2b43700e34
   languageName: node
   linkType: hard
 
@@ -4922,7 +4926,7 @@ __metadata:
     "@nivo/core": ^0.80.0
     "@nivo/line": ^0.80.0
     "@react-native-async-storage/async-storage": ^1.18.1
-    "@tabler/icons": ^1.106.0
+    "@tabler/icons-react": ^2.18.0
     "@tanstack/query-async-storage-persister": ^4.27.1
     "@tanstack/query-sync-storage-persister": ^4.27.1
     "@tanstack/react-query": ^4.2.1
@@ -6893,7 +6897,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
