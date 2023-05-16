@@ -340,11 +340,11 @@ __metadata:
   linkType: hard
 
 "@ctrl/shared-torrent@npm:^4.1.1, @ctrl/shared-torrent@npm:^4.3.1, @ctrl/shared-torrent@npm:^4.3.2":
-  version: 4.3.2
-  resolution: "@ctrl/shared-torrent@npm:4.3.2"
+  version: 4.3.3
+  resolution: "@ctrl/shared-torrent@npm:4.3.3"
   dependencies:
-    got: ^12.5.2
-  checksum: bd3ce95884d4c880df53c4b7a397cac84fc2ef6e02b6c5d818bbd3cc9cc4bcbe4e32c8da3a83ae6e40e5b4ac531ebd9d618579dcf5c6f48fa62cace43f223100
+    got: ^12.6.0
+  checksum: fbdf9560f44d2a684fe89c499cac450ceda27506444f36ebed846ae171a590f990bb4633c4f26e8ec19aa440daa5b19982a44855ec7fe8bb15d2f6c290c6a1d9
   languageName: node
   linkType: hard
 
@@ -4773,7 +4773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"got@npm:^12.5.0, got@npm:^12.5.2, got@npm:^12.6.0":
+"got@npm:^12.5.0, got@npm:^12.6.0":
   version: 12.6.0
   resolution: "got@npm:12.6.0"
   dependencies:
