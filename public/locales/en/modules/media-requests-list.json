@@ -13,5 +13,9 @@
     "approved": "Approved",
     "pendingApproval": "Pending approval",
     "declined": "Declined"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
