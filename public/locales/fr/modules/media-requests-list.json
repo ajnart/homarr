@@ -13,5 +13,9 @@
     "approved": "",
     "pendingApproval": "",
     "declined": ""
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }
