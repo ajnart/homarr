@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Медіа запити",
+    "description": "Перегляньте список усіх медіазапитів від ваших Overseerr або Jellyseerr",
     "settings": {
-      "title": "",
+      "title": "Список медіа запитів",
       "replaceLinksWithExternalHost": {
         "label": ""
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Запитів не знайдено. Будь ласка, переконайтеся, що ви правильно налаштували свої програми.",
+  "pending": "На схвалення чекають {{countPendingApproval}} запитів.",
+  "nonePending": "Наразі немає запитів на дозвіл у черзі. Все добре!",
   "state": {
     "approved": "Схвалено",
     "pendingApproval": "Очікує схвалення",
