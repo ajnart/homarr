@@ -5,7 +5,7 @@
     "settings": {
       "title": "Zoznam požiadaviek médií",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Nahradiť odkazy s externým hostiteľom"
       }
     }
   },
@@ -18,7 +18,7 @@
     "declined": "Odmietnuté"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Schváliť žiadosti",
+    "decline": "Odmietnutie žiadosti"
   }
 }
