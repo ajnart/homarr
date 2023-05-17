@@ -5,7 +5,7 @@
     "settings": {
       "title": "Medya talep listesi",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Bağlantıları harici ana bilgisayar ile değiştirin"
       }
     }
   },
@@ -18,7 +18,7 @@
     "declined": "Reddedildi"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Talepleri Onayla",
+    "decline": "Talepleri reddet"
   }
 }
