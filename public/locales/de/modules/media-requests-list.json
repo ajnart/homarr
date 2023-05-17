@@ -5,7 +5,7 @@
     "settings": {
       "title": "Liste der Medienanfragen",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Links durch externen Host ersetzen"
       }
     }
   },
@@ -18,7 +18,7 @@
     "declined": "Abgelehnt"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Anfrage bestätigen",
+    "decline": "Anfrage ablehnen"
   }
 }
