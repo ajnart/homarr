@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Статистика запитів на медіа",
+    "description": "Статистика ваших запитів у медіа",
     "settings": {
-      "title": ""
+      "title": "Статистика запитів на медіа"
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Очікує схвалення",
+    "tvRequests": "Запити на ТБ",
+    "movieRequests": "Запити на фільми"
   }
 }
