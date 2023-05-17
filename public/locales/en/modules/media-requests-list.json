@@ -5,7 +5,7 @@
     "settings": {
       "title": "Media requests list",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Replace links with external host"
       }
     }
   },
@@ -18,7 +18,7 @@
     "declined": "Declined"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Approve requests",
+    "decline": "Decline requests"
   }
 }
