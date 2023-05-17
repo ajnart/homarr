@@ -5,7 +5,7 @@
     "settings": {
       "title": "Список медіа запитів",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Замініть посилання на зовнішній хост"
       }
     }
   },
@@ -18,7 +18,7 @@
     "declined": "Відхилено"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Запити на підтвердження",
+    "decline": "Відхиляти запити"
   }
 }
