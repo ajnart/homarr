@@ -18,7 +18,7 @@
     "declined": "Reddedildi"
   },
   "tooltips": {
-    "approve": "Talepleri Onayla",
-    "decline": "Talepleri reddet"
+    "approve": "Talebi Onayla",
+    "decline": "Talebi reddet"
   }
 }
