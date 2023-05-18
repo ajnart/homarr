@@ -74,6 +74,8 @@ jobs:
 
       - run: yarn turbo build
 
+      - run: yarn test:run
+
       - name: Docker meta
         if: github.event_name != 'pull_request'
         id: meta
