@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Button, Group } from '@mantine/core';
-import { showNotification, updateNotification } from '@mantine/notifications';
+import { notifications } from '@mantine/notifications';
 import {
   IconCheck,
   IconPlayerPlay,
@@ -29,7 +29,7 @@ function sendDockerCommand(
   containerName: string,
   reload: () => void
 ) {
-  showNotification({
+  notifications.show({
     id: containerId,
     loading: true,
     title: `${t(`actions.${action}.start`)} ${containerName}`,
@@ -40,7 +40,7 @@ function sendDockerCommand(
   axios
     .get(`/api/docker/container/${containerId}?action=${action}`)
     .then((res) => {
-      updateNotification({
+      notifications.show({
         id: containerId,
         title: containerName,
         message: `${t(`actions.${action}.end`)} ${containerName}`,
@@ -49,7 +49,7 @@ function sendDockerCommand(
       });
     })
     .catch((err) => {
-      updateNotification({
+      notifications.update({
         id: containerId,
         color: 'red',
         title: t('errors.unknownError.title'),
@@ -72,6 +72,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
   const [isLoading, setisLoading] = useState(false);
   const { name: configName, config } = useConfigContext();
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
+
+  if (process.env.DISABLE_EDIT_MODE === 'true') {
+    return null;
+  }
 
   return (
     <Group spacing="xs">
