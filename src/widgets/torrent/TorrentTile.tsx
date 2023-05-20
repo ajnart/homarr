@@ -1,3 +1,5 @@
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
+
 import {
   Badge,
   Center,
@@ -11,17 +13,22 @@ import {
   Title,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconFileDownload } from '@tabler/icons';
+
+import { IconFileDownload, IconInfoCircle } from '@tabler/icons-react';
+
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
+
 import { useTranslation } from 'next-i18next';
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
-import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
-import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { AppIntegrationType } from '../../types/app';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
+import { MIN_WIDTH_MOBILE } from '../../constants/constants';
+import { AppIntegrationType } from '../../types/app';
+import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
+import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
+
 import { BitTorrrentQueueItem } from './TorrentQueueItem';
 
 dayjs.extend(duration);
@@ -41,6 +48,14 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    labelFilterIsWhitelist: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    labelFilter: {
+      type: 'multiple-text',
+      defaultValue: [] as string[],
+    },
   },
   gridstack: {
     minWidth: 2,
@@ -59,7 +74,7 @@ interface TorrentTileProps {
 
 function TorrentTile({ widget }: TorrentTileProps) {
   const { t } = useTranslation('modules/torrents-status');
-  const { width } = useElementSize();
+  const { width, ref } = useElementSize();
 
   const {
     data,
@@ -121,23 +136,17 @@ function TorrentTile({ widget }: TorrentTileProps) {
     );
   }
 
-  const torrents = data.apps
-    .flatMap((app) => (app.type === 'torrent' ? app.torrents : []))
-    .filter((torrent) => (widget.properties.displayCompletedTorrents ? true : !torrent.isCompleted))
-    .filter((torrent) =>
-      widget.properties.displayStaleTorrents
-        ? true
-        : torrent.isCompleted || torrent.downloadSpeed > 0
-    );
+  const torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []));
+  const filteredTorrents = filterTorrents(widget, torrents);
 
   const difference = new Date().getTime() - dataUpdatedAt;
   const duration = dayjs.duration(difference, 'ms');
   const humanizedDuration = duration.humanize();
 
   return (
-    <Flex direction="column" sx={{ height: '100%' }}>
+    <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
       <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
-        <Table highlightOnHover p="sm">
+        <Table striped highlightOnHover p="sm">
           <thead>
             <tr>
               <th>{t('card.table.header.name')}</th>
@@ -149,9 +158,24 @@ function TorrentTile({ widget }: TorrentTileProps) {
             </tr>
           </thead>
           <tbody>
-            {torrents.map((torrent, index) => (
+            {filteredTorrents.map((torrent, index) => (
               <BitTorrrentQueueItem key={index} torrent={torrent} app={undefined} />
             ))}
+
+            {filteredTorrents.length !== torrents.length && (
+              <tr>
+                <td colSpan={width > MIN_WIDTH_MOBILE ? 6 : 3}>
+                  <Flex gap="xs" align="center" justify="center">
+                    <IconInfoCircle opacity={0.7} size={18} />
+                    <Text align="center" color="dimmed">
+                      {t('card.table.body.filterHidingItems', {
+                        count: torrents.length - filteredTorrents.length,
+                      })}
+                    </Text>
+                  </Flex>
+                </td>
+              </tr>
+            )}
           </tbody>
         </Table>
       </ScrollArea>
@@ -169,5 +193,44 @@ function TorrentTile({ widget }: TorrentTileProps) {
     </Flex>
   );
 }
+
+export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
+  let result = torrents;
+  if (!widget.properties.displayCompletedTorrents) {
+    result = result.filter((torrent) => !torrent.isCompleted);
+  }
+
+  if (widget.properties.labelFilter.length > 0) {
+    result = filterTorrentsByLabels(
+      result,
+      widget.properties.labelFilter,
+      widget.properties.labelFilterIsWhitelist
+    );
+  }
+
+  result = filterStaleTorrent(widget, result);
+
+  return result;
+};
+
+const filterStaleTorrent = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
+  if (widget.properties.displayStaleTorrents) {
+    return torrents;
+  }
+
+  return torrents.filter((torrent) => torrent.isCompleted || torrent.downloadSpeed > 0);
+};
+
+const filterTorrentsByLabels = (
+  torrents: NormalizedTorrent[],
+  labels: string[],
+  isWhitelist: boolean
+) => {
+  if (isWhitelist) {
+    return torrents.filter((torrent) => torrent.label && labels.includes(torrent.label));
+  }
+
+  return torrents.filter((torrent) => !labels.includes(torrent.label as string));
+};
 
 export default definition;

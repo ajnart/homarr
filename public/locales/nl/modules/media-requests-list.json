@@ -3,15 +3,22 @@
     "name": "Media Verzoeken",
     "description": "Bekijk een lijst met alle mediaverzoeken van uw Overseerr of Jellyseerr instantie",
     "settings": {
-      "title": "Lijst met mediaverzoeken"
+      "title": "Lijst met mediaverzoeken",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
   "noRequests": "Geen verzoeken gevonden. Zorg ervoor dat u uw apps correct hebt geconfigureerd.",
-  "pending": "Er zijn {{countPendingApproval}} verzoeken die op goedkeuring wachten.",
+  "pending": "Er zijn {{countPendingApproval}} aanvragen die wachten op goedkeuring.",
   "nonePending": "Er zijn momenteel geen lopende goedkeuringen. Je bent klaar om te gaan!",
   "state": {
     "approved": "Goedgekeurd",
     "pendingApproval": "In afwachting van goedkeuring",
     "declined": "Afgewezen"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }

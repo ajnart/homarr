@@ -1,0 +1,6 @@
+{
+  "descriptor": {
+    "name": "Управление фильтрующими DNS",
+    "description": "Управляйте PiHole или AdGuard с панели управления"
+  }
+}

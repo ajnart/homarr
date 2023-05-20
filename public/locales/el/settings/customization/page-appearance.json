@@ -1,28 +1,28 @@
 {
   "pageTitle": {
     "label": "Τίτλος Σελίδας",
-    "description": ""
+    "description": "Ο τίτλος του ταμπλό στο επάνω αριστερό μέρος"
   },
   "metaTitle": {
     "label": "Meta Τίτλος",
-    "description": ""
+    "description": "Ο τίτλος που εμφανίζεται στην καρτέλα του προγράμματος περιήγησης"
   },
   "logo": {
     "label": "Λογότυπο",
-    "description": ""
+    "description": "Το λογότυπο που εμφανίζεται πάνω αριστερά"
   },
   "favicon": {
     "label": "Έμβλημα",
-    "description": ""
+    "description": "Το εικονίδιο που εμφανίζεται στην καρτέλα του προγράμματος περιήγησης"
   },
   "background": {
     "label": "Φόντο"
   },
   "customCSS": {
     "label": "Προσαρμοσμένη CSS",
-    "description": "",
+    "description": "Περαιτέρω, προσαρμόστε τον πίνακα ελέγχου σας χρησιμοποιώντας CSS, συνιστάται μόνο για έμπειρους χρήστες",
     "placeholder": "Το προσαρμοσμένο CSS θα εφαρμοστεί τελευταίο",
-    "applying": ""
+    "applying": "Εφαρμογή CSS..."
   },
   "buttons": {
     "submit": "Υποβολή"

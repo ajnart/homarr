@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Homarr içerisinde harici Dash.'in grafiklerini görüntüler.",
+    "settings": {
+      "title": "Dash. widget için ayarlar",
+      "dashName": {
+        "label": "Dash. Görünecek Başlık"
+      },
+      "url": {
+        "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Yüzdeleri göster"
+      },
+      "columns": {
+        "label": "Sütunları göster"
+      },
+      "graphHeight": {
+        "label": "Grafiklerin yüksekliği"
+      },
+      "graphsOrder": {
+        "label": "Grafikler (Sıralama)",
+        "storage": {
+          "label": "Depolama",
+          "enabled": {
+            "label": "Widget'ı göster"
+          },
+          "span": {
+            "label": "Sütun genişliği"
+          },
+          "compactView": {
+            "label": "Metin olarak göster (kompakt)"
+          },
+          "multiView": {
+            "label": "Çoklu sürücü görünümü olarak göster"
+          }
+        },
+        "network": {
+          "label": "Ağ",
+          "enabled": {
+            "label": "Widget'ı göster"
+          },
+          "span": {
+            "label": "Sütun genişliği"
+          },
+          "compactView": {
+            "label": "Metin olarak göster (kompakt)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Widget'ı göster"
+          },
+          "span": {
+            "label": "Sütun genişliği"
+          },
+          "multiView": {
+            "label": "Çok çekirdekli görünüm olarak göster"
+          }
+        },
+        "ram": {
+          "label": "Ram",
+          "enabled": {
+            "label": "Widget'ı göster"
+          },
+          "span": {
+            "label": "Sütun genişliği"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Widget'ı göster"
+          },
+          "span": {
+            "label": "Sütun genişliği"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Hiç Dash. hizmeti bulunamadı. Lütfen Homarr kontrol panelinize bir tane ekleyin veya modül seçeneklerinde bir Dash. URL ayarlayın",
+      "noInformation": "Dash'ten bilgi alınamıyor. - En son sürümü mü kullanıyorsunuz?",
+      "protocolDowngrade": {
+        "title": "Algılanan protokol versiyon düşürme",
+        "text": "Dash. örneğinize bağlantı HTTP kullanıyor. Bu bir güvenlik riskidir, çünkü HTTP şifrelenmemiştir ve saldırganlar bu bağlantıyı kötüye kullanabilir. Dash.'in HTTPS kullandığından emin olun veya Homarr'ı HTTP'ye indirin (önerilmez)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Depolama",
+        "label": "Depolama:"
+      },
+      "network": {
+        "title": "Ağ",
+        "label": "Ağ:",
+        "metrics": {
+          "download": "İndirme",
+          "upload": "Yükleme"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "ram": {
+        "title": "Ram"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "DNS漏洞摘要",
+    "description": "显示来自 PiHole 或 AdGuard 的重要数据",
+    "settings": {
+      "title": "DNS漏洞摘要设置",
+      "usePiHoleColors": {
+        "label": "使用PiHole所用颜色"
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "广告列表中的域名",
+      "queriesToday": "今天查询",
+      "queriesBlockedTodayPercentage": "今天已屏蔽",
+      "queriesBlockedToday": "今天已屏蔽"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+	"tabs": {
+		"general": "Genel",
+		"behaviour": "Davranış",
+		"network": "Ağ",
+		"appearance": "Görünüş",
+		"integration": "Entegrasyon"
+	},
+	"general": {
+		"appname": {
+			"label": "Uygulama adı",
+			"description": "Uygulamayı gösterge panelinde görüntülemek için kullanılır."
+		},
+		"internalAddress": {
+			"label": "Dahili adres",
+			"description": "Uygulamanın dahili IP adresi."
+		},
+		"externalAddress": {
+			"label": "Harici adres",
+			"description": "Uygulamaya tıklandığında açılacak URL."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Yeni sekmede aç",
+			"description": "Uygulamayı mevcut sekme yerine yeni bir sekmede açın."
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Durum denetleyicisi",
+			"description": "Basit bir HTTP(S) isteği kullanarak uygulamanızın çevrimiçi olup olmadığını kontrol eder."
+		},
+		"statusCodes": {
+			"label": "HTTP durum kodları",
+			"description": "Çevrimiçi olarak kabul edilen HTTP durum kodları."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Uygulama Simgesi",
+			"description": "İkon bulmak için yazmaya başlayın. Özel ikon kullanmak için URL de yapıştırabilirsiniz.",
+			"autocomplete": {
+				"title": "Sonuç bulunamadı",
+				"text": "Daha belirgin bir arama terimi kullanmayı deneyin. İstediğiniz simgeyi bulamıyorsanız, özel bir simge için resim URL'sini yukarıya yapıştıın"
+			},
+			"noItems": {
+				"title": "Harici simgeler yükleniyor",
+				"text": "Bu bir kaç saniye alabilir"
+			}
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Entegrasyonların yapılandırması",
+			"description": "Uygulamanıza bağlanmak için kullanılacak entegrasyon yapılandırması.",
+			"placeholder": "Bir entegrasyon seçin",
+			"defined": "Tanımlı",
+			"undefined": "Tanımsız",
+			"public": "Herkese açık",
+			"private": "Özel",
+			"explanationPrivate": "Özel Secret sunucuya yalnızca bir kez gönderilir. Tarayıcınız sayfayı yeniledikten sonra bir daha asla gönderilmez.",
+			"explanationPublic": "Bir genel Secret, her zaman istemciye  gönderilir ve API üzerinden erişilebilir. Kullanıcı adları, parolalar, belirteçler, sertifikalar ve benzeri hiçbir gizli değer içermemelidir!"
+		},
+		"secrets": {
+			"description": "Bir Secret'ı güncellemek için bir değer girin ve kaydet düğmesine tıklayın. Bir Secret'ı kaldırmak için temizle düğmesini kullanın.",
+			"warning": "Kimlik bilgileriniz, entegrasyonlarınız için erişim görevi görür ve bunları başka hiç kimseyle <strong>asla</strong> paylaşmamalısınız. Homarr ekibi asla kimlik bilgilerini istemez. <strong>Secret'larınızı güvenli bir şekilde sakladığınızdan ve yönettiğinizden</strong> <strong>emin olun.</strong>.",
+			"clear": "Secret'ı Göster",
+			"save": "Secret'ı Gizle",
+			"update": "Secret'ı Güncelle"
+		}
+	},
+	"validation": {
+		"popover": "Formunuz geçersiz veriler içeriyor. Bu nedenle kaydedilemiyor. Lütfen tüm sorunları çözün ve değişikliklerinizi kaydetmek için bu düğmeye tekrar tıklayın"
+	}
+}

@@ -10,19 +10,19 @@
   },
   "credits": {
     "madeWithLove": "Φτιαγμένο με ❤️ από @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "Δείτε το περιεχόμενο τρίτων",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Εξάρτηση",
       "dependencyVersion": "Έκδοση"
     }
   },
   "grow": "Πλέγμα ανάπτυξης (παίρνει όλο το χώρο)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Προεπισκόπηση",
+      "subtitle": "Οι αλλαγές θα αποθηκευτούν αυτόματα"
     },
-    "divider": "",
+    "divider": "Επιλογές διάταξης",
     "main": "Κύριο",
     "sidebar": "Πλαϊνή μπάρα",
     "cannotturnoff": "Δεν μπορεί να απενεργοποιηθεί",

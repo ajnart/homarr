@@ -11,6 +11,9 @@ import videoStream from './video/VideoStreamTile';
 import weather from './weather/WeatherTile';
 import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
+import dnsHoleSummary from './dnshole/DnsHoleSummary';
+import dnsHoleControls from './dnshole/DnsHoleControls';
+import bookmark from './bookmark/BookmarkWidgetTile';
 
 export default {
   calendar,
@@ -26,4 +29,7 @@ export default {
   'media-server': mediaServer,
   'media-requests-list': mediaRequestsList,
   'media-requests-stats': mediaRequestsStats,
+  'dns-hole-summary': dnsHoleSummary,
+  'dns-hole-controls': dnsHoleControls,
+  bookmark,
 };

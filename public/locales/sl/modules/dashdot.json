@@ -4,6 +4,9 @@
     "description": "Prikaže grafe zunanje instance Dash. znotraj Homarr.",
     "settings": {
       "title": "Nastavitve za pripomoček Dash",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "Dash. URL"
       },

@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Tüm Docker Konteynerlerinize kolayca erişmenizi ve yönetmenizi sağlar."
+  },
+  "search": {
+    "placeholder": "Konteyner veya imaj adına göre ara"
+  },
+  "table": {
+    "header": {
+      "name": "İsim",
+      "image": "İmaj",
+      "ports": "Bağlantı noktaları",
+      "state": "Durum"
+    },
+    "body": {
+      "portCollapse": "{{ports}} daha fazla"
+    },
+    "states": {
+      "running": "Çalışıyor",
+      "created": "Oluşturuldu",
+      "stopped": "Durduruldu",
+      "unknown": "Bilinmeyen"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Uygulama ekle",
+      "message": "Homarr'a uygulama ekle"
+    },
+    "restart": {
+      "title": "Yeniden Başlat"
+    },
+    "stop": {
+      "title": "Durdur"
+    },
+    "start": {
+      "title": "Başlat"
+    },
+    "refreshData": {
+      "title": "Verileri yenile"
+    },
+    "remove": {
+      "title": "Kaldır"
+    },
+    "addToHomarr": {
+      "title": "Homarr'a Ekle"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Başlatılıyor",
+      "end": "Başlatıldı"
+    },
+    "stop": {
+      "start": "Durduruluyor",
+      "end": "Durduruldu"
+    },
+    "restart": {
+      "start": "Yeniden başlatılıyor",
+      "end": "Yeniden başlatıldı"
+    },
+    "remove": {
+      "start": "Kaldırılıyor",
+      "end": "Kaldırıldı"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker entegrasyonu başarısız oldu",
+      "message": "Docker soketini bağlamayımı mı unuttunuz?"
+    },
+    "unknownError": {
+      "title": "Bir hata oluştu"
+    },
+    "oneServiceAtATime": {
+      "title": "Lütfen her seferinde yalnızca bir uygulama veya hizmet ekleyin!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

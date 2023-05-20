@@ -1,0 +1,6 @@
+{
+  "descriptor": {
+    "name": "DNS漏洞控制",
+    "description": "从您的仪表盘控制 PiHole 或 AdGuard"
+  }
+}

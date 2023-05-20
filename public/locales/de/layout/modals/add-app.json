@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "App Symbol",
-			"description": "",
+			"description": "Beginnen Sie zu tippen, um ein Symbol zu finden. Sie können auch eine Bild-URL einfügen, um ein benutzerdefiniertes Symbol zu verwenden.",
 			"autocomplete": {
 				"title": "Die Suche ergab keine Treffer",
 				"text": "Versuchen Sie, einen spezifischeren Suchbegriff zu verwenden. Wenn Sie das gewünschte Symbol nicht finden können, fügen Sie die obige Bild-URL für ein benutzerdefiniertes Symbol ein"

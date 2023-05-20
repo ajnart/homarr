@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Arama Çubuğu",
+    "description": "Özel arama motorunuzda, YouTube'da ve desteklenen uygulamalarda arama yapmanızı sağlayan bir arama çubuğu."
+  },
+  "input": {
+    "placeholder": "Web’de ara..."
+  },
+  "switched-to": "Şuna geçildi",
+  "searchEngines": {
+    "search": {
+      "name": "Web",
+      "description": "Ara..."
+    },
+    "youtube": {
+      "name": "YouTube",
+      "description": "YouTube'de ara"
+    },
+    "torrents": {
+      "name": "Torrentler",
+      "description": "Torrent ara"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "Overseerr'de Film ve Dizi Arayın"
+    }
+  },
+  "tip": "Arama çubuğunu kısayol ile seçebilirsiniz ",
+  "switchedSearchEngine": "{{searchEngine}} ile aramaya geçildi"
+}

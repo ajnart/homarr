@@ -1,0 +1,21 @@
+{
+  "descriptor": {
+    "name": "Lesezeichen",
+    "description": "Zeigt eine statische Liste von Zeichenfolgen oder Links an",
+    "settings": {
+      "title": "Lesezeichen-Einstellungen",
+      "items": {
+        "label": "Elemente"
+      },
+      "layout": {
+        "label": "Ansicht"
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Lesezeichenliste leer",
+      "text": "Neue Elemente im Bearbeitungsmodus zu dieser Liste hinzufügen"
+    }
+  }
+}

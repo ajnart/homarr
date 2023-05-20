@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "{{size}} boyutunda sütunlar",
+    "descriptionPreset": "Ekran genişliği {{pixels}} pikselden az olduğunda sütun sayısı",
+    "descriptionExceedsPreset": "Ekran genişliği {{pixels}} pikselden az olduğunda sütun sayısı"
+  },
+  "unsavedChanges": "Kaydedilmemiş değişiklikleriniz var. Uygulamak ve kaydetmek için aşağıdaki <br>Değişiklikleri uygula</br> düğmesine tıklayın.",
+  "applyChanges": "Değişiklikleri uygula",
+  "defaultValues": "Varsayılana dön"
+}

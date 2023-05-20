@@ -5,7 +5,7 @@
     "settings": {
       "title": "Ρυθμίσεις για το widget ημερολογίου",
       "useSonarrv4": {
-        "label": ""
+        "label": "Χρήση του API Sonarr v4"
       },
       "sundayStart": {
         "label": "Ξεκινήστε την εβδομάδα από την Κυριακή"

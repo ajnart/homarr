@@ -6,9 +6,8 @@ import Consola from 'consola';
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { BackendConfigType, ConfigType } from '../../../types/config';
 import { getConfig } from '../../../tools/config/getConfig';
-import widgets from '../../../widgets';
+import { BackendConfigType, ConfigType } from '../../../types/config';
 import { IRssWidget } from '../../../widgets/rss/RssWidgetTile';
 
 function Put(req: NextApiRequest, res: NextApiResponse) {

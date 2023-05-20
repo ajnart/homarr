@@ -5,6 +5,7 @@ import ConfigChanger from '../../Config/ConfigChanger';
 import ConfigActions from './Config/ConfigActions';
 import LanguageSelect from './Language/LanguageSelect';
 import { SearchEngineSelector } from './SearchEngine/SearchEngineSelector';
+import { CacheButtons } from './CacheButtons';
 
 export default function CommonSettings() {
   const { config } = useConfigContext();
@@ -24,6 +25,7 @@ export default function CommonSettings() {
         <Space />
         <LanguageSelect />
         <ConfigChanger />
+        <CacheButtons />
         <ConfigActions />
       </Stack>
     </ScrollArea>

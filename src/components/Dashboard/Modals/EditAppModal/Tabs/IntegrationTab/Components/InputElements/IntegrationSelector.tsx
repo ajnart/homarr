@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Group, Select, SelectItem, Text } from '@mantine/core';
+import { Group, Image, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
@@ -85,6 +85,16 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/plex.png',
       label: 'Plex',
     },
+    {
+      value: 'pihole',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/pi-hole.png',
+      label: 'PiHole',
+    },
+    {
+      value: 'adGuardHome',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/adguard-home.png',
+      label: 'AdGuard Home',
+    },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
 
   const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {
@@ -128,11 +138,12 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       }
       icon={
         form.values.integration?.type && (
-          <img
+          <Image
             src={data.find((x) => x.value === form.values.integration?.type)?.image}
             alt="integration"
             width={20}
             height={20}
+            fit="contain"
           />
         )
       }
@@ -155,7 +166,7 @@ const SelectItemComponent = forwardRef<HTMLDivElement, ItemProps>(
   ({ image, label, description, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
-        <img src={image} alt="integration icon" width={20} height={20} />
+        <Image src={image} alt="integration icon" width={20} height={20} fit="contain" />
 
         <div>
           <Text size="sm">{label}</Text>

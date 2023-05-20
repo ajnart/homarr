@@ -6,11 +6,15 @@
   "delete": "Löschen",
   "ok": "OK",
   "edit": "Bearbeiten",
+  "enabled": "Aktiviert",
+  "disabled": "Deaktiviert",
+  "enableAll": "Alle aktivieren",
+  "disableAll": "Alles deaktivieren",
   "version": "Version",
   "changePosition": "Position wechseln",
   "remove": "Entfernen",
   "removeConfirm": "Sind Sie sicher, dass Sie {{item}} entfernen möchten?",
-  "createItem": "+ erstelle {{item}}",
+  "createItem": "+ Erstelle {{item}}",
   "sections": {
     "settings": "Einstellungen",
     "dangerZone": "Gefahrenzone"

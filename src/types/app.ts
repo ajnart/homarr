@@ -1,4 +1,4 @@
-import { IconKey, IconPassword, IconUser, TablerIcon } from '@tabler/icons';
+import { IconKey, IconPassword, IconUser, Icon } from '@tabler/icons-react';
 
 import { TileBaseType } from './tile';
 
@@ -44,7 +44,9 @@ export type IntegrationType =
   | 'transmission'
   | 'plex'
   | 'jellyfin'
-  | 'nzbGet';
+  | 'nzbGet'
+  | 'pihole'
+  | 'adGuardHome';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -84,11 +86,13 @@ export const integrationFieldProperties: {
   transmission: ['username', 'password'],
   jellyfin: ['username', 'password'],
   plex: ['apiKey'],
+  pihole: ['password'],
+  adGuardHome: ['username', 'password'],
 };
 
 export type IntegrationFieldDefinitionType = {
   type: 'private' | 'public';
-  icon: TablerIcon;
+  icon: Icon;
   label: string;
 };
 

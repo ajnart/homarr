@@ -4,6 +4,9 @@
     "description": "Viser graferne for en ekstern Dash. instans i Homarr.",
     "settings": {
       "title": "Indstillinger for Dash. widget",
+      "dashName": {
+        "label": "Dash. Navn"
+      },
       "url": {
         "label": "Dash. URL"
       },

@@ -7,7 +7,7 @@ import {
   IconRowInsertBottom,
   IconEdit,
   IconTrash,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { useConfigContext } from '../../../../config/provider';
 import { CategoryType } from '../../../../types/category';
 import { useCategoryActions } from './useCategoryActions';

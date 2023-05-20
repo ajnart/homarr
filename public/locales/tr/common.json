@@ -1,0 +1,39 @@
+{
+  "save": "Kaydet",
+  "about": "Hakkında",
+  "cancel": "Vazgeç",
+  "close": "Kapat",
+  "delete": "Sil",
+  "ok": "Tamam",
+  "edit": "Düzenle",
+  "enabled": "Etkin",
+  "disabled": "Pasif",
+  "enableAll": "Tümünü etkinleştir",
+  "disableAll": "Tümünü pasifleştir",
+  "version": "Versiyon",
+  "changePosition": "Pozisyon değiştir",
+  "remove": "Kaldır",
+  "removeConfirm": "{{item}}'i kaldırmak istediğinizden emin misiniz?",
+  "createItem": "+ yeni {{item}}",
+  "sections": {
+    "settings": "Ayarlar",
+    "dangerZone": "Tehlikeli bölge"
+  },
+  "secrets": {
+    "apiKey": "APİ anahtarı",
+    "username": "Kullanıcı adı",
+    "password": "Şifre"
+  },
+  "tip": "İpucu: ",
+  "time": {
+    "seconds": "saniye",
+    "minutes": "dakika",
+    "hours": "saat"
+  },
+  "loading": "Yükleniyor...",
+  "breakPoints": {
+    "small": "küçük",
+    "medium": "orta",
+    "large": "Büyük"
+  }
+}

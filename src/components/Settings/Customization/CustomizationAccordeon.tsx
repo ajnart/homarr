@@ -1,5 +1,5 @@
 import { Accordion, Checkbox, Grid, Group, Stack, Text } from '@mantine/core';
-import { IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons';
+import { IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons-react';
 import { i18n, useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { GridstackConfiguration } from './Layout/GridstackConfiguration';

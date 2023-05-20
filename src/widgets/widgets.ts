@@ -7,7 +7,7 @@ import {
   SwitchProps,
   TextInputProps,
 } from '@mantine/core';
-import { TablerIcon } from '@tabler/icons';
+import { Icon } from '@tabler/icons-react';
 
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
@@ -39,6 +39,7 @@ export type IWidgetOptionValue =
   | ISelectOptionValue
   | INumberInputOptionValue
   | IDraggableListInputValue
+  | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue;
 
 // Interface for data type
@@ -107,6 +108,18 @@ export type IDraggableListInputValue = {
   >;
 };
 
+export type IDraggableEditableListInputValue<TData extends { id: string }> = {
+  type: 'draggable-editable-list';
+  defaultValue: TData[];
+  create: () => TData;
+  getLabel: (data: TData) => string | JSX.Element;
+  itemComponent: (props: {
+    data: TData;
+    onChange: (data: TData) => void;
+    delete: () => void;
+  }) => JSX.Element;
+};
+
 // will show a text-input with a button to add a new line
 export type IMultipleTextInputOptionValue = {
   type: 'multiple-text';
@@ -117,7 +130,7 @@ export type IMultipleTextInputOptionValue = {
 // is used to type the widget definitions which will be used to display all widgets
 export type IWidgetDefinition<TKey extends string = string> = {
   id: TKey;
-  icon: TablerIcon | string;
+  icon: Icon | string;
   options: {
     [key: string]: IWidgetOptionValue;
   };

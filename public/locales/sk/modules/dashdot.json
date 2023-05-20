@@ -4,14 +4,17 @@
     "description": "Zobrazí grafy externého Dash. Instancie vo vnútri Homarr.",
     "settings": {
       "title": "Nastavenia pre Dash. mini aplikácie",
+      "dashName": {
+        "label": "Dash. Názov"
+      },
       "url": {
         "label": "Dash. URL adresa"
       },
       "usePercentages": {
-        "label": "Zobraziť percentá"
+        "label": "Zobraz percentá"
       },
       "columns": {
-        "label": "Zobraziť stĺpce"
+        "label": "Zobraz stĺpce"
       },
       "graphHeight": {
         "label": "Výška grafov"
@@ -21,7 +24,7 @@
         "storage": {
           "label": "Úložisko",
           "enabled": {
-            "label": "Zobraziť v miniaplikácii"
+            "label": "Zobraziť v mini aplikácii"
           },
           "span": {
             "label": "Rozpätie stĺpca"
@@ -36,7 +39,7 @@
         "network": {
           "label": "Sieť",
           "enabled": {
-            "label": "Zobraziť v miniaplikácii"
+            "label": "Zobraziť v mini aplikácii"
           },
           "span": {
             "label": "Rozpätie stĺpca"
@@ -48,7 +51,7 @@
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": "Zobraziť v miniaplikácii"
+            "label": "Zobraziť v mini aplikácii"
           },
           "span": {
             "label": "Rozpätie stĺpca"
@@ -60,7 +63,7 @@
         "ram": {
           "label": "RAM",
           "enabled": {
-            "label": "Zobraziť v miniaplikácii"
+            "label": "Zobraziť v mini aplikácii"
           },
           "span": {
             "label": "Rozpätie stĺpca"
@@ -69,7 +72,7 @@
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": "Zobraziť v miniaplikácii"
+            "label": "Zobraziť v mini aplikácii"
           },
           "span": {
             "label": "Rozpätie stĺpca"
