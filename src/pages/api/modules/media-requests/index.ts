@@ -4,7 +4,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getConfig } from '../../../../tools/config/getConfig';
 
 import { MediaRequest } from '../../../../widgets/media-requests/media-request-types';
-import { ConfigAppType } from '../../../../types/app';
 import { MediaRequestListWidget } from '../../../../widgets/media-requests/MediaRequestListTile';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
