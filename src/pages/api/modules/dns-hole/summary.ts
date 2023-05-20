@@ -66,6 +66,11 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
             appId: app.id,
           });
           adsBlockedTodayPercentageArr.push((queriesToday / blockedQueriesToday) * 100);
+          break;
+        }
+        default: {
+          Consola.error(`Integration communication for app ${app.id} failed: unknown type`);
+          break;
         }
       }
     } catch (err) {

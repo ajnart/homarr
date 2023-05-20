@@ -92,7 +92,7 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     },
     {
       value: 'adGuardHome',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png',
+      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/adguard-home.png',
       label: 'AdGuard Home',
     },
   ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
