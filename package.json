@@ -77,7 +77,6 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^13.0.0",
     "@next/eslint-plugin-next": "^13.0.0",
-    "@playwright/test": "^1.33.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/dockerode": "^3.3.9",
@@ -110,7 +109,7 @@
     "turbo": "latest",
     "typescript": "^5.0.4",
     "video.js": "^8.0.3",
-    "vitest": "^0.29.3",
+    "vitest": "^0.31.1",
     "vitest-fetch-mock": "^0.2.2"
   },
   "resolutions": {
