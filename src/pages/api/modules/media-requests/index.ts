@@ -51,7 +51,7 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
               type: item.type,
               name: genericItem.name,
               userName: item.requestedBy.displayName,
-              userProfilePicture: constructAvatarUrl(app, item),
+              userProfilePicture: constructAvatarUrl(appUrl, item),
               userLink: `${appUrl}/users/${item.requestedBy.id}`,
               airDate: genericItem.airDate,
               status: item.status,
@@ -75,7 +75,7 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   return response.status(200).json(mediaRequests);
 };
 
-const constructAvatarUrl = (app: ConfigAppType, item: OverseerrResponseItem) => {
+const constructAvatarUrl = (appUrl: string, item: OverseerrResponseItem) => {
   const isAbsolute =
     item.requestedBy.avatar.startsWith('http://') || item.requestedBy.avatar.startsWith('https://');
 
@@ -83,7 +83,7 @@ const constructAvatarUrl = (app: ConfigAppType, item: OverseerrResponseItem) => 
     return item.requestedBy.avatar;
   }
 
-  return `${app.url}/${item.requestedBy.avatar}`;
+  return `${appUrl}/${item.requestedBy.avatar}`;
 };
 
 const retrieveDetailsForItem = async (

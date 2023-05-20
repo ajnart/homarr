@@ -109,7 +109,7 @@
     "turbo": "latest",
     "typescript": "^5.0.4",
     "video.js": "^8.0.3",
-    "vitest": "^0.29.3",
+    "vitest": "^0.31.1",
     "vitest-fetch-mock": "^0.2.2"
   },
   "resolutions": {
