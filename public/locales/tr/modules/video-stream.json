@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Video Akışı",
+    "description": "Bir video akışını veya bir kameradan veya bir web sitesinden video gömün",
+    "settings": {
+      "title": "Video akışı widget'ı için ayarlar",
+      "FeedUrl": {
+        "label": "Akış URL'si"
+      },
+      "autoPlay": {
+        "label": "Otomatik oynatma"
+      },
+      "muted": {
+        "label": "Sesi kapat"
+      },
+      "controls": {
+        "label": "Video oynatıcı kontrolleri"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Geçersiz akış"
+  }
+}

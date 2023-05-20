@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "显示过期种子"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "由 {{appName}}, {{ratio}} 管理的比率"
       },
       "body": {
-        "nothingFound": "没有找到种子"
+        "nothingFound": "没有找到种子",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

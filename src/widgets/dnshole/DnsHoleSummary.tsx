@@ -1,6 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import { Card, Center, Container, Stack, Text } from '@mantine/core';
-import { IconAd, IconBarrierBlock, IconPercentage, IconSearch, IconWorldWww } from '@tabler/icons';
+import {
+  IconAd,
+  IconBarrierBlock,
+  IconPercentage,
+  IconSearch,
+  IconWorldWww,
+} from '@tabler/icons-react';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
@@ -103,12 +109,7 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
         <Center h="100%">
           <Stack align="center" spacing="xs">
             <IconPercentage size={30} />
-            <div>
-              <Text align="center">{(data.adsBlockedTodayPercentage * 100).toFixed(2)}%</Text>
-              <Text align="center" lh={1.2} size="sm">
-                {t('card.metrics.queriesBlockedTodayPercentage')}
-              </Text>
-            </div>
+            <Text align="center">{(data.adsBlockedTodayPercentage * 100).toFixed(2)}%</Text>
           </Stack>
         </Center>
       </Card>

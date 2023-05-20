@@ -5,6 +5,7 @@ import { getConfig } from '../../../../tools/config/getConfig';
 
 import { MediaRequest } from '../../../../widgets/media-requests/media-request-types';
 import { ConfigAppType } from '../../../../types/app';
+import { MediaRequestListWidget } from '../../../../widgets/media-requests/MediaRequestListTile';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
@@ -24,6 +25,15 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
     })
       .then(async (response) => {
         const body = (await response.json()) as OverseerrResponse;
+        const mediaWidget = config.widgets.find(
+            (x) => x.type === 'media-requests-list') as MediaRequestListWidget | undefined;
+        if (!mediaWidget) {
+            Consola.log('No media-requests-list found');
+            return Promise.resolve([]);
+        }
+        const appUrl = mediaWidget.properties.replaceLinksWithExternalHost
+          ? app.behaviour.externalUrl
+          : app.url;
 
         const requests = await Promise.all(
           body.results.map(async (item): Promise<MediaRequest> => {
@@ -42,12 +52,12 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
               name: genericItem.name,
               userName: item.requestedBy.displayName,
               userProfilePicture: constructAvatarUrl(app, item),
-              userLink: `${app.url}/users/${item.requestedBy.id}`,
+              userLink: `${appUrl}/users/${item.requestedBy.id}`,
               airDate: genericItem.airDate,
               status: item.status,
               backdropPath: `https://image.tmdb.org/t/p/original/${genericItem.backdropPath}`,
               posterPath: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${genericItem.posterPath}`,
-              href: `${app.behaviour.externalUrl}/movie/${item.media.tmdbId}`,
+              href: `${appUrl}/movie/${item.media.tmdbId}`,
             };
           })
         );

@@ -1,0 +1,18 @@
+{
+	"description": "Homarr, tüm uygulamalarınızı ve hizmetlerinizi parmaklarınızın ucuna getiren <strong>şık</strong>, <strong>modern</strong> bir kontrol panelidir. Homarr ile her şeye tek bir yerden erişebilir ve kontrol edebilirsiniz. Homarr eklediğiniz uygulamalarla bütünleşerek size değerli bilgiler sunar ve tam kontrol sağlar. Kurulum çok kolaydır ve Homarr çok çeşitli kurulum yöntemlerini destekler.",
+	"contact": "Sorun mu yaşıyorsunuz veya sorularınız mı var? Bizimle iletişim kurun!",
+	"addToDashboard": "Gösterge Tablosuna ekle",
+	"tip": "Mod, değiştirici anahtarınızı ifade eder, bu Ctrl ve Alt/Super/Windows tuşudur",
+	"key": "Kısayol tuşu",
+	"action": "Eylem",
+	"keybinds": "Tuş atamaları",
+	"metrics": {
+		"configurationSchemaVersion": "Yapılandırma şeması sürümü",
+		"configurationsCount": "Mevcut konfigürasyonlar",
+		"version": "Versiyon",
+		"nodeEnvironment": "Node ortamı",
+		"i18n": "Yüklenen I18n çeviri ad alanları",
+		"locales": "Yapılandırılmış I18n yerel ayarları",
+		"experimental_disableEditMode": "<b>DENEYSEL</b>: Düzenleme modunu devre dışı bırak"
+	}
+}

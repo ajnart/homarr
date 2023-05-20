@@ -52,3 +52,7 @@ data/configs
 
 #envfiles
 .env
+
+#Languages other than 'en'
+public/locales/*
+!public/locales/en

@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "הצג טורנטים שהושלמו"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "רשימת התוויות היא רשימת היתרים (במקום רשימה שחורה)"
+      },
+      "labelFilter": {
+        "label": "רשימת תוויות",
+        "description": "כאשר 'רשימת היתרים' מסומנת, זה יפעל כרשימה הלבנה. אם לא מסומן, זוהי רשימה שחורה. לא יעשה כלום כשהוא ריק"
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "מנוהל על ידי {{appName}}, יחס {{ratio}}"
       },
       "body": {
-        "nothingFound": "לא נמצא טורנט"
+        "nothingFound": "לא נמצא טורנט",
+        "filterHidingItems": "{{count}} ערכים מוסתרים על ידי המסננים שלך"
       }
     },
     "lineChart": {

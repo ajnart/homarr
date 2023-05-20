@@ -12,7 +12,7 @@ import {
 import { useElementSize, useListState } from '@mantine/hooks';
 import { linearGradientDef } from '@nivo/core';
 import { Serie, Datum, ResponsiveLine } from '@nivo/line';
-import { IconDownload, IconUpload } from '@tabler/icons';
+import { IconDownload, IconUpload } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { AppAvatar } from '../../components/AppAvatar';

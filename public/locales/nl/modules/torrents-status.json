@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Toon verouderde torrents"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "Label lijst is een whitelist (in plaats van blacklist)"
+      },
+      "labelFilter": {
+        "label": "Label lijst",
+        "description": "Als \"is whitelist\" is aangevinkt, is dit een witte lijst. Indien niet aangevinkt, is dit een zwarte lijst. Doet niets als hij leeg is"
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Beheerd door {{appName}}, {{ratio}} verhouding"
       },
       "body": {
-        "nothingFound": "Geen torrents gevonden"
+        "nothingFound": "Geen torrents gevonden",
+        "filterHidingItems": "{{count}} items worden verborgen door uw filters"
       }
     },
     "lineChart": {

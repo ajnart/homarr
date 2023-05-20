@@ -15,7 +15,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconAlertCircle, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
+import { IconAlertCircle, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
 import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';

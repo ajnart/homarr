@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Ροή Βίντεο",
+    "description": "Ενσωματώστε μια ροή βίντεο ή βίντεο από μια κάμερα ή έναν ιστότοπο",
     "settings": {
-      "title": "",
+      "title": "Ρυθμίσεις για widget ροής βίντεο",
       "FeedUrl": {
-        "label": ""
+        "label": "URL τροφοδοσίας"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Αυτόματη αναπαραγωγή"
       },
       "muted": {
-        "label": ""
+        "label": "Ήχος σε σίγαση"
       },
       "controls": {
-        "label": ""
+        "label": "Έλεγχοι αναπαραγωγής βίντεο"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Μη έγκυρη ροή"
   }
 }

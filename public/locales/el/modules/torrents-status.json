@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Εμφάνιση stale torrents"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Διαχειρίζεται από {{appName}}, {{ratio}} αναλογία"
       },
       "body": {
-        "nothingFound": "Δεν βρέθηκαν torrents"
+        "nothingFound": "Δεν βρέθηκαν torrents",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {
@@ -50,7 +58,7 @@
         "text": "Προσθέστε έναν υποστηριζόμενης εφαρμογής Torrent για να δείτε τις τρέχουσες λήψεις σας"
       },
       "generic": {
-        "title": "",
+        "title": "Προέκυψε ένα απρόσμενο σφάλμα",
         "text": "Το Homarr δεν μπόρεσε να επικοινωνήσει με τις εφαρμογές Torrent. Ελέγξτε τις ρυθμίσεις σας"
       }
     },

@@ -10,7 +10,7 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { openConfirmModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconAlertTriangle, IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons';
+import { IconAlertTriangle, IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons-react';
 import fileDownload from 'js-file-download';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
@@ -63,7 +63,7 @@ export default function ConfigActions() {
       onConfirm: async () => {
         const response = await mutateAsync();
 
-        if (response.message) {
+        if (response.error) {
           showNotification({
             title: t('buttons.delete.notifications.deleteFailedDefaultConfig.title'),
             message: t('buttons.delete.notifications.deleteFailedDefaultConfig.message'),

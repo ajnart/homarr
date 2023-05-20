@@ -1,0 +1,11 @@
+{
+    "description": "Düzenleme Modunda, döşemeleri ayarlayabilir ve uygulamaları yapılandırabilirsiniz. Düzenleme Modundan çıkana kadar değişiklikler kaydedilmez.",
+    "button": {
+        "disabled": "Düzenleme Moduna Gir",
+        "enabled": "Çık ve Kaydet"
+    },
+    "popover": {
+        "title": "<1>{{size}}</1> boyut için düzenleme modu etkinleştirildi",
+        "text": "Uygulamalarınızı şimdi ayarlayabilir ve yapılandırabilirsiniz. Düzenleme modundan çıkana kadar değişiklikler <strong>kaydedilmez</strong>"
+    }
+}

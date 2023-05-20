@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "label": "Ayarlar"
+  },
+  "errors": {
+    "unmappedOptions": {
+      "text": ""
+    }
+  }
+}

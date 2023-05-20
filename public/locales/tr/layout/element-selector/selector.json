@@ -1,0 +1,11 @@
+{
+    "modal": {
+        "title": "Yeni bir döşeme ekle",
+        "text": "Döşemeler, Homarr'ın ana öğesidir. Uygulamalarınızı ve diğer bilgileri görüntülemek için kullanılırlar. İstediğiniz kadar döşeme ekleyebilirsiniz."
+    },
+    "widgetDescription": "Widget'lar, uygulamalarınız üzerinde daha fazla kontrol sağlamak için uygulamalarınızla etkileşime girer. Genellikle kullanımdan önce ek yapılandırma gerektirirler.",
+    "goBack": "Önceki adıma geri dön",
+    "actionIcon": {
+        "tooltip": "Araç ve Döşeme Ekle"
+    }
+}

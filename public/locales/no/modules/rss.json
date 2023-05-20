@@ -5,8 +5,8 @@
     "settings": {
       "title": "Innstillinger for RSS widget",
       "rssFeedUrl": {
-        "label": "RSS Feed URL-er",
-        "description": "URL-ene til RSS-strømmene du vil vise fra."
+        "label": "",
+        "description": ""
       },
       "refreshInterval": {
         "label": "Oppdaterings intervall (i minutter)"

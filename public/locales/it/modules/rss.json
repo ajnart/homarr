@@ -5,8 +5,8 @@
     "settings": {
       "title": "Impostazioni del widget RSS",
       "rssFeedUrl": {
-        "label": "RSS feed url",
-        "description": "Gli url dei feed RSS che si desidera visualizzare."
+        "label": "URL dei feed RSS",
+        "description": "Gli URL dei feed RSS che si desidera visualizzare."
       },
       "refreshInterval": {
         "label": "Intervallo di aggiornamento (in secondi)"

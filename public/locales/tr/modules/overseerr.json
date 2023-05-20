@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Overseerr veya Jellyseerr'den medya aramanızı ve eklemenizi sağlar."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "{{title}} Talep et",
+        "cancel": "Vazgeç",
+        "request": "Talep et"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "API anahtarını kullan",
+          "text": "Bu talep otomatik olarak onaylanacak"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "İndirmek istediğiniz sezonları işaretleyin",
+      "table": {
+        "header": {
+          "season": "Sezon",
+          "numberOfEpisodes": "Bölüm numarası"
+        }
+      }
+    }
+  }
+}

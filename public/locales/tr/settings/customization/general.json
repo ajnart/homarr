@@ -1,0 +1,21 @@
+{
+  "text": "Özelleştirmeler, Homarr ile deneyiminizi tercihlerinize göre yapılandırmanıza ve ayarlamanıza olanak tanır.",
+  "accordeon": {
+    "layout": {
+      "name": "Düzen",
+      "description": "Üstbilgi ve gösterge paneli kutucuklarınızdaki öğeleri etkinleştirin ve devre dışı bırakın"
+    },
+    "gridstack": {
+      "name": "Izgara Dizilimi",
+      "description": "Gösterge paneli alanınızın davranışını ve sütunlarını özelleştirin"
+    },
+    "pageMetadata": {
+      "name": "Sayfa Meta Verileri",
+      "description": "Başlığı, logoyu ve PWA'yı ayarlayın"
+    },
+    "appereance": {
+      "name": "Görünüş",
+      "description": "Arka planı, renkleri ve uygulama görünümünü özelleştirin"
+    }
+  }
+}

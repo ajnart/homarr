@@ -1,9 +1,10 @@
 import { showNotification } from '@mantine/notifications';
-import { IconCheck, IconX } from '@tabler/icons';
+import { IconCheck, IconX } from '@tabler/icons-react';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../config/provider';
 import { ConfigType } from '../../../types/config';
+import { queryClient } from '../../server/configurations/tanstack/queryClient.tool';
 
 export const useCopyConfigMutation = (configName: string) => {
   const { config } = useConfigContext();
@@ -14,13 +15,15 @@ export const useCopyConfigMutation = (configName: string) => {
     mutationFn: () => fetchCopy(configName, config),
     onSuccess() {
       showNotification({
-        title: t('modal.events.configCopied.title'),
+        title: t('modal.copy.events.configCopied.title'),
         icon: <IconCheck />,
         color: 'green',
         autoClose: 1500,
         radius: 'md',
-        message: t('modal.events.configCopied.message', { configName }),
+        message: t('modal.copy.events.configCopied.message', { configName }),
       });
+      // Invalidate a query to fetch new config
+      queryClient.invalidateQueries(['config/get-all']);
     },
     onError() {
       showNotification({

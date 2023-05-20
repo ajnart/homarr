@@ -1,5 +1,5 @@
 import { Badge, Button, Group, Select, Stack, Tabs, Text, Title } from '@mantine/core';
-import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons';
+import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 
 import { useElementSize } from '@mantine/hooks';
