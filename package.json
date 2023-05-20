@@ -100,7 +100,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.5.1",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "eslint-plugin-vitest": "^0.0.54",
+    "eslint-plugin-vitest": "^0.2.0",
     "happy-dom": "^8.9.0",
     "node-mocks-http": "^1.12.2",
     "prettier": "^2.7.1",
