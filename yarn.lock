@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ampproject/remapping@npm:^2.2.0":
+"@ampproject/remapping@npm:^2.2.0, @ampproject/remapping@npm:^2.2.1":
   version: 2.2.1
   resolution: "@ampproject/remapping@npm:2.2.1"
   dependencies:
@@ -2531,16 +2531,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-c8@npm:^0.29.3":
-  version: 0.29.8
-  resolution: "@vitest/coverage-c8@npm:0.29.8"
+"@vitest/coverage-c8@npm:^0.31.1":
+  version: 0.31.1
+  resolution: "@vitest/coverage-c8@npm:0.31.1"
   dependencies:
+    "@ampproject/remapping": ^2.2.1
     c8: ^7.13.0
+    magic-string: ^0.30.0
     picocolors: ^1.0.0
-    std-env: ^3.3.1
+    std-env: ^3.3.2
   peerDependencies:
-    vitest: ">=0.29.0 <1"
-  checksum: 610bd2917aa160f5bf641f4d4dec539524039ea98fdc98a8d9288c7ea05090d7028d4504b8e1ecc1de1d1700c9a61a55abf285559da2c4bc8df238e559a505f7
+    vitest: ">=0.30.0 <1"
+  checksum: e9924c652c5891418af5965d483b753b5271be016b408a2577ab8b00329537496d4d5c96ebe7eb8b401b028c253da7e324165b61a895b639d1a4b3254cbbb8ce
   languageName: node
   linkType: hard
 
@@ -2587,16 +2589,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/ui@npm:^0.29.3":
-  version: 0.29.8
-  resolution: "@vitest/ui@npm:0.29.8"
+"@vitest/ui@npm:^0.31.1":
+  version: 0.31.1
+  resolution: "@vitest/ui@npm:0.31.1"
   dependencies:
+    "@vitest/utils": 0.31.1
     fast-glob: ^3.2.12
+    fflate: ^0.7.4
     flatted: ^3.2.7
     pathe: ^1.1.0
     picocolors: ^1.0.0
-    sirv: ^2.0.2
-  checksum: 0190c01a1a467b71a4e81563cd70370c651238f1b4e82c3ff5c6e8a6e6f35ffb6e66f987cd9c892df99ed1ec00ed20d804b2c07c24cdb996eb880c585d13dfcf
+    sirv: ^2.0.3
+  peerDependencies:
+    vitest: ">=0.30.1 <1"
+  checksum: 0170d4c343ef5387a9d56bb6844b89c517063ce796e0eaa84f4cc775d2af953d6e489a42a1f6b02455a4e5ea6407fdcb53786d4e73c12b6e0b8813161402f37d
   languageName: node
   linkType: hard
 
@@ -5064,6 +5070,13 @@ checkly@latest:
   languageName: node
   linkType: hard
 
+"fflate@npm:^0.7.4":
+  version: 0.7.4
+  resolution: "fflate@npm:0.7.4"
+  checksum: b812ab26047432db70ff4c73eb45ad53bd0774575b4818b9c61c2921e89ec65d1259f06ec1618f2ac55e6a2f2e29b6dc09173d213b46580bc69efae5344bf8f1
+  languageName: node
+  linkType: hard
+
 "figures@npm:^3.0.0":
   version: 3.2.0
   resolution: "figures@npm:3.2.0"
@@ -5759,8 +5772,8 @@ checkly@latest:
     "@typescript-eslint/eslint-plugin": ^5.30.7
     "@typescript-eslint/parser": ^5.30.7
     "@vitejs/plugin-react": ^3.1.0
-    "@vitest/coverage-c8": ^0.29.3
-    "@vitest/ui": ^0.29.3
+    "@vitest/coverage-c8": ^0.31.1
+    "@vitest/ui": ^0.31.1
     axios: ^1.0.0
     checkly: latest
     consola: ^3.0.0
@@ -8947,7 +8960,7 @@ checkly@latest:
   languageName: node
   linkType: hard
 
-"sirv@npm:^2.0.2":
+"sirv@npm:^2.0.3":
   version: 2.0.3
   resolution: "sirv@npm:2.0.3"
   dependencies:
@@ -9072,7 +9085,7 @@ checkly@latest:
   languageName: node
   linkType: hard
 
-"std-env@npm:^3.3.1, std-env@npm:^3.3.2":
+"std-env@npm:^3.3.2":
   version: 3.3.3
   resolution: "std-env@npm:3.3.3"
   checksum: 6665f6d8bd63aae432d3eb9abbd7322847ad0d902603e6dce1e8051b4f42ceeb4f7f96a4faf70bb05ce65ceee2dc982502b701575c8a58b1bfad29f3dbb19f81
