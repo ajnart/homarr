@@ -3,7 +3,10 @@
     "name": "",
     "description": "",
     "settings": {
-      "title": ""
+      "title": "",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
   "noRequests": "",
@@ -13,5 +16,9 @@
     "approved": "",
     "pendingApproval": "",
     "declined": ""
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }

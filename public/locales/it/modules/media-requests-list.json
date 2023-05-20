@@ -3,7 +3,10 @@
     "name": "Richieste Media",
     "description": "Vedi un elenco di tutte le richieste multimediali dalla tua istanza Overseerr o Jellyseerr",
     "settings": {
-      "title": "Elenco richieste multimediali"
+      "title": "Elenco richieste multimediali",
+      "replaceLinksWithExternalHost": {
+        "label": "Sostituisci i collegamenti con l'host esterno"
+      }
     }
   },
   "noRequests": "Nessuna richiesta trovata. Assicurati di aver configurato correttamente le tue app.",
@@ -13,5 +16,9 @@
     "approved": "Approvato",
     "pendingApproval": "In attesa di approvazione",
     "declined": "Rifiutato"
+  },
+  "tooltips": {
+    "approve": "Approva richieste",
+    "decline": "Declina richieste"
   }
 }

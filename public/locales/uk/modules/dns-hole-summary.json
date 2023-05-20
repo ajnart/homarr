@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Підсумок DNS-hole",
+    "description": "Відображає важливі дані з PiHole або AdGuard",
     "settings": {
-      "title": "",
+      "title": "Налаштування підсумків DNS-Hole",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Використовуйте кольори з PiHole"
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Домени в списках реклами",
+      "queriesToday": "Запити за сьогодні",
+      "queriesBlockedTodayPercentage": "заблоковано сьогодні",
+      "queriesBlockedToday": "заблоковано сьогодні"
     }
   }
 }

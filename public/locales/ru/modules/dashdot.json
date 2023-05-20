@@ -5,7 +5,7 @@
     "settings": {
       "title": "Настройки для виджета Dash.",
       "dashName": {
-        "label": ""
+        "label": "Dash. Имя"
       },
       "url": {
         "label": "URL-адрес Dash."
