@@ -16,7 +16,7 @@ export default defineConfig({
     setupFiles: ['./tests/setupVitest.ts'],
     exclude: [
       ...configDefaults.exclude,
-      './next/*',
+      '.next',
     ],
   },
 });
