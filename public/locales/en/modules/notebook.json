@@ -3,8 +3,12 @@
 		"name": "Notebook",
 		"description": "A markdown-based interactive widget for you to write down your notes!",
 		"settings": {
+			"title": "Settings for the notebook widget",
 			"showToolbar": {
 				"label": "Show the toolbar to help you write markdown"
+			},
+			"content": {
+				"label": "The content of the notebook"
 			}
 		}
 	}
