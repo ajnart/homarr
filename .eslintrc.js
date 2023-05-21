@@ -18,6 +18,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    'no-param-reassign': 'off',
     'import/no-cycle': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/no-children-prop': 'off',
