@@ -22,6 +22,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     adsBlockedTodayPercentage: 0,
     dnsQueriesToday: 0,
     status: [],
+    errors: [],
   };
 
   const adsBlockedTodayPercentageArr: number[] = [];
@@ -73,8 +74,9 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
           break;
         }
       }
-    } catch (err) {
+    } catch (err: any) {
       Consola.error(`Failed to communicate with DNS hole at ${app.url}: ${err}`);
+      data.errors.push(err.toString());
     }
   }
 

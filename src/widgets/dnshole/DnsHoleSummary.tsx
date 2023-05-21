@@ -12,6 +12,8 @@ import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { formatNumber } from '../../tools/client/math';
 import { useDnsHoleSummeryQuery } from './query';
+import { queryClient } from '../../tools/server/configurations/tanstack/queryClient.tool';
+import { GenericWidgetError } from '../error';
 
 const definition = defineWidget({
   id: 'dns-hole-summary',
@@ -39,10 +41,16 @@ interface DnsHoleSummaryWidgetProps {
 
 function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
   const { t } = useTranslation('modules/dns-hole-summary');
-  const { isInitialLoading, data } = useDnsHoleSummeryQuery();
+  const { isInitialLoading, isError, error, data } = useDnsHoleSummeryQuery();
 
-  if (isInitialLoading || !data) {
+  if (isInitialLoading) {
     return <WidgetLoading />;
+  }
+
+  if (isError || !data || data.errors.length > 0) {
+    return (
+      <GenericWidgetError error={error || data?.errors} queryKeys={['dns-hole-control', 'dns-hole-summary']} />
+    );
   }
 
   return (

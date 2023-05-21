@@ -7,6 +7,7 @@ export type AdStatistics = {
     status: PiholeApiSummaryType['status'],
     appId: string;
   }[];
+  errors: string[];
 };
 
 export type PiholeApiSummaryType = {
