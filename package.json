@@ -63,6 +63,7 @@
     "framer-motion": "^9.0.2",
     "html-entities": "^2.3.3",
     "i18next": "^21.9.1",
+    "immer": "^10.0.2",
     "js-file-download": "^0.4.12",
     "next": "^13.4.2",
     "next-i18next": "^11.3.0",
