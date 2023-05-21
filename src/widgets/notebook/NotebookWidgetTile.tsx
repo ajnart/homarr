@@ -1,11 +1,14 @@
-import {
-  Card,
-} from '@mantine/core';
+import { Card } from '@mantine/core';
 import { IconNotes } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
+import dynamic from 'next/dynamic';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
+
+const Editor = dynamic(() => import('./NotebookEditor').then((module) => module.Editor), {
+  ssr: false,
+});
 
 const definition = defineWidget({
   id: 'notebook',
@@ -35,5 +38,5 @@ interface NotebookWidgetProps {
 
 function NotebookWidget(props: NotebookWidgetProps) {
   const { t } = useTranslation('modules/notebook');
-  return <Card>wooooooo</Card>;
+  return <Editor widget={props.widget} />;
 }
