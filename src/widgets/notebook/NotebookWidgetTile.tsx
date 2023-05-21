@@ -1,4 +1,3 @@
-import { Card } from '@mantine/core';
 import { IconNotes } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
@@ -18,6 +17,11 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    content: {
+      type: 'text',
+      defaultValue:
+        '<code>RichTextEditor</code> is based on <a href="https://tiptap.dev/" rel="noopener noreferrer" target="_blank">Tiptap.dev</a> and supports all of its features:</p><ul><li>General text formatting: <strong>bold</strong>, <em>italic</em>, <u>underline</u>, <s>strike-through</s> </li><li>Headings (h1-h6)</li><li>Sub and super scripts (<sup>&lt;sup /&gt;</sup> and <sub>&lt;sub /&gt;</sub> tags)</li><li>Ordered and bullet lists</li><li>Text align&nbsp;</li><li>And all <a href="https://tiptap.dev/extensions" target="_blank" rel="noopener noreferrer">other extensions</a></li></ul>',
+    },
   },
   gridstack: {
     minWidth: 2,
@@ -30,10 +34,10 @@ const definition = defineWidget({
 
 export default definition;
 
-export type INodebookWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type INotebookWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface NotebookWidgetProps {
-  widget: INodebookWidget;
+  widget: INotebookWidget;
 }
 
 function NotebookWidget(props: NotebookWidgetProps) {
