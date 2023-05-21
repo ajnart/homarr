@@ -58,6 +58,7 @@ const VideoFeed = ({ source, controls, autoPlay, muted }: VideoFeedProps) => {
 const useStyles = createStyles(({ radius }) => ({
   video: {
     height: '100%',
+    width: '100%',
     borderRadius: radius.md,
     overflow: 'hidden',
   },
