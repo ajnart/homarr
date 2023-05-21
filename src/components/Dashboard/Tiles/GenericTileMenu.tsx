@@ -2,6 +2,7 @@ import { ActionIcon, Menu } from '@mantine/core';
 import { IconDots, IconLayoutKanban, IconPencil, IconTrash } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEditModeStore } from '../Views/useEditModeStore';
+import { useColorTheme } from '../../../tools/color';
 
 interface GenericTileMenuProps {
   handleClickEdit: () => void;
@@ -18,6 +19,7 @@ export const GenericTileMenu = ({
 }: GenericTileMenuProps) => {
   const { t } = useTranslation('common');
   const isEditMode = useEditModeStore((x) => x.enabled);
+  const { primaryColor } = useColorTheme();
 
   if (!isEditMode) {
     return null;
@@ -26,7 +28,18 @@ export const GenericTileMenu = ({
   return (
     <Menu withinPortal withArrow position="right">
       <Menu.Target>
-        <ActionIcon size="md" radius="md" variant="light" pos="absolute" top={8} right={8}>
+        <ActionIcon
+          style={{
+            zIndex: 1,
+          }}
+          size="md"
+          radius="md"
+          variant="light"
+          color={primaryColor}
+          pos="absolute"
+          top={8}
+          right={8}
+        >
           <IconDots />
         </ActionIcon>
       </Menu.Target>
