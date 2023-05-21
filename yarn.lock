@@ -1850,21 +1850,21 @@ __metadata:
   linkType: hard
 
 "@tabler/icons-react@npm:^2.18.0":
-  version: 2.19.0
-  resolution: "@tabler/icons-react@npm:2.19.0"
+  version: 2.20.0
+  resolution: "@tabler/icons-react@npm:2.20.0"
   dependencies:
-    "@tabler/icons": 2.19.0
+    "@tabler/icons": 2.20.0
     prop-types: ^15.7.2
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: e5bce4803cad511ab8c46e03686994f29d6b2d37c69ba6cca1d55a1189e28c4b2588242b436d0c1ff4ac897b8926d44004a4a36b5ddd0505312760a25fd4a6ce
+  checksum: fec0919163523f1490bfff281902e1b10bd3d73a8a5b549928aad7311f4a66e34418609b6c564c666f8e2632bb0c1f169df64a70168f18bf671c430fac5ce8af
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:2.19.0":
-  version: 2.19.0
-  resolution: "@tabler/icons@npm:2.19.0"
-  checksum: ece0cd722c333e60124a5f59d7f3834fc228f319f2dcf696b041eddac67ffb284ad5856047eaa2d36afcaf880652c347e0403245210938d16bd6bb8475916c56
+"@tabler/icons@npm:2.20.0":
+  version: 2.20.0
+  resolution: "@tabler/icons@npm:2.20.0"
+  checksum: 02177e14f4b3cbbbf10a7f8f60acabf45f4b1584eec6c81d9be20c34a149afafd49b72b20fd42a8bdd47ea3dd339fef0620fd144c6b96fb12381431916fe64fe
   languageName: node
   linkType: hard
 
