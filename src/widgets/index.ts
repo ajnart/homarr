@@ -14,6 +14,7 @@ import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import dnsHoleSummary from './dnshole/DnsHoleSummary';
 import dnsHoleControls from './dnshole/DnsHoleControls';
 import bookmark from './bookmark/BookmarkWidgetTile';
+import notebook from './notebook/NotebookWidgetTile';
 
 export default {
   calendar,
@@ -32,4 +33,5 @@ export default {
   'dns-hole-summary': dnsHoleSummary,
   'dns-hole-controls': dnsHoleControls,
   bookmark,
+  notebook,
 };
