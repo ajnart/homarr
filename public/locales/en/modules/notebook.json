@@ -1,0 +1,11 @@
+{
+	"descriptor": {
+		"name": "Notebook",
+		"description": "A markdown-based interactive widget for you to write down your notes!",
+		"settings": {
+			"showToolbar": {
+				"label": "Show the toolbar to help you write markdown"
+			}
+		}
+	}
+}
