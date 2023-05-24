@@ -4,6 +4,9 @@
     "description": "Hiển thị biểu đồ của Dash. bên trong Homarr.",
     "settings": {
       "title": "Cài đặt cho tiện ích Dash.",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "URL của Dash."
       },

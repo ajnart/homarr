@@ -4,6 +4,9 @@
     "description": "",
     "settings": {
       "title": "",
+      "dashName": {
+        "label": ""
+      },
       "url": {
         "label": "Dash. 주소"
       },

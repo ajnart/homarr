@@ -3,7 +3,10 @@
     "name": "בקשות מדיה",
     "description": "ראה רשימה של כל בקשות המדיה ממופע Overseerr או Jellyseerr שלך",
     "settings": {
-      "title": "רשימת בקשות מדיה"
+      "title": "רשימת בקשות מדיה",
+      "replaceLinksWithExternalHost": {
+        "label": "החלף קישורים במארח חיצוני"
+      }
     }
   },
   "noRequests": "לא נמצאו בקשות. אנא ודא שהגדרת את האפליקציות שלך כנדרש.",
@@ -13,5 +16,9 @@
     "approved": "אושר",
     "pendingApproval": "ממתין לאישור",
     "declined": "נדחה"
+  },
+  "tooltips": {
+    "approve": "בקשות שאושרו",
+    "decline": "בקשות שנדחו"
   }
 }

@@ -35,7 +35,7 @@ import {
   IconCircleCheck,
   IconMoonStars,
   IconSun,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Logo } from '../components/layout/Logo';

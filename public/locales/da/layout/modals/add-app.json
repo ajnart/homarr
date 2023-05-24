@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "App Ikon",
-			"description": "",
+			"description": "Begynd at skrive for at finde et ikon. Du kan også indsætte en billed-URL for at bruge et brugerdefineret ikon.",
 			"autocomplete": {
 				"title": "Ingen resultater fundet",
 				"text": "Prøv at bruge et mere specifikt søgeord. Hvis du ikke kan finde det ønskede ikon, kan du indsætte billedets URL ovenfor for at få et brugerdefineret ikon"

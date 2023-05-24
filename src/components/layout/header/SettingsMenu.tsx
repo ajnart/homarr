@@ -1,6 +1,6 @@
 import { Badge, Button, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons';
+import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';

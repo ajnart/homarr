@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Usenet uygulamanızı görüntülemenizi ve yönetmenizi sağlar."
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Desteklenen indirme istemcisi bulunamadı!",
+        "text": "Mevcut indirmelerinizi görüntülemek için desteklenen bir Usenet İndirme İstemcisi ekleyin"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Kuyruk",
+    "history": "Geçmiş"
+  },
+  "info": {
+    "sizeLeft": "Sol boyut",
+    "paused": "Duraklatıldı"
+  },
+  "queue": {
+    "header": {
+      "name": "İsim",
+      "size": "Boyut",
+      "eta": "ETA (Kalan Süre)",
+      "progress": "İlerleme"
+    },
+    "empty": "Boş",
+    "error": {
+      "title": "Hata",
+      "message": "Bir hata oluştu"
+    },
+    "paused": "Duraklatıldı"
+  },
+  "history": {
+    "header": {
+      "name": "İsim",
+      "size": "Boyut",
+      "duration": "Süre"
+    },
+    "empty": "Boş",
+    "error": {
+      "title": "Hata",
+      "message": "Geçmiş yüklenirken hata oluştu"
+    },
+    "paused": "Duraklatıldı"
+  }
+}

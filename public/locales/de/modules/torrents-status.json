@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Angehaltene Torrents anzeigen"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "Labelliste ist eine Whitelist (statt einer Blacklist)"
+      },
+      "labelFilter": {
+        "label": "Labelliste",
+        "description": "Wenn \"ist Whitelist\" ausgewählt ist, handel es sich um eine Whitelist. Ist \"ist Whitelist\" nicht ausgewählt, handelt es sich um eine Blacklist. Wenn die Auswahl leer ist, wird nicht passieren"
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Verwaltet von {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "Keine Torrents gefunden"
+        "nothingFound": "Keine Torrents gefunden",
+        "filterHidingItems": "{{count}} Einträge sind durch Filter ausgeblendet"
       }
     },
     "lineChart": {

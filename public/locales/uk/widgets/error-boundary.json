@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ой, сталася помилка!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Деталі",
+      "tryAgain": "Повторіть спробу"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Ви помилилися",
+    "reportButton": "Повідомити про помилку"
   }
 }

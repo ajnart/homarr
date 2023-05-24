@@ -1,17 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Αιτήματα μέσων ενημέρωσης",
+    "description": "Δείτε μια λίστα με όλα τα αιτήματα μέσων ενημέρωσης από την περίπτωση Overseerr ή Jellyseerr",
     "settings": {
-      "title": ""
+      "title": "Κατάλογος αιτημάτων των μέσων ενημέρωσης",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Δεν βρέθηκαν αιτήσεις. Βεβαιωθείτε ότι έχετε ρυθμίσει σωστά τις εφαρμογές σας.",
+  "pending": "Υπάρχουν αιτήσεις {{countPendingApproval}} που περιμένουν έγκριση.",
+  "nonePending": "Επί του παρόντος δεν εκκρεμούν εγκρίσεις. Είστε έτοιμοι να ξεκινήσετε!",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Εγκρίθηκε",
+    "pendingApproval": "Αναμένεται έγκριση",
+    "declined": "Απορρίφθηκε"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }

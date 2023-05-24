@@ -6,11 +6,15 @@
   "delete": "Удалить",
   "ok": "ОК",
   "edit": "Изменить",
+  "enabled": "Включено",
+  "disabled": "Отключено",
+  "enableAll": "Включить всё",
+  "disableAll": "Отключить всё",
   "version": "Версия",
   "changePosition": "Изменить положение",
   "remove": "Удалить",
   "removeConfirm": "Вы действительно хотите удалить {{item}}?",
-  "createItem": "",
+  "createItem": "+ создать {{item}}",
   "sections": {
     "settings": "Настройки",
     "dangerZone": "Опасная зона"

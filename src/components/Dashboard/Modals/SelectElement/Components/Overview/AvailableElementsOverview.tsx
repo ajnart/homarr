@@ -1,7 +1,7 @@
 import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
 import { closeModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons';
+import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
@@ -95,8 +95,8 @@ export const AvailableElementTypes = ({
                   },
                   network: {
                     enabledStatusChecker: true,
-                    statusCodes: ['200'],
-                    okStatus: [200],
+                    statusCodes: ['200', '301', '302', '304', '307', '308'],
+                    okStatus: [200, 301, 302, 304, 307, 308],
                   },
                   behaviour: {
                     isOpeningNewTab: true,

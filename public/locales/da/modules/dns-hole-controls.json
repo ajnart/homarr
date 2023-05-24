@@ -1,0 +1,6 @@
+{
+  "descriptor": {
+    "name": "DNS hole kontrol",
+    "description": "Kontroller PiHole eller AdGuard fra dit dashboard"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "descriptor": {
+    "name": "DNS-Hole Steuerung",
+    "description": "Steuern Sie PiHole oder AdGuard von Ihrem Dashboard aus"
+  }
+}

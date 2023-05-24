@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Ikona aplikácie",
-			"description": "",
+			"description": "Začnite písať a vyhľadajte ikonu. Ak chcete použiť vlastnú ikonu, môžete vložiť aj adresu URL obrázka.",
 			"autocomplete": {
 				"title": "Nenašli sa žiadne výsledky",
 				"text": "Skúste použiť konkrétnejší vyhľadávací výraz. Ak nemôžete nájsť požadovanú ikonu, vložte vyššie uvedenú adresu URL obrázka pre vlastnú ikonu"

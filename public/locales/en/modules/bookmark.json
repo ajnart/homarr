@@ -1,0 +1,21 @@
+{
+  "descriptor": {
+    "name": "Bookmark",
+    "description": "Displays a static list of strings or links",
+    "settings": {
+      "title": "Bookmark settings",
+      "items": {
+        "label": "Items"
+      },
+      "layout": {
+        "label": "Layout"
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Bookmark list empty",
+      "text": "Add new items to this list in the edit mode"
+    }
+  }
+}

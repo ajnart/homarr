@@ -12,6 +12,13 @@
       },
       "displayStaleTorrents": {
         "label": "Prikaži zastarele torrente"
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
       }
     }
   },
@@ -33,7 +40,8 @@
         "text": "Upravlja {{appName}}, {{ratio}} razmerje"
       },
       "body": {
-        "nothingFound": "Ni najdenih torrentov"
+        "nothingFound": "Ni najdenih torrentov",
+        "filterHidingItems": ""
       }
     },
     "lineChart": {

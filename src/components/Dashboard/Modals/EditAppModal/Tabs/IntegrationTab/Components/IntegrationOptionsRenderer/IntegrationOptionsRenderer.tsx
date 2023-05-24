@@ -1,6 +1,6 @@
 import { Stack } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
-import { IconKey } from '@tabler/icons';
+import { IconKey } from '@tabler/icons-react';
 import {
   IntegrationField,
   integrationFieldDefinitions,

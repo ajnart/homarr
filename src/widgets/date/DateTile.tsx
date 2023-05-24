@@ -1,6 +1,6 @@
 import { Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconClock } from '@tabler/icons';
+import { IconClock } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';

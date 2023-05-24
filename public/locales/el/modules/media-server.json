@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Διακομιστής πολυμέσων",
+    "description": "Αλληλεπίδραση με τον διακομιστή πολυμέσων Jellyfin ή Plex",
     "settings": {
-      "title": ""
+      "title": "Ρυθμίσεις για το widget του διακομιστή πολυμέσων"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Συνεδρία",
+        "user": "Χρήστης",
+        "currentlyPlaying": "Παίζει Τώρα"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Αδυναμία φόρτωσης περιεχομένου",
+        "text": "Αδυναμία ανάκτησης πληροφοριών από το διακομιστή. Ελέγξτε τα αρχεία καταγραφής για περισσότερες λεπτομέρειες"
       }
     }
   }

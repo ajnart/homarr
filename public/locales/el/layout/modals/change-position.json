@@ -1,6 +1,8 @@
 {
+	"xPosition": "Θέση του άξονα X",
 	"width": "Πλάτος",
 	"height": "Ύψος",
+	"yPosition": "Θέση του άξονα Y",
 	"zeroOrHigher": "0 ή υψηλότερο",
 	"betweenXandY": "Μεταξύ {min} και {max}"
 }

@@ -3,7 +3,10 @@
     "name": "Media Requests",
     "description": "See a list of all media requests from your Overseerr or Jellyseerr instance",
     "settings": {
-      "title": "Media requests list"
+      "title": "Media requests list",
+      "replaceLinksWithExternalHost": {
+        "label": "Replace links with external host"
+      }
     }
   },
   "noRequests": "No requests found. Please ensure that you've configured your apps correctly.",
@@ -13,5 +16,9 @@
     "approved": "Approved",
     "pendingApproval": "Pending approval",
     "declined": "Declined"
+  },
+  "tooltips": {
+    "approve": "Approve requests",
+    "decline": "Decline requests"
   }
 }

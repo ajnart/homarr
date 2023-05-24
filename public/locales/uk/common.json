@@ -6,11 +6,15 @@
   "delete": "Видалити",
   "ok": "OK",
   "edit": "Редагувати",
+  "enabled": "Увімкнено",
+  "disabled": "Вимкнено",
+  "enableAll": "Увімкнути все",
+  "disableAll": "Вимкнути усе",
   "version": "Версія",
   "changePosition": "Змінити положення",
   "remove": "Видалити",
   "removeConfirm": "Ви впевнені, що хочете видалити {{item}}?",
-  "createItem": "",
+  "createItem": "+ створити {{item}}",
   "sections": {
     "settings": "Налаштування",
     "dangerZone": "Небезпечна зона"

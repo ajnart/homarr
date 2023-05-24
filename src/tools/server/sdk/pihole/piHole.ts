@@ -1,10 +1,11 @@
+import { trimStringEnding } from '../../../shared/strings';
 import { PiHoleApiStatusChangeResponse, PiHoleApiSummaryResponse } from './piHole.type';
 
 export class PiHoleClient {
   private readonly baseHostName: string;
 
   constructor(hostname: string, private readonly apiToken: string) {
-    this.baseHostName = this.trimStringEnding(hostname, ['/admin/index.php', '/admin', '/']);
+    this.baseHostName = trimStringEnding(hostname, ['/admin/index.php', '/admin', '/']);
   }
 
   async getSummary() {
@@ -59,16 +60,5 @@ export class PiHoleClient {
     }
 
     return json as PiHoleApiStatusChangeResponse;
-  }
-
-  private trimStringEnding(original: string, toTrimIfExists: string[]) {
-    for (let i = 0; i < toTrimIfExists.length; i += 1) {
-      if (!original.endsWith(toTrimIfExists[i])) {
-        continue;
-      }
-      return original.substring(0, original.indexOf(toTrimIfExists[i]));
-    }
-
-    return original;
   }
 }

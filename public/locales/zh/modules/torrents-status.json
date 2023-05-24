@@ -12,13 +12,20 @@
       },
       "displayStaleTorrents": {
         "label": "显示过期种子"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "标签列表是白名单 (而不是黑名单)"
+      },
+      "labelFilter": {
+        "label": "标签列表",
+        "description": "当选择“白名单”时，这将成为白名单。如果不选中，这将是黑名单。当空时不会做任何事情。"
       }
     }
   },
   "card": {
     "footer": {
       "error": "错误",
-      "lastUpdated": "最后更新 {{time}} 前"
+      "lastUpdated": "最后更新于 {{time}} "
     },
     "table": {
       "header": {
@@ -33,7 +40,8 @@
         "text": "由 {{appName}}, {{ratio}} 管理的比率"
       },
       "body": {
-        "nothingFound": "没有找到种子"
+        "nothingFound": "没有找到种子",
+        "filterHidingItems": "您的过滤器隐藏了 {{count}} 条记录"
       }
     },
     "lineChart": {
@@ -46,7 +54,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "没有找到支持Torrent的客户端!",
+        "title": "没有找到支持的Torrent客户端!",
         "text": "添加一个支持Torrent的客户端来查看你当前的下载情况"
       },
       "generic": {

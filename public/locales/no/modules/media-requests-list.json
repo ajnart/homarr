@@ -3,7 +3,10 @@
     "name": "Media forespørsler",
     "description": "Se en liste over alle medieforespørsler fra din Overseerr eller Jellyseerr instans",
     "settings": {
-      "title": "Liste over media forespørsler"
+      "title": "Liste over media forespørsler",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
   "noRequests": "Ingen forespørsler funnet. Vennligst skjekk at du har konfigurert appene dine riktig.",
@@ -13,5 +16,9 @@
     "approved": "Godkjent",
     "pendingApproval": "Venter på godkjenning",
     "declined": "Avvist"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }

@@ -1,5 +1,5 @@
 import { ActionIcon, Menu } from '@mantine/core';
-import { IconDots, IconLayoutKanban, IconPencil, IconTrash } from '@tabler/icons';
+import { IconDots, IconLayoutKanban, IconPencil, IconTrash } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEditModeStore } from '../Views/useEditModeStore';
 

@@ -5,7 +5,7 @@
     "settings": {
       "title": "Indstillinger for RSS-widget",
       "rssFeedUrl": {
-        "label": "RSS feeds URL'er",
+        "label": "RSS-feed URL'er",
         "description": "URL'erne for de RSS-feeds, du vil vise fra."
       },
       "refreshInterval": {

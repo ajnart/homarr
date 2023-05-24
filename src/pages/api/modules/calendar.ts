@@ -110,7 +110,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
       })
     );
 
-    const countFailed = medias.filter((x) => !x.success).length;
+    const results = await Promise.all(medias);
+    const countFailed = results.filter((x) => !x.success).length;
     if (countFailed > 0) {
       Consola.warn(`A total of ${countFailed} apps for the calendar widget failed`);
     }

@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "Сводка по DNS",
+    "description": "Отображает важные данные из PiHole или AdGuard",
+    "settings": {
+      "title": "Настройки сводки DNS Hole",
+      "usePiHoleColors": {
+        "label": "Использовать цвета PiHole"
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "Домены в рекламных списках",
+      "queriesToday": "Запросы сегодня",
+      "queriesBlockedTodayPercentage": "Заблокировано сегодня",
+      "queriesBlockedToday": "Заблокировано сегодня"
+    }
+  }
+}

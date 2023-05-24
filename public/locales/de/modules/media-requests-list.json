@@ -3,7 +3,10 @@
     "name": "Medienanfragen",
     "description": "Sehen Sie eine Liste aller Medienanfragen von Ihrer Overseerr- oder Jellyseerr-Instanz",
     "settings": {
-      "title": "Liste der Medienanfragen"
+      "title": "Liste der Medienanfragen",
+      "replaceLinksWithExternalHost": {
+        "label": "Links durch externen Host ersetzen"
+      }
     }
   },
   "noRequests": "Keine Anfragen gefunden. Bitte stellen Sie sicher, dass Sie Ihre Anwendungen richtig konfiguriert haben.",
@@ -13,5 +16,9 @@
     "approved": "Genehmigt",
     "pendingApproval": "Warten auf Freigabe",
     "declined": "Abgelehnt"
+  },
+  "tooltips": {
+    "approve": "Anfrage bestätigen",
+    "decline": "Anfrage ablehnen"
   }
 }
