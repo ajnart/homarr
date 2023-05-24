@@ -12,10 +12,10 @@
         "label": "刷新间隔(以分钟计)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "危险：允许清除物品内容"
       },
       "settings.textLinesClamp": {
-        "label": ""
+        "label": "文字线条"
       }
     },
     "card": {
