@@ -44,6 +44,10 @@ export function migrateConfig(config: Config): BackendConfigType {
           enabledRightSidebar: false,
           enabledSearchbar: config.modules.search?.enabled ?? true,
         },
+        accessibility: {
+          disablePingPulse: false,
+          replacePingDotsWithIcons: false,
+        },
       },
     },
     wrappers: [

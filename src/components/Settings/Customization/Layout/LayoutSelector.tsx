@@ -159,7 +159,7 @@ export const LayoutSelector = () => {
           />
           <Checkbox
             label={t('layout.enableping')}
-            checked={ping}
+            checked={enabledPing}
             onChange={(ev) => handleChange('enabledPing', ev, setPing)}
           />
         </Stack>
