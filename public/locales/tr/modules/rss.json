@@ -12,10 +12,10 @@
         "label": "Yenileme aralığı (dakika olarak)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "Tehlikeli: Temizlenmiş öğe içeriğine izin ver"
       },
       "settings.textLinesClamp": {
-        "label": ""
+        "label": "Metin satır sınırı"
       }
     },
     "card": {
