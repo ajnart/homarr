@@ -12,10 +12,10 @@
         "label": "Aktualisierungsintervall (in Minuten)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "Vorsicht: Bereinigte Artikelinhalte zulassen"
       },
       "settings.textLinesClamp": {
-        "label": ""
+        "label": "Textzeilen Klammer"
       }
     },
     "card": {
