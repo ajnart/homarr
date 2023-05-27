@@ -157,6 +157,11 @@ const definition = defineWidget({
       ],
       defaultValue: 'autoGrid',
     },
+    isOpeningNewTab: {
+      label: 'Open in a new Tab',
+      type: 'switch',
+      defaultValue: false,
+    },
   },
   gridstack: {
     minWidth: 1,
@@ -205,6 +210,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               px="xl"
               component="a"
               href={item.href}
+              target={widget.properties.isOpeningNewTab ? '_blank' : undefined}
               withBorder
             >
               <BookmarkItemContent item={item} />
@@ -232,6 +238,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                 px="xl"
                 component="a"
                 href={item.href}
+                target={widget.properties.isOpeningNewTab ? '_blank' : undefined}
                 withBorder
               >
                 <BookmarkItemContent item={item} />
