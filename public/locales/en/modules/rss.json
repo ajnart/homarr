@@ -12,10 +12,10 @@
         "label": "Refresh interval (in minutes)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "Dangerous: Allow sanitized item content"
       },
       "settings.textLinesClamp": {
-        "label": ""
+        "label": "Text lines clamp"
       }
     },
     "card": {

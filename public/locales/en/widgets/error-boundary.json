@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "",
+    "text": "An unexpected error has occurred. Please check your configuration. Please report this issue, if you believe that this is a bug.",
     "label": "Your error",
     "reportButton": "Report this error"
   }

@@ -26,7 +26,15 @@ export const GenericTileMenu = ({
   return (
     <Menu withinPortal withArrow position="right">
       <Menu.Target>
-        <ActionIcon size="md" radius="md" variant="light" pos="absolute" top={8} right={8}>
+        <ActionIcon
+          size="md"
+          radius="md"
+          variant="light"
+          pos="absolute"
+          top={8}
+          right={8}
+          style={{ zIndex: 1 }}
+        >
           <IconDots />
         </ActionIcon>
       </Menu.Target>

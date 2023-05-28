@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import {
   ActionIcon,
   Badge,
@@ -19,6 +18,7 @@ import { IconClock, IconRefresh, IconRss } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -37,6 +37,17 @@ const definition = defineWidget({
       min: 15,
       max: 300,
       step: 15,
+    },
+    dangerousAllowSanitizedItemContent: {
+      type: 'switch',
+      defaultValue: false,
+    },
+    textLinesClamp: {
+      type: 'slider',
+      defaultValue: 5,
+      min: 1,
+      max: 50,
+      step: 1,
     },
   },
   gridstack: {
@@ -141,10 +152,10 @@ function RssTile({ widget }: RssTileProps) {
                   )}
 
                   <Flex gap="xs">
-                    {item.enclosure && (
+                    {item.enclosure && item.enclosure.url && (
                       <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
                         <Image
-                          src={item.enclosure?.url ?? undefined}
+                          src={item.enclosure.url ?? undefined}
                           width={140}
                           height={140}
                           radius="md"
@@ -162,9 +173,13 @@ function RssTile({ widget }: RssTileProps) {
                       )}
 
                       <Text lineClamp={2}>{item.title}</Text>
-                      <Text color="dimmed" size="xs" lineClamp={3}>
-                        {item.content}
-                      </Text>
+                      <Text
+                        className={classes.itemContent}
+                        color="dimmed"
+                        size="xs"
+                        lineClamp={widget.properties.textLinesClamp}
+                        dangerouslySetInnerHTML={{ __html: item.content }}
+                      />
 
                       {item.pubDate && (
                         <InfoDisplay title={feed.feed.title} date={formatDate(item.pubDate)} />
@@ -210,7 +225,7 @@ const InfoDisplay = ({ date, title }: { date: string; title: string | undefined 
   </Group>
 );
 
-const useStyles = createStyles(({ colorScheme }) => ({
+const useStyles = createStyles(({ colorScheme, colors, radius, spacing }) => ({
   backgroundImage: {
     position: 'absolute',
     width: '100%',
@@ -223,6 +238,26 @@ const useStyles = createStyles(({ colorScheme }) => ({
     '&:hover': {
       opacity: colorScheme === 'dark' ? 0.4 : 0.3,
       filter: 'blur(40px) brightness(0.7)',
+    },
+  },
+  itemContent: {
+    img: {
+      height: 100,
+      width: 'auto',
+      borderRadius: radius.sm,
+    },
+    blockquote: {
+      marginLeft: 10,
+      marginRight: 10,
+      paddingLeft: spacing.xs,
+      paddingRight: spacing.xs,
+      paddingTop: 1,
+      paddingBottom: 1,
+      borderLeftWidth: 4,
+      borderLeftStyle: 'solid',
+      borderLeftColor: colors.red[5],
+      borderRadius: radius.sm,
+      backgroundColor: colorScheme === 'dark' ? colors.dark[4] : '',
     },
   },
 }));
