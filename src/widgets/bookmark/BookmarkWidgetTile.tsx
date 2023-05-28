@@ -12,6 +12,7 @@ import {
   TextInput,
   Title,
   createStyles,
+  Switch,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import {
@@ -36,6 +37,7 @@ interface BookmarkItem {
   name: string;
   href: string;
   iconUrl: string;
+  openNewTab: boolean;
 }
 
 const definition = defineWidget({
@@ -54,6 +56,7 @@ const definition = defineWidget({
           name: 'Homarr Documentation',
           href: 'https://homarr.dev',
           iconUrl: '/imgs/logo/logo.png',
+          openNewTab: false,
         };
       },
       itemComponent({ data, onChange, delete: deleteData }) {
@@ -96,7 +99,7 @@ const definition = defineWidget({
             return;
           }
 
-          onChange(form.values);
+          onChange({ ...form.values, openNewTab: form.values.openNewTab });
         }, [form.values]);
 
         return (
@@ -120,6 +123,11 @@ const definition = defineWidget({
                 onChange={(value) => {
                   form.setFieldValue('iconUrl', value ?? '');
                 }}
+              />
+              <Switch
+                {...form.getInputProps('openNewTab')}
+                label="Open in new tab"
+                checked={form.values.openNewTab}
               />
               <Button
                 onClick={() => deleteData()}
@@ -156,11 +164,6 @@ const definition = defineWidget({
         },
       ],
       defaultValue: 'autoGrid',
-    },
-    isOpeningNewTab: {
-      label: 'Open in a new Tab',
-      type: 'switch',
-      defaultValue: false,
     },
   },
   gridstack: {
@@ -210,7 +213,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               px="xl"
               component="a"
               href={item.href}
-              target={widget.properties.isOpeningNewTab ? '_blank' : undefined}
+              target={item.openNewTab ? '_blank' : undefined}
               withBorder
             >
               <BookmarkItemContent item={item} />
@@ -238,7 +241,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                 px="xl"
                 component="a"
                 href={item.href}
-                target={widget.properties.isOpeningNewTab ? '_blank' : undefined}
+                target={item.openNewTab ? '_blank' : undefined}
                 withBorder
               >
                 <BookmarkItemContent item={item} />

@@ -9,9 +9,6 @@
       },
       "layout": {
         "label": "Layout"
-      },
-      "isOpeningNewTab": {
-        "label": "Open in New Tab"
       }
     }
   },
