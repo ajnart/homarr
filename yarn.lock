@@ -5295,9 +5295,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^9.0.2":
-  version: 9.1.7
-  resolution: "framer-motion@npm:9.1.7"
+"framer-motion@npm:^10.0.0":
+  version: 10.12.12
+  resolution: "framer-motion@npm:10.12.12"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
@@ -5307,7 +5307,12 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 8ab21a2c15eb2494644b09c91c91aec3c01575e2148ff17621df4fca44bc64a8c03bc1cf6a5261ec0cebb7504fea8d75480e93b1799e8842337f8b1863af8c14
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 28ff7202b79833c0aa2fc412e64055b34f6405dc5b025eceb6fa737725f4005a2b29bec31011dd5c1c4cd44af2430b3d622e4a77a11a032e7b08e1e108456430
   languageName: node
   linkType: hard
 
@@ -5865,7 +5870,7 @@ __metadata:
     eslint-plugin-unused-imports: ^2.0.0
     eslint-plugin-vitest: ^0.2.0
     fily-publish-gridstack: ^0.0.13
-    framer-motion: ^9.0.2
+    framer-motion: ^10.0.0
     happy-dom: ^8.9.0
     html-entities: ^2.3.3
     i18next: ^21.9.1
