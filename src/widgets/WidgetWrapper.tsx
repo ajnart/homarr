@@ -39,7 +39,7 @@ export const WidgetWrapper = ({
   const widgetWithDefaultProps = useWidget(widget);
 
   return (
-    <ErrorBoundary>
+    <ErrorBoundary integration={widgetType} widget={widgetWithDefaultProps}>
       <HomarrCardWrapper className={className}>
         <WidgetsMenu integration={widgetType} widget={widgetWithDefaultProps} />
         <WidgetComponent widget={widgetWithDefaultProps} />
