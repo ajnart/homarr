@@ -1,8 +1,9 @@
-import { Alert, Button, Grid, Input, LoadingOverlay, Slider } from '@mantine/core';
-import { useForm } from '@mantine/form';
+import { Alert, Button, Grid, Input, LoadingOverlay, NumberInput, Slider } from '@mantine/core';
+import { useForm, zodResolver } from '@mantine/form';
 import { IconCheck, IconReload } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import { z } from 'zod';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { GridstackBreakpoints } from '../../../../constants/gridstack-breakpoints';
@@ -22,10 +23,16 @@ export const GridstackConfiguration = () => {
     columnCountSmall: 3,
     columnCountMedium: 6,
     columnCountLarge: 12,
+    minimumSidebarWidth: 256,
   };
 
   const form = useForm({
     initialValues: initialValue,
+    validate: zodResolver(z.object({
+      minimumSidebarWidth: z.number().min(100).max(99999),
+    })),
+    validateInputOnBlur: true,
+    validateInputOnChange: true,
   });
 
   const [isSaving, setIsSaving] = useState(false);
@@ -76,9 +83,17 @@ export const GridstackConfiguration = () => {
         description={t('columnsCount.descriptionExceedsPreset', {
           pixels: GridstackBreakpoints.large,
         })}
+        mb="xl"
       >
         <Slider min={5} max={20} mt="xs" {...form.getInputProps('columnCountLarge')} />
       </Input.Wrapper>
+
+      <NumberInput
+        label="Sidebar width"
+        description="The minimum width of sidebars when in desktop mode"
+        {...form.getInputProps('minimumSidebarWidth')}
+      />
+
       {form.isDirty() && (
         <Alert variant="light" color="yellow" title="Unsaved changes" my="md">
           {t('unsavedChanges')}
