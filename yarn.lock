@@ -4905,13 +4905,13 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-vitest@npm:^0.2.0":
-  version: 0.2.3
-  resolution: "eslint-plugin-vitest@npm:0.2.3"
+  version: 0.2.5
+  resolution: "eslint-plugin-vitest@npm:0.2.5"
   dependencies:
     "@typescript-eslint/utils": ^5.59.2
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 24ee921db31ee1268bca749fb64bba39db3284ea033b3f41dae752120c8026b0488db659115aeae42bde5ff5db318e448d08adbb96fab9672ae4f89c79fe01c0
+  checksum: 81892913acbcf9c227200fa312006e80f0d11d5cb0b8993a09e011f010dab2713d986252be987f04644c2558d8321bf259c210e48a1429e64d393b1310e4ff32
   languageName: node
   linkType: hard
 
