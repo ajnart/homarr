@@ -2399,9 +2399,9 @@ __metadata:
   linkType: hard
 
 "@types/video.js@npm:^7.3.51":
-  version: 7.3.51
-  resolution: "@types/video.js@npm:7.3.51"
-  checksum: 95b8e75da82b401965bd2b31648f7917495b9f2eda3773e1c50f027ed1f457760731912c71cf2c4e8c4b3087b29844bdcc92577bb56ae5c49b771039f7da819e
+  version: 7.3.52
+  resolution: "@types/video.js@npm:7.3.52"
+  checksum: 3d1b62a4fa6ba4f29d41d617068fadc88a3cf2a16e4f3eedafba25cb4d72abc332e536f5a2d30fb86bfbba9a7557a97444497bcd397c23b767bff38aa7e51a8c
   languageName: node
   linkType: hard
 
