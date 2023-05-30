@@ -33,7 +33,7 @@
             "label": "Metin olarak göster (kompakt)"
           },
           "multiView": {
-            "label": "Çoklu sürücü görünümü olarak göster"
+            "label": "Çoklu sürücü görünümünü aktif et"
           }
         },
         "network": {
@@ -57,7 +57,7 @@
             "label": "Sütun genişliği"
           },
           "multiView": {
-            "label": "Çok çekirdekli görünüm olarak göster"
+            "label": "Çok çekirdekli görünümü aktif et"
           }
         },
         "ram": {
