@@ -117,7 +117,7 @@
     "@types/react": "17.0.60",
     "@types/react-dom": "17.0.20"
   },
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.0",
   "nextBundleAnalysis": {
     "budget": null,
     "budgetPercentIncreaseRed": 20,
