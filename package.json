@@ -30,7 +30,7 @@
     "@ctrl/transmission": "^4.1.1",
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
-    "@jellyfin/sdk": "^0.7.0",
+    "@jellyfin/sdk": "^0.8.0",
     "@mantine/core": "^6.0.0",
     "@mantine/dates": "^6.0.0",
     "@mantine/dropzone": "^6.0.0",
