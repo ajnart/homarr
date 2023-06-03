@@ -26,11 +26,8 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
         const body = (await response.json()) as OverseerrResponse;
         const mediaWidget = config.widgets.find(
             (x) => x.type === 'media-requests-list') as MediaRequestListWidget | undefined;
-        if (!mediaWidget) {
-            Consola.log('No media-requests-list found');
-            return Promise.resolve([]);
-        }
-        const appUrl = mediaWidget.properties.replaceLinksWithExternalHost
+
+        const appUrl = mediaWidget?.properties.replaceLinksWithExternalHost
           ? app.behaviour.externalUrl
           : app.url;
 

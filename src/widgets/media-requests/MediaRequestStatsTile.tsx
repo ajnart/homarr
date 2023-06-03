@@ -1,6 +1,15 @@
-import { Card, Center, Flex, Stack, Text } from '@mantine/core';
+import {
+  Avatar,
+  Container,
+  Group,
+  ScrollArea,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core';
 import { IconChartBar } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { useElementSize } from '@mantine/hooks';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
@@ -14,7 +23,7 @@ const definition = defineWidget({
   component: MediaRequestStatsTile,
   gridstack: {
     minWidth: 1,
-    minHeight: 2,
+    minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -30,45 +39,85 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
   const { t } = useTranslation('modules/media-requests-stats');
   const { data, isFetching } = useMediaRequestQuery();
 
+  const { ref, width } = useElementSize();
+
   if (!data || isFetching) {
     return <WidgetLoading />;
   }
 
+  const displayDescriptions = width > 400;
+
+  let frequentRequesters: { username: string; userProfilePic: string; countRequests: number }[] =
+    [];
+
+  data.forEach((item) => {
+    const match = frequentRequesters.find((x) => x.username === item.userName);
+    if (match) {
+      frequentRequesters = [
+        ...frequentRequesters.filter((x) => x.username !== item.userName),
+        {
+          ...match,
+          countRequests: match.countRequests + 1,
+        },
+      ];
+    } else {
+      frequentRequesters.push({
+        username: item.userName,
+        countRequests: 1,
+        userProfilePic: item.userProfilePicture,
+      });
+    }
+  });
+
+  const mostOftenRequester = frequentRequesters
+    .sort((x, y) => (x.countRequests > y.countRequests ? -1 : 1))
+    .find(() => true);
+
   return (
-    <Flex gap="md" wrap="wrap">
-      <Card w={100} h={100} withBorder>
-        <Center h="100%">
-          <Stack spacing={0} align="center">
+    <Container ref={ref} h="100%" px={0}>
+      <ScrollArea h="100%" type="auto" offsetScrollbars>
+        <Stack pr="xs">
+          <Group position="apart">
+            <Stack spacing={0}>
+              <Title order={6}>Pending approval</Title>
+              {displayDescriptions && <Text>Count of requests pending your approval</Text>}
+            </Stack>
             <Text>
-              {data.filter((x) => x.status === MediaRequestStatus.PendingApproval).length}
+              {
+                data.filter((request) => request.status === MediaRequestStatus.PendingApproval)
+                  .length
+              }
             </Text>
-            <Text color="dimmed" align="center" size="xs">
-              {t('stats.pending')}
+          </Group>
+          <Group position="apart">
+            <Stack spacing={0}>
+              <Title order={6}>Declined requests</Title>
+              {displayDescriptions && <Text>Count of requests that were declined</Text>}
+            </Stack>
+            <Text>
+              {data.filter((request) => request.status === MediaRequestStatus.Declined).length}
             </Text>
-          </Stack>
-        </Center>
-      </Card>
-      <Card w={100} h={100} withBorder>
-        <Center h="100%">
-          <Stack spacing={0} align="center">
-            <Text align="center">{data.filter((x) => x.type === 'tv').length}</Text>
-            <Text color="dimmed" align="center" size="xs">
-              {t('stats.tvRequests')}
-            </Text>
-          </Stack>
-        </Center>
-      </Card>
-      <Card w={100} h={100} withBorder>
-        <Center h="100%">
-          <Stack spacing={0} align="center">
-            <Text align="center">{data.filter((x) => x.type === 'movie').length}</Text>
-            <Text color="dimmed" align="center" size="xs">
-              {t('stats.movieRequests')}
-            </Text>
-          </Stack>
-        </Center>
-      </Card>
-    </Flex>
+          </Group>
+          {mostOftenRequester && (
+            <Group position="apart">
+              <Stack spacing={0}>
+                <Title order={6}>Most frequent requester</Title>
+                {displayDescriptions && <Text>The user that has requested the most often</Text>}
+              </Stack>
+              <Stack spacing={0}>
+                <Group>
+                  <Avatar src={mostOftenRequester.userProfilePic} size="sm" />
+                  <Text>{mostOftenRequester.username}</Text>
+                </Group>
+                <Text color="dimmed" size="xs">
+                  made {mostOftenRequester.countRequests} requests
+                </Text>
+              </Stack>
+            </Group>
+          )}
+        </Stack>
+      </ScrollArea>
+    </Container>
   );
 }
 
