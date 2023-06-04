@@ -56,10 +56,18 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
           const status = await adGuard.getStatus();
           const countFilteredDomains = await adGuard.getCountFilteringDomains();
 
-          const blockedQueriesToday = stats.blocked_filtering.reduce((prev, sum) => prev + sum, 0);
-          const queriesToday = stats.dns_queries.reduce((prev, sum) => prev + sum, 0);
+          const blockedQueriesToday =
+            stats.time_units === 'days'
+              ? stats.blocked_filtering[stats.blocked_filtering.length - 1]
+              : stats.blocked_filtering.reduce((prev, sum) => prev + sum, 0);
+          const queriesToday =
+            stats.time_units === 'days'
+              ? stats.dns_queries[stats.dns_queries.length - 1]
+              : stats.dns_queries.reduce((prev, sum) => prev + sum, 0);
           data.adsBlockedToday = blockedQueriesToday;
           data.domainsBeingBlocked += countFilteredDomains;
+          console.log(`queries today: ${queriesToday}`);
+          console.log(`queries today: ${blockedQueriesToday}`);
           data.dnsQueriesToday += queriesToday;
           data.status.push({
             status: status.protection_enabled ? 'enabled' : 'disabled',
