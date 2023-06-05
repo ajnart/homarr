@@ -11,7 +11,7 @@
         "label": "Tamamlanan torrentleri görüntüle"
       },
       "displayStaleTorrents": {
-        "label": "Eski torrentleri göster"
+        "label": "Durdurulmuş torrentleri göster"
       },
       "labelFilterIsWhitelist": {
         "label": "Etiket listesi bir beyaz listedir (kara liste yerine)"
