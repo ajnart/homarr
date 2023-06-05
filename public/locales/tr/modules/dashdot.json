@@ -57,7 +57,7 @@
             "label": "Sütun genişliği"
           },
           "multiView": {
-            "label": "Çok çekirdekli görünümü aktif et"
+            "label": "Çoklu çekirdek görünümünü aktif et"
           }
         },
         "ram": {
@@ -84,7 +84,7 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "Hiç Dash. hizmeti bulunamadı. Lütfen Homarr kontrol panelinize bir tane ekleyin veya modül seçeneklerinde bir Dash. URL ayarlayın",
+      "noService": "Hiç Dash. hizmeti bulunamadı. Lütfen Homarr kontrol panelinize Dash. Widget'ı ekleyin ve modül ayarlarına Dash. URL'sini girin",
       "noInformation": "Dash'ten bilgi alınamıyor. - En son sürümü mü kullanıyorsunuz?",
       "protocolDowngrade": {
         "title": "Algılanan protokol versiyon düşürme",
