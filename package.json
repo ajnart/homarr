@@ -57,7 +57,7 @@
     "fily-publish-gridstack": "^0.0.13",
     "framer-motion": "^10.0.0",
     "html-entities": "^2.3.3",
-    "i18next": "^21.9.1",
+    "i18next": "^22.0.0",
     "js-file-download": "^0.4.12",
     "next": "^13.4.2",
     "next-i18next": "^11.3.0",
