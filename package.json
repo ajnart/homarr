@@ -30,7 +30,7 @@
     "@ctrl/transmission": "^4.1.1",
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
-    "@jellyfin/sdk": "^0.7.0",
+    "@jellyfin/sdk": "^0.8.0",
     "@mantine/core": "^6.0.0",
     "@mantine/dates": "^6.0.0",
     "@mantine/dropzone": "^6.0.0",
@@ -88,8 +88,8 @@
     "@types/video.js": "^7.3.51",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
-    "@vitest/coverage-c8": "^0.31.1",
-    "@vitest/ui": "^0.31.1",
+    "@vitest/coverage-c8": "^0.32.0",
+    "@vitest/ui": "^0.32.0",
     "checkly": "latest",
     "eslint": "^8.20.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -110,18 +110,37 @@
     "turbo": "latest",
     "typescript": "^5.0.4",
     "video.js": "^8.0.3",
-    "vitest": "^0.31.1",
+    "vitest": "^0.32.0",
     "vitest-fetch-mock": "^0.2.2"
   },
   "resolutions": {
     "@types/react": "17.0.60",
     "@types/react-dom": "17.0.20"
   },
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.0",
   "nextBundleAnalysis": {
     "budget": null,
     "budgetPercentIncreaseRed": 20,
     "minimumChangeThreshold": 0,
     "showDetails": true
+  },
+  "renovate": {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base"
+    ],
+    "commitMessagePrefix": "⬆️",
+    "lockFileMaintenance": {
+      "automerge": true
+    },
+    "minor": {
+      "automerge": true
+    },
+    "patch": {
+      "automerge": true
+    },
+    "pin": {
+      "automerge": true
+    }
   }
 }

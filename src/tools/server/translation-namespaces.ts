@@ -4,6 +4,7 @@ export const dashboardNamespaces = [
   'layout/modals/add-app',
   'layout/modals/change-position',
   'layout/modals/about',
+  'layout/common',
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
   'settings/common',
