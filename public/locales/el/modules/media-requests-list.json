@@ -5,7 +5,7 @@
     "settings": {
       "title": "Κατάλογος αιτημάτων των μέσων ενημέρωσης",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Αντικατάσταση συνδέσμων με εξωτερικό διακομιστή"
       }
     }
   },
@@ -18,7 +18,7 @@
     "declined": "Απορρίφθηκε"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Έγκριση αιτημάτων",
+    "decline": "Απόρριψη αιτημάτων"
   }
 }
