@@ -2273,10 +2273,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:17.0.1":
-  version: 17.0.1
-  resolution: "@types/node@npm:17.0.1"
-  checksum: 16a5aa2778e1e49443d272f0da20af66c143337ddb14d9f36d5e7eb1e11ebbf195769d3d495ec5456ec94fe3d0e703c5df1ac279a05c7dc2a1220474467c1103
+"@types/node@npm:18.16.16":
+  version: 18.16.16
+  resolution: "@types/node@npm:18.16.16"
+  checksum: 0efad726dd1e0bef71c392c708fc5d78c5b39c46b0ac5186fee74de4ccb1b2e847b3fa468da67d62812f56569da721b15bf31bdc795e6c69b56c73a45079ed2d
   languageName: node
   linkType: hard
 
@@ -5810,7 +5810,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
     "@types/dockerode": ^3.3.9
-    "@types/node": 17.0.1
+    "@types/node": 18.16.16
     "@types/prismjs": ^1.26.0
     "@types/react": 17.0.60
     "@types/uuid": ^9.0.0
