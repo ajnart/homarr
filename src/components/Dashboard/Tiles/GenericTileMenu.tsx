@@ -1,5 +1,5 @@
 import { ActionIcon, Menu } from '@mantine/core';
-import { IconDots, IconLayoutKanban, IconPencil, IconTrash } from '@tabler/icons-react';
+import { IconLayoutKanban, IconPencil, IconSettings, IconTrash } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEditModeStore } from '../Views/useEditModeStore';
 
@@ -35,7 +35,7 @@ export const GenericTileMenu = ({
           right={8}
           style={{ zIndex: 1 }}
         >
-          <IconDots />
+          <IconSettings />
         </ActionIcon>
       </Menu.Target>
       <Menu.Dropdown w={250}>
