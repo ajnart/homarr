@@ -1,12 +1,12 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Popup blockiert",
+      "text": "Ihr Browser hat den Zugriff von Homarr auf seine API blockiert. Dies wird am häufigsten durch AdBlocker oder verweigerte Berechtigungen verursacht. Homarr ist nicht in der Lage, Berechtigungen automatisch anzufordern.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Klicken Sie auf das Symbol neben der URL und prüfen Sie die Berechtigungen. Popups und Fenster zulassen",
+        "adBlockers": "Deaktivieren Sie Werbeblocker und Sicherheitstools in Ihrem Browser",
+        "otherBrowser": "Versuche es mit einem anderen Browser"
       }
     }
   },
