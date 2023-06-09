@@ -5853,7 +5853,7 @@ __metadata:
     framer-motion: ^10.0.0
     happy-dom: ^9.0.0
     html-entities: ^2.3.3
-    i18next: ^22.0.0
+    i18next: ^22.5.1
     js-file-download: ^0.4.12
     next: ^13.4.2
     next-i18next: ^13.0.0
@@ -5863,6 +5863,7 @@ __metadata:
     prismjs: ^1.29.0
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-i18next: ^12.3.1
     react-simple-code-editor: ^0.13.1
     rss-parser: ^3.12.0
     sabnzbd-api: ^1.5.0
@@ -5903,6 +5904,15 @@ __metadata:
   version: 2.0.2
   resolution: "html-escaper@npm:2.0.2"
   checksum: d2df2da3ad40ca9ee3a39c5cc6475ef67c8f83c234475f24d8e9ce0dc80a2c82df8e1d6fa78ddd1e9022a586ea1bd247a615e80a5cd9273d90111ddda7d9e974
+  languageName: node
+  linkType: hard
+
+"html-parse-stringify@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "html-parse-stringify@npm:3.0.1"
+  dependencies:
+    void-elements: 3.1.0
+  checksum: 334fdebd4b5c355dba8e95284cead6f62bf865a2359da2759b039db58c805646350016d2017875718bc3c4b9bf81a0d11be5ee0cf4774a3a5a7b97cde21cfd67
   languageName: node
   linkType: hard
 
@@ -6032,7 +6042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^22.0.0":
+"i18next@npm:^22.5.1":
   version: 22.5.1
   resolution: "i18next@npm:22.5.1"
   dependencies:
@@ -8292,6 +8302,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-i18next@npm:^12.3.1":
+  version: 12.3.1
+  resolution: "react-i18next@npm:12.3.1"
+  dependencies:
+    "@babel/runtime": ^7.20.6
+    html-parse-stringify: ^3.0.1
+  peerDependencies:
+    i18next: ">= 19.0.0"
+    react: ">= 16.8.0"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: fe3f360e5184bc63861734e94bf625a09b9ec0d28fab41779a68758af258fd1737dde25ff7a88ddb66c1571a3e3de5b3403825a91b4949bf9832a00615acb87a
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -10052,6 +10080,13 @@ __metadata:
   bin:
     vitest: vitest.mjs
   checksum: a752f7a2290e08cc4033936b1b9e1fe6adcb156bccff6404d4950b4f913c01a8015768f8dbd35267752331311dc55e218d56c5271c56e5ca9c848a36a5dc5b55
+  languageName: node
+  linkType: hard
+
+"void-elements@npm:3.1.0":
+  version: 3.1.0
+  resolution: "void-elements@npm:3.1.0"
+  checksum: 0390f818107fa8fce55bb0a5c3f661056001c1d5a2a48c28d582d4d847347c2ab5b7f8272314cac58acf62345126b6b09bea623a185935f6b1c3bbce0dfd7f7f
   languageName: node
   linkType: hard
 

@@ -43,7 +43,7 @@ export const SearchEngineSelector = ({ searchEngine }: Props) => {
       <SegmentedControl
         fullWidth
         mb="sm"
-        title={t('title')}
+        title={t('title') ?? undefined}
         value={engine}
         onChange={onEngineChange}
         data={searchEngineOptions}
@@ -60,9 +60,9 @@ export const SearchEngineSelector = ({ searchEngine }: Props) => {
             <Space mb="md" />
             <TextInput
               label={t('customEngine.label')}
-              name={t('configurationName')}
+              name={t('configurationName') ?? undefined}
               description={t('tips.placeholderTip')}
-              placeholder={t('customEngine.placeholder')}
+              placeholder={t('customEngine.placeholder') ?? undefined}
               value={searchUrl}
               onChange={onSearchUrlChange}
             />
