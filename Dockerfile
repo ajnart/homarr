@@ -1,11 +1,11 @@
-FROM node:16-alpine
+FROM node:20-alpine
 WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 ENV NODE_OPTIONS '--no-experimental-fetch'
 
-COPY next.config.mjs ./
+COPY next.config.js ./
 COPY public ./public
 COPY package.json ./package.json
 

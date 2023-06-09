@@ -122,7 +122,7 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     <Select
       label={t('integration.type.label')}
       description={t('integration.type.description')}
-      placeholder={t('integration.type.placeholder')}
+      placeholder={t('integration.type.placeholder') ?? undefined}
       itemComponent={SelectItemComponent}
       data={data}
       maxDropdownHeight={250}
