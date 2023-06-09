@@ -188,7 +188,7 @@ export function Search() {
             onFocusCapture={() => setOpened(true)}
             autoFocus
             rightSection={<SearchModuleMenu />}
-            placeholder={t(`searchEngines.${selectedSearchEngine.value}.description`)}
+            placeholder={t(`searchEngines.${selectedSearchEngine.value}.description`) ?? undefined}
             value={searchQuery}
             onChange={(currentString) => tryMatchSearchEngine(currentString, setSearchQuery)}
             itemComponent={AutoCompleteItem}

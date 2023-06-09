@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Biểu tượng ứng dụng",
-			"description": "",
+			"description": "Bạn có thể tìm kiếm biểu tượng bằng cách nhập hoặc dán URL của biểu tượng tùy chỉnh.",
 			"autocomplete": {
 				"title": "Không có kết quả",
 				"text": "Hãy thử sử dụng cụm từ tìm kiếm cụ thể hơn. Nếu bạn không tìm thấy biểu tượng mình muốn, hãy dán URL hình ảnh vào bên trên để dùng biểu tượng tùy chỉnh"

@@ -10,6 +10,12 @@
       },
       "refreshInterval": {
         "label": "Інтервал оновлення (хвилини)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "settings.textLinesClamp": {
+        "label": ""
       }
     },
     "card": {

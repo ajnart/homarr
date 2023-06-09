@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Trình điều khiển DNS",
+    "description": "Kiểm soát PiHole hoặc AdGuard từ bảng điều khiển của bạn"
   }
 }
