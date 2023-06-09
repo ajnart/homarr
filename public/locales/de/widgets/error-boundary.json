@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "",
+    "text": "Es ist ein unerwarteter Fehler aufgetreten. Bitte überprüfen Sie Ihre Konfiguration. Bitte melden Sie dieses Problem, wenn Sie glauben, dass es sich um einen Fehler handelt.",
     "label": "Dein Fehler",
     "reportButton": "Fehler melden"
   }

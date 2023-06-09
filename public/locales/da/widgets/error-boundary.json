@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "",
+    "text": "Der er opstået en uventet fejl. Tjek venligst din konfiguration. Rapporter venligst dette problem, hvis du mener, at det er en fejl.",
     "label": "Din fejl",
     "reportButton": "Rapportér denne fejl"
   }

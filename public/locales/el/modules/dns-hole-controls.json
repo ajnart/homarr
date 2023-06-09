@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Στοιχεία ελέγχου DNS hole",
+    "description": "Ελέγξτε το PiHole ή το AdGuard από το dashboard σας"
   }
 }

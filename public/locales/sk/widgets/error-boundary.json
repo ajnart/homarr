@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "",
+    "text": "Vyskytla sa neočakávaná chyba. Skontrolujte prosím svoju konfiguráciu. Ak sa domnievate, že ide o chybu, nahláste tento problém.",
     "label": "Vaša chyba",
     "reportButton": "Nahlásiť chybu"
   }
