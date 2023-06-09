@@ -33,7 +33,7 @@ export const TableRow = ({ session, app }: TableRowProps) => {
                 {session.username?.at(0)?.toUpperCase()}
               </Avatar>
             )}
-            <Text>{session.username}</Text>
+            <Text style={{ whiteSpace: 'nowrap' }}>{session.username}</Text>
           </Flex>
         </td>
         <td>
