@@ -2,14 +2,14 @@ FROM node:16-alpine
 WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
-
 ENV NODE_ENV production
+ENV NODE_OPTIONS '--no-experimental-fetch'
 
-COPY next.config.js ./
+COPY next.config.mjs ./
 COPY public ./public
 COPY package.json ./package.json
 
-# Automatically leverage output traces to reduce image size 
+# Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY .next/standalone ./
 COPY .next/static ./.next/static

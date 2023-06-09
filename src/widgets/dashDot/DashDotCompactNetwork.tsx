@@ -9,8 +9,9 @@ interface DashDotCompactNetworkProps {
 
 export interface DashDotInfo {
   storage: {
-    layout: { size: number }[];
-  };
+    size: number;
+    disks: { device: string; brand: string; type: string }[];
+  }[];
   network: {
     speedUp: number;
     speedDown: number;
