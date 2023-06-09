@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Медіа сервер",
+    "description": "Взаємодійте з вашим Jellyfin або Plex медіасервером",
     "settings": {
-      "title": ""
+      "title": "Налаштування віджету медіасервера"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Сесія",
+        "user": "Користувач",
+        "currentlyPlaying": "Зараз грає"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Не вдається завантажити контент",
+        "text": "Не вдалося отримати інформацію з сервера. Будь ласка, перевірте логи для більш детальної інформації"
       }
     }
   }

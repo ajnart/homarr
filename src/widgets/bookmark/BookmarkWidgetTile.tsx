@@ -12,6 +12,7 @@ import {
   TextInput,
   Title,
   createStyles,
+  Switch,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import {
@@ -29,12 +30,14 @@ import { z } from 'zod';
 import { IconSelector } from '../../components/IconSelector/IconSelector';
 import { defineWidget } from '../helper';
 import { IDraggableEditableListInputValue, IWidget } from '../widgets';
+import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 
 interface BookmarkItem {
   id: string;
   name: string;
   href: string;
   iconUrl: string;
+  openNewTab: boolean;
 }
 
 const definition = defineWidget({
@@ -53,6 +56,7 @@ const definition = defineWidget({
           name: 'Homarr Documentation',
           href: 'https://homarr.dev',
           iconUrl: '/imgs/logo/logo.png',
+          openNewTab: false,
         };
       },
       itemComponent({ data, onChange, delete: deleteData }) {
@@ -95,7 +99,7 @@ const definition = defineWidget({
             return;
           }
 
-          onChange(form.values);
+          onChange({ ...form.values, openNewTab: form.values.openNewTab });
         }, [form.values]);
 
         return (
@@ -119,6 +123,11 @@ const definition = defineWidget({
                 onChange={(value) => {
                   form.setFieldValue('iconUrl', value ?? '');
                 }}
+              />
+              <Switch
+                {...form.getInputProps('openNewTab')}
+                label="Open in new tab"
+                checked={form.values.openNewTab}
               />
               <Button
                 onClick={() => deleteData()}
@@ -175,14 +184,19 @@ interface BookmarkWidgetTileProps {
 function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
   const { t } = useTranslation('modules/bookmark');
   const { classes } = useStyles();
+  const { enabled: isEditModeEnabled } = useEditModeStore();
 
   if (widget.properties.items.length === 0) {
     return (
       <Stack align="center">
         <IconPlaylistX />
         <Stack spacing={0}>
-          <Title order={5} align="center">{t('card.noneFound.title')}</Title>
-          <Text align="center" size="sm">{t('card.noneFound.text')}</Text>
+          <Title order={5} align="center">
+            {t('card.noneFound.title')}
+          </Title>
+          <Text align="center" size="sm">
+            {t('card.noneFound.text')}
+          </Text>
         </Stack>
       </Stack>
     );
@@ -191,7 +205,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
   switch (widget.properties.layout) {
     case 'autoGrid':
       return (
-        <Box className={classes.grid} display="grid">
+        <Box className={classes.grid} display="grid" mr={isEditModeEnabled ? 'xl' : undefined}>
           {widget.properties.items.map((item: BookmarkItem, index) => (
             <Card
               className={classes.autoGridItem}
@@ -199,6 +213,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               px="xl"
               component="a"
               href={item.href}
+              target={item.openNewTab ? '_blank' : undefined}
               withBorder
             >
               <BookmarkItemContent item={item} />
@@ -209,7 +224,12 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
     case 'horizontal':
     case 'vertical':
       return (
-        <ScrollArea offsetScrollbars type="always" h="100%">
+        <ScrollArea
+          offsetScrollbars
+          type="always"
+          h="100%"
+          mr={isEditModeEnabled ? 'xl' : undefined}
+        >
           <Flex
             style={{ flexDirection: widget.properties.layout === 'vertical' ? 'column' : 'row' }}
             gap="md"
@@ -221,6 +241,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                 px="xl"
                 component="a"
                 href={item.href}
+                target={item.openNewTab ? '_blank' : undefined}
                 withBorder
               >
                 <BookmarkItemContent item={item} />

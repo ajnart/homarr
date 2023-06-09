@@ -98,7 +98,7 @@ export default function AuthenticationTitle() {
           <PasswordInput
             id="password"
             label={t('form.fields.password.label')}
-            placeholder={t('form.fields.password.placeholder')}
+            placeholder={t('form.fields.password.placeholder') ?? undefined}
             required
             autoFocus
             mt="md"

@@ -45,7 +45,8 @@ export type IntegrationType =
   | 'plex'
   | 'jellyfin'
   | 'nzbGet'
-  | 'pihole';
+  | 'pihole'
+  | 'adGuardHome';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -86,6 +87,7 @@ export const integrationFieldProperties: {
   jellyfin: ['username', 'password'],
   plex: ['apiKey'],
   pihole: ['password'],
+  adGuardHome: ['username', 'password'],
 };
 
 export type IntegrationFieldDefinitionType = {

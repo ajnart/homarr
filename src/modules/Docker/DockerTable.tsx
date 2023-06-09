@@ -121,7 +121,7 @@ export default function DockerTable({
   return (
     <ScrollArea style={{ height: '100%' }} offsetScrollbars>
       <TextInput
-        placeholder={t('search.placeholder')}
+        placeholder={t('search.placeholder') ?? undefined}
         mr="md"
         icon={<IconSearch size={14} />}
         value={search}

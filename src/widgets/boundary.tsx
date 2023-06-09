@@ -2,8 +2,10 @@ import Consola from 'consola';
 import React, { ReactNode } from 'react';
 import { openModal } from '@mantine/modals';
 import { withTranslation } from 'next-i18next';
-import { Button, Card, Center, Code, Group, Stack, Text, Title } from '@mantine/core';
+import { Button, Card, Center, Code, Group, ScrollArea, Stack, Text, Title } from '@mantine/core';
 import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/icons-react';
+import { WidgetsMenu } from '../components/Dashboard/Tiles/Widgets/WidgetsMenu';
+import { IWidget } from './widgets';
 
 type ErrorBoundaryState = {
   hasError: boolean;
@@ -13,6 +15,8 @@ type ErrorBoundaryState = {
 type ErrorBoundaryProps = {
   t: (key: string) => string;
   children: ReactNode;
+  integration: string;
+  widget: IWidget<string, any>;
 };
 
 /**
@@ -48,73 +52,77 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
           radius="lg"
           shadow="sm"
           withBorder
+          h="calc(100% - 20px)"
         >
-          <Center>
-            <Stack align="center">
-              <IconBug color="white" />
-              <Stack spacing={0} align="center">
-                <Title order={4} color="white" align="center">
-                  {this.props.t('card.title')}
-                </Title>
-                {this.state.error && (
-                  <Text color="white" align="center" size="sm">
-                    {this.state.error.toString()}
-                  </Text>
-                )}
+          <WidgetsMenu integration={this.props.integration} widget={this.props.widget} />
+          <ScrollArea h="100%" type="auto" offsetScrollbars>
+            <Center>
+              <Stack align="center" spacing="xs">
+                <IconBug color="white" />
+                <Stack spacing={0} align="center">
+                  <Title order={5} color="white" align="center">
+                    {this.props.t('card.title')}
+                  </Title>
+                  {this.state.error && (
+                    <Text color="white" align="center" size="sm">
+                      {this.state.error.toString()}
+                    </Text>
+                  )}
+                </Stack>
+                <Group spacing="xs">
+                  <Button
+                    onClick={() =>
+                      openModal({
+                        title: 'Your widget had an error',
+                        children: (
+                          <>
+                            <Text size="sm" mb="sm">
+                              {this.props.t('modal.text')}
+                            </Text>
+                            {this.state.error && (
+                              <>
+                                <Text weight="bold" size="sm">
+                                  {this.props.t('modal.label')}
+                                </Text>
+                                <Code block>{this.state.error.toString()}</Code>
+                              </>
+                            )}
+                            <Button
+                              sx={(theme) => ({
+                                backgroundColor: theme.colors.gray[8],
+                                '&:hover': {
+                                  backgroundColor: theme.colors.gray[9],
+                                },
+                              })}
+                              leftIcon={<IconBrandGithub />}
+                              component="a"
+                              href="https://github.com/ajnart/homarr/issues/new?assignees=&labels=%F0%9F%90%9B+Bug&template=bug.yml&title=New%20bug"
+                              target="_blank"
+                              mt="md"
+                              fullWidth
+                            >
+                              {this.props.t('modal.reportButton')}
+                            </Button>
+                          </>
+                        ),
+                      })
+                    }
+                    leftIcon={<IconInfoCircle size={16} />}
+                    variant="light"
+                  >
+                    {this.props.t('card.buttons.details')}
+                  </Button>
+                  <Button
+                    onClick={() => this.setState({ hasError: false })}
+                    leftIcon={<IconRefresh size={16} />}
+                    variant="light"
+                  >
+                    {this.props.t('card.buttons.tryAgain')}
+                  </Button>
+                </Group>
               </Stack>
-              <Group>
-                <Button
-                  onClick={() =>
-                    openModal({
-                      title: 'Your widget had an error',
-                      children: (
-                        <>
-                          <Text size="sm" mb="sm">
-                            {this.props.t('modal.text')}
-                          </Text>
-                          {this.state.error && (
-                            <>
-                              <Text weight="bold" size="sm">
-                                {this.props.t('modal.label')}
-                              </Text>
-                              <Code block>{this.state.error.toString()}</Code>
-                            </>
-                          )}
-                          <Button
-                            sx={(theme) => ({
-                              backgroundColor: theme.colors.gray[8],
-                              '&:hover': {
-                                backgroundColor: theme.colors.gray[9],
-                              },
-                            })}
-                            leftIcon={<IconBrandGithub />}
-                            component="a"
-                            href="https://github.com/ajnart/homarr/issues/new?assignees=&labels=%F0%9F%90%9B+Bug&template=bug.yml&title=New%20bug"
-                            target="_blank"
-                            mt="md"
-                            fullWidth
-                          >
-                            {this.props.t('modal.reportButton')}
-                          </Button>
-                        </>
-                      ),
-                    })
-                  }
-                  leftIcon={<IconInfoCircle size={16} />}
-                  variant="light"
-                >
-                  {this.props.t('card.buttons.details')}
-                </Button>
-                <Button
-                  onClick={() => this.setState({ hasError: false })}
-                  leftIcon={<IconRefresh size={16} />}
-                  variant="light"
-                >
-                  {this.props.t('card.buttons.tryAgain')}
-                </Button>
-              </Group>
-            </Stack>
-          </Center>
+            </Center>
+          </ScrollArea>
         </Card>
       );
     }

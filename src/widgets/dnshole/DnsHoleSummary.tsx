@@ -136,7 +136,7 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
           <Stack align="center" spacing="xs">
             <IconSearch size={30} />
             <div>
-              <Text align="center">{formatNumber(data.dnsQueriesToday, 0)}</Text>
+              <Text align="center">{formatNumber(data.dnsQueriesToday, 3)}</Text>
               <Text align="center" lh={1.2} size="sm">
                 {t('card.metrics.queriesToday')}
               </Text>

@@ -1,17 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Медиазапросы",
+    "description": "Посмотреть список всех медиазапросов от вашего Overseerr или Jellyseerr",
     "settings": {
-      "title": ""
+      "title": "Список медиазапросов",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Запросы не найдены. Убедитесь, что вы настроили свои приложения правильно.",
+  "pending": "Есть {{countPendingApproval}} запросов, ожидающих утверждения.",
+  "nonePending": "В настоящее время нет никаких ожидающих одобрения решений. Вы свободны!",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Утверждено",
+    "pendingApproval": "Ожидает утверждения",
+    "declined": "Отклонено"
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
   }
 }

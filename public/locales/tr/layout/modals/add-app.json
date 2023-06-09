@@ -9,7 +9,7 @@
 	"general": {
 		"appname": {
 			"label": "Uygulama adı",
-			"description": "Uygulamayı gösterge panelinde görüntülemek için kullanılır."
+			"description": "Uygulamayı panelde görüntülemek için kullanılır."
 		},
 		"internalAddress": {
 			"label": "Dahili adres",
@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Uygulama Simgesi",
-			"description": "",
+			"description": "İkon bulmak için yazmaya başlayın. Özel ikon kullanmak için URL de yapıştırabilirsiniz.",
 			"autocomplete": {
 				"title": "Sonuç bulunamadı",
 				"text": "Daha belirgin bir arama terimi kullanmayı deneyin. İstediğiniz simgeyi bulamıyorsanız, özel bir simge için resim URL'sini yukarıya yapıştıın"
@@ -59,15 +59,15 @@
 			"undefined": "Tanımsız",
 			"public": "Herkese açık",
 			"private": "Özel",
-			"explanationPrivate": "Özel Secret sunucuya yalnızca bir kez gönderilir. Tarayıcınız sayfayı yeniledikten sonra bir daha asla gönderilmez.",
-			"explanationPublic": "Bir genel Secret, her zaman istemciye  gönderilir ve API üzerinden erişilebilir. Kullanıcı adları, parolalar, belirteçler, sertifikalar ve benzeri hiçbir gizli değer içermemelidir!"
+			"explanationPrivate": "Özel Değer sunucuya yalnızca bir kez gönderilir. Tarayıcınız sayfayı yeniledikten sonra bir daha asla gönderilmez.",
+			"explanationPublic": "Herkese açık Değerler her zaman istemciye  gönderilir ve API üzerinden erişilebilir. Kullanıcı adları, parolalar, belirteçler, sertifikalar ve benzeri hiçbir gizli değer içermemelidir!"
 		},
 		"secrets": {
-			"description": "Bir Secret'ı güncellemek için bir değer girin ve kaydet düğmesine tıklayın. Bir Secret'ı kaldırmak için temizle düğmesini kullanın.",
-			"warning": "Kimlik bilgileriniz, entegrasyonlarınız için erişim görevi görür ve bunları başka hiç kimseyle <strong>asla</strong> paylaşmamalısınız. Homarr ekibi asla kimlik bilgilerini istemez. <strong>Secret'larınızı güvenli bir şekilde sakladığınızdan ve yönettiğinizden</strong> <strong>emin olun.</strong>.",
-			"clear": "Secret'ı Göster",
-			"save": "Secret'ı Gizle",
-			"update": "Secret'ı Güncelle"
+			"description": "Bir Değer'i güncellemek için yeni bir tane girin ve kaydet düğmesine tıklayın. Bir Değer'i kaldırmak için temizle düğmesini kullanın.",
+			"warning": "Kimlik bilgileriniz, entegrasyonlarınız için erişim görevi görür ve bunları başka hiç kimseyle <strong>asla</strong> paylaşmamalısınız. Homarr ekibi asla kimlik bilgilerini istemez. <strong>Değer'lerinizi güvenli bir şekilde sakladığınızdan ve yönettiğinizden</strong> <strong>emin olun.</strong>.",
+			"clear": "Değer'i Göster",
+			"save": "Değer'i Gizle",
+			"update": "Değer'i Güncelle"
 		}
 	},
 	"validation": {

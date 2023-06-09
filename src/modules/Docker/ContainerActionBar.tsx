@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Button, Group } from '@mantine/core';
-import { showNotification, updateNotification } from '@mantine/notifications';
+import { notifications } from '@mantine/notifications';
 import {
   IconCheck,
   IconPlayerPlay,
@@ -14,22 +14,20 @@ import axios from 'axios';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { TFunction } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfigContext } from '../../config/provider';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
 import { MatchingImages, ServiceType, tryMatchPort } from '../../tools/types';
 import { AppType } from '../../types/app';
 
-let t: TFunction<'modules/docker', undefined>;
-
 function sendDockerCommand(
   action: string,
   containerId: string,
   containerName: string,
-  reload: () => void
+  reload: () => void,
+  t: (key: string) => string,
 ) {
-  showNotification({
+  notifications.show({
     id: containerId,
     loading: true,
     title: `${t(`actions.${action}.start`)} ${containerName}`,
@@ -40,7 +38,7 @@ function sendDockerCommand(
   axios
     .get(`/api/docker/container/${containerId}?action=${action}`)
     .then((res) => {
-      updateNotification({
+      notifications.show({
         id: containerId,
         title: containerName,
         message: `${t(`actions.${action}.end`)} ${containerName}`,
@@ -49,7 +47,7 @@ function sendDockerCommand(
       });
     })
     .catch((err) => {
-      updateNotification({
+      notifications.update({
         id: containerId,
         color: 'red',
         title: t('errors.unknownError.title'),
@@ -68,10 +66,14 @@ export interface ContainerActionBarProps {
 }
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
-  t = useTranslation('modules/docker').t;
+  const { t } = useTranslation('modules/docker');
   const [isLoading, setisLoading] = useState(false);
   const { name: configName, config } = useConfigContext();
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
+
+  if (process.env.DISABLE_EDIT_MODE === 'true') {
+    return null;
+  }
 
   return (
     <Group spacing="xs">
@@ -96,7 +98,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('restart', container.Id, container.Names[0].substring(1), reload)
+              sendDockerCommand('restart', container.Id, container.Names[0].substring(1), reload, t)
             )
           )
         }
@@ -112,7 +114,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('stop', container.Id, container.Names[0].substring(1), reload)
+              sendDockerCommand('stop', container.Id, container.Names[0].substring(1), reload, t)
             )
           )
         }
@@ -128,7 +130,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('start', container.Id, container.Names[0].substring(1), reload)
+              sendDockerCommand('start', container.Id, container.Names[0].substring(1), reload, t)
             )
           )
         }
@@ -147,7 +149,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         onClick={() =>
           Promise.all(
             selected.map((container) =>
-              sendDockerCommand('remove', container.Id, container.Names[0].substring(1), reload)
+              sendDockerCommand('remove', container.Id, container.Names[0].substring(1), reload, t)
             )
           )
         }

@@ -24,7 +24,7 @@
         "storage": {
           "label": "Depolama",
           "enabled": {
-            "label": "Depolama"
+            "label": "Widget'ı göster"
           },
           "span": {
             "label": "Sütun genişliği"
@@ -33,13 +33,13 @@
             "label": "Metin olarak göster (kompakt)"
           },
           "multiView": {
-            "label": "Çoklu sürücü görünümü olarak göster"
+            "label": "Çoklu sürücü görünümünü aktif et"
           }
         },
         "network": {
           "label": "Ağ",
           "enabled": {
-            "label": "Depolama"
+            "label": "Widget'ı göster"
           },
           "span": {
             "label": "Sütun genişliği"
@@ -51,19 +51,19 @@
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": "Depolama"
+            "label": "Widget'ı göster"
           },
           "span": {
             "label": "Sütun genişliği"
           },
           "multiView": {
-            "label": "Çok çekirdekli görünüm olarak göster"
+            "label": "Çoklu çekirdek görünümünü aktif et"
           }
         },
         "ram": {
           "label": "Ram",
           "enabled": {
-            "label": "Depolama"
+            "label": "Widget'ı göster"
           },
           "span": {
             "label": "Sütun genişliği"
@@ -72,7 +72,7 @@
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": "Depolama"
+            "label": "Widget'ı göster"
           },
           "span": {
             "label": "Sütun genişliği"
@@ -84,7 +84,7 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "Hiç Dash. hizmeti bulunamadı. Lütfen Homarr kontrol panelinize bir tane ekleyin veya modül seçeneklerinde bir Dash. URL ayarlayın",
+      "noService": "Hiç Dash. hizmeti bulunamadı. Lütfen Homarr kontrol panelinize Dash. Widget'ı ekleyin ve modül ayarlarına Dash. URL'sini girin",
       "noInformation": "Dash'ten bilgi alınamıyor. - En son sürümü mü kullanıyorsunuz?",
       "protocolDowngrade": {
         "title": "Algılanan protokol versiyon düşürme",

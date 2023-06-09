@@ -1,5 +1,18 @@
-import { Accordion, Title } from '@mantine/core';
+import {
+  Accordion,
+  ActionIcon,
+  Box,
+  Menu,
+  Title,
+  Text,
+  Stack,
+  List,
+  createStyles,
+} from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
+import { IconDotsVertical, IconShare3 } from '@tabler/icons-react';
+import { modals } from '@mantine/modals';
+import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
 import { CategoryType } from '../../../../types/category';
 import { useCardStyles } from '../../../layout/useCardStyles';
@@ -17,6 +30,8 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { config } = useConfigContext();
   const { classes: cardClasses, cx } = useCardStyles(true);
+  const { classes } = useStyles();
+  const { t } = useTranslation(['layout/common', 'common']);
 
   const categoryList = config?.categories.map((x) => x.name) ?? [];
   const [toggledCategories, setToggledCategories] = useLocalStorage({
@@ -24,6 +39,44 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
     // This is a bit of a hack to toggle the categories on the first load, return a string[] of the categories
     defaultValue: categoryList,
   });
+
+  const handleMenuClick = () => {
+    for (let i = 0; i < apps.length; i += 1) {
+      const app = apps[i];
+      const popUp = window.open(app.url, app.id);
+
+      if (popUp === null) {
+        modals.openConfirmModal({
+          title: <Text weight="bold">{t('modals.blockedPopups.title')}</Text>,
+          children: (
+            <Stack maw="100%">
+              <Text>{t('modals.blockedPopups.text')}</Text>
+              <List>
+                <List.Item className={classes.listItem}>
+                  {t('modals.blockedPopups.list.browserPermission')}
+                </List.Item>
+                <List.Item className={classes.listItem}>
+                  {t('modals.blockedPopups.list.adBlockers')}
+                </List.Item>
+                <List.Item className={classes.listItem}>
+                  {t('modals.blockedPopups.list.otherBrowser')}
+                </List.Item>
+              </List>
+            </Stack>
+          ),
+          labels: {
+            confirm: t('common:close'),
+            cancel: '',
+          },
+          cancelProps: {
+            display: 'none',
+          },
+          closeOnClickOutside: false,
+        });
+        break;
+      }
+    }
+  };
 
   return (
     <Accordion
@@ -43,9 +96,28 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
       }}
     >
       <Accordion.Item value={category.name}>
-        <Accordion.Control icon={isEditMode && <CategoryEditMenu category={category} />}>
-          <Title order={3}>{category.name}</Title>
-        </Accordion.Control>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Accordion.Control icon={isEditMode && <CategoryEditMenu category={category} />}>
+            <Title order={3}>{category.name}</Title>
+          </Accordion.Control>
+          {!isEditMode && (
+            <Menu withArrow withinPortal>
+              <Menu.Target>
+                <ActionIcon variant="light" mr="md">
+                  <IconDotsVertical />
+                </ActionIcon>
+              </Menu.Target>
+              <Menu.Dropdown>
+                <Menu.Item
+                  onClick={handleMenuClick}
+                  icon={<IconShare3 size="1rem" />}
+                >
+                  {t('actions.category.openAllInNewTab')}
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          )}
+        </Box>
         <Accordion.Panel>
           <div
             className="grid-stack grid-stack-category"
@@ -59,3 +131,11 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
     </Accordion>
   );
 };
+
+const useStyles = createStyles(() => ({
+  listItem: {
+    '& div': {
+      maxWidth: 'calc(100% - 23px)',
+    },
+  },
+}));

@@ -14,11 +14,11 @@
         "label": "Εμφάνιση stale torrents"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Η λίστα ετικετών είναι επιτρεπόμενη λίστα (αντί για αποκλεισμένη λίστα)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Λίστα ετικετών",
+        "description": "Όταν είναι επιλεγμένο το 'is whitelist', τότε θα συμπεριφερθεί σαν επιτρεπόμενη λίστα. Εάν δεν είναι επιλεγμένο, τότε είναι αποκλεισμένη λίστα. Εάν είναι άδειο δε θα κάνει τίποτα"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Δεν βρέθηκαν torrents",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} καταχωρήσεις αποκρύπτονται από τα φίλτρα σας"
       }
     },
     "lineChart": {

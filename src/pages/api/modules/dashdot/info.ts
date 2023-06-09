@@ -44,6 +44,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
     ? dashDotUrl.substring(0, dashDotUrl.length - 1)
     : dashDotUrl;
   const response = await axios.get(`${url}/info`);
+
   // Return the response
   return res.status(200).json(response.data);
 }

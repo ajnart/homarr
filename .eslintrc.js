@@ -31,6 +31,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     'no-continue': 'off',
     'linebreak-style': 0,
+    'import/extensions': 'off',
     'vitest/max-nested-describe': [
       'error',
       {

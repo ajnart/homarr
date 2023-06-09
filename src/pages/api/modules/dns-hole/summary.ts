@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -5,12 +6,15 @@ import { findAppProperty } from '../../../../tools/client/app-properties';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { PiHoleClient } from '../../../../tools/server/sdk/pihole/piHole';
 import { AdStatistics } from '../../../../widgets/dnshole/type';
+import { AdGuard } from '../../../../tools/server/sdk/adGuard/adGuard';
 
 export const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
-  const applicableApps = config.apps.filter((x) => x.integration?.type === 'pihole');
+  const applicableApps = config.apps.filter(
+    (x) => x.integration?.type && ['pihole', 'adGuardHome'].includes(x.integration?.type)
+  );
 
   const data: AdStatistics = {
     domainsBeingBlocked: 0,
@@ -26,21 +30,51 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     const app = applicableApps[i];
 
     try {
-      const piHole = new PiHoleClient(app.url, findAppProperty(app, 'password'));
+      switch (app.integration?.type) {
+        case 'pihole': {
+          const piHole = new PiHoleClient(app.url, findAppProperty(app, 'password'));
+          const summary = await piHole.getSummary();
 
-      // eslint-disable-next-line no-await-in-loop
-      const summary = await piHole.getSummary();
+          data.domainsBeingBlocked += summary.domains_being_blocked;
+          data.adsBlockedToday += summary.ads_blocked_today;
+          data.dnsQueriesToday += summary.dns_queries_today;
+          data.status.push({
+            status: summary.status,
+            appId: app.id,
+          });
+          adsBlockedTodayPercentageArr.push(summary.ads_percentage_today);
+          break;
+        }
+        case 'adGuardHome': {
+          const adGuard = new AdGuard(
+            app.url,
+            findAppProperty(app, 'username'),
+            findAppProperty(app, 'password')
+          );
 
-      data.domainsBeingBlocked += summary.domains_being_blocked;
-      data.adsBlockedToday += summary.ads_blocked_today;
-      data.dnsQueriesToday += summary.dns_queries_today;
-      data.status.push({
-        status: summary.status,
-        appId: app.id,
-      });
-      adsBlockedTodayPercentageArr.push(summary.ads_percentage_today);
+          const stats = await adGuard.getStats();
+          const status = await adGuard.getStatus();
+          const countFilteredDomains = await adGuard.getCountFilteringDomains();
+
+          const blockedQueriesToday = stats.blocked_filtering.reduce((prev, sum) => prev + sum, 0);
+          const queriesToday = stats.dns_queries.reduce((prev, sum) => prev + sum, 0);
+          data.adsBlockedToday = blockedQueriesToday;
+          data.domainsBeingBlocked += countFilteredDomains;
+          data.dnsQueriesToday += queriesToday;
+          data.status.push({
+            status: status.protection_enabled ? 'enabled' : 'disabled',
+            appId: app.id,
+          });
+          adsBlockedTodayPercentageArr.push((queriesToday / blockedQueriesToday) * 100);
+          break;
+        }
+        default: {
+          Consola.error(`Integration communication for app ${app.id} failed: unknown type`);
+          break;
+        }
+      }
     } catch (err) {
-      Consola.error(`Failed to communicate with PiHole at ${app.url}: ${err}`);
+      Consola.error(`Failed to communicate with DNS hole at ${app.url}: ${err}`);
     }
   }
 

@@ -1,6 +1,6 @@
 {
   "title": "欢迎回来！",
-  "text": "请输入密码。",
+  "text": "请输入密码",
   "form": {
     "fields": {
       "password": {

@@ -74,6 +74,8 @@ jobs:
 
       - run: yarn turbo build
 
+      - run: yarn test:run
+
       - name: Docker meta
         if: github.event_name != 'pull_request'
         id: meta
@@ -103,7 +105,7 @@ jobs:
 
       - name: Build and push
         if: github.event_name != 'pull_request'
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           context: .
