@@ -60,7 +60,7 @@
     "i18next": "^22.0.0",
     "js-file-download": "^0.4.12",
     "next": "^13.4.2",
-    "next-i18next": "^11.3.0",
+    "next-i18next": "^13.0.0",
     "nzbget-api": "^0.0.3",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
