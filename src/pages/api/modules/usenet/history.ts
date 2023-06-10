@@ -3,8 +3,8 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { NzbgetHistoryItem } from './nzbget/types';
-import { NzbgetClient } from './nzbget/nzbget-client';
+import { NzbgetHistoryItem } from '../../../../server/api/routers/usenet/nzbget/types';
+import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { UsenetHistoryItem } from '../../../../widgets/useNet/types';
 

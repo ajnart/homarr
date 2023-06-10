@@ -13,8 +13,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { Client } from 'sabnzbd-api';
 
-import { NzbgetClient } from '../usenet/nzbget/nzbget-client';
-import { NzbgetQueueItem, NzbgetStatus } from '../usenet/nzbget/types';
+import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
+import { NzbgetQueueItem, NzbgetStatus } from '../../../../server/api/routers/usenet/nzbget/types';
 import { ConfigAppType, IntegrationField } from '../../../../types/app';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { UsenetQueueItem } from '../../../../widgets/useNet/types';

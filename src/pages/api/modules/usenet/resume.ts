@@ -4,7 +4,7 @@ import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
 import { getConfig } from '../../../../tools/config/getConfig';
-import { NzbgetClient } from './nzbget/nzbget-client';
+import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
 
 dayjs.extend(duration);
 

@@ -5,8 +5,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { UsenetQueueItem } from '../../../../widgets/useNet/types';
-import { NzbgetClient } from './nzbget/nzbget-client';
-import { NzbgetQueueItem, NzbgetStatus } from './nzbget/types';
+import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
+import { NzbgetQueueItem, NzbgetStatus } from '../../../../server/api/routers/usenet/nzbget/types';
 
 dayjs.extend(duration);
 
