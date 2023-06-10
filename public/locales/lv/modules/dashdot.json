@@ -49,7 +49,7 @@
           }
         },
         "cpu": {
-          "label": "",
+          "label": "CPU",
           "enabled": {
             "label": "Rādīt logrīkā"
           },
@@ -70,7 +70,7 @@
           }
         },
         "gpu": {
-          "label": "",
+          "label": "GPU",
           "enabled": {
             "label": "Rādīt logrīkā"
           },
@@ -98,20 +98,20 @@
       },
       "network": {
         "title": "Tīkls",
-        "label": "",
+        "label": "Tīkls:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Lejupielāde",
+          "upload": "Augšupielāde"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "ram": {
         "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
