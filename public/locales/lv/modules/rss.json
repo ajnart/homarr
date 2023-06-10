@@ -6,7 +6,7 @@
       "title": "RSS logrīka iestatījumi",
       "rssFeedUrl": {
         "label": "RSS avotu URL adreses",
-        "description": "RSS avotu URL adreses, kuras vēlaties parādīt."
+        "description": "RSS avotu URL adreses, kuras vēlaties rādīt."
       },
       "refreshInterval": {
         "label": "Atsvaidzināšanas intervāls (minūtēs)"
