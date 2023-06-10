@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "Statistika par jūsu mediju pieprasījumiem",
     "settings": {
       "title": ""
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Nepabeigtie apstiprinājumi",
+    "tvRequests": "TV pieprasījumi",
+    "movieRequests": "Filmu pieprasījumi"
   }
 }
