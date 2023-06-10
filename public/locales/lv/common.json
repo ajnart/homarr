@@ -1,7 +1,7 @@
 {
   "save": "Saglabāt",
   "about": "Par Programmu",
-  "cancel": "",
+  "cancel": "Atcelt",
   "close": "Aizvērt",
   "delete": "Dzēst",
   "ok": "OK",
@@ -12,7 +12,7 @@
   "disableAll": "Atspējot visu",
   "version": "Versija",
   "changePosition": "Mainīt pozīciju",
-  "remove": "",
+  "remove": "Noņemt",
   "removeConfirm": "Vai tiešām vēlaties noņemt {{item}}?",
   "createItem": "+ izveidot {{item}}",
   "sections": {
