@@ -1,4 +1,4 @@
-import { createStyles, Title, useMantineTheme, getStylesRef } from '@mantine/core';
+import { Title, createStyles, getStylesRef, useMantineTheme } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
