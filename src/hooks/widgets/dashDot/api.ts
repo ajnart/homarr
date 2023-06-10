@@ -2,7 +2,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Results } from 'sabnzbd-api';
 import { useConfigContext } from '~/config/provider';
-import { api } from '~/utils/api';
+import { RouterInputs, api } from '~/utils/api';
 import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
 import type { UsenetHistoryRequestParams } from '../../../pages/api/modules/usenet/history';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
@@ -63,49 +63,24 @@ export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) => {
   );
 };
 
-export const usePauseUsenetQueue = (params: UsenetPauseRequestParams) =>
-  useMutation(
-    ['usenetPause', ...Object.values(params)],
-    async () =>
-      (
-        await axios.post<Results>(
-          '/api/modules/usenet/pause',
-          {},
-          {
-            params,
-          }
-        )
-      ).data,
-    {
-      async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.appId]);
-        const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
-          'usenetInfo',
-          params.appId,
-        ]);
-
-        if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
-            ...previousInfo,
-            paused: true,
-          });
-        }
-
-        return { previousInfo };
+export const usePauseUsenetQueueMutation = (params: UsenetPauseRequestParams) => {
+  const { name: configName } = useConfigContext();
+  const { mutateAsync, mutate, ...mutation } = api.usenet.pause.useMutation();
+  const utils = api.useContext();
+  return async (variables: Omit<RouterInputs['usenet']['pause'], 'configName'>) => {
+    await mutateAsync(
+      {
+        configName: configName!,
+        ...variables,
       },
-      onError(err, _, context) {
-        if (context?.previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.appId],
-            context.previousInfo
-          );
-        }
-      },
-      onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.appId]);
-      },
-    }
-  );
+      {
+        onSettled() {
+          utils.usenet.info.invalidate({ appId: params.appId });
+        },
+      }
+    );
+  };
+};
 
 export const useResumeUsenetQueue = (params: UsenetResumeRequestParams) =>
   useMutation(

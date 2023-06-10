@@ -10,7 +10,7 @@ import { useConfigContext } from '../../config/provider';
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import {
   useGetUsenetInfo,
-  usePauseUsenetQueue,
+  usePauseUsenetQueueMutation,
   useResumeUsenetQueue,
 } from '../../hooks/widgets/dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
@@ -60,7 +60,7 @@ function UseNetTile({ widget }: UseNetTileProps) {
     }
   }, [downloadApps, selectedAppId]);
 
-  const { mutate: pause } = usePauseUsenetQueue({ appId: selectedAppId! });
+  const pauseAsync = usePauseUsenetQueueMutation({ appId: selectedAppId! });
   const { mutate: resume } = useResumeUsenetQueue({ appId: selectedAppId! });
 
   if (downloadApps.length === 0) {
@@ -111,7 +111,14 @@ function UseNetTile({ widget }: UseNetTileProps) {
             <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
           </Button>
         ) : (
-          <Button uppercase onClick={() => pause()} radius="xl" size="xs" fullWidth mt="sm">
+          <Button
+            uppercase
+            onClick={async () => pauseAsync({ appId: selectedAppId })}
+            radius="xl"
+            size="xs"
+            fullWidth
+            mt="sm"
+          >
             <IconPlayerPause size={12} style={{ marginRight: 5 }} />{' '}
             {dayjs.duration(data.eta, 's').format('HH:mm')}
           </Button>
