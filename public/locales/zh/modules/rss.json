@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "危险：允许清除物品内容"
       },
-      "settings.textLinesClamp": {
-        "label": "文字线条"
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {

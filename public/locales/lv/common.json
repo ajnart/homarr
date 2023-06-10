@@ -1,39 +1,39 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Saglabāt",
+  "about": "Par Programmu",
   "cancel": "",
-  "close": "",
-  "delete": "",
-  "ok": "",
-  "edit": "",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
-  "version": "",
-  "changePosition": "",
+  "close": "Aizvērt",
+  "delete": "Dzēst",
+  "ok": "OK",
+  "edit": "Rediģēt",
+  "enabled": "Iespējots",
+  "disabled": "Atspējots",
+  "enableAll": "Iespējot visu",
+  "disableAll": "Atspējot visu",
+  "version": "Versija",
+  "changePosition": "Mainīt pozīciju",
   "remove": "",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "Vai tiešām vēlaties noņemt {{item}}?",
+  "createItem": "+ izveidot {{item}}",
   "sections": {
-    "settings": "",
-    "dangerZone": ""
+    "settings": "Iestatījumi",
+    "dangerZone": "Bīstamā zona"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
-    "password": ""
+    "apiKey": "API atslēga",
+    "username": "Lietotājvārds",
+    "password": "Parole"
   },
-  "tip": "",
+  "tip": "Padoms: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "sekundes",
+    "minutes": "minūtes",
+    "hours": "stundas"
   },
-  "loading": "",
+  "loading": "Notiek ielāde...",
   "breakPoints": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "mazs",
+    "medium": "vidējs",
+    "large": "liels"
   }
 }

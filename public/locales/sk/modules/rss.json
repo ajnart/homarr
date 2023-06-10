@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "Nebezpečné: Povoľte sanitizovaný obsah položky"
       },
-      "settings.textLinesClamp": {
-        "label": "Svorka textových riadkov"
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {

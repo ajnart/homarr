@@ -86,7 +86,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/dockerode": "^3.3.9",
-    "@types/node": "18.16.16",
+    "@types/node": "18.16.17",
     "@types/prismjs": "^1.26.0",
     "@types/react": "17.0.60",
     "@types/uuid": "^9.0.0",

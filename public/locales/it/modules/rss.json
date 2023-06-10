@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "Pericolo: Consente il contenuto di oggetti sanificati"
       },
-      "settings.textLinesClamp": {
-        "label": "Blocco righe di testo"
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {
