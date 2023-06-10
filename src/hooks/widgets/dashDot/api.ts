@@ -1,9 +1,8 @@
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { Results } from 'sabnzbd-api';
 import { useConfigContext } from '~/config/provider';
 import { RouterInputs, api } from '~/utils/api';
-import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
+import { UsenetInfoRequestParams } from '../../../pages/api/modules/usenet';
 import type { UsenetHistoryRequestParams } from '../../../pages/api/modules/usenet/history';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
 import type {
@@ -11,7 +10,6 @@ import type {
   UsenetQueueResponse,
 } from '../../../pages/api/modules/usenet/queue';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
-import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 
 const POLLING_INTERVAL = 2000;
 
@@ -65,7 +63,7 @@ export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) => {
 
 export const usePauseUsenetQueueMutation = (params: UsenetPauseRequestParams) => {
   const { name: configName } = useConfigContext();
-  const { mutateAsync, mutate, ...mutation } = api.usenet.pause.useMutation();
+  const { mutateAsync } = api.usenet.pause.useMutation();
   const utils = api.useContext();
   return async (variables: Omit<RouterInputs['usenet']['pause'], 'configName'>) => {
     await mutateAsync(
@@ -82,46 +80,21 @@ export const usePauseUsenetQueueMutation = (params: UsenetPauseRequestParams) =>
   };
 };
 
-export const useResumeUsenetQueue = (params: UsenetResumeRequestParams) =>
-  useMutation(
-    ['usenetResume', ...Object.values(params)],
-    async () =>
-      (
-        await axios.post<Results>(
-          '/api/modules/usenet/resume',
-          {},
-          {
-            params,
-          }
-        )
-      ).data,
-    {
-      async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.appId]);
-        const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
-          'usenetInfo',
-          params.appId,
-        ]);
-
-        if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
-            ...previousInfo,
-            paused: false,
-          });
-        }
-
-        return { previousInfo };
+export const useResumeUsenetQueueMutation = (params: UsenetResumeRequestParams) => {
+  const { name: configName } = useConfigContext();
+  const { mutateAsync } = api.usenet.resume.useMutation();
+  const utils = api.useContext();
+  return async (variables: Omit<RouterInputs['usenet']['resume'], 'configName'>) => {
+    await mutateAsync(
+      {
+        configName: configName!,
+        ...variables,
       },
-      onError(err, _, context) {
-        if (context?.previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.appId],
-            context.previousInfo
-          );
-        }
-      },
-      onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.appId]);
-      },
-    }
-  );
+      {
+        onSettled() {
+          utils.usenet.info.invalidate({ appId: params.appId });
+        },
+      }
+    );
+  };
+};

@@ -216,6 +216,53 @@ export const usenetRouter = createTRPCRouter({
 
       return new Client(origin, apiKey).queuePause();
     }),
+  resume: publicProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+        appId: z.string(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const config = getConfig(input.configName);
+
+      const app = config.apps.find((x) => x.id === input.appId);
+
+      if (!app || (app.integration?.type !== 'nzbGet' && app.integration?.type !== 'sabnzbd')) {
+        throw new Error(`App with ID "${input.appId}" could not be found.`);
+      }
+
+      if (app.integration.type === 'nzbGet') {
+        const url = new URL(app.url);
+        const options = {
+          host: url.hostname,
+          port: url.port || (url.protocol === 'https:' ? '443' : '80'),
+          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+        };
+
+        const nzbGet = NzbgetClient(options);
+
+        return new Promise((resolve, reject) => {
+          nzbGet.resumeDownload(false, (err: any, result: any) => {
+            if (!err) {
+              resolve(result);
+            } else {
+              reject(err);
+            }
+          });
+        });
+      }
+
+      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+      if (!apiKey) {
+        throw new Error(`API Key for app "${app.name}" is missing`);
+      }
+
+      const { origin } = new URL(app.url);
+
+      return new Client(origin, apiKey).queueResume();
+    }),
 });
 
 export interface UsenetInfoResponse {

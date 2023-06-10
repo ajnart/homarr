@@ -11,7 +11,7 @@ import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import {
   useGetUsenetInfo,
   usePauseUsenetQueueMutation,
-  useResumeUsenetQueue,
+  useResumeUsenetQueueMutation,
 } from '../../hooks/widgets/dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { AppIntegrationType } from '../../types/app';
@@ -61,7 +61,7 @@ function UseNetTile({ widget }: UseNetTileProps) {
   }, [downloadApps, selectedAppId]);
 
   const pauseAsync = usePauseUsenetQueueMutation({ appId: selectedAppId! });
-  const { mutate: resume } = useResumeUsenetQueue({ appId: selectedAppId! });
+  const resumeAsync = useResumeUsenetQueueMutation({ appId: selectedAppId! });
 
   if (downloadApps.length === 0) {
     return (
@@ -107,7 +107,14 @@ function UseNetTile({ widget }: UseNetTileProps) {
       <Tabs.Panel value="queue">
         <UsenetQueueList appId={selectedAppId} />
         {!data ? null : data.paused ? (
-          <Button uppercase onClick={() => resume()} radius="xl" size="xs" fullWidth mt="sm">
+          <Button
+            uppercase
+            onClick={async () => resumeAsync({ appId: selectedAppId })}
+            radius="xl"
+            size="xs"
+            fullWidth
+            mt="sm"
+          >
             <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
           </Button>
         ) : (
