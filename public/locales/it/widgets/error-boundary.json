@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "Si è verificato un errore imprevisto. Controlla la configurazione. Si prega di segnalare questo problema, se si ritiene che questo sia un bug.",
+    "text": "",
     "label": "Il tuo errore",
     "reportButton": "Segnala questo errore"
   }
