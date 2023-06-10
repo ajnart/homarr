@@ -12,7 +12,7 @@
         "label": "刷新间隔(以分钟计)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "危险：允许清除物品内容"
+        "label": ""
       },
       "textLinesClamp": {
         "label": ""
