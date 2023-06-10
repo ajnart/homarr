@@ -40,17 +40,17 @@
         "text": ""
       },
       "body": {
-        "nothingFound": "",
+        "nothingFound": "Netika atrasti torrenti",
         "filterHidingItems": ""
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Pašreizējais lejupielādes ātrums",
+      "download": "Lejupielāde: {{download}}",
+      "upload": "Augšupielāde: {{upload}}",
+      "timeSpan": "pirms {{seconds}} sekundēm",
+      "totalDownload": "Lejupielāde: {{download}}/s",
+      "totalUpload": "Augšupielāde: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
@@ -63,7 +63,7 @@
       }
     },
     "loading": {
-      "title": ""
+      "title": "Notiek ielāde..."
     },
     "popover": {
       "introductionPrefix": "",
