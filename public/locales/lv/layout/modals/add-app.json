@@ -9,7 +9,7 @@
 	"general": {
 		"appname": {
 			"label": "Lietotnes nosaukums",
-			"description": "Izmanto, lai parādītu lietotni uz vadības paneļa."
+			"description": "Izmanto, lai parādītu lietotni uz informācijas paneļa."
 		},
 		"internalAddress": {
 			"label": "Iekšējā adrese",
@@ -45,7 +45,7 @@
 				"text": "Mēģiniet izmantot konkrētāku meklēšanas terminu. Ja nevarat atrast vēlamo ikonu, ielīmējiet iepriekš norādīto attēla URL, lai iegūtu pielāgotu ikonu"
 			},
 			"noItems": {
-				"title": "",
+				"title": "Notiek ārējo ikonu ielādēšana",
 				"text": "Tas var aizņemt dažas sekundes"
 			}
 		}
@@ -53,18 +53,18 @@
 	"integration": {
 		"type": {
 			"label": "Integrācijas konfigurācija",
-			"description": "",
+			"description": "Integrācijas konfigurācija, kura tiks izmantota, lai izveidotu savienojumu ar jūsu lietotni.",
 			"placeholder": "Izvēlieties integrāciju",
-			"defined": "",
-			"undefined": "",
+			"defined": "Definēts",
+			"undefined": "Nav definēts",
 			"public": "Publisks",
 			"private": "Privāts",
 			"explanationPrivate": "Privātais noslēpums uz serveri tiks nosūtīts tikai vienu reizi. Pēc tam, kad pārlūkprogramma būs atsvaidzinājusi lapu, tas nekad netiks nosūtīts vēlreiz.",
-			"explanationPublic": ""
+			"explanationPublic": "Publiskais noslēpums vienmēr tiek nosūtīts klientam un ir pieejams, izmantojot API. Tas nedrīkst saturēt nekādas konfidenciālas vērtības, piemēram, lietotājvārdus, paroles, žetonus, sertifikātus un tamlīdzīgi!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
+			"description": "Lai atjauninātu noslēpumu, ievadiet vērtību un noklikšķiniet uz pogas Saglabāt. Lai dzēstu noslēpumu, noklikšķiniet uz pogas dzēst.",
+			"warning": "Jūsu akreditācijas dati kalpo kā piekļuve jūsu integrācijām, un tos nekad <strong>nevajadzētu</strong> kopīgot ar citiem. Homarr komanda nekad nepieprasīs akreditācijas datus. Pārliecinieties, ka <strong>droši glabājat un pārvaldāt savus noslēpumus</strong>.",
 			"clear": "Notīrīt noslēpumu",
 			"save": "Saglabāt noslēpumu",
 			"update": "Atjaunināt noslēpumu"
