@@ -40,7 +40,8 @@ export type IWidgetOptionValue =
   | INumberInputOptionValue
   | IDraggableListInputValue
   | IDraggableEditableListInputValue<any>
-  | IMultipleTextInputOptionValue;
+  | IMultipleTextInputOptionValue
+  | ILocationOptionValue;
 
 // Interface for data type
 interface DataType {
@@ -93,6 +94,11 @@ export type ISliderInputOptionValue = {
   max: number;
   step: number;
   inputProps?: Partial<SliderProps>;
+};
+
+type ILocationOptionValue = {
+  type: 'location';
+  defaultValue: { latitude: number; longitude: number };
 };
 
 // will show a sortable list that can have sub settings
