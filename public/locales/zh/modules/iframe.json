@@ -9,6 +9,27 @@
       },
       "allowFullScreen": {
         "label": "允许全屏"
+      },
+      "allowTransparency": {
+        "label": ""
+      },
+      "allowScrolling": {
+        "label": ""
+      },
+      "allowPayment": {
+        "label": ""
+      },
+      "allowAutoPlay": {
+        "label": ""
+      },
+      "allowMicrophone": {
+        "label": ""
+      },
+      "allowCamera": {
+        "label": ""
+      },
+      "allowGeolocation": {
+        "label": ""
       }
     }
   },
