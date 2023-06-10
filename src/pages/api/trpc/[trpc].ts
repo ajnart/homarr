@@ -1,11 +1,11 @@
 import { createNextApiHandler } from '@trpc/server/adapters/next';
 import Consola from 'consola';
 import { createTRPCContext } from '~/server/api/trpc';
-import { appRouter } from '~/server/api/root';
+import { rootRouter } from '~/server/api/root';
 
 // export API handler
 export default createNextApiHandler({
-  router: appRouter,
+  router: rootRouter,
   createContext: createTRPCContext,
   onError:
     process.env.NODE_ENV === 'development'
