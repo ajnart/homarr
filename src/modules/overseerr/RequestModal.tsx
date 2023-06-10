@@ -10,6 +10,8 @@ import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
 import { MediaType, Result } from './SearchResult.d';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';
+import { api } from '~/utils/api';
+import { useConfigContext } from '~/config/provider';
 
 interface RequestModalProps {
   base: Result;
@@ -27,20 +29,22 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function RequestModal({ base, opened, setOpened }: RequestModalProps) {
-  const [result, setResult] = useState<MovieResult | TvShowResult>();
-  const { secondaryColor } = useColorTheme();
+  const { name: configName } = useConfigContext();
+  const { data: result } = api.overseerr.byId.useQuery(
+    {
+      id: base.id,
+      type: base.mediaType,
+      configName: configName!,
+    },
+    {
+      enabled: opened,
+    }
+  );
 
-  function getResults(base: Result) {
-    axios.get(`/api/modules/overseerr/${base.id}?type=${base.mediaType}`).then((res) => {
-      setResult(res.data);
-    });
-  }
-  if (opened && !result) {
-    getResults(base);
-  }
   if (!result || !opened) {
     return null;
   }
+
   return base.mediaType === 'movie' ? (
     <MovieRequestModal result={result as MovieResult} opened={opened} setOpened={setOpened} />
   ) : (
@@ -93,7 +97,7 @@ export function MovieRequestModal({
           <Button
             variant="outline"
             onClick={() => {
-              askForMedia(MediaType.Movie, result.id, result.title, []);
+              askForMedia('movie', result.id, result.title, []);
             }}
           >
             {t('popup.item.buttons.request')}
@@ -197,7 +201,7 @@ export function TvRequestModal({
             disabled={selection.length === 0}
             onClick={() => {
               askForMedia(
-                MediaType.Tv,
+                'tv',
                 result.id,
                 result.name,
                 selection.map((s) => s.seasonNumber)
