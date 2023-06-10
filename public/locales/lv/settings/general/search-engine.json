@@ -1,19 +1,19 @@
 {
-  "title": "",
-  "configurationName": "",
+  "title": "Meklētājdzinējs",
+  "configurationName": "Meklētājdzinēja konfigurācija",
   "tips": {
-    "generalTip": "",
-    "placeholderTip": ""
+    "generalTip": "Varat izmantot vairākus priedēkļus! Tos pievienojot pirms vaicājuma, rezultāti tiks filtrēti. !s (Tīmeklis), !t (Torrents), !y (YouTube) un !m (Multivide).",
+    "placeholderTip": "%s var izmantot kā vietturi vaicājumā."
   },
   "customEngine": {
-    "title": "",
-    "label": "",
-    "placeholder": ""
+    "title": "Pielāgots meklētājdzinis",
+    "label": "Pieprasījuma URL",
+    "placeholder": "Pielāgotais vaicājuma URL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Atvērt meklēšanas rezultātus jaunā cilnē"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Meklēšana ir iespējota"
   }
 }
