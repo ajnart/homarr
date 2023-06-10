@@ -11,32 +11,32 @@
         "label": "Permitir pantalla completa"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Permitir transparencia"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Permitir desplazamiento"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Permitir pago"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Permitir reproducción automática"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Permitir micrófono"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Permitir cámara"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Permitir geolocalización"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "URL invalida",
         "text": "Asegúrate de que has introducido una dirección válida en la configuración del widget"
       }
     }
