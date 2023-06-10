@@ -4,6 +4,7 @@ import { getConfig } from '~/tools/config/getConfig';
 import { MediaRequest } from '~/widgets/media-requests/media-request-types';
 import { createTRPCRouter, publicProcedure } from '../trpc';
 import { MediaRequestListWidget } from '~/widgets/media-requests/MediaRequestListTile';
+import { checkIntegrationsType } from '~/tools/client/app-properties';
 
 export const mediaRequestsRouter = createTRPCRouter({
   all: publicProcedure
@@ -16,7 +17,7 @@ export const mediaRequestsRouter = createTRPCRouter({
       const config = getConfig(input.configName);
 
       const apps = config.apps.filter((app) =>
-        ['overseerr', 'jellyseerr'].includes(app.integration?.type ?? '')
+        checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
 
       Consola.log(`Retrieving media requests from ${apps.length} apps`);

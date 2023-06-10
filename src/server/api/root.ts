@@ -10,7 +10,7 @@ import { downloadRouter } from './routers/download';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
 import { overseerrRouter } from './routers/overseerr';
-import { usenetRouter } from './routers/usenet/route';
+import { usenetRouter } from './routers/usenet/router';
 import { calendarRouter } from './routers/calendar';
 
 /**

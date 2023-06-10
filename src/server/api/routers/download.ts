@@ -16,6 +16,7 @@ import {
 import { ConfigAppType, IntegrationField } from '~/types/app';
 import { UsenetQueueItem } from '~/widgets/useNet/types';
 import { createTRPCRouter, publicProcedure } from '../trpc';
+import { findAppProperty } from '~/tools/client/app-properties';
 
 export const downloadRouter = createTRPCRouter({
   get: publicProcedure
@@ -155,8 +156,8 @@ const GetDataFromClient = async (
       const options = {
         host: url.hostname,
         port: url.port,
-        login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-        hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+        login: findAppProperty(app, 'username'),
+        hash: findAppProperty(app, 'password'),
       };
 
       const nzbGet = NzbgetClient(options);

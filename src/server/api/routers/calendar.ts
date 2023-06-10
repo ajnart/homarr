@@ -2,8 +2,9 @@ import axios from 'axios';
 import Consola from 'consola';
 import { z } from 'zod';
 import { getConfig } from '~/tools/config/getConfig';
-import { AppIntegrationType } from '~/types/app';
+import { AppIntegrationType, IntegrationType } from '~/types/app';
 import { createTRPCRouter, publicProcedure } from '../trpc';
+import { checkIntegrationsType } from '~/tools/client/app-properties';
 
 export const calendarRouter = createTRPCRouter({
   medias: publicProcedure
@@ -21,14 +22,14 @@ export const calendarRouter = createTRPCRouter({
       const { configName, month, year, options } = input;
       const config = getConfig(configName);
 
-      const mediaAppIntegrationTypes: AppIntegrationType['type'][] = [
+      const mediaAppIntegrationTypes = [
         'sonarr',
         'radarr',
         'readarr',
         'lidarr',
-      ];
-      const mediaApps = config.apps.filter(
-        (app) => app.integration && mediaAppIntegrationTypes.includes(app.integration.type)
+      ] as const satisfies readonly IntegrationType[];
+      const mediaApps = config.apps.filter((app) =>
+        checkIntegrationsType(app.integration, mediaAppIntegrationTypes)
       );
 
       const integrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([

@@ -11,6 +11,7 @@ import { getConfig } from '~/tools/config/getConfig';
 import { UsenetHistoryItem, UsenetQueueItem } from '~/widgets/useNet/types';
 import { createTRPCRouter, publicProcedure } from '../../trpc';
 import { NzbgetClient } from './nzbget/nzbget-client';
+import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 
 export const usenetRouter = createTRPCRouter({
   info: publicProcedure
@@ -25,20 +26,20 @@ export const usenetRouter = createTRPCRouter({
 
       const app = config.apps.find((x) => x.id === input.appId);
 
-      if (!app || (app.integration?.type !== 'nzbGet' && app.integration?.type !== 'sabnzbd')) {
+      if (!app || !checkIntegrationsType(app.integration, ['nzbGet', 'sabnzbd'])) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
           message: `App with ID "${input.appId}" could not be found.`,
         });
       }
 
-      if (app.integration?.type === 'nzbGet') {
+      if (app.integration.type === 'nzbGet') {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,
           port: url.port || (url.protocol === 'https:' ? '443' : '80'),
-          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: findAppProperty(app, 'username'),
+          hash: findAppProperty(app, 'password'),
         };
 
         const nzbGet = NzbgetClient(options);
@@ -70,7 +71,7 @@ export const usenetRouter = createTRPCRouter({
         };
       }
 
-      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+      const apiKey = findAppProperty(app, 'apiKey');
       if (!apiKey) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
@@ -110,17 +111,17 @@ export const usenetRouter = createTRPCRouter({
 
       const app = config.apps.find((x) => x.id === input.appId);
 
-      if (!app || (app.integration?.type !== 'nzbGet' && app.integration?.type !== 'sabnzbd')) {
+      if (!app || !checkIntegrationsType(app.integration, ['nzbGet', 'sabnzbd'])) {
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
-      if (app.integration?.type === 'nzbGet') {
+      if (app.integration.type === 'nzbGet') {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,
           port: url.port || (url.protocol === 'https:' ? '443' : '80'),
-          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: findAppProperty(app, 'username'),
+          hash: findAppProperty(app, 'password'),
         };
 
         const nzbGet = NzbgetClient(options);
@@ -155,7 +156,7 @@ export const usenetRouter = createTRPCRouter({
 
       const { origin } = new URL(app.url);
 
-      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+      const apiKey = findAppProperty(app, 'apiKey');
       if (!apiKey) {
         throw new Error(`API Key for app "${app.name}" is missing`);
       }
@@ -185,7 +186,7 @@ export const usenetRouter = createTRPCRouter({
       const config = getConfig(input.configName);
       const app = config.apps.find((x) => x.id === input.appId);
 
-      if (!app || (app.integration?.type !== 'nzbGet' && app.integration?.type !== 'sabnzbd')) {
+      if (!app || !checkIntegrationsType(app.integration, ['nzbGet', 'sabnzbd'])) {
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
@@ -194,8 +195,8 @@ export const usenetRouter = createTRPCRouter({
         const options = {
           host: url.hostname,
           port: url.port || (url.protocol === 'https:' ? '443' : '80'),
-          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: findAppProperty(app, 'username'),
+          hash: findAppProperty(app, 'password'),
         };
 
         const nzbGet = NzbgetClient(options);
@@ -211,7 +212,7 @@ export const usenetRouter = createTRPCRouter({
         });
       }
 
-      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+      const apiKey = findAppProperty(app, 'apiKey');
       if (!apiKey) {
         throw new Error(`API Key for app "${app.name}" is missing`);
       }
@@ -232,7 +233,7 @@ export const usenetRouter = createTRPCRouter({
 
       const app = config.apps.find((x) => x.id === input.appId);
 
-      if (!app || (app.integration?.type !== 'nzbGet' && app.integration?.type !== 'sabnzbd')) {
+      if (!app || !checkIntegrationsType(app.integration, ['nzbGet', 'sabnzbd'])) {
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
@@ -241,8 +242,8 @@ export const usenetRouter = createTRPCRouter({
         const options = {
           host: url.hostname,
           port: url.port || (url.protocol === 'https:' ? '443' : '80'),
-          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: findAppProperty(app, 'username'),
+          hash: findAppProperty(app, 'password'),
         };
 
         const nzbGet = NzbgetClient(options);
@@ -258,7 +259,7 @@ export const usenetRouter = createTRPCRouter({
         });
       }
 
-      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+      const apiKey = findAppProperty(app, 'apiKey');
       if (!apiKey) {
         throw new Error(`API Key for app "${app.name}" is missing`);
       }
@@ -281,7 +282,7 @@ export const usenetRouter = createTRPCRouter({
 
       const app = config.apps.find((x) => x.id === input.appId);
 
-      if (!app || (app.integration?.type !== 'nzbGet' && app.integration?.type !== 'sabnzbd')) {
+      if (!app || !checkIntegrationsType(app.integration, ['nzbGet', 'sabnzbd'])) {
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
@@ -290,8 +291,8 @@ export const usenetRouter = createTRPCRouter({
         const options = {
           host: url.hostname,
           port: url.port || (url.protocol === 'https:' ? '443' : '80'),
-          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: findAppProperty(app, 'username'),
+          hash: findAppProperty(app, 'password'),
         };
 
         const nzbGet = NzbgetClient(options);
@@ -340,7 +341,7 @@ export const usenetRouter = createTRPCRouter({
         };
       }
 
-      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+      const apiKey = findAppProperty(app, 'apiKey');
       if (!apiKey) {
         throw new Error(`API Key for app "${app.name}" is missing`);
       }

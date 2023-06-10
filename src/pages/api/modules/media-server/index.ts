@@ -18,6 +18,7 @@ import {
   GenericSessionInfo,
 } from '../../../../types/api/media-server/session-info';
 import { PlexClient } from '../../../../tools/server/sdk/plex/plexClient';
+import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 
 const jellyfin = new Jellyfin({
   clientInfo: {
@@ -35,7 +36,7 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const config = getConfig(configName?.toString() ?? 'default');
 
   const apps = config.apps.filter((app) =>
-    ['jellyfin', 'plex'].includes(app.integration?.type ?? '')
+    checkIntegrationsType(app.integration, ['jellyfin', 'plex'])
   );
 
   const servers = await Promise.all(
@@ -66,9 +67,9 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
 const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | undefined> => {
   switch (app.integration?.type) {
     case 'jellyfin': {
-      const username = app.integration.properties.find((x) => x.field === 'username');
+      const username = findAppProperty(app, 'username');
 
-      if (!username || !username.value) {
+      if (!username) {
         return {
           appId: app.id,
           serverAddress: app.url,
@@ -79,9 +80,9 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
         };
       }
 
-      const password = app.integration.properties.find((x) => x.field === 'password');
+      const password = findAppProperty(app, 'password');
 
-      if (!password || !password.value) {
+      if (!password) {
         return {
           appId: app.id,
           serverAddress: app.url,
@@ -94,7 +95,7 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
 
       const api = jellyfin.createApi(app.url);
       const infoApi = await getSystemApi(api).getPublicSystemInfo();
-      await api.authenticateUserByName(username.value, password.value);
+      await api.authenticateUserByName(username, password);
       const sessionApi = await getSessionApi(api);
       const sessions = await sessionApi.getSessions();
       return {
@@ -166,9 +167,9 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       };
     }
     case 'plex': {
-      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey');
+      const apiKey = findAppProperty(app, 'apiKey');
 
-      if (!apiKey || !apiKey.value) {
+      if (!apiKey) {
         return {
           serverAddress: app.url,
           sessions: [],
@@ -179,7 +180,7 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
         };
       }
 
-      const plexClient = new PlexClient(app.url, apiKey.value);
+      const plexClient = new PlexClient(app.url, apiKey);
       const sessions = await plexClient.getSessions();
       return {
         serverAddress: app.url,
