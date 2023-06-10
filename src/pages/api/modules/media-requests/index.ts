@@ -5,13 +5,14 @@ import { getConfig } from '../../../../tools/config/getConfig';
 
 import { MediaRequest } from '../../../../widgets/media-requests/media-request-types';
 import { MediaRequestListWidget } from '../../../../widgets/media-requests/MediaRequestListTile';
+import { checkIntegrationsType } from '~/tools/client/app-properties';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
 
   const apps = config.apps.filter((app) =>
-    ['overseerr', 'jellyseerr'].includes(app.integration?.type ?? '')
+    checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
   );
 
   Consola.log(`Retrieving media requests from ${apps.length} apps`);
@@ -24,11 +25,12 @@ const Get = async (request: NextApiRequest, response: NextApiResponse) => {
     })
       .then(async (response) => {
         const body = (await response.json()) as OverseerrResponse;
-        const mediaWidget = config.widgets.find(
-            (x) => x.type === 'media-requests-list') as MediaRequestListWidget | undefined;
+        const mediaWidget = config.widgets.find((x) => x.type === 'media-requests-list') as
+          | MediaRequestListWidget
+          | undefined;
         if (!mediaWidget) {
-            Consola.log('No media-requests-list found');
-            return Promise.resolve([]);
+          Consola.log('No media-requests-list found');
+          return Promise.resolve([]);
         }
         const appUrl = mediaWidget.properties.replaceLinksWithExternalHost
           ? app.behaviour.externalUrl

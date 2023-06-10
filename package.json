@@ -48,6 +48,10 @@
     "@tanstack/react-query": "^4.2.1",
     "@tanstack/react-query-devtools": "^4.24.4",
     "@tanstack/react-query-persist-client": "^4.28.0",
+    "@trpc/client": "^10.29.1",
+    "@trpc/next": "^10.29.1",
+    "@trpc/react-query": "^10.29.1",
+    "@trpc/server": "^10.29.1",
     "@vitejs/plugin-react": "^4.0.0",
     "axios": "^1.0.0",
     "consola": "^3.0.0",
@@ -111,6 +115,7 @@
     "turbo": "latest",
     "typescript": "^5.0.4",
     "video.js": "^8.0.3",
+    "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.32.0",
     "vitest-fetch-mock": "^0.2.2"
   },

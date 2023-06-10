@@ -2011,6 +2011,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@trpc/client@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/client@npm:10.29.1"
+  peerDependencies:
+    "@trpc/server": 10.29.1
+  checksum: b617edb56e9ec7fa0665703761c666244e58b8a9da5a2fffcdef880cdde7ec8c92c20d1362ac1c836904518d94db247ec286cc17e01fc4eea41b7cafbf3479fe
+  languageName: node
+  linkType: hard
+
+"@trpc/next@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/next@npm:10.29.1"
+  dependencies:
+    react-ssr-prepass: ^1.5.0
+  peerDependencies:
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.29.1
+    "@trpc/react-query": 10.29.1
+    "@trpc/server": 10.29.1
+    next: "*"
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 6afd6d7b1702eda5a26e7e8d2d381729fceb180952a2382314f08dd945b6e3204716c532b0ac6ddef10135816879c61dbe4b27aa88bcd98100890ede8d42fb25
+  languageName: node
+  linkType: hard
+
+"@trpc/react-query@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/react-query@npm:10.29.1"
+  peerDependencies:
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.29.1
+    "@trpc/server": 10.29.1
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 3e52195eb894c0110b7fd99b0ab4fde38ade0b28d76c788d602c97789b76c66c91f678460fd68f3dc67c9b454340c7fe08363dfec69d4127982f9329bb42f503
+  languageName: node
+  linkType: hard
+
+"@trpc/server@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/server@npm:10.29.1"
+  checksum: d31ac9921764aea774ef14ae3d9d4c7cb245582dde7f75facd355732043eb9d697a8584c19377dce9acdf9b21f473917f77842fda29eb77fd604484e23b42ded
+  languageName: node
+  linkType: hard
+
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.9
   resolution: "@tsconfig/node10@npm:1.0.9"
@@ -5617,6 +5663,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globrex@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "globrex@npm:0.1.2"
+  checksum: adca162494a176ce9ecf4dd232f7b802956bb1966b37f60c15e49d2e7d961b66c60826366dc2649093cad5a0d69970cfa8875bd1695b5a1a2f33dcd2aa88da3c
+  languageName: node
+  linkType: hard
+
 "gopd@npm:^1.0.1":
   version: 1.0.1
   resolution: "gopd@npm:1.0.1"
@@ -5828,6 +5881,10 @@ __metadata:
     "@tanstack/react-query-persist-client": ^4.28.0
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
+    "@trpc/client": ^10.29.1
+    "@trpc/next": ^10.29.1
+    "@trpc/react-query": ^10.29.1
+    "@trpc/server": ^10.29.1
     "@types/dockerode": ^3.3.9
     "@types/node": 18.16.17
     "@types/prismjs": ^1.26.0
@@ -5880,6 +5937,7 @@ __metadata:
     typescript: ^5.0.4
     uuid: ^9.0.0
     video.js: ^8.0.3
+    vite-tsconfig-paths: ^4.2.0
     vitest: ^0.32.0
     vitest-fetch-mock: ^0.2.2
     xml-js: ^1.6.11
@@ -8414,6 +8472,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-ssr-prepass@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "react-ssr-prepass@npm:1.5.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: efe89b9f8b2053474613f56dfdbeb41d8ee2e572bf819a39377d95d3e4a9acf8a4a16e28d8d8034cb9ac2b316d11dc9e62217743e4322046d08175eb3b4fed3e
+  languageName: node
+  linkType: hard
+
 "react-style-singleton@npm:^2.2.1":
   version: 2.2.1
   resolution: "react-style-singleton@npm:2.2.1"
@@ -9507,6 +9574,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tsconfck@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "tsconfck@npm:2.1.1"
+  peerDependencies:
+    typescript: ^4.3.5 || ^5.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  bin:
+    tsconfck: bin/tsconfck.js
+  checksum: c531525f39763cbbd7e6dbf5e29f12a7ae67eb8712816c14d06a9db6cbdc9dda9ac3cd6db07ef645f8a4cdea906447ab44e2c8679e320871cf9dd598756e8c83
+  languageName: node
+  linkType: hard
+
 "tsconfig-paths@npm:^3.14.1":
   version: 3.14.2
   resolution: "tsconfig-paths@npm:3.14.2"
@@ -9978,6 +10059,22 @@ __metadata:
   bin:
     vite-node: vite-node.mjs
   checksum: ce1c45e7d903afc001a08b3bc3159d268e8422e28ec7ffa8e4a4f99d18c9f4e447db989a6e0a8e168d3a4f4e6eb0b954f2b51ef1a85f29cc3f7f561045ff0bbe
+  languageName: node
+  linkType: hard
+
+"vite-tsconfig-paths@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "vite-tsconfig-paths@npm:4.2.0"
+  dependencies:
+    debug: ^4.1.1
+    globrex: ^0.1.2
+    tsconfck: ^2.1.0
+  peerDependencies:
+    vite: "*"
+  peerDependenciesMeta:
+    vite:
+      optional: true
+  checksum: 73a8467de72d7ac502328454fd00c19571cd4bad2dd5982643b24718bb95e449a3f4153cfc2d58a358bfc8f37e592fb442fc10884b59ae82138c1329160cd952
   languageName: node
   linkType: hard
 

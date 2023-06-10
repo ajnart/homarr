@@ -5,9 +5,10 @@ import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
-import { useDnsHoleControlMutation, useDnsHoleSummeryQuery } from './query';
 import { PiholeApiSummaryType } from './type';
 import { queryClient } from '../../tools/server/configurations/tanstack/queryClient.tool';
+import { api } from '~/utils/api';
+import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
 
 const definition = defineWidget({
   id: 'dns-hole-controls',
@@ -29,13 +30,13 @@ interface DnsHoleControlsWidgetProps {
 }
 
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
-  const { isInitialLoading, data, refetch } = useDnsHoleSummeryQuery();
+  const { isInitialLoading, data } = useDnsHoleSummeryQuery();
   const { mutateAsync } = useDnsHoleControlMutation();
   const { t } = useTranslation('common');
 
-  const { config } = useConfigContext();
+  const { name: configName, config } = useConfigContext();
 
-  if (isInitialLoading || !data) {
+  if (isInitialLoading || !data || !configName) {
     return <WidgetLoading />;
   }
 
@@ -44,7 +45,10 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
       <Group grow>
         <Button
           onClick={async () => {
-            await mutateAsync('enabled');
+            await mutateAsync({
+              status: 'enabled',
+              configName,
+            });
             await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
           }}
           leftIcon={<IconPlayerPlay size={20} />}
@@ -55,7 +59,10 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         </Button>
         <Button
           onClick={async () => {
-            await mutateAsync('disabled');
+            await mutateAsync({
+              status: 'disabled',
+              configName,
+            });
             await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
           }}
           leftIcon={<IconPlayerStop size={20} />}
@@ -116,5 +123,7 @@ const StatusBadge = ({ status }: { status: PiholeApiSummaryType['status'] }) => 
     </Badge>
   );
 };
+
+const useDnsHoleControlMutation = () => api.dnsHole.control.useMutation();
 
 export default definition;
