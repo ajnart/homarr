@@ -1,20 +1,17 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Results } from 'sabnzbd-api';
+import { useConfigContext } from '~/config/provider';
+import { api } from '~/utils/api';
+import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
+import type { UsenetHistoryRequestParams } from '../../../pages/api/modules/usenet/history';
+import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
 import type {
   UsenetQueueRequestParams,
   UsenetQueueResponse,
 } from '../../../pages/api/modules/usenet/queue';
-import type {
-  UsenetHistoryRequestParams,
-  UsenetHistoryResponse,
-} from '../../../pages/api/modules/usenet/history';
-import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
-import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
-import { api } from '~/utils/api';
-import { useConfigContext } from '~/config/provider';
+import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 
 const POLLING_INTERVAL = 2000;
 
@@ -51,21 +48,20 @@ export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
     }
   );
 
-export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) =>
-  useQuery(
-    ['usenetHistory', ...Object.values(params)],
-    async () =>
-      (
-        await axios.get<UsenetHistoryResponse>('/api/modules/usenet/history', {
-          params,
-        })
-      ).data,
+export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) => {
+  const { name: configName } = useConfigContext();
+  return api.usenet.history.useQuery(
+    {
+      configName: configName!,
+      ...params,
+    },
     {
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
     }
   );
+};
 
 export const usePauseUsenetQueue = (params: UsenetPauseRequestParams) =>
   useMutation(
