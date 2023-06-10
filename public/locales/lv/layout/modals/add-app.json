@@ -64,7 +64,7 @@
 		},
 		"secrets": {
 			"description": "Lai atjauninātu noslēpumu, ievadiet vērtību un noklikšķiniet uz pogas Saglabāt. Lai dzēstu noslēpumu, noklikšķiniet uz pogas dzēst.",
-			"warning": "Jūsu akreditācijas dati kalpo kā piekļuve jūsu integrācijām, un tos nekad <strong>nevajadzētu</strong> kopīgot ar citiem. Homarr komanda nekad nepieprasīs akreditācijas datus. Pārliecinieties, ka <strong>droši glabājat un pārvaldāt savus noslēpumus</strong>.",
+			"warning": "Jūsu akreditācijas dati kalpo kā piekļuve jūsu integrācijām, un tos <strong>nekad</strong> nevajadzētu kopīgot ar citiem. Homarr komanda nekad nepieprasīs akreditācijas datus. Pārliecinieties, ka <strong>droši glabājat un pārvaldāt savus noslēpumus</strong>.",
 			"clear": "Notīrīt noslēpumu",
 			"save": "Saglabāt noslēpumu",
 			"update": "Atjaunināt noslēpumu"
