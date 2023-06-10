@@ -9,6 +9,27 @@
       },
       "allowFullScreen": {
         "label": "הרשאה למסך מלא"
+      },
+      "allowTransparency": {
+        "label": ""
+      },
+      "allowScrolling": {
+        "label": ""
+      },
+      "allowPayment": {
+        "label": ""
+      },
+      "allowAutoPlay": {
+        "label": ""
+      },
+      "allowMicrophone": {
+        "label": ""
+      },
+      "allowCamera": {
+        "label": ""
+      },
+      "allowGeolocation": {
+        "label": ""
       }
     }
   },
