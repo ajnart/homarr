@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Ļauj skatīt un pārvaldīt savu Usenet instanci."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Netika atrasts neviens atbalstīts lejupielādes klients!",
+        "text": "Pievienojiet atbalstītu Usenet Lejupielādes Klientu, lai skatītu pašreizējās lejupielādes"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Rinda",
+    "history": "Vēsture"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Izmērs pa kreisi",
+    "paused": "Apstādināts"
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "Nosaukums",
+      "size": "Lielums",
+      "eta": "ETA",
+      "progress": "Progress"
     },
-    "empty": "",
+    "empty": "Tukšs",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Kļūda",
+      "message": "Radās kļūda"
     },
-    "paused": ""
+    "paused": "Apstādināts"
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
-      "duration": ""
+      "name": "Nosaukums",
+      "size": "Lielums",
+      "duration": "Ilgums"
     },
-    "empty": "",
+    "empty": "Tukšs",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Kļūda",
+      "message": "Kļūda ielādējot vēsturi"
     },
-    "paused": ""
+    "paused": "Apstādināts"
   }
 }
