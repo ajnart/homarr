@@ -115,6 +115,7 @@
     "turbo": "latest",
     "typescript": "^5.0.4",
     "video.js": "^8.0.3",
+    "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.32.0",
     "vitest-fetch-mock": "^0.2.2"
   },
