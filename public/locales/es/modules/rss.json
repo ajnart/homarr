@@ -10,6 +10,12 @@
       },
       "refreshInterval": {
         "label": "Intervalo de refresco (en minutos)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "settings.textLinesClamp": {
+        "label": ""
       }
     },
     "card": {

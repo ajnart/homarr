@@ -1,0 +1,18 @@
+{
+  "modals": {
+    "blockedPopups": {
+      "title": "",
+      "text": "",
+      "list": {
+        "browserPermission": "",
+        "adBlockers": "",
+        "otherBrowser": ""
+      }
+    }
+  },
+  "actions": {
+    "category": {
+      "openAllInNewTab": ""
+    }
+  }
+}

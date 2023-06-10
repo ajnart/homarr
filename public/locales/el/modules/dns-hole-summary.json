@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Περίληψη DNS hole",
+    "description": "Εμφανίζει σημαντικά δεδομένα από το PiHole ή το AdGuard",
     "settings": {
-      "title": "",
+      "title": "Ρυθμίσεις για την περίληψη του DNS hole",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Χρήση χρωμάτων από το PiHole"
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Domains σε λίστες διαφημίσεων",
+      "queriesToday": "Σημερινά queries",
+      "queriesBlockedTodayPercentage": "σημερινοί αποκλεισμοί",
+      "queriesBlockedToday": "σημερινοί αποκλεισμοί"
     }
   }
 }

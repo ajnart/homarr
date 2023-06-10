@@ -17,11 +17,10 @@ export const DashDotCompactStorage = ({ info, widgetId }: DashDotCompactStorageP
   const { data: storageLoad } = useDashDotStorage(widgetId);
 
   const totalUsed = calculateTotalLayoutSize({
-    layout: storageLoad?.layout ?? [],
-    key: 'load',
+    layout: storageLoad ?? [],
   });
   const totalSize = calculateTotalLayoutSize({
-    layout: info?.storage?.layout ?? [],
+    layout: info?.storage ?? [],
     key: 'size',
   });
 
@@ -44,11 +43,16 @@ const calculateTotalLayoutSize = <TLayoutItem,>({
   layout,
   key,
 }: CalculateTotalLayoutSizeProps<TLayoutItem>) =>
-  layout.reduce((total, current) => total + (current[key] as number), 0);
+  layout.reduce((total, current) => {
+    if (key) {
+      return total + (current[key] as number);
+    }
+    return total + (current as number);
+  }, 0);
 
 interface CalculateTotalLayoutSizeProps<TLayoutItem> {
   layout: TLayoutItem[];
-  key: keyof TLayoutItem;
+  key?: keyof TLayoutItem;
 }
 
 const useDashDotStorage = (widgetId: string) => {
@@ -71,9 +75,5 @@ async function fetchDashDotStorageLoad(configName: string | undefined, widgetId:
   if (!configName) throw new Error('configName is undefined');
   return (await (
     await axios.get('/api/modules/dashdot/storage', { params: { configName, widgetId } })
-  ).data) as DashDotStorageLoad;
-}
-
-interface DashDotStorageLoad {
-  layout: { load: number }[];
+  ).data) as number[];
 }

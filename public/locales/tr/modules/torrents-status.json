@@ -11,14 +11,14 @@
         "label": "Tamamlanan torrentleri görüntüle"
       },
       "displayStaleTorrents": {
-        "label": "Eski torrentleri göster"
+        "label": "Durdurulmuş torrentleri görüntüle"
       },
       "labelFilterIsWhitelist": {
-        "label": "Etiket listesi bir beyaz listedir (kara liste yerine)"
+        "label": "Beyaz liste (kara liste yerine)"
       },
       "labelFilter": {
-        "label": "Etiket Listesi",
-        "description": "'Beyaz liste' işaretlendiğinde, beyaz liste olarak hareket edecektir. İşaretlenmezse kara liste gibi davranacaktır. Boş olduğunda hiçbir şey yapmaz"
+        "label": "Kategpori Listesi",
+        "description": "Beyaz liste' aktif edildiğinde, listeye eklediğiniz torrent kategorileri dışında kalan torrentler filtrelenerek görüntülenmez. İşaretlenmez ise listede olan kategori filtrelenerek görüntülnmez. Liste boş olduğunda filtre uygulanmaz. (Listeye ekleyeceğiniz kategoriler torrent istemcinizden ayarlanmalıdır.)"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Torrent bulunamadı",
-        "filterHidingItems": "{{count}} girişler filtreleriniz tarafından gizlendi"
+        "filterHidingItems": "{{count}} giriş filtreleriniz tarafından gizlendi"
       }
     },
     "lineChart": {

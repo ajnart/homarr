@@ -10,6 +10,12 @@
       },
       "refreshInterval": {
         "label": "Intervallo di aggiornamento (in secondi)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "Pericolo: Consente il contenuto di oggetti sanificati"
+      },
+      "settings.textLinesClamp": {
+        "label": "Blocco righe di testo"
       }
     },
     "card": {

@@ -1,7 +1,8 @@
+import xss from 'xss';
 import { NextApiRequest, NextApiResponse } from 'next';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
-import { decode } from 'html-entities';
+import { decode, encode } from 'html-entities';
 import Parser from 'rss-parser';
 import { z } from 'zod';
 
@@ -58,10 +59,13 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
   const orderedFeed = {
     ...feed,
     items: feed.items
-      .map((item: { title: any; content: any }) => ({
+      .map((item: { title: string; content: string; 'content:encoded': string }) => ({
         ...item,
         title: item.title ? decode(item.title) : undefined,
-        content: decode(item.content),
+        content: processItemContent(
+          item['content:encoded'] ?? item.content,
+          rssWidget.properties.dangerousAllowSanitizedItemContent
+        ),
         enclosure: createEnclosure(item),
         link: createLink(item),
       }))
@@ -79,6 +83,40 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     feed: orderedFeed,
     success: orderedFeed?.items !== undefined,
   });
+};
+
+const processItemContent = (content: string, dangerousAllowSanitizedItemContent: boolean) => {
+  if (dangerousAllowSanitizedItemContent) {
+    return xss(content, {
+      allowList: {
+        p: [],
+        h1: [],
+        h2: [],
+        h3: [],
+        h4: [],
+        h5: [],
+        h6: [],
+        a: ['href'],
+        b: [],
+        strong: [],
+        i: [],
+        em: [],
+        img: ['src', 'width', 'height'],
+        br: [],
+        small: [],
+        ul: [],
+        li: [],
+        ol: [],
+        figure: [],
+        svg: [],
+        code: [],
+        mark: [],
+        blockquote: [],
+      },
+    });
+  }
+
+  return encode(content);
 };
 
 const createLink = (item: any) => {

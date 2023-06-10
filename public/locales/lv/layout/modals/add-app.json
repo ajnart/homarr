@@ -1,0 +1,76 @@
+{
+	"tabs": {
+		"general": "",
+		"behaviour": "",
+		"network": "",
+		"appearance": "",
+		"integration": ""
+	},
+	"general": {
+		"appname": {
+			"label": "",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "",
+			"description": ""
+		},
+		"externalAddress": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "",
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "",
+			"description": "",
+			"placeholder": "",
+			"defined": "",
+			"undefined": "",
+			"public": "",
+			"private": "",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "",
+			"warning": "",
+			"clear": "",
+			"save": "",
+			"update": ""
+		}
+	},
+	"validation": {
+		"popover": ""
+	}
+}

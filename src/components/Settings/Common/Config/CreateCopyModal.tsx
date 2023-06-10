@@ -64,7 +64,7 @@ export const CreateConfigCopyModal = ({
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <TextInput
           label={t('modal.copy.form.configName.label')}
-          placeholder={t('modal.copy.form.configName.placeholder')}
+          placeholder={t('modal.copy.form.configName.placeholder') ?? undefined}
           {...form.getInputProps('configName')}
         />
         <Group position="right" mt="md">

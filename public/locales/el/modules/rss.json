@@ -10,6 +10,12 @@
       },
       "refreshInterval": {
         "label": "Διάστημα ανανέωσης (σε λεπτά)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "Επικίνδυνο: Επιτρέψτε φιλτραρισμένο περιεχόμενο αντικειμένων"
+      },
+      "settings.textLinesClamp": {
+        "label": "Περιορισμός γραμμών κειμένου"
       }
     },
     "card": {

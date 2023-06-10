@@ -1,0 +1,80 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "",
+      "lastUpdated": ""
+    },
+    "table": {
+      "header": {
+        "name": "",
+        "size": "",
+        "download": "",
+        "upload": "",
+        "estimatedTimeOfArrival": "",
+        "progress": ""
+      },
+      "item": {
+        "text": ""
+      },
+      "body": {
+        "nothingFound": "",
+        "filterHidingItems": ""
+      }
+    },
+    "lineChart": {
+      "title": "",
+      "download": "",
+      "upload": "",
+      "timeSpan": "",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "",
+        "text": ""
+      }
+    },
+    "loading": {
+      "title": ""
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
+    }
+  }
+}
