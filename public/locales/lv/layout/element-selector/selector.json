@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Pievienot jaunu mozaīku",
+        "text": "Galvenais Homarr elements ir mozaīkas. Tās tiek izmantotas, lai parādītu Jūsu programmas un citu informāciju. Varat pievienot tik daudz mozaīkas, cik vēlaties."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Logrīki mijiedarbojas ar Jūsu lietojumprogrammām, lai Jūs varētu labāk kontrolēt savas lietojumprogrammas. Pirms lietošanas tiem parasti nepieciešama papildu konfigurācija.",
+    "goBack": "Atgriezties uz iepriekšējo soli",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Pievienot mozaīku"
     }
 }
