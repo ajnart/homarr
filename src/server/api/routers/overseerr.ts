@@ -166,4 +166,49 @@ export const overseerrRouter = createTRPCRouter({
           });
         });
     }),
+  decide: publicProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+        id: z.number(),
+        isApproved: z.boolean(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const config = getConfig(input.configName);
+      Consola.log(
+        `Got a request to ${input.isApproved ? 'approve' : 'decline'} a request`,
+        input.id
+      );
+      const app = config.apps.find(
+        (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
+      );
+
+      const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+      if (!apiKey) {
+        throw new TRPCError({
+          code: 'BAD_REQUEST',
+          message: 'No app found',
+        });
+      }
+      const appUrl = new URL(app.url);
+      const action = input.isApproved ? 'approve' : 'decline';
+      return axios
+        .post(
+          `${appUrl.origin}/api/v1/request/${input.id}/${action}`,
+          {},
+          {
+            headers: {
+              'X-Api-Key': apiKey,
+            },
+          }
+        )
+        .then((res) => res.data)
+        .catch((err) => {
+          throw new TRPCError({
+            code: 'INTERNAL_SERVER_ERROR',
+            message: err.message,
+          });
+        });
+    }),
 });
