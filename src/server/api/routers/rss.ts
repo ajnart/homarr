@@ -1,13 +1,13 @@
-import { z } from 'zod';
-import RssParser from 'rss-parser';
+import { TRPCError } from '@trpc/server';
 import Consola from 'consola';
 import { decode, encode } from 'html-entities';
+import RssParser from 'rss-parser';
 import xss from 'xss';
-import { TRPCError } from '@trpc/server';
-import { createTRPCRouter, publicProcedure } from '../trpc';
-import { Stopwatch } from '~/tools/shared/time/stopwatch.tool';
+import { z } from 'zod';
 import { getConfig } from '~/tools/config/getConfig';
+import { Stopwatch } from '~/tools/shared/time/stopwatch.tool';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
+import { createTRPCRouter, publicProcedure } from '../trpc';
 
 type CustomItem = {
   'media:content': string;
@@ -37,7 +37,7 @@ const rssFeedResultObjectSchema = z
             categories: z.array(z.string()).or(z.undefined()),
             title: z.string(),
             content: z.string(),
-            pubDate: z.string(),
+            pubDate: z.string().optional(),
           })
         ),
       }),
@@ -73,6 +73,7 @@ export const rssRouter = createTRPCRouter({
           getFeedUrl(feedUrl, rssWidget.properties.dangerousAllowSanitizedItemContent)
         )
       );
+
       return result;
     }),
 });
@@ -138,7 +139,7 @@ const processItemContent = (content: string, dangerousAllowSanitizedItemContent:
         strong: [],
         i: [],
         em: [],
-        img: ['src', 'width', 'height'],
+        img: ['src', 'width', 'height', 'alt'],
         br: [],
         small: [],
         ul: [],
