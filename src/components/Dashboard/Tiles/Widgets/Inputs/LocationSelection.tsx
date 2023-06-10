@@ -197,10 +197,10 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
                 <td>
                   {city.population ? (
                     <Text style={{ whiteSpace: 'nowrap' }}>
-                      {t('modal.population.count', { count: city.population })}
+                      {t('modal.table.population.count', { count: city.population })}
                     </Text>
                   ) : (
-                    <Text color="dimmed"> {t('modal.population.fallback')}</Text>
+                    <Text color="dimmed"> {t('modal.table.population.fallback')}</Text>
                   )}
                 </td>
                 <td>
