@@ -13,25 +13,27 @@ import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
 import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
+import { api } from '~/utils/api';
+import { useConfigContext } from '~/config/provider';
 
 const POLLING_INTERVAL = 2000;
 
-export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
-  useQuery(
-    ['usenetInfo', params.appId],
-    async () =>
-      (
-        await axios.get<UsenetInfoResponse>('/api/modules/usenet', {
-          params,
-        })
-      ).data,
+export const useGetUsenetInfo = ({ appId }: UsenetInfoRequestParams) => {
+  const { name: configName } = useConfigContext();
+
+  return api.usenet.info.useQuery(
+    {
+      appId,
+      configName: configName!,
+    },
     {
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
-      enabled: Boolean(params.appId),
+      enabled: !!appId,
     }
   );
+};
 
 export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
   useQuery(

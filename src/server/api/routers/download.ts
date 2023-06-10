@@ -6,8 +6,8 @@ import Consola from 'consola';
 import dayjs from 'dayjs';
 import { Client } from 'sabnzbd-api';
 import { z } from 'zod';
-import { NzbgetClient } from '~/pages/api/modules/usenet/nzbget/nzbget-client';
-import { NzbgetQueueItem, NzbgetStatus } from '~/pages/api/modules/usenet/nzbget/types';
+import { NzbgetClient } from '~/server/api/routers/usenet/nzbget/nzbget-client';
+import { NzbgetQueueItem, NzbgetStatus } from '~/server/api/routers/usenet/nzbget/types';
 import { getConfig } from '~/tools/config/getConfig';
 import {
   NormalizedDownloadAppStat,
