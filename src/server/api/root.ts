@@ -7,6 +7,7 @@ import { iconRouter } from './routers/icon';
 import { dashDotRouter } from './routers/dash-dot';
 import { dnsHoleRouter } from './routers/dns-hole';
 import { downloadRouter } from './routers/download';
+import { mediaRequestsRouter } from './routers/media-request';
 
 /**
  * This is the primary router for your server.
@@ -22,6 +23,7 @@ export const rootRouter = createTRPCRouter({
   dashDot: dashDotRouter,
   dnsHole: dnsHoleRouter,
   download: downloadRouter,
+  mediaRequest: mediaRequestsRouter,
 });
 
 // export type definition of API
