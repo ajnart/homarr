@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Multivides Serveris",
+    "description": "Mijiedarbība ar Jellyfin vai Plex multivides serveri",
     "settings": {
-      "title": ""
+      "title": "Multivides servera logrīka iestatījumi"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Sesija",
+        "user": "Lietotājs",
+        "currentlyPlaying": "Pašlaik atskaņo"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nevar ielādēt saturu",
+        "text": "Nevar iegūt informāciju no servera. Lūdzu, pārbaudiet žurnālus, lai iegūtu sīkāku informāciju"
       }
     }
   }
