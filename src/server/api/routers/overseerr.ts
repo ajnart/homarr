@@ -104,4 +104,66 @@ export const overseerrRouter = createTRPCRouter({
         });
       return tv;
     }),
+  request: publicProcedure
+    .input(
+      z
+        .object({
+          configName: z.string(),
+          id: z.number(),
+        })
+        .and(
+          z
+            .object({
+              seasons: z.array(z.number()),
+              type: z.literal('tv'),
+            })
+            .or(
+              z.object({
+                type: z.literal('movie'),
+              })
+            )
+        )
+    )
+    .mutation(async ({ input }) => {
+      const config = getConfig(input.configName);
+      const app = config.apps.find(
+        (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
+      );
+      const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+      if (!apiKey) {
+        throw new TRPCError({
+          code: 'BAD_REQUEST',
+          message: 'No app found',
+        });
+      }
+
+      const appUrl = new URL(app.url);
+      Consola.info('Got an Overseerr request with these arguments', {
+        mediaType: input.type,
+        mediaId: input.id,
+        seasons: input.type === 'tv' ? input.seasons : undefined,
+      });
+      return axios
+        .post(
+          `${appUrl.origin}/api/v1/request`,
+          {
+            mediaType: input.type,
+            mediaId: input.id,
+            seasons: input.type === 'tv' ? input.seasons : undefined,
+          },
+          {
+            headers: {
+              // Set X-Api-Key to the value of the API key
+              'X-Api-Key': apiKey,
+            },
+          }
+        )
+        .then((res) => res.data)
+        .catch((err) => {
+          throw new TRPCError({
+            code: 'INTERNAL_SERVER_ERROR',
+            message: err.message,
+          });
+        });
+    }),
 });

@@ -1,17 +1,16 @@
 import { Alert, Button, Checkbox, createStyles, Group, Modal, Stack, Table } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons-react';
-import axios from 'axios';
 import Consola from 'consola';
 import { useTranslation } from 'next-i18next';
 
 import { useState } from 'react';
+import { useConfigContext } from '~/config/provider';
+import { api } from '~/utils/api';
 import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
-import { MediaType, Result } from './SearchResult.d';
+import { Result } from './SearchResult.d';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';
-import { api } from '~/utils/api';
-import { useConfigContext } from '~/config/provider';
 
 interface RequestModalProps {
   base: Result;
@@ -62,6 +61,7 @@ export function MovieRequestModal({
   setOpened: (opened: boolean) => void;
 }) {
   const { secondaryColor } = useColorTheme();
+  const requestMediaAsync = useMediaRequestMutation();
   const { t } = useTranslation('modules/overseerr');
 
   return (
@@ -97,7 +97,7 @@ export function MovieRequestModal({
           <Button
             variant="outline"
             onClick={() => {
-              askForMedia('movie', result.id, result.title, []);
+              requestMediaAsync('movie', result.id, result.title);
             }}
           >
             {t('popup.item.buttons.request')}
@@ -120,6 +120,7 @@ export function TvRequestModal({
   const [selection, setSelection] = useState<TvShowResultSeason[]>(result.seasons);
   const { classes, cx } = useStyles();
   const { t } = useTranslation('modules/overseerr');
+  const requestMediaAsync = useMediaRequestMutation();
 
   const toggleRow = (container: TvShowResultSeason) =>
     setSelection((current: TvShowResultSeason[]) =>
@@ -200,7 +201,7 @@ export function TvRequestModal({
             variant="outline"
             disabled={selection.length === 0}
             onClick={() => {
-              askForMedia(
+              requestMediaAsync(
                 'tv',
                 result.id,
                 result.name,
@@ -216,37 +217,51 @@ export function TvRequestModal({
   );
 }
 
-function askForMedia(type: MediaType, id: number, name: string, seasons?: number[]) {
-  Consola.info(`Requesting ${type} ${id} ${name}`);
-  showNotification({
-    title: 'Request',
-    id: id.toString(),
-    message: `Requesting media ${name}`,
-    color: 'orange',
-    loading: true,
-    autoClose: false,
-    withCloseButton: false,
-    icon: <IconAlertCircle />,
-  });
-  axios
-    .post(`/api/modules/overseerr/${id}`, { type, seasons })
-    .then(() => {
-      updateNotification({
-        id: id.toString(),
-        title: '',
-        color: 'green',
-        message: ` ${name} requested`,
-        icon: <IconCheck />,
-        autoClose: 2000,
-      });
-    })
-    .catch((err) => {
-      updateNotification({
-        id: id.toString(),
-        color: 'red',
-        title: 'There was an error',
-        message: err.message,
-        autoClose: 2000,
-      });
+const useMediaRequestMutation = () => {
+  const { name: configName } = useConfigContext();
+  const { mutateAsync } = api.overseerr.request.useMutation();
+
+  return async (type: 'tv' | 'movie', id: number, name: string, seasons?: number[]) => {
+    Consola.info(`Requesting ${type} ${id} ${name}`);
+    showNotification({
+      title: 'Request',
+      id: id.toString(),
+      message: `Requesting media ${name}`,
+      color: 'orange',
+      loading: true,
+      autoClose: false,
+      withCloseButton: false,
+      icon: <IconAlertCircle />,
     });
-}
+
+    await mutateAsync(
+      {
+        configName: configName!,
+        id,
+        type,
+        seasons: seasons ?? [],
+      },
+      {
+        onSuccess: () => {
+          updateNotification({
+            id: id.toString(),
+            title: '',
+            color: 'green',
+            message: ` ${name} requested`,
+            icon: <IconCheck />,
+            autoClose: 2000,
+          });
+        },
+        onError: (err) => {
+          updateNotification({
+            id: id.toString(),
+            color: 'red',
+            title: 'There was an error',
+            message: err.message,
+            autoClose: 2000,
+          });
+        },
+      }
+    );
+  };
+};
