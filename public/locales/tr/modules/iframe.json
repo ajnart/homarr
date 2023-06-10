@@ -11,32 +11,32 @@
         "label": "Tam ekrana izin ver"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Şeffaflığa İzin Ver"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Kaydırmaya izin ver"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Ödemeye izin ver"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Otomatik oynatmaya izin ver"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Mikrofona izin ver"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Kameraya İzin Ver"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Coğrafi konuma izin ver (geolocation)"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Geçersiz URL",
         "text": "Widget'ınızın yapılandırmasında geçerli bir adres girdiğinizden emin olun"
       }
     }
