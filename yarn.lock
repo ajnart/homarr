@@ -2011,6 +2011,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@trpc/client@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/client@npm:10.29.1"
+  peerDependencies:
+    "@trpc/server": 10.29.1
+  checksum: b617edb56e9ec7fa0665703761c666244e58b8a9da5a2fffcdef880cdde7ec8c92c20d1362ac1c836904518d94db247ec286cc17e01fc4eea41b7cafbf3479fe
+  languageName: node
+  linkType: hard
+
+"@trpc/next@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/next@npm:10.29.1"
+  dependencies:
+    react-ssr-prepass: ^1.5.0
+  peerDependencies:
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.29.1
+    "@trpc/react-query": 10.29.1
+    "@trpc/server": 10.29.1
+    next: "*"
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 6afd6d7b1702eda5a26e7e8d2d381729fceb180952a2382314f08dd945b6e3204716c532b0ac6ddef10135816879c61dbe4b27aa88bcd98100890ede8d42fb25
+  languageName: node
+  linkType: hard
+
+"@trpc/react-query@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/react-query@npm:10.29.1"
+  peerDependencies:
+    "@tanstack/react-query": ^4.18.0
+    "@trpc/client": 10.29.1
+    "@trpc/server": 10.29.1
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 3e52195eb894c0110b7fd99b0ab4fde38ade0b28d76c788d602c97789b76c66c91f678460fd68f3dc67c9b454340c7fe08363dfec69d4127982f9329bb42f503
+  languageName: node
+  linkType: hard
+
+"@trpc/server@npm:^10.29.1":
+  version: 10.29.1
+  resolution: "@trpc/server@npm:10.29.1"
+  checksum: d31ac9921764aea774ef14ae3d9d4c7cb245582dde7f75facd355732043eb9d697a8584c19377dce9acdf9b21f473917f77842fda29eb77fd604484e23b42ded
+  languageName: node
+  linkType: hard
+
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.9
   resolution: "@tsconfig/node10@npm:1.0.9"
@@ -5821,6 +5867,10 @@ __metadata:
     "@tanstack/react-query-persist-client": ^4.28.0
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
+    "@trpc/client": ^10.29.1
+    "@trpc/next": ^10.29.1
+    "@trpc/react-query": ^10.29.1
+    "@trpc/server": ^10.29.1
     "@types/dockerode": ^3.3.9
     "@types/node": 18.16.16
     "@types/prismjs": ^1.26.0
@@ -8404,6 +8454,15 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: 1d223e34ccac5d7f91318f28d5edab6ccb13c51b1afb502094b8475214321263bb44258d355978e1714e9360c9081fb9f38d3ae89071a06628407627c362cc45
+  languageName: node
+  linkType: hard
+
+"react-ssr-prepass@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "react-ssr-prepass@npm:1.5.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: efe89b9f8b2053474613f56dfdbeb41d8ee2e572bf819a39377d95d3e4a9acf8a4a16e28d8d8034cb9ac2b316d11dc9e62217743e4322046d08175eb3b4fed3e
   languageName: node
   linkType: hard
 
