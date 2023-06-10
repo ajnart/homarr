@@ -4,12 +4,37 @@
  *
  * We also create a few inference helpers for input and output types.
  */
-import { httpBatchLink, loggerLink } from '@trpc/client';
+import { createTRPCProxyClient, httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
 import { type inferRouterInputs, type inferRouterOutputs } from '@trpc/server';
 import superjson from 'superjson';
 
 import { type RootRouter } from '~/server/api/root';
+
+const getTrpcConfiguration = () => ({
+  /**
+   * Transformer used for data de-serialization from the server.
+   *
+   * @see https://trpc.io/docs/data-transformers
+   */
+  transformer: superjson,
+
+  /**
+   * Links used to determine request flow from client to server.
+   *
+   * @see https://trpc.io/docs/links
+   */
+  links: [
+    loggerLink({
+      enabled: (opts) =>
+        process.env.NODE_ENV === 'development' ||
+        (opts.direction === 'down' && opts.result instanceof Error),
+    }),
+    httpBatchLink({
+      url: `${getBaseUrl()}/api/trpc`,
+    }),
+  ],
+});
 
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') return ''; // browser should use relative url
@@ -20,30 +45,7 @@ const getBaseUrl = () => {
 /** A set of type-safe react-query hooks for your tRPC API. */
 export const api = createTRPCNext<RootRouter>({
   config() {
-    return {
-      /**
-       * Transformer used for data de-serialization from the server.
-       *
-       * @see https://trpc.io/docs/data-transformers
-       */
-      transformer: superjson,
-
-      /**
-       * Links used to determine request flow from client to server.
-       *
-       * @see https://trpc.io/docs/links
-       */
-      links: [
-        loggerLink({
-          enabled: (opts) =>
-            process.env.NODE_ENV === 'development' ||
-            (opts.direction === 'down' && opts.result instanceof Error),
-        }),
-        httpBatchLink({
-          url: `${getBaseUrl()}/api/trpc`,
-        }),
-      ],
-    };
+    return getTrpcConfiguration();
   },
   /**
    * Whether tRPC should await queries when server rendering pages.
@@ -66,3 +68,8 @@ export type RouterInputs = inferRouterInputs<RootRouter>;
  * @example type HelloOutput = RouterOutputs['example']['hello']
  */
 export type RouterOutputs = inferRouterOutputs<RootRouter>;
+
+/**
+ * A tRPC client that can be used without hooks.
+ */
+export const trcpProxyClient = createTRPCProxyClient<RootRouter>(getTrpcConfiguration());

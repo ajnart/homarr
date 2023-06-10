@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { create } from 'zustand';
 import { ConfigType } from '../types/config';
+import { api, trcpProxyClient } from '~/utils/api';
 
 export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
   configs: [],
@@ -13,7 +14,7 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
       ],
     }));
   },
-  addConfig: async (name: string, config: ConfigType, shouldSaveConfigToFileSystem = true) => {
+  addConfig: async (name: string, config: ConfigType) => {
     set((old) => ({
       ...old,
       configs: [
@@ -21,11 +22,6 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
         { value: config, increaseVersion: () => {} },
       ],
     }));
-
-    if (!shouldSaveConfigToFileSystem) {
-      return;
-    }
-    axios.put(`/api/configs/${name}`, { ...config });
   },
   removeConfig: (name: string) => {
     set((old) => ({
@@ -66,7 +62,10 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
     }
 
     if (shouldSaveConfigToFileSystem) {
-      axios.put(`/api/configs/${name}`, { ...updatedConfig });
+      trcpProxyClient.config.save.mutate({
+        name,
+        config: updatedConfig,
+      });
     }
   },
 }));
@@ -74,11 +73,7 @@ export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
 interface UseConfigStoreType {
   configs: { increaseVersion: () => void; value: ConfigType }[];
   initConfig: (name: string, config: ConfigType, increaseVersion: () => void) => void;
-  addConfig: (
-    name: string,
-    config: ConfigType,
-    shouldSaveConfigToFileSystem: boolean
-  ) => Promise<void>;
+  addConfig: (name: string, config: ConfigType) => Promise<void>;
   removeConfig: (name: string) => void;
   updateConfig: (
     name: string,
