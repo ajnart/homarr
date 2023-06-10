@@ -42,4 +42,26 @@ export const dashDotRouter = createTRPCRouter({
       });
       return response.data;
     }),
+  storage: publicProcedure
+    .input(
+      z.object({
+        url: dashDotUrlSchema.transform(removeLeadingSlash),
+      })
+    )
+    .output(z.array(z.number()))
+    .query(async ({ input }) => {
+      const response = await axios.get(`${input.url}/load/storage`).catch((error) => {
+        if (error.response.status === 404) {
+          throw new TRPCError({
+            code: 'NOT_FOUND',
+            message: 'Unable to find specified dash-dot',
+          });
+        }
+
+        throw new TRPCError({
+          code: 'INTERNAL_SERVER_ERROR',
+        });
+      });
+      return response.data;
+    }),
 });

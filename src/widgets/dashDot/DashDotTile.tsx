@@ -198,7 +198,6 @@ function DashDotTile({ widget }: DashDotTileProps) {
                     isCompact={g.subValues.compactView ?? false}
                     multiView={g.subValues.multiView ?? false}
                     usePercentages={usePercentages}
-                    widgetId={widget.id}
                   />
                 </Grid.Col>
               ))}
