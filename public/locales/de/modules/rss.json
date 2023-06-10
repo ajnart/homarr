@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "Vorsicht: Bereinigte Artikelinhalte zulassen"
       },
-      "settings.textLinesClamp": {
-        "label": "Textzeilen Klammer"
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {
