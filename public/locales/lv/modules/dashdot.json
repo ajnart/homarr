@@ -22,7 +22,7 @@
       "graphsOrder": {
         "label": "Grafiki (Secība)",
         "storage": {
-          "label": "",
+          "label": "Krātuve",
           "enabled": {
             "label": "Rādīt logrīkā"
           },
@@ -37,7 +37,7 @@
           }
         },
         "network": {
-          "label": "",
+          "label": "Tīkls",
           "enabled": {
             "label": "Rādīt logrīkā"
           },
@@ -87,17 +87,17 @@
       "noService": "Nav atrasts Dash. pakalpojums. Lūdzu, pievienojiet to savam Homarr panelim vai iestatiet Dash. URL moduļa opcijās",
       "noInformation": "Nevar iegūt informāciju no Dash. - vai Jūs izmantojat jaunāko versiju?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Atklāta protokola pazemināšana",
+        "text": "Savienojumā ar jūsu Dash. instanci tiek izmantots HTTP. Tas ir drošības risks, jo HTTP nav šifrēts un uzbrucēji var ļaunprātīgi izmantot šo savienojumu. Pārliecinieties, ka Dash. izmanto HTTPS, vai pazeminiet Homarr uz HTTP (nav ieteicams)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Krātuve",
+        "label": "Krātuve:"
       },
       "network": {
-        "title": "",
+        "title": "Tīkls",
         "label": "",
         "metrics": {
           "download": "",
