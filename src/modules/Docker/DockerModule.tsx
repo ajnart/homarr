@@ -64,7 +64,7 @@ export default function DockerMenuButton(props: any) {
           },
         }}
       >
-        <DockerTable containers={data} selection={selection} setSelection={setSelection} />
+        <DockerTable containers={data ?? []} selection={selection} setSelection={setSelection} />
       </Drawer>
       <Tooltip label={t('actionIcon.tooltip')}>
         <ActionIcon
