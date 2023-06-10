@@ -15,11 +15,12 @@ import {
   createStyles,
 } from '@mantine/core';
 import { IconClock, IconRefresh, IconRss } from '@tabler/icons-react';
-import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
+import { useConfigContext } from '~/config/provider';
+import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -65,27 +66,11 @@ interface RssTileProps {
   widget: IRssWidget;
 }
 
-export const useGetRssFeeds = (feedUrls: string[], refreshInterval: number, widgetId: string) =>
-  useQuery({
-    queryKey: ['rss-feeds', feedUrls],
-    // Cache the results for 24 hours
-    cacheTime: 1000 * 60 * 60 * 24,
-    staleTime: 1000 * 60 * refreshInterval,
-    queryFn: async () => {
-      const responses = await Promise.all(
-        feedUrls.map((feedUrl) =>
-          fetch(
-            `/api/modules/rss?widgetId=${widgetId}&feedUrl=${encodeURIComponent(feedUrl)}`
-          ).then((response) => response.json())
-        )
-      );
-      return responses;
-    },
-  });
-
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
+  const { name: configName } = useConfigContext();
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeeds(
+    configName,
     widget.properties.rssFeedUrl,
     widget.properties.refreshInterval,
     widget.id
@@ -122,6 +107,7 @@ function RssTile({ widget }: RssTileProps) {
           <Title order={6}>{t('descriptor.card.errors.general.title')}</Title>
           <Text align="center">{t('descriptor.card.errors.general.text')}</Text>
         </Stack>
+        <RefetchButton refetch={refetch} isFetching={isFetching} />
       </Center>
     );
   }
@@ -192,24 +178,53 @@ function RssTile({ widget }: RssTileProps) {
         ))}
       </ScrollArea>
 
-      <ActionIcon
-        size="sm"
-        radius="xl"
-        pos="absolute"
-        right={10}
-        onClick={() => refetch()}
-        bottom={10}
-        styles={{
-          root: {
-            borderColor: 'red',
-          },
-        }}
-      >
-        {isFetching ? <Loader /> : <IconRefresh />}
-      </ActionIcon>
+      <RefetchButton refetch={refetch} isFetching={isFetching} />
     </Stack>
   );
 }
+
+export const useGetRssFeeds = (
+  configName: string | undefined,
+  feedUrls: string[],
+  refreshInterval: number,
+  widgetId: string
+) =>
+  api.rss.all.useQuery(
+    {
+      configName: configName ?? '',
+      feedUrls,
+      widgetId,
+    },
+    {
+      // Cache the results for 24 hours
+      cacheTime: 1000 * 60 * 60 * 24,
+      staleTime: 1000 * 60 * refreshInterval,
+      enabled: !!configName,
+    }
+  );
+
+interface RefetchButtonProps {
+  refetch: () => void;
+  isFetching: boolean;
+}
+
+const RefetchButton = ({ isFetching, refetch }: RefetchButtonProps) => (
+  <ActionIcon
+    size="sm"
+    radius="xl"
+    pos="absolute"
+    right={10}
+    onClick={() => refetch()}
+    bottom={10}
+    styles={{
+      root: {
+        borderColor: 'red',
+      },
+    }}
+  >
+    {isFetching ? <Loader /> : <IconRefresh />}
+  </ActionIcon>
+);
 
 const InfoDisplay = ({ date, title }: { date: string; title: string | undefined }) => (
   <Group mt="auto" spacing="xs">
