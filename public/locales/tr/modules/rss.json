@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "Tehlikeli: Temizlenmiş öğe içeriğine izin ver"
       },
-      "settings.textLinesClamp": {
-        "label": "Metin satır sınırı"
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {

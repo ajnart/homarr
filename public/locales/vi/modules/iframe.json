@@ -9,6 +9,27 @@
       },
       "allowFullScreen": {
         "label": "Cho phép toàn màn hình"
+      },
+      "allowTransparency": {
+        "label": ""
+      },
+      "allowScrolling": {
+        "label": ""
+      },
+      "allowPayment": {
+        "label": ""
+      },
+      "allowAutoPlay": {
+        "label": ""
+      },
+      "allowMicrophone": {
+        "label": ""
+      },
+      "allowCamera": {
+        "label": ""
+      },
+      "allowGeolocation": {
+        "label": ""
       }
     }
   },

@@ -14,7 +14,7 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "Επικίνδυνο: Επιτρέψτε φιλτραρισμένο περιεχόμενο αντικειμένων"
       },
-      "settings.textLinesClamp": {
+      "textLinesClamp": {
         "label": "Περιορισμός γραμμών κειμένου"
       }
     },

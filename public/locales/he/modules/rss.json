@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "מסוכן: אפשר תוכן פריט מנוקה"
       },
-      "settings.textLinesClamp": {
-        "label": "הגבלת שורות טקסט"
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {
