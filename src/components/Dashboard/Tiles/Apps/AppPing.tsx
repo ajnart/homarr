@@ -1,10 +1,10 @@
 import { Indicator, Tooltip } from '@mantine/core';
 import Consola from 'consola';
-import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '../../../../config/provider';
 import { AppType } from '../../../../types/app';
+import { api } from '~/utils/api';
 
 interface AppPingProps {
   app: AppType;
@@ -16,18 +16,7 @@ export const AppPing = ({ app }: AppPingProps) => {
   const active =
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
-  const { data, isLoading } = useQuery({
-    queryKey: ['ping', { id: app.id, name: app.name }],
-    queryFn: async () => {
-      const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = getIsOk(app, response.status);
-      return {
-        status: response.status,
-        state: isOk ? 'online' : 'down',
-      };
-    },
-    enabled: active,
-  });
+  const { data, isLoading, error } = usePingQuery(app, active);
 
   const isOnline = data?.state === 'online';
 
@@ -49,7 +38,7 @@ export const AppPing = ({ app }: AppPingProps) => {
             ? t('states.loading')
             : isOnline
             ? t('states.online', { response: data.status })
-            : t('states.offline', { response: data?.status })
+            : t('states.offline', { response: data?.status ?? error?.data?.httpStatus })
         }
       >
         <Indicator
@@ -62,11 +51,29 @@ export const AppPing = ({ app }: AppPingProps) => {
   );
 };
 
+const usePingQuery = (app: AppType, isEnabled: boolean) =>
+  api.app.ping.useQuery(
+    {
+      url: app.url,
+    },
+    {
+      enabled: isEnabled,
+      select: (data) => {
+        const statusCode = data.status;
+        const isOk = getIsOk(app, statusCode);
+        return {
+          status: statusCode,
+          state: isOk ? ('online' as const) : ('down' as const),
+        };
+      },
+    }
+  );
+
 const getIsOk = (app: AppType, status: number) => {
-if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
-Consola.log('Using new status codes');
-return app.network.statusCodes.includes(status.toString());
-}
-Consola.warn('Using deprecated okStatus');
-return app.network.okStatus.includes(status);
+  if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
+    Consola.log('Using new status codes');
+    return app.network.statusCodes.includes(status.toString());
+  }
+  Consola.warn('Using deprecated okStatus');
+  return app.network.okStatus.includes(status);
 };
