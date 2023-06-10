@@ -6,6 +6,7 @@ import { dockerRouter } from './routers/docker/router';
 import { iconRouter } from './routers/icon';
 import { dashDotRouter } from './routers/dash-dot';
 import { dnsHoleRouter } from './routers/dns-hole';
+import { downloadRouter } from './routers/download';
 
 /**
  * This is the primary router for your server.
@@ -20,6 +21,7 @@ export const rootRouter = createTRPCRouter({
   icon: iconRouter,
   dashDot: dashDotRouter,
   dnsHole: dnsHoleRouter,
+  download: downloadRouter,
 });
 
 // export type definition of API
