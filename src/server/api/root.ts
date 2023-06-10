@@ -9,6 +9,7 @@ import { dnsHoleRouter } from './routers/dns-hole';
 import { downloadRouter } from './routers/download';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
+import { overseerrRouter } from './routers/overseerr';
 
 /**
  * This is the primary router for your server.
@@ -26,6 +27,7 @@ export const rootRouter = createTRPCRouter({
   download: downloadRouter,
   mediaRequest: mediaRequestsRouter,
   mediaServer: mediaServerRouter,
+  overseerr: overseerrRouter,
 });
 
 // export type definition of API
