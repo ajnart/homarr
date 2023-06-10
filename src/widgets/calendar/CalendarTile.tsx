@@ -1,16 +1,16 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
-import { useQuery } from '@tanstack/react-query';
 import { i18n } from 'next-i18next';
 import { useState } from 'react';
+import { api } from '~/utils/api';
+import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
-import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 
 const definition = defineWidget({
   id: 'calendar',
@@ -55,22 +55,18 @@ function CalendarTile({ widget }: CalendarTileProps) {
   const [month, setMonth] = useState(new Date());
   const isEditMode = useEditModeStore((x) => x.enabled);
 
-  const { data: medias } = useQuery({
-    queryKey: [
-      'calendar/medias',
-      { month: month.getMonth(), year: month.getFullYear(), v4: widget.properties.useSonarrv4 },
-    ],
-    staleTime: 1000 * 60 * 60 * 5,
-    enabled: isEditMode === false,
-    queryFn: async () =>
-      (await (
-        await fetch(
-          `/api/modules/calendar?year=${month.getFullYear()}&month=${
-            month.getMonth() + 1
-          }&configName=${configName}&widgetId=${widget.id}`
-        )
-      ).json()) as MediasType,
-  });
+  const { data: medias } = api.calendar.medias.useQuery(
+    {
+      configName: configName!,
+      month: month.getMonth() + 1,
+      year: month.getFullYear(),
+      options: { useSonarrv4: widget.properties.useSonarrv4 },
+    },
+    {
+      staleTime: 1000 * 60 * 60 * 5,
+      enabled: isEditMode === false,
+    }
+  );
 
   return (
     <Calendar
