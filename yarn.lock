@@ -2333,14 +2333,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.60":
-  version: 17.0.60
-  resolution: "@types/react@npm:17.0.60"
+"@types/react@npm:17.0.61":
+  version: 17.0.61
+  resolution: "@types/react@npm:17.0.61"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 8565e53d6ad83cd5f606fa66f5f9d8d0e5323a0103114a0292ae8f97c17ce4a7dfa15b847c54eb0a2c41c03df7fd64ba1d5bcef91ee0c177e55315e52e334463
+  checksum: 73fa034c3a9f52f71a33f1bf55d12e1571b0df57b5e65cf6b8e9495842de03f3399121e0f496308d6679c1101e783f1614af7ac23c1228982f229819379b1b7f
   languageName: node
   linkType: hard
 
@@ -5831,7 +5831,7 @@ __metadata:
     "@types/dockerode": ^3.3.9
     "@types/node": 18.16.17
     "@types/prismjs": ^1.26.0
-    "@types/react": 17.0.60
+    "@types/react": 17.0.61
     "@types/uuid": ^9.0.0
     "@types/video.js": ^7.3.51
     "@typescript-eslint/eslint-plugin": ^5.30.7
