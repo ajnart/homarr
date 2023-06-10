@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Videoplūsma",
-    "description": "Ieguldīt videoplūsmu vai video no kameras vai tīmekļvietnes",
+    "name": "Videostraume",
+    "description": "Ieguldīt videostraumi vai video no kameras vai tīmekļvietnes",
     "settings": {
-      "title": "Videoplūsmas logrīka iestatījumi",
+      "title": "Videostraume logrīka iestatījumi",
       "FeedUrl": {
         "label": "Plūsmas URL"
       },
@@ -19,6 +19,6 @@
     }
   },
   "errors": {
-    "invalidStream": "Nederīga plūsma"
+    "invalidStream": "Nederīga straume"
   }
 }
