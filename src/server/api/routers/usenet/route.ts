@@ -1,12 +1,16 @@
+import { TRPCError } from '@trpc/server';
 import dayjs from 'dayjs';
 import { Client } from 'sabnzbd-api';
 import { z } from 'zod';
-import { TRPCError } from '@trpc/server';
-import { NzbgetHistoryItem, NzbgetStatus } from '~/server/api/routers/usenet/nzbget/types';
+import {
+  NzbgetHistoryItem,
+  NzbgetQueueItem,
+  NzbgetStatus,
+} from '~/server/api/routers/usenet/nzbget/types';
 import { getConfig } from '~/tools/config/getConfig';
+import { UsenetHistoryItem, UsenetQueueItem } from '~/widgets/useNet/types';
 import { createTRPCRouter, publicProcedure } from '../../trpc';
 import { NzbgetClient } from './nzbget/nzbget-client';
-import { UsenetHistoryItem } from '~/widgets/useNet/types';
 
 export const usenetRouter = createTRPCRouter({
   info: publicProcedure
@@ -263,7 +267,122 @@ export const usenetRouter = createTRPCRouter({
 
       return new Client(origin, apiKey).queueResume();
     }),
+  queue: publicProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+        appId: z.string(),
+        limit: z.number(),
+        offset: z.number(),
+      })
+    )
+    .query(async ({ input }) => {
+      const config = getConfig(input.configName);
+
+      const app = config.apps.find((x) => x.id === input.appId);
+
+      if (!app || (app.integration?.type !== 'nzbGet' && app.integration?.type !== 'sabnzbd')) {
+        throw new Error(`App with ID "${input.appId}" could not be found.`);
+      }
+
+      if (app.integration.type === 'nzbGet') {
+        const url = new URL(app.url);
+        const options = {
+          host: url.hostname,
+          port: url.port || (url.protocol === 'https:' ? '443' : '80'),
+          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
+          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+        };
+
+        const nzbGet = NzbgetClient(options);
+
+        const nzbgetQueue: NzbgetQueueItem[] = await new Promise((resolve, reject) => {
+          nzbGet.listGroups((err: any, result: NzbgetQueueItem[]) => {
+            if (!err) {
+              resolve(result);
+            } else {
+              reject(err);
+            }
+          });
+        });
+
+        if (!nzbgetQueue) {
+          throw new Error('Error while getting NZBGet queue');
+        }
+
+        const nzbgetStatus: NzbgetStatus = await new Promise((resolve, reject) => {
+          nzbGet.status((err: any, result: NzbgetStatus) => {
+            if (!err) {
+              resolve(result);
+            } else {
+              reject(err);
+            }
+          });
+        });
+
+        if (!nzbgetStatus) {
+          throw new Error('Error while getting NZBGet status');
+        }
+
+        const nzbgetItems: UsenetQueueItem[] = nzbgetQueue.map((item: NzbgetQueueItem) => ({
+          id: item.NZBID.toString(),
+          name: item.NZBName,
+          progress: (item.DownloadedSizeMB / item.FileSizeMB) * 100,
+          eta: (item.RemainingSizeMB * 1000000) / nzbgetStatus.DownloadRate,
+          // Multiple MB to get bytes
+          size: item.FileSizeMB * 1000 * 1000,
+          state: getNzbgetState(item.Status),
+        }));
+
+        return {
+          items: nzbgetItems,
+          total: nzbgetItems.length,
+        };
+      }
+
+      const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+      if (!apiKey) {
+        throw new Error(`API Key for app "${app.name}" is missing`);
+      }
+
+      const { origin } = new URL(app.url);
+      const queue = await new Client(origin, apiKey).queue(input.offset, input.limit);
+
+      const items: UsenetQueueItem[] = queue.slots.map((slot) => {
+        const [hours, minutes, seconds] = slot.timeleft.split(':');
+        const eta = dayjs.duration({
+          hour: parseInt(hours, 10),
+          minutes: parseInt(minutes, 10),
+          seconds: parseInt(seconds, 10),
+        } as any);
+
+        return {
+          id: slot.nzo_id,
+          eta: eta.asSeconds(),
+          name: slot.filename,
+          progress: parseFloat(slot.percentage),
+          size: parseFloat(slot.mb) * 1000 * 1000,
+          state: slot.status.toLowerCase() as any,
+        };
+      });
+
+      return {
+        items,
+        total: queue.noofslots,
+      };
+    }),
 });
+
+function getNzbgetState(status: string) {
+  switch (status) {
+    case 'QUEUED':
+      return 'queued';
+    case 'PAUSED ':
+      return 'paused';
+    default:
+      return 'downloading';
+  }
+}
 
 export interface UsenetInfoResponse {
   paused: boolean;

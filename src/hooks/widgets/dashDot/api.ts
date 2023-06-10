@@ -1,14 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useConfigContext } from '~/config/provider';
 import { RouterInputs, api } from '~/utils/api';
 import { UsenetInfoRequestParams } from '../../../pages/api/modules/usenet';
 import type { UsenetHistoryRequestParams } from '../../../pages/api/modules/usenet/history';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import type {
-  UsenetQueueRequestParams,
-  UsenetQueueResponse,
-} from '../../../pages/api/modules/usenet/queue';
+import type { UsenetQueueRequestParams } from '../../../pages/api/modules/usenet/queue';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
 
 const POLLING_INTERVAL = 2000;
@@ -30,21 +25,20 @@ export const useGetUsenetInfo = ({ appId }: UsenetInfoRequestParams) => {
   );
 };
 
-export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
-  useQuery(
-    ['usenetDownloads', ...Object.values(params)],
-    async () =>
-      (
-        await axios.get<UsenetQueueResponse>('/api/modules/usenet/queue', {
-          params,
-        })
-      ).data,
+export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) => {
+  const { name: configName } = useConfigContext();
+  return api.usenet.queue.useQuery(
+    {
+      configName: configName!,
+      ...params,
+    },
     {
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
     }
   );
+};
 
 export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) => {
   const { name: configName } = useConfigContext();

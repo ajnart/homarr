@@ -16,7 +16,6 @@ import {
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconAlertCircle, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
-import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
@@ -70,7 +69,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
         >
           {t('queue.error.message')}
           <Code mt="sm" block>
-            {(error as AxiosError)?.response?.data as string}
+            {error.data}
           </Code>
         </Alert>
       </Group>
