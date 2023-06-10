@@ -1,14 +1,13 @@
 import { ActionIcon, Drawer, Tooltip } from '@mantine/core';
 import { useHotkeys } from '@mantine/hooks';
 import { IconBrandDocker } from '@tabler/icons-react';
-import axios from 'axios';
 import Docker from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 import { useCardStyles } from '../../components/layout/useCardStyles';
 import { useConfigContext } from '../../config/provider';
 
+import { api } from '~/utils/api';
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
 
@@ -20,21 +19,12 @@ export default function DockerMenuButton(props: any) {
 
   const dockerEnabled = config?.settings.customization.layout.enabledDocker || false;
 
-  const { data, isLoading, refetch } = useQuery({
-    queryKey: ['containers'],
-    queryFn: async () => {
-      const containers = await axios.get('/api/docker/containers');
-      return containers.data;
-    },
+  const { data, refetch } = api.docker.containers.useQuery(undefined, {
     enabled: dockerEnabled,
   });
   useHotkeys([['mod+B', () => setOpened(!opened)]]);
 
   const { t } = useTranslation('modules/docker');
-
-  useEffect(() => {
-    refetch();
-  }, [config?.settings]);
 
   const reload = () => {
     refetch();
@@ -64,7 +54,7 @@ export default function DockerMenuButton(props: any) {
           },
         }}
       >
-        <DockerTable containers={data} selection={selection} setSelection={setSelection} />
+        <DockerTable containers={data ?? []} selection={selection} setSelection={setSelection} />
       </Drawer>
       <Tooltip label={t('actionIcon.tooltip')}>
         <ActionIcon
