@@ -11,32 +11,32 @@
         "label": "הרשאה למסך מלא"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "אפשר שקיפות"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "אפשר גלילה"
       },
       "allowPayment": {
-        "label": ""
+        "label": "אפשר תשלום"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "אפשר הפעלה אוטומטית"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "אפשר מיקרופון"
       },
       "allowCamera": {
-        "label": ""
+        "label": "אפשר מצלמה"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "אפשר מיקום גיאוגרפי"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "קישור לא תקין",
         "text": "ודא שהזנת כתובת חוקית בתצורת הווידג'ט שלך"
       }
     }
