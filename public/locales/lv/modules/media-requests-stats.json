@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Multimediju pieprasījumu statistika",
     "description": "Statistika par jūsu mediju pieprasījumiem",
     "settings": {
-      "title": ""
+      "title": "Multimediju pieprasījumu statistika"
     }
   },
   "stats": {
