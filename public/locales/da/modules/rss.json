@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": "Farligt: Tillad renset genstands-indhold"
       },
-      "settings.textLinesClamp": {
-        "label": "Klemme til tekstlinjer"
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {
