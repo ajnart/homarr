@@ -3,6 +3,7 @@ import { appRouter } from './routers/app';
 import { rssRouter } from './routers/rss';
 import { configRouter } from './routers/config';
 import { dockerRouter } from './routers/docker/router';
+import { iconRouter } from './routers/icon';
 
 /**
  * This is the primary router for your server.
@@ -14,6 +15,7 @@ export const rootRouter = createTRPCRouter({
   rss: rssRouter,
   config: configRouter,
   docker: dockerRouter,
+  icon: iconRouter,
 });
 
 // export type definition of API
