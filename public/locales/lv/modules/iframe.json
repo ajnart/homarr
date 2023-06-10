@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Iegult jebkuru saturu no interneta. Dažas vietnes var ierobežot piekļuvi.",
     "settings": {
-      "title": "",
+      "title": "iFrame iestatījumi",
       "embedUrl": {
-        "label": ""
+        "label": "Iegult URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Atļaut pilnekrāna režīmu"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Atļaut caurspīdīgumu"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Atļaut ritināšanu"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Atļaut maksājumus"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Atļaut automātisko atskaņošanu"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Atļaut piekļuvi mikrofonam"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Atļaut piekļuvi kamerai"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Atļaut ģeogrāfiskās atrašanās vietas noteikšanu"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Nederīgs URL",
+        "text": "Pārliecinieties, ka jūsu logrīka konfigurācijā ir ievadīta derīga adrese"
       }
     }
   }
