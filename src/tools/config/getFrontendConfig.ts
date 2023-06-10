@@ -1,10 +1,19 @@
 import Consola from 'consola';
-
-import { ConfigType } from '../../types/config';
+import fs from 'fs';
+import { BackendConfigType, ConfigType } from '../../types/config';
 import { getConfig } from './getConfig';
+import { fetchCity } from '~/server/api/routers/weather';
 
-export const getFrontendConfig = (name: string): ConfigType => {
-  const config = getConfig(name);
+export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
+  let config = getConfig(name);
+
+  const anyWeatherWidgetWithStringLocation = config.widgets.some(
+    (widget) => widget.type === 'weather' && typeof widget.properties.location === 'string'
+  );
+
+  if (anyWeatherWidgetWithStringLocation) {
+    config = await migrateLocation(config);
+  }
 
   Consola.info(`Requested frontend content of configuration '${name}'`);
   // If not, return the config
@@ -40,4 +49,40 @@ export const getFrontendConfig = (name: string): ConfigType => {
       },
     })),
   };
+};
+
+const migrateLocation = async (config: BackendConfigType) => {
+  Consola.log('Migrating config file to new location schema...', config.configProperties.name);
+
+  const configName = config.configProperties.name;
+  const migratedConfig = {
+    ...config,
+    widgets: await Promise.all(
+      config.widgets.map(async (widget) =>
+        widget.type !== 'weather' || typeof widget.properties.location !== 'string'
+          ? widget
+          : {
+              ...widget,
+              properties: {
+                ...widget.properties,
+                location: await fetchCity(widget.properties.location)
+                  .then(({ results }) => ({
+                    name: results[0].name,
+                    latitude: results[0].latitude,
+                    longitude: results[0].longitude,
+                  }))
+                  .catch(() => ({
+                    name: '',
+                    latitude: 0,
+                    longitude: 0,
+                  })),
+              },
+            }
+      )
+    ),
+  };
+
+  fs.writeFileSync(`./data/configs/${configName}.json`, JSON.stringify(migratedConfig, null, 2));
+
+  return migratedConfig;
 };

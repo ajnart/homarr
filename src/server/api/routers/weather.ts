@@ -34,10 +34,7 @@ export const weatherRouter = createTRPCRouter({
         results: z.array(citySchema),
       })
     )
-    .query(async ({ input }) => {
-      const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${input.query}`);
-      return res.json();
-    }),
+    .query(async ({ input }) => fetchCity(input.query)),
   at: publicProcedure
     .input(
       z.object({
@@ -56,3 +53,12 @@ export const weatherRouter = createTRPCRouter({
 
 export type City = z.infer<typeof citySchema>;
 export type Weather = z.infer<typeof weatherSchema>;
+
+const outputSchema = z.object({
+  results: z.array(citySchema),
+});
+
+export const fetchCity = async (query: string) => {
+  const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${query}`);
+  return outputSchema.parse(await res.json());
+};
