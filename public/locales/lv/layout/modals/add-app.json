@@ -1,76 +1,76 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
-		"network": "",
-		"appearance": "",
-		"integration": ""
+		"general": "Vispārīgi",
+		"behaviour": "Uzvedība",
+		"network": "Tīkls",
+		"appearance": "Izskats",
+		"integration": "Integrācija"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Lietotnes nosaukums",
+			"description": "Izmanto, lai parādītu lietotni uz vadības paneļa."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Iekšējā adrese",
+			"description": "Lietotnes iekšējā IP adrese."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Ārējā adrese",
+			"description": "URL, kas tiks atvērts, noklikšķinot uz lietotnes."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Atvērt jaunā cilnē",
+			"description": "Atveriet lietotni jaunā cilnē, nevis pašreizējā cilnē."
 		}
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Stāvokļa pārbaudītājs",
+			"description": "Pārbauda, vai lietotne ir tiešsaistē, izmantojot vienkāršu HTTP(S) pieprasījumu."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP statusa kods",
+			"description": "HTTP statusa kodi, kas tiek uzskatīti par tiešsaistes statusa kodiem."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": "",
+			"label": "Lietotnes Ikona",
+			"description": "Sāciet rakstīt, lai atrastu ikonu. Varat arī ielīmēt attēla URL, lai izmantotu pielāgotu ikonu.",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Nav atrasts neviens rezultāts",
+				"text": "Mēģiniet izmantot konkrētāku meklēšanas terminu. Ja nevarat atrast vēlamo ikonu, ielīmējiet iepriekš norādīto attēla URL, lai iegūtu pielāgotu ikonu"
 			},
 			"noItems": {
 				"title": "",
-				"text": ""
+				"text": "Tas var aizņemt dažas sekundes"
 			}
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
+			"label": "Integrācijas konfigurācija",
 			"description": "",
-			"placeholder": "",
+			"placeholder": "Izvēlieties integrāciju",
 			"defined": "",
 			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
+			"public": "Publisks",
+			"private": "Privāts",
+			"explanationPrivate": "Privātais noslēpums uz serveri tiks nosūtīts tikai vienu reizi. Pēc tam, kad pārlūkprogramma būs atsvaidzinājusi lapu, tas nekad netiks nosūtīts vēlreiz.",
 			"explanationPublic": ""
 		},
 		"secrets": {
 			"description": "",
 			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"clear": "Notīrīt noslēpumu",
+			"save": "Saglabāt noslēpumu",
+			"update": "Atjaunināt noslēpumu"
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "Jūsu veidlapā ir nederīgi dati. Tāpēc to nevar saglabāt. Lūdzu, atrisiniet visas problēmas un vēlreiz noklikšķiniet uz šīs pogas, lai saglabātu izmaiņas"
 	}
 }
