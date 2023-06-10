@@ -1,7 +1,6 @@
-import axios from 'axios';
 import { create } from 'zustand';
+import { trcpProxyClient } from '~/utils/api';
 import { ConfigType } from '../types/config';
-import { api, trcpProxyClient } from '~/utils/api';
 
 export const useConfigStore = create<UseConfigStoreType>((set, get) => ({
   configs: [],
