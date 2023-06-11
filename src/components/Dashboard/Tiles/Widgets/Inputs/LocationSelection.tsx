@@ -38,7 +38,7 @@ export const LocationSelection = ({
   const [query, setQuery] = useState(value.name ?? '');
   const [opened, { open, close }] = useDisclosure(false);
   const selectionEnabled = query.length > 1;
-  const EMPTY_LOCATION = t('form.empty');
+  const emptyLocation = t('form.empty');
 
   const onCitySelected = (city: City) => {
     close();
@@ -89,14 +89,14 @@ export const LocationSelection = ({
           <Group grow>
             <NumberInput
               value={value.latitude}
-              onChange={(v) => {
-                if (typeof v !== 'number') return;
+              onChange={(inputValue) => {
+                if (typeof inputValue !== 'number') return;
                 handleChange(key, {
                   ...value,
-                  name: EMPTY_LOCATION,
-                  latitude: v,
+                  name: emptyLocation,
+                  latitude: inputValue,
                 });
-                setQuery(EMPTY_LOCATION);
+                setQuery(emptyLocation);
               }}
               precision={5}
               label={t('form.field.latitude')}
@@ -104,14 +104,14 @@ export const LocationSelection = ({
             />
             <NumberInput
               value={value.longitude}
-              onChange={(v) => {
-                if (typeof v !== 'number') return;
+              onChange={(inputValue) => {
+                if (typeof inputValue !== 'number') return;
                 handleChange(key, {
                   ...value,
-                  name: EMPTY_LOCATION,
-                  longitude: v,
+                  name: emptyLocation,
+                  longitude: inputValue,
                 });
-                setQuery(EMPTY_LOCATION);
+                setQuery(emptyLocation);
               }}
               precision={5}
               label={t('form.field.longitude')}
