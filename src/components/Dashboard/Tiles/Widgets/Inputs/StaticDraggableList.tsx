@@ -76,6 +76,7 @@ export const StaticDraggableList: FC<StaticDraggableListParams> = (props) => {
 const ListItem: FC<{
   item: IDraggableListInputValue['defaultValue'][number];
   label: string;
+  children?: ReactNode;
 }> = (props) => {
   const { classes, cx } = useStyles();
   const controls = useDragControls();
