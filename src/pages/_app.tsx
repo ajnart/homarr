@@ -36,7 +36,15 @@ import '../styles/global.scss';
 import nextI18nextConfig from '../../next-i18next.config';
 import { api } from '~/utils/api';
 
-function App(props: AppProps & { colorScheme: ColorScheme }) {
+function App(
+  this: any,
+  props: AppProps<{
+    colorScheme: ColorScheme;
+    packageAttributes: ServerSidePackageAttributesType;
+    editModeEnabled: boolean;
+    defaultColorScheme: ColorScheme;
+  }>
+) {
   const { Component, pageProps } = props;
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
