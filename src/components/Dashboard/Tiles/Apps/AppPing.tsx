@@ -24,18 +24,6 @@ export const AppPing = ({ app }: AppPingProps) => {
     } && ${config?.settings.customization.layout.enabledPing}]`
   );
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['ping', { id: app.id, name: app.name }],
-    queryFn: async () => {
-      const response = await fetch(`/api/modules/ping?url=${encodeURI(app.url)}`);
-      const isOk = getIsOk(app, response.status);
-      return {
-        status: response.status,
-        state: isOk ? 'online' : 'down',
-      };
-    },
-    enabled: active,
-  });
   const { data, isLoading, error } = usePingQuery(app, active);
 
   const isOnline = data?.state === 'online';

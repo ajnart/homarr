@@ -3,17 +3,19 @@ import { IconInfoCircle } from '@tabler/icons-react';
 import { BaseSyntheticEvent } from 'react';
 import { useConfigStore } from '../../../../config/store';
 import { useConfigContext } from '../../../../config/provider';
+import { useTranslation } from 'react-i18next';
 
 export const AccessibilitySettings = () => {
+  const { t } = useTranslation('settings/customization/accessibility');
   const { updateConfig } = useConfigStore();
   const { config, name: configName } = useConfigContext();
 
   return (
     <Stack>
       <Switch
-        label="Disable ping pulse"
-        description="By default, ping indicators in Homarr will pulse. This may be irritating. This slider will deactivate the animation"
-        defaultChecked={config?.settings.customization.accessibility.disablePingPulse ?? false}
+        label={t('disablePulse.label')}
+        description={t('disablePulse.description')}
+        defaultChecked={config?.settings.customization.accessibility?.disablePingPulse ?? false}
         onChange={(value: BaseSyntheticEvent) => {
           if (!configName) {
             return;
@@ -41,9 +43,9 @@ export const AccessibilitySettings = () => {
       />
 
       <Switch
-        label="Replace ping dots with icons"
-        description="For colorblind users, ping dots may be unrecognizable. This will replace indicators with icons"
-        defaultChecked={config?.settings.customization.accessibility.disablePingPulse ?? false}
+        label={t('replaceIconsWithDots.label')}
+        description={t('replaceIconsWithDots.description')}
+        defaultChecked={config?.settings.customization.accessibility?.disablePingPulse ?? false}
         onChange={(value: BaseSyntheticEvent) => {
           if (!configName) {
             return;
@@ -71,7 +73,7 @@ export const AccessibilitySettings = () => {
       />
 
       <Alert icon={<IconInfoCircle size="1rem" />} color="blue">
-        Are you missing something? We&apos;ll gladly extend the accessibility of Homarr.
+        {t('alert')}
       </Alert>
     </Stack>
   );
