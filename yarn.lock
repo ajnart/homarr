@@ -1770,28 +1770,28 @@ __metadata:
   linkType: hard
 
 "@tanstack/react-query-devtools@npm:^4.24.4":
-  version: 4.29.12
-  resolution: "@tanstack/react-query-devtools@npm:4.29.12"
+  version: 4.29.13
+  resolution: "@tanstack/react-query-devtools@npm:4.29.13"
   dependencies:
     "@tanstack/match-sorter-utils": ^8.7.0
     superjson: ^1.10.0
     use-sync-external-store: ^1.2.0
   peerDependencies:
-    "@tanstack/react-query": 4.29.12
+    "@tanstack/react-query": 4.29.13
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 095c1f0fb8e6573e08331a6512f4dda38a1ff4f2e5958fed7abc45ede3f2027142ab934247bb9ea04d47255dcb502810f1db335d4b4123a3dcb4087f26fda920
+  checksum: 13ab17fdbefb08b45eec8e1f1753e6458423cbfa134665597ab28dd63b6286987d91d2a4dee82e5aac72a7ef087716e4e8dbbe1969d98cf8788dcfb117ea4c46
   languageName: node
   linkType: hard
 
 "@tanstack/react-query-persist-client@npm:^4.28.0":
-  version: 4.29.12
-  resolution: "@tanstack/react-query-persist-client@npm:4.29.12"
+  version: 4.29.13
+  resolution: "@tanstack/react-query-persist-client@npm:4.29.13"
   dependencies:
     "@tanstack/query-persist-client-core": 4.29.11
   peerDependencies:
-    "@tanstack/react-query": 4.29.12
-  checksum: 3d7cf57ce29d6e599dd7a942da0298e8ef9b7c3a363361c6bedc26566556f26c9aa9e644f26b8fec7f3a66bab143f61ffc11170d192a4c2d4c1bedd2fbc5279f
+    "@tanstack/react-query": 4.29.13
+  checksum: 360e006a891dee4d6d76bcc65f8c3456f53d4113f248a5057d790a15181218bd707d8602004a46fa17f0f65f84ccaa5533b6d08777a2d1593ddb5f5bb2266f80
   languageName: node
   linkType: hard
 
