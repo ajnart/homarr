@@ -12,10 +12,10 @@
         "label": "Interval obnovovania (v minútach)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Nebezpečné: Povoľte sanitizovaný obsah položky"
+        "label": ""
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Svorka textových riadkov"
       }
     },
     "card": {

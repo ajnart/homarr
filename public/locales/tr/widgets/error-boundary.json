@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "Beklenmeyen bir hata oluştu. Lütfen yapılandırmanızı kontrol edin. Bunun bir hata olduğunu düşünüyorsanız lütfen bu sorunu bildirin.",
+    "text": "",
     "label": "Karşılaştığın Hata",
     "reportButton": "Hatayı bildir"
   }

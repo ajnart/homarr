@@ -1,38 +1,38 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Iestatījumi",
+  "tooltip": "Iestatījumi",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Kopīgais",
+    "customizations": "Pielāgojumi"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Augšupielādējiet konfigurācijas failu, velkot un nometot to uz lapas!"
   },
   "credits": {
-    "madeWithLove": "",
-    "thirdPartyContent": "",
+    "madeWithLove": "Ar ❤️ izstrādājis @",
+    "thirdPartyContent": "Skatiet trešo pušu saturu",
     "thirdPartyContentTable": {
-      "dependencyName": "",
-      "dependencyVersion": ""
+      "dependencyName": "Atkarība",
+      "dependencyVersion": "Versija"
     }
   },
-  "grow": "",
+  "grow": "Palielināt režģi (aizņemt visu vietu)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Priekšskatījums",
+      "subtitle": "Izmaiņas tiks saglabātas automātiski"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "Izkārtojuma konfigurācija",
+    "main": "Galvenais",
+    "sidebar": "Sānu josla",
+    "cannotturnoff": "Nevar izslēgt",
+    "dashboardlayout": "Informācijas paneļa izkārtojums",
+    "enablersidebar": "Ieslēgt labo sānu joslu",
+    "enablelsidebar": "Ieslēgt kreiso sānu joslu",
+    "enablesearchbar": "Ieslēgt meklēšanas joslu",
+    "enabledocker": "Iespējot docker integrāciju",
+    "enableping": "Iespējot ping",
+    "enablelsidebardesc": "Pēc izvēles. Var izmantot tikai lietotnēm un integrācijām",
+    "enablersidebardesc": "Pēc izvēles. Var izmantot tikai lietotnēm un integrācijām"
   }
 }

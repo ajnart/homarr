@@ -11,32 +11,32 @@
         "label": "Consenti schermo intero"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Consenti trasparenza"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Consenti scorrimento"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Consenti pagamento"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Consenti riproduzione automatica"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Consenti microfono"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Consenti fotocamera"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Consenti geo-localizzazione"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "URL invalido",
         "text": "Assicurarsi di aver inserito un indirizzo valido nella configurazione del widget"
       }
     }

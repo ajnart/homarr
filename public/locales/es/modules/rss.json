@@ -15,7 +15,7 @@
         "label": ""
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Limitar líneas de texto"
       }
     },
     "card": {

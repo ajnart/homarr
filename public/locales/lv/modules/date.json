@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Datums un Laiks",
+    "description": "Rāda pašreizējo datumu un laiku.",
     "settings": {
-      "title": "",
+      "title": "Datuma un Laika logrīka iestatījumi",
       "display24HourFormat": {
-        "label": ""
+        "label": "Rādīt pilnu laiku (24 stundu)"
       }
     }
   }

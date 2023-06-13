@@ -1,18 +1,18 @@
 {
-	"description": "",
-	"contact": "",
-	"addToDashboard": "",
-	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
+	"description": "Homarr ir <strong>slaiks</strong>, <strong>mūsdienīgs</strong> vadības panelis, kurā visas jūsu lietotnes un pakalpojumi ir pieejami rokas stiepiena attālumā. Izmantojot Homarr, varat piekļūt un kontrolēt visu vienuviet ērtā veidā. Homarr nevainojami integrējas ar jūsu pievienotajām lietotnēm, sniedzot jums vērtīgu informāciju un nodrošinot pilnīgu kontroli. Instalēšana ir vienkārša, un Homarr atbalsta dažādas izvietošanas metodes.",
+	"contact": "Ir problēmas vai jautājumi? Sazinieties ar mums!",
+	"addToDashboard": "Pievienot Informācijas panelim",
+	"tip": "Mod attiecas uz modifikatora taustiņu, tas ir Ctrl un Command/Super/Windows taustiņš",
+	"key": "Īsinājumtaustiņš",
+	"action": "Darbība",
+	"keybinds": "Taustiņu saites",
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
-		"version": "",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
-		"experimental_disableEditMode": ""
+		"configurationSchemaVersion": "Konfigurācijas shēmas versija",
+		"configurationsCount": "Pieejamās konfigurācijas",
+		"version": "Versija",
+		"nodeEnvironment": "Mezgla vide",
+		"i18n": "Ielādētās I18n tulkojumu vārdšķiras",
+		"locales": "Konfigurētās I18n lokalizācijas",
+		"experimental_disableEditMode": "<b>EKSPERIMENTĀLISKI</b>: Izslēgt rediģēšanas režīmu"
 	}
 }

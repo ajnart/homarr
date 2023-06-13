@@ -1,33 +1,33 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Laikapstākļi",
+    "description": "Rāda pašreizējo laikapstākļu informāciju par iestatīto atrašanās vietu.",
     "settings": {
-      "title": "",
+      "title": "Laikapstākļu logrīka iestatījumi",
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Rādīt pēc Fārenheita"
       },
       "location": {
-        "label": ""
+        "label": "Laikapstākļu atrašānās vieta"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
-      "unknown": ""
+      "clear": "Skaidrs",
+      "mainlyClear": "Galvenokārt skaidrs",
+      "fog": "Migla",
+      "drizzle": "Smidzinošs lietus",
+      "freezingDrizzle": "Smidzinošs ledus",
+      "rain": "Lietus",
+      "freezingRain": "Ledus lietus",
+      "snowFall": "Gāziensnidze",
+      "snowGrains": "Sniega graudi",
+      "rainShowers": "Lietusgāzes",
+      "snowShowers": "Sniegputenis",
+      "thunderstorm": "Pērkona negaiss",
+      "thunderstormWithHail": "Pērkona negaiss ar krusu",
+      "unknown": "Nezināms"
     }
   }
 }

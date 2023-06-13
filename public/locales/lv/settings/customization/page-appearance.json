@@ -1,30 +1,30 @@
 {
   "pageTitle": {
-    "label": "",
-    "description": ""
+    "label": "Lapas Virsraksts",
+    "description": "Informācijas paneļa virsraksts kreisajā augšējā stūrī"
   },
   "metaTitle": {
-    "label": "",
-    "description": ""
+    "label": "Meta Virsraksts",
+    "description": "Pārlūkprogrammas cilnē redzamais nosaukums"
   },
   "logo": {
-    "label": "",
-    "description": ""
+    "label": "Logotips",
+    "description": "Logotips, kas redzams augšējā kreisajā stūrī"
   },
   "favicon": {
-    "label": "",
-    "description": ""
+    "label": "Favicon",
+    "description": "Pārlūkprogrammas cilnē redzamā ikona"
   },
   "background": {
-    "label": ""
+    "label": "Fons"
   },
   "customCSS": {
-    "label": "",
-    "description": "",
-    "placeholder": "",
-    "applying": ""
+    "label": "Pielāgotais CSS",
+    "description": "Turklāt pielāgojiet paneli, izmantojot CSS, ieteicams tikai pieredzējušiem lietotājiem",
+    "placeholder": "Pielāgotais CSS tiks piemērots pēdējais",
+    "applying": "CSS piemērošana..."
   },
   "buttons": {
-    "submit": ""
+    "submit": "Iesniegt"
   }
 }
