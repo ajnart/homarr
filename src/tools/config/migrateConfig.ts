@@ -2,13 +2,11 @@ import Consola from 'consola';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { Config, serviceItem } from '../types';
 import { ConfigAppIntegrationType, ConfigAppType, IntegrationType } from '../../types/app';
 import { AreaType } from '../../types/area';
 import { CategoryType } from '../../types/category';
 import { BackendConfigType } from '../../types/config';
 import { SearchEngineCommonSettingsType } from '../../types/settings';
-import { IWidget } from '../../widgets/widgets';
 import { ICalendarWidget } from '../../widgets/calendar/CalendarTile';
 import { IDashDotTile } from '../../widgets/dashDot/DashDotTile';
 import { IDateWidget } from '../../widgets/date/DateTile';
@@ -16,6 +14,8 @@ import { ITorrentNetworkTraffic } from '../../widgets/download-speed/TorrentNetw
 import { ITorrent } from '../../widgets/torrent/TorrentTile';
 import { IUsenetWidget } from '../../widgets/useNet/UseNetTile';
 import { IWeatherWidget } from '../../widgets/weather/WeatherTile';
+import { IWidget } from '../../widgets/widgets';
+import { Config, serviceItem } from '../types';
 
 export function migrateConfig(config: Config): BackendConfigType {
   const newConfig: BackendConfigType = {
@@ -208,7 +208,11 @@ const migrateModules = (config: Config): IWidget<string, any>[] => {
             type: 'weather',
             properties: {
               displayInFahrenheit: oldModule.options?.freedomunit?.value ?? false,
-              location: oldModule.options?.location?.value ?? 'Paris',
+              location: {
+                name: oldModule.options?.location?.value ?? '',
+                latitude: 0,
+                longitude: 0,
+              },
             },
             area: {
               type: 'wrapper',

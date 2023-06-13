@@ -1,9 +1,9 @@
 import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconArrowDownRight, IconArrowUpRight, IconCloudRain } from '@tabler/icons-react';
+import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { useWeatherForCity } from './useWeatherForCity';
 import { WeatherIcon } from './WeatherIcon';
 
 const definition = defineWidget({
@@ -15,8 +15,12 @@ const definition = defineWidget({
       defaultValue: false,
     },
     location: {
-      type: 'text',
-      defaultValue: 'Paris',
+      type: 'location',
+      defaultValue: {
+        name: 'Paris',
+        latitude: 48.85341,
+        longitude: 2.3488,
+      },
     },
   },
   gridstack: {
@@ -35,8 +39,8 @@ interface WeatherTileProps {
 }
 
 function WeatherTile({ widget }: WeatherTileProps) {
-  const { data: weather, isLoading, isError } = useWeatherForCity(widget.properties.location);
-  const { width, height, ref } = useElementSize();
+  const { data: weather, isLoading, isError } = api.weather.at.useQuery(widget.properties.location);
+  const { width, ref } = useElementSize();
 
   if (isLoading) {
     return (
@@ -77,10 +81,10 @@ function WeatherTile({ widget }: WeatherTileProps) {
       style={{ height: '100%', width: '100%' }}
     >
       <Group align="center" position="center" spacing="xs">
-        <WeatherIcon code={weather!.current_weather.weathercode} />
+        <WeatherIcon code={weather.current_weather.weathercode} />
         <Title>
           {getPerferedUnit(
-            weather!.current_weather.temperature,
+            weather.current_weather.temperature,
             widget.properties.displayInFahrenheit
           )}
         </Title>
@@ -89,12 +93,12 @@ function WeatherTile({ widget }: WeatherTileProps) {
         <Group noWrap spacing="xs">
           <IconArrowUpRight />
           {getPerferedUnit(
-            weather!.daily.temperature_2m_max[0],
+            weather.daily.temperature_2m_max[0],
             widget.properties.displayInFahrenheit
           )}
           <IconArrowDownRight />
           {getPerferedUnit(
-            weather!.daily.temperature_2m_min[0],
+            weather.daily.temperature_2m_min[0],
             widget.properties.displayInFahrenheit
           )}
         </Group>
