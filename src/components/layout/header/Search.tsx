@@ -171,7 +171,7 @@ export function Search() {
           <Autocomplete
             ref={textInput}
             onFocusCapture={() => setOpened(true)}
-            autoFocus
+            autoFocus={typeof window !== 'undefined' && window.innerWidth > 768}
             rightSection={<SearchModuleMenu />}
             placeholder={t(`searchEngines.${selectedSearchEngine.value}.description`) ?? undefined}
             value={searchQuery}
