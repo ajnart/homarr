@@ -1,12 +1,14 @@
-import { useQuery } from '@tanstack/react-query';
-import { NormalizedDownloadQueueResponse } from '../../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
+import { useConfigContext } from '~/config/provider';
+import { api } from '~/utils/api';
 
-export const useGetDownloadClientsQueue = () =>
-  useQuery({
-    queryKey: ['network-speed'],
-    queryFn: async (): Promise<NormalizedDownloadQueueResponse> => {
-      const response = await fetch('/api/modules/downloads');
-      return response.json();
+export const useGetDownloadClientsQueue = () => {
+  const { name: configName } = useConfigContext();
+  return api.download.get.useQuery(
+    {
+      configName: configName!,
     },
-    refetchInterval: 3000,
-  });
+    {
+      refetchInterval: 3000,
+    }
+  );
+};

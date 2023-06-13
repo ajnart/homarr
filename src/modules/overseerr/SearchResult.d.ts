@@ -56,10 +56,7 @@ export interface MediaInfo {
   mediaUrl?: string;
 }
 
-export enum MediaType {
-  Movie = 'movie',
-  Tv = 'tv',
-}
+export type MediaType = 'movie' | 'tv';
 
 export enum OriginalLanguage {
   En = 'en',

@@ -1,79 +1,79 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrents",
+    "description": "Tiek parādīts atbalstīto Torrent klientu torrentu saraksts.",
     "settings": {
-      "title": "",
+      "title": "Torrent logrīka iestatījumi",
       "refreshInterval": {
-        "label": ""
+        "label": "Atjaunošanas intervāls (sekundēs)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Rādīt pabeigtos torrentus"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Rādīt novecojušus torrentus"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Etiķešu saraksts ir baltais saraksts (nevis melnais saraksts)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Iezīmju saraksts",
+        "description": "Ja ir atzīmēts 'ir baltais saraksts', tas darbosies kā baltais saraksts. Ja nav atzīmēts, šis ir melnais saraksts. Ja ir tukšs, tas neko nedarīs"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "",
-      "lastUpdated": ""
+      "error": "Kļūda",
+      "lastUpdated": "Pēdējo reizi atjaunināts pirms {{time}}"
     },
     "table": {
       "header": {
-        "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "name": "Nosaukums",
+        "size": "Lielums",
+        "download": "Lejupielāde",
+        "upload": "Augšupielāde",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progress"
       },
       "item": {
-        "text": ""
+        "text": "Pārvalda {{appName}}, {{ratio}} attiecība"
       },
       "body": {
-        "nothingFound": "",
-        "filterHidingItems": ""
+        "nothingFound": "Netika atrasti torrenti",
+        "filterHidingItems": "{{count}} ieraksti ir paslēpti ar jūsu filtriem"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Pašreizējais lejupielādes ātrums",
+      "download": "Lejupielāde: {{download}}",
+      "upload": "Augšupielāde: {{upload}}",
+      "timeSpan": "pirms {{seconds}} sekundēm",
+      "totalDownload": "Lejupielāde: {{download}}/s",
+      "totalUpload": "Augšupielāde: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Netika atrasts neviens atbalstīts Torrent klients!",
+        "text": "Pievienojiet atbalstītu Torrent klientu, lai skatītu pašreizējās lejupielādes"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Radās neparedzēta kļūda",
+        "text": "Homarr neizdevās sazināties ar jūsu Torrent klientiem. Lūdzu, pārbaudiet savu konfigurāciju"
       }
     },
     "loading": {
-      "title": ""
+      "title": "Notiek ielāde..."
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Pārvalda",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Rindas pozīcija - {{position}}",
+        "progress": "Progress - {{progress}}%",
+        "totalSelectedSize": "Kopā - {{totalSize}}",
+        "state": "Stāvoklis - {{state}}",
+        "ratio": "Attiecība -",
+        "completed": "Pabeigts"
       }
     }
   }

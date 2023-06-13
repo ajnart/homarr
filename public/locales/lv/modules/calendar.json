@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Kalendārs",
+    "description": "Tiek parādīts kalendārs ar gaidāmajām pirmizrādēm no atbalstītajām integrācijām.",
     "settings": {
-      "title": "",
+      "title": "Kalendāra logrīka iestatījumi",
       "useSonarrv4": {
-        "label": ""
+        "label": "Izmantot Sonarr v4 API"
       },
       "sundayStart": {
-        "label": ""
+        "label": "Sākt nedēļu ar pirmdienu"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Radarr laiduma tips"
       }
     }
   }

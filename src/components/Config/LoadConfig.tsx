@@ -4,18 +4,20 @@ import { showNotification } from '@mantine/notifications';
 import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@tabler/icons-react';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import { useConfigStore } from '../../config/store';
 import { ConfigType } from '../../types/config';
+import { api } from '~/utils/api';
 
 export const LoadConfigComponent = () => {
-  const { addConfig } = useConfigStore();
   const theme = useMantineTheme();
   const { t } = useTranslation('settings/general/config-changer');
+  const { mutateAsync: loadAsync } = useLoadConfig();
 
   return (
     <Dropzone.FullScreen
       onDrop={async (files) => {
-        const fileName = files[0].name.replaceAll('.json', '');
+        const configName = files[0].name.replaceAll('.json', '');
         const fileText = await files[0].text();
 
         try {
@@ -32,26 +34,7 @@ export const LoadConfigComponent = () => {
         }
 
         const newConfig: ConfigType = JSON.parse(fileText);
-
-        await addConfig(fileName, newConfig, true);
-        showNotification({
-          autoClose: 5000,
-          radius: 'md',
-          title: (
-            <Text>
-              {t('dropzone.notifications.loadedSuccessfully.title', {
-                configName: fileName,
-              })}
-            </Text>
-          ),
-          color: 'green',
-          icon: <Check />,
-          message: undefined,
-        });
-        setCookie('config-name', fileName, {
-          maxAge: 60 * 60 * 24 * 30,
-          sameSite: 'strict',
-        });
+        await loadAsync({ name: configName, config: newConfig });
       }}
       accept={['application/json']}
     >
@@ -88,4 +71,35 @@ export const LoadConfigComponent = () => {
       </Group>
     </Dropzone.FullScreen>
   );
+};
+
+const useLoadConfig = () => {
+  const { t } = useTranslation('settings/general/config-changer');
+  const { addConfig } = useConfigStore();
+  const router = useRouter();
+  return api.config.save.useMutation({
+    async onSuccess(_data, variables) {
+      await addConfig(variables.name, variables.config);
+
+      showNotification({
+        autoClose: 5000,
+        radius: 'md',
+        title: (
+          <Text>
+            {t('dropzone.notifications.loadedSuccessfully.title', {
+              configName: variables.name,
+            })}
+          </Text>
+        ),
+        color: 'green',
+        icon: <Check />,
+        message: undefined,
+      });
+      setCookie('config-name', variables.name, {
+        maxAge: 60 * 60 * 24 * 30,
+        sameSite: 'strict',
+      });
+      router.push(`/${variables.name}`);
+    },
+  });
 };

@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "RSS logrīks",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "RSS logrīka iestatījumi",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "RSS avotu URL adreses",
+        "description": "RSS avotu URL adreses, kuras vēlaties rādīt."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Atsvaidzināšanas intervāls (minūtēs)"
       },
       "dangerousAllowSanitizedItemContent": {
         "label": ""
       },
-      "settings.textLinesClamp": {
-        "label": ""
+      "textLinesClamp": {
+        "label": "Teksta līniju skava"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Nav iespējams iegūt RSS plūsmu",
+          "text": "Radās problēma, sasniedzot RSS plūsmu. Pārliecinieties, ka esat pareizi konfigurējis RSS plūsmu, izmantojot derīgu URL. URL ir jāatbilst oficiālajai specifikācijai. Pēc plūsmas atjaunināšanas, iespējams, būs jāatjauno informācijas panelis."
         }
       }
     }

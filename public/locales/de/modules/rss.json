@@ -12,9 +12,9 @@
         "label": "Aktualisierungsintervall (in Minuten)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Vorsicht: Bereinigte Artikelinhalte zulassen"
+        "label": ""
       },
-      "settings.textLinesClamp": {
+      "textLinesClamp": {
         "label": "Textzeilen Klammer"
       }
     },

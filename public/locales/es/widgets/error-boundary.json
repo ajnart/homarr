@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "Hubo un error inesperado. Por favor, comprueba tu configuración, y repórtalo si crees que se trata de un error.",
+    "text": "",
     "label": "Tu error",
     "reportButton": "Reportar este error"
   }

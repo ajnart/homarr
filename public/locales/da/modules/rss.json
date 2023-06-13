@@ -12,9 +12,9 @@
         "label": "Opdateringsinterval (i minutter)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Farligt: Tillad renset genstands-indhold"
+        "label": ""
       },
-      "settings.textLinesClamp": {
+      "textLinesClamp": {
         "label": "Klemme til tekstlinjer"
       }
     },

@@ -44,6 +44,7 @@ export const dashboardNamespaces = [
   'modules/bookmark',
   'widgets/error-boundary',
   'widgets/draggable-list',
+  'widgets/location',
 ];
 
 export const loginNamespaces = ['authentication/login'];

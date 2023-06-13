@@ -1,4 +1,4 @@
-import { createStyles, Title, useMantineTheme, getStylesRef } from '@mantine/core';
+import { Title, createStyles, getStylesRef, useMantineTheme } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
@@ -11,7 +11,6 @@ interface DashDotGraphProps {
   dashDotUrl: string;
   usePercentages: boolean;
   info: DashDotInfo;
-  widgetId: string;
 }
 
 export const DashDotGraph = ({
@@ -22,13 +21,12 @@ export const DashDotGraph = ({
   dashDotUrl,
   usePercentages,
   info,
-  widgetId,
 }: DashDotGraphProps) => {
   const { t } = useTranslation('modules/dashdot');
   const { classes } = useStyles();
 
   if (graph === 'storage' && isCompact) {
-    return <DashDotCompactStorage info={info} widgetId={widgetId} />;
+    return <DashDotCompactStorage info={info} url={dashDotUrl} />;
   }
 
   if (graph === 'network' && isCompact) {

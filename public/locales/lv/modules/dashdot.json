@@ -1,117 +1,117 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Tiek parādīti ārējā Dash. grafiki Homarr iekšienē.",
     "settings": {
-      "title": "",
+      "title": "Dash. logrīka iestatījumi",
       "dashName": {
-        "label": ""
+        "label": "Dash. Nosaukums"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Rādīt procentus"
       },
       "columns": {
-        "label": ""
+        "label": "Rādīt kolonnas"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Grafiku augstums"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafiki (Secība)",
         "storage": {
-          "label": "",
+          "label": "Krātuve",
           "enabled": {
-            "label": ""
+            "label": "Rādīt logrīkā"
           },
           "span": {
-            "label": ""
+            "label": "Kolonnu diapazons"
           },
           "compactView": {
-            "label": ""
+            "label": "Rādīt kā tekstu (kompakts)"
           },
           "multiView": {
-            "label": ""
+            "label": "Rādīt kā vairāku disku skatu"
           }
         },
         "network": {
-          "label": "",
+          "label": "Tīkls",
           "enabled": {
-            "label": ""
+            "label": "Rādīt logrīkā"
           },
           "span": {
-            "label": ""
+            "label": "Kolonnu diapazons"
           },
           "compactView": {
-            "label": ""
+            "label": "Rādīt kā tekstu (kompakts)"
           }
         },
         "cpu": {
-          "label": "",
+          "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Rādīt logrīkā"
           },
           "span": {
-            "label": ""
+            "label": "Kolonnu diapazons"
           },
           "multiView": {
-            "label": ""
+            "label": "Rādīt kā vairāku kodolu skatu"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Rādīt logrīkā"
           },
           "span": {
-            "label": ""
+            "label": "Kolonnu diapazons"
           }
         },
         "gpu": {
-          "label": "",
+          "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Rādīt logrīkā"
           },
           "span": {
-            "label": ""
+            "label": "Kolonnu diapazons"
           }
         }
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Nav atrasts Dash. pakalpojums. Lūdzu, pievienojiet to savam Homarr panelim vai iestatiet Dash. URL moduļa opcijās",
+      "noInformation": "Nevar iegūt informāciju no Dash. - vai Jūs izmantojat jaunāko versiju?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Atklāta protokola pazemināšana",
+        "text": "Savienojumā ar jūsu Dash. instanci tiek izmantots HTTP. Tas ir drošības risks, jo HTTP nav šifrēts un uzbrucēji var ļaunprātīgi izmantot šo savienojumu. Pārliecinieties, ka Dash. izmanto HTTPS, vai pazeminiet Homarr uz HTTP (nav ieteicams)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Krātuve",
+        "label": "Krātuve:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Tīkls",
+        "label": "Tīkls:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Lejupielāde",
+          "upload": "Augšupielāde"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }

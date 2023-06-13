@@ -2,24 +2,24 @@ import {
   ActionIcon,
   Autocomplete,
   Box,
-  createStyles,
   Divider,
   Kbd,
   Menu,
   Popover,
   ScrollArea,
   Tooltip,
+  createStyles,
 } from '@mantine/core';
 import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/icons-react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../../config/provider';
-import { OverseerrMediaDisplay } from '../../../modules/common';
 import { IModule } from '../../../modules/ModuleTypes';
+import { OverseerrMediaDisplay } from '../../../modules/common';
 import { ConfigType } from '../../../types/config';
 import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
 import Tip from '../Tip';
@@ -141,26 +141,12 @@ export function Search() {
   const openTarget = getOpenTarget(config);
   const [opened, setOpened] = useState(false);
 
-  const {
-    data: OverseerrResults,
-    isLoading,
-    error,
-  } = useQuery(
-    ['overseerr', debounced],
-    async () => {
-      const res = await axios.get(`/api/modules/overseerr?query=${debounced}`);
-      return res.data.results ?? [];
-    },
-    {
-      enabled:
-        isOverseerrEnabled === true &&
-        selectedSearchEngine.value === 'overseerr' &&
-        debounced.length > 3,
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchInterval: false,
-    }
-  );
+  const isOverseerrSearchEnabled =
+    isOverseerrEnabled === true &&
+    selectedSearchEngine.value === 'overseerr' &&
+    debounced.length > 3;
+
+  const { data: overseerrResults } = useOverseerrSearchQuery(debounced, isOverseerrSearchEnabled);
 
   const isModuleEnabled = config?.settings.customization.layout.enabledSearchbar;
   if (!isModuleEnabled) {
@@ -173,7 +159,7 @@ export function Search() {
     <Box style={{ width: '100%', maxWidth: 400 }}>
       <Popover
         opened={
-          (OverseerrResults && OverseerrResults.length > 0 && opened && searchQuery.length > 3) ??
+          (overseerrResults && overseerrResults.length > 0 && opened && searchQuery.length > 3) ??
           false
         }
         position="bottom"
@@ -224,11 +210,11 @@ export function Search() {
         </Popover.Target>
         <Popover.Dropdown>
           <ScrollArea style={{ height: '80vh', maxWidth: '90vw' }} offsetScrollbars>
-            {OverseerrResults &&
-              OverseerrResults.slice(0, 4).map((result: any, index: number) => (
+            {overseerrResults &&
+              overseerrResults.slice(0, 4).map((result: any, index: number) => (
                 <React.Fragment key={index}>
                   <OverseerrMediaDisplay key={result.id} media={result} />
-                  {index < OverseerrResults.length - 1 && index < 3 && (
+                  {index < overseerrResults.length - 1 && index < 3 && (
                     <Divider variant="dashed" my="xs" />
                   )}
                 </React.Fragment>
@@ -311,4 +297,20 @@ const getOpenTarget = (config: ConfigType | undefined): '_blank' | '_self' => {
   }
 
   return config.settings.common.searchEngine.properties.openInNewTab ? '_blank' : '_self';
+};
+
+const useOverseerrSearchQuery = (query: string, isEnabled: boolean) => {
+  const { name: configName } = useConfigContext();
+  return api.overseerr.all.useQuery(
+    {
+      query,
+      configName: configName!,
+    },
+    {
+      enabled: isEnabled,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchInterval: false,
+    }
+  );
 };

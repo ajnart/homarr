@@ -13,14 +13,13 @@ import {
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconAlertCircle } from '@tabler/icons-react';
-import { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
 import { useGetUsenetHistory } from '../../hooks/widgets/dashDot/api';
-import { humanFileSize } from '../../tools/humanFileSize';
 import { parseDuration } from '../../tools/client/parseDuration';
+import { humanFileSize } from '../../tools/humanFileSize';
 
 dayjs.extend(duration);
 
@@ -65,7 +64,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
         >
           {t('modules/usenet:history.error.message')}
           <Code mt="sm" block>
-            {(error as AxiosError)?.response?.data as string}
+            {error.message}
           </Code>
         </Alert>
       </Group>

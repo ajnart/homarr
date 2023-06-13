@@ -26,6 +26,7 @@ import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
 import { DraggableList } from './Inputs/DraggableList';
+import { LocationSelection } from './Inputs/LocationSelection';
 import { StaticDraggableList } from './Inputs/StaticDraggableList';
 
 export type WidgetEditModalInnerProps = {
@@ -35,7 +36,7 @@ export type WidgetEditModalInnerProps = {
   widgetOptions: IWidget<string, any>['properties'];
 };
 
-type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
+export type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
 
 export const WidgetsEditModal = ({
   context,
@@ -200,6 +201,16 @@ const WidgetOptionTypeSwitch: FC<{
           />
         </Stack>
       );
+    case 'location':
+      return (
+        <LocationSelection
+          propName={key}
+          value={value}
+          handleChange={handleChange}
+          widgetId={widgetId}
+        />
+      );
+
     case 'draggable-list':
       /* eslint-disable no-case-declarations */
       const typedVal = value as IDraggableListInputValue['defaultValue'];
