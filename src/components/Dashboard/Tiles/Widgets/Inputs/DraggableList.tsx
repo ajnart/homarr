@@ -3,6 +3,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons-react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
+
 import { IDraggableEditableListInputValue } from '../../../../../widgets/widgets';
 
 interface DraggableListProps {
@@ -47,6 +48,7 @@ export const DraggableList = ({ items, value, onChange, options }: DraggableList
 const ListItem: FC<{
   item: any;
   label: string | JSX.Element;
+  children: JSX.Element;
 }> = ({ item, label, children }) => {
   const [opened, handlers] = useDisclosure(false);
   const { classes, cx } = useStyles();

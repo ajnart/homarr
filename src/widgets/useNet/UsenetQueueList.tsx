@@ -20,6 +20,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
+
 import { useGetUsenetDownloads } from '../../hooks/widgets/dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 
@@ -69,7 +70,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
         >
           {t('queue.error.message')}
           <Code mt="sm" block>
-            {error.data}
+            {error.message}
           </Code>
         </Alert>
       </Group>

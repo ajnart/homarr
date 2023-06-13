@@ -46,6 +46,7 @@ function App(
   }>
 ) {
   const { Component, pageProps } = props;
+
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
   const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(6);
