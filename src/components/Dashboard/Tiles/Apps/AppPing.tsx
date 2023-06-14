@@ -1,10 +1,10 @@
 import { Indicator, Tooltip } from '@mantine/core';
 import Consola from 'consola';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../../../config/provider';
 import { AppType } from '../../../../types/app';
-import { api } from '~/utils/api';
 
 interface AppPingProps {
   app: AppType;
@@ -16,60 +16,47 @@ export const AppPing = ({ app }: AppPingProps) => {
   const active =
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
-  const { data, isLoading, error } = usePingQuery(app, active);
-
-  const isOnline = data?.state === 'online';
+  const { data, isLoading, isFetching, isSuccess } = api.app.ping.useQuery(app.id, {
+    retry: false,
+    enabled: active,
+    select: (data) => {
+      const isOk = getIsOk(app, data.status);
+      Consola.info(`Ping ${app.name} (${app.url}) ${data.status} ${isOk}`);
+      return {
+        status: data.status,
+        state: isOk ? ('online' as const) : ('down' as const),
+        statusText: data.statusText,
+      };
+    },
+  });
 
   if (!active) return null;
 
   return (
-    <motion.div
-      style={{ position: 'absolute', bottom: 20, right: 20, zIndex: 2 }}
-      animate={{
-        scale: isOnline ? [1, 0.7, 1] : 1,
-      }}
-      transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
-    >
+    <div style={{ position: 'absolute', bottom: 15, right: 15, zIndex: 2 }}>
       <Tooltip
         withinPortal
         radius="lg"
         label={
           isLoading
             ? t('states.loading')
-            : isOnline
-            ? t('states.online', { response: data.status })
-            : t('states.offline', { response: data?.status ?? error?.data?.httpStatus })
+            : data?.state === 'online'
+            ? t('states.online', { response: data?.status ?? 'N/A' })
+            : `${data?.statusText} ${data?.status}`
         }
       >
         <Indicator
           size={15}
-          color={isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
+          processing={isSuccess}
+          color={isFetching ? 'yellow' : data?.state === 'online' ? 'green' : 'red'}
           children={null}
         />
       </Tooltip>
-    </motion.div>
+    </div>
   );
 };
 
-const usePingQuery = (app: AppType, isEnabled: boolean) =>
-  api.app.ping.useQuery(
-    {
-      url: app.url,
-    },
-    {
-      enabled: isEnabled,
-      select: (data) => {
-        const statusCode = data.status;
-        const isOk = getIsOk(app, statusCode);
-        return {
-          status: statusCode,
-          state: isOk ? ('online' as const) : ('down' as const),
-        };
-      },
-    }
-  );
-
-const getIsOk = (app: AppType, status: number) => {
+export const getIsOk = (app: AppType, status: number) => {
   if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
     Consola.log('Using new status codes');
     return app.network.statusCodes.includes(status.toString());
