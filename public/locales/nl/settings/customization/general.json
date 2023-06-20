@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Opmaak",
       "description": "Pas de achtergrond, kleuren en het uiterlijk van de app aan"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
