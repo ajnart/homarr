@@ -16,6 +16,10 @@
     "appereance": {
       "name": "",
       "description": ""
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
