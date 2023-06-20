@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Apariencia",
       "description": "Personaliza el fondo, colores y apariencia de las apps"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
