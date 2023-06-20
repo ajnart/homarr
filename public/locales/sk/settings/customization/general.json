@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Vzhľad",
       "description": "Prispôsobenie pozadia, farieb a vzhľadu aplikácií"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
