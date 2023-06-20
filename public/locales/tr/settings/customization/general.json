@@ -18,8 +18,8 @@
       "description": "Arka planı, renkleri ve uygulama görünümünü özelleştirin"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Erişilebilirlik",
+      "description": "Homarr'ı engelli kullanıcılar için yapılandırma"
     }
   }
 }
