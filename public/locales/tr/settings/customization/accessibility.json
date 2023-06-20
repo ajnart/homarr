@@ -1,11 +1,11 @@
 {
     "disablePulse": {
-        "label": "",
-        "description": ""
+        "label": "Ping animasyonunu devre dışı bırak",
+        "description": "Varsayılan olarak, Homarr'daki ping animasyonu aktiftir. Bu rahatsız edici olabilir. Bu animasyonu devre dışı bırakacaktır"
     },
     "replaceIconsWithDots": {
-        "label": "",
-        "description": ""
+        "label": "Ping noktası simge ile değiştirin",
+        "description": "Renk körü (Daltonizm) kullanıcılar için ping noktaları tanınmayabilir. Bu, göstergeleri simgelerle değiştirecektir"
     },
-    "alert": ""
+    "alert": "Bir şey mi kaçırdınız? Homarr'ın erişilebilirliğini memnuniyetle genişleteceğiz"
 }
