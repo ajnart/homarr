@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Внешний вид",
       "description": "Настройка фона, цвета и внешнего вида приложений"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
