@@ -18,8 +18,8 @@
       "description": "Fona, krāsu un programmu izskata pielāgošana"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Piekļūstamība",
+      "description": "Homarr konfigurēšana lietotājiem ar invaliditāti un/vai ar īpašām vajadzībām"
     }
   }
 }
