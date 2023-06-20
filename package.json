@@ -76,7 +76,6 @@
     "uuid": "^9.0.0",
     "xml-js": "^1.6.11",
     "xss": "^1.0.14",
-    "yarn": "^1.22.19",
     "zod": "^3.21.4",
     "zustand": "^4.3.7"
   },
@@ -116,7 +115,6 @@
     "vitest": "^0.32.0",
     "vitest-fetch-mock": "^0.2.2"
   },
-  "packageManager": "yarn@3.6.0",
   "nextBundleAnalysis": {
     "budget": null,
     "budgetPercentIncreaseRed": 20,
