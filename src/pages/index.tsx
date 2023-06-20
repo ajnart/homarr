@@ -47,7 +47,7 @@ export async function getServerSideProps({
   }
 
   const translations = await getServerSideTranslations(dashboardNamespaces, locale, req, res);
-  const config = getFrontendConfig(configName as string);
+  const config = await getFrontendConfig(configName as string);
 
   return {
     props: {

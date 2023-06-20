@@ -10,6 +10,12 @@
       },
       "refreshInterval": {
         "label": "刷新间隔(以分钟计)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "textLinesClamp": {
+        "label": ""
       }
     },
     "card": {

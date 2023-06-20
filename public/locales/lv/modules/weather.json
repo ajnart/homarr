@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "Laikapstākļi",
+    "description": "Rāda pašreizējo laikapstākļu informāciju par iestatīto atrašanās vietu.",
+    "settings": {
+      "title": "Laikapstākļu logrīka iestatījumi",
+      "displayInFahrenheit": {
+        "label": "Rādīt pēc Fārenheita"
+      },
+      "location": {
+        "label": "Laikapstākļu atrašānās vieta"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Skaidrs",
+      "mainlyClear": "Galvenokārt skaidrs",
+      "fog": "Migla",
+      "drizzle": "Smidzinošs lietus",
+      "freezingDrizzle": "Smidzinošs ledus",
+      "rain": "Lietus",
+      "freezingRain": "Ledus lietus",
+      "snowFall": "Gāziensnidze",
+      "snowGrains": "Sniega graudi",
+      "rainShowers": "Lietusgāzes",
+      "snowShowers": "Sniegputenis",
+      "thunderstorm": "Pērkona negaiss",
+      "thunderstormWithHail": "Pērkona negaiss ar krusu",
+      "unknown": "Nezināms"
+    }
+  }
+}

@@ -98,7 +98,7 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
   return (
     <GenericAvailableElementType
       name={t('descriptor.name')}
-      description={t('descriptor.description')}
+      description={t('descriptor.description') ?? undefined}
       image={image}
       disabled={disabled}
       handleAddition={handleAddition}

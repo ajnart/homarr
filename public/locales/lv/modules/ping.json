@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Rāda statusa indikatoru atkarībā no konkrētā URL adresāta HTTP atbildes koda."
+  },
+  "states": {
+    "online": "Tiešsaistē {{response}}",
+    "offline": "Bezsaistes režīmā {{response}}",
+    "loading": "Notiek ielāde..."
+  }
+}

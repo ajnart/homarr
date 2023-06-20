@@ -4,6 +4,7 @@ export const dashboardNamespaces = [
   'layout/modals/add-app',
   'layout/modals/change-position',
   'layout/modals/about',
+  'layout/common',
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
   'settings/common',
@@ -43,6 +44,7 @@ export const dashboardNamespaces = [
   'modules/bookmark',
   'widgets/error-boundary',
   'widgets/draggable-list',
+  'widgets/location',
 ];
 
 export const loginNamespaces = ['authentication/login'];

@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Multimediju pieprasījumi",
+    "description": "Skatiet sarakstu ar visiem multimediju pieprasījumiem no jūsu Overseerr vai Jellyseerr instances",
+    "settings": {
+      "title": "Multimediju pieprasījumu saraksts",
+      "replaceLinksWithExternalHost": {
+        "label": "Aizstāt saites ar ārējo saimnieku"
+      }
+    }
+  },
+  "noRequests": "Nav atrasts neviens pieprasījums. Lūdzu, pārliecinieties, vai esat pareizi konfigurējuši savas aplikācijas.",
+  "pending": "Apstiprinājumu gaida {{countPendingApproval}} pieprasījumi.",
+  "nonePending": "Pašlaik nav nepabeigtu apstiprinājumu. Jums viss iet labi!",
+  "state": {
+    "approved": "Apstiprināts",
+    "pendingApproval": "Nepabeigts apstiprinājums",
+    "declined": "Noraidīt"
+  },
+  "tooltips": {
+    "approve": "Apstiprināt pieprasījumus",
+    "decline": "Noraidīt pieprasījumus"
+  }
+}

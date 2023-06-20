@@ -38,7 +38,7 @@ export async function getServerSideProps({
     };
   }
 
-  const config = getFrontendConfig(configName as string);
+  const config = await getFrontendConfig(configName as string);
   setCookie('config-name', configName, {
     req,
     res,

@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Ļauj meklēt un pievienot multividi no Overseerr vai Jellyseerr."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Pieprasiet {{title}}",
+        "cancel": "Atcelt",
+        "request": "Pieprasīt"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "API atslēgas izmantošana",
+          "text": "Šis pieprasījums tiks automātiski apstiprināts"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Atzīmējiet sezonas, kuras vēlaties lejupielādēt",
+      "table": {
+        "header": {
+          "season": "Sezona",
+          "numberOfEpisodes": "Epizožu skaits"
+        }
+      }
+    }
+  }
+}

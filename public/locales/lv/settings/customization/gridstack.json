@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Kolonnas {{size}} izmērā",
+    "descriptionPreset": "Kolonnu skaits, ja ekrāna platums ir mazāks par {{pixels}} pikseļu",
+    "descriptionExceedsPreset": "Kolonnu skaits, ja ekrāna izmērs pārsniedz {{pixels}} pikseļu"
+  },
+  "unsavedChanges": "Jums ir nesaglabātas izmaiņas. Lai piemērotu un saglabātu izmaiņas, noklikšķiniet uz pogas Piemērot izmaiņas.",
+  "applyChanges": "Piemērot izmaiņas",
+  "defaultValues": "Noklusējuma vērtības"
+}

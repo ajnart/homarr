@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Lejupielādes Ātrums",
+    "description": "Rāda atbalstīto integrāciju Lejupielādes un Augšupielādes ātrumu."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Nosaukums",
+        "size": "Lielums",
+        "download": "Lejupielāde",
+        "upload": "Augšupielāde",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Progress"
+      },
+      "body": {
+        "nothingFound": "Netika atrasti torrenti"
+      }
+    },
+    "lineChart": {
+      "title": "Pašreizējais lejupielādes ātrums",
+      "download": "Lejupielāde: {{download}}",
+      "upload": "Augšupielāde: {{upload}}",
+      "timeSpan": "pirms {{seconds}} sekundēm",
+      "totalDownload": "Lejupielāde: {{download}}/s",
+      "totalUpload": "Augšupielāde: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nav atrasts neviens atbalstīts lejupielādes klients!",
+        "text": "Pievienojiet lejupielādes pakalpojumu, lai skatītu pašreizējās lejupielādes"
+      }
+    }
+  }
+}

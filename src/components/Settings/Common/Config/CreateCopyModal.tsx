@@ -1,8 +1,11 @@
 import { Button, Group, Modal, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
+import { IconCheck, IconX } from '@tabler/icons-react';
+import { showNotification } from '@mantine/notifications';
 import { useConfigStore } from '../../../../config/store';
-import { useCopyConfigMutation } from '../../../../tools/config/mutations/useCopyConfigMutation';
+import { useConfigContext } from '~/config/provider';
+import { api } from '~/utils/api';
 
 interface CreateConfigCopyModalProps {
   opened: boolean;
@@ -16,6 +19,7 @@ export const CreateConfigCopyModal = ({
   initialConfigName,
 }: CreateConfigCopyModalProps) => {
   const { configs } = useConfigStore();
+  const { config } = useConfigContext();
   const { t } = useTranslation(['settings/general/config-changer']);
 
   const form = useForm({
@@ -40,7 +44,7 @@ export const CreateConfigCopyModal = ({
     validateInputOnBlur: true,
   });
 
-  const { mutateAsync } = useCopyConfigMutation(form.values.configName);
+  const { mutateAsync } = useCopyConfigMutation();
 
   const handleClose = () => {
     form.setFieldValue('configName', initialConfigName);
@@ -50,7 +54,17 @@ export const CreateConfigCopyModal = ({
   const handleSubmit = async (values: typeof form.values) => {
     if (!form.isValid) return;
 
-    await mutateAsync();
+    if (!config) {
+      throw new Error('config is not defiend');
+    }
+
+    const copiedConfig = config;
+    copiedConfig.configProperties.name = form.values.configName;
+
+    await mutateAsync({
+      name: form.values.configName,
+      config: copiedConfig,
+    });
     closeModal();
   };
 
@@ -64,7 +78,7 @@ export const CreateConfigCopyModal = ({
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <TextInput
           label={t('modal.copy.form.configName.label')}
-          placeholder={t('modal.copy.form.configName.placeholder')}
+          placeholder={t('modal.copy.form.configName.placeholder') ?? undefined}
           {...form.getInputProps('configName')}
         />
         <Group position="right" mt="md">
@@ -75,4 +89,34 @@ export const CreateConfigCopyModal = ({
       </form>
     </Modal>
   );
+};
+
+const useCopyConfigMutation = () => {
+  const { t } = useTranslation(['settings/general/config-changer']);
+  const utils = api.useContext();
+
+  return api.config.save.useMutation({
+    onSuccess(_data, variables) {
+      showNotification({
+        title: t('modal.copy.events.configCopied.title'),
+        icon: <IconCheck />,
+        color: 'green',
+        autoClose: 1500,
+        radius: 'md',
+        message: t('modal.copy.events.configCopied.message', { configName: variables.name }),
+      });
+      // Invalidate a query to fetch new config
+      utils.config.all.invalidate();
+    },
+    onError(_error, variables) {
+      showNotification({
+        title: t('modal.events.configNotCopied.title'),
+        icon: <IconX />,
+        color: 'red',
+        autoClose: 1500,
+        radius: 'md',
+        message: t('modal.events.configNotCopied.message', { configName: variables.name }),
+      });
+    },
+  });
 };

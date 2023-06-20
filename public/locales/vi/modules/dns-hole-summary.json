@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Tóm tắt DNS",
+    "description": "Hiển thị dữ liệu quan trọng từ PiHole hoặc AdGuard",
     "settings": {
-      "title": "",
+      "title": "Cài đặt cho tóm tắt DNS",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Dùng màu từ PiHole"
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Tên miền trên danh sách quảng cáo",
+      "queriesToday": "Truy vấn hôm nay",
+      "queriesBlockedTodayPercentage": "đã chặn hôm nay",
+      "queriesBlockedToday": "đã chặn hôm nay"
     }
   }
 }

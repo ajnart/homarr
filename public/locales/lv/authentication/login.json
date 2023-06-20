@@ -1,0 +1,27 @@
+{
+  "title": "Sveicināti atpakaļ!",
+  "text": "Lūdzu, ievadiet savu paroli",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "Parole",
+        "placeholder": "Jūsu parole"
+      }
+    },
+    "buttons": {
+      "submit": "Pierakstīties"
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "Notiek Jūsu paroles pārbaude",
+      "message": "Jūsu parole tiek pārbaudīta..."
+    },
+    "correct": {
+      "title": "Pierakstīšanās veiksmīga, pāradresēšana..."
+    },
+    "wrong": {
+      "title": "Jūsu ievadītā parole ir nepareiza. Mēģiniet vēlreiz."
+    }
+  }
+}

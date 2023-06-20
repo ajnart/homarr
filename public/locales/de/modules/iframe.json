@@ -9,13 +9,34 @@
       },
       "allowFullScreen": {
         "label": "Vollbildmodus zulassen"
+      },
+      "allowTransparency": {
+        "label": "Erlaube Transparenz"
+      },
+      "allowScrolling": {
+        "label": "Scrollen zulassen"
+      },
+      "allowPayment": {
+        "label": "Zahlung zulassen"
+      },
+      "allowAutoPlay": {
+        "label": "Automatische Wiedergabe zulassen"
+      },
+      "allowMicrophone": {
+        "label": "Mikrofonzugriff erlauben"
+      },
+      "allowCamera": {
+        "label": "Kamera freigeben"
+      },
+      "allowGeolocation": {
+        "label": "Geolokalisierung zulassen"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Ungültige URL",
         "text": "Stellen Sie sicher, dass Sie in der Konfiguration Ihres Widgets eine gültige Adresse eingegeben haben"
       }
     }

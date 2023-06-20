@@ -1,0 +1,76 @@
+{
+	"tabs": {
+		"general": "Vispārīgi",
+		"behaviour": "Uzvedība",
+		"network": "Tīkls",
+		"appearance": "Izskats",
+		"integration": "Integrācija"
+	},
+	"general": {
+		"appname": {
+			"label": "Lietotnes nosaukums",
+			"description": "Izmanto, lai parādītu lietotni uz informācijas paneļa."
+		},
+		"internalAddress": {
+			"label": "Iekšējā adrese",
+			"description": "Lietotnes iekšējā IP adrese."
+		},
+		"externalAddress": {
+			"label": "Ārējā adrese",
+			"description": "URL, kas tiks atvērts, noklikšķinot uz lietotnes."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Atvērt jaunā cilnē",
+			"description": "Atveriet lietotni jaunā cilnē, nevis pašreizējā cilnē."
+		}
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Stāvokļa pārbaudītājs",
+			"description": "Pārbauda, vai lietotne ir tiešsaistē, izmantojot vienkāršu HTTP(S) pieprasījumu."
+		},
+		"statusCodes": {
+			"label": "HTTP statusa kods",
+			"description": "HTTP statusa kodi, kas tiek uzskatīti par tiešsaistes statusa kodiem."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Lietotnes Ikona",
+			"description": "Sāciet rakstīt, lai atrastu ikonu. Varat arī ielīmēt attēla URL, lai izmantotu pielāgotu ikonu.",
+			"autocomplete": {
+				"title": "Nav atrasts neviens rezultāts",
+				"text": "Mēģiniet izmantot konkrētāku meklēšanas terminu. Ja nevarat atrast vēlamo ikonu, ielīmējiet iepriekš norādīto attēla URL, lai iegūtu pielāgotu ikonu"
+			},
+			"noItems": {
+				"title": "Notiek ārējo ikonu ielādēšana",
+				"text": "Tas var aizņemt dažas sekundes"
+			}
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integrācijas konfigurācija",
+			"description": "Integrācijas konfigurācija, kura tiks izmantota, lai izveidotu savienojumu ar jūsu lietotni.",
+			"placeholder": "Izvēlieties integrāciju",
+			"defined": "Definēts",
+			"undefined": "Nav definēts",
+			"public": "Publisks",
+			"private": "Privāts",
+			"explanationPrivate": "Privātais noslēpums uz serveri tiks nosūtīts tikai vienu reizi. Pēc tam, kad pārlūkprogramma būs atsvaidzinājusi lapu, tas nekad netiks nosūtīts vēlreiz.",
+			"explanationPublic": "Publiskais noslēpums vienmēr tiek nosūtīts klientam un ir pieejams, izmantojot API. Tas nedrīkst saturēt nekādas konfidenciālas vērtības, piemēram, lietotājvārdus, paroles, žetonus, sertifikātus un tamlīdzīgi!"
+		},
+		"secrets": {
+			"description": "Lai atjauninātu noslēpumu, ievadiet vērtību un noklikšķiniet uz pogas Saglabāt. Lai dzēstu noslēpumu, noklikšķiniet uz pogas dzēst.",
+			"warning": "Jūsu akreditācijas dati kalpo kā piekļuve jūsu integrācijām, un tos <strong>nekad</strong> nevajadzētu kopīgot ar citiem. Homarr komanda nekad nepieprasīs akreditācijas datus. Pārliecinieties, ka <strong>droši glabājat un pārvaldāt savus noslēpumus</strong>.",
+			"clear": "Notīrīt noslēpumu",
+			"save": "Saglabāt noslēpumu",
+			"update": "Atjaunināt noslēpumu"
+		}
+	},
+	"validation": {
+		"popover": "Jūsu veidlapā ir nederīgi dati. Tāpēc to nevar saglabāt. Lūdzu, atrisiniet visas problēmas un vēlreiz noklikšķiniet uz šīs pogas, lai saglabātu izmaiņas"
+	}
+}
