@@ -4,8 +4,8 @@
         "description": "Por defecto, los indicadores de ping en Homarr parpadearán. Esto puede ser irritante. Este control deslizante desactivará la animación"
     },
     "replaceIconsWithDots": {
-        "label": "",
-        "description": ""
+        "label": "Reemplazar puntos de ping por iconos",
+        "description": "Para usuarios daltónicos, los puntos de ping pueden ser irreconocibles. Esto reemplazará los indicadores por iconos"
     },
-    "alert": ""
+    "alert": "¿Te estás perdiendo algo? Con gusto ampliaremos la accesibilidad de Homarr"
 }
