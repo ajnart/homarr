@@ -19,7 +19,7 @@
     },
     "accessibility": {
       "name": "Hjælpefunktioner",
-      "description": ""
+      "description": "Konfigurer Homarr for deaktiverede og handicappede brugere"
     }
   }
 }
