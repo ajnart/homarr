@@ -1,7 +1,7 @@
 {
     "disablePulse": {
-        "label": "",
-        "description": ""
+        "label": "Desactivar pulso de ping",
+        "description": "Por defecto, los indicadores de ping en Homarr parpadearán. Esto puede ser irritante. Este control deslizante desactivará la animación"
     },
     "replaceIconsWithDots": {
         "label": "",
