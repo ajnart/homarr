@@ -7,8 +7,18 @@
     }
   },
   "stats": {
-    "pending": "Pending approvals",
-    "tvRequests": "TV requests",
-    "movieRequests": "Movie requests"
+    "pending": {
+      "label": "Pending approvals",
+      "description": "Count of requests pending your approval"
+    },
+    "declined": {
+      "label": "Declined requests",
+      "description": "Count of requests that were declined"
+    },
+    "mostFrequentRequester": {
+      "label": "Most frequent requester",
+      "description": "The user that has requested the most often",
+      "text": "{{user}} made {{count}} requests"
+    }
   }
 }

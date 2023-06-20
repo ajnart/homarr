@@ -1,15 +1,8 @@
-import {
-  Avatar,
-  Container,
-  Group,
-  ScrollArea,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
-import { IconChartBar } from '@tabler/icons-react';
-import { useTranslation } from 'next-i18next';
+import { Avatar, Container, Group, ScrollArea, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
+import { IconChartBar } from '@tabler/icons-react';
+import { Trans, useTranslation } from 'next-i18next';
+
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
@@ -79,8 +72,8 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
         <Stack pr="xs">
           <Group position="apart">
             <Stack spacing={0}>
-              <Title order={6}>Pending approval</Title>
-              {displayDescriptions && <Text>Count of requests pending your approval</Text>}
+              <Title order={6}>{t('stats.pending.label')}</Title>
+              {displayDescriptions && <Text>{t('stats.pending.description')}</Text>}
             </Stack>
             <Text>
               {
@@ -91,8 +84,8 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
           </Group>
           <Group position="apart">
             <Stack spacing={0}>
-              <Title order={6}>Declined requests</Title>
-              {displayDescriptions && <Text>Count of requests that were declined</Text>}
+              <Title order={6}>{t('stats.declined.label')}</Title>
+              {displayDescriptions && <Text>{t('stats.declined.description')}</Text>}
             </Stack>
             <Text>
               {data.filter((request) => request.status === MediaRequestStatus.Declined).length}
@@ -101,16 +94,19 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
           {mostOftenRequester && (
             <Group position="apart">
               <Stack spacing={0}>
-                <Title order={6}>Most frequent requester</Title>
-                {displayDescriptions && <Text>The user that has requested the most often</Text>}
+                <Title order={6}>{t('stats.mostFrequentRequester.label')}</Title>
+                {displayDescriptions && <Text>{t('stats.mostFrequentRequester.description')}</Text>}
               </Stack>
               <Stack spacing={0}>
-                <Group>
-                  <Avatar src={mostOftenRequester.userProfilePic} size="sm" />
-                  <Text>{mostOftenRequester.username}</Text>
-                </Group>
                 <Text color="dimmed" size="xs">
-                  made {mostOftenRequester.countRequests} requests
+                  <Trans
+                    i18nKey="stats.mostFrequentRequester.text"
+                    values={{
+                      count: mostOftenRequester.countRequests,
+                      user: mostOftenRequester.username,
+                    }}
+                    t={t}
+                  />
                 </Text>
               </Stack>
             </Group>
