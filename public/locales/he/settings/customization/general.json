@@ -16,6 +16,10 @@
     "appereance": {
       "name": "מראה",
       "description": "התאם אישית את הרקע, הצבעים ומראה האפליקציות"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
