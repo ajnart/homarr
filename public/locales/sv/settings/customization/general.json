@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Utseende",
       "description": "Anpassa bakgrunden, färgerna och apparnas utseende"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
