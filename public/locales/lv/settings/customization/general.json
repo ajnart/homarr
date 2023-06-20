@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Izskats",
       "description": "Fona, krāsu un programmu izskata pielāgošana"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
