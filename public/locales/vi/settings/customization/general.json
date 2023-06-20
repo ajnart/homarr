@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Hiển thị",
       "description": "Tuỳ chỉnh nền, màu và hiển thị của các ứng dụng"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }
