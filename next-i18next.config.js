@@ -28,7 +28,8 @@ module.exports = {
       'sk',
       'no',
       'tr',
-      'lv'
+      'lv',
+      'gl'
     ],
 
     localeDetection: true,

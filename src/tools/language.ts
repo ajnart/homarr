@@ -163,6 +163,12 @@ export const languages: Language[] = [
     translatedName: 'Latvian',
     emoji: '🇱🇻',
   },
+  {
+    shortName: 'gl',
+    originalName: 'Galego',
+    translatedName: 'Galician',
+    emoji: '🏴󠁥󠁳󠁧󠁡󠁿'
+  }
 ];
 
 export const getLanguageByCode = (code: string | null) =>
