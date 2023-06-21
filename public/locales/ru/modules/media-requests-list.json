@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "Медиазапросы",
-    "description": "Посмотреть список всех медиазапросов от вашего Overseerr или Jellyseerr",
+    "name": "Медиа-запросы",
+    "description": "Посмотреть список всех медиа запросов от вашего Overseerr или Jellyseerr",
     "settings": {
-      "title": "Список медиазапросов",
+      "title": "Список медиа запросов",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Заменить ссылки на внешний хост"
       }
     }
   },
@@ -18,7 +18,7 @@
     "declined": "Отклонено"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Одобрить запросы",
+    "decline": "Отклонить запросы"
   }
 }
