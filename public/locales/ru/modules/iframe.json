@@ -1,42 +1,42 @@
 {
   "descriptor": {
-    "name": "iFrame",
+    "name": "Встраивание фрейма (iFrame)",
     "description": "Встраивать любой контент из интернета. Некоторые веб-сайты могут ограничивать доступ.",
     "settings": {
       "title": "Настройки iFrame",
       "embedUrl": {
-        "label": "Вставить URL-адрес"
+        "label": "Встроенный URL"
       },
       "allowFullScreen": {
         "label": "Разрешить полноэкранный режим"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Разрешить прозрачность"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Разрешить прокрутку"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Разрешить платежи"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Разрешить автоматическое воспроизведение"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Разрешить микрофон"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Разрешить камеру"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Разрешить геолокацию"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Недопустимый URL",
         "text": "Убедитесь, что вы ввели действительный адрес в конфигурации вашего виджета"
       }
     }
