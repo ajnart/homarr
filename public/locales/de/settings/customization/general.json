@@ -18,8 +18,8 @@
       "description": "Anpassen des Hintergrunds, der Farben und des Erscheinungsbilds"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Barrierefreiheit",
+      "description": "Homarr für behinderte und gehandicapte Benutzer einrichten"
     }
   }
 }
