@@ -1,21 +1,21 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "RSS-widget",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Inställningar för RSS-widget",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URL-adresser för RSS-flöden",
+        "description": "URL-adresserna för de RSS-flöden som du vill visa från."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Uppdateringsintervall (i minuter)"
       },
       "dangerousAllowSanitizedItemContent": {
         "label": ""
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Klämma för textrader"
       }
     },
     "card": {
