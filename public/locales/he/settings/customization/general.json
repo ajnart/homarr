@@ -18,8 +18,8 @@
       "description": "התאם אישית את הרקע, הצבעים ומראה האפליקציות"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "נגישות",
+      "description": "הגדר את Homarr עבור משתמשים מוגבלים ונכים"
     }
   }
 }
