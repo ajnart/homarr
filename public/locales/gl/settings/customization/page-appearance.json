@@ -1,0 +1,30 @@
+{
+  "pageTitle": {
+    "label": "",
+    "description": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "description": ""
+  },
+  "logo": {
+    "label": "",
+    "description": ""
+  },
+  "favicon": {
+    "label": "",
+    "description": ""
+  },
+  "background": {
+    "label": ""
+  },
+  "customCSS": {
+    "label": "",
+    "description": "",
+    "placeholder": "",
+    "applying": ""
+  },
+  "buttons": {
+    "submit": ""
+  }
+}
