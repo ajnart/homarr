@@ -18,8 +18,8 @@
       "description": "Anpassa bakgrunden, färgerna och apparnas utseende"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Tillgänglighet",
+      "description": "Konfigurera Homarr för funktionshindrade användare"
     }
   }
 }
