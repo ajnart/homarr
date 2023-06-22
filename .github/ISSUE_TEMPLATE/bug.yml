@@ -35,7 +35,7 @@ body:
       label: Logs
       description: Provide your Homarr logs so we can investigate what's going on
     validations:
-      required: true
+      required: false
   - type: textarea
     id: context
     attributes:
