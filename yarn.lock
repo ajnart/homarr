@@ -1889,48 +1889,48 @@ __metadata:
   linkType: hard
 
 "@trpc/client@npm:^10.29.1":
-  version: 10.31.0
-  resolution: "@trpc/client@npm:10.31.0"
+  version: 10.32.0
+  resolution: "@trpc/client@npm:10.32.0"
   peerDependencies:
-    "@trpc/server": 10.31.0
-  checksum: 40dc7d07bbb411e4e0da7aa6adf884bb299b6eb30be61eaeefac00774699e614b18a6f24ce29e3a53107bd0df29f28c135f2b602536f47efa8d518cb0540aeaa
+    "@trpc/server": 10.32.0
+  checksum: b7855a864cfe28843f04cf83fe6e0c800924f4b57fb13776c1818f82a955cfc57316b5ed570c44d16b799ef9f8ae7cfdd462761f393841232affccff905d3fee
   languageName: node
   linkType: hard
 
 "@trpc/next@npm:^10.29.1":
-  version: 10.31.0
-  resolution: "@trpc/next@npm:10.31.0"
+  version: 10.32.0
+  resolution: "@trpc/next@npm:10.32.0"
   dependencies:
     react-ssr-prepass: ^1.5.0
   peerDependencies:
     "@tanstack/react-query": ^4.18.0
-    "@trpc/client": 10.31.0
-    "@trpc/react-query": 10.31.0
-    "@trpc/server": 10.31.0
+    "@trpc/client": 10.32.0
+    "@trpc/react-query": 10.32.0
+    "@trpc/server": 10.32.0
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: c1458c2686f10b5d6f2f1f9557d01d0bab2950ba779d3eaa05cdb9c74bb661adb5e0fe0f7c63d56adffcfb5786c8805d17f776a610875306a952b8dfdc57a7a3
+  checksum: 5ca3811a0667191b92467aa7ec71baa3248eeb0b889641b8b26e9af25d82ac1e93e6b0f652cc42670fc97e650b825daec3394bb2c045153c971cfaa88756f60d
   languageName: node
   linkType: hard
 
 "@trpc/react-query@npm:^10.29.1":
-  version: 10.31.0
-  resolution: "@trpc/react-query@npm:10.31.0"
+  version: 10.32.0
+  resolution: "@trpc/react-query@npm:10.32.0"
   peerDependencies:
     "@tanstack/react-query": ^4.18.0
-    "@trpc/client": 10.31.0
-    "@trpc/server": 10.31.0
+    "@trpc/client": 10.32.0
+    "@trpc/server": 10.32.0
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: b2b3df3342644a2ddb54210afc94c367c3eccd67b1b354415ed4935707fc511bae723b3737184e41edd1796a84c0a2a0824b216eafc276566765c117ce76ca55
+  checksum: 5285f3d235c3e11cc8d842f22e17b762204def407b51f1acbb1583929f0afd11e2a57d5715548be8f1cc9bc6270d2473171d3d3a8b5b025fbcfb5be0bbf70dd2
   languageName: node
   linkType: hard
 
 "@trpc/server@npm:^10.29.1":
-  version: 10.31.0
-  resolution: "@trpc/server@npm:10.31.0"
-  checksum: 2f8b946f3e0af56c1f2f9a789cf46eb55138aa35be99e7f874ac4bcf2df4698c73a81fe551dd6641f6538cf8de0701c03bf8fe524bad1485b8fd328d040df3dc
+  version: 10.32.0
+  resolution: "@trpc/server@npm:10.32.0"
+  checksum: 7e77d5b564734675cb6e394237238a18eb6ed2f92d03c45c3ad270e4b9c81486e53d1b0854fc3357390d68f4e0b94d66873ca5a6a6e4d7226f49c10caaf2bc2c
   languageName: node
   linkType: hard
 
