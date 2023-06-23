@@ -1,11 +1,11 @@
 {
     "disablePulse": {
-        "label": "",
-        "description": ""
+        "label": "Zakázanie impulzu ping",
+        "description": "V predvolenom nastavení budú indikátory ping v aplikácii Homarr pulzovať. To môže byť nepríjemné. Tento posuvník deaktivuje animáciu"
     },
     "replaceIconsWithDots": {
-        "label": "",
-        "description": ""
+        "label": "Nahradenie bodov ping ikonami",
+        "description": "Pre farboslepých používateľov môžu byť pingové body nerozpoznateľné. Toto nahradí indikátory ikonami"
     },
-    "alert": ""
+    "alert": "Chýba vám niečo? Radi rozšírime dostupnosť Homarr"
 }
