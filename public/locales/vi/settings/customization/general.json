@@ -18,8 +18,8 @@
       "description": "Tuỳ chỉnh nền, màu và hiển thị của các ứng dụng"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Trợ năng",
+      "description": "Thiết lập Homarr cho người dùng khuyết tật"
     }
   }
 }
