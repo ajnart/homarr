@@ -18,8 +18,8 @@
       "description": "Prispôsobenie pozadia, farieb a vzhľadu aplikácií"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Prístupnosť",
+      "description": "Konfigurácia aplikácie Homarr pre zdravotne postihnutých a hendikepovaných používateľov"
     }
   }
 }
