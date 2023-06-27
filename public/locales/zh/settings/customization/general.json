@@ -18,8 +18,8 @@
       "description": "自定义背景、颜色和应用程序的外观"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "无障碍服务",
+      "description": "为残疾人和残障人士配置 Homarr"
     }
   }
 }
