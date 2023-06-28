@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": "Radarr发布类型"
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
