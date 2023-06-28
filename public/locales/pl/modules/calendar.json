@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": "Typ zwolnienia Radarr"
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
