@@ -14,7 +14,7 @@
         "label": "Tipo di release Radarr"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Nascondi giorni della settimana"
       }
     }
   }
