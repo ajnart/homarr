@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": "Typ Radarr releasu"
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
