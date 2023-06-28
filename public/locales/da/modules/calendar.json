@@ -14,7 +14,7 @@
         "label": "Radarr udgivelsestype"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Skjul ugedage"
       }
     }
   }
