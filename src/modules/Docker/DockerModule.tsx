@@ -31,6 +31,8 @@ export default function DockerMenuButton(props: any) {
     setSelection([]);
   };
 
+  if (!dockerEnabled) return null;
+
   return (
     <>
       <Drawer
