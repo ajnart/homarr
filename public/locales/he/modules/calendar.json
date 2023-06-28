@@ -14,7 +14,7 @@
         "label": "סוג שחרור של Radarr"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "הסתר ימי שבוע"
       }
     }
   }
