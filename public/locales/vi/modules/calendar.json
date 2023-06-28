@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": "Loại phát hành Radarr"
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
