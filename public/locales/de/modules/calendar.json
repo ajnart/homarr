@@ -14,7 +14,7 @@
         "label": "Radarr Veröffentlichungs Typ"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Wochentage ausblenden"
       }
     }
   }
