@@ -14,7 +14,7 @@
         "label": "Radarr yayın türü"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Haftanın günlerini gizle"
       }
     }
   }
