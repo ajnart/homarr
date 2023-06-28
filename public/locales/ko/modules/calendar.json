@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": ""
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
