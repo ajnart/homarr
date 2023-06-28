@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": "Radarr - тип релізів"
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
