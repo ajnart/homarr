@@ -16,6 +16,10 @@ const definition = defineWidget({
   id: 'calendar',
   icon: IconCalendarTime,
   options: {
+    hideWeekDays: {
+      type: 'switch',
+      defaultValue: true,
+    },
     useSonarrv4: {
       type: 'switch',
       defaultValue: false,
@@ -76,7 +80,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       size="xs"
       locale={i18n?.resolvedLanguage ?? 'en'}
       firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
-      hideWeekdays
+      hideWeekdays={widget.properties.hideWeekDays ? true : false}
       style={{ position: 'relative', top: -10 }}
       date={month}
       maxLevel="month"
