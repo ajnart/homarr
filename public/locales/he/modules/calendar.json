@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": "סוג שחרור של Radarr"
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
