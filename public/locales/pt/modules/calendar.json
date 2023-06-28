@@ -12,6 +12,9 @@
       },
       "radarrReleaseType": {
         "label": "Tipo de libertação de Radarr"
+      },
+      "hideWeekDays": {
+        "label": ""
       }
     }
   }
