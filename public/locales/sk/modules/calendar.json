@@ -14,7 +14,7 @@
         "label": "Typ Radarr releasu"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Skryť dni v týždni"
       }
     }
   }
