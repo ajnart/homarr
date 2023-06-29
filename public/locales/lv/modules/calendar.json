@@ -14,7 +14,7 @@
         "label": "Radarr laiduma tips"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Paslēpt darba dienas"
       }
     }
   }
