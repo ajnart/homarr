@@ -4980,8 +4980,8 @@ __metadata:
   linkType: hard
 
 "framer-motion@npm:^10.0.0":
-  version: 10.12.17
-  resolution: "framer-motion@npm:10.12.17"
+  version: 10.12.18
+  resolution: "framer-motion@npm:10.12.18"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
@@ -4996,7 +4996,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: d36fbc7fabd0b9e519e5ef776528b37acea9129ee3cfb4ced77c641dd3b9c31b4b63a7328f86d3b79dd86e8139102dac57f70915c0afd0a3eb7361dc2bd15e81
+  checksum: 71539be1175de80d2266702069bb3c4f0150eb3e28f0e32307e10c217410d5ee350b025d48a86c3144caf2d0e0e1dd95e33ed886a14466bc1e763e52d4cd6157
   languageName: node
   linkType: hard
 
