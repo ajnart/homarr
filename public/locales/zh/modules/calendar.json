@@ -14,7 +14,7 @@
         "label": "Radarr发布类型"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "隐藏工作日"
       }
     }
   }
