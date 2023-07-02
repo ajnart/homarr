@@ -8,6 +8,7 @@ export const dashboardNamespaces = [
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
   'settings/common',
+  'settings/integrations',
   'settings/general/theme-selector',
   'settings/general/config-changer',
   'settings/general/internationalization',

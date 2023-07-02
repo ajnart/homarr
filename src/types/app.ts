@@ -50,6 +50,8 @@ export type IntegrationType =
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
+  id: string;
+  name: string;
   properties: AppIntegrationPropertyType[];
 };
 

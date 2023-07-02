@@ -17,6 +17,7 @@
   "createItem": "+ create {{item}}",
   "sections": {
     "settings": "Settings",
+    "integrations": "Integrations",
     "dangerZone": "Danger zone"
   },
   "secrets": {

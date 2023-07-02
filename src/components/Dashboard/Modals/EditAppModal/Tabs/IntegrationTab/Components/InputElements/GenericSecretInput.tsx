@@ -106,6 +106,7 @@ export const GenericSecretInput = ({
             {displayUpdateField === true ? (
               <PasswordInput
                 required
+                autoComplete={`homarr-${type}-password`}
                 defaultValue={value}
                 placeholder="new secret"
                 styles={{ root: { width: 200 } }}

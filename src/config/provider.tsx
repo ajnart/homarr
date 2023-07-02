@@ -5,7 +5,7 @@ import { ConfigType } from '../types/config';
 import { useConfigStore } from './store';
 
 export type ConfigContextType = {
-  config: ConfigType | undefined;
+  config: ConfigType;
   name: string | undefined;
   configVersion: number | undefined;
   increaseVersion: () => void;
@@ -14,7 +14,7 @@ export type ConfigContextType = {
 
 const ConfigContext = createContext<ConfigContextType>({
   name: 'unknown',
-  config: undefined,
+  config: {} as ConfigType,
   configVersion: undefined,
   increaseVersion: () => {},
   setConfigName: () => {},
@@ -38,7 +38,7 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     <ConfigContext.Provider
       value={{
         name: configName,
-        config: currentConfig,
+        config: currentConfig!,
         configVersion,
         increaseVersion: () => setConfigVersion((v) => v + 1),
         setConfigName: (name: string) => setConfigName(name),

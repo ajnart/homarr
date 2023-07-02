@@ -1,7 +1,15 @@
 import { Badge, Button, Menu } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons-react';
+import { useDisclosure, useHotkeys } from '@mantine/hooks';
+import {
+  IconInfoCircle,
+  IconMenu2,
+  IconPlug,
+  IconPlugConnected,
+  IconSettings,
+} from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { IntegrationModal } from '~/components/Config/Integration/IntegrationModal';
+
 import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
@@ -12,9 +20,11 @@ import { EditModeToggle } from './SettingsMenu/EditModeToggle';
 export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const [drawerOpened, drawer] = useDisclosure(false);
   const { t } = useTranslation('common');
+  const [integrationsModalOpened, integrationsModal] = useDisclosure(false);
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { classes } = useCardStyles(true);
   const { editModeEnabled } = useEditModeInformationStore();
+  useHotkeys([['mod+o', () => integrationsModal.toggle()]]);
 
   return (
     <>
@@ -33,6 +43,12 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
               {t('sections.settings')}
             </Menu.Item>
           )}
+          <Menu.Item
+            icon={<IconPlugConnected strokeWidth={1.2} size={18} />}
+            onClick={integrationsModal.open}
+          >
+            {t('sections.integrations')}
+          </Menu.Item>
           <Menu.Item
             icon={<IconInfoCircle strokeWidth={1.2} size={18} />}
             rightSection={
@@ -53,6 +69,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
         closeDrawer={drawer.close}
         newVersionAvailable={newVersionAvailable}
       />
+      <IntegrationModal opened={integrationsModalOpened} closeModal={integrationsModal.close} />
       <AboutModal
         opened={aboutModalOpened}
         closeModal={aboutModal.close}
