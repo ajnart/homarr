@@ -8,7 +8,7 @@ import {
   IconSettings,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { IntegrationModal } from '~/components/Config/Integration/IntegrationModal';
+import { IntegrationMenu, IntegrationModal } from '~/components/Config/Integration/IntegrationModal';
 
 import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
@@ -43,12 +43,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
               {t('sections.settings')}
             </Menu.Item>
           )}
-          <Menu.Item
-            icon={<IconPlugConnected strokeWidth={1.2} size={18} />}
-            onClick={integrationsModal.open}
-          >
-            {t('sections.integrations')}
-          </Menu.Item>
+         <IntegrationMenu integrationsModal={integrationsModal}/>
           <Menu.Item
             icon={<IconInfoCircle strokeWidth={1.2} size={18} />}
             rightSection={

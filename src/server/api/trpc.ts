@@ -6,7 +6,6 @@
  * TL;DR - This is where all the tRPC server stuff is created and plugged in. The pieces you will
  * need to use are documented accordingly near the end.
  */
-
 import { initTRPC } from '@trpc/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 import superjson from 'superjson';
@@ -32,7 +31,7 @@ type CreateContextOptions = Record<never, unknown>;
  *
  * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
  */
-const createInnerTRPCContext = (opts: CreateContextOptions) => ({});
+const createInnerTRPCContext = (opts: CreateContextOptions) => ({opts});
 
 /**
  * This is the actual context you will use in your router. It will be used to process every request
@@ -45,7 +44,7 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
 
   // Get the session from the server using the getServerSession wrapper function
 
-  return createInnerTRPCContext({});
+  return ({req, res});
 };
 
 /**

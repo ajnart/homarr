@@ -8,7 +8,6 @@ import { createTRPCProxyClient, httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
 import { type inferRouterInputs, type inferRouterOutputs } from '@trpc/server';
 import superjson from 'superjson';
-
 import { type RootRouter } from '~/server/api/root';
 
 const getTrpcConfiguration = () => ({
@@ -19,6 +18,10 @@ const getTrpcConfiguration = () => ({
    */
   transformer: superjson,
 
+  /**
+   * @link https://react-query.tanstack.com/reference/QueryClient
+   */
+  queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
   /**
    * Links used to determine request flow from client to server.
    *
