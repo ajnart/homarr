@@ -171,6 +171,7 @@ export function Search() {
         <Popover.Target>
           <Autocomplete
             ref={textInput}
+            autoComplete="off"
             onFocusCapture={() => setOpened(true)}
             autoFocus={typeof window !== 'undefined' && window.innerWidth > 768}
             rightSection={<SearchModuleMenu />}
