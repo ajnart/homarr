@@ -1,11 +1,11 @@
 {
     "disablePulse": {
-        "label": "",
-        "description": ""
+        "label": "禁用 Ping",
+        "description": "默认情况下，Homarr 中的 Ping 指示器会一直工作。这可能会让人感到恼火。这个滑块将停用这个动画。"
     },
     "replaceIconsWithDots": {
-        "label": "",
-        "description": ""
+        "label": "用图标替换 Ping 点",
+        "description": "对于色盲用户来说，Ping 点可能无法识别。 这将用图标替换指示器"
     },
-    "alert": ""
+    "alert": "你是不是缺少了什么？ 我们很乐意扩大 Homarr 的无障碍范围"
 }
