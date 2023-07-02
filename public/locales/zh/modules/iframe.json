@@ -11,13 +11,13 @@
         "label": "允许全屏"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "允许透明度"
       },
       "allowScrolling": {
         "label": "允许滚动"
       },
       "allowPayment": {
-        "label": ""
+        "label": "允许付款"
       },
       "allowAutoPlay": {
         "label": "允许自动播放"
