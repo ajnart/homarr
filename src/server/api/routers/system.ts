@@ -7,6 +7,7 @@ import { cookies } from 'next/headers';
 import { env } from 'process';
 import { z } from 'zod';
 import { getConfig } from '~/tools/config/getConfig';
+import { AppIntegrationType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
@@ -57,5 +58,18 @@ export const systemRouter = createTRPCRouter({
         });
       }
       return config.integrations;
+    }),
+
+  testIntegration: publicProcedure
+    .input(
+      z.object({
+        integration: z.any(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      // Wait 500ms then return true to simulate a successful integration
+      //TODO: Add integration tests
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      return true;
     }),
 });

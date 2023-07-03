@@ -8,16 +8,20 @@ import {
   Menu,
   Modal,
   PasswordInput,
+  Popover,
   SelectItem,
   Stack,
   Text,
   TextInput,
+  ThemeIcon,
   Title,
+  Tooltip,
   rem,
   useMantineTheme,
 } from '@mantine/core';
 import { AccordionItem } from '@mantine/core/lib/Accordion/AccordionItem/AccordionItem';
 import { UseFormReturnType, useForm } from '@mantine/form';
+import { modals } from '@mantine/modals';
 import { notifications } from '@mantine/notifications';
 import {
   IconCheck,
@@ -25,15 +29,23 @@ import {
   IconCircleX,
   IconCircleXFilled,
   IconDeviceFloppy,
+  IconExternalLink,
+  IconKey,
   IconLock,
+  IconPassword,
   IconPlug,
   IconPlugConnected,
   IconPlus,
+  IconQuestionMark,
+  IconTestPipe,
   IconTrash,
+  IconUser,
+  IconX,
 } from '@tabler/icons-react';
 import { useQueryClient } from '@tanstack/react-query';
 import { getQueryKey } from '@trpc/react-query';
 import { getCookie, setCookie } from 'cookies-next';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { integrationsList } from '~/components/Dashboard/Modals/EditAppModal/Tabs/IntegrationTab/Components/InputElements/IntegrationSelector';
@@ -109,15 +121,20 @@ export function IntegrationMenu({ integrationsModal }: { integrationsModal: any 
 
 function IntegrationDisplay({
   integration,
+  integrations,
+  setIntegrations,
   integrationIdx,
   form,
 }: {
   integration: AppIntegrationType;
+  integrations: IntegrationTypeMap;
+  setIntegrations: (integrations: IntegrationTypeMap) => void;
   integrationIdx: number;
   form: UseFormReturnType<any>;
 }) {
   if (!integration.type) return null;
-  const { t } = useTranslation('settings/integrations');
+  const { t } = useTranslation(['settings/integrations', 'common']);
+  const mutation = api.system.testIntegration.useMutation();
 
   return (
     <Accordion.Item key={integration.id} value={integration.id}>
@@ -126,17 +143,20 @@ function IntegrationDisplay({
         <Stack>
           <Group grow>
             <TextInput
-              withAsterisk
-              required
               defaultValue={integration.url}
               label={'URL'}
               description={t('integration.urlDescription')}
               placeholder="http://localhost:3039"
+              rightSection={
+                <Link passHref target="_blank" href={integration.url}>
+                  <ActionIcon>
+                    <IconExternalLink />
+                  </ActionIcon>
+                </Link>
+              }
               {...form.getInputProps(`${integration.type}.${integrationIdx}.url`)}
             />
             <TextInput
-              withAsterisk
-              required
               defaultValue={integration.name}
               label={t('integration.name')}
               description={t('integration.nameDescription')}
@@ -144,34 +164,187 @@ function IntegrationDisplay({
               {...form.getInputProps(`${integration.type}.${integrationIdx}.name`)}
             />
           </Group>
-          {integration.properties.map((property, idx) => {
-            if (!property.value) return null;
-            if (property.type === 'private')
-              return (
-                <PasswordInput
-                  defaultValue={property.value}
-                  key={property.field}
-                  label={property.field}
-                  {...form.getInputProps(
-                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
-                  )}
-                />
-              );
-            else if (property.type === 'public')
-              return (
-                <TextInput
-                  defaultValue={property.value}
-                  key={property.field}
-                  label={property.field}
-                  {...form.getInputProps(
-                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
-                  )}
-                />
-              );
-          })}
+          <Group grow>
+            {integration.properties.map((property, idx) => {
+              if (!property.value) return null;
+              if (property.type === 'private')
+                return (
+                  <PasswordInput
+                    icon={property.field === 'password' ? <IconLock /> : <IconKey />}
+                    defaultValue={property.value}
+                    key={property.field}
+                    label={property.field}
+                    {...form.getInputProps(
+                      `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                    )}
+                  />
+                );
+              else if (property.type === 'public')
+                return (
+                  <TextInput
+                    icon={property.field === 'username' ? <IconUser /> : <IconQuestionMark />}
+                    defaultValue={property.value}
+                    key={property.field}
+                    label={property.field}
+                    {...form.getInputProps(
+                      `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                    )}
+                  />
+                );
+            })}
+          </Group>
+          <Group position="right">
+            <Popover width="auto" position="bottom" withArrow shadow="md">
+              <Popover.Target>
+                <Button px="xl" variant="light" leftIcon={<IconTrash />}>
+                  {t('common:delete')}
+                </Button>
+              </Popover.Target>
+              <Popover.Dropdown>
+                <Stack>
+                  <Title order={3}>{t('common:delete')}</Title>
+                  <Text size="sm">{t('deleteConfirmation', { name: integration.name })}</Text>
+                  <Group grow>
+                    <Button
+                      variant="light"
+                      color="red"
+                      onClick={() => {
+                        if (!integration.type) return null;
+                        // Pop integration from the integrations array
+                        const newIntegrations = integrations;
+                        newIntegrations[integration.type].filter(
+                          (item) => item.id !== integration.id
+                        );
+                        setIntegrations(newIntegrations);
+                      }}
+                    >
+                      {t('common:delete')}
+                    </Button>
+                  </Group>
+                </Stack>
+              </Popover.Dropdown>
+            </Popover>
+            <Button
+              variant="light"
+              px="xl"
+              onClick={() => {
+                mutation.mutate({
+                  integration: integration,
+                });
+              }}
+              loading={mutation.isLoading}
+              color="orange"
+              leftIcon={
+                // If no success or error, show the test pipe, if success show the checkmark, if error show the x
+                mutation.isSuccess ? <IconCheck /> : mutation.isError ? <IconX /> : <IconTestPipe />
+              }
+            >
+              {t('common:test')}
+            </Button>
+          </Group>
         </Stack>
       </Accordion.Panel>
     </Accordion.Item>
+  );
+}
+
+export function SecretsInputs({
+  integration,
+  integrationIdx,
+  form,
+}: {
+  integration: AppIntegrationType;
+  integrationIdx: number;
+  form: UseFormReturnType<any>;
+}) {
+  const { t } = useTranslation('settings/integrations');
+  return (
+    <Group grow noWrap>
+      {integration.properties.map((property, idx) => {
+        if (!property.value) return null;
+
+        switch (property.field) {
+          case 'apiKey':
+            return (
+              <Group align="end">
+                <Tooltip label={t('fields.apikey')}>
+                  <ThemeIcon variant="light" radius="md" size="xl">
+                    <IconKey size={rem(20)} />
+                  </ThemeIcon>
+                </Tooltip>
+                <PasswordInput
+                  styles={{ root: { width: 200 } }}
+                  size="md"
+                  defaultValue={property.value}
+                  key={property.field}
+                  label={property.field}
+                  {...form.getInputProps(
+                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                  )}
+                />
+              </Group>
+            );
+          case 'username':
+            return (
+              <Group>
+                <Tooltip label={t('fields.apikey')}>
+                  <ThemeIcon variant="light" radius="md" size="lg">
+                    <IconUser />
+                  </ThemeIcon>
+                </Tooltip>
+                <TextInput
+                  styles={{ root: { width: 200 } }}
+                  defaultValue={property.value}
+                  key={property.field}
+                  label={property.field}
+                  {...form.getInputProps(
+                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                  )}
+                />
+              </Group>
+            );
+          case 'password':
+            return (
+              <Group>
+                <Tooltip label={t('fields.password')}>
+                  <ThemeIcon variant="light" radius="md" size="lg">
+                    <IconPassword />
+                  </ThemeIcon>
+                </Tooltip>
+                <PasswordInput
+                  styles={{ root: { width: 200 } }}
+                  defaultValue={property.value}
+                  key={property.field}
+                  label={property.field}
+                  {...form.getInputProps(
+                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                  )}
+                />
+              </Group>
+            );
+          // Other case
+          default:
+            return (
+              <Group>
+                <Tooltip label={t('fields.unknown')}>
+                  <ThemeIcon variant="light" radius="md" size="lg">
+                    <IconQuestionMark />
+                  </ThemeIcon>
+                </Tooltip>
+                <TextInput
+                  styles={{ root: { width: 200 } }}
+                  defaultValue={property.value}
+                  key={property.field}
+                  label={property.field}
+                  {...form.getInputProps(
+                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                  )}
+                />
+              </Group>
+            );
+        }
+      })}
+    </Group>
   );
 }
 
@@ -251,6 +424,8 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
                         integrationIdx={integrationIdx}
                         form={form}
                         integration={integration}
+                        integrations={integrations}
+                        setIntegrations={setIntegrations}
                       />
                     );
                   })}
@@ -341,9 +516,8 @@ export function IntegrationModal({
       opened={opened}
       closeOnClickOutside={false}
       closeOnEscape={false}
-      withCloseButton={false}
       onClose={() => closeModal()}
-      size={rem(1000)}
+      fullScreen
     >
       <IntegrationsAccordion closeModal={closeModal} />
     </Modal>
