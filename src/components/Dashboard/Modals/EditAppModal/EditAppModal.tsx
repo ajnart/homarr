@@ -12,6 +12,7 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { AppType } from '../../../../types/app';
@@ -204,7 +205,9 @@ export const EditAppModal = ({
               disallowAppNameProgagation={() => setAllowAppNamePropagation(false)}
               allowAppNamePropagation={allowAppNamePropagation}
             />
-            <IntegrationTab form={form} />
+            <Tabs.Panel value="integration" pt="lg">
+              <IntegrationTab form={form} />
+            </Tabs.Panel>
           </Tabs>
 
           <Group position="right" mt="md">

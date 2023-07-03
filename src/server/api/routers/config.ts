@@ -1,12 +1,14 @@
+import { TRPCError } from '@trpc/server';
+import Consola from 'consola';
+import { getCookie } from 'cookies-next';
 import fs from 'fs';
 import path from 'path';
-import Consola from 'consola';
 import { z } from 'zod';
-import { TRPCError } from '@trpc/server';
-import { createTRPCRouter, publicProcedure } from '../trpc';
-import { BackendConfigType, ConfigType } from '~/types/config';
-import { getConfig } from '../../../tools/config/getConfig';
+import { BackendConfigType, ConfigType, IntegrationTypeMap } from '~/types/config';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
+
+import { getConfig } from '../../../tools/config/getConfig';
+import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const configRouter = createTRPCRouter({
   all: publicProcedure.query(async () => {

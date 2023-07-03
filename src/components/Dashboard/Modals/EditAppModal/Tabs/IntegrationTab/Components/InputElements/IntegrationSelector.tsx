@@ -3,13 +3,14 @@ import { Group, Image, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
+
 import {
-  IntegrationField,
-  integrationFieldDefinitions,
-  integrationFieldProperties,
   AppIntegrationPropertyType,
   AppIntegrationType,
   AppType,
+  IntegrationField,
+  integrationFieldDefinitions,
+  integrationFieldProperties,
 } from '../../../../../../../../types/app';
 
 interface IntegrationSelectorProps {
@@ -97,7 +98,9 @@ export const integrationsList = [
 export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
   const { t } = useTranslation('layout/modals/add-app');
 
-  const data = integrationsList.filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
+  const data = integrationsList.filter((x) =>
+    Object.keys(integrationFieldProperties).includes(x.value)
+  );
 
   const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {
     if (!value) return [];
@@ -129,7 +132,6 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
       data={data}
       maxDropdownHeight={250}
       dropdownPosition="bottom"
-      clearable
       variant="default"
       searchable
       zIndex={203}
