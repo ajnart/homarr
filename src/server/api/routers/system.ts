@@ -57,7 +57,7 @@ export const systemRouter = createTRPCRouter({
           message: 'Invalid password',
         });
       }
-      return config.integrations;
+      return config.integrations ?? {};
     }),
 
   testIntegration: publicProcedure
