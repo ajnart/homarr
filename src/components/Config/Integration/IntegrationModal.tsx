@@ -1,31 +1,26 @@
 import {
   Accordion,
+  Image,
   Loader,
   Menu,
   Modal,
   PasswordInput,
   Stack,
   Text,
+  TextInput,
   Title,
   rem,
 } from '@mantine/core';
-import { Form, useForm } from '@mantine/form';
-import { modals, openModal } from '@mantine/modals';
+import { UseFormReturnType, useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import { IconPlugConnected } from '@tabler/icons-react';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import { getQueryKey } from '@trpc/react-query';
-import { getCookie, getCookies, setCookie } from 'cookies-next';
-import Image from 'next/image';
-import { useState } from 'react';
+import { getCookie, setCookie } from 'cookies-next';
 import { useTranslation } from 'react-i18next';
 import { integrationsList } from '~/components/Dashboard/Modals/EditAppModal/Tabs/IntegrationTab/Components/InputElements/IntegrationSelector';
-import {
-  IntegrationOptionsRenderer,
-  IntegrationOptionsRendererNoForm,
-} from '~/components/Dashboard/Modals/EditAppModal/Tabs/IntegrationTab/Components/IntegrationOptionsRenderer/IntegrationOptionsRenderer';
-import { useConfigContext } from '~/config/provider';
-import { AppIntegrationType, AppType, IntegrationType } from '~/types/app';
+import { AppIntegrationType, IntegrationType } from '~/types/app';
+import { IntegrationTypeMap } from '~/types/config';
 import { api } from '~/utils/api';
 
 const ModalTitle = ({ title, description }: { title: string; description: string }) => (
@@ -84,16 +79,41 @@ export function IntegrationMenu({ integrationsModal }: { integrationsModal: any 
   );
 }
 
-function IntegrationDisplay({ integration }: { integration: AppIntegrationType }) {
+function IntegrationDisplay({
+  integration,
+  integrationIdx,
+  form,
+}: {
+  integration: AppIntegrationType;
+  integrationIdx: number;
+  form: UseFormReturnType<any>;
+}) {
   if (!integration.type) return null;
+
   return (
     <Accordion.Item value={integration.id}>
       <Accordion.Control>{integration.name}</Accordion.Control>
       <Accordion.Panel>
-        <IntegrationOptionsRendererNoForm
-          type={integration.type}
-          properties={integration.properties}
-        />
+        <Stack>
+          <TextInput label="url" {...form.getInputProps(`${integration.type}.${integrationIdx}.url`)} />
+          {integration.properties.map((property, idx) => {
+            const test = form.getInputProps(`${integration.type}.${integrationIdx}.properties.${idx}.value`);
+            if (property.type === 'private')
+              return (
+                <PasswordInput
+                  label={property.field}
+                  {...form.getInputProps(`${integration.type}.${integrationIdx}.properties.${idx}.value`)}
+                />
+              );
+            else if (property.type === 'public')
+              return (
+                <TextInput
+                  label={property.field}
+                  {...form.getInputProps(`${integration.type}.${integrationIdx}.properties.${idx}.value`)}
+                />
+              );
+          })}
+        </Stack>
       </Accordion.Panel>
     </Accordion.Item>
   );
@@ -120,63 +140,61 @@ interface IntegrationGroupedType {
 //   | 'nzbGet'
 //   | 'pihole'
 //   | 'adGuardHome';
+
+export interface IntegrationObject {
+  [key: string]: AppIntegrationType;
+}
+
 export function IntegrationsAccordion() {
   const cookie = getCookie('INTEGRATIONS_PASSWORD');
   const queryClient = useQueryClient();
   const queryKey = getQueryKey(api.system.checkLogin, { password: cookie?.toString() }, 'query');
-  let integrations: AppIntegrationType[] | undefined = queryClient.getQueryData(queryKey);
+  let integrations: IntegrationTypeMap | undefined = queryClient.getQueryData(queryKey);
   if (!integrations) {
-    integrations = [];
+    return null;
   }
 
-  // Fill configIntegrationList with config.integrations in the
-  const configIntegrationList: IntegrationGroupedType[] = [];
-  integrations.forEach((configIntegration) => {
-    const existingIntegration = configIntegrationList.find(
-      (integration) => integration.type === configIntegration.type
-    );
-    if (existingIntegration) {
-      existingIntegration.integration.push(configIntegration);
-    } else {
-      configIntegrationList.push({
-        type: configIntegration.type!,
-        integration: [configIntegration],
-      });
-    }
+  const form = useForm({
+    initialValues: integrations,
   });
+  // Loop over integrations item
 
   return (
     <Accordion variant="separated" multiple>
-      {configIntegrationList.map((configIntegration) => {
-        // Match configIntegration with integrationsList
-        const integration = integrationsList.find(
-          (integration) => integration.value === configIntegration.type
-        );
-        if (!integration) {
-          return null;
-        }
+      {Object.keys(integrations).map((item) => {
+        if (!integrations) return null;
+        const configIntegrations = integrations[item as keyof IntegrationTypeMap];
+        console.log('CONFIG INTEGRATIONS', configIntegrations);
+        const image: string | undefined = integrationsList.find(
+          (i) => i.value === configIntegrations[0].type
+        )?.image;
+        const integration = configIntegrations[0];
         return (
-          <Accordion.Item
-            value={integration.label ?? integration.value}
-            key={configIntegration.type}
-          >
+          <Accordion.Item value={integration.type ?? integration.name} key={integration.type}>
             <Accordion.Control
               icon={
                 <Image
-                  src={integration.image}
+                  src={image}
+                  withPlaceholder
                   width={24}
                   height={24}
-                  alt={integration.label ?? integration.value}
+                  alt={integration.type ?? integration.name}
                 />
               }
             >
-              {integration.label ?? integration.value}
+              {integration.name}
             </Accordion.Control>
             <Accordion.Panel>
-              <Accordion variant="contained" radius="md" multiple>
-                {configIntegration.integration.map((item) => (
-                  <IntegrationDisplay integration={item} />
-                ))}
+              <Accordion variant="separated" radius="md" multiple>
+                {configIntegrations.map((integration, integrationIdx) => {
+                  return (
+                    <IntegrationDisplay
+                      integrationIdx={integrationIdx}
+                      form={form}
+                      integration={integration}
+                    />
+                  );
+                })}
               </Accordion>
             </Accordion.Panel>
           </Accordion.Item>

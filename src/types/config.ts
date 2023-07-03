@@ -1,8 +1,12 @@
 import { IWidget } from '../widgets/widgets';
-import { AppIntegrationType, AppType, ConfigAppType } from './app';
+import { AppIntegrationType, AppType, ConfigAppType, IntegrationType } from './app';
 import { CategoryType } from './category';
 import { SettingsType } from './settings';
 import { WrapperType } from './wrapper';
+
+export type IntegrationTypeMap = {
+  [key in IntegrationType]: AppIntegrationType[];
+};
 
 export interface ConfigType {
   schemaVersion: number;
@@ -12,7 +16,7 @@ export interface ConfigType {
   apps: AppType[];
   widgets: IWidget<string, any>[];
   settings: SettingsType;
-  integrations: AppIntegrationType[]
+  integrations: IntegrationTypeMap;
 }
 
 export type BackendConfigType = Omit<ConfigType, 'apps'> & {

@@ -23,6 +23,67 @@
   ],
   "apps": [
     {
+      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png"
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
       "name": "Discord",
       "url": "https://discord.com/invite/aCsmEV5RgA",
@@ -84,6 +145,76 @@
       }
     },
     {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a330",
+      "name": "Contribute",
+      "url": "https://github.com/ajnart/homarr",
+      "behaviour": {
+        "onClickUrl": "https://github.com/ajnart/homarr",
+        "externalUrl": "https://github.com/ajnart/homarr",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "statusCodes": []
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png"
+      },
+      "integration": {
+        "type": "transmission",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "qwdqwd"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "qdwqdqw"
+          }
+        ]
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
       "name": "Donate",
       "url": "https://ko-fi.com/ajnart",
@@ -139,126 +270,6 @@
           },
           "size": {
             "width": 1,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a330",
-      "name": "Contribute",
-      "url": "https://github.com/ajnart/homarr",
-      "behaviour": {
-        "onClickUrl": "https://github.com/ajnart/homarr",
-        "externalUrl": "https://github.com/ajnart/homarr",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "statusCodes": []
-      },
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 2
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        }
-      }
-    },
-    {
-      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
-      "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "statusCodes": [
-          "200"
-        ]
-      },
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png"
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a33f"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 2,
             "height": 1
           }
         }
@@ -362,6 +373,74 @@
       }
     }
   ],
+  "integrations": {
+    "sonarr": [
+      {
+        "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
+        "url": "https://discord.com/invite/aCsmEV5RgA",
+        "name": "Sonarr 4k",
+        "type": "sonarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "public",
+            "value": "blabla"
+          }
+        ]
+      },
+      {
+        "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a326",
+        "url": "https://discord.com/invite/aCsmEV5RgA",
+        "name": "Sonarr HD",
+        "type": "sonarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "blabla"
+          }
+        ]
+      },
+      {
+        "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a330",
+        "url": "https://discord.com/invite/aCsmEV5RgA",
+        "name": "Sonarr 16k",
+        "type": "sonarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "blabla"
+          },
+          {
+            "field": "apiKey 2",
+            "type": "private",
+            "value": "blabla 2"
+          }
+        ]
+      }
+    ],
+    "transmission": [
+      {
+        "id": "test",
+        "url": "https://discord.com/invite/aCsmEV5RgA",
+        "name": "Transmission Porn 4k asian babes",
+        "type": "transmission",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "qwdqwd"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "qdwqdqw"
+          }
+        ]
+      }
+    ]
+  },
   "settings": {
     "common": {
       "searchEngine": {
@@ -378,7 +457,7 @@
         "enabledSearchbar": true
       },
       "pageTitle": "Homarr v0.12  ⭐️",
-      "logoImageUrl": "/imgs/logo/logo.png",
+      "logoImageUrl": "",
       "faviconUrl": "/imgs/favicon/favicon-squared.png",
       "backgroundImageUrl": "",
       "customCss": "",
