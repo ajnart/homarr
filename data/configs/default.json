@@ -382,7 +382,7 @@
         "type": "sonarr",
         "properties": [
           {
-            "field": "apiKey",
+            "field": "public api key",
             "type": "public",
             "value": "blabla"
           }
@@ -424,7 +424,7 @@
       {
         "id": "test",
         "url": "https://discord.com/invite/aCsmEV5RgA",
-        "name": "Transmission Porn 4k asian babes",
+        "name": "Transmission",
         "type": "transmission",
         "properties": [
           {
