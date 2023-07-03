@@ -128,6 +128,7 @@ function IntegrationDisplay({
             <TextInput
               withAsterisk
               required
+              defaultValue={integration.url}
               label={'URL'}
               description={t('integration.urlDescription')}
               placeholder="http://localhost:3039"
@@ -136,6 +137,7 @@ function IntegrationDisplay({
             <TextInput
               withAsterisk
               required
+              defaultValue={integration.name}
               label={t('integrationName')}
               description={t('integrationNameDescription')}
               placeholder="My integration"
@@ -143,9 +145,11 @@ function IntegrationDisplay({
             />
           </Group>
           {integration.properties.map((property, idx) => {
+            if (!property.value) return null;
             if (property.type === 'private')
               return (
                 <PasswordInput
+                  defaultValue={property.value}
                   key={property.field}
                   label={property.field}
                   {...form.getInputProps(
@@ -156,6 +160,7 @@ function IntegrationDisplay({
             else if (property.type === 'public')
               return (
                 <TextInput
+                  defaultValue={property.value}
                   key={property.field}
                   label={property.field}
                   {...form.getInputProps(
@@ -197,7 +202,7 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
   const queryClient = useQueryClient();
   const { primaryColor } = useMantineTheme();
   const queryKey = getQueryKey(api.system.checkLogin, { password: cookie?.toString() }, 'query');
-  let integrationsQuery: IntegrationTypeMap | undefined = queryClient.getQueryData(queryKey);
+  const integrationsQuery: IntegrationTypeMap | undefined = queryClient.getQueryData(queryKey);
   const mutation = api.config.save.useMutation();
   const { config, name } = useConfigContext();
   const [isLoading, setIsLoading] = useState(false);
@@ -208,14 +213,9 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
     return null;
   }
 
-  const form = useForm({
+  let form = useForm({
     initialValues: integrationsQuery,
   });
-  // Loop over integrations item
-  useEffect(() => {
-    if (!integrations) return;
-    form.setValues(integrations);
-  }, [integrations]);
 
   return (
     <Stack>
@@ -247,6 +247,7 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
                   {configIntegrations.map((integration, integrationIdx) => {
                     return (
                       <IntegrationDisplay
+                        key={integration.id}
                         integrationIdx={integrationIdx}
                         form={form}
                         integration={integration}
@@ -297,12 +298,13 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
           loading={isLoading}
           leftIcon={<IconDeviceFloppy />}
           onClick={() => {
+            console.log(integrations);
             setIsLoading(true);
             mutation
               .mutateAsync({
                 config: {
                   ...config,
-                  integrations: form.values,
+                  integrations: integrations,
                 },
                 name: name!,
               })
@@ -314,7 +316,6 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
                   color: 'green',
                 });
                 setIsLoading(false);
-                setIntegrations(form.values);
                 queryClient.invalidateQueries(queryKey);
               });
           }}

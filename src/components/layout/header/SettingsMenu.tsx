@@ -1,14 +1,11 @@
 import { Badge, Button, Menu } from '@mantine/core';
-import { useDisclosure, useHotkeys } from '@mantine/hooks';
-import {
-  IconInfoCircle,
-  IconMenu2,
-  IconPlug,
-  IconPlugConnected,
-  IconSettings,
-} from '@tabler/icons-react';
+import { useDisclosure } from '@mantine/hooks';
+import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { IntegrationMenu, IntegrationModal } from '~/components/Config/Integration/IntegrationModal';
+import {
+  IntegrationMenu,
+  IntegrationModal,
+} from '~/components/Config/Integration/IntegrationModal';
 
 import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
@@ -24,7 +21,6 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { classes } = useCardStyles(true);
   const { editModeEnabled } = useEditModeInformationStore();
-  useHotkeys([['mod+o', () => integrationsModal.toggle()]]);
 
   return (
     <>
@@ -43,7 +39,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
               {t('sections.settings')}
             </Menu.Item>
           )}
-         <IntegrationMenu integrationsModal={integrationsModal}/>
+          <IntegrationMenu integrationsModal={integrationsModal} />
           <Menu.Item
             icon={<IconInfoCircle strokeWidth={1.2} size={18} />}
             rightSection={

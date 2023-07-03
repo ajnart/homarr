@@ -40,11 +40,6 @@ export const IntegrationOptionsRendererNoForm = ({
           const { type } = Object.entries(integrationFieldDefinitions).find(
             ([k, v]) => k === property
           )![1];
-          const newProperty: AppIntegrationPropertyType = {
-            type,
-            field: property as IntegrationField,
-            isDefined: false,
-          };
           indexInFormValue = properties.length;
         }
         const formValue = properties[indexInFormValue];
