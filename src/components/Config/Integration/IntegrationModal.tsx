@@ -45,6 +45,7 @@ import {
 import { useQueryClient } from '@tanstack/react-query';
 import { getQueryKey } from '@trpc/react-query';
 import { getCookie, setCookie } from 'cookies-next';
+import { produce } from 'immer';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -209,13 +210,15 @@ function IntegrationDisplay({
                       variant="light"
                       color="red"
                       onClick={() => {
-                        if (!integration.type) return null;
-                        // Pop integration from the integrations array
-                        const newIntegrations = integrations;
-                        newIntegrations[integration.type].filter(
-                          (item) => item.id !== integration.id
+                        // Use produce to create a new object with the integration removed
+                        setIntegrations(
+                          produce(integrations, (draft) => {
+                            draft[integration.type!].splice(integrationIdx, 1);
+                            // Remove the type if there are no integrations left
+                            if (draft[integration.type!].length === 0)
+                              delete draft[integration.type!];
+                          })
                         );
-                        setIntegrations(newIntegrations);
                       }}
                     >
                       {t('common:delete')}
