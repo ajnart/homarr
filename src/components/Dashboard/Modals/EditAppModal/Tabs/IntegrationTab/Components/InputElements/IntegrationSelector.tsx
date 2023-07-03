@@ -16,7 +16,7 @@ interface IntegrationSelectorProps {
   form: UseFormReturnType<AppType, (item: AppType) => AppType>;
 }
 
-export const integrationsList: SelectItem[] = [
+export const integrationsList = [
   {
     value: 'sabnzbd',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/svg/sabnzbd.svg',

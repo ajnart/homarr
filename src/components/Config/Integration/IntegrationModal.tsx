@@ -5,6 +5,7 @@ import {
   Menu,
   Modal,
   PasswordInput,
+  SelectItem,
   Stack,
   Text,
   TextInput,
@@ -13,7 +14,7 @@ import {
 } from '@mantine/core';
 import { UseFormReturnType, useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
-import { IconPlugConnected } from '@tabler/icons-react';
+import { IconLock, IconPlugConnected } from '@tabler/icons-react';
 import { useQueryClient } from '@tanstack/react-query';
 import { getQueryKey } from '@trpc/react-query';
 import { getCookie, setCookie } from 'cookies-next';
@@ -71,7 +72,14 @@ export function IntegrationMenu({ integrationsModal }: { integrationsModal: any 
               checkLogin.refetch();
             })}
           >
-            <PasswordInput autoComplete="off" {...form.getInputProps('password')} />
+            <PasswordInput
+              size="sm"
+              radius="md"
+              autoComplete="off"
+              icon={<IconLock size="1rem" />}
+              visibilityToggleLabel={undefined}
+              {...form.getInputProps('password')}
+            />
           </form>
         )}
       </Stack>
@@ -95,21 +103,29 @@ function IntegrationDisplay({
       <Accordion.Control>{integration.name}</Accordion.Control>
       <Accordion.Panel>
         <Stack>
-          <TextInput label="url" {...form.getInputProps(`${integration.type}.${integrationIdx}.url`)} />
+          <TextInput
+            label="url"
+            {...form.getInputProps(`${integration.type}.${integrationIdx}.url`)}
+          />
           {integration.properties.map((property, idx) => {
-            const test = form.getInputProps(`${integration.type}.${integrationIdx}.properties.${idx}.value`);
             if (property.type === 'private')
               return (
                 <PasswordInput
+                  key={property.field}
                   label={property.field}
-                  {...form.getInputProps(`${integration.type}.${integrationIdx}.properties.${idx}.value`)}
+                  {...form.getInputProps(
+                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                  )}
                 />
               );
             else if (property.type === 'public')
               return (
                 <TextInput
+                  key={property.field}
                   label={property.field}
-                  {...form.getInputProps(`${integration.type}.${integrationIdx}.properties.${idx}.value`)}
+                  {...form.getInputProps(
+                    `${integration.type}.${integrationIdx}.properties.${idx}.value`
+                  )}
                 />
               );
           })}
@@ -117,11 +133,6 @@ function IntegrationDisplay({
       </Accordion.Panel>
     </Accordion.Item>
   );
-}
-
-interface IntegrationGroupedType {
-  type: IntegrationType;
-  integration: AppIntegrationType[];
 }
 
 // export type IntegrationType =
@@ -164,25 +175,24 @@ export function IntegrationsAccordion() {
       {Object.keys(integrations).map((item) => {
         if (!integrations) return null;
         const configIntegrations = integrations[item as keyof IntegrationTypeMap];
-        console.log('CONFIG INTEGRATIONS', configIntegrations);
-        const image: string | undefined = integrationsList.find(
-          (i) => i.value === configIntegrations[0].type
-        )?.image;
-        const integration = configIntegrations[0];
+        const integrationListItem = integrationsList.find(
+          (integration) => integration.value === item
+        );
+        if (!configIntegrations || !integrationListItem) return null;
         return (
-          <Accordion.Item value={integration.type ?? integration.name} key={integration.type}>
+          <Accordion.Item value={integrationListItem.value} key={integrationListItem.value}>
             <Accordion.Control
               icon={
                 <Image
-                  src={image}
+                  src={integrationListItem.image}
                   withPlaceholder
                   width={24}
                   height={24}
-                  alt={integration.type ?? integration.name}
+                  alt={integrationListItem.value}
                 />
               }
             >
-              {integration.name}
+              {integrationListItem.label}
             </Accordion.Control>
             <Accordion.Panel>
               <Accordion variant="separated" radius="md" multiple>
