@@ -138,8 +138,8 @@ function IntegrationDisplay({
               withAsterisk
               required
               defaultValue={integration.name}
-              label={t('integrationName')}
-              description={t('integrationNameDescription')}
+              label={t('integration.name')}
+              description={t('integration.nameDescription')}
               placeholder="My integration"
               {...form.getInputProps(`${integration.type}.${integrationIdx}.name`)}
             />
@@ -268,7 +268,7 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
             }
             icon={<IconPlug stroke={2} />}
           >
-            {t('addNewIntegration')}
+            {t('settings/integrations:addNewIntegration')}
           </Accordion.Control>
           <Accordion.Panel>
             <AddIntegrationPanel

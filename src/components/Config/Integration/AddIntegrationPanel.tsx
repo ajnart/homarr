@@ -105,8 +105,8 @@ export function AddIntegrationPanel({
           <TextInput
             withAsterisk
             required
-            label={t('integrationName')}
-            description={t('integrationNameDescription')}
+            label={t('integration.name')}
+            description={t('integration.nameDescription')}
             placeholder="My integration"
             {...form.getInputProps('integration.name')}
           />
