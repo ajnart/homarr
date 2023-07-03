@@ -490,7 +490,7 @@ export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }
                 notifications.show({
                   icon: <IconCheck />,
                   title: t('common:success'),
-                  message: t('savedSuccessfully'),
+                  message: t('settings/integrations:savedSuccessfully'),
                   color: 'green',
                 });
                 setIsLoading(false);
@@ -518,8 +518,17 @@ export function IntegrationModal({
       title={<ModalTitle title={t('title')} description={t('description')} />}
       opened={opened}
       closeOnClickOutside={false}
-      closeOnEscape={false}
-      onClose={() => closeModal()}
+      onClose={() =>
+        modals.openConfirmModal({
+          withCloseButton: false,
+          title: t('CloseConfirmation'),
+          children: (
+            <Text>{t('CloseConfirmationExplanation')}</Text>
+          ),
+          labels: { confirm: 'Close it anyways', cancel: 'Cancel' },
+          onConfirm: closeModal,
+        })
+      }
       fullScreen
     >
       <IntegrationsAccordion closeModal={closeModal} />
