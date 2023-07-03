@@ -373,74 +373,7 @@
       }
     }
   ],
-  "integrations": {
-    "sonarr": [
-      {
-        "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
-        "url": "https://discord.com/invite/aCsmEV5RgA",
-        "name": "Sonarr 4k",
-        "type": "sonarr",
-        "properties": [
-          {
-            "field": "public api key",
-            "type": "public",
-            "value": "blabla"
-          }
-        ]
-      },
-      {
-        "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a326",
-        "url": "https://discord.com/invite/aCsmEV5RgA",
-        "name": "Sonarr HD",
-        "type": "sonarr",
-        "properties": [
-          {
-            "field": "apiKey",
-            "type": "private",
-            "value": "blabla"
-          }
-        ]
-      },
-      {
-        "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a330",
-        "url": "https://discord.com/invite/aCsmEV5RgA",
-        "name": "Sonarr 16k",
-        "type": "sonarr",
-        "properties": [
-          {
-            "field": "apiKey",
-            "type": "private",
-            "value": "blabla"
-          },
-          {
-            "field": "apiKey 2",
-            "type": "private",
-            "value": "blabla 2"
-          }
-        ]
-      }
-    ],
-    "transmission": [
-      {
-        "id": "test",
-        "url": "https://discord.com/invite/aCsmEV5RgA",
-        "name": "Transmission",
-        "type": "transmission",
-        "properties": [
-          {
-            "field": "username",
-            "type": "public",
-            "value": "qwdqwd"
-          },
-          {
-            "field": "password",
-            "type": "private",
-            "value": "qdwqdqw"
-          }
-        ]
-      }
-    ]
-  },
+  "integrations": {},
   "settings": {
     "common": {
       "searchEngine": {
