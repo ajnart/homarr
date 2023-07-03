@@ -10,6 +10,8 @@
   "disabled": "Disabled",
   "enableAll": "Enable all",
   "disableAll": "Disable all",
+  "success": "Success",
+  "add": "Add",
   "version": "Version",
   "changePosition": "Change position",
   "remove": "Remove",

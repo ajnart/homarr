@@ -1,4 +1,13 @@
 {
 	"title": "Integrations settings",
-	"description": "Here you can configure all the integrations you want to use within Honmarr"
+	"description": "Here you can configure all the integrations you want to use within Honmarr",
+	"addNewIntegration": "Add new integration",
+	"savedSuccessfully": "Your changes have been saved successfully, you can now close this window",
+	"integration": {
+		"urlDescription": "Url for the integration, generally an IP",
+		"name": "Name",
+		"nameDescription": "The name of the integration",
+		"Added": "Integration added!",
+		"AddedDescription": "The integration {{name}} has been added successfully"
+	}
 }
