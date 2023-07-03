@@ -1610,13 +1610,13 @@ __metadata:
   linkType: hard
 
 "@react-native-async-storage/async-storage@npm:^1.18.1":
-  version: 1.18.2
-  resolution: "@react-native-async-storage/async-storage@npm:1.18.2"
+  version: 1.19.0
+  resolution: "@react-native-async-storage/async-storage@npm:1.19.0"
   dependencies:
     merge-options: ^3.0.4
   peerDependencies:
     react-native: ^0.0.0-0 || 0.60 - 0.72 || 1000.0.0
-  checksum: bdbcd2e4785a1348657302fa48f4073d980d3b3626fc2ea1e8ec3013825d0013a49d0805a3fd1e98c0b8b12eb1273ef03fb842686ce740d25331398deb2691c4
+  checksum: 669f50695838a010f6444f0c0e0618aeda072d25798901d0802f0b945aa6fbab13a68d83a23f6bef591793ae09341dbb8a88f2d40eaf9542bde159711d9deb0e
   languageName: node
   linkType: hard
 
