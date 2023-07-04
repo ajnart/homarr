@@ -9721,8 +9721,8 @@ __metadata:
   linkType: hard
 
 "zustand@npm:^4.3.7":
-  version: 4.3.8
-  resolution: "zustand@npm:4.3.8"
+  version: 4.3.9
+  resolution: "zustand@npm:4.3.9"
   dependencies:
     use-sync-external-store: 1.2.0
   peerDependencies:
@@ -9733,6 +9733,6 @@ __metadata:
       optional: true
     react:
       optional: true
-  checksum: 24db6bf063ce1fc8b2ee238f13211a88f43236541a716e5f6f706f613c671a45332465f9ed06d694f8c353da3d24c53ea668e5712a86aceda9ad74f6c433e8c0
+  checksum: fc83d653913fa537c354ba8b95d3a4fdebe62d2ebd3d9f5aeff2edf062811c0f5af48e02ab4da32b666752fd4f3e78c2b44624e445254f48503595435d4a7d70
   languageName: node
   linkType: hard
