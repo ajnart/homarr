@@ -14,7 +14,7 @@
         "label": "Тип релиза в Radarr"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Скрыть дни недели"
       }
     }
   }
