@@ -31,8 +31,8 @@
       "header": {
         "name": "",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "Isključeno",
+        "upload": "Uključeno",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
