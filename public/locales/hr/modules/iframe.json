@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "iFrame",
-    "description": "",
+    "description": "Ugradite bilo koji sadržaj s interneta. Neke web stranice mogu ograničiti pristup.",
     "settings": {
-      "title": "",
+      "title": "iFrame postavke",
       "embedUrl": {
-        "label": ""
+        "label": "Ugradbeni URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Dozvoli puni zaslon"
       },
       "allowTransparency": {
         "label": ""
