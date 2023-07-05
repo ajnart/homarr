@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Kalendar",
+    "description": "Prikazuje kalendar s nadolazećim izdanjima iz podržanih integracija.",
     "settings": {
-      "title": "",
+      "title": "Postavke za widget kalendara",
       "useSonarrv4": {
-        "label": ""
+        "label": "Koristi Sonarr v4 API"
       },
       "sundayStart": {
-        "label": ""
+        "label": "Započni tjedan u Nedjelju"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "Vrsta izdanja u Radarr-u"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Sakri dane u tjednu"
       }
     }
   }
