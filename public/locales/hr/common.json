@@ -1,7 +1,7 @@
 {
   "save": "Spremi",
   "about": "O aplikaciji",
-  "cancel": "",
+  "cancel": "Otkaži",
   "close": "Zatvori",
   "delete": "Obriši",
   "ok": "U REDU",
@@ -30,7 +30,7 @@
     "minutes": "minute",
     "hours": "sati"
   },
-  "loading": "",
+  "loading": "Učitavam...",
   "breakPoints": {
     "small": "malo",
     "medium": "srednje",
