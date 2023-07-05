@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { Group, Image, Select, SelectItem, Text } from '@mantine/core';
+import { Group, Image, Select, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
 
 import {
   AppIntegrationPropertyType,
-  AppIntegrationType,
   AppType,
+  Integration,
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
@@ -104,8 +104,8 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
 
   const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {
     if (!value) return [];
-    const integrationType = value as Exclude<AppIntegrationType['type'], null>;
-    if (integrationType === null) {
+    const integrationType = value as Exclude<Integration['type'], null>;
+    if (integrationType === undefined) {
       return [];
     }
 

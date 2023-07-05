@@ -39,7 +39,7 @@ const defaultAppValues: AppType = {
   integration: {
     id: uuidv4(),
     url: '',
-    type: null,
+    type: undefined,
     properties: [],
     name: 'New integration',
   },

@@ -7,7 +7,7 @@ import { cookies } from 'next/headers';
 import { env } from 'process';
 import { z } from 'zod';
 import { getConfig } from '~/tools/config/getConfig';
-import { AppIntegrationType } from '~/types/app';
+import { Integration } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 

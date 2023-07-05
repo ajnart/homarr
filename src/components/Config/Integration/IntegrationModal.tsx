@@ -9,7 +9,6 @@ import {
   Modal,
   PasswordInput,
   Popover,
-  SelectItem,
   Stack,
   Text,
   TextInput,
@@ -19,15 +18,12 @@ import {
   rem,
   useMantineTheme,
 } from '@mantine/core';
-import { AccordionItem } from '@mantine/core/lib/Accordion/AccordionItem/AccordionItem';
 import { UseFormReturnType, useForm } from '@mantine/form';
 import { modals } from '@mantine/modals';
 import { notifications } from '@mantine/notifications';
 import {
   IconCheck,
-  IconCircle0Filled,
   IconCircleX,
-  IconCircleXFilled,
   IconDeviceFloppy,
   IconExternalLink,
   IconKey,
@@ -47,11 +43,11 @@ import { getQueryKey } from '@trpc/react-query';
 import { getCookie, setCookie } from 'cookies-next';
 import { produce } from 'immer';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { integrationsList } from '~/components/Dashboard/Modals/EditAppModal/Tabs/IntegrationTab/Components/InputElements/IntegrationSelector';
 import { useConfigContext } from '~/config/provider';
-import { AppIntegrationType, IntegrationType } from '~/types/app';
+import { Integration } from '~/types/app';
 import { IntegrationTypeMap } from '~/types/config';
 import { api } from '~/utils/api';
 
@@ -127,7 +123,7 @@ function IntegrationDisplay({
   integrationIdx,
   form,
 }: {
-  integration: AppIntegrationType;
+  integration: Integration;
   integrations: IntegrationTypeMap;
   setIntegrations: (integrations: IntegrationTypeMap) => void;
   integrationIdx: number;
@@ -256,7 +252,7 @@ export function SecretsInputs({
   integrationIdx,
   form,
 }: {
-  integration: AppIntegrationType;
+  integration: Integration;
   integrationIdx: number;
   form: UseFormReturnType<any>;
 }) {
@@ -369,7 +365,7 @@ export function SecretsInputs({
 //   | 'adGuardHome';
 
 export interface IntegrationObject {
-  [key: string]: AppIntegrationType;
+  [key: string]: Integration;
 }
 
 export function IntegrationsAccordion({ closeModal }: { closeModal: () => void }) {
@@ -522,9 +518,7 @@ export function IntegrationModal({
         modals.openConfirmModal({
           withCloseButton: false,
           title: t('CloseConfirmation'),
-          children: (
-            <Text>{t('CloseConfirmationExplanation')}</Text>
-          ),
+          children: <Text>{t('CloseConfirmationExplanation')}</Text>,
           labels: { confirm: 'Close it anyways', cancel: 'Cancel' },
           onConfirm: closeModal,
         })

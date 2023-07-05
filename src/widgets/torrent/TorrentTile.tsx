@@ -25,7 +25,7 @@ import { useTranslation } from 'next-i18next';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
-import { AppIntegrationType } from '../../types/app';
+import { Integration } from '../../types/app';
 import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
 import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
 
@@ -34,7 +34,7 @@ import { BitTorrrentQueueItem } from './TorrentQueueItem';
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
 
-const downloadAppTypes: AppIntegrationType['type'][] = ['deluge', 'qBittorrent', 'transmission'];
+const downloadAppTypes: Integration['type'][] = ['deluge', 'qBittorrent', 'transmission'];
 
 const definition = defineWidget({
   id: 'torrents-status',

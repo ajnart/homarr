@@ -9,11 +9,11 @@ export interface AppType extends TileBaseType {
   behaviour: AppBehaviourType;
   network: AppNetworkType;
   appearance: AppAppearanceType;
-  integration: AppIntegrationType;
+  integration: Integration;
 }
 
 export type ConfigAppType = Omit<AppType, 'integration'> & {
-  integration?: ConfigAppIntegrationType | null;
+  integration?: ConfigAppIntegrationType | undefined;
 };
 
 interface AppBehaviourType {
@@ -48,15 +48,15 @@ export type IntegrationType =
   | 'pihole'
   | 'adGuardHome';
 
-export type AppIntegrationType = {
-  type: IntegrationType | null;
+export type Integration = {
+  type?: IntegrationType;
   id: string;
   url: string;
   name: string;
   properties: AppIntegrationPropertyType[];
 };
 
-export type ConfigAppIntegrationType = Omit<AppIntegrationType, 'properties'> & {
+export type ConfigAppIntegrationType = Omit<Integration, 'properties'> & {
   properties: ConfigAppIntegrationPropertyType[];
 };
 
@@ -74,7 +74,7 @@ type ConfigAppIntegrationPropertyType = Omit<AppIntegrationPropertyType, 'isDefi
 export type IntegrationField = 'apiKey' | 'password' | 'username';
 
 export const integrationFieldProperties: {
-  [key in Exclude<AppIntegrationType['type'], null>]: IntegrationField[];
+  [key in Exclude<Integration['type'], undefined>]: IntegrationField[];
 } = {
   lidarr: ['apiKey'],
   radarr: ['apiKey'],

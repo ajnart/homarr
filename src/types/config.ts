@@ -1,11 +1,11 @@
 import { IWidget } from '../widgets/widgets';
-import { AppIntegrationType, AppType, ConfigAppType, IntegrationType } from './app';
+import { Integration, AppType, ConfigAppType, IntegrationType } from './app';
 import { CategoryType } from './category';
 import { SettingsType } from './settings';
 import { WrapperType } from './wrapper';
 
 export type IntegrationTypeMap = {
-  [key in IntegrationType]: AppIntegrationType[];
+  [key in IntegrationType]: Integration[];
 };
 
 export interface ConfigType {

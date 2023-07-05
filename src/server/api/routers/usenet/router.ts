@@ -33,7 +33,7 @@ export const usenetRouter = createTRPCRouter({
         });
       }
 
-      if (app.integration.type === 'nzbGet') {
+      if (app.integration?.type === 'nzbGet') {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,
@@ -115,7 +115,7 @@ export const usenetRouter = createTRPCRouter({
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
-      if (app.integration.type === 'nzbGet') {
+      if (app.integration?.type === 'nzbGet') {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,
@@ -190,7 +190,7 @@ export const usenetRouter = createTRPCRouter({
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
-      if (app.integration.type === 'nzbGet') {
+      if (app.integration?.type === 'nzbGet') {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,
@@ -237,7 +237,7 @@ export const usenetRouter = createTRPCRouter({
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
-      if (app.integration.type === 'nzbGet') {
+      if (app.integration?.type === 'nzbGet') {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,
@@ -286,7 +286,7 @@ export const usenetRouter = createTRPCRouter({
         throw new Error(`App with ID "${input.appId}" could not be found.`);
       }
 
-      if (app.integration.type === 'nzbGet') {
+      if (app.integration?.type === 'nzbGet') {
         const url = new URL(app.url);
         const options = {
           host: url.hostname,

@@ -1,8 +1,10 @@
 import Consola from 'consola';
 import fs from 'fs';
+import { v4 } from 'uuid';
+import { fetchCity } from '~/server/api/routers/weather';
+
 import { BackendConfigType, ConfigType } from '../../types/config';
 import { getConfig } from './getConfig';
-import { fetchCity } from '~/server/api/routers/weather';
 
 export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
   let config = getConfig(name);
@@ -39,7 +41,10 @@ export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
       ...app,
       integration: {
         ...(app.integration ?? null),
-        type: app.integration?.type ?? null,
+        id: app.integration?.id ?? v4(),
+        name: app.integration?.name ?? '',
+        url: app.integration?.url ?? '',
+        type: app.integration?.type ?? undefined,
         properties:
           app.integration?.properties.map((property) => ({
             ...property,

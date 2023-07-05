@@ -112,7 +112,8 @@ export const AvailableElementTypes = ({
                   },
                   shape: {},
                   integration: {
-                    type: null,
+                    url: '',
+                    type: undefined,
                     properties: [],
                     id: uuidv4(),
                     name: 'New integration',

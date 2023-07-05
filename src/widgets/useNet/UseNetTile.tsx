@@ -14,7 +14,7 @@ import {
   useResumeUsenetQueueMutation,
 } from '../../hooks/widgets/dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
-import { AppIntegrationType } from '../../types/app';
+import { Integration } from '../../types/app';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { UsenetHistoryList } from './UsenetHistoryList';
@@ -22,7 +22,7 @@ import { UsenetQueueList } from './UsenetQueueList';
 
 dayjs.extend(duration);
 
-const downloadAppTypes: AppIntegrationType['type'][] = ['sabnzbd', 'nzbGet'];
+const downloadAppTypes: Integration['type'][] = ['sabnzbd', 'nzbGet'];
 
 const definition = defineWidget({
   id: 'usenet',
