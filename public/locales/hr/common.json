@@ -1,39 +1,39 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Spremi",
+  "about": "O aplikaciji",
   "cancel": "",
-  "close": "",
-  "delete": "",
-  "ok": "",
-  "edit": "",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
-  "version": "",
-  "changePosition": "",
+  "close": "Zatvori",
+  "delete": "Obriši",
+  "ok": "U REDU",
+  "edit": "Uredi",
+  "enabled": "Omogućeno",
+  "disabled": "Onemogućeno",
+  "enableAll": "Omogući sve",
+  "disableAll": "Onemogući sve",
+  "version": "Verzija",
+  "changePosition": "Promijenjen položaj",
   "remove": "",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "Jeste li sigurni da želite ukloniti {{item}}?",
+  "createItem": "+ kreiraj {{item}}",
   "sections": {
-    "settings": "",
-    "dangerZone": ""
+    "settings": "Postavke",
+    "dangerZone": "Opasna zona"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
-    "password": ""
+    "apiKey": "API ključ",
+    "username": "Korisničko ime",
+    "password": "Lozinka"
   },
-  "tip": "",
+  "tip": "Savjet: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "sekunde",
+    "minutes": "minute",
+    "hours": "sati"
   },
   "loading": "",
   "breakPoints": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "malo",
+    "medium": "srednje",
+    "large": "veliko"
   }
 }
