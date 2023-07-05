@@ -8,36 +8,36 @@
         "label": "Ugradbeni URL"
       },
       "allowFullScreen": {
-        "label": "Dozvoli puni zaslon"
+        "label": "Dopusti puni zaslon"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Dopusti prozirnost"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Dopusti klizanje (scrollanje)"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Dopusti plaćanje"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Dopusti automatsku reprodukciju"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Dopusti pristup mikrofonu"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Dopusti pristup kameri"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Dopusti geolociranje"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Neispravan URL",
+        "text": "Provjerite jeste li unijeli valjanu adresu u konfiguraciji svog widgeta"
       }
     }
   }
