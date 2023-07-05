@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Video Stream",
+    "description": "Ugradi video stream ili video sa kamere i/ili web stranice",
     "settings": {
-      "title": "",
+      "title": "Postavke za Widget video stream",
       "FeedUrl": {
-        "label": ""
+        "label": "URL feed-a"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatska reprodukcija"
       },
       "muted": {
-        "label": ""
+        "label": "Ugasi zvuk"
       },
       "controls": {
-        "label": ""
+        "label": "Kontrole video reproduktora"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Neispravni stream"
   }
 }
