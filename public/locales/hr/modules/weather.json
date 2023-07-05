@@ -1,32 +1,32 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Vremenska prognoza",
+    "description": "Prikazuje trenutne vremenske informacije za odabranu lokaciju.",
     "settings": {
-      "title": "",
+      "title": "Postavke za vremenski Widget",
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Prikaz u Fahrenheitima"
       },
       "location": {
-        "label": ""
+        "label": "Lokacija vremenske prognoze"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
+      "clear": "Vedro",
+      "mainlyClear": "Uglavnom vedro",
+      "fog": "Maglovito",
+      "drizzle": "Rominjajuća kiša",
+      "freezingDrizzle": "Ledena kišica",
+      "rain": "Kiša",
+      "freezingRain": "Ledena kiša",
+      "snowFall": "Snježne padavine",
+      "snowGrains": "Snježne pahulje",
+      "rainShowers": "Pljusak",
+      "snowShowers": "Snježna mečava",
+      "thunderstorm": "Grmljavinska oluja",
+      "thunderstormWithHail": "Grmljavinska oluja s tučom",
       "unknown": "Nepoznato"
     }
   }
