@@ -1,117 +1,117 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Prikazuje grafikone vanjske Dash instance unutar Homarr-a.",
     "settings": {
-      "title": "",
+      "title": "Postavke za Dash. Widget",
       "dashName": {
-        "label": ""
+        "label": "Dash. Naziv"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Prikaži postotke"
       },
       "columns": {
-        "label": ""
+        "label": "Prikaži stupce"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Visina za grafove"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafovi (Redoslijed)",
         "storage": {
-          "label": "",
+          "label": "Pohrana",
           "enabled": {
-            "label": ""
+            "label": "Prikaži u widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Proširenje stupca"
           },
           "compactView": {
-            "label": ""
+            "label": "Prikaži kao tekst (kompaktno)"
           },
           "multiView": {
-            "label": ""
+            "label": "Prikaži kao multi-drive-view"
           }
         },
         "network": {
-          "label": "",
+          "label": "Mreža",
           "enabled": {
-            "label": ""
+            "label": "Prikaži u widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Proširenje stupca"
           },
           "compactView": {
-            "label": ""
+            "label": "Prikaži kao tekst (kompaktno)"
           }
         },
         "cpu": {
-          "label": "",
+          "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Prikaži u widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Proširenje stupca"
           },
           "multiView": {
-            "label": ""
+            "label": "Prikaži kao multi-core-view"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Prikaži u widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Proširenje stupca"
           }
         },
         "gpu": {
-          "label": "",
+          "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Prikaži u widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Proširenje stupca"
           }
         }
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Nije pronađena usluga Dash. Molim vas dodajte je na svoju Homarr nadzornu ploču ili postavite Dash URL u opcijama modula",
+      "noInformation": "Nije moguće dobiti informacije iz Dash-a. - Jeste li pokrenuli najnoviju verziju?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Detektirano snižavanje protokola",
+        "text": "Veza s vašom Dash. instancom koristi HTTP. To predstavlja sigurnosni rizik jer je HTTP nešifriran, a napadači mogu zloupotrijebiti tu vezu. Provjerite je li Dash. postavljen da koristi HTTPS ili snizite Homarr na HTTP (nije preporučljivo)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Pohrana",
+        "label": "Pohrana:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Mreža",
+        "label": "Mreža:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Isključeno",
+          "upload": "Uključeno"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "GPU"
       }
     }
   }
