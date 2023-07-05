@@ -1,0 +1,44 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "embedUrl": {
+        "label": ""
+      },
+      "allowFullScreen": {
+        "label": ""
+      },
+      "allowTransparency": {
+        "label": ""
+      },
+      "allowScrolling": {
+        "label": ""
+      },
+      "allowPayment": {
+        "label": ""
+      },
+      "allowAutoPlay": {
+        "label": ""
+      },
+      "allowMicrophone": {
+        "label": ""
+      },
+      "allowCamera": {
+        "label": ""
+      },
+      "allowGeolocation": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}
