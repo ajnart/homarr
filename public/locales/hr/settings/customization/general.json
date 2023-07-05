@@ -3,23 +3,23 @@
   "accordeon": {
     "layout": {
       "name": "Raspored",
-      "description": ""
+      "description": "Omogućite ili onemogućite elemente na zaglavlju i pločama nadzorne ploče"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Gridstack",
+      "description": "Customizirajte ponašanje i stupce područja nadzorne ploče prema svojim preferencijama"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Metapodaci Stranice",
+      "description": "Prilagodite naslove, logotipe i PWA (progresivne web aplikacije)"
     },
     "appereance": {
       "name": "Izgled",
-      "description": ""
+      "description": "Prilagodite pozadinu, boje i izgled aplikacija"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Pristupačnost",
+      "description": "Konfigurišite Homarr za osobe sa invaliditetom"
     }
   }
 }
