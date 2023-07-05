@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Datum i Vrijeme",
+    "description": "Prikaži trenutni datum i vrijeme.",
     "settings": {
-      "title": "",
+      "title": "Postavke za widget Datuma i Vremena",
       "display24HourFormat": {
-        "label": ""
+        "label": "Prikaži full-time oblik (24-satni)"
       }
     }
   }
