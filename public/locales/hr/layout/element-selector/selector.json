@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Dodaj novu ploču",
+        "text": "Ploče su glavni element Homarr-a. Koriste se za prikaz vaših aplikacija i drugih informacija. Možete dodati koliko god ploča želite."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "Widgeti komuniciraju s vašim aplikacijama kako bi vam pružili veću kontrolu nad istima. Obično zahtijevaju dodatnu konfiguraciju prije upotrebe.",
+    "goBack": "Vrati se na prijašnji korak",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Dodaj ploču"
     }
 }
