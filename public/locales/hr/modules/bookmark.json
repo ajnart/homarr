@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Oznaka",
+    "description": "Prikazuje statičan popis nizova ili veza",
     "settings": {
-      "title": "",
+      "title": "Postavke oznake",
       "items": {
-        "label": ""
+        "label": "Stavke"
       },
       "layout": {
         "label": ""
@@ -14,8 +14,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Popis oznaka prazan",
+      "text": "Dodajte nove stavke u ovaj popis u načinu uređivanja"
     }
   }
 }
