@@ -12,7 +12,7 @@
   "disableAll": "Onemogući sve",
   "version": "Verzija",
   "changePosition": "Promijenjen položaj",
-  "remove": "",
+  "remove": "Ukloni",
   "removeConfirm": "Jeste li sigurni da želite ukloniti {{item}}?",
   "createItem": "+ kreiraj {{item}}",
   "sections": {
