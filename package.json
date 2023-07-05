@@ -105,7 +105,7 @@
     "eslint-plugin-vitest": "^0.2.0",
     "happy-dom": "^9.0.0",
     "node-mocks-http": "^1.12.2",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "sass": "^1.56.1",
     "ts-node": "latest",
     "turbo": "latest",
