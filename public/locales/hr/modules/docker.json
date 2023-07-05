@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Omogućuje vam jednostavan pregled i upravljanje svim vašim Docker kontejnerima."
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Pretraživanje po nazivu kontejnera ili slike kontejnera"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Naziv",
+      "image": "Slika",
+      "ports": "Portovi",
+      "state": "Stanje"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} više"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "U radu",
+      "created": "Kreirano",
+      "stopped": "Zaustavljeno",
+      "unknown": "Nepoznato"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Dodaj aplikaciju",
+      "message": "Dodaj aplikaciju u Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Ponovo pokreni"
     },
     "stop": {
-      "title": ""
+      "title": "Zaustavi"
     },
     "start": {
-      "title": ""
+      "title": "Pokreni"
     },
     "refreshData": {
-      "title": ""
+      "title": "Osvježi podatke"
     },
     "remove": {
-      "title": ""
+      "title": "Ukloni"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Dodaj u Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Pokretanje",
+      "end": "Pokrenuto"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Zaustavljanje",
+      "end": "Zaustavljeno"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Ponovno pokretanje",
+      "end": "Ponovno pokrenuto"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Uklanjam",
+      "end": "Uklonjeno"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker integracija nije uspjela",
+      "message": "Jeste li zaboravili montirati Docker socket?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Došlo je do pogreške"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Molimo dodajte samo jednu aplikaciju ili uslugu odjednom!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
