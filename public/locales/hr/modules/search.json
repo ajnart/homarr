@@ -1,30 +1,30 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Traka za pretraživanje",
+    "description": "Traka za pretragu koja vam omogućuje pretraživanje vašeg prilagođenog pretraživača, YouTube-a i podržanih integracija."
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "Pretraži web..."
   },
-  "switched-to": "",
+  "switched-to": "Prebacite se na",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Web",
+      "description": "Traži..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Pretraži YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrenti",
+      "description": "Pretraži Torrente"
     },
     "overseerr": {
-      "name": "",
-      "description": ""
+      "name": "Overseerr",
+      "description": "Pretraži filmove i TV emisije na Overseerr-u"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Možete odabrati traku za pretraživanje pomoću prečaca ",
+  "switchedSearchEngine": "Upotrijebi pretraživanje pomoću {{searchEngine}}"
 }
