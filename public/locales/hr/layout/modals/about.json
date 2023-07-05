@@ -11,8 +11,8 @@
 		"configurationsCount": "Dostupna konfiguracija",
 		"version": "Verzija",
 		"nodeEnvironment": "Okruženje čvora",
-		"i18n": "",
-		"locales": "",
-		"experimental_disableEditMode": ""
+		"i18n": "Učitani I18n prostori za prijevod",
+		"locales": "Konfigurirani I18n lokaliteti",
+		"experimental_disableEditMode": "<b>EXPERIMENTALNO</b>: Onemogući način uređivanja"
 	}
 }
