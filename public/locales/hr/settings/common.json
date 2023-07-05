@@ -1,6 +1,6 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Postavke",
+  "tooltip": "Postavke",
   "tabs": {
     "common": "",
     "customizations": ""
@@ -13,7 +13,7 @@
     "thirdPartyContent": "",
     "thirdPartyContentTable": {
       "dependencyName": "",
-      "dependencyVersion": ""
+      "dependencyVersion": "Verzija"
     }
   },
   "grow": "",
