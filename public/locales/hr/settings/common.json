@@ -2,37 +2,37 @@
   "title": "Postavke",
   "tooltip": "Postavke",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Uobičajeno",
+    "customizations": "Prilagodbe"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Prenesite svoju konfiguracijsku datoteku povlačenjem i ispuštanjem na stranicu!"
   },
   "credits": {
-    "madeWithLove": "",
-    "thirdPartyContent": "",
+    "madeWithLove": "Napravljeno s ❤️ od @",
+    "thirdPartyContent": "Prikaži sadržaj treće strane",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "Zavisnosti",
       "dependencyVersion": "Verzija"
     }
   },
-  "grow": "",
+  "grow": "Proširi grid (zauzmi sav prostor)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Pregled",
+      "subtitle": "Promjene će se automatski spremiti"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "Mogućnosti izgleda",
+    "main": "Glavni prikaz",
+    "sidebar": "Bočna traka",
+    "cannotturnoff": "Ne može se isključiti",
+    "dashboardlayout": "Raspored nadzorne ploče",
+    "enablersidebar": "Omogući desnu bočnu traku",
+    "enablelsidebar": "Omogući lijevu bočnu traku",
+    "enablesearchbar": "Omogući pretraživač",
+    "enabledocker": "Uključi integraciju s Docker-om",
+    "enableping": "Omogući Ping-ove",
+    "enablelsidebardesc": "Opcionalno. Može se koristiti samo za aplikacije i integracije",
+    "enablersidebardesc": "Opcionalno. Može se koristiti samo za aplikacije i integracije"
   }
 }
