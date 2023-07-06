@@ -1,86 +1,86 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Promjena konfiguracije",
+    "description": "Dostupne su {{configCount}} konfiguracije",
+    "loadingNew": "Učitavanje vaše konfig...",
+    "pleaseWait": "Molim pričekajte dok se učita nova konfiguracija!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Odaberite ime za svoju novu konfiguraciju",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Naziv Konfiguracije",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "Naziv konfiguracije je obavezno",
+            "notUnique": "Naziv konfiguracije je već u upotrebi"
           },
-          "placeholder": ""
+          "placeholder": "Naziv Vaše nove konfiguracije"
         },
-        "submitButton": ""
+        "submitButton": "Potvrdi"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguracija spremljena",
+          "message": "Konfiguracija spremljena kao {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguracija kopirana",
+          "message": "Konfiguracija kopirana kao {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Nije moguće kopirati konfiguraciju",
+          "message": "Vaša konfiguracija nije kopirana kao {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "Potvrdite brisanje Vaše konfiguracije",
+      "warningText": "Upozorenje: Namjeravate izbrisati '<b>{{configName}}</b>'",
+      "text": "Napomena: Brisanje nije povratno i vaši podaci bit će trajno izgubljeni. Nakon klika na ovaj gumb, datoteka će biti trajno izbrisana s vašeg diska. Budite sigurni i napravite odgovarajuću sigurnosnu kopiju vaše konfiguracije.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Da, izbriši '<b>{{configName}}</b>'"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Preuzmi konfiguraciju",
     "delete": {
-      "text": "",
+      "text": "Obriši konfiguraciju",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguracija je izbrisana",
+          "message": "Konfiguracija je izbrisana"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "Brisanje konfiguracije nije uspjelo",
+          "message": "Brisanje konfiguracije nije uspjelo"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Nemoguće je izbrisati zadani konfiguracijski zapis",
+          "message": "Konfiguracija nije izbrisana s datotečnog sustava"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Spremi kao kopiju"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Nije moguće učitati konfiguraciju",
+        "message": "Nije moguće učitati vašu konfig. Nevaljani JSON format."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Konfiguracija {{configName}} uspješno učitana"
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Učitaj Konfiguraciju",
+      "text": "Povucite datoteke ovdje za prijenos konfig. Podržane su samo JSON datoteke."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Prijenos pomoću povlačenja i ispuštanja odbijen",
+      "text": "Ovaj format datoteke nije podržan. Molimo Vas prenesete samo JSON datoteke."
     }
   }
 }
