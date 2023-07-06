@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ups, došlo je do pogreške!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Pojedinosti",
+      "tryAgain": "Pokušaj ponovno"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Vaša greška",
+    "reportButton": "Prijavi ovu grešku"
   }
 }
