@@ -7,11 +7,11 @@
     "table": {
       "header": {
         "name": "Naziv",
-        "size": "",
+        "size": "Veličina",
         "download": "Isključeno",
         "upload": "Uključeno",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Napredak"
       },
       "body": {
         "nothingFound": "Nema pronađenih torrenata"
@@ -27,7 +27,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Nisu pronađeni podržani klijenti za preuzimanja!",
         "text": "Dodajte uslugu preuzimanja kako biste vidjeli svoja trenutna preuzimanja"
       }
     }
