@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Omogućuje vam pregledavanje i upravljanje vašom Usenet instancom."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nisu pronađeni podržani klijenti za preuzimanja!",
+        "text": "Dodajte podržani Usenet klijent kako biste vidjeli trenutna preuzimanja"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Red čekanja",
+    "history": "Povijest"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Preostala veličina",
+    "paused": "Pauzirano"
   },
   "queue": {
     "header": {
       "name": "Naziv",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "size": "Veličina",
+      "eta": "ETA",
+      "progress": "Napredak"
     },
-    "empty": "",
+    "empty": "Isprazni",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Pogreška",
+      "message": "Dogodila se pogreška"
     },
-    "paused": ""
+    "paused": "Pauzirano"
   },
   "history": {
     "header": {
       "name": "Naziv",
-      "size": "",
-      "duration": ""
+      "size": "Veličina",
+      "duration": "Trajanje"
     },
-    "empty": "",
+    "empty": "Isprazni",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Pogreška",
+      "message": "Pogreška prilikom učitavanja povijest"
     },
-    "paused": ""
+    "paused": "Pauzirano"
   }
 }
