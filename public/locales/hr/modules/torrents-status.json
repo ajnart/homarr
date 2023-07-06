@@ -24,17 +24,17 @@
   },
   "card": {
     "footer": {
-      "error": "",
+      "error": "Pogreška",
       "lastUpdated": "Zadnje ažurirano prije {{time}}"
     },
     "table": {
       "header": {
         "name": "Naziv",
-        "size": "",
+        "size": "Veličina",
         "download": "Isključeno",
         "upload": "Uključeno",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Napredak"
       },
       "item": {
         "text": "Upravlja {{appName}}, omjer: {{ratio}}"
