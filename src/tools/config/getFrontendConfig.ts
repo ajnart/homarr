@@ -1,11 +1,13 @@
 import Consola from 'consola';
 import fs from 'fs';
+import { IntegrationField } from '~/types/app';
 import { BackendConfigType, ConfigType } from '../../types/config';
 import { getConfig } from './getConfig';
 import { fetchCity } from '~/server/api/routers/weather';
 
 export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
   let config = getConfig(name);
+  let shouldMigrateConfig = false;
 
   const anyWeatherWidgetWithStringLocation = config.widgets.some(
     (widget) => widget.type === 'weather' && typeof widget.properties.location === 'string'
@@ -13,6 +15,27 @@ export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
 
   if (anyWeatherWidgetWithStringLocation) {
     config = await migrateLocation(config);
+    shouldMigrateConfig = true;
+  }
+
+  const anyPiholeIntegrationWithPassword = config.apps.some(
+    (app) =>
+      app?.integration?.type === 'pihole' &&
+      app?.integration?.properties.length &&
+      app.integration.properties.some((property) => property.field === 'password')
+  );
+
+  if (anyPiholeIntegrationWithPassword) {
+    config = migratePiholeIntegrationField(config);
+    shouldMigrateConfig = true;
+  }
+
+  if (shouldMigrateConfig) {
+    Consola.info(`Migrating config ${config.configProperties.name}`);
+    fs.writeFileSync(
+      `./data/configs/${config.configProperties.name}.json`,
+      JSON.stringify(config, null, 2)
+    );
   }
 
   Consola.info(`Requested frontend content of configuration '${name}'`);
@@ -54,7 +77,6 @@ export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
 const migrateLocation = async (config: BackendConfigType) => {
   Consola.log('Migrating config file to new location schema...', config.configProperties.name);
 
-  const configName = config.configProperties.name;
   const migratedConfig = {
     ...config,
     widgets: await Promise.all(
@@ -82,7 +104,27 @@ const migrateLocation = async (config: BackendConfigType) => {
     ),
   };
 
-  fs.writeFileSync(`./data/configs/${configName}.json`, JSON.stringify(migratedConfig, null, 2));
-
   return migratedConfig;
+};
+
+const migratePiholeIntegrationField = (config: BackendConfigType) => {
+  Consola.log('Migrating pihole integration field to apiKey...', config.configProperties.name);
+  return {
+    ...config,
+    apps: config.apps.map((app) => {
+      if (app?.integration?.type === 'pihole' && Array.isArray(app?.integration?.properties)) {
+        const migratedProperties = app.integration.properties.map((property) => {
+          if (property.field === 'password') {
+            return {
+              ...property,
+              field: 'apiKey' as IntegrationField,
+            };
+          }
+          return property;
+        });
+        return { ...app, integration: { ...app.integration, properties: migratedProperties } };
+      }
+      return app;
+    }),
+  };
 };
