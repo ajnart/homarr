@@ -91,7 +91,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       size={widget.properties.fontSize}
       locale={i18n?.resolvedLanguage ?? 'en'}
       firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
-      hideWeekdays={widget.properties.hideWeekDays ? true : false}
+      hideWeekdays={widget.properties.hideWeekDays}
       style={{ position: 'relative' }}
       date={month}
       maxLevel="month"
@@ -129,7 +129,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
           flex: 1,
         },
         day:{
-          borderRadius: (widget.properties.fontSize !== "xs" && widget.properties.fontSize!=="sm")? radius.lg:radius.md,
+          borderRadius: ['xs','sm'].includes(widget.properties.fontSize) ? radius.md : radius.lg,
         },
       }}
       getDayProps={(date) => ({

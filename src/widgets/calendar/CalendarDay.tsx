@@ -1,4 +1,4 @@
-import { Container, Indicator, IndicatorProps, Popover, Center } from '@mantine/core';
+import { Container, Indicator, IndicatorProps, Popover, useMantineTheme, Button } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MediaList } from './MediaList';
 import { MediasType } from './type';
@@ -12,6 +12,7 @@ interface CalendarDayProps {
 
 export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
   const [opened, { close, open }] = useDisclosure(false);
+  const { radius, fn } = useMantineTheme();
   var indicatorSize = 10;
   var indicatorOffset = -4;
   switch(size){
@@ -54,18 +55,21 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
       }}
       onClose={close}
       opened={opened}
-      sx={(theme : any) => ({
-        padding:'18% !important',
-        height: '100%',
-        width: '100%',
-        borderRadius: (size!=="xs" && size!=="sm")?theme.radius.lg:theme.radius.md,
-        borderStyle: "solid",
-        borderWidth: "0.2rem",
-        borderColor: opened? theme.fn.primaryColor() : '#00000000',
-      })}
     >
       <Popover.Target>
-        <Container align="center" onClick={(medias.totalCount === 0)? undefined:open}>
+        <Container
+          onClick={medias.totalCount > 0 ? open : undefined}
+          sx={{ root: {
+            padding:'18% !important',
+            height: '100%',
+            width: '100%',
+            alignContent: 'center',
+            borderRadius: ['xs','sm'].includes(size) ? radius.md : radius.lg,
+            borderStyle: "solid",
+            borderWidth: "0.2rem",
+            borderColor: opened ? fn.primaryColor() : 'transparent',
+          }}}
+        >
           <DayIndicator size={indicatorSize} offset={indicatorOffset} color="red" position="bottom-start" medias={medias.books}>
             <DayIndicator size={indicatorSize} offset={indicatorOffset} color="yellow" position="top-start" medias={medias.movies}>
               <DayIndicator size={indicatorSize} offset={indicatorOffset} color="blue" position="top-end" medias={medias.tvShows}>
@@ -77,7 +81,7 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
           </DayIndicator>
         </Container>
       </Popover.Target>
-      <Popover.Dropdown disabled = {(medias.totalCount === 0)? false:true}>
+      <Popover.Dropdown>
         <MediaList medias={medias} />
       </Popover.Dropdown>
     </Popover>
