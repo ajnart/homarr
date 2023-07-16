@@ -15,6 +15,9 @@
       },
       "hideWeekDays": {
         "label": "隐藏工作日"
+      },
+      "fontSize": {
+        "label": ""
       }
     }
   }
