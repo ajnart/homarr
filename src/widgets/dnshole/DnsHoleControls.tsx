@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Card, Group, Image, Stack, Text, SimpleGrid, Space } from '@mantine/core';
+import { Badge, Box, Button, Card, Group, Image, Stack, Text, SimpleGrid } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons-react';
@@ -43,8 +43,8 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   }
 
   return (
-    <Stack justify="space-between" h={"100%"} style={{ gap:"0.25rem", }}>
-      <SimpleGrid ref={ref} cols={ (width > 275)? 2 : 1 } verticalSpacing="0.25rem" spacing="0.25rem">
+    <Stack justify="space-between" h={"100%"} spacing="0.25rem">
+      <SimpleGrid ref={ref} cols={ width > 275? 2 : 1 } verticalSpacing="0.25rem" spacing="0.25rem">
         <Button
           onClick={async () => {
             await mutateAsync({
@@ -56,9 +56,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           leftIcon={<IconPlayerPlay size={20} />}
           variant="light"
           color="green"
-          style={{
-            height:"2rem",
-          }}
+          h="2rem"
         >
           {t('enableAll')}
         </Button>
@@ -73,15 +71,13 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           leftIcon={<IconPlayerStop size={20} />}
           variant="light"
           color="red"
-          style={{
-            height:"2rem",
-          }}
+          h="2rem"
         >
           {t('disableAll')}
         </Button>
       </SimpleGrid>
 
-      <Stack style={{ gap:"0.25rem", }}>
+      <Stack spacing="0.25rem">
         {data.status.map((status, index) => {
           const app = config?.apps.find((x) => x.id === status.appId);
 
@@ -103,7 +99,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                     >
                       <Image src={app.appearance.iconUrl} width={40} height={40} fit="contain" />
                 </Box>
-                <Stack style={{ gap: "0rem", }}>
+                <Stack spacing="0rem">
                   <Text>{app.name}</Text>
                   <StatusBadge status={status.status} />
                 </Stack>
