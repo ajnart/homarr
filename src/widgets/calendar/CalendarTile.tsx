@@ -37,6 +37,17 @@ const definition = defineWidget({
         { label: 'Digital', value: 'digitalRelease' },
       ],
     },
+    fontSize:{
+      type: 'select',
+      defaultValue: 'xs',
+      data: [
+        { label: 'Extra Small', value: 'xs' },
+        { label: 'Small', value: 'sm' },
+        { label: 'Medium', value: 'md' },
+        { label: 'Large', value: 'lg' },
+        { label: 'Extra Large', value: 'xl' },
+      ]
+    },
   },
   gridstack: {
     minWidth: 2,
@@ -54,7 +65,7 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
-  const { colorScheme } = useMantineTheme();
+  const { colorScheme, radius } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
   const isEditMode = useEditModeStore((x) => x.enabled);
@@ -77,17 +88,24 @@ function CalendarTile({ widget }: CalendarTileProps) {
       defaultDate={new Date()}
       onPreviousMonth={setMonth}
       onNextMonth={setMonth}
-      size="xs"
+      size={widget.properties.fontSize}
       locale={i18n?.resolvedLanguage ?? 'en'}
       firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
-      hideWeekdays={widget.properties.hideWeekDays ? true : false}
-      style={{ position: 'relative', top: -10 }}
+      hideWeekdays={widget.properties.hideWeekDays}
+      style={{ position: 'relative' }}
       date={month}
       maxLevel="month"
       hasNextLevel={false}
       styles={{
         calendarHeader: {
           maxWidth: 'inherit',
+          marginBottom: '0.35rem !important',
+        },
+        calendarHeaderLevel: {
+          height:"100%",
+        },
+        calendarHeaderControl:{
+          height:"100%",
         },
         calendar: {
           height: '100%',
@@ -104,15 +122,21 @@ function CalendarTile({ widget }: CalendarTileProps) {
           flexDirection: 'column',
           width: '100%',
         },
+        monthCell:{
+          textAlign:'center',
+        },
         month: {
           flex: 1,
+        },
+        day:{
+          borderRadius: ['xs','sm'].includes(widget.properties.fontSize) ? radius.md : radius.lg,
         },
       }}
       getDayProps={(date) => ({
         bg: getBgColorByDateAndTheme(colorScheme, date),
       })}
       renderDay={(date) => (
-        <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} />
+        <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} size={widget.properties.fontSize} />
       )}
     />
   );
