@@ -15,6 +15,9 @@
       },
       "hideWeekDays": {
         "label": "Nascondi giorni della settimana"
+      },
+      "fontSize": {
+        "label": ""
       }
     }
   }
