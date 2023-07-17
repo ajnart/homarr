@@ -13,6 +13,7 @@ export const dashboardNamespaces = [
   'settings/general/internationalization',
   'settings/general/search-engine',
   'settings/general/widget-positions',
+  'settings/customization/accessibility',
   'settings/customization/general',
   'settings/customization/color-selector',
   'settings/customization/page-appearance',

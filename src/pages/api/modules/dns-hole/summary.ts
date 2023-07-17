@@ -32,7 +32,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     try {
       switch (app.integration?.type) {
         case 'pihole': {
-          const piHole = new PiHoleClient(app.url, findAppProperty(app, 'password'));
+          const piHole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
           const summary = await piHole.getSummary();
 
           data.domainsBeingBlocked += summary.domains_being_blocked;

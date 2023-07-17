@@ -18,8 +18,8 @@
       "description": "Customize the background, colors and apps appearance"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Accessibility",
+      "description": "Configure Homarr for disabled and handicapped users"
     }
   }
 }

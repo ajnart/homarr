@@ -14,7 +14,10 @@
         "label": "Radarr release type"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Hide week days"
+      },
+      "fontSize": {
+        "label": "Font Size"
       }
     }
   }

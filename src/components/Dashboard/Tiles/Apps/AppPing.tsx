@@ -1,10 +1,12 @@
-import { Indicator, Tooltip } from '@mantine/core';
+import { Box, Indicator, Tooltip } from '@mantine/core';
+import { IconCheck, IconCheckbox, IconDownload, IconLoader, IconX } from '@tabler/icons-react';
 import Consola from 'consola';
-import { motion } from 'framer-motion';
+import { TargetAndTransition, Transition, motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../../../config/provider';
 import { AppType } from '../../../../types/app';
-import { api } from '~/utils/api';
 
 interface AppPingProps {
   app: AppType;
@@ -16,19 +18,53 @@ export const AppPing = ({ app }: AppPingProps) => {
   const active =
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
-  const { data, isLoading, error } = usePingQuery(app, active);
 
-  const isOnline = data?.state === 'online';
+  const { data, isLoading, isFetching, isSuccess } = api.app.ping.useQuery(app.id, {
+    retry: false,
+    enabled: active,
+    select: (data) => {
+      const isOk = getIsOk(app, data.status);
+      Consola.info(`Ping ${app.name} (${app.url}) ${data.status} ${isOk}`);
+      return {
+        status: data.status,
+        state: isOk ? ('online' as const) : ('down' as const),
+        statusText: data.statusText,
+      };
+    },
+  });
 
   if (!active) return null;
 
+  const isOnline = data?.state === 'online';
+
+  const disablePulse = config?.settings.customization.accessibility?.disablePingPulse ?? false;
+  const replaceDotWithIcon =
+    config?.settings.customization.accessibility?.replacePingDotsWithIcons ?? false;
+
+  const scaleAnimation = isOnline ? [1, 0.7, 1] : 1;
+  const animate: TargetAndTransition | undefined = disablePulse
+    ? undefined
+    : {
+        scale: scaleAnimation,
+      };
+  const transition: Transition | undefined = disablePulse
+    ? undefined
+    : {
+        repeat: Infinity,
+        duration: 2.5,
+        ease: 'easeInOut',
+      };
+
   return (
     <motion.div
-      style={{ position: 'absolute', bottom: 20, right: 20, zIndex: 2 }}
-      animate={{
-        scale: isOnline ? [1, 0.7, 1] : 1,
+      style={{
+        position: 'absolute',
+        bottom: replaceDotWithIcon ? 5 : 20,
+        right: replaceDotWithIcon ? 8 : 20,
+        zIndex: 2,
       }}
-      transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
+      animate={animate}
+      transition={transition}
     >
       <Tooltip
         withinPortal
@@ -36,40 +72,46 @@ export const AppPing = ({ app }: AppPingProps) => {
         label={
           isLoading
             ? t('states.loading')
-            : isOnline
-            ? t('states.online', { response: data.status })
-            : t('states.offline', { response: data?.status ?? error?.data?.httpStatus })
+            : data?.state === 'online'
+            ? t('states.online', { response: data?.status ?? 'N/A' })
+            : `${data?.statusText} ${data?.status}`
         }
       >
-        <Indicator
-          size={15}
-          color={isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
-          children={null}
-        />
+        {config?.settings.customization.accessibility?.replacePingDotsWithIcons ? (
+          <Box>
+            <AccessibleIndicatorPing isLoading={isLoading} isOnline={isOnline} />
+          </Box>
+        ) : (
+          <Indicator
+            size={15}
+            color={isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
+            children={null}
+          />
+        )}
       </Tooltip>
     </motion.div>
   );
 };
 
-const usePingQuery = (app: AppType, isEnabled: boolean) =>
-  api.app.ping.useQuery(
-    {
-      url: app.url,
-    },
-    {
-      enabled: isEnabled,
-      select: (data) => {
-        const statusCode = data.status;
-        const isOk = getIsOk(app, statusCode);
-        return {
-          status: statusCode,
-          state: isOk ? ('online' as const) : ('down' as const),
-        };
-      },
-    }
-  );
+const AccessibleIndicatorPing = ({
+  isLoading,
+  isOnline,
+}: {
+  isOnline: boolean;
+  isLoading: boolean;
+}) => {
+  if (isOnline) {
+    return <IconCheck color="green" />;
+  }
 
-const getIsOk = (app: AppType, status: number) => {
+  if (isLoading) {
+    return <IconLoader />;
+  }
+
+  return <IconX color="red" />;
+};
+
+export const getIsOk = (app: AppType, status: number) => {
   if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
     Consola.log('Using new status codes');
     return app.network.statusCodes.includes(status.toString());

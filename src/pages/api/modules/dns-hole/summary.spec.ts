@@ -28,7 +28,7 @@ describe('DNS hole', () => {
             type: 'pihole',
             properties: [
               {
-                field: 'password',
+                field: 'apiKey',
                 type: 'private',
                 value: 'hf3829fj238g8',
               },
@@ -130,7 +130,7 @@ describe('DNS hole', () => {
             type: 'pihole',
             properties: [
               {
-                field: 'password',
+                field: 'apiKey',
                 type: 'private',
                 value: 'hf3829fj238g8',
               },
@@ -144,7 +144,7 @@ describe('DNS hole', () => {
             type: 'pihole',
             properties: [
               {
-                field: 'password',
+                field: 'apiKey',
                 type: 'private',
                 value: 'ayaka',
               },

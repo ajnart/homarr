@@ -1,5 +1,5 @@
 import { Accordion, Checkbox, Grid, Group, Stack, Text } from '@mantine/core';
-import { IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons-react';
+import { IconAccessible, IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons-react';
 import { i18n, useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { GridstackConfiguration } from './Layout/GridstackConfiguration';
@@ -13,6 +13,7 @@ import { ColorSelector } from './Theme/ColorSelector';
 import { CustomCssChanger } from './Theme/CustomCssChanger';
 import { DashboardTilesOpacitySelector } from './Theme/OpacitySelector';
 import { ShadeSelector } from './Theme/ShadeSelector';
+import { AccessibilitySettings } from './Accessibility/AccessibilitySettings';
 
 export const CustomizationSettingsAccordeon = () => {
   const items = getItems().map((item) => (
@@ -69,6 +70,13 @@ const getItems = () => {
       label: t('accordeon.gridstack.name'),
       description: t('accordeon.gridstack.description'),
       content: <GridstackConfiguration />,
+    },
+    {
+      id: 'accessibility',
+      image: <IconAccessible />,
+      label: t('accordeon.accessibility.name'),
+      description: t('accordeon.accessibility.description'),
+      content: <AccessibilitySettings />,
     },
     {
       id: 'page_metadata',
