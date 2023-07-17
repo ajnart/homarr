@@ -54,7 +54,7 @@ export function SettingsDrawer({
 
         updateConfig(configName, (_) => config, false, true);
       }}
-      transitionProps={{ duration: 200 }}
+      transitionProps={{ transition: 'slide-left' }}
     >
       <SettingsMenu newVersionAvailable={newVersionAvailable} />
     </Drawer>
