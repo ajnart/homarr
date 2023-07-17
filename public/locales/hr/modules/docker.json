@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Omogućuje vam jednostavan pregled i upravljanje svim vašim Docker kontejnerima."
+  },
+  "search": {
+    "placeholder": "Pretraživanje po nazivu kontejnera ili slike kontejnera"
+  },
+  "table": {
+    "header": {
+      "name": "Naziv",
+      "image": "Slika",
+      "ports": "Portovi",
+      "state": "Stanje"
+    },
+    "body": {
+      "portCollapse": "{{ports}} više"
+    },
+    "states": {
+      "running": "U radu",
+      "created": "Kreirano",
+      "stopped": "Zaustavljeno",
+      "unknown": "Nepoznato"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Dodaj aplikaciju",
+      "message": "Dodaj aplikaciju u Homarr"
+    },
+    "restart": {
+      "title": "Ponovo pokreni"
+    },
+    "stop": {
+      "title": "Zaustavi"
+    },
+    "start": {
+      "title": "Pokreni"
+    },
+    "refreshData": {
+      "title": "Osvježi podatke"
+    },
+    "remove": {
+      "title": "Ukloni"
+    },
+    "addToHomarr": {
+      "title": "Dodaj u Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Pokretanje",
+      "end": "Pokrenuto"
+    },
+    "stop": {
+      "start": "Zaustavljanje",
+      "end": "Zaustavljeno"
+    },
+    "restart": {
+      "start": "Ponovno pokretanje",
+      "end": "Ponovno pokrenuto"
+    },
+    "remove": {
+      "start": "Uklanjam",
+      "end": "Uklonjeno"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker integracija nije uspjela",
+      "message": "Jeste li zaboravili montirati Docker socket?"
+    },
+    "unknownError": {
+      "title": "Došlo je do pogreške"
+    },
+    "oneServiceAtATime": {
+      "title": "Molimo dodajte samo jednu aplikaciju ili uslugu odjednom!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

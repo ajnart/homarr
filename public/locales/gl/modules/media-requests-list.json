@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      }
+    }
+  },
+  "noRequests": "",
+  "pending": "",
+  "nonePending": "",
+  "state": {
+    "approved": "",
+    "pendingApproval": "",
+    "declined": ""
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": ""
+  }
+}

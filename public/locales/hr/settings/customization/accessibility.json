@@ -1,0 +1,11 @@
+{
+    "disablePulse": {
+        "label": "Onemogući ping pulsiranje",
+        "description": "Prema zadanim postavkama, pokazatelji pinga u Homarru pulsiraju. To može biti iritantno. Ovim klizačem možete deaktivirati animaciju"
+    },
+    "replaceIconsWithDots": {
+        "label": "Zamijenite točke ping-a s ikonicom",
+        "description": "Za osobe s daltonizmom, točke za ping mogu biti teško prepoznatljive. Ovo će zamijeniti indikatore ikonama"
+    },
+    "alert": "Nedostaje li vam nešto? Rado ćemo unaprijediti pristupačnost Homarra"
+}

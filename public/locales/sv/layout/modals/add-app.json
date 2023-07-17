@@ -39,7 +39,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "",
+			"description": "Börja skriva för att hitta en ikon. Du kan också klistra in en bild-URL för att använda en anpassad ikon.",
 			"autocomplete": {
 				"title": "Hittade inga resultat",
 				"text": "Försök att använda en mer specifik sökterm. Om du inte kan hitta önskad ikon, klistra in bild-URL ovan för en anpassad ikon"

@@ -1,0 +1,27 @@
+{
+  "title": "Dobro došli natrag!",
+  "text": "Molimo unesite Vašu lozinku",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "Lozinka",
+        "placeholder": "Vaša lozinka"
+      }
+    },
+    "buttons": {
+      "submit": "Prijavi se"
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "Provjeravam Vašu lozinku",
+      "message": "Vaša lozinka se provjerava..."
+    },
+    "correct": {
+      "title": "Prijavljivanje je uspješno, preusmjeravam..."
+    },
+    "wrong": {
+      "title": "Lozinka koju ste unijeli nije ispravna, molim pokušajte ponovno."
+    }
+  }
+}

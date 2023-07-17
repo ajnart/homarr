@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "rssFeedUrl": {
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "textLinesClamp": {
+        "label": ""
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
+      }
+    }
+  }
+}

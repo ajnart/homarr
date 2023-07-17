@@ -1,0 +1,44 @@
+{
+  "descriptor": {
+    "name": "iFrame",
+    "description": "Ugradite bilo koji sadržaj s interneta. Neke web stranice mogu ograničiti pristup.",
+    "settings": {
+      "title": "iFrame postavke",
+      "embedUrl": {
+        "label": "Ugradbeni URL"
+      },
+      "allowFullScreen": {
+        "label": "Dopusti puni zaslon"
+      },
+      "allowTransparency": {
+        "label": "Dopusti prozirnost"
+      },
+      "allowScrolling": {
+        "label": "Dopusti klizanje (scrollanje)"
+      },
+      "allowPayment": {
+        "label": "Dopusti plaćanje"
+      },
+      "allowAutoPlay": {
+        "label": "Dopusti automatsku reprodukciju"
+      },
+      "allowMicrophone": {
+        "label": "Dopusti pristup mikrofonu"
+      },
+      "allowCamera": {
+        "label": "Dopusti pristup kameri"
+      },
+      "allowGeolocation": {
+        "label": "Dopusti geolociranje"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "Neispravan URL",
+        "text": "Provjerite jeste li unijeli valjanu adresu u konfiguraciji svog widgeta"
+      }
+    }
+  }
+}

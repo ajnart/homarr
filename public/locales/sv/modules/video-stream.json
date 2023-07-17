@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Videoström",
+    "description": "Bädda in en videoström eller video från en kamera eller en webbplats",
     "settings": {
-      "title": "",
+      "title": "Inställningar för videoströmswidget",
       "FeedUrl": {
         "label": "Flödes-URL"
       },
@@ -11,14 +11,14 @@
         "label": "Automatisk uppspelning"
       },
       "muted": {
-        "label": ""
+        "label": "Tystat ljud"
       },
       "controls": {
-        "label": ""
+        "label": "Kontroller för videospelare"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Ogiltig ström"
   }
 }

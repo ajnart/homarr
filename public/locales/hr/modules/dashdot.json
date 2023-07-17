@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Prikazuje grafikone vanjske Dash instance unutar Homarr-a.",
+    "settings": {
+      "title": "Postavke za Dash. Widget",
+      "dashName": {
+        "label": "Dash. Naziv"
+      },
+      "url": {
+        "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Prikaži postotke"
+      },
+      "columns": {
+        "label": "Prikaži stupce"
+      },
+      "graphHeight": {
+        "label": "Visina za grafove"
+      },
+      "graphsOrder": {
+        "label": "Grafovi (Redoslijed)",
+        "storage": {
+          "label": "Pohrana",
+          "enabled": {
+            "label": "Prikaži u widgetu"
+          },
+          "span": {
+            "label": "Proširenje stupca"
+          },
+          "compactView": {
+            "label": "Prikaži kao tekst (kompaktno)"
+          },
+          "multiView": {
+            "label": "Prikaži kao multi-drive-view"
+          }
+        },
+        "network": {
+          "label": "Mreža",
+          "enabled": {
+            "label": "Prikaži u widgetu"
+          },
+          "span": {
+            "label": "Proširenje stupca"
+          },
+          "compactView": {
+            "label": "Prikaži kao tekst (kompaktno)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Prikaži u widgetu"
+          },
+          "span": {
+            "label": "Proširenje stupca"
+          },
+          "multiView": {
+            "label": "Prikaži kao multi-core-view"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Prikaži u widgetu"
+          },
+          "span": {
+            "label": "Proširenje stupca"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Prikaži u widgetu"
+          },
+          "span": {
+            "label": "Proširenje stupca"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Nije pronađena usluga Dash. Molim vas dodajte je na svoju Homarr nadzornu ploču ili postavite Dash URL u opcijama modula",
+      "noInformation": "Nije moguće dobiti informacije iz Dash-a. - Jeste li pokrenuli najnoviju verziju?",
+      "protocolDowngrade": {
+        "title": "Detektirano snižavanje protokola",
+        "text": "Veza s vašom Dash. instancom koristi HTTP. To predstavlja sigurnosni rizik jer je HTTP nešifriran, a napadači mogu zloupotrijebiti tu vezu. Provjerite je li Dash. postavljen da koristi HTTPS ili snizite Homarr na HTTP (nije preporučljivo)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Pohrana",
+        "label": "Pohrana:"
+      },
+      "network": {
+        "title": "Mreža",
+        "label": "Mreža:",
+        "metrics": {
+          "download": "Isključeno",
+          "upload": "Uključeno"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "ram": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

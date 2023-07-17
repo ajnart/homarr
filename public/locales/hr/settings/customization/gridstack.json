@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Stupci u veličini {{size}}",
+    "descriptionPreset": "Broj stupaca kada je zaslon manji od {{pixels}} piksela u širinu",
+    "descriptionExceedsPreset": "Broj stupaca kada veličina zaslona premašuje {{pixels}} piksela"
+  },
+  "unsavedChanges": "Imate nespremljene promjene. Kliknite gumb \"Primijeni promjene\" u nastavku kako biste ih primijenili i spremili.",
+  "applyChanges": "Primjeni promjene",
+  "defaultValues": "Uobičajene vrijednosti"
+}

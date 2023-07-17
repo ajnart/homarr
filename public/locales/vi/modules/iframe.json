@@ -11,32 +11,32 @@
         "label": "Cho phép toàn màn hình"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Cho phép trong suốt"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Cho phép cuộn"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Cho phép thanh toán"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Cho phép tự động phát"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Cho phép micro"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Cho phép camera"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Cho phép định vị"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "URL không hợp lệ",
         "text": "Đảm bảo rằng bạn đã nhập một địa chỉ hợp lệ trong cấu hình tiện ích"
       }
     }

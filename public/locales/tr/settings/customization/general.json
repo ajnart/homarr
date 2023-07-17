@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Görünüş",
       "description": "Arka planı, renkleri ve uygulama görünümünü özelleştirin"
+    },
+    "accessibility": {
+      "name": "Erişilebilirlik",
+      "description": "Homarr'ı engelli kullanıcılar için yapılandırma"
     }
   }
 }

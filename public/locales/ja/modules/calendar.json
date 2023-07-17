@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "ラダーリリースタイプ"
+      },
+      "hideWeekDays": {
+        "label": ""
+      },
+      "fontSize": {
+        "label": ""
       }
     }
   }

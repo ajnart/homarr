@@ -1,0 +1,86 @@
+{
+  "configSelect": {
+    "label": "",
+    "description": "",
+    "loadingNew": "",
+    "pleaseWait": ""
+  },
+  "modal": {
+    "copy": {
+      "title": "",
+      "form": {
+        "configName": {
+          "label": "",
+          "validation": {
+            "required": "",
+            "notUnique": ""
+          },
+          "placeholder": ""
+        },
+        "submitButton": ""
+      },
+      "events": {
+        "configSaved": {
+          "title": "",
+          "message": ""
+        },
+        "configCopied": {
+          "title": "",
+          "message": ""
+        },
+        "configNotCopied": {
+          "title": "",
+          "message": ""
+        }
+      }
+    },
+    "confirmDeletion": {
+      "title": "",
+      "warningText": "",
+      "text": "",
+      "buttons": {
+        "confirm": ""
+      }
+    }
+  },
+  "buttons": {
+    "download": "",
+    "delete": {
+      "text": "",
+      "notifications": {
+        "deleted": {
+          "title": "",
+          "message": ""
+        },
+        "deleteFailed": {
+          "title": "",
+          "message": ""
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "",
+          "message": ""
+        }
+      }
+    },
+    "saveCopy": ""
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "",
+        "message": ""
+      },
+      "loadedSuccessfully": {
+        "title": ""
+      }
+    },
+    "accept": {
+      "title": "",
+      "text": ""
+    },
+    "reject": {
+      "title": "",
+      "text": ""
+    }
+  }
+}

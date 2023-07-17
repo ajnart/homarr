@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Вигляд",
       "description": "Налаштування фону, кольорів і додатків"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }

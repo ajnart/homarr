@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Thống kê yêu cầu đa phương tiện",
+    "description": "Thống kê về các yêu cầu đa phương tiện của bạn",
     "settings": {
-      "title": ""
+      "title": "Thống kê yêu cầu đa phương tiện"
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Chờ duyệt",
+    "tvRequests": "Yêu cầu TV",
+    "movieRequests": "Yêu cầu phim"
   }
 }
