@@ -14,7 +14,7 @@
       "dangerousAllowSanitizedItemContent": {
         "label": ""
       },
-      "settings.textLinesClamp": {
+      "textLinesClamp": {
         "label": ""
       }
     },

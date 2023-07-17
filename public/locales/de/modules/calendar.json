@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Radarr Veröffentlichungs Typ"
+      },
+      "hideWeekDays": {
+        "label": "Wochentage ausblenden"
+      },
+      "fontSize": {
+        "label": "Schriftgröße"
       }
     }
   }

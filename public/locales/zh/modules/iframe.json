@@ -9,13 +9,34 @@
       },
       "allowFullScreen": {
         "label": "允许全屏"
+      },
+      "allowTransparency": {
+        "label": "允许透明度"
+      },
+      "allowScrolling": {
+        "label": "允许滚动"
+      },
+      "allowPayment": {
+        "label": "允许付款"
+      },
+      "allowAutoPlay": {
+        "label": "允许自动播放"
+      },
+      "allowMicrophone": {
+        "label": "允许麦克风"
+      },
+      "allowCamera": {
+        "label": "允许使用摄像头"
+      },
+      "allowGeolocation": {
+        "label": "允许地理位置"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "无效链接",
         "text": "确保您在小部件配置中输入了一个有效的地址"
       }
     }

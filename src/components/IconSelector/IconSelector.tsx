@@ -15,9 +15,9 @@ import {
 } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useGetDashboardIcons } from '../../hooks/icons/useGetDashboardIcons';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { DebouncedImage } from './DebouncedImage';
+import { api } from '~/utils/api';
 
 export const IconSelector = forwardRef(
   (
@@ -175,3 +175,12 @@ interface ItemProps extends SelectItemProps {
   size: number;
   copyright: string | undefined;
 }
+
+const useGetDashboardIcons = () =>
+  api.icon.all.useQuery(undefined, {
+    refetchOnMount: false,
+    // Cache for infinity, refetch every so often.
+    cacheTime: Infinity,
+    staleTime: 1000 * 60 * 5, // 5 minutes
+    refetchOnWindowFocus: false,
+  });

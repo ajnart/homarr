@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Utseende",
       "description": "Tilpass både bakgrunn, farger og apper"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }

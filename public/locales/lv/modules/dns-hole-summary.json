@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "DNS cauruma kopsavilkums",
+    "description": "Rāda svarīgus datus no PiHole vai AdGuard",
     "settings": {
-      "title": "",
+      "title": "DNS Cauruma kopsavilkuma iestatījumi",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Izmantot krāsas no PiHole"
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Domēni reklāmu sarakstos",
+      "queriesToday": "Pieprasījumi šodien",
+      "queriesBlockedTodayPercentage": "šodien bloķēti",
+      "queriesBlockedToday": "šodien bloķēti"
     }
   }
 }

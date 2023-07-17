@@ -16,6 +16,10 @@
     "appereance": {
       "name": "外観",
       "description": ""
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }

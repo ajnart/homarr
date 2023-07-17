@@ -10,55 +10,15 @@ import {
   IconRotateClockwise,
   IconTrash,
 } from '@tabler/icons-react';
-import axios from 'axios';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { RouterInputs, api } from '~/utils/api';
 import { useConfigContext } from '../../config/provider';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
 import { MatchingImages, ServiceType, tryMatchPort } from '../../tools/types';
 import { AppType } from '../../types/app';
-
-function sendDockerCommand(
-  action: string,
-  containerId: string,
-  containerName: string,
-  reload: () => void,
-  t: (key: string) => string,
-) {
-  notifications.show({
-    id: containerId,
-    loading: true,
-    title: `${t(`actions.${action}.start`)} ${containerName}`,
-    message: undefined,
-    autoClose: false,
-    withCloseButton: false,
-  });
-  axios
-    .get(`/api/docker/container/${containerId}?action=${action}`)
-    .then((res) => {
-      notifications.show({
-        id: containerId,
-        title: containerName,
-        message: `${t(`actions.${action}.end`)} ${containerName}`,
-        icon: <IconCheck />,
-        autoClose: 2000,
-      });
-    })
-    .catch((err) => {
-      notifications.update({
-        id: containerId,
-        color: 'red',
-        title: t('errors.unknownError.title'),
-        message: err.response.data.reason,
-        autoClose: 2000,
-      });
-    })
-    .finally(() => {
-      reload();
-    });
-}
 
 export interface ContainerActionBarProps {
   selected: Dockerode.ContainerInfo[];
@@ -68,8 +28,9 @@ export interface ContainerActionBarProps {
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   const { t } = useTranslation('modules/docker');
   const [isLoading, setisLoading] = useState(false);
-  const { name: configName, config } = useConfigContext();
+  const { config } = useConfigContext();
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
+  const sendDockerCommand = useDockerActionMutation();
 
   if (process.env.DISABLE_EDIT_MODE === 'true') {
     return null;
@@ -96,11 +57,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       <Button
         leftIcon={<IconRotateClockwise />}
         onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('restart', container.Id, container.Names[0].substring(1), reload, t)
-            )
-          )
+          Promise.all(selected.map((container) => sendDockerCommand(container, 'restart')))
         }
         variant="light"
         color="orange"
@@ -112,11 +69,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       <Button
         leftIcon={<IconPlayerStop />}
         onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('stop', container.Id, container.Names[0].substring(1), reload, t)
-            )
-          )
+          Promise.all(selected.map((container) => sendDockerCommand(container, 'stop')))
         }
         variant="light"
         color="red"
@@ -128,11 +81,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       <Button
         leftIcon={<IconPlayerPlay />}
         onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('start', container.Id, container.Names[0].substring(1), reload, t)
-            )
-          )
+          Promise.all(selected.map((container) => sendDockerCommand(container, 'start')))
         }
         variant="light"
         color="green"
@@ -147,11 +96,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         variant="light"
         radius="md"
         onClick={() =>
-          Promise.all(
-            selected.map((container) =>
-              sendDockerCommand('remove', container.Id, container.Names[0].substring(1), reload, t)
-            )
-          )
+          Promise.all(selected.map((container) => sendDockerCommand(container, 'remove')))
         }
         disabled={selected.length === 0}
       >
@@ -209,6 +154,55 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
     </Group>
   );
 }
+
+const useDockerActionMutation = () => {
+  const { t } = useTranslation('modules/docker');
+  const utils = api.useContext();
+  const mutation = api.docker.action.useMutation();
+
+  return async (
+    container: Dockerode.ContainerInfo,
+    action: RouterInputs['docker']['action']['action']
+  ) => {
+    const containerName = container.Names[0].substring(1);
+
+    notifications.show({
+      id: container.Id,
+      loading: true,
+      title: `${t(`actions.${action}.start`)} ${containerName}`,
+      message: undefined,
+      autoClose: false,
+      withCloseButton: false,
+    });
+
+    await mutation.mutateAsync(
+      { action, id: container.Id },
+      {
+        onSuccess: () => {
+          notifications.show({
+            id: container.Id,
+            title: containerName,
+            message: `${t(`actions.${action}.end`)} ${containerName}`,
+            icon: <IconCheck />,
+            autoClose: 2000,
+          });
+        },
+        onError: (err) => {
+          notifications.update({
+            id: container.Id,
+            color: 'red',
+            title: t('errors.unknownError.title'),
+            message: err.message,
+            autoClose: 2000,
+          });
+        },
+        onSettled: () => {
+          utils.docker.containers.invalidate();
+        },
+      }
+    );
+  };
+};
 
 /**
  * @deprecated legacy code

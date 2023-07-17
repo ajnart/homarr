@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Yêu cầu đa phương tiện",
+    "description": "Xem danh sách các yêu cầu đa phương tiện từ Overseerr hoặc Jellyseerr của bạn",
     "settings": {
-      "title": "",
+      "title": "Danh sách yêu cầu đa phương tiện",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Thay thế liên kết bằng máy chủ bên ngoài"
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Không tìm thấy yêu cầu. Hãy đảm bảo rằng bạn đã thiết lập đúng ứng dụng của mình.",
+  "pending": "Có {{countPendingApproval}} yêu cầu đang chờ phê duyệt.",
+  "nonePending": "Hiện tại không có yêu cầu nào đang chờ phê duyệt. Tốt lắm bạn!",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Đã duyệt",
+    "pendingApproval": "Chờ duyệt",
+    "declined": "Bị từ chối"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Duyệt yêu cầu",
+    "decline": "Từ chối yêu cầu"
   }
 }

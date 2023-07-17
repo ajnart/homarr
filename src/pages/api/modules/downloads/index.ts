@@ -13,8 +13,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { Client } from 'sabnzbd-api';
 
-import { NzbgetClient } from '../usenet/nzbget/nzbget-client';
-import { NzbgetQueueItem, NzbgetStatus } from '../usenet/nzbget/types';
+import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
+import { NzbgetQueueItem, NzbgetStatus } from '../../../../server/api/routers/usenet/nzbget/types';
 import { ConfigAppType, IntegrationField } from '../../../../types/app';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { UsenetQueueItem } from '../../../../widgets/useNet/types';
@@ -22,6 +22,7 @@ import {
   NormalizedDownloadAppStat,
   NormalizedDownloadQueueResponse,
 } from '../../../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
+import { findAppProperty } from '~/tools/client/app-properties';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
@@ -151,8 +152,8 @@ const GetDataFromClient = async (
       const options = {
         host: url.hostname,
         port: url.port,
-        login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-        hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+        login: findAppProperty(app, 'username'),
+        hash: findAppProperty(app, 'password'),
       };
 
       const nzbGet = NzbgetClient(options);

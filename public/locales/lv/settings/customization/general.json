@@ -1,21 +1,25 @@
 {
-  "text": "",
+  "text": "Pielāgojumi ļauj jums konfigurēt un pielāgot Homarr lietošanas pieredzi atbilstoši savām vēlmēm.",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "Izkārtojums",
+      "description": "Elementu iespējošana un atspējošana galvenes un informācijas paneļa flīzēs"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Gridstack",
+      "description": "Informācijas paneļa apgabala uzvedības un kolonnu pielāgošana"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Lapas Metadati",
+      "description": "Pielāgojiet nosaukumus, logotipu un PWA"
     },
     "appereance": {
-      "name": "",
-      "description": ""
+      "name": "Izskats",
+      "description": "Fona, krāsu un programmu izskata pielāgošana"
+    },
+    "accessibility": {
+      "name": "Piekļūstamība",
+      "description": "Homarr konfigurēšana lietotājiem ar invaliditāti un/vai ar īpašām vajadzībām"
     }
   }
 }

@@ -1,0 +1,8 @@
+{
+	"xPosition": "X-os pozicija",
+	"width": "Širina",
+	"height": "Visina",
+	"yPosition": "Y-os pozicija",
+	"zeroOrHigher": "0 ili više",
+	"betweenXandY": "Između {{min}} i {{max}}"
+}

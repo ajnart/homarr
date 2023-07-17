@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "סוג שחרור של Radarr"
+      },
+      "hideWeekDays": {
+        "label": "הסתר ימי שבוע"
+      },
+      "fontSize": {
+        "label": "גודל גופן"
       }
     }
   }

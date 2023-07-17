@@ -1,0 +1,11 @@
+{
+    "disablePulse": {
+        "label": "Tắt nhịp thở chấm ping",
+        "description": "Mặc địch, chấm ping trong Homarr sẽ có một nhịp co giãn. Nếu điều này gây khó chịu, tranh trượt này sẽ giúp bạn tắt chuyển động đó"
+    },
+    "replaceIconsWithDots": {
+        "label": "Thay thế chấm ping bằng biểu tượng",
+        "description": "Với người dùng mù màu, chấm ping có thể khó nhận diện. Lựa chọn này sẽ thay thế các chấm bằng biểu tượng"
+    },
+    "alert": "Bạn thấy thiếu gì đó? Chúng tôi sẵn sàng mở rộng khả năng tiếp cận của Homarr"
+}

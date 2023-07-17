@@ -12,17 +12,17 @@
         "label": "Yenileme aralığı (dakika olarak)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Tehlikeli: Temizlenmiş öğe içeriğine izin ver"
+        "label": ""
       },
-      "settings.textLinesClamp": {
-        "label": "Metin satır sınırı"
+      "textLinesClamp": {
+        "label": "Metin karakter sınırı"
       }
     },
     "card": {
       "errors": {
         "general": {
           "title": "RSS akışı alınamadı",
-          "text": "RSS akışına ulaşılırken bir sorun oluştu. Geçerli bir URL kullanarak RSS akışını doğru şekilde yapılandırdığınızdan emin olun. URL'ler resmi spesifikasyonla eşleşmelidir. Akışı güncelledikten sonra kontrol panelini yenilemeniz gerekebilir."
+          "text": "RSS akışına bağlanırken bir sorun oluştu. Geçerli bir URL kullanarak RSS akışını doğru şekilde yapılandırdığınızdan emin olun. URL'ler resmi spesifikasyonla eşleşmelidir. Akışı güncelledikten sonra kontrol panelini yenilemeniz gerekebilir."
         }
       }
     }

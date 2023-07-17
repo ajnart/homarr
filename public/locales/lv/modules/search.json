@@ -1,30 +1,30 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Meklēšanas josla",
+    "description": "Meklēšanas josla, kas ļauj veikt meklēšanu pielāgotajā meklētājdzinī, pakalpojumā YouTube un atbalstītajās integrācijās."
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "Meklēšana tīmeklī..."
   },
-  "switched-to": "",
+  "switched-to": "Pārslēgts uz",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Tīmeklis",
+      "description": "Meklēt..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Meklēšana vietnē YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torenti",
+      "description": "Torentu meklēšana"
     },
     "overseerr": {
-      "name": "",
-      "description": ""
+      "name": "Overseerr",
+      "description": "Meklēt filmas un TV šovus Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Varat atlasīt meklēšanas joslu, izmantojot saīsni ",
+  "switchedSearchEngine": "Pārslēgts uz meklēšanu ar {{searchEngine}}"
 }

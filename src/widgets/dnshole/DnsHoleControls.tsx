@@ -1,21 +1,23 @@
-import { Badge, Box, Button, Card, Group, Image, Stack, Text } from '@mantine/core';
+import { Badge, Box, Button, Card, Group, Image, Stack, Text, SimpleGrid } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons-react';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
-import { useDnsHoleControlMutation, useDnsHoleSummeryQuery } from './query';
 import { PiholeApiSummaryType } from './type';
 import { queryClient } from '../../tools/server/configurations/tanstack/queryClient.tool';
+import { api } from '~/utils/api';
+import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
 
 const definition = defineWidget({
   id: 'dns-hole-controls',
   icon: IconDeviceGamepad,
   options: {},
   gridstack: {
-    minWidth: 3,
-    minHeight: 2,
+    minWidth: 2,
+    minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -29,73 +31,83 @@ interface DnsHoleControlsWidgetProps {
 }
 
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
-  const { isInitialLoading, data, refetch } = useDnsHoleSummeryQuery();
+  const { isInitialLoading, data } = useDnsHoleSummeryQuery();
   const { mutateAsync } = useDnsHoleControlMutation();
+  const { width, ref } = useElementSize();
   const { t } = useTranslation('common');
 
-  const { config } = useConfigContext();
+  const { name: configName, config } = useConfigContext();
 
-  if (isInitialLoading || !data) {
+  if (isInitialLoading || !data || !configName) {
     return <WidgetLoading />;
   }
 
   return (
-    <Stack>
-      <Group grow>
+    <Stack justify="space-between" h={"100%"} spacing="0.25rem">
+      <SimpleGrid ref={ref} cols={ width > 275? 2 : 1 } verticalSpacing="0.25rem" spacing="0.25rem">
         <Button
           onClick={async () => {
-            await mutateAsync('enabled');
+            await mutateAsync({
+              status: 'enabled',
+              configName,
+            });
             await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
           }}
           leftIcon={<IconPlayerPlay size={20} />}
           variant="light"
           color="green"
+          h="2rem"
         >
           {t('enableAll')}
         </Button>
         <Button
           onClick={async () => {
-            await mutateAsync('disabled');
+            await mutateAsync({
+              status: 'disabled',
+              configName,
+            });
             await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
           }}
           leftIcon={<IconPlayerStop size={20} />}
           variant="light"
           color="red"
+          h="2rem"
         >
           {t('disableAll')}
         </Button>
-      </Group>
+      </SimpleGrid>
 
-      {data.status.map((status, index) => {
-        const app = config?.apps.find((x) => x.id === status.appId);
+      <Stack spacing="0.25rem">
+        {data.status.map((status, index) => {
+          const app = config?.apps.find((x) => x.id === status.appId);
 
-        if (!app) {
-          return null;
-        }
+          if (!app) {
+            return null;
+          }
 
-        return (
-          <Card withBorder key={index} p="xs">
-            <Group position="apart">
+          return (
+            <Card withBorder={true} key={index} p="xs">
               <Group>
                 <Box
-                  sx={(theme) => ({
-                    backgroundColor:
-                      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
-                    textAlign: 'center',
-                    padding: 5,
-                    borderRadius: theme.radius.md,
-                  })}
-                >
-                  <Image src={app.appearance.iconUrl} width={25} height={25} fit="contain" />
+                      sx={(theme) => ({
+                        backgroundColor:
+                          theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+                        textAlign: 'center',
+                        padding: 5,
+                        borderRadius: theme.radius.md,
+                      })}
+                    >
+                      <Image src={app.appearance.iconUrl} width={40} height={40} fit="contain" />
                 </Box>
-                <Text>{app.name}</Text>
+                <Stack spacing="0rem">
+                  <Text>{app.name}</Text>
+                  <StatusBadge status={status.status} />
+                </Stack>
               </Group>
-
-              <StatusBadge status={status.status} />
-            </Group>
-          </Card>
-        );
-      })}
+            </Card>
+          );
+        })}
+      </Stack>
     </Stack>
   );
 }
@@ -116,5 +128,7 @@ const StatusBadge = ({ status }: { status: PiholeApiSummaryType['status'] }) => 
     </Badge>
   );
 };
+
+const useDnsHoleControlMutation = () => api.dnsHole.control.useMutation();
 
 export default definition;

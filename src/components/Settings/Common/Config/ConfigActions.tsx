@@ -10,23 +10,28 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { openConfirmModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconAlertTriangle, IconCheck, IconCopy, IconDownload, IconTrash } from '@tabler/icons-react';
+import {
+  IconAlertTriangle,
+  IconCheck,
+  IconCopy,
+  IconDownload,
+  IconTrash,
+  IconX,
+} from '@tabler/icons-react';
 import fileDownload from 'js-file-download';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { useDeleteConfigMutation } from '../../../../tools/config/mutations/useDeleteConfigMutation';
 import Tip from '../../../layout/Tip';
 import { CreateConfigCopyModal } from './CreateCopyModal';
+import { api } from '~/utils/api';
 
 export default function ConfigActions() {
-  const router = useRouter();
   const { t } = useTranslation(['settings/general/config-changer', 'settings/common', 'common']);
   const [createCopyModalOpened, createCopyModal] = useDisclosure(false);
   const { config } = useConfigContext();
-  const { removeConfig } = useConfigStore();
-  const { mutateAsync } = useDeleteConfigMutation(config?.configProperties.name ?? 'default');
+  const { mutateAsync } = useDeleteConfigMutation();
 
   if (!config) return null;
 
@@ -61,28 +66,9 @@ export default function ConfigActions() {
       },
       zIndex: 201,
       onConfirm: async () => {
-        const response = await mutateAsync();
-
-        if (response.error) {
-          showNotification({
-            title: t('buttons.delete.notifications.deleteFailedDefaultConfig.title'),
-            message: t('buttons.delete.notifications.deleteFailedDefaultConfig.message'),
-          });
-          return;
-        }
-
-        showNotification({
-          title: t('buttons.delete.notifications.deleted.title'),
-          icon: <IconCheck />,
-          color: 'green',
-          autoClose: 1500,
-          radius: 'md',
-          message: t('buttons.delete.notifications.deleted.message'),
+        const response = await mutateAsync({
+          name: config?.configProperties.name ?? 'default',
         });
-
-        removeConfig(config?.configProperties.name ?? 'default');
-
-        router.push('/');
       },
     });
   };
@@ -123,6 +109,49 @@ export default function ConfigActions() {
     </>
   );
 }
+
+const useDeleteConfigMutation = () => {
+  const { t } = useTranslation(['settings/general/config-changer']);
+  const router = useRouter();
+  const { removeConfig } = useConfigStore();
+
+  return api.config.delete.useMutation({
+    onError(error) {
+      if (error.data?.code === 'FORBIDDEN') {
+        showNotification({
+          title: t('buttons.delete.notifications.deleteFailedDefaultConfig.title'),
+          icon: <IconX />,
+          color: 'red',
+          autoClose: 1500,
+          radius: 'md',
+          message: t('buttons.delete.notifications.deleteFailedDefaultConfig.message'),
+        });
+      }
+      showNotification({
+        title: t('buttons.delete.notifications.deleteFailed.title'),
+        icon: <IconX />,
+        color: 'red',
+        autoClose: 1500,
+        radius: 'md',
+        message: t('buttons.delete.notifications.deleteFailed.message'),
+      });
+    },
+    onSuccess(data, variables) {
+      showNotification({
+        title: t('buttons.delete.notifications.deleted.title'),
+        icon: <IconCheck />,
+        color: 'green',
+        autoClose: 1500,
+        radius: 'md',
+        message: t('buttons.delete.notifications.deleted.message'),
+      });
+
+      removeConfig(variables.name);
+
+      router.push('/');
+    },
+  });
+};
 
 const useStyles = createStyles(() => ({
   actionIcon: {

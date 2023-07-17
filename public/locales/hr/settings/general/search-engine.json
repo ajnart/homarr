@@ -1,0 +1,19 @@
+{
+  "title": "Pretraživač",
+  "configurationName": "Konfiguracija pretraživača",
+  "tips": {
+    "generalTip": "Postoji više prefiksa koje možete koristiti! Dodavanje ovih prefiksa ispred upita filtrirat će rezultate. !s (Web), !t (Torrenti), !y (YouTube) i !m (Mediji).",
+    "placeholderTip": "%s može se koristiti kao zamjenski znak za upit."
+  },
+  "customEngine": {
+    "title": "Prilagođen pretraživač",
+    "label": "URL upita",
+    "placeholder": "Prilagođeni URL upita"
+  },
+  "searchNewTab": {
+    "label": "Otvori rezultate pretraživanja u novoj kartici"
+  },
+  "searchEnabled": {
+    "label": "Pretraživač omogučen"
+  }
+}

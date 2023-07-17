@@ -12,9 +12,9 @@
         "label": "מרווח הזמן לרענון (בשניות)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "מסוכן: אפשר תוכן פריט מנוקה"
+        "label": ""
       },
-      "settings.textLinesClamp": {
+      "textLinesClamp": {
         "label": "הגבלת שורות טקסט"
       }
     },

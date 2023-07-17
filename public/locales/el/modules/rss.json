@@ -12,9 +12,9 @@
         "label": "Διάστημα ανανέωσης (σε λεπτά)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Επικίνδυνο: Επιτρέψτε φιλτραρισμένο περιεχόμενο αντικειμένων"
+        "label": ""
       },
-      "settings.textLinesClamp": {
+      "textLinesClamp": {
         "label": "Περιορισμός γραμμών κειμένου"
       }
     },

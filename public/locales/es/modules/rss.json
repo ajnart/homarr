@@ -14,8 +14,8 @@
       "dangerousAllowSanitizedItemContent": {
         "label": ""
       },
-      "settings.textLinesClamp": {
-        "label": ""
+      "textLinesClamp": {
+        "label": "Limitar líneas de texto"
       }
     },
     "card": {

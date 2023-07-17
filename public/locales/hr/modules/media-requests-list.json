@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Zahtjevi za medijima",
+    "description": "Pregledajte popis svih zahtjeva za medijima s vaše instance Overseerr ili Jellyseerr",
+    "settings": {
+      "title": "Popis zahtjeva za medijima",
+      "replaceLinksWithExternalHost": {
+        "label": "Zamijeni veze s vanjskim poslužiteljem"
+      }
+    }
+  },
+  "noRequests": "Nema pronađenih zahtjeva. Provjerite jesu li vaše aplikacije ispravno konfigurirane.",
+  "pending": "Postoji {{countPendingApproval}} zahtjeva koji čekaju odobrenje.",
+  "nonePending": "Trenutno nema čekanja za odobrenje. Možete nastaviti!",
+  "state": {
+    "approved": "Odobreno",
+    "pendingApproval": "Odobrenje na čekanju",
+    "declined": "Odbijeno"
+  },
+  "tooltips": {
+    "approve": "Odobri zahtjeve",
+    "decline": "Odbij zahtjeve"
+  }
+}

@@ -33,17 +33,20 @@ import { theme } from '../tools/server/theme/theme';
 
 import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
+import nextI18nextConfig from '../../next-i18next.config';
+import { api } from '~/utils/api';
 
 function App(
   this: any,
-  props: AppProps & {
+  props: AppProps<{
     colorScheme: ColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
     defaultColorScheme: ColorScheme;
-  }
+  }>
 ) {
   const { Component, pageProps } = props;
+
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
   const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(6);
@@ -58,7 +61,7 @@ function App(
 
   // hook will return either 'dark' or 'light' on client
   // and always 'light' during ssr as window.matchMedia is not available
-  const preferredColorScheme = useColorScheme(props.defaultColorScheme);
+  const preferredColorScheme = useColorScheme(props.pageProps.defaultColorScheme);
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: preferredColorScheme,
@@ -69,9 +72,9 @@ function App(
   const { setDisabled } = useEditModeInformationStore();
 
   useEffect(() => {
-    setInitialPackageAttributes(props.packageAttributes);
+    setInitialPackageAttributes(props.pageProps.packageAttributes);
 
-    if (!props.editModeEnabled) {
+    if (!props.pageProps.editModeEnabled) {
       setDisabled();
     }
   }, []);
@@ -161,11 +164,13 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
   const colorScheme: ColorScheme = (process.env.DEFAULT_COLOR_SCHEME as ColorScheme) ?? 'light';
 
   return {
-    colorScheme: getCookie('color-scheme', ctx) || 'light',
-    packageAttributes: getServiceSidePackageAttributes(),
-    editModeEnabled: !disableEditMode,
-    defaultColorScheme: colorScheme,
+    pageProps: {
+      colorScheme: getCookie('color-scheme', ctx) || 'light',
+      packageAttributes: getServiceSidePackageAttributes(),
+      editModeEnabled: !disableEditMode,
+      defaultColorScheme: colorScheme,
+    },
   };
 };
 
-export default appWithTranslation(App);
+export default appWithTranslation<any>(api.withTRPC(App), nextI18nextConfig as any);

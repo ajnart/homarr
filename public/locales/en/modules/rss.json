@@ -12,7 +12,7 @@
         "label": "Refresh interval (in minutes)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Dangerous: Allow sanitized item content"
+        "label": ""
       },
       "textLinesClamp": {
         "label": "Text lines clamp"

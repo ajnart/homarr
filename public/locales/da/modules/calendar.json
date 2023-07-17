@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Radarr udgivelsestype"
+      },
+      "hideWeekDays": {
+        "label": "Skjul ugedage"
+      },
+      "fontSize": {
+        "label": "Skriftstørrelse"
       }
     }
   }

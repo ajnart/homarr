@@ -5,16 +5,16 @@
     "settings": {
       "title": "Настройки сводки DNS Hole",
       "usePiHoleColors": {
-        "label": "Использовать цвета PiHole"
+        "label": "Использовать цвета из PiHole"
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "Домены в рекламных списках",
-      "queriesToday": "Запросы сегодня",
-      "queriesBlockedTodayPercentage": "Заблокировано сегодня",
-      "queriesBlockedToday": "Заблокировано сегодня"
+      "domainsOnAdlist": "доменов в списке блокировок",
+      "queriesToday": "запросов сегодня",
+      "queriesBlockedTodayPercentage": "заблокировано сегодня",
+      "queriesBlockedToday": "заблокировано сегодня"
     }
   }
 }

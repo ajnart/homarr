@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Omogućuje vam pretraživanje i dodavanje medija iz Overseerr-a ili Jellyseerr-a."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Zatraži {{title}}",
+        "cancel": "Otkaži",
+        "request": "Zatraži"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Koristeći API ključ",
+          "text": "Ovaj zahtjev će biti automatski odobren"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Označite sezone koje želite preuzeti",
+      "table": {
+        "header": {
+          "season": "Sezona",
+          "numberOfEpisodes": "Broj epizoda"
+        }
+      }
+    }
+  }
+}

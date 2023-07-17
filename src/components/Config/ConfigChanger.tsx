@@ -1,12 +1,12 @@
 import { Center, Dialog, Loader, Notification, Select, Tooltip } from '@mantine/core';
 import { useToggle } from '@mantine/hooks';
-import { useQuery } from '@tanstack/react-query';
+import { notifications } from '@mantine/notifications';
+import { IconCheck } from '@tabler/icons-react';
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { notifications } from '@mantine/notifications';
-import { IconCheck } from '@tabler/icons-react';
+import { api } from '~/utils/api';
 import { useConfigContext } from '../../config/provider';
 
 export default function ConfigChanger() {
@@ -95,10 +95,4 @@ export default function ConfigChanger() {
   );
 }
 
-const useConfigsQuery = () =>
-  useQuery({
-    queryKey: ['config/get-all'],
-    queryFn: fetchConfigs,
-  });
-
-const fetchConfigs = async () => (await (await fetch('/api/configs')).json()) as string[];
+const useConfigsQuery = () => api.config.all.useQuery();

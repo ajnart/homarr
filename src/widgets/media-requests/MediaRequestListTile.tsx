@@ -10,16 +10,16 @@ import {
   Text,
   Tooltip,
 } from '@mantine/core';
-import { useTranslation } from 'next-i18next';
-import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
 import { notifications } from '@mantine/notifications';
+import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
 import { MediaRequest, MediaRequestStatus } from './media-request-types';
+import { useConfigContext } from '~/config/provider';
 
 const definition = defineWidget({
   id: 'media-requests-list',
@@ -45,21 +45,55 @@ interface MediaRequestListWidgetProps {
   widget: MediaRequestListWidget;
 }
 
-function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
-  const { t } = useTranslation('modules/media-requests-list');
-  const { data, refetch, isLoading } = useMediaRequestQuery();
-  // Use mutation to approve or deny a pending request
-  const mutate = useMutation({
-    mutationFn: async (e: { request: MediaRequest; action: string }) => {
-      const data = await axios.put(`/api/modules/overseerr/${e.request.id}?action=${e.action}`);
-      notifications.show({
-        title: t('requestUpdated'),
-        message: t('requestUpdatedMessage', { title: e.request.name }),
-        color: 'blue',
-      });
-      refetch();
+type MediaRequestDecisionVariables = {
+  request: MediaRequest;
+  isApproved: boolean;
+};
+const useMediaRequestDecisionMutation = () => {
+  const { name: configName } = useConfigContext();
+  const utils = api.useContext();
+  const { mutateAsync } = api.overseerr.decide.useMutation({
+    onSuccess() {
+      utils.mediaRequest.all.invalidate();
     },
   });
+  return async (variables: MediaRequestDecisionVariables) => {
+    const action = variables.isApproved ? 'Approving' : 'Declining';
+    notifications.show({
+      id: `decide-${variables.request.id}`,
+      color: 'yellow',
+      title: `${action} request...`,
+      message: undefined,
+      loading: true,
+    });
+    await mutateAsync(
+      {
+        configName: configName!,
+        id: variables.request.id,
+        isApproved: variables.isApproved,
+      },
+      {
+        onSuccess(_data, variables) {
+          const title = variables.isApproved ? 'Request was approved!' : 'Request was declined!';
+          notifications.update({
+            id: `decide-${variables.id}`,
+            color: 'teal',
+            title,
+            message: undefined,
+            icon: <IconCheck size="1rem" />,
+            autoClose: 2000,
+          });
+        },
+      }
+    );
+  };
+};
+
+function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
+  const { t } = useTranslation('modules/media-requests-list');
+  const { data, isLoading } = useMediaRequestQuery();
+  // Use mutation to approve or deny a pending request
+  const decideAsync = useMediaRequestDecisionMutation();
 
   if (!data || isLoading) {
     return <WidgetLoading />;
@@ -157,18 +191,10 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                           loading: true,
                         });
 
-                        await mutate.mutateAsync({ request: item, action: 'approve' }).then(() =>
-                          notifications.update({
-                            id: `approve ${item.id}`,
-                            color: 'teal',
-                            title: 'Request was approved!',
-                            message: undefined,
-                            icon: <IconCheck size="1rem" />,
-                            autoClose: 2000,
-                          })
-                        );
-
-                        await refetch();
+                        await decideAsync({
+                          request: item,
+                          isApproved: true,
+                        });
                       }}
                     >
                       <IconThumbUp />
@@ -179,8 +205,10 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                       variant="light"
                       color="red"
                       onClick={async () => {
-                        await mutate.mutateAsync({ request: item, action: 'decline' });
-                        await refetch();
+                        await decideAsync({
+                          request: item,
+                          isApproved: false,
+                        });
                       }}
                     >
                       <IconThumbDown />

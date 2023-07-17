@@ -5,24 +5,24 @@
     "settings": {
       "title": "Cài đặt cho tiện ích RSS",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URL nguồn cấp RSS",
+        "description": "URL của nguồn cấp RSS mà bạn muốn hiển thị từ đó."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Khoảng thời gian làm mới (bằng phút)"
       },
       "dangerousAllowSanitizedItemContent": {
         "label": ""
       },
-      "settings.textLinesClamp": {
-        "label": ""
+      "textLinesClamp": {
+        "label": "Ngắt dòng"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Không thể nhận nguồn cấp RSS",
+          "text": "Đã xảy ra sự cố khi tiếp cận nguồn cấp dữ liệu RSS. Hãy đảm bảo rằng cấu hình nguồn cấp RSS sử dụng URL hợp lệ. URL phải phù hợp với thông số kỹ thuật chính thức. Sau khi cập nhật nguồn cấp dữ liệu, bạn có thể cần phải làm mới bảng điều khiển."
         }
       }
     }

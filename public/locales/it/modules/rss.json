@@ -12,9 +12,9 @@
         "label": "Intervallo di aggiornamento (in secondi)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Pericolo: Consente il contenuto di oggetti sanificati"
+        "label": ""
       },
-      "settings.textLinesClamp": {
+      "textLinesClamp": {
         "label": "Blocco righe di testo"
       }
     },

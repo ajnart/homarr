@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Tip sprostitve Radarr"
+      },
+      "hideWeekDays": {
+        "label": ""
+      },
+      "fontSize": {
+        "label": ""
       }
     }
   }

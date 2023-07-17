@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Prikazuje indikator statusa ovisno o HTTP kodu odgovora za određeni URL."
+  },
+  "states": {
+    "online": "Na mreži {{response}}",
+    "offline": "Izvan mreže {{response}}",
+    "loading": "Učitavam..."
+  }
+}
