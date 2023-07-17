@@ -97,7 +97,7 @@ const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
 };
 
 const processPiHole = async (app: ConfigAppType, enable: boolean) => {
-  const pihole = new PiHoleClient(app.url, findAppProperty(app, 'password'));
+  const pihole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
 
   if (enable) {
     await pihole.enable();
@@ -108,7 +108,7 @@ const processPiHole = async (app: ConfigAppType, enable: boolean) => {
 };
 
 const collectPiHoleSummary = async (app: ConfigAppType) => {
-  const piHole = new PiHoleClient(app.url, findAppProperty(app, 'password'));
+  const piHole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
   const summary = await piHole.getSummary();
 
   return {

@@ -86,7 +86,7 @@ export const integrationFieldProperties: {
   transmission: ['username', 'password'],
   jellyfin: ['username', 'password'],
   plex: ['apiKey'],
-  pihole: ['password'],
+  pihole: ['apiKey'],
   adGuardHome: ['username', 'password'],
 };
 
