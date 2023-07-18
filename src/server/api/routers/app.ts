@@ -10,18 +10,18 @@ import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
+const errorResponse = {
+      state: 'offline',
+      status: 500,
+      statusText: 'Check logs for more informations',
+};
+
 export const appRouter = createTRPCRouter({
   ping: publicProcedure.input(z.string()).query(async ({ input }) => {
     const agent = new https.Agent({ rejectUnauthorized: false });
     const configName = getCookie('config-name');
     const config = getConfig(configName?.toString() ?? 'default');
     const app = config.apps.find((app) => app.id === input);
-
-    const errorResponse = {
-      state: 'offline',
-      status: 500,
-      statusText: 'Check logs for more informations',
-    };
 
     const url = app?.url;
     if (url === undefined || !app) {
