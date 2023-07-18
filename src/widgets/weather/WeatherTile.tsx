@@ -1,7 +1,13 @@
-import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
+import { Center, Flex, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconArrowDownRight, IconArrowUpRight, IconCloudRain } from '@tabler/icons-react';
+import {
+  IconArrowDownRight,
+  IconArrowUpRight,
+  IconCloudRain,
+  IconCurrentLocation,
+} from '@tabler/icons-react';
 import { api } from '~/utils/api';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { WeatherIcon } from './WeatherIcon';
@@ -11,6 +17,10 @@ const definition = defineWidget({
   icon: IconCloudRain,
   options: {
     displayInFahrenheit: {
+      type: 'switch',
+      defaultValue: false,
+    },
+    displayCityName: {
       type: 'switch',
       defaultValue: false,
     },
@@ -80,15 +90,16 @@ function WeatherTile({ widget }: WeatherTileProps) {
       align="center"
       style={{ height: '100%', width: '100%' }}
     >
-      <Group align="center" position="center" spacing="xs">
+      <Flex align="center" gap={'xs'} justify={'center'} direction={width < 200 ? 'column' : 'row'}>
         <WeatherIcon code={weather.current_weather.weathercode} />
-        <Title>
+        <Title size={width < 200 ? 'h4' : 'h2'}>
           {getPerferedUnit(
             weather.current_weather.temperature,
             widget.properties.displayInFahrenheit
           )}
         </Title>
-      </Group>
+      </Flex>
+
       {width > 200 && (
         <Group noWrap spacing="xs">
           <IconArrowUpRight />
@@ -101,6 +112,13 @@ function WeatherTile({ widget }: WeatherTileProps) {
             weather.daily.temperature_2m_min[0],
             widget.properties.displayInFahrenheit
           )}
+        </Group>
+      )}
+
+      {widget.properties.displayCityName && (
+        <Group noWrap spacing="5px" align="center">
+          <IconCurrentLocation height={15} width={15} />
+          <Text style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
         </Group>
       )}
     </Stack>
