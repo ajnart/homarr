@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Résumé du DNS hole",
     "description": "Affiche les données importantes de PiHole ou AdGuard",
     "settings": {
-      "title": "",
+      "title": "Paramètres du résumé du DNS hole",
       "usePiHoleColors": {
         "label": "Utiliser les couleurs de PiHole"
       }
@@ -11,7 +11,7 @@
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
+      "domainsOnAdlist": "Domaines sur les adlists",
       "queriesToday": "Requêtes aujourd'hui",
       "queriesBlockedTodayPercentage": "bloqué aujourd'hui",
       "queriesBlockedToday": "bloqué aujourd'hui"
