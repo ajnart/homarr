@@ -1,20 +1,20 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "Affiche les données importantes de PiHole ou AdGuard",
     "settings": {
       "title": "",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Utiliser les couleurs de PiHole"
       }
     }
   },
   "card": {
     "metrics": {
       "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesToday": "Requêtes aujourd'hui",
+      "queriesBlockedTodayPercentage": "bloqué aujourd'hui",
+      "queriesBlockedToday": "bloqué aujourd'hui"
     }
   }
 }
