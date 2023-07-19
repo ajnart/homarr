@@ -27,13 +27,13 @@
             "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           },
           "compactView": {
             "label": "Afficher en tant que texte (compact)"
           },
           "multiView": {
-            "label": ""
+            "label": "Montrer comme vue multi-disques"
           }
         },
         "network": {
@@ -42,7 +42,7 @@
             "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           },
           "compactView": {
             "label": "Afficher en tant que texte (compact)"
@@ -54,10 +54,10 @@
             "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           },
           "multiView": {
-            "label": ""
+            "label": "Afficher en tant que vue multi-cœur"
           }
         },
         "ram": {
@@ -66,7 +66,7 @@
             "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           }
         },
         "gpu": {
@@ -75,7 +75,7 @@
             "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           }
         }
       }
