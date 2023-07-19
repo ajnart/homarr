@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "",
-    "description": "",
+    "description": "Affiche une liste statique de chaînes de caractères ou de liens",
     "settings": {
       "title": "",
       "items": {
-        "label": ""
+        "label": "Éléments"
       },
       "layout": {
         "label": "Mise en page"
@@ -15,7 +15,7 @@
   "card": {
     "noneFound": {
       "title": "",
-      "text": ""
+      "text": "Ajouter de nouveaux éléments à cette liste en mode édition"
     }
   }
 }
