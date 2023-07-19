@@ -13,10 +13,6 @@ const definition = defineWidget({
   id: 'notebook',
   icon: IconNotes,
   options: {
-    showToolbar: {
-      type: 'switch',
-      defaultValue: true,
-    },
     content: {
       type: 'text',
       defaultValue:
