@@ -118,7 +118,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
       {widget.properties.displayCityName && (
         <Group noWrap spacing="5px" align="center">
           <IconCurrentLocation height={15} width={15} />
-          <Text style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
+          <Text color='dimmed' style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
         </Group>
       )}
     </Stack>
