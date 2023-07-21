@@ -5,13 +5,14 @@ import { AdGuard } from '~/tools/server/sdk/adGuard/adGuard';
 import { PiHoleClient } from '~/tools/server/sdk/pihole/piHole';
 import { ConfigAppType } from '~/types/app';
 import { AdStatistics } from '~/widgets/dnshole/type';
+
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const dnsHoleRouter = createTRPCRouter({
   control: publicProcedure
     .input(
       z.object({
-        status: z.enum(['enabled', 'disabled']),
+        action: z.enum(['enable', 'disable']),
         configName: z.string(),
       })
     )
@@ -25,11 +26,11 @@ export const dnsHoleRouter = createTRPCRouter({
       await Promise.all(
         applicableApps.map(async (app) => {
           if (app.integration?.type === 'pihole') {
-            await processPiHole(app, input.status === 'disabled');
+            await processPiHole(app, input.action === 'enable');
             return;
           }
 
-          await processAdGuard(app, input.status === 'disabled');
+          await processAdGuard(app, input.action === 'enable');
         })
       );
     }),
