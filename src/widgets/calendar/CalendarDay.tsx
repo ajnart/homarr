@@ -59,22 +59,21 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
       <Popover.Target>
         <Container
           onClick={medias.totalCount > 0 ? open : undefined}
-          sx={{ root: {
+          h="100%"
+          w="100%"
+          sx={{
             padding:'18% !important',
-            height: '100%',
-            width: '100%',
-            alignContent: 'center',
             borderRadius: ['xs','sm'].includes(size) ? radius.md : radius.lg,
             borderStyle: "solid",
             borderWidth: "0.2rem",
             borderColor: opened ? fn.primaryColor() : 'transparent',
-          }}}
+          }}
         >
           <DayIndicator size={indicatorSize} offset={indicatorOffset} color="red" position="bottom-start" medias={medias.books}>
             <DayIndicator size={indicatorSize} offset={indicatorOffset} color="yellow" position="top-start" medias={medias.movies}>
               <DayIndicator size={indicatorSize} offset={indicatorOffset} color="blue" position="top-end" medias={medias.tvShows}>
                 <DayIndicator size={indicatorSize} offset={indicatorOffset} color="green" position="bottom-end" medias={medias.musics}>
-                  <div>{date.getDate()}</div>
+                  <div style={{textAlign: 'center'}}>{date.getDate()}</div>
                 </DayIndicator>
               </DayIndicator>
             </DayIndicator>
