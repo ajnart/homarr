@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "חלונות קופצים חסומים",
+      "text": "הדפדפן שלך חסם את Homarr מגישה ל-API שלו. זה נגרם לרוב על ידי חוסם פרסומות או דחיית הרשאות. Homarr אינו מסוגל לבקש הרשאות באופן אוטומטי.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "לחץ על הסמל לצד כתובת האתר ובדוק את ההרשאות. אפשר חלונות קופצים וחלונות",
+        "adBlockers": "השבת את חוסמי המודעות וכלי האבטחה מהדפדפן שלך",
+        "otherBrowser": "נסה דפדפן אחר"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "פתח הכל בכרטיסייה חדשה"
     }
   }
 }
