@@ -10,18 +10,23 @@ import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
+const errorResponse = {
+      state: 'offline',
+      status: 500,
+      statusText: 'Check logs for more informations',
+};
+
 export const appRouter = createTRPCRouter({
   ping: publicProcedure.input(z.string()).query(async ({ input }) => {
     const agent = new https.Agent({ rejectUnauthorized: false });
     const configName = getCookie('config-name');
     const config = getConfig(configName?.toString() ?? 'default');
     const app = config.apps.find((app) => app.id === input);
+
     const url = app?.url;
     if (url === undefined || !app) {
-      throw new TRPCError({
-        code: 'NOT_FOUND',
-        message: 'App or url not found',
-      });
+      Consola.error(`App ${input} not found`);
+      return errorResponse;
     }
     const res = await axios
       .get(url, { httpsAgent: agent, timeout: 2000 })
@@ -31,27 +36,20 @@ export const appRouter = createTRPCRouter({
       }))
       .catch((error: AxiosError) => {
         if (error.response) {
-          if (getIsOk(app as AppType, error.response.status)) {
-            return {
-              state: 'offline',
-              status: error.response.status,
-              statusText: error.response.statusText,
-            };
-          }
+          return {
+            state: getIsOk(app as AppType, error.response.status) ? 'online' : 'offline',
+            status: error.response.status,
+            statusText: error.response.statusText,
+          };
         }
+
         if (error.code === 'ECONNABORTED') {
-          throw new TRPCError({
-            code: 'TIMEOUT',
-            message: 'Request Timeout',
-          });
+          Consola.error(`Ping timeout for ${input}`);
+          return errorResponse;
         }
 
         Consola.error(`Unexpected response: ${error.message}`);
-        throw new TRPCError({
-          code: 'INTERNAL_SERVER_ERROR',
-          cause: app.id,
-          message: error.message,
-        });
+        return errorResponse;
       });
     return res;
   }),
