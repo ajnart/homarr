@@ -1,13 +1,9 @@
 import Consola from 'consola';
-
 import { createMocks } from 'node-mocks-http';
-
 import { describe, expect, it, vi } from 'vitest';
-
 import 'vitest-fetch-mock';
 
 import { ConfigType } from '../../../../types/config';
-
 import MediaRequestsRoute from './index';
 
 const mockedGetConfig = vi.fn();

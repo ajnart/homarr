@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
-import https from 'https';
 import Consola from 'consola';
+import https from 'https';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {

@@ -1,7 +1,7 @@
 import { createNextApiHandler } from '@trpc/server/adapters/next';
 import Consola from 'consola';
-import { createTRPCContext } from '~/server/api/trpc';
 import { rootRouter } from '~/server/api/root';
+import { createTRPCContext } from '~/server/api/trpc';
 
 // export API handler
 export default createNextApiHandler({

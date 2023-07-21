@@ -11,9 +11,9 @@ import { AppType } from '~/types/app';
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
 const errorResponse = {
-      state: 'offline',
-      status: 500,
-      statusText: 'Check logs for more informations',
+  state: 'offline',
+  status: 500,
+  statusText: 'Check logs for more informations',
 };
 
 export const appRouter = createTRPCRouter({

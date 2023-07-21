@@ -1,13 +1,11 @@
 import axios from 'axios';
-
 import Consola from 'consola';
-
 import { NextApiRequest, NextApiResponse } from 'next';
-
 import { z } from 'zod';
-import { AppIntegrationType, IntegrationType } from '../../../types/app';
-import { getConfig } from '../../../tools/config/getConfig';
 import { checkIntegrationsType } from '~/tools/client/app-properties';
+
+import { getConfig } from '../../../tools/config/getConfig';
+import { AppIntegrationType, IntegrationType } from '../../../types/app';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Filter out if the reuqest is a POST or a GET

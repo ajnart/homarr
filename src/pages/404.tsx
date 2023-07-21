@@ -1,16 +1,16 @@
 import {
   Button,
   Container,
-  createStyles,
   Group,
   Text,
   Title,
+  createStyles,
   useMantineTheme,
 } from '@mantine/core';
-import React from 'react';
-
 import { GetServerSidePropsContext } from 'next';
 import Link from 'next/link';
+import React from 'react';
+
 import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
 
 const useStyles = createStyles((theme) => ({

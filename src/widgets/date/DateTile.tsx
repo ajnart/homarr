@@ -3,6 +3,7 @@ import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
+
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';

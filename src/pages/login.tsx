@@ -1,13 +1,14 @@
-import React from 'react';
-import { PasswordInput, Paper, Title, Text, Container, Button } from '@mantine/core';
-import { setCookie } from 'cookies-next';
-import { showNotification, updateNotification } from '@mantine/notifications';
-import axios from 'axios';
-import { IconCheck, IconX } from '@tabler/icons-react';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+import { Button, Container, Paper, PasswordInput, Text, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { showNotification, updateNotification } from '@mantine/notifications';
+import { IconCheck, IconX } from '@tabler/icons-react';
+import axios from 'axios';
+import { setCookie } from 'cookies-next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
+import React from 'react';
+
 import { loginNamespaces } from '../tools/server/translation-namespaces';
 
 // TODO: Add links to the wiki articles about the login process.

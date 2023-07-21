@@ -1,25 +1,26 @@
 import {
-  Card,
-  Stack,
-  Text,
-  Title,
-  Group,
-  TextInput,
-  Button,
-  NumberInput,
-  Modal,
-  Table,
-  Tooltip,
   ActionIcon,
+  Button,
+  Card,
+  Group,
   Loader,
+  Modal,
+  NumberInput,
+  Stack,
+  Table,
+  Text,
+  TextInput,
+  Title,
+  Tooltip,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconListSearch, IconClick } from '@tabler/icons-react';
+import { IconClick, IconListSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IntegrationOptionsValueType } from '../WidgetsEditModal';
 import { City } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
+
+import { IntegrationOptionsValueType } from '../WidgetsEditModal';
 
 type LocationSelectionProps = {
   widgetId: string;

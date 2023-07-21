@@ -3,9 +3,10 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { getConfig } from '../../../../tools/config/getConfig';
-import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
 import { findAppProperty } from '~/tools/client/app-properties';
+
+import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
+import { getConfig } from '../../../../tools/config/getConfig';
 
 dayjs.extend(duration);
 

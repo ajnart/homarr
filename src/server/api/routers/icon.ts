@@ -1,7 +1,8 @@
-import { LocalIconsRepository } from '~/tools/server/images/local-icons-repository';
-import { createTRPCRouter, publicProcedure } from '../trpc';
 import { JsdelivrIconsRepository } from '~/tools/server/images/jsdelivr-icons-repository';
+import { LocalIconsRepository } from '~/tools/server/images/local-icons-repository';
 import { UnpkgIconsRepository } from '~/tools/server/images/unpkg-icons-repository';
+
+import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const iconRouter = createTRPCRouter({
   all: publicProcedure.query(async () => {

@@ -8,11 +8,11 @@ import {
   Image,
   ScrollArea,
   Stack,
+  Switch,
   Text,
   TextInput,
   Title,
   createStyles,
-  Switch,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import {
@@ -27,10 +27,11 @@ import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
+
+import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { IconSelector } from '../../components/IconSelector/IconSelector';
 import { defineWidget } from '../helper';
 import { IDraggableEditableListInputValue, IWidget } from '../widgets';
-import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 
 interface BookmarkItem {
   id: string;

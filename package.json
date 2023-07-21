@@ -84,7 +84,7 @@
     "@next/eslint-plugin-next": "^13.4.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/dockerode": "^3.3.9",
     "@types/node": "18.16.19",
     "@types/prismjs": "^1.26.0",
@@ -155,6 +155,7 @@
       "^[./]"
     ],
     "importOrderSeparation": true,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
     "importOrderSortSpecifiers": true
   },
   "eslintConfig": {

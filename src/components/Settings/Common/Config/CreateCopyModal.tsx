@@ -1,11 +1,12 @@
 import { Button, Group, Modal, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useTranslation } from 'next-i18next';
-import { IconCheck, IconX } from '@tabler/icons-react';
 import { showNotification } from '@mantine/notifications';
-import { useConfigStore } from '../../../../config/store';
+import { IconCheck, IconX } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
+
+import { useConfigStore } from '../../../../config/store';
 
 interface CreateConfigCopyModalProps {
   opened: boolean;

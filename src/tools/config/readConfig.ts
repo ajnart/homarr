@@ -1,4 +1,5 @@
 import fs from 'fs';
+
 import { generateConfigPath } from './generateConfigPath';
 
 export function readConfig(name: string) {

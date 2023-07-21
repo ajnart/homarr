@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../config/provider';
 
 export default function ConfigChanger() {

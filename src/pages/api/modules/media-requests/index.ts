@@ -1,11 +1,11 @@
-import { getCookie } from 'cookies-next';
 import Consola from 'consola';
+import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getConfig } from '../../../../tools/config/getConfig';
-
-import { MediaRequest } from '../../../../widgets/media-requests/media-request-types';
-import { MediaRequestListWidget } from '../../../../widgets/media-requests/MediaRequestListTile';
 import { checkIntegrationsType } from '~/tools/client/app-properties';
+
+import { getConfig } from '../../../../tools/config/getConfig';
+import { MediaRequestListWidget } from '../../../../widgets/media-requests/MediaRequestListTile';
+import { MediaRequest } from '../../../../widgets/media-requests/media-request-types';
 
 const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });

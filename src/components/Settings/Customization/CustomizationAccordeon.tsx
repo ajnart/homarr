@@ -1,7 +1,16 @@
 import { Accordion, Checkbox, Grid, Group, Stack, Text } from '@mantine/core';
-import { IconAccessible, IconBrush, IconChartCandle, IconCode, IconDragDrop, IconLayout } from '@tabler/icons-react';
+import {
+  IconAccessible,
+  IconBrush,
+  IconChartCandle,
+  IconCode,
+  IconDragDrop,
+  IconLayout,
+} from '@tabler/icons-react';
 import { i18n, useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
+
+import { AccessibilitySettings } from './Accessibility/AccessibilitySettings';
 import { GridstackConfiguration } from './Layout/GridstackConfiguration';
 import { LayoutSelector } from './Layout/LayoutSelector';
 import { BackgroundChanger } from './Meta/BackgroundChanger';
@@ -13,7 +22,6 @@ import { ColorSelector } from './Theme/ColorSelector';
 import { CustomCssChanger } from './Theme/CustomCssChanger';
 import { DashboardTilesOpacitySelector } from './Theme/OpacitySelector';
 import { ShadeSelector } from './Theme/ShadeSelector';
-import { AccessibilitySettings } from './Accessibility/AccessibilitySettings';
 
 export const CustomizationSettingsAccordeon = () => {
   const items = getItems().map((item) => (

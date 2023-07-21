@@ -1,9 +1,9 @@
 import Consola from 'consola';
-import { describe, it, vi, expect } from 'vitest';
 import { createMocks } from 'node-mocks-http';
+import { describe, expect, it, vi } from 'vitest';
 
-import GetSummary from './summary';
 import { ConfigType } from '../../../../types/config';
+import GetSummary from './summary';
 
 const mockedGetConfig = vi.fn();
 

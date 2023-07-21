@@ -1,11 +1,11 @@
 import { Badge, Button, Group, Select, Stack, Tabs, Text, Title } from '@mantine/core';
-import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
-import { useEffect, useState } from 'react';
-
 import { useElementSize } from '@mantine/hooks';
+import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
+import { useEffect, useState } from 'react';
+
 import { useConfigContext } from '../../config/provider';
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import {

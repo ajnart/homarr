@@ -4,6 +4,7 @@ import { IconCalendarTime } from '@tabler/icons-react';
 import { i18n } from 'next-i18next';
 import { useState } from 'react';
 import { api } from '~/utils/api';
+
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
@@ -37,7 +38,7 @@ const definition = defineWidget({
         { label: 'Digital', value: 'digitalRelease' },
       ],
     },
-    fontSize:{
+    fontSize: {
       type: 'select',
       defaultValue: 'xs',
       data: [
@@ -46,7 +47,7 @@ const definition = defineWidget({
         { label: 'Medium', value: 'md' },
         { label: 'Large', value: 'lg' },
         { label: 'Extra Large', value: 'xl' },
-      ]
+      ],
     },
   },
   gridstack: {
@@ -102,10 +103,10 @@ function CalendarTile({ widget }: CalendarTileProps) {
           marginBottom: '0.35rem !important',
         },
         calendarHeaderLevel: {
-          height:"100%",
+          height: '100%',
         },
-        calendarHeaderControl:{
-          height:"100%",
+        calendarHeaderControl: {
+          height: '100%',
         },
         calendar: {
           height: '100%',
@@ -122,21 +123,25 @@ function CalendarTile({ widget }: CalendarTileProps) {
           flexDirection: 'column',
           width: '100%',
         },
-        monthCell:{
-          textAlign:'center',
+        monthCell: {
+          textAlign: 'center',
         },
         month: {
           flex: 1,
         },
-        day:{
-          borderRadius: ['xs','sm'].includes(widget.properties.fontSize) ? radius.md : radius.lg,
+        day: {
+          borderRadius: ['xs', 'sm'].includes(widget.properties.fontSize) ? radius.md : radius.lg,
         },
       }}
       getDayProps={(date) => ({
         bg: getBgColorByDateAndTheme(colorScheme, date),
       })}
       renderDay={(date) => (
-        <CalendarDay date={date} medias={getReleasedMediasForDate(medias, date, widget)} size={widget.properties.fontSize} />
+        <CalendarDay
+          date={date}
+          medias={getReleasedMediasForDate(medias, date, widget)}
+          size={widget.properties.fontSize}
+        />
       )}
     />
   );

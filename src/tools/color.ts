@@ -1,5 +1,5 @@
-import { createContext, useContext } from 'react';
 import { MantineTheme } from '@mantine/core';
+import { createContext, useContext } from 'react';
 
 type colorThemeContextType = {
   primaryColor: MantineTheme['primaryColor'];

@@ -2,23 +2,24 @@ import {
   Accordion,
   ActionIcon,
   Box,
-  Menu,
-  Title,
-  Text,
-  Stack,
   List,
+  Menu,
+  Stack,
+  Text,
+  Title,
   createStyles,
 } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
-import { IconDotsVertical, IconShare3 } from '@tabler/icons-react';
 import { modals } from '@mantine/modals';
+import { IconDotsVertical, IconShare3 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { useConfigContext } from '../../../../config/provider';
 import { CategoryType } from '../../../../types/category';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
-import { useGridstack } from '../gridstack/use-gridstack';
 import { WrapperContent } from '../WrapperContent';
+import { useGridstack } from '../gridstack/use-gridstack';
 import { CategoryEditMenu } from './CategoryEditMenu';
 
 interface DashboardCategoryProps {
@@ -108,10 +109,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
                 </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown>
-                <Menu.Item
-                  onClick={handleMenuClick}
-                  icon={<IconShare3 size="1rem" />}
-                >
+                <Menu.Item onClick={handleMenuClick} icon={<IconShare3 size="1rem" />}>
                   {t('actions.category.openAllInNewTab')}
                 </Menu.Item>
               </Menu.Dropdown>

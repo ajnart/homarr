@@ -2,6 +2,7 @@ import { Flex, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useEffect, useRef } from 'react';
+
 import { AppType } from '../../../../../../types/app';
 import { IconSelector } from '../../../../../IconSelector/IconSelector';
 

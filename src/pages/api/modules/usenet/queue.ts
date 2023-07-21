@@ -3,11 +3,12 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
-import { getConfig } from '../../../../tools/config/getConfig';
-import { UsenetQueueItem } from '../../../../widgets/useNet/types';
+import { findAppProperty } from '~/tools/client/app-properties';
+
 import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
 import { NzbgetQueueItem, NzbgetStatus } from '../../../../server/api/routers/usenet/nzbget/types';
-import { findAppProperty } from '~/tools/client/app-properties';
+import { getConfig } from '../../../../tools/config/getConfig';
+import { UsenetQueueItem } from '../../../../widgets/useNet/types';
 
 dayjs.extend(duration);
 

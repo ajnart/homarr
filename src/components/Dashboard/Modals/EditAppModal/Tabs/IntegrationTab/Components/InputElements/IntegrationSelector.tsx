@@ -3,13 +3,14 @@ import { Group, Image, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
+
 import {
-  IntegrationField,
-  integrationFieldDefinitions,
-  integrationFieldProperties,
   AppIntegrationPropertyType,
   AppIntegrationType,
   AppType,
+  IntegrationField,
+  integrationFieldDefinitions,
+  integrationFieldProperties,
 } from '../../../../../../../../types/app';
 
 interface IntegrationSelectorProps {

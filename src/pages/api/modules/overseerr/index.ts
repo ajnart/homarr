@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import { getConfig } from '../../../../tools/config/getConfig';
 
 async function Get(req: NextApiRequest, res: NextApiResponse) {

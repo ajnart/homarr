@@ -1,18 +1,19 @@
 import {
   Badge,
   Checkbox,
-  createStyles,
   Group,
   ScrollArea,
   Table,
   Text,
   TextInput,
+  createStyles,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
+
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import ContainerState from './ContainerState';
 

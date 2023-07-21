@@ -2,6 +2,7 @@ import { Box, Stack, Title, UnstyledButton } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+
 import { AppType } from '../../../../types/app';
 import { useCardStyles } from '../../../layout/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';

@@ -1,5 +1,6 @@
 import Consola from 'consola';
-import { vi, describe, it, expect } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
+
 import { PiHoleClient } from './piHole';
 
 describe('PiHole API client', () => {
@@ -307,7 +308,9 @@ describe('PiHole API client', () => {
     const client = new PiHoleClient('http://pi.hole', 'nice');
 
     // Act & Assert
-    await expect(() => client.disable()).rejects.toThrowErrorMatchingInlineSnapshot('"Status code does not indicate success: 404"');
+    await expect(() => client.disable()).rejects.toThrowErrorMatchingInlineSnapshot(
+      '"Status code does not indicate success: 404"'
+    );
     expect(calledCount).toBe(1);
 
     expect(errorLogSpy).not.toHaveBeenCalled();
@@ -335,7 +338,9 @@ describe('PiHole API client', () => {
     const client = new PiHoleClient('http://pi.hole', 'nice');
 
     // Act & Assert
-    await expect(() => client.disable()).rejects.toThrowErrorMatchingInlineSnapshot('"Response does not indicate success. Authentication is most likely invalid: "');
+    await expect(() => client.disable()).rejects.toThrowErrorMatchingInlineSnapshot(
+      '"Response does not indicate success. Authentication is most likely invalid: "'
+    );
     expect(calledCount).toBe(1);
 
     expect(errorLogSpy).not.toHaveBeenCalled();

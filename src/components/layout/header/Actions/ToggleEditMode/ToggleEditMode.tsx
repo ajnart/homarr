@@ -5,10 +5,10 @@ import { IconEditCircle, IconEditCircleOff } from '@tabler/icons-react';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
-
-import { api } from '~/utils/api';
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/gridstack/store';
 import { useCardStyles } from '../../../useCardStyles';

@@ -18,6 +18,7 @@ import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { mapObject } from '../../../../tools/client/objects';
@@ -47,7 +48,7 @@ export const WidgetsEditModal = ({
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
     string,
-    IntegrationOptionsValueType
+    IntegrationOptionsValueType,
   ][];
 
   // Find the Key in the "Widgets" Object that matches the widgetId

@@ -1,4 +1,5 @@
 import fs from 'fs';
+
 import { BackendConfigType } from '../../types/config';
 import { Config } from '../types';
 import { migrateConfig } from './migrateConfig';

@@ -1,5 +1,4 @@
 import Consola from 'consola';
-
 import { v4 as uuidv4 } from 'uuid';
 
 import { ConfigAppIntegrationType, ConfigAppType, IntegrationType } from '../../types/app';

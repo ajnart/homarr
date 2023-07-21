@@ -8,6 +8,7 @@ import { Client } from 'sabnzbd-api';
 import { z } from 'zod';
 import { NzbgetClient } from '~/server/api/routers/usenet/nzbget/nzbget-client';
 import { NzbgetQueueItem, NzbgetStatus } from '~/server/api/routers/usenet/nzbget/types';
+import { findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import {
   NormalizedDownloadAppStat,
@@ -15,8 +16,8 @@ import {
 } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { ConfigAppType, IntegrationField } from '~/types/app';
 import { UsenetQueueItem } from '~/widgets/useNet/types';
+
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import { findAppProperty } from '~/tools/client/app-properties';
 
 export const downloadRouter = createTRPCRouter({
   get: publicProcedure

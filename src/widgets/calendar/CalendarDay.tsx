@@ -1,8 +1,15 @@
-import { Container, Indicator, IndicatorProps, Popover, useMantineTheme, Button } from '@mantine/core';
+import {
+  Button,
+  Container,
+  Indicator,
+  IndicatorProps,
+  Popover,
+  useMantineTheme,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+
 import { MediaList } from './MediaList';
 import { MediasType } from './type';
-
 
 interface CalendarDayProps {
   date: Date;
@@ -15,28 +22,28 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
   const { radius, fn } = useMantineTheme();
   var indicatorSize = 10;
   var indicatorOffset = -4;
-  switch(size){
-    case "xs": {
+  switch (size) {
+    case 'xs': {
       indicatorSize += 0;
       indicatorOffset -= 0;
       break;
     }
-    case "sm": {
+    case 'sm': {
       indicatorSize += 1;
       indicatorOffset -= 1;
       break;
     }
-    case "md": {
+    case 'md': {
       indicatorSize += 2;
       indicatorOffset -= 1;
       break;
     }
-    case "lg": {
+    case 'lg': {
       indicatorSize += 3;
       indicatorOffset -= 2;
       break;
     }
-    case "xl": {
+    case 'xl': {
       indicatorSize += 4;
       indicatorOffset -= 3;
       break;
@@ -62,18 +69,42 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
           h="100%"
           w="100%"
           sx={{
-            padding:'18% !important',
-            borderRadius: ['xs','sm'].includes(size) ? radius.md : radius.lg,
-            borderStyle: "solid",
-            borderWidth: "0.2rem",
+            padding: '18% !important',
+            borderRadius: ['xs', 'sm'].includes(size) ? radius.md : radius.lg,
+            borderStyle: 'solid',
+            borderWidth: '0.2rem',
             borderColor: opened ? fn.primaryColor() : 'transparent',
           }}
         >
-          <DayIndicator size={indicatorSize} offset={indicatorOffset} color="red" position="bottom-start" medias={medias.books}>
-            <DayIndicator size={indicatorSize} offset={indicatorOffset} color="yellow" position="top-start" medias={medias.movies}>
-              <DayIndicator size={indicatorSize} offset={indicatorOffset} color="blue" position="top-end" medias={medias.tvShows}>
-                <DayIndicator size={indicatorSize} offset={indicatorOffset} color="green" position="bottom-end" medias={medias.musics}>
-                  <div style={{textAlign: 'center'}}>{date.getDate()}</div>
+          <DayIndicator
+            size={indicatorSize}
+            offset={indicatorOffset}
+            color="red"
+            position="bottom-start"
+            medias={medias.books}
+          >
+            <DayIndicator
+              size={indicatorSize}
+              offset={indicatorOffset}
+              color="yellow"
+              position="top-start"
+              medias={medias.movies}
+            >
+              <DayIndicator
+                size={indicatorSize}
+                offset={indicatorOffset}
+                color="blue"
+                position="top-end"
+                medias={medias.tvShows}
+              >
+                <DayIndicator
+                  size={indicatorSize}
+                  offset={indicatorOffset}
+                  color="green"
+                  position="bottom-end"
+                  medias={medias.musics}
+                >
+                  <div style={{ textAlign: 'center' }}>{date.getDate()}</div>
                 </DayIndicator>
               </DayIndicator>
             </DayIndicator>

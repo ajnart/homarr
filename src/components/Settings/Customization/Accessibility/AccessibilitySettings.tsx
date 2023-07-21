@@ -1,9 +1,10 @@
 import { Alert, Stack, Switch } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { BaseSyntheticEvent } from 'react';
-import { useConfigStore } from '../../../../config/store';
-import { useConfigContext } from '../../../../config/provider';
 import { useTranslation } from 'react-i18next';
+
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
 
 export const AccessibilitySettings = () => {
   const { t } = useTranslation('settings/customization/accessibility');

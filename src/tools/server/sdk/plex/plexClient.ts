@@ -6,7 +6,10 @@ import {
 } from '../../../../types/api/media-server/session-info';
 
 export class PlexClient {
-  constructor(private readonly apiAddress: string, private readonly token: string) {}
+  constructor(
+    private readonly apiAddress: string,
+    private readonly token: string
+  ) {}
 
   async getSessions(): Promise<GenericSessionInfo[]> {
     const response = await fetch(`${this.apiAddress}/status/sessions?X-Plex-Token=${this.token}`);
@@ -43,8 +46,8 @@ export class PlexClient {
         const transcodingElement = this.findElement('TranscodeSession', videoElement.elements);
 
         return {
-          id: (sessionElement?.id as string | undefined),
-          username: userElement?.title ?? 'Anonymous' as string,
+          id: sessionElement?.id as string | undefined,
+          username: userElement?.title ?? ('Anonymous' as string),
           userProfilePicture: userElement?.thumb as string | undefined,
           sessionName: `${playerElement.product} (${playerElement.title})`,
           currentlyPlaying: {

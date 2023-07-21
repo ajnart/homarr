@@ -1,5 +1,6 @@
-import { render, screen, cleanup } from '@testing-library/react';
-import { describe, expect, it, afterEach } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it } from 'vitest';
+
 import { AppAvatar } from './AppAvatar';
 
 describe('AppAvatar', () => {

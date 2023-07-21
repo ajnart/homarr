@@ -4,6 +4,7 @@ import { openModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
 import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import axios from 'axios';
+
 import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 
 function ModalContent() {

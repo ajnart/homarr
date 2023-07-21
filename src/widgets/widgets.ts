@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   MultiSelectProps,
   NumberInputProps,
@@ -8,6 +7,7 @@ import {
   TextInputProps,
 } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
+import React from 'react';
 
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
