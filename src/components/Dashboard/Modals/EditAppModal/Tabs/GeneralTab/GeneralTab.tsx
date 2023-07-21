@@ -33,7 +33,6 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         withAsterisk
         {...form.getInputProps('url')}
         onChange={(e) => {
-          form.setFieldValue('behaviour.externalUrl', e.target.value);
           form.setFieldValue('url', e.target.value);
         }}
       />
