@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Popups blokeret",
+      "text": "Din browser har blokeret Homarr fra at få adgang til dens API. Dette er oftest forårsaget af AdBlockers eller nægtede tilladelser. Homarr kan ikke anmode om tilladelser automatisk.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Klik på ikonet ved siden af URL'en, og tjek tilladelserne. Tillad popups og vinduer",
+        "adBlockers": "Deaktiver annonceblokkere og sikkerhedsværktøjer i din browser",
+        "otherBrowser": "Prøv en anden browser"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Åbn alle i nye faneblade"
     }
   }
 }
