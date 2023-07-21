@@ -131,8 +131,8 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
         <Text>{t('nonePending')}</Text>
       )}
       {sortedData.map((item) => (
-        <Card pos="relative" withBorder>
-          <Flex justify="space-between" gap="md">
+        <Card withBorder>
+          <Flex wrap="wrap" justify="space-between" gap="md">
             <Flex gap="md">
               <Image
                 src={item.posterPath}
