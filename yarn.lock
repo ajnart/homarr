@@ -5421,9 +5421,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:^9.0.0":
-  version: 9.20.3
-  resolution: "happy-dom@npm:9.20.3"
+"happy-dom@npm:^10.0.0":
+  version: 10.0.3
+  resolution: "happy-dom@npm:10.0.3"
   dependencies:
     css.escape: ^1.5.1
     entities: ^4.5.0
@@ -5431,7 +5431,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 7c737a0005aaf72e1f7138e5fe651759618d45c67597ab9865434da4a980a2854b4179ee678a84a5613c1bf4da88e64437670048cc2466c946265110c8a49f55
+  checksum: 75e3e939263736f7224a81479fdf02745613583cd57ddad6658f3f80fd20275ea5bf54438fe425d0d036cdf6cb71e65cda11a090923a34d05e0497cd1962a2da
   languageName: node
   linkType: hard
 
@@ -5576,7 +5576,7 @@ __metadata:
     eslint-plugin-vitest: ^0.2.0
     fily-publish-gridstack: ^0.0.13
     framer-motion: ^10.0.0
-    happy-dom: ^9.0.0
+    happy-dom: ^10.0.0
     html-entities: ^2.3.3
     i18next: ^22.5.1
     js-file-download: ^0.4.12
