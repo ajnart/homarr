@@ -1,5 +1,5 @@
 import { Box, Indicator, Tooltip } from '@mantine/core';
-import { IconCheck, IconCheckbox, IconDownload, IconLoader, IconX } from '@tabler/icons-react';
+import { IconCheck, IconLoader, IconX } from '@tabler/icons-react';
 import Consola from 'consola';
 import { TargetAndTransition, Transition, motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
@@ -19,12 +19,15 @@ export const AppPing = ({ app }: AppPingProps) => {
     (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
     false;
 
-  const { data, isLoading, isFetching, isSuccess } = api.app.ping.useQuery(app.id, {
+  const { data, isFetching, isError, error } = api.app.ping.useQuery(app.id, {
     retry: false,
     enabled: active,
     select: (data) => {
       const isOk = getIsOk(app, data.status);
-      Consola.info(`Ping ${app.name} (${app.url}) ${data.status} ${isOk}`);
+      if (isOk)
+        Consola.info(`Ping of app "${app.name}" (${app.url}) returned ${data.status} (Accepted)`);
+      else
+        Consola.warn(`Ping of app "${app.name}" (${app.url}) returned ${data.status} (Refused)`);
       return {
         status: data.status,
         state: isOk ? ('online' as const) : ('down' as const),
@@ -35,7 +38,7 @@ export const AppPing = ({ app }: AppPingProps) => {
 
   if (!active) return null;
 
-  const isOnline = data?.state === 'online';
+  const isOnline = isError ? false : data?.state === 'online';
 
   const disablePulse = config?.settings.customization.accessibility?.disablePingPulse ?? false;
   const replaceDotWithIcon =
@@ -55,6 +58,12 @@ export const AppPing = ({ app }: AppPingProps) => {
         ease: 'easeInOut',
       };
 
+  const label = () => {
+    if (isFetching) return t('states.loading');
+    if (isError) return  error?.message;
+    if (data?.state === 'online') return t('states.online', { response: data?.status ?? 'N/A' });
+    return `${data?.statusText}: ${data?.status} (denied)`;
+  }
   return (
     <motion.div
       style={{
@@ -69,22 +78,16 @@ export const AppPing = ({ app }: AppPingProps) => {
       <Tooltip
         withinPortal
         radius="lg"
-        label={
-          isLoading
-            ? t('states.loading')
-            : data?.state === 'online'
-            ? t('states.online', { response: data?.status ?? 'N/A' })
-            : `${data?.statusText} ${data?.status}`
-        }
+        label={label()}
       >
         {config?.settings.customization.accessibility?.replacePingDotsWithIcons ? (
           <Box>
-            <AccessibleIndicatorPing isLoading={isLoading} isOnline={isOnline} />
+            <AccessibleIndicatorPing isLoading={isFetching} isOnline={isOnline} />
           </Box>
         ) : (
           <Indicator
             size={15}
-            color={isLoading ? 'yellow' : isOnline ? 'green' : 'red'}
+            color={isFetching ? 'yellow' : isOnline ? 'green' : 'red'}
             children={null}
           />
         )}
@@ -113,9 +116,7 @@ const AccessibleIndicatorPing = ({
 
 export const getIsOk = (app: AppType, status: number) => {
   if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
-    Consola.log('Using new status codes');
     return app.network.statusCodes.includes(status.toString());
   }
-  Consola.warn('Using deprecated okStatus');
   return app.network.okStatus.includes(status);
 };

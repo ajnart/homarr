@@ -10,12 +10,6 @@ import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
-const errorResponse = {
-  state: 'offline',
-  status: 500,
-  statusText: 'Check logs for more informations',
-};
-
 export const appRouter = createTRPCRouter({
   ping: publicProcedure.input(z.string()).query(async ({ input }) => {
     const agent = new https.Agent({ rejectUnauthorized: false });
@@ -26,7 +20,11 @@ export const appRouter = createTRPCRouter({
     const url = app?.url;
     if (url === undefined || !app) {
       Consola.error(`App ${input} not found`);
-      return errorResponse;
+      throw new TRPCError({
+        code: 'NOT_FOUND',
+        cause: input,
+        message: `App ${input} was not found`,
+      });
     }
     const res = await axios
       .get(url, { httpsAgent: agent, timeout: 2000 })
@@ -44,12 +42,20 @@ export const appRouter = createTRPCRouter({
         }
 
         if (error.code === 'ECONNABORTED') {
-          Consola.error(`Ping timeout for ${input}`);
-          return errorResponse;
+          Consola.error(`Ping timed out for app with id : ${input} (url: ${url})`);
+          throw new TRPCError({
+            code: 'TIMEOUT',
+            cause: input,
+            message: `Ping timed out`,
+          });
         }
 
         Consola.error(`Unexpected response: ${error.message}`);
-        return errorResponse;
+        throw new TRPCError({
+          code: 'UNPROCESSABLE_CONTENT',
+          cause: input,
+          message: `Unexpected response: ${error.message}`,
+        });
       });
     return res;
   }),
