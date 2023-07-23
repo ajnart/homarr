@@ -1,7 +1,9 @@
 import {
   ActionIcon,
+  Anchor,
   Button,
   Card,
+  Center,
   Group,
   Loader,
   Modal,
@@ -14,13 +16,14 @@ import {
   Tooltip,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconClick, IconListSearch } from '@tabler/icons-react';
+import { IconAlertTriangle, IconClick, IconListSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { City } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
 
 import { IntegrationOptionsValueType } from '../WidgetsEditModal';
+import Link from 'next/link';
 
 type LocationSelectionProps = {
   widgetId: string;
@@ -140,14 +143,40 @@ type CitySelectModalProps = {
 
 const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySelectModalProps) => {
   const { t } = useTranslation('widgets/location');
-  const { isLoading, data } = api.weather.findCity.useQuery(
+  const { isLoading, data, isError } = api.weather.findCity.useQuery(
     { query },
     {
+      retry: false,
       enabled: opened,
       refetchOnWindowFocus: false,
       refetchOnMount: false,
     }
   );
+
+  if (isError === true)
+    return (
+      <Modal
+        title={
+          <Title order={4}>
+            {t('modal.title')} - {query}
+          </Title>
+        }
+        size="xl"
+        opened={opened}
+        onClose={closeModal}
+        zIndex={250}
+      >
+      <Center>
+        <Stack align="center">
+          <IconAlertTriangle />
+          <Title order={6}>Nothing found</Title>
+          <Text>Nothing was found, please try again</Text>
+        </Stack>
+      </Center>
+      </Modal>
+    );
+  
+  const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
   return (
     <Modal
@@ -191,13 +220,15 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
                   <Text style={{ whiteSpace: 'nowrap' }}>{city.country}</Text>
                 </td>
                 <td>
+                  <Anchor target='_blank' href={`https://www.google.com/maps/place/${city.latitude},${city.longitude}`}>
                   <Text style={{ whiteSpace: 'nowrap' }}>
                     {city.latitude}, {city.longitude}
                   </Text>
+                  </Anchor>
                 </td>
                 <td>
                   {city.population ? (
-                    <Text style={{ whiteSpace: 'nowrap' }}>{city.population}</Text>
+                    <Text style={{ whiteSpace: 'nowrap' }}>{formatter.format(city.population)}</Text>
                   ) : (
                     <Text color="dimmed"> {t('modal.table.population.fallback')}</Text>
                   )}
