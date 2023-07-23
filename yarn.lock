@@ -1714,6 +1714,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@t3-oss/env-core@npm:0.6.0":
+  version: 0.6.0
+  resolution: "@t3-oss/env-core@npm:0.6.0"
+  peerDependencies:
+    typescript: ">=4.7.2"
+    zod: ^3.0.0
+  checksum: 00c5b8e2d893f85e9d33099fded1e9ee1c74e642144b91d60096d31ed5bcd09986f14b275316568aa1a1f42d1b01a34b67dcf1396e11d837ff5c11b4bfb56a3a
+  languageName: node
+  linkType: hard
+
+"@t3-oss/env-nextjs@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@t3-oss/env-nextjs@npm:0.6.0"
+  dependencies:
+    "@t3-oss/env-core": 0.6.0
+  peerDependencies:
+    typescript: ">=4.7.2"
+    zod: ^3.0.0
+  checksum: d3708558241bcf857dfcfbc778a4d0166a5e690414893d7a4eb95dcafa12810d4fdc1cffe41402004acdd0d8f558f9369499bd9032d04e158d8698b5e85c7f32
+  languageName: node
+  linkType: hard
+
 "@tabler/icons-react@npm:^2.18.0":
   version: 2.26.0
   resolution: "@tabler/icons-react@npm:2.26.0"
@@ -5537,6 +5559,7 @@ __metadata:
     "@nivo/core": ^0.83.0
     "@nivo/line": ^0.83.0
     "@react-native-async-storage/async-storage": ^1.18.1
+    "@t3-oss/env-nextjs": ^0.6.0
     "@tabler/icons-react": ^2.18.0
     "@tanstack/query-async-storage-persister": ^4.27.1
     "@tanstack/query-sync-storage-persister": ^4.27.1

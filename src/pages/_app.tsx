@@ -14,9 +14,10 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
+import { env } from '~/env.js';
 import { api } from '~/utils/api';
 
-import nextI18nextConfig from '../../next-i18next.config';
+import nextI18nextConfig from '../../next-i18next.config.js';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -149,26 +150,22 @@ function App(
 }
 
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
-  const disableEditMode =
-    process.env.DISABLE_EDIT_MODE && process.env.DISABLE_EDIT_MODE.toLowerCase() === 'true';
-  if (disableEditMode) {
+  if (process.env.DISABLE_EDIT_MODE === 'true') {
     Consola.warn(
       'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
     );
   }
 
-  if (process.env.DEFAULT_COLOR_SCHEME !== undefined) {
-    Consola.debug(`Overriding the default color scheme with ${process.env.DEFAULT_COLOR_SCHEME}`);
+  if (env.DEFAULT_COLOR_SCHEME !== 'light') {
+    Consola.debug(`Overriding the default color scheme with ${env.DEFAULT_COLOR_SCHEME}`);
   }
-
-  const colorScheme: ColorScheme = (process.env.DEFAULT_COLOR_SCHEME as ColorScheme) ?? 'light';
 
   return {
     pageProps: {
       colorScheme: getCookie('color-scheme', ctx) || 'light',
       packageAttributes: getServiceSidePackageAttributes(),
-      editModeEnabled: !disableEditMode,
-      defaultColorScheme: colorScheme,
+      editModeEnabled: process.env.DISABLE_EDIT_MODE !== 'true',
+      defaultColorScheme: env.DEFAULT_COLOR_SCHEME,
     },
   };
 };

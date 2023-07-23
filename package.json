@@ -42,6 +42,7 @@
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
     "@react-native-async-storage/async-storage": "^1.18.1",
+    "@t3-oss/env-nextjs": "^0.6.0",
     "@tabler/icons-react": "^2.18.0",
     "@tanstack/query-async-storage-persister": "^4.27.1",
     "@tanstack/query-sync-storage-persister": "^4.27.1",
@@ -155,7 +156,9 @@
       "^[./]"
     ],
     "importOrderSeparation": true,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
     "importOrderSortSpecifiers": true
   },
   "eslintConfig": {

@@ -9,6 +9,7 @@ import {
 } from '@tabler/icons-react';
 import { i18n, useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
+import { env } from '~/env';
 
 import { AccessibilitySettings } from './Accessibility/AccessibilitySettings';
 import { GridstackConfiguration } from './Layout/GridstackConfiguration';
@@ -130,7 +131,7 @@ const getItems = () => {
       ),
     },
   ];
-  if (process.env.NODE_ENV === 'development') {
+  if (env.NEXT_PUBLIC_NODE_ENV === 'development') {
     items.push({
       id: 'dev',
       image: <IconCode />,
