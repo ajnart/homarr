@@ -28,6 +28,7 @@ export const MobileRibbonSidebarDrawer = ({
           width: '100%',
         },
       }}
+      transitionProps={{ transition: `slide-${location === 'right' ? 'left' : 'right'}` }}
       {...props}
     >
       <DashboardSidebar location={location} isGridstackReady />
