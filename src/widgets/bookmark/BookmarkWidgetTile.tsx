@@ -228,7 +228,9 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               sx={{
                 backgroundColor: colorScheme === 'dark' ? colors.dark[5].concat('80') : colors.blue[0].concat('80'),
                 '&:hover': { backgroundColor: fn.primaryColor().concat('80'),}, //'40' = 25% opacity
+                flex:'1 1 auto',
               }}
+              display="flex"
             >
               <BookmarkItemContent item={item} />
             </Card>
