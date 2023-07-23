@@ -84,7 +84,7 @@ export const IconSelector = forwardRef(
           icon={<DebouncedImage src={value ?? currentValue} width={20} height={20} />}
           rightSection={
             (value ?? currentValue).length > 0 ? (
-              <CloseButton onClick={() => onChange(undefined)} />
+              <CloseButton onClick={() => onChange("")} />
             ) : null
           }
           itemComponent={AutoCompleteItem}
