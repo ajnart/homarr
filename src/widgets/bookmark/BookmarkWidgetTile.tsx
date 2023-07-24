@@ -40,7 +40,7 @@ interface BookmarkItem {
   href: string;
   iconUrl: string;
   openNewTab: boolean;
-  hideLink: boolean;
+  hideHostname: boolean;
 }
 
 const definition = defineWidget({
@@ -60,7 +60,7 @@ const definition = defineWidget({
           href: 'https://homarr.dev',
           iconUrl: '/imgs/logo/logo.png',
           openNewTab: false,
-          hideLink: false,
+          hideHostname: false,
         };
       },
       itemComponent({ data, onChange, delete: deleteData }) {
@@ -134,9 +134,9 @@ const definition = defineWidget({
                 checked={form.values.openNewTab}
               />
               <Switch
-                {...form.getInputProps('hideLink')}
-                label="Hide link"
-                checked={form.values.hideLink}
+                {...form.getInputProps('hideHostname')}
+                label="Hide Hostname"
+                checked={form.values.hideHostname}
               />
               <Button
                 onClick={() => deleteData()}
@@ -299,7 +299,7 @@ const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => {
       <Text
         color={colorScheme === 'dark' ? "gray.6" : "gray.7"}
         size="sm"
-        hidden={item.hideLink}
+        hidden={item.hideHostname}
       >
         {new URL(item.href).hostname}
       </Text>
