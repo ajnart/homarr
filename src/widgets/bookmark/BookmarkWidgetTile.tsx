@@ -221,6 +221,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               className={classes.autoGridItem}
               key={index}
               px="xl"
+              radius="md"
               component="a"
               href={item.href}
               target={item.openNewTab ? '_blank' : undefined}
