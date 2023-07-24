@@ -6,8 +6,11 @@ import path from 'path';
 import { getConfig } from '../../../../tools/config/getConfig';
 
 export async function POST(request: NextApiRequest, res: NextApiResponse) {
+  //Get config file name
   const configName = getCookie('config-name', { req: request });
+  //Get config file content from file name
   const config = getConfig(configName?.toString() ?? 'default');
+  //get widget id and text content
   const { content, id } = request.body;
   // Use immer to change the content of the widget
   const nextState = produce(config, (draft) => {
@@ -33,7 +36,7 @@ export async function POST(request: NextApiRequest, res: NextApiResponse) {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  // Filter out if the reuqest is a Put or a GET
+  // Filter out if the request is a Put or a GET
   if (req.method === 'POST') {
     return POST(req, res);
   }

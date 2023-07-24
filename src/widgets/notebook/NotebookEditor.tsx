@@ -17,17 +17,23 @@ Link.configure({
 });
 
 export function Editor({ widget }: { widget: INotebookWidget }) {
-  //Rework text content here
+  //Set content from file read off of note ID                             !To change
   const [content, setContent] = useState<string>(widget.properties.content);
 
+  //Get general edit mode
   const { enabled } = useEditModeStore();
+  //Edit mode on RichTextBox
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  const { config } = useConfigContext();
-  const { name: configName } = useConfigContext();
+  //Get Config File and Name, change to note file maybe?                  !To change
+  const { config, name: configName } = useConfigContext();
+  //Get theme
+  const { colorScheme, colors }  = useMantineTheme();
 
+  //Update config maybe?                                                  !To change
   const updateConfig = useConfigStore((x) => x.updateConfig);
+  // tf is debounce and mutation
   const [debounced] = useDebouncedValue(content, 500);
-  const theme = useMantineTheme();
+  //Look like mutation send content and id through api on mutation, might keep that but change api
   const mutation = useMutation({
     mutationFn: (content: string) =>
       axios.post('/api/modules/notebook', { id: widget.id, content }),
@@ -38,6 +44,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const scrollToTop = () => viewport.current?.scrollTo({ top: 0, behavior: 'smooth' });
   const [scrollPosition, onScrollPositionChange] = useState({ y: 0 });
 
+  //No config files basically, return loading page
   if (!config || !configName) return <Loader />;
 
   const editor = useEditor({
@@ -72,11 +79,11 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             },
 
             toolbar: {
-              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+              backgroundColor: colorScheme === 'dark' ? colors.dark[6] : 'white',
             },
 
             content: {
-              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+              backgroundColor: colorScheme === 'dark' ? colors.dark[6] : 'white',
             },
           }}
           editor={editor}
