@@ -53,6 +53,7 @@ interface DataType {
 export type IMultiSelectOptionValue = {
   type: 'multi-select';
   defaultValue: string[];
+  info?: boolean;
   data: DataType[];
   inputProps?: Partial<MultiSelectProps>;
 };
@@ -61,6 +62,7 @@ export type IMultiSelectOptionValue = {
 export type ISelectOptionValue = {
   type: 'select';
   defaultValue: string;
+  info?: boolean;
   data: DataType[];
   inputProps?: Partial<SelectProps>;
 };
@@ -69,6 +71,7 @@ export type ISelectOptionValue = {
 export type ISwitchOptionValue = {
   type: 'switch';
   defaultValue: boolean;
+  info?: boolean;
   inputProps?: Partial<SwitchProps>;
 };
 
@@ -76,6 +79,7 @@ export type ISwitchOptionValue = {
 export type ITextInputOptionValue = {
   type: 'text';
   defaultValue: string;
+  info?: boolean;
   inputProps?: Partial<TextInputProps>;
 };
 
@@ -83,6 +87,7 @@ export type ITextInputOptionValue = {
 export type INumberInputOptionValue = {
   type: 'number';
   defaultValue: number;
+  info?: boolean;
   inputProps?: Partial<NumberInputProps>;
 };
 
@@ -90,6 +95,7 @@ export type INumberInputOptionValue = {
 export type ISliderInputOptionValue = {
   type: 'slider';
   defaultValue: number;
+  info?: boolean;
   min: number;
   max: number;
   step: number;
@@ -108,6 +114,7 @@ export type IDraggableListInputValue = {
     key: string;
     subValues?: Record<string, any>;
   }[];
+  info?: boolean;
   items: Record<
     string,
     Record<string, Omit<Exclude<IWidgetOptionValue, IDraggableListInputValue>, 'defaultValue'>>
@@ -117,6 +124,7 @@ export type IDraggableListInputValue = {
 export type IDraggableEditableListInputValue<TData extends { id: string }> = {
   type: 'draggable-editable-list';
   defaultValue: TData[];
+  info?: boolean;
   create: () => TData;
   getLabel: (data: TData) => string | JSX.Element;
   itemComponent: (props: {
@@ -130,6 +138,7 @@ export type IDraggableEditableListInputValue<TData extends { id: string }> = {
 export type IMultipleTextInputOptionValue = {
   type: 'multiple-text';
   defaultValue: string[];
+  info?: boolean;
   inputProps?: Partial<TextInputProps>;
 };
 
