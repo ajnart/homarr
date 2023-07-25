@@ -150,7 +150,14 @@ const WidgetOptionTypeSwitch: FC<{
             {...option.inputProps}
           />
           {info?
-            <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+            <Tooltip.Floating
+              label={t(`descriptor.settings.${key}.info`)}
+              position="right-start"
+              c={ colorScheme === 'light' ? "black" : "dark.0" }
+              color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+              width={300}
+              multiline
+            >
               <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
             </Tooltip.Floating> : undefined
           }
@@ -163,7 +170,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
@@ -182,7 +196,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
@@ -203,7 +224,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
@@ -224,7 +252,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
@@ -243,7 +278,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
@@ -298,7 +340,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
@@ -332,7 +381,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
@@ -362,7 +418,14 @@ const WidgetOptionTypeSwitch: FC<{
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
             {info?
-              <Tooltip.Floating label={t(`descriptor.settings.${key}.info`)} position="right-start" c={ colorScheme === 'light' ? "black" : "dark.0" } color={ colorScheme === 'light' ? "dark.0" : "dark.6" }>
+              <Tooltip.Floating
+                label={t(`descriptor.settings.${key}.info`)}
+                position="right-start"
+                c={ colorScheme === 'light' ? "black" : "dark.0" }
+                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+                width={300}
+                multiline
+              >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
               </Tooltip.Floating> : undefined
             }
