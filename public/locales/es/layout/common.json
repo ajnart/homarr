@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
+      "title": "Popups bloqueados",
       "text": "",
       "list": {
         "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "adBlockers": "Desactiva bloqueadores de publicidad y herramientas de seguridad de tu navegador",
+        "otherBrowser": "Prueba con un navegador diferente"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Abrir todo en una nueva pestaña"
     }
   }
 }
