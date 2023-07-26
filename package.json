@@ -21,7 +21,9 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "docker:build": "docker build . -t homarr:dev",
+    "docker:start": "docker run --env-file ./.env -p 7575:7575 homarr:dev "
   },
   "dependencies": {
     "@ctrl/deluge": "^4.1.0",
@@ -155,7 +157,9 @@
       "^[./]"
     ],
     "importOrderSeparation": true,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
     "importOrderSortSpecifiers": true
   },
   "eslintConfig": {
