@@ -21,8 +21,15 @@ const ConfigContext = createContext<ConfigContextType>({
   setConfigName: () => {},
 });
 
-export const ConfigProvider = ({ children, config: fallbackConfig, configName: initialConfigName }: { children: ReactNode, config?: ConfigType, configName?: string }) => {
-  console.log(initialConfigName);
+export const ConfigProvider = ({
+  children,
+  config: fallbackConfig,
+  configName: initialConfigName,
+}: {
+  children: ReactNode;
+  config?: ConfigType;
+  configName?: string;
+}) => {
   const [configName, setConfigName] = useState<string>(initialConfigName || 'default');
   const [configVersion, setConfigVersion] = useState(0);
   const { configs } = useConfigStore((s) => ({ configs: s.configs }), shallow);
