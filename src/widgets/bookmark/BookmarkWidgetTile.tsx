@@ -325,7 +325,13 @@ const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => {
   const { colorScheme } = useMantineTheme();
   return (
   <Group spacing="0rem 1rem">
-    <Image hidden={item.hideIcon} src={item.iconUrl} width={47} height={47} fit="contain" withPlaceholder />
+    <Image
+      hidden={item.hideIcon}
+      src={item.iconUrl}
+      width={47}
+      height={47}
+      fit="contain"
+      withPlaceholder />
     <Stack spacing={0}>
       <Text size="md">{item.name}</Text>
       <Text
