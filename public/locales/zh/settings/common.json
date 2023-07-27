@@ -6,17 +6,17 @@
     "customizations": "个性化"
   },
   "tips": {
-    "configTip": "将你的配置文件拖放到页面上，就可以上传了!"
+    "configTip": "将配置文件拖放到页面上传！"
   },
   "credits": {
-    "madeWithLove": "用❤️创造，出品于",
+    "madeWithLove": "由 @ 用❤️创造",
     "thirdPartyContent": "查看第三方内容",
     "thirdPartyContentTable": {
-      "dependencyName": "依赖",
+      "dependencyName": "依赖项",
       "dependencyVersion": "版本"
     }
   },
-  "grow": "增长的网格（占用所有空间）",
+  "grow": "放大网格 (占用所有空间)",
   "layout": {
     "preview": {
       "title": "预览",
@@ -25,10 +25,10 @@
     "divider": "布局选项",
     "main": "主要的",
     "sidebar": "侧边栏",
-    "cannotturnoff": "不能关闭",
+    "cannotturnoff": "无法关闭",
     "dashboardlayout": "仪表板布局",
-    "enablersidebar": "启用右边的侧边栏",
-    "enablelsidebar": "启用左边的侧边栏",
+    "enablersidebar": "启用右侧栏",
+    "enablelsidebar": "启用左侧栏",
     "enablesearchbar": "启用搜索栏",
     "enabledocker": "启用docker集成",
     "enableping": "启用Ping功能",
