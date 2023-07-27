@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "在新标签中打开",
 			"description": "在新标签中打开应用，而不是当前标签。"
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
