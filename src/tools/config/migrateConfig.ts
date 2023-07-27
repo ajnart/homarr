@@ -161,6 +161,7 @@ const migrateService = (oldService: serviceItem, areaType: AreaType): ConfigAppT
   behaviour: {
     isOpeningNewTab: oldService.newTab ?? true,
     externalUrl: oldService.openedUrl ?? '',
+    tooltipDescription: oldService.description ?? '',
   },
   network: {
     enabledStatusChecker: oldService.ping ?? true,
@@ -168,6 +169,8 @@ const migrateService = (oldService: serviceItem, areaType: AreaType): ConfigAppT
   },
   appearance: {
     iconUrl: migrateIcon(oldService.icon),
+    hideAppName: oldService.hideName ?? false,
+    positionAppName: oldService.namePosition ?? 'column',
   },
   integration: migrateIntegration(oldService),
   area: areaType,

@@ -2,6 +2,8 @@ import { MantineTheme } from '@mantine/core';
 
 import { OptionValues } from '../modules/ModuleTypes';
 
+import { Property } from 'csstype'
+
 export interface Settings {
   searchUrl: string;
   searchNewTab?: boolean;
@@ -170,6 +172,7 @@ export const MatchingImages: {
 export interface serviceItem {
   id: string;
   name: string;
+  description?: string;
   type: ServiceType;
   url: string;
   icon: string;
@@ -180,5 +183,7 @@ export interface serviceItem {
   openedUrl?: string;
   newTab?: boolean;
   ping?: boolean;
+  hideName?: boolean;
+  namePosition?: Property.FlexDirection;
   status?: string[];
 }

@@ -93,6 +93,8 @@ export const AvailableElementTypes = ({
                   url: 'https://homarr.dev',
                   appearance: {
                     iconUrl: '/imgs/logo/logo.png',
+                    hideAppName: false,
+                    positionAppName: 'column',
                   },
                   network: {
                     enabledStatusChecker: true,
@@ -102,6 +104,7 @@ export const AvailableElementTypes = ({
                   behaviour: {
                     isOpeningNewTab: true,
                     externalUrl: '',
+                    tooltipDescription: ''
                   },
 
                   area: {

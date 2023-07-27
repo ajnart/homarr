@@ -122,6 +122,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 url: containerUrl,
                 appearance: {
                   iconUrl: app.icon ? app.icon : '/imgs/logo/logo.png',
+                  hideAppName: false,
+                  positionAppName: 'column',
                 },
                 network: {
                   enabledStatusChecker: true,
@@ -131,6 +133,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 behaviour: {
                   isOpeningNewTab: true,
                   externalUrl: '',
+                  tooltipDescription: '',
                 },
                 area: {
                   type: 'wrapper',
