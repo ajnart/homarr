@@ -44,6 +44,7 @@ interface BookmarkItem {
   iconUrl: string;
   openNewTab: boolean;
   hideHostname: boolean;
+  hideIcon: boolean;
 }
 
 const definition = defineWidget({
@@ -68,6 +69,7 @@ const definition = defineWidget({
           iconUrl: '/imgs/logo/logo.png',
           openNewTab: false,
           hideHostname: false,
+          hideIcon: false,
         };
       },
       itemComponent({ data, onChange, delete: deleteData }) {
@@ -144,6 +146,11 @@ const definition = defineWidget({
                 {...form.getInputProps('hideHostname')}
                 label="Hide Hostname"
                 checked={form.values.hideHostname}
+              />
+              <Switch
+                {...form.getInputProps('hideIcon')}
+                label="Hide Icon"
+                checked={form.values.hideIcon}
               />
               <Button
                 onClick={() => deleteData()}
@@ -318,7 +325,7 @@ const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => {
   const { colorScheme } = useMantineTheme();
   return (
   <Group spacing="0rem 1rem">
-    <Image src={item.iconUrl} width={47} height={47} fit="contain" withPlaceholder />
+    <Image hidden={item.hideIcon} src={item.iconUrl} width={47} height={47} fit="contain" withPlaceholder />
     <Stack spacing={0}>
       <Text size="md">{item.name}</Text>
       <Text
