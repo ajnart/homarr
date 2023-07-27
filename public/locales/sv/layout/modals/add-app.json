@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Öppna i ny flik",
 			"description": "Öppna appen i en ny flik istället för den nuvarande."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
