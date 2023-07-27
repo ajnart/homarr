@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next';
 import { Card, Center, Container, Stack, Text } from '@mantine/core';
 import {
   IconAd,
@@ -7,11 +6,14 @@ import {
   IconSearch,
   IconWorldWww,
 } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '~/config/provider';
+import { api } from '~/utils/api';
+
+import { formatNumber } from '../../tools/client/math';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
-import { formatNumber } from '../../tools/client/math';
-import { useDnsHoleSummeryQuery } from './query';
 
 const definition = defineWidget({
   id: 'dns-hole-summary',
@@ -178,5 +180,18 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
     </Container>
   );
 }
+
+export const useDnsHoleSummeryQuery = () => {
+  const { name: configName } = useConfigContext();
+
+  return api.dnsHole.summary.useQuery(
+    {
+      configName: configName!,
+    },
+    {
+      refetchInterval: 3 * 60 * 1000,
+    }
+  );
+};
 
 export default definition;

@@ -13,6 +13,7 @@ export const dashboardNamespaces = [
   'settings/general/internationalization',
   'settings/general/search-engine',
   'settings/general/widget-positions',
+  'settings/customization/accessibility',
   'settings/customization/general',
   'settings/customization/color-selector',
   'settings/customization/page-appearance',
@@ -44,6 +45,7 @@ export const dashboardNamespaces = [
   'modules/bookmark',
   'widgets/error-boundary',
   'widgets/draggable-list',
+  'widgets/location',
 ];
 
 export const loginNamespaces = ['authentication/login'];

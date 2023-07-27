@@ -18,6 +18,7 @@ import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { mapObject } from '../../../../tools/client/objects';
@@ -26,6 +27,7 @@ import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
 import { DraggableList } from './Inputs/DraggableList';
+import { LocationSelection } from './Inputs/LocationSelection';
 import { StaticDraggableList } from './Inputs/StaticDraggableList';
 
 export type WidgetEditModalInnerProps = {
@@ -35,7 +37,7 @@ export type WidgetEditModalInnerProps = {
   widgetOptions: IWidget<string, any>['properties'];
 };
 
-type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
+export type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
 
 export const WidgetsEditModal = ({
   context,
@@ -46,7 +48,7 @@ export const WidgetsEditModal = ({
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
     string,
-    IntegrationOptionsValueType
+    IntegrationOptionsValueType,
   ][];
 
   // Find the Key in the "Widgets" Object that matches the widgetId
@@ -200,6 +202,16 @@ const WidgetOptionTypeSwitch: FC<{
           />
         </Stack>
       );
+    case 'location':
+      return (
+        <LocationSelection
+          propName={key}
+          value={value}
+          handleChange={handleChange}
+          widgetId={widgetId}
+        />
+      );
+
     case 'draggable-list':
       /* eslint-disable no-case-declarations */
       const typedVal = value as IDraggableListInputValue['defaultValue'];

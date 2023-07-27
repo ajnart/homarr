@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Ļauj viegli apskatīt un pārvaldīt visus Docker konteinerus."
+  },
+  "search": {
+    "placeholder": "Meklēt pēc konteinera vai attēla nosaukuma"
+  },
+  "table": {
+    "header": {
+      "name": "Nosaukums",
+      "image": "Attēls",
+      "ports": "Ports",
+      "state": "Stāvoklis"
+    },
+    "body": {
+      "portCollapse": "{{ports}} papildus"
+    },
+    "states": {
+      "running": "Darbojas",
+      "created": "Izveidots",
+      "stopped": "Apstādināts",
+      "unknown": "Nezināms"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Pievienot lietotni",
+      "message": "Pievienot lietotni Homarr"
+    },
+    "restart": {
+      "title": "Restartēt"
+    },
+    "stop": {
+      "title": "Apstādināt"
+    },
+    "start": {
+      "title": "Palaist"
+    },
+    "refreshData": {
+      "title": "Atsvaidzināt datus"
+    },
+    "remove": {
+      "title": "Noņemt"
+    },
+    "addToHomarr": {
+      "title": "Pievienot Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Palaišana",
+      "end": "Tika palaists"
+    },
+    "stop": {
+      "start": "Apstādināts",
+      "end": "Apstādināts"
+    },
+    "restart": {
+      "start": "Restartējas",
+      "end": "Restartējies"
+    },
+    "remove": {
+      "start": "Noņemšana",
+      "end": "Noņemts"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker integrācija neizdevās",
+      "message": "Vai aizmirsāt montēt docker ligzdu?"
+    },
+    "unknownError": {
+      "title": "Radās kļūda"
+    },
+    "oneServiceAtATime": {
+      "title": "Lūdzu, pievienojiet tikai vienu lietotni vai pakalpojumu pēc kārtas!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

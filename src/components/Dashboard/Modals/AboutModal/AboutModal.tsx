@@ -4,7 +4,6 @@ import {
   Anchor,
   Badge,
   Button,
-  createStyles,
   Grid,
   Group,
   HoverCard,
@@ -14,6 +13,7 @@ import {
   Text,
   Title,
   Tooltip,
+  createStyles,
 } from '@mantine/core';
 import {
   IconAnchor,
@@ -29,17 +29,18 @@ import {
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
-import { i18n, Trans, useTranslation } from 'next-i18next';
+import { Trans, i18n, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '../../../../tools/color';
+import Credits from '../../../Settings/Common/Credits';
 import Tip from '../../../layout/Tip';
 import { usePrimaryGradient } from '../../../layout/useGradient';
-import Credits from '../../../Settings/Common/Credits';
 
 interface AboutModalProps {
   opened: boolean;

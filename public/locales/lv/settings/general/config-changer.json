@@ -1,0 +1,86 @@
+{
+  "configSelect": {
+    "label": "Konfigurācijas mainītājs",
+    "description": "{{configCount}} konfigurācijas ir pieejamas",
+    "loadingNew": "Konfigurācijas ielādēšana...",
+    "pleaseWait": "Lūdzu, uzgaidiet, kamēr tiks ielādēta jaunā konfigurācija!"
+  },
+  "modal": {
+    "copy": {
+      "title": "Izvēlieties jaunās konfigurācijas nosaukumu",
+      "form": {
+        "configName": {
+          "label": "Konfigurācijas nosaukums",
+          "validation": {
+            "required": "Konfigurācijas nosaukums ir obligāts",
+            "notUnique": "Konfigurācijas nosaukums jau tiek izmantots"
+          },
+          "placeholder": "Jūsu jaunais konfigurācijas nosaukums"
+        },
+        "submitButton": "Apstipriniet"
+      },
+      "events": {
+        "configSaved": {
+          "title": "Konfigurācija saglabāta",
+          "message": "Konfigurācija saglabāta kā {{configName}}"
+        },
+        "configCopied": {
+          "title": "Konfigurācija pārkopēta",
+          "message": "Konfigurācija pārkopēta kā {{configName}}"
+        },
+        "configNotCopied": {
+          "title": "Nesanāca pārkopēt konfigurāciju",
+          "message": "Jūsu konfigurācija netika pārkopēta kā {{configName}}"
+        }
+      }
+    },
+    "confirmDeletion": {
+      "title": "Konfigurācijas dzēšanas apstiprināšana",
+      "warningText": "Jūs gatavojaties dzēst '<b>{{configName}}</b>'",
+      "text": "Lūdzu, ņemiet vērā, ka dzēšana nav atgriezeniska, un jūsu dati tiks pazaudēti neatgriezeniski. Nospiežot šo pogu, fails tiks neatgriezeniski izdzēsts no diska. Pārliecinieties, ka esat izveidojis atbilstošu konfigurācijas dublējumu.",
+      "buttons": {
+        "confirm": "Jā, dzēst \"<b>{{configName}}</b>"
+      }
+    }
+  },
+  "buttons": {
+    "download": "Lejupielādēt konfigurāciju",
+    "delete": {
+      "text": "Dzēst konfigurāciju",
+      "notifications": {
+        "deleted": {
+          "title": "Konfigurācija izdzēsta",
+          "message": "Konfigurācija izdzēsta"
+        },
+        "deleteFailed": {
+          "title": "Konfigurācijas dzēšana neizdevās",
+          "message": "Konfigurācijas dzēšana neizdevās"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "Noklusējuma konfigurāciju nevar izdzēst",
+          "message": "Konfigurācija netika izdzēsta no failu sistēmas"
+        }
+      }
+    },
+    "saveCopy": "Saglabāt kopiju"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "Nevar ielādēt konfigurāciju",
+        "message": "Nevar ielādēt jūsu konfigurāciju. Nederīgs JSON formāts."
+      },
+      "loadedSuccessfully": {
+        "title": "Veiksmīgi ielādēta konfigurācija {{configName}}"
+      }
+    },
+    "accept": {
+      "title": "Konfigurācijas augšupielāde",
+      "text": "Velciet failus šeit, lai augšupielādētu konfigurāciju. Tiek atbalstīti tikai JSON faili."
+    },
+    "reject": {
+      "title": "Vilkšanas un Nomešanas Augšupielāde noraidīta",
+      "text": "Šis faila formāts netiek atbalstīts. Lūdzu, augšupielādējiet tikai JSON failus."
+    }
+  }
+}

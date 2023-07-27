@@ -1,15 +1,16 @@
 /* eslint-disable no-await-in-loop */
-import { z } from 'zod';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getConfig } from '../../../../tools/config/getConfig';
+import { z } from 'zod';
+
 import { findAppProperty } from '../../../../tools/client/app-properties';
+import { getConfig } from '../../../../tools/config/getConfig';
+import { AdGuard } from '../../../../tools/server/sdk/adGuard/adGuard';
 import { PiHoleClient } from '../../../../tools/server/sdk/pihole/piHole';
 import { ConfigAppType } from '../../../../types/app';
-import { AdGuard } from '../../../../tools/server/sdk/adGuard/adGuard';
 
 const getQuerySchema = z.object({
-  status: z.enum(['enabled', 'disabled']),
+  action: z.enum(['enable', 'disable']),
 });
 
 export const Post = async (request: NextApiRequest, response: NextApiResponse) => {
@@ -31,11 +32,11 @@ export const Post = async (request: NextApiRequest, response: NextApiResponse) =
     const app = applicableApps[i];
 
     if (app.integration?.type === 'pihole') {
-      await processPiHole(app, parseResult.data.status === 'disabled');
+      await processPiHole(app, parseResult.data.action === 'enable');
       return;
     }
 
-    await processAdGuard(app, parseResult.data.status === 'disabled');
+    await processAdGuard(app, parseResult.data.action === 'disable');
   }
 
   response.status(200).json({});
@@ -57,7 +58,7 @@ const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
 };
 
 const processPiHole = async (app: ConfigAppType, enable: boolean) => {
-  const pihole = new PiHoleClient(app.url, findAppProperty(app, 'password'));
+  const pihole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
 
   if (enable) {
     await pihole.enable();

@@ -1,6 +1,7 @@
 import { Card, Center, Flex, Stack, Text } from '@mantine/core';
 import { IconChartBar } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';

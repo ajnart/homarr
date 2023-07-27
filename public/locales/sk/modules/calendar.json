@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Typ Radarr releasu"
+      },
+      "hideWeekDays": {
+        "label": "Skryť dni v týždni"
+      },
+      "fontSize": {
+        "label": ""
       }
     }
   }

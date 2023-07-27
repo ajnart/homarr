@@ -1,9 +1,9 @@
 import Consola from 'consola';
-import { describe, it, vi, expect } from 'vitest';
 import { createMocks } from 'node-mocks-http';
+import { describe, expect, it, vi } from 'vitest';
 
-import GetSummary from './summary';
 import { ConfigType } from '../../../../types/config';
+import GetSummary from './summary';
 
 const mockedGetConfig = vi.fn();
 
@@ -28,7 +28,7 @@ describe('DNS hole', () => {
             type: 'pihole',
             properties: [
               {
-                field: 'password',
+                field: 'apiKey',
                 type: 'private',
                 value: 'hf3829fj238g8',
               },
@@ -130,7 +130,7 @@ describe('DNS hole', () => {
             type: 'pihole',
             properties: [
               {
-                field: 'password',
+                field: 'apiKey',
                 type: 'private',
                 value: 'hf3829fj238g8',
               },
@@ -144,7 +144,7 @@ describe('DNS hole', () => {
             type: 'pihole',
             properties: [
               {
-                field: 'password',
+                field: 'apiKey',
                 type: 'private',
                 value: 'ayaka',
               },

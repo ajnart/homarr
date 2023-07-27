@@ -1,154 +1,95 @@
-import { useMutation, useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { Results } from 'sabnzbd-api';
-import type {
-  UsenetQueueRequestParams,
-  UsenetQueueResponse,
-} from '../../../pages/api/modules/usenet/queue';
-import type {
-  UsenetHistoryRequestParams,
-  UsenetHistoryResponse,
-} from '../../../pages/api/modules/usenet/history';
-import { UsenetInfoRequestParams, UsenetInfoResponse } from '../../../pages/api/modules/usenet';
+import { useConfigContext } from '~/config/provider';
+import { RouterInputs, api } from '~/utils/api';
+
+import { UsenetInfoRequestParams } from '../../../pages/api/modules/usenet';
+import type { UsenetHistoryRequestParams } from '../../../pages/api/modules/usenet/history';
 import { UsenetPauseRequestParams } from '../../../pages/api/modules/usenet/pause';
-import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
+import type { UsenetQueueRequestParams } from '../../../pages/api/modules/usenet/queue';
 import { UsenetResumeRequestParams } from '../../../pages/api/modules/usenet/resume';
 
 const POLLING_INTERVAL = 2000;
 
-export const useGetUsenetInfo = (params: UsenetInfoRequestParams) =>
-  useQuery(
-    ['usenetInfo', params.appId],
-    async () =>
-      (
-        await axios.get<UsenetInfoResponse>('/api/modules/usenet', {
-          params,
-        })
-      ).data,
+export const useGetUsenetInfo = ({ appId }: UsenetInfoRequestParams) => {
+  const { name: configName } = useConfigContext();
+
+  return api.usenet.info.useQuery(
+    {
+      appId,
+      configName: configName!,
+    },
     {
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
-      enabled: Boolean(params.appId),
+      enabled: !!appId,
     }
   );
+};
 
-export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) =>
-  useQuery(
-    ['usenetDownloads', ...Object.values(params)],
-    async () =>
-      (
-        await axios.get<UsenetQueueResponse>('/api/modules/usenet/queue', {
-          params,
-        })
-      ).data,
+export const useGetUsenetDownloads = (params: UsenetQueueRequestParams) => {
+  const { name: configName } = useConfigContext();
+  return api.usenet.queue.useQuery(
     {
-      refetchInterval: POLLING_INTERVAL,
-      keepPreviousData: true,
-      retry: 2,
-    }
-  );
-
-export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) =>
-  useQuery(
-    ['usenetHistory', ...Object.values(params)],
-    async () =>
-      (
-        await axios.get<UsenetHistoryResponse>('/api/modules/usenet/history', {
-          params,
-        })
-      ).data,
+      configName: configName!,
+      ...params,
+    },
     {
       refetchInterval: POLLING_INTERVAL,
       keepPreviousData: true,
       retry: 2,
     }
   );
+};
 
-export const usePauseUsenetQueue = (params: UsenetPauseRequestParams) =>
-  useMutation(
-    ['usenetPause', ...Object.values(params)],
-    async () =>
-      (
-        await axios.post<Results>(
-          '/api/modules/usenet/pause',
-          {},
-          {
-            params,
-          }
-        )
-      ).data,
+export const useGetUsenetHistory = (params: UsenetHistoryRequestParams) => {
+  const { name: configName } = useConfigContext();
+  return api.usenet.history.useQuery(
     {
-      async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.appId]);
-        const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
-          'usenetInfo',
-          params.appId,
-        ]);
-
-        if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
-            ...previousInfo,
-            paused: true,
-          });
-        }
-
-        return { previousInfo };
-      },
-      onError(err, _, context) {
-        if (context?.previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.appId],
-            context.previousInfo
-          );
-        }
-      },
-      onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.appId]);
-      },
+      configName: configName!,
+      ...params,
+    },
+    {
+      refetchInterval: POLLING_INTERVAL,
+      keepPreviousData: true,
+      retry: 2,
     }
   );
+};
 
-export const useResumeUsenetQueue = (params: UsenetResumeRequestParams) =>
-  useMutation(
-    ['usenetResume', ...Object.values(params)],
-    async () =>
-      (
-        await axios.post<Results>(
-          '/api/modules/usenet/resume',
-          {},
-          {
-            params,
-          }
-        )
-      ).data,
-    {
-      async onMutate() {
-        await queryClient.cancelQueries(['usenetInfo', params.appId]);
-        const previousInfo = queryClient.getQueryData<UsenetInfoResponse>([
-          'usenetInfo',
-          params.appId,
-        ]);
+export const usePauseUsenetQueueMutation = (params: UsenetPauseRequestParams) => {
+  const { name: configName } = useConfigContext();
+  const { mutateAsync } = api.usenet.pause.useMutation();
+  const utils = api.useContext();
+  return async (variables: Omit<RouterInputs['usenet']['pause'], 'configName'>) => {
+    await mutateAsync(
+      {
+        configName: configName!,
+        ...variables,
+      },
+      {
+        onSettled() {
+          utils.usenet.info.invalidate({ appId: params.appId });
+        },
+      }
+    );
+  };
+};
 
-        if (previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(['usenetInfo', params.appId], {
-            ...previousInfo,
-            paused: false,
-          });
-        }
-
-        return { previousInfo };
+export const useResumeUsenetQueueMutation = (params: UsenetResumeRequestParams) => {
+  const { name: configName } = useConfigContext();
+  const { mutateAsync } = api.usenet.resume.useMutation();
+  const utils = api.useContext();
+  return async (variables: Omit<RouterInputs['usenet']['resume'], 'configName'>) => {
+    await mutateAsync(
+      {
+        configName: configName!,
+        ...variables,
       },
-      onError(err, _, context) {
-        if (context?.previousInfo) {
-          queryClient.setQueryData<UsenetInfoResponse>(
-            ['usenetInfo', params.appId],
-            context.previousInfo
-          );
-        }
-      },
-      onSettled() {
-        queryClient.invalidateQueries(['usenetInfo', params.appId]);
-      },
-    }
-  );
+      {
+        onSettled() {
+          utils.usenet.info.invalidate({ appId: params.appId });
+        },
+      }
+    );
+  };
+};

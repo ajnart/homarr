@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+
 import { useConfigContext } from '../../../../../../config/provider';
 import { useConfigStore } from '../../../../../../config/store';
 import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';

@@ -157,6 +157,19 @@ export const languages: Language[] = [
     translatedName: 'Turkish',
     emoji: '🇹🇷',
   },
+  {
+    shortName: 'lv',
+    originalName: 'Latvian',
+    translatedName: 'Latvian',
+    emoji: '🇱🇻',
+  },
+  // Croatian
+  {
+    shortName: 'hr',
+    originalName: 'Hrvatski',
+    translatedName: 'Croatian',
+    emoji: '🇭🇷',
+  },
 ];
 
 export const getLanguageByCode = (code: string | null) =>

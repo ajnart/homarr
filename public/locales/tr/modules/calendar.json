@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Radarr yayın türü"
+      },
+      "hideWeekDays": {
+        "label": "Haftanın günlerini gizle"
+      },
+      "fontSize": {
+        "label": "Font Boyutu"
       }
     }
   }

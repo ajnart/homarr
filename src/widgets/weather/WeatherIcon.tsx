@@ -1,5 +1,6 @@
 import { Box, Tooltip } from '@mantine/core';
 import {
+  Icon,
   IconCloud,
   IconCloudFog,
   IconCloudRain,
@@ -8,7 +9,6 @@ import {
   IconQuestionMark,
   IconSnowflake,
   IconSun,
-  Icon,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 

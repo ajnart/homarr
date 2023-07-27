@@ -1,0 +1,38 @@
+{
+  "title": "Iestatījumi",
+  "tooltip": "Iestatījumi",
+  "tabs": {
+    "common": "Kopīgais",
+    "customizations": "Pielāgojumi"
+  },
+  "tips": {
+    "configTip": "Augšupielādējiet konfigurācijas failu, velkot un nometot to uz lapas!"
+  },
+  "credits": {
+    "madeWithLove": "Ar ❤️ izstrādājis @",
+    "thirdPartyContent": "Skatiet trešo pušu saturu",
+    "thirdPartyContentTable": {
+      "dependencyName": "Atkarība",
+      "dependencyVersion": "Versija"
+    }
+  },
+  "grow": "Palielināt režģi (aizņemt visu vietu)",
+  "layout": {
+    "preview": {
+      "title": "Priekšskatījums",
+      "subtitle": "Izmaiņas tiks saglabātas automātiski"
+    },
+    "divider": "Izkārtojuma konfigurācija",
+    "main": "Galvenais",
+    "sidebar": "Sānu josla",
+    "cannotturnoff": "Nevar izslēgt",
+    "dashboardlayout": "Informācijas paneļa izkārtojums",
+    "enablersidebar": "Ieslēgt labo sānu joslu",
+    "enablelsidebar": "Ieslēgt kreiso sānu joslu",
+    "enablesearchbar": "Ieslēgt meklēšanas joslu",
+    "enabledocker": "Iespējot docker integrāciju",
+    "enableping": "Iespējot ping",
+    "enablelsidebardesc": "Pēc izvēles. Var izmantot tikai lietotnēm un integrācijām",
+    "enablersidebardesc": "Pēc izvēles. Var izmantot tikai lietotnēm un integrācijām"
+  }
+}

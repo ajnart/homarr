@@ -1,0 +1,39 @@
+{
+  "save": "Saglabāt",
+  "about": "Par Programmu",
+  "cancel": "Atcelt",
+  "close": "Aizvērt",
+  "delete": "Dzēst",
+  "ok": "OK",
+  "edit": "Rediģēt",
+  "enabled": "Iespējots",
+  "disabled": "Atspējots",
+  "enableAll": "Iespējot visu",
+  "disableAll": "Atspējot visu",
+  "version": "Versija",
+  "changePosition": "Mainīt pozīciju",
+  "remove": "Noņemt",
+  "removeConfirm": "Vai tiešām vēlaties noņemt {{item}}?",
+  "createItem": "+ izveidot {{item}}",
+  "sections": {
+    "settings": "Iestatījumi",
+    "dangerZone": "Bīstamā zona"
+  },
+  "secrets": {
+    "apiKey": "API atslēga",
+    "username": "Lietotājvārds",
+    "password": "Parole"
+  },
+  "tip": "Padoms: ",
+  "time": {
+    "seconds": "sekundes",
+    "minutes": "minūtes",
+    "hours": "stundas"
+  },
+  "loading": "Notiek ielāde...",
+  "breakPoints": {
+    "small": "mazs",
+    "medium": "vidējs",
+    "large": "liels"
+  }
+}

@@ -9,6 +9,27 @@
       },
       "allowFullScreen": {
         "label": "Volledig scherm toestaan"
+      },
+      "allowTransparency": {
+        "label": ""
+      },
+      "allowScrolling": {
+        "label": ""
+      },
+      "allowPayment": {
+        "label": ""
+      },
+      "allowAutoPlay": {
+        "label": ""
+      },
+      "allowMicrophone": {
+        "label": ""
+      },
+      "allowCamera": {
+        "label": ""
+      },
+      "allowGeolocation": {
+        "label": ""
       }
     }
   },

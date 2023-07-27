@@ -2,6 +2,7 @@ import { setCookie } from 'cookies-next';
 import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
 import path from 'path';
+
 import { LoadConfigComponent } from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
 import Layout from '../components/layout/Layout';
@@ -38,7 +39,7 @@ export async function getServerSideProps({
     };
   }
 
-  const config = getFrontendConfig(configName as string);
+  const config = await getFrontendConfig(configName as string);
   setCookie('config-name', configName, {
     req,
     res,

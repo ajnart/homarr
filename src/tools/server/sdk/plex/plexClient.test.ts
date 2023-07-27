@@ -1,5 +1,4 @@
 import { afterEach, describe, expect, it } from 'vitest';
-
 import 'vitest-fetch-mock';
 
 import { PlexClient } from './plexClient';

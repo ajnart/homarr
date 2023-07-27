@@ -1,5 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
+import { NextApiRequest, NextApiResponse } from 'next';
+
 import { backendMigrateConfig } from '../../tools/config/backendMigrateConfig';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {

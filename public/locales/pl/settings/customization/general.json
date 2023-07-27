@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Wygląd",
       "description": "Dostosuj tło, kolory i wygląd aplikacji"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
     }
   }
 }

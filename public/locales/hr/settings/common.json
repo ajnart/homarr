@@ -1,0 +1,38 @@
+{
+  "title": "Postavke",
+  "tooltip": "Postavke",
+  "tabs": {
+    "common": "Uobičajeno",
+    "customizations": "Prilagodbe"
+  },
+  "tips": {
+    "configTip": "Prenesite svoju konfiguracijsku datoteku povlačenjem i ispuštanjem na stranicu!"
+  },
+  "credits": {
+    "madeWithLove": "Napravljeno s ❤️ od @",
+    "thirdPartyContent": "Prikaži sadržaj treće strane",
+    "thirdPartyContentTable": {
+      "dependencyName": "Zavisnosti",
+      "dependencyVersion": "Verzija"
+    }
+  },
+  "grow": "Proširi grid (zauzmi sav prostor)",
+  "layout": {
+    "preview": {
+      "title": "Pregled",
+      "subtitle": "Promjene će se automatski spremiti"
+    },
+    "divider": "Mogućnosti izgleda",
+    "main": "Glavni prikaz",
+    "sidebar": "Bočna traka",
+    "cannotturnoff": "Ne može se isključiti",
+    "dashboardlayout": "Raspored nadzorne ploče",
+    "enablersidebar": "Omogući desnu bočnu traku",
+    "enablelsidebar": "Omogući lijevu bočnu traku",
+    "enablesearchbar": "Omogući pretraživač",
+    "enabledocker": "Uključi integraciju s Docker-om",
+    "enableping": "Omogući Ping-ove",
+    "enablelsidebardesc": "Opcionalno. Može se koristiti samo za aplikacije i integracije",
+    "enablersidebardesc": "Opcionalno. Može se koristiti samo za aplikacije i integracije"
+  }
+}

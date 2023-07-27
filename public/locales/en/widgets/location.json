@@ -1,0 +1,33 @@
+{
+  "form": {
+    "field": {
+      "query": "City / postal code",
+      "latitude": "Latitude",
+      "longitude": "Longitude"
+    },
+    "button": {
+      "search": {
+        "label": "Search",
+        "disabledTooltip": "Please choose a city / postal code first"
+      }
+    },
+    "empty": "Unknown location"
+  },
+  "modal": {
+    "title": "Choose a location",
+    "table": {
+      "header": {
+        "city": "City",
+        "country": "Country",
+        "coordinates": "Coordinates",
+        "population": "Population"
+      },
+      "action": {
+        "select": "Select {{city}}, {{countryCode}}"
+      },
+      "population": {
+        "fallback": "Unknown"
+      }
+    }
+  }
+}

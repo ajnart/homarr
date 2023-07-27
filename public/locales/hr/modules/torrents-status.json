@@ -1,0 +1,80 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "Prikazuje popis torrenta iz podržanih torrent klijenata.",
+    "settings": {
+      "title": "Postavke za Torrent Widget",
+      "refreshInterval": {
+        "label": "Interval osvježavanja (u sekundama)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Prikaži završene torrente"
+      },
+      "displayStaleTorrents": {
+        "label": "Prikaži neaktivne torrente"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "Popis oznaka je whitelist (umjesto blacklist)"
+      },
+      "labelFilter": {
+        "label": "Popis oznaka",
+        "description": "Kada je označena opcija \"is whitelist\", ovo će djelovati kao popis dopuštenih oznaka. Ako nije označeno, ovo je popis zabranjenih oznaka - \"blacklist\". Neće imati nikakav učinak kada je prazno"
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "Pogreška",
+      "lastUpdated": "Zadnje ažurirano prije {{time}}"
+    },
+    "table": {
+      "header": {
+        "name": "Naziv",
+        "size": "Veličina",
+        "download": "Isključeno",
+        "upload": "Uključeno",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Napredak"
+      },
+      "item": {
+        "text": "Upravlja {{appName}}, omjer: {{ratio}}"
+      },
+      "body": {
+        "nothingFound": "Nema pronađenih torrenata",
+        "filterHidingItems": "{{count}} unosa je skriveno vašim filtrima"
+      }
+    },
+    "lineChart": {
+      "title": "Trenutna brzina preuzimanja",
+      "download": "Preuzimanje: {{download}}",
+      "upload": "Otpremanje: {{upload}}",
+      "timeSpan": "{{seconds}} sekundi",
+      "totalDownload": "Preuzimanje: {{download}}/s",
+      "totalUpload": "Otpremanje: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nisu pronađeni podržani Torrent klijenti!",
+        "text": "Dodajte podržani Torrent klijent kako biste vidjeli trenutna preuzimanja"
+      },
+      "generic": {
+        "title": "Došlo je do neočekivane pogreške",
+        "text": "Homarr nije uspio uspostaviti komunikaciju s vašim Torrent klijentima. Provjerite svoju konfiguraciju"
+      }
+    },
+    "loading": {
+      "title": "Učitavam..."
+    },
+    "popover": {
+      "introductionPrefix": "Upravlja s",
+      "metrics": {
+        "queuePosition": "Pozicija u redu - {{position}}",
+        "progress": "Napredak - {{progress}}%",
+        "totalSelectedSize": "Ukupno - {{totalSize}}",
+        "state": "Status - {{state}}",
+        "ratio": "Omjer -",
+        "completed": "Završeno"
+      }
+    }
+  }
+}

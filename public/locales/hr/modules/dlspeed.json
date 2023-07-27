@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Brzina preuzimanja",
+    "description": "Prikazuje brzinu preuzimanja i brzinu otpremanja podržanih integracija."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Naziv",
+        "size": "Veličina",
+        "download": "Isključeno",
+        "upload": "Uključeno",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "Napredak"
+      },
+      "body": {
+        "nothingFound": "Nema pronađenih torrenata"
+      }
+    },
+    "lineChart": {
+      "title": "Trenutna brzina preuzimanja",
+      "download": "Preuzimanje: {{download}}",
+      "upload": "Otpremanje: {{upload}}",
+      "timeSpan": "{{seconds}} sekundi",
+      "totalDownload": "Preuzimanje: {{download}}/s",
+      "totalUpload": "Otpremanje: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nisu pronađeni podržani klijenti za preuzimanja!",
+        "text": "Dodajte uslugu preuzimanja kako biste vidjeli svoja trenutna preuzimanja"
+      }
+    }
+  }
+}

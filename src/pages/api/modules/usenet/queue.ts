@@ -3,10 +3,12 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'sabnzbd-api';
+import { findAppProperty } from '~/tools/client/app-properties';
+
+import { NzbgetClient } from '../../../../server/api/routers/usenet/nzbget/nzbget-client';
+import { NzbgetQueueItem, NzbgetStatus } from '../../../../server/api/routers/usenet/nzbget/types';
 import { getConfig } from '../../../../tools/config/getConfig';
 import { UsenetQueueItem } from '../../../../widgets/useNet/types';
-import { NzbgetClient } from './nzbget/nzbget-client';
-import { NzbgetQueueItem, NzbgetStatus } from './nzbget/types';
 
 dayjs.extend(duration);
 
@@ -40,8 +42,8 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         const options = {
           host: url.hostname,
           port: url.port || (url.protocol === 'https:' ? '443' : '80'),
-          login: app.integration.properties.find((x) => x.field === 'username')?.value ?? undefined,
-          hash: app.integration.properties.find((x) => x.field === 'password')?.value ?? undefined,
+          login: findAppProperty(app, 'username'),
+          hash: findAppProperty(app, 'password'),
         };
 
         const nzbGet = NzbgetClient(options);
@@ -91,7 +93,7 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
         break;
       }
       case 'sabnzbd': {
-        const apiKey = app.integration.properties.find((x) => x.field === 'apiKey')?.value;
+        const apiKey = findAppProperty(app, 'apiKey');
         if (!apiKey) {
           throw new Error(`API Key for app "${app.name}" is missing`);
         }

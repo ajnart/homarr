@@ -1,7 +1,8 @@
-import path from 'path';
 import fs from 'fs';
-import { getFallbackConfig } from './config/getFallbackConfig';
+import path from 'path';
+
 import { ConfigType } from '../types/config';
+import { getFallbackConfig } from './config/getFallbackConfig';
 
 export function getConfig(name: string, props: any = undefined) {
   // Check if the config file exists

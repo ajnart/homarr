@@ -1,6 +1,7 @@
-import { Tabs, Switch } from '@mantine/core';
+import { Switch, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
+
 import { AppType } from '../../../../../../types/app';
 
 interface BehaviourTabProps {

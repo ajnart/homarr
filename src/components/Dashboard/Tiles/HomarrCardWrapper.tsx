@@ -1,5 +1,6 @@
 import { Card, CardProps } from '@mantine/core';
 import { ReactNode } from 'react';
+
 import { useCardStyles } from '../../layout/useCardStyles';
 import { useEditModeStore } from '../Views/useEditModeStore';
 

@@ -1,8 +1,3 @@
-import fs from 'fs';
-import { GetServerSidePropsContext } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import React, { useEffect, useState } from 'react';
-
 import {
   Alert,
   Anchor,
@@ -11,7 +6,6 @@ import {
   Box,
   Button,
   Container,
-  createStyles,
   Group,
   Header,
   List,
@@ -25,6 +19,7 @@ import {
   Text,
   ThemeIcon,
   Title,
+  createStyles,
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
@@ -36,8 +31,13 @@ import {
   IconMoonStars,
   IconSun,
 } from '@tabler/icons-react';
-import { motion } from 'framer-motion';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+import fs from 'fs';
+import { GetServerSidePropsContext } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import React, { useEffect, useState } from 'react';
+
 import { Logo } from '../components/layout/Logo';
 import { usePrimaryGradient } from '../components/layout/useGradient';
 

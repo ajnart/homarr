@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "RSS Widget",
+    "description": "",
+    "settings": {
+      "title": "Postavke za RSS Widget",
+      "rssFeedUrl": {
+        "label": "URL-ovi RSS kanala",
+        "description": "URL-ovi RSS kanala koje želite prikazati."
+      },
+      "refreshInterval": {
+        "label": "Interval osvježavanja (u minutama)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "textLinesClamp": {
+        "label": "Ograničavanje broja redaka teksta"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Nemoguće dohvatiti RSS kanal",
+          "text": "Došlo je do problema prilikom pristupa RSS kanalu. Molimo provjerite da ste ispravno konfigurirali kanal koristeći valjanu URL adresu. URL adresa treba slijediti službenu specifikaciju za RSS kanale. Nakon ažuriranja kanala, možda će biti potrebno osvježiti nadzornu ploču."
+        }
+      }
+    }
+  }
+}

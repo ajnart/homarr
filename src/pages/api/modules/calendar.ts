@@ -1,12 +1,11 @@
 import axios from 'axios';
-
 import Consola from 'consola';
-
 import { NextApiRequest, NextApiResponse } from 'next';
-
 import { z } from 'zod';
-import { AppIntegrationType } from '../../../types/app';
+import { checkIntegrationsType } from '~/tools/client/app-properties';
+
 import { getConfig } from '../../../tools/config/getConfig';
+import { AppIntegrationType, IntegrationType } from '../../../types/app';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Filter out if the reuqest is a POST or a GET
@@ -51,14 +50,14 @@ async function Get(req: NextApiRequest, res: NextApiResponse) {
   const calendar = config.widgets.find((w) => w.type === 'calendar' && w.id === widgetId);
   const useSonarrv4 = calendar?.properties.useSonarrv4 ?? false;
 
-  const mediaAppIntegrationTypes: AppIntegrationType['type'][] = [
+  const mediaAppIntegrationTypes = [
     'sonarr',
     'radarr',
     'readarr',
     'lidarr',
-  ];
-  const mediaApps = config.apps.filter(
-    (app) => app.integration && mediaAppIntegrationTypes.includes(app.integration.type)
+  ] as const satisfies readonly IntegrationType[];
+  const mediaApps = config.apps.filter((app) =>
+    checkIntegrationsType(app.integration, mediaAppIntegrationTypes)
   );
 
   const IntegrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([

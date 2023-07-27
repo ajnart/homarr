@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Type de sortie Radarr"
+      },
+      "hideWeekDays": {
+        "label": ""
+      },
+      "fontSize": {
+        "label": ""
       }
     }
   }

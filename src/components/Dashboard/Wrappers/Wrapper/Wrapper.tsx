@@ -1,7 +1,7 @@
 import { WrapperType } from '../../../../types/wrapper';
 import { useEditModeStore } from '../../Views/useEditModeStore';
-import { useGridstack } from '../gridstack/use-gridstack';
 import { WrapperContent } from '../WrapperContent';
+import { useGridstack } from '../gridstack/use-gridstack';
 
 interface DashboardWrapperProps {
   wrapper: WrapperType;

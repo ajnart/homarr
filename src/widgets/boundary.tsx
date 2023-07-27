@@ -1,9 +1,10 @@
-import Consola from 'consola';
-import React, { ReactNode } from 'react';
-import { openModal } from '@mantine/modals';
-import { withTranslation } from 'next-i18next';
 import { Button, Card, Center, Code, Group, ScrollArea, Stack, Text, Title } from '@mantine/core';
+import { openModal } from '@mantine/modals';
 import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/icons-react';
+import Consola from 'consola';
+import { withTranslation } from 'next-i18next';
+import React, { ReactNode } from 'react';
+
 import { WidgetsMenu } from '../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import { IWidget } from './widgets';
 

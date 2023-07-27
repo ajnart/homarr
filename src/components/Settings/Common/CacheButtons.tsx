@@ -1,7 +1,8 @@
 import { Button, Group, MultiSelect, Stack, Title } from '@mantine/core';
-import { useState } from 'react';
 import { notifications } from '@mantine/notifications';
 import { IconTrash } from '@tabler/icons-react';
+import { useState } from 'react';
+
 import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
 
 const data = [

@@ -18,5 +18,5 @@ export type MediaRequest = {
 export enum MediaRequestStatus {
   PendingApproval = 1,
   Approved = 2,
-  Declined = 3
+  Declined = 3,
 }

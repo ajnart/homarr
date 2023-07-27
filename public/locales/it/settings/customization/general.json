@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Aspetto",
       "description": "Personalizza lo sfondo, i colori e l'aspetto delle app"
+    },
+    "accessibility": {
+      "name": "Accessibilità",
+      "description": "Configura Homarr per utenti con disabilità"
     }
   }
 }

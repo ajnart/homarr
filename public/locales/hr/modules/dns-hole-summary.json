@@ -1,0 +1,20 @@
+{
+  "descriptor": {
+    "name": "Sažetak DNS \"hole\"",
+    "description": "Prikazuje važne podatke iz PiHole-a ili AdGuard-a",
+    "settings": {
+      "title": "Postavke za sažetak DNS \"hole\"",
+      "usePiHoleColors": {
+        "label": "Koristi boje iz PiHole-a"
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "Domenae na popisu blokiranih",
+      "queriesToday": "Upiti danas",
+      "queriesBlockedTodayPercentage": "blokirano danas",
+      "queriesBlockedToday": "blokirano danas"
+    }
+  }
+}

@@ -2,11 +2,12 @@
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import { findAppProperty } from '../../../../tools/client/app-properties';
 import { getConfig } from '../../../../tools/config/getConfig';
+import { AdGuard } from '../../../../tools/server/sdk/adGuard/adGuard';
 import { PiHoleClient } from '../../../../tools/server/sdk/pihole/piHole';
 import { AdStatistics } from '../../../../widgets/dnshole/type';
-import { AdGuard } from '../../../../tools/server/sdk/adGuard/adGuard';
 
 export const Get = async (request: NextApiRequest, response: NextApiResponse) => {
   const configName = getCookie('config-name', { req: request });
@@ -32,7 +33,7 @@ export const Get = async (request: NextApiRequest, response: NextApiResponse) =>
     try {
       switch (app.integration?.type) {
         case 'pihole': {
-          const piHole = new PiHoleClient(app.url, findAppProperty(app, 'password'));
+          const piHole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
           const summary = await piHole.getSummary();
 
           data.domainsBeingBlocked += summary.domains_being_blocked;

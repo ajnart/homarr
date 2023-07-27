@@ -1,4 +1,4 @@
-import { IconKey, IconPassword, IconUser, Icon } from '@tabler/icons-react';
+import { Icon, IconKey, IconPassword, IconUser } from '@tabler/icons-react';
 
 import { TileBaseType } from './tile';
 
@@ -86,7 +86,7 @@ export const integrationFieldProperties: {
   transmission: ['username', 'password'],
   jellyfin: ['username', 'password'],
   plex: ['apiKey'],
-  pihole: ['password'],
+  pihole: ['apiKey'],
   adGuardHome: ['username', 'password'],
 };
 

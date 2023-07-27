@@ -9,13 +9,34 @@
       },
       "allowFullScreen": {
         "label": "Povoliť celú obrazovku"
+      },
+      "allowTransparency": {
+        "label": "Povoliť priehľadnosť"
+      },
+      "allowScrolling": {
+        "label": "Povolenie posúvania"
+      },
+      "allowPayment": {
+        "label": "Umožniť platbu"
+      },
+      "allowAutoPlay": {
+        "label": "Povolenie automatického prehrávania"
+      },
+      "allowMicrophone": {
+        "label": "Povoliť mikrofón"
+      },
+      "allowCamera": {
+        "label": "Povoliť kameru"
+      },
+      "allowGeolocation": {
+        "label": "Povolenie geografickej lokalizácie"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Neplatná URL",
         "text": "Skontrolujte, či ste v konfigurácii mini aplikácie zadali platnú adresu"
       }
     }

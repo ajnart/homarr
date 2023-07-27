@@ -1,0 +1,30 @@
+{
+  "pageTitle": {
+    "label": "Naslov stranice",
+    "description": "Naslov nadzorne ploče u gornjem lijevom kutu"
+  },
+  "metaTitle": {
+    "label": "Meta Naslov",
+    "description": "Naslov koji se prikazuje na kartici preglednika"
+  },
+  "logo": {
+    "label": "Logotip",
+    "description": "Logotip prikazan u gornjem lijevom kutu"
+  },
+  "favicon": {
+    "label": "Favicon",
+    "description": "Ikona prikazana na kartici preglednika"
+  },
+  "background": {
+    "label": "Pozadina"
+  },
+  "customCSS": {
+    "label": "Prilagođeni CSS",
+    "description": "Dodatno, prilagodite svoju nadzornu ploču koristeći CSS, što se preporučuje samo iskusnim korisnicima",
+    "placeholder": "Prilagođeni CSS će se primijeniti posljednji",
+    "applying": "Primjena CSS-a..."
+  },
+  "buttons": {
+    "submit": "Pošalji"
+  }
+}

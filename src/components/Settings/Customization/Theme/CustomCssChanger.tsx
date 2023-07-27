@@ -1,13 +1,14 @@
-import { Box, createStyles, Group, Loader, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Box, Group, Loader, Stack, Text, createStyles, useMantineTheme } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
-import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs';
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
 import 'prismjs/components/prism-css';
 import 'prismjs/themes/prism.css';
+import { useEffect, useState } from 'react';
+import Editor from 'react-simple-code-editor';
+
+import { useConfigContext } from '../../../../config/provider';
+import { useConfigStore } from '../../../../config/store';
 
 export const CustomCssChanger = () => {
   const { t } = useTranslation('settings/customization/page-appearance');

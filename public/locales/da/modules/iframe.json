@@ -9,13 +9,34 @@
       },
       "allowFullScreen": {
         "label": "Tillad fuld skærm"
+      },
+      "allowTransparency": {
+        "label": "Tillad gennemsigtighed"
+      },
+      "allowScrolling": {
+        "label": "Tillad rulning"
+      },
+      "allowPayment": {
+        "label": "Tillad betaling"
+      },
+      "allowAutoPlay": {
+        "label": "Tillad automatisk afspilning"
+      },
+      "allowMicrophone": {
+        "label": "Tillad mikrofon"
+      },
+      "allowCamera": {
+        "label": "Tillad kamera"
+      },
+      "allowGeolocation": {
+        "label": "Tillad geolokalisering"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Ugyldig URL",
         "text": "Sørg for, at du har indtastet en gyldig adresse i konfigurationen af din widget"
       }
     }

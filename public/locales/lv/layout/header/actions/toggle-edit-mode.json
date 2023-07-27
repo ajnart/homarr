@@ -1,0 +1,11 @@
+{
+    "description": "Rediģēšanas režīmā varat pielāgot flīzes un konfigurēt programmas. Izmaiņas netiek saglabātas, kamēr neesat izgājuši no rediģēšanas režīma.",
+    "button": {
+        "disabled": "Atvērt Rediģēšanas Režīmu",
+        "enabled": "Iziet un Saglabāt"
+    },
+    "popover": {
+        "title": "Rediģēšanas režīms ir ieslēgts priekš  <1>{{size}}</1> izmēra",
+        "text": "Tagad varat pielāgot un konfigurēt programmas. Izmaiņas <strong>netiek saglabātas</strong>, kamēr neesat izgājuši no rediģēšanas režīma"
+    }
+}

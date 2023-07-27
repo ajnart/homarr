@@ -5,7 +5,7 @@
     "settings": {
       "title": "Cài đặt cho tiện ích Dash.",
       "dashName": {
-        "label": ""
+        "label": "Tên Dash."
       },
       "url": {
         "label": "URL của Dash."

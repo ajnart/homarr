@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Тип релиза в Radarr"
+      },
+      "hideWeekDays": {
+        "label": "Скрыть дни недели"
+      },
+      "fontSize": {
+        "label": ""
       }
     }
   }

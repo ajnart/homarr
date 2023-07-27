@@ -10,13 +10,19 @@
       },
       "refreshInterval": {
         "label": "Yenileme aralığı (dakika olarak)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "textLinesClamp": {
+        "label": "Metin karakter sınırı"
       }
     },
     "card": {
       "errors": {
         "general": {
           "title": "RSS akışı alınamadı",
-          "text": "RSS akışına ulaşılırken bir sorun oluştu. Geçerli bir URL kullanarak RSS akışını doğru şekilde yapılandırdığınızdan emin olun. URL'ler resmi spesifikasyonla eşleşmelidir. Akışı güncelledikten sonra kontrol panelini yenilemeniz gerekebilir."
+          "text": "RSS akışına bağlanırken bir sorun oluştu. Geçerli bir URL kullanarak RSS akışını doğru şekilde yapılandırdığınızdan emin olun. URL'ler resmi spesifikasyonla eşleşmelidir. Akışı güncelledikten sonra kontrol panelini yenilemeniz gerekebilir."
         }
       }
     }

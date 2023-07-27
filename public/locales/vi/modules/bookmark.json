@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dấu trang",
+    "description": "Hiển thị một danh sách tĩnh các chuỗi hoặc liên kết",
     "settings": {
-      "title": "",
+      "title": "Cài đặt dấu trang",
       "items": {
-        "label": ""
+        "label": "Mục"
       },
       "layout": {
         "label": "Bố cục"
@@ -14,8 +14,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Danh sách dấu trang rỗng",
+      "text": "Thêm mục mới vào danh sách này trong chế độ chỉnh sửa"
     }
   }
 }

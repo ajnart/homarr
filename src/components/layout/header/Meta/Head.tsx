@@ -1,8 +1,9 @@
 /* eslint-disable react/no-invalid-html-attribute */
-import React from 'react';
 import NextHead from 'next/head';
-import { SafariStatusBarStyle } from './SafariStatusBarStyle';
+import React from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
+import { SafariStatusBarStyle } from './SafariStatusBarStyle';
 
 export function Head() {
   const { config } = useConfigContext();

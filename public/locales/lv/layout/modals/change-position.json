@@ -1,0 +1,8 @@
+{
+	"xPosition": "X ass pozīcija",
+	"width": "Platums",
+	"height": "Augstums",
+	"yPosition": "Y ass pozīcija",
+	"zeroOrHigher": "0 vai augstāks",
+	"betweenXandY": "Starp {{min}} un {{max}}"
+}

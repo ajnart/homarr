@@ -31,8 +31,8 @@
       "header": {
         "name": "名称",
         "size": "大小",
-        "download": "下移",
-        "upload": "上移",
+        "download": "下载",
+        "upload": "上传",
         "estimatedTimeOfArrival": "剩余时间",
         "progress": "进度"
       },
@@ -69,10 +69,10 @@
       "introductionPrefix": "管理的是",
       "metrics": {
         "queuePosition": "队列位置 - {{position}}",
-        "progress": "进展 - {{progress}}%",
+        "progress": "当前进度 - {{progress}}%",
         "totalSelectedSize": "共计 - {{totalSize}}",
-        "state": "国家 - {{state}}",
-        "ratio": "比率-",
+        "state": "状态 - {{state}}",
+        "ratio": "比率 -",
         "completed": "已完成"
       }
     }

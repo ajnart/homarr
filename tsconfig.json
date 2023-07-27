@@ -22,13 +22,16 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "~/*": ["./src/*"]
+    },
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next.config.mjs",
+    "next.config.js",
     ".next/types/**/*.ts"
   ],
   "exclude": [

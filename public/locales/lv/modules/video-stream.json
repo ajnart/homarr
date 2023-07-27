@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Videostraume",
+    "description": "Ieguldīt videostraumi vai video no kameras vai tīmekļvietnes",
+    "settings": {
+      "title": "Videostraume logrīka iestatījumi",
+      "FeedUrl": {
+        "label": "Plūsmas URL"
+      },
+      "autoPlay": {
+        "label": "Automātiskā atskaņošana"
+      },
+      "muted": {
+        "label": "Izslēgta skaņa"
+      },
+      "controls": {
+        "label": "Video atskaņotāja vadība"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Nederīga straume"
+  }
+}

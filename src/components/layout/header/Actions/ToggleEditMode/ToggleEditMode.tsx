@@ -2,13 +2,13 @@ import { ActionIcon, Button, Group, Text, Title, Tooltip } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { hideNotification, showNotification } from '@mantine/notifications';
 import { IconEditCircle, IconEditCircleOff } from '@tabler/icons-react';
-import axios from 'axios';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { Trans, useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../../../../config/provider';
 import { useScreenSmallerThan } from '../../../../../hooks/useScreenSmallerThan';
-
 import { useEditModeStore } from '../../../../Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/gridstack/store';
 import { useCardStyles } from '../../../useCardStyles';
@@ -28,6 +28,7 @@ export const ToggleEditModeAction = () => {
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
   const { classes } = useCardStyles(true);
+  const { mutateAsync: saveConfig } = api.config.save.useMutation();
 
   useHotkeys([['mod+E', toggleEditMode]]);
 
@@ -41,11 +42,12 @@ export const ToggleEditModeAction = () => {
     return undefined;
   });
 
-  const toggleButtonClicked = () => {
+  const toggleButtonClicked = async () => {
     toggleEditMode();
-    if (enabled || config === undefined || config?.schemaVersion === undefined) {
+    if (config === undefined || config?.schemaVersion === undefined) return;
+    if (enabled) {
       const configName = getCookie('config-name')?.toString() ?? 'default';
-      axios.put(`/api/configs/${configName}`, { ...config });
+      await saveConfig({ name: configName, config });
       Consola.log('Saved config to server', configName);
       hideNotification('toggle-edit-mode');
     } else if (!enabled) {

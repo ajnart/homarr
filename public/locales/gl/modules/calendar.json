@@ -1,0 +1,18 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "useSonarrv4": {
+        "label": ""
+      },
+      "sundayStart": {
+        "label": ""
+      },
+      "radarrReleaseType": {
+        "label": ""
+      }
+    }
+  }
+}

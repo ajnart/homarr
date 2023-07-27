@@ -1,5 +1,6 @@
-import { Avatar, Collapse, createStyles, Flex, Text } from '@mantine/core';
+import { Avatar, Collapse, Flex, Text, createStyles } from '@mantine/core';
 import { useState } from 'react';
+
 import { AppAvatar } from '../../components/AppAvatar';
 import { GenericSessionInfo } from '../../types/api/media-server/session-info';
 import { AppType } from '../../types/app';
@@ -33,7 +34,7 @@ export const TableRow = ({ session, app }: TableRowProps) => {
                 {session.username?.at(0)?.toUpperCase()}
               </Avatar>
             )}
-            <Text>{session.username}</Text>
+            <Text style={{ whiteSpace: 'nowrap' }}>{session.username}</Text>
           </Flex>
         </td>
         <td>

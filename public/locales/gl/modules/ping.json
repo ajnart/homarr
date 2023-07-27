@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": ""
+  },
+  "states": {
+    "online": "",
+    "offline": "",
+    "loading": ""
+  }
+}

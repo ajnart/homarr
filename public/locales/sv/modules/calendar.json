@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Radarr releasetyp"
+      },
+      "hideWeekDays": {
+        "label": "Dölj veckodagar"
+      },
+      "fontSize": {
+        "label": "Teckenstorlek"
       }
     }
   }

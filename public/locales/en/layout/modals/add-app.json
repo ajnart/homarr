@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Open in new tab",
 			"description": "Open the app in a new tab instead of the current one."
-		}
+		},
+		"customProtocolWarning": "Using a non-standard protocol. This may require pre-installed applications and can introduce security risks. Ensure that your address is secure and trusted."
 	},
 	"network": {
 		"statusChecker": {

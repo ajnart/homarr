@@ -1,21 +1,15 @@
 import { Group, Stack, Text } from '@mantine/core';
 import { IconArrowNarrowDown, IconArrowNarrowUp } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { RouterOutputs } from '~/utils/api';
+
 import { bytes } from '../../tools/bytesHelper';
 
 interface DashDotCompactNetworkProps {
   info: DashDotInfo;
 }
 
-export interface DashDotInfo {
-  storage: {
-    layout: { size: number }[];
-  };
-  network: {
-    speedUp: number;
-    speedDown: number;
-  };
-}
+export type DashDotInfo = RouterOutputs['dashDot']['info'];
 
 export const DashDotCompactNetwork = ({ info }: DashDotCompactNetworkProps) => {
   const { t } = useTranslation('modules/dashdot');

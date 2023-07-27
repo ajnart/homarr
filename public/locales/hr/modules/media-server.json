@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Medijski poslužitelj",
+    "description": "Komunicirajte s vašim Jellyfin ili Plex medijskim poslužiteljima",
+    "settings": {
+      "title": "Postavke za widget medijskog poslužitelja"
+    }
+  },
+  "card": {
+    "table": {
+      "header": {
+        "session": "Sesija",
+        "user": "Korisnik",
+        "currentlyPlaying": "Reproducira se trenutno"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nije moguće učitati sadržaj",
+        "text": "Nije moguće dohvatiti informacije s poslužitelja. Molimo provjerite dnevnike za više detalja"
+      }
+    }
+  }
+}

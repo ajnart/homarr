@@ -12,6 +12,7 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { AppType } from '../../../../types/app';
@@ -26,6 +27,9 @@ import { EditAppModalTab } from './Tabs/type';
 
 const appUrlRegex =
   '(https?://(?:www.|(?!www))\\[?[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\]?.[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|https?://(?:www.|(?!www))\\[?[a-zA-Z0-9]+\\]?.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
+
+const appUrlWithAnyProtocolRegex =
+  '([A-z]+://(?:www.|(?!www))\\[?[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\]?.[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|[A-z]+://(?:www.|(?!www))\\[?[a-zA-Z0-9]+\\]?.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
 
 export const EditAppModal = ({
   context,
@@ -70,8 +74,8 @@ export const EditAppModal = ({
             return null;
           }
 
-          if (!url.match(appUrlRegex)) {
-            return 'Uri override is not a valid uri';
+          if (!url.match(appUrlWithAnyProtocolRegex)) {
+            return 'External URI is not a valid uri';
           }
 
           return null;

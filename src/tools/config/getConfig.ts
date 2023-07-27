@@ -1,5 +1,6 @@
 import Consola from 'consola';
 import { v4 as uuidv4 } from 'uuid';
+
 import { BackendConfigType, ConfigType } from '../../types/config';
 import { backendMigrateConfig } from './backendMigrateConfig';
 import { configExists } from './configExists';
