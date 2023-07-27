@@ -136,7 +136,7 @@ const WidgetOptionTypeSwitch: FC<{
   handleChange: (key: string, value: IntegrationOptionsValueType) => void;
 }> = ({ option, widgetId, propName: key, value, handleChange }) => {
   const { t } = useTranslation([`modules/${widgetId}`, 'common']);
-  const { fn, colorScheme } = useMantineTheme();
+  const { colorScheme } = useMantineTheme();
 
   switch (option.type) {
     case 'switch':
@@ -155,7 +155,7 @@ const WidgetOptionTypeSwitch: FC<{
               position="right-start"
               c={ colorScheme === 'light' ? "black" : "dark.0" }
               color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-              width={300}
+              styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
               multiline
             >
               <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -175,7 +175,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -201,7 +201,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -229,7 +229,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -257,7 +257,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -283,7 +283,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -345,7 +345,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -386,7 +386,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
@@ -423,7 +423,7 @@ const WidgetOptionTypeSwitch: FC<{
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                width={300}
+                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
