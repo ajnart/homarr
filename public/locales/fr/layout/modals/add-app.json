@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Ouvrir dans un nouvel onglet",
 			"description": "Ouvrez l'application dans un nouvel onglet au lieu de l'onglet actuel."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
