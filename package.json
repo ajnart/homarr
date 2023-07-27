@@ -41,6 +41,7 @@
     "@mantine/notifications": "^6.0.0",
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
+    "@prisma/client": "5.0.0",
     "@react-native-async-storage/async-storage": "^1.18.1",
     "@tabler/icons-react": "^2.18.0",
     "@tanstack/query-async-storage-persister": "^4.27.1",
