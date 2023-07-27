@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Yeni sekmede aç",
 			"description": "Uygulamayı mevcut sekme yerine yeni bir sekmede açın."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
