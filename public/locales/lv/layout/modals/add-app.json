@@ -25,7 +25,7 @@
 			"label": "Atvērt jaunā cilnē",
 			"description": "Atveriet lietotni jaunā cilnē, nevis pašreizējā cilnē."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Tiek izmantots nestandarta protokols. Tam var būt nepieciešamas iepriekš instalētas lietojumprogrammas, un tas var radīt drošības riskus. Pārliecinieties, ka jūsu adrese ir droša un uzticama."
 	},
 	"network": {
 		"statusChecker": {
