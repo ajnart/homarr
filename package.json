@@ -106,6 +106,7 @@
     "happy-dom": "^10.0.0",
     "node-mocks-http": "^1.12.2",
     "prettier": "^3.0.0",
+    "prisma": "^5.0.0",
     "sass": "^1.56.1",
     "ts-node": "latest",
     "turbo": "latest",
@@ -155,7 +156,9 @@
       "^[./]"
     ],
     "importOrderSeparation": true,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
     "importOrderSortSpecifiers": true
   },
   "eslintConfig": {

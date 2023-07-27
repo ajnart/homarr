@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model App {
+  id               String         @id @default(uuid())
+  name             String         @unique
+  url              String         @unique
+  behaviour        AppBehaviour   @relation(fields: [appBehaviourId], references: [id])
+  appBehaviourId   String
+  network          AppNetwork     @relation(fields: [appNetworkId], references: [id])
+  appNetworkId     String
+  appearance       AppAppearance  @relation(fields: [appAppearanceId], references: [id])
+  appAppearanceId  String
+  integration      AppIntegration @relation(fields: [appIntegrationId], references: [id])
+  appIntegrationId String
+}
+
+model AppBehaviour {
+  id              String  @id @default(uuid())
+  externalUrl     String  @unique
+  isOpeningNewTab Boolean
+  App             App[]
+}
+
+model AppNetwork {
+  id                   String     @id @default(uuid())
+  enabledStatusChecker Boolean
+  statusCodes          HttpCode[]
+  App                  App[]
+}
+
+model HttpCode {
+  id           String      @id @default(uuid())
+  code         Int         @unique
+  description  String      @unique
+  AppNetwork   AppNetwork? @relation(fields: [appNetworkId], references: [id])
+  appNetworkId String?
+}
+
+model AppAppearance {
+  id      String @id @default(uuid())
+  iconUrl String
+  App     App[]
+}
+
+model AppIntegration {
+  id                       String                 @id @default(uuid())
+  type                     String                 @unique
+  properties               AppIntegrationProperty @relation(fields: [appIntegrationPropertyId], references: [id])
+  appIntegrationPropertyId String
+  App                      App[]
+}
+
+model AppIntegrationProperty {
+  id                 String           @id @default(uuid())
+  type               String           @unique
+  field              IntegrationField @relation(fields: [integrationFieldId], references: [id])
+  integrationFieldId String
+  value              String?
+  isDefined          Boolean
+  AppIntegration     AppIntegration[]
+}
+
+model IntegrationField {
+  id                     String                   @id @default(uuid())
+  AppIntegrationProperty AppIntegrationProperty[]
+}
