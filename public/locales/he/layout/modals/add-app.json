@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "פתיחה בכרטיסיה חדשה",
 			"description": "פתח את האפליקציה בלשונית חדשה במקום הנוכחית."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
