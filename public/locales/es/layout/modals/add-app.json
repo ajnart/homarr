@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Abrir en nueva pestaña",
 			"description": "Abrir la app en una nueva pestaña, en vez de en la actual."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
