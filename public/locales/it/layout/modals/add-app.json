@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Apri in una nuova scheda",
 			"description": "Apri l'app in una nuova scheda invece di quella attuale."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
