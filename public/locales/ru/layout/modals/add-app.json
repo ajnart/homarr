@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Открыть в новой вкладке",
 			"description": "Открывать приложение в новой вкладке вместо текущей."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
