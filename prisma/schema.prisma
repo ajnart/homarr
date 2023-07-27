@@ -10,67 +10,140 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model App {
+model app {
   id               String         @id @default(uuid())
   name             String         @unique
   url              String         @unique
-  behaviour        AppBehaviour   @relation(fields: [appBehaviourId], references: [id])
+  behaviour        appBehaviour   @relation(fields: [appBehaviourId], references: [id])
   appBehaviourId   String
-  network          AppNetwork     @relation(fields: [appNetworkId], references: [id])
+  network          appNetwork     @relation(fields: [appNetworkId], references: [id])
   appNetworkId     String
-  appearance       AppAppearance  @relation(fields: [appAppearanceId], references: [id])
+  appearance       appAppearance  @relation(fields: [appAppearanceId], references: [id])
   appAppearanceId  String
-  integration      AppIntegration @relation(fields: [appIntegrationId], references: [id])
+  integration      appIntegration @relation(fields: [appIntegrationId], references: [id])
   appIntegrationId String
+  area             areaType       @relation(fields: [areaTypeId], references: [id])
+  areaTypeId       String
+  shape            sizedShape     @relation(fields: [sizedShapeId], references: [id])
+  sizedShapeId     String
 }
 
-model AppBehaviour {
+model appBehaviour {
   id              String  @id @default(uuid())
+  onClickUrl      String  @unique
   externalUrl     String  @unique
   isOpeningNewTab Boolean
-  App             App[]
+  app             app[]
 }
 
-model AppNetwork {
+model appNetwork {
   id                   String     @id @default(uuid())
   enabledStatusChecker Boolean
-  statusCodes          HttpCode[]
-  App                  App[]
+  statusCodes          httpCode[]
+  app                  app[]
 }
 
-model HttpCode {
+model httpCode {
   id           String      @id @default(uuid())
-  code         Int         @unique
+  code         String      @unique
   description  String      @unique
-  AppNetwork   AppNetwork? @relation(fields: [appNetworkId], references: [id])
+  appNetwork   appNetwork? @relation(fields: [appNetworkId], references: [id])
   appNetworkId String?
 }
 
-model AppAppearance {
+model appAppearance {
   id      String @id @default(uuid())
   iconUrl String
-  App     App[]
+  app     app[]
 }
 
-model AppIntegration {
+model appIntegration {
   id                       String                 @id @default(uuid())
   type                     String                 @unique
-  properties               AppIntegrationProperty @relation(fields: [appIntegrationPropertyId], references: [id])
+  properties               appIntegrationProperty @relation(fields: [appIntegrationPropertyId], references: [id])
   appIntegrationPropertyId String
-  App                      App[]
+  app                      app[]
 }
 
-model AppIntegrationProperty {
+model appIntegrationProperty {
   id                 String           @id @default(uuid())
   type               String           @unique
-  field              IntegrationField @relation(fields: [integrationFieldId], references: [id])
+  field              integrationField @relation(fields: [integrationFieldId], references: [id])
   integrationFieldId String
   value              String?
   isDefined          Boolean
-  AppIntegration     AppIntegration[]
+  appIntegration     appIntegration[]
 }
 
-model IntegrationField {
+model integrationField {
   id                     String                   @id @default(uuid())
-  AppIntegrationProperty AppIntegrationProperty[]
+  appIntegrationProperty appIntegrationProperty[]
+}
+
+model sizedShape {
+  id            String      @id @default(uuid())
+  sm            smallShape  @relation(fields: [smallShapeId], references: [id])
+  smallShapeId  String
+  md            mediumShape @relation(fields: [mediumShapeId], references: [id])
+  mediumShapeId String
+  lg            largeShape  @relation(fields: [largeShapeId], references: [id])
+  largeShapeId  String
+  app           app[]
+}
+
+model smallShape {
+  id              String        @id @default(uuid())
+  location        shapeLocation @relation(fields: [shapeLocationId], references: [id])
+  shapeLocationId String
+  size            shapeSize     @relation(fields: [shapeSizeId], references: [id])
+  shapeSizeId     String
+  sizedShape      sizedShape[]
+}
+
+model mediumShape {
+  id              String        @id @default(uuid())
+  location        shapeLocation @relation(fields: [shapeLocationId], references: [id])
+  shapeLocationId String
+  size            shapeSize     @relation(fields: [shapeSizeId], references: [id])
+  shapeSizeId     String
+  sizedShape      sizedShape[]
+}
+
+model largeShape {
+  id              String        @id @default(uuid())
+  location        shapeLocation @relation(fields: [shapeLocationId], references: [id])
+  shapeLocationId String
+  size            shapeSize     @relation(fields: [shapeSizeId], references: [id])
+  shapeSizeId     String
+  sizedShape      sizedShape[]
+}
+
+model shapeLocation {
+  id          String        @id @default(uuid())
+  name        String
+  mediumShape mediumShape[]
+  smallShape  smallShape[]
+  largeShape  largeShape[]
+}
+
+model shapeSize {
+  id          String        @id @default(uuid())
+  name        String
+  mediumShape mediumShape[]
+  smallShape  smallShape[]
+  largeShape  largeShape[]
+}
+
+model areaType {
+  id               String         @id @default(uuid())
+  type             String
+  properties       areaProperties @relation(fields: [areaPropertiesId], references: [id])
+  areaPropertiesId String
+  app              app[]
+}
+
+model areaProperties {
+  id       String     @id @default(uuid())
+  location String?
+  areaType areaType[]
 }

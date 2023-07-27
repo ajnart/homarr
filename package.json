@@ -15,6 +15,7 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "export": "next build && next export",
+    "prisma:migate-dev": "prisma migrate dev --name init",
     "lint": "next lint",
     "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",

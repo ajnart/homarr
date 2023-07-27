@@ -3,6 +3,7 @@ import Consola from 'consola';
 import fs from 'fs';
 import path from 'path';
 import { z } from 'zod';
+import { prisma } from '~/db/client';
 import { BackendConfigType, ConfigType } from '~/types/config';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
@@ -68,7 +69,16 @@ export const configRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ input }) => {
-      Consola.info(`Saving updated configuration of '${input.name}' config.`);
+      // Consola.info(`Saving updated configuration of '${input.name}' config.`);
+      //TODO: DELETE
+      // const appAppearance = await prisma.appAppearance.create({
+      //   data: {
+      //     iconUrl: '//test.com',
+      //   },
+      // });
+      const allAppearance = await prisma.appAppearance.findMany();
+      await prisma.$disconnect();
+      console.log(`This is the apps fromt he config: `, input.config.apps[0]);
 
       const previousConfig = getConfig(input.name);
 
