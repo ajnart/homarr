@@ -24,6 +24,10 @@
 		"isOpeningNewTab": {
 			"label": "Open in new tab",
 			"description": "Open the app in a new tab instead of the current one."
+		},
+		"tooltipDescription":{
+			"label": "Application Description",
+			"description": "The text you enter will appear when hovering over your app, very much like this box.\r\nUse this to give users more details about your app or leave empty to have nothing."
 		}
 	},
 	"network": {
@@ -48,6 +52,14 @@
 				"title": "Loading external icons",
 				"text": "This may take a few seconds"
 			}
+		},
+		"hideAppName":{
+			"label":"Hide App Name",
+			"description":"Check this box if you wish to hide the name of the app."
+		},
+		"positionAppName":{
+			"label":"App Name Position",
+			"description":"Position of the app's name relative to the icon."
 		}
 	},
 	"integration": {
