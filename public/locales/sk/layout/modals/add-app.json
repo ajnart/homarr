@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Otvoriť na novej karte",
 			"description": "Otvorenie aplikácie na novej karte namiesto aktuálnej."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
