@@ -52,13 +52,20 @@ export const AppearanceTab = ({
             ref={iconSelectorRef}
           />
         </Flex>
-        <Switch
-          label={t('appearance.hideAppName.label')}
-          description={t('appearance.hideAppName.description')}
-          styles={{ label: { fontWeight: 500, }, description: { marginTop: 0, }, }}
-          {...form.getInputProps('appearance.hideAppName', { type: 'checkbox' })}
+        <Select
+          label={t('appearance.appNameStatus.label')}
+          description={t('appearance.appNameStatus.description')}
+          data={[
+            {value: 'normal', label: 'Show title on tile only'},
+            {value: 'hover', label: 'Show title on tooltip hover only'},
+            {value: 'hidden', label: 'Don\'t show at all'},
+          ]}
+          {...form.getInputProps('appearance.appNameStatus')}
+          onChange={(value) => {
+            form.setFieldValue('appearance.appNameStatus', value)
+          }}
         />
-        {!form.values.appearance.hideAppName && (
+        {form.values.appearance.appNameStatus === "normal" && (
           <Select
             label={t('appearance.positionAppName.label')}
             description={t('appearance.positionAppName.description')}

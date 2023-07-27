@@ -53,9 +53,9 @@
 				"text": "This may take a few seconds"
 			}
 		},
-		"hideAppName":{
-			"label":"Hide App Name",
-			"description":"Check this box if you wish to hide the name of the app."
+		"appNameStatus":{
+			"label":"App Name Status",
+			"description":"Choose where you want the title to show up, if at all."
 		},
 		"positionAppName":{
 			"label":"App Name Position",

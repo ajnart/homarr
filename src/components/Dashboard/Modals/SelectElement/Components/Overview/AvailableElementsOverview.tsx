@@ -93,7 +93,7 @@ export const AvailableElementTypes = ({
                   url: 'https://homarr.dev',
                   appearance: {
                     iconUrl: '/imgs/logo/logo.png',
-                    hideAppName: false,
+                    appNameStatus: 'normal',
                     positionAppName: 'column',
                   },
                   network: {

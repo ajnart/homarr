@@ -183,7 +183,7 @@ export interface serviceItem {
   openedUrl?: string;
   newTab?: boolean;
   ping?: boolean;
-  hideName?: boolean;
+  appNameStatus?: "normal"|"hover"|"hover";
   namePosition?: Property.FlexDirection;
   status?: string[];
 }

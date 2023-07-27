@@ -122,7 +122,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 url: containerUrl,
                 appearance: {
                   iconUrl: app.icon ? app.icon : '/imgs/logo/logo.png',
-                  hideAppName: false,
+                  appNameStatus: 'normal',
                   positionAppName: 'column',
                 },
                 network: {

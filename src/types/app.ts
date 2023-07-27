@@ -31,7 +31,7 @@ interface AppNetworkType {
 
 interface AppAppearanceType {
   iconUrl: string;
-  hideAppName: Boolean;
+  appNameStatus: "normal"|"hover"|"hidden";
   positionAppName: Property.FlexDirection;
 }
 

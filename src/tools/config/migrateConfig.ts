@@ -169,7 +169,7 @@ const migrateService = (oldService: serviceItem, areaType: AreaType): ConfigAppT
   },
   appearance: {
     iconUrl: migrateIcon(oldService.icon),
-    hideAppName: oldService.hideName ?? false,
+    appNameStatus: oldService.appNameStatus ?? 'normal',
     positionAppName: oldService.namePosition ?? 'column',
   },
   integration: migrateIntegration(oldService),

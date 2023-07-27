@@ -10,6 +10,7 @@ import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
 import { AppMenu } from './AppMenu';
 import { AppPing } from './AppPing';
+import { boolean } from 'zod';
 
 interface AppTileProps extends BaseTileProps {
   app: AppType;
@@ -22,6 +23,11 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 
   const { colorScheme } = useMantineTheme();
 
+  const tooltipContent = [
+    app.appearance.appNameStatus === "hover" ? app.name : '',
+    app.behaviour.tooltipDescription
+  ].filter( e => e ).join( ': ' );
+
   const {
     classes: { card: cardClass },
   } = useCardStyles(false);
@@ -29,12 +35,12 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   function Inner() {
     return (
       <Tooltip.Floating
-        label={app.behaviour.tooltipDescription}
+        label={tooltipContent}
         position="right-start"
         c={ colorScheme === 'light' ? "black" : "dark.0" }
         color={ colorScheme === 'light' ? "gray.2" : "dark.4" }
         multiline
-        disabled={!app.behaviour.tooltipDescription}
+        disabled={tooltipContent === ''}
         styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
       >
         <Flex
@@ -47,7 +53,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           className="dashboard-tile-app"
           direction={app.appearance.positionAppName ?? 'column'}
         >
-          <Box px={10} hidden={app.appearance.hideAppName? true : false }>
+          <Box px={10} hidden={app.appearance.appNameStatus !== "normal"}>
             <Text
               w="max-content"
               size="md"
@@ -63,10 +69,10 @@ export const AppTile = ({ className, app }: AppTileProps) => {
             h="100%"
             display="flex"
             sx={{
-              alignContent:"center",
-              justifyContent:"center",
-              flex:"1 1 auto",
-              flexWrap:"wrap",
+              alignContent: 'center',
+              justifyContent: 'center',
+              flex: '1 1 auto',
+              flexWrap: 'wrap',
             }}
           >
             <motion.img
