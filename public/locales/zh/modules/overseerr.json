@@ -6,7 +6,7 @@
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "请登录 {{title}}",
+        "askFor": "请求 {{title}}",
         "cancel": "取消",
         "request": "请求"
       },
@@ -18,11 +18,11 @@
       }
     },
     "seasonSelector": {
-      "caption": "勾选你想要下载的季数",
+      "caption": "勾选你想要下载的季节",
       "table": {
         "header": {
-          "season": "季数",
-          "numberOfEpisodes": "剧集数"
+          "season": "季节",
+          "numberOfEpisodes": "集数"
         }
       }
     }
