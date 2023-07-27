@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Åbn i nyt faneblad",
 			"description": "Åbn appen i en ny fane i stedet for den aktuelle fane."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
