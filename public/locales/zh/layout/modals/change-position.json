@@ -3,6 +3,6 @@
 	"width": "宽度",
 	"height": "高度",
 	"yPosition": "Y轴位置",
-	"zeroOrHigher": "0或更高",
-	"betweenXandY": "在 {{min}} 和 {{max}}之间"
+	"zeroOrHigher": "0 或更高",
+	"betweenXandY": "在 {{min}} 和 {{max}} 之间"
 }
