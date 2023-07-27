@@ -1,4 +1,4 @@
-import { Tabs, TextInput } from '@mantine/core';
+import { Tabs, Text, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
@@ -22,6 +22,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         placeholder="My example app"
         variant="default"
         withAsterisk
+        mb="md"
         {...form.getInputProps('name')}
       />
       <TextInput
@@ -31,10 +32,8 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         placeholder="https://google.com"
         variant="default"
         withAsterisk
+        mb="md"
         {...form.getInputProps('url')}
-        onChange={(e) => {
-          form.setFieldValue('url', e.target.value);
-        }}
       />
       <TextInput
         icon={<IconClick size={16} />}
@@ -44,6 +43,13 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         variant="default"
         {...form.getInputProps('behaviour.externalUrl')}
       />
+
+      {!form.values.behaviour.externalUrl.startsWith('https://') &&
+        !form.values.behaviour.externalUrl.startsWith('http://') && (
+          <Text color="red" mt="sm" size="sm">
+            {t('behaviour.customProtocolWarning')}
+          </Text>
+        )}
     </Tabs.Panel>
   );
 };
