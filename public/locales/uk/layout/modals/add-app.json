@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Відкрити в новій вкладці",
 			"description": "Відкрийте додаток у новій вкладці замість поточної."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
