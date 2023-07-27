@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Atvērt jaunā cilnē",
 			"description": "Atveriet lietotni jaunā cilnē, nevis pašreizējā cilnē."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
