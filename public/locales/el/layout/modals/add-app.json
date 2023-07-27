@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Άνοιγμα σε νέα καρτέλα",
 			"description": "Ανοίξτε την εφαρμογή σε νέα καρτέλα αντί της τρέχουσας."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
