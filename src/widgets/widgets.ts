@@ -42,7 +42,8 @@ export type IWidgetOptionValue = (
   | IDraggableListInputValue
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
-  | ILocationOptionValue) & CommonOptions;
+  | ILocationOptionValue
+) & CommonOptions;
 
 // Interface for data type
 interface DataType {
