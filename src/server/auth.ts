@@ -6,6 +6,7 @@ import { type DefaultSession, type NextAuthOptions, getServerSession } from 'nex
 import { decode, encode } from 'next-auth/jwt';
 import Credentials from 'next-auth/providers/credentials';
 import { prisma } from '~/server/db';
+import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
 import { signInSchema } from '~/validations/user';
 
@@ -63,9 +64,6 @@ export const constructAuthOptions = (
           where: {
             id: user.id,
           },
-          include: {
-            roles: true,
-          },
         });
 
         session.user.isAdmin = userFromDatabase.isAdmin;
@@ -102,6 +100,10 @@ export const constructAuthOptions = (
     strategy: 'database',
     maxAge: sessionMaxAgeInSeconds,
   },
+  pages: {
+    signIn: '/login',
+    error: '/login',
+  },
   adapter: PrismaAdapter(prisma),
   providers: [
     Credentials({
@@ -117,9 +119,6 @@ export const constructAuthOptions = (
         const data = await signInSchema.parseAsync(credentials);
 
         const user = await prisma.user.findFirst({
-          include: {
-            roles: true,
-          },
           where: {
             name: data.name,
           },
@@ -146,6 +145,7 @@ export const constructAuthOptions = (
         };
       },
     }),
+    EmptyNextAuthProvider(),
   ],
   jwt: {
     async encode(params) {
