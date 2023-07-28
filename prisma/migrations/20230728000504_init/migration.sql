@@ -1,4 +1,20 @@
 -- CreateTable
+CREATE TABLE "config" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "schemaVersion" INTEGER NOT NULL,
+    "configPropertyId" TEXT NOT NULL,
+    "settingsId" TEXT NOT NULL,
+    CONSTRAINT "config_configPropertyId_fkey" FOREIGN KEY ("configPropertyId") REFERENCES "configProperty" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "config_settingsId_fkey" FOREIGN KEY ("settingsId") REFERENCES "settings" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "configProperty" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL
+);
+
+-- CreateTable
 CREATE TABLE "app" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
@@ -9,12 +25,14 @@ CREATE TABLE "app" (
     "appIntegrationId" TEXT NOT NULL,
     "areaTypeId" TEXT NOT NULL,
     "sizedShapeId" TEXT NOT NULL,
+    "configId" TEXT,
     CONSTRAINT "app_appBehaviourId_fkey" FOREIGN KEY ("appBehaviourId") REFERENCES "appBehaviour" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "app_appNetworkId_fkey" FOREIGN KEY ("appNetworkId") REFERENCES "appNetwork" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "app_appAppearanceId_fkey" FOREIGN KEY ("appAppearanceId") REFERENCES "appAppearance" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "app_appIntegrationId_fkey" FOREIGN KEY ("appIntegrationId") REFERENCES "appIntegration" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "app_areaTypeId_fkey" FOREIGN KEY ("areaTypeId") REFERENCES "areaType" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "app_sizedShapeId_fkey" FOREIGN KEY ("sizedShapeId") REFERENCES "sizedShape" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "app_sizedShapeId_fkey" FOREIGN KEY ("sizedShapeId") REFERENCES "sizedShape" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "app_configId_fkey" FOREIGN KEY ("configId") REFERENCES "config" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 -- CreateTable
@@ -132,6 +150,82 @@ CREATE TABLE "areaProperties" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "location" TEXT
 );
+
+-- CreateTable
+CREATE TABLE "categories" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "position" INTEGER NOT NULL,
+    "type" TEXT NOT NULL,
+    "configId" TEXT,
+    CONSTRAINT "categories_configId_fkey" FOREIGN KEY ("configId") REFERENCES "config" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "wrappers" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "position" INTEGER NOT NULL,
+    "configId" TEXT,
+    CONSTRAINT "wrappers_configId_fkey" FOREIGN KEY ("configId") REFERENCES "config" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "settings" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "settingSearchEnginesId" TEXT NOT NULL,
+    "settingCustomizationId" TEXT NOT NULL,
+    CONSTRAINT "settings_settingSearchEnginesId_fkey" FOREIGN KEY ("settingSearchEnginesId") REFERENCES "settingSearchEngines" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "settings_settingCustomizationId_fkey" FOREIGN KEY ("settingCustomizationId") REFERENCES "settingCustomization" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "settingSearchEngines" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "type" TEXT NOT NULL,
+    "searchEnginePropertiesId" TEXT NOT NULL,
+    CONSTRAINT "settingSearchEngines_searchEnginePropertiesId_fkey" FOREIGN KEY ("searchEnginePropertiesId") REFERENCES "searchEngineProperties" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "searchEngineProperties" (
+    "id" TEXT NOT NULL PRIMARY KEY
+);
+
+-- CreateTable
+CREATE TABLE "settingCustomization" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "customizationLayoutId" TEXT NOT NULL,
+    "pageTitle" TEXT NOT NULL,
+    "logoImageUrl" TEXT NOT NULL,
+    "faviconUrl" TEXT NOT NULL,
+    "backgroundImageUrl" TEXT NOT NULL,
+    "customCss" TEXT NOT NULL,
+    "customizationColorsId" TEXT NOT NULL,
+    "appOpacity" INTEGER NOT NULL,
+    CONSTRAINT "settingCustomization_customizationLayoutId_fkey" FOREIGN KEY ("customizationLayoutId") REFERENCES "customizationLayout" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "settingCustomization_customizationColorsId_fkey" FOREIGN KEY ("customizationColorsId") REFERENCES "customizationColors" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "customizationLayout" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "enabledLeftSidebar" BOOLEAN NOT NULL,
+    "enabledRightSidebar" BOOLEAN NOT NULL,
+    "enabledDocker" BOOLEAN NOT NULL,
+    "enabledPing" BOOLEAN NOT NULL,
+    "enabledSearchbar" BOOLEAN NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "customizationColors" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "primary" TEXT NOT NULL,
+    "secondary" TEXT NOT NULL,
+    "shade" INTEGER NOT NULL
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "configProperty_name_key" ON "configProperty"("name");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "app_name_key" ON "app"("name");
