@@ -10,6 +10,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// config
+
+//TODO: add widgets 
+model config {
+  id               String         @id @default(uuid())
+  schemaVersion    Int
+  configProperties configProperty @relation(fields: [configPropertyId], references: [id])
+  configPropertyId String
+  categories       categories[]
+  wrappers         wrappers[]
+  apps             app[]
+  settings         settings       @relation(fields: [settingsId], references: [id])
+  settingsId       String
+}
+
+model configProperty {
+  id     String   @id @default(uuid())
+  name   String   @unique
+  config config[]
+}
+
+// app model
 model app {
   id               String         @id @default(uuid())
   name             String         @unique
@@ -26,6 +48,8 @@ model app {
   areaTypeId       String
   shape            sizedShape     @relation(fields: [sizedShapeId], references: [id])
   sizedShapeId     String
+  config           config?        @relation(fields: [configId], references: [id])
+  configId         String?
 }
 
 model appBehaviour {
@@ -146,4 +170,80 @@ model areaProperties {
   id       String     @id @default(uuid())
   location String?
   areaType areaType[]
+}
+
+//categories
+model categories {
+  id       String  @id @default(uuid())
+  name     String
+  position Int
+  type     String
+  config   config? @relation(fields: [configId], references: [id])
+  configId String?
+}
+
+//wrappers
+model wrappers {
+  id       String  @id @default(uuid())
+  position Int
+  config   config? @relation(fields: [configId], references: [id])
+  configId String?
+}
+
+//widgets
+
+//settings
+model settings {
+  id                     String               @id @default(uuid())
+  common                 settingSearchEngines @relation(fields: [settingSearchEnginesId], references: [id])
+  settingSearchEnginesId String
+  customization          settingCustomization @relation(fields: [settingCustomizationId], references: [id])
+  settingCustomizationId String
+  config                 config[]
+}
+
+model settingSearchEngines {
+  id                       String                 @id @default(uuid())
+  type                     String
+  properties               searchEngineProperties @relation(fields: [searchEnginePropertiesId], references: [id])
+  searchEnginePropertiesId String
+  settings                 settings[]
+}
+
+model searchEngineProperties {
+  id                   String                 @id @default(uuid())
+  settingSearchEngines settingSearchEngines[]
+}
+
+model settingCustomization {
+  id                    String              @id @default(uuid())
+  settings              settings[]
+  layout                customizationLayout @relation(fields: [customizationLayoutId], references: [id])
+  customizationLayoutId String
+  pageTitle             String
+  logoImageUrl          String
+  faviconUrl            String
+  backgroundImageUrl    String
+  customCss             String
+  colors                customizationColors @relation(fields: [customizationColorsId], references: [id])
+  customizationColorsId String
+  appOpacity            Int
+}
+
+model customizationLayout {
+  id                   String                 @id @default(uuid())
+  enabledLeftSidebar   Boolean
+  enabledRightSidebar  Boolean
+  enabledDocker        Boolean
+  enabledPing          Boolean
+  enabledSearchbar     Boolean
+  settingCustomization settingCustomization[]
+}
+
+model customizationColors {
+  id                   String                 @id @default(uuid())
+  primary              String
+  secondary            String
+  shade                Int
+  settingCustomization settingCustomization[]
 }

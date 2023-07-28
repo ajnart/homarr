@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit",
     "export": "next build && next export",
     "prisma:migate-dev": "prisma migrate dev --name init",
+    "prisma:studio": "prisma studio --port 3001 --browser none",
     "lint": "next lint",
     "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
