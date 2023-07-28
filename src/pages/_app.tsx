@@ -36,6 +36,7 @@ import {
   getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
+import { ConfigType } from '~/types/config';
 
 function App(
   this: any,
@@ -44,13 +45,15 @@ function App(
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
     defaultColorScheme: ColorScheme;
+    config?: ConfigType;
+    configName?: string;
   }>
 ) {
   const { Component, pageProps } = props;
 
-  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
-  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
-  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(6);
+  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.primary || 'red');
+  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.secondary || 'orange');
+  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(props.pageProps.config?.settings.customization.colors.shade || 6);
   const colorTheme = {
     primaryColor,
     secondaryColor,
@@ -124,7 +127,7 @@ function App(
               withGlobalStyles
               withNormalizeCSS
             >
-              <ConfigProvider>
+              <ConfigProvider {...props.pageProps}>
                 <Notifications limit={4} position="bottom-left" />
                 <ModalsProvider
                   modals={{
