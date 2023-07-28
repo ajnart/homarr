@@ -89,7 +89,7 @@
     "@testing-library/react": "^14.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/dockerode": "^3.3.9",
-    "@types/node": "18.16.19",
+    "@types/node": "^20.4.5",
     "@types/prismjs": "^1.26.0",
     "@types/react": "^18.2.11",
     "@types/uuid": "^9.0.0",
@@ -111,9 +111,9 @@
     "prettier": "^3.0.0",
     "prisma": "^5.0.0",
     "sass": "^1.56.1",
-    "ts-node": "latest",
+    "ts-node": "^10.9.1",
     "turbo": "latest",
-    "typescript": "^5.1.0",
+    "typescript": "^5.1.6",
     "video.js": "^8.0.3",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.33.0",
@@ -194,6 +194,9 @@
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json"
+    },
+    "prisma": {
+      "seed": "node --loader ts-node/esm prisma/seed.ts"
     },
     "rules": {
       "import/no-cycle": "off",
