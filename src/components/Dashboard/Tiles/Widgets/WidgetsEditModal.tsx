@@ -137,10 +137,10 @@ const WidgetOptionTypeSwitch: FC<{
 }> = ({ option, widgetId, propName: key, value, handleChange }) => {
   const { t } = useTranslation([`modules/${widgetId}`, 'common']);
   const { colorScheme } = useMantineTheme();
+  const info = option.info ?? false;
 
   switch (option.type) {
     case 'switch':
-      var info = option.info !== undefined ? option.info : false;
       return (
         <Group align="center" spacing="sm">
           <Switch
@@ -149,37 +149,36 @@ const WidgetOptionTypeSwitch: FC<{
             onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
             {...option.inputProps}
           />
-          {info?
+          {info &&
             <Tooltip.Floating
               label={t(`descriptor.settings.${key}.info`)}
               position="right-start"
               c={ colorScheme === 'light' ? "black" : "dark.0" }
               color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-              styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+              styles={{ tooltip: { maxWidth: 300, }, }}
               multiline
             >
               <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-            </Tooltip.Floating> : undefined
+            </Tooltip.Floating>
           }
         </Group>
       );
     case 'text':
-      var info = option.info !== undefined ? option.info : false;
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <TextInput
@@ -190,22 +189,21 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'multi-select':
-      var info = option.info !== undefined ? option.info : false;
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <MultiSelect
@@ -218,22 +216,21 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'select':
-      var info = option.info !== undefined ? option.info : false;
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <Select
@@ -246,22 +243,21 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'number':
-      var info = option.info !== undefined ? option.info : false;
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <NumberInput
@@ -272,22 +268,21 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'slider':
-      var info = option.info !== undefined ? option.info : false;
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <Slider
@@ -312,7 +307,6 @@ const WidgetOptionTypeSwitch: FC<{
       );
 
     case 'draggable-list':
-      var info = option.info !== undefined ? option.info : false;
       /* eslint-disable no-case-declarations */
       const typedVal = value as IDraggableListInputValue['defaultValue'];
 
@@ -339,17 +333,17 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <StaticDraggableList
@@ -375,22 +369,21 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'multiple-text':
-      var info = option.info !== undefined ? option.info : false;
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <MultiSelect
@@ -411,23 +404,22 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'draggable-editable-list':
-      var info = option.info !== undefined ? option.info : false;
       const { t: translateDraggableList } = useTranslation('widgets/draggable-list');
       return (
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info?
+            {info &&
               <Tooltip.Floating
                 label={t(`descriptor.settings.${key}.info`)}
                 position="right-start"
                 c={ colorScheme === 'light' ? "black" : "dark.0" }
                 color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { '&': { maxWidth: 300, }, }, }}
+                styles={{ tooltip: { maxWidth: 300, }, }}
                 multiline
               >
                 <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating> : undefined
+              </Tooltip.Floating>
             }
           </Group>
           <DraggableList

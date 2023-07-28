@@ -11,6 +11,7 @@ import React from 'react';
 
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
+import { boolean } from 'zod';
 
 // Type of widgets which are saved to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {
@@ -31,7 +32,7 @@ export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> 
 type MakeLessSpecific<T> = T extends boolean ? boolean : T;
 
 // Types of options that can be specified for the widget edit modal
-export type IWidgetOptionValue =
+export type IWidgetOptionValue = (
   | IMultiSelectOptionValue
   | ISwitchOptionValue
   | ITextInputOptionValue
@@ -41,7 +42,7 @@ export type IWidgetOptionValue =
   | IDraggableListInputValue
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
-  | ILocationOptionValue;
+  | ILocationOptionValue) & CommonOptions;
 
 // Interface for data type
 interface DataType {
@@ -49,11 +50,14 @@ interface DataType {
   value: string;
 }
 
+interface CommonOptions {
+  info?: boolean;
+};
+
 // will show a multi-select with specified data
 export type IMultiSelectOptionValue = {
   type: 'multi-select';
   defaultValue: string[];
-  info?: boolean;
   data: DataType[];
   inputProps?: Partial<MultiSelectProps>;
 };
@@ -62,7 +66,6 @@ export type IMultiSelectOptionValue = {
 export type ISelectOptionValue = {
   type: 'select';
   defaultValue: string;
-  info?: boolean;
   data: DataType[];
   inputProps?: Partial<SelectProps>;
 };
@@ -71,7 +74,6 @@ export type ISelectOptionValue = {
 export type ISwitchOptionValue = {
   type: 'switch';
   defaultValue: boolean;
-  info?: boolean;
   inputProps?: Partial<SwitchProps>;
 };
 
@@ -79,7 +81,6 @@ export type ISwitchOptionValue = {
 export type ITextInputOptionValue = {
   type: 'text';
   defaultValue: string;
-  info?: boolean;
   inputProps?: Partial<TextInputProps>;
 };
 
@@ -87,7 +88,6 @@ export type ITextInputOptionValue = {
 export type INumberInputOptionValue = {
   type: 'number';
   defaultValue: number;
-  info?: boolean;
   inputProps?: Partial<NumberInputProps>;
 };
 
@@ -95,13 +95,13 @@ export type INumberInputOptionValue = {
 export type ISliderInputOptionValue = {
   type: 'slider';
   defaultValue: number;
-  info?: boolean;
   min: number;
   max: number;
   step: number;
   inputProps?: Partial<SliderProps>;
 };
 
+// will show a custom location selector
 type ILocationOptionValue = {
   type: 'location';
   defaultValue: { latitude: number; longitude: number };
@@ -114,7 +114,6 @@ export type IDraggableListInputValue = {
     key: string;
     subValues?: Record<string, any>;
   }[];
-  info?: boolean;
   items: Record<
     string,
     Record<string, Omit<Exclude<IWidgetOptionValue, IDraggableListInputValue>, 'defaultValue'>>
@@ -124,7 +123,6 @@ export type IDraggableListInputValue = {
 export type IDraggableEditableListInputValue<TData extends { id: string }> = {
   type: 'draggable-editable-list';
   defaultValue: TData[];
-  info?: boolean;
   create: () => TData;
   getLabel: (data: TData) => string | JSX.Element;
   itemComponent: (props: {
@@ -138,7 +136,6 @@ export type IDraggableEditableListInputValue<TData extends { id: string }> = {
 export type IMultipleTextInputOptionValue = {
   type: 'multiple-text';
   defaultValue: string[];
-  info?: boolean;
   inputProps?: Partial<TextInputProps>;
 };
 
