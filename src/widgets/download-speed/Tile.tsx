@@ -18,7 +18,7 @@ import { useEffect } from 'react';
 
 import { AppAvatar } from '../../components/AppAvatar';
 import { useConfigContext } from '../../config/provider';
-import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
+import { useGetDownloadClientsQueue } from './useGetNetworkSpeed';
 import { useColorTheme } from '../../tools/color';
 import { humanFileSize } from '../../tools/humanFileSize';
 import {

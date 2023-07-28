@@ -23,6 +23,9 @@ interface AppBehaviourType {
 
 interface AppNetworkType {
   enabledStatusChecker: boolean;
+  /**
+   * @deprecated replaced by statusCodes
+   */
   okStatus?: number[];
   statusCodes: string[];
 }

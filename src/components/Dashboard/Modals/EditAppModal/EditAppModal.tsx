@@ -71,7 +71,7 @@ export const EditAppModal = ({
       behaviour: {
         externalUrl: (url: string) => {
           if (url === undefined || url.length < 1) {
-            return null;
+            return 'External URI is required';
           }
 
           if (!url.match(appUrlWithAnyProtocolRegex)) {
