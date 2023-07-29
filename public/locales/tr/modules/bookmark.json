@@ -5,9 +5,9 @@
     "settings": {
       "title": "Yer İşareti ayarları",
       "name": {
-        "label": "",
+        "label": "Widget başlığı",
         "placeholder": {
-          "label": ""
+          "label": "Başlığı gizli tutmak için boş bırakın"
         }
       },
       "items": {
