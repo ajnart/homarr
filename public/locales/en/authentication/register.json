@@ -1,0 +1,20 @@
+{
+    "title": "Create Account",
+    "text": "Please define your credentials below",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Username"
+            },
+            "password": {
+                "label": "Password"
+            },
+            "passwordConfirmation": {
+                "label": "Confirm password"
+            }
+        },
+        "buttons": {
+            "submit": "Register"
+        }
+    }
+}

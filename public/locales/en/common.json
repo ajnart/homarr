@@ -35,5 +35,9 @@
     "small": "small",
     "medium": "medium",
     "large": "large"
+  },
+  "header": {
+    "logout": "Logout",
+    "sign-in": "Sign in"
   }
 }

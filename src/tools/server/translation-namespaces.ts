@@ -1,5 +1,6 @@
 export const dashboardNamespaces = [
   'common',
+  'zod',
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',
@@ -48,4 +49,6 @@ export const dashboardNamespaces = [
   'widgets/location',
 ];
 
-export const loginNamespaces = ['authentication/login'];
+export const loginNamespaces = ['authentication/login', 'zod'];
+
+export const registerNamespaces = ['authentication/register', 'zod'];

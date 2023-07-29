@@ -1,14 +1,21 @@
 import { Badge, Button, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconInfoCircle, IconMenu2, IconSettings } from '@tabler/icons-react';
+import {
+  IconInfoCircle,
+  IconLogin,
+  IconLogout,
+  IconMenu2,
+  IconSettings,
+} from '@tabler/icons-react';
+import { signOut, useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 
 import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
 import { useCardStyles } from '../useCardStyles';
 import { ColorSchemeSwitch } from './SettingsMenu/ColorSchemeSwitch';
-import { EditModeToggle } from './SettingsMenu/EditModeToggle';
 
 export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: string }) {
   const [drawerOpened, drawer] = useDisclosure(false);
@@ -16,6 +23,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { classes } = useCardStyles(true);
   const { editModeEnabled } = useEditModeInformationStore();
+  const { data: sessionData } = useSession();
 
   return (
     <>
@@ -27,7 +35,6 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
         </Menu.Target>
         <Menu.Dropdown>
           <ColorSchemeSwitch />
-          <EditModeToggle />
           <Menu.Divider />
           {!editModeEnabled && (
             <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
@@ -47,6 +54,19 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
           >
             {t('about')}
           </Menu.Item>
+          {sessionData?.user ? (
+            <Menu.Item icon={<IconLogout strokeWidth={1.2} size={18} />} onClick={() => signOut()}>
+              {t('header.logout')}
+            </Menu.Item>
+          ) : (
+            <Menu.Item
+              icon={<IconLogin strokeWidth={1.2} size={18} />}
+              component={Link}
+              href="/login"
+            >
+              {t('header.sign-in')}
+            </Menu.Item>
+          )}
         </Menu.Dropdown>
       </Menu>
       <SettingsDrawer

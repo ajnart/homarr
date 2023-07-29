@@ -61,3 +61,9 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model RegistrationToken {
+    id      String   @id @default(cuid())
+    token   String   @unique
+    expires DateTime
+}

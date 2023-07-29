@@ -9,12 +9,15 @@ import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
+import { Session } from 'next-auth';
+import { SessionProvider, getSession } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { env } from '~/env.js';
+import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 
 import nextI18nextConfig from '../../next-i18next.config.js';
@@ -36,7 +39,6 @@ import {
   getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
-import { ConfigType } from '~/types/config';
 
 function App(
   this: any,
@@ -47,13 +49,20 @@ function App(
     defaultColorScheme: ColorScheme;
     config?: ConfigType;
     configName?: string;
+    session: Session;
   }>
 ) {
   const { Component, pageProps } = props;
 
-  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.primary || 'red');
-  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.secondary || 'orange');
-  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(props.pageProps.config?.settings.customization.colors.shade || 6);
+  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
+    props.pageProps.config?.settings.customization.colors.primary || 'red'
+  );
+  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(
+    props.pageProps.config?.settings.customization.colors.secondary || 'orange'
+  );
+  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(
+    props.pageProps.config?.settings.customization.colors.shade || 6
+  );
   const colorTheme = {
     primaryColor,
     secondaryColor,
@@ -97,62 +106,64 @@ function App(
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
-      <PersistQueryClientProvider
-        client={queryClient}
-        persistOptions={{ persister: asyncStoragePersister }}
-      >
-        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-          <ColorTheme.Provider value={colorTheme}>
-            <MantineProvider
-              theme={{
-                ...theme,
-                components: {
-                  Checkbox: {
-                    styles: {
-                      input: { cursor: 'pointer' },
-                      label: { cursor: 'pointer' },
+      <SessionProvider session={pageProps.session}>
+        <PersistQueryClientProvider
+          client={queryClient}
+          persistOptions={{ persister: asyncStoragePersister }}
+        >
+          <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+            <ColorTheme.Provider value={colorTheme}>
+              <MantineProvider
+                theme={{
+                  ...theme,
+                  components: {
+                    Checkbox: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
+                      },
+                    },
+                    Switch: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
+                      },
                     },
                   },
-                  Switch: {
-                    styles: {
-                      input: { cursor: 'pointer' },
-                      label: { cursor: 'pointer' },
-                    },
-                  },
-                },
-                primaryColor,
-                primaryShade,
-                colorScheme,
-              }}
-              withGlobalStyles
-              withNormalizeCSS
-            >
-              <ConfigProvider {...props.pageProps}>
-                <Notifications limit={4} position="bottom-left" />
-                <ModalsProvider
-                  modals={{
-                    editApp: EditAppModal,
-                    selectElement: SelectElementModal,
-                    integrationOptions: WidgetsEditModal,
-                    integrationRemove: WidgetsRemoveModal,
-                    categoryEditModal: CategoryEditModal,
-                    changeAppPositionModal: ChangeAppPositionModal,
-                    changeIntegrationPositionModal: ChangeWidgetPositionModal,
-                  }}
-                >
-                  <Component {...pageProps} />
-                </ModalsProvider>
-              </ConfigProvider>
-            </MantineProvider>
-          </ColorTheme.Provider>
-        </ColorSchemeProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </PersistQueryClientProvider>
+                  primaryColor,
+                  primaryShade,
+                  colorScheme,
+                }}
+                withGlobalStyles
+                withNormalizeCSS
+              >
+                <ConfigProvider {...props.pageProps}>
+                  <Notifications limit={4} position="bottom-left" />
+                  <ModalsProvider
+                    modals={{
+                      editApp: EditAppModal,
+                      selectElement: SelectElementModal,
+                      integrationOptions: WidgetsEditModal,
+                      integrationRemove: WidgetsRemoveModal,
+                      categoryEditModal: CategoryEditModal,
+                      changeAppPositionModal: ChangeAppPositionModal,
+                      changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                    }}
+                  >
+                    <Component {...pageProps} />
+                  </ModalsProvider>
+                </ConfigProvider>
+              </MantineProvider>
+            </ColorTheme.Provider>
+          </ColorSchemeProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </PersistQueryClientProvider>
+      </SessionProvider>
     </>
   );
 }
 
-App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
+App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
   if (process.env.DISABLE_EDIT_MODE === 'true') {
     Consola.warn(
       'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
@@ -163,12 +174,15 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     Consola.debug(`Overriding the default color scheme with ${env.DEFAULT_COLOR_SCHEME}`);
   }
 
+  const session = await getSession(ctx);
+
   return {
     pageProps: {
       colorScheme: getCookie('color-scheme', ctx) || 'light',
       packageAttributes: getServiceSidePackageAttributes(),
       editModeEnabled: process.env.DISABLE_EDIT_MODE !== 'true',
       defaultColorScheme: env.DEFAULT_COLOR_SCHEME,
+      session,
     },
   };
 };

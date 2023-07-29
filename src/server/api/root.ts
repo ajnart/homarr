@@ -13,6 +13,7 @@ import { mediaServerRouter } from './routers/media-server';
 import { overseerrRouter } from './routers/overseerr';
 import { rssRouter } from './routers/rss';
 import { usenetRouter } from './routers/usenet/router';
+import { userRouter } from './routers/user';
 import { weatherRouter } from './routers/weather';
 
 /**
@@ -23,6 +24,7 @@ import { weatherRouter } from './routers/weather';
 export const rootRouter = createTRPCRouter({
   app: appRouter,
   rss: rssRouter,
+  user: userRouter,
   config: configRouter,
   docker: dockerRouter,
   icon: iconRouter,

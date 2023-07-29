@@ -24,7 +24,7 @@ import { signInSchema } from '~/validations/user';
 import { loginNamespaces } from '../tools/server/translation-namespaces';
 
 export default function LoginPage() {
-  const { t } = useTranslation('authentication/login');
+  const { t } = useTranslation(['authentication/login']);
   const queryParams = useRouter().query as { error?: 'CredentialsSignin' | (string & {}) };
 
   const form = useForm<z.infer<typeof signInSchema>>({
@@ -63,7 +63,6 @@ export default function LoginPage() {
             />
 
             <PasswordInput
-              id="password"
               variant="filled"
               label={t('form.fields.password.label')}
               withAsterisk

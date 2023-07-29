@@ -29,7 +29,7 @@ module.exports = {
       'no',
       'tr',
       'lv',
-      'hr'
+      'hr',
     ],
 
     localeDetection: true,
