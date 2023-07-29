@@ -29,8 +29,6 @@ const ManageUsersPage = () => {
     }
   );
 
-  const { mutateAsync: deleteUserMutateAsync } = api.user.deleteUser.useMutation();
-
   const [activePage, _] = useState(0);
 
   return (
@@ -39,7 +37,10 @@ const ManageUsersPage = () => {
         <title>Users • Homarr</title>
       </Head>
 
-      <Title mb="xl">Manage users</Title>
+      <Title mb="md">Manage users</Title>
+      <Text mb="xl">
+        Using users, you have granular control who can access, edit or delete resources on your Homarr instance.
+      </Text>
 
       <Group position="apart" mb="md">
         <SegmentedControl
@@ -74,8 +75,8 @@ const ManageUsersPage = () => {
               </tr>
             </thead>
             <tbody>
-              {data.pages[activePage].users.map((user) => (
-                <tr>
+              {data.pages[activePage].users.map((user, index) => (
+                <tr key={index}>
                   <td>
                     <Group position="apart">
                       <Group spacing="xs">
@@ -90,8 +91,8 @@ const ManageUsersPage = () => {
                               title: <Text weight="bold">Delete user ${user.name}</Text>,
                               innerProps: {
                                 userId: user.id,
-                                username: user.name ?? ''
-                              }
+                                username: user.name ?? '',
+                              },
                             });
                           }}
                           color="red"

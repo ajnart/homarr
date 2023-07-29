@@ -15,6 +15,7 @@ import { rssRouter } from './routers/rss';
 import { usenetRouter } from './routers/usenet/router';
 import { userRouter } from './routers/user';
 import { weatherRouter } from './routers/weather';
+import { inviteRouter } from './routers/registrationTokens';
 
 /**
  * This is the primary router for your server.
@@ -37,6 +38,7 @@ export const rootRouter = createTRPCRouter({
   usenet: usenetRouter,
   calendar: calendarRouter,
   weather: weatherRouter,
+  registrationTokens: inviteRouter
 });
 
 // export type definition of API
