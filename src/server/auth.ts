@@ -115,8 +115,8 @@ export const constructAuthOptions = (
     maxAge: sessionMaxAgeInSeconds,
   },
   pages: {
-    signIn: '/login',
-    error: '/login',
+    signIn: '/auth/login',
+    error: '/auth/login',
   },
   adapter: PrismaAdapter(prisma),
   providers: [

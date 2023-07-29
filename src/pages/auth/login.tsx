@@ -21,7 +21,7 @@ import { useRouter } from 'next/router';
 import { z } from 'zod';
 import { signInSchema } from '~/validations/user';
 
-import { loginNamespaces } from '../tools/server/translation-namespaces';
+import { loginNamespaces } from '../../tools/server/translation-namespaces';
 
 export default function LoginPage() {
   const { t } = useTranslation(['authentication/login']);

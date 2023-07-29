@@ -8,13 +8,12 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { z } from 'zod';
 import { prisma } from '~/server/db';
+import { registerNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signUpFormSchema } from '~/validations/user';
 
-import { registerNamespaces } from '../tools/server/translation-namespaces';
-
-export default function LoginPage() {
+export default function AuthInvitePage() {
   const { t } = useTranslation('authentication/register');
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();
@@ -111,10 +110,15 @@ export default function LoginPage() {
 const queryParamsSchema = z.object({
   token: z.string(),
 });
+const routeParamsSchema = z.object({
+  inviteId: z.string(),
+});
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, query }) => {
-  const result = queryParamsSchema.safeParse(query);
-  if (!result.success) {
+export const getServerSideProps: GetServerSideProps = async ({ locale, query, params }) => {
+  const queryParams = queryParamsSchema.safeParse(query);
+  const routeParams = routeParamsSchema.safeParse(params);
+  console.log(queryParams, routeParams);
+  if (!queryParams.success || !routeParams.success) {
     return {
       notFound: true,
     };
@@ -122,7 +126,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
 
   const token = await prisma.registrationToken.findUnique({
     where: {
-      token: result.data.token,
+      id: routeParams.data.inviteId,
+      token: queryParams.data.token,
     },
   });
 
