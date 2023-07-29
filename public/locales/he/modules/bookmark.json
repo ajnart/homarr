@@ -5,9 +5,9 @@
     "settings": {
       "title": "הגדרות סימניה",
       "name": {
-        "label": "",
+        "label": "כותרת ווידגט",
         "placeholder": {
-          "label": ""
+          "label": "השאר ריק כדי להשאיר את הכותרת מוסתרת"
         }
       },
       "items": {
