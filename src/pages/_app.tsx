@@ -16,22 +16,15 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { env } from '~/env.js';
-import { ColorScheme, ColorSchemeProvider } from '~/hooks/use-colorscheme';
+import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
+import { modals } from '~/modals/modals';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
-import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
-import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
-import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
-import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
-import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsEditModal';
-import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
-import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
-import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
 import '../styles/global.scss';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
@@ -123,17 +116,7 @@ function App(
                 >
                   <ConfigProvider {...props.pageProps}>
                     <Notifications limit={4} position="bottom-left" />
-                    <ModalsProvider
-                      modals={{
-                        editApp: EditAppModal,
-                        selectElement: SelectElementModal,
-                        integrationOptions: WidgetsEditModal,
-                        integrationRemove: WidgetsRemoveModal,
-                        categoryEditModal: CategoryEditModal,
-                        changeAppPositionModal: ChangeAppPositionModal,
-                        changeIntegrationPositionModal: ChangeWidgetPositionModal,
-                      }}
-                    >
+                    <ModalsProvider modals={modals}>
                       <Component {...pageProps} />
                     </ModalsProvider>
                   </ConfigProvider>

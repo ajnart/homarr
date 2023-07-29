@@ -11,6 +11,7 @@ import {
   Text,
   Title,
 } from '@mantine/core';
+import { openContextModal } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -28,9 +29,9 @@ const ManageUsersPage = () => {
     }
   );
 
-  const [activePage, _] = useState(0);
+  const { mutateAsync: deleteUserMutateAsync } = api.user.deleteUser.useMutation();
 
-  console.log(data?.pages);
+  const [activePage, _] = useState(0);
 
   return (
     <MainLayout>
@@ -82,7 +83,20 @@ const ManageUsersPage = () => {
                         <Text>{user.name}</Text>
                       </Group>
                       <Group>
-                        <ActionIcon color="red" variant="light">
+                        <ActionIcon
+                          onClick={() => {
+                            openContextModal({
+                              modal: 'deleteUserModal',
+                              title: <Text weight="bold">Delete user ${user.name}</Text>,
+                              innerProps: {
+                                userId: user.id,
+                                username: user.name ?? ''
+                              }
+                            });
+                          }}
+                          color="red"
+                          variant="light"
+                        >
                           <IconTrash size="1rem" />
                         </ActionIcon>
                       </Group>

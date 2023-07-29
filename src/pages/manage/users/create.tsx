@@ -48,7 +48,12 @@ const CreateNewUserPage = () => {
     ),
   });
 
-  const { mutateAsync, isSuccess } = api.user.createUser.useMutation();
+  const context = api.useContext();
+  const { mutateAsync, isSuccess } = api.user.createUser.useMutation({
+    onSettled: () => {
+      void context.user.getAll.invalidate();
+    }
+  });
 
   return (
     <MainLayout>
