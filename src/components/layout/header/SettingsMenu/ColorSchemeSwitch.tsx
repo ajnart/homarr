@@ -1,9 +1,10 @@
-import { Menu, useMantineColorScheme } from '@mantine/core';
+import { Menu } from '@mantine/core';
 import { IconMoonStars, IconSun } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { useColorScheme } from '~/hooks/use-colorscheme';
 
 export const ColorSchemeSwitch = () => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { colorScheme, toggleColorScheme } = useColorScheme();
   const { t } = useTranslation('settings/general/theme-selector');
 
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;

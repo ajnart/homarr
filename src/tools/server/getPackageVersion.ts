@@ -4,7 +4,7 @@ import packageJson from '../../../package.json';
 
 const getServerPackageVersion = (): string | undefined => packageJson.version;
 
-const getServerNodeEnvironment = () => env.NODE_ENV;
+const getServerNodeEnvironment = () => env.NEXT_PUBLIC_NODE_ENV;
 
 const getDependencies = (): PackageJsonDependencies => packageJson.dependencies;
 

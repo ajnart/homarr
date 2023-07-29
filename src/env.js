@@ -1,8 +1,8 @@
 const { z } = require('zod');
 const { createEnv } = require('@t3-oss/env-nextjs');
 
-const portSchema = z.string().regex(/\d+/).transform(Number).optional()
-const envSchema = z.enum(["development", "test", "production"]);
+const portSchema = z.string().regex(/\d+/).transform(Number).optional();
+const envSchema = z.enum(['development', 'test', 'production']);
 
 const env = createEnv({
   /**
@@ -11,22 +11,17 @@ const env = createEnv({
    */
   server: {
     DATABASE_URL: z.string().url(),
-    NODE_ENV: envSchema,
     NEXTAUTH_SECRET:
-      process.env.NODE_ENV === "production"
-        ? z.string().min(1)
-        : z.string().min(1).optional(),
+      process.env.NODE_ENV === 'production' ? z.string().min(1) : z.string().min(1).optional(),
     NEXTAUTH_URL: z.preprocess(
       // This makes Vercel deployments not fail if you don't set NEXTAUTH_URL
       // Since NextAuth.js automatically uses the VERCEL_URL if present.
       (str) => process.env.VERCEL_URL ?? str,
       // VERCEL_URL doesn't include `https` so it cant be validated as a URL
-      process.env.VERCEL ? z.string().min(1) : z.string().url(),
+      process.env.VERCEL ? z.string().min(1) : z.string().url()
     ),
-    DEFAULT_COLOR_SCHEME: z.enum(['light', 'dark']).optional().default('light'),
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: z.string().regex(/\d+/).transform(Number).optional(),
-    PORT: portSchema
   },
 
   /**
@@ -36,8 +31,9 @@ const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: z.enum(['light', 'dark']).optional().default('light'),
     NEXT_PUBLIC_PORT: portSchema,
-    NEXT_PUBLIC_NODE_ENV: envSchema
+    NEXT_PUBLIC_NODE_ENV: envSchema,
   },
 
   /**
@@ -46,21 +42,17 @@ const env = createEnv({
    */
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
-    NODE_ENV: process.env.NODE_ENV,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-    NEXT_PUBLIC_DISABLE_EDIT_MODE: process.env.DISABLE_EDIT_MODE,
-    DISABLE_EDIT_MODE: process.env.DISABLE_EDIT_MODE,
-    DEFAULT_COLOR_SCHEME: process.env.DEFAULT_COLOR_SCHEME,
     DOCKER_HOST: process.env.DOCKER_HOST,
     DOCKER_PORT: process.env.DOCKER_PORT,
     VERCEL_URL: process.env.VERCEL_URL,
-    PORT: process.env.PORT,
+    NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: process.env.DEFAULT_COLOR_SCHEME,
     NEXT_PUBLIC_PORT: process.env.PORT,
-    NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV
+    NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
   },
 });
 
 module.exports = {
-  env
-}
+  env,
+};
