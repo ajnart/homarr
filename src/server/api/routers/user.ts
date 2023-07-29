@@ -110,7 +110,7 @@ export const userRouter = createTRPCRouter({
         },
       });
     }),
-  getWithSettings: protectedProcedure.query(async ({ ctx }) => {
+  getWithSettings: protectedProcedure.query(async ({ ctx, input }) => {
     const user = await ctx.prisma.user.findUnique({
       where: {
         id: ctx.session?.user?.id,
@@ -133,4 +133,36 @@ export const userRouter = createTRPCRouter({
       settings: user.settings,
     };
   }),
+
+  getAll: publicProcedure
+    .input(
+      z.object({
+        limit: z.number().min(1).max(100).nullish(),
+        cursor: z.number().nullish(),
+      })
+    )
+    .query(async ({ ctx, input }) => {
+      const limit = input.limit ?? 50;
+      const cursor = input.cursor;
+      const users = await ctx.prisma.user.findMany({
+        take: limit + 1, // get an extra item at the end which we'll use as next cursor
+        cursor: cursor ? { myCursor: cursor } : undefined,
+      });
+
+      let nextCursor: typeof cursor | undefined = undefined;
+      if (users.length > limit) {
+        const nextItem = users.pop();
+        nextCursor = nextItem!.myCursor;
+      }
+
+      return {
+        users: users.map((user) => ({
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          emailVerified: user.emailVerified
+        })),
+        nextCursor,
+      };
+    }),
 });
