@@ -4,6 +4,12 @@
     "description": "Zeigt eine statische Liste von Zeichenfolgen oder Links an",
     "settings": {
       "title": "Lesezeichen-Einstellungen",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Elemente"
       },
