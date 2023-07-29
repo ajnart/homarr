@@ -10,6 +10,7 @@ import {
   createStyles,
 } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
@@ -17,13 +18,15 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 const ManagementPage = () => {
   const { classes } = useStyles();
   const largerThanMd = useScreenLargerThan('md');
+  const { data: sessionData } = useSession();
+
   return (
     <MainLayout>
       <Box className={classes.box} w="100%" mih={150} p="xl" mb={50}>
         <Group position="apart" noWrap>
           <Stack spacing={15}>
             <Title className={classes.boxTitle} order={2}>
-              Welcome back, Manicraft1001
+              Welcome back, {sessionData?.user?.name ?? 'Anonymous'}
             </Title>
             <Text>Welcome to Your Application Hub. Organize, Optimize, and Conquer!</Text>
           </Stack>
@@ -34,7 +37,12 @@ const ManagementPage = () => {
               top={largerThanMd ? undefined : -120}
               right={largerThanMd ? 0 : -40}
             >
-              <Image src="/imgs/logo/logo.png" width={largerThanMd ? 200 : 100} height={largerThanMd ? 150 : 60} alt="" />
+              <Image
+                src="/imgs/logo/logo.png"
+                width={largerThanMd ? 200 : 100}
+                height={largerThanMd ? 150 : 60}
+                alt=""
+              />
             </Box>
           </Box>
         </Group>
