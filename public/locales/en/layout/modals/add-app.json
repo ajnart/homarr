@@ -28,7 +28,8 @@
 		"tooltipDescription":{
 			"label": "Application Description",
 			"description": "The text you enter will appear when hovering over your app, very much like this box.\r\nUse this to give users more details about your app or leave empty to have nothing."
-		}
+		},
+		"customProtocolWarning": "Using a non-standard protocol. This may require pre-installed applications and can introduce security risks. Ensure that your address is secure and trusted."
 	},
 	"network": {
 		"statusChecker": {

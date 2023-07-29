@@ -21,7 +21,7 @@ import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
 
-import { useGetUsenetDownloads } from '../../hooks/widgets/dashDot/api';
+import { useGetUsenetDownloads } from '../dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 
 dayjs.extend(duration);

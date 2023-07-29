@@ -1,4 +1,4 @@
-import { Stack, Tabs, TextInput } from '@mantine/core';
+import { Stack, Tabs, Text, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
@@ -45,6 +45,13 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
           variant="default"
           {...form.getInputProps('behaviour.externalUrl')}
         />
+
+        {!form.values.behaviour.externalUrl.startsWith('https://') &&
+          !form.values.behaviour.externalUrl.startsWith('http://') && (
+            <Text color="red" mt="sm" size="sm">
+              {t('behaviour.customProtocolWarning')}
+            </Text>
+        )}
       </Stack>
     </Tabs.Panel>
   );

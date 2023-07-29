@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Button, Group } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import {
@@ -18,7 +17,6 @@ import { RouterInputs, api } from '~/utils/api';
 
 import { useConfigContext } from '../../config/provider';
 import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
-import { MatchingImages, ServiceType, tryMatchPort } from '../../tools/types';
 import { AppType } from '../../types/app';
 
 export interface ContainerActionBarProps {
@@ -28,10 +26,15 @@ export interface ContainerActionBarProps {
 
 export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
   const { t } = useTranslation('modules/docker');
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const { config } = useConfigContext();
-  const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
+
   const sendDockerCommand = useDockerActionMutation();
+  if (!config) {
+    return null;
+  }
+  const getLowestWrapper = () =>
+    config.wrappers.sort((wrapper1, wrapper2) => wrapper1.position - wrapper2.position)[0];
 
   if (process.env.DISABLE_EDIT_MODE === 'true') {
     return null;
@@ -42,10 +45,10 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       <Button
         leftIcon={<IconRefresh />}
         onClick={() => {
-          setisLoading(true);
+          setLoading(true);
           setTimeout(() => {
             reload();
-            setisLoading(false);
+            setLoading(false);
           }, 750);
         }}
         variant="light"
@@ -57,8 +60,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       </Button>
       <Button
         leftIcon={<IconRotateClockwise />}
-        onClick={() =>
-          Promise.all(selected.map((container) => sendDockerCommand(container, 'restart')))
+        onClick={async () =>
+          await Promise.all(selected.map((container) => sendDockerCommand(container, 'restart')))
         }
         variant="light"
         color="orange"
@@ -69,8 +72,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       </Button>
       <Button
         leftIcon={<IconPlayerStop />}
-        onClick={() =>
-          Promise.all(selected.map((container) => sendDockerCommand(container, 'stop')))
+        onClick={async () =>
+          await Promise.all(selected.map((container) => sendDockerCommand(container, 'stop')))
         }
         variant="light"
         color="red"
@@ -81,8 +84,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       </Button>
       <Button
         leftIcon={<IconPlayerPlay />}
-        onClick={() =>
-          Promise.all(selected.map((container) => sendDockerCommand(container, 'start')))
+        onClick={async () =>
+          await Promise.all(selected.map((container) => sendDockerCommand(container, 'start')))
         }
         variant="light"
         color="green"
@@ -96,8 +99,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         color="red"
         variant="light"
         radius="md"
-        onClick={() =>
-          Promise.all(selected.map((container) => sendDockerCommand(container, 'remove')))
+        onClick={async () =>
+          await Promise.all(selected.map((container) => sendDockerCommand(container, 'remove')))
         }
         disabled={selected.length === 0}
       >
@@ -108,31 +111,34 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
         color="indigo"
         variant="light"
         radius="md"
-        disabled={selected.length === 0 || selected.length > 1}
+        disabled={selected.length !== 1}
         onClick={() => {
-          const app = tryMatchService(selected.at(0)!);
-          const containerUrl = `http://localhost:${selected[0].Ports[0]?.PublicPort ?? 0}`;
+          const containerInfo = selected[0];
+
+          const port = containerInfo.Ports.at(0)?.PublicPort;
+          const address = port ? `http://localhost:${port}` : `http://localhost`;
+          const name = containerInfo.Names.at(0) ?? 'App';
+
           openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
             modal: 'editApp',
             zIndex: 202,
             innerProps: {
               app: {
                 id: uuidv4(),
-                name: app.name ? app.name : selected[0].Names[0].substring(1),
-                url: containerUrl,
+                name: name,
+                url: address,
                 appearance: {
-                  iconUrl: app.icon ? app.icon : '/imgs/logo/logo.png',
+                  iconUrl: '/imgs/logo/logo.png',
                   appNameStatus: 'normal',
                   positionAppName: 'column',
                 },
                 network: {
                   enabledStatusChecker: true,
-                  statusCodes: ['200'],
-                  okStatus: [200],
+                  statusCodes: ['200', '301', '302']
                 },
                 behaviour: {
                   isOpeningNewTab: true,
-                  externalUrl: '',
+                  externalUrl: address
                   tooltipDescription: '',
                 },
                 area: {
@@ -205,38 +211,5 @@ const useDockerActionMutation = () => {
         },
       }
     );
-  };
-};
-
-/**
- * @deprecated legacy code
- */
-function tryMatchType(imageName: string): ServiceType {
-  const match = MatchingImages.find(({ image }) => imageName.includes(image));
-  if (match) {
-    return match.type;
-  }
-  // TODO: Remove this legacy code
-  return 'Other';
-}
-
-/**
- * @deprecated
- * @param container the container to match
- * @returns a new service
- */
-const tryMatchService = (container: Dockerode.ContainerInfo | undefined) => {
-  if (container === undefined) return {};
-  const name = container.Names[0].substring(1);
-  const type = tryMatchType(container.Image);
-  const port = tryMatchPort(type.toLowerCase())?.value ?? container.Ports[0]?.PublicPort;
-  return {
-    name,
-    id: container.Id,
-    type: tryMatchType(container.Image),
-    url: `localhost${port ? `:${port}` : ''}`,
-    icon: `https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${name
-      .replace(/\s+/g, '-')
-      .toLowerCase()}.png`,
   };
 };
