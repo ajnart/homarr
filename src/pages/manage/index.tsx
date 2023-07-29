@@ -102,16 +102,17 @@ export default ManagementPage;
 const useStyles = createStyles((theme) => ({
   box: {
     borderRadius: theme.radius.md,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.red[4] : theme.colors.red[1],
+    backgroundColor:
+      theme.colorScheme === 'dark' ? theme.fn.rgba(theme.colors.red[8], 0.1) : theme.colors.red[1],
   },
   boxTitle: {
     color: theme.colors.red[6],
   },
   quickActionCard: {
-    height: "100%",
-    backgroundColor: theme.colors.gray[2],
+    height: '100%',
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2],
     '&:hover': {
-      backgroundColor: theme.colors.gray[3],
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
     },
   },
 }));
