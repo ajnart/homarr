@@ -28,9 +28,13 @@ export const AvatarMenu = () => {
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Item icon={<IconSun size="1rem" />}>Switch theme</Menu.Item>
-            <Menu.Item icon={<IconUserSearch size="1rem" />}>View Profile</Menu.Item>
-            <Menu.Item icon={<IconDashboard size="1rem" />}>Default Dashboard</Menu.Item>
-            <Menu.Divider />
+            {sessionData?.user && (
+              <>
+                <Menu.Item icon={<IconUserSearch size="1rem" />}>View Profile</Menu.Item>
+                <Menu.Item icon={<IconDashboard size="1rem" />}>Default Dashboard</Menu.Item>
+                <Menu.Divider />
+              </>
+            )}
             <Menu.Item
               icon={<IconInfoCircle size="1rem" />}
               rightSection={
