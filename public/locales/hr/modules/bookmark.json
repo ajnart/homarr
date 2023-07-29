@@ -4,6 +4,12 @@
     "description": "Prikazuje statičan popis nizova ili veza",
     "settings": {
       "title": "Postavke oznake",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Stavke"
       },
