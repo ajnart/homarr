@@ -4,6 +4,12 @@
     "description": "Viser en statisk liste over strenge eller links",
     "settings": {
       "title": "Bogmærke indstillinger",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Elementer"
       },
