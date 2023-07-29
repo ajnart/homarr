@@ -5,9 +5,9 @@
     "settings": {
       "title": "Opzioni preferiti",
       "name": {
-        "label": "",
+        "label": "Titolo del Widget",
         "placeholder": {
-          "label": ""
+          "label": "Lascia vuoto per tenere nascosto il titolo"
         }
       },
       "items": {
