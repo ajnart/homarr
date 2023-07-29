@@ -13,6 +13,7 @@ import {
 } from '@mantine/core';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { api } from '~/utils/api';
@@ -34,6 +35,7 @@ const ManageUsersPage = () => {
       <Head>
         <title>Users • Homarr</title>
       </Head>
+
       <Title mb="xl">Manage users</Title>
 
       <Group position="apart" mb="md">
@@ -49,7 +51,12 @@ const ManageUsersPage = () => {
             data={['React', 'Angular', 'Svelte', 'Vue']}
             variant="filled"
           />
-          <Button leftIcon={<IconPlus size="1rem" />} variant="default">
+          <Button
+            component={Link}
+            leftIcon={<IconPlus size="1rem" />}
+            href="/manage/users/create"
+            variant="default"
+          >
             Create
           </Button>
         </Flex>
