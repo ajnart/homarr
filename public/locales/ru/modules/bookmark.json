@@ -4,6 +4,12 @@
     "description": "Отображает статический список строк или ссылок",
     "settings": {
       "title": "Настройки закладок",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Элементы"
       },
