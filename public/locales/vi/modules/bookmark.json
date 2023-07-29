@@ -4,6 +4,12 @@
     "description": "Hiển thị một danh sách tĩnh các chuỗi hoặc liên kết",
     "settings": {
       "title": "Cài đặt dấu trang",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Mục"
       },
