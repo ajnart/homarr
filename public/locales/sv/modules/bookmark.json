@@ -4,6 +4,12 @@
     "description": "",
     "settings": {
       "title": "",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": ""
       },
