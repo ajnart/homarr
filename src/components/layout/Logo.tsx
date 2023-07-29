@@ -1,4 +1,5 @@
 import { Group, Image, Text } from '@mantine/core';
+import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
 import { useConfigContext } from '../../config/provider';
 import { usePrimaryGradient } from './useGradient';
@@ -11,6 +12,7 @@ interface LogoProps {
 export function Logo({ size = 'md', withoutText = false }: LogoProps) {
   const { config } = useConfigContext();
   const primaryGradient = usePrimaryGradient();
+  const largerThanMd = useScreenLargerThan('md');
 
   return (
     <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
@@ -20,7 +22,7 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
         alt="Homarr Logo"
         className="dashboard-header-logo-image"
       />
-      {withoutText ? null : (
+      {withoutText || !largerThanMd ? null : (
         <Text
           size={size === 'md' ? 22 : 10}
           weight="bold"

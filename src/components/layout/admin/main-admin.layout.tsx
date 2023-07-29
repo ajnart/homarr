@@ -57,7 +57,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         },
       }}
       navbar={
-        <Navbar width={{ base: 300 }}>
+        <Navbar width={{ base: 220 }}>
           <Navbar.Section pt="xs" grow>
             <NavLink
               icon={
@@ -131,7 +131,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           <Box bg="red" h={30} p={3} px={6}>
             <Flex h="100%" align="center" columnGap={7}>
               <IconAlertTriangle color="white" size="1rem" />
-              <Text color="white">
+              <Text color="white" lineClamp={1}>
                 This is an experimental feature of Homarr. Please report any issues to the official
                 Homarr team.
               </Text>
