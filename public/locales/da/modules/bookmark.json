@@ -5,9 +5,9 @@
     "settings": {
       "title": "Bogmærke indstillinger",
       "name": {
-        "label": "",
+        "label": "Widgettitel",
         "placeholder": {
-          "label": ""
+          "label": "Efterlad blank for at holde titlen skjult"
         }
       },
       "items": {
