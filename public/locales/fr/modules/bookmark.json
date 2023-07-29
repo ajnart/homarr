@@ -4,6 +4,12 @@
     "description": "Affiche une liste statique de chaînes de caractères ou de liens",
     "settings": {
       "title": "Paramètres des marque-pages",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Éléments"
       },
