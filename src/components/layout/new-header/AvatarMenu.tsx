@@ -5,6 +5,7 @@ import {
   IconInfoCircle,
   IconLogin,
   IconLogout,
+  IconMoonStars,
   IconSun,
   IconUserSearch,
 } from '@tabler/icons-react';
@@ -13,11 +14,15 @@ import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { forwardRef } from 'react';
 import { AboutModal } from '~/components/Dashboard/Modals/AboutModal/AboutModal';
+import { useColorScheme } from '~/hooks/use-colorscheme';
 
 export const AvatarMenu = () => {
   const newVersionAvailable = '0.13.0';
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { data: sessionData } = useSession();
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+
+  const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
 
   return (
     <>
@@ -27,7 +32,9 @@ export const AvatarMenu = () => {
             <CurrentUserAvatar user={sessionData?.user ?? null} />
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Item icon={<IconSun size="1rem" />}>Switch theme</Menu.Item>
+            <Menu.Item icon={<Icon size="1rem" />} onClick={toggleColorScheme}>
+              Switch theme
+            </Menu.Item>
             {sessionData?.user && (
               <>
                 <Menu.Item icon={<IconUserSearch size="1rem" />}>View Profile</Menu.Item>
