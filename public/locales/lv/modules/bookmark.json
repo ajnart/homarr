@@ -4,6 +4,12 @@
     "description": "Parāda statisku virkņu vai saišu sarakstu",
     "settings": {
       "title": "Grāmatzīmju uzstādījumi",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Vienumi"
       },
