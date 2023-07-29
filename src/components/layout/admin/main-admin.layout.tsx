@@ -1,6 +1,7 @@
 import {
   AppShell,
   Avatar,
+  Box,
   Flex,
   Footer,
   Group,
@@ -15,6 +16,7 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import {
+  IconAlertTriangle,
   IconBook2,
   IconBrandDiscord,
   IconBrandGithub,
@@ -94,17 +96,46 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
                 </ThemeIcon>
               }
             >
-              <NavLink icon={<IconBook2 size="1rem" />} label="Documentation" />
-              <NavLink icon={<IconBrandGithub size="1rem" />} label="Report an issue / bug" />
-              <NavLink icon={<IconBrandDiscord size="1rem" />} label="Ask a question" />
-              <NavLink icon={<IconGitFork size="1rem" />} label="Contribute" />
+              <NavLink
+                icon={<IconBook2 size="1rem" />}
+                component="a"
+                href="https://homarr.dev/docs/about"
+                label="Documentation"
+              />
+              <NavLink
+                icon={<IconBrandGithub size="1rem" />}
+                component="a"
+                href="https://github.com/ajnart/homarr/issues/new/choose"
+                label="Report an issue / bug"
+              />
+              <NavLink
+                icon={<IconBrandDiscord size="1rem" />}
+                component="a"
+                href="https://discord.com/invite/aCsmEV5RgA"
+                label="Community Discord"
+              />
+              <NavLink
+                icon={<IconGitFork size="1rem" />}
+                component="a"
+                href="https://github.com/ajnart/homarr"
+                label="Contribute"
+              />
             </NavLink>
           </Navbar.Section>
         </Navbar>
       }
       header={
-        <Header height={60} p="sm" pt="xs">
-          <Group spacing="xl" position="apart" noWrap>
+        <Header height={60 + 30} pb="sm" pt={0}>
+          <Box bg="red" h={30} p={3} px={6}>
+            <Flex h="100%" align="center" columnGap={7}>
+              <IconAlertTriangle color="white" size="1rem" />
+              <Text color="white">
+                This is an experimental feature of Homarr. Please report any issues to the official
+                Homarr team.
+              </Text>
+            </Flex>
+          </Box>
+          <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
             <UnstyledButton component={Link} href="/manage">
               <Logo />
             </UnstyledButton>
