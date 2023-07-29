@@ -1,8 +1,6 @@
 import {
-  Alert,
   AppShell,
   Avatar,
-  Box,
   Flex,
   Footer,
   Group,
@@ -17,8 +15,6 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import {
-  IconAdjustmentsAlt,
-  IconAlertTriangle,
   IconBook2,
   IconBrandDiscord,
   IconBrandGithub,
@@ -31,6 +27,7 @@ import {
   IconSun,
   IconUser,
   IconUserSearch,
+  IconUsers,
 } from '@tabler/icons-react';
 import { signOut } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -66,7 +63,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
               }
               label="Home"
               component={Link}
-              href="/admin/users"
+              href="/manage/"
             />
             <NavLink
               label="Users"
@@ -77,16 +74,16 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
               }
             >
               <NavLink
-                icon={<IconAdjustmentsAlt size="1rem" />}
+                icon={<IconUsers size="1rem" />}
                 label="Manage"
                 component={Link}
-                href="/admin/users"
+                href="/manage/users"
               />
               <NavLink
                 icon={<IconMailForward size="1rem" />}
                 label="Invites"
                 component={Link}
-                href="/admin/users/invites"
+                href="/manage/users/invites"
               />
             </NavLink>
             <NavLink
@@ -108,7 +105,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       header={
         <Header height={60} p="sm" pt="xs">
           <Group spacing="xl" position="apart" noWrap>
-            <UnstyledButton component={Link} href="/admin">
+            <UnstyledButton component={Link} href="/manage">
               <Logo />
             </UnstyledButton>
             <TextInput radius="xl" w={400} placeholder="Search..." variant="filled" />

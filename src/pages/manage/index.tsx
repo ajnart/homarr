@@ -1,7 +1,7 @@
 import { Title } from "@mantine/core";
 import { MainLayout } from "~/components/layout/admin/main-admin.layout";
 
-const SettingsPage = () => {
+const ManagementPage = () => {
     return (
         <MainLayout>
             <Title>Good morning, Manicraft1001</Title>
@@ -9,4 +9,4 @@ const SettingsPage = () => {
     )
 }
 
-export default SettingsPage;
+export default ManagementPage;
