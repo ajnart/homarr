@@ -138,7 +138,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 },
                 behaviour: {
                   isOpeningNewTab: true,
-                  externalUrl: address
+                  externalUrl: address,
                   tooltipDescription: '',
                 },
                 area: {
