@@ -4,6 +4,12 @@
     "description": "显示字符串或链接的静态列表",
     "settings": {
       "title": "书签设置",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "项目"
       },
