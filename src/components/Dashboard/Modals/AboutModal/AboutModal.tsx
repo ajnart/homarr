@@ -206,7 +206,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
 
   let items: InformationTableItem[] = [];
 
-  if (i18n !== null) {
+  if (i18n?.reportNamespaces) {
     const usedI18nNamespaces = i18n.reportNamespaces.getUsedNamespaces();
     const initOptions = i18n.options as ExtendedInitOptions;
 

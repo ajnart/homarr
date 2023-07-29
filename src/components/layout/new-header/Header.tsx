@@ -21,6 +21,7 @@ import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 
 import { Logo } from '../Logo';
+import { AvatarMenu } from './AvatarMenu';
 import { Search } from './search';
 
 type MainHeaderProps = {
@@ -41,22 +42,7 @@ export const MainHeader = ({ showExperimental = false, logoHref = '/' }: MainHea
         <Search />
 
         <Group noWrap>
-          <UnstyledButton>
-            <Menu>
-              <Menu.Target>
-                <Avatar />
-              </Menu.Target>
-              <Menu.Dropdown>
-                <Menu.Item icon={<IconSun size="1rem" />}>Switch theme</Menu.Item>
-                <Menu.Item icon={<IconUserSearch size="1rem" />}>View Profile</Menu.Item>
-                <Menu.Item icon={<IconDashboard size="1rem" />}>Default Dashboard</Menu.Item>
-                <Menu.Divider />
-                <Menu.Item icon={<IconLogout size="1rem" />} color="red" onClick={() => signOut()}>
-                  Logout
-                </Menu.Item>
-              </Menu.Dropdown>
-            </Menu>
-          </UnstyledButton>
+          <AvatarMenu />
         </Group>
       </Group>
     </Header>
