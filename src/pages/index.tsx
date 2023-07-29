@@ -1,6 +1,7 @@
 import { getCookie, setCookie } from 'cookies-next';
 import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
+import { MainLayout } from '~/components/layout/main';
 
 import { LoadConfigComponent } from '../components/Config/LoadConfig';
 import { Dashboard } from '../components/Dashboard/Dashboard';
@@ -62,9 +63,9 @@ export default function HomePage({ config: initialConfig }: DashboardServerSideP
   useInitConfig(initialConfig);
 
   return (
-    <Layout>
+    <MainLayout>
       <Dashboard />
       <LoadConfigComponent />
-    </Layout>
+    </MainLayout>
   );
 }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Consola from 'consola';
 import { z } from 'zod';
 import { MovieResult } from '~/modules/overseerr/Movie';
+import { Result } from '~/modules/overseerr/SearchResult';
 import { TvShowResult } from '~/modules/overseerr/TvShow';
 import { getConfig } from '~/tools/config/getConfig';
 
@@ -14,6 +15,7 @@ export const overseerrRouter = createTRPCRouter({
       z.object({
         configName: z.string(),
         query: z.string().or(z.undefined()),
+        limit: z.number().default(10),
       })
     )
     .query(async ({ input }) => {
@@ -42,8 +44,9 @@ export const overseerrRouter = createTRPCRouter({
             'X-Api-Key': apiKey,
           },
         })
-        .then((res) => res.data);
-      return data;
+        .then((res) => res.data as Result[]);
+
+      return data.slice(0, input.limit);
     }),
   byId: publicProcedure
     .input(
