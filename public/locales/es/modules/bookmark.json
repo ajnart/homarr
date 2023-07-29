@@ -4,6 +4,12 @@
     "description": "Muestra una lista estática de cadenas de texto o enlaces",
     "settings": {
       "title": "Ajustes de marcadores",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Elementos"
       },
