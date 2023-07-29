@@ -5,9 +5,9 @@
     "settings": {
       "title": "Grāmatzīmju uzstādījumi",
       "name": {
-        "label": "",
+        "label": "Logrīka Nosaukums",
         "placeholder": {
-          "label": ""
+          "label": "Atstāt tukšu, lai virsraksts paliktu slēpts"
         }
       },
       "items": {
