@@ -2,6 +2,8 @@ import { getCookie } from 'cookies-next';
 import { IncomingMessage, ServerResponse } from 'http';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import { COOKIE_LOCALE_KEY } from '../../../data/constants';
+
 export const getServerSideTranslations = async (
   namespaces: string[],
   requestLocale?: string,
@@ -12,7 +14,7 @@ export const getServerSideTranslations = async (
     return serverSideTranslations(requestLocale ?? 'en', namespaces);
   }
 
-  const configLocale = getCookie('config-locale', { req, res });
+  const configLocale = getCookie(COOKIE_LOCALE_KEY, { req, res });
 
   return serverSideTranslations((configLocale ?? requestLocale ?? 'en') as string, namespaces);
 };

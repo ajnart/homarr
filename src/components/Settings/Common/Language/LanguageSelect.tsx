@@ -1,20 +1,25 @@
 import { Group, Select, Stack, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { getCookie, setCookie } from 'cookies-next';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { forwardRef, useState } from 'react';
+import { api } from '~/utils/api';
 
+import { COOKIE_LOCALE_KEY } from '../../../../../data/constants';
 import { Language, getLanguageByCode } from '../../../../tools/language';
 
 export default function LanguageSelect() {
+  const { data: sessionData } = useSession();
   const { t, i18n } = useTranslation('settings/general/internationalization');
   const { changeLanguage } = i18n;
-  const configLocale = getCookie('config-locale');
+  const configLocale = getCookie(COOKIE_LOCALE_KEY);
   const { locale, locales, pathname, query, asPath, push } = useRouter();
   const [selectedLanguage, setSelectedLanguage] = useState<string>(
-    (configLocale as string) ?? locale ?? 'en'
+    sessionData?.user.language ?? (configLocale as string) ?? locale ?? 'en'
   );
+  const { mutateAsync } = api.user.changeLanguage.useMutation();
 
   const data = locales
     ? locales.map((localeItem) => ({
@@ -30,11 +35,17 @@ export default function LanguageSelect() {
 
     const newLanguage = getLanguageByCode(value);
     changeLanguage(value)
-      .then(() => {
-        setCookie('config-locale', value, {
+      .then(async () => {
+        setCookie(COOKIE_LOCALE_KEY, value, {
           maxAge: 60 * 60 * 24 * 30,
           sameSite: 'strict',
         });
+
+        if (sessionData?.user && new Date(sessionData.expires) > new Date()) {
+          await mutateAsync({
+            language: value,
+          });
+        }
 
         push(
           {

@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { hashPassword } from '~/utils/security';
 import { colorSchemeParser, signUpFormSchema } from '~/validations/user';
 
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
 import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const userRouter = createTRPCRouter({
@@ -52,8 +53,8 @@ export const userRouter = createTRPCRouter({
           salt: salt,
           settings: {
             create: {
-              colorScheme: colorSchemeParser.parse(ctx.cookies['color-scheme']),
-              language: ctx.cookies['config-locale'] ?? 'en',
+              colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
+              language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
             },
           },
         },
@@ -84,6 +85,26 @@ export const userRouter = createTRPCRouter({
           settings: {
             update: {
               colorScheme: input.colorScheme,
+            },
+          },
+        },
+      });
+    }),
+  changeLanguage: protectedProcedure
+    .input(
+      z.object({
+        language: z.string(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      await ctx.prisma.user.update({
+        where: {
+          id: ctx.session?.user?.id,
+        },
+        data: {
+          settings: {
+            update: {
+              language: input.language,
             },
           },
         },

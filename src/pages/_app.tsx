@@ -21,6 +21,7 @@ import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
 
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
@@ -162,6 +163,12 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
 
   const session = await getSession(ctx);
 
+  // Set the cookie language to the user language if it is not set correctly
+  const cookieLanguage = getCookie(COOKIE_LOCALE_KEY, ctx);
+  if (session?.user && session.user.language != cookieLanguage) {
+    setCookie(COOKIE_LOCALE_KEY, session.user.language, ctx);
+  }
+
   return {
     pageProps: {
       colorScheme: getActiveColorScheme(session, ctx),
@@ -175,13 +182,13 @@ export default appWithTranslation<any>(api.withTRPC(App), nextI18nextConfig as a
 
 const getActiveColorScheme = (session: Session | null, ctx: GetServerSidePropsContext) => {
   const environmentColorScheme = env.DEFAULT_COLOR_SCHEME ?? 'light';
-  const cookieValue = getCookie('color-scheme', ctx);
+  const cookieColorScheme = getCookie(COOKIE_COLOR_SCHEME_KEY, ctx);
   const activeColorScheme = colorSchemeParser.parse(
-    session?.user?.colorScheme ?? cookieValue ?? environmentColorScheme
+    session?.user?.colorScheme ?? cookieColorScheme ?? environmentColorScheme
   );
 
-  if (cookieValue !== activeColorScheme) {
-    setCookie('color-scheme', activeColorScheme, ctx);
+  if (cookieColorScheme !== activeColorScheme) {
+    setCookie(COOKIE_COLOR_SCHEME_KEY, activeColorScheme, ctx);
   }
 
   return activeColorScheme === 'environment' ? environmentColorScheme : activeColorScheme;
