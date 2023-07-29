@@ -12,26 +12,29 @@ import {
 import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
 const ManagementPage = () => {
   const { classes } = useStyles();
+  const largerThanMd = useScreenLargerThan('md');
   return (
     <MainLayout>
-      <Box className={classes.box} w="100%" h={150} p="xl" mb={50}>
-        <Group position="apart">
+      <Box className={classes.box} w="100%" mih={150} p="xl" mb={50}>
+        <Group position="apart" noWrap>
           <Stack spacing={15}>
             <Title className={classes.boxTitle} order={2}>
               Welcome back, Manicraft1001
             </Title>
-            <Text>
-              Are you ready to organize?
-              <br />
-              You currently have 3 dashboards with 39 apps on them.
-            </Text>
+            <Text>Welcome to Your Application Hub. Organize, Optimize, and Conquer!</Text>
           </Stack>
           <Box bg="blue" w={100} h="100%" pos="relative">
-            <Box pos="absolute" bottom={-100} right={0}>
-              <Image src="/imgs/logo/logo.png" width={200} height={150} alt="" />
+            <Box
+              pos="absolute"
+              bottom={largerThanMd ? -100 : undefined}
+              top={largerThanMd ? undefined : -120}
+              right={largerThanMd ? 0 : -40}
+            >
+              <Image src="/imgs/logo/logo.png" width={largerThanMd ? 200 : 100} height={largerThanMd ? 150 : 60} alt="" />
             </Box>
           </Box>
         </Group>
