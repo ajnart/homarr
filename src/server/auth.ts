@@ -8,7 +8,7 @@ import Credentials from 'next-auth/providers/credentials';
 import { prisma } from '~/server/db';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
-import { signInSchema } from '~/validations/user';
+import { colorSchemeParser, signInSchema } from '~/validations/user';
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -21,6 +21,8 @@ declare module 'next-auth' {
     user: DefaultSession['user'] & {
       id: string;
       isAdmin: boolean;
+      colorScheme: 'light' | 'dark' | 'environment';
+      language: string;
       // ...other properties
       // role: UserRole;
     };
@@ -28,6 +30,8 @@ declare module 'next-auth' {
 
   interface User {
     isAdmin: boolean;
+    colorScheme: 'light' | 'dark' | 'environment';
+    language: string;
     // ...other properties
     // role: UserRole;
   }
@@ -64,9 +68,19 @@ export const constructAuthOptions = (
           where: {
             id: user.id,
           },
+          include: {
+            settings: {
+              select: {
+                colorScheme: true,
+                language: true,
+              },
+            },
+          },
         });
 
         session.user.isAdmin = userFromDatabase.isAdmin;
+        session.user.colorScheme = colorSchemeParser.parse(userFromDatabase.settings?.colorScheme);
+        session.user.language = userFromDatabase.settings?.language ?? 'en';
       }
 
       return session;
@@ -122,6 +136,14 @@ export const constructAuthOptions = (
           where: {
             name: data.name,
           },
+          include: {
+            settings: {
+              select: {
+                colorScheme: true,
+                language: true,
+              },
+            },
+          },
         });
 
         if (!user || !user.password) {
@@ -142,6 +164,8 @@ export const constructAuthOptions = (
           id: user.id,
           name: user.name,
           isAdmin: false,
+          colorScheme: colorSchemeParser.parse(user.settings?.colorScheme),
+          language: user.settings?.language ?? 'en',
         };
       },
     }),

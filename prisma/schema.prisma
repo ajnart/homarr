@@ -42,16 +42,17 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String        @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?       @unique
     emailVerified DateTime?
     image         String?
     password      String?
     salt          String?
-    isAdmin       Boolean   @default(false)
+    isAdmin       Boolean       @default(false)
     accounts      Account[]
     sessions      Session[]
+    settings      UserSettings?
 }
 
 model VerificationToken {
@@ -66,4 +67,19 @@ model RegistrationToken {
     id      String   @id @default(cuid())
     token   String   @unique
     expires DateTime
+}
+
+model UserSettings {
+    id                   String  @id @default(cuid())
+    userId               String
+    colorScheme          String  @default("environment") // environment, light, dark
+    language             String  @default("en")
+    searchTemplate       String  @default("https://google.com/search?q=%s")
+    openSearchInNewTab   Boolean @default(true)
+    disablePingPulse     Boolean @default(false)
+    replacePingWithIcons Boolean @default(false)
+    useDebugLanguage     Boolean @default(false)
+    user                 User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([userId])
 }

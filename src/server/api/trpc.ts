@@ -25,6 +25,7 @@ import { prisma } from '../db';
 
 interface CreateContextOptions {
   session: Session | null;
+  cookies: Partial<Record<string, string>>;
 }
 
 /**
@@ -39,6 +40,7 @@ interface CreateContextOptions {
  */
 const createInnerTRPCContext = (opts: CreateContextOptions) => ({
   session: opts.session,
+  cookies: opts.cookies,
   prisma,
 });
 
@@ -56,6 +58,7 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
 
   return createInnerTRPCContext({
     session,
+    cookies: req.cookies,
   });
 };
 

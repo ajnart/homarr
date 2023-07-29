@@ -1,5 +1,4 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
-import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -7,7 +6,7 @@ import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persi
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Consola from 'consola';
-import { getCookie } from 'cookies-next';
+import { getCookie, setCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
 import { SessionProvider, getSession } from 'next-auth/react';
@@ -17,8 +16,10 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { env } from '~/env.js';
+import { useColorScheme } from '~/hooks/use-colorscheme';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
+import { colorSchemeParser } from '~/validations/user';
 
 import nextI18nextConfig from '../../next-i18next.config.js';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
@@ -46,7 +47,6 @@ function App(
     colorScheme: ColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
-    defaultColorScheme: ColorScheme;
     config?: ConfigType;
     configName?: string;
     session: Session;
@@ -72,34 +72,20 @@ function App(
     setPrimaryShade,
   };
 
-  // hook will return either 'dark' or 'light' on client
-  // and always 'light' during ssr as window.matchMedia is not available
-  const preferredColorScheme = useColorScheme(props.pageProps.defaultColorScheme);
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'mantine-color-scheme',
-    defaultValue: preferredColorScheme,
-    getInitialValueInEffect: true,
-  });
-
   const { setInitialPackageAttributes } = usePackageAttributesStore();
-  const { setDisabled } = useEditModeInformationStore();
 
   useEffect(() => {
     setInitialPackageAttributes(props.pageProps.packageAttributes);
-
-    if (!props.pageProps.editModeEnabled) {
-      setDisabled();
-    }
   }, []);
-
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
   const asyncStoragePersister = createAsyncStoragePersister({
     storage: AsyncStorage,
   });
 
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+  const { colorScheme, toggleColorScheme } = useColorScheme(
+    pageProps.colorScheme,
+    pageProps.session
+  );
 
   return (
     <>
@@ -178,13 +164,25 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
 
   return {
     pageProps: {
-      colorScheme: getCookie('color-scheme', ctx) || 'light',
+      colorScheme: getActiveColorScheme(session, ctx),
       packageAttributes: getServiceSidePackageAttributes(),
-      editModeEnabled: process.env.DISABLE_EDIT_MODE !== 'true',
-      defaultColorScheme: env.DEFAULT_COLOR_SCHEME,
       session,
     },
   };
 };
 
 export default appWithTranslation<any>(api.withTRPC(App), nextI18nextConfig as any);
+
+const getActiveColorScheme = (session: Session | null, ctx: GetServerSidePropsContext) => {
+  const environmentColorScheme = env.DEFAULT_COLOR_SCHEME ?? 'light';
+  const cookieValue = getCookie('color-scheme', ctx);
+  const activeColorScheme = colorSchemeParser.parse(
+    session?.user?.colorScheme ?? cookieValue ?? environmentColorScheme
+  );
+
+  if (cookieValue !== activeColorScheme) {
+    setCookie('color-scheme', activeColorScheme, ctx);
+  }
+
+  return activeColorScheme === 'environment' ? environmentColorScheme : activeColorScheme;
+};

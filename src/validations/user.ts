@@ -18,3 +18,8 @@ export const signUpFormSchema = z
     } satisfies CustomErrorParams,
     path: ['passwordConfirmation'],
   });
+
+export const colorSchemeParser = z
+  .enum(['light', 'dark', 'environment'])
+  .default('environment')
+  .catch('environment');
