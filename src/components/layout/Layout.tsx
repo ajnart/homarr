@@ -2,8 +2,8 @@ import { AppShell, createStyles } from '@mantine/core';
 
 import { useConfigContext } from '../../config/provider';
 import { Background } from './Background';
+import { Head } from './Meta/Head';
 import { Header } from './header/Header';
-import { Head } from './header/Meta/Head';
 
 const useStyles = createStyles(() => ({}));
 

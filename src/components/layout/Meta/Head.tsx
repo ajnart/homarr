@@ -2,7 +2,7 @@
 import NextHead from 'next/head';
 import React from 'react';
 
-import { useConfigContext } from '../../../../config/provider';
+import { useConfigContext } from '../../../config/provider';
 import { SafariStatusBarStyle } from './SafariStatusBarStyle';
 
 export function Head() {

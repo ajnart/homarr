@@ -9,25 +9,29 @@ import {
   IconSun,
   IconUserCog,
 } from '@tabler/icons-react';
+import { useQuery } from '@tanstack/react-query';
 import { User } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { forwardRef } from 'react';
 import { AboutModal } from '~/components/Dashboard/Modals/AboutModal/AboutModal';
 import { useColorScheme } from '~/hooks/use-colorscheme';
+import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
+
+import { REPO_URL } from '../../../../data/constants';
 
 export const AvatarMenu = () => {
-  const newVersionAvailable = '0.13.0';
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { data: sessionData } = useSession();
   const { colorScheme, toggleColorScheme } = useColorScheme();
+  const newVersionAvailable = useNewVersionAvailable();
 
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
 
   return (
     <>
       <UnstyledButton>
-        <Menu>
+        <Menu width={192}>
           <Menu.Target>
             <CurrentUserAvatar user={sessionData?.user ?? null} />
           </Menu.Target>
@@ -88,6 +92,7 @@ export const AvatarMenu = () => {
 type CurrentUserAvatarProps = {
   user: User | null;
 };
+
 const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
   ({ user, ...others }, ref) => {
     const { primaryColor } = useMantineTheme();
@@ -99,3 +104,15 @@ const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
     );
   }
 );
+
+const useNewVersionAvailable = () => {
+  const { attributes } = usePackageAttributesStore();
+  const { data } = useQuery({
+    queryKey: ['github/latest'],
+    cacheTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 5,
+    queryFn: () =>
+      fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => res.json()),
+  });
+  return data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
+};

@@ -74,7 +74,7 @@ model UserSettings {
     userId               String
     colorScheme          String  @default("environment") // environment, light, dark
     language             String  @default("en")
-    defaultDashboard     String  @default("default")
+    defaultBoard         String  @default("default")
     searchTemplate       String  @default("https://google.com/search?q=%s")
     openSearchInNewTab   Boolean @default(true)
     disablePingPulse     Boolean @default(false)
