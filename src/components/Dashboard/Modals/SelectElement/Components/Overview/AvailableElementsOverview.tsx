@@ -101,7 +101,7 @@ export const AvailableElementTypes = ({
                   },
                   behaviour: {
                     isOpeningNewTab: true,
-                    externalUrl: '',
+                    externalUrl: 'https://homarr.dev',
                   },
 
                   area: {

@@ -12,7 +12,7 @@ import {
   useGetUsenetInfo,
   usePauseUsenetQueueMutation,
   useResumeUsenetQueueMutation,
-} from '../../hooks/widgets/dashDot/api';
+} from '../dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
 import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';

@@ -155,7 +155,9 @@
       "^[./]"
     ],
     "importOrderSeparation": true,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
     "importOrderSortSpecifiers": true
   },
   "eslintConfig": {
