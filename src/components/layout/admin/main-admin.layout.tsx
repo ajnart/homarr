@@ -14,6 +14,7 @@ import {
   TextInput,
   ThemeIcon,
   UnstyledButton,
+  useMantineTheme,
 } from '@mantine/core';
 import {
   IconAlertTriangle,
@@ -47,11 +48,12 @@ interface MainLayoutProps {
 export const MainLayout = ({ children }: MainLayoutProps) => {
   const { t } = useTranslation();
   const { attributes } = usePackageAttributesStore();
+  const theme = useMantineTheme();
   return (
     <AppShell
       styles={{
         root: {
-          background: '#f1f1f1',
+          background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
         },
       }}
       navbar={
