@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
 
 import { REPO_URL } from '../../../../data/constants';
-import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import DockerMenuButton from '../../../modules/Docker/DockerModule';
 import { usePackageAttributesStore } from '../../../tools/client/zustands/usePackageAttributesStore';
 import { Logo } from '../Logo';
@@ -18,7 +17,7 @@ export function Header(props: any) {
   const { classes } = useStyles();
   const { classes: cardClasses, cx } = useCardStyles(false);
   const { attributes } = usePackageAttributesStore();
-  const { editModeEnabled } = useEditModeInformationStore();
+  const { data: sessionData } = useSession();
 
   const { data } = useQuery({
     queryKey: ['github/latest'],
@@ -43,8 +42,12 @@ export function Header(props: any) {
           noWrap
         >
           <Search />
-          {!editModeEnabled && <ToggleEditModeAction />}
-          <DockerMenuButton />
+          {sessionData?.user?.isAdmin && (
+            <>
+              <ToggleEditModeAction />
+              <DockerMenuButton />
+            </>
+          )}
           <Indicator
             size={15}
             color="blue"

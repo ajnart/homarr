@@ -11,7 +11,6 @@ import { signOut, useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
-import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import { AboutModal } from '../../Dashboard/Modals/AboutModal/AboutModal';
 import { SettingsDrawer } from '../../Settings/SettingsDrawer';
 import { useCardStyles } from '../useCardStyles';
@@ -22,7 +21,6 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
   const { t } = useTranslation('common');
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { classes } = useCardStyles(true);
-  const { editModeEnabled } = useEditModeInformationStore();
   const { data: sessionData } = useSession();
 
   return (
@@ -35,7 +33,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
         </Menu.Target>
         <Menu.Dropdown>
           <ColorSchemeSwitch />
-          {!editModeEnabled && (
+          {sessionData?.user?.isAdmin && (
             <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
               {t('sections.settings')}
             </Menu.Item>

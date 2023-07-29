@@ -12,7 +12,6 @@ import {
   Table,
   Text,
   Title,
-  Tooltip,
   createStyles,
 } from '@mantine/core';
 import {
@@ -35,7 +34,6 @@ import { ReactNode } from 'react';
 
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
-import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '../../../../tools/color';
 import Credits from '../../../Settings/Common/Credits';
@@ -201,38 +199,12 @@ interface ExtendedInitOptions extends InitOptions {
 
 const useInformationTableItems = (newVersionAvailable?: string): InformationTableItem[] => {
   const { attributes } = usePackageAttributesStore();
-  const { editModeEnabled } = useEditModeInformationStore();
   const { primaryColor } = useColorTheme();
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
 
   let items: InformationTableItem[] = [];
-
-  if (editModeEnabled) {
-    items = [
-      ...items,
-      {
-        icon: <IconKey size={20} />,
-        label: 'experimental_disableEditMode',
-        content: (
-          <Tooltip
-            color="red"
-            withinPortal
-            width={300}
-            multiline
-            withArrow
-            label="This is an experimental feature, where the edit mode is disabled entirely - no config
-            modifications are possbile anymore. All update requests for the config will be dropped
-            on the API. This will be removed in future versions, as Homarr will receive a proper
-            authentication system, which will make this obsolete."
-          >
-            <Badge color="red">WARNING</Badge>
-          </Tooltip>
-        ),
-      },
-    ];
-  }
 
   if (i18n !== null) {
     const usedI18nNamespaces = i18n.reportNamespaces.getUsedNamespaces();
