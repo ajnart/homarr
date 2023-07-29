@@ -138,7 +138,7 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         limit: z.number().min(1).max(100).nullish(),
-        cursor: z.number().nullish(),
+        cursor: z.string().nullish(),
       })
     )
     .query(async ({ ctx, input }) => {
@@ -146,13 +146,13 @@ export const userRouter = createTRPCRouter({
       const cursor = input.cursor;
       const users = await ctx.prisma.user.findMany({
         take: limit + 1, // get an extra item at the end which we'll use as next cursor
-        cursor: cursor ? { myCursor: cursor } : undefined,
+        cursor: cursor ? { id: cursor } : undefined,
       });
 
       let nextCursor: typeof cursor | undefined = undefined;
       if (users.length > limit) {
         const nextItem = users.pop();
-        nextCursor = nextItem!.myCursor;
+        nextCursor = nextItem!.id;
       }
 
       return {
@@ -160,9 +160,29 @@ export const userRouter = createTRPCRouter({
           id: user.id,
           name: user.name,
           email: user.email,
-          emailVerified: user.emailVerified
+          emailVerified: user.emailVerified,
         })),
         nextCursor,
       };
+    }),
+  createUser: publicProcedure
+    .input(
+      z.object({
+        username: z.string(),
+        email: z.string().email().optional(),
+        password: z.string().min(8).max(100),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      const salt = bcrypt.genSaltSync(10);
+      const hashedPassword = hashPassword(input.password, salt);
+      await ctx.prisma.user.create({
+        data: {
+          name: input.username,
+          email: input.email,
+          password: hashedPassword,
+          salt: salt,
+        },
+      });
     }),
 });

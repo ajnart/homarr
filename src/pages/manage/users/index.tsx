@@ -28,7 +28,9 @@ const ManageUsersPage = () => {
     }
   );
 
-  const [activePage, _] = useState(1);
+  const [activePage, _] = useState(0);
+
+  console.log(data?.pages);
 
   return (
     <MainLayout>
@@ -71,7 +73,7 @@ const ManageUsersPage = () => {
               </tr>
             </thead>
             <tbody>
-              {data.pages[0].users.map((user) => (
+              {data.pages[activePage].users.map((user) => (
                 <tr>
                   <td>
                     <Group position="apart">
@@ -92,7 +94,7 @@ const ManageUsersPage = () => {
           </Table>
           <Pagination
             total={data.pages.length}
-            value={activePage}
+            value={activePage + 1}
             onNextPage={fetchNextPage}
             onPreviousPage={fetchPreviousPage}
           />
