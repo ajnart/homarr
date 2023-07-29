@@ -1,4 +1,4 @@
-import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
+import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -16,7 +16,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { env } from '~/env.js';
-import { useColorScheme } from '~/hooks/use-colorscheme';
+import { ColorScheme, ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
@@ -45,7 +45,8 @@ import { theme } from '../tools/server/theme/theme';
 function App(
   this: any,
   props: AppProps<{
-    colorScheme: ColorScheme;
+    activeColorScheme: MantineColorScheme;
+    environmentColorScheme: MantineColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
     config?: ConfigType;
@@ -83,11 +84,6 @@ function App(
     storage: AsyncStorage,
   });
 
-  const { colorScheme, toggleColorScheme } = useColorScheme(
-    pageProps.colorScheme,
-    pageProps.session
-  );
-
   return (
     <>
       <Head>
@@ -98,50 +94,52 @@ function App(
           client={queryClient}
           persistOptions={{ persister: asyncStoragePersister }}
         >
-          <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-            <ColorTheme.Provider value={colorTheme}>
-              <MantineProvider
-                theme={{
-                  ...theme,
-                  components: {
-                    Checkbox: {
-                      styles: {
-                        input: { cursor: 'pointer' },
-                        label: { cursor: 'pointer' },
+          <ColorSchemeProvider {...pageProps}>
+            {(colorScheme) => (
+              <ColorTheme.Provider value={colorTheme}>
+                <MantineProvider
+                  theme={{
+                    ...theme,
+                    components: {
+                      Checkbox: {
+                        styles: {
+                          input: { cursor: 'pointer' },
+                          label: { cursor: 'pointer' },
+                        },
+                      },
+                      Switch: {
+                        styles: {
+                          input: { cursor: 'pointer' },
+                          label: { cursor: 'pointer' },
+                        },
                       },
                     },
-                    Switch: {
-                      styles: {
-                        input: { cursor: 'pointer' },
-                        label: { cursor: 'pointer' },
-                      },
-                    },
-                  },
-                  primaryColor,
-                  primaryShade,
-                  colorScheme,
-                }}
-                withGlobalStyles
-                withNormalizeCSS
-              >
-                <ConfigProvider {...props.pageProps}>
-                  <Notifications limit={4} position="bottom-left" />
-                  <ModalsProvider
-                    modals={{
-                      editApp: EditAppModal,
-                      selectElement: SelectElementModal,
-                      integrationOptions: WidgetsEditModal,
-                      integrationRemove: WidgetsRemoveModal,
-                      categoryEditModal: CategoryEditModal,
-                      changeAppPositionModal: ChangeAppPositionModal,
-                      changeIntegrationPositionModal: ChangeWidgetPositionModal,
-                    }}
-                  >
-                    <Component {...pageProps} />
-                  </ModalsProvider>
-                </ConfigProvider>
-              </MantineProvider>
-            </ColorTheme.Provider>
+                    primaryColor,
+                    primaryShade,
+                    colorScheme,
+                  }}
+                  withGlobalStyles
+                  withNormalizeCSS
+                >
+                  <ConfigProvider {...props.pageProps}>
+                    <Notifications limit={4} position="bottom-left" />
+                    <ModalsProvider
+                      modals={{
+                        editApp: EditAppModal,
+                        selectElement: SelectElementModal,
+                        integrationOptions: WidgetsEditModal,
+                        integrationRemove: WidgetsRemoveModal,
+                        categoryEditModal: CategoryEditModal,
+                        changeAppPositionModal: ChangeAppPositionModal,
+                        changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                      }}
+                    >
+                      <Component {...pageProps} />
+                    </ModalsProvider>
+                  </ConfigProvider>
+                </MantineProvider>
+              </ColorTheme.Provider>
+            )}
           </ColorSchemeProvider>
           <ReactQueryDevtools initialIsOpen={false} />
         </PersistQueryClientProvider>
@@ -151,14 +149,10 @@ function App(
 }
 
 App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
-  if (process.env.DISABLE_EDIT_MODE === 'true') {
-    Consola.warn(
-      'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
+  if (env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME !== 'light') {
+    Consola.debug(
+      `Overriding the default color scheme with ${env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME}`
     );
-  }
-
-  if (env.DEFAULT_COLOR_SCHEME !== 'light') {
-    Consola.debug(`Overriding the default color scheme with ${env.DEFAULT_COLOR_SCHEME}`);
   }
 
   const session = await getSession(ctx);
@@ -171,7 +165,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
 
   return {
     pageProps: {
-      colorScheme: getActiveColorScheme(session, ctx),
+      ...getActiveColorScheme(session, ctx),
       packageAttributes: getServiceSidePackageAttributes(),
       session,
     },
@@ -181,7 +175,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
 export default appWithTranslation<any>(api.withTRPC(App), nextI18nextConfig as any);
 
 const getActiveColorScheme = (session: Session | null, ctx: GetServerSidePropsContext) => {
-  const environmentColorScheme = env.DEFAULT_COLOR_SCHEME ?? 'light';
+  const environmentColorScheme = env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME ?? 'light';
   const cookieColorScheme = getCookie(COOKIE_COLOR_SCHEME_KEY, ctx);
   const activeColorScheme = colorSchemeParser.parse(
     session?.user?.colorScheme ?? cookieColorScheme ?? environmentColorScheme
@@ -191,5 +185,8 @@ const getActiveColorScheme = (session: Session | null, ctx: GetServerSidePropsCo
     setCookie(COOKIE_COLOR_SCHEME_KEY, activeColorScheme, ctx);
   }
 
-  return activeColorScheme === 'environment' ? environmentColorScheme : activeColorScheme;
+  return {
+    activeColorScheme: activeColorScheme,
+    environmentColorScheme,
+  };
 };

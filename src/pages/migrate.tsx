@@ -20,7 +20,6 @@ import {
   ThemeIcon,
   Title,
   createStyles,
-  useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
 import {
@@ -37,6 +36,7 @@ import fs from 'fs';
 import { GetServerSidePropsContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React, { useEffect, useState } from 'react';
+import { useColorScheme } from '~/hooks/use-colorscheme';
 
 import { Logo } from '../components/layout/Logo';
 import { usePrimaryGradient } from '../components/layout/useGradient';
@@ -229,7 +229,7 @@ export default function ServerError({ configs }: { configs: any }) {
 }
 
 function SwitchToggle() {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { colorScheme, toggleColorScheme } = useColorScheme();
   const theme = useMantineTheme();
 
   return (

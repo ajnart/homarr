@@ -110,4 +110,27 @@ export const userRouter = createTRPCRouter({
         },
       });
     }),
+  getWithSettings: protectedProcedure.query(async ({ ctx }) => {
+    const user = await ctx.prisma.user.findUnique({
+      where: {
+        id: ctx.session?.user?.id,
+      },
+      include: {
+        settings: true,
+      },
+    });
+
+    if (!user || !user.settings) {
+      throw new TRPCError({
+        code: 'NOT_FOUND',
+        message: 'User not found',
+      });
+    }
+
+    return {
+      id: user.id,
+      name: user.name,
+      settings: user.settings,
+    };
+  }),
 });
