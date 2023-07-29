@@ -2,7 +2,6 @@ import Consola from 'consola';
 import { v4 as uuidv4 } from 'uuid';
 
 import { BackendConfigType, ConfigType } from '../../types/config';
-import { backendMigrateConfig } from './backendMigrateConfig';
 import { configExists } from './configExists';
 import { getFallbackConfig } from './getFallbackConfig';
 import { readConfig } from './readConfig';
@@ -16,10 +15,6 @@ export const getConfig = (name: string): BackendConfigType => {
   // then it is an old config file and we should try to migrate it
   // to the new format.
   const config = readConfig(name);
-  if (config.schemaVersion === undefined) {
-    Consola.log('Migrating config file...', config.name);
-    return backendMigrateConfig(config, name);
-  }
 
   let backendConfig = config as BackendConfigType;
 
