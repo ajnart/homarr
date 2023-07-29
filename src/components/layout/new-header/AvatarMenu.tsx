@@ -7,7 +7,7 @@ import {
   IconLogout,
   IconMoonStars,
   IconSun,
-  IconUserSearch,
+  IconUserCog,
 } from '@tabler/icons-react';
 import { User } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
@@ -37,8 +37,16 @@ export const AvatarMenu = () => {
             </Menu.Item>
             {sessionData?.user && (
               <>
-                <Menu.Item icon={<IconUserSearch size="1rem" />}>View Profile</Menu.Item>
-                <Menu.Item icon={<IconDashboard size="1rem" />}>Default Dashboard</Menu.Item>
+                <Menu.Item
+                  component={Link}
+                  href="/manage/preferences"
+                  icon={<IconUserCog size="1rem" />}
+                >
+                  Settings
+                </Menu.Item>
+                <Menu.Item component={Link} href="/board" icon={<IconDashboard size="1rem" />}>
+                  Default Dashboard
+                </Menu.Item>
                 <Menu.Divider />
               </>
             )}
