@@ -4,6 +4,12 @@
     "description": "Zobrazí statický zoznam reťazcov alebo odkazov",
     "settings": {
       "title": "Nastavenia záložiek",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "Položky"
       },
