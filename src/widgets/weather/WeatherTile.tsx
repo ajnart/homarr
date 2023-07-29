@@ -85,14 +85,14 @@ function WeatherTile({ widget }: WeatherTileProps) {
   return (
     <Stack
       ref={ref}
-      spacing="xs"
+      spacing={width<120 ? "0.25rem" : "xs"}
       justify="space-around"
       align="center"
       style={{ height: '100%', width: '100%' }}
     >
-      <Flex align="center" gap={'xs'} justify={'center'} direction={width < 200 ? 'column' : 'row'}>
-        <WeatherIcon code={weather.current_weather.weathercode} />
-        <Title size={width < 200 ? 'h4' : 'h2'}>
+      <Flex align="center" gap={width<120 ? '0.25rem' : 'xs'} justify={'center'} direction={width < 200 ? 'column' : 'row'}>
+        <WeatherIcon size={width<300 ? 30 : 50} code={weather.current_weather.weathercode} />
+        <Title size={width < 300 ? 'h4' : 'h2'}>
           {getPerferedUnit(
             weather.current_weather.temperature,
             widget.properties.displayInFahrenheit
