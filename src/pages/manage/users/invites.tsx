@@ -68,7 +68,15 @@ const ManageUserInvitesPage = () => {
                     )}
                   </td>
                   <td>
-                    <ActionIcon onClick={() => {}} color="red" variant="light">
+                    <ActionIcon onClick={() => {
+                      modals.openContextModal({
+                        modal: 'deleteRegistrationTokenModal',
+                        title: <Text weight="bold">Delete registration token</Text>,
+                        innerProps: {
+                          tokenId: token.id,
+                        }
+                      })
+                    }} color="red" variant="light">
                       <IconTrash size="1rem" />
                     </ActionIcon>
                   </td>

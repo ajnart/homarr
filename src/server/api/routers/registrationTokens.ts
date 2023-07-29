@@ -1,8 +1,8 @@
+import { randomBytes } from 'crypto';
 import dayjs from 'dayjs';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import { randomBytes } from 'crypto';
 
 export const inviteRouter = createTRPCRouter({
   getAllInvites: publicProcedure
@@ -34,19 +34,30 @@ export const inviteRouter = createTRPCRouter({
         nextCursor,
       };
     }),
-  createRegistrationToken: publicProcedure.input(
-    z.object({
-      expiration: z
-        .date()
-        .min(dayjs().add(5, 'minutes').toDate())
-        .max(dayjs().add(6, 'months').toDate()),
-    })
-  ).mutation(async ({ ctx, input }) => {
-    await ctx.prisma.registrationToken.create({
-      data: {
-        expires: input.expiration,
-        token: randomBytes(20).toString('hex'),
-      }
-    });
-  }),
+  createRegistrationToken: publicProcedure
+    .input(
+      z.object({
+        expiration: z
+          .date()
+          .min(dayjs().add(5, 'minutes').toDate())
+          .max(dayjs().add(6, 'months').toDate()),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      await ctx.prisma.registrationToken.create({
+        data: {
+          expires: input.expiration,
+          token: randomBytes(20).toString('hex'),
+        },
+      });
+    }),
+  deleteRegistrationToken: publicProcedure
+    .input(z.object({ tokenId: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      await ctx.prisma.registrationToken.delete({
+        where: {
+          id: input.tokenId,
+        },
+      });
+    }),
 });
