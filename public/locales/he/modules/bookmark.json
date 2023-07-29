@@ -4,6 +4,12 @@
     "description": "מציג רשימה סטטית של מחרוזות או קישורים",
     "settings": {
       "title": "הגדרות סימניה",
+      "name": {
+        "label": "",
+        "placeholder": {
+          "label": ""
+        }
+      },
       "items": {
         "label": "פריטים"
       },
