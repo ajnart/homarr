@@ -182,6 +182,9 @@ export const userRouter = createTRPCRouter({
           email: input.email,
           password: hashedPassword,
           salt: salt,
+          settings: {
+             create: {}
+          },
         },
       });
     }),

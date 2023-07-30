@@ -86,7 +86,7 @@ const ManagementPage = () => {
             </Group>
           </Card>
         </UnstyledButton>
-        <UnstyledButton component={Link} href="/manage/preferences">
+        <UnstyledButton component={Link} href="/user/preferences">
           <Card className={classes.quickActionCard}>
             <Group spacing={30} noWrap>
               <Stack spacing={0}>

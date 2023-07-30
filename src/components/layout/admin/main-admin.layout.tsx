@@ -108,14 +108,14 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         />
       </NavLink>
       <NavLink
-        label="Preferences"
+        label="Settings"
         icon={
           <ThemeIcon size="md" variant="light" color="red">
             <IconSettings2 size="1rem" />
           </ThemeIcon>
         }
         component={Link}
-        href="/manage/preferences"
+        href="/manage/settings"
       />
       <NavLink
         label="Help"

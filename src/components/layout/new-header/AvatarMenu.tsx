@@ -43,10 +43,10 @@ export const AvatarMenu = () => {
               <>
                 <Menu.Item
                   component={Link}
-                  href="/manage/preferences"
+                  href="/user/preferences"
                   icon={<IconUserCog size="1rem" />}
                 >
-                  Settings
+                  User preferences
                 </Menu.Item>
                 <Menu.Item component={Link} href="/board" icon={<IconDashboard size="1rem" />}>
                   Default Dashboard
