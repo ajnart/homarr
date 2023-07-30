@@ -7,6 +7,7 @@ import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
 import { MediaRequestStatus } from './media-request-types';
+import { string } from 'zod';
 
 const definition = defineWidget({
   id: 'media-requests-stats',
@@ -14,10 +15,10 @@ const definition = defineWidget({
   options: {
     direction: {
       type: 'select',
-      defaultValue: 'horizontal',
+      defaultValue: 'row' as 'row' | 'column',
       data: [
-        { label: 'Horizontal', value: 'horizontal' },
-        { label: 'Vertical', value: 'vertical' },
+        { label: 'Horizontal', value: 'row' },
+        { label: 'Vertical', value: 'column' },
       ],
     },
   },
@@ -49,40 +50,42 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
       w="100%"
       h="100%"
       gap="md"
-      direction={ widget.properties.direction != 'vertical' ? 'row' : 'column' }
+      direction={ widget.properties.direction?? 'row' }
     >
-      <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
-        <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
-          <Text align="center">
-            {data.filter((x) => x.status === MediaRequestStatus.PendingApproval).length}
-          </Text>
-          <Text color="dimmed" align="center" size="xs">
-            {t('stats.pending')}
-          </Text>
-        </Stack>
-      </Card>
-      <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
-        <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
-          <Text align="center">
-            {data.filter((x) => x.type === 'tv').length}
-          </Text>
-          <Text color="dimmed" align="center" size="xs">
-            {t('stats.tvRequests')}
-          </Text>
-        </Stack>
-      </Card>
-      <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
-        <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
-          <Text align="center">
-            {data.filter((x) => x.type === 'movie').length}
-          </Text>
-          <Text color="dimmed" align="center" size="xs">
-            {t('stats.movieRequests')}
-          </Text>
-        </Stack>
-      </Card>
+      <StatCard
+        number={data.filter((x) => x.status === MediaRequestStatus.PendingApproval).length}
+        label={t('stats.pending')}
+      />
+      <StatCard
+        number={data.filter((x) => x.type === 'tv').length}
+        label={t('stats.tvRequests')}
+      />
+      <StatCard
+        number={data.filter((x) => x.type === 'movie').length}
+        label={t('stats.movieRequests')}
+      />
     </Flex>
   );
 }
+
+interface StatCardProps {
+  number: number;
+  label: string;
+}
+
+const StatCard = ({ number, label }: StatCardProps) => {
+  return (
+    <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
+      <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
+        <Text align="center">
+          {number}
+        </Text>
+        <Text color="dimmed" align="center" size="xs">
+          {label}
+        </Text>
+      </Stack>
+    </Card>
+  );
+};
 
 export default definition;
