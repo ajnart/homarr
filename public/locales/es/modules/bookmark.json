@@ -5,9 +5,9 @@
     "settings": {
       "title": "Ajustes de marcadores",
       "name": {
-        "label": "",
+        "label": "Título del widget",
         "placeholder": {
-          "label": ""
+          "label": "Dejar vacío para mantener el título oculto"
         }
       },
       "items": {
