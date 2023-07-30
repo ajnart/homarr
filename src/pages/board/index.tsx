@@ -8,6 +8,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useSession } from 'next-auth/react';
 import { SSRConfig, Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
+import { ForwardedRef, forwardRef } from 'react';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
@@ -100,7 +101,10 @@ type SpecificButtonProps = {
 type HeaderActionButtonProps = Omit<ButtonProps, 'variant' | 'className' | 'h' | 'w' | 'px'> &
   (SpecificLinkProps | SpecificButtonProps);
 
-const HeaderActionButton = ({ children, ...props }: HeaderActionButtonProps) => {
+const HeaderActionButton = forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  HeaderActionButtonProps
+>(({ children, ...props }, ref) => {
   const { classes } = useCardStyles(true);
 
   const buttonProps: ButtonProps = {
@@ -114,21 +118,29 @@ const HeaderActionButton = ({ children, ...props }: HeaderActionButtonProps) => 
 
   if ('component' in props) {
     return (
-      <Button component={props.component} href={props.href} {...buttonProps}>
+      <Button
+        ref={ref as ForwardedRef<HTMLAnchorElement>}
+        component={props.component}
+        href={props.href}
+        {...buttonProps}
+      >
         {children}
       </Button>
     );
   }
 
-  return <Button {...buttonProps}>{children}</Button>;
-};
+  return (
+    <Button ref={ref as ForwardedRef<HTMLButtonElement>} {...buttonProps}>
+      {children}
+    </Button>
+  );
+});
 
 const beforeUnloadEventText = 'Exit the edit mode to save your changes';
 const editModeNotificationId = 'toggle-edit-mode';
 
 const ToggleEditModeButton = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
-  const { classes } = useCardStyles(true);
   const { config, name: configName } = useConfigContext();
   const { mutateAsync: saveConfig } = api.config.save.useMutation();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
