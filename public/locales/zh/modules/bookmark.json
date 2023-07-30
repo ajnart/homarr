@@ -5,9 +5,9 @@
     "settings": {
       "title": "书签设置",
       "name": {
-        "label": "",
+        "label": "小部件标题",
         "placeholder": {
-          "label": ""
+          "label": "留空以隐藏标题"
         }
       },
       "items": {
