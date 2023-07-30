@@ -63,9 +63,9 @@ export default function HomePage({ config: initialConfig }: DashboardServerSideP
   useInitConfig(initialConfig);
 
   return (
-    <MainLayout>
+    <Layout>
       <Dashboard />
       <LoadConfigComponent />
-    </MainLayout>
+    </Layout>
   );
 }
