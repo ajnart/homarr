@@ -11,7 +11,6 @@ import React from 'react';
 
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
-import { boolean } from 'zod';
 
 // Type of widgets which are saved to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {

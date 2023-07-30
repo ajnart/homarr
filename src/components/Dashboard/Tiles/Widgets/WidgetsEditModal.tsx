@@ -17,7 +17,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
-import { IconAlertTriangle, IconPlaylistX, IconPlus, IconAlertCircle } from '@tabler/icons-react';
+import { IconAlertTriangle, IconPlaylistX, IconPlus, IconInfoCircle } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 
@@ -136,7 +136,6 @@ const WidgetOptionTypeSwitch: FC<{
   handleChange: (key: string, value: IntegrationOptionsValueType) => void;
 }> = ({ option, widgetId, propName: key, value, handleChange }) => {
   const { t } = useTranslation([`modules/${widgetId}`, 'common']);
-  const { colorScheme } = useMantineTheme();
   const info = option.info ?? false;
 
   switch (option.type) {
@@ -149,18 +148,7 @@ const WidgetOptionTypeSwitch: FC<{
             onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
             {...option.inputProps}
           />
-          {info &&
-            <Tooltip.Floating
-              label={t(`descriptor.settings.${key}.info`)}
-              position="right-start"
-              c={ colorScheme === 'light' ? "black" : "dark.0" }
-              color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-              styles={{ tooltip: { maxWidth: 300, }, }}
-              multiline
-            >
-              <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-            </Tooltip.Floating>
-          }
+          {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
         </Group>
       );
     case 'text':
@@ -168,18 +156,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <TextInput
             value={value as string}
@@ -193,24 +170,14 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <MultiSelect
             data={option.data}
             value={value as string[]}
             defaultValue={option.defaultValue}
             onChange={(v) => handleChange(key, v)}
+            withinPortal
             {...option.inputProps}
           />
         </Stack>
@@ -220,24 +187,14 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <Select
             defaultValue={option.defaultValue}
             data={option.data}
             value={value as string}
             onChange={(v) => handleChange(key, v ?? option.defaultValue)}
+            withinPortal
             {...option.inputProps}
           />
         </Stack>
@@ -247,18 +204,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <NumberInput
             value={value as number}
@@ -272,18 +218,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <Slider
             label={value}
@@ -333,18 +268,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <StaticDraggableList
             value={typedVal}
@@ -373,18 +297,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <MultiSelect
             data={value.map((name: any) => ({ value: name, label: name }))}
@@ -409,18 +322,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info &&
-              <Tooltip.Floating
-                label={t(`descriptor.settings.${key}.info`)}
-                position="right-start"
-                c={ colorScheme === 'light' ? "black" : "dark.0" }
-                color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-                styles={{ tooltip: { maxWidth: 300, }, }}
-                multiline
-              >
-                <IconAlertCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-              </Tooltip.Floating>
-            }
+            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <DraggableList
             items={Array.from(value).map((v: any) => ({
@@ -461,4 +363,24 @@ const WidgetOptionTypeSwitch: FC<{
     default:
       return null;
   }
+};
+
+interface InfoTooltipProps {
+  label: string;
+}
+
+const InfoTooltip = ({ label }: InfoTooltipProps) => {
+  const { colorScheme } =useMantineTheme();
+  return (
+    <Tooltip.Floating
+      label={label}
+      position="right-start"
+      c={ colorScheme === 'light' ? "black" : "dark.0" }
+      color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
+      styles={{ tooltip: { maxWidth: 300, }, }}
+      multiline
+    >
+      <IconInfoCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
+    </Tooltip.Floating>
+  )
 };
