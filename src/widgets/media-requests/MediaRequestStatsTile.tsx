@@ -1,4 +1,4 @@
-import { Card, Center, Flex, Stack, Text } from '@mantine/core';
+import { Box, Card, createStyles, Flex, FlexProps, Stack, Text } from '@mantine/core';
 import { IconChartBar } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
@@ -11,14 +11,23 @@ import { MediaRequestStatus } from './media-request-types';
 const definition = defineWidget({
   id: 'media-requests-stats',
   icon: IconChartBar,
-  options: {},
-  component: MediaRequestStatsTile,
+  options: {
+    direction: {
+      type: 'select',
+      defaultValue: 'row',
+      data: [
+        { label: 'Horizontal', value: 'horizontal' },
+        { label: 'Vertical', value: 'vertical' },
+      ],
+    },
+  },
   gridstack: {
     minWidth: 1,
-    minHeight: 2,
+    minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
   },
+  component: MediaRequestStatsTile,
 });
 
 export type MediaRequestStatsWidget = IWidget<(typeof definition)['id'], typeof definition>;
@@ -36,38 +45,41 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
   }
 
   return (
-    <Flex gap="md" wrap="wrap">
-      <Card w={100} h={100} withBorder>
-        <Center h="100%">
-          <Stack spacing={0} align="center">
-            <Text>
-              {data.filter((x) => x.status === MediaRequestStatus.PendingApproval).length}
-            </Text>
-            <Text color="dimmed" align="center" size="xs">
-              {t('stats.pending')}
-            </Text>
-          </Stack>
-        </Center>
+    <Flex
+      w="100%"
+      h="100%"
+      gap="md"
+      direction={ widget.properties.direction != 'vertical' ? 'row' : 'column' }
+    >
+      <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
+        <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
+          <Text align="center">
+            {data.filter((x) => x.status === MediaRequestStatus.PendingApproval).length}
+          </Text>
+          <Text color="dimmed" align="center" size="xs">
+            {t('stats.pending')}
+          </Text>
+        </Stack>
       </Card>
-      <Card w={100} h={100} withBorder>
-        <Center h="100%">
-          <Stack spacing={0} align="center">
-            <Text align="center">{data.filter((x) => x.type === 'tv').length}</Text>
-            <Text color="dimmed" align="center" size="xs">
-              {t('stats.tvRequests')}
-            </Text>
-          </Stack>
-        </Center>
+      <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
+        <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
+          <Text align="center">
+            {data.filter((x) => x.type === 'tv').length}
+          </Text>
+          <Text color="dimmed" align="center" size="xs">
+            {t('stats.tvRequests')}
+          </Text>
+        </Stack>
       </Card>
-      <Card w={100} h={100} withBorder>
-        <Center h="100%">
-          <Stack spacing={0} align="center">
-            <Text align="center">{data.filter((x) => x.type === 'movie').length}</Text>
-            <Text color="dimmed" align="center" size="xs">
-              {t('stats.movieRequests')}
-            </Text>
-          </Stack>
-        </Center>
+      <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
+        <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
+          <Text align="center">
+            {data.filter((x) => x.type === 'movie').length}
+          </Text>
+          <Text color="dimmed" align="center" size="xs">
+            {t('stats.movieRequests')}
+          </Text>
+        </Stack>
       </Card>
     </Flex>
   );
