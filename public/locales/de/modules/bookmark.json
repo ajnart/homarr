@@ -5,9 +5,9 @@
     "settings": {
       "title": "Lesezeichen-Einstellungen",
       "name": {
-        "label": "",
+        "label": "Widget Titel",
         "placeholder": {
-          "label": ""
+          "label": "Leer lassen um den Titel versteckt zu lassen"
         }
       },
       "items": {
