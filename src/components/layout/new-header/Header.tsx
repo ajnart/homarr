@@ -12,12 +12,14 @@ type MainHeaderProps = {
   logoHref?: string;
   showExperimental?: boolean;
   headerActions?: React.ReactNode;
+  leftIcon?: React.ReactNode;
 };
 
 export const MainHeader = ({
   showExperimental = false,
   logoHref = '/',
   headerActions,
+  leftIcon
 }: MainHeaderProps) => {
   const { breakpoints } = useMantineTheme();
   const isSmallerThanMd = useMediaQuery(`(max-width: ${breakpoints.sm})`);
@@ -28,9 +30,12 @@ export const MainHeader = ({
     <Header height={headerHeight} pb="sm" pt={0}>
       <ExperimentalHeaderNote visible={showExperimental} height={experimentalHeaderNoteHeight} />
       <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
-        <UnstyledButton component={Link} href={logoHref} style={{ flex: 1 }}>
-          <Logo />
-        </UnstyledButton>
+        <Group noWrap>
+          {leftIcon}
+          <UnstyledButton component={Link} href={logoHref} style={{ flex: 1 }}>
+            <Logo />
+          </UnstyledButton>
+        </Group>
 
         <Search />
 

@@ -103,6 +103,8 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
             <IconSettings2 size="1rem" />
           </ThemeIcon>
         }
+        component={Link}
+        href="/manage/preferences"
       />
       <NavLink
         label="Help"
@@ -139,6 +141,9 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       </NavLink>
     </>
   );
+
+  const burgerMenu = screenLargerThanMd ? undefined : <Burger opened={burgerMenuOpen} onClick={toggleBurgerMenu} />;
+
   return (
     <>
       <CommonHeader />
@@ -155,7 +160,13 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
             </Navbar.Section>
           </Navbar>
         }
-        header={<MainHeader showExperimental logoHref="/manage" />}
+        header={
+          <MainHeader
+            showExperimental
+            logoHref="/manage"
+            leftIcon={burgerMenu}
+          />
+        }
         footer={
           <Footer height={25}>
             <Group position="apart" px="md">
