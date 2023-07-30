@@ -1,4 +1,4 @@
-import { Box, Card, createStyles, Flex, FlexProps, Stack, Text } from '@mantine/core';
+import { Card, Flex, Stack, Text } from '@mantine/core';
 import { IconChartBar } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
@@ -7,7 +7,6 @@ import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
 import { MediaRequestStatus } from './media-request-types';
-import { string } from 'zod';
 
 const definition = defineWidget({
   id: 'media-requests-stats',
