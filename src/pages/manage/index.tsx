@@ -13,6 +13,7 @@ import { IconArrowRight } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
@@ -85,7 +86,7 @@ const ManagementPage = () => {
             </Group>
           </Card>
         </UnstyledButton>
-        <UnstyledButton>
+        <UnstyledButton component={Link} href="/manage/user/invites">
           <Card className={classes.quickActionCard}>
             <Group spacing={30} noWrap>
               <Stack spacing={0}>
@@ -96,7 +97,7 @@ const ManagementPage = () => {
             </Group>
           </Card>
         </UnstyledButton>
-        <UnstyledButton>
+        <UnstyledButton component={Link} href="/manage/preferences">
           <Card className={classes.quickActionCard}>
             <Group spacing={30} noWrap>
               <Stack spacing={0}>

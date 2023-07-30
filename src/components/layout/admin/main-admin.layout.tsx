@@ -30,6 +30,7 @@ import {
   IconLogout,
   IconMailForward,
   IconQuestionMark,
+  IconSettings2,
   IconSun,
   IconUser,
   IconUserSearch,
@@ -94,6 +95,14 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           href="/manage/users/invites"
         />
       </NavLink>
+      <NavLink
+        label="Preferences"
+        icon={
+          <ThemeIcon size="md" variant="light" color="red">
+            <IconSettings2 size="1rem" />
+          </ThemeIcon>
+        }
+      />
       <NavLink
         label="Help"
         icon={
