@@ -1,10 +1,7 @@
 import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Consola from 'consola';
 import { getCookie, setCookie } from 'cookies-next';
 import 'flag-icons/css/flag-icons.min.css';
@@ -29,7 +26,6 @@ import { ConfigProvider } from '../config/provider';
 import '../styles/global.scss';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
-import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
 import {
   ServerSidePackageAttributesType,
   getServiceSidePackageAttributes,
@@ -73,59 +69,50 @@ function App(
     setInitialPackageAttributes(props.pageProps.packageAttributes);
   }, []);
 
-  const asyncStoragePersister = createAsyncStoragePersister({
-    storage: AsyncStorage,
-  });
-
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
       <SessionProvider session={pageProps.session}>
-        <PersistQueryClientProvider
-          client={queryClient}
-          persistOptions={{ persister: asyncStoragePersister }}
-        >
-          <ColorSchemeProvider {...pageProps}>
-            {(colorScheme) => (
-              <ColorTheme.Provider value={colorTheme}>
-                <MantineProvider
-                  theme={{
-                    ...theme,
-                    components: {
-                      Checkbox: {
-                        styles: {
-                          input: { cursor: 'pointer' },
-                          label: { cursor: 'pointer' },
-                        },
-                      },
-                      Switch: {
-                        styles: {
-                          input: { cursor: 'pointer' },
-                          label: { cursor: 'pointer' },
-                        },
+        <ColorSchemeProvider {...pageProps}>
+          {(colorScheme) => (
+            <ColorTheme.Provider value={colorTheme}>
+              <MantineProvider
+                theme={{
+                  ...theme,
+                  components: {
+                    Checkbox: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
                       },
                     },
-                    primaryColor,
-                    primaryShade,
-                    colorScheme,
-                  }}
-                  withGlobalStyles
-                  withNormalizeCSS
-                >
-                  <ConfigProvider {...props.pageProps}>
-                    <Notifications limit={4} position="bottom-left" />
-                    <ModalsProvider modals={modals}>
-                      <Component {...pageProps} />
-                    </ModalsProvider>
-                  </ConfigProvider>
-                </MantineProvider>
-              </ColorTheme.Provider>
-            )}
-          </ColorSchemeProvider>
-          <ReactQueryDevtools initialIsOpen={false} />
-        </PersistQueryClientProvider>
+                    Switch: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
+                      },
+                    },
+                  },
+                  primaryColor,
+                  primaryShade,
+                  colorScheme,
+                }}
+                withGlobalStyles
+                withNormalizeCSS
+              >
+                <ConfigProvider {...props.pageProps}>
+                  <Notifications limit={4} position="bottom-left" />
+                  <ModalsProvider modals={modals}>
+                    <Component {...pageProps} />
+                  </ModalsProvider>
+                </ConfigProvider>
+              </MantineProvider>
+            </ColorTheme.Provider>
+          )}
+        </ColorSchemeProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </SessionProvider>
     </>
   );

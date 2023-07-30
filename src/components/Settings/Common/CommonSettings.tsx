@@ -26,7 +26,6 @@ export default function CommonSettings() {
         <Space />
         <LanguageSelect />
         <ConfigChanger />
-        <CacheButtons />
         <ConfigActions />
       </Stack>
     </ScrollArea>

@@ -1657,17 +1657,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-async-storage/async-storage@npm:^1.18.1":
-  version: 1.19.1
-  resolution: "@react-native-async-storage/async-storage@npm:1.19.1"
-  dependencies:
-    merge-options: ^3.0.4
-  peerDependencies:
-    react-native: ^0.0.0-0 || 0.60 - 0.72 || 1000.0.0
-  checksum: 7367210e16f788999ca8ff96bd04bbd345f44c186cec7c50903d55637f572c73b8a79f9c948a549329ad489c08d77dd49367971691ed54dbc3839285e0194431
-  languageName: node
-  linkType: hard
-
 "@react-spring/animated@npm:~9.7.3":
   version: 9.7.3
   resolution: "@react-spring/animated@npm:9.7.3"
@@ -1831,15 +1820,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-async-storage-persister@npm:^4.27.1":
-  version: 4.32.0
-  resolution: "@tanstack/query-async-storage-persister@npm:4.32.0"
-  dependencies:
-    "@tanstack/query-persist-client-core": 4.32.0
-  checksum: 21151138fed9620c5752e226d368cfe09cb928102d664f2c2e423ab7ba4c2f61ea9b56b91dfdf1fb50577da2c3c220c4c1e1f6198e5b3b440813fb66eca3ed74
-  languageName: node
-  linkType: hard
-
 "@tanstack/query-core@npm:4.32.0":
   version: 4.32.0
   resolution: "@tanstack/query-core@npm:4.32.0"
@@ -1853,15 +1833,6 @@ __metadata:
   dependencies:
     "@tanstack/query-core": 4.32.0
   checksum: 1a29dc33318c7c6b350f6c51220e8ce02174a30f0f4c9e419cdfe5c802432239aa4a5ccff17b11905c0928d126d0d5aa39eeb1b62e558e5ad4bff9ef9137099e
-  languageName: node
-  linkType: hard
-
-"@tanstack/query-sync-storage-persister@npm:^4.27.1":
-  version: 4.32.0
-  resolution: "@tanstack/query-sync-storage-persister@npm:4.32.0"
-  dependencies:
-    "@tanstack/query-persist-client-core": 4.32.0
-  checksum: 752f884c9525d58cb531fcfdf37938a4eb8aea8f613e5f45f572cf4c4f3c2f25fc9b2b4f3dedffa1cad704e32d570f0617c4d67e9c6fa750281f6c3caeb72430
   languageName: node
   linkType: hard
 
@@ -5845,11 +5816,8 @@ __metadata:
     "@nivo/core": ^0.83.0
     "@nivo/line": ^0.83.0
     "@prisma/client": ^5.0.0
-    "@react-native-async-storage/async-storage": ^1.18.1
     "@t3-oss/env-nextjs": ^0.6.0
     "@tabler/icons-react": ^2.18.0
-    "@tanstack/query-async-storage-persister": ^4.27.1
-    "@tanstack/query-sync-storage-persister": ^4.27.1
     "@tanstack/react-query": ^4.2.1
     "@tanstack/react-query-devtools": ^4.24.4
     "@tanstack/react-query-persist-client": ^4.28.0
@@ -6386,13 +6354,6 @@ __metadata:
   version: 3.0.3
   resolution: "is-path-inside@npm:3.0.3"
   checksum: abd50f06186a052b349c15e55b182326f1936c89a78bf6c8f2b707412517c097ce04bc49a0ca221787bc44e1049f51f09a2ffb63d22899051988d3a618ba13e9
-  languageName: node
-  linkType: hard
-
-"is-plain-obj@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "is-plain-obj@npm:2.1.0"
-  checksum: cec9100678b0a9fe0248a81743041ed990c2d4c99f893d935545cfbc42876cbe86d207f3b895700c690ad2fa520e568c44afc1605044b535a7820c1d40e38daa
   languageName: node
   linkType: hard
 
@@ -7000,15 +6961,6 @@ __metadata:
   version: 1.0.1
   resolution: "merge-descriptors@npm:1.0.1"
   checksum: 5abc259d2ae25bb06d19ce2b94a21632583c74e2a9109ee1ba7fd147aa7362b380d971e0251069f8b3eb7d48c21ac839e21fa177b335e82c76ec172e30c31a26
-  languageName: node
-  linkType: hard
-
-"merge-options@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "merge-options@npm:3.0.4"
-  dependencies:
-    is-plain-obj: ^2.1.0
-  checksum: d86ddb3dd6e85d558dbf25dc944f3527b6bacb944db3fdda6e84a3f59c4e4b85231095f58b835758b9a57708342dee0f8de0dffa352974a48221487fe9f4584f
   languageName: node
   linkType: hard
 
