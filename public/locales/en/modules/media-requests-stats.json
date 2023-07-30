@@ -3,7 +3,10 @@
     "name": "Media request stats",
     "description": "Statistics about your media requests",
     "settings": {
-      "title": "Media requests stats"
+      "title": "Media requests stats",
+      "direction": {
+        "label": "Direction of the layout."
+      }
     }
   },
   "stats": {

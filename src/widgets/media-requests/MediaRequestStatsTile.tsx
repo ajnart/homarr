@@ -14,7 +14,7 @@ const definition = defineWidget({
   options: {
     direction: {
       type: 'select',
-      defaultValue: 'row',
+      defaultValue: 'horizontal',
       data: [
         { label: 'Horizontal', value: 'horizontal' },
         { label: 'Vertical', value: 'vertical' },
