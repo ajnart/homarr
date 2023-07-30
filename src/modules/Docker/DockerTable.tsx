@@ -8,11 +8,11 @@ import {
   TextInput,
   createStyles,
 } from '@mantine/core';
-import { useElementSize } from '@mantine/hooks';
+import { useDebouncedValue, useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
-import Dockerode from 'dockerode';
+import Dockerode, { ContainerInfo } from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import ContainerState from './ContainerState';
@@ -31,93 +31,34 @@ export default function DockerTable({
   selection,
   setSelection,
 }: {
-  setSelection: any;
-  containers: Dockerode.ContainerInfo[];
-  selection: Dockerode.ContainerInfo[];
+  setSelection: Dispatch<SetStateAction<ContainerInfo[]>>;
+  containers: ContainerInfo[];
+  selection: ContainerInfo[];
 }) {
-  const [usedContainers, setContainers] = useState<Dockerode.ContainerInfo[]>(containers);
-  const { classes, cx } = useStyles();
-  const [search, setSearch] = useState('');
-  const { ref, width, height } = useElementSize();
-
   const { t } = useTranslation('modules/docker');
+  const [search, setSearch] = useState('');
+  const { classes, cx } = useStyles();
+  const { ref, width } = useElementSize();
 
-  useEffect(() => {
-    setContainers(containers);
-  }, [containers]);
+  const filteredContainers = useMemo(
+    () => filterContainers(containers, search),
+    [containers, search]
+  );
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.currentTarget;
-    setSearch(value);
-    setContainers(filterContainers(containers, value));
+    setSearch(event.currentTarget.value);
   };
 
-  function filterContainers(data: Dockerode.ContainerInfo[], search: string) {
-    const query = search.toLowerCase().trim();
-    return data.filter((item) =>
-      item.Names.some((name) => name.toLowerCase().includes(query) || item.Image.includes(query))
-    );
-  }
-
-  const toggleRow = (container: Dockerode.ContainerInfo) =>
-    setSelection((current: Dockerode.ContainerInfo[]) =>
-      current.includes(container) ? current.filter((c) => c !== container) : [...current, container]
+  const toggleRow = (container: ContainerInfo) =>
+    setSelection((selected: ContainerInfo[]) =>
+      selected.includes(container)
+        ? selected.filter((c) => c !== container)
+        : [...selected, container]
     );
   const toggleAll = () =>
-    setSelection((current: any) =>
-      current.length === usedContainers.length ? [] : usedContainers.map((c) => c)
+    setSelection((selected: ContainerInfo[]) =>
+      selected.length === filteredContainers.length ? [] : filteredContainers.map((c) => c)
     );
-
-  const rows = usedContainers.map((element) => {
-    const selected = selection.includes(element);
-    return (
-      <tr key={element.Id} className={cx({ [classes.rowSelected]: selected })}>
-        <td>
-          <Checkbox
-            checked={selection.includes(element)}
-            onChange={() => toggleRow(element)}
-            transitionDuration={0}
-          />
-        </td>
-        <td>
-          <Text size="lg" weight={600}>
-            {element.Names[0].replace('/', '')}
-          </Text>
-        </td>
-        {width > MIN_WIDTH_MOBILE && (
-          <td>
-            <Text size="lg">{element.Image}</Text>
-          </td>
-        )}
-        {width > MIN_WIDTH_MOBILE && (
-          <td>
-            <Group>
-              {element.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
-                // Remove duplicates with filter function
-                .filter(
-                  (port, index, self) =>
-                    index === self.findIndex((t) => t.PrivatePort === port.PrivatePort)
-                )
-                .slice(-3)
-                .map((port) => (
-                  <Badge key={port.PrivatePort} variant="outline">
-                    {port.PrivatePort}:{port.PublicPort}
-                  </Badge>
-                ))}
-              {element.Ports.length > 3 && (
-                <Badge variant="filled">
-                  {t('table.body.portCollapse', { ports: element.Ports.length - 3 })}
-                </Badge>
-              )}
-            </Group>
-          </td>
-        )}
-        <td>
-          <ContainerState state={element.State} />
-        </td>
-      </tr>
-    );
-  });
 
   return (
     <ScrollArea style={{ height: '100%' }} offsetScrollbars>
@@ -135,10 +76,12 @@ export default function DockerTable({
             <th style={{ width: 40 }}>
               <Checkbox
                 onChange={toggleAll}
-                checked={selection.length === usedContainers.length && selection.length > 0}
-                indeterminate={selection.length > 0 && selection.length !== usedContainers.length}
+                checked={selection.length === filteredContainers.length && selection.length > 0}
+                indeterminate={
+                  selection.length > 0 && selection.length !== filteredContainers.length
+                }
                 transitionDuration={0}
-                disabled={usedContainers.length === 0}
+                disabled={filteredContainers.length === 0}
               />
             </th>
             <th>{t('table.header.name')}</th>
@@ -147,8 +90,83 @@ export default function DockerTable({
             <th>{t('table.header.state')}</th>
           </tr>
         </thead>
-        <tbody>{rows}</tbody>
+        <tbody>
+          {filteredContainers.map((container) => {
+            const selected = selection.includes(container);
+            return (
+              <Row
+                key={container.Id}
+                container={container}
+                selected={selected}
+                toggleRow={toggleRow}
+                width={width}
+              />
+            );
+          })}
+        </tbody>
       </Table>
     </ScrollArea>
+  );
+}
+
+type RowProps = {
+  container: ContainerInfo;
+  selected: boolean;
+  toggleRow: (container: ContainerInfo) => void;
+  width: number;
+};
+const Row = ({ container, selected, toggleRow, width }: RowProps) => {
+  const { t } = useTranslation('modules/docker');
+  const { classes, cx } = useStyles();
+
+  return (
+    <tr className={cx({ [classes.rowSelected]: selected })}>
+      <td>
+        <Checkbox checked={selected} onChange={() => toggleRow(container)} transitionDuration={0} />
+      </td>
+      <td>
+        <Text size="lg" weight={600}>
+          {container.Names[0].replace('/', '')}
+        </Text>
+      </td>
+      {width > MIN_WIDTH_MOBILE && (
+        <td>
+          <Text size="lg">{container.Image}</Text>
+        </td>
+      )}
+      {width > MIN_WIDTH_MOBILE && (
+        <td>
+          <Group>
+            {container.Ports.sort((a, b) => a.PrivatePort - b.PrivatePort)
+              // Remove duplicates with filter function
+              .filter(
+                (port, index, self) =>
+                  index === self.findIndex((t) => t.PrivatePort === port.PrivatePort)
+              )
+              .slice(-3)
+              .map((port) => (
+                <Badge key={port.PrivatePort} variant="outline">
+                  {port.PrivatePort}:{port.PublicPort}
+                </Badge>
+              ))}
+            {container.Ports.length > 3 && (
+              <Badge variant="filled">
+                {t('table.body.portCollapse', { ports: container.Ports.length - 3 })}
+              </Badge>
+            )}
+          </Group>
+        </td>
+      )}
+      <td>
+        <ContainerState state={container.State} />
+      </td>
+    </tr>
+  );
+};
+
+function filterContainers(data: Dockerode.ContainerInfo[], search: string) {
+  const query = search.toLowerCase().trim();
+  return data.filter((item) =>
+    item.Names.some((name) => name.toLowerCase().includes(query) || item.Image.includes(query))
   );
 }

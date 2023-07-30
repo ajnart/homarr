@@ -22,35 +22,22 @@ import { AppType } from '../../types/app';
 export interface ContainerActionBarProps {
   selected: Dockerode.ContainerInfo[];
   reload: () => void;
+  isLoading: boolean;
 }
 
-export default function ContainerActionBar({ selected, reload }: ContainerActionBarProps) {
+export default function ContainerActionBar({
+  selected,
+  reload,
+  isLoading,
+}: ContainerActionBarProps) {
   const { t } = useTranslation('modules/docker');
-  const [isLoading, setLoading] = useState(false);
-  const { config } = useConfigContext();
-
   const sendDockerCommand = useDockerActionMutation();
-  if (!config) {
-    return null;
-  }
-  const getLowestWrapper = () =>
-    config.wrappers.sort((wrapper1, wrapper2) => wrapper1.position - wrapper2.position)[0];
-
-  if (process.env.DISABLE_EDIT_MODE === 'true') {
-    return null;
-  }
 
   return (
     <Group spacing="xs">
       <Button
         leftIcon={<IconRefresh />}
-        onClick={() => {
-          setLoading(true);
-          setTimeout(() => {
-            reload();
-            setLoading(false);
-          }, 750);
-        }}
+        onClick={reload}
         variant="light"
         color="violet"
         loading={isLoading}
@@ -106,58 +93,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
       >
         {t('actionBar.remove.title')}
       </Button>
-      <Button
-        leftIcon={<IconPlus />}
-        color="indigo"
-        variant="light"
-        radius="md"
-        disabled={selected.length !== 1}
-        onClick={() => {
-          const containerInfo = selected[0];
-
-          const port = containerInfo.Ports.at(0)?.PublicPort;
-          const address = port ? `http://localhost:${port}` : `http://localhost`;
-          const name = containerInfo.Names.at(0) ?? 'App';
-
-          openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
-            modal: 'editApp',
-            zIndex: 202,
-            innerProps: {
-              app: {
-                id: uuidv4(),
-                name: name,
-                url: address,
-                appearance: {
-                  iconUrl: '/imgs/logo/logo.png',
-                },
-                network: {
-                  enabledStatusChecker: true,
-                  statusCodes: ['200', '301', '302']
-                },
-                behaviour: {
-                  isOpeningNewTab: true,
-                  externalUrl: address
-                },
-                area: {
-                  type: 'wrapper',
-                  properties: {
-                    id: getLowestWrapper()?.id ?? 'default',
-                  },
-                },
-                shape: {},
-                integration: {
-                  type: null,
-                  properties: [],
-                },
-              },
-              allowAppNamePropagation: true,
-            },
-            size: 'xl',
-          });
-        }}
-      >
-        {t('actionBar.addToHomarr.title')}
-      </Button>
+      {/* TODO: add some possibility to add a container to homarr */}
     </Group>
   );
 }
