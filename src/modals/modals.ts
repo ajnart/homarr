@@ -9,6 +9,7 @@ import { CategoryEditModal } from '~/components/Dashboard/Wrappers/Category/Cate
 import { DeleteUserModal } from './delete-user/delete-user.modal';
 import { CreateRegistrationTokenModal } from './create-registration-token/create-registration-token.modal';
 import { DeleteRegistrationTokenModal } from './delete-registration-token/delete-registration-token.modal';
+import { CreateDashboardModal } from './create-dashboard/create-dashboard.modal';
 
 export const modals = {
   editApp: EditAppModal,
@@ -20,7 +21,8 @@ export const modals = {
   changeIntegrationPositionModal: ChangeWidgetPositionModal,
   deleteUserModal: DeleteUserModal,
   createRegistrationTokenModal: CreateRegistrationTokenModal,
-  deleteRegistrationTokenModal: DeleteRegistrationTokenModal
+  deleteRegistrationTokenModal: DeleteRegistrationTokenModal,
+  createDashboardModal: CreateDashboardModal
 };
 
 declare module '@mantine/modals' {

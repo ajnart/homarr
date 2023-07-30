@@ -7,7 +7,6 @@ export interface SettingsType {
 
 export interface CommonSettingsType {
   searchEngine: SearchEngineCommonSettingsType;
-  defaultConfig: string;
 }
 
 export type SearchEngineCommonSettingsType =

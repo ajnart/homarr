@@ -27,6 +27,7 @@ import {
   IconDashboard,
   IconGitFork,
   IconHome,
+  IconLayoutDashboard,
   IconLogout,
   IconMailForward,
   IconQuestionMark,
@@ -74,6 +75,16 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         label="Home"
         component={Link}
         href="/manage/"
+      />
+      <NavLink
+        label="Boards"
+        icon={
+          <ThemeIcon size="md" variant="light" color="red">
+            <IconLayoutDashboard size="1rem" />
+          </ThemeIcon>
+        }
+        component={Link}
+        href="/manage/boards"
       />
       <NavLink
         label="Users"
