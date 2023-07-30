@@ -64,22 +64,11 @@ const ManagementPage = () => {
           { maxWidth: '48rem', cols: 1, spacing: 'md' },
         ]}
       >
-        <UnstyledButton>
+        <UnstyledButton component={Link} href="/manage/dashboards">
           <Card className={classes.quickActionCard}>
             <Group spacing={30} noWrap>
               <Stack spacing={0}>
-                <Text weight="bold">New dashboard</Text>
-                <Text>Create a new dashboard</Text>
-              </Stack>
-              <IconArrowRight />
-            </Group>
-          </Card>
-        </UnstyledButton>
-        <UnstyledButton>
-          <Card className={classes.quickActionCard}>
-            <Group spacing={30} noWrap>
-              <Stack spacing={0}>
-                <Text weight="bold">Your dasboards</Text>
+                <Text weight="bold">Your boards</Text>
                 <Text>Show a list of all your dashboards</Text>
               </Stack>
               <IconArrowRight />
@@ -103,6 +92,17 @@ const ManagementPage = () => {
               <Stack spacing={0}>
                 <Text weight="bold">Your preferences</Text>
                 <Text>Adjust language, colors and more</Text>
+              </Stack>
+              <IconArrowRight />
+            </Group>
+          </Card>
+        </UnstyledButton>
+        <UnstyledButton component={Link} href="/manage/users">
+          <Card className={classes.quickActionCard}>
+            <Group spacing={30} noWrap>
+              <Stack spacing={0}>
+                <Text weight="bold">Manage users</Text>
+                <Text>Delete and manage your users</Text>
               </Stack>
               <IconArrowRight />
             </Group>
