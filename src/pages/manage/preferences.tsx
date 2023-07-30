@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { forwardRef } from 'react';
 import { AccessibilitySettings } from '~/components/Settings/Customization/Accessibility/AccessibilitySettings';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { CommonHeader } from '~/components/layout/common-header';
 import { languages } from '~/tools/language';
 
 const PreferencesPage = () => {
@@ -15,9 +16,9 @@ const PreferencesPage = () => {
   }));
   return (
     <MainLayout>
-      <Head>
+      <CommonHeader>
         <title>Preferences • Homarr</title>
-      </Head>
+      </CommonHeader>
       <Title mb="xl">Preferences</Title>
 
       <Stack spacing={5}>

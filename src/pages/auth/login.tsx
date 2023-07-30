@@ -19,6 +19,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { z } from 'zod';
+import { CommonHeader } from '~/components/layout/common-header';
 import { signInSchema } from '~/validations/user';
 
 import { loginNamespaces } from '../../tools/server/translation-namespaces';
@@ -44,6 +45,9 @@ export default function LoginPage() {
 
   return (
     <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
+      <CommonHeader>
+        <title>Login • Homarr</title>
+      </CommonHeader>
       <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
         <Title align="center" weight={900}>
           {t('title')}

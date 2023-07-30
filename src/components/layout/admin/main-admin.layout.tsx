@@ -46,6 +46,7 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
 import { Logo } from '../Logo';
+import { CommonHeader } from '../common-header';
 import { MainHeader } from '../new-header/Header';
 
 interface MainLayoutProps {
@@ -140,17 +141,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   );
   return (
     <>
-      <Head>
-        <link rel="shortcut icon" href="/imgs/favicon/favicon.svg" />
-
-        <link rel="manifest" href="/site.webmanifest" />
-
-        {/* configure apple splash screen & touch icon */}
-        <link rel="apple-touch-icon" href="/imgs/favicon/favicon.svg" />
-        <meta name="apple-mobile-web-app-title" content="Homarr" />
-
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-      </Head>
+      <CommonHeader />
       <AppShell
         styles={{
           root: {
