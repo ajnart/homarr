@@ -11,6 +11,7 @@ import {
 } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
+import Head from 'next/head';
 import Image from 'next/image';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
@@ -22,6 +23,9 @@ const ManagementPage = () => {
 
   return (
     <MainLayout>
+      <Head>
+        <title>Manage • Homarr</title>
+      </Head>
       <Box className={classes.box} w="100%" mih={150} p="xl" mb={50}>
         <Group position="apart" noWrap>
           <Stack spacing={15}>

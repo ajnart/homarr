@@ -37,6 +37,7 @@ import {
 } from '@tabler/icons-react';
 import { signOut } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
@@ -130,6 +131,17 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   );
   return (
     <>
+      <Head>
+        <link rel="shortcut icon" href="/imgs/favicon/favicon.svg" />
+
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* configure apple splash screen & touch icon */}
+        <link rel="apple-touch-icon" href="/imgs/favicon/favicon.svg" />
+        <meta name="apple-mobile-web-app-title" content="Homarr" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+      </Head>
       <AppShell
         styles={{
           root: {
