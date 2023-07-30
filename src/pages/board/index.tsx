@@ -55,7 +55,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
     ctx.res
   );
   const boardName = currentUserSettings?.defaultBoard ?? 'default';
-  const config = await getFrontendConfig(boardName as string);
+  const config = await getFrontendConfig(boardName);
 
   return {
     props: {
@@ -65,7 +65,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   };
 };
 
-const HeaderActions = () => {
+export const HeaderActions = () => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;

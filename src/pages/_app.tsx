@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Consola from 'consola';
 import { getCookie, setCookie } from 'cookies-next';
+import 'flag-icons/css/flag-icons.min.css';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
 import { SessionProvider, getSession } from 'next-auth/react';
@@ -34,7 +35,6 @@ import {
   getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
-import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 function App(
   this: any,
@@ -44,7 +44,6 @@ function App(
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
     config?: ConfigType;
-    configName?: string;
     session: Session;
   }>
 ) {

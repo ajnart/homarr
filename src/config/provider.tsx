@@ -24,13 +24,13 @@ const ConfigContext = createContext<ConfigContextType>({
 export const ConfigProvider = ({
   children,
   config: fallbackConfig,
-  configName: initialConfigName,
 }: {
   children: ReactNode;
   config?: ConfigType;
-  configName?: string;
 }) => {
-  const [configName, setConfigName] = useState<string>(initialConfigName || 'default');
+  const [configName, setConfigName] = useState<string>(
+    fallbackConfig?.configProperties.name || 'unknown'
+  );
   const [configVersion, setConfigVersion] = useState(0);
   const { configs } = useConfigStore((s) => ({ configs: s.configs }), shallow);
   const { setPrimaryColor, setSecondaryColor, setPrimaryShade } = useColorTheme();
