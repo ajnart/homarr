@@ -7,12 +7,15 @@ import {
   Group,
   Image,
   ScrollArea,
+  Divider,
   Stack,
   Switch,
   Text,
   TextInput,
   Title,
   createStyles,
+  useMantineTheme,
+  InputProps,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import {
@@ -27,6 +30,7 @@ import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
+import React from 'react';
 
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { IconSelector } from '../../components/IconSelector/IconSelector';
@@ -39,12 +43,18 @@ interface BookmarkItem {
   href: string;
   iconUrl: string;
   openNewTab: boolean;
+  hideHostname: boolean;
+  hideIcon: boolean;
 }
 
 const definition = defineWidget({
   id: 'bookmark',
   icon: IconBookmark,
   options: {
+    name: {
+      type: 'text',
+      defaultValue: '',
+    },
     items: {
       type: 'draggable-editable-list',
       defaultValue: [],
@@ -58,6 +68,8 @@ const definition = defineWidget({
           href: 'https://homarr.dev',
           iconUrl: '/imgs/logo/logo.png',
           openNewTab: false,
+          hideHostname: false,
+          hideIcon: false,
         };
       },
       itemComponent({ data, onChange, delete: deleteData }) {
@@ -130,6 +142,16 @@ const definition = defineWidget({
                 label="Open in new tab"
                 checked={form.values.openNewTab}
               />
+              <Switch
+                {...form.getInputProps('hideHostname')}
+                label="Hide Hostname"
+                checked={form.values.hideHostname}
+              />
+              <Switch
+                {...form.getInputProps('hideIcon')}
+                label="Hide Icon"
+                checked={form.values.hideIcon}
+              />
               <Button
                 onClick={() => deleteData()}
                 leftIcon={<IconTrash size="1rem" />}
@@ -186,6 +208,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
   const { t } = useTranslation('modules/bookmark');
   const { classes } = useStyles();
   const { enabled: isEditModeEnabled } = useEditModeStore();
+  const { fn, colors, colorScheme } = useMantineTheme();
 
   if (widget.properties.items.length === 0) {
     return (
@@ -206,72 +229,126 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
   switch (widget.properties.layout) {
     case 'autoGrid':
       return (
-        <Box className={classes.grid} display="grid" mr={isEditModeEnabled ? 'xl' : undefined}>
-          {widget.properties.items.map((item: BookmarkItem, index) => (
-            <Card
-              className={classes.autoGridItem}
-              key={index}
-              px="xl"
-              component="a"
-              href={item.href}
-              target={item.openNewTab ? '_blank' : undefined}
-              withBorder
-            >
-              <BookmarkItemContent item={item} />
-            </Card>
-          ))}
-        </Box>
-      );
-    case 'horizontal':
-    case 'vertical':
-      return (
-        <ScrollArea
-          offsetScrollbars
-          type="always"
-          h="100%"
-          mr={isEditModeEnabled ? 'xl' : undefined}
-        >
-          <Flex
-            style={{ flexDirection: widget.properties.layout === 'vertical' ? 'column' : 'row' }}
-            gap="md"
+        <Stack h="100%" spacing={0}>
+          <Title size="h4" px="0.25rem">{widget.properties.name}</Title>
+          <Box
+            className={classes.grid}
+            mr={isEditModeEnabled && widget.properties.name === "" ? 'xl' : undefined}
+            h="100%"
           >
             {widget.properties.items.map((item: BookmarkItem, index) => (
               <Card
+                className={classes.autoGridItem}
                 key={index}
-                w={widget.properties.layout === 'vertical' ? '100%' : undefined}
                 px="xl"
+                radius="md"
                 component="a"
                 href={item.href}
                 target={item.openNewTab ? '_blank' : undefined}
                 withBorder
+                bg={colorScheme === 'dark' ? colors.dark[5].concat('80') : colors.blue[0].concat('80')}
+                sx={{
+                  '&:hover': { backgroundColor: fn.primaryColor().concat('40'), }, //'40' = 25% opacity
+                  flex:'1 1 auto',
+                }}
+                display="flex"
               >
                 <BookmarkItemContent item={item} />
               </Card>
             ))}
-          </Flex>
-        </ScrollArea>
+          </Box>
+        </Stack>
+      );
+    case 'horizontal':
+    case 'vertical':
+      return (
+        <Stack h="100%" spacing={0}>
+          <Title size="h4" px="0.25rem">
+            {widget.properties.name}
+          </Title>
+          <ScrollArea
+            scrollbarSize={8}
+            type="auto"
+            h="100%"
+            offsetScrollbars
+            mr={isEditModeEnabled && widget.properties.name === ""? 'xl' : undefined}
+            styles={{
+              viewport:{
+                //mantine being mantine again... this might break. Needed for taking 100% of widget space
+                '& div[style="min-width: 100%; display: table;"]':{
+                  height:'100%',
+                },
+              },
+            }}
+          >
+            <Flex
+              direction={ widget.properties.layout === 'vertical' ? 'column' : 'row' }
+              gap="0"
+              h="100%"
+            >
+              {widget.properties.items.map((item: BookmarkItem, index) => (
+                <>
+                  <Divider
+                    m="1px"
+                    orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' } //Mantine doesn't let me refactor this, I tried
+                    hidden={!(index > 0)}
+                  />
+                  <Card
+                    key={index}
+                    px="md"
+                    py="1px"
+                    component="a"
+                    href={item.href}
+                    target={item.openNewTab ? '_blank' : undefined}
+                    radius="md"
+                    bg="transparent"
+                    sx={{
+                      '&:hover': { backgroundColor: fn.primaryColor().concat('40'),}, //'40' = 25% opacity
+                      flex:'1 1 auto'
+                    }}
+                    display="flex"
+                  >
+                    <BookmarkItemContent item={item}/>
+                  </Card>
+                </>
+              ))}
+            </Flex>
+          </ScrollArea>
+        </Stack>
       );
     default:
       return null;
   }
 }
 
-const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => (
-  <Group>
-    <Image src={item.iconUrl} width={30} height={30} fit="contain" withPlaceholder />
+const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => {
+  const { colorScheme } = useMantineTheme();
+  return (
+  <Group spacing="0rem 1rem">
+    <Image
+      hidden={item.hideIcon}
+      src={item.iconUrl}
+      width={47}
+      height={47}
+      fit="contain"
+      withPlaceholder />
     <Stack spacing={0}>
-      <Text>{item.name}</Text>
-      <Text color="dimmed" size="sm">
+      <Text size="md">{item.name}</Text>
+      <Text
+        color={colorScheme === 'dark' ? "gray.6" : "gray.7"}
+        size="sm"
+        hidden={item.hideHostname}
+      >
         {new URL(item.href).hostname}
       </Text>
     </Stack>
   </Group>
-);
+)};
 
 const useStyles = createStyles(() => ({
   grid: {
     display: 'grid',
-    gap: 20,
+    gap: 10,
     gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
   },
   autoGridItem: {
