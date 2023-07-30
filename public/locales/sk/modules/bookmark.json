@@ -5,9 +5,9 @@
     "settings": {
       "title": "Nastavenia záložiek",
       "name": {
-        "label": "",
+        "label": "Názov Widgetu",
         "placeholder": {
-          "label": ""
+          "label": "Nechajte prázdne, aby názov zostal skrytý"
         }
       },
       "items": {
