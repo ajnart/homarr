@@ -2,7 +2,11 @@ import { TRPCError } from '@trpc/server';
 import bcrypt from 'bcrypt';
 import { z } from 'zod';
 import { hashPassword } from '~/utils/security';
-import { colorSchemeParser, signUpFormSchema } from '~/validations/user';
+import {
+  colorSchemeParser,
+  signUpFormSchema,
+  updateSettingsValidationSchema,
+} from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
 import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
@@ -134,6 +138,25 @@ export const userRouter = createTRPCRouter({
     };
   }),
 
+  updateSettings: protectedProcedure
+    .input(updateSettingsValidationSchema)
+    .mutation(async ({ ctx, input }) => {
+      await ctx.prisma.user.update({
+        where: {
+          id: ctx.session.user.id,
+        },
+        data: {
+          settings: {
+            update: {
+              disablePingPulse: input.disablePingPulse,
+              replacePingWithIcons: input.replaceDotsWithIcons,
+              language: input.language,
+            },
+          },
+        },
+      });
+    }),
+
   getAll: publicProcedure
     .input(
       z.object({
@@ -183,7 +206,7 @@ export const userRouter = createTRPCRouter({
           password: hashedPassword,
           salt: salt,
           settings: {
-             create: {}
+            create: {},
           },
         },
       });
