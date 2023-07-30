@@ -23,3 +23,9 @@ export const colorSchemeParser = z
   .enum(['light', 'dark', 'environment'])
   .default('environment')
   .catch('environment');
+
+export const updateSettingsValidationSchema = z.object({
+  disablePingPulse: z.boolean(),
+  replaceDotsWithIcons: z.boolean(),
+  language: z.string(),
+});

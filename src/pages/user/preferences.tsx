@@ -1,19 +1,21 @@
-import { Group, Select, Stack, Text, Title } from '@mantine/core';
-import Head from 'next/head';
+import { Button, Group, Select, Stack, Text, Title } from '@mantine/core';
+import { createFormContext } from '@mantine/form';
+import type { InferGetServerSidePropsType } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import { forwardRef } from 'react';
+import { z } from 'zod';
 import { AccessibilitySettings } from '~/components/Settings/Customization/Accessibility/AccessibilitySettings';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { CommonHeader } from '~/components/layout/common-header';
 import { languages } from '~/tools/language';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { RouterOutputs, api } from '~/utils/api';
+import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
+import { updateSettingsValidationSchema } from '~/validations/user';
 
-const PreferencesPage = () => {
-  const data = languages.map((language) => ({
-    image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',
-    label: language.originalName,
-    description: language.translatedName,
-    value: language.shortName,
-    country: language.country,
-  }));
+const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const { data } = api.user.getWithSettings.useQuery();
+
   return (
     <MainLayout>
       <CommonHeader>
@@ -21,40 +23,91 @@ const PreferencesPage = () => {
       </CommonHeader>
       <Title mb="xl">Preferences</Title>
 
-      <Stack spacing={5}>
-        <Title order={2} size="lg">
-          Localization
-        </Title>
-
-        <Select
-          label="Language"
-          itemComponent={SelectItem}
-          data={data}
-          searchable
-          maxDropdownHeight={400}
-          filter={(value, item) =>
-            item.label.toLowerCase().includes(value.toLowerCase().trim()) ||
-            item.description.toLowerCase().includes(value.toLowerCase().trim())
-          }
-          withAsterisk
-        />
-
-        <Select
-          label="First day of the week"
-          data={[
-            { value: 'monday', label: 'Monday' },
-            { value: 'sunday', label: 'Sunday' },
-            { value: 'saturday', label: 'Saturday' },
-          ]}
-        />
-
-        <Title order={2} size="lg" mt="lg" mb="md">
-          Accessibility
-        </Title>
-
-        <AccessibilitySettings />
-      </Stack>
+      {data && <SettingsComponent settings={data.settings} />}
     </MainLayout>
+  );
+};
+
+export const [FormProvider, useFormContext, useForm] =
+  createFormContext<z.infer<typeof updateSettingsValidationSchema>>();
+
+const SettingsComponent = ({
+  settings,
+}: {
+  settings: RouterOutputs['user']['getWithSettings']['settings'];
+}) => {
+  const languagesData = languages.map((language) => ({
+    image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',
+    label: language.originalName,
+    description: language.translatedName,
+    value: language.shortName,
+    country: language.country,
+  }));
+
+  const { i18nZodResolver } = useI18nZodResolver();
+
+  const form = useForm({
+    initialValues: {
+      disablePingPulse: settings.disablePingPulse,
+      replaceDotsWithIcons: settings.replacePingWithIcons,
+      language: settings.language,
+    },
+    validate: i18nZodResolver(updateSettingsValidationSchema),
+    validateInputOnBlur: true,
+    validateInputOnChange: true,
+  });
+
+  const { mutate } = api.user.updateSettings.useMutation();
+
+  const handleSubmit = () => {
+    mutate(form.values);
+  };
+
+  return (
+    <FormProvider form={form}>
+      <form onSubmit={form.onSubmit(handleSubmit)}>
+        <Stack spacing={5}>
+          <Title order={2} size="lg">
+            Localization
+          </Title>
+
+          <Select
+            label="Language"
+            itemComponent={SelectItem}
+            data={languagesData}
+            searchable
+            maxDropdownHeight={400}
+            filter={(value, item) =>
+              item.label.toLowerCase().includes(value.toLowerCase().trim()) ||
+              item.description.toLowerCase().includes(value.toLowerCase().trim())
+            }
+            defaultValue={settings.language}
+            withAsterisk
+            mb="xs"
+            {...form.getInputProps('language')}
+          />
+
+          <Select
+            label="First day of the week"
+            data={[
+              { value: 'monday', label: 'Monday' },
+              { value: 'sunday', label: 'Sunday' },
+              { value: 'saturday', label: 'Saturday' },
+            ]}
+          />
+
+          <Title order={2} size="lg" mt="lg" mb="md">
+            Accessibility
+          </Title>
+
+          <AccessibilitySettings />
+
+          <Button type="submit" fullWidth mt="md">
+            Save
+          </Button>
+        </Stack>
+      </form>
+    </FormProvider>
   );
 };
 
@@ -81,5 +134,15 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
     </div>
   )
 );
+
+export async function getServerSideProps({ req, res, locale }: GetServerSidePropsContext) {
+  const translations = await getServerSideTranslations([], locale, undefined, undefined);
+  return {
+    props: {
+      ...translations,
+      locale: locale,
+    },
+  };
+}
 
 export default PreferencesPage;
