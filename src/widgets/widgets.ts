@@ -43,7 +43,7 @@ export type IWidgetOptionValue = (
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
   | ILocationOptionValue
-) & CommonOptions;
+) & ICommonWidgetOptions;
 
 // Interface for data type
 interface DataType {
@@ -51,7 +51,7 @@ interface DataType {
   value: string;
 }
 
-interface CommonOptions {
+interface  ICommonWidgetOptions {
   info?: boolean;
 };
 
