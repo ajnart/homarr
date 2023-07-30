@@ -34,6 +34,7 @@ import {
   getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 function App(
   this: any,

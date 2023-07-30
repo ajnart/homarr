@@ -5217,6 +5217,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flag-icons@npm:^6.9.2":
+  version: 6.9.2
+  resolution: "flag-icons@npm:6.9.2"
+  checksum: ba2754c65ae4a943ac7042be9ec039243bd5fc2d6cec59228c46549ccadf20f272b22a1d1e8940a830b86b0d2fda1e53f8dd3866937a40c7d90b8fae789b122d
+  languageName: node
+  linkType: hard
+
 "flat-cache@npm:^3.0.4":
   version: 3.0.4
   resolution: "flat-cache@npm:3.0.4"
@@ -5882,6 +5889,7 @@ __metadata:
     eslint-plugin-unused-imports: ^3.0.0
     eslint-plugin-vitest: ^0.2.0
     fily-publish-gridstack: ^0.0.13
+    flag-icons: ^6.9.2
     framer-motion: ^10.0.0
     happy-dom: ^10.0.0
     html-entities: ^2.3.3

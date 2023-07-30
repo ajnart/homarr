@@ -66,6 +66,7 @@
     "dayjs": "^1.11.7",
     "dockerode": "^3.3.2",
     "fily-publish-gridstack": "^0.0.13",
+    "flag-icons": "^6.9.2",
     "framer-motion": "^10.0.0",
     "html-entities": "^2.3.3",
     "i18next": "^22.5.1",
