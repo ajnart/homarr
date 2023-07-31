@@ -38,10 +38,16 @@ export const ConfigProvider = ({
   const currentConfig = configs.find((c) => c.value.configProperties.name === configName)?.value;
 
   useEffect(() => {
-    setPrimaryColor(currentConfig?.settings.customization.colors.primary || 'red');
-    setSecondaryColor(currentConfig?.settings.customization.colors.secondary || 'orange');
-    setPrimaryShade(currentConfig?.settings.customization.colors.shade || 6);
-  }, [configName]);
+    const config = currentConfig ?? fallbackConfig;
+    setPrimaryColor(config?.settings.customization.colors.primary || 'red');
+    setSecondaryColor(config?.settings.customization.colors.secondary || 'orange');
+    setPrimaryShade(config?.settings.customization.colors.shade || 6);
+    return () => {
+      setPrimaryColor('red');
+      setSecondaryColor('orange');
+      setPrimaryShade(6);
+    };
+  }, [currentConfig]);
 
   return (
     <ConfigContext.Provider
