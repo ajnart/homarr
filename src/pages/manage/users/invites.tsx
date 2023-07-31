@@ -1,4 +1,14 @@
-import { ActionIcon, Button, Center, Flex, Pagination, Table, Text, Title } from '@mantine/core';
+import {
+  ActionIcon,
+  Button,
+  Center,
+  Flex,
+  Pagination,
+  Table,
+  Text,
+  Title,
+  createStyles,
+} from '@mantine/core';
 import { modals } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import dayjs from 'dayjs';
@@ -18,6 +28,7 @@ const ManageUserInvitesPage = () => {
       }
     );
 
+  const { classes } = useStyles();
   const [activePage, setActivePage] = useState(0);
 
   const handleFetchNextPage = async () => {
@@ -31,8 +42,6 @@ const ManageUserInvitesPage = () => {
   };
 
   const currentPage = data?.pages[activePage];
-
-  console.log(data?.pages);
 
   return (
     <MainLayout>
@@ -78,17 +87,17 @@ const ManageUserInvitesPage = () => {
             <tbody>
               {currentPage.registrationTokens.map((token, index) => (
                 <tr key={index}>
-                  <td>
-                    <Text>{token.id}</Text>
+                  <td className={classes.tableIdCell}>
+                    <Text lineClamp={1}>{token.id}</Text>
                   </td>
-                  <td>
+                  <td className={classes.tableCell}>
                     {dayjs(dayjs()).isAfter(token.expires) ? (
                       <Text>expired {dayjs(token.expires).fromNow()}</Text>
                     ) : (
                       <Text>in {dayjs(token.expires).fromNow(true)}</Text>
                     )}
                   </td>
-                  <td>
+                  <td className={classes.tableCell}>
                     <ActionIcon
                       onClick={() => {
                         modals.openContextModal({
@@ -129,5 +138,14 @@ const ManageUserInvitesPage = () => {
     </MainLayout>
   );
 };
+
+const useStyles = createStyles(() => ({
+  tableIdCell: {
+    width: '100%',
+  },
+  tableCell: {
+    whiteSpace: 'nowrap'
+  }
+}));
 
 export default ManageUserInvitesPage;
