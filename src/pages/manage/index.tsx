@@ -86,17 +86,6 @@ const ManagementPage = () => {
             </Group>
           </Card>
         </UnstyledButton>
-        <UnstyledButton component={Link} href="/user/preferences">
-          <Card className={classes.quickActionCard}>
-            <Group spacing={30} noWrap>
-              <Stack spacing={0}>
-                <Text weight="bold">Your preferences</Text>
-                <Text>Adjust language, colors and more</Text>
-              </Stack>
-              <IconArrowRight />
-            </Group>
-          </Card>
-        </UnstyledButton>
         <UnstyledButton component={Link} href="/manage/users">
           <Card className={classes.quickActionCard}>
             <Group spacing={30} noWrap>
