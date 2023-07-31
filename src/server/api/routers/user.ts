@@ -161,23 +161,33 @@ export const userRouter = createTRPCRouter({
   getAll: publicProcedure
     .input(
       z.object({
-        limit: z.number().min(1).max(100).nullish(),
-        cursor: z.string().nullish(),
+        limit: z.number().min(1).max(100).default(10),
+        page: z.number().min(0),
+        search: z
+          .string()
+          .optional()
+          .transform((value) => (value === '' ? undefined : value)),
       })
     )
     .query(async ({ ctx, input }) => {
-      const limit = input.limit ?? 50;
-      const cursor = input.cursor;
+      const limit = input.limit;
       const users = await ctx.prisma.user.findMany({
-        take: limit + 1, // get an extra item at the end which we'll use as next cursor
-        cursor: cursor ? { id: cursor } : undefined,
+        take: limit + 1,
+        skip: limit * input.page,
+        where: {
+          name: {
+            contains: input.search,
+          },
+        },
       });
 
-      let nextCursor: typeof cursor | undefined = undefined;
-      if (users.length > limit) {
-        const nextItem = users.pop();
-        nextCursor = nextItem!.id;
-      }
+      const countUsers = await ctx.prisma.user.count({
+        where: {
+          name: {
+            contains: input.search,
+          },
+        },
+      });
 
       return {
         users: users.map((user) => ({
@@ -186,7 +196,7 @@ export const userRouter = createTRPCRouter({
           email: user.email,
           emailVerified: user.emailVerified,
         })),
-        nextCursor,
+        countPages: Math.ceil(countUsers / limit),
       };
     }),
   createUser: publicProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {

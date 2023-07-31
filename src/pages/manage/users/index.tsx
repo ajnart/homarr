@@ -2,6 +2,7 @@ import {
   ActionIcon,
   Autocomplete,
   Avatar,
+  Box,
   Button,
   Flex,
   Group,
@@ -11,6 +12,7 @@ import {
   Text,
   Title,
 } from '@mantine/core';
+import { useDebouncedValue } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import Head from 'next/head';
@@ -20,16 +22,13 @@ import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { api } from '~/utils/api';
 
 const ManageUsersPage = () => {
-  const { data, fetchNextPage, fetchPreviousPage } = api.user.getAll.useInfiniteQuery(
-    {
-      limit: 10,
-    },
-    {
-      getNextPageParam: (lastPage) => lastPage.nextCursor,
-    }
-  );
-
-  const [activePage, _] = useState(0);
+  const [activePage, setActivePage] = useState(0);
+  const [nonDebouncedSearch, setNonDebouncedSearch] = useState<string | undefined>('');
+  const [debouncedSearch] = useDebouncedValue<string | undefined>(nonDebouncedSearch, 200);
+  const { data } = api.user.getAll.useQuery({
+    page: activePage,
+    search: debouncedSearch,
+  });
 
   return (
     <MainLayout>
@@ -46,8 +45,13 @@ const ManageUsersPage = () => {
       <Flex columnGap={10} justify="end" mb="md">
         <Autocomplete
           placeholder="Filter"
-          data={['React', 'Angular', 'Svelte', 'Vue']}
+          data={
+            (data?.users.map((user) => user.name).filter((name) => name !== null) as string[]) ?? []
+          }
           variant="filled"
+          onChange={(value) => {
+            setNonDebouncedSearch(value);
+          }}
         />
         <Button
           component={Link}
@@ -68,7 +72,7 @@ const ManageUsersPage = () => {
               </tr>
             </thead>
             <tbody>
-              {data.pages[activePage].users.map((user, index) => (
+              {data.users.map((user, index) => (
                 <tr key={index}>
                   <td>
                     <Group position="apart">
@@ -98,13 +102,30 @@ const ManageUsersPage = () => {
                   </td>
                 </tr>
               ))}
+
+              {debouncedSearch && debouncedSearch.length > 0 && (
+                <tr>
+                  <td colSpan={1}>
+                    <Box p={15}>
+                      <Text>Your search does not match any entries. Please adjust your filter.</Text>
+                    </Box>
+                  </td>
+                </tr>
+              )}
             </tbody>
           </Table>
           <Pagination
-            total={data.pages.length}
+            total={data.countPages}
             value={activePage + 1}
-            onNextPage={fetchNextPage}
-            onPreviousPage={fetchPreviousPage}
+            onNextPage={() => {
+              setActivePage((prev) => prev + 1);
+            }}
+            onPreviousPage={() => {
+              setActivePage((prev) => prev - 1);
+            }}
+            onChange={(targetPage) => {
+              setActivePage(targetPage - 1);
+            }}
           />
         </>
       )}

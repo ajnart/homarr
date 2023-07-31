@@ -19,6 +19,7 @@ import {
   IconMail,
   IconMailCheck,
   IconUser,
+  IconUserPlus,
 } from '@tabler/icons-react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -59,7 +60,7 @@ const CreateNewUserPage = () => {
   });
 
   const context = api.useContext();
-  const { mutateAsync, isSuccess, isLoading } = api.user.createUser.useMutation({
+  const { mutateAsync, isLoading } = api.user.createUser.useMutation({
     onSettled: () => {
       void context.user.getAll.invalidate();
     },
@@ -173,10 +174,6 @@ const CreateNewUserPage = () => {
             <Flex justify="end" wrap="nowrap">
               <Button
                 onClick={async () => {
-                  if (isSuccess) {
-                    return;
-                  }
-
                   await mutateAsync({
                     username: form.values.account.username,
                     password: form.values.security.password,
@@ -198,14 +195,26 @@ const CreateNewUserPage = () => {
             User has been created in the database. They can now log in.
           </Alert>
 
-          <Button
-            component={Link}
-            leftIcon={<IconArrowLeft size="1rem" />}
-            variant="default"
-            href="/manage/users"
-          >
-            Go back to users
-          </Button>
+          <Group>
+            <Button
+              onClick={() => {
+                form.reset();
+                setActive(0);
+              }}
+              leftIcon={<IconUserPlus size="1rem" />}
+              variant="default"
+            >
+              Create another
+            </Button>
+            <Button
+              component={Link}
+              leftIcon={<IconArrowLeft size="1rem" />}
+              variant="default"
+              href="/manage/users"
+            >
+              Go back to users
+            </Button>
+          </Group>
         </Stepper.Completed>
       </Stepper>
     </MainLayout>
