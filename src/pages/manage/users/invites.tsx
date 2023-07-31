@@ -18,30 +18,21 @@ import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { api } from '~/utils/api';
 
 const ManageUserInvitesPage = () => {
-  const { data, fetchPreviousPage, fetchNextPage, hasNextPage, hasPreviousPage } =
-    api.registrationTokens.getAllInvites.useInfiniteQuery(
-      {
-        limit: 10,
-      },
-      {
-        getNextPageParam: (lastPage) => lastPage.nextCursor,
-      }
-    );
+  const [activePage, setActivePage] = useState(0);
+  const { data } =
+    api.registrationTokens.getAllInvites.useQuery({
+      page: activePage
+    });
 
   const { classes } = useStyles();
-  const [activePage, setActivePage] = useState(0);
 
   const handleFetchNextPage = async () => {
-    await fetchNextPage();
     setActivePage((prev) => prev + 1);
   };
 
   const handleFetchPreviousPage = async () => {
-    await fetchPreviousPage();
     setActivePage((prev) => prev - 1);
   };
-
-  const currentPage = data?.pages[activePage];
 
   return (
     <MainLayout>
@@ -71,10 +62,7 @@ const ManageUserInvitesPage = () => {
         </Button>
       </Flex>
 
-      {activePage}
-      {currentPage ? 'current page is defined' : 'current page is not defined'}
-
-      {data && currentPage && (
+      {data && (
         <>
           <Table mb="md" withBorder highlightOnHover>
             <thead>
@@ -85,7 +73,7 @@ const ManageUserInvitesPage = () => {
               </tr>
             </thead>
             <tbody>
-              {currentPage.registrationTokens.map((token, index) => (
+              {data.registrationTokens.map((token, index) => (
                 <tr key={index}>
                   <td className={classes.tableIdCell}>
                     <Text lineClamp={1}>{token.id}</Text>
@@ -116,7 +104,7 @@ const ManageUserInvitesPage = () => {
                   </td>
                 </tr>
               ))}
-              {currentPage.registrationTokens.length === 0 && (
+              {data.registrationTokens.length === 0 && (
                 <tr>
                   <td colSpan={3}>
                     <Center p="md">
@@ -128,10 +116,20 @@ const ManageUserInvitesPage = () => {
             </tbody>
           </Table>
           <Pagination
-            total={data.pages[0].countPages}
+            total={data.countPages}
             value={activePage + 1}
+            onChange={(targetPage) => {
+              setActivePage(targetPage - 1);
+            }}
             onNextPage={handleFetchNextPage}
             onPreviousPage={handleFetchPreviousPage}
+            onFirstPage={() => {
+              setActivePage(0);
+            }}
+            onLastPage={() => {
+              setActivePage(data.countPages - 1);
+            }}
+            withEdges
           />
         </>
       )}
@@ -144,8 +142,8 @@ const useStyles = createStyles(() => ({
     width: '100%',
   },
   tableCell: {
-    whiteSpace: 'nowrap'
-  }
+    whiteSpace: 'nowrap',
+  },
 }));
 
 export default ManageUserInvitesPage;

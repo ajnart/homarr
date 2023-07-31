@@ -8,23 +8,16 @@ export const inviteRouter = createTRPCRouter({
   getAllInvites: publicProcedure
     .input(
       z.object({
-        limit: z.number().min(1).max(100).nullish(),
-        cursor: z.string().nullish(),
+        limit: z.number().min(1).max(100).nullish().default(10),
+        page: z.number().min(0)
       })
     )
     .query(async ({ ctx, input }) => {
       const limit = input.limit ?? 50;
-      const cursor = input.cursor;
       const registrationTokens = await ctx.prisma.registrationToken.findMany({
-        take: limit + 1, // get an extra item at the end which we'll use as next cursor
-        cursor: cursor ? { id: cursor } : undefined,
+        take: limit,
+        skip: limit * input.page,
       });
-
-      let nextCursor: typeof cursor | undefined = undefined;
-      if (registrationTokens.length > limit) {
-        const nextItem = registrationTokens.pop();
-        nextCursor = nextItem!.id;
-      }
 
       const countRegistrationTokens = await ctx.prisma.registrationToken.count();
 
@@ -33,7 +26,6 @@ export const inviteRouter = createTRPCRouter({
           id: token.id,
           expires: token.expires,
         })),
-        nextCursor,
         countPages: Math.ceil(countRegistrationTokens / limit)
       };
     }),
