@@ -39,32 +39,25 @@ const ManageUsersPage = () => {
 
       <Title mb="md">Manage users</Title>
       <Text mb="xl">
-        Using users, you have granular control who can access, edit or delete resources on your Homarr instance.
+        Using users, you have granular control who can access, edit or delete resources on your
+        Homarr instance.
       </Text>
 
-      <Group position="apart" mb="md">
-        <SegmentedControl
-          data={[
-            { label: 'Active', value: 'active' },
-            { label: 'Inactive', value: 'inactive' },
-          ]}
+      <Flex columnGap={10} justify="end" mb="md">
+        <Autocomplete
+          placeholder="Filter"
+          data={['React', 'Angular', 'Svelte', 'Vue']}
+          variant="filled"
         />
-        <Flex columnGap={10}>
-          <Autocomplete
-            placeholder="Filter"
-            data={['React', 'Angular', 'Svelte', 'Vue']}
-            variant="filled"
-          />
-          <Button
-            component={Link}
-            leftIcon={<IconPlus size="1rem" />}
-            href="/manage/users/create"
-            variant="default"
-          >
-            Create
-          </Button>
-        </Flex>
-      </Group>
+        <Button
+          component={Link}
+          leftIcon={<IconPlus size="1rem" />}
+          href="/manage/users/create"
+          variant="default"
+        >
+          Create
+        </Button>
+      </Flex>
 
       {data && (
         <>
