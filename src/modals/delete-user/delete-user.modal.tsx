@@ -26,6 +26,8 @@ export const DeleteUserModal = ({
           onClick={() => {
             modals.close(id);
           }}
+          variant="light"
+          color="gray"
         >
           Cancel
         </Button>
@@ -36,6 +38,8 @@ export const DeleteUserModal = ({
             });
           }}
           disabled={isLoading}
+          variant="light"
+          color="red"
         >
           Delete
         </Button>

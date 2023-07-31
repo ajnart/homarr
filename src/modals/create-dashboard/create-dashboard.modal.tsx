@@ -35,6 +35,8 @@ export const CreateDashboardModal = ({ context, id, innerProps }: ContextModalPr
           onClick={() => {
             modals.close(id);
           }}
+          variant="light"
+          color="gray"
         >
           Cancel
         </Button>
@@ -47,6 +49,8 @@ export const CreateDashboardModal = ({ context, id, innerProps }: ContextModalPr
             });
           }}
           disabled={isLoading}
+          variant="light"
+          color="green"
         >
           Create
         </Button>

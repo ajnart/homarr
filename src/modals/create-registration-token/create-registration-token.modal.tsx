@@ -46,11 +46,12 @@ export const CreateRegistrationTokenModal = ({
       </Text>
 
       <DateInput
-        label="Expiration date"
-        withAsterisk
         popoverProps={{ withinPortal: true }}
         minDate={minDate}
         maxDate={maxDate}
+        withAsterisk
+        label="Expiration date"
+        variant="filled"
         {...form.getInputProps('expirationDate')}
       />
 
@@ -59,6 +60,8 @@ export const CreateRegistrationTokenModal = ({
           onClick={() => {
             modals.close(id);
           }}
+          variant="light"
+          color="gray"
         >
           Cancel
         </Button>
@@ -69,6 +72,8 @@ export const CreateRegistrationTokenModal = ({
             });
           }}
           disabled={isLoading}
+          variant="light"
+          color="green"
         >
           Create
         </Button>

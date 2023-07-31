@@ -26,6 +26,8 @@ export const DeleteRegistrationTokenModal = ({
           onClick={() => {
             modals.close(id);
           }}
+          variant="light"
+          color="gray"
         >
           Cancel
         </Button>
@@ -36,6 +38,8 @@ export const DeleteRegistrationTokenModal = ({
             });
           }}
           disabled={isLoading}
+          variant="light"
+          color="red"
         >
           Delete
         </Button>
