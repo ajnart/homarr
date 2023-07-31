@@ -20,7 +20,7 @@ import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { api } from '~/utils/api';
 
 const ManageUsersPage = () => {
-  const { isLoading, data, fetchNextPage, fetchPreviousPage } = api.user.getAll.useInfiniteQuery(
+  const { data, fetchNextPage, fetchPreviousPage } = api.user.getAll.useInfiniteQuery(
     {
       limit: 10,
     },
@@ -81,7 +81,7 @@ const ManageUsersPage = () => {
                           onClick={() => {
                             openContextModal({
                               modal: 'deleteUserModal',
-                              title: <Text weight="bold">Delete user ${user.name}</Text>,
+                              title: <Text weight="bold">Delete user {user.name}</Text>,
                               innerProps: {
                                 userId: user.id,
                                 username: user.name ?? '',
