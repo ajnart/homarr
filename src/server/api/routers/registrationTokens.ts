@@ -44,12 +44,18 @@ export const inviteRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      await ctx.prisma.registrationToken.create({
+      const token = await ctx.prisma.registrationToken.create({
         data: {
           expires: input.expiration,
           token: randomBytes(20).toString('hex'),
         },
       });
+
+      return {
+        id: token.id,
+        token: token.token,
+        expires: token.expires,
+      };
     }),
   deleteRegistrationToken: publicProcedure
     .input(z.object({ tokenId: z.string() }))

@@ -14,9 +14,15 @@ export const CreateRegistrationTokenModal = ({
 }: ContextModalProps<{}>) => {
   const apiContext = api.useContext();
   const { isLoading, mutateAsync } = api.registrationTokens.createRegistrationToken.useMutation({
-    onSuccess: async () => {
+    onSuccess: async (data) => {
       await apiContext.registrationTokens.getAllInvites.invalidate();
       modals.close(id);
+
+      modals.openContextModal({
+        modal: 'copyRegistrationTokenModal',
+        title: <Text weight="bold">Copy invitation</Text>,
+        innerProps: data,
+      })
     },
   });
 

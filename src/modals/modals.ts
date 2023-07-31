@@ -10,6 +10,7 @@ import { DeleteUserModal } from './delete-user/delete-user.modal';
 import { CreateRegistrationTokenModal } from './create-registration-token/create-registration-token.modal';
 import { DeleteRegistrationTokenModal } from './delete-registration-token/delete-registration-token.modal';
 import { CreateDashboardModal } from './create-dashboard/create-dashboard.modal';
+import { CopyRegistrationToken } from './copy-regristration-token/copy-registration-token.modal';
 
 export const modals = {
   editApp: EditAppModal,
@@ -22,7 +23,8 @@ export const modals = {
   deleteUserModal: DeleteUserModal,
   createRegistrationTokenModal: CreateRegistrationTokenModal,
   deleteRegistrationTokenModal: DeleteRegistrationTokenModal,
-  createDashboardModal: CreateDashboardModal
+  createDashboardModal: CreateDashboardModal,
+  copyRegistrationTokenModal: CopyRegistrationToken,
 };
 
 declare module '@mantine/modals' {
