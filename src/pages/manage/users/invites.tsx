@@ -5,16 +5,34 @@ import dayjs from 'dayjs';
 import Head from 'next/head';
 import { useState } from 'react';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
-import { modals as applicationModals } from '~/modals/modals';
 import { api } from '~/utils/api';
 
 const ManageUserInvitesPage = () => {
-  const { data, isFetched, fetchPreviousPage, fetchNextPage } =
-    api.registrationTokens.getAllInvites.useInfiniteQuery({
-      limit: 10,
-    });
+  const { data, fetchPreviousPage, fetchNextPage, hasNextPage, hasPreviousPage } =
+    api.registrationTokens.getAllInvites.useInfiniteQuery(
+      {
+        limit: 10,
+      },
+      {
+        getNextPageParam: (lastPage) => lastPage.nextCursor,
+      }
+    );
 
-  const [activePage, _] = useState(0);
+  const [activePage, setActivePage] = useState(0);
+
+  const handleFetchNextPage = async () => {
+    await fetchNextPage();
+    setActivePage((prev) => prev + 1);
+  };
+
+  const handleFetchPreviousPage = async () => {
+    await fetchPreviousPage();
+    setActivePage((prev) => prev - 1);
+  };
+
+  const currentPage = data?.pages[activePage];
+
+  console.log(data?.pages);
 
   return (
     <MainLayout>
@@ -44,7 +62,10 @@ const ManageUserInvitesPage = () => {
         </Button>
       </Flex>
 
-      {data && (
+      {activePage}
+      {currentPage ? 'current page is defined' : 'current page is not defined'}
+
+      {data && currentPage && (
         <>
           <Table mb="md" withBorder highlightOnHover>
             <thead>
@@ -55,7 +76,7 @@ const ManageUserInvitesPage = () => {
               </tr>
             </thead>
             <tbody>
-              {data.pages[activePage].registrationTokens.map((token, index) => (
+              {currentPage.registrationTokens.map((token, index) => (
                 <tr key={index}>
                   <td>
                     <Text>{token.id}</Text>
@@ -68,21 +89,25 @@ const ManageUserInvitesPage = () => {
                     )}
                   </td>
                   <td>
-                    <ActionIcon onClick={() => {
-                      modals.openContextModal({
-                        modal: 'deleteRegistrationTokenModal',
-                        title: <Text weight="bold">Delete registration token</Text>,
-                        innerProps: {
-                          tokenId: token.id,
-                        }
-                      })
-                    }} color="red" variant="light">
+                    <ActionIcon
+                      onClick={() => {
+                        modals.openContextModal({
+                          modal: 'deleteRegistrationTokenModal',
+                          title: <Text weight="bold">Delete registration token</Text>,
+                          innerProps: {
+                            tokenId: token.id,
+                          },
+                        });
+                      }}
+                      color="red"
+                      variant="light"
+                    >
                       <IconTrash size="1rem" />
                     </ActionIcon>
                   </td>
                 </tr>
               ))}
-              {data.pages[activePage].registrationTokens.length === 0 && (
+              {currentPage.registrationTokens.length === 0 && (
                 <tr>
                   <td colSpan={3}>
                     <Center p="md">
@@ -94,10 +119,10 @@ const ManageUserInvitesPage = () => {
             </tbody>
           </Table>
           <Pagination
-            total={data.pages.length}
+            total={data.pages[0].countPages}
             value={activePage + 1}
-            onNextPage={fetchNextPage}
-            onPreviousPage={fetchPreviousPage}
+            onNextPage={handleFetchNextPage}
+            onPreviousPage={handleFetchPreviousPage}
           />
         </>
       )}

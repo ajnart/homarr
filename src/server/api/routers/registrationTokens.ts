@@ -26,12 +26,15 @@ export const inviteRouter = createTRPCRouter({
         nextCursor = nextItem!.id;
       }
 
+      const countRegistrationTokens = await ctx.prisma.registrationToken.count();
+
       return {
         registrationTokens: registrationTokens.map((token) => ({
           id: token.id,
           expires: token.expires,
         })),
         nextCursor,
+        countPages: Math.ceil(countRegistrationTokens / limit)
       };
     }),
   createRegistrationToken: publicProcedure
