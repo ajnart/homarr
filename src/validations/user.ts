@@ -19,6 +19,12 @@ export const signUpFormSchema = z
     path: ['passwordConfirmation'],
   });
 
+export const createNewUserSchema = z.object({
+  username: z.string(),
+  email: z.string().email().optional(),
+  password: z.string().min(8).max(100),
+});
+
 export const colorSchemeParser = z
   .enum(['light', 'dark', 'environment'])
   .default('environment')

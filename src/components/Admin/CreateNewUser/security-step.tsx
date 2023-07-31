@@ -74,5 +74,5 @@ const randomString = () => {
 };
 
 export const createAccountSecurityStepValidationSchema = z.object({
-  password: z.string().min(10).max(50),
+  password: z.string().min(8).max(100),
 });

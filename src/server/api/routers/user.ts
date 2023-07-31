@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
+  createNewUserSchema,
   signUpFormSchema,
   updateSettingsValidationSchema,
 } from '~/validations/user';
@@ -188,29 +189,21 @@ export const userRouter = createTRPCRouter({
         nextCursor,
       };
     }),
-  createUser: publicProcedure
-    .input(
-      z.object({
-        username: z.string(),
-        email: z.string().email().optional(),
-        password: z.string().min(8).max(100),
-      })
-    )
-    .mutation(async ({ ctx, input }) => {
-      const salt = bcrypt.genSaltSync(10);
-      const hashedPassword = hashPassword(input.password, salt);
-      await ctx.prisma.user.create({
-        data: {
-          name: input.username,
-          email: input.email,
-          password: hashedPassword,
-          salt: salt,
-          settings: {
-            create: {},
-          },
+  createUser: publicProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = hashPassword(input.password, salt);
+    await ctx.prisma.user.create({
+      data: {
+        name: input.username,
+        email: input.email,
+        password: hashedPassword,
+        salt: salt,
+        settings: {
+          create: {},
         },
-      });
-    }),
+      },
+    });
+  }),
 
   deleteUser: publicProcedure
     .input(
