@@ -2,7 +2,13 @@ import { Button, ButtonProps, Text, Title, Tooltip } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
-import { IconApps, IconBrandDocker, IconEditCircle, IconEditCircleOff } from '@tabler/icons-react';
+import {
+  IconApps,
+  IconBrandDocker,
+  IconEditCircle,
+  IconEditCircleOff,
+  IconSettings,
+} from '@tabler/icons-react';
 import Consola from 'consola';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useSession } from 'next-auth/react';
@@ -75,6 +81,7 @@ export const HeaderActions = () => {
     <>
       <DockerButton />
       <ToggleEditModeButton />
+      <CustomizeBoardButton />
     </>
   );
 };
@@ -86,6 +93,18 @@ const DockerButton = () => {
     <Tooltip label={t('actionIcon.tooltip')}>
       <HeaderActionButton component={Link} href="/docker">
         <IconBrandDocker size={20} stroke={1.5} />
+      </HeaderActionButton>
+    </Tooltip>
+  );
+};
+
+const CustomizeBoardButton = () => {
+  const { name } = useConfigContext();
+
+  return (
+    <Tooltip label="Customize board">
+      <HeaderActionButton component={Link} href={`/board/${name}/customize`}>
+        <IconSettings size={20} stroke={1.5} />
       </HeaderActionButton>
     </Tooltip>
   );
