@@ -13,13 +13,13 @@ export const AccessibilitySettings = () => {
       <Switch
         label={t('disablePulse.label')}
         description={t('disablePulse.description')}
-        {...form.getInputProps('disablePingPulse')}
+        {...form.getInputProps('disablePingPulse', { type: 'checkbox' })}
       />
 
       <Switch
         label={t('replaceIconsWithDots.label')}
         description={t('replaceIconsWithDots.description')}
-        {...form.getInputProps('replaceDotsWithIcons')}
+        {...form.getInputProps('replaceDotsWithIcons', { type: 'checkbox' })}
       />
 
       <Alert icon={<IconInfoCircle size="1rem" />} color="blue">
