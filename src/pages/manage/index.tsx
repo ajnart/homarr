@@ -64,7 +64,7 @@ const ManagementPage = () => {
           { maxWidth: '48rem', cols: 1, spacing: 'md' },
         ]}
       >
-        <UnstyledButton component={Link} href="/manage/dashboards">
+        <UnstyledButton component={Link} href="/manage/boards">
           <Card className={classes.quickActionCard}>
             <Group spacing={30} noWrap>
               <Stack spacing={0}>
@@ -75,7 +75,7 @@ const ManagementPage = () => {
             </Group>
           </Card>
         </UnstyledButton>
-        <UnstyledButton component={Link} href="/manage/user/invites">
+        <UnstyledButton component={Link} href="/manage/users/invites">
           <Card className={classes.quickActionCard}>
             <Group spacing={30} noWrap>
               <Stack spacing={0}>
