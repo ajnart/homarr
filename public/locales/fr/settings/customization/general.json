@@ -3,7 +3,7 @@
   "accordeon": {
     "layout": {
       "name": "Mise en page",
-      "description": "Activer et désactiver les éléments sur l'en-tête et le titre du tableau de bord"
+      "description": "Activer et désactiver les éléments d'entête et les titres du tableau du bord"
     },
     "gridstack": {
       "name": "Grille",
