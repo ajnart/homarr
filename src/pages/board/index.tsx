@@ -22,6 +22,7 @@ import { MainLayout } from '~/components/layout/main';
 import { useCardStyles } from '~/components/layout/useCardStyles';
 import { useInitConfig } from '~/config/init';
 import { useConfigContext } from '~/config/provider';
+import { env } from '~/env';
 import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
@@ -79,7 +80,7 @@ export const HeaderActions = () => {
 
   return (
     <>
-      <DockerButton />
+      {env.NEXT_PUBLIC_DOCKER_ENABLED && <DockerButton />}
       <ToggleEditModeButton />
       <CustomizeBoardButton />
     </>
