@@ -8,21 +8,14 @@ import {
   LoadingOverlay,
   Menu,
   SimpleGrid,
-  Table,
   Text,
   Title,
 } from '@mantine/core';
 import { useListState } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
-import {
-  IconDotsVertical,
-  IconFile,
-  IconFolderFilled,
-  IconPlus,
-  IconTrash,
-} from '@tabler/icons-react';
+import { IconDotsVertical, IconFolderFilled, IconPlus, IconTrash } from '@tabler/icons-react';
 import Link from 'next/link';
-import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { CommonHeader } from '~/components/layout/common-header';
 import { sleep } from '~/tools/client/time';
 import { api } from '~/utils/api';
@@ -39,7 +32,7 @@ const BoardsPage = () => {
   const [deletingDashboards, { append, filter }] = useListState<string>([]);
 
   return (
-    <MainLayout>
+    <ManageLayout>
       <CommonHeader>
         <title>Boards • Homarr</title>
       </CommonHeader>
@@ -136,7 +129,7 @@ const BoardsPage = () => {
           ))}
         </SimpleGrid>
       )}
-    </MainLayout>
+    </ManageLayout>
   );
 };
 

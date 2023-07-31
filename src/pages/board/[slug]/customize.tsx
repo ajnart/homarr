@@ -24,7 +24,7 @@ import {
   BoardCustomizationFormProvider,
   useBoardCustomizationForm,
 } from '~/components/Board/Customize/form';
-import { MainLayout } from '~/components/layout/main';
+import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';

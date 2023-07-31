@@ -14,15 +14,14 @@ import { IconPlus, IconTrash } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import Head from 'next/head';
 import { useState } from 'react';
-import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { api } from '~/utils/api';
 
 const ManageUserInvitesPage = () => {
   const [activePage, setActivePage] = useState(0);
-  const { data } =
-    api.registrationTokens.getAllInvites.useQuery({
-      page: activePage
-    });
+  const { data } = api.registrationTokens.getAllInvites.useQuery({
+    page: activePage,
+  });
 
   const { classes } = useStyles();
 
@@ -35,7 +34,7 @@ const ManageUserInvitesPage = () => {
   };
 
   return (
-    <MainLayout>
+    <ManageLayout>
       <Head>
         <title>User invites • Homarr</title>
       </Head>
@@ -133,7 +132,7 @@ const ManageUserInvitesPage = () => {
           />
         </>
       )}
-    </MainLayout>
+    </ManageLayout>
   );
 };
 

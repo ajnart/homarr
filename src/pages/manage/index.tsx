@@ -14,7 +14,7 @@ import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
 const ManagementPage = () => {
@@ -23,7 +23,7 @@ const ManagementPage = () => {
   const { data: sessionData } = useSession();
 
   return (
-    <MainLayout>
+    <ManageLayout>
       <Head>
         <title>Manage • Homarr</title>
       </Head>
@@ -98,7 +98,7 @@ const ManagementPage = () => {
           </Card>
         </UnstyledButton>
       </SimpleGrid>
-    </MainLayout>
+    </ManageLayout>
   );
 };
 

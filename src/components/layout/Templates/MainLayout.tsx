@@ -1,9 +1,7 @@
-import { AppShell, clsx, useMantineTheme } from '@mantine/core';
-import { useConfigContext } from '~/config/provider';
+import { AppShell, useMantineTheme } from '@mantine/core';
 
-import { Background } from './Background';
-import { Head } from './Meta/Head';
-import { MainHeader } from './new-header/Header';
+import { MainHeader } from '../Header/Header';
+import { Head } from '../Meta/Head';
 
 type MainLayoutProps = {
   headerActions?: React.ReactNode;
@@ -11,7 +9,6 @@ type MainLayoutProps = {
 };
 
 export const MainLayout = ({ headerActions, children }: MainLayoutProps) => {
-  const { config } = useConfigContext();
   const theme = useMantineTheme();
 
   return (
@@ -25,9 +22,7 @@ export const MainLayout = ({ headerActions, children }: MainLayoutProps) => {
       className="dashboard-app-shell"
     >
       <Head />
-      <Background />
       {children}
-      <style>{clsx(config?.settings.customization.customCss)}</style>
     </AppShell>
   );
 };

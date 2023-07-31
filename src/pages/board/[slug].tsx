@@ -2,7 +2,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { z } from 'zod';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
-import { MainLayout } from '~/components/layout/main';
+import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
 import { configExists } from '~/tools/config/configExists';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
@@ -10,17 +10,15 @@ import { getServerSideTranslations } from '~/tools/server/getServerSideTranslati
 import { dashboardNamespaces } from '~/tools/server/translation-namespaces';
 import { ConfigType } from '~/types/config';
 
-import { HeaderActions } from '.';
-
 export default function BoardPage({
   config: initialConfig,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   useInitConfig(initialConfig);
 
   return (
-    <MainLayout headerActions={<HeaderActions />}>
+    <BoardLayout>
       <Dashboard />
-    </MainLayout>
+    </BoardLayout>
   );
 }
 

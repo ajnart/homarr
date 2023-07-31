@@ -1,15 +1,4 @@
-import {
-  Alert,
-  Button,
-  Card,
-  Flex,
-  Group,
-  PasswordInput,
-  Stepper,
-  Table,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Alert, Button, Card, Flex, Group, Stepper, Table, Text, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import {
   IconArrowLeft,
@@ -33,7 +22,7 @@ import {
   CreateAccountSecurityStep,
   createAccountSecurityStepValidationSchema,
 } from '~/components/Admin/CreateNewUser/security-step';
-import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { api } from '~/utils/api';
 
 const CreateNewUserPage = () => {
@@ -70,7 +59,7 @@ const CreateNewUserPage = () => {
   });
 
   return (
-    <MainLayout>
+    <ManageLayout>
       <Head>
         <title>Create user • Homarr</title>
       </Head>
@@ -217,7 +206,7 @@ const CreateNewUserPage = () => {
           </Group>
         </Stepper.Completed>
       </Stepper>
-    </MainLayout>
+    </ManageLayout>
   );
 };
 
