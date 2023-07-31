@@ -3,17 +3,18 @@ import axios from 'axios';
 import Consola from 'consola';
 import { z } from 'zod';
 import { MovieResult } from '~/modules/overseerr/Movie';
-import { Result } from '~/modules/overseerr/SearchResult';
+import { OriginalLanguage, Result } from '~/modules/overseerr/SearchResult';
 import { TvShowResult } from '~/modules/overseerr/TvShow';
 import { getConfig } from '~/tools/config/getConfig';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const overseerrRouter = createTRPCRouter({
-  all: publicProcedure
+  search: publicProcedure
     .input(
       z.object({
         configName: z.string(),
+        integration: z.enum(['overseerr', 'jellyseerr']),
         query: z.string().or(z.undefined()),
         limit: z.number().default(10),
       })
@@ -21,9 +22,7 @@ export const overseerrRouter = createTRPCRouter({
     .query(async ({ input }) => {
       const config = getConfig(input.configName);
 
-      const app = config.apps.find(
-        (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
-      );
+      const app = config.apps.find((app) => app.integration?.type === input.integration);
 
       if (input.query === '' || input.query === undefined) {
         return [];
@@ -44,7 +43,7 @@ export const overseerrRouter = createTRPCRouter({
             'X-Api-Key': apiKey,
           },
         })
-        .then((res) => res.data as Result[]);
+        .then((res) => res.data.results as Result[]);
 
       return data.slice(0, input.limit);
     }),

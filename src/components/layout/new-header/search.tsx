@@ -1,5 +1,5 @@
-import { Autocomplete, Group, Kbd, Text, Tooltip, useMantineTheme } from '@mantine/core';
-import { useHotkeys } from '@mantine/hooks';
+import { Autocomplete, Group, Kbd, Modal, Text, Tooltip, useMantineTheme } from '@mantine/core';
+import { useDisclosure, useHotkeys } from '@mantine/hooks';
 import {
   IconBrandYoutube,
   IconDownload,
@@ -8,9 +8,12 @@ import {
   IconWorld,
   TablerIconsProps,
 } from '@tabler/icons-react';
+import { useRouter } from 'next/router';
 import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
+
+import { MovieModal } from './MovieModal';
 
 export const Search = () => {
   const [search, setSearch] = useState('');
@@ -19,6 +22,8 @@ export const Search = () => {
   const { data: userWithSettings } = api.user.getWithSettings.useQuery();
   const { config } = useConfigContext();
   const { colors } = useMantineTheme();
+  const router = useRouter();
+  const [showMovieModal, movieModal] = useDisclosure(router.query.movie === 'true');
 
   const apps = useConfigApps(search);
   const engines = generateEngines(
@@ -31,47 +36,61 @@ export const Search = () => {
   const data = [...engines, ...apps];
 
   return (
-    <Autocomplete
-      ref={ref}
-      radius="xl"
-      w={400}
-      variant="filled"
-      placeholder="Search..."
-      hoverOnSearchChange
-      autoFocus={typeof window !== 'undefined' && window.innerWidth > 768}
-      rightSection={
-        <IconSearch
-          onClick={() => ref.current?.focus()}
-          color={colors.gray[5]}
-          size={16}
-          stroke={1.5}
-        />
-      }
-      limit={8}
-      value={search}
-      onChange={setSearch}
-      data={data}
-      itemComponent={SearchItemComponent}
-      filter={(value, item: SearchAutoCompleteItem) =>
-        engines.some((engine) => engine.sort === item.sort) ||
-        item.value.toLowerCase().includes(value.trim().toLowerCase())
-      }
-      classNames={{
-        input: 'dashboard-header-search-input',
-        root: 'dashboard-header-search-root',
-      }}
-      onItemSubmit={(item: SearchAutoCompleteItem) => {
-        setSearch('');
-        if (item.sort === 'movie') {
-          // TODO: show movie modal
-          console.log('movie');
-          return;
+    <>
+      <Autocomplete
+        ref={ref}
+        radius="xl"
+        w={400}
+        variant="filled"
+        placeholder="Search..."
+        hoverOnSearchChange
+        autoFocus={typeof window !== 'undefined' && window.innerWidth > 768}
+        rightSection={
+          <IconSearch
+            onClick={() => ref.current?.focus()}
+            color={colors.gray[5]}
+            size={16}
+            stroke={1.5}
+          />
         }
-        const target = userWithSettings?.settings.openSearchInNewTab ? '_blank' : '_self';
-        window.open(item.metaData.url, target);
-      }}
-      aria-label="Search"
-    />
+        limit={8}
+        value={search}
+        onChange={setSearch}
+        data={data}
+        itemComponent={SearchItemComponent}
+        filter={(value, item: SearchAutoCompleteItem) =>
+          engines.some((engine) => engine.sort === item.sort) ||
+          item.value.toLowerCase().includes(value.trim().toLowerCase())
+        }
+        classNames={{
+          input: 'dashboard-header-search-input',
+          root: 'dashboard-header-search-root',
+        }}
+        onItemSubmit={(item: SearchAutoCompleteItem) => {
+          setSearch('');
+          if (item.sort === 'movie') {
+            // TODO: show movie modal
+            const url = new URL(`${window.location.origin}${router.asPath}`);
+            url.searchParams.set('movie', 'true');
+            url.searchParams.set('search', search);
+            url.searchParams.set('type', item.value);
+            router.push(url, undefined, { shallow: true });
+            movieModal.open();
+            return;
+          }
+          const target = userWithSettings?.settings.openSearchInNewTab ? '_blank' : '_self';
+          window.open(item.metaData.url, target);
+        }}
+        aria-label="Search"
+      />
+      <MovieModal
+        opened={showMovieModal}
+        closeModal={() => {
+          movieModal.close();
+          router.push(router.pathname, undefined, { shallow: true });
+        }}
+      />
+    </>
   );
 };
 

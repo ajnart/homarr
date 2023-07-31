@@ -301,12 +301,13 @@ const getOpenTarget = (config: ConfigType | undefined): '_blank' | '_self' => {
   return config.settings.common.searchEngine.properties.openInNewTab ? '_blank' : '_self';
 };
 
-const useOverseerrSearchQuery = (query: string, isEnabled: boolean) => {
+export const useOverseerrSearchQuery = (query: string, isEnabled: boolean) => {
   const { name: configName } = useConfigContext();
-  return api.overseerr.all.useQuery(
+  return api.overseerr.search.useQuery(
     {
       query,
       configName: configName!,
+      integration: 'overseerr',
     },
     {
       enabled: isEnabled,
