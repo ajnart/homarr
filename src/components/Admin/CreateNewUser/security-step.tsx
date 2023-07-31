@@ -1,6 +1,6 @@
 import { Button, Card, Flex, Group, PasswordInput } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
-import { IconArrowLeft, IconArrowRight, IconPassword } from '@tabler/icons-react';
+import { IconArrowLeft, IconArrowRight, IconDice, IconKey } from '@tabler/icons-react';
 import { z } from 'zod';
 
 interface CreateAccountSecurityStepProps {
@@ -23,22 +23,25 @@ export const CreateAccountSecurityStep = ({
 
   return (
     <Card mih={400}>
-      <Flex columnGap={10}>
+      <Flex columnGap={10} align="start">
         <PasswordInput
-          icon={<IconPassword size="0.8rem" />}
+          icon={<IconKey size="0.8rem" />}
+          style={{
+            flexGrow: 1,
+          }}
           label="Password"
           variant="filled"
           mb="md"
           withAsterisk
-          style={{
-            flexGrow: 1,
-          }}
           {...form.getInputProps('password')}
         />
         <Button
+          leftIcon={<IconDice size="1rem" />}
           onClick={() => {
             form.setFieldValue('password', randomString());
           }}
+          variant="default"
+          mt="xl"
         >
           Generate random
         </Button>
