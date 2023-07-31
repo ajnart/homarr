@@ -14,7 +14,13 @@ import {
 } from '@mantine/core';
 import { useListState } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
-import { IconDotsVertical, IconPlus, IconTrash } from '@tabler/icons-react';
+import {
+  IconDotsVertical,
+  IconFile,
+  IconFolderFilled,
+  IconPlus,
+  IconTrash,
+} from '@tabler/icons-react';
 import Link from 'next/link';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { CommonHeader } from '~/components/layout/common-header';
@@ -45,14 +51,14 @@ const BoardsPage = () => {
           onClick={() => {
             modals.openContextModal({
               modal: 'createDashboardModal',
-              title: <Text>Create new dashboard</Text>,
+              title: <Text>Create new board</Text>,
               innerProps: {},
             });
           }}
           leftIcon={<IconPlus size="1rem" />}
           variant="default"
         >
-          Create new dashboard
+          Create new board
         </Button>
       </Flex>
 
@@ -68,9 +74,13 @@ const BoardsPage = () => {
           {data.map((board, index) => (
             <Card key={index} shadow="sm" padding="lg" radius="md" pos="relative" withBorder>
               <LoadingOverlay visible={deletingDashboards.includes(board)} />
-              <Group position="apart" mb="xs">
-                <Text weight={500}>{board}</Text>
-                <Badge color="pink" variant="light">
+
+              <Text weight={500} mb="xs">
+                {board}
+              </Text>
+
+              <Group mb="xl">
+                <Badge leftSection={<IconFolderFilled size=".7rem" />} color="pink" variant="light">
                   Filesystem
                 </Badge>
               </Group>
@@ -100,14 +110,18 @@ const BoardsPage = () => {
                   <Menu.Dropdown>
                     <Menu.Item
                       onClick={async () => {
-                        append(board);
-                        // give user feedback, that it's being deleted
-                        await sleep(500);
-                        deletionMutationAsync({
-                          name: board,
-                        }).finally(async () => {
-                          await sleep(500);
-                          filter((item, _) => item !== board);
+                        modals.openContextModal({
+                          modal: 'deleteBoardModal',
+                          title: <Text weight={500}>Delete board</Text>,
+                          innerProps: {
+                            boardName: board,
+                            onConfirm: async () => {
+                              append(board);
+                              // give user feedback, that it's being deleted
+                              await sleep(500);
+                              filter((item, _) => item !== board);
+                            },
+                          },
                         });
                       }}
                       icon={<IconTrash size="1rem" />}
