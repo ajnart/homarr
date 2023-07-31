@@ -15,7 +15,11 @@ import { api } from '~/utils/api';
 
 import { MovieModal } from './MovieModal';
 
-export const Search = () => {
+type SearchProps = {
+  isMobile?: boolean;
+};
+
+export const Search = ({ isMobile }: SearchProps) => {
   const [search, setSearch] = useState('');
   const ref = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => ref.current?.focus()]]);
@@ -40,7 +44,7 @@ export const Search = () => {
       <Autocomplete
         ref={ref}
         radius="xl"
-        w={400}
+        w={isMobile ? '100%' : 400}
         variant="filled"
         placeholder="Search..."
         hoverOnSearchChange

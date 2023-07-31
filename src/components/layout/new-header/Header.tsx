@@ -1,4 +1,13 @@
-import { Box, Flex, Group, Header, Text, UnstyledButton, useMantineTheme } from '@mantine/core';
+import {
+  Box,
+  Center,
+  Flex,
+  Group,
+  Header,
+  Text,
+  UnstyledButton,
+  useMantineTheme,
+} from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertTriangle } from '@tabler/icons-react';
 import Link from 'next/link';
@@ -24,7 +33,10 @@ export const MainHeader = ({
   const { breakpoints } = useMantineTheme();
   const isSmallerThanMd = useMediaQuery(`(max-width: ${breakpoints.sm})`);
   const experimentalHeaderNoteHeight = isSmallerThanMd ? 50 : 30;
-  const headerHeight = showExperimental ? 60 + experimentalHeaderNoteHeight : 60;
+  const headerBaseHeight = isSmallerThanMd ? 60 + 46 : 60;
+  const headerHeight = showExperimental
+    ? headerBaseHeight + experimentalHeaderNoteHeight
+    : headerBaseHeight;
 
   return (
     <Header height={headerHeight} pb="sm" pt={0}>
@@ -37,7 +49,7 @@ export const MainHeader = ({
           </UnstyledButton>
         </Group>
 
-        <Search />
+        {!isSmallerThanMd && <Search />}
 
         <Group noWrap style={{ flex: 1 }} position="right">
           <Group noWrap spacing={8}>
@@ -46,6 +58,12 @@ export const MainHeader = ({
           <AvatarMenu />
         </Group>
       </Group>
+
+      {isSmallerThanMd && (
+        <Center mt="xs" px="md">
+          <Search isMobile />
+        </Center>
+      )}
     </Header>
   );
 };
