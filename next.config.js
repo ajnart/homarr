@@ -13,4 +13,11 @@ module.exports = withBundleAnalyzer({
   output: 'standalone',
   i18n,
   transpilePackages: ['@jellyfin/sdk'],
+  redirects: async () => [
+    {
+      source: '/',
+      destination: '/board',
+      permanent: false,
+    },
+  ],
 });
