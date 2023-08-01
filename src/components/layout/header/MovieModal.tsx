@@ -1,7 +1,9 @@
 import {
   Button,
+  Card,
   Center,
   Divider,
+  Grid,
   Group,
   Loader,
   Image as MantineImage,
@@ -50,7 +52,7 @@ export const MovieModal = ({ opened, closeModal }: MovieModalProps) => {
     <Modal
       opened={opened}
       onClose={closeModal}
-      size="lg"
+      size="100%"
       scrollAreaComponent={ScrollArea.Autosize}
       title={
         <Group>
@@ -73,6 +75,7 @@ const MovieResults = ({ search, type }: MovieResultsProps) => {
       query: search,
       configName: configName!,
       integration: type,
+      limit: 12,
     },
     {
       refetchOnWindowFocus: false,
@@ -93,14 +96,13 @@ const MovieResults = ({ search, type }: MovieResultsProps) => {
       <Text>
         Top {overseerrResults?.length} results for <b>{search}</b>
       </Text>
-      <Stack spacing="xs">
+      <Grid gutter={32}>
         {overseerrResults?.map((result, index: number) => (
-          <React.Fragment key={index}>
+          <Grid.Col key={index} span={12} sm={6} lg={4}>
             <MovieDisplay movie={result} type={type} />
-            {index < overseerrResults.length - 1 && <Divider variant="dashed" my="xs" />}
-          </React.Fragment>
+          </Grid.Col>
         ))}
-      </Stack>
+      </Grid>
     </Stack>
   );
 };
@@ -125,72 +127,75 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
   const serviceUrl = service?.behaviour.externalUrl ? service.behaviour.externalUrl : service?.url;
 
   return (
-    <Group noWrap style={{ maxHeight: 250 }} p={0} m={0} spacing="xs" align="stretch">
-      <MantineImage
-        withPlaceholder
-        src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${
-          movie.posterPath ?? movie.backdropPath
-        }`}
-        height={200}
-        width={150}
-        radius="md"
-        fit="cover"
-      />
-      <Stack justify="space-between">
-        <Stack spacing={4}>
-          <Title lineClamp={2} order={5}>
-            {movie.title ?? movie.name ?? movie.originalName}
-          </Title>
-          <Text color="dimmed" size="xs" lineClamp={4}>
-            {movie.overview}
-          </Text>
-        </Stack>
-        <Group spacing="xs">
-          {!movie.mediaInfo?.mediaAddedAt && (
-            <>
-              <RequestModal
-                base={movie}
-                opened={requestModalOpened}
-                setOpened={requestModal.toggle}
-              />
+    <Card withBorder>
+      <Group noWrap style={{ maxHeight: 250 }} p={0} m={0} spacing="xs" align="stretch">
+        <MantineImage
+          withPlaceholder
+          src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${
+            movie.posterPath ?? movie.backdropPath
+          }`}
+          height={200}
+          width={150}
+          radius="md"
+          fit="cover"
+        />
+        <Stack justify="space-between">
+          <Stack spacing={4}>
+            <Title lineClamp={2} order={5}>
+              {movie.title ?? movie.name ?? movie.originalName}
+            </Title>
+            <Text color="dimmed" size="xs" lineClamp={4}>
+              {movie.overview}
+            </Text>
+          </Stack>
+
+          <Group spacing="xs">
+            {!movie.mediaInfo?.mediaAddedAt && (
+              <>
+                <RequestModal
+                  base={movie}
+                  opened={requestModalOpened}
+                  setOpened={requestModal.toggle}
+                />
+                <Button
+                  onClick={() => {
+                    requestModal.open();
+                  }}
+                  variant="light"
+                  size="sm"
+                  rightIcon={<IconDownload size={15} />}
+                >
+                  {t('buttons.request')}
+                </Button>
+              </>
+            )}
+            {mediaUrl && (
               <Button
-                onClick={() => {
-                  requestModal.open();
-                }}
+                component="a"
+                target="_blank"
                 variant="light"
+                href={mediaUrl}
                 size="sm"
-                rightIcon={<IconDownload size={15} />}
+                rightIcon={<IconPlayerPlay size={15} />}
               >
-                {t('buttons.request')}
+                {t('buttons.play')}
               </Button>
-            </>
-          )}
-          {mediaUrl && (
-            <Button
-              component="a"
-              target="_blank"
-              variant="outline"
-              href={mediaUrl}
-              size="sm"
-              rightIcon={<IconPlayerPlay size={15} />}
-            >
-              {t('buttons.play')}
-            </Button>
-          )}
-          {serviceUrl && (
-            <Button
-              component="a"
-              target="_blank"
-              href={serviceUrl}
-              variant="outline"
-              size="sm"
-              rightIcon={<IconExternalLink size={15} />}
-            >
-              TMDb
-            </Button>
-          )}
-        </Group>
-      </Stack>
-    </Group>
+            )}
+            {serviceUrl && (
+              <Button
+                component="a"
+                target="_blank"
+                href={serviceUrl}
+                variant="outline"
+                size="sm"
+                rightIcon={<IconExternalLink size={15} />}
+              >
+                TMDb
+              </Button>
+            )}
+          </Group>
+        </Stack>
+      </Group>
+    </Card>
   );
 };
