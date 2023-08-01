@@ -1,10 +1,9 @@
-import { Alert, Stack, Switch } from '@mantine/core';
-import { IconInfoCircle } from '@tabler/icons-react';
+import { Stack, Switch } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from '~/pages/user/preferences';
 
 export const AccessibilitySettings = () => {
-  const { t } = useTranslation('settings/customization/accessibility');
+  const { t } = useTranslation('user/preferences');
 
   const form = useFormContext();
 
@@ -21,10 +20,6 @@ export const AccessibilitySettings = () => {
         description={t('replaceIconsWithDots.description')}
         {...form.getInputProps('replaceDotsWithIcons', { type: 'checkbox' })}
       />
-
-      <Alert icon={<IconInfoCircle size="1rem" />} color="blue">
-        {t('alert')}
-      </Alert>
     </Stack>
   );
 };

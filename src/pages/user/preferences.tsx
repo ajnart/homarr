@@ -3,12 +3,14 @@ import { createFormContext } from '@mantine/form';
 import type { InferGetServerSidePropsType } from 'next';
 import { GetServerSidePropsContext } from 'next';
 import { forwardRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { AccessibilitySettings } from '~/components/Settings/Customization/Accessibility/AccessibilitySettings';
 import { MainLayout } from '~/components/layout/admin/main-admin.layout';
 import { CommonHeader } from '~/components/layout/common-header';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { RouterOutputs, api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { updateSettingsValidationSchema } from '~/validations/user';
@@ -44,6 +46,8 @@ const SettingsComponent = ({
     country: language.country,
   }));
 
+  const { t } = useTranslation('user/preferences');
+
   const { i18nZodResolver } = useI18nZodResolver();
 
   const form = useForm({
@@ -68,7 +72,7 @@ const SettingsComponent = ({
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack spacing={5}>
           <Title order={2} size="lg">
-            Localization
+            {t('localization.language.label')}
           </Title>
 
           <Select
@@ -88,7 +92,7 @@ const SettingsComponent = ({
           />
 
           <Select
-            label="First day of the week"
+            label={t('localization.firstDayOfWeek.label')}
             data={[
               { value: 'monday', label: 'Monday' },
               { value: 'sunday', label: 'Sunday' },
@@ -136,7 +140,7 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
 );
 
 export async function getServerSideProps({ req, res, locale }: GetServerSidePropsContext) {
-  const translations = await getServerSideTranslations([], locale, undefined, undefined);
+  const translations = await getServerSideTranslations(manageNamespaces, locale, undefined, undefined);
   return {
     props: {
       ...translations,

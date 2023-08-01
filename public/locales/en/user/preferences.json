@@ -1,0 +1,20 @@
+{
+    "accessibility": {
+        "disablePulse": {
+            "label": "Disable ping pulse",
+            "description": "By default, ping indicators in Homarr will pulse. This may be irritating. This slider will deactivate the animation"
+        },
+        "replaceIconsWithDots": {
+            "label": "Replace ping dots with icons",
+            "description": "For colorblind users, ping dots may be unrecognizable. This will replace indicators with icons"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Language"
+        },
+        "firstDayOfWeek": {
+            "label": "First day of the week"
+        }
+    }
+}
