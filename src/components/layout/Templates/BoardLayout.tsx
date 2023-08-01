@@ -67,6 +67,7 @@ const DockerButton = () => {
 
 const CustomizeBoardButton = () => {
   const { name } = useConfigContext();
+  console.log('name', name);
 
   return (
     <Tooltip label="Customize board">

@@ -34,11 +34,39 @@ const queryParamsSchema = z.object({
   type: z.enum(['jellyseerr', 'overseerr']),
 });
 
-type MovieResultsProps = z.infer<typeof queryParamsSchema> & {
-  closeModal: () => void;
+export const MovieModal = ({ opened, closeModal }: MovieModalProps) => {
+  const query = useRouter().query;
+  const queryParams = queryParamsSchema.safeParse(query);
+
+  if (!queryParams.success) {
+    return null;
+  }
+
+  const integration = useMemo(() => {
+    return availableIntegrations.find((x) => x.value === queryParams.data.type)!;
+  }, [queryParams.data.type]);
+
+  return (
+    <Modal
+      opened={opened}
+      onClose={closeModal}
+      size="lg"
+      scrollAreaComponent={ScrollArea.Autosize}
+      title={
+        <Group>
+          <Image src={integration.image} width={30} height={30} alt={`${integration.label} icon`} />
+          <Title order={4}>{integration.label} movies</Title>
+        </Group>
+      }
+    >
+      <MovieResults search={queryParams.data.search} type={queryParams.data.type} />
+    </Modal>
+  );
 };
 
-const MovieResults = ({ search, type, closeModal }: MovieResultsProps) => {
+type MovieResultsProps = Omit<z.infer<typeof queryParamsSchema>, 'movie'>;
+
+const MovieResults = ({ search, type }: MovieResultsProps) => {
   const { name: configName } = useConfigContext();
   const { data: overseerrResults, isLoading } = api.overseerr.search.useQuery(
     {
@@ -68,7 +96,7 @@ const MovieResults = ({ search, type, closeModal }: MovieResultsProps) => {
       <Stack spacing="xs">
         {overseerrResults?.map((result, index: number) => (
           <React.Fragment key={index}>
-            <MovieDisplay movie={result} type={type} closeModal={closeModal} />
+            <MovieDisplay movie={result} type={type} />
             {index < overseerrResults.length - 1 && <Divider variant="dashed" my="xs" />}
           </React.Fragment>
         ))}
@@ -77,48 +105,12 @@ const MovieResults = ({ search, type, closeModal }: MovieResultsProps) => {
   );
 };
 
-export const MovieModal = ({ opened, closeModal }: MovieModalProps) => {
-  const query = useRouter().query;
-  const queryParams = queryParamsSchema.safeParse(query);
-
-  if (!queryParams.success) {
-    return null;
-  }
-
-  const integration = useMemo(() => {
-    return availableIntegrations.find((x) => x.value === queryParams.data.type)!;
-  }, [queryParams.data.type]);
-
-  return (
-    <Modal
-      opened={opened}
-      onClose={closeModal}
-      size="lg"
-      scrollAreaComponent={ScrollArea.Autosize}
-      title={
-        <Group>
-          <Image src={integration.image} width={30} height={30} alt={`${integration.label} icon`} />
-          <Title order={4}>{integration.label} movies</Title>
-        </Group>
-      }
-    >
-      <MovieResults
-        movie={queryParams.data.movie}
-        search={queryParams.data.search}
-        type={queryParams.data.type}
-        closeModal={closeModal}
-      />
-    </Modal>
-  );
-};
-
 type MovieDisplayProps = {
   movie: RouterOutputs['overseerr']['search'][number];
   type: 'jellyseerr' | 'overseerr';
-  closeModal: () => void;
 };
 
-const MovieDisplay = ({ movie, type, closeModal }: MovieDisplayProps) => {
+const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
   const { t } = useTranslation('modules/common-media-cards');
   const { config } = useConfigContext();
   const [requestModalOpened, requestModal] = useDisclosure(false);

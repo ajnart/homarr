@@ -73,7 +73,6 @@ export const Search = ({ isMobile }: SearchProps) => {
         onItemSubmit={(item: SearchAutoCompleteItem) => {
           setSearch('');
           if (item.sort === 'movie') {
-            // TODO: show movie modal
             const url = new URL(`${window.location.origin}${router.asPath}`);
             url.searchParams.set('movie', 'true');
             url.searchParams.set('search', search);
@@ -91,7 +90,11 @@ export const Search = ({ isMobile }: SearchProps) => {
         opened={showMovieModal}
         closeModal={() => {
           movieModal.close();
-          router.push(router.pathname, undefined, { shallow: true });
+          const url = new URL(`${window.location.origin}${router.asPath}`);
+          url.searchParams.delete('movie');
+          url.searchParams.delete('search');
+          url.searchParams.delete('type');
+          router.push(url, undefined, { shallow: true });
         }}
       />
     </>
