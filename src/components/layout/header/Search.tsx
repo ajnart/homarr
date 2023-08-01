@@ -8,6 +8,7 @@ import {
   IconWorld,
   TablerIconsProps,
 } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { ReactNode, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { useConfigContext } from '~/config/provider';
@@ -23,7 +24,10 @@ export const Search = ({ isMobile }: SearchProps) => {
   const [search, setSearch] = useState('');
   const ref = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => ref.current?.focus()]]);
-  const { data: userWithSettings } = api.user.withSettings.useQuery();
+  const { data: sessionData } = useSession();
+  const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
+    enabled: !!sessionData?.user,
+  });
   const { config } = useConfigContext();
   const { colors } = useMantineTheme();
   const router = useRouter();
