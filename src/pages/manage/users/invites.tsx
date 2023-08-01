@@ -13,6 +13,7 @@ import { modals } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { api } from '~/utils/api';
@@ -22,6 +23,7 @@ const ManageUserInvitesPage = () => {
   const { data } = api.invites.all.useQuery({
     page: activePage,
   });
+  const router = useRouter();
 
   const { classes } = useStyles();
 

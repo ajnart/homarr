@@ -1,12 +1,14 @@
-import { Button, Mark, Stack, Text } from '@mantine/core';
+import { Button, CopyButton, Mark, Stack, Text } from '@mantine/core';
 import { ContextModalProps, modals } from '@mantine/modals';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export const CopyInviteModal = ({
-  context,
   id,
   innerProps,
 }: ContextModalProps<{ id: string; token: string; expire: Date }>) => {
+  const inviteUrl = useInviteUrl(innerProps.id, innerProps.token);
+
   return (
     <Stack>
       <Text>
@@ -29,15 +31,26 @@ export const CopyInviteModal = ({
         </Mark>
       </Stack>
 
-      <Button
-        onClick={() => {
-          modals.close(id);
-        }}
-        variant="default"
-        fullWidth
-      >
-        Cancel
-      </Button>
+      <CopyButton value={inviteUrl}>
+        {({ copy }) => (
+          <Button
+            onClick={() => {
+              copy();
+              modals.close(id);
+            }}
+            variant="default"
+            fullWidth
+          >
+            Copy & Dismiss
+          </Button>
+        )}
+      </CopyButton>
     </Stack>
   );
+};
+
+const useInviteUrl = (id: string, token: string) => {
+  const router = useRouter();
+
+  return `${window.location.href.replace(router.pathname, `/auth/invite/${id}?token=${token}`)}`;
 };
