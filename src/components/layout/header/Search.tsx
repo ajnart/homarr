@@ -37,7 +37,7 @@ export const Search = ({ isMobile }: SearchProps) => {
     (engine) =>
       engine.sort !== 'movie' || config?.apps.some((app) => app.integration.type === engine.value)
   );
-  const data = [...engines, ...apps];
+  const data = [...apps, ...engines];
 
   return (
     <>

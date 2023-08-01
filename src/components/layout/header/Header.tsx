@@ -15,7 +15,7 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
 import { Logo } from '../Logo';
 import { AvatarMenu } from './AvatarMenu';
-import { Search } from './search';
+import { Search } from './Search';
 
 type MainHeaderProps = {
   logoHref?: string;
