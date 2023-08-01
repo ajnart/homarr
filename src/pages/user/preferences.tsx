@@ -93,6 +93,7 @@ const SettingsComponent = ({
 
           <Select
             label={t('localization.firstDayOfWeek.label')}
+            //TODO: Make it use the configured value
             data={[
               { value: 'monday', label: 'Monday' },
               { value: 'sunday', label: 'Sunday' },
