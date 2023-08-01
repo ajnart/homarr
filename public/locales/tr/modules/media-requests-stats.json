@@ -5,7 +5,7 @@
     "settings": {
       "title": "Medya talep istatistikleri",
       "direction": {
-        "label": ""
+        "label": "Yerleşimin yönü."
       }
     }
   },
