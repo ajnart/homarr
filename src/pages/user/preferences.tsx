@@ -17,6 +17,7 @@ import { updateSettingsValidationSchema } from '~/validations/user';
 
 const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const { data } = api.user.withSettings.useQuery();
+  const { data: boardsData } = api.boards.all.useQuery();
 
   return (
     <ManageLayout>
@@ -25,7 +26,7 @@ const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServe
       </Head>
       <Title mb="xl">Preferences</Title>
 
-      {data && <SettingsComponent settings={data.settings} />}
+      {data && boardsData && <SettingsComponent settings={data.settings} boardsData={boardsData} />}
     </ManageLayout>
   );
 };
@@ -35,8 +36,10 @@ export const [FormProvider, useFormContext, useForm] =
 
 const SettingsComponent = ({
   settings,
+  boardsData,
 }: {
   settings: RouterOutputs['user']['withSettings']['settings'];
+  boardsData: RouterOutputs['boards']['all'];
 }) => {
   const languagesData = languages.map((language) => ({
     image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',
@@ -55,6 +58,7 @@ const SettingsComponent = ({
       disablePingPulse: settings.disablePingPulse,
       replaceDotsWithIcons: settings.replacePingWithIcons,
       language: settings.language,
+      defaultBoard: settings.defaultBoard,
     },
     validate: i18nZodResolver(updateSettingsValidationSchema),
     validateInputOnBlur: true,
@@ -72,6 +76,21 @@ const SettingsComponent = ({
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack spacing={5}>
           <Title order={2} size="lg">
+            {t('boards.title')}
+          </Title>
+
+          <Select
+            label={t('boards.defaultBoard.label')}
+            data={boardsData.map((board) => board.name)}
+            searchable
+            maxDropdownHeight={400}
+            filter={(value, item) => item.label!.toLowerCase().includes(value.toLowerCase().trim())}
+            withAsterisk
+            mb="xs"
+            {...form.getInputProps('defaultBoard')}
+          />
+
+          <Title order={2} size="lg" mt="lg">
             {t('localization.language.label')}
           </Title>
 

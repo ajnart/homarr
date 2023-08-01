@@ -44,4 +44,5 @@ export const updateSettingsValidationSchema = z.object({
   disablePingPulse: z.boolean(),
   replaceDotsWithIcons: z.boolean(),
   language: z.string(),
+  defaultBoard: z.string()
 });

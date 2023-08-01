@@ -1,4 +1,10 @@
 {
+    "boards": {
+        "title": "Boards",
+        "defaultBoard": {
+            "label": "Default board"
+        }
+    },
     "accessibility": {
         "disablePulse": {
             "label": "Disable ping pulse",
