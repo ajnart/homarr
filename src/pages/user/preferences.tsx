@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { AccessibilitySettings } from '~/components/Settings/Customization/Accessibility/AccessibilitySettings';
-import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { CommonHeader } from '~/components/layout/common-header';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -19,14 +19,14 @@ const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServe
   const { data } = api.user.getWithSettings.useQuery();
 
   return (
-    <MainLayout>
+    <ManageLayout>
       <CommonHeader>
         <title>Preferences • Homarr</title>
       </CommonHeader>
       <Title mb="xl">Preferences</Title>
 
       {data && <SettingsComponent settings={data.settings} />}
-    </MainLayout>
+    </ManageLayout>
   );
 };
 
@@ -82,7 +82,7 @@ const SettingsComponent = ({
             searchable
             maxDropdownHeight={400}
             filter={(value, item) =>
-              item.label.toLowerCase().includes(value.toLowerCase().trim()) ||
+              item.label!.toLowerCase().includes(value.toLowerCase().trim()) ||
               item.description.toLowerCase().includes(value.toLowerCase().trim())
             }
             defaultValue={settings.language}

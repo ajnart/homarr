@@ -2,7 +2,7 @@ import { Stack } from '@mantine/core';
 import { ContainerInfo } from 'dockerode';
 import { GetServerSideProps } from 'next';
 import { useState } from 'react';
-import { MainLayout } from '~/components/layout/main';
+import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { env } from '~/env';
 import ContainerActionBar from '~/modules/Docker/ContainerActionBar';
 import DockerTable from '~/modules/Docker/DockerTable';

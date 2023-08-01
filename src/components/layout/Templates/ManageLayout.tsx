@@ -1,61 +1,45 @@
 import {
   AppShell,
-  Avatar,
-  Box,
   Burger,
   Drawer,
   Flex,
   Footer,
   Group,
-  Header,
-  Menu,
   NavLink,
   Navbar,
   Paper,
   Text,
-  TextInput,
   ThemeIcon,
-  UnstyledButton,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
-  IconAlertTriangle,
   IconBook2,
   IconBrandDiscord,
   IconBrandGithub,
-  IconDashboard,
   IconGitFork,
   IconHome,
   IconLayoutDashboard,
-  IconLogout,
   IconMailForward,
   IconQuestionMark,
   IconSettings2,
-  IconSun,
   IconUser,
-  IconUserSearch,
   IconUsers,
 } from '@tabler/icons-react';
-import { signOut } from 'next-auth/react';
-import { useTranslation } from 'next-i18next';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
-import { Logo } from '../Logo';
+import { MainHeader } from '../Header/Header';
 import { CommonHeader } from '../common-header';
-import { MainHeader } from '../new-header/Header';
 
-interface MainLayoutProps {
+interface ManageLayoutProps {
   children: ReactNode;
 }
 
-export const MainLayout = ({ children }: MainLayoutProps) => {
-  const { t } = useTranslation();
+export const ManageLayout = ({ children }: ManageLayoutProps) => {
   const { attributes } = usePackageAttributesStore();
   const theme = useMantineTheme();
 
@@ -153,7 +137,9 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
     </>
   );
 
-  const burgerMenu = screenLargerThanMd ? undefined : <Burger opened={burgerMenuOpen} onClick={toggleBurgerMenu} />;
+  const burgerMenu = screenLargerThanMd ? undefined : (
+    <Burger opened={burgerMenuOpen} onClick={toggleBurgerMenu} />
+  );
 
   return (
     <>
@@ -171,13 +157,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
             </Navbar.Section>
           </Navbar>
         }
-        header={
-          <MainHeader
-            showExperimental
-            logoHref="/manage"
-            leftIcon={burgerMenu}
-          />
-        }
+        header={<MainHeader showExperimental logoHref="/manage" leftIcon={burgerMenu} />}
         footer={
           <Footer height={25}>
             <Group position="apart" px="md">

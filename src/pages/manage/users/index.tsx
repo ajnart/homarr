@@ -7,7 +7,6 @@ import {
   Flex,
   Group,
   Pagination,
-  SegmentedControl,
   Table,
   Text,
   Title,
@@ -18,7 +17,7 @@ import { IconPlus, IconTrash } from '@tabler/icons-react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import { MainLayout } from '~/components/layout/admin/main-admin.layout';
+import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { api } from '~/utils/api';
 
 const ManageUsersPage = () => {
@@ -31,7 +30,7 @@ const ManageUsersPage = () => {
   });
 
   return (
-    <MainLayout>
+    <ManageLayout>
       <Head>
         <title>Users • Homarr</title>
       </Head>
@@ -107,7 +106,9 @@ const ManageUsersPage = () => {
                 <tr>
                   <td colSpan={1}>
                     <Box p={15}>
-                      <Text>Your search does not match any entries. Please adjust your filter.</Text>
+                      <Text>
+                        Your search does not match any entries. Please adjust your filter.
+                      </Text>
                     </Box>
                   </td>
                 </tr>
@@ -129,7 +130,7 @@ const ManageUsersPage = () => {
           />
         </>
       )}
-    </MainLayout>
+    </ManageLayout>
   );
 };
 
