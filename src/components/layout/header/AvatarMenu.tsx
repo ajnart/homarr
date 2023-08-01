@@ -31,7 +31,7 @@ export const AvatarMenu = () => {
   return (
     <>
       <UnstyledButton>
-        <Menu width={192}>
+        <Menu width={256}>
           <Menu.Target>
             <CurrentUserAvatar user={sessionData?.user ?? null} />
           </Menu.Target>
@@ -69,7 +69,7 @@ export const AvatarMenu = () => {
             </Menu.Item>
             {sessionData?.user ? (
               <Menu.Item icon={<IconLogout size="1rem" />} color="red" onClick={() => signOut()}>
-                Logout
+                Logout from {sessionData.user.name}
               </Menu.Item>
             ) : (
               <Menu.Item icon={<IconLogin size="1rem" />} component={Link} href="/auth/login">
