@@ -10,7 +10,7 @@ export const DeleteUserModal = ({
   const apiContext = api.useContext();
   const { isLoading, mutateAsync } = api.user.deleteUser.useMutation({
     onSuccess: async () => {
-      await apiContext.user.getAll.invalidate();
+      await apiContext.user.all.invalidate();
       modals.close(id);
     },
   });

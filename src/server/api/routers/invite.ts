@@ -2,34 +2,42 @@ import { randomBytes } from 'crypto';
 import dayjs from 'dayjs';
 import { z } from 'zod';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const inviteRouter = createTRPCRouter({
-  getAllInvites: publicProcedure
+  all: adminProcedure
     .input(
       z.object({
         limit: z.number().min(1).max(100).nullish().default(10),
-        page: z.number().min(0)
+        page: z.number().min(0),
       })
     )
     .query(async ({ ctx, input }) => {
       const limit = input.limit ?? 50;
-      const registrationTokens = await ctx.prisma.registrationToken.findMany({
+      const invites = await ctx.prisma.invite.findMany({
         take: limit,
         skip: limit * input.page,
+        include: {
+          createdBy: {
+            select: {
+              name: true,
+            },
+          },
+        },
       });
 
-      const countRegistrationTokens = await ctx.prisma.registrationToken.count();
+      const inviteCount = await ctx.prisma.invite.count();
 
       return {
-        registrationTokens: registrationTokens.map((token) => ({
+        invites: invites.map((token) => ({
           id: token.id,
           expires: token.expires,
+          creator: token.createdBy.name,
         })),
-        countPages: Math.ceil(countRegistrationTokens / limit)
+        countPages: Math.ceil(inviteCount / limit),
       };
     }),
-  createRegistrationToken: publicProcedure
+  create: adminProcedure
     .input(
       z.object({
         expiration: z
@@ -39,9 +47,10 @@ export const inviteRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      const token = await ctx.prisma.registrationToken.create({
+      const token = await ctx.prisma.invite.create({
         data: {
           expires: input.expiration,
+          createdById: ctx.session.user.id,
           token: randomBytes(20).toString('hex'),
         },
       });
@@ -52,10 +61,10 @@ export const inviteRouter = createTRPCRouter({
         expires: token.expires,
       };
     }),
-  deleteRegistrationToken: publicProcedure
+  delete: adminProcedure
     .input(z.object({ tokenId: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      await ctx.prisma.registrationToken.delete({
+      await ctx.prisma.invite.delete({
         where: {
           id: input.tokenId,
         },

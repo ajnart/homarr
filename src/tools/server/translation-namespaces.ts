@@ -51,4 +51,4 @@ export const dashboardNamespaces = [
 
 export const loginNamespaces = ['authentication/login', 'zod'];
 
-export const registerNamespaces = ['authentication/register', 'zod'];
+export const inviteNamespaces = ['authentication/invite', 'zod'];

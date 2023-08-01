@@ -14,7 +14,7 @@ import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { updateSettingsValidationSchema } from '~/validations/user';
 
 const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const { data } = api.user.getWithSettings.useQuery();
+  const { data } = api.user.withSettings.useQuery();
 
   return (
     <ManageLayout>
@@ -34,7 +34,7 @@ export const [FormProvider, useFormContext, useForm] =
 const SettingsComponent = ({
   settings,
 }: {
-  settings: RouterOutputs['user']['getWithSettings']['settings'];
+  settings: RouterOutputs['user']['withSettings']['settings'];
 }) => {
   const languagesData = languages.map((language) => ({
     image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',

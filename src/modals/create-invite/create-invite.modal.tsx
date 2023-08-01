@@ -5,24 +5,20 @@ import { ContextModalProps, modals } from '@mantine/modals';
 import dayjs from 'dayjs';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
-import { createRegistrationTokenSchema } from '~/validations/registration-token';
+import { createInviteSchema } from '~/validations/invite';
 
-export const CreateRegistrationTokenModal = ({
-  context,
-  id,
-  innerProps,
-}: ContextModalProps<{}>) => {
+export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
   const apiContext = api.useContext();
-  const { isLoading, mutateAsync } = api.registrationTokens.createRegistrationToken.useMutation({
+  const { isLoading, mutateAsync } = api.invites.create.useMutation({
     onSuccess: async (data) => {
-      await apiContext.registrationTokens.getAllInvites.invalidate();
+      await apiContext.invites.all.invalidate();
       modals.close(id);
 
       modals.openContextModal({
-        modal: 'copyRegistrationTokenModal',
+        modal: 'copyInviteModal',
         title: <Text weight="bold">Copy invitation</Text>,
         innerProps: data,
-      })
+      });
     },
   });
 
@@ -35,14 +31,14 @@ export const CreateRegistrationTokenModal = ({
     initialValues: {
       expirationDate: dayjs().add(7, 'days').toDate(),
     },
-    validate: i18nZodResolver(createRegistrationTokenSchema),
+    validate: i18nZodResolver(createInviteSchema),
   });
 
   return (
     <Stack>
       <Text>
-        After the expiration, a token will no longer be valid and the recipient of the token won't
-        be able to create an account.
+        After the expiration, an invite will no longer be valid and the recipient of the invite
+        won't be able to create an account.
       </Text>
 
       <DateInput

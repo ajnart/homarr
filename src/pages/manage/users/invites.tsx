@@ -19,7 +19,7 @@ import { api } from '~/utils/api';
 
 const ManageUserInvitesPage = () => {
   const [activePage, setActivePage] = useState(0);
-  const { data } = api.registrationTokens.getAllInvites.useQuery({
+  const { data } = api.invites.all.useQuery({
     page: activePage,
   });
 
@@ -40,17 +40,17 @@ const ManageUserInvitesPage = () => {
       </Head>
       <Title mb="md">Manage user invites</Title>
       <Text mb="xl">
-        Using registration tokens, you can invite users to your Homarr instance. An invitation will
-        only be valid for a certain time-span and can be used once. The expiration must be between 5
-        minutes and 12 months upon creation.
+        Using invites, you can invite users to your Homarr instance. An invitation will only be
+        valid for a certain time-span and can be used once. The expiration must be between 5 minutes
+        and 12 months upon creation.
       </Text>
 
       <Flex justify="end" mb="md">
         <Button
           onClick={() => {
             modals.openContextModal({
-              modal: 'createRegistrationTokenModal',
-              title: 'Create registration token',
+              modal: 'createInviteModal',
+              title: 'Create invite',
               innerProps: {},
             });
           }}
@@ -67,31 +67,35 @@ const ManageUserInvitesPage = () => {
             <thead>
               <tr>
                 <th>ID</th>
+                <th>Creator</th>
                 <th>Expires</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {data.registrationTokens.map((token, index) => (
+              {data.invites.map((invite, index) => (
                 <tr key={index}>
-                  <td className={classes.tableIdCell}>
-                    <Text lineClamp={1}>{token.id}</Text>
+                  <td className={classes.tableGrowCell}>
+                    <Text lineClamp={1}>{invite.id}</Text>
+                  </td>
+                  <td className={classes.tableGrowCell}>
+                    <Text lineClamp={1}>{invite.creator}</Text>
                   </td>
                   <td className={classes.tableCell}>
-                    {dayjs(dayjs()).isAfter(token.expires) ? (
-                      <Text>expired {dayjs(token.expires).fromNow()}</Text>
+                    {dayjs(dayjs()).isAfter(invite.expires) ? (
+                      <Text>expired {dayjs(invite.expires).fromNow()}</Text>
                     ) : (
-                      <Text>in {dayjs(token.expires).fromNow(true)}</Text>
+                      <Text>in {dayjs(invite.expires).fromNow(true)}</Text>
                     )}
                   </td>
                   <td className={classes.tableCell}>
                     <ActionIcon
                       onClick={() => {
                         modals.openContextModal({
-                          modal: 'deleteRegistrationTokenModal',
-                          title: <Text weight="bold">Delete registration token</Text>,
+                          modal: 'deleteInviteModal',
+                          title: <Text weight="bold">Delete invite</Text>,
                           innerProps: {
-                            tokenId: token.id,
+                            tokenId: invite.id,
                           },
                         });
                       }}
@@ -103,7 +107,7 @@ const ManageUserInvitesPage = () => {
                   </td>
                 </tr>
               ))}
-              {data.registrationTokens.length === 0 && (
+              {data.invites.length === 0 && (
                 <tr>
                   <td colSpan={3}>
                     <Center p="md">
@@ -137,8 +141,8 @@ const ManageUserInvitesPage = () => {
 };
 
 const useStyles = createStyles(() => ({
-  tableIdCell: {
-    width: '100%',
+  tableGrowCell: {
+    width: '50%',
   },
   tableCell: {
     whiteSpace: 'nowrap',

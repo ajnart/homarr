@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { z } from 'zod';
 
-export const createRegistrationTokenSchema = z.object({
+export const createInviteSchema = z.object({
   expiration: z
     .date()
     .min(dayjs().add(5, 'minutes').toDate())

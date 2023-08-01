@@ -23,7 +23,7 @@ export const Search = ({ isMobile }: SearchProps) => {
   const [search, setSearch] = useState('');
   const ref = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => ref.current?.focus()]]);
-  const { data: userWithSettings } = api.user.getWithSettings.useQuery();
+  const { data: userWithSettings } = api.user.withSettings.useQuery();
   const { config } = useConfigContext();
   const { colors } = useMantineTheme();
   const router = useRouter();

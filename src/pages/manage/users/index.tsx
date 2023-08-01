@@ -24,7 +24,7 @@ const ManageUsersPage = () => {
   const [activePage, setActivePage] = useState(0);
   const [nonDebouncedSearch, setNonDebouncedSearch] = useState<string | undefined>('');
   const [debouncedSearch] = useDebouncedValue<string | undefined>(nonDebouncedSearch, 200);
-  const { data } = api.user.getAll.useQuery({
+  const { data } = api.user.all.useQuery({
     page: activePage,
     search: debouncedSearch,
   });

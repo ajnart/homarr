@@ -13,25 +13,25 @@ import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/con
 import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const userRouter = createTRPCRouter({
-  register: publicProcedure
+  createFromInvite: publicProcedure
     .input(
       signUpFormSchema.and(
         z.object({
-          registerToken: z.string(),
+          inviteToken: z.string(),
         })
       )
     )
     .mutation(async ({ ctx, input }) => {
-      const token = await ctx.prisma.registrationToken.findUnique({
+      const token = await ctx.prisma.invite.findUnique({
         where: {
-          token: input.registerToken,
+          token: input.inviteToken,
         },
       });
 
       if (!token || token.expires < new Date()) {
         throw new TRPCError({
           code: 'FORBIDDEN',
-          message: 'Invalid registration token',
+          message: 'Invalid invite token',
         });
       }
 
@@ -64,7 +64,7 @@ export const userRouter = createTRPCRouter({
           },
         },
       });
-      await ctx.prisma.registrationToken.delete({
+      await ctx.prisma.invite.delete({
         where: {
           id: token.id,
         },
@@ -115,7 +115,7 @@ export const userRouter = createTRPCRouter({
         },
       });
     }),
-  getWithSettings: protectedProcedure.query(async ({ ctx, input }) => {
+  withSettings: protectedProcedure.query(async ({ ctx, input }) => {
     const user = await ctx.prisma.user.findUnique({
       where: {
         id: ctx.session?.user?.id,
@@ -158,7 +158,7 @@ export const userRouter = createTRPCRouter({
       });
     }),
 
-  getAll: publicProcedure
+  all: publicProcedure
     .input(
       z.object({
         limit: z.number().min(1).max(100).default(10),
@@ -199,7 +199,7 @@ export const userRouter = createTRPCRouter({
         countPages: Math.ceil(countUsers / limit),
       };
     }),
-  createUser: publicProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
+  create: publicProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = hashPassword(input.password, salt);
     await ctx.prisma.user.create({

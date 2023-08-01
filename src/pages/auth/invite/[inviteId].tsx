@@ -8,17 +8,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { z } from 'zod';
 import { prisma } from '~/server/db';
-import { registerNamespaces } from '~/tools/server/translation-namespaces';
+import { inviteNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signUpFormSchema } from '~/validations/user';
 
 export default function AuthInvitePage() {
-  const { t } = useTranslation('authentication/register');
+  const { t } = useTranslation('authentication/invite');
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();
   const query = router.query as { token: string };
-  const { mutateAsync } = api.user.register.useMutation();
+  const { mutateAsync } = api.user.createFromInvite.useMutation();
 
   const form = useForm<z.infer<typeof signUpFormSchema>>({
     validateInputOnChange: true,
@@ -37,7 +37,7 @@ export default function AuthInvitePage() {
     void mutateAsync(
       {
         ...values,
-        registerToken: query.token,
+        inviteToken: query.token,
       },
       {
         onSuccess() {
@@ -124,7 +124,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query, pa
     };
   }
 
-  const token = await prisma.registrationToken.findUnique({
+  const token = await prisma.invite.findUnique({
     where: {
       id: routeParams.data.inviteId,
       token: queryParams.data.token,
@@ -139,7 +139,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query, pa
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? '', registerNamespaces)),
+      ...(await serverSideTranslations(locale ?? '', inviteNamespaces)),
     },
   };
 };

@@ -6,12 +6,12 @@ import { WidgetsEditModal } from '~/components/Dashboard/Tiles/Widgets/WidgetsEd
 import { WidgetsRemoveModal } from '~/components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '~/components/Dashboard/Wrappers/Category/CategoryEditModal';
 
-import { DeleteUserModal } from './delete-user/delete-user.modal';
-import { CreateRegistrationTokenModal } from './create-registration-token/create-registration-token.modal';
-import { DeleteRegistrationTokenModal } from './delete-registration-token/delete-registration-token.modal';
+import { CopyInviteModal } from './copy-invite/copy-invite.modal';
 import { CreateDashboardModal } from './create-dashboard/create-dashboard.modal';
-import { CopyRegistrationToken } from './copy-regristration-token/copy-registration-token.modal';
+import { CreateInviteModal } from './create-invite/create-invite.modal';
 import { DeleteBoardModal } from './delete-board/delete-board.modal';
+import { DeleteInviteModal } from './delete-invite/delete-invite.modal';
+import { DeleteUserModal } from './delete-user/delete-user.modal';
 
 export const modals = {
   editApp: EditAppModal,
@@ -22,11 +22,11 @@ export const modals = {
   changeAppPositionModal: ChangeAppPositionModal,
   changeIntegrationPositionModal: ChangeWidgetPositionModal,
   deleteUserModal: DeleteUserModal,
-  createRegistrationTokenModal: CreateRegistrationTokenModal,
-  deleteRegistrationTokenModal: DeleteRegistrationTokenModal,
+  createInviteModal: CreateInviteModal,
+  deleteInviteModal: DeleteInviteModal,
   createDashboardModal: CreateDashboardModal,
-  copyRegistrationTokenModal: CopyRegistrationToken,
-  deleteBoardModal: DeleteBoardModal
+  copyInviteModal: CopyInviteModal,
+  deleteBoardModal: DeleteBoardModal,
 };
 
 declare module '@mantine/modals' {

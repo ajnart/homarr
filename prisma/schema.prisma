@@ -42,17 +42,18 @@ model Session {
 }
 
 model User {
-    id            String        @id @default(cuid())
-    name          String?
-    email         String?       @unique
-    emailVerified DateTime?
-    image         String?
-    password      String?
-    salt          String?
-    isAdmin       Boolean       @default(false)
-    accounts      Account[]
-    sessions      Session[]
-    settings      UserSettings?
+    id             String        @id @default(cuid())
+    name           String?
+    email          String?       @unique
+    emailVerified  DateTime?
+    image          String?
+    password       String?
+    salt           String?
+    isAdmin        Boolean       @default(false)
+    accounts       Account[]
+    sessions       Session[]
+    settings       UserSettings?
+    createdInvites Invite[]
 }
 
 model VerificationToken {
@@ -63,10 +64,12 @@ model VerificationToken {
     @@unique([identifier, token])
 }
 
-model RegistrationToken {
-    id      String   @id @default(cuid())
-    token   String   @unique
-    expires DateTime
+model Invite {
+    id          String   @id @default(cuid())
+    token       String   @unique
+    expires     DateTime
+    createdById String
+    createdBy   User     @relation(fields: [createdById], references: [id], onDelete: Cascade)
 }
 
 model UserSettings {

@@ -8,6 +8,7 @@ import { dnsHoleRouter } from './routers/dns-hole';
 import { dockerRouter } from './routers/docker/router';
 import { downloadRouter } from './routers/download';
 import { iconRouter } from './routers/icon';
+import { inviteRouter } from './routers/invite';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
 import { overseerrRouter } from './routers/overseerr';
@@ -15,7 +16,6 @@ import { rssRouter } from './routers/rss';
 import { usenetRouter } from './routers/usenet/router';
 import { userRouter } from './routers/user';
 import { weatherRouter } from './routers/weather';
-import { inviteRouter } from './routers/registrationTokens';
 
 /**
  * This is the primary router for your server.
@@ -38,7 +38,7 @@ export const rootRouter = createTRPCRouter({
   usenet: usenetRouter,
   calendar: calendarRouter,
   weather: weatherRouter,
-  registrationTokens: inviteRouter
+  invites: inviteRouter,
 });
 
 // export type definition of API

@@ -2,7 +2,7 @@ import { Button, Mark, Stack, Text } from '@mantine/core';
 import { ContextModalProps, modals } from '@mantine/modals';
 import Link from 'next/link';
 
-export const CopyRegistrationToken = ({
+export const CopyInviteModal = ({
   context,
   id,
   innerProps,

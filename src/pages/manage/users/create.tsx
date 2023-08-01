@@ -49,9 +49,9 @@ const CreateNewUserPage = () => {
   });
 
   const context = api.useContext();
-  const { mutateAsync, isLoading } = api.user.createUser.useMutation({
+  const { mutateAsync, isLoading } = api.user.create.useMutation({
     onSettled: () => {
-      void context.user.getAll.invalidate();
+      void context.user.all.invalidate();
     },
     onSuccess: () => {
       nextStep();
