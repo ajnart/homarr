@@ -5,9 +5,9 @@
     "settings": {
       "title": "Ρυθμίσεις σελιδοδεικτών",
       "name": {
-        "label": "",
+        "label": "Τίτλος Widget",
         "placeholder": {
-          "label": ""
+          "label": "Αφήστε το κενό για να παραμείνει ο τίτλος κρυμμένος"
         }
       },
       "items": {
