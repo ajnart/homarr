@@ -16,6 +16,7 @@ import { useListState } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
 import {
   IconApps,
+  IconDeviceFloppy,
   IconDotsVertical,
   IconFolderFilled,
   IconPlus,
@@ -30,7 +31,13 @@ import { sleep } from '~/tools/client/time';
 import { api } from '~/utils/api';
 
 const BoardsPage = () => {
+  const context = api.useContext();
   const { data } = api.boards.all.useQuery();
+  const { mutateAsync } = api.user.makeDefaultDashboard.useMutation({
+    onSettled: () => {
+      void context.boards.invalidate();
+    },
+  });
 
   const [deletingDashboards, { append, filter }] = useListState<string>([]);
 
@@ -139,6 +146,16 @@ const BoardsPage = () => {
                     </ActionIcon>
                   </Menu.Target>
                   <Menu.Dropdown>
+                    <Menu.Item
+                      icon={<IconDeviceFloppy size="1rem" />}
+                      onClick={async () => {
+                        void mutateAsync({
+                          board: board.name,
+                        });
+                      }}
+                    >
+                      Set as your default board
+                    </Menu.Item>
                     <Menu.Item
                       onClick={async () => {
                         modals.openContextModal({

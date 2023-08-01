@@ -155,9 +155,22 @@ export const userRouter = createTRPCRouter({
               disablePingPulse: input.disablePingPulse,
               replacePingWithIcons: input.replaceDotsWithIcons,
               defaultBoard: input.defaultBoard,
-              language: input.language
+              language: input.language,
             },
           },
+        },
+      });
+    }),
+
+  makeDefaultDashboard: publicProcedure
+    .input(z.object({ board: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      await ctx.prisma.userSettings.update({
+        where: {
+          userId: ctx.session?.user.id,
+        },
+        data: {
+          defaultBoard: input.board,
         },
       });
     }),
