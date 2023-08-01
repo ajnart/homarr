@@ -8,12 +8,19 @@ import {
   LoadingOverlay,
   Menu,
   SimpleGrid,
+  Stack,
   Text,
   Title,
 } from '@mantine/core';
 import { useListState } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
-import { IconDotsVertical, IconFolderFilled, IconPlus, IconTrash } from '@tabler/icons-react';
+import {
+  IconApps,
+  IconDotsVertical,
+  IconFolderFilled,
+  IconPlus,
+  IconTrash,
+} from '@tabler/icons-react';
 import Link from 'next/link';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { CommonHeader } from '~/components/layout/common-header';
@@ -21,7 +28,7 @@ import { sleep } from '~/tools/client/time';
 import { api } from '~/utils/api';
 
 const BoardsPage = () => {
-  const { data } = api.config.all.useQuery();
+  const { data } = api.boards.all.useQuery();
 
   const [deletingDashboards, { append, filter }] = useListState<string>([]);
 
@@ -60,10 +67,10 @@ const BoardsPage = () => {
         >
           {data.map((board, index) => (
             <Card key={index} shadow="sm" padding="lg" radius="md" pos="relative" withBorder>
-              <LoadingOverlay visible={deletingDashboards.includes(board)} />
+              <LoadingOverlay visible={deletingDashboards.includes(board.name)} />
 
               <Text weight={500} mb="xs">
-                {board}
+                {board.name}
               </Text>
 
               <Group mb="xl">
@@ -72,10 +79,31 @@ const BoardsPage = () => {
                 </Badge>
               </Group>
 
-              <Text size="sm" color="dimmed">
-                With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-                activities on and around the fjords of Norway
-              </Text>
+              <Stack spacing={3}>
+                <Group position="apart">
+                  <Group spacing="xs">
+                    <IconApps opacity={0.7} size="1rem" />
+                    <Text color="dimmed">Apps</Text>
+                  </Group>
+                  <Text>{board.countApps}</Text>
+                </Group>
+
+                <Group position="apart">
+                  <Group spacing="xs">
+                    <IconApps opacity={0.7} size="1rem" />
+                    <Text color="dimmed">Widgets</Text>
+                  </Group>
+                  <Text>{board.countWidgets}</Text>
+                </Group>
+
+                <Group position="apart">
+                  <Group spacing="xs">
+                    <IconApps opacity={0.7} size="1rem" />
+                    <Text color="dimmed">Categories</Text>
+                  </Group>
+                  <Text>{board.countCategories}</Text>
+                </Group>
+              </Stack>
 
               <Group mt="md">
                 <Button
@@ -101,12 +129,12 @@ const BoardsPage = () => {
                           modal: 'deleteBoardModal',
                           title: <Text weight={500}>Delete board</Text>,
                           innerProps: {
-                            boardName: board,
+                            boardName: board.name,
                             onConfirm: async () => {
-                              append(board);
+                              append(board.name);
                               // give user feedback, that it's being deleted
                               await sleep(500);
-                              filter((item, _) => item !== board);
+                              filter((item, _) => item !== board.name);
                             },
                           },
                         });
