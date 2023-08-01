@@ -5,7 +5,7 @@
     "settings": {
       "title": "媒体请求状态",
       "direction": {
-        "label": ""
+        "label": "布局方向。"
       }
     }
   },
