@@ -52,7 +52,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           className="dashboard-tile-app"
           direction={app.appearance.positionAppName ?? 'column'}
         >
-          <Box px={10} hidden={app.appearance.appNameStatus !== "normal"}>
+          <Box px={10} hidden={["hover", "hidden"].includes(app.appearance.appNameStatus)}>
             <Text
               w="max-content"
               size="md"
