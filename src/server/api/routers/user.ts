@@ -1,6 +1,12 @@
 import { TRPCError } from '@trpc/server';
+
 import bcrypt from 'bcrypt';
+
 import { z } from 'zod';
+
+import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
+
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
@@ -8,9 +14,6 @@ import {
   signUpFormSchema,
   updateSettingsValidationSchema,
 } from '~/validations/user';
-
-import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
-import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const userRouter = createTRPCRouter({
   createFromInvite: publicProcedure
@@ -151,7 +154,8 @@ export const userRouter = createTRPCRouter({
             update: {
               disablePingPulse: input.disablePingPulse,
               replacePingWithIcons: input.replaceDotsWithIcons,
-              language: input.language,
+              defaultBoard: input.defaultBoard,
+              language: input.language
             },
           },
         },

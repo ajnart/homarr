@@ -1,11 +1,19 @@
 import fs from 'fs';
-import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
+
+import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 
 export const boardRouter = createTRPCRouter({
   all: publicProcedure.query(async ({ ctx }) => {
     const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
+
+    const userSettings = await ctx.prisma.userSettings.findUniqueOrThrow({
+      where: {
+        userId: ctx.session?.user.id
+      }
+    });
+
     return await Promise.all(
       files.map(async (file) => {
         const name = file.replace('.json', '');
@@ -17,7 +25,8 @@ export const boardRouter = createTRPCRouter({
           name: name,
           countApps: countApps,
           countWidgets: config.widgets.length,
-          countCategories: config.categories.length
+          countCategories: config.categories.length,
+          isDefaultForUser: name === userSettings.defaultBoard
         };
       })
     );

@@ -19,6 +19,8 @@ import {
   IconDotsVertical,
   IconFolderFilled,
   IconPlus,
+  IconStar,
+  IconStarFilled,
   IconTrash,
 } from '@tabler/icons-react';
 import Head from 'next/head';
@@ -69,14 +71,28 @@ const BoardsPage = () => {
             <Card key={index} shadow="sm" padding="lg" radius="md" pos="relative" withBorder>
               <LoadingOverlay visible={deletingDashboards.includes(board.name)} />
 
-              <Text weight={500} mb="xs">
-                {board.name}
-              </Text>
-
-              <Group mb="xl">
-                <Badge leftSection={<IconFolderFilled size=".7rem" />} color="pink" variant="light">
-                  Filesystem
-                </Badge>
+              <Group mb="xl" position="apart" noWrap>
+                <Text weight={500} mb="xs">
+                  {board.name}
+                </Text>
+                <Group spacing="xs" noWrap>
+                  <Badge
+                    leftSection={<IconFolderFilled size=".7rem" />}
+                    color="pink"
+                    variant="light"
+                  >
+                    Filesystem
+                  </Badge>
+                  {board.isDefaultForUser && (
+                    <Badge
+                      leftSection={<IconStarFilled size=".7rem" />}
+                      color="yellow"
+                      variant="light"
+                    >
+                      Default
+                    </Badge>
+                  )}
+                </Group>
               </Group>
 
               <Stack spacing={3}>

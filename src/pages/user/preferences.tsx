@@ -1,4 +1,4 @@
-import { Button, Group, Select, Stack, Text, Title } from '@mantine/core';
+import { Button, Group, LoadingOverlay, Select, Stack, Text, Title } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import type { InferGetServerSidePropsType } from 'next';
 import { GetServerSidePropsContext } from 'next';
@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { AccessibilitySettings } from '~/components/User/Preferences/AccessibilitySettings';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { sleep } from '~/tools/client/time';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
@@ -65,15 +66,23 @@ const SettingsComponent = ({
     validateInputOnChange: true,
   });
 
-  const { mutate } = api.user.updateSettings.useMutation();
+  const context = api.useContext();
+  const { mutate, isLoading } = api.user.updateSettings.useMutation({
+    onSettled: () => {
+      void context.boards.all.invalidate();
+    }
+  });
 
   const handleSubmit = () => {
-    mutate(form.values);
+    sleep(500).then(() => {
+      mutate(form.values);
+    });
   };
 
   return (
     <FormProvider form={form}>
-      <form onSubmit={form.onSubmit(handleSubmit)}>
+      <form style={{ position: 'relative' }} onSubmit={form.onSubmit(handleSubmit)}>
+        <LoadingOverlay visible={isLoading} overlayBlur={2} />
         <Stack spacing={5}>
           <Title order={2} size="lg">
             {t('boards.title')}
