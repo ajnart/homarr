@@ -1,5 +1,5 @@
 import { Autocomplete, Group, Kbd, Modal, Text, Tooltip, useMantineTheme } from '@mantine/core';
-import { useDisclosure, useHotkeys } from '@mantine/hooks';
+import { useDisclosure, useHotkeys, useMediaQuery } from '@mantine/hooks';
 import {
   IconBrandYoutube,
   IconDownload,
@@ -9,7 +9,7 @@ import {
   TablerIconsProps,
 } from '@tabler/icons-react';
 import { useRouter } from 'next/router';
-import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
+import { ReactNode, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
@@ -48,7 +48,6 @@ export const Search = ({ isMobile }: SearchProps) => {
         variant="filled"
         placeholder="Search..."
         hoverOnSearchChange
-        autoFocus={typeof window !== 'undefined' && window.innerWidth > 768}
         rightSection={
           <IconSearch
             onClick={() => ref.current?.focus()}
