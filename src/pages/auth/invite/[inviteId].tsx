@@ -30,7 +30,7 @@ export default function AuthInvitePage() {
     const notificationId = 'register';
     showNotification({
       id: notificationId,
-      title: 'Registering...',
+      title: 'Creating account',
       message: 'Please wait...',
       loading: true,
     });
@@ -48,7 +48,7 @@ export default function AuthInvitePage() {
             color: 'teal',
             icon: <IconCheck />,
           });
-          router.push('/login');
+          router.push('/auth/login');
         },
         onError() {
           updateNotification({
