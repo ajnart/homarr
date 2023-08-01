@@ -1,5 +1,5 @@
 import { Button, Group, Stack, Text } from '@mantine/core';
-import { DateInput } from '@mantine/dates';
+import { DateInput, DateTimePicker } from '@mantine/dates';
 import { useForm, zodResolver } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
 import dayjs from 'dayjs';
@@ -41,11 +41,12 @@ export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
         won't be able to create an account.
       </Text>
 
-      <DateInput
+      <DateTimePicker
         popoverProps={{ withinPortal: true }}
         minDate={minDate}
         maxDate={maxDate}
         withAsterisk
+        valueFormat="DD MMM YYYY hh:mm A"
         label="Expiration date"
         variant="filled"
         {...form.getInputProps('expirationDate')}
