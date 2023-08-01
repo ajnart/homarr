@@ -3,7 +3,10 @@
     "name": "Estadísticas de petición de contenido",
     "description": "Estadísticas de tus peticiones de contenido",
     "settings": {
-      "title": "Estadísticas de peticiones de contenido"
+      "title": "Estadísticas de peticiones de contenido",
+      "direction": {
+        "label": ""
+      }
     }
   },
   "stats": {
