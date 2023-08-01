@@ -5,7 +5,7 @@
     "settings": {
       "title": "Estadísticas de peticiones de contenido",
       "direction": {
-        "label": ""
+        "label": "Dirección del trazado."
       }
     }
   },
