@@ -17,11 +17,11 @@ import { z } from 'zod';
 import {
   CreateAccountStep,
   createAccountStepValidationSchema,
-} from '~/components/Admin/CreateNewUser/create-account-step';
+} from '~/components/Manage/User/Create/create-account-step';
 import {
   CreateAccountSecurityStep,
   createAccountSecurityStepValidationSchema,
-} from '~/components/Admin/CreateNewUser/security-step';
+} from '~/components/Manage/User/Create/security-step';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { api } from '~/utils/api';
 

@@ -20,7 +20,7 @@ import { env } from '~/env';
 import { api } from '~/utils/api';
 
 import { HeaderActionButton } from '../Header/ActionButton';
-import { BoardHeadOverride } from '../Meta/BoardHead';
+import { BoardHeadOverride } from '../Meta/BoardHeadOverride';
 import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
