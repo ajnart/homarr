@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import { AppType } from '../../../../types/app';
-import { useCardStyles } from '../../../layout/useCardStyles';
+import { useCardStyles } from '../../../layout/Common/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';

@@ -15,9 +15,9 @@ import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { z } from 'zod';
-import { CommonHeader } from '~/components/layout/common-header';
 import { getServerAuthSession } from '~/server/auth';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signInSchema } from '~/validations/user';
@@ -46,9 +46,9 @@ export default function LoginPage() {
 
   return (
     <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
-      <CommonHeader>
+      <Head>
         <title>Login • Homarr</title>
-      </CommonHeader>
+      </Head>
       <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
         <Title align="center" weight={900}>
           {t('title')}

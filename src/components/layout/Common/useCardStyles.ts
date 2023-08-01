@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core';
 
-import { useConfigContext } from '../../config/provider';
+import { useConfigContext } from '../../../config/provider';
 
 export const useCardStyles = (isCategory: boolean) => {
   const { config } = useConfigContext();

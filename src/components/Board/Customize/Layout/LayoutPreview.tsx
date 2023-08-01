@@ -1,5 +1,5 @@
 import { Flex, Group, Indicator, Paper, Stack, createStyles } from '@mantine/core';
-import { Logo } from '~/components/layout/Logo';
+import { Logo } from '~/components/layout/Common/Logo';
 import { createDummyArray } from '~/tools/client/arrays';
 
 type LayoutPreviewProps = {

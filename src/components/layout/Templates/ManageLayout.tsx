@@ -33,7 +33,6 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
 import { MainHeader } from '../Header/Header';
-import { CommonHeader } from '../common-header';
 
 interface ManageLayoutProps {
   children: ReactNode;
@@ -143,7 +142,6 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
 
   return (
     <>
-      <CommonHeader />
       <AppShell
         styles={{
           root: {

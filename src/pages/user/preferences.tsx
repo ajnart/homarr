@@ -2,12 +2,12 @@ import { Button, Group, Select, Stack, Text, Title } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import type { InferGetServerSidePropsType } from 'next';
 import { GetServerSidePropsContext } from 'next';
+import Head from 'next/head';
 import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
-import { AccessibilitySettings } from '~/components/Settings/Customization/Accessibility/AccessibilitySettings';
+import { AccessibilitySettings } from '~/components/User/Preferences/AccessibilitySettings';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
-import { CommonHeader } from '~/components/layout/common-header';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
@@ -20,9 +20,9 @@ const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServe
 
   return (
     <ManageLayout>
-      <CommonHeader>
+      <Head>
         <title>Preferences • Homarr</title>
-      </CommonHeader>
+      </Head>
       <Title mb="xl">Preferences</Title>
 
       {data && <SettingsComponent settings={data.settings} />}
@@ -141,7 +141,12 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
 );
 
 export async function getServerSideProps({ req, res, locale }: GetServerSidePropsContext) {
-  const translations = await getServerSideTranslations(manageNamespaces, locale, undefined, undefined);
+  const translations = await getServerSideTranslations(
+    manageNamespaces,
+    locale,
+    undefined,
+    undefined
+  );
   return {
     props: {
       ...translations,

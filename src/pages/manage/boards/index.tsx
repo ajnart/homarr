@@ -21,9 +21,9 @@ import {
   IconPlus,
   IconTrash,
 } from '@tabler/icons-react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
-import { CommonHeader } from '~/components/layout/common-header';
 import { sleep } from '~/tools/client/time';
 import { api } from '~/utils/api';
 
@@ -34,9 +34,9 @@ const BoardsPage = () => {
 
   return (
     <ManageLayout>
-      <CommonHeader>
+      <Head>
         <title>Boards • Homarr</title>
-      </CommonHeader>
+      </Head>
 
       <Title mb="xl">Boards</Title>
 

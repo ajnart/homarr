@@ -1,13 +1,13 @@
 import { Text, Title } from '@mantine/core';
+import Head from 'next/head';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
-import { CommonHeader } from '~/components/layout/common-header';
 
 const SettingsPage = () => {
   return (
     <ManageLayout>
-      <CommonHeader>
+      <Head>
         <title>Settings • Homarr</title>
-      </CommonHeader>
+      </Head>
 
       <Title>Settings</Title>
       <Text>Coming soon!</Text>

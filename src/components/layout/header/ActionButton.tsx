@@ -2,7 +2,7 @@ import { Button, ButtonProps } from '@mantine/core';
 import Link from 'next/link';
 import { ForwardedRef, forwardRef } from 'react';
 
-import { useCardStyles } from '../useCardStyles';
+import { useCardStyles } from '../Common/useCardStyles';
 
 type SpecificLinkProps = {
   component: typeof Link;

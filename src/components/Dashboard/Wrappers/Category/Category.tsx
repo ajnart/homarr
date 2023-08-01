@@ -16,7 +16,7 @@ import { useTranslation } from 'next-i18next';
 
 import { useConfigContext } from '../../../../config/provider';
 import { CategoryType } from '../../../../types/category';
-import { useCardStyles } from '../../../layout/useCardStyles';
+import { useCardStyles } from '../../../layout/Common/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { WrapperContent } from '../WrapperContent';
 import { useGridstack } from '../gridstack/use-gridstack';

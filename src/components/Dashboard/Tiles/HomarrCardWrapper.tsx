@@ -1,7 +1,7 @@
 import { Card, CardProps } from '@mantine/core';
 import { ReactNode } from 'react';
 
-import { useCardStyles } from '../../layout/useCardStyles';
+import { useCardStyles } from '../../layout/Common/useCardStyles';
 import { useEditModeStore } from '../Views/useEditModeStore';
 
 interface HomarrCardWrapperProps extends CardProps {

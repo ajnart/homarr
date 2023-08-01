@@ -16,6 +16,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
+import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals/modals';
@@ -79,9 +80,7 @@ function App(
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      </Head>
+      <CommonHead />
       <SessionProvider session={pageProps.session}>
         <PersistQueryClientProvider
           client={queryClient}

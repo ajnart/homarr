@@ -13,7 +13,7 @@ import { IconAlertTriangle } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
-import { Logo } from '../Logo';
+import { Logo } from '../Common/Logo';
 import { AvatarMenu } from './AvatarMenu';
 import { Search } from './Search';
 

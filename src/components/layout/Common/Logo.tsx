@@ -1,7 +1,7 @@
 import { Group, Image, Text } from '@mantine/core';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
-import { useConfigContext } from '../../config/provider';
+import { useConfigContext } from '../../../config/provider';
 import { usePrimaryGradient } from './useGradient';
 
 interface LogoProps {

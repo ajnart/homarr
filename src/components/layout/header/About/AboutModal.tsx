@@ -36,9 +36,9 @@ import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '../../../../tools/color';
-import Credits from '../../../Settings/Common/Credits';
-import Tip from '../../../layout/Tip';
-import { usePrimaryGradient } from '../../../layout/useGradient';
+import { usePrimaryGradient } from '../../Common/useGradient';
+import Credits from './Credits';
+import Tip from './Tip';
 
 interface AboutModalProps {
   opened: boolean;

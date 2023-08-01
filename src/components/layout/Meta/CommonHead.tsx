@@ -1,13 +1,12 @@
+import { useMantineTheme } from '@mantine/core';
 import Head from 'next/head';
-import { ReactNode } from 'react';
 
-interface CommonHeaderProps {
-  children?: ReactNode;
-}
+export const CommonHead = () => {
+  const { colorScheme } = useMantineTheme();
 
-export const CommonHeader = ({ children }: CommonHeaderProps) => {
   return (
     <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="shortcut icon" href="/imgs/favicon/favicon.svg" />
 
       <link rel="manifest" href="/site.webmanifest" />
@@ -18,7 +17,10 @@ export const CommonHeader = ({ children }: CommonHeaderProps) => {
 
       <meta name="apple-mobile-web-app-capable" content="yes" />
 
-      {children}
+      <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content={colorScheme === 'dark' ? 'white-translucent' : 'black-translucent'}
+      />
     </Head>
   );
 };

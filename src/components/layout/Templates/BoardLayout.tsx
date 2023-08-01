@@ -1,4 +1,4 @@
-import { Button, Text, Title, Tooltip, clsx } from '@mantine/core';
+import { Button, Global, Text, Title, Tooltip, clsx } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
@@ -19,8 +19,8 @@ import { useConfigContext } from '~/config/provider';
 import { env } from '~/env';
 import { api } from '~/utils/api';
 
-import { Background } from '../Background';
 import { HeaderActionButton } from '../Header/ActionButton';
+import { BoardHeadOverride } from '../Meta/BoardHead';
 import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
@@ -32,7 +32,8 @@ export const BoardLayout = ({ children }: BoardLayoutProps) => {
 
   return (
     <MainLayout headerActions={<HeaderActions />}>
-      <Background />
+      <BoardHeadOverride />
+      <BackgroundImage />
       {children}
       <style>{clsx(config?.settings.customization.customCss)}</style>
     </MainLayout>
@@ -193,5 +194,27 @@ const AddElementButton = () => {
         <IconApps size={20} stroke={1.5} />
       </HeaderActionButton>
     </Tooltip>
+  );
+};
+
+const BackgroundImage = () => {
+  const { config } = useConfigContext();
+
+  if (!config?.settings.customization.backgroundImageUrl) {
+    return null;
+  }
+
+  return (
+    <Global
+      styles={{
+        body: {
+          minHeight: '100vh',
+          backgroundImage: `url('${config?.settings.customization.backgroundImageUrl}')`,
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        },
+      }}
+    />
   );
 };

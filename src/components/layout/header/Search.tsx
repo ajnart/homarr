@@ -13,7 +13,7 @@ import { ReactNode, forwardRef, useEffect, useMemo, useRef, useState } from 'rea
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
-import { MovieModal } from './MovieModal';
+import { MovieModal } from './Search/MovieModal';
 
 type SearchProps = {
   isMobile?: boolean;

@@ -1,7 +1,6 @@
 import { AppShell, useMantineTheme } from '@mantine/core';
 
 import { MainHeader } from '../Header/Header';
-import { Head } from '../Meta/Head';
 
 type MainLayoutProps = {
   headerActions?: React.ReactNode;
@@ -21,7 +20,6 @@ export const MainLayout = ({ headerActions, children }: MainLayoutProps) => {
       header={<MainHeader headerActions={headerActions} />}
       className="dashboard-app-shell"
     >
-      <Head />
       {children}
     </AppShell>
   );

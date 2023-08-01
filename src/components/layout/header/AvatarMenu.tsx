@@ -14,7 +14,7 @@ import { User } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { forwardRef } from 'react';
-import { AboutModal } from '~/components/Dashboard/Modals/AboutModal/AboutModal';
+import { AboutModal } from '~/components/layout/Header/About/AboutModal';
 import { useColorScheme } from '~/hooks/use-colorscheme';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
