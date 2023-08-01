@@ -16,6 +16,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
+import { z } from 'zod';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';

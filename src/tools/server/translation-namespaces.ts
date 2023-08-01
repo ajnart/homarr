@@ -53,3 +53,5 @@ export const manageNamespaces = ['user/preferences', 'zod'];
 export const loginNamespaces = ['authentication/login', 'zod'];
 
 export const inviteNamespaces = ['authentication/invite', 'zod'];
+
+export const onboardNamespaces = ['common', 'zod'];

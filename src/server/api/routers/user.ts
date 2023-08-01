@@ -1,12 +1,7 @@
+import { UserSettings } from '@prisma/client';
 import { TRPCError } from '@trpc/server';
-
 import bcrypt from 'bcrypt';
-
 import { z } from 'zod';
-
-import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
-import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
-
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
@@ -15,7 +10,26 @@ import {
   updateSettingsValidationSchema,
 } from '~/validations/user';
 
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
+import { TRPCContext, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+
 export const userRouter = createTRPCRouter({
+  createAdminAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
+    const userCount = await ctx.prisma.user.count();
+    if (userCount > 0) {
+      throw new TRPCError({
+        code: 'FORBIDDEN',
+      });
+    }
+
+    await createUserInNotExist(ctx, input, {
+      defaultSettings: {
+        colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
+        language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
+      },
+      isAdmin: true,
+    });
+  }),
   createFromInvite: publicProcedure
     .input(
       signUpFormSchema.and(
@@ -38,18 +52,12 @@ export const userRouter = createTRPCRouter({
         });
       }
 
-      const existingUser = await ctx.prisma.user.findFirst({
-        where: {
-          name: input.username,
+      await createUserInNotExist(ctx, input, {
+        defaultSettings: {
+          colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
+          language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
         },
       });
-
-      if (existingUser) {
-        throw new TRPCError({
-          code: 'CONFLICT',
-          message: 'User already exists',
-        });
-      }
 
       const salt = bcrypt.genSaltSync(10);
       const hashedPassword = hashPassword(input.password, salt);
@@ -217,19 +225,7 @@ export const userRouter = createTRPCRouter({
       };
     }),
   create: publicProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
-    const salt = bcrypt.genSaltSync(10);
-    const hashedPassword = hashPassword(input.password, salt);
-    await ctx.prisma.user.create({
-      data: {
-        name: input.username,
-        email: input.email,
-        password: hashedPassword,
-        salt: salt,
-        settings: {
-          create: {},
-        },
-      },
-    });
+    await createUserInNotExist(ctx, input);
   }),
 
   deleteUser: publicProcedure
@@ -246,3 +242,40 @@ export const userRouter = createTRPCRouter({
       });
     }),
 });
+
+const createUserInNotExist = async (
+  ctx: TRPCContext,
+  input: z.infer<typeof createNewUserSchema>,
+  options: {
+    defaultSettings?: Partial<UserSettings>;
+    isAdmin?: boolean;
+  } | void
+) => {
+  const existingUser = await ctx.prisma.user.findFirst({
+    where: {
+      name: input.username,
+    },
+  });
+
+  if (existingUser) {
+    throw new TRPCError({
+      code: 'CONFLICT',
+      message: 'User already exists',
+    });
+  }
+
+  const salt = bcrypt.genSaltSync(10);
+  const hashedPassword = hashPassword(input.password, salt);
+  await ctx.prisma.user.create({
+    data: {
+      name: input.username,
+      email: input.email,
+      password: hashedPassword,
+      salt: salt,
+      isAdmin: options?.isAdmin ?? false,
+      settings: {
+        create: options?.defaultSettings ?? {},
+      },
+    },
+  });
+};
