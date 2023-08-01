@@ -5,7 +5,7 @@
     "settings": {
       "title": "מצב בקשות מדיה",
       "direction": {
-        "label": ""
+        "label": "כיוון הפריסה."
       }
     }
   },
