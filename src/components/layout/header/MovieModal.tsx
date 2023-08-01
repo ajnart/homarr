@@ -91,7 +91,7 @@ const MovieResults = ({ search, type }: MovieResultsProps) => {
   return (
     <Stack>
       <Text>
-        Found {overseerrResults?.length} results for <b>{search}</b>
+        Top {overseerrResults?.length} results for <b>{search}</b>
       </Text>
       <Stack spacing="xs">
         {overseerrResults?.map((result, index: number) => (
