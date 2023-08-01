@@ -1,7 +1,46 @@
-import { Button, Card, Flex, Group, PasswordInput } from '@mantine/core';
+import {
+  Box,
+  Button,
+  Card,
+  Flex,
+  Group,
+  PasswordInput,
+  Popover,
+  Progress,
+  Text,
+} from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
-import { IconArrowLeft, IconArrowRight, IconDice, IconKey } from '@tabler/icons-react';
+import {
+  IconArrowLeft,
+  IconArrowRight,
+  IconCheck,
+  IconDice,
+  IconKey,
+  IconX,
+} from '@tabler/icons-react';
+import { useState } from 'react';
 import { z } from 'zod';
+import { api } from '~/utils/api';
+import { passwordSchema } from '~/validations/user';
+
+const requirements = [
+  { re: /[0-9]/, label: 'Includes number' },
+  { re: /[a-z]/, label: 'Includes lowercase letter' },
+  { re: /[A-Z]/, label: 'Includes uppercase letter' },
+  { re: /[$&+,:;=?@#|'<>.^*()%!-]/, label: 'Includes special symbol' },
+];
+
+function getStrength(password: string) {
+  let multiplier = password.length > 5 ? 0 : 1;
+
+  requirements.forEach((requirement) => {
+    if (!requirement.re.test(password)) {
+      multiplier += 1;
+    }
+  });
+
+  return Math.max(100 - (100 / (requirements.length + 1)) * multiplier, 10);
+}
 
 interface CreateAccountSecurityStepProps {
   nextStep: ({ password }: { password: string }) => void;
@@ -21,31 +60,69 @@ export const CreateAccountSecurityStep = ({
     validate: zodResolver(createAccountSecurityStepValidationSchema),
   });
 
+  const { mutateAsync, isLoading } = api.password.generate.useMutation();
+
+  const [popoverOpened, setPopoverOpened] = useState(false);
+  const checks = requirements.map((requirement, index) => (
+    <PasswordRequirement
+      key={index}
+      label={requirement.label}
+      meets={requirement.re.test(form.values.password)}
+    />
+  ));
+
+  const strength = getStrength(form.values.password);
+  const color = strength === 100 ? 'teal' : strength > 50 ? 'yellow' : 'red';
+
   return (
     <Card mih={400}>
-      <Flex columnGap={10} align="start">
-        <PasswordInput
-          icon={<IconKey size="0.8rem" />}
-          style={{
-            flexGrow: 1,
-          }}
-          label="Password"
-          variant="filled"
-          mb="md"
-          withAsterisk
-          {...form.getInputProps('password')}
-        />
-        <Button
-          leftIcon={<IconDice size="1rem" />}
-          onClick={() => {
-            form.setFieldValue('password', randomString());
-          }}
-          variant="default"
-          mt="xl"
-        >
-          Generate random
-        </Button>
-      </Flex>
+      <Popover
+        opened={popoverOpened}
+        position="bottom"
+        width="target"
+        transitionProps={{ transition: 'pop' }}
+      >
+        <Popover.Target>
+          <div
+            onFocusCapture={() => setPopoverOpened(true)}
+            onBlurCapture={() => setPopoverOpened(false)}
+          >
+            <Flex columnGap={10} align="start">
+              <PasswordInput
+                icon={<IconKey size="0.8rem" />}
+                style={{
+                  flexGrow: 1,
+                }}
+                label="Password"
+                variant="filled"
+                mb="md"
+                withAsterisk
+                {...form.getInputProps('password')}
+              />
+              <Button
+                leftIcon={<IconDice size="1rem" />}
+                onClick={async () => {
+                  const randomPassword = await mutateAsync();
+                  form.setFieldValue('password', randomPassword);
+                }}
+                loading={isLoading}
+                variant="default"
+                mt="xl"
+              >
+                Generate random
+              </Button>
+            </Flex>
+          </div>
+        </Popover.Target>
+        <Popover.Dropdown>
+          <Progress color={color} value={strength} size={5} mb="xs" />
+          <PasswordRequirement
+            label="Includes at least 6 characters"
+            meets={form.values.password.length > 5}
+          />
+          {checks}
+        </Popover.Dropdown>
+      </Popover>
 
       <Group position="apart" noWrap>
         <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
@@ -69,10 +146,19 @@ export const CreateAccountSecurityStep = ({
   );
 };
 
-const randomString = () => {
-  return window.crypto.getRandomValues(new BigUint64Array(1))[0].toString(36);
+const PasswordRequirement = ({ meets, label }: { meets: boolean; label: string }) => {
+  return (
+    <Text
+      color={meets ? 'teal' : 'red'}
+      sx={{ display: 'flex', alignItems: 'center' }}
+      mt={7}
+      size="sm"
+    >
+      {meets ? <IconCheck size="0.9rem" /> : <IconX size="0.9rem" />} <Box ml={10}>{label}</Box>
+    </Text>
+  );
 };
 
 export const createAccountSecurityStepValidationSchema = z.object({
-  password: z.string().min(8).max(100),
+  password: passwordSchema,
 });

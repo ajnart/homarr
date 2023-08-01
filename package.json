@@ -68,6 +68,7 @@
     "fily-publish-gridstack": "^0.0.13",
     "flag-icons": "^6.9.2",
     "framer-motion": "^10.0.0",
+    "generate-password": "^1.7.0",
     "html-entities": "^2.3.3",
     "i18next": "^22.5.1",
     "js-file-download": "^0.4.12",

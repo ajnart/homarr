@@ -1,5 +1,15 @@
 import { z } from 'zod';
+
 import { CustomErrorParams } from '~/utils/i18n-zod-resolver';
+
+export const passwordSchema = z
+  .string()
+  .min(8)
+  .max(100)
+  .refine((value) => /[0-9]/.test(value))
+  .refine((value) => /[a-z]/.test(value))
+  .refine((value) => /[A-Z]/.test(value))
+  .refine((value) => /[$&+,:;=?@#|'<>.^*()%!-]/.test(value));
 
 export const signInSchema = z.object({
   name: z.string(),
@@ -22,7 +32,7 @@ export const signUpFormSchema = z
 export const createNewUserSchema = z.object({
   username: z.string(),
   email: z.string().email().optional(),
-  password: z.string().min(8).max(100),
+  password: passwordSchema,
 });
 
 export const colorSchemeParser = z
