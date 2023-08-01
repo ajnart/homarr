@@ -211,7 +211,7 @@ export const EditAppModal = ({
             <IntegrationTab form={form} />
           </Tabs>
 
-          <Group position="right" mt="md">
+          <Group noWrap position="right" mt="md">
             <Button onClick={closeModal} px={50} variant="light" color="gray">
               {t('common:cancel')}
             </Button>
