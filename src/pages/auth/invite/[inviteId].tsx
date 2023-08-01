@@ -1,5 +1,5 @@
 import { Button, Card, Flex, PasswordInput, Stack, Text, TextInput, Title } from '@mantine/core';
-import { useForm, zodResolver } from '@mantine/form';
+import { useForm } from '@mantine/form';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconCheck, IconX } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { z } from 'zod';
+import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
 import { inviteNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
@@ -114,10 +115,27 @@ const routeParamsSchema = z.object({
   inviteId: z.string(),
 });
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, query, params }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  locale,
+  req,
+  res,
+  query,
+  params,
+}) => {
+  const session = await getServerAuthSession({ req, res });
+
+  if (session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   const queryParams = queryParamsSchema.safeParse(query);
   const routeParams = routeParamsSchema.safeParse(params);
-  console.log(queryParams, routeParams);
+
   if (!queryParams.success || !routeParams.success) {
     return {
       notFound: true,

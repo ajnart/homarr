@@ -9,17 +9,17 @@ import {
   TextInput,
   Title,
 } from '@mantine/core';
-import { useForm, zodResolver } from '@mantine/form';
-import { showNotification, updateNotification } from '@mantine/notifications';
-import { IconAlertCircle, IconAlertTriangle, IconCheck, IconX } from '@tabler/icons-react';
-import axios from 'axios';
-import { setCookie } from 'cookies-next';
+import { useForm } from '@mantine/form';
+import { IconAlertTriangle } from '@tabler/icons-react';
+import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { z } from 'zod';
 import { CommonHeader } from '~/components/layout/common-header';
+import { getServerAuthSession } from '~/server/auth';
+import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signInSchema } from '~/validations/user';
 
 import { loginNamespaces } from '../../tools/server/translation-namespaces';
@@ -27,11 +27,12 @@ import { loginNamespaces } from '../../tools/server/translation-namespaces';
 export default function LoginPage() {
   const { t } = useTranslation(['authentication/login']);
   const queryParams = useRouter().query as { error?: 'CredentialsSignin' | (string & {}) };
+  const { i18nZodResolver } = useI18nZodResolver();
 
   const form = useForm<z.infer<typeof signInSchema>>({
     validateInputOnChange: true,
     validateInputOnBlur: true,
-    validate: zodResolver(signInSchema),
+    validate: i18nZodResolver(signInSchema),
   });
 
   const handleSubmit = (values: z.infer<typeof signInSchema>) => {
@@ -89,11 +90,22 @@ export default function LoginPage() {
   );
 }
 
-export async function getServerSideProps({ locale }: { locale: string }) {
+export const getServerSideProps: GetServerSideProps = async ({ locale, req, res }) => {
+  const session = await getServerAuthSession({ req, res });
+
+  if (session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, loginNamespaces)),
+      ...(await serverSideTranslations(locale ?? 'en', loginNamespaces)),
       // Will be passed to the page component as props
     },
   };
-}
+};
