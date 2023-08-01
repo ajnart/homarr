@@ -22,12 +22,6 @@ import { api } from '~/utils/api';
 
 const BoardsPage = () => {
   const { data } = api.config.all.useQuery();
-  const context = api.useContext();
-  const { mutateAsync: deletionMutationAsync } = api.config.delete.useMutation({
-    onSettled: () => {
-      void context.config.all.invalidate();
-    },
-  });
 
   const [deletingDashboards, { append, filter }] = useListState<string>([]);
 
