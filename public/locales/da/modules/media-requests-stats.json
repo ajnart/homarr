@@ -5,7 +5,7 @@
     "settings": {
       "title": "Statistikker over medieanmodninger",
       "direction": {
-        "label": ""
+        "label": "Layoutets retning."
       }
     }
   },
