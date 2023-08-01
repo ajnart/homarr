@@ -10,14 +10,14 @@ export const AccessibilitySettings = () => {
   return (
     <Stack>
       <Switch
-        label={t('disablePulse.label')}
-        description={t('disablePulse.description')}
+        label={t('accessibility.disablePulse.label')}
+        description={t('accessibility.disablePulse.description')}
         {...form.getInputProps('disablePingPulse', { type: 'checkbox' })}
       />
 
       <Switch
-        label={t('replaceIconsWithDots.label')}
-        description={t('replaceIconsWithDots.description')}
+        label={t('accessibility.replaceIconsWithDots.label')}
+        description={t('accessibility.replaceIconsWithDots.description')}
         {...form.getInputProps('replaceDotsWithIcons', { type: 'checkbox' })}
       />
     </Stack>
