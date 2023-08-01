@@ -42,7 +42,7 @@ export default function DockerMenuButton(props: any) {
         padding="xl"
         position="right"
         size="100%"
-        title={<ContainerActionBar selected={selection} reload={reload} />}
+        title={<ContainerActionBar isLoading selected={selection} reload={reload} />}
         transitionProps={{
           transition: 'pop',
         }}
