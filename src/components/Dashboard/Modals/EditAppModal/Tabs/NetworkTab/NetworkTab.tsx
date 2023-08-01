@@ -1,4 +1,4 @@
-import { MultiSelect, Switch, Tabs } from '@mantine/core';
+import { MultiSelect, Stack, Switch, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 
@@ -16,26 +16,28 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
   );
   return (
     <Tabs.Panel value="network" pt="lg">
-      <Switch
-        label={t('network.statusChecker.label')}
-        description={t('network.statusChecker.description')}
-        mb="md"
-        defaultChecked={form.values.network.enabledStatusChecker}
-        {...form.getInputProps('network.enabledStatusChecker')}
-      />
-      {form.values.network.enabledStatusChecker && (
-        <MultiSelect
-          required
-          label={t('network.statusCodes.label')}
-          description={t('network.statusCodes.description')}
-          data={StatusCodes}
-          clearable
-          searchable
-          defaultValue={acceptableStatusCodes}
-          variant="default"
-          {...form.getInputProps('network.statusCodes')}
+      <Stack spacing="xs">
+        <Switch
+          label={t('network.statusChecker.label')}
+          description={t('network.statusChecker.description')}
+          styles={{ label: { fontWeight: 500, }, description: { marginTop: 0, }, }}
+          defaultChecked={form.values.network.enabledStatusChecker}
+          {...form.getInputProps('network.enabledStatusChecker')}
         />
-      )}
+        {form.values.network.enabledStatusChecker && (
+          <MultiSelect
+            required
+            label={t('network.statusCodes.label')}
+            description={t('network.statusCodes.description')}
+            data={StatusCodes}
+            clearable
+            searchable
+            defaultValue={acceptableStatusCodes}
+            variant="default"
+            {...form.getInputProps('network.statusCodes')}
+          />
+        )}
+      </Stack>
     </Tabs.Panel>
   );
 };
