@@ -6,6 +6,12 @@
       "title": "Settings for Date and Time widget",
       "display24HourFormat": {
         "label": "Display full time (24-hour)"
+      },
+      "enableTimezone": {
+        "label": "Display a custom Timezone"
+      },
+      "timezoneLocation": {
+        "label": "Timezone Location"
       }
     }
   }

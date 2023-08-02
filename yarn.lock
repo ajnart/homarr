@@ -1969,6 +1969,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@turf/boolean-point-in-polygon@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "@turf/boolean-point-in-polygon@npm:6.5.0"
+  dependencies:
+    "@turf/helpers": ^6.5.0
+    "@turf/invariant": ^6.5.0
+  checksum: 624e54d9956b8f9d955285065f44c80ae66cd4a87e5d893f85871009b62ad9721cca520245a56f8c4401467767c153dda58f67fec0968e3971c7bb3a39617105
+  languageName: node
+  linkType: hard
+
+"@turf/helpers@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "@turf/helpers@npm:6.5.0"
+  checksum: d57f746351357838c654e0a9b98be3285a14b447504fd6d59753d90c6d437410bb24805d61c65b612827f07f6c2ade823bb7e56e41a1a946217abccfbd64c117
+  languageName: node
+  linkType: hard
+
+"@turf/invariant@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "@turf/invariant@npm:6.5.0"
+  dependencies:
+    "@turf/helpers": ^6.5.0
+  checksum: f45109ee41429d4aab49db9cfcc68f832cadf18b16c1b2c7031f0a6e52545bc4d64d0efd0a980f4d05f22532ed89d6e915aeaab9db44865898d4d030221d968e
+  languageName: node
+  linkType: hard
+
 "@types/aria-query@npm:^5.0.1":
   version: 5.0.1
   resolution: "@types/aria-query@npm:5.0.1"
@@ -2969,6 +2995,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"array-source@npm:0.0":
+  version: 0.0.4
+  resolution: "array-source@npm:0.0.4"
+  checksum: 35478c6a02f0262c86bbe7761a1b7a6385d76df3aa0623cb90d596a49c4f1bff1a9609a1e31ac7140c921c8546b287eb6129e54d0f1d79a0a29d84e18a31d626
+  languageName: node
+  linkType: hard
+
 "array-union@npm:^2.1.0":
   version: 2.1.0
   resolution: "array-union@npm:2.1.0"
@@ -3191,6 +3224,13 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: 3d0d025e6d381c4db5e71b538258952660ba574c060832095f182a9877ca798836fa550736269e669a2080e486f0cfdf5d3bcf2769b9f7cf123f6c6b8c005f8f
+  languageName: node
+  linkType: hard
+
+"buffer-from@npm:^1.0.0":
+  version: 1.1.2
+  resolution: "buffer-from@npm:1.1.2"
+  checksum: 0448524a562b37d4d7ed9efd91685a5b77a50672c556ea254ac9a6d30e3403a517d8981f10e565db24e8339413b43c97ca2951f10e399c6125a0d8911f5679bb
   languageName: node
   linkType: hard
 
@@ -3543,7 +3583,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.20.3":
+"commander@npm:2, commander@npm:^2.20.3":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
@@ -3568,6 +3608,18 @@ __metadata:
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
   checksum: 902a9f5d8967a3e2faf138d5cb784b9979bad2e6db5357c5b21c568df4ebe62bcb15108af1b2253744844eb964fc023fbd9afbbbb6ddd0bcc204c6fb5b7bf3af
+  languageName: node
+  linkType: hard
+
+"concat-stream@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "concat-stream@npm:2.0.0"
+  dependencies:
+    buffer-from: ^1.0.0
+    inherits: ^2.0.3
+    readable-stream: ^3.0.2
+    typedarray: ^0.0.6
+  checksum: d7f75d48f0ecd356c1545d87e22f57b488172811b1181d96021c7c4b14ab8855f5313280263dca44bb06e5222f274d047da3e290a38841ef87b59719bde967c7
   languageName: node
   linkType: hard
 
@@ -4915,6 +4967,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"file-source@npm:0.6":
+  version: 0.6.1
+  resolution: "file-source@npm:0.6.1"
+  dependencies:
+    stream-source: 0.3
+  checksum: db27232df214b27ddd7026bbd202caf0bde31123811ebac0a9772d6a41735efdc3ee8050661f56d02d43811bde79938adb5ed8cbfe5f813c7cd09b86d19b6c84
+  languageName: node
+  linkType: hard
+
 "fill-range@npm:^7.0.1":
   version: 7.0.1
   resolution: "fill-range@npm:7.0.1"
@@ -5138,6 +5199,33 @@ __metadata:
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
   checksum: a7437e58c6be12aa6c90f7730eac7fa9833dc78872b4ad2963d2031b00a3367a93f98aec75f9aaac7220848e4026d67a8655e870b24f20a543d103c0d65952ec
+  languageName: node
+  linkType: hard
+
+"geo-tz@npm:^7.0.7":
+  version: 7.0.7
+  resolution: "geo-tz@npm:7.0.7"
+  dependencies:
+    "@turf/boolean-point-in-polygon": ^6.5.0
+    "@turf/helpers": ^6.5.0
+    geobuf: ^3.0.2
+    pbf: ^3.2.1
+  checksum: 3edd225887cedcab4b372bc3ae4b35f27f8b325b797a91d8d7385cb73d566edcfd479e99599d8d08ec850e5cdaab30ad2fa6e5c0d0b4044c6bce3a06a8a1c87f
+  languageName: node
+  linkType: hard
+
+"geobuf@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "geobuf@npm:3.0.2"
+  dependencies:
+    concat-stream: ^2.0.0
+    pbf: ^3.2.1
+    shapefile: ~0.6.6
+  bin:
+    geobuf2json: bin/geobuf2json
+    json2geobuf: bin/json2geobuf
+    shp2geobuf: bin/shp2geobuf
+  checksum: 956f8dd2a86c593ce7124595512c45bcfc6570af8b9232645ed3b1feaa8db25c052d633d1eb836496a272dd8615436e3ff0ccb9dc866b4e75682ab15e9a2e3ed
   languageName: node
   linkType: hard
 
@@ -5576,10 +5664,12 @@ __metadata:
     eslint-plugin-vitest: ^0.2.0
     fily-publish-gridstack: ^0.0.13
     framer-motion: ^10.0.0
+    geo-tz: ^7.0.7
     happy-dom: ^10.0.0
     html-entities: ^2.3.3
     i18next: ^22.5.1
     js-file-download: ^0.4.12
+    moment-timezone: ^0.5.43
     next: 13.4.10
     next-i18next: ^13.0.0
     node-mocks-http: ^1.12.2
@@ -5778,7 +5868,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ieee754@npm:^1.1.13":
+"ieee754@npm:^1.1.12, ieee754@npm:^1.1.13":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
   checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
@@ -6909,6 +6999,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"moment-timezone@npm:^0.5.43":
+  version: 0.5.43
+  resolution: "moment-timezone@npm:0.5.43"
+  dependencies:
+    moment: ^2.29.4
+  checksum: 8075c897ed8a044f992ef26fe8cdbcad80caf974251db424cae157473cca03be2830de8c74d99341b76edae59f148c9d9d19c1c1d9363259085688ec1cf508d0
+  languageName: node
+  linkType: hard
+
+"moment@npm:^2.29.4":
+  version: 2.29.4
+  resolution: "moment@npm:2.29.4"
+  checksum: 0ec3f9c2bcba38dc2451b1daed5daded747f17610b92427bebe1d08d48d8b7bdd8d9197500b072d14e326dd0ccf3e326b9e3d07c5895d3d49e39b6803b76e80e
+  languageName: node
+  linkType: hard
+
 "mpd-parser@npm:^1.0.1, mpd-parser@npm:^1.1.1":
   version: 1.1.1
   resolution: "mpd-parser@npm:1.1.1"
@@ -7496,6 +7602,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path-source@npm:0.1":
+  version: 0.1.3
+  resolution: "path-source@npm:0.1.3"
+  dependencies:
+    array-source: 0.0
+    file-source: 0.6
+  checksum: 131eb109e146cb68e04228fc47665735d091e6cb852f13b7f90b5aaa185abbefecb6030a6213a834d59fe1c5426bf2aa9b63f138d42798d8a4024d028c879184
+  languageName: node
+  linkType: hard
+
 "path-type@npm:^4.0.0":
   version: 4.0.0
   resolution: "path-type@npm:4.0.0"
@@ -7514,6 +7630,18 @@ __metadata:
   version: 1.1.1
   resolution: "pathval@npm:1.1.1"
   checksum: 090e3147716647fb7fb5b4b8c8e5b55e5d0a6086d085b6cd23f3d3c01fcf0ff56fd3cc22f2f4a033bd2e46ed55d61ed8379e123b42afe7d531a2a5fc8bb556d6
+  languageName: node
+  linkType: hard
+
+"pbf@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "pbf@npm:3.2.1"
+  dependencies:
+    ieee754: ^1.1.12
+    resolve-protobuf-schema: ^2.1.0
+  bin:
+    pbf: bin/pbf
+  checksum: 8033f5e21fffdc485e85d50bbff07ab3313c6841c3630a4ba9bc9e82d2e9005ab92000a1a90cb911223caa44316293e367bab607dd8110d5c771e6c8aaad63e1
   languageName: node
   linkType: hard
 
@@ -7659,6 +7787,13 @@ __metadata:
     object-assign: ^4.1.1
     react-is: ^16.13.1
   checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
+  languageName: node
+  linkType: hard
+
+"protocol-buffers-schema@npm:^3.3.1":
+  version: 3.6.0
+  resolution: "protocol-buffers-schema@npm:3.6.0"
+  checksum: 8713b5770f6745ddbcdf3bbd03ee020624d506233bb567927a6615a6f69a5bd620a5f49597f34f4115792b853a4c9cb9e2d5d6b930a1c04bf198023e45c1c349
   languageName: node
   linkType: hard
 
@@ -7936,7 +8071,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:^3.1.1, readable-stream@npm:^3.4.0, readable-stream@npm:^3.5.0, readable-stream@npm:^3.6.0":
+"readable-stream@npm:^3.0.2, readable-stream@npm:^3.1.1, readable-stream@npm:^3.4.0, readable-stream@npm:^3.5.0, readable-stream@npm:^3.6.0":
   version: 3.6.2
   resolution: "readable-stream@npm:3.6.2"
   dependencies:
@@ -8035,6 +8170,15 @@ __metadata:
   version: 1.0.0
   resolution: "resolve-pkg-maps@npm:1.0.0"
   checksum: 1012afc566b3fdb190a6309cc37ef3b2dcc35dff5fa6683a9d00cd25c3247edfbc4691b91078c97adc82a29b77a2660c30d791d65dab4fc78bfc473f60289977
+  languageName: node
+  linkType: hard
+
+"resolve-protobuf-schema@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "resolve-protobuf-schema@npm:2.1.0"
+  dependencies:
+    protocol-buffers-schema: ^3.3.1
+  checksum: 88fffab2a3757888884a36f9aa4e24be5186b01820a8c26297dc1ce406b9daf776594926bdf524c2c8e8e5b0aba8ac48362b6584cdecc9a7083215ebca01c599
   languageName: node
   linkType: hard
 
@@ -8291,6 +8435,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"shapefile@npm:~0.6.6":
+  version: 0.6.6
+  resolution: "shapefile@npm:0.6.6"
+  dependencies:
+    array-source: 0.0
+    commander: 2
+    path-source: 0.1
+    slice-source: 0.4
+    stream-source: 0.3
+    text-encoding: ^0.6.4
+  bin:
+    dbf2json: bin/dbf2json
+    shp2json: bin/shp2json
+  checksum: 97ccf5412e8baad7a22e71700473f4b5aeab2d200093081dd8d77e180cc58e885127ce4f3b85897cd7fd49206084bace9b05c8591605f9912ba2cab0e93b427f
+  languageName: node
+  linkType: hard
+
 "shebang-command@npm:^2.0.0":
   version: 2.0.0
   resolution: "shebang-command@npm:2.0.0"
@@ -8365,6 +8526,13 @@ __metadata:
   version: 4.0.0
   resolution: "slash@npm:4.0.0"
   checksum: da8e4af73712253acd21b7853b7e0dbba776b786e82b010a5bfc8b5051a1db38ed8aba8e1e8f400dd2c9f373be91eb1c42b66e91abb407ff42b10feece5e1d2d
+  languageName: node
+  linkType: hard
+
+"slice-source@npm:0.4":
+  version: 0.4.1
+  resolution: "slice-source@npm:0.4.1"
+  checksum: ce360e1e488e86bb5c5202cf44627a5bd3dbe4203bc2d4c98e558eb8a49b97999cf9d31a916559ffc5c8b896116d4204e73a80c698e450375682aa0a5df8f805
   languageName: node
   linkType: hard
 
@@ -8472,6 +8640,13 @@ __metadata:
   dependencies:
     internal-slot: ^1.0.4
   checksum: d04173690b2efa40e24ab70e5e51a3ff31d56d699550cfad084104ab3381390daccb36652b25755e420245f3b0737de66c1879eaa2a8d4fc0a78f9bf892fcb42
+  languageName: node
+  linkType: hard
+
+"stream-source@npm:0.3":
+  version: 0.3.5
+  resolution: "stream-source@npm:0.3.5"
+  checksum: 65a0e0a38014dcfa6e219e92d83bde5fe716cf16df339e9d7e951525c0d129771416de4d77c3389c38cdd20a43d9575f90cc91041d6fa0c2f053b989780e3591
   languageName: node
   linkType: hard
 
@@ -8768,6 +8943,13 @@ __metadata:
     glob: ^7.1.4
     minimatch: ^3.0.4
   checksum: 3b34a3d77165a2cb82b34014b3aba93b1c4637a5011807557dc2f3da826c59975a5ccad765721c4648b39817e3472789f9b0fa98fc854c5c1c7a1e632aacdc28
+  languageName: node
+  linkType: hard
+
+"text-encoding@npm:^0.6.4":
+  version: 0.6.4
+  resolution: "text-encoding@npm:0.6.4"
+  checksum: 12616521dc62442657be3130a705506ebc6f081a68f70b335b514de3b57619754a7acb4a95a19243acfd84e226768e80be5380b43f4890e91f74c950a4e01d8d
   languageName: node
   linkType: hard
 
@@ -9089,6 +9271,13 @@ __metadata:
     for-each: ^0.3.3
     is-typed-array: ^1.1.9
   checksum: 2228febc93c7feff142b8c96a58d4a0d7623ecde6c7a24b2b98eb3170e99f7c7eff8c114f9b283085cd59dcd2bd43aadf20e25bba4b034a53c5bb292f71f8956
+  languageName: node
+  linkType: hard
+
+"typedarray@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "typedarray@npm:0.0.6"
+  checksum: 33b39f3d0e8463985eeaeeacc3cb2e28bc3dfaf2a5ed219628c0b629d5d7b810b0eb2165f9f607c34871d5daa92ba1dc69f49051cf7d578b4cbd26c340b9d1b1
   languageName: node
   linkType: hard
 
