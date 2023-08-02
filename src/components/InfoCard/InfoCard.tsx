@@ -6,7 +6,7 @@ import { IconInfoCircle } from '@tabler/icons-react';
 
 interface InfoCardProps {
   bg?: SystemProp<DefaultMantineColor>;
-  cardProp: Partial<RichTextEditorProps>;
+  cardProp?: Partial<RichTextEditorProps>;
   content: string;
   hoverProp?: Partial<HoverCardProps>;
   position?: "bottom" | "left" | "right" | "top" | "bottom-end" | "bottom-start" | "left-end" | "left-start" | "right-end" | "right-start" | "top-end" | "top-start"
