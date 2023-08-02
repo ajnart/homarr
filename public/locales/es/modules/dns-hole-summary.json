@@ -12,7 +12,7 @@
   "card": {
     "metrics": {
       "domainsOnAdlist": "Dominios en listas de anuncios",
-      "queriesToday": "Consultas hoy",
+      "queriesToday": "Consultas de hoy",
       "queriesBlockedTodayPercentage": "Bloqueado hoy",
       "queriesBlockedToday": "Bloqueado hoy"
     }
