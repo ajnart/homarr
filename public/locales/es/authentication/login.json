@@ -21,7 +21,7 @@
       "title": "Inicio de sesión satisfactorio, redirigiendo..."
     },
     "wrong": {
-      "title": "La contraseña introducida es incorrecta, por favor, intenta de nuevo."
+      "title": "La contraseña introducida es incorrecta, por favor, inténtalo de nuevo."
     }
   }
 }
