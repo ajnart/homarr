@@ -13,7 +13,7 @@ export const InfoCard = ({ content }: InfoCardProps) => {
   const editor = useEditor({
     content,
     editable: false,
-    editorProps:{ attributes:{ style: 'padding: 0;' }, },
+    editorProps: { attributes: { style: 'padding: 0;' }, },
     extensions: [
       StarterKit,
       Link,
@@ -21,22 +21,18 @@ export const InfoCard = ({ content }: InfoCardProps) => {
   });
 
   return (
-    <HoverCard withinPortal position="top">
+    <HoverCard position="top" withArrow withinPortal>
       <HoverCard.Target>
         <IconInfoCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
       </HoverCard.Target>
       <HoverCard.Dropdown
-        c='transparent'
+        bg={colorScheme === 'light' ? "gray.2" : "dark.8"}
         maw={400}
-        p={0}
-        style={{ border:"0", }}
+        px="10px"
+        py="5px"
       >
-        <RichTextEditor editor={editor}>
-          <RichTextEditor.Content
-            bg={colorScheme === 'light' ? "gray.2" : "dark.8"}
-            px="10px"
-            py="5px"
-          />
+        <RichTextEditor editor={editor} style={{ border:"0", }}>
+          <RichTextEditor.Content bg="transparent"/>
         </RichTextEditor>
       </HoverCard.Dropdown>
     </HoverCard>
