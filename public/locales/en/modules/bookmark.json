@@ -6,9 +6,7 @@
       "title": "Bookmark settings",
       "name": {
         "label": "Widget Title",
-        "placeholder": {
-          "label" : "Leave empty to keep the title hidden"
-        }
+        "info": "Leave empty to keep the title hidden. <a href=\"https://homarr.dev/docs/widgets/bookmarks/\" target=\"_blank\">See More...</a>"
       },
       "items": {
         "label": "Items"

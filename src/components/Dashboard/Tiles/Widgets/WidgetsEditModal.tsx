@@ -13,14 +13,13 @@ import {
   Text,
   TextInput,
   Title,
-  Tooltip,
-  useMantineTheme,
 } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus, IconInfoCircle } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 
+import { InfoCard } from '../../../InfoCard/InfoCard';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { mapObject } from '../../../../tools/client/objects';
@@ -148,7 +147,7 @@ const WidgetOptionTypeSwitch: FC<{
             onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
             {...option.inputProps}
           />
-          {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+          {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
         </Group>
       );
     case 'text':
@@ -156,7 +155,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <TextInput
             value={value as string}
@@ -170,7 +169,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <MultiSelect
             data={option.data}
@@ -187,7 +186,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <Select
             defaultValue={option.defaultValue}
@@ -204,7 +203,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <NumberInput
             value={value as number}
@@ -218,7 +217,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <Slider
             label={value}
@@ -268,7 +267,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <StaticDraggableList
             value={typedVal}
@@ -297,7 +296,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
             <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <MultiSelect
             data={value.map((name: any) => ({ value: name, label: name }))}
@@ -322,7 +321,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoTooltip label={t(`descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard content={t(`descriptor.settings.${key}.info`)}/>}
           </Group>
           <DraggableList
             items={Array.from(value).map((v: any) => ({
@@ -363,24 +362,4 @@ const WidgetOptionTypeSwitch: FC<{
     default:
       return null;
   }
-};
-
-interface InfoTooltipProps {
-  label: string;
-}
-
-const InfoTooltip = ({ label }: InfoTooltipProps) => {
-  const { colorScheme } =useMantineTheme();
-  return (
-    <Tooltip.Floating
-      label={label}
-      position="right-start"
-      c={ colorScheme === 'light' ? "black" : "dark.0" }
-      color={ colorScheme === 'light' ? "dark.0" : "dark.6" }
-      styles={{ tooltip: { maxWidth: 300, }, }}
-      multiline
-    >
-      <IconInfoCircle size="1.25rem" style={{ display: 'block', opacity: 0.5 }} />
-    </Tooltip.Floating>
-  )
 };

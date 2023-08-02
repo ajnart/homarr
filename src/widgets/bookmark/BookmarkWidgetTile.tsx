@@ -54,6 +54,7 @@ const definition = defineWidget({
     name: {
       type: 'text',
       defaultValue: '',
+      info: true,
     },
     items: {
       type: 'draggable-editable-list',
