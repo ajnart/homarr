@@ -23,7 +23,7 @@
 	"behaviour": {
 		"isOpeningNewTab": {
 			"label": "Abrir en una pestaña nueva",
-			"description": "Abra la aplicación en una nueva pestaña en lugar de la actual."
+			"description": "Abre la aplicación en una nueva pestaña en lugar de la actual."
 		},
 		"customProtocolWarning": "Usando un protocolo no estándar. Esto puede requerir aplicaciones preinstaladas y puede presentar riesgos de seguridad. Asegúrese de que su dirección sea segura y confiable."
 	},
@@ -33,16 +33,16 @@
 			"description": "Comprueba si tu aplicación está en línea mediante una simple solicitud HTTP(S)."
 		},
 		"statusCodes": {
-			"label": "Códigos HTTP de estado",
-			"description": "Códigos de estado HTTP considerados como en línea."
+			"label": "Códigos de estado HTTP",
+			"description": "Códigos de estado HTTP que son considerados como en línea."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "Icono App",
-			"description": "Empieza escribiendo para encontrar un icono. También puedes pegar la URL de una imagen para usar un icono personalizado.",
+			"label": "Icono de la aplicación",
+			"description": "Empieza a escribir para encontrar un icono. También puedes pegar la URL de una imagen para usar un ícono personalizado.",
 			"autocomplete": {
-				"title": "Ningún resultado encontrado",
+				"title": "No se han encontrado resultados",
 				"text": "Intenta usar un término de búsqueda más específico. Si no puedes encontrar tu icono deseado, pega la URL de la imagen encima para establecer un icono personalizado"
 			},
 			"noItems": {
