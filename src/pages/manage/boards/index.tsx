@@ -15,12 +15,13 @@ import {
 import { useListState } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
 import {
-  IconApps,
+  IconBox,
+  IconCategory,
   IconDeviceFloppy,
   IconDotsVertical,
   IconFolderFilled,
   IconPlus,
-  IconStar,
+  IconStack,
   IconStarFilled,
   IconTrash,
 } from '@tabler/icons-react';
@@ -105,7 +106,7 @@ const BoardsPage = () => {
               <Stack spacing={3}>
                 <Group position="apart">
                   <Group spacing="xs">
-                    <IconApps opacity={0.7} size="1rem" />
+                    <IconBox opacity={0.7} size="1rem" />
                     <Text color="dimmed">Apps</Text>
                   </Group>
                   <Text>{board.countApps}</Text>
@@ -113,7 +114,7 @@ const BoardsPage = () => {
 
                 <Group position="apart">
                   <Group spacing="xs">
-                    <IconApps opacity={0.7} size="1rem" />
+                    <IconStack opacity={0.7} size="1rem" />
                     <Text color="dimmed">Widgets</Text>
                   </Group>
                   <Text>{board.countWidgets}</Text>
@@ -121,7 +122,7 @@ const BoardsPage = () => {
 
                 <Group position="apart">
                   <Group spacing="xs">
-                    <IconApps opacity={0.7} size="1rem" />
+                    <IconCategory opacity={0.7} size="1rem" />
                     <Text color="dimmed">Categories</Text>
                   </Group>
                   <Text>{board.countCategories}</Text>
