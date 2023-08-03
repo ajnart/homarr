@@ -2,7 +2,6 @@ import { Flex, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
 import moment from 'moment-timezone';
-import dayjs from 'dayjs';
 import { useEffect, useRef, useState } from 'react';
 import { api } from '~/utils/api';
 
@@ -53,9 +52,11 @@ function DateTile({ widget }: DateTileProps) {
 
   return (
     <Flex ref={ref} display="flex" justify="space-around" align="center" h="100%" direction="column">
-      <Text size="md">{widget.properties.enableTimezone ? widget.properties.timezoneLocation.name : 'Local time'}</Text>
-      <Title>{dayjs(date).format(formatString)}</Title>
-      {width > 200 && <Text size="lg">{dayjs(date).format('dddd, MMMM D')}</Text>}
+      <Text size="md">{widget.properties.enableTimezone
+                        ? widget.properties.timezoneLocation.name + moment(date).format(' (z)')
+                        : 'Local time'}</Text>
+      <Title>{moment(date).format(formatString)}</Title>
+      {width > 200 && <Text size="lg">{moment(date).format('dddd, MMMM D')}</Text>}
     </Flex>
   );
 }
@@ -73,11 +74,12 @@ const useDateState = (location?: {latitude: number, longitude: number}) => {
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       setDate(getNewDate(timezone));
-      // Starts intervall which update the date every minute
+      // Starts interval which update the date every minute
       setSafeInterval(() => {
         setDate(getNewDate(timezone));
       }, 1000 * 60);
-    }, getMsUntilNextMinute());
+      //1 minute - current seconds and milliseconds count
+    }, 1000 * 60 - (1000 * moment().seconds() + moment().milliseconds()));
 
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
   }, []);
@@ -88,26 +90,9 @@ const useDateState = (location?: {latitude: number, longitude: number}) => {
 //Returns a local date if no inputs or returns date from input zone
 const getNewDate = (timezone?: string) => {
   if (timezone) {
-    //Get Date Time from region
-    const timezoneDate = moment(new Date()).tz(timezone).format();
-    //Remove mention of the UTC offset
-    const dateTruncated = timezoneDate.slice(0, timezoneDate.length-6);
-    return new Date(dateTruncated);
+    return moment().tz(timezone);
   }
-  return new Date();
+  return moment();
 }
-
-// calculates the amount of milliseconds until next minute starts.
-const getMsUntilNextMinute = () => {
-  const now = new Date();
-  const nextMinute = new Date(
-    now.getFullYear(),
-    now.getMonth(),
-    now.getDate(),
-    now.getHours(),
-    now.getMinutes() + 1
-  );
-  return nextMinute.getTime() - now.getTime();
-};
 
 export default definition;
