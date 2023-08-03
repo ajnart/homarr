@@ -67,7 +67,7 @@ function DateTile({ widget }: DateTileProps) {
  */
 const useDateState = (location?: {latitude: number, longitude: number}) => {
   //Gets a timezone from user input location. If location is undefined, then it means it's a local timezone so keep undefined
-  const timezone = location ? api.timezone.at.useQuery(location).data : undefined;
+  const timezone = api.timezone.at.useQuery(location).data;
   const [date, setDate] = useState(getNewDate(timezone));
   const setSafeInterval = useSetSafeInterval();
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change
