@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Mostrar los gráficos de una instancia Dash. externa en Homarr.",
+    "description": "Muestra los gráficos de una instancia de Dash. externa dentro de Homarr.",
     "settings": {
-      "title": "Ajustes para el widget Dash.",
+      "title": "Ajustes de Dash.",
       "dashName": {
-        "label": "Nombre Dash."
+        "label": "Nombre"
       },
       "url": {
         "label": "Dash. URL"
@@ -17,7 +17,7 @@
         "label": "Mostrar columnas"
       },
       "graphHeight": {
-        "label": "Altura de gráficos"
+        "label": "Altura de los gráficos"
       },
       "graphsOrder": {
         "label": "Gráficos (Órden)",
