@@ -237,6 +237,7 @@ const WidgetOptionTypeSwitch: FC<{
           value={value}
           handleChange={handleChange}
           widgetId={widgetId}
+          info={info}
         />
       );
 

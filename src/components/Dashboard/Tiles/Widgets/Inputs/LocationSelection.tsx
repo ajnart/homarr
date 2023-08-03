@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   Center,
+  Flex,
   Group,
   Loader,
   Modal,
@@ -23,13 +24,14 @@ import { City } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
 
 import { IntegrationOptionsValueType } from '../WidgetsEditModal';
-import Link from 'next/link';
+import { InfoCard } from '~/components/InfoCard/InfoCard';
 
 type LocationSelectionProps = {
   widgetId: string;
   propName: string;
   value: any;
   handleChange: (key: string, value: IntegrationOptionsValueType) => void;
+  info?: boolean;
 };
 
 export const LocationSelection = ({
@@ -37,6 +39,7 @@ export const LocationSelection = ({
   propName: key,
   value,
   handleChange,
+  info,
 }: LocationSelectionProps) => {
   const { t } = useTranslation('widgets/location');
   const [query, setQuery] = useState(value.name ?? '');
@@ -58,7 +61,10 @@ export const LocationSelection = ({
     <>
       <Card>
         <Stack spacing="xs">
-          <Title order={5}>{t(`modules/${widgetId}:descriptor.settings.${key}.label`)}</Title>
+          <Flex direction="row" justify="space-between" wrap="nowrap">
+            <Title order={5}>{t(`modules/${widgetId}:descriptor.settings.${key}.label`)}</Title>
+            {info && <InfoCard content={t(`modules/${widgetId}:descriptor.settings.${key}.info`)}/>}
+          </Flex>
 
           <Group noWrap align="end">
             <TextInput
