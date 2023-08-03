@@ -5,7 +5,7 @@
     "settings": {
       "title": "Ajustes de Dash.",
       "dashName": {
-        "label": "Nombre"
+        "label": "Nombre Dash."
       },
       "url": {
         "label": "Dash. URL"
