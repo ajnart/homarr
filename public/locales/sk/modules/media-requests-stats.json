@@ -5,7 +5,7 @@
     "settings": {
       "title": "Štatistiky požiadaviek médií",
       "direction": {
-        "label": ""
+        "label": "Smer rozloženia."
       }
     }
   },
