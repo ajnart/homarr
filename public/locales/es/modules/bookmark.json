@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Marcador",
-    "description": "Muestra una lista estática de cadenas de texto o enlaces",
+    "description": "Muestra una lista estática de cadenas o enlaces",
     "settings": {
       "title": "Ajustes de marcadores",
       "name": {
@@ -14,14 +14,14 @@
         "label": "Elementos"
       },
       "layout": {
-        "label": "Disposición"
+        "label": "Diseño"
       }
     }
   },
   "card": {
     "noneFound": {
       "title": "Lista de marcadores vacía",
-      "text": "Añadir nuevos elementos a la lista en el modo edición"
+      "text": "Añadir nuevos elementos a esta lista en el modo edición"
     }
   }
 }
