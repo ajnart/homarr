@@ -3,7 +3,7 @@
     "name": "iFrame",
     "description": "Incrusta cualquier contenido de Internet. Algunos sitios web pueden restringir el acceso.",
     "settings": {
-      "title": "Ajustes de iFrame",
+      "title": "Ajustes del widget iFrame",
       "embedUrl": {
         "label": "URL incrustada"
       },
