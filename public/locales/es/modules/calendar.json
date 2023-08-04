@@ -3,7 +3,7 @@
     "name": "Calendario",
     "description": "Muestra un calendario con los próximos lanzamientos, de integraciones soportadas.",
     "settings": {
-      "title": "Ajustes de calendario",
+      "title": "Ajustes del widget Calendario",
       "useSonarrv4": {
         "label": "Usar la API de Sonarr v4"
       },
