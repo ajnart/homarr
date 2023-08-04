@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Widget RSS",
+    "name": "RSS",
     "description": "",
     "settings": {
-      "title": "Ajustes para el widget RSS",
+      "title": "Ajustes de RSS",
       "rssFeedUrl": {
         "label": "URLs de fuentes RSS",
         "description": "Las URLs de fuentes RSS desde las que deseas mostrar."
