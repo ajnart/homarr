@@ -3,7 +3,7 @@
     "name": "Resumen de agujero DNS",
     "description": "Muestra datos importantes de PiHole o AdGuard",
     "settings": {
-      "title": "Configuración de resumen de agujero DNS",
+      "title": "Ajustes del widget Resumen de agujero DNS",
       "usePiHoleColors": {
         "label": "Usar colores de PiHole"
       }
