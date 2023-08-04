@@ -140,7 +140,7 @@ const BoardsPage = () => {
                 >
                   View dashboard
                 </Button>
-                <Menu>
+                <Menu width={240} withinPortal>
                   <Menu.Target>
                     <ActionIcon h={34} w={34} variant="default">
                       <IconDotsVertical size="1rem" />
@@ -155,8 +155,9 @@ const BoardsPage = () => {
                         });
                       }}
                     >
-                      Set as your default board
+                      <Text size="sm">Set as your default board</Text>
                     </Menu.Item>
+                    <Menu.Divider />
                     <Menu.Item
                       onClick={async () => {
                         modals.openContextModal({
@@ -173,10 +174,16 @@ const BoardsPage = () => {
                           },
                         });
                       }}
+                      disabled={board.name === 'default'}
                       icon={<IconTrash size="1rem" />}
                       color="red"
                     >
-                      Permanently delete
+                      <Text size="sm">Permanently delete</Text>
+                      {board.name === 'default' && (
+                        <Text size="xs">
+                          Deletion disabled, because older Homarr components still rely on this.
+                        </Text>
+                      )}
                     </Menu.Item>
                   </Menu.Dropdown>
                 </Menu>
