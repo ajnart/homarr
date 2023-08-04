@@ -13,7 +13,7 @@
       "alerts": {
         "automaticApproval": {
           "title": "Usando la clave API",
-          "text": "Esta petición se aprobará automáticamente"
+          "text": "Esta solicitud se aprobará automáticamente"
         }
       }
     },
