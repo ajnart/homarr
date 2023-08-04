@@ -3,7 +3,7 @@
     "name": "Servidor Multimedia",
     "description": "Interactúa con tu servidor multimedia Jellyfin o Plex",
     "settings": {
-      "title": "Ajustes de servidor multimedia"
+      "title": "Ajustes del widget Servidor Multimedia"
     }
   },
   "card": {
