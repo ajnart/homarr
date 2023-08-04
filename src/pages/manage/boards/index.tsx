@@ -136,7 +136,7 @@ const BoardsPage = () => {
                   variant="default"
                   color="blue"
                   radius="md"
-                  href={`/board/${board}`}
+                  href={`/board/${board.name}`}
                 >
                   View dashboard
                 </Button>
