@@ -17,18 +17,18 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: false,
     },
-    enableTimezone:{
+    enableTimezone: {
       type: 'switch',
       defaultValue: false,
     },
-    timezoneLocation:{
+    timezoneLocation: {
       type: 'location',
       defaultValue: {
         name: 'Paris',
         latitude: 48.85341,
         longitude: 2.3488,
       },
-    }
+    },
   },
   gridstack: {
     minWidth: 1,
@@ -46,15 +46,26 @@ interface DateTileProps {
 }
 
 function DateTile({ widget }: DateTileProps) {
-  const date = useDateState(widget.properties.enableTimezone ? widget.properties.timezoneLocation : undefined);
+  const date = useDateState(
+    widget.properties.enableTimezone ? widget.properties.timezoneLocation : undefined
+  );
   const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
   const { width, ref } = useElementSize();
 
   return (
-    <Flex ref={ref} display="flex" justify="space-around" align="center" h="100%" direction="column">
-      <Text size="md">{widget.properties.enableTimezone
-                        ? widget.properties.timezoneLocation.name + moment(date).format(' (z)')
-                        : 'Local time'}</Text>
+    <Flex
+      ref={ref}
+      display="flex"
+      justify="space-around"
+      align="center"
+      h="100%"
+      direction="column"
+    >
+      <Text size="md">
+        {widget.properties.enableTimezone
+          ? widget.properties.timezoneLocation.name + moment(date).format(' (z)')
+          : 'Local time'}
+      </Text>
       <Title>{moment(date).format(formatString)}</Title>
       {width > 200 && <Text size="lg">{moment(date).format('dddd, MMMM D')}</Text>}
     </Flex>
@@ -65,26 +76,30 @@ function DateTile({ widget }: DateTileProps) {
  * State which updates when the minute is changing
  * @returns current date updated every new minute
  */
-const useDateState = (location?: {latitude: number, longitude: number}) => {
+const useDateState = (location?: { latitude: number; longitude: number }) => {
   //Gets a timezone from user input location. If location is undefined, then it means it's a local timezone so keep undefined
   const { data: timezone } = api.timezone.at.useQuery(location!, {
-    enabled: location !== undefined
+    enabled: location !== undefined,
   });
   const [date, setDate] = useState(getNewDate(timezone));
   const setSafeInterval = useSetSafeInterval();
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change
   useEffect(() => {
-    timeoutRef.current = setTimeout(() => {
-      setDate(getNewDate(timezone));
-      // Starts interval which update the date every minute
-      setSafeInterval(() => {
+    setDate(getNewDate(timezone));
+    timeoutRef.current = setTimeout(
+      () => {
         setDate(getNewDate(timezone));
-      }, 1000 * 60);
-      //1 minute - current seconds and milliseconds count
-    }, 1000 * 60 - (1000 * moment().seconds() + moment().milliseconds()));
+        // Starts interval which update the date every minute
+        setSafeInterval(() => {
+          setDate(getNewDate(timezone));
+        }, 1000 * 60);
+        //1 minute - current seconds and milliseconds count
+      },
+      1000 * 60 - (1000 * moment().seconds() + moment().milliseconds())
+    );
 
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
-  }, []);
+  }, [timezone]);
 
   return date;
 };
@@ -95,6 +110,6 @@ const getNewDate = (timezone?: string) => {
     return moment().tz(timezone);
   }
   return moment();
-}
+};
 
 export default definition;
