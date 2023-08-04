@@ -11,10 +11,10 @@
         "label": "Mostrar torrents completados"
       },
       "displayStaleTorrents": {
-        "label": "Mostrar torrents estancados"
+        "label": "Mostrar torrents obsoletos"
       },
       "labelFilterIsWhitelist": {
-        "label": "La lista de etiquetas se trata de una lista blanca (en lugar de una lista negra)"
+        "label": "La lista de etiquetas es una lista blanca (en lugar de una lista negra)"
       },
       "labelFilter": {
         "label": "Lista de etiquetas",
