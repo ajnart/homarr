@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Estadísticas de solicitudes de contenido",
-    "description": "Estadísticas sobre tus solicitudes de contenido",
+    "name": "Estadísticas de solicitudes multimedia",
+    "description": "Estadísticas sobre tus solicitudes multimedia",
     "settings": {
-      "title": "Estadísticas de solicitudes de contenido",
+      "title": "Estadísticas de solicitudes multimedia",
       "direction": {
         "label": "Dirección del diseño."
       }
