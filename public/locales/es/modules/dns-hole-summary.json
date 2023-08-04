@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Resumen DNS hole",
-    "description": "Muestra datos importantes de Pihole o AdGuard",
+    "name": "Resumen de agujero DNS",
+    "description": "Muestra datos importantes de PiHole o AdGuard",
     "settings": {
-      "title": "Configuración del resumen de DNS Hole",
+      "title": "Configuración de resumen de agujero DNS",
       "usePiHoleColors": {
         "label": "Usar colores de PiHole"
       }
@@ -11,7 +11,7 @@
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "Dominios en listas de anuncios",
+      "domainsOnAdlist": "Dominios en listas",
       "queriesToday": "Consultas de hoy",
       "queriesBlockedTodayPercentage": "Bloqueado hoy",
       "queriesBlockedToday": "Bloqueado hoy"
