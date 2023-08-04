@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "Muestra los gráficos de una instancia de Dash. externa dentro de Homarr.",
     "settings": {
-      "title": "Ajustes de Dash.",
+      "title": "Ajustes del widget Dash.",
       "dashName": {
         "label": "Nombre Dash."
       },
