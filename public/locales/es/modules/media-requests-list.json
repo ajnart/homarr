@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Solicitudes de contenido",
-    "description": "Mostrar una lista de todas las solicitudes de contenido de su instancia de Overseerr o Jellyseerr",
+    "name": "Solicitudes multimedia",
+    "description": "Mostrar una lista de todas las solicitudes multimedia de tu instancia de Overseerr o Jellyseerr",
     "settings": {
-      "title": "Lista de solicitudes de contenido",
+      "title": "Lista de solicitudes multimedia",
       "replaceLinksWithExternalHost": {
         "label": "Reemplazar enlaces con el anfitrión externo"
       }
