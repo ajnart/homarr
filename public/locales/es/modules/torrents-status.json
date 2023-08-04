@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Muestra una lista de los torrents de los clientes Torrent soportados.",
+    "description": "Muestra una lista de torrents de los clientes de Torrent soportados.",
     "settings": {
-      "title": "Ajustes para el widget Torrent",
+      "title": "Ajustes del widget Torrent",
       "refreshInterval": {
-        "label": "Intervalo de refresco (en segundos)"
+        "label": "Intervalo de actualización (en segundos)"
       },
       "displayCompletedTorrents": {
         "label": "Mostrar torrents completados"
