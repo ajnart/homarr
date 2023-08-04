@@ -9,9 +9,9 @@ export const timezoneRouter = createTRPCRouter({
         z.object({
         longitude: z.number(),
         latitude: z.number(),
-        }).optional()
+        })
     )
     .query(async ({ input }) => {
-        return input? find(input.latitude,input.longitude)[0] : undefined;
+        return find(input.latitude,input.longitude)[0];
     }),
 })
