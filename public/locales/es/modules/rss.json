@@ -3,7 +3,7 @@
     "name": "RSS",
     "description": "Muestra las noticias de las fuentes RSS que añadas.",
     "settings": {
-      "title": "Ajustes de RSS",
+      "title": "Ajustes del widget RSS",
       "rssFeedUrl": {
         "label": "URLs de fuentes RSS",
         "description": "Las URLs de las fuentes RSS que deseas mostrar."
