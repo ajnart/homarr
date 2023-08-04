@@ -61,11 +61,11 @@ function DateTile({ widget }: DateTileProps) {
       h="100%"
       direction="column"
     >
-      <Text size="md">
-        {widget.properties.enableTimezone
-          ? widget.properties.timezoneLocation.name + moment(date).format(' (z)')
-          : 'Local time'}
-      </Text>
+      {widget.properties.enableTimezone &&
+        <Text size="md">
+          {widget.properties.timezoneLocation.name + moment(date).format(' (z)')}
+        </Text>
+      }
       <Title>{moment(date).format(formatString)}</Title>
       {width > 200 && <Text size="lg">{moment(date).format('dddd, MMMM D')}</Text>}
     </Flex>
