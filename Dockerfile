@@ -14,8 +14,12 @@ COPY package.json ./package.json
 COPY .next/standalone ./
 COPY .next/static ./.next/static
 
+COPY ./scripts/run.sh ./scripts/run.sh
+
 EXPOSE 7575
 
 ENV PORT 7575
+ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
+ENV NEXTAUTH_URL_INTERNAL http://homarr:7575
 
-CMD ["node", "server.js"]
+CMD ["sh", "./scripts/run.sh"]
