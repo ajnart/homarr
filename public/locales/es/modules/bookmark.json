@@ -3,7 +3,7 @@
     "name": "Marcador",
     "description": "Muestra una lista estática de cadenas o enlaces",
     "settings": {
-      "title": "Ajustes de marcadores",
+      "title": "Ajustes del widget Marcadores",
       "name": {
         "label": "Título del widget",
         "placeholder": {
