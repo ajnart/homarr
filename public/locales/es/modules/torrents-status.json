@@ -40,7 +40,7 @@
         "text": "Gestionado por {{appName}}, {{ratio}} ratio"
       },
       "body": {
-        "nothingFound": "No se han encontrado torrents",
+        "nothingFound": "No se encontraron torrents",
         "filterHidingItems": "{{count}} entradas ocultas por tus filtros"
       }
     },
