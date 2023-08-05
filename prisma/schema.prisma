@@ -78,6 +78,7 @@ model UserSettings {
     colorScheme          String  @default("environment") // environment, light, dark
     language             String  @default("en")
     defaultBoard         String  @default("default")
+    firstDayOfWeek       String  @default("monday") // monday, saturnday, sunday
     searchTemplate       String  @default("https://google.com/search?q=%s")
     openSearchInNewTab   Boolean @default(true)
     disablePingPulse     Boolean @default(false)

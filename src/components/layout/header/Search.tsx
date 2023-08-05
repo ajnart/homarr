@@ -1,5 +1,5 @@
-import { Autocomplete, Group, Kbd, Modal, Text, Tooltip, useMantineTheme } from '@mantine/core';
-import { useDisclosure, useHotkeys, useMediaQuery } from '@mantine/hooks';
+import { Autocomplete, Group, Text, useMantineTheme } from '@mantine/core';
+import { useDisclosure, useHotkeys } from '@mantine/hooks';
 import {
   IconBrandYoutube,
   IconDownload,
@@ -10,7 +10,7 @@ import {
 } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import { ReactNode, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 

@@ -146,7 +146,12 @@ export const userRouter = createTRPCRouter({
     return {
       id: user.id,
       name: user.name,
-      settings: user.settings,
+      settings: {
+        ...user.settings,
+        firstDayOfWeek: z
+          .enum(['monday', 'saturday', 'sunday'])
+          .parse(user.settings.firstDayOfWeek),
+      },
     };
   }),
 
@@ -164,6 +169,9 @@ export const userRouter = createTRPCRouter({
               replacePingWithIcons: input.replaceDotsWithIcons,
               defaultBoard: input.defaultBoard,
               language: input.language,
+              firstDayOfWeek: input.firstDayOfWeek,
+              searchTemplate: input.searchTemplate,
+              openSearchInNewTab: input.openSearchInNewTab,
             },
           },
         },

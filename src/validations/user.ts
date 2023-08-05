@@ -1,5 +1,4 @@
 import { z } from 'zod';
-
 import { CustomErrorParams } from '~/utils/i18n-zod-resolver';
 
 export const passwordSchema = z
@@ -41,8 +40,11 @@ export const colorSchemeParser = z
   .catch('environment');
 
 export const updateSettingsValidationSchema = z.object({
+  defaultBoard: z.string(),
+  language: z.string(),
+  firstDayOfWeek: z.enum(['monday', 'saturday', 'sunday']),
   disablePingPulse: z.boolean(),
   replaceDotsWithIcons: z.boolean(),
-  language: z.string(),
-  defaultBoard: z.string()
+  searchTemplate: z.string().nonempty().max(256),
+  openSearchInNewTab: z.boolean(),
 });

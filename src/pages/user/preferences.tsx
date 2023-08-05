@@ -1,4 +1,14 @@
-import { Button, Group, LoadingOverlay, Select, Stack, Text, Title } from '@mantine/core';
+import {
+  Button,
+  Container,
+  Group,
+  LoadingOverlay,
+  Paper,
+  Select,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import type { InferGetServerSidePropsType } from 'next';
 import { GetServerSidePropsContext } from 'next';
@@ -7,7 +17,8 @@ import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { AccessibilitySettings } from '~/components/User/Preferences/AccessibilitySettings';
-import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { SearchEngineSelector } from '~/components/User/Preferences/SearchEngineSelector';
+import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { sleep } from '~/tools/client/time';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -21,18 +32,24 @@ const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServe
   const { data: boardsData } = api.boards.all.useQuery();
 
   return (
-    <ManageLayout>
-      <Head>
-        <title>Preferences • Homarr</title>
-      </Head>
-      <Title mb="xl">Preferences</Title>
+    <MainLayout>
+      <Container>
+        <Paper p="xl" mih="100%" withBorder>
+          <Head>
+            <title>Preferences • Homarr</title>
+          </Head>
+          <Title mb="xl">Preferences</Title>
 
-      {data && boardsData && <SettingsComponent settings={data.settings} boardsData={boardsData} />}
-    </ManageLayout>
+          {data && boardsData && (
+            <SettingsComponent settings={data.settings} boardsData={boardsData} />
+          )}
+        </Paper>
+      </Container>
+    </MainLayout>
   );
 };
 
-export const [FormProvider, useFormContext, useForm] =
+export const [FormProvider, useUserPreferencesFormContext, useForm] =
   createFormContext<z.infer<typeof updateSettingsValidationSchema>>();
 
 const SettingsComponent = ({
@@ -56,10 +73,13 @@ const SettingsComponent = ({
 
   const form = useForm({
     initialValues: {
+      defaultBoard: settings.defaultBoard,
+      language: settings.language,
+      firstDayOfWeek: settings.firstDayOfWeek,
       disablePingPulse: settings.disablePingPulse,
       replaceDotsWithIcons: settings.replacePingWithIcons,
-      language: settings.language,
-      defaultBoard: settings.defaultBoard,
+      searchTemplate: settings.searchTemplate,
+      openSearchInNewTab: settings.openSearchInNewTab,
     },
     validate: i18nZodResolver(updateSettingsValidationSchema),
     validateInputOnBlur: true,
@@ -70,13 +90,12 @@ const SettingsComponent = ({
   const { mutate, isLoading } = api.user.updateSettings.useMutation({
     onSettled: () => {
       void context.boards.all.invalidate();
-    }
+      void context.user.withSettings.invalidate();
+    },
   });
 
-  const handleSubmit = () => {
-    sleep(500).then(() => {
-      mutate(form.values);
-    });
+  const handleSubmit = (values: z.infer<typeof updateSettingsValidationSchema>) => {
+    mutate(values);
   };
 
   return (
@@ -130,10 +149,16 @@ const SettingsComponent = ({
           />
 
           <Title order={2} size="lg" mt="lg" mb="md">
-            Accessibility
+            {t('accessibility.title')}
           </Title>
 
           <AccessibilitySettings />
+
+          <Title order={2} size="lg" mt="lg" mb="md">
+            {t('searchEngine.title')}
+          </Title>
+
+          <SearchEngineSelector />
 
           <Button type="submit" fullWidth mt="md">
             Save

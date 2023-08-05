@@ -6,6 +6,7 @@
         }
     },
     "accessibility": {
+        "title": "Accessibility",
         "disablePulse": {
             "label": "Disable ping pulse",
             "description": "By default, ping indicators in Homarr will pulse. This may be irritating. This slider will deactivate the animation"
@@ -21,6 +22,17 @@
         },
         "firstDayOfWeek": {
             "label": "First day of the week"
+        }
+    },
+    "searchEngine": {
+        "title": "Search engine",
+        "custom": "Custom",
+        "newTab": {
+            "label": "Open search results in a new tab"
+        },
+        "template": {
+            "label": "Query URL",
+            "description": "Use %s as a placeholder for the query"
         }
     }
 }

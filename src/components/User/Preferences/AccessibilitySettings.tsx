@@ -1,11 +1,11 @@
 import { Stack, Switch } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
-import { useFormContext } from '~/pages/user/preferences';
+import { useUserPreferencesFormContext } from '~/pages/user/preferences';
 
 export const AccessibilitySettings = () => {
   const { t } = useTranslation('user/preferences');
 
-  const form = useFormContext();
+  const form = useUserPreferencesFormContext();
 
   return (
     <Stack>
