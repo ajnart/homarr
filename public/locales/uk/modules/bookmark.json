@@ -6,9 +6,7 @@
       "title": "Налаштування обраного",
       "name": {
         "label": "",
-        "placeholder": {
-          "label": ""
-        }
+        "info": ""
       },
       "items": {
         "label": "Елементи"
