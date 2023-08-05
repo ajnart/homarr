@@ -6,9 +6,7 @@
       "title": "Grāmatzīmju uzstādījumi",
       "name": {
         "label": "Logrīka Nosaukums",
-        "placeholder": {
-          "label": "Atstāt tukšu, lai virsraksts paliktu slēpts"
-        }
+        "info": ""
       },
       "items": {
         "label": "Vienumi"
