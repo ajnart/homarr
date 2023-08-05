@@ -32,7 +32,7 @@ import { ReactNode } from 'react';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
-import { MainHeader } from '../Header/Header';
+import { MainHeader } from '../header/Header';
 
 interface ManageLayoutProps {
   children: ReactNode;
