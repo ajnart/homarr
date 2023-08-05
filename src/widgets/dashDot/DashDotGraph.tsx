@@ -4,8 +4,12 @@ import { useTranslation } from 'next-i18next';
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
 
+import { CustomTypeOptions } from 'i18next';
+
+type GraphType = keyof CustomTypeOptions['resources']['modules/dashdot']['card']['graphs'];
+
 interface DashDotGraphProps {
-  graph: string;
+  graph: GraphType;
   graphHeight: number;
   isCompact: boolean;
   multiView: boolean;

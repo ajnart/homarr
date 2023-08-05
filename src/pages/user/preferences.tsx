@@ -68,7 +68,7 @@ const SettingsComponent = ({
     country: language.country,
   }));
 
-  const { t } = useTranslation('user/preferences');
+  const { t } = useTranslation(['user/preferences', 'common']);
 
   const { i18nZodResolver } = useI18nZodResolver();
 
