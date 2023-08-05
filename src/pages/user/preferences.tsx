@@ -10,8 +10,7 @@ import {
   Title,
 } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
-import { createServerSideHelpers } from '@trpc/react-query/server';
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { forwardRef } from 'react';
@@ -23,7 +22,6 @@ import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { RouterOutputs, api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { updateSettingsValidationSchema } from '~/validations/user';

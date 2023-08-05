@@ -12,6 +12,7 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import { User } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { forwardRef } from 'react';
 import { AboutModal } from '~/components/layout/header/About/AboutModal';
@@ -21,6 +22,7 @@ import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAtt
 import { REPO_URL } from '../../../../data/constants';
 
 export const AvatarMenu = () => {
+  const { t } = useTranslation('layout/header');
   const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { data: sessionData } = useSession();
   const { colorScheme, toggleColorScheme } = useColorScheme();
@@ -37,7 +39,7 @@ export const AvatarMenu = () => {
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Item icon={<Icon size="1rem" />} onClick={toggleColorScheme}>
-              Switch theme
+              {t('actions.avatar.switchTheme')}
             </Menu.Item>
             {sessionData?.user && (
               <>
@@ -46,10 +48,10 @@ export const AvatarMenu = () => {
                   href="/user/preferences"
                   icon={<IconUserCog size="1rem" />}
                 >
-                  User preferences
+                  {t('actions.avatar.preferences')}
                 </Menu.Item>
                 <Menu.Item component={Link} href="/board" icon={<IconDashboard size="1rem" />}>
-                  Default Dashboard
+                  {t('actions.avatar.defaultBoard')}
                 </Menu.Item>
                 <Menu.Divider />
               </>
@@ -59,13 +61,13 @@ export const AvatarMenu = () => {
               rightSection={
                 newVersionAvailable && (
                   <Badge variant="light" color="blue">
-                    New
+                    {t('actions.avatar.about.new')}
                   </Badge>
                 )
               }
               onClick={() => aboutModal.open()}
             >
-              About
+              {t('actions.avatar.about.label')}
             </Menu.Item>
             {sessionData?.user ? (
               <Menu.Item
@@ -77,11 +79,13 @@ export const AvatarMenu = () => {
                   }).then(() => window.location.reload())
                 }
               >
-                Logout from {sessionData.user.name}
+                {t('actions.avatar.logout', {
+                  username: sessionData.user.name,
+                })}
               </Menu.Item>
             ) : (
               <Menu.Item icon={<IconLogin size="1rem" />} component={Link} href="/auth/login">
-                Login
+                {t('actions.avatar.login')}
               </Menu.Item>
             )}
           </Menu.Dropdown>

@@ -9,6 +9,7 @@ import {
   TablerIconsProps,
 } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
 import { useConfigContext } from '~/config/provider';
@@ -21,6 +22,7 @@ type SearchProps = {
 };
 
 export const Search = ({ isMobile }: SearchProps) => {
+  const { t } = useTranslation('layout/header');
   const [search, setSearch] = useState('');
   const ref = useRef<HTMLInputElement>(null);
   useHotkeys([['mod+K', () => ref.current?.focus()]]);
@@ -37,10 +39,18 @@ export const Search = ({ isMobile }: SearchProps) => {
   const engines = generateEngines(
     search,
     userWithSettings?.settings.searchTemplate ?? 'https://www.google.com/search?q=%s'
-  ).filter(
-    (engine) =>
-      engine.sort !== 'movie' || config?.apps.some((app) => app.integration.type === engine.value)
-  );
+  )
+    .filter(
+      (engine) =>
+        engine.sort !== 'movie' || config?.apps.some((app) => app.integration.type === engine.value)
+    )
+    .map((engine) => ({
+      ...engine,
+      label: t(`search.engines.${engine.sort}`, {
+        app: engine.value,
+        query: search,
+      }),
+    }));
   const data = [...apps, ...engines];
 
   return (
@@ -50,7 +60,7 @@ export const Search = ({ isMobile }: SearchProps) => {
         radius="xl"
         w={isMobile ? '100%' : 400}
         variant="filled"
-        placeholder="Search..."
+        placeholder={`${t('search.label')}...`}
         hoverOnSearchChange
         rightSection={
           <IconSearch
@@ -87,7 +97,7 @@ export const Search = ({ isMobile }: SearchProps) => {
           const target = userWithSettings?.settings.openSearchInNewTab ? '_blank' : '_self';
           window.open(item.metaData.url, target);
         }}
-        aria-label="Search"
+        aria-label={t('search.label') as string}
       />
       <MovieModal
         opened={showMovieModal}
@@ -104,7 +114,7 @@ export const Search = ({ isMobile }: SearchProps) => {
   );
 };
 
-const SearchItemComponent = forwardRef<HTMLDivElement, SearchAutoCompleteItem>(
+const SearchItemComponent = forwardRef<HTMLDivElement, SearchAutoCompleteItem & { label: string }>(
   ({ icon, label, value, sort, ...others }, ref) => {
     let Icon = getItemComponent(icon);
 
@@ -150,7 +160,6 @@ const useConfigApps = (search: string) => {
 
 type SearchAutoCompleteItem = {
   icon: ((props: TablerIconsProps) => ReactNode) | string;
-  label: string;
   value: string;
 } & (
   | {
@@ -169,7 +178,6 @@ const generateEngines = (searchValue: string, webTemplate: string) =>
     ? ([
         {
           icon: IconWorld,
-          label: `Search for ${searchValue} in the web`,
           value: `web`,
           sort: 'web',
           metaData: {
@@ -180,7 +188,6 @@ const generateEngines = (searchValue: string, webTemplate: string) =>
         },
         {
           icon: IconDownload,
-          label: `Search for ${searchValue} torrents`,
           value: `torrent`,
           sort: 'torrent',
           metaData: {
@@ -189,7 +196,6 @@ const generateEngines = (searchValue: string, webTemplate: string) =>
         },
         {
           icon: IconBrandYoutube,
-          label: `Search for ${searchValue} on youtube`,
           value: 'youtube',
           sort: 'youtube',
           metaData: {
@@ -200,7 +206,6 @@ const generateEngines = (searchValue: string, webTemplate: string) =>
           (name) =>
             ({
               icon: IconMovie,
-              label: `Search for ${searchValue} on ${name}`,
               value: name,
               sort: 'movie',
             }) as const
