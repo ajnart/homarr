@@ -10,8 +10,6 @@ import { IconInfoCircle } from '@tabler/icons-react';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 
-type A = HoverCardProps['position'];
-
 interface InfoCardProps {
   bg?: SystemProp<DefaultMantineColor>;
   cardProp?: Partial<RichTextEditorProps>;
