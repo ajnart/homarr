@@ -1,9 +1,9 @@
 {
   "configSelect": {
-    "label": "Cambiador de configuración",
-    "description": "{{configCount}} configuraciones disponibles",
+    "label": "Seleccionar configuración",
+    "description": "Configuraciones disponibles: {{configCount}}",
     "loadingNew": "Cargando tu configuración...",
-    "pleaseWait": "Por favor, ¡espera hasta que tu nueva configuración esté carga!"
+    "pleaseWait": "¡Por favor, espera hasta que se cargue tu nueva configuración!"
   },
   "modal": {
     "copy": {
