@@ -6,9 +6,7 @@
       "title": "Opzioni preferiti",
       "name": {
         "label": "Titolo del Widget",
-        "placeholder": {
-          "label": "Lascia vuoto per tenere nascosto il titolo"
-        }
+        "info": ""
       },
       "items": {
         "label": "Elementi"
