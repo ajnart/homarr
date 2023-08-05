@@ -83,49 +83,44 @@ function App(
     <>
       <CommonHead />
       <SessionProvider session={pageProps.session}>
-        <PersistQueryClientProvider
-          client={queryClient}
-          persistOptions={{ persister: asyncStoragePersister }}
-        >
-          <ColorSchemeProvider {...pageProps}>
-            {(colorScheme) => (
-              <ColorTheme.Provider value={colorTheme}>
-                <MantineProvider
-                  theme={{
-                    ...theme,
-                    components: {
-                      Checkbox: {
-                        styles: {
-                          input: { cursor: 'pointer' },
-                          label: { cursor: 'pointer' },
-                        },
-                      },
-                      Switch: {
-                        styles: {
-                          input: { cursor: 'pointer' },
-                          label: { cursor: 'pointer' },
-                        },
+        <ColorSchemeProvider {...pageProps}>
+          {(colorScheme) => (
+            <ColorTheme.Provider value={colorTheme}>
+              <MantineProvider
+                theme={{
+                  ...theme,
+                  components: {
+                    Checkbox: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
                       },
                     },
-                    primaryColor,
-                    primaryShade,
-                    colorScheme,
-                  }}
-                  withGlobalStyles
-                  withNormalizeCSS
-                >
-                  <ConfigProvider {...props.pageProps}>
-                    <Notifications limit={4} position="bottom-left" />
-                    <ModalsProvider modals={modals}>
-                      <Component {...pageProps} />
-                    </ModalsProvider>
-                  </ConfigProvider>
-                </MantineProvider>
-              </ColorTheme.Provider>
-            )}
-          </ColorSchemeProvider>
-          <ReactQueryDevtools initialIsOpen={false} />
-        </PersistQueryClientProvider>
+                    Switch: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
+                      },
+                    },
+                  },
+                  primaryColor,
+                  primaryShade,
+                  colorScheme,
+                }}
+                withGlobalStyles
+                withNormalizeCSS
+              >
+                <ConfigProvider {...props.pageProps}>
+                  <Notifications limit={4} position="bottom-left" />
+                  <ModalsProvider modals={modals}>
+                    <Component {...pageProps} />
+                  </ModalsProvider>
+                </ConfigProvider>
+              </MantineProvider>
+            </ColorTheme.Provider>
+          )}
+        </ColorSchemeProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </SessionProvider>
     </>
   );

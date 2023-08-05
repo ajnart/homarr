@@ -1,6 +1,7 @@
 {
+    "metaTitle": "Preferences",
+    "pageTitle": "Your preferences",
     "boards": {
-        "title": "Boards",
         "defaultBoard": {
             "label": "Default board"
         }
@@ -21,7 +22,12 @@
             "label": "Language"
         },
         "firstDayOfWeek": {
-            "label": "First day of the week"
+            "label": "First day of the week",
+            "options": {
+                "monday": "Monday",
+                "saturday": "Saturday",
+                "sunday": "Sunday"
+            }
         }
     },
     "searchEngine": {
