@@ -2,12 +2,13 @@ import { Avatar, Badge, Menu, UnstyledButton, useMantineTheme } from '@mantine/c
 import { useDisclosure } from '@mantine/hooks';
 import {
   IconDashboard,
+  IconHomeShare,
   IconInfoCircle,
   IconLogin,
   IconLogout,
   IconMoonStars,
   IconSun,
-  IconUserCog,
+  IconUserCog
 } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { User } from 'next-auth';
@@ -50,6 +51,9 @@ export const AvatarMenu = () => {
                 </Menu.Item>
                 <Menu.Item component={Link} href="/board" icon={<IconDashboard size="1rem" />}>
                   Default Dashboard
+                </Menu.Item>
+                <Menu.Item component={Link} href="/manage" icon={<IconHomeShare size="1rem" />}>
+                  Manage
                 </Menu.Item>
                 <Menu.Divider />
               </>
