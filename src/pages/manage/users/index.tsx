@@ -23,6 +23,7 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
+import { manageNamespaces } from '~/tools/server/translation-namespaces';
 
 const ManageUsersPage = () => {
   const [activePage, setActivePage] = useState(0);
@@ -149,7 +150,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   const translations = await getServerSideTranslations(
-    ['common'],
+    manageNamespaces,
     ctx.locale,
     undefined,
     undefined
