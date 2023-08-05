@@ -10,8 +10,8 @@ import {
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertTriangle } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
 import { Logo } from '../Common/Logo';
 import { AvatarMenu } from './AvatarMenu';
@@ -73,6 +73,7 @@ type ExperimentalHeaderNoteProps = {
   visible?: boolean;
 };
 const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHeaderNoteProps) => {
+  const { t } = useTranslation();
   if (!visible) return null;
 
   return (
@@ -80,8 +81,7 @@ const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHe
       <Flex h="100%" align="center" columnGap={7}>
         <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
         <Text color="white" lineClamp={height === 30 ? 1 : 2}>
-          This is an experimental feature of Homarr. Please report any issues to the official Homarr
-          team.
+          {t('experimentalNote.label')}
         </Text>
       </Flex>
     </Box>
