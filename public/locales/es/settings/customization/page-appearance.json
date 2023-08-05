@@ -4,7 +4,7 @@
     "description": "El título del panel en la parte superior izquierda"
   },
   "metaTitle": {
-    "label": "Tarjeta Meta",
+    "label": "Título de pestaña",
     "description": "El título mostrado en la pestaña de tu navegador"
   },
   "logo": {
