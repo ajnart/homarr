@@ -54,6 +54,8 @@ export const api = createTRPCNext<RootRouter>({
   ssr: false,
 });
 
+export const client = createTRPCProxyClient<RootRouter>(getTrpcConfiguration());
+
 /**
  * Inference helper for inputs.
  *

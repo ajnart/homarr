@@ -30,6 +30,10 @@ export const userRouter = createTRPCRouter({
       isAdmin: true,
     });
   }),
+  count: publicProcedure.query(async ({ ctx }) => {
+    const count = await ctx.prisma.user.count();
+    return count;
+  }),
   createFromInvite: publicProcedure
     .input(
       signUpFormSchema.and(
