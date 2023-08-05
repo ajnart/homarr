@@ -43,17 +43,19 @@ function getStrength(password: string) {
 }
 
 interface CreateAccountSecurityStepProps {
+  defaultPassword: string;
   nextStep: ({ password }: { password: string }) => void;
   prevStep: () => void;
 }
 
 export const CreateAccountSecurityStep = ({
+  defaultPassword,
   nextStep,
   prevStep,
 }: CreateAccountSecurityStepProps) => {
   const form = useForm({
     initialValues: {
-      password: '',
+      password: defaultPassword,
     },
     validateInputOnBlur: true,
     validateInputOnChange: true,

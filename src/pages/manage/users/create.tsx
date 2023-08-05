@@ -73,6 +73,8 @@ const CreateNewUserPage = () => {
           description="Create account"
         >
           <CreateAccountStep
+            defaultUsername={form.values.account.username}
+            defaultEmail={form.values.account.eMail}
             nextStep={(value) => {
               form.setFieldValue('account', value);
               nextStep();
@@ -87,6 +89,7 @@ const CreateNewUserPage = () => {
           description="Password"
         >
           <CreateAccountSecurityStep
+            defaultPassword={form.values.security.password}
             nextStep={(value) => {
               form.setFieldValue('security', value);
               nextStep();
@@ -160,7 +163,15 @@ const CreateNewUserPage = () => {
               </tbody>
             </Table>
 
-            <Flex justify="end" wrap="nowrap">
+            <Group position="apart" noWrap>
+              <Button
+                leftIcon={<IconArrowLeft size="1rem" />}
+                onClick={prevStep}
+                variant="light"
+                px="xl"
+              >
+                Previous
+              </Button>
               <Button
                 onClick={async () => {
                   await mutateAsync({
@@ -176,7 +187,7 @@ const CreateNewUserPage = () => {
               >
                 Confirm
               </Button>
-            </Flex>
+            </Group>
           </Card>
         </Stepper.Step>
         <Stepper.Completed>

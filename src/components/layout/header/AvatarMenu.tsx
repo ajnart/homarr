@@ -8,7 +8,7 @@ import {
   IconLogout,
   IconMoonStars,
   IconSun,
-  IconUserCog
+  IconUserCog,
 } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { User } from 'next-auth';
