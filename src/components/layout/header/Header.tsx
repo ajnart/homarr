@@ -73,7 +73,7 @@ type ExperimentalHeaderNoteProps = {
   visible?: boolean;
 };
 const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHeaderNoteProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('layout/header');
   if (!visible) return null;
 
   return (

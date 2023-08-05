@@ -30,13 +30,14 @@ const PreferencesPage = () => {
   const { data } = api.user.withSettings.useQuery();
   const { data: boardsData } = api.boards.all.useQuery();
   const { t } = useTranslation('user/preferences');
+  const headTitle = `${t('metaTitle')} • Homarr`;
 
   return (
-    <MainLayout>
+    <MainLayout showExperimental>
       <Container>
         <Paper p="xl" mih="100%" withBorder>
           <Head>
-            <title>{t('metaTitle')} • Homarr</title>
+            <title>{headTitle}</title>
           </Head>
           <Title mb="xl">{t('pageTitle')}</Title>
 
