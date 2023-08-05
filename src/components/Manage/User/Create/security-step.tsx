@@ -19,6 +19,7 @@ import {
   IconX,
 } from '@tabler/icons-react';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { z } from 'zod';
 import { api } from '~/utils/api';
 import { passwordSchema } from '~/validations/user';
@@ -73,6 +74,8 @@ export const CreateAccountSecurityStep = ({
     />
   ));
 
+  const { t } = useTranslation('user/create');
+
   const strength = getStrength(form.values.password);
   const color = strength === 100 ? 'teal' : strength > 50 ? 'yellow' : 'red';
 
@@ -95,7 +98,7 @@ export const CreateAccountSecurityStep = ({
                 style={{
                   flexGrow: 1,
                 }}
-                label="Password"
+                label={t('steps.security.password.label')}
                 variant="filled"
                 mb="md"
                 withAsterisk
@@ -111,7 +114,7 @@ export const CreateAccountSecurityStep = ({
                 variant="default"
                 mt="xl"
               >
-                Generate random
+                {t('buttons.generateRandomPw')}
               </Button>
             </Flex>
           </div>
@@ -119,7 +122,7 @@ export const CreateAccountSecurityStep = ({
         <Popover.Dropdown>
           <Progress color={color} value={strength} size={5} mb="xs" />
           <PasswordRequirement
-            label="Includes at least 6 characters"
+            label={t('steps.security.password.requirement')}
             meets={form.values.password.length > 5}
           />
           {checks}
@@ -128,7 +131,7 @@ export const CreateAccountSecurityStep = ({
 
       <Group position="apart" noWrap>
         <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
-          Previous
+          {t('buttons.previous')}
         </Button>
         <Button
           rightIcon={<IconArrowRight size="1rem" />}
@@ -141,7 +144,7 @@ export const CreateAccountSecurityStep = ({
           px="xl"
           disabled={!form.isValid()}
         >
-          Next
+          {t('buttons.next')}
         </Button>
       </Group>
     </Card>

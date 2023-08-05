@@ -18,6 +18,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -32,17 +33,16 @@ const ManageUsersPage = () => {
     search: debouncedSearch,
   });
 
+  const { t } = useTranslation('user/manage');
+
   return (
     <ManageLayout>
       <Head>
         <title>Users • Homarr</title>
       </Head>
 
-      <Title mb="md">Manage users</Title>
-      <Text mb="xl">
-        Using users, you have granular control who can access, edit or delete resources on your
-        Homarr instance.
-      </Text>
+      <Title mb="md">{t('title')}</Title>
+      <Text mb="xl">{t('text')}</Text>
 
       <Flex columnGap={10} justify="end" mb="md">
         <Autocomplete
@@ -61,7 +61,7 @@ const ManageUsersPage = () => {
           href="/manage/users/create"
           variant="default"
         >
-          Create
+          {t('buttons.create')}
         </Button>
       </Flex>
 
@@ -70,7 +70,7 @@ const ManageUsersPage = () => {
           <Table mb="md" withBorder highlightOnHover>
             <thead>
               <tr>
-                <th>User</th>
+                <th>{t('table.header.user')}</th>
               </tr>
             </thead>
             <tbody>
@@ -87,7 +87,9 @@ const ManageUsersPage = () => {
                           onClick={() => {
                             openContextModal({
                               modal: 'deleteUserModal',
-                              title: <Text weight="bold">Delete user {user.name}</Text>,
+                              title: (
+                                <Text weight="bold">{t('modals.delete', { name: user.name })}</Text>
+                              ),
                               innerProps: {
                                 userId: user.id,
                                 username: user.name ?? '',
@@ -110,7 +112,7 @@ const ManageUsersPage = () => {
                   <td colSpan={1}>
                     <Box p={15}>
                       <Text>
-                        Your search does not match any entries. Please adjust your filter.
+                        {t('searchDoesntMatch')}
                       </Text>
                     </Box>
                   </td>

@@ -43,6 +43,9 @@ export const boardNamespaces = [
 
 export const manageNamespaces = [
   'user/preferences',
+  'user/manage',
+  'user/invite',
+  'user/create',
   'boards/manage',
   'zod',
 ];

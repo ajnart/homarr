@@ -1,6 +1,7 @@
 import { Button, Card, Flex, TextInput } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { IconArrowRight, IconAt, IconUser } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 import { z } from 'zod';
 
 interface CreateAccountStepProps {
@@ -20,11 +21,13 @@ export const CreateAccountStep = ({ defaultEmail, defaultUsername, nextStep }: C
     validate: zodResolver(createAccountStepValidationSchema),
   });
 
+  const { t } = useTranslation('user/create');
+
   return (
     <Card mih={400}>
       <TextInput
         icon={<IconUser size="0.8rem" />}
-        label="Username"
+        label={t('steps.account.username.label')}
         variant="filled"
         mb="md"
         withAsterisk
@@ -32,7 +35,7 @@ export const CreateAccountStep = ({ defaultEmail, defaultUsername, nextStep }: C
       />
       <TextInput
         icon={<IconAt size="0.8rem" />}
-        label="E-Mail"
+        label={t('steps.account.email.label')}
         variant="filled"
         mb="md"
         {...form.getInputProps('eMail')}
@@ -51,7 +54,7 @@ export const CreateAccountStep = ({ defaultEmail, defaultUsername, nextStep }: C
           variant="light"
           px="xl"
         >
-          Next
+          {t('buttons.next')}
         </Button>
       </Flex>
     </Card>

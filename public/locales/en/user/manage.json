@@ -1,0 +1,16 @@
+{
+    "title": "Manage users",
+    "text": "Using users, you have granular control who can access, edit or delete resources on your Homarr instance.",
+    "buttons": {
+        "create": "Create"
+    },
+    "table": {
+        "header": {
+            "user": "User"
+        }
+    },
+    "modals": {
+        "delete": "Delete user {{name}}"
+    },
+    "searchDoesntMatch": "Your search does not match any entries. Please adjust your filter."
+}

@@ -1,4 +1,4 @@
-import { Alert, Button, Card, Flex, Group, Stepper, Table, Text, Title } from '@mantine/core';
+import { Alert, Button, Card, Group, Stepper, Table, Text, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import {
   IconArrowLeft,
@@ -14,6 +14,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { z } from 'zod';
 import {
   CreateAccountStep,
@@ -27,6 +28,7 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
+import { manageNamespaces } from '~/tools/server/translation-namespaces';
 
 const CreateNewUserPage = () => {
   const [active, setActive] = useState(0);
@@ -61,6 +63,8 @@ const CreateNewUserPage = () => {
     },
   });
 
+  const { t } = useTranslation('user/create');
+
   return (
     <ManageLayout>
       <Head>
@@ -72,8 +76,8 @@ const CreateNewUserPage = () => {
           allowStepClick={false}
           allowStepSelect={false}
           icon={<IconUser />}
-          label="First step"
-          description="Create account"
+          label={t('steps.account.title')}
+          description={t('steps.account.text')}
         >
           <CreateAccountStep
             defaultUsername={form.values.account.username}
@@ -88,8 +92,8 @@ const CreateNewUserPage = () => {
           allowStepClick={false}
           allowStepSelect={false}
           icon={<IconKey />}
-          label="Second step"
-          description="Password"
+          label={t('steps.security.title')}
+          description={t('steps.security.text')}
         >
           <CreateAccountSecurityStep
             defaultPassword={form.values.security.password}
@@ -104,21 +108,18 @@ const CreateNewUserPage = () => {
           allowStepClick={false}
           allowStepSelect={false}
           icon={<IconMailCheck />}
-          label="Final step"
-          description="Save to database"
+          label={t('steps.finish.title')}
+          description={t('steps.finish.title')}
         >
           <Card mih={400}>
-            <Title order={5}>Review your inputs</Title>
-            <Text mb="xl">
-              After you submit your data to the database, the user will be able to log in. Are you
-              sure that you want to store this user in the database and activate the login?
-            </Text>
+            <Title order={5}>{t('steps.finish.card.title')}</Title>
+            <Text mb="xl">{t('steps.finish.card.text')}</Text>
 
             <Table mb="lg" withBorder highlightOnHover>
               <thead>
                 <tr>
-                  <th>Property</th>
-                  <th>Value</th>
+                  <th>{t('steps.finish.table.header.property')}</th>
+                  <th>{t('steps.finish.table.header.value')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -126,7 +127,7 @@ const CreateNewUserPage = () => {
                   <td>
                     <Group spacing="xs">
                       <IconUser size="1rem" />
-                      <Text>Username</Text>
+                      <Text>{t('steps.finish.table.header.username')}</Text>
                     </Group>
                   </td>
                   <td>{form.values.account.username}</td>
@@ -135,7 +136,7 @@ const CreateNewUserPage = () => {
                   <td>
                     <Group spacing="xs">
                       <IconMail size="1rem" />
-                      <Text>E-Mail</Text>
+                      <Text>{t('steps.finish.table.header.email')}</Text>
                     </Group>
                   </td>
                   <td>
@@ -144,7 +145,7 @@ const CreateNewUserPage = () => {
                     ) : (
                       <Group spacing="xs">
                         <IconInfoCircle size="1rem" color="orange" />
-                        <Text color="orange">Not set</Text>
+                        <Text color="orange">{t('steps.finish.table.notSet')}</Text>
                       </Group>
                     )}
                   </td>
@@ -153,13 +154,13 @@ const CreateNewUserPage = () => {
                   <td>
                     <Group spacing="xs">
                       <IconKey size="1rem" />
-                      <Text>Password</Text>
+                      <Text>{t('steps.finish.table.password')}</Text>
                     </Group>
                   </td>
                   <td>
                     <Group spacing="xs">
                       <IconCheck size="1rem" color="green" />
-                      <Text color="green">Valid</Text>
+                      <Text color="green">{t('steps.finish.table.valid')}</Text>
                     </Group>
                   </td>
                 </tr>
@@ -173,7 +174,7 @@ const CreateNewUserPage = () => {
                 variant="light"
                 px="xl"
               >
-                Previous
+                {t('buttons.previous')}
               </Button>
               <Button
                 onClick={async () => {
@@ -188,14 +189,14 @@ const CreateNewUserPage = () => {
                 variant="light"
                 px="xl"
               >
-                Confirm
+                {t('buttons.confirm')}
               </Button>
             </Group>
           </Card>
         </Stepper.Step>
         <Stepper.Completed>
           <Alert title="User was created" color="green" mb="md">
-            User has been created in the database. They can now log in.
+            {t('steps.finish.alertConfirmed')}
           </Alert>
 
           <Group>
@@ -207,7 +208,7 @@ const CreateNewUserPage = () => {
               leftIcon={<IconUserPlus size="1rem" />}
               variant="default"
             >
-              Create another
+              {t('buttons.createAnother')}
             </Button>
             <Button
               component={Link}
@@ -215,7 +216,7 @@ const CreateNewUserPage = () => {
               variant="default"
               href="/manage/users"
             >
-              Go back to users
+              {t('buttons.goBack')}
             </Button>
           </Group>
         </Stepper.Completed>
@@ -234,7 +235,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   const translations = await getServerSideTranslations(
-    ['common'],
+    manageNamespaces,
     ctx.locale,
     undefined,
     undefined
