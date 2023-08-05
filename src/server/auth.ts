@@ -1,5 +1,5 @@
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import Cookies from 'cookies';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
 import { type DefaultSession, type NextAuthOptions, getServerSession } from 'next-auth';
