@@ -14,6 +14,8 @@ COPY package.json ./package.json
 COPY .next/standalone ./
 COPY .next/static ./.next/static
 
+COPY prisma/schema.prisma prisma/schema.prisma
+
 COPY ./scripts/run.sh ./scripts/run.sh
 
 EXPOSE 7575
