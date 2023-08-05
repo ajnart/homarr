@@ -1,4 +1,4 @@
-export const dashboardNamespaces = [
+export const boardNamespaces = [
   'common',
   'zod',
   'layout/element-selector/selector',
@@ -9,18 +9,10 @@ export const dashboardNamespaces = [
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
   'settings/common',
-  'settings/general/theme-selector',
   'settings/general/config-changer',
   'settings/general/internationalization',
   'settings/general/search-engine',
   'settings/general/widget-positions',
-  'settings/customization/general',
-  'settings/customization/color-selector',
-  'settings/customization/page-appearance',
-  'settings/customization/shade-selector',
-  'settings/customization/app-width',
-  'settings/customization/opacity-selector',
-  'settings/customization/gridstack',
   'modules/common',
   'modules/date',
   'modules/calendar',
@@ -46,6 +38,7 @@ export const dashboardNamespaces = [
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',
+  'boards/common',
 ];
 
 export const manageNamespaces = ['user/preferences', 'zod'];

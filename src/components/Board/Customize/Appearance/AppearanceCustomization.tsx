@@ -18,11 +18,7 @@ import Editor from 'react-simple-code-editor';
 import { useBoardCustomizationFormContext } from '../form';
 
 export const AppearanceCustomization = () => {
-  const { t } = useTranslation([
-    'settings/customization/page-appearance',
-    'settings/customization/color-selector',
-  ]);
-  const theme = useMantineTheme();
+  const { t } = useTranslation('settings/customization/page-appearance');
   const form = useBoardCustomizationFormContext();
 
   return (
@@ -45,7 +41,7 @@ type ColorSelectorProps = {
   type: 'primaryColor' | 'secondaryColor';
 };
 const ColorSelector = ({ type }: ColorSelectorProps) => {
-  const { t } = useTranslation('settings/customization/color-selector');
+  const { t } = useTranslation('boards/customize');
   const theme = useMantineTheme();
   const form = useBoardCustomizationFormContext();
 
@@ -55,7 +51,7 @@ const ColorSelector = ({ type }: ColorSelectorProps) => {
   }));
 
   return (
-    <Input.Wrapper label={type}>
+    <Input.Wrapper label={t(`settings.appearance.${type}`)}>
       <Group>
         {colors.map(({ color, swatch }) => (
           <ColorSwatch

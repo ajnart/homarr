@@ -8,7 +8,7 @@ import ContainerActionBar from '~/modules/Docker/ContainerActionBar';
 import DockerTable from '~/modules/Docker/DockerTable';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { dashboardNamespaces } from '~/tools/server/translation-namespaces';
+import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
 export default function DockerPage() {
@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
     };
   }
 
-  const translations = await getServerSideTranslations(dashboardNamespaces, locale, req, res);
+  const translations = await getServerSideTranslations(boardNamespaces, locale, req, res);
   return {
     props: {
       ...translations,

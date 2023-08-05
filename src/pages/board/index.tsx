@@ -7,7 +7,7 @@ import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { dashboardNamespaces } from '~/tools/server/translation-namespaces';
+import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { ConfigType } from '~/types/config';
 
 export default function BoardPage({
@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   });
 
   const translations = await getServerSideTranslations(
-    dashboardNamespaces,
+    boardNamespaces,
     ctx.locale,
     ctx.req,
     ctx.res

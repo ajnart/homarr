@@ -7,7 +7,7 @@ import { useInitConfig } from '~/config/init';
 import { configExists } from '~/tools/config/configExists';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { dashboardNamespaces } from '~/tools/server/translation-namespaces';
+import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { ConfigType } from '~/types/config';
 
 export default function BoardPage({
@@ -52,7 +52,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   }
 
   const config = await getFrontendConfig(routeParams.data.slug);
-  const translations = await getServerSideTranslations(dashboardNamespaces, locale, req, res);
+  const translations = await getServerSideTranslations(boardNamespaces, locale, req, res);
 
   return {
     props: {

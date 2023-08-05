@@ -1,5 +1,4 @@
-import { Button, Checkbox, Grid, Stack } from '@mantine/core';
-import { IconDeviceFloppy } from '@tabler/icons-react';
+import { Checkbox, Grid, Stack } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import { useBoardCustomizationFormContext } from '../form';

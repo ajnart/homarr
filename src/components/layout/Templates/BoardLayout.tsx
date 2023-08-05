@@ -15,12 +15,12 @@ import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
+import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
+import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
 import { env } from '~/env';
 import { api } from '~/utils/api';
 
-import { HeaderActionButton } from '~/components/layout/header/ActionButton';
-import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
@@ -68,10 +68,10 @@ const DockerButton = () => {
 
 const CustomizeBoardButton = () => {
   const { name } = useConfigContext();
-  console.log('name', name);
+  const { t } = useTranslation('boards/common');
 
   return (
-    <Tooltip label="Customize board">
+    <Tooltip label={t('header.customize')}>
       <HeaderActionButton component={Link} href={`/board/${name}/customize`}>
         <IconSettings size={20} stroke={1.5} />
       </HeaderActionButton>
@@ -158,7 +158,7 @@ const ToggleEditModeButton = () => {
   if (enabled) {
     return (
       <Button.Group>
-        <Tooltip label={t('button.disabled')}>
+        <Tooltip label={t('button.enabled')}>
           <HeaderActionButton onClick={save}>
             <IconEditCircleOff size={20} stroke={1.5} />
           </HeaderActionButton>

@@ -12,6 +12,7 @@ import {
 } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
@@ -28,7 +29,8 @@ import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { dashboardNamespaces } from '~/tools/server/translation-namespaces';
+import { boardNamespaces } from '~/tools/server/translation-namespaces';
+import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { boardCustomizationSchema } from '~/validations/dashboards';
@@ -41,6 +43,7 @@ export default function CustomizationPage() {
   const { data: config } = api.config.byName.useQuery({ name: query.slug });
   const { mutateAsync: saveCusomization, isLoading } = api.config.saveCusomization.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
+  const { t } = useTranslation('boards/customize');
   const form = useBoardCustomizationForm({
     initialValues: {
       layout: {
@@ -75,8 +78,8 @@ export default function CustomizationPage() {
     if (isLoading) return;
     showNotification({
       id: notificationId,
-      title: 'Saving customization',
-      message: 'Please wait while we save your customization',
+      title: t('notifications.pending.title'),
+      message: t('notifications.pending.message'),
       loading: true,
     });
     await saveCusomization(
@@ -91,8 +94,8 @@ export default function CustomizationPage() {
         onSuccess() {
           updateNotification({
             id: notificationId,
-            title: 'Customization saved',
-            message: 'Your customization has been saved',
+            title: t('notifications.success.title'),
+            message: t('notifications.success.message'),
             color: 'green',
             icon: <IconCheck />,
           });
@@ -100,8 +103,8 @@ export default function CustomizationPage() {
         onError() {
           updateNotification({
             id: notificationId,
-            title: 'Error',
-            message: 'Unable to save customization',
+            title: t('notifications.error.title'),
+            message: t('notifications.error.message'),
             color: 'red',
             icon: <IconX />,
           });
@@ -110,20 +113,31 @@ export default function CustomizationPage() {
     );
   };
 
+  const metaTitle = `${t('metaTitle', {
+    name: firstUpperCase(query.slug),
+  })} • Homarr`;
+
   return (
     <MainLayout>
+      <Head>
+        <title>{metaTitle}</title>
+      </Head>
       <Container>
         <Paper p="xl" py="sm" mih="100%" withBorder>
           <Stack>
             <Group position="apart">
-              <Title order={2}>Customization for {query.slug} Board</Title>
+              <Title order={2}>
+                {t('pageTitle', {
+                  name: firstUpperCase(query.slug),
+                })}
+              </Title>
               <Button
                 component={Link}
                 href={`/board/${query.slug}`}
                 variant="light"
                 leftIcon={<IconArrowLeft size={16} />}
               >
-                Back to Board
+                {t('backToBoard')}
               </Button>
             </Group>
             <BoardCustomizationFormProvider form={form}>
@@ -146,7 +160,7 @@ export default function CustomizationPage() {
                     <AppearanceCustomization />
                   </Stack>
                   <Button type="submit" loading={isLoading}>
-                    Save changes
+                    {t('save')}
                   </Button>
                 </Stack>
               </form>
@@ -200,7 +214,20 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
 
   helpers.config.byName.prefetch({ name: routeParams.data.slug });
 
-  const translations = await getServerSideTranslations(dashboardNamespaces, locale, req, res);
+  const translations = await getServerSideTranslations(
+    [
+      'boards/customize',
+      'settings/common',
+      'settings/customization/general',
+      'settings/customization/page-appearance',
+      'settings/customization/shade-selector',
+      'settings/customization/opacity-selector',
+      'settings/customization/gridstack',
+    ],
+    locale,
+    req,
+    res
+  );
 
   return {
     props: {
