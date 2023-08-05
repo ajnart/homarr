@@ -1,23 +1,22 @@
 import Head from 'next/head';
 import React from 'react';
+import { firstUpperCase } from '~/tools/shared/strings';
 
 import { useConfigContext } from '../../../config/provider';
 
 export const BoardHeadOverride = () => {
-  const { config } = useConfigContext();
+  const { config, name } = useConfigContext();
 
-  if (!config) return null;
+  if (!config || !name) return null;
 
   const { metaTitle, faviconUrl } = config.settings.customization;
+  const fallbackTitle = `${firstUpperCase(name)} Board • Homarr`;
+  const title = metaTitle && metaTitle.length > 0 ? metaTitle : fallbackTitle;
 
   return (
     <Head>
-      {metaTitle && metaTitle.length > 0 && (
-        <>
-          <title>{metaTitle}</title>
-          <meta name="apple-mobile-web-app-title" content={metaTitle} />
-        </>
-      )}
+      <title>{title}</title>
+      <meta name="apple-mobile-web-app-title" content={title} />
 
       {faviconUrl && faviconUrl.length > 0 && (
         <>
