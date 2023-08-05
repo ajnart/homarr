@@ -4,7 +4,7 @@
     "descriptionPreset": "Número de columnas cuando la pantalla tiene menos de {{pixels}} píxeles de ancho",
     "descriptionExceedsPreset": "Número de columnas cuando el tamaño de pantalla excede los {{pixels}} píxeles"
   },
-  "unsavedChanges": "Tienes cambios no guardados. Clic en el botón de Aplicar cambios para aplicar y guardar.",
+  "unsavedChanges": "Tienes cambios sin guardar. Haz clic en el botón Aplicar cambios para aplicar y guardar.",
   "applyChanges": "Aplicar cambios",
   "defaultValues": "Valores por defecto"
 }
