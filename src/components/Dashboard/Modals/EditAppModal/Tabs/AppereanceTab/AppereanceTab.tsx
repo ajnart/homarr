@@ -56,9 +56,9 @@ export const AppearanceTab = ({
           label={t('appearance.appNameStatus.label')}
           description={t('appearance.appNameStatus.description')}
           data={[
-            {value: 'normal', label: 'Show title on tile only'},
-            {value: 'hover', label: 'Show title on tooltip hover only'},
-            {value: 'hidden', label: 'Don\'t show at all'},
+            {value: 'normal', label: t('appearance.appNameStatus.dropdown.normal')?? 'Normal'},
+            {value: 'hover', label: t('appearance.appNameStatus.dropdown.hover')?? 'Hover'},
+            {value: 'hidden', label: t('appearance.appNameStatus.dropdown.hidden')?? 'Hidden'},
           ]}
           {...form.getInputProps('appearance.appNameStatus')}
           onChange={(value) => {
@@ -70,10 +70,10 @@ export const AppearanceTab = ({
             label={t('appearance.positionAppName.label')}
             description={t('appearance.positionAppName.description')}
             data={[
-              { value: 'column', label: 'Top' },
-              { value: 'row-reverse', label: 'Right' },
-              { value: 'column-reverse', label: 'Bottom' },
-              { value: 'row', label: 'Left' },
+              { value: 'column', label: t('appearance.positionAppName.dropdown.top')?? 'Top'},
+              { value: 'row-reverse', label: t('appearance.positionAppName.dropdown.right')?? 'Right' },
+              { value: 'column-reverse', label: t('appearance.positionAppName.dropdown.bottom')?? 'Bottom' },
+              { value: 'row', label: t('appearance.positionAppName.dropdown.left')?? 'Left' },
             ]}
             {...form.getInputProps('appearance.positionAppName')}
             onChange={(value) => {

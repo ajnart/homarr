@@ -27,7 +27,7 @@
 		},
 		"tooltipDescription":{
 			"label": "Application Description",
-			"description": "The text you enter will appear when hovering over your app, very much like this box.\r\nUse this to give users more details about your app or leave empty to have nothing."
+			"description": "The text you enter will appear when hovering over your app.\r\nUse this to give users more details about your app or leave empty to have nothing."
 		},
 		"customProtocolWarning": "Using a non-standard protocol. This may require pre-installed applications and can introduce security risks. Ensure that your address is secure and trusted."
 	},
@@ -56,11 +56,22 @@
 		},
 		"appNameStatus":{
 			"label":"App Name Status",
-			"description":"Choose where you want the title to show up, if at all."
+			"description":"Choose where you want the title to show up, if at all.",
+			"dropdown": {
+				"normal":"Show title on tile only",
+				"hover":"Show title on tooltip hover only",
+				"hidden":"Don't show at all"
+			}
 		},
 		"positionAppName":{
 			"label":"App Name Position",
-			"description":"Position of the app's name relative to the icon."
+			"description":"Position of the app's name relative to the icon.",
+			"dropdown": {
+				"top":"Top",
+				"right":"Right",
+				"bottom":"Bottom",
+				"left":"Left"
+			}
 		}
 	},
 	"integration": {
