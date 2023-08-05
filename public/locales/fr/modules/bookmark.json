@@ -5,10 +5,8 @@
     "settings": {
       "title": "Paramètres des marque-pages",
       "name": {
-        "label": "",
-        "placeholder": {
-          "label": ""
-        }
+        "label": "Nom du widget",
+        "info": ""
       },
       "items": {
         "label": "Éléments"
