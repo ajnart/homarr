@@ -5,13 +5,15 @@ import { z } from 'zod';
 
 interface CreateAccountStepProps {
   nextStep: ({ eMail, username }: { username: string; eMail: string }) => void;
+  defaultUsername: string;
+  defaultEmail: string;
 }
 
-export const CreateAccountStep = ({ nextStep }: CreateAccountStepProps) => {
+export const CreateAccountStep = ({ defaultEmail, defaultUsername, nextStep }: CreateAccountStepProps) => {
   const form = useForm({
     initialValues: {
-      username: '',
-      eMail: '',
+      username: defaultUsername,
+      eMail: defaultEmail,
     },
     validateInputOnBlur: true,
     validateInputOnChange: true,

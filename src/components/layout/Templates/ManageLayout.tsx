@@ -26,6 +26,7 @@ import {
   IconUser,
   IconUsers,
 } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
@@ -46,6 +47,9 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
 
   const [burgerMenuOpen, { toggle: toggleBurgerMenu, close: closeBurgerMenu }] =
     useDisclosure(false);
+
+  const data = useSession();
+  const isAdmin = data.data?.user.isAdmin ?? false;
 
   const navigationLinks = (
     <>
@@ -69,37 +73,43 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
         component={Link}
         href="/manage/boards"
       />
-      <NavLink
-        label="Users"
-        icon={
-          <ThemeIcon size="md" variant="light" color="red">
-            <IconUser size="1rem" />
-          </ThemeIcon>
-        }
-      >
-        <NavLink
-          icon={<IconUsers size="1rem" />}
-          label="Manage"
-          component={Link}
-          href="/manage/users"
-        />
-        <NavLink
-          icon={<IconMailForward size="1rem" />}
-          label="Invites"
-          component={Link}
-          href="/manage/users/invites"
-        />
-      </NavLink>
-      <NavLink
-        label="Settings"
-        icon={
-          <ThemeIcon size="md" variant="light" color="red">
-            <IconSettings2 size="1rem" />
-          </ThemeIcon>
-        }
-        component={Link}
-        href="/manage/settings"
-      />
+
+      {isAdmin && (
+        <>
+          <NavLink
+            label="Users"
+            icon={
+              <ThemeIcon size="md" variant="light" color="red">
+                <IconUser size="1rem" />
+              </ThemeIcon>
+            }
+          >
+            <NavLink
+              icon={<IconUsers size="1rem" />}
+              label="Manage"
+              component={Link}
+              href="/manage/users"
+            />
+            <NavLink
+              icon={<IconMailForward size="1rem" />}
+              label="Invites"
+              component={Link}
+              href="/manage/users/invites"
+            />
+          </NavLink>
+          <NavLink
+            label="Settings"
+            icon={
+              <ThemeIcon size="md" variant="light" color="red">
+                <IconSettings2 size="1rem" />
+              </ThemeIcon>
+            }
+            component={Link}
+            href="/manage/settings"
+          />
+        </>
+      )}
+
       <NavLink
         label="Help"
         icon={

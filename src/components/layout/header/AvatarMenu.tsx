@@ -2,6 +2,7 @@ import { Avatar, Badge, Menu, UnstyledButton, useMantineTheme } from '@mantine/c
 import { useDisclosure } from '@mantine/hooks';
 import {
   IconDashboard,
+  IconHomeShare,
   IconInfoCircle,
   IconLogin,
   IconLogout,
@@ -52,6 +53,9 @@ export const AvatarMenu = () => {
                 </Menu.Item>
                 <Menu.Item component={Link} href="/board" icon={<IconDashboard size="1rem" />}>
                   {t('actions.avatar.defaultBoard')}
+                </Menu.Item>
+                <Menu.Item component={Link} href="/manage" icon={<IconHomeShare size="1rem" />}>
+                  Manage
                 </Menu.Item>
                 <Menu.Divider />
               </>

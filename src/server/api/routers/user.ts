@@ -11,7 +11,13 @@ import {
 } from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
-import { TRPCContext, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+import {
+  TRPCContext,
+  adminProcedure,
+  createTRPCRouter,
+  protectedProcedure,
+  publicProcedure,
+} from '../trpc';
 
 export const userRouter = createTRPCRouter({
   createAdminAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
@@ -182,7 +188,7 @@ export const userRouter = createTRPCRouter({
       });
     }),
 
-  makeDefaultDashboard: publicProcedure
+  makeDefaultDashboard: protectedProcedure
     .input(z.object({ board: z.string() }))
     .mutation(async ({ ctx, input }) => {
       await ctx.prisma.userSettings.update({
@@ -195,7 +201,7 @@ export const userRouter = createTRPCRouter({
       });
     }),
 
-  all: publicProcedure
+  all: adminProcedure
     .input(
       z.object({
         limit: z.number().min(1).max(100).default(10),
@@ -236,11 +242,11 @@ export const userRouter = createTRPCRouter({
         countPages: Math.ceil(countUsers / limit),
       };
     }),
-  create: publicProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
+  create: adminProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
     await createUserInNotExist(ctx, input);
   }),
 
-  deleteUser: publicProcedure
+  deleteUser: adminProcedure
     .input(
       z.object({
         userId: z.string(),

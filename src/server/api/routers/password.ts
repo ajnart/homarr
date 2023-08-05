@@ -1,9 +1,9 @@
 import { generate } from 'generate-password';
 
-import { createTRPCRouter, publicProcedure } from "../trpc";
+import { adminProcedure, createTRPCRouter } from '../trpc';
 
 export const passwordRouter = createTRPCRouter({
-  generate: publicProcedure.mutation(() => {
+  generate: adminProcedure.mutation(() => {
     return generate({
       strict: true,
       numbers: true,
@@ -11,7 +11,7 @@ export const passwordRouter = createTRPCRouter({
       uppercase: true,
       symbols: true,
       excludeSimilarCharacters: true,
-      length: 16
-    })
+      length: 16,
+    });
   }),
 });

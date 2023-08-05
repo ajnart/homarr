@@ -10,6 +10,7 @@ import {
   IconUser,
   IconUserPlus,
 } from '@tabler/icons-react';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -23,6 +24,8 @@ import {
   createAccountSecurityStepValidationSchema,
 } from '~/components/Manage/User/Create/security-step';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { getServerAuthSession } from '~/server/auth';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
 
 const CreateNewUserPage = () => {
@@ -73,6 +76,8 @@ const CreateNewUserPage = () => {
           description="Create account"
         >
           <CreateAccountStep
+            defaultUsername={form.values.account.username}
+            defaultEmail={form.values.account.eMail}
             nextStep={(value) => {
               form.setFieldValue('account', value);
               nextStep();
@@ -87,6 +92,7 @@ const CreateNewUserPage = () => {
           description="Password"
         >
           <CreateAccountSecurityStep
+            defaultPassword={form.values.security.password}
             nextStep={(value) => {
               form.setFieldValue('security', value);
               nextStep();
@@ -160,7 +166,15 @@ const CreateNewUserPage = () => {
               </tbody>
             </Table>
 
-            <Flex justify="end" wrap="nowrap">
+            <Group position="apart" noWrap>
+              <Button
+                leftIcon={<IconArrowLeft size="1rem" />}
+                onClick={prevStep}
+                variant="light"
+                px="xl"
+              >
+                Previous
+              </Button>
               <Button
                 onClick={async () => {
                   await mutateAsync({
@@ -176,7 +190,7 @@ const CreateNewUserPage = () => {
               >
                 Confirm
               </Button>
-            </Flex>
+            </Group>
           </Card>
         </Stepper.Step>
         <Stepper.Completed>
@@ -208,6 +222,28 @@ const CreateNewUserPage = () => {
       </Stepper>
     </ManageLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerAuthSession(ctx);
+
+  if (!session?.user.isAdmin) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const translations = await getServerSideTranslations(
+    ['common'],
+    ctx.locale,
+    undefined,
+    undefined
+  );
+  return {
+    props: {
+      ...translations,
+    },
+  };
 };
 
 export default CreateNewUserPage;
