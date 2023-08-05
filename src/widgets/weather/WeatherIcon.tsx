@@ -11,7 +11,6 @@ import {
   IconSun,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { TranslationNamespace } from '~/i18n';
 import { CustomTypeOptions } from 'i18next';
 
 interface WeatherIconProps {
@@ -38,9 +37,7 @@ export const WeatherIcon = ({ code }: WeatherIconProps) => {
   );
 };
 
-
-type WeatherDescription = keyof CustomTypeOptions['resources']['modules/weather']['card']['weatherDescriptions'];
-type WeatherDefinitionType = { icon: Icon; name: WeatherDescription; codes: number[] };
+type WeatherDefinitionType = { icon: Icon; name: string; codes: number[] };
 
 // 0 Clear sky
 // 1, 2, 3 Mainly clear, partly cloudy, and overcast
