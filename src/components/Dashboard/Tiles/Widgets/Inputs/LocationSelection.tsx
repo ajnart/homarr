@@ -32,6 +32,7 @@ type LocationSelectionProps = {
   value: any;
   handleChange: (key: string, value: IntegrationOptionsValueType) => void;
   info?: boolean;
+  infoLink?: string;
 };
 
 export const LocationSelection = ({
@@ -40,6 +41,7 @@ export const LocationSelection = ({
   value,
   handleChange,
   info,
+  infoLink,
 }: LocationSelectionProps) => {
   const { t } = useTranslation('widgets/location');
   const [query, setQuery] = useState(value.name ?? '');
@@ -63,7 +65,7 @@ export const LocationSelection = ({
         <Stack spacing="xs">
           <Flex direction="row" justify="space-between" wrap="nowrap">
             <Title order={5}>{t(`modules/${widgetId}:descriptor.settings.${key}.label`)}</Title>
-            {info && <InfoCard content={t(`modules/${widgetId}:descriptor.settings.${key}.info`)}/>}
+            {info && <InfoCard message={t(`modules/${widgetId}:descriptor.settings.${key}.info`)} link={infoLink}/>}
           </Flex>
 
           <Group noWrap align="end">

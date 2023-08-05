@@ -52,6 +52,7 @@ interface DataType {
 
 interface  ICommonWidgetOptions {
   info?: boolean;
+  infoLink?: string;
 };
 
 // will show a multi-select with specified data

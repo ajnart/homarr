@@ -9,17 +9,21 @@ import { Link, RichTextEditor, RichTextEditorProps } from '@mantine/tiptap';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { useTranslation } from 'next-i18next';
 
 interface InfoCardProps {
   bg?: SystemProp<DefaultMantineColor>;
   cardProp?: Partial<RichTextEditorProps>;
-  content: string;
+  message: string;
+  link?: string;
   hoverProp?: Partial<HoverCardProps>;
   position?: HoverCardProps['position'];
 }
 
-export const InfoCard = ({ bg, cardProp, content, hoverProp, position }: InfoCardProps) => {
+export const InfoCard = ({ bg, cardProp, message, link, hoverProp, position }: InfoCardProps) => {
   const { colorScheme } = useMantineTheme();
+  const { t } = useTranslation('common');
+  const content = link? message + ` <a href=\"${link}\" target=\"_blank\">${t('seeMore')}</a>` : message;
   const editor = useEditor({
     content,
     editable: false,
