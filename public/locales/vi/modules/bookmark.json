@@ -6,9 +6,7 @@
       "title": "Cài đặt dấu trang",
       "name": {
         "label": "",
-        "placeholder": {
-          "label": ""
-        }
+        "info": ""
       },
       "items": {
         "label": "Mục"
