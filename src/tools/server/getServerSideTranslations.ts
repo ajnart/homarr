@@ -10,6 +10,8 @@ export const getServerSideTranslations = async (
   req?: IncomingMessage,
   res?: ServerResponse
 ) => {
+  namespaces = namespaces.concat(['common', 'zod']);
+
   if (!req || !res) {
     return serverSideTranslations(requestLocale ?? 'en', namespaces);
   }

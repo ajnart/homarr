@@ -10,16 +10,17 @@ import {
   Title,
 } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
-import type { InferGetServerSidePropsType } from 'next';
-import { GetServerSidePropsContext } from 'next';
+import { createServerSideHelpers } from '@trpc/react-query/server';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { forwardRef } from 'react';
-import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { AccessibilitySettings } from '~/components/User/Preferences/AccessibilitySettings';
-import { SearchEngineSelector } from '~/components/User/Preferences/SearchEngineSelector';
+import { SearchEngineSettings } from '~/components/User/Preferences/SearchEngineSelector';
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
-import { sleep } from '~/tools/client/time';
+import { createTrpcServersideHelpers } from '~/server/api/helper';
+import { getServerAuthSession } from '~/server/auth';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
@@ -27,18 +28,19 @@ import { RouterOutputs, api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { updateSettingsValidationSchema } from '~/validations/user';
 
-const PreferencesPage = ({ locale }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const PreferencesPage = () => {
   const { data } = api.user.withSettings.useQuery();
   const { data: boardsData } = api.boards.all.useQuery();
+  const { t } = useTranslation('user/preferences');
 
   return (
     <MainLayout>
       <Container>
         <Paper p="xl" mih="100%" withBorder>
           <Head>
-            <title>Preferences • Homarr</title>
+            <title>{t('metaTitle')} • Homarr</title>
           </Head>
-          <Title mb="xl">Preferences</Title>
+          <Title mb="xl">{t('pageTitle')}</Title>
 
           {data && boardsData && (
             <SettingsComponent settings={data.settings} boardsData={boardsData} />
@@ -103,10 +105,6 @@ const SettingsComponent = ({
       <form style={{ position: 'relative' }} onSubmit={form.onSubmit(handleSubmit)}>
         <LoadingOverlay visible={isLoading} overlayBlur={2} />
         <Stack spacing={5}>
-          <Title order={2} size="lg">
-            {t('boards.title')}
-          </Title>
-
           <Select
             label={t('boards.defaultBoard.label')}
             data={boardsData.map((board) => board.name)}
@@ -114,13 +112,8 @@ const SettingsComponent = ({
             maxDropdownHeight={400}
             filter={(value, item) => item.label!.toLowerCase().includes(value.toLowerCase().trim())}
             withAsterisk
-            mb="xs"
             {...form.getInputProps('defaultBoard')}
           />
-
-          <Title order={2} size="lg" mt="lg">
-            {t('localization.language.label')}
-          </Title>
 
           <Select
             label="Language"
@@ -140,12 +133,12 @@ const SettingsComponent = ({
 
           <Select
             label={t('localization.firstDayOfWeek.label')}
-            //TODO: Make it use the configured value
-            data={[
-              { value: 'monday', label: 'Monday' },
-              { value: 'sunday', label: 'Sunday' },
-              { value: 'saturday', label: 'Saturday' },
-            ]}
+            withAsterisk
+            data={firstDayOfWeekOptions.map((day) => ({
+              label: t(`localization.firstDayOfWeek.options.${day}`) as string,
+              value: day,
+            }))}
+            {...form.getInputProps('firstDayOfWeek')}
           />
 
           <Title order={2} size="lg" mt="lg" mb="md">
@@ -158,10 +151,10 @@ const SettingsComponent = ({
             {t('searchEngine.title')}
           </Title>
 
-          <SearchEngineSelector />
+          <SearchEngineSettings />
 
           <Button type="submit" fullWidth mt="md">
-            Save
+            {t('common:save')}
           </Button>
         </Stack>
       </form>
@@ -193,9 +186,23 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   )
 );
 
-export async function getServerSideProps({ req, res, locale }: GetServerSidePropsContext) {
+const firstDayOfWeekOptions = ['monday', 'sunday', 'saturday'] as const;
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res, locale }) => {
+  const session = await getServerAuthSession({ req, res });
+  if (!session) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const helpers = await createTrpcServersideHelpers({ req, res });
+
+  await helpers.user.withSettings.prefetch();
+  await helpers.boards.all.prefetch();
+
   const translations = await getServerSideTranslations(
-    manageNamespaces,
+    ['user/preferences'],
     locale,
     undefined,
     undefined
@@ -204,8 +211,9 @@ export async function getServerSideProps({ req, res, locale }: GetServerSideProp
     props: {
       ...translations,
       locale: locale,
+      trpcState: helpers.dehydrate(),
     },
   };
-}
+};
 
 export default PreferencesPage;

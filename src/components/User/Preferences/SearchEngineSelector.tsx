@@ -3,22 +3,7 @@ import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { useUserPreferencesFormContext } from '~/pages/user/preferences';
 
-const searchEngineOptions = [
-  { label: 'Google', value: 'https://google.com/search?q=%s' },
-  { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=%s' },
-  { label: 'Bing', value: 'https://bing.com/search?q=%s' },
-  { value: 'custom' },
-] as const;
-
-const useSegmentData = () => {
-  const { t } = useTranslation('user/preferences');
-  return searchEngineOptions.map((option) => ({
-    label: option.value === 'custom' ? t('searchEngine.custom') : option.label,
-    value: option.value,
-  }));
-};
-
-export const SearchEngineSelector = () => {
+export const SearchEngineSettings = () => {
   const { t } = useTranslation('user/preferences');
   const form = useUserPreferencesFormContext();
   const segmentData = useSegmentData();
@@ -51,10 +36,26 @@ export const SearchEngineSelector = () => {
             label={t('searchEngine.template.label')}
             description={t('searchEngine.template.description')}
             inputWrapperOrder={['label', 'input', 'description', 'error']}
+            withAsterisk
             {...form.getInputProps('searchTemplate')}
           />
         </Stack>
       </Paper>
     </Stack>
   );
+};
+
+const searchEngineOptions = [
+  { label: 'Google', value: 'https://google.com/search?q=%s' },
+  { label: 'DuckDuckGo', value: 'https://duckduckgo.com/?q=%s' },
+  { label: 'Bing', value: 'https://bing.com/search?q=%s' },
+  { value: 'custom' },
+] as const;
+
+const useSegmentData = () => {
+  const { t } = useTranslation('user/preferences');
+  return searchEngineOptions.map((option) => ({
+    label: option.value === 'custom' ? t('searchEngine.custom') : option.label,
+    value: option.value,
+  }));
 };

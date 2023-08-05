@@ -17,13 +17,12 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconAlertTriangle, IconClick, IconListSearch } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { City } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
 
 import { IntegrationOptionsValueType } from '../WidgetsEditModal';
-import Link from 'next/link';
 
 type LocationSelectionProps = {
   widgetId: string;
@@ -166,16 +165,16 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
         onClose={closeModal}
         zIndex={250}
       >
-      <Center>
-        <Stack align="center">
-          <IconAlertTriangle />
-          <Title order={6}>Nothing found</Title>
-          <Text>Nothing was found, please try again</Text>
-        </Stack>
-      </Center>
+        <Center>
+          <Stack align="center">
+            <IconAlertTriangle />
+            <Title order={6}>Nothing found</Title>
+            <Text>Nothing was found, please try again</Text>
+          </Stack>
+        </Center>
       </Modal>
     );
-  
+
   const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
   return (
@@ -220,15 +219,20 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
                   <Text style={{ whiteSpace: 'nowrap' }}>{city.country}</Text>
                 </td>
                 <td>
-                  <Anchor target='_blank' href={`https://www.google.com/maps/place/${city.latitude},${city.longitude}`}>
-                  <Text style={{ whiteSpace: 'nowrap' }}>
-                    {city.latitude}, {city.longitude}
-                  </Text>
+                  <Anchor
+                    target="_blank"
+                    href={`https://www.google.com/maps/place/${city.latitude},${city.longitude}`}
+                  >
+                    <Text style={{ whiteSpace: 'nowrap' }}>
+                      {city.latitude}, {city.longitude}
+                    </Text>
                   </Anchor>
                 </td>
                 <td>
                   {city.population ? (
-                    <Text style={{ whiteSpace: 'nowrap' }}>{formatter.format(city.population)}</Text>
+                    <Text style={{ whiteSpace: 'nowrap' }}>
+                      {formatter.format(city.population)}
+                    </Text>
                   ) : (
                     <Text color="dimmed"> {t('modal.table.population.fallback')}</Text>
                   )}
