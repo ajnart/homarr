@@ -6,9 +6,7 @@
       "title": "Lesezeichen-Einstellungen",
       "name": {
         "label": "Widget Titel",
-        "placeholder": {
-          "label": "Leer lassen um den Titel versteckt zu lassen"
-        }
+        "info": ""
       },
       "items": {
         "label": "Elemente"
