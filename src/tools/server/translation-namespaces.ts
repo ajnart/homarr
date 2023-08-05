@@ -48,7 +48,7 @@ export const dashboardNamespaces = [
   'widgets/location',
 ];
 
-export const manageNamespaces = ['user/preferences', 'zod'];
+export const manageNamespaces = ['user/preferences', 'boards/manage', 'zod'];
 
 export const loginNamespaces = ['authentication/login', 'zod'];
 
