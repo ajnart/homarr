@@ -19,8 +19,8 @@ import { useConfigContext } from '~/config/provider';
 import { env } from '~/env';
 import { api } from '~/utils/api';
 
-import { HeaderActionButton } from '../Header/ActionButton';
-import { BoardHeadOverride } from '../Meta/BoardHeadOverride';
+import { HeaderActionButton } from '~/components/layout/header/ActionButton';
+import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
