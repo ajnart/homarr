@@ -1,12 +1,12 @@
 {
-  "text": "Las personalizaciones te permiten configurar y ajustar tu experiencia con Homarr, según tus preferencias.",
+  "text": "Las personalizaciones te permiten configurar y ajustar tu experiencia con Homarr según tus preferencias.",
   "accordeon": {
     "layout": {
-      "name": "Disposición",
-      "description": "Activar y desactivar elementos de tu cabecera y tarjetas del dashboard"
+      "name": "Diseño",
+      "description": "Habilita y deshabilita elementos en los mosaicos de su encabezado y panel"
     },
     "gridstack": {
-      "name": "Gridstack",
+      "name": "Cuadrícula",
       "description": "Personalizar el comportamiento y columnas del área de tu dashboard"
     },
     "pageMetadata": {
