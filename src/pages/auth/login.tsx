@@ -18,6 +18,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { z } from 'zod';
 import { getServerAuthSession } from '~/server/auth';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -29,6 +30,8 @@ export default function LoginPage() {
   const { t } = useTranslation(['authentication/login']);
   const queryParams = useRouter().query as { error?: 'CredentialsSignin' | (string & {}) };
   const { i18nZodResolver } = useI18nZodResolver();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof signInSchema>>({
     validateInputOnChange: true,
@@ -37,11 +40,18 @@ export default function LoginPage() {
   });
 
   const handleSubmit = (values: z.infer<typeof signInSchema>) => {
+    setIsLoading(true);
     signIn('credentials', {
       redirect: false,
       name: values.name,
       password: values.password,
       callbackUrl: '/',
+    }).then((response) => {
+      if (!response?.ok) {
+        setIsLoading(false);
+        return;
+      }
+      router.push('/manage');
     });
   };
 
@@ -75,7 +85,7 @@ export default function LoginPage() {
               {...form.getInputProps('password')}
             />
 
-            <Button fullWidth type="submit">
+            <Button fullWidth type="submit" loading={isLoading}>
               {t('form.buttons.submit')}
             </Button>
 
