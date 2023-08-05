@@ -25,7 +25,7 @@
   "card": {
     "footer": {
       "error": "Error",
-      "lastUpdated": "Última actualización {{time}} ago"
+      "lastUpdated": "Última actualización hace {{time}}"
     },
     "table": {
       "header": {
