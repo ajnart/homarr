@@ -75,7 +75,7 @@
     "i18next": "^22.5.1",
     "js-file-download": "^0.4.12",
     "next": "13.4.10",
-    "next-auth": "^4.21.0",
+    "next-auth": "^4.22.3",
     "next-i18next": "^13.0.0",
     "nzbget-api": "^0.0.3",
     "prismjs": "^1.29.0",

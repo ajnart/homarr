@@ -5904,7 +5904,7 @@ __metadata:
     i18next: ^22.5.1
     js-file-download: ^0.4.12
     next: 13.4.10
-    next-auth: ^4.21.0
+    next-auth: ^4.22.3
     next-i18next: ^13.0.0
     node-mocks-http: ^1.12.2
     nzbget-api: ^0.0.3
@@ -7360,7 +7360,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-auth@npm:^4.21.0":
+"next-auth@npm:^4.22.3":
   version: 4.22.3
   resolution: "next-auth@npm:4.22.3"
   dependencies:
