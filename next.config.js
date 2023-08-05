@@ -20,5 +20,7 @@ module.exports = withBundleAnalyzer({
       permanent: false,
     },
   ],
-  env: process.env.NEXTAUTH_URL_INTERNAL || process.env.HOSTNAME || 'http://localhost:3000',
+  env: {
+    NEXTAUTH_URL_INTERNAL: process.env.NEXTAUTH_URL_INTERNAL || process.env.HOSTNAME || 'http://localhost:3000'
+  },
 });

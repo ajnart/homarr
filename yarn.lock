@@ -5924,7 +5924,7 @@ __metadata:
     sass: ^1.56.1
     sharp: ^0.32.4
     ts-node: latest
-    turbo: latest
+    turbo: ^1.10.12
     typescript: ^5.1.0
     uuid: ^9.0.0
     video.js: ^8.0.3
@@ -9705,7 +9705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo@npm:latest":
+"turbo@npm:^1.10.12":
   version: 1.10.12
   resolution: "turbo@npm:1.10.12"
   dependencies:
