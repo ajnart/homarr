@@ -12,10 +12,13 @@ import {
 import { modals } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import dayjs from 'dayjs';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { getServerAuthSession } from '~/server/auth';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
 
 const ManageUserInvitesPage = () => {
@@ -150,5 +153,27 @@ const useStyles = createStyles(() => ({
     whiteSpace: 'nowrap',
   },
 }));
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerAuthSession(ctx);
+
+  if (!session?.user.isAdmin) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const translations = await getServerSideTranslations(
+    ['common'],
+    ctx.locale,
+    undefined,
+    undefined
+  );
+  return {
+    props: {
+      ...translations,
+    },
+  };
+};
 
 export default ManageUserInvitesPage;

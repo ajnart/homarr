@@ -10,12 +10,15 @@ import {
   createStyles,
 } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
+import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
+import { getServerAuthSession } from '~/server/auth';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 
 const ManagementPage = () => {
   const { classes } = useStyles();
@@ -100,6 +103,28 @@ const ManagementPage = () => {
       </SimpleGrid>
     </ManageLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerAuthSession(ctx);
+
+  if (!session?.user) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const translations = await getServerSideTranslations(
+    ['common'],
+    ctx.locale,
+    undefined,
+    undefined
+  );
+  return {
+    props: {
+      ...translations,
+    },
+  };
 };
 
 export default ManagementPage;

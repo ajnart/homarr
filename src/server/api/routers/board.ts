@@ -1,11 +1,11 @@
 import fs from 'fs';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 
 export const boardRouter = createTRPCRouter({
-  all: publicProcedure.query(async ({ ctx }) => {
+  all: protectedProcedure.query(async ({ ctx }) => {
     const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
 
     const userSettings = await ctx.prisma.userSettings.findUniqueOrThrow({

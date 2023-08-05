@@ -25,10 +25,13 @@ import {
   IconStarFilled,
   IconTrash,
 } from '@tabler/icons-react';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { getServerAuthSession } from '~/server/auth';
 import { sleep } from '~/tools/client/time';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
 
 const BoardsPage = () => {
@@ -194,6 +197,28 @@ const BoardsPage = () => {
       )}
     </ManageLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerAuthSession(ctx);
+
+  if (!session?.user) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const translations = await getServerSideTranslations(
+    ['common'],
+    ctx.locale,
+    undefined,
+    undefined
+  );
+  return {
+    props: {
+      ...translations,
+    },
+  };
 };
 
 export default BoardsPage;
