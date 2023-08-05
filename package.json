@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NEXTAUTH_SECRET=WILL_BE_OVERWRITTEN next build",
     "analyze": "ANALYZE=true next build",
     "turbo": "turbo run build",
     "start": "next start",
