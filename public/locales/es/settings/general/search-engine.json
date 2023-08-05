@@ -7,8 +7,8 @@
   },
   "customEngine": {
     "title": "Motor de búsqueda personalizado",
-    "label": "URL de la Petición",
-    "placeholder": "URL de petición personalizada"
+    "label": "URL de consulta",
+    "placeholder": "URL de consulta personalizada"
   },
   "searchNewTab": {
     "label": "Abrir los resultados de la búsqueda en una pestaña nueva"
