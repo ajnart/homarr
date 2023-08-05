@@ -28,6 +28,8 @@ export const AvatarMenu = () => {
 
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
 
+  const signOutRedirectUrl = typeof window !== 'undefined' ? window.location.href : '/';
+
   return (
     <>
       <UnstyledButton>
@@ -68,7 +70,15 @@ export const AvatarMenu = () => {
               About
             </Menu.Item>
             {sessionData?.user ? (
-              <Menu.Item icon={<IconLogout size="1rem" />} color="red" onClick={() => signOut()}>
+              <Menu.Item
+                icon={<IconLogout size="1rem" />}
+                color="red"
+                onClick={() =>
+                  signOut({
+                    callbackUrl: signOutRedirectUrl,
+                  })
+                }
+              >
                 Logout from {sessionData.user.name}
               </Menu.Item>
             ) : (
