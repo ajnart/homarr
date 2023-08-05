@@ -28,10 +28,12 @@ import {
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { sleep } from '~/tools/client/time';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
 const BoardsPage = () => {
@@ -45,27 +47,29 @@ const BoardsPage = () => {
 
   const [deletingDashboards, { append, filter }] = useListState<string>([]);
 
+  const { t } = useTranslation('boards/manage');
+
   return (
     <ManageLayout>
       <Head>
         <title>Boards • Homarr</title>
       </Head>
 
-      <Title mb="xl">Boards</Title>
+      <Title mb="xl">{t('title')}</Title>
 
       <Flex justify="end" mb="md">
         <Button
           onClick={() => {
             modals.openContextModal({
               modal: 'createDashboardModal',
-              title: <Text>Create new board</Text>,
+              title: <Text>{t('buttons.create')}</Text>,
               innerProps: {},
             });
           }}
           leftIcon={<IconPlus size="1rem" />}
           variant="default"
         >
-          Create new board
+          {t('buttons.create')}
         </Button>
       </Flex>
 
@@ -92,7 +96,7 @@ const BoardsPage = () => {
                     color="pink"
                     variant="light"
                   >
-                    Filesystem
+                    {t('cards.badges.fileSystem')}
                   </Badge>
                   {board.isDefaultForUser && (
                     <Badge
@@ -100,7 +104,7 @@ const BoardsPage = () => {
                       color="yellow"
                       variant="light"
                     >
-                      Default
+                      {t('cards.badges.default')}
                     </Badge>
                   )}
                 </Group>
@@ -110,7 +114,7 @@ const BoardsPage = () => {
                 <Group position="apart">
                   <Group spacing="xs">
                     <IconBox opacity={0.7} size="1rem" />
-                    <Text color="dimmed">Apps</Text>
+                    <Text color="dimmed">{t('cards.statistics.apps')}</Text>
                   </Group>
                   <Text>{board.countApps}</Text>
                 </Group>
@@ -118,7 +122,7 @@ const BoardsPage = () => {
                 <Group position="apart">
                   <Group spacing="xs">
                     <IconStack opacity={0.7} size="1rem" />
-                    <Text color="dimmed">Widgets</Text>
+                    <Text color="dimmed">{t('cards.statistics.widgets')}</Text>
                   </Group>
                   <Text>{board.countWidgets}</Text>
                 </Group>
@@ -126,7 +130,7 @@ const BoardsPage = () => {
                 <Group position="apart">
                   <Group spacing="xs">
                     <IconCategory opacity={0.7} size="1rem" />
-                    <Text color="dimmed">Categories</Text>
+                    <Text color="dimmed">{t('cards.statistics.categories')}</Text>
                   </Group>
                   <Text>{board.countCategories}</Text>
                 </Group>
@@ -141,7 +145,7 @@ const BoardsPage = () => {
                   radius="md"
                   href={`/board/${board.name}`}
                 >
-                  View dashboard
+                  {t('cards.buttons.view')}
                 </Button>
                 <Menu width={240} withinPortal>
                   <Menu.Target>
@@ -158,14 +162,14 @@ const BoardsPage = () => {
                         });
                       }}
                     >
-                      <Text size="sm">Set as your default board</Text>
+                      <Text size="sm">{t('cards.menu.setAsDefault')}</Text>
                     </Menu.Item>
                     <Menu.Divider />
                     <Menu.Item
                       onClick={async () => {
                         modals.openContextModal({
                           modal: 'deleteBoardModal',
-                          title: <Text weight={500}>Delete board</Text>,
+                          title: <Text weight={500}>{t('cards.menu.delete.modalTitle')}</Text>,
                           innerProps: {
                             boardName: board.name,
                             onConfirm: async () => {
@@ -181,11 +185,9 @@ const BoardsPage = () => {
                       icon={<IconTrash size="1rem" />}
                       color="red"
                     >
-                      <Text size="sm">Permanently delete</Text>
+                      <Text size="sm">{t('cards.menu.delete.label')}</Text>
                       {board.name === 'default' && (
-                        <Text size="xs">
-                          Deletion disabled, because older Homarr components still rely on this.
-                        </Text>
+                        <Text size="xs">{t('cards.menu.delete.disabled')}</Text>
                       )}
                     </Menu.Item>
                   </Menu.Dropdown>
@@ -209,7 +211,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   const translations = await getServerSideTranslations(
-    ['common'],
+    manageNamespaces,
     ctx.locale,
     undefined,
     undefined

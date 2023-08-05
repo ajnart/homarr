@@ -1,0 +1,28 @@
+{
+    "title": "Boards",
+    "cards": {
+        "statistics": {
+            "apps": "Apps",
+            "widgets": "Widgets",
+            "categories": "Categories"
+        },
+        "buttons": {
+            "view": "View board"
+        },
+        "menu": {
+            "setAsDefault": "Set as your default board",
+            "delete": {
+                "label": "Delete permanently",
+                "disabled": "Deletion disabled, because older Homarr components still rely on this.",
+                "modalTitle": "Delete board"
+            }
+        },
+        "badges": {
+            "fileSystem": "File system",
+            "default": "Default"
+        }
+    },
+    "buttons": {
+        "create": "Create new dashboard"
+    }
+}
