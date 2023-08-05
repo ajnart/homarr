@@ -1,7 +1,7 @@
 {
   "pageTitle": {
     "label": "Título de Página",
-    "description": "Título del dashboard en la parte superior izquierda"
+    "description": "El título del panel en la parte superior izquierda"
   },
   "metaTitle": {
     "label": "Tarjeta Meta",
