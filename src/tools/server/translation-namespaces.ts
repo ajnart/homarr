@@ -1,4 +1,6 @@
-export const boardNamespaces = [
+import { TranslationNamespace } from '~/i18n';
+
+export const boardNamespaces: TranslationNamespace[] = [
   'common',
   'zod',
   'layout/element-selector/selector',
@@ -41,10 +43,14 @@ export const boardNamespaces = [
   'boards/common',
 ];
 
-export const manageNamespaces = ['user/preferences', 'boards/manage', 'zod'];
+export const manageNamespaces: TranslationNamespace[] = [
+  'user/preferences',
+  'boards/manage',
+  'zod',
+];
 
-export const loginNamespaces = ['authentication/login', 'zod'];
+export const loginNamespaces: TranslationNamespace[] = ['authentication/login', 'zod'];
 
-export const inviteNamespaces = ['authentication/invite', 'zod'];
+export const inviteNamespaces: TranslationNamespace[] = ['authentication/invite', 'zod'];
 
-export const onboardNamespaces = ['common', 'zod'];
+export const onboardNamespaces: TranslationNamespace[] = ['common', 'zod'];

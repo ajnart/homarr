@@ -11,7 +11,6 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { useMutation } from '@tanstack/react-query';
 import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -27,7 +26,7 @@ import { signInSchema } from '~/validations/user';
 import { loginNamespaces } from '../../tools/server/translation-namespaces';
 
 export default function LoginPage() {
-  const { t } = useTranslation(['authentication/login']);
+  const { t } = useTranslation('authentication/login');
   const queryParams = useRouter().query as { error?: 'CredentialsSignin' | (string & {}) };
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();

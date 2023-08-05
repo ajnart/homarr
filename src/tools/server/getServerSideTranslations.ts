@@ -3,9 +3,10 @@ import { IncomingMessage, ServerResponse } from 'http';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { COOKIE_LOCALE_KEY } from '../../../data/constants';
+import { TranslationNamespace } from '~/i18n';
 
 export const getServerSideTranslations = async (
-  namespaces: string[],
+  namespaces: TranslationNamespace[],
   requestLocale?: string,
   req?: IncomingMessage,
   res?: ServerResponse
