@@ -6,9 +6,7 @@
       "title": "Yer İşareti ayarları",
       "name": {
         "label": "Widget başlığı",
-        "placeholder": {
-          "label": "Başlığı gizli tutmak için boş bırakın"
-        }
+        "info": ""
       },
       "items": {
         "label": "Ögeler"
