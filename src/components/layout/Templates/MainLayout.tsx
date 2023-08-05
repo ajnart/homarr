@@ -1,6 +1,6 @@
 import { AppShell, useMantineTheme } from '@mantine/core';
 
-import { MainHeader } from '../Header/Header';
+import { MainHeader } from '~/components/layout/Header/Header';
 
 type MainLayoutProps = {
   headerActions?: React.ReactNode;
