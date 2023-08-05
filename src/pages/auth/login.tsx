@@ -11,6 +11,7 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconAlertTriangle } from '@tabler/icons-react';
+import { useMutation } from '@tanstack/react-query';
 import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -37,7 +38,7 @@ export default function LoginPage() {
 
   const handleSubmit = (values: z.infer<typeof signInSchema>) => {
     signIn('credentials', {
-      redirect: true,
+      redirect: false,
       name: values.name,
       password: values.password,
       callbackUrl: '/',
