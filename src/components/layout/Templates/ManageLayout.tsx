@@ -27,10 +27,10 @@ import {
   TablerIconsProps,
 } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode, RefObject, forwardRef } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
