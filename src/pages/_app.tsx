@@ -66,6 +66,18 @@ function App(
     setPrimaryShade,
   };
 
+  useEffect(() => {
+    console.log('running page props stuff');
+    setPrimaryColor(props.pageProps.primaryColor ?? 'red');
+    setSecondaryColor(props.pageProps.secondaryColor ?? 'orange');
+    setPrimaryShade(props.pageProps.primaryShade ?? 6);
+    return () => {
+      setPrimaryColor('red');
+      setSecondaryColor('orange');
+      setPrimaryShade(6);
+    };
+  }, [props.pageProps]);
+
   const { setInitialPackageAttributes } = usePackageAttributesStore();
 
   useEffect(() => {
