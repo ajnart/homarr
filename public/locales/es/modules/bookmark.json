@@ -6,7 +6,7 @@
       "title": "Ajustes del widget Marcadores",
       "name": {
         "label": "Título del widget",
-        "info": ""
+        "info": "Dejar vacío para mantener el título oculto."
       },
       "items": {
         "label": "Elementos"
