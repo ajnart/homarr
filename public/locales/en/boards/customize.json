@@ -8,7 +8,10 @@
             "secondaryColor": "Secondary color"
         }
     },
-    "save": "Save changes",
+    "save": {
+        "button": "Save changes",
+        "note": "Careful, you have unsaved changes!"
+    },
     "notifications": {
         "pending": {
             "title": "Saving customization",

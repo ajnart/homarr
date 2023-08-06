@@ -148,7 +148,7 @@ export default function CustomizationPage() {
               withBorder
             >
               <Group position="apart" noWrap>
-                <Text weight="bold">Careful, you have unsaved changes!</Text>
+                <Text weight="bold">{t('save.note')}</Text>
                 <Group spacing="md">
                   <Button
                     onClick={() => {
@@ -157,7 +157,7 @@ export default function CustomizationPage() {
                     variant="subtle"
                     type="button"
                   >
-                    Cancel
+                    {t('common:cancel')}
                   </Button>
                   <Button
                     onClick={() => {
@@ -169,10 +169,9 @@ export default function CustomizationPage() {
                     }}
                     disabled={!form.isValid()}
                     loading={isLoading}
-                    type="submit"
                     color="green"
                   >
-                    {t('save')}
+                    {t('save.button')}
                   </Button>
                 </Group>
               </Group>
