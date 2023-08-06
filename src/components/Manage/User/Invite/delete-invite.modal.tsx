@@ -1,25 +1,20 @@
 import { Button, Group, Stack, Text } from '@mantine/core';
 import { ContextModalProps, modals } from '@mantine/modals';
+import { useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
 
-export const DeleteInviteModal = ({
-  context,
-  id,
-  innerProps,
-}: ContextModalProps<{ tokenId: string }>) => {
-  const apiContext = api.useContext();
-  const { isLoading, mutateAsync } = api.invites.delete.useMutation({
+export const DeleteInviteModal = ({ id, innerProps }: ContextModalProps<{ tokenId: string }>) => {
+  const { t } = useTranslation('manage/users/invites');
+  const utils = api.useContext();
+  const { isLoading, mutateAsync: deleteAsync } = api.invites.delete.useMutation({
     onSuccess: async () => {
-      await apiContext.invites.all.invalidate();
+      await utils.invites.all.invalidate();
       modals.close(id);
     },
   });
   return (
     <Stack>
-      <Text>
-        Are you sure, that you want to delete this invitation? Users with this link will no longer
-        be able to create an account using that link.
-      </Text>
+      <Text>{t('modals.delete.description')}</Text>
 
       <Group grow>
         <Button
@@ -29,11 +24,11 @@ export const DeleteInviteModal = ({
           variant="light"
           color="gray"
         >
-          Cancel
+          {t('common:cancel')}
         </Button>
         <Button
           onClick={async () => {
-            await mutateAsync({
+            await deleteAsync({
               tokenId: innerProps.tokenId,
             });
           }}
@@ -41,7 +36,7 @@ export const DeleteInviteModal = ({
           variant="light"
           color="red"
         >
-          Delete
+          {t('common:delete')}
         </Button>
       </Group>
     </Stack>

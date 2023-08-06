@@ -1,4 +1,5 @@
 {
+    "metaTitle": "Create user",
     "steps": {
         "account": {
             "title": "First step",
@@ -15,7 +16,13 @@
             "text": "Password",
             "password": {
                 "label": "Password",
-                "requirement": "Includes at least 6 characters"
+                "requirements": {
+                    "number": "Includes number",
+                    "lowercase": "Includes lowercase letter",
+                    "uppercase": "Includes uppercase letter",
+                    "special": "Includes special character",
+                    "length": "Includes at least {{count}} characters"
+                }
             }
         },
         "finish": {
@@ -35,15 +42,20 @@
                 },
                 "notSet": "Not set",
                 "valid": "Valid"
-            },
-            "alertConfirmed": "User has been created in the database. They can now log in."
+            }
+        },
+        "completed": {
+            "alert": {
+                "title": "User was created",
+                "text": "The user was created in the database. They can now log in."
+            }
         }
     },
     "buttons": {
         "next": "Next",
         "previous": "Previous",
         "confirm": "Confirm",
-        "generateRandomPw": "Generate random",
+        "generateRandomPassword": "Generate random",
         "createAnother": "Create another",
         "goBack": "Go back to users"
     }

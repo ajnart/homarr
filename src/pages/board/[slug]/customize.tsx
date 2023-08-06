@@ -33,7 +33,7 @@ import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
-import { boardCustomizationSchema } from '~/validations/dashboards';
+import { boardCustomizationSchema } from '~/validations/boards';
 
 const notificationId = 'board-customization-notification';
 

@@ -1,10 +1,7 @@
 export const boardNamespaces = [
-  'common',
-  'zod',
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',
-  'layout/modals/about',
   'layout/common',
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
@@ -42,16 +39,9 @@ export const boardNamespaces = [
 ];
 
 export const manageNamespaces = [
-  'user/preferences',
-  'user/manage',
-  'user/invites',
-  'user/create',
-  'boards/manage',
-  'zod',
+  'manage/common',
+  'manage/boards',
+  'manage/users',
+  'manage/users/invites',
+  'manage/users/create',
 ];
-
-export const loginNamespaces = ['authentication/login', 'zod'];
-
-export const inviteNamespaces = ['authentication/invite', 'zod'];
-
-export const onboardNamespaces = ['common', 'zod'];

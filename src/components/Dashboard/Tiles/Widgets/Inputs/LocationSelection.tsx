@@ -168,8 +168,8 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
         <Center>
           <Stack align="center">
             <IconAlertTriangle />
-            <Title order={6}>Nothing found</Title>
-            <Text>Nothing was found, please try again</Text>
+            <Title order={6}>{t('modal.table.nothingFound.title')}</Title>
+            <Text>{t('modal.table.nothingFound.description')}</Text>
           </Stack>
         </Center>
       </Modal>

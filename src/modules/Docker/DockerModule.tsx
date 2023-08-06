@@ -19,7 +19,7 @@ export default function DockerMenuButton(props: any) {
 
   const dockerEnabled = config?.settings.customization.layout.enabledDocker || false;
 
-  const { data, refetch } = api.docker.containers.useQuery(undefined, {
+  const { data, refetch, isLoading } = api.docker.containers.useQuery(undefined, {
     enabled: dockerEnabled,
   });
   useHotkeys([['mod+B', () => setOpened(!opened)]]);
@@ -42,7 +42,7 @@ export default function DockerMenuButton(props: any) {
         padding="xl"
         position="right"
         size="100%"
-        title={<ContainerActionBar isLoading selected={selection} reload={reload} />}
+        title={<ContainerActionBar isLoading={isLoading} selected={selection} reload={reload} />}
         transitionProps={{
           transition: 'pop',
         }}

@@ -15,7 +15,7 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons-react';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
@@ -69,8 +69,9 @@ export const MovieModal = ({ opened, closeModal }: MovieModalProps) => {
 type MovieResultsProps = Omit<z.infer<typeof queryParamsSchema>, 'movie'>;
 
 const MovieResults = ({ search, type }: MovieResultsProps) => {
+  const { t } = useTranslation('layout/header');
   const { name: configName } = useConfigContext();
-  const { data: overseerrResults, isLoading } = api.overseerr.search.useQuery(
+  const { data: movies, isLoading } = api.overseerr.search.useQuery(
     {
       query: search,
       configName: configName!,
@@ -94,10 +95,20 @@ const MovieResults = ({ search, type }: MovieResultsProps) => {
   return (
     <Stack>
       <Text>
-        Top {overseerrResults?.length} results for <b>{search}</b>
+        <Trans
+          t={t}
+          i18nKey="modals.movie.topResults"
+          values={{
+            count: movies?.length ?? 0,
+            search,
+          }}
+          components={{
+            b: <b />,
+          }}
+        />
       </Text>
       <Grid gutter={32}>
-        {overseerrResults?.map((result, index: number) => (
+        {movies?.map((result, index: number) => (
           <Grid.Col key={index} span={12} sm={6} lg={4}>
             <MovieDisplay movie={result} type={type} />
           </Grid.Col>

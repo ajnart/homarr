@@ -21,7 +21,7 @@ const env = createEnv({
       process.env.VERCEL ? z.string().min(1) : z.string().url()
     ),
     DOCKER_HOST: z.string().optional(),
-    DOCKER_PORT: z.string().regex(/\d+/).transform(Number).optional(),
+    DOCKER_PORT: portSchema,
   },
 
   /**

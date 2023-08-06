@@ -7,7 +7,7 @@ import { z } from 'zod';
 import { configExists } from '~/tools/config/configExists';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { BackendConfigType, ConfigType } from '~/types/config';
-import { boardCustomizationSchema } from '~/validations/dashboards';
+import { boardCustomizationSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
 import { getConfig } from '../../../tools/config/getConfig';

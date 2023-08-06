@@ -10,7 +10,10 @@
         }
     },
     "modals": {
-        "delete": "Delete user {{name}}"
+        "delete": {
+            "title": "Delete user {{name}}",
+            "text": "Are you sure, that you want to delete the user {{name}}? This will delete data associated with this account, but not any created dashboards by this user."
+        }
     },
     "searchDoesntMatch": "Your search does not match any entries. Please adjust your filter."
 }

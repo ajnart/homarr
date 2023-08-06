@@ -1,26 +1,23 @@
-import { Button, Group, Stack, Text } from '@mantine/core';
+import { Button, Group, Stack, Text, Title } from '@mantine/core';
 import { ContextModalProps, modals } from '@mantine/modals';
+import { Trans, useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
 
-export const DeleteBoardModal = ({
-  context,
-  id,
-  innerProps,
-}: ContextModalProps<{ boardName: string; onConfirm: () => Promise<void> }>) => {
-  const apiContext = api.useContext();
+type InnerProps = { boardName: string; onConfirm: () => Promise<void> };
+
+export const DeleteBoardModal = ({ id, innerProps }: ContextModalProps<InnerProps>) => {
+  const { t } = useTranslation('manage/boards');
+  const utils = api.useContext();
   const { isLoading, mutateAsync } = api.config.delete.useMutation({
     onSuccess: async () => {
-      await apiContext.config.all.invalidate();
+      await utils.config.all.invalidate();
       modals.close(id);
     },
   });
 
   return (
     <Stack>
-      <Text>
-        Are you sure, that you want to delete this board? This action cannot be undone and your data
-        will be lost permanently.
-      </Text>
+      <Text>{t('modals.delete.text')}</Text>
 
       <Group grow>
         <Button
@@ -30,7 +27,7 @@ export const DeleteBoardModal = ({
           variant="light"
           color="gray"
         >
-          Cancel
+          {t('common:cancel')}
         </Button>
         <Button
           onClick={async () => {
@@ -44,9 +41,21 @@ export const DeleteBoardModal = ({
           variant="light"
           color="red"
         >
-          Delete
+          {t('common:delete')}
         </Button>
       </Group>
     </Stack>
   );
+};
+
+export const openDeleteBoardModal = (innerProps: InnerProps) => {
+  modals.openContextModal({
+    modal: 'deleteBoardModal',
+    title: (
+      <Title order={4}>
+        <Trans i18nKey="manage/boards:modals.delete.title" />
+      </Title>
+    ),
+    innerProps,
+  });
 };

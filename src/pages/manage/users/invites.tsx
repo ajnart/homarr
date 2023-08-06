@@ -13,9 +13,10 @@ import { modals } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import { GetServerSideProps } from 'next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { openCreateInviteModal } from '~/components/Manage/User/Invite/create-invite.modal';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -23,40 +24,33 @@ import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
 const ManageUserInvitesPage = () => {
+  const { classes } = useStyles();
+  const { t } = useTranslation('manage/users/invites');
   const [activePage, setActivePage] = useState(0);
-  const { data } = api.invites.all.useQuery({
+  const { data: invites } = api.invites.all.useQuery({
     page: activePage,
   });
 
-  const { classes } = useStyles();
-
-  const handleFetchNextPage = async () => {
+  const nextPage = () => {
     setActivePage((prev) => prev + 1);
   };
 
-  const handleFetchPreviousPage = async () => {
+  const previousPage = () => {
     setActivePage((prev) => prev - 1);
   };
 
-  const { t } = useTranslation('user/invites');
-
+  const metaTitle = `${t('metaTitle')} • Homarr`;
   return (
     <ManageLayout>
       <Head>
-        <title>User invites • Homarr</title>
+        <title>{metaTitle}</title>
       </Head>
-      <Title mb="md">{t('title')}</Title>
-      <Text mb="xl">{t('text')}</Text>
+      <Title mb="md">{t('pageTitle')}</Title>
+      <Text mb="xl">{t('description')}</Text>
 
       <Flex justify="end" mb="md">
         <Button
-          onClick={() => {
-            modals.openContextModal({
-              modal: 'createInviteModal',
-              title: 'Create invite',
-              innerProps: {},
-            });
-          }}
+          onClick={openCreateInviteModal}
           leftIcon={<IconPlus size="1rem" />}
           variant="default"
         >
@@ -64,7 +58,7 @@ const ManageUserInvitesPage = () => {
         </Button>
       </Flex>
 
-      {data && (
+      {invites && (
         <>
           <Table mb="md" withBorder highlightOnHover>
             <thead>
@@ -76,7 +70,7 @@ const ManageUserInvitesPage = () => {
               </tr>
             </thead>
             <tbody>
-              {data.invites.map((invite, index) => (
+              {invites.invites.map((invite, index) => (
                 <tr key={index}>
                   <td className={classes.tableGrowCell}>
                     <Text lineClamp={1}>{invite.id}</Text>
@@ -114,9 +108,9 @@ const ManageUserInvitesPage = () => {
                   </td>
                 </tr>
               ))}
-              {data.invites.length === 0 && (
+              {invites.invites.length === 0 && (
                 <tr>
-                  <td colSpan={3}>
+                  <td colSpan={4}>
                     <Center p="md">
                       <Text color="dimmed">{t('noInvites')}</Text>
                     </Center>
@@ -126,18 +120,18 @@ const ManageUserInvitesPage = () => {
             </tbody>
           </Table>
           <Pagination
-            total={data.countPages}
+            total={invites.countPages}
             value={activePage + 1}
             onChange={(targetPage) => {
               setActivePage(targetPage - 1);
             }}
-            onNextPage={handleFetchNextPage}
-            onPreviousPage={handleFetchPreviousPage}
+            onNextPage={nextPage}
+            onPreviousPage={previousPage}
             onFirstPage={() => {
               setActivePage(0);
             }}
             onLastPage={() => {
-              setActivePage(data.countPages - 1);
+              setActivePage(invites.countPages - 1);
             }}
             withEdges
           />
@@ -168,9 +162,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const translations = await getServerSideTranslations(
     manageNamespaces,
     ctx.locale,
-    undefined,
-    undefined
+    ctx.req,
+    ctx.res
   );
+
   return {
     props: {
       ...translations,

@@ -55,7 +55,7 @@ export const AvatarMenu = () => {
                   {t('actions.avatar.defaultBoard')}
                 </Menu.Item>
                 <Menu.Item component={Link} href="/manage" icon={<IconHomeShare size="1rem" />}>
-                  Manage
+                  {t('actions.avatar.manage')}
                 </Menu.Item>
                 <Menu.Divider />
               </>

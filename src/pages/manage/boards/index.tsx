@@ -3,7 +3,6 @@ import {
   Badge,
   Button,
   Card,
-  Flex,
   Group,
   LoadingOverlay,
   Menu,
@@ -26,9 +25,11 @@ import {
   IconTrash,
 } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import { openCreateBoardModal } from '~/components/Manage/Board/create-board.modal';
+import { openDeleteBoardModal } from '~/components/Manage/Board/delete-board.modal';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { sleep } from '~/tools/client/time';
@@ -47,31 +48,26 @@ const BoardsPage = () => {
 
   const [deletingDashboards, { append, filter }] = useListState<string>([]);
 
-  const { t } = useTranslation('boards/manage');
+  const { t } = useTranslation('manage/boards');
+
+  const metaTitle = `${t('metaTitle')} • Homarr`;
 
   return (
     <ManageLayout>
       <Head>
-        <title>Boards • Homarr</title>
+        <title>{metaTitle}</title>
       </Head>
 
-      <Title mb="xl">{t('title')}</Title>
-
-      <Flex justify="end" mb="md">
+      <Group position="apart">
+        <Title mb="xl">{t('pageTitle')}</Title>
         <Button
-          onClick={() => {
-            modals.openContextModal({
-              modal: 'createDashboardModal',
-              title: <Text>{t('buttons.create')}</Text>,
-              innerProps: {},
-            });
-          }}
+          onClick={openCreateBoardModal}
           leftIcon={<IconPlus size="1rem" />}
           variant="default"
         >
           {t('buttons.create')}
         </Button>
-      </Flex>
+      </Group>
 
       {data && (
         <SimpleGrid
@@ -167,17 +163,13 @@ const BoardsPage = () => {
                     <Menu.Divider />
                     <Menu.Item
                       onClick={async () => {
-                        modals.openContextModal({
-                          modal: 'deleteBoardModal',
-                          title: <Text weight={500}>{t('cards.menu.delete.modalTitle')}</Text>,
-                          innerProps: {
-                            boardName: board.name,
-                            onConfirm: async () => {
-                              append(board.name);
-                              // give user feedback, that it's being deleted
-                              await sleep(500);
-                              filter((item, _) => item !== board.name);
-                            },
+                        openDeleteBoardModal({
+                          boardName: board.name,
+                          onConfirm: async () => {
+                            append(board.name);
+                            // give user feedback, that it's being deleted
+                            await sleep(500);
+                            filter((item, _) => item !== board.name);
                           },
                         });
                       }}
@@ -213,8 +205,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const translations = await getServerSideTranslations(
     manageNamespaces,
     ctx.locale,
-    undefined,
-    undefined
+    ctx.req,
+    ctx.res
   );
   return {
     props: {

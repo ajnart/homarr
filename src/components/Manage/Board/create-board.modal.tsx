@@ -1,16 +1,18 @@
-import { Button, Group, Stack, Text, TextInput } from '@mantine/core';
+import { Button, Group, Stack, Text, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
+import { Trans, useTranslation } from 'next-i18next';
 import { getStaticFallbackConfig } from '~/tools/config/getFallbackConfig';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
-import { createDashboardSchemaValidation } from '~/validations/dashboards';
+import { createBoardSchemaValidation } from '~/validations/boards';
 
-export const CreateDashboardModal = ({ context, id, innerProps }: ContextModalProps<{}>) => {
-  const apiContext = api.useContext();
+export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
+  const { t } = useTranslation('manage/boards');
+  const utils = api.useContext();
   const { isLoading, mutate } = api.config.save.useMutation({
     onSuccess: async () => {
-      await apiContext.config.all.invalidate();
+      await utils.config.all.invalidate();
       modals.close(id);
     },
   });
@@ -21,7 +23,7 @@ export const CreateDashboardModal = ({ context, id, innerProps }: ContextModalPr
     initialValues: {
       name: '',
     },
-    validate: i18nZodResolver(createDashboardSchemaValidation),
+    validate: i18nZodResolver(createBoardSchemaValidation),
   });
 
   const handleSubmit = () => {
@@ -35,9 +37,13 @@ export const CreateDashboardModal = ({ context, id, innerProps }: ContextModalPr
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
       <Stack>
-        <Text>A name cannot be changed after a dashboard has been created.</Text>
+        <Text>{t('modals.create.text')}</Text>
 
-        <TextInput label="Name" withAsterisk {...form.getInputProps('name')} />
+        <TextInput
+          label={t('modals.create.form.name.label')}
+          withAsterisk
+          {...form.getInputProps('name')}
+        />
 
         <Group grow>
           <Button
@@ -48,7 +54,7 @@ export const CreateDashboardModal = ({ context, id, innerProps }: ContextModalPr
             color="gray"
             type="button"
           >
-            Cancel
+            {t('common:cancel')}
           </Button>
           <Button
             type="submit"
@@ -57,10 +63,22 @@ export const CreateDashboardModal = ({ context, id, innerProps }: ContextModalPr
             variant="light"
             color="green"
           >
-            Create
+            {t('modals.create.form.submit')}
           </Button>
         </Group>
       </Stack>
     </form>
   );
+};
+
+export const openCreateBoardModal = () => {
+  modals.openContextModal({
+    modal: 'createBoardModal',
+    title: (
+      <Title order={4}>
+        <Trans i18nKey="manage/boards:modals.create.title" />
+      </Title>
+    ),
+    innerProps: {},
+  });
 };

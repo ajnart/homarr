@@ -14,16 +14,14 @@ import { IconAlertTriangle } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
 import { getServerAuthSession } from '~/server/auth';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signInSchema } from '~/validations/user';
-
-import { loginNamespaces } from '../../tools/server/translation-namespaces';
 
 export default function LoginPage() {
   const { t } = useTranslation('authentication/login');
@@ -54,49 +52,54 @@ export default function LoginPage() {
     });
   };
 
+  const metaTitle = `${t('metaTitle')} • Homarr`;
+
   return (
-    <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
+    <>
       <Head>
-        <title>Login • Homarr</title>
+        <title>{metaTitle}</title>
       </Head>
-      <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
-        <Title align="center" weight={900}>
-          {t('title')}
-        </Title>
 
-        <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
-          {t('text')}
-        </Text>
+      <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
+        <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
+          <Title align="center" weight={900}>
+            {t('title')}
+          </Title>
 
-        <form onSubmit={form.onSubmit(handleSubmit)}>
-          <Stack>
-            <TextInput
-              variant="filled"
-              label={t('form.fields.username.label')}
-              withAsterisk
-              {...form.getInputProps('name')}
-            />
+          <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+            {t('text')}
+          </Text>
 
-            <PasswordInput
-              variant="filled"
-              label={t('form.fields.password.label')}
-              withAsterisk
-              {...form.getInputProps('password')}
-            />
+          <form onSubmit={form.onSubmit(handleSubmit)}>
+            <Stack>
+              <TextInput
+                variant="filled"
+                label={t('form.fields.username.label')}
+                withAsterisk
+                {...form.getInputProps('name')}
+              />
 
-            <Button fullWidth type="submit" loading={isLoading}>
-              {t('form.buttons.submit')}
-            </Button>
+              <PasswordInput
+                variant="filled"
+                label={t('form.fields.password.label')}
+                withAsterisk
+                {...form.getInputProps('password')}
+              />
 
-            {queryParams.error === 'CredentialsSignin' && (
-              <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
-                {t('alert')}
-              </Alert>
-            )}
-          </Stack>
-        </form>
-      </Card>
-    </Flex>
+              <Button fullWidth type="submit" loading={isLoading}>
+                {t('form.buttons.submit')}
+              </Button>
+
+              {queryParams.error === 'CredentialsSignin' && (
+                <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
+                  {t('alert')}
+                </Alert>
+              )}
+            </Stack>
+          </form>
+        </Card>
+      </Flex>
+    </>
   );
 }
 
@@ -114,8 +117,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'en', loginNamespaces)),
-      // Will be passed to the page component as props
+      ...(await getServerSideTranslations(['authentication/login'], locale, req, res)),
     },
   };
 };

@@ -22,17 +22,19 @@ import {
   IconLayoutDashboard,
   IconMailForward,
   IconQuestionMark,
-  IconSettings2,
   IconUser,
   IconUsers,
+  TablerIconsProps,
 } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ReactNode, RefObject, forwardRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
+import { type navigation } from '../../../../public/locales/en/layout/manage.json';
 import { MainHeader } from '../header/Header';
 
 interface ManageLayoutProps {
@@ -40,7 +42,8 @@ interface ManageLayoutProps {
 }
 
 export const ManageLayout = ({ children }: ManageLayoutProps) => {
-  const { attributes } = usePackageAttributesStore();
+  const { t } = useTranslation('layout/manage');
+  const packageVersion = usePackageAttributesStore((x) => x.attributes.packageVersion);
   const theme = useMantineTheme();
 
   const screenLargerThanMd = useScreenLargerThan('md');
@@ -51,100 +54,19 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
   const data = useSession();
   const isAdmin = data.data?.user.isAdmin ?? false;
 
-  const navigationLinks = (
-    <>
-      <NavLink
-        icon={
-          <ThemeIcon size="md" variant="light" color="red">
-            <IconHome size="1rem" />
-          </ThemeIcon>
-        }
-        label="Home"
-        component={Link}
-        href="/manage/"
-      />
-      <NavLink
-        label="Boards"
-        icon={
-          <ThemeIcon size="md" variant="light" color="red">
-            <IconLayoutDashboard size="1rem" />
-          </ThemeIcon>
-        }
-        component={Link}
-        href="/manage/boards"
-      />
+  const navigationLinkComponents = Object.entries(navigationLinks).map(([name, navigationLink]) => {
+    if (navigationLink.onlyAdmin && !isAdmin) {
+      return null;
+    }
 
-      {isAdmin && (
-        <>
-          <NavLink
-            label="Users"
-            icon={
-              <ThemeIcon size="md" variant="light" color="red">
-                <IconUser size="1rem" />
-              </ThemeIcon>
-            }
-          >
-            <NavLink
-              icon={<IconUsers size="1rem" />}
-              label="Manage"
-              component={Link}
-              href="/manage/users"
-            />
-            <NavLink
-              icon={<IconMailForward size="1rem" />}
-              label="Invites"
-              component={Link}
-              href="/manage/users/invites"
-            />
-          </NavLink>
-          <NavLink
-            label="Settings"
-            icon={
-              <ThemeIcon size="md" variant="light" color="red">
-                <IconSettings2 size="1rem" />
-              </ThemeIcon>
-            }
-            component={Link}
-            href="/manage/settings"
-          />
-        </>
-      )}
-
-      <NavLink
-        label="Help"
-        icon={
-          <ThemeIcon size="md" variant="light" color="red">
-            <IconQuestionMark size="1rem" />
-          </ThemeIcon>
-        }
-      >
-        <NavLink
-          icon={<IconBook2 size="1rem" />}
-          component="a"
-          href="https://homarr.dev/docs/about"
-          label="Documentation"
-        />
-        <NavLink
-          icon={<IconBrandGithub size="1rem" />}
-          component="a"
-          href="https://github.com/ajnart/homarr/issues/new/choose"
-          label="Report an issue / bug"
-        />
-        <NavLink
-          icon={<IconBrandDiscord size="1rem" />}
-          component="a"
-          href="https://discord.com/invite/aCsmEV5RgA"
-          label="Community Discord"
-        />
-        <NavLink
-          icon={<IconGitFork size="1rem" />}
-          component="a"
-          href="https://github.com/ajnart/homarr"
-          label="Contribute"
-        />
-      </NavLink>
-    </>
-  );
+    return (
+      <CustomNavigationLink
+        key={name}
+        name={name as keyof typeof navigationLinks}
+        navigationLink={navigationLink}
+      />
+    );
+  });
 
   const burgerMenu = screenLargerThanMd ? undefined : (
     <Burger opened={burgerMenuOpen} onClick={toggleBurgerMenu} />
@@ -161,7 +83,7 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
         navbar={
           <Navbar width={{ base: !screenLargerThanMd ? 0 : 220 }} hidden={!screenLargerThanMd}>
             <Navbar.Section pt="xs" grow>
-              {navigationLinks}
+              {navigationLinkComponents}
             </Navbar.Section>
           </Navbar>
         }
@@ -174,9 +96,9 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
                 <Text fw="bold" size={15}>
                   Homarr
                 </Text>
-                {attributes.packageVersion && (
+                {packageVersion && (
                   <Text color="dimmed" size={13}>
-                    {attributes.packageVersion}
+                    {packageVersion}
                   </Text>
                 )}
               </Flex>
@@ -189,8 +111,126 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
         </Paper>
       </AppShell>
       <Drawer opened={burgerMenuOpen} onClose={closeBurgerMenu}>
-        {navigationLinks}
+        {navigationLinkComponents}
       </Drawer>
     </>
   );
+};
+
+type Icon = (props: TablerIconsProps) => JSX.Element;
+
+type NavigationLinkHref = {
+  icon: Icon;
+  href: string;
+  onlyAdmin?: boolean;
+};
+
+type NavigationLinkItems<TItemsObject> = {
+  icon: Icon;
+  items: Record<keyof TItemsObject, NavigationLinkHref>;
+  onlyAdmin?: boolean;
+};
+
+type CustomNavigationLinkProps = {
+  name: keyof typeof navigationLinks;
+  navigationLink: (typeof navigationLinks)[keyof typeof navigationLinks];
+};
+
+const CustomNavigationLink = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  CustomNavigationLinkProps
+>(({ name, navigationLink }, ref) => {
+  const { t } = useTranslation('layout/manage');
+
+  const commonProps = {
+    label: t(`navigation.${name}.title`),
+    icon: (
+      <ThemeIcon size="md" variant="light" color="red">
+        <navigationLink.icon size={16} />
+      </ThemeIcon>
+    ),
+  };
+
+  if ('href' in navigationLink) {
+    return (
+      <NavLink
+        {...commonProps}
+        ref={ref as RefObject<HTMLAnchorElement>}
+        component={Link}
+        href={navigationLink.href}
+      />
+    );
+  }
+
+  return (
+    <NavLink {...commonProps} ref={ref as RefObject<HTMLButtonElement>}>
+      {Object.entries(navigationLink.items).map(([itemName, item]) => {
+        const commonItemProps = {
+          label: t(`navigation.${name}.items.${itemName}`),
+          icon: <item.icon size={16} />,
+          href: item.href,
+        };
+
+        if (item.href.startsWith('http')) {
+          return <NavLink {...commonItemProps} component="a" />;
+        }
+
+        return <NavLink {...commonItemProps} component={Link} />;
+      })}
+    </NavLink>
+  );
+});
+
+type NavigationLinks = {
+  [key in keyof typeof navigation]: (typeof navigation)[key] extends {
+    items: Record<string, string>;
+  }
+    ? NavigationLinkItems<(typeof navigation)[key]['items']>
+    : NavigationLinkHref;
+};
+
+const navigationLinks: NavigationLinks = {
+  home: {
+    icon: IconHome,
+    href: '/manage',
+  },
+  boards: {
+    icon: IconLayoutDashboard,
+    href: '/manage/boards',
+  },
+  users: {
+    icon: IconUser,
+    onlyAdmin: true,
+    items: {
+      manage: {
+        icon: IconUsers,
+        href: '/manage/users',
+      },
+      invites: {
+        icon: IconMailForward,
+        href: '/manage/users/invites',
+      },
+    },
+  },
+  help: {
+    icon: IconQuestionMark,
+    items: {
+      documentation: {
+        icon: IconBook2,
+        href: 'https://homarr.dev/docs/about',
+      },
+      report: {
+        icon: IconBrandGithub,
+        href: 'https://github.com/ajnart/homarr/issues/new/choose',
+      },
+      discord: {
+        icon: IconBrandDiscord,
+        href: 'https://discord.com/invite/aCsmEV5RgA',
+      },
+      contribute: {
+        icon: IconGitFork,
+        href: 'https://github.com/ajnart/homarr',
+      },
+    },
+  },
 };

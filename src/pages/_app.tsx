@@ -20,7 +20,7 @@ import { z } from 'zod';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
-import { modals } from '~/modals/modals';
+import { modals } from '~/modals';
 import { queryClient } from '~/tools/server/configurations/tanstack/queryClient.tool';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';

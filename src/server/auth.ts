@@ -1,5 +1,6 @@
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import bcrypt from 'bcryptjs';
+import Consola from 'consola';
 import Cookies from 'cookies';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
 import { type DefaultSession, type NextAuthOptions, getServerSession } from 'next-auth';
@@ -150,15 +151,15 @@ export const constructAuthOptions = (
           return null;
         }
 
-        console.log(`user ${user.id} is trying to log in. checking password...`);
+        Consola.log(`user ${user.id} is trying to log in. checking password...`);
         const isValidPassword = await bcrypt.compare(data.password, user.password);
 
         if (!isValidPassword) {
-          console.log(`password for user ${user.id} was incorrect`);
+          Consola.log(`password for user ${user.id} was incorrect`);
           return null;
         }
 
-        console.log(`user ${user.id} successfully authorized`);
+        Consola.log(`user ${user.id} successfully authorized`);
 
         return {
           id: user.id,

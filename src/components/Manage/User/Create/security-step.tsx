@@ -9,7 +9,7 @@ import {
   Progress,
   Text,
 } from '@mantine/core';
-import { useForm, zodResolver } from '@mantine/form';
+import { useForm } from '@mantine/form';
 import {
   IconArrowLeft,
   IconArrowRight,
@@ -18,21 +18,22 @@ import {
   IconKey,
   IconX,
 } from '@tabler/icons-react';
-import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { useState } from 'react';
 import { z } from 'zod';
 import { api } from '~/utils/api';
-import { passwordSchema } from '~/validations/user';
+import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
+import { minPasswordLength, passwordSchema } from '~/validations/user';
 
 const requirements = [
-  { re: /[0-9]/, label: 'Includes number' },
-  { re: /[a-z]/, label: 'Includes lowercase letter' },
-  { re: /[A-Z]/, label: 'Includes uppercase letter' },
-  { re: /[$&+,:;=?@#|'<>.^*()%!-]/, label: 'Includes special symbol' },
+  { re: /[0-9]/, label: 'number' },
+  { re: /[a-z]/, label: 'lowercase' },
+  { re: /[A-Z]/, label: 'uppercase' },
+  { re: /[$&+,:;=?@#|'<>.^*()%!-]/, label: 'special' },
 ];
 
 function getStrength(password: string) {
-  let multiplier = password.length > 5 ? 0 : 1;
+  let multiplier = password.length >= minPasswordLength ? 0 : 1;
 
   requirements.forEach((requirement) => {
     if (!requirement.re.test(password)) {
@@ -54,13 +55,16 @@ export const CreateAccountSecurityStep = ({
   nextStep,
   prevStep,
 }: CreateAccountSecurityStepProps) => {
+  const { t } = useTranslation('manage/users/create');
+
+  const { i18nZodResolver } = useI18nZodResolver();
   const form = useForm({
     initialValues: {
       password: defaultPassword,
     },
     validateInputOnBlur: true,
     validateInputOnChange: true,
-    validate: zodResolver(createAccountSecurityStepValidationSchema),
+    validate: i18nZodResolver(createAccountSecurityStepValidationSchema),
   });
 
   const { mutateAsync, isLoading } = api.password.generate.useMutation();
@@ -73,8 +77,6 @@ export const CreateAccountSecurityStep = ({
       meets={requirement.re.test(form.values.password)}
     />
   ));
-
-  const { t } = useTranslation('user/create');
 
   const strength = getStrength(form.values.password);
   const color = strength === 100 ? 'teal' : strength > 50 ? 'yellow' : 'red';
@@ -114,7 +116,7 @@ export const CreateAccountSecurityStep = ({
                 variant="default"
                 mt="xl"
               >
-                {t('buttons.generateRandomPw')}
+                {t('buttons.generateRandomPassword')}
               </Button>
             </Flex>
           </div>
@@ -122,8 +124,8 @@ export const CreateAccountSecurityStep = ({
         <Popover.Dropdown>
           <Progress color={color} value={strength} size={5} mb="xs" />
           <PasswordRequirement
-            label={t('steps.security.password.requirement')}
-            meets={form.values.password.length > 5}
+            label="length"
+            meets={form.values.password.length >= minPasswordLength}
           />
           {checks}
         </Popover.Dropdown>
@@ -152,6 +154,8 @@ export const CreateAccountSecurityStep = ({
 };
 
 const PasswordRequirement = ({ meets, label }: { meets: boolean; label: string }) => {
+  const { t } = useTranslation('manage/users/create');
+
   return (
     <Text
       color={meets ? 'teal' : 'red'}
@@ -159,7 +163,12 @@ const PasswordRequirement = ({ meets, label }: { meets: boolean; label: string }
       mt={7}
       size="sm"
     >
-      {meets ? <IconCheck size="0.9rem" /> : <IconX size="0.9rem" />} <Box ml={10}>{label}</Box>
+      {meets ? <IconCheck size="0.9rem" /> : <IconX size="0.9rem" />}{' '}
+      <Box ml={10}>
+        {t(`steps.security.password.requirements.${label}`, {
+          count: minPasswordLength,
+        })}
+      </Box>
     </Text>
   );
 };

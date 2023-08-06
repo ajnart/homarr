@@ -6,12 +6,12 @@ import { WidgetsEditModal } from '~/components/Dashboard/Tiles/Widgets/WidgetsEd
 import { WidgetsRemoveModal } from '~/components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '~/components/Dashboard/Wrappers/Category/CategoryEditModal';
 
-import { CopyInviteModal } from './copy-invite/copy-invite.modal';
-import { CreateDashboardModal } from './create-dashboard/create-dashboard.modal';
-import { CreateInviteModal } from './create-invite/create-invite.modal';
-import { DeleteBoardModal } from './delete-board/delete-board.modal';
-import { DeleteInviteModal } from './delete-invite/delete-invite.modal';
-import { DeleteUserModal } from './delete-user/delete-user.modal';
+import { CreateBoardModal } from './components/Manage/Board/create-board.modal';
+import { DeleteBoardModal } from './components/Manage/Board/delete-board.modal';
+import { CopyInviteModal } from './components/Manage/User/Invite/copy-invite.modal';
+import { CreateInviteModal } from './components/Manage/User/Invite/create-invite.modal';
+import { DeleteInviteModal } from './components/Manage/User/Invite/delete-invite.modal';
+import { DeleteUserModal } from './components/Manage/User/delete-user.modal';
 
 export const modals = {
   editApp: EditAppModal,
@@ -24,7 +24,7 @@ export const modals = {
   deleteUserModal: DeleteUserModal,
   createInviteModal: CreateInviteModal,
   deleteInviteModal: DeleteInviteModal,
-  createDashboardModal: CreateDashboardModal,
+  createBoardModal: CreateBoardModal,
   copyInviteModal: CopyInviteModal,
   deleteBoardModal: DeleteBoardModal,
 };

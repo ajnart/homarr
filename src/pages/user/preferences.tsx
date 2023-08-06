@@ -200,12 +200,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale 
   await helpers.user.withSettings.prefetch();
   await helpers.boards.all.prefetch();
 
-  const translations = await getServerSideTranslations(
-    ['user/preferences'],
-    locale,
-    undefined,
-    undefined
-  );
+  const translations = await getServerSideTranslations(['user/preferences'], locale, req, res);
   return {
     props: {
       ...translations,

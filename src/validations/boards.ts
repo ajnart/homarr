@@ -1,7 +1,7 @@
 import { DEFAULT_THEME, MANTINE_COLORS, MantineColor } from '@mantine/core';
 import { z } from 'zod';
 
-export const createDashboardSchemaValidation = z.object({
+export const createBoardSchemaValidation = z.object({
   name: z.string().min(2).max(25),
 });
 

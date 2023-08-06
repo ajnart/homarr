@@ -180,25 +180,3 @@ const useStyles = createStyles(({ colors, colorScheme, radius }) => ({
     },
   },
 }));
-
-/*
-<BackgroundChanger />
-
-<Stack spacing="xs" my="md">
-  <Text>{t('settings/customization/color-selector:colors')}</Text>
-  <Grid>
-    <Grid.Col sm={12} md={6}>
-      <ColorSelector type="primary" defaultValue="red" />
-    </Grid.Col>
-    <Grid.Col sm={12} md={6}>
-      <ColorSelector type="secondary" defaultValue="orange" />
-    </Grid.Col>
-    <Grid.Col sm={12} md={6}>
-      <ShadeSelector />
-    </Grid.Col>
-  </Grid>
-</Stack>
-
-<DashboardTilesOpacitySelector />
-<CustomCssChanger />
-*/

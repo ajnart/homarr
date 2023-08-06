@@ -11,7 +11,6 @@ import {
   IconSun,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { CustomTypeOptions } from 'i18next';
 
 interface WeatherIconProps {
   code: number;

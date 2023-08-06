@@ -26,7 +26,6 @@ import { ReactNode, useMemo, useState } from 'react';
 import { z } from 'zod';
 import { prisma } from '~/server/db';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { onboardNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signUpFormSchema } from '~/validations/user';
@@ -225,12 +224,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
   }
 
-  const translations = await getServerSideTranslations(
-    onboardNamespaces,
-    ctx.locale,
-    ctx.req,
-    ctx.res
-  );
+  const translations = await getServerSideTranslations([], ctx.locale, ctx.req, ctx.res);
 
   return {
     props: {

@@ -1,9 +1,11 @@
 import { z } from 'zod';
 import { CustomErrorParams } from '~/utils/i18n-zod-resolver';
 
+export const minPasswordLength = 8;
+
 export const passwordSchema = z
   .string()
-  .min(8)
+  .min(minPasswordLength)
   .max(100)
   .refine((value) => /[0-9]/.test(value))
   .refine((value) => /[a-z]/.test(value))
@@ -18,12 +20,12 @@ export const signInSchema = z.object({
 export const signUpFormSchema = z
   .object({
     username: z.string().min(3),
-    password: z.string().min(8),
-    passwordConfirmation: z.string().min(8),
+    password: z.string().min(minPasswordLength),
+    passwordConfirmation: z.string().min(minPasswordLength),
   })
   .refine((data) => data.password === data.passwordConfirmation, {
     params: {
-      i18n: { key: 'password_match' },
+      i18n: { key: 'passwordMatch' },
     } satisfies CustomErrorParams,
     path: ['passwordConfirmation'],
   });

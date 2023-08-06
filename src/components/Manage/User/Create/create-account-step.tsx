@@ -1,8 +1,9 @@
 import { Button, Card, Flex, TextInput } from '@mantine/core';
-import { useForm, zodResolver } from '@mantine/form';
+import { useForm } from '@mantine/form';
 import { IconArrowRight, IconAt, IconUser } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { z } from 'zod';
+import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 
 interface CreateAccountStepProps {
   nextStep: ({ eMail, username }: { username: string; eMail: string }) => void;
@@ -10,7 +11,14 @@ interface CreateAccountStepProps {
   defaultEmail: string;
 }
 
-export const CreateAccountStep = ({ defaultEmail, defaultUsername, nextStep }: CreateAccountStepProps) => {
+export const CreateAccountStep = ({
+  defaultEmail,
+  defaultUsername,
+  nextStep,
+}: CreateAccountStepProps) => {
+  const { t } = useTranslation('manage/users/create');
+
+  const { i18nZodResolver } = useI18nZodResolver();
   const form = useForm({
     initialValues: {
       username: defaultUsername,
@@ -18,10 +26,8 @@ export const CreateAccountStep = ({ defaultEmail, defaultUsername, nextStep }: C
     },
     validateInputOnBlur: true,
     validateInputOnChange: true,
-    validate: zodResolver(createAccountStepValidationSchema),
+    validate: i18nZodResolver(createAccountStepValidationSchema),
   });
-
-  const { t } = useTranslation('user/create');
 
   return (
     <Card mih={400}>

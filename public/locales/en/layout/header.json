@@ -16,12 +16,19 @@
             "switchTheme": "Switch theme",
             "preferences": "User preferences",
             "defaultBoard": "Default dashboard",
+            "manage": "Manage",
             "about": {
                 "label": "About",
                 "new": "New"
             },
             "logout": "Logout from {{username}}",
             "login": "Login"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "Top {{count}} results for <b>{{search}}</b>."
         }
     }
 }

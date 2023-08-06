@@ -1,25 +1,17 @@
-import { Alert, Button, Card, Group, Stepper, Table, Text, Title } from '@mantine/core';
-import { useForm, zodResolver } from '@mantine/form';
-import {
-  IconArrowLeft,
-  IconCheck,
-  IconInfoCircle,
-  IconKey,
-  IconMail,
-  IconMailCheck,
-  IconUser,
-  IconUserPlus,
-} from '@tabler/icons-react';
+import { Alert, Button, Group, Stepper } from '@mantine/core';
+import { useForm } from '@mantine/form';
+import { IconArrowLeft, IconKey, IconMailCheck, IconUser, IconUserPlus } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useTranslation } from 'next-i18next';
 import { z } from 'zod';
 import {
   CreateAccountStep,
   createAccountStepValidationSchema,
 } from '~/components/Manage/User/Create/create-account-step';
+import { ReviewInputStep } from '~/components/Manage/User/Create/review-input-step';
 import {
   CreateAccountSecurityStep,
   createAccountSecurityStepValidationSchema,
@@ -27,15 +19,17 @@ import {
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { api } from '~/utils/api';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
+import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 
 const CreateNewUserPage = () => {
+  const { t } = useTranslation('manage/users/create');
   const [active, setActive] = useState(0);
   const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+  const { i18nZodResolver } = useI18nZodResolver();
 
-  const form = useForm({
+  const form = useForm<CreateAccountSchema>({
     initialValues: {
       account: {
         username: '',
@@ -45,30 +39,14 @@ const CreateNewUserPage = () => {
         password: '',
       },
     },
-    validate: zodResolver(
-      z.object({
-        account: createAccountStepValidationSchema,
-        security: createAccountSecurityStepValidationSchema,
-      })
-    ),
+    validate: i18nZodResolver(createAccountSchema),
   });
 
-  const context = api.useContext();
-  const { mutateAsync, isLoading } = api.user.create.useMutation({
-    onSettled: () => {
-      void context.user.all.invalidate();
-    },
-    onSuccess: () => {
-      nextStep();
-    },
-  });
-
-  const { t } = useTranslation('user/create');
-
+  const metaTitle = `${t('metaTitle')} • Homarr`;
   return (
     <ManageLayout>
       <Head>
-        <title>Create user • Homarr</title>
+        <title>{metaTitle}</title>
       </Head>
 
       <Stepper active={active} onStepClick={setActive} breakpoint="sm" mih="100%">
@@ -111,92 +89,11 @@ const CreateNewUserPage = () => {
           label={t('steps.finish.title')}
           description={t('steps.finish.title')}
         >
-          <Card mih={400}>
-            <Title order={5}>{t('steps.finish.card.title')}</Title>
-            <Text mb="xl">{t('steps.finish.card.text')}</Text>
-
-            <Table mb="lg" withBorder highlightOnHover>
-              <thead>
-                <tr>
-                  <th>{t('steps.finish.table.header.property')}</th>
-                  <th>{t('steps.finish.table.header.value')}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <Group spacing="xs">
-                      <IconUser size="1rem" />
-                      <Text>{t('steps.finish.table.header.username')}</Text>
-                    </Group>
-                  </td>
-                  <td>{form.values.account.username}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <Group spacing="xs">
-                      <IconMail size="1rem" />
-                      <Text>{t('steps.finish.table.header.email')}</Text>
-                    </Group>
-                  </td>
-                  <td>
-                    {form.values.account.eMail ? (
-                      <Text>{form.values.account.eMail}</Text>
-                    ) : (
-                      <Group spacing="xs">
-                        <IconInfoCircle size="1rem" color="orange" />
-                        <Text color="orange">{t('steps.finish.table.notSet')}</Text>
-                      </Group>
-                    )}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <Group spacing="xs">
-                      <IconKey size="1rem" />
-                      <Text>{t('steps.finish.table.password')}</Text>
-                    </Group>
-                  </td>
-                  <td>
-                    <Group spacing="xs">
-                      <IconCheck size="1rem" color="green" />
-                      <Text color="green">{t('steps.finish.table.valid')}</Text>
-                    </Group>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-
-            <Group position="apart" noWrap>
-              <Button
-                leftIcon={<IconArrowLeft size="1rem" />}
-                onClick={prevStep}
-                variant="light"
-                px="xl"
-              >
-                {t('buttons.previous')}
-              </Button>
-              <Button
-                onClick={async () => {
-                  await mutateAsync({
-                    username: form.values.account.username,
-                    password: form.values.security.password,
-                    email: form.values.account.eMail === '' ? undefined : form.values.account.eMail,
-                  });
-                }}
-                loading={isLoading}
-                rightIcon={<IconCheck size="1rem" />}
-                variant="light"
-                px="xl"
-              >
-                {t('buttons.confirm')}
-              </Button>
-            </Group>
-          </Card>
+          <ReviewInputStep values={form.values} prevStep={prevStep} nextStep={nextStep} />
         </Stepper.Step>
         <Stepper.Completed>
-          <Alert title="User was created" color="green" mb="md">
-            {t('steps.finish.alertConfirmed')}
+          <Alert title={t('steps.completed.alert.title')} color="green" mb="md">
+            {t('steps.completed.alert.text')}
           </Alert>
 
           <Group>
@@ -225,6 +122,13 @@ const CreateNewUserPage = () => {
   );
 };
 
+const createAccountSchema = z.object({
+  account: createAccountStepValidationSchema,
+  security: createAccountSecurityStepValidationSchema,
+});
+
+export type CreateAccountSchema = z.infer<typeof createAccountSchema>;
+
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getServerAuthSession(ctx);
 
@@ -237,8 +141,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const translations = await getServerSideTranslations(
     manageNamespaces,
     ctx.locale,
-    undefined,
-    undefined
+    ctx.req,
+    ctx.res
   );
   return {
     props: {

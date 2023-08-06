@@ -1,24 +1,24 @@
-import { Button, Group, Stack, Text } from '@mantine/core';
-import { DateInput, DateTimePicker } from '@mantine/dates';
-import { useForm, zodResolver } from '@mantine/form';
+import { Button, Group, Stack, Text, Title } from '@mantine/core';
+import { DateTimePicker } from '@mantine/dates';
+import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
 import dayjs from 'dayjs';
+import { Trans, useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { createInviteSchema } from '~/validations/invite';
 
+import { openCopyInviteModal } from './copy-invite.modal';
+
 export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
-  const apiContext = api.useContext();
+  const { t } = useTranslation('manage/users/invites');
+  const utils = api.useContext();
   const { isLoading, mutateAsync } = api.invites.create.useMutation({
     onSuccess: async (data) => {
-      await apiContext.invites.all.invalidate();
+      await utils.invites.all.invalidate();
       modals.close(id);
 
-      modals.openContextModal({
-        modal: 'copyInviteModal',
-        title: <Text weight="bold">Copy invitation</Text>,
-        innerProps: data,
-      });
+      openCopyInviteModal(data);
     },
   });
 
@@ -36,10 +36,7 @@ export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
 
   return (
     <Stack>
-      <Text>
-        After the expiration, an invite will no longer be valid and the recipient of the invite
-        won't be able to create an account.
-      </Text>
+      <Text>{t('modals.create.description')}</Text>
 
       <DateTimePicker
         popoverProps={{ withinPortal: true }}
@@ -47,7 +44,7 @@ export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
         maxDate={maxDate}
         withAsterisk
         valueFormat="DD MMM YYYY hh:mm A"
-        label="Expiration date"
+        label={t('modals.create.form.expires.label')}
         variant="filled"
         {...form.getInputProps('expirationDate')}
       />
@@ -60,7 +57,7 @@ export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
           variant="light"
           color="gray"
         >
-          Cancel
+          {t('common:cancel')}
         </Button>
         <Button
           onClick={async () => {
@@ -72,9 +69,21 @@ export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
           variant="light"
           color="green"
         >
-          Create
+          {t('modals.create.form.submit')}
         </Button>
       </Group>
     </Stack>
   );
+};
+
+export const openCreateInviteModal = () => {
+  modals.openContextModal({
+    modal: 'createInviteModal',
+    title: (
+      <Title order={4}>
+        <Trans i18nKey="manage/users/invites:modals.create.title" />
+      </Title>
+    ),
+    innerProps: {},
+  });
 };

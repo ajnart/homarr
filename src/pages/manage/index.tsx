@@ -12,6 +12,7 @@ import {
 import { IconArrowRight } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/react';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,24 +20,31 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { OnlyKeysWithStructure } from '~/types/helpers';
+
+import { type quickActions } from '../../../public/locales/en/manage/index.json';
 
 const ManagementPage = () => {
+  const { t } = useTranslation('manage/index');
   const { classes } = useStyles();
   const largerThanMd = useScreenLargerThan('md');
   const { data: sessionData } = useSession();
 
+  const metaTitle = `${t('metaTitle')} • Homarr`;
   return (
     <ManageLayout>
       <Head>
-        <title>Manage • Homarr</title>
+        <title>{metaTitle}</title>
       </Head>
       <Box className={classes.box} w="100%" mih={150} p="xl" mb={50}>
         <Group position="apart" noWrap>
           <Stack spacing={15}>
             <Title className={classes.boxTitle} order={2}>
-              Welcome back, {sessionData?.user?.name ?? 'Anonymous'}
+              {t('hero.title', {
+                username: sessionData?.user?.name ?? t('hero.fallbackUsername'),
+              })}
             </Title>
-            <Text>Welcome to Your Application Hub. Organize, Optimize, and Conquer!</Text>
+            <Text>{t('hero.subtitle')}</Text>
           </Stack>
           <Box bg="blue" w={100} h="100%" pos="relative">
             <Box
@@ -49,7 +57,7 @@ const ManagementPage = () => {
                 src="/imgs/logo/logo.png"
                 width={largerThanMd ? 200 : 100}
                 height={largerThanMd ? 150 : 60}
-                alt=""
+                alt="Homarr Logo"
               />
             </Box>
           </Box>
@@ -57,7 +65,7 @@ const ManagementPage = () => {
       </Box>
 
       <Text weight="bold" mb="md">
-        Quick actions
+        {t('quickActions.title')}
       </Text>
       <SimpleGrid
         cols={3}
@@ -67,41 +75,43 @@ const ManagementPage = () => {
           { maxWidth: '48rem', cols: 1, spacing: 'md' },
         ]}
       >
-        <UnstyledButton component={Link} href="/manage/boards">
-          <Card className={classes.quickActionCard}>
-            <Group spacing={30} noWrap>
-              <Stack spacing={0}>
-                <Text weight="bold">Your boards</Text>
-                <Text>Show a list of all your dashboards</Text>
-              </Stack>
-              <IconArrowRight />
-            </Group>
-          </Card>
-        </UnstyledButton>
-        <UnstyledButton component={Link} href="/manage/users/invites">
-          <Card className={classes.quickActionCard}>
-            <Group spacing={30} noWrap>
-              <Stack spacing={0}>
-                <Text weight="bold">Invite a new user</Text>
-                <Text>Create and send an invitation for registration</Text>
-              </Stack>
-              <IconArrowRight />
-            </Group>
-          </Card>
-        </UnstyledButton>
-        <UnstyledButton component={Link} href="/manage/users">
-          <Card className={classes.quickActionCard}>
-            <Group spacing={30} noWrap>
-              <Stack spacing={0}>
-                <Text weight="bold">Manage users</Text>
-                <Text>Delete and manage your users</Text>
-              </Stack>
-              <IconArrowRight />
-            </Group>
-          </Card>
-        </UnstyledButton>
+        <QuickActionCard type="boards" href="/manage/boards" />
+        <QuickActionCard type="inviteUsers" href="/manage/users/invites" />
+        <QuickActionCard type="manageUsers" href="/manage/users" />
       </SimpleGrid>
     </ManageLayout>
+  );
+};
+
+type QuickActionType = OnlyKeysWithStructure<
+  typeof quickActions,
+  {
+    title: string;
+    subtitle: string;
+  }
+>;
+
+type QuickActionCardProps = {
+  type: QuickActionType;
+  href: string;
+};
+
+const QuickActionCard = ({ type, href }: QuickActionCardProps) => {
+  const { t } = useTranslation('manage/index');
+  const { classes } = useStyles();
+
+  return (
+    <UnstyledButton component={Link} href={href}>
+      <Card className={classes.quickActionCard}>
+        <Group position="apart" noWrap>
+          <Stack spacing={0}>
+            <Text weight={500}>{t(`quickActions.${type}.title`)}</Text>
+            <Text>{t(`quickActions.${type}.subtitle`)}</Text>
+          </Stack>
+          <IconArrowRight />
+        </Group>
+      </Card>
+    </UnstyledButton>
   );
 };
 
@@ -115,10 +125,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   const translations = await getServerSideTranslations(
-    ['common'],
+    ['layout/manage', 'manage/index'],
     ctx.locale,
-    undefined,
-    undefined
+    ctx.req,
+    ctx.res
   );
   return {
     props: {

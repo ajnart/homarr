@@ -15,15 +15,16 @@ import { useDebouncedValue } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import { openDeleteUserModal } from '~/components/Manage/User/delete-user.modal';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { api } from '~/utils/api';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
+import { api } from '~/utils/api';
 
 const ManageUsersPage = () => {
   const [activePage, setActivePage] = useState(0);
@@ -34,7 +35,7 @@ const ManageUsersPage = () => {
     search: debouncedSearch,
   });
 
-  const { t } = useTranslation('user/manage');
+  const { t } = useTranslation('manage/users');
 
   return (
     <ManageLayout>
@@ -86,16 +87,7 @@ const ManageUsersPage = () => {
                       <Group>
                         <ActionIcon
                           onClick={() => {
-                            openContextModal({
-                              modal: 'deleteUserModal',
-                              title: (
-                                <Text weight="bold">{t('modals.delete', { name: user.name })}</Text>
-                              ),
-                              innerProps: {
-                                userId: user.id,
-                                username: user.name ?? '',
-                              },
-                            });
+                            openDeleteUserModal(user);
                           }}
                           color="red"
                           variant="light"
@@ -112,9 +104,7 @@ const ManageUsersPage = () => {
                 <tr>
                   <td colSpan={1}>
                     <Box p={15}>
-                      <Text>
-                        {t('searchDoesntMatch')}
-                      </Text>
+                      <Text>{t('searchDoesntMatch')}</Text>
                     </Box>
                   </td>
                 </tr>

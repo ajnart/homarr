@@ -4,15 +4,17 @@ import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconCheck, IconX } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { z } from 'zod';
 import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
-import { inviteNamespaces } from '~/tools/server/translation-namespaces';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signUpFormSchema } from '~/validations/user';
+
+const notificationId = 'register';
 
 export default function AuthInvitePage() {
   const { t } = useTranslation('authentication/invite');
@@ -28,11 +30,10 @@ export default function AuthInvitePage() {
   });
 
   const handleSubmit = (values: z.infer<typeof signUpFormSchema>) => {
-    const notificationId = 'register';
     showNotification({
       id: notificationId,
-      title: 'Creating account',
-      message: 'Please wait...',
+      title: t('notifications.loading.title'),
+      message: `${t('notifications.loading.text')}...`,
       loading: true,
     });
     void mutateAsync(
@@ -44,8 +45,8 @@ export default function AuthInvitePage() {
         onSuccess() {
           updateNotification({
             id: notificationId,
-            title: 'Account created',
-            message: 'Your account has been created successfully',
+            title: t('notifications.success.title'),
+            message: t('notifications.success.text'),
             color: 'teal',
             icon: <IconCheck />,
           });
@@ -54,8 +55,8 @@ export default function AuthInvitePage() {
         onError() {
           updateNotification({
             id: notificationId,
-            title: 'Error',
-            message: 'Something went wrong',
+            title: t('notifications.error.title'),
+            message: t('notifications.error.text'),
             color: 'red',
             icon: <IconX />,
           });
@@ -64,47 +65,55 @@ export default function AuthInvitePage() {
     );
   };
 
+  const metaTitle = `${t('metaTitle')} • Homarr`;
+
   return (
-    <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
-      <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
-        <Title align="center" weight={900}>
-          {t('title')}
-        </Title>
+    <>
+      <Head>
+        <title>{metaTitle}</title>
+      </Head>
 
-        <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
-          {t('text')}
-        </Text>
+      <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
+        <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
+          <Title align="center" weight={900}>
+            {t('title')}
+          </Title>
 
-        <form onSubmit={form.onSubmit(handleSubmit)}>
-          <Stack>
-            <TextInput
-              variant="filled"
-              label={t('form.fields.username.label')}
-              withAsterisk
-              {...form.getInputProps('username')}
-            />
+          <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+            {t('text')}
+          </Text>
 
-            <PasswordInput
-              variant="filled"
-              label={t('form.fields.password.label')}
-              withAsterisk
-              {...form.getInputProps('password')}
-            />
+          <form onSubmit={form.onSubmit(handleSubmit)}>
+            <Stack>
+              <TextInput
+                variant="filled"
+                label={t('form.fields.username.label')}
+                withAsterisk
+                {...form.getInputProps('username')}
+              />
 
-            <PasswordInput
-              variant="filled"
-              label={t('form.fields.passwordConfirmation.label')}
-              withAsterisk
-              {...form.getInputProps('passwordConfirmation')}
-            />
+              <PasswordInput
+                variant="filled"
+                label={t('form.fields.password.label')}
+                withAsterisk
+                {...form.getInputProps('password')}
+              />
 
-            <Button fullWidth type="submit">
-              {t('form.buttons.submit')}
-            </Button>
-          </Stack>
-        </form>
-      </Card>
-    </Flex>
+              <PasswordInput
+                variant="filled"
+                label={t('form.fields.passwordConfirmation.label')}
+                withAsterisk
+                {...form.getInputProps('passwordConfirmation')}
+              />
+
+              <Button fullWidth type="submit">
+                {t('form.buttons.submit')}
+              </Button>
+            </Stack>
+          </form>
+        </Card>
+      </Flex>
+    </>
   );
 }
 
@@ -157,7 +166,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? '', inviteNamespaces)),
+      ...(await getServerSideTranslations(['authentication/invite'], locale, req, res)),
     },
   };
 };

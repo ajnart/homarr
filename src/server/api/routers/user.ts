@@ -28,7 +28,7 @@ export const userRouter = createTRPCRouter({
       });
     }
 
-    await createUserInNotExist(ctx, input, {
+    await createUserIfNotPresent(ctx, input, {
       defaultSettings: {
         colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
         language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
@@ -62,7 +62,7 @@ export const userRouter = createTRPCRouter({
         });
       }
 
-      await createUserInNotExist(ctx, input, {
+      await createUserIfNotPresent(ctx, input, {
         defaultSettings: {
           colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
           language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
@@ -235,7 +235,7 @@ export const userRouter = createTRPCRouter({
       return {
         users: users.map((user) => ({
           id: user.id,
-          name: user.name,
+          name: user.name!,
           email: user.email,
           emailVerified: user.emailVerified,
         })),
@@ -243,25 +243,25 @@ export const userRouter = createTRPCRouter({
       };
     }),
   create: adminProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
-    await createUserInNotExist(ctx, input);
+    await createUserIfNotPresent(ctx, input);
   }),
 
   deleteUser: adminProcedure
     .input(
       z.object({
-        userId: z.string(),
+        id: z.string(),
       })
     )
     .mutation(async ({ ctx, input }) => {
       await ctx.prisma.user.delete({
         where: {
-          id: input.userId,
+          id: input.id,
         },
       });
     }),
 });
 
-const createUserInNotExist = async (
+const createUserIfNotPresent = async (
   ctx: TRPCContext,
   input: z.infer<typeof createNewUserSchema>,
   options: {
