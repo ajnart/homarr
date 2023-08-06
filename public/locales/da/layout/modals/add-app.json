@@ -25,6 +25,10 @@
 			"label": "Åbn i nyt faneblad",
 			"description": "Åbn appen i en ny fane i stedet for den aktuelle fane."
 		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
 		"customProtocolWarning": "Brug af en ikke-standardiseret protokol. Dette kan kræve forudinstallerede programmer og kan medføre sikkerhedsrisici. Sørg for, at din adresse er sikker og pålidelig."
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "Indlæser eksterne ikoner",
 				"text": "Dette kan tage nogle sekunder"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},
