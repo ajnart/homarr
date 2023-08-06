@@ -25,6 +25,7 @@ import {
   IconTrash,
 } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -39,6 +40,7 @@ import { api } from '~/utils/api';
 
 const BoardsPage = () => {
   const context = api.useContext();
+  const { data: sessionData } = useSession();
   const { data } = api.boards.all.useQuery();
   const { mutateAsync } = api.user.makeDefaultDashboard.useMutation({
     onSettled: () => {
@@ -60,13 +62,15 @@ const BoardsPage = () => {
 
       <Group position="apart">
         <Title mb="xl">{t('pageTitle')}</Title>
-        <Button
-          onClick={openCreateBoardModal}
-          leftIcon={<IconPlus size="1rem" />}
-          variant="default"
-        >
-          {t('buttons.create')}
-        </Button>
+        {sessionData?.user.isAdmin && (
+          <Button
+            onClick={openCreateBoardModal}
+            leftIcon={<IconPlus size="1rem" />}
+            variant="default"
+          >
+            {t('buttons.create')}
+          </Button>
+        )}
       </Group>
 
       {data && (
@@ -143,7 +147,7 @@ const BoardsPage = () => {
                 >
                   {t('cards.buttons.view')}
                 </Button>
-                <Menu width={240} withinPortal>
+                <Menu width={240} withinPortal position="bottom-end">
                   <Menu.Target>
                     <ActionIcon h={34} w={34} variant="default">
                       <IconDotsVertical size="1rem" />
@@ -160,28 +164,32 @@ const BoardsPage = () => {
                     >
                       <Text size="sm">{t('cards.menu.setAsDefault')}</Text>
                     </Menu.Item>
-                    <Menu.Divider />
-                    <Menu.Item
-                      onClick={async () => {
-                        openDeleteBoardModal({
-                          boardName: board.name,
-                          onConfirm: async () => {
-                            append(board.name);
-                            // give user feedback, that it's being deleted
-                            await sleep(500);
-                            filter((item, _) => item !== board.name);
-                          },
-                        });
-                      }}
-                      disabled={board.name === 'default'}
-                      icon={<IconTrash size="1rem" />}
-                      color="red"
-                    >
-                      <Text size="sm">{t('cards.menu.delete.label')}</Text>
-                      {board.name === 'default' && (
-                        <Text size="xs">{t('cards.menu.delete.disabled')}</Text>
-                      )}
-                    </Menu.Item>
+                    {sessionData?.user.isAdmin && (
+                      <>
+                        <Menu.Divider />
+                        <Menu.Item
+                          onClick={async () => {
+                            openDeleteBoardModal({
+                              boardName: board.name,
+                              onConfirm: async () => {
+                                append(board.name);
+                                // give user feedback, that it's being deleted
+                                await sleep(500);
+                                filter((item, _) => item !== board.name);
+                              },
+                            });
+                          }}
+                          disabled={board.name === 'default'}
+                          icon={<IconTrash size="1rem" />}
+                          color="red"
+                        >
+                          <Text size="sm">{t('cards.menu.delete.label')}</Text>
+                          {board.name === 'default' && (
+                            <Text size="xs">{t('cards.menu.delete.disabled')}</Text>
+                          )}
+                        </Menu.Item>
+                      </>
+                    )}
                   </Menu.Dropdown>
                 </Menu>
               </Group>

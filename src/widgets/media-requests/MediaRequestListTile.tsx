@@ -12,6 +12,7 @@ import {
 } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
@@ -95,6 +96,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   const { data, isLoading } = useMediaRequestQuery();
   // Use mutation to approve or deny a pending request
   const decideAsync = useMediaRequestDecisionMutation();
+  const { data: sessionData } = useSession();
 
   if (!data || isLoading) {
     return <WidgetLoading />;
@@ -177,7 +179,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                 </Text>
               </Flex>
 
-              {item.status === MediaRequestStatus.PendingApproval && (
+              {item.status === MediaRequestStatus.PendingApproval && sessionData?.user?.isAdmin && (
                 <Group>
                   <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
                     <ActionIcon

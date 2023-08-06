@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 const citySchema = z.object({
   id: z.number(),
@@ -24,7 +24,7 @@ const weatherSchema = z.object({
 });
 
 export const weatherRouter = createTRPCRouter({
-  findCity: publicProcedure
+  findCity: adminProcedure
     .input(
       z.object({
         query: z.string().min(2),

@@ -1,8 +1,7 @@
 import fs from 'fs';
+import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 
 import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
-
-import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 
 export const boardRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
@@ -10,8 +9,8 @@ export const boardRouter = createTRPCRouter({
 
     const userSettings = await ctx.prisma.userSettings.findUniqueOrThrow({
       where: {
-        userId: ctx.session?.user.id
-      }
+        userId: ctx.session?.user.id,
+      },
     });
 
     return await Promise.all(
@@ -26,7 +25,7 @@ export const boardRouter = createTRPCRouter({
           countApps: countApps,
           countWidgets: config.widgets.length,
           countCategories: config.categories.length,
-          isDefaultForUser: name === userSettings.defaultBoard
+          isDefaultForUser: name === userSettings.defaultBoard,
         };
       })
     );

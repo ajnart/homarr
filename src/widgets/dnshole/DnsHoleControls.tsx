@@ -1,11 +1,11 @@
 import { Badge, Box, Button, Card, Group, Image, SimpleGrid, Stack, Text } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
 
 import { useConfigContext } from '../../config/provider';
-import { queryClient } from '../../tools/server/configurations/tanstack/queryClient.tool';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
@@ -32,6 +32,8 @@ interface DnsHoleControlsWidgetProps {
 }
 
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
+  const utils = api.useContext();
+  const { data: sessionData } = useSession();
   const { isInitialLoading, data } = useDnsHoleSummeryQuery();
   const { mutateAsync } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
@@ -45,38 +47,46 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
 
   return (
     <Stack justify="space-between" h={'100%'} spacing="0.25rem">
-      <SimpleGrid ref={ref} cols={width > 275 ? 2 : 1} verticalSpacing="0.25rem" spacing="0.25rem">
-        <Button
-          onClick={async () => {
-            await mutateAsync({
-              action: 'enable',
-              configName,
-            });
-            await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
-          }}
-          leftIcon={<IconPlayerPlay size={20} />}
-          variant="light"
-          color="green"
-          h="2rem"
+      {sessionData?.user?.isAdmin && (
+        <SimpleGrid
+          ref={ref}
+          cols={width > 275 ? 2 : 1}
+          verticalSpacing="0.25rem"
+          spacing="0.25rem"
         >
-          {t('enableAll')}
-        </Button>
-        <Button
-          onClick={async () => {
-            await mutateAsync({
-              action: 'disable',
-              configName,
-            });
-            await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
-          }}
-          leftIcon={<IconPlayerStop size={20} />}
-          variant="light"
-          color="red"
-          h="2rem"
-        >
-          {t('disableAll')}
-        </Button>
-      </SimpleGrid>
+          <Button
+            onClick={async () => {
+              await mutateAsync({
+                action: 'enable',
+                configName,
+              });
+
+              await utils.dnsHole.summary.invalidate();
+            }}
+            leftIcon={<IconPlayerPlay size={20} />}
+            variant="light"
+            color="green"
+            h="2rem"
+          >
+            {t('enableAll')}
+          </Button>
+          <Button
+            onClick={async () => {
+              await mutateAsync({
+                action: 'disable',
+                configName,
+              });
+              await utils.dnsHole.summary.invalidate();
+            }}
+            leftIcon={<IconPlayerStop size={20} />}
+            variant="light"
+            color="red"
+            h="2rem"
+          >
+            {t('disableAll')}
+          </Button>
+        </SimpleGrid>
+      )}
 
       <Stack spacing="0.25rem">
         {data.status.map((status, index) => {

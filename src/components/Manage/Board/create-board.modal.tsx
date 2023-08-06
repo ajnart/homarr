@@ -12,7 +12,7 @@ export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
   const utils = api.useContext();
   const { isLoading, mutate } = api.config.save.useMutation({
     onSuccess: async () => {
-      await utils.config.all.invalidate();
+      await utils.boards.all.invalidate();
       modals.close(id);
     },
   });

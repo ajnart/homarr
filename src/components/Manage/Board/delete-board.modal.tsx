@@ -10,7 +10,7 @@ export const DeleteBoardModal = ({ id, innerProps }: ContextModalProps<InnerProp
   const utils = api.useContext();
   const { isLoading, mutateAsync } = api.config.delete.useMutation({
     onSuccess: async () => {
-      await utils.config.all.invalidate();
+      await utils.boards.all.invalidate();
       modals.close(id);
     },
   });
