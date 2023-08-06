@@ -25,6 +25,10 @@
 			"label": "In neuem Tab öffnen",
 			"description": "Öffnen Sie die App in einer neuen Registerkarte, anstatt in der aktuellen Registerkarte."
 		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
 		"customProtocolWarning": "Verwendung eines nicht standardmäßigen Protokolls. Dies kann vorinstallierte Anwendungen erfordern und Sicherheitsrisiken einbringen. Stellen Sie sicher, dass Ihre Adresse sicher und vertrauenswürdig ist."
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "Lade externe Icons",
 				"text": "Dies kann einige Sekunden dauern…"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},
