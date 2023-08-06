@@ -25,6 +25,10 @@
 			"label": "Apri in una nuova scheda",
 			"description": "Apri l'app in una nuova scheda invece di quella attuale."
 		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
 		"customProtocolWarning": "Si sta utilizzando un protocollo non standard. Questo potrebbe richiedere applicazioni preinstallate e introdurre rischi per la sicurezza. Assicurarsi che il vostro indirizzo sia sicuro e affidabile."
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "Caricamento icone esterne",
 				"text": "Questa operazione potrebbe richiedere alcuni secondi"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},
