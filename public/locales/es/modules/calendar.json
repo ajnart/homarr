@@ -1,23 +1,23 @@
 {
   "descriptor": {
     "name": "Calendario",
-    "description": "Muestra un calendario con las próximas emisiones, desde las integraciones compatibles.",
+    "description": "Muestra un calendario con los próximos lanzamientos, de integraciones soportadas.",
     "settings": {
-      "title": "Ajustes para el widget del Calendario",
+      "title": "Ajustes del widget Calendario",
       "useSonarrv4": {
-        "label": "Usar API Sonarr v4"
+        "label": "Usar la API de Sonarr v4"
       },
       "sundayStart": {
         "label": "Marcar Domingo como primer día de la semana"
       },
       "radarrReleaseType": {
-        "label": "Tipo de release en Radarr"
+        "label": "Tipo de lanzamiento de Radarr"
       },
       "hideWeekDays": {
         "label": "Ocultar días de la semana"
       },
       "fontSize": {
-        "label": "Tamaño dd fuente"
+        "label": "Tamaño de fuente"
       }
     }
   }

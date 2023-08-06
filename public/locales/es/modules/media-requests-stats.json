@@ -1,13 +1,16 @@
 {
   "descriptor": {
-    "name": "Estadísticas de petición de contenido",
-    "description": "Estadísticas de tus peticiones de contenido",
+    "name": "Estadísticas de solicitudes multimedia",
+    "description": "Estadísticas sobre tus solicitudes multimedia",
     "settings": {
-      "title": "Estadísticas de peticiones de contenido"
+      "title": "Estadísticas de solicitudes multimedia",
+      "direction": {
+        "label": "Dirección del diseño."
+      }
     }
   },
   "stats": {
-    "pending": "Aprobaciones pendientes",
+    "pending": "Pendientes de aprobación",
     "tvRequests": "Solicitudes de TV",
     "movieRequests": "Solicitudes de películas"
   }

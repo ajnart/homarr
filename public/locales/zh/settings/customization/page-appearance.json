@@ -8,8 +8,8 @@
     "description": "在你的浏览器标签中显示的标题"
   },
   "logo": {
-    "label": "徽标",
-    "description": "显示在左上方的标志"
+    "label": "Logo",
+    "description": "显示在左上方的Logo"
   },
   "favicon": {
     "label": "网站图标",
@@ -20,9 +20,9 @@
   },
   "customCSS": {
     "label": "自定义CSS",
-    "description": "此外，使用CSS定制你的仪表板，只推荐给有经验的用户。",
+    "description": "此外，还可使用CSS定制你的仪表板（仅建议有经验的用户使用）",
     "placeholder": "自定义 CSS 将在最后应用",
-    "applying": "应用CSS..."
+    "applying": "应用CSS中..."
   },
   "buttons": {
     "submit": "提交"

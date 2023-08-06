@@ -1,10 +1,10 @@
 {
 	"tabs": {
 		"general": "通用",
-		"behaviour": "动作",
+		"behaviour": "行为",
 		"network": "网络",
 		"appearance": "外观",
-		"integration": "融合"
+		"integration": "集成"
 	},
 	"general": {
 		"appname": {
@@ -17,14 +17,15 @@
 		},
 		"externalAddress": {
 			"label": "外部地址",
-			"description": "点击应用时打开的URL。"
+			"description": "点击应用时打开的网址。"
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "在新标签中打开",
-			"description": "在新标签中打开应用，而不是当前标签。"
-		}
+			"label": "在新标签页中打开",
+			"description": "在新标签页中打开应用，而不是当前标签页。"
+		},
+		"customProtocolWarning": "使用非标准协议。这可能需要预先安装应用程序，并可能引入安全风险。确保你的地址安全可靠。"
 	},
 	"network": {
 		"statusChecker": {
@@ -39,13 +40,13 @@
 	"appearance": {
 		"icon": {
 			"label": "应用图标",
-			"description": "打字搜图标，也可以粘贴自定义图标的URL。",
+			"description": "输入以搜索图标，也可以粘贴自定义图标的网址。",
 			"autocomplete": {
-				"title": "未找到相应结果",
-				"text": "尝试使用一个更具体的搜索词。如果你找不到你想要的图标，请粘贴上面的图片URL，以获得一个自定义图标。"
+				"title": "未找到结果",
+				"text": "尝试使用一个更具体的搜索词。如果你找不到你想要的图标，可以在上方粘贴图片的网址，以获得一个自定义图标。"
 			},
 			"noItems": {
-				"title": "加载外部图标",
+				"title": "正在加载外部图标",
 				"text": "这可能需要几秒钟"
 			}
 		}
@@ -54,23 +55,23 @@
 		"type": {
 			"label": "集成配置",
 			"description": "将用于连接您的应用的集成配置。",
-			"placeholder": "选择一个整合",
+			"placeholder": "选择一个集成",
 			"defined": "已定义",
 			"undefined": "未定义",
 			"public": "公开的",
 			"private": "私有的",
-			"explanationPrivate": "私有密钥只会被发送到服务器一次。一旦你的浏览器刷新了页面，它就再也不会发送了。",
-			"explanationPublic": "公开的密钥将始终发送给客户端，并且可以通过API访问。它不应该包含任何机密值，如用户名、密码、令牌、证书等!"
+			"explanationPrivate": "私有密钥仅会被发送到服务器一次。一旦你的浏览器刷新了页面，它将永远不会再次发送。",
+			"explanationPublic": "公开的密钥将始终发送给客户端，并且可以通过API访问。它不应该包含任何机密值，如用户名、密码、令牌、证书等！"
 		},
 		"secrets": {
-			"description": "要更新一个秘密，输入一个值并点击保存按钮。要删除一个秘密，请使用清除按钮。",
-			"warning": "您的凭据充当集成的访问权限，您应该，<strong>永远不要</strong>与任何人共享它们。Homarr团队永远不会要求证书。确保<strong>安全地存储和管理你的秘钥</strong>。",
+			"description": "输入值并点击保存以更新密钥。使用清除按钮以删除密钥。",
+			"warning": "您的凭据作为集成的访问权限，您应该<strong>永远不</strong>与任何人共享它们。Homarr 团队永远不会索要证书。确保<strong>安全地存储和管理你的秘钥</strong>。",
 			"clear": "清除密钥",
 			"save": "保存密钥",
 			"update": "更新密钥"
 		}
 	},
 	"validation": {
-		"popover": "你的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮保存您的更改。"
+		"popover": "您的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮保存您的更改。"
 	}
 }

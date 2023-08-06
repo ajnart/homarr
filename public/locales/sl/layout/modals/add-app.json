@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Odprite v novem zavihku",
 			"description": "Odprite aplikacijo v novem zavihku namesto v trenutnem zavihku."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

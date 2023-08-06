@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Yeni sekmede aç",
 			"description": "Uygulamayı mevcut sekme yerine yeni bir sekmede açın."
-		}
+		},
+		"customProtocolWarning": "Standart olmayan protokol kullanmak. Bu, önceden yüklenmiş uygulamalar gerektirebilir ve güvenlik riskleri doğurabilir. Adresinizin güvenli ve güvenilir olduğundan emin olun."
 	},
 	"network": {
 		"statusChecker": {

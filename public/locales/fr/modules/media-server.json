@@ -3,7 +3,7 @@
     "name": "Serveur multimédia",
     "description": "Interagissez avec votre serveur multimédia Jellyfin ou Plex",
     "settings": {
-      "title": ""
+      "title": "Paramètres du widget du serveur multimédia"
     }
   },
   "card": {
@@ -11,7 +11,7 @@
       "header": {
         "session": "Session",
         "user": "Utilisateur",
-        "currentlyPlaying": ""
+        "currentlyPlaying": "En cours de lecture"
       }
     },
     "errors": {

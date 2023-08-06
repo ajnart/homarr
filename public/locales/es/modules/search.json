@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Barra de búsqueda",
-    "description": "Barra de búsqueda que te permite buscar con tu motor de búsqueda preferido, YouTube, e integraciones soportadas."
+    "description": "Una barra de búsqueda que te permite buscar en tu motor de búsqueda personalizado, en Youtube y en las integraciones soportadas."
   },
   "input": {
     "placeholder": "Buscar en Internet..."
@@ -22,9 +22,9 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Buscar Peliculas y Series TV en Overseerr"
+      "description": "Buscar películas y series en Overseerr"
     }
   },
-  "tip": "Puedes seleccionar la barra de búsqueda con el atajo ",
+  "tip": "Puedes seleccionar la barra de búsqueda con el atajo",
   "switchedSearchEngine": "Cambiado a buscando con {{searchEngine}}"
 }

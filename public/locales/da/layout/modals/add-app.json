@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Åbn i nyt faneblad",
 			"description": "Åbn appen i en ny fane i stedet for den aktuelle fane."
-		}
+		},
+		"customProtocolWarning": "Brug af en ikke-standardiseret protokol. Dette kan kræve forudinstallerede programmer og kan medføre sikkerhedsrisici. Sørg for, at din adresse er sikker og pålidelig."
 	},
 	"network": {
 		"statusChecker": {

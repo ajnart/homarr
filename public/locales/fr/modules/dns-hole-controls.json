@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Contrôle du DNS hole",
+    "description": "Contrôlez PiHole ou AdGuard depuis votre tableau de bord"
   }
 }

@@ -14,7 +14,7 @@
         "progress": "Completado %"
       },
       "body": {
-        "nothingFound": "No se han encontrado torrents"
+        "nothingFound": "No se encontraron torrents"
       }
     },
     "lineChart": {
@@ -27,7 +27,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "¡No se han encontrado clientes de descarga compatibles!",
+        "title": "¡No se encontraron clientes de descarga compatibles!",
         "text": "Añade un servicio de descarga para ver tus descargas actuales"
       }
     }

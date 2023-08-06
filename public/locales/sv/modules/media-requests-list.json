@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Media-förfrågningar",
+    "description": "Se en lista över alla medieförfrågningar från din Overseerr- eller Jellyseerr-instans",
     "settings": {
-      "title": "",
+      "title": "Lista över mediaförfrågningar",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Ersätt länkar med extern värd"
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Inga förfrågningar hittades. Kontrollera att du har konfigurerat dina appar korrekt.",
+  "pending": "Det finns {{countPendingApproval}} förfrågningar som väntar på godkännande.",
+  "nonePending": "Det finns för närvarande inga väntande godkännanden. Du är redo att köra!",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Godkänd",
+    "pendingApproval": "Väntar på godkännande",
+    "declined": "Avböjd"
   },
   "tooltips": {
-    "approve": "",
+    "approve": "Godkänn begäran",
     "decline": ""
   }
 }

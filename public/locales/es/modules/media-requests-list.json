@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "Peticiones de contenido",
-    "description": "Mostrar una lista de todas las peticiones de contenido de tu instancia Overseerr o Jellyseerr",
+    "name": "Solicitudes multimedia",
+    "description": "Mostrar una lista de todas las solicitudes multimedia de tu instancia de Overseerr o Jellyseerr",
     "settings": {
-      "title": "Lista de peticiones de contenido",
+      "title": "Lista de solicitudes multimedia",
       "replaceLinksWithExternalHost": {
-        "label": "Reemplazar enlaces con host externo"
+        "label": "Reemplazar enlaces con el anfitrión externo"
       }
     }
   },
-  "noRequests": "Peticiones no encontradas. Por favor, asegúrate de tener configuradas tus apps correctamente.",
-  "pending": "Hay {{countPendingApproval}} peticiones esperando a ser aprobadas.",
+  "noRequests": "No se encontraron solicitudes. Por favor, asegúrate de haber configurado tus aplicaciones correctamente.",
+  "pending": "Hay {{countPendingApproval}} solicitudes pendientes de aprobación.",
   "nonePending": "Actualmente no hay aprobaciones pendientes. ¡Listo!",
   "state": {
-    "approved": "Aprobado",
-    "pendingApproval": "Aprobación pendiente",
-    "declined": "Rechazado"
+    "approved": "Aprobada",
+    "pendingApproval": "Pendiente de aprobación",
+    "declined": "Rechazada"
   },
   "tooltips": {
-    "approve": "Aprobar peticiones",
-    "decline": "Rechazar peticiones"
+    "approve": "Aprobar solicitudes",
+    "decline": "Rechazar solicitudes"
   }
 }

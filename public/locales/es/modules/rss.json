@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "Widget RSS",
-    "description": "",
+    "name": "RSS",
+    "description": "Muestra las noticias de las fuentes RSS que añadas.",
     "settings": {
-      "title": "Ajustes para el widget RSS",
+      "title": "Ajustes del widget RSS",
       "rssFeedUrl": {
         "label": "URLs de fuentes RSS",
-        "description": "Las URLs de fuentes RSS desde las que deseas mostrar."
+        "description": "Las URLs de las fuentes RSS que deseas mostrar."
       },
       "refreshInterval": {
         "label": "Intervalo de refresco (en minutos)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "Permitir contenido de artículo desinfectado"
       },
       "textLinesClamp": {
-        "label": "Limitar líneas de texto"
+        "label": "Límite de líneas de texto"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "Imposible recuperar la fuente RSS",
-          "text": "Hubo un problema al llegar a la fuente RSS. Asegúrate de haber configurado correctamente la fuente RSS utilizando una URL válida. Las URL deben coincidir con la especificación oficial. Después de actualizar la fuente, es posible que debas actualizar el dashboard."
+          "title": "No se puede recuperar la fuente RSS",
+          "text": "Hubo un problema al consultar la fuente RSS. Asegúrate de haber configurado correctamente la fuente RSS utilizando una URL válida. Las URL deben coincidir con la especificación oficial. Después de actualizar la fuente, es posible que deba actualizar el panel."
         }
       }
     }
