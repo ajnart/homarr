@@ -6,7 +6,7 @@
       "title": "Lesezeichen-Einstellungen",
       "name": {
         "label": "Widget Titel",
-        "info": ""
+        "info": "Leer lassen, damit der Titel nicht angezeigt wird."
       },
       "items": {
         "label": "Elemente"
