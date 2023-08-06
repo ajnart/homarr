@@ -3,6 +3,7 @@ import {
   ColorSwatch,
   Group,
   Input,
+  MantineTheme,
   Slider,
   Stack,
   Text,
@@ -14,6 +15,8 @@ import {
 import { useTranslation } from 'next-i18next';
 import { highlight, languages } from 'prismjs';
 import Editor from 'react-simple-code-editor';
+import { useColorScheme } from '~/hooks/use-colorscheme';
+import { useColorTheme } from '~/tools/color';
 
 import { useBoardCustomizationFormContext } from '../form';
 
@@ -44,6 +47,7 @@ const ColorSelector = ({ type }: ColorSelectorProps) => {
   const { t } = useTranslation('boards/customize');
   const theme = useMantineTheme();
   const form = useBoardCustomizationFormContext();
+  const { setPrimaryColor, setSecondaryColor } = useColorTheme();
 
   const colors = Object.keys(theme.colors).map((color) => ({
     swatch: theme.colors[color][6],
@@ -58,7 +62,14 @@ const ColorSelector = ({ type }: ColorSelectorProps) => {
             key={color}
             component="button"
             type="button"
-            onClick={() => form.getInputProps(`appearance.${type}`).onChange(color)}
+            onClick={() => {
+              form.getInputProps(`appearance.${type}`).onChange(color);
+              if (type === 'primaryColor') {
+                setPrimaryColor(color);
+              } else {
+                setSecondaryColor(color);
+              }
+            }}
             color={swatch}
             style={{ cursor: 'pointer' }}
           >
@@ -73,6 +84,7 @@ const ColorSelector = ({ type }: ColorSelectorProps) => {
 const ShadeSelector = () => {
   const form = useBoardCustomizationFormContext();
   const theme = useMantineTheme();
+  const { setPrimaryShade } = useColorTheme();
 
   const primaryColor = form.values.appearance.primaryColor;
   const primaryShades = theme.colors[primaryColor].map((_, shade) => ({
@@ -88,7 +100,10 @@ const ShadeSelector = () => {
             key={shade}
             component="button"
             type="button"
-            onClick={() => form.getInputProps(`appearance.shade`).onChange(shade)}
+            onClick={() => {
+              form.getInputProps(`appearance.shade`).onChange(shade);
+              setPrimaryShade(shade as MantineTheme['primaryShade']);
+            }}
             color={swatch}
             style={{ cursor: 'pointer' }}
           >

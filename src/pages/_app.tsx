@@ -40,19 +40,22 @@ function App(
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
     config?: ConfigType;
+    primaryColor?: MantineTheme['primaryColor'];
+    secondaryColor?: MantineTheme['primaryColor'];
+    primaryShade?: MantineTheme['primaryShade'];
     session: Session;
   }>
 ) {
   const { Component, pageProps } = props;
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
-    props.pageProps.config?.settings.customization.colors.primary || 'red'
+    props.pageProps.primaryColor ?? 'red'
   );
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(
-    props.pageProps.config?.settings.customization.colors.secondary || 'orange'
+    props.pageProps.secondaryColor ?? 'orange'
   );
   const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(
-    props.pageProps.config?.settings.customization.colors.shade || 6
+    props.pageProps.primaryShade ?? 6
   );
   const colorTheme = {
     primaryColor,
