@@ -59,7 +59,7 @@
 			"description": "Wählen Sie, wo der Titel angezeigt werden soll, wenn überhaupt.",
 			"dropdown": {
 				"normal": "Titel nur auf Kachel anzeigen",
-				"hover": "",
+				"hover": "Titel nur bei Halten des Mauszeigers über den Tooltip anzeigen",
 				"hidden": "Nicht anzeigen"
 			}
 		},
