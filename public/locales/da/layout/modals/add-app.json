@@ -26,8 +26,8 @@
 			"description": "Åbn appen i en ny fane i stedet for den aktuelle fane."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Applikationsbeskrivelse",
+			"description": "Den tekst, du indtaster, vises, når du holder musen over din app.\nBrug den til at give brugerne flere detaljer om din app, eller lad den stå tom, hvis du ikke vil have noget."
 		},
 		"customProtocolWarning": "Brug af en ikke-standardiseret protokol. Dette kan kræve forudinstallerede programmer og kan medføre sikkerhedsrisici. Sørg for, at din adresse er sikker og pålidelig."
 	},
@@ -55,22 +55,22 @@
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "App Navn Status",
+			"description": "Vælg, hvor du vil have titlen vist, hvis den overhovedet skal vises.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Vis kun titel på flise",
+				"hover": "Vis kun titel på tooltip hover",
+				"hidden": "Vis slet ikke"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "App Navn Position",
+			"description": "Placering af appens navn i forhold til ikonet.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Top",
+				"right": "Højre",
+				"bottom": "Bund",
+				"left": "Venstre"
 			}
 		}
 	},
