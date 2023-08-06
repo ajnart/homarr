@@ -1,4 +1,16 @@
-import { Button, Container, Group, Paper, Stack, Text, Title } from '@mantine/core';
+import {
+  Affix,
+  Button,
+  Card,
+  Container,
+  Group,
+  Paper,
+  Stack,
+  Text,
+  Title,
+  Transition,
+  rem,
+} from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconArrowLeft,
@@ -15,7 +27,7 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ReactNode } from 'react';
+import { ReactNode, useRef } from 'react';
 import { z } from 'zod';
 import { AppearanceCustomization } from '~/components/Board/Customize/Appearance/AppearanceCustomization';
 import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/GridstackCustomization';
@@ -29,7 +41,6 @@ import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -72,6 +83,8 @@ export default function CustomizationPage() {
       },
     },
     validate: i18nZodResolver(boardCustomizationSchema),
+    validateInputOnChange: true,
+    validateInputOnBlur: true,
   });
 
   const handleSubmit = async (values: z.infer<typeof boardCustomizationSchema>) => {
@@ -122,6 +135,51 @@ export default function CustomizationPage() {
       <Head>
         <title>{metaTitle}</title>
       </Head>
+      <Affix position={{ bottom: rem(20), left: rem(20), right: rem(20) }}>
+        <Transition transition="slide-up" mounted={form.isDirty()}>
+          {(transitionStyles) => (
+            <Card
+              style={transitionStyles}
+              sx={(theme) => ({
+                background:
+                  theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1],
+              })}
+              shadow="md"
+              withBorder
+            >
+              <Group position="apart" noWrap>
+                <Text weight="bold">Careful, you have unsaved changes!</Text>
+                <Group spacing="md">
+                  <Button
+                    onClick={() => {
+                      form.reset();
+                    }}
+                    variant="subtle"
+                    type="button"
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      if (!form.isValid()) {
+                        return;
+                      }
+
+                      handleSubmit(form.values);
+                    }}
+                    disabled={!form.isValid()}
+                    loading={isLoading}
+                    type="submit"
+                    color="green"
+                  >
+                    {t('save')}
+                  </Button>
+                </Group>
+              </Group>
+            </Card>
+          )}
+        </Transition>
+      </Affix>
       <Container>
         <Paper p="xl" py="sm" mih="100%" withBorder>
           <Stack>
@@ -141,29 +199,24 @@ export default function CustomizationPage() {
               </Button>
             </Group>
             <BoardCustomizationFormProvider form={form}>
-              <form onSubmit={form.onSubmit(handleSubmit)}>
-                <Stack spacing="xl">
-                  <Stack spacing="xs">
-                    <SectionTitle type="layout" icon={IconLayout} />
-                    <LayoutCustomization />
-                  </Stack>
-                  <Stack spacing="xs">
-                    <SectionTitle type="gridstack" icon={IconDragDrop} />
-                    <GridstackCustomization />
-                  </Stack>
-                  <Stack spacing="xs">
-                    <SectionTitle type="pageMetadata" icon={IconChartCandle} />
-                    <PageMetadataCustomization />
-                  </Stack>
-                  <Stack spacing="xs">
-                    <SectionTitle type="appereance" icon={IconBrush} />
-                    <AppearanceCustomization />
-                  </Stack>
-                  <Button type="submit" loading={isLoading}>
-                    {t('save')}
-                  </Button>
+              <Stack spacing="xl">
+                <Stack spacing="xs">
+                  <SectionTitle type="layout" icon={IconLayout} />
+                  <LayoutCustomization />
                 </Stack>
-              </form>
+                <Stack spacing="xs">
+                  <SectionTitle type="gridstack" icon={IconDragDrop} />
+                  <GridstackCustomization />
+                </Stack>
+                <Stack spacing="xs">
+                  <SectionTitle type="pageMetadata" icon={IconChartCandle} />
+                  <PageMetadataCustomization />
+                </Stack>
+                <Stack spacing="xs">
+                  <SectionTitle type="appereance" icon={IconBrush} />
+                  <AppearanceCustomization />
+                </Stack>
+              </Stack>
             </BoardCustomizationFormProvider>
           </Stack>
         </Paper>

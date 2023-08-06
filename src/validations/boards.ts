@@ -17,7 +17,7 @@ export const boardCustomizationSchema = z.object({
     lg: z.number().min(5).max(20),
   }),
   pageMetadata: z.object({
-    pageTitle: z.string(),
+    pageTitle: z.string().min(1),
     metaTitle: z.string(),
     logoSrc: z.string(),
     faviconSrc: z.string(),
