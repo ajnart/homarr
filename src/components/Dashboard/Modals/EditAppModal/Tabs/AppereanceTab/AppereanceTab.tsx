@@ -1,8 +1,8 @@
 import { Flex, Select, Stack, Switch, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
-import { useEffect, useRef } from 'react';
 import { useTranslation } from 'next-i18next';
+import { useEffect, useRef } from 'react';
 
 import { AppType } from '../../../../../../types/app';
 import { IconSelector } from '../../../../../IconSelector/IconSelector';
@@ -56,28 +56,34 @@ export const AppearanceTab = ({
           label={t('appearance.appNameStatus.label')}
           description={t('appearance.appNameStatus.description')}
           data={[
-            {value: 'normal', label: t('appearance.appNameStatus.dropdown.normal')?? 'Normal'},
-            {value: 'hover', label: t('appearance.appNameStatus.dropdown.hover')?? 'Hover'},
-            {value: 'hidden', label: t('appearance.appNameStatus.dropdown.hidden')?? 'Hidden'},
+            { value: 'normal', label: t('appearance.appNameStatus.dropdown.normal') as string },
+            { value: 'hover', label: t('appearance.appNameStatus.dropdown.hover') as string },
+            { value: 'hidden', label: t('appearance.appNameStatus.dropdown.hidden') as string },
           ]}
           {...form.getInputProps('appearance.appNameStatus')}
           onChange={(value) => {
-            form.setFieldValue('appearance.appNameStatus', value)
+            form.setFieldValue('appearance.appNameStatus', value);
           }}
         />
-        {form.values.appearance.appNameStatus === "normal" && (
+        {form.values.appearance.appNameStatus === 'normal' && (
           <Select
             label={t('appearance.positionAppName.label')}
             description={t('appearance.positionAppName.description')}
             data={[
-              { value: 'column', label: t('appearance.positionAppName.dropdown.top')?? 'Top'},
-              { value: 'row-reverse', label: t('appearance.positionAppName.dropdown.right')?? 'Right' },
-              { value: 'column-reverse', label: t('appearance.positionAppName.dropdown.bottom')?? 'Bottom' },
-              { value: 'row', label: t('appearance.positionAppName.dropdown.left')?? 'Left' },
+              { value: 'column', label: t('appearance.positionAppName.dropdown.top') as string },
+              {
+                value: 'row-reverse',
+                label: t('appearance.positionAppName.dropdown.right') as string,
+              },
+              {
+                value: 'column-reverse',
+                label: t('appearance.positionAppName.dropdown.bottom') as string,
+              },
+              { value: 'row', label: t('appearance.positionAppName.dropdown.left') as string },
             ]}
             {...form.getInputProps('appearance.positionAppName')}
             onChange={(value) => {
-              form.setFieldValue('appearance.positionAppName', value)
+              form.setFieldValue('appearance.positionAppName', value);
             }}
           />
         )}
