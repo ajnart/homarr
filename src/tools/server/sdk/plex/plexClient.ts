@@ -104,6 +104,8 @@ export class PlexClient {
         return 'movie';
       case 'episode':
         return 'video';
+      case 'track':
+        return 'audio';
       default:
         return undefined;
     }

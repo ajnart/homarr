@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   Center,
+  Flex,
   Group,
   Loader,
   Modal,
@@ -19,6 +20,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconAlertTriangle, IconClick, IconListSearch } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import { InfoCard } from '~/components/InfoCard/InfoCard';
 import { City } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
 
@@ -29,6 +31,8 @@ type LocationSelectionProps = {
   propName: string;
   value: any;
   handleChange: (key: string, value: IntegrationOptionsValueType) => void;
+  info?: boolean;
+  infoLink?: string;
 };
 
 export const LocationSelection = ({
@@ -36,6 +40,8 @@ export const LocationSelection = ({
   propName: key,
   value,
   handleChange,
+  info,
+  infoLink,
 }: LocationSelectionProps) => {
   const { t } = useTranslation('widgets/location');
   const [query, setQuery] = useState(value.name ?? '');
@@ -57,7 +63,15 @@ export const LocationSelection = ({
     <>
       <Card>
         <Stack spacing="xs">
-          <Title order={5}>{t(`modules/${widgetId}:descriptor.settings.${key}.label`)}</Title>
+          <Flex direction="row" justify="space-between" wrap="nowrap">
+            <Title order={5}>{t(`modules/${widgetId}:descriptor.settings.${key}.label`)}</Title>
+            {info && (
+              <InfoCard
+                message={t(`modules/${widgetId}:descriptor.settings.${key}.info`)}
+                link={infoLink}
+              />
+            )}
+          </Flex>
 
           <Group noWrap align="end">
             <TextInput
