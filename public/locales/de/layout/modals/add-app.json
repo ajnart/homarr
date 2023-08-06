@@ -26,8 +26,8 @@
 			"description": "Öffnen Sie die App in einer neuen Registerkarte, anstatt in der aktuellen Registerkarte."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Beschreibung der Anwendung",
+			"description": "Dieser von Ihnen eingegebene Text wird angezeigt, wenn Sie den Mauszeiger über Ihre App bewegen.\nVerwenden Sie diesen Text, um den Nutzern mehr Informationen über Ihre App zu geben, oder lassen Sie ihn leer, um nichts anzuzeigen."
 		},
 		"customProtocolWarning": "Verwendung eines nicht standardmäßigen Protokolls. Dies kann vorinstallierte Anwendungen erfordern und Sicherheitsrisiken einbringen. Stellen Sie sicher, dass Ihre Adresse sicher und vertrauenswürdig ist."
 	},
@@ -55,22 +55,22 @@
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "App-Namensstatus",
+			"description": "Wählen Sie, wo der Titel angezeigt werden soll, wenn überhaupt.",
 			"dropdown": {
-				"normal": "",
+				"normal": "Titel nur auf Kachel anzeigen",
 				"hover": "",
-				"hidden": ""
+				"hidden": "Nicht anzeigen"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Position des App-Namen",
+			"description": "Position des App-Namens in Relation zum Symbol.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Oben",
+				"right": "Rechts",
+				"bottom": "Unten",
+				"left": "Links"
 			}
 		}
 	},
