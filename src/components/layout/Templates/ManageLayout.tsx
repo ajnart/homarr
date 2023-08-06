@@ -42,7 +42,6 @@ interface ManageLayoutProps {
 }
 
 export const ManageLayout = ({ children }: ManageLayoutProps) => {
-  const { t } = useTranslation('layout/manage');
   const packageVersion = usePackageAttributesStore((x) => x.attributes.packageVersion);
   const theme = useMantineTheme();
 

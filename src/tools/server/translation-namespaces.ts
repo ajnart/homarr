@@ -39,7 +39,7 @@ export const boardNamespaces = [
 ];
 
 export const manageNamespaces = [
-  'manage/common',
+  'layout/manage',
   'manage/boards',
   'manage/users',
   'manage/users/invites',
