@@ -6,7 +6,7 @@
       "title": "书签设置",
       "name": {
         "label": "小部件标题",
-        "info": ""
+        "info": "留空以隐藏标题."
       },
       "items": {
         "label": "项目"
