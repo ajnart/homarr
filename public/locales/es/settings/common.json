@@ -6,7 +6,7 @@
     "customizations": "Personalizaciones"
   },
   "tips": {
-    "configTip": "¡Sube tu configuración arrastrando y soltando el archivo en la página!"
+    "configTip": "¡Carga tu archivo de configuración arrastrándolo y soltándolo en la página!"
   },
   "credits": {
     "madeWithLove": "Hecho con ❤️ por @",
@@ -16,23 +16,23 @@
       "dependencyVersion": "Versión"
     }
   },
-  "grow": "Aumentar cuadrícula (toma todo el espacio)",
+  "grow": "Aumentar cuadrícula (ocupar todo el espacio)",
   "layout": {
     "preview": {
       "title": "Previsualizar",
-      "subtitle": "Los cambios serán guardados automáticamente"
+      "subtitle": "Los cambios se guardarán automáticamente"
     },
     "divider": "Opciones de diseño",
     "main": "Principal",
     "sidebar": "Barra lateral",
-    "cannotturnoff": "No puede ser apagado",
-    "dashboardlayout": "Diseño del dashboard",
+    "cannotturnoff": "No se puede deshabilitar",
+    "dashboardlayout": "Diseño del panel",
     "enablersidebar": "Habilitar barra lateral derecha",
     "enablelsidebar": "Habilitar barra lateral izquierda",
     "enablesearchbar": "Habilitar barra de búsqueda",
-    "enabledocker": "Habilitar integración docker",
+    "enabledocker": "Habilitar integración de Docker",
     "enableping": "Habilitar pings",
-    "enablelsidebardesc": "Opcional. Solo puede usarse con apps e integraciones",
-    "enablersidebardesc": "Opcional. Solo puede usarse con apps e integraciones"
+    "enablelsidebardesc": "Opcional. Solo se puede usar para aplicaciones e integraciones",
+    "enablersidebardesc": "Opcional. Solo se puede usar para aplicaciones e integraciones"
   }
 }
