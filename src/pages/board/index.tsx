@@ -47,6 +47,9 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   return {
     props: {
       config,
+      primaryColor: config.settings.customization.colors.primary,
+      secondaryColor: config.settings.customization.colors.secondary,
+      primaryShade: config.settings.customization.colors.shade,
       ...translations,
     },
   };

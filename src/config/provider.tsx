@@ -39,9 +39,10 @@ export const ConfigProvider = ({
 
   useEffect(() => {
     const config = currentConfig ?? fallbackConfig;
-    setPrimaryColor(config?.settings.customization.colors.primary || 'red');
-    setSecondaryColor(config?.settings.customization.colors.secondary || 'orange');
-    setPrimaryShade(config?.settings.customization.colors.shade || 6);
+    if (!config) return;
+    setPrimaryColor(config?.settings.customization.colors.primary ?? 'red');
+    setSecondaryColor(config?.settings.customization.colors.secondary ?? 'orange');
+    setPrimaryShade(config?.settings.customization.colors.shade ?? 6);
     return () => {
       setPrimaryColor('red');
       setSecondaryColor('orange');

@@ -15,7 +15,7 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { z } from 'zod';
 import { AppearanceCustomization } from '~/components/Board/Customize/Appearance/AppearanceCustomization';
 import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/GridstackCustomization';
@@ -28,8 +28,8 @@ import {
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
+import { useColorTheme } from '~/tools/color';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -212,7 +212,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
 
   const helpers = await createTrpcServersideHelpers({ req, res });
 
-  helpers.config.byName.prefetch({ name: routeParams.data.slug });
+  const config = await helpers.config.byName.fetch({ name: routeParams.data.slug });
 
   const translations = await getServerSideTranslations(
     [
@@ -231,6 +231,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
 
   return {
     props: {
+      primaryColor: config.settings.customization.colors.primary,
+      secondaryColor: config.settings.customization.colors.secondary,
+      primaryShade: config.settings.customization.colors.shade,
       trpcState: helpers.dehydrate(),
       ...translations,
     },
