@@ -21,6 +21,8 @@ import { useMediaQuery } from '@mantine/hooks';
 import { IconLayoutDashboard, IconUserCog } from '@tabler/icons-react';
 import { IconArrowRight, IconBook2, IconUserPlus } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
+import { signIn } from 'next-auth/react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { ReactNode, useMemo, useState } from 'react';
 import { z } from 'zod';
@@ -42,26 +44,32 @@ export default function OnboardPage() {
   const background = colorScheme === 'dark' ? 'dark.6' : 'gray.1';
 
   return (
-    <Stack h="100dvh" bg={background} spacing={0}>
-      <Center bg={fn.linearGradient(145, colors.red[7], colors.red[5])} h="35%">
-        <Center bg={background} w={128} h={128} style={{ borderRadius: 64 }}>
-          <Image width={96} src="/imgs/logo/logo-color.svg" alt="Homarr Logo" />
+    <>
+      <Head>
+        <title>Onboard • Homarr</title>
+      </Head>
+
+      <Stack h="100dvh" bg={background} spacing={0}>
+        <Center bg={fn.linearGradient(145, colors.red[7], colors.red[5])} h="35%">
+          <Center bg={background} w={128} h={128} style={{ borderRadius: 64 }}>
+            <Image width={96} src="/imgs/logo/logo-color.svg" alt="Homarr Logo" />
+          </Center>
         </Center>
-      </Center>
-      <Stack spacing="xl" p="md" align="center">
-        <Group>
-          {stepContents.map((_, index) => (
-            <Step
-              key={index}
-              isCurrent={currentStep === index}
-              isMobile={isSmallerThanMd}
-              isDark={colorScheme === 'dark'}
-            />
-          ))}
-        </Group>
-        <CurrentStepComponent isMobile={isSmallerThanMd} next={next} />
+        <Stack spacing="xl" p="md" align="center">
+          <Group>
+            {stepContents.map((_, index) => (
+              <Step
+                key={index}
+                isCurrent={currentStep === index}
+                isMobile={isSmallerThanMd}
+                isDark={colorScheme === 'dark'}
+              />
+            ))}
+          </Group>
+          <CurrentStepComponent isMobile={isSmallerThanMd} next={next} />
+        </Stack>
       </Stack>
-    </Stack>
+    </>
   );
 }
 
@@ -101,7 +109,8 @@ const FirstStepContent: StepContentComponent = ({ isMobile, next }) => {
 };
 
 const SecondStepContent: StepContentComponent = ({ isMobile, next }) => {
-  const { mutateAsync, isLoading } = api.user.createAdminAccount.useMutation();
+  const [isSigninIn, setIsSigninIn] = useState(false);
+  const { mutateAsync } = api.user.createAdminAccount.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
 
   const form = useForm<z.infer<typeof signUpFormSchema>>({
@@ -109,9 +118,21 @@ const SecondStepContent: StepContentComponent = ({ isMobile, next }) => {
     validateInputOnBlur: true,
   });
   const handleSubmit = (values: z.infer<typeof signUpFormSchema>) => {
+    setIsSigninIn(true);
     void mutateAsync(values, {
       onSuccess: () => {
-        next();
+        signIn('credentials', {
+          redirect: false,
+          name: values.username,
+          password: values.password,
+          callbackUrl: '/',
+        }).then((response) => {
+          if (!response?.ok) {
+            setIsSigninIn(false);
+            return;
+          }
+          next();
+        });
       },
     });
   };
@@ -147,7 +168,7 @@ const SecondStepContent: StepContentComponent = ({ isMobile, next }) => {
             withAsterisk
             {...form.getInputProps('passwordConfirmation')}
           />
-          <Button mt="sm" fullWidth type="submit" loading={isLoading}>
+          <Button mt="sm" fullWidth type="submit" loading={isSigninIn}>
             Continue
           </Button>
         </Stack>
@@ -165,7 +186,7 @@ const firstActions = [
   {
     icon: IconUserPlus,
     label: 'Invite an user',
-    href: '/users/invite',
+    href: '/manage/users/invites',
   },
   {
     icon: IconLayoutDashboard,
