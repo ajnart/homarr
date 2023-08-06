@@ -25,6 +25,10 @@
 			"label": "在新标签页中打开",
 			"description": "在新标签页中打开应用，而不是当前标签页。"
 		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
 		"customProtocolWarning": "使用非标准协议。这可能需要预先安装应用程序，并可能引入安全风险。确保你的地址安全可靠。"
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "正在加载外部图标",
 				"text": "这可能需要几秒钟"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},
