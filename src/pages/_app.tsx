@@ -1,10 +1,7 @@
 import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Consola from 'consola';
 import { getCookie, setCookie } from 'cookies-next';
 import 'flag-icons/css/flag-icons.min.css';
@@ -13,15 +10,12 @@ import { Session } from 'next-auth';
 import { SessionProvider, getSession } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
-import { z } from 'zod';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
-import { queryClient } from '~/tools/server/configurations/tanstack/queryClient.tool';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
@@ -70,10 +64,6 @@ function App(
   };
 
   const { setInitialPackageAttributes } = usePackageAttributesStore();
-
-  const asyncStoragePersister = createAsyncStoragePersister({
-    storage: AsyncStorage,
-  });
 
   useEffect(() => {
     setInitialPackageAttributes(props.pageProps.packageAttributes);

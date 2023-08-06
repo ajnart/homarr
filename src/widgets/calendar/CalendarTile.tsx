@@ -1,9 +1,10 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { i18n } from 'next-i18next';
 import { useState } from 'react';
-import { api } from '~/utils/api';
+import { RouterOutputs, api } from '~/utils/api';
 
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
@@ -22,10 +23,6 @@ const definition = defineWidget({
       defaultValue: true,
     },
     useSonarrv4: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    sundayStart: {
       type: 'switch',
       defaultValue: false,
     },
@@ -70,6 +67,10 @@ function CalendarTile({ widget }: CalendarTileProps) {
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
   const isEditMode = useEditModeStore((x) => x.enabled);
+  const { data: sessionData } = useSession();
+  const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
+    enabled: !!sessionData?.user,
+  });
 
   const { data: medias } = api.calendar.medias.useQuery(
     {
@@ -84,6 +85,8 @@ function CalendarTile({ widget }: CalendarTileProps) {
     }
   );
 
+  const firstDayOfWeek = userWithSettings?.settings.firstDayOfWeek ?? 'monday';
+
   return (
     <Calendar
       defaultDate={new Date()}
@@ -91,7 +94,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       onNextMonth={setMonth}
       size={widget.properties.fontSize}
       locale={i18n?.resolvedLanguage ?? 'en'}
-      firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
+      firstDayOfWeek={getFirstDayOfWeek(firstDayOfWeek)}
       hideWeekdays={widget.properties.hideWeekDays}
       style={{ position: 'relative' }}
       date={month}
@@ -147,6 +150,13 @@ function CalendarTile({ widget }: CalendarTileProps) {
   );
 }
 
+const getFirstDayOfWeek = (
+  firstDayOfWeek: RouterOutputs['user']['withSettings']['settings']['firstDayOfWeek']
+) => {
+  if (firstDayOfWeek === 'sunday') return 0;
+  if (firstDayOfWeek === 'monday') return 1;
+  return 6;
+};
 const getReleasedMediasForDate = (
   medias: MediasType | undefined,
   date: Date,
