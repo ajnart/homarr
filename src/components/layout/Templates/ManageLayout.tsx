@@ -30,6 +30,7 @@ import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ReactNode, RefObject, forwardRef } from 'react';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
@@ -140,6 +141,7 @@ const CustomNavigationLink = forwardRef<
   CustomNavigationLinkProps
 >(({ name, navigationLink }, ref) => {
   const { t } = useTranslation('layout/manage');
+  const router = useRouter();
 
   const commonProps = {
     label: t(`navigation.${name}.title`),
@@ -148,21 +150,28 @@ const CustomNavigationLink = forwardRef<
         <navigationLink.icon size={16} />
       </ThemeIcon>
     ),
+    defaultOpened: false,
   };
 
   if ('href' in navigationLink) {
+    const isActive = router.pathname.endsWith(navigationLink.href);
     return (
       <NavLink
         {...commonProps}
         ref={ref as RefObject<HTMLAnchorElement>}
         component={Link}
         href={navigationLink.href}
+        active={isActive}
       />
     );
   }
 
+  const isAnyActive = Object.entries(navigationLink.items)
+    .map(([_, item]) => item.href)
+    .some((href) => router.pathname.endsWith(href));
+
   return (
-    <NavLink {...commonProps} ref={ref as RefObject<HTMLButtonElement>}>
+    <NavLink {...commonProps} defaultOpened={isAnyActive} ref={ref as RefObject<HTMLButtonElement>}>
       {Object.entries(navigationLink.items).map(([itemName, item]) => {
         const commonItemProps = {
           label: t(`navigation.${name}.items.${itemName}`),
@@ -170,11 +179,13 @@ const CustomNavigationLink = forwardRef<
           href: item.href,
         };
 
+        const matchesActive = router.pathname.endsWith(item.href);
+
         if (item.href.startsWith('http')) {
-          return <NavLink {...commonItemProps} component="a" />;
+          return <NavLink {...commonItemProps} active={matchesActive} component="a" />;
         }
 
-        return <NavLink {...commonItemProps} component={Link} />;
+        return <NavLink {...commonItemProps} active={matchesActive} component={Link} />;
       })}
     </NavLink>
   );
