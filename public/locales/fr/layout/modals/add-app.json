@@ -25,6 +25,10 @@
 			"label": "Ouvrir dans un nouvel onglet",
 			"description": "Ouvrez l'application dans un nouvel onglet au lieu de l'onglet actuel."
 		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
 		"customProtocolWarning": "Utilisation d'un protocole non standard. Ceci peut nécessiter des applications préinstallées et peut introduire des failles de sécurité. Assurez-vous que votre adresse est sécurisée et de confiance."
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "Chargement d'icônes externes",
 				"text": "Cela peut prendre quelques secondes"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},

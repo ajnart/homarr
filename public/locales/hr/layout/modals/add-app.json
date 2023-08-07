@@ -25,6 +25,10 @@
 			"label": "Otvori u novoj kartici",
 			"description": "Otvori aplikaciju u novoj kartici umjesto u trenutnoj."
 		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
 		"customProtocolWarning": ""
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "Učitavanje vanjskih ikona",
 				"text": "Ovo može potrajati nekoliko sekundi"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},

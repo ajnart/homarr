@@ -25,6 +25,10 @@
 			"label": "Yeni sekmede aç",
 			"description": "Uygulamayı mevcut sekme yerine yeni bir sekmede açın."
 		},
+		"tooltipDescription": {
+			"label": "Uygulama Tanımı",
+			"description": "Girdiğiniz metin, uygulamanızın üzerine gelindiğinde görünecektir.\nKullanıcılara uygulamanız hakkında daha fazla ayrıntı vermek için bunu kullanın veya açılır pencereyi kullanmamak için boş bırakın."
+		},
 		"customProtocolWarning": "Standart olmayan protokol kullanmak. Bu, önceden yüklenmiş uygulamalar gerektirebilir ve güvenlik riskleri doğurabilir. Adresinizin güvenli ve güvenilir olduğundan emin olun."
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "Harici simgeler yükleniyor",
 				"text": "Bu bir kaç saniye alabilir"
+			}
+		},
+		"appNameStatus": {
+			"label": "Uygulama Adı Durumu",
+			"description": "Eğer varsa, başlığın nerede görünmesini istediğinizi seçin.",
+			"dropdown": {
+				"normal": "Başlığı yalnızca döşemede göster",
+				"hover": "Başlığı yalnızca araç ipucunun üzerine gelindiğinde göster",
+				"hidden": "Hiç gösterme"
+			}
+		},
+		"positionAppName": {
+			"label": "Uygulama Adı Pozisyonu",
+			"description": "Uygulama isminin simgeye göre konumu.",
+			"dropdown": {
+				"top": "Üst",
+				"right": "Sağ",
+				"bottom": "Alt",
+				"left": "Sol"
 			}
 		}
 	},

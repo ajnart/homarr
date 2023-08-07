@@ -25,6 +25,10 @@
 			"label": "Abrir en una pestaña nueva",
 			"description": "Abre la aplicación en una nueva pestaña en lugar de la actual."
 		},
+		"tooltipDescription": {
+			"label": "Descripción de la Aplicación",
+			"description": "El texto que hayas introducido, aparecerá cuando pases el ratón por encima de tu app.\nÚsalo para dar más detalles a los usuarios sobre tu app, o déjalo vacío para no tener nada."
+		},
 		"customProtocolWarning": "Usando un protocolo no estándar. Esto puede requerir aplicaciones preinstaladas y puede presentar riesgos de seguridad. Asegúrese de que su dirección sea segura y confiable."
 	},
 	"network": {
@@ -48,6 +52,25 @@
 			"noItems": {
 				"title": "Cargando iconos externos",
 				"text": "Esto puede tardar unos pocos segundos"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "Elije dónde deseas que aparezca el título, si es que lo hace.",
+			"dropdown": {
+				"normal": "Mostrar título solo en la tarjeta",
+				"hover": "Mostrar título solo al pasar el cursos por la información sobre herramientas",
+				"hidden": "No mostrar en absoluto"
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "Posición del nombre de la app en relación con el icono.",
+			"dropdown": {
+				"top": "Superior",
+				"right": "Derecha",
+				"bottom": "Inferior",
+				"left": "Izquierda"
 			}
 		}
 	},
