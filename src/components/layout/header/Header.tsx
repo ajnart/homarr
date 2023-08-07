@@ -44,7 +44,7 @@ export const MainHeader = ({
       <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
         <Group noWrap style={{ flex: 1 }}>
           {leftIcon}
-          <UnstyledButton component={Link} href={logoHref}>
+          <UnstyledButton component="a" href={logoHref}>
             <Logo />
           </UnstyledButton>
         </Group>
