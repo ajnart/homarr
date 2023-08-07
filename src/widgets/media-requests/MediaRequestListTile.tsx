@@ -13,13 +13,14 @@ import {
 import { notifications } from '@mantine/notifications';
 import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
+
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
 import { MediaRequest, MediaRequestStatus } from './media-request-types';
-import { useConfigContext } from '~/config/provider';
 
 const definition = defineWidget({
   id: 'media-requests-list',
@@ -130,8 +131,8 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
         <Text>{t('nonePending')}</Text>
       )}
       {sortedData.map((item) => (
-        <Card pos="relative" withBorder>
-          <Flex justify="space-between" gap="md">
+        <Card withBorder>
+          <Flex wrap="wrap" justify="space-between" gap="md">
             <Flex gap="md">
               <Image
                 src={item.posterPath}

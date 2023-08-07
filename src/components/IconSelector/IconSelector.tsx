@@ -1,23 +1,24 @@
-import { forwardRef, useImperativeHandle, useState } from 'react';
 import {
   Autocomplete,
-  CloseButton,
-  Stack,
-  Title,
-  Text,
-  Group,
-  Loader,
-  createStyles,
   Box,
+  CloseButton,
+  Group,
   Image,
-  SelectItemProps,
+  Loader,
   ScrollArea,
+  SelectItemProps,
+  Stack,
+  Text,
+  Title,
+  createStyles,
 } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { forwardRef, useImperativeHandle, useState } from 'react';
+import { api } from '~/utils/api';
+
 import { humanFileSize } from '../../tools/humanFileSize';
 import { DebouncedImage } from './DebouncedImage';
-import { api } from '~/utils/api';
 
 export const IconSelector = forwardRef(
   (
@@ -83,7 +84,7 @@ export const IconSelector = forwardRef(
           icon={<DebouncedImage src={value ?? currentValue} width={20} height={20} />}
           rightSection={
             (value ?? currentValue).length > 0 ? (
-              <CloseButton onClick={() => onChange(undefined)} />
+              <CloseButton onClick={() => onChange("")} />
             ) : null
           }
           itemComponent={AutoCompleteItem}

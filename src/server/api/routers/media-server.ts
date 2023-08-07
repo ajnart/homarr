@@ -4,14 +4,15 @@ import { getSessionApi } from '@jellyfin/sdk/lib/utils/api/session-api';
 import { getSystemApi } from '@jellyfin/sdk/lib/utils/api/system-api';
 import Consola from 'consola';
 import { z } from 'zod';
+import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { PlexClient } from '~/tools/server/sdk/plex/plexClient';
 import { GenericMediaServer } from '~/types/api/media-server/media-server';
 import { MediaServersResponseType } from '~/types/api/media-server/response';
 import { GenericCurrentlyPlaying, GenericSessionInfo } from '~/types/api/media-server/session-info';
 import { ConfigAppType } from '~/types/app';
+
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 
 const jellyfin = new Jellyfin({
   clientInfo: {

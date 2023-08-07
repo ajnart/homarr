@@ -1,14 +1,14 @@
 {
   "descriptor": {
-    "name": "Clima",
-    "description": "Muestra información de la meteorología actua de una ubicación dada.",
+    "name": "El Tiempo",
+    "description": "Muestra la información meteorológica actual de la ubicación establecida.",
     "settings": {
-      "title": "Ajustes del widget tiempo",
+      "title": "Ajustes del widget El Tiempo",
       "displayInFahrenheit": {
         "label": "Mostrar en Fahrenheit"
       },
       "location": {
-        "label": "Ubicación del clima"
+        "label": "Ubicación"
       }
     }
   },

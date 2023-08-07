@@ -1,6 +1,6 @@
 {
   "name": "homarr",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "Homarr - A homepage for your server.",
   "license": "MIT",
   "repository": {
@@ -21,7 +21,9 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "docker:build": "turbo build && docker build . -t homarr:dev",
+    "docker:start": "docker run --env-file ./.env -p 7575:7575 homarr:dev "
   },
   "dependencies": {
     "@ctrl/deluge": "^4.1.0",
@@ -39,6 +41,7 @@
     "@mantine/modals": "^6.0.0",
     "@mantine/next": "^6.0.0",
     "@mantine/notifications": "^6.0.0",
+    "@mantine/tiptap": "^6.0.17",
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
     "@react-native-async-storage/async-storage": "^1.18.1",
@@ -48,6 +51,10 @@
     "@tanstack/react-query": "^4.2.1",
     "@tanstack/react-query-devtools": "^4.24.4",
     "@tanstack/react-query-persist-client": "^4.28.0",
+    "@tiptap/extension-link": "^2.0.4",
+    "@tiptap/pm": "^2.0.4",
+    "@tiptap/react": "^2.0.4",
+    "@tiptap/starter-kit": "^2.0.4",
     "@trpc/client": "^10.29.1",
     "@trpc/next": "^10.29.1",
     "@trpc/react-query": "^10.29.1",
@@ -84,15 +91,15 @@
     "@next/eslint-plugin-next": "^13.4.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/dockerode": "^3.3.9",
     "@types/node": "18.16.19",
     "@types/prismjs": "^1.26.0",
     "@types/react": "^18.2.11",
     "@types/uuid": "^9.0.0",
     "@types/video.js": "^7.3.51",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.30.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "@vitest/coverage-c8": "^0.33.0",
     "@vitest/ui": "^0.33.0",
     "eslint": "^8.0.1",
@@ -101,11 +108,11 @@
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.5.1",
-    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "eslint-plugin-vitest": "^0.2.0",
-    "happy-dom": "^9.0.0",
+    "happy-dom": "^10.0.0",
     "node-mocks-http": "^1.12.2",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "sass": "^1.56.1",
     "ts-node": "latest",
     "turbo": "latest",
@@ -155,6 +162,9 @@
       "^[./]"
     ],
     "importOrderSeparation": true,
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
     "importOrderSortSpecifiers": true
   },
   "eslintConfig": {

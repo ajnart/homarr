@@ -4,7 +4,7 @@ export type AdStatistics = {
   adsBlockedTodayPercentage: number;
   dnsQueriesToday: number;
   status: {
-    status: PiholeApiSummaryType['status'],
+    status: PiholeApiSummaryType['status'];
     appId: string;
   }[];
 };

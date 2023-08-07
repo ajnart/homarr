@@ -1,5 +1,6 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { shallow } from 'zustand/shallow';
+
 import { useColorTheme } from '../tools/color';
 import { ConfigType } from '../types/config';
 import { useConfigStore } from './store';
@@ -20,8 +21,16 @@ const ConfigContext = createContext<ConfigContextType>({
   setConfigName: () => {},
 });
 
-export const ConfigProvider = ({ children }: { children: ReactNode }) => {
-  const [configName, setConfigName] = useState<string>();
+export const ConfigProvider = ({
+  children,
+  config: fallbackConfig,
+  configName: initialConfigName,
+}: {
+  children: ReactNode;
+  config?: ConfigType;
+  configName?: string;
+}) => {
+  const [configName, setConfigName] = useState<string>(initialConfigName || 'default');
   const [configVersion, setConfigVersion] = useState(0);
   const { configs } = useConfigStore((s) => ({ configs: s.configs }), shallow);
   const { setPrimaryColor, setSecondaryColor, setPrimaryShade } = useColorTheme();
@@ -38,7 +47,7 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     <ConfigContext.Provider
       value={{
         name: configName,
-        config: currentConfig,
+        config: currentConfig ?? fallbackConfig,
         configVersion,
         increaseVersion: () => setConfigVersion((v) => v + 1),
         setConfigName: (name: string) => setConfigName(name),

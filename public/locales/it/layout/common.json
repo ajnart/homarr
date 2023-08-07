@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Popup bloccati",
+      "text": "Il tuo browser ha bloccato l'accesso di Homarr alle sue API. Ciò è comunemente causato da AdBlocker o da permessi negati. Homarr non è in grado di richiedere automaticamente i permessi.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Clicca sull'icona accanto all'URL e controlla le autorizzazioni. Consenti popup e finestre",
+        "adBlockers": "Disabilita gli ad blocker e gli strumenti di sicurezza dal browser",
+        "otherBrowser": "Prova un altro browser"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Apri tutto in una nuova scheda"
     }
   }
 }

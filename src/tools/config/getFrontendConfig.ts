@@ -1,9 +1,10 @@
 import Consola from 'consola';
 import fs from 'fs';
+import { fetchCity } from '~/server/api/routers/weather';
 import { IntegrationField } from '~/types/app';
+
 import { BackendConfigType, ConfigType } from '../../types/config';
 import { getConfig } from './getConfig';
-import { fetchCity } from '~/server/api/routers/weather';
 
 export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
   let config = getConfig(name);

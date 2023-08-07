@@ -2,9 +2,9 @@ import {
   ActionIcon,
   Alert,
   Center,
-  createStyles,
   Flex,
   Text,
+  createStyles,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -21,11 +21,12 @@ import {
 import fileDownload from 'js-file-download';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import Tip from '../../../layout/Tip';
 import { CreateConfigCopyModal } from './CreateCopyModal';
-import { api } from '~/utils/api';
 
 export default function ConfigActions() {
   const { t } = useTranslation(['settings/general/config-changer', 'settings/common', 'common']);

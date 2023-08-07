@@ -211,6 +211,8 @@ export function Search() {
         <Popover.Dropdown>
           <ScrollArea style={{ height: '80vh', maxWidth: '90vw' }} offsetScrollbars>
             {overseerrResults &&
+              overseerrResults.length > 0 &&
+              searchQuery.length > 3 &&
               overseerrResults.slice(0, 4).map((result: any, index: number) => (
                 <React.Fragment key={index}>
                   <OverseerrMediaDisplay key={result.id} media={result} />

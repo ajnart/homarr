@@ -4,6 +4,10 @@
     "description": "Viser en statisk liste over strenge eller links",
     "settings": {
       "title": "Bogmærke indstillinger",
+      "name": {
+        "label": "Widgettitel",
+        "info": "Efterlad blank for at holde titlen skjult."
+      },
       "items": {
         "label": "Elementer"
       },

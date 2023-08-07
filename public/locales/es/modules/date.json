@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Fecha y Hora",
-    "description": "Muestra la fecha y hora actuales.",
+    "description": "Muestra la fecha y hora actual.",
     "settings": {
-      "title": "Ajustes del complemento Fecha y Hora",
+      "title": "Ajustes del widget Fecha y Hora",
       "display24HourFormat": {
         "label": "Mostrar hora completa (24 horas)"
       }

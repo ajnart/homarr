@@ -21,8 +21,8 @@
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Kan inte hämta RSS-flöde",
+          "text": "Det gick inte att nå RSS-flödet. Se till att du har konfigurerat RSS-flödet korrekt med en giltig URL. Webbadresser bör matcha den officiella specifikationen. Efter uppdatering av flödet, kan du behöva uppdatera instrumentpanelen."
         }
       }
     }

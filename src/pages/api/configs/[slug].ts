@@ -1,10 +1,7 @@
-import fs from 'fs';
-
-import path from 'path';
-
 import Consola from 'consola';
-
+import fs from 'fs';
 import { NextApiRequest, NextApiResponse } from 'next';
+import path from 'path';
 
 import { getConfig } from '../../../tools/config/getConfig';
 import { BackendConfigType, ConfigType } from '../../../types/config';

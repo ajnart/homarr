@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "新闻组",
+    "name": "Usenet",
     "description": "允许你查看和管理你的Usenet实例。"
   },
   "card": {
@@ -17,7 +17,7 @@
   },
   "info": {
     "sizeLeft": "左侧尺寸调整",
-    "paused": "暂停使用"
+    "paused": "已暂停"
   },
   "queue": {
     "header": {
@@ -31,7 +31,7 @@
       "title": "错误",
       "message": "出错了"
     },
-    "paused": "暂停使用"
+    "paused": "已暂停"
   },
   "history": {
     "header": {
@@ -44,6 +44,6 @@
       "title": "错误",
       "message": "加载历史记录时出错"
     },
-    "paused": "暂停使用"
+    "paused": "已暂停"
   }
 }

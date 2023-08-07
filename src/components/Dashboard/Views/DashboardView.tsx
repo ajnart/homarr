@@ -1,5 +1,6 @@
 import { Group, Stack } from '@mantine/core';
 import { useEffect, useMemo, useRef } from 'react';
+
 import { useConfigContext } from '../../../config/provider';
 import { useResize } from '../../../hooks/use-resize';
 import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';

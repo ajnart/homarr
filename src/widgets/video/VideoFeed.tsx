@@ -1,4 +1,4 @@
-import { createStyles, LoadingOverlay } from '@mantine/core';
+import { LoadingOverlay, createStyles } from '@mantine/core';
 import { useEffect, useRef, useState } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';

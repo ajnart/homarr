@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { trcpProxyClient } from '~/utils/api';
+
 import { ConfigType } from '../types/config';
 
 export const useConfigStore = create<UseConfigStoreType>((set, get) => ({

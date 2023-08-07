@@ -1,7 +1,8 @@
-import { Center, createStyles, Grid, Stack, Text, Title } from '@mantine/core';
+import { Center, Grid, Stack, Text, Title, createStyles } from '@mantine/core';
 import { IconUnlink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { DashDotGraph } from './DashDotGraph';

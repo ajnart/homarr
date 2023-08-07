@@ -67,14 +67,14 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "Docker整合失败",
+      "title": "Docker 集成失败",
       "message": "你是不是忘了挂载docker socket？"
     },
     "unknownError": {
       "title": "出现了一个错误"
     },
     "oneServiceAtATime": {
-      "title": "请每次只添加一个应用程序或服务!"
+      "title": "请每次只添加一个应用程序或服务！"
     }
   },
   "actionIcon": {

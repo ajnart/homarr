@@ -6,7 +6,7 @@ export const findAppProperty = (app: ConfigAppType, key: IntegrationField) =>
 /** Checks if the type of an integration is part of the TIntegrations array with propper typing */
 export const checkIntegrationsType = <
   TTest extends CheckIntegrationTypeInput,
-  TIntegrations extends readonly IntegrationType[]
+  TIntegrations extends readonly IntegrationType[],
 >(
   test: TTest | undefined | null,
   integrations: TIntegrations
@@ -21,7 +21,7 @@ type CheckIntegrationTypeInput = {
 
 type CheckIntegrationType<
   TInput extends CheckIntegrationTypeInput,
-  TIntegrations extends readonly IntegrationType[]
+  TIntegrations extends readonly IntegrationType[],
 > = TInput & {
   type: TIntegrations[number];
 };

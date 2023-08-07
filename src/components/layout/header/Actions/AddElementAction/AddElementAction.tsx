@@ -2,6 +2,7 @@ import { ActionIcon, Button, Tooltip } from '@mantine/core';
 import { openContextModal } from '@mantine/modals';
 import { IconApps } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { useCardStyles } from '../../../useCardStyles';
 
 interface AddElementActionProps {

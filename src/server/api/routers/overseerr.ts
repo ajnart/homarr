@@ -1,11 +1,12 @@
 import { TRPCError } from '@trpc/server';
 import axios from 'axios';
-import { z } from 'zod';
 import Consola from 'consola';
-import { getConfig } from '~/tools/config/getConfig';
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { z } from 'zod';
 import { MovieResult } from '~/modules/overseerr/Movie';
 import { TvShowResult } from '~/modules/overseerr/TvShow';
+import { getConfig } from '~/tools/config/getConfig';
+
+import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const overseerrRouter = createTRPCRouter({
   all: publicProcedure

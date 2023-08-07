@@ -4,7 +4,10 @@ import { PiHoleApiStatusChangeResponse, PiHoleApiSummaryResponse } from './piHol
 export class PiHoleClient {
   private readonly baseHostName: string;
 
-  constructor(hostname: string, private readonly apiToken: string) {
+  constructor(
+    hostname: string,
+    private readonly apiToken: string
+  ) {
     this.baseHostName = trimStringEnding(hostname, ['/admin/index.php', '/admin', '/']);
   }
 

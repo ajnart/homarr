@@ -1,5 +1,5 @@
 {
-	"description": "Homarr是一个 <strong>顺滑的</strong>、 <strong>现代化</strong> 的面板，它把你所有的应用和服务汇于指尖。有了Homarr，你可以在一个页面访问和控制一切。Homarr与你添加的应用无缝交互，为你提供有价值的信息并由你完全控制。安装Homarr轻松简单，并且支持多种部署方式。",
+	"description": "Homarr是一个 <strong>顺滑</strong> <strong>现代</strong> 的面板，它能将您所有的应用和服务汇于指尖。有了Homarr，你可以在一个页面访问和控制一切。Homarr与你添加的应用无缝交互，为你提供有价值的信息并由你完全控制。安装Homarr轻松简单，并且支持多种部署方式。",
 	"contact": "遇到困难或问题？请与我们联系!",
 	"addToDashboard": "添加到控制面板",
 	"tip": "Mod 指的是你的修饰键，它是 Ctrl 和 Command/Super/Windows 键",
@@ -11,8 +11,8 @@
 		"configurationsCount": "可用的配置",
 		"version": "版本",
 		"nodeEnvironment": "节点环境",
-		"i18n": "加载了I18n翻译名称空间",
-		"locales": "配置的I18n区域设置",
-		"experimental_disableEditMode": "<b>实验</b>: 禁用编辑模式"
+		"i18n": "I18n翻译名称空间已加载",
+		"locales": "I18n本地语言已配置",
+		"experimental_disableEditMode": "<b>实验性</b>: 禁用编辑模式"
 	}
 }

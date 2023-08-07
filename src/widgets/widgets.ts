@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   MultiSelectProps,
   NumberInputProps,
@@ -8,6 +7,7 @@ import {
   TextInputProps,
 } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
+import React from 'react';
 
 import { AreaType } from '../types/area';
 import { ShapeType } from '../types/shape';
@@ -31,7 +31,7 @@ export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> 
 type MakeLessSpecific<T> = T extends boolean ? boolean : T;
 
 // Types of options that can be specified for the widget edit modal
-export type IWidgetOptionValue =
+export type IWidgetOptionValue = (
   | IMultiSelectOptionValue
   | ISwitchOptionValue
   | ITextInputOptionValue
@@ -41,13 +41,19 @@ export type IWidgetOptionValue =
   | IDraggableListInputValue
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
-  | ILocationOptionValue;
+  | ILocationOptionValue
+) & ICommonWidgetOptions;
 
 // Interface for data type
 interface DataType {
   label: string;
   value: string;
 }
+
+interface  ICommonWidgetOptions {
+  info?: boolean;
+  infoLink?: string;
+};
 
 // will show a multi-select with specified data
 export type IMultiSelectOptionValue = {
@@ -96,6 +102,7 @@ export type ISliderInputOptionValue = {
   inputProps?: Partial<SliderProps>;
 };
 
+// will show a custom location selector
 type ILocationOptionValue = {
   type: 'location';
   defaultValue: { latitude: number; longitude: number };

@@ -1,13 +1,14 @@
 import { ActionIcon, Menu } from '@mantine/core';
 import {
-  IconTransitionTop,
-  IconTransitionBottom,
-  IconRowInsertTop,
-  IconRowInsertBottom,
   IconEdit,
-  IconTrash,
+  IconRowInsertBottom,
+  IconRowInsertTop,
   IconSettings,
+  IconTransitionBottom,
+  IconTransitionTop,
+  IconTrash,
 } from '@tabler/icons-react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { CategoryType } from '../../../../types/category';
 import { useCategoryActions } from './useCategoryActions';

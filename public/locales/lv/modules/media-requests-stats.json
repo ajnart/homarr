@@ -3,7 +3,10 @@
     "name": "Multimediju pieprasījumu statistika",
     "description": "Statistika par jūsu mediju pieprasījumiem",
     "settings": {
-      "title": "Multimediju pieprasījumu statistika"
+      "title": "Multimediju pieprasījumu statistika",
+      "direction": {
+        "label": "Izkārtojuma virziens."
+      }
     }
   },
   "stats": {

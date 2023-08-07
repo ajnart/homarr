@@ -1,4 +1,5 @@
 import NZBGet from 'nzbget-api';
+
 import { NzbgetClientOptions } from './types';
 
 export function NzbgetClient(options: NzbgetClientOptions) {

@@ -1,4 +1,5 @@
-import { IconKey, IconPassword, IconUser, Icon } from '@tabler/icons-react';
+import { Icon, IconKey, IconPassword, IconUser } from '@tabler/icons-react';
+import { Property } from 'csstype'
 
 import { TileBaseType } from './tile';
 
@@ -19,16 +20,22 @@ export type ConfigAppType = Omit<AppType, 'integration'> & {
 interface AppBehaviourType {
   externalUrl: string;
   isOpeningNewTab: boolean;
+  tooltipDescription?: string;
 }
 
 interface AppNetworkType {
   enabledStatusChecker: boolean;
+  /**
+   * @deprecated replaced by statusCodes
+   */
   okStatus?: number[];
   statusCodes: string[];
 }
 
 interface AppAppearanceType {
   iconUrl: string;
+  appNameStatus: "normal"|"hover"|"hidden";
+  positionAppName: Property.FlexDirection;
 }
 
 export type IntegrationType =

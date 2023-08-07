@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Servidor Multimedia",
-    "description": "Interacciona con tu servidor Jellyfin o Plex",
+    "description": "Interactúa con tu servidor multimedia Jellyfin o Plex",
     "settings": {
-      "title": "Ajustes para el widget del servidor multimedia"
+      "title": "Ajustes del widget Servidor Multimedia"
     }
   },
   "card": {
@@ -11,13 +11,13 @@
       "header": {
         "session": "Sesión",
         "user": "Usuario",
-        "currentlyPlaying": "Reproducción en curso"
+        "currentlyPlaying": "Reproduciendo actualmente"
       }
     },
     "errors": {
       "general": {
-        "title": "Imposible cargar el contenido",
-        "text": "Imposible recuperar la información del servidor. Consulta los registros para obtener más detalles"
+        "title": "No se puede cargar el contenido",
+        "text": "No se puede recuperar la información del servidor. Consulta los registros para obtener más detalles"
       }
     }
   }

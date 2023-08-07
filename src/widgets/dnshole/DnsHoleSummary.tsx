@@ -9,6 +9,7 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
+
 import { formatNumber } from '../../tools/client/math';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';

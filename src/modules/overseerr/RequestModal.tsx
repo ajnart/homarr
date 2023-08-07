@@ -1,12 +1,12 @@
-import { Alert, Button, Checkbox, createStyles, Group, Modal, Stack, Table } from '@mantine/core';
+import { Alert, Button, Checkbox, Group, Modal, Stack, Table, createStyles } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons-react';
 import Consola from 'consola';
 import { useTranslation } from 'next-i18next';
-
 import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
+
 import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
 import { Result } from './SearchResult.d';

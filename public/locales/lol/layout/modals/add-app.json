@@ -24,7 +24,12 @@
 		"isOpeningNewTab": {
 			"label": "Open in new tab",
 			"description": "Open Teh App In New Tab Instead Ov Teh Current Wan."
-		}
+		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
@@ -47,6 +52,25 @@
 			"noItems": {
 				"title": "",
 				"text": ""
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},

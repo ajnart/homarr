@@ -1,15 +1,16 @@
-import { Badge, Box, Button, Card, Group, Image, Stack, Text, SimpleGrid } from '@mantine/core';
+import { Badge, Box, Button, Card, Group, Image, SimpleGrid, Stack, Text } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { useTranslation } from 'next-i18next';
 import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
+import { api } from '~/utils/api';
+
 import { useConfigContext } from '../../config/provider';
+import { queryClient } from '../../tools/server/configurations/tanstack/queryClient.tool';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
-import { PiholeApiSummaryType } from './type';
-import { queryClient } from '../../tools/server/configurations/tanstack/queryClient.tool';
-import { api } from '~/utils/api';
 import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
+import { PiholeApiSummaryType } from './type';
 
 const definition = defineWidget({
   id: 'dns-hole-controls',
@@ -43,12 +44,12 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   }
 
   return (
-    <Stack justify="space-between" h={"100%"} spacing="0.25rem">
-      <SimpleGrid ref={ref} cols={ width > 275? 2 : 1 } verticalSpacing="0.25rem" spacing="0.25rem">
+    <Stack justify="space-between" h={'100%'} spacing="0.25rem">
+      <SimpleGrid ref={ref} cols={width > 275 ? 2 : 1} verticalSpacing="0.25rem" spacing="0.25rem">
         <Button
           onClick={async () => {
             await mutateAsync({
-              status: 'enabled',
+              action: 'enable',
               configName,
             });
             await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
@@ -63,7 +64,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         <Button
           onClick={async () => {
             await mutateAsync({
-              status: 'disabled',
+              action: 'disable',
               configName,
             });
             await queryClient.invalidateQueries({ queryKey: ['dns-hole-summary'] });
@@ -89,15 +90,15 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             <Card withBorder={true} key={index} p="xs">
               <Group>
                 <Box
-                      sx={(theme) => ({
-                        backgroundColor:
-                          theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
-                        textAlign: 'center',
-                        padding: 5,
-                        borderRadius: theme.radius.md,
-                      })}
-                    >
-                      <Image src={app.appearance.iconUrl} width={40} height={40} fit="contain" />
+                  sx={(theme) => ({
+                    backgroundColor:
+                      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+                    textAlign: 'center',
+                    padding: 5,
+                    borderRadius: theme.radius.md,
+                  })}
+                >
+                  <Image src={app.appearance.iconUrl} width={40} height={40} fit="contain" />
                 </Box>
                 <Stack spacing="0rem">
                   <Text>{app.name}</Text>

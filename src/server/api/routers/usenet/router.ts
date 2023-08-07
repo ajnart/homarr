@@ -7,11 +7,12 @@ import {
   NzbgetQueueItem,
   NzbgetStatus,
 } from '~/server/api/routers/usenet/nzbget/types';
+import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { UsenetHistoryItem, UsenetQueueItem } from '~/widgets/useNet/types';
+
 import { createTRPCRouter, publicProcedure } from '../../trpc';
 import { NzbgetClient } from './nzbget/nzbget-client';
-import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 
 export const usenetRouter = createTRPCRouter({
   info: publicProcedure

@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Hoppsan, ett fel har uppstått!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Detaljer",
+      "tryAgain": "Försök igen"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Dina fel",
+    "reportButton": "Rapportera fel"
   }
 }

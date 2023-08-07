@@ -1,17 +1,18 @@
 import { createTRPCRouter } from '~/server/api/trpc';
+
 import { appRouter } from './routers/app';
-import { rssRouter } from './routers/rss';
+import { calendarRouter } from './routers/calendar';
 import { configRouter } from './routers/config';
-import { dockerRouter } from './routers/docker/router';
-import { iconRouter } from './routers/icon';
 import { dashDotRouter } from './routers/dash-dot';
 import { dnsHoleRouter } from './routers/dns-hole';
+import { dockerRouter } from './routers/docker/router';
 import { downloadRouter } from './routers/download';
+import { iconRouter } from './routers/icon';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
 import { overseerrRouter } from './routers/overseerr';
+import { rssRouter } from './routers/rss';
 import { usenetRouter } from './routers/usenet/router';
-import { calendarRouter } from './routers/calendar';
 import { weatherRouter } from './routers/weather';
 
 /**

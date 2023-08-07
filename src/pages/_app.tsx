@@ -1,19 +1,22 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
-import Consola from 'consola';
+import { Notifications } from '@mantine/notifications';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
+import Consola from 'consola';
 import { getCookie } from 'cookies-next';
 import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import { Notifications } from '@mantine/notifications';
 import 'video.js/dist/video-js.css';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
-import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
+import { api } from '~/utils/api';
+
+import nextI18nextConfig from '../../next-i18next.config';
 import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
 import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
 import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
@@ -22,19 +25,17 @@ import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsE
 import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
 import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
 import { ConfigProvider } from '../config/provider';
+import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
+import '../styles/global.scss';
 import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '../tools/color';
 import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
 import {
-  getServiceSidePackageAttributes,
   ServerSidePackageAttributesType,
+  getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
-
-import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
-import '../styles/global.scss';
-import nextI18nextConfig from '../../next-i18next.config';
-import { api } from '~/utils/api';
+import { ConfigType } from '~/types/config';
 
 function App(
   this: any,
@@ -43,13 +44,15 @@ function App(
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
     defaultColorScheme: ColorScheme;
+    config?: ConfigType;
+    configName?: string;
   }>
 ) {
   const { Component, pageProps } = props;
 
-  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>('red');
-  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>('orange');
-  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(6);
+  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.primary || 'red');
+  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.secondary || 'orange');
+  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(props.pageProps.config?.settings.customization.colors.shade || 6);
   const colorTheme = {
     primaryColor,
     secondaryColor,
@@ -123,7 +126,7 @@ function App(
               withGlobalStyles
               withNormalizeCSS
             >
-              <ConfigProvider>
+              <ConfigProvider {...props.pageProps}>
                 <Notifications limit={4} position="bottom-left" />
                 <ModalsProvider
                   modals={{

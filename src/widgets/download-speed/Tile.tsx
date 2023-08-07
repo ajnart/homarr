@@ -4,20 +4,21 @@ import {
   Card,
   Group,
   Stack,
-  Title,
   Text,
+  Title,
   Tooltip,
   useMantineTheme,
 } from '@mantine/core';
 import { useElementSize, useListState } from '@mantine/hooks';
 import { linearGradientDef } from '@nivo/core';
-import { Serie, Datum, ResponsiveLine } from '@nivo/line';
+import { Datum, ResponsiveLine, Serie } from '@nivo/line';
 import { IconDownload, IconUpload } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
+
 import { AppAvatar } from '../../components/AppAvatar';
 import { useConfigContext } from '../../config/provider';
-import { useGetDownloadClientsQueue } from '../../hooks/widgets/download-speed/useGetNetworkSpeed';
+import { useGetDownloadClientsQueue } from './useGetNetworkSpeed';
 import { useColorTheme } from '../../tools/color';
 import { humanFileSize } from '../../tools/humanFileSize';
 import {

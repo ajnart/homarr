@@ -18,9 +18,9 @@ import { IconClock, IconRefresh, IconRss } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 

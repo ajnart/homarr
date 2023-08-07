@@ -3,7 +3,10 @@
     "name": "Media verzoek statistieken",
     "description": "Statistieken over je mediaverzoeken",
     "settings": {
-      "title": "Mediaverzoeken statistieken"
+      "title": "Mediaverzoeken statistieken",
+      "direction": {
+        "label": ""
+      }
     }
   },
   "stats": {

@@ -1,10 +1,11 @@
 import axios from 'axios';
 import Consola from 'consola';
 import { z } from 'zod';
+import { checkIntegrationsType } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { AppIntegrationType, IntegrationType } from '~/types/app';
+
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import { checkIntegrationsType } from '~/tools/client/app-properties';
 
 export const calendarRouter = createTRPCRouter({
   medias: publicProcedure

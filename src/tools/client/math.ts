@@ -10,9 +10,9 @@ const ranges = [
 export const formatNumber = (n: number, decimalPlaces: number) => {
   // eslint-disable-next-line no-restricted-syntax
   for (const range of ranges) {
-      if (n < range.divider) continue;
+    if (n < range.divider) continue;
 
-     return (n / range.divider).toFixed(decimalPlaces) + range.suffix;
+    return (n / range.divider).toFixed(decimalPlaces) + range.suffix;
   }
   return n.toFixed(decimalPlaces);
 };

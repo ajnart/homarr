@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+
 import { useConfigStore } from '../../../../config/store';
 import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
 import { AppType } from '../../../../types/app';

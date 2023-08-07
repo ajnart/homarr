@@ -3,7 +3,7 @@
     "name": "Torrent",
     "description": "显示支持的Torrent客户端的torrent列表。",
     "settings": {
-      "title": "Torrent 部件设置",
+      "title": "Torrent 小部件设置",
       "refreshInterval": {
         "label": "刷新时间间隔（秒）。"
       },
@@ -25,7 +25,7 @@
   "card": {
     "footer": {
       "error": "错误",
-      "lastUpdated": "最后更新于 {{time}} "
+      "lastUpdated": "最后更新于 {{time}} 前"
     },
     "table": {
       "header": {
@@ -66,7 +66,7 @@
       "title": "正在加载..."
     },
     "popover": {
-      "introductionPrefix": "管理的是",
+      "introductionPrefix": "管理方：",
       "metrics": {
         "queuePosition": "队列位置 - {{position}}",
         "progress": "当前进度 - {{progress}}%",

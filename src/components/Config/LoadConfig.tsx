@@ -5,9 +5,10 @@ import { IconCheck as Check, IconPhoto, IconUpload, IconX, IconX as X } from '@t
 import { setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import { api } from '~/utils/api';
+
 import { useConfigStore } from '../../config/store';
 import { ConfigType } from '../../types/config';
-import { api } from '~/utils/api';
 
 export const LoadConfigComponent = () => {
   const theme = useMantineTheme();

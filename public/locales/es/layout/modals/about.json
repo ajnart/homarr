@@ -1,7 +1,7 @@
 {
-	"description": "Homarr es un dashboard <strong>elegante</strong> y <strong>moderno</strong> que pone todas tus apps y servicios a tu alcance. Con Homarr, puedes acceder y controlar todo desde una sola ubicación. Homarr se integra a la perfección con las apps que hayas añadido, ofreciendote información valiosa y dándote control total. La instalación es muy sencilla, y Homarr soporta una amplia gama de métodos de implementación.",
+	"description": "Homarr es un panel <strong>elegante</strong> y <strong>moderno</strong> que pone todas tus aplicaciones y servicios al alcance de su mano. Con Homarr, puedes acceder y controlar todo desde una sola ubicación. Homarr se integra a la perfección con las aplicaciones que hayas añadido, proporcionándote información valiosa y dándote control total. La instalación es muy sencilla, y Homarr soporta una amplia gama de métodos de implementación.",
 	"contact": "¿Tienes problemas o preguntas? ¡Conéctate con nosotros!",
-	"addToDashboard": "Añadir al Dashboard",
+	"addToDashboard": "Añadir al Panel",
 	"tip": "Mod se refiere a tu tecla modificadora, es Ctrl y tecla Command/Super/Windows",
 	"key": "Tecla de acceso directo",
 	"action": "Acción",
@@ -11,7 +11,7 @@
 		"configurationsCount": "Configuraciones disponibles",
 		"version": "Versión",
 		"nodeEnvironment": "Entorno del nodo",
-		"i18n": "I18n translation namespaces cargadas",
+		"i18n": "I18n espacios de nombres de traducción cargados",
 		"locales": "I18n locales configurados",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desactivar modo edición"
 	}

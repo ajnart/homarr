@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+
 import { useConfigContext } from '../../../../../../config/provider';
 import { useConfigStore } from '../../../../../../config/store';
 import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
@@ -92,6 +93,8 @@ export const AvailableElementTypes = ({
                   url: 'https://homarr.dev',
                   appearance: {
                     iconUrl: '/imgs/logo/logo.png',
+                    appNameStatus: 'normal',
+                    positionAppName: 'column',
                   },
                   network: {
                     enabledStatusChecker: true,
@@ -100,7 +103,7 @@ export const AvailableElementTypes = ({
                   },
                   behaviour: {
                     isOpeningNewTab: true,
-                    externalUrl: '',
+                    externalUrl: 'https://homarr.dev',
                   },
 
                   area: {
