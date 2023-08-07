@@ -1,6 +1,7 @@
-import { Flex, Tabs } from '@mantine/core';
+import { Flex, Select, Stack, Switch, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
+import { useTranslation } from 'next-i18next';
 import { useEffect, useRef } from 'react';
 
 import { AppType } from '../../../../../../types/app';
@@ -19,6 +20,7 @@ export const AppearanceTab = ({
 }: AppearanceTabProps) => {
   const iconSelectorRef = useRef();
   const [debouncedValue] = useDebouncedValue(form.values.name, 500);
+  const { t } = useTranslation('layout/modals/add-app');
 
   useEffect(() => {
     if (allowAppNamePropagation !== true) {
@@ -38,17 +40,54 @@ export const AppearanceTab = ({
 
   return (
     <Tabs.Panel value="appearance" pt="lg">
-      <Flex gap={5}>
-        <IconSelector
-          defaultValue={form.values.appearance.iconUrl}
+      <Stack spacing="xs">
+        <Flex gap={5} mb="xs">
+          <IconSelector
+            defaultValue={form.values.appearance.iconUrl}
+            onChange={(value) => {
+              form.setFieldValue('appearance.iconUrl', value);
+              disallowAppNameProgagation();
+            }}
+            value={form.values.appearance.iconUrl}
+            ref={iconSelectorRef}
+          />
+        </Flex>
+        <Select
+          label={t('appearance.appNameStatus.label')}
+          description={t('appearance.appNameStatus.description')}
+          data={[
+            { value: 'normal', label: t('appearance.appNameStatus.dropdown.normal') as string },
+            { value: 'hover', label: t('appearance.appNameStatus.dropdown.hover') as string },
+            { value: 'hidden', label: t('appearance.appNameStatus.dropdown.hidden') as string },
+          ]}
+          {...form.getInputProps('appearance.appNameStatus')}
           onChange={(value) => {
-            form.setFieldValue('appearance.iconUrl', value);
-            disallowAppNameProgagation();
+            form.setFieldValue('appearance.appNameStatus', value);
           }}
-          value={form.values.appearance.iconUrl}
-          ref={iconSelectorRef}
         />
-      </Flex>
+        {form.values.appearance.appNameStatus === 'normal' && (
+          <Select
+            label={t('appearance.positionAppName.label')}
+            description={t('appearance.positionAppName.description')}
+            data={[
+              { value: 'column', label: t('appearance.positionAppName.dropdown.top') as string },
+              {
+                value: 'row-reverse',
+                label: t('appearance.positionAppName.dropdown.right') as string,
+              },
+              {
+                value: 'column-reverse',
+                label: t('appearance.positionAppName.dropdown.bottom') as string,
+              },
+              { value: 'row', label: t('appearance.positionAppName.dropdown.left') as string },
+            ]}
+            {...form.getInputProps('appearance.positionAppName')}
+            onChange={(value) => {
+              form.setFieldValue('appearance.positionAppName', value);
+            }}
+          />
+        )}
+      </Stack>
     </Tabs.Panel>
   );
 };

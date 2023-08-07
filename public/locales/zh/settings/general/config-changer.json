@@ -2,8 +2,8 @@
   "configSelect": {
     "label": "配置更改",
     "description": "{{configCount}} 个可用的配置",
-    "loadingNew": "加载你的配置...",
-    "pleaseWait": "请稍等，直到您的新配置加载完成!"
+    "loadingNew": "正在加载你的配置...",
+    "pleaseWait": "请等待您的新配置加载完成！"
   },
   "modal": {
     "copy": {
@@ -12,34 +12,34 @@
         "configName": {
           "label": "配置名称",
           "validation": {
-            "required": "配置名称是必需的",
+            "required": "配置名称是必填项",
             "notUnique": "配置名称已被使用"
           },
-          "placeholder": "你的新配置名称"
+          "placeholder": "您的新配置名称"
         },
         "submitButton": "确认"
       },
       "events": {
         "configSaved": {
-          "title": "保存配置",
+          "title": "配置已保存",
           "message": "配置保存为 {{configName}}"
         },
         "configCopied": {
-          "title": "复制配置",
+          "title": "配置已复制",
           "message": "配置复制为 {{configName}}"
         },
         "configNotCopied": {
-          "title": "无法复制",
-          "message": "你的配置没有被复制为 {{configName}}"
+          "title": "无法复制配置",
+          "message": "您的配置没有被复制为 {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "确认删除你的配置",
-      "warningText": "您要删除的是 '<b>{{configName}}</b>' 。",
-      "text": "请注意，删除是不可逆转的，你的数据将被永久地丢失。点击这个按钮后，该文件将从你的磁盘中永久删除。请确保为你的配置创建一个充分的备份。",
+      "title": "确认删除您的配置",
+      "warningText": "您即将删除 '<b>{{configName}}</b>'",
+      "text": "请注意：删除是不可逆的，您的数据将永久丢失。点击此按钮后，该文件将从你的磁盘中永久删除。请确保已为你的配置创建一个合适的备份。",
       "buttons": {
-        "confirm": "是的，删除 '<b>{{configName}}</b>' 。"
+        "confirm": "是，删除 '<b>{{configName}}</b>'"
       }
     }
   },
@@ -79,7 +79,7 @@
       "text": "将文件拖动到这里上传配置。仅支持 JSON 文件。"
     },
     "reject": {
-      "title": "拒绝拖拽式上传",
+      "title": "拖放上传被拒绝",
       "text": "此文件格式不受支持。请只上传JSON文件。"
     }
   }

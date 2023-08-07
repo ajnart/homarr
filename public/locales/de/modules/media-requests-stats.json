@@ -3,7 +3,10 @@
     "name": "Statistik der Medienanfragen",
     "description": "Statistiken über Ihre Medienanfragen",
     "settings": {
-      "title": "Statistik der Medienanfragen"
+      "title": "Statistik der Medienanfragen",
+      "direction": {
+        "label": "Ausrichtung des Layouts."
+      }
     }
   },
   "stats": {

@@ -3,7 +3,10 @@
     "name": "Thống kê yêu cầu đa phương tiện",
     "description": "Thống kê về các yêu cầu đa phương tiện của bạn",
     "settings": {
-      "title": "Thống kê yêu cầu đa phương tiện"
+      "title": "Thống kê yêu cầu đa phương tiện",
+      "direction": {
+        "label": ""
+      }
     }
   },
   "stats": {

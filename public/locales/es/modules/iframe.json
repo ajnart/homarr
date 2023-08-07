@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "iFrame",
-    "description": "Incrustar cualquier contenido de Internet. Algunos sitios web pueden restringir el acceso.",
+    "description": "Incrusta cualquier contenido de Internet. Algunos sitios web pueden restringir el acceso.",
     "settings": {
-      "title": "Ajustes de iFrime",
+      "title": "Ajustes del widget iFrame",
       "embedUrl": {
         "label": "URL incrustada"
       },
@@ -37,7 +37,7 @@
     "errors": {
       "noUrl": {
         "title": "URL invalida",
-        "text": "Asegúrate de que has introducido una dirección válida en la configuración del widget"
+        "text": "Asegúrate de haber introducido una dirección válida en la configuración del widget"
       }
     }
   }

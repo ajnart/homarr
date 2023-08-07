@@ -93,7 +93,6 @@ export default function ContainerActionBar({
       >
         {t('actionBar.remove.title')}
       </Button>
-      {/* TODO: add some possibility to add a container to homarr */}
     </Group>
   );
 }

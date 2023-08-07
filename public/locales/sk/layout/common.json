@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Blokovanie vyskakovacích okien",
+      "text": "Váš prehliadač zablokoval prístup k rozhraniu API spoločnosti Homarr. Najčastejšie to spôsobujú blokovače reklám alebo odopreté oprávnenia. Homarr nedokáže automaticky požiadať o povolenia.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Kliknite na ikonu vedľa adresy URL a skontrolujte povolenia. Povoliť vyskakovacie okná a okná",
+        "adBlockers": "Zakázanie blokovačov reklám a bezpečnostných nástrojov v prehliadači",
+        "otherBrowser": "Vyskúšajte iný prehliadač"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Otvoriť všetko v novej karte"
     }
   }
 }

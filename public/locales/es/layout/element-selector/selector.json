@@ -1,11 +1,11 @@
 {
     "modal": {
-        "title": "Añadir nueva tarjeta",
-        "text": "Las tarjetas son el elemento principal de Homarr. Éstas se usan para mostrar tus apps, e información extra. Puedes agregar tantas tarjetas como quieras."
+        "title": "Añadir un mosaico nuevo",
+        "text": "Los mosaicos son el elemento principal de Homarr. Se utilizan para mostrar tus aplicaciones y otra información. Puedes añadir tantos mosaicos como desees."
     },
-    "widgetDescription": "Los widgets interactúan con tus apps, para otorgarte mayor control sobre éstas. Por lo general, éstos requieren de configuración adicional antes de poder usarlos.",
+    "widgetDescription": "Los widgets interactúan con tus aplicaciones, para proporcionarte un mayor control sobre ellas. Por lo general, requieren de configuración adicional antes de poder usarlos.",
     "goBack": "Volver al paso anterior",
     "actionIcon": {
-        "tooltip": "Añadir tarjeta"
+        "tooltip": "Añadir mosaico"
     }
 }

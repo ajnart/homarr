@@ -14,10 +14,10 @@
         "label": "Type de sortie Radarr"
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Masquer les jours de la semaine"
       },
       "fontSize": {
-        "label": ""
+        "label": "Taille de la police"
       }
     }
   }

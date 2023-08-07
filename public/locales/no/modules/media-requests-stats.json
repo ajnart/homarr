@@ -3,7 +3,10 @@
     "name": "Statistikk for mediaforespørsler",
     "description": "Statistikk om dine medieforespørsler",
     "settings": {
-      "title": "Statistikk for mediaforespørsler"
+      "title": "Statistikk for mediaforespørsler",
+      "direction": {
+        "label": ""
+      }
     }
   },
   "stats": {

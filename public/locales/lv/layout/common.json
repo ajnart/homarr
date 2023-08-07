@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Bloķēti uznirstošie logi",
+      "text": "Jūsu pārlūkprogramma ir bloķējusi Homarr API piekļuvi. To visbiežāk izraisa AdBlocker (Reklāmu bloķētājs) vai liegtas atļaujas. Homarr nevar automātiski pieprasīt atļaujas.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Noklikšķiniet uz ikonas blakus URL un pārbaudiet atļaujas. Atļaut uznirstošos logus",
+        "adBlockers": "Atspējojiet pārlūkprogrammā reklāmu bloķētājus un drošības rīkus",
+        "otherBrowser": "Izmēģiniet citu pārlūkprogrammu"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Atvērt visu jaunā cilnē"
     }
   }
 }

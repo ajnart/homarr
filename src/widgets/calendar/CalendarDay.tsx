@@ -104,7 +104,7 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
                   position="bottom-end"
                   medias={medias.musics}
                 >
-                  <div style={{ textAlign: 'center' }}>{date.getDate()}</div>
+                  <div style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>{date.getDate()}</div>
                 </DayIndicator>
               </DayIndicator>
             </DayIndicator>

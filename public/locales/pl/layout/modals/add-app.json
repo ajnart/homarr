@@ -24,7 +24,12 @@
 		"isOpeningNewTab": {
 			"label": "Otwórz w nowej karcie",
 			"description": "Otwórz aplikację w nowej karcie zamiast w bieżącej."
-		}
+		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
@@ -47,6 +52,25 @@
 			"noItems": {
 				"title": "Ładowanie zewnętrznych ikon",
 				"text": "To może zająć kilka sekund"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},

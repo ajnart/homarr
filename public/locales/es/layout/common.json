@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Ventanas emergentes bloqueadas",
+      "text": "Tu navegador ha bloqueado el acceso de Homarr a su API. Esto es causado habitualmente por AdBlockers o permisos denegados. Homarr no puede solicitar permisos automáticamente.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Haz clic en el icono junto a la URL y verifica los permisos. Permitir ventanas emergentes y ventanas",
+        "adBlockers": "Deshabilita los bloqueadores de anuncios y las herramientas de seguridad de su navegador",
+        "otherBrowser": "Prueba con un navegador diferente"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Abrir todo en una pestaña nueva"
     }
   }
 }

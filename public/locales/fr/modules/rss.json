@@ -3,26 +3,26 @@
     "name": "Widget RSS",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Paramètres du widget RSS",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URLs des flux RSS",
+        "description": "Les URLs des flux RSS que vous souhaitez afficher."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Intervalle d'actualisation (en minutes)"
       },
       "dangerousAllowSanitizedItemContent": {
         "label": ""
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Limitateur de longueur de ligne de texte"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Impossible de récupérer le flux RSS",
+          "text": "Il y a eu un problème pour accéder au flux RSS. Assurez-vous que vous avez correctement configuré le flux RSS en utilisant une URL valide. Les URLs doivent correspondre aux spécifications officielles. Après avoir mis à jour le flux, vous devrez peut-être actualiser le tableau de bord."
         }
       }
     }

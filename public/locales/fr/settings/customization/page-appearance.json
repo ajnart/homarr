@@ -20,7 +20,7 @@
   },
   "customCSS": {
     "label": "CSS personnalisé",
-    "description": "",
+    "description": "En outre, vous pouvez personnaliser votre tableau de bord à l'aide de CSS. Réservé aux utilisateurs expérimentés.",
     "placeholder": "Le CSS personnalisé sera appliqué en dernier",
     "applying": "Application du code CSS..."
   },

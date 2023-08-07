@@ -7,7 +7,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "¡No se han encontrado clientes de descarga compatibles!",
-        "text": "Añadir cliente de descarga Usenet soportado para ver tus descargas actuales"
+        "text": "Añade un cliente de descarga Usenet soportado para ver tus descargas actuales"
       }
     }
   },

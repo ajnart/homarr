@@ -6,15 +6,15 @@
   "delete": "Supprimer",
   "ok": "OK",
   "edit": "Modifier",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
+  "enabled": "Activé",
+  "disabled": "Désactivé",
+  "enableAll": "Activer tout",
+  "disableAll": "Désactiver tout",
   "version": "Version",
   "changePosition": "Modifier la position",
   "remove": "Supprimer",
   "removeConfirm": "Êtes-vous sûr de vouloir supprimer {{item}} ?",
-  "createItem": "",
+  "createItem": "+ créer {{item}}",
   "sections": {
     "settings": "Paramètres",
     "dangerZone": "Zone de danger"
@@ -35,5 +35,6 @@
     "small": "petit",
     "medium": "moyen",
     "large": "grand"
-  }
+  },
+  "seeMore": ""
 }
