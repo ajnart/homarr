@@ -183,6 +183,12 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'select':
+      const data = option.data.map(dataType => {
+        return !dataType.label? {
+          value: dataType.value,
+          label: t(`descriptor.settings.${key}.data.${dataType.value}`)
+        } : dataType;
+      })
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
@@ -191,7 +197,7 @@ const WidgetOptionTypeSwitch: FC<{
           </Group>
           <Select
             defaultValue={option.defaultValue}
-            data={option.data}
+            data={data}
             value={value as string}
             onChange={(v) => handleChange(key, v ?? option.defaultValue)}
             withinPortal

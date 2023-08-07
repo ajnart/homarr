@@ -1,5 +1,4 @@
-import { Flex, Stack, Text, Title } from '@mantine/core';
-import { useElementSize } from '@mantine/hooks';
+import { Flex, Text, Title } from '@mantine/core';
 import { IconClock } from '@tabler/icons-react';
 import moment from 'moment-timezone';
 import { useEffect, useRef, useState } from 'react';
@@ -9,6 +8,9 @@ import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
+moment.locale();
+const dateLocalLang = moment();
+
 const definition = defineWidget({
   id: 'date',
   icon: IconClock,
@@ -16,6 +18,21 @@ const definition = defineWidget({
     display24HourFormat: {
       type: 'switch',
       defaultValue: false,
+    },
+    dateFormat: {
+      type: 'select',
+      defaultValue: 'dddd, MMMM D',
+      data:[
+        { value: 'hide' },
+        { value: 'dddd, MMMM D', label: dateLocalLang.format('dddd, MMMM D') },
+        { value: 'dddd, D MMMM', label: dateLocalLang.format('dddd, D MMMM') },
+        { value: 'MMM D', label: dateLocalLang.format('MMM D') },
+        { value: 'D MMM', label: dateLocalLang.format('D MMM') },
+        { value: 'DD/MM/YYYY', label: dateLocalLang.format('DD/MM/YYYY') },
+        { value: 'MM/DD/YYYY', label: dateLocalLang.format('MM/DD/YYYY') },
+        { value: 'DD/MM', label: dateLocalLang.format('DD/MM') },
+        { value: 'MM/DD', label: dateLocalLang.format('MM/DD') },
+      ],
     },
     enableTimezone: {
       type: 'switch',
@@ -28,6 +45,16 @@ const definition = defineWidget({
         latitude: 48.85341,
         longitude: 2.3488,
       },
+    },
+    titleState: {
+      type: 'select',
+      defaultValue: 'both',
+      data:[
+        { value: 'both' },
+        { value: 'city' },
+        { value: 'none' },
+      ],
+      info: true,
     },
   },
   gridstack: {
@@ -50,24 +77,23 @@ function DateTile({ widget }: DateTileProps) {
     widget.properties.enableTimezone ? widget.properties.timezoneLocation : undefined
   );
   const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
-  const { width, ref } = useElementSize();
 
   return (
     <Flex
-      ref={ref}
       display="flex"
       justify="space-around"
       align="center"
       h="100%"
       direction="column"
     >
-      {widget.properties.enableTimezone &&
-        <Text size="md">
-          {widget.properties.timezoneLocation.name + moment(date).format(' (z)')}
+      {widget.properties.enableTimezone && widget.properties.titleState !== "none" &&
+        <Text size="md" style={{ whiteSpace:"nowrap" }}>
+          {widget.properties.timezoneLocation.name}
+          {widget.properties.titleState==="both" && moment(date).format(' (z)')}
         </Text>
       }
       <Title>{moment(date).format(formatString)}</Title>
-      {width > 200 && <Text size="lg">{moment(date).format('dddd, MMMM D')}</Text>}
+      {widget.properties.dateFormat && <Text size="lg">{moment(date).format(widget.properties.dateFormat)}</Text>}
     </Flex>
   );
 }

@@ -46,7 +46,7 @@ export type IWidgetOptionValue = (
 
 // Interface for data type
 interface DataType {
-  label: string;
+  label?: string;
   value: string;
 }
 
