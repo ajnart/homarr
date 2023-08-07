@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Otwórz w nowej karcie",
 			"description": "Otwórz aplikację w nowej karcie zamiast w bieżącej."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

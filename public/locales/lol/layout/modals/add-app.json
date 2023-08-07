@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Open in new tab",
 			"description": "Open Teh App In New Tab Instead Ov Teh Current Wan."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

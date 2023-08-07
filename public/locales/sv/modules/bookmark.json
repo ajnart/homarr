@@ -4,6 +4,10 @@
     "description": "",
     "settings": {
       "title": "",
+      "name": {
+        "label": "",
+        "info": "Lämna tomt för att hålla titeln dold."
+      },
       "items": {
         "label": ""
       },

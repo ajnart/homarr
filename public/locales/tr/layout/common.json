@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Açılır pencere engellendi",
+      "text": "Tarayıcınız Homarr'ın kendi API'sine erişmesini engelledi. Bunun en yaygın sebepleri reklam engelleyiciler veya reddedilen izindir. Homarr otomatik izin talep edemez.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "URL'nin solunda bulunan simgeye tıklayın ve \"Site Ayarları\" sekmesinden  \"Pop-up'lar ve yönlendirmeler\"i izin ver olarak seçin.",
+        "adBlockers": "Tarayıcınızdan reklam engelleyicileri ve güvenlik araçlarını devre dışı bırakın",
+        "otherBrowser": "Farklı bir web tarayıcısı deneyin"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Hepsini yeni sekmede aç"
     }
   }
 }

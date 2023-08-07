@@ -8,69 +8,70 @@
 	},
 	"general": {
 		"appname": {
-			"label": "Nombre de la app",
-			"description": "Usado para mostrar la app en el dashboard."
+			"label": "Nombre de la aplicación",
+			"description": "Se utiliza para mostrar la aplicación en el panel."
 		},
 		"internalAddress": {
 			"label": "Dirección interna",
-			"description": "Dirección IP interna de la app."
+			"description": "Dirección IP interna de la aplicación."
 		},
 		"externalAddress": {
 			"label": "Dirección externa",
-			"description": "URL que se abrirá al hacer clic en la app."
+			"description": "URL que se abrirá al hacer clic en la aplicación."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "Abrir en nueva pestaña",
-			"description": "Abrir la app en una nueva pestaña, en vez de en la actual."
-		}
+			"label": "Abrir en una pestaña nueva",
+			"description": "Abre la aplicación en una nueva pestaña en lugar de la actual."
+		},
+		"customProtocolWarning": "Usando un protocolo no estándar. Esto puede requerir aplicaciones preinstaladas y puede presentar riesgos de seguridad. Asegúrese de que su dirección sea segura y confiable."
 	},
 	"network": {
 		"statusChecker": {
-			"label": "Verificador de estado",
-			"description": "Comprueba si tu app está en línea usando una simple petición HTTP(S)."
+			"label": "Comprobador de estado",
+			"description": "Comprueba si tu aplicación está en línea mediante una simple solicitud HTTP(S)."
 		},
 		"statusCodes": {
-			"label": "Códigos HTTP de estado",
-			"description": "Códigos de estado HTTP considerados como en línea."
+			"label": "Códigos de estado HTTP",
+			"description": "Códigos de estado HTTP que son considerados como en línea."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "Icono App",
-			"description": "Empieza escribiendo para encontrar un icono. También puedes pegar la URL de una imagen para usar un icono personalizado.",
+			"label": "Icono de la aplicación",
+			"description": "Empieza a escribir para encontrar un icono. También puedes pegar la URL de una imagen para usar un ícono personalizado.",
 			"autocomplete": {
-				"title": "Ningún resultado encontrado",
-				"text": "Intenta usar un término de búsqueda más específico. Si no puedes encontrar tu icono deseado, pega la URL de la imagen encima para establecer un icono personalizado"
+				"title": "No se han encontrado resultados",
+				"text": "Intenta usar un término de búsqueda más específico. Si no puede encontrar el ícono deseado, pega la URL de la imagen arriba para obtener un ícono personalizado"
 			},
 			"noItems": {
 				"title": "Cargando iconos externos",
-				"text": "Esto puede tomar unos segundos"
+				"text": "Esto puede tardar unos pocos segundos"
 			}
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "Configuración de integración",
-			"description": "Configuración de la integración que se será usada por tu app.",
-			"placeholder": "Seleccionar una integración",
-			"defined": "Definido",
+			"description": "Configuración de la integración que se usará para conectarse a su aplicación.",
+			"placeholder": "Selecciona una integración",
+			"defined": "Definida",
 			"undefined": "Sin definir",
-			"public": "Público",
-			"private": "Privado",
-			"explanationPrivate": "Una clave privada será enviada al servidor solo una vez. Una vez el navegador refresca la página, ésta no será enviada otra vez.",
-			"explanationPublic": "Una clave pública siempre será enviada al cliente, y se podrá acceder a él a través de la API. Ésta no debe contener información confidencial, como: nombres de usuario, contraseñas, tokens, certificados y similares!"
+			"public": "Pública",
+			"private": "Privada",
+			"explanationPrivate": "Una clave privada será enviada al servidor solo una vez. Una vez que su navegador haya actualizado la página, nunca se volverá a enviar.",
+			"explanationPublic": "Una clave pública siempre será enviada al cliente y se podrá acceder a él a través de la API. ¡No debe contener información confidencial como nombres de usuario, contraseñas, tokens, certificados y similares!"
 		},
 		"secrets": {
-			"description": "Para actualizar una clave, introducir un valor y pulsar el botón guardar. Para eliminar una clave, usa el botón limpiar.",
-			"warning": "Tus credenciales actúan como acceso para tus integraciones y <strong>nunca</strong> debes compartirlas con nadie. El equipo de Homarr nunca te preguntará sobre éstas. Asegúrate de <strong>almacenar y administrar tus claves de manera segura</strong>.",
+			"description": "Para actualizar una clave, ingresa un valor y haz clic en el botón Guardar. Para eliminar una clave, utiliza el botón limpiar.",
+			"warning": "Tus credenciales actúan como acceso para tus integraciones y <strong>nunca</strong> debes compartirlas con nadie. El equipo de Homarr nunca te preguntará por tus credenciales. Asegúrate de <strong>almacenar y administrar tus claves de forma segura</strong>.",
 			"clear": "Limpiar clave",
 			"save": "Guardar clave",
 			"update": "Actualizar clave"
 		}
 	},
 	"validation": {
-		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no pude ser guardado. Por favor, resuelve los problemas, y presiona este botón, otra vez, para guardar cambios"
+		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no se puede guardar. Por favor, resuelve todos los problemas y vuelve a hacer clic en este botón para guardar los cambios"
 	}
 }

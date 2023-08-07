@@ -4,6 +4,10 @@
     "description": "Parāda statisku virkņu vai saišu sarakstu",
     "settings": {
       "title": "Grāmatzīmju uzstādījumi",
+      "name": {
+        "label": "Logrīka Nosaukums",
+        "info": ""
+      },
       "items": {
         "label": "Vienumi"
       },

@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Otvoriť na novej karte",
 			"description": "Otvorenie aplikácie na novej karte namiesto aktuálnej."
-		}
+		},
+		"customProtocolWarning": "Používanie neštandardného protokolu. Môže to vyžadovať predinštalované aplikácie a môže to predstavovať bezpečnostné riziká. Uistite sa, že vaša adresa je bezpečná a dôveryhodná."
 	},
 	"network": {
 		"statusChecker": {

@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Abrir em novo separador",
 			"description": "Abrir a aplicação num novo separador em vez do actual."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

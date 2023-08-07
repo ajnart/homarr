@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Öppna i ny flik",
 			"description": "Öppna appen i en ny flik istället för den nuvarande."
-		}
+		},
+		"customProtocolWarning": "Använda ett protokoll som inte är standard. Detta kan kräva förinstallerade applikationer och kan medföra säkerhetsrisker. Se till att din adress är säker och betrodd."
 	},
 	"network": {
 		"statusChecker": {

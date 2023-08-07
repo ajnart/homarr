@@ -1,6 +1,6 @@
 {
   "save": "Guardar",
-  "about": "Sobre",
+  "about": "Acerca de",
   "cancel": "Cancelar",
   "close": "Cerrar",
   "delete": "Eliminar",
@@ -13,7 +13,7 @@
   "version": "Versión",
   "changePosition": "Cambiar posición",
   "remove": "Eliminar",
-  "removeConfirm": "¿Seguro que quieres eliminar {{item}}?",
+  "removeConfirm": "¿Estás seguro de que quieres eliminar {{item}}?",
   "createItem": "+ crear {{item}}",
   "sections": {
     "settings": "Ajustes",
@@ -35,5 +35,6 @@
     "small": "pequeño",
     "medium": "medio",
     "large": "grande"
-  }
+  },
+  "seeMore": "Ver más..."
 }

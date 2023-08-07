@@ -4,6 +4,10 @@
     "description": "Dizelerin veya bağlantıların sabit bir listesini görüntüler",
     "settings": {
       "title": "Yer İşareti ayarları",
+      "name": {
+        "label": "Widget başlığı",
+        "info": ""
+      },
       "items": {
         "label": "Ögeler"
       },

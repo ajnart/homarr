@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Open in nieuw tabblad",
 			"description": "Open de app in een nieuw tabblad in plaats van de huidige."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

@@ -15,7 +15,6 @@ import {
   Title,
   createStyles,
   useMantineTheme,
-  InputProps,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import {
@@ -54,6 +53,8 @@ const definition = defineWidget({
     name: {
       type: 'text',
       defaultValue: '',
+      info: true,
+      infoLink: "https://homarr.dev/docs/widgets/bookmarks/",
     },
     items: {
       type: 'draggable-editable-list',

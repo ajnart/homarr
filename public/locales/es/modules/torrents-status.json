@@ -1,31 +1,31 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "Muestra una lista de los torrents de los clientes Torrent soportados.",
+    "description": "Muestra una lista de torrents de los clientes de Torrent soportados.",
     "settings": {
-      "title": "Ajustes para el widget Torrent",
+      "title": "Ajustes del widget Torrent",
       "refreshInterval": {
-        "label": "Intervalo de refresco (en segundos)"
+        "label": "Intervalo de actualización (en segundos)"
       },
       "displayCompletedTorrents": {
         "label": "Mostrar torrents completados"
       },
       "displayStaleTorrents": {
-        "label": "Mostrar torrents estancados"
+        "label": "Mostrar torrents obsoletos"
       },
       "labelFilterIsWhitelist": {
-        "label": "La lista de etiquetas se trata de una lista blanca (en lugar de una lista negra)"
+        "label": "La lista de etiquetas es una lista blanca (en lugar de una lista negra)"
       },
       "labelFilter": {
         "label": "Lista de etiquetas",
-        "description": "Cuando 'incluido en la lista blanca' esté marcado, actuará como una lista blanca. Si no lo está, ésta será una lista negra. No hará nada cuando esté vacía"
+        "description": "Cuando se marca 'está en la lista blanca', actuará como una lista blanca. Si no se marca, esta es una lista negra. No hará nada cuando esté vacío"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Error",
-      "lastUpdated": "Última actualización {{time}} ago"
+      "lastUpdated": "Última actualización hace {{time}}"
     },
     "table": {
       "header": {
@@ -37,11 +37,11 @@
         "progress": "Completado %"
       },
       "item": {
-        "text": "Gestionado por {{appName}}, {{ratio}} ratio"
+        "text": "Gestionado por {{appName}}, proporción {{ratio}}"
       },
       "body": {
-        "nothingFound": "No se han encontrado torrents",
-        "filterHidingItems": "{{count}} entradas ocultas por tus filtros"
+        "nothingFound": "No se encontraron torrents",
+        "filterHidingItems": "{{count}} entradas están ocultas por tus filtros"
       }
     },
     "lineChart": {
@@ -54,12 +54,12 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "¡No se ha encontrado clientes Torrent soportados!",
+        "title": "¡No se encontraron clientes Torrent soportados!",
         "text": "Añadir un cliente Torrent soportado para ver tus descargas actuales"
       },
       "generic": {
-        "title": "Un error inesperado ha ocurrido",
-        "text": "Homarr fue incapaz de comunicarse con tus clientes Torrent. Por favor, comprueba tu configuración"
+        "title": "Ocurrió un error inesperado",
+        "text": "Homarr no pudo comunicarse con tus clientes Torrent. Por favor, compruebe su configuración"
       }
     },
     "loading": {

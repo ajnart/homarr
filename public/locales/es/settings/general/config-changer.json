@@ -1,9 +1,9 @@
 {
   "configSelect": {
-    "label": "Cambiador de configuración",
-    "description": "{{configCount}} configuraciones disponibles",
+    "label": "Seleccionar configuración",
+    "description": "Configuraciones disponibles: {{configCount}}",
     "loadingNew": "Cargando tu configuración...",
-    "pleaseWait": "Por favor, ¡espera hasta que tu nueva configuración esté carga!"
+    "pleaseWait": "¡Por favor, espera hasta que se cargue tu nueva configuración!"
   },
   "modal": {
     "copy": {
@@ -12,7 +12,7 @@
         "configName": {
           "label": "Nombre de la configuración",
           "validation": {
-            "required": "Se requiere nombre de la configuración",
+            "required": "Se requiere el nombre de la configuración",
             "notUnique": "El nombre de la configuración ya está en uso"
           },
           "placeholder": "Nombre de tu nueva configuración"
@@ -29,15 +29,15 @@
           "message": "Configuración copiada como {{configName}}"
         },
         "configNotCopied": {
-          "title": "Imposible copiar la configuración",
+          "title": "No se puede copiar la configuración",
           "message": "Tu configuración no fue copiada como {{configName}}"
         }
       }
     },
     "confirmDeletion": {
-      "title": "Confirmar eliminación de tu configuración",
+      "title": "Confirma la eliminación de tu configuración",
       "warningText": "Estás a punto de eliminar '<b>{{configName}}</b>'",
-      "text": "Por favor, ten en cuenta que la eliminación no es reversible, y tus datos serán perdidos permanentemente. Al presionar el botón, el archivo será eliminado permanentemente del disco. Asegúrate de crear un respaldo adecuado de tu configuración.",
+      "text": "Por favor, Ten en cuenta que la eliminación no es reversible, y tus datos se perderán de forma permanente. Después de hacer clic en este botón, el archivo se eliminará permanentemente de tu disco. Asegúrate de crear una copia de seguridad adecuada de su configuración.",
       "buttons": {
         "confirm": "Si, eliminar '<b>{{configName}}</b>'"
       }
@@ -53,12 +53,12 @@
           "message": "Configuración Eliminada"
         },
         "deleteFailed": {
-          "title": "Error en el borrado de la configuración",
-          "message": "Error en el borrado de la configuración"
+          "title": "Error al eliminar la configuración",
+          "message": "Error al eliminar la configuración"
         },
         "deleteFailedDefaultConfig": {
-          "title": "La configuración por defecto no puede ser eliminada",
-          "message": "La configuración no fue eliminada del sistema"
+          "title": "La configuración predeterminada no se puede eliminar",
+          "message": "La configuración no se eliminó del sistema de archivos"
         }
       }
     },
@@ -67,20 +67,20 @@
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "No es posible cargar la configuración",
-        "message": "No se ha podido cargar tu configuración. Formato JSON no válido."
+        "title": "No se puede cargar la configuración",
+        "message": "No se pudo cargar tu configuración. Formato JSON no válido."
       },
       "loadedSuccessfully": {
-        "title": "Configuración {{configName}} cargada correctamente"
+        "title": "Configuración {{configName}} cargada con éxito"
       }
     },
     "accept": {
-      "title": "Configuración subida",
-      "text": "Arrastra archivos aquí para subir la configuración. Solo se soportan archivos JSON."
+      "title": "Subir configuración",
+      "text": "Arrastra los archivos aquí para cargar una configuración. Solo se admiten archivos JSON."
     },
     "reject": {
       "title": "Subida Arrastar y Soltar rechada",
-      "text": "Este formato der archivo no está soportado. Por favor, sube solo archivos JSON."
+      "text": "Este formato de archivo no es compatible. Por favor, cargue solo archivos JSON."
     }
   }
 }

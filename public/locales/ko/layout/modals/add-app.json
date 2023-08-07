@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "",
 			"description": ""
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

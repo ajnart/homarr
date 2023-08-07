@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Mở trong tab mới",
 			"description": "Mở ứng dụng trong tab mới thay vì tab hiện tại."
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

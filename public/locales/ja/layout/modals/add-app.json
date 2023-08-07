@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "新しいタブで開く",
 			"description": "アプリを現在のタブではなく、新しいタブで開く。"
-		}
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {

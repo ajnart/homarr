@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Intégrer n'importe quel contenu à partir d'Internet. Certains sites Web peuvent restreindre l'accès.",
     "settings": {
-      "title": "",
+      "title": "Paramètres d'iFrame",
       "embedUrl": {
-        "label": ""
+        "label": "Intégrer l'URL"
       },
       "allowFullScreen": {
         "label": "Permettre le plein écran"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Autoriser la transparence"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Autoriser le défilement"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Autoriser le paiement"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Autoriser la lecture automatique"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Autoriser l'utilisation du microphone"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Autoriser l'utilisation de la caméra"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Autoriser la géolocalisation"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "URL invalide",
+        "text": "Assurez-vous que vous avez saisi une adresse valide dans la configuration de votre widget"
       }
     }
   }

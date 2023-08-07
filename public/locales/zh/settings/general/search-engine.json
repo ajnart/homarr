@@ -2,7 +2,7 @@
   "title": "搜索引擎",
   "configurationName": "搜索引擎设置",
   "tips": {
-    "generalTip": "你可以使用多个前缀!在你的查询前加入这些前缀将过滤结果。!s (Web), !t (Torrents), !y (YouTube), 和 !m (Media)。",
+    "generalTip": "您可以使用多个前缀！在您的查询前加入这些前缀以过滤结果：!s (网页), !t (种子), !y (YouTube), 和 !m (媒体)。",
     "placeholderTip": "%s 可以作为查询的占位符。"
   },
   "customEngine": {

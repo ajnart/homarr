@@ -4,6 +4,10 @@
     "description": "Zeigt eine statische Liste von Zeichenfolgen oder Links an",
     "settings": {
       "title": "Lesezeichen-Einstellungen",
+      "name": {
+        "label": "Widget Titel",
+        "info": "Leer lassen, damit der Titel nicht angezeigt wird."
+      },
       "items": {
         "label": "Elemente"
       },

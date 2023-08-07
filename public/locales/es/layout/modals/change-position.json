@@ -1,7 +1,7 @@
 {
 	"xPosition": "Posición eje X",
 	"width": "Ancho",
-	"height": "Altura",
+	"height": "Alto",
 	"yPosition": "Posición eje Y",
 	"zeroOrHigher": "0 o superior",
 	"betweenXandY": "Entre {{min}} y {{max}}"

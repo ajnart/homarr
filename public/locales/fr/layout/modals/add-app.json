@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "Général",
-		"behaviour": "",
+		"behaviour": "Comportement",
 		"network": "Réseau",
 		"appearance": "Apparence",
 		"integration": "Intégration"
@@ -24,7 +24,8 @@
 		"isOpeningNewTab": {
 			"label": "Ouvrir dans un nouvel onglet",
 			"description": "Ouvrez l'application dans un nouvel onglet au lieu de l'onglet actuel."
-		}
+		},
+		"customProtocolWarning": "Utilisation d'un protocole non standard. Ceci peut nécessiter des applications préinstallées et peut introduire des failles de sécurité. Assurez-vous que votre adresse est sécurisée et de confiance."
 	},
 	"network": {
 		"statusChecker": {
@@ -39,13 +40,13 @@
 	"appearance": {
 		"icon": {
 			"label": "Icône de l’app",
-			"description": "",
+			"description": "Commencez à taper pour trouver une icône. Vous pouvez également coller l'URL d'une image pour utiliser une icône personnalisée.",
 			"autocomplete": {
 				"title": "Aucun résultat trouvé",
 				"text": "Essayez d'utiliser un terme de recherche plus spécifique. Si vous ne trouvez pas l'icône souhaitée, collez l'URL de l'image ci-dessus pour obtenir une icône personnalisée"
 			},
 			"noItems": {
-				"title": "",
+				"title": "Chargement d'icônes externes",
 				"text": "Cela peut prendre quelques secondes"
 			}
 		}

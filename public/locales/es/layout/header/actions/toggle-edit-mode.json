@@ -1,11 +1,11 @@
 {
-    "description": "En Modo Edición, puedes ajustar tarjetas y configurar apps. Los cambios no se guardan hasta que salgas del Modo Edición.",
+    "description": "En el modo edición, puede ajustar mosaicos y configurar aplicaciones. Los cambios no se guardan hasta que salga del modo edición.",
     "button": {
-        "disabled": "Abrir Modo Edición",
+        "disabled": "Ingresar a modo edición",
         "enabled": "Salir y Guardar"
     },
     "popover": {
-        "title": "Modo edición activado para el tamaño <1>{{size}}</1>",
-        "text": "Puedes ajustar y configurar tus apps ahora. Los cambios <strong>no son guardados</strong> hasta que salgas del modo edición"
+        "title": "El Modo Edición está habilitado para el tamaño <1>{{size}}</1>",
+        "text": "Puedes ajustar y configurar tus aplicaciones ahora. Los cambios <strong>no se guardan</strong> hasta que salgas del modo edición"
     }
 }

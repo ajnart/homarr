@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "Affiche les graphiques d'une instance externe de Dash. dans Homarr.",
     "settings": {
       "title": "Paramètres du widget Dash",
       "dashName": {
-        "label": ""
+        "label": "Nom du Dash."
       },
       "url": {
         "label": "URL Dash."
@@ -17,65 +17,65 @@
         "label": "Affichage des colonnes"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Hauteur des graphiques"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Graphiques (Ordre)",
         "storage": {
           "label": "Stockage",
           "enabled": {
-            "label": ""
+            "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           },
           "compactView": {
-            "label": ""
+            "label": "Afficher en tant que texte (compact)"
           },
           "multiView": {
-            "label": ""
+            "label": "Montrer comme vue multi-disques"
           }
         },
         "network": {
           "label": "Réseau",
           "enabled": {
-            "label": ""
+            "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           },
           "compactView": {
-            "label": ""
+            "label": "Afficher en tant que texte (compact)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           },
           "multiView": {
-            "label": ""
+            "label": "Afficher en tant que vue multi-cœur"
           }
         },
         "ram": {
           "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "Afficher dans le widget"
           },
           "span": {
-            "label": ""
+            "label": "Portée de la colonne"
           }
         }
       }
@@ -88,7 +88,7 @@
       "noInformation": "Impossible d'acquérir des informations de Dash. - Utilisez-vous la dernière version ?",
       "protocolDowngrade": {
         "title": "Dégradation du protocole détectée",
-        "text": ""
+        "text": "La connexion à votre instance Dash. utilise le protocole HTTP. C'est un risque de sécurité, car HTTP n'est pas crypté et les attaquants pourraient abuser de cette connexion. Assurez-vous que Dash. utilise HTTPS, ou rétrogradez Homarr en HTTP (non recommandé)."
       }
     },
     "graphs": {
