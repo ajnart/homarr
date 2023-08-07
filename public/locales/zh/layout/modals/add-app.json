@@ -26,8 +26,8 @@
 			"description": "在新标签页中打开应用，而不是当前标签页。"
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "应用描述",
+			"description": "输入的文本将在鼠标悬停其上时显示。\n它可用来向用户提供有关应用的详情，留空以隐藏。"
 		},
 		"customProtocolWarning": "使用非标准协议。这可能需要预先安装应用程序，并可能引入安全风险。确保你的地址安全可靠。"
 	},
@@ -55,22 +55,22 @@
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "应用名称状态",
+			"description": "选择您希望标题显示的位置（如果有的话）。",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "仅在磁贴上显示标题",
+				"hover": "仅在提示框上悬停时显示标题",
+				"hidden": "不显示"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "应用名称位置",
+			"description": "应用名称相对于图标的位置。",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "上方",
+				"right": "右侧",
+				"bottom": "下侧",
+				"left": "左侧"
 			}
 		}
 	},
