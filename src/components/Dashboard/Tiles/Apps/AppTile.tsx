@@ -59,7 +59,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
               ta="center"
               weight={700}
               className={cx(classes.appName, 'dashboard-tile-app-title')}
-              lineClamp={2}
+              lineClamp={1}
             >
               {app.name}
             </Text>
