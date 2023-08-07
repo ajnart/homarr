@@ -52,13 +52,14 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           className="dashboard-tile-app"
           direction={app.appearance.positionAppName ?? 'column'}
         >
-          <Box px={10} hidden={["hover", "hidden"].includes(app.appearance.appNameStatus)}>
+          <Box w="100%" hidden={["hover", "hidden"].includes(app.appearance.appNameStatus)}>
             <Text
-              w="max-content"
+              w="100%"
               size="md"
               ta="center"
               weight={700}
               className={cx(classes.appName, 'dashboard-tile-app-title')}
+              lineClamp={2}
             >
               {app.name}
             </Text>
