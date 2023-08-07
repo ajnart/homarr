@@ -26,8 +26,8 @@
 			"description": "Atveriet lietotni jaunā cilnē, nevis pašreizējā cilnē."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Lietotnes Apraksts",
+			"description": "Ievadītais teksts tiks parādīts, kad uz jūsu lietotnes tiks uzvilkts peles kursors.\nIzmantojiet to, lai sniegtu lietotājiem sīkāku informāciju par savu lietotni, vai atstājiet tukšu, lai nekas nebūtu redzams."
 		},
 		"customProtocolWarning": "Tiek izmantots nestandarta protokols. Tam var būt nepieciešamas iepriekš instalētas lietojumprogrammas, un tas var radīt drošības riskus. Pārliecinieties, ka jūsu adrese ir droša un uzticama."
 	},
@@ -55,22 +55,22 @@
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Lietotnes Nosaukuma Statuss",
+			"description": "Izvēlieties, kur vēlaties, lai tiktu parādīts virsraksts, ja vispār to vēlaties parādīt.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Rādīt virsrakstu tikai uz flīzēm",
+				"hover": "Rādīt virsrakstu tikai pēc kursora uzlikšanas uz ekrāna padoma",
+				"hidden": "Vairs nerādīt"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Lietotnes Nosaukuma Pozīcija",
+			"description": "Lietotnes nosaukuma atrašanās vieta attiecībā pret ikonu.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Augšā",
+				"right": "Pa labi",
+				"bottom": "Apakšā",
+				"left": "Pa kreisi"
 			}
 		}
 	},
