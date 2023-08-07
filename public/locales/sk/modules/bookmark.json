@@ -6,7 +6,7 @@
       "title": "Nastavenia záložiek",
       "name": {
         "label": "Názov Widgetu",
-        "info": ""
+        "info": "Nechajte prázdne, aby názov zostal skrytý."
       },
       "items": {
         "label": "Položky"
