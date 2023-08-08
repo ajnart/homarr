@@ -65,7 +65,7 @@
 		},
 		"positionAppName": {
 			"label": "",
-			"description": "Posición del nombre de la app en relación con el icono.",
+			"description": "Posición del nombre de la aplicación en relación con el icono.",
 			"dropdown": {
 				"top": "Superior",
 				"right": "Derecha",
