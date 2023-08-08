@@ -112,7 +112,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     );
   }
 
-  /*if (data.apps.length === 0) {
+  if (data.apps.length === 0) {
     return (
       <Stack>
         <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
@@ -130,37 +130,9 @@ function TorrentTile({ widget }: TorrentTileProps) {
       </Center>
     );
   }
-*/
-  const torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []));
-  //const filteredTorrents = filterTorrents(widget, torrents);
 
-  const filteredTorrents = [
-    {
-      id: '1',
-      name: 'test',
-      connectedPeers: 1,
-      downloadSpeed: 1,
-      connectedSeeds: 1,
-      dateAdded: '2021-09-01T00:00:00.000Z',
-      eta: 1,
-      isCompleted: false,
-      label: 'test',
-      progress: 1,
-      queuePosition: 1,
-      ratio: 1,
-      raw: {},
-      savePath: 'test',
-      state: TorrentState.downloading,
-      totalPeers: 1,
-      totalSeeds: 1,
-      totalSize: 1,
-      uploadSpeed: 1,
-      stateMessage: 'test',
-      totalUploaded: 1,
-      totalDownloaded: 1,
-      totalSelected: 1,
-    },
-  ] satisfies NormalizedTorrent[];
+  const torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []));
+  const filteredTorrents = filterTorrents(widget, torrents);
 
   const difference = new Date().getTime() - dataUpdatedAt;
   const duration = dayjs.duration(difference, 'ms');
