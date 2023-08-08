@@ -5,6 +5,7 @@ import {
   IconArrowUpRight,
   IconCloudRain,
   IconCurrentLocation,
+  IconMapPin,
 } from '@tabler/icons-react';
 import { api } from '~/utils/api';
 
@@ -84,15 +85,20 @@ function WeatherTile({ widget }: WeatherTileProps) {
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <Stack
-      ref={ref}
-      spacing={width<120 ? "0.25rem" : "xs"}
-      justify="space-around"
-      align="center"
       style={{ height: '100%', width: '100%' }}
+      justify="space-around"
+      ref={ref}
+      spacing={0}
+      align="center"
     >
-      <Flex align="center" gap={width<120 ? '0.25rem' : 'xs'} justify={'center'} direction={width < 200 ? 'column' : 'row'}>
-        <WeatherIcon size={width<300 ? 30 : 50} code={weather.current_weather.weathercode} />
-        <Title size={width < 300 ? 'h4' : 'h2'}>
+      <Flex
+        align="center"
+        gap={width < 120 ? '0.25rem' : 'xs'}
+        justify={'center'}
+        direction={width < 200 ? 'column' : 'row'}
+      >
+        <WeatherIcon size={width < 300 ? 30 : 50} code={weather.current_weather.weathercode} />
+        <Title size={'h2'}>
           {getPerferedUnit(
             weather.current_weather.temperature,
             widget.properties.displayInFahrenheit
@@ -116,9 +122,9 @@ function WeatherTile({ widget }: WeatherTileProps) {
       )}
 
       {widget.properties.displayCityName && (
-        <Group noWrap spacing="5px" align="center">
-          <IconCurrentLocation height={15} width={15} />
-          <Text color='dimmed' style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
+        <Group noWrap spacing={5} align="center">
+          <IconMapPin height={15} width={15} />
+          <Text style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
         </Group>
       )}
     </Stack>
