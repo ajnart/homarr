@@ -236,6 +236,6 @@ const useStyles = createStyles(() => ({
     whiteSpace: 'nowrap',
   },
   transparentBackground: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent !important',
   },
 }));
