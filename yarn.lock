@@ -6065,6 +6065,7 @@ __metadata:
     html-entities: ^2.3.3
     i18next: ^22.5.1
     js-file-download: ^0.4.12
+    moment: ^2.29.4
     moment-timezone: ^0.5.43
     next: 13.4.10
     next-i18next: ^13.0.0

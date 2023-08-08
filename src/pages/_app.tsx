@@ -36,6 +36,7 @@ import {
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
 import { ConfigType } from '~/types/config';
+import moment from 'moment-timezone';
 
 function App(
   this: any,
@@ -46,9 +47,11 @@ function App(
     defaultColorScheme: ColorScheme;
     config?: ConfigType;
     configName?: string;
+    locale: string;
   }>
 ) {
   const { Component, pageProps } = props;
+  moment.locale(pageProps.locale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.primary || 'red');
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.secondary || 'orange');
@@ -172,6 +175,7 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
       packageAttributes: getServiceSidePackageAttributes(),
       editModeEnabled: !disableEditMode,
       defaultColorScheme: colorScheme,
+      locale: ctx.locale?? 'en',
     },
   };
 };

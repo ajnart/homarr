@@ -7,9 +7,7 @@ import { api } from '~/utils/api';
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-
-moment.locale();
-const dateLocalLang = moment();
+import 'moment/min/locales';
 
 const definition = defineWidget({
   id: 'date',
@@ -24,14 +22,14 @@ const definition = defineWidget({
       defaultValue: 'dddd, MMMM D',
       data:[
         { value: 'hide' },
-        { value: 'dddd, MMMM D', label: dateLocalLang.format('dddd, MMMM D') },
-        { value: 'dddd, D MMMM', label: dateLocalLang.format('dddd, D MMMM') },
-        { value: 'MMM D', label: dateLocalLang.format('MMM D') },
-        { value: 'D MMM', label: dateLocalLang.format('D MMM') },
-        { value: 'DD/MM/YYYY', label: dateLocalLang.format('DD/MM/YYYY') },
-        { value: 'MM/DD/YYYY', label: dateLocalLang.format('MM/DD/YYYY') },
-        { value: 'DD/MM', label: dateLocalLang.format('DD/MM') },
-        { value: 'MM/DD', label: dateLocalLang.format('MM/DD') },
+        { value: 'dddd, MMMM D', label: moment().format('dddd, MMMM D') },
+        { value: 'dddd, D MMMM', label: moment().format('dddd, D MMMM') },
+        { value: 'MMM D', label: moment().format('MMM D') },
+        { value: 'D MMM', label: moment().format('D MMM') },
+        { value: 'DD/MM/YYYY', label: moment().format('DD/MM/YYYY') },
+        { value: 'MM/DD/YYYY', label: moment().format('MM/DD/YYYY') },
+        { value: 'DD/MM', label: moment().format('DD/MM') },
+        { value: 'MM/DD', label: moment().format('MM/DD') },
       ],
     },
     enableTimezone: {
