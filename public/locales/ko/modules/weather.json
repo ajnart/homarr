@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "화씨로 표시"
       },
+      "displayCityName": {
+        "label": ""
+      },
       "location": {
         "label": "날씨 위치"
       }
