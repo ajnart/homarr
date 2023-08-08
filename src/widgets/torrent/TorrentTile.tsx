@@ -17,6 +17,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
+import { useCardStyles } from '~/components/layout/useCardStyles';
 
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
@@ -70,6 +71,7 @@ interface TorrentTileProps {
 function TorrentTile({ widget }: TorrentTileProps) {
   const { t } = useTranslation('modules/torrents-status');
   const { width, ref } = useElementSize();
+  const { classes } = useCardStyles(true);
 
   const {
     data,
@@ -158,7 +160,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
             ))}
 
             {filteredTorrents.length !== torrents.length && (
-              <tr>
+              <tr className={classes.card}>
                 <td colSpan={width > MIN_WIDTH_MOBILE ? 6 : 3}>
                   <Flex gap="xs" align="center" justify="center">
                     <IconInfoCircle opacity={0.7} size={18} />

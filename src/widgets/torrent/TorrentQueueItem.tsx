@@ -47,7 +47,7 @@ export const BitTorrrentQueueItem = ({ torrent, width, app }: TorrentQueueItemPr
   const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
   const size = torrent.totalSelected;
   return (
-    <tr key={torrent.id}>
+    <tr key={torrent.id} className={classes.transparentBackground}>
       <td>
         <Popover opened={popoverOpened} radius="md" shadow="md" width={350} withinPortal>
           <Popover.Dropdown>
@@ -234,5 +234,8 @@ const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'widt
 const useStyles = createStyles(() => ({
   noTextBreak: {
     whiteSpace: 'nowrap',
+  },
+  transparentBackground: {
+    backgroundColor: 'transparent',
   },
 }));
