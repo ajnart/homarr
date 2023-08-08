@@ -41,7 +41,7 @@ export const ConfigProvider = ({
     setPrimaryColor(currentConfig?.settings.customization.colors.primary || 'red');
     setSecondaryColor(currentConfig?.settings.customization.colors.secondary || 'orange');
     setPrimaryShade(currentConfig?.settings.customization.colors.shade || 6);
-  }, [configName]);
+  }, [currentConfig]);
 
   return (
     <ConfigContext.Provider
