@@ -9,13 +9,13 @@ import { IconSelector } from '../../../../../IconSelector/IconSelector';
 
 interface AppearanceTabProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;
-  disallowAppNameProgagation: () => void;
+  disallowAppNamePropagation: () => void;
   allowAppNamePropagation: boolean;
 }
 
 export const AppearanceTab = ({
   form,
-  disallowAppNameProgagation,
+  disallowAppNamePropagation,
   allowAppNamePropagation,
 }: AppearanceTabProps) => {
   const iconSelectorRef = useRef();
@@ -46,7 +46,7 @@ export const AppearanceTab = ({
             defaultValue={form.values.appearance.iconUrl}
             onChange={(value) => {
               form.setFieldValue('appearance.iconUrl', value);
-              disallowAppNameProgagation();
+              disallowAppNamePropagation();
             }}
             value={form.values.appearance.iconUrl}
             ref={iconSelectorRef}
