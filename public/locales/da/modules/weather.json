@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Vis i Fahrenheit"
       },
+      "displayCityName": {
+        "label": ""
+      },
       "location": {
         "label": "Vejr lokation"
       }
