@@ -137,7 +137,8 @@ const migrateAppConfigs = (config: BackendConfigType) => {
     ...config,
     apps: config.apps.map((app) => ({
       ...app,
-      appearance: { ...app.appearance,
+      appearance: {
+        ...app.appearance,
         appNameStatus: app.appearance.appNameStatus?? 'normal',
         positionAppName: app.appearance.positionAppName?? 'column',
         lineClampAppName: app.appearance.lineClampAppName?? 1,

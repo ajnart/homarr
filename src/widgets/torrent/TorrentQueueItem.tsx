@@ -10,6 +10,7 @@ import {
   Progress,
   Stack,
   Text,
+  createStyles,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure, useElementSize } from '@mantine/hooks';
@@ -24,6 +25,7 @@ import {
   IconUpload,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 
 import { calculateETA } from '../../tools/client/calculateEta';
 import { humanFileSize } from '../../tools/humanFileSize';
@@ -32,12 +34,13 @@ import { AppType } from '../../types/app';
 interface TorrentQueueItemProps {
   torrent: NormalizedTorrent;
   app?: AppType;
+  width: number;
 }
 
-export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) => {
+export const BitTorrrentQueueItem = ({ torrent, width, app }: TorrentQueueItemProps) => {
   const [popoverOpened, { open: openPopover, close: closePopover }] = useDisclosure(false);
   const theme = useMantineTheme();
-  const { width } = useElementSize();
+  const { classes } = useStyles();
   const { t } = useTranslation('modules/torrents-status');
 
   const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
@@ -74,25 +77,33 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
         </Popover>
       </td>
       <td>
-        <Text size="xs">{humanFileSize(size, false)}</Text>
+        <Text className={classes.noTextBreak} size="xs">
+          {humanFileSize(size, false)}
+        </Text>
       </td>
-      {theme.fn.largerThan('xs') && (
+      {width > MIN_WIDTH_MOBILE && (
         <td>
-          <Text size="xs">{downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
+          <Text className={classes.noTextBreak} size="xs">
+            {downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}
+          </Text>
         </td>
       )}
-      {theme.fn.largerThan('xs') && (
+      {width > MIN_WIDTH_MOBILE && (
         <td>
-          <Text size="xs">{uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}</Text>
+          <Text className={classes.noTextBreak} size="xs">
+            {uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}
+          </Text>
         </td>
       )}
-      {theme.fn.largerThan('xs') && (
+      {width > MIN_WIDTH_MOBILE && (
         <td>
-          <Text size="xs">{torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}</Text>
+          <Text className={classes.noTextBreak} size="xs">
+            {torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}
+          </Text>
         </td>
       )}
       <td>
-        <Text>{(torrent.progress * 100).toFixed(1)}%</Text>
+        <Text className={classes.noTextBreak}>{(torrent.progress * 100).toFixed(1)}%</Text>
         <Progress
           radius="lg"
           color={torrent.progress === 1 ? 'green' : torrent.state === 'paused' ? 'yellow' : 'blue'}
@@ -104,7 +115,7 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
   );
 };
 
-const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
+const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'width'>) => {
   const { t } = useTranslation('modules/torrents-status');
   const { colors } = useMantineTheme();
 
@@ -219,3 +230,9 @@ const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
     </Stack>
   );
 };
+
+const useStyles = createStyles(() => ({
+  noTextBreak: {
+    whiteSpace: 'nowrap',
+  },
+}));

@@ -19,30 +19,33 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   const { cx, classes } = useStyles();
   const { colorScheme } = useMantineTheme();
   const tooltipContent = [
-    app.appearance.appNameStatus === "hover" ? app.name : undefined,
-    app.behaviour.tooltipDescription
-  ].filter( e => e ).join( ': ' );
-  const isRow = app.appearance.positionAppName.includes("row");
+    app.appearance.appNameStatus === 'hover' ? app.name : undefined,
+    app.behaviour.tooltipDescription,
+  ]
+    .filter((e) => e)
+    .join(': ');
+
+  const isRow = app.appearance.positionAppName.includes('row');
 
   function Inner() {
     return (
       <Tooltip.Floating
         label={tooltipContent}
         position="right-start"
-        c={ colorScheme === 'light' ? "black" : "dark.0" }
-        color={ colorScheme === 'light' ? "gray.2" : "dark.4" }
+        c={colorScheme === 'light' ? 'black' : 'dark.0'}
+        color={colorScheme === 'light' ? 'gray.2' : 'dark.4'}
         multiline
         disabled={!tooltipContent}
-        styles={{ tooltip: { maxWidth: 300, }, }}
+        styles={{ tooltip: { maxWidth: 300 } }}
       >
         <Box
           className={`${classes.base} ${cx(classes.appContent, 'dashboard-tile-app')}`}
           h="100%"
           sx={{
-            flexFlow:app.appearance.positionAppName ?? 'column',
+            flexFlow: app.appearance.positionAppName ?? 'column',
           }}
         >
-        {app.appearance.appNameStatus === "normal" &&
+        {app.appearance.appNameStatus === 'normal' && (
           <Text
             className={cx(classes.appName, 'dashboard-tile-app-title')}
             fw={700}
@@ -55,13 +58,13 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           >
             {app.name}
           </Text>
-        }
+        )}
           <motion.img
             className={cx(classes.appImage, 'dashboard-tile-app-image')}
             src={app.appearance.iconUrl}
             alt={app.name}
-            whileHover={{ scale: 1, }}
-            initial={{scale: 0.9}}
+            whileHover={{ scale: 1 }}
+            initial={{ scale: 0.9 }}
             style={{
               width: isRow ? 0 : undefined,
             }}
@@ -73,7 +76,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 
   return (
     <HomarrCardWrapper className={className} p={10}>
-      <AppMenu app={app}/>
+      <AppMenu app={app} />
       {!app.url || isEditMode ? (
         <UnstyledButton
           className={`${classes.button} ${classes.base}`}
@@ -98,12 +101,12 @@ export const AppTile = ({ className, app }: AppTileProps) => {
 };
 
 const useStyles = createStyles((theme, _params, getRef) => ({
-  base:{
+  base: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  appContent:{
+  appContent: {
     gap: 0,
     overflow: 'visible',
     flexGrow: 5,

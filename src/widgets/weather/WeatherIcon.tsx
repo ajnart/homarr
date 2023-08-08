@@ -11,9 +11,11 @@ import {
   IconSun,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { useElementSize } from '@mantine/hooks';
 
 interface WeatherIconProps {
   code: number;
+  size?: number;
 }
 
 /**
@@ -21,16 +23,17 @@ interface WeatherIconProps {
  * @param code weather code from api
  * @returns weather tile component
  */
-export const WeatherIcon = ({ code }: WeatherIconProps) => {
+export const WeatherIcon = ({ code, size=50 }: WeatherIconProps) => {
   const { t } = useTranslation('modules/weather');
-
+  const { width, ref } = useElementSize();
+  
   const { icon: Icon, name } =
     weatherDefinitions.find((wd) => wd.codes.includes(code)) ?? unknownWeather;
 
   return (
     <Tooltip withinPortal withArrow label={t(`card.weatherDescriptions.${name}`)}>
       <Box>
-        <Icon style={{ float: 'left' }} size={50} />
+        <Icon style={{ float: 'left' }} size={size} />
       </Box>
     </Tooltip>
   );
