@@ -10,54 +10,73 @@ import { AppType } from '~/types/app';
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const appRouter = createTRPCRouter({
-  ping: publicProcedure.input(z.object({
-    id: z.string(),
-    configName: z.string()
-  })).query(async ({ input }) => {
-    const agent = new https.Agent({ rejectUnauthorized: false });
-    const config = getConfig(input.configName);
-    const app = config.apps.find((app) => app.id === input.id);
+  pingAll: publicProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+      })
+    )
+    .query(async ({ input }) => {
+      const agent = new https.Agent({ rejectUnauthorized: false });
+      const config = getConfig(input.configName);
+      const apps = config.apps.filter((app) => app.network.enabledStatusChecker);
 
-    if (!app?.url) {
-      Consola.error(`App ${input} not found`);
-      throw new TRPCError({
-        code: 'NOT_FOUND',
-        cause: input,
-        message: `App ${input} was not found`,
-      });
-    }
-    const res = await axios
-      .get(app.url, { httpsAgent: agent, timeout: 2000 })
-      .then((response) => ({
-        status: response.status,
-        statusText: response.statusText,
-        state: isStatusOk(app as AppType, response.status) ? 'online' : 'offline'
-      }))
-      .catch((error: AxiosError) => {
-        if (error.response) {
-          return {
-            state: isStatusOk(app as AppType, error.response.status) ? 'online' : 'offline',
-            status: error.response.status,
-            statusText: error.response.statusText,
-          };
+      const results = await Promise.allSettled(
+        apps.map(async (app) => {
+          return await axios
+            .get(app.url, { httpsAgent: agent, timeout: 2000 })
+            .then(
+              (response) =>
+                ({
+                  appId: app.id,
+                  status: response.status,
+                  statusText: response.statusText,
+                  state: isStatusOk(app as AppType, response.status) ? 'online' : 'offline',
+                }) satisfies PingResult
+            )
+            .catch((error: AxiosError) => {
+              if (error.response) {
+                return {
+                  appId: app.id,
+                  state: isStatusOk(app as AppType, error.response.status) ? 'online' : 'offline',
+                  status: error.response.status,
+                  statusText: error.response.statusText,
+                } satisfies PingResult;
+              }
+
+              if (error.code === 'ECONNABORTED') {
+                Consola.error(`Ping timed out for app with id : ${app.id} (url: ${app.url})`);
+                return {
+                  appId: app.id,
+                  state: 'error',
+                  status: 0,
+                  statusText: 'Ping timed out',
+                } satisfies PingResult;
+              }
+
+              Consola.error(`Unexpected response: ${error.message}`);
+              return {
+                appId: app.id,
+                state: 'error',
+                status: 0,
+                statusText: error.message,
+              } satisfies PingResult;
+            });
+        })
+      );
+
+      return results.map((result) => {
+        if (result.status === 'rejected') {
+          return result.reason;
         }
-
-        if (error.code === 'ECONNABORTED') {
-          Consola.error(`Ping timed out for app with id : ${input} (url: ${app.url})`);
-          throw new TRPCError({
-            code: 'TIMEOUT',
-            cause: input,
-            message: `Ping timed out`,
-          });
-        }
-
-        Consola.error(`Unexpected response: ${error.message}`);
-        throw new TRPCError({
-          code: 'UNPROCESSABLE_CONTENT',
-          cause: input,
-          message: `Unexpected response: ${error.message}`,
-        });
-      });
-    return res;
-  }),
+        return result.value;
+      }) as PingResult[];
+    }),
 });
+
+type PingResult = {
+  appId: string;
+  status: number;
+  statusText: string;
+  state: 'online' | 'offline' | 'error';
+};

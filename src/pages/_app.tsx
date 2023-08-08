@@ -96,10 +96,6 @@ function App(
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
-      <PersistQueryClientProvider
-        client={queryClient}
-        persistOptions={{ persister: asyncStoragePersister }}
-      >
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
           <ColorTheme.Provider value={colorTheme}>
             <MantineProvider
@@ -146,7 +142,6 @@ function App(
           </ColorTheme.Provider>
         </ColorSchemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
-      </PersistQueryClientProvider>
     </>
   );
 }

@@ -3,6 +3,7 @@ import { IconCheck, IconLoader, IconX } from '@tabler/icons-react';
 import Consola from 'consola';
 import { TargetAndTransition, Transition, motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 import { RouterOutputs, api } from '~/utils/api';
 
 import { useConfigContext } from '../../../../config/provider';
@@ -15,17 +16,16 @@ interface AppPingProps {
 export const AppPing = ({ app }: AppPingProps) => {
   const { config } = useConfigContext();
 
-  const { data, isFetching, isError, error, isActive } = usePing(app);
-  const tooltipLabel = useTooltipLabel({isFetching, isError, data, errorMessage: error?.message})
-  const isOnline = isError ? false : data?.state === 'online';
-  const pulse = usePingPulse({isOnline});
+  const { item, isFetching, isActive } = usePing(app);
+  const tooltipLabel = useTooltipLabel({ isFetching, item });
+  const isOnline = item?.state === 'online';
+  const pulse = usePingPulse({ isOnline });
 
   if (!isActive) return null;
 
-
   const replaceDotWithIcon =
-  config?.settings.customization.accessibility?.replacePingDotsWithIcons ?? false;
-  
+    config?.settings.customization.accessibility?.replacePingDotsWithIcons ?? false;
+
   return (
     <motion.div
       style={{
@@ -37,11 +37,7 @@ export const AppPing = ({ app }: AppPingProps) => {
       animate={pulse.animate}
       transition={pulse.transition}
     >
-      <Tooltip
-        withinPortal
-        radius="lg"
-        label={tooltipLabel}
-      >
+      <Tooltip withinPortal radius="lg" label={tooltipLabel}>
         {replaceDotWithIcon ? (
           <Box>
             <AccessibleIndicatorPing isFetching={isFetching} isOnline={isOnline} />
@@ -61,12 +57,9 @@ export const AppPing = ({ app }: AppPingProps) => {
 type AccessibleIndicatorPingProps = {
   isOnline: boolean;
   isFetching: boolean;
-}
+};
 
-const AccessibleIndicatorPing = ({
-  isFetching,
-  isOnline,
-}: AccessibleIndicatorPingProps) => {
+const AccessibleIndicatorPing = ({ isFetching, isOnline }: AccessibleIndicatorPingProps) => {
   if (isOnline) {
     return <IconCheck color="green" />;
   }
@@ -87,57 +80,43 @@ export const isStatusOk = (app: AppType, status: number) => {
 
 type TooltipLabelProps = {
   isFetching: boolean;
-  isError: boolean;
-  data: RouterOutputs['app']['ping'] | undefined;
-  errorMessage: string | undefined;
-}
+  item: RouterOutputs['app']['pingAll'][number] | undefined;
+};
 
-const useTooltipLabel = ({isFetching, isError, data, errorMessage}: TooltipLabelProps) => {
+const useTooltipLabel = ({ isFetching, item }: TooltipLabelProps) => {
   const { t } = useTranslation('modules/ping');
 
   if (isFetching) return t('states.loading');
-  if (isError) return  errorMessage;
-  if (data?.state === 'online') return t('states.online', { response: data?.status ?? 'N/A' });
-  return `${data?.statusText}: ${data?.status} (denied)`;
-}
+  if (item?.state === 'error') return item.statusText;
+  if (item?.state === 'online') return t('states.online', { response: item?.status ?? 'N/A' });
+  return `${item?.statusText}: ${item?.status} (denied)`;
+};
 
 const usePing = (app: AppType) => {
-  const { config, name } = useConfigContext();
-  const isActive = (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
-  false;
+  const { config } = useConfigContext();
+  const isActive =
+    (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
+    false;
+  const { isFetching, data } = usePingAllQuery();
 
-  const queryResult = api.app.ping.useQuery({
-    id: app.id,
-    configName: name ?? ''
-  }, {
-    retry: false,
-    enabled: isActive,
-    select: (data) => {
-      const isOk = isStatusOk(app, data.status);
-      if (isOk)
-        Consola.info(`Ping of app "${app.name}" (${app.url}) returned ${data.status} (Accepted)`);
-      else
-        Consola.warn(`Ping of app "${app.name}" (${app.url}) returned ${data.status} (Refused)`);
-      return {
-        status: data.status,
-        state: isOk ? ('online' as const) : ('down' as const),
-        statusText: data.statusText,
-      };
-    },
-  });
+  return useMemo(() => {
+    if (!isActive) return { item: undefined, isFetching: false, isActive };
 
-  return {
-    ...queryResult,
-    isActive
-  }
-}
+    const item = data?.find((a) => a.appId === app.id);
+    return {
+      isFetching,
+      item,
+      isActive,
+    };
+  }, [isActive, data, isFetching]);
+};
 
 type PingPulse = {
   animate?: TargetAndTransition;
   transition?: Transition;
-}
+};
 
-const usePingPulse = ({isOnline}: {isOnline: boolean}): PingPulse => {
+const usePingPulse = ({ isOnline }: { isOnline: boolean }): PingPulse => {
   const { config } = useConfigContext();
   const disablePulse = config?.settings.customization.accessibility?.disablePingPulse ?? false;
 
@@ -147,12 +126,38 @@ const usePingPulse = ({isOnline}: {isOnline: boolean}): PingPulse => {
 
   return {
     animate: {
-      scale: isOnline ? [1, 0.7, 1] : 1
+      scale: isOnline ? [1, 0.7, 1] : 1,
     },
     transition: {
       repeat: Infinity,
-        duration: 2.5,
-        ease: 'easeInOut',
+      duration: 2.5,
+      ease: 'easeInOut',
+    },
+  };
+};
+
+const usePingAllQuery = () => {
+  const { name } = useConfigContext();
+  return api.app.pingAll.useQuery(
+    {
+      configName: name ?? '',
+    },
+    {
+      retry: false,
+      select: (data) => {
+        const errorCount = data.filter((app) => app.state === 'error').length;
+        const offlineCount = data.filter((app) => app.state === 'offline').length;
+        const onlineCount = data.filter((app) => app.state === 'online').length;
+
+        Consola.info(
+          'Ping of all apps returned:\n' +
+            `Online: ${onlineCount}\n` +
+            `Offline: ${offlineCount}\n` +
+            `Error: ${errorCount}\n`
+        );
+
+        return data;
+      },
     }
-  }
-}
+  );
+};
