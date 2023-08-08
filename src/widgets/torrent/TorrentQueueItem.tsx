@@ -25,6 +25,7 @@ import {
   IconUpload,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 
 import { calculateETA } from '../../tools/client/calculateEta';
 import { humanFileSize } from '../../tools/humanFileSize';
@@ -33,12 +34,12 @@ import { AppType } from '../../types/app';
 interface TorrentQueueItemProps {
   torrent: NormalizedTorrent;
   app?: AppType;
+  width: number;
 }
 
-export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) => {
+export const BitTorrrentQueueItem = ({ torrent, width, app }: TorrentQueueItemProps) => {
   const [popoverOpened, { open: openPopover, close: closePopover }] = useDisclosure(false);
   const theme = useMantineTheme();
-  const { width } = useElementSize();
   const { classes } = useStyles();
   const { t } = useTranslation('modules/torrents-status');
 
@@ -80,21 +81,21 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
           {humanFileSize(size, false)}
         </Text>
       </td>
-      {theme.fn.largerThan('xs') && (
+      {width > MIN_WIDTH_MOBILE && (
         <td>
           <Text className={classes.noTextBreak} size="xs">
             {downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}
           </Text>
         </td>
       )}
-      {theme.fn.largerThan('xs') && (
+      {width > MIN_WIDTH_MOBILE && (
         <td>
           <Text className={classes.noTextBreak} size="xs">
             {uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}
           </Text>
         </td>
       )}
-      {theme.fn.largerThan('xs') && (
+      {width > MIN_WIDTH_MOBILE && (
         <td>
           <Text className={classes.noTextBreak} size="xs">
             {torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}
@@ -114,7 +115,7 @@ export const BitTorrrentQueueItem = ({ torrent, app }: TorrentQueueItemProps) =>
   );
 };
 
-const TorrentQueuePopover = ({ torrent, app }: TorrentQueueItemProps) => {
+const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'width'>) => {
   const { t } = useTranslation('modules/torrents-status');
   const { colors } = useMantineTheme();
 
