@@ -49,3 +49,5 @@ export const dashboardNamespaces = [
 ];
 
 export const loginNamespaces = ['authentication/login'];
+
+export const pageNotFoundNamespaces = ['layout/errors/not-found'];
