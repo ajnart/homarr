@@ -2,7 +2,6 @@ import { Affix, Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useRef, RefObject } from 'react';
 
 import { AppType } from '../../../../types/app';
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -10,7 +9,6 @@ import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
 import { AppMenu } from './AppMenu';
 import { AppPing } from './AppPing';
-import { InfoCard } from '~/components/InfoCard/InfoCard';
 
 interface AppTileProps extends BaseTileProps {
   app: AppType;
@@ -24,8 +22,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
     app.appearance.appNameStatus === "hover" ? app.name : undefined,
     app.behaviour.tooltipDescription
   ].filter( e => e ).join( ': ' );
-
-  const tile = useRef<HTMLDivElement>(null);
+  const isRow = app.appearance.positionAppName.includes("row");
 
   function Inner() {
     return (
@@ -47,21 +44,28 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         >
         {app.appearance.appNameStatus === "normal" &&
           <Text
-            className={`${cx(classes.appName, 'dashboard-tile-app-title')}`}
+            className={cx(classes.appName, 'dashboard-tile-app-title')}
             fw={700}
             size="md"
             ta="center"
             mih="auto"
-            lineClamp={app.appearance.positionAppName.includes("row") ? 2 : 1}
+            sx={{
+              flex: isRow ? '1' : undefined,
+            }}
+            lineClamp={isRow ? 2 : 1}
           >
             {app.name}
           </Text>
         }
           <motion.img
-            className={`${cx(classes.appImage, 'dashboard-tile-app-image')}`}
+            className={cx(classes.appImage, 'dashboard-tile-app-image')}
             src={app.appearance.iconUrl}
             alt={app.name}
-            whileHover={{ scale: 1.2, }}
+            whileHover={{ scale: 1, }}
+            initial={{scale: 0.9}}
+            style={{
+              width: isRow ? 0 : undefined,
+            }}
           />
         </Box>
       </Tooltip.Floating>
@@ -101,7 +105,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     justifyContent: 'center',
   },
   appContent:{
-    gap: 10,
+    gap: 0,
     overflow: 'visible',
     flexGrow: 5,
   },
@@ -110,10 +114,9 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     overflow: 'unset',
   },
   appImage: {
+    flex: '1',
     objectFit: 'contain',
-    flex: '1 1 auto',
     overflowY: 'auto',
-    height:0,
   },
   button: {
     height: '100%',
