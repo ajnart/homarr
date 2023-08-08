@@ -1,4 +1,4 @@
-import { Flex, Select, Stack, Switch, Tabs } from '@mantine/core';
+import { Flex, NumberInput, Select, Stack, Switch, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
@@ -66,26 +66,41 @@ export const AppearanceTab = ({
           }}
         />
         {form.values.appearance.appNameStatus === 'normal' && (
-          <Select
-            label={t('appearance.positionAppName.label')}
-            description={t('appearance.positionAppName.description')}
-            data={[
-              { value: 'column', label: t('appearance.positionAppName.dropdown.top') as string },
-              {
-                value: 'row-reverse',
-                label: t('appearance.positionAppName.dropdown.right') as string,
-              },
-              {
-                value: 'column-reverse',
-                label: t('appearance.positionAppName.dropdown.bottom') as string,
-              },
-              { value: 'row', label: t('appearance.positionAppName.dropdown.left') as string },
-            ]}
-            {...form.getInputProps('appearance.positionAppName')}
-            onChange={(value) => {
-              form.setFieldValue('appearance.positionAppName', value);
-            }}
-          />
+          <>
+            <Select
+              label={t('appearance.positionAppName.label')}
+              description={t('appearance.positionAppName.description')}
+              data={[
+                {
+                  value: 'column',
+                  label: t('appearance.positionAppName.dropdown.top') as string },
+                {
+                  value: 'row-reverse',
+                  label: t('appearance.positionAppName.dropdown.right') as string,
+                },
+                {
+                  value: 'column-reverse',
+                  label: t('appearance.positionAppName.dropdown.bottom') as string,
+                },
+                {
+                  value: 'row',
+                  label: t('appearance.positionAppName.dropdown.left') as string },
+              ]}
+              {...form.getInputProps('appearance.positionAppName')}
+              onChange={(value) => {
+                form.setFieldValue('appearance.positionAppName', value);
+              }}
+            />
+            <NumberInput
+              label={t('appearance.lineClampAppName.label')}
+              description={t('appearance.lineClampAppName.description')}
+              min={0}
+              {...form.getInputProps('appearance.lineClampAppName')}
+              onChange={(value) => {
+                form.setFieldValue('appearance.lineClampAppName', value);
+              }}
+            />
+          </>
         )}
       </Stack>
     </Tabs.Panel>

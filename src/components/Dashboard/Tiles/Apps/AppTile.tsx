@@ -48,11 +48,10 @@ export const AppTile = ({ className, app }: AppTileProps) => {
             fw={700}
             size="md"
             ta="center"
-            mih="auto"
             sx={{
               flex: isRow ? '1' : undefined,
             }}
-            lineClamp={isRow ? 2 : 1}
+            lineClamp={app.appearance.lineClampAppName}
           >
             {app.name}
           </Text>
@@ -111,7 +110,6 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   appName: {
     wordBreak: 'break-word',
-    overflow: 'unset',
   },
   appImage: {
     flex: '1',
