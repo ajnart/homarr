@@ -8,7 +8,7 @@
         "label": "Vis i Fahrenheit"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Vis bynavn"
       },
       "location": {
         "label": "Vejr lokation"
