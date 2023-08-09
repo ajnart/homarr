@@ -8,7 +8,7 @@
         "label": "Mostra in Fahrenheit"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Visualizza nome città"
       },
       "location": {
         "label": "Località meteo"
