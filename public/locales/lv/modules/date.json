@@ -6,6 +6,27 @@
       "title": "Datuma un Laika logrīka iestatījumi",
       "display24HourFormat": {
         "label": "Rādīt pilnu laiku (24 stundu)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
