@@ -1,6 +1,7 @@
 import { Flex, Text, Title } from '@mantine/core';
 import { IconClock } from '@tabler/icons-react';
 import moment from 'moment-timezone';
+import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { api } from '~/utils/api';
 
@@ -96,10 +97,12 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
   const { data: timezone } = api.timezone.at.useQuery(location!, {
     enabled: location !== undefined,
   });
+  const { locale } = useRouter();
   const [date, setDate] = useState(getNewDate(timezone));
   const setSafeInterval = useSetSafeInterval();
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change
   useEffect(() => {
+    moment.locale(locale);
     setDate(getNewDate(timezone));
     timeoutRef.current = setTimeout(
       () => {
@@ -114,7 +117,7 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
     );
 
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
-  }, [timezone]);
+  }, [timezone, locale]);
 
   return date;
 };

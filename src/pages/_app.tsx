@@ -51,6 +51,7 @@ function App(
   }>
 ) {
   const { Component, pageProps } = props;
+  // TODO: make mapping from our locales to moment locales
   require('moment/locale/' + pageProps.locale);
   moment.locale(pageProps.locale);
 
