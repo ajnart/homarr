@@ -12,6 +12,7 @@ import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
 import { overseerrRouter } from './routers/overseerr';
 import { rssRouter } from './routers/rss';
+import { timezoneRouter } from './routers/timezone';
 import { usenetRouter } from './routers/usenet/router';
 import { weatherRouter } from './routers/weather';
 
@@ -22,18 +23,19 @@ import { weatherRouter } from './routers/weather';
  */
 export const rootRouter = createTRPCRouter({
   app: appRouter,
-  rss: rssRouter,
+  calendar: calendarRouter,
   config: configRouter,
-  docker: dockerRouter,
-  icon: iconRouter,
   dashDot: dashDotRouter,
   dnsHole: dnsHoleRouter,
+  docker: dockerRouter,
   download: downloadRouter,
+  icon: iconRouter,
   mediaRequest: mediaRequestsRouter,
   mediaServer: mediaServerRouter,
   overseerr: overseerrRouter,
+  rss: rssRouter,
+  timezone: timezoneRouter,
   usenet: usenetRouter,
-  calendar: calendarRouter,
   weather: weatherRouter,
 });
 
