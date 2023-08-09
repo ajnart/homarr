@@ -67,7 +67,6 @@ function App(
   };
 
   useEffect(() => {
-    console.log('running page props stuff');
     setPrimaryColor(props.pageProps.primaryColor ?? 'red');
     setSecondaryColor(props.pageProps.secondaryColor ?? 'orange');
     setPrimaryShade(props.pageProps.primaryShade ?? 6);
