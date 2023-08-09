@@ -360,54 +360,6 @@
           }
         }
       }
-    },
-    {
-      "id": "135b7adf-0616-481f-991e-a9035d66b924",
-      "type": "torrents-status",
-      "properties": {
-        "displayCompletedTorrents": true,
-        "displayStaleTorrents": true,
-        "labelFilterIsWhitelist": true,
-        "labelFilter": []
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        }
-      }
     }
   ],
   "settings": {
