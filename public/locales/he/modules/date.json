@@ -6,6 +6,27 @@
       "title": "הגדרות עבור ווידג'ט תאריך ושעה",
       "display24HourFormat": {
         "label": "הצגת זמן בפורמט 24 שעות"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
