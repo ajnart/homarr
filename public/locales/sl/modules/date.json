@@ -6,6 +6,27 @@
       "title": "Nastavitve za gradnik Datum in čas",
       "display24HourFormat": {
         "label": "Prikaz polnega časa (24-urni)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
