@@ -1,4 +1,5 @@
-import { Flex, Text, Title } from '@mantine/core';
+import { Stack, Text, createStyles } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
 import moment from 'moment-timezone';
 import { useRouter } from 'next/router';
@@ -72,22 +73,56 @@ function DateTile({ widget }: DateTileProps) {
     widget.properties.enableTimezone ? widget.properties.timezoneLocation : undefined
   );
   const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
+  const { ref, width } = useElementSize();
+  const { cx, classes } = useStyles();
 
   return (
-    <Flex display="flex" justify="space-around" align="center" h="100%" direction="column">
+    <Stack ref={ref} className={cx(classes.wrapper, 'dashboard-tile-clock-wrapper')}>
       {widget.properties.enableTimezone && widget.properties.titleState !== 'none' && (
-        <Text size="md" style={{ whiteSpace: 'nowrap' }}>
+        <Text
+          size={width < 150 ? 'sm' : 'lg'}
+          className={cx(classes.extras, 'dashboard-tile-clock-city')}
+        >
           {widget.properties.timezoneLocation.name}
           {widget.properties.titleState === 'both' && moment(date).format(' (z)')}
         </Text>
       )}
-      <Title>{moment(date).format(formatString)}</Title>
+      <Text className={cx(classes.clock, 'dashboard-tile-clock-hour')}>
+        {moment(date).format(formatString)}
+      </Text>
       {!widget.properties.dateFormat.includes('hide') && (
-        <Text size="lg">{moment(date).format(widget.properties.dateFormat)}</Text>
+        <Text
+          size={width < 150 ? 'sm' : 'lg'}
+          pt="0.2rem"
+          className={cx(classes.extras, 'dashboard-tile-clock-date')}
+        >
+          {moment(date).format(widget.properties.dateFormat)}
+        </Text>
       )}
-    </Flex>
+    </Stack>
   );
 }
+
+const useStyles = createStyles(()=>({
+  wrapper:{
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    height: '100%',
+    gap: 0,
+  },
+  clock:{
+    lineHeight: '1',
+    whiteSpace: 'nowrap',
+    fontWeight: 700,
+    fontSize: '2.125rem',
+  },
+  extras:{
+    lineHeight: '1',
+    whiteSpace: 'nowrap',
+  }
+}))
 
 /**
  * State which updates when the minute is changing
