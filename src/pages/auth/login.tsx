@@ -25,10 +25,10 @@ import { signInSchema } from '~/validations/user';
 
 export default function LoginPage() {
   const { t } = useTranslation('authentication/login');
-  const queryParams = useRouter().query as { error?: 'CredentialsSignin' | (string & {}) };
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const form = useForm<z.infer<typeof signInSchema>>({
     validateInputOnChange: true,
@@ -38,6 +38,7 @@ export default function LoginPage() {
 
   const handleSubmit = (values: z.infer<typeof signInSchema>) => {
     setIsLoading(true);
+    setIsError(false);
     signIn('credentials', {
       redirect: false,
       name: values.name,
@@ -46,6 +47,7 @@ export default function LoginPage() {
     }).then((response) => {
       if (!response?.ok) {
         setIsLoading(false);
+        setIsError(true);
         return;
       }
       router.push('/manage');
@@ -70,6 +72,12 @@ export default function LoginPage() {
             {t('text')}
           </Text>
 
+          {isError && (
+            <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
+              {t('alert')}
+            </Alert>
+          )}
+
           <form onSubmit={form.onSubmit(handleSubmit)}>
             <Stack>
               <TextInput
@@ -89,12 +97,6 @@ export default function LoginPage() {
               <Button fullWidth type="submit" loading={isLoading}>
                 {t('form.buttons.submit')}
               </Button>
-
-              {queryParams.error === 'CredentialsSignin' && (
-                <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
-                  {t('alert')}
-                </Alert>
-              )}
             </Stack>
           </form>
         </Card>
