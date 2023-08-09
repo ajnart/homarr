@@ -8,24 +8,24 @@
         "label": "Visa heltid (24-timmars)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Datumformat",
         "data": {
-          "hide": ""
+          "hide": "Dölj datum"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Visa en anpassad tidszon"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Plats för tidszon"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Stadens namn",
+        "info": "Om du aktiverar alternativet Tidszon kan stadens namn och tidszonskoden visas.<br/>Du kan också visa enbart staden eller ingen stad alls.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Stad och tidszon",
+          "city": "Endast stad",
+          "none": "Ingen"
         }
       }
     }
