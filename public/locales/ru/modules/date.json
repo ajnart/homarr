@@ -6,6 +6,27 @@
       "title": "Настройки для виджета даты и времени",
       "display24HourFormat": {
         "label": "Отображать в 24-часовом формате"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
