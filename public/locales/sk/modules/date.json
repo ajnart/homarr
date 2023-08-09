@@ -6,6 +6,27 @@
       "title": "Nastavenia miniaplikácie Dátum a čas",
       "display24HourFormat": {
         "label": "Zobraziť celý čas (24 hodín)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
