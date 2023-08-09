@@ -1,6 +1,8 @@
 import {
+  Anchor,
   Box,
   Center,
+  Divider,
   Flex,
   Group,
   Header,
@@ -32,7 +34,7 @@ export const MainHeader = ({
 }: MainHeaderProps) => {
   const { breakpoints } = useMantineTheme();
   const isSmallerThanMd = useMediaQuery(`(max-width: ${breakpoints.sm})`);
-  const experimentalHeaderNoteHeight = isSmallerThanMd ? 50 : 30;
+  const experimentalHeaderNoteHeight = isSmallerThanMd ? 60 : 30;
   const headerBaseHeight = isSmallerThanMd ? 60 + 46 : 60;
   const headerHeight = showExperimental
     ? headerBaseHeight + experimentalHeaderNoteHeight
@@ -69,7 +71,7 @@ export const MainHeader = ({
 };
 
 type ExperimentalHeaderNoteProps = {
-  height?: 30 | 50;
+  height?: 30 | 60;
   visible?: boolean;
 };
 const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHeaderNoteProps) => {
@@ -77,13 +79,28 @@ const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHe
   if (!visible) return null;
 
   return (
-    <Box bg="red" h={height} p={3} px={6}>
-      <Flex h="100%" align="center" columnGap={7}>
-        <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
-        <Text color="white" lineClamp={height === 30 ? 1 : 2}>
-          {t('experimentalNote.label')}
-        </Text>
-      </Flex>
+    <Box bg="red" h={height} p={3} px={6} style={{ overflow: 'hidden' }}>
+      <Group position="apart" noWrap>
+        <Flex h="100%" align="center" columnGap={7}>
+          <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
+          <Text color="white" lineClamp={height === 30 ? 1 : 2}>
+            {t('experimentalNote.label')}
+          </Text>
+        </Flex>
+        <Group noWrap>
+          <Anchor
+            target="_blank"
+            href="https://github.com/ajnart/homarr/issues/new?assignees=&labels=%F0%9F%90%9B+Bug&projects=&template=bug.yml&title=[Authentication%20beta]:%20%3Ctitle%3E"
+            color="gray.4"
+          >
+            Create issue
+          </Anchor>
+          <Divider orientation="vertical" my={5} color="white" opacity={0.4} />
+          <Anchor target="_blank" href="https://discord.com/invite/aCsmEV5RgA" color="gray.4">
+            Discord
+          </Anchor>
+        </Group>
+      </Group>
     </Box>
   );
 };
