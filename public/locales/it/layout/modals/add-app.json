@@ -26,8 +26,8 @@
 			"description": "Apri l'app in una nuova scheda invece di quella attuale."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Descrizione applicazione",
+			"description": "Il testo che inserisci apparirà quando passi il mouse sull'app.\nUsalo per dare agli utenti più dettagli sulla tua app o lascia vuoto per non avere nulla."
 		},
 		"customProtocolWarning": "Si sta utilizzando un protocollo non standard. Questo potrebbe richiedere applicazioni preinstallate e introdurre rischi per la sicurezza. Assicurarsi che il vostro indirizzo sia sicuro e affidabile."
 	},
@@ -55,22 +55,22 @@
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Stato del nome dell'app",
+			"description": "Scegli dove vuoi che il titolo si mostri, sempre che tu lo voglia.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Mostra il titolo solo sul tile",
+				"hover": "Mostra il titolo solo al passaggio del mouse sul tooltip",
+				"hidden": "Non visualizzare per niente"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Posizione Nome App",
+			"description": "Posizione del nome dell'app rispetto all'icona.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Sopra",
+				"right": "Destra",
+				"bottom": "Sotto",
+				"left": "Sinistra"
 			}
 		}
 	},
