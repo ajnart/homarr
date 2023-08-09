@@ -122,6 +122,7 @@ type Icon = (props: TablerIconsProps) => JSX.Element;
 type NavigationLinkHref = {
   icon: Icon;
   href: string;
+  target?: '_self' | '_blank';
   onlyAdmin?: boolean;
 };
 
@@ -182,7 +183,7 @@ const CustomNavigationLink = forwardRef<
         const matchesActive = router.pathname.endsWith(item.href);
 
         if (item.href.startsWith('http')) {
-          return <NavLink {...commonItemProps} active={matchesActive} component="a" />;
+          return <NavLink {...commonItemProps} active={matchesActive} target={item.target} component="a" />;
         }
 
         return <NavLink {...commonItemProps} active={matchesActive} component={Link} />;
@@ -228,18 +229,22 @@ const navigationLinks: NavigationLinks = {
       documentation: {
         icon: IconBook2,
         href: 'https://homarr.dev/docs/about',
+        target: '_blank'
       },
       report: {
         icon: IconBrandGithub,
         href: 'https://github.com/ajnart/homarr/issues/new/choose',
+        target: '_blank'
       },
       discord: {
         icon: IconBrandDiscord,
         href: 'https://discord.com/invite/aCsmEV5RgA',
+        target: '_blank'
       },
       contribute: {
         icon: IconGitFork,
         href: 'https://github.com/ajnart/homarr',
+        target: '_blank'
       },
     },
   },
