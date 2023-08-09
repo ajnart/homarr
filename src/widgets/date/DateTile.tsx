@@ -82,7 +82,7 @@ function DateTile({ widget }: DateTileProps) {
         </Text>
       )}
       <Title>{moment(date).format(formatString)}</Title>
-      {widget.properties.dateFormat && (
+      {!widget.properties.dateFormat.includes('hide') && (
         <Text size="lg">{moment(date).format(widget.properties.dateFormat)}</Text>
       )}
     </Flex>
