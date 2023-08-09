@@ -42,6 +42,7 @@ const definition = defineWidget({
     dangerousAllowSanitizedItemContent: {
       type: 'switch',
       defaultValue: false,
+      info: true,
     },
     textLinesClamp: {
       type: 'slider',

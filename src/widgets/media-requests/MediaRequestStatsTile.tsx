@@ -16,8 +16,8 @@ const definition = defineWidget({
       type: 'select',
       defaultValue: 'row' as 'row' | 'column',
       data: [
-        { label: 'Horizontal', value: 'row' },
-        { label: 'Vertical', value: 'column' },
+        { value: 'row' },
+        { value: 'column' },
       ],
     },
   },

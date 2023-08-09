@@ -109,13 +109,13 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
             <tr key={nzb.id}>
               <td>
                 {nzb.state === 'paused' ? (
-                  <Tooltip label="NOT IMPLEMENTED">
+                  <Tooltip label={t('queue.notImplemented')}>
                     <ActionIcon color="gray" variant="subtle" radius="xl" size="sm">
                       <IconPlayerPlay size="16" />
                     </ActionIcon>
                   </Tooltip>
                 ) : (
-                  <Tooltip label="NOT IMPLEMENTED">
+                  <Tooltip label={t('queue.notImplemented')}>
                     <ActionIcon color="primary" variant="subtle" radius="xl" size="sm">
                       <IconPlayerPause size="16" />
                     </ActionIcon>

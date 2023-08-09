@@ -63,7 +63,8 @@
       }
     },
     "loading": {
-      "title": "Loading..."
+      "title": "Loading...",
+      "description": "Homarr is establishing a connection..."
     },
     "popover": {
       "introductionPrefix": "Managed by",

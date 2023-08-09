@@ -58,12 +58,13 @@ const useMediaRequestDecisionMutation = () => {
       utils.mediaRequest.all.invalidate();
     },
   });
+  const { t } = useTranslation('modules/media-requests-list');
   return async (variables: MediaRequestDecisionVariables) => {
-    const action = variables.isApproved ? 'Approving' : 'Declining';
+    const action = variables.isApproved ? t('mutation.approving') : t('mutation.declining');
     notifications.show({
       id: `decide-${variables.request.id}`,
       color: 'yellow',
-      title: `${action} request...`,
+      title: `${action} ${t('mutation.request')}`,
       message: undefined,
       loading: true,
     });
@@ -75,7 +76,7 @@ const useMediaRequestDecisionMutation = () => {
       },
       {
         onSuccess(_data, variables) {
-          const title = variables.isApproved ? 'Request was approved!' : 'Request was declined!';
+          const title = variables.isApproved ? t('mutation.approved') : t('mutation.declined');
           notifications.update({
             id: `decide-${variables.id}`,
             color: 'teal',
@@ -187,7 +188,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                         notifications.show({
                           id: `approve ${item.id}`,
                           color: 'yellow',
-                          title: 'Approving request...',
+                          title: t('tooltips.approving'),
                           message: undefined,
                           loading: true,
                         });

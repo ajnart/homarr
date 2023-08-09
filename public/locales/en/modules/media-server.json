@@ -6,6 +6,7 @@
       "title": "Settings for media server widget"
     }
   },
+  "loading": "Homarr is loading streams...",
   "card": {
     "table": {
       "header": {

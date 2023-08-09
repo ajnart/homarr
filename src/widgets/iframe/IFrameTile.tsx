@@ -121,7 +121,7 @@ function IFrameTile({ widget }: IFrameTileProps) {
         title="widget iframe"
         allow={allowedPermissions.join(' ')}
       >
-        <Text>Your Browser does not support iframes. Please update your browser.</Text>
+        <Text>{t('card.errors.browserSupport')}</Text>
       </iframe>
     </Container>
   );

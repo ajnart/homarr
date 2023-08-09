@@ -11,13 +11,25 @@
         "label": "Start the week on Sunday"
       },
       "radarrReleaseType": {
-        "label": "Radarr release type"
+        "label": "Radarr release type",
+        "data":{
+          "inCinemas": "In Cinemas",
+          "physicalRelease": "Physical",
+          "digitalRelease": "Digital"
+        }
       },
       "hideWeekDays": {
         "label": "Hide week days"
       },
       "fontSize": {
-        "label": "Font Size"
+        "label": "Font Size",
+        "data":{
+          "xs": "Extra Small",
+          "sm": "Small",
+          "md": "Medium",
+          "lg": "Large",
+          "xl": "Extra Large"
+        }
       }
     }
   }
