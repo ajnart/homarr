@@ -8,24 +8,24 @@
         "label": "Vis fuld tid (24-timer)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Formatering af dato",
         "data": {
-          "hide": ""
+          "hide": "Skjul dato"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Vis en brugerdefineret tidszone"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Tidszone Lokation"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Byens titel",
+        "info": "Hvis du aktiverer indstillingen Tidszone, kan du få vist navnet på byen og tidszonekoden.<br/>Du kan også vise byen alene eller slet ikke vise noget.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "By og tidszone",
+          "city": "Kun by",
+          "none": "Intet"
         }
       }
     }
