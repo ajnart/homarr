@@ -3,6 +3,7 @@ import { IconClock } from '@tabler/icons-react';
 import moment from 'moment-timezone';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
+import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
 
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
@@ -102,7 +103,8 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
   const setSafeInterval = useSetSafeInterval();
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change
   useEffect(() => {
-    moment.locale(locale);
+    const language = getLanguageByCode(locale ?? 'en');
+    moment.locale(language.momentLocale);
     setDate(getNewDate(timezone));
     timeoutRef.current = setTimeout(
       () => {

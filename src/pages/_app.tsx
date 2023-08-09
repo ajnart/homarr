@@ -15,6 +15,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
+import { getLanguageByCode } from '~/tools/language';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 
@@ -52,8 +53,9 @@ function App(
 ) {
   const { Component, pageProps } = props;
   // TODO: make mapping from our locales to moment locales
-  require('moment/locale/' + pageProps.locale);
-  moment.locale(pageProps.locale);
+  const language = getLanguageByCode(pageProps.locale);
+  require('moment/locale/' + language.momentLocale);
+  moment.locale(language.momentLocale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
     props.pageProps.config?.settings.customization.colors.primary || 'red'
