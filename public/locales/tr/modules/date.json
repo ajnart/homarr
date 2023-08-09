@@ -6,6 +6,27 @@
       "title": "Tarih ve Saat widget'ı için ayarlar",
       "display24HourFormat": {
         "label": "Tam zamanı göster (24 saat)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
