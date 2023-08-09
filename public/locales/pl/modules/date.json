@@ -6,6 +6,27 @@
       "title": "Ustawienia dla widżetu Data i Czas",
       "display24HourFormat": {
         "label": "Wyświetlaj pełną godzinę (24 godziny)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
