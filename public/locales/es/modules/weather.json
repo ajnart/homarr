@@ -8,7 +8,7 @@
         "label": "Mostrar en Fahrenheit"
       },
       "displayCityName": {
-        "label": "Mostrar Nombre de Ciudad"
+        "label": "Mostrar el nombre de la ciudad"
       },
       "location": {
         "label": "Ubicación"
