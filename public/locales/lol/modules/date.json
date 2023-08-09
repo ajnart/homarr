@@ -6,6 +6,27 @@
       "title": "Settings 4 Date An Tiem Widget",
       "display24HourFormat": {
         "label": "Display fol tiem (24-hour)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }
