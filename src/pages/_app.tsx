@@ -8,12 +8,14 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
+import moment from 'moment-timezone';
 import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
+import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 
 import nextI18nextConfig from '../../next-i18next.config';
@@ -35,8 +37,6 @@ import {
   getServiceSidePackageAttributes,
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
-import { ConfigType } from '~/types/config';
-import moment from 'moment-timezone';
 
 function App(
   this: any,
@@ -51,11 +51,18 @@ function App(
   }>
 ) {
   const { Component, pageProps } = props;
+  require('moment/locale/' + pageProps.locale);
   moment.locale(pageProps.locale);
 
-  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.primary || 'red');
-  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(props.pageProps.config?.settings.customization.colors.secondary || 'orange');
-  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(props.pageProps.config?.settings.customization.colors.shade || 6);
+  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
+    props.pageProps.config?.settings.customization.colors.primary || 'red'
+  );
+  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(
+    props.pageProps.config?.settings.customization.colors.secondary || 'orange'
+  );
+  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(
+    props.pageProps.config?.settings.customization.colors.shade || 6
+  );
   const colorTheme = {
     primaryColor,
     secondaryColor,
@@ -175,7 +182,7 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
       packageAttributes: getServiceSidePackageAttributes(),
       editModeEnabled: !disableEditMode,
       defaultColorScheme: colorScheme,
-      locale: ctx.locale?? 'en',
+      locale: ctx.locale ?? 'en',
     },
   };
 };

@@ -7,7 +7,6 @@ import { api } from '~/utils/api';
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import 'moment/min/locales';
 
 const definition = defineWidget({
   id: 'date',
@@ -20,7 +19,7 @@ const definition = defineWidget({
     dateFormat: {
       type: 'select',
       defaultValue: 'dddd, MMMM D',
-      data:[
+      data: () => [
         { value: 'hide' },
         { value: 'dddd, MMMM D', label: moment().format('dddd, MMMM D') },
         { value: 'dddd, D MMMM', label: moment().format('dddd, D MMMM') },
@@ -47,11 +46,7 @@ const definition = defineWidget({
     titleState: {
       type: 'select',
       defaultValue: 'both',
-      data:[
-        { value: 'both' },
-        { value: 'city' },
-        { value: 'none' },
-      ],
+      data: [{ value: 'both' }, { value: 'city' }, { value: 'none' }],
       info: true,
     },
   },
@@ -77,21 +72,17 @@ function DateTile({ widget }: DateTileProps) {
   const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
 
   return (
-    <Flex
-      display="flex"
-      justify="space-around"
-      align="center"
-      h="100%"
-      direction="column"
-    >
-      {widget.properties.enableTimezone && widget.properties.titleState !== "none" &&
-        <Text size="md" style={{ whiteSpace:"nowrap" }}>
+    <Flex display="flex" justify="space-around" align="center" h="100%" direction="column">
+      {widget.properties.enableTimezone && widget.properties.titleState !== 'none' && (
+        <Text size="md" style={{ whiteSpace: 'nowrap' }}>
           {widget.properties.timezoneLocation.name}
-          {widget.properties.titleState==="both" && moment(date).format(' (z)')}
+          {widget.properties.titleState === 'both' && moment(date).format(' (z)')}
         </Text>
-      }
+      )}
       <Title>{moment(date).format(formatString)}</Title>
-      {widget.properties.dateFormat && <Text size="lg">{moment(date).format(widget.properties.dateFormat)}</Text>}
+      {widget.properties.dateFormat && (
+        <Text size="lg">{moment(date).format(widget.properties.dateFormat)}</Text>
+      )}
     </Flex>
   );
 }
