@@ -8,24 +8,24 @@
         "label": "Tam zamanı göster (24 saat)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Tarih formatı",
         "data": {
-          "hide": ""
+          "hide": "Tarihi Gizle"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Özel bir saat dilimi görüntüleme"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Saat Dilimi Konumu"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Şehir adı",
+        "info": "Saat Dilimi seçeneğini etkinleştirmeniz durumunda, şehrin adı ve saat dilimi kodu gösterilir.<br/>Ayrıca şehir adını tek başına gösterebilir veya hiç göstermeyebilirsiniz.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Şehir ve Saat Dilimi",
+          "city": "Yanlız şehir",
+          "none": "Hiçbiri"
         }
       }
     }
