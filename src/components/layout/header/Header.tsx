@@ -2,7 +2,6 @@ import {
   Anchor,
   Box,
   Center,
-  Divider,
   Flex,
   Group,
   Header,
@@ -12,8 +11,7 @@ import {
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
+import { Trans, useTranslation } from 'next-i18next';
 
 import { Logo } from '../Common/Logo';
 import { AvatarMenu } from './AvatarMenu';
@@ -80,27 +78,33 @@ const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHe
 
   return (
     <Box bg="red" h={height} p={3} px={6} style={{ overflow: 'hidden' }}>
-      <Group position="apart" noWrap>
-        <Flex h="100%" align="center" columnGap={7}>
-          <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
-          <Text color="white" lineClamp={height === 30 ? 1 : 2}>
-            {t('experimentalNote.label')}
-          </Text>
-        </Flex>
-        <Group noWrap>
-          <Anchor
-            target="_blank"
-            href="https://github.com/ajnart/homarr/issues/new?assignees=&labels=%F0%9F%90%9B+Bug&projects=&template=bug.yml&title=[Authentication%20beta]:%20%3Ctitle%3E"
-            color="gray.4"
-          >
-            Create issue
-          </Anchor>
-          <Divider orientation="vertical" my={5} color="white" opacity={0.4} />
-          <Anchor target="_blank" href="https://discord.com/invite/aCsmEV5RgA" color="gray.4">
-            Discord
-          </Anchor>
-        </Group>
-      </Group>
+      <Flex h="100%" align="center" columnGap={7}>
+        <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
+        <Text color="white" lineClamp={height === 30 ? 1 : 2}>
+          <Trans
+            t={t}
+            i18nKey="experimentalNote.label"
+            components={{
+              gh: (
+                <Anchor
+                  color="inherit"
+                  style={{ textDecoration: 'underline' }}
+                  target="_blank"
+                  href="https://github.com/ajnart/homarr/issues/new?assignees=&labels=%F0%9F%90%9B+Bug&projects=&template=bug.yml&title=[Authentication%20Beta]:%20%3Ctitle%3E&version=1.14-beta"
+                />
+              ),
+              dc: (
+                <Anchor
+                  color="inherit"
+                  style={{ textDecoration: 'underline' }}
+                  target="_blank"
+                  href="https://discord.com/invite/aCsmEV5RgA"
+                />
+              ),
+            }}
+          />
+        </Text>
+      </Flex>
     </Box>
   );
 };

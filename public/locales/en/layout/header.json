@@ -1,6 +1,6 @@
 {
     "experimentalNote": {
-        "label": "This is an experimental feature of Homarr. Please report any issues to the official Homarr team."
+        "label": "This is an experimental feature of Homarr. Please report any issues on <gh>GitHub</gh> or <dc>Discord</dc>."
     },
     "search": {
         "label": "Search",
