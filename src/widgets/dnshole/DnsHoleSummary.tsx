@@ -1,4 +1,5 @@
-import { Card, Center, Container, Stack, Text } from '@mantine/core';
+import { Card, Center, Container, Flex, Text } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import {
   IconAd,
   IconBarrierBlock,
@@ -7,6 +8,7 @@ import {
   IconWorldWww,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import React from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
@@ -23,10 +25,15 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    layout: {
+      type: 'select',
+      defaultValue: 'grid',
+      data: [{ value: 'grid' }, { value: 'row' }, { value: 'column' }],
+    },
   },
   gridstack: {
     minWidth: 2,
-    minHeight: 2,
+    minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -42,6 +49,7 @@ interface DnsHoleSummaryWidgetProps {
 function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
   const { t } = useTranslation('modules/dns-hole-summary');
   const { isInitialLoading, data } = useDnsHoleSummeryQuery();
+  const flexLayout = widget.properties.layout as 'row' | 'column';
 
   if (isInitialLoading || !data) {
     return <WidgetLoading />;
@@ -49,134 +57,46 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
 
   return (
     <Container
-      display="grid"
       h="100%"
+      p={0}
       style={{
         gridTemplateColumns: '1fr 1fr',
         gridTemplateRows: '1fr 1fr',
-        marginLeft: -20,
-        marginRight: -20,
+        display: flexLayout?.includes('grid') ? 'grid' : 'flex',
+        flexDirection: flexLayout,
       }}
     >
-      <Card
-        m="xs"
-        sx={(theme) => {
-          if (!widget.properties.usePiHoleColors) {
-            return {};
-          }
-
-          if (theme.colorScheme === 'dark') {
-            return {
-              backgroundColor: 'rgba(240, 82, 60, 0.4)',
-            };
-          }
-
-          return {
-            backgroundColor: 'rgba(240, 82, 60, 0.2)',
-          };
-        }}
-        withBorder
-      >
-        <Center h="100%">
-          <Stack align="center" spacing="xs">
-            <IconBarrierBlock size={30} />
-            <div>
-              <Text align="center">{formatNumber(data.adsBlockedToday, 0)}</Text>
-              <Text align="center" lh={1.2} size="sm">
-                {t('card.metrics.queriesBlockedToday')}
-              </Text>
-            </div>
-          </Stack>
-        </Center>
-      </Card>
-      <Card
-        m="xs"
-        sx={(theme) => {
-          if (!widget.properties.usePiHoleColors) {
-            return {};
-          }
-
-          if (theme.colorScheme === 'dark') {
-            return {
-              backgroundColor: 'rgba(255, 165, 20, 0.4)',
-            };
-          }
-
-          return {
-            backgroundColor: 'rgba(255, 165, 20, 0.4)',
-          };
-        }}
-        withBorder
-      >
-        <Center h="100%">
-          <Stack align="center" spacing="xs">
-            <IconPercentage size={30} />
-            <Text align="center">{(data.adsBlockedTodayPercentage * 100).toFixed(2)}%</Text>
-          </Stack>
-        </Center>
-      </Card>
-      <Card
-        m="xs"
-        sx={(theme) => {
-          if (!widget.properties.usePiHoleColors) {
-            return {};
-          }
-
-          if (theme.colorScheme === 'dark') {
-            return {
-              backgroundColor: 'rgba(0, 175, 218, 0.4)',
-            };
-          }
-
-          return {
-            backgroundColor: 'rgba(0, 175, 218, 0.4)',
-          };
-        }}
-        withBorder
-      >
-        <Center h="100%">
-          <Stack align="center" spacing="xs">
-            <IconSearch size={30} />
-            <div>
-              <Text align="center">{formatNumber(data.dnsQueriesToday, 3)}</Text>
-              <Text align="center" lh={1.2} size="sm">
-                {t('card.metrics.queriesToday')}
-              </Text>
-            </div>
-          </Stack>
-        </Center>
-      </Card>
-      <Card
-        m="xs"
-        sx={(theme) => {
-          if (!widget.properties.usePiHoleColors) {
-            return {};
-          }
-
-          if (theme.colorScheme === 'dark') {
-            return {
-              backgroundColor: 'rgba(0, 176, 96, 0.4)',
-            };
-          }
-
-          return {
-            backgroundColor: 'rgba(0, 176, 96, 0.4)',
-          };
-        }}
-        withBorder
-      >
-        <Center h="100%">
-          <Stack align="center" spacing="xs">
-            <IconWorldWww size={30} />
-            <div>
-              <Text align="center">{formatNumber(data.domainsBeingBlocked, 0)}</Text>
-              <Text align="center" lh={1.2} size="sm">
-                {t('card.metrics.domainsOnAdlist')}
-              </Text>
-            </div>
-          </Stack>
-        </Center>
-      </Card>
+      <StatCard
+        icon={<IconBarrierBlock />}
+        number={formatNumber(data.adsBlockedToday, 2)}
+        label={t('card.metrics.queriesBlockedToday') as string}
+        color={
+          widget.properties.usePiHoleColors ? 'rgba(240, 82, 60, 0.4)' : 'rgba(96, 96, 96, 0.1)'
+        }
+      />
+      <StatCard
+        icon={<IconPercentage />}
+        number={(data.adsBlockedTodayPercentage * 100).toFixed(2) + '%'}
+        color={
+          widget.properties.usePiHoleColors ? 'rgba(255, 165, 20, 0.4)' : 'rgba(96, 96, 96, 0.1)'
+        }
+      />
+      <StatCard
+        icon={<IconSearch />}
+        number={formatNumber(data.dnsQueriesToday, 2)}
+        label={t('card.metrics.queriesToday') as string}
+        color={
+          widget.properties.usePiHoleColors ? 'rgba(0, 175, 218, 0.4)' : 'rgba(96, 96, 96, 0.1)'
+        }
+      />
+      <StatCard
+        icon={<IconWorldWww />}
+        number={formatNumber(data.domainsBeingBlocked, 2)}
+        label={t('card.metrics.domainsOnAdlist') as string}
+        color={
+          widget.properties.usePiHoleColors ? 'rgba(0, 176, 96, 0.4)' : 'rgba(96, 96, 96, 0.1)'
+        }
+      />
     </Container>
   );
 }
@@ -191,6 +111,61 @@ export const useDnsHoleSummeryQuery = () => {
     {
       refetchInterval: 3 * 60 * 1000,
     }
+  );
+};
+
+interface StatCardProps {
+  icon: JSX.Element;
+  number: string;
+  label?: string;
+  color?: string;
+}
+
+const StatCard = ({ icon, number, label, color }: StatCardProps) => {
+  const { ref, height, width } = useElementSize();
+  return (
+    <Card
+      ref={ref}
+      m="0.4rem"
+      p="0.2rem"
+      sx={{
+        backgroundColor: color,
+        flex: '1',
+      }}
+      withBorder
+    >
+      <Center h="100%" w="100%">
+        <Flex
+          h="100%"
+          w="100%"
+          align="center"
+          justify="space-evenly"
+          direction={width > height + 20 ? 'row' : 'column'}
+        >
+          {React.cloneElement(icon, {
+            size: 30,
+            style: { margin: '0 10' }
+          })}
+          <div
+            style={{
+              flex: '1',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            <Text align="center" lh={1.2} size="md" weight="bold">
+              {number}
+            </Text>
+            {label && (
+              <Text align="center" lh={1.2} size="0.75rem">
+                {label}
+              </Text>
+            )}
+          </div>
+        </Flex>
+      </Center>
+    </Card>
   );
 };
 
