@@ -83,6 +83,7 @@ export default function LoginPage() {
               <TextInput
                 variant="filled"
                 label={t('form.fields.username.label')}
+                autoComplete="homarr-username"
                 withAsterisk
                 {...form.getInputProps('name')}
               />
@@ -90,6 +91,7 @@ export default function LoginPage() {
               <PasswordInput
                 variant="filled"
                 label={t('form.fields.password.label')}
+                autoComplete="homarr-password"
                 withAsterisk
                 {...form.getInputProps('password')}
               />
