@@ -8,24 +8,24 @@
         "label": "显示完整时间 (24小时)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "日期格式",
         "data": {
-          "hide": ""
+          "hide": "隐藏日期"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "显示自定义时区"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "时区位置"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "城市名称",
+        "info": "如果激活时区选项，则可显示城市名称和时区代码。<br/>您也可以只显示城市，甚至不显示。",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "城市和时区",
+          "city": "仅城市",
+          "none": "无"
         }
       }
     }
