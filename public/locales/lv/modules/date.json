@@ -23,7 +23,7 @@
         "label": "Pilsētas nosaukums",
         "info": "Aktivizējot opciju Laika josla, var parādīt pilsētas nosaukumu un laika joslas kodu.<br/>Varat arī parādīt tikai pilsētu vai pat nerādīt nevienu.",
         "data": {
-          "both": "Pilsēta un Laika zona",
+          "both": "Pilsēta un Laika josla",
           "city": "Tikai pilsēta",
           "none": "Nekas"
         }
