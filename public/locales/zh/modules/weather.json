@@ -8,7 +8,7 @@
         "label": "显示为华氏度"
       },
       "displayCityName": {
-        "label": ""
+        "label": "显示城市名称"
       },
       "location": {
         "label": "天气位置"
