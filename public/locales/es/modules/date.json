@@ -8,24 +8,24 @@
         "label": "Mostrar hora completa (24 horas)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Formato de fecha",
         "data": {
-          "hide": ""
+          "hide": "Ocultar Fecha"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Mostrar zona horaria personalizada"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Ubicación de zona horaria"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Título de ciudad",
+        "info": "En caso de activar la opción Zona Horaria, se puede mostrar el nombre de la ciudad y el código de la zona horaria.<br/>También puedes mostrar la ciudad sola, o incluso no mostrar ninguna.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Ciudad y Zona horaria",
+          "city": "Ciudad solo",
+          "none": "Nada"
         }
       }
     }
