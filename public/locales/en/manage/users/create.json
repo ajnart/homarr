@@ -26,7 +26,7 @@
             }
         },
         "finish": {
-            "title": "Final step",
+            "title": "Confirmation",
             "text": "Save to database",
             "card": {
                 "title": "Review your inputs",
