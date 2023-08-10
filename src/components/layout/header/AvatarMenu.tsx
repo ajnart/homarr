@@ -21,6 +21,7 @@ import { useColorScheme } from '~/hooks/use-colorscheme';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
 import { REPO_URL } from '../../../../data/constants';
+import { useBoardLink } from '../Templates/BoardLayout';
 
 export const AvatarMenu = () => {
   const { t } = useTranslation('layout/header');
@@ -30,6 +31,7 @@ export const AvatarMenu = () => {
   const newVersionAvailable = useNewVersionAvailable();
 
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
+  const defaultBoardHref = useBoardLink('/board');
 
   return (
     <>
@@ -51,7 +53,11 @@ export const AvatarMenu = () => {
                 >
                   {t('actions.avatar.preferences')}
                 </Menu.Item>
-                <Menu.Item component={Link} href="/board" icon={<IconDashboard size="1rem" />}>
+                <Menu.Item
+                  component={Link}
+                  href={defaultBoardHref}
+                  icon={<IconDashboard size="1rem" />}
+                >
                   {t('actions.avatar.defaultBoard')}
                 </Menu.Item>
                 <Menu.Item component={Link} href="/manage" icon={<IconHomeShare size="1rem" />}>

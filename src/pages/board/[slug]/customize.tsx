@@ -37,6 +37,7 @@ import {
   BoardCustomizationFormProvider,
   useBoardCustomizationForm,
 } from '~/components/Board/Customize/form';
+import { useBoardLink } from '~/components/layout/Templates/BoardLayout';
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
@@ -86,6 +87,8 @@ export default function CustomizationPage() {
     validateInputOnChange: true,
     validateInputOnBlur: true,
   });
+
+  const backToBoardHref = useBoardLink(`/board/${query.slug}`);
 
   const handleSubmit = async (values: z.infer<typeof boardCustomizationSchema>) => {
     if (isLoading) return;
@@ -190,7 +193,7 @@ export default function CustomizationPage() {
               </Title>
               <Button
                 component={Link}
-                href={`/board/${query.slug}`}
+                href={backToBoardHref}
                 variant="light"
                 leftIcon={<IconArrowLeft size={16} />}
               >

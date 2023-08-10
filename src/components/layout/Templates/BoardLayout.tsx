@@ -13,6 +13,7 @@ import Consola from 'consola';
 import { useSession } from 'next-auth/react';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
@@ -74,10 +75,11 @@ const DockerButton = () => {
 const CustomizeBoardButton = () => {
   const { name } = useConfigContext();
   const { t } = useTranslation('boards/common');
+  const href = useBoardLink(`/board/${name}/customize`);
 
   return (
     <Tooltip label={t('header.customize')}>
-      <HeaderActionButton component={Link} href={`/board/${name}/customize`}>
+      <HeaderActionButton component={Link} href={href}>
         <IconSettings size={20} stroke={1.5} />
       </HeaderActionButton>
     </Tooltip>
@@ -222,4 +224,12 @@ const BackgroundImage = () => {
       }}
     />
   );
+};
+
+export const useBoardLink = (
+  link: '/board' | `/board/${string}/customize` | `/board/${string}`
+) => {
+  const router = useRouter();
+
+  return router.asPath.startsWith('/board') ? link : link.replace('/board', '/b');
 };
