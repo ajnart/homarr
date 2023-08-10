@@ -11,6 +11,7 @@ import { DeleteBoardModal } from './components/Manage/Board/delete-board.modal';
 import { CopyInviteModal } from './components/Manage/User/Invite/copy-invite.modal';
 import { CreateInviteModal } from './components/Manage/User/Invite/create-invite.modal';
 import { DeleteInviteModal } from './components/Manage/User/Invite/delete-invite.modal';
+import { ChangeUserRoleModal } from './components/Manage/User/change-user-role.modal';
 import { DeleteUserModal } from './components/Manage/User/delete-user.modal';
 
 export const modals = {
@@ -27,6 +28,7 @@ export const modals = {
   createBoardModal: CreateBoardModal,
   copyInviteModal: CopyInviteModal,
   deleteBoardModal: DeleteBoardModal,
+  changeUserRoleModal: ChangeUserRoleModal,
 };
 
 declare module '@mantine/modals' {

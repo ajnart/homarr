@@ -2,6 +2,7 @@ import {
   ActionIcon,
   Autocomplete,
   Avatar,
+  Badge,
   Box,
   Button,
   Flex,
@@ -12,12 +13,14 @@ import {
   Title,
 } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
-import { IconPlus, IconTrash } from '@tabler/icons-react';
+import { IconPlus, IconTrash, IconUserDown, IconUserUp } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { openRoleChangeModal } from '~/components/Manage/User/change-user-role.modal';
 import { openDeleteUserModal } from '~/components/Manage/User/delete-user.modal';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
@@ -33,6 +36,7 @@ const ManageUsersPage = () => {
     page: activePage,
     search: debouncedSearch,
   });
+  const { data: sessionData } = useSession();
 
   const { t } = useTranslation('manage/users');
 
@@ -84,9 +88,44 @@ const ManageUsersPage = () => {
                       <Group spacing="xs">
                         <Avatar size="sm" />
                         <Text>{user.name}</Text>
+                        {user.isOwner ? (
+                          <Badge color="pink" size="sm">
+                            Owner
+                          </Badge>
+                        ) : user.isAdmin ? (
+                          <Badge color="red" size="sm">
+                            Admin
+                          </Badge>
+                        ) : null}
                       </Group>
                       <Group>
+                        {user.isAdmin ? (
+                          <ActionIcon
+                            disabled={user.id === sessionData?.user?.id || user.isOwner}
+                            onClick={() => {
+                              openRoleChangeModal({
+                                ...user,
+                                type: 'demote',
+                              });
+                            }}
+                          >
+                            <IconUserDown size="1rem" />
+                          </ActionIcon>
+                        ) : (
+                          <ActionIcon
+                            onClick={() => {
+                              openRoleChangeModal({
+                                ...user,
+                                type: 'promote',
+                              });
+                            }}
+                          >
+                            <IconUserUp size="1rem" />
+                          </ActionIcon>
+                        )}
+
                         <ActionIcon
+                          disabled={user.id === sessionData?.user?.id || user.isOwner}
                           onClick={() => {
                             openDeleteUserModal(user);
                           }}

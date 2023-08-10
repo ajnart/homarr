@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+    provider      = "prisma-client-js"
     binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
@@ -51,6 +51,7 @@ model User {
     password       String?
     salt           String?
     isAdmin        Boolean       @default(false)
+    isOwner        Boolean       @default(false)
     accounts       Account[]
     sessions       Session[]
     settings       UserSettings?

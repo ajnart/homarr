@@ -20,7 +20,7 @@ import {
 } from '../trpc';
 
 export const userRouter = createTRPCRouter({
-  createAdminAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
+  createOwnerAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
     const userCount = await ctx.prisma.user.count();
     if (userCount > 0) {
       throw new TRPCError({
@@ -33,7 +33,7 @@ export const userRouter = createTRPCRouter({
         colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
         language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
       },
-      isAdmin: true,
+      isOwner: true,
     });
   }),
   count: publicProcedure.query(async ({ ctx }) => {
@@ -113,6 +113,45 @@ export const userRouter = createTRPCRouter({
               colorScheme: input.colorScheme,
             },
           },
+        },
+      });
+    }),
+  changeRole: adminProcedure
+    .input(z.object({ id: z.string(), type: z.enum(['promote', 'demote']) }))
+    .mutation(async ({ ctx, input }) => {
+      if (ctx.session?.user?.id === input.id) {
+        throw new TRPCError({
+          code: 'FORBIDDEN',
+          message: 'You cannot change your own role',
+        });
+      }
+
+      const user = await ctx.prisma.user.findUnique({
+        where: {
+          id: input.id,
+        },
+      });
+
+      if (!user) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'User not found',
+        });
+      }
+
+      if (user.isOwner) {
+        throw new TRPCError({
+          code: 'FORBIDDEN',
+          message: 'You cannot change the role of the owner',
+        });
+      }
+
+      await ctx.prisma.user.update({
+        where: {
+          id: input.id,
+        },
+        data: {
+          isAdmin: input.type === 'promote',
         },
       });
     }),
@@ -237,7 +276,8 @@ export const userRouter = createTRPCRouter({
           id: user.id,
           name: user.name!,
           email: user.email,
-          emailVerified: user.emailVerified,
+          isAdmin: user.isAdmin,
+          isOwner: user.isOwner,
         })),
         countPages: Math.ceil(countUsers / limit),
       };
@@ -253,6 +293,32 @@ export const userRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
+      const user = await ctx.prisma.user.findUnique({
+        where: {
+          id: input.id,
+        },
+      });
+
+      if (!user) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'User not found',
+        });
+      }
+
+      if (ctx.session?.user?.id === input.id) {
+        throw new TRPCError({
+          code: 'FORBIDDEN',
+          message: 'You cannot change your own role',
+        });
+      }
+      if (user.isOwner) {
+        throw new TRPCError({
+          code: 'FORBIDDEN',
+          message: 'You cannot change the role of the owner',
+        });
+      }
+
       await ctx.prisma.user.delete({
         where: {
           id: input.id,
@@ -266,7 +332,7 @@ const createUserIfNotPresent = async (
   input: z.infer<typeof createNewUserSchema>,
   options: {
     defaultSettings?: Partial<UserSettings>;
-    isAdmin?: boolean;
+    isOwner?: boolean;
   } | void
 ) => {
   const existingUser = await ctx.prisma.user.findFirst({
@@ -290,7 +356,8 @@ const createUserIfNotPresent = async (
       email: input.email,
       password: hashedPassword,
       salt: salt,
-      isAdmin: options?.isAdmin ?? false,
+      isAdmin: options?.isOwner ?? false,
+      isOwner: options?.isOwner ?? false,
       settings: {
         create: options?.defaultSettings ?? {},
       },

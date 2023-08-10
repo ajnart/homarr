@@ -110,7 +110,7 @@ const FirstStepContent: StepContentComponent = ({ isMobile, next }) => {
 
 const SecondStepContent: StepContentComponent = ({ isMobile, next }) => {
   const [isSigninIn, setIsSigninIn] = useState(false);
-  const { mutateAsync } = api.user.createAdminAccount.useMutation();
+  const { mutateAsync } = api.user.createOwnerAccount.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
 
   const form = useForm<z.infer<typeof signUpFormSchema>>({
