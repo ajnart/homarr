@@ -24,14 +24,15 @@ import { api } from '~/utils/api';
 import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
+  dockerEnabled: boolean;
   children: React.ReactNode;
 };
 
-export const BoardLayout = ({ children }: BoardLayoutProps) => {
+export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
   const { config } = useConfigContext();
 
   return (
-    <MainLayout headerActions={<HeaderActions />}>
+    <MainLayout headerActions={<HeaderActions dockerEnabled={dockerEnabled} />}>
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
@@ -40,14 +41,18 @@ export const BoardLayout = ({ children }: BoardLayoutProps) => {
   );
 };
 
-export const HeaderActions = () => {
+type HeaderActionProps = {
+  dockerEnabled: boolean;
+};
+
+export const HeaderActions = ({ dockerEnabled }: HeaderActionProps) => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;
 
   return (
     <>
-      {env.NEXT_PUBLIC_DOCKER_ENABLED && <DockerButton />}
+      {dockerEnabled && <DockerButton />}
       <ToggleEditModeButton />
       <CustomizeBoardButton />
     </>

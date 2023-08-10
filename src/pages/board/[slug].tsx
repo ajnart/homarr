@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
+import { env } from '~/env';
 import { configExists } from '~/tools/config/configExists';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -12,11 +13,12 @@ import { ConfigType } from '~/types/config';
 
 export default function BoardPage({
   config: initialConfig,
+  dockerEnabled,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   useInitConfig(initialConfig);
 
   return (
-    <BoardLayout>
+    <BoardLayout dockerEnabled={dockerEnabled}>
       <Dashboard />
     </BoardLayout>
   );
@@ -24,6 +26,7 @@ export default function BoardPage({
 
 type BoardGetServerSideProps = {
   config: ConfigType;
+  dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
 
@@ -60,6 +63,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
       primaryColor: config.settings.customization.colors.primary,
       secondaryColor: config.settings.customization.colors.secondary,
       primaryShade: config.settings.customization.colors.shade,
+      dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
       ...translations,
     },
   };

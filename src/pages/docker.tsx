@@ -13,10 +13,7 @@ import { api } from '~/utils/api';
 
 export default function DockerPage() {
   const [selection, setSelection] = useState<ContainerInfo[]>([]);
-  const dockerEnabled = env.NEXT_PUBLIC_DOCKER_ENABLED;
-  const { data, refetch, isRefetching } = api.docker.containers.useQuery(undefined, {
-    enabled: dockerEnabled,
-  });
+  const { data, refetch, isRefetching } = api.docker.containers.useQuery();
 
   const reload = () => {
     refetch();
@@ -34,7 +31,7 @@ export default function DockerPage() {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, req, res }) => {
-  if (!env.NEXT_PUBLIC_DOCKER_ENABLED) return { notFound: true };
+  if (!env.DOCKER_HOST || !env.DOCKER_PORT) return { notFound: true };
   const session = await getServerAuthSession({ req, res });
   if (!session?.user.isAdmin) {
     return {

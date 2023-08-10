@@ -39,7 +39,7 @@ const env = createEnv({
       .refine((s) => s === 'light' || s === 'dark')
       .optional()
       .default('light'),
-    NEXT_PUBLIC_DOCKER_ENABLED: z.boolean().optional().default(false),
+    NEXT_PUBLIC_DOCKER_HOST: z.string().optional(),
   },
 
   /**
@@ -56,7 +56,6 @@ const env = createEnv({
     NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: process.env.DEFAULT_COLOR_SCHEME,
     NEXT_PUBLIC_PORT: process.env.PORT,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_DOCKER_ENABLED: process.env.DOCKER_PORT && process.env.DOCKER_HOST,
   },
 });
 
