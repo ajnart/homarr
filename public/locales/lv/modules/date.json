@@ -8,24 +8,24 @@
         "label": "Rādīt pilnu laiku (24 stundu)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Datuma formāts",
         "data": {
-          "hide": ""
+          "hide": "Paslēpt Datumu"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Rādīt pielāgotu laika joslu"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Laika joslas Atrašanās vieta"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Pilsētas nosaukums",
+        "info": "Aktivizējot opciju Laika josla, var parādīt pilsētas nosaukumu un laika joslas kodu.<br/>Varat arī parādīt tikai pilsētu vai pat nerādīt nevienu.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Pilsēta un Laika zona",
+          "city": "Tikai pilsēta",
+          "none": "Nekas"
         }
       }
     }
