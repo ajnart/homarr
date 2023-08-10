@@ -1,5 +1,6 @@
 {
-    "title": "Manage users",
+    "metaTitle": "Users",
+    "pageTitle": "Manage users",
     "text": "Using users, you have granular control who can access, edit or delete resources on your Homarr instance.",
     "buttons": {
         "create": "Create"

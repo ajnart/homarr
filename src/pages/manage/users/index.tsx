@@ -12,7 +12,6 @@ import {
   Title,
 } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
-import { openContextModal } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -37,13 +36,15 @@ const ManageUsersPage = () => {
 
   const { t } = useTranslation('manage/users');
 
+  const metaTitle = `${t('metaTitle')} • Homarr`;
+
   return (
     <ManageLayout>
       <Head>
-        <title>Users • Homarr</title>
+        <title>{metaTitle}</title>
       </Head>
 
-      <Title mb="md">{t('title')}</Title>
+      <Title mb="md">{t('pageTitle')}</Title>
       <Text mb="xl">{t('text')}</Text>
 
       <Flex columnGap={10} justify="end" mb="md">
