@@ -74,7 +74,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
             <td>
               <Group spacing="xs">
                 <IconKey size="1rem" />
-                <Text>{t('steps.finish.table.password')}</Text>
+                <Text>{t('steps.finish.table.header.password')}</Text>
               </Group>
             </td>
             <td>
