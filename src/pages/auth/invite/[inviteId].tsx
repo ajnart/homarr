@@ -3,9 +3,11 @@ import { useForm } from '@mantine/form';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconCheck, IconX } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
+import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { z } from 'zod';
 import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
@@ -22,6 +24,7 @@ export default function AuthInvitePage() {
   const router = useRouter();
   const query = router.query as { token: string };
   const { mutateAsync } = api.user.createFromInvite.useMutation();
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof signUpFormSchema>>({
     validateInputOnChange: true,
@@ -36,6 +39,7 @@ export default function AuthInvitePage() {
       message: `${t('notifications.loading.text')}...`,
       loading: true,
     });
+    setIsLoading(true);
     void mutateAsync(
       {
         ...values,
@@ -50,7 +54,19 @@ export default function AuthInvitePage() {
             color: 'teal',
             icon: <IconCheck />,
           });
-          router.push('/auth/login');
+          signIn('credentials', {
+            redirect: false,
+            name: values.username,
+            password: values.password,
+            callbackUrl: '/',
+          }).then((response) => {
+            if (!response?.ok) {
+              // Redirect to login page if something went wrong
+              router.push('/auth/login');
+              return;
+            }
+            router.push('/manage');
+          });
         },
         onError() {
           updateNotification({
@@ -106,7 +122,7 @@ export default function AuthInvitePage() {
                 {...form.getInputProps('passwordConfirmation')}
               />
 
-              <Button fullWidth type="submit">
+              <Button fullWidth type="submit" loading={isLoading}>
                 {t('form.buttons.submit')}
               </Button>
             </Stack>
