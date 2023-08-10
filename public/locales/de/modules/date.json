@@ -8,24 +8,24 @@
         "label": "24-Stunden Format"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Datumsformat",
         "data": {
-          "hide": ""
+          "hide": "Daten ausblenden"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Benutzerdefinierte Zeitzone anzeigen"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Standort der Zeitzone"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Stadt",
+        "info": "Wenn Sie die Zeitzonen Option aktivieren, können der Name der Stadt und die Zeitzone angezeigt werden.<br/>Sie können auch nur die Stadt oder gar nichts davon anzeigen lassen.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Stadt und Zeitzone",
+          "city": "Nur Stadt",
+          "none": "Keine"
         }
       }
     }
