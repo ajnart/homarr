@@ -14,13 +14,13 @@
         }
       },
       "enableTimezone": {
-        "label": "Mostrar zona horaria personalizada"
+        "label": "Mostrar una zona horaria personalizada"
       },
       "timezoneLocation": {
-        "label": "Ubicación de zona horaria"
+        "label": "Ubicación de la zona horaria"
       },
       "titleState": {
-        "label": "Título de ciudad",
+        "label": "Título de la ciudad",
         "info": "En caso de activar la opción Zona Horaria, se puede mostrar el nombre de la ciudad y el código de la zona horaria.<br/>También puedes mostrar la ciudad sola, o incluso no mostrar ninguna.",
         "data": {
           "both": "Ciudad y Zona horaria",
