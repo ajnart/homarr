@@ -11,6 +11,7 @@ import {
   Table,
   Text,
   Title,
+  Tooltip,
 } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconPlus, IconTrash, IconUserDown, IconUserUp } from '@tabler/icons-react';
@@ -88,52 +89,59 @@ const ManageUsersPage = () => {
                       <Group spacing="xs">
                         <Avatar size="sm" />
                         <Text>{user.name}</Text>
-                        {user.isOwner ? (
+                        {user.isOwner && (
                           <Badge color="pink" size="sm">
                             Owner
                           </Badge>
-                        ) : user.isAdmin ? (
+                        )}
+                        {user.isAdmin && (
                           <Badge color="red" size="sm">
                             Admin
                           </Badge>
-                        ) : null}
+                        )}
                       </Group>
                       <Group>
                         {user.isAdmin ? (
+                          <Tooltip label={t('tooltips.demoteAdmin')} withinPortal withArrow>
+                            <ActionIcon
+                              disabled={user.id === sessionData?.user?.id || user.isOwner}
+                              onClick={() => {
+                                openRoleChangeModal({
+                                  ...user,
+                                  type: 'demote',
+                                });
+                              }}
+                            >
+                              <IconUserDown size="1rem" />
+                            </ActionIcon>
+                          </Tooltip>
+                        ) : (
+                          <Tooltip label={t('tooltips.promoteToAdmin')} withinPortal withArrow>
+                            <ActionIcon
+                              onClick={() => {
+                                openRoleChangeModal({
+                                  ...user,
+                                  type: 'promote',
+                                });
+                              }}
+                            >
+                              <IconUserUp size="1rem" />
+                            </ActionIcon>
+                          </Tooltip>
+                        )}
+
+                        <Tooltip label={t('tooltips.deleteUser')} withinPortal withArrow>
                           <ActionIcon
                             disabled={user.id === sessionData?.user?.id || user.isOwner}
                             onClick={() => {
-                              openRoleChangeModal({
-                                ...user,
-                                type: 'demote',
-                              });
+                              openDeleteUserModal(user);
                             }}
+                            color="red"
+                            variant="light"
                           >
-                            <IconUserDown size="1rem" />
+                            <IconTrash size="1rem" />
                           </ActionIcon>
-                        ) : (
-                          <ActionIcon
-                            onClick={() => {
-                              openRoleChangeModal({
-                                ...user,
-                                type: 'promote',
-                              });
-                            }}
-                          >
-                            <IconUserUp size="1rem" />
-                          </ActionIcon>
-                        )}
-
-                        <ActionIcon
-                          disabled={user.id === sessionData?.user?.id || user.isOwner}
-                          onClick={() => {
-                            openDeleteUserModal(user);
-                          }}
-                          color="red"
-                          variant="light"
-                        >
-                          <IconTrash size="1rem" />
-                        </ActionIcon>
+                        </Tooltip>
                       </Group>
                     </Group>
                   </td>

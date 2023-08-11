@@ -10,6 +10,11 @@
             "user": "User"
         }
     },
+    "tooltips": {
+        "deleteUser": "Delete user",
+        "demoteAdmin": "Demote administrator",
+        "promoteToAdmin": "Promote to administrator"
+    },
     "modals": {
         "delete": {
             "title": "Delete user {{name}}",
