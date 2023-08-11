@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   Flex,
+  Group,
   PasswordInput,
   Stack,
   Text,
@@ -10,7 +11,7 @@ import {
   Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { IconAlertTriangle } from '@tabler/icons-react';
+import { IconAlertTriangle, IconMoonStars, IconSun } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -20,6 +21,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
+import { useColorScheme } from '~/hooks/use-colorscheme';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -31,6 +33,8 @@ export default function LoginPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+  const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
 
   const form = useForm<z.infer<typeof signInSchema>>({
     validateInputOnChange: true,
@@ -114,9 +118,14 @@ export default function LoginPage() {
                   {...form.getInputProps('password')}
                 />
 
-                <Button variant="light" fullWidth type="submit" mt="md" loading={isLoading}>
-                  {t('form.buttons.submit')}
-                </Button>
+                <Group mt="xs" style={{ justifyContent: 'space-between', display: 'flex' }}>
+                  <Button variant="default" px={5} onClick={() => toggleColorScheme()}>
+                    <Icon />
+                  </Button>
+                  <Button variant="light" w="50%" type="submit" loading={isLoading}>
+                    {t('form.buttons.submit')}
+                  </Button>
+                </Group>
               </Stack>
             </form>
           </Card>
