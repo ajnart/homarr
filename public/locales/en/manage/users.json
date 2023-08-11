@@ -1,7 +1,7 @@
 {
     "metaTitle": "Users",
     "pageTitle": "Manage users",
-    "text": "Using users, you have granular control who can access, edit or delete resources on your Homarr instance.",
+    "text": "Using users, you can configure who can edit your dashboards. Future versions of Homarr will have even more granular control over permissions and boards.",
     "buttons": {
         "create": "Create"
     },
