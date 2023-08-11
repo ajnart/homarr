@@ -72,6 +72,10 @@
 				"bottom": "Apakšā",
 				"left": "Pa kreisi"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
