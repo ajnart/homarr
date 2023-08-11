@@ -74,8 +74,8 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Uygulama Adı Satır Sayısı",
+			"description": "Başlığınızın maksimum kaç satır olması gerektiğini tanımlar. Sınırsız olması için \"0\" olarak ayarlayın."
 		}
 	},
 	"integration": {
