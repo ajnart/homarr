@@ -14,7 +14,7 @@
             "setAsDefault": "Set as your default board",
             "delete": {
                 "label": "Delete permanently",
-                "disabled": "Deletion disabled, because older Homarr components still rely on this."
+                "disabled": "Deletion disabled, because older Homarr components do not allow the deletion of the default config. Deletion will be possible in the future."
             }
         },
         "badges": {
