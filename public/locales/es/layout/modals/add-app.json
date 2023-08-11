@@ -75,7 +75,7 @@
 		},
 		"lineClampAppName": {
 			"label": "",
-			"description": ""
+			"description": "Define en cuántas líneas debe caber su título como máximo. Configurar en 0 para ilimitado."
 		}
 	},
 	"integration": {
