@@ -72,6 +72,10 @@
 				"bottom": "Sotto",
 				"left": "Sinistra"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
