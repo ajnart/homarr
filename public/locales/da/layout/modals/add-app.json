@@ -72,6 +72,10 @@
 				"bottom": "Bund",
 				"left": "Venstre"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
