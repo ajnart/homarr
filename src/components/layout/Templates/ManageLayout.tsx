@@ -16,12 +16,14 @@ import { useDisclosure } from '@mantine/hooks';
 import {
   IconBook2,
   IconBrandDiscord,
+  IconBrandDocker,
   IconBrandGithub,
   IconGitFork,
   IconHome,
   IconLayoutDashboard,
   IconMailForward,
   IconQuestionMark,
+  IconTool,
   IconUser,
   IconUsers,
   TablerIconsProps,
@@ -173,7 +175,7 @@ const CustomNavigationLink = forwardRef<
 
   return (
     <NavLink {...commonProps} defaultOpened={isAnyActive} ref={ref as RefObject<HTMLButtonElement>}>
-      {Object.entries(navigationLink.items).map(([itemName, item]) => {
+      {Object.entries(navigationLink.items).map(([itemName, item], index) => {
         const commonItemProps = {
           label: t(`navigation.${name}.items.${itemName}`),
           icon: <item.icon size={16} />,
@@ -183,10 +185,18 @@ const CustomNavigationLink = forwardRef<
         const matchesActive = router.pathname.endsWith(item.href);
 
         if (item.href.startsWith('http')) {
-          return <NavLink {...commonItemProps} active={matchesActive} target={item.target} component="a" />;
+          return (
+            <NavLink
+              {...commonItemProps}
+              active={matchesActive}
+              target={item.target}
+              key={index}
+              component="a"
+            />
+          );
         }
 
-        return <NavLink {...commonItemProps} active={matchesActive} component={Link} />;
+        return <NavLink {...commonItemProps} active={matchesActive} component={Link} key={index} />;
       })}
     </NavLink>
   );
@@ -223,28 +233,38 @@ const navigationLinks: NavigationLinks = {
       },
     },
   },
+  tools: {
+    icon: IconTool,
+    onlyAdmin: true,
+    items: {
+      docker: {
+        icon: IconBrandDocker,
+        href: '/manage/tools/docker',
+      },
+    },
+  },
   help: {
     icon: IconQuestionMark,
     items: {
       documentation: {
         icon: IconBook2,
         href: 'https://homarr.dev/docs/about',
-        target: '_blank'
+        target: '_blank',
       },
       report: {
         icon: IconBrandGithub,
         href: 'https://github.com/ajnart/homarr/issues/new/choose',
-        target: '_blank'
+        target: '_blank',
       },
       discord: {
         icon: IconBrandDiscord,
         href: 'https://discord.com/invite/aCsmEV5RgA',
-        target: '_blank'
+        target: '_blank',
       },
       contribute: {
         icon: IconGitFork,
         href: 'https://github.com/ajnart/homarr',
-        target: '_blank'
+        target: '_blank',
       },
     },
   },

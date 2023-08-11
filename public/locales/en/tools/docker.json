@@ -1,0 +1,8 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Your Homarr instance does not have Docker configured. Please check the documentation on how to set up the integration."
+        }
+    }
+}

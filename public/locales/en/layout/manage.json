@@ -21,6 +21,12 @@
                 "discord": "Community Discord",
                 "contribute": "Contribute"
             }
+        },
+        "tools": {
+            "title": "Tools",
+            "items": {
+                "docker": "Docker"
+            }
         }
     }
 }
