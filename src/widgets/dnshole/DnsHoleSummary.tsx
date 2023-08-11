@@ -1,4 +1,4 @@
-import { Card, Center, Container, Flex, Text } from '@mantine/core';
+import { Box, Card, Center, Container, Flex, Text } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
   IconAd,
@@ -6,16 +6,20 @@ import {
   IconPercentage,
   IconSearch,
   IconWorldWww,
+  TablerIconsProps,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 import { useConfigContext } from '~/config/provider';
-import { api } from '~/utils/api';
+import { RouterOutputs, api } from '~/utils/api';
 
-import { formatNumber } from '../../tools/client/math';
+import { formatNumber, formatPercentage } from '../../tools/client/math';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
+
+const availableLayouts = ['grid', 'row', 'column'] as const;
+type AvailableLayout = (typeof availableLayouts)[number];
 
 const definition = defineWidget({
   id: 'dns-hole-summary',
@@ -27,8 +31,8 @@ const definition = defineWidget({
     },
     layout: {
       type: 'select',
-      defaultValue: 'grid',
-      data: [{ value: 'grid' }, { value: 'row' }, { value: 'column' }],
+      defaultValue: 'grid' as AvailableLayout,
+      data: availableLayouts.map((x) => ({ value: x })),
     },
   },
   gridstack: {
@@ -47,59 +51,53 @@ interface DnsHoleSummaryWidgetProps {
 }
 
 function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
-  const { t } = useTranslation('modules/dns-hole-summary');
   const { isInitialLoading, data } = useDnsHoleSummeryQuery();
-  const flexLayout = widget.properties.layout as 'row' | 'column';
 
   if (isInitialLoading || !data) {
     return <WidgetLoading />;
   }
 
   return (
-    <Container
-      h="100%"
-      p={0}
-      style={{
-        gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: '1fr 1fr',
-        display: flexLayout?.includes('grid') ? 'grid' : 'flex',
-        flexDirection: flexLayout,
-      }}
-    >
-      <StatCard
-        icon={<IconBarrierBlock />}
-        number={formatNumber(data.adsBlockedToday, 2)}
-        label={t('card.metrics.queriesBlockedToday') as string}
-        color={
-          widget.properties.usePiHoleColors ? 'rgba(240, 82, 60, 0.4)' : 'rgba(96, 96, 96, 0.1)'
-        }
-      />
-      <StatCard
-        icon={<IconPercentage />}
-        number={(data.adsBlockedTodayPercentage * 100).toFixed(2) + '%'}
-        color={
-          widget.properties.usePiHoleColors ? 'rgba(255, 165, 20, 0.4)' : 'rgba(96, 96, 96, 0.1)'
-        }
-      />
-      <StatCard
-        icon={<IconSearch />}
-        number={formatNumber(data.dnsQueriesToday, 2)}
-        label={t('card.metrics.queriesToday') as string}
-        color={
-          widget.properties.usePiHoleColors ? 'rgba(0, 175, 218, 0.4)' : 'rgba(96, 96, 96, 0.1)'
-        }
-      />
-      <StatCard
-        icon={<IconWorldWww />}
-        number={formatNumber(data.domainsBeingBlocked, 2)}
-        label={t('card.metrics.domainsOnAdlist') as string}
-        color={
-          widget.properties.usePiHoleColors ? 'rgba(0, 176, 96, 0.4)' : 'rgba(96, 96, 96, 0.1)'
-        }
-      />
+    <Container h="100%" p={0} style={constructContainerStyle(widget.properties.layout)}>
+      {stats.map((item) => (
+        <StatCard item={item} usePiHoleColors={widget.properties.usePiHoleColors} data={data} />
+      ))}
     </Container>
   );
 }
+
+const stats = [
+  {
+    icon: IconBarrierBlock,
+    value: (x) => formatNumber(x.adsBlockedToday, 2),
+    label: 'card.metrics.queriesBlockedToday',
+    color: 'rgba(240, 82, 60, 0.4)',
+  },
+  {
+    icon: IconPercentage,
+    value: (x) => formatPercentage(x.adsBlockedTodayPercentage, 2),
+    color: 'rgba(255, 165, 20, 0.4)',
+  },
+  {
+    icon: IconSearch,
+    value: (x) => formatNumber(x.dnsQueriesToday, 2),
+    label: 'card.metrics.queriesToday',
+    color: 'rgba(0, 175, 218, 0.4)',
+  },
+  {
+    icon: IconWorldWww,
+    value: (x) => formatNumber(x.domainsBeingBlocked, 2),
+    label: 'card.metrics.domainsOnAdlist',
+    color: 'rgba(0, 176, 96, 0.4)',
+  },
+] satisfies StatItem[];
+
+type StatItem = {
+  icon: (props: TablerIconsProps) => JSX.Element;
+  value: (x: RouterOutputs['dnsHole']['summary']) => string;
+  label?: string;
+  color: string;
+};
 
 export const useDnsHoleSummeryQuery = () => {
   const { name: configName } = useConfigContext();
@@ -114,23 +112,23 @@ export const useDnsHoleSummeryQuery = () => {
   );
 };
 
-interface StatCardProps {
-  icon: JSX.Element;
-  number: string;
-  label?: string;
-  color?: string;
-}
-
-const StatCard = ({ icon, number, label, color }: StatCardProps) => {
+type StatCardProps = {
+  item: StatItem;
+  data: RouterOutputs['dnsHole']['summary'];
+  usePiHoleColors: boolean;
+};
+const StatCard = ({ item, data, usePiHoleColors }: StatCardProps) => {
+  const { t } = useTranslation('modules/dns-hole-summary');
   const { ref, height, width } = useElementSize();
+
   return (
     <Card
       ref={ref}
       m="0.4rem"
       p="0.2rem"
-      sx={{
-        backgroundColor: color,
-        flex: '1',
+      bg={usePiHoleColors ? item.color : 'rgba(96, 96, 96, 0.1)'}
+      style={{
+        flex: 1,
       }}
       withBorder
     >
@@ -142,31 +140,42 @@ const StatCard = ({ icon, number, label, color }: StatCardProps) => {
           justify="space-evenly"
           direction={width > height + 20 ? 'row' : 'column'}
         >
-          {React.cloneElement(icon, {
-            size: 30,
-            style: { margin: '0 10' }
-          })}
-          <div
+          <item.icon size={30} style={{ margin: '0 10' }} />
+          <Flex
+            justify="center"
+            direction="column"
             style={{
-              flex: '1',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
+              flex: 1,
             }}
           >
             <Text align="center" lh={1.2} size="md" weight="bold">
-              {number}
+              {item.value(data)}
             </Text>
-            {label && (
+            {item.label && (
               <Text align="center" lh={1.2} size="0.75rem">
-                {label}
+                {t<string>(item.label)}
               </Text>
             )}
-          </div>
+          </Flex>
         </Flex>
       </Center>
     </Card>
   );
+};
+
+const constructContainerStyle = (flexLayout: (typeof availableLayouts)[number]) => {
+  if (flexLayout === 'grid') {
+    return {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gridTemplateRows: '1fr 1fr',
+    };
+  }
+
+  return {
+    display: 'flex',
+    flexDirection: flexLayout,
+  };
 };
 
 export default definition;
