@@ -21,10 +21,10 @@
       },
       "titleState": {
         "label": "Título de la ciudad",
-        "info": "En caso de activar la opción Zona Horaria, se puede mostrar el nombre de la ciudad y el código de la zona horaria.<br/>También puedes mostrar la ciudad sola, o incluso no mostrar ninguna.",
+        "info": "En caso de que se active la opción zona horaria, se puede mostrar el nombre de la ciudad y el código de la zona horaria.<br/>También se puede mostrar la ciudad sola o incluso no mostrar nada.",
         "data": {
-          "both": "Ciudad y Zona horaria",
-          "city": "Ciudad solo",
+          "both": "Ciudad y zona horaria",
+          "city": "Solo ciudad",
           "none": "Nada"
         }
       }
