@@ -72,6 +72,10 @@
 				"bottom": "Unten",
 				"left": "Links"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
