@@ -72,6 +72,10 @@
 				"bottom": "Inferior",
 				"left": "Izquierda"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
