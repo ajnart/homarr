@@ -72,6 +72,10 @@
 				"bottom": "Dole",
 				"left": "Vľavo"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
