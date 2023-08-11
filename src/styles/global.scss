@@ -97,3 +97,11 @@
   width: 100%;
   display: inherit !important;
 }
+
+.polka {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--mantine-color-red-6) 20%, transparent) 6px,
+    transparent 6px
+  );
+  background-size: 60px 60px;
+}

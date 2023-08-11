@@ -15,9 +15,11 @@ import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
+import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -63,45 +65,62 @@ export default function LoginPage() {
       </Head>
 
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
-        <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
-          <Title align="center" weight={900}>
-            {t('title')}
-          </Title>
+        <FloatingBackground />
+        <Stack spacing={40} align="center" w="100%">
+          <Stack spacing={0} align="center">
+            <Image src="/imgs/logo/logo.svg" width={80} height={80} alt="" />
+            <Text
+              sx={(theme) => ({
+                color: theme.colorScheme === 'dark' ? theme.colors.gray[5] : theme.colors.dark[6],
+                fontSize: '4rem',
+                fontWeight: 800,
+                lineHeight: 1,
+              })}
+              align="center"
+            >
+              Homarr
+            </Text>
+          </Stack>
+          <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={450}>
+            <Title style={{ whiteSpace: 'nowrap' }} align="center" weight={900}>
+              {t('title')}
+            </Title>
 
-          <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
-            {t('text')}
-          </Text>
+            <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+              {t('text')}
+            </Text>
 
-          {isError && (
-            <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
-              {t('alert')}
-            </Alert>
-          )}
+            {isError && (
+              <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
+                {t('alert')}
+              </Alert>
+            )}
 
-          <form onSubmit={form.onSubmit(handleSubmit)}>
-            <Stack>
-              <TextInput
-                variant="filled"
-                label={t('form.fields.username.label')}
-                autoComplete="homarr-username"
-                withAsterisk
-                {...form.getInputProps('name')}
-              />
+            <form onSubmit={form.onSubmit(handleSubmit)}>
+              <Stack>
+                <TextInput
+                  variant="filled"
+                  label={t('form.fields.username.label')}
+                  autoComplete="homarr-username"
+                  withAsterisk
+                  {...form.getInputProps('name')}
+                />
 
-              <PasswordInput
-                variant="filled"
-                label={t('form.fields.password.label')}
-                autoComplete="homarr-password"
-                withAsterisk
-                {...form.getInputProps('password')}
-              />
+                <PasswordInput
+                  variant="filled"
+                  label={t('form.fields.password.label')}
+                  autoComplete="homarr-password"
+                  withAsterisk
+                  {...form.getInputProps('password')}
+                />
 
-              <Button fullWidth type="submit" loading={isLoading}>
-                {t('form.buttons.submit')}
-              </Button>
-            </Stack>
-          </form>
-        </Card>
+                <Button variant="light" fullWidth type="submit" mt="md" loading={isLoading}>
+                  {t('form.buttons.submit')}
+                </Button>
+              </Stack>
+            </form>
+          </Card>
+        </Stack>
       </Flex>
     </>
   );

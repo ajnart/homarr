@@ -113,6 +113,7 @@ function App(
                 }}
                 withGlobalStyles
                 withNormalizeCSS
+                withCSSVariables
               >
                 <ConfigProvider {...props.pageProps}>
                   <Notifications limit={4} position="bottom-left" />
