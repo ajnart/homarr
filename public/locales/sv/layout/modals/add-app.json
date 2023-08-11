@@ -75,7 +75,7 @@
 		},
 		"lineClampAppName": {
 			"label": "",
-			"description": ""
+			"description": "Definierar hur många rader din titel maximalt ska rymmas på. Ange 0 för obegränsat."
 		}
 	},
 	"integration": {
