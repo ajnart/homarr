@@ -72,6 +72,10 @@
 				"bottom": "Alt",
 				"left": "Sol"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
