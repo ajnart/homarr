@@ -72,6 +72,10 @@
 				"bottom": "תחתון",
 				"left": "שמאל"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {
