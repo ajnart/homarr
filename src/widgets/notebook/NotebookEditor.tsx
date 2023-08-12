@@ -88,8 +88,6 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           size={30}
           radius={'md'}
           onClick={() => setIsEditing(!isEditing)}
-          aria-label="Turn editing on/off"
-          title="Enable editing of the note"
         >
           {isEditing ? <IconEditOff size={20} /> : <IconEdit size={20} />}
         </ActionIcon>
