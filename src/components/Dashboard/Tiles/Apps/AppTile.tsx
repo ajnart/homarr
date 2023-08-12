@@ -45,20 +45,20 @@ export const AppTile = ({ className, app }: AppTileProps) => {
             flexFlow: app.appearance.positionAppName ?? 'column',
           }}
         >
-        {app.appearance.appNameStatus === 'normal' && (
-          <Text
-            className={cx(classes.appName, 'dashboard-tile-app-title')}
-            fw={700}
-            size="md"
-            ta="center"
-            sx={{
-              flex: isRow ? '1' : undefined,
-            }}
-            lineClamp={app.appearance.lineClampAppName}
-          >
-            {app.name}
-          </Text>
-        )}
+          {app.appearance.appNameStatus === 'normal' && (
+            <Text
+              className={cx(classes.appName, 'dashboard-tile-app-title')}
+              fw={700}
+              size="md"
+              ta="center"
+              sx={{
+                flex: isRow ? '1' : undefined,
+              }}
+              lineClamp={app.appearance.lineClampAppName}
+            >
+              {app.name}
+            </Text>
+          )}
           <motion.img
             className={cx(classes.appImage, 'dashboard-tile-app-image')}
             src={app.appearance.iconUrl}
