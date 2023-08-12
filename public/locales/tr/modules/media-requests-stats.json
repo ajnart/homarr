@@ -3,7 +3,10 @@
     "name": "Medya talep istatistikleri",
     "description": "Medya taleplerinizle ilgili istatistikler",
     "settings": {
-      "title": "Medya talep istatistikleri"
+      "title": "Medya talep istatistikleri",
+      "direction": {
+        "label": "Yerleşimin yönü."
+      }
     }
   },
   "stats": {

@@ -1,14 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Statistiques des demandes",
+    "description": "Statistiques sur vos demandes de médias",
     "settings": {
-      "title": ""
+      "title": "Statistiques des demandes",
+      "direction": {
+        "label": ""
+      }
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "En attente de validation",
+    "tvRequests": "Demandes de séries TV",
+    "movieRequests": "Demandes de films"
   }
 }

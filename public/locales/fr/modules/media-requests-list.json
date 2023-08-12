@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Demandes de média",
+    "description": "Voir la liste de toutes les demandes de médias de votre instance Overseerr ou Jellyseerr",
     "settings": {
-      "title": "",
+      "title": "Liste des demandes de médias",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Remplacer les liens par des hôtes externes"
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Aucune demande n'a été trouvée. Veuillez vous assurer que vous avez configuré vos applications correctement.",
+  "pending": "Il y a {{countPendingApproval}} demandes en attente d'approbation.",
+  "nonePending": "Il n'y a actuellement aucune approbation en cours. Vous êtes à jour !",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Validée",
+    "pendingApproval": "En attente de validation",
+    "declined": "Refusée"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "Valider les demandes",
+    "decline": "Refuser les demandes"
   }
 }

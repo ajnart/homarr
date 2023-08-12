@@ -3,7 +3,10 @@
     "name": "Štatistiky požiadaviek médií",
     "description": "Štatistiky o vašich požiadavkách na médiá",
     "settings": {
-      "title": "Štatistiky požiadaviek médií"
+      "title": "Štatistiky požiadaviek médií",
+      "direction": {
+        "label": "Smer rozloženia."
+      }
     }
   },
   "stats": {

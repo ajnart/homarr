@@ -30,7 +30,7 @@ export const AppPing = ({ app }: AppPingProps) => {
     <motion.div
       style={{
         position: 'absolute',
-        bottom: replaceDotWithIcon ? 5 : 20,
+        bottom: replaceDotWithIcon ? 0 : 20,
         right: replaceDotWithIcon ? 8 : 20,
         zIndex: 2,
       }}

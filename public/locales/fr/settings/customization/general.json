@@ -3,7 +3,7 @@
   "accordeon": {
     "layout": {
       "name": "Mise en page",
-      "description": "Activer et désactiver les éléments sur l'en-tête et le titre du tableau de bord"
+      "description": "Activer et désactiver les éléments d'entête et les titres du tableau du bord"
     },
     "gridstack": {
       "name": "Grille",
@@ -15,11 +15,11 @@
     },
     "appereance": {
       "name": "Apparence",
-      "description": ""
+      "description": "Personnalisez l'arrière-plan, les couleurs et l'apparence des applications"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Accessibilité",
+      "description": "Configurer Homarr pour les utilisateurs handicapés et/ou invalides"
     }
   }
 }

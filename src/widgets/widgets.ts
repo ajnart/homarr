@@ -31,7 +31,7 @@ export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> 
 type MakeLessSpecific<T> = T extends boolean ? boolean : T;
 
 // Types of options that can be specified for the widget edit modal
-export type IWidgetOptionValue =
+export type IWidgetOptionValue = (
   | IMultiSelectOptionValue
   | ISwitchOptionValue
   | ITextInputOptionValue
@@ -41,12 +41,20 @@ export type IWidgetOptionValue =
   | IDraggableListInputValue
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
-  | ILocationOptionValue;
+  | ILocationOptionValue
+) &
+  ICommonWidgetOptions;
 
 // Interface for data type
 interface DataType {
-  label: string;
+  label?: string;
   value: string;
+}
+
+interface ICommonWidgetOptions {
+  info?: boolean;
+  hide?: boolean;
+  infoLink?: string;
 }
 
 // will show a multi-select with specified data
@@ -61,7 +69,7 @@ export type IMultiSelectOptionValue = {
 export type ISelectOptionValue = {
   type: 'select';
   defaultValue: string;
-  data: DataType[];
+  data: DataType[] | (() => DataType[]);
   inputProps?: Partial<SelectProps>;
 };
 
@@ -96,6 +104,7 @@ export type ISliderInputOptionValue = {
   inputProps?: Partial<SliderProps>;
 };
 
+// will show a custom location selector
 type ILocationOptionValue = {
   type: 'location';
   defaultValue: { latitude: number; longitude: number };

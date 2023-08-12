@@ -1,18 +1,18 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Fenêtres contextuelles bloquées",
+      "text": "Votre navigateur a bloqué Homarr d'accéder à son API. Ceci est habituellement causé par des bloqueurs de publicités ou des permissions refusées. Homarr est incapable de les demander automatiquement.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Cliquez sur l'icône à côté de l'URL et vérifiez les permissions. Autorisez les fenêtres contextuelles",
+        "adBlockers": "Désactivez les bloqueurs de publicités et outils de sécurité de votre navigateur",
+        "otherBrowser": "Essayez un autre navigateur web"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Tout ouvrir dans un nouvel onglet"
     }
   }
 }

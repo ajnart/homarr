@@ -129,6 +129,9 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 url: address,
                 appearance: {
                   iconUrl: '/imgs/logo/logo.png',
+                  appNameStatus: 'normal',
+                  positionAppName: 'column',
+                  lineClampAppName: 1,
                 },
                 network: {
                   enabledStatusChecker: true,
@@ -186,7 +189,7 @@ const useDockerActionMutation = () => {
       { action, id: container.Id },
       {
         onSuccess: () => {
-          notifications.show({
+          notifications.update({
             id: container.Id,
             title: containerName,
             message: `${t(`actions.${action}.end`)} ${containerName}`,

@@ -3,7 +3,10 @@
     "name": "",
     "description": "",
     "settings": {
-      "title": ""
+      "title": "",
+      "direction": {
+        "label": "Layoutens riktning."
+      }
     }
   },
   "stats": {

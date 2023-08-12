@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Une erreur s’est produite!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Détails",
+      "tryAgain": "Réessayer"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Votre erreur",
+    "reportButton": "Signaler cette erreur"
   }
 }

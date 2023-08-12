@@ -3,7 +3,10 @@
     "name": "媒体请求状态",
     "description": "您的媒体请求统计",
     "settings": {
-      "title": "媒体请求状态"
+      "title": "媒体请求状态",
+      "direction": {
+        "label": "布局方向。"
+      }
     }
   },
   "stats": {

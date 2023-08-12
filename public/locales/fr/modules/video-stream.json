@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Flux vidéo",
+    "description": "Intégrer un flux vidéo ou une vidéo provenant d'une caméra ou d'un site web",
     "settings": {
-      "title": "",
+      "title": "Paramètres du widget de flux vidéo",
       "FeedUrl": {
-        "label": ""
+        "label": "URL du flux"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Lecture automatique"
       },
       "muted": {
-        "label": ""
+        "label": "Son en sourdine"
       },
       "controls": {
-        "label": ""
+        "label": "Contrôles du lecteur vidéo"
       }
     }
   },

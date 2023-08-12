@@ -1,30 +1,28 @@
 import {
   Accordion,
-  Button,
   Center,
-  Code,
   Group,
   Stack,
-  Table,
   Text,
   Title,
   createStyles,
   useMantineTheme,
 } from '@mantine/core';
-import { useClipboard } from '@mantine/hooks';
-import { modals } from '@mantine/modals';
 import { IconDeviceDesktop, IconInfoCircle, IconServer } from '@tabler/icons-react';
 import { NextPageContext } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import imageBugFixing from '~/images/undraw_bug_fixing_oc-7-a.svg';
 
-function Error({ statusCode, err }: { statusCode: number; err: Error }) {
+function Error({ statusCode }: { statusCode: number }) {
   const { classes } = useStyles();
   const theme = useMantineTheme();
-  const clipboard = useClipboard();
   const getColor = (color: string) => theme.colors[color][theme.colorScheme === 'dark' ? 5 : 7];
   return (
     <Center className={classes.root} h="100dvh" maw={400}>
+      <Head>
+        <title>An error occurred • Homarr</title>
+      </Head>
       <Stack>
         <Image className={classes.image} src={imageBugFixing} alt="bug illustration" />
         <Title>An unexpected error has occurred</Title>
@@ -56,61 +54,6 @@ function Error({ statusCode, err }: { statusCode: number; err: Error }) {
                     )}
                   </Text>
                 </Group>
-                {err && (
-                  <>
-                    <Group position="apart">
-                      <Text fw="bold">Error name</Text>
-                      <Text>{err.name}</Text>
-                    </Group>
-                    <Group position="apart">
-                      <Text fw="bold">Error message</Text>
-                      <Text>{err.message}</Text>
-                    </Group>
-                  </>
-                )}
-                {err?.stack && (
-                  <Group position="apart">
-                    <Text fw="bold">Stacktrace</Text>
-                    <Button
-                      onClick={() => {
-                        modals.open({
-                          modalId: 'error_stacktrace',
-                          title: <Text fw="bold">Error stacktrace</Text>,
-                          children: (
-                            <Stack>
-                              <Text>
-                                This may contain sensitive information. Please remove any private
-                                data and send to trusted people only.
-                              </Text>
-                              <Code block>{err.stack}</Code>
-                              <Group grow>
-                                <Button
-                                  onClick={() => {
-                                    clipboard.copy(err.stack);
-                                  }}
-                                  variant="default"
-                                >
-                                  Copy
-                                </Button>
-                                <Button
-                                  onClick={() => {
-                                    modals.close('error_stacktrace');
-                                  }}
-                                  variant="light"
-                                >
-                                  Dismiss
-                                </Button>
-                              </Group>
-                            </Stack>
-                          ),
-                        });
-                      }}
-                      variant="light"
-                    >
-                      Show stacktrace
-                    </Button>
-                  </Group>
-                )}
               </Stack>
             </Accordion.Panel>
           </Accordion.Item>
@@ -122,7 +65,7 @@ function Error({ statusCode, err }: { statusCode: number; err: Error }) {
 
 Error.getInitialProps = ({ res, err }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode, err };
+  return { statusCode };
 };
 
 const useStyles = createStyles(() => ({

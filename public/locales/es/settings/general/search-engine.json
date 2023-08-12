@@ -3,12 +3,12 @@
   "configurationName": "Configuración del motor de búsqueda",
   "tips": {
     "generalTip": "¡Hay múltiples prefijos que puedes usar! Añadiéndolos delante de tus consultas, filtrarán los resultados. !s (Web), !t (Torrents), !y (YouTube), y !m (Media).",
-    "placeholderTip": "%s puede utilizarse como modelo para la petición."
+    "placeholderTip": "%s se puede utilizar como marcador de posición para la consulta."
   },
   "customEngine": {
     "title": "Motor de búsqueda personalizado",
-    "label": "URL de la Petición",
-    "placeholder": "URL de petición personalizada"
+    "label": "URL de consulta",
+    "placeholder": "URL de consulta personalizada"
   },
   "searchNewTab": {
     "label": "Abrir los resultados de la búsqueda en una pestaña nueva"

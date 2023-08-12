@@ -24,7 +24,12 @@
 		"isOpeningNewTab": {
 			"label": "Otvoriť na novej karte",
 			"description": "Otvorenie aplikácie na novej karte namiesto aktuálnej."
-		}
+		},
+		"tooltipDescription": {
+			"label": "Popis aplikácie",
+			"description": "Text, ktorý zadáte, sa zobrazí po nabehnutí na aplikáciu.\nPomocou neho môžete používateľom poskytnúť viac informácií o vašej aplikácii alebo ho môžete nechať prázdny, ak nechcete mať nič."
+		},
+		"customProtocolWarning": "Používanie neštandardného protokolu. Môže to vyžadovať predinštalované aplikácie a môže to predstavovať bezpečnostné riziká. Uistite sa, že vaša adresa je bezpečná a dôveryhodná."
 	},
 	"network": {
 		"statusChecker": {
@@ -47,6 +52,25 @@
 			"noItems": {
 				"title": "Načítanie externých ikon",
 				"text": "Môže to trvať niekoľko sekúnd"
+			}
+		},
+		"appNameStatus": {
+			"label": "Názov aplikácie Stav",
+			"description": "Vyberte, kde sa má názov zobrazovať, ak vôbec.",
+			"dropdown": {
+				"normal": "Zobrazenie názvu iba na dlaždici",
+				"hover": "Zobrazenie názvu len pri zobrazení nápovedy po nabehnutí na nástroj",
+				"hidden": "Viac nezobrazovať"
+			}
+		},
+		"positionAppName": {
+			"label": "Názov aplikácie Pozícia",
+			"description": "Poloha názvu aplikácie vzhľadom na ikonu.",
+			"dropdown": {
+				"top": "Hore",
+				"right": "Vpravo",
+				"bottom": "Dole",
+				"left": "Vľavo"
 			}
 		}
 	},

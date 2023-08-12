@@ -24,7 +24,12 @@
 		"isOpeningNewTab": {
 			"label": "Abrir em novo separador",
 			"description": "Abrir a aplicação num novo separador em vez do actual."
-		}
+		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
@@ -47,6 +52,25 @@
 			"noItems": {
 				"title": "Carregando ícones externos",
 				"text": "Isto pode levar alguns segundos"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},

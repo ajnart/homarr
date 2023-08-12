@@ -25,6 +25,10 @@
 			"label": "Open in new tab",
 			"description": "Open the app in a new tab instead of the current one."
 		},
+		"tooltipDescription":{
+			"label": "Application Description",
+			"description": "The text you enter will appear when hovering over your app.\r\nUse this to give users more details about your app or leave empty to have nothing."
+		},
 		"customProtocolWarning": "Using a non-standard protocol. This may require pre-installed applications and can introduce security risks. Ensure that your address is secure and trusted."
 	},
 	"network": {
@@ -49,6 +53,29 @@
 				"title": "Loading external icons",
 				"text": "This may take a few seconds"
 			}
+		},
+		"appNameStatus":{
+			"label":"App Name Status",
+			"description":"Choose where you want the title to show up, if at all.",
+			"dropdown": {
+				"normal":"Show title on tile only",
+				"hover":"Show title on tooltip hover only",
+				"hidden":"Don't show at all"
+			}
+		},
+		"positionAppName":{
+			"label":"App Name Position",
+			"description":"Position of the app's name relative to the icon.",
+			"dropdown": {
+				"top":"Top",
+				"right":"Right",
+				"bottom":"Bottom",
+				"left":"Left"
+			}
+		},
+		"lineClampAppName":{
+			"label":"App Name Line Clamp",
+			"description":"Defines on how many lines your title should fit at it's maximum. Set 0 for unlimited."
 		}
 	},
 	"integration": {

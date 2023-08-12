@@ -4,6 +4,10 @@
     "description": "Visualizza un elenco statico di stringhe o link",
     "settings": {
       "title": "Opzioni preferiti",
+      "name": {
+        "label": "Titolo del Widget",
+        "info": ""
+      },
       "items": {
         "label": "Elementi"
       },
