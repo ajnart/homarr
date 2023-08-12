@@ -8,24 +8,24 @@
         "label": "Zobraziť celý čas (24 hodín)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Formát dátumu",
         "data": {
-          "hide": ""
+          "hide": "Skryť dátum"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Zobrazenie vlastného časového pásma"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Lokalita Časového pásma"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Názov mesta",
+        "info": "Ak aktivujete možnosť Časové pásmo, môže sa zobraziť názov mesta a kód časového pásma.<br/>Môžete zobraziť aj samotné mesto alebo dokonca nezobraziť žiadne.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Mesto a časové pásmo",
+          "city": "Iba mesto",
+          "none": "Žiadne"
         }
       }
     }
