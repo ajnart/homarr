@@ -10,9 +10,9 @@
       "layout": {
         "label": "Rozloženie",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 x 2",
+          "row": "Horizontálne",
+          "column": "Vertikálne"
         }
       }
     }
