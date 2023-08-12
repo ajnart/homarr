@@ -6,6 +6,14 @@
       "title": "DNS Hole özeti için ayarlar",
       "usePiHoleColors": {
         "label": "PiHole'daki renkleri kullanın"
+      },
+      "layout": {
+        "label": "Düzen",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
