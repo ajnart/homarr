@@ -68,8 +68,14 @@ export default function LoginPage() {
         <title>{metaTitle}</title>
       </Head>
 
+
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <FloatingBackground />
+
+        <Button h="fit-content" w="fit-content" p={10} pos="absolute" top={20} right={20} variant="default" onClick={() => toggleColorScheme()}>
+          <Icon size={30} />
+        </Button>
+
         <Stack spacing={40} align="center" w="100%">
           <Stack spacing={0} align="center">
             <Image src="/imgs/logo/logo.svg" width={80} height={80} alt="" />
@@ -118,14 +124,9 @@ export default function LoginPage() {
                   {...form.getInputProps('password')}
                 />
 
-                <Group mt="xs" style={{ justifyContent: 'space-between', display: 'flex' }}>
-                  <Button variant="default" px={5} onClick={() => toggleColorScheme()}>
-                    <Icon />
-                  </Button>
-                  <Button variant="light" w="50%" type="submit" loading={isLoading}>
-                    {t('form.buttons.submit')}
-                  </Button>
-                </Group>
+                <Button mt="xs" variant="light" fullWidth type="submit" loading={isLoading}>
+                  {t('form.buttons.submit')}
+                </Button>
               </Stack>
             </form>
           </Card>
