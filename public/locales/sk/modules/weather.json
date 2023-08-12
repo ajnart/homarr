@@ -8,7 +8,7 @@
         "label": "Zobrazenie vo stupňoch Fahrenheita"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Zobrazenie názvu mesta"
       },
       "location": {
         "label": "Poloha počasia"
