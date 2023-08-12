@@ -10,9 +10,9 @@
       "layout": {
         "label": "Ansicht",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 x 2",
+          "row": "Horizontal",
+          "column": "Vertikal"
         }
       }
     }
