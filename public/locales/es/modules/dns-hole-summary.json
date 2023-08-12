@@ -10,9 +10,9 @@
       "layout": {
         "label": "Diseño",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 por 2",
+          "row": "Horizontal",
+          "column": "Vertical"
         }
       }
     }
