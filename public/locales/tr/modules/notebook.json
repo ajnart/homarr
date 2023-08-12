@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Not defteri",
+		"description": "Notlarınızı yazmanız için markdown tabanlı interaktif bir widget!",
 		"settings": {
-			"title": "",
+			"title": "Not defteri widget'ı için ayarlar",
 			"showToolbar": {
-				"label": ""
+				"label": "Markdown yazmanıza yardımcı olacak araç çubuğunu gösterin"
 			},
 			"content": {
-				"label": ""
+				"label": "Not defterinin içeriği"
 			}
 		}
 	}
