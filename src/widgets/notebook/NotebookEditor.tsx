@@ -19,41 +19,38 @@ Link.configure({
 });
 
 export function Editor({ widget }: { widget: INotebookWidget }) {
-  const [content, setContent] = useState(widget.properties);
+  const [content, setContent] = useState(widget.properties.content);
 
   const { enabled } = useEditModeStore();
-  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
   const { primaryColor } = useColorTheme();
 
-  const { mutateAsync } = api.notebook.createOrUpdate.useMutation();
+  const { mutateAsync } = api.notebook.update.useMutation();
 
-  const [debounced] = useDebouncedValue(content, 500);
-
-  if (!config || !configName) return <WidgetLoading />;
+  const [debouncedContent] = useDebouncedValue(content, 500);
 
   const editor = useEditor({
     extensions: [StarterKit, Link],
-    content: content.content,
+    content,
     editable: false,
     onUpdate: (e) => {
-      setContent((previous) => ({
-        ...previous,
-        content: e.editor.getHTML(),
-      }));
+      setContent(e.editor.getHTML());
     },
   });
-  useEffect(() => {
-    if (!editor) return;
-    editor.setEditable(isEditing);
+
+  const handleEditToggle = (previous: boolean) => {
+    const current = !previous;
+    if (!editor) return current;
+    editor.setEditable(current);
 
     updateConfig(
-      configName,
+      configName!,
       (previous) => {
         const currentWidget = previous.widgets.find((x) => x.id === widget.id);
-        currentWidget!.properties = debounced;
+        currentWidget!.properties.content = debouncedContent;
 
         return {
           ...previous,
@@ -67,27 +64,31 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     );
 
     void mutateAsync({
-      configName: configName,
-      content: debounced.content,
+      configName: configName!,
+      content: debouncedContent,
       widgetId: widget.id,
     });
-  }, [isEditing]);
+
+    return current;
+  };
+
+  if (!config || !configName) return <WidgetLoading />;
 
   return (
     <>
-      {enabled === false && (
+      {!enabled && (
         <ActionIcon
           style={{
             zIndex: 1,
-            position: 'absolute',
-            top: 7,
-            right: 7,
           }}
+          top={7}
+          right={7}
+          pos="absolute"
           color={primaryColor}
           variant="light"
           size={30}
           radius={'md'}
-          onClick={() => setIsEditing(!isEditing)}
+          onClick={() => setIsEditing(handleEditToggle)}
         >
           {isEditing ? <IconEditOff size={20} /> : <IconEdit size={20} />}
         </ActionIcon>
