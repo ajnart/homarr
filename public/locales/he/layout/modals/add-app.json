@@ -74,8 +74,8 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "מהדק קו שם האפליקציה",
+			"description": "מגדיר כמה שורות הכותרת שלך צריכה להתאים למקסימום. הגדר 0 עבור ללא הגבלה."
 		}
 	},
 	"integration": {
