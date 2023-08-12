@@ -6,6 +6,27 @@
       "title": "Ajustes del widget Fecha y Hora",
       "display24HourFormat": {
         "label": "Mostrar hora completa (24 horas)"
+      },
+      "dateFormat": {
+        "label": "Formato de fecha",
+        "data": {
+          "hide": "Ocultar Fecha"
+        }
+      },
+      "enableTimezone": {
+        "label": "Mostrar una zona horaria personalizada"
+      },
+      "timezoneLocation": {
+        "label": "Ubicación de la zona horaria"
+      },
+      "titleState": {
+        "label": "Título de la ciudad",
+        "info": "En caso de que se active la opción zona horaria, se puede mostrar el nombre de la ciudad y el código de la zona horaria.<br/>También se puede mostrar la ciudad sola o incluso no mostrar nada.",
+        "data": {
+          "both": "Ciudad y zona horaria",
+          "city": "Solo ciudad",
+          "none": "Nada"
+        }
       }
     }
   }

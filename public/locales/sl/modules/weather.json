@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Prikaz v Fahrenheitu"
       },
+      "displayCityName": {
+        "label": ""
+      },
       "location": {
         "label": "Lokacija vremena"
       }

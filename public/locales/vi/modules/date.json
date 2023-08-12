@@ -6,6 +6,27 @@
       "title": "Cài đặt cho tiện ích ngày giờ",
       "display24HourFormat": {
         "label": "Dùng thời gian 24 giờ"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }

@@ -1,0 +1,15 @@
+{
+	"descriptor": {
+		"name": "Poznámkový blok",
+		"description": "Interaktívny widget založený na značkovaní, do ktorého si môžete zapisovať poznámky!",
+		"settings": {
+			"title": "Nastavenia pre widget notebooku",
+			"showToolbar": {
+				"label": "Zobrazenie panela nástrojov na pomoc pri písaní poznámok"
+			},
+			"content": {
+				"label": "Obsah zápisníka"
+			}
+		}
+	}
+}

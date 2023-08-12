@@ -6,6 +6,14 @@
       "title": "Einstellungen für die DNS-Hole Zusammenfassung",
       "usePiHoleColors": {
         "label": "Farben von PiHole verwenden"
+      },
+      "layout": {
+        "label": "Ansicht",
+        "data": {
+          "grid": "2 x 2",
+          "row": "Horizontal",
+          "column": "Vertikal"
+        }
       }
     }
   },
