@@ -97,7 +97,7 @@
     "@testing-library/react": "^14.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/dockerode": "^3.3.9",
-    "@types/node": "18.16.19",
+    "@types/node": "18.17.5",
     "@types/prismjs": "^1.26.0",
     "@types/react": "^18.2.11",
     "@types/uuid": "^9.0.0",
