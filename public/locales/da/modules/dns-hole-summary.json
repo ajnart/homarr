@@ -6,6 +6,14 @@
       "title": "Indstillinger for DNS Hole oversigt",
       "usePiHoleColors": {
         "label": "Brug farver fra PiHole"
+      },
+      "layout": {
+        "label": "Layout",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
