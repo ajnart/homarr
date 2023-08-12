@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Τύπος κυκλοφορίας Radarr"
+      },
+      "hideWeekDays": {
+        "label": "Απόκρυψη εργάσιμων"
+      },
+      "fontSize": {
+        "label": "Μέγεθος γραμματοσειράς"
       }
     }
   }

@@ -1,0 +1,27 @@
+{
+  "title": "¡Benvido de novo!",
+  "text": "Por favor, introduza o seu contrasinal",
+  "form": {
+    "fields": {
+      "password": {
+        "label": "",
+        "placeholder": ""
+      }
+    },
+    "buttons": {
+      "submit": ""
+    }
+  },
+  "notifications": {
+    "checking": {
+      "title": "",
+      "message": ""
+    },
+    "correct": {
+      "title": ""
+    },
+    "wrong": {
+      "title": ""
+    }
+  }
+}

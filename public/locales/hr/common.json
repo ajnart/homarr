@@ -1,0 +1,40 @@
+{
+  "save": "Spremi",
+  "about": "O aplikaciji",
+  "cancel": "Otkaži",
+  "close": "Zatvori",
+  "delete": "Obriši",
+  "ok": "U REDU",
+  "edit": "Uredi",
+  "enabled": "Omogućeno",
+  "disabled": "Onemogućeno",
+  "enableAll": "Omogući sve",
+  "disableAll": "Onemogući sve",
+  "version": "Verzija",
+  "changePosition": "Promijenjen položaj",
+  "remove": "Ukloni",
+  "removeConfirm": "Jeste li sigurni da želite ukloniti {{item}}?",
+  "createItem": "+ kreiraj {{item}}",
+  "sections": {
+    "settings": "Postavke",
+    "dangerZone": "Opasna zona"
+  },
+  "secrets": {
+    "apiKey": "API ključ",
+    "username": "Korisničko ime",
+    "password": "Lozinka"
+  },
+  "tip": "Savjet: ",
+  "time": {
+    "seconds": "sekunde",
+    "minutes": "minute",
+    "hours": "sati"
+  },
+  "loading": "Učitavam...",
+  "breakPoints": {
+    "small": "malo",
+    "medium": "srednje",
+    "large": "veliko"
+  },
+  "seeMore": ""
+}

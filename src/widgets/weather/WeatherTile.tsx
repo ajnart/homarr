@@ -1,9 +1,16 @@
-import { Center, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
+import { Center, Flex, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconArrowDownRight, IconArrowUpRight, IconCloudRain } from '@tabler/icons-react';
+import {
+  IconArrowDownRight,
+  IconArrowUpRight,
+  IconCloudRain,
+  IconCurrentLocation,
+  IconMapPin,
+} from '@tabler/icons-react';
+import { api } from '~/utils/api';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { useWeatherForCity } from './useWeatherForCity';
 import { WeatherIcon } from './WeatherIcon';
 
 const definition = defineWidget({
@@ -14,9 +21,17 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: false,
     },
+    displayCityName: {
+      type: 'switch',
+      defaultValue: false,
+    },
     location: {
-      type: 'text',
-      defaultValue: 'Paris',
+      type: 'location',
+      defaultValue: {
+        name: 'Paris',
+        latitude: 48.85341,
+        longitude: 2.3488,
+      },
     },
   },
   gridstack: {
@@ -35,8 +50,8 @@ interface WeatherTileProps {
 }
 
 function WeatherTile({ widget }: WeatherTileProps) {
-  const { data: weather, isLoading, isError } = useWeatherForCity(widget.properties.location);
-  const { width, height, ref } = useElementSize();
+  const { data: weather, isLoading, isError } = api.weather.at.useQuery(widget.properties.location);
+  const { width, ref } = useElementSize();
 
   if (isLoading) {
     return (
@@ -70,33 +85,46 @@ function WeatherTile({ widget }: WeatherTileProps) {
   // TODO: add widgetWrapper that is generic and uses the definition
   return (
     <Stack
-      ref={ref}
-      spacing="xs"
-      justify="space-around"
-      align="center"
       style={{ height: '100%', width: '100%' }}
+      justify="space-around"
+      ref={ref}
+      spacing={0}
+      align="center"
     >
-      <Group align="center" position="center" spacing="xs">
-        <WeatherIcon code={weather!.current_weather.weathercode} />
-        <Title>
+      <Flex
+        align="center"
+        gap={width < 120 ? '0.25rem' : 'xs'}
+        justify={'center'}
+        direction={width < 200 ? 'column' : 'row'}
+      >
+        <WeatherIcon size={width < 300 ? 30 : 50} code={weather.current_weather.weathercode} />
+        <Title size={'h2'}>
           {getPerferedUnit(
-            weather!.current_weather.temperature,
+            weather.current_weather.temperature,
             widget.properties.displayInFahrenheit
           )}
         </Title>
-      </Group>
+      </Flex>
+
       {width > 200 && (
         <Group noWrap spacing="xs">
           <IconArrowUpRight />
           {getPerferedUnit(
-            weather!.daily.temperature_2m_max[0],
+            weather.daily.temperature_2m_max[0],
             widget.properties.displayInFahrenheit
           )}
           <IconArrowDownRight />
           {getPerferedUnit(
-            weather!.daily.temperature_2m_min[0],
+            weather.daily.temperature_2m_min[0],
             widget.properties.displayInFahrenheit
           )}
+        </Group>
+      )}
+
+      {widget.properties.displayCityName && (
+        <Group noWrap spacing={5} align="center">
+          <IconMapPin height={15} width={15} />
+          <Text style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
         </Group>
       )}
     </Stack>

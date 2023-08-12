@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Uups, radās kļūda!",
+    "buttons": {
+      "details": "Detaļas",
+      "tryAgain": "Mēģiniet vēlreiz"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Jūsu kļūda",
+    "reportButton": "Ziņot par šo kļūdu"
+  }
+}

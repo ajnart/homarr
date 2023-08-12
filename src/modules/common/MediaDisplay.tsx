@@ -2,6 +2,7 @@ import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+
 import { useConfigContext } from '../../config/provider';
 import { useColorTheme } from '../../tools/color';
 import { RequestModal } from '../overseerr/RequestModal';

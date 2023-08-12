@@ -14,11 +14,11 @@
         "label": "Visa inaktuella torrents"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Etikettlistan är en vitlista (istället för svartlista)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Etikettlista",
+        "description": "Om \"är vitlista\" är markerat kommer detta att fungera som en vitlista. Om detta inte är markerat är detta en svartlista. Kommer inte att göra något när den är tom"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Inga torrents hittades",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} poster är dolda av dina filter"
       }
     },
     "lineChart": {

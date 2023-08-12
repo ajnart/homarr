@@ -14,11 +14,11 @@
         "label": "Afficher les torrents périmés"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "La liste des libellés est une whitelist (au lieu d'une blacklist)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Liste des libellés",
+        "description": "Si la case \"est une whitelist\" est cochée, elle sera appliquée comme une liste blanche. Si la case n'est pas cochée, elle s'appliquera comme une liste noire (blacklist). Il ne se passera rien si elle est vide"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Aucun torrent trouvé",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} entrées sont masquées par vos filtres"
       }
     },
     "lineChart": {
@@ -58,7 +58,7 @@
         "text": "Ajouter un client Torrent pris en charge pour voir vos téléchargements en cours"
       },
       "generic": {
-        "title": "",
+        "title": "Une erreur inattendue s'est produite",
         "text": "Homarr n'a pas pu communiquer avec vos clients Torrent. Veuillez vérifier votre configuration"
       }
     },

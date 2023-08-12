@@ -1,5 +1,6 @@
 import { GridStack } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
+
 import { AppType } from '../../../types/app';
 import Widgets from '../../../widgets';
 import { WidgetWrapper } from '../../../widgets/WidgetWrapper';

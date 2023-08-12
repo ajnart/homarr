@@ -1,11 +1,15 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Marque-page",
+    "description": "Affiche une liste statique de chaînes de caractères ou de liens",
     "settings": {
-      "title": "",
+      "title": "Paramètres des marque-pages",
+      "name": {
+        "label": "Nom du widget",
+        "info": ""
+      },
       "items": {
-        "label": ""
+        "label": "Éléments"
       },
       "layout": {
         "label": "Mise en page"
@@ -14,8 +18,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Liste de marque-pages vide",
+      "text": "Ajouter de nouveaux éléments à cette liste en mode édition"
     }
   }
 }

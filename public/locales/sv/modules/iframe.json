@@ -1,22 +1,43 @@
 {
   "descriptor": {
     "name": "iFrame",
-    "description": "",
+    "description": "Bädda in valfritt innehåll från internet. Vissa webbplatser kan begränsa åtkomsten.",
     "settings": {
       "title": "iFrame-inställningar",
       "embedUrl": {
-        "label": ""
+        "label": "Inbäddad URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Tillåt helskärm"
+      },
+      "allowTransparency": {
+        "label": "Tillåt opacitet"
+      },
+      "allowScrolling": {
+        "label": "Tillåt scrollning"
+      },
+      "allowPayment": {
+        "label": "Tillåt betalning"
+      },
+      "allowAutoPlay": {
+        "label": "Tillåt automatisk uppspelning"
+      },
+      "allowMicrophone": {
+        "label": "Tillåt mikrofon"
+      },
+      "allowCamera": {
+        "label": "Tillåt kamera"
+      },
+      "allowGeolocation": {
+        "label": "Tillåt geolokalisering"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Ogiltig URL",
+        "text": "Kontrollera att du har angett en giltig adress i konfigurationen av din widget"
       }
     }
   }

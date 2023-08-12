@@ -1,5 +1,6 @@
 import { Drawer, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+
 import { DashboardSidebar } from '../../Wrappers/Sidebar/Sidebar';
 
 interface MobileRibbonSidebarDrawerProps {
@@ -27,6 +28,7 @@ export const MobileRibbonSidebarDrawer = ({
           width: '100%',
         },
       }}
+      transitionProps={{ transition: `slide-${location === 'right' ? 'left' : 'right'}` }}
       {...props}
     >
       <DashboardSidebar location={location} isGridstackReady />

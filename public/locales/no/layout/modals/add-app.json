@@ -24,7 +24,12 @@
 		"isOpeningNewTab": {
 			"label": "Åpne i ny fane",
 			"description": "Åpne appen i en ny fane i stedet for denne."
-		}
+		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
+		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
@@ -47,6 +52,25 @@
 			"noItems": {
 				"title": "Laster eksterne ikoner",
 				"text": "Dette kan ta noen sekunder"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
 			}
 		}
 	},

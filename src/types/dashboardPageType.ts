@@ -7,5 +7,5 @@ export type DashboardServerSideProps = {
   // eslint-disable-next-line react/no-unused-prop-types
   configName: string;
   // eslint-disable-next-line react/no-unused-prop-types
-  _nextI18Next: SSRConfig['_nextI18Next'];
+  _nextI18Next?: SSRConfig['_nextI18Next'];
 };

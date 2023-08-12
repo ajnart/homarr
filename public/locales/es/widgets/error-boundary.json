@@ -3,12 +3,12 @@
     "title": "Ups, ¡hubo un error!",
     "buttons": {
       "details": "Detalles",
-      "tryAgain": "Intentar de nuevo"
+      "tryAgain": "Inténtalo de nuevo"
     }
   },
   "modal": {
     "text": "",
     "label": "Tu error",
-    "reportButton": "Reportar este error"
+    "reportButton": "Informar de este error"
   }
 }

@@ -9,6 +9,27 @@
       },
       "allowFullScreen": {
         "label": "Omogočite celozaslonsko prikazovanje"
+      },
+      "allowTransparency": {
+        "label": ""
+      },
+      "allowScrolling": {
+        "label": ""
+      },
+      "allowPayment": {
+        "label": ""
+      },
+      "allowAutoPlay": {
+        "label": ""
+      },
+      "allowMicrophone": {
+        "label": ""
+      },
+      "allowCamera": {
+        "label": ""
+      },
+      "allowGeolocation": {
+        "label": ""
       }
     }
   },

@@ -1,4 +1,5 @@
 import { AppShell, createStyles } from '@mantine/core';
+
 import { useConfigContext } from '../../config/provider';
 import { Background } from './Background';
 import { Header } from './header/Header';

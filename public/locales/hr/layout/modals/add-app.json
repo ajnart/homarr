@@ -1,0 +1,100 @@
+{
+	"tabs": {
+		"general": "Općenito",
+		"behaviour": "Ponašanje",
+		"network": "Mreža",
+		"appearance": "Izgled",
+		"integration": "Integracija"
+	},
+	"general": {
+		"appname": {
+			"label": "Naziv aplikacije",
+			"description": "Koristi se za prikazivanje aplikacije na nadzornoj ploči."
+		},
+		"internalAddress": {
+			"label": "Interna adresa",
+			"description": "Interna IP-adresa aplikacije."
+		},
+		"externalAddress": {
+			"label": "Vanjska adresa",
+			"description": "URL koji će se otvoriti prilikom klika na aplikaciju."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Otvori u novoj kartici",
+			"description": "Otvori aplikaciju u novoj kartici umjesto u trenutnoj."
+		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
+		"customProtocolWarning": ""
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Provjeritelj statusa",
+			"description": "Provjerava je li vaša aplikacija online pomoću jednostavnog HTTP(S) zahtjeva."
+		},
+		"statusCodes": {
+			"label": "HTTP statusni kodovi",
+			"description": "HTTP statusni kodovi koji se smatraju kao online."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Ikona Aplikacije",
+			"description": "Počnite tipkati kako biste pronašli ikonu. Također možete zalijepiti URL slike kako biste koristili prilagođenu ikonu.",
+			"autocomplete": {
+				"title": "Nije pronađen nijedan rezultat",
+				"text": "Pokušajte koristiti precizniji pojam za pretraživanje kako biste pronašli željenu ikonu. Ako je ne možete pronaći, možete zalijepiti URL slike iznad kako biste koristili prilagođenu ikonu"
+			},
+			"noItems": {
+				"title": "Učitavanje vanjskih ikona",
+				"text": "Ovo može potrajati nekoliko sekundi"
+			}
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Konfiguracija integracije",
+			"description": "Konfiguracija integracije koja će se koristiti za povezivanje s vašom aplikacijom.",
+			"placeholder": "Odaberite integraciju",
+			"defined": "Definirano",
+			"undefined": "Nedefinirano",
+			"public": "Javno",
+			"private": "Privatno",
+			"explanationPrivate": "Privatna tajna će biti poslana serveru samo jednom. Nakon što se vaš preglednik osvježi, više je neće poslati.",
+			"explanationPublic": "Javna tajna će uvijek biti poslana klijentu i dostupna putem API-ja. Ne bi trebala sadržavati povjerljive vrijednosti poput korisničkih imena, lozinki, tokena, certifikata i slično!"
+		},
+		"secrets": {
+			"description": "Za ažuriranje tajne, unesite vrijednost i kliknite gumb za spremanje. Za uklanjanje tajne, koristite gumb za brisanje.",
+			"warning": "Vaši pristupni podaci služe kao pristup za vaše integracije i <strong>nikada</strong> ih ne biste trebali dijeliti s drugima. Tim Homarr tim nikada neće tražiti pristupne podatke. Pazite da <strong>sigurno pohranjujete i upravljate svojim tajnama</strong>.",
+			"clear": "Brisanje tajni",
+			"save": "Spasi tajnu",
+			"update": "Ažuriraj tajnu"
+		}
+	},
+	"validation": {
+		"popover": "Vaš obrazac sadrži neispravne podatke. Stoga se ne može spremiti. Molimo riješite sve probleme i ponovno kliknite ovaj gumb da biste spremili promjene"
+	}
+}

@@ -11,8 +11,8 @@
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "Reklam listelerindeki alan adları",
-      "queriesToday": "Bugünkü sorgular",
+      "domainsOnAdlist": "Reklam Listelerindeki Alan Adları",
+      "queriesToday": "Bugünkü Sorgular",
       "queriesBlockedTodayPercentage": "bugün engellenenler",
       "queriesBlockedToday": "bugün engellenenler"
     }

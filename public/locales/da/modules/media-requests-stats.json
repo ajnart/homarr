@@ -3,7 +3,10 @@
     "name": "Statistik for medieanmodning",
     "description": "Statistik over dine medieanmodninger",
     "settings": {
-      "title": "Statistikker over medieanmodninger"
+      "title": "Statistikker over medieanmodninger",
+      "direction": {
+        "label": "Layoutets retning."
+      }
     }
   },
   "stats": {

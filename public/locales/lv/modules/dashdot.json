@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Tiek parādīti ārējā Dash. grafiki Homarr iekšienē.",
+    "settings": {
+      "title": "Dash. logrīka iestatījumi",
+      "dashName": {
+        "label": "Dash. Nosaukums"
+      },
+      "url": {
+        "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Rādīt procentus"
+      },
+      "columns": {
+        "label": "Rādīt kolonnas"
+      },
+      "graphHeight": {
+        "label": "Grafiku augstums"
+      },
+      "graphsOrder": {
+        "label": "Grafiki (Secība)",
+        "storage": {
+          "label": "Krātuve",
+          "enabled": {
+            "label": "Rādīt logrīkā"
+          },
+          "span": {
+            "label": "Kolonnu diapazons"
+          },
+          "compactView": {
+            "label": "Rādīt kā tekstu (kompakts)"
+          },
+          "multiView": {
+            "label": "Rādīt kā vairāku disku skatu"
+          }
+        },
+        "network": {
+          "label": "Tīkls",
+          "enabled": {
+            "label": "Rādīt logrīkā"
+          },
+          "span": {
+            "label": "Kolonnu diapazons"
+          },
+          "compactView": {
+            "label": "Rādīt kā tekstu (kompakts)"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "Rādīt logrīkā"
+          },
+          "span": {
+            "label": "Kolonnu diapazons"
+          },
+          "multiView": {
+            "label": "Rādīt kā vairāku kodolu skatu"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Rādīt logrīkā"
+          },
+          "span": {
+            "label": "Kolonnu diapazons"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "Rādīt logrīkā"
+          },
+          "span": {
+            "label": "Kolonnu diapazons"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Nav atrasts Dash. pakalpojums. Lūdzu, pievienojiet to savam Homarr panelim vai iestatiet Dash. URL moduļa opcijās",
+      "noInformation": "Nevar iegūt informāciju no Dash. - vai Jūs izmantojat jaunāko versiju?",
+      "protocolDowngrade": {
+        "title": "Atklāta protokola pazemināšana",
+        "text": "Savienojumā ar jūsu Dash. instanci tiek izmantots HTTP. Tas ir drošības risks, jo HTTP nav šifrēts un uzbrucēji var ļaunprātīgi izmantot šo savienojumu. Pārliecinieties, ka Dash. izmanto HTTPS, vai pazeminiet Homarr uz HTTP (nav ieteicams)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Krātuve",
+        "label": "Krātuve:"
+      },
+      "network": {
+        "title": "Tīkls",
+        "label": "Tīkls:",
+        "metrics": {
+          "download": "Lejupielāde",
+          "upload": "Augšupielāde"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "ram": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

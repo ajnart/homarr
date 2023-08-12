@@ -1,11 +1,11 @@
 import { Group, Select, Stack, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-
-import { forwardRef, useState } from 'react';
+import { getCookie, setCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import { getCookie, setCookie } from 'cookies-next';
-import { getLanguageByCode, Language } from '../../../../tools/language';
+import { forwardRef, useState } from 'react';
+
+import { Language, getLanguageByCode } from '../../../../tools/language';
 
 export default function LanguageSelect() {
   const { t, i18n } = useTranslation('settings/general/internationalization');

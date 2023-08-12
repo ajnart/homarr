@@ -1,22 +1,28 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "RSS-widget",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "Inställningar för RSS-widget",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URL-adresser för RSS-flöden",
+        "description": "URL-adresserna för de RSS-flöden som du vill visa från."
       },
       "refreshInterval": {
+        "label": "Uppdateringsintervall (i minuter)"
+      },
+      "dangerousAllowSanitizedItemContent": {
         "label": ""
+      },
+      "textLinesClamp": {
+        "label": "Klämma för textrader"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Kan inte hämta RSS-flöde",
+          "text": "Det gick inte att nå RSS-flödet. Se till att du har konfigurerat RSS-flödet korrekt med en giltig URL. Webbadresser bör matcha den officiella specifikationen. Efter uppdatering av flödet, kan du behöva uppdatera instrumentpanelen."
         }
       }
     }

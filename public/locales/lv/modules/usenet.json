@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Ļauj skatīt un pārvaldīt savu Usenet instanci."
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Netika atrasts neviens atbalstīts lejupielādes klients!",
+        "text": "Pievienojiet atbalstītu Usenet Lejupielādes Klientu, lai skatītu pašreizējās lejupielādes"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Rinda",
+    "history": "Vēsture"
+  },
+  "info": {
+    "sizeLeft": "Izmērs pa kreisi",
+    "paused": "Apstādināts"
+  },
+  "queue": {
+    "header": {
+      "name": "Nosaukums",
+      "size": "Lielums",
+      "eta": "ETA",
+      "progress": "Progress"
+    },
+    "empty": "Tukšs",
+    "error": {
+      "title": "Kļūda",
+      "message": "Radās kļūda"
+    },
+    "paused": "Apstādināts"
+  },
+  "history": {
+    "header": {
+      "name": "Nosaukums",
+      "size": "Lielums",
+      "duration": "Ilgums"
+    },
+    "empty": "Tukšs",
+    "error": {
+      "title": "Kļūda",
+      "message": "Kļūda ielādējot vēsturi"
+    },
+    "paused": "Apstādināts"
+  }
+}

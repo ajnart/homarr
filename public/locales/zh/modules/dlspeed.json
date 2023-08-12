@@ -8,8 +8,8 @@
       "header": {
         "name": "名称",
         "size": "大小",
-        "download": "下移",
-        "upload": "上移",
+        "download": "下载",
+        "upload": "上传",
         "estimatedTimeOfArrival": "剩余时间",
         "progress": "进度"
       },
@@ -28,7 +28,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "没有找到支持的下载客户端！",
-        "text": "添加下载服务，查看你当前的下载量"
+        "text": "添加下载服务以查看你当前的下载量"
       }
     }
   }

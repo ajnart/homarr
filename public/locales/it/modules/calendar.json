@@ -12,6 +12,12 @@
       },
       "radarrReleaseType": {
         "label": "Tipo di release Radarr"
+      },
+      "hideWeekDays": {
+        "label": "Nascondi giorni della settimana"
+      },
+      "fontSize": {
+        "label": "Dimensioni carattere"
       }
     }
   }

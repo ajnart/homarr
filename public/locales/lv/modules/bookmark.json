@@ -1,0 +1,25 @@
+{
+  "descriptor": {
+    "name": "Grāmatzīme",
+    "description": "Parāda statisku virkņu vai saišu sarakstu",
+    "settings": {
+      "title": "Grāmatzīmju uzstādījumi",
+      "name": {
+        "label": "Logrīka Nosaukums",
+        "info": ""
+      },
+      "items": {
+        "label": "Vienumi"
+      },
+      "layout": {
+        "label": "Izkārtojums"
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Grāmatzīmju saraksts ir tukšs",
+      "text": "Pievienot jaunus vienumus šim sarakstam rediģēšanas režīmā"
+    }
+  }
+}

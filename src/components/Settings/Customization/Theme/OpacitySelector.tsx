@@ -1,6 +1,7 @@
 import { Slider, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 

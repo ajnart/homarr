@@ -9,13 +9,34 @@
       },
       "allowFullScreen": {
         "label": "Allow full screen"
+      },
+      "allowTransparency": {
+        "label": "Allow transparency"
+      },
+      "allowScrolling": {
+        "label": "Allow scrolling"
+      },
+      "allowPayment": {
+        "label": "Allow payment"
+      },
+      "allowAutoPlay": {
+        "label": "Allow auto play"
+      },
+      "allowMicrophone": {
+        "label": "Allow microphone"
+      },
+      "allowCamera": {
+        "label": "Allow camera"
+      },
+      "allowGeolocation": {
+        "label": "Allow geolocation"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Invalid URL",
         "text": "Ensure that you've entered a valid address in the configuration of your widget"
       }
     }

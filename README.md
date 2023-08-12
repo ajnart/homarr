@@ -121,3 +121,5 @@ You can also support us by helping with [translating the entire project](https:/
 **Please read our [Contribution Guidelines](/CONTRIBUTING.md)**
 
 All contributions, regardless of their size or scope, are welcome and highly appreciated! Thank you ❤️
+
+![Alt](https://repobeats.axiom.co/api/embed/60a6f68f193faf831f64221bdf90782adec51c93.svg "Repobeats analytics image")

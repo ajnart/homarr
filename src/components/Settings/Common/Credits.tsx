@@ -1,6 +1,7 @@
 import { Anchor, Box, Collapse, Flex, Table, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
+
 import { usePackageAttributesStore } from '../../../tools/client/zustands/usePackageAttributesStore';
 
 export default function Credits() {

@@ -18,14 +18,16 @@ import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
+
+import { InfoCard } from '../../../InfoCard/InfoCard';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { mapObject } from '../../../../tools/client/objects';
-import { useColorTheme } from '../../../../tools/color';
 import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
 import { DraggableList } from './Inputs/DraggableList';
+import { LocationSelection } from './Inputs/LocationSelection';
 import { StaticDraggableList } from './Inputs/StaticDraggableList';
 
 export type WidgetEditModalInnerProps = {
@@ -35,7 +37,7 @@ export type WidgetEditModalInnerProps = {
   widgetOptions: IWidget<string, any>['properties'];
 };
 
-type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
+export type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
 
 export const WidgetsEditModal = ({
   context,
@@ -46,7 +48,7 @@ export const WidgetsEditModal = ({
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
     string,
-    IntegrationOptionsValueType
+    IntegrationOptionsValueType,
   ][];
 
   // Find the Key in the "Widgets" Object that matches the widgetId
@@ -133,73 +135,114 @@ const WidgetOptionTypeSwitch: FC<{
   handleChange: (key: string, value: IntegrationOptionsValueType) => void;
 }> = ({ option, widgetId, propName: key, value, handleChange }) => {
   const { t } = useTranslation([`modules/${widgetId}`, 'common']);
-  const { primaryColor } = useColorTheme();
+  const info = option.info ?? false;
+  const link = option.infoLink ?? undefined;
 
   switch (option.type) {
     case 'switch':
       return (
-        <Switch
-          label={t(`descriptor.settings.${key}.label`)}
-          checked={value as boolean}
-          onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
-        />
+        <Group align="center" spacing="sm">
+          <Switch
+            label={t(`descriptor.settings.${key}.label`)}
+            checked={value as boolean}
+            onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
+            {...option.inputProps}
+          />
+          {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+        </Group>
       );
     case 'text':
       return (
-        <TextInput
-          color={primaryColor}
-          label={t(`descriptor.settings.${key}.label`)}
-          value={value as string}
-          onChange={(ev) => handleChange(key, ev.currentTarget.value)}
-        />
+        <Stack spacing={0}>
+          <Group align="center" spacing="sm">
+            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
+          <TextInput
+            value={value as string}
+            onChange={(ev) => handleChange(key, ev.currentTarget.value)}
+            {...option.inputProps}
+          />
+        </Stack>
       );
     case 'multi-select':
       return (
-        <MultiSelect
-          color={primaryColor}
-          data={option.data}
-          label={t(`descriptor.settings.${key}.label`)}
-          value={value as string[]}
-          defaultValue={option.defaultValue}
-          onChange={(v) => handleChange(key, v)}
-        />
+        <Stack spacing={0}>
+          <Group align="center" spacing="sm">
+            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
+          <MultiSelect
+            data={option.data}
+            value={value as string[]}
+            defaultValue={option.defaultValue}
+            onChange={(v) => handleChange(key, v)}
+            withinPortal
+            {...option.inputProps}
+          />
+        </Stack>
       );
     case 'select':
       return (
-        <Select
-          color={primaryColor}
-          defaultValue={option.defaultValue}
-          data={option.data}
-          label={t(`descriptor.settings.${key}.label`)}
-          value={value as string}
-          onChange={(v) => handleChange(key, v ?? option.defaultValue)}
-        />
+        <Stack spacing={0}>
+          <Group align="center" spacing="sm">
+            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
+          <Select
+            defaultValue={option.defaultValue}
+            data={option.data}
+            value={value as string}
+            onChange={(v) => handleChange(key, v ?? option.defaultValue)}
+            withinPortal
+            {...option.inputProps}
+          />
+        </Stack>
       );
     case 'number':
       return (
-        <NumberInput
-          color={primaryColor}
-          label={t(`descriptor.settings.${key}.label`)}
-          value={value as number}
-          onChange={(v) => handleChange(key, v!)}
-          {...option.inputProps}
-        />
+        <Stack spacing={0}>
+          <Group align="center" spacing="sm">
+            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
+          <NumberInput
+            value={value as number}
+            onChange={(v) => handleChange(key, v!)}
+            {...option.inputProps}
+          />
+        </Stack>
       );
     case 'slider':
       return (
-        <Stack spacing="xs">
-          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+        <Stack spacing={0}>
+          <Group align="center" spacing="sm">
+            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
           <Slider
-            color={primaryColor}
             label={value}
             value={value as number}
             min={option.min}
             max={option.max}
             step={option.step}
             onChange={(v) => handleChange(key, v)}
+            {...option.inputProps}
           />
         </Stack>
       );
+    case 'location':
+      return (
+        <LocationSelection
+          propName={key}
+          value={value}
+          handleChange={handleChange}
+          widgetId={widgetId}
+          info={info}
+          infoLink={link}
+        />
+      );
+
     case 'draggable-list':
       /* eslint-disable no-case-declarations */
       const typedVal = value as IDraggableListInputValue['defaultValue'];
@@ -225,7 +268,10 @@ const WidgetOptionTypeSwitch: FC<{
 
       return (
         <Stack spacing="xs">
-          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+          <Group align="center" spacing="sm">
+            <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
           <StaticDraggableList
             value={typedVal}
             onChange={(v) => handleChange(key, v)}
@@ -250,28 +296,36 @@ const WidgetOptionTypeSwitch: FC<{
       );
     case 'multiple-text':
       return (
-        <MultiSelect
-          data={value.map((name: any) => ({ value: name, label: name }))}
-          label={t(`descriptor.settings.${key}.label`)}
-          description={t(`descriptor.settings.${key}.description`)}
-          defaultValue={value as string[]}
-          withinPortal
-          searchable
-          creatable
-          getCreateLabel={(query) => t('common:createItem', { item: query })}
-          onChange={(values) =>
-            handleChange(
-              key,
-              values.map((item: string) => item)
-            )
-          }
-        />
+        <Stack spacing={0}>
+          <Group align="center" spacing="sm">
+            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
+          <MultiSelect
+            data={value.map((name: any) => ({ value: name, label: name }))}
+            description={t(`descriptor.settings.${key}.description`)}
+            defaultValue={value as string[]}
+            withinPortal
+            searchable
+            creatable
+            getCreateLabel={(query) => t('common:createItem', { item: query })}
+            onChange={(values) =>
+              handleChange(
+                key,
+                values.map((item: string) => item)
+              )
+            }
+          />
+        </Stack>
       );
     case 'draggable-editable-list':
       const { t: translateDraggableList } = useTranslation('widgets/draggable-list');
       return (
         <Stack spacing="xs">
-          <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+          <Group align="center" spacing="sm">
+            <Text>{t(`descriptor.settings.${key}.label`)}</Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          </Group>
           <DraggableList
             items={Array.from(value).map((v: any) => ({
               data: v,

@@ -1,22 +1,43 @@
 {
   "descriptor": {
     "name": "iFrame",
-    "description": "Incrustar cualquier contenido de Internet. Algunos sitios web pueden restringir el acceso.",
+    "description": "Incrusta cualquier contenido de Internet. Algunos sitios web pueden restringir el acceso.",
     "settings": {
-      "title": "Ajustes de iFrime",
+      "title": "Ajustes del widget iFrame",
       "embedUrl": {
         "label": "URL incrustada"
       },
       "allowFullScreen": {
         "label": "Permitir pantalla completa"
+      },
+      "allowTransparency": {
+        "label": "Permitir transparencia"
+      },
+      "allowScrolling": {
+        "label": "Permitir desplazamiento"
+      },
+      "allowPayment": {
+        "label": "Permitir pago"
+      },
+      "allowAutoPlay": {
+        "label": "Permitir reproducción automática"
+      },
+      "allowMicrophone": {
+        "label": "Permitir micrófono"
+      },
+      "allowCamera": {
+        "label": "Permitir cámara"
+      },
+      "allowGeolocation": {
+        "label": "Permitir geolocalización"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": "Asegúrate de que has introducido una dirección válida en la configuración del widget"
+        "title": "URL invalida",
+        "text": "Asegúrate de haber introducido una dirección válida en la configuración del widget"
       }
     }
   }

@@ -1,0 +1,11 @@
+{
+    "disablePulse": {
+        "label": "Atslēgt Ping pulsāciju",
+        "description": "Pēc noklusējuma Homarr Ping indikatori pulsē. Tas var būt kaitinoši. Šis slīdnis atslēgs animāciju"
+    },
+    "replaceIconsWithDots": {
+        "label": "Aizstāt Ping punktiņus ar ikonām",
+        "description": "Krāsu akliem lietotājiem Ping punktiņi var būt neatpazīstami. Tas aizstās indikatorus ar ikonām"
+    },
+    "alert": "Vai jums kaut kas pietrūkst? Mēs labprāt paplašināsim Homarr piekļūstamību"
+}

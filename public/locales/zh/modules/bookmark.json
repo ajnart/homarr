@@ -1,11 +1,15 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "书签",
+    "description": "显示字符串或链接的静态列表",
     "settings": {
-      "title": "",
+      "title": "书签设置",
+      "name": {
+        "label": "小部件标题",
+        "info": "留空以隐藏标题."
+      },
       "items": {
-        "label": ""
+        "label": "项目"
       },
       "layout": {
         "label": "布局"
@@ -14,8 +18,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "书签列表为空",
+      "text": "在编辑模式下将新项目添加到此列表"
     }
   }
 }

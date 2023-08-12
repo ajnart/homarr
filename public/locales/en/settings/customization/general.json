@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Appearance",
       "description": "Customize the background, colors and apps appearance"
+    },
+    "accessibility": {
+      "name": "Accessibility",
+      "description": "Configure Homarr for disabled and handicapped users"
     }
   }
 }

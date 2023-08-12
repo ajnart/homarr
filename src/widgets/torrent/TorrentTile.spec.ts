@@ -1,6 +1,5 @@
 import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
-
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { ITorrent, filterTorrents } from './TorrentTile';
 
@@ -186,7 +185,7 @@ const constructTorrent = (
   name: string,
   isCompleted: boolean,
   downloadSpeed: number,
-  label?: string,
+  label?: string
 ): NormalizedTorrent => ({
   id,
   name,

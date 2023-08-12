@@ -1,5 +1,6 @@
 import { Grid, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+
 import widgets from '../../../../../../widgets';
 import { SelectorBackArrow } from '../Shared/SelectorBackArrow';
 import { WidgetElementType } from './WidgetElementType';

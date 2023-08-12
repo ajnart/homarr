@@ -9,13 +9,34 @@
       },
       "allowFullScreen": {
         "label": "Επιτρέψτε την πλήρη οθόνη"
+      },
+      "allowTransparency": {
+        "label": "Να επιτρέπεται η διαφάνεια"
+      },
+      "allowScrolling": {
+        "label": "Επιτρέπεται η κύλιση"
+      },
+      "allowPayment": {
+        "label": "Επιτρέπονται πληρωμές"
+      },
+      "allowAutoPlay": {
+        "label": "Επιτρέπεται η αυτόματη αναπαραγωγή"
+      },
+      "allowMicrophone": {
+        "label": "Πρόσβαση στο μικρόφωνο"
+      },
+      "allowCamera": {
+        "label": "Πρόσβαση στην κάμερα"
+      },
+      "allowGeolocation": {
+        "label": "Επιτρέπεται ο γεωεντοπισμός"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Μη Έγκυρος Σύνδεσμος",
         "text": "Βεβαιωθείτε ότι έχετε εισάγει μια έγκυρη διεύθυνση στη διαμόρφωση του widget σας"
       }
     }

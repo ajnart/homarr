@@ -1,4 +1,5 @@
 import { Global } from '@mantine/core';
+
 import { useConfigContext } from '../../config/provider';
 
 export function Background() {

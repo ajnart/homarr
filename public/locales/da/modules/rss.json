@@ -10,6 +10,12 @@
       },
       "refreshInterval": {
         "label": "Opdateringsinterval (i minutter)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "textLinesClamp": {
+        "label": "Klemme til tekstlinjer"
       }
     },
     "card": {

@@ -1,5 +1,6 @@
-import { Box, createStyles, Group, Header as MantineHeader, Indicator } from '@mantine/core';
+import { Box, Group, Indicator, Header as MantineHeader, createStyles } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
+
 import { REPO_URL } from '../../../../data/constants';
 import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
 import DockerMenuButton from '../../../modules/Docker/DockerModule';
@@ -42,7 +43,7 @@ export function Header(props: any) {
         >
           <Search />
           {!editModeEnabled && <ToggleEditModeAction />}
-          {!editModeEnabled && <DockerMenuButton />}
+          <DockerMenuButton />
           <Indicator
             size={15}
             color="blue"

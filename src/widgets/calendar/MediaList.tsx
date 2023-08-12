@@ -1,6 +1,7 @@
-import { createStyles, Divider, ScrollArea } from '@mantine/core';
+import { Divider, ScrollArea, createStyles } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import React from 'react';
+
 import {
   LidarrMediaDisplay,
   RadarrMediaDisplay,

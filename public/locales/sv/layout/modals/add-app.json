@@ -24,7 +24,12 @@
 		"isOpeningNewTab": {
 			"label": "Öppna i ny flik",
 			"description": "Öppna appen i en ny flik istället för den nuvarande."
-		}
+		},
+		"tooltipDescription": {
+			"label": "Applikationsbeskrivning",
+			"description": "Den text du anger kommer att visas när du håller muspekaren över din app.\nAnvänd detta för att ge användarna mer information om din app eller lämna tomt för att inte ha något."
+		},
+		"customProtocolWarning": "Använda ett protokoll som inte är standard. Detta kan kräva förinstallerade applikationer och kan medföra säkerhetsrisker. Se till att din adress är säker och betrodd."
 	},
 	"network": {
 		"statusChecker": {
@@ -39,7 +44,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Appikon",
-			"description": "",
+			"description": "Börja skriva för att hitta en ikon. Du kan också klistra in en bild-URL för att använda en anpassad ikon.",
 			"autocomplete": {
 				"title": "Hittade inga resultat",
 				"text": "Försök att använda en mer specifik sökterm. Om du inte kan hitta önskad ikon, klistra in bild-URL ovan för en anpassad ikon"
@@ -47,6 +52,25 @@
 			"noItems": {
 				"title": "Laddar externa ikoner",
 				"text": "Detta kan ta några sekunder"
+			}
+		},
+		"appNameStatus": {
+			"label": "Status för appens namn",
+			"description": "Välj var du vill att titeln ska visas, om överhuvudtaget.",
+			"dropdown": {
+				"normal": "Visa endast rubrik på ruta",
+				"hover": "Visa rubrik endast vid hovring av verktygstips",
+				"hidden": "Visa inte överhuvudtaget"
+			}
+		},
+		"positionAppName": {
+			"label": "Appens namnposition",
+			"description": "Position för appens namn i förhållande till ikonen.",
+			"dropdown": {
+				"top": "Topp",
+				"right": "Höger",
+				"bottom": "Botten",
+				"left": "Vänster"
 			}
 		}
 	},

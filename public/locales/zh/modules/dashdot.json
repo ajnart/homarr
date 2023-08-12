@@ -100,8 +100,8 @@
         "title": "网络",
         "label": "网络：",
         "metrics": {
-          "download": "下移",
-          "upload": "上移"
+          "download": "下载",
+          "upload": "上传"
         }
       },
       "cpu": {

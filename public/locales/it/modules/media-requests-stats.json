@@ -3,7 +3,10 @@
     "name": "Statistiche richiesta multimediale",
     "description": "Statistiche sulle richieste multimediali",
     "settings": {
-      "title": "Statistiche richieste multimediali"
+      "title": "Statistiche richieste multimediali",
+      "direction": {
+        "label": ""
+      }
     }
   },
   "stats": {

@@ -1,6 +1,6 @@
 {
   "name": "homarr",
-  "version": "0.12.2",
+  "version": "0.13.1",
   "description": "Homarr - A homepage for your server.",
   "license": "MIT",
   "repository": {
@@ -21,7 +21,9 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "docker:build": "turbo build && docker build . -t homarr:dev",
+    "docker:start": "docker run --env-file ./.env -p 7575:7575 homarr:dev "
   },
   "dependencies": {
     "@ctrl/deluge": "^4.1.0",
@@ -30,16 +32,16 @@
     "@ctrl/transmission": "^4.1.1",
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
-    "@jellyfin/sdk": "^0.7.0",
-    "@mantine/core": "^6.0.11",
-    "@mantine/dates": "^6.0.11",
-    "@mantine/dropzone": "^6.0.11",
-    "@mantine/form": "^6.0.11",
-    "@mantine/hooks": "^6.0.11",
-    "@mantine/modals": "^6.0.11",
-    "@mantine/next": "^6.0.11",
-    "@mantine/notifications": "^6.0.11",
-    "@mantine/tiptap": "^6.0.11",
+    "@jellyfin/sdk": "^0.8.0",
+    "@mantine/core": "^6.0.0",
+    "@mantine/dates": "^6.0.0",
+    "@mantine/dropzone": "^6.0.0",
+    "@mantine/form": "^6.0.0",
+    "@mantine/hooks": "^6.0.0",
+    "@mantine/modals": "^6.0.0",
+    "@mantine/next": "^6.0.0",
+    "@mantine/notifications": "^6.0.0",
+    "@mantine/tiptap": "^6.0.17",
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
     "@react-native-async-storage/async-storage": "^1.18.1",
@@ -49,84 +51,180 @@
     "@tanstack/react-query": "^4.2.1",
     "@tanstack/react-query-devtools": "^4.24.4",
     "@tanstack/react-query-persist-client": "^4.28.0",
-    "@tiptap/extension-link": "^2.0.3",
-    "@tiptap/pm": "^2.0.3",
-    "@tiptap/react": "^2.0.3",
-    "@tiptap/starter-kit": "^2.0.3",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@tiptap/extension-link": "^2.0.4",
+    "@tiptap/pm": "^2.0.4",
+    "@tiptap/react": "^2.0.4",
+    "@tiptap/starter-kit": "^2.0.4",
+    "@trpc/client": "^10.29.1",
+    "@trpc/next": "^10.29.1",
+    "@trpc/react-query": "^10.29.1",
+    "@trpc/server": "^10.29.1",
+    "@vitejs/plugin-react": "^4.0.0",
     "axios": "^1.0.0",
     "consola": "^3.0.0",
     "cookies-next": "^2.1.1",
     "dayjs": "^1.11.7",
     "dockerode": "^3.3.2",
     "fily-publish-gridstack": "^0.0.13",
-    "framer-motion": "^9.0.2",
+    "framer-motion": "^10.0.0",
     "html-entities": "^2.3.3",
-    "i18next": "^21.9.1",
+    "i18next": "^22.5.1",
     "immer": "^10.0.2",
     "js-file-download": "^0.4.12",
-    "next": "^13.4.2",
-    "next-i18next": "^11.3.0",
+    "next": "13.4.10",
+    "next-i18next": "^13.0.0",
     "nzbget-api": "^0.0.3",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.3.1",
     "react-simple-code-editor": "^0.13.1",
     "rss-parser": "^3.12.0",
     "sabnzbd-api": "^1.5.0",
-    "uuid": "^8.3.2",
+    "uuid": "^9.0.0",
     "xml-js": "^1.6.11",
-    "yarn": "^1.22.19",
+    "xss": "^1.0.14",
     "zod": "^3.21.4",
     "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.0.0",
-    "@next/eslint-plugin-next": "^13.0.0",
+    "@next/eslint-plugin-next": "^13.4.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/dockerode": "^3.3.9",
-    "@types/node": "17.0.1",
+    "@types/node": "18.16.19",
     "@types/prismjs": "^1.26.0",
-    "@types/react": "17.0.59",
-    "@types/uuid": "^8.3.4",
+    "@types/react": "^18.2.11",
+    "@types/uuid": "^9.0.0",
     "@types/video.js": "^7.3.51",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
-    "@vitest/coverage-c8": "^0.31.1",
-    "@vitest/ui": "^0.31.1",
-    "checkly": "latest",
-    "eslint": "^8.20.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-mantine": "^2.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.30.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/ui": "^0.33.0",
+    "eslint": "^8.0.1",
+    "eslint-config-next": "^13.4.5",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.5.1",
-    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "eslint-plugin-vitest": "^0.2.0",
-    "happy-dom": "^8.9.0",
+    "happy-dom": "^10.0.0",
     "node-mocks-http": "^1.12.2",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "sass": "^1.56.1",
     "ts-node": "latest",
     "turbo": "latest",
-    "typescript": "^5.0.4",
+    "typescript": "^5.1.0",
     "video.js": "^8.0.3",
-    "vitest": "^0.31.1",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.33.0",
     "vitest-fetch-mock": "^0.2.2"
   },
-  "resolutions": {
-    "@types/react": "17.0.59",
-    "@types/react-dom": "17.0.20"
-  },
-  "packageManager": "yarn@3.5.1",
   "nextBundleAnalysis": {
     "budget": null,
     "budgetPercentIncreaseRed": 20,
     "minimumChangeThreshold": 0,
     "showDetails": true
+  },
+  "renovate": {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base"
+    ],
+    "commitMessagePrefix": "⬆️",
+    "lockFileMaintenance": {
+      "automerge": true
+    },
+    "minor": {
+      "automerge": true
+    },
+    "patch": {
+      "automerge": true
+    },
+    "pin": {
+      "automerge": true
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "parser": "typescript",
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "endOfLine": "lf",
+    "importOrder": [
+      "^@core/(.*)$",
+      "^@server/(.*)$",
+      "^@ui/(.*)$",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
+    "importOrderSortSpecifiers": true
+  },
+  "eslintConfig": {
+    "ignoreDuringBuilds": true,
+    "extends": [
+      "next",
+      "eslint:recommended",
+      "plugin:@next/next/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:vitest/recommended"
+    ],
+    "plugins": [
+      "testing-library",
+      "unused-imports",
+      "react",
+      "vitest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/?(*.)+(spec|test).[jt]s?(x)"
+        ],
+        "extends": [
+          "plugin:testing-library/react"
+        ]
+      }
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "import/no-cycle": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/no-children-prop": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-unused-imports": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-shadow": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "no-continue": "off",
+      "linebreak-style": 0,
+      "import/extensions": "off",
+      "vitest/max-nested-describe": [
+        "error",
+        {
+          "max": 3
+        }
+      ],
+      "testing-library/no-node-access": [
+        "error",
+        {
+          "allowContainerFirstChild": true
+        }
+      ]
+    }
   }
 }

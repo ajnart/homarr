@@ -1,27 +1,27 @@
 {
   "pageTitle": {
-    "label": "Título de Página",
-    "description": "Título del dashboard en la parte superior izquierda"
+    "label": "Título de la página",
+    "description": "El título del panel en la parte superior izquierda"
   },
   "metaTitle": {
-    "label": "Tarjeta Meta",
-    "description": "El título mostrado en la pestaña de tu navegador"
+    "label": "Título de la pestaña",
+    "description": "El título que se muestra en la pestaña de su navegador"
   },
   "logo": {
     "label": "Logo",
-    "description": "El logo mostrado en la parte superior izquierda"
+    "description": "El logotipo que se muestra en la parte superior izquierda"
   },
   "favicon": {
     "label": "Favicon",
-    "description": "El icono mostrado en la pestaña de tu navegador"
+    "description": "El icono que se muestra en la pestaña de tu navegador"
   },
   "background": {
     "label": "Fondo"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "description": "Ademas, personaliza tu dashboard usando CSS, solo recomendado para usuarios avanzados",
-    "placeholder": "El CSS personalizado será aplicado en último lugar",
+    "description": "Además, personaliza tu panel usando CSS, solo recomendado para usuarios avanzados",
+    "placeholder": "El CSS personalizado se aplicará en último lugar",
     "applying": "Aplicando CSS..."
   },
   "buttons": {

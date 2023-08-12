@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Mediaserver",
+    "description": "Interagera med din Jellyfin- eller Plex-medieserver",
     "settings": {
-      "title": ""
+      "title": "Inställningar för mediaserver-widget"
     }
   },
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Session",
+        "user": "Användare",
+        "currentlyPlaying": "Spelar just nu"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Det går inte att läsa in innehållet",
+        "text": "Det gick inte att hämta information från servern. Kontrollera loggarna för mer information"
       }
     }
   }

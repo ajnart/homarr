@@ -11,10 +11,11 @@ import {
 } from '@mantine/core';
 import { IconAlertTriangle, IconMovie } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+
 import { AppAvatar } from '../../components/AppAvatar';
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
-import { useGetMediaServers } from '../../hooks/widgets/media-servers/useGetMediaServers';
+import { useGetMediaServers } from './useGetMediaServers';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { TableRow } from './TableRow';

@@ -1,0 +1,11 @@
+{
+    "disablePulse": {
+        "label": "Inaktivera ping-puls",
+        "description": "Som standard kommer ping-indikatorerna i Homarr att pulsera. Detta kan vara irriterande. Det här reglaget avaktiverar animeringen"
+    },
+    "replaceIconsWithDots": {
+        "label": "Ersätt ping-prickar med ikoner",
+        "description": "För färgblinda användare kan ping-punkter vara oigenkännliga. Detta kommer att ersätta indikatorer med ikoner"
+    },
+    "alert": "Är det något du saknar? Vi utökar gärna tillgängligheten för Homarr"
+}

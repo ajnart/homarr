@@ -10,6 +10,12 @@
       },
       "refreshInterval": {
         "label": "Intervallo di aggiornamento (in secondi)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": ""
+      },
+      "textLinesClamp": {
+        "label": "Blocco righe di testo"
       }
     },
     "card": {

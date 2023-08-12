@@ -24,7 +24,12 @@
 		"isOpeningNewTab": {
 			"label": "In neuem Tab öffnen",
 			"description": "Öffnen Sie die App in einer neuen Registerkarte, anstatt in der aktuellen Registerkarte."
-		}
+		},
+		"tooltipDescription": {
+			"label": "Beschreibung der Anwendung",
+			"description": "Dieser von Ihnen eingegebene Text wird angezeigt, wenn Sie den Mauszeiger über Ihre App bewegen.\nVerwenden Sie diesen Text, um den Nutzern mehr Informationen über Ihre App zu geben, oder lassen Sie ihn leer, um nichts anzuzeigen."
+		},
+		"customProtocolWarning": "Verwendung eines nicht standardmäßigen Protokolls. Dies kann vorinstallierte Anwendungen erfordern und Sicherheitsrisiken einbringen. Stellen Sie sicher, dass Ihre Adresse sicher und vertrauenswürdig ist."
 	},
 	"network": {
 		"statusChecker": {
@@ -47,6 +52,25 @@
 			"noItems": {
 				"title": "Lade externe Icons",
 				"text": "Dies kann einige Sekunden dauern…"
+			}
+		},
+		"appNameStatus": {
+			"label": "App-Namensstatus",
+			"description": "Wählen Sie, wo der Titel angezeigt werden soll, wenn überhaupt.",
+			"dropdown": {
+				"normal": "Titel nur auf Kachel anzeigen",
+				"hover": "Titel nur bei Halten des Mauszeigers über den Tooltip anzeigen",
+				"hidden": "Nicht anzeigen"
+			}
+		},
+		"positionAppName": {
+			"label": "Position des App-Namen",
+			"description": "Position des App-Namens in Relation zum Symbol.",
+			"dropdown": {
+				"top": "Oben",
+				"right": "Rechts",
+				"bottom": "Unten",
+				"left": "Links"
 			}
 		}
 	},

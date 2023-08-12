@@ -1,0 +1,17 @@
+{
+  "descriptor": {
+    "name": "Statistika zahtjeva za medijima",
+    "description": "Statistika o vašim zahtjevima za medijima",
+    "settings": {
+      "title": "Statistika zahtjeva za medijima",
+      "direction": {
+        "label": ""
+      }
+    }
+  },
+  "stats": {
+    "pending": "Odobrenjea na čekanju",
+    "tvRequests": "TV zahtjevi",
+    "movieRequests": "Zahtjevi za Filmovima"
+  }
+}

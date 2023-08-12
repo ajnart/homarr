@@ -13,7 +13,7 @@
       "description": "搜索..."
     },
     "youtube": {
-      "name": "油管",
+      "name": "Youtube",
       "description": "在Youtube上搜索"
     },
     "torrents": {
@@ -26,5 +26,5 @@
     }
   },
   "tip": "你可以用快捷键选择搜索栏 ",
-  "switchedSearchEngine": "改为用 {{searchEngine}}进行搜索"
+  "switchedSearchEngine": "改用 {{searchEngine}} 进行搜索"
 }

@@ -14,11 +14,11 @@
         "label": "Hiển thị torrent hết hạn"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Danh sách nhãn là danh sách trắng (thay vì danh sách đen)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Danh sách nhãn",
+        "description": "Nếu chọn \"Danh sách trắng\", các nhãn sẽ được dùng như một danh sách trắng. Nếu không được chọn, đây sẽ là danh sách đen. Sẽ không có gì xảy ra nếu trống không"
       }
     }
   },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Không tìm thấy torrent nào",
-        "filterHidingItems": ""
+        "filterHidingItems": "Đã ẩn {{count}} dòng bởi bộ lọc của bạn"
       }
     },
     "lineChart": {

@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "label": "Iestatījumi"
+  },
+  "errors": {
+    "unmappedOptions": {
+      "text": ""
+    }
+  }
+}

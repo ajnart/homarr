@@ -16,6 +16,10 @@
     "appereance": {
       "name": "Aussehen",
       "description": "Anpassen des Hintergrunds, der Farben und des Erscheinungsbilds"
+    },
+    "accessibility": {
+      "name": "Barrierefreiheit",
+      "description": "Homarr für behinderte und gehandicapte Benutzer einrichten"
     }
   }
 }

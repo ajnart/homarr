@@ -45,6 +45,12 @@ export interface CustomizationSettingsType {
   colors: ColorsCustomizationSettingsType;
   appOpacity?: number;
   gridstack?: GridstackSettingsType;
+  accessibility: AccessibilitySettings;
+}
+
+export interface AccessibilitySettings {
+  disablePingPulse: boolean;
+  replacePingDotsWithIcons: boolean;
 }
 
 export interface GridstackSettingsType {
