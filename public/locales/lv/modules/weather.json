@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Rādīt pēc Fārenheita"
       },
+      "displayCityName": {
+        "label": "Parādāmais Pilsētas Nosaukums"
+      },
       "location": {
         "label": "Laikapstākļu atrašānās vieta"
       }

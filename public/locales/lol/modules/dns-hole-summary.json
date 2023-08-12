@@ -6,6 +6,14 @@
       "title": "",
       "usePiHoleColors": {
         "label": ""
+      },
+      "layout": {
+        "label": "",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

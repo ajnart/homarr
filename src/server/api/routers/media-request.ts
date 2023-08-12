@@ -65,7 +65,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   status: item.status,
                   backdropPath: `https://image.tmdb.org/t/p/original/${genericItem.backdropPath}`,
                   posterPath: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${genericItem.posterPath}`,
-                  href: `${appUrl}/movie/${item.media.tmdbId}`,
+                  href: `${appUrl}/${item.type}/${item.media.tmdbId}`,
                 };
               })
             );

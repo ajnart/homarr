@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const adGuardApiStatsResponseSchema = z.object({
-  time_units: z.enum(['hours']),
+  time_units: z.enum(['hours', 'days']),
   top_queried_domains: z.array(z.record(z.string(), z.number())),
   top_clients: z.array(z.record(z.string(), z.number())),
   top_blocked_domains: z.array(z.record(z.string(), z.number())),

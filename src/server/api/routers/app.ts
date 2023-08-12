@@ -23,11 +23,11 @@ export const appRouter = createTRPCRouter({
       throw new TRPCError({
         code: 'NOT_FOUND',
         cause: input,
-        message: `App ${input} was not found`,
+        message: `App ${input.id} was not found`,
       });
     }
     const res = await axios
-      .get(app.url, { httpsAgent: agent, timeout: 2000 })
+      .get(app.url, { httpsAgent: agent, timeout: 10000 })
       .then((response) => ({
         status: response.status,
         statusText: response.statusText,

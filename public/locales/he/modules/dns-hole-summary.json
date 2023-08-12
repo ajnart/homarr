@@ -6,6 +6,14 @@
       "title": "הגדרות עבור סיכום DNS",
       "usePiHoleColors": {
         "label": "השתמש בצבעים של PiHole"
+      },
+      "layout": {
+        "label": "פריסה",
+        "data": {
+          "grid": "2 על 2",
+          "row": "אופקי",
+          "column": "אנכי"
+        }
       }
     }
   },

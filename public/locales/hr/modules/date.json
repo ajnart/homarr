@@ -6,6 +6,27 @@
       "title": "Postavke za widget Datuma i Vremena",
       "display24HourFormat": {
         "label": "Prikaži full-time oblik (24-satni)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }

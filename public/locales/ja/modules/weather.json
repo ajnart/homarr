@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "表示単位：華氏"
       },
+      "displayCityName": {
+        "label": ""
+      },
       "location": {
         "label": "天候の場所"
       }
