@@ -9,7 +9,6 @@ export async function POST(request: NextApiRequest, res: NextApiResponse) {
   const configName = getCookie('config-name', { req: request });
   const config = getConfig(configName?.toString() ?? 'default');
   const { content, id } = request.body;
-  // Use immer to change the content of the widget
   const nextState = produce(config, (draft) => {
     const widget = draft.widgets.find((widget) => widget.id === id);
     if (widget) {
@@ -33,7 +32,7 @@ export async function POST(request: NextApiRequest, res: NextApiResponse) {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  // Filter out if the reuqest is a Put or a GET
+  // Filter out if the request is a Put or a GET
   if (req.method === 'POST') {
     return POST(req, res);
   }
