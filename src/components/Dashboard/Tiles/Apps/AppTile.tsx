@@ -63,8 +63,8 @@ export const AppTile = ({ className, app }: AppTileProps) => {
             className={cx(classes.appImage, 'dashboard-tile-app-image')}
             src={app.appearance.iconUrl}
             alt={app.name}
-            whileHover={{ scale: 1 }}
-            initial={{ scale: 0.9 }}
+            whileHover={{ scale: 0.9 }}
+            initial={{ scale: 0.8 }}
             style={{
               width: isRow ? 0 : undefined,
             }}
