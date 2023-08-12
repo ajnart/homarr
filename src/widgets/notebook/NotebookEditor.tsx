@@ -1,4 +1,4 @@
-import { Button, Container, Loader, ScrollArea, Stack, useMantineTheme } from '@mantine/core';
+import { ActionIcon, createStyles, rem } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { Link, RichTextEditor } from '@mantine/tiptap';
 import { IconArrowUp, IconEdit, IconEditOff } from '@tabler/icons-react';
@@ -6,11 +6,13 @@ import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useEffect, useRef, useState } from 'react';
 import { useConfigStore } from '~/config/store';
+import { useColorTheme } from '~/tools/color';
+import { api } from '~/utils/api';
 
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
+import { WidgetLoading } from '../loading';
 import { INotebookWidget } from './NotebookWidgetTile';
-import { api } from '~/utils/api';
 
 Link.configure({
   openOnClick: true,
@@ -24,18 +26,13 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
+  const { primaryColor } = useColorTheme();
 
   const { mutateAsync } = api.notebook.createOrUpdate.useMutation();
 
-  const { colorScheme, colors } = useMantineTheme();
-
   const [debounced] = useDebouncedValue(content, 500);
 
-  const viewport = useRef<HTMLDivElement>(null);
-  const scrollToTop = () => viewport.current?.scrollTo({ top: 0, behavior: 'smooth' });
-  const [scrollPosition, onScrollPositionChange] = useState({ y: 0 });
-
-  if (!config || !configName) return <Loader />;
+  if (!config || !configName) return <WidgetLoading />;
 
   const editor = useEditor({
     extensions: [StarterKit, Link],
@@ -72,100 +69,96 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     void mutateAsync({
       configName: configName,
       content: debounced.content,
-      widgetId: widget.id
+      widgetId: widget.id,
     });
   }, [isEditing]);
 
   return (
-    <Container h="100%" p={0}>
-      <ScrollArea
-        h="100%"
-        scrollbarSize={8}
-        onScrollPositionChange={onScrollPositionChange}
-        viewportRef={viewport}
-        type={enabled ? 'never' : 'auto'}
-      >
-        <RichTextEditor
-          w="100%"
-          styles={{
-            root: {
-              border: 'none',
-            },
-
-            toolbar: {
-              backgroundColor: colorScheme === 'dark' ? colors.dark[6] : 'white',
-            },
-
-            content: {
-              backgroundColor: colorScheme === 'dark' ? colors.dark[6] : 'white',
-            },
+    <>
+      {enabled === false && (
+        <ActionIcon
+          style={{
+            zIndex: 1,
+            position: 'absolute',
+            top: 7,
+            right: 7,
           }}
-          editor={editor}
+          color={primaryColor}
+          variant="light"
+          size={30}
+          radius={'md'}
+          onClick={() => setIsEditing(!isEditing)}
+          aria-label="Turn editing on/off"
+          title="Enable editing of the note"
         >
-          <RichTextEditor.Toolbar display={isEditing ? 'flex' : 'none'}>
+          {isEditing ? <IconEditOff size={20} /> : <IconEdit size={20} />}
+        </ActionIcon>
+      )}
+      <RichTextEditor
+        p={0}
+        mt={0}
+        editor={editor}
+        styles={(theme) => ({
+          root: {
+            '.ProseMirror': {
+              padding: 0,
+            },
+            border: 'none',
+          },
+          toolbar: {
+            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+            paddingTop: 0,
+            paddingBottom: theme.spacing.md,
+          },
+          content: {
+            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+          },
+        })}
+      >
+        <RichTextEditor.Toolbar
+          style={{
+            display: isEditing && widget.properties.showToolbar === true ? 'flex' : 'none',
+          }}
+        >
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.Bold />
+            <RichTextEditor.Italic />
+            <RichTextEditor.Strikethrough />
+            <RichTextEditor.ClearFormatting />
+            <RichTextEditor.Code />
+          </RichTextEditor.ControlsGroup>
+
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.H1 />
+            <RichTextEditor.H2 />
+            <RichTextEditor.H3 />
+            <RichTextEditor.H4 />
+          </RichTextEditor.ControlsGroup>
+
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.Blockquote />
+            <RichTextEditor.Hr />
+            <RichTextEditor.BulletList />
+            <RichTextEditor.OrderedList />
+          </RichTextEditor.ControlsGroup>
+
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.Link />
+            <RichTextEditor.Unlink />
+          </RichTextEditor.ControlsGroup>
+        </RichTextEditor.Toolbar>
+        {editor && (
+          <BubbleMenu editor={editor}>
             <RichTextEditor.ControlsGroup>
               <RichTextEditor.Bold />
               <RichTextEditor.Italic />
-              <RichTextEditor.Strikethrough />
-              <RichTextEditor.ClearFormatting />
-              <RichTextEditor.Code />
-            </RichTextEditor.ControlsGroup>
-
-            <RichTextEditor.ControlsGroup>
-              <RichTextEditor.H1 />
-              <RichTextEditor.H2 />
-              <RichTextEditor.H3 />
-              <RichTextEditor.H4 />
-            </RichTextEditor.ControlsGroup>
-            <RichTextEditor.ControlsGroup>
-              <RichTextEditor.Blockquote />
-              <RichTextEditor.Hr />
-              <RichTextEditor.BulletList />
-              <RichTextEditor.OrderedList />
-            </RichTextEditor.ControlsGroup>
-
-            <RichTextEditor.ControlsGroup>
               <RichTextEditor.Link />
-              <RichTextEditor.Unlink />
             </RichTextEditor.ControlsGroup>
-          </RichTextEditor.Toolbar>
-          {editor && (
-            <BubbleMenu editor={editor}>
-              <RichTextEditor.ControlsGroup>
-                <RichTextEditor.Bold />
-                <RichTextEditor.Italic />
-                <RichTextEditor.Link />
-              </RichTextEditor.ControlsGroup>
-            </BubbleMenu>
-          )}
+          </BubbleMenu>
+        )}
 
-          <RichTextEditor.Content />
-        </RichTextEditor>
-      </ScrollArea>
-      <Stack pos="absolute" right="1rem" bottom="1rem" spacing="0.5rem">
-        <Button
-          display={scrollPosition.y > 0 && !enabled ? 'block' : 'none'}
-          size="xs"
-          radius="xl"
-          w="fit-content"
-          h="fit-content"
-          p="0.625rem"
-          onClick={scrollToTop}
-        >
-          <IconArrowUp size="1.25rem" />
-        </Button>
-        <Button
-          display={!enabled ? 'block' : 'none'}
-          size="xs"
-          radius="xl"
-          w="fit-content"
-          h="fit-content"
-          p="0.625rem"
-          onClick={() => setIsEditing(!isEditing)}
-        >
-          {isEditing ? <IconEditOff size="1.25rem" /> : <IconEdit size="1.25rem" />}
-        </Button>
-      </Stack>
-    </Container>
+        <RichTextEditor.Content />
+      </RichTextEditor>
+    </>
   );
 }
