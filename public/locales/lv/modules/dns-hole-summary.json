@@ -6,6 +6,14 @@
       "title": "DNS Cauruma kopsavilkuma iestatījumi",
       "usePiHoleColors": {
         "label": "Izmantot krāsas no PiHole"
+      },
+      "layout": {
+        "label": "Izkārtojums",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
