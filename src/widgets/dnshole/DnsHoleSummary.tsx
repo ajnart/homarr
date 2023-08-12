@@ -9,7 +9,6 @@ import {
   TablerIconsProps,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import React from 'react';
 import { useConfigContext } from '~/config/provider';
 import { RouterOutputs, api } from '~/utils/api';
 
@@ -120,6 +119,7 @@ type StatCardProps = {
 const StatCard = ({ item, data, usePiHoleColors }: StatCardProps) => {
   const { t } = useTranslation('modules/dns-hole-summary');
   const { ref, height, width } = useElementSize();
+  const isLong = width > height + 20;
 
   return (
     <Card
@@ -138,14 +138,14 @@ const StatCard = ({ item, data, usePiHoleColors }: StatCardProps) => {
           w="100%"
           align="center"
           justify="space-evenly"
-          direction={width > height + 20 ? 'row' : 'column'}
+          direction={isLong ? 'row' : 'column'}
         >
           <item.icon size={30} style={{ margin: '0 10' }} />
           <Flex
             justify="center"
             direction="column"
             style={{
-              flex: 1,
+              flex: isLong ? 1 : undefined,
             }}
           >
             <Text align="center" lh={1.2} size="md" weight="bold">
