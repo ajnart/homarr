@@ -22,7 +22,6 @@ export const GenericTileMenu = (
 ) => {
   const { t } = useTranslation('common');
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const { primaryColor } = useColorTheme();
 
   if (!isEditMode) {
     return null;

@@ -43,6 +43,7 @@ export const dashboardNamespaces = [
   'modules/dns-hole-summary',
   'modules/dns-hole-controls',
   'modules/bookmark',
+  'modules/notebook',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',

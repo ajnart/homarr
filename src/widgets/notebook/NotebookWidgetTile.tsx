@@ -1,7 +1,7 @@
 import { IconNotes } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-
 import dynamic from 'next/dynamic';
+
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -13,14 +13,17 @@ const definition = defineWidget({
   id: 'notebook',
   icon: IconNotes,
   options: {
+    showToolbar: {
+      type: 'switch',
+      defaultValue: true,
+    },
     content: {
       type: 'text',
-      defaultValue:
-        '<code>RichTextEditor</code> is based on <a href="https://tiptap.dev/" rel="noopener noreferrer" target="_blank">Tiptap.dev</a> and supports all of its features:</p><ul><li>General text formatting: <strong>bold</strong>, <em>italic</em>, <u>underline</u>, <s>strike-through</s> </li><li>Headings (h1-h6)</li><li>Sub and super scripts (<sup>&lt;sup /&gt;</sup> and <sub>&lt;sub /&gt;</sub> tags)</li><li>Ordered and bullet lists</li><li>Text align&nbsp;</li><li>And all <a href="https://tiptap.dev/extensions" target="_blank" rel="noopener noreferrer">other extensions</a></li></ul>',
+      defaultValue: `<h2>Welcome to <strong>Homarr's</strong> notebook widget</h2><p>The <code>notebook</code> widget focuses on usability and is designed to be as simple as possible to bring a familiar editing experience to regular users. It is based on <a target="_blank" rel="noopener noreferrer nofollow" href="https://tiptap.dev/">Tiptap.dev</a> and supports all of its features:</p><ul><li><p>General text formatting: <strong>bold</strong>, <em>italic</em>, underline, <s>strike-through</s></p></li><li><p>Headings (h1-h6)</p></li><li><p>Sub and super scripts (&lt;sup /&gt; and &lt;sub /&gt; tags)</p></li><li><p>Ordered and bullet lists</p></li><li><p>Text align&nbsp;</p></li></ul><h3>Widget options</h3><p>This widget has two options :</p><ul><li><p>Show toolbar : Shows the toolbar when the widget is in the local edit mode.</p></li><li><p>Content : Allows you to copy-paste the content of your notebook (in markdown form)</p></li></ul>`,
     },
   },
   gridstack: {
-    minWidth: 2,
+    minWidth: 3,
     minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
@@ -37,6 +40,5 @@ interface NotebookWidgetProps {
 }
 
 function NotebookWidget(props: NotebookWidgetProps) {
-  const { t } = useTranslation('modules/notebook');
   return <Editor widget={props.widget} />;
 }

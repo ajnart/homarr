@@ -42,18 +42,19 @@ export type IWidgetOptionValue = (
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
   | ILocationOptionValue
-) & ICommonWidgetOptions;
+) &
+  ICommonWidgetOptions;
 
 // Interface for data type
 interface DataType {
-  label: string;
+  label?: string;
   value: string;
 }
 
-interface  ICommonWidgetOptions {
+interface ICommonWidgetOptions {
   info?: boolean;
   infoLink?: string;
-};
+}
 
 // will show a multi-select with specified data
 export type IMultiSelectOptionValue = {
@@ -67,7 +68,7 @@ export type IMultiSelectOptionValue = {
 export type ISelectOptionValue = {
   type: 'select';
   defaultValue: string;
-  data: DataType[];
+  data: DataType[] | (() => DataType[]);
   inputProps?: Partial<SelectProps>;
 };
 
