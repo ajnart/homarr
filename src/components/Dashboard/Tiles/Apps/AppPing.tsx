@@ -3,7 +3,6 @@ import { IconCheck, IconLoader, IconX } from '@tabler/icons-react';
 import Consola from 'consola';
 import { TargetAndTransition, Transition, motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useLayoutEffect, useRef } from 'react';
 import { RouterOutputs, api } from '~/utils/api';
 
 import { useConfigContext } from '../../../../config/provider';
