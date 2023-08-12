@@ -10,9 +10,9 @@
       "layout": {
         "label": "פריסה",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 על 2",
+          "row": "אופקי",
+          "column": "אנכי"
         }
       }
     }
