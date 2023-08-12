@@ -109,57 +109,52 @@ function App(
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
-      <PersistQueryClientProvider
-        client={queryClient}
-        persistOptions={{ persister: asyncStoragePersister }}
-      >
-        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-          <ColorTheme.Provider value={colorTheme}>
-            <MantineProvider
-              theme={{
-                ...theme,
-                components: {
-                  Checkbox: {
-                    styles: {
-                      input: { cursor: 'pointer' },
-                      label: { cursor: 'pointer' },
-                    },
-                  },
-                  Switch: {
-                    styles: {
-                      input: { cursor: 'pointer' },
-                      label: { cursor: 'pointer' },
-                    },
+      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+        <ColorTheme.Provider value={colorTheme}>
+          <MantineProvider
+            theme={{
+              ...theme,
+              components: {
+                Checkbox: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
                   },
                 },
-                primaryColor,
-                primaryShade,
-                colorScheme,
-              }}
-              withGlobalStyles
-              withNormalizeCSS
-            >
-              <ConfigProvider {...props.pageProps}>
-                <Notifications limit={4} position="bottom-left" />
-                <ModalsProvider
-                  modals={{
-                    editApp: EditAppModal,
-                    selectElement: SelectElementModal,
-                    integrationOptions: WidgetsEditModal,
-                    integrationRemove: WidgetsRemoveModal,
-                    categoryEditModal: CategoryEditModal,
-                    changeAppPositionModal: ChangeAppPositionModal,
-                    changeIntegrationPositionModal: ChangeWidgetPositionModal,
-                  }}
-                >
-                  <Component {...pageProps} />
-                </ModalsProvider>
-              </ConfigProvider>
-            </MantineProvider>
-          </ColorTheme.Provider>
-        </ColorSchemeProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </PersistQueryClientProvider>
+                Switch: {
+                  styles: {
+                    input: { cursor: 'pointer' },
+                    label: { cursor: 'pointer' },
+                  },
+                },
+              },
+              primaryColor,
+              primaryShade,
+              colorScheme,
+            }}
+            withGlobalStyles
+            withNormalizeCSS
+          >
+            <ConfigProvider {...props.pageProps}>
+              <Notifications limit={4} position="bottom-left" />
+              <ModalsProvider
+                modals={{
+                  editApp: EditAppModal,
+                  selectElement: SelectElementModal,
+                  integrationOptions: WidgetsEditModal,
+                  integrationRemove: WidgetsRemoveModal,
+                  categoryEditModal: CategoryEditModal,
+                  changeAppPositionModal: ChangeAppPositionModal,
+                  changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                }}
+              >
+                <Component {...pageProps} />
+              </ModalsProvider>
+            </ConfigProvider>
+          </MantineProvider>
+        </ColorTheme.Provider>
+      </ColorSchemeProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </>
   );
 }

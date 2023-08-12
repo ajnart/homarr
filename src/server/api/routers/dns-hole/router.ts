@@ -6,7 +6,7 @@ import { PiHoleClient } from '~/tools/server/sdk/pihole/piHole';
 import { ConfigAppType } from '~/types/app';
 import { AdStatistics } from '~/widgets/dnshole/type';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { createTRPCRouter, publicProcedure } from '../../trpc';
 
 export const dnsHoleRouter = createTRPCRouter({
   control: publicProcedure
