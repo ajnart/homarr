@@ -100,8 +100,8 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         editor={editor}
         styles={(theme) => ({
           root: {
-            '.ProseMirror': {
-              padding: 0,
+            '& .ProseMirror': {
+              padding: '0  !important',
             },
             border: 'none',
           },
