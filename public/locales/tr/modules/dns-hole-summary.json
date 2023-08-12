@@ -10,9 +10,9 @@
       "layout": {
         "label": "Düzen",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 ye 2",
+          "row": "Yatay",
+          "column": "Dikey"
         }
       }
     }
