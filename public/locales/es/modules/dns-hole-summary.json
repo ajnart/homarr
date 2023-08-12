@@ -6,6 +6,14 @@
       "title": "Ajustes del widget Resumen de agujero DNS",
       "usePiHoleColors": {
         "label": "Usar colores de PiHole"
+      },
+      "layout": {
+        "label": "Diseño",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
