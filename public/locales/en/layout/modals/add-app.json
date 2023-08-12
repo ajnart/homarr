@@ -72,6 +72,10 @@
 				"bottom":"Bottom",
 				"left":"Left"
 			}
+		},
+		"lineClampAppName":{
+			"label":"App Name Line Clamp",
+			"description":"Defines on how many lines your title should fit at it's maximum. Set 0 for unlimited."
 		}
 	},
 	"integration": {
