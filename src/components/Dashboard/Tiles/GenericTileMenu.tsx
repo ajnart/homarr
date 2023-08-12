@@ -32,7 +32,6 @@ export const GenericTileMenu = (
     <Menu withinPortal withArrow position="right">
       <Menu.Target>
         <ActionIcon
-          color={primaryColor}
           style={{ zIndex: 1 }}
           size="md"
           radius="md"
