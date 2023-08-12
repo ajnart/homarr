@@ -6,6 +6,14 @@
       "title": "Nastavenia pre súhrn DNS Hole",
       "usePiHoleColors": {
         "label": "Použitie farieb z PiHole"
+      },
+      "layout": {
+        "label": "Rozloženie",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
