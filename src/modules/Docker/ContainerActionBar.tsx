@@ -189,7 +189,7 @@ const useDockerActionMutation = () => {
       { action, id: container.Id },
       {
         onSuccess: () => {
-          notifications.show({
+          notifications.update({
             id: container.Id,
             title: containerName,
             message: `${t(`actions.${action}.end`)} ${containerName}`,
