@@ -130,7 +130,8 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 appearance: {
                   iconUrl: '/imgs/logo/logo.png',
                   appNameStatus: 'normal',
-                  positionAppName: 'column'
+                  positionAppName: 'column',
+                  lineClampAppName: 1,
                 },
                 network: {
                   enabledStatusChecker: true,

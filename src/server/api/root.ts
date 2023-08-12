@@ -4,7 +4,7 @@ import { appRouter } from './routers/app';
 import { calendarRouter } from './routers/calendar';
 import { configRouter } from './routers/config';
 import { dashDotRouter } from './routers/dash-dot';
-import { dnsHoleRouter } from './routers/dns-hole';
+import { dnsHoleRouter } from './routers/dns-hole/router';
 import { dockerRouter } from './routers/docker/router';
 import { downloadRouter } from './routers/download';
 import { iconRouter } from './routers/icon';

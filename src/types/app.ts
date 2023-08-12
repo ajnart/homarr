@@ -36,6 +36,7 @@ interface AppAppearanceType {
   iconUrl: string;
   appNameStatus: "normal"|"hover"|"hidden";
   positionAppName: Property.FlexDirection;
+  lineClampAppName: number;
 }
 
 export type IntegrationType =

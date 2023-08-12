@@ -95,6 +95,7 @@ export const AvailableElementTypes = ({
                     iconUrl: '/imgs/logo/logo.png',
                     appNameStatus: 'normal',
                     positionAppName: 'column',
+                    lineClampAppName: 1,
                   },
                   network: {
                     enabledStatusChecker: true,
