@@ -2,32 +2,34 @@ import { Button, Container, Loader, ScrollArea, Stack, useMantineTheme } from '@
 import { useDebouncedValue } from '@mantine/hooks';
 import { Link, RichTextEditor } from '@mantine/tiptap';
 import { IconArrowUp, IconEdit, IconEditOff } from '@tabler/icons-react';
-import { useMutation } from '@tanstack/react-query';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
+import { useConfigStore } from '~/config/store';
+
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
 import { INotebookWidget } from './NotebookWidgetTile';
+import { api } from '~/utils/api';
 
 Link.configure({
   openOnClick: true,
 });
 
 export function Editor({ widget }: { widget: INotebookWidget }) {
-  const [content, setContent] = useState<string>(widget.properties.content);
+  const [content, setContent] = useState(widget.properties);
 
   const { enabled } = useEditModeStore();
   const [isEditing, setIsEditing] = useState<boolean>(false);
+
   const { config, name: configName } = useConfigContext();
+  const updateConfig = useConfigStore((x) => x.updateConfig);
+
+  const { mutateAsync } = api.notebook.createOrUpdate.useMutation();
+
   const { colorScheme, colors } = useMantineTheme();
 
   const [debounced] = useDebouncedValue(content, 500);
-  const mutation = useMutation({
-    mutationFn: (content: string) =>
-      axios.post('/api/modules/notebook', { id: widget.id, content }),
-  });
 
   const viewport = useRef<HTMLDivElement>(null);
   const scrollToTop = () => viewport.current?.scrollTo({ top: 0, behavior: 'smooth' });
@@ -37,16 +39,41 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const editor = useEditor({
     extensions: [StarterKit, Link],
-    content,
+    content: content.content,
     editable: false,
     onUpdate: (e) => {
-      setContent((_) => e.editor.getHTML());
+      setContent((previous) => ({
+        ...previous,
+        content: e.editor.getHTML(),
+      }));
     },
   });
   useEffect(() => {
     if (!editor) return;
     editor.setEditable(isEditing);
-    mutation.mutate(debounced);
+
+    updateConfig(
+      configName,
+      (previous) => {
+        const currentWidget = previous.widgets.find((x) => x.id === widget.id);
+        currentWidget!.properties = debounced;
+
+        return {
+          ...previous,
+          widgets: [
+            ...previous.widgets.filter((iterationWidget) => iterationWidget.id !== widget.id),
+            currentWidget!,
+          ],
+        };
+      },
+      true
+    );
+
+    void mutateAsync({
+      configName: configName,
+      content: debounced.content,
+      widgetId: widget.id
+    });
   }, [isEditing]);
 
   return (
@@ -115,14 +142,9 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           <RichTextEditor.Content />
         </RichTextEditor>
       </ScrollArea>
-      <Stack
-        pos="absolute"
-        right="1rem"
-        bottom="1rem"
-        spacing="0.5rem"
-      >
+      <Stack pos="absolute" right="1rem" bottom="1rem" spacing="0.5rem">
         <Button
-          display={(scrollPosition.y > 0 && !enabled) ? 'block' : 'none'}
+          display={scrollPosition.y > 0 && !enabled ? 'block' : 'none'}
           size="xs"
           radius="xl"
           w="fit-content"
@@ -130,7 +152,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           p="0.625rem"
           onClick={scrollToTop}
         >
-            <IconArrowUp size="1.25rem" />
+          <IconArrowUp size="1.25rem" />
         </Button>
         <Button
           display={!enabled ? 'block' : 'none'}
@@ -141,7 +163,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           p="0.625rem"
           onClick={() => setIsEditing(!isEditing)}
         >
-            {isEditing ? <IconEditOff size="1.25rem" /> : <IconEdit size="1.25rem" />}
+          {isEditing ? <IconEditOff size="1.25rem" /> : <IconEdit size="1.25rem" />}
         </Button>
       </Stack>
     </Container>
