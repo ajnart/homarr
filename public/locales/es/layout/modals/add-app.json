@@ -74,13 +74,13 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "Límite de línea de nombre de aplicación",
+			"label": "Límite de línea del nombre de la aplicación",
 			"description": "Define en cuántas líneas debe caber tu título como máximo. Establece 0 para ilimitado."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "Configuración de integración",
+			"label": "Configuración de la integración",
 			"description": "Configuración de la integración que se usará para conectarse a su aplicación.",
 			"placeholder": "Selecciona una integración",
 			"defined": "Definida",
