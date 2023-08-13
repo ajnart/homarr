@@ -33,12 +33,12 @@ export const AvailableElementTypes = ({
   const onClickCreateCategory = async () => {
     openContextModalGeneric<CategoryEditModalInnerProps>({
       modal: 'categoryEditModal',
-      title: 'Name of new category',
+      title: t('category.newName'),
       withCloseButton: false,
       innerProps: {
         category: {
           id: uuidv4(),
-          name: 'New category',
+          name: t('category.defaultName'),
           position: 0, // doesn't matter, is being overwritten
         },
         onSuccess: async (category) => {
@@ -65,8 +65,8 @@ export const AvailableElementTypes = ({
           })).then(() => {
             closeModal(modalId);
             showNotification({
-              title: 'Category created',
-              message: `The category ${category.name} has been created`,
+              title: t('category.created.title'),
+              message: t('category.created.message', { name: category.name}),
               color: 'teal',
             });
           });
@@ -81,7 +81,7 @@ export const AvailableElementTypes = ({
       <Space h="lg" />
       <Group spacing="md" grow>
         <ElementItem
-          name="Apps"
+          name={t('apps')}
           icon={<IconBox size={40} strokeWidth={1.3} />}
           onClick={() => {
             openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
@@ -89,7 +89,7 @@ export const AvailableElementTypes = ({
               innerProps: {
                 app: {
                   id: uuidv4(),
-                  name: 'Your app',
+                  name: t('app.defaultName'),
                   url: 'https://homarr.dev',
                   appearance: {
                     iconUrl: '/imgs/logo/logo.png',
@@ -126,12 +126,12 @@ export const AvailableElementTypes = ({
           }}
         />
         <ElementItem
-          name="Widgets"
+          name={t('widgets')}
           icon={<IconStack size={40} strokeWidth={1.3} />}
           onClick={onOpenWidgets}
         />
         <ElementItem
-          name="Category"
+          name={t('categories')}
           icon={<IconBoxAlignTop size={40} strokeWidth={1.3} />}
           onClick={onClickCreateCategory}
         />

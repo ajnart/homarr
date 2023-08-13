@@ -7,5 +7,19 @@
     "goBack": "Go back to the previous step",
     "actionIcon": {
         "tooltip": "Add a tile"
+    },
+    "apps": "Apps",
+    "app": {
+        "defaultName": "Your App"
+    },
+    "widgets": "Widgets",
+    "categories": "Categories",
+    "category": {
+        "newName": "Name of new category",
+        "defaultName": "New Category",
+        "created": {
+            "title": "Category created",
+            "message": "The category \"{{name}}\" has been created"
+        }
     }
 }
