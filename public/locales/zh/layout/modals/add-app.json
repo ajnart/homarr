@@ -72,6 +72,10 @@
 				"bottom": "下侧",
 				"left": "左侧"
 			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
 		}
 	},
 	"integration": {

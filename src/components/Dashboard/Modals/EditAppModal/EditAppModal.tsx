@@ -205,7 +205,7 @@ export const EditAppModal = ({
             <NetworkTab form={form} />
             <AppearanceTab
               form={form}
-              disallowAppNameProgagation={() => setAllowAppNamePropagation(false)}
+              disallowAppNamePropagation={() => setAllowAppNamePropagation(false)}
               allowAppNamePropagation={allowAppNamePropagation}
             />
             <IntegrationTab form={form} />

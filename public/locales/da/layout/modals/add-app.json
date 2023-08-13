@@ -72,6 +72,10 @@
 				"bottom": "Bund",
 				"left": "Venstre"
 			}
+		},
+		"lineClampAppName": {
+			"label": "App Navn Linje Klemme",
+			"description": "Definerer hvor mange linjer din titel skal passe til det maksimale. Sæt 0 for ubegrænset."
 		}
 	},
 	"integration": {

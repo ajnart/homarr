@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Показать в градусах Фаренгейта"
       },
+      "displayCityName": {
+        "label": "Отобразить название города"
+      },
       "location": {
         "label": "Местоположение"
       }

@@ -138,6 +138,8 @@ const WidgetOptionTypeSwitch: FC<{
   const info = option.info ?? false;
   const link = option.infoLink ?? undefined;
 
+  if (option.hide) return null;
+
   switch (option.type) {
     case 'switch':
       return (

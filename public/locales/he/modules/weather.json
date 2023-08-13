@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "פרנהייט"
       },
+      "displayCityName": {
+        "label": "הצגת שם העיר"
+      },
       "location": {
         "label": "מיקום מזג האוויר"
       }

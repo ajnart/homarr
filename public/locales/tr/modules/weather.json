@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Fahrenheit cinsinden göster"
       },
+      "displayCityName": {
+        "label": "Şehir Adını Göster"
+      },
       "location": {
         "label": "Hava durumu konumu"
       }

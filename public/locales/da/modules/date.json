@@ -6,6 +6,27 @@
       "title": "Indstillinger for dato og tid widget",
       "display24HourFormat": {
         "label": "Vis fuld tid (24-timer)"
+      },
+      "dateFormat": {
+        "label": "Formatering af dato",
+        "data": {
+          "hide": "Skjul dato"
+        }
+      },
+      "enableTimezone": {
+        "label": "Vis en brugerdefineret tidszone"
+      },
+      "timezoneLocation": {
+        "label": "Tidszone Lokation"
+      },
+      "titleState": {
+        "label": "Byens titel",
+        "info": "Hvis du aktiverer indstillingen Tidszone, kan du få vist navnet på byen og tidszonekoden.<br/>Du kan også vise byen alene eller slet ikke vise noget.",
+        "data": {
+          "both": "By og tidszone",
+          "city": "Kun by",
+          "none": "Intet"
+        }
       }
     }
   }

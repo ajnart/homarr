@@ -6,6 +6,27 @@
       "title": "Inställningar för datum och tid widget",
       "display24HourFormat": {
         "label": "Visa heltid (24-timmars)"
+      },
+      "dateFormat": {
+        "label": "Datumformat",
+        "data": {
+          "hide": "Dölj datum"
+        }
+      },
+      "enableTimezone": {
+        "label": "Visa en anpassad tidszon"
+      },
+      "timezoneLocation": {
+        "label": "Plats för tidszon"
+      },
+      "titleState": {
+        "label": "Stadens namn",
+        "info": "Om du aktiverar alternativet Tidszon kan stadens namn och tidszonskoden visas.<br/>Du kan också visa enbart staden eller ingen stad alls.",
+        "data": {
+          "both": "Stad och tidszon",
+          "city": "Endast stad",
+          "none": "Ingen"
+        }
       }
     }
   }

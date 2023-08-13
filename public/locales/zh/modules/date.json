@@ -6,6 +6,27 @@
       "title": "设置日期和时间小部件",
       "display24HourFormat": {
         "label": "显示完整时间 (24小时)"
+      },
+      "dateFormat": {
+        "label": "日期格式",
+        "data": {
+          "hide": "隐藏日期"
+        }
+      },
+      "enableTimezone": {
+        "label": "显示自定义时区"
+      },
+      "timezoneLocation": {
+        "label": "时区位置"
+      },
+      "titleState": {
+        "label": "城市名称",
+        "info": "如果激活时区选项，则可显示城市名称和时区代码。<br/>您也可以只显示城市，甚至不显示。",
+        "data": {
+          "both": "城市和时区",
+          "city": "仅城市",
+          "none": "无"
+        }
       }
     }
   }

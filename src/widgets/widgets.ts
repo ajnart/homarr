@@ -53,6 +53,7 @@ interface DataType {
 
 interface ICommonWidgetOptions {
   info?: boolean;
+  hide?: boolean;
   infoLink?: string;
 }
 
