@@ -3,7 +3,7 @@ export type Language = {
   originalName: string;
   translatedName: string;
   emoji: string;
-  momentLocale: string;
+  locale: string;
 };
 
 export const languages: Language[] = [
@@ -12,14 +12,14 @@ export const languages: Language[] = [
     originalName: 'Deutsch',
     translatedName: 'German',
     emoji: '🇩🇪',
-    momentLocale: 'de',
+    locale: 'de',
   },
   {
     shortName: 'en',
     originalName: 'English',
     translatedName: 'English',
     emoji: '🇬🇧',
-    momentLocale: 'en-gb',
+    locale: 'en-gb',
   },
   // Danish
   {
@@ -27,7 +27,7 @@ export const languages: Language[] = [
     originalName: 'Dansk',
     translatedName: 'Danish',
     emoji: '🇩🇰',
-    momentLocale: 'da',
+    locale: 'da',
   },
   // Hebrew
   {
@@ -35,49 +35,49 @@ export const languages: Language[] = [
     originalName: 'עברית',
     translatedName: 'Hebrew',
     emoji: '🇮🇱',
-    momentLocale: 'he',
+    locale: 'he',
   },
   {
     shortName: 'es',
     originalName: 'Español',
     translatedName: 'Spanish',
     emoji: '🇪🇸',
-    momentLocale: 'es',
+    locale: 'es',
   },
   {
     shortName: 'fr',
     originalName: 'Français',
     translatedName: 'French',
     emoji: '🇫🇷',
-    momentLocale: 'fr',
+    locale: 'fr',
   },
   {
     shortName: 'it',
     originalName: 'Italiano',
     translatedName: 'Italian',
     emoji: '🇮🇹',
-    momentLocale: 'it',
+    locale: 'it',
   },
   {
     shortName: 'ja',
     originalName: '日本語',
     translatedName: 'Japanese',
     emoji: '🇯🇵',
-    momentLocale: 'ja',
+    locale: 'ja',
   },
   {
     shortName: 'ko',
     originalName: '한국어',
     translatedName: 'Korean',
     emoji: '🇰🇷',
-    momentLocale: 'ko',
+    locale: 'ko',
   },
   {
     shortName: 'lol',
     originalName: 'LOLCAT',
     translatedName: 'LOLCAT',
     emoji: '🐱',
-    momentLocale: 'en-gb',
+    locale: 'en-gb',
   },
   // Norwegian
   {
@@ -85,7 +85,7 @@ export const languages: Language[] = [
     originalName: 'Norsk',
     translatedName: 'Norwegian',
     emoji: '🇳🇴',
-    momentLocale: 'nb',
+    locale: 'nb',
   },
   // Slovak
   {
@@ -93,42 +93,42 @@ export const languages: Language[] = [
     originalName: 'Slovenčina',
     translatedName: 'Slovak',
     emoji: '🇸🇰',
-    momentLocale: 'sk',
+    locale: 'sk',
   },
   {
     shortName: 'nl',
     originalName: 'Nederlands',
     translatedName: 'Dutch',
     emoji: '🇳🇱',
-    momentLocale: 'nl',
+    locale: 'nl',
   },
   {
     shortName: 'pl',
     originalName: 'Polski',
     translatedName: 'Polish',
     emoji: '🇵🇱',
-    momentLocale: 'pl',
+    locale: 'pl',
   },
   {
     shortName: 'pt',
     originalName: 'Português',
     translatedName: 'Portuguese',
     emoji: '🇵🇹',
-    momentLocale: 'pt',
+    locale: 'pt',
   },
   {
     shortName: 'ru',
     originalName: 'Русский',
     translatedName: 'Russian',
     emoji: '🇷🇺',
-    momentLocale: 'ru',
+    locale: 'ru',
   },
   {
     shortName: 'sl',
     originalName: 'Slovenščina',
     translatedName: 'Slovenian',
     emoji: '🇸🇮',
-    momentLocale: 'sl',
+    locale: 'sl',
   },
 
   {
@@ -136,14 +136,14 @@ export const languages: Language[] = [
     originalName: 'Svenska',
     translatedName: 'Swedish',
     emoji: '🇸🇪',
-    momentLocale: 'sv',
+    locale: 'sv',
   },
   {
     shortName: 'uk',
     originalName: 'Українська',
     translatedName: 'Ukrainian',
     emoji: '🇺🇦',
-    momentLocale: 'uk',
+    locale: 'uk',
   },
   // Vietnamese
   {
@@ -151,42 +151,42 @@ export const languages: Language[] = [
     originalName: 'Tiếng Việt',
     translatedName: 'Vietnamese',
     emoji: '🇻🇳',
-    momentLocale: 'vi',
+    locale: 'vi',
   },
   {
     shortName: 'zh',
     originalName: '中文',
     translatedName: 'Chinese',
     emoji: '🇨🇳',
-    momentLocale: 'zh-cn',
+    locale: 'zh-cn',
   },
   {
     shortName: 'el',
     originalName: 'Ελληνικά',
     translatedName: 'Greek',
     emoji: '🇬🇷',
-    momentLocale: 'el',
+    locale: 'el',
   },
   {
     shortName: 'tr',
     originalName: 'Türkçe',
     translatedName: 'Turkish',
     emoji: '🇹🇷',
-    momentLocale: 'tr',
+    locale: 'tr',
   },
   {
     shortName: 'lv',
     originalName: 'Latvian',
     translatedName: 'Latvian',
     emoji: '🇱🇻',
-    momentLocale: 'lv',
+    locale: 'lv',
   },
   {
     shortName: 'hr',
     originalName: 'Hrvatski',
     translatedName: 'Croatian',
     emoji: '🇭🇷',
-    momentLocale: 'hr',
+    locale: 'hr',
   },
 ];
 

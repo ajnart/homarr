@@ -1,8 +1,9 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
-import { i18n } from 'next-i18next';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
 
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
@@ -66,10 +67,14 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
+  const { locale } = useRouter();
   const { colorScheme, radius } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
   const isEditMode = useEditModeStore((x) => x.enabled);
+
+  const language = getLanguageByCode(locale ?? 'en');
+  require(`dayjs/locale/${language.locale}.js`);
 
   const { data: medias } = api.calendar.medias.useQuery(
     {
@@ -90,7 +95,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       onPreviousMonth={setMonth}
       onNextMonth={setMonth}
       size={widget.properties.fontSize}
-      locale={i18n?.resolvedLanguage ?? 'en'}
+      locale={language.locale}
       firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
       hideWeekdays={widget.properties.hideWeekDays}
       style={{ position: 'relative' }}
