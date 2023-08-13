@@ -60,12 +60,19 @@ export const AppTile = ({ className, app }: AppTileProps) => {
             </Text>
           )}
           <motion.img
-            className={cx(classes.appImage, 'dashboard-tile-app-image')}
+            className={cx('dashboard-tile-app-image')}
             src={app.appearance.iconUrl}
+            height="85%"
+            width="85%"
             alt={app.name}
             whileHover={{ scale: 0.9 }}
             initial={{ scale: 0.8 }}
             style={{
+              maxHeight: '90%',
+              maxWidth: '90%',
+              flex: 1,
+              overflow: 'auto',
+              objectFit: 'contain',
               width: isRow ? 0 : undefined,
             }}
           />
@@ -113,11 +120,6 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   appName: {
     wordBreak: 'break-word',
-  },
-  appImage: {
-    flex: '1',
-    objectFit: 'contain',
-    overflowY: 'auto',
   },
   button: {
     height: '100%',
