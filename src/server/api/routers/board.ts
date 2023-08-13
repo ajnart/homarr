@@ -1,7 +1,13 @@
+import { TRPCError } from '@trpc/server';
 import fs from 'fs';
+import { z } from 'zod';
+import { configExists } from '~/tools/config/configExists';
+import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
+import { generateDefaultApp } from '~/tools/shared/app';
 
-import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, protectedProcedure } from '../trpc';
+import { configNameSchema } from './config';
 
 export const boardRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
@@ -30,4 +36,53 @@ export const boardRouter = createTRPCRouter({
       })
     );
   }),
+  addAppsForContainers: adminProcedure
+    .input(
+      z.object({
+        boardName: configNameSchema,
+        apps: z.array(
+          z.object({
+            name: z.string(),
+            port: z.number().optional(),
+          })
+        ),
+      })
+    )
+    .mutation(async ({ input }) => {
+      if (!(await configExists(input.boardName))) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'Board not found',
+        });
+      }
+      const config = await getConfig(input.boardName);
+
+      const lowestWrapper = config?.wrappers.sort((a, b) => a.position - b.position)[0];
+
+      const newConfig = {
+        ...config,
+        apps: [
+          ...config.apps,
+          ...input.apps.map((container) => {
+            const defaultApp = generateDefaultApp(lowestWrapper.id);
+            const address = container.port
+              ? `http://localhost:${container.port}`
+              : 'http://localhost';
+
+            return {
+              ...defaultApp,
+              name: container.name,
+              url: address,
+              behaviour: {
+                ...defaultApp.behaviour,
+                externalUrl: address,
+              },
+            };
+          }),
+        ],
+      };
+
+      const targetPath = `data/configs/${input.boardName}.json`;
+      fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
+    }),
 });

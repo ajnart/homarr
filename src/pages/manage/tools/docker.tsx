@@ -2,12 +2,12 @@ import { Alert, Stack, Title } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { ContainerInfo } from 'dockerode';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { useState } from 'react';
+import ContainerActionBar from '~/components/Manage/Tools/Docker/ContainerActionBar';
+import ContainerTable from '~/components/Manage/Tools/Docker/ContainerTable';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { env } from '~/env';
-import ContainerActionBar from '~/modules/Docker/ContainerActionBar';
-import DockerTable from '~/modules/Docker/DockerTable';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
@@ -43,7 +43,7 @@ export default function DockerPage({
     <ManageLayout>
       <Stack>
         <ContainerActionBar selected={selection} reload={reload} isLoading={isRefetching} />
-        <DockerTable containers={data ?? []} selection={selection} setSelection={setSelection} />
+        <ContainerTable containers={data ?? []} selection={selection} setSelection={setSelection} />
       </Stack>
     </ManageLayout>
   );

@@ -8,13 +8,13 @@ import {
   TextInput,
   createStyles,
 } from '@mantine/core';
-import { useDebouncedValue, useElementSize } from '@mantine/hooks';
+import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 import Dockerode, { ContainerInfo } from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useMemo, useState } from 'react';
 
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
+import { MIN_WIDTH_MOBILE } from '../../../../constants/constants';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({
@@ -26,7 +26,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function DockerTable({
+export default function ContainerTable({
   containers,
   selection,
   setSelection,
@@ -37,7 +37,6 @@ export default function DockerTable({
 }) {
   const { t } = useTranslation('modules/docker');
   const [search, setSearch] = useState('');
-  const { classes, cx } = useStyles();
   const { ref, width } = useElementSize();
 
   const filteredContainers = useMemo(

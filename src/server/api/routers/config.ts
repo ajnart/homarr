@@ -13,7 +13,7 @@ import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 import { getConfig } from '../../../tools/config/getConfig';
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
-const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
+export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
 
 export const configRouter = createTRPCRouter({
   delete: adminProcedure
