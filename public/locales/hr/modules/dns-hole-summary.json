@@ -6,6 +6,14 @@
       "title": "Postavke za sažetak DNS \"hole\"",
       "usePiHoleColors": {
         "label": "Koristi boje iz PiHole-a"
+      },
+      "layout": {
+        "label": "Raspored",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

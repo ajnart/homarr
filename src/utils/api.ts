@@ -33,6 +33,7 @@ const getTrpcConfiguration = () => ({
     }),
     httpBatchLink({
       url: `${getBaseUrl()}/api/trpc`,
+      maxURLLength: 2000,
     }),
   ],
   queryClient,

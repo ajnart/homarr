@@ -3,7 +3,7 @@ import { boardRouter } from './routers/board';
 import { calendarRouter } from './routers/calendar';
 import { configRouter } from './routers/config';
 import { dashDotRouter } from './routers/dash-dot';
-import { dnsHoleRouter } from './routers/dns-hole';
+import { dnsHoleRouter } from './routers/dns-hole/router';
 import { downloadRouter } from './routers/download';
 import { iconRouter } from './routers/icon';
 import { inviteRouter } from './routers/invite';
@@ -17,6 +17,8 @@ import { weatherRouter } from './routers/weather';
 import { dockerRouter } from './routers/docker/router';
 import { usenetRouter } from './routers/usenet/router';
 import { createTRPCRouter } from '~/server/api/trpc';
+import { timezoneRouter } from './routers/timezone';
+import { notebookRouter } from './routers/notebook';
 
 /**
  * This is the primary router for your server.
@@ -27,21 +29,23 @@ export const rootRouter = createTRPCRouter({
   app: appRouter,
   rss: rssRouter,
   user: userRouter,
+  calendar: calendarRouter,
   config: configRouter,
-  docker: dockerRouter,
-  icon: iconRouter,
   dashDot: dashDotRouter,
   dnsHole: dnsHoleRouter,
+  docker: dockerRouter,
   download: downloadRouter,
+  icon: iconRouter,
   mediaRequest: mediaRequestsRouter,
   mediaServer: mediaServerRouter,
   overseerr: overseerrRouter,
+  timezone: timezoneRouter,
   usenet: usenetRouter,
-  calendar: calendarRouter,
   weather: weatherRouter,
   invites: inviteRouter,
   boards: boardRouter,
-  password: passwordRouter
+  password: passwordRouter,
+  notebook: notebookRouter
 });
 
 // export type definition of API

@@ -35,6 +35,13 @@ export const ConfigProvider = ({
   const { configs } = useConfigStore((s) => ({ configs: s.configs }), shallow);
 
   const currentConfig = configs.find((c) => c.value.configProperties.name === configName)?.value;
+  const { setPrimaryColor, setSecondaryColor, setPrimaryShade } = useColorTheme();
+
+  useEffect(() => {
+    setPrimaryColor(currentConfig?.settings.customization.colors.primary || 'red');
+    setSecondaryColor(currentConfig?.settings.customization.colors.secondary || 'orange');
+    setPrimaryShade(currentConfig?.settings.customization.colors.shade || 6);
+  }, [currentConfig]);
 
   return (
     <ConfigContext.Provider

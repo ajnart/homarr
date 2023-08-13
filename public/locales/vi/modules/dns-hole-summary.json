@@ -6,6 +6,14 @@
       "title": "Cài đặt cho tóm tắt DNS",
       "usePiHoleColors": {
         "label": "Dùng màu từ PiHole"
+      },
+      "layout": {
+        "label": "Bố cục",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

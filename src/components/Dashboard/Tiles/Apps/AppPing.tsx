@@ -22,6 +22,7 @@ export const AppPing = ({ app }: AppPingProps) => {
   const { data, isFetching, isError, error, isActive } = usePing(app);
   const tooltipLabel = useTooltipLabel({ isFetching, isError, data, errorMessage: error?.message });
   const isOnline = isError ? false : data?.state === 'online';
+
   const pulse = usePingPulse({ isOnline, settings: userWithSettings?.settings });
 
   if (!isActive) return null;
@@ -32,7 +33,7 @@ export const AppPing = ({ app }: AppPingProps) => {
     <motion.div
       style={{
         position: 'absolute',
-        bottom: replaceDotWithIcon ? 5 : 20,
+        bottom: replaceDotWithIcon ? 0 : 20,
         right: replaceDotWithIcon ? 8 : 20,
         zIndex: 2,
       }}
@@ -110,6 +111,16 @@ const usePing = (app: AppType) => {
     {
       retry: false,
       enabled: isActive,
+      refetchOnWindowFocus: false,
+      retryDelay(failureCount, error) {
+        // TODO: Add logic to retry on timeout
+        return 3000;
+      },
+      // 5 minutes of cache
+      cacheTime: 1000 * 60 * 5,
+      staleTime: 1000 * 60 * 5,
+      retryOnMount: true,
+
       select: (data) => {
         const isOk = isStatusOk(app, data.status);
         if (isOk)

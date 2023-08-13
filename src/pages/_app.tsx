@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Consola from 'consola';
 import { getCookie, setCookie } from 'cookies-next';
 import 'flag-icons/css/flag-icons.min.css';
+import moment from 'moment-timezone';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
 import { SessionProvider, getSession } from 'next-auth/react';
@@ -16,6 +17,7 @@ import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
+import { getLanguageByCode } from '~/tools/language';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
@@ -44,9 +46,15 @@ function App(
     secondaryColor?: MantineTheme['primaryColor'];
     primaryShade?: MantineTheme['primaryShade'];
     session: Session;
+    configName?: string;
+    locale: string;
   }>
 ) {
   const { Component, pageProps } = props;
+  // TODO: make mapping from our locales to moment locales
+  const language = getLanguageByCode(pageProps.locale);
+  require('moment/locale/' + language.momentLocale);
+  moment.locale(language.momentLocale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
     props.pageProps.primaryColor ?? 'red'
@@ -151,6 +159,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
       ...getActiveColorScheme(session, ctx),
       packageAttributes: getServiceSidePackageAttributes(),
       session,
+      locale: ctx.locale ?? 'en',
     },
   };
 };
