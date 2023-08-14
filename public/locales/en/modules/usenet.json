@@ -31,8 +31,7 @@
       "title": "Error",
       "message": "An error has occurred"
     },
-    "paused": "Paused",
-    "notImplemented": "NOT IMPLEMENTED"
+    "paused": "Paused"
   },
   "history": {
     "header": {
