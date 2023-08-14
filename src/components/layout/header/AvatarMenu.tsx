@@ -41,13 +41,14 @@ export const AvatarMenu = () => {
             <CurrentUserAvatar user={sessionData?.user ?? null} />
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Item icon={<Icon size="1rem" />} onClick={toggleColorScheme}>
+            <Menu.Item closeMenuOnClick={false} icon={<Icon size="1rem" />} onClick={toggleColorScheme}>
               {t('actions.avatar.switchTheme')}
             </Menu.Item>
             {sessionData?.user && (
               <>
                 <Menu.Item
                   component={Link}
+                  passHref
                   href="/user/preferences"
                   icon={<IconUserCog size="1rem" />}
                 >

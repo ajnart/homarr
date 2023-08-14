@@ -10,6 +10,7 @@ import {
   Title,
 } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
+import { IconArrowLeft } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -33,7 +34,14 @@ const PreferencesPage = () => {
   const headTitle = `${t('metaTitle')} • Homarr`;
 
   return (
-    <MainLayout showExperimental>
+    <MainLayout
+      showExperimental
+      contentComponents={
+        <Button component="a" href="/board/" variant="light" leftIcon={<IconArrowLeft size={16} />}>
+          {t('common:back')}
+        </Button>
+      }
+    >
       <Container>
         <Paper p="xl" mih="100%" withBorder>
           <Head>
