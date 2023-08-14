@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Statistik över medieförfrågningar",
+    "description": "Statistik över dina medieförfrågningar",
     "settings": {
-      "title": "",
+      "title": "Statistik över medieförfrågningar",
       "direction": {
         "label": "Layoutens riktning."
       }
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Väntar på godkännande",
+    "tvRequests": "TV-förfrågningar",
+    "movieRequests": "Filmförfrågningar"
   }
 }
