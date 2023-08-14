@@ -74,8 +74,8 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Lietotnes Nosaukuma Līnijas Aplaušana",
+			"description": "Nosaka, cik daudzās rindās maksimāli garš var būt jūsu virsraksts. Iestatiet 0, lai būtu neierobežots skaits."
 		}
 	},
 	"integration": {
