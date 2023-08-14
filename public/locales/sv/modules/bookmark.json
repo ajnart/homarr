@@ -1,15 +1,15 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Bokmärke",
+    "description": "Visar en statisk lista med strängar eller länkar",
     "settings": {
-      "title": "",
+      "title": "Bokmärkesinställningar",
       "name": {
-        "label": "",
+        "label": "Widget-rubrik",
         "info": "Lämna tomt för att hålla titeln dold."
       },
       "items": {
-        "label": ""
+        "label": "Objekt"
       },
       "layout": {
         "label": "Layout"
@@ -18,8 +18,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Bokmärkeslistan är tom",
+      "text": "Lägg till nya objekt i den här listan i redigeringsläget"
     }
   }
 }
