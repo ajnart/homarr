@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Piezīmes",
+		"description": "Uz markdown balstīts interaktīvs logrīks, lai jūs varētu pierakstīt savas piezīmes!",
 		"settings": {
-			"title": "",
+			"title": "Piezīmju logrīka iestatījumi",
 			"showToolbar": {
-				"label": ""
+				"label": "Rādīt rīkjoslu, lai palīdzētu rakstīt markdown tekstu"
 			},
 			"content": {
-				"label": ""
+				"label": "Piezīmju saturs"
 			}
 		}
 	}
