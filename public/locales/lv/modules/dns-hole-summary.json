@@ -10,9 +10,9 @@
       "layout": {
         "label": "Izkārtojums",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 pret 2",
+          "row": "Horizontāli",
+          "column": "Vertikāli"
         }
       }
     }
