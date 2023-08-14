@@ -113,7 +113,7 @@ const CreateNewUserPage = () => {
               variant="default"
               href="/manage/users"
             >
-              {t('buttons.goBack')}
+              {t('common:back')}
             </Button>
           </Group>
         </Stepper.Completed>

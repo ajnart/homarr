@@ -133,7 +133,7 @@ export const CreateAccountSecurityStep = ({
 
       <Group position="apart" noWrap>
         <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
-          {t('buttons.previous')}
+          {t('common:previous')}
         </Button>
         <Button
           rightIcon={<IconArrowRight size="1rem" />}
@@ -146,7 +146,7 @@ export const CreateAccountSecurityStep = ({
           px="xl"
           disabled={!form.isValid()}
         >
-          {t('buttons.next')}
+          {t('common:next')}
         </Button>
       </Group>
     </Card>

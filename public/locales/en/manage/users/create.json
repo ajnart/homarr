@@ -52,11 +52,7 @@
         }
     },
     "buttons": {
-        "next": "Next",
-        "previous": "Previous",
-        "confirm": "Confirm",
         "generateRandomPassword": "Generate random",
-        "createAnother": "Create another",
-        "goBack": "Go back to users"
+        "createAnother": "Create another"
     }
 }

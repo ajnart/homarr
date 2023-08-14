@@ -89,7 +89,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
 
       <Group position="apart" noWrap>
         <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
-          {t('buttons.previous')}
+          {t('common:previous')}
         </Button>
         <Button
           onClick={async () => {
@@ -104,7 +104,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
           variant="light"
           px="xl"
         >
-          {t('buttons.confirm')}
+          {t('common:confirm')}
         </Button>
       </Group>
     </Card>
