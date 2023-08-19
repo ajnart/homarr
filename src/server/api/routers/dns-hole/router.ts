@@ -93,15 +93,15 @@ const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
   if (enable) {
     try {
       await adGuard.enable();
-    } catch (err) {
-      Consola.error((err as Error).message);
+    } catch (error) {
+      Consola.error((error as Error).message);
     }
     return;
   }
   try {
     await adGuard.disable();
-  } catch (err) {
-    Consola.error((err as Error).message);
+  } catch (error) {
+    Consola.error((error as Error).message);
   }
 };
 
