@@ -9,7 +9,7 @@ const dockerRunCommand = `docker run  \\
 --restart unless-stopped \\
 -p 7575:7575 \\
 -v your-path/homarr/configs:/app/data/configs \\
--v your-path/homarr/data:/app/prisma \\
+-v your-path/homarr/data:/app/database \\
 -v your-path/homarr/icons:/app/public/icons \\
 -d ghcr.io/ajnart/homarr:latest`;
 
@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./homarr/configs:/app/data/configs
-      - ./homarr/data:/app/prisma
+      - ./homarr/data:/app/database
       - ./homarr/icons:/app/public/icons
     ports:
       - '7575:7575'`;
@@ -139,7 +139,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
           <Text>
             You're lucky. For installation <b>without Docker</b> on Windows and Linux, there are no
             additional steps required. However, be advised that your backups should start to include
-            the files located at <Code>/prisma</Code> too, if you run automatic backups.
+            the files located at <Code>/database</Code> too, if you run automatic backups.
           </Text>
         </Tabs.Panel>
 
@@ -148,14 +148,14 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
             <List.Item>Click on your Homarr application and click "Edit"</List.Item>
             <List.Item>Scroll down and click on the link "Add another path, port, variable or device"</List.Item>
             <List.Item>After the new modal has opened, make sure that "Path" has been selected at the top</List.Item>
-            <List.Item>In the container path, enter <Code>/app/prisma</Code></List.Item>
+            <List.Item>In the container path, enter <Code>/app/database</Code></List.Item>
             <List.Item>In the host path, enter a new path on your host system. Choose a similar path, but the innermost directory should be different, than your existing mounting points (eg. <Code>/mnt/user/appdata/homarr/data</Code>)</List.Item>
           </List>
         </Tabs.Panel>
 
         <Tabs.Panel value="others" pt="xs">
           <Text>We are sadly not able to include upgrade guides for all kind of systems. If your system was not listed, you should mount this new mounting point in your container:</Text>
-          <Code>/app/prisma</Code>
+          <Code>/app/database</Code>
         </Tabs.Panel>
       </Tabs>
 
