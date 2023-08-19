@@ -1,4 +1,7 @@
+import axios from 'axios';
+import Consola from 'consola';
 import { z } from 'zod';
+
 import { trimStringEnding } from '../../../shared/strings';
 import {
   adGuardApiFilteringStatusSchema,
@@ -60,19 +63,39 @@ export class AdGuard {
     await this.changeProtectionStatus(false);
   }
   async enable() {
-    await this.changeProtectionStatus(false);
+    await this.changeProtectionStatus(true);
   }
 
+  /**
+   * Make a post request to the AdGuard API to change the protection status based on the value of newStatus
+   * @param {boolean} newStatus - The new status of the protection
+   * @param {number} duration - Duration of a pause, in milliseconds. Enabled should be false.
+   * @returns {string} - The response from the AdGuard API
+   */
   private async changeProtectionStatus(newStatus: boolean, duration = 0) {
-    await fetch(`${this.baseHostName}/control/protection`, {
-      method: 'POST',
-      body: JSON.stringify({
-        enabled: newStatus,
-        duration,
-      }),
-    });
+    try {
+      const { data }: { data: string } = await axios.post(
+        `${this.baseHostName}/control/protection`,
+        {
+          enabled: newStatus,
+          duration,
+        },
+        {
+          headers: {
+            Authorization: `Basic ${this.getAuthorizationHeaderValue()}`,
+          },
+        }
+      );
+      return data;
+    } catch (err) {
+      Consola.error((err as Error).message);
+    }
   }
 
+  /**
+   * It return a base64 username:password string
+   * @returns {string} The base64 encoded username and password
+   */
   private getAuthorizationHeaderValue() {
     return Buffer.from(`${this.username}:${this.password}`).toString('base64');
   }
