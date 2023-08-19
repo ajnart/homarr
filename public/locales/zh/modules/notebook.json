@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "笔记本",
+		"description": "一个基于Markdown的交互式小部件，您可以写下您的笔记！",
 		"settings": {
-			"title": "",
+			"title": "设置笔记本小部件",
 			"showToolbar": {
-				"label": ""
+				"label": "显示工具栏以帮助你编写笔记"
 			},
 			"content": {
-				"label": ""
+				"label": "笔记本的内容"
 			}
 		}
 	}
