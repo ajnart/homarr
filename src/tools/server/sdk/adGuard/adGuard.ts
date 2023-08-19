@@ -87,8 +87,10 @@ export class AdGuard {
         }
       );
       return data;
-    } catch (err) {
-      Consola.error((err as Error).message);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        Consola.error(error.message);
+      }
     }
   }
 

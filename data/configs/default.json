@@ -76,6 +76,65 @@
       }
     },
     {
+      "id": "512a2231-e5db-40e4-b26d-6c0eb776d67f",
+      "name": "tesadguard",
+      "url": "http://192.168.1.2:3005",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://192.168.1.2:3005"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 3,
+            "y": 2
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "adGuardHome",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "testadguard"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "password"
+          }
+        ]
+      }
+    },
+    {
       "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
       "name": "Discord",
       "url": "https://discord.com/invite/aCsmEV5RgA",
@@ -174,7 +233,7 @@
         "md": {
           "location": {
             "x": 3,
-            "y": 2
+            "y": 3
           },
           "size": {
             "width": 2,
@@ -465,6 +524,49 @@
           "location": {
             "x": 8,
             "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "d4bceb93-dca7-496f-905d-aee6ddd2ac78",
+      "type": "dns-hole-controls",
+      "properties": {},
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
           },
           "size": {
             "width": 2,
