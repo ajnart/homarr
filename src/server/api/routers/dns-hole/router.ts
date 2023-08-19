@@ -1,3 +1,4 @@
+import Consola from 'consola';
 import { z } from 'zod';
 import { findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
@@ -90,11 +91,18 @@ const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
   );
 
   if (enable) {
-    await adGuard.disable();
+    try {
+      await adGuard.enable();
+    } catch (err) {
+      Consola.error((err as Error).message);
+    }
     return;
   }
-
-  await adGuard.enable();
+  try {
+    await adGuard.disable();
+  } catch (err) {
+    Consola.error((err as Error).message);
+  }
 };
 
 const processPiHole = async (app: ConfigAppType, enable: boolean) => {
