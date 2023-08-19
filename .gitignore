@@ -59,3 +59,4 @@ public/locales/*
 
 #database
 prisma/db.sqlite
+database/*.sqlite

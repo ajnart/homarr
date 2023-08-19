@@ -3,12 +3,14 @@ import {
   Button,
   Card,
   Center,
+  Divider,
   Flex,
   Grid,
   Group,
   Image,
   PasswordInput,
   Stack,
+  Stepper,
   Text,
   TextInput,
   Title,
@@ -17,31 +19,33 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useMediaQuery } from '@mantine/hooks';
+import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { IconLayoutDashboard, IconUserCog } from '@tabler/icons-react';
 import { IconArrowRight, IconBook2, IconUserPlus } from '@tabler/icons-react';
-import { GetServerSideProps } from 'next';
+import fs from 'fs';
+import { GetServerSideProps, GetServerSidePropsResult, InferGetServerSidePropsType } from 'next';
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ReactNode, useMemo, useState } from 'react';
 import { z } from 'zod';
+import { OnboardingSteps } from '~/components/Onboarding/onboarding-steps';
 import { prisma } from '~/server/db';
+import { getConfig } from '~/tools/config/getConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signUpFormSchema } from '~/validations/user';
 
-const getStepContents = () => [FirstStepContent, SecondStepContent, ThirdStepContent] as const;
-
-export default function OnboardPage() {
-  const { fn, colors, breakpoints, colorScheme } = useMantineTheme();
-  const [currentStep, setStep] = useState(0);
-  const next = () => setStep((prev) => prev + 1);
-  const isSmallerThanMd = useMediaQuery(`(max-width: ${breakpoints.sm})`);
-  const stepContents = useMemo(() => getStepContents(), []);
-  const CurrentStepComponent = useMemo(() => stepContents[currentStep], [currentStep]);
+export default function OnboardPage({
+  configSchemaVersions,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const { fn, colors, colorScheme } = useMantineTheme();
   const background = colorScheme === 'dark' ? 'dark.6' : 'gray.1';
+
+  const [onboardingSteps, { open: showOnboardingSteps }] = useDisclosure(false);
+
+  const isUpgradeFromSchemaOne = configSchemaVersions.includes(1);
 
   return (
     <>
@@ -50,50 +54,46 @@ export default function OnboardPage() {
       </Head>
 
       <Stack h="100dvh" bg={background} spacing={0}>
-        <Center bg={fn.linearGradient(145, colors.red[7], colors.red[5])} h="35%">
-          <Center bg={background} w={128} h={128} style={{ borderRadius: 64 }}>
-            <Image width={96} src="/imgs/logo/logo-color.svg" alt="Homarr Logo" />
+        <Center bg={fn.linearGradient(145, colors.red[7], colors.red[5])} h={175}>
+          <Center bg={background} w={100} h={100} style={{ borderRadius: 64 }}>
+            <Image width={70} src="/imgs/logo/logo-color.svg" alt="Homarr Logo" />
           </Center>
         </Center>
-        <Stack spacing="xl" p="md" align="center">
-          <Group>
-            {stepContents.map((_, index) => (
-              <Step
-                key={index}
-                isCurrent={currentStep === index}
-                isMobile={isSmallerThanMd}
-                isDark={colorScheme === 'dark'}
-              />
-            ))}
-          </Group>
-          <CurrentStepComponent isMobile={isSmallerThanMd} next={next} />
-        </Stack>
+
+        {onboardingSteps ? (
+          <OnboardingSteps isUpdate={isUpgradeFromSchemaOne} />
+        ) : (
+          <Center h="100%">
+            <Stack align="center" p="lg">
+              <Title order={1} weight={800} size="3rem" opacity={0.8}>
+                Welcome to Homarr!
+              </Title>
+              <Text size="lg" mb={40}>
+                Your favorite dashboard has received a big upgrade.
+                <br />
+                We'll help you update within the next few steps
+              </Text>
+
+              <Button
+                onClick={showOnboardingSteps}
+                rightIcon={<IconArrowRight size="1rem" />}
+                variant="default"
+              >
+                Start update process
+              </Button>
+            </Stack>
+          </Center>
+        )}
       </Stack>
     </>
   );
 }
 
-type StepProps = {
-  isCurrent: boolean;
-  isMobile: boolean;
-  isDark: boolean;
-};
-const Step = ({ isCurrent, isMobile, isDark }: StepProps) => {
-  return (
-    <Box
-      h={isMobile ? 16 : 20}
-      w={isMobile ? 16 : 20}
-      bg={isCurrent ? 'red.6' : isDark ? 'dark.3' : 'gray.4'}
-      style={{ borderRadius: 10 }}
-    ></Box>
-  );
-};
-
 type StepContentComponent = (props: { isMobile: boolean; next: () => void }) => ReactNode;
 
 const FirstStepContent: StepContentComponent = ({ isMobile, next }) => {
   return (
-    <>
+    <Stepper.Step label="First step" description="Create an account">
       <Stack spacing={4} align="center">
         <Title order={isMobile ? 3 : 1}>Hi there!</Title>
         <Title order={isMobile ? 3 : 1}>Welcome to Homarr! 👋</Title>
@@ -104,7 +104,7 @@ const FirstStepContent: StepContentComponent = ({ isMobile, next }) => {
       <Button onClick={next} size="lg" mt="sm" w={400} maw="90%">
         Start configuration
       </Button>
-    </>
+    </Stepper.Step>
   );
 };
 
@@ -138,7 +138,7 @@ const SecondStepContent: StepContentComponent = ({ isMobile, next }) => {
   };
 
   return (
-    <>
+    <Stepper.Step label="Second step" description="Create an account">
       <Title order={isMobile ? 3 : 1}>Configure your credentials</Title>
       <form
         style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
@@ -173,7 +173,7 @@ const SecondStepContent: StepContentComponent = ({ isMobile, next }) => {
           </Button>
         </Stack>
       </form>
-    </>
+    </Stepper.Step>
   );
 };
 
@@ -205,7 +205,7 @@ const ThirdStepContent: StepContentComponent = ({ isMobile, next }) => {
   const { classes } = useStyles();
 
   return (
-    <>
+    <Stepper.Step label="Third step" description="Create an account">
       <Title order={isMobile ? 3 : 1}>Get started! 🚀</Title>
       <Grid w="100%" maw={breakpoints.sm} mt="xl">
         {firstActions.map((action) => (
@@ -225,7 +225,7 @@ const ThirdStepContent: StepContentComponent = ({ isMobile, next }) => {
           </Grid.Col>
         ))}
       </Grid>
-    </>
+    </Stepper.Step>
   );
 };
 
@@ -245,11 +245,16 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
   }
 
+  const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
+  const configs = files.map((file) => getConfig(file));
+  const configSchemaVersions = configs.map((config) => config.schemaVersion);
+
   const translations = await getServerSideTranslations([], ctx.locale, ctx.req, ctx.res);
 
   return {
     props: {
       ...translations,
+      configSchemaVersions: configSchemaVersions,
     },
   };
 };
