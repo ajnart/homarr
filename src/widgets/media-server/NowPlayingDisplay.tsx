@@ -3,6 +3,7 @@ import {
   Icon,
   IconDeviceTv,
   IconHeadphones,
+  IconMovie,
   IconQuestionMark,
   IconVideo,
 } from '@tabler/icons-react';
@@ -23,6 +24,8 @@ export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) 
         return IconHeadphones;
       case 'tv':
         return IconDeviceTv;
+      case 'movie':
+        return IconMovie;
       case 'video':
         return IconVideo;
       default:
