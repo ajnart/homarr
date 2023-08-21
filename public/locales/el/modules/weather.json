@@ -8,7 +8,7 @@
         "label": "Εμφάνιση σε Φαρενάιτ"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Εμφάνιση ονόματος πόλης"
       },
       "location": {
         "label": "Τοποθεσία καιρού"
@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Καταιγίδα με χαλάζι",
       "unknown": "Άγνωστο"
     }
-  }
+  },
+  "error": ""
 }
