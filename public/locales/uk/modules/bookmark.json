@@ -12,7 +12,12 @@
         "label": "Елементи"
       },
       "layout": {
-        "label": "Макет"
+        "label": "Макет",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "Список обраного порожній",
       "text": "Додайте нові елементи до цього списку в режимі редагування"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Ім’я",
+    "url": "",
+    "newTab": "Відкрити в новій вкладці",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Видалити"
   }
 }
