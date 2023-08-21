@@ -12,8 +12,8 @@
         "label": "Aktualisierungsintervall (in Minuten)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "HTML-Formatierung zulassen (Bedenklich)",
+        "info": "Das Zulassen von HTML-Formatierungen von außen könnte gefährlich sein.<br/>Bitte stellen Sie sicher, dass der Feed von einer vertrauenswürdigen Quelle stammt."
       },
       "textLinesClamp": {
         "label": "Textzeilen Klammer"
