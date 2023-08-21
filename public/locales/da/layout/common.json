@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Flyt op",
+    "moveDown": "Flyt ned",
+    "addCategory": "Tilføj kategori",
+    "addAbove": "over",
+    "addBelow": "under"
   }
 }
