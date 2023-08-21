@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Προέκυψε ένα απρόσμενο σφάλμα",
-        "text": "Το Homarr δεν μπόρεσε να επικοινωνήσει με τις εφαρμογές Torrent. Ελέγξτε τις ρυθμίσεις σας"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Φόρτωση..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Διαχειριζόμενα από",
