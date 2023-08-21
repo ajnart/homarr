@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no se puede guardar. Por favor, resuelve todos los problemas y vuelve a hacer clic en este botón para guardar los cambios"
+		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no se puede guardar. Por favor, resuelve todos los problemas y vuelve a hacer clic en este botón para guardar los cambios",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }
