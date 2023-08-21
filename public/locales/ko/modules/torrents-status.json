@@ -63,7 +63,8 @@
       }
     },
     "loading": {
-      "title": "불러오는 중…"
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "",
