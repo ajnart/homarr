@@ -6,6 +6,12 @@
 	"key": "Горячие клавиши",
 	"action": "Действие",
 	"keybinds": "Сочетания клавиш",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Версия схемы конфигурации",
 		"configurationsCount": "Доступные конфигурации",
