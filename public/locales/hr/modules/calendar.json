@@ -11,13 +11,25 @@
         "label": "Započni tjedan u Nedjelju"
       },
       "radarrReleaseType": {
-        "label": "Vrsta izdanja u Radarr-u"
+        "label": "Vrsta izdanja u Radarr-u",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Sakri dane u tjednu"
       },
       "fontSize": {
-        "label": "Veličina fonta"
+        "label": "Veličina fonta",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
