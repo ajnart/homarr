@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Tilføj et felt"
     },
-    "apps": "",
+    "apps": "Apps",
     "app": {
-        "defaultName": ""
+        "defaultName": "Din app"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Kategorier",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Navn på ny kategori",
+        "defaultName": "Ny kategori",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Kategorien er oprettet",
+            "message": "Kategorien \"{{name}}\" er blevet oprettet"
         }
     }
 }
