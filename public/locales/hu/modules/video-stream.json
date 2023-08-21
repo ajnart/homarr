@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Videófolyam",
+    "description": "Videófolyam vagy videó beágyazása egy kameráról vagy weboldalról",
     "settings": {
       "title": "",
       "FeedUrl": {
