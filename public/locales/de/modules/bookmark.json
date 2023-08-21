@@ -12,7 +12,12 @@
         "label": "Elemente"
       },
       "layout": {
-        "label": "Ansicht"
+        "label": "Ansicht",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "Horizontal",
+          "vertical": "Vertikal"
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "Lesezeichenliste leer",
       "text": "Neue Elemente im Bearbeitungsmodus zu dieser Liste hinzufügen"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Name",
+    "url": "",
+    "newTab": "In neuem Tab öffnen",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Löschen"
   }
 }
