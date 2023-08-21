@@ -1,45 +1,45 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Könyvjelző",
+    "description": "Megjeleníti a karakterláncok vagy linkek statikus listáját",
     "settings": {
-      "title": "",
+      "title": "Könyvjelző beállítások",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Widget címe",
+        "info": "Hagyja üresen, hogy a cím rejtve maradjon."
       },
       "items": {
-        "label": ""
+        "label": "Elemek"
       },
       "layout": {
         "label": "",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Automatikus rács",
+          "horizontal": "Vízszintes",
+          "vertical": "Függőleges"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Könyvjelző lista üres",
+      "text": "Új elemek hozzáadása a listához szerkesztési módban"
     }
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "A hossznak 1 és 100 között kell lennie",
+      "length200": "A hossznak 1 és 200 között kell lennie",
+      "length400": "A hossznak 1 és 400 között kell lennie",
+      "invalidLink": "Nem érvényes link",
+      "errorMsg": "Nem mentett, mert hitelesítési hibák voltak. Kérjük, adja meg az értékeket"
     },
-    "name": "",
-    "url": "",
+    "name": "Név",
+    "url": "URL",
     "newTab": "Megnyitás új lapon",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Hostnév elrejtése",
+    "hideIcon": "Ikon elrejtése",
     "delete": ""
   }
 }
