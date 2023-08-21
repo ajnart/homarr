@@ -10,9 +10,9 @@
       "layout": {
         "label": "Layout",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 per 2",
+          "row": "Orizzontale",
+          "column": "Verticale"
         }
       }
     }
