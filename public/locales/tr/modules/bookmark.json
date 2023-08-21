@@ -14,7 +14,7 @@
       "layout": {
         "label": "Düzen",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Otomatik Izgara",
           "horizontal": "Yatay",
           "vertical": "Dikey"
         }
@@ -29,17 +29,17 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "Uzunluk 1 ile 100 arasında olmalıdır",
+      "length200": "Uzunluk 1 ile 200 arasında olmalıdır",
+      "length400": "Uzunluk 1 ile 400 arasında olmalıdır",
+      "invalidLink": "Geçerli bir bağlantı değil",
+      "errorMsg": "Doğrulama hataları olduğu için kaydedilmedi. Lütfen bilgilerinizi kontrol edin"
     },
     "name": "İsim",
-    "url": "",
+    "url": "URL",
     "newTab": "Yeni sekmede aç",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Ana Bilgisayar Adını Gizle",
+    "hideIcon": "İkonu Gizle",
     "delete": "Sil"
   }
 }
