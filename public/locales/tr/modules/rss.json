@@ -12,7 +12,8 @@
         "label": "Yenileme aralığı (dakika olarak)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Metin karakter sınırı"
