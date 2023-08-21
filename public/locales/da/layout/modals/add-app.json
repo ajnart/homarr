@@ -100,11 +100,11 @@
 	},
 	"validation": {
 		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Navn er obligatorisk",
+		"noUrl": "Url er obligatorisk",
+		"invalidUrl": "Værdien er ikke en gyldig url",
+		"noIconUrl": "Dette felt er påkrævet",
+		"noExternalUri": "Ekstern URI er påkrævet",
+		"invalidExternalUri": "Ekstern URI er ikke en gyldig uri"
 	}
 }
