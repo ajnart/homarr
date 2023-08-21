@@ -7,5 +7,19 @@
     "goBack": "Επιστροφή στο προηγούμενο βήμα",
     "actionIcon": {
         "tooltip": "Προσθέστε ένα πλακίδιο"
+    },
+    "apps": "",
+    "app": {
+        "defaultName": ""
+    },
+    "widgets": "",
+    "categories": "",
+    "category": {
+        "newName": "",
+        "defaultName": "",
+        "created": {
+            "title": "",
+            "message": ""
+        }
     }
 }
