@@ -11,13 +11,25 @@
         "label": "Wochenbeginn am Sonntag"
       },
       "radarrReleaseType": {
-        "label": "Radarr Veröffentlichungs Typ"
+        "label": "Radarr Veröffentlichungs Typ",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Wochentage ausblenden"
       },
       "fontSize": {
-        "label": "Schriftgröße"
+        "label": "Schriftgröße",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
