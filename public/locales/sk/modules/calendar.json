@@ -11,13 +11,25 @@
         "label": "Začni týždeň v Nedeľu"
       },
       "radarrReleaseType": {
-        "label": "Typ Radarr releasu"
+        "label": "Typ Radarr releasu",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Skryť dni v týždni"
       },
       "fontSize": {
-        "label": "Veľkosť písma"
+        "label": "Veľkosť písma",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
