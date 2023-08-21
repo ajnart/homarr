@@ -39,7 +39,7 @@
     "url": "",
     "newTab": "Открыть в новой вкладке",
     "hideHostname": "",
-    "hideIcon": "",
+    "hideIcon": "Скрыть иконку",
     "delete": "Удалить"
   }
 }
