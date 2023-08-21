@@ -1,34 +1,34 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Naptár",
+    "description": "Megjelenít egy naptárat a támogatott integrációk közelgő kiadásaival.",
     "settings": {
-      "title": "",
+      "title": "A Naptár widget beállításai",
       "useSonarrv4": {
-        "label": ""
+        "label": "Sonarr v4 API használata"
       },
       "sundayStart": {
-        "label": ""
+        "label": "Vasárnap a hét kezdete"
       },
       "radarrReleaseType": {
-        "label": "",
+        "label": "Radarr kiadás típusa",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "Mozikban",
+          "physicalRelease": "Fizikai",
+          "digitalRelease": "Digitális"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Hétköznapok elrejtése"
       },
       "fontSize": {
-        "label": "",
+        "label": "Betűméret",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Nagyon kicsi",
+          "sm": "Kicsi",
+          "md": "Közepes",
+          "lg": "Nagy",
+          "xl": "Nagyon Nagy"
         }
       }
     }
