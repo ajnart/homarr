@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications"
+		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }
