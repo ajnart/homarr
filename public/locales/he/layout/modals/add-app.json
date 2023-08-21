@@ -100,11 +100,11 @@
 	},
 	"validation": {
 		"popover": "הטופס שלך מכיל מידע שגוי ולכן לא ניתן לשמירה. תקן את השגיאות ותשמור בשנית.",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "נדרש שם",
+		"noUrl": "נדרשת כתובת אתר",
+		"invalidUrl": "הערך אינו כתובת אתר חוקית",
+		"noIconUrl": "זהו שדה חובה",
+		"noExternalUri": "נדרשת כתובת אתר חיצונית",
+		"invalidExternalUri": "כתובת אתר חיצוני לא חוקית"
 	}
 }
