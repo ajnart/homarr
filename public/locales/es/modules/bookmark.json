@@ -12,7 +12,12 @@
         "label": "Elementos"
       },
       "layout": {
-        "label": "Diseño"
+        "label": "Diseño",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "Horizontal",
+          "vertical": "Vertical"
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "Lista de marcadores vacía",
       "text": "Añadir nuevos elementos a esta lista en el modo edición"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Nombre",
+    "url": "",
+    "newTab": "Abrir en una pestaña nueva",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Eliminar"
   }
 }
