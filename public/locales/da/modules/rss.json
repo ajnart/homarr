@@ -12,8 +12,8 @@
         "label": "Opdateringsinterval (i minutter)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Tillad HTML-formatering (Farligt)",
+        "info": "Det kan være farligt at tillade HTML-formatering udefra.<br/>Sørg for, at feedet kommer fra en pålidelig kilde."
       },
       "textLinesClamp": {
         "label": "Klemme til tekstlinjer"
