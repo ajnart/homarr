@@ -45,11 +45,11 @@
       "codec": "Audiótömörítő"
     },
     "transcoding": {
-      "transcoding": "",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "transcoding": "Transzkódolás",
+      "context": "Kontextus",
+      "requested": "Hardveres kódolás kérve",
+      "source": "Forrás Kódoló",
+      "target": "Cél kódoló"
     }
   }
 }
