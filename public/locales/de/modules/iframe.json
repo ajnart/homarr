@@ -39,7 +39,7 @@
         "title": "Ungültige URL",
         "text": "Stellen Sie sicher, dass Sie in der Konfiguration Ihres Widgets eine gültige Adresse eingegeben haben"
       },
-      "browserSupport": ""
+      "browserSupport": "Ihr Browser unterstützt keine iframes. Bitte aktualisieren Sie Ihren Browser."
     }
   }
 }
