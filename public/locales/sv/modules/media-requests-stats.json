@@ -5,7 +5,11 @@
     "settings": {
       "title": "Statistik över medieförfrågningar",
       "direction": {
-        "label": "Layoutens riktning."
+        "label": "Layoutens riktning.",
+        "data": {
+          "row": "Horisontal",
+          "column": "Vertikal"
+        }
       }
     }
   },
