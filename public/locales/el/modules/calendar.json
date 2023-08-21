@@ -11,13 +11,25 @@
         "label": "Ξεκινήστε την εβδομάδα από την Κυριακή"
       },
       "radarrReleaseType": {
-        "label": "Τύπος κυκλοφορίας Radarr"
+        "label": "Τύπος κυκλοφορίας Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Απόκρυψη εργάσιμων"
       },
       "fontSize": {
-        "label": "Μέγεθος γραμματοσειράς"
+        "label": "Μέγεθος γραμματοσειράς",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
