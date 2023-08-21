@@ -12,7 +12,8 @@
         "label": "Interval obnovovania (v minútach)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Svorka textových riadkov"
