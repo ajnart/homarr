@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Radās neparedzēta kļūda",
-        "text": "Homarr neizdevās sazināties ar jūsu Torrent klientiem. Lūdzu, pārbaudiet savu konfigurāciju"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Notiek ielāde..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Pārvalda",
