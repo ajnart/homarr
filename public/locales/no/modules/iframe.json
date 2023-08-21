@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "",
         "text": "Sørg for at du har angitt en gyldig adresse i konfigurasjonen av widgeten din"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }
