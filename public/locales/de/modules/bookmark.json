@@ -14,7 +14,7 @@
       "layout": {
         "label": "Ansicht",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Auto-Raster",
           "horizontal": "Horizontal",
           "vertical": "Vertikal"
         }
@@ -29,17 +29,17 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "Die Länge muss zwischen 1 und 100 liegen",
+      "length200": "Die Länge muss zwischen 1 und 200 liegen",
+      "length400": "Die Länge muss zwischen 1 und 400 liegen",
+      "invalidLink": "Kein gültiger Link",
+      "errorMsg": "Konnte nicht gespeichert werden, da Validierungsfehler aufgetreten sind. Bitte beachten Sie Ihre Eingaben"
     },
     "name": "Name",
-    "url": "",
+    "url": "URL",
     "newTab": "In neuem Tab öffnen",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Hostname ausblenden",
+    "hideIcon": "Icon verbergen",
     "delete": "Löschen"
   }
 }
