@@ -11,13 +11,25 @@
         "label": "使用周日作为一周的开始"
       },
       "radarrReleaseType": {
-        "label": "Radarr发布类型"
+        "label": "Radarr发布类型",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "隐藏工作日"
       },
       "fontSize": {
-        "label": "字体大小"
+        "label": "字体大小",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
