@@ -12,7 +12,8 @@
         "label": "刷新间隔(以分钟计)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "文本线夹"
