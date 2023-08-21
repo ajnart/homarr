@@ -31,16 +31,16 @@
   },
   "detail": {
     "label": "",
-    "id": "",
-    "device": "",
+    "id": "ID",
+    "device": "Устройство",
     "video": {
-      "video": "",
-      "resolution": "",
-      "framerate": "",
-      "codec": ""
+      "video": "Видео",
+      "resolution": "Разрешение",
+      "framerate": "Частота кадров",
+      "codec": "Видеокодек"
     },
     "audio": {
-      "audio": "",
+      "audio": "Аудио",
       "channels": "",
       "codec": ""
     },
