@@ -11,13 +11,25 @@
         "label": "Søndag første ugedag"
       },
       "radarrReleaseType": {
-        "label": "Radarr udgivelsestype"
+        "label": "Radarr udgivelsestype",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Skjul ugedage"
       },
       "fontSize": {
-        "label": "Skriftstørrelse"
+        "label": "Skriftstørrelse",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
