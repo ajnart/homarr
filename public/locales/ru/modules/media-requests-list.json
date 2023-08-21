@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Одобрить запросы",
-    "decline": "Отклонить запросы"
+    "decline": "Отклонить запросы",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
+  },
+  "detail": {
+    "label": "",
+    "id": "",
+    "device": "",
+    "video": {
+      "video": "",
+      "resolution": "",
+      "framerate": "",
+      "codec": ""
+    },
+    "audio": {
+      "audio": "",
+      "channels": "",
+      "codec": ""
+    },
+    "transcoding": {
+      "transcoding": "",
+      "context": "",
+      "requested": "",
+      "source": "",
+      "target": ""
+    }
   }
 }
