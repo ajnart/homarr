@@ -6,6 +6,12 @@
 	"key": "Πλήκτρο συντόμευσης",
 	"action": "Ενέργεια",
 	"keybinds": "Δεσμοί πλήκτρων",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Έκδοση σχήματος διαμόρφωσης",
 		"configurationsCount": "Διαθέσιμες διαμορφώσεις",
