@@ -11,13 +11,25 @@
         "label": "Воскресенье — начало недели"
       },
       "radarrReleaseType": {
-        "label": "Тип релиза в Radarr"
+        "label": "Тип релиза в Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Скрыть дни недели"
       },
       "fontSize": {
-        "label": "Размер шрифта"
+        "label": "Размер шрифта",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
