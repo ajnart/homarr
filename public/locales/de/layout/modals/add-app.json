@@ -100,11 +100,11 @@
 	},
 	"validation": {
 		"popover": "Ihr Formular enthält ungültige Angaben, daher konnte es nicht gespeichert werden. Bitte beseitigen Sie diese ungültigen Angaben und klicken Sie erneut auf diesen Button, um Ihre Änderungen zu speichern",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Der Name ist erforderlich",
+		"noUrl": "URL erforderlich",
+		"invalidUrl": "Der Wert ist keine gültige URL",
+		"noIconUrl": "Dieses Feld ist erforderlich",
+		"noExternalUri": "Externe URL ist erforderlich",
+		"invalidExternalUri": "Externe URL ist keine gültige URL"
 	}
 }
