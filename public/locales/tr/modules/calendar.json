@@ -11,13 +11,25 @@
         "label": "Haftaya Pazar günü başlayın"
       },
       "radarrReleaseType": {
-        "label": "Radarr yayın türü"
+        "label": "Radarr yayın türü",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Haftanın günlerini gizle"
       },
       "fontSize": {
-        "label": "Font Boyutu"
+        "label": "Font Boyutu",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
