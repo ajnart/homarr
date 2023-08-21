@@ -1,45 +1,45 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Beágyazott keret (iFrame)",
+    "description": "Bármilyen tartalom beágyazása az internetről. Egyes webhelyek korlátozhatják a hozzáférést.",
     "settings": {
-      "title": "",
+      "title": "Beágyazott keret beállítások",
       "embedUrl": {
-        "label": ""
+        "label": "Beágyazási URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Teljes képernyő engedélyezése"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Engedélyezze az átláthatóságot"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Görgetés engedélyezése"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Fizetés engedélyezése"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Automatikus lejátszás engedélyezése"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Mikrofon engedélyezése"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Kamera engedélyezése"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Geolokáció engedélyezése"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Érvénytelen URL",
+        "text": "Győződjön meg róla, hogy érvényes címet adott meg a widget konfigurációjában"
       },
-      "browserSupport": ""
+      "browserSupport": "Az Ön böngészője nem támogatja a beágyazott kereteket. Kérjük, frissítse böngészőjét."
     }
   }
 }
