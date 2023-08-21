@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Radarr yayın türü",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "Sinemalarda",
+          "physicalRelease": "Fiziksel",
+          "digitalRelease": "Dijital"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "Font Boyutu",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Ekstra Küçük",
+          "sm": "Küçük",
+          "md": "Orta",
+          "lg": "Büyük",
+          "xl": "Çok Büyük"
         }
       }
     }
