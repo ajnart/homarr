@@ -14,7 +14,7 @@
       "layout": {
         "label": "פריסה",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "רשת אוטומטית",
           "horizontal": "אופקי",
           "vertical": "אנכי"
         }
@@ -29,17 +29,17 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "האורך חייב להיות בין 1 ל-100",
+      "length200": "האורך חייב להיות בין 1 ל-200",
+      "length400": "האורך חייב להיות בין 1 ל-400",
+      "invalidLink": "קישור לא חוקי",
+      "errorMsg": "לא נשמר, כי היו שגיאות אימות. אנא התאימו את הקלט"
     },
     "name": "שם",
-    "url": "",
+    "url": "כתובת אתר",
     "newTab": "פתיחה בכרטיסיה חדשה",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "הסתר שם מארח",
+    "hideIcon": "הסתר אייקון",
     "delete": "מחיקה"
   }
 }
