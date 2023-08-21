@@ -7,5 +7,19 @@
     "goBack": "Gå tillbaka till föregående steg",
     "actionIcon": {
         "tooltip": "Lägg till en ruta"
+    },
+    "apps": "",
+    "app": {
+        "defaultName": ""
+    },
+    "widgets": "",
+    "categories": "",
+    "category": {
+        "newName": "",
+        "defaultName": "",
+        "created": {
+            "title": "",
+            "message": ""
+        }
     }
 }
