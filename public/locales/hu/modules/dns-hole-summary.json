@@ -8,7 +8,7 @@
         "label": "PiHole színek használata"
       },
       "layout": {
-        "label": "",
+        "label": "Elrendezés",
         "data": {
           "grid": "2 x 2",
           "row": "Vízszintes",
