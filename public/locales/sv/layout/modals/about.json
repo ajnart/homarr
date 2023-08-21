@@ -6,6 +6,12 @@
 	"key": "Genvägstangent",
 	"action": "Åtgärd",
 	"keybinds": "Knapptilldelning",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Version av konfigurationsschemat",
 		"configurationsCount": "Tillgängliga konfigurationer",
