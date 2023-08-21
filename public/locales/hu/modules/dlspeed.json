@@ -1,34 +1,34 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Letöltési sebesség",
+    "description": "Megjeleníti a támogatott integrációk letöltési és feltöltési sebességét."
   },
   "card": {
     "table": {
       "header": {
-        "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "name": "Név",
+        "size": "Méret",
+        "download": "Le",
+        "upload": "Fel",
+        "estimatedTimeOfArrival": "Hátralévő idő",
+        "progress": "Folyamat"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Nem találhatók torrentek"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Jelenlegi letöltési sebesség",
+      "download": "Letöltés: {{download}}",
+      "upload": "Feltöltés: {{upload}}",
+      "timeSpan": "{{seconds}} másodpercekkel ezelőtt",
+      "totalDownload": "Letöltés: {{download}}/s",
+      "totalUpload": "Feltöltés: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nem találtunk támogatott letöltő klienst!",
+        "text": "Letöltési szolgáltatás hozzáadása az aktuális letöltések megtekintéséhez"
       }
     }
   }
