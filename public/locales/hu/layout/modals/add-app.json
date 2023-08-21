@@ -1,98 +1,98 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Általános",
+		"behaviour": "Viselkedés",
 		"network": "",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Megjelenés",
+		"integration": "Integráció"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Alkalmazás neve",
+			"description": "Az alkalmazás műszerfalon való megjelenítéséhez."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Belső cím",
+			"description": "Az alkalmazás belső IP-címe."
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Külső cím",
+			"description": "URL, amely az alkalmazásra kattintva megnyílik."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Megnyitás új lapon",
+			"description": "Az alkalmazás megnyitása új lapon az aktuális lap helyett."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Alkalmazás leírása",
+			"description": "A beírt szöveg akkor jelenik meg, amikor az alkalmazás fölé mozgatja a gépet.\nHasználja ezt, hogy a felhasználóknak további részleteket adjon az alkalmazásáról, vagy hagyja üresen, hogy ne legyen semmi."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Nem szabványos protokoll használata. Ez előre telepített alkalmazásokat igényelhet, és biztonsági kockázatot jelenthet. Győződjön meg arról, hogy a címe biztonságos és megbízható."
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Állapotellenőrző",
+			"description": "Egy egyszerű HTTP(S) kéréssel ellenőrzi, hogy az alkalmazás online van-e."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP állapotkódok",
+			"description": "Az online állapotúnak tekintett HTTP státuszkódok."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": "",
+			"label": "Alkalmazás ikon",
+			"description": "Kezdjen el gépelni egy ikon kereséséhez. Egy egyéni ikon használatához beilleszthet egy kép URL-címét is.",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Nincs eredmény",
+				"text": "Próbáljon meg konkrétabb keresőkifejezést használni. Ha nem találja a kívánt ikont, illessze be a fenti kép URL-címét egy egyéni ikonhoz"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Külső ikonok betöltése",
+				"text": "Ez néhány másodpercet vehet igénybe"
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Alkalmazás neve Állapot",
+			"description": "Válassza ki, hogy hol jelenjen meg a cím, ha egyáltalán megjelenjen.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Csak a cím megjelenítése a csempén",
+				"hover": "A cím megjelenítése csak a tooltip megjelenítésekor",
+				"hidden": "Egyáltalán ne mutasd meg"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Alkalmazás neve Pozíció",
+			"description": "Az alkalmazás nevének pozíciója az ikonhoz képest.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Felül",
+				"right": "Jobb",
+				"bottom": "Alul",
+				"left": "Bal"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Alkalmazásnév Vonalrögzítő",
+			"description": "Meghatározza, hogy a cím hány sorban férjen el maximálisan. A 0 érték korlátlan."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Integrációs konfiguráció",
+			"description": "Az integrációs konfiguráció, amelyet az alkalmazáshoz való csatlakozáshoz használnak.",
+			"placeholder": "Válasszon ki egy integrációt",
+			"defined": "Beállítva",
+			"undefined": "Nincs beállítva",
+			"public": "Nyilvános",
+			"private": "Nem nyilvános",
+			"explanationPrivate": "A privát titok csak egyszer kerül elküldésre a kiszolgálónak. Miután a böngésző frissítette az oldalt, a titkot soha többé nem küldi el.",
+			"explanationPublic": "A nem privát titok mindig elküldésre kerül az ügyfélnek, és az API-n keresztül elérhető. Nem tartalmazhat bizalmas értékeket, például felhasználóneveket, jelszavakat, tokeneket, tanúsítványokat és hasonlókat!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
+			"description": "A titok frissítéséhez adja meg az értéket, és kattintson a mentés gombra. A titok törléséhez használja a törlés gombot.",
+			"warning": "A hitelesítő adatok az integrációkhoz való hozzáférésként szolgálnak, és soha ne ossza meg őket senki mással a <strong></strong> címen. A Homarr csapata soha nem fogja kérni a hitelesítő adatokat. Győződjön meg róla, hogy <strong>biztonságosan tárolja és kezeli titkait</strong>.",
 			"clear": "",
 			"save": "",
 			"update": ""
