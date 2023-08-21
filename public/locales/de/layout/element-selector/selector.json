@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Kachel hinzufügen"
     },
-    "apps": "",
+    "apps": "Apps",
     "app": {
-        "defaultName": ""
+        "defaultName": "Ihre Apps"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Kategorien",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Name der Kategorie",
+        "defaultName": "Neue Kategorie",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Kategorie erstellt",
+            "message": "Die Kategorie \"{{name}}\" wurde erstellt"
         }
     }
 }
