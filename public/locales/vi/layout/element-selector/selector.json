@@ -7,5 +7,19 @@
     "goBack": "Quay lại bước trước",
     "actionIcon": {
         "tooltip": "Thêm ô"
+    },
+    "apps": "",
+    "app": {
+        "defaultName": ""
+    },
+    "widgets": "",
+    "categories": "",
+    "category": {
+        "newName": "",
+        "defaultName": "",
+        "created": {
+            "title": "",
+            "message": ""
+        }
     }
 }
