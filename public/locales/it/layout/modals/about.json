@@ -6,6 +6,12 @@
 	"key": "Tasto di scelta rapida",
 	"action": "Azioni",
 	"keybinds": "Scorciatoie da tastiera",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Versione dello schema di configurazione",
 		"configurationsCount": "Configurazioni disponibili",
