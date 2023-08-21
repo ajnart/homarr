@@ -1,86 +1,86 @@
 {
   "configSelect": {
-    "label": "",
-    "description": "",
-    "loadingNew": "",
-    "pleaseWait": ""
+    "label": "Konfigurációváltó",
+    "description": "{{configCount}} konfigurációk állnak rendelkezésre",
+    "loadingNew": "A konfiguráció betöltése...",
+    "pleaseWait": "Kérjük, várjon, amíg az új konfiguráció betöltődik!"
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Válassza ki az új konfiguráció nevét",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Konfiguráció neve",
           "validation": {
-            "required": "",
-            "notUnique": ""
+            "required": "A konfiguráció neve kötelező",
+            "notUnique": "A konfiguráció neve már használatban van"
           },
-          "placeholder": ""
+          "placeholder": "Az új konfigurációs név"
         },
-        "submitButton": ""
+        "submitButton": "Megerősít"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguráció mentve",
+          "message": "A konfiguráció a {{configName}} címre mentve"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguráció másolva",
+          "message": "Konfiguráció másolva a {{configName}} címre"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "A konfiguráció másolása nem lehetséges",
+          "message": "A konfigurációdat nem a {{configName}} címre másolták"
         }
       }
     },
     "confirmDeletion": {
-      "title": "",
-      "warningText": "",
-      "text": "",
+      "title": "A konfiguráció törlésének megerősítése",
+      "warningText": "Ön törölni készül '<b>{{configName}}</b>'",
+      "text": "Felhívjuk figyelmét, hogy a törlés nem visszafordítható, és az adatok véglegesen elvesznek. A gomb megnyomása után a fájl véglegesen törlődik a lemezről. Győződjön meg róla, hogy megfelelő biztonsági másolatot készített a konfigurációjáról.",
       "buttons": {
-        "confirm": ""
+        "confirm": "Igen, törölje a '<b>{{configName}}</b>'"
       }
     }
   },
   "buttons": {
-    "download": "",
+    "download": "Konfiguráció letöltése",
     "delete": {
-      "text": "",
+      "text": "Konfiguráció törlése",
       "notifications": {
         "deleted": {
-          "title": "",
-          "message": ""
+          "title": "Konfiguráció törölve",
+          "message": "Konfiguráció törölve"
         },
         "deleteFailed": {
-          "title": "",
-          "message": ""
+          "title": "A konfiguráció törlése sikertelen",
+          "message": "A konfiguráció törlése sikertelen"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": ""
+          "title": "Az alapértelmezett konfiguráció nem törölhető",
+          "message": "A konfiguráció nem lett törölve a fájlrendszerből"
         }
       }
     },
-    "saveCopy": ""
+    "saveCopy": "Másolat mentése"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "",
-        "message": ""
+        "title": "Nem lehet betölteni a konfigurációt",
+        "message": "Nem sikerült betölteni a konfigurációdat. Érvénytelen JSON formátum."
       },
       "loadedSuccessfully": {
-        "title": ""
+        "title": "Config {{configName}} sikeresen betöltődött"
       }
     },
     "accept": {
-      "title": "",
-      "text": ""
+      "title": "Konfiguráció feltöltése",
+      "text": "Húzza ide a fájlokat a konfiguráció feltöltéséhez. Csak JSON fájlok támogatása."
     },
     "reject": {
-      "title": "",
-      "text": ""
+      "title": "Drag and Drop feltöltés elutasítva",
+      "text": "Ez a fájlformátum nem támogatott. Kérjük, csak JSON fájlokat töltsön fel."
     }
   }
 }
