@@ -1,7 +1,7 @@
 {
   "save": "",
   "about": "",
-  "cancel": "",
+  "cancel": "Mégse",
   "close": "",
   "delete": "",
   "ok": "",
@@ -12,11 +12,11 @@
   "disableAll": "",
   "version": "",
   "changePosition": "",
-  "remove": "",
+  "remove": "Eltávolítás",
   "removeConfirm": "",
   "createItem": "",
   "sections": {
-    "settings": "",
+    "settings": "Beállítások",
     "dangerZone": ""
   },
   "secrets": {
@@ -30,7 +30,7 @@
     "minutes": "",
     "hours": ""
   },
-  "loading": "",
+  "loading": "Betöltés...",
   "breakPoints": {
     "small": "",
     "medium": "",
