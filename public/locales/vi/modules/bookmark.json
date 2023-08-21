@@ -12,7 +12,12 @@
         "label": "Mục"
       },
       "layout": {
-        "label": "Bố cục"
+        "label": "Bố cục",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "Danh sách dấu trang rỗng",
       "text": "Thêm mục mới vào danh sách này trong chế độ chỉnh sửa"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Tên",
+    "url": "",
+    "newTab": "Mở trong tab mới",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Xóa"
   }
 }
