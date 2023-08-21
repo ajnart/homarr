@@ -12,8 +12,8 @@
         "label": "Intervallo di aggiornamento (in secondi)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Consenti formattazione HTML (pericoloso)",
+        "info": "Consentire la formattazione HTML dall'esterno potrebbe essere pericoloso.<br/>Assicurarsi che il feed sia da una fonte attendibile."
       },
       "textLinesClamp": {
         "label": "Blocco righe di testo"
