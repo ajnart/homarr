@@ -7,10 +7,10 @@
 	"action": "פעולה",
 	"keybinds": "שילוב מקשים",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "החלף מצב אור/חושך",
+		"focusSearchBar": "התמקד בסרגל החיפוש",
+		"openDocker": "פתח את ווידג׳ט דוקר",
+		"toggleEdit": "החלף מצב עריכה"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "גירסת סכימת תצורה",
