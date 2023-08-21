@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Váš formulár obsahuje neplatné údaje. Preto ho nemožno uložiť. Vyriešte všetky problémy a znovu kliknite na toto tlačidlo, aby ste uložili svoje zmeny"
+		"popover": "Váš formulár obsahuje neplatné údaje. Preto ho nemožno uložiť. Vyriešte všetky problémy a znovu kliknite na toto tlačidlo, aby ste uložili svoje zmeny",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }
