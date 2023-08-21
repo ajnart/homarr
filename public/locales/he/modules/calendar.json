@@ -11,13 +11,25 @@
         "label": "התחל את השבוע ביום ראשון"
       },
       "radarrReleaseType": {
-        "label": "סוג שחרור של Radarr"
+        "label": "סוג שחרור של Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "הסתר ימי שבוע"
       },
       "fontSize": {
-        "label": "גודל גופן"
+        "label": "גודל גופן",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
