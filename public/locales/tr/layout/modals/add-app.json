@@ -100,11 +100,11 @@
 	},
 	"validation": {
 		"popover": "Formunuz geçersiz veriler içeriyor. Bu nedenle kaydedilemiyor. Lütfen tüm sorunları çözün ve değişikliklerinizi kaydetmek için bu düğmeye tekrar tıklayın",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "İsim alanı zorunludur",
+		"noUrl": "Url alanı zorunludur",
+		"invalidUrl": "Girilen değer geçerli bir url değil",
+		"noIconUrl": "Bu alan gereklidir",
+		"noExternalUri": "Harici URI gereklidir",
+		"invalidExternalUri": "Harici URI geçerli bir uri değil"
 	}
 }
