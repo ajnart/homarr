@@ -12,7 +12,12 @@
         "label": "项目"
       },
       "layout": {
-        "label": "布局"
+        "label": "布局",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "书签列表为空",
       "text": "在编辑模式下将新项目添加到此列表"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "名称",
+    "url": "",
+    "newTab": "在新标签页中打开",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "删除"
   }
 }
