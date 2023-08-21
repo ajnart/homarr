@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Der opstod en uventet fejl",
-        "text": "Homarr kunne ikke kommunikere med dine Torrent-klienter. Kontroller venligst din konfiguration"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Indlæser..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Administreret af",
