@@ -6,6 +6,12 @@
 	"key": "Tecla de acceso directo",
 	"action": "Acción",
 	"keybinds": "Combinaciones de teclas",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Versión del esquema de configuración",
 		"configurationsCount": "Configuraciones disponibles",
