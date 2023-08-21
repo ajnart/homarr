@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "An unexpected error occurred",
-        "text": "Homarr was unable to communicate with your Torrent clients. Please check your configuration"
+        "text": "Unable to communicate with your Torrent clients. Please check your configuration"
       }
     },
     "loading": {
-      "title": "Loading..."
+      "title": "Loading",
+      "description": "Establishing a connection"
     },
     "popover": {
       "introductionPrefix": "Managed by",

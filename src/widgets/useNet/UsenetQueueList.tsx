@@ -21,8 +21,8 @@ import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { FunctionComponent, useState } from 'react';
 
-import { useGetUsenetDownloads } from '../dashDot/api';
 import { humanFileSize } from '../../tools/humanFileSize';
+import { useGetUsenetDownloads } from '../dashDot/api';
 
 dayjs.extend(duration);
 
@@ -91,7 +91,6 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
       <Table highlightOnHover style={{ tableLayout: 'fixed' }} ref={ref}>
         <thead>
           <tr>
-            <th style={{ width: 32 }} />
             <th style={{ width: '75%' }}>{t('queue.header.name')}</th>
             {sizeBreakpoint < width ? (
               <th style={{ width: 100 }}>{t('queue.header.size')}</th>
@@ -107,21 +106,6 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
         <tbody>
           {data.items.map((nzb) => (
             <tr key={nzb.id}>
-              <td>
-                {nzb.state === 'paused' ? (
-                  <Tooltip label="NOT IMPLEMENTED">
-                    <ActionIcon color="gray" variant="subtle" radius="xl" size="sm">
-                      <IconPlayerPlay size="16" />
-                    </ActionIcon>
-                  </Tooltip>
-                ) : (
-                  <Tooltip label="NOT IMPLEMENTED">
-                    <ActionIcon color="primary" variant="subtle" radius="xl" size="sm">
-                      <IconPlayerPause size="16" />
-                    </ActionIcon>
-                  </Tooltip>
-                )}
-              </td>
               <td>
                 <Tooltip position="top" label={nzb.name}>
                   <Text

@@ -6,6 +6,7 @@
       "title": "Settings for media server widget"
     }
   },
+  "loading": "Loading streams",
   "card": {
     "table": {
       "header": {

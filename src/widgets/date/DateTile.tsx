@@ -1,15 +1,20 @@
 import { Stack, Text, createStyles } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
-import moment from 'moment-timezone';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
+import dayjs from 'dayjs';
+import timezones from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
 
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
+
+dayjs.extend(utc);
+dayjs.extend(timezones);
 
 const definition = defineWidget({
   id: 'date',
@@ -24,14 +29,14 @@ const definition = defineWidget({
       defaultValue: 'dddd, MMMM D',
       data: () => [
         { value: 'hide' },
-        { value: 'dddd, MMMM D', label: moment().format('dddd, MMMM D') },
-        { value: 'dddd, D MMMM', label: moment().format('dddd, D MMMM') },
-        { value: 'MMM D', label: moment().format('MMM D') },
-        { value: 'D MMM', label: moment().format('D MMM') },
-        { value: 'DD/MM/YYYY', label: moment().format('DD/MM/YYYY') },
-        { value: 'MM/DD/YYYY', label: moment().format('MM/DD/YYYY') },
-        { value: 'DD/MM', label: moment().format('DD/MM') },
-        { value: 'MM/DD', label: moment().format('MM/DD') },
+        { value: 'dddd, MMMM D', label: dayjs().format('dddd, MMMM D') },
+        { value: 'dddd, D MMMM', label: dayjs().format('dddd, D MMMM') },
+        { value: 'MMM D', label: dayjs().format('MMM D') },
+        { value: 'D MMM', label: dayjs().format('D MMM') },
+        { value: 'DD/MM/YYYY', label: dayjs().format('DD/MM/YYYY') },
+        { value: 'MM/DD/YYYY', label: dayjs().format('MM/DD/YYYY') },
+        { value: 'DD/MM', label: dayjs().format('DD/MM') },
+        { value: 'MM/DD', label: dayjs().format('MM/DD') },
       ],
     },
     enableTimezone: {
@@ -84,11 +89,11 @@ function DateTile({ widget }: DateTileProps) {
           className={cx(classes.extras, 'dashboard-tile-clock-city')}
         >
           {widget.properties.timezoneLocation.name}
-          {widget.properties.titleState === 'both' && moment(date).format(' (z)')}
+          {widget.properties.titleState === 'both' && dayjs(date).format(' (z)')}
         </Text>
       )}
       <Text className={cx(classes.clock, 'dashboard-tile-clock-hour')}>
-        {moment(date).format(formatString)}
+        {dayjs(date).format(formatString)}
       </Text>
       {!widget.properties.dateFormat.includes('hide') && (
         <Text
@@ -96,7 +101,7 @@ function DateTile({ widget }: DateTileProps) {
           pt="0.2rem"
           className={cx(classes.extras, 'dashboard-tile-clock-date')}
         >
-          {moment(date).format(widget.properties.dateFormat)}
+          {dayjs(date).format(widget.properties.dateFormat)}
         </Text>
       )}
     </Stack>
@@ -139,7 +144,7 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change
   useEffect(() => {
     const language = getLanguageByCode(locale ?? 'en');
-    moment.locale(language.momentLocale);
+    dayjs.locale(language.locale);
     setDate(getNewDate(timezone));
     timeoutRef.current = setTimeout(
       () => {
@@ -150,9 +155,8 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
         }, 1000 * 60);
         //1 minute - current seconds and milliseconds count
       },
-      1000 * 60 - (1000 * moment().seconds() + moment().milliseconds())
+      1000 * 60 - (1000 * dayjs().second() + dayjs().millisecond())
     );
-
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
   }, [timezone, locale]);
 
@@ -162,9 +166,9 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
 //Returns a local date if no inputs or returns date from input zone
 const getNewDate = (timezone?: string) => {
   if (timezone) {
-    return moment().tz(timezone);
+    return dayjs().tz(timezone);
   }
-  return moment();
+  return dayjs();
 };
 
 export default definition;

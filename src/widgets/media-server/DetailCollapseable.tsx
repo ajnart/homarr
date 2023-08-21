@@ -2,27 +2,29 @@ import { Card, Divider, Flex, Grid, Group, Text } from '@mantine/core';
 import { IconDeviceMobile, IconId } from '@tabler/icons-react';
 
 import { GenericSessionInfo } from '../../types/api/media-server/session-info';
+import { useTranslation } from 'react-i18next';
 
 export const DetailCollapseable = ({ session }: { session: GenericSessionInfo }) => {
   let details: { title: string; metrics: { name: string; value: string | undefined }[] }[] = [];
+  const { t } = useTranslation('modules/media-server-list');
 
   if (session.currentlyPlaying) {
     if (session.currentlyPlaying.metadata.video) {
       details = [
         ...details,
         {
-          title: 'Video',
+          title: t('detail.video.'),
           metrics: [
             {
-              name: 'Resolution',
+              name: t('detail.video.resolution'),
               value: `${session.currentlyPlaying.metadata.video.width}x${session.currentlyPlaying.metadata.video.height}`,
             },
             {
-              name: 'Framerate',
+              name: t('detail.video.framerate'),
               value: session.currentlyPlaying.metadata.video.videoFrameRate,
             },
             {
-              name: 'Codec',
+              name: t('detail.video.codec'),
               value: session.currentlyPlaying.metadata.video.videoCodec,
             },
             {
@@ -39,14 +41,14 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: 'Audio',
+          title: t('detail.audio.audio'),
           metrics: [
             {
-              name: 'Audio channels',
+              name: t('detail.audio.channels'),
               value: `${session.currentlyPlaying.metadata.audio.audioChannels}`,
             },
             {
-              name: 'Audio codec',
+              name: t('detail.audio.codec'),
               value: session.currentlyPlaying.metadata.audio.audioCodec,
             },
           ],
@@ -58,24 +60,24 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: 'Transcoding',
+          title: t('detail.transcoding.transcoding'),
           metrics: [
             {
-              name: 'Resolution',
+              name: t('detail.video.resolution'),
               value: `${session.currentlyPlaying.metadata.transcoding.width}x${session.currentlyPlaying.metadata.transcoding.height}`,
             },
             {
-              name: 'Context',
+              name: t('detail.transcoding.context'),
               value: session.currentlyPlaying.metadata.transcoding.context,
             },
             {
-              name: 'Hardware encoding requested',
+              name: t('detail.transcoding.requested'),
               value: session.currentlyPlaying.metadata.transcoding.transcodeHwRequested
                 ? 'yes'
                 : 'no',
             },
             {
-              name: 'Source codec',
+              name: t('detail.transcoding.source'),
               value:
                 session.currentlyPlaying.metadata.transcoding.sourceAudioCodec ||
                 session.currentlyPlaying.metadata.transcoding.sourceVideoCodec
@@ -83,7 +85,7 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
                   : undefined,
             },
             {
-              name: 'Target codec',
+              name: t('detail.transcoding.target'),
               value: `${session.currentlyPlaying.metadata.transcoding.videoCodec} ${session.currentlyPlaying.metadata.transcoding.audioCodec}`,
             },
           ],
@@ -97,19 +99,19 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       <Flex justify="space-between" mb="xs">
         <Group>
           <IconId size={16} />
-          <Text>ID</Text>
+          <Text>{t('detail.id')}</Text>
         </Group>
         <Text>{session.id}</Text>
       </Flex>
       <Flex justify="space-between" mb="md">
         <Group>
           <IconDeviceMobile size={16} />
-          <Text>Device</Text>
+          <Text>{t('detail.device')}</Text>
         </Group>
         <Text>{session.sessionName}</Text>
       </Flex>
       {details.length > 0 && (
-        <Divider label="Stats for nerds" labelPosition="center" mt="lg" mb="sm" />
+        <Divider label={t('detail.label')} labelPosition="center" mt="lg" mb="sm" />
       )}
       <Grid>
         {details.map((detail, index) => (

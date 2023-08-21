@@ -4,7 +4,6 @@ import {
   IconArrowDownRight,
   IconArrowUpRight,
   IconCloudRain,
-  IconCurrentLocation,
   IconMapPin,
 } from '@tabler/icons-react';
 import { api } from '~/utils/api';
@@ -12,6 +11,7 @@ import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { WeatherIcon } from './WeatherIcon';
+import { useTranslation } from 'react-i18next';
 
 const definition = defineWidget({
   id: 'weather',
@@ -52,6 +52,7 @@ interface WeatherTileProps {
 function WeatherTile({ widget }: WeatherTileProps) {
   const { data: weather, isLoading, isError } = api.weather.at.useQuery(widget.properties.location);
   const { width, ref } = useElementSize();
+  const { t } = useTranslation('modules/weather');
 
   if (isLoading) {
     return (
@@ -77,7 +78,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
   if (isError) {
     return (
       <Center>
-        <Text weight={500}>An error occured</Text>
+        <Text weight={500}>{t('error')}</Text>
       </Center>
     );
   }

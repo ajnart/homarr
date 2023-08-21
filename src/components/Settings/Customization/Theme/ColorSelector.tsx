@@ -99,9 +99,7 @@ export function ColorSelector({ type, defaultValue }: ColorControlProps) {
         </Popover.Dropdown>
       </Popover>
       <Text>
-        {t('suffix', {
-          color: type[0].toUpperCase() + type.slice(1),
-        })}
+        {t('suffix', {color: t(type)})}
       </Text>
     </Group>
   );

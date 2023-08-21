@@ -13,7 +13,7 @@ import {
   createStyles,
   useMantineTheme,
 } from '@mantine/core';
-import { useDisclosure, useElementSize } from '@mantine/hooks';
+import { useDisclosure } from '@mantine/hooks';
 import {
   IconAffiliate,
   IconDatabase,
@@ -37,9 +37,8 @@ interface TorrentQueueItemProps {
   width: number;
 }
 
-export const BitTorrrentQueueItem = ({ torrent, width, app }: TorrentQueueItemProps) => {
+export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemProps) => {
   const [popoverOpened, { open: openPopover, close: closePopover }] = useDisclosure(false);
-  const theme = useMantineTheme();
   const { classes } = useStyles();
   const { t } = useTranslation('modules/torrents-status');
 

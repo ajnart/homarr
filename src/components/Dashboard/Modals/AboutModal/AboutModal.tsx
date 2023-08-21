@@ -55,10 +55,10 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
   const { t } = useTranslation(['common', 'layout/modals/about']);
 
   const keybinds = [
-    { key: 'Mod + J', shortcut: 'Toggle light/dark mode' },
-    { key: 'Mod + K', shortcut: 'Focus on search bar' },
-    { key: 'Mod + B', shortcut: 'Open docker widget' },
-    { key: 'Mod + E', shortcut: 'Toggle Edit mode' },
+    { key: 'Mod + J', shortcut: t('layout/modals/about:actions.toggleTheme') },
+    { key: 'Mod + K', shortcut: t('layout/modals/about:actions.focusSearchBar') },
+    { key: 'Mod + B', shortcut: t('layout/modals/about:actions.openDocker') },
+    { key: 'Mod + E', shortcut: t('layout/modals/about:actions.toggleEdit') },
   ];
   const rows = keybinds.map((element) => (
     <tr key={element.key}>
