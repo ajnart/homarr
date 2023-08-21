@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Orage avec grêle",
       "unknown": "Inconnu"
     }
-  }
+  },
+  "error": ""
 }
