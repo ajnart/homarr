@@ -15,10 +15,12 @@ export const dnsHoleRouter = createTRPCRouter({
       z.object({
         action: z.enum(['enable', 'disable']),
         configName: z.string(),
+        currentEnabled: z.optional(z.array(z.string())),
       })
     )
     .mutation(async ({ input }) => {
       const config = getConfig(input.configName);
+      const { currentEnabled } = input;
 
       const applicableApps = config.apps.filter(
         (x) => x.integration?.type && ['pihole', 'adGuardHome'].includes(x.integration?.type)
@@ -27,11 +29,12 @@ export const dnsHoleRouter = createTRPCRouter({
       await Promise.all(
         applicableApps.map(async (app) => {
           if (app.integration?.type === 'pihole') {
-            await processPiHole(app, input.action === 'enable');
+            await processPiHole(app, input.action === 'enable', currentEnabled);
+
             return;
           }
 
-          await processAdGuard(app, input.action === 'enable');
+          await processAdGuard(app, input.action === 'enable', currentEnabled);
         })
       );
     }),
@@ -83,7 +86,7 @@ export const dnsHoleRouter = createTRPCRouter({
     }),
 });
 
-const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
+const processAdGuard = async (app: ConfigAppType, enable: boolean, enabledApps?: string[]) => {
   const adGuard = new AdGuard(
     app.url,
     findAppProperty(app, 'username'),
@@ -91,11 +94,15 @@ const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
   );
 
   if (enable) {
+    if (enabledApps?.includes(app.id)) {
+      return;
+    }
     try {
       await adGuard.enable();
-    } catch (error) {
-      Consola.error((error as Error).message);
-    }
+    } catch (error) {}
+    return;
+  }
+  if (!enabledApps?.includes(app.id)) {
     return;
   }
   try {
@@ -105,15 +112,19 @@ const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
   }
 };
 
-const processPiHole = async (app: ConfigAppType, enable: boolean) => {
+const processPiHole = async (app: ConfigAppType, enable: boolean, enabledApps?: string[]) => {
   const pihole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
 
   if (enable) {
+    if (enabledApps?.includes(app.id)) {
+      return;
+    }
     try {
       await pihole.enable();
-    } catch (error) {
-      Consola.error((error as Error).message);
-    }
+    } catch (error) {}
+    return;
+  }
+  if (!enabledApps?.includes(app.id)) {
     return;
   }
   try {
