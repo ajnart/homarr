@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Otvoriť všetko v novej karte"
     }
+  },
+  "menu": {
+    "moveUp": "",
+    "moveDown": "",
+    "addCategory": "",
+    "addAbove": "",
+    "addBelow": ""
   }
 }
