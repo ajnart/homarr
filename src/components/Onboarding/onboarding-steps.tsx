@@ -1,11 +1,11 @@
 import { Stack, Stepper } from '@mantine/core';
 import { useState } from 'react';
 
-import { StepUpdatePathMappings } from './step-update-path-mappings';
 import { StepCreateAccount } from './step-create-account';
-import { StepOnboardingFinished } from './step-onboarding-finished';
 import { StepDockerImport } from './step-docker-import';
 import { StepDocumentation } from './step-documentation';
+import { StepOnboardingFinished } from './step-onboarding-finished';
+import { StepUpdatePathMappings } from './step-update-path-mappings';
 
 export const OnboardingSteps = ({ isUpdate }: { isUpdate: boolean }) => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -14,7 +14,12 @@ export const OnboardingSteps = ({ isUpdate }: { isUpdate: boolean }) => {
 
   return (
     <Stack p="lg">
-      <Stepper active={currentStep} onStepClick={setCurrentStep} breakpoint="sm">
+      <Stepper
+        allowNextStepsSelect={false}
+        active={currentStep}
+        onStepClick={setCurrentStep}
+        breakpoint="sm"
+      >
         {isUpdate && (
           <Stepper.Step
             label="Update your installation"

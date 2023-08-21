@@ -140,6 +140,8 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
                 {dockerComposeCommand}
               </Prism>
             </List.Item>
+            <List.Item>Run <Code>docker compose up</Code>.</List.Item>
+            <List.Item>Refresh this page and click on "continue"</List.Item>
           </List>
         </Tabs.Panel>
 
@@ -168,6 +170,8 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
               innermost directory should be different, than your existing mounting points (eg.{' '}
               <Code>/mnt/user/appdata/homarr/data</Code>)
             </List.Item>
+            <List.Item>Click "Apply" and wait for the container to be restarted.</List.Item>
+            <List.Item>Refresh this page and click on "continue"</List.Item>
           </List>
         </Tabs.Panel>
 
