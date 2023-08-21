@@ -2,7 +2,7 @@
 	"tabs": {
 		"general": "Általános",
 		"behaviour": "Viselkedés",
-		"network": "",
+		"network": "Hálózat",
 		"appearance": "Megjelenés",
 		"integration": "Integráció"
 	},
@@ -93,18 +93,18 @@
 		"secrets": {
 			"description": "A titok frissítéséhez adja meg az értéket, és kattintson a mentés gombra. A titok törléséhez használja a törlés gombot.",
 			"warning": "A hitelesítő adatok az integrációkhoz való hozzáférésként szolgálnak, és soha ne ossza meg őket senki mással a <strong></strong> címen. A Homarr csapata soha nem fogja kérni a hitelesítő adatokat. Győződjön meg róla, hogy <strong>biztonságosan tárolja és kezeli titkait</strong>.",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"clear": "Titok törlése",
+			"save": "Titok mentése",
+			"update": "Titok frissítése"
 		}
 	},
 	"validation": {
-		"popover": "",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"popover": "Az űrlapja érvénytelen adatokat tartalmaz, ezért nem lehet elmenteni. Kérjük, oldja meg az összes problémát, és kattintson újra erre a gombra a módosítások mentéséhez",
+		"name": "Név szükséges",
+		"noUrl": "Url szükséges",
+		"invalidUrl": "Az érték nem érvényes url",
+		"noIconUrl": "Ez a mező kötelező",
+		"noExternalUri": "Külső URI szükséges",
+		"invalidExternalUri": "A külső URI nem érvényes uri"
 	}
 }
