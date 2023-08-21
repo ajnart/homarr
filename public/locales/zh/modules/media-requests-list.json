@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "同意请求",
-    "decline": "拒绝请求"
+    "decline": "拒绝请求",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
+  },
+  "detail": {
+    "label": "",
+    "id": "",
+    "device": "",
+    "video": {
+      "video": "",
+      "resolution": "",
+      "framerate": "",
+      "codec": ""
+    },
+    "audio": {
+      "audio": "",
+      "channels": "",
+      "codec": ""
+    },
+    "transcoding": {
+      "transcoding": "",
+      "context": "",
+      "requested": "",
+      "source": "",
+      "target": ""
+    }
   }
 }
