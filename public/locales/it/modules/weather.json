@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Temporale con grandine",
       "unknown": "Sconosciuto"
     }
-  }
+  },
+  "error": ""
 }
