@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "",
-        "text": "Homarr Wuz Unable 2 Speek Wif Ur Torrent Clients. Plz Check Ur Configurashun"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Loadin..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "",
