@@ -100,11 +100,11 @@
 	},
 	"validation": {
 		"popover": "Il form contiene dati invalidi. Pertanto, non può essere salvato. Risolvere tutti i problemi e fare nuovamente clic su questo pulsante per salvare le modifiche",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Il nome è obbligatorio",
+		"noUrl": "L'url è obbligatorio",
+		"invalidUrl": "Il valore non è un url valido",
+		"noIconUrl": "Questo campo è obbligatorio",
+		"noExternalUri": "L'URI esterno è obbligatorio",
+		"invalidExternalUri": "L'URI esterno non è un uri valido"
 	}
 }
