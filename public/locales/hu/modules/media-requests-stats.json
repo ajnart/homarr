@@ -1,21 +1,21 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Média kérés statisztikák",
+    "description": "Statisztikák az Ön médiakéréseiről",
     "settings": {
-      "title": "",
+      "title": "Médiakérdések statisztikája",
       "direction": {
-        "label": "",
+        "label": "Az elrendezés iránya.",
         "data": {
-          "row": "",
-          "column": ""
+          "row": "Vízszintes",
+          "column": "Függőleges"
         }
       }
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "Várakozás jóváhagyásra",
+    "tvRequests": "TV kérések",
+    "movieRequests": "Filmkérések"
   }
 }
