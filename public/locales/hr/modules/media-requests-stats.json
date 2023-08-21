@@ -5,7 +5,11 @@
     "settings": {
       "title": "Statistika zahtjeva za medijima",
       "direction": {
-        "label": ""
+        "label": "",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
