@@ -12,7 +12,12 @@
         "label": "פריטים"
       },
       "layout": {
-        "label": "פריסה"
+        "label": "פריסה",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "אופקי",
+          "vertical": "אנכי"
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "רשימת הסימניות ריקה",
       "text": "הוסף פריטים חדשים לרשימה זו במצב עריכה"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "שם",
+    "url": "",
+    "newTab": "פתיחה בכרטיסיה חדשה",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "מחיקה"
   }
 }
