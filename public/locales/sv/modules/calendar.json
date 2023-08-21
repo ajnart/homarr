@@ -11,13 +11,25 @@
         "label": "Börja veckan på söndag"
       },
       "radarrReleaseType": {
-        "label": "Radarr releasetyp"
+        "label": "Radarr releasetyp",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Dölj veckodagar"
       },
       "fontSize": {
-        "label": "Teckenstorlek"
+        "label": "Teckenstorlek",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
