@@ -6,6 +6,12 @@
 	"key": "Klávesová skratka",
 	"action": "Akcia",
 	"keybinds": "Kľúčové väzby",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Verzia konfiguračnej schémy",
 		"configurationsCount": "Dostupné konfigurácie",
