@@ -1,31 +1,31 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dátum és idő",
+    "description": "Megjeleníti az aktuális dátumot és időt.",
     "settings": {
-      "title": "",
+      "title": "A Naptár widget beállításai",
       "display24HourFormat": {
-        "label": ""
+        "label": "24 órás idő kijelzése"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Dátum formázás",
         "data": {
-          "hide": ""
+          "hide": "Dátum elrejtése"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Egyéni időzóna megjelenítése"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Időzóna Helyszín"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Város címe",
+        "info": "Ha aktiválja az Időzóna opciót, akkor megjelenik a város neve és az időzóna kódja.<br/>Megjelenítheti a várost önmagában, vagy akár nem is jelenítheti meg.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Város és időzóna",
+          "city": "Csak a város",
+          "none": "Semmi"
         }
       }
     }
