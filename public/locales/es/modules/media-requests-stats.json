@@ -5,7 +5,11 @@
     "settings": {
       "title": "Estadísticas de solicitudes multimedia",
       "direction": {
-        "label": "Dirección del diseño."
+        "label": "Dirección del diseño.",
+        "data": {
+          "row": "Horizontal",
+          "column": "Vertical"
+        }
       }
     }
   },
