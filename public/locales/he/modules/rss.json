@@ -12,7 +12,8 @@
         "label": "מרווח הזמן לרענון (בשניות)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "הגבלת שורות טקסט"
