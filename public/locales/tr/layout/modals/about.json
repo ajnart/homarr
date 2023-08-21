@@ -6,6 +6,12 @@
 	"key": "Kısayol tuşu",
 	"action": "Eylem",
 	"keybinds": "Tuş atamaları",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Yapılandırma şeması sürümü",
 		"configurationsCount": "Mevcut konfigürasyonlar",
