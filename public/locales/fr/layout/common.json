@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Tout ouvrir dans un nouvel onglet"
     }
+  },
+  "menu": {
+    "moveUp": "",
+    "moveDown": "",
+    "addCategory": "",
+    "addAbove": "",
+    "addBelow": ""
   }
 }
