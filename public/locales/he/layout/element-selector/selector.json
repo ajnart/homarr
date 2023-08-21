@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "הוספת אריח"
     },
-    "apps": "",
+    "apps": "אפליקציות",
     "app": {
-        "defaultName": ""
+        "defaultName": "האפליקציה שלך"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "ווידג'טים",
+    "categories": "קטגוריות",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "שם הקטגוריה החדשה",
+        "defaultName": "קטגוריה חדשה",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "קטגוריה נוצרה",
+            "message": "הקטגוריה {{name}} נוצרה"
         }
     }
 }
