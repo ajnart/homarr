@@ -6,6 +6,12 @@
 	"key": "Гарячі клавіши",
 	"action": "Дії",
 	"keybinds": "Сполучення клавіш",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Версія схеми конфігурації",
 		"configurationsCount": "Доступні конфігурації",
