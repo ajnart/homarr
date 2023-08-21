@@ -12,8 +12,8 @@
         "label": "Yenileme aralığı (dakika olarak)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "HTML biçimlendirmesine izin ver (Tehlikeli)",
+        "info": "Dışarıdan HTML biçimlendirmesine izin vermek tehlikeli olabilir.<br/>Lütfen beslemenin güvenilir bir kaynaktan geldiğinden emin olun."
       },
       "textLinesClamp": {
         "label": "Metin karakter sınırı"
