@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Hepsini yeni sekmede aç"
     }
+  },
+  "menu": {
+    "moveUp": "",
+    "moveDown": "",
+    "addCategory": "",
+    "addAbove": "",
+    "addBelow": ""
   }
 }
