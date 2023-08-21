@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "פתח הכל בכרטיסייה חדשה"
     }
+  },
+  "menu": {
+    "moveUp": "",
+    "moveDown": "",
+    "addCategory": "",
+    "addAbove": "",
+    "addBelow": ""
   }
 }
