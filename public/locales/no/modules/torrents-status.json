@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "En uventet feil har oppstått",
-        "text": "Homarr kunne ikke kommunisere med dine Torrent-klienter. Kontroller konfigurasjonen"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Laster inn..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Administrert av",
