@@ -6,6 +6,12 @@
 	"key": "Genvejstast",
 	"action": "Handling",
 	"keybinds": "Genvejstaster",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurationsskema version",
 		"configurationsCount": "Tilgængelige konfigurationer",
