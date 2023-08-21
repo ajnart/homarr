@@ -12,7 +12,12 @@
         "label": "Stavke"
       },
       "layout": {
-        "label": "Raspored"
+        "label": "Raspored",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "Popis oznaka prazan",
       "text": "Dodajte nove stavke u ovaj popis u načinu uređivanja"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Naziv",
+    "url": "",
+    "newTab": "Otvori u novoj kartici",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Obriši"
   }
 }
