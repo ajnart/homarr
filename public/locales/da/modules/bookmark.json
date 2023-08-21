@@ -14,7 +14,7 @@
       "layout": {
         "label": "Layout",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Automatisk gitter",
           "horizontal": "Horisontal",
           "vertical": "Vertikal"
         }
@@ -29,17 +29,17 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "Længden skal være mellem 1 og 100",
+      "length200": "Længden skal være mellem 1 og 200",
+      "length400": "Længden skal være mellem 1 og 400",
+      "invalidLink": "Ikke et gyldigt link",
+      "errorMsg": "Gemte ikke, fordi der var valideringsfejl. Korriger venligst dine indtastninger"
     },
     "name": "Navn",
-    "url": "",
+    "url": "URL",
     "newTab": "Åbn i nyt faneblad",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Skjul værtsnavn",
+    "hideIcon": "Skjul ikon",
     "delete": "Slet"
   }
 }
