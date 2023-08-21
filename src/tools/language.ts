@@ -188,6 +188,14 @@ export const languages: Language[] = [
     emoji: '🇭🇷',
     locale: 'hr',
   },
+  // Hungarian
+  {
+    shortName: 'hu',
+    originalName: 'Magyar',
+    translatedName: 'Hungarian',
+    emoji: '🇭🇺',
+    locale: 'hu',
+  },
 ];
 
 export const getLanguageByCode = (code: string | null) =>
