@@ -20,36 +20,36 @@
   "tooltips": {
     "approve": "בקשות שאושרו",
     "decline": "בקשות שנדחו",
-    "approving": ""
+    "approving": "מאשר את הבקשה..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "מאשר",
+    "declining": "בדחיה",
+    "request": "בקשה...",
+    "approved": "הבקשה אושרה!",
+    "declined": "הבקשה נדחתה!"
   },
   "detail": {
-    "label": "",
-    "id": "",
-    "device": "",
+    "label": "סטטיסטיקות עבור חנונים",
+    "id": "מספר מזהה",
+    "device": "מכשיר",
     "video": {
-      "video": "",
-      "resolution": "",
-      "framerate": "",
-      "codec": ""
+      "video": "וידאו",
+      "resolution": "רזולוציה",
+      "framerate": "ניתוח תמונות",
+      "codec": "קידוד וידאו"
     },
     "audio": {
-      "audio": "",
-      "channels": "",
-      "codec": ""
+      "audio": "אודיו",
+      "channels": "ערוצי קול",
+      "codec": "קידוד אודיו"
     },
     "transcoding": {
-      "transcoding": "",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "transcoding": "המרת קידוד",
+      "context": "הקשר",
+      "requested": "מתבקש קידוד חומרה",
+      "source": "קידוד מקור",
+      "target": "קידוד יעד"
     }
   }
 }
