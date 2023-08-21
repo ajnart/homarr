@@ -14,9 +14,9 @@
       "layout": {
         "label": "Layout",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Griglia Automatica",
+          "horizontal": "Orizzontale",
+          "vertical": "Verticale"
         }
       }
     }
@@ -29,17 +29,17 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "La lunghezza deve essere compresa tra 1 e 100",
+      "length200": "La lunghezza deve essere compresa tra 1 e 200",
+      "length400": "La lunghezza deve essere compresa tra 1 e 400",
+      "invalidLink": "Link non valido",
+      "errorMsg": "Non è stato salvato perché c'erano errori di convalida. Si prega di adattare i dati inseriti"
     },
     "name": "Nome",
-    "url": "",
+    "url": "URL",
     "newTab": "Apri in una nuova scheda",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Nascondi Hostname",
+    "hideIcon": "Nascondi icona",
     "delete": "Elimina"
   }
 }
