@@ -39,7 +39,7 @@
         "title": "Ugyldig URL",
         "text": "Sørg for, at du har indtastet en gyldig adresse i konfigurationen af din widget"
       },
-      "browserSupport": ""
+      "browserSupport": "Din browser understøtter ikke iframes. Opdater venligst din browser."
     }
   }
 }
