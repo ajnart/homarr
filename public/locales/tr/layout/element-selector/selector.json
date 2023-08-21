@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Araç ve Döşeme Ekle"
     },
-    "apps": "",
+    "apps": "Uygulamalar",
     "app": {
-        "defaultName": ""
+        "defaultName": "Sizin Uygulamanız"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widget'lar",
+    "categories": "Kategoriler",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Yeni Kategori adı",
+        "defaultName": "Yeni Kategori",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Kategori oluşturuldu",
+            "message": "\"{{name}}\" kategorisi oluşturuldu"
         }
     }
 }
