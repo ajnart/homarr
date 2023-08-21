@@ -12,7 +12,12 @@
         "label": "Элементы"
       },
       "layout": {
-        "label": "Макет"
+        "label": "Макет",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "Горизонтальный",
+          "vertical": "Вертикальный"
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "Список закладок пуст",
       "text": "Добавить новые элементы в этот список в режиме редактирования"
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Имя",
+    "url": "",
+    "newTab": "Открыть в новой вкладке",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Удалить"
   }
 }
