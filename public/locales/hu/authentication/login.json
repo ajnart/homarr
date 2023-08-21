@@ -1,27 +1,27 @@
 {
-  "title": "",
-  "text": "",
+  "title": "Köszöntjük ismét!",
+  "text": "Kérjük, adja meg jelszavát",
   "form": {
     "fields": {
       "password": {
-        "label": "",
-        "placeholder": ""
+        "label": "Jelszó",
+        "placeholder": "Az Ön jelszava"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Bejelentkezés"
     }
   },
   "notifications": {
     "checking": {
-      "title": "",
-      "message": ""
+      "title": "Jelszó ellenőrzése",
+      "message": "A jelszavadat ellenőrizzük..."
     },
     "correct": {
-      "title": ""
+      "title": "Bejelentkezés sikeres, átirányítás..."
     },
     "wrong": {
-      "title": ""
+      "title": "A megadott jelszó helytelen, kérjük, próbálja meg újra."
     }
   }
 }
