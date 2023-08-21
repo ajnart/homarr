@@ -3,22 +3,22 @@
     "name": "Videófolyam",
     "description": "Videófolyam vagy videó beágyazása egy kameráról vagy weboldalról",
     "settings": {
-      "title": "",
+      "title": "Videófolyam beállítsai",
       "FeedUrl": {
-        "label": ""
+        "label": "Hírcsatorna URL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatikus lejátszás"
       },
       "muted": {
-        "label": ""
+        "label": "Hang némítása"
       },
       "controls": {
-        "label": ""
+        "label": "Videolejátszó vezérlők"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Érvénytelen folyam"
   }
 }
