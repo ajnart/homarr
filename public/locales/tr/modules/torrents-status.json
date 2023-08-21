@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Beklenmeyen bir hata oluştu",
-        "text": ""
+        "text": "Torrent istemcilerinizle iletişim kuramadı. Lütfen yapılandırmanızı kontrol edin"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Yükleniyor",
+      "description": "Bağlantı kur"
     },
     "popover": {
       "introductionPrefix": "Tarafından yönetilen",
