@@ -5,7 +5,11 @@
     "settings": {
       "title": "Mediaverzoeken statistieken",
       "direction": {
-        "label": ""
+        "label": "",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
