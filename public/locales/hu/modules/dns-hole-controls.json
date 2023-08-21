@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "DNS blokkolók ellenőrzése",
+    "description": "A PiHole vagy az AdGuard vezérlése a műszerfalról"
   }
 }
