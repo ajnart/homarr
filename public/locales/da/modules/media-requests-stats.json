@@ -5,7 +5,11 @@
     "settings": {
       "title": "Statistikker over medieanmodninger",
       "direction": {
-        "label": "Layoutets retning."
+        "label": "Layoutets retning.",
+        "data": {
+          "row": "Horisontal",
+          "column": "Vertikal"
+        }
       }
     }
   },
