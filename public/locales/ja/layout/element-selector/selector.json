@@ -7,5 +7,19 @@
     "goBack": "前のステップに戻る",
     "actionIcon": {
         "tooltip": "タイルを追加する"
+    },
+    "apps": "",
+    "app": {
+        "defaultName": ""
+    },
+    "widgets": "",
+    "categories": "",
+    "category": {
+        "newName": "",
+        "defaultName": "",
+        "created": {
+            "title": "",
+            "message": ""
+        }
     }
 }
