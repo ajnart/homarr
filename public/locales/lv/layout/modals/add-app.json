@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Jūsu veidlapā ir nederīgi dati. Tāpēc to nevar saglabāt. Lūdzu, atrisiniet visas problēmas un vēlreiz noklikšķiniet uz šīs pogas, lai saglabātu izmaiņas"
+		"popover": "Jūsu veidlapā ir nederīgi dati. Tāpēc to nevar saglabāt. Lūdzu, atrisiniet visas problēmas un vēlreiz noklikšķiniet uz šīs pogas, lai saglabātu izmaiņas",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }
