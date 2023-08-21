@@ -11,13 +11,25 @@
         "label": "Sākt nedēļu ar pirmdienu"
       },
       "radarrReleaseType": {
-        "label": "Radarr laiduma tips"
+        "label": "Radarr laiduma tips",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Paslēpt darba dienas"
       },
       "fontSize": {
-        "label": "Fonta Izmērs"
+        "label": "Fonta Izmērs",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
