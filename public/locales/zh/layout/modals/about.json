@@ -6,6 +6,12 @@
 	"key": "快捷键",
 	"action": "操作",
 	"keybinds": "热键绑定",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "配置样式版本",
 		"configurationsCount": "可用的配置",
