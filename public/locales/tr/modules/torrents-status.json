@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Beklenmeyen bir hata oluştu",
-        "text": "Homarr, Torrent istemcilerinizle iletişim kuramadı. Lütfen yapılandırmanızı kontrol edin"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Yükleniyor..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Tarafından yönetilen",
