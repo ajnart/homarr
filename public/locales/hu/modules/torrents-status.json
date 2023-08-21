@@ -1,80 +1,80 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "Megjeleníti a támogatott Torrent-kliensek torrentjeinek listáját.",
     "settings": {
-      "title": "",
+      "title": "A Torrent widget beállításai",
       "refreshInterval": {
-        "label": ""
+        "label": "Frissítési időköz (másodpercben)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Befejezett torrentek megjelenítése"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Elavult torrentek megjelenítése"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "A címkelista egy fehér lista (feketelista helyett)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Címkelista",
+        "description": "Ha az 'is whitelist' jelölőnégyzet be van jelölve, akkor ez fehérlistaként fog működni. Ha nincs bejelölve, akkor ez egy feketelista. Üres állapotban nem csinál semmit"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "",
-      "lastUpdated": ""
+      "error": "Hiba",
+      "lastUpdated": "Utolsó frissítés {{time}} óta"
     },
     "table": {
       "header": {
-        "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "name": "Név",
+        "size": "Méret",
+        "download": "Le",
+        "upload": "Fel",
+        "estimatedTimeOfArrival": "Hátralévő idő",
+        "progress": "Folyamat"
       },
       "item": {
-        "text": ""
+        "text": "Kezeli: {{appName}}, {{ratio}} arány"
       },
       "body": {
-        "nothingFound": "",
-        "filterHidingItems": ""
+        "nothingFound": "Nem találhatók torrentek",
+        "filterHidingItems": "{{count}} a bejegyzéseket a szűrők elrejtik"
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Jelenlegi letöltési sebesség",
+      "download": "Letöltés: {{download}}",
+      "upload": "Feltöltés: {{upload}}",
+      "timeSpan": "{{seconds}} másodpercekkel ezelőtt",
+      "totalDownload": "Letöltés: {{download}}/s",
+      "totalUpload": "Feltöltés: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nem találtunk támogatott Torrent klienseket!",
+        "text": "Adjon hozzá egy támogatott Torrent klienst az aktuális letöltések megtekintéséhez"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Váratlan hiba történt",
+        "text": "Nem tud kommunikálni a Torrent kliensekkel. Kérjük, ellenőrizze a konfigurációt"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Betöltés",
+      "description": "Kapcsolat létrehozása"
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Irányítja",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Sorban állás - {{position}}",
+        "progress": "Haladás - {{progress}}%",
+        "totalSelectedSize": "Összesen - {{totalSize}}",
+        "state": "Állapot - {{state}}",
+        "ratio": "Arány -",
+        "completed": "Kész"
       }
     }
   }
