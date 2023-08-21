@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Valider les demandes",
-    "decline": "Refuser les demandes"
+    "decline": "Refuser les demandes",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
+  },
+  "detail": {
+    "label": "",
+    "id": "",
+    "device": "",
+    "video": {
+      "video": "",
+      "resolution": "",
+      "framerate": "",
+      "codec": ""
+    },
+    "audio": {
+      "audio": "",
+      "channels": "",
+      "codec": ""
+    },
+    "transcoding": {
+      "transcoding": "",
+      "context": "",
+      "requested": "",
+      "source": "",
+      "target": ""
+    }
   }
 }
