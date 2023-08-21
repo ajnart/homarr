@@ -7,10 +7,10 @@
 	"action": "Azioni",
 	"keybinds": "Scorciatoie da tastiera",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Attiva/Disattiva modalità chiaro/scuro",
+		"focusSearchBar": "Focalizza la barra di ricerca",
+		"openDocker": "Apri docker Widget",
+		"toggleEdit": "Attiva/Disattiva Edit Mode"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Versione dello schema di configurazione",
