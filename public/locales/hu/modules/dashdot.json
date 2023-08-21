@@ -1,117 +1,117 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Megjeleníti egy külső Dash grafikonjait. Például a Homarr belsejében.",
     "settings": {
-      "title": "",
+      "title": "A Dash. widget beállításai",
       "dashName": {
-        "label": ""
+        "label": "Dash. Név"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Százalék megjelenítése"
       },
       "columns": {
-        "label": ""
+        "label": "Oszlopok mutatása"
       },
       "graphHeight": {
-        "label": ""
+        "label": "A grafikonok magassága"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafikonok (sorrend)",
         "storage": {
-          "label": "",
+          "label": "Tárhely",
           "enabled": {
-            "label": ""
+            "label": "Megjelenítés widgetben"
           },
           "span": {
-            "label": ""
+            "label": "Oszlopfesztávolság"
           },
           "compactView": {
-            "label": ""
+            "label": "Megjelenítés szövegként (kompakt)"
           },
           "multiView": {
-            "label": ""
+            "label": "Megjelenítés több meghajtó nézetként"
           }
         },
         "network": {
-          "label": "",
+          "label": "Hálózat",
           "enabled": {
-            "label": ""
+            "label": "Megjelenítés widgetben"
           },
           "span": {
-            "label": ""
+            "label": "Oszlopfesztávolság"
           },
           "compactView": {
-            "label": ""
+            "label": "Megjelenítés szövegként (kompakt)"
           }
         },
         "cpu": {
-          "label": "",
+          "label": "Processzor",
           "enabled": {
-            "label": ""
+            "label": "Megjelenítés widgetben"
           },
           "span": {
-            "label": ""
+            "label": "Oszlopfesztávolság"
           },
           "multiView": {
-            "label": ""
+            "label": "Többmagos nézetként megjelenítése"
           }
         },
         "ram": {
-          "label": "",
+          "label": "Memória",
           "enabled": {
-            "label": ""
+            "label": "Megjelenítés widgetben"
           },
           "span": {
-            "label": ""
+            "label": "Oszlopfesztávolság"
           }
         },
         "gpu": {
-          "label": "",
+          "label": "Videókártya",
           "enabled": {
-            "label": ""
+            "label": "Megjelenítés widgetben"
           },
           "span": {
-            "label": ""
+            "label": "Oszlopfesztávolság"
           }
         }
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Nem találtunk Dash. szolgáltatást. Kérjük, adjon hozzá egyet a Homarr műszerfalához vagy állítson be egy Dash. URL-t a modul beállításaiban",
+      "noInformation": "Nem tud információt szerezni a kötőjelről. - a legújabb verziót futtatja?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Észlelt protokoll visszaminősítése",
+        "text": "A Dash. példányhoz való kapcsolat HTTP protokollt használ. Ez biztonsági kockázatot jelent, mivel a HTTP nem titkosított, és a támadók visszaélhetnek ezzel a kapcsolattal. Győződjön meg róla, hogy a Dash. HTTPS-t használ, vagy állítsa vissza a Homarr-t HTTP-re (nem ajánlott)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Tárhely",
+        "label": "Tárhely:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Hálózat",
+        "label": "Hálózat:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Le",
+          "upload": "Fel"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "Processzor"
       },
       "ram": {
-        "title": ""
+        "title": "Memória"
       },
       "gpu": {
-        "title": ""
+        "title": "Videókártya"
       }
     }
   }
