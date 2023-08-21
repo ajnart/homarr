@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "发生了一个意外的错误",
-        "text": "Homarr无法与您的Torrent客户端通信。请检查您的配置"
+        "text": ""
       }
     },
     "loading": {
-      "title": "正在加载..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "管理方：",
