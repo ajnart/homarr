@@ -12,7 +12,8 @@
         "label": "Intervalo de refresco (en minutos)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "Permitir contenido de artículo desinfectado"
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Límite de líneas de texto"
