@@ -6,6 +6,12 @@
 	"key": "Phím tắt",
 	"action": "Hành động",
 	"keybinds": "Phím tắt",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Phiên bản lược đồ cấu hình",
 		"configurationsCount": "Cấu hình có sẵn",
