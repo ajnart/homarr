@@ -16,9 +16,9 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
+    "moveUp": "Переместить вверх",
+    "moveDown": "Переместить вниз",
+    "addCategory": "Добавить категорию",
     "addAbove": "",
     "addBelow": ""
   }
