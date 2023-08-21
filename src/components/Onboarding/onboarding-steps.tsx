@@ -24,7 +24,7 @@ export const OnboardingSteps = ({ isUpdate }: { isUpdate: boolean }) => {
           </Stepper.Step>
         )}
         <Stepper.Step label="Your account" description="Create an account">
-          <StepCreateAccount next={nextStep} />
+          <StepCreateAccount next={nextStep} previous={prevStep} />
         </Stepper.Step>
         <Stepper.Step label="Docker import" description="Import applications from Docker">
           <StepDockerImport next={nextStep} />

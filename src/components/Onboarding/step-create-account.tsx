@@ -1,5 +1,6 @@
-import { Button, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
+import { Button, Group, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { z } from 'zod';
@@ -9,7 +10,13 @@ import { signUpFormSchema } from '~/validations/user';
 
 import { OnboardingStepWrapper } from './common-wrapper';
 
-export const StepCreateAccount = ({ next }: { next: () => void }) => {
+export const StepCreateAccount = ({
+  previous,
+  next,
+}: {
+  previous: () => void;
+  next: () => void;
+}) => {
   const [isSigninIn, setIsSigninIn] = useState(false);
   const { mutateAsync } = api.user.createOwnerAccount.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
@@ -43,14 +50,13 @@ export const StepCreateAccount = ({ next }: { next: () => void }) => {
       <Title order={2} align="center" mb="md">
         Create your administrator account
       </Title>
-      <form
-        onSubmit={form.onSubmit(handleSubmit)}
-      >
+      <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack>
           <TextInput
             size="md"
             w="100%"
             label="Username"
+            variant="filled"
             withAsterisk
             {...form.getInputProps('username')}
           />
@@ -59,6 +65,7 @@ export const StepCreateAccount = ({ next }: { next: () => void }) => {
             size="md"
             w="100%"
             label="Password"
+            variant="filled"
             withAsterisk
             {...form.getInputProps('password')}
           />
@@ -67,12 +74,23 @@ export const StepCreateAccount = ({ next }: { next: () => void }) => {
             size="md"
             w="100%"
             label="Confirm password"
+            variant="filled"
             withAsterisk
             {...form.getInputProps('passwordConfirmation')}
           />
-          <Button disabled={!form.isValid()} mt="sm" fullWidth type="submit" loading={isSigninIn}>
-            Continue
-          </Button>
+          <Group grow>
+            <Button onClick={previous} leftIcon={<IconArrowLeft size="0.9rem" />} variant="default">
+              Back
+            </Button>
+            <Button
+              rightIcon={<IconArrowRight size="0.9rem" />}
+              disabled={!form.isValid()}
+              type="submit"
+              loading={isSigninIn}
+            >
+              Continue
+            </Button>
+          </Group>
         </Stack>
       </form>
     </OnboardingStepWrapper>
