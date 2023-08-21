@@ -6,6 +6,12 @@
 	"key": "",
 	"action": "",
 	"keybinds": "",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Wersja schematu konfiguracji",
 		"configurationsCount": "Dostępne konfiguracje",
