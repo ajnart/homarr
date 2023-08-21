@@ -6,6 +6,12 @@
 	"key": "Tipka prečaca",
 	"action": "Radnja",
 	"keybinds": "Namještanje tipki",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfiguracija verzije sheme",
 		"configurationsCount": "Dostupna konfiguracija",
