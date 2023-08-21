@@ -20,36 +20,36 @@
   "tooltips": {
     "approve": "Anfrage bestätigen",
     "decline": "Anfrage ablehnen",
-    "approving": ""
+    "approving": "Anfrage bestätigen..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Genehmigen",
+    "declining": "Ablehnen",
+    "request": "Anfrage...",
+    "approved": "Anfragen genehmigt!",
+    "declined": "Anfrage abgelehnt!"
   },
   "detail": {
-    "label": "",
-    "id": "",
-    "device": "",
+    "label": "Statistiken für Nerds",
+    "id": "ID",
+    "device": "Gerät",
     "video": {
-      "video": "",
-      "resolution": "",
-      "framerate": "",
-      "codec": ""
+      "video": "Video",
+      "resolution": "Auflösung",
+      "framerate": "Framerate",
+      "codec": "Video-Codec"
     },
     "audio": {
-      "audio": "",
-      "channels": "",
-      "codec": ""
+      "audio": "Audio",
+      "channels": "Audio Kanäle",
+      "codec": "Audio-Codec"
     },
     "transcoding": {
-      "transcoding": "",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "transcoding": "Transkodierung",
+      "context": "Kontext",
+      "requested": "Angeforderte Hardware-Kodierung",
+      "source": "Quell-Codec",
+      "target": "Ziel-Codec"
     }
   }
 }
