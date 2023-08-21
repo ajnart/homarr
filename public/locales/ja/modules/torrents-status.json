@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "",
-        "text": "HomarrはあなたのTorrentクライアントと通信できませんでした。設定を確認してください。"
+        "text": ""
       }
     },
     "loading": {
-      "title": "読み込み中..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "マネージド・バイ",
