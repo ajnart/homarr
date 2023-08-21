@@ -6,6 +6,12 @@
 	"key": "Sneltoets",
 	"action": "Actie",
 	"keybinds": "Sneltoetsen",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Configuratieschema versie",
 		"configurationsCount": "Beschikbare configuraties",
