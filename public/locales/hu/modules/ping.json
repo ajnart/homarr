@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Ping",
+    "description": "Megjelenít egy állapotjelzőt az adott URL HTTP-válaszkódjától függően."
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "Online {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Betöltés..."
   }
 }
