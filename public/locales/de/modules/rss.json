@@ -12,7 +12,8 @@
         "label": "Aktualisierungsintervall (in Minuten)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Textzeilen Klammer"
