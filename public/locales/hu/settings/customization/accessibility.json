@@ -1,11 +1,11 @@
 {
     "disablePulse": {
-        "label": "",
-        "description": ""
+        "label": "Ping letiltása",
+        "description": "Alapértelmezés szerint a Homarrban a pingjelzők pulzálni fognak. Ez irritáló lehet. Ez a csúszka kikapcsolja az animációt"
     },
     "replaceIconsWithDots": {
-        "label": "",
-        "description": ""
+        "label": "Ping pontok ikonokkal való helyettesítése",
+        "description": "A színvak felhasználók számára a ping pöttyök felismerhetetlenek lehetnek. Ez a jelzőket ikonokkal helyettesíti"
     },
-    "alert": ""
+    "alert": "Lemaradtál valamiről? Szívesen bővítjük a Homarr elérhetőségét"
 }
