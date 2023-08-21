@@ -7,8 +7,8 @@
       "direction": {
         "label": "Direzione del layout.",
         "data": {
-          "row": "",
-          "column": ""
+          "row": "Orizzontale",
+          "column": "Verticale"
         }
       }
     }
