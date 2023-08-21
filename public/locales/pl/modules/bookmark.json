@@ -12,7 +12,12 @@
         "label": ""
       },
       "layout": {
-        "label": "Układ"
+        "label": "Układ",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "",
       "text": ""
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Nazwa",
+    "url": "",
+    "newTab": "Otwórz w nowej karcie",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Usuń"
   }
 }
