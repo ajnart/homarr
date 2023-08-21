@@ -1,0 +1,36 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "useSonarrv4": {
+        "label": ""
+      },
+      "sundayStart": {
+        "label": ""
+      },
+      "radarrReleaseType": {
+        "label": "",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
+      },
+      "hideWeekDays": {
+        "label": ""
+      },
+      "fontSize": {
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
+      }
+    }
+  }
+}
