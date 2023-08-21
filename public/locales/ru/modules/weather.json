@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Гроза с градом",
       "unknown": "Неизвестно"
     }
-  }
+  },
+  "error": ""
 }
