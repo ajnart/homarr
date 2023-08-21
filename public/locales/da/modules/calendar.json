@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Radarr udgivelsestype",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "I Biografen",
+          "physicalRelease": "Fysisk",
+          "digitalRelease": "Digital"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "Skriftstørrelse",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Ekstra lille",
+          "sm": "Lille",
+          "md": "Mellem",
+          "lg": "Stor",
+          "xl": "Ekstra stor"
         }
       }
     }
