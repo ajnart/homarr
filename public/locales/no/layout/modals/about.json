@@ -6,6 +6,12 @@
 	"key": "Hurtigtast",
 	"action": "Handling",
 	"keybinds": "Hurtigtaster",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurasjonsskjema versjon",
 		"configurationsCount": "Tilgjengelige konfigurasjoner",
