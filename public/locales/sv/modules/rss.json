@@ -12,7 +12,8 @@
         "label": "Uppdateringsintervall (i minuter)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Klämma för textrader"
