@@ -1,19 +1,19 @@
 {
-  "title": "",
-  "configurationName": "",
+  "title": "Keresőmotor",
+  "configurationName": "Keresőmotor konfiguráció",
   "tips": {
-    "generalTip": "",
+    "generalTip": "Többféle előtagot is használhatsz! Ha ezeket hozzáadja a lekérdezés elé, akkor az eredmények szűrődnek. !s (Web), !t (Torrents), !y (YouTube) és !m (Media).",
     "placeholderTip": ""
   },
   "customEngine": {
-    "title": "",
-    "label": "",
-    "placeholder": ""
+    "title": "Egyéni keresőmotor",
+    "label": "URL lekérdezés",
+    "placeholder": "Egyedi lekérdezési URL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "Keresési eredmények megnyitása új lapon"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "Keresés engedélyezve"
   }
 }
