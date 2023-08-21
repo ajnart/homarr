@@ -15,7 +15,7 @@
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurációs séma verziója",
 		"configurationsCount": "Elérhető konfigurációk",
-		"version": "",
+		"version": "Verzió",
 		"nodeEnvironment": "Csomópont környezet",
 		"i18n": "Betöltött I18n fordítási névterek",
 		"locales": "Beállított I18n helyi nyelvek",
