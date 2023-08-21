@@ -12,7 +12,12 @@
         "label": ""
       },
       "layout": {
-        "label": "Indeling"
+        "label": "Indeling",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,20 @@
       "title": "",
       "text": ""
     }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Naam",
+    "url": "",
+    "newTab": "Open in nieuw tabblad",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Verwijder"
   }
 }
