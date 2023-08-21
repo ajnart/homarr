@@ -13,7 +13,7 @@
       "radarrReleaseType": {
         "label": "סוג שחרור של Radarr",
         "data": {
-          "inCinemas": "",
+          "inCinemas": "בבתי קולנוע",
           "physicalRelease": "",
           "digitalRelease": ""
         }
