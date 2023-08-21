@@ -86,7 +86,7 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=ref,event=pr
-            type=raw,value=${{ github.event.inputs.tag }}, prefix=test-,enable=${{ github.event.inputs.tag != '' }}
+            type=raw,value=${{ github.event.inputs.tag }},enable=${{ github.event.inputs.tag != '' }}
             tpye=raw,value=dev,priority=1,enable=${{ github.event.inputs.tag == '' }}
 
       - name: Set up QEMU
