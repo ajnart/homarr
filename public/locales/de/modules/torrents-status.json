@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Ein unerwarteter Fehler ist aufgetreten",
-        "text": "Homarr konnte nicht mit Ihren Torrent Clients kommunizieren. Bitte überprüfen Sie Ihre Konfiguration"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Wird geladen..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Verwaltet von",
