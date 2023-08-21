@@ -1,25 +1,25 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Új csempe hozzáadása",
+        "text": "A Homarr fő eleme a csempe. Alkalmazásai és egyéb információk megjelenítésére szolgálnak. Annyi csempét adhat hozzá, amennyit csak akar."
     },
-    "widgetDescription": "",
-    "goBack": "",
+    "widgetDescription": "A widgetek együttműködnek az alkalmazásokkal, hogy nagyobb kontrollt biztosítsanak az alkalmazások felett. Használatuk előtt általában további konfigurációt igényelnek.",
+    "goBack": "Visszatérés az előző lépéshez",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Csempe hozzáadása"
     },
-    "apps": "",
+    "apps": "Alkalmazások",
     "app": {
-        "defaultName": ""
+        "defaultName": "Az Ön alkalmazása"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgetek",
+    "categories": "Kategóriák",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Az új kategória neve",
+        "defaultName": "Új kategória",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Létrehozott kategória",
+            "message": "Létrejött a \"{{name}}\" kategória"
         }
     }
 }
