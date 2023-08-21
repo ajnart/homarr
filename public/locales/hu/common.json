@@ -1,40 +1,40 @@
 {
-  "save": "",
-  "about": "",
+  "save": "Mentés",
+  "about": "Névjegy",
   "cancel": "Mégse",
-  "close": "",
-  "delete": "",
-  "ok": "",
-  "edit": "",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
-  "version": "",
-  "changePosition": "",
+  "close": "Bezár",
+  "delete": "Törlés",
+  "ok": "OK",
+  "edit": "Szerkesztés",
+  "enabled": "Engedélyezve",
+  "disabled": "Letiltva",
+  "enableAll": "Összes engedélyezése",
+  "disableAll": "Az összes tiltása",
+  "version": "Verzió",
+  "changePosition": "Pozíció módosítása",
   "remove": "Eltávolítás",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "Biztos vagy benne, hogy el akarod távolítani a {{item}}?",
+  "createItem": "+ hozzon létre {{item}}",
   "sections": {
     "settings": "Beállítások",
-    "dangerZone": ""
+    "dangerZone": "Veszélyzóna"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
+    "apiKey": "API kulcs",
+    "username": "Felhasználónév",
     "password": "Jelszó"
   },
-  "tip": "",
+  "tip": "Tipp: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "másodperc",
+    "minutes": "perc",
+    "hours": "óra"
   },
   "loading": "Betöltés...",
   "breakPoints": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "kicsi",
+    "medium": "közepes",
+    "large": "nagy"
   },
-  "seeMore": ""
+  "seeMore": "Lásd még..."
 }
