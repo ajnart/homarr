@@ -11,13 +11,25 @@
         "label": "Marcar Domingo como primer día de la semana"
       },
       "radarrReleaseType": {
-        "label": "Tipo de lanzamiento de Radarr"
+        "label": "Tipo de lanzamiento de Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Ocultar días de la semana"
       },
       "fontSize": {
-        "label": "Tamaño de fuente"
+        "label": "Tamaño de fuente",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
