@@ -5,7 +5,11 @@
     "settings": {
       "title": "媒体请求状态",
       "direction": {
-        "label": "布局方向。"
+        "label": "布局方向。",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
