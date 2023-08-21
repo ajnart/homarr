@@ -12,7 +12,8 @@
         "label": "Intervallo di aggiornamento (in secondi)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Blocco righe di testo"
