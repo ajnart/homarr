@@ -1,30 +1,30 @@
 {
   "pageTitle": {
-    "label": "",
-    "description": ""
+    "label": "Oldal címe",
+    "description": "A műszerfal címe a bal felső sarokban"
   },
   "metaTitle": {
-    "label": "",
-    "description": ""
+    "label": "Meta cím",
+    "description": "A böngésző lapján megjelenő cím"
   },
   "logo": {
-    "label": "",
-    "description": ""
+    "label": "Logó",
+    "description": "A bal felső sarokban megjelenő logó"
   },
   "favicon": {
-    "label": "",
-    "description": ""
+    "label": "Könyvjelzőikon",
+    "description": "A böngésző lapján megjelenő ikon"
   },
   "background": {
-    "label": ""
+    "label": "Háttér"
   },
   "customCSS": {
-    "label": "",
-    "description": "",
-    "placeholder": "",
-    "applying": ""
+    "label": "Egyéni CSS",
+    "description": "Továbbá, testreszabhatja műszerfalát CSS segítségével, csak tapasztalt felhasználóknak ajánlott",
+    "placeholder": "Az egyéni CSS utoljára kerül alkalmazásra",
+    "applying": "CSS alkalmazása..."
   },
   "buttons": {
-    "submit": ""
+    "submit": "Küldés"
   }
 }
