@@ -11,13 +11,25 @@
         "label": "週の始まりは日曜日"
       },
       "radarrReleaseType": {
-        "label": "ラダーリリースタイプ"
+        "label": "ラダーリリースタイプ",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
       "fontSize": {
-        "label": ""
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
