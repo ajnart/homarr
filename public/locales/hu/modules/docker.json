@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Lehetővé teszi az összes Docker-konténer egyszerű megtekintését és kezelését."
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Keresés konténer vagy képnév alapján"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Név",
+      "image": "Kép",
+      "ports": "Portok",
+      "state": "Állapot"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} több"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Fut",
+      "created": "Létrehozva",
+      "stopped": "Megállítva",
+      "unknown": "Ismeretlen"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Alkalmazás hozzáadása",
+      "message": "Alkalmazás hozzáadása a Homarrhoz"
     },
     "restart": {
-      "title": ""
+      "title": "Újraindítás"
     },
     "stop": {
-      "title": ""
+      "title": "Megállítás"
     },
     "start": {
-      "title": ""
+      "title": "Indítás"
     },
     "refreshData": {
-      "title": ""
+      "title": "Adatok frissítése"
     },
     "remove": {
-      "title": ""
+      "title": "Eltávolítás"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Hozzáadás a Homarrhoz"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Indítás",
+      "end": "Elindult"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Leállítás",
+      "end": "Megállítva"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Újraindítás",
+      "end": "Újraindítva"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Eltávolítás",
+      "end": "Eltávolítva"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker integráció sikertelen",
+      "message": "Elfelejtetted összekapcsolni a dokker csatlakozást?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Hiba történt"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Kérjük, egyszerre csak egy alkalmazást vagy szolgáltatást adjon hozzá!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
