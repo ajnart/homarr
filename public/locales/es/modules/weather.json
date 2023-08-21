@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Tormenta con Granizo",
       "unknown": "Desconocido"
     }
-  }
+  },
+  "error": ""
 }
