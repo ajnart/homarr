@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "Geçersiz URL",
         "text": "Widget'ınızın yapılandırmasında geçerli bir adres girdiğinizden emin olun"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }
