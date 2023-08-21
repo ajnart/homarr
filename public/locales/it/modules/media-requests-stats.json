@@ -5,7 +5,11 @@
     "settings": {
       "title": "Statistiche richieste multimediali",
       "direction": {
-        "label": "Direzione del layout."
+        "label": "Direzione del layout.",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
