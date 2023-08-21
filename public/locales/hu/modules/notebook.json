@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Jegyzettömb",
+		"description": "Egy markdown-alapú interaktív widget, amibe jegyzeteket írhatsz!",
 		"settings": {
-			"title": "",
+			"title": "A notebook widget beállításai",
 			"showToolbar": {
-				"label": ""
+				"label": "A markdown írást segítő eszköztár megjelenítése"
 			},
 			"content": {
-				"label": ""
+				"label": "A jegyzetfüzet tartalma"
 			}
 		}
 	}
