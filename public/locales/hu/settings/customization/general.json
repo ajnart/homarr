@@ -1,25 +1,25 @@
 {
-  "text": "",
+  "text": "A testreszabások lehetővé teszik, hogy a Homarrral kapcsolatos élményt az Ön preferenciáihoz igazítsa és konfigurálja.",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "Elrendezés",
+      "description": "Az elemek engedélyezése és letiltása a fejléc és a műszerfal csempéken"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "Gridstack",
+      "description": "Testreszabhatja a műszerfal területének viselkedését és oszlopait"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Oldal metaadatok",
+      "description": "Címek, logó és PWA beállítása"
     },
     "appereance": {
       "name": "Megjelenés",
-      "description": ""
+      "description": "A háttér, a színek és az alkalmazások megjelenésének testreszabása"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Kisegítő lehetőségek",
+      "description": "A Homarr konfigurálása fogyatékkal élő és fogyatékkal élő felhasználók számára"
     }
   }
 }
