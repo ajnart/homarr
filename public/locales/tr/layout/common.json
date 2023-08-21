@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Yukarı taşı",
+    "moveDown": "Aşağı taşı",
+    "addCategory": "Kategori ekle",
+    "addAbove": "yukarıda",
+    "addBelow": "aşağıda"
   }
 }
