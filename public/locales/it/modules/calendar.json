@@ -11,13 +11,25 @@
         "label": "Inizia la settimana di domenica"
       },
       "radarrReleaseType": {
-        "label": "Tipo di release Radarr"
+        "label": "Tipo di release Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": "Nascondi giorni della settimana"
       },
       "fontSize": {
-        "label": "Dimensioni carattere"
+        "label": "Dimensioni carattere",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
