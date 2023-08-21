@@ -12,7 +12,8 @@
         "label": "Интервал обновления (в минутах)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Ограничение количества строк текста"
