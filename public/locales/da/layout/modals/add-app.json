@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer"
+		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }
