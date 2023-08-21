@@ -6,6 +6,12 @@
 	"key": "Bližnjična tipka",
 	"action": "Dejanje",
 	"keybinds": "Vezave tipk",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Različica konfiguracijske sheme",
 		"configurationsCount": "Razpoložljive konfiguracije",
