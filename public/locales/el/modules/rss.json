@@ -12,7 +12,8 @@
         "label": "Διάστημα ανανέωσης (σε λεπτά)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Περιορισμός γραμμών κειμένου"
