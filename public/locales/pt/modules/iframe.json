@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "",
         "text": "Certifique-se de que você inseriu um endereço válido na configuração do seu widget"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }
