@@ -20,7 +20,6 @@ import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
-import { PiholeApiSummaryType } from './type';
 
 const definition = defineWidget({
   id: 'dns-hole-controls',

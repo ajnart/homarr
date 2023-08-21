@@ -106,7 +106,7 @@ export const useDnsHoleSummeryQuery = () => {
       configName: configName!,
     },
     {
-      refetchInterval: 3 * 60 * 1000,
+      staleTime: 1000 * 60 * 2,
     }
   );
 };

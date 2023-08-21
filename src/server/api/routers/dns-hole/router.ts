@@ -76,8 +76,6 @@ export const dnsHoleRouter = createTRPCRouter({
         }
       );
 
-      //const data: AdStatistics = ;
-
       data.adsBlockedTodayPercentage = data.adsBlockedToday / data.dnsQueriesToday;
       if (Number.isNaN(data.adsBlockedTodayPercentage)) {
         data.adsBlockedTodayPercentage = 0;
