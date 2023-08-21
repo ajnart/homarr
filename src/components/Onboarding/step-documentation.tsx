@@ -1,9 +1,11 @@
-import { Button, Card, Divider, Stack, Text, Title } from '@mantine/core';
+import { Button, Divider, Stack, Text, Title } from '@mantine/core';
 import { IconArrowRight, IconLink } from '@tabler/icons-react';
+
+import { OnboardingStepWrapper } from './common-wrapper';
 
 export const StepDocumentation = ({ next }: { next: () => void }) => {
   return (
-    <Card>
+    <OnboardingStepWrapper>
       <Title order={2} align="center" mb="lg">
         Documentation
       </Title>
@@ -20,8 +22,10 @@ export const StepDocumentation = ({ next }: { next: () => void }) => {
           Open documentation
         </Button>
         <Divider w={400} maw="100%" />
-        <Button onClick={next} rightIcon={<IconArrowRight size="1rem" />}>Finish</Button>
+        <Button onClick={next} rightIcon={<IconArrowRight size="1rem" />}>
+          Finish
+        </Button>
       </Stack>
-    </Card>
+    </OnboardingStepWrapper>
   );
 };

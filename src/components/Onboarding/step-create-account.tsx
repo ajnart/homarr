@@ -1,4 +1,4 @@
-import { Button, Card, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
+import { Button, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signUpFormSchema } from '~/validations/user';
+
+import { OnboardingStepWrapper } from './common-wrapper';
 
 export const StepCreateAccount = ({ next }: { next: () => void }) => {
   const [isSigninIn, setIsSigninIn] = useState(false);
@@ -37,15 +39,14 @@ export const StepCreateAccount = ({ next }: { next: () => void }) => {
   };
 
   return (
-    <Card shadow="lg" withBorder>
+    <OnboardingStepWrapper>
       <Title order={2} align="center" mb="md">
         Create your administrator account
       </Title>
       <form
-        style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
         onSubmit={form.onSubmit(handleSubmit)}
       >
-        <Stack w={400} maw="90%" spacing="sm" align="center">
+        <Stack>
           <TextInput
             size="md"
             w="100%"
@@ -74,6 +75,6 @@ export const StepCreateAccount = ({ next }: { next: () => void }) => {
           </Button>
         </Stack>
       </form>
-    </Card>
+    </OnboardingStepWrapper>
   );
 };

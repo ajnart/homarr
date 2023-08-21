@@ -1,9 +1,11 @@
-import { Button, Card, Stack, Title } from '@mantine/core';
+import { Button, Stack, Title } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
+
+import { OnboardingStepWrapper } from './common-wrapper';
 
 export const StepDockerImport = ({ next }: { next: () => void }) => {
   return (
-    <Card>
+    <OnboardingStepWrapper>
       <Title order={2} align="center" mb="lg">
         Automatic container import
       </Title>
@@ -13,6 +15,6 @@ export const StepDockerImport = ({ next }: { next: () => void }) => {
           Next
         </Button>
       </Stack>
-    </Card>
+    </OnboardingStepWrapper>
   );
 };
