@@ -109,11 +109,18 @@ const processPiHole = async (app: ConfigAppType, enable: boolean) => {
   const pihole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
 
   if (enable) {
-    await pihole.enable();
+    try {
+      await pihole.enable();
+    } catch (error) {
+      Consola.error((error as Error).message);
+    }
     return;
   }
-
-  await pihole.disable();
+  try {
+    await pihole.disable();
+  } catch (error) {
+    Consola.error((error as Error).message);
+  }
 };
 
 const collectPiHoleSummary = async (app: ConfigAppType) => {
