@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Άνοιγμα όλων σε νέα καρτέλα"
     }
+  },
+  "menu": {
+    "moveUp": "",
+    "moveDown": "",
+    "addCategory": "",
+    "addAbove": "",
+    "addBelow": ""
   }
 }
