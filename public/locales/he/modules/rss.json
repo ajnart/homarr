@@ -12,8 +12,8 @@
         "label": "מרווח הזמן לרענון (בשניות)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "אפשר עיצוב HTML (מסוכן)",
+        "info": "התרת עיצוב HTML מבחוץ עלולה להיות מסוכנת.<br/>אנא ודא שהעדכון הוא ממקור מהימן."
       },
       "textLinesClamp": {
         "label": "הגבלת שורות טקסט"
