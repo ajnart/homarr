@@ -12,6 +12,7 @@ export const notebookRouter = createTRPCRouter({
   update: publicProcedure
     .input(z.object({ widgetId: z.string(), content: z.string(), configName: z.string() }))
     .mutation(async ({ input }) => {
+      //TODO: #1305 Remove use of DISABLE_EDIT_MODE for auth update
       if (!process.env.DISABLE_EDIT_MODE) {
         throw new TRPCError({
           code: 'METHOD_NOT_SUPPORTED',
