@@ -5,7 +5,11 @@
     "settings": {
       "title": "Statistiques des demandes",
       "direction": {
-        "label": ""
+        "label": "",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },
