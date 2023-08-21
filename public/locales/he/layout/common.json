@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "הזזה למעלה",
+    "moveDown": "הזזה למטה",
+    "addCategory": "הוספת קטגוריה",
+    "addAbove": "מעל",
+    "addBelow": "מתחת"
   }
 }
