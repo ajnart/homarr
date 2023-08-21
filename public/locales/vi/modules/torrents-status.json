@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Đã xảy ra lỗi không mong muốn",
-        "text": "Homarr không thể giao tiếp với ứng dụng torrent của bạn. Vui lòng kiểm tra lại cấu hình"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Đang tải..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Quản lý bởi",
