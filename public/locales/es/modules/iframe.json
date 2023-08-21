@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "URL invalida",
         "text": "Asegúrate de haber introducido una dirección válida en la configuración del widget"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }
