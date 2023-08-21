@@ -6,6 +6,12 @@
 	"key": "מקש קיצור",
 	"action": "פעולה",
 	"keybinds": "שילוב מקשים",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "גירסת סכימת תצורה",
 		"configurationsCount": "תצורות זמינות",
