@@ -1,4 +1,4 @@
-import { Box, Card, NavLink, Stack, Text, Title, createStyles } from '@mantine/core';
+import { NavLink, Stack, Text, Title, createStyles } from '@mantine/core';
 import {
   IconChevronRight,
   IconDashboard,
@@ -7,10 +7,12 @@ import {
 } from '@tabler/icons-react';
 import Image from 'next/image';
 
+import { OnboardingStepWrapper } from './common-wrapper';
+
 export const StepOnboardingFinished = () => {
   const { classes } = useStyles();
   return (
-    <Card>
+    <OnboardingStepWrapper>
       <Stack align="center">
         <Image src="/imgs/logo/logo.svg" alt="" width={50} height={50} />
         <Title order={2} align="center">
@@ -45,7 +47,7 @@ export const StepOnboardingFinished = () => {
           />
         </Stack>
       </Stack>
-    </Card>
+    </OnboardingStepWrapper>
   );
 };
 

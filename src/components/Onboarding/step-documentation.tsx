@@ -1,5 +1,5 @@
 import { Button, Divider, Stack, Text, Title } from '@mantine/core';
-import { IconArrowRight, IconLink } from '@tabler/icons-react';
+import { IconArrowRight, IconExternalLink } from '@tabler/icons-react';
 
 import { OnboardingStepWrapper } from './common-wrapper';
 
@@ -16,13 +16,13 @@ export const StepDocumentation = ({ next }: { next: () => void }) => {
           component="a"
           href="https://homarr.dev/docs/introduction/after-the-installation"
           target="_blank"
-          leftIcon={<IconLink size="1rem" />}
-          variant="light"
+          rightIcon={<IconExternalLink size="1rem" />}
+          variant="default"
         >
           Open documentation
         </Button>
-        <Divider w={400} maw="100%" />
-        <Button onClick={next} rightIcon={<IconArrowRight size="1rem" />}>
+        <Divider h={30} />
+        <Button onClick={next} rightIcon={<IconArrowRight size="1rem" />} fullWidth>
           Finish
         </Button>
       </Stack>

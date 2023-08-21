@@ -11,7 +11,7 @@ export const StepDockerImport = ({ next }: { next: () => void }) => {
       </Title>
 
       <Stack align="center">
-        <Button onClick={next} rightIcon={<IconArrowRight size="1rem" />}>
+        <Button onClick={next} rightIcon={<IconArrowRight size="1rem" />} fullWidth>
           Next
         </Button>
       </Stack>
