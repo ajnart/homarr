@@ -26,8 +26,8 @@
 			"description": "Ouvrez l'application dans un nouvel onglet au lieu de l'onglet actuel."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Description de l'Application",
+			"description": "Le texte que vous allez entrer apparaitra quand vous survolerez votre application.\nUtilisez cela pour donner plus d'informations aux utilisateurs à propos de votre application ou laissez vide pour qu'il n'y ait rien."
 		},
 		"customProtocolWarning": "Utilisation d'un protocole non standard. Ceci peut nécessiter des applications préinstallées et peut introduire des failles de sécurité. Assurez-vous que votre adresse est sécurisée et de confiance."
 	},
@@ -55,16 +55,16 @@
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Status du nom de l'application",
+			"description": "Choisissez où vous voulez que le titre apparaisse, si vous voulez.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Afficher le titre sur la tuile uniquement",
+				"hover": "Afficher le titre au survol de l'info-bulle uniquement",
+				"hidden": "Ne pas afficher du tout"
 			}
 		},
 		"positionAppName": {
-			"label": "",
+			"label": "Position du nom de l'application",
 			"description": "",
 			"dropdown": {
 				"top": "",
