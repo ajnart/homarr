@@ -7,10 +7,10 @@
 	"action": "Eylem",
 	"keybinds": "Tuş atamaları",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Aydınlık/karanlık modu",
+		"focusSearchBar": "Arama çubuğuna odaklan",
+		"openDocker": "Docker Widget'ını açın",
+		"toggleEdit": "Düzenleme Modunu Değiştir"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Yapılandırma şeması sürümü",
