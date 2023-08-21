@@ -11,13 +11,25 @@
         "label": "Đặt đầu tuần là Chủ Nhật"
       },
       "radarrReleaseType": {
-        "label": "Loại phát hành Radarr"
+        "label": "Loại phát hành Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
       "fontSize": {
-        "label": ""
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
