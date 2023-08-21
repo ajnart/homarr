@@ -5,7 +5,11 @@
     "settings": {
       "title": "Medya talep istatistikleri",
       "direction": {
-        "label": "Yerleşimin yönü."
+        "label": "Yerleşimin yönü.",
+        "data": {
+          "row": "Yatay",
+          "column": "Dikey"
+        }
       }
     }
   },
