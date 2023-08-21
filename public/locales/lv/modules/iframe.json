@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "Nederīgs URL",
         "text": "Pārliecinieties, ka jūsu logrīka konfigurācijā ir ievadīta derīga adrese"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }
