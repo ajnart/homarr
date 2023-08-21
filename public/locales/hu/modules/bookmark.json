@@ -12,7 +12,7 @@
         "label": "Elemek"
       },
       "layout": {
-        "label": "",
+        "label": "Elrendezés",
         "data": {
           "autoGrid": "Automatikus rács",
           "horizontal": "Vízszintes",
@@ -40,6 +40,6 @@
     "newTab": "Megnyitás új lapon",
     "hideHostname": "Hostnév elrejtése",
     "hideIcon": "Ikon elrejtése",
-    "delete": ""
+    "delete": "Törlés"
   }
 }
