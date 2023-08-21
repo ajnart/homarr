@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "Ogiltig URL",
         "text": "Kontrollera att du har angett en giltig adress i konfigurationen av din widget"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }
