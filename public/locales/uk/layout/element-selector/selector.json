@@ -7,5 +7,19 @@
     "goBack": "Повернутися на попередню сторінку",
     "actionIcon": {
         "tooltip": "Додати плитку"
+    },
+    "apps": "",
+    "app": {
+        "defaultName": ""
+    },
+    "widgets": "",
+    "categories": "",
+    "category": {
+        "newName": "",
+        "defaultName": "",
+        "created": {
+            "title": "",
+            "message": ""
+        }
     }
 }
