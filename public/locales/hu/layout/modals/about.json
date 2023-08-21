@@ -1,24 +1,24 @@
 {
-	"description": "",
-	"contact": "",
-	"addToDashboard": "",
-	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
+	"description": "A Homarr egy <strong>elegáns</strong>, <strong>modern</strong> kezelőfelület, amely az összes alkalmazást és szolgáltatást az Ön keze ügyébe helyezi. A Homarr segítségével mindent egyetlen kényelmes helyen érhet el és irányíthat. A Homarr zökkenőmentesen integrálódik az Ön által hozzáadott alkalmazásokkal, értékes információkat biztosítva Önnek, és teljes körű ellenőrzést biztosítva. A telepítés gyerekjáték, és a Homarr a telepítési módszerek széles skáláját támogatja.",
+	"contact": "Problémája vagy kérdése van? Lépjen kapcsolatba velünk!",
+	"addToDashboard": "Hozzáadás a kezelőfelülethez",
+	"tip": "A Mod a módosító billentyűre utal, ez a Ctrl és a Command/Super/Windows billentyű",
+	"key": "Gyorsbillentyűk",
+	"action": "Esemény",
+	"keybinds": "Billentyűkombinációk",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Világos/sötét üzemmód váltása",
+		"focusSearchBar": "Fókusz a Keresősoron",
+		"openDocker": "Docker Widget megnyitása",
+		"toggleEdit": "Szerkesztési mód váltása"
 	},
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "Konfigurációs séma verziója",
+		"configurationsCount": "Elérhető konfigurációk",
 		"version": "",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
-		"experimental_disableEditMode": ""
+		"nodeEnvironment": "Csomópont környezet",
+		"i18n": "Betöltött I18n fordítási névterek",
+		"locales": "Beállított I18n helyi nyelvek",
+		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Szerkesztési mód kikapcsolása"
 	}
 }
