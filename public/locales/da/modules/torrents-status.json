@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Der opstod en uventet fejl",
-        "text": ""
+        "text": "Kan ikke kommunikere med dine Torrent-klienter. Tjek venligst din konfiguration"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Indlæser",
+      "description": "Etablerer en forbindelse"
     },
     "popover": {
       "introductionPrefix": "Administreret af",
