@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "שגיאה לא צפויה התרחשה",
-        "text": "לא ניתן לתקשר עם לקוחות הטורנט שלך. אנא בדוק את התצורה שלך"
+        "text": ""
       }
     },
     "loading": {
-      "title": "טוען..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "מנוהל על ידי",
