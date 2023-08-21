@@ -12,7 +12,8 @@
         "label": "Verversingsinterval (in minuten)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": ""
