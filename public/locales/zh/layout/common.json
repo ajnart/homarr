@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "在新标签页中打开全部"
     }
+  },
+  "menu": {
+    "moveUp": "",
+    "moveDown": "",
+    "addCategory": "",
+    "addAbove": "",
+    "addBelow": ""
   }
 }
