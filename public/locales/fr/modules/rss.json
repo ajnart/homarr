@@ -12,7 +12,8 @@
         "label": "Intervalle d'actualisation (en minutes)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Limitateur de longueur de ligne de texte"
