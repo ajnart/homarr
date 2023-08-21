@@ -1,0 +1,45 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "name": {
+        "label": "",
+        "info": ""
+      },
+      "items": {
+        "label": ""
+      },
+      "layout": {
+        "label": "",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "item": {
+    "validation": {
+      "length100": "",
+      "length200": "",
+      "length400": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "",
+    "url": "",
+    "newTab": "",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": ""
+  }
+}
