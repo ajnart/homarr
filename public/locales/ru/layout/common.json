@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Открыть все в новых вкладках"
     }
+  },
+  "menu": {
+    "moveUp": "",
+    "moveDown": "",
+    "addCategory": "",
+    "addAbove": "",
+    "addBelow": ""
   }
 }
