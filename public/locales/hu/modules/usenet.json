@@ -1,49 +1,49 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Lehetővé teszi a Usenet-példány megtekintését és kezelését."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nem találtunk támogatott letöltő klienst!",
+        "text": "Adjon hozzá egy támogatott Usenet letöltési klienst az aktuális letöltések megtekintéséhez"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Várólista",
+    "history": "Előzmények"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Méret balra",
+    "paused": "Szünet"
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "Név",
+      "size": "Méret",
+      "eta": "Hátralévő idő",
+      "progress": "Folyamat"
     },
-    "empty": "",
+    "empty": "Üres",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Hiba",
+      "message": "Hiba történt"
     },
-    "paused": ""
+    "paused": "Szünet"
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
-      "duration": ""
+      "name": "Név",
+      "size": "Méret",
+      "duration": "Hossz"
     },
-    "empty": "",
+    "empty": "Üres",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Hiba",
+      "message": "Hiba betöltési előzmények"
     },
-    "paused": ""
+    "paused": "Szünet"
   }
 }
