@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "您的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮保存您的更改。"
+		"popover": "您的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮保存您的更改。",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }
