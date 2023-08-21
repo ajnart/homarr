@@ -6,6 +6,12 @@
 	"key": "Īsinājumtaustiņš",
 	"action": "Darbība",
 	"keybinds": "Taustiņu saites",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurācijas shēmas versija",
 		"configurationsCount": "Pieejamās konfigurācijas",
