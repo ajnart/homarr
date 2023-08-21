@@ -7,10 +7,10 @@
 	"action": "Aktion",
 	"keybinds": "Tastenbelegung",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Umschalten zwischen Hell- und Dunkelmodus",
+		"focusSearchBar": "Suchleiste fokussieren",
+		"openDocker": "Docker Widget öffnen",
+		"toggleEdit": "Bearbeitungsmodus umschalten"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Version des Konfigurationsschemas",
