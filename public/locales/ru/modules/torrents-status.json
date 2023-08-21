@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Произошла непредвиденная ошибка",
-        "text": "Homarr не может связаться с вашими Torrent-клиентами. Пожалуйста, проверьте настройки"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Загрузка..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Под управлением",
