@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Ajouter une tuile"
     },
-    "apps": "",
+    "apps": "Applications",
     "app": {
-        "defaultName": ""
+        "defaultName": "Votre Application"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Catégories",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Nom de la nouvelle catégorie",
+        "defaultName": "Nouvelle catégorie",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Catégorie créée",
+            "message": "La catégorie \"{{name}}\" a été créée"
         }
     }
 }
