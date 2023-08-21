@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Aggiungi riquadro"
     },
-    "apps": "",
+    "apps": "Applicazioni",
     "app": {
-        "defaultName": ""
+        "defaultName": "La tua app"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Categorie",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Nome della nuova categoria",
+        "defaultName": "Nuova Categoria",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Categoria creata",
+            "message": "La categoria \"{{name}}\" è stata creata"
         }
     }
 }
