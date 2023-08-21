@@ -12,7 +12,8 @@
         "label": "Atsvaidzināšanas intervāls (minūtēs)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Teksta līniju skava"
