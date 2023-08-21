@@ -14,8 +14,8 @@
         "label": "סוג שחרור של Radarr",
         "data": {
           "inCinemas": "בבתי קולנוע",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "physicalRelease": "פיזי",
+          "digitalRelease": "דיגיטלי"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "גודל גופן",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "קטן במיוחד",
+          "sm": "קטן",
+          "md": "בינוני",
+          "lg": "גדול",
+          "xl": "גדול מאוד"
         }
       }
     }
