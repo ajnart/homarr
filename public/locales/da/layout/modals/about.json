@@ -7,10 +7,10 @@
 	"action": "Handling",
 	"keybinds": "Genvejstaster",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Slå lys/mørk tilstand til/fra",
+		"focusSearchBar": "Fokusér på søgebjælken",
+		"openDocker": "Åbn docker-widget",
+		"toggleEdit": "Skift redigeringstilstand"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurationsskema version",
