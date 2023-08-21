@@ -20,36 +20,36 @@
   "tooltips": {
     "approve": "Talebi Onayla",
     "decline": "Talebi reddet",
-    "approving": ""
+    "approving": "Talep Onaylanıyor..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Onaylanan",
+    "declining": "Reddedilen",
+    "request": "talep et...",
+    "approved": "Talep onaylandı!",
+    "declined": "Talep reddedildi!"
   },
   "detail": {
-    "label": "",
-    "id": "",
-    "device": "",
+    "label": "Meraklısı için istatistikler",
+    "id": "Kimlik",
+    "device": "Cihaz",
     "video": {
-      "video": "",
-      "resolution": "",
-      "framerate": "",
-      "codec": ""
+      "video": "Video",
+      "resolution": "Çözünürlük",
+      "framerate": "Kare hızı",
+      "codec": "Video Kodeği"
     },
     "audio": {
-      "audio": "",
-      "channels": "",
-      "codec": ""
+      "audio": "Ses",
+      "channels": "Ses Kanalları",
+      "codec": "Ses Kodeği"
     },
     "transcoding": {
-      "transcoding": "",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "transcoding": "Dönüştürme",
+      "context": "İçerik",
+      "requested": "Talep Edilen Donanım Kodlaması",
+      "source": "Kaynak Kodek",
+      "target": "Hedef Kodek"
     }
   }
 }
