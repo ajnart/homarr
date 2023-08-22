@@ -14,7 +14,7 @@
       "layout": {
         "label": "布局",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "自动网格",
           "horizontal": "",
           "vertical": ""
         }
@@ -39,7 +39,7 @@
     "url": "",
     "newTab": "在新标签页中打开",
     "hideHostname": "",
-    "hideIcon": "",
+    "hideIcon": "隐藏图标",
     "delete": "删除"
   }
 }
