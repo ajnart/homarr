@@ -31,21 +31,21 @@
   },
   "detail": {
     "label": "",
-    "id": "",
-    "device": "",
+    "id": "ID",
+    "device": "Device",
     "video": {
-      "video": "",
-      "resolution": "",
-      "framerate": "",
-      "codec": ""
+      "video": "视频",
+      "resolution": "分辨率",
+      "framerate": "帧频",
+      "codec": "视频编码"
     },
     "audio": {
-      "audio": "",
-      "channels": "",
-      "codec": ""
+      "audio": "音频",
+      "channels": "音频声道",
+      "codec": "音频编码"
     },
     "transcoding": {
-      "transcoding": "",
+      "transcoding": "转码",
       "context": "",
       "requested": "",
       "source": "",
