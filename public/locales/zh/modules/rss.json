@@ -12,8 +12,8 @@
         "label": "刷新间隔(以分钟计)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "允许格式化HTML(危险)",
+        "info": "允许从外部进行HTML格式化可能是危险的。<br/>请确保提要来自可信来源。"
       },
       "textLinesClamp": {
         "label": "文本线夹"
