@@ -14,7 +14,7 @@
       "layout": {
         "label": "Макет",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Автоматическая сетка",
           "horizontal": "Горизонтальный",
           "vertical": "Вертикальный"
         }
@@ -29,8 +29,8 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
+      "length100": "Длина должна быть в диапазоне от 1 до 100",
+      "length200": "Длина должна быть в диапазоне от 1 до 200",
       "length400": "",
       "invalidLink": "",
       "errorMsg": ""
