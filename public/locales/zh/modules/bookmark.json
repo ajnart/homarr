@@ -15,8 +15,8 @@
         "label": "布局",
         "data": {
           "autoGrid": "自动网格",
-          "horizontal": "",
-          "vertical": ""
+          "horizontal": "横向",
+          "vertical": "垂直"
         }
       }
     }
