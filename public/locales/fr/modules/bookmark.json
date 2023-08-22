@@ -6,7 +6,7 @@
       "title": "Paramètres des marque-pages",
       "name": {
         "label": "Nom du widget",
-        "info": ""
+        "info": "Laissez vide pour garder le titre caché."
       },
       "items": {
         "label": "Éléments"
@@ -14,7 +14,7 @@
       "layout": {
         "label": "Mise en page",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Grille automatique",
           "horizontal": "",
           "vertical": ""
         }
@@ -29,9 +29,9 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
+      "length100": "La longueur doit être comprise entre 1 et 100",
+      "length200": "La longueur doit être comprise entre 1 et 200",
+      "length400": "La longueur doit être comprise entre 1 et 400",
       "invalidLink": "",
       "errorMsg": ""
     },
