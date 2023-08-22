@@ -74,8 +74,8 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "App 名称行数",
+			"description": "定义标题最多能容纳多少行。设置为 0 表示无限制。"
 		}
 	},
 	"integration": {
@@ -100,11 +100,11 @@
 	},
 	"validation": {
 		"popover": "您的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮保存您的更改。",
-		"name": "",
+		"name": "名称为必填项",
 		"noUrl": "Url是必填项",
 		"invalidUrl": "不是有效的 Url",
 		"noIconUrl": "此字段为必填",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"noExternalUri": "外部地址为必填项",
+		"invalidExternalUri": "无效的外部地址"
 	}
 }
