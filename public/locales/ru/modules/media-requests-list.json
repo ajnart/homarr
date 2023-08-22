@@ -20,17 +20,17 @@
   "tooltips": {
     "approve": "Одобрить запросы",
     "decline": "Отклонить запросы",
-    "approving": ""
+    "approving": "Утверждение запроса..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Утверждение",
+    "declining": "Отказ",
+    "request": "запрос...",
+    "approved": "Запрос был одобрен!",
+    "declined": "Запрос отклонен!"
   },
   "detail": {
-    "label": "",
+    "label": "Статистика для ботанов",
     "id": "ID",
     "device": "Устройство",
     "video": {
@@ -41,15 +41,15 @@
     },
     "audio": {
       "audio": "Аудио",
-      "channels": "",
-      "codec": ""
+      "channels": "Аудиоканалы",
+      "codec": "Аудиокодек"
     },
     "transcoding": {
-      "transcoding": "",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "transcoding": "Преобразование",
+      "context": "Контекст",
+      "requested": "Запрошено аппаратное кодирование",
+      "source": "Исходный кодек",
+      "target": "Целевой кодек"
     }
   }
 }
