@@ -91,7 +91,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
 
       {isError && (
         <Alert color="red" icon={<IconAlertTriangleFilled size="0.9rem" />} mb="lg">
-          <Text color="red">User creation has failed: {error.message}</Text>
+          <Text color="red">{t('steps.finish.failed', { error: error.message })}</Text>
         </Alert>
       )}
 

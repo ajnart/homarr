@@ -35,7 +35,8 @@
                 },
                 "notSet": "Not set",
                 "valid": "Valid"
-            }
+            },
+            "failed": "User creation has failed: {{error}}"
         },
         "completed": {
             "alert": {
