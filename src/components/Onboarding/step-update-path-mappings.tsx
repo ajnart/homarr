@@ -39,7 +39,7 @@ services:
 const added = { color: 'green', label: '+' };
 
 export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
-  const [selectedTab, setSelectedTab] = useState<TabsValue | null>(null);
+  const [selectedTab, setSelectedTab] = useState<TabsValue>("standard_docker");
   return (
     <OnboardingStepWrapper>
       <Title order={2} align="center" mb="md">
