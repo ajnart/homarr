@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Radarr laiduma tips",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "Kinoteātros",
+          "physicalRelease": "Fiziski",
+          "digitalRelease": "Digitāli"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "Fonta Izmērs",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Īpaši Mazs",
+          "sm": "Mazs",
+          "md": "Vidējs",
+          "lg": "Liels",
+          "xl": "Īpaši Liels"
         }
       }
     }
