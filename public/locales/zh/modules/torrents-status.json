@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "显示支持的Torrent客户端的torrent列表。",
+    "description": "显示来自支持的Torrent客户端的Torrent列表。",
     "settings": {
       "title": "Torrent 小部件设置",
       "refreshInterval": {
@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "发生了一个意外的错误",
-        "text": ""
+        "text": "无法与您的 Torrent 客户端通信。请检查您的配置"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "加载中",
+      "description": "建立连接"
     },
     "popover": {
       "introductionPrefix": "管理方：",
