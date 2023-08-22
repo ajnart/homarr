@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Type de sortie Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "Au cinéma",
+          "physicalRelease": "Physique",
+          "digitalRelease": "Digitale"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "Taille de la police",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Très Petite",
+          "sm": "Petite",
+          "md": "Moyenne",
+          "lg": "Grande",
+          "xl": "Très Grande"
         }
       }
     }
