@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Τύπος κυκλοφορίας Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "Στους Κινηματογράφους",
+          "physicalRelease": "Φυσική",
+          "digitalRelease": "Ψηφιακή"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "Μέγεθος γραμματοσειράς",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Πολύ Μικρό",
+          "sm": "Μικρό",
+          "md": "Μεσαίο",
+          "lg": "Μεγάλο",
+          "xl": "Πολύ μεγάλο"
         }
       }
     }
