@@ -10,16 +10,16 @@
     },
     "apps": "Aplicaciones",
     "app": {
-        "defaultName": ""
+        "defaultName": "Tu aplicación"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Categorías",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Nombre de la nueva categoría",
+        "defaultName": "Nueva categoría",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Categoría creada",
+            "message": "La categoría \"{{name}}\" ha sido creada"
         }
     }
 }
