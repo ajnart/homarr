@@ -8,14 +8,14 @@
     "actionIcon": {
         "tooltip": "添加磁贴"
     },
-    "apps": "",
+    "apps": "应用程序",
     "app": {
-        "defaultName": ""
+        "defaultName": "您的应用程序"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "小部件",
+    "categories": "类别",
     "category": {
-        "newName": "",
+        "newName": "新分类的名称",
         "defaultName": "",
         "created": {
             "title": "",
