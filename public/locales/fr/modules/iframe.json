@@ -39,7 +39,7 @@
         "title": "URL invalide",
         "text": "Assurez-vous que vous avez saisi une adresse valide dans la configuration de votre widget"
       },
-      "browserSupport": ""
+      "browserSupport": "Votre navigateur internet ne supporte pas les iframes. Veillez à le mettre à jour."
     }
   }
 }
