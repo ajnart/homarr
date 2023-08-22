@@ -5,10 +5,10 @@
     "settings": {
       "title": "Statistiques des demandes",
       "direction": {
-        "label": "",
+        "label": "Direction de l'agencement.",
         "data": {
-          "row": "",
-          "column": ""
+          "row": "Horizontal",
+          "column": "Vertical"
         }
       }
     }
