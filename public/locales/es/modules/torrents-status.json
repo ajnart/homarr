@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Ocurrió un error inesperado",
-        "text": ""
+        "text": "No se puede comunicar con tus clientes de Torrent. Por favor, verifica tu configuración"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Cargando",
+      "description": "Estableciendo una conexión"
     },
     "popover": {
       "introductionPrefix": "Gestionado por",
