@@ -70,15 +70,29 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   if (isInitialLoading || !data || !configName) {
     return <WidgetLoading />;
   }
-  const enabledDnsIds = () => {
-    const list = data?.status.filter((dns) => dns.status === 'enabled').map((dns) => dns.appId);
 
-    if (list.length === 0) {
+  type getDnsStatusAcc = {
+    enabled: string[];
+    disabled: string[];
+  };
+  const getDnsStatus = () => {
+    const dnsList = data?.status.reduce(
+      (acc: getDnsStatusAcc, dns) => {
+        if (dns.status === 'enabled') {
+          acc.enabled.push(dns.appId);
+        } else if (dns.status === 'disabled') {
+          acc.disabled.push(dns.appId);
+        }
+        return acc;
+      },
+      { enabled: [], disabled: [] }
+    );
+
+    if (dnsList.enabled.length === 0 && dnsList.disabled.length === 0) {
       return undefined;
     }
-    return list;
+    return dnsList;
   };
-
   const reFetchSumaryDns = () => {
     trpcUltils.dnsHole.summary.invalidate();
   };
@@ -90,7 +104,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             await mutateAsync({
               action: 'enable',
               configName,
-              currentEnabled: enabledDnsIds(),
+              appsToChange: getDnsStatus()?.disabled,
             });
             reFetchSumaryDns();
           }}
@@ -106,7 +120,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             await mutateAsync({
               action: 'disable',
               configName,
-              currentEnabled: enabledDnsIds(),
+              appsToChange: getDnsStatus()?.enabled,
             });
             reFetchSumaryDns();
           }}
@@ -148,18 +162,14 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                       await mutateAsync({
                         action: dnsHole.status === 'enabled' ? 'disable' : 'enable',
                         configName,
-                        currentEnabled: enabledDnsIds(),
+                        appsToChange: [app.id],
                       });
                       reFetchSumaryDns();
                     }}
                   >
                     <Badge
                       variant="dot"
-                      color={
-                        dnsLightStatus(fetchingDnsSumary || changingStatus, dnsHole.status)
-                        // changingStatus ? 'blue' : dnsHole.status === 'enabled' ? 'green' : 'red'
-                        // changingStatus ? 'blue' : dnsHole.status === 'enabled' ? 'green' : 'red'
-                      }
+                      color={dnsLightStatus(fetchingDnsSumary || changingStatus, dnsHole.status)}
                       styles={(theme) => ({
                         root: {
                           '&:hover': {
