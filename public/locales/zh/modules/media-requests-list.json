@@ -20,17 +20,17 @@
   "tooltips": {
     "approve": "同意请求",
     "decline": "拒绝请求",
-    "approving": ""
+    "approving": "批准请求..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "批准",
+    "declining": "下降",
+    "request": "请求...",
+    "approved": "请求被批准！",
+    "declined": "请求被拒绝！"
   },
   "detail": {
-    "label": "",
+    "label": "详细统计信息",
     "id": "ID",
     "device": "Device",
     "video": {
@@ -46,10 +46,10 @@
     },
     "transcoding": {
       "transcoding": "转码",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "context": "背景信息",
+      "requested": "要求硬件编码",
+      "source": "原始编码",
+      "target": "目标编码"
     }
   }
 }
