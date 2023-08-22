@@ -22,7 +22,11 @@ export const dnsHoleRouter = createTRPCRouter({
       const config = getConfig(input.configName);
 
       const applicableApps = config.apps.filter(
-        (app) => app.id && input.appsToChange?.includes(app.id)
+        (app) =>
+          app.id &&
+          app.integration?.type &&
+          input.appsToChange?.includes(app.id) &&
+          ['pihole', 'adGuardHome'].includes(app.integration?.type)
       );
 
       await Promise.all(
