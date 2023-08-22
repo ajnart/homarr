@@ -39,7 +39,7 @@
         "title": "无效链接",
         "text": "确保您在小部件配置中输入了一个有效的地址"
       },
-      "browserSupport": ""
+      "browserSupport": "您的浏览器不支持 iframe。请更新您的浏览器。"
     }
   }
 }
