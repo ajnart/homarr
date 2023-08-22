@@ -6,6 +6,7 @@ import {
   IconManualGearbox,
 } from '@tabler/icons-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { OnboardingStepWrapper } from './common-wrapper';
 
@@ -22,6 +23,8 @@ export const StepOnboardingFinished = () => {
 
         <Stack>
           <NavLink
+            component={Link}
+            href="/b/default"
             rightSection={<IconChevronRight size="0.8rem" stroke={1.5} />}
             className={classes.link}
             icon={<IconDashboard />}
@@ -30,6 +33,8 @@ export const StepOnboardingFinished = () => {
             active
           />
           <NavLink
+            component={Link}
+            href="/manage"
             rightSection={<IconChevronRight size="0.8rem" stroke={1.5} />}
             className={classes.link}
             icon={<IconManualGearbox />}
@@ -38,6 +43,9 @@ export const StepOnboardingFinished = () => {
             active
           />
           <NavLink
+            component='a'
+            href="https://homarr.dev"
+            target="_blank"
             rightSection={<IconChevronRight size="0.8rem" stroke={1.5} />}
             className={classes.link}
             icon={<IconFileText />}
