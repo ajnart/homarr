@@ -12,8 +12,8 @@
         "label": "Intervalo de refresco (en minutos)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Permitir formato HTML (Peligroso)",
+        "info": "Permitir el formato HTML desde fuera podría ser peligroso.<br/>Asegúrate de que proviene de una fuente confiable."
       },
       "textLinesClamp": {
         "label": "Límite de líneas de texto"
