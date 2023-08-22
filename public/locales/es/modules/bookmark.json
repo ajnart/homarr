@@ -14,7 +14,7 @@
       "layout": {
         "label": "Diseño",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Cuadrícula automática",
           "horizontal": "Horizontal",
           "vertical": "Vertical"
         }
@@ -29,17 +29,17 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "La longitud debe estar entre 1 y 100",
+      "length200": "La longitud debe estar entre 1 y 200",
+      "length400": "La longitud debe estar entre 1 y 400",
+      "invalidLink": "No es un enlace válido",
+      "errorMsg": "No se guardó, porque hubo errores de validación. Por favor, ajusta tus entradas"
     },
     "name": "Nombre",
-    "url": "",
+    "url": "URL",
     "newTab": "Abrir en una pestaña nueva",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Ocultar nombre de host",
+    "hideIcon": "Ocultar icono",
     "delete": "Eliminar"
   }
 }
