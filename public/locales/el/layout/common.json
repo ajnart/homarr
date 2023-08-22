@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Μετακίνηση επάνω",
+    "moveDown": "Μετακίνηση κάτω",
+    "addCategory": "Προσθήκη κατηγορίας",
+    "addAbove": "πάνω",
+    "addBelow": "κάτω"
   }
 }
