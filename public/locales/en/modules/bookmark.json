@@ -29,9 +29,7 @@
   },
   "item": {
     "validation": {
-      "length100": "Length must be between 1 and 100",
-      "length200": "Length must be between 1 and 200",
-      "length400": "Length must be between 1 and 400",
+      "length": "Length must be between {{shortest}} and {{longest}}",
       "invalidLink": "Not a valid link",
       "errorMsg": "Did not save, because there were validation errors. Please adust your inputs"
     },

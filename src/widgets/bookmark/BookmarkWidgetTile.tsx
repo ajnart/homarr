@@ -84,11 +84,11 @@ const definition = defineWidget({
                 return undefined;
               }
 
-              return t('item.validation.length100');
+              return t('item.validation.length', {shortest: "1", longest: "100"});
             },
             href: (value) => {
               if (!z.string().min(1).max(200).safeParse(value).success) {
-                return t('item.validation.length200');
+                return t('item.validation.length', {shortest: "1", longest: "200"});
               }
 
               if (!z.string().url().safeParse(value).success) {
@@ -102,7 +102,7 @@ const definition = defineWidget({
                 return undefined;
               }
 
-              return t('item.validation.length400');
+              return t('item.validation.length', {shortest: "1", longest: "400"});
             },
           },
           validateInputOnChange: true,
