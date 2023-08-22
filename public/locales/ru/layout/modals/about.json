@@ -7,10 +7,10 @@
 	"action": "Действие",
 	"keybinds": "Сочетания клавиш",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Переключить светлую/темную тему",
+		"focusSearchBar": "Перейти в панель поиска",
+		"openDocker": "Открыть виджет docker",
+		"toggleEdit": "Переключиться в режим редактирования"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Версия схемы конфигурации",
