@@ -77,7 +77,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const configs = files.map((file) => getConfig(file));
   const configSchemaVersions = configs.map((config) => config.schemaVersion);
 
-  const translations = await getServerSideTranslations([], ctx.locale, ctx.req, ctx.res);
+  const translations = await getServerSideTranslations(['password-requirements'], ctx.locale, ctx.req, ctx.res);
 
   return {
     props: {

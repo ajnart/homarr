@@ -15,14 +15,7 @@
             "title": "Second step",
             "text": "Password",
             "password": {
-                "label": "Password",
-                "requirements": {
-                    "number": "Includes number",
-                    "lowercase": "Includes lowercase letter",
-                    "uppercase": "Includes uppercase letter",
-                    "special": "Includes special character",
-                    "length": "Includes at least {{count}} characters"
-                }
+                "label": "Password"
             }
         },
         "finish": {

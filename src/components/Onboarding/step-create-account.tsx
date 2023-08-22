@@ -1,4 +1,4 @@
-import { Button, Group, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
+import { Button, Card, Group, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import { signIn } from 'next-auth/react';
@@ -8,6 +8,7 @@ import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signUpFormSchema } from '~/validations/user';
 
+import { PasswordRequirements } from '../Password/password-requirements';
 import { OnboardingStepWrapper } from './common-wrapper';
 
 export const StepCreateAccount = ({
@@ -22,6 +23,11 @@ export const StepCreateAccount = ({
   const { i18nZodResolver } = useI18nZodResolver();
 
   const form = useForm<z.infer<typeof signUpFormSchema>>({
+    initialValues: {
+      password: '',
+      username: '',
+      passwordConfirmation: '',
+    },
     validate: i18nZodResolver(signUpFormSchema),
     validateInputOnBlur: true,
   });
@@ -69,6 +75,10 @@ export const StepCreateAccount = ({
             withAsterisk
             {...form.getInputProps('password')}
           />
+
+          <Card mb="lg" withBorder>
+            <PasswordRequirements value={form.values.password} />
+          </Card>
 
           <PasswordInput
             size="md"

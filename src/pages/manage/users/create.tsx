@@ -139,7 +139,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   const translations = await getServerSideTranslations(
-    manageNamespaces,
+    [...manageNamespaces, 'password-requirements'],
     ctx.locale,
     ctx.req,
     ctx.res
