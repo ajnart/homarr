@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Προσθέστε ένα πλακίδιο"
     },
-    "apps": "",
+    "apps": "Εφαρμογές",
     "app": {
-        "defaultName": ""
+        "defaultName": "Η Εφαρμογή Σας"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Κατηγορίες",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Όνομα νέας κατηγορίας",
+        "defaultName": "Νέα Κατηγορία",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Η κατηγορία δημιουργήθηκε",
+            "message": "Η κατηγορία \"{{name}}\" έχει δημιουργηθεί"
         }
     }
 }
