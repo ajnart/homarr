@@ -16,10 +16,10 @@
     "categories": "类别",
     "category": {
         "newName": "新分类的名称",
-        "defaultName": "",
+        "defaultName": "新建分类",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "分类已创建",
+            "message": "\"{{name}}\"类别已经创建"
         }
     }
 }
