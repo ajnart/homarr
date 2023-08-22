@@ -10,9 +10,9 @@
       "layout": {
         "label": "Mise en page",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 par 2",
+          "row": "Horizontal",
+          "column": "Vertical"
         }
       }
     }
