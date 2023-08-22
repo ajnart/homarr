@@ -7,10 +7,10 @@
 	"action": "Acción",
 	"keybinds": "Combinaciones de teclas",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Alternar modo claro/oscuro",
+		"focusSearchBar": "Centrarse en la barra de búsqueda",
+		"openDocker": "Abrir el widget de Docker",
+		"toggleEdit": "Alternar modo de edición"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Versión del esquema de configuración",
