@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Monter",
+    "moveDown": "Descendre",
+    "addCategory": "Ajouter une catégorie",
+    "addAbove": "au-dessus",
+    "addBelow": "en dessous"
   }
 }
