@@ -58,8 +58,13 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
 
   return (
     <Container h="100%" p={0} style={constructContainerStyle(widget.properties.layout)}>
-      {stats.map((item) => (
-        <StatCard item={item} usePiHoleColors={widget.properties.usePiHoleColors} data={data} />
+      {stats.map((item, index) => (
+        <StatCard
+          key={item.label ?? index}
+          item={item}
+          usePiHoleColors={widget.properties.usePiHoleColors}
+          data={data}
+        />
       ))}
     </Container>
   );
