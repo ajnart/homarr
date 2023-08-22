@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Radarr发布类型",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "影院放映",
+          "physicalRelease": "实体",
+          "digitalRelease": "数字"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "字体大小",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "超小号",
+          "sm": "小号",
+          "md": "中号",
+          "lg": "大号",
+          "xl": "超大号"
         }
       }
     }
