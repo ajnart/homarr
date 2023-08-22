@@ -29,16 +29,16 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "长度必须在 1 到 100 之间",
+      "length200": "长度必须在 1 到 200 之间",
+      "length400": "长度必须在 1 到 400 之间",
+      "invalidLink": "无效链接",
+      "errorMsg": "没有保存，因为出现了验证错误。请重新输入"
     },
     "name": "名称",
-    "url": "",
+    "url": "URL",
     "newTab": "在新标签页中打开",
-    "hideHostname": "",
+    "hideHostname": "隐藏域名",
     "hideIcon": "隐藏图标",
     "delete": "删除"
   }
