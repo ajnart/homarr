@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "上移",
+    "moveDown": "下移",
+    "addCategory": "添加类别",
+    "addAbove": "上方",
+    "addBelow": "下方"
   }
 }
