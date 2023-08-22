@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Une erreur inattendue s'est produite",
-        "text": ""
+        "text": "Impossible de communiquer avec votre client de Torrent. Veuillez vérifier votre configuration."
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Chargement",
+      "description": "Connexion en cours"
     },
     "popover": {
       "introductionPrefix": "Géré par",
