@@ -55,7 +55,7 @@
 			}
 		},
 		"appNameStatus": {
-			"label": "Uygulama Adı Durumu",
+			"label": "Uygulama Adı Statüsü",
 			"description": "Eğer varsa, başlığın nerede görünmesini istediğinizi seçin.",
 			"dropdown": {
 				"normal": "Başlığı yalnızca döşemede göster",
