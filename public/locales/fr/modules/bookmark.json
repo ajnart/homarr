@@ -15,8 +15,8 @@
         "label": "Mise en page",
         "data": {
           "autoGrid": "Grille automatique",
-          "horizontal": "",
-          "vertical": ""
+          "horizontal": "Horizontal",
+          "vertical": "Vertical"
         }
       }
     }
@@ -32,14 +32,14 @@
       "length100": "La longueur doit être comprise entre 1 et 100",
       "length200": "La longueur doit être comprise entre 1 et 200",
       "length400": "La longueur doit être comprise entre 1 et 400",
-      "invalidLink": "",
-      "errorMsg": ""
+      "invalidLink": "Lien non valide",
+      "errorMsg": "Impossible d'enregistrer, car il y a eu des erreurs de validation. S'il vous plaît ajustez les données entrées."
     },
     "name": "Nom",
-    "url": "",
+    "url": "URL (lien)",
     "newTab": "Ouvrir dans un nouvel onglet",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Masquer le nom d'hôte (lien)",
+    "hideIcon": "Masquer l'icône",
     "delete": "Supprimer"
   }
 }
