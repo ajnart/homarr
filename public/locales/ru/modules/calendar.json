@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Тип релиза в Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "В кинотеатрах",
+          "physicalRelease": "Физический носитель",
+          "digitalRelease": "Цифровой релиз"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "Размер шрифта",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Очень маленький",
+          "sm": "Маленький",
+          "md": "Средний",
+          "lg": "Большой",
+          "xl": "Очень большой"
         }
       }
     }
