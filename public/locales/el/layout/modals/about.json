@@ -7,10 +7,10 @@
 	"action": "Ενέργεια",
 	"keybinds": "Δεσμοί πλήκτρων",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Αλλαγή φωτεινού / σκοτεινού θέματος",
+		"focusSearchBar": "Εστίαση στο πλαίσιο αναζήτησης",
+		"openDocker": "Άνοιγμα docker widget",
+		"toggleEdit": "Εναλλαγή Λειτουργίας Επεξεργασίας"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Έκδοση σχήματος διαμόρφωσης",
