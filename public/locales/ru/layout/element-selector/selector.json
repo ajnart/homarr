@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Добавить плитку"
     },
-    "apps": "",
+    "apps": "Приложения",
     "app": {
-        "defaultName": ""
+        "defaultName": "Ваше приложение"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Виджеты",
+    "categories": "Категории",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Имя новой категории",
+        "defaultName": "Новая категория",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Категория создана",
+            "message": "Создана категория \"{{name}}\""
         }
     }
 }
