@@ -101,9 +101,9 @@
 	"validation": {
 		"popover": "您的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮保存您的更改。",
 		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
+		"noUrl": "Url是必填项",
+		"invalidUrl": "不是有效的 Url",
+		"noIconUrl": "此字段为必填",
 		"noExternalUri": "",
 		"invalidExternalUri": ""
 	}
