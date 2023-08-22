@@ -7,8 +7,8 @@
       "direction": {
         "label": "布局方向。",
         "data": {
-          "row": "",
-          "column": ""
+          "row": "横向",
+          "column": "垂直"
         }
       }
     }
