@@ -7,10 +7,10 @@
 	"action": "Hành động",
 	"keybinds": "Phím tắt",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Đổi chế độ sáng/tối",
+		"focusSearchBar": "Tập trung vào thanh tìm kiếm",
+		"openDocker": "Mở tiện ích Docker",
+		"toggleEdit": "Bật/tắt chế độ sửa"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Phiên bản lược đồ cấu hình",
