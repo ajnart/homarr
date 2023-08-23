@@ -96,6 +96,8 @@ export const constructAuthOptions = (
 
       const sessionToken = generateSessionToken();
       const sessionExpiry = fromDate(sessionMaxAgeInSeconds);
+      //TODO: Fix this properly
+      if (!adapter || !adapter.createSession) return false;
 
       await adapter.createSession({
         sessionToken: sessionToken,

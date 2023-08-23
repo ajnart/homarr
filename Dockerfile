@@ -19,7 +19,7 @@ COPY prisma/schema.prisma prisma/schema.prisma
 COPY ./scripts/run.sh ./scripts/run.sh
 
 EXPOSE 7575
-
+RUN npm i -g prisma
 ENV PORT 7575
 ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 

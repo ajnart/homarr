@@ -1,8 +1,16 @@
+// Note: Somehow we need 3 fucking language codes because no one uses the same specs to identify a country.
 export type Language = {
   shortName: string;
   originalName: string;
   translatedName: string;
-  emoji: string;
+  /**
+   * The country identified b<y the ISO-3166 alpha 2 code:
+   * https://www.iso.org/obp/ui/#search
+   */
+  country: string;
+  /**
+   * Locale used by dayJS to identify a country
+   */
   locale: string;
 };
 
@@ -11,14 +19,14 @@ export const languages: Language[] = [
     shortName: 'de',
     originalName: 'Deutsch',
     translatedName: 'German',
-    emoji: '🇩🇪',
+    country: 'DE',
     locale: 'de',
   },
   {
     shortName: 'en',
     originalName: 'English',
     translatedName: 'English',
-    emoji: '🇬🇧',
+    country: 'GB',
     locale: 'en-gb',
   },
   // Danish
@@ -26,7 +34,7 @@ export const languages: Language[] = [
     shortName: 'da',
     originalName: 'Dansk',
     translatedName: 'Danish',
-    emoji: '🇩🇰',
+    country: 'DK',
     locale: 'da',
   },
   // Hebrew
@@ -34,49 +42,49 @@ export const languages: Language[] = [
     shortName: 'he',
     originalName: 'עברית',
     translatedName: 'Hebrew',
-    emoji: '🇮🇱',
+    country: 'IL',
     locale: 'he',
   },
   {
     shortName: 'es',
     originalName: 'Español',
     translatedName: 'Spanish',
-    emoji: '🇪🇸',
+    country: 'ES',
     locale: 'es',
   },
   {
     shortName: 'fr',
     originalName: 'Français',
     translatedName: 'French',
-    emoji: '🇫🇷',
+    country: 'FR',
     locale: 'fr',
   },
   {
     shortName: 'it',
     originalName: 'Italiano',
     translatedName: 'Italian',
-    emoji: '🇮🇹',
+    country: 'IT',
     locale: 'it',
   },
   {
     shortName: 'ja',
     originalName: '日本語',
     translatedName: 'Japanese',
-    emoji: '🇯🇵',
+    country: 'JP',
     locale: 'ja',
   },
   {
     shortName: 'ko',
     originalName: '한국어',
     translatedName: 'Korean',
-    emoji: '🇰🇷',
+    country: 'KR',
     locale: 'ko',
   },
   {
     shortName: 'lol',
     originalName: 'LOLCAT',
     translatedName: 'LOLCAT',
-    emoji: '🐱',
+    country: 'GB',
     locale: 'en-gb',
   },
   // Norwegian
@@ -84,7 +92,7 @@ export const languages: Language[] = [
     shortName: 'no',
     originalName: 'Norsk',
     translatedName: 'Norwegian',
-    emoji: '🇳🇴',
+    country: 'NO',
     locale: 'nb',
   },
   // Slovak
@@ -92,57 +100,56 @@ export const languages: Language[] = [
     shortName: 'sk',
     originalName: 'Slovenčina',
     translatedName: 'Slovak',
-    emoji: '🇸🇰',
+    country: 'SK',
     locale: 'sk',
   },
   {
     shortName: 'nl',
     originalName: 'Nederlands',
     translatedName: 'Dutch',
-    emoji: '🇳🇱',
+    country: 'NL',
     locale: 'nl',
   },
   {
     shortName: 'pl',
     originalName: 'Polski',
     translatedName: 'Polish',
-    emoji: '🇵🇱',
+    country: 'PL',
     locale: 'pl',
   },
   {
     shortName: 'pt',
     originalName: 'Português',
     translatedName: 'Portuguese',
-    emoji: '🇵🇹',
+    country: 'PT',
     locale: 'pt',
   },
   {
     shortName: 'ru',
     originalName: 'Русский',
     translatedName: 'Russian',
-    emoji: '🇷🇺',
+    country: 'RU',
     locale: 'ru',
   },
   {
-    momentLocale: 'si',
     shortName: 'sl',
     originalName: 'Slovenščina',
     translatedName: 'Slovenian',
-    emoji: '🇸🇮',
+    country: 'SI',
     locale: 'sl',
   },
   {
     shortName: 'sv',
     originalName: 'Svenska',
     translatedName: 'Swedish',
-    emoji: '🇸🇪',
+    country: 'SE',
     locale: 'sv',
   },
   {
     shortName: 'uk',
     originalName: 'Українська',
     translatedName: 'Ukrainian',
-    emoji: '🇺🇦',
+    country: 'UA',
     locale: 'uk',
   },
   // Vietnamese
@@ -150,41 +157,42 @@ export const languages: Language[] = [
     shortName: 'vi',
     originalName: 'Tiếng Việt',
     translatedName: 'Vietnamese',
-    emoji: '🇻🇳',
+    country: 'VN',
     locale: 'vi',
   },
   {
     shortName: 'zh',
     originalName: '中文',
     translatedName: 'Chinese',
-    emoji: '🇨🇳',
+    country: 'CN',
     locale: 'zh-cn',
   },
   {
+    shortName: 'el',
     originalName: 'Ελληνικά',
     translatedName: 'Greek',
-    emoji: '🇬🇷',
+    country: 'GR',
     locale: 'el',
   },
   {
     shortName: 'tr',
     originalName: 'Türkçe',
     translatedName: 'Turkish',
-    emoji: '🇹🇷',
+    country: 'TR',
     locale: 'tr',
   },
   {
     shortName: 'lv',
     originalName: 'Latvian',
     translatedName: 'Latvian',
-    emoji: '🇱🇻',
+    country: 'LV',
     locale: 'lv',
   },
   {
     shortName: 'hr',
     originalName: 'Hrvatski',
     translatedName: 'Croatian',
-    emoji: '🇭🇷',
+    country: 'HR',
     locale: 'hr',
   },
   // Hungarian
@@ -192,7 +200,7 @@ export const languages: Language[] = [
     shortName: 'hu',
     originalName: 'Magyar',
     translatedName: 'Hungarian',
-    emoji: '🇭🇺',
+    country: 'HU',
     locale: 'hu',
   },
 ];

@@ -4,7 +4,7 @@ import { IconCalendarTime } from '@tabler/icons-react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { getLanguageByCode } from '~/tools/language';
-import { api } from '~/utils/api';
+import { RouterOutputs, api } from '~/utils/api';
 
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
@@ -13,6 +13,7 @@ import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
+import { useSession } from 'next-auth/react';
 
 const definition = defineWidget({
   id: 'calendar',
@@ -98,7 +99,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       onNextMonth={setMonth}
       size={widget.properties.fontSize}
       locale={language.locale}
-      firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
+      firstDayOfWeek={getFirstDayOfWeek(firstDayOfWeek)}
       hideWeekdays={widget.properties.hideWeekDays}
       style={{ position: 'relative' }}
       date={month}
