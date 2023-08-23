@@ -39,7 +39,7 @@
         "title": "Ogiltig URL",
         "text": "Kontrollera att du har angett en giltig adress i konfigurationen av din widget"
       },
-      "browserSupport": ""
+      "browserSupport": "Din webbläsare stöder inte iframes. Vänligen uppdatera din webbläsare."
     }
   }
 }
