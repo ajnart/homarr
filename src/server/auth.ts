@@ -98,6 +98,7 @@ export const constructAuthOptions = (
       const sessionToken = generateSessionToken();
       const sessionExpiry = fromDate(sessionMaxAgeInSeconds);
 
+      // https://github.com/nextauthjs/next-auth/issues/6106
       if (!adapter?.createSession) {
         return false;
       }
