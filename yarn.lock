@@ -3948,14 +3948,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cookies-next@npm:^2.1.1":
-  version: 2.1.2
-  resolution: "cookies-next@npm:2.1.2"
+"cookies-next@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "cookies-next@npm:3.0.0"
   dependencies:
     "@types/cookie": ^0.4.1
     "@types/node": ^16.10.2
     cookie: ^0.4.0
-  checksum: 5c7bf4edf946f8955014417fa609a0426476a6cce7d5f4ae0e7d8309d997e55fd3e41b63dcbbb15d44f6db099f4cdada7144d3c40968deb19efb7f918f8ed7e4
+  checksum: e85d21a9959934d6b4edf83cde97562cdb325931918b712038dceeb1a9551847cc984241190595394b660634bfa58b8620a2ab742c82dc3ccb0f04359998b36a
   languageName: node
   linkType: hard
 
@@ -5916,7 +5916,7 @@ __metadata:
     "@vitest/ui": ^0.33.0
     axios: ^1.0.0
     consola: ^3.0.0
-    cookies-next: ^2.1.1
+    cookies-next: ^3.0.0
     dayjs: ^1.11.7
     dockerode: ^3.3.2
     eslint: ^8.0.1
