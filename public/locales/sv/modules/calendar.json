@@ -13,9 +13,9 @@
       "radarrReleaseType": {
         "label": "Radarr releasetyp",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "På bio",
+          "physicalRelease": "Fysisk",
+          "digitalRelease": "Digital"
         }
       },
       "hideWeekDays": {
@@ -24,11 +24,11 @@
       "fontSize": {
         "label": "Teckenstorlek",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Extra liten",
+          "sm": "Liten",
+          "md": "Mellan",
+          "lg": "Stor",
+          "xl": "Extra stor"
         }
       }
     }
