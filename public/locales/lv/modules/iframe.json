@@ -39,7 +39,7 @@
         "title": "Nederīgs URL",
         "text": "Pārliecinieties, ka jūsu logrīka konfigurācijā ir ievadīta derīga adrese"
       },
-      "browserSupport": ""
+      "browserSupport": "Jūsu pārlūkprogramma neatbalsta iframe. Lūdzu, atjauniniet pārlūkprogrammu."
     }
   }
 }
