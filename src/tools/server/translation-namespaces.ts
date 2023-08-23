@@ -10,6 +10,7 @@ export const dashboardNamespaces = [
   'settings/common',
   'settings/general/theme-selector',
   'settings/general/config-changer',
+  'settings/general/edit-mode-toggle',
   'settings/general/internationalization',
   'settings/general/search-engine',
   'settings/general/widget-positions',

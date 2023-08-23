@@ -4,10 +4,12 @@ import { openModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
 import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import axios from 'axios';
+import { Trans, useTranslation } from 'next-i18next';
 
 import { useEditModeInformationStore } from '../../../../hooks/useEditModeInformation';
 
 function ModalContent() {
+  const { t } = useTranslation('settings/general/edit-mode-toggle');
   const form = useForm({
     initialValues: {
       triedPassword: '',
@@ -20,8 +22,8 @@ function ModalContent() {
           .post('/api/configs/tryPassword', { tried: values.triedPassword, type: 'edit' })
           .then((res) => {
             showNotification({
-              title: 'Success',
-              message: 'Successfully toggled edit mode, reloading the page...',
+              title: t('notification.success.title'),
+              message: t('notification.success.message'),
               color: 'green',
             });
             setTimeout(() => {
@@ -30,8 +32,8 @@ function ModalContent() {
           })
           .catch((_) => {
             showNotification({
-              title: 'Error',
-              message: 'Failed to toggle edit mode, please try again.',
+              title: t('notification.error.title'),
+              message: t('notification.error.message'),
               color: 'red',
             });
           });
@@ -39,18 +41,19 @@ function ModalContent() {
     >
       <Stack>
         <Text size="sm">
-          In order to toggle edit mode, you need to enter the password you entered in the
-          environment variable named <Code>EDIT_MODE_PASSWORD</Code> . If it is not set, you are not
-          able to toggle edit mode on and off.
+          <Trans
+            i18nKey={'settings/general/edit-mode-toggle:form.message'}
+            components={{ Code: <Code children/> }}
+          />
         </Text>
         <PasswordInput
           id="triedPassword"
-          label="Edit password"
+          label={t('form.label')}
           autoFocus
           required
           {...form.getInputProps('triedPassword')}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">{t('form.submit')}</Button>
       </Stack>
     </form>
   );
@@ -59,6 +62,7 @@ function ModalContent() {
 export function EditModeToggle() {
   const { editModeEnabled } = useEditModeInformationStore();
   const Icon = editModeEnabled ? IconEdit : IconEditOff;
+  const { t } = useTranslation('settings/general/edit-mode-toggle');
 
   return (
     <Menu.Item
@@ -66,14 +70,14 @@ export function EditModeToggle() {
       icon={<Icon strokeWidth={1.2} size={18} />}
       onClick={() =>
         openModal({
-          title: 'Toggle edit mode',
+          title: t('menu.toggle'),
           centered: true,
           size: 'lg',
           children: <ModalContent />,
         })
       }
     >
-      {editModeEnabled ? 'Enable edit mode' : 'Disable edit mode'}
+      {editModeEnabled ? t('menu.enable') : t('menu.disable')}
     </Menu.Item>
   );
 }
