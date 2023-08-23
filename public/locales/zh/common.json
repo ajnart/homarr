@@ -12,7 +12,7 @@
   "disableAll": "全部禁用",
   "version": "版本",
   "changePosition": "改变位置",
-  "remove": "移除",
+  "remove": "删除",
   "removeConfirm": "你确定要删除 {{item}} 吗？",
   "createItem": "创建{{item}}",
   "sections": {
