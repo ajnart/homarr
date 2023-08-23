@@ -35,6 +35,13 @@ export const SearchEngineSelector = ({ searchEngine }: Props) => {
     updateSearchEngineConfig(engine, url);
   };
 
+  const searchEngineOptions: { label: string; value: EngineType }[] = [
+    { label: 'Google', value: 'google' },
+    { label: 'DuckDuckGo', value: 'duckDuckGo' },
+    { label: 'Bing', value: 'bing' },
+    { label: t('custom'), value: 'custom' },
+  ];
+
   return (
     <Stack spacing={0} mt="xs">
       <Title order={5} mb="xs">
@@ -76,13 +83,6 @@ export const SearchEngineSelector = ({ searchEngine }: Props) => {
     </Stack>
   );
 };
-
-const searchEngineOptions: { label: string; value: EngineType }[] = [
-  { label: 'Google', value: 'google' },
-  { label: 'DuckDuckGo', value: 'duckDuckGo' },
-  { label: 'Bing', value: 'bing' },
-  { label: 'Custom', value: 'custom' },
-];
 
 export const searchUrls: { [key in CommonSearchEngineCommonSettingsType['type']]: string } = {
   google: 'https://google.com/search?q=',
