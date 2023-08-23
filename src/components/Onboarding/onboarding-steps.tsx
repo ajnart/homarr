@@ -2,7 +2,6 @@ import { Stack, Stepper } from '@mantine/core';
 import { useState } from 'react';
 
 import { StepCreateAccount } from './step-create-account';
-import { StepDocumentation } from './step-documentation';
 import { StepOnboardingFinished } from './step-onboarding-finished';
 import { StepUpdatePathMappings } from './step-update-path-mappings';
 
@@ -29,9 +28,6 @@ export const OnboardingSteps = ({ isUpdate }: { isUpdate: boolean }) => {
         )}
         <Stepper.Step label="Your account" description="Create an account">
           <StepCreateAccount next={nextStep} previous={prevStep} />
-        </Stepper.Step>
-        <Stepper.Step label="Documentation" description="Introduction into Homarr">
-          <StepDocumentation next={nextStep} />
         </Stepper.Step>
         <Stepper.Completed>
           <StepOnboardingFinished />

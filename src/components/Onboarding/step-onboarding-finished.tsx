@@ -1,7 +1,8 @@
-import { NavLink, Stack, Text, Title, createStyles } from '@mantine/core';
+import { Divider, NavLink, Stack, Text, Title, createStyles } from '@mantine/core';
 import {
   IconChevronRight,
   IconDashboard,
+  IconExternalLink,
   IconFileText,
   IconManualGearbox,
 } from '@tabler/icons-react';
@@ -22,6 +23,22 @@ export const StepOnboardingFinished = () => {
         <Text>Awesome! What do you want to do next?</Text>
 
         <Stack>
+          <Text>
+            We <b>highly recommend you</b> to take a look at the documentation before starting to
+            use Homarr if you've never used it before.
+          </Text>
+          <NavLink
+            component={Link}
+            href="https://homarr.dev/docs/introduction/after-the-installation"
+            target="_blank"
+            rightSection={<IconExternalLink size="0.8rem" stroke={1.5} />}
+            className={classes.link}
+            icon={<IconFileText />}
+            label="Check out the documentation"
+            variant="light"
+            active
+          />
+          <Divider />
           <NavLink
             component={Link}
             href="/b/default"
@@ -39,17 +56,6 @@ export const StepOnboardingFinished = () => {
             className={classes.link}
             icon={<IconManualGearbox />}
             label="Go to the management dashboard"
-            variant="light"
-            active
-          />
-          <NavLink
-            component='a'
-            href="https://homarr.dev"
-            target="_blank"
-            rightSection={<IconChevronRight size="0.8rem" stroke={1.5} />}
-            className={classes.link}
-            icon={<IconFileText />}
-            label="Check out the documentation"
             variant="light"
             active
           />
