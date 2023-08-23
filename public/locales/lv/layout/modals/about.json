@@ -7,10 +7,10 @@
 	"action": "Darbība",
 	"keybinds": "Taustiņu saites",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Pārslēgt gaišo/tumšo motīvu",
+		"focusSearchBar": "Fokusēties uz meklēšanas joslu",
+		"openDocker": "Atvērt docker Logrīku",
+		"toggleEdit": "Pārslēgt Rediģēšanas Režīmu"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurācijas shēmas versija",
