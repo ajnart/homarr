@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Naptár",
-    "description": "Megjelenít egy naptárat a támogatott integrációk közelgő kiadásaival.",
+    "description": "Megjelenít egy naptárat a támogatott integrációk közelgő eseményeivel.",
     "settings": {
       "title": "A Naptár widget beállításai",
       "useSonarrv4": {
