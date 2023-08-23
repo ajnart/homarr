@@ -44,7 +44,7 @@
     "@mantine/notifications": "^6.0.0",
     "@mantine/prism": "^6.0.19",
     "@mantine/tiptap": "^6.0.17",
-    "@next-auth/prisma-adapter": "^1.0.5",
+    "@next-auth/prisma-adapter": "^1.0.7",
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
     "@prisma/client": "^5.0.0",

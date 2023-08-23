@@ -1155,7 +1155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next-auth/prisma-adapter@npm:^1.0.5":
+"@next-auth/prisma-adapter@npm:^1.0.7":
   version: 1.0.7
   resolution: "@next-auth/prisma-adapter@npm:1.0.7"
   peerDependencies:
@@ -6216,7 +6216,7 @@ __metadata:
     "@mantine/notifications": ^6.0.0
     "@mantine/prism": ^6.0.19
     "@mantine/tiptap": ^6.0.17
-    "@next-auth/prisma-adapter": ^1.0.5
+    "@next-auth/prisma-adapter": ^1.0.7
     "@next/bundle-analyzer": ^13.0.0
     "@next/eslint-plugin-next": ^13.4.5
     "@nivo/core": ^0.83.0

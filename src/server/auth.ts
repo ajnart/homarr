@@ -4,6 +4,7 @@ import Consola from 'consola';
 import Cookies from 'cookies';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
 import { type DefaultSession, type NextAuthOptions, getServerSession } from 'next-auth';
+import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
 import Credentials from 'next-auth/providers/credentials';
 import { prisma } from '~/server/db';
@@ -96,6 +97,10 @@ export const constructAuthOptions = (
 
       const sessionToken = generateSessionToken();
       const sessionExpiry = fromDate(sessionMaxAgeInSeconds);
+
+      if (!adapter?.createSession) {
+        return false;
+      }
 
       await adapter.createSession({
         sessionToken: sessionToken,
