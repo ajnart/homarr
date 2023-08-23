@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Radās neparedzēta kļūda",
-        "text": ""
+        "text": "Neizdevās sazināties ar jūsu Torrent klientiem. Lūdzu, pārbaudiet savu konfigurāciju"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Notiek ielāde",
+      "description": "Savienojuma izveide"
     },
     "popover": {
       "introductionPrefix": "Pārvalda",
