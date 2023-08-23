@@ -20,36 +20,36 @@
   "tooltips": {
     "approve": "Godkänn begäran",
     "decline": "Avvisa förfrågningar",
-    "approving": ""
+    "approving": "Godkänner begäran..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Godkänner",
+    "declining": "Avböjer",
+    "request": "förfrågan...",
+    "approved": "Förfrågan godkändes!",
+    "declined": "Förfrågnan avvisades!"
   },
   "detail": {
-    "label": "",
-    "id": "",
-    "device": "",
+    "label": "Statistik för nördar",
+    "id": "ID",
+    "device": "Enhet",
     "video": {
-      "video": "",
-      "resolution": "",
-      "framerate": "",
-      "codec": ""
+      "video": "Video",
+      "resolution": "Upplösning",
+      "framerate": "Bildfrekvens",
+      "codec": "Videokodek"
     },
     "audio": {
-      "audio": "",
-      "channels": "",
-      "codec": ""
+      "audio": "Ljud",
+      "channels": "Ljudkanaler",
+      "codec": "Ljudkodek"
     },
     "transcoding": {
-      "transcoding": "",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "transcoding": "Transkodning",
+      "context": "Kontext",
+      "requested": "Hårdvarukodning begärd",
+      "source": "Källkodek",
+      "target": "Målkodkek"
     }
   }
 }
