@@ -33,7 +33,7 @@ export const ToggleEditModeAction = () => {
   useHotkeys([['mod+E', toggleEditMode]]);
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
-    if (enabled) {
+    if (enabled && process.env.NODE_ENV !== 'development') {
       // eslint-disable-next-line no-param-reassign
       event.returnValue = beforeUnloadEventText;
       return beforeUnloadEventText;
