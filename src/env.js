@@ -22,6 +22,7 @@ const env = createEnv({
     ),
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: portSchema,
+    HOSTNAME: z.string().optional()
   },
 
   /**
@@ -56,6 +57,7 @@ const env = createEnv({
     NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: process.env.DEFAULT_COLOR_SCHEME,
     NEXT_PUBLIC_PORT: process.env.PORT,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
+    HOSTNAME: process.env.HOSTNAME
   },
 });
 
