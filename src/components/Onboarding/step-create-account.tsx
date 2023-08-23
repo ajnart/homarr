@@ -1,4 +1,4 @@
-import { Button, Card, Group, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
+import { Button, Card, Group, PasswordInput, Stack, Text, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import { signIn } from 'next-auth/react';
@@ -56,6 +56,10 @@ export const StepCreateAccount = ({
       <Title order={2} align="center" mb="md">
         Create your administrator account
       </Title>
+      <Text>
+        Your administrator account <b>must be secure</b>, that's why we have so many rules surrounding it.
+       <br/>Try not to make it adminadmin this time...
+      </Text>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack>
           <TextInput
