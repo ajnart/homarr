@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { find } from 'geo-tz'
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
@@ -12,6 +11,7 @@ export const timezoneRouter = createTRPCRouter({
         })
     )
     .query(async ({ input }) => {
-        return find(input.latitude,input.longitude)[0];
+        const tzlookup = require('tz-lookup');
+        return tzlookup(input.latitude,input.longitude);
     }),
 })
