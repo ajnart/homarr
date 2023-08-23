@@ -12,6 +12,7 @@ export const timezoneRouter = createTRPCRouter({
     )
     .query(async ({ input }) => {
         const tzlookup = require('tz-lookup');
-        return tzlookup(input.latitude,input.longitude);
+        const timezone = tzlookup(input.latitude,input.longitude);
+        return Array.isArray(timezone) ? timezone[0] : timezone;
     }),
 })
