@@ -14,7 +14,7 @@
       "layout": {
         "label": "Layout",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Automatiskt rutnät",
           "horizontal": "Horisontal",
           "vertical": "Vertikal"
         }
@@ -29,17 +29,17 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length100": "Längden måste vara mellan 1 och 100",
+      "length200": "Längden måste vara mellan 1 och 200",
+      "length400": "Längden måste vara mellan 1 och 400",
+      "invalidLink": "Inte en giltig länk",
+      "errorMsg": "Sparades inte, eftersom det fanns valideringsfel. Vänligen kontrollera dina inmatningar"
     },
     "name": "Namn",
-    "url": "",
+    "url": "URL",
     "newTab": "Öppna i ny flik",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Dölj värdnamn",
+    "hideIcon": "Dölj ikon",
     "delete": "Radera"
   }
 }
