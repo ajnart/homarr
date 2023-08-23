@@ -11,15 +11,19 @@ const requirements = [
 ];
 
 function getStrength(password: string) {
-  let multiplier = password.length >= minPasswordLength ? 0 : 1;
+  let score = 0;
+  const goal = requirements.length + 1;
 
   requirements.forEach((requirement) => {
-    if (!requirement.re.test(password)) {
-      multiplier += 1;
+    if (requirement.re.test(password)) {
+      score += 1;
     }
   });
+  if (password.length >= minPasswordLength) {
+    score += 1;
+  }
+  return (score / goal) * 100;
 
-  return Math.max(100 - (100 / (requirements.length + 1)) * multiplier, 10);
 }
 
 export const PasswordRequirements = ({ value }: { value: string }) => {
