@@ -4,25 +4,29 @@ import { IconTrash } from '@tabler/icons-react';
 import { useState } from 'react';
 
 import { queryClient } from '../../../tools/server/configurations/tanstack/queryClient.tool';
-
-const data = [
-  { value: 'ping', label: 'Ping queries' },
-  { value: 'repository-icons', label: 'Remote/Local icons' },
-  { value: 'calendar/medias', label: 'Medais from the Calendar' },
-  { value: 'weather', label: 'Weather data' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function CacheButtons() {
   const [value, setValue] = useState<string[]>([]);
+
+  const { t } = useTranslation('settings/general/cache-buttons')
+
+  const data = [
+    { value: 'ping', label: t('selector.data.ping') },
+    { value: 'repository-icons', label: t('selector.data.repositoryIcons') },
+    { value: 'calendar/medias', label: t('selector.data.calendar&medias') },
+    { value: 'weather', label: t('selector.data.weather') },
+  ];
+
   return (
     <Stack spacing="xs">
-      <Title order={4}>Cache cleaning</Title>
+      <Title order={4}>{t('title')}</Title>
       <MultiSelect
         value={value}
         searchable
         onChange={setValue}
         data={data}
-        label="Select the cache(s) to clear"
+        label={t('selector.label')}
       />
       <Group>
         <Button
@@ -31,8 +35,11 @@ export function CacheButtons() {
           onClick={() =>
             queryClient.invalidateQueries(value).then(() =>
               notifications.show({
-                title: 'Cache cleared',
-                message: `Cache for ${value.join(', ')} has been cleared`,
+                title: t('buttons.notificationTitle'),
+                message:
+                  value.length > 1 ?
+                  t('buttons.clearSelect.notificationMessageMulti', {values: value.join(', ')}) :
+                  t('buttons.clearSelect.notificationMessageSingle', {value: value[0]}),
                 color: 'teal',
                 icon: <IconTrash />,
                 autoClose: 5000,
@@ -40,14 +47,14 @@ export function CacheButtons() {
             )
           }
         >
-          Clear selected queries
+          {t('buttons.clearSelect.text')}
         </Button>
         <Button
           onClick={() =>
             queryClient.invalidateQueries().then(() =>
               notifications.show({
-                title: 'Cache cleared',
-                message: 'All cache has been cleared',
+                title: t('buttons.notificationTitle'),
+                message: t('buttons.clearAll.notificationMessage'),
                 color: 'teal',
                 icon: <IconTrash />,
                 autoClose: 5000,
@@ -55,7 +62,7 @@ export function CacheButtons() {
             )
           }
         >
-          Clear all cache
+          {t('buttons.clearAll.text')}
         </Button>
       </Group>
     </Stack>
