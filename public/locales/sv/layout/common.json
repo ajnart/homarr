@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Flytta uppåt",
+    "moveDown": "Flytta nedåt",
+    "addCategory": "Lägg till kategori",
+    "addAbove": "ovanför",
+    "addBelow": "nedanför"
   }
 }
