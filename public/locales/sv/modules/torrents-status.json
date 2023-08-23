@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Ett oväntat fel uppstod",
-        "text": ""
+        "text": "Homarr kunde inte kommunicera med dina torrent-klienter. Vänligen kontrollera din konfiguration"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Laddar",
+      "description": "Upprättar en anslutning"
     },
     "popover": {
       "introductionPrefix": "Förvaltas av",
