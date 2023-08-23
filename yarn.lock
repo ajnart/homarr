@@ -7495,8 +7495,8 @@ __metadata:
   linkType: hard
 
 "node-mocks-http@npm:^1.12.2":
-  version: 1.12.2
-  resolution: "node-mocks-http@npm:1.12.2"
+  version: 1.13.0
+  resolution: "node-mocks-http@npm:1.13.0"
   dependencies:
     accepts: ^1.3.7
     content-disposition: ^0.5.3
@@ -7508,7 +7508,7 @@ __metadata:
     parseurl: ^1.3.3
     range-parser: ^1.2.0
     type-is: ^1.6.18
-  checksum: 39e50b7146bd37fd56a0588ee3df46fd310f76395d52e9b8889545910aca6cc8e8a41de3cdd3e103903d4bbfc556e67624fcbe934c0bd3b0cca6ee1358a0f440
+  checksum: ee03dbb81dfa47760731f994a89754976a3379ab29484e3537e8ddb8084f9c013f81337e12e9781176fdec5b10be2f273a1f274f9478527793971453f0ce5a49
   languageName: node
   linkType: hard
 
