@@ -7,10 +7,10 @@
 	"action": "Åtgärd",
 	"keybinds": "Knapptilldelning",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Växla mellan ljus- och mörkerläge",
+		"focusSearchBar": "Fokusera på sökruta",
+		"openDocker": "Öppna widget för dockar",
+		"toggleEdit": "Växla till redigeringsläge"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Version av konfigurationsschemat",
