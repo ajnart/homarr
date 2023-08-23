@@ -36,10 +36,10 @@
       "errorMsg": "Netika saglabāts, jo bija validācijas kļūdas. Lūdzu, pielāgojiet savus ievades datus"
     },
     "name": "Nosaukums",
-    "url": "",
+    "url": "URL",
     "newTab": "Atvērt jaunā cilnē",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Slēpt Resursdatora nosaukumu",
+    "hideIcon": "Slēpt Ikonu",
     "delete": "Dzēst"
   }
 }
