@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Virzīt augšup",
+    "moveDown": "Virzīt lejup",
+    "addCategory": "Pievienot kategoriju",
+    "addAbove": "virs",
+    "addBelow": "zem"
   }
 }
