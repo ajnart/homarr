@@ -20,36 +20,36 @@
   "tooltips": {
     "approve": "Apstiprināt pieprasījumus",
     "decline": "Noraidīt pieprasījumus",
-    "approving": ""
+    "approving": "Pieprasījuma apstiprināšana..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Apstiprināšana",
+    "declining": "Noraidīšanās",
+    "request": "pieprasījums...",
+    "approved": "Pieprasījums tika apstiprināts!",
+    "declined": "Pieprasījums tika noraidīts!"
   },
   "detail": {
-    "label": "",
-    "id": "",
-    "device": "",
+    "label": "Statistika entuziastiem",
+    "id": "ID",
+    "device": "Ierīce",
     "video": {
-      "video": "",
-      "resolution": "",
-      "framerate": "",
-      "codec": ""
+      "video": "Video",
+      "resolution": "Izšķirtspēja",
+      "framerate": "Kadru ātrums",
+      "codec": "Video Kodeks"
     },
     "audio": {
-      "audio": "",
-      "channels": "",
-      "codec": ""
+      "audio": "Audio",
+      "channels": "Audio Kanāli",
+      "codec": "Audio Kodeks"
     },
     "transcoding": {
-      "transcoding": "",
-      "context": "",
-      "requested": "",
-      "source": "",
-      "target": ""
+      "transcoding": "Pārkodēšana",
+      "context": "Konteksts",
+      "requested": "Pieprasīta Aparatūras Kodēšana",
+      "source": "Avota Kodeks",
+      "target": "Mērķa Kodeks"
     }
   }
 }
