@@ -10,7 +10,7 @@ export type Language = {
    */
   country?: string;
 
-  momentLocale: string;
+  locale: string;
 };
 
 export const languages: Language[] = [
@@ -20,7 +20,7 @@ export const languages: Language[] = [
     translatedName: 'German',
     emoji: '🇩🇪',
     country: 'DE',
-    momentLocale: 'de',
+    locale: 'de',
   },
   {
     shortName: 'en',
@@ -28,7 +28,7 @@ export const languages: Language[] = [
     translatedName: 'English',
     emoji: '🇬🇧',
     country: 'GB',
-    momentLocale: 'en-gb',
+    locale: 'en-gb',
   },
   // Danish
   {
@@ -37,7 +37,7 @@ export const languages: Language[] = [
     translatedName: 'Danish',
     emoji: '🇩🇰',
     country: 'DK',
-    momentLocale: 'da',
+    locale: 'da',
   },
   // Hebrew
   {
@@ -46,7 +46,7 @@ export const languages: Language[] = [
     translatedName: 'Hebrew',
     emoji: '🇮🇱',
     country: 'IL',
-    momentLocale: 'he',
+    locale: 'he',
   },
   {
     shortName: 'es',
@@ -54,7 +54,7 @@ export const languages: Language[] = [
     translatedName: 'Spanish',
     emoji: '🇪🇸',
     country: 'ES',
-    momentLocale: 'es',
+    locale: 'es',
   },
   {
     shortName: 'fr',
@@ -62,7 +62,7 @@ export const languages: Language[] = [
     translatedName: 'French',
     emoji: '🇫🇷',
     country: 'FR',
-    momentLocale: 'fr',
+    locale: 'fr',
   },
   {
     shortName: 'it',
@@ -70,7 +70,7 @@ export const languages: Language[] = [
     translatedName: 'Italian',
     emoji: '🇮🇹',
     country: 'IT',
-    momentLocale: 'it',
+    locale: 'it',
   },
   {
     shortName: 'ja',
@@ -78,7 +78,7 @@ export const languages: Language[] = [
     translatedName: 'Japanese',
     emoji: '🇯🇵',
     country: 'JP',
-    momentLocale: 'jp'
+    locale: 'ja',
   },
   {
     shortName: 'ko',
@@ -86,14 +86,14 @@ export const languages: Language[] = [
     translatedName: 'Korean',
     emoji: '🇰🇷',
     country: 'KR',
-    momentLocale: 'ko'
+    locale: 'ko',
   },
   {
     shortName: 'lol',
     originalName: 'LOLCAT',
     translatedName: 'LOLCAT',
     emoji: '🐱',
-    momentLocale: 'en-gb',
+    locale: 'en-gb',
   },
   // Norwegian
   {
@@ -102,7 +102,7 @@ export const languages: Language[] = [
     translatedName: 'Norwegian',
     emoji: '🇳🇴',
     country: 'NO',
-    momentLocale: 'nb',
+    locale: 'nb',
   },
   // Slovak
   {
@@ -111,7 +111,7 @@ export const languages: Language[] = [
     translatedName: 'Slovak',
     emoji: '🇸🇰',
     country: 'SK',
-    momentLocale: 'sk',
+    locale: 'sk',
   },
   {
     shortName: 'nl',
@@ -119,7 +119,7 @@ export const languages: Language[] = [
     translatedName: 'Dutch',
     emoji: '🇳🇱',
     country: 'NL',
-    momentLocale: 'nl',
+    locale: 'nl',
   },
   {
     shortName: 'pl',
@@ -127,7 +127,7 @@ export const languages: Language[] = [
     translatedName: 'Polish',
     emoji: '🇵🇱',
     country: 'PL',
-    momentLocale: 'pl',
+    locale: 'pl',
   },
   {
     shortName: 'pt',
@@ -135,7 +135,7 @@ export const languages: Language[] = [
     translatedName: 'Portuguese',
     emoji: '🇵🇹',
     country: 'PT',
-    momentLocale: 'pt',
+    locale: 'pt',
   },
   {
     shortName: 'ru',
@@ -143,15 +143,15 @@ export const languages: Language[] = [
     translatedName: 'Russian',
     emoji: '🇷🇺',
     country: 'RU',
-    momentLocale: 'ru',
+    locale: 'ru',
   },
   {
-    momentLocale: 'si',
     shortName: 'sl',
     originalName: 'Slovenščina',
     translatedName: 'Slovenian',
     emoji: '🇸🇮',
-    country: 'SI'
+    country: 'SI',
+    locale: 'sl',
   },
   {
     shortName: 'sv',
@@ -159,7 +159,7 @@ export const languages: Language[] = [
     translatedName: 'Swedish',
     emoji: '🇸🇪',
     country: 'SE',
-    momentLocale: 'sv',
+    locale: 'sv',
   },
   {
     shortName: 'uk',
@@ -167,7 +167,7 @@ export const languages: Language[] = [
     translatedName: 'Ukrainian',
     emoji: '🇺🇦',
     country: 'UA',
-    momentLocale: 'uk',
+    locale: 'uk',
   },
   // Vietnamese
   {
@@ -176,7 +176,7 @@ export const languages: Language[] = [
     translatedName: 'Vietnamese',
     emoji: '🇻🇳',
     country: 'VN',
-    momentLocale: 'vi',
+    locale: 'vi',
   },
   {
     shortName: 'zh',
@@ -184,15 +184,15 @@ export const languages: Language[] = [
     translatedName: 'Chinese',
     emoji: '🇨🇳',
     country: 'CN',
-    momentLocale: 'cn'
+    locale: 'zh-cn',
   },
   {
     originalName: 'Ελληνικά',
     translatedName: 'Greek',
     emoji: '🇬🇷',
     country: 'GR',
-    momentLocale: 'el',
-    shortName: 'gr'
+    shortName: 'gr',
+    locale: 'el',
   },
   {
     shortName: 'tr',
@@ -200,7 +200,7 @@ export const languages: Language[] = [
     translatedName: 'Turkish',
     emoji: '🇹🇷',
     country: 'TR',
-    momentLocale: 'tr',
+    locale: 'tr',
   },
   {
     shortName: 'lv',
@@ -208,7 +208,7 @@ export const languages: Language[] = [
     translatedName: 'Latvian',
     emoji: '🇱🇻',
     country: 'LV',
-    momentLocale: 'lv',
+    locale: 'lv',
   },
   {
     shortName: 'hr',
@@ -216,7 +216,15 @@ export const languages: Language[] = [
     translatedName: 'Croatian',
     emoji: '🇭🇷',
     country: 'HR',
-    momentLocale: 'hr',
+    locale: 'hr',
+  },
+  // Hungarian
+  {
+    shortName: 'hu',
+    originalName: 'Magyar',
+    translatedName: 'Hungarian',
+    emoji: '🇭🇺',
+    locale: 'hu',
   },
 ];
 

@@ -11,7 +11,6 @@ import {
   IconSun,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useElementSize } from '@mantine/hooks';
 
 interface WeatherIconProps {
   code: number;
@@ -25,8 +24,7 @@ interface WeatherIconProps {
  */
 export const WeatherIcon = ({ code, size=50 }: WeatherIconProps) => {
   const { t } = useTranslation('modules/weather');
-  const { width, ref } = useElementSize();
-  
+
   const { icon: Icon, name } =
     weatherDefinitions.find((wd) => wd.codes.includes(code)) ?? unknownWeather;
 
