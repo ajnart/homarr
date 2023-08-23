@@ -2536,10 +2536,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.19":
-  version: 18.16.19
-  resolution: "@types/node@npm:18.16.19"
-  checksum: 63c31f09616508aa7135380a4c79470a897b75f9ff3a70eb069e534dfabdec3f32fb0f9df5939127f1086614d980ddea0fa5e8cc29a49103c4f74cd687618aaf
+"@types/node@npm:18.17.8":
+  version: 18.17.8
+  resolution: "@types/node@npm:18.17.8"
+  checksum: ebb71526368c9c58f03e2c2408bfda4aa686c13d84226e2c9b48d9c4aee244fb82e672aaf4aa8ccb6e4993b4274d5f4b2b3d52d0a2e57ab187ae653903376411
   languageName: node
   linkType: hard
 
@@ -5904,7 +5904,7 @@ __metadata:
     "@trpc/react-query": ^10.29.1
     "@trpc/server": ^10.29.1
     "@types/dockerode": ^3.3.9
-    "@types/node": 18.16.19
+    "@types/node": 18.17.8
     "@types/prismjs": ^1.26.0
     "@types/react": ^18.2.11
     "@types/uuid": ^9.0.0
