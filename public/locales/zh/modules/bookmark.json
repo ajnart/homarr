@@ -1,12 +1,12 @@
 {
   "descriptor": {
     "name": "书签",
-    "description": "显示字符串或链接的静态列表",
+    "description": "显示字符或链接的静态列表",
     "settings": {
       "title": "书签设置",
       "name": {
-        "label": "小部件标题",
-        "info": "留空以隐藏标题."
+        "label": "组件标题",
+        "info": "留空以隐藏标题。"
       },
       "items": {
         "label": "项目"
@@ -24,7 +24,7 @@
   "card": {
     "noneFound": {
       "title": "书签列表为空",
-      "text": "在编辑模式下将新项目添加到此列表"
+      "text": "在编辑模式下为该列表添加新项目"
     }
   },
   "item": {
@@ -36,7 +36,7 @@
       "errorMsg": "没有保存，因为出现了验证错误。请重新输入"
     },
     "name": "名称",
-    "url": "URL",
+    "url": "网址",
     "newTab": "在新标签页中打开",
     "hideHostname": "隐藏域名",
     "hideIcon": "隐藏图标",
