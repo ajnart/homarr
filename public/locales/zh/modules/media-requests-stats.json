@@ -14,7 +14,7 @@
     }
   },
   "stats": {
-    "pending": "待核准",
+    "pending": "待批准",
     "tvRequests": "电视请求",
     "movieRequests": "电影请求"
   }
