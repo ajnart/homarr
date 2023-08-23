@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "DNS漏洞摘要",
+    "name": "DNS漏洞统计",
     "description": "显示来自 PiHole 或 AdGuard 的重要数据",
     "settings": {
-      "title": "DNS漏洞摘要设置",
+      "title": "DNS漏洞统计设置",
       "usePiHoleColors": {
-        "label": "使用PiHole所用颜色"
+        "label": "使用 PiHole 的颜色"
       },
       "layout": {
         "label": "布局",
