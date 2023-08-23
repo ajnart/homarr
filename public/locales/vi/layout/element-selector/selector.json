@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Thêm ô"
     },
-    "apps": "",
+    "apps": "Ứng dụng",
     "app": {
-        "defaultName": ""
+        "defaultName": "Ứng dụng của bạn"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Tiện ích",
+    "categories": "Danh mục",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Tên danh mục mới",
+        "defaultName": "Danh mục mới",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Danh mục đã được tạo",
+            "message": "Danh mục \"{{name}}\" đã được tạo"
         }
     }
 }
