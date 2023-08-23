@@ -1,10 +1,10 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
-import { useSession } from 'next-auth/react';
-import { i18n } from 'next-i18next';
 import { useState } from 'react';
-import { RouterOutputs, api } from '~/utils/api';
+import { useRouter } from 'next/router';
+import { getLanguageByCode } from '~/tools/language';
+import { api } from '~/utils/api';
 
 import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '../../config/provider';
@@ -30,20 +30,20 @@ const definition = defineWidget({
       type: 'select',
       defaultValue: 'inCinemas',
       data: [
-        { label: 'In Cinemas', value: 'inCinemas' },
-        { label: 'Physical', value: 'physicalRelease' },
-        { label: 'Digital', value: 'digitalRelease' },
+        { value: 'inCinemas' },
+        { value: 'physicalRelease' },
+        { value: 'digitalRelease' },
       ],
     },
     fontSize: {
       type: 'select',
       defaultValue: 'xs',
       data: [
-        { label: 'Extra Small', value: 'xs' },
-        { label: 'Small', value: 'sm' },
-        { label: 'Medium', value: 'md' },
-        { label: 'Large', value: 'lg' },
-        { label: 'Extra Large', value: 'xl' },
+        { value: 'xs' },
+        { value: 'sm' },
+        { value: 'md' },
+        { value: 'lg' },
+        { value: 'xl' },
       ],
     },
   },
@@ -63,6 +63,7 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
+  const { locale } = useRouter();
   const { colorScheme, radius } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
@@ -71,6 +72,9 @@ function CalendarTile({ widget }: CalendarTileProps) {
   const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
     enabled: !!sessionData?.user,
   });
+
+  const language = getLanguageByCode(locale ?? 'en');
+  require(`dayjs/locale/${language.locale}.js`);
 
   const { data: medias } = api.calendar.medias.useQuery(
     {
@@ -93,8 +97,8 @@ function CalendarTile({ widget }: CalendarTileProps) {
       onPreviousMonth={setMonth}
       onNextMonth={setMonth}
       size={widget.properties.fontSize}
-      locale={i18n?.resolvedLanguage ?? 'en'}
-      firstDayOfWeek={getFirstDayOfWeek(firstDayOfWeek)}
+      locale={language.locale}
+      firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
       hideWeekdays={widget.properties.hideWeekDays}
       style={{ position: 'relative' }}
       date={month}

@@ -49,6 +49,6 @@ export async function getStaticProps({ req, res, locale }: GetServerSidePropsCon
 const useStyles = createStyles(() => ({
   image: {
     margin: '0 auto',
-    display: 'blcok',
+    display: 'block',
   },
 }));

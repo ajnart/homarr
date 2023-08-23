@@ -82,8 +82,6 @@
     "i18next": "^22.5.1",
     "immer": "^10.0.2",
     "js-file-download": "^0.4.12",
-    "moment": "^2.29.4",
-    "moment-timezone": "^0.5.43",
     "next": "13.4.10",
     "next-auth": "^4.22.3",
     "next-i18next": "^14.0.0",

@@ -47,14 +47,14 @@ export const EditAppModal = ({
   const form = useForm<AppType>({
     initialValues: innerProps.app,
     validate: {
-      name: (name) => (!name ? 'Name is required' : null),
+      name: (name) => (!name ? t('validation.name') : null),
       url: (url) => {
         if (!url) {
-          return 'Url is required';
+          return t('validation.noUrl');
         }
 
         if (!url.match(appUrlRegex)) {
-          return 'Value is not a valid url';
+          return t('validation.invalidUrl');
         }
 
         return null;
@@ -62,7 +62,7 @@ export const EditAppModal = ({
       appearance: {
         iconUrl: (url: string) => {
           if (url.length < 1) {
-            return 'This field is required';
+            return t('validation.noIconUrl');
           }
 
           return null;
@@ -71,11 +71,11 @@ export const EditAppModal = ({
       behaviour: {
         externalUrl: (url: string) => {
           if (url === undefined || url.length < 1) {
-            return 'External URI is required';
+            return t('validation.noExternalUri');
           }
 
           if (!url.match(appUrlWithAnyProtocolRegex)) {
-            return 'External URI is not a valid uri';
+            return t('validation.invalidExternalUri');
           }
 
           return null;
