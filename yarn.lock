@@ -2892,21 +2892,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@videojs/http-streaming@npm:3.3.1":
-  version: 3.3.1
-  resolution: "@videojs/http-streaming@npm:3.3.1"
+"@videojs/http-streaming@npm:3.5.3":
+  version: 3.5.3
+  resolution: "@videojs/http-streaming@npm:3.5.3"
   dependencies:
     "@babel/runtime": ^7.12.5
     "@videojs/vhs-utils": 4.0.0
     aes-decrypter: 4.0.1
     global: ^4.4.0
-    m3u8-parser: ^6.0.0
+    m3u8-parser: ^7.1.0
     mpd-parser: ^1.1.1
-    mux.js: 6.3.0
+    mux.js: 7.0.0
     video.js: ^7 || ^8
   peerDependencies:
     video.js: ^7 || ^8
-  checksum: 8feb13bd075d3c425a5140e559f89dcb1ac3e2918ecc6c7e2738c5834cf36f629bdd76639364d79f217eafc73646f5554b8d06439c665ba1fe612e8a3fb9a112
+  checksum: 8150ea62a240219fd6596793882f66c4125f885eb667604086b483d7be91a7e42d29e939eb9a6fa172170705a897b3d294aab7c388f243f4ec8d813d71c003de
   languageName: node
   linkType: hard
 
@@ -6936,6 +6936,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"m3u8-parser@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "m3u8-parser@npm:7.1.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@videojs/vhs-utils": ^3.0.5
+    global: ^4.4.0
+  checksum: c7aa6faaf5ebbbbf4b6afe538da7c583bad8d17c1f80d17d9d17bb03df470d80d2c053620c439df38750b013d155eacfa83014f423f7df3a78acaf2efd2bdb76
+  languageName: node
+  linkType: hard
+
 "magic-string@npm:^0.30.1":
   version: 0.30.2
   resolution: "magic-string@npm:0.30.2"
@@ -7297,7 +7308,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mux.js@npm:6.3.0, mux.js@npm:^6.2.0":
+"mux.js@npm:7.0.0":
+  version: 7.0.0
+  resolution: "mux.js@npm:7.0.0"
+  dependencies:
+    "@babel/runtime": ^7.11.2
+    global: ^4.4.0
+  bin:
+    muxjs-transmux: bin/transmux.js
+  checksum: 37a8bb469222d26937b45540601afd43c6556d13df98621e34c378c27e99528af019f664f7b61fbf1a5861ed6f96c207db7f6414d0df126c6f512a1e7ed0bfbb
+  languageName: node
+  linkType: hard
+
+"mux.js@npm:^6.2.0":
   version: 6.3.0
   resolution: "mux.js@npm:6.3.0"
   dependencies:
@@ -9977,11 +10000,11 @@ __metadata:
   linkType: hard
 
 "video.js@npm:^7 || ^8, video.js@npm:^8.0.3":
-  version: 8.5.1
-  resolution: "video.js@npm:8.5.1"
+  version: 8.5.2
+  resolution: "video.js@npm:8.5.2"
   dependencies:
     "@babel/runtime": ^7.12.5
-    "@videojs/http-streaming": 3.3.1
+    "@videojs/http-streaming": 3.5.3
     "@videojs/vhs-utils": ^4.0.0
     "@videojs/xhr": 2.6.0
     aes-decrypter: ^4.0.1
@@ -9994,7 +10017,7 @@ __metadata:
     videojs-contrib-quality-levels: 4.0.0
     videojs-font: 4.1.0
     videojs-vtt.js: 0.15.5
-  checksum: 2ee3b41282f6b1a423d93fdf90f3f0834a948514dc4b36543456643064bf22d300349c6dec4c662da88c86921a5b170cfebda987e8f2d79aff3eb4a8ea51798b
+  checksum: 2415cd7f08f1cff84c71d0a001455a0f489d9a554180f4cb408f5d83c5f0a32581ac10229b4d2990206ab49ce479f0e049c8627ee081330c55458eeed674bc0a
   languageName: node
   linkType: hard
 
