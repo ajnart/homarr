@@ -20,19 +20,19 @@
   "layout": {
     "preview": {
       "title": "预览",
-      "subtitle": "更改将自动保存"
+      "subtitle": "更改会自动保存"
     },
     "divider": "布局选项",
-    "main": "主要的",
+    "main": "主要",
     "sidebar": "侧边栏",
     "cannotturnoff": "无法关闭",
-    "dashboardlayout": "仪表板布局",
+    "dashboardlayout": "面板布局",
     "enablersidebar": "启用右侧栏",
     "enablelsidebar": "启用左侧栏",
     "enablesearchbar": "启用搜索栏",
-    "enabledocker": "启用docker集成",
-    "enableping": "启用Ping功能",
-    "enablelsidebardesc": "可选的。只能用于应用程序和集成",
-    "enablersidebardesc": "可选的。只能用于应用程序和集成"
+    "enabledocker": "启用 docker 集成",
+    "enableping": "启用 Ping 功能",
+    "enablelsidebardesc": "可选项。只能用于应用和集成使用",
+    "enablersidebardesc": "可选项。只能用于应用和集成使用"
   }
 }
