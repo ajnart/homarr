@@ -6,12 +6,20 @@
       "title": "Ajustes del widget Resumen de agujero DNS",
       "usePiHoleColors": {
         "label": "Usar colores de PiHole"
+      },
+      "layout": {
+        "label": "Diseño",
+        "data": {
+          "grid": "2 por 2",
+          "row": "Horizontal",
+          "column": "Vertical"
+        }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "Dominios en listas",
+      "domainsOnAdlist": "Dominios en las listas",
       "queriesToday": "Consultas de hoy",
       "queriesBlockedTodayPercentage": "Bloqueado hoy",
       "queriesBlockedToday": "Bloqueado hoy"

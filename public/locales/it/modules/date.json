@@ -6,6 +6,27 @@
       "title": "Impostazioni per il widget Data e Ora",
       "display24HourFormat": {
         "label": "Visualizza formato 24 ore"
+      },
+      "dateFormat": {
+        "label": "Formattazione data",
+        "data": {
+          "hide": "Nascondi data"
+        }
+      },
+      "enableTimezone": {
+        "label": "Mostra un fuso orario personalizzato"
+      },
+      "timezoneLocation": {
+        "label": "Posizione Fuso Orario"
+      },
+      "titleState": {
+        "label": "Titolo città",
+        "info": "Nel caso in cui si attivasse l'opzione fuso orario, sarà possibile visualizzare il nome della città e il codice del fuso orario.<br/>Puoi anche mostrare la città da sola o anche non mostrarla.",
+        "data": {
+          "both": "Città e fuso orario",
+          "city": "Solo città",
+          "none": "Niente"
+        }
       }
     }
   }

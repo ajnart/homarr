@@ -72,6 +72,10 @@
 				"bottom": "Unten",
 				"left": "Links"
 			}
+		},
+		"lineClampAppName": {
+			"label": "App-Namen Linienumbruch",
+			"description": "Legt fest, auf wie viele Zeilen Ihr Titel maximal passen soll. Setzen Sie 0 für unbegrenzt."
 		}
 	},
 	"integration": {

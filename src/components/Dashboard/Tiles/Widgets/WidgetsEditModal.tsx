@@ -19,13 +19,13 @@ import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react'
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 
-import { InfoCard } from '../../../InfoCard/InfoCard';
 import { useConfigContext } from '../../../../config/provider';
 import { useConfigStore } from '../../../../config/store';
 import { mapObject } from '../../../../tools/client/objects';
 import Widgets from '../../../../widgets';
 import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
 import { IWidget } from '../../../../widgets/widgets';
+import { InfoCard } from '../../../InfoCard/InfoCard';
 import { DraggableList } from './Inputs/DraggableList';
 import { LocationSelection } from './Inputs/LocationSelection';
 import { StaticDraggableList } from './Inputs/StaticDraggableList';
@@ -138,6 +138,8 @@ const WidgetOptionTypeSwitch: FC<{
   const info = option.info ?? false;
   const link = option.infoLink ?? undefined;
 
+  if (option.hide) return null;
+
   switch (option.type) {
     case 'switch':
       return (
@@ -148,15 +150,17 @@ const WidgetOptionTypeSwitch: FC<{
             onChange={(ev) => handleChange(key, ev.currentTarget.checked)}
             {...option.inputProps}
           />
-          {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+          {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
         </Group>
       );
     case 'text':
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
-            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            <Text size="0.875rem" weight="500">
+              {t(`descriptor.settings.${key}.label`)}
+            </Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <TextInput
             value={value as string}
@@ -169,8 +173,10 @@ const WidgetOptionTypeSwitch: FC<{
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
-            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            <Text size="0.875rem" weight="500">
+              {t(`descriptor.settings.${key}.label`)}
+            </Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <MultiSelect
             data={option.data}
@@ -183,15 +189,26 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'select':
+      const items = typeof option.data === 'function' ? option.data() : option.data;
+      const data = items.map((dataType) => {
+        return !dataType.label
+          ? {
+              value: dataType.value,
+              label: t(`descriptor.settings.${key}.data.${dataType.value}`),
+            }
+          : dataType;
+      });
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
-            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            <Text size="0.875rem" weight="500">
+              {t(`descriptor.settings.${key}.label`)}
+            </Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <Select
             defaultValue={option.defaultValue}
-            data={option.data}
+            data={data}
             value={value as string}
             onChange={(v) => handleChange(key, v ?? option.defaultValue)}
             withinPortal
@@ -203,8 +220,10 @@ const WidgetOptionTypeSwitch: FC<{
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
-            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            <Text size="0.875rem" weight="500">
+              {t(`descriptor.settings.${key}.label`)}
+            </Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <NumberInput
             value={value as number}
@@ -217,8 +236,10 @@ const WidgetOptionTypeSwitch: FC<{
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
-            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            <Text size="0.875rem" weight="500">
+              {t(`descriptor.settings.${key}.label`)}
+            </Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <Slider
             label={value}
@@ -270,7 +291,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <StaticDraggableList
             value={typedVal}
@@ -298,8 +319,10 @@ const WidgetOptionTypeSwitch: FC<{
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
-            <Text size="0.875rem" weight="500">{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            <Text size="0.875rem" weight="500">
+              {t(`descriptor.settings.${key}.label`)}
+            </Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <MultiSelect
             data={value.map((name: any) => ({ value: name, label: name }))}
@@ -324,7 +347,7 @@ const WidgetOptionTypeSwitch: FC<{
         <Stack spacing="xs">
           <Group align="center" spacing="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link}/>}
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <DraggableList
             items={Array.from(value).map((v: any) => ({

@@ -72,6 +72,10 @@
 				"bottom": "Dole",
 				"left": "Vľavo"
 			}
+		},
+		"lineClampAppName": {
+			"label": "Názov aplikácie Line Clamp",
+			"description": "Určuje, na koľko riadkov sa má maximálne zmestiť váš nadpis. Nastavte 0 pre neobmedzený počet."
 		}
 	},
 	"integration": {

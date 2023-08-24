@@ -14,6 +14,7 @@ import { useTranslation } from 'next-i18next';
 
 interface WeatherIconProps {
   code: number;
+  size?: number;
 }
 
 /**
@@ -21,7 +22,7 @@ interface WeatherIconProps {
  * @param code weather code from api
  * @returns weather tile component
  */
-export const WeatherIcon = ({ code }: WeatherIconProps) => {
+export const WeatherIcon = ({ code, size=50 }: WeatherIconProps) => {
   const { t } = useTranslation('modules/weather');
 
   const { icon: Icon, name } =
@@ -30,7 +31,7 @@ export const WeatherIcon = ({ code }: WeatherIconProps) => {
   return (
     <Tooltip withinPortal withArrow label={t(`card.weatherDescriptions.${name}`)}>
       <Box>
-        <Icon style={{ float: 'left' }} size={50} />
+        <Icon style={{ float: 'left' }} size={size} />
       </Box>
     </Tooltip>
   );

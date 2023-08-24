@@ -6,6 +6,27 @@
       "title": "Settings for Date and Time widget",
       "display24HourFormat": {
         "label": "Display full time (24-hour)"
+      },
+      "dateFormat": {
+        "label": "Date formatting",
+        "data": {
+          "hide": "Hide Date"
+        }
+      },
+      "enableTimezone": {
+        "label": "Display a custom Timezone"
+      },
+      "timezoneLocation": {
+        "label": "Timezone Location"
+      },
+      "titleState": {
+        "label": "City title",
+        "info": "In case you activate the Timezone option, the name of the city and the timezone code can be shown.<br/>You can also show the city alone or even show none.",
+        "data": {
+          "both": "City and Timezone",
+          "city": "City only",
+          "none": "None"
+        }
       }
     }
   }

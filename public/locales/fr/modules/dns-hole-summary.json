@@ -6,6 +6,14 @@
       "title": "Paramètres du résumé du DNS hole",
       "usePiHoleColors": {
         "label": "Utiliser les couleurs de PiHole"
+      },
+      "layout": {
+        "label": "Mise en page",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

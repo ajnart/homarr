@@ -134,7 +134,19 @@ export default function CustomizationPage() {
   })} • Homarr`;
 
   return (
-    <MainLayout>
+    <MainLayout
+      contentComponents={
+        <Button
+          component={Link}
+          passHref
+          href={backToBoardHref}
+          variant="light"
+          leftIcon={<IconArrowLeft size={16} />}
+        >
+          {t('backToBoard')}
+        </Button>
+      }
+    >
       <Head>
         <title>{metaTitle}</title>
       </Head>
@@ -191,14 +203,6 @@ export default function CustomizationPage() {
                   name: firstUpperCase(query.slug),
                 })}
               </Title>
-              <Button
-                component={Link}
-                href={backToBoardHref}
-                variant="light"
-                leftIcon={<IconArrowLeft size={16} />}
-              >
-                {t('backToBoard')}
-              </Button>
             </Group>
             <BoardCustomizationFormProvider form={form}>
               <Stack spacing="xl">

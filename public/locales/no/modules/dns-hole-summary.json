@@ -6,6 +6,14 @@
       "title": "",
       "usePiHoleColors": {
         "label": ""
+      },
+      "layout": {
+        "label": "Oppsett",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

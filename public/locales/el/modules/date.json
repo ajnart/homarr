@@ -6,6 +6,27 @@
       "title": "Ρυθμίσεις για το widget ημερομηνίας και ώρας",
       "display24HourFormat": {
         "label": "Εμφάνιση πλήρης ώρας(24-ώρο)"
+      },
+      "dateFormat": {
+        "label": "",
+        "data": {
+          "hide": ""
+        }
+      },
+      "enableTimezone": {
+        "label": ""
+      },
+      "timezoneLocation": {
+        "label": ""
+      },
+      "titleState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "both": "",
+          "city": "",
+          "none": ""
+        }
       }
     }
   }

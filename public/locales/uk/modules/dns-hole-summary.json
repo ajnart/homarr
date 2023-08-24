@@ -6,6 +6,14 @@
       "title": "Налаштування підсумків DNS-Hole",
       "usePiHoleColors": {
         "label": "Використовуйте кольори з PiHole"
+      },
+      "layout": {
+        "label": "Макет",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

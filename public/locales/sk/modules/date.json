@@ -6,6 +6,27 @@
       "title": "Nastavenia miniaplikácie Dátum a čas",
       "display24HourFormat": {
         "label": "Zobraziť celý čas (24 hodín)"
+      },
+      "dateFormat": {
+        "label": "Formát dátumu",
+        "data": {
+          "hide": "Skryť dátum"
+        }
+      },
+      "enableTimezone": {
+        "label": "Zobrazenie vlastného časového pásma"
+      },
+      "timezoneLocation": {
+        "label": "Lokalita Časového pásma"
+      },
+      "titleState": {
+        "label": "Názov mesta",
+        "info": "Ak aktivujete možnosť Časové pásmo, môže sa zobraziť názov mesta a kód časového pásma.<br/>Môžete zobraziť aj samotné mesto alebo dokonca nezobraziť žiadne.",
+        "data": {
+          "both": "Mesto a časové pásmo",
+          "city": "Iba mesto",
+          "none": "Žiadne"
+        }
       }
     }
   }

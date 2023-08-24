@@ -6,6 +6,27 @@
       "title": "Datuma un Laika logrīka iestatījumi",
       "display24HourFormat": {
         "label": "Rādīt pilnu laiku (24 stundu)"
+      },
+      "dateFormat": {
+        "label": "Datuma formāts",
+        "data": {
+          "hide": "Paslēpt Datumu"
+        }
+      },
+      "enableTimezone": {
+        "label": "Rādīt pielāgotu laika joslu"
+      },
+      "timezoneLocation": {
+        "label": "Laika joslas Atrašanās vieta"
+      },
+      "titleState": {
+        "label": "Pilsētas nosaukums",
+        "info": "Aktivizējot opciju Laika josla, var parādīt pilsētas nosaukumu un laika joslas kodu.<br/>Varat arī parādīt tikai pilsētu vai pat nerādīt nevienu.",
+        "data": {
+          "both": "Pilsēta un Laika josla",
+          "city": "Tikai pilsēta",
+          "none": "Nekas"
+        }
       }
     }
   }

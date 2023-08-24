@@ -1,4 +1,4 @@
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
+import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
 import {
   Badge,
   Center,
@@ -17,14 +17,15 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
+import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 
 import { MIN_WIDTH_MOBILE } from '../../constants/constants';
-import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { AppIntegrationType } from '../../types/app';
+import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { BitTorrrentQueueItem } from './TorrentQueueItem';
+import { BitTorrentQueueItem } from './TorrentQueueItem';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -70,6 +71,7 @@ interface TorrentTileProps {
 function TorrentTile({ widget }: TorrentTileProps) {
   const { t } = useTranslation('modules/torrents-status');
   const { width, ref } = useElementSize();
+  const { classes } = useCardStyles(true);
 
   const {
     data,
@@ -106,7 +108,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
         <Loader />
         <Stack align="center" spacing={0}>
           <Text>{t('card.loading.title')}</Text>
-          <Text color="dimmed">Homarr is establishing a connection...</Text>
+          <Text color="dimmed">{t('card.loading.description')}</Text>
         </Stack>
       </Stack>
     );
@@ -154,11 +156,11 @@ function TorrentTile({ widget }: TorrentTileProps) {
           </thead>
           <tbody>
             {filteredTorrents.map((torrent, index) => (
-              <BitTorrrentQueueItem key={index} torrent={torrent} app={undefined} />
+              <BitTorrentQueueItem key={index} torrent={torrent} width={width} app={undefined} />
             ))}
 
             {filteredTorrents.length !== torrents.length && (
-              <tr>
+              <tr className={classes.card}>
                 <td colSpan={width > MIN_WIDTH_MOBILE ? 6 : 3}>
                   <Flex gap="xs" align="center" justify="center">
                     <IconInfoCircle opacity={0.7} size={18} />

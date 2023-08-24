@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Visa i Fahrenheit"
       },
+      "displayCityName": {
+        "label": ""
+      },
       "location": {
         "label": "Plats för väder"
       }

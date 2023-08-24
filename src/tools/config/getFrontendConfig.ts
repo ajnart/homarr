@@ -10,6 +10,8 @@ export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
   let config = getConfig(name);
   let shouldMigrateConfig = false;
 
+  config = migrateAppConfigs(config);
+
   const anyWeatherWidgetWithStringLocation = config.widgets.some(
     (widget) => widget.type === 'weather' && typeof widget.properties.location === 'string'
   );
@@ -129,3 +131,18 @@ const migratePiholeIntegrationField = (config: BackendConfigType) => {
     }),
   };
 };
+
+const migrateAppConfigs = (config: BackendConfigType) => {
+  return {
+    ...config,
+    apps: config.apps.map((app) => ({
+      ...app,
+      appearance: {
+        ...app.appearance,
+        appNameStatus: app.appearance.appNameStatus?? 'normal',
+        positionAppName: app.appearance.positionAppName?? 'column',
+        lineClampAppName: app.appearance.lineClampAppName?? 1,
+      }
+    }))
+  }
+}

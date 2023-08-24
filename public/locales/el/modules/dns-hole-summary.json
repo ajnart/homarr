@@ -6,6 +6,14 @@
       "title": "Ρυθμίσεις για την περίληψη του DNS hole",
       "usePiHoleColors": {
         "label": "Χρήση χρωμάτων από το PiHole"
+      },
+      "layout": {
+        "label": "Διάταξη",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

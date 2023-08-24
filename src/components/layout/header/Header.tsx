@@ -21,6 +21,7 @@ type MainHeaderProps = {
   logoHref?: string;
   showExperimental?: boolean;
   headerActions?: React.ReactNode;
+  contentComponents?: React.ReactNode;
   leftIcon?: React.ReactNode;
 };
 
@@ -29,6 +30,7 @@ export const MainHeader = ({
   logoHref = '/',
   headerActions,
   leftIcon,
+  contentComponents,
 }: MainHeaderProps) => {
   const { breakpoints } = useMantineTheme();
   const isSmallerThanMd = useMediaQuery(`(max-width: ${breakpoints.sm})`);
@@ -53,6 +55,7 @@ export const MainHeader = ({
 
         <Group noWrap style={{ flex: 1 }} position="right">
           <Group noWrap spacing={8}>
+            {contentComponents}
             {headerActions}
           </Group>
           <AvatarMenu />

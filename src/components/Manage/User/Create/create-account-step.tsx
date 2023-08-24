@@ -60,7 +60,7 @@ export const CreateAccountStep = ({
           variant="light"
           px="xl"
         >
-          {t('buttons.next')}
+          {t('common:next')}
         </Button>
       </Flex>
     </Card>

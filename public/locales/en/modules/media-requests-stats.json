@@ -5,7 +5,11 @@
     "settings": {
       "title": "Media requests stats",
       "direction": {
-        "label": "Direction of the layout."
+        "label": "Direction of the layout.",
+        "data":{
+          "row": "Horizontal",
+          "column": "Vertical"
+        }
       }
     }
   },

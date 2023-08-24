@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "In Fahrenheit anzeigen"
       },
+      "displayCityName": {
+        "label": "Zeige Name der Stadt an"
+      },
       "location": {
         "label": "Wetterstandort"
       }

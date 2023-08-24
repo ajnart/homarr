@@ -113,7 +113,7 @@ const CreateNewUserPage = () => {
               variant="default"
               href="/manage/users"
             >
-              {t('buttons.goBack')}
+              {t('common:back')}
             </Button>
           </Group>
         </Stepper.Completed>
@@ -139,7 +139,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   const translations = await getServerSideTranslations(
-    manageNamespaces,
+    [...manageNamespaces, 'password-requirements'],
     ctx.locale,
     ctx.req,
     ctx.res

@@ -4,20 +4,13 @@ import {
   IconCheck,
   IconPlayerPlay,
   IconPlayerStop,
-  IconPlus,
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
 } from '@tabler/icons-react';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { RouterInputs, api } from '~/utils/api';
-
-import { useConfigContext } from '../../config/provider';
-import { openContextModalGeneric } from '../../tools/mantineModalManagerExtensions';
-import { AppType } from '../../types/app';
 
 export interface ContainerActionBarProps {
   selected: Dockerode.ContainerInfo[];
@@ -121,7 +114,7 @@ const useDockerActionMutation = () => {
       { action, id: container.Id },
       {
         onSuccess: () => {
-          notifications.show({
+          notifications.update({
             id: container.Id,
             title: containerName,
             message: `${t(`actions.${action}.end`)} ${containerName}`,

@@ -30,6 +30,7 @@ module.exports = {
       'tr',
       'lv',
       'hr',
+      'hu'
     ],
 
     localeDetection: true,

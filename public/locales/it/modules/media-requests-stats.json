@@ -5,7 +5,7 @@
     "settings": {
       "title": "Statistiche richieste multimediali",
       "direction": {
-        "label": ""
+        "label": "Direzione del layout."
       }
     }
   },

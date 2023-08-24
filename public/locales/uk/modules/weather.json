@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Використовувати Фаренгейт"
       },
+      "displayCityName": {
+        "label": ""
+      },
       "location": {
         "label": "Погодна локація"
       }

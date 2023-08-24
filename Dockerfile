@@ -18,6 +18,8 @@ COPY prisma/schema.prisma prisma/schema.prisma
 
 COPY ./scripts/run.sh ./scripts/run.sh
 
+RUN npm i -g prisma
+
 EXPOSE 7575
 
 ENV PORT 7575

@@ -6,6 +6,14 @@
       "title": "DNS漏洞摘要设置",
       "usePiHoleColors": {
         "label": "使用PiHole所用颜色"
+      },
+      "layout": {
+        "label": "布局",
+        "data": {
+          "grid": "",
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

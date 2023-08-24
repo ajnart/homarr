@@ -1,11 +1,11 @@
 {
     "description": "En el modo edición, puede ajustar mosaicos y configurar aplicaciones. Los cambios no se guardan hasta que salga del modo edición.",
     "button": {
-        "disabled": "Ingresar a modo edición",
+        "disabled": "Entrar en el modo edición",
         "enabled": "Salir y Guardar"
     },
     "popover": {
-        "title": "El Modo Edición está habilitado para el tamaño <1>{{size}}</1>",
+        "title": "El modo edición está habilitado para el tamaño <1>{{size}}</1>",
         "text": "Puedes ajustar y configurar tus aplicaciones ahora. Los cambios <strong>no se guardan</strong> hasta que salgas del modo edición"
     }
 }

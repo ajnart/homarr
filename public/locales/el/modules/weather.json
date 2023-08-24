@@ -7,6 +7,9 @@
       "displayInFahrenheit": {
         "label": "Εμφάνιση σε Φαρενάιτ"
       },
+      "displayCityName": {
+        "label": ""
+      },
       "location": {
         "label": "Τοποθεσία καιρού"
       }
