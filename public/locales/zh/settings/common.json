@@ -6,13 +6,13 @@
     "customizations": "个性化"
   },
   "tips": {
-    "configTip": "将配置文件拖放到页面上传！"
+    "configTip": "将配置文件拖放到页面上即可上传！"
   },
   "credits": {
-    "madeWithLove": "由 @ 用❤️创造",
+    "madeWithLove": "用❤️创造 来自",
     "thirdPartyContent": "查看第三方内容",
     "thirdPartyContentTable": {
-      "dependencyName": "依赖项",
+      "dependencyName": "依赖",
       "dependencyVersion": "版本"
     }
   },
