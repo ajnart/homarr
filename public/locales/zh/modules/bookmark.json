@@ -12,7 +12,7 @@
         "label": "项目"
       },
       "layout": {
-        "label": "布局",
+        "label": "显示布局",
         "data": {
           "autoGrid": "自动网格",
           "horizontal": "横向",
