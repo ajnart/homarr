@@ -8,7 +8,7 @@
         "label": "使用 PiHole 的颜色"
       },
       "layout": {
-        "label": "布局",
+        "label": "显示布局",
         "data": {
           "grid": "2 x 2",
           "row": "横向",
