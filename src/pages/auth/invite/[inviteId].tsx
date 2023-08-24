@@ -9,6 +9,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
+import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -88,6 +89,8 @@ export default function AuthInvitePage() {
       <Head>
         <title>{metaTitle}</title>
       </Head>
+
+      <ThemeSchemeToggle pos="absolute" top={20} right={20} />
 
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>

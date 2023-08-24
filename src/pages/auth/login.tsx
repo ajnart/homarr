@@ -1,4 +1,5 @@
 import {
+  ActionIcon,
   Alert,
   Button,
   Card,
@@ -10,7 +11,7 @@ import {
   Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { IconAlertTriangle, IconMoonStars, IconSun } from '@tabler/icons-react';
+import { IconAlertTriangle } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -20,11 +21,11 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
-import { useColorScheme } from '~/hooks/use-colorscheme';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signInSchema } from '~/validations/user';
+import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 
 export default function LoginPage() {
   const { t } = useTranslation('authentication/login');
@@ -32,8 +33,6 @@ export default function LoginPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const { colorScheme, toggleColorScheme } = useColorScheme();
-  const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
 
   const form = useForm<z.infer<typeof signInSchema>>({
     validateInputOnChange: true,
@@ -67,13 +66,10 @@ export default function LoginPage() {
         <title>{metaTitle}</title>
       </Head>
 
+      <ThemeSchemeToggle pos="absolute" top={20} right={20}/>
 
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <FloatingBackground />
-
-        <Button h="fit-content" w="fit-content" p={10} pos="absolute" top={20} right={20} variant="default" onClick={() => toggleColorScheme()}>
-          <Icon size={30} />
-        </Button>
 
         <Stack spacing={40} align="center" w="100%">
           <Stack spacing={0} align="center">
