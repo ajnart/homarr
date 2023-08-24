@@ -3,7 +3,7 @@
     "name": "天气",
     "description": "显示指定位置的当前天气信息。",
     "settings": {
-      "title": "设置天气小部件",
+      "title": "天气组件设置",
       "displayInFahrenheit": {
         "label": "显示为华氏度"
       },
