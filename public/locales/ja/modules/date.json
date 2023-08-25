@@ -5,7 +5,7 @@
     "settings": {
       "title": "日付と時刻ウィジェットの設定",
       "display24HourFormat": {
-        "label": "フルタイム（24時間）表示"
+        "label": "24時間表示"
       },
       "dateFormat": {
         "label": "日付フォーマット",
