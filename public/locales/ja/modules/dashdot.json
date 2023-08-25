@@ -94,14 +94,14 @@
     "graphs": {
       "storage": {
         "title": "ストレージ",
-        "label": "ストレージです。"
+        "label": "ストレージ:"
       },
       "network": {
         "title": "ネットワーク",
         "label": "ネットワーク",
         "metrics": {
-          "download": "ダウン",
-          "upload": "上"
+          "download": "ダウンロード",
+          "upload": "アップロード"
         }
       },
       "cpu": {
