@@ -16,7 +16,7 @@
       "dependencyVersion": "バージョン"
     }
   },
-  "grow": "グロースグリッド（全領域を占有）",
+  "grow": "グリッドを拡大 (すべてのスペースを取る)",
   "layout": {
     "preview": {
       "title": "プレビュー",
@@ -25,7 +25,7 @@
     "divider": "レイアウト設定",
     "main": "メイン",
     "sidebar": "サイドバー",
-    "cannotturnoff": "OFFにできない",
+    "cannotturnoff": "オフにはできない",
     "dashboardlayout": "ダッシュボードのレイアウト",
     "enablersidebar": "右サイドバーを有効にする",
     "enablelsidebar": "左サイドバーを有効にする",
