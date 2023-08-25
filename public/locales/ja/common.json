@@ -6,21 +6,21 @@
   "delete": "削除",
   "ok": "よっしゃー",
   "edit": "編集",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
+  "enabled": "有効",
+  "disabled": "無効",
+  "enableAll": "すべてを有効にする",
+  "disableAll": "すべてを無効にする",
   "version": "バージョン",
   "changePosition": "ポジションを変更する",
   "remove": "削除",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "{{item}} を削除してもよろしいですか？",
+  "createItem": "{{item}}を作成",
   "sections": {
     "settings": "設定",
     "dangerZone": "デンジャーゾーン"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "APIキー",
     "username": "ユーザー名",
     "password": "パスワード"
   },
@@ -36,5 +36,5 @@
     "medium": "巫女",
     "large": "おおきな"
   },
-  "seeMore": ""
+  "seeMore": "もっと見る..."
 }
