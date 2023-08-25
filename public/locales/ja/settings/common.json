@@ -10,19 +10,19 @@
   },
   "credits": {
     "madeWithLove": "で作った❤️ by @さん",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "サードパーティのコンテンツを見る",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "依存",
       "dependencyVersion": "バージョン"
     }
   },
   "grow": "グロースグリッド（全領域を占有）",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "プレビュー",
+      "subtitle": "変更内容は自動的に保存されます"
     },
-    "divider": "",
+    "divider": "レイアウト設定",
     "main": "メイン",
     "sidebar": "サイドバー",
     "cannotturnoff": "OFFにできない",
