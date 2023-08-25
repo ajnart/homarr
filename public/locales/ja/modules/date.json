@@ -8,24 +8,24 @@
         "label": "フルタイム（24時間）表示"
       },
       "dateFormat": {
-        "label": "",
+        "label": "日付フォーマット",
         "data": {
-          "hide": ""
+          "hide": "日付を隠す"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "カスタムタイムゾーンを表示"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "タイムゾーン"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "都市名",
+        "info": "タイムゾーンオプションを有効にすると、都市名とタイムゾーンコードが表示されます。<br/>また、都市だけを表示することも、何も表示しないこともできます。",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "都市とタイムゾーン",
+          "city": "都市のみ",
+          "none": "なし"
         }
       }
     }
