@@ -18,7 +18,7 @@
       },
       "labelFilter": {
         "label": "ラベル一覧",
-        "description": ""
+        "description": "「ホワイトリスト」にチェックされている場合、これはホワイトリストとして機能する。チェックされていない場合、これはブラックリストとなる。空の場合は何もしません。"
       }
     }
   },
@@ -31,8 +31,8 @@
       "header": {
         "name": "名称",
         "size": "サイズ",
-        "download": "ダウン",
-        "upload": "上",
+        "download": "ダウンロード",
+        "upload": "アップロード",
         "estimatedTimeOfArrival": "ETA",
         "progress": "進捗状況"
       },
@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "トレントが見つかりません",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} エントリはフィルターで非表示になります"
       }
     },
     "lineChart": {
@@ -58,23 +58,23 @@
         "text": "サポートされているTorrentクライアントを追加して、現在のダウンロードを表示します。"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "予期せぬエラーが発生しました",
+        "text": "Torrentクライアントと通信できません。設定を確認してください。"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "読み込み中",
+      "description": "接続中..."
     },
     "popover": {
-      "introductionPrefix": "マネージド・バイ",
+      "introductionPrefix": "管理者：",
       "metrics": {
-        "queuePosition": "キューポジション - {{position}}",
-        "progress": "進捗状況 - {{progress}}%.",
+        "queuePosition": "キューの位置 - {{position}}",
+        "progress": "進捗状況 - {{progress}}%",
         "totalSelectedSize": "合計 - {{totalSize}}",
         "state": "状態 - {{state}}",
         "ratio": "比率",
-        "completed": "完成品"
+        "completed": "完了"
       }
     }
   }
