@@ -14,10 +14,10 @@
         "label": "古くなったトレントを表示する"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "ラベルリストはホワイトリストです（ブラックリストではない）"
       },
       "labelFilter": {
-        "label": "",
+        "label": "ラベル一覧",
         "description": ""
       }
     }
