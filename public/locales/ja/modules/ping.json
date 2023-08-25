@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "ピング",
+    "name": "Ping",
     "description": "指定されたURLのHTTPレスポンス・コードに応じて、ステータス・インジケータを表示する。"
   },
   "states": {
