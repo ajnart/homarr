@@ -1,21 +1,21 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "メディア・リクエスト統計",
+    "description": "メディア・リクエストに関する統計",
     "settings": {
-      "title": "",
+      "title": "メディア・リクエスト統計",
       "direction": {
-        "label": "",
+        "label": "レイアウトの方向",
         "data": {
-          "row": "",
-          "column": ""
+          "row": "水平",
+          "column": "垂直"
         }
       }
     }
   },
   "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+    "pending": "承認待ち",
+    "tvRequests": "テレビのリクエスト",
+    "movieRequests": "映画のリクエスト"
   }
 }
