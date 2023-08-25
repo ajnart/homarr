@@ -1,45 +1,45 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iframe ",
+    "description": "インターネットから任意のコンテンツを埋め込みます。一部のウェブサイトではアクセスが制限される場合があります",
     "settings": {
-      "title": "",
+      "title": "iframe の設定",
       "embedUrl": {
-        "label": ""
+        "label": "埋め込みURL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "フルスクリーンを許可する"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "透明を許可"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "スクロールを許可する"
       },
       "allowPayment": {
-        "label": ""
+        "label": "支払いを許可する"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "自動再生を許可する"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "マイクを許可する"
       },
       "allowCamera": {
-        "label": ""
+        "label": "カメラを許可する"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "位置情報を許可する"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "無効なURL",
+        "text": "ウィジェットの設定で有効なアドレスを入力していることを確認してください"
       },
-      "browserSupport": ""
+      "browserSupport": "お使いのブラウザは iframe をサポートしていません。ブラウザを更新してください。"
     }
   }
 }
