@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "タイルを追加する"
     },
-    "apps": "",
+    "apps": "アプリ",
     "app": {
-        "defaultName": ""
+        "defaultName": "アプリ"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "ウィジェット",
+    "categories": "カテゴリー",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "新しいカテゴリ名",
+        "defaultName": "新しいカテゴリー",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "カテゴリを作成しました",
+            "message": "カテゴリ \"{{name}}\" が作成されました"
         }
     }
 }
