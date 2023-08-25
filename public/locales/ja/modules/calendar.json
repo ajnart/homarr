@@ -5,7 +5,7 @@
     "settings": {
       "title": "カレンダーウィジェットの設定",
       "useSonarrv4": {
-        "label": ""
+        "label": "Sonarr v4 API を使用"
       },
       "sundayStart": {
         "label": "週の始まりは日曜日"
@@ -13,22 +13,22 @@
       "radarrReleaseType": {
         "label": "ラダーリリースタイプ",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "映画館にて",
+          "physicalRelease": "フィジカル",
+          "digitalRelease": "デジタル"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "平日を隠す"
       },
       "fontSize": {
-        "label": "",
+        "label": "文字サイズ",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "極小",
+          "sm": "小",
+          "md": "中",
+          "lg": "大",
+          "xl": "特大"
         }
       }
     }
