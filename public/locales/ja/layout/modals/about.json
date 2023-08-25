@@ -3,22 +3,22 @@
 	"contact": "お困りごとやご質問はありませんか？私たちにご連絡ください。",
 	"addToDashboard": "ダッシュボードに追加",
 	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
+	"key": "ショートカットキー",
+	"action": "アクション",
+	"keybinds": "キー設定",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "ライト/ダークモードに変更する",
+		"focusSearchBar": "検索バーにフォーカス",
+		"openDocker": "Dockerウィジェットを開く",
+		"toggleEdit": "編集モードの切り替え"
 	},
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "設定スキーマのバージョン",
+		"configurationsCount": "利用可能な構成",
 		"version": "バージョン",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
-		"experimental_disableEditMode": ""
+		"nodeEnvironment": "ノード環境",
+		"i18n": "読み込まれたI18n翻訳名前空間",
+		"locales": "I18nロケールの設定",
+		"experimental_disableEditMode": "<b>実験的</b>: 編集モードを無効にする"
 	}
 }
