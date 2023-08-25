@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "メモ帳",
+		"description": "マークダウンベースの対話型ウィジェットでノートを書き留めることができます！",
 		"settings": {
-			"title": "",
+			"title": "メモ帳ウィジェットの設定",
 			"showToolbar": {
-				"label": ""
+				"label": "マークダウンを書くのに役立つツールバーを表示する"
 			},
 			"content": {
-				"label": ""
+				"label": "ノートの内容"
 			}
 		}
 	}
