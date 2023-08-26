@@ -1,5 +1,5 @@
 import { Box, createStyles, useMantineTheme } from '@mantine/core';
-import { useMouse, useViewportSize } from '@mantine/hooks';
+import { useMouse } from '@mantine/hooks';
 
 import { PolkaElement } from './PolkaElement';
 
@@ -12,6 +12,7 @@ export const FloatingBackground = () => {
         <PolkaElement rotation={95} top={0} left={100} />
         <PolkaElement rotation={10} top={50} right={20} />
         <PolkaElement rotation={-4} bottom={20} left={20} />
+        <PolkaElement rotation={-10} bottom={0} right={0} />
       </Box>
     </Box>
   );
@@ -19,9 +20,7 @@ export const FloatingBackground = () => {
 
 const MouseBackdrop = () => {
   const { x, y } = useMouse();
-  const { width, height } = useViewportSize();
-  const smaller = Math.min(width, height);
-  const radius = Math.max(smaller - 500, 200);
+  const radius = 40;
   return (
     <Box pos="absolute" top={0} left={0} w="100%" h="100%">
       <Box
