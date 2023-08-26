@@ -26,7 +26,7 @@ export default function OnboardPage({
         <title>Onboard • Homarr</title>
       </Head>
 
-      <ThemeSchemeToggle pos="absolute" bottom={20} right={20} />
+      <ThemeSchemeToggle pos="absolute" top={20} right={20} variant="default" />
 
       <Stack h="100dvh" bg={background} spacing={0}>
         <Center

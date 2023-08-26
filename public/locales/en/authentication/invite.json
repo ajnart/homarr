@@ -29,7 +29,7 @@
         },
         "error": {
             "title": "Error",
-            "text": "Something went wrong"
+            "text": "Something went wrong, got the following error: {{error}}"
         }
     }
 }

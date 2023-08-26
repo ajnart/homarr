@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { env } from 'process';
 
+import { getUrl } from './tools/server/url';
 import { client } from './utils/api';
 
 const skippedUrls = [
@@ -41,7 +42,5 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  url.pathname = '/onboard';
-
-  return NextResponse.redirect(url);
+  return NextResponse.redirect(getUrl(req) + '/onboard');
 }

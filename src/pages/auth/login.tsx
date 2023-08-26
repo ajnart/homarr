@@ -66,11 +66,9 @@ export default function LoginPage() {
         <title>{metaTitle}</title>
       </Head>
 
-      <ThemeSchemeToggle pos="absolute" top={20} right={20}/>
-
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <FloatingBackground />
-
+        <ThemeSchemeToggle pos="absolute" top={20} right={20}/>
         <Stack spacing={40} align="center" w="100%">
           <Stack spacing={0} align="center">
             <Image src="/imgs/logo/logo.svg" width={80} height={80} alt="" />
