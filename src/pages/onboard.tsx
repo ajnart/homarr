@@ -6,6 +6,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import { OnboardingSteps } from '~/components/Onboarding/onboarding-steps';
 import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
+import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
 import { prisma } from '~/server/db';
 import { getConfig } from '~/tools/config/getConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -25,6 +26,8 @@ export default function OnboardPage({
       <Head>
         <title>Onboard • Homarr</title>
       </Head>
+
+      <FloatingBackground />
 
       <ThemeSchemeToggle pos="absolute" top={20} right={20} variant="default" />
 

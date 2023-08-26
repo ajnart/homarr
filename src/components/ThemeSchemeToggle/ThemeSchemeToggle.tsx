@@ -13,6 +13,7 @@ export const ThemeSchemeToggle = (props : Partial<ActionIconProps>) => {
     <ActionIcon
       size={50}
       variant="outline"
+      radius="md"
       onClick={toggleColorScheme}
       {...props}
     >
