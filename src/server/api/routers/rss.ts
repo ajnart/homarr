@@ -62,11 +62,15 @@ export const rssRouter = createTRPCRouter({
         | IRssWidget
         | undefined;
 
-      if (!rssWidget || input.feedUrls.length === 0) {
+      if (!rssWidget) {
         throw new TRPCError({
           code: 'NOT_FOUND',
           message: 'required widget does not exist',
         });
+      }
+
+      if (input.feedUrls.length === 0) {
+        return [{ feed: undefined, success: false }]
       }
 
       const result = await Promise.all(
