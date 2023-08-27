@@ -3,7 +3,6 @@ import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { getLanguageByCode } from '~/tools/language';
 import { RouterOutputs, api } from '~/utils/api';
 
@@ -64,7 +63,6 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
-  const { locale } = useRouter();
   const { colorScheme, radius } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
@@ -74,8 +72,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
     enabled: !!sessionData?.user,
   });
 
-  const language = getLanguageByCode(locale ?? 'en');
-  require(`dayjs/locale/${language.locale}.js`);
+  const language = getLanguageByCode(userWithSettings?.settings.language ?? 'en');
 
   const { data: medias } = api.calendar.medias.useQuery(
     {
