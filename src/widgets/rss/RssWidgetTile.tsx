@@ -100,7 +100,7 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  if (data.length === 1 && !data[0].feed || isError) {
+  if (data.length < 1 || !data[0].feed || isError) {
     return (
       <Center h="100%">
         <Stack align="center">
@@ -200,7 +200,7 @@ export const useGetRssFeeds = (
       // Cache the results for 24 hours
       cacheTime: 1000 * 60 * 60 * 24,
       staleTime: 1000 * 60 * refreshInterval,
-      enabled: !!configName || !!feedUrls,
+      enabled: !!configName,
     }
   );
 
