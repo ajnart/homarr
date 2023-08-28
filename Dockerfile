@@ -1,6 +1,8 @@
 FROM node:20-alpine
 WORKDIR /app
 
+RUN npm i -g prisma
+
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 ENV NODE_OPTIONS '--no-experimental-fetch'
@@ -17,8 +19,6 @@ COPY .next/static ./.next/static
 COPY prisma/schema.prisma prisma/schema.prisma
 
 COPY ./scripts/run.sh ./scripts/run.sh
-
-RUN npm i -g prisma
 
 EXPOSE 7575
 
