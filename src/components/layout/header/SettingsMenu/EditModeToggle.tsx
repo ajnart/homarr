@@ -58,7 +58,7 @@ function ModalContent() {
 
 export function EditModeToggle() {
   const { editModeEnabled } = useEditModeInformationStore();
-  const Icon = editModeEnabled ? IconEdit : IconEditOff;
+  const Icon = editModeEnabled ? IconEditOff : IconEdit;
 
   return (
     <Menu.Item
@@ -73,7 +73,7 @@ export function EditModeToggle() {
         })
       }
     >
-      {editModeEnabled ? 'Enable edit mode' : 'Disable edit mode'}
+      {editModeEnabled ? 'Disable edit mode' : 'Enable edit mode'}
     </Menu.Item>
   );
 }

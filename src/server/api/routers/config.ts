@@ -68,6 +68,12 @@ export const configRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ input }) => {
+      if (process.env.DISABLE_EDIT_MODE === 'true') {
+        throw new TRPCError({
+          code: 'METHOD_NOT_SUPPORTED',
+          message: 'Edit is not allowed, because edit mode is disabled'
+        });
+      }
       Consola.info(`Saving updated configuration of '${input.name}' config.`);
 
       const previousConfig = getConfig(input.name);

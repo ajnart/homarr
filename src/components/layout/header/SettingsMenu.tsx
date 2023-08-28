@@ -29,7 +29,7 @@ export function SettingsMenu({ newVersionAvailable }: { newVersionAvailable: str
           <ColorSchemeSwitch />
           <EditModeToggle />
           <Menu.Divider />
-          {!editModeEnabled && (
+          {editModeEnabled && (
             <Menu.Item icon={<IconSettings strokeWidth={1.2} size={18} />} onClick={drawer.open}>
               {t('sections.settings')}
             </Menu.Item>

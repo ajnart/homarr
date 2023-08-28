@@ -42,7 +42,7 @@ export function Header(props: any) {
           noWrap
         >
           <Search />
-          {!editModeEnabled && <ToggleEditModeAction />}
+          {editModeEnabled && <ToggleEditModeAction />}
           <DockerMenuButton />
           <Indicator
             size={15}

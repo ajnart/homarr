@@ -209,7 +209,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
 
   let items: InformationTableItem[] = [];
 
-  if (editModeEnabled) {
+  if (!editModeEnabled) {
     items = [
       ...items,
       {
