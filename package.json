@@ -23,7 +23,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "docker:build": "turbo build && docker build . -t homarr:dev",
-    "docker:start": "docker run --env-file ./.env -p 7575:7575 homarr:dev ",
+    "docker:start": "docker run -p 7575:7575 homarr:dev ",
     "postinstall": "prisma generate"
   },
   "dependencies": {

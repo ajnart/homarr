@@ -1,8 +1,6 @@
 FROM node:20-alpine
 WORKDIR /app
 
-RUN npm i -g prisma
-
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 ENV NODE_OPTIONS '--no-experimental-fetch'
@@ -10,6 +8,7 @@ ENV NODE_OPTIONS '--no-experimental-fetch'
 COPY next.config.js ./
 COPY public ./public
 COPY package.json ./package.json
+COPY yarn.lock ./yarn.lock
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
@@ -19,6 +18,9 @@ COPY .next/static ./.next/static
 COPY prisma/schema.prisma prisma/schema.prisma
 
 COPY ./scripts/run.sh ./scripts/run.sh
+
+RUN yarn global add prisma
+RUN which prisma
 
 EXPOSE 7575
 
