@@ -44,7 +44,7 @@
 }
 
 // Styling for sidebar grid-stack elements
-@for $i from 1 to 3 {
+@for $i from 1 to 96 {
   .grid-stack.grid-stack-sidebar>.grid-stack-item[gs-w="#{$i}"]  { width: 128px * $i }
 	.grid-stack.grid-stack-sidebar>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: 128px * $i }
 	.grid-stack.grid-stack-sidebar>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: 128px * $i }
