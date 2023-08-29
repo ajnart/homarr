@@ -63,9 +63,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-      - run: npm install --immutable
+      - run: yarn install --immutable
 
-      - run: npm run build
+      - run: yarn build
 
       - name: Docker meta
         id: meta

@@ -70,11 +70,11 @@ jobs:
           path: .next/cache
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
-      - run: npm install --immutable
+      - run: yarn install --immutable
 
-      - run: npm run build
+      - run: yarn build
 
-      - run: npm run test:run
+      - run: yarn test:run
 
       - name: Docker meta
         if: github.event_name != 'pull_request'
