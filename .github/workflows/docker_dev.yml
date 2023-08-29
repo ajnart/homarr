@@ -72,7 +72,7 @@ jobs:
 
       - run: yarn install --immutable
 
-      - run: yarn build
+      - run: yarn turbo build
 
       - run: yarn test:run
 
