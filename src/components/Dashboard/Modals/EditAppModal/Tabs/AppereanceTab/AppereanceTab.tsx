@@ -67,6 +67,15 @@ export const AppearanceTab = ({
         />
         {form.values.appearance.appNameStatus === 'normal' && (
           <>
+            <NumberInput
+              label={t('appearance.appNameFontSize.label')}
+              description={t('appearance.appNameFontSize.description')}
+              min={5}
+              {...form.getInputProps('appearance.appNameFontSize')}
+              onChange={(value) => {
+                form.setFieldValue('appearance.appNameFontSize', value);
+              }}
+            />
             <Select
               label={t('appearance.positionAppName.label')}
               description={t('appearance.positionAppName.description')}
