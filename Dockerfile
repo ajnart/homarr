@@ -19,6 +19,7 @@ COPY prisma/schema.prisma prisma/schema.prisma
 
 COPY ./scripts/run.sh ./scripts/run.sh
 
+ARG NPM_CONFIG_LOGLEVEL=verbose
 RUN yarn global add prisma
 RUN which prisma
 
