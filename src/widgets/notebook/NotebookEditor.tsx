@@ -1,10 +1,10 @@
-import { ActionIcon, createStyles, rem } from '@mantine/core';
+import { ActionIcon, ScrollArea } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { Link, RichTextEditor } from '@mantine/tiptap';
-import { IconArrowUp, IconEdit, IconEditOff } from '@tabler/icons-react';
+import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
@@ -93,71 +93,72 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           {isEditing ? <IconEditOff size={20} /> : <IconEdit size={20} />}
         </ActionIcon>
       )}
-      <RichTextEditor
-        p={0}
-        mt={0}
-        editor={editor}
-        styles={(theme) => ({
-          root: {
-            '& .ProseMirror': {
-              padding: '0  !important',
+      <ScrollArea h="100%" sx={{ borderRadius: '0.5rem' }}>
+        <RichTextEditor
+          p={0}
+          mt={0}
+          editor={editor}
+          styles={(theme) => ({
+            root: {
+              '& .ProseMirror': {
+                padding: '0  !important',
+              },
+              border: 'none',
             },
-            border: 'none',
-          },
-          toolbar: {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
-            paddingTop: 0,
-            paddingBottom: theme.spacing.md,
-          },
-          content: {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
-          },
-        })}
-      >
-        <RichTextEditor.Toolbar
-          style={{
-            display: isEditing && widget.properties.showToolbar === true ? 'flex' : 'none',
-          }}
+            toolbar: {
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+            },
+            content: {
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+              padding: 5,
+            },
+          })}
         >
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Bold />
-            <RichTextEditor.Italic />
-            <RichTextEditor.Strikethrough />
-            <RichTextEditor.ClearFormatting />
-            <RichTextEditor.Code />
-          </RichTextEditor.ControlsGroup>
-
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.H1 />
-            <RichTextEditor.H2 />
-            <RichTextEditor.H3 />
-            <RichTextEditor.H4 />
-          </RichTextEditor.ControlsGroup>
-
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Blockquote />
-            <RichTextEditor.Hr />
-            <RichTextEditor.BulletList />
-            <RichTextEditor.OrderedList />
-          </RichTextEditor.ControlsGroup>
-
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Link />
-            <RichTextEditor.Unlink />
-          </RichTextEditor.ControlsGroup>
-        </RichTextEditor.Toolbar>
-        {editor && (
-          <BubbleMenu editor={editor}>
+          <RichTextEditor.Toolbar
+            style={{
+              display: isEditing && widget.properties.showToolbar === true ? 'flex' : 'none',
+            }}
+          >
             <RichTextEditor.ControlsGroup>
               <RichTextEditor.Bold />
               <RichTextEditor.Italic />
-              <RichTextEditor.Link />
+              <RichTextEditor.Strikethrough />
+              <RichTextEditor.ClearFormatting />
+              <RichTextEditor.Code />
             </RichTextEditor.ControlsGroup>
-          </BubbleMenu>
-        )}
 
-        <RichTextEditor.Content />
-      </RichTextEditor>
+            <RichTextEditor.ControlsGroup>
+              <RichTextEditor.H1 />
+              <RichTextEditor.H2 />
+              <RichTextEditor.H3 />
+              <RichTextEditor.H4 />
+            </RichTextEditor.ControlsGroup>
+
+            <RichTextEditor.ControlsGroup>
+              <RichTextEditor.Blockquote />
+              <RichTextEditor.Hr />
+              <RichTextEditor.BulletList />
+              <RichTextEditor.OrderedList />
+            </RichTextEditor.ControlsGroup>
+
+            <RichTextEditor.ControlsGroup>
+              <RichTextEditor.Link />
+              <RichTextEditor.Unlink />
+            </RichTextEditor.ControlsGroup>
+          </RichTextEditor.Toolbar>
+          {editor && (
+            <BubbleMenu editor={editor}>
+              <RichTextEditor.ControlsGroup>
+                <RichTextEditor.Bold />
+                <RichTextEditor.Italic />
+                <RichTextEditor.Link />
+              </RichTextEditor.ControlsGroup>
+            </BubbleMenu>
+          )}
+
+          <RichTextEditor.Content />
+        </RichTextEditor>
+      </ScrollArea>
     </>
   );
 }
