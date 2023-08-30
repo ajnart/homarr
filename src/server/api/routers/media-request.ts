@@ -3,12 +3,12 @@ import { z } from 'zod';
 import { checkIntegrationsType } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { MediaRequestListWidget } from '~/widgets/media-requests/MediaRequestListTile';
-import { MediaRequest } from '~/widgets/media-requests/media-request-types';
+import { MediaRequest, Users } from '~/widgets/media-requests/media-request-types';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const mediaRequestsRouter = createTRPCRouter({
-  all: publicProcedure
+  allMedia: publicProcedure
     .input(
       z.object({
         configName: z.string(),
@@ -58,9 +58,10 @@ export const mediaRequestsRouter = createTRPCRouter({
                   rootFolder: item.rootFolder,
                   type: item.type,
                   name: genericItem.name,
-                  userName: item.requestedBy.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, item),
+                  userName: item.requestedBy.username,
+                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar),
                   userLink: `${appUrl}/users/${item.requestedBy.id}`,
+                  userRequestCount: item.requestedBy.requestCount,
                   airDate: genericItem.airDate,
                   status: item.status,
                   backdropPath: `https://image.tmdb.org/t/p/original/${genericItem.backdropPath}`,
@@ -85,17 +86,78 @@ export const mediaRequestsRouter = createTRPCRouter({
 
       return mediaRequests;
     }),
+  users: publicProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+      })
+    )
+    .query(async ({ input }) => {
+      const config = getConfig(input.configName);
+
+      const apps = config.apps.filter((app) =>
+        checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
+      );
+
+      Consola.log(`Retrieving media requests from ${apps.length} apps`);
+
+      const promises = apps.map((app): Promise<Users[]> => {
+        const apiKey =
+          app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
+        const headers: HeadersInit = { 'X-Api-Key': apiKey };
+        return fetch(`${app.url}/api/v1/user?take=25&skip=0&sort=requests`, {
+          headers,
+        })
+          .then(async (response) => {
+            const body = (await response.json()) as OverseerrUsers;
+            const mediaWidget = config.widgets.find((x) => x.type === 'media-requests-list') as
+              | MediaRequestListWidget
+              | undefined;
+            if (!mediaWidget) {
+              Consola.log('No media-requests-list found');
+              return Promise.resolve([]);
+            }
+            const appUrl = mediaWidget.properties.replaceLinksWithExternalHost
+              ? app.behaviour.externalUrl
+              : app.url;
+
+            const users = await Promise.all(
+              body.results.map(async (item): Promise<Users> => {
+                return {
+                  appId: app.id,
+                  id: item.id,
+                  userName: item.username,
+                  userProfilePicture: constructAvatarUrl(appUrl, item.avatar),
+                  userLink: `${appUrl}/users/${item.id}`,
+                  userRequestCount: item.requestCount,
+                };
+              })
+            );
+            return Promise.resolve(users);
+          })
+          .catch((err) => {
+            Consola.error(`Failed to request data from Overseerr: ${err}`);
+            return Promise.resolve([]);
+          });
+      })
+      const users = (await Promise.all(promises)).reduce(
+        (prev, cur) => prev.concat(cur),
+        []
+      );
+
+      return users;
+    }),
 });
 
-const constructAvatarUrl = (appUrl: string, item: OverseerrResponseItem) => {
+const constructAvatarUrl = (appUrl: string, avatar: string) => {
   const isAbsolute =
-    item.requestedBy.avatar.startsWith('http://') || item.requestedBy.avatar.startsWith('https://');
+    avatar.startsWith('http://') || avatar.startsWith('https://');
 
   if (isAbsolute) {
-    return item.requestedBy.avatar;
+    return avatar;
   }
 
-  return `${appUrl}/${item.requestedBy.avatar}`;
+  return `${appUrl}/${avatar}`;
 };
 
 const retrieveDetailsForItem = async (
@@ -158,6 +220,10 @@ type OverseerrResponse = {
   results: OverseerrResponseItem[];
 };
 
+type OverseerrUsers = {
+  results: OverseerrResponseItemUser[];
+}
+
 type OverseerrResponseItem = {
   id: number;
   status: number;
@@ -174,6 +240,7 @@ type OverseerrResponseItemMedia = {
 
 type OverseerrResponseItemUser = {
   id: number;
-  displayName: string;
+  username: string;
   avatar: string;
+  requestCount: number;
 };

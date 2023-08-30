@@ -13,9 +13,15 @@
       }
     }
   },
-  "stats": {
+  "mediaStats": {
+    "title": "Media Stats",
     "pending": "Pending approvals",
     "tvRequests": "TV requests",
-    "movieRequests": "Movie requests"
+    "movieRequests": "Movie requests",
+    "totalRequests": "Total"
+  },
+  "userStats": {
+    "title": "Users",
+    "requests": "Requests: {{number}}"
   }
 }

@@ -55,7 +55,8 @@ const useMediaRequestDecisionMutation = () => {
   const utils = api.useContext();
   const { mutateAsync } = api.overseerr.decide.useMutation({
     onSuccess() {
-      utils.mediaRequest.all.invalidate();
+      utils.mediaRequest.allMedia.invalidate();
+      utils.mediaRequest.users.invalidate();
     },
   });
   const { t } = useTranslation('modules/media-requests-list');
