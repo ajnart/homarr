@@ -18,10 +18,11 @@
     "pending": "Pending approvals",
     "tvRequests": "TV requests",
     "movieRequests": "Movie requests",
+    "approved": "Already approved",
     "totalRequests": "Total"
   },
   "userStats": {
-    "title": "Users",
+    "title": "Top Users",
     "requests": "Requests: {{number}}"
   }
 }

@@ -1,7 +1,18 @@
-import { Avatar, Card, Flex, Group, Stack, Text, UnstyledButton } from '@mantine/core';
-import { useElementSize } from '@mantine/hooks';
-import { IconChartBar } from '@tabler/icons-react';
+import {
+  Avatar,
+  Card,
+  Flex,
+  Group,
+  Indicator,
+  Stack,
+  Text,
+  Tooltip,
+  useMantineTheme,
+} from '@mantine/core';
+import { IconChartBar, IconExternalLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { useRef } from 'react';
+import { useResize } from '~/hooks/use-resize';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
@@ -14,8 +25,8 @@ const definition = defineWidget({
   icon: IconChartBar,
   options: {},
   gridstack: {
-    minWidth: 1,
-    minHeight: 1,
+    minWidth: 2,
+    minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -32,11 +43,18 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
   const { t } = useTranslation('modules/media-requests-stats');
   const { data: mediaData, isFetching: mediaFetching } = useMediaRequestQuery();
   const { data: usersData, isFetching: usersFetching } = useUsersQuery();
-  const { ref, height } = useElementSize();
+  const ref = useRef<HTMLDivElement>(null);
+  const { height } = useResize(ref, []);
+  const { colorScheme } = useMantineTheme();
 
-  if (!mediaData || mediaFetching || !usersData || usersFetching) {
+  if (!mediaData || !usersData) {
     return <WidgetLoading />;
   }
+
+  const appList: string[] = [];
+  mediaData.forEach((item) => {
+    if (!appList.includes(item.appId)) appList.push(item.appId);
+  })
 
   const baseStats: { label: string; number: number }[] = [
     {
@@ -52,30 +70,26 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
       number: mediaData.filter((x) => x.type === 'movie').length,
     },
     {
+      label: t('mediaStats.approved'),
+      number: mediaData.filter((x) => x.status === MediaRequestStatus.Approved).length
+    },
+    {
       label: t('mediaStats.totalRequests'),
       number: mediaData.length,
     },
   ];
 
-  const users: { username: string; avatar: string; href: string; requests: number }[] = usersData
-    .sort((x, y) => x.userRequestCount - y.userRequestCount)
-    .slice(0, Math.trunc(height / 50))
-    .map((x) => {
-      return {
-        username: x.userName,
-        avatar: x.userProfilePicture,
-        href: x.userLink,
-        requests: x.userRequestCount,
-      };
-    });
+  const users = usersData
+    .sort((x, y) => (x.userRequestCount > y.userRequestCount ? -1 : 1))
+    .slice(0, Math.trunc(height / 60));
 
   return (
     <Flex h="100%" gap={0} direction="column">
-      <Text mt={-7}>{t('mediaStats.title')}</Text>
-      <Card withBorder py={5} px={10} style={{ overflow: 'unset' }}>
-        {baseStats.map((stat) => {
+      <Text mt={-5}>{t('mediaStats.title')}</Text>
+      <Card py={5} px={10} radius="md" style={{ overflow: 'unset' }} withBorder>
+        {baseStats.map((stat, index) => {
           return (
-            <Group position="apart">
+            <Group key={index} position="apart">
               <Text color="dimmed" align="center" size="xs">
                 {stat.label}
               </Text>
@@ -86,27 +100,57 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
           );
         })}
       </Card>
-      <Text mt={2} mb={-2}>{t('userStats.title')}</Text>
-      <Stack ref={ref} style={{ flex: 1 }} spacing={0} p={0} sx={{ overflow: 'hidden' }}>
+      <Text mt={2}>{t('userStats.title')}</Text>
+      <Stack ref={ref} style={{ flex: 1 }} spacing={5} p={0} sx={{ overflow: 'hidden' }}>
         {users.map((user) => {
           return (
             <Card
-              withBorder
+              key={user.id}
               p={0}
-              my={3}
               component="a"
-              href={user.href}
+              href={user.userLink}
               target="_blank"
-              mah={75}
-              mih={50}
+              mah={95}
+              mih={55}
+              radius="md"
               style={{ flex: 1 }}
+              withBorder
             >
-              <Group spacing={0} align="center" h="100%">
-                <Avatar m={5} size={35} src={user.avatar} alt="user avatar"/>
-                <Stack spacing={0}>
-                  <Text>{user.username}</Text>
-                  <Text size="xs">{t('userStats.requests', {number: user.requests})}</Text>
+              <Group
+                spacing={5}
+                px={10}
+                py={5}
+                align="center"
+                h="100%"
+                display="flex"
+                style={{ flexDirection: 'row' }}
+              >
+                {appList.length > 1 &&
+                  <Tooltip.Floating
+                    label={user.app.charAt(0).toUpperCase() + user.app.slice(1)}
+                    c={colorScheme === 'light' ? 'black' : 'dark.0'}
+                    color={colorScheme === 'light' ? 'gray.2' : 'dark.4'}
+                  >
+                    <Indicator
+                      withBorder
+                      top={18}
+                      left={8}
+                      size={15}
+                      ml={-5}
+                      color={user.app === 'overseerr' ? '#ECB000' : '#6677CC'}
+                      processing={mediaFetching || usersFetching}
+                      children
+                    />
+                  </Tooltip.Floating>
+                }
+                <Avatar radius="xl" size={45} src={user.userProfilePicture} alt="user avatar" />
+                <Stack spacing={0} style={{ flex: 1 }}>
+                  <Text>{user.userName}</Text>
+                  <Text size="xs">
+                    {t('userStats.requests', { number: user.userRequestCount })}
+                  </Text>
                 </Stack>
+                <IconExternalLink size={20} />
               </Group>
             </Card>
           );

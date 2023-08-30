@@ -17,7 +17,7 @@ export type MediaRequest = {
 };
 
 export type Users = {
-  appId: string;
+  app: string;
   id: number;
   userName: string;
   userProfilePicture: string;

@@ -35,11 +35,7 @@ export const mediaRequestsRouter = createTRPCRouter({
             const mediaWidget = config.widgets.find((x) => x.type === 'media-requests-list') as
               | MediaRequestListWidget
               | undefined;
-            if (!mediaWidget) {
-              Consola.log('No media-requests-list found');
-              return Promise.resolve([]);
-            }
-            const appUrl = mediaWidget.properties.replaceLinksWithExternalHost
+            const appUrl = mediaWidget?.properties.replaceLinksWithExternalHost
               ? app.behaviour.externalUrl
               : app.url;
 
@@ -113,18 +109,14 @@ export const mediaRequestsRouter = createTRPCRouter({
             const mediaWidget = config.widgets.find((x) => x.type === 'media-requests-list') as
               | MediaRequestListWidget
               | undefined;
-            if (!mediaWidget) {
-              Consola.log('No media-requests-list found');
-              return Promise.resolve([]);
-            }
-            const appUrl = mediaWidget.properties.replaceLinksWithExternalHost
+            const appUrl = mediaWidget?.properties.replaceLinksWithExternalHost
               ? app.behaviour.externalUrl
               : app.url;
 
             const users = await Promise.all(
               body.results.map(async (item): Promise<Users> => {
                 return {
-                  appId: app.id,
+                  app: app.integration?.type?? 'overseerr',
                   id: item.id,
                   userName: item.username,
                   userProfilePicture: constructAvatarUrl(appUrl, item.avatar),
