@@ -114,14 +114,14 @@ export const mediaRequestsRouter = createTRPCRouter({
               : app.url;
 
             const users = await Promise.all(
-              body.results.map(async (item): Promise<Users> => {
+              body.results.map(async (user): Promise<Users> => {
                 return {
-                  app: app.integration?.type?? 'overseerr',
-                  id: item.id,
-                  userName: item.username,
-                  userProfilePicture: constructAvatarUrl(appUrl, item.avatar),
-                  userLink: `${appUrl}/users/${item.id}`,
-                  userRequestCount: item.requestCount,
+                  app: app.integration?.type ?? 'overseerr',
+                  id: user.id,
+                  userName: user.username,
+                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar),
+                  userLink: `${appUrl}/users/${user.id}`,
+                  userRequestCount: user.requestCount,
                 };
               })
             );
@@ -131,19 +131,15 @@ export const mediaRequestsRouter = createTRPCRouter({
             Consola.error(`Failed to request data from Overseerr: ${err}`);
             return Promise.resolve([]);
           });
-      })
-      const users = (await Promise.all(promises)).reduce(
-        (prev, cur) => prev.concat(cur),
-        []
-      );
+      });
+      const users = (await Promise.all(promises)).reduce((prev, cur) => prev.concat(cur), []);
 
       return users;
     }),
 });
 
 const constructAvatarUrl = (appUrl: string, avatar: string) => {
-  const isAbsolute =
-    avatar.startsWith('http://') || avatar.startsWith('https://');
+  const isAbsolute = avatar.startsWith('http://') || avatar.startsWith('https://');
 
   if (isAbsolute) {
     return avatar;
@@ -214,7 +210,7 @@ type OverseerrResponse = {
 
 type OverseerrUsers = {
   results: OverseerrResponseItemUser[];
-}
+};
 
 type OverseerrResponseItem = {
   id: number;

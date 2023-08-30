@@ -9,10 +9,9 @@ import {
   Tooltip,
   useMantineTheme,
 } from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
 import { IconChartBar, IconExternalLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useRef } from 'react';
-import { useResize } from '~/hooks/use-resize';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
@@ -41,20 +40,31 @@ interface MediaRequestStatsWidgetProps {
 
 function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
   const { t } = useTranslation('modules/media-requests-stats');
-  const { data: mediaData, isFetching: mediaFetching } = useMediaRequestQuery();
-  const { data: usersData, isFetching: usersFetching } = useUsersQuery();
-  const ref = useRef<HTMLDivElement>(null);
-  const { height } = useResize(ref, []);
+  const {
+    data: mediaData,
+    isFetching: mediaFetching,
+    isLoading: mediaLoading,
+  } = useMediaRequestQuery();
+  const {
+    data: usersData,
+    isFetching: usersFetching,
+    isLoading: usersLoading
+  } = useUsersQuery();
+  const { ref, height } = useElementSize();
   const { colorScheme } = useMantineTheme();
 
-  if (!mediaData || !usersData) {
-    return <WidgetLoading />;
+  if (!mediaData || !usersData || mediaLoading || usersLoading) {
+    return (
+      <Stack ref={ref} h="100%">
+        <WidgetLoading />
+      </Stack>
+    );
   }
 
   const appList: string[] = [];
   mediaData.forEach((item) => {
     if (!appList.includes(item.appId)) appList.push(item.appId);
-  })
+  });
 
   const baseStats: { label: string; number: number }[] = [
     {
@@ -71,7 +81,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
     },
     {
       label: t('mediaStats.approved'),
-      number: mediaData.filter((x) => x.status === MediaRequestStatus.Approved).length
+      number: mediaData.filter((x) => x.status === MediaRequestStatus.Approved).length,
     },
     {
       label: t('mediaStats.totalRequests'),
@@ -125,7 +135,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
                 display="flex"
                 style={{ flexDirection: 'row' }}
               >
-                {appList.length > 1 &&
+                {appList.length > 1 && (
                   <Tooltip.Floating
                     label={user.app.charAt(0).toUpperCase() + user.app.slice(1)}
                     c={colorScheme === 'light' ? 'black' : 'dark.0'}
@@ -142,7 +152,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
                       children
                     />
                   </Tooltip.Floating>
-                }
+                )}
                 <Avatar radius="xl" size={45} src={user.userProfilePicture} alt="user avatar" />
                 <Stack spacing={0} style={{ flex: 1 }}>
                   <Text>{user.userName}</Text>

@@ -23,7 +23,7 @@ export type Users = {
   userProfilePicture: string;
   userLink: string;
   userRequestCount: number;
-}
+};
 
 export enum MediaRequestStatus {
   PendingApproval = 1,
