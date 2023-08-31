@@ -21,8 +21,6 @@ export const mediaRequestsRouter = createTRPCRouter({
         checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
 
-      Consola.log(`Retrieving media requests from ${apps.length} apps`);
-
       const promises = apps.map((app): Promise<MediaRequest[]> => {
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
@@ -54,7 +52,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   rootFolder: item.rootFolder,
                   type: item.type,
                   name: genericItem.name,
-                  userName: item.requestedBy.username,
+                  userName: item.requestedBy.displayName,
                   userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar),
                   userLink: `${appUrl}/users/${item.requestedBy.id}`,
                   userRequestCount: item.requestedBy.requestCount,
@@ -95,8 +93,6 @@ export const mediaRequestsRouter = createTRPCRouter({
         checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
 
-      Consola.log(`Retrieving media requests from ${apps.length} apps`);
-
       const promises = apps.map((app): Promise<Users[]> => {
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
@@ -118,7 +114,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                 return {
                   app: app.integration?.type ?? 'overseerr',
                   id: user.id,
-                  userName: user.username,
+                  userName: user.displayName,
                   userProfilePicture: constructAvatarUrl(appUrl, user.avatar),
                   userLink: `${appUrl}/users/${user.id}`,
                   userRequestCount: user.requestCount,
@@ -128,7 +124,7 @@ export const mediaRequestsRouter = createTRPCRouter({
             return Promise.resolve(users);
           })
           .catch((err) => {
-            Consola.error(`Failed to request data from Overseerr: ${err}`);
+            Consola.error(`Failed to request users from Overseerr: ${err}`);
             return Promise.resolve([]);
           });
       });
@@ -167,7 +163,7 @@ const retrieveDetailsForItem = async (
       backdropPath: series.backdropPath,
       posterPath: series.backdropPath,
     };
-  }
+  };
 
   const movieResponse = await fetch(`${baseUrl}/api/v1/movie/${id}`, {
     headers,
@@ -228,7 +224,7 @@ type OverseerrResponseItemMedia = {
 
 type OverseerrResponseItemUser = {
   id: number;
-  username: string;
+  displayName: string;
   avatar: string;
   requestCount: number;
 };
