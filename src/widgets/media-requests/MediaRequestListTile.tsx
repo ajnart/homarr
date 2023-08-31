@@ -6,6 +6,7 @@ import {
   Flex,
   Group,
   Image,
+  ScrollArea,
   Stack,
   Text,
   Tooltip,
@@ -27,6 +28,10 @@ const definition = defineWidget({
   icon: IconGitPullRequest,
   options: {
     replaceLinksWithExternalHost: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    openInNewTab: {
       type: 'switch',
       defaultValue: true,
     },
@@ -126,115 +131,118 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   });
 
   return (
-    <Stack>
-      {countPendingApproval > 0 ? (
-        <Text>{t('pending', { countPendingApproval })}</Text>
-      ) : (
-        <Text>{t('nonePending')}</Text>
-      )}
-      {sortedData.map((item) => (
-        <Card withBorder>
-          <Flex wrap="wrap" justify="space-between" gap="md">
-            <Flex gap="md">
-              <Image
-                src={item.posterPath}
-                width={30}
-                height={50}
-                alt="poster"
-                radius="xs"
-                withPlaceholder
-              />
-              <Stack spacing={0}>
-                <Group spacing="xs">
-                  {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
-                  <MediaRequestStatusBadge status={item.status} />
-                </Group>
-                <Text
-                  sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
-                  lineClamp={1}
-                  weight="bold"
-                  component="a"
-                  href={item.href}
-                >
-                  {item.name}
-                </Text>
-              </Stack>
-            </Flex>
-            <Stack justify="center">
-              <Flex gap="xs">
+    <ScrollArea h="100%">
+      <Stack>
+        {countPendingApproval > 0 ? (
+          <Text>{t('pending', { countPendingApproval })}</Text>
+        ) : (
+          <Text>{t('nonePending')}</Text>
+        )}
+        {sortedData.map((item) => (
+          <Card radius="md" withBorder>
+            <Flex wrap="wrap" justify="space-between" gap="md">
+              <Flex gap="md">
                 <Image
-                  src={item.userProfilePicture}
-                  width={25}
-                  height={25}
-                  alt="requester avatar"
-                  radius="xl"
+                  src={item.posterPath}
+                  width={30}
+                  height={50}
+                  alt="poster"
+                  radius="xs"
                   withPlaceholder
                 />
-                <Text
-                  component="a"
-                  href={item.userLink}
-                  sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
-                >
-                  {item.userName}
-                </Text>
+                <Stack spacing={0}>
+                  <Group spacing="xs">
+                    {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
+                    <MediaRequestStatusBadge status={item.status} />
+                  </Group>
+                  <Text
+                    sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
+                    lineClamp={1}
+                    weight="bold"
+                    component="a"
+                    href={item.href}
+                  >
+                    {item.name}
+                  </Text>
+                </Stack>
               </Flex>
+              <Stack justify="center">
+                <Flex gap="xs">
+                  <Image
+                    src={item.userProfilePicture}
+                    width={25}
+                    height={25}
+                    alt="requester avatar"
+                    radius="xl"
+                    withPlaceholder
+                  />
+                  <Text
+                    component="a"
+                    href={item.userLink}
+                    target={widget.properties.openInNewTab ? "_blank" : "_self"}
+                    sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
+                  >
+                    {item.userName}
+                  </Text>
+                </Flex>
 
-              {item.status === MediaRequestStatus.PendingApproval && (
-                <Group>
-                  <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
-                    <ActionIcon
-                      variant="light"
-                      color="green"
-                      onClick={async () => {
-                        notifications.show({
-                          id: `approve ${item.id}`,
-                          color: 'yellow',
-                          title: t('tooltips.approving'),
-                          message: undefined,
-                          loading: true,
-                        });
+                {item.status === MediaRequestStatus.PendingApproval && (
+                  <Group>
+                    <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
+                      <ActionIcon
+                        variant="light"
+                        color="green"
+                        onClick={async () => {
+                          notifications.show({
+                            id: `approve ${item.id}`,
+                            color: 'yellow',
+                            title: t('tooltips.approving'),
+                            message: undefined,
+                            loading: true,
+                          });
 
-                        await decideAsync({
-                          request: item,
-                          isApproved: true,
-                        });
-                      }}
-                    >
-                      <IconThumbUp />
-                    </ActionIcon>
-                  </Tooltip>
-                  <Tooltip label={t('tooltips.decline')} withArrow withinPortal>
-                    <ActionIcon
-                      variant="light"
-                      color="red"
-                      onClick={async () => {
-                        await decideAsync({
-                          request: item,
-                          isApproved: false,
-                        });
-                      }}
-                    >
-                      <IconThumbDown />
-                    </ActionIcon>
-                  </Tooltip>
-                </Group>
-              )}
-            </Stack>
-          </Flex>
+                          await decideAsync({
+                            request: item,
+                            isApproved: true,
+                          });
+                        }}
+                      >
+                        <IconThumbUp />
+                      </ActionIcon>
+                    </Tooltip>
+                    <Tooltip label={t('tooltips.decline')} withArrow withinPortal>
+                      <ActionIcon
+                        variant="light"
+                        color="red"
+                        onClick={async () => {
+                          await decideAsync({
+                            request: item,
+                            isApproved: false,
+                          });
+                        }}
+                      >
+                        <IconThumbDown />
+                      </ActionIcon>
+                    </Tooltip>
+                  </Group>
+                )}
+              </Stack>
+            </Flex>
 
-          <Image
-            src={item.backdropPath}
-            pos="absolute"
-            w="100%"
-            h="100%"
-            opacity={0.1}
-            top={0}
-            left={0}
-            style={{ pointerEvents: 'none' }}
-          />
-        </Card>
-      ))}
-    </Stack>
+            <Image
+              src={item.backdropPath}
+              pos="absolute"
+              w="100%"
+              h="100%"
+              opacity={0.1}
+              top={0}
+              left={0}
+              style={{ pointerEvents: 'none' }}
+            />
+          </Card>
+        ))}
+      </Stack>
+    </ScrollArea>
   );
 }
 

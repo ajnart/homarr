@@ -26,7 +26,11 @@ const definition = defineWidget({
     replaceLinksWithExternalHost: {
       type: 'switch',
       defaultValue: false,
-    }
+    },
+    openInNewTab: {
+      type: 'switch',
+      defaultValue: true,
+    },
   },
   gridstack: {
     minWidth: 2,
@@ -124,7 +128,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
               p={0}
               component="a"
               href={user.userLink}
-              target="_blank"
+              target={widget.properties.openInNewTab ? "_blank" : "_self"}
               mah={95}
               mih={55}
               radius="md"
