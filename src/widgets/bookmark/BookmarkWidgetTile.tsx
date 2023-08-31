@@ -269,6 +269,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               viewport:{
                 //mantine being mantine again... this might break. Needed for taking 100% of widget space
                 '& div[style="min-width: 100%; display: table;"]':{
+                  display: 'flex !important',
                   height:'100%',
                 },
               },
@@ -278,14 +279,16 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               direction={ widget.properties.layout === 'vertical' ? 'column' : 'row' }
               gap="0"
               h="100%"
+              w="100%"
             >
               {widget.properties.items.map((item: BookmarkItem, index) => (
                 <>
-                  <Divider
-                    m="1px"
-                    orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' } //Mantine doesn't let me refactor this, I tried
-                    hidden={!(index > 0)}
-                  />
+                  {index > 0 &&
+                    <Divider
+                      m="3px"
+                      orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' }
+                    />
+                  }
                   <Card
                     key={index}
                     px="md"
@@ -297,7 +300,8 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                     bg="transparent"
                     sx={{
                       '&:hover': { backgroundColor: fn.primaryColor().concat('40'),}, //'40' = 25% opacity
-                      flex:'1 1 auto'
+                      flex:'1 1 auto',
+                      overflow: 'unset',
                     }}
                     display="flex"
                   >
