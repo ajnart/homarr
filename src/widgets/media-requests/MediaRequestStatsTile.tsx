@@ -22,7 +22,12 @@ import { MediaRequestStatus } from './media-request-types';
 const definition = defineWidget({
   id: 'media-requests-stats',
   icon: IconChartBar,
-  options: {},
+  options: {
+    replaceLinksWithExternalHost: {
+      type: 'switch',
+      defaultValue: false,
+    }
+  },
   gridstack: {
     minWidth: 2,
     minHeight: 2,
@@ -44,12 +49,12 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
     data: mediaData,
     isFetching: mediaFetching,
     isLoading: mediaLoading,
-  } = useMediaRequestQuery();
+  } = useMediaRequestQuery(widget);
   const {
     data: usersData,
     isFetching: usersFetching,
     isLoading: usersLoading
-  } = useUsersQuery();
+  } = useUsersQuery(widget);
   const { ref, height } = useElementSize();
   const { colorScheme } = useMantineTheme();
 

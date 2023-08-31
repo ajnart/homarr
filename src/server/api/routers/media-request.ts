@@ -6,12 +6,14 @@ import { MediaRequestListWidget } from '~/widgets/media-requests/MediaRequestLis
 import { MediaRequest, Users } from '~/widgets/media-requests/media-request-types';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
+import { MediaRequestStatsWidget } from '~/widgets/media-requests/MediaRequestStatsTile';
 
 export const mediaRequestsRouter = createTRPCRouter({
   allMedia: publicProcedure
     .input(
       z.object({
         configName: z.string(),
+        widget: z.custom<MediaRequestListWidget>().or(z.custom<MediaRequestStatsWidget>()),
       })
     )
     .query(async ({ input }) => {
@@ -30,10 +32,7 @@ export const mediaRequestsRouter = createTRPCRouter({
         })
           .then(async (response) => {
             const body = (await response.json()) as OverseerrResponse;
-            const mediaWidget = config.widgets.find((x) => x.type === 'media-requests-list') as
-              | MediaRequestListWidget
-              | undefined;
-            const appUrl = mediaWidget?.properties.replaceLinksWithExternalHost
+            const appUrl = input.widget.properties.replaceLinksWithExternalHost
               ? app.behaviour.externalUrl
               : app.url;
 
@@ -84,6 +83,7 @@ export const mediaRequestsRouter = createTRPCRouter({
     .input(
       z.object({
         configName: z.string(),
+        widget: z.custom<MediaRequestListWidget>().or(z.custom<MediaRequestStatsWidget>()),
       })
     )
     .query(async ({ input }) => {
@@ -102,10 +102,7 @@ export const mediaRequestsRouter = createTRPCRouter({
         })
           .then(async (response) => {
             const body = (await response.json()) as OverseerrUsers;
-            const mediaWidget = config.widgets.find((x) => x.type === 'media-requests-list') as
-              | MediaRequestListWidget
-              | undefined;
-            const appUrl = mediaWidget?.properties.replaceLinksWithExternalHost
+            const appUrl = input.widget.properties.replaceLinksWithExternalHost
               ? app.behaviour.externalUrl
               : app.url;
 

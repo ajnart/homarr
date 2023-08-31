@@ -4,12 +4,8 @@
     "description": "Statistics about your media requests",
     "settings": {
       "title": "Media requests stats",
-      "direction": {
-        "label": "Direction of the layout.",
-        "data":{
-          "row": "Horizontal",
-          "column": "Vertical"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Replace links with external host"
       }
     }
   },

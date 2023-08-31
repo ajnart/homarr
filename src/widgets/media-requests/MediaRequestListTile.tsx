@@ -94,7 +94,7 @@ const useMediaRequestDecisionMutation = () => {
 
 function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   const { t } = useTranslation('modules/media-requests-list');
-  const { data, isLoading } = useMediaRequestQuery();
+  const { data, isLoading } = useMediaRequestQuery(widget);
   // Use mutation to approve or deny a pending request
   const decideAsync = useMediaRequestDecisionMutation();
 
