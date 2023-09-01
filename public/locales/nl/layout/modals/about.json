@@ -6,6 +6,7 @@
 	"key": "Sneltoets",
 	"action": "Actie",
 	"keybinds": "Sneltoetsen",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
@@ -20,5 +21,9 @@
 		"i18n": "I18n vertaling namespaces geladen",
 		"locales": "I18n talen geconfigureerd",
 		"experimental_disableEditMode": "<b>EXPERIMENTEEL</b>: Bewerkingsmodus uitschakelen"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
