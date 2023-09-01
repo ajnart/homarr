@@ -6,6 +6,9 @@
       "title": "Zoznam požiadaviek médií",
       "replaceLinksWithExternalHost": {
         "label": "Nahradiť odkazy s externým hostiteľom"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
