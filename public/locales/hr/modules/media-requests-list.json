@@ -6,6 +6,9 @@
       "title": "Popis zahtjeva za medijima",
       "replaceLinksWithExternalHost": {
         "label": "Zamijeni veze s vanjskim poslužiteljem"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
