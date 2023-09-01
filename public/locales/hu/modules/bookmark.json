@@ -29,9 +29,7 @@
   },
   "item": {
     "validation": {
-      "length100": "A hossznak 1 és 100 között kell lennie",
-      "length200": "A hossznak 1 és 200 között kell lennie",
-      "length400": "A hossznak 1 és 400 között kell lennie",
+      "length": "",
       "invalidLink": "Nem érvényes link",
       "errorMsg": "Nem mentett, mert hitelesítési hibák voltak. Kérjük, adja meg az értékeket"
     },
