@@ -29,9 +29,7 @@
   },
   "item": {
     "validation": {
-      "length100": "Uzunluk 1 ile 100 arasında olmalıdır",
-      "length200": "Uzunluk 1 ile 200 arasında olmalıdır",
-      "length400": "Uzunluk 1 ile 400 arasında olmalıdır",
+      "length": "",
       "invalidLink": "Geçerli bir bağlantı değil",
       "errorMsg": "Doğrulama hataları olduğu için kaydedilmedi. Lütfen bilgilerinizi kontrol edin"
     },
