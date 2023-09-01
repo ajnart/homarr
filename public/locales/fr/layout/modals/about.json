@@ -6,6 +6,7 @@
 	"key": "Raccourci clavier",
 	"action": "Action",
 	"keybinds": "Affectation des touches",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "Basculer entre mode clair/sombre",
 		"focusSearchBar": "Focus sur la barre de recherche",
@@ -20,5 +21,9 @@
 		"i18n": "Traductions I18n chargées",
 		"locales": "Locales I18n configurées",
 		"experimental_disableEditMode": "<b>EXPÉRIMENTAL</b> : désactiver le mode édition"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
