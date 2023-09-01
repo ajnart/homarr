@@ -54,6 +54,10 @@
 				"text": "这可能需要几秒钟"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "应用名称状态",
 			"description": "如果您想要显示标题，请选择显示的位置。",
