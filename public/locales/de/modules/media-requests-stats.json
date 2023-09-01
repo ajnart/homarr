@@ -4,18 +4,24 @@
     "description": "Statistiken über Ihre Medienanfragen",
     "settings": {
       "title": "Statistik der Medienanfragen",
-      "direction": {
-        "label": "Ausrichtung des Layouts.",
-        "data": {
-          "row": "Horizontal",
-          "column": "Vertikal"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Links durch externen Host ersetzen"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Ausstehende Freigaben",
-    "tvRequests": "TV-Anfragen",
-    "movieRequests": "Filmanfragen"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }
