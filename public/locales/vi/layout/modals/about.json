@@ -6,6 +6,7 @@
 	"key": "Phím tắt",
 	"action": "Hành động",
 	"keybinds": "Phím tắt",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "Đổi chế độ sáng/tối",
 		"focusSearchBar": "Tập trung vào thanh tìm kiếm",
@@ -20,5 +21,9 @@
 		"i18n": "Bản dịch I18n đã tải",
 		"locales": "Cấu hình ngôn ngữ l18n đã thiết lập",
 		"experimental_disableEditMode": "<b>THỬ NGHIỆM</b>: Tắt chế độ chỉnh sửa"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
