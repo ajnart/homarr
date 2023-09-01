@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Appnavn Skriftstørrelse",
+			"description": "Indstil skriftstørrelsen, når appens navn vises på flisen."
 		},
 		"appNameStatus": {
 			"label": "App Navn Status",
