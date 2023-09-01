@@ -29,9 +29,7 @@
   },
   "item": {
     "validation": {
-      "length100": "La longueur doit être comprise entre 1 et 100",
-      "length200": "La longueur doit être comprise entre 1 et 200",
-      "length400": "La longueur doit être comprise entre 1 et 400",
+      "length": "",
       "invalidLink": "Lien non valide",
       "errorMsg": "Impossible d'enregistrer, car il y a eu des erreurs de validation. S'il vous plaît ajustez les données entrées."
     },
