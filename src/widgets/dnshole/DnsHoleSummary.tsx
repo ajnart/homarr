@@ -75,6 +75,7 @@ const stats = [
   {
     icon: IconPercentage,
     value: (x) => formatPercentage(x.adsBlockedTodayPercentage, 2),
+    label: 'card.metrics.queriesBlockedTodayPercentage',
     color: 'rgba(255, 165, 20, 0.4)',
   },
   {
