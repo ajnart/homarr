@@ -6,6 +6,9 @@
       "title": "Liste over media forespørsler",
       "replaceLinksWithExternalHost": {
         "label": ""
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
