@@ -4,18 +4,24 @@
     "description": "メディア・リクエストに関する統計",
     "settings": {
       "title": "メディア・リクエスト統計",
-      "direction": {
-        "label": "レイアウトの方向",
-        "data": {
-          "row": "水平",
-          "column": "垂直"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "リンクを外部ホストに置き換える"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "承認待ち",
-    "tvRequests": "テレビのリクエスト",
-    "movieRequests": "映画のリクエスト"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }
