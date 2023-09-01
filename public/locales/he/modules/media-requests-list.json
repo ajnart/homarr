@@ -6,6 +6,9 @@
       "title": "רשימת בקשות מדיה",
       "replaceLinksWithExternalHost": {
         "label": "החלף קישורים במארח חיצוני"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
