@@ -6,7 +6,7 @@
 	"key": "Tasto di scelta rapida",
 	"action": "Azioni",
 	"keybinds": "Scorciatoie da tastiera",
-	"documentation": "",
+	"documentation": "Documentazione",
 	"actions": {
 		"toggleTheme": "Attiva/Disattiva modalità chiaro/scuro",
 		"focusSearchBar": "Focalizza la barra di ricerca",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>SPERIMENTALE</b>: Disabilita l'edit mode"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nuovo: {{newVersion}}",
+		"dropdown": "Versione {{newVersion}} disponibile! La versione attuale è {{currentVersion}}"
 	}
 }
