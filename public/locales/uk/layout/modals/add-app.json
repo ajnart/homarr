@@ -54,6 +54,10 @@
 				"text": "Це може зайняти кілька секунд"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
