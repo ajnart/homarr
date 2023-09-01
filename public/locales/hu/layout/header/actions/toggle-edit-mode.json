@@ -7,5 +7,6 @@
     "popover": {
         "title": "A szerkesztési mód engedélyezve van a <1>{{size}}</1> méret",
         "text": "Most beállíthatja és konfigurálhatja az alkalmazásokat. A módosítások <strong>nem kerülnek mentésre</strong> amíg ki nem lép a szerkesztési módból."
-    }
+    },
+    "unloadEvent": ""
 }
