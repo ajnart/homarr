@@ -106,7 +106,8 @@ export function Search() {
       label: t('searchEngines.overseerr.name'),
       value: 'overseerr',
       description: t('searchEngines.overseerr.description'),
-      url: `${overseerrApp?.url.replace(new RegExp('/' + "+$"),'')}/search?query=`,
+      //RegExp -> char ('/' slash) + target ($ = end of string) => remove trailing slash if there's one
+      url: `${overseerrApp?.url.replace(new RegExp('/' + "$"), '')}/search?query=`,
       shortcut: 'm',
     },
   ];
