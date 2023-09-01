@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Μετακίνηση επάνω",
     "moveDown": "Μετακίνηση κάτω",
-    "addCategory": "Προσθήκη κατηγορίας",
+    "addCategory": "",
     "addAbove": "πάνω",
     "addBelow": "κάτω"
   }
