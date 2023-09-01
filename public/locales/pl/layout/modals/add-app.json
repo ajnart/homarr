@@ -54,6 +54,10 @@
 				"text": "To może zająć kilka sekund"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
