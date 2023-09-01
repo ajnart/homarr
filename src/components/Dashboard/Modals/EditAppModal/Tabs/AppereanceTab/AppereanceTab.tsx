@@ -71,6 +71,7 @@ export const AppearanceTab = ({
               label={t('appearance.appNameFontSize.label')}
               description={t('appearance.appNameFontSize.description')}
               min={5}
+              max={64}
               {...form.getInputProps('appearance.appNameFontSize')}
               onChange={(value) => {
                 form.setFieldValue('appearance.appNameFontSize', value);
