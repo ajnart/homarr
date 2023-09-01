@@ -54,6 +54,10 @@
 				"text": "これには数秒かかることがあります。"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "アプリ名の状態",
 			"description": "タイトルを表示する場所を選んでください。",
