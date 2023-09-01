@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "O seu formulário contém dados inválidos. Por conseguinte, não pode ser guardado. Por favor resolva todos os problemas e clique novamente neste botão para guardar as suas alterações."
+		"popover": "O seu formulário contém dados inválidos. Por conseguinte, não pode ser guardado. Por favor resolva todos os problemas e clique novamente neste botão para guardar as suas alterações.",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

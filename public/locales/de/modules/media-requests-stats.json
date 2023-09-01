@@ -5,7 +5,11 @@
     "settings": {
       "title": "Statistik der Medienanfragen",
       "direction": {
-        "label": "Ausrichtung des Layouts."
+        "label": "Ausrichtung des Layouts.",
+        "data": {
+          "row": "Horizontal",
+          "column": "Vertikal"
+        }
       }
     }
   },

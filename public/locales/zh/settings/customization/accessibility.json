@@ -1,7 +1,7 @@
 {
     "disablePulse": {
         "label": "禁用 Ping",
-        "description": "默认情况下，Homarr 中的 Ping 指示器会一直工作。这可能会让人感到恼火。这个滑块将停用这个动画。"
+        "description": "默认情况下，Homarr 中的 Ping 指示器会一直工作。这可能会让人感到恼火。这个滑块将停用该动画。"
     },
     "replaceIconsWithDots": {
         "label": "用图标替换 Ping 点",

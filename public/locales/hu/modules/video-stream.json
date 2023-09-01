@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Videófolyam",
+    "description": "Videófolyam vagy videó beágyazása egy kameráról vagy weboldalról",
+    "settings": {
+      "title": "Videófolyam beállítsai",
+      "FeedUrl": {
+        "label": "Hírcsatorna URL"
+      },
+      "autoPlay": {
+        "label": "Automatikus lejátszás"
+      },
+      "muted": {
+        "label": "Hang némítása"
+      },
+      "controls": {
+        "label": "Videolejátszó vezérlők"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Érvénytelen folyam"
+  }
+}

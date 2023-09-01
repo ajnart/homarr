@@ -5,7 +5,11 @@
     "settings": {
       "title": "",
       "direction": {
-        "label": ""
+        "label": "",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

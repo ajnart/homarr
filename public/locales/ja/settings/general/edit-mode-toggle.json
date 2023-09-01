@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "",
+    "enable": "",
+    "disable": ""
+  },
+  "form": {
+    "label": "",
+    "message": "",
+    "submit": "送信"
+  },
+  "notification": {
+    "success": {
+      "title": "",
+      "message": ""
+    },
+    "error": {
+      "title": "エラー",
+      "message": ""
+    }
+  }
+}

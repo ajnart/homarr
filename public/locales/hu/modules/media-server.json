@@ -1,0 +1,25 @@
+{
+  "descriptor": {
+    "name": "Médiakiszolgáló",
+    "description": "Interakció a Jellyfin vagy Plex médiaszerverrel",
+    "settings": {
+      "title": "A médiaszerver widget beállításai"
+    }
+  },
+  "loading": "Médiafolyamat betöltése",
+  "card": {
+    "table": {
+      "header": {
+        "session": "Munkamenet",
+        "user": "Felhasználó",
+        "currentlyPlaying": "Jelenleg lejátszik"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "A tartalom nem betölthető",
+        "text": "Nem sikerült információt lekérni a kiszolgálóról. További részletekért kérjük, ellenőrizze a naplókat"
+      }
+    }
+  }
+}

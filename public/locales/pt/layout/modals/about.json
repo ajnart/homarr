@@ -6,6 +6,13 @@
 	"key": "",
 	"action": "",
 	"keybinds": "",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Versão do esquema de configuração",
 		"configurationsCount": "Configurações disponíveis",
@@ -14,5 +21,9 @@
 		"i18n": "Espaços de tradução do I18n carregados",
 		"locales": "Localidades I18n configurados",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desativar o modo de edição"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

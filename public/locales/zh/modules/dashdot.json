@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "在Homarr中显示一个外部Dash的图表。",
+    "description": "在 Homarr 中显示一个外部 Dash. 的图表。",
     "settings": {
-      "title": "设置Dash小部件",
+      "title": "设置 Dash. 组件",
       "dashName": {
         "label": "Dash. 名称"
       },
@@ -17,41 +17,41 @@
         "label": "显示的列"
       },
       "graphHeight": {
-        "label": "图形的高度"
+        "label": "图表高度"
       },
       "graphsOrder": {
-        "label": "图形(顺序)",
+        "label": "图表（顺序）",
         "storage": {
           "label": "存储",
           "enabled": {
-            "label": "在小工具中显示"
+            "label": "在组件中显示"
           },
           "span": {
             "label": "列宽度"
           },
           "compactView": {
-            "label": "显示为文本(紧凑)"
+            "label": "显示为文本（紧凑型）"
           },
           "multiView": {
-            "label": "显示为多驱动视图"
+            "label": "显示为多核视图"
           }
         },
         "network": {
           "label": "网络",
           "enabled": {
-            "label": "在小工具中显示"
+            "label": "在组件中显示"
           },
           "span": {
             "label": "列宽度"
           },
           "compactView": {
-            "label": "显示为文本(紧凑)"
+            "label": "显示为文本（紧凑型）"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": "在小工具中显示"
+            "label": "在组件中显示"
           },
           "span": {
             "label": "列宽度"
@@ -63,7 +63,7 @@
         "ram": {
           "label": "内存",
           "enabled": {
-            "label": "在小工具中显示"
+            "label": "在组件中显示"
           },
           "span": {
             "label": "列宽度"
@@ -72,7 +72,7 @@
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": "在小工具中显示"
+            "label": "在组件中显示"
           },
           "span": {
             "label": "列宽度"
@@ -84,11 +84,11 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "没有找到Dash.服务。请在你的Homarr仪表板上添加，或者设置一个仪表板网址。网址在应用选项中添加",
-      "noInformation": "无法从仪表板获取信息。- 你运行的是最新版本吗？",
+      "noService": "未找到 Dash. 服务。请在集成中将其添加到您的 Homarr 面板或在模块选项中设置 Dash. 网址",
+      "noInformation": "无法从 Dash. 获取信息。- 你运行的是最新版本吗？",
       "protocolDowngrade": {
         "title": "检测到协议降级",
-        "text": "Dash实例的协议被降级。这存在安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保Dash也在HTTPS上运行，或者将Homarr降级为HTTP(不推荐)。"
+        "text": "Dash 正在使用HTTP。这存在安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保 Dash 也在 HTTPS 上运行，或者将 Homarr 降级为 HTTP (不推荐)。"
       }
     },
     "graphs": {

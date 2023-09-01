@@ -11,13 +11,25 @@
         "label": "Start uken på søndag"
       },
       "radarrReleaseType": {
-        "label": "Radarr utgivelsestype"
+        "label": "Radarr utgivelsestype",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
       "fontSize": {
-        "label": ""
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }

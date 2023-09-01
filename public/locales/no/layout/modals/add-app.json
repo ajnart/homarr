@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Skjemaet inneholder ugyldig data. Derfor kan den ikke lagres. Vennligst løs alle problemer og klikk på denne knappen igjen for å lagre endringene dine"
+		"popover": "Skjemaet inneholder ugyldig data. Derfor kan den ikke lagres. Vennligst løs alle problemer og klikk på denne knappen igjen for å lagre endringene dine",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

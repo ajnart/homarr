@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "列のサイズ（ {{size}}）",
+    "descriptionPreset": "画面幅が {{pixels}} ピクセル未満の場合の列数",
+    "descriptionExceedsPreset": "画面サイズが {{pixels}} ピクセルを超える場合の列数"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
-  "defaultValues": ""
+  "unsavedChanges": "未保存の変更があります。下の「変更を適用」ボタンをクリックして適用し、保存します。",
+  "applyChanges": "変更を適用",
+  "defaultValues": "デフォルト値"
 }

@@ -1,0 +1,31 @@
+{
+  "descriptor": {
+    "name": "RSS Widget",
+    "description": "",
+    "settings": {
+      "title": "Az RSS widget beállításai",
+      "rssFeedUrl": {
+        "label": "RSS hírcsatorna URL-ek",
+        "description": "A megjeleníteni kívánt RSS-feedek URL-címei."
+      },
+      "refreshInterval": {
+        "label": "Frissítési időköz (percben)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "HTML-formázás engedélyezése (Veszélyes)",
+        "info": "A HTML-formázás kívülről történő engedélyezése veszélyes lehet.<br/>Kérjük, győződjön meg róla, hogy a táp megbízható forrásból származik."
+      },
+      "textLinesClamp": {
+        "label": "Szövegvonalak rögzítője"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Nem lehet lekérni az RSS feedet",
+          "text": "Volt egy probléma az RSS feed elérésével. Győződjön meg róla, hogy helyesen konfigurálta az RSS feedet egy érvényes URL segítségével. Az URL-nek meg kell felelnie a hivatalos specifikációnak. A feed frissítése után szükség lehet a műszerfal frissítésére."
+        }
+      }
+    }
+  }
+}

@@ -1,23 +1,23 @@
 {
   "descriptor": {
-    "name": "ドッカー",
+    "name": "Docker",
     "description": "すべてのDockerコンテナを簡単に確認し、管理することができます。"
   },
   "search": {
-    "placeholder": "コンテナ名、画像名で検索"
+    "placeholder": "コンテナ名、イメージ名で検索"
   },
   "table": {
     "header": {
       "name": "名称",
       "image": "画像",
-      "ports": "港湾",
+      "ports": "ポート",
       "state": "状態"
     },
     "body": {
       "portCollapse": "{{ports}} も"
     },
     "states": {
-      "running": "ランニング",
+      "running": "実行中",
       "created": "作成",
       "stopped": "停止中",
       "unknown": "不明"
@@ -29,55 +29,55 @@
       "message": "Homarrにアプリを追加"
     },
     "restart": {
-      "title": "再スタート"
+      "title": "再起動"
     },
     "stop": {
       "title": "停止"
     },
     "start": {
-      "title": "スタート"
+      "title": "開始"
     },
     "refreshData": {
-      "title": "リフレッシュデータ"
+      "title": "更新"
     },
     "remove": {
       "title": "削除"
     },
     "addToHomarr": {
-      "title": "ホーマーに追加"
+      "title": "Homarrに追加"
     }
   },
   "actions": {
     "start": {
-      "start": "スタート",
-      "end": "開始"
+      "start": "開始中",
+      "end": "開始済"
     },
     "stop": {
       "start": "停止",
       "end": "停止中"
     },
     "restart": {
-      "start": "再スタート",
-      "end": "再スタート"
+      "start": "再起動中",
+      "end": "再起動済"
     },
     "remove": {
-      "start": "削除",
-      "end": "削除"
+      "start": "削除中",
+      "end": "削除済"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Dockerとの連携に失敗",
-      "message": "ドッカーソケットをマウントするのを忘れていませんか？"
+      "message": "Dockerソケットをマウントするのを忘れていませんか？"
     },
     "unknownError": {
       "title": "エラーが発生しました"
     },
     "oneServiceAtATime": {
-      "title": "一度に1つのアプリやサービスだけを追加してください"
+      "title": "1度に1つのアプリやサービスだけを追加してください"
     }
   },
   "actionIcon": {
-    "tooltip": "ドッカー"
+    "tooltip": "Docker"
   }
 }

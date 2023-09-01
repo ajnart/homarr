@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "",
-        "text": "Homarr foi incapaz de comunicar com os seus clientes Torrent. Por favor, verifique a sua configuração"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Carregando..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Gerido por",

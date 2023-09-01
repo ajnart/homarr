@@ -12,7 +12,8 @@
         "label": "Khoảng thời gian làm mới (bằng phút)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Ngắt dòng"

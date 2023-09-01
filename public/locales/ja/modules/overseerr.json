@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "オーバーホール",
+    "name": "Overseerr",
     "description": "OverseerrやJellyseerrからメディアを検索して追加できるようにします。"
   },
   "popup": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "ダウンロードしたい季節にチェックを入れる",
+      "caption": "ダウンロードしたいシーズンにチェックを入れる",
       "table": {
         "header": {
           "season": "シーズン",

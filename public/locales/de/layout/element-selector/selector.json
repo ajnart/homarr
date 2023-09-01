@@ -7,5 +7,19 @@
     "goBack": "Zurück auf die vorherige Seite",
     "actionIcon": {
         "tooltip": "Kachel hinzufügen"
+    },
+    "apps": "Apps",
+    "app": {
+        "defaultName": "Ihre Apps"
+    },
+    "widgets": "Widgets",
+    "categories": "Kategorien",
+    "category": {
+        "newName": "Name der Kategorie",
+        "defaultName": "Neue Kategorie",
+        "created": {
+            "title": "Kategorie erstellt",
+            "message": "Die Kategorie \"{{name}}\" wurde erstellt"
+        }
     }
 }

@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Megjeleníti egy külső Dash grafikonjait. Például a Homarr belsejében.",
+    "settings": {
+      "title": "A Dash. widget beállításai",
+      "dashName": {
+        "label": "Dash. Név"
+      },
+      "url": {
+        "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Százalék megjelenítése"
+      },
+      "columns": {
+        "label": "Oszlopok mutatása"
+      },
+      "graphHeight": {
+        "label": "A grafikonok magassága"
+      },
+      "graphsOrder": {
+        "label": "Grafikonok (sorrend)",
+        "storage": {
+          "label": "Tárhely",
+          "enabled": {
+            "label": "Megjelenítés widgetben"
+          },
+          "span": {
+            "label": "Oszlopfesztávolság"
+          },
+          "compactView": {
+            "label": "Megjelenítés szövegként (kompakt)"
+          },
+          "multiView": {
+            "label": "Megjelenítés több meghajtó nézetként"
+          }
+        },
+        "network": {
+          "label": "Hálózat",
+          "enabled": {
+            "label": "Megjelenítés widgetben"
+          },
+          "span": {
+            "label": "Oszlopfesztávolság"
+          },
+          "compactView": {
+            "label": "Megjelenítés szövegként (kompakt)"
+          }
+        },
+        "cpu": {
+          "label": "Processzor",
+          "enabled": {
+            "label": "Megjelenítés widgetben"
+          },
+          "span": {
+            "label": "Oszlopfesztávolság"
+          },
+          "multiView": {
+            "label": "Többmagos nézetként megjelenítése"
+          }
+        },
+        "ram": {
+          "label": "Memória",
+          "enabled": {
+            "label": "Megjelenítés widgetben"
+          },
+          "span": {
+            "label": "Oszlopfesztávolság"
+          }
+        },
+        "gpu": {
+          "label": "Videókártya",
+          "enabled": {
+            "label": "Megjelenítés widgetben"
+          },
+          "span": {
+            "label": "Oszlopfesztávolság"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Nem találtunk Dash. szolgáltatást. Kérjük, adjon hozzá egyet a Homarr műszerfalához vagy állítson be egy Dash. URL-t a modul beállításaiban",
+      "noInformation": "Nem tud információt szerezni a kötőjelről. - a legújabb verziót futtatja?",
+      "protocolDowngrade": {
+        "title": "Észlelt protokoll visszaminősítése",
+        "text": "A Dash. példányhoz való kapcsolat HTTP protokollt használ. Ez biztonsági kockázatot jelent, mivel a HTTP nem titkosított, és a támadók visszaélhetnek ezzel a kapcsolattal. Győződjön meg róla, hogy a Dash. HTTPS-t használ, vagy állítsa vissza a Homarr-t HTTP-re (nem ajánlott)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Tárhely",
+        "label": "Tárhely:"
+      },
+      "network": {
+        "title": "Hálózat",
+        "label": "Hálózat:",
+        "metrics": {
+          "download": "Le",
+          "upload": "Fel"
+        }
+      },
+      "cpu": {
+        "title": "Processzor"
+      },
+      "ram": {
+        "title": "Memória"
+      },
+      "gpu": {
+        "title": "Videókártya"
+      }
+    }
+  }
+}

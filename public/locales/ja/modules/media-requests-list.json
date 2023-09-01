@@ -1,24 +1,55 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "メディア・リクエスト",
+    "description": "OverseerrまたはJellyseerrからの全てのメディアリクエストのリストを見る",
     "settings": {
-      "title": "",
+      "title": "メディアリクエストリスト",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "リンクを外部ホストに置き換える"
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "リクエストが見つかりません。アプリが正しく設定されているか確認してください。",
+  "pending": "{{countPendingApproval}} リクエストが承認待ちです。",
+  "nonePending": "現在保留中の承認はありません。準備完了です！",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "承認済み",
+    "pendingApproval": "承認待ち",
+    "declined": "拒否"
   },
   "tooltips": {
-    "approve": "",
-    "decline": ""
+    "approve": "リクエスト承認",
+    "decline": "却下した申請",
+    "approving": "リクエスト承認..."
+  },
+  "mutation": {
+    "approving": "承認中",
+    "declining": "減少中",
+    "request": "リクエスト...",
+    "approved": "リクエストが承認されました！",
+    "declined": "リクエストは拒否されました！"
+  },
+  "detail": {
+    "label": "詳細統計情報",
+    "id": "ID",
+    "device": "デバイス",
+    "video": {
+      "video": "ビデオ",
+      "resolution": "解像度",
+      "framerate": "フレームレート",
+      "codec": "ビデオコーデック"
+    },
+    "audio": {
+      "audio": "オーディオ",
+      "channels": "オーディオチャンネル",
+      "codec": "オーディオコーデック"
+    },
+    "transcoding": {
+      "transcoding": "トランスコーディング",
+      "context": "コンテキスト",
+      "requested": "ハードウェア・エンコード要求",
+      "source": "ソース・コーデック",
+      "target": "対象コーデック"
+    }
   }
 }

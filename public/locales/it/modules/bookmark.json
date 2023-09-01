@@ -12,7 +12,12 @@
         "label": "Elementi"
       },
       "layout": {
-        "label": "Layout"
+        "label": "Layout",
+        "data": {
+          "autoGrid": "Griglia Automatica",
+          "horizontal": "Orizzontale",
+          "vertical": "Verticale"
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "Lista preferiti vuota",
       "text": "Aggiungi nuovi elementi a questo elenco in edit mode"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "Link non valido",
+      "errorMsg": "Non è stato salvato perché c'erano errori di convalida. Si prega di adattare i dati inseriti"
+    },
+    "name": "Nome",
+    "url": "URL",
+    "newTab": "Apri in una nuova scheda",
+    "hideHostname": "Nascondi Hostname",
+    "hideIcon": "Nascondi icona",
+    "delete": "Elimina"
   }
 }

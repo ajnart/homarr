@@ -2,7 +2,7 @@
   "configSelect": {
     "label": "配置更改",
     "description": "{{configCount}} 个可用的配置",
-    "loadingNew": "正在加载你的配置...",
+    "loadingNew": "正在加载您的配置...",
     "pleaseWait": "请等待您的新配置加载完成！"
   },
   "modal": {
@@ -37,9 +37,9 @@
     "confirmDeletion": {
       "title": "确认删除您的配置",
       "warningText": "您即将删除 '<b>{{configName}}</b>'",
-      "text": "请注意：删除是不可逆的，您的数据将永久丢失。点击此按钮后，该文件将从你的磁盘中永久删除。请确保已为你的配置创建一个合适的备份。",
+      "text": "请注意：删除是不可逆的，您的数据将永久丢失。点击此按钮后，该文件将从你的磁盘中永久删除。请确保已为你的配置创建了一个合适的备份。",
       "buttons": {
-        "confirm": "是，删除 '<b>{{configName}}</b>'"
+        "confirm": "是的，删除 '<b>{{configName}}</b>' 。"
       }
     }
   },
@@ -62,25 +62,25 @@
         }
       }
     },
-    "saveCopy": "保存一份副本"
+    "saveCopy": "保存副本"
   },
   "dropzone": {
     "notifications": {
       "invalidConfig": {
         "title": "无法加载配置",
-        "message": "无法加载您的配置。无效的JSON格式。"
+        "message": "无法加载您的配置。无效的 JSON 格式。"
       },
       "loadedSuccessfully": {
         "title": "配置 {{configName}} 已成功加载。"
       }
     },
     "accept": {
-      "title": "配置上传",
+      "title": "上传配置",
       "text": "将文件拖动到这里上传配置。仅支持 JSON 文件。"
     },
     "reject": {
       "title": "拖放上传被拒绝",
-      "text": "此文件格式不受支持。请只上传JSON文件。"
+      "text": "此文件格式不受支持。请只上传 JSON 文件。"
     }
   }
 }

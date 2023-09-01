@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "Neispravan URL",
         "text": "Provjerite jeste li unijeli valjanu adresu u konfiguraciji svog widgeta"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }

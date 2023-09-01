@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Ditt formulär innehåller ogiltiga data. Därför kan det inte sparas. Vänligen lös alla problem och klicka på denna knapp igen för att spara dina ändringar"
+		"popover": "Ditt formulär innehåller ogiltiga data. Därför kan det inte sparas. Vänligen lös alla problem och klicka på denna knapp igen för att spara dina ändringar",
+		"name": "Namn krävs",
+		"noUrl": "URL krävs",
+		"invalidUrl": "Värdet är inte en giltig URL",
+		"noIconUrl": "Detta fält är obligatoriskt",
+		"noExternalUri": "Extern URI krävs",
+		"invalidExternalUri": "Extern URI är inte en giltig uri"
 	}
 }

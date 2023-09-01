@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Apstiprināt pieprasījumus",
-    "decline": "Noraidīt pieprasījumus"
+    "decline": "Noraidīt pieprasījumus",
+    "approving": "Pieprasījuma apstiprināšana..."
+  },
+  "mutation": {
+    "approving": "Apstiprināšana",
+    "declining": "Noraidīšanās",
+    "request": "pieprasījums...",
+    "approved": "Pieprasījums tika apstiprināts!",
+    "declined": "Pieprasījums tika noraidīts!"
+  },
+  "detail": {
+    "label": "Statistika entuziastiem",
+    "id": "ID",
+    "device": "Ierīce",
+    "video": {
+      "video": "Video",
+      "resolution": "Izšķirtspēja",
+      "framerate": "Kadru ātrums",
+      "codec": "Video Kodeks"
+    },
+    "audio": {
+      "audio": "Audio",
+      "channels": "Audio Kanāli",
+      "codec": "Audio Kodeks"
+    },
+    "transcoding": {
+      "transcoding": "Pārkodēšana",
+      "context": "Konteksts",
+      "requested": "Pieprasīta Aparatūras Kodēšana",
+      "source": "Avota Kodeks",
+      "target": "Mērķa Kodeks"
+    }
   }
 }

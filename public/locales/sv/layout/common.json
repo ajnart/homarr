@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Öppna alla i ny flik"
     }
+  },
+  "menu": {
+    "moveUp": "Flytta uppåt",
+    "moveDown": "Flytta nedåt",
+    "addCategory": "",
+    "addAbove": "ovanför",
+    "addBelow": "nedanför"
   }
 }

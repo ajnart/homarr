@@ -6,6 +6,13 @@
 	"key": "Hurtigtast",
 	"action": "Handling",
 	"keybinds": "Hurtigtaster",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurasjonsskjema versjon",
 		"configurationsCount": "Tilgjengelige konfigurasjoner",
@@ -14,5 +21,9 @@
 		"i18n": "Lastet I18n oversettelsesnavneområder",
 		"locales": "Konfigurerte I18n-lokasjoner",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Deaktivere redigeringsmodus"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

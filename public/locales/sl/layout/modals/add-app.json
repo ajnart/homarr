@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Vaš obrazec vsebuje neveljavne podatke. Zato ga ni mogoče shraniti. Odpravite vse težave in ponovno kliknite ta gumb, da shranite spremembe."
+		"popover": "Vaš obrazec vsebuje neveljavne podatke. Zato ga ni mogoče shraniti. Odpravite vse težave in ponovno kliknite ta gumb, da shranite spremembe.",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

@@ -12,7 +12,12 @@
         "label": ""
       },
       "layout": {
-        "label": "Layout"
+        "label": "Layout",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "",
       "text": ""
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Nome",
+    "url": "",
+    "newTab": "Abrir em novo separador",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Apagar"
   }
 }

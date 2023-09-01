@@ -8,7 +8,7 @@
         "label": "Affichage en Fahrenheit"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Afficher le nom de la ville"
       },
       "location": {
         "label": "Lieu de la météo"
@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Orage avec grêle",
       "unknown": "Inconnu"
     }
-  }
+  },
+  "error": "Une erreur est survenue"
 }

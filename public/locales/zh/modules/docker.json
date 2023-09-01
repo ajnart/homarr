@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "允许你轻松查看和管理所有的Docker容器。"
+    "description": "允许您轻松查看和管理所有的Docker容器。"
   },
   "search": {
     "placeholder": "按容器或镜像名称搜索"
@@ -29,7 +29,7 @@
       "message": "添加应用到 Homarr"
     },
     "restart": {
-      "title": "重新启动"
+      "title": "重启"
     },
     "stop": {
       "title": "停止"
@@ -38,13 +38,13 @@
       "title": "开始"
     },
     "refreshData": {
-      "title": "刷新数据"
+      "title": "刷新"
     },
     "remove": {
-      "title": "移除"
+      "title": "删除"
     },
     "addToHomarr": {
-      "title": "添加到Homarr"
+      "title": "添加到 Homarr"
     }
   },
   "actions": {
@@ -74,7 +74,7 @@
       "title": "出现了一个错误"
     },
     "oneServiceAtATime": {
-      "title": "请每次只添加一个应用程序或服务！"
+      "title": "请每次只添加一个应用程序或服务!"
     }
   },
   "actionIcon": {
