@@ -3,15 +3,17 @@ import { z } from 'zod';
 import { checkIntegrationsType } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { MediaRequestListWidget } from '~/widgets/media-requests/MediaRequestListTile';
-import { MediaRequest } from '~/widgets/media-requests/media-request-types';
+import { MediaRequest, Users } from '~/widgets/media-requests/media-request-types';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
+import { MediaRequestStatsWidget } from '~/widgets/media-requests/MediaRequestStatsTile';
 
 export const mediaRequestsRouter = createTRPCRouter({
-  all: publicProcedure
+  allMedia: publicProcedure
     .input(
       z.object({
         configName: z.string(),
+        widget: z.custom<MediaRequestListWidget>().or(z.custom<MediaRequestStatsWidget>()),
       })
     )
     .query(async ({ input }) => {
@@ -20,8 +22,6 @@ export const mediaRequestsRouter = createTRPCRouter({
       const apps = config.apps.filter((app) =>
         checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
-
-      Consola.log(`Retrieving media requests from ${apps.length} apps`);
 
       const promises = apps.map((app): Promise<MediaRequest[]> => {
         const apiKey =
@@ -32,14 +32,7 @@ export const mediaRequestsRouter = createTRPCRouter({
         })
           .then(async (response) => {
             const body = (await response.json()) as OverseerrResponse;
-            const mediaWidget = config.widgets.find((x) => x.type === 'media-requests-list') as
-              | MediaRequestListWidget
-              | undefined;
-            if (!mediaWidget) {
-              Consola.log('No media-requests-list found');
-              return Promise.resolve([]);
-            }
-            const appUrl = mediaWidget.properties.replaceLinksWithExternalHost
+            const appUrl = input.widget.properties.replaceLinksWithExternalHost
               ? app.behaviour.externalUrl
               : app.url;
 
@@ -59,8 +52,9 @@ export const mediaRequestsRouter = createTRPCRouter({
                   type: item.type,
                   name: genericItem.name,
                   userName: item.requestedBy.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, item),
+                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar),
                   userLink: `${appUrl}/users/${item.requestedBy.id}`,
+                  userRequestCount: item.requestedBy.requestCount,
                   airDate: genericItem.airDate,
                   status: item.status,
                   backdropPath: `https://image.tmdb.org/t/p/original/${genericItem.backdropPath}`,
@@ -85,17 +79,66 @@ export const mediaRequestsRouter = createTRPCRouter({
 
       return mediaRequests;
     }),
+  users: publicProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+        widget: z.custom<MediaRequestListWidget>().or(z.custom<MediaRequestStatsWidget>()),
+      })
+    )
+    .query(async ({ input }) => {
+      const config = getConfig(input.configName);
+
+      const apps = config.apps.filter((app) =>
+        checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
+      );
+
+      const promises = apps.map((app): Promise<Users[]> => {
+        const apiKey =
+          app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
+        const headers: HeadersInit = { 'X-Api-Key': apiKey };
+        return fetch(`${app.url}/api/v1/user?take=25&skip=0&sort=requests`, {
+          headers,
+        })
+          .then(async (response) => {
+            const body = (await response.json()) as OverseerrUsers;
+            const appUrl = input.widget.properties.replaceLinksWithExternalHost
+              ? app.behaviour.externalUrl
+              : app.url;
+
+            const users = await Promise.all(
+              body.results.map(async (user): Promise<Users> => {
+                return {
+                  app: app.integration?.type ?? 'overseerr',
+                  id: user.id,
+                  userName: user.displayName,
+                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar),
+                  userLink: `${appUrl}/users/${user.id}`,
+                  userRequestCount: user.requestCount,
+                };
+              })
+            );
+            return Promise.resolve(users);
+          })
+          .catch((err) => {
+            Consola.error(`Failed to request users from Overseerr: ${err}`);
+            return Promise.resolve([]);
+          });
+      });
+      const users = (await Promise.all(promises)).reduce((prev, cur) => prev.concat(cur), []);
+
+      return users;
+    }),
 });
 
-const constructAvatarUrl = (appUrl: string, item: OverseerrResponseItem) => {
-  const isAbsolute =
-    item.requestedBy.avatar.startsWith('http://') || item.requestedBy.avatar.startsWith('https://');
+const constructAvatarUrl = (appUrl: string, avatar: string) => {
+  const isAbsolute = avatar.startsWith('http://') || avatar.startsWith('https://');
 
   if (isAbsolute) {
-    return item.requestedBy.avatar;
+    return avatar;
   }
 
-  return `${appUrl}/${item.requestedBy.avatar}`;
+  return `${appUrl}/${avatar}`;
 };
 
 const retrieveDetailsForItem = async (
@@ -117,7 +160,7 @@ const retrieveDetailsForItem = async (
       backdropPath: series.backdropPath,
       posterPath: series.backdropPath,
     };
-  }
+  };
 
   const movieResponse = await fetch(`${baseUrl}/api/v1/movie/${id}`, {
     headers,
@@ -158,6 +201,10 @@ type OverseerrResponse = {
   results: OverseerrResponseItem[];
 };
 
+type OverseerrUsers = {
+  results: OverseerrResponseItemUser[];
+};
+
 type OverseerrResponseItem = {
   id: number;
   status: number;
@@ -176,4 +223,5 @@ type OverseerrResponseItemUser = {
   id: number;
   displayName: string;
   avatar: string;
+  requestCount: number;
 };

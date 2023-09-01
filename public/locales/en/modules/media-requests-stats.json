@@ -4,18 +4,24 @@
     "description": "Statistics about your media requests",
     "settings": {
       "title": "Media requests stats",
-      "direction": {
-        "label": "Direction of the layout.",
-        "data":{
-          "row": "Horizontal",
-          "column": "Vertical"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Replace links with external host"
+      },
+      "openInNewTab": {
+        "label": "Open links in new tab"
       }
     }
   },
-  "stats": {
+  "mediaStats": {
+    "title": "Media Stats",
     "pending": "Pending approvals",
     "tvRequests": "TV requests",
-    "movieRequests": "Movie requests"
+    "movieRequests": "Movie requests",
+    "approved": "Already approved",
+    "totalRequests": "Total"
+  },
+  "userStats": {
+    "title": "Top Users",
+    "requests": "Requests: {{number}}"
   }
 }
