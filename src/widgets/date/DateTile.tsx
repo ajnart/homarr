@@ -1,13 +1,13 @@
 import { Stack, Text, createStyles } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
-import { useRouter } from 'next/router';
+import dayjs from 'dayjs';
+import timezones from 'dayjs/plugin/timezone';
+import utc from 'dayjs/plugin/utc';
+import { useSession } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
 import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
-import dayjs from 'dayjs';
-import timezones from 'dayjs/plugin/timezone'
-import utc from 'dayjs/plugin/utc'
 
 import { useSetSafeInterval } from '../../hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
@@ -138,12 +138,16 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
   const { data: timezone } = api.timezone.at.useQuery(location!, {
     enabled: location !== undefined,
   });
-  const { locale } = useRouter();
+  const { data: sessionData } = useSession();
+  const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
+    enabled: !!sessionData?.user,
+  });
+  const userLanguage =  userWithSettings?.settings.language;
   const [date, setDate] = useState(getNewDate(timezone));
   const setSafeInterval = useSetSafeInterval();
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change
   useEffect(() => {
-    const language = getLanguageByCode(locale ?? 'en');
+    const language = getLanguageByCode(userLanguage ?? 'en');
     dayjs.locale(language.locale);
     setDate(getNewDate(timezone));
     timeoutRef.current = setTimeout(
@@ -158,7 +162,7 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
       1000 * 60 - (1000 * dayjs().second() + dayjs().millisecond())
     );
     return () => timeoutRef.current && clearTimeout(timeoutRef.current);
-  }, [timezone, locale]);
+  }, [timezone, userLanguage]);
 
   return date;
 };

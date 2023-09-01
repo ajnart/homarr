@@ -57,7 +57,7 @@ function App(
 ) {
   const { Component, pageProps } = props;
   // TODO: make mapping from our locales to moment locales
-  const language = getLanguageByCode(pageProps.locale);
+  const language = getLanguageByCode(pageProps.session?.user?.language ?? 'en');
   require(`dayjs/locale/${language.locale}.js`);
   dayjs.locale(language.locale);
 
