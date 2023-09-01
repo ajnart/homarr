@@ -54,6 +54,10 @@
 				"text": "Ez néhány másodpercet vehet igénybe"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "Alkalmazás neve Állapot",
 			"description": "Válassza ki, hogy hol jelenjen meg a cím, ha egyáltalán megjelenjen.",
