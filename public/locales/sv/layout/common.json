@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Flytta uppåt",
     "moveDown": "Flytta nedåt",
-    "addCategory": "Lägg till kategori",
+    "addCategory": "",
     "addAbove": "ovanför",
     "addBelow": "nedanför"
   }
