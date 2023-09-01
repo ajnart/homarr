@@ -7,5 +7,6 @@
     "popover": {
         "title": "<1>{{size}}</1> boyut için düzenleme modu etkinleştirildi",
         "text": "Artık uygulamalarınızı ayarlayabilir ve yapılandırabilirsiniz. Düzenleme modundan çıkana kadar değişiklikler <strong>kaydedilmez</strong>"
-    }
+    },
+    "unloadEvent": ""
 }
