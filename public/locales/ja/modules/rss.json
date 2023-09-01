@@ -1,28 +1,29 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "RSSウィジェット",
     "description": "",
     "settings": {
-      "title": "",
+      "title": "RSSウィジェットの設定",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "RSSフィードのURL",
+        "description": "表示するRSSフィードのURL。"
       },
       "refreshInterval": {
-        "label": ""
+        "label": "更新間隔 (分)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "HTMLフォーマットを許可する（危険）",
+        "info": "外部からの HTML フォーマットを許可することは危険です。<br/>フィードが信頼できるソースであることを確認してください。"
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "テキスト行クランプ"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "RSSフィードを取得できません",
+          "text": "RSSフィードに到達する際に問題が発生しました。有効なURLを使用してRSSフィードを正しく設定していることを確認してください。 URLは公式の仕様と一致するはずです。フィードを更新した後、ダッシュボードを更新する必要があります。"
         }
       }
     }

@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Oszlopok a {{size}} méretben",
+    "descriptionPreset": "Az oszlopok száma, ha a képernyő szélessége kisebb, mint {{pixels}} pixel",
+    "descriptionExceedsPreset": "Az oszlopok száma, ha a képernyő mérete meghaladja a {{pixels}} képpontot"
+  },
+  "unsavedChanges": "Vannak el nem mentett módosításai. Kattintson a Módosítások alkalmazása gombra az alkalmazáshoz és mentéshez.",
+  "applyChanges": "A változtatások alkalmazása",
+  "defaultValues": "Alapértelmezett értékek"
+}

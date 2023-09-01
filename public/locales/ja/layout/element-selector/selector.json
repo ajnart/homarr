@@ -7,5 +7,19 @@
     "goBack": "前のステップに戻る",
     "actionIcon": {
         "tooltip": "タイルを追加する"
+    },
+    "apps": "アプリ",
+    "app": {
+        "defaultName": "アプリ"
+    },
+    "widgets": "ウィジェット",
+    "categories": "カテゴリー",
+    "category": {
+        "newName": "新しいカテゴリ名",
+        "defaultName": "新しいカテゴリー",
+        "created": {
+            "title": "カテゴリを作成しました",
+            "message": "カテゴリ \"{{name}}\" が作成されました"
+        }
     }
 }

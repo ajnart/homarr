@@ -1,19 +1,19 @@
 {
   "descriptor": {
-    "name": "ユーズネット",
-    "description": "ユーズネットインスタンスの表示と管理を可能にします。"
+    "name": "Usenet",
+    "description": "Usenetインスタンスの表示と管理を許可します。"
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "対応するダウンロードクライアントが見つかりません",
-        "text": "サポートされているUsenetダウンロードクライアントを追加して、現在のダウンロードを表示する"
+        "text": "現在のダウンロードを表示するには、サポートされているUsenetダウンロードクライアントを追加します"
       }
     }
   },
   "tabs": {
     "queue": "キュー",
-    "history": "沿革"
+    "history": "履歴"
   },
   "info": {
     "sizeLeft": "左サイズ",
@@ -26,7 +26,7 @@
       "eta": "ETA",
       "progress": "進捗状況"
     },
-    "empty": "エンプティ",
+    "empty": "空",
     "error": {
       "title": "エラー",
       "message": "エラーが発生しました"
@@ -39,7 +39,7 @@
       "size": "サイズ",
       "duration": "期間"
     },
-    "empty": "エンプティ",
+    "empty": "空",
     "error": {
       "title": "エラー",
       "message": "履歴の読み込みエラー"

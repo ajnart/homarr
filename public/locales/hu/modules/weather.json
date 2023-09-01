@@ -1,0 +1,37 @@
+{
+  "descriptor": {
+    "name": "Időjárás",
+    "description": "Megjeleníti egy meghatározott hely aktuális időjárási adatait.",
+    "settings": {
+      "title": "Az időjárás widget beállításai",
+      "displayInFahrenheit": {
+        "label": "Kijelzés Fahrenheitben"
+      },
+      "displayCityName": {
+        "label": "Városnév megjelenítése"
+      },
+      "location": {
+        "label": "Időjárás helye"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Tiszta",
+      "mainlyClear": "Főként tiszta",
+      "fog": "Köd",
+      "drizzle": "Ködszitálás",
+      "freezingDrizzle": "Ónos szitálás",
+      "rain": "Eső",
+      "freezingRain": "Ónos eső",
+      "snowFall": "Hóesés",
+      "snowGrains": "Hószemcsék",
+      "rainShowers": "Záporok",
+      "snowShowers": "Hózáporok",
+      "thunderstorm": "Vihar",
+      "thunderstormWithHail": "Zivatar jégesővel",
+      "unknown": "Ismeretlen"
+    }
+  },
+  "error": "Hiba történt"
+}

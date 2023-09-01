@@ -6,6 +6,13 @@
 	"key": "Īsinājumtaustiņš",
 	"action": "Darbība",
 	"keybinds": "Taustiņu saites",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "Pārslēgt gaišo/tumšo motīvu",
+		"focusSearchBar": "Fokusēties uz meklēšanas joslu",
+		"openDocker": "Atvērt docker Logrīku",
+		"toggleEdit": "Pārslēgt Rediģēšanas Režīmu"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurācijas shēmas versija",
 		"configurationsCount": "Pieejamās konfigurācijas",
@@ -14,5 +21,9 @@
 		"i18n": "Ielādētās I18n tulkojumu vārdšķiras",
 		"locales": "Konfigurētās I18n lokalizācijas",
 		"experimental_disableEditMode": "<b>EKSPERIMENTĀLISKI</b>: Izslēgt rediģēšanas režīmu"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

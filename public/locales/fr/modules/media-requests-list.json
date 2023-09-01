@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Valider les demandes",
-    "decline": "Refuser les demandes"
+    "decline": "Refuser les demandes",
+    "approving": "Approbation de la requête..."
+  },
+  "mutation": {
+    "approving": "Approbation",
+    "declining": "Rejet",
+    "request": "de la demande...",
+    "approved": "La requête a été approuvée !",
+    "declined": "La requête a été rejetée !"
+  },
+  "detail": {
+    "label": "Statistiques pour les intellos",
+    "id": "ID",
+    "device": "Appareil",
+    "video": {
+      "video": "Vidéo",
+      "resolution": "Résolution",
+      "framerate": "Fréquence d'images",
+      "codec": "Codec vidéo"
+    },
+    "audio": {
+      "audio": "Audio",
+      "channels": "Canaux audio",
+      "codec": "Codecs audio"
+    },
+    "transcoding": {
+      "transcoding": "Transcodage",
+      "context": "Contexte",
+      "requested": "Encodage hardware demandé",
+      "source": "Codec de source",
+      "target": "Codec cible"
+    }
   }
 }

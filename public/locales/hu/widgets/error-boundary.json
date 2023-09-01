@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Hoppá, hiba történt!",
+    "buttons": {
+      "details": "Részletek",
+      "tryAgain": "Próbálja újra"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Az Ön hibája",
+    "reportButton": "Hiba jelentése"
+  }
+}

@@ -14,8 +14,7 @@ export const BrowserTabTitle = () => {
   if (!configName) return null;
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (ev) => {
-    const { value } = ev.currentTarget;
-    const metaTitle = value.trim();
+    const { value: metaTitle } = ev.currentTarget;
     setMetaTitle(metaTitle);
     updateConfig(configName, (prev) => ({
       ...prev,

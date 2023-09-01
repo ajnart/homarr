@@ -167,7 +167,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
             variant="default"
             fullWidth
           >
-            Documentation
+            {t('layout/modals/about:documentation')}
           </Button>
         </Grid.Col>
 
@@ -203,6 +203,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   const { attributes } = usePackageAttributesStore();
   const { editModeEnabled } = useEditModeInformationStore();
   const { primaryColor } = useColorTheme();
+  const { t } = useTranslation(['layout/modals/about']);
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
@@ -300,21 +301,23 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                   transition={{ duration: 0.8, ease: 'easeInOut' }}
                 >
                   <Badge color="green" variant="filled">
-                    new: {newVersionAvailable}
+                    {t('version.new',{ newVersion: newVersionAvailable})}
                   </Badge>
                 </motion.div>
               </HoverCard.Target>
               <HoverCard.Dropdown>
-                Version{' '}
-                <b>
-                  <Anchor
-                    target="_blank"
-                    href={`https://github.com/ajnart/homarr/releases/tag/${newVersionAvailable}`}
-                  >
-                    {newVersionAvailable}
-                  </Anchor>
-                </b>{' '}
-                is available ! Current version: {attributes.packageVersion}
+                <Text>
+                  {t('version.dropdown', {currentVersion: attributes.packageVersion}).split('{{newVersion}}')[0]}
+                  <b>
+                    <Anchor
+                      target="_blank"
+                      href={`https://github.com/ajnart/homarr/releases/tag/${newVersionAvailable}`}
+                    >
+                      {newVersionAvailable}
+                    </Anchor>
+                  </b>
+                  {t('version.dropdown', {currentVersion: attributes.packageVersion}).split('{{newVersion}}')[1]}
+                </Text>
               </HoverCard.Dropdown>
             </HoverCard>
           )}

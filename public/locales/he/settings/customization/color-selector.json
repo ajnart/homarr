@@ -1,4 +1,6 @@
 {
   "colors": "צבעים",
-  "suffix": "צבע {{color}}"
+  "suffix": "צבע {{color}}",
+  "primary": "עיקרי",
+  "secondary": "משני"
 }

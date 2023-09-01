@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "ビデオストリーム",
+    "description": "カメラやウェブサイトからのビデオストリームやビデオを埋め込む",
     "settings": {
-      "title": "",
+      "title": "ビデオストリームウィジェットの設定",
       "FeedUrl": {
-        "label": ""
+        "label": "フィードURL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "オートプレイ"
       },
       "muted": {
-        "label": ""
+        "label": "ミュート"
       },
       "controls": {
-        "label": ""
+        "label": "ビデオプレーヤーのコントロール"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "無効なストリーム"
   }
 }

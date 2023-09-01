@@ -11,13 +11,25 @@
         "label": "Commencez la semaine par dimanche"
       },
       "radarrReleaseType": {
-        "label": "Type de sortie Radarr"
+        "label": "Type de sortie Radarr",
+        "data": {
+          "inCinemas": "Au cinéma",
+          "physicalRelease": "Physique",
+          "digitalRelease": "Digitale"
+        }
       },
       "hideWeekDays": {
         "label": "Masquer les jours de la semaine"
       },
       "fontSize": {
-        "label": "Taille de la police"
+        "label": "Taille de la police",
+        "data": {
+          "xs": "Très Petite",
+          "sm": "Petite",
+          "md": "Moyenne",
+          "lg": "Grande",
+          "xl": "Très Grande"
+        }
       }
     }
   }

@@ -6,6 +6,13 @@
 	"key": "Raccourci clavier",
 	"action": "Action",
 	"keybinds": "Affectation des touches",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "Basculer entre mode clair/sombre",
+		"focusSearchBar": "Focus sur la barre de recherche",
+		"openDocker": "Ouvrir le docker widget",
+		"toggleEdit": "Basculer en mode édition"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Version de schéma de configuration",
 		"configurationsCount": "Configurations disponibles",
@@ -14,5 +21,9 @@
 		"i18n": "Traductions I18n chargées",
 		"locales": "Locales I18n configurées",
 		"experimental_disableEditMode": "<b>EXPÉRIMENTAL</b> : désactiver le mode édition"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

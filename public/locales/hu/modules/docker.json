@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Lehetővé teszi az összes Docker-konténer egyszerű megtekintését és kezelését."
+  },
+  "search": {
+    "placeholder": "Keresés konténer vagy képnév alapján"
+  },
+  "table": {
+    "header": {
+      "name": "Név",
+      "image": "Kép",
+      "ports": "Portok",
+      "state": "Állapot"
+    },
+    "body": {
+      "portCollapse": "{{ports}} több"
+    },
+    "states": {
+      "running": "Fut",
+      "created": "Létrehozva",
+      "stopped": "Megállítva",
+      "unknown": "Ismeretlen"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Alkalmazás hozzáadása",
+      "message": "Alkalmazás hozzáadása a Homarrhoz"
+    },
+    "restart": {
+      "title": "Újraindítás"
+    },
+    "stop": {
+      "title": "Megállítás"
+    },
+    "start": {
+      "title": "Indítás"
+    },
+    "refreshData": {
+      "title": "Adatok frissítése"
+    },
+    "remove": {
+      "title": "Eltávolítás"
+    },
+    "addToHomarr": {
+      "title": "Hozzáadás a Homarrhoz"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Indítás",
+      "end": "Elindult"
+    },
+    "stop": {
+      "start": "Leállítás",
+      "end": "Megállítva"
+    },
+    "restart": {
+      "start": "Újraindítás",
+      "end": "Újraindítva"
+    },
+    "remove": {
+      "start": "Eltávolítás",
+      "end": "Eltávolítva"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker integráció sikertelen",
+      "message": "Elfelejtetted összekapcsolni a dokker csatlakozást?"
+    },
+    "unknownError": {
+      "title": "Hiba történt"
+    },
+    "oneServiceAtATime": {
+      "title": "Kérjük, egyszerre csak egy alkalmazást vagy szolgáltatást adjon hozzá!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

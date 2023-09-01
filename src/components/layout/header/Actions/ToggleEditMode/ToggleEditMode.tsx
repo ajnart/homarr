@@ -14,8 +14,6 @@ import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/grids
 import { useCardStyles } from '../../../useCardStyles';
 import { AddElementAction } from '../AddElementAction/AddElementAction';
 
-const beforeUnloadEventText = 'Exit the edit mode to save your changes';
-
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
@@ -24,7 +22,7 @@ export const ToggleEditModeAction = () => {
     namedWrapperColumnCount !== null
       ? t(`common:breakPoints.${namedWrapperColumnCount}`)
       : t('common:loading');
-
+  const beforeUnloadEventText = t('unloadEvent');
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
   const { classes } = useCardStyles(true);

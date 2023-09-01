@@ -1,4 +1,6 @@
 {
   "colors": "Χρώματα",
-  "suffix": "{{color}} χρώμα"
+  "suffix": "{{color}} χρώμα",
+  "primary": "Κύριο",
+  "secondary": "Δευτερεύον"
 }

@@ -78,7 +78,7 @@ export const GridstackConfiguration = () => {
           pixels: GridstackBreakpoints.large,
         })}
       >
-        <Slider min={5} max={20} mt="xs" {...form.getInputProps('columnCountLarge')} />
+        <Slider min={5} max={32} mt="xs" {...form.getInputProps('columnCountLarge')} />
       </Input.Wrapper>
       {form.isDirty() && (
         <Alert variant="light" color="yellow" title="Unsaved changes" my="md">

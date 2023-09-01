@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Hepsini yeni sekmede aç"
     }
+  },
+  "menu": {
+    "moveUp": "Yukarı taşı",
+    "moveDown": "Aşağı taşı",
+    "addCategory": "",
+    "addAbove": "yukarıda",
+    "addBelow": "aşağıda"
   }
 }

@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Godkänn begäran",
-    "decline": ""
+    "decline": "Avvisa förfrågningar",
+    "approving": "Godkänner begäran..."
+  },
+  "mutation": {
+    "approving": "Godkänner",
+    "declining": "Avböjer",
+    "request": "förfrågan...",
+    "approved": "Förfrågan godkändes!",
+    "declined": "Förfrågnan avvisades!"
+  },
+  "detail": {
+    "label": "Statistik för nördar",
+    "id": "ID",
+    "device": "Enhet",
+    "video": {
+      "video": "Video",
+      "resolution": "Upplösning",
+      "framerate": "Bildfrekvens",
+      "codec": "Videokodek"
+    },
+    "audio": {
+      "audio": "Ljud",
+      "channels": "Ljudkanaler",
+      "codec": "Ljudkodek"
+    },
+    "transcoding": {
+      "transcoding": "Transkodning",
+      "context": "Kontext",
+      "requested": "Hårdvarukodning begärd",
+      "source": "Källkodek",
+      "target": "Målkodkek"
+    }
   }
 }

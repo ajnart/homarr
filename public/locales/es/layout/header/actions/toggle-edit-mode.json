@@ -7,5 +7,6 @@
     "popover": {
         "title": "El modo edición está habilitado para el tamaño <1>{{size}}</1>",
         "text": "Puedes ajustar y configurar tus aplicaciones ahora. Los cambios <strong>no se guardan</strong> hasta que salgas del modo edición"
-    }
+    },
+    "unloadEvent": ""
 }

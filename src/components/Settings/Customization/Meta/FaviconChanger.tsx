@@ -16,8 +16,7 @@ export const FaviconChanger = () => {
   if (!configName) return null;
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (ev) => {
-    const { value } = ev.currentTarget;
-    const faviconUrl = value.trim();
+    const { value: faviconUrl } = ev.currentTarget;
     setFaviconUrl(faviconUrl);
     updateConfig(configName, (prev) => ({
       ...prev,
