@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Uygulama Adı Yazı Boyutu",
+			"description": "Uygulama adının kutucukta gösterilmesi için yazı tipi boyutunu ayarlayın."
 		},
 		"appNameStatus": {
 			"label": "Uygulama Adı Statüsü",
