@@ -29,9 +29,7 @@
   },
   "item": {
     "validation": {
-      "length100": "Längden måste vara mellan 1 och 100",
-      "length200": "Längden måste vara mellan 1 och 200",
-      "length400": "Längden måste vara mellan 1 och 400",
+      "length": "",
       "invalidLink": "Inte en giltig länk",
       "errorMsg": "Sparades inte, eftersom det fanns valideringsfel. Vänligen kontrollera dina inmatningar"
     },
