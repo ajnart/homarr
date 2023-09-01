@@ -6,6 +6,7 @@
 	"key": "Genvejstast",
 	"action": "Handling",
 	"keybinds": "Genvejstaster",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "Slå lys/mørk tilstand til/fra",
 		"focusSearchBar": "Fokusér på søgebjælken",
@@ -20,5 +21,9 @@
 		"i18n": "Indlæste I18n-oversættelsesnavneområder",
 		"locales": "Konfigurerede I18n landestandarder",
 		"experimental_disableEditMode": "<b>EKSPERIMENTAL</b>: Deaktivér redigeringstilstand"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
