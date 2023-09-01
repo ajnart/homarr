@@ -4,18 +4,24 @@
     "description": "Statistika par jūsu mediju pieprasījumiem",
     "settings": {
       "title": "Multimediju pieprasījumu statistika",
-      "direction": {
-        "label": "Izkārtojuma virziens.",
-        "data": {
-          "row": "Horizontāli",
-          "column": "Vertikāli"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Aizstāt saites ar ārējo saimnieku"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Nepabeigtie apstiprinājumi",
-    "tvRequests": "TV pieprasījumi",
-    "movieRequests": "Filmu pieprasījumi"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }
