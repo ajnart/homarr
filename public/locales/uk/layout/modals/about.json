@@ -6,6 +6,7 @@
 	"key": "Гарячі клавіши",
 	"action": "Дії",
 	"keybinds": "Сполучення клавіш",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
@@ -20,5 +21,9 @@
 		"i18n": "Завантажено інтернаціональні переклади",
 		"locales": "Налаштовано інтернаціональні локалі",
 		"experimental_disableEditMode": "<b>ЕКСПЕРИМЕНТАЛЬНО</b>: Вимкнути режим редагування"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
