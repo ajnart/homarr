@@ -29,9 +29,7 @@
   },
   "item": {
     "validation": {
-      "length100": "La lunghezza deve essere compresa tra 1 e 100",
-      "length200": "La lunghezza deve essere compresa tra 1 e 200",
-      "length400": "La lunghezza deve essere compresa tra 1 e 400",
+      "length": "",
       "invalidLink": "Link non valido",
       "errorMsg": "Non è stato salvato perché c'erano errori di convalida. Si prega di adattare i dati inseriti"
     },
