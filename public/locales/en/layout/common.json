@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Move up",
     "moveDown": "Move down",
-    "addCategory": "Add category",
+    "addCategory": "Add category {{location}}",
     "addAbove": "above",
     "addBelow": "below"
   }
