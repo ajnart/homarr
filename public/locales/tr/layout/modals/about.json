@@ -6,6 +6,7 @@
 	"key": "Kısayol tuşu",
 	"action": "Eylem",
 	"keybinds": "Tuş atamaları",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "Aydınlık/karanlık mod",
 		"focusSearchBar": "Arama çubuğuna odaklan",
@@ -20,5 +21,9 @@
 		"i18n": "Yüklenen I18n çeviri ad alanları",
 		"locales": "Yapılandırılmış I18n yerelleri",
 		"experimental_disableEditMode": "<b>DENEYSEL</b>: Düzenleme modunu devre dışı bırak"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
