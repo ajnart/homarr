@@ -8,20 +8,20 @@
         "label": "Links durch externen Host ersetzen"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Links in neuem Tab öffnen"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Medien-Statistiken",
+    "pending": "Ausstehende Freigaben",
+    "tvRequests": "TV-Anfragen",
+    "movieRequests": "Film-Anfragen",
+    "approved": "Bereits genehmigt",
+    "totalRequests": "Gesamt"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Top-Nutzer",
+    "requests": "Anfragen: {{number}}"
   }
 }
