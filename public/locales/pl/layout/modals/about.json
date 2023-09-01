@@ -6,6 +6,7 @@
 	"key": "",
 	"action": "",
 	"keybinds": "",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
@@ -20,5 +21,9 @@
 		"i18n": "Załadowane nazwy tłumaczeń I18n",
 		"locales": "Skonfigurowane lokalizacje I18n",
 		"experimental_disableEditMode": "<b>EKSPERIMENTAL</b>: Wyłącz tryb edycji"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
