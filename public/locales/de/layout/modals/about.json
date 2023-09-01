@@ -6,6 +6,7 @@
 	"key": "Kurzbefehl Taste",
 	"action": "Aktion",
 	"keybinds": "Tastenbelegung",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "Umschalten zwischen Hell- und Dunkelmodus",
 		"focusSearchBar": "Suchleiste fokussieren",
@@ -20,5 +21,9 @@
 		"i18n": "Geladene I18n Übersetzungs Namensräume",
 		"locales": "Konfigurierte I18n Sprachumgebungen",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Bearbeitungsmodus deaktivieren"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
