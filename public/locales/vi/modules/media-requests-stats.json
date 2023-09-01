@@ -4,18 +4,24 @@
     "description": "Thống kê về các yêu cầu đa phương tiện của bạn",
     "settings": {
       "title": "Thống kê yêu cầu đa phương tiện",
-      "direction": {
-        "label": "",
-        "data": {
-          "row": "",
-          "column": ""
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Thay thế liên kết bằng máy chủ bên ngoài"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Chờ duyệt",
-    "tvRequests": "Yêu cầu TV",
-    "movieRequests": "Yêu cầu phim"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }
