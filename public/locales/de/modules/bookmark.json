@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "Die Länge muss zwischen {{shortest}} und {{longest}} liegen",
       "invalidLink": "Kein gültiger Link",
       "errorMsg": "Konnte nicht gespeichert werden, da Validierungsfehler aufgetreten sind. Bitte beachten Sie Ihre Eingaben"
     },
