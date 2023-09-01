@@ -54,6 +54,10 @@
 				"text": "Tas var aizņemt dažas sekundes"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "Lietotnes Nosaukuma Statuss",
 			"description": "Izvēlieties, kur vēlaties, lai tiktu parādīts virsraksts, ja vispār to vēlaties parādīt.",
