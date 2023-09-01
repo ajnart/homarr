@@ -1,0 +1,24 @@
+{
+  "title": "",
+  "selector": {
+    "label": "",
+    "data": {
+      "ping": "",
+      "repositoryIcons": "",
+      "calendar&medias": "",
+      "weather": ""
+    }
+  },
+  "buttons": {
+    "notificationTitle": "",
+    "clearAll": {
+      "text": "",
+      "notificationMessage": ""
+    },
+    "clearSelect": {
+      "text": "",
+      "notificationMessageSingle": "",
+      "notificationMessageMulti": ""
+    }
+  }
+}
