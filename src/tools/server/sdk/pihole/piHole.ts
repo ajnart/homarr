@@ -62,6 +62,18 @@ export class PiHoleClient {
       );
     }
 
-    return json as PiHoleApiStatusChangeResponse;
+    for(let loops = 0; loops < 10; loops++){
+      const summary = await this.getSummary()
+      if (summary.status === action + 'd'){
+        return json as PiHoleApiStatusChangeResponse;
+      }
+      await new Promise ((resolve) => { setTimeout(resolve, 50)});
+    }
+
+    return Promise.reject(
+      new Error(
+        `Although PiHole received the command, it failed to update it's status: ${json}`
+      )
+    )
   }
 }

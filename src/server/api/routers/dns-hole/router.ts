@@ -1,3 +1,4 @@
+import Consola from 'consola';
 import { z } from 'zod';
 import { findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
@@ -14,19 +15,25 @@ export const dnsHoleRouter = createTRPCRouter({
       z.object({
         action: z.enum(['enable', 'disable']),
         configName: z.string(),
+        appsToChange: z.optional(z.array(z.string())),
       })
     )
     .mutation(async ({ input }) => {
       const config = getConfig(input.configName);
 
       const applicableApps = config.apps.filter(
-        (x) => x.integration?.type && ['pihole', 'adGuardHome'].includes(x.integration?.type)
+        (app) =>
+          app.id &&
+          app.integration?.type &&
+          input.appsToChange?.includes(app.id) &&
+          ['pihole', 'adGuardHome'].includes(app.integration?.type)
       );
 
       await Promise.all(
         applicableApps.map(async (app) => {
           if (app.integration?.type === 'pihole') {
             await processPiHole(app, input.action === 'enable');
+
             return;
           }
 
@@ -72,8 +79,6 @@ export const dnsHoleRouter = createTRPCRouter({
         }
       );
 
-      //const data: AdStatistics = ;
-
       data.adsBlockedTodayPercentage = data.adsBlockedToday / data.dnsQueriesToday;
       if (Number.isNaN(data.adsBlockedTodayPercentage)) {
         data.adsBlockedTodayPercentage = 0;
@@ -90,22 +95,38 @@ const processAdGuard = async (app: ConfigAppType, enable: boolean) => {
   );
 
   if (enable) {
-    await adGuard.disable();
+    try {
+      await adGuard.enable();
+    } catch (error) {
+      Consola.error((error as Error).message);
+    }
     return;
   }
 
-  await adGuard.enable();
+  try {
+    await adGuard.disable();
+  } catch (error) {
+    Consola.error((error as Error).message);
+  }
 };
 
 const processPiHole = async (app: ConfigAppType, enable: boolean) => {
   const pihole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
 
   if (enable) {
-    await pihole.enable();
+    try {
+      await pihole.enable();
+    } catch (error) {
+      Consola.error((error as Error).message);
+    }
     return;
   }
 
-  await pihole.disable();
+  try {
+    await pihole.disable();
+  } catch (error) {
+    Consola.error((error as Error).message);
+  }
 };
 
 const collectPiHoleSummary = async (app: ConfigAppType) => {
