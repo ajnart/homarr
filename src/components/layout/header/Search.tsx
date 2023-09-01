@@ -106,7 +106,7 @@ export function Search() {
       label: t('searchEngines.overseerr.name'),
       value: 'overseerr',
       description: t('searchEngines.overseerr.description'),
-      url: `${overseerrApp?.url}search?query=`,
+      url: `${overseerrApp?.url.replace(new RegExp('/' + "+$"),'')}/search?query=`,
       shortcut: 'm',
     },
   ];
