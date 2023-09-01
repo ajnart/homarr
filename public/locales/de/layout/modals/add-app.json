@@ -54,6 +54,10 @@
 				"text": "Dies kann einige Sekunden dauern…"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "App-Namensstatus",
 			"description": "Wählen Sie, wo der Titel angezeigt werden soll, wenn überhaupt.",
