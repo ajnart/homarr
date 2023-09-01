@@ -8,20 +8,20 @@
         "label": "Bağlantıları harici ana bilgisayar ile değiştirin"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Bağlantıları yeni sekmede aç"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Medya İstatistikleri",
+    "pending": "Bekleyen Onaylar",
+    "tvRequests": "Dizi talepleri",
+    "movieRequests": "Film talepleri",
+    "approved": "Zaten onaylandı",
+    "totalRequests": "Toplam"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "En İyi Kullanıcılar",
+    "requests": "İstekler: {{number}}"
   }
 }
