@@ -4,18 +4,24 @@
     "description": "Statistik over dine medieanmodninger",
     "settings": {
       "title": "Statistikker over medieanmodninger",
-      "direction": {
-        "label": "Layoutets retning.",
-        "data": {
-          "row": "Horisontal",
-          "column": "Vertikal"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Udskift links med ekstern vært"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Afventer godkendelse",
-    "tvRequests": "TV-anmodninger",
-    "movieRequests": "Film anmodninger"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }
