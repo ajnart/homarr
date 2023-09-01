@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "La lunghezza deve essere compresa tra {{shortest}} e {{longest}}",
       "invalidLink": "Link non valido",
       "errorMsg": "Non è stato salvato perché c'erano errori di convalida. Si prega di adattare i dati inseriti"
     },
