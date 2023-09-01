@@ -6,6 +6,7 @@
 	"key": "Tecla de acceso directo",
 	"action": "Acción",
 	"keybinds": "Combinaciones de teclas",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "Alternar modo claro/oscuro",
 		"focusSearchBar": "Centrarse en la barra de búsqueda",
@@ -20,5 +21,9 @@
 		"i18n": "I18n espacios de nombres de traducción cargados",
 		"locales": "I18n locales configurados",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desactivar modo edición"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
