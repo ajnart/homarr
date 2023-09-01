@@ -54,6 +54,10 @@
 				"text": "This may take a few seconds"
 			}
 		},
+		"appNameFontSize":{
+			"label":"App Name Font Size",
+			"description":"Set the font size for when the app name is shown on the tile."
+		},
 		"appNameStatus":{
 			"label":"App Name Status",
 			"description":"Choose where you want the title to show up, if at all.",
