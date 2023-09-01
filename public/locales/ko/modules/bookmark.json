@@ -29,9 +29,7 @@
   },
   "item": {
     "validation": {
-      "length100": "",
-      "length200": "",
-      "length400": "",
+      "length": "",
       "invalidLink": "",
       "errorMsg": ""
     },
