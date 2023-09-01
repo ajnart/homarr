@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Yukarı taşı",
     "moveDown": "Aşağı taşı",
-    "addCategory": "Kategori ekle",
+    "addCategory": "",
     "addAbove": "yukarıda",
     "addBelow": "aşağıda"
   }
