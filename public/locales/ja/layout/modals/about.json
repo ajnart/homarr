@@ -6,6 +6,7 @@
 	"key": "ショートカットキー",
 	"action": "アクション",
 	"keybinds": "キー設定",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "ライト/ダークモードに変更する",
 		"focusSearchBar": "検索バーにフォーカス",
@@ -20,5 +21,9 @@
 		"i18n": "読み込まれたI18n翻訳名前空間",
 		"locales": "I18nロケールの設定",
 		"experimental_disableEditMode": "<b>実験的</b>: 編集モードを無効にする"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
