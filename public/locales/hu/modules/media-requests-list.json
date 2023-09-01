@@ -6,6 +6,9 @@
       "title": "Médiakérések listája",
       "replaceLinksWithExternalHost": {
         "label": "Linkek cseréje külső fogadóval"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
