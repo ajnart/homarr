@@ -165,7 +165,7 @@ function App(
 }
 
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
-  const disableEditMode = process.env.DISABLE_EDIT_MODE === 'true';
+  const disableEditMode = process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true';
   if (disableEditMode) {
     Consola.warn(
       'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'

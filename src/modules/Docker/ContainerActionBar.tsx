@@ -36,7 +36,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
   const getLowestWrapper = () =>
     config.wrappers.sort((wrapper1, wrapper2) => wrapper1.position - wrapper2.position)[0];
 
-  if (process.env.DISABLE_EDIT_MODE === 'true') {
+  if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
     return null;
   }
 

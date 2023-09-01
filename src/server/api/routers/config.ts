@@ -68,7 +68,7 @@ export const configRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ input }) => {
-      if (process.env.DISABLE_EDIT_MODE === 'true') {
+      if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
         throw new TRPCError({
           code: 'METHOD_NOT_SUPPORTED',
           message: 'Edit is not allowed, because edit mode is disabled'
