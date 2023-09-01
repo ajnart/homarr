@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "上に移動",
     "moveDown": "下へ移動",
-    "addCategory": "カテゴリーを追加",
+    "addCategory": "",
     "addAbove": "上",
     "addBelow": "下"
   }
