@@ -6,6 +6,9 @@
       "title": "Liste der Medienanfragen",
       "replaceLinksWithExternalHost": {
         "label": "Links durch externen Host ersetzen"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
