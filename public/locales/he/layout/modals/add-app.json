@@ -54,6 +54,10 @@
 				"text": "פעולה זו עשויה להימשך מספר שניות"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "סטטוס שם האפליקציה",
 			"description": "בחר היכן תרצה שהכותרת תופיע, אם בכלל.",
