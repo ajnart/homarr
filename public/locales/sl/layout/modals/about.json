@@ -6,6 +6,7 @@
 	"key": "Bližnjična tipka",
 	"action": "Dejanje",
 	"keybinds": "Vezave tipk",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
@@ -20,5 +21,9 @@
 		"i18n": "Nalaganje imenskih prostorov za prevod I18n",
 		"locales": "Konfigurirani krajevni jeziki I18n",
 		"experimental_disableEditMode": "<b>EKSPERIMENTALNO</b>: Onemogočite način urejanja"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
