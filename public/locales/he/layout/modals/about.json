@@ -6,6 +6,7 @@
 	"key": "מקש קיצור",
 	"action": "פעולה",
 	"keybinds": "שילוב מקשים",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "החלף מצב אור/חושך",
 		"focusSearchBar": "התמקד בסרגל החיפוש",
@@ -20,5 +21,9 @@
 		"i18n": "מרחבי שמות של תרגום I18n טעונים",
 		"locales": "אזורי I18n מוגדרים",
 		"experimental_disableEditMode": "<b>נסיוני</b>: ביטול מצב עריכה"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
