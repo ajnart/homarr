@@ -4,18 +4,24 @@
     "description": "Medya taleplerinizle ilgili istatistikler",
     "settings": {
       "title": "Medya talep istatistikleri",
-      "direction": {
-        "label": "Yerleşimin yönü.",
-        "data": {
-          "row": "Yatay",
-          "column": "Dikey"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Bağlantıları harici ana bilgisayar ile değiştirin"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Onay bekleyenler",
-    "tvRequests": "Dizi talepleri",
-    "movieRequests": "Film talepleri"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }
