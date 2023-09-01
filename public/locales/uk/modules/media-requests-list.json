@@ -6,6 +6,9 @@
       "title": "Список медіа запитів",
       "replaceLinksWithExternalHost": {
         "label": "Замініть посилання на зовнішній хост"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
