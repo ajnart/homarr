@@ -6,6 +6,7 @@
 	"key": "Gyorsbillentyűk",
 	"action": "Esemény",
 	"keybinds": "Billentyűkombinációk",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "Világos/sötét üzemmód váltása",
 		"focusSearchBar": "Fókusz a Keresősoron",
@@ -20,5 +21,9 @@
 		"i18n": "Betöltött I18n fordítási névterek",
 		"locales": "Beállított I18n helyi nyelvek",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Szerkesztési mód kikapcsolása"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
