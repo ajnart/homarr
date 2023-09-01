@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Schriftgröße für App Namen",
+			"description": "Legen Sie die Schriftgröße für die Anzeige des App-Namens auf der Kachel fest."
 		},
 		"appNameStatus": {
 			"label": "App-Namensstatus",
