@@ -6,6 +6,7 @@
 	"key": "Klávesová skratka",
 	"action": "Akcia",
 	"keybinds": "Kľúčové väzby",
+	"documentation": "",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
@@ -20,5 +21,9 @@
 		"i18n": "Načítané prekladové priestory I18n",
 		"locales": "Nakonfigurované lokality I18n",
 		"experimental_disableEditMode": "<b>EXPERIMENTÁLNE</b>: Zakázanie režimu úprav"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }
