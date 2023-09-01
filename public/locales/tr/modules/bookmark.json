@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "Uzunluk {{shortest}} ile {{longest}} arasında olmalıdır",
       "invalidLink": "Geçerli bir bağlantı değil",
       "errorMsg": "Doğrulama hataları olduğu için kaydedilmedi. Lütfen bilgilerinizi kontrol edin"
     },
