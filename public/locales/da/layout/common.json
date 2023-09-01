@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Flyt op",
     "moveDown": "Flyt ned",
-    "addCategory": "",
+    "addCategory": "Tilføj kategori {{location}}",
     "addAbove": "over",
     "addBelow": "under"
   }
