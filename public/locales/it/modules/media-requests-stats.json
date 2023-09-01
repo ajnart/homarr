@@ -4,18 +4,24 @@
     "description": "Statistiche sulle richieste multimediali",
     "settings": {
       "title": "Statistiche richieste multimediali",
-      "direction": {
-        "label": "Direzione del layout.",
-        "data": {
-          "row": "Orizzontale",
-          "column": "Verticale"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Sostituisci i collegamenti con l'host esterno"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "In attesa di approvazione",
-    "tvRequests": "Richieste TV",
-    "movieRequests": "Richieste film"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }
