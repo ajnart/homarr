@@ -8,5 +8,5 @@
         "title": "启用  <1>{{size}}</1> 尺寸编辑模式",
         "text": "现在您可以调整和配置您的应用了，在退出编辑模式之前<strong>不会保存</strong>更改 。"
     },
-    "unloadEvent": ""
+    "unloadEvent": "退出编辑模式以保存更改"
 }
