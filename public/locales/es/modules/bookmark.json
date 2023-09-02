@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "Longitud debe ser entre {{shortest}} y {{longest}}",
       "invalidLink": "No es un enlace válido",
       "errorMsg": "No se guardó, porque hubo errores de validación. Por favor, ajusta tus entradas"
     },
