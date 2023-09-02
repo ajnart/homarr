@@ -13,15 +13,15 @@
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "סטטיסטיקות מדיה",
+    "pending": "ממתין לאישור",
+    "tvRequests": "בקשות סדרות",
+    "movieRequests": "בקשות סרטים",
+    "approved": "כבר אושר",
+    "totalRequests": "סך הכל"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "משתמשים מובילים",
+    "requests": "בקשות: {{number}}"
   }
 }
