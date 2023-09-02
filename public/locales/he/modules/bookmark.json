@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "אורך חייב להיות בין {{shortest}} ל {{longest}}",
       "invalidLink": "קישור לא חוקי",
       "errorMsg": "לא נשמר, כי היו שגיאות אימות. אנא התאימו את הקלט"
     },
