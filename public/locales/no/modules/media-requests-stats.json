@@ -5,7 +5,11 @@
     "settings": {
       "title": "Statistikk for mediaforespørsler",
       "direction": {
-        "label": ""
+        "label": "",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

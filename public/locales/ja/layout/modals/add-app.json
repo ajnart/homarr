@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "一般",
-		"behaviour": "",
+		"behaviour": "動作",
 		"network": "ネットワーク",
 		"appearance": "外観",
 		"integration": "統合化"
@@ -26,10 +26,10 @@
 			"description": "アプリを現在のタブではなく、新しいタブで開く。"
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "アプリケーション説明",
+			"description": "入力したテキストは、アプリの上にカーソルを置いたときに表示されます。\nアプリの詳細をユーザーに伝えたい場合や、何も表示しない場合は空欄にしてください。"
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "非標準プロトコルを使用します。これには事前にインストールされたアプリケーションが必要で、セキュリティリスクが生じる可能性があります。アドレスが安全で信頼されていることを確認してください。"
 	},
 	"network": {
 		"statusChecker": {
@@ -44,38 +44,38 @@
 	"appearance": {
 		"icon": {
 			"label": "アプリアイコン",
-			"description": "",
+			"description": "アイコンの検索を開始します。画像のURLを貼り付けてカスタムアイコンを使用することもできます。",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "結果が見つかりません",
+				"text": "より特定の検索用語を使用してみてください。目的のアイコンが見つからない場合は、上記の画像URLをカスタムアイコンに貼り付けてください。"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "外部アイコンを読み込み中",
+				"text": "これには数秒かかることがあります。"
 			}
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "アプリ名の状態",
+			"description": "タイトルを表示する場所を選んでください。",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "タイルにのみタイトルを表示",
+				"hover": "ツールチップのみにタイトルを表示",
+				"hidden": "全く表示しない"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "アプリ名の位置",
+			"description": "アイコンに対するアプリの名前の位置。",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "上",
+				"right": "右",
+				"bottom": "下",
+				"left": "左"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "アプリ名の行のクランプ",
+			"description": "タイトルの最大行数を指定します。0を指定すると無制限です。"
 		}
 	},
 	"integration": {
@@ -93,12 +93,18 @@
 		"secrets": {
 			"description": "シークレットを更新するには、値を入力し、保存ボタンをクリックします。シークレットを削除するには、クリアボタンを使用します。",
 			"warning": "あなたの認証情報は、あなたの統合のためのアクセスとして機能します。あなたは、 <strong>決して</strong> 他の誰ともそれを共有しないでください。ホーマーチームは決してクレデンシャルを求めません。 <strong>あなたの秘密を安全に保存し、管理することを確認してください</strong>。",
-			"clear": "クリアシークレット",
-			"save": "秘密を守る",
-			"update": "アップデートシークレット"
+			"clear": "シークレットをクリア",
+			"save": "シークレットを保存",
+			"update": "シークレットを更新"
 		}
 	},
 	"validation": {
-		"popover": "フォームに不正なデータが含まれています。したがって、保存することができません。すべての問題を解決し、このボタンを再度クリックして変更を保存してください。"
+		"popover": "フォームに不正なデータが含まれています。したがって、保存することができません。すべての問題を解決し、このボタンを再度クリックして変更を保存してください。",
+		"name": "名前が必須です",
+		"noUrl": "URL が必要です",
+		"invalidUrl": "値は有効なURLではありません",
+		"noIconUrl": "このフィールドは必須です",
+		"noExternalUri": "外部 URI が必要です",
+		"invalidExternalUri": "外部 URI は有効な URI ではありません"
 	}
 }

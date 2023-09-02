@@ -130,6 +130,7 @@ export default function ContainerActionBar({ selected, reload }: ContainerAction
                 appearance: {
                   iconUrl: '/imgs/logo/logo.png',
                   appNameStatus: 'normal',
+                  appNameFontSize: 16,
                   positionAppName: 'column',
                   lineClampAppName: 1,
                 },

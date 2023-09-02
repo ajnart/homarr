@@ -74,8 +74,8 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Lietotnes Nosaukuma Līnijas Aplaušana",
+			"description": "Nosaka, cik daudzās rindās maksimāli garš var būt jūsu virsraksts. Iestatiet 0, lai būtu neierobežots skaits."
 		}
 	},
 	"integration": {
@@ -99,6 +99,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Jūsu veidlapā ir nederīgi dati. Tāpēc to nevar saglabāt. Lūdzu, atrisiniet visas problēmas un vēlreiz noklikšķiniet uz šīs pogas, lai saglabātu izmaiņas"
+		"popover": "Jūsu veidlapā ir nederīgi dati. Tāpēc to nevar saglabāt. Lūdzu, atrisiniet visas problēmas un vēlreiz noklikšķiniet uz šīs pogas, lai saglabātu izmaiņas",
+		"name": "Nosaukums ir obligāts",
+		"noUrl": "URL ir obligāts",
+		"invalidUrl": "Vērtība nav derīgs url",
+		"noIconUrl": "Šis lauks ir obligāts",
+		"noExternalUri": "Nepieciešams ārējais URI",
+		"invalidExternalUri": "Ārējais URI nav derīgs uri"
 	}
 }

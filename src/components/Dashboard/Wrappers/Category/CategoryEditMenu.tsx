@@ -48,13 +48,13 @@ export const CategoryEditMenu = ({ category }: CategoryEditMenuProps) => {
           {t('menu.moveDown')}
         </Menu.Item>
         <Menu.Label>
-          {t('menu.addCategory')}
+          {t('menu.addCategory',{location: ''})}
         </Menu.Label>
         <Menu.Item icon={<IconRowInsertTop size={20} />} onClick={addCategoryAbove}>
-          {t('menu.addCategory') + ' ' + t('menu.addAbove')}
+          {t('menu.addCategory',{location: t('menu.addAbove')})}
         </Menu.Item>
         <Menu.Item icon={<IconRowInsertBottom size={20} />} onClick={addCategoryBelow}>
-          {t('menu.addCategory') + ' ' + t('menu.addBelow')}
+          {t('menu.addCategory',{location: t('menu.addBelow')})}
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

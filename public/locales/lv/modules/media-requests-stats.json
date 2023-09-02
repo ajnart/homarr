@@ -5,7 +5,11 @@
     "settings": {
       "title": "Multimediju pieprasījumu statistika",
       "direction": {
-        "label": "Izkārtojuma virziens."
+        "label": "Izkārtojuma virziens.",
+        "data": {
+          "row": "Horizontāli",
+          "column": "Vertikāli"
+        }
       }
     }
   },

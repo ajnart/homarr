@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "Dátum és idő",
+    "description": "Megjeleníti az aktuális dátumot és időt.",
+    "settings": {
+      "title": "A Naptár widget beállításai",
+      "display24HourFormat": {
+        "label": "24 órás idő kijelzése"
+      },
+      "dateFormat": {
+        "label": "Dátum formázás",
+        "data": {
+          "hide": "Dátum elrejtése"
+        }
+      },
+      "enableTimezone": {
+        "label": "Egyéni időzóna megjelenítése"
+      },
+      "timezoneLocation": {
+        "label": "Időzóna Helyszín"
+      },
+      "titleState": {
+        "label": "Város címe",
+        "info": "Ha aktiválja az Időzóna opciót, akkor megjelenik a város neve és az időzóna kódja.<br/>Megjelenítheti a várost önmagában, vagy akár nem is jelenítheti meg.",
+        "data": {
+          "both": "Város és időzóna",
+          "city": "Csak a város",
+          "none": "Semmi"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "label": "Beállítások"
+  },
+  "errors": {
+    "unmappedOptions": {
+      "text": ""
+    }
+  }
+}

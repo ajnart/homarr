@@ -2,17 +2,28 @@
 	"description": "Homarrは、 <strong>sleek</strong>, <strong>modern</strong> dashboardで、すべてのアプリとサービスを指先で操作できるようにします。HOMARを使えば、便利な1つの場所ですべてにアクセスし、コントロールすることができます。Homarrは、あなたが追加したアプリとシームレスに統合され、あなたに貴重な情報を提供し、完全に制御することができます。インストールは簡単で、Homarrは幅広い導入方法をサポートしています。",
 	"contact": "お困りごとやご質問はありませんか？私たちにご連絡ください。",
 	"addToDashboard": "ダッシュボードに追加",
-	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
+	"tip": "Modは修飾キーを指し、CtrlキーとCommand/Super/Windowsキーです",
+	"key": "ショートカットキー",
+	"action": "アクション",
+	"keybinds": "キー設定",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "ライト/ダークモードに変更する",
+		"focusSearchBar": "検索バーにフォーカス",
+		"openDocker": "Dockerウィジェットを開く",
+		"toggleEdit": "編集モードの切り替え"
+	},
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"configurationsCount": "",
+		"configurationSchemaVersion": "設定スキーマのバージョン",
+		"configurationsCount": "利用可能な構成",
 		"version": "バージョン",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
-		"experimental_disableEditMode": ""
+		"nodeEnvironment": "ノード環境",
+		"i18n": "読み込まれたI18n翻訳名前空間",
+		"locales": "I18nロケールの設定",
+		"experimental_disableEditMode": "<b>実験的</b>: 編集モードを無効にする"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

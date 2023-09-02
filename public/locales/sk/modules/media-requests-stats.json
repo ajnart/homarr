@@ -5,7 +5,11 @@
     "settings": {
       "title": "Štatistiky požiadaviek médií",
       "direction": {
-        "label": "Smer rozloženia."
+        "label": "Smer rozloženia.",
+        "data": {
+          "row": "Horizontálne",
+          "column": "Vertikálne"
+        }
       }
     }
   },

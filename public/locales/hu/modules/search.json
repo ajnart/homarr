@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Kereső sáv",
+    "description": "Egy keresősáv, amely lehetővé teszi az egyéni keresőmotor, a YouTube és a támogatott integrációk keresését."
+  },
+  "input": {
+    "placeholder": "Keresés az interneten..."
+  },
+  "switched-to": "Váltás erre:",
+  "searchEngines": {
+    "search": {
+      "name": "Internet",
+      "description": "Keresés..."
+    },
+    "youtube": {
+      "name": "YouTube",
+      "description": "Keresés a YouTube-on"
+    },
+    "torrents": {
+      "name": "Torrentek",
+      "description": "Torrentek keresése"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "Filmek és TV-műsorok keresése az Overseerr oldalon"
+    }
+  },
+  "tip": "A keresősávot a következő parancsikon segítségével választhatja ki ",
+  "switchedSearchEngine": "Átváltottunk a {{searchEngine}} keresésre"
+}

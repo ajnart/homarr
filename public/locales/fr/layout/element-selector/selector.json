@@ -7,5 +7,19 @@
     "goBack": "Retourner à la page précédente",
     "actionIcon": {
         "tooltip": "Ajouter une tuile"
+    },
+    "apps": "Applications",
+    "app": {
+        "defaultName": "Votre Application"
+    },
+    "widgets": "Widgets",
+    "categories": "Catégories",
+    "category": {
+        "newName": "Nom de la nouvelle catégorie",
+        "defaultName": "Nouvelle catégorie",
+        "created": {
+            "title": "Catégorie créée",
+            "message": "La catégorie \"{{name}}\" a été créée"
+        }
     }
 }

@@ -5,7 +5,11 @@
     "settings": {
       "title": "Статистика запитів на медіа",
       "direction": {
-        "label": ""
+        "label": "",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

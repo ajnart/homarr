@@ -12,7 +12,12 @@
         "label": "Vienumi"
       },
       "layout": {
-        "label": "Izkārtojums"
+        "label": "Izkārtojums",
+        "data": {
+          "autoGrid": "Auto Režģis",
+          "horizontal": "Horizontāli",
+          "vertical": "Vertikāli"
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "Grāmatzīmju saraksts ir tukšs",
       "text": "Pievienot jaunus vienumus šim sarakstam rediģēšanas režīmā"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "Nederīga saite",
+      "errorMsg": "Netika saglabāts, jo bija validācijas kļūdas. Lūdzu, pielāgojiet savus ievades datus"
+    },
+    "name": "Nosaukums",
+    "url": "URL",
+    "newTab": "Atvērt jaunā cilnē",
+    "hideHostname": "Slēpt Resursdatora nosaukumu",
+    "hideIcon": "Slēpt Ikonu",
+    "delete": "Dzēst"
   }
 }

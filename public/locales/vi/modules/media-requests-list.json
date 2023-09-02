@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Duyệt yêu cầu",
-    "decline": "Từ chối yêu cầu"
+    "decline": "Từ chối yêu cầu",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
+  },
+  "detail": {
+    "label": "",
+    "id": "",
+    "device": "",
+    "video": {
+      "video": "",
+      "resolution": "",
+      "framerate": "",
+      "codec": ""
+    },
+    "audio": {
+      "audio": "",
+      "channels": "",
+      "codec": ""
+    },
+    "transcoding": {
+      "transcoding": "",
+      "context": "",
+      "requested": "",
+      "source": "",
+      "target": ""
+    }
   }
 }

@@ -12,7 +12,8 @@
         "label": "Intervalle d'actualisation (en minutes)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "Autoriser le formatage HTML (Dangereux)",
+        "info": "Autoriser le formatage HTML depuis l'extérieur pourrait être dangereux.<br/>Veuillez vous assurer que le flux provient d'une source fiable."
       },
       "textLinesClamp": {
         "label": "Limitateur de longueur de ligne de texte"

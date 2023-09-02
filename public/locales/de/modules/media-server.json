@@ -6,6 +6,7 @@
       "title": "Einstellungen für das Medien Server Widget"
     }
   },
+  "loading": "Laden Streams",
   "card": {
     "table": {
       "header": {

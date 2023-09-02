@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Godkend anmodninger",
-    "decline": "Afvis alle anmodninger"
+    "decline": "Afvis alle anmodninger",
+    "approving": "Godkender anmodning..."
+  },
+  "mutation": {
+    "approving": "Godkender",
+    "declining": "Afviser",
+    "request": "anmod...",
+    "approved": "Anmodning blev godkendt!",
+    "declined": "Anmodningen blev afvist!"
+  },
+  "detail": {
+    "label": "Statistik for nørder",
+    "id": "ID",
+    "device": "Enhed",
+    "video": {
+      "video": "Video",
+      "resolution": "Opløsning",
+      "framerate": "Framerate",
+      "codec": "Video Codec"
+    },
+    "audio": {
+      "audio": "Lyd",
+      "channels": "Lyd kanaler",
+      "codec": "Lyd codec"
+    },
+    "transcoding": {
+      "transcoding": "Transkoder",
+      "context": "Kontekst",
+      "requested": "Anmodning om hardware-enkodning",
+      "source": "Kilde Codec",
+      "target": "Mål Codec"
+    }
   }
 }

@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "Aprobar solicitudes",
-    "decline": "Rechazar solicitudes"
+    "decline": "Rechazar solicitudes",
+    "approving": "Aprobando solicitud..."
+  },
+  "mutation": {
+    "approving": "Aprobando",
+    "declining": "Rechazando",
+    "request": "Solicitud...",
+    "approved": "¡La solicitud fue aprobada!",
+    "declined": "¡La solicitud fue rechazada!"
+  },
+  "detail": {
+    "label": "Estadísticas para empollones",
+    "id": "ID",
+    "device": "Dispositivo",
+    "video": {
+      "video": "Video",
+      "resolution": "Resolución",
+      "framerate": "Velocidad de fotogramas",
+      "codec": "Códec de vídeo"
+    },
+    "audio": {
+      "audio": "Audio",
+      "channels": "Canales de audio",
+      "codec": "Códec de audio"
+    },
+    "transcoding": {
+      "transcoding": "Transcodificación",
+      "context": "Contexto",
+      "requested": "Codificación de hardware solicitada",
+      "source": "Códec de origen",
+      "target": "Códec de destino"
+    }
   }
 }

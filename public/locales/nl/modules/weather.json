@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Onweer met hagel",
       "unknown": "Onbekend"
     }
-  }
+  },
+  "error": ""
 }

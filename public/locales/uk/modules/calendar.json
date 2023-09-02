@@ -11,13 +11,25 @@
         "label": "Почати тиждень у Неділю"
       },
       "radarrReleaseType": {
-        "label": "Radarr - тип релізів"
+        "label": "Radarr - тип релізів",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
       "fontSize": {
-        "label": "Розмір шрифту"
+        "label": "Розмір шрифту",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }

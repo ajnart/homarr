@@ -1,4 +1,6 @@
 {
   "colors": "Цвет",
-  "suffix": "{{color}} цвет"
+  "suffix": "{{color}} цвет",
+  "primary": "Основной",
+  "secondary": "Дополнительный"
 }

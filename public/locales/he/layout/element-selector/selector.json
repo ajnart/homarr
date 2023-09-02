@@ -7,5 +7,19 @@
     "goBack": "חזרה לשלב הקודם",
     "actionIcon": {
         "tooltip": "הוספת אריח"
+    },
+    "apps": "אפליקציות",
+    "app": {
+        "defaultName": "האפליקציה שלך"
+    },
+    "widgets": "ווידג'טים",
+    "categories": "קטגוריות",
+    "category": {
+        "newName": "שם הקטגוריה החדשה",
+        "defaultName": "קטגוריה חדשה",
+        "created": {
+            "title": "קטגוריה נוצרה",
+            "message": "הקטגוריה {{name}} נוצרה"
+        }
     }
 }

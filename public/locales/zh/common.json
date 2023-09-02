@@ -11,20 +11,20 @@
   "enableAll": "全部启用",
   "disableAll": "全部禁用",
   "version": "版本",
-  "changePosition": "改变位置",
-  "remove": "移除",
+  "changePosition": "换位",
+  "remove": "删除",
   "removeConfirm": "你确定要删除 {{item}} 吗？",
   "createItem": "创建{{item}}",
   "sections": {
     "settings": "设置",
-    "dangerZone": "危险操作"
+    "dangerZone": "危险"
   },
   "secrets": {
     "apiKey": "API密钥",
     "username": "用户名",
     "password": "密码"
   },
-  "tip": "提示。 ",
+  "tip": "提示： ",
   "time": {
     "seconds": "秒",
     "minutes": "分钟",

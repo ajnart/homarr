@@ -6,6 +6,13 @@
 	"key": "",
 	"action": "",
 	"keybinds": "",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "",
 		"configurationsCount": "",
@@ -14,5 +21,9 @@
 		"i18n": "",
 		"locales": "",
 		"experimental_disableEditMode": ""
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

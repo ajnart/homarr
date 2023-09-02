@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "下载速度",
-    "description": "显示支持的集成的下载和上传速度。"
+    "description": "显示集成中支持的下载和上传速度。"
   },
   "card": {
     "table": {
@@ -28,7 +28,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "没有找到支持的下载客户端！",
-        "text": "添加下载服务以查看你当前的下载量"
+        "text": "添加下载服务以查看您当前的下载情况"
       }
     }
   }

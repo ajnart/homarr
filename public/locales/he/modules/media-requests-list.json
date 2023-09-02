@@ -19,6 +19,37 @@
   },
   "tooltips": {
     "approve": "בקשות שאושרו",
-    "decline": "בקשות שנדחו"
+    "decline": "בקשות שנדחו",
+    "approving": "מאשר את הבקשה..."
+  },
+  "mutation": {
+    "approving": "מאשר",
+    "declining": "בדחיה",
+    "request": "בקשה...",
+    "approved": "הבקשה אושרה!",
+    "declined": "הבקשה נדחתה!"
+  },
+  "detail": {
+    "label": "סטטיסטיקות עבור חנונים",
+    "id": "מספר מזהה",
+    "device": "מכשיר",
+    "video": {
+      "video": "וידאו",
+      "resolution": "רזולוציה",
+      "framerate": "ניתוח תמונות",
+      "codec": "קידוד וידאו"
+    },
+    "audio": {
+      "audio": "אודיו",
+      "channels": "ערוצי קול",
+      "codec": "קידוד אודיו"
+    },
+    "transcoding": {
+      "transcoding": "המרת קידוד",
+      "context": "הקשר",
+      "requested": "מתבקש קידוד חומרה",
+      "source": "קידוד מקור",
+      "target": "קידוד יעד"
+    }
   }
 }

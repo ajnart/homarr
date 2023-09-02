@@ -6,13 +6,18 @@
       "title": "Paramètres des marque-pages",
       "name": {
         "label": "Nom du widget",
-        "info": ""
+        "info": "Laissez vide pour garder le titre caché."
       },
       "items": {
         "label": "Éléments"
       },
       "layout": {
-        "label": "Mise en page"
+        "label": "Mise en page",
+        "data": {
+          "autoGrid": "Grille automatique",
+          "horizontal": "Horizontal",
+          "vertical": "Vertical"
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "Liste de marque-pages vide",
       "text": "Ajouter de nouveaux éléments à cette liste en mode édition"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "Lien non valide",
+      "errorMsg": "Impossible d'enregistrer, car il y a eu des erreurs de validation. S'il vous plaît ajustez les données entrées."
+    },
+    "name": "Nom",
+    "url": "URL (lien)",
+    "newTab": "Ouvrir dans un nouvel onglet",
+    "hideHostname": "Masquer le nom d'hôte (lien)",
+    "hideIcon": "Masquer l'icône",
+    "delete": "Supprimer"
   }
 }

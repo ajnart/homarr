@@ -1,4 +1,6 @@
 {
   "colors": "Renkler",
-  "suffix": "{{color}} renk"
+  "suffix": "{{color}} renk",
+  "primary": "Birincil",
+  "secondary": "İkincil"
 }

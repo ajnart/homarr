@@ -1,23 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "メディアサーバー",
+    "description": "JellyfinまたはPlexメディアサーバーと連動する",
     "settings": {
-      "title": ""
+      "title": "メディアサーバーウィジェットの設定"
     }
   },
+  "loading": "ストリームの読み込み中",
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "セッション",
+        "user": "ユーザー",
+        "currentlyPlaying": "再生中の曲"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "コンテンツを読み込めません",
+        "text": "サーバーから情報を取得できません。詳細はログを確認してください。"
       }
     }
   }

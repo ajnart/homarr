@@ -1,3 +1,6 @@
 {
-  "suffix": "{{color}} 色"
+  "colors": "色",
+  "suffix": "{{color}} 色",
+  "primary": "プライマリ",
+  "secondary": "セカンダリー"
 }

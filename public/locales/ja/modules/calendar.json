@@ -1,23 +1,35 @@
 {
   "descriptor": {
     "name": "カレンダー",
-    "description": "サポートされている統合製品から、今後のリリースをカレンダーで表示します。",
+    "description": "サポートされている統合機能からリリース予定のカレンダーを表示します。",
     "settings": {
       "title": "カレンダーウィジェットの設定",
       "useSonarrv4": {
-        "label": ""
+        "label": "Sonarr v4 API を使用"
       },
       "sundayStart": {
         "label": "週の始まりは日曜日"
       },
       "radarrReleaseType": {
-        "label": "ラダーリリースタイプ"
+        "label": "ラダーリリースタイプ",
+        "data": {
+          "inCinemas": "映画館にて",
+          "physicalRelease": "フィジカル",
+          "digitalRelease": "デジタル"
+        }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "平日を隠す"
       },
       "fontSize": {
-        "label": ""
+        "label": "文字サイズ",
+        "data": {
+          "xs": "極小",
+          "sm": "小",
+          "md": "中",
+          "lg": "大",
+          "xl": "特大"
+        }
       }
     }
   }

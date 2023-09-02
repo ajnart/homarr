@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "日期和时间",
-    "description": "显示当前日期和时间。",
+    "description": "显示当前的日期和时间。",
     "settings": {
-      "title": "设置日期和时间小部件",
+      "title": "设置日期和时间组件",
       "display24HourFormat": {
-        "label": "显示完整时间 (24小时)"
+        "label": "全时显示（24 小时）"
       },
       "dateFormat": {
         "label": "日期格式",

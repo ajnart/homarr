@@ -1,18 +1,25 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "ポップアップをブロック",
+      "text": "お使いのブラウザーは Homarr が API にアクセスすることをブロックしています。 これは最も一般的にAdBlockersまたは拒否された権限によって引き起こされます。Homarrは権限を自動的にリクエストできません。",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "URL以外のアイコンをクリックし、許可を確認してください。ポップアップとウィンドウを許可します",
+        "adBlockers": "ブラウザの広告ブロッカーやセキュリティツールを無効にする",
+        "otherBrowser": "別のブラウザーを試してください"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "すべて新しいタブで開く"
     }
+  },
+  "menu": {
+    "moveUp": "上に移動",
+    "moveDown": "下へ移動",
+    "addCategory": "",
+    "addAbove": "上",
+    "addBelow": "下"
   }
 }
