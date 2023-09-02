@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Dimensione font nome app",
+			"description": "Imposta la dimensione dei caratteri per la visualizzazione del nome dell'applicazione sul tile."
 		},
 		"appNameStatus": {
 			"label": "Stato del nome dell'app",
