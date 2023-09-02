@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "גודל גופן שם האפליקציה",
+			"description": "הגדרת גודל הגופן כאשר שם האפליקציה מוצג על האריח."
 		},
 		"appNameStatus": {
 			"label": "סטטוס שם האפליקציה",
