@@ -1,18 +1,29 @@
 {
-	"description": "Homarr是一个 <strong>顺滑</strong> <strong>现代</strong> 的面板，它能将您所有的应用和服务汇于指尖。有了Homarr，你可以在一个页面访问和控制一切。Homarr与你添加的应用无缝交互，为你提供有价值的信息并由你完全控制。安装Homarr轻松简单，并且支持多种部署方式。",
+	"description": "Homarr是一个 <strong>顺滑</strong> <strong>现代化</strong> 的面板，它能将您所有的应用和服务汇于指尖。有了 Homarr，您可以在一个页面中访问和控制一切。Homarr 与您添加的应用无缝交互，为您提供有价值的信息并由您完全控制。安装 Homarr 轻松简单，并且 Homarr 支持多种部署方式。",
 	"contact": "遇到困难或问题？请与我们联系!",
-	"addToDashboard": "添加到控制面板",
-	"tip": "Mod 指的是你的修饰键，它是 Ctrl 和 Command/Super/Windows 键",
+	"addToDashboard": "添加至面板",
+	"tip": "Mod 指的是您的修饰键，它是 Ctrl 或 Command/Super/Windows 键",
 	"key": "快捷键",
 	"action": "操作",
 	"keybinds": "热键绑定",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "切换 白天/夜晚 模式",
+		"focusSearchBar": "前往搜索栏",
+		"openDocker": "打开 docker 组件",
+		"toggleEdit": "切换编辑模式"
+	},
 	"metrics": {
-		"configurationSchemaVersion": "配置样式版本",
-		"configurationsCount": "可用的配置",
+		"configurationSchemaVersion": "配置模式版本",
+		"configurationsCount": "可用配置文件",
 		"version": "版本",
 		"nodeEnvironment": "节点环境",
-		"i18n": "I18n翻译名称空间已加载",
-		"locales": "I18n本地语言已配置",
-		"experimental_disableEditMode": "<b>实验性</b>: 禁用编辑模式"
+		"i18n": "I18n 翻译空间已加载",
+		"locales": "I18n 本地语言已配置",
+		"experimental_disableEditMode": "<b>实验性</b>: 关闭编辑模式"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

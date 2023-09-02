@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Lehetővé teszi a Usenet-példány megtekintését és kezelését."
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nem találtunk támogatott letöltő klienst!",
+        "text": "Adjon hozzá egy támogatott Usenet letöltési klienst az aktuális letöltések megtekintéséhez"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Várólista",
+    "history": "Előzmények"
+  },
+  "info": {
+    "sizeLeft": "Méret balra",
+    "paused": "Szünet"
+  },
+  "queue": {
+    "header": {
+      "name": "Név",
+      "size": "Méret",
+      "eta": "Hátralévő idő",
+      "progress": "Folyamat"
+    },
+    "empty": "Üres",
+    "error": {
+      "title": "Hiba",
+      "message": "Hiba történt"
+    },
+    "paused": "Szünet"
+  },
+  "history": {
+    "header": {
+      "name": "Név",
+      "size": "Méret",
+      "duration": "Hossz"
+    },
+    "empty": "Üres",
+    "error": {
+      "title": "Hiba",
+      "message": "Hiba betöltési előzmények"
+    },
+    "paused": "Szünet"
+  }
+}

@@ -1,40 +1,40 @@
 {
   "save": "保存",
-  "about": "について",
+  "about": "About",
   "cancel": "キャンセル",
   "close": "閉じる",
   "delete": "削除",
   "ok": "よっしゃー",
   "edit": "編集",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
+  "enabled": "有効",
+  "disabled": "無効",
+  "enableAll": "すべてを有効にする",
+  "disableAll": "すべてを無効にする",
   "version": "バージョン",
   "changePosition": "ポジションを変更する",
   "remove": "削除",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "{{item}} を削除してもよろしいですか？",
+  "createItem": "{{item}}を作成",
   "sections": {
     "settings": "設定",
-    "dangerZone": "デンジャーゾーン"
+    "dangerZone": "危険な操作"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "APIキー",
     "username": "ユーザー名",
     "password": "パスワード"
   },
   "tip": "ヒント ",
   "time": {
-    "seconds": "替わり",
-    "minutes": "議事録",
-    "hours": "時間"
+    "seconds": "秒",
+    "minutes": "分",
+    "hours": "時"
   },
   "loading": "読み込み中...",
   "breakPoints": {
     "small": "小",
-    "medium": "巫女",
-    "large": "おおきな"
+    "medium": "中",
+    "large": "大"
   },
-  "seeMore": ""
+  "seeMore": "もっと見る..."
 }

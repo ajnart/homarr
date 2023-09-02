@@ -11,13 +11,25 @@
         "label": "Søndag første ugedag"
       },
       "radarrReleaseType": {
-        "label": "Radarr udgivelsestype"
+        "label": "Radarr udgivelsestype",
+        "data": {
+          "inCinemas": "I Biografen",
+          "physicalRelease": "Fysisk",
+          "digitalRelease": "Digital"
+        }
       },
       "hideWeekDays": {
         "label": "Skjul ugedage"
       },
       "fontSize": {
-        "label": "Skriftstørrelse"
+        "label": "Skriftstørrelse",
+        "data": {
+          "xs": "Ekstra lille",
+          "sm": "Lille",
+          "md": "Mellem",
+          "lg": "Stor",
+          "xl": "Ekstra stor"
+        }
       }
     }
   }

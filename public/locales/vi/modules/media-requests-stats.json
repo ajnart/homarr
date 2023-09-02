@@ -5,7 +5,11 @@
     "settings": {
       "title": "Thống kê yêu cầu đa phương tiện",
       "direction": {
-        "label": ""
+        "label": "",
+        "data": {
+          "row": "",
+          "column": ""
+        }
       }
     }
   },

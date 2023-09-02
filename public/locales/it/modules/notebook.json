@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Blocco note",
+		"description": "Un widget interattivo basato su markdown per annotare i tuoi appunti!",
 		"settings": {
-			"title": "",
+			"title": "Impostazioni per il widget del blocco note",
 			"showToolbar": {
-				"label": ""
+				"label": "Mostra la barra degli strumenti per aiutarti a scrivere in Markdown"
 			},
 			"content": {
-				"label": ""
+				"label": "Contenuto del blocco note"
 			}
 		}
 	}

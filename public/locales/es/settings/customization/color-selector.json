@@ -1,4 +1,6 @@
 {
   "colors": "Colores",
-  "suffix": "Color {{color}}"
+  "suffix": "Color {{color}}",
+  "primary": "Primario",
+  "secondary": "Secundario"
 }

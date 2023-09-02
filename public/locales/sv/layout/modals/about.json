@@ -6,6 +6,13 @@
 	"key": "Genvägstangent",
 	"action": "Åtgärd",
 	"keybinds": "Knapptilldelning",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "Växla mellan ljus- och mörkerläge",
+		"focusSearchBar": "Fokusera på sökruta",
+		"openDocker": "Öppna widget för dockar",
+		"toggleEdit": "Växla till redigeringsläge"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Version av konfigurationsschemat",
 		"configurationsCount": "Tillgängliga konfigurationer",
@@ -14,5 +21,9 @@
 		"i18n": "Laddade namnområden för I18n-översättningar",
 		"locales": "Konfigurerade I18n lokalspråk",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Inaktivera redigeringsläge"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

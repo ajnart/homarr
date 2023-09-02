@@ -63,7 +63,8 @@
       }
     },
     "loading": {
-      "title": "Wird geladen..."
+      "title": "Wird geladen...",
+      "description": "Herstellen der Verbindung"
     },
     "popover": {
       "introductionPrefix": "Verwaltet von",

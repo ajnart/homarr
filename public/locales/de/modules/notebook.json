@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Notizbuch",
+		"description": "Ein auf Markdown basierendes interaktives Widget, in das Sie Ihre Notizen aufschreiben können!",
 		"settings": {
-			"title": "",
+			"title": "Einstellungen für das Notizbuch-Widget",
 			"showToolbar": {
-				"label": ""
+				"label": "Zeigt die Symbolleiste an, um Ihnen beim Schreiben der Markdown zu assistieren"
 			},
 			"content": {
-				"label": ""
+				"label": "Der Inhalt des Notizbuchs"
 			}
 		}
 	}

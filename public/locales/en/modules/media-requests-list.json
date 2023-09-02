@@ -6,6 +6,9 @@
       "title": "Media requests list",
       "replaceLinksWithExternalHost": {
         "label": "Replace links with external host"
+      },
+      "openInNewTab": {
+        "label": "Open links in new tab"
       }
     }
   },

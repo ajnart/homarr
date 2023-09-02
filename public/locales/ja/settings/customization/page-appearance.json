@@ -1,30 +1,30 @@
 {
   "pageTitle": {
     "label": "ページタイトル",
-    "description": ""
+    "description": "左上のダッシュボードのタイトル"
   },
   "metaTitle": {
     "label": "メタ・タイトル",
-    "description": ""
+    "description": "ブラウザのタブに表示されるタイトル"
   },
   "logo": {
-    "label": "ロゴマーク",
-    "description": ""
+    "label": "ロゴ",
+    "description": "左上に表示されるロゴ"
   },
   "favicon": {
     "label": "ファビコン",
-    "description": ""
+    "description": "ブラウザのタブに表示されるアイコン"
   },
   "background": {
     "label": "背景"
   },
   "customCSS": {
     "label": "カスタムCSS",
-    "description": "",
+    "description": "さらに、CSS を使用してダッシュボードをカスタマイズします。経験豊富なユーザーにのみお勧めします。",
     "placeholder": "カスタムCSSは最後に適用されます",
-    "applying": ""
+    "applying": "CSSを適用中..."
   },
   "buttons": {
-    "submit": "提出"
+    "submit": "送信"
   }
 }

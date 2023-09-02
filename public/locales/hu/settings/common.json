@@ -1,0 +1,38 @@
+{
+  "title": "Beállítások",
+  "tooltip": "Beállítások",
+  "tabs": {
+    "common": "Általános",
+    "customizations": "Testreszabás"
+  },
+  "tips": {
+    "configTip": "Töltse fel a konfigurációs fájlját az oldalra húzással!"
+  },
+  "credits": {
+    "madeWithLove": "Készült a ❤️ által @",
+    "thirdPartyContent": "Lásd a harmadik féltől származó tartalmakat",
+    "thirdPartyContentTable": {
+      "dependencyName": "Függőség",
+      "dependencyVersion": "Verzió"
+    }
+  },
+  "grow": "Grow grid (minden helyet elfoglal)",
+  "layout": {
+    "preview": {
+      "title": "Előnézet",
+      "subtitle": "A módosítások automatikusan mentésre kerülnek"
+    },
+    "divider": "Elrendezési lehetőségek",
+    "main": "Elsődleges",
+    "sidebar": "Oldalsáv",
+    "cannotturnoff": "Nem kapcsolható ki",
+    "dashboardlayout": "Műszerfal elrendezése",
+    "enablersidebar": "Jobb oldalsáv engedélyezése",
+    "enablelsidebar": "Bal oldalsáv engedélyezése",
+    "enablesearchbar": "Keresősáv engedélyezése",
+    "enabledocker": "Docker integráció engedélyezése",
+    "enableping": "Pingek engedélyezése",
+    "enablelsidebardesc": "Választható. Csak alkalmazásokhoz és integrációkhoz használható",
+    "enablersidebardesc": "Választható. Csak alkalmazásokhoz és integrációkhoz használható"
+  }
+}

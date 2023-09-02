@@ -1,0 +1,28 @@
+{
+  "descriptor": {
+    "name": "DNS-blokkolók összefoglalása",
+    "description": "Megjeleníti a PiHole vagy az AdGuard fontos adatait",
+    "settings": {
+      "title": "A DNS-blokkolók beállításainak összegzése",
+      "usePiHoleColors": {
+        "label": "PiHole színek használata"
+      },
+      "layout": {
+        "label": "Elrendezés",
+        "data": {
+          "grid": "2 x 2",
+          "row": "Vízszintes",
+          "column": "Függőleges"
+        }
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "Domainek a blokkolólistákon",
+      "queriesToday": "Mai lekérdezések",
+      "queriesBlockedTodayPercentage": "mai blokkolások",
+      "queriesBlockedToday": "mai blokkolások"
+    }
+  }
+}

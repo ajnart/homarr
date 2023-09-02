@@ -12,7 +12,12 @@
         "label": ""
       },
       "layout": {
-        "label": ""
+        "label": "",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "",
       "text": ""
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Naym",
+    "url": "",
+    "newTab": "Open in new tab",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Deleet"
   }
 }

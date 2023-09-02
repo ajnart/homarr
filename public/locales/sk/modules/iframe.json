@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "Neplatná URL",
         "text": "Skontrolujte, či ste v konfigurácii mini aplikácie zadali platnú adresu"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }

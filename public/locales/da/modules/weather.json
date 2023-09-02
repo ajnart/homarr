@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Tordenvejr med hagl",
       "unknown": "Ukendt"
     }
-  }
+  },
+  "error": "Der er opstået en fejl"
 }

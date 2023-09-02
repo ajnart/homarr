@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Åbn alle i nye faneblade"
     }
+  },
+  "menu": {
+    "moveUp": "Flyt op",
+    "moveDown": "Flyt ned",
+    "addCategory": "",
+    "addAbove": "over",
+    "addBelow": "under"
   }
 }

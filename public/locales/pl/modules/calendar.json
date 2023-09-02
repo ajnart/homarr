@@ -11,13 +11,25 @@
         "label": "Rozpoczynaj tydzień od niedzieli"
       },
       "radarrReleaseType": {
-        "label": "Typ zwolnienia Radarr"
+        "label": "Typ zwolnienia Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
       "fontSize": {
-        "label": ""
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }

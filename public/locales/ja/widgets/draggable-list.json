@@ -1,7 +1,7 @@
 {
   "noEntries": {
-    "title": "",
-    "text": ""
+    "title": "エントリーなし",
+    "text": "エントリーを追加するには、以下のボタンを使用します。"
   },
-  "buttonAdd": ""
+  "buttonAdd": "追加"
 }

@@ -6,6 +6,7 @@
       "title": "Indstillinger for medieserver widget"
     }
   },
+  "loading": "Indlæser streams",
   "card": {
     "table": {
       "header": {

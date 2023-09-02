@@ -12,7 +12,12 @@
         "label": "Elementer"
       },
       "layout": {
-        "label": "Layout"
+        "label": "Layout",
+        "data": {
+          "autoGrid": "Automatisk gitter",
+          "horizontal": "Horisontal",
+          "vertical": "Vertikal"
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "Bogmærkelisten er tom",
       "text": "Tilføj nye elementer til denne liste i redigeringstilstand"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "Ikke et gyldigt link",
+      "errorMsg": "Gemte ikke, fordi der var valideringsfejl. Korriger venligst dine indtastninger"
+    },
+    "name": "Navn",
+    "url": "URL",
+    "newTab": "Åbn i nyt faneblad",
+    "hideHostname": "Skjul værtsnavn",
+    "hideIcon": "Skjul ikon",
+    "delete": "Slet"
   }
 }

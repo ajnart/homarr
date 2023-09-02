@@ -102,11 +102,12 @@ export function Search() {
     },
     {
       icon: <IconMovie />,
-      disabled: !(isOverseerrEnabled === true && overseerrApp !== undefined),
+      disabled: !(isOverseerrEnabled && overseerrApp),
       label: t('searchEngines.overseerr.name'),
       value: 'overseerr',
       description: t('searchEngines.overseerr.description'),
-      url: `${overseerrApp?.url}search?query=`,
+      //RegExp -> char ('/' slash) + target ($ = end of string) => remove trailing slash if there's one
+      url: `${overseerrApp?.url.replace(new RegExp('/' + "$"), '')}/search?query=`,
       shortcut: 'm',
     },
   ];
@@ -146,7 +147,7 @@ export function Search() {
     selectedSearchEngine.value === 'overseerr' &&
     debounced.length > 3;
 
-  const { data: overseerrResults } = useOverseerrSearchQuery(debounced, isOverseerrSearchEnabled);
+  const { results: overseerrResults } = useOverseerrSearchQuery(debounced, isOverseerrSearchEnabled).data?? [];
 
   const isModuleEnabled = config?.settings.customization.layout.enabledSearchbar;
   if (!isModuleEnabled) {

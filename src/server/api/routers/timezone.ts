@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { find } from 'geo-tz'
+const GeoTz = require('browser-geo-tz/dist/geotz.js');
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
@@ -12,6 +12,7 @@ export const timezoneRouter = createTRPCRouter({
         })
     )
     .query(async ({ input }) => {
-        return find(input.latitude,input.longitude)[0];
+        const timezone = GeoTz.find(input.latitude,input.longitude);
+        return Array.isArray(timezone) ? timezone[0] : timezone;
     }),
 })

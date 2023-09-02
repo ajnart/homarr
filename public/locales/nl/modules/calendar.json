@@ -11,13 +11,25 @@
         "label": "Begin de week op zondag"
       },
       "radarrReleaseType": {
-        "label": "Radarr release type"
+        "label": "Radarr release type",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
       "fontSize": {
-        "label": ""
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }
