@@ -183,19 +183,10 @@ export function MediaDisplay({ media }: { media: IMedia }) {
   const [opened, setOpened] = useState(false);
   const { secondaryColor } = useColorTheme();
   const { t } = useTranslation('modules/common-media-cards');
-  const { config } = useConfigContext();
 
   return (
     <Group noWrap style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} spacing="xs">
-      <a
-        href={media.overseerrId ?? 'javascript:'}
-        target={
-          config?.settings.common.searchEngine.properties.openInNewTab ?? true ? '_blank' : '_self'
-        }
-        style={media.overseerrId ? {} : { cursor: 'default' }}
-      >
-        <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
-      </a>
+      <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
       <Stack justify="space-around">
         <Stack spacing="sm">
           <Text lineClamp={2}>
