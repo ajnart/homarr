@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "清除缓存",
   "selector": {
-    "label": "",
+    "label": "选择要清除的缓存",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Ping 查询",
+      "repositoryIcons": "远程/本地图标",
+      "calendar&medias": "日历中的媒体",
+      "weather": "天气数据"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "已清除缓存",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "清除所有缓存",
+      "notificationMessage": "已清除所有缓存"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "清除所选查询",
+      "notificationMessageSingle": "{{value}} 的缓存已清除",
+      "notificationMessageMulti": "{{values}} 的缓存已清除"
     }
   }
 }
