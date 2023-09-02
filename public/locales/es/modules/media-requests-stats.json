@@ -13,15 +13,15 @@
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Estadísticas Multimedia",
+    "pending": "Aprobaciones pendientes",
+    "tvRequests": "Peticiones de TV",
+    "movieRequests": "Peticiones de películas",
+    "approved": "Ya aprobado",
+    "totalRequests": "Total"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Usuarios Top",
+    "requests": "Peticiones: {{number}}"
   }
 }
