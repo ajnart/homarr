@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Alkalmazásnév Betűméret",
+			"description": "Beállítja a betűméretet, amikor az alkalmazás neve megjelenik a csempén."
 		},
 		"appNameStatus": {
 			"label": "Alkalmazás neve Állapot",
