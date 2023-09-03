@@ -57,7 +57,7 @@ export const MovieModal = ({ opened, closeModal }: MovieModalProps) => {
       title={
         <Group>
           <Image src={integration.image} width={30} height={30} alt={`${integration.label} icon`} />
-          <Title order={4}>{integration.label} movies</Title>
+          <Title order={4}>{integration.label} search</Title>
         </Group>
       }
     >
@@ -133,9 +133,9 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
   }
 
   const service = config.apps.find((service) => service.integration.type === type);
-
   const mediaUrl = movie.mediaInfo?.plexUrl ?? movie.mediaInfo?.mediaUrl;
   const serviceUrl = service?.behaviour.externalUrl ? service.behaviour.externalUrl : service?.url;
+  const externalUrl = movie.mediaInfo?.serviceUrl;
 
   return (
     <Card withBorder>
@@ -196,12 +196,12 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
               <Button
                 component="a"
                 target="_blank"
-                href={serviceUrl}
+                href={externalUrl}
                 variant="outline"
                 size="sm"
                 rightIcon={<IconExternalLink size={15} />}
               >
-                TMDb
+                {type === 'jellyseerr' ? 'Jellyfin' : 'Overseerr'}
               </Button>
             )}
           </Group>
