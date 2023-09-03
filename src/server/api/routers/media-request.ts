@@ -39,12 +39,6 @@ export const mediaRequestsRouter = createTRPCRouter({
 
             appUrl = removeTrailingSlash(appUrl);
 
-            console.log(app);
-
-            console.log('app url:');
-            console.log(appUrl);
-
-
             const requests = await Promise.all(
               body.results.map(async (item): Promise<MediaRequest> => {
                 const genericItem = await retrieveDetailsForItem(
