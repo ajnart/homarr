@@ -8,6 +8,7 @@ import {
   Group,
   HoverCard,
   Kbd,
+  Image,
   Modal,
   Table,
   Text,
@@ -29,7 +30,6 @@ import {
 import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
 import { Trans, i18n, useTranslation } from 'next-i18next';
-import Image from 'next/image';
 import { ReactNode } from 'react';
 
 import { useConfigContext } from '~/config/provider';
