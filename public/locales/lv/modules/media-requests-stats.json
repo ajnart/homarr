@@ -18,10 +18,10 @@
     "tvRequests": "",
     "movieRequests": "",
     "approved": "",
-    "totalRequests": ""
+    "totalRequests": "Kopā"
   },
   "userStats": {
-    "title": "",
+    "title": "Top Lietotāji",
     "requests": ""
   }
 }
