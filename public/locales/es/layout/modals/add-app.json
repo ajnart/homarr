@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Tamaño de fuente del nombre de la aplicación ",
+			"description": "Establece el tamaño de fuente para cuando el nombre de la aplicación se muestre en el mosaico."
 		},
 		"appNameStatus": {
 			"label": "Estado del nombre de la aplicación",
