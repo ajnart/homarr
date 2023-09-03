@@ -80,9 +80,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
             src="/imgs/logo/logo.png"
             width={30}
             height={30}
-            style={{
-              objectFit: 'contain',
-            }}
+            fit="contain"
           />
           <Title order={3} variant="gradient" gradient={colorGradiant}>
             {t('about')} Homarr
