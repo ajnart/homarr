@@ -1,10 +1,10 @@
 {
-  "title": "Önbellek temizleme",
+  "title": "Önbellek temizle",
   "selector": {
-    "label": "Temizlenecek önbelleği/önbellekleri seçin",
+    "label": "Temizlemek için önbellek(ler) seçin",
     "data": {
       "ping": "Ping sorguları",
-      "repositoryIcons": "Uzak/Yerel simgeler",
+      "repositoryIcons": "Uzak/Yerel İkonlar",
       "calendar&medias": "Takvimden Medyalar",
       "weather": "Hava durumu verileri"
     }
@@ -16,7 +16,7 @@
       "notificationMessage": "Tüm önbellek temizlendi"
     },
     "clearSelect": {
-      "text": "Seçili sorguları temizle",
+      "text": "Seçilileri temizle",
       "notificationMessageSingle": "{{value}} için önbellek temizlendi",
       "notificationMessageMulti": "{{values}} önbellekleri temizlendi"
     }
