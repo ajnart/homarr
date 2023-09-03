@@ -7,6 +7,7 @@ import { MediaRequest, Users } from '~/widgets/media-requests/media-request-type
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 import { MediaRequestStatsWidget } from '~/widgets/media-requests/MediaRequestStatsTile';
+import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 
 export const mediaRequestsRouter = createTRPCRouter({
   allMedia: publicProcedure
@@ -32,9 +33,17 @@ export const mediaRequestsRouter = createTRPCRouter({
         })
           .then(async (response) => {
             const body = (await response.json()) as OverseerrResponse;
-            const appUrl = input.widget.properties.replaceLinksWithExternalHost
+            let appUrl = input.widget.properties.replaceLinksWithExternalHost && app.behaviour.externalUrl?.length > 0
               ? app.behaviour.externalUrl
               : app.url;
+
+            appUrl = removeTrailingSlash(appUrl);
+
+            console.log(app);
+
+            console.log('app url:');
+            console.log(appUrl);
+
 
             const requests = await Promise.all(
               body.results.map(async (item): Promise<MediaRequest> => {

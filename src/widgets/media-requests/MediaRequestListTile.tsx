@@ -1,5 +1,5 @@
 import {
-  ActionIcon,
+  ActionIcon, Anchor,
   Badge,
   Card,
   Center,
@@ -155,15 +155,9 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                     {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
                     <MediaRequestStatusBadge status={item.status} />
                   </Group>
-                  <Text
-                    sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
-                    lineClamp={1}
-                    weight="bold"
-                    component="a"
-                    href={item.href}
-                  >
+                  <Anchor href={item.href}>
                     {item.name}
-                  </Text>
+                  </Anchor>
                 </Stack>
               </Flex>
               <Stack justify="center">
