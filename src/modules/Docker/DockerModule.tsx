@@ -6,8 +6,8 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { api } from '~/utils/api';
 
-import { useCardStyles } from '../../components/layout/Common/useCardStyles';
-import { useConfigContext } from '../../config/provider';
+import { useCardStyles } from '~/components/layout/Common/useCardStyles';
+import { useConfigContext } from '~/config/provider';
 import ContainerActionBar from './ContainerActionBar';
 import DockerTable from './DockerTable';
 

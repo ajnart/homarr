@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
 
-import { useConfigContext } from '../../config/provider';
+import { useConfigContext } from '~/config/provider';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';

@@ -27,9 +27,9 @@ import {
 import { useTranslation } from 'next-i18next';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 
-import { calculateETA } from '../../tools/client/calculateEta';
-import { humanFileSize } from '../../tools/humanFileSize';
-import { AppType } from '../../types/app';
+import { calculateETA } from '~/tools/client/calculateEta';
+import { humanFileSize } from '~/tools/humanFileSize';
+import { AppType } from '~/types/app';
 
 interface TorrentQueueItemProps {
   torrent: NormalizedTorrent;

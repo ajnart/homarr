@@ -31,8 +31,8 @@ import { v4 } from 'uuid';
 import { z } from 'zod';
 import React from 'react';
 
-import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
-import { IconSelector } from '../../components/IconSelector/IconSelector';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { IconSelector } from '~/components/IconSelector/IconSelector';
 import { defineWidget } from '../helper';
 import { IDraggableEditableListInputValue, IWidget } from '../widgets';
 

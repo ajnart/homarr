@@ -14,7 +14,7 @@ import Dockerode, { ContainerInfo } from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import ContainerState from './ContainerState';
 
 const useStyles = createStyles((theme) => ({

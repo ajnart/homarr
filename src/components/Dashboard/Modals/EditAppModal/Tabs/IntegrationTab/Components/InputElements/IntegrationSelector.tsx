@@ -11,7 +11,7 @@ import {
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
-} from '../../../../../../../../types/app';
+} from '~/types/app';
 
 interface IntegrationSelectorProps {
   form: UseFormReturnType<AppType, (item: AppType) => AppType>;

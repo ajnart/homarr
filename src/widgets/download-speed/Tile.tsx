@@ -16,15 +16,15 @@ import { IconDownload, IconUpload } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 
-import { AppAvatar } from '../../components/AppAvatar';
-import { useConfigContext } from '../../config/provider';
+import { AppAvatar } from '~/components/AppAvatar';
+import { useConfigContext } from '~/config/provider';
 import { useGetDownloadClientsQueue } from './useGetNetworkSpeed';
-import { useColorTheme } from '../../tools/color';
-import { humanFileSize } from '../../tools/humanFileSize';
+import { useColorTheme } from '~/tools/color';
+import { humanFileSize } from '~/tools/humanFileSize';
 import {
   NormalizedDownloadQueueResponse,
   TorrentTotalDownload,
-} from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
+} from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import definition, { ITorrentNetworkTraffic } from './TorrentNetworkTrafficTile';
 
 interface TorrentNetworkTrafficTileProps {

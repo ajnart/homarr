@@ -8,7 +8,7 @@ import { forwardRef, useState } from 'react';
 import { api } from '~/utils/api';
 
 import { COOKIE_LOCALE_KEY } from '../../../../../data/constants';
-import { Language, getLanguageByCode } from '../../../../tools/language';
+import { Language, getLanguageByCode } from '~/tools/language';
 
 export default function LanguageSelect() {
   const { data: sessionData } = useSession();

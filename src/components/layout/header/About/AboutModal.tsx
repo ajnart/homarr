@@ -32,10 +32,10 @@ import { Trans, i18n, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
-import { usePackageAttributesStore } from '../../../../tools/client/zustands/usePackageAttributesStore';
-import { useColorTheme } from '../../../../tools/color';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
+import { useColorTheme } from '~/tools/color';
 import { usePrimaryGradient } from '../../Common/useGradient';
 import Credits from './Credits';
 import Tip from './Tip';

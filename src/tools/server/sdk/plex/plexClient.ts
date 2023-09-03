@@ -3,7 +3,7 @@ import { Element, xml2js } from 'xml-js';
 import {
   GenericCurrentlyPlaying,
   GenericSessionInfo,
-} from '../../../../types/api/media-server/session-info';
+} from '~/types/api/media-server/session-info';
 
 export class PlexClient {
   constructor(

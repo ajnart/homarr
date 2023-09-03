@@ -13,9 +13,9 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
-import { AppType } from '../../../../types/app';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { AppType } from '~/types/app';
 import { DebouncedImage } from '../../../IconSelector/DebouncedImage';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { AppearanceTab } from './Tabs/AppereanceTab/AppereanceTab';

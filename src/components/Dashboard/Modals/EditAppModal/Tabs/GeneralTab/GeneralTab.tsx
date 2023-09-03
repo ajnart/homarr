@@ -3,7 +3,7 @@ import { UseFormReturnType } from '@mantine/form';
 import { IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
-import { AppType } from '../../../../../../types/app';
+import { AppType } from '~/types/app';
 import { EditAppModalTab } from '../type';
 
 interface GeneralTabProps {

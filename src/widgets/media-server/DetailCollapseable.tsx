@@ -1,7 +1,7 @@
 import { Card, Divider, Flex, Grid, Group, Text } from '@mantine/core';
 import { IconDeviceMobile, IconId } from '@tabler/icons-react';
 
-import { GenericSessionInfo } from '../../types/api/media-server/session-info';
+import { GenericSessionInfo } from '~/types/api/media-server/session-info';
 import { useTranslation } from 'react-i18next';
 
 export const DetailCollapseable = ({ session }: { session: GenericSessionInfo }) => {

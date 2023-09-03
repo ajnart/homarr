@@ -7,7 +7,7 @@ import Link from 'next/link';
 import pageNotFoundImage from '~/images/undraw_page_not_found_re_e9o6.svg';
 import { pageNotFoundNamespaces } from '~/tools/server/translation-namespaces';
 
-import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 
 export default function Custom404() {
   const { classes } = useStyles();

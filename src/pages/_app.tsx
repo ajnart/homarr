@@ -26,15 +26,15 @@ import { colorSchemeParser } from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
-import { ConfigProvider } from '../config/provider';
+import { ConfigProvider } from '~/config/provider';
 import '../styles/global.scss';
-import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
-import { ColorTheme } from '../tools/color';
+import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
+import { ColorTheme } from '~/tools/color';
 import {
   ServerSidePackageAttributesType,
   getServiceSidePackageAttributes,
-} from '../tools/server/getPackageVersion';
-import { theme } from '../tools/server/theme/theme';
+} from '~/tools/server/getPackageVersion';
+import { theme } from '~/tools/server/theme/theme';
 
 dayjs.extend(locale);
 dayjs.extend(utc);
