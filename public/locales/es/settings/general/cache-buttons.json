@@ -1,11 +1,11 @@
 {
-  "title": "Limpieza de cache",
+  "title": "Limpieza de caché",
   "selector": {
-    "label": "Seleccionar la cache (o caches) a limpiar",
+    "label": "Seleccione la(s) caché(s) a limpiar",
     "data": {
-      "ping": "Consultas Ping",
+      "ping": "Consultas de ping",
       "repositoryIcons": "Iconos remotos/locales",
-      "calendar&medias": "",
+      "calendar&medias": "Multimedia desde el Calendario",
       "weather": "Datos meteorológicos"
     }
   },
