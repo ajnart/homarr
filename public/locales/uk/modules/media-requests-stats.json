@@ -4,18 +4,24 @@
     "description": "Статистика ваших запитів у медіа",
     "settings": {
       "title": "Статистика запитів на медіа",
-      "direction": {
-        "label": "",
-        "data": {
-          "row": "",
-          "column": ""
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Замініть посилання на зовнішній хост"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Очікує схвалення",
-    "tvRequests": "Запити на ТБ",
-    "movieRequests": "Запити на фільми"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

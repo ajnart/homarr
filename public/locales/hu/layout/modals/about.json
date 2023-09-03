@@ -6,7 +6,7 @@
 	"key": "Gyorsbillentyűk",
 	"action": "Esemény",
 	"keybinds": "Billentyűkombinációk",
-	"documentation": "",
+	"documentation": "Dokumentáció",
 	"actions": {
 		"toggleTheme": "Világos/sötét üzemmód váltása",
 		"focusSearchBar": "Fókusz a Keresősoron",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Szerkesztési mód kikapcsolása"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Új: {{newVersion}}",
+		"dropdown": "A {{newVersion}} verzió elérhető! A jelenlegi verzió: {{currentVersion}}"
 	}
 }

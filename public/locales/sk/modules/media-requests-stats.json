@@ -4,18 +4,24 @@
     "description": "Štatistiky o vašich požiadavkách na médiá",
     "settings": {
       "title": "Štatistiky požiadaviek médií",
-      "direction": {
-        "label": "Smer rozloženia.",
-        "data": {
-          "row": "Horizontálne",
-          "column": "Vertikálne"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Nahradiť odkazy s externým hostiteľom"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Čakajúce schválenia",
-    "tvRequests": "TV požiadavky",
-    "movieRequests": "Filmové požiadavky"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

@@ -6,6 +6,9 @@
       "title": "媒体请求列表",
       "replaceLinksWithExternalHost": {
         "label": "使用外部地址替换链接"
+      },
+      "openInNewTab": {
+        "label": "在新标签页中打开链接"
       }
     }
   },

@@ -6,6 +6,9 @@
       "title": "メディアリクエストリスト",
       "replaceLinksWithExternalHost": {
         "label": "リンクを外部ホストに置き換える"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },

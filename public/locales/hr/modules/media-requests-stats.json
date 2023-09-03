@@ -4,18 +4,24 @@
     "description": "Statistika o vašim zahtjevima za medijima",
     "settings": {
       "title": "Statistika zahtjeva za medijima",
-      "direction": {
-        "label": "",
-        "data": {
-          "row": "",
-          "column": ""
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Zamijeni veze s vanjskim poslužiteljem"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Odobrenjea na čekanju",
-    "tvRequests": "TV zahtjevi",
-    "movieRequests": "Zahtjevi za Filmovima"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

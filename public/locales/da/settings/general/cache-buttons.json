@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Rengøring af cache",
   "selector": {
-    "label": "",
+    "label": "Vælg den eller de cacher, der skal ryddes",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Ping-forespørgsler",
+      "repositoryIcons": "Fjern/Lokale ikoner",
+      "calendar&medias": "Medier fra kalenderen",
+      "weather": "Vejrdata"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Cache ryddet",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Tøm alle caches",
+      "notificationMessage": "Alle cach er blevet ryddet"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Ryd valgte forespørgsler",
+      "notificationMessageSingle": "Cache for {{value}} er blevet tømt",
+      "notificationMessageMulti": "Cache for {{values}} er blevet ryddet"
     }
   }
 }

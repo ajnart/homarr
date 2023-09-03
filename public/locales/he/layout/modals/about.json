@@ -6,7 +6,7 @@
 	"key": "מקש קיצור",
 	"action": "פעולה",
 	"keybinds": "שילוב מקשים",
-	"documentation": "",
+	"documentation": "תיעוד",
 	"actions": {
 		"toggleTheme": "החלף מצב אור/חושך",
 		"focusSearchBar": "התמקד בסרגל החיפוש",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>נסיוני</b>: ביטול מצב עריכה"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "גרסה חדשה: {{newVersion}}",
+		"dropdown": "גרסה {{newVersion}} זמינה! הגרסה הנוכחית היא {{currentVersion}}"
 	}
 }

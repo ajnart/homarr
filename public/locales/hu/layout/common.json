@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Felfelé mozgatás",
     "moveDown": "Mozgatás le",
-    "addCategory": "",
+    "addCategory": "Kategória hozzáadása {{location}}",
     "addAbove": "fölé",
     "addBelow": "alá"
   }

@@ -4,18 +4,24 @@
     "description": "Статистика ваших медиазапросов",
     "settings": {
       "title": "Статистика медиазапросов",
-      "direction": {
-        "label": "Направление макета.",
-        "data": {
-          "row": "Горизонтальный",
-          "column": "Вертикальный"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Заменить ссылки на внешний хост"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Ожидает утверждения",
-    "tvRequests": "Запросы сериалов",
-    "movieRequests": "Запросы фильмов"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

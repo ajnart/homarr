@@ -6,7 +6,7 @@
 	"key": "Kısayol tuşu",
 	"action": "Eylem",
 	"keybinds": "Tuş atamaları",
-	"documentation": "",
+	"documentation": "Dokümantasyon",
 	"actions": {
 		"toggleTheme": "Aydınlık/karanlık mod",
 		"focusSearchBar": "Arama çubuğuna odaklan",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>DENEYSEL</b>: Düzenleme modunu devre dışı bırak"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Yeni: {{newVersion}}",
+		"dropdown": "Sürüm {{newVersion}} mevcuttur! Şuan ki Sürüm {{currentVersion}}"
 	}
 }

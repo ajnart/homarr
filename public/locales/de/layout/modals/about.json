@@ -6,7 +6,7 @@
 	"key": "Kurzbefehl Taste",
 	"action": "Aktion",
 	"keybinds": "Tastenbelegung",
-	"documentation": "",
+	"documentation": "Dokumentation",
 	"actions": {
 		"toggleTheme": "Umschalten zwischen Hell- und Dunkelmodus",
 		"focusSearchBar": "Suchleiste fokussieren",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Bearbeitungsmodus deaktivieren"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Neu: {{newVersion}}",
+		"dropdown": "Version {{newVersion}} ist verfügbar! Aktuelle Version ist {{currentVersion}}"
 	}
 }

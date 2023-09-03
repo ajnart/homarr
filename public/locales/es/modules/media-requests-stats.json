@@ -4,18 +4,24 @@
     "description": "Estadísticas sobre tus solicitudes multimedia",
     "settings": {
       "title": "Estadísticas de solicitudes multimedia",
-      "direction": {
-        "label": "Dirección del diseño.",
-        "data": {
-          "row": "Horizontal",
-          "column": "Vertical"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Reemplazar enlaces con el anfitrión externo"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Pendientes de aprobación",
-    "tvRequests": "Solicitudes de TV",
-    "movieRequests": "Solicitudes de películas"
+  "mediaStats": {
+    "title": "Estadísticas Multimedia",
+    "pending": "Aprobaciones pendientes",
+    "tvRequests": "Peticiones de TV",
+    "movieRequests": "Peticiones de películas",
+    "approved": "Ya aprobado",
+    "totalRequests": "Total"
+  },
+  "userStats": {
+    "title": "Usuarios Top",
+    "requests": "Peticiones: {{number}}"
   }
 }

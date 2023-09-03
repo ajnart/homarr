@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "Længden skal være mellem {{shortest}} og {{longest}}",
       "invalidLink": "Ikke et gyldigt link",
       "errorMsg": "Gemte ikke, fordi der var valideringsfejl. Korriger venligst dine indtastninger"
     },

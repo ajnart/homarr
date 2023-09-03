@@ -54,6 +54,10 @@
 				"text": "Dette kan ta noen sekunder"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",

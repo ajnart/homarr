@@ -4,18 +4,24 @@
     "description": "Statistik över dina medieförfrågningar",
     "settings": {
       "title": "Statistik över medieförfrågningar",
-      "direction": {
-        "label": "Layoutens riktning.",
-        "data": {
-          "row": "Horisontal",
-          "column": "Vertikal"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Ersätt länkar med extern värd"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Väntar på godkännande",
-    "tvRequests": "TV-förfrågningar",
-    "movieRequests": "Filmförfrågningar"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

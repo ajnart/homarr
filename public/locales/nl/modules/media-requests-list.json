@@ -6,6 +6,9 @@
       "title": "Lijst met mediaverzoeken",
       "replaceLinksWithExternalHost": {
         "label": ""
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },

@@ -6,6 +6,9 @@
       "title": "Multimediju pieprasījumu saraksts",
       "replaceLinksWithExternalHost": {
         "label": "Aizstāt saites ar ārējo saimnieku"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },

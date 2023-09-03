@@ -54,6 +54,10 @@
 				"text": "Môže to trvať niekoľko sekúnd"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "Názov aplikácie Stav",
 			"description": "Vyberte, kde sa má názov zobrazovať, ak vôbec.",

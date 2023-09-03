@@ -54,6 +54,10 @@
 				"text": "Questa operazione potrebbe richiedere alcuni secondi"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Dimensione font nome app",
+			"description": "Imposta la dimensione dei caratteri per la visualizzazione del nome dell'applicazione sul tile."
+		},
 		"appNameStatus": {
 			"label": "Stato del nome dell'app",
 			"description": "Scegli dove vuoi che il titolo si mostri, sempre che tu lo voglia.",

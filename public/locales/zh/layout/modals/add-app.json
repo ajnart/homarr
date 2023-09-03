@@ -54,6 +54,10 @@
 				"text": "这可能需要几秒钟"
 			}
 		},
+		"appNameFontSize": {
+			"label": "应用名称字体大小",
+			"description": "设置应用名称在磁贴上显示时的字体大小。"
+		},
 		"appNameStatus": {
 			"label": "应用名称状态",
 			"description": "如果您想要显示标题，请选择显示的位置。",

@@ -6,6 +6,9 @@
       "title": "Κατάλογος αιτημάτων των μέσων ενημέρωσης",
       "replaceLinksWithExternalHost": {
         "label": "Αντικατάσταση συνδέσμων με εξωτερικό διακομιστή"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },

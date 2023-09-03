@@ -1,7 +1,7 @@
 {
   "title": "Motor de búsqueda",
   "configurationName": "Configuración del motor de búsqueda",
-  "custom": "",
+  "custom": "Personalizado",
   "tips": {
     "generalTip": "¡Hay múltiples prefijos que puedes usar! Añadiéndolos delante de tus consultas, filtrarán los resultados. !s (Web), !t (Torrents), !y (YouTube), y !m (Media).",
     "placeholderTip": "%s se puede utilizar como marcador de posición para la consulta."

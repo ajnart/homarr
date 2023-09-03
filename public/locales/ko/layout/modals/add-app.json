@@ -54,6 +54,10 @@
 				"text": ""
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",

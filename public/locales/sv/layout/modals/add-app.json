@@ -54,6 +54,10 @@
 				"text": "Detta kan ta några sekunder"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "Status för appens namn",
 			"description": "Välj var du vill att titeln ska visas, om överhuvudtaget.",

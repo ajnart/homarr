@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Skift redigeringstilstand",
+    "enable": "Aktiver redigeringstilstand",
+    "disable": "Deaktiver redigeringstilstand"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Redigér adgangskode",
+    "message": "For at skifte til redigeringstilstand skal du indtaste den adgangskode, du indtastede i miljøvariablen med navnet <Code>EDIT_MODE_PASSWORD</Code> . Hvis den ikke er angivet, kan du ikke slå redigeringstilstand til og fra.",
     "submit": "Indsend"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Succes",
+      "message": "Det lykkedes at skifte redigeringstilstand og genindlæser siden..."
     },
     "error": {
       "title": "Fejl",
-      "message": ""
+      "message": "Kunne ikke skifte til redigeringstilstand, prøv venligst igen."
     }
   }
 }

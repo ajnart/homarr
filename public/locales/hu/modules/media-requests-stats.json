@@ -4,18 +4,24 @@
     "description": "Statisztikák az Ön médiakéréseiről",
     "settings": {
       "title": "Médiakérdések statisztikája",
-      "direction": {
-        "label": "Az elrendezés iránya.",
-        "data": {
-          "row": "Vízszintes",
-          "column": "Függőleges"
-        }
+      "replaceLinksWithExternalHost": {
+        "label": "Linkek cseréje külső fogadóval"
+      },
+      "openInNewTab": {
+        "label": "Linkek megnyitása új fülön"
       }
     }
   },
-  "stats": {
+  "mediaStats": {
+    "title": "Média statisztikák",
     "pending": "Várakozás jóváhagyásra",
     "tvRequests": "TV kérések",
-    "movieRequests": "Filmkérések"
+    "movieRequests": "Filmkérések",
+    "approved": "Már jóváhagyva",
+    "totalRequests": "Összesen"
+  },
+  "userStats": {
+    "title": "Legnépszerűbb felhasználók",
+    "requests": "Kérések: {{number}}"
   }
 }

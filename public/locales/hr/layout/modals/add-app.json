@@ -54,6 +54,10 @@
 				"text": "Ovo može potrajati nekoliko sekundi"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",

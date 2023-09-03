@@ -6,6 +6,9 @@
       "title": "Lista de solicitudes multimedia",
       "replaceLinksWithExternalHost": {
         "label": "Reemplazar enlaces con el anfitrión externo"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },

@@ -54,6 +54,10 @@
 				"text": "Isto pode levar alguns segundos"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",

@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "A hossznak a {{shortest}} és a {{longest}} között kell lennie",
       "invalidLink": "Nem érvényes link",
       "errorMsg": "Nem mentett, mert hitelesítési hibák voltak. Kérjük, adja meg az értékeket"
     },

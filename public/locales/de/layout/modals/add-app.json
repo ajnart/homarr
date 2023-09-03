@@ -54,6 +54,10 @@
 				"text": "Dies kann einige Sekunden dauern…"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Schriftgröße für App Namen",
+			"description": "Legen Sie die Schriftgröße für die Anzeige des App-Namens auf der Kachel fest."
+		},
 		"appNameStatus": {
 			"label": "App-Namensstatus",
 			"description": "Wählen Sie, wo der Titel angezeigt werden soll, wenn überhaupt.",

@@ -6,6 +6,9 @@
       "title": "",
       "replaceLinksWithExternalHost": {
         "label": ""
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },

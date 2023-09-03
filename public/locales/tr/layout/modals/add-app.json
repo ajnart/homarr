@@ -54,6 +54,10 @@
 				"text": "Bu bir kaç saniye alabilir"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Uygulama Adı Yazı Boyutu",
+			"description": "Uygulama adının kutucukta gösterilmesi için yazı tipi boyutunu ayarlayın."
+		},
 		"appNameStatus": {
 			"label": "Uygulama Adı Statüsü",
 			"description": "Eğer varsa, başlığın nerede görünmesini istediğinizi seçin.",
