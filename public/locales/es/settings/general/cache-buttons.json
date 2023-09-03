@@ -10,10 +10,10 @@
     }
   },
   "buttons": {
-    "notificationTitle": "Cache limpiada",
+    "notificationTitle": "Caché limpiada",
     "clearAll": {
-      "text": "Limpiar todas las cache",
-      "notificationMessage": "Todas las caches han sido limpiado"
+      "text": "Limpiar todas las caché",
+      "notificationMessage": "Se han limpiado todas las caché"
     },
     "clearSelect": {
       "text": "Limpiar consultas seleccionadas",
