@@ -8,8 +8,8 @@
       "header": {
         "name": "名称",
         "size": "サイズ",
-        "download": "ダウン",
-        "upload": "上",
+        "download": "ダウンロード",
+        "upload": "アップロード",
         "estimatedTimeOfArrival": "ETA",
         "progress": "進捗状況"
       },
