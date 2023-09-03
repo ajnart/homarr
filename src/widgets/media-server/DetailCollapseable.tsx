@@ -1,19 +1,19 @@
 import { Card, Divider, Flex, Grid, Group, Text } from '@mantine/core';
 import { IconDeviceMobile, IconId } from '@tabler/icons-react';
+import { useTranslation } from 'react-i18next';
 
 import { GenericSessionInfo } from '../../types/api/media-server/session-info';
-import { useTranslation } from 'react-i18next';
 
 export const DetailCollapseable = ({ session }: { session: GenericSessionInfo }) => {
   let details: { title: string; metrics: { name: string; value: string | undefined }[] }[] = [];
-  const { t } = useTranslation('modules/media-server-list');
+  const { t } = useTranslation('modules/media-server');
 
   if (session.currentlyPlaying) {
     if (session.currentlyPlaying.metadata.video) {
       details = [
         ...details,
         {
-          title: t('detail.video.'),
+          title: t('detail.video.video'),
           metrics: [
             {
               name: t('detail.video.resolution'),

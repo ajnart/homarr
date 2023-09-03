@@ -100,72 +100,74 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       const infoApi = await getSystemApi(api).getPublicSystemInfo();
       await api.authenticateUserByName(username, password);
       const sessionApi = await getSessionApi(api);
-      const sessions = await sessionApi.getSessions();
+      const { data: sessions } = await sessionApi.getSessions();
       return {
         type: 'jellyfin',
         appId: app.id,
         serverAddress: app.url,
         version: infoApi.data.Version ?? undefined,
-        sessions: sessions.data.map(
-          (session): GenericSessionInfo => ({
-            id: session.Id ?? '?',
-            username: session.UserName ?? undefined,
-            sessionName: `${session.Client} (${session.DeviceName})`,
-            supportsMediaControl: session.SupportsMediaControl ?? false,
-            currentlyPlaying: session.NowPlayingItem
-              ? {
-                  name: `${session.NowPlayingItem.SeriesName ?? session.NowPlayingItem.Name}`,
-                  seasonName: session.NowPlayingItem.SeasonName as string,
-                  episodeName: session.NowPlayingItem.Name as string,
-                  albumName: session.NowPlayingItem.Album as string,
-                  episodeCount: session.NowPlayingItem.EpisodeCount ?? undefined,
-                  metadata: {
-                    video:
-                      session.NowPlayingItem &&
-                      session.NowPlayingItem.Width &&
-                      session.NowPlayingItem.Height
+        sessions: sessions
+          .filter((session) => session.NowPlayingItem)
+          .map(
+            (session): GenericSessionInfo => ({
+              id: session.Id ?? '?',
+              username: session.UserName ?? undefined,
+              sessionName: `${session.Client} (${session.DeviceName})`,
+              supportsMediaControl: session.SupportsMediaControl ?? false,
+              currentlyPlaying: session.NowPlayingItem
+                ? {
+                    name: `${session.NowPlayingItem.SeriesName ?? session.NowPlayingItem.Name}`,
+                    seasonName: session.NowPlayingItem.SeasonName as string,
+                    episodeName: session.NowPlayingItem.Name as string,
+                    albumName: session.NowPlayingItem.Album as string,
+                    episodeCount: session.NowPlayingItem.EpisodeCount ?? undefined,
+                    metadata: {
+                      video:
+                        session.NowPlayingItem &&
+                        session.NowPlayingItem.Width &&
+                        session.NowPlayingItem.Height
+                          ? {
+                              videoCodec: undefined,
+                              width: session.NowPlayingItem.Width ?? undefined,
+                              height: session.NowPlayingItem.Height ?? undefined,
+                              bitrate: undefined,
+                              videoFrameRate: session.TranscodingInfo?.Framerate
+                                ? String(session.TranscodingInfo?.Framerate)
+                                : undefined,
+                            }
+                          : undefined,
+                      audio: session.TranscodingInfo
                         ? {
-                            videoCodec: undefined,
-                            width: session.NowPlayingItem.Width ?? undefined,
-                            height: session.NowPlayingItem.Height ?? undefined,
-                            bitrate: undefined,
-                            videoFrameRate: session.TranscodingInfo?.Framerate
-                              ? String(session.TranscodingInfo?.Framerate)
-                              : undefined,
+                            audioChannels: session.TranscodingInfo.AudioChannels ?? undefined,
+                            audioCodec: session.TranscodingInfo.AudioCodec ?? undefined,
                           }
                         : undefined,
-                    audio: session.TranscodingInfo
-                      ? {
-                          audioChannels: session.TranscodingInfo.AudioChannels ?? undefined,
-                          audioCodec: session.TranscodingInfo.AudioCodec ?? undefined,
-                        }
-                      : undefined,
-                    transcoding: session.TranscodingInfo
-                      ? {
-                          audioChannels: session.TranscodingInfo.AudioChannels ?? -1,
-                          audioCodec: session.TranscodingInfo.AudioCodec ?? undefined,
-                          container: session.TranscodingInfo.Container ?? undefined,
-                          width: session.TranscodingInfo.Width ?? undefined,
-                          height: session.TranscodingInfo.Height ?? undefined,
-                          videoCodec: session.TranscodingInfo?.VideoCodec ?? undefined,
-                          audioDecision: undefined,
-                          context: undefined,
-                          duration: undefined,
-                          error: undefined,
-                          sourceAudioCodec: undefined,
-                          sourceVideoCodec: undefined,
-                          timeStamp: undefined,
-                          transcodeHwRequested: undefined,
-                          videoDecision: undefined,
-                        }
-                      : undefined,
-                  },
-                  type: convertJellyfinType(session.NowPlayingItem.Type),
-                }
-              : undefined,
-            userProfilePicture: undefined,
-          })
-        ),
+                      transcoding: session.TranscodingInfo
+                        ? {
+                            audioChannels: session.TranscodingInfo.AudioChannels ?? -1,
+                            audioCodec: session.TranscodingInfo.AudioCodec ?? undefined,
+                            container: session.TranscodingInfo.Container ?? undefined,
+                            width: session.TranscodingInfo.Width ?? undefined,
+                            height: session.TranscodingInfo.Height ?? undefined,
+                            videoCodec: session.TranscodingInfo?.VideoCodec ?? undefined,
+                            audioDecision: undefined,
+                            context: undefined,
+                            duration: undefined,
+                            error: undefined,
+                            sourceAudioCodec: undefined,
+                            sourceVideoCodec: undefined,
+                            timeStamp: undefined,
+                            transcodeHwRequested: undefined,
+                            videoDecision: undefined,
+                          }
+                        : undefined,
+                    },
+                    type: convertJellyfinType(session.NowPlayingItem.Type),
+                  }
+                : undefined,
+              userProfilePicture: undefined,
+            })
+          ),
         success: true,
       };
     }
