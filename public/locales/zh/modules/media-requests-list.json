@@ -31,28 +31,5 @@
     "request": "请求...",
     "approved": "请求被批准！",
     "declined": "请求被拒绝！"
-  },
-  "detail": {
-    "label": "详细统计信息",
-    "id": "ID",
-    "device": "设备",
-    "video": {
-      "video": "视频",
-      "resolution": "分辨率",
-      "framerate": "帧率",
-      "codec": "视频编码"
-    },
-    "audio": {
-      "audio": "音频",
-      "channels": "声道",
-      "codec": "音频编码"
-    },
-    "transcoding": {
-      "transcoding": "转码",
-      "context": "背景信息",
-      "requested": "硬件编码请求",
-      "source": "原始编码",
-      "target": "目标编码"
-    }
   }
 }
