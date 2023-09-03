@@ -8,3 +8,6 @@ npm-debug.log
 LICENSE
 docs/
 *.sqlite
+*.env
+.env
+.next/standalone/.env

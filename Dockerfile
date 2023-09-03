@@ -24,6 +24,8 @@ RUN yarn global add prisma
 # Expose the default application port
 EXPOSE 7575
 
+ENV DATABASE_URL "file:../database/db.sqlite"
+ENV NEXTAUTH_URL "http://localhost:3000"
 ENV PORT 7575
 ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 
