@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desactivar modo edición"
 	},
 	"version": {
-		"new": "Nuevo: {{newVersion}}",
+		"new": "Nueva: {{newVersion}}",
 		"dropdown": "¡La versión {{newVersion}} está disponible! La versión actual es {{currentVersion}}"
 	}
 }
