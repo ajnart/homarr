@@ -5,7 +5,7 @@ function Post(req: NextApiRequest, res: NextApiResponse) {
   const { tried, type = 'password' } = req.body;
   // If the type of password is "edit", we run this branch to check the edit password
   if (type === 'edit') {
-    if ((tried === process.env.EDIT_MODE_PASSWORD) !== undefined) {
+    if (tried === process.env.EDIT_MODE_PASSWORD) {
       if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
         process.env.DISABLE_EDIT_MODE = 'false';
       } else {

@@ -8,7 +8,7 @@ import { BackendConfigType, ConfigType } from '../../../types/config';
 import { IRssWidget } from '../../../widgets/rss/RssWidgetTile';
 
 function Put(req: NextApiRequest, res: NextApiResponse) {
-  if (process.env.DISABLE_EDIT_MODE === 'true') {
+  if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
     return res.status(409).json({ error: 'Edit mode has been disabled by the administrator' });
   }
 

@@ -61,7 +61,7 @@ function ModalContent() {
 
 export function EditModeToggle() {
   const { editModeEnabled } = useEditModeInformationStore();
-  const Icon = editModeEnabled ? IconEdit : IconEditOff;
+  const Icon = editModeEnabled ? IconEditOff : IconEdit;
   const { t } = useTranslation('settings/general/edit-mode-toggle');
 
   return (
@@ -77,7 +77,7 @@ export function EditModeToggle() {
         })
       }
     >
-      {editModeEnabled ? t('menu.enable') : t('menu.disable')}
+      {editModeEnabled ? t('menu.disable') : t('menu.enable')}
     </Menu.Item>
   );
 }
