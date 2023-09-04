@@ -17,8 +17,8 @@
     },
     "clearSelect": {
       "text": "Limpiar consultas seleccionadas",
-      "notificationMessageSingle": "La cache para {{value}} ha sido limpiada",
-      "notificationMessageMulti": "La cache para {{values}} ha sido limpiada"
+      "notificationMessageSingle": "Se ha limpiado la caché {{value}}",
+      "notificationMessageMulti": "Se ha limpiado la caché {{values}}"
     }
   }
 }
