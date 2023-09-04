@@ -157,15 +157,15 @@ export const constructAuthOptions = (
           return null;
         }
 
-        Consola.log(`user ${user.id} is trying to log in. checking password...`);
+        Consola.log(`user ${user.name} is trying to log in. checking password...`);
         const isValidPassword = await bcrypt.compare(data.password, user.password);
 
         if (!isValidPassword) {
-          Consola.log(`password for user ${user.id} was incorrect`);
+          Consola.log(`password for user ${user.name} was incorrect`);
           return null;
         }
 
-        Consola.log(`user ${user.id} successfully authorized`);
+        Consola.log(`user ${user.name} successfully authorized`);
 
         return {
           id: user.id,
