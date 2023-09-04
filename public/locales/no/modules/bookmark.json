@@ -12,7 +12,12 @@
         "label": ""
       },
       "layout": {
-        "label": "Oppsett"
+        "label": "Oppsett",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "",
       "text": ""
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Navn",
+    "url": "",
+    "newTab": "Åpne i ny fane",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Slett"
   }
 }

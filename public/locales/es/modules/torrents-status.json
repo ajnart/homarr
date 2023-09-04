@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Ocurrió un error inesperado",
-        "text": "Homarr no pudo comunicarse con tus clientes Torrent. Por favor, compruebe su configuración"
+        "text": "No se puede comunicar con tus clientes de Torrent. Por favor, verifica tu configuración"
       }
     },
     "loading": {
-      "title": "Cargando..."
+      "title": "Cargando",
+      "description": "Estableciendo una conexión"
     },
     "popover": {
       "introductionPrefix": "Gestionado por",

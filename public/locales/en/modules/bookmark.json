@@ -12,7 +12,12 @@
         "label": "Items"
       },
       "layout": {
-        "label": "Layout"
+        "label": "Layout",
+        "data":{
+          "autoGrid": "Auto Grid",
+          "horizontal": "Horizontal",
+          "vertical": "Vertical"
+        }
       }
     }
   },
@@ -21,5 +26,19 @@
       "title": "Bookmark list empty",
       "text": "Add new items to this list in the edit mode"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "Length must be between {{shortest}} and {{longest}}",
+      "invalidLink": "Not a valid link",
+      "errorMsg": "Did not save, because there were validation errors. Please adust your inputs"
+    },
+    "name": "Name",
+    "url": "URL",
+    "newTab": "Open in new tab",
+    "hideHostname": "Hide Hostname",
+    "hideIcon": "Hide Icon",
+    "delete": "Delete"
+
   }
 }

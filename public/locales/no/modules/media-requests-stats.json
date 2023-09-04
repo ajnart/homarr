@@ -4,14 +4,24 @@
     "description": "Statistikk om dine medieforespørsler",
     "settings": {
       "title": "Statistikk for mediaforespørsler",
-      "direction": {
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      },
+      "openInNewTab": {
         "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Venter på godkjenning",
-    "tvRequests": "TV forespørsler",
-    "movieRequests": "Film forespørsler"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

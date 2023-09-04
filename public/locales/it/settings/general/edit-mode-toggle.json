@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "Attiva/Disattiva edit mode",
+    "enable": "Abilità edit mode",
+    "disable": "Disabilita edit mode"
+  },
+  "form": {
+    "label": "Modifica password",
+    "message": "Per attivare l'edit mode, devi inserire la password che hai messo nella variabile d'ambiente chiamata <Code>EDIT_MODE_PASSWORD</Code>. Se non è impostata, non potrai attivare e disattivare l'edit mode.",
+    "submit": "Invia"
+  },
+  "notification": {
+    "success": {
+      "title": "Operazione riuscita",
+      "message": "Attivata edit mode con successo, ricaricando la pagina..."
+    },
+    "error": {
+      "title": "Errore",
+      "message": "Impossibile attivare l'edit mode, si prega di riprovare."
+    }
+  }
+}

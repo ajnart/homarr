@@ -6,6 +6,9 @@
       "title": "Danh sách yêu cầu đa phương tiện",
       "replaceLinksWithExternalHost": {
         "label": "Thay thế liên kết bằng máy chủ bên ngoài"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Duyệt yêu cầu",
-    "decline": "Từ chối yêu cầu"
+    "decline": "Từ chối yêu cầu",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
   }
 }

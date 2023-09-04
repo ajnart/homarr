@@ -12,7 +12,8 @@
         "label": "Інтервал оновлення (хвилини)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": ""

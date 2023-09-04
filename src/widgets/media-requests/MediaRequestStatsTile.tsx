@@ -1,29 +1,40 @@
-import { Card, Flex, Stack, Text } from '@mantine/core';
-import { IconChartBar } from '@tabler/icons-react';
+import {
+  Avatar,
+  Card,
+  Flex,
+  Group,
+  Indicator,
+  Stack,
+  Text,
+  Tooltip,
+  useMantineTheme,
+} from '@mantine/core';
+import { useElementSize } from '@mantine/hooks';
+import { IconChartBar, IconExternalLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
-import { useMediaRequestQuery } from './media-request-query';
+import { useMediaRequestQuery, useUsersQuery } from './media-request-query';
 import { MediaRequestStatus } from './media-request-types';
 
 const definition = defineWidget({
   id: 'media-requests-stats',
   icon: IconChartBar,
   options: {
-    direction: {
-      type: 'select',
-      defaultValue: 'row' as 'row' | 'column',
-      data: [
-        { label: 'Horizontal', value: 'row' },
-        { label: 'Vertical', value: 'column' },
-      ],
+    replaceLinksWithExternalHost: {
+      type: 'switch',
+      defaultValue: false,
+    },
+    openInNewTab: {
+      type: 'switch',
+      defaultValue: true,
     },
   },
   gridstack: {
-    minWidth: 1,
-    minHeight: 1,
+    minWidth: 2,
+    minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -38,53 +49,134 @@ interface MediaRequestStatsWidgetProps {
 
 function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
   const { t } = useTranslation('modules/media-requests-stats');
-  const { data, isFetching } = useMediaRequestQuery();
+  const {
+    data: mediaData,
+    isFetching: mediaFetching,
+    isLoading: mediaLoading,
+  } = useMediaRequestQuery(widget);
+  const {
+    data: usersData,
+    isFetching: usersFetching,
+    isLoading: usersLoading
+  } = useUsersQuery(widget);
+  const { ref, height } = useElementSize();
+  const { colorScheme } = useMantineTheme();
 
-  if (!data || isFetching) {
-    return <WidgetLoading />;
+  if (!mediaData || !usersData || mediaLoading || usersLoading) {
+    return (
+      <Stack ref={ref} h="100%">
+        <WidgetLoading />
+      </Stack>
+    );
   }
 
+  const appList: string[] = [];
+  mediaData.forEach((item) => {
+    if (!appList.includes(item.appId)) appList.push(item.appId);
+  });
+
+  const baseStats: { label: string; number: number }[] = [
+    {
+      label: t('mediaStats.pending'),
+      number: mediaData.filter((x) => x.status === MediaRequestStatus.PendingApproval).length,
+    },
+    {
+      label: t('mediaStats.tvRequests'),
+      number: mediaData.filter((x) => x.type === 'tv').length,
+    },
+    {
+      label: t('mediaStats.movieRequests'),
+      number: mediaData.filter((x) => x.type === 'movie').length,
+    },
+    {
+      label: t('mediaStats.approved'),
+      number: mediaData.filter((x) => x.status === MediaRequestStatus.Approved).length,
+    },
+    {
+      label: t('mediaStats.totalRequests'),
+      number: mediaData.length,
+    },
+  ];
+
+  const users = usersData
+    .sort((x, y) => (x.userRequestCount > y.userRequestCount ? -1 : 1))
+    .slice(0, Math.trunc(height / 60));
+
   return (
-    <Flex
-      w="100%"
-      h="100%"
-      gap="md"
-      direction={ widget.properties.direction?? 'row' }
-    >
-      <StatCard
-        number={data.filter((x) => x.status === MediaRequestStatus.PendingApproval).length}
-        label={t('stats.pending')}
-      />
-      <StatCard
-        number={data.filter((x) => x.type === 'tv').length}
-        label={t('stats.tvRequests')}
-      />
-      <StatCard
-        number={data.filter((x) => x.type === 'movie').length}
-        label={t('stats.movieRequests')}
-      />
+    <Flex h="100%" gap={0} direction="column">
+      <Text mt={-5}>{t('mediaStats.title')}</Text>
+      <Card py={5} px={10} radius="md" style={{ overflow: 'unset' }} withBorder>
+        {baseStats.map((stat, index) => {
+          return (
+            <Group key={index} position="apart">
+              <Text color="dimmed" align="center" size="xs">
+                {stat.label}
+              </Text>
+              <Text align="center" size="xs">
+                {stat.number}
+              </Text>
+            </Group>
+          );
+        })}
+      </Card>
+      <Text mt={2}>{t('userStats.title')}</Text>
+      <Stack ref={ref} style={{ flex: 1 }} spacing={5} p={0} sx={{ overflow: 'hidden' }}>
+        {users.map((user) => {
+          return (
+            <Card
+              key={user.id}
+              p={0}
+              component="a"
+              href={user.userLink}
+              target={widget.properties.openInNewTab ? "_blank" : "_self"}
+              mah={95}
+              mih={55}
+              radius="md"
+              style={{ flex: 1 }}
+              withBorder
+            >
+              <Group
+                spacing={5}
+                px={10}
+                py={5}
+                align="center"
+                h="100%"
+                display="flex"
+                style={{ flexDirection: 'row' }}
+              >
+                {appList.length > 1 && (
+                  <Tooltip.Floating
+                    label={user.app.charAt(0).toUpperCase() + user.app.slice(1)}
+                    c={colorScheme === 'light' ? 'black' : 'dark.0'}
+                    color={colorScheme === 'light' ? 'gray.2' : 'dark.4'}
+                  >
+                    <Indicator
+                      withBorder
+                      top={18}
+                      left={8}
+                      size={15}
+                      ml={-5}
+                      color={user.app === 'overseerr' ? '#ECB000' : '#6677CC'}
+                      processing={mediaFetching || usersFetching}
+                      children
+                    />
+                  </Tooltip.Floating>
+                )}
+                <Avatar radius="xl" size={45} src={user.userProfilePicture} alt="user avatar" />
+                <Stack spacing={0} style={{ flex: 1 }}>
+                  <Text>{user.userName}</Text>
+                  <Text size="xs">
+                    {t('userStats.requests', { number: user.userRequestCount })}
+                  </Text>
+                </Stack>
+                <IconExternalLink size={20} />
+              </Group>
+            </Card>
+          );
+        })}
+      </Stack>
     </Flex>
   );
 }
-
-interface StatCardProps {
-  number: number;
-  label: string;
-}
-
-const StatCard = ({ number, label }: StatCardProps) => {
-  return (
-    <Card w="100%" h="100%" withBorder style={{flex:"1 1 auto"}}>
-      <Stack w="100%" h="100%" align="center" justify="center" spacing={0}>
-        <Text align="center">
-          {number}
-        </Text>
-        <Text color="dimmed" align="center" size="xs">
-          {label}
-        </Text>
-      </Stack>
-    </Card>
-  );
-};
 
 export default definition;

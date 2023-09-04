@@ -7,5 +7,19 @@
     "goBack": "Torna indietro allo step precedente",
     "actionIcon": {
         "tooltip": "Aggiungi riquadro"
+    },
+    "apps": "Applicazioni",
+    "app": {
+        "defaultName": "La tua app"
+    },
+    "widgets": "Widgets",
+    "categories": "Categorie",
+    "category": {
+        "newName": "Nome della nuova categoria",
+        "defaultName": "Nuova Categoria",
+        "created": {
+            "title": "Categoria creata",
+            "message": "La categoria \"{{name}}\" è stata creata"
+        }
     }
 }

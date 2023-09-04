@@ -7,5 +7,6 @@
     "popover": {
         "title": "Edit mode abilitata per dimensione <1>{{size}}</1>",
         "text": "Ora è possibile regolare e configurare le applicazioni. Le modifiche <strong>non verranno salvate</strong> finché non si esce dalla edit mode"
-    }
+    },
+    "unloadEvent": "Uscire dalla edit mode per salvare le modifiche"
 }

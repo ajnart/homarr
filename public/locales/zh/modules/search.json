@@ -6,25 +6,25 @@
   "input": {
     "placeholder": "在网上搜索..."
   },
-  "switched-to": "切换到：",
+  "switched-to": "切换到",
   "searchEngines": {
     "search": {
-      "name": "网络",
+      "name": "网页",
       "description": "搜索..."
     },
     "youtube": {
       "name": "Youtube",
-      "description": "在Youtube上搜索"
+      "description": "在 Youtube 上搜索"
     },
     "torrents": {
-      "name": "种子",
-      "description": "搜索种子"
+      "name": "Torrents",
+      "description": "搜索 Torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "在媒体请求服务上搜索电影和电视剧。"
+      "description": "在 Overseer 上搜索电影和电视剧。"
     }
   },
-  "tip": "你可以用快捷键选择搜索栏 ",
+  "tip": "您可以使用以下快捷键选择搜索栏 ",
   "switchedSearchEngine": "改用 {{searchEngine}} 进行搜索"
 }

@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Prišlo je do nepričakovane napake",
-        "text": "Homarr ni mogel komunicirati z vašimi odjemalci Torrent. Prosimo, preverite svojo konfiguracijo"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Nalaganje..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Upravlja jo",

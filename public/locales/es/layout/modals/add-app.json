@@ -54,6 +54,10 @@
 				"text": "Esto puede tardar unos pocos segundos"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Tamaño de fuente del nombre de la aplicación ",
+			"description": "Establece el tamaño de fuente para cuando el nombre de la aplicación se muestre en el mosaico."
+		},
 		"appNameStatus": {
 			"label": "Estado del nombre de la aplicación",
 			"description": "Elige dónde deseas que aparezca el título, si es que lo hace.",
@@ -74,13 +78,13 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "Límite de línea de nombre de aplicación",
+			"label": "Límite de línea del nombre de la aplicación",
 			"description": "Define en cuántas líneas debe caber tu título como máximo. Establece 0 para ilimitado."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "Configuración de integración",
+			"label": "Configuración de la integración",
 			"description": "Configuración de la integración que se usará para conectarse a su aplicación.",
 			"placeholder": "Selecciona una integración",
 			"defined": "Definida",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no se puede guardar. Por favor, resuelve todos los problemas y vuelve a hacer clic en este botón para guardar los cambios"
+		"popover": "Tu formulario contiene datos no válidos. Por lo tanto, no se puede guardar. Por favor, resuelve todos los problemas y vuelve a hacer clic en este botón para guardar los cambios",
+		"name": "El nombre es obligatorio",
+		"noUrl": "La URL es obligatoria",
+		"invalidUrl": "El valor no es una URL válida",
+		"noIconUrl": "Este campo es obligatorio",
+		"noExternalUri": "La URI externa es obligatoria",
+		"invalidExternalUri": "El valor no es una URI válida"
 	}
 }

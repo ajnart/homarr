@@ -161,10 +161,18 @@ describe('PiHole API client', () => {
     const warningLogSpy = vi.spyOn(Consola, 'warn');
 
     let calledCount = 0;
+    let countTriedRequests = 0;
 
     fetchMock.mockResponse((request) => {
       if (request.url === 'http://pi.hole/admin/api.php?enable&auth=nice') {
         calledCount += 1;
+        return JSON.stringify({
+          status: 'enabled',
+        });
+      }
+
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+        countTriedRequests += 1;
         return JSON.stringify({
           status: 'enabled',
         });
@@ -181,6 +189,7 @@ describe('PiHole API client', () => {
     // Assert
     expect(summary).toBe(true);
     expect(calledCount).toBe(1);
+    expect(countTriedRequests).toBe(1);
 
     expect(errorLogSpy).not.toHaveBeenCalled();
     expect(warningLogSpy).not.toHaveBeenCalled();
@@ -188,18 +197,32 @@ describe('PiHole API client', () => {
     errorLogSpy.mockRestore();
   });
 
-  it('enable - return false when state change is not as expected', async () => {
+  it('enable - return true when state change is as expected after 10 retries', async () => {
     // arrange
     const errorLogSpy = vi.spyOn(Consola, 'error');
     const warningLogSpy = vi.spyOn(Consola, 'warn');
 
     let calledCount = 0;
+    let countTriedRequests = 0;
 
     fetchMock.mockResponse((request) => {
       if (request.url === 'http://pi.hole/admin/api.php?enable&auth=nice') {
         calledCount += 1;
         return JSON.stringify({
           status: 'disabled',
+        });
+      }
+
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+        countTriedRequests += 1;
+        if(countTriedRequests < 10) {
+          return JSON.stringify({
+            status: 'disabled',
+          });
+        }
+
+        return JSON.stringify({
+          status: 'enabled',
         });
       }
 
@@ -212,8 +235,9 @@ describe('PiHole API client', () => {
     const summary = await client.enable();
 
     // Assert
-    expect(summary).toBe(false);
+    expect(summary).toBe(true);
     expect(calledCount).toBe(1);
+    expect(countTriedRequests).toBe(10);
 
     expect(errorLogSpy).not.toHaveBeenCalled();
     expect(warningLogSpy).not.toHaveBeenCalled();
@@ -227,10 +251,18 @@ describe('PiHole API client', () => {
     const warningLogSpy = vi.spyOn(Consola, 'warn');
 
     let calledCount = 0;
+    let countTriedRequests = 0;
 
     fetchMock.mockResponse((request) => {
       if (request.url === 'http://pi.hole/admin/api.php?disable&auth=nice') {
         calledCount += 1;
+        return JSON.stringify({
+          status: 'disabled',
+        });
+      }
+
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+        countTriedRequests += 1;
         return JSON.stringify({
           status: 'disabled',
         });
@@ -247,6 +279,7 @@ describe('PiHole API client', () => {
     // Assert
     expect(summary).toBe(true);
     expect(calledCount).toBe(1);
+    expect(countTriedRequests).toBe(1);
 
     expect(errorLogSpy).not.toHaveBeenCalled();
     expect(warningLogSpy).not.toHaveBeenCalled();
@@ -254,18 +287,32 @@ describe('PiHole API client', () => {
     errorLogSpy.mockRestore();
   });
 
-  it('disable - return false when state change is not as expected', async () => {
+  it('disable - return true when state change is as expected after 10 retries', async () => {
     // arrange
     const errorLogSpy = vi.spyOn(Consola, 'error');
     const warningLogSpy = vi.spyOn(Consola, 'warn');
 
     let calledCount = 0;
+    let countTriedRequests = 0;
 
     fetchMock.mockResponse((request) => {
       if (request.url === 'http://pi.hole/admin/api.php?disable&auth=nice') {
         calledCount += 1;
         return JSON.stringify({
           status: 'enabled',
+        });
+      }
+
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+        countTriedRequests += 1;
+        if(countTriedRequests < 10) {
+          return JSON.stringify({
+            status: 'enabled',
+          });
+        }
+
+        return JSON.stringify({
+          status: 'disabled',
         });
       }
 
@@ -278,8 +325,95 @@ describe('PiHole API client', () => {
     const summary = await client.disable();
 
     // Assert
-    expect(summary).toBe(false);
+    expect(summary).toBe(true);
     expect(calledCount).toBe(1);
+    expect(countTriedRequests).toBe(10);
+
+    expect(errorLogSpy).not.toHaveBeenCalled();
+    expect(warningLogSpy).not.toHaveBeenCalled();
+
+    errorLogSpy.mockRestore();
+  });
+
+  it('enable - throw error when state change is not as expected', async () => {
+    // arrange
+    const errorLogSpy = vi.spyOn(Consola, 'error');
+    const warningLogSpy = vi.spyOn(Consola, 'warn');
+
+    let calledCount = 0;
+    let countTriedRequests = 0;
+
+    fetchMock.mockResponse((request) => {
+      if (request.url === 'http://pi.hole/admin/api.php?enable&auth=nice') {
+        calledCount += 1;
+        return JSON.stringify({
+          status: 'disabled',
+        });
+      }
+
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+        countTriedRequests += 1;
+        return JSON.stringify({
+          status: 'disabled',
+        });
+      }
+
+      return Promise.reject(new Error(`Bad url: ${request.url}`));
+    });
+
+    const client = new PiHoleClient('http://pi.hole', 'nice');
+
+    // Act & Assert
+    await expect(() => client.enable()).rejects.toThrowErrorMatchingInlineSnapshot(
+      '"Although PiHole received the command, it failed to update it\'s status: [object Object]"'
+    );
+
+    // Assert
+    expect(calledCount).toBe(1);
+    expect(countTriedRequests).toBe(10);
+
+    expect(errorLogSpy).not.toHaveBeenCalled();
+    expect(warningLogSpy).not.toHaveBeenCalled();
+
+    errorLogSpy.mockRestore();
+  });
+
+  it('disable - throw error when state change is not as expected', async () => {
+    // arrange
+    const errorLogSpy = vi.spyOn(Consola, 'error');
+    const warningLogSpy = vi.spyOn(Consola, 'warn');
+
+    let calledCount = 0;
+    let countTriedRequests = 0;
+
+    fetchMock.mockResponse((request) => {
+      if (request.url === 'http://pi.hole/admin/api.php?disable&auth=nice') {
+        calledCount += 1;
+        return JSON.stringify({
+          status: 'enabled',
+        });
+      }
+
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice') {
+        countTriedRequests += 1;
+        return JSON.stringify({
+          status: 'enabled',
+        });
+      }
+
+      return Promise.reject(new Error(`Bad url: ${request.url}`));
+    });
+
+    const client = new PiHoleClient('http://pi.hole', 'nice');
+
+    // Act & Assert
+    await expect(() => client.disable()).rejects.toThrowErrorMatchingInlineSnapshot(
+      '"Although PiHole received the command, it failed to update it\'s status: [object Object]"'
+    );
+
+    // Assert
+    expect(calledCount).toBe(1);
+    expect(countTriedRequests).lessThanOrEqual(10);
 
     expect(errorLogSpy).not.toHaveBeenCalled();
     expect(warningLogSpy).not.toHaveBeenCalled();

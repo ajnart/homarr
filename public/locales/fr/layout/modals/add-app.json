@@ -26,8 +26,8 @@
 			"description": "Ouvrez l'application dans un nouvel onglet au lieu de l'onglet actuel."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Description de l'Application",
+			"description": "Le texte que vous allez entrer apparaitra quand vous survolerez votre application.\nUtilisez cela pour donner plus d'informations aux utilisateurs à propos de votre application ou laissez vide pour qu'il n'y ait rien."
 		},
 		"customProtocolWarning": "Utilisation d'un protocole non standard. Ceci peut nécessiter des applications préinstallées et peut introduire des failles de sécurité. Assurez-vous que votre adresse est sécurisée et de confiance."
 	},
@@ -54,28 +54,32 @@
 				"text": "Cela peut prendre quelques secondes"
 			}
 		},
-		"appNameStatus": {
+		"appNameFontSize": {
 			"label": "",
-			"description": "",
+			"description": ""
+		},
+		"appNameStatus": {
+			"label": "Status du nom de l'application",
+			"description": "Choisissez où vous voulez que le titre apparaisse, si vous voulez.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Afficher le titre sur la tuile uniquement",
+				"hover": "Afficher le titre au survol de l'info-bulle uniquement",
+				"hidden": "Ne pas afficher du tout"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Position du nom de l'application",
+			"description": "Position du nom de l'application par rapport à l'icône.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Dessus",
+				"right": "Droite",
+				"bottom": "Dessous",
+				"left": "Gauche"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Coupe ligne pour le nom de l'application",
+			"description": "Défini sur combien de lignes le nom de l'application va s'étendre. 0 pour illimité."
 		}
 	},
 	"integration": {
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications"
+		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications",
+		"name": "Un nom est requis",
+		"noUrl": "Un lien est requis",
+		"invalidUrl": "Ce lien n'est pas un URL valide",
+		"noIconUrl": "Ce champ est requis",
+		"noExternalUri": "Un URI externe est requis",
+		"invalidExternalUri": "Cet URI externe n'est pas un URI valide"
 	}
 }

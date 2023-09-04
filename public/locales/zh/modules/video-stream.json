@@ -3,9 +3,9 @@
     "name": "视频流",
     "description": "嵌入来自相机或网站的视频流或视频",
     "settings": {
-      "title": "设置视频流小部件",
+      "title": "视频流组件设置",
       "FeedUrl": {
-        "label": "订阅源的URL"
+        "label": "订阅网址"
       },
       "autoPlay": {
         "label": "自动播放"
@@ -14,7 +14,7 @@
         "label": "静音"
       },
       "controls": {
-        "label": "视频播放器控件"
+        "label": "视频播放控件"
       }
     }
   },

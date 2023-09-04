@@ -1,6 +1,7 @@
 {
   "title": "Suchmaschine",
   "configurationName": "Suchmaschinen Einstellungen",
+  "custom": "Benutzerdefiniert",
   "tips": {
     "generalTip": "Es gibt mehrere Präfixe, die Sie verwenden können! Wenn Sie diese vor Ihrer Abfrage hinzufügen, werden die Ergebnisse gefiltert. z.b. !s (Web), !t (Torrents), !y (YouTube), und !m (Medien).",
     "placeholderTip": "%s kann als Platzhalter für deine Suchanfrage verwendet werden."

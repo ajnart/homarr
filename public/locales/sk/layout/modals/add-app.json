@@ -54,6 +54,10 @@
 				"text": "Môže to trvať niekoľko sekúnd"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "Názov aplikácie Stav",
 			"description": "Vyberte, kde sa má názov zobrazovať, ak vôbec.",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Váš formulár obsahuje neplatné údaje. Preto ho nemožno uložiť. Vyriešte všetky problémy a znovu kliknite na toto tlačidlo, aby ste uložili svoje zmeny"
+		"popover": "Váš formulár obsahuje neplatné údaje. Preto ho nemožno uložiť. Vyriešte všetky problémy a znovu kliknite na toto tlačidlo, aby ste uložili svoje zmeny",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

@@ -6,6 +6,9 @@
       "title": "Liste over media forespørsler",
       "replaceLinksWithExternalHost": {
         "label": ""
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "",
-    "decline": ""
+    "decline": "",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
   }
 }

@@ -6,6 +6,9 @@
       "title": "Popis zahtjeva za medijima",
       "replaceLinksWithExternalHost": {
         "label": "Zamijeni veze s vanjskim poslužiteljem"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Odobri zahtjeve",
-    "decline": "Odbij zahtjeve"
+    "decline": "Odbij zahtjeve",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
   }
 }

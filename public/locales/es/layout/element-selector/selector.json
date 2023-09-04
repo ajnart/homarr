@@ -7,5 +7,19 @@
     "goBack": "Volver al paso anterior",
     "actionIcon": {
         "tooltip": "Añadir mosaico"
+    },
+    "apps": "Aplicaciones",
+    "app": {
+        "defaultName": "Tu aplicación"
+    },
+    "widgets": "Widgets",
+    "categories": "Categorías",
+    "category": {
+        "newName": "Nombre de la nueva categoría",
+        "defaultName": "Nueva categoría",
+        "created": {
+            "title": "Categoría creada",
+            "message": "La categoría \"{{name}}\" ha sido creada"
+        }
     }
 }

@@ -1,5 +1,6 @@
 import { Card, Divider, Flex, Grid, Group, Text } from '@mantine/core';
 import { IconDeviceMobile, IconId } from '@tabler/icons-react';
+import { useTranslation } from 'react-i18next';
 
 import { GenericSessionInfo } from '../../types/api/media-server/session-info';
 
@@ -11,18 +12,18 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: 'Video',
+          title: "Video",
           metrics: [
             {
-              name: 'Resolution',
+              name: "Resolution",
               value: `${session.currentlyPlaying.metadata.video.width}x${session.currentlyPlaying.metadata.video.height}`,
             },
             {
-              name: 'Framerate',
+              name: "Framerate",
               value: session.currentlyPlaying.metadata.video.videoFrameRate,
             },
             {
-              name: 'Codec',
+              name: "Video Codec",
               value: session.currentlyPlaying.metadata.video.videoCodec,
             },
             {
@@ -39,14 +40,14 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: 'Audio',
+          title: "Audio",
           metrics: [
             {
-              name: 'Audio channels',
+              name: "Audio Channels",
               value: `${session.currentlyPlaying.metadata.audio.audioChannels}`,
             },
             {
-              name: 'Audio codec',
+              name: "Audio Codec",
               value: session.currentlyPlaying.metadata.audio.audioCodec,
             },
           ],
@@ -58,24 +59,24 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: 'Transcoding',
+          title: "Transcoding",
           metrics: [
             {
-              name: 'Resolution',
+              name: "Resolution",
               value: `${session.currentlyPlaying.metadata.transcoding.width}x${session.currentlyPlaying.metadata.transcoding.height}`,
             },
             {
-              name: 'Context',
+              name: "Context",
               value: session.currentlyPlaying.metadata.transcoding.context,
             },
             {
-              name: 'Hardware encoding requested',
+              name: "Hardware Encoding Requested",
               value: session.currentlyPlaying.metadata.transcoding.transcodeHwRequested
                 ? 'yes'
                 : 'no',
             },
             {
-              name: 'Source codec',
+              name: "Source Codec",
               value:
                 session.currentlyPlaying.metadata.transcoding.sourceAudioCodec ||
                 session.currentlyPlaying.metadata.transcoding.sourceVideoCodec
@@ -83,7 +84,7 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
                   : undefined,
             },
             {
-              name: 'Target codec',
+              name: "Target Codec",
               value: `${session.currentlyPlaying.metadata.transcoding.videoCodec} ${session.currentlyPlaying.metadata.transcoding.audioCodec}`,
             },
           ],
@@ -109,7 +110,7 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
         <Text>{session.sessionName}</Text>
       </Flex>
       {details.length > 0 && (
-        <Divider label="Stats for nerds" labelPosition="center" mt="lg" mb="sm" />
+        <Divider label={"Stats for nerds"} labelPosition="center" mt="lg" mb="sm" />
       )}
       <Grid>
         {details.map((detail, index) => (

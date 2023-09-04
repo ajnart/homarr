@@ -14,8 +14,7 @@ export const DashboardTitleChanger = () => {
   if (!configName) return null;
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (ev) => {
-    const { value } = ev.currentTarget;
-    const pageTitle = value.trim();
+    const { value: pageTitle } = ev.currentTarget;
     setPageTitle(pageTitle);
     updateConfig(configName, (prev) => ({
       ...prev,

@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "Invalid URL",
         "text": "Ensure that you've entered a valid address in the configuration of your widget"
-      }
+      },
+      "browserSupport": "Your Browser does not support iframes. Please update your browser."
     }
   }
 }

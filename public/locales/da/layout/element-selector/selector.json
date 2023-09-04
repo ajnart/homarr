@@ -7,5 +7,19 @@
     "goBack": "Gå tilbage til det forrige trin",
     "actionIcon": {
         "tooltip": "Tilføj et felt"
+    },
+    "apps": "Apps",
+    "app": {
+        "defaultName": "Din app"
+    },
+    "widgets": "Widgets",
+    "categories": "Kategorier",
+    "category": {
+        "newName": "Navn på ny kategori",
+        "defaultName": "Ny kategori",
+        "created": {
+            "title": "Kategorien er oprettet",
+            "message": "Kategorien \"{{name}}\" er blevet oprettet"
+        }
     }
 }

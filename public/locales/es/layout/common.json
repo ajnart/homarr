@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Abrir todo en una pestaña nueva"
     }
+  },
+  "menu": {
+    "moveUp": "Mover hacia arriba",
+    "moveDown": "Mover hacia abajo",
+    "addCategory": "Añadir categoría {{location}}",
+    "addAbove": "Arriba",
+    "addBelow": "Abajo"
   }
 }

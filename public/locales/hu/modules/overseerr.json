@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Lehetővé teszi a médiák keresését és hozzáadását az Overseerr vagy a Jellyseerr oldalról."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Kérdezze a {{title}}",
+        "cancel": "Mégse",
+        "request": "Kérés"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "API-kulcs használata",
+          "text": "Ez a kérelem automatikusan jóváhagyásra kerül"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Jelölje be a letölteni kívánt évadokat",
+      "table": {
+        "header": {
+          "season": "Évad",
+          "numberOfEpisodes": "Epizódok száma"
+        }
+      }
+    }
+  }
+}

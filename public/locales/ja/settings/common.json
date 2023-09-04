@@ -10,22 +10,22 @@
   },
   "credits": {
     "madeWithLove": "で作った❤️ by @さん",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "サードパーティのコンテンツを見る",
     "thirdPartyContentTable": {
-      "dependencyName": "",
+      "dependencyName": "依存",
       "dependencyVersion": "バージョン"
     }
   },
-  "grow": "グロースグリッド（全領域を占有）",
+  "grow": "グリッドを拡大 (すべてのスペースを取る)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "プレビュー",
+      "subtitle": "変更内容は自動的に保存されます"
     },
-    "divider": "",
+    "divider": "レイアウト設定",
     "main": "メイン",
     "sidebar": "サイドバー",
-    "cannotturnoff": "OFFにできない",
+    "cannotturnoff": "オフにはできない",
     "dashboardlayout": "ダッシュボードのレイアウト",
     "enablersidebar": "右サイドバーを有効にする",
     "enablelsidebar": "左サイドバーを有効にする",

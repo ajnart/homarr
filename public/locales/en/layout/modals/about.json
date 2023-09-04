@@ -6,6 +6,13 @@
 	"key": "Shortcut key",
 	"action": "Action",
 	"keybinds": "Keybinds",
+	"documentation": "Documentation",
+	"actions": {
+		"toggleTheme": "Toggle light/dark mode",
+		"focusSearchBar": "Focus on search bar",
+		"openDocker": "Open docker Widget",
+		"toggleEdit": "Toggle Edit Mode"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Configuration schema version",
 		"configurationsCount": "Available configurations",
@@ -14,5 +21,9 @@
 		"i18n": "Loaded I18n translation namespaces",
 		"locales": "Configured I18n locales",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Disable edit mode"
+	},
+	"version": {
+		"new": "New: {{newVersion}}",
+		"dropdown": "Version {{newVersion}} is available! Current Version is {{currentVersion}}"
 	}
 }

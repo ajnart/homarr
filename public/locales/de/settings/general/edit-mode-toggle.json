@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "Bearbeitungsmodus umschalten",
+    "enable": "Bearbeitungsmodus aktivieren",
+    "disable": "Bearbeitungsmodus deaktivieren"
+  },
+  "form": {
+    "label": "Passwort bearbeiten",
+    "message": "Um den Bearbeitungsmodus umzuschalten, müssen Sie das Passwort eingeben, das Sie in die Umgebungsvariable <Code>EDIT_MODE_PASSWORD</Code> eingegeben haben. Ist sie nicht gesetzt, können Sie den Bearbeitungsmodus nicht ein- und ausschalten.",
+    "submit": "Absenden"
+  },
+  "notification": {
+    "success": {
+      "title": "Abgeschlossen",
+      "message": "Bearbeitungsmodus erfolgreich umgeschaltet, die Seite wird neu geladen..."
+    },
+    "error": {
+      "title": "Fehler",
+      "message": "Der Bearbeitungsmodus konnte nicht umgeschaltet werden, bitte versuchen Sie es erneut."
+    }
+  }
+}

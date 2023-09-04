@@ -14,8 +14,6 @@ import { useNamedWrapperColumnCount } from '../../../../Dashboard/Wrappers/grids
 import { useCardStyles } from '../../../useCardStyles';
 import { AddElementAction } from '../AddElementAction/AddElementAction';
 
-const beforeUnloadEventText = 'Exit the edit mode to save your changes';
-
 export const ToggleEditModeAction = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
@@ -24,7 +22,7 @@ export const ToggleEditModeAction = () => {
     namedWrapperColumnCount !== null
       ? t(`common:breakPoints.${namedWrapperColumnCount}`)
       : t('common:loading');
-
+  const beforeUnloadEventText = t('unloadEvent');
   const smallerThanSm = useScreenSmallerThan('sm');
   const { config } = useConfigContext();
   const { classes } = useCardStyles(true);
@@ -33,7 +31,7 @@ export const ToggleEditModeAction = () => {
   useHotkeys([['mod+E', toggleEditMode]]);
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
-    if (enabled) {
+    if (enabled && process.env.NODE_ENV !== 'development') {
       // eslint-disable-next-line no-param-reassign
       event.returnValue = beforeUnloadEventText;
       return beforeUnloadEventText;

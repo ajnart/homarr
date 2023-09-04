@@ -12,7 +12,12 @@
         "label": ""
       },
       "layout": {
-        "label": "Postavitev"
+        "label": "Postavitev",
+        "data": {
+          "autoGrid": "",
+          "horizontal": "",
+          "vertical": ""
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "",
       "text": ""
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "",
+      "errorMsg": ""
+    },
+    "name": "Ime",
+    "url": "",
+    "newTab": "Odprite v novem zavihku",
+    "hideHostname": "",
+    "hideIcon": "",
+    "delete": "Izbriši"
   }
 }

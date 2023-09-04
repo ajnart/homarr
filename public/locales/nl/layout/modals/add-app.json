@@ -54,6 +54,10 @@
 				"text": "Dit kan enkele seconden duren"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Uw formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om uw wijzigingen op te slaan"
+		"popover": "Uw formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om uw wijzigingen op te slaan",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

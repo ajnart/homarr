@@ -8,7 +8,9 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Consola from 'consola';
 import { getCookie } from 'cookies-next';
-import moment from 'moment-timezone';
+import dayjs from 'dayjs';
+import locale from 'dayjs/plugin/localeData'
+import utc from 'dayjs/plugin/utc'
 import { GetServerSidePropsContext } from 'next';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
@@ -39,6 +41,9 @@ import {
 } from '../tools/server/getPackageVersion';
 import { theme } from '../tools/server/theme/theme';
 
+dayjs.extend(locale);
+dayjs.extend(utc);
+
 function App(
   this: any,
   props: AppProps<{
@@ -54,8 +59,8 @@ function App(
   const { Component, pageProps } = props;
   // TODO: make mapping from our locales to moment locales
   const language = getLanguageByCode(pageProps.locale);
-  require('moment/locale/' + language.momentLocale);
-  moment.locale(language.momentLocale);
+  require(`dayjs/locale/${language.locale}.js`);
+  dayjs.locale(language.locale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
     props.pageProps.config?.settings.customization.colors.primary || 'red'
@@ -85,13 +90,13 @@ function App(
   });
 
   const { setInitialPackageAttributes } = usePackageAttributesStore();
-  const { setDisabled } = useEditModeInformationStore();
+  const { setEnabled } = useEditModeInformationStore();
 
   useEffect(() => {
     setInitialPackageAttributes(props.pageProps.packageAttributes);
 
-    if (!props.pageProps.editModeEnabled) {
-      setDisabled();
+    if (props.pageProps.editModeEnabled) {
+      setEnabled();
     }
   }, []);
 
@@ -160,8 +165,7 @@ function App(
 }
 
 App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
-  const disableEditMode =
-    process.env.DISABLE_EDIT_MODE && process.env.DISABLE_EDIT_MODE.toLowerCase() === 'true';
+  const disableEditMode = process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true';
   if (disableEditMode) {
     Consola.warn(
       'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'

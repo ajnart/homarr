@@ -29,6 +29,7 @@ module.exports = {
       'no',
       'tr',
       'lv',
+      'hu',
       'hr'
     ],
 

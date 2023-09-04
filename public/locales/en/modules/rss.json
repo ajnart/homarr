@@ -12,7 +12,8 @@
         "label": "Refresh interval (in minutes)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "Allow HTML formatting (Dangerous)",
+        "info": "Allowing HTML formatting from outside could be dangerous.<br/>Please make sure that the feed is from a trusted source."
       },
       "textLinesClamp": {
         "label": "Text lines clamp"

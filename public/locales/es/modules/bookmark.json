@@ -12,7 +12,12 @@
         "label": "Elementos"
       },
       "layout": {
-        "label": "Diseño"
+        "label": "Diseño",
+        "data": {
+          "autoGrid": "Cuadrícula automática",
+          "horizontal": "Horizontal",
+          "vertical": "Vertical"
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "Lista de marcadores vacía",
       "text": "Añadir nuevos elementos a esta lista en el modo edición"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "La longitud debe estar entre {{shortest}} y {{longest}}",
+      "invalidLink": "No es un enlace válido",
+      "errorMsg": "No se guardó, porque hubo errores de validación. Por favor, ajusta tus entradas"
+    },
+    "name": "Nombre",
+    "url": "URL",
+    "newTab": "Abrir en una pestaña nueva",
+    "hideHostname": "Ocultar nombre de host",
+    "hideIcon": "Ocultar icono",
+    "delete": "Eliminar"
   }
 }

@@ -12,7 +12,8 @@
         "label": "Interval osvježavanja (u minutama)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": "Ograničavanje broja redaka teksta"

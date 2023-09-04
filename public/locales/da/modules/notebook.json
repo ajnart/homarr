@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Notesbog",
+		"description": "En markdown-baseret interaktiv widget, hvor du kan skrive dine noter ned!",
 		"settings": {
-			"title": "",
+			"title": "Indstillinger for notebook-widget",
 			"showToolbar": {
-				"label": ""
+				"label": "Vis værktøjslinjen, der hjælper dig med at skrive markdown"
 			},
 			"content": {
-				"label": ""
+				"label": "Indholdet af notesbogen"
 			}
 		}
 	}

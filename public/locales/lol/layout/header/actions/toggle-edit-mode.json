@@ -7,5 +7,6 @@
     "popover": {
         "title": "Edit Mode Iz Enabld 4  <1>{{size}}</1> Size",
         "text": "U Can Adjust An Configure Ur Apps Nao. Changez R <strong>Not Savd</strong> Til U Exit Edit Mode"
-    }
+    },
+    "unloadEvent": ""
 }

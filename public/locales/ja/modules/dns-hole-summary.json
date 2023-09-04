@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "DNSホールの概要",
+    "description": "PiHoleまたはAdGuardの重要なデータを表示します",
     "settings": {
-      "title": "",
+      "title": "DNSホールの概要の設定",
       "usePiHoleColors": {
-        "label": ""
+        "label": "PiHoleの色を使う"
       },
       "layout": {
-        "label": "",
+        "label": "レイアウト",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 x 2",
+          "row": "水平",
+          "column": "垂直"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "アドリスト上のドメイン",
+      "queriesToday": "今日のクエリ",
+      "queriesBlockedTodayPercentage": "今日のブロック",
+      "queriesBlockedToday": "今日のブロック"
     }
   }
 }

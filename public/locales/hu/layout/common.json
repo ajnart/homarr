@@ -1,0 +1,25 @@
+{
+  "modals": {
+    "blockedPopups": {
+      "title": "Popupok blokkolva",
+      "text": "A böngészője blokkolta a Homarr API-hoz való hozzáférést. Ezt leggyakrabban az AdBlockerek vagy megtagadott engedélyek okozzák. A Homarr nem képes automatikusan engedélyeket kérni.",
+      "list": {
+        "browserPermission": "Kattintson az URL-cím melletti ikonra, és ellenőrizze a jogosultságokat. Popupok és ablakok engedélyezése",
+        "adBlockers": "Kapcsolja ki a reklámblokkolókat és a biztonsági eszközöket a böngészőjéből",
+        "otherBrowser": "Próbálja meg egy másik böngészővel"
+      }
+    }
+  },
+  "actions": {
+    "category": {
+      "openAllInNewTab": "Összes megnyitása új lapon"
+    }
+  },
+  "menu": {
+    "moveUp": "Felfelé mozgatás",
+    "moveDown": "Mozgatás le",
+    "addCategory": "Kategória hozzáadása {{location}}",
+    "addAbove": "fölé",
+    "addBelow": "alá"
+  }
+}

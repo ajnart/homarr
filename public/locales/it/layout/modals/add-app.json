@@ -54,6 +54,10 @@
 				"text": "Questa operazione potrebbe richiedere alcuni secondi"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Dimensione font nome app",
+			"description": "Imposta la dimensione dei caratteri per la visualizzazione del nome dell'applicazione sul tile."
+		},
 		"appNameStatus": {
 			"label": "Stato del nome dell'app",
 			"description": "Scegli dove vuoi che il titolo si mostri, sempre che tu lo voglia.",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Il form contiene dati invalidi. Pertanto, non può essere salvato. Risolvere tutti i problemi e fare nuovamente clic su questo pulsante per salvare le modifiche"
+		"popover": "Il form contiene dati invalidi. Pertanto, non può essere salvato. Risolvere tutti i problemi e fare nuovamente clic su questo pulsante per salvare le modifiche",
+		"name": "Il nome è obbligatorio",
+		"noUrl": "L'url è obbligatorio",
+		"invalidUrl": "Il valore non è un url valido",
+		"noIconUrl": "Questo campo è obbligatorio",
+		"noExternalUri": "L'URI esterno è obbligatorio",
+		"invalidExternalUri": "L'URI esterno non è un uri valido"
 	}
 }

@@ -6,6 +6,9 @@
       "title": "Lista de solicitudes multimedia",
       "replaceLinksWithExternalHost": {
         "label": "Reemplazar enlaces con el anfitrión externo"
+      },
+      "openInNewTab": {
+        "label": "Abrir enlaces en una pestaña nueva"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Aprobar solicitudes",
-    "decline": "Rechazar solicitudes"
+    "decline": "Rechazar solicitudes",
+    "approving": "Aprobando solicitud..."
+  },
+  "mutation": {
+    "approving": "Aprobando",
+    "declining": "Rechazando",
+    "request": "Solicitud...",
+    "approved": "¡La solicitud fue aprobada!",
+    "declined": "¡La solicitud fue rechazada!"
   }
 }

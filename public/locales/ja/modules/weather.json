@@ -8,7 +8,7 @@
         "label": "表示単位：華氏"
       },
       "displayCityName": {
-        "label": ""
+        "label": "都市名の表示"
       },
       "location": {
         "label": "天候の場所"
@@ -19,18 +19,19 @@
     "weatherDescriptions": {
       "clear": "クリア",
       "mainlyClear": "主なクリア事項",
-      "fog": "フォグ",
+      "fog": "霧",
       "drizzle": "小雨",
-      "freezingDrizzle": "凍てつく霧雨",
+      "freezingDrizzle": "雨氷",
       "rain": "雨",
-      "freezingRain": "凍てつく雨",
+      "freezingRain": "雨氷",
       "snowFall": "降雪",
-      "snowGrains": "雪の粒",
+      "snowGrains": "霧雪",
       "rainShowers": "にわか雨",
       "snowShowers": "スノーシャワー",
       "thunderstorm": "サンダーストーム",
       "thunderstormWithHail": "雹を伴う雷雨",
       "unknown": "不明"
     }
-  }
+  },
+  "error": "エラーが発生しました"
 }

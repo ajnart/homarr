@@ -55,10 +55,10 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
   const { t } = useTranslation(['common', 'layout/modals/about']);
 
   const keybinds = [
-    { key: 'Mod + J', shortcut: 'Toggle light/dark mode' },
-    { key: 'Mod + K', shortcut: 'Focus on search bar' },
-    { key: 'Mod + B', shortcut: 'Open docker widget' },
-    { key: 'Mod + E', shortcut: 'Toggle Edit mode' },
+    { key: 'Mod + J', shortcut: t('layout/modals/about:actions.toggleTheme') },
+    { key: 'Mod + K', shortcut: t('layout/modals/about:actions.focusSearchBar') },
+    { key: 'Mod + B', shortcut: t('layout/modals/about:actions.openDocker') },
+    { key: 'Mod + E', shortcut: t('layout/modals/about:actions.toggleEdit') },
   ];
   const rows = keybinds.map((element) => (
     <tr key={element.key}>
@@ -167,7 +167,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
             variant="default"
             fullWidth
           >
-            Documentation
+            {t('layout/modals/about:documentation')}
           </Button>
         </Grid.Col>
 
@@ -203,13 +203,14 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   const { attributes } = usePackageAttributesStore();
   const { editModeEnabled } = useEditModeInformationStore();
   const { primaryColor } = useColorTheme();
+  const { t } = useTranslation(['layout/modals/about']);
 
   const { configVersion } = useConfigContext();
   const { configs } = useConfigStore();
 
   let items: InformationTableItem[] = [];
 
-  if (editModeEnabled) {
+  if (!editModeEnabled) {
     items = [
       ...items,
       {
@@ -300,21 +301,23 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                   transition={{ duration: 0.8, ease: 'easeInOut' }}
                 >
                   <Badge color="green" variant="filled">
-                    new: {newVersionAvailable}
+                    {t('version.new',{ newVersion: newVersionAvailable})}
                   </Badge>
                 </motion.div>
               </HoverCard.Target>
               <HoverCard.Dropdown>
-                Version{' '}
-                <b>
-                  <Anchor
-                    target="_blank"
-                    href={`https://github.com/ajnart/homarr/releases/tag/${newVersionAvailable}`}
-                  >
-                    {newVersionAvailable}
-                  </Anchor>
-                </b>{' '}
-                is available ! Current version: {attributes.packageVersion}
+                <Text>
+                  {t('version.dropdown', {currentVersion: attributes.packageVersion}).split('{{newVersion}}')[0]}
+                  <b>
+                    <Anchor
+                      target="_blank"
+                      href={`https://github.com/ajnart/homarr/releases/tag/${newVersionAvailable}`}
+                    >
+                      {newVersionAvailable}
+                    </Anchor>
+                  </b>
+                  {t('version.dropdown', {currentVersion: attributes.packageVersion}).split('{{newVersion}}')[1]}
+                </Text>
               </HoverCard.Dropdown>
             </HoverCard>
           )}

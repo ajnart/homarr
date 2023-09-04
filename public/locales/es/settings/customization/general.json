@@ -7,7 +7,7 @@
     },
     "gridstack": {
       "name": "Cuadrícula",
-      "description": "Personalizar el comportamiento y columnas del área de tu dashboard\n\nPersonaliza el comportamiento y las columnas de la cuadrícula de tu panel"
+      "description": "Personaliza el comportamiento y las columnas de la cuadrícula de tu panel"
     },
     "pageMetadata": {
       "name": "Metadatos de la página",

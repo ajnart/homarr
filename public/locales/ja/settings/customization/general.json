@@ -1,25 +1,25 @@
 {
-  "text": "",
+  "text": "カスタマイズすると、Homarrでの体験をあなたの好みに合わせて設定し、調整することができます。",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "レイアウト",
+      "description": "ヘッダーとダッシュボードのタイルの要素を有効または無効にする"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "グリッドスタック",
+      "description": "ダッシュボードエリアの動作と列をカスタマイズする"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "ページメタデータ",
+      "description": "タイトル、ロゴ、PWAの調整"
     },
     "appereance": {
       "name": "外観",
-      "description": ""
+      "description": "背景、色、アプリの外観のカスタマイズ"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "アクセシビリティ",
+      "description": "障害のあるユーザーのためのHomarr設定"
     }
   }
 }

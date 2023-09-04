@@ -54,6 +54,10 @@
 				"text": "This may take a few seconds"
 			}
 		},
+		"appNameFontSize":{
+			"label":"App Name Font Size",
+			"description":"Set the font size for when the app name is shown on the tile."
+		},
 		"appNameStatus":{
 			"label":"App Name Status",
 			"description":"Choose where you want the title to show up, if at all.",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Your form contains invalid data. Hence, it can't be saved. Please resolve all issues and click this button again to save your changes"
+		"popover": "Your form contains invalid data. Hence, it can't be saved. Please resolve all issues and click this button again to save your changes",
+		"name": "Name is required",
+		"noUrl": "Url is required",
+		"invalidUrl": "Value is not a valid url",
+		"noIconUrl": "This field is required",
+		"noExternalUri": "External URI is required",
+		"invalidExternalUri": "External URI is not a valid uri"
 	}
 }

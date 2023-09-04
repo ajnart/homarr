@@ -7,5 +7,6 @@
     "popover": {
         "title": "Edit mode is enabled for  <1>{{size}}</1> size",
         "text": "You can adjust and configure your apps now. Changes are <strong>not saved</strong> until you exit edit mode"
-    }
+    },
+    "unloadEvent": "Exit the edit mode to save your changes"
 }

@@ -12,7 +12,12 @@
         "label": "Ögeler"
       },
       "layout": {
-        "label": "Düzen"
+        "label": "Düzen",
+        "data": {
+          "autoGrid": "Otomatik Izgara",
+          "horizontal": "Yatay",
+          "vertical": "Dikey"
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "Yer imi listesi boş",
       "text": "Düzenleme modunda bu listeye yeni öğeler ekleyin"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "Uzunluk {{shortest}} ile {{longest}} arasında olmalıdır",
+      "invalidLink": "Geçerli bir bağlantı değil",
+      "errorMsg": "Doğrulama hataları olduğu için kaydedilmedi. Lütfen bilgilerinizi kontrol edin"
+    },
+    "name": "İsim",
+    "url": "URL",
+    "newTab": "Yeni sekmede aç",
+    "hideHostname": "Ana Bilgisayar Adını Gizle",
+    "hideIcon": "İkonu Gizle",
+    "delete": "Sil"
   }
 }

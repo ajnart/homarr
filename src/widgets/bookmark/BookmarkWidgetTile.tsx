@@ -74,6 +74,7 @@ const definition = defineWidget({
         };
       },
       itemComponent({ data, onChange, delete: deleteData }) {
+        const { t } = useTranslation('modules/bookmark');
         const form = useForm({
           initialValues: data,
           validate: {
@@ -83,15 +84,15 @@ const definition = defineWidget({
                 return undefined;
               }
 
-              return 'Length must be between 1 and 100';
+              return t('item.validation.length', {shortest: "1", longest: "100"});
             },
             href: (value) => {
               if (!z.string().min(1).max(200).safeParse(value).success) {
-                return 'Length must be between 1 and 200';
+                return t('item.validation.length', {shortest: "1", longest: "200"});
               }
 
               if (!z.string().url().safeParse(value).success) {
-                return 'Not a valid link';
+                return t('item.validation.invalidLink');
               }
 
               return undefined;
@@ -101,7 +102,7 @@ const definition = defineWidget({
                 return undefined;
               }
 
-              return 'Length must be between 1 and 100';
+              return t('item.validation.length', {shortest: "1", longest: "400"});
             },
           },
           validateInputOnChange: true,
@@ -122,13 +123,13 @@ const definition = defineWidget({
               <TextInput
                 icon={<IconTypography size="1rem" />}
                 {...form.getInputProps('name')}
-                label="Name"
+                label={t('item.name')}
                 withAsterisk
               />
               <TextInput
                 icon={<IconLink size="1rem" />}
                 {...form.getInputProps('href')}
-                label="URL"
+                label={t('item.url')}
                 withAsterisk
               />
               <IconSelector
@@ -140,17 +141,17 @@ const definition = defineWidget({
               />
               <Switch
                 {...form.getInputProps('openNewTab')}
-                label="Open in new tab"
+                label={t('item.newTab')}
                 checked={form.values.openNewTab}
               />
               <Switch
                 {...form.getInputProps('hideHostname')}
-                label="Hide Hostname"
+                label={t('item.hideHostname')}
                 checked={form.values.hideHostname}
               />
               <Switch
                 {...form.getInputProps('hideIcon')}
-                label="Hide Icon"
+                label={t('item.hideIcon')}
                 checked={form.values.hideIcon}
               />
               <Button
@@ -159,11 +160,11 @@ const definition = defineWidget({
                 variant="light"
                 type="button"
               >
-                Delete
+                {t('item.delete')}
               </Button>
               {!form.isValid() && (
                 <Alert color="red" icon={<IconAlertTriangle size="1rem" />}>
-                  Did not save, because there were validation errors. Please adust your inputs
+                  {t('item.validation.errorMsg')}
                 </Alert>
               )}
             </Stack>
@@ -174,18 +175,9 @@ const definition = defineWidget({
     layout: {
       type: 'select',
       data: [
-        {
-          label: 'Auto Grid',
-          value: 'autoGrid',
-        },
-        {
-          label: 'Horizontal',
-          value: 'horizontal',
-        },
-        {
-          label: 'Vertical',
-          value: 'vertical',
-        },
+        { value: 'autoGrid', },
+        { value: 'horizontal', },
+        { value: 'vertical', },
       ],
       defaultValue: 'autoGrid',
     },
@@ -206,10 +198,10 @@ interface BookmarkWidgetTileProps {
 }
 
 function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
-  const { t } = useTranslation('modules/bookmark');
   const { classes } = useStyles();
   const { enabled: isEditModeEnabled } = useEditModeStore();
   const { fn, colors, colorScheme } = useMantineTheme();
+  const { t } = useTranslation('modules/bookmark');
 
   if (widget.properties.items.length === 0) {
     return (
@@ -277,6 +269,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               viewport:{
                 //mantine being mantine again... this might break. Needed for taking 100% of widget space
                 '& div[style="min-width: 100%; display: table;"]':{
+                  display: 'flex !important',
                   height:'100%',
                 },
               },
@@ -286,14 +279,16 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
               direction={ widget.properties.layout === 'vertical' ? 'column' : 'row' }
               gap="0"
               h="100%"
+              w="100%"
             >
               {widget.properties.items.map((item: BookmarkItem, index) => (
                 <>
-                  <Divider
-                    m="1px"
-                    orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' } //Mantine doesn't let me refactor this, I tried
-                    hidden={!(index > 0)}
-                  />
+                  {index > 0 &&
+                    <Divider
+                      m="3px"
+                      orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' }
+                    />
+                  }
                   <Card
                     key={index}
                     px="md"
@@ -305,7 +300,8 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                     bg="transparent"
                     sx={{
                       '&:hover': { backgroundColor: fn.primaryColor().concat('40'),}, //'40' = 25% opacity
-                      flex:'1 1 auto'
+                      flex:'1 1 auto',
+                      overflow: 'unset',
                     }}
                     display="flex"
                   >

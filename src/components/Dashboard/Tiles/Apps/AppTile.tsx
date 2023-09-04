@@ -49,7 +49,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
             <Text
               className={cx(classes.appName, 'dashboard-tile-app-title')}
               fw={700}
-              size="md"
+              size={app.appearance.appNameFontSize}
               ta="center"
               sx={{
                 flex: isRow ? '1' : undefined,
@@ -60,19 +60,12 @@ export const AppTile = ({ className, app }: AppTileProps) => {
             </Text>
           )}
           <motion.img
-            className={cx('dashboard-tile-app-image')}
+            className={cx(classes.appImage, 'dashboard-tile-app-image')}
             src={app.appearance.iconUrl}
-            height="85%"
-            width="85%"
             alt={app.name}
             whileHover={{ scale: 0.9 }}
             initial={{ scale: 0.8 }}
             style={{
-              maxHeight: '90%',
-              maxWidth: '90%',
-              flex: 1,
-              overflow: 'auto',
-              objectFit: 'contain',
               width: isRow ? 0 : undefined,
             }}
           />
@@ -117,6 +110,13 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     gap: 0,
     overflow: 'visible',
     flexGrow: 5,
+  },
+  appImage:{
+    maxHeight: '100%',
+    maxWidth: '100%',
+    overflow: 'auto',
+    flex: 1,
+    objectFit: 'contain',
   },
   appName: {
     wordBreak: 'break-word',

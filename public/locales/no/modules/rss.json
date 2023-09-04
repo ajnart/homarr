@@ -12,7 +12,8 @@
         "label": "Oppdaterings intervall (i minutter)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "",
+        "info": ""
       },
       "textLinesClamp": {
         "label": ""

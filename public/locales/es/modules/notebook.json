@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Bloc de notas",
+		"description": "¡Un widget interactivo basado en Markdown para que escribas tus notas!",
 		"settings": {
-			"title": "",
+			"title": "Ajustes del widget Bloc de notas",
 			"showToolbar": {
-				"label": ""
+				"label": "Muestra la barra de herramientas para ayudarte a escribir Markdown"
 			},
 			"content": {
-				"label": ""
+				"label": "El contenido del Bloc de notas"
 			}
 		}
 	}

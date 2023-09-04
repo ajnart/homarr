@@ -6,6 +6,13 @@
 	"key": "Genvejstast",
 	"action": "Handling",
 	"keybinds": "Genvejstaster",
+	"documentation": "Dokumentation",
+	"actions": {
+		"toggleTheme": "Slå lys/mørk tilstand til/fra",
+		"focusSearchBar": "Fokusér på søgebjælken",
+		"openDocker": "Åbn docker-widget",
+		"toggleEdit": "Skift redigeringstilstand"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurationsskema version",
 		"configurationsCount": "Tilgængelige konfigurationer",
@@ -14,5 +21,9 @@
 		"i18n": "Indlæste I18n-oversættelsesnavneområder",
 		"locales": "Konfigurerede I18n landestandarder",
 		"experimental_disableEditMode": "<b>EKSPERIMENTAL</b>: Deaktivér redigeringstilstand"
+	},
+	"version": {
+		"new": "Ny: {{newVersion}}",
+		"dropdown": "Version {{newVersion}} er tilgængelig! Den nuværende version er {{currentVersion}}"
 	}
 }

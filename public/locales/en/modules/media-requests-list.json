@@ -6,6 +6,9 @@
       "title": "Media requests list",
       "replaceLinksWithExternalHost": {
         "label": "Replace links with external host"
+      },
+      "openInNewTab": {
+        "label": "Open links in new tab"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Approve requests",
-    "decline": "Decline requests"
+    "decline": "Decline requests",
+    "approving": "Approving Request..."
+  },
+  "mutation": {
+    "approving": "Approving",
+    "declining": "Declining",
+    "request": "request...",
+    "approved": "Request was approved!",
+    "declined": "Request was declined!"
   }
 }
