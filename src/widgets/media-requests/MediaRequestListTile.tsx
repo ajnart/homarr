@@ -9,7 +9,7 @@ import {
   ScrollArea,
   Stack,
   Text,
-  Tooltip,
+  Tooltip, useMantineTheme,
 } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
@@ -103,6 +103,8 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   // Use mutation to approve or deny a pending request
   const decideAsync = useMediaRequestDecisionMutation();
 
+  const mantineTheme = useMantineTheme();
+
   if (!data || isLoading) {
     return <WidgetLoading />;
   }
@@ -155,7 +157,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                     {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
                     <MediaRequestStatusBadge status={item.status} />
                   </Group>
-                  <Anchor href={item.href}>
+                  <Anchor href={item.href} c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}>
                     {item.name}
                   </Anchor>
                 </Stack>
@@ -170,14 +172,13 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                     radius="xl"
                     withPlaceholder
                   />
-                  <Text
-                    component="a"
+                  <Anchor
                     href={item.userLink}
                     target={widget.properties.openInNewTab ? "_blank" : "_self"}
-                    sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
+                    c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
                   >
                     {item.userName}
-                  </Text>
+                  </Anchor>
                 </Flex>
 
                 {item.status === MediaRequestStatus.PendingApproval && (
