@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Rensa cache",
   "selector": {
-    "label": "",
+    "label": "Välj cache(n) att rensa",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Ping-förfrågningar",
+      "repositoryIcons": "Fjärr/lokala ikoner",
+      "calendar&medias": "Media från kalendern",
+      "weather": "Väderdata"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Cache rensad",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Rensa all cache",
+      "notificationMessage": "All cache har rensats"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Rensa valda frågor",
+      "notificationMessageSingle": "Cache för {{value}} har rensats",
+      "notificationMessageMulti": "Cache för {{values}} har rensats"
     }
   }
 }
