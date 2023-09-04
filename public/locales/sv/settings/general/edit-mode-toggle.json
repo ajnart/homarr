@@ -1,11 +1,11 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Växla till redigeringsläge",
+    "enable": "Aktivera redigeringsläge",
+    "disable": "Inaktivera redigeringsläge"
   },
   "form": {
-    "label": "",
+    "label": "Redigera lösenord",
     "message": "",
     "submit": "Skicka"
   },
