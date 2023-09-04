@@ -1,22 +1,22 @@
 {
   "menu": {
     "toggle": "Alternar modo edición",
-    "enable": "Activar modo edición",
-    "disable": "Desactivar modo edición"
+    "enable": "Habilitar el modo edición",
+    "disable": "Deshabilitar el modo edición"
   },
   "form": {
     "label": "Editar contraseña",
-    "message": "Para alternar a modo edición, necesitas introducir la contraseña que configuraste en la variable <Code>EDIT_MODE_PASSWORD</Code>. Si no está configurada, no podrás activar ni desactivar el modo edición.",
+    "message": "Para alternar el modo edición, debes introducir la contraseña que configuraste en la variable de entorno denominada <Code>EDIT_MODE_PASSWORD</Code>. Si no está configurada, no podrás habilitar y deshabilitar el modo edición.",
     "submit": "Aplicar"
   },
   "notification": {
     "success": {
-      "title": "Éxito",
-      "message": "Modo edición alternado con éxito, recargando página..."
+      "title": "Realizado correctamente",
+      "message": "Se cambió correctamente al modo edición, recargando la página..."
     },
     "error": {
       "title": "Error",
-      "message": "Error al alternar el modo edición, por favor, intenta de nuevo."
+      "message": "Error al cambiar al modo edición, por favor, inténtalo de nuevo."
     }
   }
 }
