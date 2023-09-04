@@ -1,24 +1,24 @@
 {
-  "title": "Limpieza de cache",
+  "title": "Limpieza de caché",
   "selector": {
-    "label": "Seleccionar la cache (o caches) a limpiar",
+    "label": "Seleccione la(s) caché(s) a limpiar",
     "data": {
-      "ping": "Consultas Ping",
+      "ping": "Consultas de ping",
       "repositoryIcons": "Iconos remotos/locales",
-      "calendar&medias": "",
+      "calendar&medias": "Multimedia desde el Calendario",
       "weather": "Datos meteorológicos"
     }
   },
   "buttons": {
-    "notificationTitle": "Cache limpiada",
+    "notificationTitle": "Caché limpiada",
     "clearAll": {
-      "text": "Limpiar todas las cache",
-      "notificationMessage": "Todas las caches han sido limpiado"
+      "text": "Limpiar todas las caché",
+      "notificationMessage": "Se han limpiado todas las caché"
     },
     "clearSelect": {
       "text": "Limpiar consultas seleccionadas",
-      "notificationMessageSingle": "La cache para {{value}} ha sido limpiada",
-      "notificationMessageMulti": "La cache para {{values}} ha sido limpiada"
+      "notificationMessageSingle": "Se ha limpiado la caché {{value}}",
+      "notificationMessageMulti": "Se ha limpiado la caché {{values}}"
     }
   }
 }

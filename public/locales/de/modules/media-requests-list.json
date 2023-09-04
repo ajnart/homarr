@@ -31,28 +31,5 @@
     "request": "Anfrage...",
     "approved": "Anfragen genehmigt!",
     "declined": "Anfrage abgelehnt!"
-  },
-  "detail": {
-    "label": "Statistiken für Nerds",
-    "id": "ID",
-    "device": "Gerät",
-    "video": {
-      "video": "Video",
-      "resolution": "Auflösung",
-      "framerate": "Framerate",
-      "codec": "Video-Codec"
-    },
-    "audio": {
-      "audio": "Audio",
-      "channels": "Audio Kanäle",
-      "codec": "Audio-Codec"
-    },
-    "transcoding": {
-      "transcoding": "Transkodierung",
-      "context": "Kontext",
-      "requested": "Angeforderte Hardware-Kodierung",
-      "source": "Quell-Codec",
-      "target": "Ziel-Codec"
-    }
   }
 }

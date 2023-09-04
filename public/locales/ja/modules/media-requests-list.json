@@ -31,28 +31,5 @@
     "request": "リクエスト...",
     "approved": "リクエストが承認されました！",
     "declined": "リクエストは拒否されました！"
-  },
-  "detail": {
-    "label": "詳細統計情報",
-    "id": "ID",
-    "device": "デバイス",
-    "video": {
-      "video": "ビデオ",
-      "resolution": "解像度",
-      "framerate": "フレームレート",
-      "codec": "ビデオコーデック"
-    },
-    "audio": {
-      "audio": "オーディオ",
-      "channels": "オーディオチャンネル",
-      "codec": "オーディオコーデック"
-    },
-    "transcoding": {
-      "transcoding": "トランスコーディング",
-      "context": "コンテキスト",
-      "requested": "ハードウェア・エンコード要求",
-      "source": "ソース・コーデック",
-      "target": "対象コーデック"
-    }
   }
 }

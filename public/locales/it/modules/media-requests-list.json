@@ -31,28 +31,5 @@
     "request": "richiesta...",
     "approved": "Richiesta approvata!",
     "declined": "Richiesta rifiutata!"
-  },
-  "detail": {
-    "label": "Statistiche per nerd",
-    "id": "ID",
-    "device": "Dispositivo",
-    "video": {
-      "video": "Video",
-      "resolution": "Risoluzione",
-      "framerate": "Framerate",
-      "codec": "Codec Video"
-    },
-    "audio": {
-      "audio": "Audio",
-      "channels": "Canali Audio",
-      "codec": "Codec audio"
-    },
-    "transcoding": {
-      "transcoding": "Transcodifica",
-      "context": "Contesto",
-      "requested": "Codifica Hardware Richiesta",
-      "source": "Sorgente Codec",
-      "target": "Codec di destinazione"
-    }
   }
 }

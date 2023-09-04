@@ -31,28 +31,5 @@
     "request": "kérés...",
     "approved": "A kérést jóváhagyták!",
     "declined": "A kérést elutasították!"
-  },
-  "detail": {
-    "label": "Statisztikák",
-    "id": "Azonosító",
-    "device": "Berendezés",
-    "video": {
-      "video": "Videó",
-      "resolution": "Felbontás",
-      "framerate": "Képkockasebesség",
-      "codec": "Videótömörítő"
-    },
-    "audio": {
-      "audio": "Hang",
-      "channels": "Hangsávok",
-      "codec": "Audiótömörítő"
-    },
-    "transcoding": {
-      "transcoding": "Transzkódolás",
-      "context": "Kontextus",
-      "requested": "Hardveres kódolás kérve",
-      "source": "Forrás Kódoló",
-      "target": "Cél kódoló"
-    }
   }
 }
