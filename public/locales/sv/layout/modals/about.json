@@ -6,7 +6,7 @@
 	"key": "Genvägstangent",
 	"action": "Åtgärd",
 	"keybinds": "Knapptilldelning",
-	"documentation": "",
+	"documentation": "Dokumentation",
 	"actions": {
 		"toggleTheme": "Växla mellan ljus- och mörkerläge",
 		"focusSearchBar": "Fokusera på sökruta",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Inaktivera redigeringsläge"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Ny: {{newVersion}}",
+		"dropdown": "Version {{newVersion}} är tillgänglig! Aktuell version är {{currentVersion}}"
 	}
 }
