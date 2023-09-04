@@ -8,20 +8,20 @@
         "label": "Αντικατάσταση συνδέσμων με εξωτερικό διακομιστή"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Άνοιγμα συνδέσμων σε νέα καρτέλα"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Στατιστικά Πολυμέσων",
+    "pending": "Εκκρεμείς εγκρίσεις",
+    "tvRequests": "Αιτήσεις TV",
+    "movieRequests": "Αιτήσεις ταινιών",
+    "approved": "Ήδη εγκεκριμένα",
+    "totalRequests": "Σύνολο"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Κορυφαίοι Χρήστες",
+    "requests": "Αιτήματα: {{number}}"
   }
 }
