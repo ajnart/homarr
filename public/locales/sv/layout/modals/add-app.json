@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Teckenstorlek för appnamn",
+			"description": "Ange teckenstorlek för när appens namn visas på rutan."
 		},
 		"appNameStatus": {
 			"label": "Status för appens namn",
