@@ -6,7 +6,7 @@
 	"key": "Πλήκτρο συντόμευσης",
 	"action": "Ενέργεια",
 	"keybinds": "Δεσμοί πλήκτρων",
-	"documentation": "",
+	"documentation": "Τεκμηρίωση",
 	"actions": {
 		"toggleTheme": "Αλλαγή φωτεινού / σκοτεινού θέματος",
 		"focusSearchBar": "Εστίαση στο πλαίσιο αναζήτησης",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>ΠΕΙΡΑΜΑΤΙΚΟ</b>: Απενεργοποίηση της λειτουργίας επεξεργασίας"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Νέα: {{newVersion}}",
+		"dropdown": "Η Έκδοση {{newVersion}} είναι διαθέσιμη! Η τρέχουσα έκδοση είναι {{currentVersion}}"
 	}
 }
