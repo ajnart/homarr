@@ -8,20 +8,20 @@
         "label": "Ersätt länkar med extern värd"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Öppna länkar i ny flik"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Mediestatistik",
+    "pending": "Väntar på godkännande",
+    "tvRequests": "TV-förfrågningar",
+    "movieRequests": "Filmförfrågningar",
+    "approved": "Redan godkänd",
+    "totalRequests": "Totalt"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Toppanvändare",
+    "requests": "Förfrågningar: {{number}}"
   }
 }
