@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Pridajte dlaždicu"
     },
-    "apps": "",
+    "apps": "Aplikácie",
     "app": {
-        "defaultName": ""
+        "defaultName": "Vaša aplikácia"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Miniaplikácie",
+    "categories": "Kategórie",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Názov novej kategórie",
+        "defaultName": "Nová Kategória",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Kategória vytvorená",
+            "message": "Bola vytvorená kategória \"{{name}}\""
         }
     }
 }
