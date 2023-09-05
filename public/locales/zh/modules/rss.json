@@ -16,7 +16,7 @@
         "info": "允许从外部进行HTML格式化可能是危险的。<br/>请确保订阅来自信任的来源。"
       },
       "textLinesClamp": {
-        "label": "文本线夹"
+        "label": "文字线条"
       }
     },
     "card": {
