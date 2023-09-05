@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Vyskytla sa neočakávaná chyba",
-        "text": ""
+        "text": "Nieje možné komunikovať s klientmi Torrent. Skontrolujte prosím svoju konfiguráciu"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Načítavanie",
+      "description": "Nadväzovanie spojenia..."
     },
     "popover": {
       "introductionPrefix": "Spravovaný",
