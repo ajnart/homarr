@@ -85,12 +85,12 @@
 	"integration": {
 		"type": {
 			"label": "集成配置",
-			"description": "集成配置将用于连接到您的应用程序。",
+			"description": "集成配置将用于连接到您的应用。",
 			"placeholder": "选择一个集成",
 			"defined": "已定义",
 			"undefined": "未定义",
-			"public": "公开的",
-			"private": "私有的",
+			"public": "公开",
+			"private": "私有",
 			"explanationPrivate": "私有密钥仅会被发送到服务器一次。一旦您的浏览器刷新了页面，它将永远不会再次发送。",
 			"explanationPublic": "公开的密钥将始终发送给客户端，并且可以通过API访问。它不应该包含任何机密值，如用户名、密码、令牌、证书等!"
 		},
