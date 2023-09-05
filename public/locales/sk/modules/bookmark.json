@@ -14,7 +14,7 @@
       "layout": {
         "label": "Rozloženie",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Automatická mriežka",
           "horizontal": "Horizontálne",
           "vertical": "Vertikálne"
         }
@@ -29,15 +29,15 @@
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Dĺžka musí byť medzi {{shortest}} a {{longest}}",
+      "invalidLink": "Neplatný odkaz",
+      "errorMsg": "Neuložil sa, pretože sa vyskytli chyby pri overovaní. Prosím, skontrolujte svoje vstupy"
     },
     "name": "Názov",
-    "url": "",
+    "url": "Adresa URL",
     "newTab": "Otvoriť na novej karte",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Skryť názov hostiteľa",
+    "hideIcon": "Skryť ikonu",
     "delete": "Vymazať"
   }
 }
