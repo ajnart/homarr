@@ -3,7 +3,7 @@
     "name": "日期和时间",
     "description": "显示当前的日期和时间。",
     "settings": {
-      "title": "设置日期和时间组件",
+      "title": "日期和时间组件设置",
       "display24HourFormat": {
         "label": "全时显示（24 小时）"
       },
