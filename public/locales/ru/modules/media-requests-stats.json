@@ -14,14 +14,14 @@
   },
   "mediaStats": {
     "title": "Статистика медиа",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
+    "pending": "Ожидающие утверждения",
+    "tvRequests": "Запросы сериалов",
+    "movieRequests": "Запросы фильмов",
+    "approved": "Уже одобрено",
     "totalRequests": "Всего"
   },
   "userStats": {
-    "title": "",
+    "title": "Топ пользователей",
     "requests": "Запросов: {{number}}"
   }
 }
