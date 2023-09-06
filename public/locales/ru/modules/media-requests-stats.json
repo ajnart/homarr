@@ -8,20 +8,20 @@
         "label": "Заменить ссылки на внешний хост"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Открывать ссылки в новых вкладках"
       }
     }
   },
   "mediaStats": {
-    "title": "",
+    "title": "Статистика медиа",
     "pending": "",
     "tvRequests": "",
     "movieRequests": "",
     "approved": "",
-    "totalRequests": ""
+    "totalRequests": "Всего"
   },
   "userStats": {
     "title": "",
-    "requests": ""
+    "requests": "Запросов: {{number}}"
   }
 }
