@@ -1,7 +1,7 @@
 const { z } = require('zod');
 const { createEnv } = require('@t3-oss/env-nextjs');
 
-const portSchema = z.string().regex(/\d*/).transform((value) => value === undefined ? undefined : Number(Number)).optional();
+const portSchema = z.string().regex(/\d*/).transform((value) => value === undefined ? undefined : Number(value)).optional();
 const envSchema = z.enum(['development', 'test', 'production']);
 
 const env = createEnv({
