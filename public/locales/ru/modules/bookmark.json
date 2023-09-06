@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "Длина строки должна быть между {{shortest}} и {{longest}} символами",
       "invalidLink": "",
       "errorMsg": ""
     },
