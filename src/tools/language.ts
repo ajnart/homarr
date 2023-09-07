@@ -13,7 +13,7 @@ export type Language = {
   locale: string;
 };
 
-export const languages: Language[] = [
+export const languages = [
   {
     shortName: 'de',
     originalName: 'Deutsch',
@@ -226,7 +226,8 @@ export const languages: Language[] = [
     emoji: '🇭🇺',
     locale: 'hu',
   },
-];
+] as const satisfies Readonly<Language[]>;
 
 export const getLanguageByCode = (code: string | null) =>
-  languages.find((language) => language.shortName === code) ?? languages[languages.length - 1];
+  languages.find((language) => language.shortName === code) ??
+  languages.find((x) => x.locale === 'en-gb')!;
