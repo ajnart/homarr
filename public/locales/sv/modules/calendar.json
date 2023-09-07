@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Dölj veckodagar"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Teckenstorlek",
         "data": {
