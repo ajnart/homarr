@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Skryť dni v týždni"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Veľkosť písma",
         "data": {
