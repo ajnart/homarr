@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "隐藏星期"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "字体大小",
         "data": {
