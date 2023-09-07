@@ -84,7 +84,7 @@
     "js-file-download": "^0.4.12",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
-    "next": "13.4.19",
+    "next": "13.4.12",
     "next-auth": "^4.22.3",
     "next-i18next": "^14.0.0",
     "nzbget-api": "^0.0.3",
