@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 import { generateDefaultApp } from '~/tools/shared/app';
+import { AppType } from '~/types/app';
 
-import { useConfigContext } from '../../../../../../config/provider';
-import { useConfigStore } from '../../../../../../config/store';
-import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
-import { AppType } from '../../../../../../types/app';
 import { CategoryEditModalInnerProps } from '../../../../Wrappers/Category/CategoryEditModal';
 import { useStyles } from '../Shared/styles';
 
@@ -34,12 +34,12 @@ export const AvailableElementTypes = ({
   const onClickCreateCategory = async () => {
     openContextModalGeneric<CategoryEditModalInnerProps>({
       modal: 'categoryEditModal',
-      title: 'Name of new category',
+      title: t('category.newName'),
       withCloseButton: false,
       innerProps: {
         category: {
           id: uuidv4(),
-          name: 'New category',
+          name: t('category.defaultName'),
           position: 0, // doesn't matter, is being overwritten
         },
         onSuccess: async (category) => {
@@ -66,8 +66,8 @@ export const AvailableElementTypes = ({
           })).then(() => {
             closeModal(modalId);
             showNotification({
-              title: 'Category created',
-              message: `The category ${category.name} has been created`,
+              title: t('category.created.title'),
+              message: t('category.created.message', { name: category.name }),
               color: 'teal',
             });
           });
@@ -82,13 +82,14 @@ export const AvailableElementTypes = ({
       <Space h="lg" />
       <Group spacing="md" grow>
         <ElementItem
-          name="Apps"
+          name={t('apps')}
           icon={<IconBox size={40} strokeWidth={1.3} />}
           onClick={() => {
             openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
               modal: 'editApp',
               innerProps: {
                 app: generateDefaultApp(getLowestWrapper()?.id ?? 'default'),
+                // TODO: Add translation? t('app.defaultName')
                 allowAppNamePropagation: true,
               },
               size: 'xl',
@@ -96,12 +97,12 @@ export const AvailableElementTypes = ({
           }}
         />
         <ElementItem
-          name="Widgets"
+          name={t('widgets')}
           icon={<IconStack size={40} strokeWidth={1.3} />}
           onClick={onOpenWidgets}
         />
         <ElementItem
-          name="Category"
+          name={t('categories')}
           icon={<IconBoxAlignTop size={40} strokeWidth={1.3} />}
           onClick={onClickCreateCategory}
         />

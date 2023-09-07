@@ -1,48 +1,13 @@
-import {
-  Box,
-  Button,
-  Card,
-  Flex,
-  Group,
-  PasswordInput,
-  Popover,
-  Progress,
-  Text,
-} from '@mantine/core';
+import { Button, Card, Flex, Group, PasswordInput, Popover } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import {
-  IconArrowLeft,
-  IconArrowRight,
-  IconCheck,
-  IconDice,
-  IconKey,
-  IconX,
-} from '@tabler/icons-react';
+import { IconArrowLeft, IconArrowRight, IconDice, IconKey } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { z } from 'zod';
+import { PasswordRequirements } from '~/components/Password/password-requirements';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
-import { minPasswordLength, passwordSchema } from '~/validations/user';
-
-const requirements = [
-  { re: /[0-9]/, label: 'number' },
-  { re: /[a-z]/, label: 'lowercase' },
-  { re: /[A-Z]/, label: 'uppercase' },
-  { re: /[$&+,:;=?@#|'<>.^*()%!-]/, label: 'special' },
-];
-
-function getStrength(password: string) {
-  let multiplier = password.length >= minPasswordLength ? 0 : 1;
-
-  requirements.forEach((requirement) => {
-    if (!requirement.re.test(password)) {
-      multiplier += 1;
-    }
-  });
-
-  return Math.max(100 - (100 / (requirements.length + 1)) * multiplier, 10);
-}
+import { passwordSchema } from '~/validations/user';
 
 interface CreateAccountSecurityStepProps {
   defaultPassword: string;
@@ -70,16 +35,6 @@ export const CreateAccountSecurityStep = ({
   const { mutateAsync, isLoading } = api.password.generate.useMutation();
 
   const [popoverOpened, setPopoverOpened] = useState(false);
-  const checks = requirements.map((requirement, index) => (
-    <PasswordRequirement
-      key={index}
-      label={requirement.label}
-      meets={requirement.re.test(form.values.password)}
-    />
-  ));
-
-  const strength = getStrength(form.values.password);
-  const color = strength === 100 ? 'teal' : strength > 50 ? 'yellow' : 'red';
 
   return (
     <Card mih={400}>
@@ -122,18 +77,13 @@ export const CreateAccountSecurityStep = ({
           </div>
         </Popover.Target>
         <Popover.Dropdown>
-          <Progress color={color} value={strength} size={5} mb="xs" />
-          <PasswordRequirement
-            label="length"
-            meets={form.values.password.length >= minPasswordLength}
-          />
-          {checks}
+          <PasswordRequirements value={form.values.password} />
         </Popover.Dropdown>
       </Popover>
 
       <Group position="apart" noWrap>
         <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
-          {t('buttons.previous')}
+          {t('common:previous')}
         </Button>
         <Button
           rightIcon={<IconArrowRight size="1rem" />}
@@ -146,30 +96,10 @@ export const CreateAccountSecurityStep = ({
           px="xl"
           disabled={!form.isValid()}
         >
-          {t('buttons.next')}
+          {t('common:next')}
         </Button>
       </Group>
     </Card>
-  );
-};
-
-const PasswordRequirement = ({ meets, label }: { meets: boolean; label: string }) => {
-  const { t } = useTranslation('manage/users/create');
-
-  return (
-    <Text
-      color={meets ? 'teal' : 'red'}
-      sx={{ display: 'flex', alignItems: 'center' }}
-      mt={7}
-      size="sm"
-    >
-      {meets ? <IconCheck size="0.9rem" /> : <IconX size="0.9rem" />}{' '}
-      <Box ml={10}>
-        {t(`steps.security.password.requirements.${label}`, {
-          count: minPasswordLength,
-        })}
-      </Box>
-    </Text>
   );
 };
 

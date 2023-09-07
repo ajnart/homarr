@@ -15,14 +15,7 @@
             "title": "Second step",
             "text": "Password",
             "password": {
-                "label": "Password",
-                "requirements": {
-                    "number": "Includes number",
-                    "lowercase": "Includes lowercase letter",
-                    "uppercase": "Includes uppercase letter",
-                    "special": "Includes special character",
-                    "length": "Includes at least {{count}} characters"
-                }
+                "label": "Password"
             }
         },
         "finish": {
@@ -42,7 +35,8 @@
                 },
                 "notSet": "Not set",
                 "valid": "Valid"
-            }
+            },
+            "failed": "User creation has failed: {{error}}"
         },
         "completed": {
             "alert": {
@@ -52,11 +46,7 @@
         }
     },
     "buttons": {
-        "next": "Next",
-        "previous": "Previous",
-        "confirm": "Confirm",
         "generateRandomPassword": "Generate random",
-        "createAnother": "Create another",
-        "goBack": "Go back to users"
+        "createAnother": "Create another"
     }
 }

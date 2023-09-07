@@ -12,9 +12,9 @@ import {
 import { IconAlertTriangle, IconMovie } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
-import { AppAvatar } from '../../components/AppAvatar';
-import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '../../config/provider';
+import { AppAvatar } from '~/components/AppAvatar';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useConfigContext } from '~/config/provider';
 import { useGetMediaServers } from './useGetMediaServers';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -42,7 +42,6 @@ interface MediaServerWidgetProps {
 function MediaServerTile({ widget }: MediaServerWidgetProps) {
   const { t } = useTranslation('modules/media-server');
   const { config } = useConfigContext();
-  const isEditMode = useEditModeStore((x) => x.enabled);
 
   const { data, isError, isFetching, isInitialLoading } = useGetMediaServers({
     enabled: config !== undefined,
@@ -72,7 +71,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
         <Loader />
         <Stack align="center" spacing={0}>
           <Text>{t('descriptor.name')}</Text>
-          <Text color="dimmed">Homarr is loading streams...</Text>
+          <Text color="dimmed">{t('descriptor.loading')}</Text>
         </Stack>
       </Stack>
     );

@@ -1,5 +1,7 @@
-import { Button, Card, Group, Table, Text, Title } from '@mantine/core';
+import { Alert, Button, Card, Group, Table, Text, Title } from '@mantine/core';
 import {
+  IconAlertTriangle,
+  IconAlertTriangleFilled,
   IconArrowLeft,
   IconCheck,
   IconInfoCircle,
@@ -21,7 +23,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
   const { t } = useTranslation('manage/users/create');
 
   const utils = api.useContext();
-  const { mutateAsync: createAsync, isLoading } = api.user.create.useMutation({
+  const { mutateAsync: createAsync, isLoading, isError, error } = api.user.create.useMutation({
     onSettled: () => {
       void utils.user.all.invalidate();
     },
@@ -87,9 +89,15 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
         </tbody>
       </Table>
 
+      {isError && (
+        <Alert color="red" icon={<IconAlertTriangleFilled size="0.9rem" />} mb="lg">
+          <Text color="red">{t('steps.finish.failed', { error: error.message })}</Text>
+        </Alert>
+      )}
+
       <Group position="apart" noWrap>
         <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
-          {t('buttons.previous')}
+          {t('common:previous')}
         </Button>
         <Button
           onClick={async () => {
@@ -104,7 +112,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
           variant="light"
           px="xl"
         >
-          {t('buttons.confirm')}
+          {t('common:confirm')}
         </Button>
       </Group>
     </Card>

@@ -19,13 +19,13 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
 import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
-import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { AppIntegrationType } from '../../types/app';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
+import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
+import { AppIntegrationType } from '~/types/app';
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { BitTorrrentQueueItem } from './TorrentQueueItem';
+import { BitTorrentQueueItem } from './TorrentQueueItem';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -108,7 +108,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
         <Loader />
         <Stack align="center" spacing={0}>
           <Text>{t('card.loading.title')}</Text>
-          <Text color="dimmed">Homarr is establishing a connection...</Text>
+          <Text color="dimmed">{t('card.loading.description')}</Text>
         </Stack>
       </Stack>
     );
@@ -156,7 +156,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
           </thead>
           <tbody>
             {filteredTorrents.map((torrent, index) => (
-              <BitTorrrentQueueItem key={index} torrent={torrent} width={width} app={undefined} />
+              <BitTorrentQueueItem key={index} torrent={torrent} width={width} app={undefined} />
             ))}
 
             {filteredTorrents.length !== torrents.length && (

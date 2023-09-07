@@ -1,23 +1,30 @@
 import { Alert, Stack, Title } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
+import Consola from 'consola';
 import { ContainerInfo } from 'dockerode';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import ContainerActionBar from '~/components/Manage/Tools/Docker/ContainerActionBar';
 import ContainerTable from '~/components/Manage/Tools/Docker/ContainerTable';
+import { useState } from 'react';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
-import { env } from '~/env';
+import { dockerRouter } from '~/server/api/routers/docker/router';
 import { getServerAuthSession } from '~/server/auth';
+import { prisma } from '~/server/db';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
 export default function DockerPage({
+  initialContainers,
   dockerIsConfigured,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [selection, setSelection] = useState<ContainerInfo[]>([]);
   const { data, refetch, isRefetching } = api.docker.containers.useQuery(undefined, {
+    initialData: initialContainers,
+    cacheTime: 60 * 1000 * 5,
+    staleTime: 60 * 1000 * 1,
     enabled: dockerIsConfigured,
   });
 
@@ -50,8 +57,6 @@ export default function DockerPage({
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, req, res }) => {
-  const dockerIsConfigured = env.DOCKER_HOST !== undefined;
-
   const session = await getServerAuthSession({ req, res });
   if (!session?.user.isAdmin) {
     return {
@@ -59,15 +64,36 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
     };
   }
 
+  const caller = dockerRouter.createCaller({
+    session: session,
+    cookies: req.cookies,
+    prisma: prisma,
+  });
+
   const translations = await getServerSideTranslations(
     [...boardNamespaces, 'layout/manage', 'tools/docker'],
     locale,
     req,
     res
   );
+
+  let containers = [];
+  try {
+    containers = await caller.containers();
+  } catch (error) {
+    Consola.error(`The docker integration failed with the following error: ${error}`);
+    return {
+      props: {
+        dockerIsConfigured: false,
+        ...translations,
+      },
+    };
+  }
+
   return {
     props: {
-      dockerIsConfigured: dockerIsConfigured,
+      initialContainers: containers,
+      dockerIsConfigured: true,
       ...translations,
     },
   };

@@ -1,9 +1,9 @@
 import { GridItemHTMLElement, GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
 
-import { AppType } from '../../../../types/app';
-import { ShapeType } from '../../../../types/shape';
-import { IWidget } from '../../../../widgets/widgets';
+import { AppType } from '~/types/app';
+import { ShapeType } from '~/types/shape';
+import { IWidget } from '~/widgets/widgets';
 
 export const initializeGridstack = (
   areaType: 'wrapper' | 'category' | 'sidebar',

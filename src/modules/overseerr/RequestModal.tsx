@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
-import { useColorTheme } from '../../tools/color';
+import { useColorTheme } from '~/tools/color';
 import { MovieResult } from './Movie.d';
 import { Result } from './SearchResult';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';

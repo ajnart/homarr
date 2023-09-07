@@ -86,7 +86,7 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=ref,event=pr
-            type=raw,value=${{ github.event.inputs.tag }}, prefix=test-,enable=${{ github.event.inputs.tag != '' }}
+            type=raw,value=${{ github.event.inputs.tag }},enable=${{ github.event.inputs.tag != '' }}
             tpye=raw,value=dev,priority=1,enable=${{ github.event.inputs.tag == '' }}
 
       - name: Set up QEMU
@@ -114,43 +114,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-  analyze:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      
-      - uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Restore next build
-        uses: actions/cache@v3
-        id: restore-build-cache
-        env:
-          cache-name: cache-next-build
-        with:
-          # if you use a custom build directory, replace all instances of `.next` in this file with your build directory
-          # ex: if your app builds to `dist`, replace `.next` with `dist`
-          path: .next/cache
-          # change this if you prefer a more strict cache
-          key: ${{ runner.os }}-build-${{ env.cache-name }}
-
-      - run: yarn install
-
-      - name: Build next.js app
-        # change this if your site requires a custom build command
-        run: yarn turbo build
+          network: host

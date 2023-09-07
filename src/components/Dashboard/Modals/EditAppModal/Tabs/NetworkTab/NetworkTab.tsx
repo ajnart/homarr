@@ -2,8 +2,8 @@ import { MultiSelect, Stack, Switch, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 
-import { StatusCodes } from '../../../../../../tools/acceptableStatusCodes';
-import { AppType } from '../../../../../../types/app';
+import { StatusCodes } from '~/tools/acceptableStatusCodes';
+import { AppType } from '~/types/app';
 
 interface NetworkTabProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;

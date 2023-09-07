@@ -3,7 +3,7 @@ import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-import { AppType } from '../../../../types/app';
+import { AppType } from '~/types/app';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';

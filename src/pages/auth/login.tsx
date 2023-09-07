@@ -1,4 +1,5 @@
 import {
+  ActionIcon,
   Alert,
   Button,
   Card,
@@ -24,6 +25,7 @@ import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signInSchema } from '~/validations/user';
+import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 
 export default function LoginPage() {
   const { t } = useTranslation('authentication/login');
@@ -66,6 +68,7 @@ export default function LoginPage() {
 
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <FloatingBackground />
+        <ThemeSchemeToggle pos="absolute" top={20} right={20}/>
         <Stack spacing={40} align="center" w="100%">
           <Stack spacing={0} align="center">
             <Image src="/imgs/logo/logo.svg" width={80} height={80} alt="" />
@@ -114,7 +117,7 @@ export default function LoginPage() {
                   {...form.getInputProps('password')}
                 />
 
-                <Button variant="light" fullWidth type="submit" mt="md" loading={isLoading}>
+                <Button mt="xs" variant="light" fullWidth type="submit" loading={isLoading}>
                   {t('form.buttons.submit')}
                 </Button>
               </Stack>

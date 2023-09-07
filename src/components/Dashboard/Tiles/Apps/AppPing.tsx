@@ -6,8 +6,8 @@ import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { RouterOutputs, api } from '~/utils/api';
 
-import { useConfigContext } from '../../../../config/provider';
-import { AppType } from '../../../../types/app';
+import { useConfigContext } from '~/config/provider';
+import { AppType } from '~/types/app';
 
 interface AppPingProps {
   app: AppType;

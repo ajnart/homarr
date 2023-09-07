@@ -4,8 +4,10 @@ import { Notifications } from '@mantine/notifications';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Consola from 'consola';
 import { getCookie, setCookie } from 'cookies-next';
+import dayjs from 'dayjs';
+import locale from 'dayjs/plugin/localeData';
+import utc from 'dayjs/plugin/utc';
 import 'flag-icons/css/flag-icons.min.css';
-import moment from 'moment-timezone';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
 import { SessionProvider, getSession } from 'next-auth/react';
@@ -24,15 +26,18 @@ import { colorSchemeParser } from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
-import { ConfigProvider } from '../config/provider';
+import { ConfigProvider } from '~/config/provider';
 import '../styles/global.scss';
-import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
-import { ColorTheme } from '../tools/color';
+import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
+import { ColorTheme } from '~/tools/color';
 import {
   ServerSidePackageAttributesType,
   getServiceSidePackageAttributes,
-} from '../tools/server/getPackageVersion';
-import { theme } from '../tools/server/theme/theme';
+} from '~/tools/server/getPackageVersion';
+import { theme } from '~/tools/server/theme/theme';
+
+dayjs.extend(locale);
+dayjs.extend(utc);
 
 function App(
   this: any,
@@ -52,9 +57,9 @@ function App(
 ) {
   const { Component, pageProps } = props;
   // TODO: make mapping from our locales to moment locales
-  const language = getLanguageByCode(pageProps.locale);
-  require('moment/locale/' + language.momentLocale);
-  moment.locale(language.momentLocale);
+  const language = getLanguageByCode(pageProps.session?.user?.language ?? 'en');
+  require(`dayjs/locale/${language.locale}.js`);
+  dayjs.locale(language.locale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
     props.pageProps.primaryColor ?? 'red'

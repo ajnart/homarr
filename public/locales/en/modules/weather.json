@@ -32,5 +32,6 @@
       "thunderstormWithHail": "Thunderstorm with hail",
       "unknown": "Unknown"
     }
-  }
+  },
+  "error": "An error occured"
 }

@@ -1,4 +1,14 @@
-import { Button, Card, Flex, PasswordInput, Stack, Text, TextInput, Title } from '@mantine/core';
+import {
+  Button,
+  Card,
+  Flex,
+  PasswordInput,
+  Popover,
+  Stack,
+  Text,
+  TextInput,
+  Title,
+} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconCheck, IconX } from '@tabler/icons-react';
@@ -9,6 +19,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
+import { PasswordRequirements } from '~/components/Password/password-requirements';
+import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
+import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -23,13 +36,18 @@ export default function AuthInvitePage() {
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();
   const query = router.query as { token: string };
-  const { mutateAsync } = api.user.createFromInvite.useMutation();
+  const { mutateAsync, isError } = api.user.createFromInvite.useMutation();
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof signUpFormSchema>>({
     validateInputOnChange: true,
     validateInputOnBlur: true,
     validate: i18nZodResolver(signUpFormSchema),
+    initialValues: {
+      username: '',
+      password: '',
+      passwordConfirmation: '',
+    },
   });
 
   const handleSubmit = (values: z.infer<typeof signUpFormSchema>) => {
@@ -68,11 +86,11 @@ export default function AuthInvitePage() {
             router.push('/manage');
           });
         },
-        onError() {
+        onError(error) {
           updateNotification({
             id: notificationId,
             title: t('notifications.error.title'),
-            message: t('notifications.error.text'),
+            message: t('notifications.error.text', { error: error.message }),
             color: 'red',
             icon: <IconX />,
           });
@@ -90,6 +108,8 @@ export default function AuthInvitePage() {
       </Head>
 
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
+        <FloatingBackground />
+        <ThemeSchemeToggle pos="absolute" top={20} right={20} />
         <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
           <Title align="center" weight={900}>
             {t('title')}
@@ -107,13 +127,20 @@ export default function AuthInvitePage() {
                 withAsterisk
                 {...form.getInputProps('username')}
               />
-
               <PasswordInput
                 variant="filled"
                 label={t('form.fields.password.label')}
                 withAsterisk
                 {...form.getInputProps('password')}
               />
+              <Card
+                withBorder
+                style={{
+                  display: form.isValid('password') ? 'none' : 'block',
+                }}
+              >
+                <PasswordRequirements value={form.values.password} />
+              </Card>
 
               <PasswordInput
                 variant="filled"
@@ -122,7 +149,7 @@ export default function AuthInvitePage() {
                 {...form.getInputProps('passwordConfirmation')}
               />
 
-              <Button fullWidth type="submit" loading={isLoading}>
+              <Button fullWidth type="submit" disabled={!form.isValid()} loading={isLoading}>
                 {t('form.buttons.submit')}
               </Button>
             </Stack>
@@ -182,7 +209,12 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   return {
     props: {
-      ...(await getServerSideTranslations(['authentication/invite'], locale, req, res)),
+      ...(await getServerSideTranslations(
+        ['authentication/invite', 'password-requirements'],
+        locale,
+        req,
+        res
+      )),
     },
   };
 };

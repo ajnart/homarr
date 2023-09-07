@@ -1,9 +1,9 @@
 import { Avatar, Collapse, Flex, Text, createStyles } from '@mantine/core';
 import { useState } from 'react';
 
-import { AppAvatar } from '../../components/AppAvatar';
-import { GenericSessionInfo } from '../../types/api/media-server/session-info';
-import { AppType } from '../../types/app';
+import { AppAvatar } from '~/components/AppAvatar';
+import { GenericSessionInfo } from '~/types/api/media-server/session-info';
+import { AppType } from '~/types/app';
 import { DetailCollapseable } from './DetailCollapseable';
 import { NowPlayingDisplay } from './NowPlayingDisplay';
 

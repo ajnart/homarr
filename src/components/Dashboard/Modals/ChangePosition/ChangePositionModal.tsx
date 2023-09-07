@@ -2,7 +2,7 @@ import { Button, Flex, Grid, NumberInput, Select, SelectItem } from '@mantine/co
 import { useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 
-import { useConfigContext } from '../../../../config/provider';
+import { useConfigContext } from '~/config/provider';
 
 interface ChangePositionModalProps {
   initialX?: number;

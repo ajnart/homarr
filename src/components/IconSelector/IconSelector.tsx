@@ -17,7 +17,7 @@ import { useTranslation } from 'next-i18next';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 import { api } from '~/utils/api';
 
-import { humanFileSize } from '../../tools/humanFileSize';
+import { humanFileSize } from '~/tools/humanFileSize';
 import { DebouncedImage } from './DebouncedImage';
 
 export const IconSelector = forwardRef(

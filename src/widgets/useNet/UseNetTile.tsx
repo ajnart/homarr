@@ -7,10 +7,10 @@ import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
-import { useConfigContext } from '../../config/provider';
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
-import { humanFileSize } from '../../tools/humanFileSize';
-import { AppIntegrationType } from '../../types/app';
+import { useConfigContext } from '~/config/provider';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
+import { humanFileSize } from '~/tools/humanFileSize';
+import { AppIntegrationType } from '~/types/app';
 import {
   useGetUsenetInfo,
   usePauseUsenetQueueMutation,

@@ -8,7 +8,7 @@ import {
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
-} from '../../../../../../../../types/app';
+} from '~/types/app';
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
 
 interface IntegrationOptionsRendererProps {

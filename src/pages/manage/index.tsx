@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   Title,
+  Image,
   UnstyledButton,
   createStyles,
 } from '@mantine/core';
@@ -14,7 +15,6 @@ import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';

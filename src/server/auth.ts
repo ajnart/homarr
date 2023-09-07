@@ -4,6 +4,7 @@ import Consola from 'consola';
 import Cookies from 'cookies';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
 import { type DefaultSession, type NextAuthOptions, getServerSession } from 'next-auth';
+import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
 import Credentials from 'next-auth/providers/credentials';
 import { prisma } from '~/server/db';
@@ -97,6 +98,11 @@ export const constructAuthOptions = (
       const sessionToken = generateSessionToken();
       const sessionExpiry = fromDate(sessionMaxAgeInSeconds);
 
+      // https://github.com/nextauthjs/next-auth/issues/6106
+      if (!adapter?.createSession) {
+        return false;
+      }
+
       await adapter.createSession({
         sessionToken: sessionToken,
         userId: user.id,
@@ -151,15 +157,15 @@ export const constructAuthOptions = (
           return null;
         }
 
-        Consola.log(`user ${user.id} is trying to log in. checking password...`);
+        Consola.log(`user ${user.name} is trying to log in. checking password...`);
         const isValidPassword = await bcrypt.compare(data.password, user.password);
 
         if (!isValidPassword) {
-          Consola.log(`password for user ${user.id} was incorrect`);
+          Consola.log(`password for user ${user.name} was incorrect`);
           return null;
         }
 
-        Consola.log(`user ${user.id} successfully authorized`);
+        Consola.log(`user ${user.name} successfully authorized`);
 
         return {
           id: user.id,

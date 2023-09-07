@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { trimStringEnding } from '../../../shared/strings';
+import { trimStringEnding } from '~/tools/shared/strings';
 import {
   adGuardApiFilteringStatusSchema,
   adGuardApiStatsResponseSchema,

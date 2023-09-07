@@ -10,7 +10,7 @@ import { BackendConfigType, ConfigType } from '~/types/config';
 import { boardCustomizationSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
-import { getConfig } from '../../../tools/config/getConfig';
+import { getConfig } from '~/tools/config/getConfig';
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);

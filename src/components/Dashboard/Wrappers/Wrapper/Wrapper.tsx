@@ -1,4 +1,4 @@
-import { WrapperType } from '../../../../types/wrapper';
+import { WrapperType } from '~/types/wrapper';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { WrapperContent } from '../WrapperContent';
 import { useGridstack } from '../gridstack/use-gridstack';

@@ -56,7 +56,7 @@ const handleTooSmallError = (issue: ZodTooSmallIssue, ctx: ErrorMapCtx) => {
   }
 
   return {
-    key: `errors.too_small.${issue.type}`,
+    key: `errors.tooSmall.${issue.type}`,
     params: {
       minimum: issue.minimum,
       count: issue.minimum,
@@ -72,7 +72,7 @@ const handleTooBigError = (issue: ZodTooBigIssue, ctx: ErrorMapCtx) => {
   }
 
   return {
-    key: `errors.too_big.${issue.type}`,
+    key: `errors.tooBig.${issue.type}`,
     params: {
       maximum: issue.maximum,
       count: issue.maximum,

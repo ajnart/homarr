@@ -3,12 +3,13 @@ import {
   Icon,
   IconDeviceTv,
   IconHeadphones,
+  IconMovie,
   IconQuestionMark,
   IconVideo,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
-import { GenericSessionInfo } from '../../types/api/media-server/session-info';
+import { GenericSessionInfo } from '~/types/api/media-server/session-info';
 
 export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) => {
   const { t } = useTranslation();
@@ -23,6 +24,8 @@ export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) 
         return IconHeadphones;
       case 'tv':
         return IconDeviceTv;
+      case 'movie':
+        return IconMovie;
       case 'video':
         return IconVideo;
       default:

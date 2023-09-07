@@ -13,7 +13,7 @@ import {
   createStyles,
   useMantineTheme,
 } from '@mantine/core';
-import { useDisclosure, useElementSize } from '@mantine/hooks';
+import { useDisclosure } from '@mantine/hooks';
 import {
   IconAffiliate,
   IconDatabase,
@@ -27,9 +27,9 @@ import {
 import { useTranslation } from 'next-i18next';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 
-import { calculateETA } from '../../tools/client/calculateEta';
-import { humanFileSize } from '../../tools/humanFileSize';
-import { AppType } from '../../types/app';
+import { calculateETA } from '~/tools/client/calculateEta';
+import { humanFileSize } from '~/tools/humanFileSize';
+import { AppType } from '~/types/app';
 
 interface TorrentQueueItemProps {
   torrent: NormalizedTorrent;
@@ -37,9 +37,8 @@ interface TorrentQueueItemProps {
   width: number;
 }
 
-export const BitTorrrentQueueItem = ({ torrent, width, app }: TorrentQueueItemProps) => {
+export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemProps) => {
   const [popoverOpened, { open: openPopover, close: closePopover }] = useDisclosure(false);
-  const theme = useMantineTheme();
   const { classes } = useStyles();
   const { t } = useTranslation('modules/torrents-status');
 

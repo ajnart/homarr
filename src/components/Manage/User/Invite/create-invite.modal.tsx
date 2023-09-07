@@ -43,8 +43,8 @@ export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
         minDate={minDate}
         maxDate={maxDate}
         withAsterisk
-        valueFormat="DD MMM YYYY hh:mm A"
-        label={t('modals.create.form.expires.label')}
+        valueFormat="DD MMM YYYY HH:mm"
+        label={t('modals.create.form.expires')}
         variant="filled"
         {...form.getInputProps('expirationDate')}
       />
