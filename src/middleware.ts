@@ -26,7 +26,14 @@ export function middleware(req: NextRequest) {
   // If the password is not correct, redirect to the login page
   if (!isCorrectPassword && process.env.PASSWORD) {
     url.pathname = '/login';
-    return NextResponse.rewrite(url);
+
+    /*//--- nextjs doesn't use X-Forwarded yet, if we need to update the dependency, add this code
+    url.host = req.headers.get('X-Forwarded-Host')?? url.host;
+    url.port = req.headers.get('X-Forwarded-Port')?? url.port;
+    url.protocol = req.headers.get('X-Forwarded-Proto')?? url.protocol;
+    //---*/
+
+    return NextResponse.redirect(url);
   }
   return NextResponse.next();
 }
