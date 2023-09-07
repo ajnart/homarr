@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Haftanın günlerini gizle"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Font Boyutu",
         "data": {
