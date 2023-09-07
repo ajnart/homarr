@@ -22,7 +22,7 @@
         "label": "Dölj veckodagar"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Visa oövervakade objekt"
       },
       "fontSize": {
         "label": "Teckenstorlek",
