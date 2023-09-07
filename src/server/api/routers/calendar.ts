@@ -16,6 +16,7 @@ export const calendarRouter = createTRPCRouter({
         year: z.number().min(1900).max(2300),
         options: z.object({
           useSonarrv4: z.boolean().optional().default(false),
+          showUnmonitored: z.boolean().optional().default(false),
         }),
       })
     )
@@ -64,7 +65,9 @@ export const calendarRouter = createTRPCRouter({
         if (!apiKey) return { type: integration.type, items: [], success: false };
         return axios
           .get(
-            `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}&includeSeries=true&includeEpisodeFile=true&includeEpisodeImages=true`
+            `${origin}${endpoint}?apiKey=${apiKey}&end=${end.toISOString()}&start=${start.toISOString()}&includeSeries=true&includeEpisodeFile=true&includeEpisodeImages=true&&unmonitored=${
+              input.options.showUnmonitored
+            }`
           )
           .then((x) => ({ type: integration.type, items: x.data as any[], success: true }))
           .catch((err) => {

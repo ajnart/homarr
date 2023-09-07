@@ -22,6 +22,10 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    showUnmonitored: {
+      type: 'switch',
+      defaultValue: false,
+    },
     useSonarrv4: {
       type: 'switch',
       defaultValue: false,
@@ -81,7 +85,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       configName: configName!,
       month: month.getMonth() + 1,
       year: month.getFullYear(),
-      options: { useSonarrv4: widget.properties.useSonarrv4 },
+      options: { useSonarrv4: widget.properties.useSonarrv4, showUnmonitored: widget.properties.showUnmonitored },
     },
     {
       staleTime: 1000 * 60 * 60 * 5,
