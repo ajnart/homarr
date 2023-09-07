@@ -22,7 +22,7 @@
         "label": "Skjul ugedage"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Vis uovervågede elementer"
       },
       "fontSize": {
         "label": "Skriftstørrelse",
