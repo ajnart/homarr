@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Απόκρυψη εργάσιμων"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Μέγεθος γραμματοσειράς",
         "data": {
