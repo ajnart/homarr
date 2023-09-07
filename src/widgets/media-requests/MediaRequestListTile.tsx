@@ -157,7 +157,11 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                     {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
                     <MediaRequestStatusBadge status={item.status} />
                   </Group>
-                  <Anchor href={item.href} c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}>
+                  <Anchor
+                    href={item.href}
+                    target={widget.properties.openInNewTab ? "_blank" : "_self"}
+                    c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
+                    >
                     {item.name}
                   </Anchor>
                 </Stack>
