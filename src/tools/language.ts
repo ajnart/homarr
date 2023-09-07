@@ -93,6 +93,7 @@ export const languages = [
     originalName: 'LOLCAT',
     translatedName: 'LOLCAT',
     emoji: '🐱',
+    country: 'LOL',
     locale: 'en-gb',
   },
   // Norwegian
@@ -224,6 +225,7 @@ export const languages = [
     originalName: 'Magyar',
     translatedName: 'Hungarian',
     emoji: '🇭🇺',
+    country: 'HU',
     locale: 'hu',
   },
 ] as const satisfies Readonly<Language[]>;
