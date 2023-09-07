@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Wochentage ausblenden"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Schriftgröße",
         "data": {
