@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Paslēpt darba dienas"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Fonta Izmērs",
         "data": {
