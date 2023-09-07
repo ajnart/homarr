@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Nascondi giorni della settimana"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Dimensioni carattere",
         "data": {
