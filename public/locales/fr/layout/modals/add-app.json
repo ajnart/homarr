@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Taille de police du nom de l'application",
+			"description": "Définir la taille de la police lorsque le nom de l'application est affiché sur la tuile."
 		},
 		"appNameStatus": {
 			"label": "Status du nom de l'application",
