@@ -22,7 +22,7 @@
         "label": "Masquer les jours de la semaine"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Afficher les éléments non surveillés"
       },
       "fontSize": {
         "label": "Taille de la police",
