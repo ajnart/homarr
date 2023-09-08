@@ -16,7 +16,7 @@
       "notificationMessage": "已清除所有缓存"
     },
     "clearSelect": {
-      "text": "清除所选查询",
+      "text": "清除所选缓存",
       "notificationMessageSingle": "{{value}} 的缓存已清除",
       "notificationMessageMulti": "{{values}} 的缓存已清除"
     }

@@ -39,7 +39,7 @@
         "title": "Neplatná URL",
         "text": "Skontrolujte, či ste v konfigurácii mini aplikácie zadali platnú adresu"
       },
-      "browserSupport": ""
+      "browserSupport": "Váš prehliadač nepodporuje iframe. Aktualizujte svoj prehliadač."
     }
   }
 }

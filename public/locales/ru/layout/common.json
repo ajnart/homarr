@@ -18,8 +18,8 @@
   "menu": {
     "moveUp": "Переместить вверх",
     "moveDown": "Переместить вниз",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "addCategory": "Добавить категорию {{location}}",
+    "addAbove": "выше",
+    "addBelow": "ниже"
   }
 }

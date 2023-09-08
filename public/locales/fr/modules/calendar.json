@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Masquer les jours de la semaine"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Taille de la police",
         "data": {

@@ -13,7 +13,7 @@
     }
   },
   "noRequests": "未找到请求。请确保您已正确配置您的应用。",
-  "pending": "有 {{countPendingApproval}} 个请求等待审批。",
+  "pending": "有 {{countPendingApproval}} 个请求等待批准。",
   "nonePending": "目前没有待批准的项目。静待媒体更新!",
   "state": {
     "approved": "已批准",
@@ -27,7 +27,7 @@
   },
   "mutation": {
     "approving": "正在批准",
-    "declining": "下降",
+    "declining": "拒绝中",
     "request": "请求...",
     "approved": "请求被批准！",
     "declined": "请求被拒绝！"

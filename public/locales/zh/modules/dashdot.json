@@ -3,7 +3,7 @@
     "name": "Dash.",
     "description": "在 Homarr 中显示一个外部 Dash. 的图表。",
     "settings": {
-      "title": "设置 Dash. 组件",
+      "title": "Dash. 组件设置",
       "dashName": {
         "label": "Dash. 名称"
       },

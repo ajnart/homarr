@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Sakri dane u tjednu"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Veličina fonta",
         "data": {

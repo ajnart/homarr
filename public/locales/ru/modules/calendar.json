@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Скрыть дни недели"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Размер шрифта",
         "data": {

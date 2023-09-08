@@ -6,24 +6,24 @@
 	"key": "Klávesová skratka",
 	"action": "Akcia",
 	"keybinds": "Kľúčové väzby",
-	"documentation": "",
+	"documentation": "Dokumentácia",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Prepínanie režimu svetlo/tma",
+		"focusSearchBar": "Zameranie na vyhľadávací panel",
+		"openDocker": "Otvoriť docker Widget",
+		"toggleEdit": "Prepnutie režimu úprav"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Verzia konfiguračnej schémy",
 		"configurationsCount": "Dostupné konfigurácie",
-		"version": "Verzia",
+		"version": "verzia",
 		"nodeEnvironment": "Node prostredie",
 		"i18n": "Načítané prekladové priestory I18n",
 		"locales": "Nakonfigurované lokality I18n",
 		"experimental_disableEditMode": "<b>EXPERIMENTÁLNE</b>: Zakázanie režimu úprav"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Novinka: {{newVersion}}",
+		"dropdown": "Verzia {{newVersion}} je k dispozícii! Aktuálna verzia je {{currentVersion}}"
 	}
 }
