@@ -22,7 +22,7 @@
         "label": "隐藏星期"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "显示未监视项目"
       },
       "fontSize": {
         "label": "字体大小",
