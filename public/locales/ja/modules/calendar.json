@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "平日を隠す"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "文字サイズ",
         "data": {

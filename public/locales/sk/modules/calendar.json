@@ -13,22 +13,25 @@
       "radarrReleaseType": {
         "label": "Typ Radarr releasu",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "V kinách",
+          "physicalRelease": "Fyzický",
+          "digitalRelease": "Digitálny"
         }
       },
       "hideWeekDays": {
         "label": "Skryť dni v týždni"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Veľkosť písma",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Extra malé",
+          "sm": "Malé",
+          "md": "Stredné",
+          "lg": "Veľké",
+          "xl": "Extra veľké"
         }
       }
     }

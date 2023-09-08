@@ -6,7 +6,7 @@
 	"key": "Горячие клавиши",
 	"action": "Действие",
 	"keybinds": "Сочетания клавиш",
-	"documentation": "",
+	"documentation": "Документация",
 	"actions": {
 		"toggleTheme": "Переключить светлую/темную тему",
 		"focusSearchBar": "Перейти в панель поиска",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>ЭКСПЕРИМЕНТАЛЬНЫЙ</b>: Отключить режим редактирования"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Новая: {{newVersion}}",
+		"dropdown": "Версия {{newVersion}} уже доступна! Текущая версия: {{currentVersion}}"
 	}
 }

@@ -8,20 +8,20 @@
         "label": "Заменить ссылки на внешний хост"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Открывать ссылки в новых вкладках"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Статистика медиа",
+    "pending": "Ожидающие утверждения",
+    "tvRequests": "Запросы сериалов",
+    "movieRequests": "Запросы фильмов",
+    "approved": "Уже одобрено",
+    "totalRequests": "Всего"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Топ пользователей",
+    "requests": "Запросов: {{number}}"
   }
 }

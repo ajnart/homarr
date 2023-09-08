@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Skjul ugedage"
       },
+      "showUnmonitored": {
+        "label": "Vis uovervågede elementer"
+      },
       "fontSize": {
         "label": "Skriftstørrelse",
         "data": {

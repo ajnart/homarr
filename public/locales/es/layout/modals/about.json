@@ -18,8 +18,8 @@
 		"configurationsCount": "Configuraciones disponibles",
 		"version": "Versión",
 		"nodeEnvironment": "Entorno del nodo",
-		"i18n": "I18n espacios de nombres de traducción cargados",
-		"locales": "I18n locales configurados",
+		"i18n": "Espacios de nombres de traducción cargados",
+		"locales": "Configuraciones regionales",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desactivar modo edición"
 	},
 	"version": {

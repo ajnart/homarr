@@ -8,20 +8,20 @@
         "label": "Nahradiť odkazy s externým hostiteľom"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otvorenie odkazov v novej karte"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Štatistiky médií",
+    "pending": "Čakajúce na schválenie",
+    "tvRequests": "TV požiadavky",
+    "movieRequests": "Filmové požiadavky",
+    "approved": "Už schválené",
+    "totalRequests": "Celkom"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Najlepší používatelia",
+    "requests": "Požiadavky: {{number}}"
   }
 }

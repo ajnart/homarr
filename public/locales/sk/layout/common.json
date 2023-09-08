@@ -16,10 +16,10 @@
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Posunúť nahor",
+    "moveDown": "Posunúť nadol",
+    "addCategory": "Pridať kategóriu {{location}}",
+    "addAbove": "nad",
+    "addBelow": "pod"
   }
 }

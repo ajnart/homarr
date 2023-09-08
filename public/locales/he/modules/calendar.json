@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "הסתר ימי שבוע"
       },
+      "showUnmonitored": {
+        "label": "הצג פריטים ללא פיקוח"
+      },
       "fontSize": {
         "label": "גודל גופן",
         "data": {

@@ -21,6 +21,9 @@
       "hideWeekDays": {
         "label": "Hétköznapok elrejtése"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
         "label": "Betűméret",
         "data": {
