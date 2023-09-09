@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Monter",
     "moveDown": "Descendre",
-    "addCategory": "Ajouter la catégorie {{location}}",
+    "addCategory": "Ajouter une catégorie {{location}}",
     "addAbove": "au-dessus",
     "addBelow": "en dessous"
   }
