@@ -26,8 +26,8 @@
       "freezingRain": "Lluvia helada",
       "snowFall": "Nevada",
       "snowGrains": "Granos de nieve",
-      "rainShowers": "Lluvia ligera",
-      "snowShowers": "Nevada Ligera",
+      "rainShowers": "Chubascos",
+      "snowShowers": "Chubascos de nieve",
       "thunderstorm": "Tormenta eléctrica",
       "thunderstormWithHail": "Tormenta con granizo",
       "unknown": "Desconocido"
