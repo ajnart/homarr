@@ -12,7 +12,8 @@
         "label": "Uppdateringsintervall (i minuter)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": ""
+        "label": "Tillåt HTML-formatering (farligt)",
+        "info": "Att tillåta HTML-formatering från utomstående kan vara farligt.<br/>Se till att flödet kommer från en betrodd källa."
       },
       "textLinesClamp": {
         "label": "Klämma för textrader"

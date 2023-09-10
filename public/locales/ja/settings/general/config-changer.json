@@ -1,64 +1,64 @@
 {
   "configSelect": {
-    "label": "コンフィグチェンジャー",
+    "label": "保存した設定",
     "description": "{{configCount}} の構成が可能です。",
-    "loadingNew": "コンフィグを読み込む...",
-    "pleaseWait": "新しいコンフィグが読み込まれるまで、しばらくお待ちください"
+    "loadingNew": "設定を読み込み中...",
+    "pleaseWait": "新しい設定が読み込まれるまでお待ちください！"
   },
   "modal": {
     "copy": {
-      "title": "新しいコンフィグの名前を選択します。",
+      "title": "新しい設定の名前を選択してください",
       "form": {
         "configName": {
-          "label": "コンフィグ名",
+          "label": "設定名",
           "validation": {
-            "required": "コンフィグ名は必須です",
-            "notUnique": "コンフィグ名はすでに使用されています"
+            "required": "設定名が必要です",
+            "notUnique": "この名前は既に使用されています"
           },
-          "placeholder": "新しいコンフィグ名"
+          "placeholder": "新しい設定名"
         },
         "submitButton": "確認"
       },
       "events": {
         "configSaved": {
-          "title": "コンフィグ保存",
+          "title": "設定を保存",
           "message": "{{configName}}として保存されたコンフィグ"
         },
         "configCopied": {
-          "title": "コンフィグをコピーした",
-          "message": "{{configName}}としてコピーされたコンフィグ"
+          "title": "設定をコピーしました",
+          "message": "設定を {{configName}} としてコピーしました"
         },
         "configNotCopied": {
-          "title": "コンフィグをコピーできない",
-          "message": "コンフィグが {{configName}}としてコピーされていない"
+          "title": "設定をコピーできない",
+          "message": "設定は {{configName}}としてコピーされませんでした"
         }
       }
     },
     "confirmDeletion": {
-      "title": "コンフィグの削除を確認する",
-      "warningText": "",
-      "text": "",
+      "title": "設定の削除を確認する",
+      "warningText": "<b>{{configName}}</b>' を削除しようとしています。",
+      "text": "削除は元に戻せず、データは永久に失われますのでご注意ください。このボタンをクリックすると、ファイルはディスクから永久に削除されます。設定の適切なバックアップを作成してください。",
       "buttons": {
-        "confirm": "はい、'<b>{{configName}}</b>' を削除してください。"
+        "confirm": "はい、削除します '<b>{{configName}}</b>'"
       }
     }
   },
   "buttons": {
-    "download": "ダウンロードコンフィグ",
+    "download": "ダウンロード設定",
     "delete": {
-      "text": "コンフィグの削除",
+      "text": "設定の削除",
       "notifications": {
         "deleted": {
-          "title": "コンフィグ削除",
-          "message": "コンフィグ削除"
+          "title": "設定を削除しました",
+          "message": "設定を削除しました"
         },
         "deleteFailed": {
-          "title": "コンフィグ削除の失敗",
-          "message": "コンフィグ削除の失敗"
+          "title": "構成の削除に失敗しました",
+          "message": "構成の削除に失敗しました"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
-          "message": "ファイルシステムからコンフィギュレーションが削除されていない"
+          "title": "デフォルトの設定は削除できません",
+          "message": "設定はファイルシステムから削除されませんでした"
         }
       }
     },
@@ -67,16 +67,16 @@
   "dropzone": {
     "notifications": {
       "invalidConfig": {
-        "title": "コンフィグを読み込めない",
-        "message": "コンフィグを読み込めませんでした。無効なJSON形式です。"
+        "title": "設定を読み込めません",
+        "message": "設定を読み込めませんでした。無効な JSON 形式です。"
       },
       "loadedSuccessfully": {
-        "title": "Config {{configName}} 読み込み成功"
+        "title": "設定 {{configName}} の読み込みに成功しました"
       }
     },
     "accept": {
-      "title": "コンフィギュレーションアップロード",
-      "text": "ここにファイルをドラッグしてコンフィグをアップロードしてください。JSONファイルのみ対応。"
+      "title": "設定のアップロード",
+      "text": "ここにファイルをドラッグすると、設定をアップロードします。JSON ファイルのみサポートします。"
     },
     "reject": {
       "title": "ドラッグ＆ドロップによるアップロードを拒否",

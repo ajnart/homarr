@@ -11,13 +11,28 @@
         "label": "Začni týždeň v Nedeľu"
       },
       "radarrReleaseType": {
-        "label": "Typ Radarr releasu"
+        "label": "Typ Radarr releasu",
+        "data": {
+          "inCinemas": "V kinách",
+          "physicalRelease": "Fyzický",
+          "digitalRelease": "Digitálny"
+        }
       },
       "hideWeekDays": {
         "label": "Skryť dni v týždni"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
-        "label": "Veľkosť písma"
+        "label": "Veľkosť písma",
+        "data": {
+          "xs": "Extra malé",
+          "sm": "Malé",
+          "md": "Stredné",
+          "lg": "Veľké",
+          "xl": "Extra veľké"
+        }
       }
     }
   }

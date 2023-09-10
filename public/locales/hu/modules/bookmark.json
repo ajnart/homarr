@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "Könyvjelző",
+    "description": "Megjeleníti a karakterláncok vagy linkek statikus listáját",
+    "settings": {
+      "title": "Könyvjelző beállítások",
+      "name": {
+        "label": "Widget címe",
+        "info": "Hagyja üresen, hogy a cím rejtve maradjon."
+      },
+      "items": {
+        "label": "Elemek"
+      },
+      "layout": {
+        "label": "Elrendezés",
+        "data": {
+          "autoGrid": "Automatikus rács",
+          "horizontal": "Vízszintes",
+          "vertical": "Függőleges"
+        }
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Könyvjelző lista üres",
+      "text": "Új elemek hozzáadása a listához szerkesztési módban"
+    }
+  },
+  "item": {
+    "validation": {
+      "length": "A hossznak a {{shortest}} és a {{longest}} között kell lennie",
+      "invalidLink": "Nem érvényes link",
+      "errorMsg": "Nem mentett, mert hitelesítési hibák voltak. Kérjük, adja meg az értékeket"
+    },
+    "name": "Név",
+    "url": "URL",
+    "newTab": "Megnyitás új lapon",
+    "hideHostname": "Hostnév elrejtése",
+    "hideIcon": "Ikon elrejtése",
+    "delete": "Törlés"
+  }
+}

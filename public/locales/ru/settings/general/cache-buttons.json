@@ -1,0 +1,24 @@
+{
+  "title": "Очистка кэша",
+  "selector": {
+    "label": "Выберите кэш(и) для очистки",
+    "data": {
+      "ping": "Пинг запросы",
+      "repositoryIcons": "Удалённые/Локальные иконки",
+      "calendar&medias": "Публикации из календаря",
+      "weather": "Данные о погоде"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "Кэш очищен",
+    "clearAll": {
+      "text": "Очистить весь кэш",
+      "notificationMessage": "Весь кэш был очищен"
+    },
+    "clearSelect": {
+      "text": "Очистить выбранные запросы",
+      "notificationMessageSingle": "Кэш для {{value}} был очищен",
+      "notificationMessageMulti": "Кэш для {{values}} был очищен"
+    }
+  }
+}

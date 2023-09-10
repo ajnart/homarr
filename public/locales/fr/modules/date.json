@@ -8,24 +8,24 @@
         "label": "Affichage 24 h"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Formatage de la date",
         "data": {
-          "hide": ""
+          "hide": "Masquer la date"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Afficher un fuseau horaire personnalisé"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Localisation du fuseau horaire"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Nom de la ville",
+        "info": "Si vous avez choisis d'activer un fuseau horaire différent, le nom de la ville ainsi que le nom de son fuseau horaire peuvent être affichés.<br/>Vous pouvez aussi n'afficher que la ville ou aucun des deux.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Ville et fuseau horaire",
+          "city": "Ville uniquement",
+          "none": "Aucun"
         }
       }
     }

@@ -1,17 +1,27 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Statistik över medieförfrågningar",
+    "description": "Statistik över dina medieförfrågningar",
     "settings": {
-      "title": "",
-      "direction": {
-        "label": "Layoutens riktning."
+      "title": "Statistik över medieförfrågningar",
+      "replaceLinksWithExternalHost": {
+        "label": "Ersätt länkar med extern värd"
+      },
+      "openInNewTab": {
+        "label": "Öppna länkar i ny flik"
       }
     }
   },
-  "stats": {
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": ""
+  "mediaStats": {
+    "title": "Mediestatistik",
+    "pending": "Väntar på godkännande",
+    "tvRequests": "TV-förfrågningar",
+    "movieRequests": "Filmförfrågningar",
+    "approved": "Redan godkänd",
+    "totalRequests": "Totalt"
+  },
+  "userStats": {
+    "title": "Toppanvändare",
+    "requests": "Förfrågningar: {{number}}"
   }
 }

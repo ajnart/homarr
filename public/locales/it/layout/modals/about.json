@@ -6,6 +6,13 @@
 	"key": "Tasto di scelta rapida",
 	"action": "Azioni",
 	"keybinds": "Scorciatoie da tastiera",
+	"documentation": "Documentazione",
+	"actions": {
+		"toggleTheme": "Attiva/Disattiva modalità chiaro/scuro",
+		"focusSearchBar": "Focalizza la barra di ricerca",
+		"openDocker": "Apri docker Widget",
+		"toggleEdit": "Attiva/Disattiva Edit Mode"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Versione dello schema di configurazione",
 		"configurationsCount": "Configurazioni disponibili",
@@ -14,5 +21,9 @@
 		"i18n": "Translation namespaces I18n caricati",
 		"locales": "I18n locales configurati",
 		"experimental_disableEditMode": "<b>SPERIMENTALE</b>: Disabilita l'edit mode"
+	},
+	"version": {
+		"new": "Nuovo: {{newVersion}}",
+		"dropdown": "Versione {{newVersion}} disponibile! La versione attuale è {{currentVersion}}"
 	}
 }

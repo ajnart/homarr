@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Média kérések",
+    "description": "Az Overseerr vagy Jellyseerr példány összes médiakérelmének listájának megtekintése",
+    "settings": {
+      "title": "Médiakérések listája",
+      "replaceLinksWithExternalHost": {
+        "label": "Linkek cseréje külső fogadóval"
+      },
+      "openInNewTab": {
+        "label": "Linkek megnyitása új fülön"
+      }
+    }
+  },
+  "noRequests": "Nem találtunk kéréseket. Kérjük, győződjön meg róla, hogy megfelelően konfigurálta az alkalmazásokat.",
+  "pending": "A {{countPendingApproval}} oldalon jóváhagyásra váró kérelmek vannak.",
+  "nonePending": "Jelenleg nincs folyamatban lévő jóváhagyás. Mehetsz!",
+  "state": {
+    "approved": "Jóváhagyva",
+    "pendingApproval": "Várakozás jóváhagyásra",
+    "declined": "Elutasítva"
+  },
+  "tooltips": {
+    "approve": "Kérelem megerősítése",
+    "decline": "Visszautasított kérések",
+    "approving": "Kérés megerősítése..."
+  },
+  "mutation": {
+    "approving": "Jóváhagyás",
+    "declining": "Elutasítás",
+    "request": "kérés...",
+    "approved": "A kérést jóváhagyták!",
+    "declined": "A kérést elutasították!"
+  }
+}

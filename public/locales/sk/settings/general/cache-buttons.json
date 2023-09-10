@@ -1,0 +1,24 @@
+{
+  "title": "Čistenie vyrovnávacej pamäte",
+  "selector": {
+    "label": "Vyberte vyrovnávaciu pamäť, ktorú chcete vymazať",
+    "data": {
+      "ping": "Dotazy Ping",
+      "repositoryIcons": "Ikony vzdialených/miestnych zariadení",
+      "calendar&medias": "Médiá z kalendára",
+      "weather": "Údaje o počasí"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "Vyrovnávacia pamäť bola vymazaná",
+    "clearAll": {
+      "text": "Vymazať celú vyrovnávaciu pamäť",
+      "notificationMessage": "Všetky vyrovnávacie pamäte boli vymazané"
+    },
+    "clearSelect": {
+      "text": "Vymazanie vybraných dotazov",
+      "notificationMessageSingle": "Vymazanie vyrovnávacej pamäte pre {{value}}",
+      "notificationMessageMulti": "Vymazanie vyrovnávacej pamäte pre {{values}}"
+    }
+  }
+}

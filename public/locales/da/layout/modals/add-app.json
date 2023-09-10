@@ -54,6 +54,10 @@
 				"text": "Dette kan tage nogle sekunder"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Appnavn Skriftstørrelse",
+			"description": "Indstil skriftstørrelsen, når appens navn vises på flisen."
+		},
 		"appNameStatus": {
 			"label": "App Navn Status",
 			"description": "Vælg, hvor du vil have titlen vist, hvis den overhovedet skal vises.",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer"
+		"popover": "Din formular indeholder ugyldige data. Derfor kan den ikke gemmes. Løs alle problemer og klik på denne knap igen for at gemme dine ændringer",
+		"name": "Navn er obligatorisk",
+		"noUrl": "Url er obligatorisk",
+		"invalidUrl": "Værdien er ikke en gyldig url",
+		"noIconUrl": "Dette felt er påkrævet",
+		"noExternalUri": "Ekstern URI er påkrævet",
+		"invalidExternalUri": "Ekstern URI er ikke en gyldig uri"
 	}
 }

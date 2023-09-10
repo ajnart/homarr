@@ -6,6 +6,9 @@
       "title": "Multimediju pieprasījumu saraksts",
       "replaceLinksWithExternalHost": {
         "label": "Aizstāt saites ar ārējo saimnieku"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Apstiprināt pieprasījumus",
-    "decline": "Noraidīt pieprasījumus"
+    "decline": "Noraidīt pieprasījumus",
+    "approving": "Pieprasījuma apstiprināšana..."
+  },
+  "mutation": {
+    "approving": "Apstiprināšana",
+    "declining": "Noraidīšanās",
+    "request": "pieprasījums...",
+    "approved": "Pieprasījums tika apstiprināts!",
+    "declined": "Pieprasījums tika noraidīts!"
   }
 }

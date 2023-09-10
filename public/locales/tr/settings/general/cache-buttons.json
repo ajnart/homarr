@@ -1,0 +1,24 @@
+{
+  "title": "Önbellek Temizliği",
+  "selector": {
+    "label": "Temizlemek için önbellek(ler) seçin",
+    "data": {
+      "ping": "Ping sorguları",
+      "repositoryIcons": "Uzak/Yerel İkonlar",
+      "calendar&medias": "Takvimden Medyalar",
+      "weather": "Hava durumu verileri"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "Önbellek Temizlendi",
+    "clearAll": {
+      "text": "Tüm önbelleği temizle",
+      "notificationMessage": "Tüm önbellek temizlendi"
+    },
+    "clearSelect": {
+      "text": "Seçilileri temizle",
+      "notificationMessageSingle": "{{value}} için önbellek temizlendi",
+      "notificationMessageMulti": "{{values}} önbellekleri temizlendi"
+    }
+  }
+}

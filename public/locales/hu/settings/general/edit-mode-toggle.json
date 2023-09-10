@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "Szerkesztési módra váltás",
+    "enable": "Szerkesztési módra váltás",
+    "disable": "Szerkesztési mód felfüggesztése"
+  },
+  "form": {
+    "label": "Jelszó megváltoztatása",
+    "message": "A szerkesztési mód átkapcsolásához a <Code>EDIT_MODE_PASSWORD</Code> nevű környezeti változóba be kell írni a jelszót. Ha ez nincs megadva, akkor nem tudja be- és kikapcsolni a szerkesztési módot.",
+    "submit": "Küldés"
+  },
+  "notification": {
+    "success": {
+      "title": "Sikerült",
+      "message": "Sikeresen váltott szerkesztési mód, az oldal újratöltése..."
+    },
+    "error": {
+      "title": "Hiba",
+      "message": "A szerkesztési mód átkapcsolása nem sikerült, kérjük, próbálja meg újra."
+    }
+  }
+}

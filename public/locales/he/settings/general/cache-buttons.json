@@ -1,0 +1,24 @@
+{
+  "title": "ניקוי מטמון",
+  "selector": {
+    "label": "בחר את המטמון/ים לניקוי",
+    "data": {
+      "ping": "שאילתות פינג",
+      "repositoryIcons": "סמלים מרחוק/מקומיים",
+      "calendar&medias": "מדיה מלוח השנה",
+      "weather": "נתוני מזג אוויר"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "המטמון נמחק",
+    "clearAll": {
+      "text": "ניקוי כל המטמונים",
+      "notificationMessage": "בוצע ניקוי לכל המטמונים"
+    },
+    "clearSelect": {
+      "text": "נקה את השאילתות שנבחרו",
+      "notificationMessageSingle": "המטמון עבור {{value}} נוקה",
+      "notificationMessageMulti": "המטמון עבור {{values}} נוקה"
+    }
+  }
+}

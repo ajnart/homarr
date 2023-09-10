@@ -7,5 +7,19 @@
     "goBack": "Gå tillbaka till föregående steg",
     "actionIcon": {
         "tooltip": "Lägg till en ruta"
+    },
+    "apps": "Appar",
+    "app": {
+        "defaultName": "Din app"
+    },
+    "widgets": "Widgets",
+    "categories": "Kategorier",
+    "category": {
+        "newName": "Namn på ny kategori",
+        "defaultName": "Ny kategori",
+        "created": {
+            "title": "Kategori skapad",
+            "message": "Kategorin \"{{name}}\" har skapats"
+        }
     }
 }

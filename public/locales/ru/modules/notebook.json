@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Блокнот",
+		"description": "Интерактивный виджет на основе Markdown для записи ваших заметок!",
 		"settings": {
-			"title": "",
+			"title": "Настройки виджета блокнота",
 			"showToolbar": {
-				"label": ""
+				"label": "Показывать панель инструментов, чтобы помочь вам писать Markdown текст"
 			},
 			"content": {
-				"label": ""
+				"label": "Содержимое блокнота"
 			}
 		}
 	}

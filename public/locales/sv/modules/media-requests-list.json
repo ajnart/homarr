@@ -6,6 +6,9 @@
       "title": "Lista över mediaförfrågningar",
       "replaceLinksWithExternalHost": {
         "label": "Ersätt länkar med extern värd"
+      },
+      "openInNewTab": {
+        "label": "Öppna länkar i ny flik"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Godkänn begäran",
-    "decline": ""
+    "decline": "Avvisa förfrågningar",
+    "approving": "Godkänner begäran..."
+  },
+  "mutation": {
+    "approving": "Godkänner",
+    "declining": "Avböjer",
+    "request": "förfrågan...",
+    "approved": "Förfrågan godkändes!",
+    "declined": "Förfrågnan avvisades!"
   }
 }

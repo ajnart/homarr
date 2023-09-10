@@ -11,13 +11,28 @@
         "label": "Začni teden z nedeljo"
       },
       "radarrReleaseType": {
-        "label": "Tip sprostitve Radarr"
+        "label": "Tip sprostitve Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
-      "fontSize": {
+      "showUnmonitored": {
         "label": ""
+      },
+      "fontSize": {
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }

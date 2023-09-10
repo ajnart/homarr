@@ -11,13 +11,28 @@
         "label": "Ξεκινήστε την εβδομάδα από την Κυριακή"
       },
       "radarrReleaseType": {
-        "label": "Τύπος κυκλοφορίας Radarr"
+        "label": "Τύπος κυκλοφορίας Radarr",
+        "data": {
+          "inCinemas": "Στους Κινηματογράφους",
+          "physicalRelease": "Φυσική",
+          "digitalRelease": "Ψηφιακή"
+        }
       },
       "hideWeekDays": {
         "label": "Απόκρυψη εργάσιμων"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
-        "label": "Μέγεθος γραμματοσειράς"
+        "label": "Μέγεθος γραμματοσειράς",
+        "data": {
+          "xs": "Πολύ Μικρό",
+          "sm": "Μικρό",
+          "md": "Μεσαίο",
+          "lg": "Μεγάλο",
+          "xl": "Πολύ μεγάλο"
+        }
       }
     }
   }

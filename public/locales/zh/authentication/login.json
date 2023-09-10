@@ -5,7 +5,7 @@
     "fields": {
       "password": {
         "label": "密码",
-        "placeholder": "你的密码"
+        "placeholder": "您的密码"
       }
     },
     "buttons": {
@@ -14,8 +14,8 @@
   },
   "notifications": {
     "checking": {
-      "title": "检查你的密码",
-      "message": "正在检查你的密码..."
+      "title": "检查您的密码",
+      "message": "正在检查您的密码..."
     },
     "correct": {
       "title": "登录成功，正在跳转..."

@@ -54,6 +54,10 @@
 				"text": "Dies kann einige Sekunden dauern…"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Schriftgröße für App Namen",
+			"description": "Legen Sie die Schriftgröße für die Anzeige des App-Namens auf der Kachel fest."
+		},
 		"appNameStatus": {
 			"label": "App-Namensstatus",
 			"description": "Wählen Sie, wo der Titel angezeigt werden soll, wenn überhaupt.",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Ihr Formular enthält ungültige Angaben, daher konnte es nicht gespeichert werden. Bitte beseitigen Sie diese ungültigen Angaben und klicken Sie erneut auf diesen Button, um Ihre Änderungen zu speichern"
+		"popover": "Ihr Formular enthält ungültige Angaben, daher konnte es nicht gespeichert werden. Bitte beseitigen Sie diese ungültigen Angaben und klicken Sie erneut auf diesen Button, um Ihre Änderungen zu speichern",
+		"name": "Der Name ist erforderlich",
+		"noUrl": "URL erforderlich",
+		"invalidUrl": "Der Wert ist keine gültige URL",
+		"noIconUrl": "Dieses Feld ist erforderlich",
+		"noExternalUri": "Externe URL ist erforderlich",
+		"invalidExternalUri": "Externe URL ist keine gültige URL"
 	}
 }

@@ -6,6 +6,9 @@
       "title": "Liste der Medienanfragen",
       "replaceLinksWithExternalHost": {
         "label": "Links durch externen Host ersetzen"
+      },
+      "openInNewTab": {
+        "label": "Links in neuem Tab öffnen"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Anfrage bestätigen",
-    "decline": "Anfrage ablehnen"
+    "decline": "Anfrage ablehnen",
+    "approving": "Anfrage bestätigen..."
+  },
+  "mutation": {
+    "approving": "Genehmigen",
+    "declining": "Ablehnen",
+    "request": "Anfrage...",
+    "approved": "Anfragen genehmigt!",
+    "declined": "Anfrage abgelehnt!"
   }
 }

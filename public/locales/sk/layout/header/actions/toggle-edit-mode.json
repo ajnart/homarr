@@ -7,5 +7,6 @@
     "popover": {
         "title": "Režim úprav je povolený pre veľkosť <1>{{size}}</1>",
         "text": "Teraz môžete svoje aplikácie upravovať a konfigurovať. Zmeny sa <strong>neuložia</strong>, kým neukončíte režim úprav"
-    }
+    },
+    "unloadEvent": "Ukončite režim úprav a uložte zmeny"
 }

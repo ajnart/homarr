@@ -4,14 +4,24 @@
     "description": "Štatistiky o vašich požiadavkách na médiá",
     "settings": {
       "title": "Štatistiky požiadaviek médií",
-      "direction": {
-        "label": "Smer rozloženia."
+      "replaceLinksWithExternalHost": {
+        "label": "Nahradiť odkazy s externým hostiteľom"
+      },
+      "openInNewTab": {
+        "label": "Otvorenie odkazov v novej karte"
       }
     }
   },
-  "stats": {
-    "pending": "Čakajúce schválenia",
+  "mediaStats": {
+    "title": "Štatistiky médií",
+    "pending": "Čakajúce na schválenie",
     "tvRequests": "TV požiadavky",
-    "movieRequests": "Filmové požiadavky"
+    "movieRequests": "Filmové požiadavky",
+    "approved": "Už schválené",
+    "totalRequests": "Celkom"
+  },
+  "userStats": {
+    "title": "Najlepší používatelia",
+    "requests": "Požiadavky: {{number}}"
   }
 }

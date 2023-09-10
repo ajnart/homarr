@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "Växla till redigeringsläge",
+    "enable": "Aktivera redigeringsläge",
+    "disable": "Inaktivera redigeringsläge"
+  },
+  "form": {
+    "label": "Redigera lösenord",
+    "message": "För att aktivera redigeringsläget måste du ange det lösenord som du angav i miljövariabeln <Code>EDIT_MODE_PASSWORD</Code> . Om den inte är angiven kan du inte slå på och av redigeringsläget.",
+    "submit": "Skicka"
+  },
+  "notification": {
+    "success": {
+      "title": "Lyckades",
+      "message": "Lyckades växla till redigeringsläget, laddar om sidan..."
+    },
+    "error": {
+      "title": "Fel",
+      "message": "Det gick inte att växla till redigeringsläget, försök igen."
+    }
+  }
+}

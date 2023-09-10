@@ -1,6 +1,7 @@
 {
   "title": "Motor de busca",
   "configurationName": "Configuração do motor de busca",
+  "custom": "",
   "tips": {
     "generalTip": "",
     "placeholderTip": "%s pode ser utilizado como um local para a consulta."

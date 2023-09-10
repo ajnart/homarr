@@ -7,5 +7,19 @@
     "goBack": "Vráťte sa na predchádzajúci krok",
     "actionIcon": {
         "tooltip": "Pridajte dlaždicu"
+    },
+    "apps": "Aplikácie",
+    "app": {
+        "defaultName": "Vaša aplikácia"
+    },
+    "widgets": "Miniaplikácie",
+    "categories": "Kategórie",
+    "category": {
+        "newName": "Názov novej kategórie",
+        "defaultName": "Nová Kategória",
+        "created": {
+            "title": "Kategória vytvorená",
+            "message": "Bola vytvorená kategória \"{{name}}\""
+        }
     }
 }

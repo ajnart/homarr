@@ -11,13 +11,28 @@
         "label": "Воскресенье — начало недели"
       },
       "radarrReleaseType": {
-        "label": "Тип релиза в Radarr"
+        "label": "Тип релиза в Radarr",
+        "data": {
+          "inCinemas": "В кинотеатрах",
+          "physicalRelease": "Физический носитель",
+          "digitalRelease": "Цифровой релиз"
+        }
       },
       "hideWeekDays": {
         "label": "Скрыть дни недели"
       },
+      "showUnmonitored": {
+        "label": ""
+      },
       "fontSize": {
-        "label": "Размер шрифта"
+        "label": "Размер шрифта",
+        "data": {
+          "xs": "Очень маленький",
+          "sm": "Маленький",
+          "md": "Средний",
+          "lg": "Большой",
+          "xl": "Очень большой"
+        }
       }
     }
   }

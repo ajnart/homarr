@@ -58,8 +58,13 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
 
   return (
     <Container h="100%" p={0} style={constructContainerStyle(widget.properties.layout)}>
-      {stats.map((item) => (
-        <StatCard item={item} usePiHoleColors={widget.properties.usePiHoleColors} data={data} />
+      {stats.map((item, index) => (
+        <StatCard
+          key={item.label ?? index}
+          item={item}
+          usePiHoleColors={widget.properties.usePiHoleColors}
+          data={data}
+        />
       ))}
     </Container>
   );
@@ -75,6 +80,7 @@ const stats = [
   {
     icon: IconPercentage,
     value: (x) => formatPercentage(x.adsBlockedTodayPercentage, 2),
+    label: 'card.metrics.queriesBlockedTodayPercentage',
     color: 'rgba(255, 165, 20, 0.4)',
   },
   {
@@ -106,7 +112,7 @@ export const useDnsHoleSummeryQuery = () => {
       configName: configName!,
     },
     {
-      refetchInterval: 3 * 60 * 1000,
+      staleTime: 1000 * 60 * 2,
     }
   );
 };

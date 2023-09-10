@@ -6,6 +6,9 @@
       "title": "Liste over medieforespørgsler",
       "replaceLinksWithExternalHost": {
         "label": "Udskift links med ekstern vært"
+      },
+      "openInNewTab": {
+        "label": "Åbn links i ny fane"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Godkend anmodninger",
-    "decline": "Afvis alle anmodninger"
+    "decline": "Afvis alle anmodninger",
+    "approving": "Godkender anmodning..."
+  },
+  "mutation": {
+    "approving": "Godkender",
+    "declining": "Afviser",
+    "request": "anmod...",
+    "approved": "Anmodning blev godkendt!",
+    "declined": "Anmodningen blev afvist!"
   }
 }

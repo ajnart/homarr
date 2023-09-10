@@ -7,5 +7,6 @@
     "popover": {
         "title": "Redigeringstilstand er aktiveret for  <1>{{size}}</1> størrelse",
         "text": "Du kan justere og konfigurere dine apps nu. Ændringer er <strong>ikke gemt</strong> indtil du forlader redigeringstilstanden"
-    }
+    },
+    "unloadEvent": "Afslut redigeringstilstanden for at gemme dine ændringer"
 }

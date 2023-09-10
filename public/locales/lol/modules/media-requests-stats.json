@@ -4,14 +4,24 @@
     "description": "",
     "settings": {
       "title": "",
-      "direction": {
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      },
+      "openInNewTab": {
         "label": ""
       }
     }
   },
-  "stats": {
+  "mediaStats": {
+    "title": "",
     "pending": "",
     "tvRequests": "",
-    "movieRequests": ""
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

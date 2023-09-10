@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "Düzenleme Modunu Değiştir",
+    "enable": "Düzenleme modunu etkinleştir",
+    "disable": "Düzenleme modunu pasifleştir"
+  },
+  "form": {
+    "label": "Şifreyi düzenle",
+    "message": "Düzenleme modunu açmak için <Code>EDIT_MODE_PASSWORD</Code> adlı ortam değişkenine girdiğiniz şifreyi girmeniz gerekir. Eğer ayarlanmamışsa, düzenleme modunu açıp kapatamazsınız.",
+    "submit": "Gönder"
+  },
+  "notification": {
+    "success": {
+      "title": "Başarılı",
+      "message": "Düzenleme modu başarıyla değiştirildi, sayfa yeniden yükleniyor..."
+    },
+    "error": {
+      "title": "Hata",
+      "message": "Düzenleme modu değiştirilemedi, lütfen tekrar deneyin."
+    }
+  }
+}

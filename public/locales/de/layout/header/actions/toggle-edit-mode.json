@@ -7,5 +7,6 @@
     "popover": {
         "title": "Der Bearbeitungsmodus ist für die Kategorie <1>{{size}}</1> aktiviert",
         "text": "Sie können Ihre Apps jetzt anpassen und konfigurieren. Änderungen werden <strong>nicht gespeichert</strong> bis Sie den Bearbeitungsmodus verlassen"
-    }
+    },
+    "unloadEvent": "Verlassen Sie den Bearbeitungsmodus, um Ihre Änderungen zu speichern"
 }

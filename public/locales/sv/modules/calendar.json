@@ -11,13 +11,28 @@
         "label": "Börja veckan på söndag"
       },
       "radarrReleaseType": {
-        "label": "Radarr releasetyp"
+        "label": "Radarr releasetyp",
+        "data": {
+          "inCinemas": "På bio",
+          "physicalRelease": "Fysisk",
+          "digitalRelease": "Digital"
+        }
       },
       "hideWeekDays": {
         "label": "Dölj veckodagar"
       },
+      "showUnmonitored": {
+        "label": "Visa oövervakade objekt"
+      },
       "fontSize": {
-        "label": "Teckenstorlek"
+        "label": "Teckenstorlek",
+        "data": {
+          "xs": "Extra liten",
+          "sm": "Liten",
+          "md": "Mellan",
+          "lg": "Stor",
+          "xl": "Extra stor"
+        }
       }
     }
   }

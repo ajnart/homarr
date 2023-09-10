@@ -1,10 +1,10 @@
-import { ActionIcon, createStyles, rem } from '@mantine/core';
+import { ActionIcon, ScrollArea } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { Link, RichTextEditor } from '@mantine/tiptap';
-import { IconArrowUp, IconEdit, IconEditOff } from '@tabler/icons-react';
+import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
@@ -76,41 +76,29 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   return (
     <>
-      {!enabled && (
-        <ActionIcon
-          style={{
-            zIndex: 1,
-          }}
-          top={7}
-          right={7}
-          pos="absolute"
-          color={primaryColor}
-          variant="light"
-          size={30}
-          radius={'md'}
-          onClick={() => setIsEditing(handleEditToggle)}
-        >
-          {isEditing ? <IconEditOff size={20} /> : <IconEdit size={20} />}
-        </ActionIcon>
-      )}
       <RichTextEditor
         p={0}
         mt={0}
+        h="100%"
         editor={editor}
         styles={(theme) => ({
           root: {
             '& .ProseMirror': {
               padding: '0  !important',
             },
+            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
             border: 'none',
+            borderRadius: '0.5rem',
+            display: 'flex',
+            flexDirection: 'column',
           },
           toolbar: {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
-            paddingTop: 0,
-            paddingBottom: theme.spacing.md,
+            backgroundColor: 'transparent',
+            padding: '0.5rem',
           },
           content: {
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+            backgroundColor: 'transparent',
+            padding: '0.5rem',
           },
         })}
       >
@@ -156,8 +144,27 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           </BubbleMenu>
         )}
 
-        <RichTextEditor.Content />
+        <ScrollArea>
+          <RichTextEditor.Content />
+        </ScrollArea>
       </RichTextEditor>
+      {!enabled && (
+        <ActionIcon
+          style={{
+            zIndex: 1,
+          }}
+          top={7}
+          right={7}
+          pos="absolute"
+          color={primaryColor}
+          variant="light"
+          size={30}
+          radius={'md'}
+          onClick={() => setIsEditing(handleEditToggle)}
+        >
+          {isEditing ? <IconEditOff size={20} /> : <IconEdit size={20} />}
+        </ActionIcon>
+      )}
     </>
   );
 }

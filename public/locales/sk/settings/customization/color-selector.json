@@ -1,4 +1,6 @@
 {
   "colors": "Farby",
-  "suffix": "{{color}} farba"
+  "suffix": "{{color}} farba",
+  "primary": "Primárne",
+  "secondary": "Sekundárne"
 }

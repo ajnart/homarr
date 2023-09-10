@@ -1,0 +1,24 @@
+{
+  "title": "Cache-Bereinigung",
+  "selector": {
+    "label": "Wählen Sie den/die zu löschenden Cache(s)",
+    "data": {
+      "ping": "Ping-Abfragen",
+      "repositoryIcons": "Remote/Lokale Symbole",
+      "calendar&medias": "Medien aus dem Kalender",
+      "weather": "Wetterdaten"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "Cache geleert",
+    "clearAll": {
+      "text": "Gesamten Cache leeren",
+      "notificationMessage": "Der Cache wurde geleert"
+    },
+    "clearSelect": {
+      "text": "Ausgewählte Abfragen löschen",
+      "notificationMessageSingle": "Der Cache für {{value}} wurde geleert",
+      "notificationMessageMulti": "Der Cache für {{values}} wurde geleert"
+    }
+  }
+}

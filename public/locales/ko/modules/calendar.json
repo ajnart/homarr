@@ -11,13 +11,28 @@
         "label": "한 주의 시작을 일요일로 설정"
       },
       "radarrReleaseType": {
-        "label": ""
+        "label": "",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
-      "fontSize": {
+      "showUnmonitored": {
         "label": ""
+      },
+      "fontSize": {
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }

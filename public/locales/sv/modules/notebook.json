@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Anteckningsbok",
+		"description": "En markdown-baserad interaktiv widget där du kan skriva ner dina anteckningar!",
 		"settings": {
-			"title": "",
+			"title": "Inställningar för widgeten för anteckningsboken",
 			"showToolbar": {
-				"label": ""
+				"label": "Visa verktygsfältet för att hjälpa dig skriva markdown"
 			},
 			"content": {
-				"label": ""
+				"label": "Innehållet i anteckningsboken"
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 {
   "title": "Arama motoru",
   "configurationName": "Arama motoru yapılandırma",
+  "custom": "Kişisel",
   "tips": {
     "generalTip": "Kullanabileceğiniz birden fazla önek var! Bunları sorgunuzun önüne eklemek, sonuçları filtreleyecektir. !s (Web), !t (Torrentler), !y (YouTube) ve !m (Medya).",
     "placeholderTip": "%s sorgu için bir yer tutucu olarak kullanılabilir."

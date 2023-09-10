@@ -7,5 +7,19 @@
     "goBack": "Quay lại bước trước",
     "actionIcon": {
         "tooltip": "Thêm ô"
+    },
+    "apps": "Ứng dụng",
+    "app": {
+        "defaultName": "Ứng dụng của bạn"
+    },
+    "widgets": "Tiện ích",
+    "categories": "Danh mục",
+    "category": {
+        "newName": "Tên danh mục mới",
+        "defaultName": "Danh mục mới",
+        "created": {
+            "title": "Danh mục đã được tạo",
+            "message": "Danh mục \"{{name}}\" đã được tạo"
+        }
     }
 }

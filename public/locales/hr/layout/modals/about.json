@@ -6,6 +6,13 @@
 	"key": "Tipka prečaca",
 	"action": "Radnja",
 	"keybinds": "Namještanje tipki",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfiguracija verzije sheme",
 		"configurationsCount": "Dostupna konfiguracija",
@@ -14,5 +21,9 @@
 		"i18n": "Učitani I18n prostori za prijevod",
 		"locales": "Konfigurirani I18n lokaliteti",
 		"experimental_disableEditMode": "<b>EXPERIMENTALNO</b>: Onemogući način uređivanja"
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
 	}
 }

@@ -11,13 +11,28 @@
         "label": "Wochenbeginn am Sonntag"
       },
       "radarrReleaseType": {
-        "label": "Radarr Veröffentlichungs Typ"
+        "label": "Radarr Veröffentlichungs Typ",
+        "data": {
+          "inCinemas": "In Kinos",
+          "physicalRelease": "Physisch",
+          "digitalRelease": "Digital"
+        }
       },
       "hideWeekDays": {
         "label": "Wochentage ausblenden"
       },
+      "showUnmonitored": {
+        "label": "Nicht überwachte Elemente anzeigen"
+      },
       "fontSize": {
-        "label": "Schriftgröße"
+        "label": "Schriftgröße",
+        "data": {
+          "xs": "Sehr Klein",
+          "sm": "Klein",
+          "md": "Mittel",
+          "lg": "Groß",
+          "xl": "Sehr Groß"
+        }
       }
     }
   }

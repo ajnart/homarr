@@ -94,6 +94,7 @@ export const AvailableElementTypes = ({
                   appearance: {
                     iconUrl: '/imgs/logo/logo.png',
                     appNameStatus: 'normal',
+                    appNameFontSize: 16,
                     positionAppName: 'column',
                     lineClampAppName: 1,
                   },

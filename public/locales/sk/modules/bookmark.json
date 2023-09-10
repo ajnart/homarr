@@ -12,7 +12,12 @@
         "label": "Položky"
       },
       "layout": {
-        "label": "Rozloženie"
+        "label": "Rozloženie",
+        "data": {
+          "autoGrid": "Automatická mriežka",
+          "horizontal": "Horizontálne",
+          "vertical": "Vertikálne"
+        }
       }
     }
   },
@@ -21,5 +26,18 @@
       "title": "Zoznam záložiek je prázdny",
       "text": "Pridanie nových položiek do tohto zoznamu v režime úprav"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "Dĺžka musí byť medzi {{shortest}} a {{longest}}",
+      "invalidLink": "Neplatný odkaz",
+      "errorMsg": "Neuložil sa, pretože sa vyskytli chyby pri overovaní. Prosím, skontrolujte svoje vstupy"
+    },
+    "name": "Názov",
+    "url": "Adresa URL",
+    "newTab": "Otvoriť na novej karte",
+    "hideHostname": "Skryť názov hostiteľa",
+    "hideIcon": "Skryť ikonu",
+    "delete": "Vymazať"
   }
 }

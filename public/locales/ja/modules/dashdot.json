@@ -1,81 +1,81 @@
 {
   "descriptor": {
     "name": "ダッシュ",
-    "description": "",
+    "description": "HomarrでDashのグラフを表示します。",
     "settings": {
       "title": "Dash.ウィジェットの設定",
       "dashName": {
-        "label": ""
+        "label": "Dashの名前"
       },
       "url": {
         "label": "ダッシュURL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "パーセント表示"
       },
       "columns": {
-        "label": ""
+        "label": "列を表示"
       },
       "graphHeight": {
-        "label": ""
+        "label": "グラフの高さ"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "グラフ (順序)",
         "storage": {
           "label": "ストレージ",
           "enabled": {
-            "label": ""
+            "label": "ウィジェットに表示"
           },
           "span": {
-            "label": ""
+            "label": "列の間隔"
           },
           "compactView": {
-            "label": ""
+            "label": "テキストで表示（コンパクト）"
           },
           "multiView": {
-            "label": ""
+            "label": "マルチドライブビューで表示"
           }
         },
         "network": {
           "label": "ネットワーク",
           "enabled": {
-            "label": ""
+            "label": "ウィジェットに表示"
           },
           "span": {
-            "label": ""
+            "label": "列の間隔"
           },
           "compactView": {
-            "label": ""
+            "label": "テキストで表示（コンパクト）"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "ウィジェットに表示"
           },
           "span": {
-            "label": ""
+            "label": "列の間隔"
           },
           "multiView": {
-            "label": ""
+            "label": "マルチコアビューで表示"
           }
         },
         "ram": {
-          "label": "",
+          "label": "メモリ",
           "enabled": {
-            "label": ""
+            "label": "ウィジェットに表示"
           },
           "span": {
-            "label": ""
+            "label": "列の間隔"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "ウィジェットに表示"
           },
           "span": {
-            "label": ""
+            "label": "列の間隔"
           }
         }
       }
@@ -87,28 +87,28 @@
       "noService": "Dash.サービスが見当たりません。HOMARダッシュボードに追加するか、モジュールオプションでDash.サービスを設定してください。のURLをモジュールオプションで設定してください。",
       "noInformation": "dashから情報を取得できません。- は最新版ですか？",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "ダウングレードされたプロトコルを検出",
+        "text": "Dash. インスタンスへの接続は HTTP を使用しています。HTTP は暗号化されていないため、攻撃者がこの接続を悪用する可能性があります。Dash. が HTTPS を使用していることを確認するか、Homarr を HTTP にダウングレードしてください(推奨されません)。"
       }
     },
     "graphs": {
       "storage": {
         "title": "ストレージ",
-        "label": "ストレージです。"
+        "label": "ストレージ:"
       },
       "network": {
         "title": "ネットワーク",
         "label": "ネットワーク",
         "metrics": {
-          "download": "ダウン",
-          "upload": "上"
+          "download": "ダウンロード",
+          "upload": "アップロード"
         }
       },
       "cpu": {
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "メモリ"
       },
       "gpu": {
         "title": "GPU"

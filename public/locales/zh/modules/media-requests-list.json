@@ -1,24 +1,35 @@
 {
   "descriptor": {
     "name": "媒体请求",
-    "description": "查看来自你的Overseerr或Jellyseerr实例的所有媒体请求的列表",
+    "description": "查看 Overr 或 Jellyseerr 实例中的所有媒体请求列表",
     "settings": {
       "title": "媒体请求列表",
       "replaceLinksWithExternalHost": {
-        "label": "替换链接"
+        "label": "使用外部地址替换链接"
+      },
+      "openInNewTab": {
+        "label": "在新标签页中打开链接"
       }
     }
   },
-  "noRequests": "没有找到请求。请确保你已经正确配置了你的应用程序。",
-  "pending": "有 {{countPendingApproval}} 个请求正等待核准。",
-  "nonePending": "目前没有待核准的项目。静待媒体更新!",
+  "noRequests": "未找到请求。请确保您已正确配置您的应用。",
+  "pending": "有 {{countPendingApproval}} 个请求等待批准。",
+  "nonePending": "目前没有待批准的项目。静待媒体更新!",
   "state": {
-    "approved": "已核准",
-    "pendingApproval": "待核准",
+    "approved": "已批准",
+    "pendingApproval": "待批准",
     "declined": "已拒绝"
   },
   "tooltips": {
-    "approve": "同意请求",
-    "decline": "拒绝请求"
+    "approve": "批准请求",
+    "decline": "拒绝请求",
+    "approving": "正在批准请求..."
+  },
+  "mutation": {
+    "approving": "正在批准",
+    "declining": "拒绝中",
+    "request": "请求...",
+    "approved": "请求被批准！",
+    "declined": "请求被拒绝！"
   }
 }

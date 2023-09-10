@@ -1,17 +1,27 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "メディア・リクエスト統計",
+    "description": "メディア・リクエストに関する統計",
     "settings": {
-      "title": "",
-      "direction": {
+      "title": "メディア・リクエスト統計",
+      "replaceLinksWithExternalHost": {
+        "label": "リンクを外部ホストに置き換える"
+      },
+      "openInNewTab": {
         "label": ""
       }
     }
   },
-  "stats": {
+  "mediaStats": {
+    "title": "",
     "pending": "",
     "tvRequests": "",
-    "movieRequests": ""
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

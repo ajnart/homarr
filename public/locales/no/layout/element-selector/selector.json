@@ -7,5 +7,19 @@
     "goBack": "Gå tilbake til forrige steg",
     "actionIcon": {
         "tooltip": "Legg til en flis"
+    },
+    "apps": "",
+    "app": {
+        "defaultName": ""
+    },
+    "widgets": "",
+    "categories": "",
+    "category": {
+        "newName": "",
+        "defaultName": "",
+        "created": {
+            "title": "",
+            "message": ""
+        }
     }
 }

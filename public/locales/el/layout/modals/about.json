@@ -6,6 +6,13 @@
 	"key": "Πλήκτρο συντόμευσης",
 	"action": "Ενέργεια",
 	"keybinds": "Δεσμοί πλήκτρων",
+	"documentation": "Τεκμηρίωση",
+	"actions": {
+		"toggleTheme": "Αλλαγή φωτεινού / σκοτεινού θέματος",
+		"focusSearchBar": "Εστίαση στο πλαίσιο αναζήτησης",
+		"openDocker": "Άνοιγμα docker widget",
+		"toggleEdit": "Εναλλαγή Λειτουργίας Επεξεργασίας"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Έκδοση σχήματος διαμόρφωσης",
 		"configurationsCount": "Διαθέσιμες διαμορφώσεις",
@@ -14,5 +21,9 @@
 		"i18n": "Φορτωμένα πεδία ονομάτων μετάφρασης I18n",
 		"locales": "Διαμορφωμένες τοπικές ρυθμίσεις I18n",
 		"experimental_disableEditMode": "<b>ΠΕΙΡΑΜΑΤΙΚΟ</b>: Απενεργοποίηση της λειτουργίας επεξεργασίας"
+	},
+	"version": {
+		"new": "Νέα: {{newVersion}}",
+		"dropdown": "Η Έκδοση {{newVersion}} είναι διαθέσιμη! Η τρέχουσα έκδοση είναι {{currentVersion}}"
 	}
 }

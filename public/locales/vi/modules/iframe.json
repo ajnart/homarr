@@ -38,7 +38,8 @@
       "noUrl": {
         "title": "URL không hợp lệ",
         "text": "Đảm bảo rằng bạn đã nhập một địa chỉ hợp lệ trong cấu hình tiện ích"
-      }
+      },
+      "browserSupport": ""
     }
   }
 }
