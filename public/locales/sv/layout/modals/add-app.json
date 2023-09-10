@@ -78,7 +78,7 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
+			"label": "Radbrytning för appnamn",
 			"description": "Definierar hur många rader din titel maximalt ska rymmas på. Ange 0 för obegränsat."
 		}
 	},
