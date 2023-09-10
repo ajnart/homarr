@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "DNSホールコントロール",
+    "description": "ダッシュボードからPiHoleまたはAdGuardをコントロールする"
   }
 }

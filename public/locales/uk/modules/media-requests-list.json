@@ -6,6 +6,9 @@
       "title": "Список медіа запитів",
       "replaceLinksWithExternalHost": {
         "label": "Замініть посилання на зовнішній хост"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Запити на підтвердження",
-    "decline": "Відхиляти запити"
+    "decline": "Відхиляти запити",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
   }
 }

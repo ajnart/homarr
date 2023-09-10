@@ -4,14 +4,24 @@
     "description": "Statistiques sur vos demandes de médias",
     "settings": {
       "title": "Statistiques des demandes",
-      "direction": {
+      "replaceLinksWithExternalHost": {
+        "label": "Remplacer les liens par des hôtes externes"
+      },
+      "openInNewTab": {
         "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "En attente de validation",
-    "tvRequests": "Demandes de séries TV",
-    "movieRequests": "Demandes de films"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

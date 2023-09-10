@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Er is een onverwachte fout opgetreden",
-        "text": "Homarr kon niet communiceren met je Torrent-clients. Controleer je configuratie"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Bezig met laden..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Beheerd door",

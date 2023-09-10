@@ -6,6 +6,9 @@
       "title": "Medya talep listesi",
       "replaceLinksWithExternalHost": {
         "label": "Bağlantıları harici ana bilgisayar ile değiştirin"
+      },
+      "openInNewTab": {
+        "label": "Bağlantıları yeni sekmede aç"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Talebi Onayla",
-    "decline": "Talebi reddet"
+    "decline": "Talebi reddet",
+    "approving": "Talep Onaylanıyor..."
+  },
+  "mutation": {
+    "approving": "Onaylanan",
+    "declining": "Reddedilen",
+    "request": "talep et...",
+    "approved": "Talep onaylandı!",
+    "declined": "Talep reddedildi!"
   }
 }

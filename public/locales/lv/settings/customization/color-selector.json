@@ -1,4 +1,6 @@
 {
   "colors": "Krāsas",
-  "suffix": "{{color}} krāsa"
+  "suffix": "{{color}} krāsa",
+  "primary": "Primārais",
+  "secondary": "Sekundārais"
 }

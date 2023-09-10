@@ -1,11 +1,12 @@
 {
   "descriptor": {
-    "name": "媒体服务器",
-    "description": "与您的 Jellyfin 或 Plex 媒体服务器交互",
+    "name": "媒体服务",
+    "description": "与您的 Jellyfin 或 Plex 媒体服务交互",
     "settings": {
-      "title": "设置媒体服务器小部件"
+      "title": "媒体服务组件设置"
     }
   },
+  "loading": "正在载入流",
   "card": {
     "table": {
       "header": {

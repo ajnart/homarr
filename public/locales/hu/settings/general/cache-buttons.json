@@ -1,0 +1,24 @@
+{
+  "title": "Gyorsítótár ürítés",
+  "selector": {
+    "label": "Válassza ki az ürítendő gyorsítótár(ak)at",
+    "data": {
+      "ping": "Ping lekérdezések",
+      "repositoryIcons": "Távoli/lokális ikonok",
+      "calendar&medias": "Médiák a naptárból",
+      "weather": "Időjárási adatok"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "Gyorsítótár ürítve",
+    "clearAll": {
+      "text": "Minden gyorsítótár ürítése",
+      "notificationMessage": "Gyorsítótár kiürítve"
+    },
+    "clearSelect": {
+      "text": "Kijelölt lekérdezések törlése",
+      "notificationMessageSingle": "A {{value}} gyorsítótárát ürítették",
+      "notificationMessageMulti": "A {{values}} gyorsítótárát ürítették"
+    }
+  }
+}

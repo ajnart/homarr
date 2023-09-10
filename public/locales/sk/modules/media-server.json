@@ -6,6 +6,7 @@
       "title": "Nastavenia mini aplikácie mediálneho servera"
     }
   },
+  "loading": "Načítanie streamov",
   "card": {
     "table": {
       "header": {

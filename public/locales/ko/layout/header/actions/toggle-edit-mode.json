@@ -7,5 +7,6 @@
     "popover": {
         "title": "",
         "text": ""
-    }
+    },
+    "unloadEvent": ""
 }

@@ -1,0 +1,8 @@
+{
+	"xPosition": "X-tengely pozíció",
+	"width": "Szélesség",
+	"height": "Magasság",
+	"yPosition": "Y-tengely pozíció",
+	"zeroOrHigher": "0 vagy nagyobb",
+	"betweenXandY": "{{min}} és {{max}} között"
+}

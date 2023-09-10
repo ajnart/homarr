@@ -63,7 +63,8 @@
       }
     },
     "loading": {
-      "title": "טוען..."
+      "title": "טוען",
+      "description": "יוצר קשר"
     },
     "popover": {
       "introductionPrefix": "מנוהל על ידי",

@@ -6,6 +6,13 @@
 	"key": "Горячие клавиши",
 	"action": "Действие",
 	"keybinds": "Сочетания клавиш",
+	"documentation": "Документация",
+	"actions": {
+		"toggleTheme": "Переключить светлую/темную тему",
+		"focusSearchBar": "Перейти в панель поиска",
+		"openDocker": "Открыть виджет docker",
+		"toggleEdit": "Переключиться в режим редактирования"
+	},
 	"metrics": {
 		"configurationSchemaVersion": "Версия схемы конфигурации",
 		"configurationsCount": "Доступные конфигурации",
@@ -14,5 +21,9 @@
 		"i18n": "Загружено I18n переводов пространств имён",
 		"locales": "Настроено I18n локализаций",
 		"experimental_disableEditMode": "<b>ЭКСПЕРИМЕНТАЛЬНЫЙ</b>: Отключить режим редактирования"
+	},
+	"version": {
+		"new": "Новая: {{newVersion}}",
+		"dropdown": "Версия {{newVersion}} уже доступна! Текущая версия: {{currentVersion}}"
 	}
 }

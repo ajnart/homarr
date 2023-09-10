@@ -28,7 +28,6 @@ import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants
 import nextI18nextConfig from '../../next-i18next.config.js';
 import { ConfigProvider } from '~/config/provider';
 import '../styles/global.scss';
-import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '~/tools/color';
 import {
   ServerSidePackageAttributesType,
@@ -89,12 +88,6 @@ function App(
       setPrimaryShade(6);
     };
   }, [props.pageProps]);
-
-  const { setInitialPackageAttributes } = usePackageAttributesStore();
-
-  useEffect(() => {
-    setInitialPackageAttributes(props.pageProps.packageAttributes);
-  }, []);
 
   return (
     <>

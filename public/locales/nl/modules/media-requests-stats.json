@@ -4,14 +4,24 @@
     "description": "Statistieken over je mediaverzoeken",
     "settings": {
       "title": "Mediaverzoeken statistieken",
-      "direction": {
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      },
+      "openInNewTab": {
         "label": ""
       }
     }
   },
-  "stats": {
-    "pending": "Wachtende goedkeuringen",
-    "tvRequests": "TV verzoeken",
-    "movieRequests": "Film verzoeken"
+  "mediaStats": {
+    "title": "",
+    "pending": "",
+    "tvRequests": "",
+    "movieRequests": "",
+    "approved": "",
+    "totalRequests": ""
+  },
+  "userStats": {
+    "title": "",
+    "requests": ""
   }
 }

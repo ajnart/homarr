@@ -54,6 +54,10 @@
 				"text": ""
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Ur Form Contains Invalid Data. Hence, It Cant Be Savd. Plz Resolve All Issuez An Click Dis Butn Again 2 Save Ur Changez"
+		"popover": "Ur Form Contains Invalid Data. Hence, It Cant Be Savd. Plz Resolve All Issuez An Click Dis Butn Again 2 Save Ur Changez",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

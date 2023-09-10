@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Wystąpił nieoczekiwany błąd",
-        "text": "Program Homarr nie mógł się skomunikować z Twoim klientem Torrent. Proszę sprawdzić swoją konfigurację"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Ładowanie..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Zarządzany przez",

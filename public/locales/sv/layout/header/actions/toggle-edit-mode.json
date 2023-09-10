@@ -7,5 +7,6 @@
     "popover": {
         "title": "Redigeringsläget är aktiverat för  <1>{{size}}</1> storlek",
         "text": "Du kan justera och konfigurera dina appar nu. Ändringarna <strong>sparas inte</strong> förrän du lämnar redigeringsläget"
-    }
+    },
+    "unloadEvent": "Avsluta redigeringsläget för att spara dina ändringar"
 }

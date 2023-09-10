@@ -14,5 +14,12 @@
     "category": {
       "openAllInNewTab": "Atvērt visu jaunā cilnē"
     }
+  },
+  "menu": {
+    "moveUp": "Virzīt augšup",
+    "moveDown": "Virzīt lejup",
+    "addCategory": "",
+    "addAbove": "virs",
+    "addBelow": "zem"
   }
 }

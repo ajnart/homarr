@@ -7,5 +7,19 @@
     "goBack": "Atgriezties uz iepriekšējo soli",
     "actionIcon": {
         "tooltip": "Pievienot flīzi"
+    },
+    "apps": "Lietotnes",
+    "app": {
+        "defaultName": "Jūsu Lietotne"
+    },
+    "widgets": "Logrīki",
+    "categories": "Kategorijas",
+    "category": {
+        "newName": "Kategorijas nosaukums",
+        "defaultName": "Jauna Kategorija",
+        "created": {
+            "title": "Kategorija izveidota",
+            "message": "Ir izveidota kategorija \"{{name}}\""
+        }
     }
 }

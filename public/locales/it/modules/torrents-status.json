@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Si è verificato un errore imprevisto",
-        "text": "Homarr non è riuscito a comunicare con i client Torrent. Controlla la tua configurazione"
+        "text": "Impossibile comunicare con i client Torrent. Controllare la configurazione"
       }
     },
     "loading": {
-      "title": "Caricamento in corso..."
+      "title": "Caricamento in corso",
+      "description": "Connessione in corso"
     },
     "popover": {
       "introductionPrefix": "Gestito da",

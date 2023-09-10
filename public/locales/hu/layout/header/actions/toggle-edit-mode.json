@@ -1,0 +1,12 @@
+{
+    "description": "A Szerkesztési módban beállíthatja a csempéket és konfigurálhatja az alkalmazásokat. A módosítások nem kerülnek mentésre, amíg ki nem lép a Szerkesztési módból.",
+    "button": {
+        "disabled": "Szerkesztési módba lépés",
+        "enabled": "Kilépés és mentés"
+    },
+    "popover": {
+        "title": "A szerkesztési mód engedélyezve van a <1>{{size}}</1> méret",
+        "text": "Most beállíthatja és konfigurálhatja az alkalmazásokat. A módosítások <strong>nem kerülnek mentésre</strong> amíg ki nem lép a szerkesztési módból."
+    },
+    "unloadEvent": "A módosítások mentéséhez lépjen ki a szerkesztési módból"
+}

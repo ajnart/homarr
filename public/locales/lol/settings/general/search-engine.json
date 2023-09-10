@@ -1,6 +1,7 @@
 {
   "title": "Search engien",
   "configurationName": "Search Engine Configurashun",
+  "custom": "",
   "tips": {
     "generalTip": "",
     "placeholderTip": "%s can bees usd as placeholdah 4 teh quewee."

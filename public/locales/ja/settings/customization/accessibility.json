@@ -1,11 +1,11 @@
 {
     "disablePulse": {
-        "label": "",
-        "description": ""
+        "label": "Pingパルスを無効にする",
+        "description": "デフォルトでは、HomarrのPingインジケータはパルスを発生させます。これは刺激的な可能性があります。このスライダーはアニメーションを無効にします"
     },
     "replaceIconsWithDots": {
-        "label": "",
-        "description": ""
+        "label": "Pingのドットをアイコンに置き換える",
+        "description": "色覚障害のユーザーの場合、ping点が認識できない可能性があります。これはインジケータをアイコンに置き換えます。"
     },
-    "alert": ""
+    "alert": "何か足りませんか？Homarrのアクセシビリティを喜んで拡張します。"
 }

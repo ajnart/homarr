@@ -54,6 +54,10 @@
 				"text": "Ovo može potrajati nekoliko sekundi"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Vaš obrazac sadrži neispravne podatke. Stoga se ne može spremiti. Molimo riješite sve probleme i ponovno kliknite ovaj gumb da biste spremili promjene"
+		"popover": "Vaš obrazac sadrži neispravne podatke. Stoga se ne može spremiti. Molimo riješite sve probleme i ponovno kliknite ovaj gumb da biste spremili promjene",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

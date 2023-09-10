@@ -54,6 +54,10 @@
 				"text": "To może zająć kilka sekund"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Twój formularz zawiera nieprawidłowe dane. Dlatego nie można go zapisać. Proszę rozwiązać wszystkie problemy i kliknąć ten przycisk ponownie, aby zapisać zmiany."
+		"popover": "Twój formularz zawiera nieprawidłowe dane. Dlatego nie można go zapisać. Proszę rozwiązać wszystkie problemy i kliknąć ten przycisk ponownie, aby zapisać zmiany.",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

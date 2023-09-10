@@ -1,25 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "ブックマーク",
+    "description": "文字列またはリンクの静的リストを表示する",
     "settings": {
-      "title": "",
+      "title": "ブックマークの設定",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "ウィジェットタイトル",
+        "info": "タイトルを隠したい場合は空白のままにする"
       },
       "items": {
-        "label": ""
+        "label": "アイテム"
       },
       "layout": {
-        "label": ""
+        "label": "レイアウト",
+        "data": {
+          "autoGrid": "自動グリッド",
+          "horizontal": "水平",
+          "vertical": "垂直"
+        }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "ブックマークリストは空です",
+      "text": "編集モードでこのリストに新しい項目を追加する"
     }
+  },
+  "item": {
+    "validation": {
+      "length": "",
+      "invalidLink": "有効ではないリンク",
+      "errorMsg": "検証エラーがあったため、保存されませんでした。入力を認証してください。"
+    },
+    "name": "名称",
+    "url": "URL",
+    "newTab": "新しいタブで開く",
+    "hideHostname": "ホスト名を隠す",
+    "hideIcon": "アイコンを非表示",
+    "delete": "削除"
   }
 }

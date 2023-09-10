@@ -43,7 +43,7 @@ export const appRouter = createTRPCRouter({
         }
 
         if (error.code === 'ECONNABORTED') {
-          Consola.error(`Ping timed out for app with id : ${input} (url: ${app.url})`);
+          Consola.error(`Ping timed out for app with id '${input.id}' in config '${input.configName}' -> url: ${app.url})`);
           throw new TRPCError({
             code: 'TIMEOUT',
             cause: input,

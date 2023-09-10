@@ -6,6 +6,9 @@
       "title": "רשימת בקשות מדיה",
       "replaceLinksWithExternalHost": {
         "label": "החלף קישורים במארח חיצוני"
+      },
+      "openInNewTab": {
+        "label": "פתח לינק בלשונית חדשה"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "בקשות שאושרו",
-    "decline": "בקשות שנדחו"
+    "decline": "בקשות שנדחו",
+    "approving": "מאשר את הבקשה..."
+  },
+  "mutation": {
+    "approving": "מאשר",
+    "declining": "בדחיה",
+    "request": "בקשה...",
+    "approved": "הבקשה אושרה!",
+    "declined": "הבקשה נדחתה!"
   }
 }

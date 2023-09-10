@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Vyskytla sa neočakávaná chyba",
-        "text": "Homarr nedokázal komunikovať s vašimi klientmi Torrent. Skontrolujte prosím svoju konfiguráciu"
+        "text": "Nieje možné komunikovať s klientmi Torrent. Skontrolujte prosím svoju konfiguráciu"
       }
     },
     "loading": {
-      "title": "Nahrávam..."
+      "title": "Načítavanie",
+      "description": "Nadväzovanie spojenia..."
     },
     "popover": {
       "introductionPrefix": "Spravovaný",

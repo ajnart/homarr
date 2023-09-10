@@ -141,6 +141,7 @@ const migrateAppConfigs = (config: BackendConfigType) => {
         ...app.appearance,
         appNameStatus: app.appearance.appNameStatus?? 'normal',
         positionAppName: app.appearance.positionAppName?? 'column',
+        appNameFontSize: app.appearance.appNameFontSize?? 16,
         lineClampAppName: app.appearance.lineClampAppName?? 1,
       }
     }))

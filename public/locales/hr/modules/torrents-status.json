@@ -59,11 +59,12 @@
       },
       "generic": {
         "title": "Došlo je do neočekivane pogreške",
-        "text": "Homarr nije uspio uspostaviti komunikaciju s vašim Torrent klijentima. Provjerite svoju konfiguraciju"
+        "text": ""
       }
     },
     "loading": {
-      "title": "Učitavam..."
+      "title": "",
+      "description": ""
     },
     "popover": {
       "introductionPrefix": "Upravlja s",

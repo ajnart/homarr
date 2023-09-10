@@ -63,7 +63,8 @@
       }
     },
     "loading": {
-      "title": "Laddar..."
+      "title": "Laddar",
+      "description": "Upprättar en anslutning"
     },
     "popover": {
       "introductionPrefix": "Förvaltas av",

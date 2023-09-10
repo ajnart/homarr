@@ -1,11 +1,25 @@
 {
     "modal": {
         "title": "添加新磁贴",
-        "text": "磁贴是Homarr的主要组成元素。它们被用来显示你的应用程序和其他信息。你可以根据需要增加任意数量的磁贴。"
+        "text": "磁贴是 Homarr 的主要组成元素。它们被用来显示你的应用程序和其他信息。您可以根据需要增加任意数量的磁贴。"
     },
-    "widgetDescription": "小组件与你的应用程序交互，提供更多的应用程序控制。在使用前通常需要额外的配置。",
+    "widgetDescription": "组件与您的应用交互，为您提供更多的应用程序控制。它们在使用前通常需要额外的配置。",
     "goBack": "上一步",
     "actionIcon": {
         "tooltip": "添加磁贴"
+    },
+    "apps": "应用",
+    "app": {
+        "defaultName": "您的应用"
+    },
+    "widgets": "组件",
+    "categories": "分类",
+    "category": {
+        "newName": "新分类名称",
+        "defaultName": "新建分类",
+        "created": {
+            "title": "分类已创建",
+            "message": "已创建分类\"{{name}}\""
+        }
     }
 }

@@ -32,8 +32,8 @@
   },
   "loading": "Yükleniyor...",
   "breakPoints": {
-    "small": "küçük",
-    "medium": "orta",
+    "small": "Küçük",
+    "medium": "Orta",
     "large": "Büyük"
   },
   "seeMore": "Daha fazla..."

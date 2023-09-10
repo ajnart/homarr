@@ -6,6 +6,9 @@
       "title": "Zoznam požiadaviek médií",
       "replaceLinksWithExternalHost": {
         "label": "Nahradiť odkazy s externým hostiteľom"
+      },
+      "openInNewTab": {
+        "label": "Otvorenie odkazov v novej karte"
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Schváliť žiadosti",
-    "decline": "Odmietnutie žiadosti"
+    "decline": "Odmietnutie žiadosti",
+    "approving": "Schválenie žiadosti..."
+  },
+  "mutation": {
+    "approving": "Schvaľovanie",
+    "declining": "Zamietanie",
+    "request": "žiadosť...",
+    "approved": "Žiadosť bola schválená!",
+    "declined": "Žiadosť bola zamietnutá!"
   }
 }

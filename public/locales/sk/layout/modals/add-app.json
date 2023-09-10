@@ -54,6 +54,10 @@
 				"text": "Môže to trvať niekoľko sekúnd"
 			}
 		},
+		"appNameFontSize": {
+			"label": "Názov aplikácie Veľkosť písma",
+			"description": "Nastavenie veľkosti písma pre zobrazenie názvu aplikácie na dlaždici."
+		},
 		"appNameStatus": {
 			"label": "Názov aplikácie Stav",
 			"description": "Vyberte, kde sa má názov zobrazovať, ak vôbec.",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Váš formulár obsahuje neplatné údaje. Preto ho nemožno uložiť. Vyriešte všetky problémy a znovu kliknite na toto tlačidlo, aby ste uložili svoje zmeny"
+		"popover": "Váš formulár obsahuje neplatné údaje. Preto ho nemožno uložiť. Vyriešte všetky problémy a znovu kliknite na toto tlačidlo, aby ste uložili svoje zmeny",
+		"name": "Názov je povinný",
+		"noUrl": "URL je povinná",
+		"invalidUrl": "Hodnota nie je platná url",
+		"noIconUrl": "Toto pole je povinné",
+		"noExternalUri": "Vyžaduje sa externý URI",
+		"invalidExternalUri": "Externý URI nie je platný uri"
 	}
 }

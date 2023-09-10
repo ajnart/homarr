@@ -11,13 +11,28 @@
         "label": "Comece a semana no Domingo"
       },
       "radarrReleaseType": {
-        "label": "Tipo de libertação de Radarr"
+        "label": "Tipo de libertação de Radarr",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
       },
       "hideWeekDays": {
         "label": ""
       },
-      "fontSize": {
+      "showUnmonitored": {
         "label": ""
+      },
+      "fontSize": {
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
       }
     }
   }

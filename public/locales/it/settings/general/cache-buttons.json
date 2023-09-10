@@ -1,0 +1,24 @@
+{
+  "title": "Pulizia cache",
+  "selector": {
+    "label": "Seleziona la cache da pulire",
+    "data": {
+      "ping": "Ping queries",
+      "repositoryIcons": "Icone remote/locali",
+      "calendar&medias": "Media dal calendario",
+      "weather": "Dati meteo"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "Cache svuotata",
+    "clearAll": {
+      "text": "Svuota tutta la cache",
+      "notificationMessage": "Tutta la cache è stata svuotata"
+    },
+    "clearSelect": {
+      "text": "Cancella le query selezionate",
+      "notificationMessageSingle": "La cache di {{value}} è stata cancellata",
+      "notificationMessageMulti": "Le cache di {{values}} sono state cancellate"
+    }
+  }
+}

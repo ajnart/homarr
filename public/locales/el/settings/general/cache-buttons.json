@@ -1,0 +1,24 @@
+{
+  "title": "Καθαρισμός cache",
+  "selector": {
+    "label": "Επιλέξτε τις cache(s) για εκκαθάριση",
+    "data": {
+      "ping": "Ερωτήματα Ping",
+      "repositoryIcons": "Απομακρυσμένα/Τοπικά Εικονίδια",
+      "calendar&medias": "Πολυμέσα από το ημερολόγιο",
+      "weather": "Δεδομένα καιρού"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "Η Μνήμη Cache Καθαρίστηκε",
+    "clearAll": {
+      "text": "Εκκαθάριση όλων των cache",
+      "notificationMessage": "Όλα τα cache έχουν καθαριστεί"
+    },
+    "clearSelect": {
+      "text": "Εκκαθάριση επιλεγμένων",
+      "notificationMessageSingle": "Η cache για το {{value}} έχει εκκαθαριστεί",
+      "notificationMessageMulti": "Η cache για τα {{values}} έχει εκκαθαριστεί"
+    }
+  }
+}

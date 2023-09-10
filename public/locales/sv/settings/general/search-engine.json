@@ -1,6 +1,7 @@
 {
   "title": "Sökmotor",
   "configurationName": "Sökmotorns konfiguration",
+  "custom": "Anpassad",
   "tips": {
     "generalTip": "Det finns flera prefix som du kan använda! Om du lägger till dessa före din fråga filtrerar du resultaten. !s (Webb), !t (Torrents), !y (YouTube) och !m (Media).",
     "placeholderTip": "%s kan användas som platshållare för förfrågningen."

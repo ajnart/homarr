@@ -7,5 +7,6 @@
     "popover": {
         "title": "Način urejanja je omogočen za  <1>{{size}}</1> velikost",
         "text": "Zdaj lahko prilagodite in konfigurirate aplikacije. Spremembe so <strong>in niso shranjene</strong> , dokler ne zapustite načina urejanja."
-    }
+    },
+    "unloadEvent": ""
 }

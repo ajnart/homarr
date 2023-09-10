@@ -4,14 +4,24 @@
     "description": "您的媒体请求统计",
     "settings": {
       "title": "媒体请求状态",
-      "direction": {
-        "label": "布局方向。"
+      "replaceLinksWithExternalHost": {
+        "label": "使用外部地址替换链接"
+      },
+      "openInNewTab": {
+        "label": "在新标签页中打开链接"
       }
     }
   },
-  "stats": {
-    "pending": "待核准",
+  "mediaStats": {
+    "title": "媒体统计",
+    "pending": "待批准",
     "tvRequests": "电视请求",
-    "movieRequests": "电影请求"
+    "movieRequests": "电影请求",
+    "approved": "已批准",
+    "totalRequests": "总计"
+  },
+  "userStats": {
+    "title": "用户排行",
+    "requests": "请求： {{number}}"
   }
 }

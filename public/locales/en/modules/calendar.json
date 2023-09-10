@@ -18,6 +18,9 @@
       "hideWeekDays": {
         "label": "Hide week days"
       },
+      "showUnmonitored": {
+        "label": "Show unmonitored items"
+      },
       "fontSize": {
         "label": "Font Size",
         "data":{

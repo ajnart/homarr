@@ -54,6 +54,10 @@
 				"text": ""
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": ""
+		"popover": "",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

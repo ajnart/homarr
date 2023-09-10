@@ -6,6 +6,9 @@
       "title": "Liste des demandes de médias",
       "replaceLinksWithExternalHost": {
         "label": "Remplacer les liens par des hôtes externes"
+      },
+      "openInNewTab": {
+        "label": ""
       }
     }
   },
@@ -19,6 +22,14 @@
   },
   "tooltips": {
     "approve": "Valider les demandes",
-    "decline": "Refuser les demandes"
+    "decline": "Refuser les demandes",
+    "approving": "Approbation de la requête..."
+  },
+  "mutation": {
+    "approving": "Approbation",
+    "declining": "Rejet",
+    "request": "de la demande...",
+    "approved": "La requête a été approuvée !",
+    "declined": "La requête a été rejetée !"
   }
 }

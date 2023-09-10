@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "検索バー",
-    "description": "カスタム検索エンジン、YouTube、サポートされているインテグレーションを検索できる検索バーです。"
+    "description": "カスタム検索エンジン、YouTube、およびサポートされている統合を検索できる検索バー。"
   },
   "input": {
     "placeholder": "ウェブで検索..."
@@ -21,7 +21,7 @@
       "description": "トレントを検索する"
     },
     "overseerr": {
-      "name": "オーバーホール",
+      "name": "Overseerr",
       "description": "Overseerrで映画やテレビ番組を検索する"
     }
   },

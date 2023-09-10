@@ -54,6 +54,10 @@
 				"text": "Có thể mất vài giây"
 			}
 		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
 		"appNameStatus": {
 			"label": "",
 			"description": "",
@@ -99,6 +103,12 @@
 		}
 	},
 	"validation": {
-		"popover": "Biểu mẫu của bạn chứa dữ liệu không hợp lệ, vì vậy không thể lưu nó. Vui lòng khắc phục mọi vấn đề và nhấp lại vào nút này để lưu các thay đổi của bạn"
+		"popover": "Biểu mẫu của bạn chứa dữ liệu không hợp lệ, vì vậy không thể lưu nó. Vui lòng khắc phục mọi vấn đề và nhấp lại vào nút này để lưu các thay đổi của bạn",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
 	}
 }

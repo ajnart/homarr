@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "Prepnutie režimu úprav",
+    "enable": "Povolenie režimu úprav",
+    "disable": "Zakázanie režimu úprav"
+  },
+  "form": {
+    "label": "Upraviť heslo",
+    "message": "Aby ste mohli prepnúť režim úprav, musíte zadať heslo, ktoré ste zadali do premennej prostredia s názvom <Code>EDIT_MODE_PASSWORD</Code> . Ak nie je nastavená, nie je možné zapínať a vypínať režim úprav.",
+    "submit": "Odoslať"
+  },
+  "notification": {
+    "success": {
+      "title": "Hotovo",
+      "message": "Úspešne sa prepol režim úprav, načítavanie stránky..."
+    },
+    "error": {
+      "title": "Chyba",
+      "message": "Nepodarilo sa prepnúť režim úprav, skúste to prosím znova."
+    }
+  }
+}
