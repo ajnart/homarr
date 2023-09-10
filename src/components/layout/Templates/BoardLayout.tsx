@@ -19,7 +19,6 @@ import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/grid
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
-import { env } from '~/env';
 import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
@@ -65,7 +64,7 @@ const DockerButton = () => {
 
   return (
     <Tooltip label={t('actionIcon.tooltip')}>
-      <HeaderActionButton component={Link} href="/docker">
+      <HeaderActionButton component={Link} href="/manage/tools/docker">
         <IconBrandDocker size={20} stroke={1.5} />
       </HeaderActionButton>
     </Tooltip>

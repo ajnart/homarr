@@ -8,6 +8,7 @@ import { CategoryEditModal } from '~/components/Dashboard/Wrappers/Category/Cate
 
 import { CreateBoardModal } from './components/Manage/Board/create-board.modal';
 import { DeleteBoardModal } from './components/Manage/Board/delete-board.modal';
+import { DockerSelectBoardModal } from './components/Manage/Tools/Docker/docker-select-board.modal';
 import { CopyInviteModal } from './components/Manage/User/Invite/copy-invite.modal';
 import { CreateInviteModal } from './components/Manage/User/Invite/create-invite.modal';
 import { DeleteInviteModal } from './components/Manage/User/Invite/delete-invite.modal';
@@ -29,6 +30,7 @@ export const modals = {
   copyInviteModal: CopyInviteModal,
   deleteBoardModal: DeleteBoardModal,
   changeUserRoleModal: ChangeUserRoleModal,
+  dockerSelectBoardModal: DockerSelectBoardModal,
 };
 
 declare module '@mantine/modals' {

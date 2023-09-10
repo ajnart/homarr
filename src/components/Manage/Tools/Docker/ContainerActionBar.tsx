@@ -4,6 +4,7 @@ import {
   IconCheck,
   IconPlayerPlay,
   IconPlayerStop,
+  IconPlus,
   IconRefresh,
   IconRotateClockwise,
   IconTrash,
@@ -11,6 +12,8 @@ import {
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { RouterInputs, api } from '~/utils/api';
+
+import { openDockerSelectBoardModal } from './docker-select-board.modal';
 
 export interface ContainerActionBarProps {
   selected: Dockerode.ContainerInfo[];
@@ -85,6 +88,16 @@ export default function ContainerActionBar({
         disabled={selected.length === 0}
       >
         {t('actionBar.remove.title')}
+      </Button>
+      <Button
+        leftIcon={<IconPlus />}
+        color="indigo"
+        variant="light"
+        radius="md"
+        disabled={selected.length !== 1}
+        onClick={() => openDockerSelectBoardModal({ containers: selected })}
+      >
+        {t('actionBar.addToHomarr.title')}
       </Button>
     </Group>
   );

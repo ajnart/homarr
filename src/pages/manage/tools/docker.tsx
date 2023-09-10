@@ -5,9 +5,9 @@ import { ContainerInfo } from 'dockerode';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import ContainerActionBar from '~/components/Manage/Tools/Docker/ContainerActionBar';
+import ContainerTable from '~/components/Manage/Tools/Docker/ContainerTable';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
-import ContainerActionBar from '~/modules/Docker/ContainerActionBar';
-import DockerTable from '~/modules/Docker/DockerTable';
 import { dockerRouter } from '~/server/api/routers/docker/router';
 import { getServerAuthSession } from '~/server/auth';
 import { prisma } from '~/server/db';
@@ -49,7 +49,7 @@ export default function DockerPage({
     <ManageLayout>
       <Stack>
         <ContainerActionBar selected={selection} reload={reload} isLoading={isRefetching} />
-        <DockerTable containers={data ?? []} selection={selection} setSelection={setSelection} />
+        <ContainerTable containers={data ?? []} selection={selection} setSelection={setSelection} />
       </Stack>
     </ManageLayout>
   );
