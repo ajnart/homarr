@@ -1,6 +1,6 @@
 {
     "modal": {
-        "title": "Yeni bir araç ekle",
+        "title": "Yeni araç ekle",
         "text": "Araçlar, Homarr'ın ana öğesidir. Uygulamalarınızı ve diğer bilgileri görüntülemek için kullanılırlar. İstediğiniz kadar araç ekleyebilirsiniz."
     },
     "widgetDescription": "Widget'lar, uygulamalarınız üzerinde daha fazla kontrol sağlamak için uygulamalarınızla etkileşime girer. Genellikle kullanımdan önce ek yapılandırma gerektirirler.",
@@ -10,7 +10,7 @@
     },
     "apps": "Uygulamalar",
     "app": {
-        "defaultName": "Sizin Uygulamanız"
+        "defaultName": "Uygulama Adınız"
     },
     "widgets": "Widget'lar",
     "categories": "Kategoriler",
