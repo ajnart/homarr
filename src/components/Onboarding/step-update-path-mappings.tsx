@@ -74,7 +74,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
           </Tabs.Tab>
         </Tabs.List>
 
-        <Tabs.Panel value="standard_docker" pt="xs">
+        <Tabs.Panel value="standard_docker" p="xs">
           <List type="ordered">
             <List.Item>
               <Text>
@@ -110,7 +110,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
           </List>
         </Tabs.Panel>
 
-        <Tabs.Panel value="docker_compose" pt="xs">
+        <Tabs.Panel value="docker_compose" p="xs">
           <List type="ordered">
             <List.Item>
               <Text>
@@ -145,7 +145,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
           </List>
         </Tabs.Panel>
 
-        <Tabs.Panel value="standalone" pt="xs">
+        <Tabs.Panel value="standalone" p="xs">
           <Text>
             You're lucky. For installation <b>without Docker</b> on Windows and Linux, there are no
             additional steps required. However, be advised that your backups should start to include
@@ -153,7 +153,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
           </Text>
         </Tabs.Panel>
 
-        <Tabs.Panel value="unraid" pt="xs">
+        <Tabs.Panel value="unraid" p="xs">
           <List type="ordered">
             <List.Item>Click on your Homarr application and click "Edit"</List.Item>
             <List.Item>
@@ -175,7 +175,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
           </List>
         </Tabs.Panel>
 
-        <Tabs.Panel value="others" pt="xs">
+        <Tabs.Panel value="others" p="xs">
           <Text>
             We are sadly not able to include upgrade guides for all kind of systems. If your system
             was not listed, you should mount this new mounting point in your container:
