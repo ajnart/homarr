@@ -36,5 +36,11 @@ export const getConfig = (name: string): BackendConfigType => {
     writeConfig(backendConfig);
   }
 
+  if (!backendConfig.settings.access) {
+    backendConfig.settings.access = {
+      allowAnonymous: false,
+    };
+  }
+
   return backendConfig;
 };

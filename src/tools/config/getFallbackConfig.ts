@@ -11,7 +11,7 @@ export const getFallbackConfig = (name?: string) => ({
 export const getStaticFallbackConfig = (name: string): ConfigType => ({
   schemaVersion: 1,
   configProperties: {
-    name: name,
+    name: name
   },
   categories: [
     {
@@ -33,6 +33,9 @@ export const getStaticFallbackConfig = (name: string): ConfigType => ({
   apps: [],
   widgets: [],
   settings: {
+    access: {
+      allowAnonymous: false,
+    },
     common: {
       searchEngine: {
         type: 'google',

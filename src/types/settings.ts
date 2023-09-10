@@ -3,6 +3,11 @@ import { MantineTheme } from '@mantine/core';
 export interface SettingsType {
   common: CommonSettingsType;
   customization: CustomizationSettingsType;
+  access: BoardAccessSettingsType;
+}
+
+export interface BoardAccessSettingsType {
+  allowAnonymous: boolean;
 }
 
 export interface CommonSettingsType {

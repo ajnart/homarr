@@ -47,6 +47,17 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   const boardName = currentUserSettings?.defaultBoard ?? 'default';
   const config = await getFrontendConfig(boardName);
 
+  if (!config.settings.access.allowAnonymous && !session?.user) {
+    return {
+      notFound: true,
+      props: {
+        primaryColor: config.settings.customization.colors.primary,
+        secondaryColor: config.settings.customization.colors.secondary,
+        primaryShade: config.settings.customization.colors.shade,
+      }
+    };
+  }
+
   return {
     props: {
       config,

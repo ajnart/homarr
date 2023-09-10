@@ -191,6 +191,10 @@ export const configRouter = createTRPCRouter({
         ...previousConfig,
         settings: {
           ...previousConfig.settings,
+          access: {
+            ...previousConfig.settings.access,
+            allowAnonymous: input.access.allowAnonymous,
+          },
           customization: {
             ...previousConfig.settings.customization,
             appOpacity: input.appearance.opacity,

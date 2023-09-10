@@ -10,6 +10,7 @@ import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { ConfigType } from '~/types/config';
+import { getServerAuthSession } from '~/server/auth';
 
 export default function BoardPage({
   config: initialConfig,
@@ -56,6 +57,18 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
 
   const config = await getFrontendConfig(routeParams.data.slug);
   const translations = await getServerSideTranslations(boardNamespaces, locale, req, res);
+
+  const session = await getServerAuthSession({ req, res });
+  if (!config.settings.access.allowAnonymous && !session?.user) {
+    return {
+      notFound: true,
+      props: {
+        primaryColor: config.settings.customization.colors.primary,
+        secondaryColor: config.settings.customization.colors.secondary,
+        primaryShade: config.settings.customization.colors.shade,
+      }
+    };
+  }
 
   return {
     props: {
