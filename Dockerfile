@@ -1,6 +1,8 @@
 FROM node:20-alpine
 WORKDIR /app
 
+ARG PORT=7575
+
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 ENV NODE_OPTIONS '--no-experimental-fetch'
@@ -14,8 +16,10 @@ COPY package.json ./package.json
 COPY .next/standalone ./
 COPY .next/static ./.next/static
 
-EXPOSE 7575
+EXPOSE $PORT
+ENV PORT=${PORT}
 
-ENV PORT 7575
+HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
+    CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
 
 CMD ["node", "server.js"]
