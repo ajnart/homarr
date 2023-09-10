@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { AppType } from '~/types/app';
 
-export const generateDefaultApp = (wrapperId: string) =>
+export const generateDefaultApp = (wrapperId: string): AppType =>
   ({
     id: uuidv4(),
     name: 'Your app',
@@ -11,6 +11,7 @@ export const generateDefaultApp = (wrapperId: string) =>
       appNameStatus: 'normal',
       positionAppName: 'column',
       lineClampAppName: 1,
+      appNameFontSize: 16
     },
     network: {
       enabledStatusChecker: true,
