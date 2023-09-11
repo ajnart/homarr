@@ -13,7 +13,18 @@
 		},
 		"internalAddress": {
 			"label": "Internal address",
-			"description": "Internal IP-address of the app."
+			"description": "Internal IP-address of the app.",
+			"troubleshoot": {
+				"label": "Common Troubleshooting",
+				"header": "This is a list of commonly made mistake and troubleshooting:",
+				"lines": {
+					"nothingAfterPort": "You should, in most if not all cases, not input anything after the port, even the '/admin' for pihole.",
+					"protocolCheck": "Always make sure that the URL is preceded by http or https, and to make sure you are using the right one.",
+					"iframe": "When it comes to iframes, those should always be using the same protocol (http/s) as Homarr.",
+					"clearCache": "Some informations are registered in cache, so an integration might not work unless you clear the cache in Homarr's general options."
+				},
+				"footer": "For more troubleshooting, reach out on our {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "External address",
