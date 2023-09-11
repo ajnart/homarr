@@ -22,7 +22,7 @@
         "label": "Nascondi giorni della settimana"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Mostra elementi non monitorati"
       },
       "fontSize": {
         "label": "Dimensioni carattere",
