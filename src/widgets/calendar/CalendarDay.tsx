@@ -65,7 +65,7 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
     >
       <Popover.Target>
         <Container
-          onClick={medias.totalCount > 0 ? open : undefined}
+          onClick={medias.totalCount > 0 && !opened ? open : close}
           h="100%"
           w="100%"
           sx={{
