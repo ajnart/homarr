@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "בקרות DNS",
-    "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך"
+    "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך",
+    "settings": {
+      "title": "",
+      "showToggleAllButtons": {
+        "label": ""
+      }
+    }
   }
 }
