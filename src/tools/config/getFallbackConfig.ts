@@ -34,7 +34,7 @@ export const getStaticFallbackConfig = (name: string): ConfigType => ({
   widgets: [],
   settings: {
     access: {
-      allowAnonymous: false,
+      allowGuests: false,
     },
     common: {
       searchEngine: {

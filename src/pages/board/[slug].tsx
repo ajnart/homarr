@@ -59,7 +59,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   const translations = await getServerSideTranslations(boardNamespaces, locale, req, res);
 
   const session = await getServerAuthSession({ req, res });
-  if (!config.settings.access.allowAnonymous && !session?.user) {
+  if (!config.settings.access.allowGuests && !session?.user) {
     return {
       notFound: true,
       props: {

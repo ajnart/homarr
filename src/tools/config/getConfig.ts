@@ -38,7 +38,7 @@ export const getConfig = (name: string): BackendConfigType => {
 
   if (!backendConfig.settings.access) {
     backendConfig.settings.access = {
-      allowAnonymous: false,
+      allowGuests: false,
     };
   }
 

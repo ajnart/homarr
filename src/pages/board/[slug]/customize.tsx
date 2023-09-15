@@ -60,7 +60,7 @@ export default function CustomizationPage() {
   const form = useBoardCustomizationForm({
     initialValues: {
       access: {
-        allowAnonymous: config?.settings.access.allowAnonymous ?? false
+        allowGuests: config?.settings.access.allowGuests ?? false
       },
       layout: {
         leftSidebarEnabled: config?.settings.customization.layout.enabledLeftSidebar ?? false,

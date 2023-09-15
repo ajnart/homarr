@@ -7,7 +7,7 @@ export interface SettingsType {
 }
 
 export interface BoardAccessSettingsType {
-  allowAnonymous: boolean;
+  allowGuests: boolean;
 }
 
 export interface CommonSettingsType {

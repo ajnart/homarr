@@ -5,11 +5,9 @@ import { useBoardCustomizationFormContext } from '~/components/Board/Customize/f
 export const AccessCustomization = () => {
   const { t } = useTranslation('settings/customization/access');
   const form = useBoardCustomizationFormContext();
-
-  console.log(form.values.access.allowAnonymous);
   return (
     <Stack>
-      <Switch label={t('allowAnonymous.label')} description={t('allowAnonymous.description')} {...form.getInputProps('access.allowAnonymous', { type: 'checkbox' })} />
+      <Switch label={t('allowGuests.label')} description={t('allowGuests.description')} {...form.getInputProps('access.allowGuests', { type: 'checkbox' })} />
     </Stack>
   )
 }
