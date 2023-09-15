@@ -6,7 +6,7 @@
 	"key": "Īsinājumtaustiņš",
 	"action": "Darbība",
 	"keybinds": "Taustiņu saites",
-	"documentation": "",
+	"documentation": "Dokumentācija",
 	"actions": {
 		"toggleTheme": "Pārslēgt gaišo/tumšo motīvu",
 		"focusSearchBar": "Fokusēties uz meklēšanas joslu",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EKSPERIMENTĀLISKI</b>: Izslēgt rediģēšanas režīmu"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Jaunums: {{newVersion}}",
+		"dropdown": "Versija {{newVersion}} ir pieejama! Pašreizējā versija ir {{currentVersion}}"
 	}
 }
