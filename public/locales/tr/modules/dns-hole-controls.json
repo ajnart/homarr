@@ -3,9 +3,9 @@
     "name": "DNS hole kontrolleri",
     "description": "Kontrol panelinizden PiHole veya AdGuard'ı kontrol edin",
     "settings": {
-      "title": "",
+      "title": "DNS hole kontrol ayarları",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "'Tümünü Etkinleştir/Devre Dışı Bırak' Butonlarını Göster"
       }
     }
   }
