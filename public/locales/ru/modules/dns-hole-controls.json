@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "Управление фильтрующими DNS",
-    "description": "Управляйте PiHole или AdGuard с панели управления"
+    "description": "Управляйте PiHole или AdGuard с панели управления",
+    "settings": {
+      "title": "",
+      "showToggleAllButtons": {
+        "label": ""
+      }
+    }
   }
 }
