@@ -3,9 +3,9 @@
     "name": "DNS-Hole Steuerung",
     "description": "Steuern Sie PiHole oder AdGuard von Ihrem Dashboard aus",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für DNS-Kontrollen",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Schaltflächen \"Alle aktivieren/deaktivieren\" anzeigen"
       }
     }
   }
