@@ -3,9 +3,9 @@
     "name": "DNS hole kontrol",
     "description": "Kontroller PiHole eller AdGuard fra dit dashboard",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for DNS hole",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Vis 'Aktiver/deaktiver alle'-knapper"
       }
     }
   }
