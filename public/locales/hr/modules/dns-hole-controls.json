@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "Kontrole DNS \"hole\"",
-    "description": "Upravljajte PiHole ili AdGuard iz svoje nadzorne ploče"
+    "description": "Upravljajte PiHole ili AdGuard iz svoje nadzorne ploče",
+    "settings": {
+      "title": "",
+      "showToggleAllButtons": {
+        "label": ""
+      }
+    }
   }
 }
