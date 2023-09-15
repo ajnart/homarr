@@ -3,9 +3,9 @@
     "name": "DNS cauruma kontrole",
     "description": "Vadiet PiHole vai AdGuard no sava informācijas paneļa",
     "settings": {
-      "title": "",
+      "title": "DNS cauruma kontroles iestatījumi",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Rādīt 'Ieslēgt/Izslēgt Visus' Pogas"
       }
     }
   }
