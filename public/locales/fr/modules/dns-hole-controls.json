@@ -5,7 +5,7 @@
     "settings": {
       "title": "",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Afficher les boutons \"Activer/Désactiver tout\""
       }
     }
   }
