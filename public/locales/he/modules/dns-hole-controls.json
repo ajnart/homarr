@@ -3,9 +3,9 @@
     "name": "בקרות DNS",
     "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך",
     "settings": {
-      "title": "",
+      "title": "הגדרות מערכת שמות המתחם",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "הצג את לחצני 'הפעל/השבת הכל'"
       }
     }
   }
