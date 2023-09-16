@@ -18,8 +18,8 @@
   "menu": {
     "moveUp": "上移",
     "moveDown": "下移",
-    "addCategory": "添加分类 {{location}}",
-    "addAbove": "上方",
-    "addBelow": "下方"
+    "addCategory": "{{location}}添加分类",
+    "addAbove": "在上方",
+    "addBelow": "在下方"
   }
 }
