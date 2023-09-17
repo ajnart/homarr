@@ -214,7 +214,7 @@ export default function CustomizationPage() {
                   <SectionTitle type="layout" icon={IconLayout} />
                   <LayoutCustomization />
                 </Stack>
-                <Stack>
+                <Stack spacing="xs">
                   <SectionTitle type="access" icon={IconLock} />
                   <AccessCustomization />
                 </Stack>
