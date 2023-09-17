@@ -105,7 +105,6 @@ function CalendarTile({ widget }: CalendarTileProps) {
       style={{ position: 'relative' }}
       date={month}
       maxLevel="month"
-      hasNextLevel={false}
       styles={{
         calendarHeader: {
           maxWidth: 'inherit',
