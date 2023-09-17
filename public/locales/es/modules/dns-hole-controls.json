@@ -3,9 +3,9 @@
     "name": "Controles de agujeros DNS",
     "description": "Controla Pihole o AdGuard desde tu panel",
     "settings": {
-      "title": "",
+      "title": "Ajustes del widget Agujero DNS",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Mostrar botones 'Activar/Desactivar todos'"
       }
     }
   }
