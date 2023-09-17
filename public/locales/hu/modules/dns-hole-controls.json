@@ -3,9 +3,9 @@
     "name": "DNS blokkolók ellenőrzése",
     "description": "A PiHole vagy az AdGuard vezérlése a műszerfalról",
     "settings": {
-      "title": "",
+      "title": "DNS blokkolók vezérlő beállítások",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "'Minden engedélyezés/letiltás gombok megjelenítése"
       }
     }
   }
