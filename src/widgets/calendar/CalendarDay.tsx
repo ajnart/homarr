@@ -131,7 +131,7 @@ const DayIndicator = ({ size, offset, color, medias, children, position }: DayIn
   if (medias.length === 0) return children;
 
   return (
-    <Indicator size={size} withBorder offset={offset} color={color} position={position}>
+    <Indicator size={size} withBorder offset={offset} color={color} position={position} zIndex={0}>
       {children}
     </Indicator>
   );
