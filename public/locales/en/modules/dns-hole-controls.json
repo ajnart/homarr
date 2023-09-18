@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "DNS hole controls",
-    "description": "Control PiHole or AdGuard from your dashboard"
+    "description": "Control PiHole or AdGuard from your dashboard",
+    "errors": {
+      "general": {
+        "title": "Unable to find a DNS hole",
+        "text": "There was a problem connecting to your DNS Hole(s). Please verify your configuration/integration(s)."
+      }
+    }
   }
 }
