@@ -221,6 +221,7 @@ export const userRouter = createTRPCRouter({
               firstDayOfWeek: input.firstDayOfWeek,
               searchTemplate: input.searchTemplate,
               openSearchInNewTab: input.openSearchInNewTab,
+              autoFocusSearch: input.autoFocusSearch,
             },
           },
         },

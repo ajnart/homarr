@@ -36,6 +36,10 @@
         "newTab": {
             "label": "Open search results in a new tab"
         },
+        "autoFocus": {
+            "label": "Focus search bar on page load.",
+            "description": "This will automatically focus the search bar, when you navigate to the board pages. It will only work on desktop devices."
+        },
         "template": {
             "label": "Query URL",
             "description": "Use %s as a placeholder for the query"

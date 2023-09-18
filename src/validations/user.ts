@@ -49,4 +49,5 @@ export const updateSettingsValidationSchema = z.object({
   replaceDotsWithIcons: z.boolean(),
   searchTemplate: z.string().nonempty().max(256),
   openSearchInNewTab: z.boolean(),
+  autoFocusSearch: z.boolean(),
 });
