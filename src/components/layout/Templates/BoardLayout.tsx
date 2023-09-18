@@ -19,6 +19,7 @@ import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/grid
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
+import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
@@ -30,9 +31,13 @@ type BoardLayoutProps = {
 
 export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
   const { config } = useConfigContext();
+  const { data: session } = useSession();
 
   return (
-    <MainLayout headerActions={<HeaderActions dockerEnabled={dockerEnabled} />}>
+    <MainLayout
+      autoFocusSearch={session?.user.autoFocusSearch}
+      headerActions={<HeaderActions dockerEnabled={dockerEnabled} />}
+    >
       <BoardHeadOverride />
       <BackgroundImage />
       {children}

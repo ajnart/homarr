@@ -24,6 +24,7 @@ declare module 'next-auth' {
       id: string;
       isAdmin: boolean;
       colorScheme: 'light' | 'dark' | 'environment';
+      autoFocusSearch: boolean;
       language: string;
       // ...other properties
       // role: UserRole;
@@ -33,6 +34,7 @@ declare module 'next-auth' {
   interface User {
     isAdmin: boolean;
     colorScheme: 'light' | 'dark' | 'environment';
+    autoFocusSearch: boolean;
     language: string;
     // ...other properties
     // role: UserRole;
@@ -75,6 +77,7 @@ export const constructAuthOptions = (
               select: {
                 colorScheme: true,
                 language: true,
+                autoFocusSearch: true,
               },
             },
           },
@@ -83,6 +86,7 @@ export const constructAuthOptions = (
         session.user.isAdmin = userFromDatabase.isAdmin;
         session.user.colorScheme = colorSchemeParser.parse(userFromDatabase.settings?.colorScheme);
         session.user.language = userFromDatabase.settings?.language ?? 'en';
+        session.user.autoFocusSearch = userFromDatabase.settings?.autoFocusSearch ?? false;
       }
 
       return session;
@@ -148,6 +152,7 @@ export const constructAuthOptions = (
               select: {
                 colorScheme: true,
                 language: true,
+                autoFocusSearch: true,
               },
             },
           },
@@ -173,6 +178,7 @@ export const constructAuthOptions = (
           isAdmin: false,
           colorScheme: colorSchemeParser.parse(user.settings?.colorScheme),
           language: user.settings?.language ?? 'en',
+          autoFocusSearch: user.settings?.autoFocusSearch ?? false,
         };
       },
     }),

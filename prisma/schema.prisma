@@ -86,6 +86,7 @@ model UserSettings {
     disablePingPulse     Boolean @default(false)
     replacePingWithIcons Boolean @default(false)
     useDebugLanguage     Boolean @default(false)
+    autoFocusSearch      Boolean @default(false)
     user                 User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
     @@unique([userId])
