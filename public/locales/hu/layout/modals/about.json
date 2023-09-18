@@ -17,7 +17,7 @@
 		"configurationSchemaVersion": "Konfigurációs séma verziója",
 		"configurationsCount": "Elérhető konfigurációk",
 		"version": "Verzió",
-		"nodeEnvironment": "Csomópont környezet",
+		"nodeEnvironment": "Kiadási váltrozat",
 		"i18n": "Betöltött I18n fordítási névterek",
 		"locales": "Beállított I18n helyi nyelvek",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Szerkesztési mód kikapcsolása"
