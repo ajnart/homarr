@@ -89,6 +89,7 @@ const SettingsComponent = ({
       replaceDotsWithIcons: settings.replacePingWithIcons,
       searchTemplate: settings.searchTemplate,
       openSearchInNewTab: settings.openSearchInNewTab,
+      autoFocusSearch: settings.autoFocusSearch,
     },
     validate: i18nZodResolver(updateSettingsValidationSchema),
     validateInputOnBlur: true,
