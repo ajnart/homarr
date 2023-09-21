@@ -206,7 +206,7 @@ const GetDataFromClient = async (
         appId: app.id,
         nzbs: nzbgetItems,
         success: true,
-        totalDownload: 0,
+        totalDownload: nzbgetStatus.DownloadRate,
       };
     }
     default:
