@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Allow anonymous",
+    "description": "Allow users that are not logged in to view your board"
+  }
+}

@@ -10,6 +10,7 @@ import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { ConfigType } from '~/types/config';
+import { getServerAuthSession } from '~/server/auth';
 
 export default function BoardPage({
   config: initialConfig,
@@ -57,14 +58,36 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   const config = await getFrontendConfig(routeParams.data.slug);
   const translations = await getServerSideTranslations(boardNamespaces, locale, req, res);
 
-  return {
-    props: {
-      config,
-      primaryColor: config.settings.customization.colors.primary,
-      secondaryColor: config.settings.customization.colors.secondary,
-      primaryShade: config.settings.customization.colors.shade,
-      dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
-      ...translations,
-    },
-  };
+  const getSuccessResponse = () => {
+    return {
+      props: {
+        config,
+        primaryColor: config.settings.customization.colors.primary,
+        secondaryColor: config.settings.customization.colors.secondary,
+        primaryShade: config.settings.customization.colors.shade,
+        dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
+        ...translations,
+      },
+    };
+  }
+
+
+  if (!config.settings.access.allowGuests) {
+    const session = await getServerAuthSession({ req, res });
+
+    if (session?.user) {
+      return getSuccessResponse();
+    }
+
+    return {
+      notFound: true,
+      props: {
+        primaryColor: config.settings.customization.colors.primary,
+        secondaryColor: config.settings.customization.colors.secondary,
+        primaryShade: config.settings.customization.colors.shade,
+      }
+    };
+  }
+
+  return getSuccessResponse();
 };
