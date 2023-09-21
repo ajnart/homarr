@@ -18,9 +18,11 @@ import {
   IconBrandDiscord,
   IconBrandDocker,
   IconBrandGithub,
+  IconFingerprint,
   IconGitFork,
   IconHome,
   IconLayoutDashboard,
+  IconLockAccess,
   IconMailForward,
   IconQuestionMark,
   IconTool,
@@ -230,6 +232,16 @@ const navigationLinks: NavigationLinks = {
       invites: {
         icon: IconMailForward,
         href: '/manage/users/invites',
+      },
+    },
+  },
+  access: {
+    icon: IconFingerprint,
+    onlyAdmin: true,
+    items: {
+      permissionFlags: {
+        icon: IconLockAccess,
+        href: '/manage/access/global',
       },
     },
   },

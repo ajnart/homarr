@@ -13,6 +13,12 @@
                 "invites": "Invites"
             }
         },
+        "access": {
+            "title": "Access",
+            "items": {
+                "permissionFlags": "Global permissions"
+            }
+        },
         "help": {
             "title": "Help",
             "items": {

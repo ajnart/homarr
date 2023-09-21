@@ -91,3 +91,8 @@ model UserSettings {
 
     @@unique([userId])
 }
+
+model GlobalSettings {
+    id                  String  @id @default(cuid())
+    allowBoardCreation  Boolean @default(true)
+}

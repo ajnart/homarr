@@ -1,0 +1,10 @@
+{
+  "metaTitle": "Global access",
+  "pageTitle": "Global access",
+  "pageText": "Global permissions enable administrators to control access on a glocal scale without a fine grained configuration.",
+  "form": {
+    "allowBoardCreation": {
+      "label": "Allow non-administrators to create boards"
+    }
+  }
+}
