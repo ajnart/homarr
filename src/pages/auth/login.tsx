@@ -54,7 +54,8 @@ export default function LoginPage() {
         setIsError(true);
         return;
       }
-      router.push('/manage');
+      const redirectAfterLogin = router.query['redirectAfterLogin'] as string;
+      router.push(redirectAfterLogin ?? '/manage');
     });
   };
 
