@@ -25,7 +25,12 @@ import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
 const definition = defineWidget({
   id: 'dns-hole-controls',
   icon: IconDeviceGamepad,
-  options: {},
+  options: {
+    showToggleAllButtons: {
+      type: 'switch',
+      defaultValue: true,
+    },
+  },
   gridstack: {
     minWidth: 2,
     minHeight: 1,
@@ -106,7 +111,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
 
   return (
     <Stack justify="space-between" h={'100%'} spacing="0.25rem">
-      {sessionData?.user?.isAdmin && (
+      {sessionData?.user?.isAdmin && widget.properties.showToggleAllButtons && (
         <SimpleGrid
           ref={ref}
           cols={width > 275 ? 2 : 1}
@@ -156,7 +161,14 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         </SimpleGrid>
       )}
 
-      <Stack spacing="0.25rem">
+      <Stack
+        spacing="0.25rem"
+        display="flex"
+        style={{
+          flex: '1',
+          justifyContent: widget.properties.showToggleAllButtons ? 'flex-end' : 'space-evenly',
+        }}
+      >
         {data.status.map((dnsHole, index) => {
           const app = config?.apps.find((x) => x.id === dnsHole.appId);
 
@@ -165,7 +177,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           }
 
           return (
-            <Card withBorder={true} key={dnsHole.appId} p="xs">
+            <Card withBorder={true} key={dnsHole.appId} p="xs" radius="md">
               <Group>
                 <Box
                   sx={(theme) => ({
@@ -182,15 +194,18 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                   <Text>{app.name}</Text>
                   <UnstyledButton
                     onClick={async () => {
-                      await mutateAsync({
-                        action: dnsHole.status === 'enabled' ? 'disable' : 'enable',
-                        configName,
-                        appsToChange: [app.id],
-                      },{
-                        onSettled: () => {
-                          reFetchSummaryDns();
+                      await mutateAsync(
+                        {
+                          action: dnsHole.status === 'enabled' ? 'disable' : 'enable',
+                          configName,
+                          appsToChange: [app.id],
+                        },
+                        {
+                          onSettled: () => {
+                            reFetchSummaryDns();
+                          },
                         }
-                      });
+                      );
                     }}
                     disabled={fetchingDnsSummary || changingStatus}
                   >
