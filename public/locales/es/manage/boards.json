@@ -8,36 +8,36 @@
             "categories": "Categorías"
         },
         "buttons": {
-            "view": ""
+            "view": "Ver tablero"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Establecer como tu tablero por defecto",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Eliminar permanentemente",
+                "disabled": "Eliminación desactivida, porque versiones antiguas de los componentes de Homarr no permiten la eliminación de la configuración por defecto. La eliminación será posible en el futuro."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Sistema de archivos",
+            "default": "Por defecto"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Crear nuevo tablero"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Eliminar tablero",
+            "text": "¿Seguro que quieres eliminar este tablero? Esta acción no puede ser deshecha, y tus datos se perderán de manera permanente."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Crear tablero",
+            "text": "El nombre no puede cambiarse después de que el tablero haya sido creado.",
             "form": {
                 "name": {
                     "label": "Nombre"
                 },
-                "submit": ""
+                "submit": "Crear"
             }
         }
     }
