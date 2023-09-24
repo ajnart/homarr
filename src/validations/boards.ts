@@ -6,6 +6,9 @@ export const createBoardSchemaValidation = z.object({
 });
 
 export const boardCustomizationSchema = z.object({
+  access: z.object({
+    allowGuests: z.boolean()
+  }),
   layout: z.object({
     leftSidebarEnabled: z.boolean(),
     rightSidebarEnabled: z.boolean(),

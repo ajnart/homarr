@@ -13,7 +13,8 @@
     },
     "buttons": {
       "submit": "Sign in"
-    }
+    },
+    "afterLoginRedirection": "After login, you'll be redirected to {{url}}"
   },
   "alert": "Your credentials are incorrect or this account doesn't exist. Please try again."
 }

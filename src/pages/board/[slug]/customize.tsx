@@ -18,7 +18,7 @@ import {
   IconChartCandle,
   IconCheck,
   IconDragDrop,
-  IconLayout,
+  IconLayout, IconLock,
   IconX,
   TablerIconsProps,
 } from '@tabler/icons-react';
@@ -46,6 +46,7 @@ import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { boardCustomizationSchema } from '~/validations/boards';
+import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 
 const notificationId = 'board-customization-notification';
 
@@ -58,6 +59,9 @@ export default function CustomizationPage() {
   const { t } = useTranslation('boards/customize');
   const form = useBoardCustomizationForm({
     initialValues: {
+      access: {
+        allowGuests: config?.settings.access.allowGuests ?? false
+      },
       layout: {
         leftSidebarEnabled: config?.settings.customization.layout.enabledLeftSidebar ?? false,
         rightSidebarEnabled: config?.settings.customization.layout.enabledRightSidebar ?? false,
@@ -211,6 +215,10 @@ export default function CustomizationPage() {
                   <LayoutCustomization />
                 </Stack>
                 <Stack spacing="xs">
+                  <SectionTitle type="access" icon={IconLock} />
+                  <AccessCustomization />
+                </Stack>
+                <Stack spacing="xs">
                   <SectionTitle type="gridstack" icon={IconDragDrop} />
                   <GridstackCustomization />
                 </Stack>
@@ -232,7 +240,7 @@ export default function CustomizationPage() {
 }
 
 type SectionTitleProps = {
-  type: 'layout' | 'gridstack' | 'pageMetadata' | 'appereance';
+  type: 'layout' | 'gridstack' | 'pageMetadata' | 'appereance' | 'access';
   icon: (props: TablerIconsProps) => ReactNode;
 };
 
@@ -282,6 +290,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
       'settings/customization/shade-selector',
       'settings/customization/opacity-selector',
       'settings/customization/gridstack',
+      'settings/customization/access'
     ],
     locale,
     req,

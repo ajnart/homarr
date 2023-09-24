@@ -23,6 +23,7 @@ type MainHeaderProps = {
   headerActions?: React.ReactNode;
   contentComponents?: React.ReactNode;
   leftIcon?: React.ReactNode;
+  autoFocusSearch?: boolean;
 };
 
 export const MainHeader = ({
@@ -31,6 +32,7 @@ export const MainHeader = ({
   headerActions,
   leftIcon,
   contentComponents,
+  autoFocusSearch,
 }: MainHeaderProps) => {
   const { breakpoints } = useMantineTheme();
   const isSmallerThanMd = useMediaQuery(`(max-width: ${breakpoints.sm})`);
@@ -51,7 +53,7 @@ export const MainHeader = ({
           </UnstyledButton>
         </Group>
 
-        {!isSmallerThanMd && <Search />}
+        {!isSmallerThanMd && <Search autoFocus={autoFocusSearch} />}
 
         <Group noWrap style={{ flex: 1 }} position="right">
           <Group noWrap spacing={8}>

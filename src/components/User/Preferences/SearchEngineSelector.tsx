@@ -31,6 +31,11 @@ export const SearchEngineSettings = () => {
             label={t('searchEngine.newTab.label')}
             {...form.getInputProps('openSearchInNewTab', { type: 'checkbox' })}
           />
+          <Switch
+            label={t('searchEngine.autoFocus.label')}
+            description={t('searchEngine.autoFocus.description')}
+            {...form.getInputProps('autoFocusSearch', { type: 'checkbox' })}
+          />
 
           <TextInput
             label={t('searchEngine.template.label')}

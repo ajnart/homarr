@@ -19,9 +19,10 @@ import { MovieModal } from './Search/MovieModal';
 
 type SearchProps = {
   isMobile?: boolean;
+  autoFocus?: boolean;
 };
 
-export const Search = ({ isMobile }: SearchProps) => {
+export const Search = ({ isMobile, autoFocus }: SearchProps) => {
   const { t } = useTranslation('layout/header');
   const [search, setSearch] = useState('');
   const ref = useRef<HTMLInputElement>(null);
@@ -62,6 +63,7 @@ export const Search = ({ isMobile }: SearchProps) => {
         variant="filled"
         placeholder={`${t('search.label')}...`}
         hoverOnSearchChange
+        autoFocus={autoFocus}
         rightSection={
           <IconSearch
             onClick={() => ref.current?.focus()}
