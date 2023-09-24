@@ -1,9 +1,9 @@
 {
     "errors": {
-        "default": "",
+        "default": "Fältet är ogiltigt",
         "required": "Detta fält är obligatoriskt",
         "string": {
-            "startsWith": "",
+            "startsWith": "Det här fältet måste börja med {{startsWith}}",
             "endsWith": "",
             "includes": ""
         },
