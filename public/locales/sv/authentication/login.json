@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Välkommen tillbaka!",
-  "text": "Ange ditt lösenord",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Användarnamn"
+      },
       "password": {
-        "label": "Lösenord",
-        "placeholder": "Ditt lösenord"
+        "label": "Lösenord"
       }
     },
     "buttons": {
       "submit": "Logga in"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Kontrollerar ditt lösenord",
-      "message": "Ditt lösenord kontrolleras..."
-    },
-    "correct": {
-      "title": "Inloggning lyckades, omdirigerar..."
-    },
-    "wrong": {
-      "title": "Lösenordet du angav är felaktigt. Försök igen."
-    }
-  }
+  "alert": ""
 }
