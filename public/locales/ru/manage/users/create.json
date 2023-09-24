@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Создать пользователя",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Первый шаг",
+            "text": "Создать аккаунт",
             "username": {
                 "label": "Логин"
             },
             "email": {
-                "label": ""
+                "label": "Электронная почта"
             }
         },
         "security": {
-            "title": "",
+            "title": "Второй шаг",
             "text": "Пароль",
             "password": {
                 "label": "Пароль"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Подтверждение",
+            "text": "Сохранить в базе данных",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Анализ исходных данных",
+                "text": "После отправки данных в базу данных пользователь сможет войти. Вы уверены, что хотите сохранить этого пользователя в базе данных и активировать вход?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Свойство",
+                    "value": "Значение",
                     "username": "Логин",
-                    "email": "",
+                    "email": "Электронная почта",
                     "password": "Пароль"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Не указано",
+                "valid": "Действующий"
             },
-            "failed": ""
+            "failed": "Не удалось создать пользователя: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Пользователь был создан",
+                "text": "Пользователь был создан в базе данных. Теперь он может войти."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Генерировать случайно",
+        "createAnother": "Создать другое"
     }
 }
