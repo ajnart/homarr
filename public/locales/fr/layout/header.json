@@ -1,6 +1,6 @@
 {
     "experimentalNote": {
-        "label": ""
+        "label": "Ceci est une fonctionnalité expérimentale de Homarr. Veuilez signaler tout problème sur <gh>GitHub</gh> ou sur <dc>Discord</dc>."
     },
     "search": {
         "label": "",
@@ -13,8 +13,8 @@
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
+            "switchTheme": "Changer de thème",
+            "preferences": "Préférences utilisateur",
             "defaultBoard": "",
             "manage": "",
             "about": {
@@ -22,7 +22,7 @@
                 "new": ""
             },
             "logout": "",
-            "login": ""
+            "login": "Connexion"
         }
     },
     "modals": {
