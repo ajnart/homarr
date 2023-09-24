@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Sonarr v4 API verwenden"
       },
-      "sundayStart": {
-        "label": "Wochenbeginn am Sonntag"
-      },
       "radarrReleaseType": {
         "label": "Radarr Veröffentlichungs Typ",
         "data": {
