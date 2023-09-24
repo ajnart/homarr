@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Hjælpefunktioner",
+        "disablePulse": {
+            "label": "Deaktiver ping-puls",
+            "description": "Som standard vil ping-indikatorerne i Homarr pulsere. Det kan være irriterende. Denne skyder vil deaktivere animationen"
+        },
+        "replaceIconsWithDots": {
+            "label": "Udskift ping-prikker med ikoner",
+            "description": "For farveblinde brugere kan ping-prikker være uigenkendelige. Dette vil erstatte indikatorer med ikoner"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Sprog"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Søgemaskine",
+        "custom": "Brugerdefineret",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "Forespørgsels URL",
+            "description": ""
+        }
+    }
+}
