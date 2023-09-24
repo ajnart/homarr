@@ -23,7 +23,7 @@
     },
     "access": {
       "name": "",
-      "description": ""
+      "description": "Konfigurera vem som har tillgång till din tavla"
     }
   }
 }
