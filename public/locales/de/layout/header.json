@@ -1,34 +1,34 @@
 {
     "experimentalNote": {
-        "label": ""
+        "label": "Dies ist eine experimentelle Funktion von Homarr. Bitte melde Probleme auf <gh>GitHub</gh> oder <dc>Discord</dc>."
     },
     "search": {
-        "label": "",
+        "label": "Suchen",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Suche nach {{query}} im Internet",
+            "youtube": "Suche nach {{query}} auf YouTube",
+            "torrent": "Suche nach {{query}} torrents",
+            "movie": "Suche nach {{query}} auf {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "Design wechseln",
+            "preferences": "Benutzereinstellungen",
+            "defaultBoard": "Standard-Dashboard",
+            "manage": "Verwalten",
             "about": {
                 "label": "Über",
-                "new": ""
+                "new": "Neu"
             },
-            "logout": "",
-            "login": ""
+            "logout": "{{username}} abmelden",
+            "login": "Anmelden"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Die ersten {{count}} Ergebnisse für <b>{{search}}</b>."
         }
     }
 }
