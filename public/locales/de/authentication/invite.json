@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Account erstellen",
+    "title": "Account erstellen",
+    "text": "Bitte geben Sie Ihre Anmeldedaten an",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Passwort"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Passwort bestätigen"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Account erstellen"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Account wird erstellt",
+            "text": "Bitte warten"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Account erstellt",
+            "text": "Ihr Account wurde erfolgreich erstellt"
         },
         "error": {
             "title": "Fehler",
-            "text": ""
+            "text": "Etwas ist schiefgelaufen. Folgender Fehler ist aufgetreten: {{error}}"
         }
     }
 }
