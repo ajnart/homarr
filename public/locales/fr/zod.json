@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "",
+        "required": "Ce champ est requis",
+        "string": {
+            "startsWith": "",
+            "endsWith": "",
+            "includes": ""
+        },
+        "tooSmall": {
+            "string": "",
+            "number": ""
+        },
+        "tooBig": {
+            "string": "",
+            "number": ""
+        },
+        "custom": {
+            "passwordMatch": ""
+        }
+    }
+}
