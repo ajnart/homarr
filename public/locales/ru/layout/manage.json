@@ -1,29 +1,29 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Главная"
         },
         "boards": {
-            "title": ""
+            "title": "Доски"
         },
         "users": {
-            "title": "",
+            "title": "Пользователи",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Управлять",
+                "invites": "Приглашения"
             }
         },
         "help": {
-            "title": "",
+            "title": "Помощь",
             "items": {
                 "documentation": "Документация",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "Сообщить о проблеме / ошибке",
+                "discord": "Дискорд сообщество",
+                "contribute": "Внести вклад"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Инструменты",
             "items": {
                 "docker": "Docker"
             }
