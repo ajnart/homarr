@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Velkommen tilbake!",
-  "text": "Skriv inn passord",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Brukernavn"
+      },
       "password": {
-        "label": "Passord",
-        "placeholder": "Ditt passord"
+        "label": "Passord"
       }
     },
     "buttons": {
       "submit": "Logg inn"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Sjekker passordet ditt",
-      "message": "Ditt passord blir sjekket..."
-    },
-    "correct": {
-      "title": "Innlogging vellykket, omdirigerer..."
-    },
-    "wrong": {
-      "title": "Passordet du skrev inn er feil, prøv igjen."
-    }
-  }
+  "alert": ""
 }
