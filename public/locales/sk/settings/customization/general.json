@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Prístupnosť",
       "description": "Konfigurácia aplikácie Homarr pre zdravotne postihnutých a hendikepovaných používateľov"
+    },
+    "access": {
+      "name": "",
+      "description": ""
     }
   }
 }
