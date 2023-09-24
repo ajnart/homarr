@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Créer un utilisateur",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Première étape",
+            "text": "Créer un compte",
             "username": {
                 "label": "Nom d'utilisateur"
             },
             "email": {
-                "label": ""
+                "label": "Courriel"
             }
         },
         "security": {
-            "title": "",
+            "title": "Seconde étape",
             "text": "Mot de passe",
             "password": {
                 "label": "Mot de passe"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Confirmation",
+            "text": "Enregistrer dans la base de données",
             "card": {
                 "title": "",
                 "text": ""
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Propriété",
+                    "value": "Valeur",
                     "username": "Nom d'utilisateur",
-                    "email": "",
+                    "email": "Courriel",
                     "password": "Mot de passe"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Non défini",
+                "valid": "Valide"
             },
             "failed": ""
         },
         "completed": {
             "alert": {
                 "title": "",
-                "text": ""
+                "text": "L'utilisateur a été créé dans la base de données. Il peut désormais se connecter."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Génération aléatoire",
+        "createAnother": "En créer un autre"
     }
 }
