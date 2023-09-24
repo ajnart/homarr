@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Pristupačnost",
+        "disablePulse": {
+            "label": "Onemogući ping pulsiranje",
+            "description": "Prema zadanim postavkama, pokazatelji pinga u Homarru pulsiraju. To može biti iritantno. Ovim klizačem možete deaktivirati animaciju"
+        },
+        "replaceIconsWithDots": {
+            "label": "Zamijenite točke ping-a s ikonicom",
+            "description": "Za osobe s daltonizmom, točke za ping mogu biti teško prepoznatljive. Ovo će zamijeniti indikatore ikonama"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Jezik"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Pretraživač",
+        "custom": "",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "URL upita",
+            "description": ""
+        }
+    }
+}
