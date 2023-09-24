@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Barrierefreiheit",
+        "disablePulse": {
+            "label": "Ping-Puls deaktivieren",
+            "description": "Standardmäßig pulsieren die Ping-Indikatoren in Homarr. Dies kann irritierend sein. Mit diesem Regler kann diese Animation deaktiviert werden"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ping Punkte mit Icons ersetzen",
+            "description": "Für farbenblinde Benutzer können Ping-Punkte nicht erkennbar sein. Dies ersetzt Indikatoren durch Icons"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Sprache"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Suchmaschine",
+        "custom": "Benutzerdefiniert",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "Suchanfrage URL",
+            "description": ""
+        }
+    }
+}
