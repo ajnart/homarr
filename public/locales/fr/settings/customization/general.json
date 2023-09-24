@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Accessibilité",
       "description": "Configurer Homarr pour les utilisateurs handicapés et/ou invalides"
+    },
+    "access": {
+      "name": "",
+      "description": ""
     }
   }
 }
