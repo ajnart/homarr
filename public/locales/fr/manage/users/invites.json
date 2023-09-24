@@ -24,7 +24,7 @@
             "description": "",
             "form": {
                 "expires": "",
-                "submit": ""
+                "submit": "Créer"
             }
         },
         "copy": {
