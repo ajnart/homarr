@@ -1,0 +1,52 @@
+{
+    "metaTitle": "",
+    "steps": {
+        "account": {
+            "title": "",
+            "text": "",
+            "username": {
+                "label": "사용자 이름"
+            },
+            "email": {
+                "label": ""
+            }
+        },
+        "security": {
+            "title": "",
+            "text": "비밀번호",
+            "password": {
+                "label": "비밀번호"
+            }
+        },
+        "finish": {
+            "title": "",
+            "text": "",
+            "card": {
+                "title": "",
+                "text": ""
+            },
+            "table": {
+                "header": {
+                    "property": "",
+                    "value": "",
+                    "username": "사용자 이름",
+                    "email": "",
+                    "password": "비밀번호"
+                },
+                "notSet": "",
+                "valid": ""
+            },
+            "failed": ""
+        },
+        "completed": {
+            "alert": {
+                "title": "",
+                "text": ""
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "",
+        "createAnother": ""
+    }
+}
