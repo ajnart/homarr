@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Predvoľby",
+    "pageTitle": "Vaše preferencie",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Predvolená doska"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Jazyk"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Prvý deň v týždni",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Pondelok",
+                "saturday": "Sobota",
+                "sunday": "Nedeľa"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Vyhľadávač",
         "custom": "Vlastné",
         "newTab": {
-            "label": ""
+            "label": "Otvorenie výsledkov vyhľadávania na novej karte"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Zameranie vyhľadávacieho panela pri načítaní stránky.",
+            "description": "Pri prechode na stránky nástenky sa automaticky zaostrí vyhľadávací panel. Funguje to len na zariadeniach s počítačom."
         },
         "template": {
             "label": "Adresa URL dopytu",
-            "description": ""
+            "description": "Použite %s ako zástupný symbol pre dotaz"
         }
     }
 }
