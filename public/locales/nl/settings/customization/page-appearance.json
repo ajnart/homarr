@@ -23,8 +23,5 @@
     "description": "Pas uw dashboard verder aan met behulp van CSS, alleen aanbevolen voor ervaren gebruikers",
     "placeholder": "Eigen CSS wordt als laatste toegepast",
     "applying": "CSS toepassen..."
-  },
-  "buttons": {
-    "submit": "Indienen"
   }
 }
