@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Pozvania používateľov",
+    "pageTitle": "Správa pozvánok používateľov",
+    "description": "Pomocou pozvánok môžete pozvať používateľov do svojej inštancie služby Homarr. Pozvánka je platná len na určitý časový úsek a možno ju použiť len raz. Platnosť musí byť od 5 minút do 12 mesiacov pri vytvorení.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Vytvoriť pozvánku",
+        "deleteInvite": "Odstránenie pozvánky"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Autor",
+            "expires": "Expirácia",
+            "action": "Akcie"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "vypršala platnosť {{at}}",
+            "expiresIn": "na stránke {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Vytvoriť Pozvánku",
+            "description": "Po vypršaní platnosti pozvánky už nebude platná a príjemca pozvánky si nebude môcť vytvoriť účet.",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "Dátum vypršania",
+                "submit": "Vytvoriť"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Kópia pozvánky",
+            "description": "Vaša pozvánka bola vygenerovaná. Po zatvorení tohto modálneho okna <b>už nebudete môcť skopírovať tento odkaz</b>. Ak si už neželáte pozvať uvedenú osobu, môžete túto pozvánku kedykoľvek vymazať.",
+            "invitationLink": "Odkaz na pozvánku",
             "details": {
-                "id": "",
-                "token": ""
+                "id": "ID",
+                "token": "Token"
             },
             "button": {
-                "close": ""
+                "close": "Kopírovať a rozpustiť"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "Odstránenie pozvánky",
+            "description": "Ste si istí, že chcete túto pozvánku vymazať? Používatelia s týmto odkazom si už nebudú môcť vytvoriť účet pomocou tohto odkazu."
         }
     },
-    "noInvites": ""
+    "noInvites": "Zatiaľ nie sú k dispozícii žiadne pozvánky."
 }
