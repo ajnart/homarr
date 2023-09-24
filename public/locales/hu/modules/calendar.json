@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Sonarr v4 API használata"
       },
-      "sundayStart": {
-        "label": "Vasárnap a hét kezdete"
-      },
       "radarrReleaseType": {
         "label": "Radarr kiadás típusa",
         "data": {
