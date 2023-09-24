@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Kullanıcı ekle",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "İlk adım",
+            "text": "Hesap oluştur",
             "username": {
                 "label": "Kullanıcı adı"
             },
             "email": {
-                "label": ""
+                "label": "E-Posta"
             }
         },
         "security": {
-            "title": "",
+            "title": "İkinci adım",
             "text": "Şifre",
             "password": {
                 "label": "Şifre"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Onayla",
+            "text": "Veritabanına Kaydet",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Girdilerinizi gözden geçirin",
+                "text": "Verilerinizi veritabanına gönderdikten sonra kullanıcı giriş yapabilecektir. Bu kullanıcıyı veritabanına kaydedip giriş işlemini aktif hale getirmek istediğinizden emin misiniz?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Sahiplik",
+                    "value": "Değer",
                     "username": "Kullanıcı adı",
-                    "email": "",
+                    "email": "E-Posta",
                     "password": "Şifre"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Ayarlanmamış",
+                "valid": "Geçerli"
             },
-            "failed": ""
+            "failed": "Kullanıcı oluşturma başarısız oldu: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Kullanıcı oluşturuldu",
+                "text": "Kullanıcı veritabanında oluşturuldu. Artık oturum açabilirler."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Rastgele oluştur",
+        "createAnother": "Başka bir tane oluştur"
     }
 }
