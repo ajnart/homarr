@@ -3,7 +3,7 @@
   "selector": {
     "label": "Sélectionner le(s) cache(s) à effacer",
     "data": {
-      "ping": "Requêtes de ping",
+      "ping": "Requêtes ping",
       "repositoryIcons": "Icônes distantes/locales",
       "calendar&medias": "Médias du calendrier",
       "weather": "Données météo"
@@ -13,7 +13,7 @@
     "notificationTitle": "Cache effacé",
     "clearAll": {
       "text": "Effacer tout le cache",
-      "notificationMessage": "Le cache a été vidé"
+      "notificationMessage": "Tous les caches ont été vidés"
     },
     "clearSelect": {
       "text": "Effacer les requêtes sélectionnées",
