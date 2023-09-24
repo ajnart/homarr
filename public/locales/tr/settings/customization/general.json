@@ -22,8 +22,8 @@
       "description": "Homarr'ı engelli kullanıcılar için yapılandırma"
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Erişim",
+      "description": "Panelinize kimlerin erişebileceğini yapılandırın"
     }
   }
 }
