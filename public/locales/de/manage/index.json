@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Verwalten",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Willkommen zurück, {{username}}",
+        "fallbackUsername": "Anonym",
+        "subtitle": "Willkommen bei Ihrem Application Hub. Organisieren, Optimieren und Erobern!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Quick Actions",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Deine Boards",
+            "subtitle": "Erstellen und verwalten Sie Ihre Boards"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Einen neuen Benutzer einladen",
+            "subtitle": "Erstellen und versenden Sie eine Einladung zur Registrierung"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Verwaltung von Benutzern",
+            "subtitle": "Löschen und Verwalten Ihrer Benutzer"
         }
     }
 }
