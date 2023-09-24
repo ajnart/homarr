@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Personalizar tablero {{name}}",
+    "pageTitle": "Personalización para el tablero {{name}}",
+    "backToBoard": "Volver al tablero",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Color primario",
+            "secondaryColor": "Color secundario"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Guardar cambios",
+        "note": "¡Cuidado, tienes cambios sin guardar!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Guardando personalización",
+            "message": "Por favor, espera mientras guardamos tu personalización"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Personalización guardada",
+            "message": "Tu personalización ha sido guardada correctamente"
         },
         "error": {
             "title": "Error",
-            "message": ""
+            "message": "Imposible guardar cambios"
         }
     }
 }
