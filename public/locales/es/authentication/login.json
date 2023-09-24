@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "¡Bienvenido/a otra vez!",
-  "text": "Por favor, introduce tu contraseña",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Nombre de usuario"
+      },
       "password": {
-        "label": "Contraseña",
-        "placeholder": "Tu contraseña"
+        "label": "Contraseña"
       }
     },
     "buttons": {
       "submit": "Iniciar sesión"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Comprobando tu contraseña",
-      "message": "Tu contraseña está siendo comprobada..."
-    },
-    "correct": {
-      "title": "Inicio de sesión satisfactorio, redirigiendo..."
-    },
-    "wrong": {
-      "title": "La contraseña introducida es incorrecta, por favor, inténtalo de nuevo."
-    }
-  }
+  "alert": ""
 }
