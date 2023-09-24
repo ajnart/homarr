@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Giriş",
   "title": "Tekrar hoşgeldin!",
-  "text": "",
+  "text": "Lütfen kimlik bilgilerinizi girin",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Kayıt ol"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Giriş yaptıktan sonra {{url}} adresine yönlendirileceksiniz"
   },
-  "alert": ""
+  "alert": "Kimlik bilgileriniz yanlış veya bu hesap mevcut değil. Lütfen tekrar deneyin."
 }
