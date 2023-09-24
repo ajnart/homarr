@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Izmantot Sonarr v4 API"
       },
-      "sundayStart": {
-        "label": "Sākt nedēļu ar pirmdienu"
-      },
       "radarrReleaseType": {
         "label": "Radarr laiduma tips",
         "data": {
