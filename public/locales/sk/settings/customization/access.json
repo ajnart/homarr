@@ -1,6 +1,6 @@
 {
   "allowGuests": {
-    "label": "",
-    "description": ""
+    "label": "Povoľte anonymné",
+    "description": "Povoľte používateľom, ktorí nie sú prihlásení, zobrazovať vašu nástenku"
   }
 }
