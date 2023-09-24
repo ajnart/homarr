@@ -26,7 +26,7 @@
 			"description": "Ouvrez l'application dans un nouvel onglet au lieu de l'onglet actuel."
 		},
 		"tooltipDescription": {
-			"label": "Description de l'Application",
+			"label": "Description de l'application",
 			"description": "Le texte que vous allez entrer apparaitra quand vous survolerez votre application.\nUtilisez cela pour donner plus d'informations aux utilisateurs à propos de votre application ou laissez vide pour qu'il n'y ait rien."
 		},
 		"customProtocolWarning": "Utilisation d'un protocole non standard. Ceci peut nécessiter des applications préinstallées et peut introduire des failles de sécurité. Assurez-vous que votre adresse est sécurisée et de confiance."
@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "Taille de police du nom de l'application",
-			"description": "Définir la taille de la police lorsque le nom de l'application est affiché sur la tuile."
+			"label": "Taille de la police du nom de l'application",
+			"description": "Définissez la taille de la police lorsque le nom de l'application est affiché sur la tuile."
 		},
 		"appNameStatus": {
 			"label": "Status du nom de l'application",
@@ -71,22 +71,22 @@
 			"label": "Position du nom de l'application",
 			"description": "Position du nom de l'application par rapport à l'icône.",
 			"dropdown": {
-				"top": "Dessus",
+				"top": "Au-dessus",
 				"right": "Droite",
-				"bottom": "Dessous",
+				"bottom": "En-dessous",
 				"left": "Gauche"
 			}
 		},
 		"lineClampAppName": {
 			"label": "Coupe ligne pour le nom de l'application",
-			"description": "Défini sur combien de lignes le nom de l'application va s'étendre. 0 pour illimité."
+			"description": "Définissez sur combien de lignes le nom de l'application va s'étendre. 0 pour illimité."
 		}
 	},
 	"integration": {
 		"type": {
 			"label": "Configuration d’intégrations",
 			"description": "La configuration d'intégration qui sera utilisée pour se connecter à votre application.",
-			"placeholder": "Sélectionner une itégration",
+			"placeholder": "Sélectionner une intégration",
 			"defined": "Défini",
 			"undefined": "Indéfini",
 			"public": "Public",
