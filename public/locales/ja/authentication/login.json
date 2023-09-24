@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "お帰りなさい",
-  "text": "パスワードを入力してください",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "ユーザー名"
+      },
       "password": {
-        "label": "パスワード",
-        "placeholder": "パスワード"
+        "label": "パスワード"
       }
     },
     "buttons": {
       "submit": "サインイン"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "パスワードの確認",
-      "message": "パスワードは確認中です..."
-    },
-    "correct": {
-      "title": "サインインに成功しました、リダイレクトします..."
-    },
-    "wrong": {
-      "title": "入力されたパスワードが正しくありません。もう一度やり直してください。"
-    }
-  }
+  "alert": ""
 }
