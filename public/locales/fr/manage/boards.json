@@ -1,0 +1,44 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "cards": {
+        "statistics": {
+            "apps": "Applications",
+            "widgets": "Widgets",
+            "categories": "Catégories"
+        },
+        "buttons": {
+            "view": ""
+        },
+        "menu": {
+            "setAsDefault": "",
+            "delete": {
+                "label": "",
+                "disabled": ""
+            }
+        },
+        "badges": {
+            "fileSystem": "",
+            "default": ""
+        }
+    },
+    "buttons": {
+        "create": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "create": {
+            "title": "",
+            "text": "",
+            "form": {
+                "name": {
+                    "label": "Nom"
+                },
+                "submit": ""
+            }
+        }
+    }
+}
