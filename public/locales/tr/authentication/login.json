@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Tekrar hoşgeldin!",
-  "text": "Lütfen şifrenizi girin",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Kullanıcı adı"
+      },
       "password": {
-        "label": "Şifre",
-        "placeholder": "Şifreniz"
+        "label": "Şifre"
       }
     },
     "buttons": {
       "submit": "Kayıt ol"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Şifrenizi kontrol edin",
-      "message": "Şifreniz kontrol ediliyor..."
-    },
-    "correct": {
-      "title": "Giriş başarılı, yönlendiriliyor..."
-    },
-    "wrong": {
-      "title": "Girdiğin şifre yanlış, lütfen tekrar dene."
-    }
-  }
+  "alert": ""
 }
