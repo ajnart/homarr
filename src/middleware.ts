@@ -1,39 +1,46 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { env } from 'process';
 
-export function middleware(req: NextRequest) {
-  const { cookies } = req;
+import { getUrl } from './tools/server/url';
+import { client } from './utils/api';
 
-  // Don't even bother with the middleware if there is no defined password
-  if (!process.env.PASSWORD) return NextResponse.next();
+const skippedUrls = [
+  '/onboard',
+  '/api/',
+  '/_next/',
+  '/favicon.ico',
+  '/404',
+  '/pages/_app',
+  '/imgs/',
+];
 
+let cachedUserCount = 0;
+
+export async function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
-  const passwordCookie = cookies.get('password')?.value;
 
-  const isCorrectPassword = passwordCookie?.toString() === process.env.PASSWORD;
-  // Skip the middleware if the URL is 'login', 'api/configs/tryPassword', '_next/*', 'favicon.ico', '404', 'migrate' or 'pages/_app'
-  const skippedUrls = [
-    '/login',
-    '/api/configs/tryPassword',
-    '/_next/',
-    '/favicon.ico',
-    '/404',
-    '/migrate',
-    '/pages/_app',
-  ];
+  // Do not redirect if the url is in the skippedUrls array
   if (skippedUrls.some((skippedUrl) => url.pathname.startsWith(skippedUrl))) {
     return NextResponse.next();
   }
-  // If the password is not correct, redirect to the login page
-  if (!isCorrectPassword && process.env.PASSWORD) {
-    url.pathname = '/login';
 
-    /*//--- nextjs doesn't use X-Forwarded yet, if we need to update the dependency, add this code
-    url.host = req.headers.get('X-Forwarded-Host')?? url.host;
-    url.port = req.headers.get('X-Forwarded-Port')?? url.port;
-    url.protocol = req.headers.get('X-Forwarded-Proto')?? url.protocol;
-    //---*/
-
-    return NextResponse.redirect(url);
+  // Do not redirect if we are on Vercel
+  if (env.VERCEL) {
+    return NextResponse.next();
   }
-  return NextResponse.next();
+
+  // Do not redirect if there are users in the database
+  if (cachedUserCount > 0) {
+    return NextResponse.next();
+  }
+
+  // is only called from when there were no users in the database in this session (Since the app started)
+  cachedUserCount = await client.user.count.query();
+
+  // Do not redirect if there are users in the database
+  if (cachedUserCount > 0) {
+    return NextResponse.next();
+  }
+
+  return NextResponse.redirect(getUrl(req) + '/onboard');
 }

@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Customize {{name}} Board",
+    "pageTitle": "Customization for {{name}} Board",
+    "backToBoard": "Back to board",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Primary color",
+            "secondaryColor": "Secondary color"
+        }
+    },
+    "save": {
+        "button": "Save changes",
+        "note": "Careful, you have unsaved changes!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Saving customization",
+            "message": "Please wait while we save your customization"
+        },
+        "success": {
+            "title": "Customization saved",
+            "message": "Your customization has been saved successfully"
+        },
+        "error": {
+            "title": "Error",
+            "message": "Unable to save changes"
+        }
+    }
+}

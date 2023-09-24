@@ -6,11 +6,12 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
+import { generateDefaultApp } from '~/tools/shared/app';
+import { AppType } from '~/types/app';
 
-import { useConfigContext } from '../../../../../../config/provider';
-import { useConfigStore } from '../../../../../../config/store';
-import { openContextModalGeneric } from '../../../../../../tools/mantineModalManagerExtensions';
-import { AppType } from '../../../../../../types/app';
 import { CategoryEditModalInnerProps } from '../../../../Wrappers/Category/CategoryEditModal';
 import { useStyles } from '../Shared/styles';
 
@@ -66,7 +67,7 @@ export const AvailableElementTypes = ({
             closeModal(modalId);
             showNotification({
               title: t('category.created.title'),
-              message: t('category.created.message', { name: category.name}),
+              message: t('category.created.message', { name: category.name }),
               color: 'teal',
             });
           });
@@ -87,39 +88,8 @@ export const AvailableElementTypes = ({
             openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
               modal: 'editApp',
               innerProps: {
-                app: {
-                  id: uuidv4(),
-                  name: t('app.defaultName'),
-                  url: 'https://homarr.dev',
-                  appearance: {
-                    iconUrl: '/imgs/logo/logo.png',
-                    appNameStatus: 'normal',
-                    appNameFontSize: 16,
-                    positionAppName: 'column',
-                    lineClampAppName: 1,
-                  },
-                  network: {
-                    enabledStatusChecker: true,
-                    statusCodes: ['200', '301', '302', '304', '307', '308'],
-                    okStatus: [200, 301, 302, 304, 307, 308],
-                  },
-                  behaviour: {
-                    isOpeningNewTab: true,
-                    externalUrl: 'https://homarr.dev',
-                  },
-
-                  area: {
-                    type: 'wrapper',
-                    properties: {
-                      id: getLowestWrapper()?.id ?? 'default',
-                    },
-                  },
-                  shape: {},
-                  integration: {
-                    type: null,
-                    properties: [],
-                  },
-                },
+                app: generateDefaultApp(getLowestWrapper()?.id ?? 'default'),
+                // TODO: Add translation? t('app.defaultName')
                 allowAppNamePropagation: true,
               },
               size: 'xl',

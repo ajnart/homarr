@@ -65,7 +65,7 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
     >
       <Popover.Target>
         <Container
-          onClick={medias.totalCount > 0 ? open : undefined}
+          onClick={medias.totalCount > 0 && !opened ? open : close}
           h="100%"
           w="100%"
           sx={{
@@ -131,7 +131,7 @@ const DayIndicator = ({ size, offset, color, medias, children, position }: DayIn
   if (medias.length === 0) return children;
 
   return (
-    <Indicator size={size} withBorder offset={offset} color={color} position={position}>
+    <Indicator size={size} withBorder offset={offset} color={color} position={position} zIndex={0}>
       {children}
     </Indicator>
   );

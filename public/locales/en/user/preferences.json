@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Preferences",
+    "pageTitle": "Your preferences",
+    "boards": {
+        "defaultBoard": {
+            "label": "Default board"
+        }
+    },
+    "accessibility": {
+        "title": "Accessibility",
+        "disablePulse": {
+            "label": "Disable ping pulse",
+            "description": "By default, ping indicators in Homarr will pulse. This may be irritating. This slider will deactivate the animation"
+        },
+        "replaceIconsWithDots": {
+            "label": "Replace ping dots with icons",
+            "description": "For colorblind users, ping dots may be unrecognizable. This will replace indicators with icons"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Language"
+        },
+        "firstDayOfWeek": {
+            "label": "First day of the week",
+            "options": {
+                "monday": "Monday",
+                "saturday": "Saturday",
+                "sunday": "Sunday"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Search engine",
+        "custom": "Custom",
+        "newTab": {
+            "label": "Open search results in a new tab"
+        },
+        "autoFocus": {
+            "label": "Focus search bar on page load.",
+            "description": "This will automatically focus the search bar, when you navigate to the board pages. It will only work on desktop devices."
+        },
+        "template": {
+            "label": "Query URL",
+            "description": "Use %s as a placeholder for the query"
+        }
+    }
+}

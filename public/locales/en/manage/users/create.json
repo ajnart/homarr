@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Create user",
+    "steps": {
+        "account": {
+            "title": "First step",
+            "text": "Create account",
+            "username": {
+                "label": "Username"
+            },
+            "email": {
+                "label": "E-Mail"
+            }
+        },
+        "security": {
+            "title": "Second step",
+            "text": "Password",
+            "password": {
+                "label": "Password"
+            }
+        },
+        "finish": {
+            "title": "Confirmation",
+            "text": "Save to database",
+            "card": {
+                "title": "Review your inputs",
+                "text": "After you submit your data to the database, the user will be able to log in. Are you sure that you want to store this user in the database and activate the login?"
+            },
+            "table": {
+                "header": {
+                    "property": "Property",
+                    "value": "Value",
+                    "username": "Username",
+                    "email": "E-Mail",
+                    "password": "Password"
+                },
+                "notSet": "Not set",
+                "valid": "Valid"
+            },
+            "failed": "User creation has failed: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "User was created",
+                "text": "The user was created in the database. They can now log in."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Generate random",
+        "createAnother": "Create another"
+    }
+}

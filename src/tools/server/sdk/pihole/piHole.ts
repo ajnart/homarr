@@ -1,4 +1,4 @@
-import { trimStringEnding } from '../../../shared/strings';
+import { trimStringEnding } from '~/tools/shared/strings';
 import { PiHoleApiStatusChangeResponse, PiHoleApiSummaryResponse } from './piHole.type';
 
 export class PiHoleClient {

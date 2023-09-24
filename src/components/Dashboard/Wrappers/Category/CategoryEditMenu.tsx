@@ -9,8 +9,8 @@ import {
   IconTrash,
 } from '@tabler/icons-react';
 
-import { useConfigContext } from '../../../../config/provider';
-import { CategoryType } from '../../../../types/category';
+import { useConfigContext } from '~/config/provider';
+import { CategoryType } from '~/types/category';
 import { useCategoryActions } from './useCategoryActions';
 import { useTranslation } from 'next-i18next';
 

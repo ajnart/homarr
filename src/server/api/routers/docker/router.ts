@@ -2,13 +2,13 @@ import { TRPCError } from '@trpc/server';
 import Dockerode from 'dockerode';
 import { z } from 'zod';
 
-import { createTRPCRouter, publicProcedure } from '../../trpc';
+import { adminProcedure, createTRPCRouter } from '../../trpc';
 import DockerSingleton from './DockerSingleton';
 
 const dockerActionSchema = z.enum(['remove', 'start', 'stop', 'restart']);
 
 export const dockerRouter = createTRPCRouter({
-  containers: publicProcedure.query(async () => {
+  containers: adminProcedure.query(async () => {
     try {
       const docker = DockerSingleton.getInstance();
       const containers = await docker.listContainers({ all: true });
@@ -20,7 +20,7 @@ export const dockerRouter = createTRPCRouter({
       });
     }
   }),
-  action: publicProcedure
+  action: adminProcedure
     .input(
       z.object({
         id: z.string(),

@@ -12,12 +12,12 @@ import {
 import { IconAlertTriangle, IconMovie } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
-import { AppAvatar } from '../../components/AppAvatar';
-import { useConfigContext } from '../../config/provider';
+import { AppAvatar } from '~/components/AppAvatar';
+import { useConfigContext } from '~/config/provider';
+import { useGetMediaServers } from './useGetMediaServers';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { TableRow } from './TableRow';
-import { useGetMediaServers } from './useGetMediaServers';
 
 const definition = defineWidget({
   id: 'media-server',

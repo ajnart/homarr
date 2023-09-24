@@ -2,7 +2,7 @@ import { Text, TextInput, Tooltip, Stack, Switch, Tabs, Group, useMantineTheme, 
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 
-import { AppType } from '../../../../../../types/app';
+import { AppType } from '~/types/app';
 import { InfoCard } from '~/components/InfoCard/InfoCard'
 
 interface BehaviourTabProps {

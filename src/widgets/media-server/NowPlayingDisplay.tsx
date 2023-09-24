@@ -7,7 +7,7 @@ import {
   IconVideo,
 } from '@tabler/icons-react';
 
-import { GenericSessionInfo } from '../../types/api/media-server/session-info';
+import { GenericSessionInfo } from '~/types/api/media-server/session-info';
 
 export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) => {
 

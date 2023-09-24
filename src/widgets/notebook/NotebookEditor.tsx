@@ -9,8 +9,8 @@ import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
-import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '../../config/provider';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useConfigContext } from '~/config/provider';
 import { WidgetLoading } from '../loading';
 import { INotebookWidget } from './NotebookWidgetTile';
 

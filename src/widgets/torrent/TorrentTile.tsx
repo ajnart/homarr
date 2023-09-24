@@ -17,11 +17,11 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
-import { useCardStyles } from '~/components/layout/useCardStyles';
+import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
-import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { AppIntegrationType } from '../../types/app';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
+import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
+import { AppIntegrationType } from '~/types/app';
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';

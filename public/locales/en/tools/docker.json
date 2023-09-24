@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Your Homarr instance does not have Docker configured or it has falied to fetch containers. Please check the documentation on how to set up the integration."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Choose a board",
+            "text": "Choose the board where you want to add the apps for the selected Docker containers.",
+            "form": {
+                "board": {
+                    "label": "Board"
+                },
+                "submit": "Add apps"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Added apps to board",
+                "message": "The apps for the selected Docker containers have been added to the board."
+            },
+            "error": {
+                "title": "Failed to add apps to board",
+                "message": "The apps for the selected Docker containers could not be added to the board."
+            }
+        }
+    }
+}

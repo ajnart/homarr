@@ -23,8 +23,5 @@
     "description": "Further, customize your dashboard using CSS, only recommended for experienced users",
     "placeholder": "Custom CSS will be applied last",
     "applying": "Applying CSS..."
-  },
-  "buttons": {
-    "submit": "Submit"
   }
 }

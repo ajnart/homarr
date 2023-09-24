@@ -1,0 +1,48 @@
+{
+    "metaTitle": "User invites",
+    "pageTitle": "Manage user invites",
+    "description": "Using invites, you can invite users to your Homarr instance. An invitation will only be valid for a certain time-span and can be used once. The expiration must be between 5 minutes and 12 months upon creation.",
+    "button": {
+        "createInvite": "Create invitation",
+        "deleteInvite": "Delete invite"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Creator",
+            "expires": "Expires",
+            "action": "Actions"
+        },
+        "data": {
+            "expiresAt": "expired {{at}}",
+            "expiresIn": "in {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Create invite",
+            "description": "After the expiration, an invite will no longer be valid and the recipient of the invite won't be able to create an account.",
+            "form": {
+                "expires": "Expiration date",
+                "submit": "Create"
+            }
+        },
+        "copy": {
+            "title": "Copy invitation",
+            "description": "Your invitation has been generated. After this modal closes, <b>you'll not be able to copy this link anymore</b>. If you do no longer wish to invite said person, you can delete this invitation any time.",
+            "invitationLink": "Invitation link",
+            "details": {
+                "id": "ID",
+                "token": "Token"
+            },
+            "button": {
+                "close": "Copy & Dismiss"
+            }
+        },
+        "delete": {
+            "title": "Delete invite",
+            "description": "Are you sure, that you want to delete this invitation? Users with this link will no longer be able to create an account using that link."
+        }
+    },
+    "noInvites": "There are no invitations yet."
+}

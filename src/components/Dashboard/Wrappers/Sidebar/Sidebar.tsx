@@ -1,7 +1,7 @@
 import { Card } from '@mantine/core';
 import { RefObject } from 'react';
 
-import { useCardStyles } from '../../../layout/useCardStyles';
+import { useCardStyles } from '../../../layout/Common/useCardStyles';
 import { WrapperContent } from '../WrapperContent';
 import { useGridstack } from '../gridstack/use-gridstack';
 

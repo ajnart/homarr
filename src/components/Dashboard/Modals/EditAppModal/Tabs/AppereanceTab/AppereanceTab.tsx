@@ -4,8 +4,8 @@ import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useRef } from 'react';
 
-import { AppType } from '../../../../../../types/app';
-import { IconSelector } from '../../../../../IconSelector/IconSelector';
+import { AppType } from '~/types/app';
+import { IconSelector } from '~/components/IconSelector/IconSelector';
 
 interface AppearanceTabProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;

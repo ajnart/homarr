@@ -3,15 +3,23 @@ export type Language = {
   originalName: string;
   translatedName: string;
   emoji: string;
+
+  /**
+   * The country identified b<y the ISO-3166 alpha 2 code:
+   * https://www.iso.org/obp/ui/#search
+   */
+  country?: string;
+
   locale: string;
 };
 
-export const languages: Language[] = [
+export const languages = [
   {
     shortName: 'de',
     originalName: 'Deutsch',
     translatedName: 'German',
     emoji: '🇩🇪',
+    country: 'DE',
     locale: 'de',
   },
   {
@@ -19,6 +27,7 @@ export const languages: Language[] = [
     originalName: 'English',
     translatedName: 'English',
     emoji: '🇬🇧',
+    country: 'GB',
     locale: 'en-gb',
   },
   // Danish
@@ -27,6 +36,7 @@ export const languages: Language[] = [
     originalName: 'Dansk',
     translatedName: 'Danish',
     emoji: '🇩🇰',
+    country: 'DK',
     locale: 'da',
   },
   // Hebrew
@@ -35,6 +45,7 @@ export const languages: Language[] = [
     originalName: 'עברית',
     translatedName: 'Hebrew',
     emoji: '🇮🇱',
+    country: 'IL',
     locale: 'he',
   },
   {
@@ -42,6 +53,7 @@ export const languages: Language[] = [
     originalName: 'Español',
     translatedName: 'Spanish',
     emoji: '🇪🇸',
+    country: 'ES',
     locale: 'es',
   },
   {
@@ -49,6 +61,7 @@ export const languages: Language[] = [
     originalName: 'Français',
     translatedName: 'French',
     emoji: '🇫🇷',
+    country: 'FR',
     locale: 'fr',
   },
   {
@@ -56,6 +69,7 @@ export const languages: Language[] = [
     originalName: 'Italiano',
     translatedName: 'Italian',
     emoji: '🇮🇹',
+    country: 'IT',
     locale: 'it',
   },
   {
@@ -63,6 +77,7 @@ export const languages: Language[] = [
     originalName: '日本語',
     translatedName: 'Japanese',
     emoji: '🇯🇵',
+    country: 'JP',
     locale: 'ja',
   },
   {
@@ -70,6 +85,7 @@ export const languages: Language[] = [
     originalName: '한국어',
     translatedName: 'Korean',
     emoji: '🇰🇷',
+    country: 'KR',
     locale: 'ko',
   },
   {
@@ -77,6 +93,7 @@ export const languages: Language[] = [
     originalName: 'LOLCAT',
     translatedName: 'LOLCAT',
     emoji: '🐱',
+    country: 'LOL',
     locale: 'en-gb',
   },
   // Norwegian
@@ -85,6 +102,7 @@ export const languages: Language[] = [
     originalName: 'Norsk',
     translatedName: 'Norwegian',
     emoji: '🇳🇴',
+    country: 'NO',
     locale: 'nb',
   },
   // Slovak
@@ -93,6 +111,7 @@ export const languages: Language[] = [
     originalName: 'Slovenčina',
     translatedName: 'Slovak',
     emoji: '🇸🇰',
+    country: 'SK',
     locale: 'sk',
   },
   {
@@ -100,6 +119,7 @@ export const languages: Language[] = [
     originalName: 'Nederlands',
     translatedName: 'Dutch',
     emoji: '🇳🇱',
+    country: 'NL',
     locale: 'nl',
   },
   {
@@ -107,6 +127,7 @@ export const languages: Language[] = [
     originalName: 'Polski',
     translatedName: 'Polish',
     emoji: '🇵🇱',
+    country: 'PL',
     locale: 'pl',
   },
   {
@@ -114,6 +135,7 @@ export const languages: Language[] = [
     originalName: 'Português',
     translatedName: 'Portuguese',
     emoji: '🇵🇹',
+    country: 'PT',
     locale: 'pt',
   },
   {
@@ -121,6 +143,7 @@ export const languages: Language[] = [
     originalName: 'Русский',
     translatedName: 'Russian',
     emoji: '🇷🇺',
+    country: 'RU',
     locale: 'ru',
   },
   {
@@ -128,14 +151,15 @@ export const languages: Language[] = [
     originalName: 'Slovenščina',
     translatedName: 'Slovenian',
     emoji: '🇸🇮',
+    country: 'SI',
     locale: 'sl',
   },
-
   {
     shortName: 'sv',
     originalName: 'Svenska',
     translatedName: 'Swedish',
     emoji: '🇸🇪',
+    country: 'SE',
     locale: 'sv',
   },
   {
@@ -143,6 +167,7 @@ export const languages: Language[] = [
     originalName: 'Українська',
     translatedName: 'Ukrainian',
     emoji: '🇺🇦',
+    country: 'UA',
     locale: 'uk',
   },
   // Vietnamese
@@ -151,6 +176,7 @@ export const languages: Language[] = [
     originalName: 'Tiếng Việt',
     translatedName: 'Vietnamese',
     emoji: '🇻🇳',
+    country: 'VN',
     locale: 'vi',
   },
   {
@@ -158,13 +184,15 @@ export const languages: Language[] = [
     originalName: '中文',
     translatedName: 'Chinese',
     emoji: '🇨🇳',
+    country: 'CN',
     locale: 'zh-cn',
   },
   {
-    shortName: 'el',
     originalName: 'Ελληνικά',
     translatedName: 'Greek',
     emoji: '🇬🇷',
+    country: 'GR',
+    shortName: 'gr',
     locale: 'el',
   },
   {
@@ -172,6 +200,7 @@ export const languages: Language[] = [
     originalName: 'Türkçe',
     translatedName: 'Turkish',
     emoji: '🇹🇷',
+    country: 'TR',
     locale: 'tr',
   },
   {
@@ -179,6 +208,7 @@ export const languages: Language[] = [
     originalName: 'Latvian',
     translatedName: 'Latvian',
     emoji: '🇱🇻',
+    country: 'LV',
     locale: 'lv',
   },
   {
@@ -186,6 +216,7 @@ export const languages: Language[] = [
     originalName: 'Hrvatski',
     translatedName: 'Croatian',
     emoji: '🇭🇷',
+    country: 'HR',
     locale: 'hr',
   },
   // Hungarian
@@ -194,9 +225,11 @@ export const languages: Language[] = [
     originalName: 'Magyar',
     translatedName: 'Hungarian',
     emoji: '🇭🇺',
+    country: 'HU',
     locale: 'hu',
   },
-];
+] as const satisfies Readonly<Language[]>;
 
 export const getLanguageByCode = (code: string | null) =>
-  languages.find((language) => language.shortName === code) ?? languages[languages.length - 1];
+  languages.find((language) => language.shortName === code) ??
+  languages.find((x) => x.locale === 'en-gb')!;

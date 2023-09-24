@@ -3,7 +3,7 @@ import fs from 'fs';
 import { fetchCity } from '~/server/api/routers/weather';
 import { IntegrationField } from '~/types/app';
 
-import { BackendConfigType, ConfigType } from '../../types/config';
+import { BackendConfigType, ConfigType } from '~/types/config';
 import { getConfig } from './getConfig';
 
 export const getFrontendConfig = async (name: string): Promise<ConfigType> => {

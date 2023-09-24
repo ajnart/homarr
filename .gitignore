@@ -56,3 +56,10 @@ data/configs
 #Languages other than 'en'
 public/locales/*
 !public/locales/en
+
+#database
+prisma/db.sqlite
+database/*.sqlite
+
+# IDE
+.idea/*

@@ -1,13 +1,13 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { getLanguageByCode } from '~/tools/language';
-import { api } from '~/utils/api';
+import { RouterOutputs, api } from '~/utils/api';
 
-import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '../../config/provider';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useConfigContext } from '~/config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
@@ -27,10 +27,6 @@ const definition = defineWidget({
       defaultValue: false,
     },
     useSonarrv4: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    sundayStart: {
       type: 'switch',
       defaultValue: false,
     },
@@ -71,14 +67,16 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
-  const { locale } = useRouter();
   const { colorScheme, radius } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
   const isEditMode = useEditModeStore((x) => x.enabled);
+  const { data: sessionData } = useSession();
+  const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
+    enabled: !!sessionData?.user,
+  });
 
-  const language = getLanguageByCode(locale ?? 'en');
-  require(`dayjs/locale/${language.locale}.js`);
+  const language = getLanguageByCode(userWithSettings?.settings.language ?? 'en');
 
   const { data: medias } = api.calendar.medias.useQuery(
     {
@@ -93,6 +91,8 @@ function CalendarTile({ widget }: CalendarTileProps) {
     }
   );
 
+  const firstDayOfWeek = userWithSettings?.settings.firstDayOfWeek ?? 'monday';
+
   return (
     <Calendar
       defaultDate={new Date()}
@@ -100,7 +100,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       onNextMonth={setMonth}
       size={widget.properties.fontSize}
       locale={language.locale}
-      firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
+      firstDayOfWeek={getFirstDayOfWeek(firstDayOfWeek)}
       hideWeekdays={widget.properties.hideWeekDays}
       style={{ position: 'relative' }}
       date={month}
@@ -156,6 +156,13 @@ function CalendarTile({ widget }: CalendarTileProps) {
   );
 }
 
+const getFirstDayOfWeek = (
+  firstDayOfWeek: RouterOutputs['user']['withSettings']['settings']['firstDayOfWeek']
+) => {
+  if (firstDayOfWeek === 'sunday') return 0;
+  if (firstDayOfWeek === 'monday') return 1;
+  return 6;
+};
 const getReleasedMediasForDate = (
   medias: MediasType | undefined,
   date: Date,
