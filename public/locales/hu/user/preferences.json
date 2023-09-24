@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Kisegítő lehetőségek",
+        "disablePulse": {
+            "label": "Ping letiltása",
+            "description": "Alapértelmezés szerint a Homarrban a pingjelzők pulzálni fognak. Ez irritáló lehet. Ez a csúszka kikapcsolja az animációt"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ping pontok ikonokkal való helyettesítése",
+            "description": "A színvak felhasználók számára a ping pöttyök felismerhetetlenek lehetnek. Ez a jelzőket ikonokkal helyettesíti"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Nyelv"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Keresőmotor",
+        "custom": "Egyéni",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "URL lekérdezés",
+            "description": ""
+        }
+    }
+}
