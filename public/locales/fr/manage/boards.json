@@ -18,7 +18,7 @@
             }
         },
         "badges": {
-            "fileSystem": "",
+            "fileSystem": "Système de fichiers",
             "default": ""
         }
     },
@@ -37,7 +37,7 @@
                 "name": {
                     "label": "Nom"
                 },
-                "submit": ""
+                "submit": "Créer"
             }
         }
     }
