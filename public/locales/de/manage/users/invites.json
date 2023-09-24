@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Benutzereinladungen",
+    "pageTitle": "Verwalten von Benutzereinladungen",
+    "description": "Mit Einladungen können Sie Benutzer zu Ihrer Homarr-Instanz einladen. Eine Einladung ist nur für eine bestimmte Zeitspanne gültig und kann nur einmal verwendet werden. Die Gültigkeitsdauer muss bei der Erstellung zwischen 5 Minuten und 12 Monaten liegen.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Einladung erstellen",
+        "deleteInvite": "Einladung löschen"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Ersteller",
+            "expires": "Endet",
+            "action": "Aktivitäten"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "Abgelaufen {{at}}",
+            "expiresIn": "in {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Einladung erstellen",
+            "description": "Nach Ablauf der Frist ist eine Einladung nicht mehr gültig und der Empfänger der Einladung kann kein Konto erstellen.",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "Ablaufdatum",
+                "submit": "Erstellen"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Einladung kopieren",
+            "description": "Ihre Einladung wurde erstellt. Nachdem dieses Modal geschlossen wurde, <b>können Sie diesen Link nicht mehr kopieren</b>. Wenn Sie die besagte Person nicht mehr einladen möchten, können Sie diese Einladung jederzeit löschen.",
+            "invitationLink": "Link zur Einladung",
             "details": {
-                "id": "",
-                "token": ""
+                "id": "ID",
+                "token": "Token"
             },
             "button": {
-                "close": ""
+                "close": "Kopieren & Verwerfen"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "Einladung löschen",
+            "description": "Sind Sie sicher, dass Sie diese Einladung löschen möchten? Benutzer mit diesem Link können dann kein Konto mehr über diesen Link erstellen."
         }
     },
-    "noInvites": ""
+    "noInvites": "Es liegen noch keine Einladungen vor."
 }
