@@ -4,18 +4,18 @@
     "backToBoard": "",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Couleur primaire",
+            "secondaryColor": "Couleur secondaire"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Sauvegarder les modifications",
+        "note": "Attention, vous avez des modifications non enregistrées !"
     },
     "notifications": {
         "pending": {
             "title": "",
-            "message": ""
+            "message": "Veuillez patienter pendant que nous enregistrons votre personnalisation"
         },
         "success": {
             "title": "",
