@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "",
+        "required": "",
+        "string": {
+            "startsWith": "",
+            "endsWith": "",
+            "includes": ""
+        },
+        "tooSmall": {
+            "string": "",
+            "number": ""
+        },
+        "tooBig": {
+            "string": "",
+            "number": ""
+        },
+        "custom": {
+            "passwordMatch": ""
+        }
+    }
+}
