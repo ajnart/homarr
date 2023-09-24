@@ -21,14 +21,14 @@
                 "label": "Acerca de",
                 "new": "Nuevo"
             },
-            "logout": "",
+            "logout": "Cerrar sesión de {{username}}",
             "login": "Iniciar sesión"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Mejores {{count}} resultados para <b>{{search}}</b>."
         }
     }
 }
