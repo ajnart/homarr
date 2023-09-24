@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Benutzer erstellen",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Erster Schritt",
+            "text": "Account erstellen",
             "username": {
                 "label": "Benutzername"
             },
             "email": {
-                "label": ""
+                "label": "E-Mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Zweiter Schritt",
             "text": "Passwort",
             "password": {
                 "label": "Passwort"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Bestätigung",
+            "text": "In Datenbank speichern",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Überprüfen Sie Ihre Eingaben",
+                "text": "Nachdem Sie Ihre Daten an die Datenbank übermittelt haben, kann sich der Benutzer anmelden. Sind Sie sicher, dass Sie diesen Benutzer in der Datenbank speichern und die Anmeldung aktivieren wollen?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Eigenschaft",
+                    "value": "Wert",
                     "username": "Benutzername",
-                    "email": "",
+                    "email": "E-Mail",
                     "password": "Passwort"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nicht festgelegt",
+                "valid": "Gültig"
             },
-            "failed": ""
+            "failed": "Die Erstellung eines Benutzers ist fehlgeschlagen: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Benutzer wurde erstellt",
+                "text": "Der Benutzer wurde in der Datenbank angelegt. Er kann sich nun anmelden."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Zufällig generieren",
+        "createAnother": "Weiteren erstellen"
     }
 }
