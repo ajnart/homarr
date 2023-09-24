@@ -1,3 +1,5 @@
+import Consola from 'consola';
+import fs from 'fs/promises';
 import { NextRequest, NextResponse } from 'next/server';
 import { env } from 'process';
 
@@ -34,13 +36,28 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // is only called from when there were no users in the database in this session (Since the app started)
-  cachedUserCount = await client.user.count.query();
-
   // Do not redirect if there are users in the database
-  if (cachedUserCount > 0) {
+  if (!(await shouldRedirectToOnboard())) {
     return NextResponse.next();
   }
 
   return NextResponse.redirect(getUrl(req) + '/onboard');
 }
+
+const shouldRedirectToOnboard = async (): Promise<boolean> => {
+  if (!env.DATABASE_URL?.startsWith('file:')) {
+    cachedUserCount = await client.user.count.query();
+    return cachedUserCount === 0;
+  }
+
+  const fileUri = env.DATABASE_URL.substring(4);
+  try {
+    await fs.access(fileUri, fs.constants.W_OK);
+    return false;
+  } catch {
+    Consola.warn(
+      `detected that the path ${fileUri} was not readable. Showing onboarding page for setup...`
+    );
+    return true;
+  }
+};
