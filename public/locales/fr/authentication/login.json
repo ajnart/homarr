@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Connexion",
   "title": "Bienvenue !",
-  "text": "",
+  "text": "Veuillez saisir vos identifiants",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Se connecter"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Après la connexion, vous serez redirigé vers {{url}}"
   },
-  "alert": ""
+  "alert": "Vos identifiants sont incorrects ou ce compte n'existe pas. Veuillez réessayer."
 }
