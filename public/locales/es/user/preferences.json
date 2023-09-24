@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Accesibilidad",
+        "disablePulse": {
+            "label": "Desactivar pulso de ping",
+            "description": "Por defecto, los indicadores de ping en Homarr parpadean. Esto puede resultar irritante. Este deslizador desactivará la animación"
+        },
+        "replaceIconsWithDots": {
+            "label": "Reemplazar los puntos de ping por iconos",
+            "description": "Para los usuarios daltónicos, los puntos de ping pueden ser irreconocibles. Esto reemplazará los indicadores por iconos"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Idioma"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Motor de búsqueda",
+        "custom": "Personalizado",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "URL de consulta",
+            "description": ""
+        }
+    }
+}
