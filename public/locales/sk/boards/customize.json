@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Prispôsobenie {{name}} Board",
+    "pageTitle": "Prispôsobenie pre {{name}} Board",
+    "backToBoard": "Späť na palubu",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Hlavná farba",
+            "secondaryColor": "Sekundárna farba"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Uložiť zmeny",
+        "note": "Pozor - máte neuložené zmeny!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Uloženie prispôsobenia",
+            "message": "Počkajte, prosím, kým uložíme vaše prispôsobenie"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Uložené prispôsobenie",
+            "message": "Vaše prispôsobenie bolo úspešne uložené"
         },
         "error": {
             "title": "Chyba",
-            "message": ""
+            "message": "Nie je možné uložiť zmeny"
         }
     }
 }
