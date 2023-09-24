@@ -8,7 +8,7 @@
         "label": "Affichage 24 h"
       },
       "dateFormat": {
-        "label": "Formatage de la date",
+        "label": "Format de la date",
         "data": {
           "hide": "Masquer la date"
         }
@@ -21,7 +21,7 @@
       },
       "titleState": {
         "label": "Nom de la ville",
-        "info": "Si vous avez choisis d'activer un fuseau horaire différent, le nom de la ville ainsi que le nom de son fuseau horaire peuvent être affichés.<br/>Vous pouvez aussi n'afficher que la ville ou aucun des deux.",
+        "info": "Si vous avez choisi d'activer un fuseau horaire différent, le nom de la ville ainsi que le nom de son fuseau horaire peuvent être affichés.<br/>Vous pouvez aussi n'afficher que la ville ou aucun des deux.",
         "data": {
           "both": "Ville et fuseau horaire",
           "city": "Ville uniquement",
