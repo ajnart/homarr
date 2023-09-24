@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Prihlásiť sa",
   "title": "Vitaj spat!",
-  "text": "",
+  "text": "Zadajte svoje prihlasovacie údaje",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Prihlásiť sa"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Po prihlásení budete presmerovaní na stránku {{url}}"
   },
-  "alert": ""
+  "alert": "Vaše poverovacie údaje sú nesprávne alebo toto konto neexistuje. Skúste to prosím znova."
 }
