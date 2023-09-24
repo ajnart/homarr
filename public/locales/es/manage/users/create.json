@@ -3,7 +3,7 @@
     "steps": {
         "account": {
             "title": "",
-            "text": "",
+            "text": "Crear cuenta",
             "username": {
                 "label": "Nombre de usuario"
             },
