@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Crear Cuenta",
+    "title": "Crear Cuenta",
+    "text": "Por favor, define tus credenciales abajo",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Contraseña"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Confirmar contraseña"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Crear cuenta"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Creando cuenta",
+            "text": "Por favor, espera"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Cuenta creada",
+            "text": "Tu cuenta ha sido creada correctamente"
         },
         "error": {
             "title": "Error",
-            "text": ""
+            "text": "Algo salió mal, se obtuvo el siguiente error: {{error}}"
         }
     }
 }
