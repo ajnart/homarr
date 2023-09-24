@@ -3,9 +3,9 @@
     "name": "Управление фильтрующими DNS",
     "description": "Управляйте PiHole или AdGuard с панели управления",
     "settings": {
-      "title": "",
+      "title": "Настройки управления отверстиями DNS",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Показать кнопки \"Включить/Выключить все"
       }
     }
   }
