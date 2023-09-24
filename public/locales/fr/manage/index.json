@@ -1,12 +1,12 @@
 {
     "metaTitle": "",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
+        "title": "Content de te revoir, {{username}}",
+        "fallbackUsername": "Anonyme",
         "subtitle": ""
     },
     "quickActions": {
-        "title": "",
+        "title": "Actions rapides",
         "boards": {
             "title": "",
             "subtitle": ""
