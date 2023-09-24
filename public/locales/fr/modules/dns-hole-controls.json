@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Contrôle du DNS hole",
+    "name": "Pilotage du DNS Hole",
     "description": "Contrôlez PiHole ou AdGuard depuis votre tableau de bord",
     "settings": {
       "title": "",
