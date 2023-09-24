@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Einstellungen",
+    "pageTitle": "Ihre Einstellungen",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Standard-Board"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Sprache"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Erster Tag der Woche",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Montag",
+                "saturday": "Samstag",
+                "sunday": "Sonntag"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Suchmaschine",
         "custom": "Benutzerdefiniert",
         "newTab": {
-            "label": ""
+            "label": "Suchergebnisse in neuem Tab öffnen"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Suchleiste beim Laden der Seite fokussieren.",
+            "description": "Dadurch wird die Suchleiste automatisch fokussiert, wenn Sie auf den Seiten des Boards navigieren. Dies funktioniert nur auf Desktop-Geräten."
         },
         "template": {
             "label": "Suchanfrage URL",
-            "description": ""
+            "description": "Verwenden Sie %s als Platzhalter für die Suchanfrage"
         }
     }
 }
