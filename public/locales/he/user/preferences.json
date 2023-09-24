@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "נגישות",
+        "disablePulse": {
+            "label": "השבת את דופק הפינג",
+            "description": "כברירת מחדל, מחווני ping ב-Homarr יפעמו. זה עשוי להיות מעצבן. המחוון הזה ישבית את האנימציה"
+        },
+        "replaceIconsWithDots": {
+            "label": "החלף את נקודות הפינג בסמלים",
+            "description": "עבור משתמשים עיוורי צבעים, נקודות פינג עשויות להיות בלתי ניתנות לזיהוי. זה יחליף אינדיקטורים בסמלים"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "שפה"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "מנוע חיפוש",
+        "custom": "מותאם אישית",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "כתובת URL של שאילתה",
+            "description": ""
+        }
+    }
+}
