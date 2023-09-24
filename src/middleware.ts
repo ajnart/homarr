@@ -45,15 +45,19 @@ export async function middleware(req: NextRequest) {
 }
 
 const shouldRedirectToOnboard = async (): Promise<boolean> => {
-  if (!env.DATABASE_URL?.startsWith('file:')) {
+  const cacheAndGetUserCount = async () => {
     cachedUserCount = await client.user.count.query();
     return cachedUserCount === 0;
+  }
+
+  if (!env.DATABASE_URL?.startsWith('file:')) {
+    return await cacheAndGetUserCount();
   }
 
   const fileUri = env.DATABASE_URL.substring(4);
   try {
     await fs.access(fileUri, fs.constants.W_OK);
-    return false;
+    return await cacheAndGetUserCount();
   } catch {
     Consola.warn(
       `detected that the path ${fileUri} was not readable. Showing onboarding page for setup...`
