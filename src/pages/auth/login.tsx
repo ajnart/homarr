@@ -12,7 +12,7 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -29,7 +29,7 @@ import { signInSchema } from '~/validations/user';
 
 export default function LoginPage({
   redirectAfterLogin,
-}: GetServerSideProps<typeof getServerSideProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation('authentication/login');
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();
