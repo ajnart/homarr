@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Tercihler",
+    "pageTitle": "Tercihleriniz",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Varsayılan panel"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Dil"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Haftanın ilk günü",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Pazartesi",
+                "saturday": "Cumartesi",
+                "sunday": "Pazar"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Arama motoru",
         "custom": "Kişisel",
         "newTab": {
-            "label": ""
+            "label": "Arama sonuçlarını yeni sekmede aç"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Sayfa yüklendiğinde arama çubuğuna odaklanın.",
+            "description": "Sayfa yüklendiğindei imleç arama çubuğunu otomatik olarak odaklayacaktır. Yalnızca masaüstü cihazlarda çalışacaktır."
         },
         "template": {
             "label": "Sorgu URL’si",
-            "description": ""
+            "description": "Sorgu için yer tutucu olarak %s kullanın"
         }
     }
 }
