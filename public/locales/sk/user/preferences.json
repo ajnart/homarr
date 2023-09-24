@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Prístupnosť",
+        "disablePulse": {
+            "label": "Zakázanie impulzu ping",
+            "description": "V predvolenom nastavení budú indikátory ping v aplikácii Homarr pulzovať. To môže byť nepríjemné. Tento posuvník deaktivuje animáciu"
+        },
+        "replaceIconsWithDots": {
+            "label": "Nahradenie bodov ping ikonami",
+            "description": "Pre farboslepých používateľov môžu byť pingové body nerozpoznateľné. Toto nahradí indikátory ikonami"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Jazyk"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Vyhľadávač",
+        "custom": "Vlastné",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "Adresa URL dopytu",
+            "description": ""
+        }
+    }
+}
