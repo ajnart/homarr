@@ -1,8 +1,8 @@
 {
     "metaTitle": "Administrar",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
+        "title": "Bienvenido/a de nuevo, {{username}}",
+        "fallbackUsername": "Anónimo",
         "subtitle": ""
     },
     "quickActions": {
