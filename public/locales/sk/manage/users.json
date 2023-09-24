@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "text": "",
+    "metaTitle": "Používatelia",
+    "pageTitle": "Spravovať používateľov",
+    "text": "Pomocou používateľov môžete nakonfigurovať, kto môže upravovať informačné panely. Budúce verzie aplikácie Homarr budú mať ešte podrobnejšie ovládanie oprávnení a tabuliek.",
     "buttons": {
-        "create": ""
+        "create": "Vytvoriť"
     },
     "table": {
         "header": {
@@ -11,26 +11,26 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Odstrániť používateľa",
+        "demoteAdmin": "Zníženie funkcie správcu",
+        "promoteToAdmin": "Povýšenie na správcu"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Odstránenie používateľa {{name}}",
+            "text": "Ste si istí, že chcete odstrániť používateľa {{name}}? Tým sa vymažú údaje spojené s týmto účtom, ale nie všetky panely vytvorené týmto používateľom."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "Povýšenie používateľa {{name}} na administrátora",
+                "text": "Ste si istí, že chcete povýšiť používateľa {{name}} na administrátora? Tým získa používateľ prístup ku všetkým zdrojom vo vašej inštancii Homarr."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "Odstránenie používateľa {{name}} na používateľa",
+                "text": "Ste si istí, že chcete povýšiť používateľa {{name}} na administrátora? Tým získa používateľ prístup ku všetkým zdrojom vo vašej inštancii Homarr."
             },
             "confirm": "Potvrďte"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Vaše vyhľadávanie nezodpovedá žiadnym záznamom. Upravte prosím svoj filter."
 }
