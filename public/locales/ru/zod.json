@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "",
+        "default": "Это поле недействительно",
         "required": "Это поле обязательно",
         "string": {
-            "startsWith": "",
-            "endsWith": "",
-            "includes": ""
+            "startsWith": "Это поле должно начинаться с {{startsWith}}",
+            "endsWith": "Это поле должно заканчиваться на {{endsWith}}",
+            "includes": "Это поле должно включать {{includes}}"
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "Длина этого поля должна быть не менее {{minimum}} символов",
+            "number": "Это поле должно быть больше или равно {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "Длина этого поля не должна превышать {{maximum}} символов",
+            "number": "Это поле должно быть меньше или равно {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "Пароли должны совпадать"
         }
     }
 }
