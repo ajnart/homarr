@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "",
+        "required": "Dette felt er påkrævet",
+        "string": {
+            "startsWith": "",
+            "endsWith": "",
+            "includes": ""
+        },
+        "tooSmall": {
+            "string": "",
+            "number": ""
+        },
+        "tooBig": {
+            "string": "",
+            "number": ""
+        },
+        "custom": {
+            "passwordMatch": ""
+        }
+    }
+}
