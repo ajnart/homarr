@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Dobro došli natrag!",
-  "text": "Molimo unesite Vašu lozinku",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Korisničko ime"
+      },
       "password": {
-        "label": "Lozinka",
-        "placeholder": "Vaša lozinka"
+        "label": "Lozinka"
       }
     },
     "buttons": {
       "submit": "Prijavi se"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Provjeravam Vašu lozinku",
-      "message": "Vaša lozinka se provjerava..."
-    },
-    "correct": {
-      "title": "Prijavljivanje je uspješno, preusmjeravam..."
-    },
-    "wrong": {
-      "title": "Lozinka koju ste unijeli nije ispravna, molim pokušajte ponovno."
-    }
-  }
+  "alert": ""
 }
