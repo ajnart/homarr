@@ -1,6 +1,6 @@
 {
   "allowGuests": {
-    "label": "",
-    "description": ""
+    "label": "Permitir anónimos",
+    "description": "Permitir usuarios que no estén logeados para poder ver tu tablero"
   }
 }
