@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Vaša inštancia Homarr nemá nakonfigurovaný Docker alebo sa jej nepodarilo načítať kontajnery. Pozrite si dokumentáciu o tom, ako nastaviť integráciu."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Výber dosky",
+            "text": "Zvoľte dosku, na ktorú chcete pridať aplikácie pre vybrané kontajnery Docker.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Doska"
                 },
-                "submit": ""
+                "submit": "Pridať aplikácie"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Pridanie aplikácií na dosku",
+                "message": "Aplikácie pre vybrané kontajnery Docker boli pridané na tabuľu."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Nepodarilo sa pridať aplikácie na palubu",
+                "message": "Aplikácie pre vybrané kontajnery Docker boli pridané na tabuľu."
             }
         }
     }
