@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "",
+        "required": "此字段为必填",
+        "string": {
+            "startsWith": "",
+            "endsWith": "",
+            "includes": ""
+        },
+        "tooSmall": {
+            "string": "",
+            "number": ""
+        },
+        "tooBig": {
+            "string": "",
+            "number": ""
+        },
+        "custom": {
+            "passwordMatch": ""
+        }
+    }
+}
