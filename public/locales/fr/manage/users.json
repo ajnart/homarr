@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Utilisateurs",
     "pageTitle": "",
     "text": "",
     "buttons": {
-        "create": ""
+        "create": "Créer"
     },
     "table": {
         "header": {
@@ -11,18 +11,18 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Supprimer l’utilisateur",
+        "demoteAdmin": "Rétrograder l'administrateur",
+        "promoteToAdmin": "Promouvoir en tant qu'administrateur"
     },
     "modals": {
         "delete": {
-            "title": "",
+            "title": "Supprimer l'utilisateur {{name}}",
             "text": ""
         },
         "change-role": {
             "promote": {
-                "title": "",
+                "title": "Promouvoir l'utilisateur {{name}} en tant qu'administrateur",
                 "text": ""
             },
             "demote": {
