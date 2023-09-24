@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Управлять",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Добро пожаловать, {{username}}",
+        "fallbackUsername": "Аноним",
+        "subtitle": "Добро пожаловать в Ваш центр приложений. Организуйте, оптимизируйте и побеждайте!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Быстрые действия",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Ваши доски",
+            "subtitle": "Создание и управление досками"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Пригласить нового пользователя",
+            "subtitle": "Создание и отправка приглашения на регистрацию"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Управлять пользователями",
+            "subtitle": "Удаление и управление пользователями"
         }
     }
 }
