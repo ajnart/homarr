@@ -137,7 +137,7 @@ export default function LoginPage({
   );
 }
 
-const regexExp = /^\/{1}[A-z\/]*$/;
+const regexExp = /^\/{1}[A-Za-z\/]*$/;
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, req, res, query }) => {
   const session = await getServerAuthSession({ req, res });
