@@ -13,7 +13,7 @@
     }
   },
   "mediaStats": {
-    "title": "Statistiques du média",
+    "title": "Statistiques des médias",
     "pending": "En attente de validation",
     "tvRequests": "Demandes de séries TV",
     "movieRequests": "Demandes de films",
@@ -21,7 +21,7 @@
     "totalRequests": "Total"
   },
   "userStats": {
-    "title": "Meilleurs utilisateurs",
+    "title": "Principaux utilisateurs",
     "requests": "Demandes : {{number}}"
   }
 }
