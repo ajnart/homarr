@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Erişilebilirlik",
+        "disablePulse": {
+            "label": "Ping animasyonunu devre dışı bırak",
+            "description": "Varsayılan olarak, Homarr'daki ping animasyonu aktiftir. Bu rahatsız edici olabilir. Bu animasyonu devre dışı bırakacaktır"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ping noktalarını ikon ile değiştirin",
+            "description": "Renk körü (Daltonizm) kullanıcılar için ping noktaları tanınmayabilir. Bu, göstergeleri simgelerle değiştirecektir"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Dil"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Arama motoru",
+        "custom": "Kişisel",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "Sorgu URL’si",
+            "description": ""
+        }
+    }
+}
