@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Iniciar sesión",
   "title": "¡Bienvenido/a otra vez!",
-  "text": "",
+  "text": "Por favor, introduce tus credenciales",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Iniciar sesión"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Después de iniciar sesión, serás redireccionado a {{url}}"
   },
-  "alert": ""
+  "alert": "Tus credenciales son incorrectas, o la cuenta no existe. Por favor, prueba otra vez."
 }
