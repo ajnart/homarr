@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Créer un compte",
+    "title": "Créer un compte",
+    "text": "Veuillez définir vos identifiants ci-dessous",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Mot de passe"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Confirmation du mot de passe"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Créer un compte"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Création du compte",
+            "text": "Un instant"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Compte créé",
+            "text": "Votre compte a bien été créé"
         },
         "error": {
             "title": "Erreur",
-            "text": ""
+            "text": "Quelque chose ne s'est pas bien passé, l'erreur obtenue est la suivante : {{error}}"
         }
     }
 }
