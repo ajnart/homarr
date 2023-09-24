@@ -12,7 +12,6 @@ import {
   Title,
 } from '@mantine/core';
 import { useListState } from '@mantine/hooks';
-import { modals } from '@mantine/modals';
 import {
   IconBox,
   IconCategory,
@@ -35,6 +34,7 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { sleep } from '~/tools/client/time';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
@@ -204,10 +204,9 @@ const BoardsPage = () => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getServerAuthSession(ctx);
 
-  if (!session?.user) {
-    return {
-      notFound: true,
-    };
+  const result = checkForSessionOrAskForLogin(ctx, session, () => true);
+  if (result) {
+    return result;
   }
 
   const translations = await getServerSideTranslations(

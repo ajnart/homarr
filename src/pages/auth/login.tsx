@@ -12,7 +12,7 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -20,14 +20,16 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
+import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signInSchema } from '~/validations/user';
-import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 
-export default function LoginPage() {
+export default function LoginPage({
+  redirectAfterLogin,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation('authentication/login');
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();
@@ -54,7 +56,7 @@ export default function LoginPage() {
         setIsError(true);
         return;
       }
-      router.push('/manage');
+      router.push(redirectAfterLogin ?? '/manage');
     });
   };
 
@@ -68,7 +70,7 @@ export default function LoginPage() {
 
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <FloatingBackground />
-        <ThemeSchemeToggle pos="absolute" top={20} right={20}/>
+        <ThemeSchemeToggle pos="absolute" top={20} right={20} />
         <Stack spacing={40} align="center" w="100%">
           <Stack spacing={0} align="center">
             <Image src="/imgs/logo/logo.svg" width={80} height={80} alt="" />
@@ -120,6 +122,12 @@ export default function LoginPage() {
                 <Button mt="xs" variant="light" fullWidth type="submit" loading={isLoading}>
                   {t('form.buttons.submit')}
                 </Button>
+
+                {redirectAfterLogin && (
+                  <Text color="dimmed" align="center" size="xs">
+                    {t('form.afterLoginRedirection', { url: redirectAfterLogin })}
+                  </Text>
+                )}
               </Stack>
             </form>
           </Card>
@@ -129,8 +137,15 @@ export default function LoginPage() {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, req, res }) => {
+const regexExp = /^\/{1}[A-z\/]*$/;
+
+export const getServerSideProps: GetServerSideProps = async ({ locale, req, res, query }) => {
   const session = await getServerAuthSession({ req, res });
+
+  const zodResult = await z
+    .object({ redirectAfterLogin: z.string().regex(regexExp) })
+    .safeParseAsync(query);
+  const redirectAfterLogin = zodResult.success ? zodResult.data.redirectAfterLogin : null;
 
   if (session) {
     return {
@@ -144,6 +159,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
   return {
     props: {
       ...(await getServerSideTranslations(['authentication/login'], locale, req, res)),
+      redirectAfterLogin,
     },
   };
 };

@@ -9,7 +9,7 @@ export default defineConfig({
     environment: 'happy-dom',
     coverage: {
       provider: 'v8',
-      reporter: ['html'],
+      reporter: ['html', 'json-summary', 'json'],
       all: true,
       exclude: ['.next/', '.yarn/', 'data/'],
     },

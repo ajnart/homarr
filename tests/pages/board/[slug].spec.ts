@@ -158,12 +158,11 @@ describe('[slug] page', () => {
 
     // assert
     expect(response).toEqual({
-      notFound: true,
-      props: {
-        primaryColor: 'red',
-        secondaryColor: 'blue',
-        primaryShade: 'green',
+      redirect: {
+        destination: "/auth/login?redirectAfterLogin=/board/my-authentication-board",
+        permanent: false
       },
+      props: {},
     });
     expect(serverAuthModule.getServerAuthSession).toHaveBeenCalledOnce();
     expect(configExistsModule.configExists).toHaveBeenCalledOnce();
