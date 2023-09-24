@@ -1,29 +1,29 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Domovská stránka"
         },
         "boards": {
-            "title": ""
+            "title": "Dosky"
         },
         "users": {
-            "title": "",
+            "title": "Používatelia",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Spravovať",
+                "invites": "Pozvánky"
             }
         },
         "help": {
-            "title": "",
+            "title": "Pomocník",
             "items": {
                 "documentation": "Dokumentácia",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "Nahlásiť problém / chybu",
+                "discord": "Diskord Spoločenstva",
+                "contribute": "Prispejte"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Nástroje",
             "items": {
                 "docker": "Docker"
             }
