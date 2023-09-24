@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Crear usuario",
     "steps": {
         "account": {
-            "title": "",
+            "title": "Primer paso",
             "text": "Crear cuenta",
             "username": {
                 "label": "Nombre de usuario"
             },
             "email": {
-                "label": ""
+                "label": "E-Mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Segundo paso",
             "text": "Contraseña",
             "password": {
                 "label": "Contraseña"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Confirmación",
+            "text": "Guardar en la base de datos",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Revisar datos introducidos",
+                "text": "Después de enviar los datos a la base de datos, el usuario podrá iniciar sesión. ¿Estás seguro de que quieres almacenar este usuario en la base de datos y activar el inicio de sesión?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Propiedad",
+                    "value": "Valor",
                     "username": "Nombre de usuario",
-                    "email": "",
+                    "email": "E-Mail",
                     "password": "Contraseña"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "No configurado",
+                "valid": "Válido"
             },
-            "failed": ""
+            "failed": "La creación del usuario ha fallado: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Usuario creado",
+                "text": "El usuario fue creado en la base de datos. Ahora pueden iniciar sesión."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Generar aleatorio",
+        "createAnother": "Crear otro"
     }
 }
