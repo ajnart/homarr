@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Кастомизировать доску {{name}}",
+    "pageTitle": "Кастомизировать доску {{name}}",
+    "backToBoard": "Назад к доске",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Основной цвет",
+            "secondaryColor": "Дополнительный цвет"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Сохранить изменения",
+        "note": "Осторожно, у вас есть несохраненные изменения!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Сохранение кастомизации",
+            "message": "Пожалуйста, подождите, пока мы сохраняем вашу кастомизацию"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Кастомизация сохранена",
+            "message": "Ваша кастомизация успешно сохранена"
         },
         "error": {
             "title": "Ошибка",
-            "message": ""
+            "message": "Невозможно сохранить изменения"
         }
     }
 }
