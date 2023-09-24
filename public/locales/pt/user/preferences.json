@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "",
+        "disablePulse": {
+            "label": "",
+            "description": ""
+        },
+        "replaceIconsWithDots": {
+            "label": "",
+            "description": ""
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Idioma"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Motor de busca",
+        "custom": "",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "Consulta URL",
+            "description": ""
+        }
+    }
+}
