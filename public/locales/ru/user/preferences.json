@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Спец. возможности",
+        "disablePulse": {
+            "label": "Отключить импульс пинга",
+            "description": "По умолчанию индикаторы пинга в Homarr пульсируют. Это может раздражать. Этот ползунок отключит анимацию"
+        },
+        "replaceIconsWithDots": {
+            "label": "Замените пинг-точки значками",
+            "description": "У пользователей, страдающих цветовой слепотой, пинг-точки могут быть неразличимыми. Это заменит индикаторы значками"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Язык"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Поисковая система",
+        "custom": "Вручную",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "URL запроса",
+            "description": ""
+        }
+    }
+}
