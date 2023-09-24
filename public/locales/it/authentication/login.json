@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Bentornati!",
-  "text": "Inserisci la password",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Nome utente"
+      },
       "password": {
-        "label": "Password",
-        "placeholder": "La tua password"
+        "label": "Password"
       }
     },
     "buttons": {
       "submit": "Accedi"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Verifica della password",
-      "message": "La tua password è in fase di controllo..."
-    },
-    "correct": {
-      "title": "Accesso effettuato, reindirizzamento..."
-    },
-    "wrong": {
-      "title": "La password inserita non è corretta. Si prega di riprovare."
-    }
-  }
+  "alert": ""
 }
