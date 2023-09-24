@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Preferencias",
+    "pageTitle": "Tus preferencias",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Tablero por defecto"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Idioma"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Primer día de la semana",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Lunes",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
             }
         }
     },
@@ -34,7 +34,7 @@
         "title": "Motor de búsqueda",
         "custom": "Personalizado",
         "newTab": {
-            "label": ""
+            "label": "Abrir resultados de búsqueda en nueva pestaña"
         },
         "autoFocus": {
             "label": "",
@@ -42,7 +42,7 @@
         },
         "template": {
             "label": "URL de consulta",
-            "description": ""
+            "description": "Usar %s como marcador de posición de la consulta"
         }
     }
 }
