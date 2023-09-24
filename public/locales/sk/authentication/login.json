@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Vitaj spat!",
-  "text": "Prosím zadajte heslo",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Používateľské meno"
+      },
       "password": {
-        "label": "Heslo",
-        "placeholder": "Tvoje heslo"
+        "label": "Heslo"
       }
     },
     "buttons": {
       "submit": "Prihlásiť sa"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Kontrola hesla",
-      "message": "Vaše heslo sa kontroluje..."
-    },
-    "correct": {
-      "title": "Prihlásenie bolo úspešné, prebieha presmerovanie..."
-    },
-    "wrong": {
-      "title": "Zadané heslo je nesprávne, skúste to znova."
-    }
-  }
+  "alert": ""
 }
