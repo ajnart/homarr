@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "无障碍服务",
+        "disablePulse": {
+            "label": "禁用 Ping",
+            "description": "默认情况下，Homarr 中的 Ping 指示器会一直工作。这可能会让人感到恼火。这个滑块将停用该动画。"
+        },
+        "replaceIconsWithDots": {
+            "label": "用图标替换 Ping 点",
+            "description": "对于色盲用户来说，Ping 点可能无法识别。 这将用图标替换指示器"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "语言"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "搜索引擎",
+        "custom": "自定义",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "查询网址",
+            "description": ""
+        }
+    }
+}
