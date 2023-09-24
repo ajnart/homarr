@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Vytvoriť užívateľa",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Prvý krok",
+            "text": "Vytvoriť účet",
             "username": {
                 "label": "Používateľské meno"
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Druhý krok",
             "text": "Heslo",
             "password": {
                 "label": "Heslo"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Potvrdenie",
+            "text": "Uložiť do databázy",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Preskúmajte svoje vstupy",
+                "text": "Po odoslaní údajov do databázy sa používateľ bude môcť prihlásiť. Ste si istí, že chcete tohto používateľa uložiť do databázy a aktivovať prihlásenie?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Vlastnosti",
+                    "value": "Hodnota",
                     "username": "Používateľské meno",
-                    "email": "",
+                    "email": "E-mail",
                     "password": "Heslo"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nenastavené",
+                "valid": "Platné"
             },
-            "failed": ""
+            "failed": "Vytvorenie používateľa sa nepodarilo: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Používateľ bol vytvorený",
+                "text": "Používateľ bol vytvorený v databáze. Teraz sa môže prihlásiť."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Generovať náhodné",
+        "createAnother": "Vytvorenie ďalšieho"
     }
 }
