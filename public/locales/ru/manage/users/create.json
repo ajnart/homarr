@@ -1,0 +1,52 @@
+{
+    "metaTitle": "",
+    "steps": {
+        "account": {
+            "title": "",
+            "text": "",
+            "username": {
+                "label": "Логин"
+            },
+            "email": {
+                "label": ""
+            }
+        },
+        "security": {
+            "title": "",
+            "text": "Пароль",
+            "password": {
+                "label": "Пароль"
+            }
+        },
+        "finish": {
+            "title": "",
+            "text": "",
+            "card": {
+                "title": "",
+                "text": ""
+            },
+            "table": {
+                "header": {
+                    "property": "",
+                    "value": "",
+                    "username": "Логин",
+                    "email": "",
+                    "password": "Пароль"
+                },
+                "notSet": "",
+                "valid": ""
+            },
+            "failed": ""
+        },
+        "completed": {
+            "alert": {
+                "title": "",
+                "text": ""
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "",
+        "createAnother": ""
+    }
+}
