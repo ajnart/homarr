@@ -1,29 +1,29 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "首页"
         },
         "boards": {
-            "title": ""
+            "title": "面板"
         },
         "users": {
-            "title": "",
+            "title": "用户",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "管理",
+                "invites": "邀请"
             }
         },
         "help": {
-            "title": "",
+            "title": "帮助",
             "items": {
                 "documentation": "文档",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "报告问题 / bug",
+                "discord": "Discord 社区",
+                "contribute": "贡献"
             }
         },
         "tools": {
-            "title": "",
+            "title": "工具",
             "items": {
                 "docker": "Docker"
             }
