@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Tableaux de bord",
+    "pageTitle": "Tableaux de bord",
     "cards": {
         "statistics": {
             "apps": "Applications",
@@ -8,12 +8,12 @@
             "categories": "Catégories"
         },
         "buttons": {
-            "view": ""
+            "view": "Voir le tableau de bord"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Définir comme votre tableau de bord par défaut",
             "delete": {
-                "label": "",
+                "label": "Supprimer définitivement",
                 "disabled": ""
             }
         },
