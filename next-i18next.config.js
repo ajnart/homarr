@@ -52,7 +52,7 @@ module.exports = {
         expirationTime: 7 * 24 * 60 * 60 * 1000,
 
         // can be either window.localStorage or window.sessionStorage. Default: window.localStorage
-        store: typeof window !== 'undefined' ? window.sessionStorage : null,
+        store: typeof window !== 'undefined' ? window.localStorage : null,
       },
       {
         /* options for secondary backend */
