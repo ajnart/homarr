@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Din Homarr-instans har ikke Docker konfigureret, eller den har fejlet i at hente containere. Se i dokumentationen, hvordan du sætter integrationen op."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Vælg et board",
+            "text": "Vælg det board, hvor du vil tilføje applikationer til de valgte Docker-containere.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Board"
                 },
-                "submit": ""
+                "submit": "Tilføj apps"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Tilføjede apps til board",
+                "message": "Apps til de valgte Docker-containere er blevet tilføjet til boardet."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Kunne ikke tilføje apps til board",
+                "message": "Apps til de valgte Docker-containere kunne ikke føjes til boardet."
             }
         }
     }
