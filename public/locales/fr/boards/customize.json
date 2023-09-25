@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Personnaliser le tableau de bord {{name}}",
+    "pageTitle": "Personnalisation du tableau de bord {{name}}",
+    "backToBoard": "Retour au tableau de bord",
     "settings": {
         "appearance": {
             "primaryColor": "Couleur primaire",
@@ -14,16 +14,16 @@
     },
     "notifications": {
         "pending": {
-            "title": "",
+            "title": "Enregistrement de la personnalisation",
             "message": "Veuillez patienter pendant que nous enregistrons votre personnalisation"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Personnalisation sauvegardée",
+            "message": "Votre personnalisation a bien été sauvegardée"
         },
         "error": {
             "title": "Erreur",
-            "message": ""
+            "message": "Impossible d’enregistrer les modifications"
         }
     }
 }
