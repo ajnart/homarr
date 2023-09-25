@@ -1,29 +1,29 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Nyitólap"
         },
         "boards": {
-            "title": ""
+            "title": "Táblák"
         },
         "users": {
-            "title": "",
+            "title": "Felhasználók",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Kezelés",
+                "invites": "Meghívók"
             }
         },
         "help": {
-            "title": "",
+            "title": "Segítség",
             "items": {
                 "documentation": "Dokumentáció",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "Probléma / hiba jelentése",
+                "discord": "Discord-szerverünk",
+                "contribute": "Hozzájárulás"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Eszközök",
             "items": {
                 "docker": "Docker"
             }
