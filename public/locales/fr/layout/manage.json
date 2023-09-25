@@ -4,13 +4,13 @@
             "title": "Accueil"
         },
         "boards": {
-            "title": ""
+            "title": "Tableaux de bord"
         },
         "users": {
             "title": "Utilisateurs",
             "items": {
                 "manage": "",
-                "invites": ""
+                "invites": "Invitations"
             }
         },
         "help": {
