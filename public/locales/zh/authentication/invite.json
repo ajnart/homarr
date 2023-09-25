@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "创建账号",
+    "title": "创建账号",
+    "text": "请在下面定义您的凭据",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "密码"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "确认密码"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "创建账号"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "正在创建账号...",
+            "text": "请稍等"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "账号已创建",
+            "text": "您的账号创建成功"
         },
         "error": {
             "title": "错误",
-            "text": ""
+            "text": "出错了，出现以下错误： {{error}}"
         }
     }
 }
