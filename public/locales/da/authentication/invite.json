@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Opret konto",
+    "title": "Opret konto",
+    "text": "Angiv venligst dine legitimationsoplysninger nedenfor",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Adgangskode"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Bekræft kodeord"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Opret konto"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Opretter konto",
+            "text": "Vent venligst"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Konto oprettet",
+            "text": "Din konto er blevet oprettet med succes"
         },
         "error": {
             "title": "Fejl",
-            "text": ""
+            "text": "Noget gik galt, fik følgende fejl: {{error}}"
         }
     }
 }
