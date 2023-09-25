@@ -1,29 +1,29 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Hjem"
         },
         "boards": {
-            "title": ""
+            "title": "Boards"
         },
         "users": {
-            "title": "",
+            "title": "Brugere",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Administrer",
+                "invites": "Invitationer"
             }
         },
         "help": {
-            "title": "",
+            "title": "Hjælp",
             "items": {
                 "documentation": "Dokumentation",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "Rapporter et problem / en fejl",
+                "discord": "Discordfællesskab",
+                "contribute": "Bidrag!"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Værktøjer",
             "items": {
                 "docker": "Docker"
             }
