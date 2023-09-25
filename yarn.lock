@@ -263,6 +263,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.21.5, @babel/runtime@npm:^7.22.15":
+  version: 7.23.1
+  resolution: "@babel/runtime@npm:7.23.1"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: 0cd0d43e6e7dc7f9152fda8c8312b08321cda2f56ef53d6c22ebdd773abdc6f5d0a69008de90aa41908d00e2c1facb24715ff121274e689305c858355ff02c70
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/template@npm:7.22.5"
@@ -4790,6 +4799,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-fetch@npm:3.1.6":
+  version: 3.1.6
+  resolution: "cross-fetch@npm:3.1.6"
+  dependencies:
+    node-fetch: ^2.6.11
+  checksum: 704b3519ab7de488328cc49a52cf1aa14132ec748382be5b9557b22398c33ffa7f8c2530e8a97ed8cb55da52b0a9740a9791d361271c4591910501682d981d9c
+  languageName: node
+  linkType: hard
+
 "cross-fetch@npm:^3.0.6":
   version: 3.1.8
   resolution: "cross-fetch@npm:3.1.8"
@@ -6995,6 +7013,9 @@ __metadata:
     happy-dom: ^10.0.0
     html-entities: ^2.3.3
     i18next: ^22.5.1
+    i18next-chained-backend: ^4.5.0
+    i18next-http-backend: ^2.2.2
+    i18next-localstorage-backend: ^4.2.0
     immer: ^10.0.2
     js-file-download: ^0.4.12
     moment: ^2.29.4
@@ -7175,10 +7196,47 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i18next-chained-backend@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "i18next-chained-backend@npm:4.5.0"
+  dependencies:
+    "@babel/runtime": ^7.22.15
+    i18next-resources-to-backend: 1.1.4
+  checksum: c208c490392e05a211adbcdaec25545c87c489d6492203cccfd5bcf871d11a3f955585a40674f1e33f9b06b53d0baa23c09d72f604c25d26da32f42d8e13fd27
+  languageName: node
+  linkType: hard
+
 "i18next-fs-backend@npm:^2.1.5":
   version: 2.1.5
   resolution: "i18next-fs-backend@npm:2.1.5"
   checksum: 4607e879de8195ff0bf11bdb2367f1c45f947160404b64f52be7e438ae27288e0d11a9b53a4bde2d75a77ac7f3255aa531a4381870e278e72f85ead222ffed31
+  languageName: node
+  linkType: hard
+
+"i18next-http-backend@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "i18next-http-backend@npm:2.2.2"
+  dependencies:
+    cross-fetch: 3.1.6
+  checksum: b098cf89e685bf8f2487a3cfd2e792d85218620b8311c91cc0782f2af03420e518c5d8e899cd9011af3472837362556d7468ff38c890aaf98d2721419a901434
+  languageName: node
+  linkType: hard
+
+"i18next-localstorage-backend@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "i18next-localstorage-backend@npm:4.2.0"
+  dependencies:
+    "@babel/runtime": ^7.22.15
+  checksum: 7c75a2cd2bdd47b033d6da6fe00b58aecf9027292b1d5c5e5a094e39680bda83eca722411b5f6f2a5745fad98d03183196bad85c4253d346ff5068d937041797
+  languageName: node
+  linkType: hard
+
+"i18next-resources-to-backend@npm:1.1.4":
+  version: 1.1.4
+  resolution: "i18next-resources-to-backend@npm:1.1.4"
+  dependencies:
+    "@babel/runtime": ^7.21.5
+  checksum: 4f3f25de0d9c96b109dfdc9259864898ac9d140a80a372925e0c5a34b13bd95dcb4c682c6255a5f3bb4c4dc40c20d0f9d1b82c491ebe2f8f245ae149fe911a1d
   languageName: node
   linkType: hard
 
@@ -8957,7 +9015,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.12":
+"node-fetch@npm:^2.6.11, node-fetch@npm:^2.6.12":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
