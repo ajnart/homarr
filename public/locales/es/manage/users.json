@@ -1,7 +1,7 @@
 {
     "metaTitle": "Usuarios",
-    "pageTitle": "",
-    "text": "",
+    "pageTitle": "Administrar usuarios",
+    "text": "Usando usuarios, puedes configurar quien pueda editar tus dashboards. Versiones futuras de Homarr tendrán aún más control granular sobre los permisos y tableros.",
     "buttons": {
         "create": "Crear"
     },
@@ -11,13 +11,13 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Eliminar usuario",
+        "demoteAdmin": "Destituir administrador",
+        "promoteToAdmin": "Ascender a administrador"
     },
     "modals": {
         "delete": {
-            "title": "",
+            "title": "Eliminar usuario {{name}}",
             "text": ""
         },
         "change-role": {
