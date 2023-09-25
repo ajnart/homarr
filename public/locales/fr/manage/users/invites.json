@@ -3,19 +3,19 @@
     "pageTitle": "",
     "description": "",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Créer une invitation",
+        "deleteInvite": "Supprimer une invitation"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Créé par",
+            "expires": "Date d'expiration",
+            "action": "Actions"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "a expiré à {{at}}",
+            "expiresIn": "à {{in}}"
         }
     },
     "modals": {
@@ -32,7 +32,7 @@
             "description": "Votre invitation a été générée. Après avoir fermé cette fenêtre, <b>vous ne pourrez plus copier ce lien</b>. Si vous ne souhaitez plus inviter cette personne, vous pouvez supprimer l'invitation à tout moment.",
             "invitationLink": "Lien d'invitation",
             "details": {
-                "id": "",
+                "id": "ID",
                 "token": "Jeton"
             },
             "button": {
@@ -40,9 +40,9 @@
             }
         },
         "delete": {
-            "title": "",
+            "title": "Supprimer une invitation",
             "description": "Êtes-vous sûr de vouloir supprimer cette invitation ? Les utilisateurs avec ce lien ne pourront plus créer un compte avec ce dernier."
         }
     },
-    "noInvites": ""
+    "noInvites": "Il n'y a pas encore d'invitations."
 }
