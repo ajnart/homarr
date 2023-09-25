@@ -1,0 +1,24 @@
+{
+	"title": "Integrations settings",
+	"metaTitle": "Integrations",
+	"pageTitle": "Manage integration",
+	"text": "Here you can configure all the integrations you want to use within Honmarr.",
+	"addNewIntegration": "Add new integration",
+	"savedSuccessfully": "Your changes have been saved successfully, you can now close this window",
+	"deleteConfirmation": "Are you sure you want to delete {{name}} ?",
+	"closeConfirmation": "Are you sure you'd like to close this window ?",
+	"CloseConfirmationExplanation": "If you close this window, your changes will not be saved",
+	"integration": {
+		"urlDescription": "Url for the integration, generally an IP",
+		"name": "Name",
+		"nameDescription": "The name of the integration",
+		"Added": "Integration added!",
+		"AddedDescription": "The integration {{name}} has been added successfully"
+	},
+	"fields": {
+		"username": "Username",
+		"apikey": "Api key",
+		"password": "Password",
+		"unknown": "Unknown"
+	}
+}
