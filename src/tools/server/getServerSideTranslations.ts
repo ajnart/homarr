@@ -3,6 +3,7 @@ import { IncomingMessage, ServerResponse } from 'http';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { COOKIE_LOCALE_KEY } from '../../../data/constants';
+import nextI18nextConfig from '../../../next-i18next.config.js';
 
 export const getServerSideTranslations = async (
   namespaces: string[],
@@ -10,6 +11,7 @@ export const getServerSideTranslations = async (
   req?: IncomingMessage,
   res?: ServerResponse
 ) => {
+  return undefined;
   namespaces = namespaces.concat(['common', 'zod', 'layout/header', 'layout/modals/about']);
 
   if (!req || !res) {
@@ -18,5 +20,9 @@ export const getServerSideTranslations = async (
 
   const configLocale = getCookie(COOKIE_LOCALE_KEY, { req, res });
 
-  return serverSideTranslations((configLocale ?? requestLocale ?? 'en') as string, namespaces);
+  return serverSideTranslations(
+    (configLocale ?? requestLocale ?? 'en') as string,
+    namespaces,
+    nextI18nextConfig as any
+  );
 };

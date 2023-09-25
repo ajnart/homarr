@@ -8,6 +8,11 @@ import dayjs from 'dayjs';
 import locale from 'dayjs/plugin/localeData';
 import utc from 'dayjs/plugin/utc';
 import 'flag-icons/css/flag-icons.min.css';
+import i18next from 'i18next';
+import Backend from 'i18next-chained-backend';
+// primary use cache
+import HttpApi from 'i18next-http-backend';
+import LocalStorageBackend from 'i18next-localstorage-backend';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
 import { SessionProvider, getSession } from 'next-auth/react';
@@ -16,24 +21,24 @@ import { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
+import { ConfigProvider } from '~/config/provider';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
+import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
+import {
+  ServerSidePackageAttributesType,
+  getServiceSidePackageAttributes,
+} from '~/tools/server/getPackageVersion';
+import { theme } from '~/tools/server/theme/theme';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
-import { ConfigProvider } from '~/config/provider';
 import '../styles/global.scss';
-import { ColorTheme } from '~/tools/color';
-import {
-  ServerSidePackageAttributesType,
-  getServiceSidePackageAttributes,
-} from '~/tools/server/getPackageVersion';
-import { theme } from '~/tools/server/theme/theme';
 
 dayjs.extend(locale);
 dayjs.extend(utc);
