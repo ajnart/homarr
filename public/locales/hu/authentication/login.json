@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Bejelentkezés",
   "title": "Köszöntjük ismét!",
-  "text": "",
+  "text": "Kérjük, adja meg hitelesítő adatait",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Bejelentkezés"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "A bejelentkezés után a {{url}} oldalra kerül átirányításra"
   },
-  "alert": ""
+  "alert": "A hitelesítő adatok helytelenek, vagy ez a fiók nem létezik. Kérjük, próbálja meg újra."
 }
