@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Felhasználó létrehozása",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Első lépések",
+            "text": "Fiók létrehozása",
             "username": {
                 "label": "Felhasználónév"
             },
             "email": {
-                "label": ""
+                "label": "Email cím"
             }
         },
         "security": {
-            "title": "",
+            "title": "Második lépés",
             "text": "Jelszó",
             "password": {
                 "label": "Jelszó"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Megerősítés",
+            "text": "Mentés az adatbázisba",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Tekintse át az adatait",
+                "text": "Miután elküldte az adatokat az adatbázisba, a felhasználó be tud majd jelentkezni. Biztos, hogy ezt a felhasználót el akarja tárolni az adatbázisban, és aktiválni akarja a bejelentkezést?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Tulajdonság",
+                    "value": "Érték",
                     "username": "Felhasználónév",
-                    "email": "",
+                    "email": "Email cím",
                     "password": "Jelszó"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nincs megadva",
+                "valid": "Érvényes"
             },
-            "failed": ""
+            "failed": "A felhasználó létrehozása nem sikerült: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "A felhasználó létrehozásra került",
+                "text": "A felhasználót létrehoztuk az adatbázisban. Most már be tud jelentkezni."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Jelszó generálás",
+        "createAnother": "Másik létrehozása"
     }
 }
