@@ -1,6 +1,6 @@
 {
     "errors": {
-        "default": "",
+        "default": "Ce champ est invalide",
         "required": "Ce champ est requis",
         "string": {
             "startsWith": "",
