@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "用户邀请",
+    "pageTitle": "管理用户邀请",
+    "description": "使用邀请功能，可以邀请用户访问Homarr实例。邀请只在一定的时间范围内有效，并且只能使用一次。有效期必须在创建后5分钟至12个月之间。",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "创建邀请",
+        "deleteInvite": "删除邀请"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "创建者",
+            "expires": "到期",
+            "action": "动作"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "过期 {{at}}",
+            "expiresIn": "在 {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "创建邀请",
+            "description": "到期后，邀请将不再有效，邀请接收者将无法创建账号。",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "过期时间",
+                "submit": "创建"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "复制邀请信息",
+            "description": "您的邀请已生成。在此模式关闭后，<b>您将无法再复制此链接</b>。如果你不想再邀请这个人，你可以随时删除这个邀请。",
+            "invitationLink": "邀请链接",
             "details": {
-                "id": "",
-                "token": ""
+                "id": "ID",
+                "token": "Token"
             },
             "button": {
-                "close": ""
+                "close": "复制 & 取消"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "删除邀请",
+            "description": "你确定要删除这个邀请吗? 使用此链接的用户将不能再使用该链接创建账号。"
         }
     },
-    "noInvites": ""
+    "noInvites": "还没有邀请。"
 }
