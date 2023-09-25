@@ -3,21 +3,21 @@
     "hero": {
         "title": "Bienvenido/a de nuevo, {{username}}",
         "fallbackUsername": "Anónimo",
-        "subtitle": ""
+        "subtitle": "Bienvenido/a a su centro de aplicaciones. ¡Organiza, optimiza y conquista!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Acciones rápidas",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Tus tableros",
+            "subtitle": "Crea y administra tus tableros"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Invitar a un nuevo usuario",
+            "subtitle": "Crea y envía una invitación para el registro"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Administrar usuarios",
+            "subtitle": "Elimina y administra tus usuarios"
         }
     }
 }
