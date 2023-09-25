@@ -23,16 +23,16 @@
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Créer un nouveau tableau de bord"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Supprimer le tableau de bord",
+            "text": "Êtes-vous sûr de vouloir supprimer ce tableau de bord ? Cette action ne peut être annulée et toutes vos données seront définitivement supprimées."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Créer un tableau de bord",
+            "text": "Le nom du tableau de bord ne pourra pas être changé une fois créé.",
             "form": {
                 "name": {
                     "label": "Nom"
