@@ -37,12 +37,12 @@
             "label": "Ouvrir les résultats de la recherche dans un nouvel onglet"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Se placer sur la barre de recherche au chargement de la page.",
+            "description": "Ceci permet de placer automatiquement le curseur sur la barre de recherche lorsque vous naviguez sur les pages de tableau de bord. Ne fonctionnera que sur les PC."
         },
         "template": {
             "label": "URL de la requête",
-            "description": ""
+            "description": "Utilisez %s comme substitut pour la requête"
         }
     }
 }
