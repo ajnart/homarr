@@ -23,15 +23,19 @@ import {
   IconStarFilled,
   IconTrash,
 } from '@tabler/icons-react';
+import { createServerSideHelpers } from '@trpc/react-query/server';
 import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
+import superjson from 'superjson';
 import { openCreateBoardModal } from '~/components/Manage/Board/create-board.modal';
 import { openDeleteBoardModal } from '~/components/Manage/Board/delete-board.modal';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { boardRouter } from '~/server/api/routers/board';
 import { getServerAuthSession } from '~/server/auth';
+import { prisma } from '~/server/db';
 import { sleep } from '~/tools/client/time';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
@@ -39,12 +43,14 @@ import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
 const BoardsPage = () => {
-  const context = api.useContext();
   const { data: sessionData } = useSession();
-  const { data } = api.boards.all.useQuery();
+  const { data, refetch } = api.boards.all.useQuery(undefined, {
+    staleTime: 0,
+    cacheTime: 1000 * 60 * 5, // Cache for 5 minutes
+  });
   const { mutateAsync } = api.user.makeDefaultDashboard.useMutation({
     onSettled: () => {
-      void context.boards.invalidate();
+      refetch();
     },
   });
 
@@ -209,6 +215,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     return result;
   }
 
+  const helpers = createServerSideHelpers({
+    router: boardRouter,
+    ctx: {
+      session,
+      cookies: ctx.req.cookies,
+      prisma: prisma,
+    },
+    transformer: superjson,
+  });
+
+  await helpers.all.prefetch();
+
   const translations = await getServerSideTranslations(
     manageNamespaces,
     ctx.locale,
@@ -218,6 +236,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
       ...translations,
+      trpcState: helpers.dehydrate(),
     },
   };
 };
