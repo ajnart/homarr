@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Beállítások",
+    "pageTitle": "Saját preferenciák",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Alapértelmezett tábla"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Nyelv"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "A hét első napja",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Hétfő",
+                "saturday": "Szombat",
+                "sunday": "Vasárnap"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Keresőmotor",
         "custom": "Egyéni",
         "newTab": {
-            "label": ""
+            "label": "Keresési eredmények megnyitása új lapon"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Keresősávon legyen a fókusz az oldal betöltésekor.",
+            "description": "Ez automatikusan keresősávba helyezi a kurzort, amikor a tábla oldalára navigál. Csak asztali eszközökön fog működni."
         },
         "template": {
             "label": "URL lekérdezés",
-            "description": ""
+            "description": "Használja a %s címet a lekérdezés helyőrzőjeként"
         }
     }
 }
