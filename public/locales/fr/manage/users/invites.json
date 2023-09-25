@@ -20,28 +20,28 @@
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Créer une invitation",
+            "description": "Après expiration, une invitation ne sera plus valide et le destinataire de cette invitation ne pourra pas créer un compte.",
             "form": {
-                "expires": "",
+                "expires": "Date d'expiration",
                 "submit": "Créer"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Copier l'invitation",
+            "description": "Votre invitation a été générée. Après avoir fermé cette fenêtre, <b>vous ne pourrez plus copier ce lien</b>. Si vous ne souhaitez plus inviter cette personne, vous pouvez supprimer l'invitation à tout moment.",
+            "invitationLink": "Lien d'invitation",
             "details": {
                 "id": "",
-                "token": ""
+                "token": "Jeton"
             },
             "button": {
-                "close": ""
+                "close": "Copier et fermer"
             }
         },
         "delete": {
             "title": "",
-            "description": ""
+            "description": "Êtes-vous sûr de vouloir supprimer cette invitation ? Les utilisateurs avec ce lien ne pourront plus créer un compte avec ce dernier."
         }
     },
     "noInvites": ""
