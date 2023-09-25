@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Log ind",
   "title": "Velkommen tilbage!",
-  "text": "",
+  "text": "Indtast venligst dine legitimationsoplysninger",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Log ind"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Når du er logget ind, bliver du omdirigeret til {{url}}"
   },
-  "alert": ""
+  "alert": "Dine legitimationsoplysninger er forkerte, eller denne konto findes ikke. Prøv venligst igen."
 }
