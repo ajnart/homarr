@@ -1,6 +1,6 @@
 {
     "metaTitle": "Utilisateurs",
-    "pageTitle": "",
+    "pageTitle": "Gérer les utilisateurs",
     "text": "",
     "buttons": {
         "create": "Créer"
@@ -32,5 +32,5 @@
             "confirm": "Confirmer"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Votre recherche ne correspond à aucune entrée. Veuillez ajuster votre filtre."
 }
