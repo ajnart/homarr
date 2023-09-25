@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "text": "",
+    "metaTitle": "用户",
+    "pageTitle": "管理用户",
+    "text": "通过使用用户，您可以配置谁可以编辑您的仪表板。Homarr的未来版本将对权限和板进行更精细的控制。",
     "buttons": {
-        "create": ""
+        "create": "创建"
     },
     "table": {
         "header": {
@@ -11,26 +11,26 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "删除用户",
+        "demoteAdmin": "撤销管理员",
+        "promoteToAdmin": "提升为管理员"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "删除用户 {{name}}",
+            "text": "您确定要删除用户 {{name}} 吗？这将删除与该账户相关的数据，但不会删除该用户创建的任何仪表盘。"
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "将用户 {{name}} 提升为管理员",
+                "text": "您确定要将 {{name}} 用户升级为管理员吗？这样该用户就可以访问 Homarr 实例的所有资源。"
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "将用户 {{name}} 降级为用户",
+                "text": "您确定要将 {{name}} 用户降级为用户吗？这将取消该用户对 Homarr 实例所有资源的访问权限。"
             },
             "confirm": "确认"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "您的搜索与任何条目都不匹配。请调整您的过滤器。"
 }
