@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Indstillinger",
+    "pageTitle": "Dine indstillinger",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Standard board"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Sprog"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Første ugedag",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Mandag",
+                "saturday": "Lørdag",
+                "sunday": "Søndag"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Søgemaskine",
         "custom": "Brugerdefineret",
         "newTab": {
-            "label": ""
+            "label": "Åben søgeresultater i en ny fane"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Fokuser søgefeltet, når siden indlæses.",
+            "description": "Dette vil automatisk fokusere søgefeltet, når du navigerer til board sider. Det virker kun på desktop-enheder."
         },
         "template": {
             "label": "Forespørgsels URL",
-            "description": ""
+            "description": "Brug %s som pladsholder for forespørgslen"
         }
     }
 }
