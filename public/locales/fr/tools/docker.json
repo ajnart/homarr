@@ -7,21 +7,21 @@
     },
     "modals": {
         "selectBoard": {
-            "title": "",
+            "title": "Choisir un tableau de bord",
             "text": "",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Tableau de bord"
                 },
-                "submit": ""
+                "submit": "Ajouter des applications"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Applications ajoutées au tableau de bord",
+                "message": "Les applications pour les conteneurs Docker sélectionnés ont bien été ajoutées au tableau de bord."
             },
             "error": {
                 "title": "",
