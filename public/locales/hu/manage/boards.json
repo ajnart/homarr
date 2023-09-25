@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Táblák",
+    "pageTitle": "Táblák",
     "cards": {
         "statistics": {
             "apps": "Alkalmazások",
@@ -8,36 +8,36 @@
             "categories": "Kategóriák"
         },
         "buttons": {
-            "view": ""
+            "view": "Tábla megtekintése"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Beállítás alapértelmezett táblaként",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Végleges törlés",
+                "disabled": "Törlés letiltva, mivel a régebbi Homarr komponensek nem teszik lehetővé az alapértelmezett konfiguráció törlését. A törlés a jövőben lehetséges lesz."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Fájlrendszer",
+            "default": "Alapértelmezett"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Új tábla létrehozása"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Tábla törlése",
+            "text": "Biztos vagy benne, hogy törölni akarod ezt a tráblát? Ezt a műveletet nem lehet visszacsinálni, és az adatok végleg elvesznek."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Tábla létrehozása",
+            "text": "A tábla létrehozása után a név nem változtatható meg.",
             "form": {
                 "name": {
                     "label": "Név"
                 },
-                "submit": ""
+                "submit": "Létrehozás"
             }
         }
     }
