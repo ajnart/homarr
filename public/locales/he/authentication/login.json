@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "התחבר/י",
   "title": "ברוך שובך!",
-  "text": "",
+  "text": "אנא הקלד את פרטי ההתחברות",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "התחבר\\י"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "לאחר ההתחברות, תופנה אל {{url}}"
   },
-  "alert": ""
+  "alert": "פרטי ההתחברות שלך שגויים או שחשבון זה אינו קיים. בבקשה נסה שוב."
 }
