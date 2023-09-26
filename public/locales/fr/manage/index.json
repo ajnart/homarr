@@ -3,7 +3,7 @@
     "hero": {
         "title": "Content de te revoir, {{username}}",
         "fallbackUsername": "Anonyme",
-        "subtitle": ""
+        "subtitle": "Bienvenue sur votre hub d'applications. Organisez, optimisez et conquérez !"
     },
     "quickActions": {
         "title": "Actions rapides",
