@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "העדפות",
+    "pageTitle": "העדפות שלך",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "לוח ברירת מחדל"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "שפה"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "היום הראשון בשבוע",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "יום שני",
+                "saturday": "יום שבת",
+                "sunday": "יום ראשון"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "מנוע חיפוש",
         "custom": "מותאם אישית",
         "newTab": {
-            "label": ""
+            "label": "פתיחת תוצאות חיפוש בכרטיסיה חדשה"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "התמקד בסרגל החיפוש בטעינת העמוד.",
+            "description": "כשאתה מנווט לדפי הלוח יתבצע מיקוד אוטומטי בסרגל החיפוש. עובד רק במכשירים שולחניים."
         },
         "template": {
             "label": "כתובת URL של שאילתה",
-            "description": ""
+            "description": "השתמש ב-%s כמציין מיקום עבור השאילתה"
         }
     }
 }
