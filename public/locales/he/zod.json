@@ -12,11 +12,11 @@
             "number": "שדה זה חייב להיות גדול או שווה ל {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "שדה זה חייב להיות באורך של {{maximum}} תווים לכל היותר",
+            "number": "שדה זה חייב להיות קטן או שווה ל {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "הסיסמאות חייבות להיות תואמות"
         }
     }
 }
