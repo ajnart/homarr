@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "צור חשבון",
+    "title": "צור חשבון",
+    "text": "אנא הגדר את פרטי החשבון שלך למטה",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "סיסמה"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "אימות סיסמא"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "צור חשבון"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "יוצר חשבון...",
+            "text": "אנא המתן"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "החשבון נוצר",
+            "text": "החשבון שלך נוצר בהצלחה"
         },
         "error": {
             "title": "שגיאה",
-            "text": ""
+            "text": "משהו השתבש, התקבלה השגיאה הבאה: {{error}}"
         }
     }
 }
