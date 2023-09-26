@@ -1,34 +1,34 @@
 {
     "experimentalNote": {
-        "label": ""
+        "label": "זוהי תכונה ניסיונית של Homarr. אנא דווח על בעיות ב-<gh>GitHub</gh> או <dc>Discord</dc>."
     },
     "search": {
-        "label": "",
+        "label": "חיפוש",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "חפש את {{query}} באינטרנט",
+            "youtube": "חפש את {{query}} ב-YouTube",
+            "torrent": "חפש את {{query}} בטורנטים",
+            "movie": "חפש את {{query}} ב-{{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "החלפת ערכת נושא",
+            "preferences": "העדפות המשתמש",
+            "defaultBoard": "לוח ברירת מחדל",
+            "manage": "ניהול",
             "about": {
                 "label": "אודות",
-                "new": ""
+                "new": "חדש"
             },
-            "logout": "",
+            "logout": "התנתקות מ-{{username}}",
             "login": "התחבר/י"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "{{count}} תוצאות מובילות עבור <b>{{search}}</b>."
         }
     }
 }
