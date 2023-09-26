@@ -95,6 +95,7 @@ export const ChangePositionModal = ({
               min: widthData.at(0)?.label,
               max: widthData.at(-1)?.label,
             })}
+            withinPortal
             {...form.getInputProps('width')}
           />
         </Grid.Col>
@@ -109,6 +110,7 @@ export const ChangePositionModal = ({
               min: heightData.at(0)?.label,
               max: heightData.at(-1)?.label,
             })}
+            withinPortal
             {...form.getInputProps('height')}
           />
         </Grid.Col>
