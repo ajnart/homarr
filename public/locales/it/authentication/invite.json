@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Crea Account",
+    "title": "Crea Account",
+    "text": "Definisci le tue credenziali qui sotto",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Password"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Conferma password"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Crea account"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Creazione account in corso",
+            "text": "Attendere"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Account creato",
+            "text": "Il tuo account è stato creato con successo"
         },
         "error": {
             "title": "Errore",
-            "text": ""
+            "text": "Qualcosa è andato storto, riferirsi al seguente errore: {{error}}"
         }
     }
 }
