@@ -58,7 +58,7 @@ public/locales/*
 !public/locales/en
 
 #database
-prisma/db.sqlite
+sqlite.db
 database/*.sqlite
 
 # IDE

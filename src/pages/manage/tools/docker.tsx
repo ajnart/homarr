@@ -10,10 +10,9 @@ import ContainerTable from '~/components/Manage/Tools/Docker/ContainerTable';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { dockerRouter } from '~/server/api/routers/docker/router';
 import { getServerAuthSession } from '~/server/auth';
-import { prisma } from '~/server/db';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
-import { api } from '~/utils/api';
+import { api, client } from '~/utils/api';
 
 export default function DockerPage({
   initialContainers,
@@ -63,12 +62,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
     };
   }
 
-  const caller = dockerRouter.createCaller({
-    session: session,
-    cookies: req.cookies,
-    prisma: prisma,
-  });
-
   const translations = await getServerSideTranslations(
     [...boardNamespaces, 'layout/manage', 'tools/docker'],
     locale,
@@ -78,7 +71,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
 
   let containers = [];
   try {
-    containers = await caller.containers();
+    containers = await client.docker.containers.query();
   } catch (error) {
     Consola.error(`The docker integration failed with the following error: ${error}`);
     return {

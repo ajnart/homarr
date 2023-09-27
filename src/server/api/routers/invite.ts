@@ -1,6 +1,9 @@
-import { randomBytes } from 'crypto';
+import { randomBytes, randomUUID } from 'crypto';
 import dayjs from 'dayjs';
+import { eq, sql } from 'drizzle-orm';
 import { z } from 'zod';
+import { db } from '~/server/db';
+import { invites } from '~/server/db/schema';
 
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
@@ -14,22 +17,25 @@ export const inviteRouter = createTRPCRouter({
     )
     .query(async ({ ctx, input }) => {
       const limit = input.limit ?? 50;
-      const invites = await ctx.prisma.invite.findMany({
-        take: limit,
-        skip: limit * input.page,
-        include: {
+      const dbInvites = await db.query.invites.findMany({
+        limit: limit,
+        offset: limit * input.page,
+        with: {
           createdBy: {
-            select: {
+            columns: {
               name: true,
             },
           },
         },
       });
 
-      const inviteCount = await ctx.prisma.invite.count();
+      const inviteCount = await db
+        .select({ count: sql<number>`count(*)` })
+        .from(invites)
+        .then((rows) => rows[0].count);
 
       return {
-        invites: invites.map((token) => ({
+        invites: dbInvites.map((token) => ({
           id: token.id,
           expires: token.expires,
           creator: token.createdBy.name,
@@ -47,27 +53,21 @@ export const inviteRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      const token = await ctx.prisma.invite.create({
-        data: {
-          expires: input.expiration,
-          createdById: ctx.session.user.id,
-          token: randomBytes(20).toString('hex'),
-        },
-      });
+      const inviteToInsert = {
+        id: randomUUID(),
+        expires: input.expiration,
+        createdById: ctx.session.user.id,
+        token: randomBytes(20).toString('hex'),
+      };
+      await db.insert(invites).values(inviteToInsert);
 
       return {
-        id: token.id,
-        token: token.token,
-        expires: token.expires,
+        id: inviteToInsert.id,
+        token: inviteToInsert.token,
+        expires: inviteToInsert.expires,
       };
     }),
-  delete: adminProcedure
-    .input(z.object({ tokenId: z.string() }))
-    .mutation(async ({ ctx, input }) => {
-      await ctx.prisma.invite.delete({
-        where: {
-          id: input.tokenId,
-        },
-      });
-    }),
+  delete: adminProcedure.input(z.object({ tokenId: z.string() })).mutation(async ({ input }) => {
+    await db.delete(invites).where(eq(invites.id, input.tokenId));
+  }),
 });

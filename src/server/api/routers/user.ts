@@ -1,7 +1,11 @@
-import { UserSettings } from '@prisma/client';
 import { TRPCError } from '@trpc/server';
 import bcrypt from 'bcryptjs';
+import { randomUUID } from 'crypto';
+import { eq, like, sql } from 'drizzle-orm';
 import { z } from 'zod';
+import { db } from '~/server/db';
+import { getTotalUserCountAsync } from '~/server/db/queries/user';
+import { UserSettings, invites, userSettings, users } from '~/server/db/schema';
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
@@ -11,24 +15,18 @@ import {
 } from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
-import {
-  TRPCContext,
-  adminProcedure,
-  createTRPCRouter,
-  protectedProcedure,
-  publicProcedure,
-} from '../trpc';
+import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const userRouter = createTRPCRouter({
   createOwnerAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
-    const userCount = await ctx.prisma.user.count();
+    const userCount = await getTotalUserCountAsync();
     if (userCount > 0) {
       throw new TRPCError({
         code: 'FORBIDDEN',
       });
     }
 
-    await createUserIfNotPresent(ctx, input, {
+    await createUserIfNotPresent(input, {
       defaultSettings: {
         colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
         language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
@@ -36,9 +34,8 @@ export const userRouter = createTRPCRouter({
       isOwner: true,
     });
   }),
-  count: publicProcedure.query(async ({ ctx }) => {
-    const count = await ctx.prisma.user.count();
-    return count;
+  count: publicProcedure.query(async () => {
+    return await getTotalUserCountAsync();
   }),
   createFromInvite: publicProcedure
     .input(
@@ -49,51 +46,29 @@ export const userRouter = createTRPCRouter({
       )
     )
     .mutation(async ({ ctx, input }) => {
-      const token = await ctx.prisma.invite.findUnique({
-        where: {
-          token: input.inviteToken,
-        },
+      const invite = await db.query.invites.findFirst({
+        where: eq(invites.token, input.inviteToken),
       });
 
-      if (!token || token.expires < new Date()) {
+      if (!invite || invite.expires < new Date()) {
         throw new TRPCError({
           code: 'FORBIDDEN',
           message: 'Invalid invite token',
         });
       }
 
-      await createUserIfNotPresent(ctx, input, {
+      const userId = await createUserIfNotPresent(input, {
         defaultSettings: {
           colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
           language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
         },
       });
 
-      const salt = bcrypt.genSaltSync(10);
-      const hashedPassword = hashPassword(input.password, salt);
-
-      const user = await ctx.prisma.user.create({
-        data: {
-          name: input.username,
-          password: hashedPassword,
-          salt: salt,
-          settings: {
-            create: {
-              colorScheme: colorSchemeParser.parse(ctx.cookies[COOKIE_COLOR_SCHEME_KEY]),
-              language: ctx.cookies[COOKIE_LOCALE_KEY] ?? 'en',
-            },
-          },
-        },
-      });
-      await ctx.prisma.invite.delete({
-        where: {
-          id: token.id,
-        },
-      });
+      await db.delete(invites).where(eq(invites.id, invite.id));
 
       return {
-        id: user.id,
-        name: user.name,
+        id: userId,
+        name: input.username,
       };
     }),
   changeColorScheme: protectedProcedure
@@ -103,18 +78,12 @@ export const userRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      await ctx.prisma.user.update({
-        where: {
-          id: ctx.session?.user?.id,
-        },
-        data: {
-          settings: {
-            update: {
-              colorScheme: input.colorScheme,
-            },
-          },
-        },
-      });
+      await db
+        .update(userSettings)
+        .set({
+          colorScheme: input.colorScheme,
+        })
+        .where(eq(userSettings.userId, ctx.session?.user?.id));
     }),
   changeRole: adminProcedure
     .input(z.object({ id: z.string(), type: z.enum(['promote', 'demote']) }))
@@ -126,10 +95,8 @@ export const userRouter = createTRPCRouter({
         });
       }
 
-      const user = await ctx.prisma.user.findUnique({
-        where: {
-          id: input.id,
-        },
+      const user = await db.query.users.findFirst({
+        where: eq(users.id, input.id),
       });
 
       if (!user) {
@@ -146,14 +113,10 @@ export const userRouter = createTRPCRouter({
         });
       }
 
-      await ctx.prisma.user.update({
-        where: {
-          id: input.id,
-        },
-        data: {
-          isAdmin: input.type === 'promote',
-        },
-      });
+      await db
+        .update(users)
+        .set({ isAdmin: input.type === 'promote' })
+        .where(eq(users.id, input.id));
     }),
   changeLanguage: protectedProcedure
     .input(
@@ -162,25 +125,15 @@ export const userRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      await ctx.prisma.user.update({
-        where: {
-          id: ctx.session?.user?.id,
-        },
-        data: {
-          settings: {
-            update: {
-              language: input.language,
-            },
-          },
-        },
-      });
+      await db
+        .update(userSettings)
+        .set({ language: input.language })
+        .where(eq(userSettings.userId, ctx.session?.user?.id));
     }),
-  withSettings: protectedProcedure.query(async ({ ctx, input }) => {
-    const user = await ctx.prisma.user.findUnique({
-      where: {
-        id: ctx.session?.user?.id,
-      },
-      include: {
+  withSettings: protectedProcedure.query(async ({ ctx }) => {
+    const user = await db.query.users.findFirst({
+      where: eq(users.id, ctx.session?.user?.id),
+      with: {
         settings: true,
       },
     });
@@ -195,50 +148,26 @@ export const userRouter = createTRPCRouter({
     return {
       id: user.id,
       name: user.name,
-      settings: {
-        ...user.settings,
-        firstDayOfWeek: z
-          .enum(['monday', 'saturday', 'sunday'])
-          .parse(user.settings.firstDayOfWeek),
-      },
+      settings: user.settings,
     };
   }),
 
   updateSettings: protectedProcedure
     .input(updateSettingsValidationSchema)
     .mutation(async ({ ctx, input }) => {
-      await ctx.prisma.user.update({
-        where: {
-          id: ctx.session.user.id,
-        },
-        data: {
-          settings: {
-            update: {
-              disablePingPulse: input.disablePingPulse,
-              replacePingWithIcons: input.replaceDotsWithIcons,
-              defaultBoard: input.defaultBoard,
-              language: input.language,
-              firstDayOfWeek: input.firstDayOfWeek,
-              searchTemplate: input.searchTemplate,
-              openSearchInNewTab: input.openSearchInNewTab,
-              autoFocusSearch: input.autoFocusSearch,
-            },
-          },
-        },
-      });
+      await db
+        .update(userSettings)
+        .set(input)
+        .where(eq(userSettings.userId, ctx.session?.user?.id));
     }),
 
   makeDefaultDashboard: protectedProcedure
     .input(z.object({ board: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      await ctx.prisma.userSettings.update({
-        where: {
-          userId: ctx.session?.user.id,
-        },
-        data: {
-          defaultBoard: input.board,
-        },
-      });
+      await db
+        .update(userSettings)
+        .set({ defaultBoard: input.board })
+        .where(eq(userSettings.userId, ctx.session?.user?.id));
     }),
 
   all: adminProcedure
@@ -254,26 +183,20 @@ export const userRouter = createTRPCRouter({
     )
     .query(async ({ ctx, input }) => {
       const limit = input.limit;
-      const users = await ctx.prisma.user.findMany({
-        take: limit + 1,
-        skip: limit * input.page,
-        where: {
-          name: {
-            contains: input.search,
-          },
-        },
+      const dbUsers = await db.query.users.findMany({
+        limit: limit + 1,
+        offset: limit * input.page,
+        where: input.search ? like(users.name, `%${input.search}%`) : undefined,
       });
 
-      const countUsers = await ctx.prisma.user.count({
-        where: {
-          name: {
-            contains: input.search,
-          },
-        },
-      });
+      const countUsers = await db
+        .select({ count: sql<number>`count(*)` })
+        .from(users)
+        .where(input.search ? like(users.name, `%${input.search}%`) : undefined)
+        .then((rows) => rows[0].count);
 
       return {
-        users: users.map((user) => ({
+        users: dbUsers.map((user) => ({
           id: user.id,
           name: user.name!,
           email: user.email,
@@ -284,7 +207,7 @@ export const userRouter = createTRPCRouter({
       };
     }),
   create: adminProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
-    await createUserIfNotPresent(ctx, input);
+    await createUserIfNotPresent(input);
   }),
 
   deleteUser: adminProcedure
@@ -294,10 +217,8 @@ export const userRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      const user = await ctx.prisma.user.findUnique({
-        where: {
-          id: input.id,
-        },
+      const user = await db.query.users.findFirst({
+        where: eq(users.id, input.id),
       });
 
       if (!user) {
@@ -320,26 +241,19 @@ export const userRouter = createTRPCRouter({
         });
       }
 
-      await ctx.prisma.user.delete({
-        where: {
-          id: input.id,
-        },
-      });
+      await db.delete(users).where(eq(users.id, input.id));
     }),
 });
 
 const createUserIfNotPresent = async (
-  ctx: TRPCContext,
   input: z.infer<typeof createNewUserSchema>,
   options: {
     defaultSettings?: Partial<UserSettings>;
     isOwner?: boolean;
   } | void
 ) => {
-  const existingUser = await ctx.prisma.user.findFirst({
-    where: {
-      name: input.username,
-    },
+  const existingUser = await db.query.users.findFirst({
+    where: eq(users.name, input.username),
   });
 
   if (existingUser) {
@@ -351,17 +265,22 @@ const createUserIfNotPresent = async (
 
   const salt = bcrypt.genSaltSync(10);
   const hashedPassword = hashPassword(input.password, salt);
-  await ctx.prisma.user.create({
-    data: {
-      name: input.username,
-      email: input.email,
-      password: hashedPassword,
-      salt: salt,
-      isAdmin: options?.isOwner ?? false,
-      isOwner: options?.isOwner ?? false,
-      settings: {
-        create: options?.defaultSettings ?? {},
-      },
-    },
+  const userId = randomUUID();
+  await db.insert(users).values({
+    id: userId,
+    name: input.username,
+    email: input.email,
+    password: hashedPassword,
+    salt: salt,
+    isAdmin: options?.isOwner ?? false,
+    isOwner: options?.isOwner ?? false,
   });
+
+  await db.insert(userSettings).values({
+    id: randomUUID(),
+    userId,
+    ...(options?.defaultSettings ?? {}),
+  });
+
+  return userId;
 };

@@ -1,16 +1,19 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import bcrypt from 'bcryptjs';
 import Consola from 'consola';
 import Cookies from 'cookies';
+import { eq } from 'drizzle-orm';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
 import { type DefaultSession, type NextAuthOptions, getServerSession } from 'next-auth';
 import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
 import Credentials from 'next-auth/providers/credentials';
-import { prisma } from '~/server/db';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
 import { colorSchemeParser, signInSchema } from '~/validations/user';
+
+import { db } from './db';
+import { users } from './db/schema';
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -48,7 +51,7 @@ declare module 'next-auth/jwt' {
   }
 }
 
-const adapter = PrismaAdapter(prisma);
+const adapter = DrizzleAdapter(db);
 const sessionMaxAgeInSeconds = 30 * 24 * 60 * 60; // 30 days
 
 /**
@@ -68,25 +71,25 @@ export const constructAuthOptions = (
         // eslint-disable-next-line no-param-reassign
         session.user.name = user.name as string;
 
-        const userFromDatabase = await prisma.user.findUniqueOrThrow({
-          where: {
-            id: user.id,
-          },
-          include: {
+        const userFromDatabase = await db.query.users.findFirst({
+          with: {
             settings: {
-              select: {
+              columns: {
                 colorScheme: true,
                 language: true,
                 autoFocusSearch: true,
               },
             },
           },
+          where: eq(users.id, user.id),
         });
 
-        session.user.isAdmin = userFromDatabase.isAdmin;
-        session.user.colorScheme = colorSchemeParser.parse(userFromDatabase.settings?.colorScheme);
-        session.user.language = userFromDatabase.settings?.language ?? 'en';
-        session.user.autoFocusSearch = userFromDatabase.settings?.autoFocusSearch ?? false;
+        session.user.isAdmin = userFromDatabase?.isAdmin ?? false;
+        session.user.colorScheme = userFromDatabase
+          ? colorSchemeParser.parse(userFromDatabase.settings?.colorScheme)
+          : 'environment';
+        session.user.language = userFromDatabase?.settings?.language ?? 'en';
+        session.user.autoFocusSearch = userFromDatabase?.settings?.autoFocusSearch ?? false;
       }
 
       return session;
@@ -129,7 +132,7 @@ export const constructAuthOptions = (
     signIn: '/auth/login',
     error: '/auth/login',
   },
-  adapter: PrismaAdapter(prisma),
+  adapter: adapter as Adapter,
   providers: [
     Credentials({
       name: 'credentials',
@@ -143,19 +146,17 @@ export const constructAuthOptions = (
       async authorize(credentials) {
         const data = await signInSchema.parseAsync(credentials);
 
-        const user = await prisma.user.findFirst({
-          where: {
-            name: data.name,
-          },
-          include: {
+        const user = await db.query.users.findFirst({
+          with: {
             settings: {
-              select: {
+              columns: {
                 colorScheme: true,
                 language: true,
                 autoFocusSearch: true,
               },
             },
           },
+          where: eq(users.name, data.name),
         });
 
         if (!user || !user.password) {
