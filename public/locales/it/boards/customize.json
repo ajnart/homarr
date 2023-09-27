@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Personalizza la board {{name}}",
+    "pageTitle": "Personalizzazione per la board {{name}}",
+    "backToBoard": "Torna alla board",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Colore primario",
+            "secondaryColor": "Colore secondario"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Salva modifiche",
+        "note": "Attenzione, ci sono modifiche non salvate!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Salvataggio personalizzazione",
+            "message": "Attendere mentre si salva la personalizzazione"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Personalizzazione salvata",
+            "message": "La tua personalizzazione è stata salvata con successo"
         },
         "error": {
             "title": "Errore",
-            "message": ""
+            "message": "Impossibile salvare le modifiche"
         }
     }
 }
