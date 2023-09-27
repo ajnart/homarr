@@ -1,27 +1,20 @@
 {
+  "metaTitle": "登录",
   "title": "欢迎回来！",
-  "text": "请输入密码",
+  "text": "请确认您的凭证",
   "form": {
     "fields": {
+      "username": {
+        "label": "用户名"
+      },
       "password": {
-        "label": "密码",
-        "placeholder": "您的密码"
+        "label": "密码"
       }
     },
     "buttons": {
       "submit": "登录"
-    }
+    },
+    "afterLoginRedirection": "登录后，您将被重定向到 {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "检查您的密码",
-      "message": "正在检查您的密码..."
-    },
-    "correct": {
-      "title": "登录成功，正在跳转..."
-    },
-    "wrong": {
-      "title": "密码错误，请重新输入。"
-    }
-  }
+  "alert": "您的凭据不正确或此账户不存在。请重试。"
 }

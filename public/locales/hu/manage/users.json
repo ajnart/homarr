@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Felhasználók",
+    "pageTitle": "Felhasználók kezelése",
+    "text": "A felhasználók segítségével beállíthatja, hogy ki szerkesztheti a műszerfalait. A Homarr jövőbeli verziói még részletesebb szabályozást biztosítanak a jogosultságok és a táblák felett.",
+    "buttons": {
+        "create": "Létrehozás"
+    },
+    "table": {
+        "header": {
+            "user": "Felhasználó"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Felhasználó törlése",
+        "demoteAdmin": "Adminisztrátor visszaminősítése",
+        "promoteToAdmin": "Adminisztrátorrá minősítés"
+    },
+    "modals": {
+        "delete": {
+            "title": "Felhasználó törlése {{name}}",
+            "text": "Biztos, hogy törölni szeretné a {{name}} felhasználót? Ez törli az ehhez a fiókhoz tartozó adatokat, de nem törli az általa létrehozott táblákat."
+        },
+        "change-role": {
+            "promote": {
+                "title": "A {{name}} felhasználó adminisztrátorrá történő előléptetése",
+                "text": "Biztos vagy benne, hogy a {{name}} felhasználót adminisztrátorrá akarod előléptetni? Ez hozzáférést biztosít a felhasználónak a Homarr-példány minden erőforrásához."
+            },
+            "demote": {
+                "title": "A {{name}} nevű felhasználú lefokozása user szintre",
+                "text": "Biztos vagy benne, hogy a {{name}} felhasználót lefokozod user szintre? Ezáltal a felhasználó hozzáférése megszűnik a Homarr-példány minden erőforrásához."
+            },
+            "confirm": "Megerősít"
+        }
+    },
+    "searchDoesntMatch": "A keresés nem talál egyetlen bejegyzést sem. Kérjük, módosítsa a szűrőt."
+}

@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Fältet är ogiltigt",
+        "required": "Detta fält är obligatoriskt",
+        "string": {
+            "startsWith": "Det här fältet måste börja med {{startsWith}}",
+            "endsWith": "",
+            "includes": ""
+        },
+        "tooSmall": {
+            "string": "",
+            "number": ""
+        },
+        "tooBig": {
+            "string": "",
+            "number": ""
+        },
+        "custom": {
+            "passwordMatch": ""
+        }
+    }
+}

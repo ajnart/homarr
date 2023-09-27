@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Utilisateurs",
+    "pageTitle": "Gérer les utilisateurs",
+    "text": "",
+    "buttons": {
+        "create": "Créer"
+    },
+    "table": {
+        "header": {
+            "user": "Utilisateur"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Supprimer l’utilisateur",
+        "demoteAdmin": "Rétrograder l'administrateur",
+        "promoteToAdmin": "Promouvoir en tant qu'administrateur"
+    },
+    "modals": {
+        "delete": {
+            "title": "Supprimer l'utilisateur {{name}}",
+            "text": ""
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promouvoir l'utilisateur {{name}} en tant qu'administrateur",
+                "text": ""
+            },
+            "demote": {
+                "title": "",
+                "text": ""
+            },
+            "confirm": "Confirmer"
+        }
+    },
+    "searchDoesntMatch": "Votre recherche ne correspond à aucune entrée. Veuillez ajuster votre filtre."
+}

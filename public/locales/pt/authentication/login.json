@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Bem-vindo de volta!",
-  "text": "Por favor introduza a sua palavra-passe",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Usuário"
+      },
       "password": {
-        "label": "Senha",
-        "placeholder": "Sua senha"
+        "label": "Senha"
       }
     },
     "buttons": {
       "submit": "Iniciar sessão"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Conferindo sua senha",
-      "message": "Sua senha está sendo verificada..."
-    },
-    "correct": {
-      "title": "Entrar com sucesso, redireccionando..."
-    },
-    "wrong": {
-      "title": "A senha que introduziu está incorrecta, por favor tente novamente."
-    }
-  }
+  "alert": ""
 }

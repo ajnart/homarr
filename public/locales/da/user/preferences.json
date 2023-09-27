@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Indstillinger",
+    "pageTitle": "Dine indstillinger",
+    "boards": {
+        "defaultBoard": {
+            "label": "Standard board"
+        }
+    },
+    "accessibility": {
+        "title": "Hjælpefunktioner",
+        "disablePulse": {
+            "label": "Deaktiver ping-puls",
+            "description": "Som standard vil ping-indikatorerne i Homarr pulsere. Det kan være irriterende. Denne skyder vil deaktivere animationen"
+        },
+        "replaceIconsWithDots": {
+            "label": "Udskift ping-prikker med ikoner",
+            "description": "For farveblinde brugere kan ping-prikker være uigenkendelige. Dette vil erstatte indikatorer med ikoner"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Sprog"
+        },
+        "firstDayOfWeek": {
+            "label": "Første ugedag",
+            "options": {
+                "monday": "Mandag",
+                "saturday": "Lørdag",
+                "sunday": "Søndag"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Søgemaskine",
+        "custom": "Brugerdefineret",
+        "newTab": {
+            "label": "Åben søgeresultater i en ny fane"
+        },
+        "autoFocus": {
+            "label": "Fokuser søgefeltet, når siden indlæses.",
+            "description": "Dette vil automatisk fokusere søgefeltet, når du navigerer til board sider. Det virker kun på desktop-enheder."
+        },
+        "template": {
+            "label": "Forespørgsels URL",
+            "description": "Brug %s som pladsholder for forespørgslen"
+        }
+    }
+}

@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Usar la API de Sonarr v4"
       },
-      "sundayStart": {
-        "label": "Marcar Domingo como primer día de la semana"
-      },
       "radarrReleaseType": {
         "label": "Tipo de lanzamiento de Radarr",
         "data": {

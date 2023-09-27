@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Kullanıcılar",
+    "pageTitle": "Kullanıcıları yönet",
+    "text": "Kullanıcıları kullanarak panelşnizi kimlerin düzenleyebileceğini yapılandırabilirsiniz. Homarr'ın gelecekteki sürümleri, izinler ve panolar üzerinde daha da ayrıntılı kontrole sahip olacak.",
+    "buttons": {
+        "create": "Oluştur"
+    },
+    "table": {
+        "header": {
+            "user": "Kullanıcı"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Kullanıcıyı Sil",
+        "demoteAdmin": "Yöeticilikten çıkar",
+        "promoteToAdmin": "Yöneticiliğe yükselt"
+    },
+    "modals": {
+        "delete": {
+            "title": "{{name}} kullanıcısını sil",
+            "text": "{{name}} kullanıcısını silmek istediğinizden emin misiniz? Bu, bu hesapla ilişkili verileri silecek, ancak bu kullanıcı tarafından oluşturulan herhangi bir panel silinmeyecektir."
+        },
+        "change-role": {
+            "promote": {
+                "title": "{{name}} kullanıcısını yöneticiliğe yükselt",
+                "text": "{{name}} kullanıcısını yönetici konumuna yükseltmek istediğinizden emin misiniz? Bu, kullanıcıya Homarr örneğinizdeki tüm kaynaklara erişim sağlayacaktır."
+            },
+            "demote": {
+                "title": "{{name}} kullanıcısının yetkilerini kullanıcı grubuna al",
+                "text": "{{name}} kullanıcısını kullanıcı grubuna düşürmek istediğinizden emin misiniz? Bu, kullanıcının Homarr bulut sunucunuzdaki tüm kaynaklara erişimini kaldıracaktır."
+            },
+            "confirm": "Onayla"
+        }
+    },
+    "searchDoesntMatch": "Aramanız hiçbir girişle eşleşmiyor. Lütfen filtrenizi ayarlayın."
+}

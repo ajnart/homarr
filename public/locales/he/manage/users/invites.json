@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "description": "",
+    "button": {
+        "createInvite": "",
+        "deleteInvite": ""
+    },
+    "table": {
+        "header": {
+            "id": "",
+            "creator": "",
+            "expires": "",
+            "action": ""
+        },
+        "data": {
+            "expiresAt": "",
+            "expiresIn": ""
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "",
+            "description": "",
+            "form": {
+                "expires": "",
+                "submit": ""
+            }
+        },
+        "copy": {
+            "title": "העתק את ההזמנה",
+            "description": "ההזמנה שלך נוצרה. לאחר סגירת המודל הזה, <b>לא תוכל להעתיק את הקישור הזה יותר</b>. אם אינך מעוניין יותר להזמין את האדם האמור, תוכל למחוק הזמנה זו בכל עת.",
+            "invitationLink": "קישור הזמנה",
+            "details": {
+                "id": "",
+                "token": "טוקן"
+            },
+            "button": {
+                "close": "העתק וסגור"
+            }
+        },
+        "delete": {
+            "title": "",
+            "description": "האם אתה בטוח שברצונך למחוק את ההזמנה הזו? משתמשים עם קישור זה לא יוכלו עוד ליצור חשבון באמצעות קישור זה."
+        }
+    },
+    "noInvites": "אין עדיין הזמנות."
+}

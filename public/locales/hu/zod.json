@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Ez a mező érvénytelen",
+        "required": "Ez a mező kötelező",
+        "string": {
+            "startsWith": "Ennek a mezőnek a {{startsWith}} kell kezdődnie",
+            "endsWith": "Ennek a mezőnek a {{endsWith}} kell végződnie",
+            "includes": "Ennek a mezőnek tartalmaznia kell a {{includes}} értéket"
+        },
+        "tooSmall": {
+            "string": "Ennek a mezőnek legalább {{minimum}} karakter hosszúságúnak kell lennie",
+            "number": "Ennek a mezőnek nagyobbnak vagy egyenlőnek kell lennie a {{minimum}} értékkel"
+        },
+        "tooBig": {
+            "string": "Ez a mező legfeljebb {{maximum}} karakter hosszúságú lehet",
+            "number": "Ennek a mezőnek kisebbnek vagy egyenlőnek kell lennie a {{maximum}} értékkel"
+        },
+        "custom": {
+            "passwordMatch": "A jelszavaknak meg kell egyezniük"
+        }
+    }
+}

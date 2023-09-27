@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Bu alan geçersiz",
+        "required": "Bu alan gereklidir",
+        "string": {
+            "startsWith": "Bu alan {{startsWith}} ile başlamalıdır",
+            "endsWith": "Bu alan {{endsWith}} ile bitmelidir",
+            "includes": "Bu alan {{includes}} adresini içermelidir"
+        },
+        "tooSmall": {
+            "string": "Bu alan en az {{minimum}} karakter uzunluğunda olmalıdır",
+            "number": "Bu alan {{minimum}} adresinden uzun veya eşit olmalıdır"
+        },
+        "tooBig": {
+            "string": "Bu alan en fazla {{maximum}} karakter uzunluğunda olmalıdır",
+            "number": "Bu alan {{maximum}} adresinden kısa veya eşit olmalıdır"
+        },
+        "custom": {
+            "passwordMatch": "Şifreler aynı olmalıdır"
+        }
+    }
+}

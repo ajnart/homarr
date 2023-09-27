@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "DNS blokkolók ellenőrzése",
-    "description": "A PiHole vagy az AdGuard vezérlése a műszerfalról"
+    "description": "A PiHole vagy az AdGuard vezérlése a műszerfalról",
+    "settings": {
+      "title": "DNS blokkolók vezérlő beállítások",
+      "showToggleAllButtons": {
+        "label": "'Minden engedélyezés/letiltás gombok megjelenítése"
+      }
+    }
   }
 }

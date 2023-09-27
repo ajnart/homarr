@@ -23,8 +23,5 @@
     "description": "Vidare kan du anpassa din instrumentpanel med CSS, vilket endast rekommenderas för erfarna användare",
     "placeholder": "Anpassad CSS tillämpas sist",
     "applying": "Tillämpar CSS..."
-  },
-  "buttons": {
-    "submit": "Skicka"
   }
 }

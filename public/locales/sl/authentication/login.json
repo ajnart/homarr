@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Dobrodošli nazaj!",
-  "text": "Prosimo, vnesite svoje geslo",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Uporabniško ime"
+      },
       "password": {
-        "label": "Geslo",
-        "placeholder": "Vaše geslo"
+        "label": "Geslo"
       }
     },
     "buttons": {
       "submit": "Prijava"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Preverjanje gesla",
-      "message": "Preverjamo vaše geslo..."
-    },
-    "correct": {
-      "title": "Prijava uspešna, preusmeritev..."
-    },
-    "wrong": {
-      "title": "Vneseno geslo je napačno, poskusite znova."
-    }
-  }
+  "alert": ""
 }

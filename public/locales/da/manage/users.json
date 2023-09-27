@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Brugere",
+    "pageTitle": "Administrér brugere",
+    "text": "Ved hjælp af brugere kan du konfigurere, hvem der kan redigere dine dashboards. Fremtidige versioner af Homarr vil have endnu mere detaljeret kontrol over tilladelser og tavler.",
+    "buttons": {
+        "create": "Opret"
+    },
+    "table": {
+        "header": {
+            "user": "Bruger"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Slet bruger",
+        "demoteAdmin": "Degrader administrator",
+        "promoteToAdmin": "Promover til administrator"
+    },
+    "modals": {
+        "delete": {
+            "title": "Slet brugeren {{name}}",
+            "text": "Er du sikker på, at du vil slette brugeren {{name}}? Dette vil slette data, der er knyttet til denne konto, men ikke dashboards, der er oprettet af denne bruger."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Forfrem brugeren {{name}} til administrator",
+                "text": "Er du sikker på, at du vil promovere brugeren {{name}} til administrator? Dette vil give brugeren adgang til alle ressourcer i din Homarr instans."
+            },
+            "demote": {
+                "title": "Degrader bruger {{name}} til bruger",
+                "text": "Er du sikker på, at du vil degradere brugeren {{name}} til bruger? Dette vil fjerne brugerens adgang til alle ressourcer på din Homarr-instans."
+            },
+            "confirm": "Bekræft"
+        }
+    },
+    "searchDoesntMatch": "Din søgning matcher ikke nogen poster. Juster venligst dit filter."
+}

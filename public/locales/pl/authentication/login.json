@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Witaj ponownie!",
-  "text": "Proszę podać hasło",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Nazwa użytkownika"
+      },
       "password": {
-        "label": "Hasło",
-        "placeholder": "Twoje hasło"
+        "label": "Hasło"
       }
     },
     "buttons": {
       "submit": "Zaloguj się"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Sprawdzanie hasła",
-      "message": "Twoje hasło jest sprawdzane..."
-    },
-    "correct": {
-      "title": "Logowanie zakończone sukcesem, przekierowanie..."
-    },
-    "wrong": {
-      "title": "Wprowadzone hasło jest nieprawidłowe, proszę spróbować ponownie."
-    }
-  }
+  "alert": ""
 }

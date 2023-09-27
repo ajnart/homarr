@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "З поверненням!",
-  "text": "Будь ласка, введіть ваш пароль",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Логін"
+      },
       "password": {
-        "label": "Пароль",
-        "placeholder": "Ваш пароль"
+        "label": "Пароль"
       }
     },
     "buttons": {
       "submit": "Вхід"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Перевірка пароля",
-      "message": "Ваш пароль перевіряється..."
-    },
-    "correct": {
-      "title": "Вхід успішний, перенаправлення..."
-    },
-    "wrong": {
-      "title": "Введено неправильний пароль. Повторіть спробу."
-    }
-  }
+  "alert": ""
 }

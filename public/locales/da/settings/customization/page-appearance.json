@@ -23,8 +23,5 @@
     "description": "Yderligere, tilpasse dit dashboard ved hjælp af CSS, anbefales kun til erfarne brugere",
     "placeholder": "Brugerdefineret CSS vil blive anvendt sidst",
     "applying": "Anvender CSS..."
-  },
-  "buttons": {
-    "submit": "Indsend"
   }
 }

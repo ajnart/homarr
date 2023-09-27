@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "Στοιχεία ελέγχου DNS hole",
-    "description": "Ελέγξτε το PiHole ή το AdGuard από το dashboard σας"
+    "description": "Ελέγξτε το PiHole ή το AdGuard από το dashboard σας",
+    "settings": {
+      "title": "Ρυθμίσεις ελέγχου DNS hole",
+      "showToggleAllButtons": {
+        "label": "Εμφάνιση Κουμπιών 'Ενεργοποίηση/Απενεργοποίηση Όλων'"
+      }
+    }
   }
 }

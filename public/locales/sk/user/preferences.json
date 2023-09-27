@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Predvoľby",
+    "pageTitle": "Vaše preferencie",
+    "boards": {
+        "defaultBoard": {
+            "label": "Predvolená doska"
+        }
+    },
+    "accessibility": {
+        "title": "Prístupnosť",
+        "disablePulse": {
+            "label": "Zakázanie impulzu ping",
+            "description": "V predvolenom nastavení budú indikátory ping v aplikácii Homarr pulzovať. To môže byť nepríjemné. Tento posuvník deaktivuje animáciu"
+        },
+        "replaceIconsWithDots": {
+            "label": "Nahradenie bodov ping ikonami",
+            "description": "Pre farboslepých používateľov môžu byť pingové body nerozpoznateľné. Toto nahradí indikátory ikonami"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Jazyk"
+        },
+        "firstDayOfWeek": {
+            "label": "Prvý deň v týždni",
+            "options": {
+                "monday": "Pondelok",
+                "saturday": "Sobota",
+                "sunday": "Nedeľa"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Vyhľadávač",
+        "custom": "Vlastné",
+        "newTab": {
+            "label": "Otvorenie výsledkov vyhľadávania na novej karte"
+        },
+        "autoFocus": {
+            "label": "Zameranie vyhľadávacieho panela pri načítaní stránky.",
+            "description": "Pri prechode na stránky nástenky sa automaticky zaostrí vyhľadávací panel. Funguje to len na zariadeniach s počítačom."
+        },
+        "template": {
+            "label": "Adresa URL dopytu",
+            "description": "Použite %s ako zástupný symbol pre dotaz"
+        }
+    }
+}

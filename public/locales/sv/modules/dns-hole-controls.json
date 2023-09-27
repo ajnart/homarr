@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "Kontroller av DNS hole",
-    "description": "Styr PiHole eller AdGuard från din instrumentpanel"
+    "description": "Styr PiHole eller AdGuard från din instrumentpanel",
+    "settings": {
+      "title": "",
+      "showToggleAllButtons": {
+        "label": ""
+      }
+    }
   }
 }

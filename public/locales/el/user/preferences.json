@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Προσβασιμότητα",
+        "disablePulse": {
+            "label": "Απενεργοποίηση παλμού ping",
+            "description": "Από προεπιλογή, οι δείκτες ping στο Homarr θα πάλλονται. Αυτό μπορεί να είναι ενοχλητικό. Αυτή η ρύθμιση θα απενεργοποιήσει το παλλόμενο εφέ"
+        },
+        "replaceIconsWithDots": {
+            "label": "Αντικαταστήστε τις τελείες ping με εικονίδια",
+            "description": "Για τους χρήστες με αχρωματοψία, οι κουκκίδες ping μπορεί να μην είναι αναγνωρίσιμες. Αυτό θα αντικαταστήσει τις ενδείξεις με εικονίδια"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Γλώσσα"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Μηχανή αναζήτησης",
+        "custom": "Προσαρμοσμένη",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "Ερώτημα URL",
+            "description": ""
+        }
+    }
+}

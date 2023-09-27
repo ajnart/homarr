@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "",
   "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "사용자 이름"
+      },
       "password": {
-        "label": "비밀번호",
-        "placeholder": ""
+        "label": "비밀번호"
       }
     },
     "buttons": {
       "submit": ""
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "",
-      "message": ""
-    },
-    "correct": {
-      "title": ""
-    },
-    "wrong": {
-      "title": ""
-    }
-  }
+  "alert": ""
 }

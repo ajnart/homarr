@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": ""
       },
-      "sundayStart": {
-        "label": "한 주의 시작을 일요일로 설정"
-      },
       "radarrReleaseType": {
         "label": "",
         "data": {

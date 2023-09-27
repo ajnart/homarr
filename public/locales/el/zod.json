@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "",
+        "required": "Αυτό το πεδίο είναι υποχρεωτικό",
+        "string": {
+            "startsWith": "",
+            "endsWith": "",
+            "includes": ""
+        },
+        "tooSmall": {
+            "string": "",
+            "number": ""
+        },
+        "tooBig": {
+            "string": "",
+            "number": ""
+        },
+        "custom": {
+            "passwordMatch": ""
+        }
+    }
+}

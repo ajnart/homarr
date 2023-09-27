@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "",
       "description": ""
+    },
+    "access": {
+      "name": "",
+      "description": ""
     }
   }
 }

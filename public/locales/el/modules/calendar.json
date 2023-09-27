@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Χρήση του API Sonarr v4"
       },
-      "sundayStart": {
-        "label": "Ξεκινήστε την εβδομάδα από την Κυριακή"
-      },
       "radarrReleaseType": {
         "label": "Τύπος κυκλοφορίας Radarr",
         "data": {
@@ -22,7 +19,7 @@
         "label": "Απόκρυψη εργάσιμων"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Εμφάνιση αντικειμένων που δεν παρακολουθούνται"
       },
       "fontSize": {
         "label": "Μέγεθος γραμματοσειράς",

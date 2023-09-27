@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "DNS漏洞控制",
-    "description": "从您的面板控制 PiHole 或 AdGuard"
+    "description": "从您的面板控制 PiHole 或 AdGuard",
+    "settings": {
+      "title": "DNS 漏洞控制设置",
+      "showToggleAllButtons": {
+        "label": "显示 \"启用/禁用全部 \"按钮"
+      }
+    }
   }
 }

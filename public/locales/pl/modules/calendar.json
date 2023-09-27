@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Użyj API Sonarr v4"
       },
-      "sundayStart": {
-        "label": "Rozpoczynaj tydzień od niedzieli"
-      },
       "radarrReleaseType": {
         "label": "Typ zwolnienia Radarr",
         "data": {

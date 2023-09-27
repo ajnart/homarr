@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Erişilebilirlik",
       "description": "Homarr'ı engelli kullanıcılar için yapılandırma"
+    },
+    "access": {
+      "name": "Erişim",
+      "description": "Panelinize kimlerin erişebileceğini yapılandırın"
     }
   }
 }

@@ -55,8 +55,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Aplikācijas Nosaukuma Fonta Lielums",
+			"description": "Iestatiet fonta lielumu, kad lietotnes nosaukums tiek parādīts uz flīzes."
 		},
 		"appNameStatus": {
 			"label": "Lietotnes Nosaukuma Statuss",

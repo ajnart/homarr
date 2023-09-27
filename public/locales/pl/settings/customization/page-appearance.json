@@ -23,8 +23,5 @@
     "description": "Jeszcze bardziej dostosuj swój pulpit za pomocą CSS, zalecane tylko dla doświadczonych użytkowników",
     "placeholder": "Custom CSS zostanie zastosowany jako ostatni",
     "applying": "Zastosowanie CSS..."
-  },
-  "buttons": {
-    "submit": "Zgłoś"
   }
 }

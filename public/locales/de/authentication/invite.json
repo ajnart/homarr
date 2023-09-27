@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Account erstellen",
+    "title": "Account erstellen",
+    "text": "Bitte geben Sie Ihre Anmeldedaten an",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Benutzername"
+            },
+            "password": {
+                "label": "Passwort"
+            },
+            "passwordConfirmation": {
+                "label": "Passwort bestätigen"
+            }
+        },
+        "buttons": {
+            "submit": "Account erstellen"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Account wird erstellt",
+            "text": "Bitte warten"
+        },
+        "success": {
+            "title": "Account erstellt",
+            "text": "Ihr Account wurde erfolgreich erstellt"
+        },
+        "error": {
+            "title": "Fehler",
+            "text": "Etwas ist schiefgelaufen. Folgender Fehler ist aufgetreten: {{error}}"
+        }
+    }
+}

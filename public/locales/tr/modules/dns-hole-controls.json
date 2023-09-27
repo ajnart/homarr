@@ -1,6 +1,12 @@
 {
   "descriptor": {
     "name": "DNS hole kontrolleri",
-    "description": "Kontrol panelinizden PiHole veya AdGuard'ı kontrol edin"
+    "description": "Kontrol panelinizden PiHole veya AdGuard'ı kontrol edin",
+    "settings": {
+      "title": "DNS hole kontrol ayarları",
+      "showToggleAllButtons": {
+        "label": "'Tümünü Etkinleştir/Devre Dışı Bırak' Butonlarını Göster"
+      }
+    }
   }
 }

@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Использовать Sonarr v4 API"
       },
-      "sundayStart": {
-        "label": "Воскресенье — начало недели"
-      },
       "radarrReleaseType": {
         "label": "Тип релиза в Radarr",
         "data": {
@@ -22,7 +19,7 @@
         "label": "Скрыть дни недели"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Показать неконтролируемые элементы"
       },
       "fontSize": {
         "label": "Размер шрифта",

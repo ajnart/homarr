@@ -6,7 +6,7 @@
 	"key": "Raccourci clavier",
 	"action": "Action",
 	"keybinds": "Affectation des touches",
-	"documentation": "",
+	"documentation": "Documentation",
 	"actions": {
 		"toggleTheme": "Basculer entre mode clair/sombre",
 		"focusSearchBar": "Focus sur la barre de recherche",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPÉRIMENTAL</b> : désactiver le mode édition"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nouveau : {{newVersion}}",
+		"dropdown": "La version {{newVersion}} est disponible ! La version actuelle est {{currentVersion}}"
 	}
 }

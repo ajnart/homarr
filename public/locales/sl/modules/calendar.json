@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Uporaba vmesnika API Sonarr v4"
       },
-      "sundayStart": {
-        "label": "Začni teden z nedeljo"
-      },
       "radarrReleaseType": {
         "label": "Tip sprostitve Radarr",
         "data": {

@@ -1,6 +1,12 @@
 {
   "descriptor": {
-    "name": "Contrôle du DNS hole",
-    "description": "Contrôlez PiHole ou AdGuard depuis votre tableau de bord"
+    "name": "Pilotage du DNS Hole",
+    "description": "Contrôlez PiHole ou AdGuard depuis votre tableau de bord",
+    "settings": {
+      "title": "",
+      "showToggleAllButtons": {
+        "label": "Afficher les boutons \"Activer/Désactiver tout\""
+      }
+    }
   }
 }

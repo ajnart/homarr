@@ -1,27 +1,20 @@
 {
+  "metaTitle": "התחבר/י",
   "title": "ברוך שובך!",
-  "text": "נא להזין סיסמה",
+  "text": "אנא הקלד את פרטי ההתחברות",
   "form": {
     "fields": {
+      "username": {
+        "label": "שם משתמש"
+      },
       "password": {
-        "label": "סיסמה",
-        "placeholder": "הסיסמה שלך"
+        "label": "סיסמה"
       }
     },
     "buttons": {
       "submit": "התחבר\\י"
-    }
+    },
+    "afterLoginRedirection": "לאחר ההתחברות, תופנה אל {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "סיסמה בבדיקה",
-      "message": "הסיסמה בבדיקה..."
-    },
-    "correct": {
-      "title": "התחברת בהצלחה"
-    },
-    "wrong": {
-      "title": "הסיסמה שגויה, נסה שנית"
-    }
-  }
+  "alert": "פרטי ההתחברות שלך שגויים או שחשבון זה אינו קיים. בבקשה נסה שוב."
 }

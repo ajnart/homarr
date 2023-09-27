@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "您的 Homarr 实例未配置 Docker，或无法获取容器。请查看文档，了解如何设置集成。"
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "选择一个面板",
+            "text": "选择您想要为选定的 Docker 容器添加应用的面板。",
+            "form": {
+                "board": {
+                    "label": "面板"
+                },
+                "submit": "添加应用"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "添加应用到面板",
+                "message": "选定的 Docker 容器的应用已添加到面板中。"
+            },
+            "error": {
+                "title": "添加应用到面板失败",
+                "message": "所选Docker容器的应用无法添加到面板中。"
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "アクセシビリティ",
+        "disablePulse": {
+            "label": "Pingパルスを無効にする",
+            "description": "デフォルトでは、HomarrのPingインジケータはパルスを発生させます。これは刺激的な可能性があります。このスライダーはアニメーションを無効にします"
+        },
+        "replaceIconsWithDots": {
+            "label": "Pingのドットをアイコンに置き換える",
+            "description": "色覚障害のユーザーの場合、ping点が認識できない可能性があります。これはインジケータをアイコンに置き換えます。"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "言語"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "検索エンジン",
+        "custom": "",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "クエリURL",
+            "description": ""
+        }
+    }
+}

@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Sonarr v4 API'sini kullan"
       },
-      "sundayStart": {
-        "label": "Haftaya Pazar günü başlayın"
-      },
       "radarrReleaseType": {
         "label": "Radarr yayın türü",
         "data": {

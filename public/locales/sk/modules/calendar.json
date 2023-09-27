@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Použi Sonarr v4 API"
       },
-      "sundayStart": {
-        "label": "Začni týždeň v Nedeľu"
-      },
       "radarrReleaseType": {
         "label": "Typ Radarr releasu",
         "data": {
@@ -22,7 +19,7 @@
         "label": "Skryť dni v týždni"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Zobraziť nesledované položky"
       },
       "fontSize": {
         "label": "Veľkosť písma",

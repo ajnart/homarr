@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "A Homarr-példányodon nincs beállítva a Docker, vagy nem tudta lekérni a konténereket. Kérjük, olvassa el a dokumentációt az integráció beállításáról."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Válasszon egy táblát",
+            "text": "Válassza ki azt a táblát, ahová a kiválasztott Docker-konténerekhez tartozó alkalmazásokat szeretné hozzáadni.",
+            "form": {
+                "board": {
+                    "label": "Tábla"
+                },
+                "submit": "Alkalmazások hozzáadása"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Alkalmazások hozzáadása a táblához",
+                "message": "A kiválasztott Docker-konténerek alkalmazásai hozzá lettek adva a táblához."
+            },
+            "error": {
+                "title": "Nem sikerült alkalmazásokat hozzáadni a táblához",
+                "message": "A kiválasztott Docker-konténerekhez tartozó alkalmazásokat nem lehetett hozzáadni a táblához."
+            }
+        }
+    }
+}

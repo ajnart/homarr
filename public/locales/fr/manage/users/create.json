@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Créer un utilisateur",
+    "steps": {
+        "account": {
+            "title": "Première étape",
+            "text": "Créer un compte",
+            "username": {
+                "label": "Nom d'utilisateur"
+            },
+            "email": {
+                "label": "Courriel"
+            }
+        },
+        "security": {
+            "title": "Seconde étape",
+            "text": "Mot de passe",
+            "password": {
+                "label": "Mot de passe"
+            }
+        },
+        "finish": {
+            "title": "Confirmation",
+            "text": "Enregistrer dans la base de données",
+            "card": {
+                "title": "Vérification de vos saisies",
+                "text": "Après avoir envoyé les données dans la base de données, l'utilisateur pourra se connecter. Êtes-vous sûr de vouloir ajouter cet utilisateur dans la base de données et d'activer son compte ?"
+            },
+            "table": {
+                "header": {
+                    "property": "Propriété",
+                    "value": "Valeur",
+                    "username": "Nom d'utilisateur",
+                    "email": "Courriel",
+                    "password": "Mot de passe"
+                },
+                "notSet": "Non défini",
+                "valid": "Valide"
+            },
+            "failed": "Échec de la création de l'utilisateur : {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Utilisateur créé",
+                "text": "L'utilisateur a été créé dans la base de données. Il peut désormais se connecter."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Génération aléatoire",
+        "createAnother": "En créer un autre"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "text": "",
+    "buttons": {
+        "create": ""
+    },
+    "table": {
+        "header": {
+            "user": ""
+        }
+    },
+    "tooltips": {
+        "deleteUser": "",
+        "demoteAdmin": "",
+        "promoteToAdmin": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "change-role": {
+            "promote": {
+                "title": "",
+                "text": ""
+            },
+            "demote": {
+                "title": "",
+                "text": ""
+            },
+            "confirm": ""
+        }
+    },
+    "searchDoesntMatch": ""
+}
