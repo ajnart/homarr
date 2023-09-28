@@ -60,6 +60,7 @@ public/locales/*
 #database
 sqlite.db
 database/*.sqlite
+WILL_BE_OVERWRITTEN.sqlite
 
 # IDE
 .idea/*
