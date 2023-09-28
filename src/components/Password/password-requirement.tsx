@@ -13,7 +13,7 @@ export const PasswordRequirement = ({ meets, label }: { meets: boolean; label: s
       mt={7}
       size="sm"
     >
-      {meets ? <IconCheck size="0.9rem" /> : <IconX size="0.9rem" />}{' '}
+      {meets ? <IconCheck size="0.9rem" /> : <IconX size="0.9rem" />}
       <Box ml={10}>
         {t(`${label}`, {
           count: minPasswordLength,
