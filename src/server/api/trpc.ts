@@ -8,8 +8,11 @@
  */
 import { TRPCError, initTRPC } from '@trpc/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
+
 import { type Session } from 'next-auth';
+
 import superjson from 'superjson';
+
 import { ZodError } from 'zod';
 
 import { getServerAuthSession } from '../auth';
@@ -38,7 +41,7 @@ interface CreateContextOptions {
  *
  * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
  */
-const createInnerTRPCContext = (opts: CreateContextOptions) => ({
+export const createInnerTRPCContext = (opts: CreateContextOptions) => ({
   session: opts.session,
   cookies: opts.cookies,
   prisma,
