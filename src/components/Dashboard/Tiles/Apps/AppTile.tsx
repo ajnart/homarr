@@ -87,7 +87,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
       ) : (
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
-          component={Link}
+          component="a"
           href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
