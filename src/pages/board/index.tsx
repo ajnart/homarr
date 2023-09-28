@@ -1,6 +1,5 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { SSRConfig, useTranslation } from 'next-i18next';
-import { useEffect } from 'react';
+import { SSRConfig } from 'next-i18next';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
@@ -16,16 +15,6 @@ export default function BoardPage({
   config: initialConfig,
   dockerEnabled,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const { t, i18n } = useTranslation(boardNamespaces, {
-    bindI18n: 'languageChanged loaded',
-  });
-  // bindI18n: loaded is needed because of the reloadResources call
-  // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
-  useEffect(() => {
-    if (i18n.language !== i18n.resolvedLanguage) {
-      i18n.reloadResources(i18n.resolvedLanguage, boardNamespaces);
-    }
-  }, []);
   useInitConfig(initialConfig);
 
   return (
@@ -65,7 +54,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
         primaryColor: config.settings.customization.colors.primary,
         secondaryColor: config.settings.customization.colors.secondary,
         primaryShade: config.settings.customization.colors.shade,
-      },
+      }
     };
   }
 
