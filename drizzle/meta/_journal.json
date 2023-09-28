@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1695874816934,
+      "tag": "0000_supreme_the_captain",
+      "breakpoints": true
+    }
+  ]
+}

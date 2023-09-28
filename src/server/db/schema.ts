@@ -1,6 +1,6 @@
 import { InferSelectModel, relations } from 'drizzle-orm';
 import { index, int, integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
-import { AdapterAccount } from 'next-auth/adapters';
+import { type AdapterAccount } from 'next-auth/adapters';
 
 export const users = sqliteTable('user', {
   id: text('id').notNull().primaryKey(),
