@@ -63,6 +63,7 @@ const env = createEnv({
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
     HOSTNAME: process.env.HOSTNAME,
   },
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });
 
 module.exports = {
