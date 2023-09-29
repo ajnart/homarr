@@ -5,12 +5,12 @@ import fs from 'fs';
 import path from 'path';
 import { z } from 'zod';
 import { configExists } from '~/tools/config/configExists';
+import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { BackendConfigType, ConfigType } from '~/types/config';
 import { boardCustomizationSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
-import { getConfig } from '~/tools/config/getConfig';
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
@@ -67,12 +67,6 @@ export const configRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ input }) => {
-      if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
-        throw new TRPCError({
-          code: 'METHOD_NOT_SUPPORTED',
-          message: 'Edit is not allowed, because edit mode is disabled'
-        });
-      }
       Consola.info(`Saving updated configuration of '${input.name}' config.`);
 
       const previousConfig = getConfig(input.name);

@@ -6,20 +6,12 @@ import { getConfig } from '~/tools/config/getConfig';
 import { BackendConfigType } from '~/types/config';
 import { INotebookWidget } from '~/widgets/notebook/NotebookWidgetTile';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const notebookRouter = createTRPCRouter({
-  update: publicProcedure
+  update: adminProcedure
     .input(z.object({ widgetId: z.string(), content: z.string(), configName: z.string() }))
     .mutation(async ({ input }) => {
-      //TODO: #1305 Remove use of DISABLE_EDIT_MODE for auth update
-      if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
-        throw new TRPCError({
-          code: 'METHOD_NOT_SUPPORTED',
-          message: 'Edit is not allowed, because edit mode is disabled'
-        });
-      }
-
       const config = getConfig(input.configName);
       const widget = config.widgets.find((widget) => widget.id === input.widgetId) as
         | INotebookWidget
