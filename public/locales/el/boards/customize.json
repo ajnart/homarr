@@ -1,16 +1,16 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Προσαρμογή {{name}} ταμπλό",
+    "pageTitle": "Προσαρμογή για το ταμπλό {{name}}",
+    "backToBoard": "Πίσω στο ταμπλό",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Βασικό χρώμα",
+            "secondaryColor": "Δευτερεύον χρώμα"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Αποθήκευση αλλαγών",
+        "note": "Προσοχή, έχετε μη αποθηκευμένες αλλαγές!"
     },
     "notifications": {
         "pending": {
