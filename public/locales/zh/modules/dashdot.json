@@ -33,7 +33,7 @@
             "label": "显示为文本（紧凑型）"
           },
           "multiView": {
-            "label": "显示为多核视图"
+            "label": "显示为多驱动视图"
           }
         },
         "network": {
@@ -57,7 +57,7 @@
             "label": "列宽度"
           },
           "multiView": {
-            "label": "显示为多核视图"
+            "label": "显示为多核心视图"
           }
         },
         "ram": {
