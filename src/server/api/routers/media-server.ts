@@ -2,17 +2,21 @@ import { Jellyfin } from '@jellyfin/sdk';
 import { BaseItemKind } from '@jellyfin/sdk/lib/generated-client/models';
 import { getSessionApi } from '@jellyfin/sdk/lib/utils/api/session-api';
 import { getSystemApi } from '@jellyfin/sdk/lib/utils/api/system-api';
+
 import Consola from 'consola';
+
 import { z } from 'zod';
+
+import { createTRPCRouter, publicProcedure } from '../trpc';
+
+import { ConfigAppType } from '~/types/app';
 import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
-import { PlexClient } from '~/tools/server/sdk/plex/plexClient';
+import { trimStringEnding } from '~/tools/shared/strings';
 import { GenericMediaServer } from '~/types/api/media-server/media-server';
 import { MediaServersResponseType } from '~/types/api/media-server/response';
 import { GenericCurrentlyPlaying, GenericSessionInfo } from '~/types/api/media-server/session-info';
-import { ConfigAppType } from '~/types/app';
-
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { PlexClient } from '~/tools/server/sdk/plex/plexClient';
 
 const jellyfin = new Jellyfin({
   clientInfo: {
@@ -104,7 +108,7 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       return {
         type: 'jellyfin',
         appId: app.id,
-        serverAddress: app.url,
+        serverAddress: trimStringEnding(app.url, ['/web/index.html#!/home.html', '/web', '/web/index.html', '/web/', '/web/index.html#']),
         version: infoApi.data.Version ?? undefined,
         sessions: sessions
           .filter((session) => session.NowPlayingItem)
@@ -176,7 +180,7 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
 
       if (!apiKey) {
         return {
-          serverAddress: app.url,
+          serverAddress: trimStringEnding(app.url, ['/web', '/web/index.html', '/web/index.html#!', '/web/index.html#!/settings/web/general', '/web/']),
           sessions: [],
           type: 'plex',
           appId: app.id,
