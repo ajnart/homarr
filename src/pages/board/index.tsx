@@ -1,34 +1,70 @@
-import { eq } from 'drizzle-orm';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
+import { createContext, useContext } from 'react';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
-import { useInitConfig } from '~/config/init';
 import { env } from '~/env';
+import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
-import { db } from '~/server/db';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
-import { userSettings } from '~/server/db/schema';
-import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
-import { ConfigType } from '~/types/config';
+import { RouterOutputs, api } from '~/utils/api';
 
-export default function BoardPage({
-  config: initialConfig,
-  dockerEnabled,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  useInitConfig(initialConfig);
+type BoardContextType = {
+  boardName: string;
+  layout?: string;
+  board: RouterOutputs['boards']['byName'];
+};
+const BoardContext = createContext<BoardContextType>(null!);
+type BoardProviderProps = {
+  boardName: string;
+  layout?: string;
+  children: React.ReactNode;
+};
+const BoardProvider = ({ children, ...props }: BoardProviderProps) => {
+  const { data: board } = api.boards.byName.useQuery(props);
 
   return (
-    <BoardLayout dockerEnabled={dockerEnabled}>
-      <Dashboard />
-    </BoardLayout>
+    <BoardContext.Provider
+      value={{
+        ...props,
+        board: board!,
+      }}
+    >
+      {children}
+    </BoardContext.Provider>
+  );
+};
+
+const useBoard = () => {
+  const ctx = useContext(BoardContext);
+  if (!ctx) throw new Error('useBoard must be used within a BoardProvider');
+  return ctx.board;
+};
+
+const Data = () => {
+  const board = useBoard();
+
+  return <pre>{JSON.stringify(board, null, 2)}</pre>;
+};
+
+export default function BoardPage({
+  boardName,
+  dockerEnabled,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  return (
+    <BoardProvider boardName={boardName}>
+      <BoardLayout dockerEnabled={dockerEnabled}>
+        <Data />
+        <Dashboard />
+      </BoardLayout>
+    </BoardProvider>
   );
 }
 
 type BoardGetServerSideProps = {
-  config: ConfigType;
+  boardName: string;
   dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
@@ -43,25 +79,23 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
     ctx.req,
     ctx.res
   );
-  const config = await getFrontendConfig(boardName);
 
-  if (!config.settings.access.allowGuests && !session?.user) {
+  const helpers = await createTrpcServersideHelpers(ctx);
+  await helpers.boards.byName.prefetch({ boardName });
+  const board = await helpers.boards.byNameSimple.fetch({ boardName });
+
+  if (!board.allowGuests && !session?.user) {
     return {
       notFound: true,
-      props: {
-        primaryColor: config.settings.customization.colors.primary,
-        secondaryColor: config.settings.customization.colors.secondary,
-        primaryShade: config.settings.customization.colors.shade,
-      },
     };
   }
 
   return {
     props: {
-      config,
-      primaryColor: config.settings.customization.colors.primary,
-      secondaryColor: config.settings.customization.colors.secondary,
-      primaryShade: config.settings.customization.colors.shade,
+      boardName,
+      primaryColor: board.primaryColor,
+      secondaryColor: board.secondaryColor,
+      primaryShade: board.primaryShade,
       dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
       ...translations,
     },
