@@ -1,5 +1,4 @@
 import { MantineGradient } from '@mantine/core';
-
 import { useColorTheme } from '~/tools/color';
 
 export const usePrimaryGradient = () => {

@@ -1,3 +1,3 @@
-import { DashboardView } from './DashboardView';
+import { BoardView } from './DashboardView';
 
-export const DashboardEditView = () => <DashboardView />;
+export const DashboardEditView = () => <BoardView />;

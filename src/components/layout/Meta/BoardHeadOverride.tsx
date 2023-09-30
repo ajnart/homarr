@@ -1,16 +1,12 @@
 import Head from 'next/head';
-import React from 'react';
+import { useRequiredBoard } from '~/components/Board/context';
 import { firstUpperCase } from '~/tools/shared/strings';
 
-import { useConfigContext } from '~/config/provider';
-
 export const BoardHeadOverride = () => {
-  const { config, name } = useConfigContext();
+  const board = useRequiredBoard();
+  const { metaTitle, faviconImageUrl } = board;
 
-  if (!config || !name) return null;
-
-  const { metaTitle, faviconUrl } = config.settings.customization;
-  const fallbackTitle = `${firstUpperCase(name)} Board • Homarr`;
+  const fallbackTitle = `${firstUpperCase(board.name)} Board • Homarr`;
   const title = metaTitle && metaTitle.length > 0 ? metaTitle : fallbackTitle;
 
   return (
@@ -18,11 +14,11 @@ export const BoardHeadOverride = () => {
       <title>{title}</title>
       <meta name="apple-mobile-web-app-title" content={title} />
 
-      {faviconUrl && faviconUrl.length > 0 && (
+      {faviconImageUrl && faviconImageUrl.length > 0 && (
         <>
-          <link rel="shortcut icon" href={faviconUrl} />
+          <link rel="shortcut icon" href={faviconImageUrl} />
 
-          <link rel="apple-touch-icon" href={faviconUrl} />
+          <link rel="apple-touch-icon" href={faviconImageUrl} />
         </>
       )}
     </Head>

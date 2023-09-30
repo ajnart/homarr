@@ -6,12 +6,12 @@ import {
   IconCloudRain,
   IconMapPin,
 } from '@tabler/icons-react';
+import { useTranslation } from 'react-i18next';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 import { WeatherIcon } from './WeatherIcon';
-import { useTranslation } from 'react-i18next';
 
 const definition = defineWidget({
   id: 'weather',
@@ -43,14 +43,14 @@ const definition = defineWidget({
   component: WeatherTile,
 });
 
-export type IWeatherWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IWeatherWidget = InferWidget<typeof definition>;
 
 interface WeatherTileProps {
   widget: IWeatherWidget;
 }
 
 function WeatherTile({ widget }: WeatherTileProps) {
-  const { data: weather, isLoading, isError } = api.weather.at.useQuery(widget.properties.location);
+  const { data: weather, isLoading, isError } = api.weather.at.useQuery(widget.options.location);
   const { width, ref } = useElementSize();
   const { t } = useTranslation('modules/weather');
 
@@ -100,32 +100,23 @@ function WeatherTile({ widget }: WeatherTileProps) {
       >
         <WeatherIcon size={width < 300 ? 30 : 50} code={weather.current_weather.weathercode} />
         <Title size={'h2'}>
-          {getPerferedUnit(
-            weather.current_weather.temperature,
-            widget.properties.displayInFahrenheit
-          )}
+          {getPerferedUnit(weather.current_weather.temperature, widget.options.displayInFahrenheit)}
         </Title>
       </Flex>
 
       {width > 200 && (
         <Group noWrap spacing="xs">
           <IconArrowUpRight />
-          {getPerferedUnit(
-            weather.daily.temperature_2m_max[0],
-            widget.properties.displayInFahrenheit
-          )}
+          {getPerferedUnit(weather.daily.temperature_2m_max[0], widget.options.displayInFahrenheit)}
           <IconArrowDownRight />
-          {getPerferedUnit(
-            weather.daily.temperature_2m_min[0],
-            widget.properties.displayInFahrenheit
-          )}
+          {getPerferedUnit(weather.daily.temperature_2m_min[0], widget.options.displayInFahrenheit)}
         </Group>
       )}
 
-      {widget.properties.displayCityName && (
+      {widget.options.displayCityName && (
         <Group noWrap spacing={5} align="center">
           <IconMapPin height={15} width={15} />
-          <Text style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
+          <Text style={{ whiteSpace: 'nowrap' }}>{widget.options.location.name}</Text>
         </Group>
       )}
     </Stack>

@@ -10,10 +10,9 @@ import { ParsedUrlQuery } from 'querystring';
 export const checkForSessionOrAskForLogin = (
   context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>,
   session: Session | null,
-  accessCallback: () => boolean,
+  accessCallback: () => boolean
 ): GetServerSidePropsResult<any> | undefined => {
   if (!session?.user) {
-    console.log('detected logged out user!');
     return {
       props: {},
       redirect: {
@@ -26,8 +25,8 @@ export const checkForSessionOrAskForLogin = (
   if (!accessCallback()) {
     return {
       props: {},
-      notFound: true
-    }
+      notFound: true,
+    };
   }
 
   return undefined;

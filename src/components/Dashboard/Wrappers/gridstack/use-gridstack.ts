@@ -1,18 +1,17 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject, createRef, useEffect, useMemo, useRef } from 'react';
-
+import { Item, Section } from '~/components/Board/context';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { AppType } from '~/types/app';
 import { AreaType } from '~/types/area';
 import { IWidget } from '~/widgets/widgets';
+
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { TileWithUnknownLocation, initializeGridstack } from './init-gridstack';
 import { useGridstackStore, useWrapperColumnCount } from './store';
 
 interface UseGristackReturnType {
-  apps: AppType[];
-  widgets: IWidget<string, any>[];
   refs: {
     wrapper: RefObject<HTMLDivElement>;
     items: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>;
@@ -20,12 +19,12 @@ interface UseGristackReturnType {
   };
 }
 
-export const useGridstack = (
-  areaType: 'wrapper' | 'category' | 'sidebar',
-  areaId: string
-): UseGristackReturnType => {
+type UseGridstackProps = {
+  section: Section;
+};
+
+export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnType => {
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const { config, configVersion, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
   // define reference for wrapper - is used to calculate the width of the wrapper
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -43,40 +42,17 @@ export const useGridstack = (
     throw new Error('UseGridstack should not be executed before mainAreaWidth has been set!');
   }
 
-  const items = useMemo(
-    () =>
-      config?.apps.filter(
-        (x) =>
-          x.area.type === areaType &&
-          (x.area.type === 'sidebar'
-            ? x.area.properties.location === areaId
-            : x.area.properties.id === areaId)
-      ) ?? [],
-    [configVersion, config?.apps.length]
-  );
-  const widgets = useMemo(() => {
-    if (!config) return [];
-    return config.widgets.filter(
-      (w) =>
-        w.area.type === areaType &&
-        (w.area.type === 'sidebar'
-          ? w.area.properties.location === areaId
-          : w.area.properties.id === areaId)
-    );
-  }, [configVersion, config?.widgets.length]);
+  const items = useMemo(() => section.items, [section.items.length]);
 
   // define items in itemRefs for easy access and reference to items
-  if (Object.keys(itemRefs.current).length !== items.length + (widgets ?? []).length) {
+  if (Object.keys(itemRefs.current).length !== items.length) {
     items.forEach(({ id }: { id: keyof typeof itemRefs.current }) => {
-      itemRefs.current[id] = itemRefs.current[id] || createRef();
-    });
-    (widgets ?? []).forEach(({ id }) => {
       itemRefs.current[id] = itemRefs.current[id] || createRef();
     });
   }
 
   useEffect(() => {
-    if (areaType === 'sidebar') return;
+    if (section.type === 'sidebar') return;
     const widgetWidth = mainAreaWidth / wrapperColumnCount;
     // widget width is used to define sizes of gridstack items within global.scss
     root.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
@@ -88,6 +64,7 @@ export const useGridstack = (
     root.style.setProperty('--gridstack-column-count', wrapperColumnCount.toString());
   }, [wrapperColumnCount]);
 
+  const configName = 'default';
   const onChange = isEditMode
     ? (changedNode: GridStackNode) => {
         if (!configName) return;
@@ -154,18 +131,18 @@ export const useGridstack = (
                 : previous.widgets.find((x) => x.id === itemId);
             if (!currentItem) return previous;
 
-            if (areaType === 'sidebar') {
+            if (section.type === 'sidebar') {
               currentItem.area = {
-                type: areaType,
+                type: section.type,
                 properties: {
-                  location: areaId as 'right' | 'left',
+                  location: section.position,
                 },
               };
             } else {
               currentItem.area = {
-                type: areaType,
+                type: section.type as any,
                 properties: {
-                  id: areaId,
+                  id: section.id,
                 },
               };
             }
@@ -241,13 +218,12 @@ export const useGridstack = (
 
     const tilesWithUnknownLocation: TileWithUnknownLocation[] = [];
     initializeGridstack(
-      areaType,
+      section.type as any,
       wrapperRef,
       gridRef,
       itemRefs,
-      areaId,
+      section.id,
       items,
-      widgets ?? [],
       isEditMode,
       wrapperColumnCount,
       shapeSize,
@@ -308,11 +284,9 @@ export const useGridstack = (
       }),
     }));
     return removeEventHandlers;
-  }, [items, wrapperRef.current, widgets, wrapperColumnCount]);
+  }, [items, wrapperRef.current, wrapperColumnCount]);
 
   return {
-    apps: items,
-    widgets: widgets ?? [],
     refs: {
       items: itemRefs,
       wrapper: wrapperRef,

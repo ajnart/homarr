@@ -6,12 +6,12 @@ import timezones from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { useSession } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
+import { useSetSafeInterval } from '~/hooks/useSetSafeInterval';
 import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
 
-import { useSetSafeInterval } from '~/hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 
 dayjs.extend(utc);
 dayjs.extend(timezones);
@@ -67,7 +67,7 @@ const definition = defineWidget({
   component: DateTile,
 });
 
-export type IDateWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IDateWidget = InferWidget<typeof definition>;
 
 interface DateTileProps {
   widget: IDateWidget;
@@ -75,41 +75,41 @@ interface DateTileProps {
 
 function DateTile({ widget }: DateTileProps) {
   const date = useDateState(
-    widget.properties.enableTimezone ? widget.properties.timezoneLocation : undefined
+    widget.options.enableTimezone ? widget.options.timezoneLocation : undefined
   );
-  const formatString = widget.properties.display24HourFormat ? 'HH:mm' : 'h:mm A';
+  const formatString = widget.options.display24HourFormat ? 'HH:mm' : 'h:mm A';
   const { ref, width } = useElementSize();
   const { cx, classes } = useStyles();
 
   return (
     <Stack ref={ref} className={cx(classes.wrapper, 'dashboard-tile-clock-wrapper')}>
-      {widget.properties.enableTimezone && widget.properties.titleState !== 'none' && (
+      {widget.options.enableTimezone && widget.options.titleState !== 'none' && (
         <Text
           size={width < 150 ? 'sm' : 'lg'}
           className={cx(classes.extras, 'dashboard-tile-clock-city')}
         >
-          {widget.properties.timezoneLocation.name}
-          {widget.properties.titleState === 'both' && dayjs(date).format(' (z)')}
+          {widget.options.timezoneLocation.name}
+          {widget.options.titleState === 'both' && dayjs(date).format(' (z)')}
         </Text>
       )}
       <Text className={cx(classes.clock, 'dashboard-tile-clock-hour')}>
         {dayjs(date).format(formatString)}
       </Text>
-      {!widget.properties.dateFormat.includes('hide') && (
+      {!widget.options.dateFormat.includes('hide') && (
         <Text
           size={width < 150 ? 'sm' : 'lg'}
           pt="0.2rem"
           className={cx(classes.extras, 'dashboard-tile-clock-date')}
         >
-          {dayjs(date).format(widget.properties.dateFormat)}
+          {dayjs(date).format(widget.options.dateFormat)}
         </Text>
       )}
     </Stack>
   );
 }
 
-const useStyles = createStyles(()=>({
-  wrapper:{
+const useStyles = createStyles(() => ({
+  wrapper: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
@@ -117,17 +117,17 @@ const useStyles = createStyles(()=>({
     height: '100%',
     gap: 0,
   },
-  clock:{
+  clock: {
     lineHeight: '1',
     whiteSpace: 'nowrap',
     fontWeight: 700,
     fontSize: '2.125rem',
   },
-  extras:{
+  extras: {
     lineHeight: '1',
     whiteSpace: 'nowrap',
-  }
-}))
+  },
+}));
 
 /**
  * State which updates when the minute is changing
@@ -142,7 +142,7 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
   const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
     enabled: !!sessionData?.user,
   });
-  const userLanguage =  userWithSettings?.settings.language;
+  const userLanguage = userWithSettings?.settings.language;
   const [date, setDate] = useState(getNewDate(timezone));
   const setSafeInterval = useSetSafeInterval();
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change

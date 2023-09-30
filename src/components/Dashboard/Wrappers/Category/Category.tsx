@@ -9,13 +9,11 @@ import {
   Title,
   createStyles,
 } from '@mantine/core';
-import { useLocalStorage } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
 import { IconDotsVertical, IconShare3 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { CategorySection } from '~/components/Board/context';
 
-import { useConfigContext } from '~/config/provider';
-import { CategoryType } from '~/types/category';
 import { useCardStyles } from '../../../layout/Common/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { WrapperContent } from '../WrapperContent';
@@ -23,25 +21,24 @@ import { useGridstack } from '../gridstack/use-gridstack';
 import { CategoryEditMenu } from './CategoryEditMenu';
 
 interface DashboardCategoryProps {
-  category: CategoryType;
+  section: CategorySection;
 }
 
-export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
-  const { refs, apps, widgets } = useGridstack('category', category.id);
+export const DashboardCategory = ({ section }: DashboardCategoryProps) => {
+  const { refs } = useGridstack({ section });
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const { config } = useConfigContext();
   const { classes: cardClasses, cx } = useCardStyles(true);
   const { classes } = useStyles();
   const { t } = useTranslation(['layout/common', 'common']);
 
-  const categoryList = config?.categories.map((x) => x.name) ?? [];
-  const [toggledCategories, setToggledCategories] = useLocalStorage({
+  //const categoryList = config?.categories.map((x) => x.name) ?? [];
+  /*const [toggledCategories, setToggledCategories] = useLocalStorage({
     key: `${config?.configProperties.name}-app-shelf-toggled`,
     // This is a bit of a hack to toggle the categories on the first load, return a string[] of the categories
     defaultValue: categoryList,
-  });
+  });*/
 
-  const handleMenuClick = () => {
+  /*const handleMenuClick = () => {
     for (let i = 0; i < apps.length; i += 1) {
       const app = apps[i];
       const popUp = window.open(app.url, app.id);
@@ -79,6 +76,15 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
     }
   };
 
+  // value={isEditMode ? categoryList : toggledCategories}
+  /*
+  onChange={(state) => {
+        // Cancel if edit mode is on
+        if (isEditMode) return;
+        setToggledCategories([...state]);
+      }}
+      */
+
   return (
     <Accordion
       classNames={{
@@ -87,19 +93,13 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
       mx={10}
       chevronPosition="left"
       multiple
-      value={isEditMode ? categoryList : toggledCategories}
       variant="separated"
       radius="lg"
-      onChange={(state) => {
-        // Cancel if edit mode is on
-        if (isEditMode) return;
-        setToggledCategories([...state]);
-      }}
     >
-      <Accordion.Item value={category.name}>
+      <Accordion.Item value={section.name}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Accordion.Control icon={isEditMode && <CategoryEditMenu category={category} />}>
-            <Title order={3}>{category.name}</Title>
+          <Accordion.Control icon={isEditMode && <CategoryEditMenu category={section} />}>
+            <Title order={3}>{section.name}</Title>
           </Accordion.Control>
           {!isEditMode && (
             <Menu withArrow withinPortal>
@@ -109,7 +109,10 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
                 </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown>
-                <Menu.Item onClick={handleMenuClick} icon={<IconShare3 size="1rem" />}>
+                <Menu.Item
+                  onClick={/*handleMenuClick*/ undefined}
+                  icon={<IconShare3 size="1rem" />}
+                >
                   {t('actions.category.openAllInNewTab')}
                 </Menu.Item>
               </Menu.Dropdown>
@@ -119,10 +122,10 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
         <Accordion.Panel>
           <div
             className="grid-stack grid-stack-category"
-            data-category={category.id}
+            data-category={section.id}
             ref={refs.wrapper}
           >
-            <WrapperContent apps={apps} refs={refs} widgets={widgets} />
+            <WrapperContent items={section.items} refs={refs} />
           </div>
         </Accordion.Panel>
       </Accordion.Item>

@@ -1,5 +1,4 @@
 import { createWithEqualityFn } from 'zustand/traditional';
-
 import { useConfigContext } from '~/config/provider';
 import { GridstackBreakpoints } from '~/constants/gridstack-breakpoints';
 
@@ -31,7 +30,8 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 };
 
 export const useWrapperColumnCount = () => {
-  const { config } = useConfigContext();
+  return 10;
+  /*const { config } = useConfigContext();
 
   if (!config) {
     return null;
@@ -46,7 +46,7 @@ export const useWrapperColumnCount = () => {
       return config.settings.customization.gridstack?.columnCountSmall ?? 3;
     default:
       return null;
-  }
+  }*/
 };
 
 function getCurrentShapeSize(size: number) {

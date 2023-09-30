@@ -1,10 +1,21 @@
 import { TRPCError } from '@trpc/server';
+import { randomUUID } from 'crypto';
 import { eq, inArray } from 'drizzle-orm';
 import fs from 'fs';
 import { z } from 'zod';
 import { db } from '~/server/db';
+import { WidgetType } from '~/server/db/items';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
-import { boards, layoutItems, layouts, sections } from '~/server/db/schema';
+import {
+  appItems,
+  apps,
+  boards,
+  items,
+  layoutItems,
+  layouts,
+  sections,
+  widgets,
+} from '~/server/db/schema';
 import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
@@ -142,14 +153,209 @@ export const boardRouter = createTRPCRouter({
           message: 'Board not found',
         });
       }
-
-      console.log(board);
       return board;
+    }),
+  exampleBoard: protectedProcedure
+    .input(z.object({ boardName: configNameSchema }))
+    .mutation(async ({ input, ctx }) => {
+      const boardId = randomUUID();
+      const layoutId = randomUUID();
+      const sectionId = randomUUID();
+      await db.insert(boards).values({
+        id: boardId,
+        name: input.boardName,
+        ownerId: ctx.session.user.id,
+      });
+
+      await db.insert(layouts).values({
+        id: layoutId,
+        name: 'default',
+        boardId,
+      });
+
+      await db.insert(sections).values({
+        id: sectionId,
+        layoutId,
+        type: 'empty',
+        position: 0,
+      });
+
+      await addApp({
+        boardId,
+        sectionId,
+        name: 'Contribute',
+        internalUrl: 'https://github.com/ajnart/homarr',
+        iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png',
+        width: 2,
+        height: 1,
+        x: 2,
+        y: 0,
+      });
+
+      await addApp({
+        boardId,
+        sectionId,
+        name: 'Discord',
+        internalUrl: 'https://discord.com/invite/aCsmEV5RgA',
+        iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/discord.png',
+        width: 2,
+        height: 1,
+        x: 4,
+        y: 0,
+      });
+
+      await addApp({
+        boardId,
+        sectionId,
+        name: 'Donate',
+        internalUrl: 'https://ko-fi.com/ajnart',
+        iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/ko-fi.png',
+        width: 2,
+        height: 1,
+        x: 6,
+        y: 0,
+      });
+
+      await addApp({
+        boardId,
+        sectionId,
+        name: 'Documentation',
+        internalUrl: 'https://homarr.dev',
+        iconUrl: '/imgs/logo/logo.png',
+        width: 2,
+        height: 2,
+        x: 6,
+        y: 1,
+      });
+
+      await addWidget({
+        boardId,
+        sectionId,
+        type: 'weather',
+        width: 2,
+        height: 1,
+        x: 0,
+        y: 0,
+      });
+
+      await addWidget({
+        boardId,
+        sectionId,
+        type: 'date',
+        width: 2,
+        height: 1,
+        x: 8,
+        y: 0,
+      });
+
+      await addWidget({
+        boardId,
+        sectionId,
+        type: 'date',
+        width: 2,
+        height: 1,
+        x: 8,
+        y: 1,
+      });
+
+      await addWidget({
+        boardId,
+        sectionId,
+        type: 'notebook',
+        width: 6,
+        height: 3,
+        x: 0,
+        y: 1,
+      });
     }),
 });
 
+type AddWidgetProps = {
+  boardId: string;
+  sectionId: string;
+  type: WidgetType;
+  width: number;
+  height: number;
+  x: number;
+  y: number;
+};
+
+const addWidget = async ({ boardId, sectionId, type, ...positionProps }: AddWidgetProps) => {
+  const itemId = randomUUID();
+  await db.insert(items).values({
+    id: itemId,
+    type: 'widget',
+    boardId,
+  });
+
+  const widgetId = randomUUID();
+  await db.insert(widgets).values({
+    id: widgetId,
+    type,
+    itemId,
+  });
+
+  const layoutItemId = randomUUID();
+  await db.insert(layoutItems).values({
+    id: layoutItemId,
+    itemId,
+    sectionId,
+    ...positionProps,
+  });
+};
+
+type AddAppProps = {
+  boardId: string;
+  sectionId: string;
+  name: string;
+  internalUrl: string;
+  iconUrl: string;
+  width: number;
+  height: number;
+  x: number;
+  y: number;
+};
+
+const addApp = async ({
+  boardId,
+  sectionId,
+  iconUrl,
+  internalUrl,
+  name,
+  ...positionProps
+}: AddAppProps) => {
+  const itemId = randomUUID();
+  await db.insert(items).values({
+    id: itemId,
+    type: 'app',
+    boardId,
+  });
+
+  const appId = randomUUID();
+  await db.insert(apps).values({
+    id: appId,
+    name,
+    internalUrl,
+    iconUrl,
+  });
+
+  await db.insert(appItems).values({
+    appId: appId,
+    itemId: itemId,
+  });
+
+  const layoutItemId = randomUUID();
+  await db.insert(layoutItems).values({
+    id: layoutItemId,
+    itemId,
+    sectionId,
+    ...positionProps,
+  });
+};
+
 const getAppsForSectionsAsync = async (sectionIds: string[]) => {
   if (sectionIds.length === 0) return [];
+
   return await db.query.appItems.findMany({
     with: {
       app: {
@@ -237,7 +443,7 @@ const mapSection = (
   items: (ReturnType<typeof mapWidget> | ReturnType<typeof mapApp>)[]
 ) => {
   const { layoutId, ...withoutLayoutId } = section;
-  if (section.type === 'empty') {
+  if (withoutLayoutId.type === 'empty') {
     const { name, position, type, ...sectionProps } = withoutLayoutId;
     return {
       ...sectionProps,
@@ -246,7 +452,7 @@ const mapSection = (
       items,
     };
   }
-  if (section.type === 'hidden') {
+  if (withoutLayoutId.type === 'hidden') {
     const { name, position, type, ...sectionProps } = withoutLayoutId;
     return {
       ...sectionProps,
@@ -255,7 +461,7 @@ const mapSection = (
       items,
     };
   }
-  if (section.type === 'category') {
+  if (withoutLayoutId.type === 'category') {
     const { name, position, type, ...sectionProps } = withoutLayoutId;
     return {
       ...sectionProps,

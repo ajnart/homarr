@@ -1,7 +1,8 @@
+import { TRPCError } from '@trpc/server';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
-import { createContext, useContext } from 'react';
-import { Dashboard } from '~/components/Dashboard/Dashboard';
+import { BoardProvider } from '~/components/Board/context';
+import { Board } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { env } from '~/env';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
@@ -9,62 +10,23 @@ import { getServerAuthSession } from '~/server/auth';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
-import { RouterOutputs, api } from '~/utils/api';
-
-type BoardContextType = {
-  boardName: string;
-  layout?: string;
-  board: RouterOutputs['boards']['byName'];
-};
-const BoardContext = createContext<BoardContextType>(null!);
-type BoardProviderProps = {
-  boardName: string;
-  layout?: string;
-  children: React.ReactNode;
-};
-const BoardProvider = ({ children, ...props }: BoardProviderProps) => {
-  const { data: board } = api.boards.byName.useQuery(props);
-
-  return (
-    <BoardContext.Provider
-      value={{
-        ...props,
-        board: board!,
-      }}
-    >
-      {children}
-    </BoardContext.Provider>
-  );
-};
-
-const useBoard = () => {
-  const ctx = useContext(BoardContext);
-  if (!ctx) throw new Error('useBoard must be used within a BoardProvider');
-  return ctx.board;
-};
-
-const Data = () => {
-  const board = useBoard();
-
-  return <pre>{JSON.stringify(board, null, 2)}</pre>;
-};
+import { RouterOutputs } from '~/utils/api';
 
 export default function BoardPage({
-  boardName,
+  board,
   dockerEnabled,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <BoardProvider boardName={boardName}>
+    <BoardProvider initialBoard={board}>
       <BoardLayout dockerEnabled={dockerEnabled}>
-        <Data />
-        <Dashboard />
+        <Board />
       </BoardLayout>
     </BoardProvider>
   );
 }
 
 type BoardGetServerSideProps = {
-  boardName: string;
+  board: RouterOutputs['boards']['byName'];
   dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
@@ -81,8 +43,18 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   );
 
   const helpers = await createTrpcServersideHelpers(ctx);
-  await helpers.boards.byName.prefetch({ boardName });
-  const board = await helpers.boards.byNameSimple.fetch({ boardName });
+  const board = await helpers.boards.byName.fetch({ boardName }).catch((err) => {
+    if (err instanceof TRPCError && err.code === 'NOT_FOUND') {
+      return null;
+    }
+    throw err;
+  });
+
+  if (!board) {
+    return {
+      notFound: true,
+    };
+  }
 
   if (!board.allowGuests && !session?.user) {
     return {
@@ -92,7 +64,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
 
   return {
     props: {
-      boardName,
+      board,
       primaryColor: board.primaryColor,
       secondaryColor: board.secondaryColor,
       primaryShade: board.primaryShade,

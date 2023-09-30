@@ -1,9 +1,9 @@
-import { Affix, Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
+import { Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { AppItem } from '~/components/Board/context';
 
-import { AppType } from '~/types/app';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
@@ -11,21 +11,25 @@ import { AppMenu } from './AppMenu';
 import { AppPing } from './AppPing';
 
 interface AppTileProps extends BaseTileProps {
-  app: AppType;
+  app: AppItem;
 }
+
+const namePositions = {
+  right: 'row',
+  left: 'row-reverse',
+  top: 'column',
+  bottom: 'column-reverse',
+};
 
 export const AppTile = ({ className, app }: AppTileProps) => {
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { cx, classes } = useStyles();
   const { colorScheme } = useMantineTheme();
-  const tooltipContent = [
-    app.appearance.appNameStatus === 'hover' ? app.name : undefined,
-    app.behaviour.tooltipDescription,
-  ]
+  const tooltipContent = [app.nameStyle === 'hover' ? app.name : undefined, app.description]
     .filter((e) => e)
     .join(': ');
 
-  const isRow = app.appearance.positionAppName.includes('row');
+  const isRow = app.namePosition === 'right' || app.namePosition === 'left';
 
   function Inner() {
     return (
@@ -42,26 +46,26 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           className={`${classes.base} ${cx(classes.appContent, 'dashboard-tile-app')}`}
           h="100%"
           sx={{
-            flexFlow: app.appearance.positionAppName ?? 'column',
+            flexFlow: namePositions[app.namePosition] ?? 'column',
           }}
         >
-          {app.appearance.appNameStatus === 'normal' && (
+          {app.nameStyle === 'show' && (
             <Text
               className={cx(classes.appName, 'dashboard-tile-app-title')}
               fw={700}
-              size={app.appearance.appNameFontSize}
+              size={app.fontSize}
               ta="center"
               sx={{
                 flex: isRow ? '1' : undefined,
               }}
-              lineClamp={app.appearance.lineClampAppName}
+              lineClamp={app.nameLineClamp}
             >
               {app.name}
             </Text>
           )}
           <motion.img
             className={cx(classes.appImage, 'dashboard-tile-app-image')}
-            src={app.appearance.iconUrl}
+            src={app.iconUrl!}
             alt={app.name}
             whileHover={{ scale: 0.9 }}
             initial={{ scale: 0.8 }}
@@ -74,10 +78,12 @@ export const AppTile = ({ className, app }: AppTileProps) => {
     );
   }
 
+  const url = app.externalUrl ? app.externalUrl : app.internalUrl;
+
   return (
     <HomarrCardWrapper className={className} p={10}>
       <AppMenu app={app} />
-      {!app.url || isEditMode ? (
+      {!url || isEditMode ? (
         <UnstyledButton
           className={`${classes.button} ${classes.base}`}
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
@@ -88,8 +94,8 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
           component={Link}
-          href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
-          target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
+          href={url}
+          target={app.openInNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
         >
           <Inner />
@@ -111,7 +117,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     overflow: 'visible',
     flexGrow: 5,
   },
-  appImage:{
+  appImage: {
     maxHeight: '100%',
     maxWidth: '100%',
     overflow: 'auto',

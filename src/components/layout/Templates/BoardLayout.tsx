@@ -14,12 +14,11 @@ import { useSession } from 'next-auth/react';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useRequiredBoard } from '~/components/Board/context';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
-import { useConfigContext } from '~/config/provider';
-import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
@@ -30,7 +29,7 @@ type BoardLayoutProps = {
 };
 
 export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
-  const { config } = useConfigContext();
+  const board = useRequiredBoard();
   const { data: session } = useSession();
 
   return (
@@ -41,7 +40,7 @@ export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
-      <style>{clsx(config?.settings.customization.customCss)}</style>
+      <style>{clsx(board.customCss)}</style>
     </MainLayout>
   );
 };
@@ -77,7 +76,7 @@ const DockerButton = () => {
 };
 
 const CustomizeBoardButton = () => {
-  const { name } = useConfigContext();
+  const { name } = useRequiredBoard();
   const { t } = useTranslation('boards/common');
   const href = useBoardLink(`/board/${name}/customize`);
 
@@ -95,7 +94,8 @@ const editModeNotificationId = 'toggle-edit-mode';
 
 const ToggleEditModeButton = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
-  const { config, name: configName } = useConfigContext();
+  const board = useRequiredBoard();
+  const { name } = board;
   const { mutateAsync: saveConfig } = api.config.save.useMutation();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
   const { t } = useTranslation(['layout/header/actions/toggle-edit-mode', 'common']);
@@ -118,9 +118,9 @@ const ToggleEditModeButton = () => {
 
   const save = async () => {
     toggleEditMode();
-    if (!config || !configName) return;
-    await saveConfig({ name: configName, config });
-    Consola.log('Saved config to server', configName);
+    if (!board || !name) return;
+    await saveConfig({ name, config: {} as any });
+    Consola.log('Saved config to server', name);
     hideNotification(editModeNotificationId);
   };
 
@@ -209,9 +209,9 @@ const AddElementButton = () => {
 };
 
 const BackgroundImage = () => {
-  const { config } = useConfigContext();
+  const board = useRequiredBoard();
 
-  if (!config?.settings.customization.backgroundImageUrl) {
+  if (!board.backgroundImageUrl) {
     return null;
   }
 
@@ -220,7 +220,7 @@ const BackgroundImage = () => {
       styles={{
         body: {
           minHeight: '100vh',
-          backgroundImage: `url('${config?.settings.customization.backgroundImageUrl}')`,
+          backgroundImage: `url('${board.backgroundImageUrl}')`,
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',

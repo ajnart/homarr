@@ -1,18 +1,15 @@
 import { Group, Stack } from '@mantine/core';
-import { useEffect, useMemo, useRef } from 'react';
-
-import { useConfigContext } from '~/config/provider';
+import { useEffect, useRef } from 'react';
+import { CategorySection, EmptySection, useRequiredBoard } from '~/components/Board/context';
 import { useResize } from '~/hooks/use-resize';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
-import { CategoryType } from '~/types/category';
-import { WrapperType } from '~/types/wrapper';
-import { DashboardCategory } from '../Wrappers/Category/Category';
+
 import { DashboardSidebar } from '../Wrappers/Sidebar/Sidebar';
 import { DashboardWrapper } from '../Wrappers/Wrapper/Wrapper';
 import { useGridstackStore } from '../Wrappers/gridstack/store';
 
-export const DashboardView = () => {
-  const wrappers = useWrapperItems();
+export const BoardView = () => {
+  const sections = useStackedSections();
   const sidebarsVisible = useSidebarVisibility();
   const { isReady, mainAreaRef } = usePrepareGridstack();
 
@@ -24,11 +21,11 @@ export const DashboardView = () => {
 
       <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
         {isReady &&
-          wrappers.map((item) =>
+          sections.map((item) =>
             item.type === 'category' ? (
-              <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
+              <span>{item.name}</span>
             ) : (
-              <DashboardWrapper key={item.id} wrapper={item as WrapperType} />
+              <DashboardWrapper key={item.id} section={item} />
             )
           )}
       </Stack>
@@ -39,6 +36,8 @@ export const DashboardView = () => {
     </Group>
   );
 };
+// <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
+// <DashboardWrapper key={item.id} wrapper={item as WrapperType} />
 
 const usePrepareGridstack = () => {
   const mainAreaRef = useRef<HTMLDivElement>(null);
@@ -58,29 +57,21 @@ const usePrepareGridstack = () => {
 };
 
 const useSidebarVisibility = () => {
-  const layoutSettings = useConfigContext()?.config?.settings.customization.layout;
+  const board = useRequiredBoard();
   const screenLargerThanMd = useScreenLargerThan('md'); // For smaller screens mobile ribbons are displayed with drawers
 
   const isScreenSizeUnknown = typeof screenLargerThanMd === 'undefined';
 
   return {
-    right: layoutSettings?.enabledRightSidebar && screenLargerThanMd,
-    left: layoutSettings?.enabledLeftSidebar && screenLargerThanMd,
+    right: board.isRightSidebarVisible && screenLargerThanMd,
+    left: board.isLeftSidebarVisible && screenLargerThanMd,
     isLoading: isScreenSizeUnknown,
   };
 };
 
-const useWrapperItems = () => {
-  const { config } = useConfigContext();
-
-  return useMemo(
-    () =>
-      config
-        ? [
-            ...config.categories.map((c) => ({ ...c, type: 'category' })),
-            ...config.wrappers.map((w) => ({ ...w, type: 'wrapper' })),
-          ].sort((a, b) => a.position - b.position)
-        : [],
-    [config?.categories, config?.wrappers]
+const useStackedSections = () => {
+  const board = useRequiredBoard();
+  return board.sections.filter(
+    (s): s is CategorySection | EmptySection => s.type === 'category' || s.type === 'empty'
   );
 };

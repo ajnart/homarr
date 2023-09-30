@@ -8,7 +8,7 @@ import {
 } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
 import React from 'react';
-
+import { WidgetItem } from '~/components/Board/context';
 import { AreaType } from '~/types/area';
 import { ShapeType } from '~/types/shape';
 
@@ -23,6 +23,14 @@ export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> 
   };
   area: AreaType;
   shape: ShapeType;
+};
+
+export type InferWidget<TDefinition extends IWidgetDefinition> = WidgetItem & {
+  options: {
+    [key in keyof TDefinition['options']]: MakeLessSpecific<
+      TDefinition['options'][key]['defaultValue']
+    >;
+  };
 };
 
 // Makes the type less specific

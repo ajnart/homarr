@@ -1,23 +1,24 @@
 import { ComponentType } from 'react';
-
-import Widgets from '.';
+import { WidgetItem } from '~/components/Board/context';
 import { HomarrCardWrapper } from '~/components/Dashboard/Tiles/HomarrCardWrapper';
 import { WidgetsMenu } from '~/components/Dashboard/Tiles/Widgets/WidgetsMenu';
+
+import Widgets from '.';
 import ErrorBoundary from './boundary';
 import { IWidget } from './widgets';
 
 interface WidgetWrapperProps {
   widgetType: string;
-  widget: IWidget<string, any>;
+  widget: WidgetItem;
   className: string;
-  WidgetComponent: ComponentType<{ widget: IWidget<string, any> }>;
+  WidgetComponent: ComponentType<{ widget: WidgetItem }>;
 }
 
 // If a property has no value, set it to the default value
-const useWidget = <T extends IWidget<string, any>>(widget: T): T => {
-  const definition = Widgets[widget.type as keyof typeof Widgets];
+const useWidget = <T extends WidgetItem>(widget: T): T => {
+  const definition = Widgets[widget.sort];
 
-  const newProps = { ...widget.properties };
+  const newProps = { ...widget.options };
 
   Object.entries(definition.options).forEach(([key, option]) => {
     if (newProps[key] == null) {
@@ -27,7 +28,7 @@ const useWidget = <T extends IWidget<string, any>>(widget: T): T => {
 
   return {
     ...widget,
-    properties: newProps,
+    options: newProps,
   };
 };
 

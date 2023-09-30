@@ -1,12 +1,11 @@
 import { createStyles } from '@mantine/core';
-
-import { useConfigContext } from '~/config/provider';
+import { useOptionalBoard } from '~/components/Board/context';
 
 export const useCardStyles = (isCategory: boolean) => {
-  const { config } = useConfigContext();
-  const appOpacity = config?.settings.customization.appOpacity;
+  const board = useOptionalBoard();
+  const appOpacity = board?.appOpacity ?? 100;
   return createStyles(({ colorScheme }, _params) => {
-    const opacity = (appOpacity || 100) / 100;
+    const opacity = appOpacity / 100;
 
     if (colorScheme === 'dark') {
       if (isCategory) {

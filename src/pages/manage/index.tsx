@@ -1,12 +1,14 @@
 import {
   Box,
+  Button,
   Card,
   Group,
+  Image,
   SimpleGrid,
   Stack,
   Text,
+  TextInput,
   Title,
-  Image,
   UnstyledButton,
   createStyles,
 } from '@mantine/core';
@@ -16,11 +18,13 @@ import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { OnlyKeysWithStructure } from '~/types/helpers';
+import { api } from '~/utils/api';
 
 import { type quickActions } from '../../../public/locales/en/manage/index.json';
 
@@ -63,6 +67,8 @@ const ManagementPage = () => {
           </Box>
         </Group>
       </Box>
+
+      <AddBoardCard />
 
       <Text weight="bold" mb="md">
         {t('quickActions.title')}
@@ -156,3 +162,34 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }));
+
+const AddBoardCard = () => {
+  const { mutate } = api.boards.exampleBoard.useMutation();
+  const [value, setValue] = useState('');
+
+  const handleClick = () => {
+    if (!value) return;
+    mutate(
+      { boardName: value },
+      {
+        onSuccess: () => {
+          setValue('');
+        },
+      }
+    );
+  };
+
+  return (
+    <Card withBorder w="100%">
+      <Group w="100%" noWrap>
+        <TextInput
+          w="100%"
+          value={value}
+          onChange={(e) => setValue(e.currentTarget.value)}
+          placeholder="Boardname"
+        />
+        <Button onClick={handleClick}>Create test board</Button>
+      </Group>
+    </Card>
+  );
+};

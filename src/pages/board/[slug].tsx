@@ -1,7 +1,7 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { z } from 'zod';
-import { Dashboard } from '~/components/Dashboard/Dashboard';
+import { Board } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
 import { env } from '~/env';
@@ -21,7 +21,7 @@ export default function BoardPage({
 
   return (
     <BoardLayout dockerEnabled={dockerEnabled}>
-      <Dashboard />
+      <Board />
     </BoardLayout>
   );
 }

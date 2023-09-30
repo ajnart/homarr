@@ -16,24 +16,24 @@ import { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
+import { ConfigProvider } from '~/config/provider';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
+import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
+import {
+  ServerSidePackageAttributesType,
+  getServiceSidePackageAttributes,
+} from '~/tools/server/getPackageVersion';
+import { theme } from '~/tools/server/theme/theme';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
 
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
-import { ConfigProvider } from '~/config/provider';
 import '../styles/global.scss';
-import { ColorTheme } from '~/tools/color';
-import {
-  ServerSidePackageAttributesType,
-  getServiceSidePackageAttributes,
-} from '~/tools/server/getPackageVersion';
-import { theme } from '~/tools/server/theme/theme';
 
 dayjs.extend(locale);
 dayjs.extend(utc);
@@ -69,6 +69,7 @@ function App(
   const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(
     props.pageProps.primaryShade ?? 6
   );
+
   const colorTheme = {
     primaryColor,
     secondaryColor,

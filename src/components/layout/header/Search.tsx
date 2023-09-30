@@ -12,7 +12,7 @@ import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
-import { useConfigContext } from '~/config/provider';
+import { AppItem, useOptionalBoard } from '~/components/Board/context';
 import { api } from '~/utils/api';
 
 import { MovieModal } from './Search/MovieModal';
@@ -31,19 +31,22 @@ export const Search = ({ isMobile, autoFocus }: SearchProps) => {
   const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
     enabled: !!sessionData?.user,
   });
-  const { config } = useConfigContext();
+  const board = useOptionalBoard();
   const { colors } = useMantineTheme();
   const router = useRouter();
   const [showMovieModal, movieModal] = useDisclosure(router.query.movie === 'true');
 
-  const apps = useConfigApps(search);
+  const apps = useBoardApps(search);
   const engines = generateEngines(
     search,
     userWithSettings?.settings.searchTemplate ?? 'https://www.google.com/search?q=%s'
   )
     .filter(
       (engine) =>
-        engine.sort !== 'movie' || config?.apps.some((app) => app.integration.type === engine.value)
+        engine.sort !== 'movie' ||
+        board?.sections.some((section) =>
+          section.items.some((x) => x.type === 'app' && x.integration?.type === engine.value)
+        )
     )
     .map((engine) => ({
       ...engine,
@@ -139,25 +142,27 @@ const getItemComponent = (icon: SearchAutoCompleteItem['icon']) => {
   );
 };
 
-const useConfigApps = (search: string) => {
-  const { config } = useConfigContext();
+const useBoardApps = (search: string) => {
+  const board = useOptionalBoard();
   return useMemo(() => {
     if (search.trim().length === 0) return [];
-    const apps = config?.apps.filter((app) =>
-      app.name.toLowerCase().includes(search.toLowerCase())
-    );
-    return (
-      apps?.map((app) => ({
-        icon: app.appearance.iconUrl,
-        label: app.name,
-        value: app.name,
-        sort: 'app',
-        metaData: {
-          url: app.behaviour.externalUrl,
-        },
-      })) ?? []
-    );
-  }, [search, config]);
+    if (!board) return [];
+    const apps = board.sections
+      .flatMap((section) => section.items.filter((item) => item.type === 'app'))
+      .filter(
+        (x): x is AppItem => x.type === 'app' && x.name.toLowerCase().includes(search.toLowerCase())
+      );
+
+    return apps.map((app) => ({
+      icon: app.iconUrl,
+      label: app.name,
+      value: app.name,
+      sort: 'app',
+      metaData: {
+        url: app.externalUrl,
+      },
+    }));
+  }, [search, board]);
 };
 
 type SearchAutoCompleteItem = {

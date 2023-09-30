@@ -1,7 +1,7 @@
-import { Group, Image, Text } from '@mantine/core';
+import { Group, Image, Text, useMantineTheme } from '@mantine/core';
+import { useOptionalBoard } from '~/components/Board/context';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
-import { useConfigContext } from '~/config/provider';
 import { usePrimaryGradient } from './useGradient';
 
 interface LogoProps {
@@ -10,29 +10,42 @@ interface LogoProps {
 }
 
 export function Logo({ size = 'md', withoutText = false }: LogoProps) {
-  const { config } = useConfigContext();
+  const theme = useMantineTheme();
+  const board = useOptionalBoard();
   const primaryGradient = usePrimaryGradient();
   const largerThanMd = useScreenLargerThan('md');
+
+  const colors = theme.fn.variant({
+    variant: 'gradient',
+    gradient: {
+      from: 'red',
+      to: 'orange',
+      deg: 125,
+    },
+  });
 
   return (
     <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
       <Image
         width={size === 'md' ? 50 : 12}
-        src={config?.settings.customization.logoImageUrl || '/imgs/logo/logo-color.svg'}
+        src={board?.logoImageUrl || '/imgs/logo/logo-color.svg'}
         alt="Homarr Logo"
         className="dashboard-header-logo-image"
       />
       {withoutText || !largerThanMd ? null : (
         <Text
           size={size === 'md' ? 22 : 10}
-          weight="bold"
-          variant="gradient"
-          className="dashboard-header-logo-text"
           gradient={primaryGradient}
+          variant="gradient"
+          weight="bold"
+          className="dashboard-header-logo-text"
         >
-          {config?.settings.customization.pageTitle || 'Homarr'}
+          {board?.pageTitle || 'Homarr'}
         </Text>
       )}
     </Group>
   );
 }
+
+// TODO: Mantine gradient didn't work
+//

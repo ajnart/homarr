@@ -5,12 +5,12 @@ import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useState } from 'react';
+import { useRequiredBoard } from '~/components/Board/context';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '~/config/provider';
 import { WidgetLoading } from '../loading';
 import { INotebookWidget } from './NotebookWidgetTile';
 
@@ -19,12 +19,12 @@ Link.configure({
 });
 
 export function Editor({ widget }: { widget: INotebookWidget }) {
-  const [content, setContent] = useState(widget.properties.content);
+  const [content, setContent] = useState(widget.options.content);
 
   const { enabled } = useEditModeStore();
   const [isEditing, setIsEditing] = useState(false);
 
-  const { config, name: configName } = useConfigContext();
+  const board = useRequiredBoard();
   const updateConfig = useConfigStore((x) => x.updateConfig);
   const { primaryColor } = useColorTheme();
 
@@ -47,7 +47,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     editor.setEditable(current);
 
     updateConfig(
-      configName!,
+      board.name!,
       (previous) => {
         const currentWidget = previous.widgets.find((x) => x.id === widget.id);
         currentWidget!.properties.content = debouncedContent;
@@ -64,7 +64,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     );
 
     void mutateAsync({
-      configName: configName!,
+      configName: board.name!,
       content: debouncedContent,
       widgetId: widget.id,
     });
@@ -72,7 +72,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     return current;
   };
 
-  if (!config || !configName) return <WidgetLoading />;
+  if (!board) return <WidgetLoading />;
 
   return (
     <>
@@ -104,7 +104,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       >
         <RichTextEditor.Toolbar
           style={{
-            display: isEditing && widget.properties.showToolbar === true ? 'flex' : 'none',
+            display: isEditing && widget.options.showToolbar === true ? 'flex' : 'none',
           }}
         >
           <RichTextEditor.ControlsGroup>

@@ -1,29 +1,30 @@
-import { WrapperType } from '~/types/wrapper';
+import { EmptySection } from '~/components/Board/context';
+
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { WrapperContent } from '../WrapperContent';
 import { useGridstack } from '../gridstack/use-gridstack';
 
 interface DashboardWrapperProps {
-  wrapper: WrapperType;
+  section: EmptySection;
 }
 
-export const DashboardWrapper = ({ wrapper }: DashboardWrapperProps) => {
-  const { refs, apps, widgets } = useGridstack('wrapper', wrapper.id);
+export const DashboardWrapper = ({ section }: DashboardWrapperProps) => {
+  const { refs } = useGridstack({ section });
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const defaultClasses = 'grid-stack grid-stack-wrapper min-row';
+  const defaultClasses = 'grid-stack grid-stack-empty min-row';
 
   return (
     <div
       className={
-        apps.length > 0 || widgets.length > 0 || isEditMode
+        section.items.length > 0 || isEditMode
           ? defaultClasses
           : `${defaultClasses} gridstack-empty-wrapper`
       }
       style={{ transitionDuration: '0s' }}
-      data-wrapper={wrapper.id}
+      data-empty={section.id}
       ref={refs.wrapper}
     >
-      <WrapperContent apps={apps} refs={refs} widgets={widgets} />
+      <WrapperContent items={section.items} refs={refs} />
     </div>
   );
 };

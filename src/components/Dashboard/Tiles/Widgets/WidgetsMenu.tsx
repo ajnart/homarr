@@ -1,9 +1,10 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-
+import { WidgetItem } from '~/components/Board/context';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
-import WidgetsDefinitions from '../../../../widgets';
 import { IWidget } from '~/widgets/widgets';
+
+import WidgetsDefinitions from '../../../../widgets';
 import { useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { GenericTileMenu } from '../GenericTileMenu';
 import { WidgetEditModalInnerProps } from './WidgetsEditModal';
@@ -18,7 +19,7 @@ export type WidgetChangePositionModalInnerProps = {
 
 interface WidgetsMenuProps {
   integration: string;
-  widget: IWidget<string, any> | undefined;
+  widget: WidgetItem | undefined;
 }
 
 export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
@@ -67,7 +68,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       innerProps: {
         widgetId: widget.id,
         widgetType: integration,
-        options: widget.properties,
+        options: widget.options,
         // Cast as the right type for the correct widget
         widgetOptions: widgetDefinitionObject.options as any,
       },
@@ -81,7 +82,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       handleClickChangePosition={handleChangeSizeClick}
       handleClickDelete={handleDeleteClick}
       displayEdit={
-        typeof widget.properties !== 'undefined' &&
+        typeof widget.options !== 'undefined' &&
         Object.keys(widgetDefinitionObject?.options ?? {}).length !== 0
       }
     />

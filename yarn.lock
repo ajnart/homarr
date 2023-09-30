@@ -1030,7 +1030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^6.0.0":
+"@mantine/core@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/core@npm:6.0.21"
   dependencies:
@@ -1048,7 +1048,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/dates@npm:^6.0.0":
+"@mantine/dates@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/dates@npm:6.0.21"
   dependencies:
@@ -1062,7 +1062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/dropzone@npm:^6.0.0":
+"@mantine/dropzone@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/dropzone@npm:6.0.21"
   dependencies:
@@ -1077,7 +1077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/form@npm:^6.0.0":
+"@mantine/form@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/form@npm:6.0.21"
   dependencies:
@@ -1089,7 +1089,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^6.0.0":
+"@mantine/hooks@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/hooks@npm:6.0.21"
   peerDependencies:
@@ -1098,7 +1098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/modals@npm:^6.0.0":
+"@mantine/modals@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/modals@npm:6.0.21"
   dependencies:
@@ -1112,7 +1112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:^6.0.0":
+"@mantine/next@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/next@npm:6.0.21"
   dependencies:
@@ -1126,7 +1126,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/notifications@npm:^6.0.0":
+"@mantine/notifications@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/notifications@npm:6.0.21"
   dependencies:
@@ -1141,7 +1141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/prism@npm:^6.0.19":
+"@mantine/prism@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/prism@npm:6.0.21"
   dependencies:
@@ -1185,7 +1185,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/tiptap@npm:^6.0.17":
+"@mantine/tiptap@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/tiptap@npm:6.0.21"
   dependencies:
@@ -7566,16 +7566,16 @@ __metadata:
     "@emotion/react": ^11.10.6
     "@emotion/server": ^11.10.0
     "@jellyfin/sdk": ^0.8.0
-    "@mantine/core": ^6.0.0
-    "@mantine/dates": ^6.0.0
-    "@mantine/dropzone": ^6.0.0
-    "@mantine/form": ^6.0.0
-    "@mantine/hooks": ^6.0.0
-    "@mantine/modals": ^6.0.0
-    "@mantine/next": ^6.0.0
-    "@mantine/notifications": ^6.0.0
-    "@mantine/prism": ^6.0.19
-    "@mantine/tiptap": ^6.0.17
+    "@mantine/core": ^6.0.21
+    "@mantine/dates": ^6.0.21
+    "@mantine/dropzone": ^6.0.21
+    "@mantine/form": ^6.0.21
+    "@mantine/hooks": ^6.0.21
+    "@mantine/modals": ^6.0.21
+    "@mantine/next": ^6.0.21
+    "@mantine/notifications": ^6.0.21
+    "@mantine/prism": ^6.0.21
+    "@mantine/tiptap": ^6.0.21
     "@next/bundle-analyzer": ^13.0.0
     "@next/eslint-plugin-next": ^13.4.5
     "@nivo/core": ^0.83.0

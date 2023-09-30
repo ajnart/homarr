@@ -130,7 +130,7 @@ export const boards = sqliteTable('board', {
   backgroundImageUrl: text('background_image_url'),
   primaryColor: text('primary_color'),
   secondaryColor: text('secondary_color'),
-  primaryShade: text('primary_shade'),
+  primaryShade: int('primary_shade'),
   appOpacity: int('app_opacity'),
   customCss: text('custom_css'),
 
@@ -165,7 +165,9 @@ export const integrationSecrets = sqliteTable(
 export const widgets = sqliteTable('widget', {
   id: text('id').notNull().primaryKey(),
   type: text('type').$type<WidgetType>().notNull(),
-  itemId: text('item_id').notNull(),
+  itemId: text('item_id')
+    .notNull()
+    .references(() => items.id, { onDelete: 'cascade' }),
 });
 
 export const widgetOptions = sqliteTable(
@@ -205,7 +207,7 @@ export const appItems = sqliteTable('app_item', {
   openInNewTab: int('open_in_new_tab', { mode: 'boolean' }).notNull().default(false),
   isPingEnabled: int('is_ping_enabled', { mode: 'boolean' }).notNull().default(false),
   fontSize: int('font_size').notNull().default(16),
-  namePosition: text('name_position').$type<AppNamePosition>().notNull().default('right'),
+  namePosition: text('name_position').$type<AppNamePosition>().notNull().default('top'),
   nameStyle: text('name_style').$type<AppNameStyle>().notNull().default('show'),
   nameLineClamp: int('name_line_clamp').notNull().default(1),
   appId: text('app_id')
@@ -238,8 +240,12 @@ export const appStatusCodes = sqliteTable(
 
 export const layoutItems = sqliteTable('layout_item', {
   id: text('id').notNull().primaryKey(),
-  sectionId: text('section_id').notNull(),
-  itemId: text('item_id').notNull(),
+  sectionId: text('section_id')
+    .notNull()
+    .references(() => sections.id, { onDelete: 'cascade' }),
+  itemId: text('item_id')
+    .notNull()
+    .references(() => items.id, { onDelete: 'cascade' }),
   x: int('x').notNull(),
   y: int('y').notNull(),
   width: int('width').notNull(),

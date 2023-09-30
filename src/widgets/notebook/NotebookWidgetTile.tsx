@@ -1,9 +1,8 @@
 import { IconNotes } from '@tabler/icons-react';
-import { useTranslation } from 'next-i18next';
 import dynamic from 'next/dynamic';
 
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { InferWidget } from '../widgets';
 
 const Editor = dynamic(() => import('./NotebookEditor').then((module) => module.Editor), {
   ssr: false,
@@ -34,7 +33,7 @@ const definition = defineWidget({
 
 export default definition;
 
-export type INotebookWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type INotebookWidget = InferWidget<typeof definition>;
 
 interface NotebookWidgetProps {
   widget: INotebookWidget;

@@ -4,19 +4,19 @@ import Consola from 'consola';
 import { TargetAndTransition, Transition, motion } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import { RouterOutputs, api } from '~/utils/api';
-
+import { AppItem } from '~/components/Board/context';
 import { useConfigContext } from '~/config/provider';
 import { AppType } from '~/types/app';
+import { RouterOutputs, api } from '~/utils/api';
 
 interface AppPingProps {
-  app: AppType;
+  app: AppItem;
 }
 
 export const AppPing = ({ app }: AppPingProps) => {
   const { data: sessionData } = useSession();
   const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
-    enabled: app.network.enabledStatusChecker && !!sessionData?.user,
+    enabled: app.isPingEnabled && !!sessionData?.user,
   });
 
   const { data, isFetching, isError, error, isActive } = usePing(app);
@@ -74,13 +74,6 @@ const AccessibleIndicatorPing = ({ isFetching, isOnline }: AccessibleIndicatorPi
   return <IconX color="red" />;
 };
 
-export const isStatusOk = (app: AppType, status: number) => {
-  if (app.network.okStatus === undefined || app.network.statusCodes.length >= 1) {
-    return app.network.statusCodes.includes(status.toString());
-  }
-  return app.network.okStatus.includes(status);
-};
-
 type TooltipLabelProps = {
   isFetching: boolean;
   isError: boolean;
@@ -97,11 +90,10 @@ const useTooltipLabel = ({ isFetching, isError, data, errorMessage }: TooltipLab
   return `${data?.statusText}: ${data?.status} (denied)`;
 };
 
-const usePing = (app: AppType) => {
+const usePing = (app: AppItem) => {
   const { config, name } = useConfigContext();
   const isActive =
-    (config?.settings.customization.layout.enabledPing && app.network.enabledStatusChecker) ??
-    false;
+    (config?.settings.customization.layout.enabledPing && app.isPingEnabled) ?? false;
 
   const queryResult = api.app.ping.useQuery(
     {
@@ -122,11 +114,15 @@ const usePing = (app: AppType) => {
       retryOnMount: true,
 
       select: (data) => {
-        const isOk = isStatusOk(app, data.status);
+        const isOk = app.statusCodes.includes(data.status);
         if (isOk)
-          Consola.info(`Ping of app "${app.name}" (${app.url}) returned ${data.status} (Accepted)`);
+          Consola.info(
+            `Ping of app "${app.name}" (${app.internalUrl}) returned ${data.status} (Accepted)`
+          );
         else
-          Consola.warn(`Ping of app "${app.name}" (${app.url}) returned ${data.status} (Refused)`);
+          Consola.warn(
+            `Ping of app "${app.name}" (${app.internalUrl}) returned ${data.status} (Refused)`
+          );
         return {
           status: data.status,
           state: isOk ? ('online' as const) : ('down' as const),
