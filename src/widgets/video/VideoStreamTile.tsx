@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import dynamic from 'next/dynamic';
 
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 
 const VideoFeed = dynamic(() => import('./VideoFeed'), { ssr: false });
 
@@ -38,7 +38,7 @@ const definition = defineWidget({
   component: VideoStreamWidget,
 });
 
-export type VideoStreamWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type VideoStreamWidget = InferWidget<typeof definition>;
 
 interface VideoStreamWidgetProps {
   widget: VideoStreamWidget;
@@ -46,7 +46,7 @@ interface VideoStreamWidgetProps {
 
 function VideoStreamWidget({ widget }: VideoStreamWidgetProps) {
   const { t } = useTranslation('modules/video-stream');
-  if (!widget.properties.FeedUrl) {
+  if (!widget.options.FeedUrl) {
     return (
       <Center h="100%">
         <Stack align="center">
@@ -59,10 +59,10 @@ function VideoStreamWidget({ widget }: VideoStreamWidgetProps) {
   return (
     <Group position="center" w="100%" h="100%">
       <VideoFeed
-        source={widget?.properties.FeedUrl}
-        muted={widget?.properties.muted}
-        autoPlay={widget?.properties.autoPlay}
-        controls={widget?.properties.controls}
+        source={widget.options.FeedUrl}
+        muted={widget.options.muted}
+        autoPlay={widget.options.autoPlay}
+        controls={widget.options.controls}
       />
     </Group>
   );

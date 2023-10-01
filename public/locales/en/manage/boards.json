@@ -19,6 +19,7 @@
         },
         "badges": {
             "fileSystem": "File system",
+            "database": "Database",
             "default": "Default"
         }
     },

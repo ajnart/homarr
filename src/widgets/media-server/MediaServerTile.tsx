@@ -11,13 +11,13 @@ import {
 } from '@mantine/core';
 import { IconAlertTriangle, IconMovie } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-
 import { AppAvatar } from '~/components/AppAvatar';
 import { useConfigContext } from '~/config/provider';
-import { useGetMediaServers } from './useGetMediaServers';
+
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 import { TableRow } from './TableRow';
+import { useGetMediaServers } from './useGetMediaServers';
 
 const definition = defineWidget({
   id: 'media-server',
@@ -32,7 +32,7 @@ const definition = defineWidget({
   },
 });
 
-export type MediaServerWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type MediaServerWidget = InferWidget<typeof definition>;
 
 interface MediaServerWidgetProps {
   widget: MediaServerWidget;

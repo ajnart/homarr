@@ -1,11 +1,4 @@
-import {
-  Button,
-  Container,
-  Indicator,
-  IndicatorProps,
-  Popover,
-  useMantineTheme,
-} from '@mantine/core';
+import { Container, Indicator, IndicatorProps, Popover, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import { MediaList } from './MediaList';

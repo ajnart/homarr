@@ -2,7 +2,6 @@ import { Button, Card, Center, Grid, Stack, Text } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import React from 'react';
 
 import { useStyles } from './styles';
 

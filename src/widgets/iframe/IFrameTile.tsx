@@ -3,7 +3,7 @@ import { IconBrowser, IconUnlink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 
 const definition = defineWidget({
   id: 'iframe',
@@ -55,7 +55,7 @@ const definition = defineWidget({
   component: IFrameTile,
 });
 
-export type IIFrameWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IIFrameWidget = InferWidget<typeof definition>;
 
 interface IFrameTileProps {
   widget: IIFrameWidget;
@@ -65,7 +65,7 @@ function IFrameTile({ widget }: IFrameTileProps) {
   const { t } = useTranslation('modules/iframe');
   const { classes } = useStyles();
 
-  if (!widget.properties.embedUrl) {
+  if (!widget.options.embedUrl) {
     return (
       <Center h="100%">
         <Stack align="center">
@@ -85,31 +85,31 @@ function IFrameTile({ widget }: IFrameTileProps) {
 
   const allowedPermissions: string[] = [];
 
-  if (widget.properties.allowTransparency) {
+  if (widget.options.allowTransparency) {
     allowedPermissions.push('transparency');
   }
 
-  if (widget.properties.allowFullScreen) {
+  if (widget.options.allowFullScreen) {
     allowedPermissions.push('fullscreen');
   }
 
-  if (widget.properties.allowPayment) {
+  if (widget.options.allowPayment) {
     allowedPermissions.push('payment');
   }
 
-  if (widget.properties.allowAutoPlay) {
+  if (widget.options.allowAutoPlay) {
     allowedPermissions.push('autoplay');
   }
 
-  if (widget.properties.allowCamera) {
+  if (widget.options.allowCamera) {
     allowedPermissions.push('camera');
   }
 
-  if (widget.properties.allowMicrophone) {
+  if (widget.options.allowMicrophone) {
     allowedPermissions.push('microphone');
   }
 
-  if (widget.properties.allowGeolocation) {
+  if (widget.options.allowGeolocation) {
     allowedPermissions.push('geolocation');
   }
 
@@ -117,7 +117,7 @@ function IFrameTile({ widget }: IFrameTileProps) {
     <Container h="100%" w="100%" maw="initial" mah="initial" p={0}>
       <iframe
         className={classes.iframe}
-        src={widget.properties.embedUrl}
+        src={widget.options.embedUrl}
         title="widget iframe"
         allow={allowedPermissions.join(' ')}
       >

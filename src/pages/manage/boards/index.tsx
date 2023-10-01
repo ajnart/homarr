@@ -15,6 +15,7 @@ import { useListState } from '@mantine/hooks';
 import {
   IconBox,
   IconCategory,
+  IconDatabase,
   IconDeviceFloppy,
   IconDotsVertical,
   IconFolderFilled,
@@ -23,7 +24,7 @@ import {
   IconStarFilled,
   IconTrash,
 } from '@tabler/icons-react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -31,6 +32,7 @@ import Link from 'next/link';
 import { openCreateBoardModal } from '~/components/Manage/Board/create-board.modal';
 import { openDeleteBoardModal } from '~/components/Manage/Board/delete-board.modal';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { sleep } from '~/tools/client/time';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -38,10 +40,12 @@ import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
-const BoardsPage = () => {
+const BoardsPage = ({ initialBoards }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const context = api.useContext();
   const { data: sessionData } = useSession();
-  const { data } = api.boards.all.useQuery();
+  const { data } = api.boards.all.useQuery(undefined, {
+    initialData: initialBoards,
+  });
   const { mutateAsync } = api.user.makeDefaultDashboard.useMutation({
     onSettled: () => {
       void context.boards.invalidate();
@@ -91,13 +95,19 @@ const BoardsPage = () => {
                   {board.name}
                 </Text>
                 <Group spacing="xs" noWrap>
-                  <Badge
-                    leftSection={<IconFolderFilled size=".7rem" />}
-                    color="pink"
-                    variant="light"
-                  >
-                    {t('cards.badges.fileSystem')}
-                  </Badge>
+                  {board.type === 'file' ? (
+                    <Badge
+                      leftSection={<IconFolderFilled size=".7rem" />}
+                      color="pink"
+                      variant="light"
+                    >
+                      {t('cards.badges.fileSystem')}
+                    </Badge>
+                  ) : (
+                    <Badge leftSection={<IconDatabase size=".7rem" />} color="blue" variant="light">
+                      {t('cards.badges.database')}
+                    </Badge>
+                  )}
                   {board.isDefaultForUser && (
                     <Badge
                       leftSection={<IconStarFilled size=".7rem" />}
@@ -209,6 +219,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     return result;
   }
 
+  const helpers = await createTrpcServersideHelpers(ctx);
+  const initialBoards = await helpers.boards.all.fetch();
+
   const translations = await getServerSideTranslations(
     manageNamespaces,
     ctx.locale,
@@ -217,6 +230,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   );
   return {
     props: {
+      initialBoards,
       ...translations,
     },
   };

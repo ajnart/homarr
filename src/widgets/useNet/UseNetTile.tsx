@@ -6,18 +6,18 @@ import duration from 'dayjs/plugin/duration';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
-
 import { useConfigContext } from '~/config/provider';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { AppIntegrationType } from '~/types/app';
+
 import {
   useGetUsenetInfo,
   usePauseUsenetQueueMutation,
   useResumeUsenetQueueMutation,
 } from '../dashDot/api';
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { InferWidget } from '../widgets';
 import { UsenetHistoryList } from './UsenetHistoryList';
 import { UsenetQueueList } from './UsenetQueueList';
 
@@ -38,7 +38,7 @@ const definition = defineWidget({
   },
 });
 
-export type IUsenetWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IUsenetWidget = InferWidget<typeof definition>;
 
 interface UseNetTileProps {
   widget: IUsenetWidget;

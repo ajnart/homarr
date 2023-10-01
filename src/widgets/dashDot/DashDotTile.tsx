@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 import { DashDotGraph } from './DashDotGraph';
 
 const definition = defineWidget({
@@ -144,7 +144,7 @@ const definition = defineWidget({
   component: DashDotTile,
 });
 
-export type IDashDotTile = IWidget<(typeof definition)['id'], typeof definition>;
+export type IDashDotTile = InferWidget<typeof definition>;
 
 interface DashDotTileProps {
   widget: IDashDotTile;
@@ -154,7 +154,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { classes } = useDashDotTileStyles();
   const { t } = useTranslation('modules/dashdot');
 
-  const dashDotUrl = widget.properties.url;
+  const dashDotUrl = widget.options.url;
   const locationProtocol = window.location.protocol;
   const detectedProtocolDowngrade =
     locationProtocol === 'https:' && dashDotUrl.toLowerCase().startsWith('http:');
@@ -178,7 +178,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
     );
   }
 
-  const { dashName, graphsOrder, usePercentages, columns, graphHeight } = widget.properties;
+  const { dashName, graphsOrder, usePercentages, columns, graphHeight } = widget.options;
 
   return (
     <Stack spacing="xs">

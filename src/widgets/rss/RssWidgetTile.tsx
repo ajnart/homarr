@@ -22,7 +22,7 @@ import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget, InferWidgetOptions } from '../widgets';
 
 const definition = defineWidget({
   id: 'rss',
@@ -61,7 +61,8 @@ const definition = defineWidget({
   component: RssTile,
 });
 
-export type IRssWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IRssWidget = InferWidget<typeof definition>;
+export type RssWidgetOptions = InferWidgetOptions<typeof definition>;
 
 interface RssTileProps {
   widget: IRssWidget;
@@ -72,8 +73,8 @@ function RssTile({ widget }: RssTileProps) {
   const { name: configName } = useConfigContext();
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeeds(
     configName,
-    widget.properties.rssFeedUrl,
-    widget.properties.refreshInterval,
+    widget.options.rssFeedUrl,
+    widget.options.refreshInterval,
     widget.id
   );
   const { classes } = useStyles();
@@ -164,7 +165,7 @@ function RssTile({ widget }: RssTileProps) {
                         className={classes.itemContent}
                         color="dimmed"
                         size="xs"
-                        lineClamp={widget.properties.textLinesClamp}
+                        lineClamp={widget.options.textLinesClamp}
                         dangerouslySetInnerHTML={{ __html: item.content }}
                       />
 

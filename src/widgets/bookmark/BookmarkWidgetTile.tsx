@@ -3,11 +3,11 @@ import {
   Box,
   Button,
   Card,
+  Divider,
   Flex,
   Group,
   Image,
   ScrollArea,
-  Divider,
   Stack,
   Switch,
   Text,
@@ -27,14 +27,14 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
+import React from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
-import React from 'react';
-
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { IconSelector } from '~/components/IconSelector/IconSelector';
+
 import { defineWidget } from '../helper';
-import { IDraggableEditableListInputValue, IWidget } from '../widgets';
+import { IDraggableEditableListInputValue, IWidget, InferWidget } from '../widgets';
 
 interface BookmarkItem {
   id: string;
@@ -54,7 +54,7 @@ const definition = defineWidget({
       type: 'text',
       defaultValue: '',
       info: true,
-      infoLink: "https://homarr.dev/docs/widgets/bookmarks/",
+      infoLink: 'https://homarr.dev/docs/widgets/bookmarks/',
     },
     items: {
       type: 'draggable-editable-list',
@@ -84,11 +84,11 @@ const definition = defineWidget({
                 return undefined;
               }
 
-              return t('item.validation.length', {shortest: "1", longest: "100"});
+              return t('item.validation.length', { shortest: '1', longest: '100' });
             },
             href: (value) => {
               if (!z.string().min(1).max(200).safeParse(value).success) {
-                return t('item.validation.length', {shortest: "1", longest: "200"});
+                return t('item.validation.length', { shortest: '1', longest: '200' });
               }
 
               if (!z.string().url().safeParse(value).success) {
@@ -102,7 +102,7 @@ const definition = defineWidget({
                 return undefined;
               }
 
-              return t('item.validation.length', {shortest: "1", longest: "400"});
+              return t('item.validation.length', { shortest: '1', longest: '400' });
             },
           },
           validateInputOnChange: true,
@@ -174,11 +174,7 @@ const definition = defineWidget({
     } satisfies IDraggableEditableListInputValue<BookmarkItem>,
     layout: {
       type: 'select',
-      data: [
-        { value: 'autoGrid', },
-        { value: 'horizontal', },
-        { value: 'vertical', },
-      ],
+      data: [{ value: 'autoGrid' }, { value: 'horizontal' }, { value: 'vertical' }],
       defaultValue: 'autoGrid',
     },
   },
@@ -191,7 +187,7 @@ const definition = defineWidget({
   component: BookmarkWidgetTile,
 });
 
-export type IBookmarkWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IBookmarkWidget = InferWidget<typeof definition>;
 
 interface BookmarkWidgetTileProps {
   widget: IBookmarkWidget;
@@ -203,7 +199,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
   const { fn, colors, colorScheme } = useMantineTheme();
   const { t } = useTranslation('modules/bookmark');
 
-  if (widget.properties.items.length === 0) {
+  if (widget.options.items.length === 0) {
     return (
       <Stack align="center">
         <IconPlaylistX />
@@ -219,17 +215,19 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
     );
   }
 
-  switch (widget.properties.layout) {
+  switch (widget.options.layout) {
     case 'autoGrid':
       return (
         <Stack h="100%" spacing={0}>
-          <Title size="h4" px="0.25rem">{widget.properties.name}</Title>
+          <Title size="h4" px="0.25rem">
+            {widget.options.name}
+          </Title>
           <Box
             className={classes.grid}
-            mr={isEditModeEnabled && widget.properties.name === "" ? 'xl' : undefined}
+            mr={isEditModeEnabled && widget.options.name === '' ? 'xl' : undefined}
             h="100%"
           >
-            {widget.properties.items.map((item: BookmarkItem, index) => (
+            {widget.options.items.map((item: BookmarkItem, index) => (
               <Card
                 className={classes.autoGridItem}
                 key={index}
@@ -239,10 +237,12 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                 href={item.href}
                 target={item.openNewTab ? '_blank' : undefined}
                 withBorder
-                bg={colorScheme === 'dark' ? colors.dark[5].concat('80') : colors.blue[0].concat('80')}
+                bg={
+                  colorScheme === 'dark' ? colors.dark[5].concat('80') : colors.blue[0].concat('80')
+                }
                 sx={{
-                  '&:hover': { backgroundColor: fn.primaryColor().concat('40'), }, //'40' = 25% opacity
-                  flex:'1 1 auto',
+                  '&:hover': { backgroundColor: fn.primaryColor().concat('40') }, //'40' = 25% opacity
+                  flex: '1 1 auto',
                 }}
                 display="flex"
               >
@@ -257,38 +257,38 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
       return (
         <Stack h="100%" spacing={0}>
           <Title size="h4" px="0.25rem">
-            {widget.properties.name}
+            {widget.options.name}
           </Title>
           <ScrollArea
             scrollbarSize={8}
             type="auto"
             h="100%"
             offsetScrollbars
-            mr={isEditModeEnabled && widget.properties.name === ""? 'xl' : undefined}
+            mr={isEditModeEnabled && widget.options.name === '' ? 'xl' : undefined}
             styles={{
-              viewport:{
+              viewport: {
                 //mantine being mantine again... this might break. Needed for taking 100% of widget space
-                '& div[style="min-width: 100%; display: table;"]':{
+                '& div[style="min-width: 100%; display: table;"]': {
                   display: 'flex !important',
-                  height:'100%',
+                  height: '100%',
                 },
               },
             }}
           >
             <Flex
-              direction={ widget.properties.layout === 'vertical' ? 'column' : 'row' }
+              direction={widget.options.layout === 'vertical' ? 'column' : 'row'}
               gap="0"
               h="100%"
               w="100%"
             >
-              {widget.properties.items.map((item: BookmarkItem, index) => (
+              {widget.options.items.map((item: BookmarkItem, index) => (
                 <>
-                  {index > 0 &&
+                  {index > 0 && (
                     <Divider
                       m="3px"
-                      orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' }
+                      orientation={widget.options.layout !== 'vertical' ? 'vertical' : 'horizontal'}
                     />
-                  }
+                  )}
                   <Card
                     key={index}
                     px="md"
@@ -299,13 +299,13 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                     radius="md"
                     bg="transparent"
                     sx={{
-                      '&:hover': { backgroundColor: fn.primaryColor().concat('40'),}, //'40' = 25% opacity
-                      flex:'1 1 auto',
+                      '&:hover': { backgroundColor: fn.primaryColor().concat('40') }, //'40' = 25% opacity
+                      flex: '1 1 auto',
                       overflow: 'unset',
                     }}
                     display="flex"
                   >
-                    <BookmarkItemContent item={item}/>
+                    <BookmarkItemContent item={item} />
                   </Card>
                 </>
               ))}
@@ -321,26 +321,28 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
 const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => {
   const { colorScheme } = useMantineTheme();
   return (
-  <Group spacing="0rem 1rem">
-    <Image
-      hidden={item.hideIcon}
-      src={item.iconUrl}
-      width={47}
-      height={47}
-      fit="contain"
-      withPlaceholder />
-    <Stack spacing={0}>
-      <Text size="md">{item.name}</Text>
-      <Text
-        color={colorScheme === 'dark' ? "gray.6" : "gray.7"}
-        size="sm"
-        hidden={item.hideHostname}
-      >
-        {new URL(item.href).hostname}
-      </Text>
-    </Stack>
-  </Group>
-)};
+    <Group spacing="0rem 1rem">
+      <Image
+        hidden={item.hideIcon}
+        src={item.iconUrl}
+        width={47}
+        height={47}
+        fit="contain"
+        withPlaceholder
+      />
+      <Stack spacing={0}>
+        <Text size="md">{item.name}</Text>
+        <Text
+          color={colorScheme === 'dark' ? 'gray.6' : 'gray.7'}
+          size="sm"
+          hidden={item.hideHostname}
+        >
+          {new URL(item.href).hostname}
+        </Text>
+      </Stack>
+    </Group>
+  );
+};
 
 const useStyles = createStyles(() => ({
   grid: {

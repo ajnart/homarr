@@ -1,27 +1,32 @@
 import { ActionIcon, Space, createStyles } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
-
-import { useConfigContext } from '~/config/provider';
+import { SidebarSection, useRequiredBoard } from '~/components/Board/context';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
+
 import { MobileRibbonSidebarDrawer } from './MobileRibbonSidebarDrawer';
 
 export const MobileRibbons = () => {
   const { classes, cx } = useStyles();
-  const { config } = useConfigContext();
+  const board = useRequiredBoard();
   const [openedRight, rightSidebar] = useDisclosure(false);
   const [openedLeft, leftSidebar] = useDisclosure(false);
   const screenLargerThanMd = useScreenLargerThan('md');
 
-  if (screenLargerThanMd || !config) {
+  if (screenLargerThanMd) {
     return <></>;
   }
 
-  const layoutSettings = config.settings.customization.layout;
+  const leftSection = board.sections.find(
+    (x): x is SidebarSection => x.type === 'sidebar' && x.position === 'left'
+  )!;
+  const rightSection = board.sections.find(
+    (x): x is SidebarSection => x.type === 'sidebar' && x.position === 'right'
+  )!;
 
   return (
     <div className={classes.root}>
-      {layoutSettings.enabledLeftSidebar ? (
+      {board.isLeftSidebarVisible && leftSection ? (
         <>
           <ActionIcon
             onClick={leftSidebar.open}
@@ -33,14 +38,14 @@ export const MobileRibbons = () => {
           <MobileRibbonSidebarDrawer
             onClose={leftSidebar.close}
             opened={openedLeft}
-            location="left"
+            section={leftSection}
           />
         </>
       ) : (
         <Space />
       )}
 
-      {layoutSettings.enabledRightSidebar ? (
+      {board.isRightSidebarVisible && rightSection ? (
         <>
           <ActionIcon
             onClick={rightSidebar.open}
@@ -52,7 +57,7 @@ export const MobileRibbons = () => {
           <MobileRibbonSidebarDrawer
             onClose={rightSidebar.close}
             opened={openedRight}
-            location="right"
+            section={rightSection}
           />
         </>
       ) : null}

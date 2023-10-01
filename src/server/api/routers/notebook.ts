@@ -16,7 +16,7 @@ export const notebookRouter = createTRPCRouter({
       if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
         throw new TRPCError({
           code: 'METHOD_NOT_SUPPORTED',
-          message: 'Edit is not allowed, because edit mode is disabled'
+          message: 'Edit is not allowed, because edit mode is disabled',
         });
       }
 
@@ -32,14 +32,15 @@ export const notebookRouter = createTRPCRouter({
         });
       }
 
-      widget.properties.content = input.content;
+      widget.options.content = input.content;
 
-      const newConfig: BackendConfigType = {
+      // TODO: Make this work
+      /*const newConfig: BackendConfigType = {
         ...config,
         widgets: [...config.widgets.filter((w) => w.id !== widget.id), widget],
       };
 
       const targetPath = path.join('data/configs', `${input.configName}.json`);
-      fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
+      fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');*/
     }),
 });

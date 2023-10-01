@@ -1,16 +1,17 @@
 import { Card } from '@mantine/core';
 import { RefObject } from 'react';
+import { SidebarSection } from '~/components/Board/context';
 
 import { useCardStyles } from '../../../layout/Common/useCardStyles';
 import { WrapperContent } from '../WrapperContent';
 import { useGridstack } from '../gridstack/use-gridstack';
 
 interface DashboardSidebarProps extends DashboardSidebarInnerProps {
-  location: 'right' | 'left';
+  section: SidebarSection;
   isGridstackReady: boolean;
 }
 
-export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSidebarProps) => {
+export const DashboardSidebar = ({ section, isGridstackReady }: DashboardSidebarProps) => {
   const {
     cx,
     classes: { card: cardClass },
@@ -18,18 +19,18 @@ export const DashboardSidebar = ({ location, isGridstackReady }: DashboardSideba
 
   return (
     <Card p={0} m={0} radius="lg" className={cardClass} withBorder>
-      {isGridstackReady && <SidebarInner location={location} />}
+      {isGridstackReady && <SidebarInner section={section} />}
     </Card>
   );
 };
 
 interface DashboardSidebarInnerProps {
-  location: 'right' | 'left';
+  section: SidebarSection;
 }
 
 // Is Required because of the gridstack main area width.
-const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
-  const { refs, apps, widgets } = useGridstack('sidebar', location);
+const SidebarInner = ({ section }: DashboardSidebarInnerProps) => {
+  const { refs } = useGridstack({ section });
 
   const minRow = useMinRowForFullHeight(refs.wrapper);
 
@@ -43,11 +44,11 @@ const SidebarInner = ({ location }: DashboardSidebarInnerProps) => {
         height: '100%',
         width: '100%',
       }}
-      data-sidebar={location}
+      data-sidebar={section.id}
       // eslint-disable-next-line react/no-unknown-property
       gs-min-row={minRow}
     >
-      <WrapperContent apps={apps} refs={refs} widgets={widgets} />
+      <WrapperContent items={section.items} refs={refs} />
     </div>
   );
 };

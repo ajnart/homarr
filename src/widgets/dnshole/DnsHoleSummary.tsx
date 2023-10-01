@@ -10,12 +10,12 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
+import { formatNumber, formatPercentage } from '~/tools/client/math';
 import { RouterOutputs, api } from '~/utils/api';
 
-import { formatNumber, formatPercentage } from '~/tools/client/math';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 
 const availableLayouts = ['grid', 'row', 'column'] as const;
 type AvailableLayout = (typeof availableLayouts)[number];
@@ -43,7 +43,7 @@ const definition = defineWidget({
   component: DnsHoleSummaryWidgetTile,
 });
 
-export type IDnsHoleSummaryWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type IDnsHoleSummaryWidget = InferWidget<typeof definition>;
 
 interface DnsHoleSummaryWidgetProps {
   widget: IDnsHoleSummaryWidget;
@@ -57,12 +57,12 @@ function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
   }
 
   return (
-    <Container h="100%" p={0} style={constructContainerStyle(widget.properties.layout)}>
+    <Container h="100%" p={0} style={constructContainerStyle(widget.options.layout)}>
       {stats.map((item, index) => (
         <StatCard
           key={item.label ?? index}
           item={item}
-          usePiHoleColors={widget.properties.usePiHoleColors}
+          usePiHoleColors={widget.options.usePiHoleColors}
           data={data}
         />
       ))}

@@ -26,11 +26,13 @@ export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> 
 };
 
 export type InferWidget<TDefinition extends IWidgetDefinition> = WidgetItem & {
-  options: {
-    [key in keyof TDefinition['options']]: MakeLessSpecific<
-      TDefinition['options'][key]['defaultValue']
-    >;
-  };
+  options: InferWidgetOptions<TDefinition>;
+};
+
+export type InferWidgetOptions<TDefinition extends IWidgetDefinition> = {
+  [key in keyof TDefinition['options']]: MakeLessSpecific<
+    TDefinition['options'][key]['defaultValue']
+  >;
 };
 
 // Makes the type less specific

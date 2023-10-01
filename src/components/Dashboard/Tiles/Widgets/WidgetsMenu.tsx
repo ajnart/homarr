@@ -13,7 +13,7 @@ import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 export type WidgetChangePositionModalInnerProps = {
   widgetId: string;
   widgetType: string;
-  widget: IWidget<string, any>;
+  widget: WidgetItem;
   wrapperColumnCount: number;
 };
 

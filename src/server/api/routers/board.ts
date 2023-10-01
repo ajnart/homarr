@@ -28,10 +28,18 @@ import { configNameSchema } from './config';
 export const boardRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
     const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
+    const dbBoards = await db.query.boards.findMany({
+      columns: {
+        name: true,
+      },
+      with: {
+        items: true,
+      },
+    });
 
     const defaultBoard = await getDefaultBoardAsync(ctx.session.user.id, 'default');
 
-    return await Promise.all(
+    const result = await Promise.all(
       files.map(async (file) => {
         const name = file.replace('.json', '');
         const config = await getFrontendConfig(name);
@@ -44,8 +52,20 @@ export const boardRouter = createTRPCRouter({
           countWidgets: config.widgets.length,
           countCategories: config.categories.length,
           isDefaultForUser: name === defaultBoard,
+          type: 'file',
         };
       })
+    );
+
+    return result.concat(
+      dbBoards.map((x) => ({
+        name: x.name,
+        countApps: x.items.filter((x) => x.type === 'app').length,
+        countWidgets: x.items.filter((x) => x.type === 'widget').length,
+        countCategories: 0, // TODO: Is different depending on layout
+        isDefaultForUser: x.name === defaultBoard,
+        type: 'db',
+      }))
     );
   }),
   addAppsForContainers: adminProcedure
@@ -514,7 +534,7 @@ const mapSection = (
   return {
     ...sectionProps,
     type,
-    position: section.position === 0 ? ('left' as const) : ('right' as const),
+    position: position === 0 ? ('left' as const) : ('right' as const),
     items,
   };
 };

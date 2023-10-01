@@ -18,13 +18,13 @@ import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
 import { useCardStyles } from '~/components/layout/Common/useCardStyles';
-
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { AppIntegrationType } from '~/types/app';
+
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 import { BitTorrentQueueItem } from './TorrentQueueItem';
 
 dayjs.extend(duration);
@@ -62,7 +62,7 @@ const definition = defineWidget({
   component: TorrentTile,
 });
 
-export type ITorrent = IWidget<(typeof definition)['id'], typeof definition>;
+export type ITorrent = InferWidget<typeof definition>;
 
 interface TorrentTileProps {
   widget: ITorrent;
@@ -193,15 +193,15 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
 export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
   let result = torrents;
-  if (!widget.properties.displayCompletedTorrents) {
+  if (!widget.options.displayCompletedTorrents) {
     result = result.filter((torrent) => !torrent.isCompleted);
   }
 
-  if (widget.properties.labelFilter.length > 0) {
+  if (widget.options.labelFilter.length > 0) {
     result = filterTorrentsByLabels(
       result,
-      widget.properties.labelFilter,
-      widget.properties.labelFilterIsWhitelist
+      widget.options.labelFilter,
+      widget.options.labelFilterIsWhitelist
     );
   }
 
@@ -211,7 +211,7 @@ export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) 
 };
 
 const filterStaleTorrent = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
-  if (widget.properties.displayStaleTorrents) {
+  if (widget.options.displayStaleTorrents) {
     return torrents;
   }
 

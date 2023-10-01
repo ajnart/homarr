@@ -1,18 +1,22 @@
-import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
+import {
+  type ColorScheme as MantineColorScheme,
+  MantineProvider,
+  type MantineTheme,
+} from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import Consola from 'consola';
+import { consola } from 'consola';
 import { getCookie, setCookie } from 'cookies-next';
 import dayjs from 'dayjs';
 import locale from 'dayjs/plugin/localeData';
 import utc from 'dayjs/plugin/utc';
 import 'flag-icons/css/flag-icons.min.css';
-import { GetServerSidePropsContext } from 'next';
-import { Session } from 'next-auth';
+import { type GetServerSidePropsContext } from 'next';
+import { type Session } from 'next-auth';
 import { SessionProvider, getSession } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
-import { AppProps } from 'next/app';
+import { type AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
@@ -23,7 +27,7 @@ import { modals } from '~/modals';
 import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
 import {
-  ServerSidePackageAttributesType,
+  type ServerSidePackageAttributesType,
   getServiceSidePackageAttributes,
 } from '~/tools/server/getPackageVersion';
 import { theme } from '~/tools/server/theme/theme';
@@ -140,7 +144,7 @@ function App(
 
 App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
   if (env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME !== 'light') {
-    Consola.debug(
+    consola.debug(
       `Overriding the default color scheme with ${env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME}`
     );
   }

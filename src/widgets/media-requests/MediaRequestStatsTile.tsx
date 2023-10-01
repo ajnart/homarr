@@ -15,7 +15,7 @@ import { useTranslation } from 'next-i18next';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
-import { IWidget } from '../widgets';
+import { InferWidget, InferWidgetOptions } from '../widgets';
 import { useMediaRequestQuery, useUsersQuery } from './media-request-query';
 import { MediaRequestStatus } from './media-request-types';
 
@@ -41,7 +41,8 @@ const definition = defineWidget({
   component: MediaRequestStatsTile,
 });
 
-export type MediaRequestStatsWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type MediaRequestStatsWidget = InferWidget<typeof definition>;
+export type MediaRequestStatsWidgetOptions = InferWidgetOptions<typeof definition>;
 
 interface MediaRequestStatsWidgetProps {
   widget: MediaRequestStatsWidget;
@@ -57,7 +58,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
   const {
     data: usersData,
     isFetching: usersFetching,
-    isLoading: usersLoading
+    isLoading: usersLoading,
   } = useUsersQuery(widget);
   const { ref, height } = useElementSize();
   const { colorScheme } = useMantineTheme();
@@ -128,7 +129,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
               p={0}
               component="a"
               href={user.userLink}
-              target={widget.properties.openInNewTab ? "_blank" : "_self"}
+              target={widget.options.openInNewTab ? '_blank' : '_self'}
               mah={95}
               mih={55}
               radius="md"

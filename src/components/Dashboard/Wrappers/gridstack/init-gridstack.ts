@@ -1,33 +1,40 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
-import { Item } from '~/components/Board/context';
+import { Item, Section } from '~/components/Board/context';
 
-export const initializeGridstack = (
-  areaType: 'wrapper' | 'category' | 'sidebar',
-  wrapperRef: RefObject<HTMLDivElement>,
-  gridRef: MutableRefObject<GridStack | undefined>,
-  itemRefs: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>,
-  areaId: string,
-  items: Item[],
-  isEditMode: boolean,
-  wrapperColumnCount: number,
-  shapeSize: 'sm' | 'md' | 'lg',
-  tilesWithUnknownLocation: TileWithUnknownLocation[],
+type InitializeGridstackProps = {
+  section: Section;
+  refs: {
+    wrapper: RefObject<HTMLDivElement>;
+    items: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>;
+    gridstack: MutableRefObject<GridStack | undefined>;
+  };
+  isEditMode: boolean;
+  sectionColumnCount: number;
   events: {
     onChange: (changedNode: GridStackNode) => void;
     onAdd: (addedNode: GridStackNode) => void;
-  }
-) => {
-  if (!wrapperRef.current) return;
+  };
+};
+
+export const initializeGridstack = ({
+  section,
+  refs,
+  isEditMode,
+  sectionColumnCount,
+  events,
+}: InitializeGridstackProps) => {
+  if (!refs.wrapper.current) return;
   // calculates the currently available count of columns
-  const columnCount = areaType === 'sidebar' ? 2 : wrapperColumnCount;
-  const minRow = areaType !== 'sidebar' ? 1 : Math.floor(wrapperRef.current.offsetHeight / 128);
+  const columnCount = section.type === 'sidebar' ? 2 : sectionColumnCount;
+  const minRow =
+    section.type !== 'sidebar' ? 1 : Math.floor(refs.wrapper.current.offsetHeight / 128);
   // initialize gridstack
-  const newGrid = gridRef;
+  const newGrid = refs.gridstack;
   newGrid.current = GridStack.init(
     {
       column: columnCount,
-      margin: areaType === 'sidebar' ? 5 : 10,
+      margin: section.type === 'sidebar' ? 5 : 10,
       cellHeight: 128,
       float: true,
       alwaysShowResizeHandle: 'mobile',
@@ -38,7 +45,7 @@ export const initializeGridstack = (
       animate: false,
     },
     // selector of the gridstack item (it's eather category or wrapper)
-    `.grid-stack-${areaType}[data-${areaType}='${areaId}']`
+    `.grid-stack-${section.type}[data-${section.type}='${section.id}']`
   );
   const grid = newGrid.current;
   if (!grid) return;
@@ -63,17 +70,10 @@ export const initializeGridstack = (
 
   grid.batchUpdate();
   grid.removeAll(false);
-  items.forEach((item) => {
-    const ref = itemRefs.current[item.id]?.current;
+  section.items.forEach((item) => {
+    const ref = refs.items.current[item.id]?.current;
     setAttributesFromShape(ref, item);
     ref && grid.makeWidget(ref as HTMLDivElement);
-    /*if (!item && ref) {
-      const gridItemElement = ref as GridItemHTMLElement;
-      if (gridItemElement.gridstackNode) {
-        const { x, y, w, h } = gridItemElement.gridstackNode;
-        tilesWithUnknownLocation.push({ x, y, w, h, type: 'app', id: item.id });
-      }
-    }*/
   });
   grid.batchUpdate(false);
 };

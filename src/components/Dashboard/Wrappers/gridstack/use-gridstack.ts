@@ -1,14 +1,18 @@
 import { GridStack, GridStackNode } from 'fily-publish-gridstack';
-import { MutableRefObject, RefObject, createRef, useEffect, useMemo, useRef } from 'react';
-import { Item, Section } from '~/components/Board/context';
-import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
-import { AppType } from '~/types/app';
-import { AreaType } from '~/types/area';
-import { IWidget } from '~/widgets/widgets';
+import {
+  MutableRefObject,
+  RefObject,
+  createRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react';
+import { Section } from '~/components/Board/context';
+import { useItemActions } from '~/components/Board/item-actions';
 
 import { useEditModeStore } from '../../Views/useEditModeStore';
-import { TileWithUnknownLocation, initializeGridstack } from './init-gridstack';
+import { initializeGridstack } from './init-gridstack';
 import { useGridstackStore, useWrapperColumnCount } from './store';
 
 interface UseGristackReturnType {
@@ -25,20 +29,22 @@ type UseGridstackProps = {
 
 export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnType => {
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const updateConfig = useConfigStore((x) => x.updateConfig);
+  const { moveAndResizeItem, moveItemToSection } = useItemActions();
   // define reference for wrapper - is used to calculate the width of the wrapper
   const wrapperRef = useRef<HTMLDivElement>(null);
   // references to the diffrent items contained in the gridstack
   const itemRefs = useRef<Record<string, RefObject<HTMLDivElement>>>({});
   // reference of the gridstack object for modifications after initialization
   const gridRef = useRef<GridStack>();
-  const wrapperColumnCount = useWrapperColumnCount();
-  const shapeSize = useGridstackStore((x) => x.currentShapeSize);
+  const sectionColumnCount = useWrapperColumnCount();
   const mainAreaWidth = useGridstackStore((x) => x.mainAreaWidth);
   // width of the wrapper (updating on page resize)
-  const root: HTMLHtmlElement = useMemo(() => document.querySelector(':root')!, []);
+  const root = useMemo(() => {
+    if (typeof document === 'undefined') return;
+    return document.querySelector(':root')! as HTMLHtmlElement;
+  }, [typeof document]);
 
-  if (!mainAreaWidth || !shapeSize || !wrapperColumnCount) {
+  if (/*!mainAreaWidth ||*/ !sectionColumnCount) {
     throw new Error('UseGridstack should not be executed before mainAreaWidth has been set!');
   }
 
@@ -52,239 +58,81 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
   }
 
   useEffect(() => {
-    if (section.type === 'sidebar') return;
-    const widgetWidth = mainAreaWidth / wrapperColumnCount;
+    if (section.type === 'sidebar' || !mainAreaWidth) return;
+    const widgetWidth = mainAreaWidth / sectionColumnCount;
     // widget width is used to define sizes of gridstack items within global.scss
-    root.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
+    root?.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
     gridRef.current?.cellHeight(widgetWidth);
-  }, [mainAreaWidth, wrapperColumnCount, gridRef.current]);
+  }, [mainAreaWidth, sectionColumnCount, gridRef.current]);
 
   useEffect(() => {
     // column count is used to define count of columns of gridstack within global.scss
-    root.style.setProperty('--gridstack-column-count', wrapperColumnCount.toString());
-  }, [wrapperColumnCount]);
+    root?.style.setProperty('--gridstack-column-count', sectionColumnCount.toString());
+  }, [sectionColumnCount]);
 
-  const configName = 'default';
-  const onChange = isEditMode
-    ? (changedNode: GridStackNode) => {
-        if (!configName) return;
+  const onChange = useCallback(
+    (changedNode: GridStackNode) => {
+      if (!isEditMode) return;
 
-        const itemType = changedNode.el?.getAttribute('data-type');
-        const itemId = changedNode.el?.getAttribute('data-id');
-        if (!itemType || !itemId) return;
+      const itemType = changedNode.el?.getAttribute('data-type');
+      const itemId = changedNode.el?.getAttribute('data-id');
+      if (!itemType || !itemId) return;
 
-        // Updates the config and defines the new position of the item
-        updateConfig(configName, (previous) => {
-          const currentItem =
-            itemType === 'app'
-              ? previous.apps.find((x) => x.id === itemId)
-              : previous.widgets.find((x) => x.id === itemId);
-          if (!currentItem) return previous;
+      // Updates the config and defines the new position of the item
+      moveAndResizeItem({
+        itemId,
+        x: changedNode.x!,
+        y: changedNode.y!,
+        width: changedNode.w!,
+        height: changedNode.h!,
+      });
+    },
+    [isEditMode]
+  );
 
-          currentItem.shape[shapeSize] = {
-            location: {
-              x: changedNode.x!,
-              y: changedNode.y!,
-            },
-            size: {
-              width: changedNode.w!,
-              height: changedNode.h!,
-            },
-          };
+  const onAdd = useCallback(
+    (addedNode: GridStackNode) => {
+      if (!isEditMode) return;
 
-          if (itemType === 'app') {
-            return {
-              ...previous,
-              apps: [
-                ...previous.apps.filter((x) => x.id !== itemId),
-                { ...(currentItem as AppType) },
-              ],
-            };
-          }
+      const itemType = addedNode.el?.getAttribute('data-type');
+      const itemId = addedNode.el?.getAttribute('data-id');
+      if (!itemType || !itemId) return;
 
-          return {
-            ...previous,
-            widgets: [
-              ...previous.widgets.filter((x) => x.id !== itemId),
-              { ...(currentItem as IWidget<string, any>) },
-            ],
-          };
-        });
-      }
-    : () => {};
-
-  const onAdd = isEditMode
-    ? (addedNode: GridStackNode) => {
-        if (!configName) return;
-
-        const itemType = addedNode.el?.getAttribute('data-type');
-        const itemId = addedNode.el?.getAttribute('data-id');
-        if (!itemType || !itemId) return;
-
-        // Updates the config and defines the new position and wrapper of the item
-        updateConfig(
-          configName,
-          (previous) => {
-            const currentItem =
-              itemType === 'app'
-                ? previous.apps.find((x) => x.id === itemId)
-                : previous.widgets.find((x) => x.id === itemId);
-            if (!currentItem) return previous;
-
-            if (section.type === 'sidebar') {
-              currentItem.area = {
-                type: section.type,
-                properties: {
-                  location: section.position,
-                },
-              };
-            } else {
-              currentItem.area = {
-                type: section.type as any,
-                properties: {
-                  id: section.id,
-                },
-              };
-            }
-
-            currentItem.shape[shapeSize] = {
-              location: {
-                x: addedNode.x!,
-                y: addedNode.y!,
-              },
-              size: {
-                width: addedNode.w!,
-                height: addedNode.h!,
-              },
-            };
-
-            if (itemType === 'app') {
-              return {
-                ...previous,
-                apps: [
-                  ...previous.apps.filter((x) => x.id !== itemId),
-                  { ...(currentItem as AppType) },
-                ],
-              };
-            }
-
-            return {
-              ...previous,
-              widgets: [
-                ...previous.widgets.filter((x) => x.id !== itemId),
-                { ...(currentItem as IWidget<string, any>) },
-              ],
-            };
-          },
-          (prev, curr) => {
-            const isApp = itemType === 'app';
-
-            if (isApp) {
-              const currItem = curr.apps.find((x) => x.id === itemId);
-              const prevItem = prev.apps.find((x) => x.id === itemId);
-              if (!currItem || !prevItem) return false;
-
-              return (
-                currItem.area.type !== prevItem.area.type ||
-                Object.entries(currItem.area.properties).some(
-                  ([key, value]) =>
-                    prevItem.area.properties[key as keyof AreaType['properties']] !== value
-                )
-              );
-            }
-
-            const currItem = curr.widgets.find((x) => x.id === itemId);
-            const prevItem = prev.widgets.find((x) => x.id === itemId);
-            if (!currItem || !prevItem) return false;
-
-            return (
-              currItem.area.type !== prevItem.area.type ||
-              Object.entries(currItem.area.properties).some(
-                ([key, value]) =>
-                  prevItem.area.properties[key as keyof AreaType['properties']] !== value
-              )
-            );
-          }
-        );
-      }
-    : () => {};
+      moveItemToSection({
+        itemId,
+        sectionId: section.id,
+        x: addedNode.x!,
+        y: addedNode.y!,
+        width: addedNode.w!,
+        height: addedNode.h!,
+      });
+    },
+    [isEditMode]
+  );
 
   // initialize the gridstack
   useEffect(() => {
-    const removeEventHandlers = () => {
+    initializeGridstack({
+      events: {
+        onChange,
+        onAdd,
+      },
+      isEditMode,
+      section,
+      refs: {
+        items: itemRefs,
+        wrapper: wrapperRef,
+        gridstack: gridRef,
+      },
+      sectionColumnCount,
+    });
+
+    // Remove event listeners on unmount
+    return () => {
       gridRef.current?.off('change');
       gridRef.current?.off('added');
     };
-
-    const tilesWithUnknownLocation: TileWithUnknownLocation[] = [];
-    initializeGridstack(
-      section.type as any,
-      wrapperRef,
-      gridRef,
-      itemRefs,
-      section.id,
-      items,
-      isEditMode,
-      wrapperColumnCount,
-      shapeSize,
-      tilesWithUnknownLocation,
-      {
-        onChange,
-        onAdd,
-      }
-    );
-    if (!configName) return removeEventHandlers;
-    updateConfig(configName, (prev) => ({
-      ...prev,
-      apps: prev.apps.map((app) => {
-        const currentUnknownLocation = tilesWithUnknownLocation.find(
-          (x) => x.type === 'app' && x.id === app.id
-        );
-        if (!currentUnknownLocation) return app;
-
-        return {
-          ...app,
-          shape: {
-            ...app.shape,
-            [shapeSize]: {
-              location: {
-                x: currentUnknownLocation.x,
-                y: currentUnknownLocation.y,
-              },
-              size: {
-                width: currentUnknownLocation.w,
-                height: currentUnknownLocation.h,
-              },
-            },
-          },
-        };
-      }),
-      widgets: prev.widgets.map((widget) => {
-        const currentUnknownLocation = tilesWithUnknownLocation.find(
-          (x) => x.type === 'widget' && x.id === widget.id
-        );
-        if (!currentUnknownLocation) return widget;
-
-        return {
-          ...widget,
-          shape: {
-            ...widget.shape,
-            [shapeSize]: {
-              location: {
-                x: currentUnknownLocation.x,
-                y: currentUnknownLocation.y,
-              },
-              size: {
-                width: currentUnknownLocation.w,
-                height: currentUnknownLocation.h,
-              },
-            },
-          },
-        };
-      }),
-    }));
-    return removeEventHandlers;
-  }, [items, wrapperRef.current, wrapperColumnCount]);
+  }, [items, wrapperRef.current, sectionColumnCount]);
 
   return {
     refs: {

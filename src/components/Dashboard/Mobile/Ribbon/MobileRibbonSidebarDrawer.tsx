@@ -1,24 +1,25 @@
 import { Drawer, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+import { SidebarSection } from '~/components/Board/context';
 
 import { DashboardSidebar } from '../../Wrappers/Sidebar/Sidebar';
 
 interface MobileRibbonSidebarDrawerProps {
   onClose: () => void;
   opened: boolean;
-  location: 'left' | 'right';
+  section: SidebarSection;
 }
 
 export const MobileRibbonSidebarDrawer = ({
-  location,
+  section,
   ...props
 }: MobileRibbonSidebarDrawerProps) => {
   const { t } = useTranslation('layout/mobile/drawer');
   return (
     <Drawer
       padding={10}
-      position={location}
-      title={<Title order={4}>{t('title', { position: location })}</Title>}
+      position={section.position}
+      title={<Title order={4}>{t('title', { position: section.position })}</Title>}
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -28,10 +29,10 @@ export const MobileRibbonSidebarDrawer = ({
           width: '100%',
         },
       }}
-      transitionProps={{ transition: `slide-${location === 'right' ? 'left' : 'right'}` }}
+      transitionProps={{ transition: `slide-${section.position === 'right' ? 'left' : 'right'}` }}
       {...props}
     >
-      <DashboardSidebar location={location} isGridstackReady />
+      <DashboardSidebar section={section} isGridstackReady />
     </Drawer>
   );
 };

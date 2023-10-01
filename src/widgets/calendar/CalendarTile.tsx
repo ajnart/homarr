@@ -9,7 +9,7 @@ import { getLanguageByCode } from '~/tools/language';
 import { RouterOutputs, api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
@@ -50,7 +50,7 @@ const definition = defineWidget({
   component: CalendarTile,
 });
 
-export type ICalendarWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type ICalendarWidget = InferWidget<typeof definition>;
 
 interface CalendarTileProps {
   widget: ICalendarWidget;
@@ -74,8 +74,8 @@ function CalendarTile({ widget }: CalendarTileProps) {
       month: month.getMonth() + 1,
       year: month.getFullYear(),
       options: {
-        useSonarrv4: widget.properties.useSonarrv4,
-        showUnmonitored: widget.properties.showUnmonitored,
+        useSonarrv4: widget.options.useSonarrv4,
+        showUnmonitored: widget.options.showUnmonitored,
       },
     },
     {
@@ -91,10 +91,10 @@ function CalendarTile({ widget }: CalendarTileProps) {
       defaultDate={new Date()}
       onPreviousMonth={setMonth}
       onNextMonth={setMonth}
-      size={widget.properties.fontSize}
+      size={widget.options.fontSize}
       locale={language.locale}
       firstDayOfWeek={getFirstDayOfWeek(firstDayOfWeek)}
-      hideWeekdays={widget.properties.hideWeekDays}
+      hideWeekdays={widget.options.hideWeekDays}
       style={{ position: 'relative' }}
       date={month}
       maxLevel="month"
@@ -132,7 +132,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
           flex: 1,
         },
         day: {
-          borderRadius: ['xs', 'sm'].includes(widget.properties.fontSize) ? radius.md : radius.lg,
+          borderRadius: ['xs', 'sm'].includes(widget.options.fontSize) ? radius.md : radius.lg,
         },
       }}
       getDayProps={(date) => ({
@@ -142,7 +142,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
         <CalendarDay
           date={date}
           medias={getReleasedMediasForDate(medias, date, widget)}
-          size={widget.properties.fontSize}
+          size={widget.options.fontSize}
         />
       )}
     />
@@ -161,7 +161,7 @@ const getReleasedMediasForDate = (
   date: Date,
   widget: ICalendarWidget
 ): MediasType => {
-  const { radarrReleaseType } = widget.properties;
+  const { radarrReleaseType } = widget.options;
 
   const books =
     medias?.books.filter((b) => new Date(b.releaseDate).toDateString() === date.toDateString()) ??

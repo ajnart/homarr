@@ -96,7 +96,7 @@ const ToggleEditModeButton = () => {
   const { enabled, toggleEditMode } = useEditModeStore();
   const board = useRequiredBoard();
   const { name } = board;
-  const { mutateAsync: saveConfig } = api.config.save.useMutation();
+  //const { mutateAsync: saveConfig } = api.config.save.useMutation();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
   const { t } = useTranslation(['layout/header/actions/toggle-edit-mode', 'common']);
   const translatedSize =
@@ -119,7 +119,7 @@ const ToggleEditModeButton = () => {
   const save = async () => {
     toggleEditMode();
     if (!board || !name) return;
-    await saveConfig({ name, config: {} as any });
+    //await saveConfig({ name, config: {} as any });
     Consola.log('Saved config to server', name);
     hideNotification(editModeNotificationId);
   };

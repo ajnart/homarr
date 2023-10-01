@@ -1,20 +1,28 @@
 import Consola from 'consola';
+import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 import { z } from 'zod';
 import { checkIntegrationsType } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
-import { MediaRequestListWidget } from '~/widgets/media-requests/MediaRequestListTile';
+import {
+  MediaRequestListWidget,
+  MediaRequestListWidgetOptions,
+} from '~/widgets/media-requests/MediaRequestListTile';
+import {
+  MediaRequestStatsWidget,
+  MediaRequestStatsWidgetOptions,
+} from '~/widgets/media-requests/MediaRequestStatsTile';
 import { MediaRequest, Users } from '~/widgets/media-requests/media-request-types';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import { MediaRequestStatsWidget } from '~/widgets/media-requests/MediaRequestStatsTile';
-import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 
 export const mediaRequestsRouter = createTRPCRouter({
   allMedia: publicProcedure
     .input(
       z.object({
         configName: z.string(),
-        widget: z.custom<MediaRequestListWidget>().or(z.custom<MediaRequestStatsWidget>()),
+        options: z
+          .custom<MediaRequestListWidgetOptions>()
+          .or(z.custom<MediaRequestStatsWidgetOptions>()),
       })
     )
     .query(async ({ input }) => {
@@ -33,9 +41,10 @@ export const mediaRequestsRouter = createTRPCRouter({
         })
           .then(async (response) => {
             const body = (await response.json()) as OverseerrResponse;
-            let appUrl = input.widget.properties.replaceLinksWithExternalHost && app.behaviour.externalUrl?.length > 0
-              ? app.behaviour.externalUrl
-              : app.url;
+            let appUrl =
+              input.options.replaceLinksWithExternalHost && app.behaviour.externalUrl?.length > 0
+                ? app.behaviour.externalUrl
+                : app.url;
 
             appUrl = removeTrailingSlash(appUrl);
 
@@ -86,7 +95,9 @@ export const mediaRequestsRouter = createTRPCRouter({
     .input(
       z.object({
         configName: z.string(),
-        widget: z.custom<MediaRequestListWidget>().or(z.custom<MediaRequestStatsWidget>()),
+        options: z
+          .custom<MediaRequestListWidgetOptions>()
+          .or(z.custom<MediaRequestStatsWidgetOptions>()),
       })
     )
     .query(async ({ input }) => {
@@ -105,7 +116,7 @@ export const mediaRequestsRouter = createTRPCRouter({
         })
           .then(async (response) => {
             const body = (await response.json()) as OverseerrUsers;
-            const appUrl = input.widget.properties.replaceLinksWithExternalHost
+            const appUrl = input.options.replaceLinksWithExternalHost
               ? app.behaviour.externalUrl
               : app.url;
 
@@ -163,7 +174,7 @@ const retrieveDetailsForItem = async (
       backdropPath: series.backdropPath,
       posterPath: series.backdropPath,
     };
-  };
+  }
 
   const movieResponse = await fetch(`${baseUrl}/api/v1/movie/${id}`, {
     headers,

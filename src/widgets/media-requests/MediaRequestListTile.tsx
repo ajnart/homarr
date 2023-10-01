@@ -1,5 +1,6 @@
 import {
-  ActionIcon, Anchor,
+  ActionIcon,
+  Anchor,
   Badge,
   Card,
   Center,
@@ -9,7 +10,8 @@ import {
   ScrollArea,
   Stack,
   Text,
-  Tooltip, useMantineTheme,
+  Tooltip,
+  useMantineTheme,
 } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
@@ -20,7 +22,7 @@ import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
-import { IWidget } from '../widgets';
+import { IWidget, InferWidget, InferWidgetOptions } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
 import { MediaRequest, MediaRequestStatus } from './media-request-types';
 
@@ -46,7 +48,8 @@ const definition = defineWidget({
   },
 });
 
-export type MediaRequestListWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type MediaRequestListWidget = InferWidget<typeof definition>;
+export type MediaRequestListWidgetOptions = InferWidgetOptions<typeof definition>;
 
 interface MediaRequestListWidgetProps {
   widget: MediaRequestListWidget;
@@ -161,9 +164,9 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                   </Group>
                   <Anchor
                     href={item.href}
-                    target={widget.properties.openInNewTab ? "_blank" : "_self"}
+                    target={widget.options.openInNewTab ? '_blank' : '_self'}
                     c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
-                    >
+                  >
                     {item.name}
                   </Anchor>
                 </Stack>
@@ -180,53 +183,54 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                   />
                   <Anchor
                     href={item.userLink}
-                    target={widget.properties.openInNewTab ? "_blank" : "_self"}
+                    target={widget.options.openInNewTab ? '_blank' : '_self'}
                     c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
                   >
                     {item.userName}
                   </Anchor>
                 </Flex>
 
-              {item.status === MediaRequestStatus.PendingApproval && sessionData?.user?.isAdmin && (
-                <Group>
-                  <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
-                    <ActionIcon
-                      variant="light"
-                      color="green"
-                      onClick={async () => {
-                        notifications.show({
-                          id: `approve ${item.id}`,
-                          color: 'yellow',
-                          title: t('tooltips.approving'),
-                          message: undefined,
-                          loading: true,
-                        });
+                {item.status === MediaRequestStatus.PendingApproval &&
+                  sessionData?.user?.isAdmin && (
+                    <Group>
+                      <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
+                        <ActionIcon
+                          variant="light"
+                          color="green"
+                          onClick={async () => {
+                            notifications.show({
+                              id: `approve ${item.id}`,
+                              color: 'yellow',
+                              title: t('tooltips.approving'),
+                              message: undefined,
+                              loading: true,
+                            });
 
-                          await decideAsync({
-                            request: item,
-                            isApproved: true,
-                          });
-                        }}
-                      >
-                        <IconThumbUp />
-                      </ActionIcon>
-                    </Tooltip>
-                    <Tooltip label={t('tooltips.decline')} withArrow withinPortal>
-                      <ActionIcon
-                        variant="light"
-                        color="red"
-                        onClick={async () => {
-                          await decideAsync({
-                            request: item,
-                            isApproved: false,
-                          });
-                        }}
-                      >
-                        <IconThumbDown />
-                      </ActionIcon>
-                    </Tooltip>
-                  </Group>
-                )}
+                            await decideAsync({
+                              request: item,
+                              isApproved: true,
+                            });
+                          }}
+                        >
+                          <IconThumbUp />
+                        </ActionIcon>
+                      </Tooltip>
+                      <Tooltip label={t('tooltips.decline')} withArrow withinPortal>
+                        <ActionIcon
+                          variant="light"
+                          color="red"
+                          onClick={async () => {
+                            await decideAsync({
+                              request: item,
+                              isApproved: false,
+                            });
+                          }}
+                        >
+                          <IconThumbDown />
+                        </ActionIcon>
+                      </Tooltip>
+                    </Group>
+                  )}
               </Stack>
             </Flex>
 
