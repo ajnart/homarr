@@ -12,7 +12,7 @@ import { dockerRouter } from '~/server/api/routers/docker/router';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
-import { api, client } from '~/utils/api';
+import { api } from '~/utils/api';
 
 export default function DockerPage({
   initialContainers,
@@ -62,6 +62,11 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
     };
   }
 
+  const caller = dockerRouter.createCaller({
+    session: session,
+    cookies: req.cookies,
+  });
+
   const translations = await getServerSideTranslations(
     [...boardNamespaces, 'layout/manage', 'tools/docker'],
     locale,
@@ -71,7 +76,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
 
   let containers = [];
   try {
-    containers = await client.docker.containers.query();
+    containers = await caller.containers();
   } catch (error) {
     Consola.error(`The docker integration failed with the following error: ${error}`);
     return {
