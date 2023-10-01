@@ -1,7 +1,5 @@
 import { MobileRibbons } from './Mobile/Ribbon/MobileRibbon';
 import { BoardView } from './Views/DashboardView';
-import { DashboardDetailView } from './Views/DetailView';
-import { DashboardEditView } from './Views/EditView';
 import { useEditModeStore } from './Views/useEditModeStore';
 
 export const Board = () => {
@@ -10,7 +8,7 @@ export const Board = () => {
   return (
     <>
       {/* The following elemens are splitted because gridstack doesn't reinitialize them when using same item. */}
-      <BoardView key={isEditMode.toString()} />
+      <BoardView />
       <MobileRibbons />
     </>
   );

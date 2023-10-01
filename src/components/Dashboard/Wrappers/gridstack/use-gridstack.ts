@@ -1,4 +1,9 @@
-import { GridStack, GridStackNode } from 'fily-publish-gridstack';
+import {
+  GridItemHTMLElement,
+  GridStack,
+  GridStackElement,
+  GridStackNode,
+} from 'fily-publish-gridstack';
 import {
   MutableRefObject,
   RefObject,
@@ -18,7 +23,7 @@ import { useGridstackStore, useWrapperColumnCount } from './store';
 interface UseGristackReturnType {
   refs: {
     wrapper: RefObject<HTMLDivElement>;
-    items: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>;
+    items: MutableRefObject<Record<string, RefObject<GridItemHTMLElement>>>;
     gridstack: MutableRefObject<GridStack | undefined>;
   };
 }
@@ -33,7 +38,7 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
   // define reference for wrapper - is used to calculate the width of the wrapper
   const wrapperRef = useRef<HTMLDivElement>(null);
   // references to the diffrent items contained in the gridstack
-  const itemRefs = useRef<Record<string, RefObject<HTMLDivElement>>>({});
+  const itemRefs = useRef<Record<string, RefObject<GridItemHTMLElement>>>({});
   // reference of the gridstack object for modifications after initialization
   const gridRef = useRef<GridStack>();
   const sectionColumnCount = useWrapperColumnCount();
@@ -69,6 +74,10 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
     // column count is used to define count of columns of gridstack within global.scss
     root?.style.setProperty('--gridstack-column-count', sectionColumnCount.toString());
   }, [sectionColumnCount]);
+
+  useEffect(() => {
+    gridRef.current?.setStatic(!isEditMode);
+  }, [isEditMode]);
 
   const onChange = useCallback(
     (changedNode: GridStackNode) => {

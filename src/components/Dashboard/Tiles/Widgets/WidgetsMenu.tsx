@@ -1,8 +1,7 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { WidgetItem } from '~/components/Board/context';
+import { WidgetItem, useRequiredBoard } from '~/components/Board/context';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
-import { IWidget } from '~/widgets/widgets';
 
 import WidgetsDefinitions from '../../../../widgets';
 import { useWrapperColumnCount } from '../../Wrappers/gridstack/store';
@@ -11,30 +10,23 @@ import { WidgetEditModalInnerProps } from './WidgetsEditModal';
 import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 
 export type WidgetChangePositionModalInnerProps = {
-  widgetId: string;
-  widgetType: string;
   widget: WidgetItem;
   wrapperColumnCount: number;
 };
 
 interface WidgetsMenuProps {
-  integration: string;
+  type: string;
   widget: WidgetItem | undefined;
 }
 
-export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
-  const { t } = useTranslation(`modules/${integration}`);
+export const WidgetsMenu = ({ type, widget }: WidgetsMenuProps) => {
+  const { t } = useTranslation(`modules/${type}`);
+  const board = useRequiredBoard();
   const wrapperColumnCount = useWrapperColumnCount();
 
   if (!widget || !wrapperColumnCount) return null;
-  // Match widget.id with WidgetsDefinitions
-  // First get the keys
-  const keys = Object.keys(WidgetsDefinitions);
-  // Then find the key that matches the widget.type
-  const widgetDefinition = keys.find((key) => key === widget.type);
   // Then get the widget definition
-  const widgetDefinitionObject =
-    WidgetsDefinitions[widgetDefinition as keyof typeof WidgetsDefinitions];
+  const widgetDefinitionObject = WidgetsDefinitions[widget.sort as keyof typeof WidgetsDefinitions];
 
   const handleDeleteClick = () => {
     openContextModalGeneric<WidgetsRemoveModalInnerProps>({
@@ -42,7 +34,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       title: <Title order={4}>{t('common:remove')}</Title>,
       innerProps: {
         widgetId: widget.id,
-        widgetType: integration,
+        widgetType: type,
       },
     });
   };
@@ -53,8 +45,6 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       size: 'xl',
       title: null,
       innerProps: {
-        widgetId: widget.id,
-        widgetType: integration,
         widget,
         wrapperColumnCount,
       },
@@ -67,10 +57,10 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
       title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
       innerProps: {
         widgetId: widget.id,
-        widgetType: integration,
+        widgetType: type,
         options: widget.options,
-        // Cast as the right type for the correct widget
-        widgetOptions: widgetDefinitionObject.options as any,
+        boardName: board.name,
+        widgetOptions: widgetDefinitionObject.options,
       },
       zIndex: 250,
     });

@@ -18,13 +18,19 @@ import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
-
+import { WidgetItem } from '~/components/Board/context';
+import { useWidgetActions } from '~/components/Board/widget-actions';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { mapObject } from '~/tools/client/objects';
+import { objectEntries } from '~/tools/object';
+import type {
+  IDraggableListInputValue,
+  IWidgetDefinition,
+  IWidgetOptionValue,
+} from '~/widgets/widgets';
+
 import Widgets from '../../../../widgets';
-import type { IDraggableListInputValue, IWidgetOptionValue } from '~/widgets/widgets';
-import { IWidget } from '~/widgets/widgets';
 import { InfoCard } from '../../../InfoCard/InfoCard';
 import { DraggableList } from './Inputs/DraggableList';
 import { LocationSelection } from './Inputs/LocationSelection';
@@ -33,11 +39,10 @@ import { StaticDraggableList } from './Inputs/StaticDraggableList';
 export type WidgetEditModalInnerProps = {
   widgetId: string;
   widgetType: string;
-  options: IWidget<string, any>['properties'];
-  widgetOptions: IWidget<string, any>['properties'];
+  options: Record<string, unknown>;
+  widgetOptions: IWidgetDefinition['options'];
+  boardName: string;
 };
-
-export type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
 
 export const WidgetsEditModal = ({
   context,
@@ -46,19 +51,15 @@ export const WidgetsEditModal = ({
 }: ContextModalProps<WidgetEditModalInnerProps>) => {
   const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
-  const items = Object.entries(innerProps.widgetOptions ?? {}) as [
-    string,
-    IntegrationOptionsValueType,
-  ][];
+  const items = objectEntries(innerProps.widgetOptions ?? {});
 
   // Find the Key in the "Widgets" Object that matches the widgetId
   const currentWidgetDefinition = Widgets[innerProps.widgetType as keyof typeof Widgets];
-  const { name: configName } = useConfigContext();
-  const updateConfig = useConfigStore((x) => x.updateConfig);
+  const { updateWidgetOptions } = useWidgetActions({ boardName: innerProps.boardName });
 
-  if (!configName || !innerProps.options) return null;
+  if (!innerProps.options) return null;
 
-  const handleChange = (key: string, value: IntegrationOptionsValueType) => {
+  const handleChange = (key: string, value: unknown) => {
     setModuleProperties((prev) => {
       const copyOfPrev: any = { ...prev };
       copyOfPrev[key] = value;
@@ -67,19 +68,11 @@ export const WidgetsEditModal = ({
   };
 
   const handleSave = () => {
-    updateConfig(
-      configName,
-      (prev) => {
-        const currentWidget = prev.widgets.find((x) => x.id === innerProps.widgetId);
-        currentWidget!.properties = moduleProperties;
+    updateWidgetOptions({
+      itemId: innerProps.widgetId,
+      newOptions: moduleProperties,
+    });
 
-        return {
-          ...prev,
-          widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
-        };
-      },
-      true
-    );
     context.closeModal(id);
   };
 
@@ -132,7 +125,7 @@ const WidgetOptionTypeSwitch: FC<{
   widgetId: string;
   propName: string;
   value: any;
-  handleChange: (key: string, value: IntegrationOptionsValueType) => void;
+  handleChange: (key: string, value: unknown) => void;
 }> = ({ option, widgetId, propName: key, value, handleChange }) => {
   const { t } = useTranslation([`modules/${widgetId}`, 'common']);
   const info = option.info ?? false;

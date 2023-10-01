@@ -62,7 +62,7 @@ export function WrapperContent({ items, refs }: WrapperContentProps) {
             <WidgetWrapper
               className="grid-stack-item-content"
               widget={widget}
-              widgetType={widget.type}
+              widgetType={widget.sort}
               WidgetComponent={definition.component as any}
             />
           </GridstackTileWrapper>

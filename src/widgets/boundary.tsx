@@ -56,7 +56,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
           withBorder
           h="calc(100% - 20px)"
         >
-          <WidgetsMenu integration={this.props.integration} widget={this.props.widget} />
+          <WidgetsMenu type={this.props.integration} widget={this.props.widget} />
           <ScrollArea h="100%" type="auto" offsetScrollbars>
             <Center>
               <Stack align="center" spacing="xs">

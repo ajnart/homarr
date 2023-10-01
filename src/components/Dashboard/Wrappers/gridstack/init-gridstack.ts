@@ -1,4 +1,4 @@
-import { GridStack, GridStackNode } from 'fily-publish-gridstack';
+import { GridItemHTMLElement, GridStack, GridStackNode } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
 import { Item, Section } from '~/components/Board/context';
 
@@ -6,7 +6,7 @@ type InitializeGridstackProps = {
   section: Section;
   refs: {
     wrapper: RefObject<HTMLDivElement>;
-    items: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>;
+    items: MutableRefObject<Record<string, RefObject<GridItemHTMLElement>>>;
     gridstack: MutableRefObject<GridStack | undefined>;
   };
   isEditMode: boolean;
@@ -73,12 +73,12 @@ export const initializeGridstack = ({
   section.items.forEach((item) => {
     const ref = refs.items.current[item.id]?.current;
     setAttributesFromShape(ref, item);
-    ref && grid.makeWidget(ref as HTMLDivElement);
+    ref && grid.makeWidget(ref);
   });
   grid.batchUpdate(false);
 };
 
-function setAttributesFromShape(ref: HTMLDivElement | null, item: Item) {
+function setAttributesFromShape(ref: GridItemHTMLElement | null, item: Item) {
   if (!item || !ref) return;
   ref.setAttribute('gs-x', item.x.toString());
   ref.setAttribute('gs-y', item.y.toString());
