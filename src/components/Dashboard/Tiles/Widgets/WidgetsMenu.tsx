@@ -1,6 +1,8 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { WidgetItem, useRequiredBoard } from '~/components/Board/context';
+import { useGridstackRef } from '~/components/Board/gridstack/context';
+import { useGridItemRef } from '~/components/Board/item/context';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 
 import WidgetsDefinitions from '../../../../widgets';
@@ -11,7 +13,9 @@ import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
 
 export type WidgetChangePositionModalInnerProps = {
   widget: WidgetItem;
+  boardName: string;
   wrapperColumnCount: number;
+  resizeGridItem: (options: { h: number; w: number; x: number; y: number }) => void;
 };
 
 interface WidgetsMenuProps {
@@ -23,6 +27,14 @@ export const WidgetsMenu = ({ type, widget }: WidgetsMenuProps) => {
   const { t } = useTranslation(`modules/${type}`);
   const board = useRequiredBoard();
   const wrapperColumnCount = useWrapperColumnCount();
+  const itemRef = useGridItemRef();
+  const gridstackRef = useGridstackRef();
+
+  const resizeGridItem = (options: { h: number; w: number; x: number; y: number }) => {
+    gridstackRef.current?.batchUpdate();
+    gridstackRef.current?.update(itemRef.current!, options);
+    gridstackRef.current?.batchUpdate(false);
+  };
 
   if (!widget || !wrapperColumnCount) return null;
   // Then get the widget definition
@@ -46,7 +58,9 @@ export const WidgetsMenu = ({ type, widget }: WidgetsMenuProps) => {
       title: null,
       innerProps: {
         widget,
+        boardName: board.name,
         wrapperColumnCount,
+        resizeGridItem,
       },
     });
   };

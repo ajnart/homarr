@@ -1,8 +1,6 @@
 import { useCallback } from 'react';
 import { api } from '~/utils/api';
 
-import { useRequiredBoard } from './context';
-
 type MoveAndResizeItem = {
   itemId: string;
   x: number;
@@ -19,12 +17,11 @@ type MoveItemToSection = {
   height: number;
 };
 
-export const useItemActions = () => {
-  const board = useRequiredBoard();
+export const useItemActions = ({ boardName }: { boardName: string }) => {
   const utils = api.useContext();
   const moveAndResizeItem = useCallback(
     ({ itemId, ...positionProps }: MoveAndResizeItem) => {
-      utils.boards.byName.setData({ boardName: board.name }, (prev) => {
+      utils.boards.byName.setData({ boardName }, (prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -36,6 +33,7 @@ export const useItemActions = () => {
               items: section.items.map((item) => {
                 // Return same item if item is not the one we're moving
                 if (item.id !== itemId) return item;
+                console.log(positionProps);
                 return {
                   ...item,
                   ...positionProps,
@@ -46,12 +44,12 @@ export const useItemActions = () => {
         };
       });
     },
-    [board.name, utils]
+    [boardName, utils]
   );
 
   const moveItemToSection = useCallback(
     ({ itemId, sectionId, ...positionProps }: MoveItemToSection) => {
-      utils.boards.byName.setData({ boardName: board.name }, (prev) => {
+      utils.boards.byName.setData({ boardName }, (prev) => {
         if (!prev) return prev;
 
         const currentSection = prev.sections.find((section) =>
@@ -86,7 +84,7 @@ export const useItemActions = () => {
         };
       });
     },
-    [board.name, utils]
+    [boardName, utils]
   );
 
   return {

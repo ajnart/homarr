@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unknown-property */
+import { GridItemHTMLElement } from 'fily-publish-gridstack';
 import { ReactNode, RefObject } from 'react';
+import { GridItemProvider } from '~/components/Board/item/context';
 
 interface GridstackTileWrapperProps {
   id: string;
@@ -12,7 +14,7 @@ interface GridstackTileWrapperProps {
   minHeight?: number;
   maxWidth?: number;
   maxHeight?: number;
-  itemRef: RefObject<HTMLDivElement>;
+  itemRef: RefObject<GridItemHTMLElement>;
   children: ReactNode;
 }
 
@@ -35,23 +37,25 @@ export const GridstackTileWrapper = ({
   const normalizedHeight = height ?? minHeight;
 
   return (
-    <div
-      className="grid-stack-item"
-      data-type={type}
-      data-id={id}
-      {...locationProperties}
-      gs-w={normalizedWidth}
-      data-gridstack-w={normalizedWidth}
-      gs-h={normalizedHeight}
-      data-gridstack-h={normalizedHeight}
-      gs-min-w={minWidth}
-      gs-min-h={minHeight}
-      gs-max-w={maxWidth}
-      gs-max-h={maxHeight}
-      ref={itemRef}
-    >
-      {children}
-    </div>
+    <GridItemProvider itemRef={itemRef}>
+      <div
+        className="grid-stack-item"
+        data-type={type}
+        data-id={id}
+        {...locationProperties}
+        gs-w={normalizedWidth}
+        data-gridstack-w={normalizedWidth}
+        gs-h={normalizedHeight}
+        data-gridstack-h={normalizedHeight}
+        gs-min-w={minWidth}
+        gs-min-h={minHeight}
+        gs-max-w={maxWidth}
+        gs-max-h={maxHeight}
+        ref={itemRef as RefObject<HTMLDivElement>}
+      >
+        {children}
+      </div>
+    </GridItemProvider>
   );
 };
 

@@ -1,4 +1,4 @@
-import { GridStack } from 'fily-publish-gridstack';
+import { GridItemHTMLElement, GridStack } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject, useMemo } from 'react';
 import { AppItem, Item, WidgetItem } from '~/components/Board/context';
 import { AppType } from '~/types/app';
@@ -14,8 +14,7 @@ interface WrapperContentProps {
   items: Item[];
   refs: {
     wrapper: RefObject<HTMLDivElement>;
-    items: MutableRefObject<Record<string, RefObject<HTMLDivElement>>>;
-    gridstack: MutableRefObject<GridStack | undefined>;
+    items: MutableRefObject<Record<string, RefObject<GridItemHTMLElement>>>;
   };
 }
 
