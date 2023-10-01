@@ -20,6 +20,7 @@ import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { generateDefaultApp } from '~/tools/shared/app';
+import { boardCustomizationSchema } from '~/validations/boards';
 
 import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 import { configNameSchema } from './config';
@@ -154,6 +155,42 @@ export const boardRouter = createTRPCRouter({
         });
       }
       return board;
+    }),
+  updateCustomization: protectedProcedure
+    .input(z.object({ boardName: configNameSchema, customization: boardCustomizationSchema }))
+    .mutation(async ({ input }) => {
+      const dbBoard = await db.query.boards.findFirst({
+        where: eq(boards.name, input.boardName),
+      });
+
+      if (!dbBoard) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'Board not found',
+        });
+      }
+
+      await db
+        .update(boards)
+        .set({
+          allowGuests: input.customization.access.allowGuests,
+          isLeftSidebarVisible: input.customization.layout.leftSidebarEnabled,
+          isRightSidebarVisible: input.customization.layout.rightSidebarEnabled,
+          isPingEnabled: input.customization.layout.pingsEnabled,
+          appOpacity: input.customization.appearance.opacity,
+          backgroundImageUrl: input.customization.appearance.backgroundSrc,
+          primaryColor: input.customization.appearance.primaryColor,
+          secondaryColor: input.customization.appearance.secondaryColor,
+          customCss: input.customization.appearance.customCss,
+          pageTitle: input.customization.pageMetadata.pageTitle,
+          metaTitle: input.customization.pageMetadata.metaTitle,
+          logoImageUrl: input.customization.pageMetadata.logoSrc,
+          faviconImageUrl: input.customization.pageMetadata.faviconSrc,
+          primaryShade: input.customization.appearance.shade,
+        })
+        .where(eq(boards.id, dbBoard.id));
+
+      return dbBoard;
     }),
   exampleBoard: protectedProcedure
     .input(z.object({ boardName: configNameSchema }))

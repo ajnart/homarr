@@ -18,17 +18,19 @@ import {
   IconChartCandle,
   IconCheck,
   IconDragDrop,
-  IconLayout, IconLock,
+  IconLayout,
+  IconLock,
   IconX,
   TablerIconsProps,
 } from '@tabler/icons-react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import { z } from 'zod';
+import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 import { AppearanceCustomization } from '~/components/Board/Customize/Appearance/AppearanceCustomization';
 import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/GridstackCustomization';
 import { LayoutCustomization } from '~/components/Board/Customize/Layout/LayoutCustomization';
@@ -46,45 +48,52 @@ import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { boardCustomizationSchema } from '~/validations/boards';
-import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 
 const notificationId = 'board-customization-notification';
 
-export default function CustomizationPage() {
+export default function CustomizationPage({
+  initialBoard,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const query = useRouter().query as { slug: string };
   const utils = api.useContext();
-  const { data: config } = api.config.byName.useQuery({ name: query.slug });
-  const { mutateAsync: saveCusomization, isLoading } = api.config.saveCusomization.useMutation();
+  const { data: board } = api.boards.byNameSimple.useQuery(
+    { boardName: query.slug },
+    {
+      initialData: initialBoard,
+    }
+  );
+  const { mutateAsync: updateCustomization, isLoading } =
+    api.boards.updateCustomization.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
   const { t } = useTranslation('boards/customize');
   const form = useBoardCustomizationForm({
     initialValues: {
       access: {
-        allowGuests: config?.settings.access.allowGuests ?? false
+        allowGuests: board.allowGuests ?? false,
       },
       layout: {
-        leftSidebarEnabled: config?.settings.customization.layout.enabledLeftSidebar ?? false,
-        rightSidebarEnabled: config?.settings.customization.layout.enabledRightSidebar ?? false,
-        pingsEnabled: config?.settings.customization.layout.enabledPing ?? false,
+        leftSidebarEnabled: board.isLeftSidebarVisible ?? false,
+        rightSidebarEnabled: board.isRightSidebarVisible ?? false,
+        pingsEnabled: board.isPingEnabled ?? false,
       },
       appearance: {
-        backgroundSrc: config?.settings.customization.backgroundImageUrl ?? '',
-        primaryColor: config?.settings.customization.colors.primary ?? 'red',
-        secondaryColor: config?.settings.customization.colors.secondary ?? 'orange',
-        shade: (config?.settings.customization.colors.shade as number | undefined) ?? 8,
-        opacity: config?.settings.customization.appOpacity ?? 50,
-        customCss: config?.settings.customization.customCss ?? '',
+        backgroundSrc: board.backgroundImageUrl ?? '',
+        primaryColor: board.primaryColor ?? 'red',
+        secondaryColor: board.secondaryColor ?? 'orange',
+        shade: board.primaryShade ?? 8,
+        opacity: board.appOpacity ?? 50,
+        customCss: board.customCss ?? '',
       },
       gridstack: {
-        sm: config?.settings.customization.gridstack?.columnCountSmall ?? 3,
-        md: config?.settings.customization.gridstack?.columnCountMedium ?? 6,
-        lg: config?.settings.customization.gridstack?.columnCountLarge ?? 12,
+        sm: 3, //config?.settings.customization.gridstack?.columnCountSmall ?? 3,
+        md: 6, //config?.settings.customization.gridstack?.columnCountMedium ?? 6,
+        lg: 12, //config?.settings.customization.gridstack?.columnCountLarge ?? 12,
       },
       pageMetadata: {
-        pageTitle: config?.settings.customization.pageTitle ?? '',
-        metaTitle: config?.settings.customization.metaTitle ?? '',
-        logoSrc: config?.settings.customization.logoImageUrl ?? '',
-        faviconSrc: config?.settings.customization.faviconUrl ?? '',
+        pageTitle: board.pageTitle ?? '',
+        metaTitle: board.metaTitle ?? '',
+        logoSrc: board.logoImageUrl ?? '',
+        faviconSrc: board.faviconImageUrl ?? '',
       },
     },
     validate: i18nZodResolver(boardCustomizationSchema),
@@ -102,14 +111,14 @@ export default function CustomizationPage() {
       message: t('notifications.pending.message'),
       loading: true,
     });
-    await saveCusomization(
+    await updateCustomization(
       {
-        name: query.slug,
-        ...values,
+        boardName: query.slug,
+        customization: values,
       },
       {
         onSettled() {
-          void utils.config.byName.invalidate({ name: query.slug });
+          void utils.boards.byNameSimple.invalidate({ boardName: query.slug });
         },
         onSuccess() {
           updateNotification({
@@ -262,7 +271,12 @@ const routeParamsSchema = z.object({
   slug: z.string(),
 });
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res, locale, params }) => {
+export const getServerSideProps = async ({
+  req,
+  res,
+  locale,
+  params,
+}: GetServerSidePropsContext) => {
   const routeParams = routeParamsSchema.safeParse(params);
   if (!routeParams.success) {
     return {
@@ -279,7 +293,12 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
 
   const helpers = await createTrpcServersideHelpers({ req, res });
 
-  const config = await helpers.config.byName.fetch({ name: routeParams.data.slug });
+  const board = await helpers.boards.byNameSimple.fetch({ boardName: routeParams.data.slug });
+  if (!board) {
+    return {
+      notFound: true,
+    };
+  }
 
   const translations = await getServerSideTranslations(
     [
@@ -290,7 +309,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
       'settings/customization/shade-selector',
       'settings/customization/opacity-selector',
       'settings/customization/gridstack',
-      'settings/customization/access'
+      'settings/customization/access',
     ],
     locale,
     req,
@@ -299,10 +318,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
 
   return {
     props: {
-      primaryColor: config.settings.customization.colors.primary,
-      secondaryColor: config.settings.customization.colors.secondary,
-      primaryShade: config.settings.customization.colors.shade,
-      trpcState: helpers.dehydrate(),
+      primaryColor: board.primaryColor,
+      secondaryColor: board.secondaryColor,
+      primaryShade: board.primaryShade,
+      initialBoard: board,
       ...translations,
     },
   };
