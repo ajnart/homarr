@@ -11,7 +11,7 @@ import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
-import { IWidget, InferWidget } from '../widgets';
+import { InferWidget } from '../widgets';
 
 dayjs.extend(utc);
 dayjs.extend(timezones);
@@ -92,7 +92,10 @@ function DateTile({ widget }: DateTileProps) {
           {widget.options.titleState === 'both' && dayjs(date).format(' (z)')}
         </Text>
       )}
-      <Text className={cx(classes.clock, 'dashboard-tile-clock-hour')}>
+      <Text
+        suppressHydrationWarning={true}
+        className={cx(classes.clock, 'dashboard-tile-clock-hour')}
+      >
         {dayjs(date).format(formatString)}
       </Text>
       {!widget.options.dateFormat.includes('hide') && (
