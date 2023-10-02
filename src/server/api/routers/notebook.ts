@@ -1,46 +1,52 @@
 import { TRPCError } from '@trpc/server';
-import fs from 'fs';
-import path from 'path';
+import { and, eq } from 'drizzle-orm';
 import { z } from 'zod';
-import { getConfig } from '~/tools/config/getConfig';
-import { BackendConfigType } from '~/types/config';
-import { INotebookWidget } from '~/widgets/notebook/NotebookWidgetTile';
+import { db } from '~/server/db';
+import { items, widgetOptions } from '~/server/db/schema';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const notebookRouter = createTRPCRouter({
   update: publicProcedure
-    .input(z.object({ widgetId: z.string(), content: z.string(), configName: z.string() }))
+    .input(z.object({ widgetId: z.string(), content: z.string(), boardName: z.string() }))
     .mutation(async ({ input }) => {
-      //TODO: #1305 Remove use of DISABLE_EDIT_MODE for auth update
-      if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
-        throw new TRPCError({
-          code: 'METHOD_NOT_SUPPORTED',
-          message: 'Edit is not allowed, because edit mode is disabled',
-        });
-      }
+      const item = await db.query.items.findFirst({
+        where: and(eq(items.id, input.widgetId), eq(items.type, 'widget')),
+        with: {
+          widget: {
+            with: {
+              options: {
+                where: eq(widgetOptions.path, 'content'),
+              },
+            },
+          },
+        },
+      });
 
-      const config = getConfig(input.configName);
-      const widget = config.widgets.find((widget) => widget.id === input.widgetId) as
-        | INotebookWidget
-        | undefined;
-
-      if (!widget) {
+      if (!item?.widget) {
         throw new TRPCError({
-          code: 'BAD_REQUEST',
+          code: 'NOT_FOUND',
           message: 'Specified widget was not found',
         });
       }
 
-      widget.options.content = input.content;
+      // Update existing content
+      if (item.widget.options.some((o) => o.path === 'content')) {
+        await db
+          .update(widgetOptions)
+          .set({ value: input.content })
+          .where(
+            and(eq(widgetOptions.widgetId, item.widget.id), eq(widgetOptions.path, 'content'))
+          );
+        return;
+      }
 
-      // TODO: Make this work
-      /*const newConfig: BackendConfigType = {
-        ...config,
-        widgets: [...config.widgets.filter((w) => w.id !== widget.id), widget],
-      };
-
-      const targetPath = path.join('data/configs', `${input.configName}.json`);
-      fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');*/
+      // Or create new content
+      await db.insert(widgetOptions).values({
+        widgetId: item.widget.id,
+        path: 'content',
+        value: input.content,
+        type: 'string',
+      });
     }),
 });

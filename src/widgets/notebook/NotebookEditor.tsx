@@ -7,7 +7,6 @@ import StarterKit from '@tiptap/starter-kit';
 import { useState } from 'react';
 import { useRequiredBoard } from '~/components/Board/context';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
-import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
@@ -25,7 +24,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const [isEditing, setIsEditing] = useState(false);
 
   const board = useRequiredBoard();
-  const updateConfig = useConfigStore((x) => x.updateConfig);
+  const utils = api.useContext();
   const { primaryColor } = useColorTheme();
 
   const { mutateAsync } = api.notebook.update.useMutation();
@@ -45,26 +44,34 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     const current = !previous;
     if (!editor) return current;
     editor.setEditable(current);
+    if (current) return current;
 
-    updateConfig(
-      board.name!,
-      (previous) => {
-        const currentWidget = previous.widgets.find((x) => x.id === widget.id);
-        currentWidget!.properties.content = debouncedContent;
-
-        return {
-          ...previous,
-          widgets: [
-            ...previous.widgets.filter((iterationWidget) => iterationWidget.id !== widget.id),
-            currentWidget!,
-          ],
-        };
-      },
-      true
-    );
+    utils.boards.byName.setData({ boardName: board.name }, (previous) => {
+      if (!previous) return previous;
+      return {
+        ...previous,
+        sections: previous.sections.map((section) => {
+          if (!section.items.some((item) => item.id === widget.id)) return section;
+          return {
+            ...section,
+            items: section.items.map((item) => {
+              if (item.id !== widget.id) return item;
+              const notebookEditor = item as INotebookWidget;
+              return {
+                ...notebookEditor,
+                options: {
+                  ...notebookEditor.options,
+                  content: debouncedContent,
+                },
+              };
+            }),
+          };
+        }),
+      };
+    });
 
     void mutateAsync({
-      configName: board.name!,
+      boardName: board.name!,
       content: debouncedContent,
       widgetId: widget.id,
     });
