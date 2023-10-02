@@ -1,11 +1,19 @@
-import { SelectItem } from '@mantine/core';
-import { ContextModalProps, closeModal } from '@mantine/modals';
+import { type SelectItem } from '@mantine/core';
+import { type ContextModalProps, closeModal } from '@mantine/modals';
+import { type WidgetItem } from '~/components/Board/context';
+import { type useResizeGridItem } from '~/components/Board/gridstack/useResizeGridItem';
 import { useItemActions } from '~/components/Board/item-actions';
 
 import widgets from '../../../../widgets';
-import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
 import { useGridstackStore, useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { ChangePositionModal } from './ChangePositionModal';
+
+export type WidgetChangePositionModalInnerProps = {
+  widget: WidgetItem;
+  boardName: string;
+  wrapperColumnCount: number;
+  resizeGridItem: ReturnType<typeof useResizeGridItem>;
+};
 
 export const ChangeWidgetPositionModal = ({
   context,
@@ -22,7 +30,7 @@ export const ChangeWidgetPositionModal = ({
       width,
       height,
     });
-    innerProps.resizeGridItem({ x: x, y: y, w: width, h: height });
+    innerProps.resizeGridItem({ x, y, width, height });
 
     context.closeModal(id);
   };

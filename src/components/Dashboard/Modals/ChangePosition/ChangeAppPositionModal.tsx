@@ -1,14 +1,16 @@
-import { SelectItem } from '@mantine/core';
-import { ContextModalProps, closeModal } from '@mantine/modals';
+import { type SelectItem } from '@mantine/core';
+import { type ContextModalProps, closeModal } from '@mantine/modals';
+import { type AppItem } from '~/components/Board/context';
+import { type useResizeGridItem } from '~/components/Board/gridstack/useResizeGridItem';
+import { useItemActions } from '~/components/Board/item-actions';
 
-import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
-import { AppType } from '~/types/app';
 import { useGridstackStore, useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { ChangePositionModal } from './ChangePositionModal';
 
 type ChangeAppPositionModalInnerProps = {
-  app: AppType;
+  app: AppItem;
+  boardName: string;
+  resizeGridItem: ReturnType<typeof useResizeGridItem>;
 };
 
 export const ChangeAppPositionModal = ({
@@ -16,34 +18,17 @@ export const ChangeAppPositionModal = ({
   context,
   innerProps,
 }: ContextModalProps<ChangeAppPositionModalInnerProps>) => {
-  const { name: configName } = useConfigContext();
-  const updateConfig = useConfigStore((x) => x.updateConfig);
-  const shapeSize = useGridstackStore((x) => x.currentShapeSize);
-
-  if (!shapeSize) return null;
+  const { moveAndResizeItem } = useItemActions({ boardName: innerProps.boardName });
 
   const handleSubmit = (x: number, y: number, width: number, height: number) => {
-    if (!configName) {
-      return;
-    }
-
-    updateConfig(
-      configName,
-      (previousConfig) => ({
-        ...previousConfig,
-        apps: [
-          ...previousConfig.apps.filter((x) => x.id !== innerProps.app.id),
-          {
-            ...innerProps.app,
-            shape: {
-              ...innerProps.app.shape,
-              [shapeSize]: { location: { x, y }, size: { width, height } },
-            },
-          },
-        ],
-      }),
-      true
-    );
+    moveAndResizeItem({
+      itemId: innerProps.app.id,
+      x,
+      y,
+      width,
+      height,
+    });
+    innerProps.resizeGridItem({ x, y, width, height });
     context.closeModal(id);
   };
 
@@ -60,10 +45,10 @@ export const ChangeAppPositionModal = ({
       onCancel={handleCancel}
       widthData={widthData}
       heightData={heightData}
-      initialX={innerProps.app.shape[shapeSize]?.location.x}
-      initialY={innerProps.app.shape[shapeSize]?.location.y}
-      initialWidth={innerProps.app.shape[shapeSize]?.size.width}
-      initialHeight={innerProps.app.shape[shapeSize]?.size.height}
+      initialX={innerProps.app.x}
+      initialY={innerProps.app.y}
+      initialWidth={innerProps.app.width}
+      initialHeight={innerProps.app.height}
     />
   );
 };

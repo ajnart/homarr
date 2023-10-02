@@ -1,22 +1,15 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { WidgetItem, useRequiredBoard } from '~/components/Board/context';
-import { useGridstackRef } from '~/components/Board/gridstack/context';
-import { useGridItemRef } from '~/components/Board/item/context';
+import { type WidgetItem, useRequiredBoard } from '~/components/Board/context';
+import { useResizeGridItem } from '~/components/Board/gridstack/useResizeGridItem';
+import { openRemoveItemModal, useItemActions } from '~/components/Board/item-actions';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 
 import WidgetsDefinitions from '../../../../widgets';
+import { type WidgetChangePositionModalInnerProps } from '../../Modals/ChangePosition/ChangeWidgetPositionModal';
 import { useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { GenericTileMenu } from '../GenericTileMenu';
-import { WidgetEditModalInnerProps } from './WidgetsEditModal';
-import { WidgetsRemoveModalInnerProps } from './WidgetsRemoveModal';
-
-export type WidgetChangePositionModalInnerProps = {
-  widget: WidgetItem;
-  boardName: string;
-  wrapperColumnCount: number;
-  resizeGridItem: (options: { h: number; w: number; x: number; y: number }) => void;
-};
+import { type WidgetEditModalInnerProps } from './WidgetsEditModal';
 
 interface WidgetsMenuProps {
   type: string;
@@ -27,33 +20,27 @@ export const WidgetsMenu = ({ type, widget }: WidgetsMenuProps) => {
   const { t } = useTranslation(`modules/${type}`);
   const board = useRequiredBoard();
   const wrapperColumnCount = useWrapperColumnCount();
-  const itemRef = useGridItemRef();
-  const gridstackRef = useGridstackRef();
-
-  const resizeGridItem = (options: { h: number; w: number; x: number; y: number }) => {
-    gridstackRef.current?.batchUpdate();
-    gridstackRef.current?.update(itemRef.current!, options);
-    gridstackRef.current?.batchUpdate(false);
-  };
+  const resizeGridItem = useResizeGridItem();
+  const { removeItem } = useItemActions({ boardName: board.name });
 
   if (!widget || !wrapperColumnCount) return null;
   // Then get the widget definition
   const widgetDefinitionObject = WidgetsDefinitions[widget.sort as keyof typeof WidgetsDefinitions];
 
   const handleDeleteClick = () => {
-    openContextModalGeneric<WidgetsRemoveModalInnerProps>({
-      modal: 'integrationRemove',
-      title: <Title order={4}>{t('common:remove')}</Title>,
-      innerProps: {
-        widgetId: widget.id,
-        widgetType: type,
+    openRemoveItemModal({
+      name: widget.sort,
+      onConfirm() {
+        removeItem({
+          itemId: widget.id,
+        });
       },
     });
   };
 
   const handleChangeSizeClick = () => {
     openContextModalGeneric<WidgetChangePositionModalInnerProps>({
-      modal: 'changeIntegrationPositionModal',
+      modal: 'changeWidgetPositionModal',
       size: 'xl',
       title: null,
       innerProps: {

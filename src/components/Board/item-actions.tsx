@@ -1,4 +1,7 @@
+import { Text, Title } from '@mantine/core';
+import { openConfirmModal } from '@mantine/modals';
 import { useCallback } from 'react';
+import { Trans } from 'react-i18next';
 import { api } from '~/utils/api';
 
 type MoveAndResizeItem = {
@@ -15,6 +18,9 @@ type MoveItemToSection = {
   y: number;
   width: number;
   height: number;
+};
+type RemoveItem = {
+  itemId: string;
 };
 
 export const useItemActions = ({ boardName }: { boardName: string }) => {
@@ -33,7 +39,6 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
               items: section.items.map((item) => {
                 // Return same item if item is not the one we're moving
                 if (item.id !== itemId) return item;
-                console.log(positionProps);
                 return {
                   ...item,
                   ...positionProps,
@@ -87,10 +92,58 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
     [boardName, utils]
   );
 
+  const removeItem = useCallback(
+    ({ itemId }: RemoveItem) => {
+      utils.boards.byName.setData({ boardName }, (prev) => {
+        if (!prev) return prev;
+        return {
+          ...prev,
+          // Filter removed item out of items array
+          sections: prev.sections.map((section) => ({
+            ...section,
+            items: section.items.filter((item) => item.id !== itemId),
+          })),
+        };
+      });
+    },
+    [boardName, utils]
+  );
+
   return {
     moveAndResizeItem,
     moveItemToSection,
+    removeItem,
   };
+};
+
+type OpenRemoveItemModalProps = {
+  name: string;
+  onConfirm: () => void;
+};
+
+export const openRemoveItemModal = ({ name, onConfirm }: OpenRemoveItemModalProps) => {
+  openConfirmModal({
+    title: (
+      <Title order={4}>
+        <Trans i18nKey="common:remove" />
+      </Title>
+    ),
+    children: (
+      <Trans
+        i18nKey="common:removeConfirm"
+        components={[<Text weight={500} />]}
+        values={{ item: name }}
+      />
+    ),
+    labels: {
+      cancel: <Trans i18nKey="common:cancel" />,
+      confirm: <Trans i18nKey="common:ok" />,
+    },
+    cancelProps: {
+      variant: 'light',
+    },
+    onConfirm,
+  });
 };
 
 /*

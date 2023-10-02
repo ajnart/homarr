@@ -1,8 +1,7 @@
-import { AppItem } from '~/components/Board/context';
-import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
+import { type AppItem, useRequiredBoard } from '~/components/Board/context';
+import { useResizeGridItem } from '~/components/Board/gridstack/useResizeGridItem';
+import { openRemoveItemModal, useItemActions } from '~/components/Board/item-actions';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
-import { AppType } from '~/types/app';
 
 import { GenericTileMenu } from '../GenericTileMenu';
 
@@ -11,8 +10,9 @@ interface TileMenuProps {
 }
 
 export const AppMenu = ({ app }: TileMenuProps) => {
-  const { config, name: configName } = useConfigContext();
-  const { updateConfig } = useConfigStore();
+  const board = useRequiredBoard();
+  const { removeItem } = useItemActions({ boardName: board.name });
+  const resizeGridItem = useResizeGridItem();
 
   const handleClickEdit = () => {
     openContextModalGeneric<{ app: AppItem; allowAppNamePropagation: boolean }>({
@@ -35,6 +35,8 @@ export const AppMenu = ({ app }: TileMenuProps) => {
       modal: 'changeAppPositionModal',
       innerProps: {
         app,
+        boardName: board.name,
+        resizeGridItem,
       },
       styles: {
         root: {
@@ -45,14 +47,14 @@ export const AppMenu = ({ app }: TileMenuProps) => {
   };
 
   const handleClickDelete = () => {
-    if (configName === undefined) {
-      return;
-    }
-
-    updateConfig(configName, (previousConfig) => ({
-      ...previousConfig,
-      apps: previousConfig.apps.filter((a) => a.id !== app.id),
-    }));
+    openRemoveItemModal({
+      name: app.name,
+      onConfirm() {
+        removeItem({
+          itemId: app.id,
+        });
+      },
+    });
   };
 
   return (
