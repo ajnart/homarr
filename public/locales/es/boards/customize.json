@@ -19,11 +19,11 @@
         },
         "success": {
             "title": "Personalización guardada",
-            "message": "Tu personalización ha sido guardada correctamente"
+            "message": "Tu personalización se ha guardado correctamente"
         },
         "error": {
             "title": "Error",
-            "message": "Imposible guardar cambios"
+            "message": "No se pueden guardar los cambios"
         }
     }
 }
