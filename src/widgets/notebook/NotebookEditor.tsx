@@ -144,7 +144,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           </BubbleMenu>
         )}
 
-        <ScrollArea>
+        <ScrollArea mih="4rem">
           <RichTextEditor.Content />
         </ScrollArea>
       </RichTextEditor>
