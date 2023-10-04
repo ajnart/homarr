@@ -1,9 +1,12 @@
 import { ActionIcon, ScrollArea } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
-import { Link, RichTextEditor } from '@mantine/tiptap';
-import { IconEdit, IconEditOff } from '@tabler/icons-react';
+import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap';
+import { IconEdit, IconEditOff, IconHighlight } from '@tabler/icons-react';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import Image from '@tiptap/extension-image';
+import TextAlign from '@tiptap/extension-text-align';
+import Highlight from '@tiptap/extension-highlight';
 import { useState } from 'react';
 import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
@@ -13,10 +16,6 @@ import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore'
 import { useConfigContext } from '~/config/provider';
 import { WidgetLoading } from '../loading';
 import { INotebookWidget } from './NotebookWidgetTile';
-
-Link.configure({
-  openOnClick: true,
-});
 
 export function Editor({ widget }: { widget: INotebookWidget }) {
   const [content, setContent] = useState(widget.properties.content);
@@ -33,7 +32,13 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const [debouncedContent] = useDebouncedValue(content, 500);
 
   const editor = useEditor({
-    extensions: [StarterKit, Link],
+    extensions: [
+      Highlight.configure({ multicolor: true }),
+      Image,
+      Link.configure({ openOnClick: true }),
+      StarterKit,
+      TextAlign.configure({ types: ['heading', 'paragraph'], })
+    ],
     content,
     editable: false,
     onUpdate: (e) => {
@@ -111,8 +116,9 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.Bold />
             <RichTextEditor.Italic />
             <RichTextEditor.Strikethrough />
-            <RichTextEditor.ClearFormatting />
+            <ColorSchemeHighlight/>
             <RichTextEditor.Code />
+            <RichTextEditor.ClearFormatting />
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
@@ -120,6 +126,12 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.H2 />
             <RichTextEditor.H3 />
             <RichTextEditor.H4 />
+          </RichTextEditor.ControlsGroup>
+
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.AlignLeft />
+            <RichTextEditor.AlignCenter />
+            <RichTextEditor.AlignRight />
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
@@ -167,4 +179,17 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       )}
     </>
   );
+}
+
+function ColorSchemeHighlight () {
+  const { editor } = useRichTextEditorContext();
+  const { primaryColor } = useColorTheme();
+  return (
+    <RichTextEditor.Control
+      onClick={() => editor?.chain().focus().toggleHighlight({ color: primaryColor }).run()}
+      title="Highlight text"
+    >
+      <IconHighlight stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  )
 }
