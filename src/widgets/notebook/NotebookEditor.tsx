@@ -10,9 +10,11 @@ import {
 import { useDebouncedValue, useDisclosure, useInputState } from '@mantine/hooks';
 import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap';
 import { IconEdit, IconEditOff, IconHighlight, IconPhoto } from '@tabler/icons-react';
+import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import Image from '@tiptap/extension-image';
 import TextAlign from '@tiptap/extension-text-align';
+import TextStyle from '@tiptap/extension-text-style';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useState } from 'react';
@@ -33,7 +35,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { primaryColor } = useColorTheme();
+  const { colors, primaryColor } = useMantineTheme();
 
   const { mutateAsync } = api.notebook.update.useMutation();
 
@@ -41,11 +43,13 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const editor = useEditor({
     extensions: [
+      Color,
       Highlight.configure({ multicolor: true }),
       Image.configure({ inline: true }),
       Link.configure({ openOnClick: true }),
       StarterKit,
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      TextStyle,
     ],
     content,
     editable: false,
@@ -124,6 +128,24 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.Bold />
             <RichTextEditor.Italic />
             <RichTextEditor.Strikethrough />
+            <RichTextEditor.ColorPicker
+              colors={[
+                colors.dark[9],
+                colors.gray[8],
+                colors.red[9],
+                colors.pink[7],
+                colors.grape[8],
+                colors.violet[9],
+                colors.indigo[9],
+                colors.blue[5],
+                colors.cyan[9],
+                colors.teal[9],
+                colors.green[8],
+                colors.lime[8],
+                colors.yellow[5],
+                colors.orange[8],
+              ]}
+            />
             <ColorSchemeHighlight />
             <RichTextEditor.Code />
             <RichTextEditor.ClearFormatting />
@@ -252,8 +274,7 @@ function EmbedImage() {
       <Popover.Dropdown>
         <Group spacing={0}>
           <TextInput
-            defaultValue=""
-            value={src}
+            value={src || ''}
             onChange={setSrc}
             onKeyDown={(e) => {
               if (e.key === 'Enter') {

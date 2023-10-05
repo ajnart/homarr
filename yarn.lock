@@ -2051,6 +2051,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tiptap/extension-color@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@tiptap/extension-color@npm:2.1.11"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+    "@tiptap/extension-text-style": ^2.0.0
+  checksum: f2fb081b897cfb522c5b5a122f8538c3c899a3eecf4b23539e2c5597f07f4b2cb45e0c41cf2015af2a61f22e3bd1eb5a014f05b2ccead1709b8ae26d96b17445
+  languageName: node
+  linkType: hard
+
 "@tiptap/extension-document@npm:^2.1.7":
   version: 2.1.7
   resolution: "@tiptap/extension-document@npm:2.1.7"
@@ -2211,6 +2221,15 @@ __metadata:
   peerDependencies:
     "@tiptap/core": ^2.0.0
   checksum: e6f735335642b403ad2eaa98a99230555515184d069a1ffdbad27bb866da661165387226d54d7a56b78693cf1fe103c00158cf9da8ad13f1755d93ebc6dfbc6b
+  languageName: node
+  linkType: hard
+
+"@tiptap/extension-text-style@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@tiptap/extension-text-style@npm:2.1.11"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: 769bd883b51635c59370e07141397c7b26aa95b223145635fee5c188d0e9275c81ce6f1efd1a510e130a474e050f1fe9b98d45c0f2331a079ea02f6047a39195
   languageName: node
   linkType: hard
 
@@ -6975,10 +6994,12 @@ __metadata:
     "@tanstack/react-query-persist-client": ^4.28.0
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
+    "@tiptap/extension-color": ^2.1.11
     "@tiptap/extension-highlight": ^2.1.11
     "@tiptap/extension-image": ^2.1.11
     "@tiptap/extension-link": ^2.0.4
     "@tiptap/extension-text-align": ^2.1.11
+    "@tiptap/extension-text-style": ^2.1.11
     "@tiptap/pm": ^2.0.4
     "@tiptap/react": ^2.0.4
     "@tiptap/starter-kit": ^2.0.4
