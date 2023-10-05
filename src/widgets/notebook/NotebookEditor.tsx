@@ -1,19 +1,27 @@
-import { ActionIcon, ScrollArea } from '@mantine/core';
-import { useDebouncedValue } from '@mantine/hooks';
+import {
+  ActionIcon,
+  Button,
+  Group,
+  Popover,
+  ScrollArea,
+  TextInput,
+  useMantineTheme,
+} from '@mantine/core';
+import { useDebouncedValue, useDisclosure, useInputState } from '@mantine/hooks';
 import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap';
-import { IconEdit, IconEditOff, IconHighlight } from '@tabler/icons-react';
-import { BubbleMenu, useEditor } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
+import { IconEdit, IconEditOff, IconHighlight, IconPhoto } from '@tabler/icons-react';
+import Highlight from '@tiptap/extension-highlight';
 import Image from '@tiptap/extension-image';
 import TextAlign from '@tiptap/extension-text-align';
-import Highlight from '@tiptap/extension-highlight';
+import { BubbleMenu, useEditor } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
 import { useState } from 'react';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '~/config/provider';
 import { WidgetLoading } from '../loading';
 import { INotebookWidget } from './NotebookWidgetTile';
 
@@ -34,10 +42,10 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const editor = useEditor({
     extensions: [
       Highlight.configure({ multicolor: true }),
-      Image,
+      Image.configure({ inline: true }),
       Link.configure({ openOnClick: true }),
       StarterKit,
-      TextAlign.configure({ types: ['heading', 'paragraph'], })
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
     ],
     content,
     editable: false,
@@ -116,7 +124,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.Bold />
             <RichTextEditor.Italic />
             <RichTextEditor.Strikethrough />
-            <ColorSchemeHighlight/>
+            <ColorSchemeHighlight />
             <RichTextEditor.Code />
             <RichTextEditor.ClearFormatting />
           </RichTextEditor.ControlsGroup>
@@ -144,6 +152,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           <RichTextEditor.ControlsGroup>
             <RichTextEditor.Link />
             <RichTextEditor.Unlink />
+            <EmbedImage />
           </RichTextEditor.ControlsGroup>
         </RichTextEditor.Toolbar>
         {editor && (
@@ -181,7 +190,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   );
 }
 
-function ColorSchemeHighlight () {
+function ColorSchemeHighlight() {
   const { editor } = useRichTextEditorContext();
   const { primaryColor } = useColorTheme();
   return (
@@ -191,5 +200,87 @@ function ColorSchemeHighlight () {
     >
       <IconHighlight stroke={1.5} size="1rem" />
     </RichTextEditor.Control>
-  )
+  );
+}
+
+function EmbedImage() {
+  const { editor } = useRichTextEditorContext();
+  const { colors, colorScheme, white } = useMantineTheme();
+  const [opened, { open, close, toggle }] = useDisclosure(false);
+  const [src, setSrc] = useInputState<string>('');
+
+  function setImage() {
+    editor.commands.insertContent({
+      type: 'paragraph',
+      content: [
+        {
+          type: 'image',
+          attrs: {
+            style: 'width: 50%;', // Image size styling not supported yet, leaving it as keepsake for later
+            src: src,
+          },
+        },
+      ],
+    });
+    close();
+  }
+
+  return (
+    <Popover
+      opened={opened}
+      onClose={() => {
+        close();
+        setSrc('');
+      }}
+      onOpen={() => {
+        open();
+        setSrc(editor == null ? '' : editor.getAttributes('image').src);
+      }}
+      position="left"
+      styles={{
+        dropdown: {
+          backgroundColor: colorScheme === 'dark' ? colors.dark[7] : white,
+        },
+      }}
+      trapFocus
+    >
+      <Popover.Target>
+        <RichTextEditor.Control onClick={toggle} title="Embed Image">
+          <IconPhoto stroke={1.5} size="1rem" />
+        </RichTextEditor.Control>
+      </Popover.Target>
+      <Popover.Dropdown>
+        <Group spacing={0}>
+          <TextInput
+            defaultValue=""
+            value={src}
+            onChange={setSrc}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                setImage();
+              }
+            }}
+            placeholder="https://example.com/"
+            styles={{
+              input: {
+                borderBottomRightRadius: 0,
+                borderTopRightRadius: 0,
+                borderRight: 0,
+              },
+            }}
+          />
+          <Button
+            children="Save" //Left out of translation for consistency with the link button
+            style={{
+              borderBottomLeftRadius: 0,
+              borderTopLeftRadius: 0,
+            }}
+            variant="default"
+            onClick={setImage}
+          />
+        </Group>
+      </Popover.Dropdown>
+    </Popover>
+  );
 }

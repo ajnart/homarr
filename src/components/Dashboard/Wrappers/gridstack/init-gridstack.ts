@@ -51,6 +51,7 @@ export const initializeGridstack = (
   // Add listener for moving items around in a wrapper
   grid.on('change', (_, el) => {
     const nodes = el as GridStackNode[];
+    if (!nodes) return;
     const firstNode = nodes.at(0);
     if (!firstNode) return;
     events.onChange(firstNode);
@@ -59,6 +60,7 @@ export const initializeGridstack = (
   // Add listener for moving items in config from one wrapper to another
   grid.on('added', (_, el) => {
     const nodes = el as GridStackNode[];
+    if (!nodes) return;
     const firstNode = nodes.at(0);
     if (!firstNode) return;
     events.onAdd(firstNode);

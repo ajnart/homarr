@@ -2110,6 +2110,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tiptap/extension-highlight@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@tiptap/extension-highlight@npm:2.1.11"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: 7fc57231f4eeffec84b87a0ef6c4ff326adc1847e047ebeb31e8e4499bcbadcab8addb0403231b4b553e737b9fd561dd87a459592d026f918d69a9e3d3dbaf8c
+  languageName: node
+  linkType: hard
+
 "@tiptap/extension-history@npm:^2.1.7":
   version: 2.1.7
   resolution: "@tiptap/extension-history@npm:2.1.7"
@@ -2127,6 +2136,15 @@ __metadata:
     "@tiptap/core": ^2.0.0
     "@tiptap/pm": ^2.0.0
   checksum: 8181d0d5e2bf6dd9dd6bcfed23990b072dfe8b32c166f1f2a23993a3bbaec832032c9dafdab81a6c722fde5587506aaccdc0d50c3fbfff115ce0e5ac40e62d91
+  languageName: node
+  linkType: hard
+
+"@tiptap/extension-image@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@tiptap/extension-image@npm:2.1.11"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: ce20bb9eee09ea313782a15c695a31a465f3330d657461c4610fa5b11df84eb28ecc506e1a0d95427d98acab8c9951f48de6a11587041a75839be3807ec46008
   languageName: node
   linkType: hard
 
@@ -2184,6 +2202,15 @@ __metadata:
   peerDependencies:
     "@tiptap/core": ^2.0.0
   checksum: 8932f89865d174b6d6d79d8fc28f94e20a866efcaa73890e6666bb5510fca8ac23431afe526bd8814882ddd35ea8082a282563210d04200f1c2c745927f01824
+  languageName: node
+  linkType: hard
+
+"@tiptap/extension-text-align@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@tiptap/extension-text-align@npm:2.1.11"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: e6f735335642b403ad2eaa98a99230555515184d069a1ffdbad27bb866da661165387226d54d7a56b78693cf1fe103c00158cf9da8ad13f1755d93ebc6dfbc6b
   languageName: node
   linkType: hard
 
@@ -6948,7 +6975,10 @@ __metadata:
     "@tanstack/react-query-persist-client": ^4.28.0
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
+    "@tiptap/extension-highlight": ^2.1.11
+    "@tiptap/extension-image": ^2.1.11
     "@tiptap/extension-link": ^2.0.4
+    "@tiptap/extension-text-align": ^2.1.11
     "@tiptap/pm": ^2.0.4
     "@tiptap/react": ^2.0.4
     "@tiptap/starter-kit": ^2.0.4
