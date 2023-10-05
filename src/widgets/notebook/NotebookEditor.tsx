@@ -1,9 +1,9 @@
 import {
   ActionIcon,
   Button,
-  Group,
   Popover,
   ScrollArea,
+  Stack,
   TextInput,
   useMantineTheme,
 } from '@mantine/core';
@@ -41,11 +41,20 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const [debouncedContent] = useDebouncedValue(content, 500);
 
+  const CustomImage = Image.extend({
+    addAttributes() {
+      return {
+        ...this.parent?.(),
+        width: { default: null },
+      };
+    },
+  });
+
   const editor = useEditor({
     extensions: [
       Color,
       Highlight.configure({ multicolor: true }),
-      Image.configure({ inline: true }),
+      CustomImage.configure({ inline: true }),
       Link.configure({ openOnClick: true }),
       StarterKit,
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
@@ -230,6 +239,7 @@ function EmbedImage() {
   const { colors, colorScheme, white } = useMantineTheme();
   const [opened, { open, close, toggle }] = useDisclosure(false);
   const [src, setSrc] = useInputState<string>('');
+  const [width, setWidth] = useInputState<string>('');
 
   function setImage() {
     editor.commands.insertContent({
@@ -238,7 +248,7 @@ function EmbedImage() {
         {
           type: 'image',
           attrs: {
-            style: 'width: 50%;', // Image size styling not supported yet, leaving it as keepsake for later
+            width: width,
             src: src,
           },
         },
@@ -253,10 +263,12 @@ function EmbedImage() {
       onClose={() => {
         close();
         setSrc('');
+        setWidth('');
       }}
       onOpen={() => {
         open();
         setSrc(editor == null ? '' : editor.getAttributes('image').src);
+        setWidth(editor == null ? '' : editor.getAttributes('image').width);
       }}
       position="left"
       styles={{
@@ -272,8 +284,9 @@ function EmbedImage() {
         </RichTextEditor.Control>
       </Popover.Target>
       <Popover.Dropdown>
-        <Group spacing={0}>
+        <Stack spacing={5}>
           <TextInput
+            label="Source"
             value={src || ''}
             onChange={setSrc}
             onKeyDown={(e) => {
@@ -283,24 +296,21 @@ function EmbedImage() {
               }
             }}
             placeholder="https://example.com/"
-            styles={{
-              input: {
-                borderBottomRightRadius: 0,
-                borderTopRightRadius: 0,
-                borderRight: 0,
-              },
-            }}
           />
-          <Button
-            children="Save" //Left out of translation for consistency with the link button
-            style={{
-              borderBottomLeftRadius: 0,
-              borderTopLeftRadius: 0,
+          <TextInput
+            label="Width"
+            value={width || ''}
+            onChange={setWidth}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                setImage();
+              }
             }}
-            variant="default"
-            onClick={setImage}
+            placeholder="Value in % or pixels"
           />
-        </Group>
+          <Button children="Save" variant="default" mt={10} mb={5} onClick={setImage} />
+        </Stack>
       </Popover.Dropdown>
     </Popover>
   );
