@@ -8,17 +8,17 @@
     "actionIcon": {
         "tooltip": "Додати плитку"
     },
-    "apps": "",
+    "apps": "Додатки",
     "app": {
-        "defaultName": ""
+        "defaultName": "Ваші додатки"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Віджети",
+    "categories": "Категорії",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Назва категорії",
+        "defaultName": "Нова категорія",
         "created": {
-            "title": "",
+            "title": "Категорію створено",
             "message": ""
         }
     }
