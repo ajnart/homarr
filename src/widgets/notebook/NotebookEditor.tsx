@@ -1,6 +1,9 @@
 import {
   ActionIcon,
   Button,
+  ColorPicker,
+  ColorSwatch,
+  Group,
   Popover,
   ScrollArea,
   Stack,
@@ -9,7 +12,16 @@ import {
 } from '@mantine/core';
 import { useDebouncedValue, useDisclosure, useInputState } from '@mantine/hooks';
 import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap';
-import { IconEdit, IconEditOff, IconHighlight, IconPhoto } from '@tabler/icons-react';
+import {
+  IconCheck,
+  IconCircleOff,
+  IconEdit,
+  IconEditOff,
+  IconHighlight,
+  IconLetterA,
+  IconPhoto,
+  IconX,
+} from '@tabler/icons-react';
 import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import Image from '@tiptap/extension-image';
@@ -17,11 +29,10 @@ import TextAlign from '@tiptap/extension-text-align';
 import TextStyle from '@tiptap/extension-text-style';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { useState } from 'react';
+import { Dispatch, ReactNode, SetStateAction, useState } from 'react';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
-import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
 import { WidgetLoading } from '../loading';
@@ -35,7 +46,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { colors, primaryColor } = useMantineTheme();
+  const { primaryColor } = useMantineTheme();
 
   const { mutateAsync } = api.notebook.update.useMutation();
 
@@ -137,25 +148,8 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.Bold />
             <RichTextEditor.Italic />
             <RichTextEditor.Strikethrough />
-            <RichTextEditor.ColorPicker
-              colors={[
-                colors.dark[9],
-                colors.gray[8],
-                colors.red[9],
-                colors.pink[7],
-                colors.grape[8],
-                colors.violet[9],
-                colors.indigo[9],
-                colors.blue[5],
-                colors.cyan[9],
-                colors.teal[9],
-                colors.green[8],
-                colors.lime[8],
-                colors.yellow[5],
-                colors.orange[8],
-              ]}
-            />
-            <ColorSchemeHighlight />
+            <ColoredText />
+            <ColoredHighlight />
             <RichTextEditor.Code />
             <RichTextEditor.ClearFormatting />
           </RichTextEditor.ControlsGroup>
@@ -221,16 +215,150 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   );
 }
 
-function ColorSchemeHighlight() {
+function ColoredHighlight() {
   const { editor } = useRichTextEditorContext();
-  const { primaryColor } = useColorTheme();
+  const defaultColor = 'transparent';
+  const [color, setColor] = useState<string>(defaultColor);
+
   return (
-    <RichTextEditor.Control
-      onClick={() => editor?.chain().focus().toggleHighlight({ color: primaryColor }).run()}
-      title="Highlight text"
+    <ColoredControl
+      color={color}
+      setColor={setColor}
+      defaultColor={defaultColor}
+      attribute="highlight"
+      hoverText="Colored highlight text"
+      icon={<IconHighlight stroke={1.5} size="1rem" />}
+      onSaveHandle={() => editor.chain().focus().setHighlight({ color: color }).run()}
+      onUnsetHandle={() => editor.chain().focus().unsetHighlight().run()}
+    />
+  );
+}
+
+function ColoredText() {
+  const { editor } = useRichTextEditorContext();
+  const { black, colors, colorScheme } = useMantineTheme();
+  const defaultColor = colorScheme === 'dark' ? colors.dark[0] : black;
+  const [color, setColor] = useState<string>(defaultColor);
+
+  return (
+    <ColoredControl
+      color={color}
+      setColor={setColor}
+      defaultColor={defaultColor}
+      attribute="textStyle"
+      hoverText="Color text"
+      icon={<IconLetterA stroke={1.5} size="1rem" />}
+      onSaveHandle={() => editor.chain().focus().setColor(color).run()}
+      onUnsetHandle={() => editor.chain().focus().unsetColor().run()}
+    />
+  );
+}
+
+interface ColoredControlProps {
+  color: string;
+  setColor: Dispatch<SetStateAction<string>>;
+  defaultColor: string;
+  attribute: string;
+  hoverText: string;
+  icon: ReactNode;
+  onSaveHandle: () => {};
+  onUnsetHandle: () => {};
+}
+
+function ColoredControl({
+  color,
+  setColor,
+  defaultColor,
+  attribute,
+  hoverText,
+  icon,
+  onSaveHandle,
+  onUnsetHandle,
+}: ColoredControlProps) {
+  const { editor } = useRichTextEditorContext();
+  const { colors, colorScheme, white } = useMantineTheme();
+  const [opened, { close, toggle }] = useDisclosure(false);
+
+  const palette = [
+    'rgb(0, 0, 0)',
+    colors.dark[9],
+    colors.dark[6],
+    colors.dark[3],
+    colors.dark[0],
+    'rgb(255, 255, 255)',
+    colors.red[9],
+    colors.pink[7],
+    colors.grape[8],
+    colors.violet[9],
+    colors.indigo[9],
+    colors.blue[5],
+    colors.green[6],
+    'rgb(9, 214, 48)',
+    colors.lime[5],
+    colors.yellow[5],
+    'rgb(235, 132, 21)',
+    colors.orange[9],
+  ];
+
+  editor?.on('selectionUpdate', ({ editor }) => {
+    setColor(editor.getAttributes(attribute).color ?? defaultColor);
+  });
+
+  return (
+    <Popover
+      opened={opened}
+      onChange={toggle}
+      styles={{
+        dropdown: {
+          backgroundColor: colorScheme === 'dark' ? colors.dark[7] : white,
+        },
+      }}
     >
-      <IconHighlight stroke={1.5} size="1rem" />
-    </RichTextEditor.Control>
+      <Popover.Target>
+        <RichTextEditor.Control onClick={toggle} title={hoverText}>
+          <Group spacing={3} px="0.2rem">
+            {icon}
+            <ColorSwatch size={14} color={color} />
+          </Group>
+        </RichTextEditor.Control>
+      </Popover.Target>
+      <Popover.Dropdown>
+        <Stack spacing={8}>
+          <ColorPicker
+            value={color}
+            onChange={setColor}
+            format="rgba"
+            swatches={palette}
+            swatchesPerRow={6}
+          />
+          <Group position="right" spacing={8}>
+            <ActionIcon title="Cancel" variant="default" onClick={close}>
+              <IconX stroke={1.5} size="1rem" />
+            </ActionIcon>
+            <ActionIcon
+              title="Apply"
+              variant="default"
+              onClick={() => {
+                onSaveHandle();
+                close();
+              }}
+            >
+              <IconCheck stroke={1.5} size="1rem" />
+            </ActionIcon>
+            <ActionIcon
+              title="Clear color"
+              variant="default"
+              onClick={() => {
+                onUnsetHandle();
+                close();
+              }}
+            >
+              <IconCircleOff stroke={1.5} size="1rem" />
+            </ActionIcon>
+          </Group>
+        </Stack>
+      </Popover.Dropdown>
+    </Popover>
   );
 }
 
