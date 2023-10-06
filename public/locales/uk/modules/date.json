@@ -8,24 +8,24 @@
         "label": "Показувати повний час (24 години)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Формат дати",
         "data": {
-          "hide": ""
+          "hide": "Сховати дату"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Відображати ваш часовий пояс"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Місцезнаходження часовий поясу"
       },
       "titleState": {
-        "label": "",
+        "label": "Назва міста",
         "info": "",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Місто та часовий пояс",
+          "city": "Лише місто",
+          "none": "Нема"
         }
       }
     }
