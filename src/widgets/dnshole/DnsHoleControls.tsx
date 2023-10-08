@@ -3,11 +3,13 @@ import {
   Box,
   Button,
   Card,
+  Center,
   Group,
   Image,
   SimpleGrid,
   Stack,
   Text,
+  Title,
   UnstyledButton,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
@@ -71,7 +73,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'modules/dns-hole-controls']);
 
   const { name: configName, config } = useConfigContext();
 
@@ -80,6 +82,20 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   if (isInitialLoading || !data || !configName) {
     return <WidgetLoading />;
   }
+
+  if (data.status.length === 0) {
+    return(
+      <Center h="100%">
+        <Stack align="center">
+          <IconDeviceGamepad size={40} strokeWidth={1}/>
+          <Title align="center" order={6}>{t('modules/dns-hole-controls:descriptor.errors.general.title')}</Title>
+          <Text align="center">{t('modules/dns-hole-controls:descriptor.errors.general.text')}</Text>
+        </Stack>
+      </Center>
+    )
+  }
+
+  console.log(data);
 
   type getDnsStatusAcc = {
     enabled: string[];

@@ -41,7 +41,7 @@ export const StepOnboardingFinished = () => {
           <Divider />
           <NavLink
             component={Link}
-            href="/b/default"
+            href="/b"
             rightSection={<IconChevronRight size="0.8rem" stroke={1.5} />}
             className={classes.link}
             icon={<IconDashboard />}

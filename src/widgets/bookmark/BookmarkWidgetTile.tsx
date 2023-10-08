@@ -254,6 +254,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
       );
     case 'horizontal':
     case 'vertical':
+      const flexDirection = widget.properties.layout === 'vertical' ? 'column' : 'row';
       return (
         <Stack h="100%" spacing={0}>
           <Title size="h4" px="0.25rem">
@@ -276,21 +277,19 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
             }}
           >
             <Flex
-              direction={ widget.properties.layout === 'vertical' ? 'column' : 'row' }
+              direction={flexDirection}
               gap="0"
               h="100%"
               w="100%"
             >
               {widget.properties.items.map((item: BookmarkItem, index) => (
-                <>
-                  {index > 0 &&
-                    <Divider
-                      m="3px"
-                      orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' }
-                    />
-                  }
+                <div key={index} style={{ display: 'flex', flex: '1', flexDirection: flexDirection, }}>
+                  <Divider
+                    m="3px"
+                    orientation={ widget.properties.layout !== 'vertical' ? 'vertical' : 'horizontal' }
+                    color={index === 0 ? "transparent" : undefined}
+                  />
                   <Card
-                    key={index}
                     px="md"
                     py="1px"
                     component="a"
@@ -307,7 +306,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                   >
                     <BookmarkItemContent item={item}/>
                   </Card>
-                </>
+                </div>
               ))}
             </Flex>
           </ScrollArea>
