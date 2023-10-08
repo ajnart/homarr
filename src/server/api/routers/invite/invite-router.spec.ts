@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import { eq } from 'drizzle-orm';
 import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
 import { Session, User } from 'next-auth';
+import { v4 } from 'uuid';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, test, vi } from 'vitest';
 import { db, sqlite } from '~/server/db';
 import { invites, users } from '~/server/db/schema';
@@ -63,15 +64,21 @@ describe('invite router', () => {
       expires: expireDate,
       token: 'token',
     });
+    await db.insert(invites).values({
+      id: v4(),
+      createdById: '123',
+      expires: expireDate,
+      token: v4(),
+    });
 
     const caller = inviteRouter.createCaller({
       session: sessionMock({ isAdmin: true }),
       cookies: {},
     });
 
-    const result = await caller.all({ page: 0 });
+    const result = await caller.all({ page: 0, limit: 1 });
 
-    expect(result.countPages).toEqual(1);
+    expect(result.countPages).toEqual(2);
     expect(result.invites[0]).toStrictEqual({
       id: '123',
       creator: 'John Doe',
