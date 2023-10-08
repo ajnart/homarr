@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Εμφάνιση Κουμπιών 'Ενεργοποίηση/Απενεργοποίηση Όλων'"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }
