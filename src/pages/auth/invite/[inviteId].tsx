@@ -12,6 +12,7 @@ import {
 import { useForm } from '@mantine/form';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconCheck, IconX } from '@tabler/icons-react';
+import { and, eq } from 'drizzle-orm';
 import { GetServerSideProps } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -20,10 +21,11 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { z } from 'zod';
 import { PasswordRequirements } from '~/components/Password/password-requirements';
-import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
 import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
+import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
 import { getServerAuthSession } from '~/server/auth';
-import { prisma } from '~/server/db';
+import { db } from '~/server/db';
+import { invites } from '~/server/db/schema';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -194,14 +196,14 @@ export const getServerSideProps: GetServerSideProps = async ({
     };
   }
 
-  const token = await prisma.invite.findUnique({
-    where: {
-      id: routeParams.data.inviteId,
-      token: queryParams.data.token,
-    },
+  const dbInvite = await db.query.invites.findFirst({
+    where: and(
+      eq(invites.id, routeParams.data.inviteId),
+      eq(invites.token, queryParams.data.token)
+    ),
   });
 
-  if (!token || token.expires < new Date()) {
+  if (!dbInvite || dbInvite.expires < new Date()) {
     return {
       notFound: true,
     };

@@ -1,7 +1,11 @@
 const { z } = require('zod');
 const { createEnv } = require('@t3-oss/env-nextjs');
 
-const portSchema = z.string().regex(/\d*/).transform((value) => value === undefined ? undefined : Number(value)).optional();
+const portSchema = z
+  .string()
+  .regex(/\d*/)
+  .transform((value) => (value === undefined ? undefined : Number(value)))
+  .optional();
 const envSchema = z.enum(['development', 'test', 'production']);
 
 const env = createEnv({
@@ -22,7 +26,7 @@ const env = createEnv({
     ),
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: portSchema,
-    HOSTNAME: z.string().optional()
+    HOSTNAME: z.string().optional(),
   },
 
   /**
@@ -57,8 +61,9 @@ const env = createEnv({
     NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: process.env.DEFAULT_COLOR_SCHEME,
     NEXT_PUBLIC_PORT: process.env.PORT,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
-    HOSTNAME: process.env.HOSTNAME
+    HOSTNAME: process.env.HOSTNAME,
   },
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });
 
 module.exports = {

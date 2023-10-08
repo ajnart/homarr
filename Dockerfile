@@ -10,24 +10,31 @@ ENV NODE_OPTIONS '--no-experimental-fetch'
 
 COPY next.config.js ./
 COPY public ./public
-COPY package.json ./package.json
-COPY yarn.lock ./yarn.lock
+COPY package.json ./temp_package.json
+COPY yarn.lock ./temp_yarn.lock
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY .next/standalone ./
 COPY .next/static ./.next/static
-COPY prisma/schema.prisma prisma/schema.prisma
 COPY ./scripts/run.sh ./scripts/run.sh
+COPY ./drizzle ./drizzle
+RUN mkdir database
+COPY ./src/migrate.ts ./src/migrate.ts
 
 # Install dependencies
 RUN apt-get update -y && apt-get install -y openssl
-RUN yarn global add prisma
+
+# Required for migration
+RUN cp -r node_modules node_modules_cache
+RUN rm -rf node_modules
+RUN rm package.json
+RUN yarn add typescript ts-node dotenv drizzle-orm@0.28.6 better-sqlite3@8.6.0 @types/better-sqlite3
 
 # Expose the default application port
 EXPOSE $PORT
 ENV PORT=${PORT}
 
-ENV DATABASE_URL "file:../database/db.sqlite"
+ENV DATABASE_URL "file:./database/db.sqlite"
 ENV NEXTAUTH_URL "http://localhost:3000"
 ENV PORT 7575
 ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED

@@ -148,7 +148,7 @@ const ManageUsersPage = () => {
                 </tr>
               ))}
 
-              {debouncedSearch && debouncedSearch.length > 0 && (
+              {debouncedSearch && debouncedSearch.length > 0 && data.countPages === 0 && (
                 <tr>
                   <td colSpan={1}>
                     <Box p={15}>

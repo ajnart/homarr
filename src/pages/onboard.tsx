@@ -7,7 +7,8 @@ import Head from 'next/head';
 import { OnboardingSteps } from '~/components/Onboarding/onboarding-steps';
 import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
-import { prisma } from '~/server/db';
+import { db } from '~/server/db';
+import { getTotalUserCountAsync } from '~/server/db/queries/user';
 import { getConfig } from '~/tools/config/getConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 
@@ -32,11 +33,7 @@ export default function OnboardPage({
       <ThemeSchemeToggle pos="absolute" top={20} right={20} variant="default" />
 
       <Stack h="100dvh" bg={background} spacing={0}>
-        <Center
-          bg={fn.linearGradient(145, colors.red[7], colors.red[5])}
-          mih={150}
-          h={150}
-        >
+        <Center bg={fn.linearGradient(145, colors.red[7], colors.red[5])} mih={150} h={150}>
           <Center bg={background} w={100} h={100} style={{ borderRadius: 64 }}>
             <Image width={70} src="/imgs/logo/logo-color.svg" alt="Homarr Logo" />
           </Center>
@@ -72,7 +69,7 @@ export default function OnboardPage({
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const userCount = await prisma.user.count();
+  const userCount = await getTotalUserCountAsync();
   if (userCount >= 1) {
     return {
       notFound: true,
@@ -83,7 +80,12 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const configs = files.map((file) => getConfig(file));
   const configSchemaVersions = configs.map((config) => config.schemaVersion);
 
-  const translations = await getServerSideTranslations(['password-requirements'], ctx.locale, ctx.req, ctx.res);
+  const translations = await getServerSideTranslations(
+    ['password-requirements'],
+    ctx.locale,
+    ctx.req,
+    ctx.res
+  );
 
   return {
     props: {

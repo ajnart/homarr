@@ -10,7 +10,6 @@ import ContainerTable from '~/components/Manage/Tools/Docker/ContainerTable';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { dockerRouter } from '~/server/api/routers/docker/router';
 import { getServerAuthSession } from '~/server/auth';
-import { prisma } from '~/server/db';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
@@ -66,7 +65,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
   const caller = dockerRouter.createCaller({
     session: session,
     cookies: req.cookies,
-    prisma: prisma,
   });
 
   const translations = await getServerSideTranslations(

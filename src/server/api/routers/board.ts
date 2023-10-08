@@ -1,6 +1,7 @@
 import { TRPCError } from '@trpc/server';
 import fs from 'fs';
 import { z } from 'zod';
+import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
@@ -13,11 +14,7 @@ export const boardRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
     const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
 
-    const userSettings = await ctx.prisma.userSettings.findUniqueOrThrow({
-      where: {
-        userId: ctx.session?.user.id,
-      },
-    });
+    const defaultBoard = await getDefaultBoardAsync(ctx.session.user.id, 'default');
 
     return await Promise.all(
       files.map(async (file) => {
@@ -31,7 +28,7 @@ export const boardRouter = createTRPCRouter({
           countApps: countApps,
           countWidgets: config.widgets.length,
           countCategories: config.categories.length,
-          isDefaultForUser: name === userSettings.defaultBoard,
+          isDefaultForUser: name === defaultBoard,
         };
       })
     );
