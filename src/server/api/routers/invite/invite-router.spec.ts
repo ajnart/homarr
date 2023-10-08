@@ -189,7 +189,7 @@ describe('invite router', () => {
       cookies: {},
     });
 
-    await caller.delete({ tokenId: inviteId });
+    await caller.delete({ id: inviteId });
 
     const dbInvite = await db.query.invites.findFirst({
       where: eq(invites.id, inviteId),
@@ -216,7 +216,7 @@ describe('invite router', () => {
       cookies: {},
     });
 
-    await caller.delete({ tokenId: inviteId });
+    await caller.delete({ id: inviteId });
 
     const dbInvite = await db.query.invites.findFirst({
       where: eq(invites.id, inviteId),

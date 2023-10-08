@@ -67,7 +67,7 @@ export const inviteRouter = createTRPCRouter({
         expires: inviteToInsert.expires,
       };
     }),
-  delete: adminProcedure.input(z.object({ tokenId: z.string() })).mutation(async ({ input }) => {
-    await db.delete(invites).where(eq(invites.id, input.tokenId));
+  delete: adminProcedure.input(z.object({ id: z.string() })).mutation(async ({ input }) => {
+    await db.delete(invites).where(eq(invites.id, input.id));
   }),
 });
