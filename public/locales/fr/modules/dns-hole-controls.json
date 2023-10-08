@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Afficher les boutons \"Activer/Désactiver tout\""
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }
