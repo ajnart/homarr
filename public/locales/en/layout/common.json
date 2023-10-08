@@ -17,9 +17,6 @@
   },
   "menu": {
     "moveUp": "Move up",
-    "moveDown": "Move down",
-    "addCategory": "Add category {{location}}",
-    "addAbove": "above",
-    "addBelow": "below"
+    "moveDown": "Move down"
   }
 }

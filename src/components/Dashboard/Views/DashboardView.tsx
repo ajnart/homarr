@@ -1,5 +1,6 @@
 import { Box, Group, LoadingOverlay, Stack } from '@mantine/core';
-import { useEffect, useRef } from 'react';
+import { useLocalStorage } from '@mantine/hooks';
+import { useCallback, useEffect, useRef } from 'react';
 import {
   CategorySection,
   EmptySection,
@@ -9,17 +10,32 @@ import {
 import { useResize } from '~/hooks/use-resize';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
-import { EmptySectionWrapper } from '../../Board/Sections/EmptySection';
-import { DashboardCategory } from '../Wrappers/Category/Category';
+import { BoardCategorySection } from '../../Board/Sections/CategorySection';
+import { BoardEmptySection } from '../../Board/Sections/EmptySection';
 import { DashboardSidebar } from '../Wrappers/Sidebar/Sidebar';
 import { useGridstackStore } from '../Wrappers/gridstack/store';
 
 export const BoardView = () => {
+  const boardName = useRequiredBoard().name;
   const stackedSections = useStackedSections();
   const sidebarsVisible = useSidebarVisibility();
   const { isReady, mainAreaRef } = usePrepareGridstack();
   const leftSidebarSection = useSidebarSection('left');
   const rightSidebarSection = useSidebarSection('right');
+  const [toggledCategories, setToggledCategories] = useLocalStorage({
+    key: `${boardName}-category-section-toggled`,
+    // This is a bit of a hack to toggle the categories on the first load, return a string[] of the categories
+    defaultValue: stackedSections.filter((s) => s.type === 'category').map((s) => s.id),
+  });
+  const toggleCategory = useCallback((categoryId: string) => {
+    setToggledCategories((current) => {
+      console.log('toggle', current, categoryId);
+      if (current.includes(categoryId)) {
+        return current.filter((x) => x !== categoryId);
+      }
+      return [...current, categoryId];
+    });
+  }, []);
 
   return (
     <Box h="100%" pos="relative">
@@ -41,9 +57,14 @@ export const BoardView = () => {
         <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
           {stackedSections.map((item) =>
             item.type === 'category' ? (
-              <DashboardCategory key={item.id} section={item} />
+              <BoardCategorySection
+                key={item.id}
+                section={item}
+                isOpened={toggledCategories.includes(item.id)}
+                toggle={toggleCategory}
+              />
             ) : (
-              <EmptySectionWrapper key={item.id} section={item} />
+              <BoardEmptySection key={item.id} section={item} />
             )
           )}
         </Stack>

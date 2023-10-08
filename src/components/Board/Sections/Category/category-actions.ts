@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { api } from '~/utils/api';
 
-import { type CategorySection, type EmptySection } from './context';
+import { type CategorySection, type EmptySection } from '../../context';
 
 type AddCategory = {
   name: string;

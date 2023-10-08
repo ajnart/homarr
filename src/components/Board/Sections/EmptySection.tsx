@@ -11,7 +11,7 @@ interface EmptySectionWrapperProps {
 
 const defaultClasses = 'grid-stack grid-stack-empty min-row';
 
-export const EmptySectionWrapper = ({ section }: EmptySectionWrapperProps) => {
+export const BoardEmptySection = ({ section }: EmptySectionWrapperProps) => {
   const { refs } = useGridstack({ section });
   const isEditMode = useEditModeStore((x) => x.enabled);
 

@@ -1,5 +1,12 @@
 {
     "header": {
         "customize": "Customize board"
+    },
+    "category": {
+        "actions": {
+            "add": "Add category",
+            "addAbove": "Add category above",
+            "addBelow": "Add category below"
+        }
     }
 }
