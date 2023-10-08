@@ -11,10 +11,6 @@ type InitializeGridstackProps = {
   };
   isEditMode: boolean;
   sectionColumnCount: number;
-  events: {
-    onChange: (changedNode: GridStackNode) => void;
-    onAdd: (addedNode: GridStackNode) => void;
-  };
 };
 
 export const initializeGridstack = ({
@@ -22,7 +18,6 @@ export const initializeGridstack = ({
   refs,
   isEditMode,
   sectionColumnCount,
-  events,
 }: InitializeGridstackProps) => {
   if (!refs.wrapper.current) return;
   // calculates the currently available count of columns
@@ -51,22 +46,6 @@ export const initializeGridstack = ({
   if (!grid) return;
   // Must be used to update the column count after the initialization
   grid.column(columnCount, 'none');
-
-  // Add listener for moving items around in a wrapper
-  grid.on('change', (_, el) => {
-    const nodes = el as GridStackNode[];
-    const firstNode = nodes.at(0);
-    if (!firstNode) return;
-    events.onChange(firstNode);
-  });
-
-  // Add listener for moving items in config from one wrapper to another
-  grid.on('added', (_, el) => {
-    const nodes = el as GridStackNode[];
-    const firstNode = nodes.at(0);
-    if (!firstNode) return;
-    events.onAdd(firstNode);
-  });
 
   grid.batchUpdate();
   grid.removeAll(false);

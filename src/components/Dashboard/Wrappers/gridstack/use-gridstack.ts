@@ -1,19 +1,13 @@
+import { type GridItemHTMLElement, GridStack, type GridStackNode } from 'fily-publish-gridstack';
 import {
-  GridItemHTMLElement,
-  GridStack,
-  GridStackElement,
-  GridStackNode,
-} from 'fily-publish-gridstack';
-import {
-  MutableRefObject,
-  RefObject,
+  type MutableRefObject,
+  type RefObject,
   createRef,
-  useCallback,
   useEffect,
   useMemo,
   useRef,
 } from 'react';
-import { Section, useRequiredBoard } from '~/components/Board/context';
+import { type Section, useRequiredBoard } from '~/components/Board/context';
 import { useItemActions } from '~/components/Board/item-actions';
 
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -59,7 +53,7 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
   // define items in itemRefs for easy access and reference to items
   if (Object.keys(itemRefs.current).length !== items.length) {
     items.forEach(({ id }: { id: keyof typeof itemRefs.current }) => {
-      itemRefs.current[id] = itemRefs.current[id] || createRef();
+      itemRefs.current[id] = itemRefs.current[id] ?? createRef();
     });
   }
 
@@ -80,53 +74,60 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
     gridRef.current?.setStatic(!isEditMode);
   }, [isEditMode]);
 
-  const onChange = useCallback(
-    (changedNode: GridStackNode) => {
-      if (!isEditMode) return;
+  const onChange = (changedNode: GridStackNode) => {
+    const itemType = changedNode.el?.getAttribute('data-type');
+    const itemId = changedNode.el?.getAttribute('data-id');
+    if (!itemType || !itemId) return;
 
-      const itemType = changedNode.el?.getAttribute('data-type');
-      const itemId = changedNode.el?.getAttribute('data-id');
-      if (!itemType || !itemId) return;
+    // Updates the react-query state
+    moveAndResizeItem({
+      itemId,
+      x: changedNode.x!,
+      y: changedNode.y!,
+      width: changedNode.w!,
+      height: changedNode.h!,
+    });
+  };
+  const onAdd = (addedNode: GridStackNode) => {
+    const itemType = addedNode.el?.getAttribute('data-type');
+    const itemId = addedNode.el?.getAttribute('data-id');
+    if (!itemType || !itemId) return;
 
-      // Updates the config and defines the new position of the item
-      moveAndResizeItem({
-        itemId,
-        x: changedNode.x!,
-        y: changedNode.y!,
-        width: changedNode.w!,
-        height: changedNode.h!,
-      });
-    },
-    [isEditMode]
-  );
+    // Updates the react-query state
+    moveItemToSection({
+      itemId,
+      sectionId: section.id,
+      x: addedNode.x!,
+      y: addedNode.y!,
+      width: addedNode.w!,
+      height: addedNode.h!,
+    });
+  };
 
-  const onAdd = useCallback(
-    (addedNode: GridStackNode) => {
-      if (!isEditMode) return;
+  useEffect(() => {
+    if (!isEditMode) return;
+    // Add listener for moving items around in a wrapper
+    gridRef.current?.on('change', (_, nodes) => {
+      (nodes as GridStackNode[]).forEach(onChange);
+    });
 
-      const itemType = addedNode.el?.getAttribute('data-type');
-      const itemId = addedNode.el?.getAttribute('data-id');
-      if (!itemType || !itemId) return;
+    // Add listener for moving items in config from one wrapper to another
+    gridRef.current?.on('added', (_, el) => {
+      const nodes = el as GridStackNode[];
+      const firstNode = nodes.at(0);
+      if (!firstNode) return;
+      onAdd(firstNode);
+    });
 
-      moveItemToSection({
-        itemId,
-        sectionId: section.id,
-        x: addedNode.x!,
-        y: addedNode.y!,
-        width: addedNode.w!,
-        height: addedNode.h!,
-      });
-    },
-    [isEditMode]
-  );
+    return () => {
+      gridRef.current?.off('change');
+      gridRef.current?.off('added');
+    };
+  }, [isEditMode]);
 
   // initialize the gridstack
   useEffect(() => {
     initializeGridstack({
-      events: {
-        onChange,
-        onAdd,
-      },
       isEditMode,
       section,
       refs: {
@@ -136,13 +137,7 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
       },
       sectionColumnCount,
     });
-
-    // Remove event listeners on unmount
-    return () => {
-      gridRef.current?.off('change');
-      gridRef.current?.off('added');
-    };
-  }, [items, wrapperRef.current, sectionColumnCount]);
+  }, [items.length, wrapperRef.current, sectionColumnCount]);
 
   return {
     refs: {

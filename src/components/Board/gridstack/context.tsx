@@ -11,8 +11,6 @@ const GridstackContext = createContext<GridstackContextProps>({
 
 export const useGridstackRef = () => {
   const ctx = useContext(GridstackContext);
-  if (!ctx || !ctx.ref)
-    throw new Error('useGridstackContext must be used within a GridstackProvider');
   return ctx.ref;
 };
 

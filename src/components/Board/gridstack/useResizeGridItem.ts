@@ -13,12 +13,10 @@ export const useResizeGridItem = () => {
   const gridstackRef = useGridstackRef();
 
   return ({ height, width, ...options }: ResizeGridItemProps) => {
-    gridstackRef.current?.batchUpdate();
-    gridstackRef.current?.update(itemRef.current!, {
+    gridstackRef?.current?.update(itemRef.current!, {
       ...options,
       h: height,
       w: width,
     });
-    gridstackRef.current?.batchUpdate(false);
   };
 };

@@ -9,9 +9,9 @@ import {
 import { useResize } from '~/hooks/use-resize';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
+import { EmptySectionWrapper } from '../../Board/Sections/EmptySection';
 import { DashboardCategory } from '../Wrappers/Category/Category';
 import { DashboardSidebar } from '../Wrappers/Sidebar/Sidebar';
-import { DashboardWrapper } from '../Wrappers/Wrapper/Wrapper';
 import { useGridstackStore } from '../Wrappers/gridstack/store';
 
 export const BoardView = () => {
@@ -43,7 +43,7 @@ export const BoardView = () => {
             item.type === 'category' ? (
               <DashboardCategory key={item.id} section={item} />
             ) : (
-              <DashboardWrapper key={item.id} section={item} />
+              <EmptySectionWrapper key={item.id} section={item} />
             )
           )}
         </Stack>
@@ -55,17 +55,6 @@ export const BoardView = () => {
     </Box>
   );
 };
-// <DashboardCategory key={item.id} category={item as unknown as CategoryType} />
-// <DashboardWrapper key={item.id} wrapper={item as WrapperType} />
-/*
-{sidebarsVisible.left ? (
-        <DashboardSidebar location="left" isGridstackReady={isReady} />
-      ) : null}
-
-{sidebarsVisible.right ? (
-        <DashboardSidebar location="right" isGridstackReady={isReady} />
-      ) : null}
-*/
 
 const usePrepareGridstack = () => {
   const mainAreaRef = useRef<HTMLDivElement>(null);
