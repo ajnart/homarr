@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Rādīt 'Ieslēgt/Izslēgt Visus' Pogas"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }
