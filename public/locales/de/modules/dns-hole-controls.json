@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Schaltflächen \"Alle aktivieren/deaktivieren\" anzeigen"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }

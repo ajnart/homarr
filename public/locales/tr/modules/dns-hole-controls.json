@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "'Tümünü Etkinleştir/Devre Dışı Bırak' Butonlarını Göster"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }

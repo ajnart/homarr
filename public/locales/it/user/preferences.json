@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Impostazioni",
+    "pageTitle": "Le tue impostazioni",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Board predefinita"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Lingua"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Primo giorno della settimana",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Lunedì",
+                "saturday": "Sabato",
+                "sunday": "Domenica"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Motore di ricerca",
         "custom": "Personalizzato",
         "newTab": {
-            "label": ""
+            "label": "Apri i risultati di ricerca in una nuova scheda"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Focalizza la barra di ricerca sul caricamento della pagina.",
+            "description": "Questo focalizzerà automaticamente la barra di ricerca, quando si passa alle pagine della board. Funzionerà solo su dispositivi desktop."
         },
         "template": {
             "label": "URL di ricerca",
-            "description": ""
+            "description": "Usa %s come segnaposto per la query"
         }
     }
 }

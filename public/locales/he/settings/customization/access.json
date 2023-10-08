@@ -1,6 +1,6 @@
 {
   "allowGuests": {
-    "label": "",
-    "description": ""
+    "label": "אפשר אנונימי",
+    "description": "אפשר למשתמשים שאינם מחוברים לצפות בלוח שלך"
   }
 }

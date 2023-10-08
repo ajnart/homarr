@@ -1,7 +1,7 @@
 {
     "metaTitle": "Usuarios",
     "pageTitle": "Administrar usuarios",
-    "text": "Usando usuarios, puedes configurar quien pueda editar tus dashboards. Versiones futuras de Homarr tendrán aún más control granular sobre los permisos y tableros.",
+    "text": "Mediante los usuarios, puedes configurar quién puede editar tus paneles. Las versiones futuras de Homarr tendrán un control aún más granular sobre los permisos y los tableros.",
     "buttons": {
         "create": "Crear"
     },
@@ -12,22 +12,22 @@
     },
     "tooltips": {
         "deleteUser": "Eliminar usuario",
-        "demoteAdmin": "Relevar administrador",
-        "promoteToAdmin": "Ascender a administrador"
+        "demoteAdmin": "Degradar administrador",
+        "promoteToAdmin": "Promover a administrador"
     },
     "modals": {
         "delete": {
             "title": "Eliminar usuario {{name}}",
-            "text": "¿Seguro que quieres eliminar el usuario {{name}}? Esto eliminará todo dato asociado a dicha cuenta, pero no los dashboards creados por el usuario."
+            "text": "¿Estás seguro de que deseas eliminar el usuario {{name}}? Esto eliminará los datos asociados con esta cuenta, pero no los paneles creados por este usuario."
         },
         "change-role": {
             "promote": {
-                "title": "Ascender usuario {{name}} a administrador",
-                "text": "¿Seguro que quieres ascender al usuario {{name}} a administrador? Esto le dará acceso a todos los recursos de tu instancia de Homarr."
+                "title": "Promover al usuario {{name}} a administrador",
+                "text": "¿Estás seguro de que deseas promocionar al usuario {{name}} a administrador? Esto le dará al usuario acceso a todos los recursos en tu instancia de Homarr."
             },
             "demote": {
-                "title": "Relevar usuario {{name}}, y volver a usuario",
-                "text": "¿Seguro que quieres relevar al usuario {{name}}, y volverlo a usuario? Esto eliminará el acceso de dicho usuario a todos los recursos de tu instancia de Homarr."
+                "title": "Degradar al usuario {{name}} a usuario",
+                "text": "¿Estás seguro de que deseas degradar al usuario {{name}} a usuario? Esto eliminará el acceso del usuario a todos los recursos en tu instancia de Homarr."
             },
             "confirm": "Confirmar"
         }

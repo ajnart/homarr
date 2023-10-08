@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "לוחות",
+    "pageTitle": "לוחות",
     "cards": {
         "statistics": {
             "apps": "אפליקציות",
@@ -8,36 +8,36 @@
             "categories": "קטגוריות"
         },
         "buttons": {
-            "view": ""
+            "view": "צפייה בלוח"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "קביעת לוח ברירת מחדל",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "מחיקה לצמיתות",
+                "disabled": "המחיקה מושבתת, מכיוון שרכיבי Homarr ישנים יותר אינם מאפשרים מחיקה של תצורת ברירת המחדל. המחיקה תתאפשר בעתיד."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "מערכת קבצים",
+            "default": "ברירת מחדל"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "יצירת לוח חדש"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "מחיקת לוח",
+            "text": "האם אתה בטוח שאתה רוצה למחוק את הלוח הזה? לא ניתן לבטל פעולה זו והנתונים שלך יאבדו לצמיתות."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "צור לוח",
+            "text": "לא ניתן לשנות את השם לאחר יצירת לוח.",
             "form": {
                 "name": {
                     "label": "שם"
                 },
-                "submit": ""
+                "submit": "צור"
             }
         }
     }

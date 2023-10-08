@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Mostra i pulsanti \"Abilita/Disabilita tutto\""
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }
