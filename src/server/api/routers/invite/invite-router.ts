@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { db } from '~/server/db';
 import { invites } from '~/server/db/schema';
 
-import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../../trpc';
 
 export const inviteRouter = createTRPCRouter({
   all: adminProcedure
