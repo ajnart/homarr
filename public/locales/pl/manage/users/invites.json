@@ -24,25 +24,25 @@
             "description": "Po wygaśnięciu zaproszenie straci ważność, a odbiorca zaproszenia nie będzie mógł utworzyć konta.",
             "form": {
                 "expires": "Wygasa",
-                "submit": ""
+                "submit": "Utwórz"
             }
         },
         "copy": {
             "title": "Skopiuj zaproszenie",
-            "description": "",
-            "invitationLink": "",
+            "description": "Zaproszenie zostało wygenerowane. Po zamknięciu tego okna, <b>nie będzie już można skopiować tego linku</b>. Jeśli nie chcesz już zapraszać tej osoby, możesz usunąć to zaproszenie w dowolnym momencie.",
+            "invitationLink": "Link do zaproszenia",
             "details": {
                 "id": "ID",
-                "token": ""
+                "token": "Token"
             },
             "button": {
-                "close": ""
+                "close": "Kopiuj i zamknij"
             }
         },
         "delete": {
             "title": "Usuń zaproszenie",
-            "description": ""
+            "description": "Czy na pewno chcesz usunąć to zaproszenie? Użytkownicy z tym linkiem nie będą już mogli utworzyć konta przy jego użyciu."
         }
     },
-    "noInvites": ""
+    "noInvites": "Nie ma jeszcze żadnych zaproszeń."
 }
