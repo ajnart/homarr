@@ -11,8 +11,6 @@ const GridItemContext = createContext<GridItemContextProps>({
 
 export const useGridItemRef = () => {
   const ctx = useContext(GridItemContext);
-  if (!ctx || !ctx.ref)
-    throw new Error('useGridstackContext must be used within a GridItemProvider');
   return ctx.ref;
 };
 

@@ -1,5 +1,5 @@
 import { GridStack } from 'fily-publish-gridstack';
-import { PropsWithChildren, createContext, createRef, useContext } from 'react';
+import { PropsWithChildren, createContext, useContext } from 'react';
 
 type GridstackContextProps = {
   ref: React.MutableRefObject<GridStack | undefined> | null;

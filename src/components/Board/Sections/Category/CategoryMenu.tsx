@@ -15,9 +15,9 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useCallback, useMemo } from 'react';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
-import { useCategoryActionHelper } from '~/components/Dashboard/Wrappers/Category/useCategoryActions';
 
 import { AppItem, CategorySection } from '../../context';
+import { useCategoryMenuActions } from './Actions/category-menu-actions';
 
 type CategoryMenuProps = {
   category: CategorySection;
@@ -42,7 +42,7 @@ export const CategoryMenu = ({ category }: CategoryMenuProps) => {
       <Menu.Dropdown>
         {actions.map((action) => (
           <>
-            {action.group && <Menu.Label>{t(action.group)}</Menu.Label>}
+            {action.group && <Menu.Label key={action.group}>{t(action.group)}</Menu.Label>}
             <Menu.Item
               key={action.label}
               icon={<action.icon size="1rem" />}
@@ -60,7 +60,7 @@ export const CategoryMenu = ({ category }: CategoryMenuProps) => {
 
 const useEditModeActions = (category: CategorySection): ActionDefinition[] => {
   const { addCategoryAbove, addCategoryBelow, moveCategoryUp, moveCategoryDown, edit, remove } =
-    useCategoryActionHelper(category);
+    useCategoryMenuActions(category);
 
   return [
     {

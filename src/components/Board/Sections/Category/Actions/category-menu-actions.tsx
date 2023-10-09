@@ -1,12 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
-import { useCategoryActions } from '~/components/Board/Sections/Category/category-actions';
+import { useCategoryActions } from '~/components/Board/Sections/Category/Actions/category-actions';
 import { useRequiredBoard } from '~/components/Board/context';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 import { CategoryType } from '~/types/category';
 
-import { CategoryEditModalInnerProps } from './CategoryEditModal';
+import { CategoryEditModalInnerProps } from '../CategoryEditModal';
 
-export const useCategoryActionHelper = (category: CategoryType) => {
+export const useCategoryMenuActions = (category: CategoryType) => {
   const boardName = useRequiredBoard().name;
   const { addCategory, moveCategory, removeCategory, renameCategory } = useCategoryActions({
     boardName,

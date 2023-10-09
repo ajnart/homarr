@@ -109,9 +109,9 @@ const useSidebarVisibility = () => {
 
 const useStackedSections = () => {
   const board = useRequiredBoard();
-  return board.sections.filter(
-    (s): s is CategorySection | EmptySection => s.type === 'category' || s.type === 'empty'
-  );
+  return board.sections
+    .filter((s): s is CategorySection | EmptySection => s.type === 'category' || s.type === 'empty')
+    .sort((a, b) => a.position - b.position);
 };
 
 const useSidebarSection = (position: 'left' | 'right') => {

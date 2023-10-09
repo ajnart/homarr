@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { api } from '~/utils/api';
 
-import { type CategorySection, type EmptySection } from '../../context';
+import { type CategorySection, type EmptySection } from '../../../context';
 
 type AddCategory = {
   name: string;
@@ -100,16 +100,16 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
   );
 
   const moveCategory = useCallback(
-    ({ id: categoryId, direction }: MoveCategory) => {
+    ({ id, direction }: MoveCategory) => {
       utils.boards.byName.setData({ boardName }, (prev) => {
         if (!prev) return prev;
 
         const currentCategory = prev.sections.find(
-          (section): section is CategorySection =>
-            section.type === 'category' && section.id === categoryId
+          (section): section is CategorySection => section.type === 'category' && section.id === id
         );
         if (!currentCategory) return prev;
         if (currentCategory?.position === 1 && direction === 'up') return prev;
+        console.log('test');
         if (currentCategory?.position === prev.sections.length - 2 && direction === 'down')
           return prev;
 
@@ -118,19 +118,25 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
           sections: prev.sections.map((section) => {
             if (section.type !== 'category' && section.type !== 'empty') return section;
             const offset = direction === 'up' ? -2 : 2;
+            console.log(section, offset);
             // Move category and empty section
             if (
               section.position === currentCategory.position ||
               section.position - 1 === currentCategory.position
             ) {
+              console.log('move category', section);
               return {
                 ...section,
                 position: section.position + offset,
               };
             }
 
-            // Move all sections behind
-            if (section.position >= currentCategory.position + offset) {
+            if (
+              direction === 'up' &&
+              (section.position === currentCategory.position - 2 ||
+                section.position === currentCategory.position - 1)
+            ) {
+              console.log('something', section);
               return {
                 ...section,
                 position: section.position + 2,
@@ -138,15 +144,18 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
             }
 
             if (
-              direction === 'up' &&
+              direction === 'down' &&
               (section.position === currentCategory.position + 2 ||
                 section.position === currentCategory.position + 3)
             ) {
+              console.log('something', section);
               return {
                 ...section,
                 position: section.position - 2,
               };
             }
+
+            console.log('no change', section);
 
             return section;
           }),

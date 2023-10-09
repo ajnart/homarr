@@ -20,12 +20,6 @@ export const BoardCategorySection = ({ section, isOpened, toggle }: DashboardCat
   const { refs } = useGridstack({ section });
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { classes: cardClasses, cx } = useCardStyles(true);
-  const { t } = useTranslation(['layout/common', 'common']);
-  const openAllApps = useOpenAllApps();
-  const apps = useMemo(
-    () => section.items.filter((x): x is AppItem => x.type === 'app'),
-    [section.items.length]
-  );
 
   return (
     <Accordion
@@ -43,7 +37,9 @@ export const BoardCategorySection = ({ section, isOpened, toggle }: DashboardCat
       <Accordion.Item value={section.id}>
         <Group noWrap align="center">
           <Accordion.Control>
-            <Title order={3}>{section.name}</Title>
+            <Title order={3}>
+              {section.name} {section.position}
+            </Title>
           </Accordion.Control>
           <CategoryMenu category={section} />
         </Group>
