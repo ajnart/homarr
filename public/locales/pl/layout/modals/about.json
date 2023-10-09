@@ -8,10 +8,10 @@
 	"keybinds": "Skróty klawiszowe",
 	"documentation": "Dokumentacja",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Przełącz motyw jasny / ciemny",
+		"focusSearchBar": "Aktywuj pole wyszukiwania",
+		"openDocker": "Otwórz widżet dockera",
+		"toggleEdit": "Przełącz tryb edycji"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Wersja schematu konfiguracji",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EKSPERYMENT</b>: Wyłącz tryb edycji"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nowy: {{newVersion}}",
+		"dropdown": "Wersja {{newVersion}} jest już dostępna! Aktualna wersja to {{currentVersion}}"
 	}
 }
