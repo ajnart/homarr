@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Dodaj kafelek"
     },
-    "apps": "",
+    "apps": "Aplikacje",
     "app": {
-        "defaultName": ""
+        "defaultName": "Twoja aplikacja"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widżety",
+    "categories": "Kategorie",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Nazwa nowej kategorii",
+        "defaultName": "Nowa kategoria",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Utworzono nową kategorię",
+            "message": "Kategoria \"{{name}}\" została utworzona"
         }
     }
 }
