@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Zaloguj się",
   "title": "Witaj ponownie!",
-  "text": "",
+  "text": "Wprowadź swoje dane logowania",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Zaloguj się"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Po zalogowaniu nastąpi przekierowanie na stronę {{url}}"
   },
-  "alert": ""
+  "alert": "Twoje dane logowania są nieprawidłowe lub to konto nie istnieje. Spróbuj ponownie."
 }
