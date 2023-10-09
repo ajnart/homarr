@@ -1,7 +1,7 @@
 {
     "metaTitle": "Utwórz konto",
     "title": "Utwórz konto",
-    "text": "",
+    "text": "Zdefiniuj swoje dane logowania poniżej",
     "form": {
         "fields": {
             "username": {
@@ -20,7 +20,7 @@
     },
     "notifications": {
         "loading": {
-            "title": "",
+            "title": "Tworzenie konta",
             "text": "Proszę czekać"
         },
         "success": {
