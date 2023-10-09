@@ -1,9 +1,9 @@
+import { ChangeAppPositionModal } from '~/components/Board/Items/App/ChangeAppPositionModal';
+import { EditAppModal } from '~/components/Board/Items/App/EditAppModal';
+import { ChangeWidgetPositionModal } from '~/components/Board/Items/Widget/ChangeWidgetPositionModal';
+import { WidgetsEditModal } from '~/components/Board/Items/Widget/WidgetsEditModal';
 import { CategoryEditModal } from '~/components/Board/Sections/Category/CategoryEditModal';
-import { ChangeAppPositionModal } from '~/components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
-import { ChangeWidgetPositionModal } from '~/components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
-import { EditAppModal } from '~/components/Dashboard/Modals/EditAppModal/EditAppModal';
-import { SelectElementModal } from '~/components/Dashboard/Modals/SelectElement/SelectElementModal';
-import { WidgetsEditModal } from '~/components/Dashboard/Tiles/Widgets/WidgetsEditModal';
+import { SelectElementModal } from '~/components/Board/SelectElement/SelectElementModal';
 
 import { CreateBoardModal } from './components/Manage/Board/create-board.modal';
 import { DeleteBoardModal } from './components/Manage/Board/delete-board.modal';

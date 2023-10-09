@@ -20,7 +20,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 import { z } from 'zod';
-import { availableIntegrations } from '~/components/Dashboard/Modals/EditAppModal/Tabs/IntegrationTab/Components/InputElements/IntegrationSelector';
+import { availableIntegrations } from '~/components/Board/Items/App/Edit/IntegrationTab/InputElements/IntegrationSelector';
 import { useConfigContext } from '~/config/provider';
 import { RequestModal } from '~/modules/overseerr/RequestModal';
 import { RouterOutputs, api } from '~/utils/api';

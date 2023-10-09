@@ -1,21 +1,19 @@
 import { ComponentType } from 'react';
+import { ItemWrapper } from '~/components/Board/Items/ItemWrapper';
+import { WidgetsMenu } from '~/components/Board/Items/Widget/WidgetsMenu';
 import { WidgetItem } from '~/components/Board/context';
-import { HomarrCardWrapper } from '~/components/Dashboard/Tiles/HomarrCardWrapper';
-import { WidgetsMenu } from '~/components/Dashboard/Tiles/Widgets/WidgetsMenu';
 
 import Widgets from '.';
 import ErrorBoundary from './boundary';
-import { IWidget } from './widgets';
 
 interface WidgetWrapperProps {
-  widgetType: string;
   widget: WidgetItem;
   className: string;
   WidgetComponent: ComponentType<{ widget: WidgetItem }>;
 }
 
 // If a property has no value, set it to the default value
-const useWidget = <T extends WidgetItem>(widget: T): T => {
+const useWidgetWithDefaultOptionValues = <T extends WidgetItem>(widget: T): T => {
   const definition = Widgets[widget.sort];
 
   const newProps = { ...widget.options };
@@ -32,20 +30,15 @@ const useWidget = <T extends WidgetItem>(widget: T): T => {
   };
 };
 
-export const WidgetWrapper = ({
-  widgetType,
-  widget,
-  className,
-  WidgetComponent,
-}: WidgetWrapperProps) => {
-  const widgetWithDefaultProps = useWidget(widget);
+export const WidgetWrapper = ({ widget, className, WidgetComponent }: WidgetWrapperProps) => {
+  const widgetWithDefaultProps = useWidgetWithDefaultOptionValues(widget);
 
   return (
-    <ErrorBoundary integration={widgetType} widget={widgetWithDefaultProps}>
-      <HomarrCardWrapper className={className}>
-        <WidgetsMenu type={widgetType} widget={widgetWithDefaultProps} />
+    <ErrorBoundary widget={widgetWithDefaultProps}>
+      <ItemWrapper className={className}>
+        <WidgetsMenu widget={widgetWithDefaultProps} />
         <WidgetComponent widget={widgetWithDefaultProps} />
-      </HomarrCardWrapper>
+      </ItemWrapper>
     </ErrorBoundary>
   );
 };

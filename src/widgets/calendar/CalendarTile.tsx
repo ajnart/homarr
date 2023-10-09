@@ -3,7 +3,7 @@ import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useEditModeStore } from '~/components/Board/useEditModeStore';
 import { useConfigContext } from '~/config/provider';
 import { getLanguageByCode } from '~/tools/language';
 import { RouterOutputs, api } from '~/utils/api';

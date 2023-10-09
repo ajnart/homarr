@@ -30,7 +30,7 @@ import { useEffect } from 'react';
 import React from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useEditModeStore } from '~/components/Board/useEditModeStore';
 import { IconSelector } from '~/components/IconSelector/IconSelector';
 
 import { defineWidget } from '../helper';

@@ -1,9 +1,9 @@
 import { EmptySection } from '~/components/Board/context';
 import { GridstackProvider } from '~/components/Board/gridstack/context';
 
-import { useEditModeStore } from '../../Dashboard/Views/useEditModeStore';
-import { WrapperContent } from '../../Dashboard/Wrappers/WrapperContent';
-import { useGridstack } from '../../Dashboard/Wrappers/gridstack/use-gridstack';
+import { useGridstack } from '../gridstack/use-gridstack';
+import { useEditModeStore } from '../useEditModeStore';
+import { SectionContent } from './SectionContent';
 
 interface EmptySectionWrapperProps {
   section: EmptySection;
@@ -28,7 +28,7 @@ export const BoardEmptySection = ({ section }: EmptySectionWrapperProps) => {
         ref={refs.wrapper}
       >
         {section.items.length === 0 && <span></span>}
-        <WrapperContent items={section.items} refs={refs} />
+        <SectionContent items={section.items} refs={refs} />
       </div>
     </GridstackProvider>
   );

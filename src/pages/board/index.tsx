@@ -1,8 +1,8 @@
 import { TRPCError } from '@trpc/server';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
+import { Board } from '~/components/Board/Board';
 import { BoardProvider } from '~/components/Board/context';
-import { Board } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { env } from '~/env';
 import { createTrpcServersideHelpers } from '~/server/api/helper';

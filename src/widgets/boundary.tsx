@@ -4,10 +4,8 @@ import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/i
 import Consola from 'consola';
 import { withTranslation } from 'next-i18next';
 import React, { ReactNode } from 'react';
+import { WidgetsMenu } from '~/components/Board/Items/Widget/WidgetsMenu';
 import { WidgetItem } from '~/components/Board/context';
-import { WidgetsMenu } from '~/components/Dashboard/Tiles/Widgets/WidgetsMenu';
-
-import { IWidget } from './widgets';
 
 type ErrorBoundaryState = {
   hasError: boolean;
@@ -17,7 +15,6 @@ type ErrorBoundaryState = {
 type ErrorBoundaryProps = {
   t: (key: string) => string;
   children: ReactNode;
-  integration: string;
   widget: WidgetItem;
 };
 
@@ -56,7 +53,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
           withBorder
           h="calc(100% - 20px)"
         >
-          <WidgetsMenu type={this.props.integration} widget={this.props.widget} />
+          <WidgetsMenu widget={this.props.widget} />
           <ScrollArea h="100%" type="auto" offsetScrollbars>
             <Center>
               <Stack align="center" spacing="xs">

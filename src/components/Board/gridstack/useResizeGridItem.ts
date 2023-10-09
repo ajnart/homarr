@@ -1,4 +1,4 @@
-import { useGridItemRef } from '../item/context';
+import { useGridItemRef } from '../Items/context';
 import { useGridstackRef } from './context';
 
 type ResizeGridItemProps = {

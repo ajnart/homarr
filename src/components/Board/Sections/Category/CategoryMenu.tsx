@@ -14,7 +14,7 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useCallback, useMemo } from 'react';
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useEditModeStore } from '~/components/Board/useEditModeStore';
 
 import { AppItem, CategorySection } from '../../context';
 import { useCategoryMenuActions } from './Actions/category-menu-actions';

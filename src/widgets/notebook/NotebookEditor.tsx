@@ -6,7 +6,7 @@ import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useState } from 'react';
 import { useRequiredBoard } from '~/components/Board/context';
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useEditModeStore } from '~/components/Board/useEditModeStore';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
