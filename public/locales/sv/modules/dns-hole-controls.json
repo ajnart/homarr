@@ -10,7 +10,7 @@
     },
     "errors": {
       "general": {
-        "title": "",
+        "title": "Kan inte hitta ett DNS-hål",
         "text": ""
       }
     }
