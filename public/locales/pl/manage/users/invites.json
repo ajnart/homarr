@@ -1,38 +1,38 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Zaproszenia",
+    "pageTitle": "Zarządzaj zaproszeniami",
+    "description": "Za pomocą zaproszeń, możesz zapraszać użytkowników do Twojej instancji Homarr. Zaproszenie będzie ważne jedynie przez określony czas i może być użyte tylko jeden raz. Okres ważności musi wynosić pomiędzy 5 minutami a 12 miesiącami od utworzenia zaproszenia.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Utwórz zaproszenie",
+        "deleteInvite": "Usuń zaproszenie"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Twórca",
+            "expires": "Wygasa",
+            "action": "Akcje"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "wygasło {{at}}",
+            "expiresIn": "w {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Utwórz zaproszenie",
+            "description": "Po wygaśnięciu zaproszenie straci ważność, a odbiorca zaproszenia nie będzie mógł utworzyć konta.",
             "form": {
-                "expires": "",
+                "expires": "Wygasa",
                 "submit": ""
             }
         },
         "copy": {
-            "title": "",
+            "title": "Skopiuj zaproszenie",
             "description": "",
             "invitationLink": "",
             "details": {
-                "id": "",
+                "id": "ID",
                 "token": ""
             },
             "button": {
@@ -40,7 +40,7 @@
             }
         },
         "delete": {
-            "title": "",
+            "title": "Usuń zaproszenie",
             "description": ""
         }
     },
