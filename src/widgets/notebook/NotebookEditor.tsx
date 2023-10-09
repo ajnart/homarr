@@ -5,12 +5,12 @@ import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useState } from 'react';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '~/config/provider';
 import { WidgetLoading } from '../loading';
 import { INotebookWidget } from './NotebookWidgetTile';
 
@@ -33,7 +33,14 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const [debouncedContent] = useDebouncedValue(content, 500);
 
   const editor = useEditor({
-    extensions: [StarterKit, Link],
+    extensions: [
+      StarterKit,
+      Link.configure({
+        validate(url) {
+          return /^https?:\/\//.test(url);
+        },
+      }),
+    ],
     content,
     editable: false,
     onUpdate: (e) => {
