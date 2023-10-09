@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Zakładka",
+    "description": "Wyświetla statyczną listę linków lub tekst",
     "settings": {
-      "title": "",
+      "title": "Ustawienia zakładki",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Tytuł widżetu",
+        "info": "Pozostaw puste, aby ukryć tytuł."
       },
       "items": {
-        "label": ""
+        "label": "Zawartość"
       },
       "layout": {
         "label": "Układ",
         "data": {
-          "autoGrid": "",
+          "autoGrid": "Siatka",
           "horizontal": "",
           "vertical": ""
         }
@@ -23,8 +23,8 @@
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Lista zakładek jest pusta",
+      "text": "Dodaj nowe elementy do tej listy w trybie edycji"
     }
   },
   "item": {
