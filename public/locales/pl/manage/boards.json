@@ -1,11 +1,11 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Tablice",
+    "pageTitle": "Tablice",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "Aplikacje",
+            "widgets": "Widżety",
+            "categories": "Kategorie"
         },
         "buttons": {
             "view": ""
