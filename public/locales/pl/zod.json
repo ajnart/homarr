@@ -1,7 +1,7 @@
 {
     "errors": {
         "default": "To pole jest nieprawidłowe",
-        "required": "",
+        "required": "To pole jest wymagane",
         "string": {
             "startsWith": "To pole musi zaczynać się od {{startsWith}}",
             "endsWith": "To pole musi kończyć się na {{endsWith}}",
