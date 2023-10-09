@@ -7,7 +7,7 @@
         }
     },
     "accessibility": {
-        "title": "",
+        "title": "Ułatwienia dostępu",
         "disablePulse": {
             "label": "Wyłącz wskaźniki aktywności",
             "description": "Domyślnie wskaźniki aktywności w Homarr będą pulsować. Może to być irytujące. Ten suwak wyłączy animację"
