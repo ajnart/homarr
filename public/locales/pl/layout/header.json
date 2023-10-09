@@ -13,8 +13,8 @@
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
+            "switchTheme": "Zmień motyw",
+            "preferences": "Preferencje",
             "defaultBoard": "",
             "manage": "",
             "about": {
@@ -22,7 +22,7 @@
                 "new": ""
             },
             "logout": "",
-            "login": ""
+            "login": "Zaloguj się"
         }
     },
     "modals": {
