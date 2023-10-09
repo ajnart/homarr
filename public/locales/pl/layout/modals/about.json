@@ -4,9 +4,9 @@
 	"addToDashboard": "Dodaj do pulpitu nawigacyjnego",
 	"tip": "Mod oznacza Twój klawisz modyfikujący, czyli Ctrl i Command/Super/Windows",
 	"key": "Klawisz skrótu",
-	"action": "",
-	"keybinds": "",
-	"documentation": "",
+	"action": "Akcja",
+	"keybinds": "Skróty klawiszowe",
+	"documentation": "Dokumentacja",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
