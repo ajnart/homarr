@@ -23,7 +23,7 @@
       "errors": {
         "general": {
           "title": "Nie można pobrać kanału RSS",
-          "text": ""
+          "text": "Wystąpił problem z połączeniem z kanałem RSS. Upewnij się, że poprawnie skonfigurowałeś kanał RSS używając poprawnego adresu URL. Adresy URL powinny być zgodne z oficjalną specyfikacją. Po aktualizacji kanału należy odświeżyć panel nawigacyjny."
         }
       }
     }
