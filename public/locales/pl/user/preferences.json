@@ -32,7 +32,7 @@
     },
     "searchEngine": {
         "title": "Silnik wyszukiwania",
-        "custom": "",
+        "custom": "Własny",
         "newTab": {
             "label": "Otwórz wyniki wyszukiwania w nowej karcie"
         },
