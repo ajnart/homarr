@@ -29,7 +29,7 @@
 			"label": "Opis aplikacji",
 			"description": "Wprowadzony tekst pojawi się po najechaniu kursorem na aplikację.\nUżyj go, aby podać użytkownikom więcej szczegółów na temat aplikacji lub pozostaw pusty, aby nic nie wyświetlać."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Wykorzystuje niestandardowy protokół. Może wymagać instalacji innych aplikacji i powodować zagrożenia bezpieczeństwa. Upewnij się, że podany adres jest bezpieczny i zaufany."
 	},
 	"network": {
 		"statusChecker": {
