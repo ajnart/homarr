@@ -15,8 +15,8 @@
         "label": "Układ",
         "data": {
           "autoGrid": "Siatka",
-          "horizontal": "",
-          "vertical": ""
+          "horizontal": "Poziomy",
+          "vertical": "Pionowy"
         }
       }
     }
