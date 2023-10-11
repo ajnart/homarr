@@ -1,30 +1,27 @@
 import { MultiSelect, Stack, Switch, Tabs } from '@mantine/core';
-import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-
 import { StatusCodes } from '~/tools/acceptableStatusCodes';
-import { AppType } from '~/types/app';
+
+import { AppForm } from '../EditAppModal';
 
 interface NetworkTabProps {
-  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
+  form: AppForm;
 }
 
 export const NetworkTab = ({ form }: NetworkTabProps) => {
   const { t } = useTranslation('layout/modals/add-app');
-  const acceptableStatusCodes = (form.values.network.statusCodes ?? ['200']).map((x) =>
-    x.toString()
-  );
+  const acceptableStatusCodes = (form.values.statusCodes ?? [200]).map((x) => x.toString());
   return (
     <Tabs.Panel value="network" pt="lg">
       <Stack spacing="xs">
         <Switch
           label={t('network.statusChecker.label')}
           description={t('network.statusChecker.description')}
-          styles={{ label: { fontWeight: 500, }, description: { marginTop: 0, }, }}
-          defaultChecked={form.values.network.enabledStatusChecker}
-          {...form.getInputProps('network.enabledStatusChecker')}
+          styles={{ label: { fontWeight: 500 }, description: { marginTop: 0 } }}
+          defaultChecked={form.values.isPingEnabled}
+          {...form.getInputProps('isPingEnabled')}
         />
-        {form.values.network.enabledStatusChecker && (
+        {form.values.isPingEnabled && (
           <MultiSelect
             required
             label={t('network.statusCodes.label')}
@@ -34,7 +31,11 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
             searchable
             defaultValue={acceptableStatusCodes}
             variant="default"
-            {...form.getInputProps('network.statusCodes')}
+            {...form.getInputProps('statusCodes')}
+            value={form.getInputProps('statusCodes').value.map((x: number) => x.toString())}
+            onChange={(values) => {
+              form.getInputProps('statusCodes').onChange(values.map((x) => parseInt(x, 10)));
+            }}
           />
         )}
       </Stack>

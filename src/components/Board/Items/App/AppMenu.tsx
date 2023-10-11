@@ -4,22 +4,24 @@ import { useResizeGridItem } from '~/components/Board/gridstack/useResizeGridIte
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 
 import { CommonItemMenu } from '../CommonItemMenu';
+import { EditAppModalInnerProps } from './EditAppModal';
 
-interface TileMenuProps {
+interface AppMenuProps {
   app: AppItem;
 }
 
-export const AppMenu = ({ app }: TileMenuProps) => {
+export const AppMenu = ({ app }: AppMenuProps) => {
   const board = useRequiredBoard();
   const { removeItem } = useItemActions({ boardName: board.name });
   const resizeGridItem = useResizeGridItem();
 
   const handleClickEdit = () => {
-    openContextModalGeneric<{ app: AppItem; allowAppNamePropagation: boolean }>({
+    openContextModalGeneric<EditAppModalInnerProps>({
       modal: 'editApp',
       size: 'xl',
       innerProps: {
         app,
+        board,
         allowAppNamePropagation: false,
       },
       styles: {

@@ -7,31 +7,35 @@ import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { CategoryEditModalInnerProps } from '~/components/Board/Sections/Category/CategoryEditModal';
-import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
-import { generateDefaultApp } from '~/tools/shared/app';
-import { AppType } from '~/types/app';
+import { generateDefaultApp2 } from '~/tools/shared/app';
+import { RouterOutputs } from '~/utils/api';
 
+import { EditAppModalInnerProps } from '../../Items/App/EditAppModal';
+import { useCategoryActions } from '../../Sections/Category/Actions/category-actions';
+import { AppItem, CategorySection, EmptySection } from '../../context';
 import { useStyles } from '../Shared/styles';
 
 interface AvailableElementTypesProps {
   modalId: string;
+  board: RouterOutputs['boards']['byName'];
   onOpenIntegrations: () => void;
-  onOpenStaticElements: () => void;
 }
 
 export const AvailableElementTypes = ({
   modalId,
+  board,
   onOpenIntegrations: onOpenWidgets,
-  onOpenStaticElements,
 }: AvailableElementTypesProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
-  const { config, name: configName } = useConfigContext();
-  const { updateConfig } = useConfigStore();
-  const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
+  const { addCategory } = useCategoryActions({ boardName: board.name });
+  const lastSection = board.sections
+    .filter((x): x is CategorySection | EmptySection => x.type === 'empty' || x.type === 'category')
+    .sort((a, b) => b.position - a.position)
+    .at(0);
 
   const onClickCreateCategory = async () => {
+    if (!lastSection) return;
     openContextModalGeneric<CategoryEditModalInnerProps>({
       modal: 'categoryEditModal',
       title: t('category.newName'),
@@ -43,33 +47,12 @@ export const AvailableElementTypes = ({
           position: 0, // doesn't matter, is being overwritten
         },
         onSuccess: async (category) => {
-          if (!configName) return;
-
-          await updateConfig(configName, (previousConfig) => ({
-            ...previousConfig,
-            wrappers: [
-              ...previousConfig.wrappers,
-              {
-                id: uuidv4(),
-                // Thank you ChatGPT ;)
-                position: previousConfig.categories.length + 1,
-              },
-            ],
-            categories: [
-              ...previousConfig.categories,
-              {
-                id: uuidv4(),
-                name: category.name,
-                position: previousConfig.categories.length + 1,
-              },
-            ],
-          })).then(() => {
-            closeModal(modalId);
-            showNotification({
-              title: t('category.created.title'),
-              message: t('category.created.message', { name: category.name }),
-              color: 'teal',
-            });
+          addCategory({ name: category.name, position: lastSection.position + 1 });
+          closeModal(modalId);
+          showNotification({
+            title: t('category.created.title'),
+            message: t('category.created.message', { name: category.name }),
+            color: 'teal',
           });
         },
       },
@@ -85,11 +68,11 @@ export const AvailableElementTypes = ({
           name={t('apps')}
           icon={<IconBox size={40} strokeWidth={1.3} />}
           onClick={() => {
-            openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
+            openContextModalGeneric<EditAppModalInnerProps>({
               modal: 'editApp',
               innerProps: {
-                app: generateDefaultApp(getLowestWrapper()?.id ?? 'default'),
-                // TODO: Add translation? t('app.defaultName')
+                app: generateDefaultApp2() as AppItem,
+                board: board,
                 allowAppNamePropagation: true,
               },
               size: 'xl',

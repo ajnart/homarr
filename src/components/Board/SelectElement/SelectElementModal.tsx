@@ -1,29 +1,26 @@
 import { ContextModalProps } from '@mantine/modals';
 import { useState } from 'react';
+import { RouterOutputs } from '~/utils/api';
 
 import { AvailableElementTypes } from './Overview/AvailableElementsOverview';
-import { AvailableStaticTypes } from './StaticElementsTab/AvailableStaticElementsTab';
 import { AvailableIntegrationElements } from './WidgetsTab/AvailableWidgetsTab';
 
-export const SelectElementModal = ({ context, id }: ContextModalProps) => {
-  const [activeTab, setActiveTab] = useState<undefined | 'integrations' | 'static_elements'>();
+type InnerProps = {
+  board: RouterOutputs['boards']['byName'];
+};
 
-  switch (activeTab) {
-    case undefined:
-      return (
-        <AvailableElementTypes
-          modalId={id}
-          onOpenIntegrations={() => setActiveTab('integrations')}
-          onOpenStaticElements={() => setActiveTab('static_elements')}
-        />
-      );
-    case 'integrations':
-      return <AvailableIntegrationElements onClickBack={() => setActiveTab(undefined)} />;
-    case 'static_elements':
-      return <AvailableStaticTypes onClickBack={() => setActiveTab(undefined)} />;
-    default:
-      /* default to the main selection tab */
-      setActiveTab(undefined);
-      return <></>;
+export const SelectElementModal = ({ id, innerProps }: ContextModalProps<InnerProps>) => {
+  const [activeTab, setActiveTab] = useState<undefined | 'integrations'>();
+
+  if (activeTab === 'integrations') {
+    return <AvailableIntegrationElements onClickBack={() => setActiveTab(undefined)} />;
   }
+
+  return (
+    <AvailableElementTypes
+      modalId={id}
+      board={innerProps.board}
+      onOpenIntegrations={() => setActiveTab('integrations')}
+    />
+  );
 };

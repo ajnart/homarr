@@ -1,5 +1,5 @@
-import { Alert, Button, Group, Popover, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
-import { useForm } from '@mantine/form';
+import { Button, Group, Popover, Stack, Tabs, Text, ThemeIcon } from '@mantine/core';
+import { UseFormReturnType, useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
 import { ContextModalProps } from '@mantine/modals';
 import {
@@ -12,17 +12,20 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
-import { AppType } from '~/types/app';
+import { z } from 'zod';
+import { appNamePositions, appNameStyles } from '~/server/db/items';
+import { objectKeys } from '~/tools/object';
+import { RouterOutputs } from '~/utils/api';
+import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 
 import { DebouncedImage } from '../../../IconSelector/DebouncedImage';
-import { useEditModeStore } from '../../useEditModeStore';
+import { AppItem } from '../../context';
 import { AppearanceTab } from './Edit/AppereanceTab';
 import { BehaviourTab } from './Edit/BehaviourTab';
 import { GeneralTab } from './Edit/GeneralTab';
 import { IntegrationTab } from './Edit/IntegrationTab/IntegrationTab';
 import { NetworkTab } from './Edit/NetworkTab';
+import { useAppActions } from './app-actions';
 
 const appUrlRegex =
   '(https?://(?:www.|(?!www))\\[?[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\]?.[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|https?://(?:www.|(?!www))\\[?[a-zA-Z0-9]+\\]?.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
@@ -30,93 +33,47 @@ const appUrlRegex =
 const appUrlWithAnyProtocolRegex =
   '([A-z]+://(?:www.|(?!www))\\[?[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\]?.[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|[A-z]+://(?:www.|(?!www))\\[?[a-zA-Z0-9]+\\]?.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
 
+export type EditAppModalInnerProps = {
+  app: AppItem;
+  board: RouterOutputs['boards']['byName'];
+  allowAppNamePropagation: boolean;
+};
+
 export const EditAppModal = ({
   context,
   id,
   innerProps,
-}: ContextModalProps<{ app: AppType; allowAppNamePropagation: boolean }>) => {
+}: ContextModalProps<EditAppModalInnerProps>) => {
   const { t } = useTranslation(['layout/modals/add-app', 'common']);
-  const { name: configName, config } = useConfigContext();
-  const updateConfig = useConfigStore((store) => store.updateConfig);
-  const { enabled: isEditMode } = useEditModeStore();
+  const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');
+  const { createOrUpdateApp } = useAppActions({ boardName: innerProps.board.name });
+  // TODO: change to ref
   const [allowAppNamePropagation, setAllowAppNamePropagation] = useState<boolean>(
     innerProps.allowAppNamePropagation
   );
 
-  const form = useForm<AppType>({
+  const { i18nZodResolver } = useI18nZodResolver();
+
+  const form = useForm<FormType>({
     initialValues: innerProps.app,
-    validate: {
-      name: (name) => (!name ? t('validation.name') : null),
-      url: (url) => {
-        if (!url) {
-          return t('validation.noUrl');
-        }
-
-        if (!url.match(appUrlRegex)) {
-          return t('validation.invalidUrl');
-        }
-
-        return null;
-      },
-      appearance: {
-        iconUrl: (url: string) => {
-          if (url.length < 1) {
-            return t('validation.noIconUrl');
-          }
-
-          return null;
-        },
-      },
-      behaviour: {
-        externalUrl: (url: string) => {
-          if (url === undefined || url.length < 1) {
-            return t('validation.noExternalUri');
-          }
-
-          if (!url.match(appUrlWithAnyProtocolRegex)) {
-            return t('validation.invalidExternalUri');
-          }
-
-          return null;
-        },
-      },
-    },
+    validate: i18nZodResolver(appFormSchema),
     validateInputOnChange: true,
+    validateInputOnBlur: true,
   });
 
-  const onSubmit = (values: AppType) => {
-    if (!configName) {
-      return;
-    }
-
-    updateConfig(
-      configName,
-      (previousConfig) => ({
-        ...previousConfig,
-        apps: [
-          ...previousConfig.apps.filter((x) => x.id !== values.id),
-          {
-            ...values,
-          },
-        ],
-      }),
-      true,
-      !isEditMode
-    );
-
+  const onSubmit = (values: FormType) => {
+    createOrUpdateApp({ app: values });
     // also close the parent modal
     context.closeAll();
   };
-
-  const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');
 
   const closeModal = () => {
     context.closeModal(id);
   };
 
-  const validationErrors = Object.keys(form.errors);
+  const validationErrors = objectKeys(form.errors) as (keyof AppItem)[];
 
-  const ValidationErrorIndicator = ({ keys }: { keys: string[] }) => {
+  const ValidationErrorIndicator = ({ keys }: { keys: (keyof AppItem)[] }) => {
     const relevantErrors = validationErrors.filter((x) => keys.includes(x));
 
     return (
@@ -133,15 +90,8 @@ export const EditAppModal = ({
 
   return (
     <>
-      {configName === undefined ||
-        (config === undefined && (
-          <Alert color="red">
-            There was an unexpected problem loading the configuration. Functionality might be
-            restricted. Please report this incident.
-          </Alert>
-        ))}
       <Stack spacing={0} align="center" my="lg">
-        <DebouncedImage src={form.values.appearance.iconUrl} width={120} height={120} />
+        <DebouncedImage src={form.values.iconUrl} width={120} height={120} />
 
         <Text align="center" weight="bold" size="lg" mt="md">
           {form.values.name ?? 'New App'}
@@ -163,28 +113,34 @@ export const EditAppModal = ({
           >
             <Tabs.List grow>
               <Tabs.Tab
-                rightSection={<ValidationErrorIndicator keys={['name', 'url']} />}
+                rightSection={
+                  <ValidationErrorIndicator keys={['name', 'internalUrl', 'externalUrl']} />
+                }
                 icon={<IconAdjustments size={14} />}
                 value="general"
               >
                 {t('tabs.general')}
               </Tabs.Tab>
               <Tabs.Tab
-                rightSection={<ValidationErrorIndicator keys={['behaviour.externalUrl']} />}
+                rightSection={<ValidationErrorIndicator keys={['openInNewTab', 'description']} />}
                 icon={<IconClick size={14} />}
                 value="behaviour"
               >
                 {t('tabs.behaviour')}
               </Tabs.Tab>
               <Tabs.Tab
-                rightSection={<ValidationErrorIndicator keys={[]} />}
+                rightSection={<ValidationErrorIndicator keys={['isPingEnabled', 'statusCodes']} />}
                 icon={<IconAccessPoint size={14} />}
                 value="network"
               >
                 {t('tabs.network')}
               </Tabs.Tab>
               <Tabs.Tab
-                rightSection={<ValidationErrorIndicator keys={['appearance.iconUrl']} />}
+                rightSection={
+                  <ValidationErrorIndicator
+                    keys={['iconUrl', 'nameStyle', 'fontSize', 'namePosition', 'nameLineClamp']}
+                  />
+                }
                 icon={<IconBrush size={14} />}
                 value="appearance"
               >
@@ -199,7 +155,7 @@ export const EditAppModal = ({
               </Tabs.Tab>
             </Tabs.List>
 
-            <GeneralTab form={form} openTab={(targetTab) => setActiveTab(targetTab)} />
+            <GeneralTab form={form} />
             <BehaviourTab form={form} />
             <NetworkTab form={form} />
             <AppearanceTab
@@ -241,3 +197,24 @@ const SaveButton = ({ formIsValid }: { formIsValid: boolean }) => {
 };
 
 export type EditAppModalTab = 'general' | 'behaviour' | 'network' | 'appereance' | 'integration';
+
+export const appFormSchema = z.object({
+  id: z.string().nonempty(),
+  type: z.literal('app'),
+  name: z.string().min(2).max(64),
+  internalUrl: z.string().regex(new RegExp(appUrlRegex)),
+  externalUrl: z.string().regex(new RegExp(appUrlWithAnyProtocolRegex)).nullable(),
+  iconUrl: z.string().nonempty(),
+  nameStyle: z.enum(appNameStyles),
+  namePosition: z.enum(appNamePositions),
+  nameLineClamp: z.number().min(0).max(10),
+  fontSize: z.number().min(5).max(64),
+  isPingEnabled: z.boolean(),
+  statusCodes: z.array(z.number().min(100).max(999)),
+  openInNewTab: z.boolean(),
+  description: z.string().nonempty().max(512).nullable(),
+  integrationId: z.string().nonempty().nullable(),
+});
+
+type FormType = z.infer<typeof appFormSchema>;
+export type AppForm = UseFormReturnType<FormType, (values: FormType) => FormType>;

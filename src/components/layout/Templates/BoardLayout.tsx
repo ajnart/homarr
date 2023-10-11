@@ -189,6 +189,7 @@ const ToggleEditModeButton = () => {
 
 const AddElementButton = () => {
   const { t } = useTranslation('layout/element-selector/selector');
+  const board = useRequiredBoard();
 
   return (
     <Tooltip label={t('actionIcon.tooltip')}>
@@ -198,7 +199,9 @@ const AddElementButton = () => {
             modal: 'selectElement',
             title: t('modal.title'),
             size: 'xl',
-            innerProps: {},
+            innerProps: {
+              board,
+            },
           })
         }
       >

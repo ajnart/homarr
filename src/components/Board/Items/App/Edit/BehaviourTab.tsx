@@ -1,17 +1,15 @@
-import { Text, TextInput, Tooltip, Stack, Switch, Tabs, Group, useMantineTheme, HoverCard } from '@mantine/core';
-import { UseFormReturnType } from '@mantine/form';
+import { Group, Stack, Switch, Tabs, Text, TextInput, useMantineTheme } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+import { InfoCard } from '~/components/InfoCard/InfoCard';
 
-import { AppType } from '~/types/app';
-import { InfoCard } from '~/components/InfoCard/InfoCard'
+import { AppForm } from '../EditAppModal';
 
 interface BehaviourTabProps {
-  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
+  form: AppForm;
 }
 
 export const BehaviourTab = ({ form }: BehaviourTabProps) => {
   const { t } = useTranslation('layout/modals/add-app');
-  const { primaryColor } = useMantineTheme();
 
   return (
     <Tabs.Panel value="behaviour" pt="xs">
@@ -19,19 +17,17 @@ export const BehaviourTab = ({ form }: BehaviourTabProps) => {
         <Switch
           label={t('behaviour.isOpeningNewTab.label')}
           description={t('behaviour.isOpeningNewTab.description')}
-          styles={{ label: { fontWeight: 500, }, description: { marginTop: 0, }, }}
-          {...form.getInputProps('behaviour.isOpeningNewTab', { type: 'checkbox' })}
+          styles={{ label: { fontWeight: 500 }, description: { marginTop: 0 } }}
+          {...form.getInputProps('openInNewTab', { type: 'checkbox' })}
         />
         <Stack spacing="0.25rem">
           <Group>
             <Text size="0.875rem" weight={500}>
               {t('behaviour.tooltipDescription.label')}
             </Text>
-            <InfoCard message={t('behaviour.tooltipDescription.description')}/>
+            <InfoCard message={t('behaviour.tooltipDescription.description')} />
           </Group>
-          <TextInput
-            {...form.getInputProps('behaviour.tooltipDescription')}
-          />
+          <TextInput {...form.getInputProps('description')} />
         </Stack>
       </Stack>
     </Tabs.Panel>

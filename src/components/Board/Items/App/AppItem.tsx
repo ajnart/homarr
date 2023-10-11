@@ -9,7 +9,7 @@ import { ItemWrapper } from '../ItemWrapper';
 import { AppMenu } from './AppMenu';
 import { AppPing } from './AppPing';
 
-interface AppTileProps {
+interface AppItemProps {
   app: AppItem;
   className?: string;
 }
@@ -21,7 +21,7 @@ const namePositions = {
   bottom: 'column-reverse',
 };
 
-export const BoardAppItem = ({ className, app }: AppTileProps) => {
+export const BoardAppItem = ({ className, app }: AppItemProps) => {
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { cx, classes } = useStyles();
   const { colorScheme } = useMantineTheme();
@@ -49,7 +49,7 @@ export const BoardAppItem = ({ className, app }: AppTileProps) => {
             flexFlow: namePositions[app.namePosition] ?? 'column',
           }}
         >
-          {app.nameStyle === 'show' && (
+          {app.nameStyle === 'normal' && (
             <Text
               className={cx(classes.appName, 'dashboard-tile-app-title')}
               fw={700}

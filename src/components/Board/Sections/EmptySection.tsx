@@ -27,7 +27,6 @@ export const BoardEmptySection = ({ section }: EmptySectionWrapperProps) => {
         data-empty={section.id}
         ref={refs.wrapper}
       >
-        {section.items.length === 0 && <span></span>}
         <SectionContent items={section.items} refs={refs} />
       </div>
     </GridstackProvider>

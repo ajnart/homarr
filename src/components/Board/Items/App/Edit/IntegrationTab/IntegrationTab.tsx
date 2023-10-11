@@ -4,16 +4,18 @@ import { IconAlertTriangle } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { AppType } from '~/types/app';
 
+import { AppForm } from '../../EditAppModal';
 import { IntegrationSelector } from './InputElements/IntegrationSelector';
 import { IntegrationOptionsRenderer } from './IntegrationOptionsRenderer/IntegrationOptionsRenderer';
 
 interface IntegrationTabProps {
-  form: UseFormReturnType<AppType, (values: AppType) => AppType>;
+  form: AppForm;
 }
 
 export const IntegrationTab = ({ form }: IntegrationTabProps) => {
+  return <></>; /*
   const { t } = useTranslation('layout/modals/add-app');
-  const hasIntegrationSelected = form.values.integration?.type;
+  const hasIntegrationSelected = form.values.integrationId?.type;
 
   return (
     <Tabs.Panel value="integration" pt="lg">
@@ -34,5 +36,5 @@ export const IntegrationTab = ({ form }: IntegrationTabProps) => {
         </>
       )}
     </Tabs.Panel>
-  );
+  );*/
 };

@@ -48,8 +48,8 @@ export const widgetOptionTypes = [
   'array',
   'null',
 ] as const;
-export const appNamePosition = ['right', 'left', 'top', 'bottom'] as const;
-export const appNameStyles = ['show', 'hide', 'hover'] as const;
+export const appNamePositions = ['right', 'left', 'top', 'bottom'] as const;
+export const appNameStyles = ['normal', 'hide', 'hover'] as const;
 export const statusCodeTypes = [
   'information',
   'success',
@@ -158,7 +158,7 @@ export type IntegrationSecretVisibility = (typeof integrationSecretVisibility)[n
 export type IntegrationSecretKey = keyof typeof integrationSecrets;
 export type WidgetType = (typeof widgetTypes)[number];
 export type WidgetOptionType = (typeof widgetOptionTypes)[number];
-export type AppNamePosition = (typeof appNamePosition)[number];
+export type AppNamePosition = (typeof appNamePositions)[number];
 export type AppNameStyle = (typeof appNameStyles)[number];
 export type StatusCodeType = (typeof statusCodeTypes)[number];
 export type SectionType = (typeof sectionTypes)[number];

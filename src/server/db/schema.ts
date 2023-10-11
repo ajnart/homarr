@@ -199,7 +199,7 @@ export const apps = sqliteTable('app', {
   description: text('description'),
   internalUrl: text('internal_url').notNull(),
   externalUrl: text('external_url'),
-  iconUrl: text('icon_url'),
+  iconUrl: text('icon_url').notNull(),
   integrationId: text('integration_id').references(() => integrations.id, { onDelete: 'cascade' }),
 });
 
@@ -208,7 +208,7 @@ export const appItems = sqliteTable('app_item', {
   isPingEnabled: int('is_ping_enabled', { mode: 'boolean' }).notNull().default(false),
   fontSize: int('font_size').notNull().default(16),
   namePosition: text('name_position').$type<AppNamePosition>().notNull().default('top'),
-  nameStyle: text('name_style').$type<AppNameStyle>().notNull().default('show'),
+  nameStyle: text('name_style').$type<AppNameStyle>().notNull().default('normal'),
   nameLineClamp: int('name_line_clamp').notNull().default(1),
   appId: text('app_id')
     .notNull()

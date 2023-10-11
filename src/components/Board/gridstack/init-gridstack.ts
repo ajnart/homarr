@@ -65,7 +65,7 @@ function setAttributesFromShape(ref: GridItemHTMLElement | null, item: Item) {
   ref.setAttribute('gs-h', item.height.toString());
 }
 
-export type TileWithUnknownLocation = {
+export type ItemWithUnknownLocation = {
   x?: number;
   y?: number;
   w?: number;
