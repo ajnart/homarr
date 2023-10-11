@@ -1,29 +1,29 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Sākums"
         },
         "boards": {
-            "title": ""
+            "title": "Dēļi"
         },
         "users": {
-            "title": "",
+            "title": "Lietotāji",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Pārvaldīt",
+                "invites": "Uzaicinājumi"
             }
         },
         "help": {
-            "title": "",
+            "title": "Palīdzība",
             "items": {
                 "documentation": "Dokumentācija",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "Ziņot par problēmu / kļūdu",
+                "discord": "Kopienas Discord",
+                "contribute": "Atbalstīt"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Rīki",
             "items": {
                 "docker": "Docker"
             }
