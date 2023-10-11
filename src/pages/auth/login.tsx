@@ -12,7 +12,7 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { signIn } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -22,13 +22,17 @@ import { useState } from 'react';
 import { z } from 'zod';
 import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
+import { env } from '~/env';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { signInSchema } from '~/validations/user';
 
+const signInSchemaWithProvider = signInSchema.extend({ provider: z.string() });
+
 export default function LoginPage({
   redirectAfterLogin,
+  providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation('authentication/login');
   const { i18nZodResolver } = useI18nZodResolver();
@@ -36,16 +40,16 @@ export default function LoginPage({
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const form = useForm<z.infer<typeof signInSchema>>({
+  const form = useForm<z.infer<typeof signInSchemaWithProvider>>({
     validateInputOnChange: true,
     validateInputOnBlur: true,
-    validate: i18nZodResolver(signInSchema),
+    validate: i18nZodResolver(signInSchemaWithProvider),
   });
 
-  const handleSubmit = (values: z.infer<typeof signInSchema>) => {
+  const handleSubmit = (values: z.infer<typeof signInSchemaWithProvider>) => {
     setIsLoading(true);
     setIsError(false);
-    signIn('credentials', {
+    signIn(values.provider, {
       redirect: false,
       name: values.name,
       password: values.password,
@@ -61,6 +65,8 @@ export default function LoginPage({
   };
 
   const metaTitle = `${t('metaTitle')} • Homarr`;
+
+  console.log(providers)
 
   return (
     <>
@@ -119,10 +125,36 @@ export default function LoginPage({
                   {...form.getInputProps('password')}
                 />
 
-                <Button mt="xs" variant="light" fullWidth type="submit" loading={isLoading}>
-                  {t('form.buttons.submit')}
-                </Button>
+                {providers.includes('credentials') && (
+                  <Button
+                    mt="xs"
+                    variant="light"
+                    fullWidth
+                    type="submit"
+                    disabled={isLoading && form.values.provider != 'credentials'}
+                    loading={isLoading && form.values.provider == 'credentials'}
+                    name="credentials"
+                    onClick={() => form.setFieldValue('provider', 'credentials')}
+                  >
+                    {t('form.buttons.submit')}
+                  </Button>
+                )}
 
+                {providers.includes('ldap') && (
+                <Button
+                  mt="xs"
+                  variant="light"
+                  fullWidth
+                  type="submit"
+                  disabled={isLoading && form.values.provider != 'ldap'}
+                  loading={isLoading && form.values.provider == 'ldap'}
+                  name="ldap"
+                  onClick={() => form.setFieldValue('provider', 'ldap')}
+                >
+                  {t('form.buttons.submit')} - LDAP
+                </Button>
+                )}
+                
                 {redirectAfterLogin && (
                   <Text color="dimmed" align="center" size="xs">
                     {t('form.afterLoginRedirection', { url: redirectAfterLogin })}
@@ -139,7 +171,12 @@ export default function LoginPage({
 
 const regexExp = /^\/{1}[A-Za-z\/]*$/;
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, req, res, query }) => {
+export const getServerSideProps = async ({
+  locale,
+  req,
+  res,
+  query,
+}: GetServerSidePropsContext) => {
   const session = await getServerAuthSession({ req, res });
 
   const zodResult = await z
@@ -160,6 +197,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res,
     props: {
       ...(await getServerSideTranslations(['authentication/login'], locale, req, res)),
       redirectAfterLogin,
+      providers: env.AUTH_PROVIDER,
     },
   };
 };

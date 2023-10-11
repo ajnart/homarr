@@ -1,20 +1,17 @@
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import bcrypt from 'bcryptjs';
-import Consola from 'consola';
 import Cookies from 'cookies';
 import { eq } from 'drizzle-orm';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
 import { type DefaultSession, type NextAuthOptions, getServerSession } from 'next-auth';
 import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
-import Credentials from 'next-auth/providers/credentials';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
-import { colorSchemeParser, signInSchema } from '~/validations/user';
+import { colorSchemeParser } from '~/validations/user';
+import providers from '~/utils/auth-providers';
 
 import { db } from './db';
 import { users } from './db/schema';
-
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
  * object and keep type safety.
@@ -134,55 +131,7 @@ export const constructAuthOptions = (
   },
   adapter: adapter as Adapter,
   providers: [
-    Credentials({
-      name: 'credentials',
-      credentials: {
-        name: {
-          label: 'Username',
-          type: 'text',
-        },
-        password: { label: 'Password', type: 'password' },
-      },
-      async authorize(credentials) {
-        const data = await signInSchema.parseAsync(credentials);
-
-        const user = await db.query.users.findFirst({
-          with: {
-            settings: {
-              columns: {
-                colorScheme: true,
-                language: true,
-                autoFocusSearch: true,
-              },
-            },
-          },
-          where: eq(users.name, data.name),
-        });
-
-        if (!user || !user.password) {
-          return null;
-        }
-
-        Consola.log(`user ${user.name} is trying to log in. checking password...`);
-        const isValidPassword = await bcrypt.compare(data.password, user.password);
-
-        if (!isValidPassword) {
-          Consola.log(`password for user ${user.name} was incorrect`);
-          return null;
-        }
-
-        Consola.log(`user ${user.name} successfully authorized`);
-
-        return {
-          id: user.id,
-          name: user.name,
-          isAdmin: false,
-          colorScheme: colorSchemeParser.parse(user.settings?.colorScheme),
-          language: user.settings?.language ?? 'en',
-          autoFocusSearch: user.settings?.autoFocusSearch ?? false,
-        };
-      },
-    }),
+    ...providers,
     EmptyNextAuthProvider(),
   ],
   jwt: {
@@ -207,10 +156,10 @@ export const constructAuthOptions = (
 });
 
 const isCredentialsRequest = (req: NextApiRequest): boolean => {
-  const nextAuthQueryParams = req.query.nextauth as ['callback', 'credentials'];
+  const nextAuthQueryParams = req.query.nextauth as string[];
   return (
     nextAuthQueryParams.includes('callback') &&
-    nextAuthQueryParams.includes('credentials') &&
+    (nextAuthQueryParams.includes('credentials') || nextAuthQueryParams.includes('ldap')) &&
     req.method === 'POST'
   );
 };
