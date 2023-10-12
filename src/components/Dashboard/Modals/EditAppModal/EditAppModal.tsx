@@ -92,7 +92,6 @@ export const EditAppModal = ({
     }
 
     values.url = removeTrailingSlash(values.url);
-    values.behaviour.externalUrl = removeTrailingSlash(values.behaviour.externalUrl);
 
     updateConfig(
       configName,

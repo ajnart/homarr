@@ -20,6 +20,8 @@
 				"lines": {
 					"nothingAfterPort": "You should, in most if not all cases, not input anything after the port, even the '/admin' for pihole.",
 					"protocolCheck": "Always make sure that the URL is preceded by http or https, and to make sure you are using the right one.",
+					"preferIP": "It is recommended to use the direct ip of the machine or container you are trying to communicate with.",
+					"wget": "To make sure that homarr can communicate with the other apps, make sure to wget/curl/ping the app's IP:port.",
 					"iframe": "When it comes to iframes, those should always be using the same protocol (http/s) as Homarr.",
 					"clearCache": "Some informations are registered in cache, so an integration might not work unless you clear the cache in Homarr's general options."
 				},

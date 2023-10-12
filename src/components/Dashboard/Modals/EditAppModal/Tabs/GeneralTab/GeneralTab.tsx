@@ -20,6 +20,8 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
   const commonMistakes = [
     t('general.internalAddress.troubleshoot.lines.nothingAfterPort'),
     t('general.internalAddress.troubleshoot.lines.protocolCheck'),
+    t('general.internalAddress.troubleshoot.lines.preferIP'),
+    t('general.internalAddress.troubleshoot.lines.wget'),
     t('general.internalAddress.troubleshoot.lines.iframe'),
     t('general.internalAddress.troubleshoot.lines.clearCache'),
   ];
