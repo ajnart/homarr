@@ -3,9 +3,9 @@
     "pageTitle": "",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "Додатки",
+            "widgets": "Віджети",
+            "categories": "Категорії"
         },
         "buttons": {
             "view": ""

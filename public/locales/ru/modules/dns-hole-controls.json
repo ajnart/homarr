@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Показать кнопки \"Включить/Выключить все"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }

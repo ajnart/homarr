@@ -10,25 +10,25 @@
       "radarrReleaseType": {
         "label": "Radarr - тип релізів",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "У кінотеатрах",
+          "physicalRelease": "Фізичне",
+          "digitalRelease": "Цифрове"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Приховати дні тижня"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Показати елементи, за якими не ведеться спостереження"
       },
       "fontSize": {
         "label": "Розмір шрифту",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Дуже маленьке",
+          "sm": "Малий",
+          "md": "Середній",
+          "lg": "Великий",
+          "xl": "Дуже великий"
         }
       }
     }

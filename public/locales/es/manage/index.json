@@ -3,7 +3,7 @@
     "hero": {
         "title": "Bienvenido/a de nuevo, {{username}}",
         "fallbackUsername": "Anónimo",
-        "subtitle": "Bienvenido/a a su centro de aplicaciones. ¡Organiza, optimiza y conquista!"
+        "subtitle": "Bienvenido/a a tu centro de aplicaciones. ¡Organiza, optimiza y conquista!"
     },
     "quickActions": {
         "title": "Acciones rápidas",
@@ -13,7 +13,7 @@
         },
         "inviteUsers": {
             "title": "Invitar a un nuevo usuario",
-            "subtitle": "Crea y envía una invitación para el registro"
+            "subtitle": "Crear y enviar una invitación para registrarse"
         },
         "manageUsers": {
             "title": "Administrar usuarios",

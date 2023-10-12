@@ -8,7 +8,7 @@
                 "label": "Nombre de usuario"
             },
             "email": {
-                "label": "E-Mail"
+                "label": "Correo electrónico"
             }
         },
         "security": {
@@ -23,14 +23,14 @@
             "text": "Guardar en la base de datos",
             "card": {
                 "title": "Revisar datos introducidos",
-                "text": "Después de enviar los datos a la base de datos, el usuario podrá iniciar sesión. ¿Estás seguro de que quieres almacenar este usuario en la base de datos y activar el inicio de sesión?"
+                "text": "Después de enviar tus datos a la base de datos, el usuario podrá iniciar sesión. ¿Está seguro de que desea almacenar este usuario en la base de datos y activar el inicio de sesión?"
             },
             "table": {
                 "header": {
                     "property": "Propiedad",
                     "value": "Valor",
                     "username": "Nombre de usuario",
-                    "email": "E-Mail",
+                    "email": "Correo electrónico",
                     "password": "Contraseña"
                 },
                 "notSet": "No configurado",
@@ -40,7 +40,7 @@
         },
         "completed": {
             "alert": {
-                "title": "Usuario creado",
+                "title": "El usuario fue creado",
                 "text": "El usuario fue creado en la base de datos. Ahora pueden iniciar sesión."
             }
         }

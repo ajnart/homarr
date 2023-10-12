@@ -62,22 +62,24 @@ export const dnsHoleRouter = createTRPCRouter({
         )
       );
 
-      const data = result.reduce(
-        (prev: AdStatistics, curr) => ({
-          domainsBeingBlocked: prev.domainsBeingBlocked + curr.domainsBeingBlocked,
-          adsBlockedToday: prev.adsBlockedToday + curr.adsBlockedToday,
-          dnsQueriesToday: prev.dnsQueriesToday + curr.dnsQueriesToday,
-          status: [...prev.status, curr.status],
-          adsBlockedTodayPercentage: 0,
-        }),
-        {
-          domainsBeingBlocked: 0,
-          adsBlockedToday: 0,
-          adsBlockedTodayPercentage: 0,
-          dnsQueriesToday: 0,
-          status: [],
-        }
-      );
+      const data = result
+        .filter((x) => x !== null)
+        .reduce(
+          (prev: AdStatistics, curr) => ({
+            domainsBeingBlocked: prev.domainsBeingBlocked + curr!.domainsBeingBlocked,
+            adsBlockedToday: prev.adsBlockedToday + curr!.adsBlockedToday,
+            dnsQueriesToday: prev.dnsQueriesToday + curr!.dnsQueriesToday,
+            status: [...prev.status, curr!.status],
+            adsBlockedTodayPercentage: 0,
+          }),
+          {
+            domainsBeingBlocked: 0,
+            adsBlockedToday: 0,
+            adsBlockedTodayPercentage: 0,
+            dnsQueriesToday: 0,
+            status: [],
+          }
+        );
 
       data.adsBlockedTodayPercentage = data.adsBlockedToday / data.dnsQueriesToday;
       if (Number.isNaN(data.adsBlockedTodayPercentage)) {
@@ -131,7 +133,13 @@ const processPiHole = async (app: ConfigAppType, enable: boolean) => {
 
 const collectPiHoleSummary = async (app: ConfigAppType) => {
   const piHole = new PiHoleClient(app.url, findAppProperty(app, 'apiKey'));
-  const summary = await piHole.getSummary();
+  const summary = await piHole.getSummary().catch(() => {
+    return null;
+  });
+
+  if (!summary) {
+    return null;
+  }
 
   return {
     domainsBeingBlocked: summary.domains_being_blocked,
@@ -152,7 +160,14 @@ const collectAdGuardSummary = async (app: ConfigAppType) => {
     findAppProperty(app, 'password')
   );
 
-  const stats = await adGuard.getStats();
+  const stats = await adGuard.getStats().catch(() => {
+    return null;
+  });
+
+  if (!stats) {
+    return null;
+  }
+
   const status = await adGuard.getStatus();
   const countFilteredDomains = await adGuard.getCountFilteringDomains();
 

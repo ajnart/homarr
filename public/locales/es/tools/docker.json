@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Tu instancia de Homarr no tiene Docker configurado, o falló al obtener los contenedores. Por favor, comprueba la documentación sobre cómo configurar la integración."
+            "text": "Tu instancia de Homarr no tiene Docker configurado o no pudo recuperar contenedores. Por favor, consulta la documentación sobre cómo configurar la integración."
         }
     },
     "modals": {
         "selectBoard": {
             "title": "Selecciona un tablero",
-            "text": "Selecciona el tablero donde quieres añadir las apps para los contenedores marcados.",
+            "text": "Selecciona el tablero donde deseas añadir las aplicaciones para los contenedores Docker seleccionados.",
             "form": {
                 "board": {
                     "label": "Tablero"
                 },
-                "submit": "Añadir apps"
+                "submit": "Añadir aplicaciones"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "Apps añadidas al tablero",
-                "message": "Las apps de los contenedores Docker marcadas han sido añadidas al tablero."
+                "title": "Aplicaciones añadidas al tablero",
+                "message": "Las aplicaciones para los contenedores Docker seleccionados se han agregado al tablero."
             },
             "error": {
-                "title": "Fallo al añadir las apps al tablero",
-                "message": "Las apps para los contenedores marcados no pudieron ser añadidas al tablero."
+                "title": "No se pudieron añadir aplicaciones al tablero",
+                "message": "Las aplicaciones para los contenedores Docker seleccionados no se pudieron añadir al tablero."
             }
         }
     }

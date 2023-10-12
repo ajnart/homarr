@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Show 'Enable/Disable All' Buttons"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "Unable to find a DNS hole",
+        "text": "There was a problem connecting to your DNS Hole(s). Please verify your configuration/integration(s)."
+      }
     }
   }
 }

@@ -11,10 +11,10 @@
             "view": "查看面板"
         },
         "menu": {
-            "setAsDefault": "设置为您的默认面板",
+            "setAsDefault": "设置为默认",
             "delete": {
                 "label": "永久删除",
-                "disabled": "删除功能已禁用，因为旧的 Homarr 组件不允许删除默认配置。将来将有可能删除。"
+                "disabled": "删除功能被禁用，因为较旧的 Homarr 组件不允许删除默认配置。将来可能会删除。"
             }
         },
         "badges": {
@@ -32,7 +32,7 @@
         },
         "create": {
             "title": "创建面板",
-            "text": "创建版面后不能更改名称。",
+            "text": "面板创建成功后，不能修改名称。",
             "form": {
                 "name": {
                     "label": "名称"

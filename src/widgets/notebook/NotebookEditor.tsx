@@ -69,7 +69,12 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       Color,
       Highlight.configure({ multicolor: true }),
       CustomImage.configure({ inline: true }),
-      Link.configure({ openOnClick: true }),
+      Link.configure({
+        openOnClick: true,
+        validate(url) {
+          return /^https?:\/\//.test(url);
+        },
+      }),
       StarterKit.configure({
         horizontalRule: {
           HTMLAttributes: {

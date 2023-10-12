@@ -31,7 +31,7 @@
     "validation": {
       "length": "长度必须在 {{shortest}} 和 {{longest}} 之间",
       "invalidLink": "无效链接",
-      "errorMsg": "没有保存，因为出现了验证错误。请重新输入"
+      "errorMsg": "由于存在验证错误，未保存。请调整您的输入"
     },
     "name": "名称",
     "url": "网址",
