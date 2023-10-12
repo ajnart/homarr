@@ -17,6 +17,10 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    allowReadOnlyCheck: {
+      type: 'switch',
+      defaultValue: true,
+    },
     content: {
       type: 'text',
       hide: true,

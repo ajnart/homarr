@@ -2215,6 +2215,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tiptap/extension-task-item@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@tiptap/extension-task-item@npm:2.1.11"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+    "@tiptap/pm": ^2.0.0
+  checksum: c5ac9b386fb45fb8175d05f17f100b7d10a7a25e2a78564e3691d944a2ce8fadc9d88b1c33779152283db6fcfa6fef4583c90e1c7b07323506b7a162fd7325a1
+  languageName: node
+  linkType: hard
+
+"@tiptap/extension-task-list@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@tiptap/extension-task-list@npm:2.1.11"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: df2a25488c8b5b4fb049ce9e94efffcbd5719b6949a6d7d6c5182f4ff05c6da076d06eeecec6da8ffe0804bad83579e9cc7d78a5b95063e7109f802d95ebca97
+  languageName: node
+  linkType: hard
+
 "@tiptap/extension-text-align@npm:^2.1.11":
   version: 2.1.11
   resolution: "@tiptap/extension-text-align@npm:2.1.11"
@@ -6998,6 +7017,8 @@ __metadata:
     "@tiptap/extension-highlight": ^2.1.11
     "@tiptap/extension-image": ^2.1.11
     "@tiptap/extension-link": ^2.0.4
+    "@tiptap/extension-task-item": ^2.1.11
+    "@tiptap/extension-task-list": ^2.1.11
     "@tiptap/extension-text-align": ^2.1.11
     "@tiptap/extension-text-style": ^2.1.11
     "@tiptap/pm": ^2.0.4

@@ -10,7 +10,7 @@ import {
   TextInput,
   useMantineTheme,
 } from '@mantine/core';
-import { useDebouncedValue, useDisclosure, useInputState } from '@mantine/hooks';
+import { useDisclosure, useInputState } from '@mantine/hooks';
 import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap';
 import {
   IconCheck,
@@ -18,13 +18,18 @@ import {
   IconEdit,
   IconEditOff,
   IconHighlight,
+  IconIndentDecrease,
+  IconIndentIncrease,
   IconLetterA,
+  IconListCheck,
   IconPhoto,
   IconX,
 } from '@tabler/icons-react';
 import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import Image from '@tiptap/extension-image';
+import TaskItem from '@tiptap/extension-task-item';
+import TaskList from '@tiptap/extension-task-list';
 import TextAlign from '@tiptap/extension-text-align';
 import TextStyle from '@tiptap/extension-text-style';
 import { BubbleMenu, useEditor } from '@tiptap/react';
@@ -50,8 +55,6 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { mutateAsync } = api.notebook.update.useMutation();
 
-  const [debouncedContent] = useDebouncedValue(content, 500);
-
   const CustomImage = Image.extend({
     addAttributes() {
       return {
@@ -67,7 +70,30 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       Highlight.configure({ multicolor: true }),
       CustomImage.configure({ inline: true }),
       Link.configure({ openOnClick: true }),
-      StarterKit,
+      StarterKit.configure({
+        horizontalRule: {
+          HTMLAttributes: {
+            style: 'border-top-style: double;',
+          },
+        },
+      }),
+      TaskItem.configure({
+        nested: true,
+        onReadOnlyChecked: (node, checked) => {
+          const event = new CustomEvent('onReadOnlyCheck', { detail: { node, checked } });
+          dispatchEvent(event);
+          return widget.properties.allowReadOnlyCheck;
+        },
+        HTMLAttributes: {
+          style: 'list-style-type: none; display: flex; gap: 8px;',
+        },
+      }),
+      TaskList.configure({
+        itemTypeName: 'taskItem',
+        HTMLAttributes: {
+          style: 'padding-left: 17px;',
+        },
+      }),
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
       TextStyle,
     ],
@@ -78,16 +104,41 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     },
   });
 
+  const handleOnReadOnlyCheck = (event: CustomEventInit) => {
+    if (widget.properties.allowReadOnlyCheck && !!editor) {
+      editor.state.doc.descendants((subnode, pos) => {
+        if (event.detail.node.eq(subnode)) { //This test only works the first time after a page refresh
+          const { tr } = editor.state;
+          tr.setNodeMarkup(pos, undefined, {
+            ...event.detail.node.attrs,
+            checked: event.detail.checked,
+          });
+          editor.view.dispatch(tr);
+          setContent(editor.getHTML()); //Not working???
+          handleConfigUpdate();
+        }
+      });
+    }
+  };
+
+  addEventListener('onReadOnlyCheck', handleOnReadOnlyCheck);
+
   const handleEditToggle = (previous: boolean) => {
     const current = !previous;
     if (!editor) return current;
     editor.setEditable(current);
 
+    handleConfigUpdate();
+
+    return current;
+  };
+
+  const handleConfigUpdate = () => {
     updateConfig(
       configName!,
       (previous) => {
         const currentWidget = previous.widgets.find((x) => x.id === widget.id);
-        currentWidget!.properties.content = debouncedContent;
+        currentWidget!.properties.content = content;
 
         return {
           ...previous,
@@ -102,11 +153,9 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
     void mutateAsync({
       configName: configName!,
-      content: debouncedContent,
+      content: content,
       widgetId: widget.id,
     });
-
-    return current;
   };
 
   if (!config || !configName) return <WidgetLoading />;
@@ -161,17 +210,29 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.H4 />
           </RichTextEditor.ControlsGroup>
 
-          <RichTextEditor.ControlsGroup>
-            <RichTextEditor.AlignLeft />
-            <RichTextEditor.AlignCenter />
-            <RichTextEditor.AlignRight />
+          <RichTextEditor.ControlsGroup> {/* active not available yet, manually setting bg has conflicts with hover, maybe will be done auto by mantine in the future*/}
+            <RichTextEditor.AlignLeft /> {/*active={editor?.getAttributes('paragraph').textAlign === 'left'}*/}
+            <RichTextEditor.AlignCenter /> {/*active={editor?.getAttributes('paragraph').textAlign === 'center'}*/}
+            <RichTextEditor.AlignRight /> {/*active={editor?.getAttributes('paragraph').textAlign === 'right'}*/}
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
             <RichTextEditor.Blockquote />
             <RichTextEditor.Hr />
+          </RichTextEditor.ControlsGroup>
+
+          <RichTextEditor.ControlsGroup>
             <RichTextEditor.BulletList />
             <RichTextEditor.OrderedList />
+            <TaskListToggle />
+            {(editor?.isActive('taskList') ||
+              editor?.isActive('bulletList') ||
+              editor?.isActive('orderedList')) && (
+              <>
+                <ListIndentIncrease />
+                <ListIndentDecrease />
+              </>
+            )}
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
@@ -407,7 +468,11 @@ function EmbedImage() {
       trapFocus
     >
       <Popover.Target>
-        <RichTextEditor.Control onClick={toggle} title="Embed Image">
+        <RichTextEditor.Control
+          onClick={toggle}
+          title="Embed Image"
+          active={editor?.isActive('image')}
+        >
           <IconPhoto stroke={1.5} size="1rem" />
         </RichTextEditor.Control>
       </Popover.Target>
@@ -441,5 +506,57 @@ function EmbedImage() {
         </Stack>
       </Popover.Dropdown>
     </Popover>
+  );
+}
+
+function TaskListToggle() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control
+      title="Toggle task list item"
+      onClick={() => editor.chain().focus().toggleTaskList().run()}
+      active={editor?.isActive('taskList')}
+    >
+      <IconListCheck stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function ListIndentIncrease() {
+  const { editor } = useRichTextEditorContext();
+  const [itemType, setItemType] = useState('listItem');
+
+  editor?.on('selectionUpdate', ({ editor }) => {
+    setItemType(editor?.isActive('taskItem') ? 'taskItem' : 'listItem');
+  });
+
+  return (
+    <RichTextEditor.Control
+      title="Increase indent"
+      onClick={() => editor.chain().focus().sinkListItem(itemType).run()}
+      interactive={editor.can().sinkListItem(itemType)}
+    >
+      <IconIndentIncrease stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function ListIndentDecrease() {
+  const { editor } = useRichTextEditorContext();
+  const [itemType, setItemType] = useState('listItem');
+
+  editor?.on('selectionUpdate', ({ editor }) => {
+    setItemType(editor?.isActive('taskItem') ? 'taskItem' : 'listItem');
+  });
+
+  return (
+    <RichTextEditor.Control
+      title="Decrease indent"
+      onClick={() => editor.chain().focus().liftListItem(itemType).run()}
+      interactive={editor.can().liftListItem(itemType)}
+    >
+      <IconIndentDecrease stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
   );
 }
