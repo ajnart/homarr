@@ -134,7 +134,12 @@ export function LidarrMediaDisplay(props: any) {
 
 export function RadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
+  const { config } = useConfigContext();
+  const calendar = config?.widgets.find((w) => w.type === 'calendar');
+  const useRadarrv5 = calendar?.properties.useRadarrv5 ?? false;
+
   // Find a poster CoverType
+  const poster = media.images.find((image: any) => image.coverType === 'poster');
   return (
     <MediaDisplay
       media={{
@@ -142,7 +147,7 @@ export function RadarrMediaDisplay(props: any) {
         title: media.title ?? media.originalTitle,
         overview: media.overview ?? '',
         genres: media.genres ?? [],
-        poster: media.images.find((image: any) => image.coverType === 'poster')?.url,
+        poster: useRadarrv5 ? poster.remoteUrl : poster.url,
         voteAverage: media.ratings.tmdb.value.toString(),
         imdbId: media.imdbId,
         type: 'movie',

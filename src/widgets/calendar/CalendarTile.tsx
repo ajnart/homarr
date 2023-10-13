@@ -30,6 +30,10 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: false,
     },
+    useRadarrv5: {
+      type: 'switch',
+      defaultValue: false,
+    },
     radarrReleaseType: {
       type: 'select',
       defaultValue: 'inCinemas',
