@@ -119,8 +119,8 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             checked: event.detail.checked,
           });
           editor.view.dispatch(tr);
-          setContent(editor.getHTML()); //Not working???
-          handleConfigUpdate();
+          setContent(editor.getHTML());
+          handleConfigUpdate(editor.getHTML());
         }
       });
     }
@@ -133,17 +133,17 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     if (!editor) return current;
     editor.setEditable(current);
 
-    handleConfigUpdate();
+    handleConfigUpdate(content);
 
     return current;
   };
 
-  const handleConfigUpdate = () => {
+  const handleConfigUpdate = (contentUpdate: string) => {
     updateConfig(
       configName!,
       (previous) => {
         const currentWidget = previous.widgets.find((x) => x.id === widget.id);
-        currentWidget!.properties.content = content;
+        currentWidget!.properties.content = contentUpdate;
 
         return {
           ...previous,
@@ -158,7 +158,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
     void mutateAsync({
       configName: configName!,
-      content: content,
+      content: contentUpdate,
       widgetId: widget.id,
     });
   };

@@ -95,8 +95,6 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
     )
   }
 
-  console.log(data);
-
   type getDnsStatusAcc = {
     enabled: string[];
     disabled: string[];
