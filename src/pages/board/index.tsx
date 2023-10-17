@@ -45,7 +45,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   );
   const config = await getFrontendConfig(boardName);
 
-  if (!config.settings.access.allowGuests && !session?.user) {
+  if (!config?.settings?.access?.allowGuests && !session?.user) {
     return {
       notFound: true,
       props: {
