@@ -29,9 +29,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth/core@npm:0.12.0":
-  version: 0.12.0
-  resolution: "@auth/core@npm:0.12.0"
+"@auth/core@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@auth/core@npm:0.17.0"
   dependencies:
     "@panva/hkdf": ^1.0.4
     cookie: 0.5.0
@@ -44,16 +44,16 @@ __metadata:
   peerDependenciesMeta:
     nodemailer:
       optional: true
-  checksum: 21933df18b691d2b0cca0de86fbed256ed01543733b33a7cfa948a993653ede13992eb0fca6bf693dd03ecd52faff3cf25edcc043ab8976e009e98a629751ba5
+  checksum: a0fdd3085df11f1d898260ded218605c1172fd8014cb7e837dbde4c7c6892a8015ac15ce04eac3f2e685bf35d97a4eae0a5aac367439b20c1a336b1a0c276e09
   languageName: node
   linkType: hard
 
-"@auth/drizzle-adapter@npm:^0.3.2":
-  version: 0.3.2
-  resolution: "@auth/drizzle-adapter@npm:0.3.2"
+"@auth/drizzle-adapter@npm:^0.3.4":
+  version: 0.3.4
+  resolution: "@auth/drizzle-adapter@npm:0.3.4"
   dependencies:
-    "@auth/core": 0.12.0
-  checksum: bb294a86e492d53d8fe7151eca80edcd5a20b533236e36ba5b537c811fd8310e6c11b1ed7337c5be451f0ca60f3bfae7419a2758a7fe90aa82dcba41d716519b
+    "@auth/core": 0.17.0
+  checksum: cad7511afa6ef87e87bec0e84f570cb1e36b762a6642c6381f5886347761d4c5d538fc6c2b88a7ab4f204a67d5a5cf257cc88cd21d2b479d79274e42d316b997
   languageName: node
   linkType: hard
 
@@ -7558,7 +7558,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "homarr@workspace:."
   dependencies:
-    "@auth/drizzle-adapter": ^0.3.2
+    "@auth/drizzle-adapter": ^0.3.4
     "@ctrl/deluge": ^4.1.0
     "@ctrl/qbittorrent": ^6.0.0
     "@ctrl/shared-torrent": ^4.1.1
