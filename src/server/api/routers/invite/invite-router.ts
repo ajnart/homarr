@@ -5,18 +5,18 @@ import { z } from 'zod';
 import { db } from '~/server/db';
 import { invites } from '~/server/db/schema';
 
-import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../../trpc';
 
 export const inviteRouter = createTRPCRouter({
   all: adminProcedure
     .input(
       z.object({
-        limit: z.number().min(1).max(100).nullish().default(10),
+        limit: z.number().min(1).max(100).default(10),
         page: z.number().min(0),
       })
     )
     .query(async ({ ctx, input }) => {
-      const limit = input.limit ?? 50;
+      const limit = input.limit;
       const dbInvites = await db.query.invites.findMany({
         limit: limit,
         offset: limit * input.page,
@@ -67,7 +67,7 @@ export const inviteRouter = createTRPCRouter({
         expires: inviteToInsert.expires,
       };
     }),
-  delete: adminProcedure.input(z.object({ tokenId: z.string() })).mutation(async ({ input }) => {
-    await db.delete(invites).where(eq(invites.id, input.tokenId));
+  delete: adminProcedure.input(z.object({ id: z.string() })).mutation(async ({ input }) => {
+    await db.delete(invites).where(eq(invites.id, input.id));
   }),
 });
