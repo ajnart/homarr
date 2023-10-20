@@ -5,7 +5,9 @@ import { WidgetsEditModal } from '~/components/Board/Items/Widget/WidgetsEditMod
 import { CategoryEditModal } from '~/components/Board/Sections/Category/CategoryEditModal';
 import { SelectElementModal } from '~/components/Board/SelectElement/SelectElementModal';
 
-import { CreateBoardModal } from './components/Manage/Board/create-board.modal';
+import { CreateBoardModal } from './components/Board/BoardCreateModal';
+import { CreateLayoutModal } from './components/Board/Layout/LayoutCreateModal';
+//import { CreateBoardModal } from './components/Manage/Board/create-board.modal';
 import { DeleteBoardModal } from './components/Manage/Board/delete-board.modal';
 import { DockerSelectBoardModal } from './components/Manage/Tools/Docker/docker-select-board.modal';
 import { CopyInviteModal } from './components/Manage/User/Invite/copy-invite.modal';
@@ -24,7 +26,9 @@ export const modals = {
   deleteUserModal: DeleteUserModal,
   createInviteModal: CreateInviteModal,
   deleteInviteModal: DeleteInviteModal,
+  //createBoardModal: CreateBoardModal,
   createBoardModal: CreateBoardModal,
+  createLayoutModal: CreateLayoutModal,
   copyInviteModal: CopyInviteModal,
   deleteBoardModal: DeleteBoardModal,
   changeUserRoleModal: ChangeUserRoleModal,

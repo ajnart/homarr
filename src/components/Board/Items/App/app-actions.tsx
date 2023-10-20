@@ -24,6 +24,7 @@ export const useAppActions = ({ boardName }: { boardName: string }) => {
           sectionId = prev.sections
             .filter((section): section is EmptySection => section.type === 'empty')
             .sort((a, b) => a.position - b.position)[0].id;
+          console.log(sectionId);
         }
 
         return {
@@ -31,15 +32,10 @@ export const useAppActions = ({ boardName }: { boardName: string }) => {
           sections: prev.sections.map((section) => {
             // Return same section if item is not in it
             if (section.id !== sectionId) return section;
+            console.log(section);
             return {
               ...section,
-              items: section.items.map((item) => {
-                // Return same item if item is not the one we're moving
-                if (item.id !== app.id) return item;
-                return {
-                  ...(app as AppItem),
-                };
-              }),
+              items: section.items.filter((item) => item.id !== app.id).concat(app as AppItem),
             };
           }),
         };

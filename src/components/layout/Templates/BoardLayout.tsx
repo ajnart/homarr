@@ -1,12 +1,17 @@
-import { Button, Global, Text, Title, Tooltip, clsx } from '@mantine/core';
+import { Button, Global, Menu, Text, Title, Tooltip, clsx } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
 import {
   IconApps,
+  IconBox,
   IconBrandDocker,
   IconEditCircle,
   IconEditCircleOff,
+  IconLayoutBoardSplit,
+  IconLayoutDashboard,
+  IconPlug,
+  IconPlus,
   IconSettings,
 } from '@tabler/icons-react';
 import Consola from 'consola';
@@ -19,7 +24,7 @@ import { useNamedWrapperColumnCount } from '~/components/Board/gridstack/store';
 import { useEditModeStore } from '~/components/Board/useEditModeStore';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
-import { api } from '~/utils/api';
+import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 
 import { MainLayout } from './MainLayout';
 
@@ -56,6 +61,7 @@ export const HeaderActions = ({ dockerEnabled }: HeaderActionProps) => {
 
   return (
     <>
+      <CreateMenu />
       {dockerEnabled && <DockerButton />}
       <ToggleEditModeButton />
       <CustomizeBoardButton />
@@ -72,6 +78,50 @@ const DockerButton = () => {
         <IconBrandDocker size={20} stroke={1.5} />
       </HeaderActionButton>
     </Tooltip>
+  );
+};
+
+const CreateMenu = () => {
+  const board = useRequiredBoard();
+  const createBoard = () => {
+    openContextModalGeneric({
+      modal: 'createBoardModal',
+      title: 'Create a new board',
+      innerProps: {},
+    });
+  };
+
+  const createLayout = () => {
+    openContextModalGeneric({
+      modal: 'createLayoutModal',
+      title: 'Create a new layout',
+      innerProps: {
+        boardId: board.id,
+      },
+      size: 'lg',
+    });
+  };
+
+  return (
+    <Menu>
+      <Menu.Target>
+        <HeaderActionButton onClick={() => {}}>
+          <IconPlus size={20} stroke={1.5} />
+        </HeaderActionButton>
+      </Menu.Target>
+      <Menu.Dropdown>
+        <Menu.Item icon={<IconBox stroke={1.5} size="1rem" />}>New app</Menu.Item>
+        <Menu.Item icon={<IconPlug stroke={1.5} size="1rem" />}>New integration</Menu.Item>
+        <Menu.Divider></Menu.Divider>
+        <Menu.Item onClick={createLayout} icon={<IconLayoutBoardSplit stroke={1.5} size="1rem" />}>
+          New layout
+        </Menu.Item>
+        <Menu.Divider></Menu.Divider>
+        <Menu.Item onClick={createBoard} icon={<IconLayoutDashboard stroke={1.5} size="1rem" />}>
+          New board
+        </Menu.Item>
+      </Menu.Dropdown>
+    </Menu>
   );
 };
 

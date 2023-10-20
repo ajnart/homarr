@@ -20,9 +20,9 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 import { z } from 'zod';
-import { availableIntegrations } from '~/components/Board/Items/App/Edit/IntegrationTab/InputElements/IntegrationSelector';
 import { useConfigContext } from '~/config/provider';
 import { RequestModal } from '~/modules/overseerr/RequestModal';
+import { integrationTypes } from '~/server/db/items';
 import { RouterOutputs, api } from '~/utils/api';
 
 type MovieModalProps = {
@@ -45,7 +45,7 @@ export const MovieModal = ({ opened, closeModal }: MovieModalProps) => {
   }
 
   const integration = useMemo(() => {
-    return availableIntegrations.find((x) => x.value === queryParams.data.type)!;
+    return integrationTypes[queryParams.data.type];
   }, [queryParams.data.type]);
 
   return (
@@ -56,7 +56,12 @@ export const MovieModal = ({ opened, closeModal }: MovieModalProps) => {
       scrollAreaComponent={ScrollArea.Autosize}
       title={
         <Group>
-          <Image src={integration.image} width={30} height={30} alt={`${integration.label} icon`} />
+          <Image
+            src={integration.iconUrl}
+            width={30}
+            height={30}
+            alt={`${integration.label} icon`}
+          />
           <Title order={4}>{integration.label} search</Title>
         </Group>
       }

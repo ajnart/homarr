@@ -4,7 +4,7 @@ import { eq, inArray } from 'drizzle-orm';
 import fs from 'fs';
 import { z } from 'zod';
 import { db } from '~/server/db';
-import { WidgetType } from '~/server/db/items';
+import { LayoutKind, WidgetType } from '~/server/db/items';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import {
   appItems,
@@ -20,7 +20,8 @@ import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { generateDefaultApp } from '~/tools/shared/app';
-import { boardCustomizationSchema } from '~/validations/boards';
+import { boardCustomizationSchema, createBoardSchema } from '~/validations/boards';
+import { isMobileUserAgent } from '~/validations/mobile';
 
 import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 import { configNameSchema } from './config';
@@ -118,12 +119,9 @@ export const boardRouter = createTRPCRouter({
       fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
     }),
   byName: publicProcedure
-    .input(z.object({ boardName: configNameSchema, layout: z.string().optional() }))
+    .input(z.object({ boardName: configNameSchema, layoutId: z.string().optional() }))
     .query(async ({ input }) => {
-      const board = await getFullBoardWithLayoutSectionsAsync(
-        input.boardName,
-        input.layout ?? 'default'
-      );
+      const board = await getFullBoardWithLayoutSectionsAsync(input.boardName, input.layoutId);
 
       if (!board) {
         throw new TRPCError({
@@ -158,6 +156,7 @@ export const boardRouter = createTRPCRouter({
       const { layouts, ...withoutLayouts } = board;
       return {
         ...withoutLayouts,
+        layoutName: layout.name,
         sections: preparedSections,
       };
     }),
@@ -194,8 +193,6 @@ export const boardRouter = createTRPCRouter({
         .update(boards)
         .set({
           allowGuests: input.customization.access.allowGuests,
-          isLeftSidebarVisible: input.customization.layout.leftSidebarEnabled,
-          isRightSidebarVisible: input.customization.layout.rightSidebarEnabled,
           isPingEnabled: input.customization.layout.pingsEnabled,
           appOpacity: input.customization.appearance.opacity,
           backgroundImageUrl: input.customization.appearance.backgroundSrc,
@@ -228,6 +225,7 @@ export const boardRouter = createTRPCRouter({
         id: layoutId,
         name: 'default',
         boardId,
+        kind: 'desktop',
       });
 
       await db.insert(sections).values({
@@ -325,7 +323,75 @@ export const boardRouter = createTRPCRouter({
         y: 1,
       });
     }),
+  create: adminProcedure.input(createBoardSchema).mutation(async ({ ctx, input }) => {
+    const existingBoard = await db.query.boards.findFirst({
+      where: eq(boards.name, input.boardName),
+    });
+
+    if (existingBoard) {
+      throw new TRPCError({
+        code: 'CONFLICT',
+        message: 'Board already exists',
+      });
+    }
+
+    const isMobile = isMobileUserAgent(ctx.headers['user-agent'] ?? '');
+    const boardId = randomUUID();
+    await db.insert(boards).values({
+      id: boardId,
+      name: input.boardName,
+      pageTitle: input.pageTitle,
+      allowGuests: input.allowGuests,
+      ownerId: ctx.session.user.id,
+    });
+
+    const mobileLayout = await addLayoutAsync({
+      boardId,
+      name: 'Mobile layout',
+      kind: 'mobile',
+    });
+
+    const desktopLayout = await addLayoutAsync({
+      boardId,
+      name: 'Desktop layout',
+      kind: 'desktop',
+    });
+
+    if (isMobile) {
+      return mobileLayout;
+    }
+    return desktopLayout;
+  }),
+  checkNameAvailable: adminProcedure
+    .input(z.object({ boardName: configNameSchema }))
+    .query(async ({ input }) => {
+      const board = await db.query.boards.findFirst({
+        where: eq(boards.name, input.boardName),
+      });
+
+      return !board;
+    }),
 });
+
+type AddLayoutProps = {
+  boardId: string;
+  name: string;
+  kind: LayoutKind;
+};
+const addLayoutAsync = async (props: AddLayoutProps) => {
+  const layout = {
+    id: randomUUID(),
+    ...props,
+  };
+  await db.insert(layouts).values(layout);
+  await db.insert(sections).values({
+    id: randomUUID(),
+    layoutId: layout.id,
+    type: 'empty',
+    position: 0,
+  });
+  return layout;
+};
 
 type AddWidgetProps = {
   boardId: string;
@@ -440,7 +506,10 @@ const getAppsForSectionsAsync = async (sectionIds: string[]) => {
   });
 };
 
-const getFullBoardWithLayoutSectionsAsync = async (boardName: string, layoutName: string) => {
+const getFullBoardWithLayoutSectionsAsync = async (
+  boardName: string,
+  layoutId: string | undefined
+) => {
   return await db.query.boards.findFirst({
     columns: {
       ownerId: false,
@@ -461,7 +530,7 @@ const getFullBoardWithLayoutSectionsAsync = async (boardName: string, layoutName
             orderBy: sections.position,
           },
         },
-        where: eq(layouts.name, layoutName),
+        where: layoutId ? eq(layouts.id, layoutId) : undefined,
       },
     },
     where: eq(boards.name, boardName),
@@ -556,7 +625,7 @@ const mapApp = (appItem: MapApp) => {
   const { sectionId, itemId, id, ...commonLayoutItem } = appItem.item.layouts.at(0)!;
   const common = { ...commonLayoutItem, id: itemId };
   const { app: innerApp, appId, itemId: _itemId, item, ...otherAppItem } = appItem;
-  const { id: _id, integration, statusCodes, ...app } = appItem.app!;
+  const { id: _id, integration, statusCodes, integrationId, ...app } = appItem.app!;
   return {
     ...common,
     ...otherAppItem,

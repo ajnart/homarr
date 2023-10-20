@@ -12,7 +12,7 @@ export const BehaviourTab = ({ form }: BehaviourTabProps) => {
   const { t } = useTranslation('layout/modals/add-app');
 
   return (
-    <Tabs.Panel value="behaviour" pt="xs">
+    <Tabs.Panel value="behaviour" pt="lg">
       <Stack spacing="xs">
         <Switch
           label={t('behaviour.isOpeningNewTab.label')}

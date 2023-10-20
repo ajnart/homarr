@@ -36,9 +36,14 @@ const routeParamsSchema = z.object({
   slug: z.string(),
 });
 
+const querySchema = z.object({
+  layout: z.string().optional(),
+});
+
 export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = async (ctx) => {
   const routeParams = routeParamsSchema.safeParse(ctx.params);
-  if (!routeParams.success) {
+  const query = querySchema.safeParse(ctx.query);
+  if (!routeParams.success || !query.success) {
     return {
       notFound: true,
     };
@@ -53,7 +58,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
 
   const helpers = await createTrpcServersideHelpers(ctx);
   const board = await helpers.boards.byName
-    .fetch({ boardName: routeParams.data.slug })
+    .fetch({ boardName: routeParams.data.slug, layoutId: query.data.layout })
     .catch((err) => {
       if (err instanceof TRPCError && err.code === 'NOT_FOUND') {
         return null;

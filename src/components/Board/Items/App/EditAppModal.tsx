@@ -8,7 +8,6 @@ import {
   IconAlertTriangle,
   IconBrush,
   IconClick,
-  IconPlug,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
@@ -23,7 +22,6 @@ import { AppItem } from '../../context';
 import { AppearanceTab } from './Edit/AppereanceTab';
 import { BehaviourTab } from './Edit/BehaviourTab';
 import { GeneralTab } from './Edit/GeneralTab';
-import { IntegrationTab } from './Edit/IntegrationTab/IntegrationTab';
 import { NetworkTab } from './Edit/NetworkTab';
 import { useAppActions } from './app-actions';
 
@@ -146,13 +144,6 @@ export const EditAppModal = ({
               >
                 {t('tabs.appearance')}
               </Tabs.Tab>
-              <Tabs.Tab
-                rightSection={<ValidationErrorIndicator keys={[]} />}
-                icon={<IconPlug size={14} />}
-                value="integration"
-              >
-                {t('tabs.integration')}
-              </Tabs.Tab>
             </Tabs.List>
 
             <GeneralTab form={form} />
@@ -163,7 +154,6 @@ export const EditAppModal = ({
               disallowAppNamePropagation={() => setAllowAppNamePropagation(false)}
               allowAppNamePropagation={allowAppNamePropagation}
             />
-            <IntegrationTab form={form} />
           </Tabs>
 
           <Group noWrap position="right" mt="md">
@@ -196,7 +186,7 @@ const SaveButton = ({ formIsValid }: { formIsValid: boolean }) => {
   );
 };
 
-export type EditAppModalTab = 'general' | 'behaviour' | 'network' | 'appereance' | 'integration';
+export type EditAppModalTab = 'general' | 'behaviour' | 'network' | 'appereance';
 
 export const appFormSchema = z.object({
   id: z.string().nonempty(),
@@ -213,7 +203,6 @@ export const appFormSchema = z.object({
   statusCodes: z.array(z.number().min(100).max(999)),
   openInNewTab: z.boolean(),
   description: z.string().nonempty().max(512).nullable(),
-  integrationId: z.string().nonempty().nullable(),
 });
 
 type FormType = z.infer<typeof appFormSchema>;

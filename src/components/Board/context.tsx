@@ -15,7 +15,7 @@ export const BoardProvider = ({ children, ...props }: BoardProviderProps) => {
   const { data: board } = api.boards.byName.useQuery(
     {
       boardName: props.initialBoard.name,
-      layout: props.layout,
+      layoutId: props.layout,
     },
     {
       initialData: props.initialBoard,
@@ -63,3 +63,5 @@ type ItemOfType<TItem extends Item, TItemType extends Item['type']> = TItem exte
   : never;
 export type AppItem = ItemOfType<Item, 'app'>;
 export type WidgetItem = ItemOfType<Item, 'widget'>;
+
+export type IntegrationSecret = Exclude<AppItem['integration'], null>['secrets'][number];

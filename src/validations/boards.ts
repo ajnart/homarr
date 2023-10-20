@@ -7,7 +7,7 @@ export const createBoardSchemaValidation = z.object({
 
 export const boardCustomizationSchema = z.object({
   access: z.object({
-    allowGuests: z.boolean()
+    allowGuests: z.boolean(),
   }),
   layout: z.object({
     leftSidebarEnabled: z.boolean(),
@@ -40,4 +40,12 @@ export const boardCustomizationSchema = z.object({
     opacity: z.number().min(10).max(100),
     customCss: z.string(),
   }),
+});
+
+export const boardNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
+
+export const createBoardSchema = z.object({
+  pageTitle: z.string(),
+  boardName: boardNameSchema,
+  allowGuests: z.boolean(),
 });

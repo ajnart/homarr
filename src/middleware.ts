@@ -3,6 +3,7 @@ import { env } from 'process';
 
 import { getUrl } from './tools/server/url';
 import { client } from './utils/api';
+import { isMobileUserAgent } from './validations/mobile';
 
 const skippedUrls = [
   '/onboard',

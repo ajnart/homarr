@@ -8,6 +8,7 @@
  */
 import { TRPCError, initTRPC } from '@trpc/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
+import { IncomingHttpHeaders } from 'http';
 import { type Session } from 'next-auth';
 import superjson from 'superjson';
 import { ZodError } from 'zod';
@@ -25,6 +26,7 @@ import { getServerAuthSession } from '../auth';
 interface CreateContextOptions {
   session: Session | null;
   cookies: Partial<Record<string, string>>;
+  headers: IncomingHttpHeaders;
 }
 
 /**
@@ -40,6 +42,7 @@ interface CreateContextOptions {
 const createInnerTRPCContext = (opts: CreateContextOptions) => ({
   session: opts.session,
   cookies: opts.cookies,
+  headers: opts.headers,
 });
 
 export type TRPCContext = ReturnType<typeof createInnerTRPCContext>;
@@ -59,6 +62,7 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
   return createInnerTRPCContext({
     session,
     cookies: req.cookies,
+    headers: req.headers,
   });
 };
 

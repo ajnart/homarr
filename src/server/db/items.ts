@@ -58,6 +58,7 @@ export const statusCodeTypes = [
   'serverError',
 ] as const;
 export const sectionTypes = ['sidebar', 'empty', 'category', 'hidden'] as const;
+export const layoutKinds = ['mobile', 'desktop'] as const;
 export const integrationTypes = {
   readarr: {
     secrets: ['apiKey'],
@@ -162,6 +163,7 @@ export type AppNamePosition = (typeof appNamePositions)[number];
 export type AppNameStyle = (typeof appNameStyles)[number];
 export type StatusCodeType = (typeof statusCodeTypes)[number];
 export type SectionType = (typeof sectionTypes)[number];
+export type LayoutKind = (typeof layoutKinds)[number];
 
 type InferIntegrationTypeFromGroup<TGroup extends IntegrationGroup> = {
   [key in keyof typeof integrationTypes]: (typeof integrationTypes)[key] extends {

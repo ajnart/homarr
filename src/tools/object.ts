@@ -1,3 +1,5 @@
+import { z } from 'zod';
+
 export const objectKeys = <T extends object>(
   obj: T
 ): (keyof T extends infer U
@@ -39,3 +41,10 @@ export type Entry<T extends {}> = T extends readonly [unknown, ...unknown[]]
   : T extends ReadonlyArray<infer U>
   ? [`${number}`, U]
   : ObjectEntry<T>;
+
+export const zodEnumFromObjKeys = <K extends string>(
+  obj: Record<K, any>
+): z.ZodEnum<[K, ...K[]]> => {
+  const [firstKey, ...otherKeys] = Object.keys(obj) as K[];
+  return z.enum([firstKey, ...otherKeys]);
+};

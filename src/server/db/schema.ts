@@ -10,6 +10,7 @@ import {
   IntegrationSecretKey,
   IntegrationSecretVisibility,
   IntegrationType,
+  LayoutKind,
   SectionType,
   StatusCodeType,
   WidgetOptionType,
@@ -113,8 +114,6 @@ export const boards = sqliteTable('board', {
   name: text('name').notNull(),
 
   // Layout settings
-  isLeftSidebarVisible: int('is_left_sidebar_visible', { mode: 'boolean' }).default(false),
-  isRightSidebarVisible: int('is_right_sidebar_visible', { mode: 'boolean' }).default(false),
   isPingEnabled: int('is_ping_enabled', { mode: 'boolean' }).default(false),
 
   // Access control
@@ -142,9 +141,7 @@ export const boards = sqliteTable('board', {
 
 export const integrations = sqliteTable('integration', {
   id: text('id').notNull().primaryKey(),
-  name: text('name').notNull(),
   type: text('type').$type<IntegrationType>().notNull(),
-  url: text('url').notNull(),
 });
 
 export const integrationSecrets = sqliteTable(
@@ -255,6 +252,10 @@ export const layoutItems = sqliteTable('layout_item', {
 export const layouts = sqliteTable('layout', {
   id: text('id').notNull().primaryKey(),
   name: text('name').notNull(),
+  kind: text('kind').$type<LayoutKind>().notNull(),
+  showRightSidebar: int('show_right_sidebar', { mode: 'boolean' }).notNull().default(false),
+  showLeftSidebar: int('show_left_sidebar', { mode: 'boolean' }).notNull().default(false),
+  columnCount: int('column_count').notNull().default(10),
   boardId: text('board_id')
     .notNull()
     .references(() => boards.id, { onDelete: 'cascade' }),

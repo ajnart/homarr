@@ -39,7 +39,7 @@ export const AppearanceTab = ({
   }, [debouncedValue]);
 
   return (
-    <Tabs.Panel value="appearance" pt="lg">
+    <Tabs.Panel value="appearance" pt="sm">
       <Stack spacing="xs">
         <Flex gap={5} mb="xs">
           <IconSelector
