@@ -195,7 +195,7 @@ export const boardRouter = createTRPCRouter({
         .update(boards)
         .set({
           allowGuests: input.customization.access.allowGuests,
-          isPingEnabled: input.customization.layout.pingsEnabled,
+          isPingEnabled: input.customization.network.pingsEnabled,
           appOpacity: input.customization.appearance.opacity,
           backgroundImageUrl: input.customization.appearance.backgroundSrc,
           primaryColor: input.customization.appearance.primaryColor,

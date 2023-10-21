@@ -5,12 +5,12 @@ import fs from 'fs';
 import path from 'path';
 import { z } from 'zod';
 import { configExists } from '~/tools/config/configExists';
+import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { BackendConfigType, ConfigType } from '~/types/config';
 import { boardCustomizationSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
-import { getConfig } from '~/tools/config/getConfig';
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
@@ -70,7 +70,7 @@ export const configRouter = createTRPCRouter({
       if (process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true') {
         throw new TRPCError({
           code: 'METHOD_NOT_SUPPORTED',
-          message: 'Edit is not allowed, because edit mode is disabled'
+          message: 'Edit is not allowed, because edit mode is disabled',
         });
       }
       Consola.info(`Saving updated configuration of '${input.name}' config.`);
@@ -182,48 +182,5 @@ export const configRouter = createTRPCRouter({
       }
 
       return await getFrontendConfig(input.name);
-    }),
-  saveCusomization: adminProcedure
-    .input(boardCustomizationSchema.and(z.object({ name: configNameSchema })))
-    .mutation(async ({ input }) => {
-      const previousConfig = getConfig(input.name);
-      const newConfig = {
-        ...previousConfig,
-        settings: {
-          ...previousConfig.settings,
-          access: {
-            ...previousConfig.settings.access,
-            allowGuests: input.access.allowGuests,
-          },
-          customization: {
-            ...previousConfig.settings.customization,
-            appOpacity: input.appearance.opacity,
-            backgroundImageUrl: input.appearance.backgroundSrc,
-            colors: {
-              primary: input.appearance.primaryColor,
-              secondary: input.appearance.secondaryColor,
-              shade: input.appearance.shade as MantineTheme['primaryShade'],
-            },
-            customCss: input.appearance.customCss,
-            faviconUrl: input.pageMetadata.faviconSrc,
-            gridstack: {
-              columnCountSmall: input.gridstack.sm,
-              columnCountMedium: input.gridstack.md,
-              columnCountLarge: input.gridstack.lg,
-            },
-            layout: {
-              ...previousConfig.settings.customization.layout,
-              enabledLeftSidebar: input.layout.leftSidebarEnabled,
-              enabledRightSidebar: input.layout.rightSidebarEnabled,
-              enabledPing: input.layout.pingsEnabled,
-            },
-            logoImageUrl: input.pageMetadata.logoSrc,
-            metaTitle: input.pageMetadata.metaTitle,
-            pageTitle: input.pageMetadata.pageTitle,
-          },
-        },
-      } satisfies BackendConfigType;
-      const targetPath = path.join('data/configs', `${input.name}.json`);
-      fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
     }),
 });

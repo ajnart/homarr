@@ -1,13 +1,9 @@
 {
   "text": "Customizations allow you to configure and adjust your experience with Homarr to your preferences.",
   "accordeon": {
-    "layout": {
-      "name": "Layout",
-      "description": "Enable and disable elements on your header and dashboard tiles"
-    },
-    "gridstack": {
-      "name": "Gridstack",
-      "description": "Customize the behaviour and columns of your dashboard area"
+    "network": {
+      "name": "Network",
+      "description": "Enable or disable pings for this board"
     },
     "pageMetadata": {
       "name": "Page Metadata",
@@ -16,10 +12,6 @@
     "appereance": {
       "name": "Appearance",
       "description": "Customize the background, colors and apps appearance"
-    },
-    "accessibility": {
-      "name": "Accessibility",
-      "description": "Configure Homarr for disabled and handicapped users"
     },
     "access": {
       "name": "Acccess",

@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   Container,
+  Grid,
   Group,
   Paper,
   Stack,
@@ -13,17 +14,16 @@ import {
 } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
+  IconAccessPoint,
   IconArrowLeft,
   IconBrush,
   IconChartCandle,
   IconCheck,
-  IconDragDrop,
-  IconLayout,
   IconLock,
   IconX,
   TablerIconsProps,
 } from '@tabler/icons-react';
-import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -32,8 +32,7 @@ import { ReactNode } from 'react';
 import { z } from 'zod';
 import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 import { AppearanceCustomization } from '~/components/Board/Customize/Appearance/AppearanceCustomization';
-import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/GridstackCustomization';
-import { LayoutCustomization } from '~/components/Board/Customize/Layout/LayoutCustomization';
+import { NetworkCustomization } from '~/components/Board/Customize/Network/NetworkCustomization';
 import { PageMetadataCustomization } from '~/components/Board/Customize/PageMetadata/PageMetadataCustomization';
 import {
   BoardCustomizationFormProvider,
@@ -71,9 +70,7 @@ export default function CustomizationPage({
       access: {
         allowGuests: board.allowGuests ?? false,
       },
-      layout: {
-        leftSidebarEnabled: false,
-        rightSidebarEnabled: false,
+      network: {
         pingsEnabled: board.isPingEnabled ?? false,
       },
       appearance: {
@@ -83,11 +80,6 @@ export default function CustomizationPage({
         shade: board.primaryShade ?? 8,
         opacity: board.appOpacity ?? 50,
         customCss: board.customCss ?? '',
-      },
-      gridstack: {
-        sm: 3, //config?.settings.customization.gridstack?.columnCountSmall ?? 3,
-        md: 6, //config?.settings.customization.gridstack?.columnCountMedium ?? 6,
-        lg: 12, //config?.settings.customization.gridstack?.columnCountLarge ?? 12,
       },
       pageMetadata: {
         pageTitle: board.pageTitle ?? '',
@@ -220,21 +212,23 @@ export default function CustomizationPage({
             <BoardCustomizationFormProvider form={form}>
               <Stack spacing="xl">
                 <Stack spacing="xs">
-                  <SectionTitle type="layout" icon={IconLayout} />
-                  <LayoutCustomization />
-                </Stack>
-                <Stack spacing="xs">
-                  <SectionTitle type="access" icon={IconLock} />
-                  <AccessCustomization />
-                </Stack>
-                <Stack spacing="xs">
-                  <SectionTitle type="gridstack" icon={IconDragDrop} />
-                  <GridstackCustomization />
-                </Stack>
-                <Stack spacing="xs">
                   <SectionTitle type="pageMetadata" icon={IconChartCandle} />
                   <PageMetadataCustomization />
                 </Stack>
+                <Grid>
+                  <Grid.Col span={12} sm={6}>
+                    <Stack spacing="xs">
+                      <SectionTitle type="access" icon={IconLock} />
+                      <AccessCustomization />
+                    </Stack>
+                  </Grid.Col>
+                  <Grid.Col span={12} sm={6}>
+                    <Stack spacing="xs">
+                      <SectionTitle type="network" icon={IconAccessPoint} />
+                      <NetworkCustomization />
+                    </Stack>
+                  </Grid.Col>
+                </Grid>
                 <Stack spacing="xs">
                   <SectionTitle type="appereance" icon={IconBrush} />
                   <AppearanceCustomization />
@@ -249,7 +243,7 @@ export default function CustomizationPage({
 }
 
 type SectionTitleProps = {
-  type: 'layout' | 'gridstack' | 'pageMetadata' | 'appereance' | 'access';
+  type: 'network' | 'pageMetadata' | 'appereance' | 'access';
   icon: (props: TablerIconsProps) => ReactNode;
 };
 

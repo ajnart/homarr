@@ -9,15 +9,8 @@ export const boardCustomizationSchema = z.object({
   access: z.object({
     allowGuests: z.boolean(),
   }),
-  layout: z.object({
-    leftSidebarEnabled: z.boolean(),
-    rightSidebarEnabled: z.boolean(),
+  network: z.object({
     pingsEnabled: z.boolean(),
-  }),
-  gridstack: z.object({
-    sm: z.number().min(1).max(8),
-    md: z.number().min(3).max(16),
-    lg: z.number().min(5).max(20),
   }),
   pageMetadata: z.object({
     pageTitle: z.string().min(1),
