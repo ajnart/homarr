@@ -13,7 +13,13 @@ export const SelectElementModal = ({ id, innerProps }: ContextModalProps<InnerPr
   const [activeTab, setActiveTab] = useState<undefined | 'integrations'>();
 
   if (activeTab === 'integrations') {
-    return <AvailableIntegrationElements onClickBack={() => setActiveTab(undefined)} />;
+    return (
+      <AvailableIntegrationElements
+        modalId={id}
+        boardName={innerProps.board.name}
+        onClickBack={() => setActiveTab(undefined)}
+      />
+    );
   }
 
   return (

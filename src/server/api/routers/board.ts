@@ -4,7 +4,7 @@ import { eq, inArray } from 'drizzle-orm';
 import fs from 'fs';
 import { z } from 'zod';
 import { db } from '~/server/db';
-import { LayoutKind, WidgetType } from '~/server/db/items';
+import { LayoutKind, WidgetSort } from '~/server/db/items';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import {
   appItems,
@@ -396,7 +396,7 @@ const addLayoutAsync = async (props: AddLayoutProps) => {
 type AddWidgetProps = {
   boardId: string;
   sectionId: string;
-  type: WidgetType;
+  type: WidgetSort;
   width: number;
   height: number;
   x: number;
@@ -483,11 +483,6 @@ const getAppsForSectionsAsync = async (sectionIds: string[]) => {
     with: {
       app: {
         with: {
-          integration: {
-            with: {
-              secrets: true,
-            },
-          },
           statusCodes: {
             columns: {
               code: true,
@@ -561,7 +556,6 @@ type FullBoardWithLayout = Exclude<
 type MapSection = FullBoardWithLayout['layouts'][number]['sections'][number];
 type MapApp = Awaited<ReturnType<typeof getAppsForSectionsAsync>>[number];
 type MapWidget = Awaited<ReturnType<typeof getWidgetsForSectionsAsync>>[number];
-type MapSecret = Exclude<MapApp['app']['integration'], null>['secrets'][number];
 type MapOption = MapWidget['options'][number];
 
 const mapSection = (
@@ -625,37 +619,13 @@ const mapApp = (appItem: MapApp) => {
   const { sectionId, itemId, id, ...commonLayoutItem } = appItem.item.layouts.at(0)!;
   const common = { ...commonLayoutItem, id: itemId };
   const { app: innerApp, appId, itemId: _itemId, item, ...otherAppItem } = appItem;
-  const { id: _id, integration, statusCodes, integrationId, ...app } = appItem.app!;
+  const { id: _id, statusCodes, ...app } = appItem.app!;
   return {
     ...common,
     ...otherAppItem,
     ...app,
     type: 'app' as const,
-    integration: integration
-      ? {
-          ...integration,
-          secrets: integration.secrets.map(mapSecret),
-        }
-      : null,
     statusCodes: statusCodes.map((x) => x.code),
-  };
-};
-
-const mapSecret = ({ integrationId, ...secret }: MapSecret) => {
-  const isDefined = secret.value !== null && secret.value !== '';
-  if (secret.visibility === 'private') {
-    return {
-      ...secret,
-      visibility: 'private' as const,
-      isDefined,
-      value: null,
-    };
-  }
-
-  return {
-    ...secret,
-    visibility: 'public' as const,
-    isDefined,
   };
 };
 

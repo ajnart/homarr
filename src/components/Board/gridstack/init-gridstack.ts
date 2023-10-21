@@ -51,19 +51,10 @@ export const initializeGridstack = ({
   grid.removeAll(false);
   section.items.forEach((item) => {
     const ref = refs.items.current[item.id]?.current;
-    setAttributesFromShape(ref, item);
     ref && grid.makeWidget(ref);
   });
   grid.batchUpdate(false);
 };
-
-function setAttributesFromShape(ref: GridItemHTMLElement | null, item: Item) {
-  if (!item || !ref) return;
-  ref.setAttribute('gs-x', item.x.toString());
-  ref.setAttribute('gs-y', item.y.toString());
-  ref.setAttribute('gs-w', item.width.toString());
-  ref.setAttribute('gs-h', item.height.toString());
-}
 
 export type ItemWithUnknownLocation = {
   x?: number;

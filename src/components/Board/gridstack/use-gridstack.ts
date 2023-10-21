@@ -91,7 +91,9 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
   const onAdd = (addedNode: GridStackNode) => {
     const itemType = addedNode.el?.getAttribute('data-type');
     const itemId = addedNode.el?.getAttribute('data-id');
+    console.log('onAdd', itemType, itemId);
     if (!itemType || !itemId) return;
+    console.log('onAdd', addedNode);
 
     // Updates the react-query state
     moveItemToSection({

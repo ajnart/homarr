@@ -1,8 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
-import { AppItem } from '~/components/Board/context';
+import { z } from 'zod';
+import { appFormSchema } from '~/components/Board/Items/App/EditAppModal';
 import { AppType } from '~/types/app';
 
-export const generateDefaultApp2 = (): AppItem => {
+export const generateDefaultApp2 = (): z.infer<typeof appFormSchema> => {
   const appId = uuidv4();
   return {
     id: appId,
@@ -19,10 +20,6 @@ export const generateDefaultApp2 = (): AppItem => {
     statusCodes: [200, 301, 302, 304, 307, 308],
     openInNewTab: true,
     description: null,
-    height: 1,
-    width: 1,
-    x: 0,
-    y: 0,
   };
 };
 

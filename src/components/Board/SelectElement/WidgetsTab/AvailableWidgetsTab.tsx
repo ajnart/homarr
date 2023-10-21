@@ -1,15 +1,20 @@
 import { Grid, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+import { objectEntries } from '~/tools/object';
 
 import widgets from '../../../../widgets';
 import { SelectorBackArrow } from '../Shared/SelectorBackArrow';
 import { WidgetElementType } from './WidgetElementType';
 
 interface AvailableIntegrationElementsProps {
+  modalId: string;
+  boardName: string;
   onClickBack: () => void;
 }
 
 export const AvailableIntegrationElements = ({
+  modalId,
+  boardName,
   onClickBack,
 }: AvailableIntegrationElementsProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
@@ -22,8 +27,15 @@ export const AvailableIntegrationElements = ({
       </Text>
 
       <Grid>
-        {Object.entries(widgets).map(([k, v]) => (
-          <WidgetElementType key={k} id={k} image={v.icon} widget={v} />
+        {objectEntries(widgets).map(([k, v]) => (
+          <WidgetElementType
+            key={k}
+            sort={k}
+            boardName={boardName}
+            image={v.icon}
+            widget={v}
+            modalId={modalId}
+          />
         ))}
       </Grid>
     </>

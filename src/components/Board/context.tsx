@@ -63,5 +63,3 @@ type ItemOfType<TItem extends Item, TItemType extends Item['type']> = TItem exte
   : never;
 export type AppItem = ItemOfType<Item, 'app'>;
 export type WidgetItem = ItemOfType<Item, 'widget'>;
-
-export type IntegrationSecret = Exclude<AppItem['integration'], null>['secrets'][number];

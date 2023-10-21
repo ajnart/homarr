@@ -61,6 +61,7 @@ export const EditAppModal = ({
 
   const onSubmit = (values: FormType) => {
     createOrUpdateApp({ app: values });
+    console.log(values);
     // also close the parent modal
     context.closeAll();
   };

@@ -39,7 +39,7 @@ export const integrationSecrets = {
     icon: IconPassword,
   },
 } satisfies Record<string, IntegrationSecretDefinition>;
-export const widgetTypes = objectKeys(widgets);
+export const widgetSorts = objectKeys(widgets);
 export const widgetOptionTypes = [
   'string',
   'number',
@@ -157,7 +157,7 @@ export type FirstDayOfWeek = (typeof firstDaysOfWeek)[number];
 export type IntegrationType = keyof typeof integrationTypes;
 export type IntegrationSecretVisibility = (typeof integrationSecretVisibility)[number];
 export type IntegrationSecretKey = keyof typeof integrationSecrets;
-export type WidgetType = (typeof widgetTypes)[number];
+export type WidgetSort = (typeof widgetSorts)[number];
 export type WidgetOptionType = (typeof widgetOptionTypes)[number];
 export type AppNamePosition = (typeof appNamePositions)[number];
 export type AppNameStyle = (typeof appNameStyles)[number];

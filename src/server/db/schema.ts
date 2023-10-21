@@ -14,7 +14,7 @@ import {
   SectionType,
   StatusCodeType,
   WidgetOptionType,
-  WidgetType,
+  WidgetSort,
 } from './items';
 
 export const users = sqliteTable('user', {
@@ -161,7 +161,7 @@ export const integrationSecrets = sqliteTable(
 
 export const widgets = sqliteTable('widget', {
   id: text('id').notNull().primaryKey(),
-  type: text('type').$type<WidgetType>().notNull(),
+  type: text('type').$type<WidgetSort>().notNull(),
   itemId: text('item_id')
     .notNull()
     .references(() => items.id, { onDelete: 'cascade' }),
@@ -197,7 +197,6 @@ export const apps = sqliteTable('app', {
   internalUrl: text('internal_url').notNull(),
   externalUrl: text('external_url'),
   iconUrl: text('icon_url').notNull(),
-  integrationId: text('integration_id').references(() => integrations.id, { onDelete: 'cascade' }),
 });
 
 export const appItems = sqliteTable('app_item', {
@@ -344,10 +343,6 @@ export const integrationRelations = relations(integrations, ({ many }) => ({
 }));
 
 export const appRelations = relations(apps, ({ one, many }) => ({
-  integration: one(integrations, {
-    fields: [apps.integrationId],
-    references: [integrations.id],
-  }),
   statusCodes: many(appStatusCodes),
   items: many(appItems),
 }));
