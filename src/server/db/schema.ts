@@ -339,10 +339,9 @@ export const itemRelations = relations(items, ({ one, many }) => ({
 
 export const integrationRelations = relations(integrations, ({ many }) => ({
   secrets: many(integrationSecrets),
-  apps: many(apps),
 }));
 
-export const appRelations = relations(apps, ({ one, many }) => ({
+export const appRelations = relations(apps, ({ many }) => ({
   statusCodes: many(appStatusCodes),
   items: many(appItems),
 }));

@@ -109,7 +109,6 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         );
         if (!currentCategory) return prev;
         if (currentCategory?.position === 1 && direction === 'up') return prev;
-        console.log('test');
         if (currentCategory?.position === prev.sections.length - 2 && direction === 'down')
           return prev;
 
@@ -118,13 +117,11 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
           sections: prev.sections.map((section) => {
             if (section.type !== 'category' && section.type !== 'empty') return section;
             const offset = direction === 'up' ? -2 : 2;
-            console.log(section, offset);
             // Move category and empty section
             if (
               section.position === currentCategory.position ||
               section.position - 1 === currentCategory.position
             ) {
-              console.log('move category', section);
               return {
                 ...section,
                 position: section.position + offset,
@@ -136,7 +133,6 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
               (section.position === currentCategory.position - 2 ||
                 section.position === currentCategory.position - 1)
             ) {
-              console.log('something', section);
               return {
                 ...section,
                 position: section.position + 2,
@@ -148,14 +144,11 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
               (section.position === currentCategory.position + 2 ||
                 section.position === currentCategory.position + 3)
             ) {
-              console.log('something', section);
               return {
                 ...section,
                 position: section.position - 2,
               };
             }
-
-            console.log('no change', section);
 
             return section;
           }),

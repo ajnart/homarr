@@ -26,7 +26,7 @@ export const MobileRibbons = () => {
 
   return (
     <div className={classes.root}>
-      {board.isLeftSidebarVisible && leftSection ? (
+      {board.showLeftSidebar && leftSection ? (
         <>
           <ActionIcon
             onClick={leftSidebar.open}
@@ -45,7 +45,7 @@ export const MobileRibbons = () => {
         <Space />
       )}
 
-      {board.isRightSidebarVisible && rightSection ? (
+      {board.showRightSidebar && rightSection ? (
         <>
           <ActionIcon
             onClick={rightSidebar.open}

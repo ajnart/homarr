@@ -41,8 +41,6 @@ export const LayoutForm = ({
     validate: zodResolver(layoutCreateFormSchema),
   });
 
-  console.log(router);
-
   const handleSubmit = (values: FormType) => {
     createLayout(
       {

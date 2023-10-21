@@ -29,7 +29,6 @@ export const BoardView = () => {
   });
   const toggleCategory = useCallback((categoryId: string) => {
     setToggledCategories((current) => {
-      console.log('toggle', current, categoryId);
       if (current.includes(categoryId)) {
         return current.filter((x) => x !== categoryId);
       }
@@ -102,8 +101,8 @@ const useSidebarVisibility = () => {
   const isScreenSizeUnknown = typeof screenLargerThanMd === 'undefined';
 
   return {
-    right: board.isRightSidebarVisible && screenLargerThanMd,
-    left: board.isLeftSidebarVisible && screenLargerThanMd,
+    right: board.showRightSidebar && screenLargerThanMd,
+    left: board.showLeftSidebar && screenLargerThanMd,
     isLoading: isScreenSizeUnknown,
   };
 };

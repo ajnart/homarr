@@ -27,7 +27,6 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
   const utils = api.useContext();
   const moveAndResizeItem = useCallback(
     ({ itemId, ...positionProps }: MoveAndResizeItem) => {
-      console.log(itemId, positionProps);
       utils.boards.byName.setData({ boardName }, (prev) => {
         if (!prev) return prev;
         return {
@@ -55,7 +54,6 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
 
   const moveItemToSection = useCallback(
     ({ itemId, sectionId, ...positionProps }: MoveItemToSection) => {
-      console.log('moveItemToSection', itemId, sectionId, positionProps);
       utils.boards.byName.setData({ boardName }, (prev) => {
         if (!prev) return prev;
 
@@ -65,13 +63,11 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
 
         // If item is in the same section (on initial loading) don't do anything
         if (!currentSection || currentSection.id === sectionId) {
-          console.log('Current section is undefined or same as target section');
           return prev;
         }
 
         let currentItem = currentSection?.items.find((item) => item.id === itemId);
         if (!currentItem) {
-          console.log('Current item is undefined');
           return prev;
         }
 

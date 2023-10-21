@@ -72,8 +72,8 @@ export default function CustomizationPage({
         allowGuests: board.allowGuests ?? false,
       },
       layout: {
-        leftSidebarEnabled: board.isLeftSidebarVisible ?? false,
-        rightSidebarEnabled: board.isRightSidebarVisible ?? false,
+        leftSidebarEnabled: false,
+        rightSidebarEnabled: false,
         pingsEnabled: board.isPingEnabled ?? false,
       },
       appearance: {

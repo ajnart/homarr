@@ -157,6 +157,8 @@ export const boardRouter = createTRPCRouter({
       return {
         ...withoutLayouts,
         layoutName: layout.name,
+        showRightSidebar: layout.showRightSidebar,
+        showLeftSidebar: layout.showLeftSidebar,
         sections: preparedSections,
       };
     }),
@@ -519,6 +521,8 @@ const getFullBoardWithLayoutSectionsAsync = async (
       layouts: {
         columns: {
           name: true,
+          showLeftSidebar: true,
+          showRightSidebar: true,
         },
         with: {
           sections: {
@@ -597,7 +601,7 @@ const mapSection = (
   return {
     ...sectionProps,
     type,
-    position: position === 0 ? ('left' as const) : ('right' as const),
+    position: position === 0 ? ('right' as const) : ('left' as const),
     items,
   };
 };
