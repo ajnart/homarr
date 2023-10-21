@@ -15,8 +15,8 @@ import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap'
 import {
   IconCheck,
   IconCircleOff,
+  IconDeviceFloppy,
   IconEdit,
-  IconEditOff,
   IconHighlight,
   IconIndentDecrease,
   IconIndentIncrease,
@@ -45,6 +45,7 @@ import { INotebookWidget } from './NotebookWidgetTile';
 
 export function Editor({ widget }: { widget: INotebookWidget }) {
   const [content, setContent] = useState(widget.properties.content);
+  const [toSaveContent, setToSaveContent] = useState(content);
 
   const { enabled } = useEditModeStore();
   const [isEditing, setIsEditing] = useState(false);
@@ -107,12 +108,12 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     onUpdate: (e) => {
       setContent(e.editor.getHTML());
     },
-  });
+  },[toSaveContent]);
 
   const handleOnReadOnlyCheck = (event: CustomEventInit) => {
     if (widget.properties.allowReadOnlyCheck && !!editor) {
       editor.state.doc.descendants((subnode, pos) => {
-        if (event.detail.node.eq(subnode)) { //This test only works the first time after a page refresh
+        if (subnode.eq(event.detail.node)) {
           const { tr } = editor.state;
           tr.setNodeMarkup(pos, undefined, {
             ...event.detail.node.attrs,
@@ -138,7 +139,17 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     return current;
   };
 
+  const handleEditCancel = () => {
+    if (!editor) return false;
+    editor.setEditable(false);
+
+    editor.commands.setContent(toSaveContent);
+
+    return false;
+  }
+
   const handleConfigUpdate = (contentUpdate: string) => {
+    setToSaveContent(contentUpdate);
     updateConfig(
       configName!,
       (previous) => {
@@ -261,21 +272,42 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         </ScrollArea>
       </RichTextEditor>
       {!enabled && (
-        <ActionIcon
-          style={{
-            zIndex: 1,
-          }}
-          top={7}
-          right={7}
-          pos="absolute"
-          color={primaryColor}
-          variant="light"
-          size={30}
-          radius={'md'}
-          onClick={() => setIsEditing(handleEditToggle)}
-        >
-          {isEditing ? <IconEditOff size={20} /> : <IconEdit size={20} />}
-        </ActionIcon>
+        <>
+          <ActionIcon
+            title={isEditing ? "Save" : "Edit"}
+            style={{
+              zIndex: 1,
+            }}
+            top={7}
+            right={7}
+            pos="absolute"
+            color={primaryColor}
+            variant="light"
+            size={30}
+            radius={'md'}
+            onClick={() => setIsEditing(handleEditToggle)}
+          >
+            {isEditing ? <IconDeviceFloppy size={20} /> : <IconEdit size={20} />}
+          </ActionIcon>
+          {isEditing && (
+            <ActionIcon
+              title="Cancel Edit"
+              style={{
+                zIndex: 1,
+              }}
+              top={44}
+              right={7}
+              pos="absolute"
+              color={primaryColor}
+              variant="light"
+              size={30}
+              radius={'md'}
+              onClick={() => setIsEditing(handleEditCancel)}
+            >
+              <IconX size={20} />
+            </ActionIcon>
+          )}
+        </>
       )}
     </>
   );
