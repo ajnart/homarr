@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { createContext, useContext } from 'react';
 import { RouterOutputs, api } from '~/utils/api';
 
@@ -8,17 +9,19 @@ type BoardContextType = {
 const BoardContext = createContext<BoardContextType | null>(null);
 type BoardProviderProps = {
   initialBoard: RouterOutputs['boards']['byName'];
-  layout?: string;
   children: React.ReactNode;
 };
 export const BoardProvider = ({ children, ...props }: BoardProviderProps) => {
+  const router = useRouter();
+  const { layout } = router.query;
   const { data: board } = api.boards.byName.useQuery(
     {
       boardName: props.initialBoard.name,
-      layoutId: props.layout,
+      layoutId: layout as string | undefined,
     },
     {
       initialData: props.initialBoard,
+      enabled: !!layout,
     }
   );
 

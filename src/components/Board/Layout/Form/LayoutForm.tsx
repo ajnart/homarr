@@ -29,6 +29,7 @@ export const LayoutForm = ({
 }: LayoutFormProps) => {
   const sliderMarks = useMemo(calculateSliderMarks(columns), [columns.min, columns.max]);
   const router = useRouter();
+  const utils = api.useContext();
   const { mutate: createLayout } = api.layouts.create.useMutation();
 
   const form = useForm<FormType>({
@@ -51,12 +52,18 @@ export const LayoutForm = ({
       {
         onSuccess: ({ id }) => {
           onClose();
-          router.replace({
-            query: {
-              ...router.query,
-              layout: id,
-            },
-          });
+          router
+            .push(
+              {
+                query: {
+                  ...router.query,
+                  layout: id,
+                },
+              },
+              undefined,
+              { shallow: true }
+            )
+            .then(() => utils.boards.byName.invalidate());
         },
       }
     );
