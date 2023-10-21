@@ -110,13 +110,10 @@ const CreateMenu = () => {
         </HeaderActionButton>
       </Menu.Target>
       <Menu.Dropdown>
-        <Menu.Item icon={<IconBox stroke={1.5} size="1rem" />}>New app</Menu.Item>
         <Menu.Item icon={<IconPlug stroke={1.5} size="1rem" />}>New integration</Menu.Item>
-        <Menu.Divider></Menu.Divider>
         <Menu.Item onClick={createLayout} icon={<IconLayoutBoardSplit stroke={1.5} size="1rem" />}>
           New layout
         </Menu.Item>
-        <Menu.Divider></Menu.Divider>
         <Menu.Item onClick={createBoard} icon={<IconLayoutDashboard stroke={1.5} size="1rem" />}>
           New board
         </Menu.Item>
